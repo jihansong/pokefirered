@@ -2599,3 +2599,10 @@ void NamePikablu(void)
         }
     }
 }
+
+// The Mew3 rumor scene needs both MEWTWO and MEW registered as caught.
+bool8 HasCaughtMewtwoAndMew(void)
+{
+    return GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_MEWTWO), FLAG_GET_CAUGHT)
+        && GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_MEW), FLAG_GET_CAUGHT);
+}

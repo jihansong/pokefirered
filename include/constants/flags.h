@@ -198,8 +198,8 @@
 #define FLAG_HIDE_SSANNE_EXTERIOR_MEW 0x0B4
 #define FLAG_HIDE_CERULEAN_HOUSE1_RUMOR_BOY 0x0B5
 #define FLAG_HIDE_CERULEAN_CAVE_PIKABLU 0x0B6
-#define FLAG_0x0B7               0x0B7
-#define FLAG_0x0B8               0x0B8
+#define FLAG_HIDE_CERULEAN_CAVE_B1F_CAPSULE_SHARDS 0x0B7
+#define FLAG_HIDE_CERULEAN_CAVE_B1F_MEWTWO_SHADOW 0x0B8
 #define FLAG_0x0B9               0x0B9
 #define FLAG_0x0BA               0x0BA
 #define FLAG_0x0BB               0x0BB
@@ -769,8 +769,8 @@
 #define FLAG_HEARD_PIKABLU_RUMOR                         0x2E6
 #define FLAG_CAUGHT_PIKABLU                              0x2E7
 #define FLAG_GOT_WATER_STONE_FROM_RUMOR_BOY              0x2E8
-#define FLAG_0x2E9                                       0x2E9
-#define FLAG_0x2EA                                       0x2EA
+#define FLAG_GOT_MYSTIC_SHARD                            0x2E9
+#define FLAG_SAW_MEWTWO_SHADOW                           0x2EA
 #define FLAG_0x2EB                                       0x2EB
 #define FLAG_REVIVED_DOME                                0x2EC
 #define FLAG_REVIVED_HELIX                               0x2ED

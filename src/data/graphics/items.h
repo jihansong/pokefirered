@@ -126,6 +126,7 @@ const u32 gItemIconPalette_Shell[] = INCBIN_U32("graphics/items/icon_palettes/sh
 const u32 gItemIcon_Shard[] = INCBIN_U32("graphics/items/icons/shard.4bpp.lz");
 const u32 gItemIconPalette_RedShard[] = INCBIN_U32("graphics/items/icon_palettes/red_shard.gbapal.lz");
 const u32 gItemIconPalette_BlueShard[] = INCBIN_U32("graphics/items/icon_palettes/blue_shard.gbapal.lz");
+const u32 gItemIconPalette_MysticShard[] = INCBIN_U32("graphics/items/icon_palettes/mystic_shard.gbapal.lz");
 const u32 gItemIconPalette_YellowShard[] = INCBIN_U32("graphics/items/icon_palettes/yellow_shard.gbapal.lz");
 const u32 gItemIconPalette_GreenShard[] = INCBIN_U32("graphics/items/icon_palettes/green_shard.gbapal.lz");
 

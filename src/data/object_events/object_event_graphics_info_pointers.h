@@ -154,6 +154,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jessie;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_James;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Truck;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pikablu;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MewtwoShadow;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CapsuleShards;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -313,4 +315,6 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_JAMES]                    = &gObjectEventGraphicsInfo_James,
     [OBJ_EVENT_GFX_TRUCK]                    = &gObjectEventGraphicsInfo_Truck,
     [OBJ_EVENT_GFX_PIKABLU]                  = &gObjectEventGraphicsInfo_Pikablu,
+    [OBJ_EVENT_GFX_MEWTWO_SHADOW]            = &gObjectEventGraphicsInfo_MewtwoShadow,
+    [OBJ_EVENT_GFX_CAPSULE_SHARDS]           = &gObjectEventGraphicsInfo_CapsuleShards,
 };

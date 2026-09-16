@@ -461,4 +461,5 @@ gSpecials::
 	def_special PushTruck
 	def_special GiveElderDratiniMoveset
 	def_special NamePikablu
+	def_special HasCaughtMewtwoAndMew
 gSpecialsEnd::

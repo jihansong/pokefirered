@@ -459,6 +459,7 @@ const u32 gItemIconPalette_Leftovers[] = INCBIN_U32("graphics/items/icon_palette
 
 const u32 gItemIcon_DragonScale[] = INCBIN_U32("graphics/items/icons/dragon_scale.4bpp.lz");
 const u32 gItemIconPalette_DragonScale[] = INCBIN_U32("graphics/items/icon_palettes/dragon_scale.gbapal.lz");
+const u32 gItemIconPalette_RedScale[] = INCBIN_U32("graphics/items/icon_palettes/red_scale.gbapal.lz");
 
 const u32 gItemIcon_LightBall[] = INCBIN_U32("graphics/items/icons/light_ball.4bpp.lz");
 const u32 gItemIconPalette_LightBall[] = INCBIN_U32("graphics/items/icon_palettes/light_ball.gbapal.lz");

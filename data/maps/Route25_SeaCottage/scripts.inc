@@ -22,6 +22,10 @@ Route25_SeaCottage_EventScript_SetReturnedAfterSSTicket::
 Route25_SeaCottage_EventScript_Bill::
 	lock
 	faceplayer
+	goto_if_unset FLAG_GOT_SS_TICKET, Route25_SeaCottage_EventScript_BillNoRedScale
+	checkitem ITEM_RED_SCALE
+	goto_if_eq VAR_RESULT, TRUE, Route25_SeaCottage_EventScript_BillRedScale
+Route25_SeaCottage_EventScript_BillNoRedScale::
 	goto_if_set RETURN_AFTER_SS_TICKET, Route25_SeaCottage_EventScript_BillGoLookAtPC
 	goto_if_set FLAG_GOT_SS_TICKET, Route25_SeaCottage_EventScript_BillGoToSSAnne
 	goto_if_set FLAG_HELPED_BILL_IN_SEA_COTTAGE, Route25_SeaCottage_EventScript_BillGiveSSTicket
@@ -294,3 +298,19 @@ Route25_SeaCottage_Movement_BillWalkToMiddleOfRoom::
 Route25_SeaCottage_Movement_BillExitTeleporter::
 	walk_down
 	step_end
+
+@ Mr. POKéMON's RED SCALE trade from HGSS
+Route25_SeaCottage_EventScript_BillRedScale::
+	msgbox Route25_SeaCottage_Text_BillThatScaleRedGyarados, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route25_SeaCottage_EventScript_BillRedScaleRefused
+	giveitem ITEM_EXP_SHARE
+	goto_if_eq VAR_RESULT, FALSE, EventScript_BagIsFull
+	removeitem ITEM_RED_SCALE
+	msgbox Route25_SeaCottage_Text_CheckOutRareMonsOnPC
+	release
+	end
+
+Route25_SeaCottage_EventScript_BillRedScaleRefused::
+	msgbox Route25_SeaCottage_Text_BillThatsDisappointing
+	release
+	end

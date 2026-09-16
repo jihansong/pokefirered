@@ -57,7 +57,7 @@ static const u32 *const sItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_GREEN_SHARD]    = {gItemIcon_Shard, gItemIconPalette_GreenShard},
     // ????????
     [ITEM_MYSTIC_SHARD]   = {gItemIcon_Shard, gItemIconPalette_MysticShard},
-    [ITEM_035]            = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
+    [ITEM_RED_SCALE]      = {gItemIcon_DragonScale, gItemIconPalette_RedScale},
     [ITEM_036]            = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_037]            = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_038]            = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},

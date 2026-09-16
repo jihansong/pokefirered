@@ -462,4 +462,5 @@ gSpecials::
 	def_special GiveElderDratiniMoveset
 	def_special NamePikablu
 	def_special HasCaughtMewtwoAndMew
+	def_special MakeScriptedWildMonShiny
 gSpecialsEnd::

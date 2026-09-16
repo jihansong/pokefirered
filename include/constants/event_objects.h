@@ -161,8 +161,9 @@
 #define OBJ_EVENT_GFX_PIKABLU 155
 #define OBJ_EVENT_GFX_MEWTWO_SHADOW 156
 #define OBJ_EVENT_GFX_CAPSULE_SHARDS 157
+#define OBJ_EVENT_GFX_RED_GYARADOS 158
 
-#define NUM_OBJ_EVENT_GFX     158
+#define NUM_OBJ_EVENT_GFX     159
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.

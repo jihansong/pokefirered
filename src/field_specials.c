@@ -2606,3 +2606,19 @@ bool8 HasCaughtMewtwoAndMew(void)
     return GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_MEWTWO), FLAG_GET_CAUGHT)
         && GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_MEW), FLAG_GET_CAUGHT);
 }
+
+// Use after setwildbattle: remakes the wild POKéMON with a personality that is
+// shiny for the player's Trainer ID, like Crystal's BATTLETYPE_FORCESHINY.
+void MakeScriptedWildMonShiny(void)
+{
+    u16 species = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL);
+    u8 level = GetMonData(&gEnemyParty[0], MON_DATA_LEVEL, NULL);
+    u16 heldItem = GetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, NULL);
+    u32 otId = T1_READ_32(gSaveBlock2Ptr->playerTrainerId);
+    u16 low = Random();
+    u16 high = (otId >> 16) ^ (otId & 0xFFFF) ^ low;
+
+    CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, TRUE, ((u32)high << 16) | low, OT_ID_PLAYER_ID, 0);
+    if (heldItem != ITEM_NONE)
+        SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &heldItem);
+}

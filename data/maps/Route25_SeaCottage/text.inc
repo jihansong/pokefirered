@@ -106,3 +106,17 @@ Route25_SeaCottage_Text_BillsFavoriteMonList::
 Route25_SeaCottage_Text_SeeWhichMon::
     .string "Which POKéMON do you want to see?$"
 
+
+Route25_SeaCottage_Text_BillThatScaleRedGyarados::
+    .string "BILL: Hm? That SCALE!\n"
+    .string "What's that? A red GYARADOS?\p"
+    .string "That's rare!\n"
+    .string "I, I want it…\p"
+    .string "{PLAYER}, would you care to\n"
+    .string "trade it?\p"
+    .string "I can offer this EXP. SHARE I got\n"
+    .string "from PROF. OAK.$"
+
+Route25_SeaCottage_Text_BillThatsDisappointing::
+    .string "BILL: That's disappointing.\n"
+    .string "That happens to be very rare.$"

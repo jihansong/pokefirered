@@ -38,3 +38,75 @@ CeruleanCity_House3_EventScript_AlreadyTraded::
 	msgbox Trade_Text_HasTradedMonGrownStronger
 	release
 	end
+
+@ Yellow's Melanie. She only offers BULBASAUR once the lead PIKACHU's friendship
+@ reaches 147 (Yellow checks the following PIKACHU's happiness).
+CeruleanCity_House3_EventScript_Melanie::
+	lock
+	faceplayer
+	goto_if_set FLAG_GOT_BULBASAUR_FROM_MELANIE, CeruleanCity_House3_EventScript_MelanieAlreadyGaveBulbasaur
+	msgbox CeruleanCity_House3_Text_NursedBulbasaurBackToHealth
+	specialvar VAR_RESULT, GetLeadPikachuFriendship
+	goto_if_lt VAR_RESULT, 147, EventScript_ReleaseEnd
+	msgbox CeruleanCity_House3_Text_WouldYouTakeCareOfBulbasaur, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, CeruleanCity_House3_EventScript_MelanieDeclined
+	goto CeruleanCity_House3_EventScript_GiveBulbasaur
+	end
+
+CeruleanCity_House3_EventScript_MelanieDeclined::
+	msgbox CeruleanCity_House3_Text_ThatsTooBad
+	release
+	end
+
+CeruleanCity_House3_EventScript_MelanieAlreadyGaveBulbasaur::
+	msgbox CeruleanCity_House3_Text_IsBulbasaurDoingWell
+	release
+	end
+
+CeruleanCity_House3_EventScript_GiveBulbasaur::
+	setvar VAR_TEMP_1, SPECIES_BULBASAUR
+	givemon SPECIES_BULBASAUR, 10
+	goto_if_eq VAR_RESULT, 0, CeruleanCity_House3_EventScript_ReceiveBulbasaurParty
+	goto_if_eq VAR_RESULT, 1, CeruleanCity_House3_EventScript_ReceiveBulbasaurPC
+	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+CeruleanCity_House3_EventScript_ReceiveBulbasaurParty::
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	playfanfare MUS_LEVEL_UP
+	message CeruleanCity_House3_Text_ReceivedBulbasaur
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_BULBASAUR
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, CeruleanCity_House3_EventScript_EndReceiveBulbasaur
+	call EventScript_GetGiftMonPartySlot
+	call EventScript_ChangePokemonNickname
+	goto CeruleanCity_House3_EventScript_EndReceiveBulbasaur
+	end
+
+CeruleanCity_House3_EventScript_ReceiveBulbasaurPC::
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	playfanfare MUS_LEVEL_UP
+	message CeruleanCity_House3_Text_ReceivedBulbasaur
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_BULBASAUR
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, CeruleanCity_House3_EventScript_BulbasaurTransferredToPC
+	call EventScript_NameReceivedBoxMon
+	goto CeruleanCity_House3_EventScript_BulbasaurTransferredToPC
+	end
+
+CeruleanCity_House3_EventScript_BulbasaurTransferredToPC::
+	call EventScript_TransferredToPC
+	goto CeruleanCity_House3_EventScript_EndReceiveBulbasaur
+	end
+
+CeruleanCity_House3_EventScript_EndReceiveBulbasaur::
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox CeruleanCity_House3_Text_PleaseTakeCareOfBulbasaur
+	setflag FLAG_GOT_BULBASAUR_FROM_MELANIE
+	release
+	end

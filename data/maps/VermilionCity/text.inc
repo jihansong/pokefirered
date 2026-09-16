@@ -129,3 +129,29 @@ VermilionCity_Text_Route2AideHasPackageForYou::
     .string "If you're in the ROUTE 2 area,\n"
     .string "please look for him.$"
 
+
+VermilionCity_Text_SquirtleNeedsGoodTrainer::
+    .string "I just caught a SQUIRTLE that was\n"
+    .string "always getting into mischief.\p"
+    .string "I think it needs a good TRAINER\n"
+    .string "to set it straight.$"
+
+VermilionCity_Text_YouHaveThunderBadge::
+    .string "You have the THUNDERBADGE!?\n"
+    .string "You must be a good TRAINER!\p"
+    .string "I just caught a SQUIRTLE that was\n"
+    .string "always getting into mischief.\p"
+    .string "Would you take good care of it?$"
+
+VermilionCity_Text_ReceivedSquirtle::
+    .string "{PLAYER} received a SQUIRTLE\n"
+    .string "from the officer!$"
+
+VermilionCity_Text_PleaseTreatSquirtleRight::
+    .string "OK! Please treat SQUIRTLE right!$"
+
+VermilionCity_Text_WhatAmIToDoNow::
+    .string "Oh… What am I to do now?$"
+
+VermilionCity_Text_HowIsSquirtleDoing::
+    .string "How is SQUIRTLE doing?$"

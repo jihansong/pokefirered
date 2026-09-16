@@ -95,3 +95,71 @@ Route24_Movement_RocketWalkBackToPos::
 Route24_Movement_WalkDown::
 	walk_down
 	step_end
+
+@ Yellow's Damian, who gives away the CHARMANDER he couldn't raise.
+Route24_EventScript_Damian::
+	lock
+	faceplayer
+	goto_if_set FLAG_GOT_CHARMANDER_FROM_DAMIAN, Route24_EventScript_DamianAlreadyGaveCharmander
+	msgbox Route24_Text_ShouldReleaseMyCharmander, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route24_EventScript_DamianDeclined
+	goto Route24_EventScript_GiveCharmander
+	end
+
+Route24_EventScript_DamianDeclined::
+	msgbox Route24_Text_BetterReleaseItThen
+	release
+	end
+
+Route24_EventScript_DamianAlreadyGaveCharmander::
+	msgbox Route24_Text_HowsCharmanderDoing
+	release
+	end
+
+Route24_EventScript_GiveCharmander::
+	setvar VAR_TEMP_1, SPECIES_CHARMANDER
+	givemon SPECIES_CHARMANDER, 10
+	goto_if_eq VAR_RESULT, 0, Route24_EventScript_ReceiveCharmanderParty
+	goto_if_eq VAR_RESULT, 1, Route24_EventScript_ReceiveCharmanderPC
+	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+Route24_EventScript_ReceiveCharmanderParty::
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	playfanfare MUS_LEVEL_UP
+	message Route24_Text_ReceivedCharmander
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_CHARMANDER
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route24_EventScript_EndReceiveCharmander
+	call EventScript_GetGiftMonPartySlot
+	call EventScript_ChangePokemonNickname
+	goto Route24_EventScript_EndReceiveCharmander
+	end
+
+Route24_EventScript_ReceiveCharmanderPC::
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	playfanfare MUS_LEVEL_UP
+	message Route24_Text_ReceivedCharmander
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_CHARMANDER
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route24_EventScript_CharmanderTransferredToPC
+	call EventScript_NameReceivedBoxMon
+	goto Route24_EventScript_CharmanderTransferredToPC
+	end
+
+Route24_EventScript_CharmanderTransferredToPC::
+	call EventScript_TransferredToPC
+	goto Route24_EventScript_EndReceiveCharmander
+	end
+
+Route24_EventScript_EndReceiveCharmander::
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox Route24_Text_TakeGoodCareOfCharmander
+	setflag FLAG_GOT_CHARMANDER_FROM_DAMIAN
+	release
+	end

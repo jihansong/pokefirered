@@ -264,3 +264,77 @@ VermilionCity_EventScript_GymSign::
 VermilionCity_EventScript_HarborSign::
 	msgbox VermilionCity_Text_VermilionHarbor, MSGBOX_SIGN
 	end
+
+@ Yellow's Officer Jenny. She hands over SQUIRTLE once the player has the THUNDERBADGE.
+VermilionCity_EventScript_Officer::
+	lock
+	faceplayer
+	goto_if_set FLAG_GOT_SQUIRTLE_FROM_OFFICER, VermilionCity_EventScript_OfficerAlreadyGaveSquirtle
+	goto_if_set FLAG_BADGE03_GET, VermilionCity_EventScript_OfficerOfferSquirtle
+	msgbox VermilionCity_Text_SquirtleNeedsGoodTrainer
+	release
+	end
+
+VermilionCity_EventScript_OfficerOfferSquirtle::
+	msgbox VermilionCity_Text_YouHaveThunderBadge, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, VermilionCity_EventScript_OfficerDeclined
+	goto VermilionCity_EventScript_GiveSquirtle
+	end
+
+VermilionCity_EventScript_OfficerDeclined::
+	msgbox VermilionCity_Text_WhatAmIToDoNow
+	release
+	end
+
+VermilionCity_EventScript_OfficerAlreadyGaveSquirtle::
+	msgbox VermilionCity_Text_HowIsSquirtleDoing
+	release
+	end
+
+VermilionCity_EventScript_GiveSquirtle::
+	setvar VAR_TEMP_1, SPECIES_SQUIRTLE
+	givemon SPECIES_SQUIRTLE, 10
+	goto_if_eq VAR_RESULT, 0, VermilionCity_EventScript_ReceiveSquirtleParty
+	goto_if_eq VAR_RESULT, 1, VermilionCity_EventScript_ReceiveSquirtlePC
+	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+VermilionCity_EventScript_ReceiveSquirtleParty::
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	playfanfare MUS_LEVEL_UP
+	message VermilionCity_Text_ReceivedSquirtle
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_SQUIRTLE
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, VermilionCity_EventScript_EndReceiveSquirtle
+	call EventScript_GetGiftMonPartySlot
+	call EventScript_ChangePokemonNickname
+	goto VermilionCity_EventScript_EndReceiveSquirtle
+	end
+
+VermilionCity_EventScript_ReceiveSquirtlePC::
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	playfanfare MUS_LEVEL_UP
+	message VermilionCity_Text_ReceivedSquirtle
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_SQUIRTLE
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, VermilionCity_EventScript_SquirtleTransferredToPC
+	call EventScript_NameReceivedBoxMon
+	goto VermilionCity_EventScript_SquirtleTransferredToPC
+	end
+
+VermilionCity_EventScript_SquirtleTransferredToPC::
+	call EventScript_TransferredToPC
+	goto VermilionCity_EventScript_EndReceiveSquirtle
+	end
+
+VermilionCity_EventScript_EndReceiveSquirtle::
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox VermilionCity_Text_PleaseTreatSquirtleRight
+	setflag FLAG_GOT_SQUIRTLE_FROM_OFFICER
+	release
+	end

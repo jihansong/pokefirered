@@ -98,3 +98,23 @@ Route24_Text_CaleDefeat::
 
 Route24_Text_CalePostBattle::
     .string "I did my best. I have no regrets!$"
+
+Route24_Text_ShouldReleaseMyCharmander::
+    .string "I'm not good at raising POKéMON.\p"
+    .string "I should release my CHARMANDER\n"
+    .string "because I haven't raised it well…\p"
+    .string "If you promise me you'll care for\n"
+    .string "it, it's yours.$"
+
+Route24_Text_ReceivedCharmander::
+    .string "{PLAYER} received a CHARMANDER\n"
+    .string "from the boy!$"
+
+Route24_Text_TakeGoodCareOfCharmander::
+    .string "Take good care of my CHARMANDER!$"
+
+Route24_Text_BetterReleaseItThen::
+    .string "Oh… I'd better release it then.$"
+
+Route24_Text_HowsCharmanderDoing::
+    .string "How's CHARMANDER doing?$"

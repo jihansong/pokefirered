@@ -4030,7 +4030,7 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .party = ITEM_CUSTOM_MOVES(sParty_EliteFourLorelei),
+        .party = NO_ITEM_CUSTOM_MOVES(sParty_EliteFourLorelei),
     },
     [TRAINER_ELITE_FOUR_BRUNO] = {
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
@@ -4040,7 +4040,7 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .party = ITEM_CUSTOM_MOVES(sParty_EliteFourBruno),
+        .party = NO_ITEM_CUSTOM_MOVES(sParty_EliteFourBruno),
     },
     [TRAINER_ELITE_FOUR_AGATHA] = {
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
@@ -4050,7 +4050,7 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .party = ITEM_CUSTOM_MOVES(sParty_EliteFourAgatha),
+        .party = NO_ITEM_CUSTOM_MOVES(sParty_EliteFourAgatha),
     },
     [TRAINER_ELITE_FOUR_LANCE] = {
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
@@ -4060,7 +4060,7 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .party = ITEM_CUSTOM_MOVES(sParty_EliteFourLance),
+        .party = NO_ITEM_CUSTOM_MOVES(sParty_EliteFourLance),
     },
     [TRAINER_LEADER_BROCK] = {
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -7260,7 +7260,7 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .party = ITEM_CUSTOM_MOVES(sParty_EliteFourLorelei2),
+        .party = NO_ITEM_CUSTOM_MOVES(sParty_EliteFourLorelei2),
     },
     [TRAINER_ELITE_FOUR_BRUNO_2] = {
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
@@ -7270,7 +7270,7 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .party = ITEM_CUSTOM_MOVES(sParty_EliteFourBruno2),
+        .party = NO_ITEM_CUSTOM_MOVES(sParty_EliteFourBruno2),
     },
     [TRAINER_ELITE_FOUR_AGATHA_2] = {
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
@@ -7280,7 +7280,7 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .party = ITEM_CUSTOM_MOVES(sParty_EliteFourAgatha2),
+        .party = NO_ITEM_CUSTOM_MOVES(sParty_EliteFourAgatha2),
     },
     [TRAINER_ELITE_FOUR_LANCE_2] = {
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
@@ -7290,7 +7290,7 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .party = ITEM_CUSTOM_MOVES(sParty_EliteFourLance2),
+        .party = NO_ITEM_CUSTOM_MOVES(sParty_EliteFourLance2),
     },
     [TRAINER_CHAMPION_REMATCH_JOLTEON] = {
         .trainerClass = TRAINER_CLASS_CHAMPION,

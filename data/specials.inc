@@ -459,4 +459,5 @@ gSpecials::
 	def_special DoStarterPikachuEmotion
 	def_special CanPushTruck
 	def_special PushTruck
+	def_special GiveElderDratiniMoveset
 gSpecialsEnd::

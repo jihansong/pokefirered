@@ -426,6 +426,29 @@ static const struct MenuAction sMultichoiceList_TradeColosseumBlank[] = {
     { gOtherText_Exit }
 };
 
+// The dragon elder's quiz in the Fuchsia Warden's house (Crystal's Dragon Shrine questions)
+static const u8 sText_Pal[] = _("PAL");
+static const u8 sText_Underling[] = _("UNDERLING");
+static const u8 sText_Friend[] = _("FRIEND");
+static const u8 sText_Strategy[] = _("STRATEGY");
+static const u8 sText_Raising[] = _("RAISING");
+static const u8 sText_Cheating[] = _("CHEATING");
+static const u8 sText_WeakPerson[] = _("WEAK PERSON");
+static const u8 sText_ToughPerson[] = _("TOUGH PERSON");
+static const u8 sText_Anybody[] = _("ANYBODY");
+static const u8 sText_Love[] = _("LOVE");
+static const u8 sText_Violence[] = _("VIOLENCE");
+static const u8 sText_Knowledge[] = _("KNOWLEDGE");
+static const u8 sText_Tough[] = _("TOUGH");
+static const u8 sText_Both[] = _("BOTH");
+static const u8 sText_Weak[] = _("WEAK");
+
+static const struct MenuAction sMultichoiceList_ElderQuiz1[] = { { sText_Pal }, { sText_Underling }, { sText_Friend } };
+static const struct MenuAction sMultichoiceList_ElderQuiz2[] = { { sText_Strategy }, { sText_Raising }, { sText_Cheating } };
+static const struct MenuAction sMultichoiceList_ElderQuiz3[] = { { sText_WeakPerson }, { sText_ToughPerson }, { sText_Anybody } };
+static const struct MenuAction sMultichoiceList_ElderQuiz4[] = { { sText_Love }, { sText_Violence }, { sText_Knowledge } };
+static const struct MenuAction sMultichoiceList_ElderQuiz5[] = { { sText_Tough }, { sText_Both }, { sText_Weak } };
+
 static const struct MenuAction sMultichoiceList_SeviiNavel[] = {
     { gText_SeviiIslands },
     { gText_NavelRock },
@@ -568,6 +591,11 @@ static const struct MultichoiceListStruct sMultichoiceLists[] = {
     [MULTICHOICE_62]                                         = MULTICHOICE(sMultichoiceList_62),
     [MULTICHOICE_JOIN_OR_LEAD]                               = MULTICHOICE(sMultichoiceList_JoinOrLead),
     [MULTICHOICE_TRAINER_TOWER_MODE]                         = MULTICHOICE(sMultichoiceList_TrainerTowerMode),
+    [MULTICHOICE_ELDER_QUIZ_1]                               = MULTICHOICE(sMultichoiceList_ElderQuiz1),
+    [MULTICHOICE_ELDER_QUIZ_2]                               = MULTICHOICE(sMultichoiceList_ElderQuiz2),
+    [MULTICHOICE_ELDER_QUIZ_3]                               = MULTICHOICE(sMultichoiceList_ElderQuiz3),
+    [MULTICHOICE_ELDER_QUIZ_4]                               = MULTICHOICE(sMultichoiceList_ElderQuiz4),
+    [MULTICHOICE_ELDER_QUIZ_5]                               = MULTICHOICE(sMultichoiceList_ElderQuiz5),
 };
 
 // From Cool to Berries goes unused

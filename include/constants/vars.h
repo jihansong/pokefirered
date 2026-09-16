@@ -196,7 +196,7 @@
 #define VAR_MAP_SCENE_POKEMON_TOWER_7F_JESSIE_JAMES                            0x408E
 #define VAR_MAP_SCENE_SILPH_CO_11F_JESSIE_JAMES                                0x408F
 #define VAR_SSANNE_EXTERIOR_TRUCK_PUSHED                                       0x4090
-#define VAR_0x4091                 0x4091
+#define VAR_FUCHSIA_WARDENS_HOUSE_ELDER                                        0x4091
 #define VAR_0x4092                 0x4092
 #define VAR_0x4093                 0x4093
 #define VAR_0x4094                 0x4094

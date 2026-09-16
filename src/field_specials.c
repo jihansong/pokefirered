@@ -2539,3 +2539,23 @@ static void Task_WingFlapSound(u8 taskId)
     if (data[0] == gSpecialVar_0x8004 - 1)
         DestroyTask(taskId);
 }
+
+// The dragon elder's DRATINI knows EXTREMESPEED if the player answered every
+// quiz question right on the first try (Crystal's GiveDratini special).
+// Gives the special moveset to the last DRATINI in the party.
+void GiveElderDratiniMoveset(void)
+{
+    static const u16 sMoves[MAX_MON_MOVES] = {MOVE_WRAP, MOVE_THUNDER_WAVE, MOVE_TWISTER, MOVE_EXTREME_SPEED};
+    s32 i;
+    u8 slot;
+
+    for (i = gPlayerPartyCount - 1; i >= 0; i--)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) == SPECIES_DRATINI)
+        {
+            for (slot = 0; slot < MAX_MON_MOVES; slot++)
+                SetMonMoveSlot(&gPlayerParty[i], sMoves[slot], slot);
+            return;
+        }
+    }
+}

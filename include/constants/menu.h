@@ -69,6 +69,11 @@
 #define MULTICHOICE_62                                         62
 #define MULTICHOICE_JOIN_OR_LEAD                               63
 #define MULTICHOICE_TRAINER_TOWER_MODE                         64
+#define MULTICHOICE_ELDER_QUIZ_1                               65
+#define MULTICHOICE_ELDER_QUIZ_2                               66
+#define MULTICHOICE_ELDER_QUIZ_3                               67
+#define MULTICHOICE_ELDER_QUIZ_4                               68
+#define MULTICHOICE_ELDER_QUIZ_5                               69
 
 #define MULTICHOICE_NONE                                      255
 

@@ -57,3 +57,146 @@ FuchsiaCity_WardensHouse_EventScript_DisplaySign1::
 FuchsiaCity_WardensHouse_EventScript_DisplaySign2::
 	msgbox FuchsiaCity_WardensHouse_Text_OldMonMerchandiseOnDisplay, MSGBOX_SIGN
 	end
+
+@ The WARDEN's old teacher, an elder of a dragon clan, as in HGSS's Dragon's Den.
+@ After the SOULBADGE and the returned GOLD TEETH he gives the player his quiz.
+@ Passing earns a Lv15 DRATINI, which knows EXTREMESPEED if no answer was wrong.
+FuchsiaCity_WardensHouse_EventScript_DragonElder::
+	lock
+	faceplayer
+	goto_if_eq VAR_FUCHSIA_WARDENS_HOUSE_ELDER, 3, FuchsiaCity_WardensHouse_EventScript_ElderAfterDratini
+	goto_if_ge VAR_FUCHSIA_WARDENS_HOUSE_ELDER, 1, FuchsiaCity_WardensHouse_EventScript_ElderGiveDratini
+	goto_if_unset FLAG_BADGE05_GET, FuchsiaCity_WardensHouse_EventScript_ElderVisiting
+	goto_if_unset FLAG_GOT_HM04, FuchsiaCity_WardensHouse_EventScript_ElderVisiting
+	msgbox FuchsiaCity_WardensHouse_Text_ElderMustTestYou
+	setvar VAR_TEMP_1, 0
+	call FuchsiaCity_WardensHouse_EventScript_ElderQuestion1
+	call FuchsiaCity_WardensHouse_EventScript_ElderQuestion2
+	call FuchsiaCity_WardensHouse_EventScript_ElderQuestion3
+	call FuchsiaCity_WardensHouse_EventScript_ElderQuestion4
+	call FuchsiaCity_WardensHouse_EventScript_ElderQuestion5
+	msgbox FuchsiaCity_WardensHouse_Text_ElderYouCareDeeply
+	setvar VAR_FUCHSIA_WARDENS_HOUSE_ELDER, 1
+	call_if_eq VAR_TEMP_1, 1, FuchsiaCity_WardensHouse_EventScript_ElderPassedWithMistakes
+	goto FuchsiaCity_WardensHouse_EventScript_ElderGiveDratini
+	end
+
+FuchsiaCity_WardensHouse_EventScript_ElderPassedWithMistakes::
+	setvar VAR_FUCHSIA_WARDENS_HOUSE_ELDER, 2
+	return
+
+FuchsiaCity_WardensHouse_EventScript_ElderVisiting::
+	msgbox FuchsiaCity_WardensHouse_Text_ElderVisitingPupil
+	release
+	end
+
+FuchsiaCity_WardensHouse_EventScript_ElderQuestion1::
+	message FuchsiaCity_WardensHouse_Text_ElderQuestion1
+	waitmessage
+	multichoice 18, 6, MULTICHOICE_ELDER_QUIZ_1, TRUE
+	goto_if_eq VAR_RESULT, 1, FuchsiaCity_WardensHouse_EventScript_ElderQuestion1Wrong
+	msgbox FuchsiaCity_WardensHouse_Text_ElderIUnderstand
+	return
+
+FuchsiaCity_WardensHouse_EventScript_ElderQuestion1Wrong::
+	call FuchsiaCity_WardensHouse_EventScript_ElderWrongAnswer
+	goto FuchsiaCity_WardensHouse_EventScript_ElderQuestion1
+	end
+
+FuchsiaCity_WardensHouse_EventScript_ElderQuestion2::
+	message FuchsiaCity_WardensHouse_Text_ElderQuestion2
+	waitmessage
+	multichoice 18, 6, MULTICHOICE_ELDER_QUIZ_2, TRUE
+	goto_if_eq VAR_RESULT, 2, FuchsiaCity_WardensHouse_EventScript_ElderQuestion2Wrong
+	msgbox FuchsiaCity_WardensHouse_Text_ElderIUnderstand
+	return
+
+FuchsiaCity_WardensHouse_EventScript_ElderQuestion2Wrong::
+	call FuchsiaCity_WardensHouse_EventScript_ElderWrongAnswer
+	goto FuchsiaCity_WardensHouse_EventScript_ElderQuestion2
+	end
+
+FuchsiaCity_WardensHouse_EventScript_ElderQuestion3::
+	message FuchsiaCity_WardensHouse_Text_ElderQuestion3
+	waitmessage
+	multichoice 15, 6, MULTICHOICE_ELDER_QUIZ_3, TRUE
+	goto_if_eq VAR_RESULT, 0, FuchsiaCity_WardensHouse_EventScript_ElderQuestion3Wrong
+	msgbox FuchsiaCity_WardensHouse_Text_ElderIUnderstand
+	return
+
+FuchsiaCity_WardensHouse_EventScript_ElderQuestion3Wrong::
+	call FuchsiaCity_WardensHouse_EventScript_ElderWrongAnswer
+	goto FuchsiaCity_WardensHouse_EventScript_ElderQuestion3
+	end
+
+FuchsiaCity_WardensHouse_EventScript_ElderQuestion4::
+	message FuchsiaCity_WardensHouse_Text_ElderQuestion4
+	waitmessage
+	multichoice 18, 6, MULTICHOICE_ELDER_QUIZ_4, TRUE
+	goto_if_eq VAR_RESULT, 1, FuchsiaCity_WardensHouse_EventScript_ElderQuestion4Wrong
+	msgbox FuchsiaCity_WardensHouse_Text_ElderIUnderstand
+	return
+
+FuchsiaCity_WardensHouse_EventScript_ElderQuestion4Wrong::
+	call FuchsiaCity_WardensHouse_EventScript_ElderWrongAnswer
+	goto FuchsiaCity_WardensHouse_EventScript_ElderQuestion4
+	end
+
+FuchsiaCity_WardensHouse_EventScript_ElderQuestion5::
+	message FuchsiaCity_WardensHouse_Text_ElderQuestion5
+	waitmessage
+	multichoice 21, 6, MULTICHOICE_ELDER_QUIZ_5, TRUE
+	goto_if_ne VAR_RESULT, 1, FuchsiaCity_WardensHouse_EventScript_ElderQuestion5Wrong
+	return
+
+FuchsiaCity_WardensHouse_EventScript_ElderQuestion5Wrong::
+	call FuchsiaCity_WardensHouse_EventScript_ElderWrongAnswer
+	goto FuchsiaCity_WardensHouse_EventScript_ElderQuestion5
+	end
+
+@ A wrong answer isn't failure: he pretends not to have heard and asks again,
+@ but DRATINI won't get EXTREMESPEED.
+FuchsiaCity_WardensHouse_EventScript_ElderWrongAnswer::
+	setvar VAR_TEMP_1, 1
+	applymovement LOCALID_WARDENS_HOUSE_ELDER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	msgbox FuchsiaCity_WardensHouse_Text_ElderDidntCatchThat
+	applymovement LOCALID_WARDENS_HOUSE_ELDER, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox FuchsiaCity_WardensHouse_Text_ElderWhatDidYouSay
+	return
+
+FuchsiaCity_WardensHouse_EventScript_ElderGiveDratini::
+	msgbox FuchsiaCity_WardensHouse_Text_ElderTakeThisDratini
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, FuchsiaCity_WardensHouse_EventScript_ElderPartyFull
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	givemon SPECIES_DRATINI, 15
+	call_if_eq VAR_FUCHSIA_WARDENS_HOUSE_ELDER, 1, FuchsiaCity_WardensHouse_EventScript_ElderTeachExtremeSpeed
+	setvar VAR_FUCHSIA_WARDENS_HOUSE_ELDER, 3
+	playfanfare MUS_LEVEL_UP
+	message FuchsiaCity_WardensHouse_Text_ReceivedDratini
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_DRATINI
+	msgbox Text_GiveNicknameToThisMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FuchsiaCity_WardensHouse_EventScript_ElderAfterDratini
+	call EventScript_GetGiftMonPartySlot
+	call EventScript_ChangePokemonNickname
+	goto FuchsiaCity_WardensHouse_EventScript_ElderAfterDratini
+	end
+
+FuchsiaCity_WardensHouse_EventScript_ElderTeachExtremeSpeed::
+	special GiveElderDratiniMoveset
+	return
+
+FuchsiaCity_WardensHouse_EventScript_ElderPartyFull::
+	msgbox FuchsiaCity_WardensHouse_Text_ElderPartyFull
+	release
+	end
+
+FuchsiaCity_WardensHouse_EventScript_ElderAfterDratini::
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox FuchsiaCity_WardensHouse_Text_ElderDragonsSymbolicOfClan
+	release
+	end

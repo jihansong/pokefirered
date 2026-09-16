@@ -63,3 +63,75 @@ FuchsiaCity_WardensHouse_Text_OldMonMerchandiseOnDisplay::
     .string "Old POKéMON merchandise is on\n"
     .string "display.$"
 
+
+FuchsiaCity_WardensHouse_Text_ElderVisitingPupil::
+    .string "I am an elder of a clan of DRAGON\n"
+    .string "masters from a faraway land.\p"
+    .string "The WARDEN here was once my pupil.\n"
+    .string "I came to see how he is faring…\p"
+    .string "It seems he has lost his teeth\n"
+    .string "along with his voice. Hohoho.$"
+
+FuchsiaCity_WardensHouse_Text_ElderMustTestYou::
+    .string "Hm… Good to see you here.\p"
+    .string "You found my pupil's teeth and\n"
+    .string "bested the GYM of this town.\p"
+    .string "I am sorry, but I must test you.\p"
+    .string "Not to worry, you are to answer\n"
+    .string "only a few questions.\p"
+    .string "Ready?$"
+
+FuchsiaCity_WardensHouse_Text_ElderQuestion1::
+    .string "What are POKéMON to you?$"
+
+FuchsiaCity_WardensHouse_Text_ElderQuestion2::
+    .string "What helps you to win battles?$"
+
+FuchsiaCity_WardensHouse_Text_ElderQuestion3::
+    .string "What kind of TRAINER do you wish\n"
+    .string "to battle?$"
+
+FuchsiaCity_WardensHouse_Text_ElderQuestion4::
+    .string "What is most important for\n"
+    .string "raising POKéMON?$"
+
+FuchsiaCity_WardensHouse_Text_ElderQuestion5::
+    .string "Strong POKéMON. Weak POKéMON.\n"
+    .string "Which is more important?$"
+
+FuchsiaCity_WardensHouse_Text_ElderIUnderstand::
+    .string "Oh, I understand…$"
+
+FuchsiaCity_WardensHouse_Text_ElderDidntCatchThat::
+    .string "Hah? I didn't quite catch that…$"
+
+FuchsiaCity_WardensHouse_Text_ElderWhatDidYouSay::
+    .string "What was it you said?$"
+
+FuchsiaCity_WardensHouse_Text_ElderYouCareDeeply::
+    .string "Hm… I see…\p"
+    .string "You care deeply for POKéMON.\n"
+    .string "Very commendable.\p"
+    .string "That conviction is what is\n"
+    .string "important!\p"
+    .string "{PLAYER}, don't lose that belief.\p"
+    .string "It will see you through at the\n"
+    .string "POKéMON LEAGUE.$"
+
+FuchsiaCity_WardensHouse_Text_ElderTakeThisDratini::
+    .string "I have something for you.\p"
+    .string "Take this DRATINI as proof that\n"
+    .string "I have recognized your worth.$"
+
+FuchsiaCity_WardensHouse_Text_ElderPartyFull::
+    .string "Hm? Your POKéMON party is full.\p"
+    .string "Come back when you have room.$"
+
+FuchsiaCity_WardensHouse_Text_ReceivedDratini::
+    .string "{PLAYER} received DRATINI!$"
+
+FuchsiaCity_WardensHouse_Text_ElderDragonsSymbolicOfClan::
+    .string "DRAGON POKéMON are symbolic of\n"
+    .string "our clan.\p"
+    .string "You have shown that you can be\n"
+    .string "entrusted with one.$"

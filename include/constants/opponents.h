@@ -334,9 +334,9 @@
 #define TRAINER_JESSIE_JAMES_POKEMON_TOWER       328
 #define TRAINER_RIVAL_ROUTE22_EARLY              329
 #define TRAINER_JESSIE_JAMES_SILPH_CO            330
-#define TRAINER_UNUSED_331                       331
+#define TRAINER_ROCKET_HIDEOUT_CAMERA_GRUNT_1     331
 #define TRAINER_RIVAL_CERULEAN                   332
-#define TRAINER_UNUSED_333                       333
+#define TRAINER_ROCKET_HIDEOUT_CAMERA_GRUNT_2     333
 #define TRAINER_UNUSED_334                       334
 #define TRAINER_SCIENTIST_TED                    335
 #define TRAINER_SCIENTIST_CONNOR                 336

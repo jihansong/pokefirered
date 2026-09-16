@@ -157,6 +157,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pikablu;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MewtwoShadow;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CapsuleShards;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedGyarados;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PersianStatue;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -319,4 +320,5 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_MEWTWO_SHADOW]            = &gObjectEventGraphicsInfo_MewtwoShadow,
     [OBJ_EVENT_GFX_CAPSULE_SHARDS]           = &gObjectEventGraphicsInfo_CapsuleShards,
     [OBJ_EVENT_GFX_RED_GYARADOS]             = &gObjectEventGraphicsInfo_RedGyarados,
+    [OBJ_EVENT_GFX_PERSIAN_STATUE]           = &gObjectEventGraphicsInfo_PersianStatue,
 };

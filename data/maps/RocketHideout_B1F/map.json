@@ -112,6 +112,51 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RocketHideout_B1F_EventScript_ItemHyperPotion",
       "flag": "FLAG_HIDE_ROCKET_HIDEOUT_B1F_HYPER_POTION"
+    },
+    {
+      "local_id": "LOCALID_ROCKET_HIDEOUT_B1F_STATUE_1",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_PERSIAN_STATUE",
+      "x": 13,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "RocketHideout_B1F_EventScript_PersianStatue",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ROCKET_HIDEOUT_B1F_STATUE_2",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_PERSIAN_STATUE",
+      "x": 16,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "RocketHideout_B1F_EventScript_PersianStatue",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ROCKET_HIDEOUT_B1F_CAMERA_GRUNT",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ROCKET_M",
+      "x": 14,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_ROCKET_HIDEOUT_B1F_CAMERA_GRUNT"
     }
   ],
   "warp_events": [
@@ -158,7 +203,98 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "RocketHideout_B1F_EventScript_SecurityCamera"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "RocketHideout_B1F_EventScript_SecurityCamera"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "RocketHideout_B1F_EventScript_SecurityCamera"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "RocketHideout_B1F_EventScript_SecurityCamera"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "RocketHideout_B1F_EventScript_SecurityCamera"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "RocketHideout_B1F_EventScript_SecurityCamera"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "RocketHideout_B1F_EventScript_SecurityCamera"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "RocketHideout_B1F_EventScript_SecurityCamera"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "RocketHideout_B1F_EventScript_SecurityCamera"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "RocketHideout_B1F_EventScript_SecurityCamera"
+    }
+  ],
   "bg_events": [
     {
       "type": "hidden_item",

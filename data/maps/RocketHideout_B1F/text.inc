@@ -51,3 +51,33 @@ RocketHideout_B1F_Text_Grunt5PostBattle::
     .string "Uh-oh, that ruckus somehow opened\n"
     .string "the door!$"
 
+
+RocketHideout_B1F_Text_CameraGrunt1Intro::
+    .string "Hey!\n"
+    .string "Intruder alert!$"
+
+RocketHideout_B1F_Text_CameraGrunt1Defeat::
+    .string "Dang… I failed…$"
+
+RocketHideout_B1F_Text_CameraGrunt2Intro::
+    .string "It's my turn!\n"
+    .string "There's no escape!$"
+
+RocketHideout_B1F_Text_CameraGrunt2Defeat::
+    .string "Surveillance cams are in the\n"
+    .string "POKéMON statues.$"
+
+RocketHideout_B1F_Text_CameraGrunt2PostBattle::
+    .string "We'd have kept coming if you hadn't\n"
+    .string "beaten us both…\p"
+    .string "The cams and the traps below all\n"
+    .string "run off the emergency generator!$"
+
+RocketHideout_B1F_Text_PersianStatueCamera::
+    .string "It's a PERSIAN statue…\p"
+    .string "Its eyes are glowing. They look\n"
+    .string "like camera lenses!$"
+
+RocketHideout_B1F_Text_PersianStatueOff::
+    .string "It's a PERSIAN statue.\n"
+    .string "The glow in its eyes has gone out.$"

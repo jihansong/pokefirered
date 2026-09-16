@@ -10627,3 +10627,35 @@ static const struct TrainerMonNoItemDefaultMoves sParty_CueBallPaxton[] = {
         .species = SPECIES_MUK,
     },
 };
+
+// Crystal's security camera grunts in the Team Rocket Base (GRUNTM 20 and 21)
+static const struct TrainerMonNoItemDefaultMoves sParty_RocketHideoutCameraGrunt1[] = {
+    {
+        .iv = 0,
+        .lvl = 17,
+        .species = SPECIES_DROWZEE,
+    },
+    {
+        .iv = 0,
+        .lvl = 19,
+        .species = SPECIES_ZUBAT,
+    },
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_RocketHideoutCameraGrunt2[] = {
+    {
+        .iv = 0,
+        .lvl = 16,
+        .species = SPECIES_ZUBAT,
+    },
+    {
+        .iv = 0,
+        .lvl = 17,
+        .species = SPECIES_GRIMER,
+    },
+    {
+        .iv = 0,
+        .lvl = 18,
+        .species = SPECIES_RATTATA,
+    },
+};

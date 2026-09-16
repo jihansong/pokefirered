@@ -68,6 +68,28 @@ PalletTown_ProfessorOaksLab_Text_RivalTellSisNotToGiveYouMap::
     .string "Don't bother coming around to\n"
     .string "my place after this!$"
 
+PalletTown_ProfessorOaksLab_Text_OakCaughtAPikachuForYou::
+    .string "OAK: {RIVAL}?\n"
+    .string "Let me think…\p"
+    .string "Oh, that's right, I told you to\n"
+    .string "come! Just wait!\p"
+    .string "Here, {PLAYER}.\p"
+    .string "I caught this POKéMON out in the\n"
+    .string "tall grass just north of town.\p"
+    .string "It is a rather odd little fellow,\n"
+    .string "but I would like you to have it.$"
+
+PalletTown_ProfessorOaksLab_Text_OakThisPikachuIsYours::
+    .string "This PIKACHU is yours, {PLAYER}!\p"
+    .string "It has a will of its own, so raise\n"
+    .string "it with plenty of care!$"
+
+PalletTown_ProfessorOaksLab_Text_OakRivalYouMayHaveThisOne::
+    .string "OAK: {RIVAL}, I have not forgotten\n"
+    .string "about you!\p"
+    .string "This EEVEE is an uncommon POKéMON.\n"
+    .string "You may have it.$"
+
 PalletTown_ProfessorOaksLab_Text_OakThreeMonsChooseOne::
     .string "OAK: {RIVAL}?\n"
     .string "Let me think…\p"
@@ -91,10 +113,8 @@ PalletTown_ProfessorOaksLab_Text_OakBePatientRival::
 
 PalletTown_ProfessorOaksLab_Text_OakWhichOneWillYouChoose::
     .string "OAK: Now, {PLAYER}.\p"
-    .string "Inside those three POKé BALLS are\n"
-    .string "POKéMON.\p"
-    .string "Which one will you choose for\n"
-    .string "yourself?$"
+    .string "That PIKACHU of yours will grow\n"
+    .string "strong if you raise it well.$"
 
 PalletTown_ProfessorOaksLab_Text_OakHeyDontGoAwayYet::
     .string "OAK: Hey!\n"

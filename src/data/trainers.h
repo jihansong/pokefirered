@@ -7412,6 +7412,16 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
         .party = ITEM_CUSTOM_MOVES(sParty_ChampionRematchCharmander),
     },
+    [TRAINER_RIVAL_OAKS_LAB_EEVEE] = {
+        .trainerClass = TRAINER_CLASS_RIVAL_EARLY,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_RIVAL_EARLY,
+        .trainerName = _("TERRY"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+        .party = NO_ITEM_DEFAULT_MOVES(sParty_RivalOaksLabEevee),
+    },
     [TRAINER_CUE_BALL_PAXTON] = {
         .trainerClass = TRAINER_CLASS_CUE_BALL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,

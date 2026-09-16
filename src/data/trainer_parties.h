@@ -3741,6 +3741,14 @@ static const struct TrainerMonNoItemDefaultMoves sParty_RivalOaksLabCharmander[]
     },
 };
 
+static const struct TrainerMonNoItemDefaultMoves sParty_RivalOaksLabEevee[] = {
+    {
+        .iv = 0,
+        .lvl = 5,
+        .species = SPECIES_EEVEE,
+    },
+};
+
 static const struct TrainerMonNoItemCustomMoves sParty_RivalRoute22EarlySquirtle[] = {
     {
         .iv = 50,

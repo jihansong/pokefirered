@@ -74,21 +74,21 @@ PalletTown_ProfessorOaksLab_Text_OakCaughtAPikachuForYou::
     .string "Oh, that's right, I told you to\n"
     .string "come! Just wait!\p"
     .string "Here, {PLAYER}.\p"
-    .string "I caught this POKéMON out in the\n"
+    .string "I caught a POKéMON out in the\n"
     .string "tall grass just north of town.\p"
-    .string "It is a rather odd little fellow,\n"
-    .string "but I would like you to have it.$"
+    .string "It's a rather odd little fellow,\n"
+    .string "but I'd like you to have it.$"
 
 PalletTown_ProfessorOaksLab_Text_OakThisPikachuIsYours::
-    .string "This PIKACHU is yours, {PLAYER}!\p"
-    .string "It has a will of its own, so raise\n"
-    .string "it with plenty of care!$"
+    .string "OAK: This PIKACHU is yours,\n"
+    .string "{PLAYER}!\p"
+    .string "It isn't used to people yet and has\n"
+    .string "a will of its own.\p"
+    .string "Raise it with plenty of care!$"
 
 PalletTown_ProfessorOaksLab_Text_OakRivalYouMayHaveThisOne::
-    .string "OAK: {RIVAL}, I have not forgotten\n"
-    .string "about you!\p"
-    .string "This EEVEE is an uncommon POKéMON.\n"
-    .string "You may have it.$"
+    .string "OAK: {RIVAL}, this EEVEE is an\n"
+    .string "uncommon POKéMON. You may have it.$"
 
 PalletTown_ProfessorOaksLab_Text_OakThreeMonsChooseOne::
     .string "OAK: {RIVAL}?\n"
@@ -109,7 +109,7 @@ PalletTown_ProfessorOaksLab_Text_OakThreeMonsChooseOne::
 
 PalletTown_ProfessorOaksLab_Text_OakBePatientRival::
     .string "OAK: Be patient, {RIVAL}.\n"
-    .string "You can have one, too!$"
+    .string "I haven't forgotten about you!$"
 
 PalletTown_ProfessorOaksLab_Text_OakWhichOneWillYouChoose::
     .string "OAK: Now, {PLAYER}.\p"

@@ -211,13 +211,6 @@ PalletTown_ProfessorOaksLab_ChooseStarterScene::
 	closemessage
 	delay 60
 	msgbox PalletTown_ProfessorOaksLab_Text_OakCaughtAPikachuForYou
-	closemessage
-	delay 30
-	applymovement LOCALID_OAKS_LAB_RIVAL, PalletTown_ProfessorOaksLab_Movement_RivalReact
-	waitmovement 0
-	msgbox PalletTown_ProfessorOaksLab_Text_RivalNoFairWhatAboutMe
-	msgbox PalletTown_ProfessorOaksLab_Text_OakBePatientRival
-	closemessage
 	goto PalletTown_ProfessorOaksLab_EventScript_GivePikachu
 	end
 
@@ -247,9 +240,15 @@ PalletTown_ProfessorOaksLab_EventScript_NicknamePikachu::
 	goto PalletTown_ProfessorOaksLab_EventScript_RivalGetsEevee
 	end
 
+@ Once the player has PIKACHU, the rival complains and OAK gives him EEVEE.
 PalletTown_ProfessorOaksLab_EventScript_RivalGetsEevee::
 	closemessage
 	textcolor NPC_TEXT_COLOR_MALE
+	delay 20
+	applymovement LOCALID_OAKS_LAB_RIVAL, PalletTown_ProfessorOaksLab_Movement_RivalReact
+	waitmovement 0
+	msgbox PalletTown_ProfessorOaksLab_Text_RivalNoFairWhatAboutMe
+	msgbox PalletTown_ProfessorOaksLab_Text_OakBePatientRival
 	showmonpic SPECIES_EEVEE, 10, 3
 	msgbox PalletTown_ProfessorOaksLab_Text_OakRivalYouMayHaveThisOne
 	msgbox PalletTown_ProfessorOaksLab_Text_RivalIllTakeThisOneThen

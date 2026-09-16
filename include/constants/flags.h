@@ -205,8 +205,8 @@
 #define FLAG_HIDE_ROCKET_HIDEOUT_B2F_VOLTORB_TRAP_2 0x0BB
 #define FLAG_HIDE_ROCKET_HIDEOUT_B2F_ELECTRODE_TRAP 0x0BC
 #define FLAG_HIDE_ROCKET_HIDEOUT_B1F_CAMERA_GRUNT 0x0BD
-#define FLAG_0x0BE               0x0BE
-#define FLAG_0x0BF               0x0BF
+#define FLAG_HIDE_ROUTE16_FAKE_OAK 0x0BE
+#define FLAG_HIDE_ROUTE16_DITTO 0x0BF
 #define FLAG_0x0C0               0x0C0
 #define FLAG_0x0C1               0x0C1
 #define FLAG_0x0C2               0x0C2
@@ -533,7 +533,7 @@
 #define FLAG_0x1FF               0x1FF
 #define FLAG_GOT_TM40_FROM_KENYA_FRIEND 0x200
 #define FLAG_STARTED_LATI_ROAMERS 0x201
-#define FLAG_0x202               0x202
+#define FLAG_FOUGHT_DISGUISED_DITTO 0x202
 #define FLAG_0x203               0x203
 #define FLAG_0x204               0x204
 #define FLAG_0x205               0x205

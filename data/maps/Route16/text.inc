@@ -111,3 +111,27 @@ Route16_Text_LeaNotEnoughMons::
     .string "POKéMON with you?\p"
     .string "Doesn't it feel lonely for you or\n"
     .string "your POKéMON?$"
+
+Route16_Text_FakeOakPokemonPokemon::
+    .string "OAK: Ah, {PLAYER}!\n"
+    .string "POKéMON! POKéMON!\p"
+    .string "This world… POKéMON!\n"
+    .string "POKéMON… POKéMON…$"
+
+Route16_Text_OakIsActingStrange::
+    .string "PROF. OAK is acting strangely…$"
+
+Route16_Text_OakWasADitto::
+    .string "PROF. OAK wobbled and turned into\n"
+    .string "a DITTO!$"
+
+Route16_Text_RumorWomanOakBeenThereForHours::
+    .string "Is that really PROF. OAK over there?\p"
+    .string "He's been saying the same thing\n"
+    .string "over and over for hours…$"
+
+Route16_Text_RumorWomanDittoRumor::
+    .string "That was a DITTO?!\p"
+    .string "There's a rumor that a DITTO turns\n"
+    .string "into people to startle passersby.\p"
+    .string "I guess it was true!$"

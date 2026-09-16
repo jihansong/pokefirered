@@ -1669,16 +1669,18 @@ static const struct SpriteFrameImage sPicTable_Chansey[] = {
     overworld_frame(gObjectEventPic_Chansey, 2, 2, 2),
 };
 
+// Frames 3-8 are walking frames drawn for the following starter PIKACHU;
+// FR/LG's sprite only had the three standing frames.
 static const struct SpriteFrameImage sPicTable_Pikachu[] = {
     overworld_frame(gObjectEventPic_Pikachu, 2, 2, 0),
     overworld_frame(gObjectEventPic_Pikachu, 2, 2, 1),
     overworld_frame(gObjectEventPic_Pikachu, 2, 2, 2),
-    overworld_frame(gObjectEventPic_Pikachu, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Pikachu, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Pikachu, 2, 2, 1),
-    overworld_frame(gObjectEventPic_Pikachu, 2, 2, 1),
-    overworld_frame(gObjectEventPic_Pikachu, 2, 2, 2),
-    overworld_frame(gObjectEventPic_Pikachu, 2, 2, 2),
+    overworld_frame(gObjectEventPic_Pikachu, 2, 2, 3),
+    overworld_frame(gObjectEventPic_Pikachu, 2, 2, 4),
+    overworld_frame(gObjectEventPic_Pikachu, 2, 2, 5),
+    overworld_frame(gObjectEventPic_Pikachu, 2, 2, 6),
+    overworld_frame(gObjectEventPic_Pikachu, 2, 2, 7),
+    overworld_frame(gObjectEventPic_Pikachu, 2, 2, 8),
 };
 
 static const struct SpriteFrameImage sPicTable_Jigglypuff[] = {

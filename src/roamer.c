@@ -1,7 +1,7 @@
 #include "global.h"
 #include "random.h"
 #include "overworld.h"
-#include "field_specials.h"
+#include "event_data.h"
 #include "constants/maps.h"
 #include "constants/region_map_sections.h"
 
@@ -79,22 +79,25 @@ void ClearRoamerData(void)
     }
 }
 
-#define GetRoamerSpecies() ({\
-    u16 a;\
-    switch (GetStarterSpecies())\
-    {\
-    default:\
-        a = SPECIES_RAIKOU;\
-        break;\
-    case SPECIES_BULBASAUR:\
-        a = SPECIES_ENTEI;\
-        break;\
-    case SPECIES_CHARMANDER:\
-        a = SPECIES_SUICUNE;\
-        break;\
-    }\
-    a;\
-})
+static const u16 sRoamerSpecies[] = {
+    SPECIES_ENTEI,
+    SPECIES_SUICUNE,
+    SPECIES_RAIKOU,
+};
+
+void ChooseRoamerSpecies(void)
+{
+    VarSet(VAR_ROAMER_SPECIES, Random() % ARRAY_COUNT(sRoamerSpecies));
+}
+
+u16 GetRoamerSpecies(void)
+{
+    u16 idx = VarGet(VAR_ROAMER_SPECIES);
+
+    if (idx >= ARRAY_COUNT(sRoamerSpecies))
+        idx = 0;
+    return sRoamerSpecies[idx];
+}
 
 void CreateInitialRoamerMon(void)
 {

@@ -230,7 +230,6 @@ PalletTown_ProfessorOaksLab_EventScript_GivePikachu::
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_PALLET_LADY_NOT_BLOCKING_SIGN
 	givemon SPECIES_PIKACHU, 5
-	setvar VAR_STARTER_MON, 0
 	bufferspeciesname STR_VAR_1, SPECIES_PIKACHU
 	message PalletTown_ProfessorOaksLab_Text_ReceivedMonFromOak
 	waitmessage
@@ -324,6 +323,8 @@ PalletTown_ProfessorOaksLab_EventScript_RivalBattle::
 	call_if_eq VAR_TEMP_2, 2, PalletTown_ProfessorOaksLab_EventScript_RivalApproachForBattleMid
 	call_if_eq VAR_TEMP_2, 3, PalletTown_ProfessorOaksLab_EventScript_RivalApproachForBattleRight
 	trainerbattle_earlyrival TRAINER_RIVAL_OAKS_LAB_EEVEE, RIVAL_BATTLE_TUTORIAL, PalletTown_ProfessorOaksLab_Text_RivalDefeat, Text_RivalVictory
+	setvar VAR_RIVAL_STARTER, RIVAL_STARTER_FLAREON
+	call_if_eq VAR_RESULT, TRUE, PalletTown_ProfessorOaksLab_EventScript_SetRivalStarterVaporeon
 	goto PalletTown_ProfessorOaksLab_EventScript_EndRivalBattle
 	end
 
@@ -367,6 +368,12 @@ PalletTown_ProfessorOaksLab_Movement_RivalApproachForBattleRight::
 	walk_right
 	walk_in_place_faster_down
 	step_end
+
+@ Losing in the lab locks the rival's Eevee into Vaporeon. A win means Flareon,
+@ which becomes Jolteon if the player also wins on Route 22.
+PalletTown_ProfessorOaksLab_EventScript_SetRivalStarterVaporeon::
+	setvar VAR_RIVAL_STARTER, RIVAL_STARTER_VAPOREON
+	return
 
 PalletTown_ProfessorOaksLab_EventScript_EndRivalBattle::
 	special HealPlayerParty

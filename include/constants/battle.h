@@ -72,6 +72,11 @@
 #define RIVAL_BATTLE_HEAL_AFTER  1
 #define RIVAL_BATTLE_TUTORIAL    3
 
+// Values for VAR_RIVAL_STARTER
+#define RIVAL_STARTER_JOLTEON    0
+#define RIVAL_STARTER_FLAREON    1
+#define RIVAL_STARTER_VAPOREON   2
+
 // Battle Outcome defines
 #define B_OUTCOME_WON                  1
 #define B_OUTCOME_LOST                 2

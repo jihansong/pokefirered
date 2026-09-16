@@ -71,7 +71,6 @@ static void Task_SuspendListMenu(u8 taskId);
 static void Task_RedrawScrollArrowsAndWaitInput(u8 taskId);
 static void Task_CreateMenuRemoveScrollIndicatorArrowPair(u8 taskId);
 static void Task_ListMenuRemoveScrollIndicatorArrowPair(u8 taskId);
-static u16 GetStarterSpeciesById(u16 starterIdx);
 static void ChangeBoxPokemonNickname_CB(void);
 static void ChangePokemonNickname_CB(void);
 static void Task_RunPokemonLeagueLightingEffect(u8 taskId);
@@ -418,7 +417,7 @@ bool8 AreLeadMonEVsMaxedOut(void)
 
 bool8 IsStarterFirstStageInParty(void)
 {
-    u16 species = GetStarterSpeciesById(VarGet(VAR_STARTER_MON));
+    u16 species = GetStarterSpecies();
     u8 partyCount = CalculatePlayerPartyCount();
     u8 i;
     for (i = 0; i < partyCount; i++)
@@ -1516,22 +1515,9 @@ void ForcePlayerToStartSurfing(void)
     SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_SURFING);
 }
 
-static const u16 sStarterSpecies[] = {
-    SPECIES_BULBASAUR,
-    SPECIES_SQUIRTLE,
-    SPECIES_CHARMANDER
-};
-
-static u16 GetStarterSpeciesById(u16 idx)
-{
-    if (idx >= NELEMS(sStarterSpecies))
-        idx = 0;
-    return sStarterSpecies[idx];
-}
-
 u16 GetStarterSpecies(void)
 {
-    return GetStarterSpeciesById(VarGet(VAR_STARTER_MON));
+    return SPECIES_PIKACHU;
 }
 
 void SetSeenMon(void)

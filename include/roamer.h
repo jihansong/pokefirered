@@ -5,6 +5,8 @@
 
 void ClearRoamerData(void);
 void ClearRoamerLocationData(void);
+void ChooseRoamerSpecies(void);
+u16 GetRoamerSpecies(void);
 void InitRoamer(void);
 void UpdateLocationHistoryForRoamer(void);
 void RoamerMoveToOtherLocationSet(void);

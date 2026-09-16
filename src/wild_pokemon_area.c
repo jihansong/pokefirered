@@ -9,12 +9,6 @@
 #include "constants/region_map_sections.h"
 #include "constants/maps.h"
 
-struct RoamerPair
-{
-    u16 roamer;
-    u16 starter;
-};
-
 static s32 GetRoamerIndex(u16 species);
 static s32 GetRoamerPokedexAreaMarkers(u16 species, struct Subsprite * subsprites);
 static bool32 IsSpeciesOnMap(const struct WildPokemonHeader * data, s32 species);
@@ -153,10 +147,10 @@ static const struct
     { sDexAreas_Sevii7, ARRAY_COUNT(sDexAreas_Sevii7) }
 };
 
-static const struct RoamerPair sRoamerPairs[] = {
-    { SPECIES_ENTEI,   SPECIES_BULBASAUR  },
-    { SPECIES_SUICUNE, SPECIES_CHARMANDER },
-    { SPECIES_RAIKOU,  SPECIES_SQUIRTLE   }
+static const u16 sRoamerSpecies[] = {
+    SPECIES_ENTEI,
+    SPECIES_SUICUNE,
+    SPECIES_RAIKOU,
 };
 
 // Scans for the given species and populates 'subsprites' with the area markers.
@@ -223,9 +217,9 @@ s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites)
 static s32 GetRoamerIndex(u16 species)
 {
     s32 i;
-    for (i = 0; i < ARRAY_COUNT(sRoamerPairs); i++)
+    for (i = 0; i < ARRAY_COUNT(sRoamerSpecies); i++)
     {
-        if (sRoamerPairs[i].roamer == species)
+        if (sRoamerSpecies[i] == species)
             return i;
     }
 
@@ -239,11 +233,11 @@ static s32 GetRoamerPokedexAreaMarkers(u16 species, struct Subsprite * subsprite
     u16 dexArea;
     s32 tableIndex;
 
-    // Make sure that this is a roamer species, and that it corresponds to the player's starter.
+    // Make sure that this is a roamer species, and that it is the one this save rolled.
     roamerIdx = GetRoamerIndex(species);
     if (roamerIdx < 0)
         return 0;
-    if (sRoamerPairs[roamerIdx].starter != GetStarterSpecies())
+    if (species != GetRoamerSpecies())
         return 0;
 
     mapSecId = GetRoamerLocationMapSectionId();

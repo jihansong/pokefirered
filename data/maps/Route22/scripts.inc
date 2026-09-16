@@ -30,9 +30,8 @@ Route22_EventScript_EarlyRival::
 	call_if_eq VAR_TEMP_1, 2, Route22_EventScript_EarlyRivalApproachBottom
 	delay 6
 	msgbox Route22_Text_EarlyRivalIntro
-	call_if_eq VAR_STARTER_MON, 2, Route22_EventScript_EarlyRivalSquirtle
-	call_if_eq VAR_STARTER_MON, 1, Route22_EventScript_EarlyRivalBulbasaur
-	call_if_eq VAR_STARTER_MON, 0, Route22_EventScript_EarlyRivalCharmander
+	trainerbattle_earlyrival TRAINER_RIVAL_ROUTE22_EARLY, RIVAL_BATTLE_HEAL_AFTER, Route22_Text_EarlyRivalDefeat, Text_RivalVictory
+	call_if_eq VAR_RESULT, FALSE, Route22_EventScript_EarlyRivalCheckEvolveJolteon
 	msgbox Route22_Text_EarlyRivalPostBattle
 	closemessage
 	delay 10
@@ -57,16 +56,13 @@ Route22_EventScript_EarlyRivalApproachBottom::
 	waitmovement 0
 	return
 
-Route22_EventScript_EarlyRivalSquirtle::
-	trainerbattle_earlyrival TRAINER_RIVAL_ROUTE22_EARLY_SQUIRTLE, 0, Route22_Text_EarlyRivalDefeat, Text_RivalVictory
+@ Beating the rival here after beating him in the lab sends his Eevee down the Jolteon line.
+Route22_EventScript_EarlyRivalCheckEvolveJolteon::
+	call_if_eq VAR_RIVAL_STARTER, RIVAL_STARTER_FLAREON, Route22_EventScript_EarlyRivalSetJolteon
 	return
 
-Route22_EventScript_EarlyRivalBulbasaur::
-	trainerbattle_earlyrival TRAINER_RIVAL_ROUTE22_EARLY_BULBASAUR, 0, Route22_Text_EarlyRivalDefeat, Text_RivalVictory
-	return
-
-Route22_EventScript_EarlyRivalCharmander::
-	trainerbattle_earlyrival TRAINER_RIVAL_ROUTE22_EARLY_CHARMANDER, 0, Route22_Text_EarlyRivalDefeat, Text_RivalVictory
+Route22_EventScript_EarlyRivalSetJolteon::
+	setvar VAR_RIVAL_STARTER, RIVAL_STARTER_JOLTEON
 	return
 
 Route22_EventScript_EarlyRivalExit::
@@ -181,9 +177,9 @@ Route22_EventScript_LateRival::
 	call_if_eq VAR_TEMP_1, 2, Route22_EventScript_LateRivalApproachBottom
 	msgbox Route22_Text_LateRivalIntro
 	setvar VAR_LAST_TALKED, LOCALID_ROUTE22_RIVAL
-	call_if_eq VAR_STARTER_MON, 2, Route22_EventScript_LateRivalSquirtle
-	call_if_eq VAR_STARTER_MON, 1, Route22_EventScript_LateRivalBulbasaur
-	call_if_eq VAR_STARTER_MON, 0, Route22_EventScript_LateRivalCharmander
+	call_if_eq VAR_RIVAL_STARTER, RIVAL_STARTER_JOLTEON, Route22_EventScript_LateRivalJolteon
+	call_if_eq VAR_RIVAL_STARTER, RIVAL_STARTER_FLAREON, Route22_EventScript_LateRivalFlareon
+	call_if_eq VAR_RIVAL_STARTER, RIVAL_STARTER_VAPOREON, Route22_EventScript_LateRivalVaporeon
 	msgbox Route22_Text_LateRivalPostBattle
 	closemessage
 	delay 10
@@ -207,16 +203,16 @@ Route22_EventScript_LateRivalApproachBottom::
 	waitmovement 0
 	return
 
-Route22_EventScript_LateRivalSquirtle::
-	trainerbattle_no_intro TRAINER_RIVAL_ROUTE22_LATE_SQUIRTLE, Route22_Text_LateRivalDefeat
+Route22_EventScript_LateRivalJolteon::
+	trainerbattle_no_intro TRAINER_RIVAL_ROUTE22_LATE_JOLTEON, Route22_Text_LateRivalDefeat
 	return
 
-Route22_EventScript_LateRivalBulbasaur::
-	trainerbattle_no_intro TRAINER_RIVAL_ROUTE22_LATE_BULBASAUR, Route22_Text_LateRivalDefeat
+Route22_EventScript_LateRivalFlareon::
+	trainerbattle_no_intro TRAINER_RIVAL_ROUTE22_LATE_FLAREON, Route22_Text_LateRivalDefeat
 	return
 
-Route22_EventScript_LateRivalCharmander::
-	trainerbattle_no_intro TRAINER_RIVAL_ROUTE22_LATE_CHARMANDER, Route22_Text_LateRivalDefeat
+Route22_EventScript_LateRivalVaporeon::
+	trainerbattle_no_intro TRAINER_RIVAL_ROUTE22_LATE_VAPOREON, Route22_Text_LateRivalDefeat
 	return
 
 Route22_Movement_LateRivalExit::

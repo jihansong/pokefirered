@@ -42,9 +42,9 @@ SilphCo_7F_EventScript_RivalScene::
 	call_if_eq VAR_TEMP_1, 1, SilphCo_7F_EventScript_RivalApproachBottom
 	msgbox SilphCo_7F_Text_RivalIntro
 	setvar VAR_LAST_TALKED, LOCALID_SILPH_CO_RIVAL
-	call_if_eq VAR_STARTER_MON, 2, SilphCo_7F_EventScript_RivalSquirtle
-	call_if_eq VAR_STARTER_MON, 1, SilphCo_7F_EventScript_RivalBulbasaur
-	call_if_eq VAR_STARTER_MON, 0, SilphCo_7F_EventScript_RivalCharmander
+	call_if_eq VAR_RIVAL_STARTER, RIVAL_STARTER_JOLTEON, SilphCo_7F_EventScript_RivalJolteon
+	call_if_eq VAR_RIVAL_STARTER, RIVAL_STARTER_FLAREON, SilphCo_7F_EventScript_RivalFlareon
+	call_if_eq VAR_RIVAL_STARTER, RIVAL_STARTER_VAPOREON, SilphCo_7F_EventScript_RivalVaporeon
 	msgbox SilphCo_7F_Text_RivalPostBattle
 	closemessage
 	playbgm MUS_RIVAL_EXIT, 0
@@ -67,16 +67,16 @@ SilphCo_7F_EventScript_RivalApproachTop::
 SilphCo_7F_EventScript_RivalApproachBottom::
 	return
 
-SilphCo_7F_EventScript_RivalSquirtle::
-	trainerbattle_no_intro TRAINER_RIVAL_SILPH_SQUIRTLE, SilphCo_7F_Text_RivalDefeat
+SilphCo_7F_EventScript_RivalJolteon::
+	trainerbattle_no_intro TRAINER_RIVAL_SILPH_JOLTEON, SilphCo_7F_Text_RivalDefeat
 	return
 
-SilphCo_7F_EventScript_RivalBulbasaur::
-	trainerbattle_no_intro TRAINER_RIVAL_SILPH_BULBASAUR, SilphCo_7F_Text_RivalDefeat
+SilphCo_7F_EventScript_RivalFlareon::
+	trainerbattle_no_intro TRAINER_RIVAL_SILPH_FLAREON, SilphCo_7F_Text_RivalDefeat
 	return
 
-SilphCo_7F_EventScript_RivalCharmander::
-	trainerbattle_no_intro TRAINER_RIVAL_SILPH_CHARMANDER, SilphCo_7F_Text_RivalDefeat
+SilphCo_7F_EventScript_RivalVaporeon::
+	trainerbattle_no_intro TRAINER_RIVAL_SILPH_VAPOREON, SilphCo_7F_Text_RivalDefeat
 	return
 
 SilphCo_7F_EventScript_RivalExitTop::

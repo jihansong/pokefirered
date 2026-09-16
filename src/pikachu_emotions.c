@@ -495,6 +495,11 @@ static void Task_StarterPikachuEmotion(u8 taskId)
     }
 }
 
+void PlayStarterPikachuVoice(u8 voiceId)
+{
+    PlayPikachuVoice(voiceId, sPikachuVoiceLengths[voiceId]);
+}
+
 // Special for talking to the following PIKACHU; the script waits with waitstate.
 void DoStarterPikachuEmotion(void)
 {

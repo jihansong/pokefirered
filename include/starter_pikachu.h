@@ -47,5 +47,6 @@ void UpdatePikachuMoodForLearnedMove(struct Pokemon *mon, u16 move);
 void UpdatePikachuMoodOnStep(void);
 void UpdatePikachuMoodAfterBattle(u8 battleOutcome);
 void SetPikachuFishingMood(void);
+void SetPikachuRefusedStoneMood(void);
 
 #endif // GUARD_STARTER_PIKACHU_H

@@ -242,6 +242,11 @@ void UpdatePikachuMoodAfterBattle(u8 battleOutcome)
         VarSet(VAR_PIKACHU_MOOD, MOOD_AFTER_BATTLE);
 }
 
+void SetPikachuRefusedStoneMood(void)
+{
+    SetPikachuMoodAndModifier(0x82, PIKACHU_MODIFIER_REFUSED_STONE);
+}
+
 void SetPikachuFishingMood(void)
 {
     if (IsStarterPikachuAliveInParty())

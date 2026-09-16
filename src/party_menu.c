@@ -57,6 +57,8 @@
 #include "tm_case.h"
 #include "trade.h"
 #include "union_room.h"
+#include "pikachu_emotions.h"
+#include "starter_pikachu.h"
 #include "constants/battle.h"
 #include "constants/easy_chat.h"
 #include "constants/field_effects.h"
@@ -68,6 +70,7 @@
 #include "constants/quest_log.h"
 #include "constants/songs.h"
 #include "constants/sound.h"
+#include "constants/pikachu_emotions.h"
 
 #define PARTY_PAL_SELECTED     (1 << 0)
 #define PARTY_PAL_FAINTED      (1 << 1)
@@ -418,6 +421,8 @@ COMMON_DATA void (*gItemUseCB)(u8, TaskFunc) = NULL;
 
 #include "data/pokemon/tutor_learnsets.h"
 #include "data/party_menu.h"
+
+static const u8 sText_PkmnIsRefusing[] = _("{STR_VAR_1} is refusing!{PAUSE_UNTIL_PRESS}");
 
 void InitPartyMenu(u8 menuType, u8 layout, u8 partyAction, bool8 keepCursorPos, u8 messageId, TaskFunc task, MainCallback callback)
 {
@@ -5292,9 +5297,23 @@ static void Task_SacredAshDisplayHPRestored(u8 taskId)
 
 void ItemUseCB_EvolutionStone(u8 taskId, TaskFunc func)
 {
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
     bool8 noEffect;
 
     PlaySE(SE_SELECT);
+    // Like in Yellow, the starter PIKACHU won't evolve. The stone isn't used up.
+    if (IsStarterPikachu(mon) && GetEvolutionTargetSpecies(mon, EVO_MODE_ITEM_CHECK, gSpecialVar_ItemId) != SPECIES_NONE)
+    {
+        gPartyMenuUseExitCallback = FALSE;
+        PlayStarterPikachuVoice(PIKACHU_VOICE_28);
+        SetPikachuRefusedStoneMood();
+        GetMonNickname(mon, gStringVar1);
+        StringExpandPlaceholders(gStringVar4, sText_PkmnIsRefusing);
+        DisplayPartyMenuMessage(gStringVar4, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = func;
+        return;
+    }
     noEffect = PokemonItemUseNoEffect(&gPlayerParty[gPartyMenu.slotId], gSpecialVar_ItemId, gPartyMenu.slotId, 0);
     if (noEffect)
     {

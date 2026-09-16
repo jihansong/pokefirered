@@ -4398,6 +4398,18 @@
       "secondary_tileset": "gTileset_MtEmber",
       "border_filepath": "data/layouts/OneIsland_KindleRoad_EmberSpa/border.bin",
       "blockdata_filepath": "data/layouts/OneIsland_KindleRoad_EmberSpa/map.bin"
+    },
+    {
+      "id": "LAYOUT_HIDDEN_GROTTO",
+      "name": "HiddenGrotto_Layout",
+      "width": 15,
+      "height": 13,
+      "border_width": 3,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_ViridianForest",
+      "border_filepath": "data/layouts/HiddenGrotto/border.bin",
+      "blockdata_filepath": "data/layouts/HiddenGrotto/map.bin"
     }
   ]
 }

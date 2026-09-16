@@ -200,15 +200,15 @@
 #define VAR_ROCKET_HIDEOUT_SECURITY                                            0x4092
 #define VAR_KENYA_DELIVERY                                                     0x4093
 #define VAR_LATI_ROAMER_DATA_START                                             0x4094 // 0x4094-0x40A7: LATIAS and LATIOS roamer data
-#define VAR_0x40A8                 0x40A8
-#define VAR_0x40A9                 0x40A9
+#define VAR_HIDDEN_GROTTO_ID                                                   0x40A8
+#define VAR_HIDDEN_GROTTO_STATE_START                                          0x40A9 // one var per grotto, see GROTTO_STATE_VARS
 
 #define VAR_QLBAK_TRAINER_REMATCHES 0x40AA // array of 4
 #define VAR_QLBAK_MAP_LAYOUT        0x40AE
 
-#define VAR_0x40AF                 0x40AF
-#define VAR_0x40B0                 0x40B0
-#define VAR_0x40B1                 0x40B1
+#define VAR_HIDDEN_GROTTO_STATE_2                                              0x40AF
+#define VAR_HIDDEN_GROTTO_STATE_3                                              0x40B0
+#define VAR_HIDDEN_GROTTO_STATE_4                                              0x40B1
 #define VAR_0x40B2                 0x40B2
 #define VAR_0x40B3                 0x40B3
 #define VAR_PORTHOLE               0x40B4

@@ -207,8 +207,8 @@
 #define FLAG_HIDE_ROCKET_HIDEOUT_B1F_CAMERA_GRUNT 0x0BD
 #define FLAG_HIDE_ROUTE16_FAKE_OAK 0x0BE
 #define FLAG_HIDE_ROUTE16_DITTO 0x0BF
-#define FLAG_0x0C0               0x0C0
-#define FLAG_0x0C1               0x0C1
+#define FLAG_HIDE_HIDDEN_GROTTO_POKEMON 0x0C0
+#define FLAG_HIDE_HIDDEN_GROTTO_ITEM 0x0C1
 #define FLAG_0x0C2               0x0C2
 #define FLAG_0x0C3               0x0C3
 #define FLAG_0x0C4               0x0C4

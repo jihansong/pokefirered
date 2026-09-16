@@ -24,6 +24,7 @@
 #include "help_system.h"
 #include "pokemon_storage_system.h"
 #include "script_menu.h"
+#include "field_fadetransition.h"
 #include "data.h"
 #include "pokedex.h"
 #include "text_window.h"
@@ -2723,4 +2724,150 @@ void HandOverKenya(void)
     ZeroMonData(&gPlayerParty[slot]);
     CompactPartySlots();
     CalculatePlayerPartyCount();
+}
+
+// BW2's Hidden Grottoes. Each grotto remembers its contents and when it was last
+// checked in one var: bits 0-2 hold the contents (0 = empty, 1-2 = POKéMON, 3-5 =
+// item) and bits 3-15 the step count / 256 (plus 1, so 0 means never visited). Every 256 steps there is a 5% chance
+// that an empty grotto fills up again.
+#define GROTTO_COUNT 4
+#define GROTTO_CONTENT_MASK 7
+
+struct HiddenGrotto
+{
+    u16 species[2];
+    u8 level;
+    u16 items[3];
+};
+
+static const u16 sGrottoStateVars[GROTTO_COUNT] = {
+    VAR_HIDDEN_GROTTO_STATE_START,
+    VAR_HIDDEN_GROTTO_STATE_2,
+    VAR_HIDDEN_GROTTO_STATE_3,
+    VAR_HIDDEN_GROTTO_STATE_4,
+};
+
+// VAR_HIDDEN_GROTTO_ID 1-4
+static const struct HiddenGrotto sHiddenGrottoes[GROTTO_COUNT] = {
+    {{SPECIES_SCYTHER, SPECIES_PINSIR}, 8, {ITEM_SILVER_POWDER, ITEM_GREAT_BALL, ITEM_RARE_CANDY}},      // Viridian Forest
+    {{SPECIES_FARFETCHD, SPECIES_MR_MIME}, 16, {ITEM_BIG_MUSHROOM, ITEM_STARDUST, ITEM_NUGGET}},        // Route 11
+    {{SPECIES_CHANSEY, SPECIES_LICKITUNG}, 26, {ITEM_STAR_PIECE, ITEM_HEART_SCALE, ITEM_RARE_CANDY}},   // Route 13
+    {{SPECIES_KANGASKHAN, SPECIES_TAUROS}, 27, {ITEM_PP_UP, ITEM_BIG_PEARL, ITEM_NUGGET}},              // Route 15
+};
+
+static s32 GetCurrentGrotto(void)
+{
+    u16 id = VarGet(VAR_HIDDEN_GROTTO_ID);
+
+    if (id == 0 || id > GROTTO_COUNT)
+        return -1;
+    return id - 1;
+}
+
+// Run on entering the grotto map: refills it if due and shows the contents.
+void PrepareHiddenGrotto(void)
+{
+    s32 grotto = GetCurrentGrotto();
+    u16 state, content, lastBucket, bucket, elapsed;
+
+    FlagSet(FLAG_HIDE_HIDDEN_GROTTO_POKEMON);
+    FlagSet(FLAG_HIDE_HIDDEN_GROTTO_ITEM);
+    if (grotto < 0)
+        return;
+
+    state = VarGet(sGrottoStateVars[grotto]);
+    content = state & GROTTO_CONTENT_MASK;
+    lastBucket = state >> 3;
+    // Stored buckets are 1-8191 so that 0 means the grotto was never visited.
+    bucket = ((GetGameStat(GAME_STAT_STEPS) >> 8) % 0x1FFF) + 1;
+    elapsed = (bucket - lastBucket + 0x1FFF) % 0x1FFF;
+    if (content == 0 && lastBucket == 0)
+    {
+        // Like BW2, a grotto that has never been visited is full
+        if (Random() % 2 == 0)
+            content = 1 + Random() % 2;
+        else
+            content = 3 + Random() % 3;
+    }
+    else if (content == 0)
+    {
+        if (elapsed > 100)
+            elapsed = 100;
+        while (elapsed-- != 0)
+        {
+            if (Random() % 100 < 5)
+            {
+                if (Random() % 2 == 0)
+                    content = 1 + Random() % 2;
+                else
+                    content = 3 + Random() % 3;
+                break;
+            }
+        }
+    }
+    VarSet(sGrottoStateVars[grotto], content | (bucket << 3));
+
+    if (content >= 1 && content <= 2)
+        FlagClear(FLAG_HIDE_HIDDEN_GROTTO_POKEMON);
+    else if (content >= 3)
+        FlagClear(FLAG_HIDE_HIDDEN_GROTTO_ITEM);
+}
+
+// Puts the grotto's item in VAR_0x8004 (ITEM_NONE if it isn't an item).
+void GetHiddenGrottoItem(void)
+{
+    s32 grotto = GetCurrentGrotto();
+    u16 content;
+
+    gSpecialVar_0x8004 = ITEM_NONE;
+    if (grotto < 0)
+        return;
+    content = VarGet(sGrottoStateVars[grotto]) & GROTTO_CONTENT_MASK;
+    if (content >= 3 && content <= 5)
+        gSpecialVar_0x8004 = sHiddenGrottoes[grotto].items[content - 3];
+}
+
+// Creates the grotto's wild POKéMON (1 in 256 shiny) and puts its species in VAR_0x8004.
+void CreateHiddenGrottoWildMon(void)
+{
+    s32 grotto = GetCurrentGrotto();
+    u16 content, species;
+    u32 otId, personality;
+
+    gSpecialVar_0x8004 = SPECIES_NONE;
+    if (grotto < 0)
+        return;
+    content = VarGet(sGrottoStateVars[grotto]) & GROTTO_CONTENT_MASK;
+    if (content < 1 || content > 2)
+        return;
+    species = sHiddenGrottoes[grotto].species[content - 1];
+    ZeroEnemyPartyMons();
+    otId = T1_READ_32(gSaveBlock2Ptr->playerTrainerId);
+    if (Random() % 256 == 0)
+    {
+        u16 low = Random();
+        personality = ((u32)((otId >> 16) ^ (otId & 0xFFFF) ^ low) << 16) | low;
+    }
+    else
+    {
+        personality = Random32();
+    }
+    CreateMon(&gEnemyParty[0], species, sHiddenGrottoes[grotto].level, USE_RANDOM_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
+    gSpecialVar_0x8004 = species;
+}
+
+void ClearHiddenGrotto(void)
+{
+    s32 grotto = GetCurrentGrotto();
+
+    if (grotto >= 0)
+        VarSet(sGrottoStateVars[grotto], VarGet(sGrottoStateVars[grotto]) & ~GROTTO_CONTENT_MASK);
+}
+
+// Leaves the grotto back to where the player came in (set with setdynamicwarp).
+void LeaveHiddenGrotto(void)
+{
+    SetWarpDestinationToDynamicWarp(WARP_ID_DYNAMIC);
+    DoWarp();
+    ResetInitialPlayerAvatarState();
 }

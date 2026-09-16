@@ -467,4 +467,9 @@ gSpecials::
 	def_special CheckKenyaDelivery
 	def_special HandOverKenya
 	def_special StartLatiRoamers
+	def_special PrepareHiddenGrotto
+	def_special GetHiddenGrottoItem
+	def_special CreateHiddenGrottoWildMon
+	def_special ClearHiddenGrotto
+	def_special LeaveHiddenGrotto
 gSpecialsEnd::

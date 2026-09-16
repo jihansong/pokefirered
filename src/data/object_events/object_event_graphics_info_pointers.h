@@ -159,6 +159,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CapsuleShards;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedGyarados;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PersianStatue;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ditto;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GrottoGrass;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -323,4 +324,5 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_RED_GYARADOS]             = &gObjectEventGraphicsInfo_RedGyarados,
     [OBJ_EVENT_GFX_PERSIAN_STATUE]           = &gObjectEventGraphicsInfo_PersianStatue,
     [OBJ_EVENT_GFX_DITTO]                    = &gObjectEventGraphicsInfo_Ditto,
+    [OBJ_EVENT_GFX_GROTTO_GRASS]             = &gObjectEventGraphicsInfo_GrottoGrass,
 };

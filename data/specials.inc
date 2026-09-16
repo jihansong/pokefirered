@@ -457,4 +457,6 @@ gSpecials::
 	def_special HideFollowerPikachu
 	def_special ShowFollowerPikachu
 	def_special DoStarterPikachuEmotion
+	def_special CanPushTruck
+	def_special PushTruck
 gSpecialsEnd::

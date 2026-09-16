@@ -74,6 +74,11 @@ VermilionCity_Text_DontHaveNeededSSTicket::
 VermilionCity_Text_TheShipSetSail::
     .string "The ship set sail.$"
 
+VermilionCity_Text_ShipSetSailDockStillOpen::
+    .string "The ship set sail.\p"
+    .string "You're still free to look around\n"
+    .string "the dock, though.$"
+
 VermilionCity_Text_BoardSeagallopTriPass::
     .string "Ah, you have a TRI-PASS.\p"
     .string "Would you like to board\n"

@@ -21,6 +21,7 @@
 #include "strings.h"
 #include "wild_encounter.h"
 #include "starter_pikachu.h"
+#include "follower_pikachu.h"
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
 #include "constants/songs.h"
@@ -1458,6 +1459,128 @@ static bool8 DoBoulderFinish(struct Task *task, struct ObjectEvent *playerObject
     }
     return FALSE;
 }
+
+// Strength push of a two-tile object, e.g. the truck on the S.S. Anne dock.
+// VAR_0x8004 and VAR_0x8005 are the local ids of its two halves; the push goes
+// the way the player faces, using the same moves, dust and sound as a boulder.
+#define tState    data[0]
+#define tDir      data[1]
+#define tObjA     data[2]
+#define tObjB     data[3]
+
+static bool8 GetTruckHalves(u8 *objA, u8 *objB)
+{
+    return !TryGetObjectEventIdByLocalIdAndMap(gSpecialVar_0x8004, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, objA)
+        && !TryGetObjectEventIdByLocalIdAndMap(gSpecialVar_0x8005, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, objB);
+}
+
+static bool8 CanTruckHalfMoveTo(struct ObjectEvent *half, struct ObjectEvent *other, u8 dir)
+{
+    s16 x = half->currentCoords.x;
+    s16 y = half->currentCoords.y;
+    u8 objectEventId;
+    u8 elevation;
+
+    MoveCoords(dir, &x, &y);
+    if (x == other->currentCoords.x && y == other->currentCoords.y)
+        return TRUE;
+    if (MapGridGetCollisionAt(x, y) || MetatileBehavior_IsSurfable(MapGridGetMetatileBehaviorAt(x, y)))
+        return FALSE;
+    elevation = MapGridGetElevationAt(x, y);
+    if (half->currentElevation != 0 && elevation != 0 && elevation != 15 && elevation != half->currentElevation)
+        return FALSE;
+    objectEventId = GetObjectEventIdByXY(x, y);
+    if (objectEventId != OBJECT_EVENTS_COUNT && !IsFollowerPikachuObject(&gObjectEvents[objectEventId]))
+        return FALSE;
+    return TRUE;
+}
+
+// Returns TRUE if the truck can be pushed the way the player faces.
+// Also puts the tile in front of the player, which the push frees, in VAR_0x8006/VAR_0x8007.
+bool8 CanPushTruck(void)
+{
+    u8 objA, objB, dir;
+    s16 x, y;
+
+    if (!GetTruckHalves(&objA, &objB) || !TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_ON_FOOT))
+        return FALSE;
+    dir = GetPlayerFacingDirection();
+    if (!CanTruckHalfMoveTo(&gObjectEvents[objA], &gObjectEvents[objB], dir)
+     || !CanTruckHalfMoveTo(&gObjectEvents[objB], &gObjectEvents[objA], dir))
+        return FALSE;
+    GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
+    gSpecialVar_0x8006 = x - MAP_OFFSET;
+    gSpecialVar_0x8007 = y - MAP_OFFSET;
+    return TRUE;
+}
+
+static void Task_PushTruck(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
+    struct ObjectEvent *halfA = &gObjectEvents[task->tObjA];
+    struct ObjectEvent *halfB = &gObjectEvents[task->tObjB];
+    struct ObjectEvent *half;
+    u8 i;
+
+    switch (task->tState)
+    {
+    case 0:
+        ObjectEventClearHeldMovementIfFinished(player);
+        ObjectEventClearHeldMovementIfFinished(halfA);
+        ObjectEventClearHeldMovementIfFinished(halfB);
+        if (ObjectEventIsMovementOverridden(player) || ObjectEventIsMovementOverridden(halfA) || ObjectEventIsMovementOverridden(halfB))
+            break;
+        ObjectEventSetHeldMovement(player, GetWalkInPlaceNormalMovementAction(task->tDir));
+        for (i = 0; i < 2; i++)
+        {
+            half = i == 0 ? halfA : halfB;
+            ObjectEventSetHeldMovement(half, GetWalkSlowerMovementAction(task->tDir));
+            gFieldEffectArguments[0] = half->currentCoords.x;
+            gFieldEffectArguments[1] = half->currentCoords.y;
+            gFieldEffectArguments[2] = half->previousElevation;
+            gFieldEffectArguments[3] = gSprites[half->spriteId].oam.priority;
+            FieldEffectStart(FLDEFF_DUST);
+        }
+        PlaySE(SE_M_STRENGTH);
+        task->tState++;
+        break;
+    case 1:
+        if (ObjectEventCheckHeldMovementStatus(player)
+         && ObjectEventCheckHeldMovementStatus(halfA)
+         && ObjectEventCheckHeldMovementStatus(halfB))
+        {
+            ObjectEventClearHeldMovementIfFinished(player);
+            ObjectEventClearHeldMovementIfFinished(halfA);
+            ObjectEventClearHeldMovementIfFinished(halfB);
+            DestroyTask(taskId);
+            ScriptContext_Enable();
+        }
+        break;
+    }
+}
+
+// Use with waitstate after CanPushTruck.
+void PushTruck(void)
+{
+    u8 objA, objB;
+    u8 taskId;
+
+    if (!GetTruckHalves(&objA, &objB))
+    {
+        ScriptContext_Enable();
+        return;
+    }
+    taskId = CreateTask(Task_PushTruck, 0xFF);
+    gTasks[taskId].tDir = GetPlayerFacingDirection();
+    gTasks[taskId].tObjA = objA;
+    gTasks[taskId].tObjB = objB;
+}
+
+#undef tState
+#undef tDir
+#undef tObjA
+#undef tObjB
 
 static bool8 (*const sPlayerAvatarSecretBaseMatJump[])(struct Task *, struct ObjectEvent *) = {
     PlayerAvatar_DoSecretBaseMatJump

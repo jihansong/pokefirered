@@ -210,9 +210,17 @@ VermilionCity_EventScript_CheckSeagallopPresentTrigger::
 	setvar VAR_0x8004, SEAGALLOP_VERMILION_CITY
 	goto_if_ge VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F, 5, VermilionCity_EventScript_ChooseSeagallopDestRainbowPass
 	goto_if_ge VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F, 1, VermilionCity_EventScript_ChooseSeagallopDestTriPass
-	msgbox VermilionCity_Text_TheShipSetSail
+	msgbox VermilionCity_Text_ShipSetSailDockStillOpen
+	goto VermilionCity_EventScript_LetPlayerOntoPier
+	end
+
+@ After the S.S. ANNE has sailed, the dock stays open to look around
+VermilionCity_EventScript_LetPlayerOntoPier::
 	closemessage
-	goto VermilionCity_EventScript_WalkUpPier
+	applymovement LOCALID_VERMILION_FERRY_SAILOR, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	setvar VAR_VERMILION_CITY_TICKET_CHECK_TRIGGER, 1
+	releaseall
 	end
 
 VermilionCity_EventScript_Sailor::

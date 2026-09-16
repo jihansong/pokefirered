@@ -516,6 +516,7 @@ gStdScriptsEnd::
 	.include "data/maps/ViridianForest/text.inc"
 	.include "data/maps/MtMoon_1F/text.inc"
 	.include "data/maps/MtMoon_B2F/text.inc"
+	.include "data/maps/SSAnne_Exterior/text.inc"
 	.include "data/maps/SSAnne_1F_Corridor/text.inc"
 	.include "data/maps/SSAnne_2F_Corridor/text.inc"
 	.include "data/maps/SSAnne_3F_Corridor/text.inc"

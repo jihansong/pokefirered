@@ -663,6 +663,26 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_James = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+// The truck covers its own tile and the tile to its right.
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Truck = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_TRUCK,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 1024,
+    .width = 64,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_L,
+    .inanimate = TRUE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_64x32,
+    .subspriteTables = gObjectEventSpriteOamTables_64x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_Truck,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RocketF = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_WHITE,

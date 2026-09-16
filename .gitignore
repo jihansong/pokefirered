@@ -67,3 +67,9 @@ build-cmake-*/
 .cache/
 CMakeLists.txt
 compile_commands.json
+
+# Thunder Yellow ROM (make leafgreen)
+pokemonthyl.gba
+pokemonthyl.elf
+pokemonthyl.map
+pokemonthyl.sym

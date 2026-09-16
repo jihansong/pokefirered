@@ -45,7 +45,12 @@ else
   CPP := $(PREFIX)cpp
 endif
 
-ROM := poke$(BUILD_NAME).gba
+# The default LeafGreen build is the Thunder Yellow ROM
+ifeq ($(BUILD_NAME),leafgreen)
+  ROM := pokemonthyl.gba
+else
+  ROM := poke$(BUILD_NAME).gba
+endif
 OBJ_DIR := $(BUILD_DIR)/$(BUILD_NAME)
 
 ELF := $(ROM:.gba=.elf)
@@ -219,6 +224,7 @@ clean-assets:
 
 tidy:
 	$(RM) $(ALL_BUILDS:%=poke%{.gba,.elf,.map})
+	$(RM) pokemonthyl.gba pokemonthyl.elf pokemonthyl.map
 	$(RM) -r $(BUILD_DIR)
 
 # "friendly" target names for convenience sake

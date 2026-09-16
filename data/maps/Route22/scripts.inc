@@ -228,3 +228,57 @@ Route22_Movement_LateRivalExit::
 Route22_EventScript_LeagueGateSign::
 	msgbox Route22_Text_LeagueGateSign, MSGBOX_SIGN
 	end
+
+@ Randy's sleepy friend, who takes KENYA and the MAIL (HGSS Route 31)
+Route22_EventScript_SleepyMan::
+	lock
+	faceplayer
+	goto_if_set FLAG_GOT_TM40_FROM_KENYA_FRIEND, Route22_EventScript_SleepyManDescribeAerialAce
+	goto_if_ge VAR_KENYA_DELIVERY, 2, Route22_EventScript_SleepyManGiveTM40
+	goto_if_eq VAR_KENYA_DELIVERY, 1, Route22_EventScript_SleepyManTryGetMail
+	msgbox Route22_Text_SleepyMan
+	release
+	end
+
+Route22_EventScript_SleepyManTryGetMail::
+	msgbox Route22_Text_SleepyManGotMail
+	specialvar VAR_RESULT, CheckKenyaDelivery
+	switch VAR_RESULT
+	case 0, Route22_EventScript_SleepyManNoKenya
+	case 1, Route22_EventScript_SleepyManMissingMail
+	case 2, Route22_EventScript_SleepyManWrongMail
+	case 3, Route22_EventScript_SleepyManLastMon
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox Route22_Text_HandOverMailMon
+	call EventScript_RestorePrevTextColor
+	special HandOverKenya
+	setvar VAR_KENYA_DELIVERY, 2
+	msgbox Route22_Text_SleepyManReadingMail
+Route22_EventScript_SleepyManGiveTM40::
+	giveitem ITEM_TM40
+	goto_if_eq VAR_RESULT, FALSE, EventScript_BagIsFull
+	setflag FLAG_GOT_TM40_FROM_KENYA_FRIEND
+Route22_EventScript_SleepyManDescribeAerialAce::
+	msgbox Route22_Text_SleepyManDescribeAerialAce
+	release
+	end
+
+Route22_EventScript_SleepyManNoKenya::
+	msgbox Route22_Text_SleepyManDeclined
+	release
+	end
+
+Route22_EventScript_SleepyManMissingMail::
+	msgbox Route22_Text_SleepyManMissingMail
+	release
+	end
+
+Route22_EventScript_SleepyManWrongMail::
+	msgbox Route22_Text_SleepyManWrongMail
+	release
+	end
+
+Route22_EventScript_SleepyManLastMon::
+	msgbox Route22_Text_SleepyManCantTakeLastMon
+	release
+	end

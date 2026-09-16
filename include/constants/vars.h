@@ -198,7 +198,7 @@
 #define VAR_SSANNE_EXTERIOR_TRUCK_PUSHED                                       0x4090
 #define VAR_FUCHSIA_WARDENS_HOUSE_ELDER                                        0x4091
 #define VAR_ROCKET_HIDEOUT_SECURITY                                            0x4092
-#define VAR_0x4093                 0x4093
+#define VAR_KENYA_DELIVERY                                                     0x4093
 #define VAR_0x4094                 0x4094
 #define VAR_0x4095                 0x4095
 #define VAR_0x4096                 0x4096

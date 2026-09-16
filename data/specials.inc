@@ -463,4 +463,7 @@ gSpecials::
 	def_special NamePikablu
 	def_special HasCaughtMewtwoAndMew
 	def_special MakeScriptedWildMonShiny
+	def_special GiveKenya
+	def_special CheckKenyaDelivery
+	def_special HandOverKenya
 gSpecialsEnd::

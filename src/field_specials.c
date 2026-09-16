@@ -41,6 +41,7 @@
 #include "constants/menu.h"
 #include "constants/event_objects.h"
 #include "constants/metatile_labels.h"
+#include "constants/easy_chat.h"
 
 static EWRAM_DATA u8 sElevatorCurrentFloorWindowId = 0;
 static EWRAM_DATA u16 sElevatorScroll = 0;
@@ -2621,4 +2622,105 @@ void MakeScriptedWildMonShiny(void)
     CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, TRUE, ((u32)high << 16) | low, OT_ID_PLAYER_ID, 0);
     if (heldItem != ITEM_NONE)
         SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &heldItem);
+}
+
+// HGSS's Kenya: a SPEAROW with MAIL from RANDY on Route 2, to be delivered to his
+// sleepy friend at the end of Route 22.
+#define KENYA_OT_ID 0x0000B5E1
+
+enum {
+    KENYA_NOT_IN_PARTY,
+    KENYA_NO_MAIL,
+    KENYA_WRONG_MAIL,
+    KENYA_LAST_MON,
+    KENYA_READY,
+};
+
+static const u8 sKenyaNickname[] = _("KENYA");
+static const u8 sKenyaOTName[] = _("RANDY");
+static const u16 sKenyaMailWords[MAIL_WORDS_COUNT] = {
+    EC_WORD_THE, EC_WORD_BEST, EC_WORD_TRAINER,
+    EC_WORD_GOES, EC_WORD_THERE, EC_WORD_UNDEFINED,
+    EC_WORD_UNDEFINED, EC_WORD_UNDEFINED, EC_WORD_UNDEFINED,
+};
+
+static s32 GetKenyaPartySlot(void)
+{
+    s32 i;
+
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) == SPECIES_SPEAROW
+         && GetMonData(&gPlayerParty[i], MON_DATA_OT_ID, NULL) == KENYA_OT_ID)
+            return i;
+    }
+    return -1;
+}
+
+// Returns FALSE if the party is full.
+bool8 GiveKenya(void)
+{
+    struct Pokemon *mon;
+    u8 slot = CalculatePlayerPartyCount();
+    u8 mailId, i;
+    u16 dexNum;
+
+    if (slot >= PARTY_SIZE)
+        return FALSE;
+    mon = &gPlayerParty[slot];
+    CreateMon(mon, SPECIES_SPEAROW, 10, USE_RANDOM_IVS, FALSE, 0, OT_ID_PRESET, KENYA_OT_ID);
+    SetMonData(mon, MON_DATA_NICKNAME, sKenyaNickname);
+    SetMonData(mon, MON_DATA_OT_NAME, sKenyaOTName);
+    mailId = GiveMailToMon(mon, ITEM_ORANGE_MAIL);
+    if (mailId < PARTY_SIZE)
+    {
+        for (i = 0; i < MAIL_WORDS_COUNT; i++)
+            gSaveBlock1Ptr->mail[mailId].words[i] = sKenyaMailWords[i];
+        StringCopy(gSaveBlock1Ptr->mail[mailId].playerName, sKenyaOTName);
+        for (i = 0; i < TRAINER_ID_LENGTH; i++)
+            gSaveBlock1Ptr->mail[mailId].trainerId[i] = (KENYA_OT_ID >> (i * 8)) & 0xFF;
+    }
+    CalculatePlayerPartyCount();
+    dexNum = SpeciesToNationalPokedexNum(SPECIES_SPEAROW);
+    GetSetPokedexFlag(dexNum, FLAG_SET_SEEN);
+    GetSetPokedexFlag(dexNum, FLAG_SET_CAUGHT);
+    return TRUE;
+}
+
+u8 CheckKenyaDelivery(void)
+{
+    s32 slot = GetKenyaPartySlot();
+    u8 mailId, i;
+
+    if (slot < 0)
+        return KENYA_NOT_IN_PARTY;
+    if (!ItemIsMail(GetMonData(&gPlayerParty[slot], MON_DATA_HELD_ITEM, NULL)))
+        return KENYA_NO_MAIL;
+    mailId = GetMonData(&gPlayerParty[slot], MON_DATA_MAIL, NULL);
+    if (mailId >= PARTY_SIZE)
+        return KENYA_NO_MAIL;
+    for (i = 0; i < MAIL_WORDS_COUNT; i++)
+    {
+        if (gSaveBlock1Ptr->mail[mailId].words[i] != sKenyaMailWords[i])
+            return KENYA_WRONG_MAIL;
+    }
+    if (CalculatePlayerPartyCount() <= 1)
+        return KENYA_LAST_MON;
+    return KENYA_READY;
+}
+
+// Use after CheckKenyaDelivery returned KENYA_READY.
+void HandOverKenya(void)
+{
+    s32 slot = GetKenyaPartySlot();
+    u8 mailId;
+
+    if (slot < 0)
+        return;
+    mailId = GetMonData(&gPlayerParty[slot], MON_DATA_MAIL, NULL);
+    if (mailId < PARTY_SIZE)
+        ClearMailStruct(&gSaveBlock1Ptr->mail[mailId]);
+    ZeroMonData(&gPlayerParty[slot]);
+    CompactPartySlots();
+    CalculatePlayerPartyCount();
 }

@@ -64,3 +64,52 @@ Route22_Text_LeagueGateSign::
 	.string "POKéMON LEAGUE\n"
 	.string "Front Gate$"
 
+
+Route22_Text_SleepyMan::
+    .string "I walked too far today looking for\n"
+    .string "POKéMON.\p"
+    .string "My feet hurt and I'm sleepy…\p"
+    .string "If I were a wild POKéMON, I'd be\n"
+    .string "easy to catch…\p"
+    .string "…Zzzz…$"
+
+Route22_Text_SleepyManGotMail::
+    .string "…Zzzz… Huh?\p"
+    .string "What's that? You have MAIL for me?$"
+
+Route22_Text_HandOverMailMon::
+    .string "{PLAYER} handed over the POKéMON\n"
+    .string "holding the MAIL.$"
+
+Route22_Text_SleepyManReadingMail::
+    .string "Let's see…\p"
+    .string "…THE BEST TRAINER GOES THERE…\p"
+    .string "Heh, he means the POKéMON LEAGUE\n"
+    .string "up this road. That's good to know.\p"
+    .string "Thanks for bringing this to me.\p"
+    .string "My friend's a good guy, and you're\n"
+    .string "swell too!\p"
+    .string "I'd like to do something good in\n"
+    .string "return too!\p"
+    .string "I know! I want you to have this!$"
+
+Route22_Text_SleepyManDescribeAerialAce::
+    .string "TM40 is AERIAL ACE.\p"
+    .string "It's a swift move that never misses,\n"
+    .string "just like my buddy's SPEAROW!\p"
+    .string "…Zzzz…$"
+
+Route22_Text_SleepyManDeclined::
+    .string "What? You don't have it with you?\n"
+    .string "…Zzzz…$"
+
+Route22_Text_SleepyManMissingMail::
+    .string "Why is this POKéMON so special?\n"
+    .string "It doesn't have any MAIL.$"
+
+Route22_Text_SleepyManWrongMail::
+    .string "This MAIL isn't for me.$"
+
+Route22_Text_SleepyManCantTakeLastMon::
+    .string "If I take that POKéMON, what will\n"
+    .string "you use in battle?$"

@@ -161,6 +161,7 @@ enum {
 #define tMovementFrame   data[6]
 #define tPortraitTicks   data[7]
 #define tFlashes         data[8]
+#define tWindowShown     data[9]
 
 static EWRAM_DATA const u8 *sEmotionCmd = NULL;
 static EWRAM_DATA const struct PikachuPortraitCmd *sPortraitCmd = NULL;
@@ -326,13 +327,22 @@ static bool8 UpdatePikachuMovement(u8 taskId)
 static void DrawPortraitFrame(u8 taskId, u8 frame)
 {
     u8 windowId = gTasks[taskId].tWindowId;
+    bool8 firstFrame = !gTasks[taskId].tWindowShown;
 
+    // The window only goes on screen once it has a frame to show, so it never flashes blank.
+    // Its border is drawn first because drawing the border clears the window.
+    if (firstFrame)
+    {
+        PutWindowTilemap(windowId);
+        SetStdWindowBorderStyle(windowId, FALSE);
+        gTasks[taskId].tWindowShown = TRUE;
+    }
     BlitBitmapRectToWindow(windowId, sPortraitSheet,
                            (frame % PIKACHU_PORTRAIT_FRAMES_PER_ROW) * PORTRAIT_SIZE,
                            (frame / PIKACHU_PORTRAIT_FRAMES_PER_ROW) * PORTRAIT_SIZE,
                            PORTRAIT_SHEET_WIDTH, PORTRAIT_SIZE * PIKACHU_PORTRAIT_SHEET_ROWS,
                            0, 0, PORTRAIT_SIZE, PORTRAIT_SIZE);
-    CopyWindowToVram(windowId, COPYWIN_GFX);
+    CopyWindowToVram(windowId, firstFrame ? COPYWIN_FULL : COPYWIN_GFX);
 }
 
 static void OpenPortraitWindow(u8 taskId, u8 portrait)
@@ -342,10 +352,8 @@ static void OpenPortraitWindow(u8 taskId, u8 portrait)
 
     gTasks[taskId].tWindowId = windowId;
     LoadPalette(sPortraitPalette, BG_PLTT_ID(PORTRAIT_PALETTE), PLTT_SIZE_4BPP);
-    PutWindowTilemap(windowId);
-    SetStdWindowBorderStyle(windowId, FALSE);
     FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
-    CopyWindowToVram(windowId, COPYWIN_FULL);
+    gTasks[taskId].tWindowShown = FALSE;
     sPortraitCmd = sPikachuPortraits[portrait];
     gTasks[taskId].tPortraitTicks = 0;
 }
@@ -354,8 +362,11 @@ static void ClosePortraitWindow(u8 taskId)
 {
     u8 windowId = gTasks[taskId].tWindowId;
 
-    ClearWindowTilemap(windowId);
-    ClearStdWindowAndFrameToTransparent(windowId, TRUE);
+    if (gTasks[taskId].tWindowShown)
+    {
+        ClearWindowTilemap(windowId);
+        ClearStdWindowAndFrameToTransparent(windowId, TRUE);
+    }
     RemoveWindow(windowId);
 }
 

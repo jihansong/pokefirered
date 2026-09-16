@@ -24,6 +24,9 @@
 #include "help_system.h"
 #include "pokemon_storage_system.h"
 #include "script_menu.h"
+#include "trig.h"
+#include "gba/m4a_internal.h"
+#include "m4a.h"
 #include "field_fadetransition.h"
 #include "data.h"
 #include "pokedex.h"
@@ -2871,3 +2874,63 @@ void LeaveHiddenGrotto(void)
     DoWarp();
     ResetInitialPlayerAvatarState();
 }
+
+// Lavender Town Syndrome (urban legend): while it is active, Lavender Town's music
+// slowly bends upward and wavers, and the screen edges darken. The task undoes it
+// when the player leaves the town or it gets purified.
+#define tPitch     data[0]
+#define tTimer     data[1]
+#define tDarkness  data[2]
+
+#define SYNDROME_MAX_PITCH 3 * 256 // three semitones up
+#define SYNDROME_MAX_DARKNESS 5
+
+static void EndLavenderSyndromeEffects(u8 taskId)
+{
+    m4aMPlayPitchControl(&gMPlayInfo_BGM, TRACKS_ALL, 0);
+    ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
+    SetGpuReg(REG_OFFSET_BLDCNT, 0);
+    SetGpuReg(REG_OFFSET_BLDY, 0);
+    DestroyTask(taskId);
+}
+
+static void Task_LavenderSyndrome(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+    s16 wobble;
+
+    if (VarGet(VAR_LAVENDER_SYNDROME) != 1
+     || gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_LAVENDER_TOWN)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_LAVENDER_TOWN))
+    {
+        EndLavenderSyndromeEffects(taskId);
+        return;
+    }
+
+    tTimer++;
+    if (tTimer % 8 == 0 && tPitch < SYNDROME_MAX_PITCH)
+        tPitch += 4;
+    if (tTimer % 30 == 0 && tDarkness < SYNDROME_MAX_DARKNESS)
+        tDarkness++;
+    wobble = gSineTable[(tTimer * 3) & 0xFF] / 8;
+    m4aMPlayPitchControl(&gMPlayInfo_BGM, TRACKS_ALL, tPitch + wobble);
+
+    SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(12, DISPLAY_WIDTH - 12));
+    SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(8, DISPLAY_HEIGHT - 8));
+    SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ);
+    SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_ALL);
+    SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
+    SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_ALL | BLDCNT_EFFECT_DARKEN);
+    SetGpuReg(REG_OFFSET_BLDY, tDarkness);
+}
+
+// Run from Lavender Town's resume script whenever the syndrome is active.
+void StartLavenderSyndrome(void)
+{
+    if (!FuncIsActiveTask(Task_LavenderSyndrome))
+        CreateTask(Task_LavenderSyndrome, 80);
+}
+
+#undef tPitch
+#undef tTimer
+#undef tDarkness

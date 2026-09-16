@@ -472,4 +472,5 @@ gSpecials::
 	def_special CreateHiddenGrottoWildMon
 	def_special ClearHiddenGrotto
 	def_special LeaveHiddenGrotto
+	def_special StartLavenderSyndrome
 gSpecialsEnd::

@@ -27,3 +27,15 @@ PokemonTower_1F_Text_SenseSpiritsUpToMischief::
     .string "There are spirits up to mischief.\n"
     .string "I sense them high in the TOWER.$"
 
+
+PokemonTower_1F_Text_ChannelerYouveBeenFollowed::
+    .string "…!\n"
+    .string "Restless spirits have followed you\l"
+    .string "from the tower!\p"
+    .string "Their song is clinging to this\n"
+    .string "whole town… Hold still!$"
+
+PokemonTower_1F_Text_ChannelerSpiritsAtRest::
+    .string "There. The spirits are at rest.\p"
+    .string "LAVENDER TOWN's music will sound\n"
+    .string "as it always has.$"

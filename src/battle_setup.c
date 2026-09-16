@@ -289,6 +289,9 @@ static void DoGhostBattle(void)
     SetMonData(&gEnemyParty[0], MON_DATA_NICKNAME, gText_Ghost);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
+    // Unidentified GHOSTS met without the SILPH SCOPE feed the Lavender Town Syndrome event
+    if (VarGet(VAR_LAVENDER_GHOST_SIGHTINGS) < 255)
+        VarSet(VAR_LAVENDER_GHOST_SIGHTINGS, VarGet(VAR_LAVENDER_GHOST_SIGHTINGS) + 1);
 }
 
 static void DoTrainerBattle(void)

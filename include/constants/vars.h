@@ -209,8 +209,8 @@
 #define VAR_HIDDEN_GROTTO_STATE_2                                              0x40AF
 #define VAR_HIDDEN_GROTTO_STATE_3                                              0x40B0
 #define VAR_HIDDEN_GROTTO_STATE_4                                              0x40B1
-#define VAR_0x40B2                 0x40B2
-#define VAR_0x40B3                 0x40B3
+#define VAR_LAVENDER_GHOST_SIGHTINGS                                           0x40B2
+#define VAR_LAVENDER_SYNDROME                                                  0x40B3 // 0 = none, 1 = active, 2 = purified
 #define VAR_PORTHOLE               0x40B4
 #define VAR_EVENT_PICHU_SLOT       0x40B5
 #define VAR_MYSTERY_GIFT_1         0x40B6

@@ -38,3 +38,8 @@ LavenderTown_Text_PokemonTowerSign::
     .string "POKéMON TOWER\n"
     .string "Becalm the Spirits of POKéMON$"
 
+
+LavenderTown_Text_CanYouHearIt::
+    .string "…Can you hear it?\p"
+    .string "The music… It keeps getting higher\n"
+    .string "and higher…$"

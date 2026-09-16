@@ -7,7 +7,25 @@ PokemonTower_1F_OnTransition::
 	end
 
 PokemonTower_1F_EventScript_Channeler::
-	msgbox PokemonTower_1F_Text_SenseSpiritsUpToMischief, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_eq VAR_LAVENDER_SYNDROME, 1, PokemonTower_1F_EventScript_ChannelerPurify
+	msgbox PokemonTower_1F_Text_SenseSpiritsUpToMischief
+	release
+	end
+
+@ Ends the Lavender Town Syndrome for good
+PokemonTower_1F_EventScript_ChannelerPurify::
+	msgbox PokemonTower_1F_Text_ChannelerYouveBeenFollowed
+	closemessage
+	playse SE_M_HEAL_BELL
+	fadescreen FADE_TO_WHITE
+	delay 30
+	fadescreen FADE_FROM_WHITE
+	waitse
+	setvar VAR_LAVENDER_SYNDROME, 2
+	msgbox PokemonTower_1F_Text_ChannelerSpiritsAtRest
+	release
 	end
 
 PokemonTower_1F_EventScript_Woman1::

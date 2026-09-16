@@ -70,3 +70,26 @@ CeruleanCity_House1_Text_SpStatsWaterfall::
 CeruleanCity_House1_Text_AllMonsWillObeyYou::
     .string "All POKéMON will obey you!$"
 
+
+CeruleanCity_House1_Text_ISawABluePikachu::
+    .string "Hey, listen! I saw a blue PIKACHU!\p"
+    .string "It was splashing around the water\n"
+    .string "inside the cave by the river.\p"
+    .string "Nobody believes me… But I really,\n"
+    .string "really saw it! Go see for yourself!$"
+
+CeruleanCity_House1_Text_YouCaughtItShowMe::
+    .string "You caught the blue PIKACHU?!\n"
+    .string "No way! Bring it here and show me!$"
+
+CeruleanCity_House1_Text_ItWasRealTakeThis::
+    .string "Whoa! That's it! That's the one\n"
+    .string "I saw!\p"
+    .string "Huh? It's not a PIKACHU, it's a\n"
+    .string "MARILL?\p"
+    .string "…Well, I was still right! It was\n"
+    .string "real! Here, take this!$"
+
+CeruleanCity_House1_Text_RumorBoyThanks::
+    .string "I found that blue stone by the\n"
+    .string "river. It looks just like PIKABLU!$"

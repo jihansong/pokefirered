@@ -186,6 +186,7 @@ const u16 gObjectEventPal_SSAnne[] = INCBIN_U16("graphics/object_events/palettes
 const u16 gObjectEventPal_JessieJames[] = INCBIN_U16("graphics/object_events/palettes/jessie_james.gbapal");
 const u16 gObjectEventPal_Truck[] = INCBIN_U16("graphics/object_events/palettes/truck.gbapal");
 const u16 gObjectEventPic_Truck[] = INCBIN_U16("graphics/object_events/pics/misc/truck.4bpp");
+const u16 gObjectEventPal_Pikablu[] = INCBIN_U16("graphics/object_events/palettes/pikablu.gbapal");
 const u16 gObjectEventPic_SSAnne[] = INCBIN_U16("graphics/object_events/pics/misc/ss_anne.4bpp");
 const u16 gObjectEventPic_SurfBlob[] = INCBIN_U16("graphics/object_events/pics/misc/surf_blob.4bpp");
 const u16 gObjectEventPic_Policeman[] = INCBIN_U16("graphics/object_events/pics/people/policeman.4bpp");

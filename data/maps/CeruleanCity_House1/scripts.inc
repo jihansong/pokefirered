@@ -1,5 +1,16 @@
 CeruleanCity_House1_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, CeruleanCity_House1_OnTransition
 	.byte 0
+
+@ The boy with the "blue PIKACHU" rumor only moves in after the Hall of Fame
+CeruleanCity_House1_OnTransition::
+	setflag FLAG_HIDE_CERULEAN_HOUSE1_RUMOR_BOY
+	call_if_set FLAG_SYS_GAME_CLEAR, CeruleanCity_House1_EventScript_ShowRumorBoy
+	end
+
+CeruleanCity_House1_EventScript_ShowRumorBoy::
+	clearflag FLAG_HIDE_CERULEAN_HOUSE1_RUMOR_BOY
+	return
 
 CeruleanCity_House1_EventScript_BadgeGuy::
 	lock
@@ -83,5 +94,39 @@ CeruleanCity_House1_EventScript_DescribeEarthBadge::
 
 CeruleanCity_House1_EventScript_StopDescribingBadges::
 	msgbox CeruleanCity_House1_Text_ComeVisitAnytime
+	release
+	end
+
+@ Pikablu, the old rumor of a blue PIKACHU. The boy saw it in the cave's lake;
+@ it turns out to be a MARILL. Showing him one earns a WATER STONE.
+CeruleanCity_House1_EventScript_RumorBoy::
+	lock
+	faceplayer
+	goto_if_set FLAG_GOT_WATER_STONE_FROM_RUMOR_BOY, CeruleanCity_House1_EventScript_RumorBoyThanks
+	goto_if_set FLAG_CAUGHT_PIKABLU, CeruleanCity_House1_EventScript_RumorBoyCheckParty
+	setflag FLAG_HEARD_PIKABLU_RUMOR
+	msgbox CeruleanCity_House1_Text_ISawABluePikachu
+	release
+	end
+
+CeruleanCity_House1_EventScript_RumorBoyCheckParty::
+	setvar VAR_0x8004, SPECIES_MARILL
+	specialvar VAR_RESULT, DoesPlayerPartyContainSpecies
+	goto_if_eq VAR_RESULT, FALSE, CeruleanCity_House1_EventScript_RumorBoyShowMe
+	msgbox CeruleanCity_House1_Text_ItWasRealTakeThis
+	giveitem ITEM_WATER_STONE
+	goto_if_eq VAR_RESULT, FALSE, EventScript_BagIsFull
+	setflag FLAG_GOT_WATER_STONE_FROM_RUMOR_BOY
+	msgbox CeruleanCity_House1_Text_RumorBoyThanks
+	release
+	end
+
+CeruleanCity_House1_EventScript_RumorBoyShowMe::
+	msgbox CeruleanCity_House1_Text_YouCaughtItShowMe
+	release
+	end
+
+CeruleanCity_House1_EventScript_RumorBoyThanks::
+	msgbox CeruleanCity_House1_Text_RumorBoyThanks
 	release
 	end

@@ -2559,3 +2559,43 @@ void GiveElderDratiniMoveset(void)
         }
     }
 }
+
+static bool8 IsUnnamedPikablu(struct BoxPokemon *boxMon)
+{
+    u8 nickname[POKEMON_NAME_LENGTH + 1];
+
+    if (GetBoxMonData(boxMon, MON_DATA_SPECIES, NULL) != SPECIES_MARILL
+     || GetBoxMonData(boxMon, MON_DATA_MET_LOCATION, NULL) != MAPSEC_CERULEAN_CAVE
+     || GetBoxMonData(boxMon, MON_DATA_MET_LEVEL, NULL) != 35)
+        return FALSE;
+    GetBoxMonData(boxMon, MON_DATA_NICKNAME, nickname);
+    return StringCompare(nickname, gSpeciesNames[SPECIES_MARILL]) == 0;
+}
+
+// The MARILL caught as the rumored "blue PIKACHU" in Cerulean Cave is called
+// PIKABLU unless the player already gave it a nickname.
+void NamePikablu(void)
+{
+    static const u8 sPikablu[] = _("PIKABLU");
+    s32 i, j;
+
+    for (i = gPlayerPartyCount - 1; i >= 0; i--)
+    {
+        if (IsUnnamedPikablu(&gPlayerParty[i].box))
+        {
+            SetMonData(&gPlayerParty[i], MON_DATA_NICKNAME, sPikablu);
+            return;
+        }
+    }
+    for (i = 0; i < TOTAL_BOXES_COUNT; i++)
+    {
+        for (j = 0; j < IN_BOX_COUNT; j++)
+        {
+            if (IsUnnamedPikablu(&gPokemonStoragePtr->boxes[i][j]))
+            {
+                SetBoxMonData(&gPokemonStoragePtr->boxes[i][j], MON_DATA_NICKNAME, sPikablu);
+                return;
+            }
+        }
+    }
+}

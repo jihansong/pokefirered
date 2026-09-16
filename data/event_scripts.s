@@ -578,6 +578,7 @@ gStdScriptsEnd::
 	.include "data/maps/SafariZone_North_RestHouse/text.inc"
 	.include "data/maps/SafariZone_West_RestHouse/text.inc"
 	.include "data/maps/SafariZone_SecretHouse/text.inc"
+	.include "data/maps/CeruleanCave_1F/text.inc"
 	.include "data/maps/CeruleanCave_B1F/text.inc"
 	.include "data/maps/PokemonLeague_LoreleisRoom/text.inc"
 	.include "data/maps/PokemonLeague_BrunosRoom/text.inc"

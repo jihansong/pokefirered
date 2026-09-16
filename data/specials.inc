@@ -460,4 +460,5 @@ gSpecials::
 	def_special CanPushTruck
 	def_special PushTruck
 	def_special GiveElderDratiniMoveset
+	def_special NamePikablu
 gSpecialsEnd::

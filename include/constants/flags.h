@@ -196,8 +196,8 @@
 #define FLAG_HIDE_POKEMON_TOWER_7F_JESSIE_JAMES   0x0B2
 #define FLAG_HIDE_SILPH_CO_11F_JESSIE_JAMES       0x0B3
 #define FLAG_HIDE_SSANNE_EXTERIOR_MEW 0x0B4
-#define FLAG_0x0B5               0x0B5
-#define FLAG_0x0B6               0x0B6
+#define FLAG_HIDE_CERULEAN_HOUSE1_RUMOR_BOY 0x0B5
+#define FLAG_HIDE_CERULEAN_CAVE_PIKABLU 0x0B6
 #define FLAG_0x0B7               0x0B7
 #define FLAG_0x0B8               0x0B8
 #define FLAG_0x0B9               0x0B9
@@ -766,9 +766,9 @@
 #define FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE             0x2E3
 #define FLAG_FOUGHT_DEOXYS                               0x2E4
 #define FLAG_FOUGHT_MEW                                  0x2E5
-#define FLAG_0x2E6                                       0x2E6
-#define FLAG_0x2E7                                       0x2E7
-#define FLAG_0x2E8                                       0x2E8
+#define FLAG_HEARD_PIKABLU_RUMOR                         0x2E6
+#define FLAG_CAUGHT_PIKABLU                              0x2E7
+#define FLAG_GOT_WATER_STONE_FROM_RUMOR_BOY              0x2E8
 #define FLAG_0x2E9                                       0x2E9
 #define FLAG_0x2EA                                       0x2EA
 #define FLAG_0x2EB                                       0x2EB

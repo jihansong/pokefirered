@@ -106,6 +106,25 @@ static bool8 IsOnPlayerTile(struct ObjectEvent *follower)
         && follower->currentCoords.y == player->currentCoords.y;
 }
 
+// Whether the player's sprite has walked far enough off PIKACHU for it to come out
+// without being drawn over the player. A player's step moves their coords at once,
+// but their sprite only gets there over the next 16 frames.
+static bool8 HasPlayerSpriteLeftFollower(struct ObjectEvent *follower)
+{
+    struct Sprite *playerSprite = &gSprites[gObjectEvents[gPlayerAvatar.objectEventId].spriteId];
+    struct Sprite *followerSprite = &gSprites[follower->spriteId];
+    s16 dx = (playerSprite->x + playerSprite->x2) - (followerSprite->x + followerSprite->x2);
+    // Compare the sprites' bottom edges: the player is taller than PIKACHU.
+    s16 dy = (playerSprite->y + playerSprite->y2 - playerSprite->centerToCornerVecY)
+           - (followerSprite->y + followerSprite->y2 - followerSprite->centerToCornerVecY);
+
+    if (dx < 0)
+        dx = -dx;
+    if (dy < 0)
+        dy = -dy;
+    return dx + dy >= 16;
+}
+
 void FollowerPikachu_Update(void)
 {
     struct ObjectEvent *follower = GetFollowerPikachuObject();
@@ -123,7 +142,7 @@ void FollowerPikachu_Update(void)
     {
         if (sHiddenByScript)
             follower->invisible = TRUE;
-        else if (follower->invisible && !IsOnPlayerTile(follower))
+        else if (follower->invisible && !IsOnPlayerTile(follower) && HasPlayerSpriteLeftFollower(follower))
             follower->invisible = FALSE;
     }
 }

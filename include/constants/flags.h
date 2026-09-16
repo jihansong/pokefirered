@@ -532,7 +532,7 @@
 // Unused?
 #define FLAG_0x1FF               0x1FF
 #define FLAG_GOT_TM40_FROM_KENYA_FRIEND 0x200
-#define FLAG_0x201               0x201
+#define FLAG_STARTED_LATI_ROAMERS 0x201
 #define FLAG_0x202               0x202
 #define FLAG_0x203               0x203
 #define FLAG_0x204               0x204

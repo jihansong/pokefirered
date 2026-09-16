@@ -151,6 +151,8 @@ static const u16 sRoamerSpecies[] = {
     SPECIES_ENTEI,
     SPECIES_SUICUNE,
     SPECIES_RAIKOU,
+    SPECIES_LATIAS,
+    SPECIES_LATIOS,
 };
 
 // Scans for the given species and populates 'subsprites' with the area markers.
@@ -233,14 +235,12 @@ static s32 GetRoamerPokedexAreaMarkers(u16 species, struct Subsprite * subsprite
     u16 dexArea;
     s32 tableIndex;
 
-    // Make sure that this is a roamer species, and that it is the one this save rolled.
+    // Make sure that this is a roamer species that is roaming in this save.
     roamerIdx = GetRoamerIndex(species);
     if (roamerIdx < 0)
         return 0;
-    if (species != GetRoamerSpecies())
-        return 0;
 
-    mapSecId = GetRoamerLocationMapSectionId();
+    mapSecId = GetRoamerLocationMapSectionIdBySpecies(species);
     tableIndex = 0;
     if (FindDexAreaByMapSec(mapSecId, sDexAreas_Kanto, ARRAY_COUNT(sDexAreas_Kanto), &tableIndex, &dexArea))
     {

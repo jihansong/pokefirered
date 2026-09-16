@@ -4,7 +4,7 @@ LavenderTown_VolunteerPokemonHouse_MapScripts::
 LavenderTown_VolunteerPokemonHouse_EventScript_MrFuji::
 	lock
 	faceplayer
-	goto_if_set FLAG_GOT_POKE_FLUTE, LavenderTown_VolunteerPokemonHouse_EventScript_AlreadyHavePokeFlute
+	goto_if_set FLAG_GOT_POKE_FLUTE, LavenderTown_VolunteerPokemonHouse_EventScript_CheckEnigmaStone
 	msgbox LavenderTown_VolunteerPokemonHouse_Text_IdLikeYouToHaveThis
 	checkitemspace ITEM_POKE_FLUTE
 	goto_if_eq VAR_RESULT, FALSE, LavenderTown_VolunteerPokemonHouse_EventScript_NoRoomForPokeFlute
@@ -78,4 +78,35 @@ LavenderTown_VolunteerPokemonHouse_EventScript_PokemonFanMagazine::
 
 LavenderTown_VolunteerPokemonHouse_EventScript_Bookshelf::
 	msgbox LavenderTown_VolunteerPokemonHouse_Text_PokemonMagazinesLineShelf, MSGBOX_SIGN
+	end
+
+@ HGSS's Enigma Stone event: after the Hall of Fame, MR. FUJI shows the player a
+@ stone a traveler left with him. It glows, the radio reports a red and a blue
+@ bird POKéMON over KANTO, and LATIAS and LATIOS (Lv35) start roaming.
+LavenderTown_VolunteerPokemonHouse_EventScript_CheckEnigmaStone::
+	goto_if_unset FLAG_SYS_GAME_CLEAR, LavenderTown_VolunteerPokemonHouse_EventScript_AlreadyHavePokeFlute
+	goto_if_set FLAG_STARTED_LATI_ROAMERS, LavenderTown_VolunteerPokemonHouse_EventScript_FujiLatiReminder
+	msgbox LavenderTown_VolunteerPokemonHouse_Text_FujiTravelerLeftStone
+	playse SE_M_MORNING_SUN
+	fadescreen FADE_TO_WHITE
+	delay 20
+	fadescreen FADE_FROM_WHITE
+	waitse
+	msgbox LavenderTown_VolunteerPokemonHouse_Text_FujiTheStoneIsGlowing
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	playse SE_DING_DONG
+	waitse
+	msgbox LavenderTown_VolunteerPokemonHouse_Text_RadioNewsBirdsOverKanto
+	call EventScript_RestorePrevTextColor
+	special StartLatiRoamers
+	setflag FLAG_STARTED_LATI_ROAMERS
+	msgbox LavenderTown_VolunteerPokemonHouse_Text_FujiTakeTheStone
+	giveitem ITEM_ENIGMA_STONE
+	msgbox LavenderTown_VolunteerPokemonHouse_Text_FujiLatiReminder
+	release
+	end
+
+LavenderTown_VolunteerPokemonHouse_EventScript_FujiLatiReminder::
+	msgbox LavenderTown_VolunteerPokemonHouse_Text_FujiLatiReminder
+	release
 	end

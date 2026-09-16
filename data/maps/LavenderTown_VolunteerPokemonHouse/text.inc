@@ -65,3 +65,36 @@ LavenderTown_VolunteerPokemonHouse_Text_PokemonMagazinesLineShelf::
     .string "POKéMON INSIDER…\p"
     .string "POKéMON FAN…$"
 
+
+LavenderTown_VolunteerPokemonHouse_Text_FujiTravelerLeftStone::
+    .string "MR. FUJI: Ah, {PLAYER}.\n"
+    .string "You have become the CHAMPION…\p"
+    .string "A traveler from a far land once\n"
+    .string "left this stone with me.\p"
+    .string "It is called the ENIGMA STONE.\n"
+    .string "He said it calls to dragons that\l"
+    .string "fly faster than jet planes…$"
+
+LavenderTown_VolunteerPokemonHouse_Text_FujiTheStoneIsGlowing::
+    .string "Oh, my! The stone is glowing red\n"
+    .string "and blue in your presence!$"
+
+LavenderTown_VolunteerPokemonHouse_Text_RadioNewsBirdsOverKanto::
+    .string "…This is POKéMON NEWS!\p"
+    .string "A red bird POKéMON and a blue bird\n"
+    .string "POKéMON have been sighted flying\l"
+    .string "together over KANTO!\p"
+    .string "They are said to move so fast that\n"
+    .string "no one has been able to catch up!$"
+
+LavenderTown_VolunteerPokemonHouse_Text_FujiTakeTheStone::
+    .string "MR. FUJI: A red bird and a blue\n"
+    .string "bird… The stone must have woken\l"
+    .string "them.\p"
+    .string "Please take it. It chose you.$"
+
+LavenderTown_VolunteerPokemonHouse_Text_FujiLatiReminder::
+    .string "MR. FUJI: The two dragons roam all\n"
+    .string "over KANTO's routes.\p"
+    .string "They flee fast. Do not give up if\n"
+    .string "you meet them.$"

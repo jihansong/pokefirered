@@ -466,4 +466,5 @@ gSpecials::
 	def_special GiveKenya
 	def_special CheckKenyaDelivery
 	def_special HandOverKenya
+	def_special StartLatiRoamers
 gSpecialsEnd::

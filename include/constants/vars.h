@@ -199,26 +199,7 @@
 #define VAR_FUCHSIA_WARDENS_HOUSE_ELDER                                        0x4091
 #define VAR_ROCKET_HIDEOUT_SECURITY                                            0x4092
 #define VAR_KENYA_DELIVERY                                                     0x4093
-#define VAR_0x4094                 0x4094
-#define VAR_0x4095                 0x4095
-#define VAR_0x4096                 0x4096
-#define VAR_0x4097                 0x4097
-#define VAR_0x4098                 0x4098
-#define VAR_0x4099                 0x4099
-#define VAR_0x409A                 0x409A
-#define VAR_0x409B                 0x409B
-#define VAR_0x409C                 0x409C
-#define VAR_0x409D                 0x409D
-#define VAR_0x409E                 0x409E
-#define VAR_0x409F                 0x409F
-#define VAR_0x40A0                 0x40A0
-#define VAR_0x40A1                 0x40A1
-#define VAR_0x40A2                 0x40A2
-#define VAR_0x40A3                 0x40A3
-#define VAR_0x40A4                 0x40A4
-#define VAR_0x40A5                 0x40A5
-#define VAR_0x40A6                 0x40A6
-#define VAR_0x40A7                 0x40A7
+#define VAR_LATI_ROAMER_DATA_START                                             0x4094 // 0x4094-0x40A7: LATIAS and LATIOS roamer data
 #define VAR_0x40A8                 0x40A8
 #define VAR_0x40A9                 0x40A9
 

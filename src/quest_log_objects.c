@@ -3,6 +3,7 @@
 #include "fieldmap.h"
 #include "field_player_avatar.h"
 #include "metatile_behavior.h"
+#include "constants/event_objects.h"
 
 void QL_RecordObjects(struct QuestLogScene * questLog)
 {
@@ -10,7 +11,7 @@ void QL_RecordObjects(struct QuestLogScene * questLog)
 
     for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
     {
-        questLog->objectEvents[i].active                         = gObjectEvents[i].active;
+        questLog->objectEvents[i].active                         = gObjectEvents[i].active && gObjectEvents[i].localId != LOCALID_FOLLOWER;
         questLog->objectEvents[i].triggerGroundEffectsOnStop     = gObjectEvents[i].triggerGroundEffectsOnStop;
         questLog->objectEvents[i].disableCoveringGroundEffects   = gObjectEvents[i].disableCoveringGroundEffects;
         questLog->objectEvents[i].landingJump                    = gObjectEvents[i].landingJump;

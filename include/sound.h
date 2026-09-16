@@ -25,6 +25,7 @@ void FadeInBGM(u8 speed);
 void FadeOutBGM(u8 speed);
 bool8 IsBGMStopped(void);
 void PlayCry_Normal(u16 species, s8 pan);
+void PlayPikachuVoice(u8 voiceId, u8 length);
 void PlayCry_NormalNoDucking(u16 species, s8 pan, s8 volume, u8 priority);
 void PlayCry_ByMode(u16 species, s8 pan, u8 mode);
 void PlayCry_ReleaseDouble(u16 species, s8 pan, u8 mode);

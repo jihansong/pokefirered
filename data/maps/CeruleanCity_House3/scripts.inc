@@ -39,14 +39,14 @@ CeruleanCity_House3_EventScript_AlreadyTraded::
 	release
 	end
 
-@ Yellow's Melanie. She only offers BULBASAUR once the lead PIKACHU's friendship
-@ reaches 147 (Yellow checks the following PIKACHU's happiness).
+@ Yellow's Melanie. She only offers BULBASAUR once the starter PIKACHU's friendship
+@ reaches 147 (Yellow's PIKACHU happiness check).
 CeruleanCity_House3_EventScript_Melanie::
 	lock
 	faceplayer
 	goto_if_set FLAG_GOT_BULBASAUR_FROM_MELANIE, CeruleanCity_House3_EventScript_MelanieAlreadyGaveBulbasaur
 	msgbox CeruleanCity_House3_Text_NursedBulbasaurBackToHealth
-	specialvar VAR_RESULT, GetLeadPikachuFriendship
+	specialvar VAR_RESULT, GetStarterPikachuFriendship
 	goto_if_lt VAR_RESULT, 147, EventScript_ReleaseEnd
 	msgbox CeruleanCity_House3_Text_WouldYouTakeCareOfBulbasaur, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, CeruleanCity_House3_EventScript_MelanieDeclined

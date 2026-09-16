@@ -5,6 +5,7 @@
 #include "field_camera.h"
 #include "field_effect_helpers.h"
 #include "field_player_avatar.h"
+#include "follower_pikachu.h"
 #include "fieldmap.h"
 #include "metatile_behavior.h"
 #include "overworld.h"
@@ -91,6 +92,8 @@ void SetUpFieldTasks(void)
 
     if (!FuncIsActiveTask(Task_RunTimeBasedEvents))
         CreateTask(Task_RunTimeBasedEvents, 80);
+
+    CreateFollowerPikachuTask();
 }
 
 void ActivatePerStepCallback(u8 callbackId)

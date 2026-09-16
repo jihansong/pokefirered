@@ -24,6 +24,7 @@
 #include "party_menu.h"
 #include "field_specials.h"
 #include "berry.h"
+#include "starter_pikachu.h"
 #include "constants/items.h"
 #include "constants/item_effects.h"
 #include "constants/hoenn_cries.h"
@@ -2207,7 +2208,11 @@ u8 GetLevelFromBoxMonExp(struct BoxPokemon *boxMon)
 
 u16 GiveMoveToMon(struct Pokemon *mon, u16 move)
 {
-    return GiveMoveToBoxMon(&mon->box, move);
+    u16 result = GiveMoveToBoxMon(&mon->box, move);
+
+    if (result == move)
+        UpdatePikachuMoodForLearnedMove(mon, move);
+    return result;
 }
 
 static u16 GiveMoveToBoxMon(struct BoxPokemon *boxMon, u16 move)
@@ -2249,6 +2254,7 @@ void SetMonMoveSlot(struct Pokemon *mon, u16 move, u8 slot)
 {
     SetMonData(mon, MON_DATA_MOVE1 + slot, &move);
     SetMonData(mon, MON_DATA_PP1 + slot, &gBattleMoves[move].pp);
+    UpdatePikachuMoodForLearnedMove(mon, move);
 }
 
 void SetBattleMonMoveSlot(struct BattlePokemon *mon, u16 move, u8 slot)
@@ -3970,7 +3976,11 @@ static void CopyPlayerPartyMonToBattleData(u8 battlerId, u8 partyIndex)
 
 bool8 ExecuteTableBasedItemEffect(struct Pokemon *mon, u16 item, u8 partyIndex, u8 moveIndex)
 {
-    return PokemonUseItemEffects(mon, item, partyIndex, moveIndex, 0);
+    bool8 cannotUse = PokemonUseItemEffects(mon, item, partyIndex, moveIndex, 0);
+
+    if (!cannotUse)
+        UpdatePikachuMoodForItem(mon, item);
+    return cannotUse;
 }
 
 #define UPDATE_FRIENDSHIP_FROM_ITEM()                                                                   \
@@ -5486,6 +5496,7 @@ void AdjustFriendship(struct Pokemon *mon, u8 event)
                 return;
         }
 
+        UpdatePikachuMoodForFriendshipEvent(mon, event);
         delta = sFriendshipEventDeltas[event][friendshipLevel];
         if (delta > 0 && holdEffect == HOLD_EFFECT_FRIENDSHIP_UP)
             // 50% increase, rounding down

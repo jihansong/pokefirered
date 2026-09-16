@@ -29,6 +29,7 @@
 #include "roamer.h"
 #include "safari_zone.h"
 #include "scanline_effect.h"
+#include "starter_pikachu.h"
 #include "task.h"
 #include "trig.h"
 #include "vs_seeker.h"
@@ -3922,6 +3923,7 @@ static void ReturnFromBattleToOverworld(void)
     if (!(gBattleTypeFlags & BATTLE_TYPE_LINK) || !gReceivedRemoteLinkPlayers)
     {
         gSpecialVar_Result = gBattleOutcome;
+        UpdatePikachuMoodAfterBattle(gBattleOutcome);
         gMain.inBattle = FALSE;
         gMain.callback1 = gPreBattleCallback1;
         if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)

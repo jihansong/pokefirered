@@ -86,10 +86,10 @@
 #define VAR_QUEST_LOG_MON_COUNTS           0x4027
 #define VAR_WONDER_NEWS_STEP_COUNTER       0x4028
 #define VAR_ROAMER_SPECIES                 0x4029 // 0: Entei, 1: Suicune, 2: Raikou; rolled at new game
-#define VAR_0x402A                         0x402A
-#define VAR_0x402B                         0x402B
-#define VAR_0x402C                         0x402C
-#define VAR_0x402D                         0x402D
+#define VAR_PIKACHU_MOOD                   0x402A // starter PIKACHU mood, 128 is neutral (Yellow)
+#define VAR_PIKACHU_EMOTION_MODIFIER       0x402B // PIKACHU_MODIFIER_*
+#define VAR_STARTER_PIKACHU_PERSONALITY_LO 0x402C
+#define VAR_STARTER_PIKACHU_PERSONALITY_HI 0x402D
 #define VAR_0x402E                         0x402E
 
 #define VAR_0x402F                         0x402F

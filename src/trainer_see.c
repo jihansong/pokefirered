@@ -1,4 +1,5 @@
 #include "global.h"
+#include "follower_pikachu.h"
 #include "battle_setup.h"
 #include "event_object_movement.h"
 #include "field_effect.h"
@@ -209,12 +210,17 @@ static u8 CheckPathBetweenTrainerAndPlayer(struct ObjectEvent *trainerObj, u8 ap
     x = trainerObj->currentCoords.x;
     y = trainerObj->currentCoords.y;
 
+    gIgnoreFollowerPikachuCollision = TRUE;
     for (i = 0; i <= approachDistance - 1; i++, MoveCoords(direction, &x, &y))
     {
         collision = GetCollisionFlagsAtCoords(trainerObj, x, y, direction);
         if (collision != 0 && (collision & COLLISION_MASK))
+        {
+            gIgnoreFollowerPikachuCollision = FALSE;
             return 0;
+        }
     }
+    gIgnoreFollowerPikachuCollision = FALSE;
 
     // preserve mapobj_unk_19 before clearing.
     unk19_temp = trainerObj->rangeX;

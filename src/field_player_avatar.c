@@ -20,6 +20,7 @@
 #include "script.h"
 #include "strings.h"
 #include "wild_encounter.h"
+#include "starter_pikachu.h"
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
 #include "constants/songs.h"
@@ -1681,6 +1682,7 @@ void StartFishing(u8 rod)
     u8 taskId = CreateTask(Task_Fishing, 0xFF);
 
     gTasks[taskId].tFishingRod = rod;
+    SetPikachuFishingMood();
     Task_Fishing(taskId);
     if (QuestLogTryRecordPlayerAvatarGfxTransition(QL_PLAYER_GFX_FISH) == TRUE)
         QL_AfterRecordFishActionSuccessful();

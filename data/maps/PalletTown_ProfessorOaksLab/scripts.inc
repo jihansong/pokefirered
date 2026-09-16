@@ -230,6 +230,7 @@ PalletTown_ProfessorOaksLab_EventScript_GivePikachu::
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_PALLET_LADY_NOT_BLOCKING_SIGN
 	givemon SPECIES_PIKACHU, 5
+	special RecordStarterPikachu
 	bufferspeciesname STR_VAR_1, SPECIES_PIKACHU
 	message PalletTown_ProfessorOaksLab_Text_ReceivedMonFromOak
 	waitmessage

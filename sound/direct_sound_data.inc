@@ -1907,3 +1907,173 @@ DirectSoundWaveData_sd90_classical_detuned_ep1_high::
 	.align 2
 DirectSoundWaveData_sd90_enhanced_delay_shaku::
 	.incbin "sound/direct_sound_samples/sd90_enhanced_delay_shaku.bin"
+
+@ The starter PIKACHU's voice clips from Pokémon Yellow
+
+	.align 2
+PikachuVoice_01::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_01.bin"
+
+	.align 2
+PikachuVoice_02::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_02.bin"
+
+	.align 2
+PikachuVoice_03::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_03.bin"
+
+	.align 2
+PikachuVoice_04::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_04.bin"
+
+	.align 2
+PikachuVoice_05::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_05.bin"
+
+	.align 2
+PikachuVoice_06::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_06.bin"
+
+	.align 2
+PikachuVoice_07::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_07.bin"
+
+	.align 2
+PikachuVoice_08::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_08.bin"
+
+	.align 2
+PikachuVoice_09::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_09.bin"
+
+	.align 2
+PikachuVoice_10::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_10.bin"
+
+	.align 2
+PikachuVoice_11::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_11.bin"
+
+	.align 2
+PikachuVoice_12::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_12.bin"
+
+	.align 2
+PikachuVoice_13::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_13.bin"
+
+	.align 2
+PikachuVoice_14::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_14.bin"
+
+	.align 2
+PikachuVoice_15::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_15.bin"
+
+	.align 2
+PikachuVoice_16::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_16.bin"
+
+	.align 2
+PikachuVoice_17::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_17.bin"
+
+	.align 2
+PikachuVoice_18::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_18.bin"
+
+	.align 2
+PikachuVoice_19::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_19.bin"
+
+	.align 2
+PikachuVoice_20::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_20.bin"
+
+	.align 2
+PikachuVoice_21::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_21.bin"
+
+	.align 2
+PikachuVoice_22::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_22.bin"
+
+	.align 2
+PikachuVoice_23::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_23.bin"
+
+	.align 2
+PikachuVoice_24::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_24.bin"
+
+	.align 2
+PikachuVoice_25::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_25.bin"
+
+	.align 2
+PikachuVoice_26::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_26.bin"
+
+	.align 2
+PikachuVoice_27::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_27.bin"
+
+	.align 2
+PikachuVoice_28::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_28.bin"
+
+	.align 2
+PikachuVoice_29::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_29.bin"
+
+	.align 2
+PikachuVoice_30::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_30.bin"
+
+	.align 2
+PikachuVoice_31::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_31.bin"
+
+	.align 2
+PikachuVoice_32::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_32.bin"
+
+	.align 2
+PikachuVoice_33::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_33.bin"
+
+	.align 2
+PikachuVoice_34::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_34.bin"
+
+	.align 2
+PikachuVoice_35::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_35.bin"
+
+	.align 2
+PikachuVoice_36::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_36.bin"
+
+	.align 2
+PikachuVoice_37::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_37.bin"
+
+	.align 2
+PikachuVoice_38::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_38.bin"
+
+	.align 2
+PikachuVoice_39::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_39.bin"
+
+	.align 2
+PikachuVoice_40::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_40.bin"
+
+	.align 2
+PikachuVoice_41::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_41.bin"
+
+	.align 2
+PikachuVoice_42::
+	.incbin "sound/direct_sound_samples/cries/pikachu_voice_42.bin"

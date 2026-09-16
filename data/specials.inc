@@ -452,5 +452,9 @@ gSpecials::
 	def_special UpdateLoreleiDollCollection
 	def_special LoopWingFlapSound
 	def_special CreateEnemyEventMon
-	def_special GetLeadPikachuFriendship
+	def_special GetStarterPikachuFriendship
+	def_special RecordStarterPikachu
+	def_special HideFollowerPikachu
+	def_special ShowFollowerPikachu
+	def_special DoStarterPikachuEmotion
 gSpecialsEnd::

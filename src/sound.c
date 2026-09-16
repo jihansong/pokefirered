@@ -38,6 +38,7 @@ extern struct MusicPlayerInfo gMPlayInfo_SE1;
 extern struct MusicPlayerInfo gMPlayInfo_SE2;
 extern struct MusicPlayerInfo gMPlayInfo_SE3;
 extern struct ToneData gCryTable[];
+extern struct ToneData gPikachuVoiceTable[];
 extern struct ToneData gCryTable_Reverse[];
 
 extern u16 SpeciesToCryId(u16);
@@ -320,6 +321,26 @@ void PlayCry_Normal(u16 species, s8 pan)
 {
     m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 85);
     PlayCryInternal(species, pan, CRY_VOLUME, CRY_PRIORITY_NORMAL, CRY_MODE_NORMAL);
+    gPokemonCryBGMDuckingCounter = 2;
+    RestoreBGMVolumeAfterPokemonCry();
+}
+
+// Plays one of the starter PIKACHU's voice clips (PIKACHU_VOICE_*). Like a cry, it ducks
+// the BGM and IsCryFinished reports when it's done. length is the clip's length in frames.
+void PlayPikachuVoice(u8 voiceId, u8 length)
+{
+    if (QL_IS_PLAYBACK_STATE)
+        return;
+    m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 85);
+    SetPokemonCryVolume(CRY_VOLUME);
+    SetPokemonCryPanpot(0);
+    SetPokemonCryPitch(15360);
+    SetPokemonCryLength(length);
+    SetPokemonCryProgress(0);
+    SetPokemonCryRelease(0);
+    SetPokemonCryChorus(0);
+    SetPokemonCryPriority(CRY_PRIORITY_NORMAL);
+    gMPlay_PokemonCry = SetPokemonCryTone(&gPikachuVoiceTable[voiceId]);
     gPokemonCryBGMDuckingCounter = 2;
     RestoreBGMVolumeAfterPokemonCry();
 }

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "follower_pikachu.h"
 #include "gflib.h"
 #include "event_data.h"
 #include "event_object_movement.h"
@@ -1515,6 +1516,12 @@ static void RemoveObjectEvent(struct ObjectEvent *objectEvent)
 {
     objectEvent->active = FALSE;
     RemoveObjectEventInternal(objectEvent);
+}
+
+// For objects that have no template (and so no hide flag), like the following PIKACHU.
+void RemoveObjectEventWithoutFlag(struct ObjectEvent *objectEvent)
+{
+    RemoveObjectEvent(objectEvent);
 }
 
 void RemoveObjectEventByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup)
@@ -4904,7 +4911,7 @@ static bool8 DoesObjectCollideWithObjectAt(struct ObjectEvent *objectEvent, s16 
     for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
     {
         curObject = &gObjectEvents[i];
-        if (curObject->active && curObject != objectEvent)
+        if (curObject->active && curObject != objectEvent && !ShouldIgnoreCollisionWithFollower(objectEvent, curObject))
         {
             if ((curObject->currentCoords.x == x && curObject->currentCoords.y == y) || (curObject->previousCoords.x == x && curObject->previousCoords.y == y))
             {
@@ -5058,6 +5065,10 @@ bool8 ObjectEventSetHeldMovement(struct ObjectEvent *objectEvent, u8 movementAct
     objectEvent->heldMovementActive = TRUE;
     objectEvent->heldMovementFinished = FALSE;
     gSprites[objectEvent->spriteId].data[2] = 0;
+    if (objectEvent->isPlayer)
+        FollowerPikachu_OnPlayerMovement(movementActionId);
+    else
+        FollowerPikachu_OnObjectMovement(objectEvent, movementActionId);
     return FALSE;
 }
 

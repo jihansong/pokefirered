@@ -994,6 +994,7 @@ voicegroup128::
 	voice_noise_alt 60, 0, 0, 0, 1, 12, 0
 
 .include "sound/cry_tables.inc"
+.include "sound/pikachu_voice_table.inc"
 
 	.align 2
 voicegroup129::

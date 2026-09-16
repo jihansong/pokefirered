@@ -1,4 +1,5 @@
 #include "global.h"
+#include "follower_pikachu.h"
 #include "gflib.h"
 #include "bike.h"
 #include "coord_event_weather.h"
@@ -25,6 +26,7 @@
 #include "trainer_see.h"
 #include "vs_seeker.h"
 #include "wild_encounter.h"
+#include "starter_pikachu.h"
 #include "constants/songs.h"
 #include "constants/event_bg.h"
 #include "constants/event_objects.h"
@@ -435,6 +437,15 @@ static const u8 *GetInteractedObjectEventScript(struct MapPosition *position, u8
     const u8 *script;
 
     objectEventId = GetObjectEventIdByPosition(position->x, position->y, position->elevation);
+    if (objectEventId != OBJECT_EVENTS_COUNT && IsFollowerPikachuObject(&gObjectEvents[objectEventId]))
+    {
+        if (gObjectEvents[objectEventId].invisible)
+            return NULL;
+        gSelectedObjectEvent = objectEventId;
+        gSpecialVar_LastTalked = LOCALID_FOLLOWER;
+        gSpecialVar_Facing = direction;
+        return EventScript_TalkToFollowerPikachu;
+    }
     if (objectEventId == OBJECT_EVENTS_COUNT || gObjectEvents[objectEventId].localId == LOCALID_PLAYER)
     {
         if (MetatileBehavior_IsCounter(metatileBehavior) != TRUE)
@@ -654,6 +665,7 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
         return FALSE;
 
     UpdateHappinessStepCounter();
+    UpdatePikachuMoodOnStep();
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_FORCED) && !MetatileBehavior_IsForcedMovementTile(metatileBehavior))
     {

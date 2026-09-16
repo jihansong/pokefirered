@@ -1,4 +1,5 @@
 #include "global.h"
+#include "follower_pikachu.h"
 #include "gflib.h"
 #include "bg_regs.h"
 #include "cable_club.h"
@@ -2145,12 +2146,14 @@ static void InitObjectEventsLocal(void)
     SetPlayerAvatarTransitionFlags(player->transitionFlags);
     ResetInitialPlayerAvatarState();
     TrySpawnObjectEvents(0, 0);
+    FollowerPikachu_OnMapLoad();
     TryRunOnWarpIntoMapScript();
 }
 
 static void ReloadObjectsAndRunReturnToFieldMapScript(void)
 {
     SpawnObjectEventsOnReturnToField(0, 0);
+    FollowerPikachu_Update();
     RunOnReturnToFieldMapScript();
 }
 

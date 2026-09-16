@@ -8,6 +8,7 @@
 #include "pokemon_storage_system_internal.h"
 #include "pokemon_summary_screen.h"
 #include "strings.h"
+#include "starter_pikachu.h"
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/songs.h"
@@ -624,6 +625,9 @@ static void SetMovedMonData(u8 boxId, u8 position)
 
 static void SetPlacedMonData(u8 boxId, u8 position)
 {
+    if (boxId != TOTAL_BOXES_COUNT && sMovingMonOrigBoxId == TOTAL_BOXES_COUNT)
+        UpdatePikachuMood(&gStorage->movingMon, PIKAMOOD_EVENT_DEPOSITED);
+
     if (boxId == TOTAL_BOXES_COUNT)
         gPlayerParty[position] = gStorage->movingMon;
     else

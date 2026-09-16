@@ -17,6 +17,7 @@
 #include "pokemon_size_record.h"
 #include "pokemon_storage_system.h"
 #include "roamer.h"
+#include "starter_pikachu.h"
 #include "item.h"
 #include "player_pc.h"
 #include "berry.h"
@@ -136,6 +137,7 @@ void NewGameInitData(void)
     ResetPokemonStorageSystem();
     ClearRoamerData();
     ChooseRoamerSpecies();
+    InitPikachuMood();
     gSaveBlock1Ptr->registeredItem = 0;
     ClearBag();
     NewGameInitPCItems();

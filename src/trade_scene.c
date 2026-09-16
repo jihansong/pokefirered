@@ -27,6 +27,7 @@
 #include "save.h"
 #include "load_save.h"
 #include "random.h"
+#include "starter_pikachu.h"
 #include "trade_scene.h"
 #include "constants/items.h"
 #include "constants/easy_chat.h"
@@ -1066,6 +1067,7 @@ static void TradeMons(u8 playerPartyIdx, u8 partnerPartyIdx)
     if (playerMail != MAIL_NONE)
         ClearMailStruct(&gSaveBlock1Ptr->mail[playerMail]);
 
+    UpdatePikachuMood(playerMon, PIKAMOOD_EVENT_TRADED);
     SWAP(*playerMon, *partnerMon, sTradeAnim->tempMon);
 
     // By default, a Pokemon received from a trade will have 70 Friendship.
@@ -2461,6 +2463,7 @@ static void CreateInGameTradePokemonInternal(u8 playerSlot, u8 inGameTradeIdx)
     u8 metLocation = METLOC_IN_GAME_TRADE;
     struct Pokemon * tradeMon = &gEnemyParty[0];
     u8 mailNum;
+    UpdatePikachuMood(&gPlayerParty[playerSlot], PIKAMOOD_EVENT_TRADED);
     CreateMon(tradeMon, inGameTrade->species, level, USE_RANDOM_IVS, TRUE, inGameTrade->personality, TRUE, inGameTrade->otId);
     SetMonData(tradeMon, MON_DATA_HP_IV, &inGameTrade->ivs[0]);
     SetMonData(tradeMon, MON_DATA_ATK_IV, &inGameTrade->ivs[1]);

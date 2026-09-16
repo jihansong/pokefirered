@@ -1520,15 +1520,6 @@ u16 GetStarterSpecies(void)
     return SPECIES_PIKACHU;
 }
 
-// Stands in for Yellow's following Pikachu's happiness until following is implemented:
-// the friendship of the Pikachu in the first party slot, or 0 if that slot isn't a Pikachu.
-u16 GetLeadPikachuFriendship(void)
-{
-    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES_OR_EGG, NULL) != SPECIES_PIKACHU)
-        return 0;
-    return GetMonData(&gPlayerParty[0], MON_DATA_FRIENDSHIP, NULL);
-}
-
 void SetSeenMon(void)
 {
     GetSetPokedexFlag(SpeciesToNationalPokedexNum(gSpecialVar_0x8004), 2);

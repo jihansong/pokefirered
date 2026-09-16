@@ -7,7 +7,6 @@ u8 GetLeadMonIndex(void);
 s32 CountDigits(s32 number);
 void TV_PrintIntToStringVar(u8 varidx, s32 number);
 u16 GetStarterSpecies(void);
-u16 GetLeadPikachuFriendship(void);
 void StopPokemonLeagueLightingEffectTask(void);
 void FieldCB_ShowPortholeView(void);
 u8 ContextNpcGetTextColor(void);

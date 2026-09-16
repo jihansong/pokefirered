@@ -191,10 +191,10 @@
 
 // Unused?
 #define FLAG_RECEIVED_STARTER_PIKACHU 0x0AF
-#define FLAG_0x0B0               0x0B0
-#define FLAG_0x0B1               0x0B1
-#define FLAG_0x0B2               0x0B2
-#define FLAG_0x0B3               0x0B3
+#define FLAG_HIDE_MT_MOON_B2F_JESSIE_JAMES        0x0B0
+#define FLAG_HIDE_ROCKET_HIDEOUT_B4F_JESSIE_JAMES 0x0B1
+#define FLAG_HIDE_POKEMON_TOWER_7F_JESSIE_JAMES   0x0B2
+#define FLAG_HIDE_SILPH_CO_11F_JESSIE_JAMES       0x0B3
 #define FLAG_0x0B4               0x0B4
 #define FLAG_0x0B5               0x0B5
 #define FLAG_0x0B6               0x0B6

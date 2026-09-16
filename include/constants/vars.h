@@ -191,10 +191,10 @@
 #define VAR_MAP_SCENE_MT_MOON_B2F                                              0x408B
 
 
-#define VAR_0x408C                 0x408C
-#define VAR_0x408D                 0x408D
-#define VAR_0x408E                 0x408E
-#define VAR_0x408F                 0x408F
+#define VAR_MAP_SCENE_MT_MOON_B2F_JESSIE_JAMES                                 0x408C
+#define VAR_MAP_SCENE_ROCKET_HIDEOUT_B4F_JESSIE_JAMES                          0x408D
+#define VAR_MAP_SCENE_POKEMON_TOWER_7F_JESSIE_JAMES                            0x408E
+#define VAR_MAP_SCENE_SILPH_CO_11F_JESSIE_JAMES                                0x408F
 #define VAR_0x4090                 0x4090
 #define VAR_0x4091                 0x4091
 #define VAR_0x4092                 0x4092

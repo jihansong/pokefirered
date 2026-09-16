@@ -2,7 +2,12 @@
 
 RocketHideout_B4F_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, RocketHideout_B4F_OnLoad
+	map_script MAP_SCRIPT_ON_TRANSITION, RocketHideout_B4F_EventScript_HideJessieJamesOnTransition
 	.byte 0
+
+RocketHideout_B4F_EventScript_HideJessieJamesOnTransition::
+	call RocketHideout_B4F_EventScript_HideJessieJames
+	end
 
 RocketHideout_B4F_OnLoad::
 	setvar NUM_DOOR_GRUNTS_DEFEATED, 0
@@ -118,4 +123,83 @@ RocketHideout_B4F_EventScript_RemoveBarrier::
 	setmetatile 18, 13, METATILE_SilphCo_HideoutFloor, 0
 	setmetatile 17, 14, METATILE_SilphCo_HideoutFloor_ShadeFull, 0
 	setmetatile 18, 14, METATILE_SilphCo_HideoutFloor, 0
+	return
+
+RocketHideout_B4F_EventScript_JessieJamesTrigger0::
+	lockall
+	setvar VAR_TEMP_1, 0
+	goto RocketHideout_B4F_EventScript_JessieJames
+	end
+
+RocketHideout_B4F_EventScript_JessieJamesTrigger1::
+	lockall
+	setvar VAR_TEMP_1, 1
+	goto RocketHideout_B4F_EventScript_JessieJames
+	end
+
+@ Jessie & James ambush the player, as in Pokémon Yellow.
+RocketHideout_B4F_EventScript_JessieJames::
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	playbgm MUS_ENCOUNTER_ROCKET, 0
+	msgbox RocketHideout_B4F_Text_JessieJamesStop
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	call_if_eq VAR_TEMP_1, 0, RocketHideout_B4F_EventScript_JessieJamesAppear0
+	call_if_eq VAR_TEMP_1, 1, RocketHideout_B4F_EventScript_JessieJamesAppear1
+	msgbox RocketHideout_B4F_Text_JessieJamesIntro
+	closemessage
+	setvar VAR_LAST_TALKED, LOCALID_ROCKET_HIDEOUT_JESSIE
+	trainerbattle_no_intro TRAINER_JESSIE_JAMES_ROCKET_HIDEOUT, RocketHideout_B4F_Text_JessieJamesDefeat
+	msgbox RocketHideout_B4F_Text_JessieJamesBlastOff
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_ROCKET_HIDEOUT_JESSIE
+	removeobject LOCALID_ROCKET_HIDEOUT_JAMES
+	fadescreen FADE_FROM_BLACK
+	setvar VAR_MAP_SCENE_ROCKET_HIDEOUT_B4F_JESSIE_JAMES, 1
+	releaseall
+	end
+
+RocketHideout_B4F_EventScript_JessieJamesAppear0::
+	setobjectxyperm LOCALID_ROCKET_HIDEOUT_JESSIE, 14, 24
+	setobjectxyperm LOCALID_ROCKET_HIDEOUT_JAMES, 14, 25
+	addobject LOCALID_ROCKET_HIDEOUT_JESSIE
+	addobject LOCALID_ROCKET_HIDEOUT_JAMES
+	applymovement LOCALID_ROCKET_HIDEOUT_JESSIE, RocketHideout_B4F_EventScript_JessieJamesMovement0
+	applymovement LOCALID_ROCKET_HIDEOUT_JAMES, RocketHideout_B4F_EventScript_JessieJamesMovement0
+	waitmovement 0
+	return
+
+RocketHideout_B4F_EventScript_JessieJamesMovement0:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+RocketHideout_B4F_EventScript_JessieJamesAppear1::
+	setobjectxyperm LOCALID_ROCKET_HIDEOUT_JESSIE, 14, 24
+	setobjectxyperm LOCALID_ROCKET_HIDEOUT_JAMES, 14, 25
+	addobject LOCALID_ROCKET_HIDEOUT_JESSIE
+	addobject LOCALID_ROCKET_HIDEOUT_JAMES
+	applymovement LOCALID_ROCKET_HIDEOUT_JESSIE, RocketHideout_B4F_EventScript_JessieJamesMovement1
+	applymovement LOCALID_ROCKET_HIDEOUT_JAMES, RocketHideout_B4F_EventScript_JessieJamesMovement1
+	waitmovement 0
+	return
+
+RocketHideout_B4F_EventScript_JessieJamesMovement1:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+RocketHideout_B4F_EventScript_HideJessieJames::
+	setflag FLAG_HIDE_ROCKET_HIDEOUT_B4F_JESSIE_JAMES
 	return

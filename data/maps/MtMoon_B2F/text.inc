@@ -82,3 +82,17 @@ MtMoon_B2F_Text_ObtainedHelixFossil::
 MtMoon_B2F_Text_ObtainedDomeFossil::
     .string "Obtained the DOME FOSSIL!$"
 
+MtMoon_B2F_Text_JessieJamesStop::
+    .string "Stop right there!$"
+
+MtMoon_B2F_Text_JessieJamesIntro::
+    .string "That fossil is TEAM ROCKET's!\p"
+    .string "Surrender now, or prepare to\n"
+    .string "fight!$"
+
+MtMoon_B2F_Text_JessieJamesDefeat::
+    .string "A brat beat us?$"
+
+MtMoon_B2F_Text_JessieJamesBlastOff::
+    .string "TEAM ROCKET, blast off at the\n"
+    .string "speed of light!$"

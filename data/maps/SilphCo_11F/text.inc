@@ -92,3 +92,17 @@ SilphCo_11F_Text_FloorSign::
     .string "SILPH CO. HEAD OFFICE\n"
     .string "11F$"
 
+SilphCo_11F_Text_JessieJamesStop::
+    .string "Hold it right there, brat!$"
+
+SilphCo_11F_Text_JessieJamesIntro::
+    .string "Our BOSS is in a meeting!\p"
+    .string "You better not disturb him!$"
+
+SilphCo_11F_Text_JessieJamesDefeat::
+    .string "Like always…$"
+
+SilphCo_11F_Text_JessieJamesBlastOff::
+    .string "TEAM ROCKET, blast off at the\n"
+    .string "speed of light!\p"
+    .string "Again…$"

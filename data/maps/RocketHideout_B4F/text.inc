@@ -54,3 +54,17 @@ RocketHideout_B4F_Text_Grunt1PostBattle::
     .string "Oh, no!\n"
     .string "I dropped the LIFT KEY!$"
 
+RocketHideout_B4F_Text_JessieJamesStop::
+    .string "Not another step, brat!$"
+
+RocketHideout_B4F_Text_JessieJamesIntro::
+    .string "How dare you humiliate us at\n"
+    .string "MT. MOON!\p"
+    .string "It's payback time, you brat!$"
+
+RocketHideout_B4F_Text_JessieJamesDefeat::
+    .string "Such a dreadful twerp!$"
+
+RocketHideout_B4F_Text_JessieJamesBlastOff::
+    .string "Looks like TEAM ROCKET's blasting\n"
+    .string "off again!$"

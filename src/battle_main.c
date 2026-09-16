@@ -1632,7 +1632,10 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
             }
         }
 
-        gBattleTypeFlags |= gTrainers[trainerNum].doubleBattle;
+        // A scripted double battle (e.g. Jessie & James) against a player with only one
+        // usable Pokémon would send that Pokémon out twice, so fall back to a single battle.
+        if (gTrainers[trainerNum].doubleBattle && GetMonsStateToDoubles() == PLAYER_HAS_TWO_USABLE_MONS)
+            gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
     }
 
     return gTrainers[trainerNum].partySize;

@@ -329,11 +329,11 @@
 #define TRAINER_BLACK_BELT_KIYO                  323
 #define TRAINER_BLACK_BELT_TAKASHI               324
 #define TRAINER_BLACK_BELT_DAISUKE               325
-#define TRAINER_UNUSED_326                       326
-#define TRAINER_UNUSED_327                       327
-#define TRAINER_UNUSED_328                       328
+#define TRAINER_JESSIE_JAMES_MT_MOON             326
+#define TRAINER_JESSIE_JAMES_ROCKET_HIDEOUT      327
+#define TRAINER_JESSIE_JAMES_POKEMON_TOWER       328
 #define TRAINER_RIVAL_ROUTE22_EARLY              329
-#define TRAINER_UNUSED_330                       330
+#define TRAINER_JESSIE_JAMES_SILPH_CO            330
 #define TRAINER_UNUSED_331                       331
 #define TRAINER_RIVAL_CERULEAN                   332
 #define TRAINER_UNUSED_333                       333

@@ -1,5 +1,10 @@
 PokemonTower_7F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PokemonTower_7F_OnTransition
 	.byte 0
+
+PokemonTower_7F_OnTransition::
+	call PokemonTower_7F_EventScript_HideJessieJames
+	end
 
 PokemonTower_7F_EventScript_MrFuji::
 	lock
@@ -229,3 +234,97 @@ PokemonTower_7F_Movement_Grunt3ExitLeft::
 	walk_down
 	walk_down
 	step_end
+
+PokemonTower_7F_EventScript_JessieJamesTrigger0::
+	lockall
+	setvar VAR_TEMP_1, 0
+	goto PokemonTower_7F_EventScript_JessieJames
+	end
+
+PokemonTower_7F_EventScript_JessieJamesTrigger1::
+	lockall
+	setvar VAR_TEMP_1, 1
+	goto PokemonTower_7F_EventScript_JessieJames
+	end
+
+PokemonTower_7F_EventScript_JessieJamesTrigger2::
+	lockall
+	setvar VAR_TEMP_1, 2
+	goto PokemonTower_7F_EventScript_JessieJames
+	end
+
+@ Jessie & James ambush the player, as in Pokémon Yellow.
+PokemonTower_7F_EventScript_JessieJames::
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	playbgm MUS_ENCOUNTER_ROCKET, 0
+	msgbox PokemonTower_7F_Text_JessieJamesStop
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	call_if_eq VAR_TEMP_1, 0, PokemonTower_7F_EventScript_JessieJamesAppear0
+	call_if_eq VAR_TEMP_1, 1, PokemonTower_7F_EventScript_JessieJamesAppear1
+	call_if_eq VAR_TEMP_1, 2, PokemonTower_7F_EventScript_JessieJamesAppear2
+	msgbox PokemonTower_7F_Text_JessieJamesIntro
+	closemessage
+	setvar VAR_LAST_TALKED, LOCALID_POKEMON_TOWER_JESSIE
+	trainerbattle_no_intro TRAINER_JESSIE_JAMES_POKEMON_TOWER, PokemonTower_7F_Text_JessieJamesDefeat
+	msgbox PokemonTower_7F_Text_JessieJamesBlastOff
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_POKEMON_TOWER_JESSIE
+	removeobject LOCALID_POKEMON_TOWER_JAMES
+	fadescreen FADE_FROM_BLACK
+	setvar VAR_MAP_SCENE_POKEMON_TOWER_7F_JESSIE_JAMES, 1
+	releaseall
+	end
+
+PokemonTower_7F_EventScript_JessieJamesAppear0::
+	setobjectxyperm LOCALID_POKEMON_TOWER_JESSIE, 10, 11
+	setobjectxyperm LOCALID_POKEMON_TOWER_JAMES, 11, 11
+	addobject LOCALID_POKEMON_TOWER_JESSIE
+	addobject LOCALID_POKEMON_TOWER_JAMES
+	applymovement LOCALID_POKEMON_TOWER_JESSIE, PokemonTower_7F_EventScript_JessieJamesMovement0
+	applymovement LOCALID_POKEMON_TOWER_JAMES, PokemonTower_7F_EventScript_JessieJamesMovement0
+	waitmovement 0
+	return
+
+PokemonTower_7F_EventScript_JessieJamesMovement0:
+	walk_down
+	walk_down
+	step_end
+
+PokemonTower_7F_EventScript_JessieJamesAppear1::
+	setobjectxyperm LOCALID_POKEMON_TOWER_JESSIE, 11, 11
+	setobjectxyperm LOCALID_POKEMON_TOWER_JAMES, 12, 11
+	addobject LOCALID_POKEMON_TOWER_JESSIE
+	addobject LOCALID_POKEMON_TOWER_JAMES
+	applymovement LOCALID_POKEMON_TOWER_JESSIE, PokemonTower_7F_EventScript_JessieJamesMovement1
+	applymovement LOCALID_POKEMON_TOWER_JAMES, PokemonTower_7F_EventScript_JessieJamesMovement1
+	waitmovement 0
+	return
+
+PokemonTower_7F_EventScript_JessieJamesMovement1:
+	walk_down
+	walk_down
+	step_end
+
+PokemonTower_7F_EventScript_JessieJamesAppear2::
+	setobjectxyperm LOCALID_POKEMON_TOWER_JESSIE, 12, 11
+	setobjectxyperm LOCALID_POKEMON_TOWER_JAMES, 11, 11
+	addobject LOCALID_POKEMON_TOWER_JESSIE
+	addobject LOCALID_POKEMON_TOWER_JAMES
+	applymovement LOCALID_POKEMON_TOWER_JESSIE, PokemonTower_7F_EventScript_JessieJamesMovement2
+	applymovement LOCALID_POKEMON_TOWER_JAMES, PokemonTower_7F_EventScript_JessieJamesMovement2
+	waitmovement 0
+	return
+
+PokemonTower_7F_EventScript_JessieJamesMovement2:
+	walk_down
+	walk_down
+	step_end
+
+PokemonTower_7F_EventScript_HideJessieJames::
+	setflag FLAG_HIDE_POKEMON_TOWER_7F_JESSIE_JAMES
+	return

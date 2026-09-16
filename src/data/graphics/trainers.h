@@ -441,6 +441,9 @@ const u32 gTrainerPalette_Lady[] = INCBIN_U32("graphics/trainers/palettes/lady.g
 
 const u32 gTrainerFrontPic_Painter[] = INCBIN_U32("graphics/trainers/front_pics/painter_front_pic.4bpp.lz");
 const u32 gTrainerPalette_Painter[] = INCBIN_U32("graphics/trainers/palettes/painter.gbapal.lz");
+// Converted from Pokémon Yellow's Jessie & James picture
+const u32 gTrainerFrontPic_JessieJames[] = INCBIN_U32("graphics/trainers/front_pics/jessie_james_front_pic.4bpp.lz");
+const u32 gTrainerPalette_JessieJames[] = INCBIN_U32("graphics/trainers/palettes/jessie_james.gbapal.lz");
 
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red_back_pic.4bpp");
 const u8 gTrainerBackPic_Leaf[] = INCBIN_U8("graphics/trainers/back_pics/leaf_back_pic.4bpp");

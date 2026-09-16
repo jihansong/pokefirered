@@ -3,6 +3,7 @@ MtMoon_B2F_MapScripts::
 	.byte 0
 
 MtMoon_B2F_OnTransition::
+	call MtMoon_B2F_EventScript_HideJessieJames
 	call_if_unset FLAG_GOT_FOSSIL_FROM_MT_MOON, MtMoon_B2F_EventScript_ShowFossils
 	end
 
@@ -71,6 +72,7 @@ MtMoon_B2F_EventScript_DomeFossil::
 	removeobject LOCALID_HELIX_FOSSIL
 	setflag FLAG_GOT_DOME_FOSSIL
 	setflag FLAG_GOT_FOSSIL_FROM_MT_MOON
+	setvar VAR_MAP_SCENE_MT_MOON_B2F_JESSIE_JAMES, 1
 	release
 	end
 
@@ -102,6 +104,7 @@ MtMoon_B2F_EventScript_HelixFossil::
 	removeobject LOCALID_DOME_FOSSIL
 	setflag FLAG_GOT_HELIX_FOSSIL
 	setflag FLAG_GOT_FOSSIL_FROM_MT_MOON
+	setvar VAR_MAP_SCENE_MT_MOON_B2F_JESSIE_JAMES, 1
 	release
 	end
 
@@ -134,3 +137,77 @@ MtMoon_B2F_EventScript_Grunt4::
 	trainerbattle_single TRAINER_TEAM_ROCKET_GRUNT_4, MtMoon_B2F_Text_Grunt4Intro, MtMoon_B2F_Text_Grunt4Defeat
 	msgbox MtMoon_B2F_Text_Grunt4PostBattle, MSGBOX_AUTOCLOSE
 	end
+
+MtMoon_B2F_EventScript_JessieJamesTrigger0::
+	lockall
+	setvar VAR_TEMP_1, 0
+	goto MtMoon_B2F_EventScript_JessieJames
+	end
+
+MtMoon_B2F_EventScript_JessieJamesTrigger1::
+	lockall
+	setvar VAR_TEMP_1, 1
+	goto MtMoon_B2F_EventScript_JessieJames
+	end
+
+@ Jessie & James ambush the player, as in Pokémon Yellow.
+MtMoon_B2F_EventScript_JessieJames::
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	playbgm MUS_ENCOUNTER_ROCKET, 0
+	msgbox MtMoon_B2F_Text_JessieJamesStop
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	call_if_eq VAR_TEMP_1, 0, MtMoon_B2F_EventScript_JessieJamesAppear0
+	call_if_eq VAR_TEMP_1, 1, MtMoon_B2F_EventScript_JessieJamesAppear1
+	msgbox MtMoon_B2F_Text_JessieJamesIntro
+	closemessage
+	setvar VAR_LAST_TALKED, LOCALID_MT_MOON_JESSIE
+	trainerbattle_no_intro TRAINER_JESSIE_JAMES_MT_MOON, MtMoon_B2F_Text_JessieJamesDefeat
+	msgbox MtMoon_B2F_Text_JessieJamesBlastOff
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_MT_MOON_JESSIE
+	removeobject LOCALID_MT_MOON_JAMES
+	fadescreen FADE_FROM_BLACK
+	setvar VAR_MAP_SCENE_MT_MOON_B2F_JESSIE_JAMES, 2
+	releaseall
+	end
+
+MtMoon_B2F_EventScript_JessieJamesAppear0::
+	setobjectxyperm LOCALID_MT_MOON_JESSIE, 3, 3
+	setobjectxyperm LOCALID_MT_MOON_JAMES, 4, 3
+	addobject LOCALID_MT_MOON_JESSIE
+	addobject LOCALID_MT_MOON_JAMES
+	applymovement LOCALID_MT_MOON_JESSIE, MtMoon_B2F_EventScript_JessieJamesMovement0
+	applymovement LOCALID_MT_MOON_JAMES, MtMoon_B2F_EventScript_JessieJamesMovement0
+	waitmovement 0
+	return
+
+MtMoon_B2F_EventScript_JessieJamesMovement0:
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+MtMoon_B2F_EventScript_JessieJamesAppear1::
+	setobjectxyperm LOCALID_MT_MOON_JESSIE, 4, 3
+	setobjectxyperm LOCALID_MT_MOON_JAMES, 3, 3
+	addobject LOCALID_MT_MOON_JESSIE
+	addobject LOCALID_MT_MOON_JAMES
+	applymovement LOCALID_MT_MOON_JESSIE, MtMoon_B2F_EventScript_JessieJamesMovement1
+	applymovement LOCALID_MT_MOON_JAMES, MtMoon_B2F_EventScript_JessieJamesMovement1
+	waitmovement 0
+	return
+
+MtMoon_B2F_EventScript_JessieJamesMovement1:
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+MtMoon_B2F_EventScript_HideJessieJames::
+	setflag FLAG_HIDE_MT_MOON_B2F_JESSIE_JAMES
+	return

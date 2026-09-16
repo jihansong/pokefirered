@@ -1,6 +1,11 @@
 SilphCo_11F_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, SilphCo_11F_OnLoad
+	map_script MAP_SCRIPT_ON_TRANSITION, SilphCo_11F_OnTransition
 	.byte 0
+
+SilphCo_11F_OnTransition::
+	call SilphCo_11F_EventScript_HideJessieJames
+	end
 
 SilphCo_11F_OnLoad::
 	call_if_unset FLAG_SILPH_11F_DOOR, EventScript_Close11FDoor
@@ -131,3 +136,100 @@ SilphCo_11F_EventScript_Grunt2::
 	trainerbattle_single TRAINER_TEAM_ROCKET_GRUNT_41, SilphCo_11F_Text_Grunt2Intro, SilphCo_11F_Text_Grunt2Defeat
 	msgbox SilphCo_11F_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
 	end
+
+SilphCo_11F_EventScript_JessieJamesTrigger0::
+	lockall
+	setvar VAR_TEMP_1, 0
+	goto SilphCo_11F_EventScript_JessieJames
+	end
+
+SilphCo_11F_EventScript_JessieJamesTrigger1::
+	lockall
+	setvar VAR_TEMP_1, 1
+	goto SilphCo_11F_EventScript_JessieJames
+	end
+
+SilphCo_11F_EventScript_JessieJamesTrigger2::
+	lockall
+	setvar VAR_TEMP_1, 2
+	goto SilphCo_11F_EventScript_JessieJames
+	end
+
+@ Jessie & James ambush the player, as in Pokémon Yellow.
+SilphCo_11F_EventScript_JessieJames::
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	playbgm MUS_ENCOUNTER_ROCKET, 0
+	msgbox SilphCo_11F_Text_JessieJamesStop
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	call_if_eq VAR_TEMP_1, 0, SilphCo_11F_EventScript_JessieJamesAppear0
+	call_if_eq VAR_TEMP_1, 1, SilphCo_11F_EventScript_JessieJamesAppear1
+	call_if_eq VAR_TEMP_1, 2, SilphCo_11F_EventScript_JessieJamesAppear2
+	msgbox SilphCo_11F_Text_JessieJamesIntro
+	closemessage
+	setvar VAR_LAST_TALKED, LOCALID_SILPH_CO_JESSIE
+	trainerbattle_no_intro TRAINER_JESSIE_JAMES_SILPH_CO, SilphCo_11F_Text_JessieJamesDefeat
+	msgbox SilphCo_11F_Text_JessieJamesBlastOff
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SILPH_CO_JESSIE
+	removeobject LOCALID_SILPH_CO_JAMES
+	fadescreen FADE_FROM_BLACK
+	setvar VAR_MAP_SCENE_SILPH_CO_11F_JESSIE_JAMES, 1
+	releaseall
+	end
+
+SilphCo_11F_EventScript_JessieJamesAppear0::
+	setobjectxyperm LOCALID_SILPH_CO_JESSIE, 0, 11
+	setobjectxyperm LOCALID_SILPH_CO_JAMES, 1, 11
+	addobject LOCALID_SILPH_CO_JESSIE
+	addobject LOCALID_SILPH_CO_JAMES
+	applymovement LOCALID_SILPH_CO_JESSIE, SilphCo_11F_EventScript_JessieJamesMovement0
+	applymovement LOCALID_SILPH_CO_JAMES, SilphCo_11F_EventScript_JessieJamesMovement0
+	waitmovement 0
+	return
+
+SilphCo_11F_EventScript_JessieJamesMovement0:
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+SilphCo_11F_EventScript_JessieJamesAppear1::
+	setobjectxyperm LOCALID_SILPH_CO_JESSIE, 1, 11
+	setobjectxyperm LOCALID_SILPH_CO_JAMES, 2, 11
+	addobject LOCALID_SILPH_CO_JESSIE
+	addobject LOCALID_SILPH_CO_JAMES
+	applymovement LOCALID_SILPH_CO_JESSIE, SilphCo_11F_EventScript_JessieJamesMovement1
+	applymovement LOCALID_SILPH_CO_JAMES, SilphCo_11F_EventScript_JessieJamesMovement1
+	waitmovement 0
+	return
+
+SilphCo_11F_EventScript_JessieJamesMovement1:
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+SilphCo_11F_EventScript_JessieJamesAppear2::
+	setobjectxyperm LOCALID_SILPH_CO_JESSIE, 2, 11
+	setobjectxyperm LOCALID_SILPH_CO_JAMES, 1, 11
+	addobject LOCALID_SILPH_CO_JESSIE
+	addobject LOCALID_SILPH_CO_JAMES
+	applymovement LOCALID_SILPH_CO_JESSIE, SilphCo_11F_EventScript_JessieJamesMovement2
+	applymovement LOCALID_SILPH_CO_JAMES, SilphCo_11F_EventScript_JessieJamesMovement2
+	waitmovement 0
+	return
+
+SilphCo_11F_EventScript_JessieJamesMovement2:
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+SilphCo_11F_EventScript_HideJessieJames::
+	setflag FLAG_HIDE_SILPH_CO_11F_JESSIE_JAMES
+	return

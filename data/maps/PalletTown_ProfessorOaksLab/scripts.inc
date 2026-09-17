@@ -8,6 +8,8 @@ PalletTown_ProfessorOaksLab_MapScripts::
 
 PalletTown_ProfessorOaksLab_OnTransition::
 	setflag FLAG_VISITED_OAKS_LAB
+	call_if_unset FLAG_BEAT_PROF_OAK, PalletTown_ProfessorOaksLab_EventScript_HideTrophy
+	call_if_set FLAG_BEAT_PROF_OAK, PalletTown_ProfessorOaksLab_EventScript_ShowTrophy
 	call_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 1, PalletTown_ProfessorOaksLab_EventScript_ReadyOakForStarterScene
 	call_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 7, PalletTown_ProfessorOaksLab_EventScript_ReadyOakForNationalDexScene
 	call_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 8, PalletTown_ProfessorOaksLab_EventScript_SetNationalDexSceneFinished
@@ -473,6 +475,8 @@ PalletTown_ProfessorOaksLab_EventScript_ProfOak::
 	lock
 	faceplayer
 	goto_if_set SHOWED_OAK_COMPLETE_DEX, PalletTown_ProfessorOaksLab_EventScript_OakJustShownCompleteDex
+	goto_if_set FLAG_SYS_GAME_CLEAR, PalletTown_ProfessorOaksLab_EventScript_TryOakChallenge
+PalletTown_ProfessorOaksLab_EventScript_ProfOakNoChallenge::
 	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 9, PalletTown_ProfessorOaksLab_EventScript_RatePokedex
 	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 8, PalletTown_ProfessorOaksLab_EventScript_MonsAroundWorldWait
 	goto_if_set FLAG_SYS_GAME_CLEAR, PalletTown_ProfessorOaksLab_EventScript_TryStartNationalDexScene
@@ -1033,4 +1037,61 @@ PalletTown_ProfessorOaksLab_EventScript_RightSign::
 PalletTown_ProfessorOaksLab_EventScript_RightSignAlt::
 	msgbox PalletTown_ProfessorOaksLab_Text_AllMonTypesHaveStrongAndWeakPoints
 	releaseall
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_HideTrophy::
+	setflag FLAG_HIDE_OAKS_LAB_TROPHY
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_ShowTrophy::
+	clearflag FLAG_HIDE_OAKS_LAB_TROPHY
+	return
+
+@ The rumor that PROF. OAK was a strong TRAINER in his youth: once the player
+@ has entered the HALL OF FAME and caught all 150 KANTO POKéMON (not counting
+@ MEW), he takes them on with the party left unused in the Gen I data.
+PalletTown_ProfessorOaksLab_EventScript_TryOakChallenge::
+	specialvar VAR_RESULT, HasAllKantoMons
+	goto_if_eq VAR_RESULT, FALSE, PalletTown_ProfessorOaksLab_EventScript_ProfOakNoChallenge
+	goto_if_set FLAG_BEAT_PROF_OAK, PalletTown_ProfessorOaksLab_EventScript_OakAskRematch
+	msgbox PalletTown_ProfessorOaksLab_Text_OakWasTrainerOnce, MSGBOX_YESNO
+	goto PalletTown_ProfessorOaksLab_EventScript_OakAnswerChallenge
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_OakAskRematch::
+	msgbox PalletTown_ProfessorOaksLab_Text_OakAnotherBattle, MSGBOX_YESNO
+PalletTown_ProfessorOaksLab_EventScript_OakAnswerChallenge::
+	goto_if_eq VAR_RESULT, NO, PalletTown_ProfessorOaksLab_EventScript_ProfOakNoChallenge
+	msgbox PalletTown_ProfessorOaksLab_Text_OakTakeOffLabCoat
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playse SE_EXIT
+	delay 30
+	fadescreen FADE_FROM_BLACK
+	cleartrainerflag TRAINER_PKMN_PROF_PROF_OAK
+	trainerbattle_no_intro TRAINER_PKMN_PROF_PROF_OAK, PalletTown_ProfessorOaksLab_Text_OakDefeat
+	goto_if_set FLAG_BEAT_PROF_OAK, PalletTown_ProfessorOaksLab_EventScript_OakBeatenAgain
+	msgbox PalletTown_ProfessorOaksLab_Text_OakYouSurpassedMe
+	closemessage
+	playse SE_EXIT
+	setflag FLAG_BEAT_PROF_OAK
+	clearflag FLAG_HIDE_OAKS_LAB_TROPHY
+	addobject LOCALID_OAKS_LAB_TROPHY
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	playfanfare MUS_OBTAIN_BADGE
+	message PalletTown_ProfessorOaksLab_Text_TrophyPutOnDisplay
+	waitmessage
+	waitfanfare
+	call EventScript_RestorePrevTextColor
+	msgbox PalletTown_ProfessorOaksLab_Text_OakRecognition
+	release
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_OakBeatenAgain::
+	msgbox PalletTown_ProfessorOaksLab_Text_OakStillGotIt
+	release
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_Trophy::
+	msgbox PalletTown_ProfessorOaksLab_Text_Trophy, MSGBOX_NPC
 	end

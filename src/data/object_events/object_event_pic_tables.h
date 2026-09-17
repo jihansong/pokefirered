@@ -1822,3 +1822,7 @@ static const struct SpriteFrameImage sPicTable_Togepi[] = {
     overworld_frame(gObjectEventPic_Togepi, 2, 2, 2),
     overworld_frame(gObjectEventPic_Togepi, 2, 2, 2),
 };
+
+static const struct SpriteFrameImage sPicTable_OakTrophy[] = {
+    overworld_frame(gObjectEventPic_OakTrophy, 2, 4, 0),
+};

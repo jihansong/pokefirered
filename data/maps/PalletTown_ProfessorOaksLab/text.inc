@@ -375,3 +375,54 @@ PalletTown_ProfessorOaksLab_Text_RivalIllCompleteThePokedex::
     .string "ONE ISLAND first…\p"
     .string "Anyways, I'm outta here!$"
 
+
+PalletTown_ProfessorOaksLab_Text_OakWasTrainerOnce::
+    .string "OAK: {PLAYER}, you've become the\n"
+    .string "CHAMPION and caught every POKéMON\l"
+    .string "in KANTO!\p"
+    .string "You know, I was a TRAINER once, too.\n"
+    .string "Quite a famous one, back in my day!\p"
+    .string "Watching you has made my old blood\n"
+    .string "boil again.\p"
+    .string "{PLAYER}! Will you battle this\n"
+    .string "old man?$"
+
+PalletTown_ProfessorOaksLab_Text_OakAnotherBattle::
+    .string "OAK: Ho! {PLAYER}!\n"
+    .string "Up for another battle with me?$"
+
+PalletTown_ProfessorOaksLab_Text_OakTakeOffLabCoat::
+    .string "OAK: Splendid!\n"
+    .string "Just let me take off this lab coat…\p"
+    .string "Now, then!\n"
+    .string "Show me everything you've got!$"
+
+PalletTown_ProfessorOaksLab_Text_OakDefeat::
+    .string "Hohoho! Magnificent!\n"
+    .string "You're the real thing!$"
+
+PalletTown_ProfessorOaksLab_Text_OakYouSurpassedMe::
+    .string "OAK: Whew…\n"
+    .string "You've gone far beyond this old man.\p"
+    .string "{PLAYER}, I'd like to keep a record\n"
+    .string "of this day right here in my lab.$"
+
+PalletTown_ProfessorOaksLab_Text_TrophyPutOnDisplay::
+    .string "PROF. OAK put a gold trophy on\n"
+    .string "display!$"
+
+PalletTown_ProfessorOaksLab_Text_OakRecognition::
+    .string "OAK: A TRAINER who knows every\n"
+    .string "POKéMON and battles alongside them…\p"
+    .string "That's what I call a true\n"
+    .string "POKéMON MASTER.\p"
+    .string "I'm proud of you, {PLAYER}!$"
+
+PalletTown_ProfessorOaksLab_Text_OakStillGotIt::
+    .string "OAK: Hohoho! You're as strong as ever.\n"
+    .string "My back is killing me, though…$"
+
+PalletTown_ProfessorOaksLab_Text_Trophy::
+    .string "A gold trophy.\p"
+    .string "“To {PLAYER}, the TRAINER who\n"
+    .string "surpassed PROF. OAK.”$"

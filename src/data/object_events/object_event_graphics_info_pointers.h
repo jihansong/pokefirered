@@ -163,6 +163,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GrottoGrass;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Plusle;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Minun;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Togepi;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OakTrophy;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -331,4 +332,5 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_PLUSLE]                   = &gObjectEventGraphicsInfo_Plusle,
     [OBJ_EVENT_GFX_MINUN]                    = &gObjectEventGraphicsInfo_Minun,
     [OBJ_EVENT_GFX_TOGEPI]                   = &gObjectEventGraphicsInfo_Togepi,
+    [OBJ_EVENT_GFX_OAK_TROPHY]               = &gObjectEventGraphicsInfo_OakTrophy,
 };

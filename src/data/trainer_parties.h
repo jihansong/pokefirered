@@ -6957,7 +6957,40 @@ static const struct TrainerMonNoItemDefaultMoves sParty_HikerFranklin2[] = {
     },
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_PkmnProfProfOak[] = {DUMMY_TRAINER_MON};
+// Levels from the unused PROF. OAK data in Gen I, plus the LAPRAS and VENUSAUR
+// the rumors give him.
+static const struct TrainerMonNoItemDefaultMoves sParty_PkmnProfProfOak[] = {
+    {
+        .iv = 255,
+        .lvl = 65,
+        .species = SPECIES_LAPRAS,
+    },
+    {
+        .iv = 255,
+        .lvl = 66,
+        .species = SPECIES_TAUROS,
+    },
+    {
+        .iv = 255,
+        .lvl = 67,
+        .species = SPECIES_EXEGGUTOR,
+    },
+    {
+        .iv = 255,
+        .lvl = 68,
+        .species = SPECIES_ARCANINE,
+    },
+    {
+        .iv = 255,
+        .lvl = 69,
+        .species = SPECIES_VENUSAUR,
+    },
+    {
+        .iv = 255,
+        .lvl = 70,
+        .species = SPECIES_GYARADOS,
+    },
+};
 static const struct TrainerMonNoItemDefaultMoves sParty_PlayerBrendan[] = {DUMMY_TRAINER_MON};
 static const struct TrainerMonNoItemDefaultMoves sParty_PlayerMay[] = {DUMMY_TRAINER_MON};
 static const struct TrainerMonNoItemDefaultMoves sParty_PlayerRed[] = {DUMMY_TRAINER_MON};

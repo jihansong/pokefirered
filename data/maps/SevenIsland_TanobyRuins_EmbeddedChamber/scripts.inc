@@ -1,0 +1,205 @@
+SevenIsland_TanobyRuins_EmbeddedChamber_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SevenIsland_TanobyRuins_EmbeddedChamber_OnTransition
+	.byte 0
+
+@ HGSS's Embedded Tower in the TANOBY RUINS. After the Hall of Fame and the
+@ Sevii Islands story, murals in the MONEAN CHAMBER hold the BLUE ORB and the
+@ RED ORB. Carrying one to the back wall of the VIAPOIS CHAMBER opens a sealed
+@ chamber where KYOGRE or GROUDON waits (Lv50). Once both have been battled,
+@ the wall opens once more for RAYQUAZA (Lv50).
+@ VAR_EMBEDDED_CHAMBER_LEGEND: 0 none, 1 KYOGRE, 2 GROUDON, 3 RAYQUAZA
+SevenIsland_TanobyRuins_EmbeddedChamber_OnTransition::
+	setflag FLAG_HIDE_EMBEDDED_CHAMBER_LEGEND
+	call_if_eq VAR_EMBEDDED_CHAMBER_LEGEND, 1, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_SetKyogre
+	call_if_eq VAR_EMBEDDED_CHAMBER_LEGEND, 2, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_SetGroudon
+	call_if_eq VAR_EMBEDDED_CHAMBER_LEGEND, 3, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_SetRayquaza
+	end
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_SetKyogre::
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_KYOGRE
+	goto_if_set FLAG_FOUGHT_KYOGRE, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Return
+	clearflag FLAG_HIDE_EMBEDDED_CHAMBER_LEGEND
+	return
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_SetGroudon::
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_GROUDON
+	goto_if_set FLAG_FOUGHT_GROUDON, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Return
+	clearflag FLAG_HIDE_EMBEDDED_CHAMBER_LEGEND
+	return
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_SetRayquaza::
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RAYQUAZA
+	goto_if_set FLAG_FOUGHT_RAYQUAZA, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Return
+	clearflag FLAG_HIDE_EMBEDDED_CHAMBER_LEGEND
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Return::
+	return
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_CanTakeOrb::
+	setvar VAR_RESULT, FALSE
+	goto_if_unset FLAG_SYS_GAME_CLEAR, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Return
+	goto_if_unset FLAG_RECOVERED_SAPPHIRE, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Return
+	setvar VAR_RESULT, TRUE
+	return
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_SeaMural::
+	lockall
+	call SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_CanTakeOrb
+	goto_if_eq VAR_RESULT, FALSE, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_SeaMuralPlain
+	goto_if_set FLAG_FOUGHT_KYOGRE, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_SeaMuralPlain
+	checkitem ITEM_BLUE_ORB
+	goto_if_eq VAR_RESULT, TRUE, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_SeaMuralPlain
+	msgbox SevenIsland_TanobyRuins_EmbeddedChamber_Text_SeaMuralOrb, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_ReleaseEnd
+	giveitem ITEM_BLUE_ORB
+	releaseall
+	end
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_SeaMuralPlain::
+	msgbox SevenIsland_TanobyRuins_EmbeddedChamber_Text_SeaMural
+	releaseall
+	end
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_LandMural::
+	lockall
+	call SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_CanTakeOrb
+	goto_if_eq VAR_RESULT, FALSE, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_LandMuralPlain
+	goto_if_set FLAG_FOUGHT_GROUDON, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_LandMuralPlain
+	checkitem ITEM_RED_ORB
+	goto_if_eq VAR_RESULT, TRUE, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_LandMuralPlain
+	msgbox SevenIsland_TanobyRuins_EmbeddedChamber_Text_LandMuralOrb, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_ReleaseEnd
+	giveitem ITEM_RED_ORB
+	releaseall
+	end
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_LandMuralPlain::
+	msgbox SevenIsland_TanobyRuins_EmbeddedChamber_Text_LandMural
+	releaseall
+	end
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_SealedWall::
+	lockall
+	goto_if_unset FLAG_FOUGHT_KYOGRE, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_TryBlueOrb
+	goto_if_unset FLAG_FOUGHT_GROUDON, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_TryRedOrb
+	goto_if_set FLAG_FOUGHT_RAYQUAZA, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_WallPlain
+	msgbox SevenIsland_TanobyRuins_EmbeddedChamber_Text_SkyRumbles
+	setvar VAR_EMBEDDED_CHAMBER_LEGEND, 3
+	goto SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_OpenWall
+	end
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_TryBlueOrb::
+	checkitem ITEM_BLUE_ORB
+	goto_if_eq VAR_RESULT, FALSE, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_TryRedOrb
+	msgbox SevenIsland_TanobyRuins_EmbeddedChamber_Text_BlueOrbGlows
+	setvar VAR_EMBEDDED_CHAMBER_LEGEND, 1
+	goto SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_OpenWall
+	end
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_TryRedOrb::
+	goto_if_set FLAG_FOUGHT_GROUDON, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_WallPlain
+	checkitem ITEM_RED_ORB
+	goto_if_eq VAR_RESULT, FALSE, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_WallPlain
+	msgbox SevenIsland_TanobyRuins_EmbeddedChamber_Text_RedOrbGlows
+	setvar VAR_EMBEDDED_CHAMBER_LEGEND, 2
+	goto SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_OpenWall
+	end
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_WallPlain::
+	msgbox SevenIsland_TanobyRuins_EmbeddedChamber_Text_WallMarkings
+	releaseall
+	end
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_OpenWall::
+	closemessage
+	playse SE_M_EARTHQUAKE
+	setvar VAR_0x8004, 0
+	setvar VAR_0x8005, 3
+	setvar VAR_0x8006, 12
+	setvar VAR_0x8007, 3
+	special ShakeScreen
+	delay 60
+	waitse
+	msgbox SevenIsland_TanobyRuins_EmbeddedChamber_Text_WallSplitOpen
+	closemessage
+	warp MAP_SEVEN_ISLAND_TANOBY_RUINS_EMBEDDED_CHAMBER, 0
+	waitstate
+	releaseall
+	end
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Legend::
+	goto_if_questlog EventScript_ReleaseEnd
+	special QuestLog_CutRecording
+	lock
+	faceplayer
+	goto_if_eq VAR_EMBEDDED_CHAMBER_LEGEND, 1, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Kyogre
+	goto_if_eq VAR_EMBEDDED_CHAMBER_LEGEND, 2, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Groudon
+	goto_if_eq VAR_EMBEDDED_CHAMBER_LEGEND, 3, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Rayquaza
+	release
+	end
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Kyogre::
+	setvar VAR_0x8004, SPECIES_KYOGRE
+	call SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Cry
+	setwildbattle SPECIES_KYOGRE, 50
+	call SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Battle
+	goto_if_eq VAR_RESULT, FALSE, EventScript_MonFlewAway
+	setflag FLAG_FOUGHT_KYOGRE
+	removeitem ITEM_BLUE_ORB
+	goto SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_LegendGone
+	end
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Groudon::
+	setvar VAR_0x8004, SPECIES_GROUDON
+	call SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Cry
+	setwildbattle SPECIES_GROUDON, 50
+	call SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Battle
+	goto_if_eq VAR_RESULT, FALSE, EventScript_MonFlewAway
+	setflag FLAG_FOUGHT_GROUDON
+	removeitem ITEM_RED_ORB
+	goto SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_LegendGone
+	end
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Rayquaza::
+	setvar VAR_0x8004, SPECIES_RAYQUAZA
+	call SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Cry
+	setwildbattle SPECIES_RAYQUAZA, 50
+	call SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Battle
+	goto_if_eq VAR_RESULT, FALSE, EventScript_MonFlewAway
+	setflag FLAG_FOUGHT_RAYQUAZA
+	goto SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_LegendGone
+	end
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_LegendGone::
+	setvar VAR_EMBEDDED_CHAMBER_LEGEND, 0
+	setflag FLAG_HIDE_EMBEDDED_CHAMBER_LEGEND
+	goto EventScript_RemoveStaticMon
+	end
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Cry::
+	copyvar VAR_TEMP_2, VAR_0x8004
+	waitse
+	playmoncry VAR_0x8004, CRY_MODE_ENCOUNTER
+	message SevenIsland_TanobyRuins_EmbeddedChamber_Text_Roar
+	waitmessage
+	waitmoncry
+	delay 20
+	playbgm MUS_ENCOUNTER_GYM_LEADER, 0
+	waitbuttonpress
+	return
+
+@ Sets VAR_RESULT to FALSE if the player ran, so the POKéMON can be met again
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Battle::
+	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	special StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Ran
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Ran
+	setvar VAR_RESULT, TRUE
+	return
+
+SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_Ran::
+	copyvar VAR_0x8004, VAR_TEMP_2
+	setvar VAR_RESULT, FALSE
+	return

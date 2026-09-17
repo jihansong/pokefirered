@@ -477,6 +477,9 @@ static const u8 gInitialMovementTypeFacingDirections[MOVEMENT_TYPES_COUNT] = {
 #define OBJ_EVENT_PAL_TAG_PERSIAN_STATUE              0x1121
 #define OBJ_EVENT_PAL_TAG_DITTO                       0x1122
 #define OBJ_EVENT_PAL_TAG_GROTTO_GRASS                0x1123
+#define OBJ_EVENT_PAL_TAG_KYOGRE                      0x1124
+#define OBJ_EVENT_PAL_TAG_GROUDON                     0x1125
+#define OBJ_EVENT_PAL_TAG_RAYQUAZA                    0x1126
 #define OBJ_EVENT_PAL_TAG_NONE                        0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -514,6 +517,9 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_PersianStatue,           OBJ_EVENT_PAL_TAG_PERSIAN_STATUE},
     {gObjectEventPal_Ditto,                   OBJ_EVENT_PAL_TAG_DITTO},
     {gObjectEventPal_GrottoGrass,             OBJ_EVENT_PAL_TAG_GROTTO_GRASS},
+    {gObjectEventPal_Kyogre,                  OBJ_EVENT_PAL_TAG_KYOGRE},
+    {gObjectEventPal_Groudon,                 OBJ_EVENT_PAL_TAG_GROUDON},
+    {gObjectEventPal_Rayquaza,                OBJ_EVENT_PAL_TAG_RAYQUAZA},
     {},
 };
 

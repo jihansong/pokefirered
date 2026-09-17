@@ -166,6 +166,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Togepi;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OakTrophy;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Clefable;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MoonStone;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kyogre;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Groudon;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rayquaza;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -337,4 +340,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_OAK_TROPHY]               = &gObjectEventGraphicsInfo_OakTrophy,
     [OBJ_EVENT_GFX_CLEFABLE]                 = &gObjectEventGraphicsInfo_Clefable,
     [OBJ_EVENT_GFX_MOON_STONE]               = &gObjectEventGraphicsInfo_MoonStone,
+    [OBJ_EVENT_GFX_KYOGRE]                   = &gObjectEventGraphicsInfo_Kyogre,
+    [OBJ_EVENT_GFX_GROUDON]                  = &gObjectEventGraphicsInfo_Groudon,
+    [OBJ_EVENT_GFX_RAYQUAZA]                 = &gObjectEventGraphicsInfo_Rayquaza,
 };

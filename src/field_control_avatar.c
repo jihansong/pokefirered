@@ -22,6 +22,7 @@
 #include "quest_log.h"
 #include "safari_zone.h"
 #include "script.h"
+#include "bug_contest.h"
 #include "start_menu.h"
 #include "trainer_see.h"
 #include "vs_seeker.h"
@@ -633,6 +634,8 @@ static bool8 TryStartStepBasedScript(struct MapPosition *position, u16 metatileB
     if (TryStartCoordEventScript(position) == TRUE)
         return TRUE;
     if (TryStartGlitchCityStepScript() == TRUE)
+        return TRUE;
+    if (TryStartBugContestTimeUpScript() == TRUE)
         return TRUE;
     if (TryStartWarpEventScript(position, metatileBehavior) == TRUE)
         return TRUE;

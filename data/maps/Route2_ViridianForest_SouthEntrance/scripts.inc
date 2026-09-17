@@ -1,4 +1,5 @@
 Route2_ViridianForest_SouthEntrance_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, BugContest_OnFrame_SouthEntrance
 	.byte 0
 
 Route2_ViridianForest_SouthEntrance_EventScript_Woman1::

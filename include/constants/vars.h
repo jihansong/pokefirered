@@ -223,10 +223,10 @@
 #define VAR_BILLS_GARDEN_STEPS     0x40BD
 #define VAR_MOON_PHASE_STEPS       0x40BE
 #define VAR_EMBEDDED_CHAMBER_LEGEND 0x40BF
-#define VAR_0x40C0                 0x40C0
-#define VAR_0x40C1                 0x40C1
-#define VAR_0x40C2                 0x40C2
-#define VAR_0x40C3                 0x40C3
+#define VAR_BUG_CONTEST_STATE      0x40C0
+#define VAR_BUG_CONTEST_START_TIME 0x40C1
+#define VAR_BUG_CONTEST_LAST_DAY   0x40C2
+#define VAR_BUG_CONTEST_SWAP       0x40C3
 #define VAR_0x40C4                 0x40C4
 #define VAR_0x40C5                 0x40C5
 #define VAR_0x40C6                 0x40C6

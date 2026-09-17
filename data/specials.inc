@@ -476,4 +476,11 @@ gSpecials::
 	def_special IsFullMoon
 	def_special IsPlayerOnSafariZoneExit
 	def_special SetScriptedWildMonTransformOnly
+	def_special CheckBugContestDay
+	def_special StartBugContest
+	def_special BufferBugContestSwapNames
+	def_special ResolveBugContestSwap
+	def_special JudgeBugContest
+	def_special BufferBugContestPlace
+	def_special EndBugContest
 gSpecialsEnd::

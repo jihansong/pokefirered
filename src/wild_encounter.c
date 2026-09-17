@@ -14,6 +14,7 @@
 #include "link.h"
 #include "quest_log.h"
 #include "item.h"
+#include "bug_contest.h"
 #include "task.h"
 #include "sound.h"
 #include "constants/songs.h"
@@ -278,6 +279,8 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo * info, u8 area, u8
 {
     u8 slot = 0;
     u8 level;
+    if (area == WILD_AREA_LAND && TryGenerateBugContestMon())
+        return TRUE;
     switch (area)
     {
     case WILD_AREA_LAND:

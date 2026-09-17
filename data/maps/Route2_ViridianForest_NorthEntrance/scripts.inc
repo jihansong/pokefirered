@@ -1,4 +1,5 @@
 Route2_ViridianForest_NorthEntrance_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, BugContest_OnFrame_NorthEntrance
 	.byte 0
 
 Route2_ViridianForest_NorthEntrance_EventScript_Youngster::

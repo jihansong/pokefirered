@@ -1,4 +1,5 @@
 #include "global.h"
+#include "bug_contest.h"
 #include "task.h"
 #include "help_system.h"
 #include "overworld.h"
@@ -435,6 +436,7 @@ static void CB2_EndWildBattle(void)
     }
     else
     {
+        BugContest_AfterWildBattle();
         SetMainCallback2(CB2_ReturnToField);
         gFieldCallback = FieldCB_SafariZoneRanOutOfBalls;
     }

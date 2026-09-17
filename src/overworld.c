@@ -1,4 +1,5 @@
 #include "global.h"
+#include "bug_contest.h"
 #include "follower_pikachu.h"
 #include "gflib.h"
 #include "bg_regs.h"
@@ -1552,6 +1553,7 @@ void CB2_WhiteOut(void)
         FieldClearVBlankHBlankCallbacks();
         StopMapMusic();
         ResetSafariZoneFlag_();
+        BugContest_OnWhiteOut();
         DoWhiteOut();
         SetInitialPlayerAvatarStateWithDirection(DIR_NORTH);
         ScriptContext_Init();

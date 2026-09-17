@@ -1,5 +1,6 @@
 ViridianForest_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ViridianForest_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, BugContest_OnFrame_Forest
 	.byte 0
 
 ViridianForest_OnTransition::

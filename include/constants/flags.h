@@ -217,7 +217,7 @@
 #define FLAG_HIDE_OAKS_LAB_TROPHY 0x0C7
 #define FLAG_HIDE_MT_MOON_CLEFAIRY_DANCE 0x0C8
 #define FLAG_HIDE_GLITCH_CITY_ODD_FRAGMENT 0x0C9
-#define FLAG_0x0CA               0x0CA
+#define FLAG_HIDE_MANSION_LAB_DITTO 0x0CA
 #define FLAG_0x0CB               0x0CB
 #define FLAG_0x0CC               0x0CC
 #define FLAG_0x0CD               0x0CD
@@ -538,9 +538,9 @@
 #define FLAG_BEAT_PROF_OAK       0x204
 #define FLAG_SAW_CLEFAIRY_DANCE  0x205
 #define FLAG_VISITED_GLITCH_CITY 0x206
-#define FLAG_0x207               0x207
-#define FLAG_0x208               0x208
-#define FLAG_0x209               0x209
+#define FLAG_READ_MANSION_LAB_LOG_1 0x207
+#define FLAG_READ_MANSION_LAB_LOG_2 0x208
+#define FLAG_READ_MANSION_LAB_LOG_3 0x209
 #define FLAG_0x20A               0x20A
 #define FLAG_0x20B               0x20B
 #define FLAG_0x20C               0x20C

@@ -107,10 +107,25 @@
       "elevation": 3,
       "dest_map": "MAP_POKEMON_MANSION_1F",
       "dest_warp_id": "4"
+    },
+    {
+      "x": 36,
+      "y": 3,
+      "elevation": 3,
+      "dest_map": "MAP_POKEMON_MANSION_SECRET_LAB",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
   "bg_events": [
+    {
+      "type": "sign",
+      "x": 37,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
+      "script": "PokemonMansion_SecretLab_EventScript_HiddenDoor"
+    },
     {
       "type": "sign",
       "x": 21,

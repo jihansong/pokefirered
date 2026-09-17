@@ -2672,6 +2672,24 @@ bool8 HasCaughtMewtwoAndMew(void)
 
 // Use after setwildbattle: remakes the wild POKéMON with a personality that is
 // shiny for the player's Trainer ID, like Crystal's BATTLETYPE_FORCESHINY.
+// The DITTO in the POKéMON MANSION's hidden lab only knows TRANSFORM
+void SetScriptedWildMonTransformOnly(void)
+{
+    u8 i;
+    u16 move = MOVE_NONE;
+    u8 pp = 0;
+
+    for (i = 1; i < MAX_MON_MOVES; i++)
+    {
+        SetMonData(&gEnemyParty[0], MON_DATA_MOVE1 + i, &move);
+        SetMonData(&gEnemyParty[0], MON_DATA_PP1 + i, &pp);
+    }
+    move = MOVE_TRANSFORM;
+    pp = gBattleMoves[MOVE_TRANSFORM].pp;
+    SetMonData(&gEnemyParty[0], MON_DATA_MOVE1, &move);
+    SetMonData(&gEnemyParty[0], MON_DATA_PP1, &pp);
+}
+
 void MakeScriptedWildMonShiny(void)
 {
     u16 species = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL);

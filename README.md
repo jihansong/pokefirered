@@ -1,16 +1,77 @@
-# Pokémon FireRed and LeafGreen
+# Pokémon Thunder Yellow
 
-This is a decompilation of English Pokémon FireRed and LeafGreen.
+**Thunder Yellow**는 포켓몬스터 리프그린을 『포켓몬스터 피카츄(옐로)』처럼 플레이하도록 바꾼 팬 개조 프로젝트입니다.
 
-It builds the following ROM images:
+이 저장소는 pret의 FR/LG 디컴파일 프로젝트 [**pokefirered**](https://github.com/pret/pokefirered)를 기반으로 합니다. 모든 변경은 소스 코드 수준에서 이루어지며, 리프그린 빌드 대상(`make leafgreen`)으로 롬을 만듭니다.
 
-* [**pokefirered.gba**](https://datomatic.no-intro.org/?page=show_record&s=23&n=1616) `sha1: 41cb23d8dccc8ebd7c649cd8fbb58eeace6e2fdc`
-* [**pokeleafgreen.gba**](https://datomatic.no-intro.org/?page=show_record&s=23&n=1617) `sha1: 574fa542ffebb14be69902d1d36f1ec0a4afd71e`
-* [**pokefirered_rev1.gba**](https://datomatic.no-intro.org/?page=show_record&s=23&n=1672) `sha1: dd5945db9b930750cb39d00c84da8571feebf417`
-* [**pokeleafgreen_rev1.gba**](https://datomatic.no-intro.org/index.php?page=show_record&s=23&n=1668) `sha1: 7862c67bdecbe21d1d69ce082ce34327e1c6ed5e`
-* [**pokefirered_switch.gba**](https://datomatic.no-intro.org/index.php?page=show_record&s=23&n=x550) `sha1: baa452d0b24629dd7782cfc07a8984085dde1311`
-* [**pokeleafgreen_switch.gba**](https://datomatic.no-intro.org/index.php?page=show_record&s=23&n=x551) `sha1: 62b9fc77549dbc67032eb6cbd0ea6ad3b825690f`
+> ⚠️ **원본 롬은 배포하지 않습니다.** 이 저장소에는 닌텐도·게임프리크·주식회사 포켓몬의 롬 파일이 들어 있지 않고, 빌드한 롬(`.gba`)도 올리거나 공유하지 마세요. 배포는 패치 파일(`.bps`)로만 하며, 패치를 적용하려면 직접 가지고 있는 **영문판 포켓몬스터 리프그린(v1.0)** 롬이 필요합니다. 이 프로젝트는 비공식 팬 작업이며 닌텐도 등과 관계가 없습니다.
 
-To set up the repository, see [INSTALL.md](INSTALL.md).
+## 옐로 요소
 
-For contacts and other pret projects, see [pret.github.io](https://pret.github.io/).
+- **오박사 연구소의 피카츄**: 스타터는 피카츄(Lv5), 라이벌은 이브이. 라이벌 파티는 모두 옐로 원작을 따르며, 이브이는 첫 배틀 결과에 따라 쥬피썬더·부스터·샤미드로 진화합니다.
+- **따라다니는 피카츄**: 스타터 피카츄가 플레이어 뒤를 따라다닙니다. 기분·친밀도에 따른 표정과 말풍선, 울음소리까지 옐로처럼 반응하며, 컷신 중에도 따라옵니다.
+- **천둥의돌 거부**: 스타터 피카츄는 천둥의돌로 진화하지 않습니다.
+- **스타터 3마리 선물**: 블루시티 민가의 이상해씨(피카츄 친밀도 필요), 24번 도로의 파이리, 갈색시티 경찰관의 꼬부기(오렌지배지 이후).
+- **로사와 로이**: 달맞이산·로켓단 아지트·포켓몬타워·실프주식회사에서 더블배틀.
+- **체육관 관장·사천왕**: 옐로의 팀과 전용 기술 구성.
+- **야생 포켓몬**: 칸토 맵은 옐로의 출현표를 사용(세비 제도는 리프그린 그대로).
+- **트럭 밑의 뮤**: 상트앤호가 떠난 뒤 갈색항 동쪽 부두의 트럭.
+- **타이틀·브랜딩**: "THUNDER YELLOW VERSION" 로고와 옐로 타이틀 피카츄, 오박사 인트로의 피카츄.
+
+## 추가 이벤트 20종
+
+HGSS·BW의 이벤트와 포켓몬 도시전설을 1~3세대 포켓몬으로 재현한 이벤트입니다. 조건·수치·그래픽 출처 등 자세한 기록은 [docs/events-roadmap.md](docs/events-roadmap.md)의 "구현 기록"에 있습니다.
+
+| # | 이벤트 | 위치 |
+|---|---|---|
+| 1 | 드래곤굴 장로 퀴즈 (HGSS) | 사파리존 관리인의 집 |
+| 2 | 피카블루 (도시전설) | 블루시티 동굴 |
+| 3 | 뮤쓰리 소문 (도시전설) | 블루시티 동굴 B1F |
+| 4 | 붉은 갸라도스 (HGSS) | 25번 도로 |
+| 5 | 로켓단 아지트 경비 시스템 (HGSS) | 로켓단 아지트 |
+| 6 | 깨비참 편지 배달 (HGSS) | 2번 도로 → 22번 도로 |
+| 7 | 에니그마 스톤과 배회하는 라티아스·라티오스 (HGSS) | 보라타운 → 칸토 전역 |
+| 8 | 사람으로 변신한 메타몽 (BW 조로아크) | 16번 도로 |
+| 9 | 숨겨진 공터 (BW2) | 상록숲, 11·13·15번 도로 |
+| 10 | 라벤더 신드롬 (도시전설) | 보라타운, 포켓몬타워 |
+| 11 | 빌의 정원 | 25번 도로 바다의 집 |
+| 12 | 오박사와의 배틀 (도시전설) | 태초마을 연구소 |
+| 13 | 보름달 밤 삐삐의 춤 (HGSS) | 달맞이산 B2F |
+| 14 | 글리치 시티 (도시전설) | 사파리존 출구 |
+| 15 | 메타몽은 뮤츠의 실패작 (도시전설) | 포켓몬저택 B1F 숨겨진 연구실 |
+| 16 | 매몰된 탑 구슬 전설: 가이오가·그란돈·레쿠쟈 (HGSS) | 7의섬 유적의 골짜기 |
+| 17 | 미싱노 (도시전설) | 홍련섬 동쪽 해안 |
+| 18 | 흔들리는 풀숲·물보라·먼지 (BW 필드 현상) | 야생 포켓몬이 나오는 맵 |
+| 19 | 벌레잡기 대회 (HGSS) | 상록숲 |
+| 20 | 파도타기 피카츄 (옐로 "피카츄의 해변" 간략판) | 19번 도로 해변 |
+
+FR/LG에는 실시간 시계가 없어서, 요일·보름달·하루 같은 시간 조건은 걸음 수로 계산합니다.
+
+## 빌드 방법
+
+1. [INSTALL.md](INSTALL.md)를 따라 빌드 도구(devkitARM 등)를 설치하고 저장소를 준비합니다. 빌드에는 원본 롬이 필요하지 않습니다.
+2. 리프그린 대상으로 빌드합니다.
+
+   ```sh
+   make leafgreen -j$(nproc)
+   ```
+
+   결과물은 `pokemonthyl.gba`입니다(맵·심볼 파일 `pokemonthyl.map`, `pokemonthyl.elf`). 파이어레드 등 다른 빌드 대상은 이 프로젝트에서 관리하지 않습니다.
+
+## 패치 만들기와 적용
+
+빌드한 롬 대신, 원본과의 차이만 담은 BPS 패치를 만들어 배포합니다.
+
+```sh
+python3 tools/make_bps_patch.py 원본/pokeleafgreen.gba pokemonthyl.gba pokemonthyl.bps
+```
+
+- 원본은 영문판 리프그린 v1.0(`sha1: 574fa542ffebb14be69902d1d36f1ec0a4afd71e`)이어야 합니다. 다른 파일이면 경고가 나오고, 그 파일에만 맞는 패치가 만들어집니다.
+- 스크립트는 만든 패치를 다시 적용해 결과가 `pokemonthyl.gba`와 같은지 확인한 뒤 저장합니다. Python 3 표준 라이브러리만 사용합니다.
+- 패치는 [Flips](https://github.com/Alcaro/Flips)나 [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/) 같은 BPS 패처로 원본 리프그린 롬에 적용하면 됩니다.
+
+## 크레딧
+
+- 디컴파일 기반: [pret/pokefirered](https://github.com/pret/pokefirered)와 기여자들. 원래의 FR/LG 디컴파일 안내는 [pret.github.io](https://pret.github.io/)를 참고하세요.
+- 옐로·크리스탈 데이터 참고: [pret/pokeyellow](https://github.com/pret/pokeyellow), [pret/pokecrystal](https://github.com/pret/pokecrystal).
+- 포켓몬스터는 Nintendo, Creatures Inc., GAME FREAK inc.의 상표입니다.

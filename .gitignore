@@ -73,3 +73,6 @@ pokemonthyl.gba
 pokemonthyl.elf
 pokemonthyl.map
 pokemonthyl.sym
+
+# Thunder Yellow patches (tools/make_bps_patch.py)
+*.bps

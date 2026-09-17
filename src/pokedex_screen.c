@@ -2229,6 +2229,10 @@ s8 DexScreen_GetSetPokedexFlag(u16 nationalDexNo, u8 caseId, bool8 indexIsSpecie
     if (indexIsSpecies)
         nationalDexNo = SpeciesToNationalPokedexNum(nationalDexNo);
 
+    // Species with no POKéDEX number, like MISSINGNO., are never registered
+    if (nationalDexNo == 0 || nationalDexNo > NATIONAL_DEX_COUNT)
+        return 0;
+
     nationalDexNo--;
     index = nationalDexNo / 8;
     bit = nationalDexNo % 8;

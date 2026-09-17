@@ -90,6 +90,12 @@ BattleScript_CaughtPokemonSkipNewDex::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_CaughtPokemonDone
 
+@ MISSINGNO. flashes into the POKéDEX as No. 000 and vanishes again
+BattleScript_MissingNoDexGlitch::
+	printstring STRINGID_MISSINGNODEXGLITCH
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_CaughtPokemonSkipNewDex
+
 BattleScript_CaughtPokemonSkipNickname::
 	givecaughtmon
 BattleScript_CaughtPokemonDone::

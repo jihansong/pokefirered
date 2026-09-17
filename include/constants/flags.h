@@ -544,7 +544,7 @@
 #define FLAG_FOUGHT_KYOGRE       0x20A
 #define FLAG_FOUGHT_GROUDON      0x20B
 #define FLAG_FOUGHT_RAYQUAZA     0x20C
-#define FLAG_0x20D               0x20D
+#define FLAG_MISSINGNO_ITEM_BONUS 0x20D
 #define FLAG_0x20E               0x20E
 #define FLAG_0x20F               0x20F
 #define FLAG_0x210               0x210

@@ -13,6 +13,7 @@
 #include "script.h"
 #include "link.h"
 #include "quest_log.h"
+#include "item.h"
 #include "constants/maps.h"
 #include "constants/abilities.h"
 #include "constants/items.h"
@@ -349,6 +350,42 @@ static bool8 DoGlobalWildEncounterDiceRoll(void)
 {
     if ((Random() % 100) >= 60)
         return FALSE;
+    return TRUE;
+}
+
+#define MISSINGNO_COAST_X         23
+#define MISSINGNO_ENCOUNTER_RATE  20
+#define MISSINGNO_LEVEL           80
+
+// The Gen I MISSINGNO. glitch: once the old man in VIRIDIAN CITY has shown how
+// to catch POKéMON, surfing up and down the east coast of CINNABAR ISLAND can
+// turn up MISSINGNO. The first encounter adds one to the 6th item in the bag,
+// in place of Gen I's +128 (without the save corruption).
+static bool8 TryStartMissingNoEncounter(void)
+{
+    struct ItemSlot *slot;
+
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_CINNABAR_ISLAND)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_CINNABAR_ISLAND)
+     || gSaveBlock1Ptr->pos.x != MISSINGNO_COAST_X
+     || !TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING)
+     || VarGet(VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN) < 2)
+        return FALSE;
+    if (DoWildEncounterRateTest(MISSINGNO_ENCOUNTER_RATE, FALSE) != TRUE)
+        return FALSE;
+
+    ZeroEnemyPartyMons();
+    CreateMonWithNature(&gEnemyParty[0], SPECIES_MISSINGNO, MISSINGNO_LEVEL, USE_RANDOM_IVS, Random() % NUM_NATURES);
+    if (!FlagGet(FLAG_MISSINGNO_ITEM_BONUS))
+    {
+        slot = &gSaveBlock1Ptr->bagPocket_Items[5];
+        if (slot->itemId != ITEM_NONE && GetBagItemQuantity(&slot->quantity) < 999)
+        {
+            SetBagItemQuantity(&slot->quantity, GetBagItemQuantity(&slot->quantity) + 1);
+            FlagSet(FLAG_MISSINGNO_ITEM_BONUS);
+        }
+    }
+    StartWildBattle();
     return TRUE;
 }
 
@@ -753,6 +790,13 @@ static bool8 HandleWildEncounterCooldown(u32 currMetatileAttrs)
 
 bool8 TryStandardWildEncounter(u32 currMetatileAttrs)
 {
+    // CINNABAR ISLAND has no surfing table, so this comes before the cooldown
+    if (ExtractMetatileAttribute(currMetatileAttrs, METATILE_ATTRIBUTE_ENCOUNTER_TYPE) == TILE_ENCOUNTER_WATER
+     && TryStartMissingNoEncounter() == TRUE)
+    {
+        sWildEncounterData.prevMetatileBehavior = ExtractMetatileAttribute(currMetatileAttrs, METATILE_ATTRIBUTE_BEHAVIOR);
+        return TRUE;
+    }
     if (!HandleWildEncounterCooldown(currMetatileAttrs))
     {
         sWildEncounterData.prevMetatileBehavior = ExtractMetatileAttribute(currMetatileAttrs, METATILE_ATTRIBUTE_BEHAVIOR);

@@ -91,4 +91,7 @@ u8 CountItemsInPC(void);
 void ApplyNewEncryptionKeyToBagItems_(u32 newKey);
 bool8 HasAtLeastOneBerry(void);
 
+u16 GetBagItemQuantity(u16 *ptr);
+void SetBagItemQuantity(u16 *ptr, u16 value);
+
 #endif // GUARD_ITEM_H

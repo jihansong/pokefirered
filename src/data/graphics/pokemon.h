@@ -1760,6 +1760,11 @@ const u32 gMonShinyPalette_Celebi[] = INCBIN_U32("graphics/pokemon/celebi/shiny.
 const u8 gMonIcon_Celebi[] = INCBIN_U8("graphics/pokemon/celebi/icon.4bpp");
 const u8 gMonFootprint_Celebi[] = INCBIN_U8("graphics/pokemon/celebi/footprint.1bpp");
 
+const u32 gMonFrontPic_MissingNo[] = INCBIN_U32("graphics/pokemon/missingno/front.4bpp.lz");
+const u32 gMonPalette_MissingNo[] = INCBIN_U32("graphics/pokemon/missingno/normal.gbapal.lz");
+const u32 gMonBackPic_MissingNo[] = INCBIN_U32("graphics/pokemon/missingno/back.4bpp.lz");
+const u32 gMonShinyPalette_MissingNo[] = INCBIN_U32("graphics/pokemon/missingno/shiny.gbapal.lz");
+
 const u32 gMonFrontPic_DoubleQuestionMark[] = INCBIN_U32("graphics/pokemon/question_mark/double/front.4bpp.lz");
 const u32 gMonPalette_DoubleQuestionMark[] = INCBIN_U32("graphics/pokemon/question_mark/double/normal.gbapal.lz");
 const u32 gMonBackPic_DoubleQuestionMark[] = INCBIN_U32("graphics/pokemon/question_mark/double/back.4bpp.lz");

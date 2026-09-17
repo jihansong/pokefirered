@@ -5252,6 +5252,10 @@ u16 HoennToNationalOrder(u16 hoennNum)
 
 u16 SpeciesToCryId(u16 species)
 {
+    // MISSINGNO. borrows RHYDON's cry, as in Gen I
+    if (species == SPECIES_MISSINGNO - 1)
+        return SPECIES_RHYDON - 1;
+
     if (species < SPECIES_OLD_UNOWN_B - 1)
         return species;
 

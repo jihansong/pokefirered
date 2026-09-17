@@ -3505,8 +3505,10 @@ static const u16 sCelebiLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
+// MISSINGNO.: WATER GUN, WATER GUN and SKY ATTACK in Gen I
 static const u16 sSpecies252LevelUpLearnset[] = {
-    LEVEL_UP_MOVE(1, MOVE_TACKLE),
+    LEVEL_UP_MOVE(1, MOVE_WATER_GUN),
+    LEVEL_UP_MOVE(1, MOVE_SKY_ATTACK),
     LEVEL_UP_END
 };
 

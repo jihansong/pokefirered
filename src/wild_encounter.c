@@ -14,6 +14,13 @@
 #include "link.h"
 #include "quest_log.h"
 #include "item.h"
+#include "task.h"
+#include "sound.h"
+#include "constants/songs.h"
+#include "field_effect.h"
+#include "event_object_movement.h"
+#include "constants/field_effects.h"
+#include "constants/map_types.h"
 #include "constants/maps.h"
 #include "constants/abilities.h"
 #include "constants/items.h"
@@ -788,8 +795,208 @@ static bool8 HandleWildEncounterCooldown(u32 currMetatileAttrs)
     return FALSE;
 }
 
+// BW-style field phenomena: rustling grass, water splashes and cave dust.
+// Each step has a 1 in 256 chance to start one on a suitable tile in view; it
+// lasts 8 steps. Stepping onto it starts a rare encounter at the area's
+// highest wild level + 2: EEVEE or TAUROS in grass, DRATINI or MAGIKARP (shiny
+// 1 in 64) on water, and in caves either CHANSEY or a RARE CANDY.
+#define PHENOMENON_CHANCE    256
+#define PHENOMENON_STEPS     8
+#define PHENOMENON_SHINY_KARP 64
+
+enum {
+    PHENOMENON_NONE,
+    PHENOMENON_GRASS,
+    PHENOMENON_WATER,
+    PHENOMENON_DUST,
+};
+
+EWRAM_DATA struct FieldPhenomenon gFieldPhenomenon = {0};
+
+static void Task_FieldPhenomenonEffect(u8 taskId)
+{
+    s16 *timer = &gTasks[taskId].data[0];
+
+    if (gFieldPhenomenon.type == PHENOMENON_NONE
+     || gFieldPhenomenon.mapGroup != gSaveBlock1Ptr->location.mapGroup
+     || gFieldPhenomenon.mapNum != gSaveBlock1Ptr->location.mapNum)
+    {
+        DestroyTask(taskId);
+        return;
+    }
+    if ((*timer)++ % 16 != 0)
+        return;
+
+    gFieldEffectArguments[0] = gFieldPhenomenon.x + MAP_OFFSET;
+    gFieldEffectArguments[1] = gFieldPhenomenon.y + MAP_OFFSET;
+    gFieldEffectArguments[2] = 3;
+    gFieldEffectArguments[3] = 2;
+    switch (gFieldPhenomenon.type)
+    {
+    case PHENOMENON_GRASS:
+        FieldEffectStart(FLDEFF_JUMP_TALL_GRASS);
+        break;
+    case PHENOMENON_WATER:
+        FieldEffectStart(FLDEFF_JUMP_SMALL_SPLASH);
+        break;
+    case PHENOMENON_DUST:
+        FieldEffectStart(FLDEFF_DUST);
+        break;
+    }
+}
+
+static void EnsureFieldPhenomenonTask(void)
+{
+    if (gFieldPhenomenon.type != PHENOMENON_NONE && !FuncIsActiveTask(Task_FieldPhenomenonEffect))
+        CreateTask(Task_FieldPhenomenonEffect, 80);
+}
+
+static u8 GetPhenomenonTypeAt(u16 headerId, s16 x, s16 y)
+{
+    u8 behavior = MapGridGetMetatileBehaviorAt(x + MAP_OFFSET, y + MAP_OFFSET);
+    u8 encounterType = MapGridGetMetatileAttributeAt(x + MAP_OFFSET, y + MAP_OFFSET, METATILE_ATTRIBUTE_ENCOUNTER_TYPE);
+
+    if (MapGridGetCollisionAt(x + MAP_OFFSET, y + MAP_OFFSET)
+     || GetObjectEventIdByXY(x + MAP_OFFSET, y + MAP_OFFSET) != OBJECT_EVENTS_COUNT)
+        return PHENOMENON_NONE;
+    if (encounterType == TILE_ENCOUNTER_WATER && gWildMonHeaders[headerId].waterMonsInfo != NULL)
+        return PHENOMENON_WATER;
+    if (encounterType == TILE_ENCOUNTER_LAND && gWildMonHeaders[headerId].landMonsInfo != NULL)
+    {
+        if (gMapHeader.mapType == MAP_TYPE_UNDERGROUND)
+            return PHENOMENON_DUST;
+        if (MetatileBehavior_IsTallGrass(behavior))
+            return PHENOMENON_GRASS;
+    }
+    return PHENOMENON_NONE;
+}
+
+static void TryStartFieldPhenomenon(void)
+{
+    u16 headerId = GetCurrentMapWildMonHeaderId();
+    u8 i, type;
+    s16 x, y;
+
+    if (headerId == HEADER_NONE || Random() % PHENOMENON_CHANCE != 0)
+        return;
+    for (i = 0; i < 24; i++)
+    {
+        x = gSaveBlock1Ptr->pos.x + (Random() % 13) - 6;
+        y = gSaveBlock1Ptr->pos.y + (Random() % 9) - 4;
+        if (abs(x - gSaveBlock1Ptr->pos.x) + abs(y - gSaveBlock1Ptr->pos.y) < 2)
+            continue;
+        type = GetPhenomenonTypeAt(headerId, x, y);
+        if (type != PHENOMENON_NONE)
+        {
+            gFieldPhenomenon.type = type;
+            gFieldPhenomenon.x = x;
+            gFieldPhenomenon.y = y;
+            gFieldPhenomenon.stepsLeft = PHENOMENON_STEPS;
+            gFieldPhenomenon.mapGroup = gSaveBlock1Ptr->location.mapGroup;
+            gFieldPhenomenon.mapNum = gSaveBlock1Ptr->location.mapNum;
+            EnsureFieldPhenomenonTask();
+            if (type == PHENOMENON_GRASS)
+                PlaySE(SE_M_GUST);
+            else if (type == PHENOMENON_WATER)
+                PlaySE(SE_PUDDLE);
+            else
+                PlaySE(SE_M_SAND_ATTACK);
+            return;
+        }
+    }
+}
+
+static u8 GetPhenomenonLevel(const struct WildPokemonInfo *info, u8 count)
+{
+    u8 i, level = 1;
+
+    if (info == NULL)
+        return 10;
+    for (i = 0; i < count; i++)
+    {
+        if (info->wildPokemon[i].maxLevel > level)
+            level = info->wildPokemon[i].maxLevel;
+        if (info->wildPokemon[i].minLevel > level)
+            level = info->wildPokemon[i].minLevel;
+    }
+    return min(level + 2, MAX_LEVEL);
+}
+
+static void CreateShinyWildMon(u16 species, u8 level)
+{
+    u32 otId = T1_READ_32(gSaveBlock2Ptr->playerTrainerId);
+    u16 low = Random();
+    u16 high = (otId >> 16) ^ (otId & 0xFFFF) ^ low;
+
+    CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, TRUE, ((u32)high << 16) | low, OT_ID_PLAYER_ID, 0);
+}
+
+static bool8 TryStartFieldPhenomenonEncounter(void)
+{
+    u16 headerId;
+    u8 type = gFieldPhenomenon.type;
+    u8 level;
+
+    if (type == PHENOMENON_NONE)
+        return FALSE;
+    if (gFieldPhenomenon.mapGroup != gSaveBlock1Ptr->location.mapGroup
+     || gFieldPhenomenon.mapNum != gSaveBlock1Ptr->location.mapNum)
+    {
+        gFieldPhenomenon.type = PHENOMENON_NONE;
+        return FALSE;
+    }
+    if (gSaveBlock1Ptr->pos.x != gFieldPhenomenon.x || gSaveBlock1Ptr->pos.y != gFieldPhenomenon.y)
+    {
+        if (--gFieldPhenomenon.stepsLeft == 0)
+            gFieldPhenomenon.type = PHENOMENON_NONE;
+        else
+            EnsureFieldPhenomenonTask();
+        return FALSE;
+    }
+
+    gFieldPhenomenon.type = PHENOMENON_NONE;
+    headerId = GetCurrentMapWildMonHeaderId();
+    if (headerId == HEADER_NONE)
+        return FALSE;
+    ZeroEnemyPartyMons();
+    switch (type)
+    {
+    case PHENOMENON_GRASS:
+        level = GetPhenomenonLevel(gWildMonHeaders[headerId].landMonsInfo, LAND_WILD_COUNT);
+        CreateMonWithNature(&gEnemyParty[0], (Random() % 2) ? SPECIES_EEVEE : SPECIES_TAUROS, level, USE_RANDOM_IVS, Random() % NUM_NATURES);
+        break;
+    case PHENOMENON_WATER:
+        level = GetPhenomenonLevel(gWildMonHeaders[headerId].waterMonsInfo, WATER_WILD_COUNT);
+        if (Random() % 2)
+            CreateMonWithNature(&gEnemyParty[0], SPECIES_DRATINI, level, USE_RANDOM_IVS, Random() % NUM_NATURES);
+        else if (Random() % PHENOMENON_SHINY_KARP == 0)
+            CreateShinyWildMon(SPECIES_MAGIKARP, level);
+        else
+            CreateMonWithNature(&gEnemyParty[0], SPECIES_MAGIKARP, level, USE_RANDOM_IVS, Random() % NUM_NATURES);
+        break;
+    case PHENOMENON_DUST:
+        if (Random() % 2)
+        {
+            ScriptContext_SetupScript(EventScript_FieldPhenomenonDustItem);
+            return TRUE;
+        }
+        level = GetPhenomenonLevel(gWildMonHeaders[headerId].landMonsInfo, LAND_WILD_COUNT);
+        CreateMonWithNature(&gEnemyParty[0], SPECIES_CHANSEY, level, USE_RANDOM_IVS, Random() % NUM_NATURES);
+        break;
+    }
+    StartWildBattle();
+    return TRUE;
+}
+
 bool8 TryStandardWildEncounter(u32 currMetatileAttrs)
 {
+    if (TryStartFieldPhenomenonEncounter() == TRUE)
+    {
+        sWildEncounterData.prevMetatileBehavior = ExtractMetatileAttribute(currMetatileAttrs, METATILE_ATTRIBUTE_BEHAVIOR);
+        return TRUE;
+    }
+    if (gFieldPhenomenon.type == PHENOMENON_NONE)
+        TryStartFieldPhenomenon();
     // CINNABAR ISLAND has no surfing table, so this comes before the cooldown
     if (ExtractMetatileAttribute(currMetatileAttrs, METATILE_ATTRIBUTE_ENCOUNTER_TYPE) == TILE_ENCOUNTER_WATER
      && TryStartMissingNoEncounter() == TRUE)

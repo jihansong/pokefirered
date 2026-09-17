@@ -50,4 +50,16 @@ void SeedWildEncounterRng(u16 randVal);
 void ResetEncounterRateModifiers(void);
 bool8 TryStandardWildEncounter(u32 currMetatileAttrs);
 
+struct FieldPhenomenon
+{
+    u8 type;
+    u8 stepsLeft;
+    s16 x;
+    s16 y;
+    u8 mapGroup;
+    u8 mapNum;
+};
+
+extern struct FieldPhenomenon gFieldPhenomenon;
+
 #endif // GUARD_WILD_ENCOUNTER_H

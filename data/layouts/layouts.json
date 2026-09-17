@@ -4422,6 +4422,18 @@
       "secondary_tileset": "gTileset_CeruleanCity",
       "border_filepath": "data/layouts/BillsGarden/border.bin",
       "blockdata_filepath": "data/layouts/BillsGarden/map.bin"
+    },
+    {
+      "id": "LAYOUT_GLITCH_CITY",
+      "name": "GlitchCity_Layout",
+      "width": 22,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_LavenderTown",
+      "border_filepath": "data/layouts/GlitchCity/border.bin",
+      "blockdata_filepath": "data/layouts/GlitchCity/map.bin"
     }
   ]
 }

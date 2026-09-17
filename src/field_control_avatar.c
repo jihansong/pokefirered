@@ -632,6 +632,8 @@ static bool8 TryStartStepBasedScript(struct MapPosition *position, u16 metatileB
 {
     if (TryStartCoordEventScript(position) == TRUE)
         return TRUE;
+    if (TryStartGlitchCityStepScript() == TRUE)
+        return TRUE;
     if (TryStartWarpEventScript(position, metatileBehavior) == TRUE)
         return TRUE;
     if (TryStartMiscWalkingScripts(metatileBehavior) == TRUE)

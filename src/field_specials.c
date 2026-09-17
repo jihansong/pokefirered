@@ -4,6 +4,7 @@
 #include "list_menu.h"
 #include "diploma.h"
 #include "script.h"
+#include "event_scripts.h"
 #include "field_player_avatar.h"
 #include "overworld.h"
 #include "field_message_box.h"
@@ -2451,6 +2452,31 @@ void IncrementMoonPhaseStepCounter(void)
     if (steps == MOON_DAY_STEPS * MOON_FULL_MOON_DAY)
         FlagClear(FLAG_SAW_CLEFAIRY_DANCE);
     VarSet(VAR_MOON_PHASE_STEPS, steps);
+}
+
+bool8 IsPlayerOnSafariZoneExit(void)
+{
+    return gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SAFARI_ZONE_CENTER)
+        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SAFARI_ZONE_CENTER)
+        && gSaveBlock1Ptr->pos.y == 30
+        && gSaveBlock1Ptr->pos.x >= 25 && gSaveBlock1Ptr->pos.x <= 27;
+}
+
+#define GLITCH_CITY_STEPS 20
+
+bool8 TryStartGlitchCityStepScript(void)
+{
+    u16 steps;
+
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_GLITCH_CITY)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_GLITCH_CITY))
+        return FALSE;
+    steps = VarGet(VAR_TEMP_1) + 1;
+    VarSet(VAR_TEMP_1, steps);
+    if (steps < GLITCH_CITY_STEPS)
+        return FALSE;
+    ScriptContext_SetupScript(GlitchCity_EventScript_Return);
+    return TRUE;
 }
 
 bool8 IsFullMoon(void)

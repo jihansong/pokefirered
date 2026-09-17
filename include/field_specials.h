@@ -24,6 +24,7 @@ void IncrementResortGorgeousStepCounter(void);
 void IncrementBirthIslandRockStepCount(void);
 void IncrementBillsGardenStepCounter(void);
 void IncrementMoonPhaseStepCounter(void);
+bool8 TryStartGlitchCityStepScript(void);
 void ResetCyclingRoadChallengeData(void);
 void ResetFieldTasksArgs(void);
 bool8 UsedPokemonCenterWarp(void);

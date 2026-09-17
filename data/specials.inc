@@ -474,4 +474,5 @@ gSpecials::
 	def_special LeaveHiddenGrotto
 	def_special StartLavenderSyndrome
 	def_special IsFullMoon
+	def_special IsPlayerOnSafariZoneExit
 gSpecialsEnd::

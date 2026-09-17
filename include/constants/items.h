@@ -56,7 +56,7 @@
 #define ITEM_MYSTIC_SHARD 52
 #define ITEM_RED_SCALE 53
 #define ITEM_ENIGMA_STONE 54
-#define ITEM_037 55
+#define ITEM_ODD_FRAGMENT 55
 #define ITEM_038 56
 #define ITEM_039 57
 #define ITEM_03A 58

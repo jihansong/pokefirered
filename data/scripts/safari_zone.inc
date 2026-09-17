@@ -25,6 +25,9 @@ SafariZone_EventScript_TimesUp::
 	lockall
 	playse SE_DING_DONG
 	msgbox SafariZone_Text_TimesUp
+	goto_if_set FLAG_VISITED_GLITCH_CITY, SafariZone_EventScript_Exit
+	specialvar VAR_RESULT, IsPlayerOnSafariZoneExit
+	goto_if_eq VAR_RESULT, TRUE, GlitchCity_EventScript_Enter
 	goto SafariZone_EventScript_Exit
 	end
 

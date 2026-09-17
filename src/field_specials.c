@@ -2426,6 +2426,16 @@ static void Task_WaitDeoxysFieldEffect(u8 taskId)
     }
 }
 
+// One POKéMON may leave Bill's garden per "day", which is 1500 steps like the
+// renewable hidden items on the Sevii Islands.
+void IncrementBillsGardenStepCounter(void)
+{
+    u16 steps = VarGet(VAR_BILLS_GARDEN_STEPS);
+
+    if (FlagGet(FLAG_OPENED_BILLS_GARDEN) && steps < 1500)
+        VarSet(VAR_BILLS_GARDEN_STEPS, steps + 1);
+}
+
 void IncrementBirthIslandRockStepCount(void)
 {
     u16 count = VarGet(VAR_DEOXYS_INTERACTION_STEP_COUNTER);

@@ -160,6 +160,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedGyarados;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PersianStatue;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ditto;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GrottoGrass;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Plusle;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Minun;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Togepi;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -325,4 +328,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_PERSIAN_STATUE]           = &gObjectEventGraphicsInfo_PersianStatue,
     [OBJ_EVENT_GFX_DITTO]                    = &gObjectEventGraphicsInfo_Ditto,
     [OBJ_EVENT_GFX_GROTTO_GRASS]             = &gObjectEventGraphicsInfo_GrottoGrass,
+    [OBJ_EVENT_GFX_PLUSLE]                   = &gObjectEventGraphicsInfo_Plusle,
+    [OBJ_EVENT_GFX_MINUN]                    = &gObjectEventGraphicsInfo_Minun,
+    [OBJ_EVENT_GFX_TOGEPI]                   = &gObjectEventGraphicsInfo_Togepi,
 };

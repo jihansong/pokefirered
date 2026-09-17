@@ -209,11 +209,11 @@
 #define FLAG_HIDE_ROUTE16_DITTO 0x0BF
 #define FLAG_HIDE_HIDDEN_GROTTO_POKEMON 0x0C0
 #define FLAG_HIDE_HIDDEN_GROTTO_ITEM 0x0C1
-#define FLAG_0x0C2               0x0C2
-#define FLAG_0x0C3               0x0C3
-#define FLAG_0x0C4               0x0C4
-#define FLAG_0x0C5               0x0C5
-#define FLAG_0x0C6               0x0C6
+#define FLAG_HIDE_BILLS_GARDEN_PICHU  0x0C2
+#define FLAG_HIDE_BILLS_GARDEN_TOGEPI 0x0C3
+#define FLAG_HIDE_BILLS_GARDEN_MARILL 0x0C4
+#define FLAG_HIDE_BILLS_GARDEN_PLUSLE 0x0C5
+#define FLAG_HIDE_BILLS_GARDEN_MINUN  0x0C6
 #define FLAG_0x0C7               0x0C7
 #define FLAG_0x0C8               0x0C8
 #define FLAG_0x0C9               0x0C9
@@ -534,7 +534,7 @@
 #define FLAG_GOT_TM40_FROM_KENYA_FRIEND 0x200
 #define FLAG_STARTED_LATI_ROAMERS 0x201
 #define FLAG_FOUGHT_DISGUISED_DITTO 0x202
-#define FLAG_0x203               0x203
+#define FLAG_OPENED_BILLS_GARDEN 0x203
 #define FLAG_0x204               0x204
 #define FLAG_0x205               0x205
 #define FLAG_0x206               0x206

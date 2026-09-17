@@ -26,7 +26,7 @@ Route25_SeaCottage_EventScript_Bill::
 	checkitem ITEM_RED_SCALE
 	goto_if_eq VAR_RESULT, TRUE, Route25_SeaCottage_EventScript_BillRedScale
 Route25_SeaCottage_EventScript_BillNoRedScale::
-	goto_if_set RETURN_AFTER_SS_TICKET, Route25_SeaCottage_EventScript_BillGoLookAtPC
+	goto_if_set RETURN_AFTER_SS_TICKET, BillsGarden_EventScript_BillCheckGarden
 	goto_if_set FLAG_GOT_SS_TICKET, Route25_SeaCottage_EventScript_BillGoToSSAnne
 	goto_if_set FLAG_HELPED_BILL_IN_SEA_COTTAGE, Route25_SeaCottage_EventScript_BillGiveSSTicket
 	checkplayergender

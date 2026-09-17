@@ -4410,6 +4410,18 @@
       "secondary_tileset": "gTileset_ViridianForest",
       "border_filepath": "data/layouts/HiddenGrotto/border.bin",
       "blockdata_filepath": "data/layouts/HiddenGrotto/map.bin"
+    },
+    {
+      "id": "LAYOUT_BILLS_GARDEN",
+      "name": "BillsGarden_Layout",
+      "width": 15,
+      "height": 13,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CeruleanCity",
+      "border_filepath": "data/layouts/BillsGarden/border.bin",
+      "blockdata_filepath": "data/layouts/BillsGarden/map.bin"
     }
   ]
 }

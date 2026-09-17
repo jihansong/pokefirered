@@ -169,8 +169,10 @@
 #define OBJ_EVENT_GFX_MINUN 163
 #define OBJ_EVENT_GFX_TOGEPI 164
 #define OBJ_EVENT_GFX_OAK_TROPHY 165
+#define OBJ_EVENT_GFX_CLEFABLE 166
+#define OBJ_EVENT_GFX_MOON_STONE 167
 
-#define NUM_OBJ_EVENT_GFX     166
+#define NUM_OBJ_EVENT_GFX     168
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.

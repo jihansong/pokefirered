@@ -2436,6 +2436,28 @@ void IncrementBillsGardenStepCounter(void)
         VarSet(VAR_BILLS_GARDEN_STEPS, steps + 1);
 }
 
+// A made-up lunar month for the CLEFAIRY dance in MT. MOON: 30 "days" of 256
+// steps each. The 15th day is the full moon, when the dance can be seen once.
+#define MOON_DAY_STEPS     256
+#define MOON_CYCLE_DAYS    30
+#define MOON_FULL_MOON_DAY 14
+
+void IncrementMoonPhaseStepCounter(void)
+{
+    u16 steps = VarGet(VAR_MOON_PHASE_STEPS) + 1;
+
+    if (steps >= MOON_DAY_STEPS * MOON_CYCLE_DAYS)
+        steps = 0;
+    if (steps == MOON_DAY_STEPS * MOON_FULL_MOON_DAY)
+        FlagClear(FLAG_SAW_CLEFAIRY_DANCE);
+    VarSet(VAR_MOON_PHASE_STEPS, steps);
+}
+
+bool8 IsFullMoon(void)
+{
+    return VarGet(VAR_MOON_PHASE_STEPS) / MOON_DAY_STEPS == MOON_FULL_MOON_DAY;
+}
+
 void IncrementBirthIslandRockStepCount(void)
 {
     u16 count = VarGet(VAR_DEOXYS_INTERACTION_STEP_COUNTER);

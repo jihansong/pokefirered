@@ -473,4 +473,5 @@ gSpecials::
 	def_special ClearHiddenGrotto
 	def_special LeaveHiddenGrotto
 	def_special StartLavenderSyndrome
+	def_special IsFullMoon
 gSpecialsEnd::

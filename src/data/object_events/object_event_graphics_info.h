@@ -3201,3 +3201,43 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OakTrophy = {
     .images = sPicTable_OakTrophy,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+
+// CLEFAIRY's sprite recolored paler, with a dark pink outline
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Clefable = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_PINK,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 128,
+    .width = 16,
+    .height = 16,
+    .paletteSlot = PALSLOT_NPC_2,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x16,
+    .subspriteTables = gObjectEventSpriteOamTables_16x16,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Clefable,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// The OLD AMBER recolored purple
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MoonStone = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_BLUE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 128,
+    .width = 16,
+    .height = 16,
+    .paletteSlot = PALSLOT_NPC_1,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = TRUE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_16x16,
+    .subspriteTables = gObjectEventSpriteOamTables_16x16,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_MoonStone,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};

@@ -223,6 +223,7 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         IncrementResortGorgeousStepCounter();
         IncrementBirthIslandRockStepCount();
         IncrementBillsGardenStepCounter();
+        IncrementMoonPhaseStepCounter();
         if (TryStartStepBasedScript(&position, metatileBehavior, playerDirection) == TRUE)
         {
             gFieldInputRecord.tookStep = TRUE;

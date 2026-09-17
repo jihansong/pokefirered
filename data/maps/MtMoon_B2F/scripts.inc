@@ -4,6 +4,7 @@ MtMoon_B2F_MapScripts::
 
 MtMoon_B2F_OnTransition::
 	call MtMoon_B2F_EventScript_HideJessieJames
+	call MtMoon_B2F_EventScript_SetUpClefairyDance
 	call_if_unset FLAG_GOT_FOSSIL_FROM_MT_MOON, MtMoon_B2F_EventScript_ShowFossils
 	end
 
@@ -211,3 +212,181 @@ MtMoon_B2F_EventScript_JessieJamesMovement1:
 MtMoon_B2F_EventScript_HideJessieJames::
 	setflag FLAG_HIDE_MT_MOON_B2F_JESSIE_JAMES
 	return
+
+@ The CLEFAIRY dance, a nod to HGSS's MT. MOON SQUARE. On the full moon of a
+@ 30-day lunar month counted in steps (VAR_MOON_PHASE_STEPS), CLEFAIRY dance
+@ around a MOON STONE in this room if the player carries a MOON STONE too.
+MtMoon_B2F_EventScript_SetUpClefairyDance::
+	setflag FLAG_HIDE_MT_MOON_CLEFAIRY_DANCE
+	goto_if_set FLAG_SAW_CLEFAIRY_DANCE, MtMoon_B2F_EventScript_NoClefairyDance
+	specialvar VAR_RESULT, IsFullMoon
+	goto_if_eq VAR_RESULT, FALSE, MtMoon_B2F_EventScript_NoClefairyDance
+	checkitem ITEM_MOON_STONE
+	goto_if_eq VAR_RESULT, FALSE, MtMoon_B2F_EventScript_NoClefairyDance
+	clearflag FLAG_HIDE_MT_MOON_CLEFAIRY_DANCE
+MtMoon_B2F_EventScript_NoClefairyDance::
+	return
+
+MtMoon_B2F_EventScript_ClefairyDance::
+	lockall
+	msgbox MtMoon_B2F_Text_ClefairyDancing, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MtMoon_B2F_EventScript_ClefairyScatter
+	closemessage
+	setflag FLAG_SAW_CLEFAIRY_DANCE
+	playmoncry SPECIES_CLEFAIRY, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_DANCE_CLEFAIRY_N, MtMoon_B2F_Movement_DanceFromN
+	applymovement LOCALID_DANCE_CLEFAIRY_E, MtMoon_B2F_Movement_DanceFromE
+	applymovement LOCALID_DANCE_CLEFAIRY_S, MtMoon_B2F_Movement_DanceFromS
+	applymovement LOCALID_DANCE_CLEFAIRY_W, MtMoon_B2F_Movement_DanceFromW
+	waitmovement 0
+	applymovement LOCALID_DANCE_CLEFAIRY_N, MtMoon_B2F_Movement_DanceFromN
+	applymovement LOCALID_DANCE_CLEFAIRY_E, MtMoon_B2F_Movement_DanceFromE
+	applymovement LOCALID_DANCE_CLEFAIRY_S, MtMoon_B2F_Movement_DanceFromS
+	applymovement LOCALID_DANCE_CLEFAIRY_W, MtMoon_B2F_Movement_DanceFromW
+	waitmovement 0
+	applymovement LOCALID_DANCE_CLEFAIRY_N, MtMoon_B2F_Movement_DanceJump
+	applymovement LOCALID_DANCE_CLEFAIRY_E, MtMoon_B2F_Movement_DanceJump
+	applymovement LOCALID_DANCE_CLEFAIRY_S, MtMoon_B2F_Movement_DanceJump
+	applymovement LOCALID_DANCE_CLEFAIRY_W, MtMoon_B2F_Movement_DanceJump
+	waitmovement 0
+	playmoncry SPECIES_CLEFAIRY, CRY_MODE_NORMAL
+	waitmoncry
+	msgbox MtMoon_B2F_Text_ClefableCameCloser
+	applymovement LOCALID_DANCE_CLEFABLE, Common_Movement_FacePlayer
+	waitmovement 0
+	playmoncry SPECIES_CLEFABLE, CRY_MODE_NORMAL
+	waitmoncry
+	random 10
+	goto_if_eq VAR_RESULT, 0, MtMoon_B2F_EventScript_ClefableBattle
+	msgbox MtMoon_B2F_Text_ClefableHeldOutMoonStone
+	giveitem ITEM_MOON_STONE
+	goto_if_eq VAR_RESULT, FALSE, MtMoon_B2F_EventScript_NoRoomForMoonStone
+	closemessage
+	call MtMoon_B2F_EventScript_ClefairyLeave
+	releaseall
+	end
+
+MtMoon_B2F_EventScript_NoRoomForMoonStone::
+	msgbox MtMoon_B2F_Text_NoRoomForMoonStone
+	closemessage
+	call MtMoon_B2F_EventScript_ClefairyLeave
+	releaseall
+	end
+
+MtMoon_B2F_EventScript_ClefableBattle::
+	msgbox MtMoon_B2F_Text_ClefableAttacked
+	closemessage
+	setflag FLAG_HIDE_MT_MOON_CLEFAIRY_DANCE
+	setwildbattle SPECIES_CLEFABLE, 30
+	dowildbattle
+	call MtMoon_B2F_EventScript_RemoveDancers
+	releaseall
+	end
+
+MtMoon_B2F_EventScript_ClefairyScatter::
+	msgbox MtMoon_B2F_Text_ClefairyScattered
+	closemessage
+	setflag FLAG_SAW_CLEFAIRY_DANCE
+	applymovement LOCALID_DANCE_CLEFAIRY_N, MtMoon_B2F_Movement_FleeN
+	applymovement LOCALID_DANCE_CLEFAIRY_E, MtMoon_B2F_Movement_FleeE
+	applymovement LOCALID_DANCE_CLEFAIRY_S, MtMoon_B2F_Movement_FleeS
+	applymovement LOCALID_DANCE_CLEFAIRY_W, MtMoon_B2F_Movement_FleeW
+	applymovement LOCALID_DANCE_CLEFABLE, MtMoon_B2F_Movement_FleeN
+	waitmovement 0
+	call MtMoon_B2F_EventScript_RemoveDancers
+	releaseall
+	end
+
+MtMoon_B2F_EventScript_ClefairyLeave::
+	fadescreen FADE_TO_BLACK
+	call MtMoon_B2F_EventScript_RemoveDancers
+	fadescreen FADE_FROM_BLACK
+	return
+
+MtMoon_B2F_EventScript_RemoveDancers::
+	setflag FLAG_HIDE_MT_MOON_CLEFAIRY_DANCE
+	removeobject LOCALID_DANCE_CLEFAIRY_N
+	removeobject LOCALID_DANCE_CLEFAIRY_E
+	removeobject LOCALID_DANCE_CLEFAIRY_S
+	removeobject LOCALID_DANCE_CLEFAIRY_W
+	removeobject LOCALID_DANCE_CLEFABLE
+	removeobject LOCALID_DANCE_MOON_STONE
+	return
+
+MtMoon_B2F_Movement_DanceFromN::
+	walk_right
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_right
+	face_down
+	step_end
+
+MtMoon_B2F_Movement_DanceFromE::
+	walk_down
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_down
+	face_left
+	step_end
+
+MtMoon_B2F_Movement_DanceFromS::
+	walk_left
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_left
+	face_up
+	step_end
+
+MtMoon_B2F_Movement_DanceFromW::
+	walk_up
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_up
+	face_right
+	step_end
+
+MtMoon_B2F_Movement_DanceJump::
+	jump_in_place_down
+	jump_in_place_down
+	step_end
+
+MtMoon_B2F_Movement_FleeN::
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+MtMoon_B2F_Movement_FleeE::
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+MtMoon_B2F_Movement_FleeS::
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
+
+MtMoon_B2F_Movement_FleeW::
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	step_end

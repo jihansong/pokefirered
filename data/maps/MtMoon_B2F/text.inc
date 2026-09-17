@@ -96,3 +96,27 @@ MtMoon_B2F_Text_JessieJamesDefeat::
 MtMoon_B2F_Text_JessieJamesBlastOff::
     .string "TEAM ROCKET, blast off at the\n"
     .string "speed of light!$"
+
+MtMoon_B2F_Text_ClefairyDancing::
+    .string "CLEFAIRY are dancing in a circle\n"
+    .string "around a MOON STONE…\p"
+    .string "Stay still and watch?$"
+
+MtMoon_B2F_Text_ClefairyScattered::
+    .string "{PLAYER} took a step…\p"
+    .string "The startled CLEFAIRY scattered!$"
+
+MtMoon_B2F_Text_ClefableCameCloser::
+    .string "The dance ended.\n"
+    .string "A CLEFABLE came closer!$"
+
+MtMoon_B2F_Text_ClefableHeldOutMoonStone::
+    .string "CLEFABLE held out a MOON STONE!$"
+
+MtMoon_B2F_Text_NoRoomForMoonStone::
+    .string "…But there was no room for it.\n"
+    .string "CLEFABLE looked disappointed.$"
+
+MtMoon_B2F_Text_ClefableAttacked::
+    .string "CLEFABLE seems to want to test\n"
+    .string "{PLAYER}'s strength!$"

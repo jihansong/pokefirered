@@ -1826,3 +1826,19 @@ static const struct SpriteFrameImage sPicTable_Togepi[] = {
 static const struct SpriteFrameImage sPicTable_OakTrophy[] = {
     overworld_frame(gObjectEventPic_OakTrophy, 2, 4, 0),
 };
+
+static const struct SpriteFrameImage sPicTable_Clefable[] = {
+    overworld_frame(gObjectEventPic_Clefable, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Clefable, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Clefable, 2, 2, 2),
+    overworld_frame(gObjectEventPic_Clefable, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Clefable, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Clefable, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Clefable, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Clefable, 2, 2, 2),
+    overworld_frame(gObjectEventPic_Clefable, 2, 2, 2),
+};
+
+static const struct SpriteFrameImage sPicTable_MoonStone[] = {
+    overworld_frame(gObjectEventPic_MoonStone, 2, 2, 0),
+};

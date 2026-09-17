@@ -215,7 +215,7 @@
 #define FLAG_HIDE_BILLS_GARDEN_PLUSLE 0x0C5
 #define FLAG_HIDE_BILLS_GARDEN_MINUN  0x0C6
 #define FLAG_HIDE_OAKS_LAB_TROPHY 0x0C7
-#define FLAG_0x0C8               0x0C8
+#define FLAG_HIDE_MT_MOON_CLEFAIRY_DANCE 0x0C8
 #define FLAG_0x0C9               0x0C9
 #define FLAG_0x0CA               0x0CA
 #define FLAG_0x0CB               0x0CB
@@ -536,7 +536,7 @@
 #define FLAG_FOUGHT_DISGUISED_DITTO 0x202
 #define FLAG_OPENED_BILLS_GARDEN 0x203
 #define FLAG_BEAT_PROF_OAK       0x204
-#define FLAG_0x205               0x205
+#define FLAG_SAW_CLEFAIRY_DANCE  0x205
 #define FLAG_0x206               0x206
 #define FLAG_0x207               0x207
 #define FLAG_0x208               0x208

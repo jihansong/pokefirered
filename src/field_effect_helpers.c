@@ -1,4 +1,5 @@
 #include "global.h"
+#include "surfing_pikachu.h"
 #include "gflib.h"
 #include "event_object_movement.h"
 #include "field_camera.h"
@@ -953,6 +954,7 @@ u32 FldEff_SurfBlob(void)
         sprite = &gSprites[spriteId];
         sprite->coordOffsetEnabled = TRUE;
         sprite->oam.paletteNum = 0;
+        TryUseSurfboardPalette(sprite);
         sprite->sPlayerObjectId = gFieldEffectArguments[2];
         sprite->sBobDirection = 0;
         sprite->data[6] = -1;

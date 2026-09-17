@@ -483,4 +483,7 @@ gSpecials::
 	def_special JudgeBugContest
 	def_special BufferBugContestPlace
 	def_special EndBugContest
+	def_special IsStarterPikachuLead
+	def_special StartSurfingPikachuMinigame
+	def_special GetStarterPikachuPartySlotForScript
 gSpecialsEnd::

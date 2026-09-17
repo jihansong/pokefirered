@@ -152,3 +152,55 @@ Route19_Text_LucNotEnoughMons::
     .string "LUC: I don't want to if I can't\n"
     .string "battle you with my big sis.\p"
     .string "Don't you have two POKéMON?$"
+
+Route19_Text_SurfDudeNoPikachu::
+    .string "Yo! I'm a surfer, dude.\p"
+    .string "I heard there's a PIKACHU that\n"
+    .string "follows its TRAINER around.\p"
+    .string "Bring it out front, and maybe it\n"
+    .string "can ride the waves with me!$"
+
+Route19_Text_SurfDudeWantToTry::
+    .string "Whoa, that PIKACHU follows you\n"
+    .string "around? Rad!\p"
+    .string "PIKACHU can't normally SURF, but\n"
+    .string "I could teach it.\p"
+    .string "Want to see if it can handle the\n"
+    .string "waves?$"
+
+Route19_Text_SurfDudeRules::
+    .string "Waves roll in from the left. Watch\n"
+    .string "the splashes coming closer…\p"
+    .string "Press the A Button right when a\n"
+    .string "wave reaches PIKACHU to jump!\p"
+    .string "Clear 7 of 10 waves and I'll\n"
+    .string "teach it everything I know!$"
+
+Route19_Text_SurfDudeTryAgain::
+    .string "PIKACHU jumped {STR_VAR_1} waves.\n"
+    .string "Almost there, dude!\p"
+    .string "Come try again any time.$"
+
+Route19_Text_SurfDudeCleared::
+    .string "PIKACHU jumped {STR_VAR_1} waves!\n"
+    .string "Totally radical!\p"
+    .string "A natural like that deserves SURF,\n"
+    .string "and FLY for catching big air!$"
+
+Route19_Text_SurfDudeTeachMove::
+    .string "Here we go!$"
+
+Route19_Text_SurfDudeRideTheWaves::
+    .string "From now on, PIKACHU can ride\n"
+    .string "the waves in style!$"
+
+Route19_Text_SurfDudeAfterClear::
+    .string "Your PIKACHU is a real surfer now.\n"
+    .string "Hang loose, dude!$"
+
+Route19_Text_SurfDudeRelearn::
+    .string "Did PIKACHU forget its moves?\n"
+    .string "Want me to teach them again?$"
+
+Route19_Text_SurfDudeDecline::
+    .string "No worries. The waves'll be here.$"

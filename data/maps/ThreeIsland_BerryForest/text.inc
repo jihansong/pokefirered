@@ -41,3 +41,6 @@ ThreeIsland_BerryForest_Text_BewareWildBerryLovingMons::
     .string "Beware of wild, BERRY-loving\n"
     .string "POKéMON!$"
 
+
+ThreeIsland_BerryForest_Text_Celebi::
+    .string "Biii!$"

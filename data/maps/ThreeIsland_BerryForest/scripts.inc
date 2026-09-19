@@ -1,11 +1,29 @@
 ThreeIsland_BerryForest_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ThreeIsland_BerryForest_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, ThreeIsland_BerryForest_OnResume
 	.byte 0
+
+ThreeIsland_BerryForest_OnResume::
+	call_if_set FLAG_SYS_SPECIAL_WILD_BATTLE, ThreeIsland_BerryForest_EventScript_TryRemoveCelebi
+	end
+
+ThreeIsland_BerryForest_EventScript_TryRemoveCelebi::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Return
+	removeobject VAR_LAST_TALKED
+	return
 
 ThreeIsland_BerryForest_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_THREE_ISLAND_BERRY_FOREST
 	setescapewarp MAP_THREE_ISLAND_BOND_BRIDGE, 12, 6
+	setflag FLAG_HIDE_BERRY_FOREST_CELEBI
+	call_if_set FLAG_SYS_GAME_CLEAR, ThreeIsland_BerryForest_EventScript_TryShowCelebi
 	end
+
+ThreeIsland_BerryForest_EventScript_TryShowCelebi::
+	goto_if_set FLAG_FOUGHT_CELEBI, EventScript_Return
+	clearflag FLAG_HIDE_BERRY_FOREST_CELEBI
+	return
 
 ThreeIsland_BerryForest_EventScript_Lostelle::
 	lock
@@ -59,4 +77,42 @@ ThreeIsland_BerryForest_EventScript_WelcomeSign::
 
 ThreeIsland_BerryForest_EventScript_BewareSign::
 	msgbox ThreeIsland_BerryForest_Text_BewareWildBerryLovingMons, MSGBOX_SIGN
+	end
+
+@ After the Hall of Fame, CELEBI waits in the flowers at the back of the forest.
+ThreeIsland_BerryForest_EventScript_Celebi::
+	goto_if_questlog EventScript_ReleaseEnd
+	special QuestLog_CutRecording
+	lock
+	faceplayer
+	setwildbattle SPECIES_CELEBI, 30
+	waitse
+	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
+	message ThreeIsland_BerryForest_Text_Celebi
+	waitmessage
+	waitmoncry
+	delay 10
+	playbgm MUS_ENCOUNTER_GYM_LEADER, 0
+	waitbuttonpress
+	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	special StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, ThreeIsland_BerryForest_EventScript_DefeatedCelebi
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, ThreeIsland_BerryForest_EventScript_RanFromCelebi
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, ThreeIsland_BerryForest_EventScript_RanFromCelebi
+	setflag FLAG_FOUGHT_CELEBI
+	release
+	end
+
+ThreeIsland_BerryForest_EventScript_DefeatedCelebi::
+	setflag FLAG_FOUGHT_CELEBI
+	goto EventScript_RemoveStaticMon
+	end
+
+ThreeIsland_BerryForest_EventScript_RanFromCelebi::
+	setflag FLAG_FOUGHT_CELEBI
+	setvar VAR_0x8004, SPECIES_CELEBI
+	goto EventScript_MonFlewAway
 	end

@@ -5032,6 +5032,26 @@ static u8 GetNatureFromPersonality(u32 personality)
     return personality % NUM_NATURES;
 }
 
+// Called once a mon has evolved from preEvoSpecies to postEvoSpecies: an
+// EVO_LEVEL_HOLD_ITEM evolution uses up the held item.
+void TryConsumeEvolutionHeldItem(struct Pokemon *mon, u16 preEvoSpecies, u16 postEvoSpecies)
+{
+    u16 heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, NULL);
+    int i;
+
+    for (i = 0; i < EVOS_PER_MON; i++)
+    {
+        if (gEvolutionTable[preEvoSpecies][i].method == EVO_LEVEL_HOLD_ITEM
+         && gEvolutionTable[preEvoSpecies][i].targetSpecies == postEvoSpecies
+         && EVO_HOLD_ITEM(gEvolutionTable[preEvoSpecies][i].param) == heldItem)
+        {
+            heldItem = ITEM_NONE;
+            SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
+            return;
+        }
+    }
+}
+
 u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
 {
     int i;
@@ -5068,23 +5088,22 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
                 if (friendship >= 220)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
-            // FR/LG removed the time of day evolutions due to having no RTC.
+            // FR/LG has no RTC, so day and night come from the virtual clock.
             case EVO_FRIENDSHIP_DAY:
-                /*
-                RtcCalcLocalTime();
-                if (gLocalTime.hours >= 12 && gLocalTime.hours < 24 && friendship >= 220)
+                if (IsVirtualDaytime() && friendship >= 220)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
-                */
                 break;
             case EVO_FRIENDSHIP_NIGHT:
-                /*
-                RtcCalcLocalTime();
-                if (gLocalTime.hours >= 0 && gLocalTime.hours < 12 && friendship >= 220)
+                if (!IsVirtualDaytime() && friendship >= 220)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
-                */
                 break;
             case EVO_LEVEL:
                 if (gEvolutionTable[species][i].param <= level)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_LEVEL_HOLD_ITEM:
+                if (EVO_HOLD_LEVEL(gEvolutionTable[species][i].param) <= level
+                 && EVO_HOLD_ITEM(gEvolutionTable[species][i].param) == heldItem)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_LEVEL_ATK_GT_DEF:

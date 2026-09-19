@@ -120,3 +120,12 @@ MtMoon_B2F_Text_NoRoomForMoonStone::
 MtMoon_B2F_Text_ClefableAttacked::
     .string "CLEFABLE seems to want to test\n"
     .string "{PLAYER}'s strength!$"
+
+MtMoon_B2F_Text_ShootingStarFell::
+    .string "A shooting star streaked across the\n"
+    .string "cave and fell where the dance was!$"
+
+MtMoon_B2F_Text_StarIsTwinkling::
+    .string "Something is twinkling where the\n"
+    .string "star fell…\p"
+    .string "It opened its eyes!$"

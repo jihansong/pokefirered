@@ -22,6 +22,7 @@ Route25_SeaCottage_EventScript_SetReturnedAfterSSTicket::
 Route25_SeaCottage_EventScript_Bill::
 	lock
 	faceplayer
+	call_if_set FLAG_SYS_GAME_CLEAR, Route25_SeaCottage_EventScript_BillCheckEventTickets
 	goto_if_unset FLAG_GOT_SS_TICKET, Route25_SeaCottage_EventScript_BillNoRedScale
 	checkitem ITEM_RED_SCALE
 	goto_if_eq VAR_RESULT, TRUE, Route25_SeaCottage_EventScript_BillRedScale
@@ -312,5 +313,25 @@ Route25_SeaCottage_EventScript_BillRedScale::
 
 Route25_SeaCottage_EventScript_BillRedScaleRefused::
 	msgbox Route25_SeaCottage_Text_BillThatsDisappointing
+	release
+	end
+
+@ After the Hall of Fame, BILL hands over the MYSTIC and AURORA TICKETS, which
+@ this revision of the game never gives out. They open the SEAGALLOP routes to
+@ NAVEL ROCK (LUGIA, HO-OH) and BIRTH ISLAND (DEOXYS).
+Route25_SeaCottage_EventScript_BillCheckEventTickets::
+	goto_if_unset FLAG_GOT_EVENT_TICKETS_FROM_BILL, Route25_SeaCottage_EventScript_BillGiveEventTickets
+	return
+
+Route25_SeaCottage_EventScript_BillGiveEventTickets::
+	msgbox Route25_SeaCottage_Text_BillOddTicketsArrived
+	giveitem ITEM_MYSTIC_TICKET
+	giveitem ITEM_AURORA_TICKET
+	setflag FLAG_RECEIVED_MYSTIC_TICKET
+	setflag FLAG_RECEIVED_AURORA_TICKET
+	setflag FLAG_ENABLE_SHIP_NAVEL_ROCK
+	setflag FLAG_ENABLE_SHIP_BIRTH_ISLAND
+	setflag FLAG_GOT_EVENT_TICKETS_FROM_BILL
+	msgbox Route25_SeaCottage_Text_BillShowTicketsAtVermilion
 	release
 	end

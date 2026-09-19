@@ -174,9 +174,7 @@ s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites)
 
     seviiAreas = GetUnlockedSeviiAreas();
     alteringCaveCount = 0;
-    alteringCaveNum = VarGet(VAR_ALTERING_CAVE_WILD_SET);
-    if (alteringCaveNum >= NUM_ALTERING_CAVE_TABLES)
-        alteringCaveNum = 0;
+    alteringCaveNum = GetAlteringCaveWildSet();
     for (i = 0, areaCount = 0; gWildMonHeaders[i].mapGroup != MAP_GROUP(MAP_UNDEFINED); i++)
     {
         mapSecId = GetMapSecIdFromWildMonHeader(&gWildMonHeaders[i]);

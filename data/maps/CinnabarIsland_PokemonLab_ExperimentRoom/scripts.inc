@@ -1,6 +1,8 @@
 .equ HELIX_FOSSIL, 1
 .equ DOME_FOSSIL,  2
 .equ OLD_AMBER,    3
+.equ ROOT_FOSSIL,  4
+.equ CLAW_FOSSIL,  5
 
 CinnabarIsland_PokemonLab_ExperimentRoom_MapScripts::
 	.byte 0
@@ -42,6 +44,8 @@ CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_AlreadyTraded::
 CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_FossilScientist::
 	lock
 	faceplayer
+	goto_if_eq VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_REVIVE_STATE, 0, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_CheckHoennFossils
+CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_CheckKantoFossils::
 	setvar VAR_RESULT, FALSE
 	call_if_set FLAG_REVIVED_AMBER, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_CheckRevivedMtMoonFossil
 	goto_if_eq VAR_RESULT, TRUE, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_RevivedAllFossils
@@ -192,6 +196,8 @@ CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_GiveRevivedMon::
 	goto_if_eq VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_WHICH_FOSSIL, HELIX_FOSSIL, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_GiveOmanyte
 	goto_if_eq VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_WHICH_FOSSIL, DOME_FOSSIL, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_GiveKabuto
 	goto_if_eq VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_WHICH_FOSSIL, OLD_AMBER, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_GiveAerodactyl
+	goto_if_eq VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_WHICH_FOSSIL, ROOT_FOSSIL, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_GiveLileep
+	goto_if_eq VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_WHICH_FOSSIL, CLAW_FOSSIL, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_GiveAnorith
 	end
 
 CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_GiveOmanyte::
@@ -283,3 +289,62 @@ CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_CheckRevivedDome::
 	goto_if_unset FLAG_REVIVED_DOME, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_SetResultFalse
 	setvar VAR_RESULT, TRUE
 	return
+
+@ HOENN fossils (ROOT FOSSIL on KINDLE ROAD, CLAW FOSSIL in SEVAULT CANYON) are
+@ offered first; declining moves on to the KANTO fossils as before.
+CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_CheckHoennFossils::
+	checkitem ITEM_ROOT_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_ShowRootFossil
+CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_CheckClawFossil::
+	checkitem ITEM_CLAW_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_ShowClawFossil
+	goto CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_CheckKantoFossils
+	end
+
+CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_ShowRootFossil::
+	bufferspeciesname STR_VAR_1, SPECIES_LILEEP
+	bufferitemname STR_VAR_2, ITEM_ROOT_FOSSIL
+	msgbox CinnabarIsland_PokemonLab_ExperimentRoom_Text_ThatFossilIsOfMonMakeItLiveAgain, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_CheckClawFossil
+	msgbox CinnabarIsland_PokemonLab_ExperimentRoom_Text_HandedFossilToWeirdDoctor
+	textcolor NPC_TEXT_COLOR_MALE
+	removeitem ITEM_ROOT_FOSSIL
+	msgbox CinnabarIsland_PokemonLab_ExperimentRoom_Text_TakesTimeGoForWalk
+	setvar VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_REVIVE_STATE, 1
+	setvar VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_WHICH_FOSSIL, ROOT_FOSSIL
+	release
+	end
+
+CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_ShowClawFossil::
+	bufferspeciesname STR_VAR_1, SPECIES_ANORITH
+	bufferitemname STR_VAR_2, ITEM_CLAW_FOSSIL
+	msgbox CinnabarIsland_PokemonLab_ExperimentRoom_Text_ThatFossilIsOfMonMakeItLiveAgain, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_CheckKantoFossils
+	msgbox CinnabarIsland_PokemonLab_ExperimentRoom_Text_HandedFossilToWeirdDoctor
+	textcolor NPC_TEXT_COLOR_MALE
+	removeitem ITEM_CLAW_FOSSIL
+	msgbox CinnabarIsland_PokemonLab_ExperimentRoom_Text_TakesTimeGoForWalk
+	setvar VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_REVIVE_STATE, 1
+	setvar VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_WHICH_FOSSIL, CLAW_FOSSIL
+	release
+	end
+
+CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_GiveLileep::
+	setvar VAR_TEMP_1, SPECIES_LILEEP
+	bufferspeciesname STR_VAR_1, SPECIES_LILEEP
+	msgbox CinnabarIsland_PokemonLab_ExperimentRoom_Text_FossilMonBackToLife
+	givemon SPECIES_LILEEP, 5
+	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
+	goto_if_eq VAR_RESULT, 0, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_NicknameMonParty
+	goto_if_eq VAR_RESULT, 1, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_NicknameMonPC
+	end
+
+CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_GiveAnorith::
+	setvar VAR_TEMP_1, SPECIES_ANORITH
+	bufferspeciesname STR_VAR_1, SPECIES_ANORITH
+	msgbox CinnabarIsland_PokemonLab_ExperimentRoom_Text_FossilMonBackToLife
+	givemon SPECIES_ANORITH, 5
+	goto_if_eq VAR_RESULT, 2, EventScript_NoMoreRoomForPokemon
+	goto_if_eq VAR_RESULT, 0, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_NicknameMonParty
+	goto_if_eq VAR_RESULT, 1, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_NicknameMonPC
+	end

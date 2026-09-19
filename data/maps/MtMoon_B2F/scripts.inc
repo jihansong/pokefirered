@@ -5,6 +5,7 @@ MtMoon_B2F_MapScripts::
 MtMoon_B2F_OnTransition::
 	call MtMoon_B2F_EventScript_HideJessieJames
 	call MtMoon_B2F_EventScript_SetUpClefairyDance
+	call MtMoon_B2F_EventScript_SetUpJirachiStar
 	call_if_unset FLAG_GOT_FOSSIL_FROM_MT_MOON, MtMoon_B2F_EventScript_ShowFossils
 	end
 
@@ -264,6 +265,7 @@ MtMoon_B2F_EventScript_ClefairyDance::
 	goto_if_eq VAR_RESULT, FALSE, MtMoon_B2F_EventScript_NoRoomForMoonStone
 	closemessage
 	call MtMoon_B2F_EventScript_ClefairyLeave
+	call MtMoon_B2F_EventScript_DanceFinished
 	releaseall
 	end
 
@@ -271,6 +273,7 @@ MtMoon_B2F_EventScript_NoRoomForMoonStone::
 	msgbox MtMoon_B2F_Text_NoRoomForMoonStone
 	closemessage
 	call MtMoon_B2F_EventScript_ClefairyLeave
+	call MtMoon_B2F_EventScript_DanceFinished
 	releaseall
 	end
 
@@ -281,6 +284,7 @@ MtMoon_B2F_EventScript_ClefableBattle::
 	setwildbattle SPECIES_CLEFABLE, 30
 	dowildbattle
 	call MtMoon_B2F_EventScript_RemoveDancers
+	call MtMoon_B2F_EventScript_DanceFinished
 	releaseall
 	end
 
@@ -390,3 +394,54 @@ MtMoon_B2F_Movement_FleeW::
 	walk_fast_down
 	walk_fast_left
 	step_end
+
+@ JIRACHI: once the player has watched the CLEFAIRY dance to the end, a shooting
+@ star falls where the MOON STONE stood. It stays until the full moon is over.
+MtMoon_B2F_EventScript_DanceFinished::
+	setflag FLAG_WATCHED_CLEFAIRY_DANCE
+	goto_if_set FLAG_FOUGHT_JIRACHI, EventScript_Return
+	delay 30
+	playse SE_M_REFLECT
+	msgbox MtMoon_B2F_Text_ShootingStarFell
+	closemessage
+	clearflag FLAG_HIDE_MT_MOON_JIRACHI_STAR
+	addobject LOCALID_MT_MOON_JIRACHI_STAR
+	return
+
+MtMoon_B2F_EventScript_SetUpJirachiStar::
+	setflag FLAG_HIDE_MT_MOON_JIRACHI_STAR
+	goto_if_set FLAG_FOUGHT_JIRACHI, EventScript_Return
+	goto_if_unset FLAG_WATCHED_CLEFAIRY_DANCE, EventScript_Return
+	goto_if_unset FLAG_SAW_CLEFAIRY_DANCE, EventScript_Return
+	specialvar VAR_RESULT, IsFullMoon
+	goto_if_eq VAR_RESULT, FALSE, EventScript_Return
+	clearflag FLAG_HIDE_MT_MOON_JIRACHI_STAR
+	return
+
+MtMoon_B2F_EventScript_JirachiStar::
+	goto_if_questlog EventScript_ReleaseEnd
+	special QuestLog_CutRecording
+	lock
+	msgbox MtMoon_B2F_Text_StarIsTwinkling
+	closemessage
+	setwildbattle SPECIES_JIRACHI, 30
+	waitse
+	playmoncry SPECIES_JIRACHI, CRY_MODE_ENCOUNTER
+	waitmoncry
+	delay 10
+	playbgm MUS_ENCOUNTER_GYM_LEADER, 0
+	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	special StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	setflag FLAG_FOUGHT_JIRACHI
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, MtMoon_B2F_EventScript_JirachiFlewAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, MtMoon_B2F_EventScript_JirachiFlewAway
+	goto EventScript_RemoveStaticMon
+	end
+
+MtMoon_B2F_EventScript_JirachiFlewAway::
+	setvar VAR_0x8004, SPECIES_JIRACHI
+	goto EventScript_MonFlewAway
+	end

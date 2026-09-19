@@ -530,6 +530,10 @@ OneIsland_KindleRoad_EventScript_ItemEther::
 	finditem ITEM_ETHER
 	end
 
+OneIsland_KindleRoad_EventScript_ItemRootFossil::
+	finditem ITEM_ROOT_FOSSIL
+	end
+
 OneIsland_KindleRoad_EventScript_ItemMaxRepel::
 	finditem ITEM_MAX_REPEL
 	end
@@ -580,6 +584,10 @@ SevenIsland_SevaultCanyon_EventScript_ItemKingsRock::
 
 SevenIsland_SevaultCanyon_EventScript_ItemMaxElixir::
 	finditem ITEM_MAX_ELIXIR
+	end
+
+SevenIsland_SevaultCanyon_EventScript_ItemClawFossil::
+	finditem ITEM_CLAW_FOSSIL
 	end
 
 SevenIsland_SevaultCanyon_EventScript_ItemNugget::

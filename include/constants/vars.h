@@ -227,9 +227,9 @@
 #define VAR_BUG_CONTEST_START_TIME 0x40C1
 #define VAR_BUG_CONTEST_LAST_DAY   0x40C2
 #define VAR_BUG_CONTEST_SWAP       0x40C3
-#define VAR_0x40C4                 0x40C4
-#define VAR_0x40C5                 0x40C5
-#define VAR_0x40C6                 0x40C6
+#define VAR_ROAMER_BEASTS_DONE     0x40C4 // bit per sRoamerSpecies index: that beast has roamed and been caught or defeated
+#define VAR_KANTO_RUMOR_INDEX      0x40C5
+#define VAR_SEVII_RUMOR_INDEX      0x40C6
 #define VAR_0x40C7                 0x40C7
 #define VAR_0x40C8                 0x40C8
 #define VAR_0x40C9                 0x40C9

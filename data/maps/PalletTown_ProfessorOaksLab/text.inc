@@ -426,3 +426,24 @@ PalletTown_ProfessorOaksLab_Text_Trophy::
     .string "A gold trophy.\p"
     .string "“To {PLAYER}, the TRAINER who\n"
     .string "surpassed PROF. OAK.”$"
+
+PalletTown_ProfessorOaksLab_Text_AideElmSentStarters::
+    .string "PROF. ELM in JOHTO sent PROF. OAK\n"
+    .string "some POKéMON for your POKéDEX.\p"
+    .string "The PROFESSOR asked me to hand\n"
+    .string "them over to you, one at a time.$"
+
+PalletTown_ProfessorOaksLab_Text_AideWouldYouLikeStarter::
+    .string "Would you like {STR_VAR_1}?$"
+
+PalletTown_ProfessorOaksLab_Text_AideComeBackAnytime::
+    .string "I'll look after them for now.\n"
+    .string "Come back whenever you like.$"
+
+PalletTown_ProfessorOaksLab_Text_AideTakeGoodCare::
+    .string "PROF. ELM will be glad to hear it\n"
+    .string "went to a good TRAINER!$"
+
+PalletTown_ProfessorOaksLab_Text_AideAllJohtoStartersGiven::
+    .string "All of PROF. ELM's POKéMON are in\n"
+    .string "good hands now. Thank you!$"

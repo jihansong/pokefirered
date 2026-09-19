@@ -120,3 +120,18 @@ Route25_SeaCottage_Text_BillThatScaleRedGyarados::
 Route25_SeaCottage_Text_BillThatsDisappointing::
     .string "BILL: That's disappointing.\n"
     .string "That happens to be very rare.$"
+
+Route25_SeaCottage_Text_BillOddTicketsArrived::
+    .string "BILL: Oh, {PLAYER}! Perfect timing.\p"
+    .string "A pal of mine in HOENN mailed me\n"
+    .string "these two odd tickets.\p"
+    .string "They're for ferries to islands\n"
+    .string "that aren't on any map I own!\p"
+    .string "I'm too busy with my PC research,\n"
+    .string "so they're yours. Go on, take them!$"
+
+Route25_SeaCottage_Text_BillShowTicketsAtVermilion::
+    .string "Show them to the SEAGALLOP sailor\n"
+    .string "at VERMILION's port.\p"
+    .string "Whatever's out there, tell me all\n"
+    .string "about it when you get back!$"

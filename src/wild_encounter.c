@@ -1,6 +1,7 @@
 #include "global.h"
 #include "random.h"
 #include "wild_encounter.h"
+#include "field_specials.h"
 #include "event_data.h"
 #include "fieldmap.h"
 #include "random.h"
@@ -198,11 +199,7 @@ static u16 GetCurrentMapWildMonHeaderId(void)
             if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SIX_ISLAND_ALTERING_CAVE) &&
                 gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SIX_ISLAND_ALTERING_CAVE))
             {
-                u16 alteringCaveId = VarGet(VAR_ALTERING_CAVE_WILD_SET);
-                if (alteringCaveId >= NUM_ALTERING_CAVE_TABLES)
-                    alteringCaveId = 0;
-
-                i += alteringCaveId;
+                i += GetAlteringCaveWildSet();
             }
 
             if (!UnlockedTanobyOrAreNotInTanoby())

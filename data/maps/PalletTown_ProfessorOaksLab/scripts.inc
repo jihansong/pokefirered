@@ -1010,6 +1010,8 @@ PalletTown_ProfessorOaksLab_EventScript_Aide2GameClear::
 PalletTown_ProfessorOaksLab_EventScript_Aide3::
 	lock
 	faceplayer
+	specialvar VAR_RESULT, IsNationalPokedexEnabled
+	goto_if_eq VAR_RESULT, TRUE, PalletTown_ProfessorOaksLab_EventScript_AideJohtoStarters
 	famechecker FAMECHECKER_OAK, 2
 	msgbox PalletTown_ProfessorOaksLab_Text_OakIsAuthorityOnMons
 	release
@@ -1095,3 +1097,60 @@ PalletTown_ProfessorOaksLab_EventScript_OakBeatenAgain::
 PalletTown_ProfessorOaksLab_EventScript_Trophy::
 	msgbox PalletTown_ProfessorOaksLab_Text_Trophy, MSGBOX_NPC
 	end
+
+@ Once the player has the NATIONAL POKéDEX, this aide hands out the JOHTO
+@ starters PROF. ELM sent to OAK, one per talk, until all three are given.
+PalletTown_ProfessorOaksLab_EventScript_AideJohtoStarters::
+	goto_if_unset FLAG_GOT_CHIKORITA_FROM_AIDE, PalletTown_ProfessorOaksLab_EventScript_AideOfferStarters
+	goto_if_unset FLAG_GOT_CYNDAQUIL_FROM_AIDE, PalletTown_ProfessorOaksLab_EventScript_AideOfferStarters
+	goto_if_unset FLAG_GOT_TOTODILE_FROM_AIDE, PalletTown_ProfessorOaksLab_EventScript_AideOfferStarters
+	msgbox PalletTown_ProfessorOaksLab_Text_AideAllJohtoStartersGiven
+	release
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_AideOfferStarters::
+	msgbox PalletTown_ProfessorOaksLab_Text_AideElmSentStarters
+	goto_if_set FLAG_GOT_CHIKORITA_FROM_AIDE, PalletTown_ProfessorOaksLab_EventScript_AideOfferCyndaquil
+	setvar VAR_TEMP_1, SPECIES_CHIKORITA
+	bufferspeciesname STR_VAR_1, SPECIES_CHIKORITA
+	msgbox PalletTown_ProfessorOaksLab_Text_AideWouldYouLikeStarter, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, PalletTown_ProfessorOaksLab_EventScript_AideGiveStarter
+PalletTown_ProfessorOaksLab_EventScript_AideOfferCyndaquil::
+	goto_if_set FLAG_GOT_CYNDAQUIL_FROM_AIDE, PalletTown_ProfessorOaksLab_EventScript_AideOfferTotodile
+	setvar VAR_TEMP_1, SPECIES_CYNDAQUIL
+	bufferspeciesname STR_VAR_1, SPECIES_CYNDAQUIL
+	msgbox PalletTown_ProfessorOaksLab_Text_AideWouldYouLikeStarter, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, PalletTown_ProfessorOaksLab_EventScript_AideGiveStarter
+PalletTown_ProfessorOaksLab_EventScript_AideOfferTotodile::
+	goto_if_set FLAG_GOT_TOTODILE_FROM_AIDE, PalletTown_ProfessorOaksLab_EventScript_AideNoStarterChosen
+	setvar VAR_TEMP_1, SPECIES_TOTODILE
+	bufferspeciesname STR_VAR_1, SPECIES_TOTODILE
+	msgbox PalletTown_ProfessorOaksLab_Text_AideWouldYouLikeStarter, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, PalletTown_ProfessorOaksLab_EventScript_AideGiveStarter
+PalletTown_ProfessorOaksLab_EventScript_AideNoStarterChosen::
+	msgbox PalletTown_ProfessorOaksLab_Text_AideComeBackAnytime
+	release
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_AideGiveStarter::
+	call EventScript_GiveGiftMonLv5
+	goto_if_eq VAR_RESULT, FALSE, EventScript_ReleaseEnd
+	call_if_eq VAR_TEMP_1, SPECIES_CHIKORITA, PalletTown_ProfessorOaksLab_EventScript_SetGotChikorita
+	call_if_eq VAR_TEMP_1, SPECIES_CYNDAQUIL, PalletTown_ProfessorOaksLab_EventScript_SetGotCyndaquil
+	call_if_eq VAR_TEMP_1, SPECIES_TOTODILE, PalletTown_ProfessorOaksLab_EventScript_SetGotTotodile
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox PalletTown_ProfessorOaksLab_Text_AideTakeGoodCare
+	release
+	end
+
+PalletTown_ProfessorOaksLab_EventScript_SetGotChikorita::
+	setflag FLAG_GOT_CHIKORITA_FROM_AIDE
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_SetGotCyndaquil::
+	setflag FLAG_GOT_CYNDAQUIL_FROM_AIDE
+	return
+
+PalletTown_ProfessorOaksLab_EventScript_SetGotTotodile::
+	setflag FLAG_GOT_TOTODILE_FROM_AIDE
+	return

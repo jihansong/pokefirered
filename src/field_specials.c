@@ -13,6 +13,7 @@
 #include "battle.h"
 #include "fieldmap.h"
 #include "field_specials.h"
+#include "wild_encounter.h"
 #include "region_map.h"
 #include "task.h"
 #include "battle_tower.h"
@@ -2064,10 +2065,19 @@ void RunMassageCooldownStepCounter(void)
         VarSet(VAR_MASSAGE_COOLDOWN_STEP_COUNTER, count + 1);
 }
 
-void DaisyMassageServices(void)
+// Returns TRUE if the groomed mon was a FEEBAS: DAISY's grooming maxes its
+// beauty, so it evolves into MILOTIC on its next level-up as in R/S/E.
+bool8 DaisyMassageServices(void)
 {
-    AdjustFriendship(&gPlayerParty[gSpecialVar_0x8004], FRIENDSHIP_EVENT_MASSAGE);
+    struct Pokemon *mon = &gPlayerParty[gSpecialVar_0x8004];
+    u8 beauty = MAX_CONDITION;
+
+    AdjustFriendship(mon, FRIENDSHIP_EVENT_MASSAGE);
     VarSet(VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 0);
+    if (GetMonData(mon, MON_DATA_SPECIES_OR_EGG, NULL) != SPECIES_FEEBAS)
+        return FALSE;
+    SetMonData(mon, MON_DATA_BEAUTY, &beauty);
+    return TRUE;
 }
 
 static const u16 sEliteFourLightingPalettes[][16] = {
@@ -2477,6 +2487,27 @@ bool8 TryStartGlitchCityStepScript(void)
         return FALSE;
     ScriptContext_SetupScript(GlitchCity_EventScript_Return);
     return TRUE;
+}
+
+// The virtual clock: a "day" is 256 steps, counted from the game's step stat.
+// The first half of each day is daytime and the second half is night.
+#define VIRTUAL_DAY_STEPS 256
+
+u16 GetVirtualDay(void)
+{
+    return GetGameStat(GAME_STAT_STEPS) / VIRTUAL_DAY_STEPS;
+}
+
+bool8 IsVirtualDaytime(void)
+{
+    return GetGameStat(GAME_STAT_STEPS) % VIRTUAL_DAY_STEPS < VIRTUAL_DAY_STEPS / 2;
+}
+
+// The Altering Cave's nine encounter sets, normally switched by Mystery Gift,
+// take turns one virtual day each.
+u16 GetAlteringCaveWildSet(void)
+{
+    return GetVirtualDay() % NUM_ALTERING_CAVE_TABLES;
 }
 
 bool8 IsFullMoon(void)
@@ -3010,3 +3041,16 @@ void StartLavenderSyndrome(void)
 #undef tPitch
 #undef tTimer
 #undef tDarkness
+
+// Returns TRUE if a party mon (not an egg) is species VAR_0x8004.
+bool8 PartyHasSpecies(void)
+{
+    u8 i;
+
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == gSpecialVar_0x8004)
+            return TRUE;
+    }
+    return FALSE;
+}

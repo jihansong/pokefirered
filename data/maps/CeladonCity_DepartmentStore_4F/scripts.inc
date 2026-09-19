@@ -32,6 +32,26 @@ CeladonCity_DepartmentStore_4F_Items::
 	.2byte ITEM_THUNDER_STONE
 	.2byte ITEM_WATER_STONE
 	.2byte ITEM_LEAF_STONE
+	.2byte ITEM_MOON_STONE
+	.2byte ITEM_SUN_STONE
+	.2byte ITEM_KINGS_ROCK
+	.2byte ITEM_METAL_COAT
+	.2byte ITEM_DRAGON_SCALE
+	.2byte ITEM_UP_GRADE
+	.2byte ITEM_DEEP_SEA_TOOTH
+	.2byte ITEM_DEEP_SEA_SCALE
 	.2byte ITEM_NONE
+	release
+	end
+
+@ The evolution researcher explains every evolution that differs from the originals.
+CeladonCity_DepartmentStore_4F_EventScript_EvolutionResearcher::
+	lock
+	faceplayer
+	msgbox CeladonCity_DepartmentStore_4F_Text_Evolution0
+	msgbox CeladonCity_DepartmentStore_4F_Text_Evolution1
+	msgbox CeladonCity_DepartmentStore_4F_Text_Evolution2
+	msgbox CeladonCity_DepartmentStore_4F_Text_Evolution3
+	msgbox CeladonCity_DepartmentStore_4F_Text_Evolution4
 	release
 	end

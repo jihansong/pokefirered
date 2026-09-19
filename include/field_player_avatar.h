@@ -18,6 +18,7 @@ void HandleEnforcedLookDirectionOnPlayerStopMoving(void);
 void StopPlayerAvatar(void);
 void GetXYCoordsOneStepInFrontOfPlayer(s16 *xPtr, s16 *yPtr);
 u8 GetPlayerAvatarGraphicsIdByStateId(u8);
+bool8 IsPlayerInMonForm(void);
 void SetPlayerAvatarStateMask(u8 mask);
 void AlignFishingAnimationFrames(struct Sprite *sprite);
 void CreateStopSurfingTask_NoMusicChange(u8 direction);

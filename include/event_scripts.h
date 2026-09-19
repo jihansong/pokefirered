@@ -1265,5 +1265,6 @@ extern const u8 TradeCenter_ConfirmLeaveRoom[];
 extern const u8 TradeCenter_TerminateLink[];
 
 extern const u8 EventScript_TalkToFollowerPikachu[];
+extern const u8 EventScript_ReactToPlayerMonForm[];
 
 #endif //GUARD_EVENT_SCRIPTS_H

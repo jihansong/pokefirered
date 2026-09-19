@@ -49,6 +49,7 @@ static u16 GetPlayerCurMetatileBehavior(void);
 static bool8 TryStartInteractionScript(struct MapPosition * position, u16 metatileBehavior, u8 playerDirection);
 static const u8 *GetInteractionScript(struct MapPosition * position, u8 metatileBehavior, u8 playerDirection);
 static const u8 *GetInteractedObjectEventScript(struct MapPosition * position, u8 metatileBehavior, u8 playerDirection);
+static bool8 ReactsToPlayerMonForm(u8 graphicsId);
 static const u8 *GetInteractedBackgroundEventScript(struct MapPosition * position, u8 metatileBehavior, u8 playerDirection);
 static const struct BgEvent *GetBackgroundEventAtPosition(struct MapHeader *, u16, u16, u8);
 static const u8 *GetInteractedMetatileScript(struct MapPosition * position, u8 metatileBehavior, u8 playerDirection);
@@ -470,7 +471,30 @@ static const u8 *GetInteractedObjectEventScript(struct MapPosition *position, u8
     script = GetObjectEventScriptPointerByObjectEventId(objectEventId);
 
     script = GetRamScript(gSpecialVar_LastTalked, script);
+    if (script != NULL && IsPlayerInMonForm() && ReactsToPlayerMonForm(gObjectEvents[objectEventId].graphicsId))
+        return EventScript_ReactToPlayerMonForm;
     return script;
+}
+
+// While the player looks like a POKéMON after BILL's teleporter, people react
+// to the POKéMON instead of talking. NURSES, CLERKS, receptionists and BILL
+// still serve the player as usual.
+static bool8 ReactsToPlayerMonForm(u8 graphicsId)
+{
+    switch (graphicsId)
+    {
+    case OBJ_EVENT_GFX_NURSE:
+    case OBJ_EVENT_GFX_CLERK:
+    case OBJ_EVENT_GFX_CABLE_CLUB_RECEPTIONIST:
+    case OBJ_EVENT_GFX_UNION_ROOM_RECEPTIONIST:
+    case OBJ_EVENT_GFX_UNUSED_MALE_RECEPTIONIST:
+    case OBJ_EVENT_GFX_BILL:
+        return FALSE;
+    case OBJ_EVENT_GFX_JESSIE:
+    case OBJ_EVENT_GFX_JAMES:
+        return TRUE;
+    }
+    return graphicsId >= OBJ_EVENT_GFX_LITTLE_BOY && graphicsId <= OBJ_EVENT_GFX_GYM_GUY;
 }
 
 static const u8 *GetInteractedBackgroundEventScript(struct MapPosition *position, u8 metatileBehavior, u8 direction)

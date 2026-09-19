@@ -175,6 +175,15 @@ CeladonCity_PokemonCenter_1F_Text_Rumor20::
     .string "They're very shy, though!$"
 
 CeladonCity_PokemonCenter_1F_Text_Rumor21::
+    .string "BILL once got stuck as a POKéMON\n"
+    .string "in his own TELEPORTER. He says the\l"
+    .string "machine is fixed now…\p"
+    .string "After he's given out his S.S.\n"
+    .string "TICKET, ask his PC to run it. You\l"
+    .string "might come out looking like your\l"
+    .string "lead POKéMON!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor22::
     .string "One of the POKéMON MANSION's\n"
     .string "researchers was never seen leaving\l"
     .string "after the fire.\p"
@@ -183,7 +192,7 @@ CeladonCity_PokemonCenter_1F_Text_Rumor21::
     .string "its secret lab, finds the way down\l"
     .string "to him.$"
 
-CeladonCity_PokemonCenter_1F_Text_Rumor22::
+CeladonCity_PokemonCenter_1F_Text_Rumor23::
     .string "The game designer in CELADON\n"
     .string "MANSION gets awfully nervous\l"
     .string "around bags stuffed with RARE\l"

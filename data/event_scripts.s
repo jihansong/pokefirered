@@ -1215,6 +1215,7 @@ EventScript_DelayedLookAround::
 	.include "data/scripts/pc_transfer.inc"
 	.include "data/scripts/gift_mon.inc"
 	.include "data/scripts/sealed_chambers.inc"
+	.include "data/scripts/player_mon_form.inc"
 
 EventScript_GetInGameTradeSpeciesInfo::
 	copyvar VAR_0x8004, VAR_0x8008

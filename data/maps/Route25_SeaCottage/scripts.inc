@@ -3,7 +3,13 @@
 
 Route25_SeaCottage_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route25_SeaCottage_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route25_SeaCottage_OnFrame
 	.byte 0
+
+Route25_SeaCottage_OnFrame::
+	map_script_2 VAR_SEA_COTTAGE_TELEPORT, 1, Route25_SeaCottage_EventScript_TeleporterTransform
+	map_script_2 VAR_SEA_COTTAGE_TELEPORT, 2, Route25_SeaCottage_EventScript_TeleporterChangeBack
+	.2byte 0
 
 Route25_SeaCottage_OnTransition::
 	call_if_unset FLAG_HELPED_BILL_IN_SEA_COTTAGE, Route25_SeaCottage_EventScript_HideClefairyBill
@@ -148,7 +154,7 @@ Route25_SeaCottage_Movement_BillEnterTeleporter::
 
 Route25_SeaCottage_EventScript_Computer::
 	lockall
-	goto_if_set RETURN_AFTER_SS_TICKET, Route25_SeaCottage_EventScript_OpenBillsMonList
+	goto_if_set RETURN_AFTER_SS_TICKET, Route25_SeaCottage_EventScript_OfferTeleporter
 	goto_if_set BILL_IN_TELEPORTER, Route25_SeaCottage_EventScript_RunCellSeparator
 	msgbox Route25_SeaCottage_Text_TeleporterIsDisplayed
 	releaseall
@@ -335,3 +341,113 @@ Route25_SeaCottage_EventScript_BillGiveEventTickets::
 	msgbox Route25_SeaCottage_Text_BillShowTicketsAtVermilion
 	release
 	end
+
+@ Roadmap 2, event 4: BILL's teleporter accident, a nod to the Gen 1 rumor of
+@ BILL fused with a CLEFAIRY. After the S.S. TICKET, the PC can run the
+@ TELEPORTER again. The player comes out of the pod looking like their lead
+@ POKéMON (CLEFAIRY if it has no overworld sprite) and walks around like that
+@ until they run it once more.
+Route25_SeaCottage_EventScript_OfferTeleporter::
+	goto_if_questlog Route25_SeaCottage_EventScript_OpenBillsMonList
+	call_if_eq VAR_PLAYER_MON_FORM, SPECIES_NONE, Route25_SeaCottage_EventScript_AskRunTeleporter
+	call_if_ne VAR_PLAYER_MON_FORM, SPECIES_NONE, Route25_SeaCottage_EventScript_AskChangeBack
+	goto_if_eq VAR_RESULT, NO, Route25_SeaCottage_EventScript_OpenBillsMonList
+	msgbox Route25_SeaCottage_Text_BillHopInThePod
+	closemessage
+	call_if_eq VAR_PLAYER_MON_FORM, SPECIES_NONE, Route25_SeaCottage_EventScript_SetTransformScene
+	call_if_ne VAR_PLAYER_MON_FORM, SPECIES_NONE, Route25_SeaCottage_EventScript_SetChangeBackScene
+	playse SE_CONTEST_CURTAIN_FALL
+	fadescreen FADE_TO_BLACK
+	warpsilent MAP_ROUTE25_SEA_COTTAGE, 3, 3
+	waitstate
+	releaseall
+	end
+
+Route25_SeaCottage_EventScript_AskRunTeleporter::
+	msgbox Route25_SeaCottage_Text_RunTeleporterAgain, MSGBOX_YESNO
+	return
+
+Route25_SeaCottage_EventScript_AskChangeBack::
+	msgbox Route25_SeaCottage_Text_RunTeleporterToChangeBack, MSGBOX_YESNO
+	return
+
+Route25_SeaCottage_EventScript_SetTransformScene::
+	setvar VAR_SEA_COTTAGE_TELEPORT, 1
+	return
+
+Route25_SeaCottage_EventScript_SetChangeBackScene::
+	setvar VAR_SEA_COTTAGE_TELEPORT, 2
+	return
+
+Route25_SeaCottage_EventScript_TeleporterTransform::
+	lockall
+	call Route25_SeaCottage_EventScript_RunTeleporterInPod
+	setvar VAR_0x8004, TRUE
+	special SetPlayerMonForm
+	copyvar VAR_0x8005, VAR_RESULT
+	call Route25_SeaCottage_EventScript_StepOutOfPod
+	call_if_eq VAR_0x8005, TRUE, Route25_SeaCottage_EventScript_BillDataMixedUp
+	msgbox Route25_SeaCottage_Text_BillYouLookLikeMon
+	setvar VAR_SEA_COTTAGE_TELEPORT, 0
+	releaseall
+	end
+
+Route25_SeaCottage_EventScript_TeleporterChangeBack::
+	lockall
+	call Route25_SeaCottage_EventScript_RunTeleporterInPod
+	setvar VAR_0x8004, FALSE
+	special SetPlayerMonForm
+	call Route25_SeaCottage_EventScript_StepOutOfPod
+	msgbox Route25_SeaCottage_Text_BillBackToNormal
+	setvar VAR_SEA_COTTAGE_TELEPORT, 0
+	releaseall
+	end
+
+@ The player waits hidden in the pod while the machine runs
+Route25_SeaCottage_EventScript_RunTeleporterInPod::
+	hideobjectat LOCALID_PLAYER, MAP_ROUTE25_SEA_COTTAGE
+	delay 30
+	setvar VAR_0x8004, 0
+	special AnimateTeleporterHousing
+	call Route25_SeaCottage_EventScript_PlayTeleporterBeepSE
+	call Route25_SeaCottage_EventScript_PlayTeleporterBeepSE
+	call Route25_SeaCottage_EventScript_PlayTeleporterBeepSE
+	setvar VAR_0x8004, 1
+	special AnimateTeleporterHousing
+	playse SE_WARP_IN
+	special AnimateTeleporterCable
+	waitse
+	playse SE_M_EARTHQUAKE
+	setvar VAR_0x8004, 0
+	setvar VAR_0x8005, 2
+	setvar VAR_0x8006, 10
+	setvar VAR_0x8007, 3
+	special ShakeScreen
+	delay 20
+	fadescreen FADE_TO_WHITE
+	playse SE_M_REFLECT
+	delay 20
+	fadescreen FADE_FROM_WHITE
+	fadescreen FADE_TO_WHITE
+	fadescreen FADE_FROM_WHITE
+	waitse
+	call Route25_SeaCottage_EventScript_PlayTeleporterBeepSE
+	return
+
+Route25_SeaCottage_EventScript_StepOutOfPod::
+	opendoor 3, 3
+	waitdooranim
+	showobjectat LOCALID_PLAYER, MAP_ROUTE25_SEA_COTTAGE
+	applymovement LOCALID_PLAYER, Route25_SeaCottage_Movement_StepOutOfPod
+	waitmovement 0
+	closedoor 3, 3
+	waitdooranim
+	return
+
+Route25_SeaCottage_Movement_StepOutOfPod::
+	walk_down
+	step_end
+
+Route25_SeaCottage_EventScript_BillDataMixedUp::
+	msgbox Route25_SeaCottage_Text_BillDataMixedUp
+	return

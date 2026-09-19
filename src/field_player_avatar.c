@@ -21,6 +21,7 @@
 #include "strings.h"
 #include "wild_encounter.h"
 #include "starter_pikachu.h"
+#include "data.h"
 #include "follower_pikachu.h"
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
@@ -515,7 +516,8 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
         return;
     }
 
-    if ((heldKeys & B_BUTTON) && FlagGet(FLAG_SYS_B_DASH)
+    // A player in a POKéMON's form can't run: mon sprites have no running frames
+    if ((heldKeys & B_BUTTON) && FlagGet(FLAG_SYS_B_DASH) && !IsPlayerInMonForm()
         && !IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
     {
         if (PlayerIsMovingOnRockStairs(direction))
@@ -1163,9 +1165,133 @@ u8 GetRSAvatarGraphicsIdByGender(u8 gender)
     return sHoennLinkPartnerGfxIds[gender];
 }
 
+// BILL's teleporter accident (roadmap 2, event 4): the player can take the
+// overworld look of a POKéMON. Species without their own sprite look like
+// CLEFAIRY, as BILL did. All of these have the standard 9-frame walking sheet.
+static const u16 sMonFormGfx[][2] = {
+    {SPECIES_SNORLAX,    OBJ_EVENT_GFX_SNORLAX},
+    {SPECIES_SPEAROW,    OBJ_EVENT_GFX_SPEAROW},
+    {SPECIES_FEAROW,     OBJ_EVENT_GFX_FEAROW},
+    {SPECIES_CUBONE,     OBJ_EVENT_GFX_CUBONE},
+    {SPECIES_MAROWAK,    OBJ_EVENT_GFX_CUBONE},
+    {SPECIES_POLIWAG,    OBJ_EVENT_GFX_POLIWRATH},
+    {SPECIES_POLIWHIRL,  OBJ_EVENT_GFX_POLIWRATH},
+    {SPECIES_POLIWRATH,  OBJ_EVENT_GFX_POLIWRATH},
+    {SPECIES_CLEFFA,     OBJ_EVENT_GFX_CLEFAIRY},
+    {SPECIES_CLEFAIRY,   OBJ_EVENT_GFX_CLEFAIRY},
+    {SPECIES_CLEFABLE,   OBJ_EVENT_GFX_CLEFABLE},
+    {SPECIES_PIDGEY,     OBJ_EVENT_GFX_PIDGEY},
+    {SPECIES_PIDGEOTTO,  OBJ_EVENT_GFX_PIDGEOT},
+    {SPECIES_PIDGEOT,    OBJ_EVENT_GFX_PIDGEOT},
+    {SPECIES_IGGLYBUFF,  OBJ_EVENT_GFX_JIGGLYPUFF},
+    {SPECIES_JIGGLYPUFF, OBJ_EVENT_GFX_JIGGLYPUFF},
+    {SPECIES_WIGGLYTUFF, OBJ_EVENT_GFX_WIGGLYTUFF},
+    {SPECIES_CHANSEY,    OBJ_EVENT_GFX_CHANSEY},
+    {SPECIES_BLISSEY,    OBJ_EVENT_GFX_CHANSEY},
+    {SPECIES_OMANYTE,    OBJ_EVENT_GFX_OMANYTE},
+    {SPECIES_KABUTO,     OBJ_EVENT_GFX_KABUTO},
+    {SPECIES_KANGASKHAN, OBJ_EVENT_GFX_KANGASKHAN},
+    {SPECIES_PICHU,      OBJ_EVENT_GFX_PIKACHU},
+    {SPECIES_PIKACHU,    OBJ_EVENT_GFX_PIKACHU},
+    {SPECIES_MARILL,     OBJ_EVENT_GFX_PIKABLU},
+    {SPECIES_PSYDUCK,    OBJ_EVENT_GFX_PSYDUCK},
+    {SPECIES_NIDORAN_F,  OBJ_EVENT_GFX_NIDORAN_F},
+    {SPECIES_NIDORAN_M,  OBJ_EVENT_GFX_NIDORAN_M},
+    {SPECIES_NIDORINO,   OBJ_EVENT_GFX_NIDORINO},
+    {SPECIES_MEOWTH,     OBJ_EVENT_GFX_MEOWTH},
+    {SPECIES_SEEL,       OBJ_EVENT_GFX_SEEL},
+    {SPECIES_VOLTORB,    OBJ_EVENT_GFX_VOLTORB},
+    {SPECIES_SLOWPOKE,   OBJ_EVENT_GFX_SLOWPOKE},
+    {SPECIES_SLOWBRO,    OBJ_EVENT_GFX_SLOWBRO},
+    {SPECIES_MACHOP,     OBJ_EVENT_GFX_MACHOP},
+    {SPECIES_MACHOKE,    OBJ_EVENT_GFX_MACHOKE},
+    {SPECIES_DODUO,      OBJ_EVENT_GFX_DODUO},
+    {SPECIES_LAPRAS,     OBJ_EVENT_GFX_LAPRAS},
+    {SPECIES_DITTO,      OBJ_EVENT_GFX_DITTO},
+    {SPECIES_PLUSLE,     OBJ_EVENT_GFX_PLUSLE},
+    {SPECIES_MINUN,      OBJ_EVENT_GFX_MINUN},
+    {SPECIES_TOGEPI,     OBJ_EVENT_GFX_TOGEPI},
+    {SPECIES_MEW,        OBJ_EVENT_GFX_MEW},
+};
+
+bool8 IsPlayerInMonForm(void)
+{
+    return VarGet(VAR_PLAYER_MON_FORM) != SPECIES_NONE;
+}
+
+static u8 GetPlayerMonFormGfx(void)
+{
+    u16 species = VarGet(VAR_PLAYER_MON_FORM);
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(sMonFormGfx); i++)
+    {
+        if (sMonFormGfx[i][0] == species)
+            return sMonFormGfx[i][1];
+    }
+    return OBJ_EVENT_GFX_CLEFAIRY;
+}
+
+static u8 GetOwnPlayerAvatarGraphicsId(u8 state, u8 gender)
+{
+    // Only the plain walking look changes. Biking, surfing, fishing and field
+    // moves keep the player's own sprites, whose extra animations mons lack.
+    if (state == PLAYER_AVATAR_GFX_NORMAL && IsPlayerInMonForm())
+        return GetPlayerMonFormGfx();
+    return GetPlayerAvatarGraphicsIdByStateIdAndGender(state, gender);
+}
+
 u8 GetPlayerAvatarGraphicsIdByStateId(u8 state)
 {
-    return GetPlayerAvatarGraphicsIdByStateIdAndGender(state, gPlayerAvatar.gender);
+    return GetOwnPlayerAvatarGraphicsId(state, gPlayerAvatar.gender);
+}
+
+static bool8 HasMonFormGfx(u16 species)
+{
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(sMonFormGfx); i++)
+    {
+        if (sMonFormGfx[i][0] == species)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+// Special: VAR_0x8004 TRUE takes the lead mon's form, FALSE changes back. The
+// player's sprite updates at once. STR_VAR_2 gets the lead mon's name and
+// STR_VAR_1 the form's; VAR_RESULT is TRUE if the mon had no sprite of its
+// own and the player became a CLEFAIRY instead.
+void SetPlayerMonForm(void)
+{
+    u16 species = SPECIES_NONE;
+    u8 i;
+
+    gSpecialVar_Result = FALSE;
+    if (gSpecialVar_0x8004)
+    {
+        for (i = 0; i < gPlayerPartyCount; i++)
+        {
+            species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL);
+            if (species != SPECIES_NONE && species != SPECIES_EGG)
+                break;
+        }
+        StringCopy(gStringVar2, gSpeciesNames[species]);
+        if (!HasMonFormGfx(species))
+        {
+            species = SPECIES_CLEFAIRY;
+            gSpecialVar_Result = TRUE;
+        }
+        StringCopy(gStringVar1, gSpeciesNames[species]);
+    }
+    VarSet(VAR_PLAYER_MON_FORM, species);
+    ObjectEventSetGraphicsId(&gObjectEvents[gPlayerAvatar.objectEventId], GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_GFX_NORMAL));
+}
+
+// Special: puts the player's current form name in STR_VAR_1
+void BufferPlayerMonFormName(void)
+{
+    StringCopy(gStringVar1, gSpeciesNames[VarGet(VAR_PLAYER_MON_FORM)]);
 }
 
 u8 GetPlayerAvatarGenderByGraphicsId(u8 gfxId)
@@ -1292,7 +1418,7 @@ void InitPlayerAvatar(s16 x, s16 y, u8 direction, u8 gender)
     struct ObjectEvent *objectEvent;
 
     playerObjEventTemplate.localId = LOCALID_PLAYER;
-    playerObjEventTemplate.graphicsId = GetPlayerAvatarGraphicsIdByStateIdAndGender(PLAYER_AVATAR_GFX_NORMAL, gender);
+    playerObjEventTemplate.graphicsId = GetOwnPlayerAvatarGraphicsId(PLAYER_AVATAR_GFX_NORMAL, gender);
     playerObjEventTemplate.x = x - 7;
     playerObjEventTemplate.y = y - 7;
     playerObjEventTemplate.objUnion.normal.elevation = 0;

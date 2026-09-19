@@ -230,8 +230,8 @@
 #define VAR_ROAMER_BEASTS_DONE     0x40C4 // bit per sRoamerSpecies index: that beast has roamed and been caught or defeated
 #define VAR_KANTO_RUMOR_INDEX      0x40C5
 #define VAR_SEVII_RUMOR_INDEX      0x40C6
-#define VAR_0x40C7                 0x40C7
-#define VAR_0x40C8                 0x40C8
+#define VAR_PLAYER_MON_FORM        0x40C7 // species the player looks like after BILL's teleporter, 0 = normal
+#define VAR_SEA_COTTAGE_TELEPORT   0x40C8 // 1 = transform, 2 = change back, run on arrival in the pod
 #define VAR_0x40C9                 0x40C9
 #define VAR_0x40CA                 0x40CA
 #define VAR_0x40CB                 0x40CB

@@ -135,3 +135,37 @@ Route25_SeaCottage_Text_BillShowTicketsAtVermilion::
     .string "at VERMILION's port.\p"
     .string "Whatever's out there, tell me all\n"
     .string "about it when you get back!$"
+
+Route25_SeaCottage_Text_RunTeleporterAgain::
+    .string "The TELEPORTER is on standby.\p"
+    .string "Step into the pod and run it?$"
+
+Route25_SeaCottage_Text_RunTeleporterToChangeBack::
+    .string "The TELEPORTER is on standby.\p"
+    .string "Run it again to change back?$"
+
+Route25_SeaCottage_Text_BillHopInThePod::
+    .string "BILL: You want to give it a whirl?\n"
+    .string "Hop in the pod, I'll run it for\l"
+    .string "you!\p"
+    .string "It's perfectly safe now. Probably.$"
+
+Route25_SeaCottage_Text_BillYouLookLikeMon::
+    .string "BILL: Uh-oh… You look just like a\n"
+    .string "{STR_VAR_1}!\p"
+    .string "That's what happened to me, too!\n"
+    .string "Go ahead and walk around, it's\l"
+    .string "pretty fun.\p"
+    .string "When you've had enough, come back\n"
+    .string "and run the TELEPORTER again.$"
+
+Route25_SeaCottage_Text_BillBackToNormal::
+    .string "BILL: Phew, you're back to normal!\n"
+    .string "Now you know how I felt!$"
+
+
+Route25_SeaCottage_Text_BillDataMixedUp::
+    .string "BILL: Huh? The machine couldn't\n"
+    .string "read your {STR_VAR_2}'s data…\p"
+    .string "…so it used my old CLEFAIRY data\n"
+    .string "instead!$"

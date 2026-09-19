@@ -922,7 +922,7 @@
       "importance": 1,
       "registrability": 1,
       "pocket": "POCKET_KEY_ITEMS",
-      "type": "ITEM_TYPE_BAG_MENU",
+      "type": "ITEM_TYPE_FIELD",
       "fieldUseFunc": "FieldUseFunc_PokeWatch",
       "battleUsage": 0,
       "battleUseFunc": "NULL",

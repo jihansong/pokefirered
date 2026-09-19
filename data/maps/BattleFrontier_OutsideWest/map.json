@@ -37,7 +37,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_MAN",
+      "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
       "x": 20,
       "y": 70,
       "elevation": 0,

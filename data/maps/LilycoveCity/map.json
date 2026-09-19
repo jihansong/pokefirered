@@ -70,7 +70,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BOY",
+      "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
       "x": 21,
       "y": 15,
       "elevation": 3,
@@ -168,7 +168,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BOY",
+      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
       "x": 16,
       "y": 23,
       "elevation": 3,

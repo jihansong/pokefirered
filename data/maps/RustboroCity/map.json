@@ -61,7 +61,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
       "x": 25,
       "y": 37,
       "elevation": 3,
@@ -145,7 +145,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_WORKER_M",
+      "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
       "x": 13,
       "y": 34,
       "elevation": 3,

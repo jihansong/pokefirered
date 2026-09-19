@@ -47,7 +47,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BIKER",
+      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
       "x": 29,
       "y": 79,
       "elevation": 4,
@@ -75,7 +75,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BIKER",
+      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
       "x": 9,
       "y": 57,
       "elevation": 4,
@@ -103,7 +103,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BIKER",
+      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
       "x": 27,
       "y": 24,
       "elevation": 4,
@@ -131,7 +131,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BIKER",
+      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
       "x": 16,
       "y": 73,
       "elevation": 4,
@@ -145,7 +145,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BIKER",
+      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
       "x": 19,
       "y": 31,
       "elevation": 4,
@@ -159,7 +159,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BIKER",
+      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
       "x": 30,
       "y": 31,
       "elevation": 4,
@@ -173,7 +173,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BIKER",
+      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
       "x": 16,
       "y": 55,
       "elevation": 4,
@@ -285,7 +285,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BIKER",
+      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
       "x": 27,
       "y": 92,
       "elevation": 3,
@@ -299,7 +299,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BIKER",
+      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
       "x": 21,
       "y": 78,
       "elevation": 4,
@@ -355,7 +355,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BIKER",
+      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
       "x": 10,
       "y": 39,
       "elevation": 3,

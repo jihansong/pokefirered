@@ -31,7 +31,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_MEOWTH",
+      "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_2",
       "x": 6,
       "y": 6,
       "elevation": 3,
@@ -45,7 +45,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
       "x": 8,
       "y": 4,
       "elevation": 3,

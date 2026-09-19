@@ -1,4 +1,5 @@
 #include "global.h"
+#include "time_of_day.h"
 #include "gflib.h"
 #include "link.h"
 #include "link_rfu.h"
@@ -147,6 +148,7 @@ void AgbMain()
     EnableVCountIntrAtLine150();
     InitRFU();
     CheckForFlashMemory();
+    TimeOfDay_Init();
     InitMainCallbacks();
     InitMapMusic();
     ClearDma3Requests();

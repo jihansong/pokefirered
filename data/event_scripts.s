@@ -1,5 +1,6 @@
 #include "constants/global.h"
 #include "constants/flags.h"
+#include "constants/time_of_day.h"
 #include "constants/bug_contest.h"
 #include "constants/event_objects.h"
 #include "constants/event_object_movement.h"
@@ -1217,6 +1218,7 @@ EventScript_DelayedLookAround::
 	.include "data/scripts/sealed_chambers.inc"
 	.include "data/scripts/player_mon_form.inc"
 	.include "data/scripts/egg_appraiser.inc"
+	.include "data/scripts/game_clock.inc"
 
 EventScript_GetInGameTradeSpeciesInfo::
 	copyvar VAR_0x8004, VAR_0x8008

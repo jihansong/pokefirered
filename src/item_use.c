@@ -1,4 +1,5 @@
 #include "global.h"
+#include "event_scripts.h"
 #include "gflib.h"
 #include "battle.h"
 #include "berry_pouch.h"
@@ -911,6 +912,20 @@ void FieldUseFunc_OakStopsYou(u8 taskId)
 }
 
 static const u8 sText_FinalNotes[] = _("“M-2 broke the tank at dawn. It\nlooked at me once and was gone.\pWe made it stronger than MEW and\ngave it nothing to love. Forgive\lus.”");
+
+static void ItemUseOnFieldCB_PokeWatch(u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(EventScript_UsePokeWatch);
+    DestroyTask(taskId);
+}
+
+// POKéWATCH: shows the game clock on the field (roadmap 2, event 9)
+void FieldUseFunc_PokeWatch(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_PokeWatch;
+    SetUpItemUseOnFieldCallback(taskId);
+}
 
 // FINAL NOTES: the hidden researcher's last page, read from the bag
 void FieldUseFunc_FinalNotes(u8 taskId)

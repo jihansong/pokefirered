@@ -447,3 +447,22 @@ PalletTown_ProfessorOaksLab_Text_AideTakeGoodCare::
 PalletTown_ProfessorOaksLab_Text_AideAllJohtoStartersGiven::
     .string "All of PROF. ELM's POKéMON are in\n"
     .string "good hands now. Thank you!$"
+
+PalletTown_ProfessorOaksLab_Text_AideTakePokeWatch::
+    .string "Oh, {PLAYER}! Here, take this\n"
+    .string "POKéWATCH.\p"
+    .string "POKéMON behave differently in the\n"
+    .string "morning, during the day and at\l"
+    .string "night. It'll help your research!$"
+
+PalletTown_ProfessorOaksLab_Text_AidePokeWatchExplain::
+    .string "Morning runs from 4 to 10, day\n"
+    .string "from 10 to 8 in the evening, and\l"
+    .string "night after that.\p"
+    .string "Some POKéMON only come out at\n"
+    .string "night, like HOOTHOOT. EEVEE\l"
+    .string "evolves differently by day and by\l"
+    .string "night, too.\p"
+    .string "You can register the POKéWATCH to\n"
+    .string "the SELECT button.$"
+

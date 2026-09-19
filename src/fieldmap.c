@@ -1,4 +1,5 @@
 #include "global.h"
+#include "time_of_day.h"
 #include "gflib.h"
 #include "overworld.h"
 #include "script.h"
@@ -843,7 +844,9 @@ static void ApplyGlobalTintToPaletteEntries(u16 offset, u16 size)
     switch (gGlobalFieldTintMode)
     {
     case QL_TINT_NONE:
-        return;
+        if (!TintPaletteForTimeOfDay(&gPlttBufferUnfaded[offset], size))
+            return;
+        break;
     case QL_TINT_GRAYSCALE:
         TintPalette_GrayScale(&gPlttBufferUnfaded[offset], size);
         break;
@@ -851,6 +854,8 @@ static void ApplyGlobalTintToPaletteEntries(u16 offset, u16 size)
         TintPalette_SepiaTone(&gPlttBufferUnfaded[offset], size);
         break;
     case QL_TINT_BACKUP_GRAYSCALE:
+        // The "Previously on your quest" recap restores this backup afterwards
+        TintPaletteForTimeOfDay(&gPlttBufferUnfaded[offset], size);
         QuestLog_BackUpPalette(offset, size);
         TintPalette_GrayScale(&gPlttBufferUnfaded[offset], size);
         break;
@@ -865,7 +870,9 @@ void ApplyGlobalTintToPaletteSlot(u8 slot, u8 count)
     switch (gGlobalFieldTintMode)
     {
     case QL_TINT_NONE:
-        return;
+        if (!TintPaletteForTimeOfDay(&gPlttBufferUnfaded[BG_PLTT_ID(slot)], count * 16))
+            return;
+        break;
     case QL_TINT_GRAYSCALE:
         TintPalette_GrayScale(&gPlttBufferUnfaded[BG_PLTT_ID(slot)], count * 16);
         break;
@@ -873,6 +880,7 @@ void ApplyGlobalTintToPaletteSlot(u8 slot, u8 count)
         TintPalette_SepiaTone(&gPlttBufferUnfaded[BG_PLTT_ID(slot)], count * 16);
         break;
     case QL_TINT_BACKUP_GRAYSCALE:
+        TintPaletteForTimeOfDay(&gPlttBufferUnfaded[BG_PLTT_ID(slot)], count * 16);
         QuestLog_BackUpPalette(BG_PLTT_ID(slot), count * 16);
         TintPalette_GrayScale(&gPlttBufferUnfaded[BG_PLTT_ID(slot)], count * 16);
         break;

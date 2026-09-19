@@ -98,10 +98,9 @@ CeladonCity_PokemonCenter_1F_Text_Rumor10::
     .string "On the full moon, CLEFAIRY dance\n"
     .string "deep in MT. MOON, but only for a\l"
     .string "TRAINER carrying a MOON STONE.\p"
-    .string "A day is 256 steps, and a full\n"
-    .string "moon comes every 30 days. Watch\l"
-    .string "the dance to the very end, and a\l"
-    .string "star falls right there!$"
+    .string "A full moon comes once every 30\n"
+    .string "days. Watch the dance to the very\l"
+    .string "end, and a star falls right there!$"
 
 CeladonCity_PokemonCenter_1F_Text_Rumor11::
     .string "If your SAFARI ZONE steps run out\n"
@@ -137,8 +136,8 @@ CeladonCity_PokemonCenter_1F_Text_Rumor15::
     .string "The BUG-CATCHING CONTEST is held\n"
     .string "in VIRIDIAN FOREST on Tuesdays,\l"
     .string "Thursdays and Saturdays.\p"
-    .string "Days go by every 256 steps. Sign\n"
-    .string "up at the gate south of the\l"
+    .string "Check the day on a clock, then\n"
+    .string "sign up at the gate south of the\l"
     .string "forest!$"
 
 CeladonCity_PokemonCenter_1F_Text_Rumor16::
@@ -170,11 +169,19 @@ CeladonCity_PokemonCenter_1F_Text_Rumor19::
     .string "where MEWTWO once slept.$"
 
 CeladonCity_PokemonCenter_1F_Text_Rumor20::
+    .string "POKéMON keep their own hours! At\n"
+    .string "night, HOOTHOOT and SPINARAK come\l"
+    .string "out, and LEDYBA like the mornings.\p"
+    .string "PROF. OAK's aide hands out\n"
+    .string "POKéWATCHES so TRAINERS can keep\l"
+    .string "track of the time.$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor21::
     .string "EEVEE live wild on ROUTES 7 and 8,\n"
     .string "not just in the CELADON MANSION.\l"
     .string "They're very shy, though!$"
 
-CeladonCity_PokemonCenter_1F_Text_Rumor21::
+CeladonCity_PokemonCenter_1F_Text_Rumor22::
     .string "Sparks still crackle in the POWER\n"
     .string "PLANT where ZAPDOS used to roost.\p"
     .string "They say a PIKACHU that trusts its\n"
@@ -182,7 +189,7 @@ CeladonCity_PokemonCenter_1F_Text_Rumor21::
     .string "least Lv40, can take that power\l"
     .string "in!$"
 
-CeladonCity_PokemonCenter_1F_Text_Rumor22::
+CeladonCity_PokemonCenter_1F_Text_Rumor23::
     .string "An old EGG appraiser drops by the\n"
     .string "DAY CARES once you've gotten an\l"
     .string "EGG from them.\p"
@@ -190,7 +197,7 @@ CeladonCity_PokemonCenter_1F_Text_Rumor22::
     .string "and he's said to be holding a very\l"
     .string "special one…$"
 
-CeladonCity_PokemonCenter_1F_Text_Rumor23::
+CeladonCity_PokemonCenter_1F_Text_Rumor24::
     .string "BILL once got stuck as a POKéMON\n"
     .string "in his own TELEPORTER. He says the\l"
     .string "machine is fixed now…\p"
@@ -199,7 +206,7 @@ CeladonCity_PokemonCenter_1F_Text_Rumor23::
     .string "might come out looking like your\l"
     .string "lead POKéMON!$"
 
-CeladonCity_PokemonCenter_1F_Text_Rumor24::
+CeladonCity_PokemonCenter_1F_Text_Rumor25::
     .string "One of the POKéMON MANSION's\n"
     .string "researchers was never seen leaving\l"
     .string "after the fire.\p"
@@ -208,7 +215,7 @@ CeladonCity_PokemonCenter_1F_Text_Rumor24::
     .string "its secret lab, finds the way down\l"
     .string "to him.$"
 
-CeladonCity_PokemonCenter_1F_Text_Rumor25::
+CeladonCity_PokemonCenter_1F_Text_Rumor26::
     .string "The game designer in CELADON\n"
     .string "MANSION gets awfully nervous\l"
     .string "around bags stuffed with RARE\l"

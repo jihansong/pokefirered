@@ -3,7 +3,7 @@ BillsGarden_MapScripts::
 
 @ Once the player has caught 100 POKéMON, Bill opens the back door of the Sea
 @ Cottage onto a garden of POKéMON from Johto and Hoenn. Each one can be taken
-@ along once, one per "day" of 1500 steps (VAR_BILLS_GARDEN_STEPS).
+@ along once, one per game clock day (VAR_BILLS_GARDEN_STEPS, VAR_BILLS_GARDEN_LAST_DAY).
 BillsGarden_EventScript_BillCheckGarden::
 	goto_if_set FLAG_OPENED_BILLS_GARDEN, BillsGarden_EventScript_BillEnjoyGarden
 	setvar VAR_0x8004, 1
@@ -134,7 +134,7 @@ BillsGarden_EventScript_TookMonToPC::
 	call_if_eq VAR_RESULT, YES, EventScript_NameReceivedBoxMon
 	call EventScript_TransferredToPC
 BillsGarden_EventScript_TookMon::
-	setvar VAR_BILLS_GARDEN_STEPS, 0
+	special SetBillsGardenTakenToday
 	setvar VAR_0x8008, TRUE
 	return
 

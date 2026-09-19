@@ -2,6 +2,7 @@
 #include "random.h"
 #include "wild_encounter.h"
 #include "field_specials.h"
+#include "time_of_day.h"
 #include "event_data.h"
 #include "fieldmap.h"
 #include "random.h"
@@ -55,6 +56,24 @@ static u16 WildEncounterRandom(void);
 static void AddToWildEncounterRateBuff(u8 encouterRate);
 
 #include "data/wild_encounters.h"
+
+extern const struct WildPokemonHeader gWildMonHeadersMorning[];
+extern const struct WildPokemonHeader gWildMonHeadersNight[];
+
+// Morning and night tables (roadmap 2, event 9) are parallel copies of
+// gWildMonHeaders in the same order, so header ids work across all three.
+static const struct WildPokemonHeader *GetTimeOfDayWildMonHeaders(void)
+{
+    switch (GetTimeOfDay())
+    {
+    case TIME_MORNING:
+        return gWildMonHeadersMorning;
+    case TIME_NIGHT:
+        return gWildMonHeadersNight;
+    }
+    return gWildMonHeaders;
+}
+#define gWildMonHeaders (GetTimeOfDayWildMonHeaders())
 
 static const u8 sUnownLetterSlots[][LAND_WILD_COUNT] = {
   //  A   A   A   A   A   A   A   A   A   A   A   ?

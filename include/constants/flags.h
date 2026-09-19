@@ -240,7 +240,7 @@
 #define FLAG_0x0DE 0x0DE
 #define FLAG_HIDE_MT_MOON_JIRACHI_STAR 0x0DF
 #define FLAG_WATCHED_CLEFAIRY_DANCE 0x0E0
-#define FLAG_0x0E1               0x0E1
+#define FLAG_DESIGNER_TOOK_RARE_CANDY               0x0E1
 #define FLAG_0x0E2               0x0E2
 #define FLAG_0x0E3               0x0E3
 #define FLAG_0x0E4               0x0E4

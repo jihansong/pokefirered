@@ -16,6 +16,8 @@ CeladonCity_Condominiums_3F_EventScript_Writer::
 CeladonCity_Condominiums_3F_EventScript_Designer::
 	lock
 	faceplayer
+	goto_if_unset FLAG_DESIGNER_TOOK_RARE_CANDY, CeladonCity_Condominiums_3F_EventScript_CheckRareCandies
+CeladonCity_Condominiums_3F_EventScript_DesignerCheckPokedex::
 	specialvar VAR_RESULT, HasAllKantoMons
 	goto_if_eq VAR_RESULT, TRUE, CeladonCity_Condominiums_3F_EventScript_CompletedPokedex
 	msgbox CeladonCity_Condominiums_3F_Text_ImGameDesignerShowMeFinishedPokedex
@@ -50,4 +52,19 @@ CeladonCity_Condominiums_3F_EventScript_Computer2::
 
 CeladonCity_Condominiums_3F_EventScript_Computer3::
 	msgbox CeladonCity_Condominiums_3F_Text_ItsScriptBetterNotLookAtEnding, MSGBOX_SIGN
+	end
+
+@ The Gen 1 "infinite RARE CANDY" rumor: with 99 or more RARE CANDIES in the bag,
+@ the designer panics, tells the story and takes one back. Once only.
+CeladonCity_Condominiums_3F_EventScript_CheckRareCandies::
+	checkitem ITEM_RARE_CANDY, 99
+	goto_if_eq VAR_RESULT, FALSE, CeladonCity_Condominiums_3F_EventScript_DesignerCheckPokedex
+	playse SE_PIN
+	applymovement VAR_LAST_TALKED, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox CeladonCity_Condominiums_3F_Text_ThatManyRareCandies
+	removeitem ITEM_RARE_CANDY
+	setflag FLAG_DESIGNER_TOOK_RARE_CANDY
+	msgbox CeladonCity_Condominiums_3F_Text_HandedOverRareCandy
+	release
 	end

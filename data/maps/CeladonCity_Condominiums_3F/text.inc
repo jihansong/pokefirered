@@ -40,3 +40,23 @@ CeladonCity_Condominiums_3F_Text_ItsScriptBetterNotLookAtEnding::
 CeladonCity_Condominiums_3F_Text_GameFreakDevelopmentRoom::
     .string "GAME FREAK Development Room$"
 
+
+CeladonCity_Condominiums_3F_Text_ThatManyRareCandies::
+    .string "Wh-what?! 99 RARE CANDIES?!\p"
+    .string "…You didn't get those from a bug,\n"
+    .string "did you?\p"
+    .string "Back when POKéMON first came out,\n"
+    .string "kids swore there was a trick.\p"
+    .string "Meet a strange POKéMON off\n"
+    .string "CINNABAR's coast, and the 6th item\l"
+    .string "in your bag would jump past 100!\p"
+    .string "We never, ever meant for that to\n"
+    .string "happen!\p"
+    .string "Ahem. I'll just take one of those\n"
+    .string "back, for, er, research.$"
+
+CeladonCity_Condominiums_3F_Text_HandedOverRareCandy::
+    .string "{PLAYER} handed over one RARE\n"
+    .string "CANDY.\p"
+    .string "DESIGNER: Phew… That looks much\n"
+    .string "more believable now.$"

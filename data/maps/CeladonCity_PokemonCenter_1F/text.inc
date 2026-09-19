@@ -174,3 +174,11 @@ CeladonCity_PokemonCenter_1F_Text_Rumor20::
     .string "not just in the CELADON MANSION.\l"
     .string "They're very shy, though!$"
 
+CeladonCity_PokemonCenter_1F_Text_Rumor21::
+    .string "The game designer in CELADON\n"
+    .string "MANSION gets awfully nervous\l"
+    .string "around bags stuffed with RARE\l"
+    .string "CANDY.\p"
+    .string "Show him 99 of them and see what\n"
+    .string "he says!$"
+

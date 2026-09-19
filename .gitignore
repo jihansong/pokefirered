@@ -76,3 +76,6 @@ pokemonthyl.sym
 
 # Thunder Yellow patches (tools/make_bps_patch.py)
 *.bps
+
+# Save files used for save compatibility testing
+saves/

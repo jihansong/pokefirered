@@ -982,6 +982,8 @@ PalletTown_ProfessorOaksLab_EventScript_ReadyEndSignLadyScene::
 PalletTown_ProfessorOaksLab_EventScript_Aide1::
 	lock
 	faceplayer
+	goto_if_unset FLAG_GOT_POKE_WATCH, PalletTown_ProfessorOaksLab_EventScript_AideTryGivePokeWatch
+PalletTown_ProfessorOaksLab_EventScript_Aide1Talk::
 	goto_if_set FLAG_SYS_GAME_CLEAR, PalletTown_ProfessorOaksLab_EventScript_Aide1GameClear
 	msgbox PalletTown_ProfessorOaksLab_Text_StudyAsOaksAide
 	release
@@ -1154,3 +1156,15 @@ PalletTown_ProfessorOaksLab_EventScript_SetGotCyndaquil::
 PalletTown_ProfessorOaksLab_EventScript_SetGotTotodile::
 	setflag FLAG_GOT_TOTODILE_FROM_AIDE
 	return
+
+@ Roadmap 2, event 9: once the player has a POKéDEX, this aide hands over a
+@ POKéWATCH for checking the game clock.
+PalletTown_ProfessorOaksLab_EventScript_AideTryGivePokeWatch::
+	goto_if_unset FLAG_SYS_POKEDEX_GET, PalletTown_ProfessorOaksLab_EventScript_Aide1Talk
+	msgbox PalletTown_ProfessorOaksLab_Text_AideTakePokeWatch
+	giveitem ITEM_POKE_WATCH
+	goto_if_eq VAR_RESULT, FALSE, EventScript_BagIsFull
+	setflag FLAG_GOT_POKE_WATCH
+	msgbox PalletTown_ProfessorOaksLab_Text_AidePokeWatchExplain
+	release
+	end

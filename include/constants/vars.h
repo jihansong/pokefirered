@@ -232,7 +232,7 @@
 #define VAR_SEVII_RUMOR_INDEX      0x40C6
 #define VAR_PLAYER_MON_FORM        0x40C7 // species the player looks like after BILL's teleporter, 0 = normal
 #define VAR_SEA_COTTAGE_TELEPORT   0x40C8 // 1 = transform, 2 = change back, run on arrival in the pod
-#define VAR_0x40C9                 0x40C9
+#define VAR_BILLS_GARDEN_LAST_DAY  0x40C9 // game clock day + 1 when a mon last left the garden
 #define VAR_0x40CA                 0x40CA
 #define VAR_0x40CB                 0x40CB
 #define VAR_0x40CC                 0x40CC

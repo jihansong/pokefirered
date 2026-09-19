@@ -1,4 +1,5 @@
 #include "global.h"
+#include "time_of_day.h"
 #include "bug_contest.h"
 #include "event_data.h"
 #include "event_scripts.h"
@@ -22,7 +23,6 @@
 
 #define CONTEST_MINUTES   20
 #define CONTEST_BALLS     20
-#define DAY_STEPS         256
 #define NUM_CONTESTANTS   10
 
 struct ContestEncounter
@@ -97,9 +97,10 @@ static EWRAM_DATA struct Pokemon sWaitingParty[PARTY_SIZE - 1] = {0};
 static EWRAM_DATA u8 sWaitingPartyCount = 0;
 static EWRAM_DATA struct ContestPlace sPlaces[3] = {0};
 
+// Days come from the game clock (roadmap 2, event 9); day 0 is a Sunday
 static u16 GetDayNumber(void)
 {
-    return GetGameStat(GAME_STAT_STEPS) / DAY_STEPS;
+    return GetGameClockDay();
 }
 
 static u16 GetPlayTimeMinutes(void)

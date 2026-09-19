@@ -1266,5 +1266,7 @@ extern const u8 TradeCenter_TerminateLink[];
 
 extern const u8 EventScript_TalkToFollowerPikachu[];
 extern const u8 EventScript_ReactToPlayerMonForm[];
+extern const u8 EventScript_SetGameClockPrompt[];
+extern const u8 EventScript_UsePokeWatch[];
 
 #endif //GUARD_EVENT_SCRIPTS_H

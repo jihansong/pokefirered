@@ -420,8 +420,7 @@ OneIsland_PokemonCenter_1F_Text_Rumor4::
 
 OneIsland_PokemonCenter_1F_Text_Rumor5::
     .string "The POKéMON in SIX ISLAND's\n"
-    .string "ALTERING CAVE change every day. A\l"
-    .string "day is 256 steps.$"
+    .string "ALTERING CAVE change every day.$"
 
 OneIsland_PokemonCenter_1F_Text_Rumor6::
     .string "A ROOT FOSSIL turned up on KINDLE\n"

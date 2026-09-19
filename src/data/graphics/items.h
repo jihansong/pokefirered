@@ -677,6 +677,8 @@ const u32 gItemIcon_Bicycle[] = INCBIN_U32("graphics/items/icons/bicycle.4bpp.lz
 const u32 gItemIconPalette_Bicycle[] = INCBIN_U32("graphics/items/icon_palettes/bicycle.gbapal.lz");
 
 const u32 gItemIcon_TownMap[] = INCBIN_U32("graphics/items/icons/town_map.4bpp.lz");
+const u32 gItemIcon_PokeWatch[] = INCBIN_U32("graphics/items/icons/poke_watch.4bpp.lz");
+const u32 gItemIconPalette_PokeWatch[] = INCBIN_U32("graphics/items/icon_palettes/poke_watch.gbapal.lz");
 const u32 gItemIconPalette_TownMap[] = INCBIN_U32("graphics/items/icon_palettes/town_map.gbapal.lz");
 
 const u32 gItemIcon_VSSeeker[] = INCBIN_U32("graphics/items/icons/vs_seeker.4bpp.lz");

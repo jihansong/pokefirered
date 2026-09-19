@@ -251,8 +251,8 @@
 #define FLAG_GOT_EGG_APPRAISER_EGG               0x0E9
 #define FLAG_HIDE_ROUTE5_EGG_APPRAISER               0x0EA
 #define FLAG_HIDE_FOUR_ISLAND_EGG_APPRAISER               0x0EB
-#define FLAG_0x0EC               0x0EC
-#define FLAG_0x0ED               0x0ED
+#define FLAG_GAME_CLOCK_SET               0x0EC
+#define FLAG_GOT_POKE_WATCH               0x0ED
 #define FLAG_0x0EE               0x0EE
 #define FLAG_0x0EF               0x0EF
 #define FLAG_0x0F0               0x0F0

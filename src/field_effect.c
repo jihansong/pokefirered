@@ -1,4 +1,5 @@
 #include "global.h"
+#include "time_of_day.h"
 #include "gflib.h"
 #include "decompress.h"
 #include "event_data.h"
@@ -440,7 +441,9 @@ void ApplyGlobalFieldPaletteTint(u8 paletteIdx)
     switch (gGlobalFieldTintMode)
     {
     case 0:
-        return;
+        if (!TintPaletteForTimeOfDay(&gPlttBufferUnfaded[OBJ_PLTT_ID2(paletteIdx)], 16))
+            return;
+        break;
     case 1:
         TintPalette_GrayScale(&gPlttBufferUnfaded[OBJ_PLTT_ID2(paletteIdx)], 16);
         break;
@@ -448,6 +451,7 @@ void ApplyGlobalFieldPaletteTint(u8 paletteIdx)
         TintPalette_SepiaTone(&gPlttBufferUnfaded[OBJ_PLTT_ID2(paletteIdx)], 16);
         break;
     case 3:
+        TintPaletteForTimeOfDay(&gPlttBufferUnfaded[OBJ_PLTT_ID2(paletteIdx)], 16);
         QuestLog_BackUpPalette(OBJ_PLTT_ID2(paletteIdx), 16);
         TintPalette_GrayScale(&gPlttBufferUnfaded[OBJ_PLTT_ID2(paletteIdx)], 16);
         break;

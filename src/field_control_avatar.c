@@ -1,4 +1,5 @@
 #include "global.h"
+#include "time_of_day.h"
 #include "follower_pikachu.h"
 #include "gflib.h"
 #include "bike.h"
@@ -714,6 +715,13 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
         {
             IncrementGameStat(GAME_STAT_HATCHED_EGGS);
             ScriptContext_SetupScript(EventScript_EggHatch);
+            return TRUE;
+        }
+        // The game clock (roadmap 2, event 9) asks to be set once the player
+        // has a POKéMON, including on saves from before it existed.
+        else if (!IsGameClockSet() && FlagGet(FLAG_SYS_POKEMON_GET))
+        {
+            ScriptContext_SetupScript(EventScript_SetGameClockPrompt);
             return TRUE;
         }
     }

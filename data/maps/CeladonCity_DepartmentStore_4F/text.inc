@@ -42,11 +42,10 @@ CeladonCity_DepartmentStore_4F_Text_Evolution2::
 
 CeladonCity_DepartmentStore_4F_Text_Evolution3::
     .string "A very friendly EEVEE becomes\n"
-    .string "ESPEON if it levels up by day, and\l"
-    .string "UMBREON by night.\p"
-    .string "A day is 256 steps. The first half\n"
-    .string "is daytime and the second half is\l"
-    .string "night.$"
+    .string "ESPEON if it levels up between 4\l"
+    .string "in the morning and 8 at night, and\l"
+    .string "UMBREON at night.\p"
+    .string "Check the time on your POKéWATCH!$"
 
 CeladonCity_DepartmentStore_4F_Text_Evolution4::
     .string "FEEBAS evolves when it's beautiful\n"

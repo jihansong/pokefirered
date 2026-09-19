@@ -2,6 +2,9 @@
 #include "field_specials.h"
 #include "event_data.h"
 #include "wild_encounter.h"
+
+extern const struct WildPokemonHeader gWildMonHeadersMorning[];
+extern const struct WildPokemonHeader gWildMonHeadersNight[];
 #include "roamer.h"
 #include "overworld.h"
 #include "pokedex.h"
@@ -184,7 +187,10 @@ s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites)
             if (alteringCaveNum != alteringCaveCount - 1)
                 continue;
         }
-        if (IsSpeciesOnMap(&gWildMonHeaders[i], species))
+        // Species that only appear in the morning or at night count too
+        if (IsSpeciesOnMap(&gWildMonHeaders[i], species)
+         || IsSpeciesOnMap(&gWildMonHeadersMorning[i], species)
+         || IsSpeciesOnMap(&gWildMonHeadersNight[i], species))
         {
             // Search for all dex areas associated with this MAPSEC.
             // In the vanilla game each MAPSEC only has at most one DEX_AREA.

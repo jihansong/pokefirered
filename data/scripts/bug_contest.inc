@@ -171,8 +171,7 @@ BugContest_Text_NotContestDay::
 	.string "Today is {STR_VAR_1}.\p"
 	.string "The Bug-Catching Contest is held on\n"
 	.string "TUESDAY, THURSDAY and SATURDAY.\p"
-	.string "(Around here, a day passes every\n"
-	.string "256 steps.)$"
+	.string "(Check the day on your POKéWATCH.)$"
 
 BugContest_Text_AlreadyEntered::
 	.string "You've already entered today's\n"

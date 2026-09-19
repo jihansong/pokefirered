@@ -13,6 +13,7 @@
 #include "battle.h"
 #include "fieldmap.h"
 #include "field_specials.h"
+#include "time_of_day.h"
 #include "wild_encounter.h"
 #include "region_map.h"
 #include "task.h"
@@ -2439,29 +2440,38 @@ static void Task_WaitDeoxysFieldEffect(u8 taskId)
 
 // One POKéMON may leave Bill's garden per "day", which is 1500 steps like the
 // renewable hidden items on the Sevii Islands.
+// BILL's garden lets one POKéMON go per game clock day. VAR_BILLS_GARDEN_STEPS
+// reaching 1500 still means "one is ready", as the scripts expect.
 void IncrementBillsGardenStepCounter(void)
 {
-    u16 steps = VarGet(VAR_BILLS_GARDEN_STEPS);
-
-    if (FlagGet(FLAG_OPENED_BILLS_GARDEN) && steps < 1500)
-        VarSet(VAR_BILLS_GARDEN_STEPS, steps + 1);
+    if (FlagGet(FLAG_OPENED_BILLS_GARDEN)
+     && VarGet(VAR_BILLS_GARDEN_STEPS) < 1500
+     && VarGet(VAR_BILLS_GARDEN_LAST_DAY) != GetGameClockDay() + 1)
+        VarSet(VAR_BILLS_GARDEN_STEPS, 1500);
 }
 
-// A made-up lunar month for the CLEFAIRY dance in MT. MOON: 30 "days" of 256
-// steps each. The 15th day is the full moon, when the dance can be seen once.
-#define MOON_DAY_STEPS     256
+// Special: a POKéMON left the garden today
+void SetBillsGardenTakenToday(void)
+{
+    VarSet(VAR_BILLS_GARDEN_STEPS, 0);
+    VarSet(VAR_BILLS_GARDEN_LAST_DAY, GetGameClockDay() + 1);
+}
+
+// The CLEFAIRY dance's lunar month: 30 game clock days, with the full moon on
+// day 14 of each. VAR_MOON_PHASE_STEPS now holds the last day seen, so the
+// dance can be watched again on each new full moon.
 #define MOON_CYCLE_DAYS    30
 #define MOON_FULL_MOON_DAY 14
 
 void IncrementMoonPhaseStepCounter(void)
 {
-    u16 steps = VarGet(VAR_MOON_PHASE_STEPS) + 1;
+    u16 day = GetGameClockDay();
 
-    if (steps >= MOON_DAY_STEPS * MOON_CYCLE_DAYS)
-        steps = 0;
-    if (steps == MOON_DAY_STEPS * MOON_FULL_MOON_DAY)
+    if (VarGet(VAR_MOON_PHASE_STEPS) == day)
+        return;
+    VarSet(VAR_MOON_PHASE_STEPS, day);
+    if (day % MOON_CYCLE_DAYS == MOON_FULL_MOON_DAY)
         FlagClear(FLAG_SAW_CLEFAIRY_DANCE);
-    VarSet(VAR_MOON_PHASE_STEPS, steps);
 }
 
 bool8 IsPlayerOnSafariZoneExit(void)
@@ -2489,18 +2499,15 @@ bool8 TryStartGlitchCityStepScript(void)
     return TRUE;
 }
 
-// The virtual clock: a "day" is 256 steps, counted from the game's step stat.
-// The first half of each day is daytime and the second half is night.
-#define VIRTUAL_DAY_STEPS 256
-
+// Day counts and day/night come from the game clock (roadmap 2, event 9).
 u16 GetVirtualDay(void)
 {
-    return GetGameStat(GAME_STAT_STEPS) / VIRTUAL_DAY_STEPS;
+    return GetGameClockDay();
 }
 
 bool8 IsVirtualDaytime(void)
 {
-    return GetGameStat(GAME_STAT_STEPS) % VIRTUAL_DAY_STEPS < VIRTUAL_DAY_STEPS / 2;
+    return GetTimeOfDay() != TIME_NIGHT;
 }
 
 // The Altering Cave's nine encounter sets, normally switched by Mystery Gift,
@@ -2512,7 +2519,7 @@ u16 GetAlteringCaveWildSet(void)
 
 bool8 IsFullMoon(void)
 {
-    return VarGet(VAR_MOON_PHASE_STEPS) / MOON_DAY_STEPS == MOON_FULL_MOON_DAY;
+    return GetGameClockDay() % MOON_CYCLE_DAYS == MOON_FULL_MOON_DAY;
 }
 
 void IncrementBirthIslandRockStepCount(void)

@@ -897,17 +897,17 @@
       "secondaryId": 0
     },
     {
-      "english": "????????",
-      "itemId": "ITEM_NONE",
+      "english": "FINAL NOTES",
+      "itemId": "ITEM_FINAL_NOTES",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,
-      "description_english": "?????",
-      "importance": 0,
+      "description_english": "The last notes of a researcher\\nwho stayed under the MANSION.\\nThey tell how MEWTWO escaped.",
+      "importance": 1,
       "registrability": 0,
-      "pocket": "POCKET_ITEMS",
+      "pocket": "POCKET_KEY_ITEMS",
       "type": "ITEM_TYPE_BAG_MENU",
-      "fieldUseFunc": "FieldUseFunc_OakStopsYou",
+      "fieldUseFunc": "FieldUseFunc_FinalNotes",
       "battleUsage": 0,
       "battleUseFunc": "NULL",
       "secondaryId": 0

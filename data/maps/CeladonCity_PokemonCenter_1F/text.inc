@@ -175,6 +175,15 @@ CeladonCity_PokemonCenter_1F_Text_Rumor20::
     .string "They're very shy, though!$"
 
 CeladonCity_PokemonCenter_1F_Text_Rumor21::
+    .string "One of the POKéMON MANSION's\n"
+    .string "researchers was never seen leaving\l"
+    .string "after the fire.\p"
+    .string "They say whoever reads every diary\n"
+    .string "in the mansion, and the logs in\l"
+    .string "its secret lab, finds the way down\l"
+    .string "to him.$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor22::
     .string "The game designer in CELADON\n"
     .string "MANSION gets awfully nervous\l"
     .string "around bags stuffed with RARE\l"

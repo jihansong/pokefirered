@@ -17,7 +17,10 @@ PokemonMansion_3F_EventScript_Statue::
 	end
 
 PokemonMansion_3F_EventScript_DiaryFeb6th::
-	msgbox PokemonMansion_1F_Text_MewGaveBirthToMewtwo, MSGBOX_SIGN
+	lockall
+	setflag FLAG_READ_MANSION_DIARY_FEB_6
+	msgbox PokemonMansion_1F_Text_MewGaveBirthToMewtwo
+	releaseall
 	end
 
 PokemonMansion_3F_EventScript_Simon::

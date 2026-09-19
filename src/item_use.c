@@ -910,6 +910,14 @@ void FieldUseFunc_OakStopsYou(u8 taskId)
         PrintNotTheTimeToUseThat(taskId, gTasks[taskId].data[3]);
 }
 
+static const u8 sText_FinalNotes[] = _("“M-2 broke the tank at dawn. It\nlooked at me once and was gone.\pWe made it stronger than MEW and\ngave it nothing to love. Forgive\lus.”");
+
+// FINAL NOTES: the hidden researcher's last page, read from the bag
+void FieldUseFunc_FinalNotes(u8 taskId)
+{
+    DisplayItemMessageInCurrentContext(taskId, gTasks[taskId].data[3], FONT_NORMAL, sText_FinalNotes);
+}
+
 void ItemUse_SetQuestLogEvent(u8 eventId, struct Pokemon *pokemon, u16 itemId, u16 param)
 {
     struct QuestLogEvent_Item *data = Alloc(sizeof(*data));

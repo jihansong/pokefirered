@@ -17,11 +17,17 @@ PokemonMansion_2F_EventScript_Statue::
 	end
 
 PokemonMansion_2F_EventScript_DiaryJuly5th::
-	msgbox PokemonMansion_1F_Text_NewMonDiscoveredInGuyanaJungle, MSGBOX_SIGN
+	lockall
+	setflag FLAG_READ_MANSION_DIARY_JULY_5
+	msgbox PokemonMansion_1F_Text_NewMonDiscoveredInGuyanaJungle
+	releaseall
 	end
 
 PokemonMansion_2F_EventScript_DiaryJuly10th::
-	msgbox PokemonMansion_1F_Text_ChristenedDiscoveredMonMew, MSGBOX_SIGN
+	lockall
+	setflag FLAG_READ_MANSION_DIARY_JULY_10
+	msgbox PokemonMansion_1F_Text_ChristenedDiscoveredMonMew
+	releaseall
 	end
 
 PokemonMansion_2F_EventScript_Arnie::

@@ -4434,6 +4434,18 @@
       "secondary_tileset": "gTileset_LavenderTown",
       "border_filepath": "data/layouts/GlitchCity/border.bin",
       "blockdata_filepath": "data/layouts/GlitchCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_POKEMON_MANSION_B4F",
+      "name": "PokemonMansion_B4F_Layout",
+      "width": 13,
+      "height": 15,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonMansion",
+      "border_filepath": "data/layouts/PokemonMansion_B4F/border.bin",
+      "blockdata_filepath": "data/layouts/PokemonMansion_B4F/map.bin"
     }
   ]
 }

@@ -26,3 +26,8 @@ PokemonMansion_B1F_Text_MewtwoIsFarTooPowerful::
     .string "We have failed to curb its vicious\n"
     .string "tendencies…$"
 
+
+PokemonMansion_B1F_Text_FloorOpenedByStatue::
+    .string "Something rumbled deep below…\p"
+    .string "The floor beside the statue slid\n"
+    .string "open, showing stairs going down!$"

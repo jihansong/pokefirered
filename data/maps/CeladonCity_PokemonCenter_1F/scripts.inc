@@ -54,6 +54,7 @@ CeladonCity_PokemonCenter_1F_EventScript_RumorCollector::
 	case 19, CeladonCity_PokemonCenter_1F_EventScript_Rumor19
 	case 20, CeladonCity_PokemonCenter_1F_EventScript_Rumor20
 	case 21, CeladonCity_PokemonCenter_1F_EventScript_Rumor21
+	case 22, CeladonCity_PokemonCenter_1F_EventScript_Rumor22
 	setvar VAR_KANTO_RUMOR_INDEX, 0
 	goto CeladonCity_PokemonCenter_1F_EventScript_Rumor0
 	end
@@ -168,9 +169,14 @@ CeladonCity_PokemonCenter_1F_EventScript_Rumor21::
 	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
 	end
 
+CeladonCity_PokemonCenter_1F_EventScript_Rumor22::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor22
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
 CeladonCity_PokemonCenter_1F_EventScript_NextRumor::
 	addvar VAR_KANTO_RUMOR_INDEX, 1
-	goto_if_lt VAR_KANTO_RUMOR_INDEX, 22, EventScript_ReleaseEnd
+	goto_if_lt VAR_KANTO_RUMOR_INDEX, 23, EventScript_ReleaseEnd
 	setvar VAR_KANTO_RUMOR_INDEX, 0
 	release
 	end

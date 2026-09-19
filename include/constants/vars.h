@@ -195,7 +195,7 @@
 #define VAR_MAP_SCENE_ROCKET_HIDEOUT_B4F_JESSIE_JAMES                          0x408D
 #define VAR_MAP_SCENE_POKEMON_TOWER_7F_JESSIE_JAMES                            0x408E
 #define VAR_MAP_SCENE_SILPH_CO_11F_JESSIE_JAMES                                0x408F
-#define VAR_SSANNE_EXTERIOR_TRUCK_PUSHED                                       0x4090
+#define VAR_VERMILION_CITY_TRUCK_PUSHED                                        0x4090
 #define VAR_FUCHSIA_WARDENS_HOUSE_ELDER                                        0x4091
 #define VAR_ROCKET_HIDEOUT_SECURITY                                            0x4092
 #define VAR_KENYA_DELIVERY                                                     0x4093

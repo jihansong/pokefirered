@@ -1460,7 +1460,7 @@ static bool8 DoBoulderFinish(struct Task *task, struct ObjectEvent *playerObject
     return FALSE;
 }
 
-// Strength push of a two-tile object, e.g. the truck on the S.S. Anne dock.
+// Strength push of a two-tile object, e.g. the truck on the Vermilion City quay.
 // VAR_0x8004 and VAR_0x8005 are the local ids of its two halves; the push goes
 // the way the player faces, using the same moves, dust and sound as a boulder.
 #define tState    data[0]

@@ -160,3 +160,10 @@ VermilionCity_Text_WhatAmIToDoNow::
 
 VermilionCity_Text_HowIsSquirtleDoing::
     .string "How is SQUIRTLE doing?$"
+
+VermilionCity_Text_TruckLooksHeavy::
+    .string "The truck looks heavy…\n"
+    .string "Push it with STRENGTH?$"
+
+VermilionCity_Text_TruckWontBudge::
+    .string "The truck won't budge.$"

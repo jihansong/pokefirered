@@ -9,6 +9,11 @@
 #define NUM_METATILES_TOTAL 1024
 #define NUM_PALS_IN_PRIMARY 7
 #define NUM_PALS_TOTAL 13
+
+// Tilesets imported from R/S/E (see GetNumMetatilesInPrimary)
+#define EMERALD_NUM_TILES_IN_PRIMARY 512
+#define EMERALD_NUM_METATILES_IN_PRIMARY 512
+#define EMERALD_NUM_PALS_IN_PRIMARY 6
 #define MAX_MAP_DATA_SIZE 0x2800
 #define VIRTUAL_MAP_SIZE (MAX_MAP_DATA_SIZE)
 
@@ -53,5 +58,7 @@ void CopyPrimaryTilesetToVram(const struct MapLayout *mapLayout);
 void CopySecondaryTilesetToVram(const struct MapLayout *mapLayout);
 void GetCameraFocusCoords(u16 *x, u16 *y);
 void SetCameraFocusCoords(u16 x, u16 y);
+
+u16 GetNumMetatilesInPrimary(const struct MapLayout *mapLayout);
 
 #endif //GUARD_FIELDMAP_H

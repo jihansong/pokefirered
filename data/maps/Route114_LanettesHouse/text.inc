@@ -1,0 +1,38 @@
+Route114_LanettesHouse_Text_H0::
+	.string "It's LANETTE's research notes.\n"
+	.string "There's information about BOXES.\p"
+	.string "Design BOXES to hold 30 POKéMON each.\p"
+	.string "Each TRAINER should be able to store\n"
+	.string "420 POKéMON on the PC system.\p"
+	.string "Keep reading?$"
+
+Route114_LanettesHouse_Text_H1::
+	.string "There's an e-mail from someone on\n"
+	.string "the PC.\p"
+	.string "“… … … … … … …\p"
+	.string "“Your Storage System offers more\n"
+	.string "convenience than mine.\p"
+	.string "“It has a lot of user-friendly features\n"
+	.string "that make it fun and useful, too.\p"
+	.string "“It makes me proud that I played\n"
+	.string "a part in its development.\p"
+	.string "“Here's hoping that you'll continue\n"
+	.string "research in Storage Systems.\p"
+	.string "“From BILL\n"
+	.string "… … … … … … … …”$"
+
+Route114_LanettesHouse_Text_H2::
+	.string "There's an e-mail from someone on\n"
+	.string "the PC.\p"
+	.string "“… … … … … … …\p"
+	.string "“Your Storage System offers more\n"
+	.string "convenience than mine.\p"
+	.string "“It has a lot of user-friendly features\n"
+	.string "that make it fun and useful, too.\p"
+	.string "“It makes me proud that I played\n"
+	.string "a part in its development.\p"
+	.string "“Here's hoping that you'll continue\n"
+	.string "research in Storage Systems.\p"
+	.string "“From BILL\n"
+	.string "… … … … … … … …”$"
+

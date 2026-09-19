@@ -1,0 +1,35 @@
+BattleFrontier_BattleTowerLobby_MapScripts::
+	.byte 0
+
+BattleFrontier_BattleTowerLobby_EventScript_H0::
+	msgbox BattleFrontier_BattleTowerLobby_Text_H0, MSGBOX_NPC
+	end
+
+BattleFrontier_BattleTowerLobby_EventScript_H1::
+	msgbox BattleFrontier_BattleTowerLobby_Text_H1, MSGBOX_NPC
+	end
+
+BattleFrontier_BattleTowerLobby_EventScript_H2::
+	msgbox BattleFrontier_BattleTowerLobby_Text_H2, MSGBOX_NPC
+	end
+
+BattleFrontier_BattleTowerLobby_EventScript_H3::
+	msgbox BattleFrontier_BattleTowerLobby_Text_H3, MSGBOX_NPC
+	end
+
+BattleFrontier_BattleTowerLobby_EventScript_H4::
+	msgbox BattleFrontier_BattleTowerLobby_Text_H4, MSGBOX_NPC
+	end
+
+BattleFrontier_BattleTowerLobby_EventScript_H5::
+	msgbox BattleFrontier_BattleTowerLobby_Text_H5, MSGBOX_NPC
+	end
+
+BattleFrontier_BattleTowerLobby_EventScript_H6::
+	msgbox BattleFrontier_BattleTowerLobby_Text_H6, MSGBOX_NPC
+	end
+
+BattleFrontier_BattleTowerLobby_EventScript_H7::
+	msgbox BattleFrontier_BattleTowerLobby_Text_H7, MSGBOX_SIGN
+	end
+

@@ -1,0 +1,11 @@
+Route124_DivingTreasureHuntersHouse_MapScripts::
+	.byte 0
+
+Route124_DivingTreasureHuntersHouse_EventScript_H0::
+	msgbox Route124_DivingTreasureHuntersHouse_Text_H0, MSGBOX_NPC
+	end
+
+Route124_DivingTreasureHuntersHouse_EventScript_H1::
+	msgbox Route124_DivingTreasureHuntersHouse_Text_H1, MSGBOX_SIGN
+	end
+

@@ -1,0 +1,55 @@
+LilycoveCity_LilycoveMuseum_2F_MapScripts::
+	.byte 0
+
+LilycoveCity_LilycoveMuseum_2F_EventScript_H0::
+	msgbox LilycoveCity_LilycoveMuseum_2F_Text_H0, MSGBOX_NPC
+	end
+
+LilycoveCity_LilycoveMuseum_2F_EventScript_H1::
+	msgbox LilycoveCity_LilycoveMuseum_2F_Text_H1, MSGBOX_SIGN
+	end
+
+LilycoveCity_LilycoveMuseum_2F_EventScript_H2::
+	msgbox LilycoveCity_LilycoveMuseum_2F_Text_H2, MSGBOX_SIGN
+	end
+
+LilycoveCity_LilycoveMuseum_2F_EventScript_H3::
+	msgbox LilycoveCity_LilycoveMuseum_2F_Text_H3, MSGBOX_SIGN
+	end
+
+LilycoveCity_LilycoveMuseum_2F_EventScript_H4::
+	msgbox LilycoveCity_LilycoveMuseum_2F_Text_H4, MSGBOX_SIGN
+	end
+
+LilycoveCity_LilycoveMuseum_2F_EventScript_H5::
+	msgbox LilycoveCity_LilycoveMuseum_2F_Text_H5, MSGBOX_SIGN
+	end
+
+LilycoveCity_LilycoveMuseum_2F_EventScript_H6::
+	msgbox LilycoveCity_LilycoveMuseum_2F_Text_H6, MSGBOX_SIGN
+	end
+
+LilycoveCity_LilycoveMuseum_2F_EventScript_H7::
+	msgbox LilycoveCity_LilycoveMuseum_2F_Text_H7, MSGBOX_SIGN
+	end
+
+LilycoveCity_LilycoveMuseum_2F_EventScript_H8::
+	msgbox LilycoveCity_LilycoveMuseum_2F_Text_H8, MSGBOX_SIGN
+	end
+
+LilycoveCity_LilycoveMuseum_2F_EventScript_H9::
+	msgbox LilycoveCity_LilycoveMuseum_2F_Text_H9, MSGBOX_SIGN
+	end
+
+LilycoveCity_LilycoveMuseum_2F_EventScript_H10::
+	msgbox LilycoveCity_LilycoveMuseum_2F_Text_H10, MSGBOX_SIGN
+	end
+
+LilycoveCity_LilycoveMuseum_2F_EventScript_H11::
+	msgbox LilycoveCity_LilycoveMuseum_2F_Text_H11, MSGBOX_SIGN
+	end
+
+LilycoveCity_LilycoveMuseum_2F_EventScript_H12::
+	msgbox LilycoveCity_LilycoveMuseum_2F_Text_H12, MSGBOX_SIGN
+	end
+

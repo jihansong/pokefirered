@@ -1,0 +1,67 @@
+LittlerootTown_ProfessorBirchsLab_MapScripts::
+	.byte 0
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H0::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H0, MSGBOX_NPC
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H1::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H1, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H2::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H2, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H3::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H3, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H4::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H4, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H5::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H5, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H6::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H6, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H7::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H7, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H8::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H8, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H9::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H9, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H10::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H10, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H11::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H11, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H12::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H12, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H13::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H13, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H14::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H14, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H15::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H15, MSGBOX_SIGN
+	end
+

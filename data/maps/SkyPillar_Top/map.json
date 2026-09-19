@@ -1,0 +1,29 @@
+{
+  "id": "MAP_SKY_PILLAR_TOP",
+  "name": "SkyPillar_Top",
+  "layout": "LAYOUT_HOENN_SKY_PILLAR_TOP",
+  "music": "MUS_ROUTE1",
+  "region_map_section": "MAPSEC_SKY_PILLAR",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 16,
+      "y": 14,
+      "elevation": 3,
+      "dest_map": "MAP_SKY_PILLAR_5F",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

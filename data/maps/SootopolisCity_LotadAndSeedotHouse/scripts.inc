@@ -1,0 +1,19 @@
+SootopolisCity_LotadAndSeedotHouse_MapScripts::
+	.byte 0
+
+SootopolisCity_LotadAndSeedotHouse_EventScript_H0::
+	msgbox SootopolisCity_LotadAndSeedotHouse_Text_H0, MSGBOX_NPC
+	end
+
+SootopolisCity_LotadAndSeedotHouse_EventScript_H1::
+	msgbox SootopolisCity_LotadAndSeedotHouse_Text_H1, MSGBOX_NPC
+	end
+
+SootopolisCity_LotadAndSeedotHouse_EventScript_H2::
+	msgbox SootopolisCity_LotadAndSeedotHouse_Text_H2, MSGBOX_SIGN
+	end
+
+SootopolisCity_LotadAndSeedotHouse_EventScript_H3::
+	msgbox SootopolisCity_LotadAndSeedotHouse_Text_H3, MSGBOX_SIGN
+	end
+

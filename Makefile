@@ -250,6 +250,7 @@ leafgreen_rev1_modern: ; @$(MAKE) GAME_VERSION=LEAFGREEN GAME_REVISION=1 MODERN=
 # Other rules
 include graphics_file_rules.mk
 include tileset_rules.mk
+include hoenn_tileset_rules.mk
 include map_data_rules.mk
 include spritesheet_rules.mk
 include json_data_rules.mk

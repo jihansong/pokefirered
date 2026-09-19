@@ -1,0 +1,7 @@
+BattleFrontier_BattleTowerMultiPartnerRoom_MapScripts::
+	.byte 0
+
+BattleFrontier_BattleTowerMultiPartnerRoom_EventScript_H0::
+	msgbox BattleFrontier_BattleTowerMultiPartnerRoom_Text_H0, MSGBOX_NPC
+	end
+

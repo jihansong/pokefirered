@@ -1,0 +1,43 @@
+{
+  "id": "MAP_MAGMA_HIDEOUT_3F_1R",
+  "name": "MagmaHideout_3F_1R",
+  "layout": "LAYOUT_HOENN_MAGMA_HIDEOUT_3F_1R",
+  "music": "MUS_MT_MOON",
+  "region_map_section": "MAPSEC_JAGGED_PASS",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 7,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_MAGMA_HIDEOUT_4F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 21,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_MAGMA_HIDEOUT_3F_2R",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 23,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_MAGMA_HIDEOUT_2F_1R",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

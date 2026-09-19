@@ -1211,6 +1211,8 @@ EventScript_DelayedLookAround::
 
 	.include "data/scripts/silphco_doors.inc"
 	.include "data/scripts/pc_transfer.inc"
+	.include "data/scripts/gift_mon.inc"
+	.include "data/scripts/sealed_chambers.inc"
 
 EventScript_GetInGameTradeSpeciesInfo::
 	copyvar VAR_0x8004, VAR_0x8008

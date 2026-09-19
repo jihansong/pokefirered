@@ -284,9 +284,40 @@ static void MoveRoamer(u8 slot)
     }
 }
 
+// Once the legendary beast is caught or defeated, the next one that hasn't roamed yet
+// starts roaming, so ENTEI, SUICUNE and RAIKOU can all be met in one game.
+static void TryStartNextBeastRoamer(void)
+{
+    struct Roamer roamer;
+    u16 done;
+    u8 i;
+
+    ReadRoamer(0, &roamer);
+    if (roamer.species == SPECIES_NONE || roamer.active)
+        return;
+    done = VarGet(VAR_ROAMER_BEASTS_DONE);
+    for (i = 0; i < ARRAY_COUNT(sRoamerSpecies); i++)
+    {
+        if (sRoamerSpecies[i] == roamer.species)
+            done |= 1 << i;
+    }
+    VarSet(VAR_ROAMER_BEASTS_DONE, done);
+    for (i = 0; i < ARRAY_COUNT(sRoamerSpecies); i++)
+    {
+        if (!(done & (1 << i)))
+        {
+            VarSet(VAR_ROAMER_SPECIES, i);
+            CreateRoamer(0, sRoamerSpecies[i], 50);
+            return;
+        }
+    }
+}
+
 void RoamerMove(void)
 {
     u8 slot;
+
+    TryStartNextBeastRoamer();
 
     for (slot = 0; slot < NUM_ROAMERS; slot++)
         MoveRoamer(slot);

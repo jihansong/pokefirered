@@ -198,6 +198,7 @@ OneIsland_PokemonCenter_1F_EventScript_BillGoTakeStroll::
 OneIsland_PokemonCenter_1F_EventScript_Celio::
 	lock
 	faceplayer
+	call_if_ge VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F, 6, OneIsland_PokemonCenter_1F_EventScript_CelioCheckHoennStarters
 	goto_if_eq VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F, 7, OneIsland_PokemonCenter_1F_EventScript_CelioGiveBillFact
 	goto_if_eq VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F, 6, OneIsland_PokemonCenter_1F_EventScript_CelioJustGivenSapphire
 	goto_if_set FLAG_RECOVERED_SAPPHIRE, OneIsland_PokemonCenter_1F_EventScript_GiveCelioSapphire
@@ -561,3 +562,58 @@ OneIsland_PokemonCenter_1F_Movement_BillExit::
 	walk_left
 	walk_down
 	step_end
+
+@ With the NETWORK MACHINE finished, CELIO receives the HOENN starters PROF.
+@ BIRCH sent over the link, and hands them out one per talk.
+OneIsland_PokemonCenter_1F_EventScript_CelioCheckHoennStarters::
+	goto_if_unset FLAG_GOT_TREECKO_FROM_CELIO, OneIsland_PokemonCenter_1F_EventScript_CelioOfferStarters
+	goto_if_unset FLAG_GOT_TORCHIC_FROM_CELIO, OneIsland_PokemonCenter_1F_EventScript_CelioOfferStarters
+	goto_if_unset FLAG_GOT_MUDKIP_FROM_CELIO, OneIsland_PokemonCenter_1F_EventScript_CelioOfferStarters
+	return
+
+OneIsland_PokemonCenter_1F_EventScript_CelioOfferStarters::
+	msgbox OneIsland_PokemonCenter_1F_Text_CelioBirchSentStarters
+	goto_if_set FLAG_GOT_TREECKO_FROM_CELIO, OneIsland_PokemonCenter_1F_EventScript_CelioOfferTorchic
+	setvar VAR_TEMP_1, SPECIES_TREECKO
+	bufferspeciesname STR_VAR_1, SPECIES_TREECKO
+	msgbox OneIsland_PokemonCenter_1F_Text_CelioWouldYouLikeStarter, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, OneIsland_PokemonCenter_1F_EventScript_CelioGiveStarter
+OneIsland_PokemonCenter_1F_EventScript_CelioOfferTorchic::
+	goto_if_set FLAG_GOT_TORCHIC_FROM_CELIO, OneIsland_PokemonCenter_1F_EventScript_CelioOfferMudkip
+	setvar VAR_TEMP_1, SPECIES_TORCHIC
+	bufferspeciesname STR_VAR_1, SPECIES_TORCHIC
+	msgbox OneIsland_PokemonCenter_1F_Text_CelioWouldYouLikeStarter, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, OneIsland_PokemonCenter_1F_EventScript_CelioGiveStarter
+OneIsland_PokemonCenter_1F_EventScript_CelioOfferMudkip::
+	goto_if_set FLAG_GOT_MUDKIP_FROM_CELIO, OneIsland_PokemonCenter_1F_EventScript_CelioNoStarterChosen
+	setvar VAR_TEMP_1, SPECIES_MUDKIP
+	bufferspeciesname STR_VAR_1, SPECIES_MUDKIP
+	msgbox OneIsland_PokemonCenter_1F_Text_CelioWouldYouLikeStarter, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, OneIsland_PokemonCenter_1F_EventScript_CelioGiveStarter
+OneIsland_PokemonCenter_1F_EventScript_CelioNoStarterChosen::
+	msgbox OneIsland_PokemonCenter_1F_Text_CelioIllKeepThemSafe
+	release
+	end
+
+OneIsland_PokemonCenter_1F_EventScript_CelioGiveStarter::
+	call EventScript_GiveGiftMonLv5
+	goto_if_eq VAR_RESULT, FALSE, EventScript_ReleaseEnd
+	call_if_eq VAR_TEMP_1, SPECIES_TREECKO, OneIsland_PokemonCenter_1F_EventScript_SetGotTreecko
+	call_if_eq VAR_TEMP_1, SPECIES_TORCHIC, OneIsland_PokemonCenter_1F_EventScript_SetGotTorchic
+	call_if_eq VAR_TEMP_1, SPECIES_MUDKIP, OneIsland_PokemonCenter_1F_EventScript_SetGotMudkip
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox OneIsland_PokemonCenter_1F_Text_CelioBirchWillBeGlad
+	release
+	end
+
+OneIsland_PokemonCenter_1F_EventScript_SetGotTreecko::
+	setflag FLAG_GOT_TREECKO_FROM_CELIO
+	return
+
+OneIsland_PokemonCenter_1F_EventScript_SetGotTorchic::
+	setflag FLAG_GOT_TORCHIC_FROM_CELIO
+	return
+
+OneIsland_PokemonCenter_1F_EventScript_SetGotMudkip::
+	setflag FLAG_GOT_MUDKIP_FROM_CELIO
+	return

@@ -124,3 +124,9 @@ PalletTown_RivalsHouse_Text_LovelyAndSweetClefairy::
     .string "“The lovely and sweet\n"
     .string "CLEFAIRY”$"
 
+
+PalletTown_RivalsHouse_Text_FeebasScalesShine::
+    .string "Its scales are shining like a\n"
+    .string "rainbow now. How beautiful!\p"
+    .string "I think it's about to change into\n"
+    .string "something even lovelier.$"

@@ -474,6 +474,7 @@ gSpecials::
 	def_special LeaveHiddenGrotto
 	def_special StartLavenderSyndrome
 	def_special IsFullMoon
+	def_special PartyHasSpecies
 	def_special IsPlayerOnSafariZoneExit
 	def_special SetScriptedWildMonTransformOnly
 	def_special CheckBugContestDay

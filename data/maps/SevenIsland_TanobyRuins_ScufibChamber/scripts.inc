@@ -5,3 +5,24 @@ SevenIsland_TanobyRuins_ScufibChamber_MapScripts::
 SevenIsland_TanobyRuins_ScufibChamber_OnTransition::
 	call EventScript_TryDarkenRuins
 	end
+
+SevenIsland_TanobyRuins_ScufibChamber_EventScript_Inscription::
+	lockall
+	goto_if_set FLAG_FOUGHT_REGIROCK, SevenIsland_TanobyRuins_ScufibChamber_EventScript_WallSilent
+	msgbox Text_SealedChamberInscription
+	call EventScript_SealedChamberCanWake
+	goto_if_eq VAR_RESULT, FALSE, EventScript_ReleaseEnd
+	setwildbattle SPECIES_REGIROCK, 40
+	setvar VAR_0x8008, SPECIES_REGIROCK
+	call EventScript_SealedChamberWake
+	setflag FLAG_FOUGHT_REGIROCK
+	call_if_eq VAR_RESULT, B_OUTCOME_RAN, EventScript_SealedChamberRegiLeft
+	call_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, EventScript_SealedChamberRegiLeft
+	releaseall
+	end
+
+SevenIsland_TanobyRuins_ScufibChamber_EventScript_WallSilent::
+	msgbox Text_SealedChamberSilent
+	releaseall
+	end
+

@@ -279,6 +279,12 @@
 #define EVO_LEVEL_SHEDINJA   14 // Pokémon reaches the specified level (special value for Shedinja)
 #define EVO_BEAUTY           15 // Pokémon levels up with beauty ≥ specified value
 #define EVO_ITEM_UNLESS_STARTER_PIKACHU 16 // like EVO_ITEM, but the starter PIKACHU refuses (Yellow)
+#define EVO_LEVEL_HOLD_ITEM  17 // Pokémon levels up to the given level while holding the given item, which is used up
+
+// Param for EVO_LEVEL_HOLD_ITEM: the held item in the low 10 bits, the level above them
+#define EVO_HOLD_ITEM_PARAM(item, level) ((item) | ((level) << 10))
+#define EVO_HOLD_ITEM(param)  ((param) & 0x3FF)
+#define EVO_HOLD_LEVEL(param) ((param) >> 10)
 
 #define EVOS_PER_MON 5
 

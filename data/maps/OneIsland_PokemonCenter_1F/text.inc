@@ -355,3 +355,22 @@ OneIsland_PokemonCenter_1F_Text_MachineLinkedWithKantoAndHoenn::
 OneIsland_PokemonCenter_1F_Text_ObtainedTriPass::
     .string "Obtained the TRI-PASS!$"
 
+
+OneIsland_PokemonCenter_1F_Text_CelioBirchSentStarters::
+    .string "CELIO: The NETWORK MACHINE's first\n"
+    .string "delivery came from HOENN!\p"
+    .string "PROF. BIRCH sent POKéMON for a\n"
+    .string "TRAINER filling a POKéDEX.\p"
+    .string "That's you, {PLAYER}.\n"
+    .string "One at a time, if you please.$"
+
+OneIsland_PokemonCenter_1F_Text_CelioWouldYouLikeStarter::
+    .string "Would you like {STR_VAR_1}?$"
+
+OneIsland_PokemonCenter_1F_Text_CelioIllKeepThemSafe::
+    .string "I'll keep them safe until you\n"
+    .string "come back for them.$"
+
+OneIsland_PokemonCenter_1F_Text_CelioBirchWillBeGlad::
+    .string "I'll let PROF. BIRCH know it got\n"
+    .string "to you safely!$"

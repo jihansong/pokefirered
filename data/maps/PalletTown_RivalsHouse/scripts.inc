@@ -58,12 +58,17 @@ PalletTown_RivalsHouse_EventScript_GroomMon::
 	fadescreen FADE_TO_BLACK
 	playfanfare MUS_HEAL
 	waitfanfare
-	special DaisyMassageServices
+	specialvar VAR_RESULT, DaisyMassageServices
 	fadescreen FADE_FROM_BLACK
 	special BufferMonNickname
 	msgbox PalletTown_RivalsHouse_Text_ThereYouGoAllDone
+	call_if_eq VAR_RESULT, TRUE, PalletTown_RivalsHouse_EventScript_FeebasGroomed
 	release
 	end
+
+PalletTown_RivalsHouse_EventScript_FeebasGroomed::
+	msgbox PalletTown_RivalsHouse_Text_FeebasScalesShine
+	return
 
 PalletTown_RivalsHouse_EventScript_CantGroomEgg::
 	msgbox PalletTown_RivalsHouse_Text_CantGroomAnEgg

@@ -43,3 +43,15 @@ CeladonCity_DepartmentStore_4F_Items::
 	.2byte ITEM_NONE
 	release
 	end
+
+@ The evolution researcher explains every evolution that differs from the originals.
+CeladonCity_DepartmentStore_4F_EventScript_EvolutionResearcher::
+	lock
+	faceplayer
+	msgbox CeladonCity_DepartmentStore_4F_Text_Evolution0
+	msgbox CeladonCity_DepartmentStore_4F_Text_Evolution1
+	msgbox CeladonCity_DepartmentStore_4F_Text_Evolution2
+	msgbox CeladonCity_DepartmentStore_4F_Text_Evolution3
+	msgbox CeladonCity_DepartmentStore_4F_Text_Evolution4
+	release
+	end

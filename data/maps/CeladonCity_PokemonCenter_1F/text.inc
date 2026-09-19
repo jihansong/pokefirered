@@ -13,3 +13,164 @@ CeladonCity_PokemonCenter_1F_Text_GoToCyclingRoadIfIHadBike::
     .string "If I had a BIKE, I would go to\n"
     .string "CYCLING ROAD!$"
 
+
+CeladonCity_PokemonCenter_1F_Text_RumorIntro::
+    .string "I collect rumors from TRAINERS all\n"
+    .string "over KANTO. Here's one I heard\l"
+    .string "lately…$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor0::
+    .string "The SAFARI ZONE WARDEN's old\n"
+    .string "teacher is a DRAGON master.\p"
+    .string "He quizzes TRAINERS who have the\n"
+    .string "SOUL BADGE. Answer from the heart\l"
+    .string "and he may give you a DRATINI!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor1::
+    .string "Someone saw a red GYARADOS in the\n"
+    .string "pond beside BILL's SEA COTTAGE on\l"
+    .string "ROUTE 25.\p"
+    .string "You'd need to SURF out to it, and\n"
+    .string "it only shows itself to TRAINERS\l"
+    .string "with the CASCADE BADGE.$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor2::
+    .string "The PERSIAN statues in the ROCKET\n"
+    .string "HIDEOUT are really cameras!\p"
+    .string "And some POKé BALLS on the floor\n"
+    .string "there are VOLTORB in disguise.\l"
+    .string "They say a hidden panel shuts the\l"
+    .string "power off.$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor3::
+    .string "A man on ROUTE 2 wants his SPEAROW\n"
+    .string "to carry MAIL to a friend near the\l"
+    .string "LEAGUE gate on ROUTE 22.\p"
+    .string "Maybe a kind TRAINER could help\n"
+    .string "him out?$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor4::
+    .string "MR. FUJI in LAVENDER TOWN\n"
+    .string "treasures a strange stone.\p"
+    .string "They say when a CHAMPION who owns\n"
+    .string "the POKé FLUTE sees it, two\l"
+    .string "dragons start flying all over\l"
+    .string "KANTO.$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor5::
+    .string "There's an odd PROF. OAK north of\n"
+    .string "ROUTE 16 who only ever shouts,\l"
+    .string "'POKéMON! POKéMON!'\p"
+    .string "Could it be a fake? Talk to him\n"
+    .string "after you get a BICYCLE and see.$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor6::
+    .string "Hidden hollows lie at the end of\n"
+    .string "VIRIDIAN FOREST and on ROUTES 11,\l"
+    .string "13 and 15.\p"
+    .string "New POKéMON or items turn up in\n"
+    .string "them as you walk around. Check\l"
+    .string "back now and then!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor7::
+    .string "Battle the ghosts in POKéMON TOWER\n"
+    .string "without a SILPH SCOPE too often,\l"
+    .string "and LAVENDER's music starts to\l"
+    .string "sound wrong…\p"
+    .string "The CHANNELER on the tower's 1st\n"
+    .string "floor knows how to set it right.$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor8::
+    .string "BILL has a secret garden behind\n"
+    .string "his SEA COTTAGE.\p"
+    .string "He only shows it to TRAINERS who\n"
+    .string "have caught 100 kinds of POKéMON.\l"
+    .string "Baby POKéMON play there, I hear!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor9::
+    .string "PROF. OAK was a great TRAINER in\n"
+    .string "his day.\p"
+    .string "If a CHAMPION catches every KANTO\n"
+    .string "POKéMON except MEW, he might ask\l"
+    .string "for a battle!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor10::
+    .string "On the full moon, CLEFAIRY dance\n"
+    .string "deep in MT. MOON, but only for a\l"
+    .string "TRAINER carrying a MOON STONE.\p"
+    .string "A day is 256 steps, and a full\n"
+    .string "moon comes every 30 days. Watch\l"
+    .string "the dance to the very end, and a\l"
+    .string "star falls right there!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor11::
+    .string "If your SAFARI ZONE steps run out\n"
+    .string "while you stand on the exit arrow\l"
+    .string "of the center area…\p"
+    .string "…you end up somewhere very, very\n"
+    .string "strange. Or so they say.$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor12::
+    .string "After MEWTWO was faced, a wall in\n"
+    .string "the POKéMON MANSION basement is\l"
+    .string "said to open onto a secret lab.\p"
+    .string "It holds notes about DITTO.\n"
+    .string "Creepy!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor13::
+    .string "Watch the old man in VIRIDIAN CITY\n"
+    .string "catch a POKéMON, then SURF up and\l"
+    .string "down CINNABAR ISLAND's east coast.\p"
+    .string "Something that isn't in any\n"
+    .string "POKéDEX shows up. Don't blame me\l"
+    .string "if your bag acts up!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor14::
+    .string "Grass that rustles, water that\n"
+    .string "splashes, dust that swirls in\l"
+    .string "caves…\p"
+    .string "Step in quickly before it settles\n"
+    .string "and you'll meet a strong or rare\l"
+    .string "POKéMON.$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor15::
+    .string "The BUG-CATCHING CONTEST is held\n"
+    .string "in VIRIDIAN FOREST on Tuesdays,\l"
+    .string "Thursdays and Saturdays.\p"
+    .string "Days go by every 256 steps. Sign\n"
+    .string "up at the gate south of the\l"
+    .string "forest!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor16::
+    .string "A surfer on ROUTE 19's beach wants\n"
+    .string "to see a PIKACHU ride the waves.\p"
+    .string "Bring your own PIKACHU at the\n"
+    .string "front of your party!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor17::
+    .string "There's a truck on a quay east of\n"
+    .string "VERMILION's harbor. Only SURF gets\l"
+    .string "you there.\p"
+    .string "Once the S.S. ANNE has sailed, a\n"
+    .string "POKéMON that knows STRENGTH could\l"
+    .string "push it…$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor18::
+    .string "A boy in CERULEAN CITY talks about\n"
+    .string "a blue PIKACHU in the cave north\l"
+    .string "of town.\p"
+    .string "He only started after a CHAMPION\n"
+    .string "came through. Maybe that's who can\l"
+    .string "find it?$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor19::
+    .string "TRAINERS say they've caught MEWTWO\n"
+    .string "and MEW both…\p"
+    .string "…and then something strange waited\n"
+    .string "where MEWTWO once slept.$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor20::
+    .string "EEVEE live wild on ROUTES 7 and 8,\n"
+    .string "not just in the CELADON MANSION.\l"
+    .string "They're very shy, though!$"
+

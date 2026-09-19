@@ -374,3 +374,87 @@ OneIsland_PokemonCenter_1F_Text_CelioIllKeepThemSafe::
 OneIsland_PokemonCenter_1F_Text_CelioBirchWillBeGlad::
     .string "I'll let PROF. BIRCH know it got\n"
     .string "to you safely!$"
+
+OneIsland_PokemonCenter_1F_Text_RumorIntro::
+    .string "I trade rumors with sailors from\n"
+    .string "all the islands. Want to hear one?$"
+
+OneIsland_PokemonCenter_1F_Text_Rumor0::
+    .string "They say that once the legendary\n"
+    .string "POKéMON roaming KANTO is caught or\l"
+    .string "beaten…\p"
+    .string "…another one of its kind starts\n"
+    .string "roaming! There are three in all.$"
+
+OneIsland_PokemonCenter_1F_Text_Rumor1::
+    .string "BILL got two strange ferry tickets\n"
+    .string "in the mail from a friend in\l"
+    .string "HOENN.\p"
+    .string "He's saving them for whoever\n"
+    .string "becomes CHAMPION. Visit his SEA\l"
+    .string "COTTAGE!$"
+
+OneIsland_PokemonCenter_1F_Text_Rumor2::
+    .string "A forest spirit has been seen deep\n"
+    .string "in THREE ISLAND's BERRY FOREST,\l"
+    .string "among the flowers at the far end.\p"
+    .string "Only CHAMPIONS ever seem to meet\n"
+    .string "it.$"
+
+OneIsland_PokemonCenter_1F_Text_Rumor3::
+    .string "The TANOBY chambers have writing\n"
+    .string "about 'the king of the sea' and 'a\l"
+    .string "fish unchanged since ancient\l"
+    .string "days'.\p"
+    .string "WAILORD and RELICANTH, I'd guess.\n"
+    .string "Something sleeps behind the walls\l"
+    .string "of the last three chambers…$"
+
+OneIsland_PokemonCenter_1F_Text_Rumor4::
+    .string "After the SAPPHIRE was found, the\n"
+    .string "murals in TANOBY's MONEAN CHAMBER\l"
+    .string "started to glitter.\p"
+    .string "Orbs of red and blue… and\n"
+    .string "something deep in the VIAPOIS\l"
+    .string "CHAMBER answers them.$"
+
+OneIsland_PokemonCenter_1F_Text_Rumor5::
+    .string "The POKéMON in SIX ISLAND's\n"
+    .string "ALTERING CAVE change every day. A\l"
+    .string "day is 256 steps.$"
+
+OneIsland_PokemonCenter_1F_Text_Rumor6::
+    .string "A ROOT FOSSIL turned up on KINDLE\n"
+    .string "ROAD and a CLAW FOSSIL in SEVAULT\l"
+    .string "CANYON.\p"
+    .string "CINNABAR's POKéMON LAB can bring\n"
+    .string "fossils back to life!$"
+
+OneIsland_PokemonCenter_1F_Text_Rumor7::
+    .string "Once the NETWORK MACHINE works,\n"
+    .string "CELIO here gets POKéMON sent from\l"
+    .string "HOENN.\p"
+    .string "And PROF. OAK's aide has POKéMON\n"
+    .string "from JOHTO for TRAINERS with the\l"
+    .string "NATIONAL POKéDEX.$"
+
+OneIsland_PokemonCenter_1F_Text_Rumor8::
+    .string "A weather researcher from HOENN is\n"
+    .string "staying on FOUR ISLAND.\p"
+    .string "He's got a POKéMON that changes\n"
+    .string "with the weather!$"
+
+OneIsland_PokemonCenter_1F_Text_Rumor9::
+    .string "Leave a MARILL holding SEA\n"
+    .string "INCENSE, or a WOBBUFFET holding\l"
+    .string "LAX INCENSE, at the DAY CARE.\p"
+    .string "The EGG you get is a baby POKéMON\n"
+    .string "you won't find anywhere else!$"
+
+OneIsland_PokemonCenter_1F_Text_Rumor10::
+    .string "POKéMON from far-off HOENN have\n"
+    .string "been spotted all over the SEVII\l"
+    .string "ISLANDS, and even in KANTO.\p"
+    .string "Check your POKéDEX's AREA map to\n"
+    .string "see where!$"
+

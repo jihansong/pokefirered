@@ -25,3 +25,146 @@ CeladonCity_PokemonCenter_1F_EventScript_CooltrainerF::
 CeladonCity_PokemonCenter_1F_EventScript_Youngster::
 	msgbox CeladonCity_PokemonCenter_1F_Text_GoToCyclingRoadIfIHadBike, MSGBOX_NPC
 	end
+
+@ Rumor collector: one rumor per talk about the THUNDER YELLOW events, in turn.
+CeladonCity_PokemonCenter_1F_EventScript_RumorCollector::
+	lock
+	faceplayer
+	msgbox CeladonCity_PokemonCenter_1F_Text_RumorIntro
+	switch VAR_KANTO_RUMOR_INDEX
+	case 0, CeladonCity_PokemonCenter_1F_EventScript_Rumor0
+	case 1, CeladonCity_PokemonCenter_1F_EventScript_Rumor1
+	case 2, CeladonCity_PokemonCenter_1F_EventScript_Rumor2
+	case 3, CeladonCity_PokemonCenter_1F_EventScript_Rumor3
+	case 4, CeladonCity_PokemonCenter_1F_EventScript_Rumor4
+	case 5, CeladonCity_PokemonCenter_1F_EventScript_Rumor5
+	case 6, CeladonCity_PokemonCenter_1F_EventScript_Rumor6
+	case 7, CeladonCity_PokemonCenter_1F_EventScript_Rumor7
+	case 8, CeladonCity_PokemonCenter_1F_EventScript_Rumor8
+	case 9, CeladonCity_PokemonCenter_1F_EventScript_Rumor9
+	case 10, CeladonCity_PokemonCenter_1F_EventScript_Rumor10
+	case 11, CeladonCity_PokemonCenter_1F_EventScript_Rumor11
+	case 12, CeladonCity_PokemonCenter_1F_EventScript_Rumor12
+	case 13, CeladonCity_PokemonCenter_1F_EventScript_Rumor13
+	case 14, CeladonCity_PokemonCenter_1F_EventScript_Rumor14
+	case 15, CeladonCity_PokemonCenter_1F_EventScript_Rumor15
+	case 16, CeladonCity_PokemonCenter_1F_EventScript_Rumor16
+	case 17, CeladonCity_PokemonCenter_1F_EventScript_Rumor17
+	case 18, CeladonCity_PokemonCenter_1F_EventScript_Rumor18
+	case 19, CeladonCity_PokemonCenter_1F_EventScript_Rumor19
+	case 20, CeladonCity_PokemonCenter_1F_EventScript_Rumor20
+	setvar VAR_KANTO_RUMOR_INDEX, 0
+	goto CeladonCity_PokemonCenter_1F_EventScript_Rumor0
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor0::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor0
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor1::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor1
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor2::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor2
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor3::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor3
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor4::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor4
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor5::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor5
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor6::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor6
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor7::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor7
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor8::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor8
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor9::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor9
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor10::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor10
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor11::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor11
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor12::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor12
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor13::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor13
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor14::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor14
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor15::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor15
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor16::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor16
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor17::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor17
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor18::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor18
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor19::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor19
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_Rumor20::
+	msgbox CeladonCity_PokemonCenter_1F_Text_Rumor20
+	goto CeladonCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+CeladonCity_PokemonCenter_1F_EventScript_NextRumor::
+	addvar VAR_KANTO_RUMOR_INDEX, 1
+	goto_if_lt VAR_KANTO_RUMOR_INDEX, 21, EventScript_ReleaseEnd
+	setvar VAR_KANTO_RUMOR_INDEX, 0
+	release
+	end

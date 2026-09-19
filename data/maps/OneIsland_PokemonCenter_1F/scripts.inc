@@ -617,3 +617,86 @@ OneIsland_PokemonCenter_1F_EventScript_SetGotTorchic::
 OneIsland_PokemonCenter_1F_EventScript_SetGotMudkip::
 	setflag FLAG_GOT_MUDKIP_FROM_CELIO
 	return
+
+@ Rumor collector: one rumor per talk about the THUNDER YELLOW events, in turn.
+OneIsland_PokemonCenter_1F_EventScript_RumorCollector::
+	lock
+	faceplayer
+	msgbox OneIsland_PokemonCenter_1F_Text_RumorIntro
+	switch VAR_SEVII_RUMOR_INDEX
+	case 0, OneIsland_PokemonCenter_1F_EventScript_Rumor0
+	case 1, OneIsland_PokemonCenter_1F_EventScript_Rumor1
+	case 2, OneIsland_PokemonCenter_1F_EventScript_Rumor2
+	case 3, OneIsland_PokemonCenter_1F_EventScript_Rumor3
+	case 4, OneIsland_PokemonCenter_1F_EventScript_Rumor4
+	case 5, OneIsland_PokemonCenter_1F_EventScript_Rumor5
+	case 6, OneIsland_PokemonCenter_1F_EventScript_Rumor6
+	case 7, OneIsland_PokemonCenter_1F_EventScript_Rumor7
+	case 8, OneIsland_PokemonCenter_1F_EventScript_Rumor8
+	case 9, OneIsland_PokemonCenter_1F_EventScript_Rumor9
+	case 10, OneIsland_PokemonCenter_1F_EventScript_Rumor10
+	setvar VAR_SEVII_RUMOR_INDEX, 0
+	goto OneIsland_PokemonCenter_1F_EventScript_Rumor0
+	end
+
+OneIsland_PokemonCenter_1F_EventScript_Rumor0::
+	msgbox OneIsland_PokemonCenter_1F_Text_Rumor0
+	goto OneIsland_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+OneIsland_PokemonCenter_1F_EventScript_Rumor1::
+	msgbox OneIsland_PokemonCenter_1F_Text_Rumor1
+	goto OneIsland_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+OneIsland_PokemonCenter_1F_EventScript_Rumor2::
+	msgbox OneIsland_PokemonCenter_1F_Text_Rumor2
+	goto OneIsland_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+OneIsland_PokemonCenter_1F_EventScript_Rumor3::
+	msgbox OneIsland_PokemonCenter_1F_Text_Rumor3
+	goto OneIsland_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+OneIsland_PokemonCenter_1F_EventScript_Rumor4::
+	msgbox OneIsland_PokemonCenter_1F_Text_Rumor4
+	goto OneIsland_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+OneIsland_PokemonCenter_1F_EventScript_Rumor5::
+	msgbox OneIsland_PokemonCenter_1F_Text_Rumor5
+	goto OneIsland_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+OneIsland_PokemonCenter_1F_EventScript_Rumor6::
+	msgbox OneIsland_PokemonCenter_1F_Text_Rumor6
+	goto OneIsland_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+OneIsland_PokemonCenter_1F_EventScript_Rumor7::
+	msgbox OneIsland_PokemonCenter_1F_Text_Rumor7
+	goto OneIsland_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+OneIsland_PokemonCenter_1F_EventScript_Rumor8::
+	msgbox OneIsland_PokemonCenter_1F_Text_Rumor8
+	goto OneIsland_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+OneIsland_PokemonCenter_1F_EventScript_Rumor9::
+	msgbox OneIsland_PokemonCenter_1F_Text_Rumor9
+	goto OneIsland_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+OneIsland_PokemonCenter_1F_EventScript_Rumor10::
+	msgbox OneIsland_PokemonCenter_1F_Text_Rumor10
+	goto OneIsland_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+OneIsland_PokemonCenter_1F_EventScript_NextRumor::
+	addvar VAR_SEVII_RUMOR_INDEX, 1
+	goto_if_lt VAR_SEVII_RUMOR_INDEX, 11, EventScript_ReleaseEnd
+	setvar VAR_SEVII_RUMOR_INDEX, 0
+	release
+	end

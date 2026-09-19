@@ -175,6 +175,14 @@ CeladonCity_PokemonCenter_1F_Text_Rumor20::
     .string "They're very shy, though!$"
 
 CeladonCity_PokemonCenter_1F_Text_Rumor21::
+    .string "An old EGG appraiser drops by the\n"
+    .string "DAY CARES once you've gotten an\l"
+    .string "EGG from them.\p"
+    .string "He can tell what's inside an EGG,\n"
+    .string "and he's said to be holding a very\l"
+    .string "special one…$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor22::
     .string "BILL once got stuck as a POKéMON\n"
     .string "in his own TELEPORTER. He says the\l"
     .string "machine is fixed now…\p"
@@ -183,7 +191,7 @@ CeladonCity_PokemonCenter_1F_Text_Rumor21::
     .string "might come out looking like your\l"
     .string "lead POKéMON!$"
 
-CeladonCity_PokemonCenter_1F_Text_Rumor22::
+CeladonCity_PokemonCenter_1F_Text_Rumor23::
     .string "One of the POKéMON MANSION's\n"
     .string "researchers was never seen leaving\l"
     .string "after the fire.\p"
@@ -192,7 +200,7 @@ CeladonCity_PokemonCenter_1F_Text_Rumor22::
     .string "its secret lab, finds the way down\l"
     .string "to him.$"
 
-CeladonCity_PokemonCenter_1F_Text_Rumor23::
+CeladonCity_PokemonCenter_1F_Text_Rumor24::
     .string "The game designer in CELADON\n"
     .string "MANSION gets awfully nervous\l"
     .string "around bags stuffed with RARE\l"

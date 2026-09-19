@@ -28,6 +28,8 @@
 #include "field_fadetransition.h"
 #include "trade.h"
 #include "constants/daycare.h"
+#include "field_specials.h"
+#include "battle_main.h"
 #include "constants/region_map_sections.h"
 
 // Combination of RSE's Day-Care (re-used on Four Island), FRLG's Day-Care, and egg_hatch.c
@@ -1082,9 +1084,17 @@ static void _GiveEggFromDaycare(struct DayCare *daycare)
     CompactPartySlots();
     CalculatePlayerPartyCount();
     RemoveEggFromDayCare(daycare);
+    FlagSet(FLAG_RECEIVED_DAYCARE_EGG);
 }
 
+static void CreateEggWithPersonality(struct Pokemon *mon, u16 species, bool8 setHotSpringsLocation, bool8 hasFixedPersonality, u32 personality);
+
 void CreateEgg(struct Pokemon *mon, u16 species, bool8 setHotSpringsLocation)
+{
+    CreateEggWithPersonality(mon, species, setHotSpringsLocation, FALSE, 0);
+}
+
+static void CreateEggWithPersonality(struct Pokemon *mon, u16 species, bool8 setHotSpringsLocation, bool8 hasFixedPersonality, u32 personality)
 {
     u8 metLevel;
     u16 ball;
@@ -1092,7 +1102,7 @@ void CreateEgg(struct Pokemon *mon, u16 species, bool8 setHotSpringsLocation)
     u8 metLocation;
     u8 isEgg;
 
-    CreateMon(mon, species, EGG_HATCH_LEVEL, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
+    CreateMon(mon, species, EGG_HATCH_LEVEL, USE_RANDOM_IVS, hasFixedPersonality, personality, OT_ID_PLAYER_ID, 0);
     metLevel = 0;
     ball = ITEM_POKE_BALL;
     language = LANGUAGE_JAPANESE;
@@ -2152,4 +2162,70 @@ static void EggHatchPrintMessage(u8 windowId, u8 *string, u8 x, u8 y, u8 speed)
     sEggHatchData->textColor[1] = 5;
     sEggHatchData->textColor[2] = 6;
     AddTextPrinterParameterized4(windowId, FONT_NORMAL_COPY_2, x, y, 1, 1, sEggHatchData->textColor, speed, string);
+}
+
+// The egg appraiser (roadmap 2, event 8) turns up at the day cares once the
+// player has had an egg, from the day care or hatched before this existed.
+bool8 ShouldShowEggAppraiser(void)
+{
+    return FlagGet(FLAG_RECEIVED_DAYCARE_EGG) || GetGameStat(GAME_STAT_HATCHED_EGGS) != 0;
+}
+
+// Appraises the first egg in the party. Returns FALSE if there is none.
+// STR_VAR_1 gets the type of what's inside, VAR_0x8005 how close it is to
+// hatching (0 soon, 1 a while, 2 a long time) and VAR_0x8006 whether it
+// will hatch shiny.
+bool8 AppraisePartyEgg(void)
+{
+    u8 i;
+
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        struct Pokemon *mon = &gPlayerParty[i];
+        u16 species;
+        u8 cycles;
+
+        if (!GetMonData(mon, MON_DATA_IS_EGG))
+            continue;
+        species = GetMonData(mon, MON_DATA_SPECIES);
+        cycles = GetMonData(mon, MON_DATA_FRIENDSHIP);
+        StringCopy(gStringVar1, gTypeNames[gSpeciesInfo[species].types[0]]);
+        if (cycles <= 5)
+            gSpecialVar_0x8005 = 0;
+        else if (cycles <= 10)
+            gSpecialVar_0x8005 = 1;
+        else
+            gSpecialVar_0x8005 = 2;
+        gSpecialVar_0x8006 = IsMonShiny(mon);
+        return TRUE;
+    }
+    return FALSE;
+}
+
+// JOHTO baby POKéMON that live nowhere in KANTO. PICHU and TOGEPI are left
+// out because BILL's garden already gives them.
+static const u16 sSpecialEggSpecies[] = {
+    SPECIES_CLEFFA,
+    SPECIES_IGGLYBUFF,
+    SPECIES_SMOOCHUM,
+    SPECIES_ELEKID,
+    SPECIES_MAGBY,
+    SPECIES_TYROGUE,
+};
+
+// Gives the appraiser's special egg, which always hatches shiny.
+// Returns 0 if it went to the party, 1 to the PC, 2 if there was no room.
+u8 GiveEggAppraiserEgg(void)
+{
+    struct Pokemon *mon = AllocZeroed(sizeof(struct Pokemon));
+    u16 species = sSpecialEggSpecies[Random() % ARRAY_COUNT(sSpecialEggSpecies)];
+    u32 otId = GetPlayerTrainerId();
+    u16 low = Random();
+    u16 high = low ^ (otId >> 16) ^ (otId & 0xFFFF) ^ (Random() % 8);
+    u8 result;
+
+    CreateEggWithPersonality(mon, species, TRUE, TRUE, ((u32)high << 16) | low);
+    result = GiveMonToPlayer(mon);
+    Free(mon);
+    return result;
 }

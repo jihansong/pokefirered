@@ -247,10 +247,10 @@
 #define FLAG_READ_MANSION_DIARY_SEP_1               0x0E5
 #define FLAG_OPENED_MANSION_HIDDEN_STAIRS               0x0E6
 #define FLAG_GOT_MANSION_RESEARCHER_NOTES               0x0E7
-#define FLAG_0x0E8               0x0E8
-#define FLAG_0x0E9               0x0E9
-#define FLAG_0x0EA               0x0EA
-#define FLAG_0x0EB               0x0EB
+#define FLAG_RECEIVED_DAYCARE_EGG               0x0E8
+#define FLAG_GOT_EGG_APPRAISER_EGG               0x0E9
+#define FLAG_HIDE_ROUTE5_EGG_APPRAISER               0x0EA
+#define FLAG_HIDE_FOUR_ISLAND_EGG_APPRAISER               0x0EB
 #define FLAG_0x0EC               0x0EC
 #define FLAG_0x0ED               0x0ED
 #define FLAG_0x0EE               0x0EE

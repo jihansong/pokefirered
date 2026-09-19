@@ -1908,6 +1908,8 @@ static u16 GetTutorMove(u8 tutor)
         return MOVE_SURF;
     case TUTOR_MOVE_PIKACHU_FLY:
         return MOVE_FLY;
+    case TUTOR_MOVE_PIKACHU_VOLT_TACKLE:
+        return MOVE_VOLT_TACKLE;
     default:
         return sTutorMoves[tutor];
     }
@@ -1929,6 +1931,7 @@ static bool8 CanLearnTutorMove(u16 species, u8 tutor)
             return FALSE;
     case TUTOR_MOVE_PIKACHU_SURF:
     case TUTOR_MOVE_PIKACHU_FLY:
+    case TUTOR_MOVE_PIKACHU_VOLT_TACKLE:
         return (species == SPECIES_PIKACHU);
     case TUTOR_MOVE_HYDRO_CANNON:
         if (species == SPECIES_BLASTOISE)

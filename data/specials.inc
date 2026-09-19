@@ -480,6 +480,7 @@ gSpecials::
 	def_special ShouldShowEggAppraiser
 	def_special AppraisePartyEgg
 	def_special GiveEggAppraiserEgg
+	def_special CheckVoltTackleConditions
 	def_special IsPlayerOnSafariZoneExit
 	def_special SetScriptedWildMonTransformOnly
 	def_special CheckBugContestDay

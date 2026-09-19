@@ -119,3 +119,90 @@ PowerPlant_EventScript_FoughtElectrode2::
 	setflag FLAG_FOUGHT_POWER_PLANT_ELECTRODE_2
 	goto EventScript_RemoveStaticMon
 	end
+
+@ Roadmap 2, event 13: where ZAPDOS stood, electricity still crackles. A lead
+@ starter PIKACHU with maximum friendship at Lv40 or higher takes it in and
+@ learns VOLT TACKLE.
+PowerPlant_EventScript_LingeringElectricity::
+	lockall
+	goto_if_unset FLAG_FOUGHT_ZAPDOS, EventScript_ReleaseEnd
+	msgbox PowerPlant_Text_SparksCrackling
+	specialvar VAR_RESULT, CheckVoltTackleConditions
+	switch VAR_RESULT
+	case VOLT_TACKLE_READY, PowerPlant_EventScript_PikachuAbsorbs
+	case VOLT_TACKLE_LOW_FRIENDSHIP, PowerPlant_EventScript_PikachuHesitates
+	case VOLT_TACKLE_LOW_LEVEL, PowerPlant_EventScript_PikachuTooWeak
+	case VOLT_TACKLE_ALREADY_KNOWN, PowerPlant_EventScript_PikachuAlreadyKnows
+	releaseall
+	end
+
+PowerPlant_EventScript_PikachuHesitates::
+	msgbox PowerPlant_Text_PikachuHesitates
+	releaseall
+	end
+
+PowerPlant_EventScript_PikachuTooWeak::
+	msgbox PowerPlant_Text_PikachuTooWeak
+	releaseall
+	end
+
+PowerPlant_EventScript_PikachuAlreadyKnows::
+	msgbox PowerPlant_Text_PikachuAlreadyKnows
+	releaseall
+	end
+
+PowerPlant_EventScript_PikachuAbsorbs::
+	closemessage
+	playmoncry SPECIES_PIKACHU, CRY_MODE_NORMAL
+	waitmoncry
+	playse SE_THUNDER
+	fadescreen FADE_TO_WHITE
+	fadescreen FADE_FROM_WHITE
+	setvar VAR_0x8004, 0
+	setvar VAR_0x8005, 3
+	setvar VAR_0x8006, 10
+	setvar VAR_0x8007, 3
+	special ShakeScreen
+	playse SE_M_THUNDERBOLT
+	fadescreen FADE_TO_WHITE
+	fadescreen FADE_FROM_WHITE
+	waitse
+	playse SE_THUNDER
+	fadescreen FADE_TO_WHITE
+	delay 20
+	fadescreen FADE_FROM_WHITE
+	waitse
+	msgbox PowerPlant_Text_PikachuAbsorbed
+	setvar VAR_0x8005, MOVETUTOR_PIKACHU_VOLT_TACKLE
+	closemessage
+	fadescreen FADE_TO_BLACK
+	specialvar VAR_0x8007, GetStarterPikachuPartySlotForScript
+	call EventScript_ChooseMoveTutorMon
+	releaseall
+	end
+
+PowerPlant_Text_SparksCrackling::
+    .string "Faint sparks are still crackling\n"
+    .string "where ZAPDOS once stood…$"
+
+PowerPlant_Text_PikachuHesitates::
+    .string "PIKACHU looks at the sparks, then\n"
+    .string "back at {PLAYER}…\p"
+    .string "It doesn't seem ready to trust the\n"
+    .string "power yet.$"
+
+PowerPlant_Text_PikachuTooWeak::
+    .string "PIKACHU reached for the sparks,\n"
+    .string "but jumped back with a squeak!\p"
+    .string "It looks like PIKACHU needs to\n"
+    .string "grow stronger first.$"
+
+PowerPlant_Text_PikachuAlreadyKnows::
+    .string "PIKACHU's cheeks crackle happily.$"
+
+PowerPlant_Text_PikachuAbsorbed::
+    .string "PIKACHU soaked up all the leftover\n"
+    .string "electricity!\p"
+    .string "Its whole body is crackling with\n"
+    .string "power!$"
+

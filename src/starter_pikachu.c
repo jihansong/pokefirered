@@ -252,3 +252,25 @@ void SetPikachuFishingMood(void)
     if (IsStarterPikachuAliveInParty())
         SetPikachuMoodAndModifier(0x81, PIKACHU_MODIFIER_FISHING);
 }
+
+// Roadmap 2, event 13: the lead starter PIKACHU can take in the electricity
+// ZAPDOS left in the POWER PLANT and learn VOLT TACKLE.
+// Returns VOLT_TACKLE_* for the lead mon.
+u16 CheckVoltTackleConditions(void)
+{
+    struct Pokemon *mon = &gPlayerParty[0];
+    u8 i;
+
+    if (!IsStarterPikachu(mon))
+        return VOLT_TACKLE_NOT_LEAD_PIKACHU;
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == MOVE_VOLT_TACKLE)
+            return VOLT_TACKLE_ALREADY_KNOWN;
+    }
+    if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) < MAX_FRIENDSHIP)
+        return VOLT_TACKLE_LOW_FRIENDSHIP;
+    if (GetMonData(mon, MON_DATA_LEVEL, NULL) < 40)
+        return VOLT_TACKLE_LOW_LEVEL;
+    return VOLT_TACKLE_READY;
+}

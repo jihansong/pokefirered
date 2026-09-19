@@ -15,3 +15,8 @@ Scripts that imported the Hoenn maps from a local clone of pret/pokeemerald
 
 The engine keeps Emerald's tileset split for these layouts (see
 `GetNumMetatilesInPrimary` in `src/fieldmap.c`).
+
+Hand-made additions to imported maps go in `patches/<MapName>.json`
+(extra `object_events`/`bg_events`...), `patches/<MapName>.scripts.inc` and
+`patches/<MapName>.text.inc`. `import_maps.py` merges them in after every
+import, so they survive a re-import (e.g. SLATEPORT harbor's airline counter).

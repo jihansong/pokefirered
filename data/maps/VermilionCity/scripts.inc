@@ -481,3 +481,7 @@ VermilionCity_Movement_MewJumpOutRight::
 VermilionCity_Movement_MewJumpOutLeft::
 	jump_in_place_left
 	step_end
+
+VermilionCity_EventScript_AirportSign::
+	msgbox VermilionCity_Text_AirportSign, MSGBOX_SIGN
+	end

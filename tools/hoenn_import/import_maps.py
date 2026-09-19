@@ -230,6 +230,17 @@ def main():
         open(d + '/map.json', 'w').write(json.dumps(out, indent=2, ensure_ascii=False) + '\n')
         open(d + '/scripts.inc', 'w').write('\n'.join(sc_lines) + '\n')
         tx = ''.join(f'{k}::\n' + '\n'.join(v) + '\n\n' for k, v in out_texts.items() if k.startswith(nm + '_Text_H'))
+        # Hand-made additions (e.g. the airline counter) live in patches/ so a re-import keeps them
+        pt = f'{os.path.dirname(os.path.abspath(__file__))}/patches/{nm}'
+        if os.path.exists(pt + '.json'):
+            extra = json.load(open(pt + '.json'))
+            for k, v in extra.items():
+                out[k] = (out.get(k) or []) + v
+            open(d + '/map.json', 'w').write(json.dumps(out, indent=2, ensure_ascii=False) + '\n')
+        if os.path.exists(pt + '.scripts.inc'):
+            open(d + '/scripts.inc', 'a').write('\n' + open(pt + '.scripts.inc').read())
+        if os.path.exists(pt + '.text.inc'):
+            tx += open(pt + '.text.inc').read()
         open(d + '/text.inc', 'w').write(tx)
         if out['connections']: frgroups['connections_include_order'].append(nm)
         stats['maps'] += 1

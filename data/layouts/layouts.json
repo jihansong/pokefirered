@@ -8766,6 +8766,18 @@
       "secondary_tileset": "gTileset_EmGenericBuilding",
       "border_filepath": "data/layouts/HoennRoute124_DivingTreasureHuntersHouse/border.bin",
       "blockdata_filepath": "data/layouts/HoennRoute124_DivingTreasureHuntersHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_KANTO_AIRPORT",
+      "name": "KantoAirport_Layout",
+      "width": 25,
+      "height": 10,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_EmBuilding",
+      "secondary_tileset": "gTileset_EmBattleFrontier",
+      "border_filepath": "data/layouts/KantoAirport/border.bin",
+      "blockdata_filepath": "data/layouts/KantoAirport/map.bin"
     }
   ]
 }

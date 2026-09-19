@@ -1,7 +1,3 @@
-SlateportCity_Harbor_MapScripts::
-	.byte 0
-
-
 @ Airline counter for the flight back to KANTO (VERMILION AIRPORT)
 SlateportCity_Harbor_EventScript_AirlineClerk::
 	lock

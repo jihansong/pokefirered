@@ -54,3 +54,6 @@ Items: the item balls use flags from `gSaveBlock2Ptr->hoennFlags` (the range
 `FLAG_HIDDEN_ITEMS_START + id`, so they take the flags right after FR/LG's own
 hidden items; the id field in map data was widened from 8 to 14 bits (the item
 field needs only 10), which is ROM data and leaves the save untouched.
+- `import_heal_locations.py`: appends Emerald's heal locations and gives each
+  imported Pokemon Center an OnTransition script that calls `setrespawn`. Run
+  it after `import_maps.py`, which rewrites those scripts.

@@ -1697,6 +1697,11 @@ void CB2_ContinueSavedGame(void)
     StopMapMusic();
     ResetSafariZoneFlag_();
     LoadSaveblockMapHeader();
+    // Read the map's objects from the ROM again, the way entering a map does.
+    // Without this a save made inside a map keeps the object list it was saved
+    // with, so anything the map gained since (the truck on Vermilion's dock,
+    // for one) would not show up until the player left and came back.
+    LoadObjEventTemplatesFromHeader();
     LoadSaveblockObjEventScripts();
     UnfreezeObjectEvents();
     Overworld_ResetStateOnContinue();
@@ -2331,6 +2336,11 @@ void CB2_EnterFieldFromQuestLog(void)
     gGlobalFieldTintMode = QL_TINT_BACKUP_GRAYSCALE;
     ResetSafariZoneFlag_();
     LoadSaveblockMapHeader();
+    // Read the map's objects from the ROM again, the way entering a map does.
+    // Without this a save made inside a map keeps the object list it was saved
+    // with, so anything the map gained since (the truck on Vermilion's dock,
+    // for one) would not show up until the player left and came back.
+    LoadObjEventTemplatesFromHeader();
     LoadSaveblockObjEventScripts();
     UnfreezeObjectEvents();
     Overworld_ResetStateOnContinue();

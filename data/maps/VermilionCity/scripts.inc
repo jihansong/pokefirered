@@ -353,27 +353,19 @@ VermilionCity_EventScript_EndReceiveSquirtle::
 	end
 
 VermilionCity_EventScript_TruckPushedSouth::
-	setobjectxyperm LOCALID_VERMILION_TRUCK, 43, 28
-	setobjectxyperm LOCALID_VERMILION_TRUCK_BACK, 44, 28
-	setobjectxyperm LOCALID_VERMILION_TRUCK_LEFT, 42, 28
+	setobjectxyperm LOCALID_VERMILION_TRUCK, 27, 30
 	return
 
 VermilionCity_EventScript_TruckPushedNorth::
-	setobjectxyperm LOCALID_VERMILION_TRUCK, 43, 26
-	setobjectxyperm LOCALID_VERMILION_TRUCK_BACK, 44, 26
-	setobjectxyperm LOCALID_VERMILION_TRUCK_LEFT, 42, 26
+	setobjectxyperm LOCALID_VERMILION_TRUCK, 27, 28
 	return
 
 VermilionCity_EventScript_TruckPushedWest::
-	setobjectxyperm LOCALID_VERMILION_TRUCK, 42, 27
-	setobjectxyperm LOCALID_VERMILION_TRUCK_BACK, 43, 27
-	setobjectxyperm LOCALID_VERMILION_TRUCK_LEFT, 41, 27
+	setobjectxyperm LOCALID_VERMILION_TRUCK, 26, 29
 	return
 
 VermilionCity_EventScript_TruckPushedEast::
-	setobjectxyperm LOCALID_VERMILION_TRUCK, 44, 27
-	setobjectxyperm LOCALID_VERMILION_TRUCK_BACK, 45, 27
-	setobjectxyperm LOCALID_VERMILION_TRUCK_LEFT, 43, 27
+	setobjectxyperm LOCALID_VERMILION_TRUCK, 28, 29
 	return
 
 @ Pokémon Yellow's truck, parked on the quay east of the harbor, with Mew hiding under it.
@@ -388,8 +380,8 @@ VermilionCity_EventScript_Truck::
 	goto_if_eq VAR_RESULT, PARTY_SIZE, VermilionCity_EventScript_TruckWontBudge
 	setfieldeffectargument 0, VAR_RESULT
 	setvar VAR_0x8004, LOCALID_VERMILION_TRUCK
-	setvar VAR_0x8005, LOCALID_VERMILION_TRUCK_BACK
-	setvar VAR_0x8009, LOCALID_VERMILION_TRUCK_LEFT
+	setvar VAR_0x8005, 0
+	setvar VAR_0x8009, 0
 	specialvar VAR_RESULT, CanPushTruck
 	goto_if_eq VAR_RESULT, FALSE, VermilionCity_EventScript_TruckWontBudge
 	msgbox VermilionCity_Text_TruckLooksHeavy, MSGBOX_YESNO

@@ -6,7 +6,7 @@ Story scripts, trainers, items and Emerald-only sprites/music come later."""
 import json, os, re, shutil, sys, collections
 EM = '/root/src/pokeemerald'
 FR = '/workspaces/pokefirered'
-sys.path.insert(0, '/root/qa-tools/hoenn')
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import import_tilesets
 
 EXCLUDE = re.compile(r'^(SecretBase_|BattleColosseum_|TradeCenter$|RecordCorner$|UnionRoom$|BirthIsland_|NavelRock_|'

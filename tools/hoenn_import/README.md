@@ -57,3 +57,10 @@ field needs only 10), which is ROM data and leaves the save untouched.
 - `import_heal_locations.py`: appends Emerald's heal locations and gives each
   imported Pokemon Center an OnTransition script that calls `setrespawn`. Run
   it after `import_maps.py`, which rewrites those scripts.
+
+Metatile behaviors: Hoenn's bridges, Pacifidlog's logs and Fortree's walkways
+carry their collision and elevation across, so their behaviors become plain
+ground and the player walks over them as in Emerald. Emerald's bike terrain
+(muddy and bumpy slopes, the Mauville rails), the SKY PILLAR's cracked floor
+and the secret base spots also become plain ground: FR/LG has neither the
+Mach and Acro bikes nor secret bases. `import_maps.py` prints what is left.

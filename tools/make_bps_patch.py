@@ -16,6 +16,15 @@ patch is decoded again and checked against MODIFIED before the script exits.
 Keep your ROM as baserom_leafgreen.gba. `make clean` deletes every poke*.gba
 in the repository, so a ROM kept as pokeleafgreen.gba is thrown away with the
 build output.
+
+If it ever goes missing, the base ROM can be rebuilt from the decompilation
+itself, since pret/pokefirered reproduces the retail cartridge byte for byte:
+
+    git worktree add /tmp/base upstream/master
+    ln -s "$PWD/tools/agbcc" /tmp/base/tools/agbcc
+    make -C /tmp/base leafgreen -j"$(nproc)"
+    (cd /tmp/base && sha1sum -c leafgreen.sha1)     # pokeleafgreen.gba: OK
+    cp /tmp/base/pokeleafgreen.gba baserom_leafgreen.gba
 """
 
 import hashlib

@@ -61,3 +61,21 @@ make leafgreen -j$(nproc)
 - 스토리 이벤트(아쿠아·마그마단, 체육관 배지, 전설 포켓몬)는 아직 없다. 맵의 NPC는
   원작의 첫 대사만 말한다.
 - 비밀기지, 컨테스트, 배틀 프런티어 기능, 나무열매 재배는 이식하지 않았다.
+
+## 릴리스 패치 만들기
+
+`pokemonthyl.bps`는 정품 LeafGreen(영문 v1.0)에서 이 빌드로 가는 차이분이다.
+기준 ROM은 `baserom_leafgreen.gba`로 둔다 — `make clean`이 `poke*.gba`를 모두
+지우므로 `pokeleafgreen.gba`라는 이름으로 두면 빌드 산출물과 함께 사라진다.
+
+기준 ROM이 없으면 디컴파일 자체로 다시 만들 수 있다. pret/pokefirered는 정품
+카트리지를 바이트 단위로 재현하기 때문이다.
+
+```
+git worktree add /tmp/base upstream/master
+ln -s "$PWD/tools/agbcc" /tmp/base/tools/agbcc
+make -C /tmp/base leafgreen -j"$(nproc)"
+(cd /tmp/base && sha1sum -c leafgreen.sha1)     # pokeleafgreen.gba: OK
+cp /tmp/base/pokeleafgreen.gba baserom_leafgreen.gba
+python3 tools/make_bps_patch.py
+```

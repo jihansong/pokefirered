@@ -1,0 +1,7 @@
+BattleFrontier_BattlePikeThreePathRoom_MapScripts::
+	.byte 0
+
+BattleFrontier_BattlePikeThreePathRoom_EventScript_H0::
+	msgbox BattleFrontier_BattlePikeThreePathRoom_Text_H0, MSGBOX_NPC
+	end
+

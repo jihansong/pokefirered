@@ -1,0 +1,170 @@
+{
+  "id": "MAP_VICTORY_ROAD_B2F",
+  "name": "VictoryRoad_B2F",
+  "layout": "LAYOUT_HOENN_VICTORY_ROAD_B2F",
+  "music": "MUS_VICTORY_ROAD",
+  "region_map_section": "MAPSEC_VICTORY_ROAD",
+  "requires_flash": true,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
+      "x": 15,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "VictoryRoad_B2F_EventScript_H0",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
+      "x": 43,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "VictoryRoad_B2F_EventScript_H1",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "x": 2,
+      "y": 17,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "VictoryRoad_B2F_EventScript_H2",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "x": 35,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "VictoryRoad_B2F_EventScript_H3",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 13,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "VictoryRoad_B2F_EventScript_HItem117",
+      "flag": "FLAG_HOENN_ITEM_117"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "x": 25,
+      "y": 18,
+      "elevation": 4,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "VictoryRoad_B2F_EventScript_H4",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
+      "x": 25,
+      "y": 21,
+      "elevation": 4,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "VictoryRoad_B2F_EventScript_H5",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 30,
+      "y": 25,
+      "elevation": 3,
+      "dest_map": "MAP_VICTORY_ROAD_B1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 43,
+      "y": 2,
+      "elevation": 3,
+      "dest_map": "MAP_VICTORY_ROAD_B1F",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 19,
+      "y": 12,
+      "elevation": 3,
+      "dest_map": "MAP_VICTORY_ROAD_B1F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 5,
+      "y": 26,
+      "elevation": 3,
+      "dest_map": "MAP_VICTORY_ROAD_B1F",
+      "dest_warp_id": "6"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 28,
+      "y": 5,
+      "elevation": 3,
+      "item": "ITEM_ELIXIR",
+      "flag": "FLAG_HOENN_HIDDEN_94",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 37,
+      "y": 1,
+      "elevation": 3,
+      "item": "ITEM_MAX_REPEL",
+      "flag": "FLAG_HOENN_HIDDEN_95",
+      "quantity": 1,
+      "underfoot": false
+    }
+  ]
+}

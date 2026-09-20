@@ -1,0 +1,37 @@
+VictoryRoad_B2F_MapScripts::
+	.byte 0
+
+VictoryRoad_B2F_EventScript_H0::
+	trainerbattle_single TRAINER_HOENN_VITO, VictoryRoad_B2F_Text_H0_0, VictoryRoad_B2F_Text_H0_1
+	msgbox VictoryRoad_B2F_Text_H0_2, MSGBOX_AUTOCLOSE
+	end
+
+VictoryRoad_B2F_EventScript_H1::
+	trainerbattle_single TRAINER_HOENN_OWEN, VictoryRoad_B2F_Text_H1_0, VictoryRoad_B2F_Text_H1_1
+	msgbox VictoryRoad_B2F_Text_H1_2, MSGBOX_AUTOCLOSE
+	end
+
+VictoryRoad_B2F_EventScript_H2::
+	trainerbattle_single TRAINER_HOENN_CAROLINE, VictoryRoad_B2F_Text_H2_0, VictoryRoad_B2F_Text_H2_1
+	msgbox VictoryRoad_B2F_Text_H2_2, MSGBOX_AUTOCLOSE
+	end
+
+VictoryRoad_B2F_EventScript_H3::
+	trainerbattle_single TRAINER_HOENN_JULIE, VictoryRoad_B2F_Text_H3_0, VictoryRoad_B2F_Text_H3_1
+	msgbox VictoryRoad_B2F_Text_H3_2, MSGBOX_AUTOCLOSE
+	end
+
+VictoryRoad_B2F_EventScript_HItem117::
+	finditem ITEM_FULL_HEAL
+	end
+
+VictoryRoad_B2F_EventScript_H4::
+	trainerbattle_single TRAINER_HOENN_DIANNE, VictoryRoad_B2F_Text_H4_0, VictoryRoad_B2F_Text_H4_1
+	msgbox VictoryRoad_B2F_Text_H4_2, MSGBOX_AUTOCLOSE
+	end
+
+VictoryRoad_B2F_EventScript_H5::
+	trainerbattle_single TRAINER_HOENN_FELIX, VictoryRoad_B2F_Text_H5_0, VictoryRoad_B2F_Text_H5_1
+	msgbox VictoryRoad_B2F_Text_H5_2, MSGBOX_AUTOCLOSE
+	end
+

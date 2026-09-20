@@ -1,0 +1,29 @@
+{
+  "id": "MAP_TERRA_CAVE_END",
+  "name": "TerraCave_End",
+  "layout": "LAYOUT_HOENN_TERRA_CAVE_END",
+  "music": "MUS_PETALBURG_WOODS",
+  "region_map_section": "MAPSEC_ROUTE_114",
+  "requires_flash": false,
+  "weather": "WEATHER_FOG_HORIZONTAL",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 5,
+      "y": 4,
+      "elevation": 3,
+      "dest_map": "MAP_TERRA_CAVE_ENTRANCE",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

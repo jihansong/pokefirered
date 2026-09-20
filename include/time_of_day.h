@@ -4,6 +4,7 @@
 #include "constants/time_of_day.h"
 
 void TimeOfDay_Init(void);
+void TimeOfDay_InvalidateCache(void);
 bool8 TimeOfDay_UsesRtc(void);
 void GetGameClock(struct Time *time);
 u8 GetTimeOfDay(void);

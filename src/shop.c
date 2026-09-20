@@ -739,10 +739,10 @@ static void BuyMenuDrawMapBg(void)
             metatile = MapGridGetMetatileIdAt(x + i, y + j);
             metatileLayerType = MapGridGetMetatileLayerTypeAt(x + i, y + j);
 
-            if (metatile < NUM_METATILES_IN_PRIMARY)
+            if (metatile < GetNumMetatilesInPrimary(mapLayout))
                 BuyMenuDrawMapMetatile(i, j, mapLayout->primaryTileset->metatiles + metatile * NUM_TILES_PER_METATILE, metatileLayerType);
             else
-                BuyMenuDrawMapMetatile(i, j, mapLayout->secondaryTileset->metatiles + ((metatile - NUM_METATILES_IN_PRIMARY) * NUM_TILES_PER_METATILE), metatileLayerType);
+                BuyMenuDrawMapMetatile(i, j, mapLayout->secondaryTileset->metatiles + ((metatile - GetNumMetatilesInPrimary(mapLayout)) * NUM_TILES_PER_METATILE), metatileLayerType);
         }
     }
 }

@@ -93,9 +93,8 @@
 	.if \kind != BG_EVENT_HIDDEN_ITEM
 		.4byte \arg6
 	.else
-		.2byte \arg6
-		.byte \arg7
-		.byte \arg8
+		@ item (10 bits) | flag id (14) | quantity (7) | underfoot (1)
+		.4byte (\arg6) | ((\arg7) << 10) | (((\arg8) & 0x7F) << 24) | ((((\arg8) >> 7) & 1) << 31)
 	.endif
 	inc _num_signs
 	.endm
@@ -107,7 +106,7 @@
 
 	@ Defines a background hidden item event for map data
 	.macro bg_hidden_item_event x:req, y:req, elevation:req, item:req, flag:req, quantity:req, underfoot:req
-	bg_event \x, \y, \elevation, BG_EVENT_HIDDEN_ITEM, \item, ((\flag) - FLAG_HIDDEN_ITEMS_START), \quantity | (\underfoot << 7)
+	bg_event \x, \y, \elevation, BG_EVENT_HIDDEN_ITEM, \item, ((\flag) - FLAG_HIDDEN_ITEMS_START), (\quantity) | ((\underfoot) << 7)
 	.endm
 
 	@ Defines a background secret base event for map data.

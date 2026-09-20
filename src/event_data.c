@@ -259,6 +259,8 @@ u8 *GetFlagAddr(u16 idx)
     u8 *ptr;
     if (idx == 0)
         return NULL;
+    if (idx >= HOENN_FLAGS_START && idx <= HOENN_FLAGS_END)
+        return &gSaveBlock2Ptr->hoennFlags[(idx - HOENN_FLAGS_START) / 8];
     if (idx < SPECIAL_FLAGS_START)
     {
         switch (gQuestLogPlaybackState)

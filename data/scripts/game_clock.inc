@@ -76,3 +76,12 @@ EventScript_UsePokeWatch::
 Text_PokeWatchShows::
     .string "{PLAYER} checked the POKéWATCH.\p"
     .string "It's {STR_VAR_1}.$"
+
+@ Boards the plane: VAR_0x8004 is the destination (AIRPLANE_DEST_*)
+EventScript_TakeAirplane::
+	goto_if_questlog EventScript_ReleaseEnd
+	special QuestLog_CutRecording
+	fadescreen FADE_TO_BLACK
+	special DoAirplaneFlightScene
+	waitstate
+	end

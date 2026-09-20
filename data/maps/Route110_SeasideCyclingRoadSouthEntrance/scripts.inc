@@ -1,0 +1,7 @@
+Route110_SeasideCyclingRoadSouthEntrance_MapScripts::
+	.byte 0
+
+Route110_SeasideCyclingRoadSouthEntrance_EventScript_H0::
+	msgbox Route110_SeasideCyclingRoadSouthEntrance_Text_H0, MSGBOX_NPC
+	end
+

@@ -1,0 +1,22 @@
+Route110_TrickHousePuzzle4_MapScripts::
+	.byte 0
+
+Route110_TrickHousePuzzle4_EventScript_H0::
+	trainerbattle_single TRAINER_HOENN_CORA, Route110_TrickHousePuzzle4_Text_H0_0, Route110_TrickHousePuzzle4_Text_H0_1
+	msgbox Route110_TrickHousePuzzle4_Text_H0_2, MSGBOX_AUTOCLOSE
+	end
+
+Route110_TrickHousePuzzle4_EventScript_H1::
+	trainerbattle_single TRAINER_HOENN_PAULA, Route110_TrickHousePuzzle4_Text_H1_0, Route110_TrickHousePuzzle4_Text_H1_1
+	msgbox Route110_TrickHousePuzzle4_Text_H1_2, MSGBOX_AUTOCLOSE
+	end
+
+Route110_TrickHousePuzzle4_EventScript_H2::
+	trainerbattle_single TRAINER_HOENN_YUJI, Route110_TrickHousePuzzle4_Text_H2_0, Route110_TrickHousePuzzle4_Text_H2_1
+	msgbox Route110_TrickHousePuzzle4_Text_H2_2, MSGBOX_AUTOCLOSE
+	end
+
+Route110_TrickHousePuzzle4_EventScript_HItem158::
+	finditem ITEM_MECH_MAIL
+	end
+

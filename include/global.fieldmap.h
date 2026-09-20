@@ -60,8 +60,11 @@ enum
 };
 
 // Masks/shifts to read the data above from the u32 hiddenItem, calculated from size.
-#define HIDDEN_ITEM_ITEM_BITS      16
-#define HIDDEN_ITEM_FLAG_BITS       8
+// The item needs 10 bits (FR/LG has fewer than 1024 items), which leaves 14 for
+// the flag id: the 8 bits it used to have only reached the 256 hidden items
+// FR/LG itself places, and Hoenn brings 110 more.
+#define HIDDEN_ITEM_ITEM_BITS      10
+#define HIDDEN_ITEM_FLAG_BITS      14
 #define HIDDEN_ITEM_QUANTITY_BITS   7
 #define HIDDEN_ITEM_UNDERFOOT_BITS  1
 
@@ -81,6 +84,7 @@ struct Tileset
 {
     /*0x00*/ bool8 isCompressed;
     /*0x01*/ bool8 isSecondary;
+    /*0x02*/ bool8 isEmerald; // imported from R/S/E: 512 primary tiles/metatiles and 6 primary palettes
     /*0x04*/ const u32 *tiles;
     /*0x08*/ const u16 (*palettes)[16];
     /*0x0c*/ const u16 *metatiles;

@@ -31,8 +31,24 @@
 
 static bool8 sUseRtc;
 
+// Reading the clock costs a division, or a serial read from the RTC on a cart
+// that has one, and callers ask for it often (the wild encounter tables look it
+// up per lookup). The answer only changes every few seconds of play, so it is
+// cached and refreshed at most once a second.
+#define CLOCK_CACHE_FRAMES 60
+
+static struct Time sCachedTime;
+static u32 sCacheStamp;
+static bool8 sCacheValid;
+
+void TimeOfDay_InvalidateCache(void)
+{
+    sCacheValid = FALSE;
+}
+
 void TimeOfDay_Init(void)
 {
+    sCacheValid = FALSE;
     RtcInit();
     sUseRtc = !(RtcGetErrorStatus() & (RTC_INIT_ERROR | RTC_ERR_FLAG_MASK));
 }
@@ -55,7 +71,7 @@ static s32 GetVirtualClockMinutes(void)
     return minutes;
 }
 
-void GetGameClock(struct Time *time)
+static void ReadGameClock(struct Time *time)
 {
     if (sUseRtc)
     {
@@ -73,6 +89,19 @@ void GetGameClock(struct Time *time)
         time->minutes = minutes % 60;
         time->seconds = 0;
     }
+}
+
+void GetGameClock(struct Time *time)
+{
+    u32 now = gMain.vblankCounter2;
+
+    if (!sCacheValid || now - sCacheStamp >= CLOCK_CACHE_FRAMES)
+    {
+        ReadGameClock(&sCachedTime);
+        sCacheStamp = now;
+        sCacheValid = TRUE;
+    }
+    *time = sCachedTime;
 }
 
 u8 GetTimeOfDay(void)
@@ -112,6 +141,7 @@ void SetGameClock(u8 dayOfWeek, u8 hour, u8 minute)
     struct Time now;
     s32 days;
 
+    TimeOfDay_InvalidateCache();
     GetGameClock(&now);
     days = now.days - now.days % DAYS_PER_WEEK + dayOfWeek;
     if (days < now.days)
@@ -136,6 +166,7 @@ void SetGameClock(u8 dayOfWeek, u8 hour, u8 minute)
         offset->minutes = target % 60;
     }
     FlagSet(FLAG_GAME_CLOCK_SET);
+    TimeOfDay_InvalidateCache();
 }
 
 // ---------------------------------------------------------------------------

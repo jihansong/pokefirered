@@ -1,0 +1,19 @@
+LilycoveCity_PokemonTrainerFanClub_MapScripts::
+	.byte 0
+
+LilycoveCity_PokemonTrainerFanClub_EventScript_H0::
+	msgbox LilycoveCity_PokemonTrainerFanClub_Text_H0, MSGBOX_NPC
+	end
+
+LilycoveCity_PokemonTrainerFanClub_EventScript_H1::
+	msgbox LilycoveCity_PokemonTrainerFanClub_Text_H1, MSGBOX_NPC
+	end
+
+LilycoveCity_PokemonTrainerFanClub_EventScript_H2::
+	msgbox LilycoveCity_PokemonTrainerFanClub_Text_H2, MSGBOX_NPC
+	end
+
+LilycoveCity_PokemonTrainerFanClub_EventScript_H3::
+	msgbox LilycoveCity_PokemonTrainerFanClub_Text_H3, MSGBOX_NPC
+	end
+

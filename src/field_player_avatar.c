@@ -1586,34 +1586,52 @@ static bool8 DoBoulderFinish(struct Task *task, struct ObjectEvent *playerObject
     return FALSE;
 }
 
-// Strength push of a two-tile object, e.g. the truck on the Vermilion City quay.
-// VAR_0x8004 and VAR_0x8005 are the local ids of its two halves; the push goes
-// the way the player faces, using the same moves, dust and sound as a boulder.
+// Strength push of a multi-tile object, e.g. the truck on the Vermilion City quay.
+// VAR_0x8004, VAR_0x8005 and VAR_0x8009 are the local ids of its parts (0x8009 may
+// be 0 for a two-tile object); the push goes the way the player faces, using the
+// same moves, dust and sound as a boulder.
+#define TRUCK_PARTS_MAX 3
+
 #define tState    data[0]
 #define tDir      data[1]
-#define tObjA     data[2]
-#define tObjB     data[3]
+#define tPart0    data[2]
 
-static bool8 GetTruckHalves(u8 *objA, u8 *objB)
+static u8 GetTruckParts(u8 *parts)
 {
-    return !TryGetObjectEventIdByLocalIdAndMap(gSpecialVar_0x8004, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, objA)
-        && !TryGetObjectEventIdByLocalIdAndMap(gSpecialVar_0x8005, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, objB);
+    u16 localIds[TRUCK_PARTS_MAX] = {gSpecialVar_0x8004, gSpecialVar_0x8005, gSpecialVar_0x8009};
+    u8 count = 0;
+    u8 i;
+
+    for (i = 0; i < TRUCK_PARTS_MAX; i++)
+    {
+        if (localIds[i] == 0)
+            continue;
+        if (TryGetObjectEventIdByLocalIdAndMap(localIds[i], gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, &parts[count]))
+            return 0;
+        count++;
+    }
+    return count;
 }
 
-static bool8 CanTruckHalfMoveTo(struct ObjectEvent *half, struct ObjectEvent *other, u8 dir)
+static bool8 CanTruckPartMoveTo(struct ObjectEvent *part, u8 *parts, u8 count, u8 dir)
 {
-    s16 x = half->currentCoords.x;
-    s16 y = half->currentCoords.y;
+    s16 x = part->currentCoords.x;
+    s16 y = part->currentCoords.y;
     u8 objectEventId;
     u8 elevation;
+    u8 i;
 
     MoveCoords(dir, &x, &y);
-    if (x == other->currentCoords.x && y == other->currentCoords.y)
-        return TRUE;
+    for (i = 0; i < count; i++)
+    {
+        // another part of the truck vacates that tile in the same push
+        if (gObjectEvents[parts[i]].currentCoords.x == x && gObjectEvents[parts[i]].currentCoords.y == y)
+            return TRUE;
+    }
     if (MapGridGetCollisionAt(x, y) || MetatileBehavior_IsSurfable(MapGridGetMetatileBehaviorAt(x, y)))
         return FALSE;
     elevation = MapGridGetElevationAt(x, y);
-    if (half->currentElevation != 0 && elevation != 0 && elevation != 15 && elevation != half->currentElevation)
+    if (part->currentElevation != 0 && elevation != 0 && elevation != 15 && elevation != part->currentElevation)
         return FALSE;
     objectEventId = GetObjectEventIdByXY(x, y);
     if (objectEventId != OBJECT_EVENTS_COUNT && !IsFollowerPikachuObject(&gObjectEvents[objectEventId]))
@@ -1625,15 +1643,19 @@ static bool8 CanTruckHalfMoveTo(struct ObjectEvent *half, struct ObjectEvent *ot
 // Also puts the tile in front of the player, which the push frees, in VAR_0x8006/VAR_0x8007.
 bool8 CanPushTruck(void)
 {
-    u8 objA, objB, dir;
+    u8 parts[TRUCK_PARTS_MAX];
+    u8 count, dir, i;
     s16 x, y;
 
-    if (!GetTruckHalves(&objA, &objB) || !TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_ON_FOOT))
+    count = GetTruckParts(parts);
+    if (count == 0 || !TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_ON_FOOT))
         return FALSE;
     dir = GetPlayerFacingDirection();
-    if (!CanTruckHalfMoveTo(&gObjectEvents[objA], &gObjectEvents[objB], dir)
-     || !CanTruckHalfMoveTo(&gObjectEvents[objB], &gObjectEvents[objA], dir))
-        return FALSE;
+    for (i = 0; i < count; i++)
+    {
+        if (!CanTruckPartMoveTo(&gObjectEvents[parts[i]], parts, count, dir))
+            return FALSE;
+    }
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
     gSpecialVar_0x8006 = x - MAP_OFFSET;
     gSpecialVar_0x8007 = y - MAP_OFFSET;
@@ -1644,41 +1666,51 @@ static void Task_PushTruck(u8 taskId)
 {
     struct Task *task = &gTasks[taskId];
     struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
-    struct ObjectEvent *halfA = &gObjectEvents[task->tObjA];
-    struct ObjectEvent *halfB = &gObjectEvents[task->tObjB];
-    struct ObjectEvent *half;
+    struct ObjectEvent *part;
+    u8 count = task->data[5];
     u8 i;
+    bool8 ready;
 
     switch (task->tState)
     {
     case 0:
         ObjectEventClearHeldMovementIfFinished(player);
-        ObjectEventClearHeldMovementIfFinished(halfA);
-        ObjectEventClearHeldMovementIfFinished(halfB);
-        if (ObjectEventIsMovementOverridden(player) || ObjectEventIsMovementOverridden(halfA) || ObjectEventIsMovementOverridden(halfB))
+        ready = !ObjectEventIsMovementOverridden(player);
+        for (i = 0; i < count; i++)
+        {
+            part = &gObjectEvents[(u8)task->data[2 + i]];
+            ObjectEventClearHeldMovementIfFinished(part);
+            if (ObjectEventIsMovementOverridden(part))
+                ready = FALSE;
+        }
+        if (!ready)
             break;
         ObjectEventSetHeldMovement(player, GetWalkInPlaceNormalMovementAction(task->tDir));
-        for (i = 0; i < 2; i++)
+        for (i = 0; i < count; i++)
         {
-            half = i == 0 ? halfA : halfB;
-            ObjectEventSetHeldMovement(half, GetWalkSlowerMovementAction(task->tDir));
-            gFieldEffectArguments[0] = half->currentCoords.x;
-            gFieldEffectArguments[1] = half->currentCoords.y;
-            gFieldEffectArguments[2] = half->previousElevation;
-            gFieldEffectArguments[3] = gSprites[half->spriteId].oam.priority;
+            part = &gObjectEvents[(u8)task->data[2 + i]];
+            ObjectEventSetHeldMovement(part, GetWalkSlowerMovementAction(task->tDir));
+            gFieldEffectArguments[0] = part->currentCoords.x;
+            gFieldEffectArguments[1] = part->currentCoords.y;
+            gFieldEffectArguments[2] = part->previousElevation;
+            gFieldEffectArguments[3] = gSprites[part->spriteId].oam.priority;
             FieldEffectStart(FLDEFF_DUST);
         }
         PlaySE(SE_M_STRENGTH);
         task->tState++;
         break;
     case 1:
-        if (ObjectEventCheckHeldMovementStatus(player)
-         && ObjectEventCheckHeldMovementStatus(halfA)
-         && ObjectEventCheckHeldMovementStatus(halfB))
+        ready = ObjectEventCheckHeldMovementStatus(player);
+        for (i = 0; i < count; i++)
+        {
+            if (!ObjectEventCheckHeldMovementStatus(&gObjectEvents[(u8)task->data[2 + i]]))
+                ready = FALSE;
+        }
+        if (ready)
         {
             ObjectEventClearHeldMovementIfFinished(player);
-            ObjectEventClearHeldMovementIfFinished(halfA);
-            ObjectEventClearHeldMovementIfFinished(halfB);
+            for (i = 0; i < count; i++)
+                ObjectEventClearHeldMovementIfFinished(&gObjectEvents[(u8)task->data[2 + i]]);
             DestroyTask(taskId);
             ScriptContext_Enable();
         }
@@ -1689,24 +1721,25 @@ static void Task_PushTruck(u8 taskId)
 // Use with waitstate after CanPushTruck.
 void PushTruck(void)
 {
-    u8 objA, objB;
-    u8 taskId;
+    u8 parts[TRUCK_PARTS_MAX];
+    u8 count, taskId, i;
 
-    if (!GetTruckHalves(&objA, &objB))
+    count = GetTruckParts(parts);
+    if (count == 0)
     {
         ScriptContext_Enable();
         return;
     }
     taskId = CreateTask(Task_PushTruck, 0xFF);
     gTasks[taskId].tDir = GetPlayerFacingDirection();
-    gTasks[taskId].tObjA = objA;
-    gTasks[taskId].tObjB = objB;
+    for (i = 0; i < count; i++)
+        gTasks[taskId].data[2 + i] = parts[i];
+    gTasks[taskId].data[5] = count;
 }
 
 #undef tState
 #undef tDir
-#undef tObjA
-#undef tObjB
+#undef tPart0
 
 static bool8 (*const sPlayerAvatarSecretBaseMatJump[])(struct Task *, struct ObjectEvent *) = {
     PlayerAvatar_DoSecretBaseMatJump

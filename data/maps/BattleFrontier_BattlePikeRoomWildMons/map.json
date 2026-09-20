@@ -1,0 +1,21 @@
+{
+  "id": "MAP_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS",
+  "name": "BattleFrontier_BattlePikeRoomWildMons",
+  "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS",
+  "music": "MUS_B_PIKE",
+  "region_map_section": "MAPSEC_BATTLE_FRONTIER",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

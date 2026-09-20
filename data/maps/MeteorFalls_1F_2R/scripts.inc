@@ -1,0 +1,18 @@
+MeteorFalls_1F_2R_MapScripts::
+	.byte 0
+
+MeteorFalls_1F_2R_EventScript_H0::
+	trainerbattle_single TRAINER_HOENN_NICOLAS_1, MeteorFalls_1F_2R_Text_H0_0, MeteorFalls_1F_2R_Text_H0_1
+	msgbox MeteorFalls_1F_2R_Text_H0_2, MSGBOX_AUTOCLOSE
+	end
+
+MeteorFalls_1F_2R_EventScript_H1::
+	trainerbattle_double TRAINER_HOENN_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_H1_0, MeteorFalls_1F_2R_Text_H1_1, MeteorFalls_1F_2R_Text_H1_1
+	msgbox MeteorFalls_1F_2R_Text_H1_2, MSGBOX_AUTOCLOSE
+	end
+
+MeteorFalls_1F_2R_EventScript_H2::
+	trainerbattle_double TRAINER_HOENN_JOHN_AND_JAY_1, MeteorFalls_1F_2R_Text_H2_0, MeteorFalls_1F_2R_Text_H2_1, MeteorFalls_1F_2R_Text_H2_1
+	msgbox MeteorFalls_1F_2R_Text_H2_2, MSGBOX_AUTOCLOSE
+	end
+

@@ -73,7 +73,17 @@ static const struct WildPokemonHeader *GetTimeOfDayWildMonHeaders(void)
     }
     return gWildMonHeaders;
 }
+// Looking the table up per access meant recomputing the time of day for every
+// header the encounter check walked past, which cost several frames per step.
+// Callers take the pointer once, and the map's header id is remembered until
+// the player changes map.
 #define gWildMonHeaders (GetTimeOfDayWildMonHeaders())
+
+static u16 sCachedHeaderId;   // BSS: this file gets no .data section
+static u8 sCachedHeaderMapGroup;
+static u8 sCachedHeaderMapNum;
+static u8 sCachedHeaderKey;
+static bool8 sCachedHeaderValid;
 
 static const u8 sUnownLetterSlots[][LAND_WILD_COUNT] = {
   //  A   A   A   A   A   A   A   A   A   A   A   ?
@@ -202,18 +212,19 @@ static u8 ChooseWildMonLevel(const struct WildPokemon * info)
     return lo + res;
 }
 
-static u16 GetCurrentMapWildMonHeaderId(void)
+static u16 ScanCurrentMapWildMonHeaderId(void)
 {
+    const struct WildPokemonHeader *headers = GetTimeOfDayWildMonHeaders();
     u16 i;
 
     for (i = 0; ; i++)
     {
-        const struct WildPokemonHeader * wildHeader = &gWildMonHeaders[i];
+        const struct WildPokemonHeader * wildHeader = &headers[i];
         if (wildHeader->mapGroup == MAP_GROUP(MAP_UNDEFINED))
             break;
 
-        if (gWildMonHeaders[i].mapGroup == gSaveBlock1Ptr->location.mapGroup &&
-            gWildMonHeaders[i].mapNum == gSaveBlock1Ptr->location.mapNum)
+        if (wildHeader->mapGroup == gSaveBlock1Ptr->location.mapGroup &&
+            wildHeader->mapNum == gSaveBlock1Ptr->location.mapNum)
         {
             if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SIX_ISLAND_ALTERING_CAVE) &&
                 gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SIX_ISLAND_ALTERING_CAVE))
@@ -228,6 +239,32 @@ static u16 GetCurrentMapWildMonHeaderId(void)
     }
 
     return HEADER_NONE;
+}
+
+// The header id only changes when the player changes map, so the scan runs
+// once per map instead of once per step.
+static u16 GetCurrentMapWildMonHeaderId(void)
+{
+    // Besides the map, the id depends on the ALTERING CAVE's set of the day and
+    // on whether the TANOBY RUINS are open, so both go into the cache key.
+    u8 key = FlagGet(FLAG_SYS_UNLOCKED_TANOBY_RUINS);
+
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SIX_ISLAND_ALTERING_CAVE)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SIX_ISLAND_ALTERING_CAVE))
+        key |= GetAlteringCaveWildSet() << 1;
+
+    if (!sCachedHeaderValid
+     || sCachedHeaderMapGroup != gSaveBlock1Ptr->location.mapGroup
+     || sCachedHeaderMapNum != gSaveBlock1Ptr->location.mapNum
+     || sCachedHeaderKey != key)
+    {
+        sCachedHeaderId = ScanCurrentMapWildMonHeaderId();
+        sCachedHeaderMapGroup = gSaveBlock1Ptr->location.mapGroup;
+        sCachedHeaderMapNum = gSaveBlock1Ptr->location.mapNum;
+        sCachedHeaderKey = key;
+        sCachedHeaderValid = TRUE;
+    }
+    return sCachedHeaderId;
 }
 
 static bool8 UnlockedTanobyOrAreNotInTanoby(void)

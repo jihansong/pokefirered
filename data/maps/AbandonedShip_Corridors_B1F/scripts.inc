@@ -1,0 +1,16 @@
+AbandonedShip_Corridors_B1F_MapScripts::
+	.byte 0
+
+AbandonedShip_Corridors_B1F_EventScript_H0::
+	msgbox AbandonedShip_Corridors_B1F_Text_H0, MSGBOX_NPC
+	end
+
+AbandonedShip_Corridors_B1F_EventScript_H1::
+	trainerbattle_single TRAINER_HOENN_DUNCAN, AbandonedShip_Corridors_B1F_Text_H1_0, AbandonedShip_Corridors_B1F_Text_H1_1
+	msgbox AbandonedShip_Corridors_B1F_Text_H1_2, MSGBOX_AUTOCLOSE
+	end
+
+AbandonedShip_Corridors_B1F_EventScript_H2::
+	msgbox AbandonedShip_Corridors_B1F_Text_H2, MSGBOX_SIGN
+	end
+

@@ -1,0 +1,27 @@
+AbandonedShip_Rooms2_1F_MapScripts::
+	.byte 0
+
+AbandonedShip_Rooms2_1F_EventScript_H0::
+	trainerbattle_double TRAINER_HOENN_KIRA_AND_DAN_1, AbandonedShip_Rooms2_1F_Text_H0_0, AbandonedShip_Rooms2_1F_Text_H0_1, AbandonedShip_Rooms2_1F_Text_H0_1
+	msgbox AbandonedShip_Rooms2_1F_Text_H0_2, MSGBOX_AUTOCLOSE
+	end
+
+AbandonedShip_Rooms2_1F_EventScript_H1::
+	trainerbattle_double TRAINER_HOENN_KIRA_AND_DAN_1, AbandonedShip_Rooms2_1F_Text_H1_0, AbandonedShip_Rooms2_1F_Text_H1_1, AbandonedShip_Rooms2_1F_Text_H1_1
+	msgbox AbandonedShip_Rooms2_1F_Text_H1_2, MSGBOX_AUTOCLOSE
+	end
+
+AbandonedShip_Rooms2_1F_EventScript_HItem130::
+	finditem ITEM_REVIVE
+	end
+
+AbandonedShip_Rooms2_1F_EventScript_H2::
+	trainerbattle_single TRAINER_HOENN_GARRISON, AbandonedShip_Rooms2_1F_Text_H2_0, AbandonedShip_Rooms2_1F_Text_H2_1
+	msgbox AbandonedShip_Rooms2_1F_Text_H2_2, MSGBOX_AUTOCLOSE
+	end
+
+AbandonedShip_Rooms2_1F_EventScript_H3::
+	trainerbattle_single TRAINER_HOENN_JANI, AbandonedShip_Rooms2_1F_Text_H3_0, AbandonedShip_Rooms2_1F_Text_H3_1
+	msgbox AbandonedShip_Rooms2_1F_Text_H3_2, MSGBOX_AUTOCLOSE
+	end
+

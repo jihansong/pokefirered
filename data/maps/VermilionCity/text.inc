@@ -13,16 +13,20 @@ VermilionCity_Text_SSAnneHasDepartedForYear::
     .string "this time next year.$"
 
 VermilionCity_Text_BuildingOnThisLand::
-    .string "I'm putting up a building on this\n"
-    .string "plot of land. I own it all.\p"
-    .string "My POKéMON is tamping the land\n"
-    .string "to lay the foundation.$"
+    .string "I put up a building on this plot\n"
+    .string "of land. It's VERMILION AIRPORT!\p"
+    .string "My POKéMON tamped the land flat\n"
+    .string "for the runway, you know.\p"
+    .string "Planes fly all the way to HOENN,\n"
+    .string "but only the POKéMON LEAGUE\l"
+    .string "CHAMPION may board them.$"
 
 VermilionCity_Text_Machop::
     .string "MACHOP: Guoh! Gogogoh!$"
 
 VermilionCity_Text_MachopStompingLandFlat::
-    .string "A MACHOP is stomping the land flat.$"
+    .string "The MACHOP is proudly guarding\n"
+    .string "the AIRPORT.$"
 
 VermilionCity_Text_SSAnneVisitsOnceAYear::
     .string "The S.S. ANNE is a famous luxury\n"
@@ -167,3 +171,7 @@ VermilionCity_Text_TruckLooksHeavy::
 
 VermilionCity_Text_TruckWontBudge::
     .string "The truck won't budge.$"
+
+VermilionCity_Text_AirportSign::
+    .string "VERMILION AIRPORT\p"
+    .string "Flights to faraway regions$"

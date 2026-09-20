@@ -1,0 +1,43 @@
+{
+  "id": "MAP_SEAFLOOR_CAVERN_ROOM5",
+  "name": "SeafloorCavern_Room5",
+  "layout": "LAYOUT_HOENN_SEAFLOOR_CAVERN_ROOM5",
+  "music": "MUS_MT_CHIMNEY",
+  "region_map_section": "MAPSEC_SEAFLOOR_CAVERN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 1,
+      "elevation": 3,
+      "dest_map": "MAP_SEAFLOOR_CAVERN_ROOM1",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 15,
+      "y": 12,
+      "elevation": 3,
+      "dest_map": "MAP_SEAFLOOR_CAVERN_ROOM4",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 7,
+      "y": 17,
+      "elevation": 3,
+      "dest_map": "MAP_SEAFLOOR_CAVERN_ROOM4",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

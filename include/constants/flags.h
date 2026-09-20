@@ -1526,10 +1526,20 @@
 #define FLAGS_COUNT (FLAG_0x8FF + 1)
 
 // Special Flags (Stored in EWRAM (sSpecialFlags, not in the SaveBlock)
+// Flags for the imported Hoenn maps. They are numbered past the save's flag
+// array and stored in gSaveBlock2Ptr->hoennFlags, which used to be padding, so
+// FR/LG's own flags keep their place in the save (see GetFlagAddr).
+#define HOENN_FLAGS_START             0x1000
+#define HOENN_FLAGS_COUNT             0x800
+#define HOENN_FLAGS_END               (HOENN_FLAGS_START + HOENN_FLAGS_COUNT - 1)
+
 #define SPECIAL_FLAGS_START           0x4000
 #define FLAG_DONT_SHOW_MAP_NAME_POPUP (SPECIAL_FLAGS_START + 0x0)
 #define FLAG_DONT_TRANSITION_MUSIC    (SPECIAL_FLAGS_START + 0x1)
 // FLAG_SPECIAL_FLAG_0x4002 - 0x407F also exist and are unused
 #define SPECIAL_FLAGS_END             (SPECIAL_FLAGS_START + 0x7F)
+
+#include "constants/flags_hoenn.h"
+#include "constants/flags_hoenn_map.h"
 
 #endif // GUARD_CONSTANTS_FLAGS_H

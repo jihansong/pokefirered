@@ -1,0 +1,19 @@
+AbandonedShip_HiddenFloorCorridors_MapScripts::
+	.byte 0
+
+AbandonedShip_HiddenFloorCorridors_EventScript_H0::
+	msgbox AbandonedShip_HiddenFloorCorridors_Text_H0, MSGBOX_SIGN
+	end
+
+AbandonedShip_HiddenFloorCorridors_EventScript_H1::
+	msgbox AbandonedShip_HiddenFloorCorridors_Text_H1, MSGBOX_SIGN
+	end
+
+AbandonedShip_HiddenFloorCorridors_EventScript_H2::
+	msgbox AbandonedShip_HiddenFloorCorridors_Text_H2, MSGBOX_SIGN
+	end
+
+AbandonedShip_HiddenFloorCorridors_EventScript_H3::
+	msgbox AbandonedShip_HiddenFloorCorridors_Text_H3, MSGBOX_SIGN
+	end
+

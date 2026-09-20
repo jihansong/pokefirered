@@ -1,0 +1,26 @@
+Route110_TrickHousePuzzle2_MapScripts::
+	.byte 0
+
+Route110_TrickHousePuzzle2_EventScript_H0::
+	trainerbattle_single TRAINER_HOENN_TED, Route110_TrickHousePuzzle2_Text_H0_0, Route110_TrickHousePuzzle2_Text_H0_1
+	msgbox Route110_TrickHousePuzzle2_Text_H0_2, MSGBOX_AUTOCLOSE
+	end
+
+Route110_TrickHousePuzzle2_EventScript_H1::
+	trainerbattle_single TRAINER_HOENN_PAUL, Route110_TrickHousePuzzle2_Text_H1_0, Route110_TrickHousePuzzle2_Text_H1_1
+	msgbox Route110_TrickHousePuzzle2_Text_H1_2, MSGBOX_AUTOCLOSE
+	end
+
+Route110_TrickHousePuzzle2_EventScript_H2::
+	trainerbattle_single TRAINER_HOENN_GEORGIA, Route110_TrickHousePuzzle2_Text_H2_0, Route110_TrickHousePuzzle2_Text_H2_1
+	msgbox Route110_TrickHousePuzzle2_Text_H2_2, MSGBOX_AUTOCLOSE
+	end
+
+Route110_TrickHousePuzzle2_EventScript_HItem154::
+	finditem ITEM_WAVE_MAIL
+	end
+
+Route110_TrickHousePuzzle2_EventScript_HItem155::
+	finditem ITEM_HARBOR_MAIL
+	end
+

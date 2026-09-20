@@ -1,0 +1,43 @@
+{
+  "id": "MAP_AQUA_HIDEOUT_1F",
+  "name": "AquaHideout_1F",
+  "layout": "LAYOUT_HOENN_AQUA_HIDEOUT_1F",
+  "music": "MUS_AQUA_MAGMA_HIDEOUT",
+  "region_map_section": "MAPSEC_LILYCOVE_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 13,
+      "y": 27,
+      "elevation": 1,
+      "dest_map": "MAP_LILYCOVE_CITY",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 14,
+      "y": 27,
+      "elevation": 1,
+      "dest_map": "MAP_LILYCOVE_CITY",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 22,
+      "y": 1,
+      "elevation": 3,
+      "dest_map": "MAP_AQUA_HIDEOUT_B1F",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

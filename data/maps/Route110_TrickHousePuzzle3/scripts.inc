@@ -1,0 +1,26 @@
+Route110_TrickHousePuzzle3_MapScripts::
+	.byte 0
+
+Route110_TrickHousePuzzle3_EventScript_H0::
+	trainerbattle_single TRAINER_HOENN_JUSTIN, Route110_TrickHousePuzzle3_Text_H0_0, Route110_TrickHousePuzzle3_Text_H0_1
+	msgbox Route110_TrickHousePuzzle3_Text_H0_2, MSGBOX_AUTOCLOSE
+	end
+
+Route110_TrickHousePuzzle3_EventScript_H1::
+	trainerbattle_single TRAINER_HOENN_MARTHA, Route110_TrickHousePuzzle3_Text_H1_0, Route110_TrickHousePuzzle3_Text_H1_1
+	msgbox Route110_TrickHousePuzzle3_Text_H1_2, MSGBOX_AUTOCLOSE
+	end
+
+Route110_TrickHousePuzzle3_EventScript_H2::
+	trainerbattle_single TRAINER_HOENN_ALAN, Route110_TrickHousePuzzle3_Text_H2_0, Route110_TrickHousePuzzle3_Text_H2_1
+	msgbox Route110_TrickHousePuzzle3_Text_H2_2, MSGBOX_AUTOCLOSE
+	end
+
+Route110_TrickHousePuzzle3_EventScript_HItem156::
+	finditem ITEM_WOOD_MAIL
+	end
+
+Route110_TrickHousePuzzle3_EventScript_HItem157::
+	finditem ITEM_SHADOW_MAIL
+	end
+

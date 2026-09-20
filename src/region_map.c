@@ -19,6 +19,7 @@
 
 #define MAP_WIDTH 22
 #define MAP_HEIGHT 15
+#define HOENN_MAP_WIDTH 28          // Hoenn's map is wider, so it sits further left
 
 #define CANCEL_BUTTON_X 21
 #define CANCEL_BUTTON_Y 13
@@ -26,12 +27,37 @@
 #define SWITCH_BUTTON_X 21
 #define SWITCH_BUTTON_Y 11
 
+#define NO_BUTTON 0xFF
+
 enum {
     REGIONMAP_KANTO,
     REGIONMAP_SEVII123,
     REGIONMAP_SEVII45,
     REGIONMAP_SEVII67,
+    REGIONMAP_HOENN,
     REGIONMAP_COUNT
+};
+
+// Each map has its own grid: how many cells it has, where cell (0,0) sits on
+// screen and which cell holds the CANCEL and SWITCH buttons.
+struct RegionMapGeometry
+{
+    u8 width;
+    u8 height;
+    u8 originX;
+    u8 originY;
+    u8 cancelX;
+    u8 cancelY;
+    u8 switchX;
+    u8 switchY;
+};
+
+static const struct RegionMapGeometry sRegionMapGeometry[REGIONMAP_COUNT] = {
+    [REGIONMAP_KANTO]    = {MAP_WIDTH, MAP_HEIGHT, 36, 36, CANCEL_BUTTON_X, CANCEL_BUTTON_Y, SWITCH_BUTTON_X, SWITCH_BUTTON_Y},
+    [REGIONMAP_SEVII123] = {MAP_WIDTH, MAP_HEIGHT, 36, 36, CANCEL_BUTTON_X, CANCEL_BUTTON_Y, SWITCH_BUTTON_X, SWITCH_BUTTON_Y},
+    [REGIONMAP_SEVII45]  = {MAP_WIDTH, MAP_HEIGHT, 36, 36, CANCEL_BUTTON_X, CANCEL_BUTTON_Y, SWITCH_BUTTON_X, SWITCH_BUTTON_Y},
+    [REGIONMAP_SEVII67]  = {MAP_WIDTH, MAP_HEIGHT, 36, 36, CANCEL_BUTTON_X, CANCEL_BUTTON_Y, SWITCH_BUTTON_X, SWITCH_BUTTON_Y},
+    [REGIONMAP_HOENN]    = {HOENN_MAP_WIDTH, MAP_HEIGHT, 12, 20, 26, 13, NO_BUTTON, NO_BUTTON},
 };
 
 enum {
@@ -249,7 +275,7 @@ struct MapIcons
     u8 dungeonIconTiles[0x40];
     u8 flyIconTiles[0x100];
     struct MapIconSprite dungeonIcons[25];
-    struct MapIconSprite flyIcons[25];
+    struct MapIconSprite flyIcons[48];   // Kanto, the Sevii Islands and Hoenn
     u8 region; // Never read
     u8 unused_1[2];
     u8 state;
@@ -407,6 +433,10 @@ static const u32 sPlayerIcon_Leaf[] = INCBIN_U32("graphics/region_map/player_ico
 static const u32 sRegionMap_Gfx[] = INCBIN_U32("graphics/region_map/region_map.4bpp.lz");
 static const u32 sMapEdge_Gfx[] = INCBIN_U32("graphics/region_map/map_edge.4bpp.lz");
 static const u32 sSwitchMapMenu_Gfx[] = INCBIN_U32("graphics/region_map/switch_map_menu.4bpp.lz");
+static const u32 sHoenn_Gfx[] = INCBIN_U32("graphics/region_map/hoenn.4bpp.lz");
+static const u16 sHoenn_Pal[] = INCBIN_U16("graphics/region_map/hoenn.gbapal");
+static const u32 sHoenn_Tilemap[] = INCBIN_U32("graphics/region_map/hoenn_tilemap.bin.lz");
+
 static const u32 sKanto_Tilemap[] = INCBIN_U32("graphics/region_map/kanto.bin.lz");
 static const u32 sSevii123_Tilemap[] = INCBIN_U32("graphics/region_map/sevii_123.bin.lz");
 static const u32 sSevii45_Tilemap[] = INCBIN_U32("graphics/region_map/sevii_45.bin.lz");
@@ -824,6 +854,19 @@ static const u8 sTextColors[] = {TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_WHITE, TEXT_CO
 #include "data/region_map/region_map_layout_sevii_123.h"
 #include "data/region_map/region_map_layout_sevii_45.h"
 #include "data/region_map/region_map_layout_sevii_67.h"
+#include "data/region_map/region_map_layout_hoenn.h"
+
+// Where FLY takes the player in Hoenn, and the flag that says they have been
+// to that town. Hoenn mapsecs come before Kanto's, so they index it directly.
+struct HoennFlyDestination
+{
+    u8 mapGroup;
+    u8 mapNum;
+    u8 healLocation;
+    u16 visitedFlag;
+};
+
+#include "data/region_map/fly_destinations_hoenn.h"
 
 static const u8 sMapFlyDestinations[][3] = {
     [MAPSEC_PALLET_TOWN         - KANTO_MAPSEC_START] = {MAP(MAP_PALLET_TOWN),                           HEAL_LOCATION_PALLET_TOWN},
@@ -958,11 +1001,15 @@ static void RegionMap_DarkenPalette(u16 *pal, u16 size, u16 tint)
 
 static void TintMapEdgesPalette(void)
 {
+    // The map edges are drawn in palette 2, darkened a little; the Hoenn map
+    // brings its own colours, so darken those instead of FR/LG's.
+    const u16 *pal = GetSelectedRegionMap() == REGIONMAP_HOENN ? sHoenn_Pal : sRegionMap_Pal;
     u16 mapEdgesPal[16];
-    CpuCopy16(&sRegionMap_Pal[0x20], mapEdgesPal, sizeof(mapEdgesPal));
+
+    CpuCopy16(&pal[0x20], mapEdgesPal, sizeof(mapEdgesPal));
     RegionMap_DarkenPalette(mapEdgesPal, NELEMS(mapEdgesPal), 95);
     LoadPalette(mapEdgesPal, BG_PLTT_ID(2), sizeof(mapEdgesPal));
-    LoadPalette(&sRegionMap_Pal[0x2F], BG_PLTT_ID(2) + 15, PLTT_SIZEOF(1));
+    LoadPalette(&pal[0x2F], BG_PLTT_ID(2) + 15, PLTT_SIZEOF(1));
 }
 
 static void InitRegionMap(u8 type)
@@ -1029,6 +1076,14 @@ static void InitRegionMapType(void)
         sRegionMap->permissions[MAPPERM_HAS_SWITCH_BUTTON] = FALSE;
     region = REGIONMAP_KANTO;
     j = REGIONMAP_KANTO;
+    if (gMapHeader.regionMapSectionId < KANTO_MAPSEC_START)
+    {
+        // a Hoenn mapsec: show Hoenn, which has no second map to switch to
+        sRegionMap->permissions[MAPPERM_HAS_SWITCH_BUTTON] = FALSE;
+        sRegionMap->selectedRegion = REGIONMAP_HOENN;
+        sRegionMap->playersRegion = REGIONMAP_HOENN;
+        return;
+    }
     if (gMapHeader.regionMapSectionId >= SEVII_MAPSEC_START)
     {
         // Mapsec is in Sevii Islands, determine which map to use
@@ -1108,7 +1163,10 @@ static bool8 LoadRegionMapGfx(void)
         LoadPalette(sTopBar_Pal, BG_PLTT_ID(12), sizeof(sTopBar_Pal));
         break;
     case 1:
-        LoadPalette(sRegionMap_Pal, 0, sizeof(sRegionMap_Pal));
+        if (GetSelectedRegionMap() == REGIONMAP_HOENN)
+            LoadPalette(sHoenn_Pal, 0, sizeof(sHoenn_Pal));
+        else
+            LoadPalette(sRegionMap_Pal, 0, sizeof(sRegionMap_Pal));
         TintMapEdgesPalette();
         if (sRegionMap->type != REGIONMAP_TYPE_NORMAL)
         {
@@ -1123,7 +1181,7 @@ static bool8 LoadRegionMapGfx(void)
         ResetTempTileDataBuffers();
         break;
     case 3:
-        DecompressAndCopyTileDataToVram(0, sRegionMap_Gfx, 0, 0, 0);
+        DecompressAndCopyTileDataToVram(0, GetSelectedRegionMap() == REGIONMAP_HOENN ? sHoenn_Gfx : sRegionMap_Gfx, 0, 0, 0);
         if (sRegionMap->type != REGIONMAP_TYPE_NORMAL)
             DecompressAndCopyTileDataToVram(1, sBackground_Gfx, 0, 0, 0);
         break;
@@ -1142,6 +1200,9 @@ static bool8 LoadRegionMapGfx(void)
         break;
     case 8:
         LZ77UnCompWram(sSevii67_Tilemap, sRegionMap->layouts[REGIONMAP_SEVII67]);
+        break;
+    case 9:
+        LZ77UnCompWram(sHoenn_Tilemap, sRegionMap->layouts[REGIONMAP_HOENN]);
         break;
     default:
         LZ77UnCompWram(sBackground_Tilemap, sRegionMap->layouts[REGIONMAP_COUNT]);
@@ -2681,8 +2742,8 @@ static void SpriteCB_MapCursor(struct Sprite *sprite)
     }
     else
     {
-        sMapCursor->sprite->x = 8 * sMapCursor->x + 36;
-        sMapCursor->sprite->y = 8 * sMapCursor->y + 36;
+        sMapCursor->sprite->x = 8 * sMapCursor->x + sRegionMapGeometry[GetSelectedRegionMap()].originX;
+        sMapCursor->sprite->y = 8 * sMapCursor->y + sRegionMapGeometry[GetSelectedRegionMap()].originY;
     }
 }
 
@@ -2693,8 +2754,8 @@ static void CreateMapCursor(u16 tileTag, u16 palTag)
     sMapCursor->tileTag = tileTag;
     sMapCursor->palTag = palTag;
     GetPlayerPositionOnRegionMap_HandleOverrides();
-    sMapCursor->spriteX = 8 * sMapCursor->x + 36;
-    sMapCursor->spriteY = 8 * sMapCursor->y + 36;
+    sMapCursor->spriteX = 8 * sMapCursor->x + sRegionMapGeometry[GetSelectedRegionMap()].originX;
+    sMapCursor->spriteY = 8 * sMapCursor->y + sRegionMapGeometry[GetSelectedRegionMap()].originY;
     sMapCursor->inputHandler = HandleRegionMapInput;
     sMapCursor->selectedMapsecType = GetMapsecType(sMapCursor->selectedMapsec);
     sMapCursor->selectedDungeonType = GetDungeonMapsecType(GetSelectedMapSection(GetSelectedRegionMap(), LAYER_DUNGEON, sMapCursor->y, sMapCursor->x));
@@ -2767,7 +2828,7 @@ static u8 HandleRegionMapInput(void)
     }
     if (JOY_HELD(DPAD_DOWN))
     {
-        if (sMapCursor->y < MAP_HEIGHT - 1)
+        if (sMapCursor->y < sRegionMapGeometry[GetSelectedRegionMap()].height - 1)
         {
             sMapCursor->verticalMove = 2;
             input = MAP_INPUT_MOVE_START;
@@ -2775,7 +2836,7 @@ static u8 HandleRegionMapInput(void)
     }
     if (JOY_HELD(DPAD_RIGHT))
     {
-        if (sMapCursor->x < MAP_WIDTH - 1)
+        if (sMapCursor->x < sRegionMapGeometry[GetSelectedRegionMap()].width - 1)
         {
             sMapCursor->horizontalMove = 2;
             input = MAP_INPUT_MOVE_START;
@@ -2792,14 +2853,14 @@ static u8 HandleRegionMapInput(void)
     if (JOY_NEW(A_BUTTON))
     {
         input = MAP_INPUT_A_BUTTON;
-        if (sMapCursor->x == CANCEL_BUTTON_X 
-         && sMapCursor->y == CANCEL_BUTTON_Y)
+        if (sMapCursor->x == sRegionMapGeometry[GetSelectedRegionMap()].cancelX
+         && sMapCursor->y == sRegionMapGeometry[GetSelectedRegionMap()].cancelY)
         {
             PlaySE(SE_M_HYPER_BEAM2);
             input = MAP_INPUT_CANCEL;
         }
-        if (sMapCursor->x == SWITCH_BUTTON_X 
-         && sMapCursor->y == SWITCH_BUTTON_Y 
+        if (sMapCursor->x == sRegionMapGeometry[GetSelectedRegionMap()].switchX
+         && sMapCursor->y == sRegionMapGeometry[GetSelectedRegionMap()].switchY
          && GetRegionMapPermission(MAPPERM_HAS_SWITCH_BUTTON) == TRUE)
         {
             PlaySE(SE_M_HYPER_BEAM2);
@@ -2878,12 +2939,12 @@ static void SnapToIconOrButton(void)
             sMapCursor->y = GetPlayerIconY();
             break;
         case 1:
-            sMapCursor->x = SWITCH_BUTTON_X;
-            sMapCursor->y = SWITCH_BUTTON_Y;
+            sMapCursor->x = sRegionMapGeometry[GetSelectedRegionMap()].switchX;
+            sMapCursor->y = sRegionMapGeometry[GetSelectedRegionMap()].switchY;
             break;
         case 2:
-            sMapCursor->y = CANCEL_BUTTON_Y;
-            sMapCursor->x = CANCEL_BUTTON_X;
+            sMapCursor->y = sRegionMapGeometry[GetSelectedRegionMap()].cancelY;
+            sMapCursor->x = sRegionMapGeometry[GetSelectedRegionMap()].cancelX;
             break;
         }
     }
@@ -2899,13 +2960,13 @@ static void SnapToIconOrButton(void)
             sMapCursor->y = GetPlayerIconY();
             break;
         case 1:
-            sMapCursor->y = CANCEL_BUTTON_Y;
-            sMapCursor->x = CANCEL_BUTTON_X;
+            sMapCursor->y = sRegionMapGeometry[GetSelectedRegionMap()].cancelY;
+            sMapCursor->x = sRegionMapGeometry[GetSelectedRegionMap()].cancelX;
             break;
         }
     }
-    sMapCursor->sprite->x = 8 * sMapCursor->x + 36;
-    sMapCursor->sprite->y = 8 * sMapCursor->y + 36;
+    sMapCursor->sprite->x = 8 * sMapCursor->x + sRegionMapGeometry[GetSelectedRegionMap()].originX;
+    sMapCursor->sprite->y = 8 * sMapCursor->y + sRegionMapGeometry[GetSelectedRegionMap()].originY;
     sMapCursor->selectedMapsec = GetSelectedMapSection(GetSelectedRegionMap(), LAYER_MAP, sMapCursor->y, sMapCursor->x);
 }
 
@@ -2923,9 +2984,9 @@ static u16 GetMapsecUnderCursor(void)
 {
     u8 mapsec;
     if (sMapCursor->y < 0
-     || sMapCursor->y >= MAP_HEIGHT
+     || sMapCursor->y >= sRegionMapGeometry[GetSelectedRegionMap()].height
      || sMapCursor->x < 0
-     || sMapCursor->x >= MAP_WIDTH)
+     || sMapCursor->x >= sRegionMapGeometry[GetSelectedRegionMap()].width)
         return MAPSEC_NONE;
 
     mapsec = GetSelectedMapSection(GetSelectedRegionMap(), LAYER_MAP, sMapCursor->y, sMapCursor->x);
@@ -2938,9 +2999,9 @@ static u16 GetDungeonMapsecUnderCursor(void)
 {
     u8 mapsec;
     if (sMapCursor->y < 0
-     || sMapCursor->y >= MAP_HEIGHT
+     || sMapCursor->y >= sRegionMapGeometry[GetSelectedRegionMap()].height
      || sMapCursor->x < 0
-     || sMapCursor->x >= MAP_WIDTH)
+     || sMapCursor->x >= sRegionMapGeometry[GetSelectedRegionMap()].width)
         return MAPSEC_NONE;
 
     mapsec = GetSelectedMapSection(GetSelectedRegionMap(), LAYER_DUNGEON, sMapCursor->y, sMapCursor->x);
@@ -2951,6 +3012,17 @@ static u16 GetDungeonMapsecUnderCursor(void)
 
 static u8 GetMapsecType(u8 mapsec)
 {
+    // Hoenn's mapsecs come before Kanto's. A town the player has stood in can
+    // be flown to; everything else on that map is shown as a route.
+    if (mapsec < KANTO_MAPSEC_START)
+    {
+        if (mapsec == MAPSEC_NONE)
+            return MAPSECTYPE_NONE;
+        if (sHoennFlyDestinations[mapsec].visitedFlag == 0)
+            return MAPSECTYPE_ROUTE;
+        return FlagGet(sHoennFlyDestinations[mapsec].visitedFlag) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+    }
+
     switch (mapsec)
     {
     case MAPSEC_PALLET_TOWN:
@@ -3093,6 +3165,34 @@ static u16 GetPlayerCurrentMapSectionId(void)
     return Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum)->regionMapSectionId;
 }
 
+// The Kanto tables are indexed from KANTO_MAPSEC_START, so Hoenn needs its own
+// lookup: the first cell of the player's mapsec.
+static bool8 GetPlayerPositionOnHoennMap(void)
+{
+    u8 mapsec = GetPlayerCurrentMapSectionId();
+    u16 x, y;
+
+    if (mapsec >= KANTO_MAPSEC_START)
+        return FALSE;
+
+    sMapCursor->selectedMapsec = mapsec;
+    sMapCursor->x = 0;
+    sMapCursor->y = 0;
+    for (y = 0; y < MAP_HEIGHT; y++)
+    {
+        for (x = 0; x < HOENN_MAP_WIDTH; x++)
+        {
+            if (sRegionMapSections_Hoenn[LAYER_MAP][y][x] == mapsec)
+            {
+                sMapCursor->x = x;
+                sMapCursor->y = y;
+                return TRUE;
+            }
+        }
+    }
+    return TRUE;
+}
+
 static void GetPlayerPositionOnRegionMap(void)
 {
     u16 width;
@@ -3103,6 +3203,9 @@ static void GetPlayerPositionOnRegionMap(void)
 
     const struct MapHeader * mapHeader;
     struct WarpData * warp;
+
+    if (GetPlayerPositionOnHoennMap())
+        return;
 
     switch (GetMapTypeByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum))
     {
@@ -3363,6 +3466,8 @@ static u8 GetSelectedMapSection(u8 whichMap, u8 layer, s16 y, s16 x)
         return sRegionMapSections_Sevii45[layer][y][x];
     case REGIONMAP_SEVII67:
         return sRegionMapSections_Sevii67[layer][y][x];
+    case REGIONMAP_HOENN:
+        return sRegionMapSections_Hoenn[layer][y][x];
     default:
         return MAPSEC_NONE;
     }
@@ -3511,7 +3616,8 @@ static void CreateFlyIconSprite(u8 whichMap, u8 numIcons, u16 x, u16 y, u8 tileT
 
     LoadSpriteSheet(&spriteSheet);
     LoadSpritePalette(&spritePalette);
-    spriteId = CreateSprite(&template, 8 * x + 36, 8 * y + 36, 1);
+    spriteId = CreateSprite(&template, 8 * x + sRegionMapGeometry[whichMap].originX,
+                            8 * y + sRegionMapGeometry[whichMap].originY, 1);
     sMapIcons->flyIcons[numIcons].sprite = &gSprites[spriteId];
     gSprites[spriteId].invisible = TRUE;
     sMapIcons->flyIcons[numIcons].region = whichMap;
@@ -3549,7 +3655,8 @@ static void CreateDungeonIconSprite(u8 whichMap, u8 numIcons, u16 x, u16 y, u8 t
     if ((GetMapsecType(mapsec) == MAPSECTYPE_VISITED || GetMapsecType(mapsec) == MAPSECTYPE_NOT_VISITED) && mapsec != MAPSEC_ROUTE_10_POKECENTER)
         offset = 2;
 
-    spriteId = CreateSprite(&template, 8 * x + 36 + offset, 8 * y + 36 + offset, 3);
+    spriteId = CreateSprite(&template, 8 * x + sRegionMapGeometry[whichMap].originX + offset,
+                            8 * y + sRegionMapGeometry[whichMap].originY + offset, 3);
     sMapIcons->dungeonIcons[numIcons].sprite = &gSprites[spriteId];
     gSprites[spriteId].invisible = TRUE;
     sMapIcons->dungeonIcons[numIcons].region = whichMap;
@@ -3563,13 +3670,13 @@ static void CreateFlyIcons(void)
     {
         for (i = 0; i < REGIONMAP_COUNT; i++)
         {
-            for (y = 0; y < MAP_HEIGHT; y++)
+            for (y = 0; y < sRegionMapGeometry[i].height; y++)
             {
-                for (x = 0; x < MAP_WIDTH; x++)
+                for (x = 0; x < sRegionMapGeometry[i].width; x++)
                 {
                     if (GetMapsecType(GetSelectedMapSection(i, LAYER_MAP, y, x)) == MAPSECTYPE_VISITED)
                     {
-                        CreateFlyIconSprite(i, numIcons, x, y, numIcons + 10, 10);
+                        CreateFlyIconSprite(i, numIcons, x, y, numIcons + 100, 10);
                         numIcons++;
                     }
                 }
@@ -3585,9 +3692,9 @@ static void CreateDungeonIcons(void)
     u8 mapsec;
     for (i = 0; i < REGIONMAP_COUNT; i++)
     {
-        for (y = 0; y < MAP_HEIGHT; y++)
+        for (y = 0; y < sRegionMapGeometry[i].height; y++)
         {
-            for (x = 0; x < MAP_WIDTH; x++)
+            for (x = 0; x < sRegionMapGeometry[i].width; x++)
             {
                 mapsec = GetSelectedMapSection(i, LAYER_DUNGEON, y, x);
                 if (mapsec == MAPSEC_NONE)
@@ -4209,7 +4316,15 @@ static void FreeFlyMap(u8 taskId)
 
 static void SetFlyWarpDestination(u16 mapsec)
 {
-    u16 idx = mapsec - KANTO_MAPSEC_START;
+    u16 idx;
+
+    if (mapsec < KANTO_MAPSEC_START)
+    {
+        SetWarpDestinationToHealLocation(sHoennFlyDestinations[mapsec].healLocation);
+        ReturnToFieldFromFlyMapSelect();
+        return;
+    }
+    idx = mapsec - KANTO_MAPSEC_START;
     if (sMapFlyDestinations[idx][2])
     {
         SetWarpDestinationToHealLocation(sMapFlyDestinations[idx][2]);

@@ -64,3 +64,8 @@ ground and the player walks over them as in Emerald. Emerald's bike terrain
 (muddy and bumpy slopes, the Mauville rails), the SKY PILLAR's cracked floor
 and the secret base spots also become plain ground: FR/LG has neither the
 Mach and Acro bikes nor secret bases. `import_maps.py` prints what is left.
+
+- `import_region_map.py`: converts Emerald's region map (8bpp tiles, one byte
+  per tile) into FR/LG's format, writes the mapsec layout, the fly destinations
+  and the "visited" flags, and gives each town a script that sets its flag.
+  Run it after `import_maps.py`, which rewrites those scripts.

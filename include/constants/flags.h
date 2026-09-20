@@ -1540,5 +1540,6 @@
 #define SPECIAL_FLAGS_END             (SPECIAL_FLAGS_START + 0x7F)
 
 #include "constants/flags_hoenn.h"
+#include "constants/flags_hoenn_map.h"
 
 #endif // GUARD_CONSTANTS_FLAGS_H

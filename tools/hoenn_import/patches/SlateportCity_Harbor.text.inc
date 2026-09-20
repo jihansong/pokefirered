@@ -6,9 +6,8 @@ SlateportCity_Harbor_Text_FlyToKanto::
     .string "now?$"
 
 SlateportCity_Harbor_Text_FlyWarning::
-    .string "Flying around HOENN? Sorry, our\n"
-    .string "sky routes aren't charted yet.\p"
-    .string "FLY will only carry you home to\n"
-    .string "a KANTO town you've visited.\p"
-    .string "For HOENN, walk, SURF, or take\n"
-    .string "our plane.$"
+    .string "Flying around HOENN? Your POKéMON\n"
+    .string "can take you to any town here\l"
+    .string "you've set foot in.\p"
+    .string "It won't cross to KANTO, mind.\n"
+    .string "For that, board our plane.$"

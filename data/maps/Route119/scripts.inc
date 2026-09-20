@@ -2,51 +2,63 @@ Route119_MapScripts::
 	.byte 0
 
 Route119_EventScript_H0::
-	msgbox Route119_Text_H0, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_GREG, Route119_Text_H0_0, Route119_Text_H0_1
+	msgbox Route119_Text_H0_2, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_H1::
-	msgbox Route119_Text_H1, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_TAYLOR, Route119_Text_H1_0, Route119_Text_H1_1
+	msgbox Route119_Text_H1_2, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_H2::
-	msgbox Route119_Text_H2, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_DONALD, Route119_Text_H2_0, Route119_Text_H2_1
+	msgbox Route119_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_H3::
-	msgbox Route119_Text_H3, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_JACKSON_1, Route119_Text_H3_0, Route119_Text_H3_1
+	msgbox Route119_Text_H3_2, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_H4::
-	msgbox Route119_Text_H4, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_BRENT, Route119_Text_H4_0, Route119_Text_H4_1
+	msgbox Route119_Text_H4_2, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_H5::
-	msgbox Route119_Text_H5, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_CATHERINE_1, Route119_Text_H5_0, Route119_Text_H5_1
+	msgbox Route119_Text_H5_2, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_H6::
-	msgbox Route119_Text_H6, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_DOUG, Route119_Text_H6_0, Route119_Text_H6_1
+	msgbox Route119_Text_H6_2, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_H7::
-	msgbox Route119_Text_H7, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_KENT, Route119_Text_H7_0, Route119_Text_H7_1
+	msgbox Route119_Text_H7_2, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_H8::
-	msgbox Route119_Text_H8, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_YASU, Route119_Text_H8_0, Route119_Text_H8_1
+	msgbox Route119_Text_H8_2, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_H9::
-	msgbox Route119_Text_H9, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_TAKASHI, Route119_Text_H9_0, Route119_Text_H9_1
+	msgbox Route119_Text_H9_2, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_H10::
-	msgbox Route119_Text_H10, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_HUGH, Route119_Text_H10_0, Route119_Text_H10_1
+	msgbox Route119_Text_H10_2, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_H11::
-	msgbox Route119_Text_H11, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_PHIL, Route119_Text_H11_0, Route119_Text_H11_1
+	msgbox Route119_Text_H11_2, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_H12::
@@ -62,23 +74,28 @@ Route119_EventScript_H14::
 	end
 
 Route119_EventScript_H15::
-	msgbox Route119_Text_H15, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_HIDEO, Route119_Text_H15_0, Route119_Text_H15_1
+	msgbox Route119_Text_H15_2, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_H16::
-	msgbox Route119_Text_H16, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_CHRIS, Route119_Text_H16_0, Route119_Text_H16_1
+	msgbox Route119_Text_H16_2, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_H17::
-	msgbox Route119_Text_H17, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_RACHEL, Route119_Text_H17_0, Route119_Text_H17_1
+	msgbox Route119_Text_H17_2, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_H18::
-	msgbox Route119_Text_H18, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_DAYTON, Route119_Text_H18_0, Route119_Text_H18_1
+	msgbox Route119_Text_H18_2, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_H19::
-	msgbox Route119_Text_H19, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_FABIAN, Route119_Text_H19_0, Route119_Text_H19_1
+	msgbox Route119_Text_H19_2, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_H20::

@@ -691,9 +691,48 @@ static u8 TrainerBattleLoadArg8(const u8 *ptr)
     return T1_READ_8(ptr);
 }
 
-static u16 GetTrainerAFlag(void)
+// Trainers imported from Hoenn are numbered past the save's trainer flag block,
+// so their flags live in gSaveBlock2Ptr->hoennTrainerFlags instead.
+static bool8 IsHoennTrainer(u16 trainerId)
 {
-    return TRAINER_FLAGS_START + gTrainerBattleOpponent_A;
+    return trainerId >= HOENN_TRAINERS_START;
+}
+
+static u8 *HoennTrainerFlagByte(u16 trainerId, u8 *mask)
+{
+    u16 bit = trainerId - HOENN_TRAINERS_START;
+
+    *mask = 1 << (bit & 7);
+    return &gSaveBlock2Ptr->hoennTrainerFlags[bit >> 3];
+}
+
+static bool8 TrainerFlagGet(u16 trainerId)
+{
+    u8 mask;
+
+    if (!IsHoennTrainer(trainerId))
+        return FlagGet(TRAINER_FLAGS_START + trainerId);
+    return (*HoennTrainerFlagByte(trainerId, &mask) & mask) != 0;
+}
+
+static void TrainerFlagSet(u16 trainerId)
+{
+    u8 mask;
+
+    if (!IsHoennTrainer(trainerId))
+        FlagSet(TRAINER_FLAGS_START + trainerId);
+    else
+        *HoennTrainerFlagByte(trainerId, &mask) |= mask;
+}
+
+static void TrainerFlagClear(u16 trainerId)
+{
+    u8 mask;
+
+    if (!IsHoennTrainer(trainerId))
+        FlagClear(TRAINER_FLAGS_START + trainerId);
+    else
+        *HoennTrainerFlagByte(trainerId, &mask) &= ~mask;
 }
 
 static bool32 IsPlayerDefeated(u32 battleOutcome)
@@ -848,9 +887,7 @@ void ConfigureAndSetUpOneTrainerBattle(u8 trainerEventObjId, const u8 *trainerSc
 
 bool32 GetTrainerFlagFromScriptPointer(const u8 *data)
 {
-    u32 flag = TrainerBattleLoadArg16(data + 2);
-
-    return FlagGet(TRAINER_FLAGS_START + flag);
+    return TrainerFlagGet(TrainerBattleLoadArg16(data + 2));
 }
 
 void SetUpTrainerMovement(void)
@@ -872,33 +909,33 @@ u16 GetRivalBattleFlags(void)
 
 u16 Script_HasTrainerBeenFought(void)
 {
-    return FlagGet(GetTrainerAFlag());
+    return TrainerFlagGet(gTrainerBattleOpponent_A);
 }
 
 void SetBattledTrainerFlag(void)
 {
-    FlagSet(GetTrainerAFlag());
+    TrainerFlagSet(gTrainerBattleOpponent_A);
 }
 
 // not used
 static void SetBattledTrainerFlag2(void)
 {
-    FlagSet(GetTrainerAFlag());
+    TrainerFlagSet(gTrainerBattleOpponent_A);
 }
 
 bool8 HasTrainerBeenFought(u16 trainerId)
 {
-    return FlagGet(TRAINER_FLAGS_START + trainerId);
+    return TrainerFlagGet(trainerId);
 }
 
 void SetTrainerFlag(u16 trainerId)
 {
-    FlagSet(TRAINER_FLAGS_START + trainerId);
+    TrainerFlagSet(trainerId);
 }
 
 void ClearTrainerFlag(u16 trainerId)
 {
-    FlagClear(TRAINER_FLAGS_START + trainerId);
+    TrainerFlagClear(trainerId);
 }
 
 void StartTrainerBattle(void)

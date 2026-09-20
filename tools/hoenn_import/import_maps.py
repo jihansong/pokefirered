@@ -98,6 +98,8 @@ def main():
         return RENAME_ID.get(emid, emid)
     frgfx = fr_defs(FR + '/include/constants/event_objects.h', 'OBJ_EVENT_GFX_')
     frmus = fr_defs(FR + '/include/constants/songs.h', 'MUS_')
+    # trainers imported by import_trainers.py (TRAINER_X -> TRAINER_HOENN_X)
+    hoenn_trainers = set(re.findall(r'#define (TRAINER_HOENN_\w+)', open(FR + '/include/constants/opponents.h').read()))
     frsec = set(re.findall(r'(MAPSEC_\w+)', open(FR + '/include/constants/region_map_sections.h').read()))
     frflag = fr_defs(FR + '/include/constants/flags.h', 'FLAG_')
     frmove = fr_defs(FR + '/include/constants/event_object_movement.h', 'MOVEMENT_TYPE_')
@@ -188,6 +190,35 @@ def main():
                                 + ['\t' + b for b in items] + ['\trelease', '\tend', ''])
                 tx_labels.append(new); stats['mart'] += 1
                 return new
+            # a trainer battle: keep the intro, the defeat line and the after-battle line
+            tb = next((b for b in body if b.startswith('trainerbattle')), None)
+            if tb:
+                parts = [p.strip() for p in tb.split(None, 1)[1].split(',')]
+                trainer = 'TRAINER_HOENN_' + parts[0][len('TRAINER_'):]
+                if trainer in hoenn_trainers and len(parts) >= 3:
+                    labels = []
+                    for i, src_label in enumerate(parts[1:3]):
+                        t = f'{nm}_Text_H{len(tx_labels)}_{i}'
+                        out_texts[t] = texts.get(src_label, ['    .string "..."$'])
+                        labels.append(t)
+                    after = None
+                    for b in body[body.index(tb) + 1:]:
+                        mm = re.match(r'msgbox (\w+)', b)
+                        if mm and mm.group(1) in texts:
+                            after = f'{nm}_Text_H{len(tx_labels)}_2'
+                            out_texts[after] = texts[mm.group(1)]
+                            break
+                    kind_cmd = 'trainerbattle_double' if 'double' in tb.split()[0] else 'trainerbattle_single'
+                    lines = [f'{new}::', f'\t{kind_cmd} {trainer}, {labels[0]}, {labels[1]}']
+                    if kind_cmd == 'trainerbattle_double':
+                        # the double battle macro also needs the "not enough POKéMON" text
+                        lines[-1] += f', {labels[1]}'
+                    if after:
+                        lines.append(f'\tmsgbox {after}, MSGBOX_AUTOCLOSE')
+                    lines += ['\tend', '']
+                    sc_lines.extend(lines)
+                    tx_labels.append(new); stats['trainer'] += 1
+                    return new
             # first message the script shows
             for b in body:
                 mm = re.match(r'msgbox (\w+)', b) or re.match(r'message (\w+)', b)
@@ -209,9 +240,13 @@ def main():
             if g not in frgfx:
                 g = GFX.get(g, GFX_DEFAULT)
             s = script_for(o['script'], 'npc') if o['script'] not in ('0x0', '0', '') else None
+            is_trainer = (o.get('trainer_type', 'TRAINER_TYPE_NONE') != 'TRAINER_TYPE_NONE'
+                          and s is not None and f'\t{"trainerbattle"}' in '\n'.join(sc_lines[-6:]))
             objs.append({'type': 'object', 'graphics_id': g, 'x': o['x'], 'y': o['y'], 'elevation': o['elevation'],
                          'movement_type': movement(o['movement_type']), 'movement_range_x': o['movement_range_x'], 'movement_range_y': o['movement_range_y'],
-                         'trainer_type': 'TRAINER_TYPE_NONE', 'trainer_sight_or_berry_tree_id': '0', 'script': s or '0x0', 'flag': '0'})
+                         'trainer_type': o['trainer_type'] if is_trainer else 'TRAINER_TYPE_NONE',
+                         'trainer_sight_or_berry_tree_id': str(o['trainer_sight_or_berry_tree_id']) if is_trainer else '0',
+                         'script': s or '0x0', 'flag': '0'})
         out['object_events'] = objs
         warps = []
         for w in src.get('warp_events', []):

@@ -10,7 +10,8 @@ Route104_EventScript_H1::
 	end
 
 Route104_EventScript_H2::
-	msgbox Route104_Text_H2, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_HALEY_1, Route104_Text_H2_0, Route104_Text_H2_1
+	msgbox Route104_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
 Route104_EventScript_H3::
@@ -26,7 +27,8 @@ Route104_EventScript_H5::
 	end
 
 Route104_EventScript_H6::
-	msgbox Route104_Text_H6, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_IVAN, Route104_Text_H6_0, Route104_Text_H6_1
+	msgbox Route104_Text_H6_2, MSGBOX_AUTOCLOSE
 	end
 
 Route104_EventScript_H7::
@@ -34,23 +36,28 @@ Route104_EventScript_H7::
 	end
 
 Route104_EventScript_H8::
-	msgbox Route104_Text_H8, MSGBOX_NPC
+	trainerbattle_double TRAINER_HOENN_GINA_AND_MIA_1, Route104_Text_H8_0, Route104_Text_H8_1, Route104_Text_H8_1
+	msgbox Route104_Text_H8_2, MSGBOX_AUTOCLOSE
 	end
 
 Route104_EventScript_H9::
-	msgbox Route104_Text_H9, MSGBOX_NPC
+	trainerbattle_double TRAINER_HOENN_GINA_AND_MIA_1, Route104_Text_H9_0, Route104_Text_H9_1, Route104_Text_H9_1
+	msgbox Route104_Text_H9_2, MSGBOX_AUTOCLOSE
 	end
 
 Route104_EventScript_H10::
-	msgbox Route104_Text_H10, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_WINSTON_1, Route104_Text_H10_0, Route104_Text_H10_1
+	msgbox Route104_Text_H10_2, MSGBOX_AUTOCLOSE
 	end
 
 Route104_EventScript_H11::
-	msgbox Route104_Text_H11, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_CINDY_1, Route104_Text_H11_0, Route104_Text_H11_1
+	msgbox Route104_Text_H11_2, MSGBOX_AUTOCLOSE
 	end
 
 Route104_EventScript_H12::
-	msgbox Route104_Text_H12, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_BILLY, Route104_Text_H12_0, Route104_Text_H12_1
+	msgbox Route104_Text_H12_2, MSGBOX_AUTOCLOSE
 	end
 
 Route104_EventScript_H13::
@@ -58,7 +65,8 @@ Route104_EventScript_H13::
 	end
 
 Route104_EventScript_H14::
-	msgbox Route104_Text_H14, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_DARIAN, Route104_Text_H14_0, Route104_Text_H14_1
+	msgbox Route104_Text_H14_2, MSGBOX_AUTOCLOSE
 	end
 
 Route104_EventScript_H15::

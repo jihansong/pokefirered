@@ -2,7 +2,8 @@ LavaridgeTown_Gym_1F_MapScripts::
 	.byte 0
 
 LavaridgeTown_Gym_1F_EventScript_H0::
-	msgbox LavaridgeTown_Gym_1F_Text_H0, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_FLANNERY_1, LavaridgeTown_Gym_1F_Text_H0_0, LavaridgeTown_Gym_1F_Text_H0_1
+	msgbox LavaridgeTown_Gym_1F_Text_H0_2, MSGBOX_AUTOCLOSE
 	end
 
 LavaridgeTown_Gym_1F_EventScript_H1::

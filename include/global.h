@@ -354,7 +354,9 @@ struct SaveBlock2
     /*0xAF0*/ struct BerryCrush berryCrush;
     /*0xB00*/ struct PokemonJumpRecords pokeJump;
     /*0xB10*/ struct BerryPickingResults berryPick;
-    /*0xB20*/ u8 filler_B20[0x400];
+    /*0xB20*/ u8 hoennTrainerFlags[0x80]; // Hoenn trainers sit past the flag block, so their
+                                         // "defeated" bits live in this unused padding instead
+    /*0xBA0*/ u8 filler_BA0[0x380];
     /*0xF20*/ u32 encryptionKey;
 }; // size: 0xF24
 

@@ -2,23 +2,28 @@ Route114_MapScripts::
 	.byte 0
 
 Route114_EventScript_H0::
-	msgbox Route114_Text_H0, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_LENNY, Route114_Text_H0_0, Route114_Text_H0_1
+	msgbox Route114_Text_H0_2, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_H1::
-	msgbox Route114_Text_H1, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_LUCAS_1, Route114_Text_H1_0, Route114_Text_H1_1
+	msgbox Route114_Text_H1_2, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_H2::
-	msgbox Route114_Text_H2, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_SHANE, Route114_Text_H2_0, Route114_Text_H2_1
+	msgbox Route114_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_H3::
-	msgbox Route114_Text_H3, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_NANCY, Route114_Text_H3_0, Route114_Text_H3_1
+	msgbox Route114_Text_H3_2, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_H4::
-	msgbox Route114_Text_H4, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_STEVE_1, Route114_Text_H4_0, Route114_Text_H4_1
+	msgbox Route114_Text_H4_2, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_H5::
@@ -34,35 +39,43 @@ Route114_EventScript_H7::
 	end
 
 Route114_EventScript_H8::
-	msgbox Route114_Text_H8, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_NOLAN, Route114_Text_H8_0, Route114_Text_H8_1
+	msgbox Route114_Text_H8_2, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_H9::
-	msgbox Route114_Text_H9, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_CLAUDE, Route114_Text_H9_0, Route114_Text_H9_1
+	msgbox Route114_Text_H9_2, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_H10::
-	msgbox Route114_Text_H10, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_BERNIE_1, Route114_Text_H10_0, Route114_Text_H10_1
+	msgbox Route114_Text_H10_2, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_H11::
-	msgbox Route114_Text_H11, MSGBOX_NPC
+	trainerbattle_double TRAINER_HOENN_TYRA_AND_IVY, Route114_Text_H11_0, Route114_Text_H11_1, Route114_Text_H11_1
+	msgbox Route114_Text_H11_2, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_H12::
-	msgbox Route114_Text_H12, MSGBOX_NPC
+	trainerbattle_double TRAINER_HOENN_TYRA_AND_IVY, Route114_Text_H12_0, Route114_Text_H12_1, Route114_Text_H12_1
+	msgbox Route114_Text_H12_2, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_H13::
-	msgbox Route114_Text_H13, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_CHARLOTTE, Route114_Text_H13_0, Route114_Text_H13_1
+	msgbox Route114_Text_H13_2, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_H14::
-	msgbox Route114_Text_H14, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_ANGELINA, Route114_Text_H14_0, Route114_Text_H14_1
+	msgbox Route114_Text_H14_2, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_H15::
-	msgbox Route114_Text_H15, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_KAI, Route114_Text_H15_0, Route114_Text_H15_1
+	msgbox Route114_Text_H15_2, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_H16::

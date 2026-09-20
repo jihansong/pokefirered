@@ -6,15 +6,18 @@ Route102_EventScript_H0::
 	end
 
 Route102_EventScript_H1::
-	msgbox Route102_Text_H1, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_CALVIN_1, Route102_Text_H1_0, Route102_Text_H1_1
+	msgbox Route102_Text_H1_2, MSGBOX_AUTOCLOSE
 	end
 
 Route102_EventScript_H2::
-	msgbox Route102_Text_H2, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_RICK, Route102_Text_H2_0, Route102_Text_H2_1
+	msgbox Route102_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
 Route102_EventScript_H3::
-	msgbox Route102_Text_H3, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_TIANA, Route102_Text_H3_0, Route102_Text_H3_1
+	msgbox Route102_Text_H3_2, MSGBOX_AUTOCLOSE
 	end
 
 Route102_EventScript_H4::
@@ -22,7 +25,8 @@ Route102_EventScript_H4::
 	end
 
 Route102_EventScript_H5::
-	msgbox Route102_Text_H5, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_ALLEN, Route102_Text_H5_0, Route102_Text_H5_1
+	msgbox Route102_Text_H5_2, MSGBOX_AUTOCLOSE
 	end
 
 Route102_EventScript_H6::

@@ -2,14 +2,17 @@ Route110_TrickHousePuzzle3_MapScripts::
 	.byte 0
 
 Route110_TrickHousePuzzle3_EventScript_H0::
-	msgbox Route110_TrickHousePuzzle3_Text_H0, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_JUSTIN, Route110_TrickHousePuzzle3_Text_H0_0, Route110_TrickHousePuzzle3_Text_H0_1
+	msgbox Route110_TrickHousePuzzle3_Text_H0_2, MSGBOX_AUTOCLOSE
 	end
 
 Route110_TrickHousePuzzle3_EventScript_H1::
-	msgbox Route110_TrickHousePuzzle3_Text_H1, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_MARTHA, Route110_TrickHousePuzzle3_Text_H1_0, Route110_TrickHousePuzzle3_Text_H1_1
+	msgbox Route110_TrickHousePuzzle3_Text_H1_2, MSGBOX_AUTOCLOSE
 	end
 
 Route110_TrickHousePuzzle3_EventScript_H2::
-	msgbox Route110_TrickHousePuzzle3_Text_H2, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_ALAN, Route110_TrickHousePuzzle3_Text_H2_0, Route110_TrickHousePuzzle3_Text_H2_1
+	msgbox Route110_TrickHousePuzzle3_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 

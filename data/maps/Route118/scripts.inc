@@ -2,7 +2,8 @@ Route118_MapScripts::
 	.byte 0
 
 Route118_EventScript_H0::
-	msgbox Route118_Text_H0, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_PERRY, Route118_Text_H0_0, Route118_Text_H0_1
+	msgbox Route118_Text_H0_2, MSGBOX_AUTOCLOSE
 	end
 
 Route118_EventScript_H1::
@@ -14,27 +15,33 @@ Route118_EventScript_H2::
 	end
 
 Route118_EventScript_H3::
-	msgbox Route118_Text_H3, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_ROSE_1, Route118_Text_H3_0, Route118_Text_H3_1
+	msgbox Route118_Text_H3_2, MSGBOX_AUTOCLOSE
 	end
 
 Route118_EventScript_H4::
-	msgbox Route118_Text_H4, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_WADE, Route118_Text_H4_0, Route118_Text_H4_1
+	msgbox Route118_Text_H4_2, MSGBOX_AUTOCLOSE
 	end
 
 Route118_EventScript_H5::
-	msgbox Route118_Text_H5, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_CHESTER, Route118_Text_H5_0, Route118_Text_H5_1
+	msgbox Route118_Text_H5_2, MSGBOX_AUTOCLOSE
 	end
 
 Route118_EventScript_H6::
-	msgbox Route118_Text_H6, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_BARNY, Route118_Text_H6_0, Route118_Text_H6_1
+	msgbox Route118_Text_H6_2, MSGBOX_AUTOCLOSE
 	end
 
 Route118_EventScript_H7::
-	msgbox Route118_Text_H7, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_DALTON_1, Route118_Text_H7_0, Route118_Text_H7_1
+	msgbox Route118_Text_H7_2, MSGBOX_AUTOCLOSE
 	end
 
 Route118_EventScript_H8::
-	msgbox Route118_Text_H8, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_DEANDRE, Route118_Text_H8_0, Route118_Text_H8_1
+	msgbox Route118_Text_H8_2, MSGBOX_AUTOCLOSE
 	end
 
 Route118_EventScript_H9::

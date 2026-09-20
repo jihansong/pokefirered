@@ -6,11 +6,13 @@ PetalburgWoods_EventScript_H0::
 	end
 
 PetalburgWoods_EventScript_H1::
-	msgbox PetalburgWoods_Text_H1, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_LYLE, PetalburgWoods_Text_H1_0, PetalburgWoods_Text_H1_1
+	msgbox PetalburgWoods_Text_H1_2, MSGBOX_AUTOCLOSE
 	end
 
 PetalburgWoods_EventScript_H2::
-	msgbox PetalburgWoods_Text_H2, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_JAMES_1, PetalburgWoods_Text_H2_0, PetalburgWoods_Text_H2_1
+	msgbox PetalburgWoods_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
 PetalburgWoods_EventScript_H3::

@@ -2,19 +2,23 @@ Route112_MapScripts::
 	.byte 0
 
 Route112_EventScript_H0::
-	msgbox Route112_Text_H0, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_BRICE, Route112_Text_H0_0, Route112_Text_H0_1
+	msgbox Route112_Text_H0_2, MSGBOX_AUTOCLOSE
 	end
 
 Route112_EventScript_H1::
-	msgbox Route112_Text_H1, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_LARRY, Route112_Text_H1_0, Route112_Text_H1_1
+	msgbox Route112_Text_H1_2, MSGBOX_AUTOCLOSE
 	end
 
 Route112_EventScript_H2::
-	msgbox Route112_Text_H2, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_CAROL, Route112_Text_H2_0, Route112_Text_H2_1
+	msgbox Route112_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
 Route112_EventScript_H3::
-	msgbox Route112_Text_H3, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_TRENT_1, Route112_Text_H3_0, Route112_Text_H3_1
+	msgbox Route112_Text_H3_2, MSGBOX_AUTOCLOSE
 	end
 
 Route112_EventScript_H4::
@@ -22,11 +26,13 @@ Route112_EventScript_H4::
 	end
 
 Route112_EventScript_H5::
-	msgbox Route112_Text_H5, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_BRYANT, Route112_Text_H5_0, Route112_Text_H5_1
+	msgbox Route112_Text_H5_2, MSGBOX_AUTOCLOSE
 	end
 
 Route112_EventScript_H6::
-	msgbox Route112_Text_H6, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_SHAYLA, Route112_Text_H6_0, Route112_Text_H6_1
+	msgbox Route112_Text_H6_2, MSGBOX_AUTOCLOSE
 	end
 
 Route112_EventScript_H7::

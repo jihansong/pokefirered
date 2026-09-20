@@ -30,35 +30,43 @@ Route110_EventScript_H6::
 	end
 
 Route110_EventScript_H7::
-	msgbox Route110_Text_H7, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_JASMINE, Route110_Text_H7_0, Route110_Text_H7_1
+	msgbox Route110_Text_H7_2, MSGBOX_AUTOCLOSE
 	end
 
 Route110_EventScript_H8::
-	msgbox Route110_Text_H8, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_ANTHONY, Route110_Text_H8_0, Route110_Text_H8_1
+	msgbox Route110_Text_H8_2, MSGBOX_AUTOCLOSE
 	end
 
 Route110_EventScript_H9::
-	msgbox Route110_Text_H9, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_ABIGAIL_1, Route110_Text_H9_0, Route110_Text_H9_1
+	msgbox Route110_Text_H9_2, MSGBOX_AUTOCLOSE
 	end
 
 Route110_EventScript_H10::
-	msgbox Route110_Text_H10, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_BENJAMIN_1, Route110_Text_H10_0, Route110_Text_H10_1
+	msgbox Route110_Text_H10_2, MSGBOX_AUTOCLOSE
 	end
 
 Route110_EventScript_H11::
-	msgbox Route110_Text_H11, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_EDWARD, Route110_Text_H11_0, Route110_Text_H11_1
+	msgbox Route110_Text_H11_2, MSGBOX_AUTOCLOSE
 	end
 
 Route110_EventScript_H12::
-	msgbox Route110_Text_H12, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_JACLYN, Route110_Text_H12_0, Route110_Text_H12_1
+	msgbox Route110_Text_H12_2, MSGBOX_AUTOCLOSE
 	end
 
 Route110_EventScript_H13::
-	msgbox Route110_Text_H13, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_EDWIN_1, Route110_Text_H13_0, Route110_Text_H13_1
+	msgbox Route110_Text_H13_2, MSGBOX_AUTOCLOSE
 	end
 
 Route110_EventScript_H14::
-	msgbox Route110_Text_H14, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_DALE, Route110_Text_H14_0, Route110_Text_H14_1
+	msgbox Route110_Text_H14_2, MSGBOX_AUTOCLOSE
 	end
 
 Route110_EventScript_H15::
@@ -66,27 +74,33 @@ Route110_EventScript_H15::
 	end
 
 Route110_EventScript_H16::
-	msgbox Route110_Text_H16, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_JACOB, Route110_Text_H16_0, Route110_Text_H16_1
+	msgbox Route110_Text_H16_2, MSGBOX_AUTOCLOSE
 	end
 
 Route110_EventScript_H17::
-	msgbox Route110_Text_H17, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_TIMMY, Route110_Text_H17_0, Route110_Text_H17_1
+	msgbox Route110_Text_H17_2, MSGBOX_AUTOCLOSE
 	end
 
 Route110_EventScript_H18::
-	msgbox Route110_Text_H18, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_ISABEL_1, Route110_Text_H18_0, Route110_Text_H18_1
+	msgbox Route110_Text_H18_2, MSGBOX_AUTOCLOSE
 	end
 
 Route110_EventScript_H19::
-	msgbox Route110_Text_H19, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_KALEB, Route110_Text_H19_0, Route110_Text_H19_1
+	msgbox Route110_Text_H19_2, MSGBOX_AUTOCLOSE
 	end
 
 Route110_EventScript_H20::
-	msgbox Route110_Text_H20, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_ALYSSA, Route110_Text_H20_0, Route110_Text_H20_1
+	msgbox Route110_Text_H20_2, MSGBOX_AUTOCLOSE
 	end
 
 Route110_EventScript_H21::
-	msgbox Route110_Text_H21, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_JOSEPH, Route110_Text_H21_0, Route110_Text_H21_1
+	msgbox Route110_Text_H21_2, MSGBOX_AUTOCLOSE
 	end
 
 Route110_EventScript_H22::

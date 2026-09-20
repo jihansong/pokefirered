@@ -10,47 +10,58 @@ Route113_EventScript_H1::
 	end
 
 Route113_EventScript_H2::
-	msgbox Route113_Text_H2, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_JAYLEN, Route113_Text_H2_0, Route113_Text_H2_1
+	msgbox Route113_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_H3::
-	msgbox Route113_Text_H3, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_DILLON, Route113_Text_H3_0, Route113_Text_H3_1
+	msgbox Route113_Text_H3_2, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_H4::
-	msgbox Route113_Text_H4, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_MADELINE_1, Route113_Text_H4_0, Route113_Text_H4_1
+	msgbox Route113_Text_H4_2, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_H5::
-	msgbox Route113_Text_H5, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_LAO_1, Route113_Text_H5_0, Route113_Text_H5_1
+	msgbox Route113_Text_H5_2, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_H6::
-	msgbox Route113_Text_H6, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_LUNG, Route113_Text_H6_0, Route113_Text_H6_1
+	msgbox Route113_Text_H6_2, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_H7::
-	msgbox Route113_Text_H7, MSGBOX_NPC
+	trainerbattle_double TRAINER_HOENN_TORI_AND_TIA, Route113_Text_H7_0, Route113_Text_H7_1, Route113_Text_H7_1
+	msgbox Route113_Text_H7_2, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_H8::
-	msgbox Route113_Text_H8, MSGBOX_NPC
+	trainerbattle_double TRAINER_HOENN_TORI_AND_TIA, Route113_Text_H8_0, Route113_Text_H8_1, Route113_Text_H8_1
+	msgbox Route113_Text_H8_2, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_H9::
-	msgbox Route113_Text_H9, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_WYATT, Route113_Text_H9_0, Route113_Text_H9_1
+	msgbox Route113_Text_H9_2, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_H10::
-	msgbox Route113_Text_H10, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_LAWRENCE, Route113_Text_H10_0, Route113_Text_H10_1
+	msgbox Route113_Text_H10_2, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_H11::
-	msgbox Route113_Text_H11, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_SOPHIE, Route113_Text_H11_0, Route113_Text_H11_1
+	msgbox Route113_Text_H11_2, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_H12::
-	msgbox Route113_Text_H12, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_COBY, Route113_Text_H12_0, Route113_Text_H12_1
+	msgbox Route113_Text_H12_2, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_H13::

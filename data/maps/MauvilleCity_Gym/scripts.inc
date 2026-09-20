@@ -2,19 +2,23 @@ MauvilleCity_Gym_MapScripts::
 	.byte 0
 
 MauvilleCity_Gym_EventScript_H0::
-	msgbox MauvilleCity_Gym_Text_H0, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_SHAWN, MauvilleCity_Gym_Text_H0_0, MauvilleCity_Gym_Text_H0_1
+	msgbox MauvilleCity_Gym_Text_H0_2, MSGBOX_AUTOCLOSE
 	end
 
 MauvilleCity_Gym_EventScript_H1::
-	msgbox MauvilleCity_Gym_Text_H1, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_VIVIAN, MauvilleCity_Gym_Text_H1_0, MauvilleCity_Gym_Text_H1_1
+	msgbox MauvilleCity_Gym_Text_H1_2, MSGBOX_AUTOCLOSE
 	end
 
 MauvilleCity_Gym_EventScript_H2::
-	msgbox MauvilleCity_Gym_Text_H2, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_BEN, MauvilleCity_Gym_Text_H2_0, MauvilleCity_Gym_Text_H2_1
+	msgbox MauvilleCity_Gym_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
 MauvilleCity_Gym_EventScript_H3::
-	msgbox MauvilleCity_Gym_Text_H3, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_KIRK, MauvilleCity_Gym_Text_H3_0, MauvilleCity_Gym_Text_H3_1
+	msgbox MauvilleCity_Gym_Text_H3_2, MSGBOX_AUTOCLOSE
 	end
 
 MauvilleCity_Gym_EventScript_H4::
@@ -22,6 +26,7 @@ MauvilleCity_Gym_EventScript_H4::
 	end
 
 MauvilleCity_Gym_EventScript_H5::
-	msgbox MauvilleCity_Gym_Text_H5, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_ANGELO, MauvilleCity_Gym_Text_H5_0, MauvilleCity_Gym_Text_H5_1
+	msgbox MauvilleCity_Gym_Text_H5_2, MSGBOX_AUTOCLOSE
 	end
 

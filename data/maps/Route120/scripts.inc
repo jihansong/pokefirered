@@ -2,23 +2,28 @@ Route120_MapScripts::
 	.byte 0
 
 Route120_EventScript_H0::
-	msgbox Route120_Text_H0, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_COLIN, Route120_Text_H0_0, Route120_Text_H0_1
+	msgbox Route120_Text_H0_2, MSGBOX_AUTOCLOSE
 	end
 
 Route120_EventScript_H1::
-	msgbox Route120_Text_H1, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_ROBERT_1, Route120_Text_H1_0, Route120_Text_H1_1
+	msgbox Route120_Text_H1_2, MSGBOX_AUTOCLOSE
 	end
 
 Route120_EventScript_H2::
-	msgbox Route120_Text_H2, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_LORENZO, Route120_Text_H2_0, Route120_Text_H2_1
+	msgbox Route120_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
 Route120_EventScript_H3::
-	msgbox Route120_Text_H3, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_JENNA, Route120_Text_H3_0, Route120_Text_H3_1
+	msgbox Route120_Text_H3_2, MSGBOX_AUTOCLOSE
 	end
 
 Route120_EventScript_H4::
-	msgbox Route120_Text_H4, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_JEFFREY_1, Route120_Text_H4_0, Route120_Text_H4_1
+	msgbox Route120_Text_H4_2, MSGBOX_AUTOCLOSE
 	end
 
 Route120_EventScript_H5::
@@ -26,35 +31,43 @@ Route120_EventScript_H5::
 	end
 
 Route120_EventScript_H6::
-	msgbox Route120_Text_H6, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_JENNIFER, Route120_Text_H6_0, Route120_Text_H6_1
+	msgbox Route120_Text_H6_2, MSGBOX_AUTOCLOSE
 	end
 
 Route120_EventScript_H7::
-	msgbox Route120_Text_H7, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_CHIP, Route120_Text_H7_0, Route120_Text_H7_1
+	msgbox Route120_Text_H7_2, MSGBOX_AUTOCLOSE
 	end
 
 Route120_EventScript_H8::
-	msgbox Route120_Text_H8, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_CLARISSA, Route120_Text_H8_0, Route120_Text_H8_1
+	msgbox Route120_Text_H8_2, MSGBOX_AUTOCLOSE
 	end
 
 Route120_EventScript_H9::
-	msgbox Route120_Text_H9, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_ANGELICA, Route120_Text_H9_0, Route120_Text_H9_1
+	msgbox Route120_Text_H9_2, MSGBOX_AUTOCLOSE
 	end
 
 Route120_EventScript_H10::
-	msgbox Route120_Text_H10, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_KEIGO, Route120_Text_H10_0, Route120_Text_H10_1
+	msgbox Route120_Text_H10_2, MSGBOX_AUTOCLOSE
 	end
 
 Route120_EventScript_H11::
-	msgbox Route120_Text_H11, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_RILEY, Route120_Text_H11_0, Route120_Text_H11_1
+	msgbox Route120_Text_H11_2, MSGBOX_AUTOCLOSE
 	end
 
 Route120_EventScript_H12::
-	msgbox Route120_Text_H12, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_CALLIE, Route120_Text_H12_0, Route120_Text_H12_1
+	msgbox Route120_Text_H12_2, MSGBOX_AUTOCLOSE
 	end
 
 Route120_EventScript_H13::
-	msgbox Route120_Text_H13, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_LEONEL, Route120_Text_H13_0, Route120_Text_H13_1
+	msgbox Route120_Text_H13_2, MSGBOX_AUTOCLOSE
 	end
 
 Route120_EventScript_H14::

@@ -6,14 +6,17 @@ Route109_SeashoreHouse_EventScript_H0::
 	end
 
 Route109_SeashoreHouse_EventScript_H1::
-	msgbox Route109_SeashoreHouse_Text_H1, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_DWAYNE, Route109_SeashoreHouse_Text_H1_0, Route109_SeashoreHouse_Text_H1_1
+	msgbox Route109_SeashoreHouse_Text_H1_2, MSGBOX_AUTOCLOSE
 	end
 
 Route109_SeashoreHouse_EventScript_H2::
-	msgbox Route109_SeashoreHouse_Text_H2, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_SIMON, Route109_SeashoreHouse_Text_H2_0, Route109_SeashoreHouse_Text_H2_1
+	msgbox Route109_SeashoreHouse_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
 Route109_SeashoreHouse_EventScript_H3::
-	msgbox Route109_SeashoreHouse_Text_H3, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_JOHANNA, Route109_SeashoreHouse_Text_H3_0, Route109_SeashoreHouse_Text_H3_1
+	msgbox Route109_SeashoreHouse_Text_H3_2, MSGBOX_AUTOCLOSE
 	end
 

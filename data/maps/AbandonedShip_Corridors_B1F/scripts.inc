@@ -6,7 +6,8 @@ AbandonedShip_Corridors_B1F_EventScript_H0::
 	end
 
 AbandonedShip_Corridors_B1F_EventScript_H1::
-	msgbox AbandonedShip_Corridors_B1F_Text_H1, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_DUNCAN, AbandonedShip_Corridors_B1F_Text_H1_0, AbandonedShip_Corridors_B1F_Text_H1_1
+	msgbox AbandonedShip_Corridors_B1F_Text_H1_2, MSGBOX_AUTOCLOSE
 	end
 
 AbandonedShip_Corridors_B1F_EventScript_H2::

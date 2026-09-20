@@ -5,11 +5,27 @@ PetalburgWoods_Text_H0::
 	.string "to avoid battles, you should stay out\l"
 	.string "of tall grass.$"
 
-PetalburgWoods_Text_H1::
+PetalburgWoods_Text_H1_0::
+	.string "I caught a whole bunch of POKéMON!\p"
+	.string "Go, go, go!\n"
+	.string "My BUG POKéMON team!$"
+
+PetalburgWoods_Text_H1_1::
+	.string "I have all these POKéMON,\n"
+	.string "but I couldn't win…$"
+
+PetalburgWoods_Text_H1_2::
 	.string "I caught a bunch of POKéMON.\n"
 	.string "Now I'm out of POKé BALLS.$"
 
-PetalburgWoods_Text_H2::
+PetalburgWoods_Text_H2_0::
+	.string "If you take BUG POKéMON to school,\n"
+	.string "you get to be instantly popular!$"
+
+PetalburgWoods_Text_H2_1::
+	.string "I can't be popular if I lose.$"
+
+PetalburgWoods_Text_H2_2::
 	.string "If you have a big BUG POKéMON,\n"
 	.string "people respect you for it.$"
 

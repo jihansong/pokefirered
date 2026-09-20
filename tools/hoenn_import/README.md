@@ -37,3 +37,13 @@ generated map data. After an import, delete `build/leafgreen/data/maps.o`
   `src/data/tilesets/hoenn_anims.h`, included at the end of
   `src/tileset_anims.c` so it can use that file's queue and counters. Run it
   after `import_tilesets.py`, which writes the headers it patches.
+- `import_trainers.py`: copies the trainers the imported maps battle (their
+  party, class, sprite, name, items and AI). FR/LG already has the Hoenn
+  trainer classes and front pics under `RS_` names; only JUAN's sprite and
+  the WINSTRATE class are added. Run it before `import_maps.py`, which turns
+  the Emerald scripts into `trainerbattle_single` scripts for the ids it finds.
+
+Hoenn trainer ids start at `HOENN_TRAINERS_START` (768), past the save's
+trainer flag block. `battle_setup.c` keeps their defeated bits in
+`gSaveBlock2Ptr->hoennTrainerFlags`, carved out of padding FR/LG never used,
+so the save layout is unchanged.

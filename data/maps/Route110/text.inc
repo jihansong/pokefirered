@@ -45,37 +45,96 @@ Route110_Text_H6::
 	.string "Wouldn't it be great to ride a BIKE\n"
 	.string "at full speed on CYCLING ROAD?$"
 
-Route110_Text_H7::
+Route110_Text_H7_0::
+	.string "I've been riding without stopping.\n"
+	.string "My thighs are like rocks!$"
+
+Route110_Text_H7_1::
+	.string "I'm worried about muscle cramps…$"
+
+Route110_Text_H7_2::
 	.string "Oh, you have some GYM BADGES?\n"
 	.string "No wonder you're so strong!$"
 
-Route110_Text_H8::
+Route110_Text_H8_0::
+	.string "Yo, you!\n"
+	.string "Can you keep up with my speed?$"
+
+Route110_Text_H8_1::
+	.string "Crash and burn!$"
+
+Route110_Text_H8_2::
 	.string "Speed alone won't let me win at POKéMON.\n"
 	.string "I need to reconsider this…$"
 
-Route110_Text_H9::
+Route110_Text_H9_0::
+	.string "The triathlon is hard in the extreme.\p"
+	.string "You have to complete the three events\n"
+	.string "of swimming, cycling, and running.$"
+
+Route110_Text_H9_1::
+	.string "POKéMON battles are hard, too!$"
+
+Route110_Text_H9_2::
 	.string "I'm exhausted, so I need a break.\n"
 	.string "It's important to get proper rest.$"
 
-Route110_Text_H10::
+Route110_Text_H10_0::
+	.string "Don't panic if your BIKE's going fast!$"
+
+Route110_Text_H10_1::
+	.string "I shouldn't panic during POKéMON\n"
+	.string "battles…$"
+
+Route110_Text_H10_2::
 	.string "There's no need to panic or stress.\n"
 	.string "Take it easy. There's plenty of time.$"
 
-Route110_Text_H11::
+Route110_Text_H11_0::
+	.string "I have foreseen your intentions!\n"
+	.string "I cannot possibly lose!$"
+
+Route110_Text_H11_1::
+	.string "I failed to prophesize my own demise!$"
+
+Route110_Text_H11_2::
 	.string "I see your future…\p"
 	.string "Hmm…\n"
 	.string "I see a shining light…$"
 
-Route110_Text_H12::
+Route110_Text_H12_0::
+	.string "Ahahahaha!\n"
+	.string "I'll dazzle you with my wonders!$"
+
+Route110_Text_H12_1::
+	.string "I wondrously lost!$"
+
+Route110_Text_H12_2::
 	.string "You managed to win only because it was\n"
 	.string "a wonder! Yes, a wonder!\l"
 	.string "Don't think you can win all the time!$"
 
-Route110_Text_H13::
+Route110_Text_H13_0::
+	.string "Could I see your POKéMON?\n"
+	.string "Just one look, please?$"
+
+Route110_Text_H13_1::
+	.string "I wanted to complete\n"
+	.string "my collection…$"
+
+Route110_Text_H13_2::
 	.string "When I see a POKéMON that I don't know,\n"
 	.string "my passion as a collector is ignited!$"
 
-Route110_Text_H14::
+Route110_Text_H14_0::
+	.string "Hey!\n"
+	.string "Don't sneak up behind me like that!$"
+
+Route110_Text_H14_1::
+	.string "I lost!\n"
+	.string "Drat!$"
+
+Route110_Text_H14_2::
 	.string "Fishing is all about concentration.\n"
 	.string "You have to focus on the floater.$"
 
@@ -84,28 +143,73 @@ Route110_Text_H15::
 	.string "seeing more challenges from you.\l"
 	.string "Always aim higher!$"
 
-Route110_Text_H16::
+Route110_Text_H16_0::
+	.string "Whoa! Watch it!\n"
+	.string "I guess you're not used to BIKE racing.$"
+
+Route110_Text_H16_1::
+	.string "Whoa!\n"
+	.string "My brakes failed!$"
+
+Route110_Text_H16_2::
 	.string "Flat tires and brake problems can\n"
 	.string "cause serious injury!\l"
 	.string "Inspect your BIKE for problems!$"
 
-Route110_Text_H17::
+Route110_Text_H17_0::
+	.string "I found some cool POKéMON in the grass\n"
+	.string "around here!$"
+
+Route110_Text_H17_1::
+	.string "Being cool isn't enough to win…$"
+
+Route110_Text_H17_2::
 	.string "It's hard to battle with POKéMON you\n"
 	.string "just caught.$"
 
-Route110_Text_H18::
+Route110_Text_H18_0::
+	.string "Ahahaha! I would go anywhere to show\n"
+	.string "off my delightful POKéMON.$"
+
+Route110_Text_H18_1::
+	.string "Oh, dear, this won't do.$"
+
+Route110_Text_H18_2::
 	.string "Rather than battling, perhaps I should\n"
 	.string "show off my POKéMON at the FAN CLUB.$"
 
-Route110_Text_H19::
+Route110_Text_H19_0::
+	.string "When cute POKéMON help each other…\n"
+	.string "You won't see a more adorable sight!$"
+
+Route110_Text_H19_1::
+	.string "Have you no compassion or pity?$"
+
+Route110_Text_H19_2::
 	.string "Okay, okay, you've done the best you\n"
 	.string "could, my pretties.$"
 
-Route110_Text_H20::
+Route110_Text_H20_0::
+	.string "I fell off CYCLING ROAD…\p"
+	.string "I'll get over my embarrassment by\n"
+	.string "battling with you!$"
+
+Route110_Text_H20_1::
+	.string "Oops!\n"
+	.string "I ended up losing!$"
+
+Route110_Text_H20_2::
 	.string "Falling… Losing…\n"
 	.string "This is so humiliating for me!$"
 
-Route110_Text_H21::
+Route110_Text_H21_0::
+	.string "Okay! Full-throttle time! If you can't\n"
+	.string "groove, you get left behind!$"
+
+Route110_Text_H21_1::
+	.string "You got into the groove all right…$"
+
+Route110_Text_H21_2::
 	.string "This isn't going to bring me down!\n"
 	.string "Losing has made me a better man!$"
 

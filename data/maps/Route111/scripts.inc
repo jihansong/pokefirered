@@ -2,7 +2,8 @@ Route111_MapScripts::
 	.byte 0
 
 Route111_EventScript_H0::
-	msgbox Route111_Text_H0, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_HEIDI, Route111_Text_H0_0, Route111_Text_H0_1
+	msgbox Route111_Text_H0_2, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_H1::
@@ -10,19 +11,23 @@ Route111_EventScript_H1::
 	end
 
 Route111_EventScript_H2::
-	msgbox Route111_Text_H2, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_DREW, Route111_Text_H2_0, Route111_Text_H2_1
+	msgbox Route111_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_H3::
-	msgbox Route111_Text_H3, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_DUSTY_1, Route111_Text_H3_0, Route111_Text_H3_1
+	msgbox Route111_Text_H3_2, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_H4::
-	msgbox Route111_Text_H4, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_BEAU, Route111_Text_H4_0, Route111_Text_H4_1
+	msgbox Route111_Text_H4_2, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_H5::
-	msgbox Route111_Text_H5, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_BECKY, Route111_Text_H5_0, Route111_Text_H5_1
+	msgbox Route111_Text_H5_2, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_H6::
@@ -30,23 +35,28 @@ Route111_EventScript_H6::
 	end
 
 Route111_EventScript_H7::
-	msgbox Route111_Text_H7, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_IRENE, Route111_Text_H7_0, Route111_Text_H7_1
+	msgbox Route111_Text_H7_2, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_H8::
-	msgbox Route111_Text_H8, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_TRAVIS, Route111_Text_H8_0, Route111_Text_H8_1
+	msgbox Route111_Text_H8_2, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_H9::
-	msgbox Route111_Text_H9, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_DAISUKE, Route111_Text_H9_0, Route111_Text_H9_1
+	msgbox Route111_Text_H9_2, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_H10::
-	msgbox Route111_Text_H10, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_BROOKE_1, Route111_Text_H10_0, Route111_Text_H10_1
+	msgbox Route111_Text_H10_2, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_H11::
-	msgbox Route111_Text_H11, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_WILTON_1, Route111_Text_H11_0, Route111_Text_H11_1
+	msgbox Route111_Text_H11_2, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_H12::
@@ -54,31 +64,38 @@ Route111_EventScript_H12::
 	end
 
 Route111_EventScript_H13::
-	msgbox Route111_Text_H13, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_TYRON, Route111_Text_H13_0, Route111_Text_H13_1
+	msgbox Route111_Text_H13_2, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_H14::
-	msgbox Route111_Text_H14, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_CELINA, Route111_Text_H14_0, Route111_Text_H14_1
+	msgbox Route111_Text_H14_2, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_H15::
-	msgbox Route111_Text_H15, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_BIANCA, Route111_Text_H15_0, Route111_Text_H15_1
+	msgbox Route111_Text_H15_2, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_H16::
-	msgbox Route111_Text_H16, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_HAYDEN, Route111_Text_H16_0, Route111_Text_H16_1
+	msgbox Route111_Text_H16_2, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_H17::
-	msgbox Route111_Text_H17, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_BRYAN, Route111_Text_H17_0, Route111_Text_H17_1
+	msgbox Route111_Text_H17_2, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_H18::
-	msgbox Route111_Text_H18, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_CELIA, Route111_Text_H18_0, Route111_Text_H18_1
+	msgbox Route111_Text_H18_2, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_H19::
-	msgbox Route111_Text_H19, MSGBOX_NPC
+	trainerbattle_single TRAINER_HOENN_BRANDEN, Route111_Text_H19_0, Route111_Text_H19_1
+	msgbox Route111_Text_H19_2, MSGBOX_AUTOCLOSE
 	end
 
 Route111_EventScript_H20::

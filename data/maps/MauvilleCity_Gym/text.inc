@@ -1,21 +1,50 @@
-MauvilleCity_Gym_Text_H0::
+MauvilleCity_Gym_Text_H0_0::
+	.string "I trained under WATTSON!\n"
+	.string "There ain't no way I'll lose easily!$"
+
+MauvilleCity_Gym_Text_H0_1::
+	.string "Unplugged and turned off…$"
+
+MauvilleCity_Gym_Text_H0_2::
 	.string "WATTSON, our GYM LEADER, has been\n"
 	.string "around for a long, long time.\p"
 	.string "He was battling even before your\n"
 	.string "daddy was born, that tough coot.$"
 
-MauvilleCity_Gym_Text_H1::
+MauvilleCity_Gym_Text_H1_0::
+	.string "With my charm and my POKéMON's moves,\n"
+	.string "you'll be shocked!$"
+
+MauvilleCity_Gym_Text_H1_1::
+	.string "I'm shocked by your power!$"
+
+MauvilleCity_Gym_Text_H1_2::
 	.string "I've heard that MAUVILLE was founded\n"
 	.string "by WATTSON.\p"
 	.string "He was a TRAINER long before we\n"
 	.string "became TRAINERS.\l"
 	.string "He must know all sorts of things!$"
 
-MauvilleCity_Gym_Text_H2::
+MauvilleCity_Gym_Text_H2_0::
+	.string "This GYM's got puzzles!\n"
+	.string "Isn't it fun?$"
+
+MauvilleCity_Gym_Text_H2_1::
+	.string "It's no fun to lose…$"
+
+MauvilleCity_Gym_Text_H2_2::
 	.string "WATTSON says he likes setting up\n"
 	.string "little traps with switches.$"
 
-MauvilleCity_Gym_Text_H3::
+MauvilleCity_Gym_Text_H3_0::
+	.string "My electric soul, it'll shatter your\n"
+	.string "dreams whole, whoa-yeahah!$"
+
+MauvilleCity_Gym_Text_H3_1::
+	.string "That was plugged in, amped up,\n"
+	.string "over-driven electric, man!$"
+
+MauvilleCity_Gym_Text_H3_2::
 	.string "POKéMON and rock, it's all about heart,\n"
 	.string "whoa-yeah!$"
 
@@ -30,7 +59,14 @@ MauvilleCity_Gym_Text_H4::
 	.string "doors all over his GYM! Eccentric!\p"
 	.string "Hey, go for it!$"
 
-MauvilleCity_Gym_Text_H5::
+MauvilleCity_Gym_Text_H5_0::
+	.string "I love shiny things!$"
+
+MauvilleCity_Gym_Text_H5_1::
+	.string "Oh…\n"
+	.string "My eyes are frazzled…$"
+
+MauvilleCity_Gym_Text_H5_2::
 	.string "MAUVILLE GYM's WATTSON has a shiny\n"
 	.string "forehead. It makes me happy!$"
 

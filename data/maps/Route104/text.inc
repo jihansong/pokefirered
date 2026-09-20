@@ -9,7 +9,15 @@ Route104_Text_H1::
 	.string "He was once a mighty sailor who never\n"
 	.string "feared the sea, however stormy.$"
 
-Route104_Text_H2::
+Route104_Text_H2_0::
+	.string "Should I…\n"
+	.string "Or shouldn't I?\p"
+	.string "Okay, sure, I will battle!$"
+
+Route104_Text_H2_1::
+	.string "I shouldn't have battled…$"
+
+Route104_Text_H2_2::
 	.string "If you're faced with a decision and\n"
 	.string "you let someone else choose for you,\l"
 	.string "you will regret it, however things\l"
@@ -34,7 +42,17 @@ Route104_Text_H5::
 	.string "If you don't want to battle, stay out\n"
 	.string "of their sight.$"
 
-Route104_Text_H6::
+Route104_Text_H6_0::
+	.string "Why keep it a secret?\n"
+	.string "I'm the WATER POKéMON expert!\p"
+	.string "Huh?\n"
+	.string "You don't know me?$"
+
+Route104_Text_H6_1::
+	.string "I thought I wasn't too bad, if I may\n"
+	.string "say so, but I guess not… Bleah…$"
+
+Route104_Text_H6_2::
 	.string "I got too into fishing.\n"
 	.string "I forgot I had to raise my POKéMON…$"
 
@@ -45,23 +63,60 @@ Route104_Text_H7::
 	.string "same spot. That's common courtesy.\p"
 	.string "Here, I'll share this with you.$"
 
-Route104_Text_H8::
+Route104_Text_H8_0::
+	.string "GINA: Okay, let's battle with our\n"
+	.string "POKéMON!$"
+
+Route104_Text_H8_1::
+	.string "GINA: Losing upsets me!$"
+
+Route104_Text_H8_2::
 	.string "GINA: You are strong!\n"
 	.string "We have to train lots more!$"
 
-Route104_Text_H9::
+Route104_Text_H9_0::
+	.string "MIA: We are twins, so we battle\n"
+	.string "POKéMON together.$"
+
+Route104_Text_H9_1::
+	.string "MIA: We battled together, but we\n"
+	.string "both lost…$"
+
+Route104_Text_H9_2::
 	.string "MIA: We will train our POKéMON more\n"
 	.string "and be strong like you.$"
 
-Route104_Text_H10::
+Route104_Text_H10_0::
+	.string "Oh, sure, I'll accept your challenge.\n"
+	.string "I have a lot of money.$"
+
+Route104_Text_H10_1::
+	.string "Why couldn't I win?$"
+
+Route104_Text_H10_2::
 	.string "There are some things money can't buy.\n"
 	.string "That's POKéMON…$"
 
-Route104_Text_H11::
+Route104_Text_H11_0::
+	.string "We must have been fated to meet.\n"
+	.string "May I ask you for a battle?$"
+
+Route104_Text_H11_1::
+	.string "Oh, my!$"
+
+Route104_Text_H11_2::
 	.string "“Hello” is the beginning of “good-bye.”\n"
 	.string "I hope we meet again.$"
 
-Route104_Text_H12::
+Route104_Text_H12_0::
+	.string "Leaving footprints in the sand is\n"
+	.string "so fun!$"
+
+Route104_Text_H12_1::
+	.string "Waah! I got sand in my runners!\n"
+	.string "They're all gritty!$"
+
+Route104_Text_H12_2::
 	.string "I want to leave my footprints in\n"
 	.string "the sand everywhere, but they\l"
 	.string "disappear quickly…$"
@@ -73,7 +128,15 @@ Route104_Text_H13::
 	.string "Use it on a POKéMON, and it will learn\n"
 	.string "a move for firing seeds rapidly.$"
 
-Route104_Text_H14::
+Route104_Text_H14_0::
+	.string "I fished up a tough-looking POKéMON!\p"
+	.string "It has this magical quality to it!\n"
+	.string "It surely looks tough, yes it does!$"
+
+Route104_Text_H14_1::
+	.string "What the…$"
+
+Route104_Text_H14_2::
 	.string "Hey, MAGIKARP, you sure don't live up\n"
 	.string "to your name, do you?$"
 

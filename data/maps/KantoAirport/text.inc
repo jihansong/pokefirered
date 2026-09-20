@@ -29,7 +29,11 @@ KantoAirport_Text_Info::
     .string "Flights to HOENN leave from the\n"
     .string "first counter on the left.\p"
     .string "To come back to KANTO, look for\n"
-    .string "our counter at SLATEPORT HARBOR.$"
+    .string "our counter at SLATEPORT HARBOR.\p"
+    .string "A word of warning: HOENN's sky\n"
+    .string "routes aren't charted yet.\p"
+    .string "Over there, FLY only carries you\n"
+    .string "home to a KANTO town.$"
 
 KantoAirport_Text_Traveler::
     .string "HOENN has POKéMON you'll never see\n"

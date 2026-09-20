@@ -10,6 +10,10 @@ SlateportCity_Harbor_EventScript_AirlineClerk::
 	goto EventScript_TakeAirplane
 	end
 
+SlateportCity_Harbor_EventScript_FlyWarning::
+	msgbox SlateportCity_Harbor_Text_FlyWarning, MSGBOX_NPC
+	end
+
 SlateportCity_Harbor_EventScript_AirlineNo::
 	msgbox KantoAirport_Text_ComeAgain
 	release

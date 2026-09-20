@@ -2,7 +2,7 @@
   "id": "MAP_UNDERWATER_ROUTE126",
   "name": "Underwater_Route126",
   "layout": "LAYOUT_HOENN_UNDERWATER_ROUTE126",
-  "music": "MUS_SURF",
+  "music": "MUS_UNDERWATER",
   "region_map_section": "MAPSEC_UNDERWATER_126",
   "requires_flash": false,
   "weather": "WEATHER_UNDERWATER_BUBBLES",

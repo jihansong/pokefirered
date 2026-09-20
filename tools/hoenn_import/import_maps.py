@@ -47,6 +47,8 @@ MAPSEC_FALLBACK = {'MAPSEC_UNDERWATER_129': 'MAPSEC_ROUTE_129', 'MAPSEC_UNDERWAT
     'MAPSEC_UNDERWATER_SEAFLOOR_CAVERN': 'MAPSEC_SEAFLOOR_CAVERN', 'MAPSEC_MAGMA_HIDEOUT': 'MAPSEC_JAGGED_PASS', 'MAPSEC_MIRAGE_TOWER': 'MAPSEC_ROUTE_111',
     'MAPSEC_DESERT_UNDERPASS': 'MAPSEC_ROUTE_114', 'MAPSEC_ARTISAN_CAVE': 'MAPSEC_BATTLE_FRONTIER', 'MAPSEC_UNDERWATER_MARINE_CAVE': 'MAPSEC_ROUTE_128',
     'MAPSEC_MARINE_CAVE': 'MAPSEC_ROUTE_128', 'MAPSEC_TERRA_CAVE': 'MAPSEC_ROUTE_114', 'MAPSEC_FARAWAY_ISLAND': 'MAPSEC_ROUTE_131', 'MAPSEC_TRAINER_HILL': 'MAPSEC_ROUTE_111'}
+# Emerald splits ROUTE 118's music by where the player stands; we keep one song.
+MUSIC_ALIAS = {'MUS_ROUTE118': 'MUS_ROUTE119'}
 MUSIC = {'MAP_TYPE_TOWN': 'MUS_PALLET', 'MAP_TYPE_CITY': 'MUS_CELADON', 'MAP_TYPE_ROUTE': 'MUS_ROUTE1', 'MAP_TYPE_OCEAN_ROUTE': 'MUS_SURF',
          'MAP_TYPE_UNDERGROUND': 'MUS_MT_MOON', 'MAP_TYPE_UNDERWATER': 'MUS_SURF', 'MAP_TYPE_INDOOR': 'MUS_POKE_CENTER'}
 
@@ -156,7 +158,8 @@ def main():
         if 'shared_events_map' in j:
             src = json.load(open(f"{EM}/data/maps/{j['shared_events_map']}/map.json"))
         out = {'id': map_const(j['id']), 'name': nm, 'layout': 'LAYOUT_HOENN_' + j['layout'][len('LAYOUT_'):],
-               'music': j['music'] if j['music'] in frmus else MUSIC.get(j['map_type'], 'MUS_ROUTE1'),
+               'music': (m if (m := MUSIC_ALIAS.get(j['music'], j['music'])) in frmus
+                         else MUSIC.get(j['map_type'], 'MUS_ROUTE1')),
                'region_map_section': j['region_map_section'] if j['region_map_section'] in frsec else MAPSEC_FALLBACK.get(j['region_map_section'], 'MAPSEC_NONE'),
                'requires_flash': j.get('requires_flash', False), 'weather': j['weather'], 'map_type': j['map_type'],
                'allow_cycling': j.get('allow_cycling', True), 'allow_escaping': j.get('allow_escaping', False),

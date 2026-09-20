@@ -2,7 +2,7 @@
   "id": "MAP_VERDANTURF_TOWN_FRIENDSHIP_RATERS_HOUSE",
   "name": "VerdanturfTown_FriendshipRatersHouse",
   "layout": "LAYOUT_HOENN_HOUSE2",
-  "music": "MUS_POKE_CENTER",
+  "music": "MUS_VERDANTURF",
   "region_map_section": "MAPSEC_VERDANTURF_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

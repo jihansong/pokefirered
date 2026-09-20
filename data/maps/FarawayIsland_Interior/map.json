@@ -2,7 +2,7 @@
   "id": "MAP_FARAWAY_ISLAND_INTERIOR",
   "name": "FarawayIsland_Interior",
   "layout": "LAYOUT_HOENN_FARAWAY_ISLAND_INTERIOR",
-  "music": "MUS_POKE_CENTER",
+  "music": "MUS_ABANDONED_SHIP",
   "region_map_section": "MAPSEC_ROUTE_131",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",

@@ -2,7 +2,7 @@
   "id": "MAP_ARTISAN_CAVE_1F",
   "name": "ArtisanCave_1F",
   "layout": "LAYOUT_HOENN_ARTISAN_CAVE_1F",
-  "music": "MUS_MT_MOON",
+  "music": "MUS_PETALBURG_WOODS",
   "region_map_section": "MAPSEC_BATTLE_FRONTIER",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

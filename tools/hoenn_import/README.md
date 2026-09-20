@@ -20,3 +20,15 @@ Hand-made additions to imported maps go in `patches/<MapName>.json`
 (extra `object_events`/`bg_events`...), `patches/<MapName>.scripts.inc` and
 `patches/<MapName>.text.inc`. `import_maps.py` merges them in after every
 import, so they survive a re-import (e.g. SLATEPORT harbor's airline counter).
+
+- `import_objevent_gfx.py`: copies the Hoenn-only object event sprites
+  (59 of them; the graphics id is a u8 and FR/LG has ~69 free slots, so
+  generic townsfolk keep their FR/LG stand-ins).
+- `import_music.py`: copies the songs the Hoenn maps ask for with their
+  voicegroups, keysplit tables and samples, and appends them to the song
+  table. Emerald names its voicegroups while FR/LG numbers them, so
+  `tools/mid2agb` now takes either form.
+
+Build note: `make` does not track `.incbin`/constant dependencies for the
+generated map data. After an import, delete `build/leafgreen/data/maps.o`
+(and `map_events.o`) or the ROM keeps the old map headers.

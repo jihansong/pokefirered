@@ -5,16 +5,21 @@ The patch holds only the differences, so it can be shared without the
 original ROM. Apply it with any BPS patcher (Flips, beat, RomPatcher.js).
 
 Usage:
-    python3 tools/make_bps_patch.py ORIGINAL.gba [MODIFIED.gba] [OUTPUT.bps]
+    python3 tools/make_bps_patch.py [ORIGINAL.gba] [MODIFIED.gba] [OUTPUT.bps]
 
-MODIFIED defaults to pokemonthyl.gba (built with `make leafgreen`) and OUTPUT
-to pokemonthyl.bps. The original must be the retail English LeafGreen
-(pokeleafgreen.gba, v1.0); any other source prints a warning, because the
-patch would only apply to that exact file. The finished patch is decoded
-again and checked against MODIFIED before the script exits.
+ORIGINAL defaults to baserom_leafgreen.gba, MODIFIED to pokemonthyl.gba
+(built with `make leafgreen`) and OUTPUT to pokemonthyl.bps. The original
+must be the retail English LeafGreen (v1.0); any other source prints a
+warning, because the patch would only apply to that exact file. The finished
+patch is decoded again and checked against MODIFIED before the script exits.
+
+Keep your ROM as baserom_leafgreen.gba. `make clean` deletes every poke*.gba
+in the repository, so a ROM kept as pokeleafgreen.gba is thrown away with the
+build output.
 """
 
 import hashlib
+import os
 import sys
 import zlib
 
@@ -166,11 +171,22 @@ def apply_patch(source, patch):
     return bytes(target)
 
 
+DEFAULT_SOURCES = ("baserom_leafgreen.gba", "baserom.gba")
+
+
 def main(argv):
-    if len(argv) < 2 or argv[1] in ("-h", "--help"):
+    if len(argv) > 1 and argv[1] in ("-h", "--help"):
         print(__doc__.strip())
-        return 0 if len(argv) >= 2 else 1
-    source_path = argv[1]
+        return 0
+    if len(argv) > 1:
+        source_path = argv[1]
+    else:
+        source_path = next((p for p in DEFAULT_SOURCES if os.path.exists(p)), None)
+        if source_path is None:
+            print("error: no base ROM. Put the retail LeafGreen ROM in the repository "
+                  "as baserom_leafgreen.gba (not pokeleafgreen.gba: `make clean` deletes "
+                  "every poke*.gba), or pass its path.", file=sys.stderr)
+            return 1
     target_path = argv[2] if len(argv) > 2 else "pokemonthyl.gba"
     patch_path = argv[3] if len(argv) > 3 else "pokemonthyl.bps"
 

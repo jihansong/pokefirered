@@ -79,3 +79,6 @@ pokemonthyl.sym
 
 # Save files used for save compatibility testing
 saves/
+
+# Keep your retail ROM here; make clean deletes poke*.gba
+baserom*.gba

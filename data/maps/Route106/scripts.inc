@@ -21,6 +21,10 @@ Route106_EventScript_H3::
 	msgbox Route106_Text_H3_2, MSGBOX_AUTOCLOSE
 	end
 
+Route106_EventScript_HItem14::
+	finditem ITEM_PROTEIN
+	end
+
 Route106_EventScript_H4::
 	msgbox Route106_Text_H4, MSGBOX_SIGN
 	end

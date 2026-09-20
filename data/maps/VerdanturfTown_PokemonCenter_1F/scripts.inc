@@ -9,3 +9,7 @@ VerdanturfTown_PokemonCenter_1F_EventScript_H1::
 	msgbox VerdanturfTown_PokemonCenter_1F_Text_H1, MSGBOX_NPC
 	end
 
+VerdanturfTown_PokemonCenter_1F_EventScript_H2::
+	msgbox VerdanturfTown_PokemonCenter_1F_Text_H2, MSGBOX_NPC
+	end
+

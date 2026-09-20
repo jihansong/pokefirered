@@ -28,5 +28,76 @@
   "object_events": [],
   "warp_events": [],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 42,
+      "y": 51,
+      "elevation": 0,
+      "item": "ITEM_CARBOS",
+      "flag": "FLAG_HOENN_HIDDEN_60",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 14,
+      "y": 40,
+      "elevation": 0,
+      "item": "ITEM_GREEN_SHARD",
+      "flag": "FLAG_HOENN_HIDDEN_61",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 66,
+      "y": 34,
+      "elevation": 3,
+      "item": "ITEM_PEARL",
+      "flag": "FLAG_HOENN_HIDDEN_62",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 64,
+      "y": 54,
+      "elevation": 3,
+      "item": "ITEM_BIG_PEARL",
+      "flag": "FLAG_HOENN_HIDDEN_63",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 70,
+      "y": 64,
+      "elevation": 3,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HOENN_HIDDEN_64",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 42,
+      "y": 5,
+      "elevation": 3,
+      "item": "ITEM_CALCIUM",
+      "flag": "FLAG_HOENN_HIDDEN_65",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 45,
+      "y": 36,
+      "elevation": 3,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HOENN_HIDDEN_66",
+      "quantity": 1,
+      "underfoot": false
+    }
+  ]
 }

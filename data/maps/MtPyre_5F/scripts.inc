@@ -6,3 +6,7 @@ MtPyre_5F_EventScript_H0::
 	msgbox MtPyre_5F_Text_H0_2, MSGBOX_AUTOCLOSE
 	end
 
+MtPyre_5F_EventScript_HItem104::
+	finditem ITEM_LAX_INCENSE
+	end
+

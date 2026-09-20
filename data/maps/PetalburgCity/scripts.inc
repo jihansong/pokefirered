@@ -9,6 +9,14 @@ PetalburgCity_EventScript_H1::
 	msgbox PetalburgCity_Text_H1, MSGBOX_NPC
 	end
 
+PetalburgCity_EventScript_HItem0::
+	finditem ITEM_MAX_REVIVE
+	end
+
+PetalburgCity_EventScript_HItem1::
+	finditem ITEM_ETHER
+	end
+
 PetalburgCity_EventScript_H2::
 	msgbox PetalburgCity_Text_H2, MSGBOX_NPC
 	end

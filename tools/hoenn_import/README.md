@@ -47,3 +47,10 @@ Hoenn trainer ids start at `HOENN_TRAINERS_START` (768), past the save's
 trainer flag block. `battle_setup.c` keeps their defeated bits in
 `gSaveBlock2Ptr->hoennTrainerFlags`, carved out of padding FR/LG never used,
 so the save layout is unchanged.
+
+Items: the item balls use flags from `gSaveBlock2Ptr->hoennFlags` (the range
+`HOENN_FLAGS_START`, handled in `GetFlagAddr`), generated into
+`include/constants/flags_hoenn.h`. Hidden items must be reachable as
+`FLAG_HIDDEN_ITEMS_START + id`, so they take the flags right after FR/LG's own
+hidden items; the id field in map data was widened from 8 to 14 bits (the item
+field needs only 10), which is ROM data and leaves the save untouched.

@@ -13,6 +13,14 @@ HoennVictoryRoad_1F_EventScript_H2::
 	msgbox HoennVictoryRoad_1F_Text_H2, MSGBOX_NPC
 	end
 
+HoennVictoryRoad_1F_EventScript_HItem113::
+	finditem ITEM_MAX_ELIXIR
+	end
+
+HoennVictoryRoad_1F_EventScript_HItem114::
+	finditem ITEM_PP_UP
+	end
+
 HoennVictoryRoad_1F_EventScript_H3::
 	msgbox HoennVictoryRoad_1F_Text_H3, MSGBOX_NPC
 	end

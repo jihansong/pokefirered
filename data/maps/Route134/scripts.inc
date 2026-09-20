@@ -46,3 +46,11 @@ Route134_EventScript_H8::
 	msgbox Route134_Text_H8_2, MSGBOX_AUTOCLOSE
 	end
 
+Route134_EventScript_HItem81::
+	finditem ITEM_CARBOS
+	end
+
+Route134_EventScript_HItem82::
+	finditem ITEM_STAR_PIECE
+	end
+

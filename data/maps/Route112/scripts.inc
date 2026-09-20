@@ -25,6 +25,10 @@ Route112_EventScript_H4::
 	msgbox Route112_Text_H4, MSGBOX_NPC
 	end
 
+Route112_EventScript_HItem25::
+	finditem ITEM_NUGGET
+	end
+
 Route112_EventScript_H5::
 	trainerbattle_single TRAINER_HOENN_BRYANT, Route112_Text_H5_0, Route112_Text_H5_1
 	msgbox Route112_Text_H5_2, MSGBOX_AUTOCLOSE

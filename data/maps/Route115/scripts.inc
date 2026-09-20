@@ -30,6 +30,22 @@ Route115_EventScript_H5::
 	msgbox Route115_Text_H5_2, MSGBOX_AUTOCLOSE
 	end
 
+Route115_EventScript_HItem32::
+	finditem ITEM_SUPER_POTION
+	end
+
+Route115_EventScript_HItem33::
+	finditem ITEM_TM01_FOCUS_PUNCH
+	end
+
+Route115_EventScript_HItem34::
+	finditem ITEM_IRON
+	end
+
+Route115_EventScript_HItem35::
+	finditem ITEM_GREAT_BALL
+	end
+
 Route115_EventScript_H6::
 	trainerbattle_single TRAINER_HOENN_KYRA, Route115_Text_H6_0, Route115_Text_H6_1
 	msgbox Route115_Text_H6_2, MSGBOX_AUTOCLOSE
@@ -53,6 +69,14 @@ Route115_EventScript_H9::
 Route115_EventScript_H10::
 	trainerbattle_single TRAINER_HOENN_MARLENE, Route115_Text_H10_0, Route115_Text_H10_1
 	msgbox Route115_Text_H10_2, MSGBOX_AUTOCLOSE
+	end
+
+Route115_EventScript_HItem36::
+	finditem ITEM_PP_UP
+	end
+
+Route115_EventScript_HItem37::
+	finditem ITEM_HEAL_POWDER
 	end
 
 Route115_EventScript_H11::

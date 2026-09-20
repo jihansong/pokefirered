@@ -11,6 +11,10 @@ JaggedPass_EventScript_H1::
 	msgbox JaggedPass_Text_H1_2, MSGBOX_AUTOCLOSE
 	end
 
+JaggedPass_EventScript_HItem98::
+	finditem ITEM_BURN_HEAL
+	end
+
 JaggedPass_EventScript_H2::
 	trainerbattle_single TRAINER_HOENN_DIANA_1, JaggedPass_Text_H2_0, JaggedPass_Text_H2_1
 	msgbox JaggedPass_Text_H2_2, MSGBOX_AUTOCLOSE

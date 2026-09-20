@@ -60,6 +60,19 @@ MossdeepCity_Text_H7::
 	.string "Do you want it?$"
 
 MossdeepCity_Text_H8::
+	.string "I can't do this anymore!\p"
+	.string "It's utterly hopeless!\p"
+	.string "I'm a FIGHTING-type TRAINER,\n"
+	.string "so I can't win at the MOSSDEEP GYM\l"
+	.string "no matter how hard I try!\p"
+	.string "Argh! Punch! Punch! Punch!\n"
+	.string "Punch! Punch! Punch!\p"
+	.string "What, don't look at me that way!\n"
+	.string "I'm only hitting the ground!\p"
+	.string "Or do you want me to teach your\n"
+	.string "POKéMON DYNAMICPUNCH?$"
+
+MossdeepCity_Text_H9::
 	.string "Ahh… It feels great letting the waves\n"
 	.string "wash over my feet…\p"
 	.string "Speaking of the waves, you know that\n"
@@ -69,19 +82,19 @@ MossdeepCity_Text_H8::
 	.string "People tell me the new LEADER once\n"
 	.string "mentored WALLACE.$"
 
-MossdeepCity_Text_H9::
+MossdeepCity_Text_H10::
 	.string "MOSSDEEP CITY\n"
 	.string "“Our slogan: Cherish POKéMON!”$"
 
-MossdeepCity_Text_H10::
+MossdeepCity_Text_H11::
 	.string "MOSSDEEP CITY POKéMON GYM\n"
 	.string "LEADERS: LIZA & TATE\p"
 	.string "“The mystic combination!”$"
 
-MossdeepCity_Text_H11::
+MossdeepCity_Text_H12::
 	.string "MOSSDEEP SPACE CENTER\n"
 	.string "“The closest place to space.”$"
 
-MossdeepCity_Text_H12::
+MossdeepCity_Text_H13::
 	.string "It's a white rock.$"
 

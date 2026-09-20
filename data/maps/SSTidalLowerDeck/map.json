@@ -54,5 +54,16 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 0,
+      "y": 2,
+      "elevation": 0,
+      "item": "ITEM_LEFTOVERS",
+      "flag": "FLAG_HOENN_HIDDEN_104",
+      "quantity": 1,
+      "underfoot": false
+    }
+  ]
 }

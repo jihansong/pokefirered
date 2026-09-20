@@ -41,5 +41,86 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 30,
+      "y": 17,
+      "elevation": 3,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HOENN_HIDDEN_67",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 41,
+      "y": 19,
+      "elevation": 3,
+      "item": "ITEM_ULTRA_BALL",
+      "flag": "FLAG_HOENN_HIDDEN_68",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 63,
+      "y": 19,
+      "elevation": 3,
+      "item": "ITEM_STARDUST",
+      "flag": "FLAG_HOENN_HIDDEN_69",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 10,
+      "y": 36,
+      "elevation": 3,
+      "item": "ITEM_PEARL",
+      "flag": "FLAG_HOENN_HIDDEN_70",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 11,
+      "y": 39,
+      "elevation": 3,
+      "item": "ITEM_IRON",
+      "flag": "FLAG_HOENN_HIDDEN_71",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 12,
+      "y": 35,
+      "elevation": 3,
+      "item": "ITEM_YELLOW_SHARD",
+      "flag": "FLAG_HOENN_HIDDEN_72",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 65,
+      "y": 60,
+      "elevation": 3,
+      "item": "ITEM_BIG_PEARL",
+      "flag": "FLAG_HOENN_HIDDEN_73",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 9,
+      "y": 77,
+      "elevation": 3,
+      "item": "ITEM_BLUE_SHARD",
+      "flag": "FLAG_HOENN_HIDDEN_74",
+      "quantity": 1,
+      "underfoot": false
+    }
+  ]
 }

@@ -81,6 +81,20 @@
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route106_EventScript_H3",
       "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 29,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route106_EventScript_HItem14",
+      "flag": "FLAG_HOENN_ITEM_14"
     }
   ],
   "warp_events": [
@@ -94,6 +108,36 @@
   ],
   "coord_events": [],
   "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 41,
+      "y": 11,
+      "elevation": 3,
+      "item": "ITEM_POKE_BALL",
+      "flag": "FLAG_HOENN_HIDDEN_13",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 53,
+      "y": 12,
+      "elevation": 0,
+      "item": "ITEM_STARDUST",
+      "flag": "FLAG_HOENN_HIDDEN_14",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 68,
+      "y": 15,
+      "elevation": 3,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HOENN_HIDDEN_15",
+      "quantity": 1,
+      "underfoot": false
+    },
     {
       "type": "sign",
       "x": 59,

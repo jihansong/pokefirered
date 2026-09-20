@@ -16,6 +16,14 @@ Route133_EventScript_H2::
 	msgbox Route133_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
+Route133_EventScript_HItem78::
+	finditem ITEM_BIG_PEARL
+	end
+
+Route133_EventScript_HItem79::
+	finditem ITEM_STAR_PIECE
+	end
+
 Route133_EventScript_H3::
 	trainerbattle_single TRAINER_HOENN_BECK, Route133_Text_H3_0, Route133_Text_H3_1
 	msgbox Route133_Text_H3_2, MSGBOX_AUTOCLOSE
@@ -34,5 +42,9 @@ Route133_EventScript_H5::
 Route133_EventScript_H6::
 	trainerbattle_single TRAINER_HOENN_CONOR, Route133_Text_H6_0, Route133_Text_H6_1
 	msgbox Route133_Text_H6_2, MSGBOX_AUTOCLOSE
+	end
+
+Route133_EventScript_HItem80::
+	finditem ITEM_MAX_REVIVE
 	end
 

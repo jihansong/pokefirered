@@ -16,3 +16,7 @@ Route110_TrickHousePuzzle1_EventScript_H2::
 	msgbox Route110_TrickHousePuzzle1_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
+Route110_TrickHousePuzzle1_EventScript_HItem153::
+	finditem ITEM_ORANGE_MAIL
+	end
+

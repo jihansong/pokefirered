@@ -21,6 +21,10 @@ Route126_EventScript_H3::
 	msgbox Route126_Text_H3_2, MSGBOX_AUTOCLOSE
 	end
 
+Route126_EventScript_HItem72::
+	finditem ITEM_GREEN_SHARD
+	end
+
 Route126_EventScript_H4::
 	trainerbattle_single TRAINER_HOENN_SIENNA, Route126_Text_H4_0, Route126_Text_H4_1
 	msgbox Route126_Text_H4_2, MSGBOX_AUTOCLOSE

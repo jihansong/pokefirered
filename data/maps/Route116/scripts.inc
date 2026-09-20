@@ -11,9 +11,21 @@ Route116_EventScript_H1::
 	msgbox Route116_Text_H1_2, MSGBOX_AUTOCLOSE
 	end
 
+Route116_EventScript_HItem38::
+	finditem ITEM_ETHER
+	end
+
+Route116_EventScript_HItem39::
+	finditem ITEM_REPEL
+	end
+
 Route116_EventScript_H2::
 	trainerbattle_single TRAINER_HOENN_CLARK, Route116_Text_H2_0, Route116_Text_H2_1
 	msgbox Route116_Text_H2_2, MSGBOX_AUTOCLOSE
+	end
+
+Route116_EventScript_HItem40::
+	finditem ITEM_HP_UP
 	end
 
 Route116_EventScript_H3::
@@ -31,6 +43,10 @@ Route116_EventScript_H5::
 	msgbox Route116_Text_H5_2, MSGBOX_AUTOCLOSE
 	end
 
+Route116_EventScript_HItem41::
+	finditem ITEM_X_SPECIAL
+	end
+
 Route116_EventScript_H6::
 	trainerbattle_single TRAINER_HOENN_SARAH, Route116_Text_H6_0, Route116_Text_H6_1
 	msgbox Route116_Text_H6_2, MSGBOX_AUTOCLOSE
@@ -39,6 +55,10 @@ Route116_EventScript_H6::
 Route116_EventScript_H7::
 	trainerbattle_single TRAINER_HOENN_DAWSON, Route116_Text_H7_0, Route116_Text_H7_1
 	msgbox Route116_Text_H7_2, MSGBOX_AUTOCLOSE
+	end
+
+Route116_EventScript_HItem42::
+	finditem ITEM_POTION
 	end
 
 Route116_EventScript_H8::

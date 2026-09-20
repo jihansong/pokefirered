@@ -16,3 +16,11 @@ Route110_TrickHousePuzzle2_EventScript_H2::
 	msgbox Route110_TrickHousePuzzle2_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
+Route110_TrickHousePuzzle2_EventScript_HItem154::
+	finditem ITEM_WAVE_MAIL
+	end
+
+Route110_TrickHousePuzzle2_EventScript_HItem155::
+	finditem ITEM_HARBOR_MAIL
+	end
+

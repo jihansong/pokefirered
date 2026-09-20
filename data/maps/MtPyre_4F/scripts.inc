@@ -6,3 +6,7 @@ MtPyre_4F_EventScript_H0::
 	msgbox MtPyre_4F_Text_H0_2, MSGBOX_AUTOCLOSE
 	end
 
+MtPyre_4F_EventScript_HItem103::
+	finditem ITEM_SEA_INCENSE
+	end
+

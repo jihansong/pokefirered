@@ -35,6 +35,10 @@ Route104_EventScript_H7::
 	msgbox Route104_Text_H7, MSGBOX_NPC
 	end
 
+Route104_EventScript_HItem9::
+	finditem ITEM_PP_UP
+	end
+
 Route104_EventScript_H8::
 	trainerbattle_double TRAINER_HOENN_GINA_AND_MIA_1, Route104_Text_H8_0, Route104_Text_H8_1, Route104_Text_H8_1
 	msgbox Route104_Text_H8_2, MSGBOX_AUTOCLOSE
@@ -55,9 +59,21 @@ Route104_EventScript_H11::
 	msgbox Route104_Text_H11_2, MSGBOX_AUTOCLOSE
 	end
 
+Route104_EventScript_HItem10::
+	finditem ITEM_POKE_BALL
+	end
+
 Route104_EventScript_H12::
 	trainerbattle_single TRAINER_HOENN_BILLY, Route104_Text_H12_0, Route104_Text_H12_1
 	msgbox Route104_Text_H12_2, MSGBOX_AUTOCLOSE
+	end
+
+Route104_EventScript_HItem11::
+	finditem ITEM_X_ACCURACY
+	end
+
+Route104_EventScript_HItem12::
+	finditem ITEM_POTION
 	end
 
 Route104_EventScript_H13::

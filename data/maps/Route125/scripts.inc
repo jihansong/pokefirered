@@ -46,3 +46,7 @@ Route125_EventScript_H8::
 	msgbox Route125_Text_H8_2, MSGBOX_AUTOCLOSE
 	end
 
+Route125_EventScript_HItem71::
+	finditem ITEM_BIG_PEARL
+	end
+

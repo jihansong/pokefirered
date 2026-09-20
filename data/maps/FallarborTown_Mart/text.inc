@@ -15,3 +15,14 @@ FallarborTown_Mart_Text_H2::
 FallarborTown_Mart_Text_H3::
 	.string "SKITTY: Miyao?$"
 
+FallarborTown_Mart_Text_H4::
+	.string "I want all sorts of things!\n"
+	.string "But I used up my allowance…\p"
+	.string "Wouldn't it be nice if there were\n"
+	.string "a spell that made money appear when\l"
+	.string "you waggle a finger?\p"
+	.string "If you want, I can teach your POKéMON\n"
+	.string "the move METRONOME.\p"
+	.string "Money won't appear, but your POKéMON\n"
+	.string "will waggle a finger. Yes?$"
+

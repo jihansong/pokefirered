@@ -17,3 +17,13 @@ PacifidlogTown_PokemonCenter_1F_Text_H2::
 	.string "If I told you that, would you believe\n"
 	.string "me?$"
 
+PacifidlogTown_PokemonCenter_1F_Text_H3::
+	.string "I don't intend to be going nowhere\n"
+	.string "fast in the sticks like this forever.\p"
+	.string "You watch me, I'll get out to the city\n"
+	.string "and become a huge hit.\p"
+	.string "Seriously, I'm going to cause\n"
+	.string "a huge EXPLOSION of popularity!\p"
+	.string "If you overheard that, I'll happily\n"
+	.string "teach EXPLOSION to your POKéMON!$"
+

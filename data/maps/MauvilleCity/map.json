@@ -108,6 +108,20 @@
     },
     {
       "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 28,
+      "y": 19,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MauvilleCity_EventScript_HItem2",
+      "flag": "FLAG_HOENN_ITEM_2"
+    },
+    {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
       "x": 13,
       "y": 7,
@@ -117,7 +131,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
+      "script": "MauvilleCity_EventScript_H5",
       "flag": "0"
     }
   ],
@@ -180,7 +194,7 @@
       "y": 6,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "MauvilleCity_EventScript_H5"
+      "script": "MauvilleCity_EventScript_H6"
     },
     {
       "type": "sign",
@@ -188,7 +202,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "MauvilleCity_EventScript_H6"
+      "script": "MauvilleCity_EventScript_H7"
     },
     {
       "type": "sign",
@@ -196,7 +210,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "MauvilleCity_EventScript_H7"
+      "script": "MauvilleCity_EventScript_H8"
     },
     {
       "type": "sign",
@@ -204,7 +218,7 @@
       "y": 15,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "MauvilleCity_EventScript_H8"
+      "script": "MauvilleCity_EventScript_H9"
     }
   ]
 }

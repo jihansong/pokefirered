@@ -6,6 +6,10 @@ MtPyre_2F_EventScript_H0::
 	msgbox MtPyre_2F_Text_H0_2, MSGBOX_AUTOCLOSE
 	end
 
+MtPyre_2F_EventScript_HItem101::
+	finditem ITEM_ULTRA_BALL
+	end
+
 MtPyre_2F_EventScript_H1::
 	msgbox MtPyre_2F_Text_H1, MSGBOX_NPC
 	end

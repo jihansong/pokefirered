@@ -24,6 +24,14 @@ Route117_EventScript_H4::
 	msgbox Route117_Text_H4_2, MSGBOX_AUTOCLOSE
 	end
 
+Route117_EventScript_HItem43::
+	finditem ITEM_GREAT_BALL
+	end
+
+Route117_EventScript_HItem44::
+	finditem ITEM_REVIVE
+	end
+
 Route117_EventScript_H5::
 	trainerbattle_single TRAINER_HOENN_MARIA_1, Route117_Text_H5_0, Route117_Text_H5_1
 	msgbox Route117_Text_H5_2, MSGBOX_AUTOCLOSE

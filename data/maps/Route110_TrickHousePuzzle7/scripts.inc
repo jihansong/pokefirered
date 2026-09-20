@@ -16,6 +16,10 @@ Route110_TrickHousePuzzle7_EventScript_H2::
 	msgbox Route110_TrickHousePuzzle7_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
+Route110_TrickHousePuzzle7_EventScript_HItem160::
+	finditem ITEM_TROPIC_MAIL
+	end
+
 Route110_TrickHousePuzzle7_EventScript_H3::
 	trainerbattle_single TRAINER_HOENN_ALVARO, Route110_TrickHousePuzzle7_Text_H3_0, Route110_TrickHousePuzzle7_Text_H3_1
 	msgbox Route110_TrickHousePuzzle7_Text_H3_2, MSGBOX_AUTOCLOSE

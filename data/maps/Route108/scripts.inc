@@ -31,3 +31,7 @@ Route108_EventScript_H5::
 	msgbox Route108_Text_H5_2, MSGBOX_AUTOCLOSE
 	end
 
+Route108_EventScript_HItem15::
+	finditem ITEM_STAR_PIECE
+	end
+

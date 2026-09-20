@@ -40,3 +40,7 @@ FallarborTown_Mart_EventScript_H3::
 	msgbox FallarborTown_Mart_Text_H3, MSGBOX_NPC
 	end
 
+FallarborTown_Mart_EventScript_H4::
+	msgbox FallarborTown_Mart_Text_H4, MSGBOX_NPC
+	end
+

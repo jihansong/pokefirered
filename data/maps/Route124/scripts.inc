@@ -26,6 +26,18 @@ Route124_EventScript_H4::
 	msgbox Route124_Text_H4_2, MSGBOX_AUTOCLOSE
 	end
 
+Route124_EventScript_HItem68::
+	finditem ITEM_RED_SHARD
+	end
+
+Route124_EventScript_HItem69::
+	finditem ITEM_BLUE_SHARD
+	end
+
+Route124_EventScript_HItem70::
+	finditem ITEM_YELLOW_SHARD
+	end
+
 Route124_EventScript_H5::
 	trainerbattle_double TRAINER_HOENN_LILA_AND_ROY_1, Route124_Text_H5_0, Route124_Text_H5_1, Route124_Text_H5_1
 	msgbox Route124_Text_H5_2, MSGBOX_AUTOCLOSE

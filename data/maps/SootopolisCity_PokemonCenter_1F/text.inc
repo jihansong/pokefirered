@@ -8,3 +8,14 @@ SootopolisCity_PokemonCenter_1F_Text_H1::
 	.string "Aren't POKéMON our friends?\p"
 	.string "Why are they going wild this way?$"
 
+SootopolisCity_PokemonCenter_1F_Text_H2::
+	.string "Sigh…\p"
+	.string "SOOTOPOLIS's GYM LEADER is really\n"
+	.string "lovably admirable.\p"
+	.string "But that also means I have many\n"
+	.string "rivals for his attention.\p"
+	.string "He's got appeal with a DOUBLE-EDGE.\n"
+	.string "I couldn't even catch his eye.\p"
+	.string "Please, let me teach your POKéMON\n"
+	.string "the move DOUBLE-EDGE!$"
+

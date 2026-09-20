@@ -16,6 +16,14 @@ VictoryRoad_B1F_EventScript_H2::
 	msgbox VictoryRoad_B1F_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
+VictoryRoad_B1F_EventScript_HItem115::
+	finditem ITEM_TM29_PSYCHIC
+	end
+
+VictoryRoad_B1F_EventScript_HItem116::
+	finditem ITEM_FULL_RESTORE
+	end
+
 VictoryRoad_B1F_EventScript_H3::
 	trainerbattle_single TRAINER_HOENN_MITCHELL, VictoryRoad_B1F_Text_H3_0, VictoryRoad_B1F_Text_H3_1
 	msgbox VictoryRoad_B1F_Text_H3_2, MSGBOX_AUTOCLOSE

@@ -21,6 +21,10 @@ MossdeepCity_EventScript_H4::
 	msgbox MossdeepCity_Text_H4, MSGBOX_NPC
 	end
 
+MossdeepCity_EventScript_HItem5::
+	finditem ITEM_NET_BALL
+	end
+
 MossdeepCity_EventScript_H5::
 	msgbox MossdeepCity_Text_H5, MSGBOX_NPC
 	end
@@ -38,7 +42,7 @@ MossdeepCity_EventScript_H8::
 	end
 
 MossdeepCity_EventScript_H9::
-	msgbox MossdeepCity_Text_H9, MSGBOX_SIGN
+	msgbox MossdeepCity_Text_H9, MSGBOX_NPC
 	end
 
 MossdeepCity_EventScript_H10::
@@ -51,5 +55,9 @@ MossdeepCity_EventScript_H11::
 
 MossdeepCity_EventScript_H12::
 	msgbox MossdeepCity_Text_H12, MSGBOX_SIGN
+	end
+
+MossdeepCity_EventScript_H13::
+	msgbox MossdeepCity_Text_H13, MSGBOX_SIGN
 	end
 

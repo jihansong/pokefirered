@@ -266,6 +266,20 @@
     },
     {
       "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 31,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route123_EventScript_HItem63",
+      "flag": "FLAG_HOENN_ITEM_63"
+    },
+    {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 108,
       "y": 13,
@@ -406,6 +420,34 @@
     },
     {
       "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 27,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route123_EventScript_HItem64",
+      "flag": "FLAG_HOENN_ITEM_64"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 75,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route123_EventScript_HItem65",
+      "flag": "FLAG_HOENN_ITEM_65"
+    },
+    {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
       "x": 138,
       "y": 14,
@@ -490,6 +532,20 @@
     },
     {
       "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 43,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route123_EventScript_HItem66",
+      "flag": "FLAG_HOENN_ITEM_66"
+    },
+    {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
       "x": 14,
       "y": 16,
@@ -515,6 +571,20 @@
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route123_EventScript_H16",
       "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 57,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route123_EventScript_HItem67",
+      "flag": "FLAG_HOENN_ITEM_67"
     }
   ],
   "warp_events": [
@@ -545,12 +615,62 @@
       "script": "Route123_EventScript_H18"
     },
     {
+      "type": "hidden_item",
+      "x": 75,
+      "y": 1,
+      "elevation": 3,
+      "item": "ITEM_SUPER_REPEL",
+      "flag": "FLAG_HOENN_HIDDEN_52",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
       "type": "sign",
       "x": 20,
       "y": 7,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route123_EventScript_H19"
+    },
+    {
+      "type": "hidden_item",
+      "x": 12,
+      "y": 1,
+      "elevation": 3,
+      "item": "ITEM_REVIVE",
+      "flag": "FLAG_HOENN_HIDDEN_53",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 91,
+      "y": 15,
+      "elevation": 3,
+      "item": "ITEM_HYPER_POTION",
+      "flag": "FLAG_HOENN_HIDDEN_54",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 139,
+      "y": 15,
+      "elevation": 3,
+      "item": "ITEM_PP_UP",
+      "flag": "FLAG_HOENN_HIDDEN_55",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 138,
+      "y": 18,
+      "elevation": 3,
+      "item": "ITEM_RARE_CANDY",
+      "flag": "FLAG_HOENN_HIDDEN_56",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

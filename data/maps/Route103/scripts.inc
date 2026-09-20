@@ -34,6 +34,10 @@ Route103_EventScript_H6::
 	msgbox Route103_Text_H6_2, MSGBOX_AUTOCLOSE
 	end
 
+Route103_EventScript_HItem7::
+	finditem ITEM_GUARD_SPEC
+	end
+
 Route103_EventScript_H7::
 	trainerbattle_single TRAINER_HOENN_RHETT, Route103_Text_H7_0, Route103_Text_H7_1
 	msgbox Route103_Text_H7_2, MSGBOX_AUTOCLOSE
@@ -52,6 +56,10 @@ Route103_EventScript_H9::
 Route103_EventScript_H10::
 	trainerbattle_single TRAINER_HOENN_PETE, Route103_Text_H10_0, Route103_Text_H10_1
 	msgbox Route103_Text_H10_2, MSGBOX_AUTOCLOSE
+	end
+
+Route103_EventScript_HItem8::
+	finditem ITEM_PP_UP
 	end
 
 Route103_EventScript_H11::

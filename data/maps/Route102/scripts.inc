@@ -24,6 +24,10 @@ Route102_EventScript_H4::
 	msgbox Route102_Text_H4, MSGBOX_NPC
 	end
 
+Route102_EventScript_HItem6::
+	finditem ITEM_POTION
+	end
+
 Route102_EventScript_H5::
 	trainerbattle_single TRAINER_HOENN_ALLEN, Route102_Text_H5_0, Route102_Text_H5_1
 	msgbox Route102_Text_H5_2, MSGBOX_AUTOCLOSE

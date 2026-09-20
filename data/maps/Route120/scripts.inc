@@ -26,6 +26,14 @@ Route120_EventScript_H4::
 	msgbox Route120_Text_H4_2, MSGBOX_AUTOCLOSE
 	end
 
+Route120_EventScript_HItem55::
+	finditem ITEM_NUGGET
+	end
+
+Route120_EventScript_HItem56::
+	finditem ITEM_FULL_HEAL
+	end
+
 Route120_EventScript_H5::
 	msgbox Route120_Text_H5, MSGBOX_NPC
 	end
@@ -50,6 +58,14 @@ Route120_EventScript_H9::
 	msgbox Route120_Text_H9_2, MSGBOX_AUTOCLOSE
 	end
 
+Route120_EventScript_HItem57::
+	finditem ITEM_NEST_BALL
+	end
+
+Route120_EventScript_HItem58::
+	finditem ITEM_HYPER_POTION
+	end
+
 Route120_EventScript_H10::
 	trainerbattle_single TRAINER_HOENN_KEIGO, Route120_Text_H10_0, Route120_Text_H10_1
 	msgbox Route120_Text_H10_2, MSGBOX_AUTOCLOSE
@@ -68,6 +84,10 @@ Route120_EventScript_H12::
 Route120_EventScript_H13::
 	trainerbattle_single TRAINER_HOENN_LEONEL, Route120_Text_H13_0, Route120_Text_H13_1
 	msgbox Route120_Text_H13_2, MSGBOX_AUTOCLOSE
+	end
+
+Route120_EventScript_HItem59::
+	finditem ITEM_REVIVE
 	end
 
 Route120_EventScript_H14::

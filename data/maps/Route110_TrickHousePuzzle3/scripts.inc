@@ -16,3 +16,11 @@ Route110_TrickHousePuzzle3_EventScript_H2::
 	msgbox Route110_TrickHousePuzzle3_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
+Route110_TrickHousePuzzle3_EventScript_HItem156::
+	finditem ITEM_WOOD_MAIL
+	end
+
+Route110_TrickHousePuzzle3_EventScript_HItem157::
+	finditem ITEM_SHADOW_MAIL
+	end
+

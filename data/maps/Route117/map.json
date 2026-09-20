@@ -210,6 +210,34 @@
     },
     {
       "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 16,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route117_EventScript_HItem43",
+      "flag": "FLAG_HOENN_ITEM_43"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 9,
+      "y": 1,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route117_EventScript_HItem44",
+      "flag": "FLAG_HOENN_ITEM_44"
+    },
+    {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F",
       "x": 26,
       "y": 13,
@@ -355,6 +383,16 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route117_EventScript_H15"
+    },
+    {
+      "type": "hidden_item",
+      "x": 3,
+      "y": 18,
+      "elevation": 3,
+      "item": "ITEM_REPEL",
+      "flag": "FLAG_HOENN_HIDDEN_37",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

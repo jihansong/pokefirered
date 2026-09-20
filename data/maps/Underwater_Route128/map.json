@@ -36,5 +36,26 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 38,
+      "y": 19,
+      "elevation": 3,
+      "item": "ITEM_PROTEIN",
+      "flag": "FLAG_HOENN_HIDDEN_79",
+      "quantity": 1,
+      "underfoot": false
+    },
+    {
+      "type": "hidden_item",
+      "x": 69,
+      "y": 18,
+      "elevation": 3,
+      "item": "ITEM_PEARL",
+      "flag": "FLAG_HOENN_HIDDEN_80",
+      "quantity": 1,
+      "underfoot": false
+    }
+  ]
 }

@@ -11,6 +11,14 @@ Route127_EventScript_H1::
 	msgbox Route127_Text_H1_2, MSGBOX_AUTOCLOSE
 	end
 
+Route127_EventScript_HItem73::
+	finditem ITEM_ZINC
+	end
+
+Route127_EventScript_HItem74::
+	finditem ITEM_CARBOS
+	end
+
 Route127_EventScript_H2::
 	trainerbattle_single TRAINER_HOENN_JONAH, Route127_Text_H2_0, Route127_Text_H2_1
 	msgbox Route127_Text_H2_2, MSGBOX_AUTOCLOSE
@@ -39,5 +47,9 @@ Route127_EventScript_H6::
 Route127_EventScript_H7::
 	trainerbattle_single TRAINER_HOENN_ATHENA, Route127_Text_H7_0, Route127_Text_H7_1
 	msgbox Route127_Text_H7_2, MSGBOX_AUTOCLOSE
+	end
+
+Route127_EventScript_HItem75::
+	finditem ITEM_RARE_CANDY
 	end
 

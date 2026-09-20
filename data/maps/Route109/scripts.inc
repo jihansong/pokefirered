@@ -35,6 +35,10 @@ Route109_EventScript_H6::
 	msgbox Route109_Text_H6, MSGBOX_NPC
 	end
 
+Route109_EventScript_HItem16::
+	finditem ITEM_PP_UP
+	end
+
 Route109_EventScript_H7::
 	trainerbattle_single TRAINER_HOENN_GWEN, Route109_Text_H7_0, Route109_Text_H7_1
 	msgbox Route109_Text_H7_2, MSGBOX_AUTOCLOSE
@@ -88,6 +92,10 @@ Route109_EventScript_H17::
 Route109_EventScript_H18::
 	trainerbattle_single TRAINER_HOENN_CHANDLER, Route109_Text_H18_0, Route109_Text_H18_1
 	msgbox Route109_Text_H18_2, MSGBOX_AUTOCLOSE
+	end
+
+Route109_EventScript_HItem17::
+	finditem ITEM_POTION
 	end
 
 Route109_EventScript_H19::

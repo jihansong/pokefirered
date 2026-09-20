@@ -1,6 +1,26 @@
 NewMauville_Inside_MapScripts::
 	.byte 0
 
+NewMauville_Inside_EventScript_HItem121::
+	finditem ITEM_ULTRA_BALL
+	end
+
+NewMauville_Inside_EventScript_HItem122::
+	finditem ITEM_ESCAPE_ROPE
+	end
+
+NewMauville_Inside_EventScript_HItem123::
+	finditem ITEM_THUNDER_STONE
+	end
+
+NewMauville_Inside_EventScript_HItem124::
+	finditem ITEM_FULL_HEAL
+	end
+
+NewMauville_Inside_EventScript_HItem125::
+	finditem ITEM_PARALYZE_HEAL
+	end
+
 NewMauville_Inside_EventScript_H0::
 	msgbox NewMauville_Inside_Text_H0, MSGBOX_SIGN
 	end

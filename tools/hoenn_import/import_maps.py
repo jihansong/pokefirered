@@ -52,6 +52,9 @@ MUSIC_ALIAS = {'MUS_ROUTE118': 'MUS_ROUTE119'}
 MUSIC = {'MAP_TYPE_TOWN': 'MUS_PALLET', 'MAP_TYPE_CITY': 'MUS_CELADON', 'MAP_TYPE_ROUTE': 'MUS_ROUTE1', 'MAP_TYPE_OCEAN_ROUTE': 'MUS_SURF',
          'MAP_TYPE_UNDERGROUND': 'MUS_MT_MOON', 'MAP_TYPE_UNDERWATER': 'MUS_SURF', 'MAP_TYPE_INDOOR': 'MUS_POKE_CENTER'}
 
+# FR/LG's own hidden items occupy ids 0..190; Hoenn's start after them
+FR_HIDDEN_ITEMS = 191
+
 def fr_defs(path, prefix):
     return set(re.findall(r'#define (%s\w+)' % prefix, open(path).read()))
 
@@ -74,8 +77,9 @@ def em_texts():
 
 def em_scripts():
     scripts = {}
-    for m in os.listdir(EM + '/data/maps'):
-        f = f'{EM}/data/maps/{m}/scripts.inc'
+    files = [f'{EM}/data/maps/{m}/scripts.inc' for m in os.listdir(EM + '/data/maps')]
+    files += [f'{EM}/data/scripts/{f}' for f in os.listdir(EM + '/data/scripts') if f.endswith('.inc')]
+    for f in files:
         if not os.path.exists(f): continue
         cur = None
         for line in open(f, encoding='utf-8'):
@@ -100,6 +104,21 @@ def main():
     frmus = fr_defs(FR + '/include/constants/songs.h', 'MUS_')
     # trainers imported by import_trainers.py (TRAINER_X -> TRAINER_HOENN_X)
     hoenn_trainers = set(re.findall(r'#define (TRAINER_HOENN_\w+)', open(FR + '/include/constants/opponents.h').read()))
+    fritems = fr_defs(FR + '/include/constants/items.h', 'ITEM_')
+    hoenn_flags = []          # flag names in allocation order, written out at the end
+
+    def new_flag(name):
+        hoenn_flags.append(name)
+        return name
+
+    # Hidden items must be reachable as FLAG_HIDDEN_ITEMS_START + id, so they use
+    # the flags right after FR/LG's own hidden items, which nothing else claims.
+    hidden_flags = []
+
+    def new_hidden_flag():
+        name = f'FLAG_HOENN_HIDDEN_{len(hidden_flags)}'
+        hidden_flags.append(name)
+        return name
     frsec = set(re.findall(r'(MAPSEC_\w+)', open(FR + '/include/constants/region_map_sections.h').read()))
     frflag = fr_defs(FR + '/include/constants/flags.h', 'FLAG_')
     frmove = fr_defs(FR + '/include/constants/event_object_movement.h', 'MOVEMENT_TYPE_')
@@ -234,11 +253,26 @@ def main():
         objs = []
         for o in src.get('object_events', []):
             if o.get('type', 'object') != 'object': continue
-            if o.get('flag', '0') not in ('0', ''):
+            if o.get('flag', '0') not in ('0', '') and o['graphics_id'] != 'OBJ_EVENT_GFX_ITEM_BALL':
                 stats['hidden_obj'] += 1; continue
             g = o['graphics_id']
             if g not in frgfx:
                 g = GFX.get(g, GFX_DEFAULT)
+            if g == 'OBJ_EVENT_GFX_ITEM_BALL':
+                item = next((re.match(r'finditem (\w+)(?:, (\d+))?', b) for b in scripts.get(o['script'], [])
+                             if b.startswith('finditem ')), None)
+                item_id = tm_alias.get(item.group(1), item.group(1)) if item else None
+                if item_id in fritems:
+                    label = f'{nm}_EventScript_HItem{len([f for f in hoenn_flags if "_ITEM_" in f])}'
+                    qty = f', {item.group(2)}' if item.group(2) else ''
+                    sc_lines.extend([f'{label}::', f'\tfinditem {item_id}{qty}', '\tend', ''])
+                    flag = new_flag(f'FLAG_HOENN_ITEM_{len(hoenn_flags)}')
+                    objs.append({'type': 'object', 'graphics_id': g, 'x': o['x'], 'y': o['y'], 'elevation': o['elevation'],
+                                 'movement_type': 'MOVEMENT_TYPE_FACE_DOWN', 'movement_range_x': 1, 'movement_range_y': 1,
+                                 'trainer_type': 'TRAINER_TYPE_NONE', 'trainer_sight_or_berry_tree_id': '0',
+                                 'script': label, 'flag': flag})
+                    stats['item'] += 1
+                continue
             s = script_for(o['script'], 'npc') if o['script'] not in ('0x0', '0', '') else None
             is_trainer = (o.get('trainer_type', 'TRAINER_TYPE_NONE') != 'TRAINER_TYPE_NONE'
                           and s is not None and f'\t{"trainerbattle"}' in '\n'.join(sc_lines[-6:]))
@@ -257,6 +291,12 @@ def main():
         out['coord_events'] = []
         bgs = []
         for b in src.get('bg_events', []):
+            if b.get('type') == 'hidden_item' and b.get('item') in fritems:
+                bgs.append({'type': 'hidden_item', 'x': b['x'], 'y': b['y'], 'elevation': b['elevation'],
+                            'item': b['item'], 'flag': new_hidden_flag(),
+                            'quantity': b.get('quantity', 1), 'underfoot': b.get('underfoot', False)})
+                stats['hidden_item'] += 1
+                continue
             if b.get('type') != 'sign': continue
             s = script_for(b['script'], 'sign')
             if s:
@@ -282,6 +322,15 @@ def main():
         open(d + '/text.inc', 'w').write(tx)
         if out['connections']: frgroups['connections_include_order'].append(nm)
         stats['maps'] += 1
+    open(FR + '/include/constants/flags_hoenn.h', 'w').write(
+        '#ifndef GUARD_CONSTANTS_FLAGS_HOENN_H\n#define GUARD_CONSTANTS_FLAGS_HOENN_H\n\n'
+        '// Flags for the imported Hoenn maps, generated by tools/hoenn_import/import_maps.py.\n'
+        '// They live past FR/LG\'s flag array, in gSaveBlock2Ptr->hoennFlags (see GetFlagAddr).\n\n'
+        + ''.join(f'#define {f:<38} (HOENN_FLAGS_START + {i})\n' for i, f in enumerate(hoenn_flags))
+        + '\n' + ''.join(f'#define {f:<38} (FLAG_HIDDEN_ITEMS_START + {FR_HIDDEN_ITEMS} + {i})\n'
+                         for i, f in enumerate(hidden_flags))
+        + f'\n#define HOENN_FLAGS_USED {len(hoenn_flags)}\n\n#endif  // GUARD_CONSTANTS_FLAGS_HOENN_H\n')
+    assert len(hoenn_flags) <= 0x800, f'{len(hoenn_flags)} Hoenn flags do not fit'
     open(FR + '/data/maps/map_groups.json', 'w').write(json.dumps(frgroups, indent=2, ensure_ascii=False) + '\n')
     names = [newname(m) for m in maps]
     open(FR + '/data/maps/hoenn_scripts.inc', 'w').write('@ Maps imported from pokeemerald (Hoenn)\n' + ''.join(f'\t.include "data/maps/{n}/scripts.inc"\n' for n in names))

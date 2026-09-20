@@ -11,6 +11,10 @@ Route132_EventScript_H1::
 	msgbox Route132_Text_H1_2, MSGBOX_AUTOCLOSE
 	end
 
+Route132_EventScript_HItem76::
+	finditem ITEM_RARE_CANDY
+	end
+
 Route132_EventScript_H2::
 	trainerbattle_single TRAINER_HOENN_KIYO, Route132_Text_H2_0, Route132_Text_H2_1
 	msgbox Route132_Text_H2_2, MSGBOX_AUTOCLOSE
@@ -39,5 +43,9 @@ Route132_EventScript_H6::
 Route132_EventScript_H7::
 	trainerbattle_single TRAINER_HOENN_JONATHAN, Route132_Text_H7_0, Route132_Text_H7_1
 	msgbox Route132_Text_H7_2, MSGBOX_AUTOCLOSE
+	end
+
+Route132_EventScript_HItem77::
+	finditem ITEM_PROTEIN
 	end
 

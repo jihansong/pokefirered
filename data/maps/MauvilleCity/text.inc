@@ -32,20 +32,31 @@ MauvilleCity_Text_H4::
 	.string "out TVs whenever you can.$"
 
 MauvilleCity_Text_H5::
+	.string "Did you know that you can go from\n"
+	.string "here a long way in that direction\l"
+	.string "without changing direction?\p"
+	.string "I might even be able to roll\n"
+	.string "that way.\p"
+	.string "Do you think your POKéMON will\n"
+	.string "want to roll, too?\p"
+	.string "I can teach one the move ROLLOUT\n"
+	.string "if you'd like.$"
+
+MauvilleCity_Text_H6::
 	.string "MAUVILLE CITY POKéMON GYM\n"
 	.string "LEADER: WATTSON\l"
 	.string "“The cheerfully electrifying man!”$"
 
-MauvilleCity_Text_H6::
+MauvilleCity_Text_H7::
 	.string "MAUVILLE CITY\n"
 	.string "“The bright and shiny city of fun!”$"
 
-MauvilleCity_Text_H7::
+MauvilleCity_Text_H8::
 	.string "“Ride in gravel and shake up your\n"
 	.string "soul!”\l"
 	.string "RYDEL'S CYCLES$"
 
-MauvilleCity_Text_H8::
+MauvilleCity_Text_H9::
 	.string "“The play spot for all!”\n"
 	.string "MAUVILLE GAME CORNER$"
 

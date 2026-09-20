@@ -34,6 +34,18 @@ Route111_EventScript_H6::
 	msgbox Route111_Text_H6, MSGBOX_NPC
 	end
 
+Route111_EventScript_HItem21::
+	finditem ITEM_TM37_SANDSTORM
+	end
+
+Route111_EventScript_HItem22::
+	finditem ITEM_STARDUST
+	end
+
+Route111_EventScript_HItem23::
+	finditem ITEM_HP_UP
+	end
+
 Route111_EventScript_H7::
 	trainerbattle_single TRAINER_HOENN_IRENE, Route111_Text_H7_0, Route111_Text_H7_1
 	msgbox Route111_Text_H7_2, MSGBOX_AUTOCLOSE
@@ -96,6 +108,10 @@ Route111_EventScript_H18::
 Route111_EventScript_H19::
 	trainerbattle_single TRAINER_HOENN_BRANDEN, Route111_Text_H19_0, Route111_Text_H19_1
 	msgbox Route111_Text_H19_2, MSGBOX_AUTOCLOSE
+	end
+
+Route111_EventScript_HItem24::
+	finditem ITEM_ELIXIR
 	end
 
 Route111_EventScript_H20::

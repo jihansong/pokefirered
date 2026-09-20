@@ -21,8 +21,12 @@ MauvilleCity_EventScript_H4::
 	msgbox MauvilleCity_Text_H4, MSGBOX_NPC
 	end
 
+MauvilleCity_EventScript_HItem2::
+	finditem ITEM_X_SPEED
+	end
+
 MauvilleCity_EventScript_H5::
-	msgbox MauvilleCity_Text_H5, MSGBOX_SIGN
+	msgbox MauvilleCity_Text_H5, MSGBOX_NPC
 	end
 
 MauvilleCity_EventScript_H6::
@@ -35,5 +39,9 @@ MauvilleCity_EventScript_H7::
 
 MauvilleCity_EventScript_H8::
 	msgbox MauvilleCity_Text_H8, MSGBOX_SIGN
+	end
+
+MauvilleCity_EventScript_H9::
+	msgbox MauvilleCity_Text_H9, MSGBOX_SIGN
 	end
 

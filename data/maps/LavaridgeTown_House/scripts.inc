@@ -9,3 +9,7 @@ LavaridgeTown_House_EventScript_H1::
 	msgbox LavaridgeTown_House_Text_H1, MSGBOX_NPC
 	end
 
+LavaridgeTown_House_EventScript_H2::
+	msgbox LavaridgeTown_House_Text_H2, MSGBOX_NPC
+	end
+

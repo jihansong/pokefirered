@@ -11,6 +11,10 @@ Route123_EventScript_H1::
 	msgbox Route123_Text_H1_2, MSGBOX_AUTOCLOSE
 	end
 
+Route123_EventScript_HItem63::
+	finditem ITEM_CALCIUM
+	end
+
 Route123_EventScript_H2::
 	msgbox Route123_Text_H2, MSGBOX_NPC
 	end
@@ -45,6 +49,14 @@ Route123_EventScript_H8::
 	msgbox Route123_Text_H8_2, MSGBOX_AUTOCLOSE
 	end
 
+Route123_EventScript_HItem64::
+	finditem ITEM_ULTRA_BALL
+	end
+
+Route123_EventScript_HItem65::
+	finditem ITEM_ELIXIR
+	end
+
 Route123_EventScript_H9::
 	trainerbattle_single TRAINER_HOENN_JONAS, Route123_Text_H9_0, Route123_Text_H9_1
 	msgbox Route123_Text_H9_2, MSGBOX_AUTOCLOSE
@@ -75,6 +87,10 @@ Route123_EventScript_H14::
 	msgbox Route123_Text_H14_2, MSGBOX_AUTOCLOSE
 	end
 
+Route123_EventScript_HItem66::
+	finditem ITEM_PP_UP
+	end
+
 Route123_EventScript_H15::
 	trainerbattle_single TRAINER_HOENN_JAZMYN, Route123_Text_H15_0, Route123_Text_H15_1
 	msgbox Route123_Text_H15_2, MSGBOX_AUTOCLOSE
@@ -83,6 +99,10 @@ Route123_EventScript_H15::
 Route123_EventScript_H16::
 	trainerbattle_single TRAINER_HOENN_DAVIS, Route123_Text_H16_0, Route123_Text_H16_1
 	msgbox Route123_Text_H16_2, MSGBOX_AUTOCLOSE
+	end
+
+Route123_EventScript_HItem67::
+	finditem ITEM_REVIVAL_HERB
 	end
 
 Route123_EventScript_H17::

@@ -189,6 +189,16 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LavaridgeTown_EventScript_H9"
+    },
+    {
+      "type": "hidden_item",
+      "x": 4,
+      "y": 5,
+      "elevation": 3,
+      "item": "ITEM_ICE_HEAL",
+      "flag": "FLAG_HOENN_HIDDEN_4",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

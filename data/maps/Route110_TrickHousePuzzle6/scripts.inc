@@ -16,3 +16,7 @@ Route110_TrickHousePuzzle6_EventScript_H2::
 	msgbox Route110_TrickHousePuzzle6_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
+Route110_TrickHousePuzzle6_EventScript_HItem159::
+	finditem ITEM_GLITTER_MAIL
+	end
+

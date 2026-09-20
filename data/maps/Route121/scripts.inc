@@ -35,6 +35,10 @@ Route121_EventScript_H6::
 	msgbox Route121_Text_H6_2, MSGBOX_AUTOCLOSE
 	end
 
+Route121_EventScript_HItem60::
+	finditem ITEM_CARBOS
+	end
+
 Route121_EventScript_H7::
 	trainerbattle_single TRAINER_HOENN_CALE, Route121_Text_H7_0, Route121_Text_H7_1
 	msgbox Route121_Text_H7_2, MSGBOX_AUTOCLOSE
@@ -58,6 +62,14 @@ Route121_EventScript_H10::
 Route121_EventScript_H11::
 	trainerbattle_single TRAINER_HOENN_CRISTIN_1, Route121_Text_H11_0, Route121_Text_H11_1
 	msgbox Route121_Text_H11_2, MSGBOX_AUTOCLOSE
+	end
+
+Route121_EventScript_HItem61::
+	finditem ITEM_REVIVE
+	end
+
+Route121_EventScript_HItem62::
+	finditem ITEM_ZINC
 	end
 
 Route121_EventScript_H12::

@@ -21,6 +21,10 @@ VictoryRoad_B2F_EventScript_H3::
 	msgbox VictoryRoad_B2F_Text_H3_2, MSGBOX_AUTOCLOSE
 	end
 
+VictoryRoad_B2F_EventScript_HItem117::
+	finditem ITEM_FULL_HEAL
+	end
+
 VictoryRoad_B2F_EventScript_H4::
 	trainerbattle_single TRAINER_HOENN_DIANNE, VictoryRoad_B2F_Text_H4_0, VictoryRoad_B2F_Text_H4_1
 	msgbox VictoryRoad_B2F_Text_H4_2, MSGBOX_AUTOCLOSE

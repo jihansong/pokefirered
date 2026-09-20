@@ -26,6 +26,14 @@ Route114_EventScript_H4::
 	msgbox Route114_Text_H4_2, MSGBOX_AUTOCLOSE
 	end
 
+Route114_EventScript_HItem29::
+	finditem ITEM_RARE_CANDY
+	end
+
+Route114_EventScript_HItem30::
+	finditem ITEM_PROTEIN
+	end
+
 Route114_EventScript_H5::
 	msgbox Route114_Text_H5, MSGBOX_NPC
 	end
@@ -71,6 +79,10 @@ Route114_EventScript_H13::
 Route114_EventScript_H14::
 	trainerbattle_single TRAINER_HOENN_ANGELINA, Route114_Text_H14_0, Route114_Text_H14_1
 	msgbox Route114_Text_H14_2, MSGBOX_AUTOCLOSE
+	end
+
+Route114_EventScript_HItem31::
+	finditem ITEM_ENERGY_POWDER
 	end
 
 Route114_EventScript_H15::

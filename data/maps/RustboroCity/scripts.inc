@@ -37,6 +37,10 @@ RustboroCity_EventScript_H8::
 	msgbox RustboroCity_Text_H8, MSGBOX_NPC
 	end
 
+RustboroCity_EventScript_HItem3::
+	finditem ITEM_X_DEFEND
+	end
+
 RustboroCity_EventScript_H9::
 	msgbox RustboroCity_Text_H9, MSGBOX_NPC
 	end

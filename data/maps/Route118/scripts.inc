@@ -39,6 +39,10 @@ Route118_EventScript_H7::
 	msgbox Route118_Text_H7_2, MSGBOX_AUTOCLOSE
 	end
 
+Route118_EventScript_HItem45::
+	finditem ITEM_HYPER_POTION
+	end
+
 Route118_EventScript_H8::
 	trainerbattle_single TRAINER_HOENN_DEANDRE, Route118_Text_H8_0, Route118_Text_H8_1
 	msgbox Route118_Text_H8_2, MSGBOX_AUTOCLOSE

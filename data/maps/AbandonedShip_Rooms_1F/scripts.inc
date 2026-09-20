@@ -5,6 +5,10 @@ AbandonedShip_Rooms_1F_EventScript_H0::
 	msgbox AbandonedShip_Rooms_1F_Text_H0, MSGBOX_NPC
 	end
 
+AbandonedShip_Rooms_1F_EventScript_HItem126::
+	finditem ITEM_HARBOR_MAIL
+	end
+
 AbandonedShip_Rooms_1F_EventScript_H1::
 	trainerbattle_single TRAINER_HOENN_THALIA_1, AbandonedShip_Rooms_1F_Text_H1_0, AbandonedShip_Rooms_1F_Text_H1_1
 	msgbox AbandonedShip_Rooms_1F_Text_H1_2, MSGBOX_AUTOCLOSE

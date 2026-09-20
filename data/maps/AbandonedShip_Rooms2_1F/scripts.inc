@@ -11,6 +11,10 @@ AbandonedShip_Rooms2_1F_EventScript_H1::
 	msgbox AbandonedShip_Rooms2_1F_Text_H1_2, MSGBOX_AUTOCLOSE
 	end
 
+AbandonedShip_Rooms2_1F_EventScript_HItem130::
+	finditem ITEM_REVIVE
+	end
+
 AbandonedShip_Rooms2_1F_EventScript_H2::
 	trainerbattle_single TRAINER_HOENN_GARRISON, AbandonedShip_Rooms2_1F_Text_H2_0, AbandonedShip_Rooms2_1F_Text_H2_1
 	msgbox AbandonedShip_Rooms2_1F_Text_H2_2, MSGBOX_AUTOCLOSE

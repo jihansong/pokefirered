@@ -37,6 +37,10 @@ LilycoveCity_EventScript_H8::
 	msgbox LilycoveCity_Text_H8, MSGBOX_NPC
 	end
 
+LilycoveCity_EventScript_HItem4::
+	finditem ITEM_MAX_REPEL
+	end
+
 LilycoveCity_EventScript_H9::
 	msgbox LilycoveCity_Text_H9, MSGBOX_NPC
 	end

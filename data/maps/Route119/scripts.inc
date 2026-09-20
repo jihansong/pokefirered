@@ -61,12 +61,40 @@ Route119_EventScript_H11::
 	msgbox Route119_Text_H11_2, MSGBOX_AUTOCLOSE
 	end
 
+Route119_EventScript_HItem46::
+	finditem ITEM_SUPER_REPEL
+	end
+
+Route119_EventScript_HItem47::
+	finditem ITEM_ZINC
+	end
+
+Route119_EventScript_HItem48::
+	finditem ITEM_ELIXIR
+	end
+
+Route119_EventScript_HItem49::
+	finditem ITEM_LEAF_STONE
+	end
+
+Route119_EventScript_HItem50::
+	finditem ITEM_RARE_CANDY
+	end
+
+Route119_EventScript_HItem51::
+	finditem ITEM_HYPER_POTION
+	end
+
 Route119_EventScript_H12::
 	msgbox Route119_Text_H12, MSGBOX_NPC
 	end
 
 Route119_EventScript_H13::
 	msgbox Route119_Text_H13, MSGBOX_NPC
+	end
+
+Route119_EventScript_HItem52::
+	finditem ITEM_HYPER_POTION
 	end
 
 Route119_EventScript_H14::
@@ -96,6 +124,14 @@ Route119_EventScript_H18::
 Route119_EventScript_H19::
 	trainerbattle_single TRAINER_HOENN_FABIAN, Route119_Text_H19_0, Route119_Text_H19_1
 	msgbox Route119_Text_H19_2, MSGBOX_AUTOCLOSE
+	end
+
+Route119_EventScript_HItem53::
+	finditem ITEM_NUGGET
+	end
+
+Route119_EventScript_HItem54::
+	finditem ITEM_ELIXIR
 	end
 
 Route119_EventScript_H20::

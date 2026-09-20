@@ -21,6 +21,10 @@ Route105_EventScript_H3::
 	msgbox Route105_Text_H3_2, MSGBOX_AUTOCLOSE
 	end
 
+Route105_EventScript_HItem13::
+	finditem ITEM_IRON
+	end
+
 Route105_EventScript_H4::
 	trainerbattle_single TRAINER_HOENN_FOSTER, Route105_Text_H4_0, Route105_Text_H4_1
 	msgbox Route105_Text_H4_2, MSGBOX_AUTOCLOSE

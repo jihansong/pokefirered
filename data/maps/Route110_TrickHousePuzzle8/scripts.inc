@@ -16,3 +16,7 @@ Route110_TrickHousePuzzle8_EventScript_H2::
 	msgbox Route110_TrickHousePuzzle8_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
+Route110_TrickHousePuzzle8_EventScript_HItem161::
+	finditem ITEM_BEAD_MAIL
+	end
+

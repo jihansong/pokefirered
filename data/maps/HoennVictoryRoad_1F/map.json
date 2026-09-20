@@ -59,6 +59,34 @@
     },
     {
       "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 40,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HoennVictoryRoad_1F_EventScript_HItem113",
+      "flag": "FLAG_HOENN_ITEM_113"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 37,
+      "y": 39,
+      "elevation": 4,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HoennVictoryRoad_1F_EventScript_HItem114",
+      "flag": "FLAG_HOENN_ITEM_114"
+    },
+    {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
       "x": 29,
       "y": 17,
@@ -124,5 +152,16 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 30,
+      "y": 39,
+      "elevation": 4,
+      "item": "ITEM_ULTRA_BALL",
+      "flag": "FLAG_HOENN_HIDDEN_93",
+      "quantity": 1,
+      "underfoot": false
+    }
+  ]
 }

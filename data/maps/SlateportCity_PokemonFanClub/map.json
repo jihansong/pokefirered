@@ -54,7 +54,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
+      "script": "SlateportCity_PokemonFanClub_EventScript_H2",
       "flag": "0"
     },
     {
@@ -68,7 +68,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SlateportCity_PokemonFanClub_EventScript_H2",
+      "script": "SlateportCity_PokemonFanClub_EventScript_H3",
       "flag": "0"
     },
     {
@@ -96,7 +96,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SlateportCity_PokemonFanClub_EventScript_H3",
+      "script": "SlateportCity_PokemonFanClub_EventScript_H4",
       "flag": "0"
     },
     {
@@ -110,7 +110,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SlateportCity_PokemonFanClub_EventScript_H4",
+      "script": "SlateportCity_PokemonFanClub_EventScript_H5",
       "flag": "0"
     },
     {
@@ -124,7 +124,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SlateportCity_PokemonFanClub_EventScript_H5",
+      "script": "SlateportCity_PokemonFanClub_EventScript_H6",
       "flag": "0"
     },
     {
@@ -138,7 +138,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
+      "script": "SlateportCity_PokemonFanClub_EventScript_H7",
       "flag": "0"
     }
   ],

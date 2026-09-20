@@ -69,6 +69,14 @@ Route110_EventScript_H14::
 	msgbox Route110_Text_H14_2, MSGBOX_AUTOCLOSE
 	end
 
+Route110_EventScript_HItem18::
+	finditem ITEM_DIRE_HIT
+	end
+
+Route110_EventScript_HItem19::
+	finditem ITEM_RARE_CANDY
+	end
+
 Route110_EventScript_H15::
 	msgbox Route110_Text_H15, MSGBOX_NPC
 	end
@@ -101,6 +109,10 @@ Route110_EventScript_H20::
 Route110_EventScript_H21::
 	trainerbattle_single TRAINER_HOENN_JOSEPH, Route110_Text_H21_0, Route110_Text_H21_1
 	msgbox Route110_Text_H21_2, MSGBOX_AUTOCLOSE
+	end
+
+Route110_EventScript_HItem20::
+	finditem ITEM_ELIXIR
 	end
 
 Route110_EventScript_H22::

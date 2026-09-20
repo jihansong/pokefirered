@@ -16,3 +16,7 @@ Route110_TrickHousePuzzle4_EventScript_H2::
 	msgbox Route110_TrickHousePuzzle4_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
 
+Route110_TrickHousePuzzle4_EventScript_HItem158::
+	finditem ITEM_MECH_MAIL
+	end
+

@@ -32,3 +32,8 @@ import, so they survive a re-import (e.g. SLATEPORT harbor's airline counter).
 Build note: `make` does not track `.incbin`/constant dependencies for the
 generated map data. After an import, delete `build/leafgreen/data/maps.o`
 (and `map_events.o`) or the ROM keeps the old map headers.
+- `import_tileset_anims.py`: copies the animation frames of the imported
+  tilesets and generates their callbacks into
+  `src/data/tilesets/hoenn_anims.h`, included at the end of
+  `src/tileset_anims.c` so it can use that file's queue and counters. Run it
+  after `import_tilesets.py`, which writes the headers it patches.

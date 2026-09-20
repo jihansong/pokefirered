@@ -9,7 +9,7 @@ const struct Tileset gTileset_EmGeneral =
     .palettes = gTilesetPalettes_EmGeneral,
     .metatiles = gMetatiles_EmGeneral,
     .metatileAttributes = gMetatileAttributes_EmGeneral,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmGeneral,
 };
 
 const struct Tileset gTileset_EmPetalburg =
@@ -21,7 +21,7 @@ const struct Tileset gTileset_EmPetalburg =
     .palettes = gTilesetPalettes_EmPetalburg,
     .metatiles = gMetatiles_EmPetalburg,
     .metatileAttributes = gMetatileAttributes_EmPetalburg,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmPetalburg,
 };
 
 const struct Tileset gTileset_EmSlateport =
@@ -33,7 +33,7 @@ const struct Tileset gTileset_EmSlateport =
     .palettes = gTilesetPalettes_EmSlateport,
     .metatiles = gMetatiles_EmSlateport,
     .metatileAttributes = gMetatileAttributes_EmSlateport,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmSlateport,
 };
 
 const struct Tileset gTileset_EmMauville =
@@ -45,7 +45,7 @@ const struct Tileset gTileset_EmMauville =
     .palettes = gTilesetPalettes_EmMauville,
     .metatiles = gMetatiles_EmMauville,
     .metatileAttributes = gMetatileAttributes_EmMauville,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmMauville,
 };
 
 const struct Tileset gTileset_EmRustboro =
@@ -57,7 +57,7 @@ const struct Tileset gTileset_EmRustboro =
     .palettes = gTilesetPalettes_EmRustboro,
     .metatiles = gMetatiles_EmRustboro,
     .metatileAttributes = gMetatileAttributes_EmRustboro,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmRustboro,
 };
 
 const struct Tileset gTileset_EmFortree =
@@ -69,7 +69,7 @@ const struct Tileset gTileset_EmFortree =
     .palettes = gTilesetPalettes_EmFortree,
     .metatiles = gMetatiles_EmFortree,
     .metatileAttributes = gMetatileAttributes_EmFortree,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmFortree,
 };
 
 const struct Tileset gTileset_EmLilycove =
@@ -81,7 +81,7 @@ const struct Tileset gTileset_EmLilycove =
     .palettes = gTilesetPalettes_EmLilycove,
     .metatiles = gMetatiles_EmLilycove,
     .metatileAttributes = gMetatileAttributes_EmLilycove,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmLilycove,
 };
 
 const struct Tileset gTileset_EmMossdeep =
@@ -93,7 +93,7 @@ const struct Tileset gTileset_EmMossdeep =
     .palettes = gTilesetPalettes_EmMossdeep,
     .metatiles = gMetatiles_EmMossdeep,
     .metatileAttributes = gMetatileAttributes_EmMossdeep,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmMossdeep,
 };
 
 const struct Tileset gTileset_EmSootopolis =
@@ -105,7 +105,7 @@ const struct Tileset gTileset_EmSootopolis =
     .palettes = gTilesetPalettes_EmSootopolis,
     .metatiles = gMetatiles_EmSootopolis,
     .metatileAttributes = gMetatileAttributes_EmSootopolis,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmSootopolis,
 };
 
 const struct Tileset gTileset_EmEverGrande =
@@ -117,7 +117,7 @@ const struct Tileset gTileset_EmEverGrande =
     .palettes = gTilesetPalettes_EmEverGrande,
     .metatiles = gMetatiles_EmEverGrande,
     .metatileAttributes = gMetatileAttributes_EmEverGrande,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmEverGrande,
 };
 
 const struct Tileset gTileset_EmDewford =
@@ -129,7 +129,7 @@ const struct Tileset gTileset_EmDewford =
     .palettes = gTilesetPalettes_EmDewford,
     .metatiles = gMetatiles_EmDewford,
     .metatileAttributes = gMetatileAttributes_EmDewford,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmDewford,
 };
 
 const struct Tileset gTileset_EmLavaridge =
@@ -141,7 +141,7 @@ const struct Tileset gTileset_EmLavaridge =
     .palettes = gTilesetPalettes_EmLavaridge,
     .metatiles = gMetatiles_EmLavaridge,
     .metatileAttributes = gMetatileAttributes_EmLavaridge,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmLavaridge,
 };
 
 const struct Tileset gTileset_EmFallarbor =
@@ -153,7 +153,7 @@ const struct Tileset gTileset_EmFallarbor =
     .palettes = gTilesetPalettes_EmFallarbor,
     .metatiles = gMetatiles_EmFallarbor,
     .metatileAttributes = gMetatileAttributes_EmFallarbor,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmFallarbor,
 };
 
 const struct Tileset gTileset_EmPacifidlog =
@@ -165,7 +165,7 @@ const struct Tileset gTileset_EmPacifidlog =
     .palettes = gTilesetPalettes_EmPacifidlog,
     .metatiles = gMetatiles_EmPacifidlog,
     .metatileAttributes = gMetatileAttributes_EmPacifidlog,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmPacifidlog,
 };
 
 const struct Tileset gTileset_EmCave =
@@ -177,7 +177,7 @@ const struct Tileset gTileset_EmCave =
     .palettes = gTilesetPalettes_EmCave,
     .metatiles = gMetatiles_EmCave,
     .metatileAttributes = gMetatileAttributes_EmCave,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmCave,
 };
 
 const struct Tileset gTileset_EmUnderwater =
@@ -189,7 +189,7 @@ const struct Tileset gTileset_EmUnderwater =
     .palettes = gTilesetPalettes_EmUnderwater,
     .metatiles = gMetatiles_EmUnderwater,
     .metatileAttributes = gMetatileAttributes_EmUnderwater,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmUnderwater,
 };
 
 const struct Tileset gTileset_EmBuilding =
@@ -201,7 +201,7 @@ const struct Tileset gTileset_EmBuilding =
     .palettes = gTilesetPalettes_EmBuilding,
     .metatiles = gMetatiles_EmBuilding,
     .metatileAttributes = gMetatileAttributes_EmBuilding,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmBuilding,
 };
 
 const struct Tileset gTileset_EmBrendansMaysHouse =
@@ -357,7 +357,7 @@ const struct Tileset gTileset_EmMauvilleGym =
     .palettes = gTilesetPalettes_EmMauvilleGym,
     .metatiles = gMetatiles_EmMauvilleGym,
     .metatileAttributes = gMetatileAttributes_EmMauvilleGym,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmMauvilleGym,
 };
 
 const struct Tileset gTileset_EmBikeShop =
@@ -369,7 +369,7 @@ const struct Tileset gTileset_EmBikeShop =
     .palettes = gTilesetPalettes_EmBikeShop,
     .metatiles = gMetatiles_EmBikeShop,
     .metatileAttributes = gMetatileAttributes_EmBikeShop,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmBikeShop,
 };
 
 const struct Tileset gTileset_EmMauvilleGameCorner =
@@ -489,7 +489,7 @@ const struct Tileset gTileset_EmSootopolisGym =
     .palettes = gTilesetPalettes_EmSootopolisGym,
     .metatiles = gMetatiles_EmSootopolisGym,
     .metatileAttributes = gMetatileAttributes_EmSootopolisGym,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmSootopolisGym,
 };
 
 const struct Tileset gTileset_EmMysteryEventsHouse =
@@ -513,7 +513,7 @@ const struct Tileset gTileset_EmEliteFour =
     .palettes = gTilesetPalettes_EmEliteFour,
     .metatiles = gMetatiles_EmEliteFour,
     .metatileAttributes = gMetatileAttributes_EmEliteFour,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmEliteFour,
 };
 
 const struct Tileset gTileset_EmCableClub =
@@ -621,7 +621,7 @@ const struct Tileset gTileset_EmBattlePyramid =
     .palettes = gTilesetPalettes_EmBattlePyramid,
     .metatiles = gMetatiles_EmBattlePyramid,
     .metatileAttributes = gMetatileAttributes_EmBattlePyramid,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmBattlePyramid,
 };
 
 const struct Tileset gTileset_EmBattleFrontierOutsideWest =
@@ -633,7 +633,7 @@ const struct Tileset gTileset_EmBattleFrontierOutsideWest =
     .palettes = gTilesetPalettes_EmBattleFrontierOutsideWest,
     .metatiles = gMetatiles_EmBattleFrontierOutsideWest,
     .metatileAttributes = gMetatileAttributes_EmBattleFrontierOutsideWest,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmBattleFrontierOutsideWest,
 };
 
 const struct Tileset gTileset_EmBattleFrontierOutsideEast =
@@ -645,7 +645,7 @@ const struct Tileset gTileset_EmBattleFrontierOutsideEast =
     .palettes = gTilesetPalettes_EmBattleFrontierOutsideEast,
     .metatiles = gMetatiles_EmBattleFrontierOutsideEast,
     .metatileAttributes = gMetatileAttributes_EmBattleFrontierOutsideEast,
-    .callback = NULL,
+    .callback = InitTilesetAnim_EmBattleFrontierOutsideEast,
 };
 
 const struct Tileset gTileset_EmBattleDome =

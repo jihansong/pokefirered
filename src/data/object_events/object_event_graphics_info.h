@@ -683,7 +683,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Truck = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-// The airliners parked on the Vermilion airport apron. They share the truck's
+// The airliners at the Vermilion airport: parked on the apron, and taxiing to
+// the gate behind the terminal's lounge window. They share the truck's
 // palette, which already has the white, grey and blue the livery needs.
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Airplane = {
     .tileTag = TAG_NONE,
@@ -694,12 +695,12 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Airplane = {
     .height = 32,
     .paletteSlot = PALSLOT_NPC_SPECIAL,
     .shadowSize = SHADOW_SIZE_L,
-    .inanimate = TRUE,
+    .inanimate = FALSE,
     .disableReflectionPaletteLoad = FALSE,
     .tracks = TRACKS_NONE,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = gObjectEventSpriteOamTables_32x32,
-    .anims = sAnimTable_Inanimate,
+    .anims = sAnimTable_Airplane,
     .images = sPicTable_Airplane,
     .affineAnims = gDummySpriteAffineAnimTable,
 };

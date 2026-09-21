@@ -746,3 +746,14 @@ const struct Tileset gTileset_HallOfFame =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_KantoAirport =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .isEmerald = TRUE,
+    .tiles = gTilesetTiles_KantoAirport,
+    .palettes = gTilesetPalettes_KantoAirport,
+    .metatiles = gMetatiles_KantoAirport,
+    .metatileAttributes = gMetatileAttributes_KantoAirport,
+    .callback = NULL,
+};

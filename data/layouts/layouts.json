@@ -4450,12 +4450,12 @@
     {
       "id": "LAYOUT_KANTO_AIRPORT",
       "name": "KantoAirport_Layout",
-      "width": 25,
+      "width": 33,
       "height": 10,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_EmBuilding",
-      "secondary_tileset": "gTileset_EmBattleFrontier",
+      "secondary_tileset": "gTileset_KantoAirport",
       "border_filepath": "data/layouts/KantoAirport/border.bin",
       "blockdata_filepath": "data/layouts/KantoAirport/map.bin"
     },

@@ -2,8 +2,10 @@
 """Draw the parked airliner that stands on the Vermilion airport apron.
 
 A 30x30 top down plane inside a 32x32 sprite frame (the GBA only has 8, 16,
-32 and 64 pixel sprites), nose pointing north, drawn with the colours the
-truck palette already has so the two share one object palette slot.
+32 and 64 pixel sprites), drawn with the colours the truck palette already
+has so the two share one object palette slot. The sheet holds three frames,
+in the order the standard facing animations use them: nose south, nose north
+and nose west (east is west flipped).
 """
 import os
 from PIL import Image, ImageDraw
@@ -62,13 +64,19 @@ def draw(im):
 
 
 def main():
-    im = Image.new('P', (32, 32), CLEAR)
     pal = [int(v) for line in open(PALETTE).read().splitlines()[3:19] for v in line.split()]
-    im.putpalette(pal)
-    draw(im)
-    im.save(OUT)
-    used = sorted(set(im.getdata()))
-    print(f'{OUT}: {im.size[0]}x{im.size[1]}, bbox {im.getbbox()}, {len(used)} colours {used}')
+    north = Image.new('P', (32, 32), CLEAR)
+    north.putpalette(pal)
+    draw(north)
+    # the plane is centred on (16, 16), so quarter turns keep it inside the frame
+    frames = [north.rotate(180), north, north.rotate(90)]
+    sheet = Image.new('P', (32, 32 * len(frames)), CLEAR)
+    sheet.putpalette(pal)
+    for i, f in enumerate(frames):
+        sheet.paste(f, (0, 32 * i))
+    sheet.save(OUT)
+    used = sorted(set(sheet.getdata()))
+    print(f'{OUT}: {sheet.size[0]}x{sheet.size[1]}, {len(frames)} frames, {len(used)} colours {used}')
 
 
 if __name__ == '__main__':

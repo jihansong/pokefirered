@@ -42,7 +42,24 @@ KantoAirport_Text_Traveler::
     .string "MUDKIP!$"
 
 KantoAirport_Text_Woman::
-    .string "I love watching the planes take\n"
-    .string "off from the big windows. It never\l"
-    .string "gets old!$"
+    .string "I love watching the planes from the\n"
+    .string "big windows in the east lounge.\p"
+    .string "You can see the whole runway from\n"
+    .string "the lawn north of the terminal, too.$"
 
+KantoAirport_Text_PlaneArrived::
+    .string "An airliner rolled in from the\n"
+    .string "runway and pulled up at the gate!$"
+
+KantoAirport_Text_PlaneSpotter::
+    .string "Keep your eyes on the runway.\n"
+    .string "A plane taxis in to this gate\l"
+    .string "every so often!$"
+
+KantoAirport_Text_PlaneSpotterSaw::
+    .string "Did you see it come in? It rolls\n"
+    .string "down the runway, turns onto the\l"
+    .string "apron and stops right at the glass.\p"
+    .string "Outside, the lawn north of the\n"
+    .string "terminal has the best view of the\l"
+    .string "runway and the parked planes.$"

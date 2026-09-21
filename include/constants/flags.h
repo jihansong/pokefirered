@@ -546,7 +546,7 @@
 #define FLAG_FOUGHT_RAYQUAZA     0x20C
 #define FLAG_MISSINGNO_ITEM_BONUS 0x20D
 #define FLAG_SURFING_PIKACHU     0x20E
-#define FLAG_0x20F               0x20F
+#define FLAG_SAW_AIRPORT_PLANE_TAXI 0x20F
 #define FLAG_0x210               0x210
 #define FLAG_0x211               0x211
 #define FLAG_0x212               0x212

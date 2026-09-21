@@ -17,6 +17,7 @@ LAYOUT = 'LAYOUT_VERMILION_CITY'
 
 # blocks the city already has
 GRASS, FENCE_H = 1, 231
+FENCE_V, FENCE_CORNER, FENCE_END = 244, 239, 247
 # the terminal, from left to right, top to bottom (its own metatiles)
 TERMINAL = [
     [808, 809, 810, 811, 812, 813],
@@ -82,7 +83,14 @@ def main():
         for dx, block in enumerate(row):
             put(AIRSIDE_X + dx, y, block, 1)
 
-    # the forecourt fence used to run along y=6; it now ends where the runway starts
+    # The forecourt fence along y=6 turns south at x=36 and runs down to the
+    # terminal roof, so the lawn north of the terminal becomes a fenced viewing
+    # spot: from there the whole runway and both planes are on screen, which
+    # they are not from the forecourt south of the apron.
+    put(36, 6, FENCE_CORNER, 1)
+    put(36, 7, FENCE_V, 1)
+    put(36, 8, FENCE_END, 1)
+
     open(path, 'wb').write(struct.pack('<%dH' % (w * h), *blocks))
     print(f'{LAYOUT}: terminal 6x4, airside x={AIRSIDE_X}..{AIRSIDE_X + 3} y=1..13')
 

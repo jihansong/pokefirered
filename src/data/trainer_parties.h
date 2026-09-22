@@ -3883,6 +3883,29 @@ static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesCeladonGym[] 
     },
 };
 
+static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesSafari[] = {
+    {
+        .iv = 0,
+        .lvl = 32,
+        .species = SPECIES_ARBOK,
+    },
+    {
+        .iv = 0,
+        .lvl = 32,
+        .species = SPECIES_KOFFING,
+    },
+    {
+        .iv = 0,
+        .lvl = 31,
+        .species = SPECIES_WEEPINBELL,
+    },
+    {
+        .iv = 0,
+        .lvl = 32,
+        .species = SPECIES_MEOWTH,
+    },
+};
+
 static const struct TrainerMonNoItemDefaultMoves sParty_RivalOaksLabEevee[] = {
     {
         .iv = 0,

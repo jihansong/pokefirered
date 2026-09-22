@@ -757,7 +757,8 @@
 #define TRAINER_ROCKET_SS_ANNE_2                 746
 #define TRAINER_JESSIE_JAMES_SS_ANNE             747
 #define TRAINER_JESSIE_JAMES_CELADON_GYM         748
-#define NUM_TRAINERS                             749
+#define TRAINER_JESSIE_JAMES_SAFARI              749
+#define NUM_TRAINERS                             750
 #define MAX_TRAINERS_COUNT                       768
 
 // Trainers imported from Hoenn start here. Their defeated flags do not fit in

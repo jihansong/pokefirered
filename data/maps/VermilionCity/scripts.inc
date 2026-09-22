@@ -1,7 +1,13 @@
 VermilionCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, VermilionCity_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, VermilionCity_OnFrame
+	map_script MAP_SCRIPT_ON_RESUME, VermilionCity_OnResume
 	.byte 0
+
+@ Planes cross the sky over the airport every 30 seconds (src/airport_flyover.c).
+VermilionCity_OnResume::
+	special StartAirportFlyover
+	end
 
 VermilionCity_OnFrame::
 	map_script_2 VAR_MAP_SCENE_VERMILION_CITY, 2, VermilionCity_EventScript_ExitSSAnne

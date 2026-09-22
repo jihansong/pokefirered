@@ -12,6 +12,7 @@ from PIL import Image, ImageDraw
 
 FR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 OUT = FR + '/graphics/object_events/pics/misc/airplane.png'
+SHADOW_OUT = FR + '/graphics/object_events/pics/misc/airplane_shadow.png'
 PALETTE = FR + '/graphics/object_events/palettes/truck.pal'
 
 # indices into the truck palette
@@ -77,6 +78,18 @@ def main():
     sheet.save(OUT)
     used = sorted(set(sheet.getdata()))
     print(f'{OUT}: {sheet.size[0]}x{sheet.size[1]}, {len(frames)} frames, {len(used)} colours {used}')
+
+    # The ground shadow of the plane flying over the airport (src/airport_flyover.c):
+    # its silhouette, nose north, as a checkerboard of the palette's darkest blue,
+    # so the ground shows through every other pixel.
+    shadow = Image.new('P', (32, 32), CLEAR)
+    shadow.putpalette(pal)
+    for y in range(32):
+        for x in range(32):
+            if north.getpixel((x, y)) != CLEAR and (x + y) % 2 == 0:
+                shadow.putpixel((x, y), DARK)
+    shadow.save(SHADOW_OUT)
+    print(f'{SHADOW_OUT}: 32x32 shadow, colours {sorted(set(shadow.getdata()))}')
 
 
 if __name__ == '__main__':

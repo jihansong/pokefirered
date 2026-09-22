@@ -30,9 +30,10 @@
 #define SPRITE_HALF      16    // both sprites are 32x32
 #define PLANE_HALF       16
 
-// The runway's centre line runs down the left edge of map column 39,
-// and the airport grounds fill map rows 0 to 16.
-#define RUNWAY_CENTRE_X  39
+// The runway (map columns 42 to 45, tools/make_vermilion_runway.py) has its
+// centre line down the left edge of map column 44, and the airport grounds
+// fill map rows 0 to 16.
+#define RUNWAY_CENTRE_X  44
 #define AIRPORT_TOP       0
 #define AIRPORT_BOTTOM   16
 

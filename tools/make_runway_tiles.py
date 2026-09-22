@@ -159,8 +159,57 @@ TILES['NUM_1'] = [
     'bbwwwwbb',
     'bbbbbbbb',
 ]
+# Taxiway lines of the v0.5 airport. A plane parked on the apron is centred on
+# a block's middle column and on the top edge of its row, so the lines run
+# there: vertical ones on the middle two pixels of a block (this tile's last
+# column, and its mirror image in the next tile), horizontal ones along the
+# top of a block.
+TILES['TAXI_C'] = [
+    'bbabbbby',
+    'bbbbcbby',
+    'abbbbbby',
+    'bbbcbbby',
+    'bbbbbbay',
+    'cbbabbby',
+    'bbbbbbby',
+    'babbbbby',
+]
+TILES['TAXI_H'] = [
+    'yyyyyyyy',
+    'zzzzzzzz',
+    'bbabbbba',
+    'bbbbcbbb',
+    'abbbbbbb',
+    'bbbcbbab',
+    'bbbbbbbb',
+    'cbbabbbc',
+]
+# the horizontal line meeting the vertical one
+TILES['TAXI_HC'] = [
+    'yyyyyyyy',
+    'zzzzzzzy',
+    'abbbbbby',
+    'bbbcbbby',
+    'bbbbbbay',
+    'cbbabbby',
+    'bbbbbbby',
+    'babbbbby',
+]
+# grass on the left, the vertical line on the right (x flipped: the right side
+# of a taxiway one block wide, or of one that runs along the runway's grass)
+TILES['EDGE_V_TC'] = [
+    '..kbbbby',
+    '.kabbbby',
+    '..kbbbcy',
+    '.kbbbaby',
+    '..kbbbby',
+    '.kabbcby',
+    '..kbbbby',
+    '.kbbbbby',
+]
 ORDER = ['ASPH1', 'ASPH2', 'EDGE_V', 'EDGE_H', 'CORNER', 'STRIPE_V', 'DASH',
-         'THRESH', 'TAXI', 'NUM_0', 'NUM_1']
+         'THRESH', 'TAXI', 'NUM_0', 'NUM_1',
+         'TAXI_C', 'TAXI_H', 'TAXI_HC', 'EDGE_V_TC']
 IDX = {name: FIRST_TILE + i for i, name in enumerate(ORDER)}
 
 XFLIP, YFLIP = 1 << 10, 1 << 11
@@ -222,6 +271,18 @@ METATILES = [
     ('EDGE_LP',   edged(tile('EDGE_V'), tile(A2), tile('EDGE_V'), tile(A1))),
     ('EDGE_RP',   edged(tile(A2), tile('EDGE_V', xflip=True),
                         tile(A1), tile('EDGE_V', xflip=True))),
+    # v0.5 taxiway lines (see TAXI_C)
+    ('TAXI_V_1W', edged(tile('EDGE_V_TC'), tile('EDGE_V_TC', xflip=True),
+                        tile('EDGE_V_TC'), tile('EDGE_V_TC', xflip=True))),
+    ('TAXI_V_R',  edged(tile('TAXI_C'), tile('EDGE_V_TC', xflip=True),
+                        tile('TAXI_C'), tile('EDGE_V_TC', xflip=True))),
+    ('TAXI_T_R',  edged(tile('TAXI_HC'), tile('EDGE_V_TC', xflip=True),
+                        tile('TAXI_C'), tile('EDGE_V_TC', xflip=True))),
+    ('TAXI_END_BR', edged(tile('TAXI_C'), tile('EDGE_V_TC', xflip=True),
+                          tile('EDGE_H', yflip=True), tile('CORNER', xflip=True, yflip=True))),
+    ('TAXI_H',    paved(tile('TAXI_H'), tile('TAXI_H'), tile(A2), tile(A1))),
+    ('TAXI_H_B',  edged(tile('TAXI_H'), tile('TAXI_H'),
+                        tile('EDGE_H', yflip=True), tile('EDGE_H', yflip=True))),
 ]
 
 

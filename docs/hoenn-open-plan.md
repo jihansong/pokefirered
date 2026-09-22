@@ -117,6 +117,11 @@ python3 tools/check_map_integrity.py --limit 12 --no-fail             # 부록 C
 
 ## 2. 엔진 한계
 
+> **메모리 여유 (2026-09-22 빌드 기준, 확인함)**: EWRAM 261,604 / 262,144바이트(99.79%, 남은 540바이트), IWRAM 29,900 / 32,768바이트(91.25%), ROM 15.4MB / 32MB(46%). 즉 **롬 공간은 넉넉하지만 EWRAM은 사실상 꽉 찼다.** 콘테스트·비밀기지·배틀프론티어처럼 큰 작업용 버퍼가 필요한 기능은 EWRAM을 먼저 확보해야 한다(쓰지 않는 링크·유니온룸·퀘스트로그 버퍼 정리 등). 이벤트·대사·맵 위주의 단계(1단계 A안 포함)는 EWRAM을 거의 쓰지 않는다.
+>
+> **맵 스크립트 주의**: `MAP_SCRIPT_ON_TRANSITION` 안에서는 `specialvar VAR_RESULT, X` 뒤의 `call_if_eq`·`goto_if_eq`가 기대대로 동작하지 않았다(v0.6.0 작업에서 확인). 오브젝트를 조건부로 숨길 때는 C 쪽 special이 직접 `FlagSet`/`FlagClear` 하도록 만든다(`OldTimer_Setup`·`SummitTrainer_Setup`·`SilverMountain_SetBlizzardGate` 참고).
+
+
 ### 2.1 이미 되는 것
 
 | 기능 | 상태 | 근거 |

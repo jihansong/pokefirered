@@ -1,5 +1,15 @@
 EverGrandeCity_PokemonLeague_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_PokemonLeague_1F_OnTransition
 	.byte 0
+
+@ HOENN's ELITE FOUR is not open yet: the rooms behind this door were imported
+@ without their battles, and their doors are only opened by the battle scripts,
+@ so a player who walked in could never walk out again. Emerald's own two door
+@ guards stand in front of the stairs until the ELITE FOUR opens.
+EverGrandeCity_PokemonLeague_1F_OnTransition::
+	setobjectxyperm 3, 9, 2
+	setobjectxyperm 4, 10, 2
+	end
 
 EverGrandeCity_PokemonLeague_1F_EventScript_H0::
 	lock

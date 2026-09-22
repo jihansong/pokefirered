@@ -12599,14 +12599,14 @@
                 "species": "SPECIES_METAPOD"
               },
               {
-                "min_level": 4,
+                "min_level": 3,
                 "max_level": 4,
-                "species": "SPECIES_CATERPIE"
+                "species": "SPECIES_WEEDLE"
               },
               {
-                "min_level": 5,
+                "min_level": 4,
                 "max_level": 5,
-                "species": "SPECIES_CATERPIE"
+                "species": "SPECIES_KAKUNA"
               },
               {
                 "min_level": 4,
@@ -12634,9 +12634,9 @@
                 "species": "SPECIES_SHROOMISH"
               },
               {
-                "min_level": 4,
-                "max_level": 4,
-                "species": "SPECIES_WURMPLE"
+                "min_level": 3,
+                "max_level": 5,
+                "species": "SPECIES_PIKACHU"
               },
               {
                 "min_level": 9,
@@ -12664,14 +12664,14 @@
                 "species": "SPECIES_METAPOD"
               },
               {
-                "min_level": 4,
+                "min_level": 3,
                 "max_level": 4,
-                "species": "SPECIES_CATERPIE"
+                "species": "SPECIES_WEEDLE"
               },
               {
-                "min_level": 5,
+                "min_level": 4,
                 "max_level": 5,
-                "species": "SPECIES_CATERPIE"
+                "species": "SPECIES_KAKUNA"
               },
               {
                 "min_level": 4,
@@ -12699,9 +12699,9 @@
                 "species": "SPECIES_SHROOMISH"
               },
               {
-                "min_level": 4,
-                "max_level": 4,
-                "species": "SPECIES_WURMPLE"
+                "min_level": 3,
+                "max_level": 5,
+                "species": "SPECIES_PIKACHU"
               },
               {
                 "min_level": 9,

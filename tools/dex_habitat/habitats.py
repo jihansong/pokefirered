@@ -29,7 +29,10 @@ CRYSTAL = "Crystal"
 
 HABITATS = [
     # --- Viridian Forest: HGSS night owls; Petalburg Woods (Emerald) residents ---
-    ("MAP_VIRIDIAN_FOREST", "land", "all", [6, 9], "SPECIES_WURMPLE", None, "직접 선택: 숲 = Emerald Petalburg Woods 25%, Route 101 45%"),
+    ("MAP_VIRIDIAN_FOREST", "land", "all", [6], "SPECIES_WURMPLE", None, "직접 선택: 숲 = Emerald Petalburg Woods 25%, Route 101 45%"),
+    ("MAP_VIRIDIAN_FOREST", "land", "all", [2], "SPECIES_WEEDLE", (3, 4), "Yellow Viridian Forest (사용자 요청)"),
+    ("MAP_VIRIDIAN_FOREST", "land", "all", [3], "SPECIES_KAKUNA", (4, 5), "Yellow Viridian Forest (사용자 요청)"),
+    ("MAP_VIRIDIAN_FOREST", "land", "all", [9], "SPECIES_PIKACHU", (3, 5), "Yellow Viridian Forest 5%(사용자 요청). 마스코트가 칸토 어디에도 없어 도감 분포가 호연으로 열리던 문제도 함께 해결"),
     ("MAP_VIRIDIAN_FOREST", "land", "all", [8], "SPECIES_SHROOMISH", (6, 6), "직접 선택: Emerald Petalburg Woods 15%"),
     ("MAP_VIRIDIAN_FOREST", "land", "all", [11], "SPECIES_SLAKOTH", (6, 6), "직접 선택: Emerald Petalburg Woods 5%(드묾)"),
     ("MAP_VIRIDIAN_FOREST", "land", "night", [0, 4, 5], "SPECIES_HOOTHOOT", None, "HGSS Viridian Forest 밤 80%"),

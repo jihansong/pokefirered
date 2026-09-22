@@ -5811,6 +5811,9 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon)
 u32 CanMonLearnTMHM(struct Pokemon *mon, u8 tm)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, NULL);
+    // Oak's PIKACHU can learn HM03 SURF, which no other PIKACHU can
+    if (tm == ITEM_HM03 - ITEM_TM01 && IsStarterPikachu(mon))
+        return TRUE;
     if (species == SPECIES_EGG)
     {
         return 0;

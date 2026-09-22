@@ -10,6 +10,9 @@ $(OBJEVENTGFXDIR)/misc/rock_smash_rock.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/misc/surf_blob.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/misc/surf_pikachu.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 $(OBJEVENTGFXDIR)/misc/ss_anne.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 8 -mheight 4
 

@@ -226,6 +226,29 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_SurfBlob =
     .callback = UpdateSurfBlobFieldEffect,
 };
 
+// Oak's PIKACHU swimming with the player on its back: the blob's frame layout and
+// animations (tools/make_surf_pikachu.py); FldEff_SurfBlob sets its palette.
+static const struct SpriteFrameImage sPicTable_SurfPikachu[] =
+{
+    overworld_frame(gObjectEventPic_SurfPikachu, 2, 8, 0),
+    overworld_frame(gObjectEventPic_SurfPikachu, 2, 8, 1),
+    overworld_frame(gObjectEventPic_SurfPikachu, 2, 8, 2),
+    overworld_frame(gObjectEventPic_SurfPikachu, 2, 8, 3),
+    overworld_frame(gObjectEventPic_SurfPikachu, 2, 8, 4),
+    overworld_frame(gObjectEventPic_SurfPikachu, 2, 8, 5),
+};
+
+const struct SpriteTemplate gFieldEffectObjectTemplate_SurfPikachu =
+{
+    .tileTag = TAG_NONE,
+    .paletteTag = TAG_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .anims = sAnimTable_SurfBlob,
+    .images = sPicTable_SurfPikachu,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = UpdateSurfBlobFieldEffect,
+};
+
 static const struct SpriteFrameImage sPicTable_Arrow[] =
 {
     overworld_frame(gFieldEffectObjectPic_Arrow, 2, 2, 0),

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "surfing_pikachu.h"
 #include "time_of_day.h"
 #include "gflib.h"
 #include "decompress.h"
@@ -2987,6 +2988,7 @@ u8 FldEff_UseSurf(void)
 {
     u8 taskId = CreateTask(Task_FldEffUseSurf, 0xff);
     gTasks[taskId].data[15] = gFieldEffectArguments[0];
+    RecordSurfingMon(gFieldEffectArguments[0]);
     Overworld_ClearSavedMusic();
     if (Overworld_MusicCanOverrideMapMusic(MUS_SURF))
         Overworld_ChangeMusicTo(MUS_SURF);

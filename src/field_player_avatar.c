@@ -1,4 +1,5 @@
 #include "global.h"
+#include "surfing_pikachu.h"
 #include "gflib.h"
 #include "bike.h"
 #include "event_data.h"
@@ -1918,6 +1919,7 @@ static void Task_WaitStopSurfing(u8 taskId)
         UnlockPlayerFieldControls();
         UnfreezeObjectEvents();
         DestroySprite(&gSprites[playerObjEvent->fieldEffectSpriteId]);
+        EndSurfPikachu();
         DestroyTask(taskId);
         SetHelpContextForMap();
     }

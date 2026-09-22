@@ -3,6 +3,8 @@
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "field_effect.h"
+#include "field_weather.h"
+#include "palette.h"
 #include "random.h"
 #include "script.h"
 #include "sound.h"
@@ -17,8 +19,9 @@
 // the water west of the Route 19 beach while waves roll in from the left, each
 // one marked by splashes two, one and zero tiles away. Pressing A just as a wave
 // reaches PIKACHU makes it jump. Ten waves come in; VAR_RESULT is how many
-// PIKACHU cleared. Once the Route 19 surfer is satisfied, the SURF blob is drawn
-// in PIKACHU's colors, like a surfboard.
+// PIKACHU cleared. The Route 19 surfer then teaches it SURF and FLY.
+// Whenever Oak's PIKACHU is the one that SURFS, the player rides on its back
+// (FldEff_SurfBlob).
 
 #define NUM_WAVES        10
 #define WAVE_STEP_FRAMES 15
@@ -34,21 +37,59 @@
 #define tResolved data[5]
 #define tDelay    data[6]
 
-#define PAL_TAG_SURFBOARD 0x1129
+#define PAL_TAG_SURF_PIKACHU 0x1129
 
-static const u16 sSurfboardPalette[] = INCBIN_U16("graphics/field_effects/palettes/surfboard.gbapal");
+extern const u16 gObjectEventPal_NpcBlue[];
 
-static const struct SpritePalette sSurfboardSpritePalette = {sSurfboardPalette, PAL_TAG_SURFBOARD};
+// Oak's PIKACHU swimming with the player on its back is drawn in the colors of its
+// overworld sprite (the NPC blue palette), loaded under a tag of its own.
+static const struct SpritePalette sSurfPikachuPalette = {gObjectEventPal_NpcBlue, PAL_TAG_SURF_PIKACHU};
 
-void TryUseSurfboardPalette(struct Sprite *surfBlob)
+// Continuing a save made while surfing creates the sprite during the quest log recap,
+// and the palette buffers are cleared when the field is entered again while the
+// palette tag stays: RefreshSurfPikachuPalette notices and puts the colors back.
+#define PIKACHU_YELLOW 5 // a color of the palette that is not black or transparent
+
+// Called when SURF starts, with the party slot of the mon that uses it.
+void RecordSurfingMon(u32 partySlot)
+{
+    u16 onPikachu = partySlot < PARTY_SIZE && IsStarterPikachu(&gPlayerParty[partySlot]);
+
+    VarSet(VAR_SURF_PIKACHU, onPikachu);
+}
+
+// For FldEff_SurfBlob: the palette slot for the swimming PIKACHU, or 0xFF to draw
+// the usual blob (another mon SURFS, or no sprite palette slot is free). It runs
+// again whenever the blob is remade (a map change, continuing a save), so a player
+// who saved while surfing on PIKACHU keeps riding it.
+u8 TryLoadSurfPikachuPalette(void)
 {
     u8 paletteNum;
 
-    if (!FlagGet(FLAG_SURFING_PIKACHU) || !IsStarterPikachuAliveInParty())
-        return;
-    paletteNum = LoadSpritePalette(&sSurfboardSpritePalette);
+    if (!VarGet(VAR_SURF_PIKACHU))
+        return 0xFF;
+    paletteNum = LoadSpritePalette(&sSurfPikachuPalette);
     if (paletteNum != 0xFF)
-        surfBlob->oam.paletteNum = paletteNum;
+        UpdateSpritePaletteWithWeather(paletteNum);
+    return paletteNum;
+}
+
+// Called by the swimming PIKACHU sprite every frame: reload its colors if they are gone.
+void RefreshSurfPikachuPalette(struct Sprite *sprite)
+{
+    u16 offset = OBJ_PLTT_ID(sprite->oam.paletteNum);
+
+    if (gPlttBufferUnfaded[offset + PIKACHU_YELLOW] == gObjectEventPal_NpcBlue[PIKACHU_YELLOW])
+        return;
+    LoadPalette(gObjectEventPal_NpcBlue, offset, PLTT_SIZE_4BPP);
+    UpdateSpritePaletteWithWeather(sprite->oam.paletteNum);
+}
+
+// Called once the player is back on land.
+void EndSurfPikachu(void)
+{
+    VarSet(VAR_SURF_PIKACHU, 0);
+    FreeSpritePaletteByTag(PAL_TAG_SURF_PIKACHU);
 }
 
 u16 GetStarterPikachuPartySlotForScript(void)

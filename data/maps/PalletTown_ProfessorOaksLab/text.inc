@@ -466,3 +466,16 @@ PalletTown_ProfessorOaksLab_Text_AidePokeWatchExplain::
     .string "You can register the POKéWATCH to\n"
     .string "the SELECT button.$"
 
+PalletTown_ProfessorOaksLab_Text_StarterPikachuIsSpecial::
+    .string "The PIKACHU the PROF gave you is\n"
+    .string "no ordinary PIKACHU!\p"
+    .string "It grows as strong as a legendary\n"
+    .string "POKéMON, and its HP climbs higher\l"
+    .string "with every level.\p"
+    .string "It learns moves no other PIKACHU\n"
+    .string "can, like EXTREMESPEED and SURF,\l"
+    .string "and a move all its own at Lv. 55!\p"
+    .string "When it SURFS, you ride on its\n"
+    .string "back. And if it ever skips a move,\l"
+    .string "the MOVE MANIAC on TWO ISLAND can\l"
+    .string "remind it.$"

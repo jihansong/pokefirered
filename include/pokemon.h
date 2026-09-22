@@ -112,7 +112,8 @@ struct BoxPokemon
     u8 hasSpecies:1;
     u8 isEgg:1;
     u8 blockBoxRS:1; // Unused, but Pokémon Box Ruby & Sapphire will refuse to deposit a Pokémon with this flag set
-    u8 unused:4;
+    u8 isStarterPikachu:1; // Thunder Yellow: the PIKACHU from Oak's Lab (outside the encrypted data, so no checksum)
+    u8 unused:3;
     u8 otName[PLAYER_NAME_LENGTH];
     u8 markings;
     u16 checksum;
@@ -392,6 +393,7 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon);
 u32 CanMonLearnTMHM(struct Pokemon *mon, u8 tm);
 u8 GetMoveRelearnerMoves(struct Pokemon *mon, u16 *moves);
 u8 GetLevelUpMovesBySpecies(u16 species, u16 *moves);
+void ResetMonLevelUpMoveset(struct Pokemon *mon);
 u8 GetNumberOfRelearnableMoves(struct Pokemon *mon);
 u16 SpeciesToPokedexNum(u16 species);
 void ClearBattleMonForms(void);

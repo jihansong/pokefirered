@@ -90,7 +90,7 @@
 #define VAR_PIKACHU_EMOTION_MODIFIER       0x402B // PIKACHU_MODIFIER_*
 #define VAR_STARTER_PIKACHU_PERSONALITY_LO 0x402C
 #define VAR_STARTER_PIKACHU_PERSONALITY_HI 0x402D
-#define VAR_0x402E                         0x402E
+#define VAR_SURF_PIKACHU                   0x402E // 1 while the player SURFS on Oak's PIKACHU (src/surfing_pikachu.c)
 
 #define VAR_0x402F                         0x402F
 

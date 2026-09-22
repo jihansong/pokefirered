@@ -163,10 +163,10 @@ Route19_Text_SurfDudeNoPikachu::
 Route19_Text_SurfDudeWantToTry::
     .string "Whoa, that PIKACHU follows you\n"
     .string "around? Rad!\p"
-    .string "PIKACHU can't normally SURF, but\n"
-    .string "I could teach it.\p"
+    .string "Most PIKACHU can't SURF at all,\n"
+    .string "but yours looks like a natural.\p"
     .string "Want to see if it can handle the\n"
-    .string "waves?$"
+    .string "big waves?$"
 
 Route19_Text_SurfDudeRules::
     .string "Waves roll in from the left. Watch\n"
@@ -191,8 +191,9 @@ Route19_Text_SurfDudeTeachMove::
     .string "Here we go!$"
 
 Route19_Text_SurfDudeRideTheWaves::
-    .string "From now on, PIKACHU can ride\n"
-    .string "the waves in style!$"
+    .string "When PIKACHU SURFS, it swims with\n"
+    .string "you riding on its back.\p"
+    .string "Ride the waves, dude!$"
 
 Route19_Text_SurfDudeAfterClear::
     .string "Your PIKACHU is a real surfer now.\n"

@@ -999,7 +999,14 @@ PalletTown_ProfessorOaksLab_EventScript_Aide2::
 	lock
 	faceplayer
 	goto_if_set FLAG_SYS_GAME_CLEAR, PalletTown_ProfessorOaksLab_EventScript_Aide2GameClear
+	goto_if_set FLAG_RECEIVED_STARTER_PIKACHU, PalletTown_ProfessorOaksLab_EventScript_Aide2StarterPikachu
 	msgbox PalletTown_ProfessorOaksLab_Text_StudyAsOaksAide
+	release
+	end
+
+@ Thunder Yellow v0.4.0: what makes Oak's PIKACHU special
+PalletTown_ProfessorOaksLab_EventScript_Aide2StarterPikachu::
+	msgbox PalletTown_ProfessorOaksLab_Text_StarterPikachuIsSpecial
 	release
 	end
 

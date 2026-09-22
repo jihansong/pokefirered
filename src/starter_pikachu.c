@@ -1,12 +1,15 @@
 #include "global.h"
 #include "event_data.h"
 #include "pokemon.h"
+#include "pokemon_storage_system.h"
 #include "starter_pikachu.h"
 #include "constants/battle.h"
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/pokemon.h"
 #include "constants/species.h"
+
+#include "data/pokemon/starter_pikachu.h"
 
 // The PIKACHU the player receives in Oak's Lab. Like Yellow, it is identified by
 // species and original trainer; the personality value also has to match so that a
@@ -50,17 +53,27 @@ void RecordStarterPikachu(void)
 {
     u8 partyCount = CalculatePlayerPartyCount();
     u32 personality;
+    u8 isStarter = TRUE;
 
     if (partyCount == 0)
         return;
     personality = GetMonData(&gPlayerParty[partyCount - 1], MON_DATA_PERSONALITY, NULL);
+    SetMonData(&gPlayerParty[partyCount - 1], MON_DATA_STARTER_PIKACHU, &isStarter);
+    // givemon worked out its stats and moves before it was Oak's PIKACHU: redo both,
+    // so it has legendary stats and its own moves (THUNDERSHOCK, TAIL WHIP, QUICK ATTACK)
+    // from the start
+    CalculateMonStats(&gPlayerParty[partyCount - 1]);
+    ResetMonLevelUpMoveset(&gPlayerParty[partyCount - 1]);
     VarSet(VAR_STARTER_PIKACHU_PERSONALITY_LO, personality);
     VarSet(VAR_STARTER_PIKACHU_PERSONALITY_HI, personality >> 16);
     FlagSet(FLAG_RECEIVED_STARTER_PIKACHU);
     InitPikachuMood();
 }
 
-bool8 IsStarterPikachuBoxMon(struct BoxPokemon *boxMon)
+// How saves from before v0.4.0 tell the starter apart: the personality recorded when
+// Oak handed it over, and the player as its original trainer. Only used to set the
+// isStarterPikachu bit on those saves (MigrateStarterPikachuBit).
+static bool8 IsLegacyStarterPikachuBoxMon(struct BoxPokemon *boxMon)
 {
     u8 otName[PLAYER_NAME_LENGTH + 1];
 
@@ -74,6 +87,57 @@ bool8 IsStarterPikachuBoxMon(struct BoxPokemon *boxMon)
     if (IsOtherTrainer(GetBoxMonData(boxMon, MON_DATA_OT_ID, NULL), otName))
         return FALSE;
     return TRUE;
+}
+
+// The one test every special rule for Oak's PIKACHU goes through: the species and the
+// isStarterPikachu bit, which Oak's Lab sets. The bit lives in the BoxPokemon itself,
+// so it stays with the PIKACHU through the PC, the Day Care, party reordering and trades.
+bool8 IsStarterPikachuBoxMon(struct BoxPokemon *boxMon)
+{
+    if (GetBoxMonData(boxMon, MON_DATA_SPECIES_OR_EGG, NULL) != SPECIES_PIKACHU)
+        return FALSE;
+    return GetBoxMonData(boxMon, MON_DATA_STARTER_PIKACHU, NULL);
+}
+
+static void MigrateBoxMon(struct BoxPokemon *boxMon)
+{
+    u8 isStarter = TRUE;
+
+    if (!GetBoxMonData(boxMon, MON_DATA_STARTER_PIKACHU, NULL) && IsLegacyStarterPikachuBoxMon(boxMon))
+        SetBoxMonData(boxMon, MON_DATA_STARTER_PIKACHU, &isStarter);
+}
+
+// Saves from before v0.4.0 have no isStarterPikachu bit: find their starter by the old
+// test wherever it is (party, PC boxes, Day Care) and give it the bit. Runs when a save
+// is continued; once the bit is set this changes nothing.
+void MigrateStarterPikachuBit(void)
+{
+    u8 i, j;
+
+    if (!FlagGet(FLAG_RECEIVED_STARTER_PIKACHU))
+        return;
+    for (i = 0; i < PARTY_SIZE; i++)
+        MigrateBoxMon(&gPlayerParty[i].box);
+    for (i = 0; i < TOTAL_BOXES_COUNT; i++)
+    {
+        for (j = 0; j < IN_BOX_COUNT; j++)
+            MigrateBoxMon(GetBoxedMonPtr(i, j));
+    }
+    for (i = 0; i < DAYCARE_MON_COUNT; i++)
+        MigrateBoxMon(&gSaveBlock1Ptr->daycare.mons[i].mon);
+}
+
+// Its stats come from gStarterPikachuBaseStats from v0.4.0 on. A PIKACHU in the party
+// of an older save gets them as soon as the save is continued, not at its next level.
+void RecalculateStarterPikachuStats(void)
+{
+    u8 i;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (IsStarterPikachu(&gPlayerParty[i]))
+            CalculateMonStats(&gPlayerParty[i]);
+    }
 }
 
 bool8 IsStarterPikachu(struct Pokemon *mon)

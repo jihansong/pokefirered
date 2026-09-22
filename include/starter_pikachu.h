@@ -34,6 +34,12 @@ enum {
 void RecordStarterPikachu(void);
 bool8 IsStarterPikachu(struct Pokemon *mon);
 bool8 IsStarterPikachuBoxMon(struct BoxPokemon *boxMon);
+void MigrateStarterPikachuBit(void);
+void RecalculateStarterPikachuStats(void);
+
+// On top of the normal formula, Oak's PIKACHU gains this much max HP per level.
+#define STARTER_PIKACHU_HP_PER_LEVEL 3
+extern const struct SpeciesInfo gStarterPikachuBaseStats;
 u8 GetStarterPikachuPartySlot(void);
 bool8 IsStarterPikachuAliveInParty(void);
 u16 GetStarterPikachuFriendship(void);

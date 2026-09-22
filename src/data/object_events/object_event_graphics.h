@@ -205,6 +205,7 @@ const u16 gObjectEventPal_Rayquaza[] = INCBIN_U16("graphics/object_events/palett
 const u16 gObjectEventPic_CapsuleShards[] = INCBIN_U16("graphics/object_events/pics/misc/capsule_shards.4bpp");
 const u16 gObjectEventPic_SSAnne[] = INCBIN_U16("graphics/object_events/pics/misc/ss_anne.4bpp");
 const u16 gObjectEventPic_SurfBlob[] = INCBIN_U16("graphics/object_events/pics/misc/surf_blob.4bpp");
+const u16 gObjectEventPic_SurfPikachu[] = INCBIN_U16("graphics/object_events/pics/misc/surf_pikachu.4bpp");
 const u16 gObjectEventPic_Policeman[] = INCBIN_U16("graphics/object_events/pics/people/policeman.4bpp");
 const u16 gObjectEventPal_RSQuintyPlump[] = INCBIN_U16("graphics/object_events/palettes/rs_quinty_plump.gbapal");
 const u16 gObjectEventPal_RSQuintyPlumpReflection[] = INCBIN_U16("graphics/object_events/palettes/rs_quinty_plump_reflection.gbapal");

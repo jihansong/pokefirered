@@ -12,6 +12,8 @@
 #include "constants/event_objects.h"
 #include "constants/songs.h"
 
+extern const struct SpriteTemplate gFieldEffectObjectTemplate_SurfPikachu;
+
 #define OBJ_EVENT_PAL_TAG_NONE 0x11FF // duplicate of define in event_object_movement.c
 
 static void UpdateObjectReflectionSprite(struct Sprite *sprite);
@@ -947,14 +949,20 @@ u32 FldEff_SurfBlob(void)
     u8 spriteId;
     struct Sprite *sprite;
 
+    u8 pikachuPalette;
+
     SetSpritePosToOffsetMapCoords((s16 *)&gFieldEffectArguments[0], (s16 *)&gFieldEffectArguments[1], 8, 8);
-    spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_SURF_BLOB], gFieldEffectArguments[0], gFieldEffectArguments[1], 0x96);
+    // Oak's PIKACHU swims with the player on its back in place of the blob
+    pikachuPalette = TryLoadSurfPikachuPalette();
+    if (pikachuPalette != 0xFF)
+        spriteId = CreateSpriteAtEnd(&gFieldEffectObjectTemplate_SurfPikachu, gFieldEffectArguments[0], gFieldEffectArguments[1], 0x96);
+    else
+        spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_SURF_BLOB], gFieldEffectArguments[0], gFieldEffectArguments[1], 0x96);
     if (spriteId != MAX_SPRITES)
     {
         sprite = &gSprites[spriteId];
         sprite->coordOffsetEnabled = TRUE;
-        sprite->oam.paletteNum = 0;
-        TryUseSurfboardPalette(sprite);
+        sprite->oam.paletteNum = pikachuPalette != 0xFF ? pikachuPalette : 0;
         sprite->sPlayerObjectId = gFieldEffectArguments[2];
         sprite->sBobDirection = 0;
         sprite->data[6] = -1;
@@ -1002,6 +1010,8 @@ void UpdateSurfBlobFieldEffect(struct Sprite *sprite)
 
     playerObject = &gObjectEvents[sprite->sPlayerObjectId];
     playerSprite = &gSprites[playerObject->spriteId];
+    if (sprite->template == &gFieldEffectObjectTemplate_SurfPikachu)
+        RefreshSurfPikachuPalette(sprite);
     SynchroniseSurfAnim(playerObject, sprite);
     SynchroniseSurfPosition(playerObject, sprite);
     CreateBobbingEffect(playerObject, playerSprite, sprite);

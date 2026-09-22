@@ -3953,6 +3953,34 @@ static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesViridianGym[]
     },
 };
 
+static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesNewIsland[] = {
+    {
+        .iv = 100,
+        .lvl = 58,
+        .species = SPECIES_WEEZING,
+    },
+    {
+        .iv = 100,
+        .lvl = 58,
+        .species = SPECIES_ARBOK,
+    },
+    {
+        .iv = 100,
+        .lvl = 57,
+        .species = SPECIES_VICTREEBEL,
+    },
+    {
+        .iv = 100,
+        .lvl = 57,
+        .species = SPECIES_GYARADOS,
+    },
+    {
+        .iv = 100,
+        .lvl = 60,
+        .species = SPECIES_MEOWTH,
+    },
+};
+
 static const struct TrainerMonNoItemDefaultMoves sParty_RivalOaksLabEevee[] = {
     {
         .iv = 0,

@@ -558,7 +558,7 @@
 #define FLAG_VIRIDIAN_GYM_TRAPS_OFF 0x218 // v0.5.0 event 9: the player switched off TEAM ROCKET's floor traps
 #define FLAG_ROCKET_VIRIDIAN_GYM 0x219 // v0.5.0 event 9: TEAM ROCKET driven out of the VIRIDIAN GYM
 #define FLAG_ROCKET_INDIGO_TORCH 0x21A // v0.5.0 event 10: TEAM ROCKET's grab for the INDIGO TORCH foiled
-#define FLAG_0x21B               0x21B
+#define FLAG_ROCKET_NEW_ISLAND   0x21B // v0.5.0 event 11: TEAM ROCKET driven off NEW ISLAND (CARGO TAG found)
 #define FLAG_0x21C               0x21C
 #define FLAG_0x21D               0x21D
 #define FLAG_0x21E               0x21E

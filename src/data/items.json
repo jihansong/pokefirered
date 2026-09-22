@@ -65,7 +65,7 @@
       "secondaryId": 2
     },
     {
-      "english": "POK\u00e9 BALL",
+      "english": "POKé BALL",
       "itemId": "ITEM_POKE_BALL",
       "price": 200,
       "holdEffect": "HOLD_EFFECT_NONE",
@@ -929,15 +929,15 @@
       "secondaryId": 0
     },
     {
-      "english": "????????",
-      "itemId": "ITEM_NONE",
+      "english": "CARGO TAG",
+      "itemId": "ITEM_CARGO_TAG",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,
-      "description_english": "?????",
-      "importance": 0,
+      "description_english": "A faded tag from a crate shipped\\nfrom NEW ISLAND. It reads:\\nM - VERMILION - FRAGILE",
+      "importance": 1,
       "registrability": 0,
-      "pocket": "POCKET_ITEMS",
+      "pocket": "POCKET_KEY_ITEMS",
       "type": "ITEM_TYPE_BAG_MENU",
       "fieldUseFunc": "FieldUseFunc_OakStopsYou",
       "battleUsage": 0,
@@ -1281,7 +1281,7 @@
       "secondaryId": 0
     },
     {
-      "english": "POK\u00e9 DOLL",
+      "english": "POKé DOLL",
       "itemId": "ITEM_POKE_DOLL",
       "price": 1000,
       "holdEffect": "HOLD_EFFECT_NONE",
@@ -5659,7 +5659,7 @@
       "secondaryId": 0
     },
     {
-      "english": "POK\u00e9 FLUTE",
+      "english": "POKé FLUTE",
       "itemId": "ITEM_POKE_FLUTE",
       "price": 0,
       "holdEffect": "HOLD_EFFECT_NONE",

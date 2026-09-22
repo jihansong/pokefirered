@@ -266,19 +266,76 @@ PokemonTower_7F_EventScript_JessieJames::
 	call_if_eq VAR_TEMP_1, 0, PokemonTower_7F_EventScript_JessieJamesAppear0
 	call_if_eq VAR_TEMP_1, 1, PokemonTower_7F_EventScript_JessieJamesAppear1
 	call_if_eq VAR_TEMP_1, 2, PokemonTower_7F_EventScript_JessieJamesAppear2
+	call PokemonTower_7F_EventScript_GhostPrank
+	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox PokemonTower_7F_Text_JessieJamesIntro
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_POKEMON_TOWER_JESSIE
 	trainerbattle_no_intro TRAINER_JESSIE_JAMES_POKEMON_TOWER, PokemonTower_7F_Text_JessieJamesDefeat
 	msgbox PokemonTower_7F_Text_JessieJamesBlastOff
 	closemessage
-	fadescreen FADE_TO_BLACK
+	setvar VAR_0x8008, LOCALID_POKEMON_TOWER_JESSIE
+	setvar VAR_0x8009, LOCALID_POKEMON_TOWER_JAMES
+	setvar VAR_0x800A, LOCALID_POKEMON_TOWER_MEOWTH
+	special RocketTrioBlastOff
+	waitstate
 	removeobject LOCALID_POKEMON_TOWER_JESSIE
 	removeobject LOCALID_POKEMON_TOWER_JAMES
-	fadescreen FADE_FROM_BLACK
+	removeobject LOCALID_POKEMON_TOWER_MEOWTH
 	setvar VAR_MAP_SCENE_POKEMON_TOWER_7F_JESSIE_JAMES, 1
 	releaseall
 	end
+
+@ Thunder Yellow v0.5.0, TEAM ROCKET event 5: before the battle the tower's GASTLY
+@ and HAUNTER play a trick on the trio, and MEOWTH comes along.
+PokemonTower_7F_EventScript_GhostPrank::
+	setobjectxyperm LOCALID_POKEMON_TOWER_MEOWTH, 11, 12
+	addobject LOCALID_POKEMON_TOWER_MEOWTH
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox PokemonTower_7F_Text_JessieNoGhostsHere
+	closemessage
+	fadescreenspeed FADE_TO_BLACK, 2
+	playmoncry SPECIES_GASTLY, CRY_MODE_NORMAL
+	waitmoncry
+	fadescreenspeed FADE_FROM_BLACK, 2
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox PokemonTower_7F_Text_ColdBreath
+	closemessage
+	applymovement LOCALID_POKEMON_TOWER_JESSIE, PokemonTower_7F_Movement_Startled
+	applymovement LOCALID_POKEMON_TOWER_JAMES, PokemonTower_7F_Movement_Startled
+	applymovement LOCALID_POKEMON_TOWER_MEOWTH, PokemonTower_7F_Movement_Startled
+	waitmovement 0
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox PokemonTower_7F_Text_JamesLickedEar
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox PokemonTower_7F_Text_JessieStopScreaming
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox PokemonTower_7F_Text_MeowthBehindYou
+	closemessage
+	playmoncry SPECIES_HAUNTER, CRY_MODE_NORMAL
+	applymovement LOCALID_POKEMON_TOWER_JESSIE, PokemonTower_7F_Movement_Shiver
+	applymovement LOCALID_POKEMON_TOWER_JAMES, PokemonTower_7F_Movement_Shiver
+	applymovement LOCALID_POKEMON_TOWER_MEOWTH, PokemonTower_7F_Movement_Shiver
+	waitmovement 0
+	waitmoncry
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox PokemonTower_7F_Text_LaughterFades
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox PokemonTower_7F_Text_JessieNotScared
+	return
+
+PokemonTower_7F_Movement_Startled:
+	jump_in_place_down
+	jump_in_place_down
+	step_end
+
+PokemonTower_7F_Movement_Shiver:
+	walk_in_place_faster_left
+	walk_in_place_faster_right
+	walk_in_place_faster_left
+	walk_in_place_faster_right
+	face_down
+	step_end
 
 PokemonTower_7F_EventScript_JessieJamesAppear0::
 	setobjectxyperm LOCALID_POKEMON_TOWER_JESSIE, 10, 11

@@ -63,3 +63,34 @@ PokemonTower_7F_Text_JessieJamesDefeat::
 PokemonTower_7F_Text_JessieJamesBlastOff::
     .string "Looks like TEAM ROCKET's blasting\n"
     .string "off again!$"
+
+PokemonTower_7F_Text_JessieNoGhostsHere::
+    .string "JESSIE: Ghosts? Please. There's\n"
+    .string "nothing in this tower but us and\l"
+    .string "that nosy brat.$"
+
+PokemonTower_7F_Text_ColdBreath::
+    .string "The lights died. Something cold and\n"
+    .string "giggling swept through the room!$"
+
+PokemonTower_7F_Text_JamesLickedEar::
+    .string "JAMES: Eeek! S-something just licked\n"
+    .string "my ear!$"
+
+PokemonTower_7F_Text_JessieStopScreaming::
+    .string "JESSIE: Stop screaming, JAMES!\n"
+    .string "You're embarrassing us!$"
+
+PokemonTower_7F_Text_MeowthBehindYou::
+    .string "MEOWTH: D-d-don't look now… but\n"
+    .string "dere's somethin' floatin' right\l"
+    .string "behind ya!$"
+
+PokemonTower_7F_Text_LaughterFades::
+    .string "The ghostly laughter drifted up the\n"
+    .string "stairs and faded away…$"
+
+PokemonTower_7F_Text_JessieNotScared::
+    .string "JESSIE: Ahem! For the record, we\n"
+    .string "were NOT scared!$"
+

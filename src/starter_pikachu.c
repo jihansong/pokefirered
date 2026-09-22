@@ -59,6 +59,11 @@ void RecordStarterPikachu(void)
         return;
     personality = GetMonData(&gPlayerParty[partyCount - 1], MON_DATA_PERSONALITY, NULL);
     SetMonData(&gPlayerParty[partyCount - 1], MON_DATA_STARTER_PIKACHU, &isStarter);
+    // givemon worked out its stats and moves before it was Oak's PIKACHU: redo both,
+    // so it has legendary stats and its own moves (THUNDERSHOCK, TAIL WHIP, QUICK ATTACK)
+    // from the start
+    CalculateMonStats(&gPlayerParty[partyCount - 1]);
+    ResetMonLevelUpMoveset(&gPlayerParty[partyCount - 1]);
     VarSet(VAR_STARTER_PIKACHU_PERSONALITY_LO, personality);
     VarSet(VAR_STARTER_PIKACHU_PERSONALITY_HI, personality >> 16);
     FlagSet(FLAG_RECEIVED_STARTER_PIKACHU);

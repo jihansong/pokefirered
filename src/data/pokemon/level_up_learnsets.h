@@ -328,6 +328,27 @@ static const u16 sArbokLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
+// Oak's PIKACHU (IsStarterPikachu) learns from this list instead of PIKACHU's own:
+// moves no other PIKACHU can learn, up to legendary signature moves and VOLT STRIKE.
+static const u16 sStarterPikachuLevelUpLearnset[] = {
+    LEVEL_UP_MOVE(1, MOVE_THUNDER_SHOCK),
+    LEVEL_UP_MOVE(1, MOVE_TAIL_WHIP),
+    LEVEL_UP_MOVE(1, MOVE_QUICK_ATTACK),
+    LEVEL_UP_MOVE(8, MOVE_THUNDER_WAVE),
+    LEVEL_UP_MOVE(15, MOVE_SPARK),
+    LEVEL_UP_MOVE(18, MOVE_EXTREME_SPEED),
+    LEVEL_UP_MOVE(22, MOVE_VOLT_TACKLE),
+    LEVEL_UP_MOVE(26, MOVE_THUNDERBOLT),
+    LEVEL_UP_MOVE(30, MOVE_SURF),
+    LEVEL_UP_MOVE(34, MOVE_ZAP_CANNON),
+    LEVEL_UP_MOVE(38, MOVE_AEROBLAST),
+    LEVEL_UP_MOVE(42, MOVE_THUNDER),
+    LEVEL_UP_MOVE(46, MOVE_PSYCHO_BOOST),
+    LEVEL_UP_MOVE(50, MOVE_LUSTER_PURGE),
+    LEVEL_UP_MOVE(55, MOVE_VOLT_STRIKE),
+    LEVEL_UP_END
+};
+
 static const u16 sPikachuLevelUpLearnset[] = {
     LEVEL_UP_MOVE(1, MOVE_THUNDER_SHOCK),
     LEVEL_UP_MOVE(1, MOVE_GROWL),

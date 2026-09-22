@@ -457,3 +457,9 @@ OneIsland_PokemonCenter_1F_Text_Rumor10::
     .string "Check your POKéDEX's AREA map to\n"
     .string "see where!$"
 
+OneIsland_PokemonCenter_1F_Text_Rumor11::
+    .string "A sailor in VERMILION says an\n"
+    .string "island rises out of the fog on\l"
+    .string "some nights.\p"
+    .string "Only TRAINERS who've faced MEWTWO\n"
+    .string "ever seem to find it.$"

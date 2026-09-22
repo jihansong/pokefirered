@@ -22,6 +22,7 @@
 #include "quest_log.h"
 #include "script.h"
 #include "special_field_anim.h"
+#include "starter_pikachu.h"
 #include "task.h"
 #include "trainer_pokemon_sprites.h"
 #include "trig.h"
@@ -3205,6 +3206,20 @@ static void SpriteCB_FlyBirdSwoopDown(struct Sprite *sprite);
 static void DoBirdSpriteWithPlayerAffineAnim(struct Sprite *sprite, u8 affineAnimId);
 static void SpriteCB_FlyBirdWithPlayer(struct Sprite *sprite);
 
+// Like Yellow: when Oak's PIKACHU is the POKéMON that FLIES, the player is carried
+// by PIKACHU on a balloon instead of by a bird. The two sets of animations of the
+// FLY sprite are laid out the same way, so telling them apart is a fixed offset.
+// Which one to play is settled when FLY starts and is still needed for the landing
+// on the other side, which happens in the same flight.
+#define FLY_ANIM_PIKACHU 5
+
+static bool8 sFlyOnPikachu;
+
+static u8 FlyAnimNum(u8 anim)
+{
+    return sFlyOnPikachu ? anim + FLY_ANIM_PIKACHU : anim;
+}
+
 static void (*const sFlyOutFieldEffectFuncs[])(struct Task *) =
 {
     FlyOutFieldEffect_FieldMovePose,
@@ -3222,6 +3237,8 @@ u8 FldEff_FlyOut(void)
 {
     u8 taskId = CreateTask(Task_FlyOut, 0xFE);
     gTasks[taskId].tMonPartyId = gFieldEffectArguments[0];
+    sFlyOnPikachu = gFieldEffectArguments[0] < PARTY_SIZE
+                 && IsStarterPikachu(&gPlayerParty[gFieldEffectArguments[0]]);
     return 0;
 }
 
@@ -3315,7 +3332,7 @@ static void FlyOutFieldEffect_FlyOffWithBird(struct Task *task)
         objectEvent->inanimate = FALSE;
         objectEvent->hasShadow = FALSE;
         SetFlyBirdPlayerSpriteId(task->tBirdSpriteId, objectEvent->spriteId);
-        StartSpriteAnim(&gSprites[task->tBirdSpriteId], gSaveBlock2Ptr->playerGender * 2 + 1);
+        StartSpriteAnim(&gSprites[task->tBirdSpriteId], FlyAnimNum(gSaveBlock2Ptr->playerGender * 2 + 1));
         DoBirdSpriteWithPlayerAffineAnim(&gSprites[task->tBirdSpriteId], 0);
         gSprites[task->tBirdSpriteId].callback = SpriteCB_FlyBirdWithPlayer;
         CameraObjectReset2();
@@ -3349,6 +3366,7 @@ static u8 CreateFlyBirdSprite(void)
     sprite = &gSprites[spriteId];
     sprite->oam.paletteNum = 0;
     sprite->oam.priority = 1;
+    StartSpriteAnim(sprite, FlyAnimNum(0));
     sprite->callback = SpriteCB_FlyBirdLeaveBall;
     return spriteId;
 }
@@ -3553,7 +3571,7 @@ static void FlyInFieldEffect_BirdSwoopDown(struct Task *task)
         task->tBirdSpriteId = CreateFlyBirdSprite();
         StartFlyBirdSwoopDown(task->tBirdSpriteId);
         SetFlyBirdPlayerSpriteId(task->tBirdSpriteId, playerObj->spriteId);
-        StartSpriteAnim(&gSprites[task->tBirdSpriteId], gSaveBlock2Ptr->playerGender * 2 + 2);
+        StartSpriteAnim(&gSprites[task->tBirdSpriteId], FlyAnimNum(gSaveBlock2Ptr->playerGender * 2 + 2));
         DoBirdSpriteWithPlayerAffineAnim(&gSprites[task->tBirdSpriteId], 1);
         gSprites[task->tBirdSpriteId].callback = SpriteCB_FlyBirdWithPlayer;
     }
@@ -3717,7 +3735,7 @@ static void TryChangeBirdSprite(struct Sprite *sprite)
             sprite->oam.affineMode = ST_OAM_AFFINE_OFF;
             FreeOamMatrix(sprite->oam.matrixNum);
             CalcCenterToCornerVec(sprite, sprite->oam.shape, sprite->oam.size, ST_OAM_AFFINE_OFF);
-            StartSpriteAnim(sprite, 0);
+            StartSpriteAnim(sprite, FlyAnimNum(0));
             sprite->callback = SpriteCB_FlyBirdSwoopDown;
         }
     }

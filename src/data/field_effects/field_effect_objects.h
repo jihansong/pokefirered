@@ -1126,6 +1126,13 @@ static const struct SpriteFrameImage sPicTable_Bird[] =
     overworld_frame(gFieldEffectObjectPic_Bird, 8, 8, 2),
     overworld_frame(gFieldEffectObjectPic_Bird, 8, 8, 3),
     overworld_frame(gFieldEffectObjectPic_Bird, 8, 8, 4),
+    // The same five poses again, with Oak's PIKACHU and its balloon in place of the
+    // bird; FLY plays these instead whenever PIKACHU is the one that carries the player.
+    overworld_frame(gFieldEffectObjectPic_FlyPikachu, 8, 8, 0),
+    overworld_frame(gFieldEffectObjectPic_FlyPikachu, 8, 8, 1),
+    overworld_frame(gFieldEffectObjectPic_FlyPikachu, 8, 8, 2),
+    overworld_frame(gFieldEffectObjectPic_FlyPikachu, 8, 8, 3),
+    overworld_frame(gFieldEffectObjectPic_FlyPikachu, 8, 8, 4),
 };
 
 static const union AnimCmd sAnim_Bird_WithoutPlayer[] =
@@ -1158,6 +1165,38 @@ static const union AnimCmd sAnim_Bird_Green_FlyIn[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_FlyPikachu_WithoutPlayer[] =
+{
+    ANIMCMD_FRAME(5, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_FlyPikachu_Red_FlyOut[] =
+{
+    ANIMCMD_FRAME(6, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_FlyPikachu_Red_FlyIn[] =
+{
+    ANIMCMD_FRAME(7, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_FlyPikachu_Green_FlyOut[] =
+{
+    ANIMCMD_FRAME(8, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_FlyPikachu_Green_FlyIn[] =
+{
+    ANIMCMD_FRAME(9, 1),
+    ANIMCMD_END,
+};
+
+// The PIKACHU animations come in the same order as the bird's, FLY_ANIM_PIKACHU
+// apart, so the FLY field effect can pick either set with the same index.
 static const union AnimCmd *const sAnimTable_Bird[] =
 {
     sAnim_Bird_WithoutPlayer,
@@ -1165,6 +1204,11 @@ static const union AnimCmd *const sAnimTable_Bird[] =
     sAnim_Bird_Red_FlyIn,
     sAnim_Bird_Green_FlyOut,
     sAnim_Bird_Green_FlyIn,
+    sAnim_FlyPikachu_WithoutPlayer,
+    sAnim_FlyPikachu_Red_FlyOut,
+    sAnim_FlyPikachu_Red_FlyIn,
+    sAnim_FlyPikachu_Green_FlyOut,
+    sAnim_FlyPikachu_Green_FlyIn,
 };
 
 const struct SpriteTemplate gFieldEffectObjectTemplate_Bird =

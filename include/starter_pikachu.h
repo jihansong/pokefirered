@@ -34,6 +34,7 @@ enum {
 void RecordStarterPikachu(void);
 bool8 IsStarterPikachu(struct Pokemon *mon);
 bool8 IsStarterPikachuBoxMon(struct BoxPokemon *boxMon);
+void MigrateStarterPikachuBit(void);
 u8 GetStarterPikachuPartySlot(void);
 bool8 IsStarterPikachuAliveInParty(void);
 u16 GetStarterPikachuFriendship(void);

@@ -43,6 +43,7 @@
 #include "save_location.h"
 #include "scanline_effect.h"
 #include "script.h"
+#include "starter_pikachu.h"
 #include "script_pokemon_util.h"
 #include "start_menu.h"
 #include "tileset_anims.h"
@@ -1704,6 +1705,7 @@ void CB2_ContinueSavedGame(void)
     LoadObjEventTemplatesFromHeader();
     LoadSaveblockObjEventScripts();
     UnfreezeObjectEvents();
+    MigrateStarterPikachuBit();
     Overworld_ResetStateOnContinue();
     InitMapFromSavedGame();
     PlayTimeCounter_Start();
@@ -2343,6 +2345,7 @@ void CB2_EnterFieldFromQuestLog(void)
     LoadObjEventTemplatesFromHeader();
     LoadSaveblockObjEventScripts();
     UnfreezeObjectEvents();
+    MigrateStarterPikachuBit();
     Overworld_ResetStateOnContinue();
     InitMapFromSavedGame();
     PlayTimeCounter_Start();

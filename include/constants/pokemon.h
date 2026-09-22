@@ -91,6 +91,7 @@
 #define MON_DATA_SPEED2                   86
 #define MON_DATA_SPATK2                   87
 #define MON_DATA_SPDEF2                   88
+#define MON_DATA_STARTER_PIKACHU          89 // BoxPokemon.isStarterPikachu
 
 // Pokemon types
 #define TYPE_NONE           255

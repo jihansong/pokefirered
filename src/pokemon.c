@@ -2988,6 +2988,10 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
     struct PokemonSubstruct2 *substruct2 = NULL;
     struct PokemonSubstruct3 *substruct3 = NULL;
 
+    // stored next to isEgg, outside the encrypted substructs
+    if (field == MON_DATA_STARTER_PIKACHU)
+        return boxMon->isStarterPikachu;
+
     if (field > MON_DATA_ENCRYPT_SEPARATOR)
     {
         substruct0 = &(GetSubstruct(boxMon, boxMon->personality, 0)->type0);
@@ -3417,6 +3421,13 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
     struct PokemonSubstruct1 *substruct1 = NULL;
     struct PokemonSubstruct2 *substruct2 = NULL;
     struct PokemonSubstruct3 *substruct3 = NULL;
+
+    // stored next to isEgg, outside the encrypted substructs
+    if (field == MON_DATA_STARTER_PIKACHU)
+    {
+        boxMon->isStarterPikachu = *data ? TRUE : FALSE;
+        return;
+    }
 
     if (field > MON_DATA_ENCRYPT_SEPARATOR)
     {

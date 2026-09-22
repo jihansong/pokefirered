@@ -10,8 +10,8 @@ DewfordTown_House2_Text_H0::
 DewfordTown_House2_Text_H1::
 	.string "Wow, you bothered to cross the sea\n"
 	.string "to visit DEWFORD?\p"
-	.string "Did you maybe come here because you\n"
-	.string "heard about BRAWLY?\p"
+	.string "Did you maybe come here because\n"
+	.string "you heard about BRAWLY?\p"
 	.string "He's so cool…\n"
 	.string "Everyone idolizes him.$"
 

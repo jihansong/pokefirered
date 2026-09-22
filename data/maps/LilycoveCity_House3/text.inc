@@ -1,6 +1,7 @@
 LilycoveCity_House3_Text_H0::
-	.string "Oh, my, my! Are you traveling alone?\n"
-	.string "But you're so young! Good for you!\p"
+	.string "Oh, my, my! Are you traveling\n"
+	.string "alone? But you're so young! Good\l"
+	.string "for you!\p"
 	.string "I'm sure my kids could learn a thing\n"
 	.string "or two from you!\p"
 	.string "Me? I'm a master of {POKEBLOCK}S.\p"
@@ -10,8 +11,8 @@ LilycoveCity_House3_Text_H0::
 	.string "a master of {POKEBLOCK}S?$"
 
 LilycoveCity_House3_Text_H1::
-	.string "When my wife gave birth to quadruplets,\n"
-	.string "you bet I was shocked.\p"
+	.string "When my wife gave birth to\n"
+	.string "quadruplets, you bet I was shocked.\p"
 	.string "But, now, seeing them play together,\n"
 	.string "it makes me happy.$"
 

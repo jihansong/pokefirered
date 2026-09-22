@@ -1,6 +1,6 @@
 Route123_Text_H0_0::
-	.string "Want to determine how strong you are?\n"
-	.string "I'll be the test!$"
+	.string "Want to determine how strong you\n"
+	.string "are? I'll be the test!$"
 
 Route123_Text_H0_1::
 	.string "You passed with flying colors!$"
@@ -12,8 +12,8 @@ Route123_Text_H0_2::
 Route123_Text_H1_0::
 	.string "You seem to have a big collection\n"
 	.string "of GYM BADGES.\p"
-	.string "Let me see if you're actually worthy of\n"
-	.string "those BADGES!$"
+	.string "Let me see if you're actually worthy\n"
+	.string "of those BADGES!$"
 
 Route123_Text_H1_1::
 	.string "Oh, you're worthy, all right!$"
@@ -24,7 +24,8 @@ Route123_Text_H1_2::
 
 Route123_Text_H2::
 	.string "I love GRASS-type POKéMON!\p"
-	.string "Do you have any GRASS-type POKéMON?$"
+	.string "Do you have any GRASS-type\n"
+	.string "POKéMON?$"
 
 Route123_Text_H3_0::
 	.string "They say that good times are filled\n"
@@ -82,8 +83,8 @@ Route123_Text_H7_1::
 	.string "Overwhelmed!$"
 
 Route123_Text_H7_2::
-	.string "We all have psychic powers.\n"
-	.string "We've just forgotten how to use them.$"
+	.string "We all have psychic powers. We've\n"
+	.string "just forgotten how to use them.$"
 
 Route123_Text_H8_0::
 	.string "MT. PYRE…\n"
@@ -104,16 +105,16 @@ Route123_Text_H9_0::
 	.string "landed in my trap!$"
 
 Route123_Text_H9_1::
-	.string "If you don't lose, how am I supposed\n"
-	.string "to have fun playing ninja?$"
+	.string "If you don't lose, how am I\n"
+	.string "supposed to have fun playing ninja?$"
 
 Route123_Text_H9_2::
 	.string "I'm going to ambush a weaker-looking\n"
 	.string "TRAINER next time.$"
 
 Route123_Text_H10_0::
-	.string "I just bought this parasol.\n"
-	.string "My cuteness should be up by a third!$"
+	.string "I just bought this parasol. My\n"
+	.string "cuteness should be up by a third!$"
 
 Route123_Text_H10_1::
 	.string "You're better than me by about\n"
@@ -132,8 +133,9 @@ Route123_Text_H11_1::
 	.string "I kind of like your POKéMON.$"
 
 Route123_Text_H11_2::
-	.string "Hehe, I'm swiping your battling ideas!\n"
-	.string "I think they'll make me better.$"
+	.string "Hehe, I'm swiping your battling\n"
+	.string "ideas! I think they'll make me\l"
+	.string "better.$"
 
 Route123_Text_H12_0::
 	.string "I'll turn your lights out while\n"
@@ -154,7 +156,8 @@ Route123_Text_H13_0::
 	.string "They're the best!$"
 
 Route123_Text_H13_1::
-	.string "Even in defeat, BIRD POKéMON are cool!$"
+	.string "Even in defeat, BIRD POKéMON are\n"
+	.string "cool!$"
 
 Route123_Text_H13_2::
 	.string "I gather BIRD POKéMON feathers that\n"
@@ -182,8 +185,8 @@ Route123_Text_H15_1::
 	.string "There goes my confidence…$"
 
 Route123_Text_H15_2::
-	.string "They say that you can't judge a person\n"
-	.string "by their appearance.\p"
+	.string "They say that you can't judge a\n"
+	.string "person by their appearance.\p"
 	.string "But often, their looks don't lie…$"
 
 Route123_Text_H16_0::

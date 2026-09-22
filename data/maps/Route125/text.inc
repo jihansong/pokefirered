@@ -53,8 +53,9 @@ Route125_Text_H4_1::
 Route125_Text_H4_2::
 	.string "The tide ebbs and flows inside the\n"
 	.string "SHOAL CAVE.\p"
-	.string "By the way, it's about six hours from\n"
-	.string "high tide to low tide. Did you know?$"
+	.string "By the way, it's about six hours\n"
+	.string "from high tide to low tide. Did you\l"
+	.string "know?$"
 
 Route125_Text_H5_0::
 	.string "KIM: A funny old man lives in the\n"
@@ -70,8 +71,8 @@ Route125_Text_H5_2::
 	.string "Let's go see him, IRIS!$"
 
 Route125_Text_H6_0::
-	.string "IRIS: KIM, can you tell me what we're\n"
-	.string "looking for out here?$"
+	.string "IRIS: KIM, can you tell me what\n"
+	.string "we're looking for out here?$"
 
 Route125_Text_H6_1::
 	.string "IRIS: Oh, we came sort of close.$"

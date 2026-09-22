@@ -1,5 +1,6 @@
 FortreeCity_House5_Text_H0::
-	.string "The tree houses of FORTREE are great!\p"
+	.string "The tree houses of FORTREE are\n"
+	.string "great!\p"
 	.string "I think it's the number one town for\n"
 	.string "living together with POKéMON.$"
 

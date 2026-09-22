@@ -1,6 +1,7 @@
 Route110_TrickHousePuzzle1_Text_H0_0::
-	.string "I'll hack and slash my way to victory\n"
-	.string "with the CUT we just learned!$"
+	.string "I'll hack and slash my way to\n"
+	.string "victory with the CUT we just\l"
+	.string "learned!$"
 
 Route110_TrickHousePuzzle1_Text_H0_1::
 	.string "Why are you so serious?$"
@@ -17,8 +18,9 @@ Route110_TrickHousePuzzle1_Text_H1_1::
 	.string "And now I've lost…$"
 
 Route110_TrickHousePuzzle1_Text_H1_2::
-	.string "I lost my way, I lost a battle, and I'm\n"
-	.string "now even more lost… I can't get out…$"
+	.string "I lost my way, I lost a battle, and\n"
+	.string "I'm now even more lost… I can't get\l"
+	.string "out…$"
 
 Route110_TrickHousePuzzle1_Text_H2_0::
 	.string "Just who is the TRICK MASTER?$"

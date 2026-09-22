@@ -15,9 +15,10 @@ DewfordTown_Gym_Text_H0_1::
 	.string "Take this GYM BADGE!$"
 
 DewfordTown_Gym_Text_H0_2::
-	.string "I can see your talent becoming a giant\n"
-	.string "wave to cause a storm of astonishment\l"
-	.string "among TRAINERS one day!$"
+	.string "I can see your talent becoming a\n"
+	.string "giant wave to cause a storm of\l"
+	.string "astonishment among TRAINERS one\l"
+	.string "day!$"
 
 DewfordTown_Gym_Text_H1_0::
 	.string "Might is right!\n"
@@ -55,16 +56,16 @@ DewfordTown_Gym_Text_H3_1::
 	.string "I lost!$"
 
 DewfordTown_Gym_Text_H3_2::
-	.string "I battle in the dark to make my heart\n"
-	.string "stronger.\p"
-	.string "But because it's so dark, I can never\n"
-	.string "see BRAWLY's face…$"
+	.string "I battle in the dark to make my\n"
+	.string "heart stronger.\p"
+	.string "But because it's so dark, I can\n"
+	.string "never see BRAWLY's face…$"
 
 DewfordTown_Gym_Text_H4::
 	.string "Hey, how's it going, CHAMPION-\n"
 	.string "bound {PLAYER}?\p"
-	.string "DEWFORD's GYM LEADER BRAWLY commands\n"
-	.string "FIGHTING-type POKéMON.\p"
+	.string "DEWFORD's GYM LEADER BRAWLY\n"
+	.string "commands FIGHTING-type POKéMON.\p"
 	.string "Going against him with NORMAL-type\n"
 	.string "POKéMON is asking for trouble.\p"
 	.string "FIGHTING POKéMON will lay a serious\n"
@@ -72,8 +73,8 @@ DewfordTown_Gym_Text_H4::
 	.string "so be careful!\p"
 	.string "What's worse, the GYM is as dark as\n"
 	.string "the ocean floor.\p"
-	.string "But it will get brighter after defeating\n"
-	.string "the TRAINERS in your way.\p"
+	.string "But it will get brighter after\n"
+	.string "defeating the TRAINERS in your way.\p"
 	.string "Hey, okay, go for it!$"
 
 DewfordTown_Gym_Text_H5_0::
@@ -89,8 +90,8 @@ DewfordTown_Gym_Text_H5_2::
 	.string "Go after that BADGE!$"
 
 DewfordTown_Gym_Text_H6_0::
-	.string "Ufufu…\n"
-	.string "Are you stumbling around in the dark?$"
+	.string "Ufufu… Are you stumbling around in\n"
+	.string "the dark?$"
 
 DewfordTown_Gym_Text_H6_1::
 	.string "Oh, you…\n"

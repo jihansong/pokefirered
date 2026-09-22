@@ -13,9 +13,10 @@ LilycoveCity_LilycoveMuseum_1F_Text_H1::
 LilycoveCity_LilycoveMuseum_1F_Text_H2::
 	.string "This ART MUSEUM… Well, you could\n"
 	.string "see many fantastic paintings.\p"
-	.string "And the CURATOR is a wonderful person.\p"
-	.string "Among artists like myself, this MUSEUM\n"
-	.string "is an inspiration.$"
+	.string "And the CURATOR is a wonderful\n"
+	.string "person.\p"
+	.string "Among artists like myself, this\n"
+	.string "MUSEUM is an inspiration.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_H3::
 	.string "This lady is pretty!\n"
@@ -48,15 +49,18 @@ LilycoveCity_LilycoveMuseum_1F_Text_H9::
 	.string "The paint is peeling here and there.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_H10::
-	.string "It's a painting of a beautiful, smiling\n"
-	.string "woman with a POKéMON on her lap.$"
+	.string "It's a painting of a beautiful,\n"
+	.string "smiling woman with a POKéMON on her\l"
+	.string "lap.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_H11::
-	.string "It's a painting of a beautiful, smiling\n"
-	.string "woman with a POKéMON on her lap.$"
+	.string "It's a painting of a beautiful,\n"
+	.string "smiling woman with a POKéMON on her\l"
+	.string "lap.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_H12::
-	.string "It's a replica of a famous sculpture.\p"
+	.string "It's a replica of a famous\n"
+	.string "sculpture.\p"
 	.string "It depicts an ancient BIRD POKéMON.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_H13::
@@ -66,8 +70,8 @@ LilycoveCity_LilycoveMuseum_1F_Text_H13::
 LilycoveCity_LilycoveMuseum_1F_Text_H14::
 	.string "It's a painting of GRASS POKéMON\n"
 	.string "swaying in a breeze.\p"
-	.string "They appear to be enjoying the wind's\n"
-	.string "gentle caress.$"
+	.string "They appear to be enjoying the\n"
+	.string "wind's gentle caress.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_H15::
 	.string "It's a huge stone tablet inscribed\n"
@@ -76,14 +80,14 @@ LilycoveCity_LilycoveMuseum_1F_Text_H15::
 	.string "unreadable language.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_H16::
-	.string "It's a painting of a legendary POKéMON\n"
-	.string "from long ago.\p"
+	.string "It's a painting of a legendary\n"
+	.string "POKéMON from long ago.\p"
 	.string "The artist painted this from\n"
 	.string "imagination.$"
 
 LilycoveCity_LilycoveMuseum_1F_Text_H17::
-	.string "It's a painting of a legendary POKéMON\n"
-	.string "from long ago.\p"
+	.string "It's a painting of a legendary\n"
+	.string "POKéMON from long ago.\p"
 	.string "The artist painted this from\n"
 	.string "imagination.$"
 

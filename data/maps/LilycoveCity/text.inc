@@ -20,8 +20,8 @@ LilycoveCity_Text_H3::
 	.string "The HOENN region is beautiful with\n"
 	.string "all its water and verdant nature.\p"
 	.string "Hunh? Wait a second…\p"
-	.string "Could there be rare POKéMON that live\n"
-	.string "only in this area?$"
+	.string "Could there be rare POKéMON that\n"
+	.string "live only in this area?$"
 
 LilycoveCity_Text_H4::
 	.string "I'm an ART DEALER.\p"
@@ -31,8 +31,9 @@ LilycoveCity_Text_H4::
 	.string "magnificent works on exhibit…$"
 
 LilycoveCity_Text_H5::
-	.string "I was taking a relaxing snooze at the\n"
-	.string "seaside inn to the sound of waves…\p"
+	.string "I was taking a relaxing snooze at\n"
+	.string "the seaside inn to the sound of\l"
+	.string "waves…\p"
 	.string "When someone stole my POKéMON!\p"
 	.string "Who's the abductor?\n"
 	.string "TEAM AQUA? Is it TEAM AQUA?$"
@@ -44,9 +45,9 @@ LilycoveCity_Text_H6::
 	.string "Fwohoho fwohohohoho…$"
 
 LilycoveCity_Text_H7::
-	.string "It was sixty years ago that my husband\n"
-	.string "proposed to me here.\l"
-	.string "The sea remains as beautiful as ever.\p"
+	.string "It was sixty years ago that my\n"
+	.string "husband proposed to me here. The\l"
+	.string "sea remains as beautiful as ever.\p"
 	.string "Mufufufu mufufufufufu…$"
 
 LilycoveCity_Text_H8::
@@ -62,9 +63,11 @@ LilycoveCity_Text_H8::
 
 LilycoveCity_Text_H9::
 	.string "When it gets right down to it…\p"
-	.string "The same way suits suit me perfectly,\n"
-	.string "a crisp breeze suits the sea.\p"
-	.string "And you, a BERRY suits you to a “T”…\p"
+	.string "The same way suits suit me\n"
+	.string "perfectly, a crisp breeze suits the\l"
+	.string "sea.\p"
+	.string "And you, a BERRY suits you to a\n"
+	.string "“T”…\p"
 	.string "Why should that be so?$"
 
 LilycoveCity_Text_H10::
@@ -72,8 +75,8 @@ LilycoveCity_Text_H10::
 	.string "BERRY BLENDER?$"
 
 LilycoveCity_Text_H11::
-	.string "On our honeymoon, we vowed to see as\n"
-	.string "many rare POKéMON as we can.\p"
+	.string "On our honeymoon, we vowed to see\n"
+	.string "as many rare POKéMON as we can.\p"
 	.string "So we were delighted to see a rare\n"
 	.string "POKéMON as soon as we arrived.\p"
 	.string "I mean, we are totally happy!$"
@@ -87,8 +90,8 @@ LilycoveCity_Text_H12::
 	.string "the HOENN region?$"
 
 LilycoveCity_Text_H13::
-	.string "I heard there's a tower somewhere out\n"
-	.string "on the sea routes.\p"
+	.string "I heard there's a tower somewhere\n"
+	.string "out on the sea routes.\p"
 	.string "It's called the SKY PILLAR, I hear.$"
 
 LilycoveCity_Text_H14::
@@ -105,8 +108,8 @@ LilycoveCity_Text_H16::
 	.string "LILYCOVE DEPARTMENT STORE\p"
 	.string "“Overflowing with great merchandise\n"
 	.string "and excitement!\p"
-	.string "“A great place to find that something\n"
-	.string "you need!”$"
+	.string "“A great place to find that\n"
+	.string "something you need!”$"
 
 LilycoveCity_Text_H17::
 	.string "LILYCOVE CITY\p"

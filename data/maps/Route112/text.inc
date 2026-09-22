@@ -9,8 +9,8 @@ Route112_Text_H0_1::
 	.string "Hahahaha!$"
 
 Route112_Text_H0_2::
-	.string "Hahahahaha! Something flew up my nose!\n"
-	.string "Hahahaha-hatchoo!$"
+	.string "Hahahahaha! Something flew up my\n"
+	.string "nose! Hahahaha-hatchoo!$"
 
 Route112_Text_H1_0::
 	.string "I'm strong.\n"
@@ -20,8 +20,8 @@ Route112_Text_H1_1::
 	.string "Waaaah!$"
 
 Route112_Text_H1_2::
-	.string "I'm not crying because I miss my mommy!\n"
-	.string "Snivel…$"
+	.string "I'm not crying because I miss my\n"
+	.string "mommy! Snivel…$"
 
 Route112_Text_H2_0::
 	.string "When you're out on a picnic, why,\n"
@@ -32,8 +32,8 @@ Route112_Text_H2_1::
 	.string "Oh, you're so strong!$"
 
 Route112_Text_H2_2::
-	.string "It doesn't matter if you're good or bad\n"
-	.string "at singing or POKéMON.\p"
+	.string "It doesn't matter if you're good or\n"
+	.string "bad at singing or POKéMON.\p"
 	.string "If you have the most fun, you win!$"
 
 Route112_Text_H3_0::
@@ -54,13 +54,14 @@ Route112_Text_H3_2::
 	.string "into serious shape.$"
 
 Route112_Text_H4::
-	.string "Eh, I'd like to get to MAUVILLE, but if\n"
-	.string "I went down these ledges, it'd be no\l"
-	.string "easy matter to get back to LAVARIDGE.$"
+	.string "Eh, I'd like to get to MAUVILLE, but\n"
+	.string "if I went down these ledges, it'd be\l"
+	.string "no easy matter to get back to\l"
+	.string "LAVARIDGE.$"
 
 Route112_Text_H5_0::
-	.string "I caught hot POKéMON in FIERY PATH!\n"
-	.string "Take a look!$"
+	.string "I caught hot POKéMON in FIERY\n"
+	.string "PATH! Take a look!$"
 
 Route112_Text_H5_1::
 	.string "What a bumpy ride that was!$"
@@ -79,10 +80,10 @@ Route112_Text_H6_1::
 	.string "You've given me quite a shock!$"
 
 Route112_Text_H6_2::
-	.string "Are you busy right now?\n"
-	.string "I was thinking that maybe we can have\l"
-	.string "a rematch right now…\l"
-	.string "But it's all right if you're busy.$"
+	.string "Are you busy right now? I was\n"
+	.string "thinking that maybe we can have a\l"
+	.string "rematch right now… But it's all right\l"
+	.string "if you're busy.$"
 
 Route112_Text_H7::
 	.string "MT. CHIMNEY\p"

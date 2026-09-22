@@ -9,13 +9,13 @@ Route114_Text_H0_1::
 	.string "Yodelayhihoo!$"
 
 Route114_Text_H0_2::
-	.string "When I was a wee tyke, I believed there\n"
-	.string "was someone copying me and shouting\l"
-	.string "back, “Yodelayhihoo.”$"
+	.string "When I was a wee tyke, I believed\n"
+	.string "there was someone copying me and\l"
+	.string "shouting back, “Yodelayhihoo.”$"
 
 Route114_Text_H1_0::
-	.string "If you're not prepared, you shouldn't\n"
-	.string "be up in the mountains!$"
+	.string "If you're not prepared, you\n"
+	.string "shouldn't be up in the mountains!$"
 
 Route114_Text_H1_1::
 	.string "The mountains are unforgiving…$"
@@ -26,7 +26,8 @@ Route114_Text_H1_2::
 
 Route114_Text_H2_0::
 	.string "Camping's fun! You can fish, roast\n"
-	.string "marshmallows, and tell spooky stories!\p"
+	.string "marshmallows, and tell spooky\l"
+	.string "stories!\p"
 	.string "But the best of all are the POKéMON\n"
 	.string "battles!$"
 
@@ -56,8 +57,9 @@ Route114_Text_H4_1::
 	.string "M-My POKéMON…$"
 
 Route114_Text_H4_2::
-	.string "A big body that's all lumpy and hard,\n"
-	.string "enormous horns, and vicious fangs…\p"
+	.string "A big body that's all lumpy and\n"
+	.string "hard, enormous horns, and vicious\l"
+	.string "fangs…\p"
 	.string "Ufufufufu…\n"
 	.string "I wish I had a POKéMON like that…$"
 
@@ -71,9 +73,10 @@ Route114_Text_H6::
 	.string "Bow! Bowwow!$"
 
 Route114_Text_H7::
-	.string "I love using the BERRY CRUSH machine,\n"
-	.string "so I'm collecting BERRIES.\p"
-	.string "I'll share one with you, if you'd like.$"
+	.string "I love using the BERRY CRUSH\n"
+	.string "machine, so I'm collecting BERRIES.\p"
+	.string "I'll share one with you, if you'd\n"
+	.string "like.$"
 
 Route114_Text_H8_0::
 	.string "I like to fish. But I also like to\n"
@@ -91,9 +94,9 @@ Route114_Text_H8_2::
 	.string "away from fishing or POKéMON.$"
 
 Route114_Text_H9_0::
-	.string "If we were fishing, you wouldn't stand\n"
-	.string "a chance against me.\l"
-	.string "So, bring on your POKéMON!$"
+	.string "If we were fishing, you wouldn't\n"
+	.string "stand a chance against me. So, bring\l"
+	.string "on your POKéMON!$"
 
 Route114_Text_H9_1::
 	.string "If we were fishing, I would've won…$"
@@ -112,8 +115,8 @@ Route114_Text_H10_1::
 	.string "Thanks for dousing my fire!$"
 
 Route114_Text_H10_2::
-	.string "You really do have to be careful with\n"
-	.string "any sort of fire in a forest.\p"
+	.string "You really do have to be careful\n"
+	.string "with any sort of fire in a forest.\p"
 	.string "Don't ever underestimate the power\n"
 	.string "of fire.$"
 
@@ -129,9 +132,9 @@ Route114_Text_H11_2::
 	.string "taught me!$"
 
 Route114_Text_H12_0::
-	.string "TYRA: Well, sure.\n"
-	.string "I'm in the mood for it.\l"
-	.string "I'll teach you a little about POKéMON.$"
+	.string "TYRA: Well, sure. I'm in the mood\n"
+	.string "for it. I'll teach you a little about\l"
+	.string "POKéMON.$"
 
 Route114_Text_H12_1::
 	.string "TYRA: What an amazing battle style!$"

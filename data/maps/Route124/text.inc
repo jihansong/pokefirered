@@ -7,9 +7,10 @@ Route124_Text_H0_1::
 	.string "I lost my bearings in battle!$"
 
 Route124_Text_H0_2::
-	.string "Many people lose their bearings at sea.\p"
-	.string "If you're that sort, you should refer\n"
-	.string "to the POKéNAV's MAP.$"
+	.string "Many people lose their bearings at\n"
+	.string "sea.\p"
+	.string "If you're that sort, you should\n"
+	.string "refer to the POKéNAV's MAP.$"
 
 Route124_Text_H1_0::
 	.string "Hm! You're riding a POKéMON instead\n"
@@ -23,7 +24,8 @@ Route124_Text_H1_1::
 Route124_Text_H1_2::
 	.string "I'm getting chilled…\n"
 	.string "I've been in the water too long…\p"
-	.string "I wish I could ride a POKéMON like you…$"
+	.string "I wish I could ride a POKéMON like\n"
+	.string "you…$"
 
 Route124_Text_H2_0::
 	.string "If you just float in the sea like\n"
@@ -35,7 +37,8 @@ Route124_Text_H2_1::
 
 Route124_Text_H2_2::
 	.string "While swimming, I noticed that some\n"
-	.string "POKéMON attack, and some just watch.\p"
+	.string "POKéMON attack, and some just\l"
+	.string "watch.\p"
 	.string "I guess POKéMON have personalities\n"
 	.string "of their own.$"
 
@@ -52,9 +55,9 @@ Route124_Text_H3_2::
 	.string "made you this strong.$"
 
 Route124_Text_H4_0::
-	.string "Fufufufu… I dive deep underwater\n"
-	.string "to go deep under cover.\l"
-	.string "Plumbing the depths is where I excel!$"
+	.string "Fufufufu… I dive deep underwater to\n"
+	.string "go deep under cover. Plumbing the\l"
+	.string "depths is where I excel!$"
 
 Route124_Text_H4_1::
 	.string "Glub, glub, glub…\n"
@@ -68,10 +71,10 @@ Route124_Text_H4_2::
 
 Route124_Text_H5_0::
 	.string "LILA: Sigh…\p"
-	.string "Here I am in the sea, but who's with me?\n"
-	.string "My little brother!\p"
-	.string "Let's battle so I won't have to dwell\n"
-	.string "on that!$"
+	.string "Here I am in the sea, but who's with\n"
+	.string "me? My little brother!\p"
+	.string "Let's battle so I won't have to\n"
+	.string "dwell on that!$"
 
 Route124_Text_H5_1::
 	.string "LILA: ROY! It's your fault we lost!\n"
@@ -83,7 +86,8 @@ Route124_Text_H5_2::
 	.string "next to me, but a nice boyfriend…$"
 
 Route124_Text_H6_0::
-	.string "ROY: My big sister is tough at POKéMON!\p"
+	.string "ROY: My big sister is tough at\n"
+	.string "POKéMON!\p"
 	.string "Don't cry when you lose!$"
 
 Route124_Text_H6_1::

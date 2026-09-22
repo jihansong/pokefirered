@@ -1,15 +1,16 @@
 PetalburgCity_Text_H0::
 	.string "My face is reflected in the water.\p"
 	.string "It's a shining grin full of hope…\p"
-	.string "Or it could be a look of somber silence\n"
-	.string "struggling with fear…\p"
-	.string "What do you see reflected in your face?$"
+	.string "Or it could be a look of somber\n"
+	.string "silence struggling with fear…\p"
+	.string "What do you see reflected in your\n"
+	.string "face?$"
 
 PetalburgCity_Text_H1::
 	.string "Let's say you have six POKéMON.\n"
 	.string "If you catch another one…\p"
-	.string "It is automatically sent to a STORAGE\n"
-	.string "BOX over a PC connection.$"
+	.string "It is automatically sent to a\n"
+	.string "STORAGE BOX over a PC connection.$"
 
 PetalburgCity_Text_H2::
 	.string "Hiya! Are you maybe…\n"

@@ -8,7 +8,8 @@ Route126_Text_H0_1::
 
 Route126_Text_H0_2::
 	.string "Thanks to my daily swimming routine…\n"
-	.string "Look! Feast your eyes on this physique!$"
+	.string "Look! Feast your eyes on this\l"
+	.string "physique!$"
 
 Route126_Text_H1_0::
 	.string "This towering white mountain of rock\n"
@@ -26,8 +27,8 @@ Route126_Text_H2_0::
 	.string "I'm a mermaid!$"
 
 Route126_Text_H2_1::
-	.string "My fantasy burst as if it were a bubble!\n"
-	.string "Blub, blub, blub…$"
+	.string "My fantasy burst as if it were a\n"
+	.string "bubble! Blub, blub, blub…$"
 
 Route126_Text_H2_2::
 	.string "You thrashed me… I want to\n"
@@ -65,7 +66,8 @@ Route126_Text_H5_1::
 
 Route126_Text_H5_2::
 	.string "Losing to you stimulated my senses!\n"
-	.string "I'll train myself and POKéMON harder!$"
+	.string "I'll train myself and POKéMON\l"
+	.string "harder!$"
 
 Route126_Text_H6_0::
 	.string "If seawater gets up your nose,\n"

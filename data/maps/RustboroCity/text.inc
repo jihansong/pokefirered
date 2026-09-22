@@ -1,7 +1,7 @@
 RustboroCity_Text_H0::
 	.string "I challenged the GYM LEADER, but…\p"
-	.string "It's not going to be easy winning with\n"
-	.string "my FIRE-type POKéMON…\p"
+	.string "It's not going to be easy winning\n"
+	.string "with my FIRE-type POKéMON…\p"
 	.string "FIRE-type POKéMON don't match up\n"
 	.string "well against ROCK-type POKéMON…$"
 
@@ -13,19 +13,20 @@ RustboroCity_Text_H1::
 
 RustboroCity_Text_H2::
 	.string "POKéMON TRAINER'S SCHOOL!\p"
-	.string "If I go to this school, will I be able\n"
-	.string "to catch rare POKéMON easily?$"
+	.string "If I go to this school, will I be\n"
+	.string "able to catch rare POKéMON easily?$"
 
 RustboroCity_Text_H3::
-	.string "Wow, you have POKéMON with you, too.\p"
+	.string "Wow, you have POKéMON with you,\n"
+	.string "too.\p"
 	.string "When I get bigger, I'm going to go\n"
 	.string "places with POKéMON, too.$"
 
 RustboroCity_Text_H4::
 	.string "The old sailor MR. BRINEY lives in\n"
 	.string "a cottage by the sea.\p"
-	.string "He goes for walks in the tunnel every\n"
-	.string "so often.$"
+	.string "He goes for walks in the tunnel\n"
+	.string "every so often.$"
 
 RustboroCity_Text_H5::
 	.string "Have you taken the POKéMON GYM\n"
@@ -40,12 +41,12 @@ RustboroCity_Text_H6::
 	.string "the way it looks.$"
 
 RustboroCity_Text_H7::
-	.string "A POKéMON changes shape?\n"
-	.string "If one did that, I would be shocked!$"
+	.string "A POKéMON changes shape? If one did\n"
+	.string "that, I would be shocked!$"
 
 RustboroCity_Text_H8::
-	.string "Oh? Who might you be?\n"
-	.string "You're a new face around these parts.\p"
+	.string "Oh? Who might you be? You're a new\n"
+	.string "face around these parts.\p"
 	.string "Have you just transferred into the\n"
 	.string "POKéMON TRAINER'S SCHOOL?$"
 
@@ -59,11 +60,12 @@ RustboroCity_Text_H10::
 	.string "Did you know this?\p"
 	.string "You can have a 2-on-2 battle even\n"
 	.string "if you're not with another TRAINER.\p"
-	.string "If you catch the eyes of two TRAINERS\n"
-	.string "when you have two or more POKéMON,\l"
-	.string "they'll both challenge you.\p"
+	.string "If you catch the eyes of two\n"
+	.string "TRAINERS when you have two or more\l"
+	.string "POKéMON, they'll both challenge you.\p"
 	.string "Don't you think it'd be cool if you\n"
-	.string "could beat two TRAINERS by yourself?$"
+	.string "could beat two TRAINERS by\l"
+	.string "yourself?$"
 
 RustboroCity_Text_H11::
 	.string "RUSTBORO CITY POKéMON GYM\n"

@@ -31,6 +31,7 @@ Route110_TrickHousePuzzle6_Text_H2_1::
 	.string "around. I can't take this anymore…$"
 
 Route110_TrickHousePuzzle6_Text_H2_2::
-	.string "You don't seem to be affected at all.\n"
-	.string "Or do you have your poker face on?$"
+	.string "You don't seem to be affected at\n"
+	.string "all. Or do you have your poker face\l"
+	.string "on?$"
 

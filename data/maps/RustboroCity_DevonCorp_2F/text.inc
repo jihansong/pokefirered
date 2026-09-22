@@ -10,8 +10,8 @@ RustboroCity_DevonCorp_2F_Text_H1::
 
 RustboroCity_DevonCorp_2F_Text_H2::
 	.string "I made the POKéNAV!\p"
-	.string "As an engineer, I feel blessed to have\n"
-	.string "made something so great!$"
+	.string "As an engineer, I feel blessed to\n"
+	.string "have made something so great!$"
 
 RustboroCity_DevonCorp_2F_Text_H3::
 	.string "I'm trying to develop a device that\n"
@@ -21,7 +21,8 @@ RustboroCity_DevonCorp_2F_Text_H3::
 
 RustboroCity_DevonCorp_2F_Text_H4::
 	.string "I've been trying to develop a device\n"
-	.string "that resurrects POKéMON from fossils…\p"
+	.string "that resurrects POKéMON from\l"
+	.string "fossils…\p"
 	.string "And, it's working!$"
 
 RustboroCity_DevonCorp_2F_Text_H5::

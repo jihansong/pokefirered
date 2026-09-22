@@ -1,6 +1,6 @@
 RusturfTunnel_Text_H0_0::
-	.string "What do you call a wild man up in the\n"
-	.string "mountains? A mountain man, right?\p"
+	.string "What do you call a wild man up in\n"
+	.string "the mountains? A mountain man, right?\p"
 	.string "So why don't they call a POKéMON in\n"
 	.string "the mountains a mountain POKéMON?$"
 

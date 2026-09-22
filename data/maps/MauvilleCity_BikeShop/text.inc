@@ -7,9 +7,9 @@ MauvilleCity_BikeShop_Text_H0::
 MauvilleCity_BikeShop_Text_H1::
 	.string "I'm learning about BIKES while\n"
 	.string "I work here.\p"
-	.string "If you need advice on how to ride your\n"
-	.string "BIKE, there're a couple handbooks in\l"
-	.string "the back.$"
+	.string "If you need advice on how to ride\n"
+	.string "your BIKE, there're a couple\l"
+	.string "handbooks in the back.$"
 
 MauvilleCity_BikeShop_Text_H2::
 	.string "It's a handbook on the MACH BIKE.\p"

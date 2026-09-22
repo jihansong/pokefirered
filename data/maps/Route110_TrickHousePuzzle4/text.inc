@@ -1,10 +1,10 @@
 Route110_TrickHousePuzzle4_Text_H0_0::
-	.string "It's too much bother to think this out.\n"
-	.string "I only wanted to battle!$"
+	.string "It's too much bother to think this\n"
+	.string "out. I only wanted to battle!$"
 
 Route110_TrickHousePuzzle4_Text_H0_1::
-	.string "Even though I lost, I still like battling\n"
-	.string "the best!$"
+	.string "Even though I lost, I still like\n"
+	.string "battling the best!$"
 
 Route110_TrickHousePuzzle4_Text_H0_2::
 	.string "Wouldn't you agree? You would go\n"
@@ -25,10 +25,11 @@ Route110_TrickHousePuzzle4_Text_H2_0::
 	.string "aside with one finger!$"
 
 Route110_TrickHousePuzzle4_Text_H2_1::
-	.string "I can push boulders, but I can't solve\n"
-	.string "the puzzle…$"
+	.string "I can push boulders, but I can't\n"
+	.string "solve the puzzle…$"
 
 Route110_TrickHousePuzzle4_Text_H2_2::
 	.string "It's not good enough to be brawny…\n"
-	.string "You have to use your head. Be brainy!$"
+	.string "You have to use your head. Be\l"
+	.string "brainy!$"
 

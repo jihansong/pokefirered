@@ -16,8 +16,8 @@ BattleFrontier_Lounge8_Text_H1::
 	.string "Spirit…\l"
 	.string "Bravery…\l"
 	.string "And ability…\p"
-	.string "Well, I'm all set in every way!\n"
-	.string "I'll be unstoppable at every building!\p"
+	.string "Well, I'm all set in every way! I'll\n"
+	.string "be unstoppable at every building!\p"
 	.string "Huh? POKéMON?\n"
 	.string "What's that?$"
 

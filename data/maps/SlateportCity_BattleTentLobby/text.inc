@@ -7,10 +7,10 @@ SlateportCity_BattleTentLobby_Text_H0::
 SlateportCity_BattleTentLobby_Text_H1::
 	.string "So, like, I couldn't find myself any\n"
 	.string "POKéMON that were, like, for me.\p"
-	.string "So, I figured, like, hey, I should file\n"
-	.string "a complaint to the guy there?\p"
-	.string "And he wouldn't hear me out, like, hey!\n"
-	.string "So, like, total bummer, man!\p"
+	.string "So, I figured, like, hey, I should\n"
+	.string "file a complaint to the guy there?\p"
+	.string "And he wouldn't hear me out, like,\n"
+	.string "hey! So, like, total bummer, man!\p"
 	.string "Hey, like, you! Zip it, you know?\n"
 	.string "Just, you know, take this!$"
 
@@ -22,12 +22,13 @@ SlateportCity_BattleTentLobby_Text_H2::
 	.string "them!$"
 
 SlateportCity_BattleTentLobby_Text_H3::
-	.string "You can battle all you want here even\n"
-	.string "if you don't have any tough POKéMON.$"
+	.string "You can battle all you want here\n"
+	.string "even if you don't have any tough\l"
+	.string "POKéMON.$"
 
 SlateportCity_BattleTentLobby_Text_H4::
-	.string "Wouldn't it be nice if they had more of\n"
-	.string "a selection?$"
+	.string "Wouldn't it be nice if they had more\n"
+	.string "of a selection?$"
 
 SlateportCity_BattleTentLobby_Text_H5::
 	.string "The Battle Swap rules are listed.$"

@@ -7,8 +7,8 @@ FortreeCity_PokemonCenter_1F_Text_H0::
 FortreeCity_PokemonCenter_1F_Text_H1::
 	.string "Have you done anything at\n"
 	.string "the RECORD CORNER?\p"
-	.string "It's pretty neat. It mixes and matches\n"
-	.string "the records of TRAINERS.\p"
+	.string "It's pretty neat. It mixes and\n"
+	.string "matches the records of TRAINERS.\p"
 	.string "I don't know quite how it works,\n"
 	.string "but it's cool. It's exciting, even!$"
 

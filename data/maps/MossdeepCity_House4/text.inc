@@ -1,6 +1,6 @@
 MossdeepCity_House4_Text_H0::
-	.string "My little brother says he likes to go\n"
-	.string "find people's SECRET BASES.$"
+	.string "My little brother says he likes to\n"
+	.string "go find people's SECRET BASES.$"
 
 MossdeepCity_House4_Text_H1::
 	.string "Was it you who made a SECRET BASE\n"

@@ -1,6 +1,6 @@
 OldaleTown_Text_H0::
-	.string "I want to take a rest, so I'm saving my\n"
-	.string "progress.$"
+	.string "I want to take a rest, so I'm saving\n"
+	.string "my progress.$"
 
 OldaleTown_Text_H1::
 	.string "Hi!\n"

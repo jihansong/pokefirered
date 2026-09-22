@@ -1,6 +1,6 @@
 PacifidlogTown_House4_Text_H0::
-	.string "People were saying they saw a POKéMON\n"
-	.string "flying high above HOENN.\p"
+	.string "People were saying they saw a\n"
+	.string "POKéMON flying high above HOENN.\p"
 	.string "Is it flying around all the time?\n"
 	.string "Doesn't it need to rest somewhere?$"
 

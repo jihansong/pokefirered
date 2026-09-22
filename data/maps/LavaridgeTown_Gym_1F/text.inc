@@ -1,17 +1,18 @@
 LavaridgeTown_Gym_1F_Text_H0_0::
 	.string "Welcome… No, wait.\p"
-	.string "Puny TRAINER, how good to see you've\n"
-	.string "made it here!\p"
+	.string "Puny TRAINER, how good to see\n"
+	.string "you've made it here!\p"
 	.string "I have been entrusted with the…\n"
 	.string "No, wait.\p"
 	.string "I am FLANNERY, and I'm the GYM\n"
 	.string "LEADER here!\p"
-	.string "Uh…\n"
-	.string "Dare not underestimate me, though\l"
-	.string "I have been LEADER only a short time!\p"
+	.string "Uh… Dare not underestimate me,\n"
+	.string "though I have been LEADER only a\l"
+	.string "short time!\p"
 	.string "With skills inherited from my grand-\n"
 	.string "father, I shall, uh…demonstrate the\l"
-	.string "hot moves we have honed on this land!$"
+	.string "hot moves we have honed on this\l"
+	.string "land!$"
 
 LavaridgeTown_Gym_1F_Text_H0_1::
 	.string "Oh…\n"
@@ -20,8 +21,9 @@ LavaridgeTown_Gym_1F_Text_H0_1::
 	.string "a GYM LEADER.\p"
 	.string "I tried too hard to be someone\n"
 	.string "I'm not.\p"
-	.string "I have to do things my natural way. If\n"
-	.string "I don't, my POKéMON will be confused.\p"
+	.string "I have to do things my natural way.\n"
+	.string "If I don't, my POKéMON will be\l"
+	.string "confused.\p"
 	.string "Thanks for teaching me that.\n"
 	.string "For that, you deserve this.$"
 
@@ -39,8 +41,8 @@ LavaridgeTown_Gym_1F_Text_H1::
 LavaridgeTown_Gym_1F_Text_H2::
 	.string "The temperature of magma is\n"
 	.string "392 degrees.\p"
-	.string "Your POKéMON beat me, so they should\n"
-	.string "easily survive in magma.$"
+	.string "Your POKéMON beat me, so they\n"
+	.string "should easily survive in magma.$"
 
 LavaridgeTown_Gym_1F_Text_H3::
 	.string "Haaah… Whew…\p"
@@ -56,9 +58,9 @@ LavaridgeTown_Gym_1F_Text_H5::
 	.string "bound {PLAYER}?\p"
 	.string "LAVARIDGE's GYM LEADER FLANNERY\n"
 	.string "uses FIRE-type POKéMON.\p"
-	.string "Her passion for POKéMON burns stronger\n"
-	.string "and hotter than a volcano.\p"
-	.string "Don't get too close to her--you'll burn!\n"
-	.string "Hose her down with water and then\l"
-	.string "go for it!$"
+	.string "Her passion for POKéMON burns\n"
+	.string "stronger and hotter than a volcano.\p"
+	.string "Don't get too close to her--you'll\n"
+	.string "burn! Hose her down with water and\l"
+	.string "then go for it!$"
 

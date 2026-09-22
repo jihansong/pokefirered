@@ -8,5 +8,6 @@ SlateportCity_House_Text_H0::
 SlateportCity_House_Text_H1::
 	.string "You're a TRAINER, aren't you?\p"
 	.string "Since you came to SLATEPORT CITY,\n"
-	.string "you must be going to the BATTLE TENT.$"
+	.string "you must be going to the BATTLE\l"
+	.string "TENT.$"
 

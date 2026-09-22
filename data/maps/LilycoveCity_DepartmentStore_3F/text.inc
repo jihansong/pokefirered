@@ -8,7 +8,8 @@ LilycoveCity_DepartmentStore_3F_Text_H1::
 	.string "I want my POKéMON to have more\n"
 	.string "endurance.\p"
 	.string "I'm trying to decide whether to raise\n"
-	.string "DEFENSE with IRON, or SP. DEF with ZINC.$"
+	.string "DEFENSE with IRON, or SP. DEF with\l"
+	.string "ZINC.$"
 
 LilycoveCity_DepartmentStore_3F_Text_H2::
 	.string "I gave a CARBOS to my POKéMON,\n"

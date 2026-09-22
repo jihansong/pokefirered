@@ -1,8 +1,9 @@
 Route123_BerryMastersHouse_Text_H0::
 	.string "You may call me the BERRY MASTER.\p"
 	.string "I dream of filling the world with\n"
-	.string "beautiful flowers, so I raise BERRIES\l"
-	.string "and hand them out to everyone.\p"
+	.string "beautiful flowers, so I raise\l"
+	.string "BERRIES and hand them out to\l"
+	.string "everyone.\p"
 	.string "You're deserving of one!$"
 
 Route123_BerryMastersHouse_Text_H1::

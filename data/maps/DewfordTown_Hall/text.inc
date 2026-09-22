@@ -1,8 +1,8 @@
 DewfordTown_Hall_Text_H0::
 	.string "What's in vogue? Why, it has to be\n"
 	.string "“{STR_VAR_1}”!\p"
-	.string "I can't imagine what life would be like\n"
-	.string "without “{STR_VAR_1}”!$"
+	.string "I can't imagine what life would be\n"
+	.string "like without “{STR_VAR_1}”!$"
 
 DewfordTown_Hall_Text_H1::
 	.string "I'm teaching my POKéMON about\n"
@@ -11,8 +11,8 @@ DewfordTown_Hall_Text_H1::
 	.string "It's a bit too much, I think.$"
 
 DewfordTown_Hall_Text_H2::
-	.string "I'm studying up on the hip and trendy\n"
-	.string "“{STR_VAR_1}” now.\p"
+	.string "I'm studying up on the hip and\n"
+	.string "trendy “{STR_VAR_1}” now.\p"
 	.string "Is it true that there's a deep link\n"
 	.string "between “{STR_VAR_1}”\l"
 	.string "and “{STR_VAR_2}”?$"

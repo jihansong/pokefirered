@@ -1,6 +1,7 @@
 BattleFrontier_Lounge4_Text_H0::
-	.string "I wonder if they'll be airing interviews\n"
-	.string "with tough TRAINERS today?$"
+	.string "I wonder if they'll be airing\n"
+	.string "interviews with tough TRAINERS\l"
+	.string "today?$"
 
 BattleFrontier_Lounge4_Text_H1::
 	.string "If I opened a restaurant here,\n"

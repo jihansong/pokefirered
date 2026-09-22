@@ -8,14 +8,16 @@ Route110_Text_H1::
 	.string "Learning techniques will make BIKE\n"
 	.string "riding even more fun.\p"
 	.string "There are some places that you can\n"
-	.string "reach only by using a BIKE technique.$"
+	.string "reach only by using a BIKE\l"
+	.string "technique.$"
 
 Route110_Text_H2::
 	.string "I don't have a BIKE, so I'll take\n"
 	.string "a leisurely walk on the low road.$"
 
 Route110_Text_H3::
-	.string "Oh, hey, you got that BIKE from RYDEL!\p"
+	.string "Oh, hey, you got that BIKE from\n"
+	.string "RYDEL!\p"
 	.string "Oh, it's glaringly obvious.\n"
 	.string "It says right on your bike…\p"
 	.string "RYDEL, RYDEL, RYDEL, RYDEL, RYDEL,\n"
@@ -32,7 +34,8 @@ Route110_Text_H3::
 	.string "the place--it's good advertising!$"
 
 Route110_Text_H4::
-	.string "The two roads, one above, one below…\p"
+	.string "The two roads, one above, one\n"
+	.string "below…\p"
 	.string "A road each for people and POKéMON.\n"
 	.string "Perhaps that is right and fair.$"
 
@@ -64,13 +67,14 @@ Route110_Text_H8_1::
 	.string "Crash and burn!$"
 
 Route110_Text_H8_2::
-	.string "Speed alone won't let me win at POKéMON.\n"
-	.string "I need to reconsider this…$"
+	.string "Speed alone won't let me win at\n"
+	.string "POKéMON. I need to reconsider this…$"
 
 Route110_Text_H9_0::
 	.string "The triathlon is hard in the extreme.\p"
-	.string "You have to complete the three events\n"
-	.string "of swimming, cycling, and running.$"
+	.string "You have to complete the three\n"
+	.string "events of swimming, cycling, and\l"
+	.string "running.$"
 
 Route110_Text_H9_1::
 	.string "POKéMON battles are hard, too!$"
@@ -80,7 +84,8 @@ Route110_Text_H9_2::
 	.string "It's important to get proper rest.$"
 
 Route110_Text_H10_0::
-	.string "Don't panic if your BIKE's going fast!$"
+	.string "Don't panic if your BIKE's going\n"
+	.string "fast!$"
 
 Route110_Text_H10_1::
 	.string "I shouldn't panic during POKéMON\n"
@@ -95,7 +100,8 @@ Route110_Text_H11_0::
 	.string "I cannot possibly lose!$"
 
 Route110_Text_H11_1::
-	.string "I failed to prophesize my own demise!$"
+	.string "I failed to prophesize my own\n"
+	.string "demise!$"
 
 Route110_Text_H11_2::
 	.string "I see your future…\p"
@@ -110,9 +116,9 @@ Route110_Text_H12_1::
 	.string "I wondrously lost!$"
 
 Route110_Text_H12_2::
-	.string "You managed to win only because it was\n"
-	.string "a wonder! Yes, a wonder!\l"
-	.string "Don't think you can win all the time!$"
+	.string "You managed to win only because it\n"
+	.string "was a wonder! Yes, a wonder! Don't\l"
+	.string "think you can win all the time!$"
 
 Route110_Text_H13_0::
 	.string "Could I see your POKéMON?\n"
@@ -123,8 +129,9 @@ Route110_Text_H13_1::
 	.string "my collection…$"
 
 Route110_Text_H13_2::
-	.string "When I see a POKéMON that I don't know,\n"
-	.string "my passion as a collector is ignited!$"
+	.string "When I see a POKéMON that I don't\n"
+	.string "know, my passion as a collector is\l"
+	.string "ignited!$"
 
 Route110_Text_H14_0::
 	.string "Hey!\n"
@@ -139,13 +146,13 @@ Route110_Text_H14_2::
 	.string "You have to focus on the floater.$"
 
 Route110_Text_H15::
-	.string "Regardless of the results, I count on\n"
-	.string "seeing more challenges from you.\l"
+	.string "Regardless of the results, I count\n"
+	.string "on seeing more challenges from you.\l"
 	.string "Always aim higher!$"
 
 Route110_Text_H16_0::
-	.string "Whoa! Watch it!\n"
-	.string "I guess you're not used to BIKE racing.$"
+	.string "Whoa! Watch it! I guess you're not\n"
+	.string "used to BIKE racing.$"
 
 Route110_Text_H16_1::
 	.string "Whoa!\n"
@@ -157,8 +164,8 @@ Route110_Text_H16_2::
 	.string "Inspect your BIKE for problems!$"
 
 Route110_Text_H17_0::
-	.string "I found some cool POKéMON in the grass\n"
-	.string "around here!$"
+	.string "I found some cool POKéMON in the\n"
+	.string "grass around here!$"
 
 Route110_Text_H17_1::
 	.string "Being cool isn't enough to win…$"
@@ -168,15 +175,16 @@ Route110_Text_H17_2::
 	.string "just caught.$"
 
 Route110_Text_H18_0::
-	.string "Ahahaha! I would go anywhere to show\n"
-	.string "off my delightful POKéMON.$"
+	.string "Ahahaha! I would go anywhere to\n"
+	.string "show off my delightful POKéMON.$"
 
 Route110_Text_H18_1::
 	.string "Oh, dear, this won't do.$"
 
 Route110_Text_H18_2::
-	.string "Rather than battling, perhaps I should\n"
-	.string "show off my POKéMON at the FAN CLUB.$"
+	.string "Rather than battling, perhaps I\n"
+	.string "should show off my POKéMON at the\l"
+	.string "FAN CLUB.$"
 
 Route110_Text_H19_0::
 	.string "When cute POKéMON help each other…\n"
@@ -186,8 +194,8 @@ Route110_Text_H19_1::
 	.string "Have you no compassion or pity?$"
 
 Route110_Text_H19_2::
-	.string "Okay, okay, you've done the best you\n"
-	.string "could, my pretties.$"
+	.string "Okay, okay, you've done the best\n"
+	.string "you could, my pretties.$"
 
 Route110_Text_H20_0::
 	.string "I fell off CYCLING ROAD…\p"
@@ -203,8 +211,8 @@ Route110_Text_H20_2::
 	.string "This is so humiliating for me!$"
 
 Route110_Text_H21_0::
-	.string "Okay! Full-throttle time! If you can't\n"
-	.string "groove, you get left behind!$"
+	.string "Okay! Full-throttle time! If you\n"
+	.string "can't groove, you get left behind!$"
 
 Route110_Text_H21_1::
 	.string "You got into the groove all right…$"
@@ -216,7 +224,8 @@ Route110_Text_H21_2::
 Route110_Text_H22::
 	.string "“TEAM AQUA was here!”\p"
 	.string "Someone painted that onto this sign,\n"
-	.string "but then someone else painted over it.\p"
+	.string "but then someone else painted over\l"
+	.string "it.\p"
 	.string "“TEAM MAGMA rules!” is what it\n"
 	.string "says now.$"
 
@@ -247,8 +256,8 @@ Route110_Text_H28::
 
 Route110_Text_H29::
 	.string "TRAINER TIPS\p"
-	.string "The items in the BAG can be reorganized\n"
-	.string "by pressing SELECT.$"
+	.string "The items in the BAG can be\n"
+	.string "reorganized by pressing SELECT.$"
 
 Route110_Text_H30::
 	.string "“Three steps {RIGHT_ARROW} and two steps {UP_ARROW}\n"

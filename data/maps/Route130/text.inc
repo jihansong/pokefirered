@@ -31,7 +31,8 @@ Route130_Text_H2_0::
 	.string "It's peaceful.$"
 
 Route130_Text_H2_1::
-	.string "I needed to be a little less peaceful!$"
+	.string "I needed to be a little less\n"
+	.string "peaceful!$"
 
 Route130_Text_H2_2::
 	.string "Swimming and battling like this…\n"

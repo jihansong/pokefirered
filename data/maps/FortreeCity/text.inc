@@ -1,8 +1,8 @@
 FortreeCity_Text_H0::
 	.string "No one believes me, but I saw this\n"
 	.string "gigantic POKéMON in the sky.\p"
-	.string "It seemed to squirm as it flew toward\n"
-	.string "ROUTE 131.\p"
+	.string "It seemed to squirm as it flew\n"
+	.string "toward ROUTE 131.\p"
 	.string "By the way… Sniff…\n"
 	.string "Um… You, uh…smell singed.\p"
 	.string "Were you at a volcano or something?$"
@@ -35,7 +35,8 @@ FortreeCity_Text_H4::
 
 FortreeCity_Text_H5::
 	.string "There are POKéMON that evolve when\n"
-	.string "you trade them! That's what I heard.$"
+	.string "you trade them! That's what I\l"
+	.string "heard.$"
 
 FortreeCity_Text_H6::
 	.string "FORTREE CITY\n"

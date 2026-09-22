@@ -7,8 +7,8 @@ Route129_Text_H0_1::
 	.string "I failed to win!$"
 
 Route129_Text_H0_2::
-	.string "If I'm all tensed up, I won't be able to\n"
-	.string "give it my all.$"
+	.string "If I'm all tensed up, I won't be\n"
+	.string "able to give it my all.$"
 
 Route129_Text_H1_0::
 	.string "I'm in the middle of a triathlon,\n"
@@ -18,8 +18,8 @@ Route129_Text_H1_1::
 	.string "I was sure I'd win!$"
 
 Route129_Text_H1_2::
-	.string "Do you know what's the greatest thing\n"
-	.string "about triathlons?\p"
+	.string "Do you know what's the greatest\n"
+	.string "thing about triathlons?\p"
 	.string "Testing the limits of your own\n"
 	.string "strength and endurance against\l"
 	.string "Mother Nature!$"

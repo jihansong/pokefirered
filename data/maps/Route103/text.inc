@@ -40,8 +40,8 @@ Route103_Text_H3_2::
 	.string "against two TRAINERS.$"
 
 Route103_Text_H4_0::
-	.string "Gah! My fishing line's all snarled up!\n"
-	.string "I'm getting frustrated and mean!\l"
+	.string "Gah! My fishing line's all snarled\n"
+	.string "up! I'm getting frustrated and mean!\l"
 	.string "That's it! Battle me!$"
 
 Route103_Text_H4_1::
@@ -69,8 +69,8 @@ Route103_Text_H6_2::
 	.string "even when it's fainted!$"
 
 Route103_Text_H7_0::
-	.string "Whoa!\n"
-	.string "How'd you get into a space this small?$"
+	.string "Whoa! How'd you get into a space\n"
+	.string "this small?$"
 
 Route103_Text_H7_1::
 	.string "Whoa!\n"
@@ -88,8 +88,8 @@ Route103_Text_H8_1::
 
 Route103_Text_H8_2::
 	.string "I was playing my guitar where few\n"
-	.string "people were around, but a lot of fans\l"
-	.string "have gathered.\p"
+	.string "people were around, but a lot of\l"
+	.string "fans have gathered.\p"
 	.string "Heh, maybe I should turn pro.$"
 
 Route103_Text_H9_0::
@@ -100,8 +100,9 @@ Route103_Text_H9_1::
 	.string "Groan…$"
 
 Route103_Text_H9_2::
-	.string "I'm a poor swimmer so I was practicing…\n"
-	.string "Sorry for almost crashing into you.$"
+	.string "I'm a poor swimmer so I was\n"
+	.string "practicing… Sorry for almost crashing\l"
+	.string "into you.$"
 
 Route103_Text_H10_0::
 	.string "This sort of distance…\n"

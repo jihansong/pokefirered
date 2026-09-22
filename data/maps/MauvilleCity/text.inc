@@ -15,7 +15,8 @@ MauvilleCity_Text_H2::
 	.string "people coming through.$"
 
 MauvilleCity_Text_H3::
-	.string "Have you been to RYDEL'S CYCLES yet?\p"
+	.string "Have you been to RYDEL'S CYCLES\n"
+	.string "yet?\p"
 	.string "RYDEL, the owner, is a very generous\n"
 	.string "man.$"
 
@@ -23,10 +24,10 @@ MauvilleCity_Text_H4::
 	.string "Hi, do you check out TV at all?\p"
 	.string "They've added a bunch of cool new\n"
 	.string "shows recently.\p"
-	.string "TV is so cool. I've seen my friends on\n"
-	.string "TV just out of the blue.\p"
-	.string "And, sometimes, they even put you on TV\n"
-	.string "without telling you.\p"
+	.string "TV is so cool. I've seen my friends\n"
+	.string "on TV just out of the blue.\p"
+	.string "And, sometimes, they even put you on\n"
+	.string "TV without telling you.\p"
 	.string "I wish I would be on TV sometime.\p"
 	.string "That's why I think you should check\n"
 	.string "out TVs whenever you can.$"

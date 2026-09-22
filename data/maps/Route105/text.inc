@@ -21,8 +21,8 @@ Route105_Text_H1_1::
 
 Route105_Text_H1_2::
 	.string "Why is the sea blue?\p"
-	.string "I learned about that at the MUSEUM in\n"
-	.string "SLATEPORT, but I forgot.$"
+	.string "I learned about that at the MUSEUM\n"
+	.string "in SLATEPORT, but I forgot.$"
 
 Route105_Text_H2_0::
 	.string "My body feels lighter in the water.\n"
@@ -34,8 +34,8 @@ Route105_Text_H2_1::
 Route105_Text_H2_2::
 	.string "Your body weight is reduced to just\n"
 	.string "one tenth in the water.\p"
-	.string "That would make me…\n"
-	.string "Whoops! I'm not telling you my weight!$"
+	.string "That would make me… Whoops! I'm not\n"
+	.string "telling you my weight!$"
 
 Route105_Text_H3_0::
 	.string "The blue, blue sky…\n"
@@ -56,23 +56,26 @@ Route105_Text_H4_0::
 
 Route105_Text_H4_1::
 	.string "I was thinking too much about that\n"
-	.string "rock, while my POKéMON remained weak…$"
+	.string "rock, while my POKéMON remained\l"
+	.string "weak…$"
 
 Route105_Text_H4_2::
 	.string "I can spend hours and hours staring\n"
-	.string "at a nice rock without growing bored.$"
+	.string "at a nice rock without growing\l"
+	.string "bored.$"
 
 Route105_Text_H5_0::
 	.string "I'm exhausted from swimming.\n"
 	.string "I'm just not used to it.\p"
-	.string "I need a battle for a change of pace!$"
+	.string "I need a battle for a change of\n"
+	.string "pace!$"
 
 Route105_Text_H5_1::
 	.string "I lost because I battled at sea.$"
 
 Route105_Text_H5_2::
-	.string "Yeah, for me, the sky is a much better\n"
-	.string "match than the sea.$"
+	.string "Yeah, for me, the sky is a much\n"
+	.string "better match than the sea.$"
 
 Route105_Text_H6_0::
 	.string "I'm convinced that the sea keeps\n"
@@ -83,7 +86,7 @@ Route105_Text_H6_1::
 	.string "I am no good at battling…$"
 
 Route105_Text_H6_2::
-	.string "I'm sure there are many secrets to be\n"
-	.string "discovered in the world's seas.\p"
+	.string "I'm sure there are many secrets to\n"
+	.string "be discovered in the world's seas.\p"
 	.string "I mean to find them all!$"
 

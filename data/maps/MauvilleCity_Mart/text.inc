@@ -9,6 +9,6 @@ MauvilleCity_Mart_Text_H1::
 MauvilleCity_Mart_Text_H2::
 	.string "Use a certain move, or use an item\n"
 	.string "instead…\p"
-	.string "The TRAINER's decisions determine how\n"
-	.string "battles turn out, I think.$"
+	.string "The TRAINER's decisions determine\n"
+	.string "how battles turn out, I think.$"
 

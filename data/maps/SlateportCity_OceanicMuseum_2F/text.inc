@@ -56,23 +56,27 @@ SlateportCity_OceanicMuseum_2F_Text_H10::
 	.string "circles the globe.”$"
 
 SlateportCity_OceanicMuseum_2F_Text_H11::
-	.string "It's a display on the flow of seawater.\p"
+	.string "It's a display on the flow of\n"
+	.string "seawater.\p"
 	.string "“Toward the surface, seawater flows\n"
 	.string "as currents driven by the winds.”$"
 
 SlateportCity_OceanicMuseum_2F_Text_H12::
-	.string "It's a display on the flow of seawater.\p"
+	.string "It's a display on the flow of\n"
+	.string "seawater.\p"
 	.string "“Toward the surface, seawater flows\n"
 	.string "as currents driven by the winds.”$"
 
 SlateportCity_OceanicMuseum_2F_Text_H13::
-	.string "It's a display on the flow of seawater.\p"
+	.string "It's a display on the flow of\n"
+	.string "seawater.\p"
 	.string "“Near the bottom of the sea, water\n"
 	.string "flows due to differences in such\l"
 	.string "factors as temperature and salinity.”$"
 
 SlateportCity_OceanicMuseum_2F_Text_H14::
-	.string "It's a display on the flow of seawater.\p"
+	.string "It's a display on the flow of\n"
+	.string "seawater.\p"
 	.string "“Near the bottom of the sea, water\n"
 	.string "flows due to differences in such\l"
 	.string "factors as temperature and salinity.”$"
@@ -92,10 +96,10 @@ SlateportCity_OceanicMuseum_2F_Text_H16::
 SlateportCity_OceanicMuseum_2F_Text_H17::
 	.string "A rubber ball is expanding and\n"
 	.string "shrinking.\p"
-	.string "“In the sea, the weight of water itself\n"
-	.string "exerts pressure.\p"
-	.string "“In shallow water, the pressure is not\n"
-	.string "very heavy.\p"
+	.string "“In the sea, the weight of water\n"
+	.string "itself exerts pressure.\p"
+	.string "“In shallow water, the pressure is\n"
+	.string "not very heavy.\p"
 	.string "“However, in extremely deep water,\n"
 	.string "the pressure can reach even tens of\l"
 	.string "thousands of tons on a small area.”$"
@@ -103,10 +107,10 @@ SlateportCity_OceanicMuseum_2F_Text_H17::
 SlateportCity_OceanicMuseum_2F_Text_H18::
 	.string "A rubber ball is expanding and\n"
 	.string "shrinking.\p"
-	.string "“In the sea, the weight of water itself\n"
-	.string "exerts pressure.\p"
-	.string "“In shallow water, the pressure is not\n"
-	.string "very heavy.\p"
+	.string "“In the sea, the weight of water\n"
+	.string "itself exerts pressure.\p"
+	.string "“In shallow water, the pressure is\n"
+	.string "not very heavy.\p"
 	.string "“However, in extremely deep water,\n"
 	.string "the pressure can reach even tens of\l"
 	.string "thousands of tons on a small area.”$"

@@ -17,7 +17,8 @@ MtPyre_6F_Text_H1_1::
 	.string "Weren't you lost?$"
 
 MtPyre_6F_Text_H1_2::
-	.string "I had this feeling that a lost TRAINER\n"
-	.string "would be panicked and easy to beat.\p"
+	.string "I had this feeling that a lost\n"
+	.string "TRAINER would be panicked and easy\l"
+	.string "to beat.\p"
 	.string "It's dirty and I won't try it again…$"
 

@@ -1,6 +1,7 @@
 MtPyre_2F_Text_H0_0::
 	.string "Hey! Are you searching for POKéMON?\n"
-	.string "You came along after me! You're rude!$"
+	.string "You came along after me! You're\l"
+	.string "rude!$"
 
 MtPyre_2F_Text_H0_1::
 	.string "Ayieeeeh!\n"
@@ -17,16 +18,16 @@ MtPyre_2F_Text_H1::
 MtPyre_2F_Text_H2::
 	.string "Ooch, ouch… There are holes in the\n"
 	.string "ground here and there.\p"
-	.string "I didn't notice and took a tumble from\n"
-	.string "the floor above.$"
+	.string "I didn't notice and took a tumble\n"
+	.string "from the floor above.$"
 
 MtPyre_2F_Text_H3_0::
 	.string "DEZ: I came here on a dare with my\n"
 	.string "boyfriend.\p"
 	.string "It's really scary, but I'm with my\n"
 	.string "boyfriend. It's okay.\p"
-	.string "I know! I'll get my boyfriend to look\n"
-	.string "cool by beating you!$"
+	.string "I know! I'll get my boyfriend to\n"
+	.string "look cool by beating you!$"
 
 MtPyre_2F_Text_H3_1::
 	.string "DEZ: Waaaah! I'm scared!$"

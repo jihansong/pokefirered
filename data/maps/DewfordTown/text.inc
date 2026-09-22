@@ -8,18 +8,18 @@ DewfordTown_Text_H1::
 	.string "Are you getting the itch to fish?$"
 
 DewfordTown_Text_H2::
-	.string "I like what's hip, happening, and trendy.\n"
-	.string "I'm always checking it out.\p"
-	.string "Listen, have you heard about this new\n"
-	.string "“{STR_VAR_1}”?\p"
+	.string "I like what's hip, happening, and\n"
+	.string "trendy. I'm always checking it out.\p"
+	.string "Listen, have you heard about this\n"
+	.string "new “{STR_VAR_1}”?\p"
 	.string "That's right!\n"
 	.string "Of course you know!\p"
 	.string "I mean, sheesh,\n"
 	.string "“{STR_VAR_1}”…\l"
 	.string "It's the hottest thing in cool!\p"
-	.string "Wherever you're from,\n"
-	.string "“{STR_VAR_1}”\l"
-	.string "is the biggest happening thing, right?$"
+	.string "Wherever you're from, “{STR_VAR_1}”\n"
+	.string "is the biggest happening thing,\l"
+	.string "right?$"
 
 DewfordTown_Text_H3::
 	.string "DEWFORD TOWN\n"

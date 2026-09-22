@@ -6,8 +6,9 @@ Route104_Text_H0::
 Route104_Text_H1::
 	.string "That seaside cottage is where\n"
 	.string "MR. BRINEY lives.\p"
-	.string "He was once a mighty sailor who never\n"
-	.string "feared the sea, however stormy.$"
+	.string "He was once a mighty sailor who\n"
+	.string "never feared the sea, however\l"
+	.string "stormy.$"
 
 Route104_Text_H2_0::
 	.string "Should I…\n"
@@ -19,15 +20,16 @@ Route104_Text_H2_1::
 
 Route104_Text_H2_2::
 	.string "If you're faced with a decision and\n"
-	.string "you let someone else choose for you,\l"
-	.string "you will regret it, however things\l"
-	.string "turn out.$"
+	.string "you let someone else choose for\l"
+	.string "you, you will regret it, however\l"
+	.string "things turn out.$"
 
 Route104_Text_H3::
-	.string "If you're going to throw a POKé BALL,\n"
-	.string "weaken the wild POKéMON first.\p"
-	.string "It will be easier to catch if it's been\n"
-	.string "poisoned, burned, or lulled to sleep.$"
+	.string "If you're going to throw a POKé\n"
+	.string "BALL, weaken the wild POKéMON first.\p"
+	.string "It will be easier to catch if it's\n"
+	.string "been poisoned, burned, or lulled to\l"
+	.string "sleep.$"
 
 Route104_Text_H4::
 	.string "You're a thief if you try to steal\n"
@@ -37,10 +39,10 @@ Route104_Text_H4::
 
 Route104_Text_H5::
 	.string "Oh, no, I'm not a TRAINER.\p"
-	.string "But that's right, if TRAINERS lock eyes,\n"
-	.string "it's a challenge to battle.\p"
-	.string "If you don't want to battle, stay out\n"
-	.string "of their sight.$"
+	.string "But that's right, if TRAINERS lock\n"
+	.string "eyes, it's a challenge to battle.\p"
+	.string "If you don't want to battle, stay\n"
+	.string "out of their sight.$"
 
 Route104_Text_H6_0::
 	.string "Why keep it a secret?\n"
@@ -59,8 +61,9 @@ Route104_Text_H6_2::
 Route104_Text_H7::
 	.string "If you see BERRIES growing in loamy\n"
 	.string "soil, feel free to take them.\p"
-	.string "But make sure you plant a BERRY in the\n"
-	.string "same spot. That's common courtesy.\p"
+	.string "But make sure you plant a BERRY in\n"
+	.string "the same spot. That's common\l"
+	.string "courtesy.\p"
 	.string "Here, I'll share this with you.$"
 
 Route104_Text_H8_0::
@@ -87,15 +90,15 @@ Route104_Text_H9_2::
 	.string "and be strong like you.$"
 
 Route104_Text_H10_0::
-	.string "Oh, sure, I'll accept your challenge.\n"
-	.string "I have a lot of money.$"
+	.string "Oh, sure, I'll accept your\n"
+	.string "challenge. I have a lot of money.$"
 
 Route104_Text_H10_1::
 	.string "Why couldn't I win?$"
 
 Route104_Text_H10_2::
-	.string "There are some things money can't buy.\n"
-	.string "That's POKéMON…$"
+	.string "There are some things money can't\n"
+	.string "buy. That's POKéMON…$"
 
 Route104_Text_H11_0::
 	.string "We must have been fated to meet.\n"
@@ -105,8 +108,8 @@ Route104_Text_H11_1::
 	.string "Oh, my!$"
 
 Route104_Text_H11_2::
-	.string "“Hello” is the beginning of “good-bye.”\n"
-	.string "I hope we meet again.$"
+	.string "“Hello” is the beginning of\n"
+	.string "“good-bye.” I hope we meet again.$"
 
 Route104_Text_H12_0::
 	.string "Leaving footprints in the sand is\n"
@@ -124,12 +127,15 @@ Route104_Text_H12_2::
 Route104_Text_H13::
 	.string "I like filling my mouth with seeds,\n"
 	.string "then spitting them out fast!\p"
-	.string "You can have this, so you try it out!\p"
-	.string "Use it on a POKéMON, and it will learn\n"
-	.string "a move for firing seeds rapidly.$"
+	.string "You can have this, so you try it\n"
+	.string "out!\p"
+	.string "Use it on a POKéMON, and it will\n"
+	.string "learn a move for firing seeds\l"
+	.string "rapidly.$"
 
 Route104_Text_H14_0::
-	.string "I fished up a tough-looking POKéMON!\p"
+	.string "I fished up a tough-looking\n"
+	.string "POKéMON!\p"
 	.string "It has this magical quality to it!\n"
 	.string "It surely looks tough, yes it does!$"
 
@@ -137,8 +143,8 @@ Route104_Text_H14_1::
 	.string "What the…$"
 
 Route104_Text_H14_2::
-	.string "Hey, MAGIKARP, you sure don't live up\n"
-	.string "to your name, do you?$"
+	.string "Hey, MAGIKARP, you sure don't live\n"
+	.string "up to your name, do you?$"
 
 Route104_Text_H15::
 	.string "MR. BRINEY'S COTTAGE$"
@@ -160,8 +166,9 @@ Route104_Text_H19::
 	.string "of TRAINERS who challenge others\l"
 	.string "for 2-on-2 POKéMON battles called\l"
 	.string "DOUBLE BATTLES.\p"
-	.string "In a DOUBLE BATTLE, the TRAINER must\n"
-	.string "send out two POKéMON, the one at the\l"
-	.string "left of the list and the top one.\l"
-	.string "Watch how POKéMON are lined up.$"
+	.string "In a DOUBLE BATTLE, the TRAINER\n"
+	.string "must send out two POKéMON, the one\l"
+	.string "at the left of the list and the top\l"
+	.string "one. Watch how POKéMON are lined\l"
+	.string "up.$"
 

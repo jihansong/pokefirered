@@ -1,6 +1,6 @@
 Route120_Text_H0_0::
-	.string "Do you have any moves that can strike\n"
-	.string "a flying POKéMON?$"
+	.string "Do you have any moves that can\n"
+	.string "strike a flying POKéMON?$"
 
 Route120_Text_H0_1::
 	.string "You soared above me!$"
@@ -31,9 +31,9 @@ Route120_Text_H2_1::
 	.string "no danger of needing rescue!$"
 
 Route120_Text_H2_2::
-	.string "To travel wherever your heart desires\n"
-	.string "with POKéMON…\l"
-	.string "That's the joy of being a TRAINER.$"
+	.string "To travel wherever your heart\n"
+	.string "desires with POKéMON… That's the joy\l"
+	.string "of being a TRAINER.$"
 
 Route120_Text_H3_0::
 	.string "How's your physical fitness?\n"
@@ -62,8 +62,8 @@ Route120_Text_H4_2::
 
 Route120_Text_H5::
 	.string "BERRIES grow by soaking up sunlight.\p"
-	.string "We help the BERRIES grow by watering\n"
-	.string "them regularly.\p"
+	.string "We help the BERRIES grow by\n"
+	.string "watering them regularly.\p"
 	.string "It's an expression of love, isn't it?$"
 
 Route120_Text_H6_0::
@@ -80,9 +80,9 @@ Route120_Text_H6_2::
 
 Route120_Text_H7_0::
 	.string "Who might you be?\p"
-	.string "Are you perhaps searching for ancient\n"
-	.string "ruins that are rumored to possibly\l"
-	.string "exist according to legend?$"
+	.string "Are you perhaps searching for\n"
+	.string "ancient ruins that are rumored to\l"
+	.string "possibly exist according to legend?$"
 
 Route120_Text_H7_1::
 	.string "What a disgraceful setback…$"
@@ -94,7 +94,8 @@ Route120_Text_H7_2::
 
 Route120_Text_H8_0::
 	.string "Why am I carrying this parasol?\p"
-	.string "I'll tell you if you can win against me.$"
+	.string "I'll tell you if you can win against\n"
+	.string "me.$"
 
 Route120_Text_H8_1::
 	.string "A parasol can't ward off POKéMON\n"
@@ -107,8 +108,8 @@ Route120_Text_H8_2::
 
 Route120_Text_H9_0::
 	.string "Me, POKéMON, and my parasol…\p"
-	.string "If any one of them is missing,\n"
-	.string "the picture of beauty will be ruined.$"
+	.string "If any one of them is missing, the\n"
+	.string "picture of beauty will be ruined.$"
 
 Route120_Text_H9_1::
 	.string "You've completely ruined my beauty…$"
@@ -119,8 +120,9 @@ Route120_Text_H9_2::
 	.string "get in your way.$"
 
 Route120_Text_H10_0::
-	.string "I will adopt the movements of POKéMON\n"
-	.string "and create new ninja techniques.$"
+	.string "I will adopt the movements of\n"
+	.string "POKéMON and create new ninja\l"
+	.string "techniques.$"
 
 Route120_Text_H10_1::
 	.string "The creation of new ninja techniques\n"
@@ -152,8 +154,9 @@ Route120_Text_H12_1::
 	.string "I was the one to get hurt.$"
 
 Route120_Text_H12_2::
-	.string "I wonder… Should I evolve my POKéMON?\n"
-	.string "They're cute the way they are, though.$"
+	.string "I wonder… Should I evolve my\n"
+	.string "POKéMON? They're cute the way they\l"
+	.string "are, though.$"
 
 Route120_Text_H13_0::
 	.string "Your party POKéMON…\n"

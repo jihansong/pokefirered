@@ -11,7 +11,8 @@ Route119_Text_H0_2::
 	.string "keep on mimicking your every move.$"
 
 Route119_Text_H1_0::
-	.string "If you step forward, we step forward.\p"
+	.string "If you step forward, we step\n"
+	.string "forward.\p"
 	.string "If you turn right, we turn, too…$"
 
 Route119_Text_H1_1::
@@ -23,8 +24,8 @@ Route119_Text_H1_2::
 	.string "It's burning me up…$"
 
 Route119_Text_H2_0::
-	.string "So, we finally meet!\n"
-	.string "My BUG POKéMON will keep you company!$"
+	.string "So, we finally meet! My BUG POKéMON\n"
+	.string "will keep you company!$"
 
 Route119_Text_H2_1::
 	.string "I wish we'd never met…$"
@@ -87,8 +88,8 @@ Route119_Text_H6_2::
 	.string "I hope you enjoyed our performance.$"
 
 Route119_Text_H7_0::
-	.string "The MIMIC CIRCLE was formed by people\n"
-	.string "who like to MIMIC.\p"
+	.string "The MIMIC CIRCLE was formed by\n"
+	.string "people who like to MIMIC.\p"
 	.string "A battle starts the instant we meet!$"
 
 Route119_Text_H7_1::
@@ -134,20 +135,20 @@ Route119_Text_H10_2::
 	.string "flying come true!$"
 
 Route119_Text_H11_0::
-	.string "I'll show you the true potential of me\n"
-	.string "and my BIRD POKéMON!$"
+	.string "I'll show you the true potential of\n"
+	.string "me and my BIRD POKéMON!$"
 
 Route119_Text_H11_1::
 	.string "We lacked potential…$"
 
 Route119_Text_H11_2::
-	.string "Ever since I was a little kid, I always\n"
-	.string "admired BIRD POKéMON…$"
+	.string "Ever since I was a little kid, I\n"
+	.string "always admired BIRD POKéMON…$"
 
 Route119_Text_H12::
-	.string "I thought you FLY by catching a whole\n"
-	.string "flock of BIRD POKéMON, and then\l"
-	.string "hanging on to them somehow.\p"
+	.string "I thought you FLY by catching a\n"
+	.string "whole flock of BIRD POKéMON, and\l"
+	.string "then hanging on to them somehow.\p"
 	.string "But it turns out there's an HM move\n"
 	.string "called FLY!\p"
 	.string "I wish I'd known about that a long\n"
@@ -160,9 +161,9 @@ Route119_Text_H13::
 	.string "There's no way you can cycle here.$"
 
 Route119_Text_H14::
-	.string "Can your POKéMON use its SECRET POWER\n"
-	.string "on a big pile of grass and make a\l"
-	.string "SECRET BASE?$"
+	.string "Can your POKéMON use its SECRET\n"
+	.string "POWER on a big pile of grass and\l"
+	.string "make a SECRET BASE?$"
 
 Route119_Text_H15_0::
 	.string "To hide a tree, use a forest!$"
@@ -179,8 +180,8 @@ Route119_Text_H15_2::
 Route119_Text_H16_0::
 	.string "You spoke to me…\n"
 	.string "So you want to challenge me!\p"
-	.string "Sure! I'll try out the POKéMON I caught\n"
-	.string "while SURFING!$"
+	.string "Sure! I'll try out the POKéMON I\n"
+	.string "caught while SURFING!$"
 
 Route119_Text_H16_1::
 	.string "I don't have a clue about what it\n"
@@ -189,7 +190,8 @@ Route119_Text_H16_1::
 Route119_Text_H16_2::
 	.string "Go for a SURF on my POKéMON…\p"
 	.string "Then fish off its back…\p"
-	.string "It's an indescribably luxuriant moment!$"
+	.string "It's an indescribably luxuriant\n"
+	.string "moment!$"
 
 Route119_Text_H17_0::
 	.string "Wherever and whenever I may be,\n"
@@ -201,8 +203,8 @@ Route119_Text_H17_1::
 
 Route119_Text_H17_2::
 	.string "You're asking if my parasol is heavy?\n"
-	.string "Your BAG is filled with more junk than\l"
-	.string "I ever carry around.$"
+	.string "Your BAG is filled with more junk\l"
+	.string "than I ever carry around.$"
 
 Route119_Text_H18_0::
 	.string "Hohoho!\n"
@@ -245,6 +247,6 @@ Route119_Text_H22::
 	.string "furniture items can be placed in\l"
 	.string "a SECRET BASE.\p"
 	.string "Pick your favorite items and create\n"
-	.string "your very own SECRET BASE exactly the\l"
-	.string "way you want.$"
+	.string "your very own SECRET BASE exactly\l"
+	.string "the way you want.$"
 

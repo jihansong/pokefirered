@@ -22,8 +22,8 @@ JaggedPass_Text_H1_1::
 	.string "trying to find a good footing…$"
 
 JaggedPass_Text_H1_2::
-	.string "If I had an ACRO BIKE, I'd be able to\n"
-	.string "jump ledges.$"
+	.string "If I had an ACRO BIKE, I'd be able\n"
+	.string "to jump ledges.$"
 
 JaggedPass_Text_H2_0::
 	.string "This place isn't your casual hike.\n"
@@ -36,7 +36,8 @@ JaggedPass_Text_H2_1::
 JaggedPass_Text_H2_2::
 	.string "Did you know?\p"
 	.string "Some people cleverly ride their\n"
-	.string "bicycles up this horribly bumpy pass.$"
+	.string "bicycles up this horribly bumpy\l"
+	.string "pass.$"
 
 JaggedPass_Text_H3_0::
 	.string "I climb this hill every day.\n"

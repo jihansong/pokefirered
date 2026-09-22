@@ -1,6 +1,6 @@
 Route119_House_Text_H0::
-	.string "I heard about a cave called the CAVE\n"
-	.string "OF ORIGIN.\p"
+	.string "I heard about a cave called the\n"
+	.string "CAVE OF ORIGIN.\p"
 	.string "People rumor that the spirits of\n"
 	.string "POKéMON are revived there. Could\l"
 	.string "something like that really happen?$"

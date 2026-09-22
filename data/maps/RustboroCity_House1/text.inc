@@ -7,8 +7,8 @@ RustboroCity_House1_Text_H0::
 	.string "a {STR_VAR_1} if you want.$"
 
 RustboroCity_House1_Text_H1::
-	.string "In all sorts of places, there are all\n"
-	.string "sorts of POKéMON and people.\p"
-	.string "I find that fascinating, so I go to all\n"
-	.string "sorts of places.$"
+	.string "In all sorts of places, there are\n"
+	.string "all sorts of POKéMON and people.\p"
+	.string "I find that fascinating, so I go to\n"
+	.string "all sorts of places.$"
 

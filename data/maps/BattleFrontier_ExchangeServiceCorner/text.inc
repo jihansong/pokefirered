@@ -27,7 +27,8 @@ BattleFrontier_ExchangeServiceCorner_Text_H3::
 
 BattleFrontier_ExchangeServiceCorner_Text_H4::
 	.string "Did you know?\p"
-	.string "If you stretch your record at any of\n"
-	.string "the BATTLE facilities, they start\l"
-	.string "giving you more and more Battle Points.$"
+	.string "If you stretch your record at any\n"
+	.string "of the BATTLE facilities, they start\l"
+	.string "giving you more and more Battle\l"
+	.string "Points.$"
 

@@ -419,8 +419,9 @@ PalletTown_ProfessorOaksLab_Text_OakRecognition::
     .string "I'm proud of you, {PLAYER}!$"
 
 PalletTown_ProfessorOaksLab_Text_OakStillGotIt::
-    .string "OAK: Hohoho! You're as strong as ever.\n"
-    .string "My back is killing me, though…$"
+    .string "OAK: Hohoho! You're as strong\n"
+    .string "as ever. My back is killing me,\l"
+    .string "though…$"
 
 PalletTown_ProfessorOaksLab_Text_Trophy::
     .string "A gold trophy.\p"

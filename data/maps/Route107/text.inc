@@ -1,7 +1,7 @@
 Route107_Text_H0_0::
 	.string "Yawn…\p"
-	.string "I must have drifted off to sleep while\n"
-	.string "I was drifting in the waves.$"
+	.string "I must have drifted off to sleep\n"
+	.string "while I was drifting in the waves.$"
 
 Route107_Text_H0_1::
 	.string "Ahaha, I lost…\n"
@@ -72,8 +72,8 @@ Route107_Text_H5_1::
 
 Route107_Text_H5_2::
 	.string "RAY: My sister gave me my POKéMON.\n"
-	.string "I raised it, and now it's my important\l"
-	.string "partner!$"
+	.string "I raised it, and now it's my\l"
+	.string "important partner!$"
 
 Route107_Text_H6_0::
 	.string "I'm in the middle of a triathlon,\n"
@@ -83,7 +83,7 @@ Route107_Text_H6_1::
 	.string "That exhausted me…$"
 
 Route107_Text_H6_2::
-	.string "I still have swimming and running left\n"
-	.string "to do after this.\p"
+	.string "I still have swimming and running\n"
+	.string "left to do after this.\p"
 	.string "Am I going to be okay?$"
 

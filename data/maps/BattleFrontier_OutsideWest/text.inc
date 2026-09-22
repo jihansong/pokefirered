@@ -8,15 +8,17 @@ BattleFrontier_OutsideWest_Text_H1::
 	.string "May I see your TICKET?$"
 
 BattleFrontier_OutsideWest_Text_H2::
-	.string "Ah, so this here is the BATTLE DOME?\n"
-	.string "I won't let GENTLEMEN beat me!\p"
+	.string "Ah, so this here is the BATTLE\n"
+	.string "DOME? I won't let GENTLEMEN beat\l"
+	.string "me!\p"
 	.string "But where is the entrance?$"
 
 BattleFrontier_OutsideWest_Text_H3::
 	.string "It's not as if just anyone can come\n"
 	.string "here, you know?\p"
 	.string "Only those TRAINERS who've been\n"
-	.string "recognized as tough are brought here.\p"
+	.string "recognized as tough are brought\l"
+	.string "here.\p"
 	.string "That's why many TRAINERS don't even\n"
 	.string "know about the BATTLE FRONTIER.$"
 
@@ -28,8 +30,8 @@ BattleFrontier_OutsideWest_Text_H4::
 
 BattleFrontier_OutsideWest_Text_H5::
 	.string "Munch, munch…\p"
-	.string "It looks like this square's filled with\n"
-	.string "tough people.\p"
+	.string "It looks like this square's filled\n"
+	.string "with tough people.\p"
 	.string "Munch, munch…$"
 
 BattleFrontier_OutsideWest_Text_H6::
@@ -40,16 +42,17 @@ BattleFrontier_OutsideWest_Text_H6::
 	.string "in challenges.$"
 
 BattleFrontier_OutsideWest_Text_H7::
-	.string "There used to be nothing here not all\n"
-	.string "that long ago.\p"
-	.string "But, now look at this place! Amazing!\n"
-	.string "I'll bring my mother out to see this.$"
+	.string "There used to be nothing here not\n"
+	.string "all that long ago.\p"
+	.string "But, now look at this place!\n"
+	.string "Amazing! I'll bring my mother out to\l"
+	.string "see this.$"
 
 BattleFrontier_OutsideWest_Text_H8::
 	.string "I'm scared of going into the BATTLE\n"
 	.string "PIKE because of SEVIPER…\p"
-	.string "B-but I came all the way here, so I will\n"
-	.string "try to conquer everything!\l"
+	.string "B-but I came all the way here, so I\n"
+	.string "will try to conquer everything!\l"
 	.string "…Shudder…$"
 
 BattleFrontier_OutsideWest_Text_H9::
@@ -64,23 +67,24 @@ BattleFrontier_OutsideWest_Text_H10::
 	.string "Who's raising those rental POKéMON?$"
 
 BattleFrontier_OutsideWest_Text_H11::
-	.string "Today, I'm going to keep battling, no\n"
-	.string "matter what, until I get a Symbol.$"
+	.string "Today, I'm going to keep battling,\n"
+	.string "no matter what, until I get a\l"
+	.string "Symbol.$"
 
 BattleFrontier_OutsideWest_Text_H12::
-	.string "The BATTLE FRONTIER…\n"
-	.string "I've long dreamed about a place like it.$"
+	.string "The BATTLE FRONTIER… I've long\n"
+	.string "dreamed about a place like it.$"
 
 BattleFrontier_OutsideWest_Text_H13::
-	.string "I believe I'm the only person here who,\n"
-	.string "for some unknown reason, would choose\l"
-	.string "fishing over battling.\p"
+	.string "I believe I'm the only person here\n"
+	.string "who, for some unknown reason, would\l"
+	.string "choose fishing over battling.\p"
 	.string "Huh? You can't catch anything here?\n"
 	.string "That's disappointing…$"
 
 BattleFrontier_OutsideWest_Text_H14::
-	.string "I wanted to take a challenge as soon\n"
-	.string "as I arrived here.\p"
+	.string "I wanted to take a challenge as\n"
+	.string "soon as I arrived here.\p"
 	.string "But on the way, I got seasick…\n"
 	.string "Urrrrp…$"
 
@@ -100,14 +104,14 @@ BattleFrontier_OutsideWest_Text_H15::
 BattleFrontier_OutsideWest_Text_H16::
 	.string "Huh? Will you listen to yourself?\n"
 	.string "That's nothing!\p"
-	.string "Why, the last time I cheered for him,\n"
-	.string "our eyes met and sparks flew!$"
+	.string "Why, the last time I cheered for\n"
+	.string "him, our eyes met and sparks flew!$"
 
 BattleFrontier_OutsideWest_Text_H17::
 	.string "Whaaaaaat?!\n"
 	.string "Pfft!\p"
-	.string "That only happened because\n"
-	.string "I happened to be sitting next to you!\p"
+	.string "That only happened because I\n"
+	.string "happened to be sitting next to you!\p"
 	.string "The DOME ACE only looked our way\n"
 	.string "because my cheering was so loud!$"
 
@@ -129,21 +133,23 @@ BattleFrontier_OutsideWest_Text_H19::
 	.string "certain TRAINER at a tournament.\p"
 	.string "They were so thoroughly whipped,\n"
 	.string "they became smitten by the TRAINER.\p"
-	.string "Now they're just fans of the TRAINER.\n"
-	.string "They go cheer for their idol at the\l"
-	.string "BATTLE DOME every day now.$"
+	.string "Now they're just fans of the\n"
+	.string "TRAINER. They go cheer for their\l"
+	.string "idol at the BATTLE DOME every day\l"
+	.string "now.$"
 
 BattleFrontier_OutsideWest_Text_H20::
-	.string "I heard a rumor that someone saw\n"
-	.string "a POKéMON with an unusually long tail\l"
+	.string "I heard a rumor that someone saw a\n"
+	.string "POKéMON with an unusually long tail\l"
 	.string "somewhere in the BATTLE FRONTIER.\p"
 	.string "It must be adorable. I'm sure of it…\p"
-	.string "Oh, challenges can wait. I feel driven\n"
-	.string "to find the delightful creature!$"
+	.string "Oh, challenges can wait. I feel\n"
+	.string "driven to find the delightful\l"
+	.string "creature!$"
 
 BattleFrontier_OutsideWest_Text_H21::
-	.string "This is the BATTLE DOME!\n"
-	.string "Your path to the invincible superstar!$"
+	.string "This is the BATTLE DOME! Your path\n"
+	.string "to the invincible superstar!$"
 
 BattleFrontier_OutsideWest_Text_H22::
 	.string "This is the BATTLE PIKE!\n"

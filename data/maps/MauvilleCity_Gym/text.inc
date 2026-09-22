@@ -12,15 +12,15 @@ MauvilleCity_Gym_Text_H0_2::
 	.string "daddy was born, that tough coot.$"
 
 MauvilleCity_Gym_Text_H1_0::
-	.string "With my charm and my POKéMON's moves,\n"
-	.string "you'll be shocked!$"
+	.string "With my charm and my POKéMON's\n"
+	.string "moves, you'll be shocked!$"
 
 MauvilleCity_Gym_Text_H1_1::
 	.string "I'm shocked by your power!$"
 
 MauvilleCity_Gym_Text_H1_2::
-	.string "I've heard that MAUVILLE was founded\n"
-	.string "by WATTSON.\p"
+	.string "I've heard that MAUVILLE was\n"
+	.string "founded by WATTSON.\p"
 	.string "He was a TRAINER long before we\n"
 	.string "became TRAINERS.\l"
 	.string "He must know all sorts of things!$"
@@ -45,16 +45,17 @@ MauvilleCity_Gym_Text_H3_1::
 	.string "over-driven electric, man!$"
 
 MauvilleCity_Gym_Text_H3_2::
-	.string "POKéMON and rock, it's all about heart,\n"
-	.string "whoa-yeah!$"
+	.string "POKéMON and rock, it's all about\n"
+	.string "heart, whoa-yeah!$"
 
 MauvilleCity_Gym_Text_H4::
 	.string "Hey, how's it going, CHAMPION-\n"
 	.string "bound {PLAYER}?\p"
 	.string "WATTSON, the LEADER of MAUVILLE\n"
 	.string "GYM, uses ELECTRIC-type POKéMON.\p"
-	.string "If you challenge him with WATER-type\n"
-	.string "POKéMON, he'll zap them! Bzzt!\p"
+	.string "If you challenge him with\n"
+	.string "WATER-type POKéMON, he'll zap them!\l"
+	.string "Bzzt!\p"
 	.string "And, he's put in switch-controlled\n"
 	.string "doors all over his GYM! Eccentric!\p"
 	.string "Hey, go for it!$"

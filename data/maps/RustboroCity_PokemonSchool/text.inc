@@ -12,8 +12,8 @@ RustboroCity_PokemonSchool_Text_H2::
 	.string "items like POTION and ANTIDOTE.$"
 
 RustboroCity_PokemonSchool_Text_H3::
-	.string "You know how some POKéMON moves can\n"
-	.string "confuse a POKéMON?\p"
+	.string "You know how some POKéMON moves\n"
+	.string "can confuse a POKéMON?\p"
 	.string "A confused POKéMON will sometimes\n"
 	.string "attack itself without meaning to.\p"
 	.string "But once it leaves battle, it will\n"
@@ -30,9 +30,9 @@ RustboroCity_PokemonSchool_Text_H4::
 RustboroCity_PokemonSchool_Text_H5::
 	.string "Students who don't study get a little\n"
 	.string "taste of my QUICK CLAW.\p"
-	.string "Whether or not you are a good student \n"
-	.string "will be evident from the way you use\l"
-	.string "this item.$"
+	.string "Whether or not you are a good\n"
+	.string "student will be evident from the way\l"
+	.string "you use this item.$"
 
 RustboroCity_PokemonSchool_Text_H6::
 	.string "The blackboard lists status changes\n"

@@ -551,7 +551,7 @@
 #define FLAG_ROCKET_MT_MOON_CLEFAIRY 0x211 // v0.5.0 event 2: the CLEFAIRY TEAM ROCKET chased gave a MOON STONE
 #define FLAG_ROCKET_CERULEAN_GYM 0x212 // v0.5.0 event 3: TEAM ROCKET tried to steal the CERULEAN GYM water show
 #define FLAG_ROCKET_SS_ANNE      0x213 // v0.5.0 event 4: TEAM ROCKET's S.S. ANNE plot
-#define FLAG_0x214               0x214
+#define FLAG_ROCKET_CELADON_GYM  0x214 // v0.5.0 event 6: JAMES's disguise and the perfume fuss at the CELADON GYM
 #define FLAG_0x215               0x215
 #define FLAG_0x216               0x216
 #define FLAG_0x217               0x217

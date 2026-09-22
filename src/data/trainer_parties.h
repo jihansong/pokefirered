@@ -3859,6 +3859,30 @@ static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesSSAnne[] = {
     },
 };
 
+// between POKéMON TOWER (27) and SILPH CO. (31); JAMES has a WEEPINBELL now
+static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesCeladonGym[] = {
+    {
+        .iv = 0,
+        .lvl = 29,
+        .species = SPECIES_ARBOK,
+    },
+    {
+        .iv = 0,
+        .lvl = 29,
+        .species = SPECIES_KOFFING,
+    },
+    {
+        .iv = 0,
+        .lvl = 28,
+        .species = SPECIES_WEEPINBELL,
+    },
+    {
+        .iv = 0,
+        .lvl = 29,
+        .species = SPECIES_MEOWTH,
+    },
+};
+
 static const struct TrainerMonNoItemDefaultMoves sParty_RivalOaksLabEevee[] = {
     {
         .iv = 0,

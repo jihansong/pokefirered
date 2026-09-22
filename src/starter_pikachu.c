@@ -9,6 +9,8 @@
 #include "constants/pokemon.h"
 #include "constants/species.h"
 
+#include "data/pokemon/starter_pikachu.h"
+
 // The PIKACHU the player receives in Oak's Lab. Like Yellow, it is identified by
 // species and original trainer; the personality value also has to match so that a
 // second PIKACHU the player catches themselves isn't mistaken for it.
@@ -118,6 +120,19 @@ void MigrateStarterPikachuBit(void)
     }
     for (i = 0; i < DAYCARE_MON_COUNT; i++)
         MigrateBoxMon(&gSaveBlock1Ptr->daycare.mons[i].mon);
+}
+
+// Its stats come from gStarterPikachuBaseStats from v0.4.0 on. A PIKACHU in the party
+// of an older save gets them as soon as the save is continued, not at its next level.
+void RecalculateStarterPikachuStats(void)
+{
+    u8 i;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (IsStarterPikachu(&gPlayerParty[i]))
+            CalculateMonStats(&gPlayerParty[i]);
+    }
 }
 
 bool8 IsStarterPikachu(struct Pokemon *mon)

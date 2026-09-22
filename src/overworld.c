@@ -1706,6 +1706,7 @@ void CB2_ContinueSavedGame(void)
     LoadSaveblockObjEventScripts();
     UnfreezeObjectEvents();
     MigrateStarterPikachuBit();
+    RecalculateStarterPikachuStats();
     Overworld_ResetStateOnContinue();
     InitMapFromSavedGame();
     PlayTimeCounter_Start();
@@ -2346,6 +2347,7 @@ void CB2_EnterFieldFromQuestLog(void)
     LoadSaveblockObjEventScripts();
     UnfreezeObjectEvents();
     MigrateStarterPikachuBit();
+    RecalculateStarterPikachuStats();
     Overworld_ResetStateOnContinue();
     InitMapFromSavedGame();
     PlayTimeCounter_Start();

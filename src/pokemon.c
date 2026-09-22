@@ -2093,7 +2093,7 @@ static u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
 
 #define CALC_STAT(base, iv, ev, statIndex, field)               \
 {                                                               \
-    u8 baseStat = gSpeciesInfo[species].base;                   \
+    u8 baseStat = info->base;                                   \
     s32 n = (((2 * baseStat + iv + ev / 4) * level) / 100) + 5; \
     u8 nature = GetNature(mon);                                 \
     n = ModifyStatByNature(nature, n, statIndex);               \
@@ -2119,6 +2119,9 @@ void CalculateMonStats(struct Pokemon *mon)
     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
     s32 level = GetLevelFromMonExp(mon);
     s32 newMaxHP;
+    // Oak's PIKACHU has legendary base stats and extra HP growth (src/starter_pikachu.c)
+    bool8 isStarterPikachu = IsStarterPikachu(mon);
+    const struct SpeciesInfo *info = isStarterPikachu ? &gStarterPikachuBaseStats : &gSpeciesInfo[species];
 
     SetMonData(mon, MON_DATA_LEVEL, &level);
 
@@ -2128,8 +2131,10 @@ void CalculateMonStats(struct Pokemon *mon)
     }
     else
     {
-        s32 n = 2 * gSpeciesInfo[species].baseHP + hpIV;
+        s32 n = 2 * info->baseHP + hpIV;
         newMaxHP = (((n + hpEV / 4) * level) / 100) + level + 10;
+        if (isStarterPikachu)
+            newMaxHP += level * STARTER_PIKACHU_HP_PER_LEVEL;
     }
 
     gBattleScripting.levelUpHP = newMaxHP - oldMaxHP;

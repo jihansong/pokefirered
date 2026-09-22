@@ -752,7 +752,8 @@
 //       only space for 25 additional trainers before trainer flag space overflows.
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define NUM_TRAINERS                             744
+#define TRAINER_JESSIE_JAMES_CERULEAN_GYM        744 // v0.5.0 TEAM ROCKET events
+#define NUM_TRAINERS                             745
 #define MAX_TRAINERS_COUNT                       768
 
 // Trainers imported from Hoenn start here. Their defeated flags do not fit in

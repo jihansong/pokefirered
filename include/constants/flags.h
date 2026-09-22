@@ -549,7 +549,7 @@
 #define FLAG_SAW_AIRPORT_PLANE_TAXI 0x20F
 #define FLAG_ROCKET_VIRIDIAN_PC  0x210 // v0.5.0 event 1: TEAM ROCKET raided the VIRIDIAN POKéMON CENTER
 #define FLAG_ROCKET_MT_MOON_CLEFAIRY 0x211 // v0.5.0 event 2: the CLEFAIRY TEAM ROCKET chased gave a MOON STONE
-#define FLAG_0x212               0x212
+#define FLAG_ROCKET_CERULEAN_GYM 0x212 // v0.5.0 event 3: TEAM ROCKET tried to steal the CERULEAN GYM water show
 #define FLAG_0x213               0x213
 #define FLAG_0x214               0x214
 #define FLAG_0x215               0x215

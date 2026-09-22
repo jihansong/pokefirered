@@ -3790,6 +3790,25 @@ static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesSilphCo[] = {
     },
 };
 
+// v0.5.0 TEAM ROCKET events: between MT. MOON (14) and the ROCKET HIDEOUT (25)
+static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesCeruleanGym[] = {
+    {
+        .iv = 0,
+        .lvl = 20,
+        .species = SPECIES_EKANS,
+    },
+    {
+        .iv = 0,
+        .lvl = 20,
+        .species = SPECIES_KOFFING,
+    },
+    {
+        .iv = 0,
+        .lvl = 21,
+        .species = SPECIES_MEOWTH,
+    },
+};
+
 static const struct TrainerMonNoItemDefaultMoves sParty_RivalOaksLabEevee[] = {
     {
         .iv = 0,

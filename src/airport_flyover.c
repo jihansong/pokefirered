@@ -25,10 +25,10 @@
 #define AIRPORT_FLYOVER_INTERVAL 1800   // 30 seconds
 
 #define FLYOVER_SPEED     2    // pixels per frame
-#define SHADOW_OFFSET_X  20    // the sun is up and to the left of the plane
-#define SHADOW_OFFSET_Y  44
-#define SPRITE_HALF      16    // both sprites are 32x32...
-#define PLANE_HALF       24    // ...but the plane is drawn half as large again
+#define SHADOW_OFFSET_X  14    // the sun is up and to the left of the plane
+#define SHADOW_OFFSET_Y  30
+#define SPRITE_HALF      16    // both sprites are 32x32
+#define PLANE_HALF       16
 
 // The runway's centre line runs down the left edge of map column 39,
 // and the airport grounds fill map rows 0 to 16.
@@ -46,13 +46,15 @@
 #define tShadow  data[3]
 
 extern const u16 gObjectEventPal_Truck[];
-extern const u16 gObjectEventPic_Airplane[];
 
+// The plane in the sky is the 30x30 airliner (nose north), half as large again
+// as the 20x20 ones parked on the apron, being nearer the viewer; its shadow is
+// the parked plane's silhouette. tools/make_airplane_sprite.py draws all three.
+static const u16 sPlaneGfx[] = INCBIN_U16("graphics/object_events/pics/misc/airplane_flyover.4bpp");
 static const u16 sShadowGfx[] = INCBIN_U16("graphics/object_events/pics/misc/airplane_shadow.4bpp");
 
-// frame 1 of the parked airliner's sheet is the plane with its nose north
 static const struct SpriteSheet sPlaneSheet = {
-    .data = gObjectEventPic_Airplane + 0x200 / sizeof(u16),
+    .data = sPlaneGfx,
     .size = 0x200,
     .tag = TAG_FLYOVER_PLANE,
 };
@@ -71,22 +73,10 @@ static const struct SpritePalette sPalette = {
 
 // In the sky: priority 1 puts it over the map's top layer (BG1, roofs and
 // tree tops; a sprite wins a tie) but under BG0, the menus and text boxes.
-// It is scaled up by half, being nearer the viewer than the ground, which also
-// sets it apart from the airliners parked on the apron it flies over.
 static const struct OamData sPlaneOam = {
-    .affineMode = ST_OAM_AFFINE_DOUBLE,
     .shape = SPRITE_SHAPE(32x32),
     .size = SPRITE_SIZE(32x32),
     .priority = 1,
-};
-
-static const union AffineAnimCmd sAffineAnim_PlaneAloft[] = {
-    AFFINEANIMCMD_FRAME(0x180, 0x180, 0, 0),
-    AFFINEANIMCMD_END,
-};
-
-static const union AffineAnimCmd *const sAffineAnims_Plane[] = {
-    sAffineAnim_PlaneAloft,
 };
 
 // on the ground: over the ground layers (BG2 and BG3), under roofs and tree tops
@@ -102,7 +92,7 @@ static const struct SpriteTemplate sPlaneTemplate = {
     .oam = &sPlaneOam,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
-    .affineAnims = sAffineAnims_Plane,
+    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCallbackDummy,
 };
 
@@ -149,10 +139,7 @@ static bool8 OwnsSprite(s16 spriteId, const struct SpriteTemplate *template)
 static void EndFlight(struct Task *task)
 {
     if (OwnsSprite(task->tPlane, &sPlaneTemplate))
-    {
-        FreeSpriteOamMatrix(&gSprites[task->tPlane]);
         DestroySprite(&gSprites[task->tPlane]);
-    }
     if (OwnsSprite(task->tShadow, &sShadowTemplate))
         DestroySprite(&gSprites[task->tShadow]);
     FreeSpriteTilesByTag(TAG_FLYOVER_PLANE);

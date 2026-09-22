@@ -244,12 +244,24 @@ v0.4.0에서는 전국도감 1~386번이 모두 게임 안에서 입수 가능�
 | Skarmory | SEVEN_ISLAND_SEVAULT_CANYON 5% | SEVEN_ISLAND_SEVAULT_CANYON 5% |
 | Bagon | SEVEN_ISLAND_SEVAULT_CANYON 1% | SEVEN_ISLAND_SEVAULT_CANYON 1% |
 
-## 4. 분포 화면 개편 계획
+## 4. 분포 화면 개편 (결과)
 
-- 검사 대상: 모든 야생표(풀숲·파도타기·바위깨기·낚시)의 낮·아침·밤 세 벌, 알터링 동굴의 9세트 전부(항상 알터링 동굴에 표시), 숨겨진 공터 4곳의 포켓몬(상록숲·11번·13번·15번 도로에 표시), 벌레잡기 대회의 포켓몬(상록숲에 표시). 낚시표는 10칸만 읽는다.
-- 세비 제도: 원작은 열린 섬만 그리지만, 그 포켓몬이 사는 섬은 아직 열리지 않았어도 그린다(야생 포켓몬은 모두 서식지가 보여야 하므로).
-- 호연 페이지: FLY용 호연 지도(`graphics/region_map/hoenn.png`)를 분포 화면 크기로 줄인 그림을 쓰고, 에메랄드의 MAPSEC 격자 좌표(`region_map_sections.json`)로 표시를 찍는다. L·R 버튼으로 칸토 ↔ 호연을 바꾸고, 처음에는 그 포켓몬이 사는 지방(칸토에 없고 호연에만 살면 호연)을 보여 준다.
-- 배회 전설은 원작 동작, 서식지가 없는 종은 원작처럼 "AREA UNKNOWN".
+- 검사 대상(`src/wild_pokemon_area.c`의 `FindSpeciesHabitats`): 모든 야생표(풀숲·파도타기·바위깨기·낚시)의 낮·아침·밤 세 벌, 알터링 동굴의 9세트 전부(날짜와 상관없이 항상 알터링 동굴에 표시), 숨겨진 공터 4곳의 포켓몬(`IsHiddenGrottoSpecies`: 상록숲·11번·13번·15번 도로), 벌레잡기 대회의 포켓몬(`IsBugContestSpecies`: 상록숲). 낚시표는 10칸만 읽는다(원작 버그 수정). 같은 표시 칸이 여러 번 찍히지 않도록 칸마다 한 번만 그린다.
+- 세비 제도: 열린 섬에 더해 그 포켓몬이 사는 섬도 그린다. 원작처럼 4~7의섬 중 하나라도 그리면 칸토 지도가 위로 붙는다.
+- 호연 페이지: `tools/dex_habitat/make_hoenn_area_map.py`가 FLY용 호연 지도(`graphics/region_map/hoenn.png`·`hoenn_tilemap.bin`)에서 땅·바다를 읽고, 에메랄드의 MAPSEC 격자(`tools/dex_habitat/hoenn_map_sections.json`, pokeemerald `region_map_sections.json`에서 이 저장소에 있는 MAPSEC만)로 도로·마을을 칸토 분포 지도(`map_kanto.png`)와 같은 색·모양으로 그려 `graphics/pokedex/map_hoenn.png`(128×72)와 표시 위치 표 `src/data/pokedex_area_hoenn.h`를 만든다. 표시는 MAPSEC마다 하나, 칸 수에 맞는 모양(원·가로·세로)이다. 에메랄드의 알터링 동굴(103번 도로)은 FR/LG와 같은 `MAPSEC_ALTERING_CAVE`를 쓰므로 따로 처리하고, 호연에서는 실제로 쓰이는 첫 세트(주뱃)만 센다.
+- 조작: 분포 화면에서 **SELECT**로 칸토 ↔ 호연을 바꾼다(기본 버튼 모드에서 L·R은 도움말을 열기 때문). 아래 조작 줄에 `SELECT REGION`, 지도 위 제목에 `KANTO AREA`/`HOENN AREA`를 표시한다. 처음에는 칸토에 서식지가 있으면 칸토, 호연에만 있으면 호연을 보여 준다.
+- 배회 전설은 원작 동작(칸토 페이지에 현재 위치 하나), 서식지가 없는 종은 두 페이지 모두 "AREA UNKNOWN".
+- 이제 서식지가 안 보이는 입수 가능 종은 서식지 자체가 없는 종(선물·교환·전설 이벤트·진화 전용)뿐이다.
+
+| 확인(에뮬레이터) | 스크린샷 |
+|---|---|
+| 칸토: 블루(5·6·8번 도로) | `docs/screenshots/dex_area_kanto_snubbull.png` |
+| 세비 제도: 딜리버드(4의섬 얼음폭포동굴, 섬이 아직 안 열린 세이브) | `docs/screenshots/dex_area_sevii_delibird.png` |
+| 호연 전용: 포챠나의 진화형 그라에나(처음부터 호연 페이지) | `docs/screenshots/dex_area_hoenn_mightyena.png` |
+| 호연 페이지로 바꾼 지그제구리(101-103·118·119번 도로) | `docs/screenshots/dex_area_hoenn_page_zigzagoon.png` |
+| 알터링 동굴 순환: 메리프(6의섬) | `docs/screenshots/dex_area_altering_cave_mareep.png` |
+| 숨겨진 공터: 마임맨(11번 도로) | `docs/screenshots/dex_area_grotto_mr_mime.png` |
+| 서식지 없음: 뮤 | `docs/screenshots/dex_area_unknown_mew.png` |
 
 ## 5. 도감 설명 페이지 개편 계획
 

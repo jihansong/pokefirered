@@ -16,6 +16,7 @@ bool8 IsDestinationBoxFull(void);
 bool8 ShouldShowBoxWasFullMessage(void);
 u16 GetHiddenItemAttr(u32 hiddenItem, u8 attr);
 u8 GetUnlockedSeviiAreas(void);
+bool8 IsHiddenGrottoSpecies(u8 grotto, u16 species);
 u32 GetPlayerTrainerId(void);
 bool8 CutMoveRuinValleyCheck(void);
 void CutMoveOpenDottedHoleDoor(void);

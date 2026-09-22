@@ -1005,6 +1005,9 @@ extern const u8 gText_CancelPreviousData[];
 extern const u8 gText_Area[];
 extern const u8 gText_Size[];
 extern const u8 gText_AreaUnknown[];
+extern const u8 gText_KantoArea[];
+extern const u8 gText_HoennArea[];
+extern const u8 gText_AreaRegionSwitch[];
 
 // daycare
 extern const u8 gText_Lv[];

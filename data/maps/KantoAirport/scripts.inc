@@ -3,29 +3,34 @@ KantoAirport_MapScripts::
 	.byte 0
 
 @ Until the player has watched it once, the airliner waits out on the runway
-@ and walking into the window lounge sets off its taxi to the gate.
+@ (the window's third block, where the runway's centre line runs) and walking
+@ into the window lounge sets off its taxi to the gate (the window's first block).
 KantoAirport_OnTransition::
 	goto_if_set FLAG_SAW_AIRPORT_PLANE_TAXI, KantoAirport_EventScript_PlaneAtGate
-	setobjectxyperm LOCALID_KANTO_AIRPORT_PLANE, 30, 1
+	setobjectxyperm LOCALID_KANTO_AIRPORT_PLANE, 29, 0
 	setvar VAR_TEMP_1, 1
 	end
 
 KantoAirport_EventScript_PlaneAtGate::
 	end
 
-@ The first time the player steps into the lounge: walk up to the glass and
-@ watch the plane roll down the runway, turn onto the apron and stop at the gate.
+@ The first time the player steps into the lounge: walk up to the window (the
+@ glass is x=27..30 of the wall, rows 0..1) and watch the plane roll down the
+@ runway, turn onto the apron and stop at the gate.
 KantoAirport_EventScript_PlaneTaxi::
 	lockall
 	setvar VAR_TEMP_1, 0
 	getplayerxy VAR_0x8004, VAR_0x8005
 KantoAirport_EventScript_PlaneTaxiWalkUp::
-	goto_if_le VAR_0x8005, 4, KantoAirport_EventScript_PlaneTaxiWatch
+	goto_if_le VAR_0x8005, 2, KantoAirport_EventScript_PlaneTaxiWalkRight
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	subvar VAR_0x8005, 1
 	goto KantoAirport_EventScript_PlaneTaxiWalkUp
 
+KantoAirport_EventScript_PlaneTaxiWalkRight::
+	applymovement LOCALID_PLAYER, KantoAirport_Movement_PlayerToWindow
+	waitmovement 0
 KantoAirport_EventScript_PlaneTaxiWatch::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
@@ -39,12 +44,21 @@ KantoAirport_EventScript_PlaneTaxiWatch::
 	releaseall
 	end
 
+@ from the lounge entrance (x=25) to the middle of the window (x=28)
+KantoAirport_Movement_PlayerToWindow:
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+@ Everything behind the glass is at half scale: one block down the runway, a
+@ pause to turn, two blocks along the taxiway line to the gate (v0.3.0: two
+@ down and three across, at the same walk_slower pace).
 KantoAirport_Movement_PlaneTaxi:
 	walk_slower_down
-	walk_slower_down
+	delay_16
 	face_left
 	delay_16
-	walk_slower_left
 	walk_slower_left
 	walk_slower_left
 	delay_16

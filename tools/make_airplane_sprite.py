@@ -1,11 +1,20 @@
 #!/usr/bin/env python3
-"""Draw the parked airliner that stands on the Vermilion airport apron.
+"""Draw the airliners of the Vermilion airport.
 
-A 30x30 top down plane inside a 32x32 sprite frame (the GBA only has 8, 16,
-32 and 64 pixel sprites), drawn with the colours the truck palette already
-has so the two share one object palette slot. The sheet holds three frames,
-in the order the standard facing animations use them: nose south, nose north
-and nose west (east is west flipped).
+The parked airliner is a 20x20 top down plane inside a 32x32 sprite frame (the
+GBA only has 8, 16, 32 and 64 pixel sprites), drawn pixel by pixel from the
+table below with the colours the truck palette already has, so the two share
+one object palette slot. The sheet holds three frames, in the order the
+standard facing animations use them: nose south, nose north and nose west
+(east is west flipped).
+
+The plane that flies over the airport (src/airport_flyover.c) is nearer the
+viewer, so it is drawn half as large again: 30x30, one frame, nose north. Its
+ground shadow is the parked plane's 20x20 silhouette.
+
+The plane seen through the terminal lounge's window is far away, so it is
+drawn at half the parked plane's size: 10x10 in a 16x16 frame, with the same
+three facings (airplane_small.png, OBJ_EVENT_GFX_AIRPLANE_SMALL).
 """
 import os
 from PIL import Image, ImageDraw
@@ -13,6 +22,8 @@ from PIL import Image, ImageDraw
 FR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 OUT = FR + '/graphics/object_events/pics/misc/airplane.png'
 SHADOW_OUT = FR + '/graphics/object_events/pics/misc/airplane_shadow.png'
+SMALL_OUT = FR + '/graphics/object_events/pics/misc/airplane_small.png'
+FLYOVER_OUT = FR + '/graphics/object_events/pics/misc/airplane_flyover.png'
 PALETTE = FR + '/graphics/object_events/palettes/truck.pal'
 
 # indices into the truck palette
@@ -23,8 +34,73 @@ def poly(d, pts, fill):
     d.polygon([(x, y) for x, y in pts], fill=fill)
 
 
+# The parked plane, nose north: the left ten columns of the 20x20 art, the
+# right half is their mirror image. D outline, W white body, o/l/g the greys
+# (light to dark), n navy windows and fin, B the blue livery band, K exhaust.
+SMALL_KEY = {'.': CLEAR, 'D': DARK, 'W': WHITE, 'o': OFFWHITE, 'l': LIGHT,
+             'g': GREY, 'n': NAVY, 'B': BLUE, 'K': BLACK}
+SMALL_LEFT = [
+    '........DD',   # nose
+    '.......DWW',
+    '.......Dnn',   # cockpit
+    '.......DoW',
+    '.......DoW',
+    '.......DnW',   # cabin window
+    '......DDoW',   # wing root
+    '....DDlloW',
+    '..DDlllloW',
+    'DDllllllnW',
+    'DlDggDlloW',   # engine under the wing
+    'DgDggDDDoW',
+    'DDDggD.DoW',   # wing tip
+    '..DKKD.DoW',   # exhaust
+    '.......DoW',
+    '.....DDDBB',   # livery band, tailplane
+    '...DDlllBn',   # fin
+    '...DllllBn',
+    '...DDDDDBn',
+    '.......DDD',
+]
+SMALL_SIZE = 20
+
+
+# The far-away plane behind the lounge window, nose north, same key.
+TINY_LEFT = [
+    '....D',   # nose
+    '...DW',
+    '...Dn',   # cockpit
+    '..DDW',   # wing root
+    'DDllW',
+    'DllgW',
+    'DD.DW',   # wing tips
+    '...DB',   # livery band
+    '.DDln',   # tailplane and fin
+    '..DDD',
+]
+TINY_SIZE = 10
+
+
+def draw_tiny(im):
+    """The 10x10 far-away plane, centred in a 16x16 frame."""
+    off = (16 - TINY_SIZE) // 2
+    for y, left in enumerate(TINY_LEFT):
+        for x, ch in enumerate(left + left[::-1]):
+            if ch != '.':
+                im.putpixel((off + x, off + y), SMALL_KEY[ch])
+
+
+def draw_small(im):
+    """The 20x20 parked plane, centred in the 32x32 frame."""
+    off = (32 - SMALL_SIZE) // 2
+    for y, left in enumerate(SMALL_LEFT):
+        row = left + left[::-1]
+        for x, ch in enumerate(row):
+            if ch != '.':
+                im.putpixel((off + x, off + y), SMALL_KEY[ch])
+
+
 def draw(im):
-    """Draw the left half of the plane; the right half is mirrored onto it."""
+    """Draw the 30x30 plane: the left half; the right half is mirrored onto it."""
     d = ImageDraw.Draw(im)
     # the fuselage is centred between columns 15 and 16, so column c mirrors to 31 - c
     for grow in (1, 0):
@@ -68,7 +144,7 @@ def main():
     pal = [int(v) for line in open(PALETTE).read().splitlines()[3:19] for v in line.split()]
     north = Image.new('P', (32, 32), CLEAR)
     north.putpalette(pal)
-    draw(north)
+    draw_small(north)
     # the plane is centred on (16, 16), so quarter turns keep it inside the frame
     frames = [north.rotate(180), north, north.rotate(90)]
     sheet = Image.new('P', (32, 32 * len(frames)), CLEAR)
@@ -79,9 +155,29 @@ def main():
     used = sorted(set(sheet.getdata()))
     print(f'{OUT}: {sheet.size[0]}x{sheet.size[1]}, {len(frames)} frames, {len(used)} colours {used}')
 
-    # The ground shadow of the plane flying over the airport (src/airport_flyover.c):
-    # its silhouette, nose north, as a checkerboard of the palette's darkest blue,
-    # so the ground shows through every other pixel.
+    # The far-away plane behind the lounge window: 16x16 frames, same order.
+    tiny = Image.new('P', (16, 16), CLEAR)
+    tiny.putpalette(pal)
+    draw_tiny(tiny)
+    tframes = [tiny.rotate(180), tiny, tiny.rotate(90)]
+    tsheet = Image.new('P', (16, 16 * len(tframes)), CLEAR)
+    tsheet.putpalette(pal)
+    for i, f in enumerate(tframes):
+        tsheet.paste(f, (0, 16 * i))
+    tsheet.save(SMALL_OUT)
+    print(f'{SMALL_OUT}: {tsheet.size[0]}x{tsheet.size[1]}, {len(tframes)} frames')
+
+    # The plane flying over the airport, 30x30, nose north.
+    big = Image.new('P', (32, 32), CLEAR)
+    big.putpalette(pal)
+    draw(big)
+    big.save(FLYOVER_OUT)
+    print(f'{FLYOVER_OUT}: 32x32, colours {sorted(set(big.getdata()))}')
+
+    # Its ground shadow (src/airport_flyover.c): the 20x20 silhouette, nose
+    # north, as a checkerboard of the palette's darkest blue, so the ground
+    # shows through every other pixel. It stays two thirds the size of the
+    # plane, as it was when the flyover was the 30x30 plane drawn 1.5x.
     shadow = Image.new('P', (32, 32), CLEAR)
     shadow.putpalette(pal)
     for y in range(32):
@@ -89,7 +185,7 @@ def main():
             if north.getpixel((x, y)) != CLEAR and (x + y) % 2 == 0:
                 shadow.putpixel((x, y), DARK)
     shadow.save(SHADOW_OUT)
-    print(f'{SHADOW_OUT}: 32x32 shadow, colours {sorted(set(shadow.getdata()))}')
+    print(f'{SHADOW_OUT}: 20x20 shadow in 32x32, colours {sorted(set(shadow.getdata()))}')
 
 
 if __name__ == '__main__':

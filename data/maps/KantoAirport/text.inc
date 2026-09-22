@@ -43,7 +43,7 @@ KantoAirport_Text_Traveler::
 
 KantoAirport_Text_Woman::
     .string "I love watching the planes from the\n"
-    .string "big windows in the east lounge.\p"
+    .string "window in the east lounge.\p"
     .string "You can see the whole runway from\n"
     .string "the lawn north of the terminal, too.$"
 
@@ -57,9 +57,10 @@ KantoAirport_Text_PlaneSpotter::
     .string "every so often!$"
 
 KantoAirport_Text_PlaneSpotterSaw::
-    .string "Did you see it come in? It rolls\n"
-    .string "down the runway, turns onto the\l"
-    .string "apron and stops right at the glass.\p"
+    .string "Did you see it come in? It looks\n"
+    .string "tiny from here, it's so far out!\p"
+    .string "It rolls down the runway, turns onto\n"
+    .string "the apron and stops at the gate.\p"
     .string "Outside, the lawn north of the\n"
     .string "terminal has the best view of the\l"
     .string "runway and the parked planes.$"

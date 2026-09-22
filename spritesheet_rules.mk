@@ -22,6 +22,9 @@ $(OBJEVENTGFXDIR)/misc/truck.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/misc/airplane.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/misc/airplane_small.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 2
+
 $(OBJEVENTGFXDIR)/misc/town_map.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
 

@@ -4,6 +4,7 @@ MtMoon_B2F_MapScripts::
 
 MtMoon_B2F_OnTransition::
 	call MtMoon_B2F_EventScript_HideJessieJames
+	call MtMoon_B2F_EventScript_SetUpRocketClefairy
 	call MtMoon_B2F_EventScript_SetUpClefairyDance
 	call MtMoon_B2F_EventScript_SetUpJirachiStar
 	call_if_unset FLAG_GOT_FOSSIL_FROM_MT_MOON, MtMoon_B2F_EventScript_ShowFossils
@@ -164,18 +165,83 @@ MtMoon_B2F_EventScript_JessieJames::
 	waitmovement 0
 	call_if_eq VAR_TEMP_1, 0, MtMoon_B2F_EventScript_JessieJamesAppear0
 	call_if_eq VAR_TEMP_1, 1, MtMoon_B2F_EventScript_JessieJamesAppear1
+	@ Thunder Yellow v0.5.0, TEAM ROCKET event 2: they are after the MOON STONE the
+	@ CLEFAIRY here keep, and MEOWTH remembers the PIKACHU from VIRIDIAN.
+	setobjectxyperm LOCALID_MT_MOON_MEOWTH, 5, 5
+	addobject LOCALID_MT_MOON_MEOWTH
+	setobjectxyperm LOCALID_MT_MOON_ROCKET_CLEFAIRY, 0, 5
+	clearflag FLAG_TEMP_2
+	addobject LOCALID_MT_MOON_ROCKET_CLEFAIRY
+	applymovement LOCALID_MT_MOON_ROCKET_CLEFAIRY, MtMoon_B2F_Movement_ClefairyRunsIn
+	waitmovement 0
+	playmoncry SPECIES_CLEFAIRY, CRY_MODE_NORMAL
+	waitmoncry
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox MtMoon_B2F_Text_JessieFollowClefairy
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox MtMoon_B2F_Text_JamesMoonStone
+	call_if_set FLAG_ROCKET_VIRIDIAN_PC, MtMoon_B2F_EventScript_MeowthRemembersPikachu
+	call EventScript_RocketTrioMotto
+	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox MtMoon_B2F_Text_JessieJamesIntro
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_MT_MOON_JESSIE
 	trainerbattle_no_intro TRAINER_JESSIE_JAMES_MT_MOON, MtMoon_B2F_Text_JessieJamesDefeat
 	msgbox MtMoon_B2F_Text_JessieJamesBlastOff
 	closemessage
-	fadescreen FADE_TO_BLACK
+	setvar VAR_0x8008, LOCALID_MT_MOON_JESSIE
+	setvar VAR_0x8009, LOCALID_MT_MOON_JAMES
+	setvar VAR_0x800A, LOCALID_MT_MOON_MEOWTH
+	special RocketTrioBlastOff
+	waitstate
 	removeobject LOCALID_MT_MOON_JESSIE
 	removeobject LOCALID_MT_MOON_JAMES
-	fadescreen FADE_FROM_BLACK
+	removeobject LOCALID_MT_MOON_MEOWTH
 	setvar VAR_MAP_SCENE_MT_MOON_B2F_JESSIE_JAMES, 2
+	fadedefaultbgm
+	call MtMoon_B2F_EventScript_ClefairyThanks
 	releaseall
+	end
+
+MtMoon_B2F_EventScript_MeowthRemembersPikachu::
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox MtMoon_B2F_Text_MeowthRemembersPikachu
+	return
+
+MtMoon_B2F_Movement_ClefairyRunsIn:
+	walk_fast_right
+	walk_fast_right
+	face_right
+	step_end
+
+@ The CLEFAIRY they chased thanks the player with a MOON STONE, once.
+MtMoon_B2F_EventScript_ClefairyThanks::
+	goto_if_set FLAG_ROCKET_MT_MOON_CLEFAIRY, EventScript_Return
+	playmoncry SPECIES_CLEFAIRY, CRY_MODE_NORMAL
+	waitmoncry
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox MtMoon_B2F_Text_ClefairyGrateful
+	giveitem ITEM_MOON_STONE
+	setflag FLAG_ROCKET_MT_MOON_CLEFAIRY
+	msgbox MtMoon_B2F_Text_ClefairyHopsAway
+	closemessage
+	removeobject LOCALID_MT_MOON_ROCKET_CLEFAIRY
+	return
+
+@ Saves that beat JESSIE & JAMES here before v0.5.0 find the CLEFAIRY waiting.
+MtMoon_B2F_EventScript_SetUpRocketClefairy::
+	setflag FLAG_TEMP_2
+	goto_if_set FLAG_ROCKET_MT_MOON_CLEFAIRY, EventScript_Return
+	goto_if_ne VAR_MAP_SCENE_MT_MOON_B2F_JESSIE_JAMES, 2, EventScript_Return
+	clearflag FLAG_TEMP_2
+	return
+
+MtMoon_B2F_EventScript_RocketClefairy::
+	lock
+	faceplayer
+	msgbox MtMoon_B2F_Text_ClefairyRemembersYou
+	call MtMoon_B2F_EventScript_ClefairyThanks
+	release
 	end
 
 MtMoon_B2F_EventScript_JessieJamesAppear0::

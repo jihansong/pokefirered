@@ -129,3 +129,36 @@ MtMoon_B2F_Text_StarIsTwinkling::
     .string "Something is twinkling where the\n"
     .string "star fell…\p"
     .string "It opened its eyes!$"
+
+MtMoon_B2F_Text_JessieFollowClefairy::
+    .string "JESSIE: There it is! Follow that\n"
+    .string "CLEFAIRY and it'll lead us right\l"
+    .string "to the MOON STONE!$"
+
+MtMoon_B2F_Text_JamesMoonStone::
+    .string "JAMES: A stone fallen from the\n"
+    .string "moon itself… The BOSS will adore\l"
+    .string "it. And the fossils, of course!$"
+
+MtMoon_B2F_Text_MeowthRemembersPikachu::
+    .string "MEOWTH: Hey, it's the twerp from\n"
+    .string "VIRIDIAN with the super PIKACHU!\p"
+    .string "Two prizes in one cave. Today's\n"
+    .string "our lucky day!$"
+
+MtMoon_B2F_Text_ClefairyGrateful::
+    .string "The CLEFAIRY TEAM ROCKET was\n"
+    .string "chasing hopped over.\p"
+    .string "It set something shiny down at\n"
+    .string "your feet!$"
+
+MtMoon_B2F_Text_ClefairyHopsAway::
+    .string "CLEFAIRY hopped off happily into\n"
+    .string "the dark.$"
+
+MtMoon_B2F_Text_ClefairyRemembersYou::
+    .string "CLEFAIRY: Pippi!\p"
+    .string "It's the CLEFAIRY that TEAM ROCKET\n"
+    .string "was after. It seems to remember\l"
+    .string "you drove them off.$"
+

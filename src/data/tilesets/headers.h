@@ -781,3 +781,14 @@ const struct Tileset gTileset_SilverPeak =
     .metatileAttributes = gMetatileAttributes_SeviiIslands123,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_SilverGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General,
+    .palettes = gTilesetPalettes_SilverGeneral,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};

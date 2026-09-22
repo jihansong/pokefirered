@@ -18,7 +18,7 @@ IndigoPlateau_Exterior_Text_JamesNoChallenges::
 
 IndigoPlateau_Exterior_Text_PikachuZapsTorch::
     .string "PIKACHU sprang forward and\n"
-    .string "and unleashed a THUNDERBOLT!$"
+    .string "unleashed a THUNDERBOLT!$"
 
 IndigoPlateau_Exterior_Text_WindGusts::
     .string "A strong wind swept down from\n"

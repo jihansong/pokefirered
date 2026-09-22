@@ -73,3 +73,36 @@ CinnabarIsland_Text_IfYouHaveTriPassYouCanGoAgain::
     .string "VERMILION PORT.\p"
     .string "All right, thanks for your company!$"
 
+CinnabarIsland_Text_JessieMagmarCaller::
+    .string "JESSIE: With this MAGMAR CALLER,\n"
+    .string "the fire POKéMON sleeping under\l"
+    .string "the volcano will come right to us!$"
+
+CinnabarIsland_Text_JamesFireArmy::
+    .string "JAMES: An army of fire POKéMON for\n"
+    .string "the BOSS! He'll finally notice us!$"
+
+CinnabarIsland_Text_MeowthTwerpAgain::
+    .string "MEOWTH: Hold it! It's da twerp with\n"
+    .string "da super PIKACHU! Grab it before\l"
+    .string "it zaps us again!$"
+
+CinnabarIsland_Text_RocketMagmarIntro::
+    .string "JESSIE & JAMES: This time, WE'RE\n"
+    .string "the ones bringing the heat!$"
+
+CinnabarIsland_Text_RocketMagmarDefeat::
+    .string "Burned out… again!$"
+
+CinnabarIsland_Text_CallerStillBuzzing::
+    .string "The MAGMAR CALLER they dropped is\n"
+    .string "still buzzing loudly…$"
+
+CinnabarIsland_Text_MagmarBurstsOut::
+    .string "A furious MAGMAR burst out of the\n"
+    .string "ruins of the POKéMON MANSION!$"
+
+CinnabarIsland_Text_CallerFallsSilent::
+    .string "The MAGMAR CALLER sparked once and\n"
+    .string "fell silent.$"
+

@@ -3906,6 +3906,30 @@ static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesSafari[] = {
     },
 };
 
+// after SILPH CO. (31): KOFFING has grown into WEEZING
+static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesCinnabar[] = {
+    {
+        .iv = 0,
+        .lvl = 36,
+        .species = SPECIES_WEEZING,
+    },
+    {
+        .iv = 0,
+        .lvl = 36,
+        .species = SPECIES_ARBOK,
+    },
+    {
+        .iv = 0,
+        .lvl = 35,
+        .species = SPECIES_WEEPINBELL,
+    },
+    {
+        .iv = 0,
+        .lvl = 36,
+        .species = SPECIES_MEOWTH,
+    },
+};
+
 static const struct TrainerMonNoItemDefaultMoves sParty_RivalOaksLabEevee[] = {
     {
         .iv = 0,

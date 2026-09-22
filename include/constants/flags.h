@@ -553,7 +553,7 @@
 #define FLAG_ROCKET_SS_ANNE      0x213 // v0.5.0 event 4: TEAM ROCKET's S.S. ANNE plot
 #define FLAG_ROCKET_CELADON_GYM  0x214 // v0.5.0 event 6: JAMES's disguise and the perfume fuss at the CELADON GYM
 #define FLAG_ROCKET_SAFARI_DRATINI 0x215 // v0.5.0 event 7: TEAM ROCKET's DRATINI poaching stopped at the SAFARI ZONE gate
-#define FLAG_0x216               0x216
+#define FLAG_ROCKET_CINNABAR     0x216 // v0.5.0 event 8: TEAM ROCKET's MAGMAR lure at the POKéMON MANSION
 #define FLAG_0x217               0x217
 #define FLAG_0x218               0x218
 #define FLAG_0x219               0x219

@@ -470,3 +470,13 @@ OneIsland_PokemonCenter_1F_Text_Rumor12::
     .string "PATH.\p"
     .string "The young man living there only\n"
     .string "talks to LEAGUE CHAMPIONS.$"
+
+OneIsland_PokemonCenter_1F_Text_Rumor13::
+    .string "Past SEVAULT CANYON there's a cave\n"
+    .string "in the cliff, and behind it a\l"
+    .string "mountain buried in snow.\p"
+    .string "A blizzard turns back anyone who\n"
+    .string "hasn't filled the KANTO POKéDEX or\l"
+    .string "won the CHAMPION TOURNAMENT.\p"
+    .string "They say someone waits at the top,\n"
+    .string "and never says a word.$"

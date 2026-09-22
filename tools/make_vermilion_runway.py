@@ -55,6 +55,7 @@ DOOR_X, DOOR_Y = 35, 12
 
 X0, X1, Y0, Y1 = 30, 47, 0, 13     # the rectangle this tool owns
 RUNWAY_X, RUNWAY_Y0, RUNWAY_Y1 = 42, 3, 12
+ATTRS = FR + '/data/tilesets/secondary/vermilion_city/metatile_attributes.bin'
 
 
 def tree(x, y, bottom=False, left=False):
@@ -164,6 +165,13 @@ def main():
         assert X0 <= x <= X1 and Y0 <= y <= Y1
         blocks[y * w + x] = (block & 0x3FF) | (collision << 10) | (elevation << 12)
     open(path, 'wb').write(struct.pack('<%dH' % (w * h), *blocks))
+    # The terminal's blocks were copied from the POKeMON MART building and kept its
+    # MB_POKEMART_SIGN behavior, so reading the terminal wall printed the mart's
+    # sign text. Only the terminal uses these blocks, so clear them to MB_NORMAL.
+    attrs = bytearray(open(ATTRS, 'rb').read())
+    for block in {b for row in TERMINAL for b in row}:
+        attrs[(block - 640) * 4] = 0
+    open(ATTRS, 'wb').write(attrs)
     print(f'{LAYOUT}: terminal 8x4 at x={TERMINAL_X}..{TERMINAL_X + 7}, runway x={RUNWAY_X}..'
           f'{RUNWAY_X + 3} y={RUNWAY_Y0}..{RUNWAY_Y1}, airside x=31..45 y=2..12')
 

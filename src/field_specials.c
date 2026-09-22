@@ -50,6 +50,8 @@
 #include "constants/event_objects.h"
 #include "constants/metatile_labels.h"
 #include "constants/easy_chat.h"
+#include "constants/opponents.h"
+#include "data.h"
 
 static EWRAM_DATA u8 sElevatorCurrentFloorWindowId = 0;
 static EWRAM_DATA u16 sElevatorScroll = 0;
@@ -2500,6 +2502,63 @@ void SilverMountain_SetBlizzardGate(void)
                  && (FlagGet(FLAG_WON_CHAMPION_TOURNAMENT) || HasAllKantoMons());
 
     VarSet(VAR_TEMP_1, mayPass ? 0 : 1);
+}
+
+// The INDIGO PLATEAU champion tournament: three matches against entrants drawn
+// from the eight GYM LEADERS, the ELITE FOUR, the RIVAL, PROF. OAK, N and TEAM
+// ROCKET's JESSIE & JAMES (tools/make_tournament.py).
+#define TOURNEY_ROUNDS 3
+
+// Special: draws three different entrants and starts the tournament
+void Tournament_Draw(void)
+{
+    u8 pool[TOURNEY_ENTRANT_COUNT];
+    u8 i, j, swap;
+    u16 packed = 0;
+
+    for (i = 0; i < TOURNEY_ENTRANT_COUNT; i++)
+        pool[i] = i;
+    for (i = TOURNEY_ENTRANT_COUNT - 1; i > 0; i--)
+    {
+        j = Random() % (i + 1);
+        swap = pool[i];
+        pool[i] = pool[j];
+        pool[j] = swap;
+    }
+    for (i = 0; i < TOURNEY_ROUNDS; i++)
+        packed |= pool[i] << (5 * i);
+    VarSet(VAR_TOURNEY_DRAW, packed);
+    VarSet(VAR_TOURNEY_ROUND, 1);
+}
+
+// Special: VAR_0x8008 is this match's entrant, with the round in STR_VAR_1 and
+// the entrant's class and name in STR_VAR_2 and STR_VAR_3
+void Tournament_SetUpMatch(void)
+{
+    u8 round = VarGet(VAR_TOURNEY_ROUND);
+    u8 entrant = (VarGet(VAR_TOURNEY_DRAW) >> (5 * (round - 1))) & 31;
+    u16 trainerId = TRAINER_TOURNEY_BROCK + entrant;
+
+    VarSet(VAR_0x8008, entrant);
+    ConvertIntToDecimalStringN(gStringVar1, round, STR_CONV_MODE_LEFT_ALIGN, 1);
+    StringCopy(gStringVar2, gTrainerClassNames[gTrainers[trainerId].trainerClass]);
+    StringCopy(gStringVar3, gTrainers[trainerId].trainerName);
+}
+
+// Special: VAR_RESULT is TRUE once all three matches are won
+void Tournament_NextRound(void)
+{
+    u8 round = VarGet(VAR_TOURNEY_ROUND) + 1;
+
+    VarSet(VAR_TOURNEY_ROUND, round);
+    gSpecialVar_Result = (round > TOURNEY_ROUNDS);
+}
+
+// Special: leaves the tournament (also run on entering the hall, so a loss or a
+// reset never leaves the player mid-tournament)
+void Tournament_Reset(void)
+{
+    VarSet(VAR_TOURNEY_ROUND, 0);
 }
 
 // Special: the summit TRAINER was beaten today

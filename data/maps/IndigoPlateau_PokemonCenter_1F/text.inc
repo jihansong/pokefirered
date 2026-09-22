@@ -41,3 +41,19 @@ IndigoPlateau_PokemonCenter_1F_Text_LancesCousinGymLeaderFarAway::
     .string "a cousin who's a GYM LEADER\l"
     .string "somewhere far away.$"
 
+IndigoPlateau_PokemonCenter_1F_Text_TourneyWelcome::
+    .string "The CHAMPION TOURNAMENT is held in\n"
+    .string "the hall behind this CENTER.\p"
+    .string "LEADERS, the ELITE FOUR and other\n"
+    .string "famous TRAINERS enter the draw.\p"
+    .string "Would you like to go through?$"
+
+IndigoPlateau_PokemonCenter_1F_Text_TourneyLater::
+    .string "The hall is always open to a\n"
+    .string "CHAMPION. Come back anytime!$"
+
+IndigoPlateau_PokemonCenter_1F_Text_TourneyClosed::
+    .string "The CHAMPION TOURNAMENT is for\n"
+    .string "TRAINERS who have entered the\l"
+    .string "HALL OF FAME and settled the\l"
+    .string "trouble on the SEVII ISLANDS.$"

@@ -68,3 +68,27 @@ IndigoPlateau_PokemonCenter_1F_EventScript_Nurse::
 	call EventScript_PkmnCenterNurse
 	release
 	end
+
+@ v0.6.0: the way into the CHAMPION TOURNAMENT next door.
+IndigoPlateau_PokemonCenter_1F_EventScript_TourneyReceptionist::
+	lock
+	faceplayer
+	goto_if_unset FLAG_SYS_GAME_CLEAR, IndigoPlateau_PokemonCenter_1F_EventScript_TourneyClosed
+	goto_if_unset FLAG_RECOVERED_SAPPHIRE, IndigoPlateau_PokemonCenter_1F_EventScript_TourneyClosed
+	msgbox IndigoPlateau_PokemonCenter_1F_Text_TourneyWelcome, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, IndigoPlateau_PokemonCenter_1F_EventScript_TourneyLater
+	closemessage
+	warp MAP_TOURNAMENT_HALL, 8, 16
+	waitstate
+	release
+	end
+
+IndigoPlateau_PokemonCenter_1F_EventScript_TourneyLater::
+	msgbox IndigoPlateau_PokemonCenter_1F_Text_TourneyLater
+	release
+	end
+
+IndigoPlateau_PokemonCenter_1F_EventScript_TourneyClosed::
+	msgbox IndigoPlateau_PokemonCenter_1F_Text_TourneyClosed
+	release
+	end

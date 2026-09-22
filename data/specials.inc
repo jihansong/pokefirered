@@ -503,5 +503,9 @@ gSpecials::
 	def_special OldTimer_RecordWin
 	def_special SummitTrainer_Setup
 	def_special SilverMountain_SetBlizzardGate
+	def_special Tournament_Draw
+	def_special Tournament_SetUpMatch
+	def_special Tournament_NextRound
+	def_special Tournament_Reset
 	def_special SummitTrainer_RecordWin
 gSpecialsEnd::

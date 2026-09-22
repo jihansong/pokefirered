@@ -280,7 +280,8 @@
     "SilverMountain_1F",
     "SilverMountain_2F",
     "SilverMountain_3F",
-    "SilverMountain_Summit"
+    "SilverMountain_Summit",
+    "TournamentHall"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PalletTown",

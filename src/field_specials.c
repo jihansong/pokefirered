@@ -2872,6 +2872,15 @@ static const struct HiddenGrotto sHiddenGrottoes[GROTTO_COUNT] = {
     {{SPECIES_KANGASKHAN, SPECIES_TAUROS}, 27, {ITEM_PP_UP, ITEM_BIG_PEARL, ITEM_NUGGET}},              // Route 15
 };
 
+// For the Pokédex area screen: is this species one of the grotto's POKéMON?
+// Grottoes 0-3 are the ones in Viridian Forest and on Routes 11, 13 and 15.
+bool8 IsHiddenGrottoSpecies(u8 grotto, u16 species)
+{
+    if (grotto >= GROTTO_COUNT)
+        return FALSE;
+    return sHiddenGrottoes[grotto].species[0] == species || sHiddenGrottoes[grotto].species[1] == species;
+}
+
 static s32 GetCurrentGrotto(void)
 {
     u16 id = VarGet(VAR_HIDDEN_GROTTO_ID);

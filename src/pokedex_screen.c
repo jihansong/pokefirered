@@ -19,6 +19,8 @@
 #include "constants/songs.h"
 #include "constants/sound.h"
 #include "pokedex_area_markers.h"
+#include "wild_pokemon_area.h"
+#include "battle_main.h"
 #include "field_specials.h"
 
 #define TAG_AREA_MARKERS 2001
@@ -73,6 +75,7 @@ struct PokedexScreenData
     u8 categoryPageCursorTaskId;
     u16 modeSelectCursorPosBak;
     u8 unlockedSeviiAreas;
+    u8 areaRegion; // DEX_AREA_REGION_*, or DEX_AREA_REGION_COUNT for the species' home
     u16 numSeenKanto;
     u16 numOwnedKanto;
     u16 numSeenNational;
@@ -113,6 +116,7 @@ static void DexScreen_AddTextPrinterParameterized(u8 windowId, u8 fontId, const 
 static void DexScreen_PrintNum3RightAlign(u8 windowId, u8 fontId, u16 num, u8 x, u8 y, u8 colorIdx);
 static void DexScreen_PrintMonDexNo(u8 windowId, u8 fontId, u16 species, u8 x, u8 y);
 static u16 DexScreen_GetDexCount(u8 caseId, bool8 whichDex);
+static bool8 DexScreen_ShowsMonData(u16 species, bool8 indexIsSpecies);
 static void DexScreen_PrintControlInfo(const u8 *src);
 static void DexScreen_DestroyCategoryPageMonIconAndInfoWindows(void);
 static bool8 DexScreen_CreateCategoryListGfx(bool8 justRegistered);
@@ -128,6 +132,7 @@ static bool8 DexScreen_IsCategoryUnlocked(u8 category);
 static u8 DexScreen_GetPageLimitsForCategory(u8 category);
 static bool8 DexScreen_LookUpCategoryBySpecies(u16 species);
 u8 DexScreen_DestroyAreaScreenResources(void);
+static bool8 DexScreen_TrySwitchAreaRegion(void);
 void DexScreen_CreateCategoryPageSpeciesList(u8 category, u8 pageNum);
 static u8 DexScreen_PageNumberToRenderablePages(u16 page);
 void DexScreen_InputHandler_StartToCry(void);
@@ -194,6 +199,7 @@ const u32 sTilemap_AreaMap_FourIsland[] = INCBIN_U32("graphics/pokedex/map_four_
 const u32 sTilemap_AreaMap_FiveIsland[] = INCBIN_U32("graphics/pokedex/map_five_island.4bpp.lz");
 const u32 sTilemap_AreaMap_SixIsland[] = INCBIN_U32("graphics/pokedex/map_six_island.4bpp.lz");
 const u32 sTilemap_AreaMap_SevenIsland[] = INCBIN_U32("graphics/pokedex/map_seven_island.4bpp.lz");
+static const u32 sTilemap_AreaMap_Hoenn[] = INCBIN_U32("graphics/pokedex/map_hoenn.4bpp.lz");
 const u16 sBlitTiles_WideEllipse[] = INCBIN_U16("graphics/pokedex/blit_wide_ellipse.4bpp");
 
 #include "data/pokemon/pokedex_orders.h"
@@ -680,6 +686,17 @@ const struct WindowTemplate sWindowTemplate_AreaMap_Kanto = {
     .tilemapLeft = 17,
     .tilemapTop = 4,
     .width = 12,
+    .height = 9,
+    .paletteNum = 0,
+    .baseBlock = 0x0208
+};
+
+// Drawn instead of Kanto and the Sevii Islands, so it reuses their tiles
+static const struct WindowTemplate sWindowTemplate_AreaMap_Hoenn = {
+    .bg = 2,
+    .tilemapLeft = HOENN_AREA_MAP_LEFT,
+    .tilemapTop = HOENN_AREA_MAP_TOP,
+    .width = 16,
     .height = 9,
     .paletteNum = 0,
     .baseBlock = 0x0208
@@ -1766,6 +1783,7 @@ static void Task_DexScreen_CategorySubmenu(u8 taskId)
             RemoveDexPageWindows();
             FillBgTilemapBufferRect_Palette0(1, 0x000, 0, 2, 30, 16);
             CopyBgTilemapBufferToVram(1);
+            sPokedexScreenData->areaRegion = DEX_AREA_REGION_COUNT;
             sPokedexScreenData->state = 21;
         }
         else if (JOY_NEW(B_BUTTON))
@@ -1844,7 +1862,7 @@ static void Task_DexScreen_CategorySubmenu(u8 taskId)
             CopyBgTilemapBufferToVram(0);
             sPokedexScreenData->state = 24;
         }
-        else
+        else if (!DexScreen_TrySwitchAreaRegion())
         {
             DexScreen_InputHandler_StartToCry();
         }
@@ -1947,6 +1965,7 @@ static void Task_DexScreen_ShowMonPage(u8 taskId)
             RemoveDexPageWindows();
             FillBgTilemapBufferRect_Palette0(1, 0x000, 0, 2, 30, 16);
             CopyBgTilemapBufferToVram(1);
+            sPokedexScreenData->areaRegion = DEX_AREA_REGION_COUNT;
             sPokedexScreenData->state = 7;
         }
         else if (JOY_NEW(B_BUTTON))
@@ -2005,7 +2024,7 @@ static void Task_DexScreen_ShowMonPage(u8 taskId)
             CopyBgTilemapBufferToVram(0);
             sPokedexScreenData->state = 10;
         }
-        else
+        else if (!DexScreen_TrySwitchAreaRegion())
         {
             DexScreen_InputHandler_StartToCry();
         }
@@ -2270,6 +2289,14 @@ s8 DexScreen_GetSetPokedexFlag(u16 nationalDexNo, u8 caseId, bool8 indexIsSpecie
         break;
     }
     return retVal;
+}
+
+// Thunder Yellow shows a species' data (category, size, entry, ability, types)
+// once it is registered as seen, not only once it is caught. Every species
+// in the POKéDEX can be obtained in the game (docs/dex-completion.md).
+static bool8 DexScreen_ShowsMonData(u16 species, bool8 indexIsSpecies)
+{
+    return DexScreen_GetSetPokedexFlag(species, FLAG_GET_SEEN, indexIsSpecies);
 }
 
 static u16 DexScreen_GetDexCount(u8 caseId, bool8 whichDex)
@@ -2679,7 +2706,7 @@ void DexScreen_PrintMonCategory(u8 windowId, u16 species, u8 x, u8 y)
 
     categoryName = (u8 *)gPokedexEntries[species].categoryName;
     index = 0;
-    if (DexScreen_GetSetPokedexFlag(species, FLAG_GET_CAUGHT, FALSE))
+    if (DexScreen_ShowsMonData(species, FALSE))
     {
 #if REVISION == 0
         while ((categoryName[index] != CHAR_SPACE) && (index < 11))
@@ -2725,7 +2752,7 @@ void DexScreen_PrintMonHeight(u8 windowId, u16 species, u8 x, u8 y)
     buffer[i++] = 5;
     buffer[i++] = CHAR_SPACE;
 
-    if (DexScreen_GetSetPokedexFlag(species, FLAG_GET_CAUGHT, FALSE))
+    if (DexScreen_ShowsMonData(species, FALSE))
     {
         inches = 10000 * height / 254; // actually tenths of inches here
         if (inches % 10 >= 5)
@@ -2785,7 +2812,7 @@ void DexScreen_PrintMonWeight(u8 windowId, u16 species, u8 x, u8 y)
     buffer[i++] = EXT_CTRL_CODE_MIN_LETTER_SPACING;
     buffer[i++] = 5;
 
-    if (DexScreen_GetSetPokedexFlag(species, FLAG_GET_CAUGHT, FALSE))
+    if (DexScreen_ShowsMonData(species, FALSE))
     {
         lbs = (weight * 100000) / 4536; // Convert to hundredths of lb
 
@@ -2864,7 +2891,7 @@ void DexScreen_PrintMonFlavorText(u8 windowId, u16 species, u8 x, u8 y)
 
     species = SpeciesToNationalPokedexNum(species);
 
-    if (DexScreen_GetSetPokedexFlag(species, FLAG_GET_CAUGHT, FALSE))
+    if (DexScreen_ShowsMonData(species, FALSE))
     {
         printerTemplate.currentChar = gPokedexEntries[species].description;
         printerTemplate.windowId = windowId;
@@ -2893,6 +2920,21 @@ void DexScreen_PrintMonFlavorText(u8 windowId, u16 species, u8 x, u8 y)
     }
 }
 
+// "ABILITY" and the species' one or two abilities, the second under the first
+void DexScreen_PrintMonAbilities(u8 windowId, u16 species, u8 x, u8 y)
+{
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, gText_DexAbility, x, y, 0);
+    if (!DexScreen_ShowsMonData(species, TRUE))
+    {
+        DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, gText_DexAbilityUnknown, x + 38, y, 0);
+        return;
+    }
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, gAbilityNames[gSpeciesInfo[species].abilities[0]], x + 38, y, 0);
+    if (gSpeciesInfo[species].abilities[1] != ABILITY_NONE
+     && gSpeciesInfo[species].abilities[1] != gSpeciesInfo[species].abilities[0])
+        DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, gAbilityNames[gSpeciesInfo[species].abilities[1]], x + 38, y + 9, 0);
+}
+
 void DexScreen_DrawMonFootprint(u8 windowId, u16 species, u8 x, u8 y)
 {
     u16 i, j, unused, tileIdx;
@@ -2900,7 +2942,7 @@ void DexScreen_DrawMonFootprint(u8 windowId, u16 species, u8 x, u8 y)
     u8 * buffer;
     u8 * footprint;
 
-    if (!(DexScreen_GetSetPokedexFlag(species, FLAG_GET_CAUGHT, TRUE)))
+    if (!DexScreen_ShowsMonData(species, TRUE))
         return;
     footprint = (u8 *)(gMonFootprintTable[species]);
     buffer = gDecompressionBuffer;
@@ -2944,12 +2986,14 @@ static u8 DexScreen_DrawMonDexPage(bool8 justRegistered)
 
     // Species stats
     FillWindowPixelBuffer(sPokedexScreenData->windowIds[1], PIXEL_FILL(0));
-    DexScreen_PrintMonDexNo(sPokedexScreenData->windowIds[1], FONT_SMALL, sPokedexScreenData->dexSpecies, 0, 8);
-    DexScreen_AddTextPrinterParameterized(sPokedexScreenData->windowIds[1], FONT_NORMAL, gSpeciesNames[sPokedexScreenData->dexSpecies], 28, 8, 0);
-    DexScreen_PrintMonCategory(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 0, 24);
-    DexScreen_PrintMonHeight(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 0, 36);
-    DexScreen_PrintMonWeight(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 0, 48);
-    DexScreen_DrawMonFootprint(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 88, 40);
+    // Lines packed closer than FR/LG's to make room for the abilities
+    DexScreen_PrintMonDexNo(sPokedexScreenData->windowIds[1], FONT_SMALL, sPokedexScreenData->dexSpecies, 0, 0);
+    DexScreen_AddTextPrinterParameterized(sPokedexScreenData->windowIds[1], FONT_NORMAL, gSpeciesNames[sPokedexScreenData->dexSpecies], 28, 0, 0);
+    DexScreen_PrintMonCategory(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 0, 13);
+    DexScreen_PrintMonHeight(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 0, 22);
+    DexScreen_PrintMonWeight(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 0, 31);
+    DexScreen_PrintMonAbilities(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 0, 40);
+    DexScreen_DrawMonFootprint(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 88, 23);
     PutWindowTilemap(sPokedexScreenData->windowIds[1]);
     CopyWindowToVram(sPokedexScreenData->windowIds[1], COPYWIN_GFX);
 
@@ -2988,14 +3032,15 @@ u8 DexScreen_DrawMonAreaPage(void)
 {
     int i;
     u8 width, height;
-    bool8 monIsCaught;
+    bool8 monDataShown;
     s16 left, top;
     u16 speciesId, species;
     u16 kantoMapVoff;
+    u8 regions, seviiIslands;
 
     species = sPokedexScreenData->dexSpecies;
     speciesId = SpeciesToNationalPokedexNum(species);
-    monIsCaught = DexScreen_GetSetPokedexFlag(species, FLAG_GET_CAUGHT, TRUE);
+    monDataShown = DexScreen_ShowsMonData(species, TRUE);
     width = 28;
     height = 14;
     left = 0;
@@ -3028,7 +3073,19 @@ u8 DexScreen_DrawMonAreaPage(void)
     FillBgTilemapBufferRect_Palette0(2, 0, 0, 0, 30, 20);
     FillBgTilemapBufferRect_Palette0(1, 0, 0, 0, 30, 20);
 
-    sPokedexScreenData->unlockedSeviiAreas = GetUnlockedSeviiAreas();
+    // Which page to show: the one asked for, or where the species lives
+    regions = GetSpeciesPokedexAreaRegions(species, &seviiIslands);
+    if (sPokedexScreenData->areaRegion >= DEX_AREA_REGION_COUNT)
+    {
+        if (!(regions & (1 << DEX_AREA_REGION_KANTO)) && (regions & (1 << DEX_AREA_REGION_HOENN)))
+            sPokedexScreenData->areaRegion = DEX_AREA_REGION_HOENN;
+        else
+            sPokedexScreenData->areaRegion = DEX_AREA_REGION_KANTO;
+    }
+
+    // Unlocked islands, and the islands this species lives on: every wild
+    // POKéMON's habitat is shown, even on an island the player can't reach yet.
+    sPokedexScreenData->unlockedSeviiAreas = GetUnlockedSeviiAreas() | seviiIslands;
     kantoMapVoff = 4;
     // If any of the postgame islands are unlocked, Kanto map needs to be flush with the
     // top of the screen.
@@ -3036,6 +3093,15 @@ u8 DexScreen_DrawMonAreaPage(void)
         if ((sPokedexScreenData->unlockedSeviiAreas >> i) & 1)
             kantoMapVoff = 0;
 
+    if (sPokedexScreenData->areaRegion == DEX_AREA_REGION_HOENN)
+    {
+        kantoMapVoff = HOENN_AREA_MAP_TOP - 4; // moves the AREA label and the markers
+        sPokedexScreenData->windowIds[0] = AddWindow(&sWindowTemplate_AreaMap_Hoenn);
+        CopyToWindowPixelBuffer(sPokedexScreenData->windowIds[0], (void *)sTilemap_AreaMap_Hoenn, 0, 0);
+        PutWindowTilemap(sPokedexScreenData->windowIds[0]);
+    }
+    else
+    {
     sPokedexScreenData->windowIds[0] = AddWindow(&sWindowTemplate_AreaMap_Kanto);
     CopyToWindowPixelBuffer(sPokedexScreenData->windowIds[0], (void *)sTilemap_AreaMap_Kanto, 0, 0);
     SetWindowAttribute(sPokedexScreenData->windowIds[0], WINDOW_TILEMAP_TOP,
@@ -3050,6 +3116,7 @@ u8 DexScreen_DrawMonAreaPage(void)
             PutWindowTilemap(sPokedexScreenData->windowIds[i + 1]);
             CopyWindowToVram(sPokedexScreenData->windowIds[i + 1], COPYWIN_GFX);
         }
+    }
     sPokedexScreenData->windowIds[8] = AddWindow(&sWindowTemplate_AreaMap_SpeciesName);
     sPokedexScreenData->windowIds[9] = AddWindow(&sWindowTemplate_AreaMap_Size);
     sPokedexScreenData->windowIds[10] = AddWindow(&sWindowTemplate_AreaMap_Area);
@@ -3072,11 +3139,12 @@ u8 DexScreen_DrawMonAreaPage(void)
     PutWindowTilemap(sPokedexScreenData->windowIds[9]);
     CopyWindowToVram(sPokedexScreenData->windowIds[9], COPYWIN_GFX);
 
-    // Print "Area"
+    // Print "Kanto area" / "Hoenn area"
     FillWindowPixelBuffer(sPokedexScreenData->windowIds[10], PIXEL_FILL(0));
     {
-        s32 strWidth = GetStringWidth(FONT_SMALL, gText_Area, 0);
-        DexScreen_AddTextPrinterParameterized(sPokedexScreenData->windowIds[10], FONT_SMALL, gText_Area, (sWindowTemplate_AreaMap_Area.width * 8 - strWidth) / 2, 4, 0);
+        const u8 *areaText = sPokedexScreenData->areaRegion == DEX_AREA_REGION_HOENN ? gText_HoennArea : gText_KantoArea;
+        s32 strWidth = GetStringWidth(FONT_SMALL, areaText, 0);
+        DexScreen_AddTextPrinterParameterized(sPokedexScreenData->windowIds[10], FONT_SMALL, areaText, (sWindowTemplate_AreaMap_Area.width * 8 - strWidth) / 2, 4, 0);
     }
     SetWindowAttribute(sPokedexScreenData->windowIds[10], WINDOW_TILEMAP_TOP, GetWindowAttribute(sPokedexScreenData->windowIds[10], WINDOW_TILEMAP_TOP) + kantoMapVoff);
     PutWindowTilemap(sPokedexScreenData->windowIds[10]);
@@ -3093,7 +3161,7 @@ u8 DexScreen_DrawMonAreaPage(void)
     FillWindowPixelBuffer(sPokedexScreenData->windowIds[12], PIXEL_FILL(0));
     ListMenuLoadStdPalAt(BG_PLTT_ID(11), 1);
 
-    if (monIsCaught)
+    if (monDataShown)
     {
         BlitMenuInfoIcon(sPokedexScreenData->windowIds[12], 1 + gSpeciesInfo[species].types[0], 0, 1);
         if (gSpeciesInfo[species].types[0] != gSpeciesInfo[species].types[1])
@@ -3106,7 +3174,7 @@ u8 DexScreen_DrawMonAreaPage(void)
     ResetAllPicSprites();
     LoadPalette(sPalette_Silhouette, OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
 
-    if (monIsCaught)
+    if (monDataShown)
     {
         sPokedexScreenData->windowIds[14] = CreateMonPicSprite_HandleDeoxys(species, SHINY_ODDS, DexScreen_GetDefaultPersonality(species), TRUE, 40, 104, 0, 0xFFFF);
         gSprites[sPokedexScreenData->windowIds[14]].oam.paletteNum = 2;
@@ -3130,14 +3198,16 @@ u8 DexScreen_DrawMonAreaPage(void)
     }
 
     // Create the area markers
-    sPokedexScreenData->areaMarkersTaskId = CreatePokedexAreaMarkers(species, TAG_AREA_MARKERS, 3, kantoMapVoff * 8);
+    sPokedexScreenData->areaMarkersTaskId = CreatePokedexAreaMarkers(species, TAG_AREA_MARKERS, 3, kantoMapVoff * 8,
+                                                                     sPokedexScreenData->areaRegion, sPokedexScreenData->unlockedSeviiAreas);
     if (GetNumPokedexAreaMarkers(sPokedexScreenData->areaMarkersTaskId) == 0)
     {
         // No markers, display "Area Unknown"
-        BlitBitmapRectToWindow(sPokedexScreenData->windowIds[0], (void *)sBlitTiles_WideEllipse, 0, 0, 88, 16, 4, 28, 88, 16);
+        s32 mapWidth = sPokedexScreenData->areaRegion == DEX_AREA_REGION_HOENN ? sWindowTemplate_AreaMap_Hoenn.width * 8 : 96;
+        BlitBitmapRectToWindow(sPokedexScreenData->windowIds[0], (void *)sBlitTiles_WideEllipse, 0, 0, 88, 16, (mapWidth - 88) / 2, 28, 88, 16);
         {
             s32 strWidth = GetStringWidth(FONT_SMALL, gText_AreaUnknown, 0);
-            DexScreen_AddTextPrinterParameterized(sPokedexScreenData->windowIds[0], FONT_SMALL, gText_AreaUnknown, (96 - strWidth) / 2, 29, 0);
+            DexScreen_AddTextPrinterParameterized(sPokedexScreenData->windowIds[0], FONT_SMALL, gText_AreaUnknown, (mapWidth - strWidth) / 2, 29, 0);
         }
     }
     CopyWindowToVram(sPokedexScreenData->windowIds[0], COPYWIN_GFX);
@@ -3145,6 +3215,7 @@ u8 DexScreen_DrawMonAreaPage(void)
     // Draw the control info
     FillWindowPixelBuffer(1, PIXEL_FILL(15));
     DexScreen_AddTextPrinterParameterized(1, FONT_SMALL, gText_Cry, 8, 2, 4);
+    DexScreen_AddTextPrinterParameterized(1, FONT_SMALL, gText_AreaRegionSwitch, 8 + GetStringWidth(FONT_SMALL, gText_Cry, 0) + 8, 2, 4);
     DexScreen_PrintControlInfo(gText_CancelPreviousData);
     PutWindowTilemap(1);
     CopyWindowToVram(1, COPYWIN_GFX);
@@ -3166,6 +3237,26 @@ u8 DexScreen_DestroyAreaScreenResources(void)
     if (sPokedexScreenData->windowIds[14] != 0xff)
         FreeAndDestroyMonPicSprite(sPokedexScreenData->windowIds[14]);
     return 0;
+}
+
+// SELECT on the area screen flips between the Kanto and Hoenn maps (L and R
+// open the help system in the default button mode)
+static bool8 DexScreen_TrySwitchAreaRegion(void)
+{
+    if (!JOY_NEW(SELECT_BUTTON))
+        return FALSE;
+    DexScreen_DestroyAreaScreenResources();
+    if (sPokedexScreenData->areaRegion == DEX_AREA_REGION_HOENN)
+        sPokedexScreenData->areaRegion = DEX_AREA_REGION_KANTO;
+    else
+        sPokedexScreenData->areaRegion = DEX_AREA_REGION_HOENN;
+    PlaySE(SE_SELECT);
+    DexScreen_DrawMonAreaPage();
+    CopyBgTilemapBufferToVram(3);
+    CopyBgTilemapBufferToVram(2);
+    CopyBgTilemapBufferToVram(1);
+    CopyBgTilemapBufferToVram(0);
+    return TRUE;
 }
 
 static int DexScreen_CanShowMonInDex(u16 species)

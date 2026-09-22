@@ -82,3 +82,4 @@ saves/
 
 # Keep your retail ROM here; make clean deletes poke*.gba
 baserom*.gba
+__pycache__/

@@ -2,22 +2,35 @@
 #include "field_specials.h"
 #include "event_data.h"
 #include "wild_encounter.h"
-
-extern const struct WildPokemonHeader gWildMonHeadersMorning[];
-extern const struct WildPokemonHeader gWildMonHeadersNight[];
 #include "roamer.h"
 #include "overworld.h"
 #include "pokedex.h"
 #include "pokedex_area_markers.h"
+#include "bug_contest.h"
+#include "wild_pokemon_area.h"
 #include "constants/region_map_sections.h"
 #include "constants/maps.h"
 
+extern const struct WildPokemonHeader gWildMonHeadersMorning[];
+extern const struct WildPokemonHeader gWildMonHeadersNight[];
+
+// Everything a species' area screen shows, found in one pass
+struct SpeciesHabitats
+{
+    u32 dexAreas[(DEX_AREA_COUNT + 31) / 32];       // Kanto and Sevii markers
+    u32 hoennMapSecs[(KANTO_MAPSEC_START + 31) / 32]; // Hoenn markers
+    bool8 hoennAlteringCave; // pokeemerald's ALTERING CAVE shares FR/LG's MAPSEC
+    u8 seviiIslands;         // bit n: lives on island n + 1
+};
+
 static s32 GetRoamerIndex(u16 species);
 static s32 GetRoamerPokedexAreaMarkers(u16 species, struct Subsprite * subsprites);
+static void FindSpeciesHabitats(u16 species, struct SpeciesHabitats * habitats);
 static bool32 IsSpeciesOnMap(const struct WildPokemonHeader * data, s32 species);
 static bool32 IsSpeciesInEncounterTable(const struct WildPokemonInfo * pokemon, s32 species, s32 count);
 static u16 GetMapSecIdFromWildMonHeader(const struct WildPokemonHeader * header);
 static bool32 FindDexAreaByMapSec(u16 mapSecId, const u16 (*lut)[2], s32 count, s32 * lutIdx_p, u16 * tableIdx_p);
+static s32 GetDexAreaSeviiIsland(u16 dexArea);
 
 static const u16 sDexAreas_Kanto[][2] = {
     { MAPSEC_PALLET_TOWN,         DEX_AREA_PALLET_TOWN },
@@ -158,66 +171,166 @@ static const u16 sRoamerSpecies[] = {
     SPECIES_LATIOS,
 };
 
-// Scans for the given species and populates 'subsprites' with the area markers.
-// Returns the number of areas where the species was found.
-s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites)
+// The Hidden Grottoes (field_specials.c), in order
+static const u8 sGrottoDexAreas[] = {
+    DEX_AREA_VIRIDIAN_FOREST,
+    DEX_AREA_ROUTE_11,
+    DEX_AREA_ROUTE_13,
+    DEX_AREA_ROUTE_15,
+};
+
+#define HABITAT_SET(bits, n) ((bits)[(n) / 32] |= 1u << ((n) % 32))
+#define HABITAT_HAS(bits, n) (((bits)[(n) / 32] >> ((n) % 32)) & 1)
+
+static bool8 IsHoennWildMonHeader(const struct WildPokemonHeader * header)
 {
-    s32 areaCount;
-    s32 j;
-    s32 mapSecId;
-    u16 dexArea;
+    return header->mapGroup >= MAP_GROUP(MAP_PETALBURG_CITY);
+}
+
+// Every real habitat: the land, water, rock smash and fishing tables of all
+// three times of day, all of the Altering Cave's sets, the Hidden Grottoes and
+// the Bug-Catching Contest. Sevii Islands are recorded whether or not they are
+// unlocked.
+static void FindSpeciesHabitats(u16 species, struct SpeciesHabitats * habitats)
+{
+    s32 i, j;
     s32 tableIndex;
-    s32 seviiAreas;
-    s32 alteringCaveCount;
-    s32 alteringCaveNum;
-    s32 i;
+    u16 mapSecId;
+    u16 dexArea;
+    bool8 hoennAlteringCaveSeen = FALSE;
+    const struct WildPokemonHeader * header;
 
-    if (GetRoamerIndex(species) >= 0)
-        return GetRoamerPokedexAreaMarkers(species, subsprites);
-
-    seviiAreas = GetUnlockedSeviiAreas();
-    alteringCaveCount = 0;
-    alteringCaveNum = GetAlteringCaveWildSet();
-    for (i = 0, areaCount = 0; gWildMonHeaders[i].mapGroup != MAP_GROUP(MAP_UNDEFINED); i++)
+    memset(habitats, 0, sizeof(*habitats));
+    for (i = 0; gWildMonHeaders[i].mapGroup != MAP_GROUP(MAP_UNDEFINED); i++)
     {
-        mapSecId = GetMapSecIdFromWildMonHeader(&gWildMonHeaders[i]);
-        if (mapSecId == MAPSEC_ALTERING_CAVE)
+        header = &gWildMonHeaders[i];
+        if (header->mapGroup == MAP_GROUP(MAP_ALTERING_CAVE) && header->mapNum == MAP_NUM(MAP_ALTERING_CAVE))
         {
-            alteringCaveCount++;
-            if (alteringCaveNum != alteringCaveCount - 1)
+            // Only the first of pokeemerald's sets is ever used in Hoenn
+            if (hoennAlteringCaveSeen)
                 continue;
+            hoennAlteringCaveSeen = TRUE;
         }
-        // Species that only appear in the morning or at night count too
-        if (IsSpeciesOnMap(&gWildMonHeaders[i], species)
-         || IsSpeciesOnMap(&gWildMonHeadersMorning[i], species)
-         || IsSpeciesOnMap(&gWildMonHeadersNight[i], species))
-        {
-            // Search for all dex areas associated with this MAPSEC.
-            // In the vanilla game each MAPSEC only has at most one DEX_AREA.
-            tableIndex = 0;
-            while (FindDexAreaByMapSec(mapSecId, sDexAreas_Kanto, ARRAY_COUNT(sDexAreas_Kanto), &tableIndex, &dexArea))
-            {
-                if (dexArea != DEX_AREA_NONE)
-                    GetAreaMarkerSubsprite(areaCount++, dexArea, subsprites);
-            }
+        if (!IsSpeciesOnMap(header, species)
+         && !IsSpeciesOnMap(&gWildMonHeadersMorning[i], species)
+         && !IsSpeciesOnMap(&gWildMonHeadersNight[i], species))
+            continue;
 
-            for (j = 0; j < ARRAY_COUNT(sSeviiDexAreas); j++)
+        mapSecId = GetMapSecIdFromWildMonHeader(header);
+        if (IsHoennWildMonHeader(header))
+        {
+            if (mapSecId < KANTO_MAPSEC_START)
+                HABITAT_SET(habitats->hoennMapSecs, mapSecId);
+            else if (mapSecId == MAPSEC_ALTERING_CAVE)
+                habitats->hoennAlteringCave = TRUE;
+            continue;
+        }
+
+        // In the vanilla game each MAPSEC only has at most one DEX_AREA.
+        tableIndex = 0;
+        while (FindDexAreaByMapSec(mapSecId, sDexAreas_Kanto, ARRAY_COUNT(sDexAreas_Kanto), &tableIndex, &dexArea))
+            HABITAT_SET(habitats->dexAreas, dexArea);
+        for (j = 0; j < ARRAY_COUNT(sSeviiDexAreas); j++)
+        {
+            tableIndex = 0;
+            while (FindDexAreaByMapSec(mapSecId, sSeviiDexAreas[j].table, sSeviiDexAreas[j].count, &tableIndex, &dexArea))
             {
-                if ((seviiAreas >> j) & 1)
-                {
-                    // Search for all dex areas associated with this MAPSEC in this unlocked Sevii Island
-                    tableIndex = 0;
-                    while (FindDexAreaByMapSec(mapSecId, sSeviiDexAreas[j].table, sSeviiDexAreas[j].count, &tableIndex, &dexArea))
-                    {
-                        if (dexArea != DEX_AREA_NONE)
-                            GetAreaMarkerSubsprite(areaCount++, dexArea, subsprites);
-                    }
-                }
+                HABITAT_SET(habitats->dexAreas, dexArea);
+                habitats->seviiIslands |= 1 << j;
             }
         }
     }
 
+    for (i = 0; i < ARRAY_COUNT(sGrottoDexAreas); i++)
+    {
+        if (IsHiddenGrottoSpecies(i, species))
+            HABITAT_SET(habitats->dexAreas, sGrottoDexAreas[i]);
+    }
+    if (IsBugContestSpecies(species))
+        HABITAT_SET(habitats->dexAreas, DEX_AREA_VIRIDIAN_FOREST);
+    habitats->dexAreas[0] &= ~1u; // DEX_AREA_NONE has no marker
+}
+
+// Returns which area screen pages have markers for this species (bit per
+// DEX_AREA_REGION_*) and the Sevii Islands it lives on.
+u8 GetSpeciesPokedexAreaRegions(u16 species, u8 *seviiIslands)
+{
+    struct SpeciesHabitats habitats;
+    u8 regions = 0;
+    s32 i;
+
+    *seviiIslands = 0;
+    if (GetRoamerIndex(species) >= 0)
+        return GetRoamerPokedexAreaMarkers(species, NULL) ? 1 << DEX_AREA_REGION_KANTO : 0;
+
+    FindSpeciesHabitats(species, &habitats);
+    for (i = 0; i < ARRAY_COUNT(habitats.dexAreas); i++)
+    {
+        if (habitats.dexAreas[i])
+            regions |= 1 << DEX_AREA_REGION_KANTO;
+    }
+    for (i = 0; i < ARRAY_COUNT(habitats.hoennMapSecs); i++)
+    {
+        if (habitats.hoennMapSecs[i])
+            regions |= 1 << DEX_AREA_REGION_HOENN;
+    }
+    if (habitats.hoennAlteringCave)
+        regions |= 1 << DEX_AREA_REGION_HOENN;
+    *seviiIslands = habitats.seviiIslands;
+    return regions;
+}
+
+// Scans for the given species and populates 'subsprites' with the area markers
+// of one page. Markers on Sevii Islands that are not drawn are left out.
+// Returns the number of areas where the species was found.
+s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites, u8 region, u8 seviiIslands)
+{
+    struct SpeciesHabitats habitats;
+    s32 areaCount = 0;
+    s32 i, island;
+
+    if (GetRoamerIndex(species) >= 0)
+        return region == DEX_AREA_REGION_KANTO ? GetRoamerPokedexAreaMarkers(species, subsprites) : 0;
+
+    FindSpeciesHabitats(species, &habitats);
+    if (region == DEX_AREA_REGION_HOENN)
+    {
+        for (i = 0; i < KANTO_MAPSEC_START; i++)
+        {
+            if (HABITAT_HAS(habitats.hoennMapSecs, i))
+                GetHoennAreaMarkerSubsprite(areaCount++, i, subsprites);
+        }
+        if (habitats.hoennAlteringCave)
+            GetHoennAreaMarkerSubsprite(areaCount++, MAPSEC_ALTERING_CAVE, subsprites);
+        return areaCount;
+    }
+
+    for (i = DEX_AREA_NONE + 1; i < DEX_AREA_COUNT; i++)
+    {
+        if (!HABITAT_HAS(habitats.dexAreas, i))
+            continue;
+        island = GetDexAreaSeviiIsland(i);
+        if (island >= 0 && !((seviiIslands >> island) & 1))
+            continue;
+        GetAreaMarkerSubsprite(areaCount++, i, subsprites);
+    }
     return areaCount;
+}
+
+// The Sevii Island (0-6) a DEX_AREA is on, or -1 for Kanto
+static s32 GetDexAreaSeviiIsland(u16 dexArea)
+{
+    s32 i, j;
+
+    for (i = 0; i < ARRAY_COUNT(sSeviiDexAreas); i++)
+    {
+        for (j = 0; j < sSeviiDexAreas[i].count; j++)
+        {
+            if (sSeviiDexAreas[i].table[j][1] == dexArea)
+                return i;
+        }
+    }
+    return -1;
 }
 
 static s32 GetRoamerIndex(u16 species)
@@ -250,7 +363,8 @@ static s32 GetRoamerPokedexAreaMarkers(u16 species, struct Subsprite * subsprite
     {
         if (dexArea != DEX_AREA_NONE)
         {
-            GetAreaMarkerSubsprite(0, dexArea, subsprites);
+            if (subsprites != NULL)
+                GetAreaMarkerSubsprite(0, dexArea, subsprites);
             return 1;
         }
     }
@@ -263,13 +377,8 @@ static bool32 IsSpeciesOnMap(const struct WildPokemonHeader * data, s32 species)
         return TRUE;
     if (IsSpeciesInEncounterTable(data->waterMonsInfo, species, WATER_WILD_COUNT))
         return TRUE;
-// When searching the fishing encounters, this incorrectly uses the size of the land encounters.
-// As a result it's reading out of bounds of the fishing encounters tables.
-#ifdef BUGFIX
+    // FR/LG read LAND_WILD_COUNT entries here, past the end of the fishing table
     if (IsSpeciesInEncounterTable(data->fishingMonsInfo, species, FISH_WILD_COUNT))
-#else
-    if (IsSpeciesInEncounterTable(data->fishingMonsInfo, species, LAND_WILD_COUNT))
-#endif
         return TRUE;
     if (IsSpeciesInEncounterTable(data->rockSmashMonsInfo, species, ROCK_WILD_COUNT))
         return TRUE;

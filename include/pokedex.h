@@ -97,6 +97,7 @@ enum {
     DEX_AREA_PATTERN_BUSH,
     DEX_AREA_DOTTED_HOLE,
     DEX_AREA_TANOBY_CHAMBER,
+    DEX_AREA_COUNT
 };
 
 struct PokedexEntry

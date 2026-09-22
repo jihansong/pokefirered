@@ -3809,6 +3809,56 @@ static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesCeruleanGym[]
     },
 };
 
+static const struct TrainerMonNoItemDefaultMoves sParty_RocketSSAnne1[] = {
+    {
+        .iv = 0,
+        .lvl = 18,
+        .species = SPECIES_RATTATA,
+    },
+    {
+        .iv = 0,
+        .lvl = 18,
+        .species = SPECIES_ZUBAT,
+    },
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_RocketSSAnne2[] = {
+    {
+        .iv = 0,
+        .lvl = 19,
+        .species = SPECIES_KOFFING,
+    },
+    {
+        .iv = 0,
+        .lvl = 18,
+        .species = SPECIES_DROWZEE,
+    },
+};
+
+// JAMES's "golden egg" MAGIKARP, bought on board
+static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesSSAnne[] = {
+    {
+        .iv = 0,
+        .lvl = 22,
+        .species = SPECIES_EKANS,
+    },
+    {
+        .iv = 0,
+        .lvl = 22,
+        .species = SPECIES_KOFFING,
+    },
+    {
+        .iv = 0,
+        .lvl = 15,
+        .species = SPECIES_MAGIKARP,
+    },
+    {
+        .iv = 0,
+        .lvl = 23,
+        .species = SPECIES_MEOWTH,
+    },
+};
+
 static const struct TrainerMonNoItemDefaultMoves sParty_RivalOaksLabEevee[] = {
     {
         .iv = 0,

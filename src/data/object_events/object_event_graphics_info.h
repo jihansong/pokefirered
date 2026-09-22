@@ -663,7 +663,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_James = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-// The truck covers its own tile and the tile to its right.
+// The truck is drawn 24x24 inside its 32x32 frame, so it takes one tile.
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Truck = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_TRUCK,
@@ -680,6 +680,28 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Truck = {
     .subspriteTables = gObjectEventSpriteOamTables_32x32,
     .anims = sAnimTable_Inanimate,
     .images = sPicTable_Truck,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// The airliners at the Vermilion airport: parked on the apron, and taxiing to
+// the gate behind the terminal's lounge window. They share the truck's
+// palette, which already has the white, grey and blue the livery needs.
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Airplane = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_TRUCK,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_L,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = gObjectEventSpriteOamTables_32x32,
+    .anims = sAnimTable_Airplane,
+    .images = sPicTable_Airplane,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 

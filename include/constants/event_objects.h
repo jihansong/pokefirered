@@ -236,7 +236,8 @@
 #define OBJ_EVENT_GFX_REGICE                        228
 #define OBJ_EVENT_GFX_REGISTEEL                     229
 // END HOENN OBJECT EVENTS
-#define NUM_OBJ_EVENT_GFX     230
+#define OBJ_EVENT_GFX_AIRPLANE 230
+#define NUM_OBJ_EVENT_GFX     231
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.

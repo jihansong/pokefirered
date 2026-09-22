@@ -1043,6 +1043,30 @@ static const union AnimCmd *const sAnimTable_Standard[] = {
     [ANIM_RAISE_HAND] = sAnim_RaiseHand,
 };
 
+// The airliner turns to face the way it taxis but has no walking frames.
+static const union AnimCmd *const sAnimTable_Airplane[] = {
+    [ANIM_STD_FACE_SOUTH] = sAnim_FaceSouth,
+    [ANIM_STD_FACE_NORTH] = sAnim_FaceNorth,
+    [ANIM_STD_FACE_WEST] = sAnim_FaceWest,
+    [ANIM_STD_FACE_EAST] = sAnim_FaceEast,
+    [ANIM_STD_GO_SOUTH] = sAnim_FaceSouth,
+    [ANIM_STD_GO_NORTH] = sAnim_FaceNorth,
+    [ANIM_STD_GO_WEST] = sAnim_FaceWest,
+    [ANIM_STD_GO_EAST] = sAnim_FaceEast,
+    [ANIM_STD_GO_FAST_SOUTH] = sAnim_FaceSouth,
+    [ANIM_STD_GO_FAST_NORTH] = sAnim_FaceNorth,
+    [ANIM_STD_GO_FAST_WEST] = sAnim_FaceWest,
+    [ANIM_STD_GO_FAST_EAST] = sAnim_FaceEast,
+    [ANIM_STD_GO_FASTER_SOUTH] = sAnim_FaceSouth,
+    [ANIM_STD_GO_FASTER_NORTH] = sAnim_FaceNorth,
+    [ANIM_STD_GO_FASTER_WEST] = sAnim_FaceWest,
+    [ANIM_STD_GO_FASTER_EAST] = sAnim_FaceEast,
+    [ANIM_STD_GO_FASTEST_SOUTH] = sAnim_FaceSouth,
+    [ANIM_STD_GO_FASTEST_NORTH] = sAnim_FaceNorth,
+    [ANIM_STD_GO_FASTEST_WEST] = sAnim_FaceWest,
+    [ANIM_STD_GO_FASTEST_EAST] = sAnim_FaceEast,
+};
+
 static const union AnimCmd *const sAnimTable_HoOh[] = {
     [ANIM_STD_FACE_SOUTH] = sAnim_FaceSouth,
     [ANIM_STD_FACE_NORTH] = sAnim_FaceNorth,
@@ -1271,6 +1295,11 @@ static const struct StepAnimTable sStepAnimTables[] = {
     {
         .anims = sAnimTable_QuintyPlump,
         .animPos = {1, 3, 0, 2},
+    },
+    {
+        // every airliner animation is one frame, so a turn just restarts it
+        .anims = sAnimTable_Airplane,
+        .animPos = {0, 0, 0, 0},
     },
     {
         .anims = sAnimTable_Standard,

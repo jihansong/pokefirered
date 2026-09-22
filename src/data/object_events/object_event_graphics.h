@@ -192,6 +192,7 @@ const u16 gObjectEventPal_SSAnne[] = INCBIN_U16("graphics/object_events/palettes
 const u16 gObjectEventPal_JessieJames[] = INCBIN_U16("graphics/object_events/palettes/jessie_james.gbapal");
 const u16 gObjectEventPal_Truck[] = INCBIN_U16("graphics/object_events/palettes/truck.gbapal");
 const u16 gObjectEventPic_Truck[] = INCBIN_U16("graphics/object_events/pics/misc/truck.4bpp");
+const u16 gObjectEventPic_Airplane[] = INCBIN_U16("graphics/object_events/pics/misc/airplane.4bpp");
 const u16 gObjectEventPal_Pikablu[] = INCBIN_U16("graphics/object_events/palettes/pikablu.gbapal");
 const u16 gObjectEventPal_Mew3Rumor[] = INCBIN_U16("graphics/object_events/palettes/mew3_rumor.gbapal");
 const u16 gObjectEventPal_RedGyarados[] = INCBIN_U16("graphics/object_events/palettes/red_gyarados.gbapal");

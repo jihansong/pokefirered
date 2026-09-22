@@ -1407,3 +1407,27 @@ const u16 gTilesetPalettes_HallOfFame[][16] =
 	INCBIN_U16("data/tilesets/secondary/hall_of_fame/palettes/14.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/hall_of_fame/palettes/15.gbapal"),
 };
+
+// The Vermilion airport terminal: pokeemerald's Battle Frontier set plus the
+// lounge window (tools/make_airport_lounge.py).
+const u32 gTilesetTiles_KantoAirport[] = INCBIN_U32("data/tilesets/secondary/kanto_airport/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_KantoAirport[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/kanto_airport/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kanto_airport/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kanto_airport/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kanto_airport/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kanto_airport/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kanto_airport/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kanto_airport/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kanto_airport/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kanto_airport/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kanto_airport/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kanto_airport/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kanto_airport/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kanto_airport/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kanto_airport/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kanto_airport/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/kanto_airport/palettes/15.gbapal"),
+};

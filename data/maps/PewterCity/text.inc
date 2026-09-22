@@ -152,3 +152,24 @@ PewterCity_Text_RunningShoesLetterFromMom::
     .string "you! Don't ever give up!\p"
     .string "From Mom$"
 
+PewterCity_Text_NFossils::
+    .string "N: The bones in that MUSEUM were\n"
+    .string "POKéMON once. They lived here.\p"
+    .string "Now people come and look at them\n"
+    .string "behind glass.\p"
+    .string "Do you ever wonder what POKéMON\n"
+    .string "think of us?$"
+
+PewterCity_Text_NLetsBattle::
+    .string "N: I want to hear more. Let's\n"
+    .string "battle. POKéMON speak loudest\l"
+    .string "when they battle.$"
+
+PewterCity_Text_NDefeat::
+    .string "So that's the voice of a POKéMON\n"
+    .string "that chose its TRAINER…$"
+
+PewterCity_Text_NAfter::
+    .string "N: My name is N. I'm traveling to\n"
+    .string "learn what POKéMON truly want.\p"
+    .string "I think we'll meet again.$"

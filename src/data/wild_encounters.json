@@ -25163,6 +25163,480 @@
           }
         },
         {
+          "map": "MAP_SILVER_MOUNTAIN_1F",
+          "base_label": "sSilverMountain1F_FireRed",
+          "land_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 58,
+                "max_level": 58,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 58,
+                "max_level": 58,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 57,
+                "max_level": 57,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 58,
+                "max_level": 58,
+                "species": "SPECIES_MACHOKE"
+              },
+              {
+                "min_level": 57,
+                "max_level": 57,
+                "species": "SPECIES_SNEASEL"
+              },
+              {
+                "min_level": 60,
+                "max_level": 60,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 60,
+                "max_level": 60,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 59,
+                "max_level": 59,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 59,
+                "max_level": 59,
+                "species": "SPECIES_DONPHAN"
+              },
+              {
+                "min_level": 59,
+                "max_level": 59,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 55,
+                "max_level": 55,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 62,
+                "max_level": 62,
+                "species": "SPECIES_STEELIX"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_SILVER_MOUNTAIN_1F",
+          "base_label": "sSilverMountain1F_LeafGreen",
+          "land_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 58,
+                "max_level": 58,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 58,
+                "max_level": 58,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 57,
+                "max_level": 57,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 58,
+                "max_level": 58,
+                "species": "SPECIES_MACHOKE"
+              },
+              {
+                "min_level": 57,
+                "max_level": 57,
+                "species": "SPECIES_SNEASEL"
+              },
+              {
+                "min_level": 60,
+                "max_level": 60,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 60,
+                "max_level": 60,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 59,
+                "max_level": 59,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 59,
+                "max_level": 59,
+                "species": "SPECIES_DONPHAN"
+              },
+              {
+                "min_level": 59,
+                "max_level": 59,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 55,
+                "max_level": 55,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 62,
+                "max_level": 62,
+                "species": "SPECIES_STEELIX"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_SILVER_MOUNTAIN_2F",
+          "base_label": "sSilverMountain2F_FireRed",
+          "land_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 61,
+                "max_level": 61,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 61,
+                "max_level": 61,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 60,
+                "max_level": 60,
+                "species": "SPECIES_SNEASEL"
+              },
+              {
+                "min_level": 62,
+                "max_level": 62,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 62,
+                "max_level": 62,
+                "species": "SPECIES_MACHOKE"
+              },
+              {
+                "min_level": 62,
+                "max_level": 62,
+                "species": "SPECIES_DONPHAN"
+              },
+              {
+                "min_level": 63,
+                "max_level": 63,
+                "species": "SPECIES_PILOSWINE"
+              },
+              {
+                "min_level": 62,
+                "max_level": 62,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 60,
+                "max_level": 60,
+                "species": "SPECIES_PUPITAR"
+              },
+              {
+                "min_level": 63,
+                "max_level": 63,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 58,
+                "max_level": 58,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 65,
+                "max_level": 65,
+                "species": "SPECIES_STEELIX"
+              }
+            ]
+          },
+          "rock_smash_mons": {
+            "encounter_rate": 50,
+            "mons": [
+              {
+                "min_level": 55,
+                "max_level": 60,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 50,
+                "max_level": 55,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 60,
+                "max_level": 62,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 58,
+                "max_level": 62,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 62,
+                "max_level": 64,
+                "species": "SPECIES_STEELIX"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_SILVER_MOUNTAIN_2F",
+          "base_label": "sSilverMountain2F_LeafGreen",
+          "land_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 61,
+                "max_level": 61,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 61,
+                "max_level": 61,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 60,
+                "max_level": 60,
+                "species": "SPECIES_SNEASEL"
+              },
+              {
+                "min_level": 62,
+                "max_level": 62,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 62,
+                "max_level": 62,
+                "species": "SPECIES_MACHOKE"
+              },
+              {
+                "min_level": 62,
+                "max_level": 62,
+                "species": "SPECIES_DONPHAN"
+              },
+              {
+                "min_level": 63,
+                "max_level": 63,
+                "species": "SPECIES_PILOSWINE"
+              },
+              {
+                "min_level": 62,
+                "max_level": 62,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 60,
+                "max_level": 60,
+                "species": "SPECIES_PUPITAR"
+              },
+              {
+                "min_level": 63,
+                "max_level": 63,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 58,
+                "max_level": 58,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 65,
+                "max_level": 65,
+                "species": "SPECIES_STEELIX"
+              }
+            ]
+          },
+          "rock_smash_mons": {
+            "encounter_rate": 50,
+            "mons": [
+              {
+                "min_level": 55,
+                "max_level": 60,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 50,
+                "max_level": 55,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 60,
+                "max_level": 62,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 58,
+                "max_level": 62,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 62,
+                "max_level": 64,
+                "species": "SPECIES_STEELIX"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_SILVER_MOUNTAIN_3F",
+          "base_label": "sSilverMountain3F_FireRed",
+          "land_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 64,
+                "max_level": 64,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 64,
+                "max_level": 64,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 63,
+                "max_level": 63,
+                "species": "SPECIES_SNEASEL"
+              },
+              {
+                "min_level": 65,
+                "max_level": 65,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 64,
+                "max_level": 64,
+                "species": "SPECIES_PILOSWINE"
+              },
+              {
+                "min_level": 64,
+                "max_level": 64,
+                "species": "SPECIES_MACHOKE"
+              },
+              {
+                "min_level": 65,
+                "max_level": 65,
+                "species": "SPECIES_DONPHAN"
+              },
+              {
+                "min_level": 64,
+                "max_level": 64,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 63,
+                "max_level": 63,
+                "species": "SPECIES_PUPITAR"
+              },
+              {
+                "min_level": 66,
+                "max_level": 66,
+                "species": "SPECIES_SNEASEL"
+              },
+              {
+                "min_level": 60,
+                "max_level": 60,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 66,
+                "max_level": 66,
+                "species": "SPECIES_STEELIX"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_SILVER_MOUNTAIN_3F",
+          "base_label": "sSilverMountain3F_LeafGreen",
+          "land_mons": {
+            "encounter_rate": 7,
+            "mons": [
+              {
+                "min_level": 64,
+                "max_level": 64,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 64,
+                "max_level": 64,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 63,
+                "max_level": 63,
+                "species": "SPECIES_SNEASEL"
+              },
+              {
+                "min_level": 65,
+                "max_level": 65,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 64,
+                "max_level": 64,
+                "species": "SPECIES_PILOSWINE"
+              },
+              {
+                "min_level": 64,
+                "max_level": 64,
+                "species": "SPECIES_MACHOKE"
+              },
+              {
+                "min_level": 65,
+                "max_level": 65,
+                "species": "SPECIES_DONPHAN"
+              },
+              {
+                "min_level": 64,
+                "max_level": 64,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 63,
+                "max_level": 63,
+                "species": "SPECIES_PUPITAR"
+              },
+              {
+                "min_level": 66,
+                "max_level": 66,
+                "species": "SPECIES_SNEASEL"
+              },
+              {
+                "min_level": 60,
+                "max_level": 60,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 66,
+                "max_level": 66,
+                "species": "SPECIES_STEELIX"
+              }
+            ]
+          }
+        },
+        {
           "map": "MAP_ROUTE101",
           "base_label": "sHoennRoute101",
           "land_mons": {

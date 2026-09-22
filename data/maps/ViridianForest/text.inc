@@ -103,3 +103,32 @@ ViridianForest_Text_LeavingViridianForest::
     .string "LEAVING VIRIDIAN FOREST\n"
     .string "PEWTER CITY AHEAD$"
 
+ViridianForest_Text_OldTimerIntro::
+    .string "…Hm? A TRAINER, out this late?\p"
+    .string "Back in my day, this forest was\n"
+    .string "all green. The whole world was.\l"
+    .string "Four shades of green, and no more!$"
+
+ViridianForest_Text_OldTimerChallenge::
+    .string "These newfangled moves and\n"
+    .string "abilities… I don't know them.\p"
+    .string "Let me show you how we battled\n"
+    .string "in the old days!$"
+
+ViridianForest_Text_OldTimerChallengeStrong::
+    .string "You've got a lot of BADGES.\n"
+    .string "Then no holding back!\p"
+    .string "This is the team that ruled every\n"
+    .string "link cable in the land!$"
+
+ViridianForest_Text_OldTimerDefeat::
+    .string "Hmph! The young ones sure\n"
+    .string "know how to battle now.$"
+
+ViridianForest_Text_OldTimerTakeThis::
+    .string "Here. This TM was all the rage\n"
+    .string "back when I was your age.$"
+
+ViridianForest_Text_OldTimerFarewell::
+    .string "I'll be around another night.\n"
+    .string "The moon's the same as ever…$"

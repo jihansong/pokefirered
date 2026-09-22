@@ -449,6 +449,11 @@
 #define TRAINER_PIC_HOENN_LEADER_JUAN         149
 #define TRAINER_CLASS_HOENN_WINSTRATE         107
 // END HOENN TRAINERS
+// Thunder Yellow additions after the generated Hoenn block (renumber if the import adds pictures)
+#define TRAINER_PIC_OLD_TIMER                 150
+#define TRAINER_PIC_N                         151
+#define TRAINER_PIC_SUMMIT_TRAINER            152
+#define TRAINER_CLASS_OLD_TIMER               TRAINER_CLASS_PKMN_TRAINER_UNUSED
 #define F_TRAINER_PARTY_CUSTOM_MOVESET (1 << 0)
 #define F_TRAINER_PARTY_HELD_ITEM      (1 << 1)
 

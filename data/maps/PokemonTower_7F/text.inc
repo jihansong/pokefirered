@@ -94,3 +94,23 @@ PokemonTower_7F_Text_JessieNotScared::
     .string "JESSIE: Ahem! For the record, we\n"
     .string "were NOT scared!$"
 
+PokemonTower_7F_Text_NVoices::
+    .string "N: So many voices in this tower.\p"
+    .string "POKéMON who lost their TRAINERS.\n"
+    .string "TRAINERS who lost their POKéMON.\p"
+    .string "The old man you saved listens to\n"
+    .string "them too. That's why they love him.$"
+
+PokemonTower_7F_Text_NLetsBattle::
+    .string "N: Show me again. I want to know\n"
+    .string "if your bond has changed.$"
+
+PokemonTower_7F_Text_NDefeat::
+    .string "It's grown stronger. And so\n"
+    .string "has its voice…$"
+
+PokemonTower_7F_Text_NAfter::
+    .string "N: People hurt POKéMON, and\n"
+    .string "people save them.\p"
+    .string "I don't know yet which one is\n"
+    .string "the truth about people.$"

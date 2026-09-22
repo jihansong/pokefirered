@@ -276,7 +276,11 @@
     "PokemonMansion_SecretLab",
     "SevenIsland_TanobyRuins_EmbeddedChamber",
     "PokemonMansion_B4F",
-    "NewIsland"
+    "NewIsland",
+    "SilverMountain_1F",
+    "SilverMountain_2F",
+    "SilverMountain_3F",
+    "SilverMountain_Summit"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PalletTown",
@@ -591,7 +595,8 @@
   ],
   "gMapGroup_IndoorSixIslandRoute": [
     "SixIsland_WaterPath_House1",
-    "SixIsland_WaterPath_House2"
+    "SixIsland_WaterPath_House2",
+    "SixIsland_WaterPath_Cabin"
   ],
   "gMapGroup_IndoorSevenIslandRoute": [
     "SevenIsland_SevaultCanyon_House"

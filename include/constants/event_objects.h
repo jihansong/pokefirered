@@ -238,7 +238,10 @@
 // END HOENN OBJECT EVENTS
 #define OBJ_EVENT_GFX_AIRPLANE 230
 #define OBJ_EVENT_GFX_AIRPLANE_SMALL 231
-#define NUM_OBJ_EVENT_GFX     232
+#define OBJ_EVENT_GFX_OLD_TIMER 232
+#define OBJ_EVENT_GFX_N 233
+#define OBJ_EVENT_GFX_SUMMIT_TRAINER 234
+#define NUM_OBJ_EVENT_GFX     235
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.

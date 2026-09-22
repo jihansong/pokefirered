@@ -559,12 +559,12 @@
 #define FLAG_ROCKET_VIRIDIAN_GYM 0x219 // v0.5.0 event 9: TEAM ROCKET driven out of the VIRIDIAN GYM
 #define FLAG_ROCKET_INDIGO_TORCH 0x21A // v0.5.0 event 10: TEAM ROCKET's grab for the INDIGO TORCH foiled
 #define FLAG_ROCKET_NEW_ISLAND   0x21B // v0.5.0 event 11: TEAM ROCKET driven off NEW ISLAND (CARGO TAG found)
-#define FLAG_0x21C               0x21C
-#define FLAG_0x21D               0x21D
-#define FLAG_0x21E               0x21E
-#define FLAG_0x21F               0x21F
-#define FLAG_0x220               0x220
-#define FLAG_0x221               0x221
+#define FLAG_MET_N_PEWTER        0x21C // v0.6.0: battled N outside the PEWTER MUSEUM
+#define FLAG_MET_N_TOWER         0x21D // v0.6.0: battled N at the top of the POKéMON TOWER
+#define FLAG_MET_N_SILPH         0x21E // v0.6.0: battled N in SILPH CO. 11F
+#define FLAG_BEAT_N_FINAL        0x21F // v0.6.0: beat N at his cabin on the WATER PATH
+#define FLAG_BEAT_SUMMIT_TRAINER 0x220 // v0.6.0: beat the silent TRAINER on the snowbound summit
+#define FLAG_WON_CHAMPION_TOURNAMENT 0x221 // v0.6.0: won the INDIGO PLATEAU champion tournament
 #define FLAG_0x222               0x222
 #define FLAG_0x223               0x223
 #define FLAG_0x224               0x224

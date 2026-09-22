@@ -757,3 +757,27 @@ const struct Tileset gTileset_KantoAirport =
     .metatileAttributes = gMetatileAttributes_KantoAirport,
     .callback = NULL,
 };
+
+// The snowbound mountain past SEVAULT CANYON: MT. EMBER's tiles in ice colors
+// (tools/make_silver_mountain.py)
+const struct Tileset gTileset_SilverCave =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_MtEmber,
+    .palettes = gTilesetPalettes_SilverCave,
+    .metatiles = gMetatiles_MtEmber,
+    .metatileAttributes = gMetatileAttributes_MtEmber,
+    .callback = InitTilesetAnim_MtEmber,
+};
+
+const struct Tileset gTileset_SilverPeak =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SeviiIslands123,
+    .palettes = gTilesetPalettes_SilverPeak,
+    .metatiles = gMetatiles_SeviiIslands123,
+    .metatileAttributes = gMetatileAttributes_SeviiIslands123,
+    .callback = NULL,
+};

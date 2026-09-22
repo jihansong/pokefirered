@@ -3981,6 +3981,240 @@ static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesNewIsland[] =
     },
 };
 
+static const struct TrainerMonNoItemCustomMoves sParty_OldTimerKen1[] = {
+    {
+        .iv = 60,
+        .lvl = 16,
+        .species = SPECIES_PIDGEOTTO,
+        .moves = {MOVE_GUST, MOVE_SAND_ATTACK, MOVE_QUICK_ATTACK, MOVE_WHIRLWIND},
+    },
+    {
+        .iv = 60,
+        .lvl = 16,
+        .species = SPECIES_BUTTERFREE,
+        .moves = {MOVE_CONFUSION, MOVE_STUN_SPORE, MOVE_SUPERSONIC, MOVE_TACKLE},
+    },
+    {
+        .iv = 60,
+        .lvl = 17,
+        .species = SPECIES_NIDORINO,
+        .moves = {MOVE_HORN_ATTACK, MOVE_DOUBLE_KICK, MOVE_POISON_STING, MOVE_LEER},
+    },
+};
+
+static const struct TrainerMonNoItemCustomMoves sParty_OldTimerKen2[] = {
+    {
+        .iv = 150,
+        .lvl = 34,
+        .species = SPECIES_CHANSEY,
+        .moves = {MOVE_SOFT_BOILED, MOVE_THUNDER_WAVE, MOVE_SEISMIC_TOSS, MOVE_ICE_BEAM},
+    },
+    {
+        .iv = 150,
+        .lvl = 35,
+        .species = SPECIES_STARMIE,
+        .moves = {MOVE_SURF, MOVE_PSYCHIC, MOVE_THUNDER_WAVE, MOVE_RECOVER},
+    },
+    {
+        .iv = 150,
+        .lvl = 36,
+        .species = SPECIES_TAUROS,
+        .moves = {MOVE_BODY_SLAM, MOVE_STOMP, MOVE_HYPER_BEAM, MOVE_TAIL_WHIP},
+    },
+};
+
+static const struct TrainerMonNoItemCustomMoves sParty_OldTimerKen3[] = {
+    {
+        .iv = 250,
+        .lvl = 52,
+        .species = SPECIES_EXEGGUTOR,
+        .moves = {MOVE_SLEEP_POWDER, MOVE_PSYCHIC, MOVE_STUN_SPORE, MOVE_EXPLOSION},
+    },
+    {
+        .iv = 250,
+        .lvl = 52,
+        .species = SPECIES_ALAKAZAM,
+        .moves = {MOVE_PSYCHIC, MOVE_RECOVER, MOVE_THUNDER_WAVE, MOVE_SEISMIC_TOSS},
+    },
+    {
+        .iv = 250,
+        .lvl = 53,
+        .species = SPECIES_CHANSEY,
+        .moves = {MOVE_SOFT_BOILED, MOVE_THUNDER_WAVE, MOVE_ICE_BEAM, MOVE_SEISMIC_TOSS},
+    },
+    {
+        .iv = 250,
+        .lvl = 53,
+        .species = SPECIES_STARMIE,
+        .moves = {MOVE_PSYCHIC, MOVE_BLIZZARD, MOVE_THUNDERBOLT, MOVE_RECOVER},
+    },
+    {
+        .iv = 250,
+        .lvl = 54,
+        .species = SPECIES_SNORLAX,
+        .moves = {MOVE_BODY_SLAM, MOVE_AMNESIA, MOVE_REST, MOVE_HYPER_BEAM},
+    },
+    {
+        .iv = 250,
+        .lvl = 55,
+        .species = SPECIES_TAUROS,
+        .moves = {MOVE_BODY_SLAM, MOVE_HYPER_BEAM, MOVE_BLIZZARD, MOVE_EARTHQUAKE},
+    },
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_NPewter[] = {
+    {
+        .iv = 30,
+        .lvl = 12,
+        .species = SPECIES_ZIGZAGOON,
+    },
+    {
+        .iv = 30,
+        .lvl = 12,
+        .species = SPECIES_TAILLOW,
+    },
+    {
+        .iv = 30,
+        .lvl = 13,
+        .species = SPECIES_SEEDOT,
+    },
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_NTower[] = {
+    {
+        .iv = 120,
+        .lvl = 29,
+        .species = SPECIES_LINOONE,
+    },
+    {
+        .iv = 120,
+        .lvl = 29,
+        .species = SPECIES_TAILLOW,
+    },
+    {
+        .iv = 120,
+        .lvl = 30,
+        .species = SPECIES_DUSKULL,
+    },
+    {
+        .iv = 120,
+        .lvl = 31,
+        .species = SPECIES_KIRLIA,
+    },
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_NSilph[] = {
+    {
+        .iv = 200,
+        .lvl = 42,
+        .species = SPECIES_MIGHTYENA,
+    },
+    {
+        .iv = 200,
+        .lvl = 42,
+        .species = SPECIES_SWELLOW,
+    },
+    {
+        .iv = 200,
+        .lvl = 43,
+        .species = SPECIES_SHIFTRY,
+    },
+    {
+        .iv = 200,
+        .lvl = 43,
+        .species = SPECIES_BANETTE,
+    },
+    {
+        .iv = 200,
+        .lvl = 45,
+        .species = SPECIES_GARDEVOIR,
+    },
+};
+
+static const struct TrainerMonItemDefaultMoves sParty_NFinal[] = {
+    {
+        .iv = 255,
+        .lvl = 70,
+        .species = SPECIES_MIGHTYENA,
+        .heldItem = ITEM_BLACK_GLASSES,
+    },
+    {
+        .iv = 255,
+        .lvl = 70,
+        .species = SPECIES_SWELLOW,
+        .heldItem = ITEM_SHARP_BEAK,
+    },
+    {
+        .iv = 255,
+        .lvl = 71,
+        .species = SPECIES_SHIFTRY,
+        .heldItem = ITEM_MIRACLE_SEED,
+    },
+    {
+        .iv = 255,
+        .lvl = 71,
+        .species = SPECIES_BANETTE,
+        .heldItem = ITEM_SPELL_TAG,
+    },
+    {
+        .iv = 255,
+        .lvl = 73,
+        .species = SPECIES_GARDEVOIR,
+        .heldItem = ITEM_TWISTED_SPOON,
+    },
+    {
+        .iv = 255,
+        .lvl = 75,
+        .species = SPECIES_REGISTEEL,
+        .heldItem = ITEM_LEFTOVERS,
+    },
+};
+
+static const struct TrainerMonItemCustomMoves sParty_SummitTrainer[] = {
+    {
+        .iv = 255,
+        .lvl = 88,
+        .species = SPECIES_PIKACHU,
+        .heldItem = ITEM_LIGHT_BALL,
+        .moves = {MOVE_VOLT_TACKLE, MOVE_THUNDERBOLT, MOVE_IRON_TAIL, MOVE_QUICK_ATTACK},
+    },
+    {
+        .iv = 255,
+        .lvl = 84,
+        .species = SPECIES_ESPEON,
+        .heldItem = ITEM_TWISTED_SPOON,
+        .moves = {MOVE_PSYCHIC, MOVE_SHADOW_BALL, MOVE_MORNING_SUN, MOVE_REFLECT},
+    },
+    {
+        .iv = 255,
+        .lvl = 82,
+        .species = SPECIES_SNORLAX,
+        .heldItem = ITEM_LEFTOVERS,
+        .moves = {MOVE_BODY_SLAM, MOVE_SHADOW_BALL, MOVE_REST, MOVE_EARTHQUAKE},
+    },
+    {
+        .iv = 255,
+        .lvl = 84,
+        .species = SPECIES_VENUSAUR,
+        .heldItem = ITEM_MIRACLE_SEED,
+        .moves = {MOVE_GIGA_DRAIN, MOVE_SLUDGE_BOMB, MOVE_SLEEP_POWDER, MOVE_EARTHQUAKE},
+    },
+    {
+        .iv = 255,
+        .lvl = 84,
+        .species = SPECIES_CHARIZARD,
+        .heldItem = ITEM_CHARCOAL,
+        .moves = {MOVE_FLAMETHROWER, MOVE_DRAGON_CLAW, MOVE_AERIAL_ACE, MOVE_EARTHQUAKE},
+    },
+    {
+        .iv = 255,
+        .lvl = 84,
+        .species = SPECIES_BLASTOISE,
+        .heldItem = ITEM_MYSTIC_WATER,
+        .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_EARTHQUAKE, MOVE_RAIN_DANCE},
+    },
+};
+
 static const struct TrainerMonNoItemDefaultMoves sParty_RivalOaksLabEevee[] = {
     {
         .iv = 0,

@@ -805,6 +805,66 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedGyarados = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+// The OLD-TIMER in VIRIDIAN FOREST: the BUG CATCHER in the four Game Boy greens
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldTimer = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_OLD_TIMER,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = gObjectEventSpriteOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_BugCatcher,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// N, the young man who hears POKéMON: the COOLTRAINER with pale green hair and a white shirt
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_N = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_N,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = gObjectEventSpriteOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_CooltrainerM,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// The silent TRAINER on the snowbound summit: RED, dressed in charcoal
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SummitTrainer = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_SUMMIT_TRAINER,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = gObjectEventSpriteOamTables_16x32,
+    .anims = sAnimTable_RedGreenNormal,
+    .images = sPicTable_RedNormal,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 // The security camera statues in the Rocket Hideout: MEOWTH's sprite in stone gray
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PersianStatue = {
     .tileTag = TAG_NONE,

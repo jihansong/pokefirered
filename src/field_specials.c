@@ -14,6 +14,7 @@
 #include "fieldmap.h"
 #include "field_specials.h"
 #include "time_of_day.h"
+#include "bug_contest.h"
 #include "wild_encounter.h"
 #include "region_map.h"
 #include "task.h"
@@ -2448,6 +2449,63 @@ void IncrementBillsGardenStepCounter(void)
      && VarGet(VAR_BILLS_GARDEN_STEPS) < 1500
      && VarGet(VAR_BILLS_GARDEN_LAST_DAY) != GetGameClockDay() + 1)
         VarSet(VAR_BILLS_GARDEN_STEPS, 1500);
+}
+
+// The OLD-TIMER in VIRIDIAN FOREST comes out once a night. A night runs from
+// 20:00 to 03:59, so it is counted from the evening's clock day.
+static s32 GetOldTimerNight(void)
+{
+    struct Time now;
+
+    GetGameClock(&now);
+    return now.days - (now.hours < 4 ? 1 : 0);
+}
+
+// Special: shows or hides the OLD-TIMER in VIRIDIAN FOREST (FLAG_TEMP_1 is his
+// object's hide flag). He is out on any night after the BOULDERBADGE, once a
+// night, and never during a Bug-Catching Contest.
+void OldTimer_Setup(void)
+{
+    if (FlagGet(FLAG_BADGE01_GET)
+     && GetTimeOfDay() == TIME_NIGHT
+     && !IsBugContestActiveInForest()
+     && VarGet(VAR_OLD_TIMER_LAST_NIGHT) != GetOldTimerNight() + 2)
+        FlagClear(FLAG_TEMP_1);
+    else
+        FlagSet(FLAG_TEMP_1);
+}
+
+// Special: the OLD-TIMER was beaten tonight
+void OldTimer_RecordWin(void)
+{
+    VarSet(VAR_OLD_TIMER_LAST_NIGHT, GetOldTimerNight() + 2);
+}
+
+// Special: shows or hides the silent TRAINER on the snowbound summit
+// (FLAG_TEMP_1 is his object's hide flag). He stands there once a day.
+void SummitTrainer_Setup(void)
+{
+    if (VarGet(VAR_SUMMIT_TRAINER_LAST_DAY) != GetGameClockDay() + 1)
+        FlagClear(FLAG_TEMP_1);
+    else
+        FlagSet(FLAG_TEMP_1);
+}
+
+// Special: VAR_TEMP_1 is 1 while the blizzard on the snowbound mountain turns
+// the player back: before the HALL OF FAME, and until either every KANTO
+// POKéMON is caught or the INDIGO PLATEAU tournament is won.
+void SilverMountain_SetBlizzardGate(void)
+{
+    bool8 mayPass = FlagGet(FLAG_SYS_GAME_CLEAR)
+                 && (FlagGet(FLAG_WON_CHAMPION_TOURNAMENT) || HasAllKantoMons());
+
+    VarSet(VAR_TEMP_1, mayPass ? 0 : 1);
+}
+
+// Special: the summit TRAINER was beaten today
+void SummitTrainer_RecordWin(void)
+{
+    VarSet(VAR_SUMMIT_TRAINER_LAST_DAY, GetGameClockDay() + 1);
 }
 
 // Special: a POKéMON left the garden today

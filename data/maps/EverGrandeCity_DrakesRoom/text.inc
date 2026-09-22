@@ -1,6 +1,7 @@
 EverGrandeCity_DrakesRoom_Text_H0::
 	.string "I am the last of the POKéMON LEAGUE\n"
-	.string "ELITE FOUR, DRAKE the DRAGON master!\p"
+	.string "ELITE FOUR, DRAKE the DRAGON\l"
+	.string "master!\p"
 	.string "In their natural state, POKéMON are\n"
 	.string "wild living things. They are free.\p"
 	.string "At times, they hinder us.\n"

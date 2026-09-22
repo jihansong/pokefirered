@@ -1,14 +1,14 @@
 Route108_Text_H0_0::
-	.string "My dream is to swim the world's seven\n"
-	.string "seas!$"
+	.string "My dream is to swim the world's\n"
+	.string "seven seas!$"
 
 Route108_Text_H0_1::
-	.string "I won't be able to swim the seven seas\n"
-	.string "like this…$"
+	.string "I won't be able to swim the seven\n"
+	.string "seas like this…$"
 
 Route108_Text_H0_2::
-	.string "Playing with marine POKéMON is one of\n"
-	.string "the pleasures of swimming!$"
+	.string "Playing with marine POKéMON is one\n"
+	.string "of the pleasures of swimming!$"
 
 Route108_Text_H1_0::
 	.string "My liar of a boyfriend told me that\n"
@@ -54,8 +54,9 @@ Route108_Text_H4_1::
 	.string "That wasn't cute at all.$"
 
 Route108_Text_H4_2::
-	.string "Since I'm at sea like this, I wouldn't\n"
-	.string "mind putting on a pink, frilly swimsuit…$"
+	.string "Since I'm at sea like this, I\n"
+	.string "wouldn't mind putting on a pink,\l"
+	.string "frilly swimsuit…$"
 
 Route108_Text_H5_0::
 	.string "I love WATER-type POKéMON.\n"

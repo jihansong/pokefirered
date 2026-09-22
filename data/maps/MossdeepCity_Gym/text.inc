@@ -1,8 +1,9 @@
 MossdeepCity_Gym_Text_H0_0::
 	.string "TATE: Hehehe… Were you surprised?\p"
 	.string "LIZA: Fufufu… Were you surprised?\p"
-	.string "TATE: That there are two GYM LEADERS?\n"
-	.string "LIZA: That there are two GYM LEADERS?\p"
+	.string "TATE: That there are two GYM\n"
+	.string "LEADERS? LIZA: That there are two\l"
+	.string "GYM LEADERS?\p"
 	.string "TATE: We're twins!\n"
 	.string "LIZA: We're twins!\p"
 	.string "TATE: We don't need to talk because…\n"
@@ -15,19 +16,23 @@ MossdeepCity_Gym_Text_H0_0::
 MossdeepCity_Gym_Text_H0_1::
 	.string "TATE: What?! Our combination…\n"
 	.string "LIZA: Was shattered!\p"
-	.string "TATE: It can't be helped. You've won…\n"
-	.string "LIZA: So, in recognition, take this.$"
+	.string "TATE: It can't be helped. You've\n"
+	.string "won… LIZA: So, in recognition, take\l"
+	.string "this.$"
 
 MossdeepCity_Gym_Text_H0_2::
-	.string "TATE: Looks like the bond between you\n"
-	.string "and your POKéMON is far stronger than\l"
-	.string "the bond that we share as twins.\p"
-	.string "LIZA: You will become even stronger!\n"
-	.string "We've battled you, so we know.$"
+	.string "TATE: Looks like the bond between\n"
+	.string "you and your POKéMON is far stronger\l"
+	.string "than the bond that we share as\l"
+	.string "twins.\p"
+	.string "LIZA: You will become even\n"
+	.string "stronger! We've battled you, so we\l"
+	.string "know.$"
 
 MossdeepCity_Gym_Text_H1_0::
-	.string "Battles hinge on the strength of your\n"
-	.string "spirit! The weak-spirited will never win!$"
+	.string "Battles hinge on the strength of\n"
+	.string "your spirit! The weak-spirited will\l"
+	.string "never win!$"
 
 MossdeepCity_Gym_Text_H1_1::
 	.string "I lost!\n"
@@ -66,8 +71,8 @@ MossdeepCity_Gym_Text_H3_1::
 	.string "You've traveled a path of greatness!$"
 
 MossdeepCity_Gym_Text_H3_2::
-	.string "A bright future awaits those who have\n"
-	.string "worked diligently.\p"
+	.string "A bright future awaits those who\n"
+	.string "have worked diligently.\p"
 	.string "For those who lazed idly, there is\n"
 	.string "only despair at the end.\p"
 	.string "What goes around comes around…$"
@@ -96,12 +101,12 @@ MossdeepCity_Gym_Text_H5_1::
 MossdeepCity_Gym_Text_H5_2::
 	.string "If there are prodigies in the world,\n"
 	.string "then our GYM LEADERS are them!\p"
-	.string "However, you may be even more talented\n"
-	.string "than them…$"
+	.string "However, you may be even more\n"
+	.string "talented than them…$"
 
 MossdeepCity_Gym_Text_H6_0::
-	.string "When you lose to me, don't be too hard\n"
-	.string "on yourself.\p"
+	.string "When you lose to me, don't be too\n"
+	.string "hard on yourself.\p"
 	.string "It's not that you're weak--I'm just\n"
 	.string "too strong!$"
 
@@ -109,8 +114,9 @@ MossdeepCity_Gym_Text_H6_1::
 	.string "You're just too strong!$"
 
 MossdeepCity_Gym_Text_H6_2::
-	.string "I'm not going to get down on myself for\n"
-	.string "losing. I just need to train harder.\p"
+	.string "I'm not going to get down on myself\n"
+	.string "for losing. I just need to train\l"
+	.string "harder.\p"
 	.string "Positive thinking--that's my strong\n"
 	.string "point!$"
 
@@ -124,15 +130,16 @@ MossdeepCity_Gym_Text_H7::
 	.string "they'll inflict horrible damage!\p"
 	.string "Plus, they'll come at you with\n"
 	.string "outstanding combination attacks.\p"
-	.string "If you want to win, you'll need to show\n"
-	.string "them how tight you are with your\l"
-	.string "POKéMON. Go for it!$"
+	.string "If you want to win, you'll need to\n"
+	.string "show them how tight you are with\l"
+	.string "your POKéMON. Go for it!$"
 
 MossdeepCity_Gym_Text_H8_0::
 	.string "TATE: Hehehe… Were you surprised?\p"
 	.string "LIZA: Fufufu… Were you surprised?\p"
-	.string "TATE: That there are two GYM LEADERS?\n"
-	.string "LIZA: That there are two GYM LEADERS?\p"
+	.string "TATE: That there are two GYM\n"
+	.string "LEADERS? LIZA: That there are two\l"
+	.string "GYM LEADERS?\p"
 	.string "TATE: We're twins!\n"
 	.string "LIZA: We're twins!\p"
 	.string "TATE: We don't need to talk because…\n"
@@ -145,20 +152,23 @@ MossdeepCity_Gym_Text_H8_0::
 MossdeepCity_Gym_Text_H8_1::
 	.string "TATE: What?! Our combination…\n"
 	.string "LIZA: Was shattered!\p"
-	.string "TATE: It can't be helped. You've won…\n"
-	.string "LIZA: So, in recognition, take this.$"
+	.string "TATE: It can't be helped. You've\n"
+	.string "won… LIZA: So, in recognition, take\l"
+	.string "this.$"
 
 MossdeepCity_Gym_Text_H8_2::
-	.string "TATE: Looks like the bond between you\n"
-	.string "and your POKéMON is far stronger than\l"
-	.string "the bond that we share as twins.\p"
-	.string "LIZA: You will become even stronger!\n"
-	.string "We've battled you, so we know.$"
+	.string "TATE: Looks like the bond between\n"
+	.string "you and your POKéMON is far stronger\l"
+	.string "than the bond that we share as\l"
+	.string "twins.\p"
+	.string "LIZA: You will become even\n"
+	.string "stronger! We've battled you, so we\l"
+	.string "know.$"
 
 MossdeepCity_Gym_Text_H9_0::
 	.string "Hohoho.\p"
-	.string "You need me to show you how tenacious\n"
-	.string "the PSYCHIC type can be.$"
+	.string "You need me to show you how\n"
+	.string "tenacious the PSYCHIC type can be.$"
 
 MossdeepCity_Gym_Text_H9_1::
 	.string "Oh! My, my!\n"
@@ -182,8 +192,8 @@ MossdeepCity_Gym_Text_H10_2::
 	.string "horrible befalls you…$"
 
 MossdeepCity_Gym_Text_H11_0::
-	.string "I may be past my prime, but I suggest\n"
-	.string "you not patronize me.$"
+	.string "I may be past my prime, but I\n"
+	.string "suggest you not patronize me.$"
 
 MossdeepCity_Gym_Text_H11_1::
 	.string "Ah, you overflow with the power\n"
@@ -194,17 +204,19 @@ MossdeepCity_Gym_Text_H11_2::
 	.string "your youthful energy.$"
 
 MossdeepCity_Gym_Text_H12_0::
-	.string "You're not getting through to the end!\n"
-	.string "Not if I can help it!$"
+	.string "You're not getting through to the\n"
+	.string "end! Not if I can help it!$"
 
 MossdeepCity_Gym_Text_H12_1::
 	.string "How could you be so ludicrously\n"
 	.string "strong?$"
 
 MossdeepCity_Gym_Text_H12_2::
-	.string "Humph! You may be strong, but you're\n"
-	.string "not suitable for the PSYCHIC type!\p"
-	.string "The way you battle is somehow brutal!$"
+	.string "Humph! You may be strong, but\n"
+	.string "you're not suitable for the PSYCHIC\l"
+	.string "type!\p"
+	.string "The way you battle is somehow\n"
+	.string "brutal!$"
 
 MossdeepCity_Gym_Text_H13_0::
 	.string "Let me show you a perfectly awful,\n"
@@ -226,6 +238,7 @@ MossdeepCity_Gym_Text_H14_1::
 	.string "Done in!$"
 
 MossdeepCity_Gym_Text_H14_2::
-	.string "All right! I think I'll develop a special\n"
-	.string "invincible POKéMON power next.$"
+	.string "All right! I think I'll develop a\n"
+	.string "special invincible POKéMON power\l"
+	.string "next.$"
 

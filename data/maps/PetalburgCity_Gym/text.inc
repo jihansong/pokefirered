@@ -83,8 +83,8 @@ PetalburgCity_Gym_Text_H4_2::
 	.string "Go on! The ONE-HIT KO ROOM is next.$"
 
 PetalburgCity_Gym_Text_H5_0::
-	.string "Our GYM LEADER told us to go all out\n"
-	.string "and beat you.\p"
+	.string "Our GYM LEADER told us to go all\n"
+	.string "out and beat you.\p"
 	.string "Even if you happen to be the\n"
 	.string "LEADER's kid!$"
 
@@ -94,8 +94,8 @@ PetalburgCity_Gym_Text_H5_1::
 PetalburgCity_Gym_Text_H5_2::
 	.string "The way you use your POKéMON…\n"
 	.string "It's like your father's style.\p"
-	.string "Go on through! The GYM LEADER, your\n"
-	.string "father, is waiting!$"
+	.string "Go on through! The GYM LEADER,\n"
+	.string "your father, is waiting!$"
 
 PetalburgCity_Gym_Text_H6_0::
 	.string "I'm not going to take it easy just\n"
@@ -157,13 +157,13 @@ PetalburgCity_Gym_Text_H16::
 
 PetalburgCity_Gym_Text_H17::
 	.string "“GYM LEADER'S ROOM\p"
-	.string "“See for yourself what POKéMON await\n"
-	.string "you!” the sign says.\p"
+	.string "“See for yourself what POKéMON\n"
+	.string "await you!” the sign says.\p"
 	.string "Do you want to go through?$"
 
 PetalburgCity_Gym_Text_H18::
 	.string "“GYM LEADER'S ROOM\p"
-	.string "“See for yourself what POKéMON await\n"
-	.string "you!” the sign says.\p"
+	.string "“See for yourself what POKéMON\n"
+	.string "await you!” the sign says.\p"
 	.string "Do you want to go through?$"
 

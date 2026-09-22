@@ -1,6 +1,6 @@
 VictoryRoad_B1F_Text_H0_0::
-	.string "The thought that I'm getting closer to\n"
-	.string "the POKéMON LEAGUE…\p"
+	.string "The thought that I'm getting closer\n"
+	.string "to the POKéMON LEAGUE…\p"
 	.string "I'm getting stage fright…$"
 
 VictoryRoad_B1F_Text_H0_1::
@@ -20,12 +20,14 @@ VictoryRoad_B1F_Text_H1_1::
 	.string "solid trust.$"
 
 VictoryRoad_B1F_Text_H1_2::
-	.string "By being together all the time, trust\n"
-	.string "grows between POKéMON and TRAINERS.$"
+	.string "By being together all the time,\n"
+	.string "trust grows between POKéMON and\l"
+	.string "TRAINERS.$"
 
 VictoryRoad_B1F_Text_H2_0::
-	.string "This isn't the goal. It's only a place\n"
-	.string "on the way to the POKéMON LEAGUE.$"
+	.string "This isn't the goal. It's only a\n"
+	.string "place on the way to the POKéMON\l"
+	.string "LEAGUE.$"
 
 VictoryRoad_B1F_Text_H2_1::
 	.string "That's the way!$"
@@ -39,7 +41,8 @@ VictoryRoad_B1F_Text_H3_0::
 	.string "awe inspiring!$"
 
 VictoryRoad_B1F_Text_H3_1::
-	.string "I've never met anyone like you before.$"
+	.string "I've never met anyone like you\n"
+	.string "before.$"
 
 VictoryRoad_B1F_Text_H3_2::
 	.string "Even outside of battle, I sense\n"

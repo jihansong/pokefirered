@@ -9,8 +9,8 @@ VerdanturfTown_PokemonCenter_1F_Text_H0::
 VerdanturfTown_PokemonCenter_1F_Text_H1::
 	.string "The reason why anyone would visit\n"
 	.string "VERDANTURF…\p"
-	.string "It's the BATTLE TENT. It goes without\n"
-	.string "saying.\p"
+	.string "It's the BATTLE TENT. It goes\n"
+	.string "without saying.\p"
 	.string "Or is there somebody here that you\n"
 	.string "came to see?$"
 

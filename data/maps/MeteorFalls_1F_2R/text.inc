@@ -1,15 +1,16 @@
 MeteorFalls_1F_2R_Text_H0_0::
-	.string "This is where we DRAGON users do our\n"
-	.string "training.\p"
-	.string "The CHAMPION even visits.\n"
-	.string "Now do you see how special it is here?$"
+	.string "This is where we DRAGON users do\n"
+	.string "our training.\p"
+	.string "The CHAMPION even visits. Now do\n"
+	.string "you see how special it is here?$"
 
 MeteorFalls_1F_2R_Text_H0_1::
 	.string "Urgh!\n"
 	.string "I didn't expect you to be so strong!$"
 
 MeteorFalls_1F_2R_Text_H0_2::
-	.string "The road ahead remains long and harsh.\p"
+	.string "The road ahead remains long and\n"
+	.string "harsh.\p"
 	.string "When will my POKéMON and I become\n"
 	.string "the best?$"
 
@@ -25,8 +26,8 @@ MeteorFalls_1F_2R_Text_H1_1::
 MeteorFalls_1F_2R_Text_H1_2::
 	.string "JOHN: We've been married for\n"
 	.string "fifty years.\p"
-	.string "Come to think of it, I've yet to beat\n"
-	.string "my dear wife in a battle.$"
+	.string "Come to think of it, I've yet to\n"
+	.string "beat my dear wife in a battle.$"
 
 MeteorFalls_1F_2R_Text_H2_0::
 	.string "JAY: We've been married for\n"
@@ -40,6 +41,6 @@ MeteorFalls_1F_2R_Text_H2_1::
 
 MeteorFalls_1F_2R_Text_H2_2::
 	.string "JAY: Fifty years of marriage…\p"
-	.string "If we ever argued, we always settled\n"
-	.string "it with a POKéMON battle…$"
+	.string "If we ever argued, we always\n"
+	.string "settled it with a POKéMON battle…$"
 

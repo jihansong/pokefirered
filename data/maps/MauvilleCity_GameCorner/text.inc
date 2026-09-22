@@ -33,8 +33,8 @@ MauvilleCity_GameCorner_Text_H6::
 	.string "pick a table.$"
 
 MauvilleCity_GameCorner_Text_H7::
-	.string "It's easy to lose track of time in here. \n"
-	.string "I should get back to work.$"
+	.string "It's easy to lose track of time in\n"
+	.string "here. I should get back to work.$"
 
 MauvilleCity_GameCorner_Text_H8::
 	.string "Welcome.\p"
@@ -42,14 +42,15 @@ MauvilleCity_GameCorner_Text_H8::
 	.string "prizes here.$"
 
 MauvilleCity_GameCorner_Text_H9::
-	.string "Up to three COINS can be used to play\n"
-	.string "the SLOTS.$"
+	.string "Up to three COINS can be used to\n"
+	.string "play the SLOTS.$"
 
 MauvilleCity_GameCorner_Text_H10::
 	.string "It's very difficult to make it stop\n"
 	.string "right on “7.”\p"
-	.string "If it stops on “7” during the REEL TIME\n"
-	.string "bonus game, you'll receive extra COINS.$"
+	.string "If it stops on “7” during the REEL\n"
+	.string "TIME bonus game, you'll receive\l"
+	.string "extra COINS.$"
 
 MauvilleCity_GameCorner_Text_H11::
 	.string "Here's some information for you\n"
@@ -58,8 +59,8 @@ MauvilleCity_GameCorner_Text_H11::
 	.string "the more REEL TIME chances you get.\p"
 	.string "In a game with the maximum five\n"
 	.string "REEL TIME chances…\p"
-	.string "It is possible to receive four regular\n"
-	.string "bonuses, then a big bonus.\p"
+	.string "It is possible to receive four\n"
+	.string "regular bonuses, then a big bonus.\p"
 	.string "That would total 660 COINS, but it's\n"
 	.string "very difficult to get.$"
 

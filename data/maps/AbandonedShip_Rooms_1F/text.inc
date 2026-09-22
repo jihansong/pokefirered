@@ -24,6 +24,6 @@ AbandonedShip_Rooms_1F_Text_H2_1::
 	.string "Oh, you're not my mom.$"
 
 AbandonedShip_Rooms_1F_Text_H2_2::
-	.string "I'm in trouble with my mom, so I ran.\n"
-	.string "Keep it a secret where I am!$"
+	.string "I'm in trouble with my mom, so I\n"
+	.string "ran. Keep it a secret where I am!$"
 

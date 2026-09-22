@@ -15,15 +15,16 @@ Route131_Text_H0_2::
 	.string "the return trip?$"
 
 Route131_Text_H1_0::
-	.string "The sea… The sea… The sea…\n"
-	.string "The sea as far as these eyes can see!\l"
-	.string "I'm sick and tired of the sea!$"
+	.string "The sea… The sea… The sea… The sea\n"
+	.string "as far as these eyes can see! I'm\l"
+	.string "sick and tired of the sea!$"
 
 Route131_Text_H1_1::
 	.string "Bleah!$"
 
 Route131_Text_H1_2::
-	.string "Bored I am by the sea, but swim I must.\p"
+	.string "Bored I am by the sea, but swim I\n"
+	.string "must.\p"
 	.string "I'm a born swimmer!\n"
 	.string "That's what I am.$"
 
@@ -36,13 +37,14 @@ Route131_Text_H2_1::
 	.string "you look!$"
 
 Route131_Text_H2_2::
-	.string "Did you see a guy over there who whines\n"
-	.string "that he's bored of the sea?\p"
-	.string "That's all talk.\n"
-	.string "He's hopelessly in love with the sea!$"
+	.string "Did you see a guy over there who\n"
+	.string "whines that he's bored of the sea?\p"
+	.string "That's all talk. He's hopelessly in\n"
+	.string "love with the sea!$"
 
 Route131_Text_H3_0::
-	.string "Why do men love bathing suits so much?\p"
+	.string "Why do men love bathing suits so\n"
+	.string "much?\p"
 	.string "They all ogle me!$"
 
 Route131_Text_H3_1::
@@ -50,7 +52,8 @@ Route131_Text_H3_1::
 
 Route131_Text_H3_2::
 	.string "Maybe it's not my bathing suit that\n"
-	.string "makes men look. It must be my beauty!$"
+	.string "makes men look. It must be my\l"
+	.string "beauty!$"
 
 Route131_Text_H4_0::
 	.string "RELI: We'll work together as siblings\n"
@@ -62,8 +65,8 @@ Route131_Text_H4_1::
 
 Route131_Text_H4_2::
 	.string "RELI: The people of PACIFIDLOG are\n"
-	.string "together with the sea and POKéMON from\l"
-	.string "the time they are born.$"
+	.string "together with the sea and POKéMON\l"
+	.string "from the time they are born.$"
 
 Route131_Text_H5_0::
 	.string "IAN: I'm doing my best together with\n"
@@ -95,8 +98,8 @@ Route131_Text_H6_2::
 	.string "Hahaha!$"
 
 Route131_Text_H7_0::
-	.string "If you can beat me, I'll give you some\n"
-	.string "great information!$"
+	.string "If you can beat me, I'll give you\n"
+	.string "some great information!$"
 
 Route131_Text_H7_1::
 	.string "Oh?\n"

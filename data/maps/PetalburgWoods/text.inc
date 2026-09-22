@@ -1,9 +1,9 @@
 PetalburgWoods_Text_H0::
 	.string "Yo, there!\n"
 	.string "Your POKéMON doing okay?\p"
-	.string "If your POKéMON are weak and you want\n"
-	.string "to avoid battles, you should stay out\l"
-	.string "of tall grass.$"
+	.string "If your POKéMON are weak and you\n"
+	.string "want to avoid battles, you should\l"
+	.string "stay out of tall grass.$"
 
 PetalburgWoods_Text_H1_0::
 	.string "I caught a whole bunch of POKéMON!\p"
@@ -45,17 +45,18 @@ PetalburgWoods_Text_H5::
 	.string "TRAINER TIPS\p"
 	.string "Any POKéMON that appears even once\n"
 	.string "in a battle is awarded EXP Points.\p"
-	.string "To raise a weak POKéMON, put it at the\n"
-	.string "left of the team list.\p"
+	.string "To raise a weak POKéMON, put it at\n"
+	.string "the left of the team list.\p"
 	.string "As soon as a battle starts, switch it\n"
 	.string "out. It will earn EXP Points without\l"
 	.string "being exposed to any harm.$"
 
 PetalburgWoods_Text_H6::
 	.string "TRAINER TIPS\p"
-	.string "In addition to Hit Points (HP), POKéMON\n"
-	.string "have Power Points (PP) that are used to\l"
-	.string "make moves during battle.\p"
-	.string "If a POKéMON runs out of PP, it must be\n"
-	.string "taken to a POKéMON CENTER.$"
+	.string "In addition to Hit Points (HP),\n"
+	.string "POKéMON have Power Points (PP) that\l"
+	.string "are used to make moves during\l"
+	.string "battle.\p"
+	.string "If a POKéMON runs out of PP, it must\n"
+	.string "be taken to a POKéMON CENTER.$"
 

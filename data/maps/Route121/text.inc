@@ -1,20 +1,20 @@
 Route121_Text_H0::
 	.string "Ahead looms MT. PYRE…\p"
-	.string "It is a natural monument to the spirits \n"
-	.string "of departed POKéMON…$"
+	.string "It is a natural monument to the\n"
+	.string "spirits of departed POKéMON…$"
 
 Route121_Text_H1_0::
 	.string "KATE: Together, we're fearless!\n"
 	.string "We'll demonstrate how tough we are!$"
 
 Route121_Text_H1_1::
-	.string "KATE: I blew it in front of my junior\n"
-	.string "student partner…$"
+	.string "KATE: I blew it in front of my\n"
+	.string "junior student partner…$"
 
 Route121_Text_H1_2::
 	.string "KATE: When someone's relying on me,\n"
-	.string "I get this urge to look cool in front\l"
-	.string "of them…$"
+	.string "I get this urge to look cool in\l"
+	.string "front of them…$"
 
 Route121_Text_H2_0::
 	.string "JOY: Together, we're fearless!\n"
@@ -24,8 +24,9 @@ Route121_Text_H2_1::
 	.string "JOY: Please forgive me, KATE!$"
 
 Route121_Text_H2_2::
-	.string "JOY: Ehehe, I'll have to train with KATE,\n"
-	.string "my senior student partner, again.$"
+	.string "JOY: Ehehe, I'll have to train with\n"
+	.string "KATE, my senior student partner,\l"
+	.string "again.$"
 
 Route121_Text_H3_0::
 	.string "Will you play with my delightfully\n"
@@ -42,15 +43,15 @@ Route121_Text_H3_2::
 Route121_Text_H4_0::
 	.string "With my POKéMON, I have traveled\n"
 	.string "to the world's four corners.\p"
-	.string "You might say I have some confidence\n"
-	.string "in my abilities.$"
+	.string "You might say I have some\n"
+	.string "confidence in my abilities.$"
 
 Route121_Text_H4_1::
 	.string "Ah, well played.$"
 
 Route121_Text_H4_2::
-	.string "I would like to circle the globe once\n"
-	.string "again with my POKéMON.$"
+	.string "I would like to circle the globe\n"
+	.string "once again with my POKéMON.$"
 
 Route121_Text_H5_0::
 	.string "There are powers beyond our\n"
@@ -65,8 +66,8 @@ Route121_Text_H5_2::
 	.string "at work there…$"
 
 Route121_Text_H6_0::
-	.string "Stop! Have a good look at my precious\n"
-	.string "POKéMON!$"
+	.string "Stop! Have a good look at my\n"
+	.string "precious POKéMON!$"
 
 Route121_Text_H6_1::
 	.string "Oh, how dare you!\n"
@@ -113,19 +114,20 @@ Route121_Text_H9_1::
 
 Route121_Text_H9_2::
 	.string "I raise every POKéMON with the same\n"
-	.string "love and care--I don't pick favorites.$"
+	.string "love and care--I don't pick\l"
+	.string "favorites.$"
 
 Route121_Text_H10_0::
-	.string "My POKéMON have never tasted defeat!\n"
-	.string "On their next win, I'm entering them\l"
-	.string "in CONTESTS.$"
+	.string "My POKéMON have never tasted\n"
+	.string "defeat! On their next win, I'm\l"
+	.string "entering them in CONTESTS.$"
 
 Route121_Text_H10_1::
 	.string "Oh, now what happened here?$"
 
 Route121_Text_H10_2::
-	.string "I may have to train my gang some more\n"
-	.string "before entering any CONTEST.$"
+	.string "I may have to train my gang some\n"
+	.string "more before entering any CONTEST.$"
 
 Route121_Text_H11_0::
 	.string "I have this routine.\n"

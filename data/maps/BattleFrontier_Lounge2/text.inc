@@ -3,10 +3,11 @@ BattleFrontier_Lounge2_Text_H0::
 	.string "the BATTLE FRONTIER, I'm no. 1.\p"
 	.string "You can think of me as\n"
 	.string "the FRONTIER MANIAC.\p"
-	.string "Just checking, but you are a TRAINER,\n"
-	.string "isn't that right?\p"
+	.string "Just checking, but you are a\n"
+	.string "TRAINER, isn't that right?\p"
 	.string "I'll happily share the hottest news\n"
-	.string "I gathered about the BATTLE FRONTIER.$"
+	.string "I gathered about the BATTLE\l"
+	.string "FRONTIER.$"
 
 BattleFrontier_Lounge2_Text_H1::
 	.string "What amazing news-gathering power!\n"

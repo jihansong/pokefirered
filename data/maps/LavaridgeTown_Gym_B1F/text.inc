@@ -6,8 +6,8 @@ LavaridgeTown_Gym_B1F_Text_H0::
 LavaridgeTown_Gym_B1F_Text_H1::
 	.string "Your skill is real…\n"
 	.string "But our LEADER FLANNERY is strong.\p"
-	.string "If you don't watch yourself, you'll be\n"
-	.string "burned seriously.$"
+	.string "If you don't watch yourself, you'll\n"
+	.string "be burned seriously.$"
 
 LavaridgeTown_Gym_B1F_Text_H2::
 	.string "Well, so what? I say so what?\n"

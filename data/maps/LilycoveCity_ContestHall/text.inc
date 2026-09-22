@@ -1,6 +1,6 @@
 LilycoveCity_ContestHall_Text_H0::
-	.string "This POKéMON won the BEAUTY CONTEST\n"
-	.string "here before.\p"
+	.string "This POKéMON won the BEAUTY\n"
+	.string "CONTEST here before.\p"
 	.string "Well, guess what? Today, I made it\n"
 	.string "win a SMARTNESS CONTEST!\p"
 	.string "My abilities scare even me…$"
@@ -26,7 +26,8 @@ LilycoveCity_ContestHall_Text_H3::
 	.string "Let's appeal!$"
 
 LilycoveCity_ContestHall_Text_H4::
-	.string "JUDGE: Are you enjoying this CONTEST?\p"
+	.string "JUDGE: Are you enjoying this\n"
+	.string "CONTEST?\p"
 	.string "Come back with three friends, and\n"
 	.string "all of you may enter a CONTEST!$"
 
@@ -35,8 +36,8 @@ LilycoveCity_ContestHall_Text_H5::
 	.string "I entered the wrong CONTEST.\p"
 	.string "I entered this tough POKéMON in\n"
 	.string "the SMARTNESS CONTEST…\p"
-	.string "Come on, wow them with a smart-looking\n"
-	.string "ROCK SMASH.$"
+	.string "Come on, wow them with a\n"
+	.string "smart-looking ROCK SMASH.$"
 
 LilycoveCity_ContestHall_Text_H6::
 	.string "I've spent many a year, and all my\n"
@@ -48,29 +49,30 @@ LilycoveCity_ContestHall_Text_H6::
 
 LilycoveCity_ContestHall_Text_H7::
 	.string "There it is!\p"
-	.string "If my POKéMON pulls a smart move next,\n"
-	.string "the audience's excitement will peak!$"
+	.string "If my POKéMON pulls a smart move\n"
+	.string "next, the audience's excitement will\l"
+	.string "peak!$"
 
 LilycoveCity_ContestHall_Text_H8::
 	.string "Oh, dear, no!\p"
 	.string "My darling ZUBAT's LEECH LIFE is so\n"
 	.string "cute I kept using it over and over!\p"
-	.string "But these mean people don't appreciate\n"
-	.string "it at all!$"
+	.string "But these mean people don't\n"
+	.string "appreciate it at all!$"
 
 LilycoveCity_ContestHall_Text_H9::
 	.string "Kiyaaah! You're beautiful, Grandpa!$"
 
 LilycoveCity_ContestHall_Text_H10::
-	.string "When all's said and done, I still love\n"
-	.string "SMARTNESS CONTESTS.\p"
+	.string "When all's said and done, I still\n"
+	.string "love SMARTNESS CONTESTS.\p"
 	.string "That intellectual green color…\n"
 	.string "It's so… So… Cool.$"
 
 LilycoveCity_ContestHall_Text_H11::
 	.string "Even when TRAINERS enter the same\n"
-	.string "kind of POKéMON, they all seem to use\l"
-	.string "different moves for appeals.\p"
+	.string "kind of POKéMON, they all seem to\l"
+	.string "use different moves for appeals.\p"
 	.string "It's just like the way people have\n"
 	.string "different styles for battling.$"
 
@@ -93,8 +95,8 @@ LilycoveCity_ContestHall_Text_H15::
 	.string "Waaaah!\p"
 	.string "I brushed and groomed my POKéMON\n"
 	.string "carefully for this CONTEST…\p"
-	.string "But I overdid it…\n"
-	.string "My POKéMON's coat turned all scraggly…\p"
+	.string "But I overdid it… My POKéMON's coat\n"
+	.string "turned all scraggly…\p"
 	.string "What should I do?$"
 
 LilycoveCity_ContestHall_Text_H16::
@@ -148,12 +150,13 @@ LilycoveCity_ContestHall_Text_H24::
 	.string "distracted by another POKéMON.$"
 
 LilycoveCity_ContestHall_Text_H25::
-	.string "My POKéMON has never won in a battle,\n"
-	.string "but put it in a CONTEST and look out!$"
+	.string "My POKéMON has never won in a\n"
+	.string "battle, but put it in a CONTEST and\l"
+	.string "look out!$"
 
 LilycoveCity_ContestHall_Text_H26::
-	.string "My POKéMON's PETAL DANCE is a marvel\n"
-	.string "of elegance.\p"
+	.string "My POKéMON's PETAL DANCE is a\n"
+	.string "marvel of elegance.\p"
 	.string "I won't let anyone disturb its\n"
 	.string "performance.$"
 

@@ -12,8 +12,8 @@ BattleFrontier_Mart_Text_H2::
 
 BattleFrontier_Mart_Text_H3::
 	.string "A lot of the BATTLE FRONTIER's\n"
-	.string "facilities don't allow the use of items\l"
-	.string "during battles.\p"
+	.string "facilities don't allow the use of\l"
+	.string "items during battles.\p"
 	.string "That rule makes things tougher than\n"
 	.string "they already are!$"
 

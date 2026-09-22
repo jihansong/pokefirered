@@ -8,6 +8,7 @@ EM = '/root/src/pokeemerald'
 FR = '/workspaces/pokefirered'
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import import_tilesets
+from rewrap_text import rewrap_lines
 
 EXCLUDE = re.compile(r'^(SecretBase_|BattleColosseum_|TradeCenter$|RecordCorner$|UnionRoom$|BirthIsland_|NavelRock_|'
                      r'Route104_Prototype|UnusedContestHall)')
@@ -307,7 +308,8 @@ def main():
         open(d + '/.hoenn', 'w').write('imported from pokeemerald\n')
         open(d + '/map.json', 'w').write(json.dumps(out, indent=2, ensure_ascii=False) + '\n')
         open(d + '/scripts.inc', 'w').write('\n'.join(sc_lines) + '\n')
-        tx = ''.join(f'{k}::\n' + '\n'.join(v) + '\n\n' for k, v in out_texts.items() if k.startswith(nm + '_Text_H'))
+        # Emerald's message box is wider than FR/LG's; re-flow lines that would be cut off
+        tx = ''.join(f'{k}::\n' + '\n'.join(rewrap_lines(v)) + '\n\n' for k, v in out_texts.items() if k.startswith(nm + '_Text_H'))
         # Hand-made additions (e.g. the airline counter) live in patches/ so a re-import keeps them
         pt = f'{os.path.dirname(os.path.abspath(__file__))}/patches/{nm}'
         if os.path.exists(pt + '.json'):

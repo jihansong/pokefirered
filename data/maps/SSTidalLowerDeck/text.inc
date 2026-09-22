@@ -9,12 +9,13 @@ SSTidalLowerDeck_Text_H0_1::
 SSTidalLowerDeck_Text_H0_2::
 	.string "We're the CLEANUP BROTHERS!\p"
 	.string "The old one dumps the detergent,\n"
-	.string "and the young one does the scrubbing!$"
+	.string "and the young one does the\l"
+	.string "scrubbing!$"
 
 SSTidalLowerDeck_Text_H1_0::
-	.string "This is the bottom of the ship's hull.\n"
-	.string "There's plenty of room.\l"
-	.string "It'll be alright for a POKéMON battle.$"
+	.string "This is the bottom of the ship's\n"
+	.string "hull. There's plenty of room. It'll\l"
+	.string "be alright for a POKéMON battle.$"
 
 SSTidalLowerDeck_Text_H1_1::
 	.string "Big bro, I lost!$"
@@ -22,5 +23,6 @@ SSTidalLowerDeck_Text_H1_1::
 SSTidalLowerDeck_Text_H1_2::
 	.string "We're the CLEANUP BROTHERS!\p"
 	.string "The old one dumps the detergent,\n"
-	.string "and the young one does the scrubbing!$"
+	.string "and the young one does the\l"
+	.string "scrubbing!$"
 

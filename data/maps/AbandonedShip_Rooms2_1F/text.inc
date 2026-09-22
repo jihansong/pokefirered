@@ -7,13 +7,13 @@ AbandonedShip_Rooms2_1F_Text_H0_1::
 	.string "we worked together…$"
 
 AbandonedShip_Rooms2_1F_Text_H0_2::
-	.string "DAN: We can't find any treasures…\n"
-	.string "I wonder if someone got them already?$"
+	.string "DAN: We can't find any treasures… I\n"
+	.string "wonder if someone got them already?$"
 
 AbandonedShip_Rooms2_1F_Text_H1_0::
-	.string "KIRA: Oh?\n"
-	.string "We were searching for treasures.\l"
-	.string "But we discovered a TRAINER instead!$"
+	.string "KIRA: Oh? We were searching for\n"
+	.string "treasures. But we discovered a\l"
+	.string "TRAINER instead!$"
 
 AbandonedShip_Rooms2_1F_Text_H1_1::
 	.string "KIRA: Ooh, so strong!$"

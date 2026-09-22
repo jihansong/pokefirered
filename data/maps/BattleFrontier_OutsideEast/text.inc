@@ -6,8 +6,8 @@ BattleFrontier_OutsideEast_Text_H0::
 
 BattleFrontier_OutsideEast_Text_H1::
 	.string "My grand ambition is to conquer both\n"
-	.string "the BATTLE FRONTIER and the POKéMON\l"
-	.string "LEAGUE.\p"
+	.string "the BATTLE FRONTIER and the\l"
+	.string "POKéMON LEAGUE.\p"
 	.string "And if my dream comes true…\p"
 	.string "I… I'm going to ask MIMI next door\n"
 	.string "if she will be friends with me!$"
@@ -15,15 +15,16 @@ BattleFrontier_OutsideEast_Text_H1::
 BattleFrontier_OutsideEast_Text_H2::
 	.string "The BATTLE PYRAMID's too harsh!\n"
 	.string "I just can't make it to the top!\p"
-	.string "Since I'm out of options, maybe I can\n"
-	.string "climb the outside…$"
+	.string "Since I'm out of options, maybe I\n"
+	.string "can climb the outside…$"
 
 BattleFrontier_OutsideEast_Text_H3::
 	.string "I thrive in darkness…\n"
 	.string "Yes… What is worthy of me?\l"
 	.string "None other than the BATTLE PYRAMID…\p"
-	.string "What say you to wandering in darkness\n"
-	.string "and in utter and total desperation?$"
+	.string "What say you to wandering in\n"
+	.string "darkness and in utter and total\l"
+	.string "desperation?$"
 
 BattleFrontier_OutsideEast_Text_H4::
 	.string "I didn't sleep for a week, but then\n"
@@ -48,8 +49,8 @@ BattleFrontier_OutsideEast_Text_H7::
 	.string "What is it with that guy?\p"
 	.string "It sounds like he really does know\n"
 	.string "how to spot talented TRAINERS, but…\p"
-	.string "I've never seen him battling in person\n"
-	.string "ever.$"
+	.string "I've never seen him battling in\n"
+	.string "person ever.$"
 
 BattleFrontier_OutsideEast_Text_H8::
 	.string "People call me a busybody,\n"
@@ -61,8 +62,8 @@ BattleFrontier_OutsideEast_Text_H8::
 	.string "watch at the BATTLE PALACE…$"
 
 BattleFrontier_OutsideEast_Text_H9::
-	.string "I'm fast on my BIKE, and that goes for\n"
-	.string "the way I battle, too.\p"
+	.string "I'm fast on my BIKE, and that goes\n"
+	.string "for the way I battle, too.\p"
 	.string "I win matches in the blink of\n"
 	.string "an eye!$"
 
@@ -89,17 +90,20 @@ BattleFrontier_OutsideEast_Text_H13::
 	.string "stinky, and primitive martial artists!$"
 
 BattleFrontier_OutsideEast_Text_H14::
-	.string "I sometimes see this really important-\n"
-	.string "looking old man going in there.\p"
-	.string "He has these really awesome POKéMON.\n"
-	.string "He seems really nice, though.$"
+	.string "I sometimes see this really\n"
+	.string "important- looking old man going in\l"
+	.string "there.\p"
+	.string "He has these really awesome\n"
+	.string "POKéMON. He seems really nice,\l"
+	.string "though.$"
 
 BattleFrontier_OutsideEast_Text_H15::
 	.string "Do you know it?\n"
 	.string "The legend of the BATTLE PYRAMID?\p"
-	.string "When there comes a confident TRAINER\n"
-	.string "reaching for the golden pinnacle,\l"
-	.string "there shall appear a man among men.\p"
+	.string "When there comes a confident\n"
+	.string "TRAINER reaching for the golden\l"
+	.string "pinnacle, there shall appear a man\l"
+	.string "among men.\p"
 	.string "Don't know that legend?\n"
 	.string "Well, of course not!\l"
 	.string "I just made it up!\p"
@@ -123,8 +127,8 @@ BattleFrontier_OutsideEast_Text_H17::
 	.string "decide to go to the BATTLE TOWER.$"
 
 BattleFrontier_OutsideEast_Text_H18::
-	.string "Yes!\n"
-	.string "I've finally got enough Battle Points!\p"
+	.string "Yes! I've finally got enough Battle\n"
+	.string "Points!\p"
 	.string "I guess I'll trade for another giant\n"
 	.string "plush DOLL!$"
 
@@ -136,39 +140,40 @@ BattleFrontier_OutsideEast_Text_H19::
 	.string "recorded here for posterity.$"
 
 BattleFrontier_OutsideEast_Text_H20::
-	.string "With you by my side, I can do anything.$"
+	.string "With you by my side, I can do\n"
+	.string "anything.$"
 
 BattleFrontier_OutsideEast_Text_H21::
 	.string "Ooh, darling, you are so wonderful!\p"
 	.string "Ooh, I just can't wait anymore!\p"
 	.string "Let's go to a MULTI BATTLE ROOM\n"
 	.string "right this instant!\p"
-	.string "If we get together in the BATTLE SALON,\n"
-	.string "the power of our love will overcome\l"
-	.string "everyone we meet.\p"
+	.string "If we get together in the BATTLE\n"
+	.string "SALON, the power of our love will\l"
+	.string "overcome everyone we meet.\p"
 	.string "Why, before us, darling, everything\n"
 	.string "will topple like dominoes!$"
 
 BattleFrontier_OutsideEast_Text_H22::
 	.string "Excuse me, young one.\n"
 	.string "Have you good eyesight?\p"
-	.string "There is an odd tree past here, and to\n"
-	.string "my tired eyes it seems to wiggle.$"
+	.string "There is an odd tree past here, and\n"
+	.string "to my tired eyes it seems to wiggle.$"
 
 BattleFrontier_OutsideEast_Text_H23::
-	.string "The BATTLE FRONTIER isn't exclusively\n"
-	.string "for tough TRAINERS.\p"
+	.string "The BATTLE FRONTIER isn't\n"
+	.string "exclusively for tough TRAINERS.\p"
 	.string "Many people with special abilities\n"
 	.string "have been invited, it seems.\p"
 	.string "That man SCOTT…\p"
-	.string "He may have built this place to serve\n"
-	.string "a bigger objective…$"
+	.string "He may have built this place to\n"
+	.string "serve a bigger objective…$"
 
 BattleFrontier_OutsideEast_Text_H24::
 	.string "I…\n"
 	.string "I saw it!\p"
-	.string "There was a sticky sort of a POKéMON\n"
-	.string "with a long tail up ahead!\p"
+	.string "There was a sticky sort of a\n"
+	.string "POKéMON with a long tail up ahead!\p"
 	.string "It was hiding under a boulder, and\n"
 	.string "it kept staring at me!$"
 
@@ -190,8 +195,8 @@ BattleFrontier_OutsideEast_Text_H28::
 	.string "Advance through the Battle Quest!$"
 
 BattleFrontier_OutsideEast_Text_H29::
-	.string "BATTLE POINT EXCHANGE SERVICE CORNER\n"
-	.string "Exchange your Battle Points!$"
+	.string "BATTLE POINT EXCHANGE SERVICE\n"
+	.string "CORNER Exchange your Battle Points!$"
 
 BattleFrontier_OutsideEast_Text_H30::
 	.string "BATTLE FRONTIER RANKING HALL\n"

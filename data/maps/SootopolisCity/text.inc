@@ -2,7 +2,8 @@ SootopolisCity_Text_H0::
 	.string "Who might you be?\p"
 	.string "This is the CAVE OF ORIGIN.\p"
 	.string "The spirits of POKéMON, becalmed at\n"
-	.string "MT. PYRE, are said to be revived here.\p"
+	.string "MT. PYRE, are said to be revived\l"
+	.string "here.\p"
 	.string "Please leave.$"
 
 SootopolisCity_Text_H1::
@@ -15,8 +16,8 @@ SootopolisCity_Text_H2::
 	.string "This is wicked!$"
 
 SootopolisCity_Text_H3::
-	.string "These giant POKéMON suddenly appeared\n"
-	.string "in the middle of the city!\p"
+	.string "These giant POKéMON suddenly\n"
+	.string "appeared in the middle of the city!\p"
 	.string "And, I've never seen them before!\p"
 	.string "Why are they smashing into each\n"
 	.string "other like that?\p"
@@ -26,9 +27,9 @@ SootopolisCity_Text_H3::
 SootopolisCity_Text_H4::
 	.string "SOOTOPOLIS sprang up as a town in\n"
 	.string "the crater of a volcano.\p"
-	.string "If you look up at the sky, the lip of\n"
-	.string "the crater is also visible.\l"
-	.string "So, all you see is the sky in a circle.\p"
+	.string "If you look up at the sky, the lip\n"
+	.string "of the crater is also visible. So,\l"
+	.string "all you see is the sky in a circle.\p"
 	.string "But that's what makes the sky above\n"
 	.string "SOOTOPOLIS the most beautiful.$"
 

@@ -1,7 +1,7 @@
 Route132_Text_H0_0::
-	.string "I used to catch colds all the time as\n"
-	.string "a kid, but I became totally fit after\l"
-	.string "I started swimming.$"
+	.string "I used to catch colds all the time\n"
+	.string "as a kid, but I became totally fit\l"
+	.string "after I started swimming.$"
 
 Route132_Text_H0_1::
 	.string "I crave more power…$"
@@ -18,22 +18,23 @@ Route132_Text_H1_1::
 	.string "Oh, please, no!$"
 
 Route132_Text_H1_2::
-	.string "If I get swept away, I'll lose all my\n"
-	.string "sense of place…$"
+	.string "If I get swept away, I'll lose all\n"
+	.string "my sense of place…$"
 
 Route132_Text_H2_0::
-	.string "I contemplate POKéMON 24 hours a day.\n"
-	.string "How could you possibly beat me?$"
+	.string "I contemplate POKéMON 24 hours a\n"
+	.string "day. How could you possibly beat\l"
+	.string "me?$"
 
 Route132_Text_H2_1::
 	.string "I lose.\n"
 	.string "I will concede defeat.$"
 
 Route132_Text_H2_2::
-	.string "Urggh…\n"
-	.string "You're a POKéMON fanatic, aren't you?\p"
-	.string "You must contemplate POKéMON 24 hours\n"
-	.string "a day, don't you?$"
+	.string "Urggh… You're a POKéMON fanatic,\n"
+	.string "aren't you?\p"
+	.string "You must contemplate POKéMON 24\n"
+	.string "hours a day, don't you?$"
 
 Route132_Text_H3_0::
 	.string "Win or lose, you'll never know until\n"
@@ -45,8 +46,8 @@ Route132_Text_H3_1::
 
 Route132_Text_H3_2::
 	.string "I never battle when I know I'll win.\n"
-	.string "I like to battle at the razor's edge of\l"
-	.string "victory and defeat!$"
+	.string "I like to battle at the razor's edge\l"
+	.string "of victory and defeat!$"
 
 Route132_Text_H4_0::
 	.string "Now where could my wife have gone?\n"
@@ -62,8 +63,8 @@ Route132_Text_H4_2::
 	.string "I'd best go find her right away.$"
 
 Route132_Text_H5_0::
-	.string "I liked training here by myself.\n"
-	.string "It's awful that all these people came!$"
+	.string "I liked training here by myself. It's\n"
+	.string "awful that all these people came!$"
 
 Route132_Text_H5_1::
 	.string "Okay! I won't complain about other\n"
@@ -71,7 +72,8 @@ Route132_Text_H5_1::
 
 Route132_Text_H5_2::
 	.string "I suppose I can partner up with that\n"
-	.string "old man and challenge that other team.$"
+	.string "old man and challenge that other\l"
+	.string "team.$"
 
 Route132_Text_H6_0::
 	.string "I'm always with my husband,\n"
@@ -81,8 +83,9 @@ Route132_Text_H6_1::
 	.string "Oh, I guess I wasn't good enough.$"
 
 Route132_Text_H6_2::
-	.string "That young man over there looks just\n"
-	.string "like my husband when he was young.\p"
+	.string "That young man over there looks\n"
+	.string "just like my husband when he was\l"
+	.string "young.\p"
 	.string "He's making me blush!$"
 
 Route132_Text_H7_0::

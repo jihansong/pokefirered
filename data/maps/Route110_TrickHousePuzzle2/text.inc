@@ -6,19 +6,19 @@ Route110_TrickHousePuzzle2_Text_H0_1::
 	.string "confused!$"
 
 Route110_TrickHousePuzzle2_Text_H0_2::
-	.string "Can I get you to push all the buttons\n"
-	.string "for me?$"
+	.string "Can I get you to push all the\n"
+	.string "buttons for me?$"
 
 Route110_TrickHousePuzzle2_Text_H1_0::
-	.string "Oh! You're on your second TRICK HOUSE\n"
-	.string "challenge!$"
+	.string "Oh! You're on your second TRICK\n"
+	.string "HOUSE challenge!$"
 
 Route110_TrickHousePuzzle2_Text_H1_1::
 	.string "You're good at battling too?$"
 
 Route110_TrickHousePuzzle2_Text_H1_2::
-	.string "The TRICK MASTER rigged all the tricks\n"
-	.string "in this house all by himself.$"
+	.string "The TRICK MASTER rigged all the\n"
+	.string "tricks in this house all by himself.$"
 
 Route110_TrickHousePuzzle2_Text_H2_0::
 	.string "I want to make my own GYM one day.\n"
@@ -28,6 +28,6 @@ Route110_TrickHousePuzzle2_Text_H2_1::
 	.string "I didn't study battling enough!$"
 
 Route110_TrickHousePuzzle2_Text_H2_2::
-	.string "You're strong, aren't you?\n"
-	.string "Maybe even enough to be a GYM LEADER!$"
+	.string "You're strong, aren't you? Maybe\n"
+	.string "even enough to be a GYM LEADER!$"
 

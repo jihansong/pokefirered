@@ -1,8 +1,8 @@
 SSTidalCorridor_Text_H0::
-	.string "It'll be some time before we make land,\n"
-	.string "I reckon.\p"
-	.string "You can rest up in your cabin if you'd\n"
-	.string "like. Your cabin's No. 2.\p"
+	.string "It'll be some time before we make\n"
+	.string "land, I reckon.\p"
+	.string "You can rest up in your cabin if\n"
+	.string "you'd like. Your cabin's No. 2.\p"
 	.string "The bed in there is soft and plushy.\n"
 	.string "I can attest to how comfy it is!$"
 

@@ -8,20 +8,21 @@ BattleFrontier_BattleTowerLobby_Text_H0::
 BattleFrontier_BattleTowerLobby_Text_H1::
 	.string "Excuse me, do you have a moment?\p"
 	.string "Can you describe your feelings when\n"
-	.string "you're about to begin a BATTLE TOWER\l"
-	.string "match, or when you've either won or\l"
-	.string "lost a match?$"
+	.string "you're about to begin a BATTLE\l"
+	.string "TOWER match, or when you've either\l"
+	.string "won or lost a match?$"
 
 BattleFrontier_BattleTowerLobby_Text_H2::
-	.string "The number of matches you win in a row\n"
-	.string "is recorded.\p"
+	.string "The number of matches you win in a\n"
+	.string "row is recorded.\p"
 	.string "I'd better not get beaten in\n"
 	.string "an embarrassing way!$"
 
 BattleFrontier_BattleTowerLobby_Text_H3::
-	.string "Once you've entered the BATTLE TOWER,\n"
-	.string "you can't leave until you either lose\l"
-	.string "or you beat seven TRAINERS in a row.\p"
+	.string "Once you've entered the BATTLE\n"
+	.string "TOWER, you can't leave until you\l"
+	.string "either lose or you beat seven\l"
+	.string "TRAINERS in a row.\p"
 	.string "You'd best be certain that you're up\n"
 	.string "to the challenge.$"
 

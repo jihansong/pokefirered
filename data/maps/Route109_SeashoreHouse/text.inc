@@ -1,9 +1,10 @@
 Route109_SeashoreHouse_Text_H0::
-	.string "I'm the owner of the SEASHORE HOUSE.\n"
-	.string "But you can call me MR. SEA!\p"
+	.string "I'm the owner of the SEASHORE\n"
+	.string "HOUSE. But you can call me MR. SEA!\p"
 	.string "What I love above all is to see hot\n"
 	.string "POKéMON battles.\p"
-	.string "Let me see that your heart burns hot!\p"
+	.string "Let me see that your heart burns\n"
+	.string "hot!\p"
 	.string "If you can defeat all the TRAINERS\n"
 	.string "here, I'll reward your efforts.$"
 
@@ -30,12 +31,14 @@ Route109_SeashoreHouse_Text_H2_1::
 Route109_SeashoreHouse_Text_H2_2::
 	.string "If one of my POKéMON knew the move\n"
 	.string "for carrying me across water on its\l"
-	.string "back, I could get rid of this inner tube.$"
+	.string "back, I could get rid of this inner\l"
+	.string "tube.$"
 
 Route109_SeashoreHouse_Text_H3_0::
-	.string "Boring battles aren't worth the effort.\p"
-	.string "Fiery hot battles are what toughen up\n"
-	.string "TRAINERS and POKéMON!$"
+	.string "Boring battles aren't worth the\n"
+	.string "effort.\p"
+	.string "Fiery hot battles are what toughen\n"
+	.string "up TRAINERS and POKéMON!$"
 
 Route109_SeashoreHouse_Text_H3_1::
 	.string "That's hot!$"

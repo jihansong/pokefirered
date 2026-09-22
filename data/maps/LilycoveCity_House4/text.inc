@@ -1,7 +1,8 @@
 LilycoveCity_House4_Text_H0::
 	.string "This planet's biggest mysteries are\n"
 	.string "at the bottom of the sea.\p"
-	.string "Somebody said that, but I don't know…$"
+	.string "Somebody said that, but I don't\n"
+	.string "know…$"
 
 LilycoveCity_House4_Text_H1::
 	.string "There's a deep underwater trench\n"

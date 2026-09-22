@@ -14,7 +14,8 @@ SlateportCity_OceanicMuseum_1F_Text_H3::
 	.string "A red ball is bobbing up and down\n"
 	.string "inside a glass vessel.\p"
 	.string "“This is an experiment simulating a\n"
-	.string "WATERFALL using the ball's buoyancy.”$"
+	.string "WATERFALL using the ball's\l"
+	.string "buoyancy.”$"
 
 SlateportCity_OceanicMuseum_1F_Text_H4::
 	.string "It's a sample of soil from the ocean\n"
@@ -74,26 +75,26 @@ SlateportCity_OceanicMuseum_1F_Text_H10::
 	.string "Which is bigger? The sea or land?\p"
 	.string "“The sea covers about 70% of\n"
 	.string "the planet, and the rest is land.\p"
-	.string "“The sea is therefore more than twice\n"
-	.string "the size of land.”$"
+	.string "“The sea is therefore more than\n"
+	.string "twice the size of land.”$"
 
 SlateportCity_OceanicMuseum_1F_Text_H11::
 	.string "It's a fossil with wavy ridges on it.\p"
-	.string "“Soil on the ocean floor gets scoured\n"
-	.string "by the tide.\p"
+	.string "“Soil on the ocean floor gets\n"
+	.string "scoured by the tide.\p"
 	.string "“The flowing seawater marks the soil\n"
 	.string "with small ridges and valleys.\p"
-	.string "“If this soil becomes fossilized, it is\n"
-	.string "called a ripple mark.”$"
+	.string "“If this soil becomes fossilized, it\n"
+	.string "is called a ripple mark.”$"
 
 SlateportCity_OceanicMuseum_1F_Text_H12::
 	.string "It's a fossil with wavy ridges on it.\p"
-	.string "“Soil on the ocean floor gets scoured\n"
-	.string "by the tide.\p"
+	.string "“Soil on the ocean floor gets\n"
+	.string "scoured by the tide.\p"
 	.string "“The flowing seawater marks the soil\n"
 	.string "with small ridges and valleys.\p"
-	.string "“If this soil becomes fossilized, it is\n"
-	.string "called a ripple mark.”$"
+	.string "“If this soil becomes fossilized, it\n"
+	.string "is called a ripple mark.”$"
 
 SlateportCity_OceanicMuseum_1F_Text_H13::
 	.string "A strange machine is rotating under\n"

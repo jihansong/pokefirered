@@ -1,8 +1,8 @@
 RustboroCity_DevonCorp_1F_Text_H0::
 	.string "Hey, those RUNNING SHOES!\n"
 	.string "They're one of our products!\p"
-	.string "It makes me happy when I see someone\n"
-	.string "using something we made.$"
+	.string "It makes me happy when I see\n"
+	.string "someone using something we made.$"
 
 RustboroCity_DevonCorp_1F_Text_H1::
 	.string "I'm sorry, only authorized people\n"
@@ -20,10 +20,12 @@ RustboroCity_DevonCorp_1F_Text_H3::
 	.string "There's a panel with a description…\p"
 	.string "“In addition to industrial products,\n"
 	.string "DEVON now markets sundries and\l"
-	.string "pharmaceuticals for better lifestyles.\p"
+	.string "pharmaceuticals for better\l"
+	.string "lifestyles.\p"
 	.string "“Recently, DEVON has begun marketing\n"
-	.string "tools for POKéMON TRAINERS, including\l"
-	.string "POKé BALLS and POKéNAV systems.”$"
+	.string "tools for POKéMON TRAINERS,\l"
+	.string "including POKé BALLS and POKéNAV\l"
+	.string "systems.”$"
 
 RustboroCity_DevonCorp_1F_Text_H4::
 	.string "Samples of rocks and metal are\n"
@@ -32,10 +34,11 @@ RustboroCity_DevonCorp_1F_Text_H4::
 	.string "on it…\p"
 	.string "“DEVON CORPORATION got its start as\n"
 	.string "a producer of stones from quarries.\p"
-	.string "“The company also produced iron from\n"
-	.string "filings in the sand.\p"
-	.string "“From that humble start as a producer\n"
-	.string "of raw materials, DEVON developed.\p"
-	.string "“DEVON is now a manufacturer of a wide\n"
-	.string "range of industrial products.”$"
+	.string "“The company also produced iron\n"
+	.string "from filings in the sand.\p"
+	.string "“From that humble start as a\n"
+	.string "producer of raw materials, DEVON\l"
+	.string "developed.\p"
+	.string "“DEVON is now a manufacturer of a\n"
+	.string "wide range of industrial products.”$"
 

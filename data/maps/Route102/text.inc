@@ -19,8 +19,8 @@ Route102_Text_H1_2::
 	.string "you should have told me before!$"
 
 Route102_Text_H2_0::
-	.string "Hahah! Our eyes met!\n"
-	.string "I'll take you on with my BUG POKéMON!$"
+	.string "Hahah! Our eyes met! I'll take you\n"
+	.string "on with my BUG POKéMON!$"
 
 Route102_Text_H2_1::
 	.string "Ow! Down and out!$"
@@ -38,8 +38,8 @@ Route102_Text_H3_1::
 	.string "I ended up furthering your career…$"
 
 Route102_Text_H3_2::
-	.string "To keep winning my way up, I see that\n"
-	.string "I have to catch more POKéMON.$"
+	.string "To keep winning my way up, I see\n"
+	.string "that I have to catch more POKéMON.$"
 
 Route102_Text_H4::
 	.string "I'm going to catch a whole bunch of\n"

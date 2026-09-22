@@ -6,6 +6,6 @@ DewfordTown_PokemonCenter_1F_Text_H0::
 
 DewfordTown_PokemonCenter_1F_Text_H1::
 	.string "Even if a POKéMON faints and can't\n"
-	.string "battle, it can still use a move learned\l"
-	.string "from a HIDDEN MACHINE (HM).$"
+	.string "battle, it can still use a move\l"
+	.string "learned from a HIDDEN MACHINE (HM).$"
 

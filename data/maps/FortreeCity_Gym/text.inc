@@ -1,10 +1,10 @@
 FortreeCity_Gym_Text_H0_0::
 	.string "I am WINONA. I am the LEADER of\n"
 	.string "the FORTREE POKéMON GYM.\p"
-	.string "I have become one with BIRD POKéMON\n"
-	.string "and have soared the skies…\p"
-	.string "However grueling the battle, we have\n"
-	.string "triumphed with grace…\p"
+	.string "I have become one with BIRD\n"
+	.string "POKéMON and have soared the skies…\p"
+	.string "However grueling the battle, we\n"
+	.string "have triumphed with grace…\p"
 	.string "Witness the elegant choreography\n"
 	.string "of BIRD POKéMON and I!$"
 
@@ -79,15 +79,16 @@ FortreeCity_Gym_Text_H5::
 	.string "bound {PLAYER}?\p"
 	.string "FORTREE GYM LEADER WINONA is\n"
 	.string "a master of FLYING-type POKéMON.\p"
-	.string "She's waiting at the back of this GYM,\n"
-	.string "behind the rotating doors.\p"
+	.string "She's waiting at the back of this\n"
+	.string "GYM, behind the rotating doors.\p"
 	.string "She's waiting for new challengers\n"
 	.string "who are trying to take wing!\p"
 	.string "Okay, go for it!$"
 
 FortreeCity_Gym_Text_H6_0::
-	.string "When WINONA takes to battle, her face\n"
-	.string "shines with beautiful determination…\p"
+	.string "When WINONA takes to battle, her\n"
+	.string "face shines with beautiful\l"
+	.string "determination…\p"
 	.string "I'm not letting you witness that\n"
 	.string "lovely sight!$"
 
@@ -96,9 +97,9 @@ FortreeCity_Gym_Text_H6_1::
 	.string "I couldn't stop you.$"
 
 FortreeCity_Gym_Text_H6_2::
-	.string "You'd better watch it!\n"
-	.string "Don't get distracted staring at WINONA\l"
-	.string "or you'll go crashing down in a heap!$"
+	.string "You'd better watch it! Don't get\n"
+	.string "distracted staring at WINONA or\l"
+	.string "you'll go crashing down in a heap!$"
 
 FortreeCity_Gym_Text_H7_0::
 	.string "You'd better know that there are all\n"
@@ -109,7 +110,7 @@ FortreeCity_Gym_Text_H7_1::
 	.string "You seem to know your stuff!$"
 
 FortreeCity_Gym_Text_H7_2::
-	.string "Sure, you beat me all right.\n"
-	.string "But you'd better watch it! Our LEADER\l"
+	.string "Sure, you beat me all right. But\n"
+	.string "you'd better watch it! Our LEADER\l"
 	.string "WINONA's POKéMON are all business.$"
 

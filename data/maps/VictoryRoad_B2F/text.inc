@@ -1,7 +1,7 @@
 VictoryRoad_B2F_Text_H0_0::
-	.string "I trained together with my whole family,\n"
-	.string "every one of us!\l"
-	.string "I'm not losing to anyone!$"
+	.string "I trained together with my whole\n"
+	.string "family, every one of us! I'm not\l"
+	.string "losing to anyone!$"
 
 VictoryRoad_B2F_Text_H0_1::
 	.string "Better than my family?!\n"
@@ -21,8 +21,8 @@ VictoryRoad_B2F_Text_H1_1::
 	.string "The little shrimp is tough!$"
 
 VictoryRoad_B2F_Text_H1_2::
-	.string "The rumors I heard, that tough little\n"
-	.string "kid is from PETALBURG CITY.$"
+	.string "The rumors I heard, that tough\n"
+	.string "little kid is from PETALBURG CITY.$"
 
 VictoryRoad_B2F_Text_H2_0::
 	.string "You must be getting a little tired.$"
@@ -31,13 +31,14 @@ VictoryRoad_B2F_Text_H2_1::
 	.string "No signs of tiring at all!$"
 
 VictoryRoad_B2F_Text_H2_2::
-	.string "VICTORY ROAD and the POKéMON LEAGUE\n"
-	.string "are long and grueling challenges.\l"
-	.string "Beware of fatigue!$"
+	.string "VICTORY ROAD and the POKéMON\n"
+	.string "LEAGUE are long and grueling\l"
+	.string "challenges. Beware of fatigue!$"
 
 VictoryRoad_B2F_Text_H3_0::
 	.string "You shouldn't get complacent just\n"
-	.string "because you have a lot of GYM BADGES.\p"
+	.string "because you have a lot of GYM\l"
+	.string "BADGES.\p"
 	.string "There's always going to be someone\n"
 	.string "who's better than you!$"
 
@@ -69,7 +70,8 @@ VictoryRoad_B2F_Text_H5_1::
 	.string "It hurts…$"
 
 VictoryRoad_B2F_Text_H5_2::
-	.string "I can't help getting all tense knowing\n"
-	.string "that I'm nearing the POKéMON LEAGUE.\p"
+	.string "I can't help getting all tense\n"
+	.string "knowing that I'm nearing the POKéMON\l"
+	.string "LEAGUE.\p"
 	.string "It's all I can do to feign calm.$"
 

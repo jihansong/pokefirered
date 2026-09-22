@@ -14,8 +14,8 @@ SlateportCity_PokemonFanClub_Text_H1::
 
 SlateportCity_PokemonFanClub_Text_H2::
 	.string "Wow!\p"
-	.string "It's plain to see that you lavish your\n"
-	.string "love on your {STR_VAR_1}.\p"
+	.string "It's plain to see that you lavish\n"
+	.string "your love on your {STR_VAR_1}.\p"
 	.string "Okay, it's named {STR_VAR_2}.\p"
 	.string "Can I ask you a favor?\p"
 	.string "I'm a TV reporter, and I'm running\n"
@@ -48,7 +48,8 @@ SlateportCity_PokemonFanClub_Text_H7::
 	.string "I was lipping off with a swagger in\n"
 	.string "my step like that when the CHAIRMAN\l"
 	.string "chewed me out.\p"
-	.string "That took the swagger out of my step.\p"
+	.string "That took the swagger out of my\n"
+	.string "step.\p"
 	.string "If you'd like, I'll teach the move\n"
 	.string "SWAGGER to a POKéMON of yours.$"
 

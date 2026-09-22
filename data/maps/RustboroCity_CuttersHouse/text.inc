@@ -13,6 +13,6 @@ RustboroCity_CuttersHouse_Text_H0::
 RustboroCity_CuttersHouse_Text_H1::
 	.string "When they were expanding the city of\n"
 	.string "RUSTBORO, my dad helped out.\p"
-	.string "He made his POKéMON use CUT to clear\n"
-	.string "the land of trees.$"
+	.string "He made his POKéMON use CUT to\n"
+	.string "clear the land of trees.$"
 

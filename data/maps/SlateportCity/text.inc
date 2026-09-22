@@ -7,8 +7,9 @@ SlateportCity_Text_H0::
 
 SlateportCity_Text_H1::
 	.string "STERN, the fellow who built the\n"
-	.string "MUSEUM, also happens to be the leader\l"
-	.string "of an undersea exploration team.\p"
+	.string "MUSEUM, also happens to be the\l"
+	.string "leader of an undersea exploration\l"
+	.string "team.\p"
 	.string "So, everyone calls him CAPT. STERN.$"
 
 SlateportCity_Text_H2::
@@ -23,22 +24,25 @@ SlateportCity_Text_H3::
 
 SlateportCity_Text_H4::
 	.string "Ooh, look at this!\p"
-	.string "The seaweed you can get around these\n"
-	.string "parts is fresh and full of life.\p"
-	.string "Why, it looks like it can even rear up\n"
-	.string "and attack!$"
+	.string "The seaweed you can get around\n"
+	.string "these parts is fresh and full of\l"
+	.string "life.\p"
+	.string "Why, it looks like it can even rear\n"
+	.string "up and attack!$"
 
 SlateportCity_Text_H5::
 	.string "Where the water is clean, the fruits\n"
 	.string "of bountiful harvest gather.\p"
 	.string "And where people gather, a market\n"
 	.string "soon starts.\p"
-	.string "That is how a town is born and grows.$"
+	.string "That is how a town is born and\n"
+	.string "grows.$"
 
 SlateportCity_Text_H6::
 	.string "Shopping where you can breathe the\n"
 	.string "scent of the ocean…\p"
-	.string "SLATEPORT is such a wonderful place!$"
+	.string "SLATEPORT is such a wonderful\n"
+	.string "place!$"
 
 SlateportCity_Text_H7::
 	.string "The sea is just so vast…\p"
@@ -47,7 +51,8 @@ SlateportCity_Text_H7::
 
 SlateportCity_Text_H8::
 	.string "Do you know what they do with old\n"
-	.string "ships that become too creaky to sail?\p"
+	.string "ships that become too creaky to\l"
+	.string "sail?\p"
 	.string "They sink them in the sea so they\n"
 	.string "become habitats for POKéMON.$"
 
@@ -64,9 +69,9 @@ SlateportCity_Text_H10::
 	.string "for the BATTLE TENT!$"
 
 SlateportCity_Text_H11::
-	.string "If you want to change your POKéMON's\n"
-	.string "nickname, you'll have to get the NAME\l"
-	.string "RATER to help you.$"
+	.string "If you want to change your\n"
+	.string "POKéMON's nickname, you'll have to\l"
+	.string "get the NAME RATER to help you.$"
 
 SlateportCity_Text_H12::
 	.string "Any POKéMON you get in a trade,\n"
@@ -85,16 +90,16 @@ SlateportCity_Text_H14::
 SlateportCity_Text_H15::
 	.string "The light of the lighthouse reaches\n"
 	.string "dozens of miles away.\p"
-	.string "I wonder if it doesn't startle POKéMON\n"
-	.string "in the sea.$"
+	.string "I wonder if it doesn't startle\n"
+	.string "POKéMON in the sea.$"
 
 SlateportCity_Text_H16::
 	.string "Oh?\n"
 	.string "Your {STR_VAR_1}…$"
 
 SlateportCity_Text_H18::
-	.string "If a wild POKéMON gets hurt, it heals\n"
-	.string "itself by chewing on BERRIES.\p"
+	.string "If a wild POKéMON gets hurt, it\n"
+	.string "heals itself by chewing on BERRIES.\p"
 	.string "Did you know that?\p"
 	.string "Somebody saw that and got the idea\n"
 	.string "of making medicine from BERRIES.\p"

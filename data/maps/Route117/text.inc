@@ -7,8 +7,8 @@ Route117_Text_H1::
 	.string "The air is tasty here!$"
 
 Route117_Text_H2_0::
-	.string "I'm in the middle of a triathlon, but,\n"
-	.string "whatever, let's have a battle!$"
+	.string "I'm in the middle of a triathlon,\n"
+	.string "but, whatever, let's have a battle!$"
 
 Route117_Text_H2_1::
 	.string "I ran out of energy!$"
@@ -43,8 +43,9 @@ Route117_Text_H4_2::
 	.string "POKéMON.$"
 
 Route117_Text_H5_0::
-	.string "I do my triathlon training with POKéMON,\n"
-	.string "so I'm pretty confident about my speed.$"
+	.string "I do my triathlon training with\n"
+	.string "POKéMON, so I'm pretty confident\l"
+	.string "about my speed.$"
 
 Route117_Text_H5_1::
 	.string "I need to get more practices in,\n"
@@ -67,15 +68,16 @@ Route117_Text_H6_1::
 	.string "unchanged…$"
 
 Route117_Text_H6_2::
-	.string "All I did was follow my heart, and now\n"
-	.string "they call me a BUG MANIAC…\p"
-	.string "Still, I am an expert on BUG POKéMON,\n"
-	.string "so it's only natural that they call me\l"
-	.string "a BUG MANIAC.$"
+	.string "All I did was follow my heart, and\n"
+	.string "now they call me a BUG MANIAC…\p"
+	.string "Still, I am an expert on BUG\n"
+	.string "POKéMON, so it's only natural that\l"
+	.string "they call me a BUG MANIAC.$"
 
 Route117_Text_H7_0::
-	.string "MEG: I'm going to tag up with my super\n"
-	.string "senior student partner and beat you!$"
+	.string "MEG: I'm going to tag up with my\n"
+	.string "super senior student partner and\l"
+	.string "beat you!$"
 
 Route117_Text_H7_1::
 	.string "MEG: Oh, no!\n"
@@ -86,12 +88,12 @@ Route117_Text_H7_2::
 	.string "If I didn't, she would have won!$"
 
 Route117_Text_H8_0::
-	.string "ANNA: I'm with my pretty junior student\n"
-	.string "partner. I have to do good!$"
+	.string "ANNA: I'm with my pretty junior\n"
+	.string "student partner. I have to do good!$"
 
 Route117_Text_H8_1::
-	.string "ANNA: I'm with my pretty junior student\n"
-	.string "partner! Let me win!$"
+	.string "ANNA: I'm with my pretty junior\n"
+	.string "student partner! Let me win!$"
 
 Route117_Text_H8_2::
 	.string "ANNA: Your POKéMON have some good\n"
@@ -100,9 +102,9 @@ Route117_Text_H8_2::
 
 Route117_Text_H9::
 	.string "I left my POKéMON at the DAY CARE.\p"
-	.string "When I got it back, it had a new move\n"
-	.string "that I didn't teach it.\l"
-	.string "I was really, really surprised.$"
+	.string "When I got it back, it had a new\n"
+	.string "move that I didn't teach it. I was\l"
+	.string "really, really surprised.$"
 
 Route117_Text_H10_0::
 	.string "Let me demonstrate the power\n"
@@ -124,12 +126,12 @@ Route117_Text_H11_1::
 	.string "over a loss--I would rather train.$"
 
 Route117_Text_H11_2::
-	.string "I think that if you worry about losing,\n"
-	.string "you're more likely to lose.$"
+	.string "I think that if you worry about\n"
+	.string "losing, you're more likely to lose.$"
 
 Route117_Text_H12_0::
-	.string "Isn't it nice? To battle while looking\n"
-	.string "at pretty flowers?$"
+	.string "Isn't it nice? To battle while\n"
+	.string "looking at pretty flowers?$"
 
 Route117_Text_H12_1::
 	.string "Oh, that's quite impressive!$"

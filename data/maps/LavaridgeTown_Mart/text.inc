@@ -5,7 +5,9 @@ LavaridgeTown_Mart_Text_H1::
 	.string "strike--a decided advantage!$"
 
 LavaridgeTown_Mart_Text_H2::
-	.string "On MT. CHIMNEY's peak, there's a local\n"
-	.string "specialty that you can buy only there.\p"
-	.string "Give it to a POKéMON--it will be elated.$"
+	.string "On MT. CHIMNEY's peak, there's a\n"
+	.string "local specialty that you can buy\l"
+	.string "only there.\p"
+	.string "Give it to a POKéMON--it will be\n"
+	.string "elated.$"
 

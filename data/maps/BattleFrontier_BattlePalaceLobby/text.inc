@@ -15,17 +15,20 @@ BattleFrontier_BattlePalaceLobby_Text_H0::
 	.string "Why are you looking at me like that?$"
 
 BattleFrontier_BattlePalaceLobby_Text_H1::
-	.string "I wonder what sort of nature a POKéMON\n"
-	.string "would have if it favored enfeebling its\l"
-	.string "opponents and chipping away slowly.\p"
-	.string "I'd be surprised if it was a LAX nature.\p"
+	.string "I wonder what sort of nature a\n"
+	.string "POKéMON would have if it favored\l"
+	.string "enfeebling its opponents and chipping\l"
+	.string "away slowly.\p"
+	.string "I'd be surprised if it was a LAX\n"
+	.string "nature.\p"
 	.string "But, nah, that can't be right.$"
 
 BattleFrontier_BattlePalaceLobby_Text_H2::
 	.string "Hmm…\p"
-	.string "It appears that the nature of POKéMON\n"
-	.string "and the moves that they have been\l"
-	.string "taught are the keys to battle here.\p"
+	.string "It appears that the nature of\n"
+	.string "POKéMON and the moves that they\l"
+	.string "have been taught are the keys to\l"
+	.string "battle here.\p"
 	.string "To be more precise, it's how well\n"
 	.string "the moves match the nature of\l"
 	.string "the POKéMON.\p"

@@ -18,8 +18,9 @@ HoennVictoryRoad_1F_Text_H3::
 
 HoennVictoryRoad_1F_Text_H4::
 	.string "Getting through here safely--that's\n"
-	.string "the final test for any TRAINER aiming\l"
-	.string "to become the POKéMON CHAMPION.\p"
+	.string "the final test for any TRAINER\l"
+	.string "aiming to become the POKéMON\l"
+	.string "CHAMPION.\p"
 	.string "That's why it's called the VICTORY\n"
 	.string "ROAD.$"
 

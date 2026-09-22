@@ -7,8 +7,8 @@ Route110_TrickHousePuzzle7_Text_H0_1::
 	.string "How do you do it?$"
 
 Route110_TrickHousePuzzle7_Text_H0_2::
-	.string "I wish I could appear and disappear as\n"
-	.string "if I were smoke, too.$"
+	.string "I wish I could appear and disappear\n"
+	.string "as if I were smoke, too.$"
 
 Route110_TrickHousePuzzle7_Text_H1_0::
 	.string "Whoever wins will get through here\n"
@@ -20,7 +20,8 @@ Route110_TrickHousePuzzle7_Text_H1_1::
 
 Route110_TrickHousePuzzle7_Text_H1_2::
 	.string "You're solving all the puzzles in the\n"
-	.string "TRICK HOUSE. That's the feeling I get.$"
+	.string "TRICK HOUSE. That's the feeling I\l"
+	.string "get.$"
 
 Route110_TrickHousePuzzle7_Text_H2_0::
 	.string "Going around the same spot…\n"
@@ -35,7 +36,8 @@ Route110_TrickHousePuzzle7_Text_H2_2::
 	.string "times now… It's ill fortune…$"
 
 Route110_TrickHousePuzzle7_Text_H3_0::
-	.string "I ever so closely watched you coming!$"
+	.string "I ever so closely watched you\n"
+	.string "coming!$"
 
 Route110_TrickHousePuzzle7_Text_H3_1::
 	.string "This outcome I didn't see coming…$"
@@ -64,6 +66,6 @@ Route110_TrickHousePuzzle7_Text_H5_1::
 	.string "Oh, yes, strong you are.$"
 
 Route110_TrickHousePuzzle7_Text_H5_2::
-	.string "I was hoping to switch places with you\n"
-	.string "when I beat you, but…$"
+	.string "I was hoping to switch places with\n"
+	.string "you when I beat you, but…$"
 

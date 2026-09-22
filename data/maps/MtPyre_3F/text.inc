@@ -38,6 +38,6 @@ MtPyre_3F_Text_H2_2::
 	.string "POKéMON that are with you now.\p"
 	.string "And the POKéMON that you will meet\n"
 	.string "in the future…\p"
-	.string "They are all to be equally cherished.\n"
-	.string "Please remember that.$"
+	.string "They are all to be equally\n"
+	.string "cherished. Please remember that.$"
 

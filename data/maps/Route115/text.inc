@@ -1,8 +1,8 @@
 Route115_Text_H0::
 	.string "Exploring a cave isn't like walking\n"
 	.string "on a road.\p"
-	.string "You never know when wild POKéMON will\n"
-	.string "appear. It's full of suspense.$"
+	.string "You never know when wild POKéMON\n"
+	.string "will appear. It's full of suspense.$"
 
 Route115_Text_H1_0::
 	.string "Hm…\n"
@@ -14,8 +14,8 @@ Route115_Text_H1_1::
 	.string "I'd imagined!$"
 
 Route115_Text_H1_2::
-	.string "There is no such thing as a born genius.\n"
-	.string "It all depends on effort!\l"
+	.string "There is no such thing as a born\n"
+	.string "genius. It all depends on effort!\l"
 	.string "That is what I believe…$"
 
 Route115_Text_H2_0::
@@ -27,20 +27,22 @@ Route115_Text_H2_1::
 	.string "My head is busted!$"
 
 Route115_Text_H2_2::
-	.string "I've been teaching my POKéMON karate.\p"
-	.string "It looks like they'll get a lot better\n"
-	.string "than me. I'm excited about that.$"
+	.string "I've been teaching my POKéMON\n"
+	.string "karate.\p"
+	.string "It looks like they'll get a lot\n"
+	.string "better than me. I'm excited about\l"
+	.string "that.$"
 
 Route115_Text_H3_0::
-	.string "This beach is my secret training spot!\n"
-	.string "Don't come butting in!$"
+	.string "This beach is my secret training\n"
+	.string "spot! Don't come butting in!$"
 
 Route115_Text_H3_1::
 	.string "I haven't trained enough!$"
 
 Route115_Text_H3_2::
-	.string "The sand acts as a cushion to reduce\n"
-	.string "impact and prevent injury.\l"
+	.string "The sand acts as a cushion to\n"
+	.string "reduce impact and prevent injury.\l"
 	.string "This is the perfect place to train.$"
 
 Route115_Text_H4_0::
@@ -76,8 +78,8 @@ Route115_Text_H6_1::
 	.string "Gasp, gasp…$"
 
 Route115_Text_H6_2::
-	.string "I made the mistake of trying to battle\n"
-	.string "while running!\p"
+	.string "I made the mistake of trying to\n"
+	.string "battle while running!\p"
 	.string "I should take a run to calm down…$"
 
 Route115_Text_H7_0::

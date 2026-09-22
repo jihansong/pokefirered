@@ -1,13 +1,15 @@
 Route134_Text_H0_0::
-	.string "Even those POKéMON that can swim are\n"
-	.string "carried along by the rapid currents.$"
+	.string "Even those POKéMON that can swim\n"
+	.string "are carried along by the rapid\l"
+	.string "currents.$"
 
 Route134_Text_H0_1::
 	.string "Aiyeeeeh!$"
 
 Route134_Text_H0_2::
-	.string "I think POKéMON enjoy the fast-running\n"
-	.string "currents around these parts.$"
+	.string "I think POKéMON enjoy the\n"
+	.string "fast-running currents around these\l"
+	.string "parts.$"
 
 Route134_Text_H1_0::
 	.string "My LUVDISC are looking for a fun\n"
@@ -21,8 +23,8 @@ Route134_Text_H1_2::
 	.string "the SCALES of LUVDISC.$"
 
 Route134_Text_H2_0::
-	.string "The savage tide in this area serves to\n"
-	.string "make us stronger than ever.$"
+	.string "The savage tide in this area serves\n"
+	.string "to make us stronger than ever.$"
 
 Route134_Text_H2_1::
 	.string "I willingly concede defeat.$"
@@ -41,8 +43,8 @@ Route134_Text_H3_1::
 	.string "Tuckered out again…$"
 
 Route134_Text_H3_2::
-	.string "My BIRD POKéMON get tired quickly after\n"
-	.string "a long flight…$"
+	.string "My BIRD POKéMON get tired quickly\n"
+	.string "after a long flight…$"
 
 Route134_Text_H4_0::
 	.string "You're a POKéMON TRAINER.\n"
@@ -53,16 +55,17 @@ Route134_Text_H4_1::
 	.string "… … … … … …$"
 
 Route134_Text_H4_2::
-	.string "It was I who challenged you, and yet\n"
-	.string "I lost. I am deeply shamed…$"
+	.string "It was I who challenged you, and\n"
+	.string "yet I lost. I am deeply shamed…$"
 
 Route134_Text_H5_0::
 	.string "Can your POKéMON dodge our\n"
 	.string "lightning-quick attacks?$"
 
 Route134_Text_H5_1::
-	.string "I never knew such a technique existed!\n"
-	.string "You've defeated us thoroughly.$"
+	.string "I never knew such a technique\n"
+	.string "existed! You've defeated us\l"
+	.string "thoroughly.$"
 
 Route134_Text_H5_2::
 	.string "I haven't lost my passion for speed.\n"
@@ -77,8 +80,8 @@ Route134_Text_H6_1::
 	.string "Please, stop! Please!$"
 
 Route134_Text_H6_2::
-	.string "If we can't SURF, how are we supposed\n"
-	.string "to get home?\p"
+	.string "If we can't SURF, how are we\n"
+	.string "supposed to get home?\p"
 	.string "Actually, I know a fainted POKéMON\n"
 	.string "can still SURF, but it feels wrong.$"
 
@@ -93,12 +96,12 @@ Route134_Text_H7_1::
 Route134_Text_H7_2::
 	.string "Haha!\n"
 	.string "You won, all right!\p"
-	.string "I'll work my way back up by taking on\n"
-	.string "TRAINERS I happen to meet!$"
+	.string "I'll work my way back up by taking\n"
+	.string "on TRAINERS I happen to meet!$"
 
 Route134_Text_H8_0::
-	.string "Listen, have you seen another SAILOR\n"
-	.string "around here?$"
+	.string "Listen, have you seen another\n"
+	.string "SAILOR around here?$"
 
 Route134_Text_H8_1::
 	.string "Now, that's something!$"

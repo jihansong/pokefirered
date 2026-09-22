@@ -23,8 +23,8 @@ Route116_Text_H1_2::
 	.string "So they get strong quickly, too.$"
 
 Route116_Text_H2_0::
-	.string "If the tunnel doesn't go through, then\n"
-	.string "I'll just go over the top.$"
+	.string "If the tunnel doesn't go through,\n"
+	.string "then I'll just go over the top.$"
 
 Route116_Text_H2_1::
 	.string "Gasp… Gasp…\n"
@@ -71,23 +71,23 @@ Route116_Text_H5_2::
 	.string "If I don't, ROXANNE will be steamed.$"
 
 Route116_Text_H6_0::
-	.string "Just so you know, I've never once been\n"
-	.string "bested by anyone at anything.$"
+	.string "Just so you know, I've never once\n"
+	.string "been bested by anyone at anything.$"
 
 Route116_Text_H6_1::
 	.string "Oh, my goodness.\n"
 	.string "This is a new experience for me.$"
 
 Route116_Text_H6_2::
-	.string "My life of luxury affords me all that\n"
-	.string "I could possibly desire.\p"
+	.string "My life of luxury affords me all\n"
+	.string "that I could possibly desire.\p"
 	.string "However, when it comes to POKéMON,\n"
 	.string "my wealth has no meaning.$"
 
 Route116_Text_H7_0::
-	.string "When you lay your eyes on my POKéMON's\n"
-	.string "gorgeous fur, their beauty will render\l"
-	.string "you helpless!$"
+	.string "When you lay your eyes on my\n"
+	.string "POKéMON's gorgeous fur, their beauty\l"
+	.string "will render you helpless!$"
 
 Route116_Text_H7_1::
 	.string "Oh, baby, say it isn't so!$"

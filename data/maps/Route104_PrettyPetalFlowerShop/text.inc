@@ -1,15 +1,16 @@
 Route104_PrettyPetalFlowerShop_Text_H0::
 	.string "Hello!\p"
-	.string "This is the PRETTY PETAL flower shop.\n"
-	.string "Spreading flowers all over the world!$"
+	.string "This is the PRETTY PETAL flower\n"
+	.string "shop. Spreading flowers all over the\l"
+	.string "world!$"
 
 Route104_PrettyPetalFlowerShop_Text_H1::
 	.string "While BERRY plants are growing,\n"
 	.string "water them with the WAILMER PAIL.\p"
 	.string "Oh, another thing.\p"
-	.string "If you don't pick BERRIES for a while,\n"
-	.string "they'll drop off onto the ground.\l"
-	.string "But they'll sprout again.\p"
+	.string "If you don't pick BERRIES for a\n"
+	.string "while, they'll drop off onto the\l"
+	.string "ground. But they'll sprout again.\p"
 	.string "Isn't that awesome?\n"
 	.string "It's like they have the will to live.$"
 

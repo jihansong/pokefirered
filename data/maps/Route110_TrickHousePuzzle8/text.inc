@@ -10,16 +10,16 @@ Route110_TrickHousePuzzle8_Text_H0_2::
 	.string "CHAMPION? That's too much!$"
 
 Route110_TrickHousePuzzle8_Text_H1_0::
-	.string "You've been slugging through the TRICK\n"
-	.string "HOUSE challenge, too.$"
+	.string "You've been slugging through the\n"
+	.string "TRICK HOUSE challenge, too.$"
 
 Route110_TrickHousePuzzle8_Text_H1_1::
 	.string "I see…\n"
 	.string "You possess an extraordinary style.$"
 
 Route110_TrickHousePuzzle8_Text_H1_2::
-	.string "Seeing someone like you should please\n"
-	.string "the TRICK MASTER.$"
+	.string "Seeing someone like you should\n"
+	.string "please the TRICK MASTER.$"
 
 Route110_TrickHousePuzzle8_Text_H2_0::
 	.string "Consider yourself lucky to be\n"

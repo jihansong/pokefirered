@@ -13,8 +13,9 @@ AbandonedShip_Corridors_B1F_Text_H1_1::
 AbandonedShip_Corridors_B1F_Text_H1_2::
 	.string "The ship's bottom has sunk into the\n"
 	.string "depths.\p"
-	.string "If a POKéMON knew how to go underwater,\n"
-	.string "we might make some progress…$"
+	.string "If a POKéMON knew how to go\n"
+	.string "underwater, we might make some\l"
+	.string "progress…$"
 
 AbandonedShip_Corridors_B1F_Text_H2::
 	.string "{PLAYER} inserted and turned the\n"

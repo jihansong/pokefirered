@@ -7,6 +7,7 @@ MtPyre_5F_Text_H0_1::
 	.string "Please forgive me!$"
 
 MtPyre_5F_Text_H0_2::
-	.string "Until I improve, my teacher, who rests\n"
-	.string "here, will never find true peace…$"
+	.string "Until I improve, my teacher, who\n"
+	.string "rests here, will never find true\l"
+	.string "peace…$"
 

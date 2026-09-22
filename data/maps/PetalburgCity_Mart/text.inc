@@ -2,8 +2,9 @@ PetalburgCity_Mart_Text_H1::
 	.string "Do you have any ANTIDOTES with\n"
 	.string "you?\p"
 	.string "If you walk around with a poisoned\n"
-	.string "POKéMON, it will lose HP until it faints.\l"
-	.string "Take some ANTIDOTES with you.$"
+	.string "POKéMON, it will lose HP until it\l"
+	.string "faints. Take some ANTIDOTES with\l"
+	.string "you.$"
 
 PetalburgCity_Mart_Text_H2::
 	.string "Do you use REPEL?\n"

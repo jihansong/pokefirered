@@ -14,8 +14,8 @@ Route111_Text_H0_2::
 
 Route111_Text_H1::
 	.string "If you don't raise your POKéMON some\n"
-	.string "more, it could be tough to keep winning\l"
-	.string "up through the ranks.\p"
+	.string "more, it could be tough to keep\l"
+	.string "winning up through the ranks.\p"
 	.string "I've heard the POKéMON LEAGUE's\n"
 	.string "ELITE FOUR are far stronger than\l"
 	.string "any GYM LEADER.$"
@@ -42,7 +42,8 @@ Route111_Text_H3_0::
 
 Route111_Text_H3_1::
 	.string "While I have searched for ruins,\n"
-	.string "I've not searched for strong POKéMON.$"
+	.string "I've not searched for strong\l"
+	.string "POKéMON.$"
 
 Route111_Text_H3_2::
 	.string "For thirty years I have searched for\n"
@@ -64,20 +65,23 @@ Route111_Text_H4_2::
 	.string "and my POKéMON stronger.$"
 
 Route111_Text_H5_0::
-	.string "I heard there are fossils to be found\n"
-	.string "in the desert. Where could they be?$"
+	.string "I heard there are fossils to be\n"
+	.string "found in the desert. Where could\l"
+	.string "they be?$"
 
 Route111_Text_H5_1::
 	.string "I came up short…$"
 
 Route111_Text_H5_2::
-	.string "If they can find fossils in the desert,\n"
-	.string "it must have been a sea before.$"
+	.string "If they can find fossils in the\n"
+	.string "desert, it must have been a sea\l"
+	.string "before.$"
 
 Route111_Text_H6::
 	.string "I watered the plants every day.\n"
 	.string "They grew lots of flowers.\p"
-	.string "And they gave me lots of BERRIES, too.\p"
+	.string "And they gave me lots of BERRIES,\n"
+	.string "too.\p"
 	.string "Here you go!\n"
 	.string "You can have it!$"
 
@@ -101,8 +105,8 @@ Route111_Text_H8_1::
 	.string "My POKéMON lost its pep…$"
 
 Route111_Text_H8_2::
-	.string "When I see a TRAINER with a lot of pep,\n"
-	.string "I can't help looking.$"
+	.string "When I see a TRAINER with a lot of\n"
+	.string "pep, I can't help looking.$"
 
 Route111_Text_H9_0::
 	.string "To train myself, I challenge all\n"
@@ -118,8 +122,8 @@ Route111_Text_H9_2::
 
 Route111_Text_H10_0::
 	.string "Oh, your POKéMON look like serious\n"
-	.string "actors.\l"
-	.string "I have to ask you for an engagement.$"
+	.string "actors. I have to ask you for an\l"
+	.string "engagement.$"
 
 Route111_Text_H10_1::
 	.string "They didn't just look strong,\n"
@@ -153,18 +157,18 @@ Route111_Text_H13_0::
 	.string "This is my favorite kind of POKéMON!$"
 
 Route111_Text_H13_1::
-	.string "Wait!\n"
-	.string "Did you get a good look at my POKéMON?$"
+	.string "Wait! Did you get a good look at my\n"
+	.string "POKéMON?$"
 
 Route111_Text_H13_2::
-	.string "When having a battle, I get a kick out\n"
-	.string "of showing off my POKéMON.\p"
+	.string "When having a battle, I get a kick\n"
+	.string "out of showing off my POKéMON.\p"
 	.string "I bet everyone feels that way when\n"
 	.string "they enter a battle!$"
 
 Route111_Text_H14_0::
-	.string "Show me how to put a little excitement\n"
-	.string "into my life.$"
+	.string "Show me how to put a little\n"
+	.string "excitement into my life.$"
 
 Route111_Text_H14_1::
 	.string "Oh… My…\n"
@@ -210,8 +214,8 @@ Route111_Text_H17_2::
 	.string "its shifting sands!$"
 
 Route111_Text_H18_0::
-	.string "I shouldn't have come to a place like\n"
-	.string "this for a picnic!$"
+	.string "I shouldn't have come to a place\n"
+	.string "like this for a picnic!$"
 
 Route111_Text_H18_1::
 	.string "Aww!\n"
@@ -235,11 +239,12 @@ Route111_Text_H19_2::
 	.string "my sandwiches.$"
 
 Route111_Text_H20::
-	.string "There should be a tower made of sand\n"
-	.string "around here somewhere.\p"
+	.string "There should be a tower made of\n"
+	.string "sand around here somewhere.\p"
 	.string "But for some reason, it can be seen\n"
 	.string "sometimes, and sometimes not.\p"
-	.string "That's why I call it the MIRAGE TOWER.$"
+	.string "That's why I call it the MIRAGE\n"
+	.string "TOWER.$"
 
 Route111_Text_H21::
 	.string "“Our family's hearts beat as one!”\n"
@@ -264,10 +269,10 @@ Route111_Text_H25::
 Route111_Text_H26::
 	.string "TRAINER TIPS\p"
 	.string "One of the indicators of a POKéMON's\n"
-	.string "powerfulness is SP. ATK. It stands for\l"
-	.string "“SPECIAL ATTACK.”\p"
-	.string "Likewise, SP. DEF stands for “SPECIAL\n"
-	.string "DEFENSE.”$"
+	.string "powerfulness is SP. ATK. It stands\l"
+	.string "for “SPECIAL ATTACK.”\p"
+	.string "Likewise, SP. DEF stands for\n"
+	.string "“SPECIAL DEFENSE.”$"
 
 Route111_Text_H27::
 	.string "{RIGHT_ARROW} TRAINER HILL ENTRANCE\p"

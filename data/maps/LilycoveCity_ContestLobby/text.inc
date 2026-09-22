@@ -9,8 +9,8 @@ LilycoveCity_ContestLobby_Text_H0::
 LilycoveCity_ContestLobby_Text_H1::
 	.string "You can see a whole variety of\n"
 	.string "POKéMON here.\p"
-	.string "That's why I make this place a regular\n"
-	.string "part of my daily stroll.$"
+	.string "That's why I make this place a\n"
+	.string "regular part of my daily stroll.$"
 
 LilycoveCity_ContestLobby_Text_H2::
 	.string "Wow, coming out to a CONTEST is\n"
@@ -19,8 +19,8 @@ LilycoveCity_ContestLobby_Text_H2::
 	.string "that just scream to be painted?$"
 
 LilycoveCity_ContestLobby_Text_H3::
-	.string "Day in and day out, I lavished my care\n"
-	.string "on this POKéMON.\p"
+	.string "Day in and day out, I lavished my\n"
+	.string "care on this POKéMON.\p"
 	.string "Its condition is peaking.\n"
 	.string "Today, victory is mine!$"
 

@@ -4,12 +4,12 @@ LilycoveCity_LilycoveMuseum_2F_Text_H0::
 	.string "POKéMON.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_H1::
-	.string "It's a picture frame with pink-colored\n"
-	.string "adornments.$"
+	.string "It's a picture frame with\n"
+	.string "pink-colored adornments.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_H2::
-	.string "It's a picture frame with pink-colored\n"
-	.string "adornments.$"
+	.string "It's a picture frame with\n"
+	.string "pink-colored adornments.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_H3::
 	.string "It's a picture frame with\n"
@@ -44,10 +44,12 @@ LilycoveCity_LilycoveMuseum_2F_Text_H10::
 	.string "green-colored adornments.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_H11::
-	.string "It's a replica of a famous sculpture.\p"
+	.string "It's a replica of a famous\n"
+	.string "sculpture.\p"
 	.string "It depicts an ancient BIRD POKéMON.$"
 
 LilycoveCity_LilycoveMuseum_2F_Text_H12::
-	.string "It's a replica of a famous sculpture.\p"
+	.string "It's a replica of a famous\n"
+	.string "sculpture.\p"
 	.string "It depicts an ancient BIRD POKéMON.$"
 

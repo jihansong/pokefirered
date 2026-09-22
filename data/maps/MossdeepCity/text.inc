@@ -1,16 +1,17 @@
 MossdeepCity_Text_H0::
 	.string "I heard from a SAILOR buddy that\n"
 	.string "TEAM AQUA set up shop in LILYCOVE.\p"
-	.string "I also heard that someone came along\n"
-	.string "and wiped the floor with them!\p"
+	.string "I also heard that someone came\n"
+	.string "along and wiped the floor with them!\p"
 	.string "But MOSSDEEP here's been targeted\n"
 	.string "by that TEAM MAGMA.\p"
-	.string "If you want to know what they're up to,\n"
-	.string "go visit the SPACE CENTER.$"
+	.string "If you want to know what they're up\n"
+	.string "to, go visit the SPACE CENTER.$"
 
 MossdeepCity_Text_H1::
 	.string "All life needs the sea to live, even\n"
-	.string "though it makes its home on the land.\p"
+	.string "though it makes its home on the\l"
+	.string "land.\p"
 	.string "Life, having run its course, becomes\n"
 	.string "soil and returns to the land.\p"
 	.string "And the sea is always connected to\n"
@@ -21,7 +22,8 @@ MossdeepCity_Text_H2::
 	.string "The island's SPACE CENTER has been\n"
 	.string "launching huge rockets.\p"
 	.string "There's been some kind of an uproar\n"
-	.string "over a letter they received recently.$"
+	.string "over a letter they received\l"
+	.string "recently.$"
 
 MossdeepCity_Text_H3::
 	.string "Around MOSSDEEP, you can see wild\n"
@@ -48,8 +50,8 @@ MossdeepCity_Text_H6::
 	.string "the people at the SPACE CENTER.\p"
 	.string "They put it here as their wish for\n"
 	.string "their rockets to fly safely.\p"
-	.string "When you make a wish, what do you use?\n"
-	.string "Do you wish upon a star?\p"
+	.string "When you make a wish, what do you\n"
+	.string "use? Do you wish upon a star?\p"
 	.string "I use a wish tag to make it happen.\n"
 	.string "That's what I do.$"
 
@@ -73,8 +75,8 @@ MossdeepCity_Text_H8::
 	.string "POKéMON DYNAMICPUNCH?$"
 
 MossdeepCity_Text_H9::
-	.string "Ahh… It feels great letting the waves\n"
-	.string "wash over my feet…\p"
+	.string "Ahh… It feels great letting the\n"
+	.string "waves wash over my feet…\p"
 	.string "Speaking of the waves, you know that\n"
 	.string "island city SOOTOPOLIS?\p"
 	.string "I think the GYM there had a new\n"

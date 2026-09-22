@@ -19,7 +19,8 @@ Route109_Text_H1_1::
 	.string "Ouch, ouch, ouch!$"
 
 Route109_Text_H1_2::
-	.string "Cheeks are the most prone to burning!$"
+	.string "Cheeks are the most prone to\n"
+	.string "burning!$"
 
 Route109_Text_H2_0::
 	.string "I've laid anchor in ports around\n"
@@ -46,8 +47,8 @@ Route109_Text_H3_2::
 	.string "I'm a SAILOR, but…$"
 
 Route109_Text_H4_0::
-	.string "I'm thirsty… I could go for a SODA POP\n"
-	.string "at the SEASHORE HOUSE…$"
+	.string "I'm thirsty… I could go for a SODA\n"
+	.string "POP at the SEASHORE HOUSE…$"
 
 Route109_Text_H4_1::
 	.string "Groan…$"
@@ -64,8 +65,9 @@ Route109_Text_H5_1::
 	.string "Mommy!$"
 
 Route109_Text_H5_2::
-	.string "If you look at the beach from the sky,\n"
-	.string "it looks like a big flower garden!$"
+	.string "If you look at the beach from the\n"
+	.string "sky, it looks like a big flower\l"
+	.string "garden!$"
 
 Route109_Text_H6::
 	.string "Yo, TRAINERS!\n"
@@ -114,23 +116,26 @@ Route109_Text_H11::
 	.string "You can have this!$"
 
 Route109_Text_H12::
-	.string "Little kids can dart around so quickly…\p"
-	.string "You don't dare take your eyes off them\n"
-	.string "for an instant. It's very taxing.\p"
+	.string "Little kids can dart around so\n"
+	.string "quickly…\p"
+	.string "You don't dare take your eyes off\n"
+	.string "them for an instant. It's very\l"
+	.string "taxing.\p"
 	.string "Mine are with my POKéMON, so they\n"
 	.string "should be okay, but…$"
 
 Route109_Text_H13_0::
 	.string "MEL: We're, like, totally in love.\n"
-	.string "Our romance is heating up all of HOENN!$"
+	.string "Our romance is heating up all of\l"
+	.string "HOENN!$"
 
 Route109_Text_H13_1::
 	.string "MEL: We lost, and it's my fault!\n"
 	.string "PAUL will hate me!$"
 
 Route109_Text_H13_2::
-	.string "MEL: Um, PAUL, are you angry with me?\n"
-	.string "Please don't be angry.$"
+	.string "MEL: Um, PAUL, are you angry with\n"
+	.string "me? Please don't be angry.$"
 
 Route109_Text_H14_0::
 	.string "PAUL: Well, this is a mood-breaker.\p"
@@ -142,15 +147,16 @@ Route109_Text_H14_1::
 
 Route109_Text_H14_2::
 	.string "PAUL: Well, don't tell anyone that\n"
-	.string "we're here.\l"
-	.string "This is just our private world of two!$"
+	.string "we're here. This is just our private\l"
+	.string "world of two!$"
 
 Route109_Text_H15::
-	.string "The water around these parts is clean.\p"
+	.string "The water around these parts is\n"
+	.string "clean.\p"
 	.string "But, I get my ZIGZAGOON to pick up\n"
 	.string "litter from the shoreline at times.\p"
-	.string "Dirty water becomes rain and joins our\n"
-	.string "rivers, which we drink from…\p"
+	.string "Dirty water becomes rain and joins\n"
+	.string "our rivers, which we drink from…\p"
 	.string "If we pollute the sea, it all comes\n"
 	.string "back to haunt us eventually.$"
 

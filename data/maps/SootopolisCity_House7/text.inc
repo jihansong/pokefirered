@@ -3,8 +3,8 @@ SootopolisCity_House7_Text_H0::
 	.string "forced itself up from the depths.\p"
 	.string "Its crater emerged from the sea and\n"
 	.string "became filled with rainwater.\p"
-	.string "That's how SOOTOPOLIS CITY came into\n"
-	.string "being.$"
+	.string "That's how SOOTOPOLIS CITY came\n"
+	.string "into being.$"
 
 SootopolisCity_House7_Text_H1::
 	.string "The cave that links SOOTOPOLIS and\n"

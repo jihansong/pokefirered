@@ -1,5 +1,84 @@
 CeladonCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, CeladonCity_Gym_OnTransition
 	.byte 0
+
+CeladonCity_Gym_OnTransition::
+	setflag FLAG_TEMP_1
+	setflag FLAG_TEMP_2
+	goto_if_set FLAG_ROCKET_CELADON_GYM, CeladonCity_Gym_EventScript_NoRockets
+	goto_if_unset FLAG_BADGE04_GET, CeladonCity_Gym_EventScript_NoRockets
+	clearflag FLAG_TEMP_1
+	setvar VAR_TEMP_1, 1
+CeladonCity_Gym_EventScript_NoRockets::
+	end
+
+@ Thunder Yellow v0.5.0, TEAM ROCKET event 6: after the RAINBOW BADGE, a "new
+@ trainee" greets the player at the CELADON GYM - JAMES in disguise, after PIKACHU
+@ and the gym's secret perfume formula. MEOWTH spills the perfume, a double
+@ battle, and ERIKA gives the player a MIRACLE SEED.
+CeladonCity_Gym_EventScript_RocketPerfume::
+	lockall
+	setvar VAR_TEMP_1, 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox CeladonCity_Gym_Text_TraineeGreeting
+	closemessage
+	clearflag FLAG_TEMP_2
+	addobject LOCALID_CELADON_GYM_JESSIE
+	addobject LOCALID_CELADON_GYM_MEOWTH
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox CeladonCity_Gym_Text_MeowthNowJames
+	closemessage
+	fadescreenspeed FADE_TO_WHITE, 1
+	removeobject LOCALID_CELADON_GYM_TRAINEE
+	addobject LOCALID_CELADON_GYM_JAMES
+	fadescreenspeed FADE_FROM_WHITE, 1
+	playbgm MUS_ENCOUNTER_ROCKET, 0
+	msgbox CeladonCity_Gym_Text_JamesReveal
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox CeladonCity_Gym_Text_JessiePerfumePlan
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox CeladonCity_Gym_Text_MeowthSpills
+	closemessage
+	playse SE_M_POISON_POWDER
+	fadescreenspeed FADE_TO_WHITE, 3
+	fadescreenspeed FADE_FROM_WHITE, 3
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox CeladonCity_Gym_Text_PerfumeCloud
+	closemessage
+	applymovement LOCALID_CELADON_GYM_JESSIE, CeladonCity_Gym_Movement_Cough
+	applymovement LOCALID_CELADON_GYM_JAMES, CeladonCity_Gym_Movement_Cough
+	applymovement LOCALID_CELADON_GYM_MEOWTH, CeladonCity_Gym_Movement_Cough
+	waitmovement 0
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox CeladonCity_Gym_Text_JessieFurious
+	closemessage
+	setvar VAR_LAST_TALKED, LOCALID_CELADON_GYM_JESSIE
+	trainerbattle_no_intro TRAINER_JESSIE_JAMES_CELADON_GYM, CeladonCity_Gym_Text_RocketDefeat
+	setvar VAR_0x8008, LOCALID_CELADON_GYM_JESSIE
+	setvar VAR_0x8009, LOCALID_CELADON_GYM_JAMES
+	setvar VAR_0x800A, LOCALID_CELADON_GYM_MEOWTH
+	call EventScript_RocketTrioBlastOff
+	removeobject LOCALID_CELADON_GYM_JESSIE
+	removeobject LOCALID_CELADON_GYM_JAMES
+	removeobject LOCALID_CELADON_GYM_MEOWTH
+	setflag FLAG_ROCKET_CELADON_GYM
+	fadedefaultbgm
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox CeladonCity_Gym_Text_ErikaThanks
+	giveitem ITEM_MIRACLE_SEED
+	msgbox CeladonCity_Gym_Text_ErikaMiracleSeed
+	releaseall
+	end
+
+CeladonCity_Gym_Movement_Cough:
+	walk_in_place_faster_down
+	walk_in_place_faster_down
+	walk_in_place_faster_down
+	step_end
 
 CeladonCity_Gym_EventScript_Erika::
 	famechecker FAMECHECKER_ERIKA, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005

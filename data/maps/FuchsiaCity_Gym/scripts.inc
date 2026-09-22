@@ -74,6 +74,7 @@ FuchsiaCity_Gym_EventScript_GymGuy::
 
 FuchsiaCity_Gym_EventScript_GymGuyPostVictory::
 	msgbox FuchsiaCity_Gym_Text_GymGuyPostVictory
+	msgbox FuchsiaCity_Gym_Text_GymGuyKogaRumor
 	release
 	end
 

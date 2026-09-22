@@ -8,5 +8,6 @@ bool8 TryGenerateBugContestMon(void);
 bool8 TryStartBugContestTimeUpScript(void);
 void BugContest_AfterWildBattle(void);
 void BugContest_OnWhiteOut(void);
+bool8 IsBugContestSpecies(u16 species);
 
 #endif // GUARD_BUG_CONTEST_H

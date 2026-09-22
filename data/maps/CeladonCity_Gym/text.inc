@@ -150,3 +150,49 @@ CeladonCity_Gym_Text_GymStatuePlayerWon::
     .string "WINNING TRAINERS:\n"
     .string "{RIVAL}, {PLAYER}$"
 
+CeladonCity_Gym_Text_TraineeGreeting::
+    .string "TRAINEE: Welcome to the CELADON\n"
+    .string "GYM, darling! I'm new here.\p"
+    .string "My, what a lovely PIKACHU!\n"
+    .string "May I hold it? Just for a moment?$"
+
+CeladonCity_Gym_Text_MeowthNowJames::
+    .string "MEOWTH: Now, JAMES! Grab da PIKACHU\n"
+    .string "and da perfume recipe!$"
+
+CeladonCity_Gym_Text_JamesReveal::
+    .string "JAMES: Drat, you blew my cover!\n"
+    .string "It's me, JAMES, the master of\l"
+    .string "disguise!$"
+
+CeladonCity_Gym_Text_JessiePerfumePlan::
+    .string "JESSIE: The secret formula of this\n"
+    .string "GYM's famous perfume… TEAM ROCKET\l"
+    .string "will sell it for millions!$"
+
+CeladonCity_Gym_Text_MeowthSpills::
+    .string "MEOWTH: Nobody move! We… huh?\n"
+    .string "Oops! Who left dis bottle here?!$"
+
+CeladonCity_Gym_Text_PerfumeCloud::
+    .string "A cloud of sickly-sweet perfume\n"
+    .string "burst across the gym!$"
+
+CeladonCity_Gym_Text_JessieFurious::
+    .string "JESSIE: Cough, cough! MEOWTH, you\n"
+    .string "clumsy furball! Just get that\l"
+    .string "PIKACHU!$"
+
+CeladonCity_Gym_Text_RocketDefeat::
+    .string "We smell like defeat…$"
+
+CeladonCity_Gym_Text_ErikaThanks::
+    .string "ERIKA: My, my… what a commotion.\p"
+    .string "Thank you for protecting our\n"
+    .string "perfume. Please accept this.$"
+
+CeladonCity_Gym_Text_ErikaMiracleSeed::
+    .string "ERIKA: A MIRACLE SEED strengthens\n"
+    .string "GRASS-type moves. It suits a gym\l"
+    .string "full of flowers, don't you think?$"
+

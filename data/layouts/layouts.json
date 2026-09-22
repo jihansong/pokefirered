@@ -8778,6 +8778,18 @@
       "secondary_tileset": "gTileset_EmGenericBuilding",
       "border_filepath": "data/layouts/HoennRoute124_DivingTreasureHuntersHouse/border.bin",
       "blockdata_filepath": "data/layouts/HoennRoute124_DivingTreasureHuntersHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEW_ISLAND",
+      "name": "NewIsland_Layout",
+      "width": 26,
+      "height": 17,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonMansion",
+      "border_filepath": "data/layouts/NewIsland/border.bin",
+      "blockdata_filepath": "data/layouts/NewIsland/map.bin"
     }
   ]
 }

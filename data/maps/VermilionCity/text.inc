@@ -175,3 +175,30 @@ VermilionCity_Text_TruckWontBudge::
 VermilionCity_Text_AirportSign::
     .string "VERMILION AIRPORT\p"
     .string "Flights to faraway regions$"
+
+VermilionCity_Text_SailorComeAtNight::
+    .string "Some nights a thick fog rolls in,\n"
+    .string "and an island shows up out there.\p"
+    .string "It's on no chart. They say the\n"
+    .string "old truck's cargo came from it.\p"
+    .string "Come see me some night, and I'll\n"
+    .string "row you out.$"
+
+VermilionCity_Text_SailorIslandInFog::
+    .string "There it is, in the fog. The\n"
+    .string "island that's on no chart.\p"
+    .string "Funny thing, I saw three odd folks\n"
+    .string "and a MEOWTH row out there earlier.\p"
+    .string "Want me to take you across?$"
+
+VermilionCity_Text_SailorLetsGo::
+    .string "Hold on tight!$"
+
+VermilionCity_Text_SailorMaybeLater::
+    .string "Suit yourself. The fog won't wait\n"
+    .string "forever, though.$"
+
+VermilionCity_Text_SailorFogLifted::
+    .string "The fog hasn't come back since\n"
+    .string "that night. Guess that island\l"
+    .string "gave up all its secrets.$"

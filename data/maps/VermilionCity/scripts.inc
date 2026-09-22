@@ -235,7 +235,42 @@ VermilionCity_EventScript_LetPlayerOntoPier::
 	end
 
 VermilionCity_EventScript_Sailor::
-	msgbox VermilionCity_Text_SSAnneVisitsOnceAYear, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_ROCKET_NEW_ISLAND, VermilionCity_EventScript_SailorFogLifted
+	goto_if_set FLAG_FOUGHT_MEWTWO, VermilionCity_EventScript_SailorNewIsland
+	msgbox VermilionCity_Text_SSAnneVisitsOnceAYear
+	release
+	end
+
+@ v0.5.0 TEAM ROCKET event 11: the way to NEW ISLAND (foggy nights only).
+VermilionCity_EventScript_SailorNewIsland::
+	special BufferGameClock
+	goto_if_ne VAR_RESULT, TIME_NIGHT, VermilionCity_EventScript_SailorComeAtNight
+	msgbox VermilionCity_Text_SailorIslandInFog, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, VermilionCity_EventScript_SailorMaybeLater
+	msgbox VermilionCity_Text_SailorLetsGo
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playse SE_EXIT
+	warp MAP_NEW_ISLAND, 6, 12
+	waitstate
+	release
+	end
+
+VermilionCity_EventScript_SailorComeAtNight::
+	msgbox VermilionCity_Text_SailorComeAtNight
+	release
+	end
+
+VermilionCity_EventScript_SailorMaybeLater::
+	msgbox VermilionCity_Text_SailorMaybeLater
+	release
+	end
+
+VermilionCity_EventScript_SailorFogLifted::
+	msgbox VermilionCity_Text_SailorFogLifted
+	release
 	end
 
 VermilionCity_EventScript_OaksAide::

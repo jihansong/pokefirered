@@ -80,6 +80,7 @@ SaffronCity_Gym_EventScript_GymGuy::
 
 SaffronCity_Gym_EventScript_GymGuyPostVictory::
 	msgbox SaffronCity_Gym_Text_GymGuyPostVictory
+	msgbox SaffronCity_Gym_Text_GymGuySabrinaRumor
 	release
 	end
 

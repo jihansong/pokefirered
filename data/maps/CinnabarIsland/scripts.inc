@@ -5,6 +5,7 @@ CinnabarIsland_MapScripts::
 
 CinnabarIsland_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_CINNABAR_ISLAND
+	call CinnabarIsland_EventScript_ReadyRocketMagmar
 	call CinnabarIsland_EventScript_CheckUnlockGym
 	call_if_eq VAR_MAP_SCENE_CINNABAR_ISLAND, 1, CinnabarIsland_EventScript_ReadyObjectsSailToOneIsland
 	call_if_eq VAR_MAP_SCENE_CINNABAR_ISLAND, 3, CinnabarIsland_EventScript_ReadyObjectsReturnFromSeviiIslands
@@ -350,3 +351,66 @@ CinnabarIsland_EventScript_GymSign::
 	msgbox CinnabarIsland_Text_GymSign
 	releaseall
 	end
+
+@ Thunder Yellow v0.5.0, TEAM ROCKET event 8: after the MARSH BADGE, the trio are at
+@ the POKéMON MANSION's door with a machine to lure the fire POKéMON of the
+@ volcano. A double battle; afterwards the machine they drop draws out a furious
+@ MAGMAR, which the player can battle and catch, once.
+CinnabarIsland_EventScript_ReadyRocketMagmar::
+	setflag FLAG_TEMP_3
+	goto_if_set FLAG_ROCKET_CINNABAR, EventScript_Return
+	goto_if_unset FLAG_BADGE06_GET, EventScript_Return
+	clearflag FLAG_TEMP_3
+	setvar VAR_TEMP_2, 1
+	return
+
+CinnabarIsland_EventScript_RocketMagmar::
+	lockall
+	setvar VAR_TEMP_2, 0
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox CinnabarIsland_Text_JessieMagmarCaller
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox CinnabarIsland_Text_JamesFireArmy
+	closemessage
+	applymovement LOCALID_CINNABAR_JESSIE, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_CINNABAR_MEOWTH, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_CINNABAR_JAMES, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	applymovement LOCALID_CINNABAR_MEOWTH, Common_Movement_ExclamationMark
+	waitmovement 0
+	playbgm MUS_ENCOUNTER_ROCKET, 0
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox CinnabarIsland_Text_MeowthTwerpAgain
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox CinnabarIsland_Text_RocketMagmarIntro
+	closemessage
+	setvar VAR_LAST_TALKED, LOCALID_CINNABAR_JESSIE
+	trainerbattle_no_intro TRAINER_JESSIE_JAMES_CINNABAR, CinnabarIsland_Text_RocketMagmarDefeat
+	setvar VAR_0x8008, LOCALID_CINNABAR_JESSIE
+	setvar VAR_0x8009, LOCALID_CINNABAR_JAMES
+	setvar VAR_0x800A, LOCALID_CINNABAR_MEOWTH
+	call EventScript_RocketTrioBlastOff
+	removeobject LOCALID_CINNABAR_JESSIE
+	removeobject LOCALID_CINNABAR_MEOWTH
+	removeobject LOCALID_CINNABAR_JAMES
+	setflag FLAG_ROCKET_CINNABAR
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox CinnabarIsland_Text_CallerStillBuzzing
+	closemessage
+	setvar VAR_0x8004, 2
+	setvar VAR_0x8005, 2
+	setvar VAR_0x8006, 8
+	setvar VAR_0x8007, 3
+	special ShakeScreen
+	waitstate
+	playmoncry SPECIES_MAGMAR, CRY_MODE_ENCOUNTER
+	waitmoncry
+	msgbox CinnabarIsland_Text_MagmarBurstsOut
+	closemessage
+	setwildbattle SPECIES_MAGMAR, 36
+	dowildbattle
+	fadedefaultbgm
+	msgbox CinnabarIsland_Text_CallerFallsSilent
+	releaseall
+	end
+

@@ -138,3 +138,10 @@ VermilionCity_Gym_Text_OnlyTrashLocksWereReset::
     .string "Hey!\n"
     .string "The electric locks were reset!$"
 
+@ v0.5.0 TEAM ROCKET event 12: a nod to the POKéMON ADVENTURES manga
+VermilionCity_Gym_Text_GymGuySurgeRumor::
+    .string "Say, champ. Between you and me…\p"
+    .string "Some men in black suits came by\n"
+    .string "once, offering LT. SURGE a job.\p"
+    .string "He sent them packing. Or so he\n"
+    .string "says, anyway. Heh.$"

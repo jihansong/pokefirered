@@ -154,3 +154,10 @@ FuchsiaCity_Gym_Text_GymStatuePlayerWon::
     .string "WINNING TRAINERS:\n"
     .string "{RIVAL}, {PLAYER}$"
 
+@ v0.5.0 TEAM ROCKET event 12: a nod to the POKéMON ADVENTURES manga
+FuchsiaCity_Gym_Text_GymGuyKogaRumor::
+    .string "One more thing, champ.\p"
+    .string "They say TEAM ROCKET once asked\n"
+    .string "KOGA to train their spies.\p"
+    .string "Nobody knows what he told them.\n"
+    .string "A ninja keeps his secrets!$"

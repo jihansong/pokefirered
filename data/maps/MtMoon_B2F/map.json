@@ -306,6 +306,36 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtMoon_B2F_EventScript_JirachiStar",
       "flag": "FLAG_HIDE_MT_MOON_JIRACHI_STAR"
+    },
+    {
+      "local_id": "LOCALID_MT_MOON_MEOWTH",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_MEOWTH",
+      "x": 5,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_MT_MOON_B2F_JESSIE_JAMES"
+    },
+    {
+      "local_id": "LOCALID_MT_MOON_ROCKET_CLEFAIRY",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_CLEFAIRY",
+      "x": 2,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MtMoon_B2F_EventScript_RocketClefairy",
+      "flag": "FLAG_TEMP_2"
     }
   ],
   "warp_events": [

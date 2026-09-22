@@ -5,6 +5,7 @@
 #include "wild_pokemon_area.h"
 #include "pokedex_area_markers.h"
 #include "pokedex.h"
+#include "constants/region_map_sections.h"
 
 /*
     Controls the red ellipse markers that appear on the pokedex maps to show where a species is found.
@@ -182,13 +183,15 @@ static const s8 sAreaMarkers[][4] = {
     [DEX_AREA_TANOBY_CHAMBER]   = { MARKER_MED_H,     96,  90 },
 };
 
+#include "data/pokedex_area_hoenn.h"
+
 static void Task_ShowAreaMarkers(u8 taskId)
 {
     struct PAM_TaskData * data = (void *)gTasks[taskId].data;
     gSprites[data->spriteId].invisible = FALSE;
 }
 
-u8 CreatePokedexAreaMarkers(u16 species, u16 tilesTag, u8 palIdx, u8 y)
+u8 CreatePokedexAreaMarkers(u16 species, u16 tilesTag, u8 palIdx, u8 y, u8 region, u8 seviiIslands)
 {
     struct SpriteTemplate spriteTemplate;
     struct CompressedSpriteSheet spriteSheet;
@@ -212,7 +215,7 @@ u8 CreatePokedexAreaMarkers(u16 species, u16 tilesTag, u8 palIdx, u8 y)
     subsprites = Alloc(120 * sizeof(struct Subsprite));
     data->buffer = subsprites;
     data->subsprites.subsprites = subsprites;
-    data->subsprites.subspriteCount = GetSpeciesPokedexAreaMarkers(species, subsprites);
+    data->subsprites.subspriteCount = GetSpeciesPokedexAreaMarkers(species, subsprites, region, seviiIslands);
 
     SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_OBJWIN_ON);
     SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG1 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3 | BLDCNT_TGT2_BD);
@@ -265,6 +268,23 @@ void GetAreaMarkerSubsprite(s32 i, s32 dexArea, struct Subsprite * subsprites)
     subsprites[i] = *sSubsprites[sAreaMarkers[dexArea][0]];
     subsprites[i].x = sAreaMarkers[dexArea][1];
     subsprites[i].y = sAreaMarkers[dexArea][2];
+}
+
+// Hoenn markers are placed relative to the Hoenn area map, which sits where
+// the marker sprite is created for that page.
+void GetHoennAreaMarkerSubsprite(s32 i, u16 mapSecId, struct Subsprite * subsprites)
+{
+    const s8 *marker;
+
+    if (mapSecId == MAPSEC_ALTERING_CAVE)
+        marker = sHoennAlteringCaveMarker;
+    else if (mapSecId < ARRAY_COUNT(sHoennAreaMarkers))
+        marker = sHoennAreaMarkers[mapSecId];
+    else
+        return;
+    subsprites[i] = *sSubsprites[marker[0]];
+    subsprites[i].x = marker[1] + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = marker[2];
 }
 
 u8 GetNumPokedexAreaMarkers(u8 taskId)

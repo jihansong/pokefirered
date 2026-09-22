@@ -3790,6 +3790,197 @@ static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesSilphCo[] = {
     },
 };
 
+// v0.5.0 TEAM ROCKET events: between MT. MOON (14) and the ROCKET HIDEOUT (25)
+static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesCeruleanGym[] = {
+    {
+        .iv = 0,
+        .lvl = 20,
+        .species = SPECIES_EKANS,
+    },
+    {
+        .iv = 0,
+        .lvl = 20,
+        .species = SPECIES_KOFFING,
+    },
+    {
+        .iv = 0,
+        .lvl = 21,
+        .species = SPECIES_MEOWTH,
+    },
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_RocketSSAnne1[] = {
+    {
+        .iv = 0,
+        .lvl = 18,
+        .species = SPECIES_RATTATA,
+    },
+    {
+        .iv = 0,
+        .lvl = 18,
+        .species = SPECIES_ZUBAT,
+    },
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_RocketSSAnne2[] = {
+    {
+        .iv = 0,
+        .lvl = 19,
+        .species = SPECIES_KOFFING,
+    },
+    {
+        .iv = 0,
+        .lvl = 18,
+        .species = SPECIES_DROWZEE,
+    },
+};
+
+// JAMES's "golden egg" MAGIKARP, bought on board
+static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesSSAnne[] = {
+    {
+        .iv = 0,
+        .lvl = 22,
+        .species = SPECIES_EKANS,
+    },
+    {
+        .iv = 0,
+        .lvl = 22,
+        .species = SPECIES_KOFFING,
+    },
+    {
+        .iv = 0,
+        .lvl = 15,
+        .species = SPECIES_MAGIKARP,
+    },
+    {
+        .iv = 0,
+        .lvl = 23,
+        .species = SPECIES_MEOWTH,
+    },
+};
+
+// between POKéMON TOWER (27) and SILPH CO. (31); JAMES has a WEEPINBELL now
+static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesCeladonGym[] = {
+    {
+        .iv = 0,
+        .lvl = 29,
+        .species = SPECIES_ARBOK,
+    },
+    {
+        .iv = 0,
+        .lvl = 29,
+        .species = SPECIES_KOFFING,
+    },
+    {
+        .iv = 0,
+        .lvl = 28,
+        .species = SPECIES_WEEPINBELL,
+    },
+    {
+        .iv = 0,
+        .lvl = 29,
+        .species = SPECIES_MEOWTH,
+    },
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesSafari[] = {
+    {
+        .iv = 0,
+        .lvl = 32,
+        .species = SPECIES_ARBOK,
+    },
+    {
+        .iv = 0,
+        .lvl = 32,
+        .species = SPECIES_KOFFING,
+    },
+    {
+        .iv = 0,
+        .lvl = 31,
+        .species = SPECIES_WEEPINBELL,
+    },
+    {
+        .iv = 0,
+        .lvl = 32,
+        .species = SPECIES_MEOWTH,
+    },
+};
+
+// after SILPH CO. (31): KOFFING has grown into WEEZING
+static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesCinnabar[] = {
+    {
+        .iv = 0,
+        .lvl = 36,
+        .species = SPECIES_WEEZING,
+    },
+    {
+        .iv = 0,
+        .lvl = 36,
+        .species = SPECIES_ARBOK,
+    },
+    {
+        .iv = 0,
+        .lvl = 35,
+        .species = SPECIES_WEEPINBELL,
+    },
+    {
+        .iv = 0,
+        .lvl = 36,
+        .species = SPECIES_MEOWTH,
+    },
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesViridianGym[] = {
+    {
+        .iv = 0,
+        .lvl = 40,
+        .species = SPECIES_WEEZING,
+    },
+    {
+        .iv = 0,
+        .lvl = 40,
+        .species = SPECIES_ARBOK,
+    },
+    {
+        .iv = 0,
+        .lvl = 39,
+        .species = SPECIES_VICTREEBEL,
+    },
+    {
+        .iv = 0,
+        .lvl = 40,
+        .species = SPECIES_MEOWTH,
+    },
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesNewIsland[] = {
+    {
+        .iv = 100,
+        .lvl = 58,
+        .species = SPECIES_WEEZING,
+    },
+    {
+        .iv = 100,
+        .lvl = 58,
+        .species = SPECIES_ARBOK,
+    },
+    {
+        .iv = 100,
+        .lvl = 57,
+        .species = SPECIES_VICTREEBEL,
+    },
+    {
+        .iv = 100,
+        .lvl = 57,
+        .species = SPECIES_GYARADOS,
+    },
+    {
+        .iv = 100,
+        .lvl = 60,
+        .species = SPECIES_MEOWTH,
+    },
+};
+
 static const struct TrainerMonNoItemDefaultMoves sParty_RivalOaksLabEevee[] = {
     {
         .iv = 0,

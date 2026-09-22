@@ -223,3 +223,68 @@ CeladonCity_PokemonCenter_1F_Text_Rumor26::
     .string "Show him 99 of them and see what\n"
     .string "he says!$"
 
+CeladonCity_PokemonCenter_1F_Text_Rumor27::
+    .string "TEAM ROCKET's JESSIE and JAMES\n"
+    .string "seem to follow a certain PIKACHU\l"
+    .string "everywhere it goes.\p"
+    .string "They first showed up at the\n"
+    .string "VIRIDIAN POKéMON CENTER!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor28::
+    .string "A CLEFAIRY in MT. MOON is said to\n"
+    .string "thank whoever saves it from\l"
+    .string "TEAM ROCKET with a MOON STONE.$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor29::
+    .string "After you earn the CASCADEBADGE,\n"
+    .string "go back to the CERULEAN GYM.\p"
+    .string "Someone's after MISTY's water\n"
+    .string "show POKéMON!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor30::
+    .string "TEAM ROCKET is plotting something\n"
+    .string "aboard the S.S. ANNE.\p"
+    .string "Look into it before the ship sets\n"
+    .string "sail, or you'll miss it for good!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor31::
+    .string "The ghosts at the top of the\n"
+    .string "POKéMON TOWER hate TEAM ROCKET.\p"
+    .string "I hear they gave those two quite\n"
+    .string "a fright!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor32::
+    .string "After the RAINBOWBADGE, visit the\n"
+    .string "CELADON GYM again.\p"
+    .string "One of ERIKA's trainees has a\n"
+    .string "very… unusual perfume.$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor33::
+    .string "Once you've found the SAFARI\n"
+    .string "ZONE's secret house, keep an eye\l"
+    .string "on the gate as you leave.\p"
+    .string "Poachers are after a rare\n"
+    .string "DRATINI!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor34::
+    .string "After the VOLCANOBADGE, someone's\n"
+    .string "been luring a MAGMAR by the door\l"
+    .string "of the POKéMON MANSION.$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor35::
+    .string "The VIRIDIAN GYM has substitute\n"
+    .string "LEADERS now, and an electric floor.\p"
+    .string "Every trap has an off switch.\n"
+    .string "Look along the walls!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor36::
+    .string "The INDIGO TORCH opens every\n"
+    .string "LEAGUE challenge.\p"
+    .string "A certain trio would love to get\n"
+    .string "their hands on it…$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor37::
+    .string "After MEWTWO, ask the sailor by\n"
+    .string "the truck on the VERMILION quay\l"
+    .string "about the island in the fog.\p"
+    .string "It only appears at night!$"

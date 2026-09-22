@@ -90,3 +90,39 @@ CeruleanCity_Gym_Text_GymStatuePlayerWon::
     .string "WINNING TRAINERS:\n"
     .string "{RIVAL}, {PLAYER}$"
 
+CeruleanCity_Gym_Text_JessieWaterShow::
+    .string "JESSIE: The famous CERULEAN water\n"
+    .string "show! Its stars will look lovely\l"
+    .string "in TEAM ROCKET's aquarium!$"
+
+CeruleanCity_Gym_Text_JamesDrainPool::
+    .string "JAMES: And we'll pull the plug on\n"
+    .string "the pool on our way out!$"
+
+CeruleanCity_Gym_Text_MistyNotInMyGym::
+    .string "MISTY: Not in my gym, you don't!\n"
+    .string "{PLAYER}, give me a hand here!$"
+
+CeruleanCity_Gym_Text_MeowthSpotsPikachu::
+    .string "MEOWTH: The twerp with the super\n"
+    .string "PIKACHU again? Fine by me! We'll\l"
+    .string "bag it with the rest!$"
+
+CeruleanCity_Gym_Text_RocketBattleIntro::
+    .string "JESSIE & JAMES: Stand aside, or\n"
+    .string "get washed away!$"
+
+CeruleanCity_Gym_Text_RocketDefeat::
+    .string "All wet… again!$"
+
+CeruleanCity_Gym_Text_MistyThanks::
+    .string "MISTY: Hmph! Those three have some\n"
+    .string "nerve, crashing my gym.\p"
+    .string "Thanks for the help. Here, you've\n"
+    .string "earned this.$"
+
+CeruleanCity_Gym_Text_MistyMysticWater::
+    .string "MISTY: MYSTIC WATER powers up\n"
+    .string "WATER-type moves. Good for a\l"
+    .string "PIKACHU that SURFS, too!$"
+

@@ -42,6 +42,19 @@ static const struct ContestEncounter sContestEncounters[] = {
     { 5, SPECIES_PINSIR,     13, 14},
 };
 
+// For the Pokédex area screen, which shows these in Viridian Forest
+bool8 IsBugContestSpecies(u16 species)
+{
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(sContestEncounters); i++)
+    {
+        if (sContestEncounters[i].species == species)
+            return TRUE;
+    }
+    return FALSE;
+}
+
 struct Contestant
 {
     const u8 *name;

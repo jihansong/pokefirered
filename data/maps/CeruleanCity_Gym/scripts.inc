@@ -1,5 +1,63 @@
 CeruleanCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, CeruleanCity_Gym_OnTransition
 	.byte 0
+
+CeruleanCity_Gym_OnTransition::
+	setflag FLAG_TEMP_1
+	goto_if_set FLAG_ROCKET_CERULEAN_GYM, CeruleanCity_Gym_EventScript_NoRockets
+	goto_if_unset FLAG_BADGE02_GET, CeruleanCity_Gym_EventScript_NoRockets
+	setvar VAR_TEMP_1, 1
+CeruleanCity_Gym_EventScript_NoRockets::
+	end
+
+@ Thunder Yellow v0.5.0, TEAM ROCKET event 3: back at the CERULEAN GYM after the
+@ CASCADE BADGE, the player finds JESSIE, JAMES and MEOWTH after the stars of the
+@ gym's water show. MISTY asks for help; a double battle, and MISTY's thanks.
+CeruleanCity_Gym_EventScript_RocketWaterShow::
+	lockall
+	setvar VAR_TEMP_1, 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	playse SE_M_EXPLOSION
+	clearflag FLAG_TEMP_1
+	addobject LOCALID_CERULEAN_GYM_JESSIE
+	addobject LOCALID_CERULEAN_GYM_MEOWTH
+	addobject LOCALID_CERULEAN_GYM_JAMES
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	playbgm MUS_ENCOUNTER_ROCKET, 0
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox CeruleanCity_Gym_Text_JessieWaterShow
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox CeruleanCity_Gym_Text_JamesDrainPool
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox CeruleanCity_Gym_Text_MistyNotInMyGym
+	call_if_set FLAG_ROCKET_VIRIDIAN_PC, CeruleanCity_Gym_EventScript_MeowthSpotsPikachu
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox CeruleanCity_Gym_Text_RocketBattleIntro
+	closemessage
+	setvar VAR_LAST_TALKED, LOCALID_CERULEAN_GYM_JESSIE
+	trainerbattle_no_intro TRAINER_JESSIE_JAMES_CERULEAN_GYM, CeruleanCity_Gym_Text_RocketDefeat
+	setvar VAR_0x8008, LOCALID_CERULEAN_GYM_JESSIE
+	setvar VAR_0x8009, LOCALID_CERULEAN_GYM_JAMES
+	setvar VAR_0x800A, LOCALID_CERULEAN_GYM_MEOWTH
+	call EventScript_RocketTrioBlastOff
+	removeobject LOCALID_CERULEAN_GYM_JESSIE
+	removeobject LOCALID_CERULEAN_GYM_MEOWTH
+	removeobject LOCALID_CERULEAN_GYM_JAMES
+	setflag FLAG_ROCKET_CERULEAN_GYM
+	fadedefaultbgm
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox CeruleanCity_Gym_Text_MistyThanks
+	giveitem ITEM_MYSTIC_WATER
+	msgbox CeruleanCity_Gym_Text_MistyMysticWater
+	releaseall
+	end
+
+CeruleanCity_Gym_EventScript_MeowthSpotsPikachu::
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox CeruleanCity_Gym_Text_MeowthSpotsPikachu
+	return
 
 CeruleanCity_Gym_EventScript_Misty::
 	famechecker FAMECHECKER_MISTY, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005

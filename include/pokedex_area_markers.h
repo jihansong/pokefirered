@@ -3,7 +3,8 @@
 
 void GetAreaMarkerSubsprite(s32 i, s32 dexArea, struct Subsprite * subsprites);
 void DestroyPokedexAreaMarkers(u8 taskId);
-u8 CreatePokedexAreaMarkers(u16 species, u16 tilesTag, u8 palIdx, u8 y);
+u8 CreatePokedexAreaMarkers(u16 species, u16 tilesTag, u8 palIdx, u8 y, u8 region, u8 seviiIslands);
+void GetHoennAreaMarkerSubsprite(s32 i, u16 mapSecId, struct Subsprite * subsprites);
 u8 GetNumPokedexAreaMarkers(u8 taskId);
 
 #endif //GUARD_POKEDEX_AREA_MARKERS_H

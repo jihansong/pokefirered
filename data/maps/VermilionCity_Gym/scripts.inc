@@ -272,6 +272,7 @@ VermilionCity_Gym_EventScript_GymGuy::
 
 VermilionCity_Gym_EventScript_GymGuyPostVictory::
 	msgbox VermilionCity_Gym_Text_GymGuyPostVictory
+	msgbox VermilionCity_Gym_Text_GymGuySurgeRumor
 	release
 	end
 

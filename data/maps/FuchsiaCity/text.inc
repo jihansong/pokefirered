@@ -110,3 +110,45 @@ FuchsiaCity_Text_MyFatherIsGymLeader::
     .string "I'm training to use POISON POKéMON\n"
     .string "as well as my father.$"
 
+FuchsiaCity_Text_MeowthSackOfDratini::
+    .string "MEOWTH: Heh heh… Nobody saw nothin'.\n"
+    .string "Just three honest tourists leavin'\l"
+    .string "da SAFARI ZONE with a big sack…$"
+
+FuchsiaCity_Text_SomethingInSack::
+    .string "Something in the sack let out a\n"
+    .string "frightened cry!$"
+
+FuchsiaCity_Text_JessieRareDratini::
+    .string "JESSIE: You! Forget you saw this\n"
+    .string "DRATINI! The rarest POKéMON in the\l"
+    .string "SAFARI ZONE is TEAM ROCKET's now!$"
+
+FuchsiaCity_Text_JamesPoached::
+    .string "JAMES: Fished it right out of the\n"
+    .string "lake while the warden napped!$"
+
+FuchsiaCity_Text_RocketDratiniIntro::
+    .string "JESSIE & JAMES: And your PIKACHU\n"
+    .string "goes in the sack next!$"
+
+FuchsiaCity_Text_RocketDratiniDefeat::
+    .string "Our catch of the day…!$"
+
+FuchsiaCity_Text_DratiniEscapes::
+    .string "The DRATINI wriggled out of the\n"
+    .string "sack and slithered back through\l"
+    .string "the SAFARI ZONE gate!$"
+
+FuchsiaCity_Text_AttendantThanks::
+    .string "SAFARI ZONE ATTENDANT: You saved\n"
+    .string "our DRATINI! Poachers, in broad\l"
+    .string "daylight!\p"
+    .string "Please, take this as thanks from\n"
+    .string "the SAFARI ZONE.$"
+
+FuchsiaCity_Text_AttendantDragonFang::
+    .string "ATTENDANT: A DRAGON FANG powers up\n"
+    .string "DRAGON-type moves. Our DRATINI\l"
+    .string "would want you to have it.$"
+

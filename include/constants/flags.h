@@ -547,18 +547,18 @@
 #define FLAG_MISSINGNO_ITEM_BONUS 0x20D
 #define FLAG_SURFING_PIKACHU     0x20E
 #define FLAG_SAW_AIRPORT_PLANE_TAXI 0x20F
-#define FLAG_0x210               0x210
-#define FLAG_0x211               0x211
-#define FLAG_0x212               0x212
-#define FLAG_0x213               0x213
-#define FLAG_0x214               0x214
-#define FLAG_0x215               0x215
-#define FLAG_0x216               0x216
-#define FLAG_0x217               0x217
-#define FLAG_0x218               0x218
-#define FLAG_0x219               0x219
-#define FLAG_0x21A               0x21A
-#define FLAG_0x21B               0x21B
+#define FLAG_ROCKET_VIRIDIAN_PC  0x210 // v0.5.0 event 1: TEAM ROCKET raided the VIRIDIAN POKéMON CENTER
+#define FLAG_ROCKET_MT_MOON_CLEFAIRY 0x211 // v0.5.0 event 2: the CLEFAIRY TEAM ROCKET chased gave a MOON STONE
+#define FLAG_ROCKET_CERULEAN_GYM 0x212 // v0.5.0 event 3: TEAM ROCKET tried to steal the CERULEAN GYM water show
+#define FLAG_ROCKET_SS_ANNE      0x213 // v0.5.0 event 4: TEAM ROCKET's S.S. ANNE plot
+#define FLAG_ROCKET_CELADON_GYM  0x214 // v0.5.0 event 6: JAMES's disguise and the perfume fuss at the CELADON GYM
+#define FLAG_ROCKET_SAFARI_DRATINI 0x215 // v0.5.0 event 7: TEAM ROCKET's DRATINI poaching stopped at the SAFARI ZONE gate
+#define FLAG_ROCKET_CINNABAR     0x216 // v0.5.0 event 8: TEAM ROCKET's MAGMAR lure at the POKéMON MANSION
+#define FLAG_ROCKET_VIRIDIAN_GYM_INTRO 0x217 // v0.5.0 event 9: TEAM ROCKET claimed the VIRIDIAN GYM (intro seen)
+#define FLAG_VIRIDIAN_GYM_TRAPS_OFF 0x218 // v0.5.0 event 9: the player switched off TEAM ROCKET's floor traps
+#define FLAG_ROCKET_VIRIDIAN_GYM 0x219 // v0.5.0 event 9: TEAM ROCKET driven out of the VIRIDIAN GYM
+#define FLAG_ROCKET_INDIGO_TORCH 0x21A // v0.5.0 event 10: TEAM ROCKET's grab for the INDIGO TORCH foiled
+#define FLAG_ROCKET_NEW_ISLAND   0x21B // v0.5.0 event 11: TEAM ROCKET driven off NEW ISLAND (CARGO TAG found)
 #define FLAG_0x21C               0x21C
 #define FLAG_0x21D               0x21D
 #define FLAG_0x21E               0x21E

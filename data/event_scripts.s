@@ -759,6 +759,7 @@ gStdScriptsEnd::
 	.include "data/maps/CinnabarIsland_PokemonLab_ExperimentRoom/text.inc"
 	.include "data/maps/CinnabarIsland_PokemonCenter_1F/text.inc"
 	.include "data/maps/CinnabarIsland_Mart/text.inc"
+	.include "data/maps/IndigoPlateau_Exterior/text.inc"
 	.include "data/maps/IndigoPlateau_PokemonCenter_1F/text.inc"
 	.include "data/maps/SaffronCity_CopycatsHouse_1F/text.inc"
 	.include "data/maps/SaffronCity_CopycatsHouse_2F/text.inc"

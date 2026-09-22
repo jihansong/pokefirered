@@ -6,11 +6,152 @@ IndigoPlateau_Exterior_MapScripts::
 IndigoPlateau_Exterior_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_INDIGO_PLATEAU_EXTERIOR
 	call_if_eq VAR_MAP_SCENE_INDIGO_PLATEAU_EXTERIOR, 1, IndigoPlateau_Exterior_EventScript_PlayCreditsMusic
+	setflag FLAG_TEMP_1
+	goto_if_eq VAR_MAP_SCENE_INDIGO_PLATEAU_EXTERIOR, 1, IndigoPlateau_Exterior_EventScript_TransitionEnd
+	goto_if_set FLAG_ROCKET_INDIGO_TORCH, IndigoPlateau_Exterior_EventScript_TransitionEnd
+	goto_if_unset FLAG_BADGE08_GET, IndigoPlateau_Exterior_EventScript_TransitionEnd
+	setvar VAR_TEMP_1, 1
+IndigoPlateau_Exterior_EventScript_TransitionEnd::
 	end
 
 IndigoPlateau_Exterior_EventScript_PlayCreditsMusic::
 	playbgm MUS_CREDITS, 0
 	return
+
+@ Thunder Yellow v0.5.0, TEAM ROCKET event 10: the first time the player reaches
+@ the plateau with all eight badges, the trio sneak out of the LEAGUE with the
+@ INDIGO TORCH, the flame that opens every LEAGUE challenge. It flares up in
+@ MEOWTH's paws and sends them flying. A LEAGUE official gives a FULL RESTORE.
+@ Plays once and never blocks the way to the ELITE FOUR.
+IndigoPlateau_Exterior_EventScript_RocketTorch::
+	lockall
+	setvar VAR_TEMP_1, 0
+	opendoor 11, 6
+	waitdooranim
+	addobject LOCALID_INDIGO_JESSIE
+	applymovement LOCALID_INDIGO_JESSIE, IndigoPlateau_Exterior_Movement_JessieExit
+	waitmovement 0
+	addobject LOCALID_INDIGO_JAMES
+	applymovement LOCALID_INDIGO_JAMES, IndigoPlateau_Exterior_Movement_JamesExit
+	waitmovement 0
+	addobject LOCALID_INDIGO_MEOWTH
+	applymovement LOCALID_INDIGO_MEOWTH, IndigoPlateau_Exterior_Movement_MeowthExit
+	waitmovement 0
+	closedoor 11, 6
+	waitdooranim
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox IndigoPlateau_Exterior_Text_MeowthGotTheTorch
+	applymovement LOCALID_INDIGO_MEOWTH, Common_Movement_ExclamationMark
+	waitmovement 0
+	playbgm MUS_ENCOUNTER_ROCKET, 0
+	msgbox IndigoPlateau_Exterior_Text_MeowthTwerpHere
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox IndigoPlateau_Exterior_Text_JessieIndigoTorch
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox IndigoPlateau_Exterior_Text_JamesNoChallenges
+	closemessage
+	specialvar VAR_RESULT, GetStarterPikachuPartySlotForScript
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	goto_if_eq VAR_RESULT, PARTY_SIZE, IndigoPlateau_Exterior_EventScript_TorchFlaresInWind
+	msgbox IndigoPlateau_Exterior_Text_PikachuZapsTorch
+	closemessage
+	playse SE_M_THUNDERBOLT
+	fadescreenspeed FADE_TO_WHITE, 0
+	fadescreenspeed FADE_FROM_WHITE, 0
+	fadescreenspeed FADE_TO_WHITE, 0
+	fadescreenspeed FADE_FROM_WHITE, 0
+	goto IndigoPlateau_Exterior_EventScript_TorchFlares
+
+IndigoPlateau_Exterior_EventScript_TorchFlaresInWind::
+	msgbox IndigoPlateau_Exterior_Text_WindGusts
+	closemessage
+IndigoPlateau_Exterior_EventScript_TorchFlares::
+	playse SE_M_FLAME_WHEEL
+	applymovement LOCALID_INDIGO_MEOWTH, IndigoPlateau_Exterior_Movement_MeowthHotHot
+	waitmovement 0
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox IndigoPlateau_Exterior_Text_MeowthHotHotHot
+	closemessage
+	setvar VAR_0x8008, LOCALID_INDIGO_JESSIE
+	setvar VAR_0x8009, LOCALID_INDIGO_JAMES
+	setvar VAR_0x800A, LOCALID_INDIGO_MEOWTH
+	call EventScript_RocketTrioBlastOff
+	removeobject LOCALID_INDIGO_JESSIE
+	removeobject LOCALID_INDIGO_MEOWTH
+	removeobject LOCALID_INDIGO_JAMES
+	setflag FLAG_ROCKET_INDIGO_TORCH
+	fadedefaultbgm
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox IndigoPlateau_Exterior_Text_TorchLanded
+	closemessage
+	opendoor 11, 6
+	waitdooranim
+	addobject LOCALID_INDIGO_OFFICIAL
+	applymovement LOCALID_INDIGO_OFFICIAL, IndigoPlateau_Exterior_Movement_OfficialExit
+	waitmovement 0
+	closedoor 11, 6
+	waitdooranim
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox IndigoPlateau_Exterior_Text_OfficialThanks
+	giveitem ITEM_FULL_RESTORE
+	msgbox IndigoPlateau_Exterior_Text_OfficialGoodLuck
+	closemessage
+	applymovement LOCALID_INDIGO_OFFICIAL, IndigoPlateau_Exterior_Movement_OfficialReturn
+	waitmovement 0
+	opendoor 11, 6
+	waitdooranim
+	applymovement LOCALID_INDIGO_OFFICIAL, IndigoPlateau_Exterior_Movement_OfficialEnter
+	waitmovement 0
+	removeobject LOCALID_INDIGO_OFFICIAL
+	closedoor 11, 6
+	waitdooranim
+	releaseall
+	end
+
+IndigoPlateau_Exterior_Movement_JessieExit::
+	walk_down
+	walk_down
+	walk_left
+	walk_down
+	face_down
+	step_end
+
+IndigoPlateau_Exterior_Movement_JamesExit::
+	walk_down
+	walk_down
+	walk_right
+	walk_down
+	face_down
+	step_end
+
+IndigoPlateau_Exterior_Movement_MeowthExit::
+	walk_down
+	walk_down
+	walk_down
+	face_down
+	step_end
+
+IndigoPlateau_Exterior_Movement_MeowthHotHot::
+	jump_in_place_down
+	jump_in_place_down
+	jump_in_place_down
+	step_end
+
+IndigoPlateau_Exterior_Movement_OfficialExit::
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+IndigoPlateau_Exterior_Movement_OfficialReturn::
+	walk_up
+	walk_up
+	step_end
+
+IndigoPlateau_Exterior_Movement_OfficialEnter::
+	walk_up
+	set_invisible
+	step_end
 
 IndigoPlateau_Exterior_OnFrame::
 	map_script_2 VAR_MAP_SCENE_INDIGO_PLATEAU_EXTERIOR, 1, IndigoPlateau_Exterior_EventScript_Credits

@@ -1,5 +1,172 @@
 ViridianCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ViridianCity_Gym_OnTransition
 	.byte 0
+
+ViridianCity_Gym_OnTransition::
+	setflag FLAG_TEMP_1
+	goto_if_set FLAG_ROCKET_VIRIDIAN_GYM, ViridianCity_Gym_EventScript_TransitionEnd
+	goto_if_set FLAG_DEFEATED_LEADER_GIOVANNI, ViridianCity_Gym_EventScript_TransitionEnd
+	setflag FLAG_HIDE_VIRIDIAN_GIOVANNI
+	call_if_unset FLAG_ROCKET_VIRIDIAN_GYM_INTRO, ViridianCity_Gym_EventScript_ReadyRocketIntro
+	call_if_set FLAG_ROCKET_VIRIDIAN_GYM_INTRO, ViridianCity_Gym_EventScript_ShowRocketTrio
+	setvar VAR_TEMP_2, 1
+	call_if_set FLAG_VIRIDIAN_GYM_TRAPS_OFF, ViridianCity_Gym_EventScript_ReadyRocketBattle
+ViridianCity_Gym_EventScript_TransitionEnd::
+	end
+
+ViridianCity_Gym_EventScript_ReadyRocketIntro::
+	setvar VAR_TEMP_1, 1
+	return
+
+ViridianCity_Gym_EventScript_ShowRocketTrio::
+	clearflag FLAG_TEMP_1
+	return
+
+ViridianCity_Gym_EventScript_ReadyRocketBattle::
+	setvar VAR_TEMP_2, 2
+	return
+
+@ Thunder Yellow v0.5.0, TEAM ROCKET event 9: with GIOVANNI away, the trio pose as
+@ "substitute LEADERS" and wire the floor in front of the LEADER's room. JAMES
+@ lets slip where the off switch is. Switching it off in the room up north lets
+@ the player reach the trio for a double battle; then GIOVANNI returns.
+ViridianCity_Gym_EventScript_RocketIntro::
+	lockall
+	setvar VAR_TEMP_1, 0
+	setobjectxyperm LOCALID_VIRIDIAN_GYM_JESSIE, 17, 19
+	setobjectxyperm LOCALID_VIRIDIAN_GYM_JAMES, 18, 19
+	setobjectxyperm LOCALID_VIRIDIAN_GYM_MEOWTH, 18, 18
+	setobjectmovementtype LOCALID_VIRIDIAN_GYM_JESSIE, MOVEMENT_TYPE_FACE_DOWN
+	setobjectmovementtype LOCALID_VIRIDIAN_GYM_JAMES, MOVEMENT_TYPE_FACE_DOWN
+	setobjectmovementtype LOCALID_VIRIDIAN_GYM_MEOWTH, MOVEMENT_TYPE_FACE_DOWN
+	addobject LOCALID_VIRIDIAN_GYM_JESSIE
+	addobject LOCALID_VIRIDIAN_GYM_JAMES
+	addobject LOCALID_VIRIDIAN_GYM_MEOWTH
+	playbgm MUS_ENCOUNTER_ROCKET, 0
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox ViridianCity_Gym_Text_JessieNewManagement
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox ViridianCity_Gym_Text_JamesSubstituteLeaders
+	applymovement LOCALID_VIRIDIAN_GYM_MEOWTH, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox ViridianCity_Gym_Text_MeowthTwerpAgain
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox ViridianCity_Gym_Text_JessieElectricFloor
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox ViridianCity_Gym_Text_JamesSwitchSlip
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox ViridianCity_Gym_Text_JessieWhySayThat
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox ViridianCity_Gym_Text_MeowthScram
+	closemessage
+	applymovement LOCALID_VIRIDIAN_GYM_JESSIE, ViridianCity_Gym_Movement_TrioRunOff
+	applymovement LOCALID_VIRIDIAN_GYM_JAMES, ViridianCity_Gym_Movement_TrioRunOff
+	applymovement LOCALID_VIRIDIAN_GYM_MEOWTH, ViridianCity_Gym_Movement_TrioRunOff
+	waitmovement 0
+	removeobject LOCALID_VIRIDIAN_GYM_JESSIE
+	removeobject LOCALID_VIRIDIAN_GYM_JAMES
+	removeobject LOCALID_VIRIDIAN_GYM_MEOWTH
+	setobjectxyperm LOCALID_VIRIDIAN_GYM_JESSIE, 5, 6
+	setobjectxyperm LOCALID_VIRIDIAN_GYM_MEOWTH, 6, 6
+	setobjectxyperm LOCALID_VIRIDIAN_GYM_JAMES, 7, 6
+	setobjectmovementtype LOCALID_VIRIDIAN_GYM_JESSIE, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype LOCALID_VIRIDIAN_GYM_JAMES, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype LOCALID_VIRIDIAN_GYM_MEOWTH, MOVEMENT_TYPE_FACE_UP
+	clearflag FLAG_TEMP_1
+	setflag FLAG_ROCKET_VIRIDIAN_GYM_INTRO
+	fadedefaultbgm
+	releaseall
+	end
+
+ViridianCity_Gym_Movement_TrioRunOff::
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+@ The wired floor tile at the only way into the LEADER's room.
+ViridianCity_Gym_EventScript_FloorTrap::
+	lockall
+	playse SE_M_THUNDERBOLT
+	fadescreenspeed FADE_TO_WHITE, 0
+	fadescreenspeed FADE_FROM_WHITE, 0
+	fadescreenspeed FADE_TO_WHITE, 0
+	fadescreenspeed FADE_FROM_WHITE, 0
+	applymovement LOCALID_PLAYER, ViridianCity_Gym_Movement_ZappedBack
+	waitmovement 0
+	msgbox ViridianCity_Gym_Text_FloorZap
+	releaseall
+	end
+
+ViridianCity_Gym_Movement_ZappedBack::
+	lock_facing_direction
+	walk_fast_up
+	unlock_facing_direction
+	step_end
+
+ViridianCity_Gym_EventScript_TrapPanel::
+	lockall
+	goto_if_set FLAG_ROCKET_VIRIDIAN_GYM, ViridianCity_Gym_EventScript_PanelRemoved
+	goto_if_set FLAG_DEFEATED_LEADER_GIOVANNI, ViridianCity_Gym_EventScript_PanelRemoved
+	goto_if_unset FLAG_ROCKET_VIRIDIAN_GYM_INTRO, ViridianCity_Gym_EventScript_PanelRemoved
+	goto_if_set FLAG_VIRIDIAN_GYM_TRAPS_OFF, ViridianCity_Gym_EventScript_PanelIsOff
+	msgbox ViridianCity_Gym_Text_TrapPanel, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, ViridianCity_Gym_EventScript_PanelLeaveAlone
+	playse SE_SWITCH
+	waitse
+	setflag FLAG_VIRIDIAN_GYM_TRAPS_OFF
+	setvar VAR_TEMP_2, 2
+	msgbox ViridianCity_Gym_Text_TrapsSwitchedOff
+	releaseall
+	end
+
+ViridianCity_Gym_EventScript_PanelLeaveAlone::
+	releaseall
+	end
+
+ViridianCity_Gym_EventScript_PanelIsOff::
+	msgbox ViridianCity_Gym_Text_PanelIsOff
+	releaseall
+	end
+
+ViridianCity_Gym_EventScript_PanelRemoved::
+	msgbox ViridianCity_Gym_Text_PanelRemoved
+	releaseall
+	end
+
+ViridianCity_Gym_EventScript_RocketBattle::
+	lockall
+	setvar VAR_TEMP_2, 0
+	applymovement LOCALID_VIRIDIAN_GYM_MEOWTH, Common_Movement_ExclamationMark
+	waitmovement 0
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox ViridianCity_Gym_Text_MeowthFloorsOff
+	closemessage
+	call EventScript_RocketTrioMotto
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox ViridianCity_Gym_Text_RocketGymIntro
+	closemessage
+	setvar VAR_LAST_TALKED, LOCALID_VIRIDIAN_GYM_JESSIE
+	trainerbattle_no_intro TRAINER_JESSIE_JAMES_VIRIDIAN_GYM, ViridianCity_Gym_Text_RocketGymDefeat
+	setvar VAR_0x8008, LOCALID_VIRIDIAN_GYM_JESSIE
+	setvar VAR_0x8009, LOCALID_VIRIDIAN_GYM_JAMES
+	setvar VAR_0x800A, LOCALID_VIRIDIAN_GYM_MEOWTH
+	call EventScript_RocketTrioBlastOff
+	removeobject LOCALID_VIRIDIAN_GYM_JESSIE
+	removeobject LOCALID_VIRIDIAN_GYM_MEOWTH
+	removeobject LOCALID_VIRIDIAN_GYM_JAMES
+	setflag FLAG_ROCKET_VIRIDIAN_GYM
+	fadedefaultbgm
+	delay 30
+	fadescreen FADE_TO_BLACK
+	clearflag FLAG_HIDE_VIRIDIAN_GIOVANNI
+	addobject LOCALID_VIRIDIAN_GIOVANNI
+	fadescreen FADE_FROM_BLACK
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox ViridianCity_Gym_Text_GiovanniReturns
+	releaseall
+	end
 
 ViridianCity_Gym_EventScript_Giovanni::
 	famechecker FAMECHECKER_GIOVANNI, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
@@ -82,6 +249,19 @@ ViridianCity_Gym_EventScript_GymGuy::
 	lock
 	faceplayer
 	goto_if_set FLAG_DEFEATED_LEADER_GIOVANNI, ViridianCity_Gym_EventScript_GymGuyPostVictory
+	goto_if_set FLAG_ROCKET_VIRIDIAN_GYM, ViridianCity_Gym_EventScript_GymGuyAdvice
+	goto_if_unset FLAG_ROCKET_VIRIDIAN_GYM_INTRO, ViridianCity_Gym_EventScript_GymGuyAdvice
+	goto_if_set FLAG_VIRIDIAN_GYM_TRAPS_OFF, ViridianCity_Gym_EventScript_GymGuyTrapsOff
+	msgbox ViridianCity_Gym_Text_GymGuyRocketTraps
+	release
+	end
+
+ViridianCity_Gym_EventScript_GymGuyTrapsOff::
+	msgbox ViridianCity_Gym_Text_GymGuyTrapsOff
+	release
+	end
+
+ViridianCity_Gym_EventScript_GymGuyAdvice::
 	msgbox ViridianCity_Gym_Text_GymGuyAdvice
 	release
 	end

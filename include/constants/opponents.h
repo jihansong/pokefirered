@@ -759,7 +759,8 @@
 #define TRAINER_JESSIE_JAMES_CELADON_GYM         748
 #define TRAINER_JESSIE_JAMES_SAFARI              749
 #define TRAINER_JESSIE_JAMES_CINNABAR            750
-#define NUM_TRAINERS                             751
+#define TRAINER_JESSIE_JAMES_VIRIDIAN_GYM        751
+#define NUM_TRAINERS                             752
 #define MAX_TRAINERS_COUNT                       768
 
 // Trainers imported from Hoenn start here. Their defeated flags do not fit in

@@ -3930,6 +3930,29 @@ static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesCinnabar[] = 
     },
 };
 
+static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesViridianGym[] = {
+    {
+        .iv = 0,
+        .lvl = 40,
+        .species = SPECIES_WEEZING,
+    },
+    {
+        .iv = 0,
+        .lvl = 40,
+        .species = SPECIES_ARBOK,
+    },
+    {
+        .iv = 0,
+        .lvl = 39,
+        .species = SPECIES_VICTREEBEL,
+    },
+    {
+        .iv = 0,
+        .lvl = 40,
+        .species = SPECIES_MEOWTH,
+    },
+};
+
 static const struct TrainerMonNoItemDefaultMoves sParty_RivalOaksLabEevee[] = {
     {
         .iv = 0,

@@ -554,9 +554,9 @@
 #define FLAG_ROCKET_CELADON_GYM  0x214 // v0.5.0 event 6: JAMES's disguise and the perfume fuss at the CELADON GYM
 #define FLAG_ROCKET_SAFARI_DRATINI 0x215 // v0.5.0 event 7: TEAM ROCKET's DRATINI poaching stopped at the SAFARI ZONE gate
 #define FLAG_ROCKET_CINNABAR     0x216 // v0.5.0 event 8: TEAM ROCKET's MAGMAR lure at the POKéMON MANSION
-#define FLAG_0x217               0x217
-#define FLAG_0x218               0x218
-#define FLAG_0x219               0x219
+#define FLAG_ROCKET_VIRIDIAN_GYM_INTRO 0x217 // v0.5.0 event 9: TEAM ROCKET claimed the VIRIDIAN GYM (intro seen)
+#define FLAG_VIRIDIAN_GYM_TRAPS_OFF 0x218 // v0.5.0 event 9: the player switched off TEAM ROCKET's floor traps
+#define FLAG_ROCKET_VIRIDIAN_GYM 0x219 // v0.5.0 event 9: TEAM ROCKET driven out of the VIRIDIAN GYM
 #define FLAG_0x21A               0x21A
 #define FLAG_0x21B               0x21B
 #define FLAG_0x21C               0x21C

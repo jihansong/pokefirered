@@ -169,3 +169,95 @@ ViridianCity_Gym_Text_GymStatuePlayerWon::
     .string "WINNING TRAINERS:\n"
     .string "{RIVAL}, {PLAYER}$"
 
+ViridianCity_Gym_Text_JessieNewManagement::
+    .string "JESSIE: Halt right there!\n"
+    .string "This GYM is under new management!$"
+
+ViridianCity_Gym_Text_JamesSubstituteLeaders::
+    .string "JAMES: The LEADER is away, so\n"
+    .string "we are the substitute LEADERS!\p"
+    .string "Badges cost ¥10,000 each.\n"
+    .string "Payment in advance, please!$"
+
+ViridianCity_Gym_Text_MeowthTwerpAgain::
+    .string "MEOWTH: Hey! It's da twerp with\n"
+    .string "da PIKACHU! Not again!$"
+
+ViridianCity_Gym_Text_JessieElectricFloor::
+    .string "JESSIE: Don't panic! Our genius\n"
+    .string "electric floor guards the way\l"
+    .string "into the LEADER's room.\p"
+    .string "Nobody gets past it! Nobody!$"
+
+ViridianCity_Gym_Text_JamesSwitchSlip::
+    .string "JAMES: Right! And the OFF switch\n"
+    .string "is safely hidden in the room with\l"
+    .string "the two trainers up north!$"
+
+ViridianCity_Gym_Text_JessieWhySayThat::
+    .string "JESSIE: JAMES!\n"
+    .string "Why would you SAY that?!$"
+
+ViridianCity_Gym_Text_MeowthScram::
+    .string "MEOWTH: Back to da LEADER's room!\n"
+    .string "Scram, scram, scraaam!$"
+
+ViridianCity_Gym_Text_FloorZap::
+    .string "Bzzzzt!\p"
+    .string "The floor by the LEADER's room\n"
+    .string "is wired with an electric trap!\p"
+    .string "There must be a switch somewhere\n"
+    .string "in this GYM.$"
+
+ViridianCity_Gym_Text_TrapPanel::
+    .string "A control panel is taped to the\n"
+    .string "wall. It reads: ROCKET FLOOR TRAP.\p"
+    .string "The switch is set to ON.\n"
+    .string "Flip the switch?$"
+
+ViridianCity_Gym_Text_TrapsSwitchedOff::
+    .string "Click!\p"
+    .string "The humming in the floor stopped.\n"
+    .string "The LEADER's room is open!$"
+
+ViridianCity_Gym_Text_PanelIsOff::
+    .string "The ROCKET FLOOR TRAP switch\n"
+    .string "is set to OFF.$"
+
+ViridianCity_Gym_Text_PanelRemoved::
+    .string "There are a few strips of tape\n"
+    .string "stuck to the wall.$"
+
+ViridianCity_Gym_Text_MeowthFloorsOff::
+    .string "MEOWTH: Da floor's gone quiet!\n"
+    .string "Who turned off our trap?!$"
+
+ViridianCity_Gym_Text_RocketGymIntro::
+    .string "JESSIE & JAMES: This GYM is OURS!\n"
+    .string "Earn your badge the hard way!$"
+
+ViridianCity_Gym_Text_RocketGymDefeat::
+    .string "JESSIE: Our substitute careers...\n"
+    .string "over before payday!$"
+
+ViridianCity_Gym_Text_GiovanniReturns::
+    .string "???: Hmph. So those fools were\n"
+    .string "playing LEADER in my GYM while\l"
+    .string "I was away.\p"
+    .string "You have done me a small favor,\n"
+    .string "child. Come.\p"
+    .string "The real LEADER of this GYM\n"
+    .string "is waiting.$"
+
+ViridianCity_Gym_Text_GymGuyRocketTraps::
+    .string "Yo! Watch yourself, champ!\p"
+    .string "Those three weirdos wired the\n"
+    .string "floor by the LEADER's room!\p"
+    .string "I saw them fiddling with a panel\n"
+    .string "near the two TRAINERS up north.\l"
+    .string "Look along the top wall there!$"
+
+ViridianCity_Gym_Text_GymGuyTrapsOff::
+    .string "Yo! The floor's stopped humming!\p"
+    .string "Those three are holed up in the\n"
+    .string "LEADER's room. Go get 'em, champ!$"

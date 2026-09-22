@@ -570,6 +570,12 @@ static const struct SpriteFrameImage sPicTable_Airplane[] = {
     overworld_frame(gObjectEventPic_Airplane, 4, 4, 2),
 };
 
+static const struct SpriteFrameImage sPicTable_AirplaneSmall[] = {
+    overworld_frame(gObjectEventPic_AirplaneSmall, 2, 2, 0),
+    overworld_frame(gObjectEventPic_AirplaneSmall, 2, 2, 1),
+    overworld_frame(gObjectEventPic_AirplaneSmall, 2, 2, 2),
+};
+
 static const struct SpriteFrameImage sPicTable_SwimmerMWater[] = {
     overworld_frame(gObjectEventPic_SwimmerMWater, 2, 4, 0),
     overworld_frame(gObjectEventPic_SwimmerMWater, 2, 4, 1),

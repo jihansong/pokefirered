@@ -102,9 +102,9 @@
     {
       "local_id": "LOCALID_KANTO_AIRPORT_PLANE",
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_AIRPLANE",
+      "graphics_id": "OBJ_EVENT_GFX_AIRPLANE_SMALL",
       "x": 27,
-      "y": 3,
+      "y": 1,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -118,7 +118,7 @@
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BOY",
       "x": 30,
-      "y": 6,
+      "y": 2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -146,6 +146,24 @@
     }
   ],
   "coord_events": [
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "1",
+      "script": "KantoAirport_EventScript_PlaneTaxi"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "1",
+      "script": "KantoAirport_EventScript_PlaneTaxi"
+    },
     {
       "type": "trigger",
       "x": 25,

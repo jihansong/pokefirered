@@ -11,6 +11,10 @@ standard facing animations use them: nose south, nose north and nose west
 The plane that flies over the airport (src/airport_flyover.c) is nearer the
 viewer, so it is drawn half as large again: 30x30, one frame, nose north. Its
 ground shadow is the parked plane's 20x20 silhouette.
+
+The plane seen through the terminal lounge's window is far away, so it is
+drawn at half the parked plane's size: 10x10 in a 16x16 frame, with the same
+three facings (airplane_small.png, OBJ_EVENT_GFX_AIRPLANE_SMALL).
 """
 import os
 from PIL import Image, ImageDraw
@@ -18,6 +22,7 @@ from PIL import Image, ImageDraw
 FR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 OUT = FR + '/graphics/object_events/pics/misc/airplane.png'
 SHADOW_OUT = FR + '/graphics/object_events/pics/misc/airplane_shadow.png'
+SMALL_OUT = FR + '/graphics/object_events/pics/misc/airplane_small.png'
 FLYOVER_OUT = FR + '/graphics/object_events/pics/misc/airplane_flyover.png'
 PALETTE = FR + '/graphics/object_events/palettes/truck.pal'
 
@@ -57,6 +62,31 @@ SMALL_LEFT = [
     '.......DDD',
 ]
 SMALL_SIZE = 20
+
+
+# The far-away plane behind the lounge window, nose north, same key.
+TINY_LEFT = [
+    '....D',   # nose
+    '...DW',
+    '...Dn',   # cockpit
+    '..DDW',   # wing root
+    'DDllW',
+    'DllgW',
+    'DD.DW',   # wing tips
+    '...DB',   # livery band
+    '.DDln',   # tailplane and fin
+    '..DDD',
+]
+TINY_SIZE = 10
+
+
+def draw_tiny(im):
+    """The 10x10 far-away plane, centred in a 16x16 frame."""
+    off = (16 - TINY_SIZE) // 2
+    for y, left in enumerate(TINY_LEFT):
+        for x, ch in enumerate(left + left[::-1]):
+            if ch != '.':
+                im.putpixel((off + x, off + y), SMALL_KEY[ch])
 
 
 def draw_small(im):
@@ -124,6 +154,18 @@ def main():
     sheet.save(OUT)
     used = sorted(set(sheet.getdata()))
     print(f'{OUT}: {sheet.size[0]}x{sheet.size[1]}, {len(frames)} frames, {len(used)} colours {used}')
+
+    # The far-away plane behind the lounge window: 16x16 frames, same order.
+    tiny = Image.new('P', (16, 16), CLEAR)
+    tiny.putpalette(pal)
+    draw_tiny(tiny)
+    tframes = [tiny.rotate(180), tiny, tiny.rotate(90)]
+    tsheet = Image.new('P', (16, 16 * len(tframes)), CLEAR)
+    tsheet.putpalette(pal)
+    for i, f in enumerate(tframes):
+        tsheet.paste(f, (0, 16 * i))
+    tsheet.save(SMALL_OUT)
+    print(f'{SMALL_OUT}: {tsheet.size[0]}x{tsheet.size[1]}, {len(tframes)} frames')
 
     # The plane flying over the airport, 30x30, nose north.
     big = Image.new('P', (32, 32), CLEAR)

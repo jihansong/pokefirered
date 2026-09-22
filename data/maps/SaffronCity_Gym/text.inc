@@ -158,3 +158,10 @@ SaffronCity_Gym_Text_GymStatuePlayerWon::
     .string "WINNING TRAINERS:\n"
     .string "{RIVAL}, {PLAYER}$"
 
+@ v0.5.0 TEAM ROCKET event 12: a nod to the POKéMON ADVENTURES manga
+SaffronCity_Gym_Text_GymGuySabrinaRumor::
+    .string "Here's something odd, champ.\p"
+    .string "While TEAM ROCKET held SILPH CO.,\n"
+    .string "SABRINA's GYM stayed open.\p"
+    .string "Did she see it all coming…\n"
+    .string "or was she on their side?$"

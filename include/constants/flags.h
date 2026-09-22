@@ -547,7 +547,7 @@
 #define FLAG_MISSINGNO_ITEM_BONUS 0x20D
 #define FLAG_SURFING_PIKACHU     0x20E
 #define FLAG_SAW_AIRPORT_PLANE_TAXI 0x20F
-#define FLAG_0x210               0x210
+#define FLAG_ROCKET_VIRIDIAN_PC  0x210 // v0.5.0 event 1: TEAM ROCKET raided the VIRIDIAN POKéMON CENTER
 #define FLAG_0x211               0x211
 #define FLAG_0x212               0x212
 #define FLAG_0x213               0x213

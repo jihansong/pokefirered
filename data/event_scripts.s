@@ -1390,6 +1390,8 @@ Text_TestMsg::
 	.include "data/scripts/trainer_tower.inc"
 	.include "data/scripts/test.inc"
 	.include "data/scripts/follower_pikachu.inc"
+	.include "data/scripts/rocket_trio.inc"
 	.include "data/text/save.inc"
+	.include "data/text/rocket_trio.inc"
 	.include "data/text/new_game_intro.inc"
 	.include "data/text/pokedude.inc"

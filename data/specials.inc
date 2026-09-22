@@ -460,6 +460,7 @@ gSpecials::
 	def_special CanPushTruck
 	def_special PushTruck
 	def_special StartAirportFlyover
+	def_special RocketTrioBlastOff
 	def_special GiveElderDratiniMoveset
 	def_special NamePikablu
 	def_special HasCaughtMewtwoAndMew

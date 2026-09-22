@@ -1006,6 +1006,8 @@ extern const u8 gText_Area[];
 extern const u8 gText_Size[];
 extern const u8 gText_AreaUnknown[];
 extern const u8 gText_KantoArea[];
+extern const u8 gText_DexAbility[];
+extern const u8 gText_DexAbilityUnknown[];
 extern const u8 gText_HoennArea[];
 extern const u8 gText_AreaRegionSwitch[];
 

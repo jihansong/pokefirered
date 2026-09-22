@@ -20,6 +20,7 @@
 #include "constants/sound.h"
 #include "pokedex_area_markers.h"
 #include "wild_pokemon_area.h"
+#include "battle_main.h"
 #include "field_specials.h"
 
 #define TAG_AREA_MARKERS 2001
@@ -115,6 +116,7 @@ static void DexScreen_AddTextPrinterParameterized(u8 windowId, u8 fontId, const 
 static void DexScreen_PrintNum3RightAlign(u8 windowId, u8 fontId, u16 num, u8 x, u8 y, u8 colorIdx);
 static void DexScreen_PrintMonDexNo(u8 windowId, u8 fontId, u16 species, u8 x, u8 y);
 static u16 DexScreen_GetDexCount(u8 caseId, bool8 whichDex);
+static bool8 DexScreen_ShowsMonData(u16 species, bool8 indexIsSpecies);
 static void DexScreen_PrintControlInfo(const u8 *src);
 static void DexScreen_DestroyCategoryPageMonIconAndInfoWindows(void);
 static bool8 DexScreen_CreateCategoryListGfx(bool8 justRegistered);
@@ -2289,6 +2291,14 @@ s8 DexScreen_GetSetPokedexFlag(u16 nationalDexNo, u8 caseId, bool8 indexIsSpecie
     return retVal;
 }
 
+// Thunder Yellow shows a species' data (category, size, entry, ability, types)
+// once it is registered as seen, not only once it is caught. Every species
+// in the POKéDEX can be obtained in the game (docs/dex-completion.md).
+static bool8 DexScreen_ShowsMonData(u16 species, bool8 indexIsSpecies)
+{
+    return DexScreen_GetSetPokedexFlag(species, FLAG_GET_SEEN, indexIsSpecies);
+}
+
 static u16 DexScreen_GetDexCount(u8 caseId, bool8 whichDex)
 {
     u16 count = 0;
@@ -2696,7 +2706,7 @@ void DexScreen_PrintMonCategory(u8 windowId, u16 species, u8 x, u8 y)
 
     categoryName = (u8 *)gPokedexEntries[species].categoryName;
     index = 0;
-    if (DexScreen_GetSetPokedexFlag(species, FLAG_GET_CAUGHT, FALSE))
+    if (DexScreen_ShowsMonData(species, FALSE))
     {
 #if REVISION == 0
         while ((categoryName[index] != CHAR_SPACE) && (index < 11))
@@ -2742,7 +2752,7 @@ void DexScreen_PrintMonHeight(u8 windowId, u16 species, u8 x, u8 y)
     buffer[i++] = 5;
     buffer[i++] = CHAR_SPACE;
 
-    if (DexScreen_GetSetPokedexFlag(species, FLAG_GET_CAUGHT, FALSE))
+    if (DexScreen_ShowsMonData(species, FALSE))
     {
         inches = 10000 * height / 254; // actually tenths of inches here
         if (inches % 10 >= 5)
@@ -2802,7 +2812,7 @@ void DexScreen_PrintMonWeight(u8 windowId, u16 species, u8 x, u8 y)
     buffer[i++] = EXT_CTRL_CODE_MIN_LETTER_SPACING;
     buffer[i++] = 5;
 
-    if (DexScreen_GetSetPokedexFlag(species, FLAG_GET_CAUGHT, FALSE))
+    if (DexScreen_ShowsMonData(species, FALSE))
     {
         lbs = (weight * 100000) / 4536; // Convert to hundredths of lb
 
@@ -2881,7 +2891,7 @@ void DexScreen_PrintMonFlavorText(u8 windowId, u16 species, u8 x, u8 y)
 
     species = SpeciesToNationalPokedexNum(species);
 
-    if (DexScreen_GetSetPokedexFlag(species, FLAG_GET_CAUGHT, FALSE))
+    if (DexScreen_ShowsMonData(species, FALSE))
     {
         printerTemplate.currentChar = gPokedexEntries[species].description;
         printerTemplate.windowId = windowId;
@@ -2910,6 +2920,21 @@ void DexScreen_PrintMonFlavorText(u8 windowId, u16 species, u8 x, u8 y)
     }
 }
 
+// "ABILITY" and the species' one or two abilities, the second under the first
+void DexScreen_PrintMonAbilities(u8 windowId, u16 species, u8 x, u8 y)
+{
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, gText_DexAbility, x, y, 0);
+    if (!DexScreen_ShowsMonData(species, TRUE))
+    {
+        DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, gText_DexAbilityUnknown, x + 38, y, 0);
+        return;
+    }
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, gAbilityNames[gSpeciesInfo[species].abilities[0]], x + 38, y, 0);
+    if (gSpeciesInfo[species].abilities[1] != ABILITY_NONE
+     && gSpeciesInfo[species].abilities[1] != gSpeciesInfo[species].abilities[0])
+        DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, gAbilityNames[gSpeciesInfo[species].abilities[1]], x + 38, y + 9, 0);
+}
+
 void DexScreen_DrawMonFootprint(u8 windowId, u16 species, u8 x, u8 y)
 {
     u16 i, j, unused, tileIdx;
@@ -2917,7 +2942,7 @@ void DexScreen_DrawMonFootprint(u8 windowId, u16 species, u8 x, u8 y)
     u8 * buffer;
     u8 * footprint;
 
-    if (!(DexScreen_GetSetPokedexFlag(species, FLAG_GET_CAUGHT, TRUE)))
+    if (!DexScreen_ShowsMonData(species, TRUE))
         return;
     footprint = (u8 *)(gMonFootprintTable[species]);
     buffer = gDecompressionBuffer;
@@ -2961,12 +2986,14 @@ static u8 DexScreen_DrawMonDexPage(bool8 justRegistered)
 
     // Species stats
     FillWindowPixelBuffer(sPokedexScreenData->windowIds[1], PIXEL_FILL(0));
-    DexScreen_PrintMonDexNo(sPokedexScreenData->windowIds[1], FONT_SMALL, sPokedexScreenData->dexSpecies, 0, 8);
-    DexScreen_AddTextPrinterParameterized(sPokedexScreenData->windowIds[1], FONT_NORMAL, gSpeciesNames[sPokedexScreenData->dexSpecies], 28, 8, 0);
-    DexScreen_PrintMonCategory(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 0, 24);
-    DexScreen_PrintMonHeight(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 0, 36);
-    DexScreen_PrintMonWeight(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 0, 48);
-    DexScreen_DrawMonFootprint(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 88, 40);
+    // Lines packed closer than FR/LG's to make room for the abilities
+    DexScreen_PrintMonDexNo(sPokedexScreenData->windowIds[1], FONT_SMALL, sPokedexScreenData->dexSpecies, 0, 0);
+    DexScreen_AddTextPrinterParameterized(sPokedexScreenData->windowIds[1], FONT_NORMAL, gSpeciesNames[sPokedexScreenData->dexSpecies], 28, 0, 0);
+    DexScreen_PrintMonCategory(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 0, 13);
+    DexScreen_PrintMonHeight(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 0, 22);
+    DexScreen_PrintMonWeight(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 0, 31);
+    DexScreen_PrintMonAbilities(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 0, 40);
+    DexScreen_DrawMonFootprint(sPokedexScreenData->windowIds[1], sPokedexScreenData->dexSpecies, 88, 23);
     PutWindowTilemap(sPokedexScreenData->windowIds[1]);
     CopyWindowToVram(sPokedexScreenData->windowIds[1], COPYWIN_GFX);
 
@@ -3005,7 +3032,7 @@ u8 DexScreen_DrawMonAreaPage(void)
 {
     int i;
     u8 width, height;
-    bool8 monIsCaught;
+    bool8 monDataShown;
     s16 left, top;
     u16 speciesId, species;
     u16 kantoMapVoff;
@@ -3013,7 +3040,7 @@ u8 DexScreen_DrawMonAreaPage(void)
 
     species = sPokedexScreenData->dexSpecies;
     speciesId = SpeciesToNationalPokedexNum(species);
-    monIsCaught = DexScreen_GetSetPokedexFlag(species, FLAG_GET_CAUGHT, TRUE);
+    monDataShown = DexScreen_ShowsMonData(species, TRUE);
     width = 28;
     height = 14;
     left = 0;
@@ -3134,7 +3161,7 @@ u8 DexScreen_DrawMonAreaPage(void)
     FillWindowPixelBuffer(sPokedexScreenData->windowIds[12], PIXEL_FILL(0));
     ListMenuLoadStdPalAt(BG_PLTT_ID(11), 1);
 
-    if (monIsCaught)
+    if (monDataShown)
     {
         BlitMenuInfoIcon(sPokedexScreenData->windowIds[12], 1 + gSpeciesInfo[species].types[0], 0, 1);
         if (gSpeciesInfo[species].types[0] != gSpeciesInfo[species].types[1])
@@ -3147,7 +3174,7 @@ u8 DexScreen_DrawMonAreaPage(void)
     ResetAllPicSprites();
     LoadPalette(sPalette_Silhouette, OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
 
-    if (monIsCaught)
+    if (monDataShown)
     {
         sPokedexScreenData->windowIds[14] = CreateMonPicSprite_HandleDeoxys(species, SHINY_ODDS, DexScreen_GetDefaultPersonality(species), TRUE, 40, 104, 0, 0xFFFF);
         gSprites[sPokedexScreenData->windowIds[14]].oam.paletteNum = 2;

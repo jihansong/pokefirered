@@ -34,6 +34,14 @@ SlateportCity_PokemonCenter_1F_EventScript_RumorCollector::
 	case 7, SlateportCity_PokemonCenter_1F_EventScript_Rumor7
 	case 8, SlateportCity_PokemonCenter_1F_EventScript_Rumor8
 	case 9, SlateportCity_PokemonCenter_1F_EventScript_Rumor9
+	case 10, SlateportCity_PokemonCenter_1F_EventScript_Rumor10
+	case 11, SlateportCity_PokemonCenter_1F_EventScript_Rumor11
+	case 12, SlateportCity_PokemonCenter_1F_EventScript_Rumor12
+	case 13, SlateportCity_PokemonCenter_1F_EventScript_Rumor13
+	case 14, SlateportCity_PokemonCenter_1F_EventScript_Rumor14
+	case 15, SlateportCity_PokemonCenter_1F_EventScript_Rumor15
+	case 16, SlateportCity_PokemonCenter_1F_EventScript_Rumor16
+	case 17, SlateportCity_PokemonCenter_1F_EventScript_Rumor17
 	setvar VAR_HOENN_RUMOR_STATE, 0
 	goto SlateportCity_PokemonCenter_1F_EventScript_Rumor0
 	end
@@ -88,9 +96,49 @@ SlateportCity_PokemonCenter_1F_EventScript_Rumor9::
 	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
 	end
 
+SlateportCity_PokemonCenter_1F_EventScript_Rumor10::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Rumor10
+	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+SlateportCity_PokemonCenter_1F_EventScript_Rumor11::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Rumor11
+	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+SlateportCity_PokemonCenter_1F_EventScript_Rumor12::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Rumor12
+	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+SlateportCity_PokemonCenter_1F_EventScript_Rumor13::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Rumor13
+	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+SlateportCity_PokemonCenter_1F_EventScript_Rumor14::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Rumor14
+	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+SlateportCity_PokemonCenter_1F_EventScript_Rumor15::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Rumor15
+	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+SlateportCity_PokemonCenter_1F_EventScript_Rumor16::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Rumor16
+	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+SlateportCity_PokemonCenter_1F_EventScript_Rumor17::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Rumor17
+	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
 SlateportCity_PokemonCenter_1F_EventScript_NextRumor::
 	addvar VAR_HOENN_RUMOR_STATE, 1
-	goto_if_lt VAR_HOENN_RUMOR_STATE, 10, EventScript_ReleaseEnd
+	goto_if_lt VAR_HOENN_RUMOR_STATE, 18, EventScript_ReleaseEnd
 	setvar VAR_HOENN_RUMOR_STATE, 0
 	release
 	end

@@ -24,3 +24,23 @@ MauvilleCity_BikeShop_Text_H3::
     .string "Tyres, chains, brakes.\p"
     .string "Brakes matter most on that road,\n"
     .string "whatever the clock says.$"
+MauvilleCity_BikeShop_Text_NoRecord::
+    .string "Haven't run the gate yet, have you.\p"
+    .string "Go and do it. The board's been\n"
+    .string "blank all month and it's starting\l"
+    .string "to look like my fault.$"
+
+MauvilleCity_BikeShop_Text_Record::
+    .string "The gate has you at {STR_VAR_1}\n"
+    .string "seconds.\p"
+    .string "That's the frame, not you. Don't\n"
+    .string "let it go to your head.$"
+
+MauvilleCity_BikeShop_Text_RecordGold::
+    .string "{STR_VAR_1} seconds. Under the\n"
+    .string "minute.\p"
+    .string "I built that frame in a week with\n"
+    .string "my hands and I'd like that written\l"
+    .string "somewhere.\p"
+    .string "Off you go. Don't stop pedalling\n"
+    .string "on my account.$"

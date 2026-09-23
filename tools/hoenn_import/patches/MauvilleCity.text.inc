@@ -53,3 +53,10 @@ MauvilleCity_Text_H8::
 MauvilleCity_Text_H9::
     .string "“GAME CORNER - coins in, coins\n"
     .string "out, mostly in.”$"
+MauvilleCity_Text_NorthNotice::
+    .string "NOTICE\p"
+    .string "The road north to ROUTE 111 is shut\n"
+    .string "while the sandstorm fencing is put\l"
+    .string "back up.\p"
+    .string "The desert eats fence posts. Ask\n"
+    .string "anyone in MAUVILLE.$"

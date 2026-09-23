@@ -55,3 +55,10 @@ Route118_EventScript_H9::
 Route118_EventScript_H10::
 	msgbox Route118_Text_H10, MSGBOX_SIGN
 	end
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
+@ The eastern boundary: ROUTE 123 belongs to a later chapter.
+Route118_EventScript_EastNotice::
+	msgbox Route118_Text_EastNotice, MSGBOX_SIGN
+	end
+@ END PATCH

@@ -76,3 +76,51 @@ SlateportCity_PokemonCenter_1F_Text_H1::
     .string "When one arrives holding something\n"
     .string "as well, that's two presents at\l"
     .string "once, isn't it.$"
+SlateportCity_PokemonCenter_1F_Text_Rumor10::
+    .string "The coast road north is open and\n"
+    .string "the gate puts a clock on you now.\p"
+    .string "Under a minute from the top and\n"
+    .string "they hand you something for it.$"
+
+SlateportCity_PokemonCenter_1F_Text_Rumor11::
+    .string "RYDEL in MAUVILLE will true your\n"
+    .string "wheels for nothing.\p"
+    .string "He'll also tell you about RYDEL\n"
+    .string "for as long as you let him.$"
+
+SlateportCity_PokemonCenter_1F_Text_Rumor12::
+    .string "WATTSON's GYM has walls that move\n"
+    .string "when you stand on the wrong square.\p"
+    .string "Bring something that walks on the\n"
+    .string "ground and ignores lightning.$"
+
+SlateportCity_PokemonCenter_1F_Text_Rumor13::
+    .string "There's a plant under MAUVILLE that\n"
+    .string "nobody's opened in years.\p"
+    .string "It hums. WATTSON keeps the key and\n"
+    .string "won't say why he had one cut.$"
+
+SlateportCity_PokemonCenter_1F_Text_Rumor14::
+    .string "A house on ROUTE 110 moves its own\n"
+    .string "walls about.\p"
+    .string "The man inside builds a new one\n"
+    .string "every time somebody finishes the\l"
+    .string "last.$"
+
+SlateportCity_PokemonCenter_1F_Text_Rumor15::
+    .string "The DAY CARE on ROUTE 117 takes\n"
+    .string "two and sometimes gives back three.\p"
+    .string "Nobody there will explain it.$"
+
+SlateportCity_PokemonCenter_1F_Text_Rumor16::
+    .string "VERDANTURF is a day's walk west and\n"
+    .string "the air there is supposed to cure\l"
+    .string "people.\p"
+    .string "A woman called WANDA is waiting on\n"
+    .string "a tunnel that may never open.$"
+
+SlateportCity_PokemonCenter_1F_Text_Rumor17::
+    .string "The GAME CORNER in MAUVILLE runs\n"
+    .string "twelve machines and pays in coins.\p"
+    .string "Coins only. Ask what the coins are\n"
+    .string "worth and they change the subject.$"

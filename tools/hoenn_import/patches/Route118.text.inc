@@ -114,3 +114,10 @@ Route118_Text_H10::
     .string "shut while the banks are rebuilt.\p"
     .string "Nobody is working on it today\n"
     .string "either.$"
+Route118_Text_EastNotice::
+    .string "NOTICE\p"
+    .string "The east bank path to ROUTE 123 is\n"
+    .string "shut. The crossing washed out in\l"
+    .string "the spring and stayed washed out.\p"
+    .string "Try again when somebody rebuilds\n"
+    .string "it.$"

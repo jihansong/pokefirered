@@ -1,0 +1,9 @@
+{
+  "object_overrides": [
+    {
+      "x": 2,
+      "y": 5,
+      "script": "MauvilleCity_BikeShop_EventScript_Rydel"
+    }
+  ]
+}

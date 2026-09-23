@@ -51,3 +51,10 @@ MauvilleCity_EventScript_H8::
 MauvilleCity_EventScript_H9::
 	msgbox MauvilleCity_Text_H9, MSGBOX_SIGN
 	end
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
+@ The Z3 boundary: the desert road north is not part of this chapter.
+MauvilleCity_EventScript_NorthNotice::
+	msgbox MauvilleCity_Text_NorthNotice, MSGBOX_SIGN
+	end
+@ END PATCH

@@ -83,3 +83,8 @@ saves/
 # Keep your retail ROM here; make clean deletes poke*.gba
 baserom*.gba
 __pycache__/
+
+# QA harness (tools/qa): built wrapper, header cache, reference release ROMs
+tools/qa/libqa.so
+tools/qa/.cache/
+qa-base/

@@ -1,0 +1,26 @@
+@ Ported from pokeemerald (the map data is identical), text written fresh.
+Route110_TrickHousePuzzle4_EventScript_Scroll::
+	lockall
+	goto_if_eq VAR_HOENN_TRICK_PUZZLE_4_STATE, 0, Route110_TrickHousePuzzle4_EventScript_FoundScroll
+	goto Route110_TrickHousePuzzle_EventScript_ReadScrollAgain
+	end
+
+Route110_TrickHousePuzzle4_EventScript_FoundScroll::
+	setvar VAR_HOENN_TRICK_PUZZLE_4_STATE, 1
+	goto Route110_TrickHousePuzzle_EventScript_FoundScroll
+	end
+
+Route110_TrickHousePuzzle4_EventScript_Cora::
+	trainerbattle_single TRAINER_HOENN_CORA, Route110_TrickHousePuzzle4_Text_CoraIntro, Route110_TrickHousePuzzle4_Text_CoraDefeat
+	msgbox Route110_TrickHousePuzzle4_Text_CoraPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route110_TrickHousePuzzle4_EventScript_Yuji::
+	trainerbattle_single TRAINER_HOENN_YUJI, Route110_TrickHousePuzzle4_Text_YujiIntro, Route110_TrickHousePuzzle4_Text_YujiDefeat
+	msgbox Route110_TrickHousePuzzle4_Text_YujiPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route110_TrickHousePuzzle4_EventScript_Paula::
+	trainerbattle_single TRAINER_HOENN_PAULA, Route110_TrickHousePuzzle4_Text_PaulaIntro, Route110_TrickHousePuzzle4_Text_PaulaDefeat
+	msgbox Route110_TrickHousePuzzle4_Text_PaulaPostBattle, MSGBOX_AUTOCLOSE
+	end

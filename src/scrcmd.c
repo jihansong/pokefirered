@@ -1,5 +1,6 @@
 #include "global.h"
 #include "gflib.h"
+#include "rotating_tile_puzzle.h"
 #include "script.h"
 #include "mystery_event_script.h"
 #include "event_data.h"
@@ -2260,5 +2261,35 @@ bool8 ScrCmd_setmonmetlocation(struct ScriptContext * ctx)
 
     if (partyIndex < PARTY_SIZE)
         SetMonData(&gPlayerParty[partyIndex], MON_DATA_MET_LOCATION, &location);
+    return FALSE;
+}
+
+// The rotating tile puzzles of the TRICK HOUSE's seventh room (and, later, the
+// MOSSDEEP GYM). Ported from pokeemerald with its script commands.
+bool8 ScrCmd_moverotatingtileobjects(struct ScriptContext *ctx)
+{
+    u16 puzzleNumber = VarGet(ScriptReadHalfword(ctx));
+
+    sMovingNpcId = MoveRotatingTileObjects(puzzleNumber);
+    return FALSE;
+}
+
+bool8 ScrCmd_turnrotatingtileobjects(struct ScriptContext *ctx)
+{
+    TurnRotatingTileObjects();
+    return FALSE;
+}
+
+bool8 ScrCmd_initrotatingtilepuzzle(struct ScriptContext *ctx)
+{
+    u16 isTrickHouse = VarGet(ScriptReadHalfword(ctx));
+
+    InitRotatingTilePuzzle(isTrickHouse);
+    return FALSE;
+}
+
+bool8 ScrCmd_freerotatingtilepuzzle(struct ScriptContext *ctx)
+{
+    FreeRotatingTilePuzzle();
     return FALSE;
 }

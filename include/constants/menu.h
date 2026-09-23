@@ -75,6 +75,24 @@
 #define MULTICHOICE_ELDER_QUIZ_4                               68
 #define MULTICHOICE_ELDER_QUIZ_5                               69
 
+// TRICK HOUSE (v0.8.0): the MECHADOLL quiz and the TRICK MASTER's prize
+#define MULTICHOICE_MECHADOLL1_Q1                              70
+#define MULTICHOICE_MECHADOLL1_Q2                              71
+#define MULTICHOICE_MECHADOLL1_Q3                              72
+#define MULTICHOICE_MECHADOLL2_Q1                              73
+#define MULTICHOICE_MECHADOLL2_Q2                              74
+#define MULTICHOICE_MECHADOLL2_Q3                              75
+#define MULTICHOICE_MECHADOLL3_Q1                              76
+#define MULTICHOICE_MECHADOLL3_Q2                              77
+#define MULTICHOICE_MECHADOLL3_Q3                              78
+#define MULTICHOICE_MECHADOLL4_Q1                              79
+#define MULTICHOICE_MECHADOLL4_Q2                              80
+#define MULTICHOICE_MECHADOLL4_Q3                              81
+#define MULTICHOICE_MECHADOLL5_Q1                              82
+#define MULTICHOICE_MECHADOLL5_Q2                              83
+#define MULTICHOICE_MECHADOLL5_Q3                              84
+#define MULTICHOICE_TRICK_PRIZE                                85
+
 #define MULTICHOICE_NONE                                      255
 
 #define LISTMENU_BADGES                    0

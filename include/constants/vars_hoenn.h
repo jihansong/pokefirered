@@ -26,21 +26,21 @@
 #define VAR_HOENN_TRICK_HOUSE_STAGE    (HOENN_VARS_START + 16)  // 트릭하우스 진행(0~8)
 #define VAR_HOENN_TRICK_HOUSE_FOUND    (HOENN_VARS_START + 17)  // 이번 퍼즐에서 트릭 마스터를 찾았는지
 #define VAR_HOENN_NEW_MAUVILLE_STATE   (HOENN_VARS_START + 18)  // 뉴 무한 발전기 진행
-#define VAR_HOENN_0x13                 (HOENN_VARS_START + 19)
-#define VAR_HOENN_0x14                 (HOENN_VARS_START + 20)
-#define VAR_HOENN_0x15                 (HOENN_VARS_START + 21)
-#define VAR_HOENN_0x16                 (HOENN_VARS_START + 22)
-#define VAR_HOENN_0x17                 (HOENN_VARS_START + 23)
-#define VAR_HOENN_0x18                 (HOENN_VARS_START + 24)
-#define VAR_HOENN_0x19                 (HOENN_VARS_START + 25)
-#define VAR_HOENN_0x1A                 (HOENN_VARS_START + 26)
-#define VAR_HOENN_0x1B                 (HOENN_VARS_START + 27)
-#define VAR_HOENN_0x1C                 (HOENN_VARS_START + 28)
-#define VAR_HOENN_0x1D                 (HOENN_VARS_START + 29)
-#define VAR_HOENN_0x1E                 (HOENN_VARS_START + 30)
-#define VAR_HOENN_0x1F                 (HOENN_VARS_START + 31)
-#define VAR_HOENN_0x20                 (HOENN_VARS_START + 32)
-#define VAR_HOENN_0x21                 (HOENN_VARS_START + 33)
+#define VAR_HOENN_TRICK_BEING_WATCHED_STATE (HOENN_VARS_START + 19)  // 트릭하우스
+#define VAR_HOENN_TRICK_ENTER_FROM_CORRIDOR (HOENN_VARS_START + 20)  // 트릭하우스
+#define VAR_HOENN_TRICK_ENTRANCE_STATE (HOENN_VARS_START + 21)  // 트릭하우스
+#define VAR_HOENN_TRICK_FOUND_TRICK_MASTER (HOENN_VARS_START + 22)  // 트릭하우스
+#define VAR_HOENN_TRICK_LEVEL          (HOENN_VARS_START + 23)  // 트릭하우스
+#define VAR_HOENN_TRICK_PRIZE_PICKUP   (HOENN_VARS_START + 24)  // 트릭하우스
+#define VAR_HOENN_TRICK_PUZZLE_1_STATE (HOENN_VARS_START + 25)  // 트릭하우스
+#define VAR_HOENN_TRICK_PUZZLE_2_STATE (HOENN_VARS_START + 26)  // 트릭하우스
+#define VAR_HOENN_TRICK_PUZZLE_3_STATE (HOENN_VARS_START + 27)  // 트릭하우스
+#define VAR_HOENN_TRICK_PUZZLE_4_STATE (HOENN_VARS_START + 28)  // 트릭하우스
+#define VAR_HOENN_TRICK_PUZZLE_5_STATE (HOENN_VARS_START + 29)  // 트릭하우스
+#define VAR_HOENN_TRICK_PUZZLE_6_STATE (HOENN_VARS_START + 30)  // 트릭하우스
+#define VAR_HOENN_TRICK_PUZZLE_7_STATE (HOENN_VARS_START + 31)  // 트릭하우스
+#define VAR_HOENN_TRICK_PUZZLE_7_STATE_2 (HOENN_VARS_START + 32)  // 트릭하우스
+#define VAR_HOENN_TRICK_PUZZLE_8_STATE (HOENN_VARS_START + 33)  // 트릭하우스
 #define VAR_HOENN_0x22                 (HOENN_VARS_START + 34)
 #define VAR_HOENN_0x23                 (HOENN_VARS_START + 35)
 #define VAR_HOENN_0x24                 (HOENN_VARS_START + 36)

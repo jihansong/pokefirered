@@ -1856,3 +1856,22 @@
 	setvar VAR_0x8006, \item
 	special CreateEnemyEventMon
 	.endm
+
+	@ The rotating tile puzzles ported from pokeemerald (TRICK HOUSE room 7).
+	.macro moverotatingtileobjects puzzleNumber:req
+	.byte 0xd5
+	.2byte \puzzleNumber
+	.endm
+
+	.macro turnrotatingtileobjects
+	.byte 0xd6
+	.endm
+
+	.macro initrotatingtilepuzzle isTrickHouse:req
+	.byte 0xd7
+	.2byte \isTrickHouse
+	.endm
+
+	.macro freerotatingtilepuzzle
+	.byte 0xd8
+	.endm

@@ -512,4 +512,6 @@ gSpecials::
 	def_special MauvilleGymPressSwitch
 	def_special MauvilleGymSetDefaultBarriers
 	def_special MauvilleGymDeactivatePuzzle
+	def_special SetTrickHouseNuggetFlag
+	def_special ResetTrickHouseNuggetFlag
 gSpecialsEnd::

@@ -23,7 +23,7 @@ HDRS = ['constants/flags.h', 'constants/vars.h', 'constants/items.h', 'constants
         'constants/event_objects.h', 'constants/map_groups.h', 'constants/event_object_movement.h', 'constants/map_scripts.h', 'constants/trainer_types.h']
 TOKEN = re.compile(r'\b(FLAG_[A-Z0-9_]+|VAR_[A-Z0-9_]+|ITEM_[A-Z0-9_]+|SPECIES_[A-Z0-9_]+|MOVE_[A-Z0-9_]+'
                    r'|TRAINER_[A-Z0-9_]+|SE_[A-Z0-9_]+|MUS_[A-Z0-9_]+|METATILE_[A-Za-z0-9_]+'
-                   r'|OBJ_EVENT_GFX_[A-Z0-9_]+|MAP_[A-Z0-9_]+)\b')
+                   r'|OBJ_EVENT_GFX_[A-Z0-9_]+|MAP_[A-Z0-9_]+|MULTI_[A-Z0-9_]+)\b')
 
 
 def rename(text):
@@ -57,8 +57,11 @@ def strip_text_blocks(src):
 
 def unknown_macros(script):
     """Script commands pokeemerald has that this project's macros do not."""
-    ours = set(re.findall(r'^\t\.macro (\w+)', open(os.path.join(R, 'asm/macros/event.inc')).read(), re.M))
-    ours |= set(re.findall(r'^\t\.macro (\w+)', open(os.path.join(R, 'asm/macros/movement.inc')).read(), re.M))
+    ours = set()
+    for f in ('asm/macros/event.inc', 'asm/macros/movement.inc', 'asm/macros/map.inc'):
+        text = open(os.path.join(R, f)).read()
+        ours |= set(re.findall(r'^\t\.macro (\w+)', text, re.M))
+        ours |= set(re.findall(r'^\tcreate_movement_action (\w+)', text, re.M))
     ours |= {'.byte', '.2byte', '.4byte', '.string', '.include', '.align'}
     used = set()
     for line in script.split('\n'):
@@ -96,6 +99,37 @@ def unknown_names(text):
     return bad
 
 
+def is_defined(name):
+    """True when this project's headers already #define the name."""
+    src = ''.join('#include "%s"\n' % h for h in HDRS) + '#include "constants/map_event_ids.h"\n' + name + '\n'
+    r = subprocess.run(['cpp', '-P', '-I', os.path.join(R, 'include'), '-I', R],
+                       input=src, text=True, capture_output=True)
+    out = [l for l in r.stdout.strip().split('\n') if l.strip()]
+    return bool(out) and name not in out[-1]
+
+
+def local_ids(name):
+    """Emerald names some objects (local_id) and its scripts use those names.
+    Our map.json has no names, so emit .equ lines, matching by tile so a dropped
+    object cannot shift the numbering."""
+    em = json.load(open(os.path.join(EM, 'data/maps', name, 'map.json')))
+    ours = json.load(open(os.path.join(R, 'data/maps', name, 'map.json')))
+    lines = []
+    for ev in (em.get('object_events') or []):
+        lid = ev.get('local_id')
+        if not lid or not str(lid).startswith('LOCALID_'):
+            continue
+        if is_defined(lid):
+            continue            # this project already defines it (map_event_ids.h)
+        for i, o in enumerate(ours.get('object_events') or [], 1):
+            if (o['x'], o['y']) == (ev['x'], ev['y']):
+                lines.append('.equ %s, %d' % (lid, i))
+                break
+        else:
+            sys.exit('%s: %s has no object at (%s,%s) here' % (name, lid, ev['x'], ev['y']))
+    return ('\n'.join(lines) + '\n\n') if lines else ''
+
+
 def port_scripts(name):
     """The map's scripts, minus its text and minus its MapScripts table (which
     the import already writes); the table's entries come back as a .mapscripts
@@ -116,11 +150,29 @@ def port_events(name, keys):
     ours = json.load(open(os.path.join(R, 'data/maps', name, 'map.json')))
     out = {}
     for key in keys:
-        items = []
-        taken = {(e.get('x'), e.get('y')) for e in (ours.get(key) or [])}
+        items, overrides, obj_overrides, coord_overrides = [], [], [], []
+        taken = {(e.get('x'), e.get('y')): e for e in (ours.get(key) or [])}
         for ev in (em.get(key) or []):
-            if (ev.get('x'), ev.get('y')) in taken:
-                continue    # the import already brought this one across
+            here = taken.get((ev.get('x'), ev.get('y')))
+            if here is not None:
+                # the import brought a sign across at this tile but pointed it at
+                # its own stub script; point it back at the ported one
+                lid = ev.get('local_id')
+                if lid and str(lid).startswith('LOCALID_') and here.get('local_id') != lid:
+                    obj_overrides.append({'x': ev['x'], 'y': ev['y'], 'local_id': lid})
+                want = rename(ev['script']) if ev.get('script') else None
+                # the import writes its own scripts for item balls and hidden
+                # items, with this project's flags; leave those alone
+                if here.get('script', '').split('_EventScript_')[-1].startswith(('HItem', 'Item')):
+                    want = None
+                if want and here.get('script') != want:
+                    if key == 'bg_events':
+                        overrides.append({'x': ev['x'], 'y': ev['y'], 'script': want})
+                    elif key == 'object_events':
+                        obj_overrides.append({'x': ev['x'], 'y': ev['y'], 'script': want})
+                    elif key == 'coord_events':
+                        coord_overrides.append({'x': ev['x'], 'y': ev['y'], 'script': want})
+                continue
             ev = dict(ev)
             for f in ('script', 'flag', 'var', 'graphics_id', 'trainer_type', 'movement_type'):
                 if f in ev and isinstance(ev[f], str):
@@ -128,6 +180,12 @@ def port_events(name, keys):
             items.append(ev)
         if items:
             out[key] = items
+        if overrides:
+            out['bg_overrides'] = out.get('bg_overrides', []) + overrides
+        if obj_overrides:
+            out['object_overrides'] = out.get('object_overrides', []) + obj_overrides
+        if coord_overrides:
+            out['coord_overrides'] = out.get('coord_overrides', []) + coord_overrides
     return out
 
 
@@ -162,10 +220,17 @@ def main():
         p = os.path.join(P, name + '.scripts.inc')
         open(p, 'w').write('@ Ported from pokeemerald (the map data is identical), text written fresh.\n' + scripts)
         print('wrote', os.path.relpath(p, R))
-    if events:
+    if keys:
         p = os.path.join(P, name + '.json')
         cur = json.load(open(p)) if os.path.exists(p) else {}
+        for k in keys + ['bg_overrides', 'object_overrides', 'coord_overrides']:
+            cur.pop(k, None)      # drop what a previous run of this tool wrote
         cur.update(events)
+        if not cur:
+            if os.path.exists(p):
+                os.remove(p)
+                print('removed', os.path.relpath(p, R))
+            return
         open(p, 'w').write(json.dumps(cur, indent=2, ensure_ascii=False) + '\n')
         print('wrote', os.path.relpath(p, R))
 

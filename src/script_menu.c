@@ -525,6 +525,62 @@ static const struct MenuAction sMultichoiceList_Exit[] = {
     { gOtherText_Exit }
 };
 
+// TRICK HOUSE (v0.8.0): the MECHADOLLs' quiz and the TRICK MASTER's parting prize
+static const u8 sText_Oddish[] = _("ODDISH");
+static const u8 sText_Poochyena[] = _("POOCHYENA");
+static const u8 sText_Taillow[] = _("TAILLOW");
+static const u8 sText_Azurill[] = _("AZURILL");
+static const u8 sText_Lotad[] = _("LOTAD");
+static const u8 sText_Wingull[] = _("WINGULL");
+static const u8 sText_Dustox[] = _("DUSTOX");
+static const u8 sText_Zubat[] = _("ZUBAT");
+static const u8 sText_Nincada[] = _("NINCADA");
+static const u8 sText_Ralts[] = _("RALTS");
+static const u8 sText_Zigzagoon[] = _("ZIGZAGOON");
+static const u8 sText_Slakoth[] = _("SLAKOTH");
+static const u8 sText_Shroomish[] = _("SHROOMISH");
+static const u8 sText_Carvanha[] = _("CARVANHA");
+static const u8 sText_BurnHeal[] = _("BURN HEAL");
+static const u8 sText_HarborMail[] = _("HARBOR MAIL");
+static const u8 sText_TheSame[] = _("THE SAME");
+static const u8 sText_Yen60[] = _("$60");
+static const u8 sText_Yen55[] = _("$55");
+static const u8 sText_NothingBack[] = _("NOTHING");
+static const u8 sText_CostsMore[] = _("MORE");
+static const u8 sText_CostsLess[] = _("LESS");
+static const u8 sText_AMan[] = _("A MAN");
+static const u8 sText_AWoman[] = _("A WOMAN");
+static const u8 sText_Neither[] = _("NEITHER");
+static const u8 sText_TheOldMen[] = _("THE OLD MEN");
+static const u8 sText_TheOldLadies[] = _("THE OLD LADIES");
+static const u8 sText_CountNone[] = _("NONE");
+static const u8 sText_CountOne[] = _("ONE");
+static const u8 sText_CountTwo[] = _("TWO");
+static const u8 sText_CountThree[] = _("THREE");
+static const u8 sText_CountFour[] = _("FOUR");
+static const u8 sText_CountSix[] = _("SIX");
+static const u8 sText_CountSeven[] = _("SEVEN");
+static const u8 sText_CountEight[] = _("EIGHT");
+static const u8 sText_AmuletCoin[] = _("AMULET COIN");
+static const u8 sText_ExpShare[] = _("EXP.SHARE");
+
+static const struct MenuAction sMultichoiceList_Mechadoll1_Q1[] = { { sText_Oddish }, { sText_Poochyena }, { sText_Taillow } };
+static const struct MenuAction sMultichoiceList_Mechadoll1_Q2[] = { { sText_Azurill }, { sText_Lotad }, { sText_Wingull } };
+static const struct MenuAction sMultichoiceList_Mechadoll1_Q3[] = { { sText_Dustox }, { sText_Zubat }, { sText_Nincada } };
+static const struct MenuAction sMultichoiceList_Mechadoll2_Q1[] = { { sText_Ralts }, { sText_Zigzagoon }, { sText_Slakoth } };
+static const struct MenuAction sMultichoiceList_Mechadoll2_Q2[] = { { sText_Poochyena }, { sText_Shroomish }, { sText_Zigzagoon } };
+static const struct MenuAction sMultichoiceList_Mechadoll2_Q3[] = { { sText_Poochyena }, { sText_Zubat }, { sText_Carvanha } };
+static const struct MenuAction sMultichoiceList_Mechadoll3_Q1[] = { { sText_BurnHeal }, { sText_HarborMail }, { sText_TheSame } };
+static const struct MenuAction sMultichoiceList_Mechadoll3_Q2[] = { { sText_Yen60 }, { sText_Yen55 }, { sText_NothingBack } };
+static const struct MenuAction sMultichoiceList_Mechadoll3_Q3[] = { { sText_CostsMore }, { sText_CostsLess }, { sText_TheSame } };
+static const struct MenuAction sMultichoiceList_Mechadoll4_Q1[] = { { sText_AMan }, { sText_AWoman }, { sText_Neither } };
+static const struct MenuAction sMultichoiceList_Mechadoll4_Q2[] = { { sText_TheOldMen }, { sText_TheOldLadies }, { sText_TheSame } };
+static const struct MenuAction sMultichoiceList_Mechadoll4_Q3[] = { { sText_CountNone }, { sText_CountOne }, { sText_CountTwo } };
+static const struct MenuAction sMultichoiceList_Mechadoll5_Q1[] = { { sText_CountTwo }, { sText_CountThree }, { sText_CountFour } };
+static const struct MenuAction sMultichoiceList_Mechadoll5_Q2[] = { { sText_CountSix }, { sText_CountSeven }, { sText_CountEight } };
+static const struct MenuAction sMultichoiceList_Mechadoll5_Q3[] = { { sText_CountSix }, { sText_CountSeven }, { sText_CountEight } };
+static const struct MenuAction sMultichoiceList_TrickPrize[] = { { sText_AmuletCoin }, { sText_ExpShare } };
+
 static const struct MultichoiceListStruct sMultichoiceLists[] = {
     [MULTICHOICE_YES_NO]                                     = MULTICHOICE(sMultichoiceList_YesNo),
     [MULTICHOICE_EEVEELUTIONS]                               = MULTICHOICE(sMultichoiceList_Eeveelutions),
@@ -596,6 +652,22 @@ static const struct MultichoiceListStruct sMultichoiceLists[] = {
     [MULTICHOICE_ELDER_QUIZ_3]                               = MULTICHOICE(sMultichoiceList_ElderQuiz3),
     [MULTICHOICE_ELDER_QUIZ_4]                               = MULTICHOICE(sMultichoiceList_ElderQuiz4),
     [MULTICHOICE_ELDER_QUIZ_5]                               = MULTICHOICE(sMultichoiceList_ElderQuiz5),
+    [MULTICHOICE_MECHADOLL1_Q1]             = MULTICHOICE(sMultichoiceList_Mechadoll1_Q1),
+    [MULTICHOICE_MECHADOLL1_Q2]             = MULTICHOICE(sMultichoiceList_Mechadoll1_Q2),
+    [MULTICHOICE_MECHADOLL1_Q3]             = MULTICHOICE(sMultichoiceList_Mechadoll1_Q3),
+    [MULTICHOICE_MECHADOLL2_Q1]             = MULTICHOICE(sMultichoiceList_Mechadoll2_Q1),
+    [MULTICHOICE_MECHADOLL2_Q2]             = MULTICHOICE(sMultichoiceList_Mechadoll2_Q2),
+    [MULTICHOICE_MECHADOLL2_Q3]             = MULTICHOICE(sMultichoiceList_Mechadoll2_Q3),
+    [MULTICHOICE_MECHADOLL3_Q1]             = MULTICHOICE(sMultichoiceList_Mechadoll3_Q1),
+    [MULTICHOICE_MECHADOLL3_Q2]             = MULTICHOICE(sMultichoiceList_Mechadoll3_Q2),
+    [MULTICHOICE_MECHADOLL3_Q3]             = MULTICHOICE(sMultichoiceList_Mechadoll3_Q3),
+    [MULTICHOICE_MECHADOLL4_Q1]             = MULTICHOICE(sMultichoiceList_Mechadoll4_Q1),
+    [MULTICHOICE_MECHADOLL4_Q2]             = MULTICHOICE(sMultichoiceList_Mechadoll4_Q2),
+    [MULTICHOICE_MECHADOLL4_Q3]             = MULTICHOICE(sMultichoiceList_Mechadoll4_Q3),
+    [MULTICHOICE_MECHADOLL5_Q1]             = MULTICHOICE(sMultichoiceList_Mechadoll5_Q1),
+    [MULTICHOICE_MECHADOLL5_Q2]             = MULTICHOICE(sMultichoiceList_Mechadoll5_Q2),
+    [MULTICHOICE_MECHADOLL5_Q3]             = MULTICHOICE(sMultichoiceList_Mechadoll5_Q3),
+    [MULTICHOICE_TRICK_PRIZE]                                = MULTICHOICE(sMultichoiceList_TrickPrize),
 };
 
 // From Cool to Berries goes unused

@@ -1,4 +1,6 @@
 Route110_TrickHousePuzzle6_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route110_TrickHousePuzzle6_OnTransition
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Route110_TrickHousePuzzle6_OnWarp
 	.byte 0
 
 Route110_TrickHousePuzzle6_EventScript_H0::
@@ -20,3 +22,42 @@ Route110_TrickHousePuzzle6_EventScript_HItem159::
 	finditem ITEM_GLITTER_MAIL
 	end
 
+@ BEGIN PATCH (tools/hoenn_import/patches)
+@ Ported from pokeemerald (the map data is identical), text written fresh.
+Route110_TrickHousePuzzle6_OnTransition:
+	end
+
+Route110_TrickHousePuzzle6_OnWarp:
+	map_script_2 VAR_TEMP_0, VAR_TEMP_0, Route110_TrickHousePuzzle6_EventScript_InitPuzzle
+	.2byte 0
+
+@ NOTE: This rotating gate puzzle makes use of VAR_TEMP_0 - VAR_TEMP_5
+Route110_TrickHousePuzzle6_EventScript_InitPuzzle::
+	end
+
+Route110_TrickHousePuzzle6_EventScript_Scroll::
+	lockall
+	goto_if_eq VAR_HOENN_TRICK_PUZZLE_6_STATE, 0, Route110_TrickHousePuzzle6_EventScript_FoundScroll
+	goto Route110_TrickHousePuzzle_EventScript_ReadScrollAgain
+	end
+
+Route110_TrickHousePuzzle6_EventScript_FoundScroll::
+	setvar VAR_HOENN_TRICK_PUZZLE_6_STATE, 1
+	goto Route110_TrickHousePuzzle_EventScript_FoundScroll
+	end
+
+Route110_TrickHousePuzzle6_EventScript_Sophia::
+	trainerbattle_single TRAINER_HOENN_SOPHIA, Route110_TrickHousePuzzle6_Text_SophiaIntro, Route110_TrickHousePuzzle6_Text_SophiaDefeat
+	msgbox Route110_TrickHousePuzzle6_Text_SophiaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route110_TrickHousePuzzle6_EventScript_Benny::
+	trainerbattle_single TRAINER_HOENN_BENNY, Route110_TrickHousePuzzle6_Text_BennyIntro, Route110_TrickHousePuzzle6_Text_BennyDefeat
+	msgbox Route110_TrickHousePuzzle6_Text_BennyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route110_TrickHousePuzzle6_EventScript_Sebastian::
+	trainerbattle_single TRAINER_HOENN_SEBASTIAN, Route110_TrickHousePuzzle6_Text_SebastianIntro, Route110_TrickHousePuzzle6_Text_SebastianDefeat
+	msgbox Route110_TrickHousePuzzle6_Text_SebastianPostBattle, MSGBOX_AUTOCLOSE
+	end
+@ END PATCH

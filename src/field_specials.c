@@ -3379,3 +3379,18 @@ void MauvilleGymDeactivatePuzzle(void)
         }
     }
 }
+
+// The TRICK HOUSE hides a NUGGET in the room the TRICK MASTER is using, and it
+// comes back each time he rebuilds. The import numbered that hidden item
+// FLAG_HOENN_HIDDEN_109 (see constants/flags_hoenn.h).
+void SetTrickHouseNuggetFlag(void)
+{
+    gSpecialVar_0x8004 = FLAG_HOENN_HIDDEN_109;
+    FlagSet(FLAG_HOENN_HIDDEN_109);
+}
+
+void ResetTrickHouseNuggetFlag(void)
+{
+    gSpecialVar_0x8004 = FLAG_HOENN_HIDDEN_109;
+    FlagClear(FLAG_HOENN_HIDDEN_109);
+}

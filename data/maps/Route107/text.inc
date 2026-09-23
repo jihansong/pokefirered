@@ -1,89 +1,92 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 Route107_Text_H0_0::
-	.string "Yawn…\p"
-	.string "I must have drifted off to sleep\n"
-	.string "while I was drifting in the waves.$"
+    .string "Mm… I fell asleep out here again.\p"
+    .string "Since you've woken me, battle me.$"
 
 Route107_Text_H0_1::
-	.string "Ahaha, I lost…\n"
-	.string "I'll take a snooze, I think…$"
+    .string "Fine. Back to sleep.$"
 
 Route107_Text_H0_2::
-	.string "Floating and being rocked by\n"
-	.string "the waves--it's like sleeping in\l"
-	.string "a plush, comfy bed.$"
+    .string "The swell out here rocks you like\n"
+    .string "a hand. Try it once.$"
 
 Route107_Text_H1_0::
-	.string "The sea is like my backyard.\n"
-	.string "Let's battle!$"
+    .string "Everyone swims this channel. Not\n"
+    .string "everyone gets across it.$"
 
 Route107_Text_H1_1::
-	.string "I lost on my home field…\n"
-	.string "I'm in shock!$"
+    .string "Beaten in the channel. That will\n"
+    .string "be round the island by supper.$"
 
 Route107_Text_H1_2::
-	.string "I swim the seas with a heart full of\n"
-	.string "dreams…\p"
-	.string "It's a song!\n"
-	.string "Anyways, I'm swimming some more.$"
+    .string "The current runs east here. Let it\n"
+    .string "take you and you'll see the wreck's\l"
+    .string "mast.$"
 
 Route107_Text_H2_0::
-	.string "Do you know a little town called\n"
-	.string "DEWFORD?$"
+    .string "You've come from DEWFORD, then.\n"
+    .string "Did BRAWLY let you keep your\l"
+    .string "dignity?$"
 
 Route107_Text_H2_1::
-	.string "I hate this!$"
+    .string "I've heard enough!$"
 
 Route107_Text_H2_2::
-	.string "A weird saying is getting really\n"
-	.string "trendy at DEWFORD HALL.$"
+    .string "Every visitor goes to the GYM\n"
+    .string "first. Nobody goes to the hall\l"
+    .string "first, and the hall has the news.$"
 
 Route107_Text_H3_0::
-	.string "Did you want to battle me?\n"
-	.string "Sure, I'll go with you!$"
+    .string "You wanted a battle? Out here you\n"
+    .string "only have to look like you do.$"
 
 Route107_Text_H3_1::
-	.string "I wasn't good enough for you.$"
+    .string "Not nearly enough, was I.$"
 
 Route107_Text_H3_2::
-	.string "I think you're going to keep getting\n"
-	.string "better. I'll go for it, too!$"
+    .string "You'll get better still. So will I.\n"
+    .string "That's the arrangement.$"
 
 Route107_Text_H4_0::
-	.string "LISA: We challenge you as a sister\n"
-	.string "and brother!$"
+    .string "LISA: Sister and brother, and we\n"
+    .string "come as a pair!$"
 
 Route107_Text_H4_1::
-	.string "LISA: Awesome.\n"
-	.string "You're in a different class of tough.$"
+    .string "LISA: You're not in our class.\n"
+    .string "We're not in yours.$"
 
 Route107_Text_H4_2::
-	.string "LISA: Do you have any friends who\n"
-	.string "would go to the beach with you?$"
+    .string "LISA: Bring someone next time.\n"
+    .string "Two on two is the only honest\l"
+    .string "battle.$"
 
 Route107_Text_H5_0::
-	.string "RAY: We always battle POKéMON,\n"
-	.string "me and my sister.\p"
-	.string "I always lose, but we can beat you\n"
-	.string "2-on-2!$"
+    .string "I train in the water to keep my\n"
+    .string "POKéMON calm in it.\p"
+    .string "Most of them hate the sea, you\n"
+    .string "know. They just don't say so.$"
 
 Route107_Text_H5_1::
-	.string "RAY: Wowee, you're at a higher level\n"
-	.string "than us!$"
+    .string "Calm as you like, and beaten\n"
+    .string "anyway.$"
 
 Route107_Text_H5_2::
-	.string "RAY: My sister gave me my POKéMON.\n"
-	.string "I raised it, and now it's my\l"
-	.string "important partner!$"
+    .string "A POKéMON that trusts water will\n"
+    .string "follow you anywhere. Even down.$"
 
 Route107_Text_H6_0::
-	.string "I'm in the middle of a triathlon,\n"
-	.string "but I'm nowhere near tired!$"
+    .string "They said a champion flew in on\n"
+    .string "the SLATEPORT plane.\p"
+    .string "I didn't expect to meet them\n"
+    .string "treading water.$"
 
 Route107_Text_H6_1::
-	.string "That exhausted me…$"
+    .string "Well. Now I've a story.$"
 
 Route107_Text_H6_2::
-	.string "I still have swimming and running\n"
-	.string "left to do after this.\p"
-	.string "Am I going to be okay?$"
-
+    .string "Eight BADGES and you're out here\n"
+    .string "battling swimmers for nothing.\p"
+    .string "That's the part I'll tell people.$"
+@ END PATCH

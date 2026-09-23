@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 AbandonedShip_Corridors_1F_Text_H0::
     .string "A whole ship and nobody in it!\p"
     .string "Well. Nobody but us, and the man\n"
@@ -19,4 +16,3 @@ AbandonedShip_Corridors_1F_Text_H1_2::
     .string "Throwing a POKé BALL while holding\n"
     .string "on to a rubber ring is harder than\l"
     .string "it looks.$"
-@ END PATCH

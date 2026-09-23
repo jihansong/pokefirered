@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 AbandonedShip_Corridors_B1F_Text_H0::
     .string "A ship! A real one, with water in\n"
     .string "it!$"
@@ -24,4 +21,3 @@ AbandonedShip_Corridors_B1F_Text_H2::
     .string "{PLAYER} turned the STORAGE KEY.\p"
     .string "It stuck in the lock and stayed\n"
     .string "there, but the door swung open.$"
-@ END PATCH

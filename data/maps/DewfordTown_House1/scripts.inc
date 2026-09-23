@@ -12,4 +12,3 @@ DewfordTown_House1_EventScript_H1::
 DewfordTown_House1_EventScript_H2::
 	msgbox DewfordTown_House1_Text_H2, MSGBOX_NPC
 	end
-

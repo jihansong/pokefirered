@@ -16,4 +16,3 @@ AbandonedShip_HiddenFloorCorridors_EventScript_H2::
 AbandonedShip_HiddenFloorCorridors_EventScript_H3::
 	msgbox AbandonedShip_HiddenFloorCorridors_Text_H3, MSGBOX_SIGN
 	end
-

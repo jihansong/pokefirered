@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 AbandonedShip_Rooms_1F_Text_H0::
     .string "You don't see a hull built this way\n"
     .string "any more, so I came to look at it.\p"
@@ -31,4 +28,3 @@ AbandonedShip_Rooms_1F_Text_H2_2::
     .string "I'm hiding from my mum. If she\n"
     .string "swims out here, you haven't seen\l"
     .string "me.$"
-@ END PATCH

@@ -24,4 +24,3 @@ AbandonedShip_Rooms2_1F_EventScript_H3::
 	trainerbattle_single TRAINER_HOENN_JANI, AbandonedShip_Rooms2_1F_Text_H3_0, AbandonedShip_Rooms2_1F_Text_H3_1
 	msgbox AbandonedShip_Rooms2_1F_Text_H3_2, MSGBOX_AUTOCLOSE
 	end
-

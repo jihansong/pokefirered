@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 @ The man STERN sent ahead. Event 5's SCANNER is in this room, and he is the
 @ reason the player knows to look for it.
 AbandonedShip_CaptainsOffice_Text_H0::
@@ -13,4 +10,3 @@ AbandonedShip_CaptainsOffice_Text_H0::
     .string "and found a kettle.\p"
     .string "You have a look, if you like. You\n"
     .string "can hardly do worse.$"
-@ END PATCH

@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 AbandonedShip_HiddenFloorCorridors_Text_H0::
     .string "{PLAYER} turned the KEY.\p"
     .string "The lock gave, and the salt took\n"
@@ -20,4 +17,3 @@ AbandonedShip_HiddenFloorCorridors_Text_H3::
     .string "{PLAYER} turned the KEY.\p"
     .string "The lock gave, and the salt took\n"
     .string "the KEY for its trouble.$"
-@ END PATCH

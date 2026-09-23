@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 AbandonedShip_Rooms2_1F_Text_H0_0::
     .string "DAN: We came for treasure and\n"
     .string "found a trainer instead.$"
@@ -50,4 +47,3 @@ AbandonedShip_Rooms2_1F_Text_H3_1::
 AbandonedShip_Rooms2_1F_Text_H3_2::
     .string "Don't go barefoot below deck. I\n"
     .string "learned that this morning.$"
-@ END PATCH

@@ -1,36 +1,38 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 DewfordTown_Text_H0::
-	.string "DEWFORD is a tiny island community.\n"
-	.string "If something gets trendy here,\l"
-	.string "everyone picks up on it right away.$"
+    .string "DEWFORD's the smallest town in\n"
+    .string "HOENN, and the loudest.\p"
+    .string "A boat comes in, and by the time\n"
+    .string "it's tied up the whole island\l"
+    .string "knows who was on it.$"
 
 DewfordTown_Text_H1::
-	.string "This is a renowned fishing spot.\n"
-	.string "Are you getting the itch to fish?$"
+    .string "The water off this beach drops away\n"
+    .string "fast.\p"
+    .string "Good fishing. Good for nothing else\n"
+    .string "without a POKéMON that swims.$"
 
 DewfordTown_Text_H2::
-	.string "I like what's hip, happening, and\n"
-	.string "trendy. I'm always checking it out.\p"
-	.string "Listen, have you heard about this\n"
-	.string "new “{STR_VAR_1}”?\p"
-	.string "That's right!\n"
-	.string "Of course you know!\p"
-	.string "I mean, sheesh,\n"
-	.string "“{STR_VAR_1}”…\l"
-	.string "It's the hottest thing in cool!\p"
-	.string "Wherever you're from, “{STR_VAR_1}”\n"
-	.string "is the biggest happening thing,\l"
-	.string "right?$"
+    .string "You're the one who flew in, aren't\n"
+    .string "you.\p"
+    .string "A whole LEAGUE's worth of BADGES\n"
+    .string "from across the sea, and not one\l"
+    .string "of ours.\p"
+    .string "Don't take it hard. BRAWLY starts\n"
+    .string "everybody at nothing.$"
 
 DewfordTown_Text_H3::
-	.string "DEWFORD TOWN\n"
-	.string "“A tiny island in the blue sea.”$"
+    .string "DEWFORD TOWN\n"
+    .string "“Small island. Big water.”$"
 
 DewfordTown_Text_H4::
-	.string "DEWFORD TOWN POKéMON GYM\n"
-	.string "LEADER: BRAWLY\l"
-	.string "“A big wave in fighting!”$"
+    .string "DEWFORD TOWN POKéMON GYM\n"
+    .string "LEADER: BRAWLY\l"
+    .string "“He trains where the waves land.”$"
 
 DewfordTown_Text_H5::
-	.string "DEWFORD HALL\n"
-	.string "“Everyone's information exchange!”$"
-
+    .string "DEWFORD HALL\n"
+    .string "“Where the island keeps its news.”$"
+@ END PATCH

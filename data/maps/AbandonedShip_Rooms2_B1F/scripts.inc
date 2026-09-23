@@ -8,4 +8,3 @@ AbandonedShip_Rooms2_B1F_EventScript_H0::
 AbandonedShip_Rooms2_B1F_EventScript_HItem128::
 	finditem ITEM_DIVE_BALL
 	end
-

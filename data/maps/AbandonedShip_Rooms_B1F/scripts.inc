@@ -8,4 +8,3 @@ AbandonedShip_Rooms_B1F_EventScript_H0::
 AbandonedShip_Rooms_B1F_EventScript_HItem127::
 	finditem ITEM_ESCAPE_ROPE
 	end
-

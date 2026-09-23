@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 @ The beach below SLATEPORT: swimmers, tubers, a sailor or two, and the
 @ families who use the sand. Nobody here has met a champion before.
 Route109_Text_H0_0::
@@ -227,4 +224,3 @@ Route109_Text_H21::
     .string "not the same POKéMON.\p"
     .string "One raised by a trainer will\n"
     .string "outgrow one left in the wild.$"
-@ END PATCH

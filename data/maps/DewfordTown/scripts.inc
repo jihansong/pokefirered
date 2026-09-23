@@ -31,4 +31,3 @@ DewfordTown_EventScript_H4::
 DewfordTown_EventScript_H5::
 	msgbox DewfordTown_Text_H5, MSGBOX_SIGN
 	end
-

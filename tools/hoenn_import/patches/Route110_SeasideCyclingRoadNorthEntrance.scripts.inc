@@ -1,11 +1,3 @@
-Route110_SeasideCyclingRoadNorthEntrance_MapScripts::
-	.byte 0
-
-Route110_SeasideCyclingRoadNorthEntrance_EventScript_H0::
-	msgbox Route110_SeasideCyclingRoadNorthEntrance_Text_H0, MSGBOX_NPC
-	end
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 @ The timed run down the CYCLING ROAD (v0.8.0). The original road was only a
 @ road; the gates now hold a clock and a record board.
 Route110_SeasideCyclingRoadNorthEntrance_EventScript_Attendant::
@@ -28,4 +20,3 @@ Route110_SeasideCyclingRoadNorthEntrance_EventScript_Declined::
 	msgbox Route110_SeasideCyclingRoadNorthEntrance_Text_Declined
 	release
 	end
-@ END PATCH

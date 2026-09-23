@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 Route110_SeasideCyclingRoadSouthEntrance_Text_Stopped::
     .string "Stop! That's the run.\p"
     .string "{STR_VAR_1} seconds, top to bottom.$"
@@ -40,4 +37,3 @@ Route110_SeasideCyclingRoadSouthEntrance_Text_NoRecord::
 Route110_SeasideCyclingRoadSouthEntrance_Text_H0::
     .string "Down is easy. Up is why most\n"
     .string "people take the long way round.$"
-@ END PATCH

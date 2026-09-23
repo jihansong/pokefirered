@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 Route110_SeasideCyclingRoadNorthEntrance_Text_Offer::
     .string "This is the top of the CYCLING\n"
     .string "ROAD. Bicycles only past the gate.\p"
@@ -26,4 +23,3 @@ Route110_SeasideCyclingRoadNorthEntrance_Text_H0::
     .string "The deck below is one long slope.\p"
     .string "People come from MAUVILLE just to\n"
     .string "coast down it.$"
-@ END PATCH

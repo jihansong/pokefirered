@@ -3394,3 +3394,40 @@ void ResetTrickHouseNuggetFlag(void)
     gSpecialVar_0x8004 = FLAG_HOENN_HIDDEN_109;
     FlagClear(FLAG_HOENN_HIDDEN_109);
 }
+
+// ---------------------------------------------------------------------------
+// The SEASIDE CYCLING ROAD's timed run (v0.8.0). The original road had no
+// clock; this one is timed off the play clock, which ticks in seconds and is
+// already part of the save, so nothing new is stored but the record itself.
+// ---------------------------------------------------------------------------
+static u16 CyclingRoad_PlayTimeSeconds(void)
+{
+    return gSaveBlock2Ptr->playTimeHours * 3600 + gSaveBlock2Ptr->playTimeMinutes * 60
+         + gSaveBlock2Ptr->playTimeSeconds;
+}
+
+void CyclingRoad_StartRun(void)
+{
+    VarSet(VAR_HOENN_CYCLING_START, CyclingRoad_PlayTimeSeconds());
+    VarSet(VAR_HOENN_CYCLING_STATE, 1);
+}
+
+// VAR_RESULT: the seconds this run took. The record is kept if it is the best.
+void CyclingRoad_FinishRun(void)
+{
+    u16 elapsed = CyclingRoad_PlayTimeSeconds() - VarGet(VAR_HOENN_CYCLING_START);
+    u16 best = VarGet(VAR_HOENN_CYCLING_RECORD);
+
+    if (elapsed > 9999)   // the clock wrapped, or the player wandered off for hours
+        elapsed = 9999;
+    gSpecialVar_Result = elapsed;
+    if (best == 0 || elapsed < best)
+        VarSet(VAR_HOENN_CYCLING_RECORD, elapsed);
+    VarSet(VAR_HOENN_CYCLING_STATE, 0);
+}
+
+// VAR_RESULT: the best time so far, 0 when there is none
+void CyclingRoad_GetRecord(void)
+{
+    gSpecialVar_Result = VarGet(VAR_HOENN_CYCLING_RECORD);
+}

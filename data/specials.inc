@@ -514,4 +514,7 @@ gSpecials::
 	def_special MauvilleGymDeactivatePuzzle
 	def_special SetTrickHouseNuggetFlag
 	def_special ResetTrickHouseNuggetFlag
+	def_special CyclingRoad_StartRun
+	def_special CyclingRoad_FinishRun
+	def_special CyclingRoad_GetRecord
 gSpecialsEnd::

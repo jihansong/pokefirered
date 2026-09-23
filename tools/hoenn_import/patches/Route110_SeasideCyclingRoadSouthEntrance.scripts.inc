@@ -1,11 +1,3 @@
-Route110_SeasideCyclingRoadSouthEntrance_MapScripts::
-	.byte 0
-
-Route110_SeasideCyclingRoadSouthEntrance_EventScript_H0::
-	msgbox Route110_SeasideCyclingRoadSouthEntrance_Text_H0, MSGBOX_NPC
-	end
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 @ The south gate stops the clock, pays out by time and keeps the record board.
 Route110_SeasideCyclingRoadSouthEntrance_EventScript_Attendant::
 	lock
@@ -66,4 +58,3 @@ Route110_SeasideCyclingRoadSouthEntrance_EventScript_NoRecord::
 	msgbox Route110_SeasideCyclingRoadSouthEntrance_Text_NoRecord
 	release
 	end
-@ END PATCH

@@ -1,0 +1,5 @@
+{
+  "object_overrides": [
+    { "x": 0, "y": 5, "script": "VerdanturfTown_BattleTentLobby_EventScript_TMGiver" }
+  ]
+}

@@ -1,24 +1,24 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 VerdanturfTown_PokemonCenter_1F_Text_H0::
-	.string "You can't consider yourself a real\n"
-	.string "TRAINER if you don't have faith\l"
-	.string "in your POKéMON.\p"
-	.string "Only those people who can believe\n"
-	.string "in their battling POKéMON can win\l"
-	.string "through to the very end.$"
+    .string "You can't call yourself a TRAINER\n"
+    .string "if you don't trust what you\l"
+    .string "brought with you.\p"
+    .string "That goes double on a road like\n"
+    .string "the coast one.$"
 
 VerdanturfTown_PokemonCenter_1F_Text_H1::
-	.string "The reason why anyone would visit\n"
-	.string "VERDANTURF…\p"
-	.string "It's the BATTLE TENT. It goes\n"
-	.string "without saying.\p"
-	.string "Or is there somebody here that you\n"
-	.string "came to see?$"
+    .string "People used to come here for the\n"
+    .string "BATTLE TENT.\p"
+    .string "Now they come for the air, or for\n"
+    .string "somebody who lives here.\p"
+    .string "Which is it with you?$"
 
 VerdanturfTown_PokemonCenter_1F_Text_H2::
-	.string "There's a move that gets stronger\n"
-	.string "when you keep using it in a row.\p"
-	.string "It's a BUG-type move, and it is\n"
-	.string "wickedly cool.\p"
-	.string "It's called FURY CUTTER.\n"
-	.string "Want me to teach it to a POKéMON?$"
-
+    .string "There's a BUG-type move that hits\n"
+    .string "harder every turn you keep using it.\p"
+    .string "FURY CUTTER, it's called. Nobody\n"
+    .string "in this town can teach it.\p"
+    .string "I just like saying the name.$"
+@ END PATCH

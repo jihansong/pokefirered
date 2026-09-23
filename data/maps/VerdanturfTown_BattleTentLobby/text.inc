@@ -1,45 +1,56 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 VerdanturfTown_BattleTentLobby_Text_H0::
-	.string "I welcome you to the BATTLE TENT\n"
-	.string "VERDANTURF SITE!\p"
-	.string "Here, the TRAINER's trust toward\n"
-	.string "POKéMON is tested.$"
+    .string "Welcome to the BATTLE TENT\n"
+    .string "VERDANTURF SITE.\p"
+    .string "There are no battles. There is no\n"
+    .string "TENT MASTER. There is me, and\l"
+    .string "the chairs.$"
 
 VerdanturfTown_BattleTentLobby_Text_H1::
-	.string "My feelings toward my POKéMON…\n"
-	.string "The attraction runs deep…\p"
-	.string "Oh, hi, you didn't see that, did\n"
-	.string "you? Well, it doesn't matter.\p"
-	.string "How would you like this TM for\n"
-	.string "your POKéMON?$"
+    .string "I was going to enter, and now I'm\n"
+    .string "not.\p"
+    .string "Here. I bought this for the TENT\n"
+    .string "and I'd rather it got used.$"
+
+VerdanturfTown_BattleTentLobby_Text_H1b::
+    .string "Use it. Don't sell it.\n"
+    .string "I'll know.$"
 
 VerdanturfTown_BattleTentLobby_Text_H2::
-	.string "What kind of moves have you taught\n"
-	.string "your POKéMON?\p"
-	.string "I think you would give yourself\n"
-	.string "an advantage if they knew how to\l"
-	.string "heal or protect themselves.$"
+    .string "What moves have you taught yours?\p"
+    .string "Something that heals and something\n"
+    .string "that guards. That's my advice,\l"
+    .string "and it's free.$"
 
 VerdanturfTown_BattleTentLobby_Text_H3::
-	.string "If it doesn't like a certain move, a\n"
-	.string "POKéMON will be reluctant to use it.\p"
-	.string "It doesn't matter how strong it is,\n"
-	.string "either.\p"
-	.string "For example, a POKéMON with a\n"
-	.string "GENTLE nature probably won't enjoy\l"
-	.string "hurting its opponents.\p"
-	.string "If it can't seem to live up to its\n"
-	.string "potential, it's probably failing at\l"
-	.string "using a disliked move against its\l"
-	.string "will.$"
+    .string "A POKéMON that dislikes a move is\n"
+    .string "slow to use it, however strong\l"
+    .string "the move is.\p"
+    .string "A GENTLE one won't enjoy hurting\n"
+    .string "anything.\p"
+    .string "If yours keeps falling short, that\n"
+    .string "may be why.$"
 
 VerdanturfTown_BattleTentLobby_Text_H4::
-	.string "My big sister is gentle usually.\n"
-	.string "But when she gets angry,\l"
-	.string "she's really, really scary!\p"
-	.string "I bet a gentle POKéMON will be\n"
-	.string "scary if it gets angry!$"
+    .string "My big sister is gentle until she\n"
+    .string "isn't.\p"
+    .string "A gentle POKéMON that gets angry\n"
+    .string "must be terrifying.$"
 
 VerdanturfTown_BattleTentLobby_Text_H5::
-	.string "The VERDANTURF BATTLE TENT\n"
-	.string "rules are listed.$"
+    .string "THE TENT RULES\p"
+    .string "1. Three POKéMON each.\n"
+    .string "2. No items from the bag.\p"
+    .string "Underneath, in newer ink:\n"
+    .string "3. See rule 1 when we reopen.$"
+VerdanturfTown_BattleTentLobby_Text_ReceivedTM17::
+    .string "{PLAYER} received TM17 PROTECT\n"
+    .string "from the man in the empty lobby.$"
 
+VerdanturfTown_BattleTentLobby_Text_NoRoom::
+    .string "You've no room for it.\p"
+    .string "I'll keep hold of it. I'm not going\n"
+    .string "anywhere.$"
+@ END PATCH

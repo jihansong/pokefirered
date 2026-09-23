@@ -509,4 +509,14 @@ gSpecials::
 	def_special Tournament_Reset
 	def_special SummitTrainer_RecordWin
 	def_special CountHoennBadges
+	def_special MauvilleGymPressSwitch
+	def_special MauvilleGymSetDefaultBarriers
+	def_special MauvilleGymDeactivatePuzzle
+	def_special SetTrickHouseNuggetFlag
+	def_special ResetTrickHouseNuggetFlag
+	def_special CyclingRoad_StartRun
+	def_special CyclingRoad_FinishRun
+	def_special CyclingRoad_GetRecord
+	def_special Wattson_CanRematch
+	def_special Wattson_RecordRematch
 gSpecialsEnd::

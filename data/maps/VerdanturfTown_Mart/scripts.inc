@@ -38,4 +38,3 @@ VerdanturfTown_Mart_EventScript_H2::
 VerdanturfTown_Mart_EventScript_H3::
 	msgbox VerdanturfTown_Mart_Text_H3, MSGBOX_NPC
 	end
-

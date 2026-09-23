@@ -1,19 +1,20 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 VerdanturfTown_Mart_Text_H1::
-	.string "For any POKéMON match, X SPECIAL\n"
-	.string "is crucial.\p"
-	.string "It jacks up the power of some moves\n"
-	.string "even though it's only for one battle.$"
+    .string "X SPECIAL, for one battle only.\p"
+    .string "Worth it against a GYM LEADER.\n"
+    .string "Wasted on the road.$"
 
 VerdanturfTown_Mart_Text_H2::
-	.string "They don't seem to sell any winning\n"
-	.string "strategy guides for the BATTLE\l"
-	.string "TENT…\p"
-	.string "It seems one must rely on one's\n"
-	.string "own wits after all…$"
+    .string "No guidebooks for the BATTLE TENT\n"
+    .string "on the shelf.\p"
+    .string "There's no TENT either, so that's\n"
+    .string "fair enough.$"
 
 VerdanturfTown_Mart_Text_H3::
-	.string "The NEST BALL works better on\n"
-	.string "weakened POKéMON.\p"
-	.string "VERDANTURF is the only place you\n"
-	.string "can buy it.$"
-
+    .string "NEST BALLS work better the weaker\n"
+    .string "the POKéMON is.\p"
+    .string "VERDANTURF is the only town that\n"
+    .string "stocks them.$"
+@ END PATCH

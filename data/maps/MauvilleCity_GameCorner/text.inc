@@ -1,66 +1,102 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
+MauvilleCity_GameCorner_Text_PlayThisMachine::
+    .string "Play this machine?$"
+
+MauvilleCity_GameCorner_Text_NoCoinCase::
+    .string "You'll want a COIN CASE first.\p"
+    .string "They sell them across the sea, in\n"
+    .string "KANTO. Ours take the same coins.$"
+
+MauvilleCity_GameCorner_Text_BuyCoins::
+    .string "Coins are 50 for $1000.\p"
+    .string "Buy a set?$"
+
+MauvilleCity_GameCorner_Text_Bought50::
+    .string "Fifty coins, then.\p"
+    .string "The machines on the left run\n"
+    .string "warmer than the ones on the right.\l"
+    .string "So people say.$"
+
+MauvilleCity_GameCorner_Text_NotEnoughMoney::
+    .string "You haven't the money for that.$"
+
+MauvilleCity_GameCorner_Text_CaseFull::
+    .string "Your CASE is as full as it goes.$"
+
+MauvilleCity_GameCorner_Text_WhichPrize::
+    .string "Have a look. The prices are the\n"
+    .string "prices.$"
+
+MauvilleCity_GameCorner_Text_HereYouGo::
+    .string "Here you are. Come again.$"
+
+MauvilleCity_GameCorner_Text_NotEnoughCoins::
+    .string "You're short of coins for that.$"
+
+MauvilleCity_GameCorner_Text_PrizeNoRoom::
+    .string "Your BAG won't take it.$"
+
 MauvilleCity_GameCorner_Text_H0::
-	.string "COINS are needed to play here\n"
-	.string "in the GAME CORNER.$"
+    .string "I come for the noise, not the\n"
+    .string "coins.\p"
+    .string "MAUVILLE is quiet otherwise.$"
 
 MauvilleCity_GameCorner_Text_H1::
-	.string "This ROULETTE thing…\n"
-	.string "It's rather demanding.\p"
-	.string "Win or lose, it's only by luck.$"
+    .string "A champion, in here.\p"
+    .string "Don't let it get its hooks in you.\n"
+    .string "It has mine.$"
 
 MauvilleCity_GameCorner_Text_H2::
-	.string "This is MAUVILLE GAME CORNER.$"
+    .string "Coins on the left counter, prizes\n"
+    .string "on the right.\p"
+    .string "The order matters, sadly.$"
 
 MauvilleCity_GameCorner_Text_H3::
-	.string "Welcome.\p"
-	.string "You can exchange your COINS for\n"
-	.string "prizes here.$"
+    .string "The RARE CANDY costs two thousand\n"
+    .string "coins.\p"
+    .string "I've been here since the road\n"
+    .string "opened.$"
 
 MauvilleCity_GameCorner_Text_H4::
-	.string "I made a mistake and got two of\n"
-	.string "the same DOLLS.\p"
-	.string "Would you like one of them?$"
+    .string "My machine is warm! That means\n"
+    .string "it's about to pay!\p"
+    .string "…That's what warm means, isn't\n"
+    .string "it?$"
 
 MauvilleCity_GameCorner_Text_H5::
-	.string "Hey, kid, if you want to play here,\n"
-	.string "you need a COIN CASE.\p"
-	.string "I think the young lady next door\n"
-	.string "had one. Go see her!$"
+    .string "WATTSON wired this place too.\p"
+    .string "He says the machines draw less\n"
+    .string "than his gym does. I believe him.$"
 
 MauvilleCity_GameCorner_Text_H6::
-	.string "The ROULETTE tables have different\n"
-	.string "rates.\p"
-	.string "Check your COINS if you're going to\n"
-	.string "pick a table.$"
+    .string "In my day you pulled a lever.\n"
+    .string "Now you press a button.\p"
+    .string "The money goes the same way.$"
 
 MauvilleCity_GameCorner_Text_H7::
-	.string "It's easy to lose track of time in\n"
-	.string "here. I should get back to work.$"
+    .string "I cook next door. I come here on\n"
+    .string "my break and lose my tips.$"
 
 MauvilleCity_GameCorner_Text_H8::
-	.string "Welcome.\p"
-	.string "You can exchange your COINS for\n"
-	.string "prizes here.$"
+    .string "The reels stop when you tell them\n"
+    .string "to. That's the whole game.\p"
+    .string "People forget that and blame the\n"
+    .string "machine.$"
 
 MauvilleCity_GameCorner_Text_H9::
-	.string "Up to three COINS can be used to\n"
-	.string "play the SLOTS.$"
+    .string "Two thousand coins for one candy.\p"
+    .string "I've done the sums. I'm doing them\n"
+    .string "again.$"
 
 MauvilleCity_GameCorner_Text_H10::
-	.string "It's very difficult to make it stop\n"
-	.string "right on “7.”\p"
-	.string "If it stops on “7” during the REEL\n"
-	.string "TIME bonus game, you'll receive\l"
-	.string "extra COINS.$"
+    .string "Nobody in here has ever seen the\n"
+    .string "CYCLING ROAD.\p"
+    .string "It's four streets away.$"
 
 MauvilleCity_GameCorner_Text_H11::
-	.string "Here's some information for you\n"
-	.string "about the SLOTS.\p"
-	.string "The more lightning bolts you stock,\n"
-	.string "the more REEL TIME chances you get.\p"
-	.string "In a game with the maximum five\n"
-	.string "REEL TIME chances…\p"
-	.string "It is possible to receive four\n"
-	.string "regular bonuses, then a big bonus.\p"
-	.string "That would total 660 COINS, but it's\n"
-	.string "very difficult to get.$"
-
+    .string "They opened the coast road and\n"
+    .string "half my friends went to look.\p"
+    .string "I stayed. Somebody has to.$"
+@ END PATCH

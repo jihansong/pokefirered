@@ -39,4 +39,3 @@ VerdanturfTown_EventScript_H6::
 VerdanturfTown_EventScript_H7::
 	msgbox VerdanturfTown_Text_H7, MSGBOX_SIGN
 	end
-

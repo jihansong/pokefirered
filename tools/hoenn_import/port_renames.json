@@ -1,0 +1,103 @@
+{
+  "exact": {
+    "FLAG_SYS_CTRL_OBJ_DELETE": "FLAG_SYS_SPECIAL_WILD_BATTLE",
+    "Common_EventScript_NopReturn": "EventScript_Return",
+    "VAR_NEW_MAUVILLE_STATE": "VAR_HOENN_NEW_MAUVILLE_STATE",
+    "FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE": "FLAG_HOENN_VOLTORB_1",
+    "FLAG_DEFEATED_VOLTORB_2_NEW_MAUVILLE": "FLAG_HOENN_VOLTORB_2",
+    "FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE": "FLAG_HOENN_VOLTORB_3",
+    "FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1": "FLAG_HOENN_HIDE_VOLTORB_1",
+    "FLAG_HIDE_NEW_MAUVILLE_VOLTORB_2": "FLAG_HOENN_HIDE_VOLTORB_2",
+    "FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3": "FLAG_HOENN_HIDE_VOLTORB_3",
+    "Common_EventScript_RemoveStaticPokemon": "EventScript_RemoveStaticMon",
+    "Common_EventScript_LegendaryFlewAway": "EventScript_MonFlewAway",
+    "VAR_TRICK_HOUSE_BEING_WATCHED_STATE": "VAR_HOENN_TRICK_BEING_WATCHED_STATE",
+    "VAR_TRICK_HOUSE_ENTER_FROM_CORRIDOR": "VAR_HOENN_TRICK_ENTER_FROM_CORRIDOR",
+    "VAR_TRICK_HOUSE_ENTRANCE_STATE": "VAR_HOENN_TRICK_ENTRANCE_STATE",
+    "VAR_TRICK_HOUSE_FOUND_TRICK_MASTER": "VAR_HOENN_TRICK_FOUND_TRICK_MASTER",
+    "VAR_TRICK_HOUSE_LEVEL": "VAR_HOENN_TRICK_LEVEL",
+    "VAR_TRICK_HOUSE_PRIZE_PICKUP": "VAR_HOENN_TRICK_PRIZE_PICKUP",
+    "VAR_TRICK_HOUSE_PUZZLE_1_STATE": "VAR_HOENN_TRICK_PUZZLE_1_STATE",
+    "VAR_TRICK_HOUSE_PUZZLE_2_STATE": "VAR_HOENN_TRICK_PUZZLE_2_STATE",
+    "VAR_TRICK_HOUSE_PUZZLE_3_STATE": "VAR_HOENN_TRICK_PUZZLE_3_STATE",
+    "VAR_TRICK_HOUSE_PUZZLE_4_STATE": "VAR_HOENN_TRICK_PUZZLE_4_STATE",
+    "VAR_TRICK_HOUSE_PUZZLE_5_STATE": "VAR_HOENN_TRICK_PUZZLE_5_STATE",
+    "VAR_TRICK_HOUSE_PUZZLE_6_STATE": "VAR_HOENN_TRICK_PUZZLE_6_STATE",
+    "VAR_TRICK_HOUSE_PUZZLE_7_STATE": "VAR_HOENN_TRICK_PUZZLE_7_STATE",
+    "VAR_TRICK_HOUSE_PUZZLE_7_STATE_2": "VAR_HOENN_TRICK_PUZZLE_7_STATE_2",
+    "VAR_TRICK_HOUSE_PUZZLE_8_STATE": "VAR_HOENN_TRICK_PUZZLE_8_STATE",
+    "FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1": "FLAG_HOENN_TRICK_PUZZLE_7_SWITCH_1",
+    "FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_2": "FLAG_HOENN_TRICK_PUZZLE_7_SWITCH_2",
+    "FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_3": "FLAG_HOENN_TRICK_PUZZLE_7_SWITCH_3",
+    "FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_4": "FLAG_HOENN_TRICK_PUZZLE_7_SWITCH_4",
+    "FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_5": "FLAG_HOENN_TRICK_PUZZLE_7_SWITCH_5",
+    "ITEM_TM_TAUNT": "ITEM_TM12",
+    "OBJ_EVENT_GFX_MAN_1": "OBJ_EVENT_GFX_MAN",
+    "OBJ_EVENT_GFX_CUTTABLE_TREE": "OBJ_EVENT_GFX_CUT_TREE",
+    "FLAG_HIDE_TRICK_HOUSE_ENTRANCE_MAN": "FLAG_HOENN_HIDE_TRICK_MASTER_ENTRANCE",
+    "FLAG_HIDE_TRICK_HOUSE_END_MAN": "FLAG_HOENN_HIDE_TRICK_MASTER_END",
+    "Common_EventScript_BagIsFull": "EventScript_BagIsFull",
+    "OBJ_EVENT_GFX_BREAKABLE_ROCK": "OBJ_EVENT_GFX_ROCK_SMASH_ROCK",
+    "MULTI_MECHADOLL1_Q1": "MULTICHOICE_MECHADOLL1_Q1",
+    "MULTI_MECHADOLL1_Q2": "MULTICHOICE_MECHADOLL1_Q2",
+    "MULTI_MECHADOLL1_Q3": "MULTICHOICE_MECHADOLL1_Q3",
+    "MULTI_MECHADOLL2_Q1": "MULTICHOICE_MECHADOLL2_Q1",
+    "MULTI_MECHADOLL2_Q2": "MULTICHOICE_MECHADOLL2_Q2",
+    "MULTI_MECHADOLL2_Q3": "MULTICHOICE_MECHADOLL2_Q3",
+    "MULTI_MECHADOLL3_Q1": "MULTICHOICE_MECHADOLL3_Q1",
+    "MULTI_MECHADOLL3_Q2": "MULTICHOICE_MECHADOLL3_Q2",
+    "MULTI_MECHADOLL3_Q3": "MULTICHOICE_MECHADOLL3_Q3",
+    "MULTI_MECHADOLL4_Q1": "MULTICHOICE_MECHADOLL4_Q1",
+    "MULTI_MECHADOLL4_Q2": "MULTICHOICE_MECHADOLL4_Q2",
+    "MULTI_MECHADOLL4_Q3": "MULTICHOICE_MECHADOLL4_Q3",
+    "MULTI_MECHADOLL5_Q1": "MULTICHOICE_MECHADOLL5_Q1",
+    "MULTI_MECHADOLL5_Q2": "MULTICHOICE_MECHADOLL5_Q2",
+    "MULTI_MECHADOLL5_Q3": "MULTICHOICE_MECHADOLL5_Q3",
+    "MULTI_TENT": "MULTICHOICE_TRICK_PRIZE"
+  },
+  "regex": [
+    [
+      "\\bTRAINER_(?!HOENN_|TYPE_|BATTLE_|PIC_|CLASS_|ENCOUNTER_)([A-Z0-9_]+)\\b",
+      "TRAINER_HOENN_\\1"
+    ],
+    [
+      "\\tapplywaitmovement (\\w+), (\\w+)\\n",
+      "\\tapplymovement \\1, \\2\n\twaitmovement 0\n"
+    ],
+    [
+      "\\tdofieldeffectsparkle (\\w+), (\\w+), (\\w+)\\n",
+      "\\tsetfieldeffectargument 0, \\1\n\tsetfieldeffectargument 1, \\2\n\tsetfieldeffectargument 2, \\3\n\tdofieldeffect FLDEFF_SPARKLE\n"
+    ],
+    [
+      "Route110_TrickHouseEnd_EventScript_GiveRedTent::\\n\\tgivedecoration DECOR_RED_TENT\\n\\treturn\\n",
+      "Route110_TrickHouseEnd_EventScript_GiveRedTent::\\n\\tgiveitem_msg Route110_TrickHouseEnd_Text_ReceivedPrize, ITEM_AMULET_COIN\\n\\treturn\\n"
+    ],
+    [
+      "Route110_TrickHouseEnd_EventScript_GiveBlueTent::\\n\\tgivedecoration DECOR_BLUE_TENT\\n\\treturn\\n",
+      "Route110_TrickHouseEnd_EventScript_GiveBlueTent::\\n\\tgiveitem_msg Route110_TrickHouseEnd_Text_ReceivedPrize, ITEM_EXP_SHARE\\n\\treturn\\n"
+    ],
+    [
+      "\\tcall Common_EventScript_NoRoomForDecor\\n",
+      "\\tcall EventScript_BagIsFull\\n"
+    ],
+    [
+      "Route110_TrickHouseEntrance_EventScript_GiveRedTent::\\n\\tgivedecoration DECOR_RED_TENT\\n\\treturn\\n",
+      "Route110_TrickHouseEntrance_EventScript_GiveRedTent::\\n\\tgiveitem_msg Route110_TrickHouseEntrance_Text_ReceivedPrize, ITEM_AMULET_COIN\\n\\treturn\\n"
+    ],
+    [
+      "Route110_TrickHouseEntrance_EventScript_GiveBlueTent::\\n\\tgivedecoration DECOR_BLUE_TENT\\n\\treturn\\n",
+      "Route110_TrickHouseEntrance_EventScript_GiveBlueTent::\\n\\tgiveitem_msg Route110_TrickHouseEntrance_Text_ReceivedPrize, ITEM_EXP_SHARE\\n\\treturn\\n"
+    ],
+    [
+      "\\tcall_if_eq VAR_RESULT, FALSE, Common_EventScript_NoRoomForDecor\\n",
+      "\\tcall_if_eq VAR_RESULT, FALSE, EventScript_BagIsFull\\n"
+    ]
+  ],
+  "drop_lines": [
+    "FLAG_LANDMARK_",
+    "setvar VAR_ICE_STEP_COUNT",
+    "call_if_unset FLAG_BADGE0[3-8]_GET",
+    "special RotatingGate_InitPuzzle",
+    "special RotatingGate_InitPuzzleAndGraphics"
+  ]
+}

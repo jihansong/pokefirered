@@ -1,52 +1,49 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 VerdanturfTown_Text_H0::
-	.string "The way the winds blow, volcanic ash\n"
-	.string "is never blown in this direction.\p"
-	.string "The air is clean and delicious here.\n"
-	.string "Living here should do wonders for\l"
-	.string "even frail and sickly people.$"
+    .string "The wind comes off the highland and\n"
+    .string "takes the dust with it.\p"
+    .string "People are sent here to get well.\n"
+    .string "Some of them stay and never leave.$"
 
 VerdanturfTown_Text_H1::
-	.string "My papa told me.\p"
-	.string "He says this tunnel is full of\n"
-	.string "timid POKéMON.\p"
-	.string "They get all scared of loud noise\n"
-	.string "and make a big uproar.\p"
-	.string "So they had to stop the big tunnel\n"
-	.string "project.\p"
-	.string "But there's one man. He's trying to\n"
-	.string "dig the tunnel by himself!$"
+    .string "Papa says the POKéMON in the tunnel\n"
+    .string "are timid.\p"
+    .string "Loud noise sets them off, so they\n"
+    .string "stopped digging it.\p"
+    .string "One man kept digging anyway. He's\n"
+    .string "still in there.$"
 
 VerdanturfTown_Text_H2::
-	.string "Did you see the cave next to the\n"
-	.string "POKéMON MART?\p"
-	.string "There's a guy in there who's trying\n"
-	.string "to bust up boulders so he can bust\l"
-	.string "out through to the other side.\p"
-	.string "It'd be great if we could go\n"
-	.string "through… It'll make it easy to visit\l"
-	.string "RUSTBORO.$"
+    .string "The cave by the MART goes west,\n"
+    .string "towards RUSTBORO.\p"
+    .string "It doesn't go through yet.\n"
+    .string "Boulders. Lots of them.$"
 
 VerdanturfTown_Text_H3::
-	.string "My POKéMON and I, we've been riding\n"
-	.string "a hot winning streak.\p"
-	.string "So I decided to make my BATTLE\n"
-	.string "TENT debut in this town.$"
+    .string "I came all this way for the BATTLE\n"
+    .string "TENT and found it shut.\p"
+    .string "So now I'm standing in a field\n"
+    .string "being healthy instead.$"
 
 VerdanturfTown_Text_H4::
-	.string "VERDANTURF TOWN\p"
-	.string "“The windswept highlands with the\n"
-	.string "sweet fragrance of grass.”$"
+    .string "VERDANTURF TOWN\p"
+    .string "“The windswept highland with the\n"
+    .string "sweet smell of grass.”$"
 
 VerdanturfTown_Text_H5::
-	.string "WANDA'S HOUSE$"
+    .string "WANDA'S HOUSE$"
 
 VerdanturfTown_Text_H6::
-	.string "BATTLE TENT VERDANTURF SITE\n"
-	.string "“Feast Your Eyes on Battles!”$"
+    .string "BATTLE TENT VERDANTURF SITE\p"
+    .string "“CLOSED WHILE WE LOOK FOR A NEW\n"
+    .string "TENT MASTER.”$"
 
 VerdanturfTown_Text_H7::
-	.string "RUSTURF TUNNEL\n"
-	.string "“Linking RUSTBORO and VERDANTURF\p"
-	.string "“The tunnel project has been\n"
-	.string "canceled.”$"
-
+    .string "RUSTURF TUNNEL\p"
+    .string "“Meant to link RUSTBORO and\n"
+    .string "VERDANTURF. Work suspended.”\p"
+    .string "Someone has scratched underneath:\n"
+    .string "NOT BY ME.$"
+@ END PATCH

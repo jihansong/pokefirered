@@ -9,3 +9,70 @@ VerdanturfTown_FriendshipRatersHouse_EventScript_H1::
 	msgbox VerdanturfTown_FriendshipRatersHouse_Text_H1, MSGBOX_NPC
 	end
 
+@ BEGIN PATCH (tools/hoenn_import/patches)
+@ The friendship rater, wired to FR/LG's own GetLeadMonFriendship.
+@ WANDA has to vouch for the player first (event 6).
+VerdanturfTown_FriendshipRatersHouse_EventScript_Rater::
+	lock
+	faceplayer
+	goto_if_unset FLAG_HOENN_MET_WANDA, VerdanturfTown_FriendshipRatersHouse_EventScript_Stranger
+	msgbox VerdanturfTown_FriendshipRatersHouse_Text_Rate
+	specialvar VAR_RESULT, CountPartyNonEggMons
+	goto_if_eq VAR_RESULT, 0, VerdanturfTown_FriendshipRatersHouse_EventScript_NoMon
+	specialvar VAR_RESULT, GetLeadMonFriendship
+	switch VAR_RESULT
+	case 0, VerdanturfTown_FriendshipRatersHouse_EventScript_R0
+	case 1, VerdanturfTown_FriendshipRatersHouse_EventScript_R1
+	case 2, VerdanturfTown_FriendshipRatersHouse_EventScript_R2
+	case 3, VerdanturfTown_FriendshipRatersHouse_EventScript_R3
+	case 4, VerdanturfTown_FriendshipRatersHouse_EventScript_R4
+	case 5, VerdanturfTown_FriendshipRatersHouse_EventScript_R5
+	case 6, VerdanturfTown_FriendshipRatersHouse_EventScript_R6
+	release
+	end
+
+VerdanturfTown_FriendshipRatersHouse_EventScript_Stranger::
+	msgbox VerdanturfTown_FriendshipRatersHouse_Text_H0
+	release
+	end
+
+VerdanturfTown_FriendshipRatersHouse_EventScript_NoMon::
+	msgbox VerdanturfTown_FriendshipRatersHouse_Text_NoMon
+	release
+	end
+
+VerdanturfTown_FriendshipRatersHouse_EventScript_R0::
+	msgbox VerdanturfTown_FriendshipRatersHouse_Text_R0
+	release
+	end
+
+VerdanturfTown_FriendshipRatersHouse_EventScript_R1::
+	msgbox VerdanturfTown_FriendshipRatersHouse_Text_R1
+	release
+	end
+
+VerdanturfTown_FriendshipRatersHouse_EventScript_R2::
+	msgbox VerdanturfTown_FriendshipRatersHouse_Text_R2
+	release
+	end
+
+VerdanturfTown_FriendshipRatersHouse_EventScript_R3::
+	msgbox VerdanturfTown_FriendshipRatersHouse_Text_R3
+	release
+	end
+
+VerdanturfTown_FriendshipRatersHouse_EventScript_R4::
+	msgbox VerdanturfTown_FriendshipRatersHouse_Text_R4
+	release
+	end
+
+VerdanturfTown_FriendshipRatersHouse_EventScript_R5::
+	msgbox VerdanturfTown_FriendshipRatersHouse_Text_R5
+	release
+	end
+
+VerdanturfTown_FriendshipRatersHouse_EventScript_R6::
+	msgbox VerdanturfTown_FriendshipRatersHouse_Text_R6
+	release
+	end
+@ END PATCH

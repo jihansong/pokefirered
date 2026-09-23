@@ -35,6 +35,7 @@ Exit status 1 when there is an ERROR (0 with --no-fail).
 """
 import argparse
 import collections
+import glob
 import json
 import os
 import re
@@ -88,6 +89,39 @@ def retail_warp_tiles(name):
         return None
 
 
+
+WARP_CMD_RE = re.compile(r'^\s*(?:warp|warpsilent|warpdoor|warphole|warpteleport|warpspinenter|setwarp|setdynamicwarp)'
+                         r'\s+(MAP_\w+)\s*(?:,\s*(-?\d+)\s*(?:,\s*(-?\d+)\s*(?:,\s*(-?\d+))?)?)?')
+SETMETATILE_RE = re.compile(r'^\s*setmetatile\s+(\d+)\s*,\s*(\d+)\s*,')
+
+
+def script_warp_targets():
+    """Where scripts send the player, and which tiles scripts rewrite.
+
+    arrivals: {(MAP_X, x, y)} and {(MAP_X, warpId)} - a warp event there is an
+    arrival spot, so it does not have to be a tile the player can step on.
+    opened:   {(map name, x, y)} - a script setmetatiles that spot, which is how
+    hidden stairs and sealed doors are opened.
+    """
+    arrivals, opened = set(), set()
+    files = glob.glob(C.rel('data/maps/*/scripts.inc')) + glob.glob(C.rel('data/scripts/*.inc'))
+    for f in files:
+        name = os.path.basename(os.path.dirname(f))
+        for line in open(f, encoding='utf-8', errors='replace'):
+            line = line.split('@')[0]
+            m = WARP_CMD_RE.match(line)
+            if m:
+                target, a, b = m.group(1), m.group(2), m.group(3)
+                if b is not None:
+                    arrivals.add((target, int(a), int(b)))
+                elif a is not None:
+                    arrivals.add((target, int(a)))
+            m = SETMETATILE_RE.match(line)
+            if m:
+                opened.add((name, int(m.group(1)), int(m.group(2))))
+    return arrivals, opened
+
+
 def check_warps(maps, ids, scripts, rep):
     for name, d in maps.items():
         for i, w in enumerate(d.get('warp_events') or []):
@@ -113,12 +147,22 @@ def check_warps(maps, ids, scripts, rep):
     # warp events on tiles that are not warp tiles: they only work once a script
     # swaps the metatile (E4 doors, TERRA CAVE, ALTERING CAVE...), or never
     mt = C.Metatiles()
+    arrivals, opened = script_warp_targets()
+    arrival_maps = {a[0] for a in arrivals}
     inert = collections.defaultdict(list)
     ours = collections.defaultdict(list)
     for name, d in maps.items():
         retail = retail_warp_tiles(name)
         for i, w in enumerate(d.get('warp_events') or []):
             if mt.warp_is_live(d, w) is not False:
+                continue
+            # A warp tile nothing can step on is still fine when the player
+            # never has to step on it: a script warps them onto it, a script
+            # warps them into the map on the other side (so this one is only the
+            # way back), or a script swaps the metatile underneath it.
+            if (d['id'], w['x'], w['y']) in arrivals or (d['id'], i) in arrivals \
+                    or (name, w['x'], w['y']) in opened \
+                    or any(t == w['dest_map'] for t in arrival_maps):
                 continue
             entry = (f'{i} ({w["x"]},{w["y"]})->{w["dest_map"].replace("MAP_", "")}'
                      f' [{mt.mb_name.get(mt.behavior(d["layout"], w["x"], w["y"]), "?")}]')

@@ -30,10 +30,45 @@ def apply(name):
         m = json.load(open(os.path.join(d, 'map.json')))
         extra = json.load(open(os.path.join(P, name + '.json')))
         for key, items in extra.items():
+            if key == 'map_fields':
+                m.update(items)          # header fields (requires_flash, weather...)
+                continue
+            if key == 'coord_overrides':
+                for ov in items:
+                    ov = dict(ov)
+                    at = (ov.pop('x'), ov.pop('y'))
+                    for c in m.get('coord_events') or []:
+                        if (c['x'], c['y']) == at:
+                            c.update(ov)
+                            break
+                    else:
+                        sys.exit('%s: no trigger at %s' % (name, at))
+                continue
+            if key == 'bg_overrides':
+                # point imported signs/triggers at scripts of the story's own, by tile
+                for ov in items:
+                    ov = dict(ov)
+                    at = (ov.pop('x'), ov.pop('y'))
+                    for b in m.get('bg_events') or []:
+                        if (b['x'], b['y']) == at:
+                            b.update(ov)
+                            break
+                    else:
+                        sys.exit('%s: no sign at %s' % (name, at))
+                continue
             if key == 'object_overrides':
                 # change fields of an imported object (usually to point it at a new script)
                 for ov in items:
                     ov = dict(ov)
+                    if 'x' in ov and 'y' in ov:      # matched by tile, the reliable key
+                        at = (ov.pop('x'), ov.pop('y'))
+                        for o in m.get('object_events') or []:
+                            if (o['x'], o['y']) == at:
+                                o.update(ov)
+                                break
+                        else:
+                            sys.exit('%s: no object at %s' % (name, at))
+                        continue
                     match = ov.pop('match_script')
                     # an already patched map matches on the new script instead
                     for o in m['object_events']:

@@ -1,14 +1,17 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 VerdanturfTown_House_Text_H0::
-	.string "Far away, deep in EVER GRANDE CITY,\n"
-	.string "is the POKéMON LEAGUE.\p"
-	.string "The TRAINERS who gather there are\n"
-	.string "all frighteningly well skilled.$"
+    .string "The POKéMON LEAGUE here is off at\n"
+    .string "EVER GRANDE, across the water.\p"
+    .string "Nobody I know has seen it.$"
 
 VerdanturfTown_House_Text_H1::
-	.string "In the POKéMON LEAGUE, I think the\n"
-	.string "rules say that you have to battle\l"
-	.string "the ELITE FOUR all in a row.\p"
-	.string "If you lose to any of them, you\n"
-	.string "have to begin your challenge again\l"
-	.string "from the first one.$"
-
+    .string "They say the ELITE FOUR there are\n"
+    .string "fought one after another with no\l"
+    .string "stop in between.\p"
+    .string "Lose to any of them and you start\n"
+    .string "at the first one again.\p"
+    .string "That's how KANTO does it too,\n"
+    .string "isn't it?$"
+@ END PATCH

@@ -19,30 +19,30 @@
 #define VAR_HOENN_BADGE_NPC_STATE      (HOENN_VARS_START + 11)  // 배지 기록처 NPC가 마지막으로 알려 준 배지 수
 
 // Still free: the rest of the block, named so scripts can use them as they go.
-#define VAR_HOENN_0x0C                 (HOENN_VARS_START + 12)
-#define VAR_HOENN_0x0D                 (HOENN_VARS_START + 13)
-#define VAR_HOENN_0x0E                 (HOENN_VARS_START + 14)
-#define VAR_HOENN_0x0F                 (HOENN_VARS_START + 15)
-#define VAR_HOENN_0x10                 (HOENN_VARS_START + 16)
-#define VAR_HOENN_0x11                 (HOENN_VARS_START + 17)
-#define VAR_HOENN_0x12                 (HOENN_VARS_START + 18)
-#define VAR_HOENN_0x13                 (HOENN_VARS_START + 19)
-#define VAR_HOENN_0x14                 (HOENN_VARS_START + 20)
-#define VAR_HOENN_0x15                 (HOENN_VARS_START + 21)
-#define VAR_HOENN_0x16                 (HOENN_VARS_START + 22)
-#define VAR_HOENN_0x17                 (HOENN_VARS_START + 23)
-#define VAR_HOENN_0x18                 (HOENN_VARS_START + 24)
-#define VAR_HOENN_0x19                 (HOENN_VARS_START + 25)
-#define VAR_HOENN_0x1A                 (HOENN_VARS_START + 26)
-#define VAR_HOENN_0x1B                 (HOENN_VARS_START + 27)
-#define VAR_HOENN_0x1C                 (HOENN_VARS_START + 28)
-#define VAR_HOENN_0x1D                 (HOENN_VARS_START + 29)
-#define VAR_HOENN_0x1E                 (HOENN_VARS_START + 30)
-#define VAR_HOENN_0x1F                 (HOENN_VARS_START + 31)
-#define VAR_HOENN_0x20                 (HOENN_VARS_START + 32)
-#define VAR_HOENN_0x21                 (HOENN_VARS_START + 33)
-#define VAR_HOENN_0x22                 (HOENN_VARS_START + 34)
-#define VAR_HOENN_0x23                 (HOENN_VARS_START + 35)
+#define VAR_HOENN_MAUVILLE_GYM_STATE   (HOENN_VARS_START + 12)  // 무한 체육관 배리어 퍼즐: 마지막으로 밟은 스위치(0~4)
+#define VAR_HOENN_SCENE_MAUVILLE       (HOENN_VARS_START + 13)  // 2단계 무한시티 진행
+#define VAR_HOENN_CYCLING_RECORD       (HOENN_VARS_START + 14)  // 자전거 도로 최고 기록(초)
+#define VAR_HOENN_CYCLING_STATE        (HOENN_VARS_START + 15)  // 타임트라이얼 상태(0 없음, 1 달리는 중)
+#define VAR_HOENN_TRICK_HOUSE_STAGE    (HOENN_VARS_START + 16)  // 트릭하우스 진행(0~8)
+#define VAR_HOENN_TRICK_HOUSE_FOUND    (HOENN_VARS_START + 17)  // 이번 퍼즐에서 트릭 마스터를 찾았는지
+#define VAR_HOENN_NEW_MAUVILLE_STATE   (HOENN_VARS_START + 18)  // 뉴 무한 발전기 진행
+#define VAR_HOENN_TRICK_BEING_WATCHED_STATE (HOENN_VARS_START + 19)  // 트릭하우스
+#define VAR_HOENN_TRICK_ENTER_FROM_CORRIDOR (HOENN_VARS_START + 20)  // 트릭하우스
+#define VAR_HOENN_TRICK_ENTRANCE_STATE (HOENN_VARS_START + 21)  // 트릭하우스
+#define VAR_HOENN_TRICK_FOUND_TRICK_MASTER (HOENN_VARS_START + 22)  // 트릭하우스
+#define VAR_HOENN_TRICK_LEVEL          (HOENN_VARS_START + 23)  // 트릭하우스
+#define VAR_HOENN_TRICK_PRIZE_PICKUP   (HOENN_VARS_START + 24)  // 트릭하우스
+#define VAR_HOENN_TRICK_PUZZLE_1_STATE (HOENN_VARS_START + 25)  // 트릭하우스
+#define VAR_HOENN_TRICK_PUZZLE_2_STATE (HOENN_VARS_START + 26)  // 트릭하우스
+#define VAR_HOENN_TRICK_PUZZLE_3_STATE (HOENN_VARS_START + 27)  // 트릭하우스
+#define VAR_HOENN_TRICK_PUZZLE_4_STATE (HOENN_VARS_START + 28)  // 트릭하우스
+#define VAR_HOENN_TRICK_PUZZLE_5_STATE (HOENN_VARS_START + 29)  // 트릭하우스
+#define VAR_HOENN_TRICK_PUZZLE_6_STATE (HOENN_VARS_START + 30)  // 트릭하우스
+#define VAR_HOENN_TRICK_PUZZLE_7_STATE (HOENN_VARS_START + 31)  // 트릭하우스
+#define VAR_HOENN_TRICK_PUZZLE_7_STATE_2 (HOENN_VARS_START + 32)  // 트릭하우스
+#define VAR_HOENN_TRICK_PUZZLE_8_STATE (HOENN_VARS_START + 33)  // 트릭하우스
+#define VAR_HOENN_CYCLING_START        (HOENN_VARS_START + 34)  // 타임트라이얼 시작 시각(초, u16)
+#define VAR_HOENN_WATTSON_REMATCH_DAY  (HOENN_VARS_START + 35)  // WATTSON 재대결을 마지막으로 한 게임 시계 날짜 + 1
 #define VAR_HOENN_0x24                 (HOENN_VARS_START + 36)
 #define VAR_HOENN_0x25                 (HOENN_VARS_START + 37)
 #define VAR_HOENN_0x26                 (HOENN_VARS_START + 38)

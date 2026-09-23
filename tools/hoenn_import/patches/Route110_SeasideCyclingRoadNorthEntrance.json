@@ -1,0 +1,9 @@
+{
+  "object_overrides": [
+    {
+      "x": 7,
+      "y": 2,
+      "script": "Route110_SeasideCyclingRoadNorthEntrance_EventScript_Attendant"
+    }
+  ]
+}

@@ -1,63 +1,66 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 MauvilleCity_Text_H0::
-	.string "You know, it's cool to have POKéMON\n"
-	.string "battles and stuff…\p"
-	.string "But if your POKéMON gets hurt,\n"
-	.string "you have to nurse it back to health.$"
+    .string "Four roads meet here and all four\n"
+    .string "of them are busy.\p"
+    .string "If your POKéMON are tired, the\n"
+    .string "CENTRE is the building with the\l"
+    .string "red roof. It always is.$"
 
 MauvilleCity_Text_H1::
-	.string "Even if you're riding a BIKE,\n"
-	.string "wild POKéMON could jump you.$"
+    .string "A bicycle doesn't keep wild\n"
+    .string "POKéMON off you.\p"
+    .string "It only means you meet them\n"
+    .string "sooner.$"
 
 MauvilleCity_Text_H2::
-	.string "The roads of this town stretch north\n"
-	.string "and south, and east and west.\p"
-	.string "Because of that, we get all sorts of\n"
-	.string "people coming through.$"
+    .string "North, south, east, west, all from\n"
+    .string "this one square.\p"
+    .string "Half the people you see here are\n"
+    .string "only passing through. Like you.$"
 
 MauvilleCity_Text_H3::
-	.string "Have you been to RYDEL'S CYCLES\n"
-	.string "yet?\p"
-	.string "RYDEL, the owner, is a very generous\n"
-	.string "man.$"
+    .string "RYDEL'S CYCLES is across the way.\p"
+    .string "He mends anything with two wheels\n"
+    .string "and talks the whole time he does\l"
+    .string "it.$"
 
 MauvilleCity_Text_H4::
-	.string "Hi, do you check out TV at all?\p"
-	.string "They've added a bunch of cool new\n"
-	.string "shows recently.\p"
-	.string "TV is so cool. I've seen my friends\n"
-	.string "on TV just out of the blue.\p"
-	.string "And, sometimes, they even put you on\n"
-	.string "TV without telling you.\p"
-	.string "I wish I would be on TV sometime.\p"
-	.string "That's why I think you should check\n"
-	.string "out TVs whenever you can.$"
+    .string "They put a clock on the CYCLING\n"
+    .string "ROAD.\p"
+    .string "Now everyone who goes down it\n"
+    .string "comes back up to argue about\l"
+    .string "seconds.$"
 
 MauvilleCity_Text_H5::
-	.string "Did you know that you can go from\n"
-	.string "here a long way in that direction\l"
-	.string "without changing direction?\p"
-	.string "I might even be able to roll\n"
-	.string "that way.\p"
-	.string "Do you think your POKéMON will\n"
-	.string "want to roll, too?\p"
-	.string "I can teach one the move ROLLOUT\n"
-	.string "if you'd like.$"
+    .string "Under this city there's a whole\n"
+    .string "facility nobody visits.\p"
+    .string "WATTSON built it, then locked it,\n"
+    .string "and now it hums at night.$"
 
 MauvilleCity_Text_H6::
-	.string "MAUVILLE CITY POKéMON GYM\n"
-	.string "LEADER: WATTSON\l"
-	.string "“The cheerfully electrifying man!”$"
+    .string "MAUVILLE CITY POKéMON GYM\n"
+    .string "LEADER: WATTSON\l"
+    .string "“The current runs through him.”$"
 
 MauvilleCity_Text_H7::
-	.string "MAUVILLE CITY\n"
-	.string "“The bright and shiny city of fun!”$"
+    .string "MAUVILLE CITY\n"
+    .string "“Where the four roads argue.”$"
 
 MauvilleCity_Text_H8::
-	.string "“Ride in gravel and shake up your\n"
-	.string "soul!”\l"
-	.string "RYDEL'S CYCLES$"
+    .string "“RYDEL'S CYCLES - repairs while\n"
+    .string "you wait, whether you wanted to\l"
+    .string "wait or not.”$"
 
 MauvilleCity_Text_H9::
-	.string "“The play spot for all!”\n"
-	.string "MAUVILLE GAME CORNER$"
-
+    .string "“GAME CORNER - coins in, coins\n"
+    .string "out, mostly in.”$"
+MauvilleCity_Text_NorthNotice::
+    .string "NOTICE\p"
+    .string "The road north to ROUTE 111 is shut\n"
+    .string "while the sandstorm fencing is put\l"
+    .string "back up.\p"
+    .string "The desert eats fence posts. Ask\n"
+    .string "anyone in MAUVILLE.$"
+@ END PATCH

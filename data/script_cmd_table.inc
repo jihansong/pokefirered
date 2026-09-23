@@ -214,6 +214,10 @@ gScriptCmdTable::
 	.4byte ScrCmd_setmonmetlocation              @ 0xd2
 	.4byte ScrCmd_getbraillestringwidth          @ 0xd3
 	.4byte ScrCmd_bufferitemnameplural           @ 0xd4
+	.4byte ScrCmd_moverotatingtileobjects        @ 0xd5
+	.4byte ScrCmd_turnrotatingtileobjects        @ 0xd6
+	.4byte ScrCmd_initrotatingtilepuzzle         @ 0xd7
+	.4byte ScrCmd_freerotatingtilepuzzle         @ 0xd8
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

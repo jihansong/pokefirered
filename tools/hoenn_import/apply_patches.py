@@ -61,7 +61,14 @@ def apply(name):
         p = os.path.join(P, '%s.%s' % (name, kind))
         cur = strip(open(os.path.join(d, kind)).read()).rstrip('\n') + '\n'
         if os.path.exists(p):
-            cur += '\n' + BEGIN + open(p).read().rstrip('\n') + '\n' + END
+            patch = open(p).read().rstrip('\n')
+            # A patch that defines a label the import generated replaces it: that is how
+            # the rewritten dialogue gets in front of Emerald's text without the import
+            # and the patch both defining it.
+            for lbl in re.findall(r'^(\w+)::', patch, re.M):
+                cur = re.sub(r'^%s::\n(?:[ \t].*\n)+\n?' % re.escape(lbl), '', cur, flags=re.M)
+            cur = cur.rstrip('\n') + '\n'
+            cur += '\n' + BEGIN + patch + '\n' + END
         open(os.path.join(d, kind), 'w').write(cur)
     print('patched ' + name)
 

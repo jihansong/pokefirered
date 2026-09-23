@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 Route117_Text_H0::
     .string "Look at them. Every one of these\n"
     .string "I put in myself.\p"
@@ -151,4 +148,3 @@ Route117_Text_H15::
     .string "POKéMON DAY CARE\p"
     .string "“Leave two. Come back later.\n"
     .string "No promises about what you get.”$"
-@ END PATCH

@@ -1,9 +1,3 @@
-Route110_Text_H31::
-	.string "THE BEST RECORD TO DATE…\p"
-	.string "No. of collisions: {STR_VAR_1}\p"
-	.string "Elapsed time: {STR_VAR_2}$"
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 Route110_Text_H0::
     .string "Which is it: straight up CYCLING\n"
     .string "ROAD to MAUVILLE, or the low road\l"
@@ -290,4 +284,3 @@ Route110_Text_BoardEmpty::
     .string "Nothing chalked on it yet.\p"
     .string "The gate staff start the clock at\n"
     .string "the north end.$"
-@ END PATCH

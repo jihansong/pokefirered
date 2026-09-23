@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 VerdanturfTown_Text_H0::
     .string "The wind comes off the highland and\n"
     .string "takes the dust with it.\p"
@@ -46,4 +43,3 @@ VerdanturfTown_Text_H7::
     .string "VERDANTURF. Work suspended.”\p"
     .string "Someone has scratched underneath:\n"
     .string "NOT BY ME.$"
-@ END PATCH

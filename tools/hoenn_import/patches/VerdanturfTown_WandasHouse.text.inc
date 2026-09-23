@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 VerdanturfTown_WandasHouse_Text_H0::
     .string "My daughter's young man is a\n"
     .string "stubborn sort.\p"
@@ -40,4 +37,3 @@ VerdanturfTown_WandasHouse_Text_WandaDone::
     .string "I mean.\p"
     .string "Say WANDA sent you, at the west\n"
     .string "house.$"
-@ END PATCH

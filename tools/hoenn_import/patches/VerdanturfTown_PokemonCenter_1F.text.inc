@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 VerdanturfTown_PokemonCenter_1F_Text_H0::
     .string "You can't call yourself a TRAINER\n"
     .string "if you don't trust what you\l"
@@ -21,4 +18,3 @@ VerdanturfTown_PokemonCenter_1F_Text_H2::
     .string "FURY CUTTER, it's called. Nobody\n"
     .string "in this town can teach it.\p"
     .string "I just like saying the name.$"
-@ END PATCH

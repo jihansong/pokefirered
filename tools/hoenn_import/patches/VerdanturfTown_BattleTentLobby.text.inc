@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 VerdanturfTown_BattleTentLobby_Text_H0::
     .string "Welcome to the BATTLE TENT\n"
     .string "VERDANTURF SITE.\p"
@@ -53,4 +50,3 @@ VerdanturfTown_BattleTentLobby_Text_NoRoom::
     .string "You've no room for it.\p"
     .string "I'll keep hold of it. I'm not going\n"
     .string "anywhere.$"
-@ END PATCH

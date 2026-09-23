@@ -1,15 +1,3 @@
-VerdanturfTown_FriendshipRatersHouse_MapScripts::
-	.byte 0
-
-VerdanturfTown_FriendshipRatersHouse_EventScript_H0::
-	msgbox VerdanturfTown_FriendshipRatersHouse_Text_H0, MSGBOX_NPC
-	end
-
-VerdanturfTown_FriendshipRatersHouse_EventScript_H1::
-	msgbox VerdanturfTown_FriendshipRatersHouse_Text_H1, MSGBOX_NPC
-	end
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 @ The friendship rater, wired to FR/LG's own GetLeadMonFriendship.
 @ WANDA has to vouch for the player first (event 6).
 VerdanturfTown_FriendshipRatersHouse_EventScript_Rater::
@@ -75,4 +63,3 @@ VerdanturfTown_FriendshipRatersHouse_EventScript_R6::
 	msgbox VerdanturfTown_FriendshipRatersHouse_Text_R6
 	release
 	end
-@ END PATCH

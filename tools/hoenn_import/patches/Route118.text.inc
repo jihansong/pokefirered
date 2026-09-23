@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 Route118_Text_H0_0::
     .string "Bird POKéMON in the air, that's\n"
     .string "the whole of it for me.\p"
@@ -117,4 +114,3 @@ Route118_Text_H10::
     .string "shut while the banks are rebuilt.\p"
     .string "Nobody is working on it today\n"
     .string "either.$"
-@ END PATCH

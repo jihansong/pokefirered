@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 VerdanturfTown_Mart_Text_H1::
     .string "X SPECIAL, for one battle only.\p"
     .string "Worth it against a GYM LEADER.\n"
@@ -17,4 +14,3 @@ VerdanturfTown_Mart_Text_H3::
     .string "the POKéMON is.\p"
     .string "VERDANTURF is the only town that\n"
     .string "stocks them.$"
-@ END PATCH

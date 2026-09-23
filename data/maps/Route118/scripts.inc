@@ -55,4 +55,3 @@ Route118_EventScript_H9::
 Route118_EventScript_H10::
 	msgbox Route118_Text_H10, MSGBOX_SIGN
 	end
-

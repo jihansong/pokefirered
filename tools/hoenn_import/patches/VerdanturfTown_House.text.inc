@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 VerdanturfTown_House_Text_H0::
     .string "The POKéMON LEAGUE here is off at\n"
     .string "EVER GRANDE, across the water.\p"
@@ -14,4 +11,3 @@ VerdanturfTown_House_Text_H1::
     .string "at the first one again.\p"
     .string "That's how KANTO does it too,\n"
     .string "isn't it?$"
-@ END PATCH

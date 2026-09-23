@@ -1,0 +1,5 @@
+{
+  "object_overrides": [
+    { "x": 3, "y": 4, "script": "VerdanturfTown_FriendshipRatersHouse_EventScript_Rater" }
+  ]
+}

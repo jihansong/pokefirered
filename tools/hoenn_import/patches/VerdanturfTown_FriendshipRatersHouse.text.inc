@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 VerdanturfTown_FriendshipRatersHouse_Text_H0::
     .string "I don't rate for strangers.\p"
     .string "People WANDA sends, yes. Anyone\n"
@@ -55,4 +52,3 @@ VerdanturfTown_FriendshipRatersHouse_Text_NoMon::
 
 VerdanturfTown_FriendshipRatersHouse_Text_H1::
     .string "PIKACHU: Pika pika!$"
-@ END PATCH

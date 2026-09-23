@@ -93,6 +93,8 @@
 #define MULTICHOICE_MECHADOLL5_Q3                              84
 #define MULTICHOICE_TRICK_PRIZE                                85
 
+#define MULTICHOICE_MAUVILLE_PRIZES                            86
+
 #define MULTICHOICE_NONE                                      255
 
 #define LISTMENU_BADGES                    0

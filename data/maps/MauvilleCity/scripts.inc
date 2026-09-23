@@ -51,4 +51,3 @@ MauvilleCity_EventScript_H8::
 MauvilleCity_EventScript_H9::
 	msgbox MauvilleCity_Text_H9, MSGBOX_SIGN
 	end
-

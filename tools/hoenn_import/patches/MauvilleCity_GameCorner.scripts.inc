@@ -1,55 +1,3 @@
-MauvilleCity_GameCorner_MapScripts::
-	.byte 0
-
-MauvilleCity_GameCorner_EventScript_H0::
-	msgbox MauvilleCity_GameCorner_Text_H0, MSGBOX_NPC
-	end
-
-MauvilleCity_GameCorner_EventScript_H1::
-	msgbox MauvilleCity_GameCorner_Text_H1, MSGBOX_NPC
-	end
-
-MauvilleCity_GameCorner_EventScript_H2::
-	msgbox MauvilleCity_GameCorner_Text_H2, MSGBOX_NPC
-	end
-
-MauvilleCity_GameCorner_EventScript_H3::
-	msgbox MauvilleCity_GameCorner_Text_H3, MSGBOX_NPC
-	end
-
-MauvilleCity_GameCorner_EventScript_H4::
-	msgbox MauvilleCity_GameCorner_Text_H4, MSGBOX_NPC
-	end
-
-MauvilleCity_GameCorner_EventScript_H5::
-	msgbox MauvilleCity_GameCorner_Text_H5, MSGBOX_NPC
-	end
-
-MauvilleCity_GameCorner_EventScript_H6::
-	msgbox MauvilleCity_GameCorner_Text_H6, MSGBOX_NPC
-	end
-
-MauvilleCity_GameCorner_EventScript_H7::
-	msgbox MauvilleCity_GameCorner_Text_H7, MSGBOX_NPC
-	end
-
-MauvilleCity_GameCorner_EventScript_H8::
-	msgbox MauvilleCity_GameCorner_Text_H8, MSGBOX_NPC
-	end
-
-MauvilleCity_GameCorner_EventScript_H9::
-	msgbox MauvilleCity_GameCorner_Text_H9, MSGBOX_NPC
-	end
-
-MauvilleCity_GameCorner_EventScript_H10::
-	msgbox MauvilleCity_GameCorner_Text_H10, MSGBOX_NPC
-	end
-
-MauvilleCity_GameCorner_EventScript_H11::
-	msgbox MauvilleCity_GameCorner_Text_H11, MSGBOX_NPC
-	end
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 @ MAUVILLE's GAME CORNER, made playable: the twelve machines run FR/LG's own
 @ slot game and pay into the COIN CASE from KANTO, and the counter takes coins
 @ back for prizes. The room came across with its people; the machines did not.
@@ -236,4 +184,3 @@ MauvilleCity_GameCorner_EventScript_PrizeNoRoom::
 	msgbox MauvilleCity_GameCorner_Text_PrizeNoRoom
 	goto MauvilleCity_GameCorner_EventScript_ClerkDone
 	end
-@ END PATCH

@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 MauvilleCity_BikeShop_Text_H0::
     .string "RYDEL'S CYCLES!\p"
     .string "That's a KANTO frame you're\n"
@@ -27,4 +24,3 @@ MauvilleCity_BikeShop_Text_H3::
     .string "Tyres, chains, brakes.\p"
     .string "Brakes matter most on that road,\n"
     .string "whatever the clock says.$"
-@ END PATCH

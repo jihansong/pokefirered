@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 MauvilleCity_Mart_Text_H1::
     .string "REPELS, if you're going down the\n"
     .string "coast road.\p"
@@ -11,4 +8,3 @@ MauvilleCity_Mart_Text_H2::
     .string "I buy my potions here and my\n"
     .string "coins next door.\p"
     .string "One of those is a better habit.$"
-@ END PATCH

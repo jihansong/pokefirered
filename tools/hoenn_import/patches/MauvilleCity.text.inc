@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 MauvilleCity_Text_H0::
     .string "Four roads meet here and all four\n"
     .string "of them are busy.\p"
@@ -56,4 +53,3 @@ MauvilleCity_Text_H8::
 MauvilleCity_Text_H9::
     .string "“GAME CORNER - coins in, coins\n"
     .string "out, mostly in.”$"
-@ END PATCH

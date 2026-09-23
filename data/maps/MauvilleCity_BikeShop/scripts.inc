@@ -16,4 +16,3 @@ MauvilleCity_BikeShop_EventScript_H2::
 MauvilleCity_BikeShop_EventScript_H3::
 	msgbox MauvilleCity_BikeShop_Text_H3, MSGBOX_SIGN
 	end
-

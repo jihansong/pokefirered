@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 MauvilleCity_GameCorner_Text_PlayThisMachine::
     .string "Play this machine?$"
 
@@ -98,4 +95,3 @@ MauvilleCity_GameCorner_Text_H11::
     .string "They opened the coast road and\n"
     .string "half my friends went to look.\p"
     .string "I stayed. Somebody has to.$"
-@ END PATCH

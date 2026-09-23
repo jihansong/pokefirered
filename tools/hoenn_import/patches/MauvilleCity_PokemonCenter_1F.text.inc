@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 MauvilleCity_PokemonCenter_1F_Text_H0::
     .string "Everyone who rides the coast road\n"
     .string "ends up in here afterwards.\p"
@@ -16,4 +13,3 @@ MauvilleCity_PokemonCenter_1F_Text_H2::
     .string "POKéMON obey any better.\p"
     .string "It only proves you got through his\n"
     .string "room.$"
-@ END PATCH

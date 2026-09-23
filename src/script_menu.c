@@ -581,6 +581,11 @@ static const struct MenuAction sMultichoiceList_Mechadoll5_Q2[] = { { sText_Coun
 static const struct MenuAction sMultichoiceList_Mechadoll5_Q3[] = { { sText_CountSix }, { sText_CountSeven }, { sText_CountEight } };
 static const struct MenuAction sMultichoiceList_TrickPrize[] = { { sText_AmuletCoin }, { sText_ExpShare } };
 
+static const u8 sText_PrizeNugget[] = _("NUGGET");
+static const u8 sText_PrizePPUp[] = _("PP UP");
+static const u8 sText_PrizeRareCandy[] = _("RARE CANDY");
+static const struct MenuAction sMultichoiceList_MauvillePrizes[] = { { sText_PrizeNugget }, { sText_PrizePPUp }, { sText_PrizeRareCandy } };
+
 static const struct MultichoiceListStruct sMultichoiceLists[] = {
     [MULTICHOICE_YES_NO]                                     = MULTICHOICE(sMultichoiceList_YesNo),
     [MULTICHOICE_EEVEELUTIONS]                               = MULTICHOICE(sMultichoiceList_Eeveelutions),
@@ -668,6 +673,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] = {
     [MULTICHOICE_MECHADOLL5_Q2]             = MULTICHOICE(sMultichoiceList_Mechadoll5_Q2),
     [MULTICHOICE_MECHADOLL5_Q3]             = MULTICHOICE(sMultichoiceList_Mechadoll5_Q3),
     [MULTICHOICE_TRICK_PRIZE]                                = MULTICHOICE(sMultichoiceList_TrickPrize),
+    [MULTICHOICE_MAUVILLE_PRIZES]                            = MULTICHOICE(sMultichoiceList_MauvillePrizes),
 };
 
 // From Cool to Berries goes unused

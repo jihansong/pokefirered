@@ -1,7 +1,3 @@
-Route117_PokemonDayCare_MapScripts::
-	.byte 0
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 @ The one breeding day care. It shares the save's day care pair with FOUR
 @ ISLAND (SaveBlock1.daycare), so a POKeMON left here can be collected there and
 @ the other way round -- one service, two counters. A male and a female left
@@ -193,4 +189,3 @@ Route117_PokemonDayCare_EventScript_UnusedRetrieveMon::
 	msgbox DayCare_Text_ComeAgain
 	release
 	end
-@ END PATCH

@@ -1,0 +1,9 @@
+{
+  "object_overrides": [
+    {
+      "x": 2,
+      "y": 2,
+      "script": "Route117_PokemonDayCare_EventScript_DaycareWoman"
+    }
+  ]
+}

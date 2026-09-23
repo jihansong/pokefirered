@@ -151,4 +151,3 @@ Route117_Text_H14::
 Route117_Text_H15::
 	.string "POKéMON DAY CARE\n"
 	.string "“Let us raise your POKéMON.”$"
-

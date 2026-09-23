@@ -508,4 +508,5 @@ gSpecials::
 	def_special Tournament_NextRound
 	def_special Tournament_Reset
 	def_special SummitTrainer_RecordWin
+	def_special CountHoennBadges
 gSpecialsEnd::

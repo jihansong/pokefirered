@@ -1,18 +1,3 @@
-SlateportCity_PokemonCenter_1F_Text_H0::
-	.string "Want a tip for battling?\p"
-	.string "I'd say it's raising different kinds\n"
-	.string "of POKéMON in a balanced manner.\p"
-	.string "It's no good to make just one\n"
-	.string "POKéMON strong.\p"
-	.string "If it has a type disadvantage,\n"
-	.string "it might not stand a chance.$"
-
-SlateportCity_PokemonCenter_1F_Text_H1::
-	.string "I trade POKéMON with my friends.\p"
-	.string "If a traded POKéMON is holding an\n"
-	.string "item, it makes me twice as happy!$"
-
-
 SlateportCity_PokemonCenter_1F_Text_RumorIntro::
     .string "I write down what the sailors say\n"
     .string "when they come ashore.\p"

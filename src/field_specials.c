@@ -3187,3 +3187,19 @@ bool8 PartyHasSpecies(void)
     }
     return FALSE;
 }
+
+// HOENN hands out BADGES of its own, but the trainer card's badge row is part
+// of the save and belongs to KANTO's eight, so HOENN's are plain flags (see
+// constants/flags_hoenn_story.h) and the harbour's keeper reads them out.
+u16 CountHoennBadges(void)
+{
+    u16 i;
+    u16 count = 0;
+
+    for (i = 0; i < 8; i++)
+    {
+        if (FlagGet(FLAG_HOENN_BADGE01_GET + i))
+            count++;
+    }
+    return count;
+}

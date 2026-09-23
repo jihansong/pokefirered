@@ -149,3 +149,23 @@ MauvilleCity_Gym_Text_H5_2::
     .string "Straight up the middle when the\n"
     .string "barriers are down. That's the way\l"
     .string "he likes to be met.$"
+MauvilleCity_Gym_Text_WattsonRematch::
+    .string "WATTSON: Wahahaha! The lights are\n"
+    .string "steady and the city is quiet.\p"
+    .string "Which leaves me with nothing to do\n"
+    .string "except get beaten again.\p"
+    .string "One more? I've had a day to think\n"
+    .string "about the last one.$"
+
+MauvilleCity_Gym_Text_WattsonRematchDefeat::
+    .string "WATTSON: Wahahaha!\n"
+    .string "Still you!$"
+
+MauvilleCity_Gym_Text_WattsonRematchAfter::
+    .string "WATTSON: That's my lot for today.\p"
+    .string "Come back tomorrow and I'll have\n"
+    .string "thought of something.$"
+
+MauvilleCity_Gym_Text_WattsonRematchDeclined::
+    .string "WATTSON: No? Fair enough.\p"
+    .string "I'll be here. I'm always here.$"

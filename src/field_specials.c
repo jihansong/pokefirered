@@ -3431,3 +3431,16 @@ void CyclingRoad_GetRecord(void)
 {
     gSpecialVar_Result = VarGet(VAR_HOENN_CYCLING_RECORD);
 }
+
+// Special: VAR_RESULT is TRUE when WATTSON will take a rematch today. He takes
+// one a game clock day, the way the summit TRAINER stands there once a day.
+void Wattson_CanRematch(void)
+{
+    gSpecialVar_Result = (VarGet(VAR_HOENN_WATTSON_REMATCH_DAY) != GetGameClockDay() + 1);
+}
+
+// Special: WATTSON has taken his rematch for today
+void Wattson_RecordRematch(void)
+{
+    VarSet(VAR_HOENN_WATTSON_REMATCH_DAY, GetGameClockDay() + 1);
+}

@@ -204,7 +204,27 @@ MauvilleCity_Gym_EventScript_WattsonReward::
 	goto_if_ge VAR_HOENN_STAGE1_PROGRESS, 7, MauvilleCity_Gym_EventScript_WattsonDone
 	setvar VAR_HOENN_STAGE1_PROGRESS, 7
 MauvilleCity_Gym_EventScript_WattsonDone::
+	special Wattson_CanRematch
+	goto_if_eq VAR_RESULT, TRUE, MauvilleCity_Gym_EventScript_WattsonOfferRematch
 	msgbox MauvilleCity_Gym_Text_WattsonPostBattle
+	release
+	end
+
+@ After NEW MAUVILLE he takes one rematch a game clock day, the same shape as
+@ the TRAINER on the summit of the snowbound mountain.
+MauvilleCity_Gym_EventScript_WattsonOfferRematch::
+	msgbox MauvilleCity_Gym_Text_WattsonRematch, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MauvilleCity_Gym_EventScript_WattsonRematchDeclined
+	special Wattson_RecordRematch
+	closemessage
+	cleartrainerflag TRAINER_HOENN_WATTSON_1
+	trainerbattle_no_intro TRAINER_HOENN_WATTSON_1, MauvilleCity_Gym_Text_WattsonRematchDefeat
+	msgbox MauvilleCity_Gym_Text_WattsonRematchAfter
+	release
+	end
+
+MauvilleCity_Gym_EventScript_WattsonRematchDeclined::
+	msgbox MauvilleCity_Gym_Text_WattsonRematchDeclined
 	release
 	end
 

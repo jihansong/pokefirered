@@ -517,4 +517,6 @@ gSpecials::
 	def_special CyclingRoad_StartRun
 	def_special CyclingRoad_FinishRun
 	def_special CyclingRoad_GetRecord
+	def_special Wattson_CanRematch
+	def_special Wattson_RecordRematch
 gSpecialsEnd::

@@ -58,22 +58,6 @@ SlateportCity_Harbor_Text_SternThanks::
     .string "A HOENN BADGE, so the harbor knows\l"
     .string "who I'm sending out on my errands.$"
 
-SlateportCity_Harbor_Text_SternGiveRequest::
-    .string "You've a HOENN BADGE on you now.\n"
-    .string "That's good enough for me.\p"
-    .string "There's a man living in GRANITE\n"
-    .string "CAVE off DEWFORD who reads stone\l"
-    .string "better than anyone on this coast.\p"
-    .string "Carry my survey request down to\n"
-    .string "him. I want him on the ship when\l"
-    .string "we go over that blank water.$"
-
-SlateportCity_Harbor_Text_SternWaiting::
-    .string "GRANITE CAVE, off DEWFORD. Go down\n"
-    .string "far enough and you'll find him.\p"
-    .string "Bring a light. He won't have one\n"
-    .string "to spare.$"
-
 SlateportCity_Harbor_Text_SternAskScanner::
     .string "He's coming aboard? Then I'll say\n"
     .string "the rest of it.\p"

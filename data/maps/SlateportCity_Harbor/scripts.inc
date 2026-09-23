@@ -66,20 +66,26 @@ SlateportCity_Harbor_EventScript_ArrivalScene::
 	releaseall
 	end
 
-@ STERN carries the rest of the zone: the survey request for GRANITE CAVE
-@ (event 4), then the SCANNER out of the wreck (event 5).
+@ STERN carries the rest of the zone: the survey errand into GRANITE CAVE
+@ (event 4), then the SCANNER out of the wreck and what it is worth (event 5).
 SlateportCity_Harbor_EventScript_Stern::
 	lock
 	faceplayer
 	goto_if_unset FLAG_HOENN_MUSEUM_DEFENDED, SlateportCity_Harbor_EventScript_SternMuseum
-	goto_if_unset FLAG_HOENN_SURVEY_LETTER_GOT, SlateportCity_Harbor_EventScript_SternGiveErrand
-	goto_if_unset FLAG_HOENN_SURVEY_LETTER_DONE, SlateportCity_Harbor_EventScript_SternErrandWaiting
-	msgbox SlateportCity_Harbor_Text_SternThanks
-	release
+	goto_if_set FLAG_HOENN_SCANNER_DELIVERED, SlateportCity_Harbor_EventScript_SternDone
+	goto_if_set FLAG_HOENN_SURVEY_LETTER_DONE, SlateportCity_Harbor_EventScript_SternScanner
+	goto_if_set FLAG_HOENN_SURVEY_LETTER_GOT, SlateportCity_Harbor_EventScript_SternErrandWaiting
+	goto_if_unset FLAG_HOENN_BADGE02_GET, SlateportCity_Harbor_EventScript_SternBadgeFirst
+	goto SlateportCity_Harbor_EventScript_SternGiveErrand
 	end
 
 SlateportCity_Harbor_EventScript_SternMuseum::
 	msgbox SlateportCity_Harbor_Text_SternMuseum
+	release
+	end
+
+SlateportCity_Harbor_EventScript_SternBadgeFirst::
+	msgbox SlateportCity_Harbor_Text_SternThanks
 	release
 	end
 
@@ -93,6 +99,60 @@ SlateportCity_Harbor_EventScript_SternGiveErrand::
 
 SlateportCity_Harbor_EventScript_SternErrandWaiting::
 	msgbox SlateportCity_Harbor_Text_SternErrandWaiting
+	release
+	end
+
+@ Event 5: the SCANNER in the wreck's captain's office, and the pick of what
+@ came up with it
+SlateportCity_Harbor_EventScript_SternScanner::
+	checkitem ITEM_SCANNER
+	goto_if_eq VAR_RESULT, TRUE, SlateportCity_Harbor_EventScript_SternTakeScanner
+	msgbox SlateportCity_Harbor_Text_SternAskScanner
+	setvar VAR_HOENN_STERN_REQUEST, 3
+	release
+	end
+
+SlateportCity_Harbor_EventScript_SternTakeScanner::
+	msgbox SlateportCity_Harbor_Text_SternGotScanner
+	removeitem ITEM_SCANNER
+	setflag FLAG_HOENN_SCANNER_DELIVERED
+	goto_if_ge VAR_HOENN_STAGE1_PROGRESS, 5, SlateportCity_Harbor_EventScript_SternChooseItem
+	setvar VAR_HOENN_STAGE1_PROGRESS, 5
+	goto SlateportCity_Harbor_EventScript_SternChooseItem
+	end
+
+SlateportCity_Harbor_EventScript_SternChooseItem::
+	msgbox SlateportCity_Harbor_Text_SternChoose, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SlateportCity_Harbor_EventScript_SternGiveScale
+	goto SlateportCity_Harbor_EventScript_SternGiveTooth
+	end
+
+SlateportCity_Harbor_EventScript_SternGiveTooth::
+	checkitemspace ITEM_DEEP_SEA_TOOTH
+	goto_if_eq VAR_RESULT, FALSE, SlateportCity_Harbor_EventScript_SternNoRoom
+	giveitem_msg SlateportCity_Harbor_Text_ReceivedTooth, ITEM_DEEP_SEA_TOOTH
+	setvar VAR_HOENN_DEEP_SEA_ITEM, 1
+	msgbox SlateportCity_Harbor_Text_SternAfterGift
+	release
+	end
+
+SlateportCity_Harbor_EventScript_SternGiveScale::
+	checkitemspace ITEM_DEEP_SEA_SCALE
+	goto_if_eq VAR_RESULT, FALSE, SlateportCity_Harbor_EventScript_SternNoRoom
+	giveitem_msg SlateportCity_Harbor_Text_ReceivedScale, ITEM_DEEP_SEA_SCALE
+	setvar VAR_HOENN_DEEP_SEA_ITEM, 2
+	msgbox SlateportCity_Harbor_Text_SternAfterGift
+	release
+	end
+
+SlateportCity_Harbor_EventScript_SternNoRoom::
+	msgbox SlateportCity_Harbor_Text_SternNoRoom
+	release
+	end
+
+SlateportCity_Harbor_EventScript_SternDone::
+	goto_if_eq VAR_HOENN_DEEP_SEA_ITEM, 0, SlateportCity_Harbor_EventScript_SternChooseItem
+	msgbox SlateportCity_Harbor_Text_SternDone
 	release
 	end
 @ END PATCH

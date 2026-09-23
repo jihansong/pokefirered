@@ -10,7 +10,11 @@ SlateportCity_Harbor_Text_FlyWarning::
     .string "can take you to any town here\l"
     .string "you've set foot in.\p"
     .string "It won't cross to KANTO, mind.\n"
-    .string "For that, board our plane.$"
+    .string "For that, board our plane.\p"
+    .string "And don't set out north or east\n"
+    .string "expecting a welcome. No crew has\l"
+    .string "run those channels this season,\l"
+    .string "and the charts show it.$"
 
 SlateportCity_Harbor_Text_BadgeNone::
     .string "I keep the BADGE register for\n"

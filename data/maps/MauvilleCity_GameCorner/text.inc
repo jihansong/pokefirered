@@ -26,7 +26,8 @@ MauvilleCity_GameCorner_Text_CaseFull::
     .string "Your CASE is as full as it goes.$"
 
 MauvilleCity_GameCorner_Text_WhichPrize::
-    .string "Which prize would you like?$"
+    .string "Have a look. The prices are the\n"
+    .string "prices.$"
 
 MauvilleCity_GameCorner_Text_HereYouGo::
     .string "Here you are. Come again.$"

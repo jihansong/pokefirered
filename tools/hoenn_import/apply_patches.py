@@ -30,6 +30,19 @@ def apply(name):
         m = json.load(open(os.path.join(d, 'map.json')))
         extra = json.load(open(os.path.join(P, name + '.json')))
         for key, items in extra.items():
+            if key == 'object_overrides':
+                # change fields of an imported object (usually to point it at a new script)
+                for ov in items:
+                    ov = dict(ov)
+                    match = ov.pop('match_script')
+                    # an already patched map matches on the new script instead
+                    for o in m['object_events']:
+                        if o.get('script') in (match, ov.get('script')):
+                            o.update(ov)
+                            break
+                    else:
+                        sys.exit('%s: no object with script %s' % (name, match))
+                continue
             scripts = {i.get('script') for i in items}
             m[key] = [o for o in (m.get(key) or []) if o.get('script') not in scripts] + items
         open(os.path.join(d, 'map.json'), 'w').write(json.dumps(m, indent=2, ensure_ascii=False) + '\n')

@@ -1,0 +1,8 @@
+{
+  "object_overrides": [
+    {
+      "match_script": "DewfordTown_Gym_EventScript_H0",
+      "script": "DewfordTown_Gym_EventScript_Brawly"
+    }
+  ]
+}

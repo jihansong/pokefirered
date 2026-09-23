@@ -42,8 +42,7 @@
 #define VAR_HOENN_TRICK_PUZZLE_7_STATE_2 (HOENN_VARS_START + 32)  // 트릭하우스
 #define VAR_HOENN_TRICK_PUZZLE_8_STATE (HOENN_VARS_START + 33)  // 트릭하우스
 #define VAR_HOENN_CYCLING_START        (HOENN_VARS_START + 34)  // 타임트라이얼 시작 시각(초, u16)
-#define VAR_HOENN_WATTSON_REMATCH_DAY   (HOENN_VARS_START + 35)  // WATTSON 재대결을 마지막으로 한 게임 시계 날짜 + 1
-#define VAR_HOENN_0x23                 (HOENN_VARS_START + 35)
+#define VAR_HOENN_WATTSON_REMATCH_DAY  (HOENN_VARS_START + 35)  // WATTSON 재대결을 마지막으로 한 게임 시계 날짜 + 1
 #define VAR_HOENN_0x24                 (HOENN_VARS_START + 36)
 #define VAR_HOENN_0x25                 (HOENN_VARS_START + 37)
 #define VAR_HOENN_0x26                 (HOENN_VARS_START + 38)

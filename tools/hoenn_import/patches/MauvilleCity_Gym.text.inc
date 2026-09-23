@@ -148,7 +148,10 @@ MauvilleCity_Gym_Text_H5_1::
 MauvilleCity_Gym_Text_H5_2::
     .string "Straight up the middle when the\n"
     .string "barriers are down. That's the way\l"
-    .string "he likes to be met.$"
+    .string "he likes to be met.\p"
+    .string "And once NEW MAUVILLE is quiet\n"
+    .string "he'll take you on again. Once a\l"
+    .string "day. He needs the night to think.$"
 MauvilleCity_Gym_Text_WattsonRematch::
     .string "WATTSON: Wahahaha! The lights are\n"
     .string "steady and the city is quiet.\p"

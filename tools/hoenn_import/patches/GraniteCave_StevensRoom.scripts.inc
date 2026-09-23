@@ -1,7 +1,3 @@
-GraniteCave_StevensRoom_MapScripts::
-	.byte 0
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 @ Event 4: STERN's survey, carried down to the man who reads rock. Emerald had
 @ a letter delivered here; the errand is STERN's now, and what comes back is a
 @ promise to sail rather than a reply.
@@ -44,4 +40,3 @@ GraniteCave_StevensRoom_EventScript_StevenAfter::
 	msgbox GraniteCave_StevensRoom_Text_StevenAfter
 	release
 	end
-@ END PATCH

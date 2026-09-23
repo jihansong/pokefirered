@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 GraniteCave_StevensRoom_Text_StevenBefore::
     .string "Quiet down here, isn't it.\p"
     .string "This wall is older than everything\n"
@@ -52,4 +49,3 @@ GraniteCave_StevensRoom_Text_StevenAfter::
     .string "108 is worth a look first. What\l"
     .string "went down with it was made to\l"
     .string "listen to the sea floor.$"
-@ END PATCH

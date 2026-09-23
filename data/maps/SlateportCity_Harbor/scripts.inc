@@ -66,16 +66,33 @@ SlateportCity_Harbor_EventScript_ArrivalScene::
 	releaseall
 	end
 
+@ STERN carries the rest of the zone: the survey request for GRANITE CAVE
+@ (event 4), then the SCANNER out of the wreck (event 5).
 SlateportCity_Harbor_EventScript_Stern::
 	lock
 	faceplayer
-	goto_if_set FLAG_HOENN_MUSEUM_DEFENDED, SlateportCity_Harbor_EventScript_SternAfterMuseum
+	goto_if_unset FLAG_HOENN_MUSEUM_DEFENDED, SlateportCity_Harbor_EventScript_SternMuseum
+	goto_if_unset FLAG_HOENN_SURVEY_LETTER_GOT, SlateportCity_Harbor_EventScript_SternGiveErrand
+	goto_if_unset FLAG_HOENN_SURVEY_LETTER_DONE, SlateportCity_Harbor_EventScript_SternErrandWaiting
+	msgbox SlateportCity_Harbor_Text_SternThanks
+	release
+	end
+
+SlateportCity_Harbor_EventScript_SternMuseum::
 	msgbox SlateportCity_Harbor_Text_SternMuseum
 	release
 	end
 
-SlateportCity_Harbor_EventScript_SternAfterMuseum::
-	msgbox SlateportCity_Harbor_Text_SternThanks
+@ Event 4: the errand that sends the player into GRANITE CAVE
+SlateportCity_Harbor_EventScript_SternGiveErrand::
+	msgbox SlateportCity_Harbor_Text_SternErrand
+	setflag FLAG_HOENN_SURVEY_LETTER_GOT
+	setvar VAR_HOENN_STERN_REQUEST, 1
+	release
+	end
+
+SlateportCity_Harbor_EventScript_SternErrandWaiting::
+	msgbox SlateportCity_Harbor_Text_SternErrandWaiting
 	release
 	end
 @ END PATCH

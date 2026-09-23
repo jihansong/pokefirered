@@ -12,7 +12,7 @@ SlateportCity_PokemonCenter_1F_Text_H1::
 	.string "If a traded POKéMON is holding an\n"
 	.string "item, it makes me twice as happy!$"
 
-
+@ BEGIN PATCH (tools/hoenn_import/patches)
 SlateportCity_PokemonCenter_1F_Text_RumorIntro::
     .string "I write down what the sailors say\n"
     .string "when they come ashore.\p"
@@ -77,3 +77,4 @@ SlateportCity_PokemonCenter_1F_Text_Rumor9::
     .string "turns heads in this city.\p"
     .string "The museum's current exhibit would\n"
     .string "dearly like to meet one.$"
+@ END PATCH

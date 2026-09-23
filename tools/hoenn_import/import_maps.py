@@ -9,6 +9,7 @@ FR = '/workspaces/pokefirered'
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import import_tilesets
 from rewrap_text import rewrap_lines
+from apply_patches import apply as apply_patch
 
 EXCLUDE = re.compile(r'^(SecretBase_|BattleColosseum_|TradeCenter$|RecordCorner$|UnionRoom$|BirthIsland_|NavelRock_|'
                      r'Route104_Prototype|UnusedContestHall)')
@@ -313,18 +314,11 @@ def main():
         open(d + '/scripts.inc', 'w').write('\n'.join(sc_lines) + '\n')
         # Emerald's message box is wider than FR/LG's; re-flow lines that would be cut off
         tx = ''.join(f'{k}::\n' + '\n'.join(rewrap_lines(v)) + '\n\n' for k, v in out_texts.items() if k.startswith(nm + '_Text_H'))
-        # Hand-made additions (e.g. the airline counter) live in patches/ so a re-import keeps them
-        pt = f'{os.path.dirname(os.path.abspath(__file__))}/patches/{nm}'
-        if os.path.exists(pt + '.json'):
-            extra = json.load(open(pt + '.json'))
-            for k, v in extra.items():
-                out[k] = (out.get(k) or []) + v
-            open(d + '/map.json', 'w').write(json.dumps(out, indent=2, ensure_ascii=False) + '\n')
-        if os.path.exists(pt + '.scripts.inc'):
-            open(d + '/scripts.inc', 'a').write('\n' + open(pt + '.scripts.inc').read())
-        if os.path.exists(pt + '.text.inc'):
-            tx += open(pt + '.text.inc').read()
         open(d + '/text.inc', 'w').write(tx)
+        # Hand-made additions (the story's NPCs and scripts) live in patches/ so a re-import keeps them
+        if any(os.path.exists('%s/patches/%s.%s' % (os.path.dirname(os.path.abspath(__file__)), nm, k))
+               for k in ('json', 'scripts.inc', 'text.inc', 'mapscripts')):
+            apply_patch(nm)
         if out['connections']: frgroups['connections_include_order'].append(nm)
         stats['maps'] += 1
     open(FR + '/include/constants/flags_hoenn.h', 'w').write(

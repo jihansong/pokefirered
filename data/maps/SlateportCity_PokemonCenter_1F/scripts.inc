@@ -16,7 +16,7 @@ SlateportCity_PokemonCenter_1F_EventScript_H1::
 	msgbox SlateportCity_PokemonCenter_1F_Text_H1, MSGBOX_NPC
 	end
 
-
+@ BEGIN PATCH (tools/hoenn_import/patches)
 @ HOENN's rumor collector, the counterpart of the one in CELADON CITY. Every
 @ event the Hoenn chapters add gets a rumor here so it can be found in game.
 SlateportCity_PokemonCenter_1F_EventScript_RumorCollector::
@@ -94,3 +94,4 @@ SlateportCity_PokemonCenter_1F_EventScript_NextRumor::
 	setvar VAR_HOENN_RUMOR_STATE, 0
 	release
 	end
+@ END PATCH

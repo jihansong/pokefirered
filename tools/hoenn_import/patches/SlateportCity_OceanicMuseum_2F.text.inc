@@ -42,3 +42,21 @@ SlateportCity_OceanicMuseum_2F_Text_MuseumQuiet::
     .string "STERN's survey hangs where it was,\n"
     .string "with the blank stretch of sea floor\l"
     .string "in the middle of it.$"
+
+SlateportCity_OceanicMuseum_2F_Text_CurrentExhibit::
+    .string "ELECTRICITY AND THE SEA\p"
+    .string "Salt water carries a current the\n"
+    .string "way copper does. HOENN's fishermen\l"
+    .string "learned it the hard way.\p"
+    .string "The panel hums faintly when you\n"
+    .string "stand close.$"
+
+SlateportCity_OceanicMuseum_2F_Text_CurrentExhibitPikachu::
+    .string "The PIKACHU's cheeks crackle once,\n"
+    .string "answering the panel.\p"
+    .string "The hum climbs, holds, and settles\n"
+    .string "again.\p"
+    .string "A guard across the gallery looks\n"
+    .string "up, decides against saying\l"
+    .string "anything, and goes back to the\l"
+    .string "window.$"

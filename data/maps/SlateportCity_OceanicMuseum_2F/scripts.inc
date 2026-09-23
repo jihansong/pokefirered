@@ -155,4 +155,15 @@ SlateportCity_OceanicMuseum_2F_Movement_ArchieEnter::
 	walk_right
 	walk_right
 	step_end
+
+@ Event 7: the current exhibit. The starter PIKACHU has an opinion about it.
+SlateportCity_OceanicMuseum_2F_EventScript_CurrentExhibit::
+	lock
+	msgbox SlateportCity_OceanicMuseum_2F_Text_CurrentExhibit
+	specialvar VAR_RESULT, GetStarterPikachuPartySlotForScript
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_ReleaseEnd
+	setflag FLAG_HOENN_PIKACHU_MUSEUM_SEEN
+	msgbox SlateportCity_OceanicMuseum_2F_Text_CurrentExhibitPikachu
+	release
+	end
 @ END PATCH

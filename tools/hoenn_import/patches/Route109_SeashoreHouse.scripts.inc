@@ -1,26 +1,3 @@
-Route109_SeashoreHouse_MapScripts::
-	.byte 0
-
-Route109_SeashoreHouse_EventScript_H0::
-	msgbox Route109_SeashoreHouse_Text_H0, MSGBOX_NPC
-	end
-
-Route109_SeashoreHouse_EventScript_H1::
-	trainerbattle_single TRAINER_HOENN_DWAYNE, Route109_SeashoreHouse_Text_H1_0, Route109_SeashoreHouse_Text_H1_1
-	msgbox Route109_SeashoreHouse_Text_H1_2, MSGBOX_AUTOCLOSE
-	end
-
-Route109_SeashoreHouse_EventScript_H2::
-	trainerbattle_single TRAINER_HOENN_SIMON, Route109_SeashoreHouse_Text_H2_0, Route109_SeashoreHouse_Text_H2_1
-	msgbox Route109_SeashoreHouse_Text_H2_2, MSGBOX_AUTOCLOSE
-	end
-
-Route109_SeashoreHouse_EventScript_H3::
-	trainerbattle_single TRAINER_HOENN_JOHANNA, Route109_SeashoreHouse_Text_H3_0, Route109_SeashoreHouse_Text_H3_1
-	msgbox Route109_SeashoreHouse_Text_H3_2, MSGBOX_AUTOCLOSE
-	end
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 @ Event 6: the three who keep the SEASHORE HOUSE busy. Beat all three and the
 @ man who runs the place pays out in SODA POP. Their own scripts are untouched;
 @ this reads their defeated flags (Hoenn trainers keep those in SaveBlock2).
@@ -55,4 +32,3 @@ Route109_SeashoreHouse_EventScript_OwnerAfter::
 	msgbox Route109_SeashoreHouse_Text_OwnerAfter
 	release
 	end
-@ END PATCH

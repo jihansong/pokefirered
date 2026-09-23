@@ -509,4 +509,7 @@ gSpecials::
 	def_special Tournament_Reset
 	def_special SummitTrainer_RecordWin
 	def_special CountHoennBadges
+	def_special MauvilleGymPressSwitch
+	def_special MauvilleGymSetDefaultBarriers
+	def_special MauvilleGymDeactivatePuzzle
 gSpecialsEnd::

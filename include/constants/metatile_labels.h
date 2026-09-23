@@ -303,4 +303,6 @@
 #define METATILE_RSCave_CrackedFloor                     0x22F
 #define METATILE_RSCave_CrackedFloor_Hole                0x206
 
+#include "constants/metatile_labels_hoenn.h"
+
 #endif // GUARD_METATILE_LABELS_H

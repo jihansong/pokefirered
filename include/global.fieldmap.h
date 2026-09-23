@@ -11,6 +11,7 @@
 #define MAPGRID_ELEVATION_SHIFT  12
 
 // An undefined map grid block has all metatile id bits set and nothing else
+#define MAPGRID_IMPASSABLE  MAPGRID_COLLISION_MASK // the name pokeemerald uses, for ported Hoenn code
 #define MAPGRID_UNDEFINED   MAPGRID_METATILE_ID_MASK
 
 enum {

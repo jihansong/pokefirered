@@ -44,6 +44,11 @@ void InitEventData(void)
     memset(gSaveBlock1Ptr->flags, 0, sizeof(gSaveBlock1Ptr->flags));
     memset(gSaveBlock1Ptr->vars, 0, sizeof(gSaveBlock1Ptr->vars));
     memset(sSpecialFlags, 0, sizeof(sSpecialFlags));
+    // The Hoenn flags, vars and trainer records sit in SaveBlock2's old padding,
+    // so a new game has to clear them here too.
+    memset(gSaveBlock2Ptr->hoennFlags, 0, sizeof(gSaveBlock2Ptr->hoennFlags));
+    memset(gSaveBlock2Ptr->hoennVars, 0, sizeof(gSaveBlock2Ptr->hoennVars));
+    memset(gSaveBlock2Ptr->hoennTrainerFlags, 0, sizeof(gSaveBlock2Ptr->hoennTrainerFlags));
 }
 
 void ClearTempFieldEventData(void)
@@ -188,6 +193,8 @@ u16 *GetVarPointer(u16 idx)
     u16 *ptr;
     if (idx < VARS_START)
         return NULL;
+    if (idx >= HOENN_VARS_START && idx <= HOENN_VARS_END)
+        return &gSaveBlock2Ptr->hoennVars[idx - HOENN_VARS_START];
     if (idx < SPECIAL_VARS_START)
     {
         switch (gQuestLogPlaybackState)

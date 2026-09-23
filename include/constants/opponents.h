@@ -1301,4 +1301,5 @@
 #define TRAINER_HOENN_ZANDER                          (HOENN_TRAINERS_START + 519)
 // END HOENN TRAINERS
 #include "constants/opponents_tournament.h"
+#include "constants/opponents_hoenn_story.h"
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

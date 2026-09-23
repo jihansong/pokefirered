@@ -249,10 +249,10 @@ MauvilleCity_Gym_EventScript_WattsonDone::
 MauvilleCity_Gym_EventScript_WattsonOfferRematch::
 	msgbox MauvilleCity_Gym_Text_WattsonRematch, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MauvilleCity_Gym_EventScript_WattsonRematchDeclined
-	special Wattson_RecordRematch
 	closemessage
 	cleartrainerflag TRAINER_HOENN_WATTSON_1
 	trainerbattle_no_intro TRAINER_HOENN_WATTSON_1, MauvilleCity_Gym_Text_WattsonRematchDefeat
+	special Wattson_RecordRematch
 	msgbox MauvilleCity_Gym_Text_WattsonRematchAfter
 	release
 	end

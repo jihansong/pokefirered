@@ -5,6 +5,8 @@ SilphCo_11F_MapScripts::
 
 SilphCo_11F_OnTransition::
 	call SilphCo_11F_EventScript_HideJessieJames
+	setflag FLAG_TEMP_5
+	call_if_set FLAG_HIDE_SILPH_ROCKETS, SilphCo_11F_EventScript_TryShowN
 	end
 
 SilphCo_11F_OnLoad::
@@ -233,3 +235,21 @@ SilphCo_11F_EventScript_JessieJamesMovement2:
 SilphCo_11F_EventScript_HideJessieJames::
 	setflag FLAG_HIDE_SILPH_CO_11F_JESSIE_JAMES
 	return
+
+SilphCo_11F_EventScript_TryShowN::
+	goto_if_set FLAG_MET_N_SILPH, EventScript_Return
+	clearflag FLAG_TEMP_5
+	return
+
+@ v0.6.0: once GIOVANNI has left SILPH CO., N is waiting where he stood.
+SilphCo_11F_EventScript_N::
+	lock
+	faceplayer
+	msgbox SilphCo_11F_Text_NTools
+	call EventScript_NHearsPikachu
+	msgbox SilphCo_11F_Text_NLetsBattle
+	trainerbattle_no_intro TRAINER_N_SILPH, SilphCo_11F_Text_NDefeat
+	msgbox SilphCo_11F_Text_NAfter
+	setflag FLAG_MET_N_SILPH
+	goto EventScript_NLeaves
+	end

@@ -60,7 +60,7 @@
 #define ITEM_FINAL_NOTES 56
 #define ITEM_POKE_WATCH 57
 #define ITEM_CARGO_TAG 58
-#define ITEM_03B 59
+#define ITEM_N_LETTER 59
 #define ITEM_03C 60
 #define ITEM_03D 61
 #define ITEM_03E 62

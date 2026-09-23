@@ -288,3 +288,25 @@ CeladonCity_PokemonCenter_1F_Text_Rumor37::
     .string "the truck on the VERMILION quay\l"
     .string "about the island in the fog.\p"
     .string "It only appears at night!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor38::
+    .string "On some nights, an old TRAINER\n"
+    .string "stands in VIRIDIAN FOREST, all in\l"
+    .string "green, like out of an old photo.\p"
+    .string "He only uses moves from the old\n"
+    .string "days, and pays out in TMs!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor39::
+    .string "A young man with pale green hair\n"
+    .string "says he can hear POKéMON talk.\p"
+    .string "He was seen at the PEWTER MUSEUM,\n"
+    .string "the POKéMON TOWER and SILPH CO.\p"
+    .string "He's always asking TRAINERS what\n"
+    .string "their PIKACHU has to say!$"
+
+CeladonCity_PokemonCenter_1F_Text_Rumor40::
+    .string "They've opened a hall behind the\n"
+    .string "INDIGO PLATEAU's POKéMON CENTER.\p"
+    .string "GYM LEADERS and the ELITE FOUR put\n"
+    .string "their names in a draw, and a\l"
+    .string "CHAMPION faces three of them!$"

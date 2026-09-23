@@ -5,6 +5,19 @@ PalletTown_PlayersHouse_2F_MapScripts::
 
 PalletTown_PlayersHouse_2F_OnTransition::
 	call_if_eq VAR_MAP_SCENE_PALLET_TOWN_PLAYERS_HOUSE_2F, 0, PalletTown_PlayersHouse_2F_EventScript_SetRespawn
+	setflag FLAG_TEMP_1
+	call_if_set FLAG_WON_CHAMPION_TOURNAMENT, PalletTown_PlayersHouse_2F_EventScript_ShowTrophy
+	end
+
+@ v0.6.0: the CHAMPION TOURNAMENT trophy stands in the player's room once won.
+PalletTown_PlayersHouse_2F_EventScript_ShowTrophy::
+	clearflag FLAG_TEMP_1
+	return
+
+PalletTown_PlayersHouse_2F_EventScript_TourneyTrophy::
+	lockall
+	msgbox PalletTown_PlayersHouse_2F_Text_TourneyTrophy
+	releaseall
 	end
 
 PalletTown_PlayersHouse_2F_EventScript_SetRespawn::

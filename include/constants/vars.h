@@ -92,14 +92,14 @@
 #define VAR_STARTER_PIKACHU_PERSONALITY_HI 0x402D
 #define VAR_SURF_PIKACHU                   0x402E // 1 while the player SURFS on Oak's PIKACHU (src/surfing_pikachu.c)
 
-#define VAR_0x402F                         0x402F
+#define VAR_OLD_TIMER_LAST_NIGHT           0x402F // v0.6.0: game clock night the VIRIDIAN FOREST OLD-TIMER was last beaten, +2
 
 #define VAR_ICE_STEP_COUNT                 0x4030
 #define VAR_RIVAL_STARTER                  0x4031 // RIVAL_STARTER_*: what the rival's Eevee evolves into
 #define VAR_RESET_RTC_ENABLE               0x4032
 #define VAR_ENIGMA_BERRY_AVAILABLE         0x4033
 
-#define VAR_0x4034                         0x4034
+#define VAR_SUMMIT_TRAINER_LAST_DAY        0x4034 // v0.6.0: game clock day the summit TRAINER was last beaten, +1
 #define VAR_RESORT_GOREGEOUS_STEP_COUNTER  0x4035
 #define VAR_RESORT_GORGEOUS_REQUESTED_MON  0x4036
 #define VAR_PC_BOX_TO_SEND_MON             0x4037
@@ -110,9 +110,9 @@
 #define VAR_0x403C                         0x403C // Set to 0x0302, never read
 #define VAR_HERACROSS_SIZE_RECORD          0x403D
 #define VAR_DEOXYS_INTERACTION_NUM         0x403E
-#define VAR_0x403F                         0x403F
+#define VAR_TOURNEY_ROUND                   0x403F // v0.6.0: INDIGO PLATEAU tournament, match 1-3 (0 = not entered)
 #define VAR_MAGIKARP_SIZE_RECORD           0x4040
-#define VAR_0x4041                         0x4041
+#define VAR_TOURNEY_DRAW                    0x4041 // v0.6.0: the three drawn entrants, 5 bits each
 #define VAR_TRAINER_CARD_MON_ICON_TINT_IDX 0x4042
 #define VAR_TRAINER_CARD_MON_ICON_1        0x4043
 #define VAR_TRAINER_CARD_MON_ICON_2        0x4044

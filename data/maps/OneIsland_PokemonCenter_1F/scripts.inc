@@ -636,6 +636,8 @@ OneIsland_PokemonCenter_1F_EventScript_RumorCollector::
 	case 9, OneIsland_PokemonCenter_1F_EventScript_Rumor9
 	case 10, OneIsland_PokemonCenter_1F_EventScript_Rumor10
 	case 11, OneIsland_PokemonCenter_1F_EventScript_Rumor11
+	case 12, OneIsland_PokemonCenter_1F_EventScript_Rumor12
+	case 13, OneIsland_PokemonCenter_1F_EventScript_Rumor13
 	setvar VAR_SEVII_RUMOR_INDEX, 0
 	goto OneIsland_PokemonCenter_1F_EventScript_Rumor0
 	end
@@ -700,9 +702,19 @@ OneIsland_PokemonCenter_1F_EventScript_Rumor11::
 	goto OneIsland_PokemonCenter_1F_EventScript_NextRumor
 	end
 
+OneIsland_PokemonCenter_1F_EventScript_Rumor12::
+	msgbox OneIsland_PokemonCenter_1F_Text_Rumor12
+	goto OneIsland_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+OneIsland_PokemonCenter_1F_EventScript_Rumor13::
+	msgbox OneIsland_PokemonCenter_1F_Text_Rumor13
+	goto OneIsland_PokemonCenter_1F_EventScript_NextRumor
+	end
+
 OneIsland_PokemonCenter_1F_EventScript_NextRumor::
 	addvar VAR_SEVII_RUMOR_INDEX, 1
-	goto_if_lt VAR_SEVII_RUMOR_INDEX, 12, EventScript_ReleaseEnd
+	goto_if_lt VAR_SEVII_RUMOR_INDEX, 14, EventScript_ReleaseEnd
 	setvar VAR_SEVII_RUMOR_INDEX, 0
 	release
 	end

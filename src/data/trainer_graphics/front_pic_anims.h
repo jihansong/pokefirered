@@ -897,4 +897,7 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_HOENN_LEADER_JUAN] = sAnims_LeaderWallace,
 // END HOENN TRAINERS
     [TRAINER_PIC_JESSIE_JAMES]          = sAnims_JessieJames,
+    [TRAINER_PIC_OLD_TIMER]             = sAnims_BugCatcher,
+    [TRAINER_PIC_N]                     = sAnims_CooltrainerM,
+    [TRAINER_PIC_SUMMIT_TRAINER]        = sAnims_Red,
 };

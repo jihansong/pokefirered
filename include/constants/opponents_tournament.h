@@ -1,0 +1,26 @@
+#ifndef GUARD_CONSTANTS_OPPONENTS_TOURNAMENT_H
+#define GUARD_CONSTANTS_OPPONENTS_TOURNAMENT_H
+
+// The INDIGO PLATEAU tournament entrants (tools/make_tournament.py). They sit
+// after the imported Hoenn trainers, so their flags live in hoennTrainerFlags.
+
+#define TRAINER_TOURNEY_BROCK                  (HOENN_TRAINERS_START + 520)
+#define TRAINER_TOURNEY_MISTY                  (HOENN_TRAINERS_START + 521)
+#define TRAINER_TOURNEY_LTSURGE                (HOENN_TRAINERS_START + 522)
+#define TRAINER_TOURNEY_ERIKA                  (HOENN_TRAINERS_START + 523)
+#define TRAINER_TOURNEY_KOGA                   (HOENN_TRAINERS_START + 524)
+#define TRAINER_TOURNEY_SABRINA                (HOENN_TRAINERS_START + 525)
+#define TRAINER_TOURNEY_BLAINE                 (HOENN_TRAINERS_START + 526)
+#define TRAINER_TOURNEY_GIOVANNI               (HOENN_TRAINERS_START + 527)
+#define TRAINER_TOURNEY_LORELEI                (HOENN_TRAINERS_START + 528)
+#define TRAINER_TOURNEY_BRUNO                  (HOENN_TRAINERS_START + 529)
+#define TRAINER_TOURNEY_AGATHA                 (HOENN_TRAINERS_START + 530)
+#define TRAINER_TOURNEY_LANCE                  (HOENN_TRAINERS_START + 531)
+#define TRAINER_TOURNEY_BLUE                   (HOENN_TRAINERS_START + 532)
+#define TRAINER_TOURNEY_OAK                    (HOENN_TRAINERS_START + 533)
+#define TRAINER_TOURNEY_N                      (HOENN_TRAINERS_START + 534)
+#define TRAINER_TOURNEY_JESSIE_JAMES           (HOENN_TRAINERS_START + 535)
+
+#define TOURNEY_ENTRANT_COUNT 16
+
+#endif  // GUARD_CONSTANTS_OPPONENTS_TOURNAMENT_H

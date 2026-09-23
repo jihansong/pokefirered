@@ -2750,6 +2750,9 @@ extern const u32 gTrainerPalette_RuinManiac[];
 extern const u32 gTrainerPalette_Lady[];
 extern const u32 gTrainerPalette_Painter[];
 extern const u32 gTrainerPalette_JessieJames[];
+extern const u32 gTrainerPalette_OldTimer[];
+extern const u32 gTrainerPalette_N[];
+extern const u32 gTrainerPalette_SummitTrainer[];
 
 extern const u8 gMenuInfoElements_Gfx[];
 extern const u16 gMenuInfoElements1_Pal[];

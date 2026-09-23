@@ -4,6 +4,8 @@ PokemonTower_7F_MapScripts::
 
 PokemonTower_7F_OnTransition::
 	call PokemonTower_7F_EventScript_HideJessieJames
+	setflag FLAG_TEMP_5
+	call_if_set FLAG_RESCUED_MR_FUJI, PokemonTower_7F_EventScript_TryShowN
 	end
 
 PokemonTower_7F_EventScript_MrFuji::
@@ -385,3 +387,21 @@ PokemonTower_7F_EventScript_JessieJamesMovement2:
 PokemonTower_7F_EventScript_HideJessieJames::
 	setflag FLAG_HIDE_POKEMON_TOWER_7F_JESSIE_JAMES
 	return
+
+PokemonTower_7F_EventScript_TryShowN::
+	goto_if_set FLAG_MET_N_TOWER, EventScript_Return
+	clearflag FLAG_TEMP_5
+	return
+
+@ v0.6.0: after MR. FUJI is rescued, N stands where he was held.
+PokemonTower_7F_EventScript_N::
+	lock
+	faceplayer
+	msgbox PokemonTower_7F_Text_NVoices
+	call EventScript_NHearsPikachu
+	msgbox PokemonTower_7F_Text_NLetsBattle
+	trainerbattle_no_intro TRAINER_N_TOWER, PokemonTower_7F_Text_NDefeat
+	msgbox PokemonTower_7F_Text_NAfter
+	setflag FLAG_MET_N_TOWER
+	goto EventScript_NLeaves
+	end

@@ -83,6 +83,27 @@ def main():
                     land += 0 if button else is_land(src.getpixel((min(sx, 239), min(sy, 159))))
                     n += 1
             px[x, y] = LAND if land * 2 > n else SEA
+    # The sampled coastline comes out speckled; smooth it the way the hand-drawn
+    # Kanto map reads - a majority vote over each pixel's neighbours, twice, which
+    # drops lone specks and fills one-pixel bays without moving the shoreline.
+    for _ in range(2):
+        before = [[px[x, y] for y in range(H)] for x in range(W)]
+        for y in range(IN_Y, IN_Y + IN_H):
+            for x in range(IN_X, IN_X + IN_W):
+                land = neighbours = 0
+                for dy in (-1, 0, 1):
+                    for dx in (-1, 0, 1):
+                        if dx == 0 and dy == 0:
+                            continue
+                        nx, ny = x + dx, y + dy
+                        if IN_X <= nx < IN_X + IN_W and IN_Y <= ny < IN_Y + IN_H:
+                            land += before[nx][ny] == LAND
+                            neighbours += 1
+                if land * 2 > neighbours + 1:
+                    px[x, y] = LAND
+                elif land * 2 < neighbours - 1:
+                    px[x, y] = SEA
+
     # rounded frame corners like the Kanto map
     for (x, y) in ((IN_X, IN_Y), (IN_X + IN_W - 1, IN_Y), (IN_X, IN_Y + IN_H - 1), (IN_X + IN_W - 1, IN_Y + IN_H - 1)):
         px[x, y] = FRAME

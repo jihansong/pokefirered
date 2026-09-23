@@ -106,3 +106,27 @@ SilphCo_11F_Text_JessieJamesBlastOff::
     .string "TEAM ROCKET, blast off at the\n"
     .string "speed of light!\p"
     .string "Again…$"
+
+SilphCo_11F_Text_NTools::
+    .string "N: The man in black called\n"
+    .string "POKéMON tools.\p"
+    .string "This company made a BALL that\n"
+    .string "catches anything, no matter what\l"
+    .string "it wants.\p"
+    .string "I wanted to see who would stand\n"
+    .string "up to them. It was you.$"
+
+SilphCo_11F_Text_NLetsBattle::
+    .string "N: Let me hear your PIKACHU one\n"
+    .string "more time!$"
+
+SilphCo_11F_Text_NDefeat::
+    .string "Your answer is so loud, I can't\n"
+    .string "argue with it.$"
+
+SilphCo_11F_Text_NAfter::
+    .string "N: When the POKéMON LEAGUE is\n"
+    .string "behind you, come find me.\p"
+    .string "I'll be at the end of the WATER\n"
+    .string "PATH on SIX ISLAND, where the sea\l"
+    .string "is quiet enough to hear everything.$"

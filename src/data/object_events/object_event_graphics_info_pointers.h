@@ -155,6 +155,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_James;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Truck;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Airplane;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AirplaneSmall;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldTimer;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_N;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SummitTrainer;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pikablu;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MewtwoShadow;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CapsuleShards;
@@ -392,6 +395,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_TRUCK]                    = &gObjectEventGraphicsInfo_Truck,
     [OBJ_EVENT_GFX_AIRPLANE]                 = &gObjectEventGraphicsInfo_Airplane,
     [OBJ_EVENT_GFX_AIRPLANE_SMALL]           = &gObjectEventGraphicsInfo_AirplaneSmall,
+    [OBJ_EVENT_GFX_OLD_TIMER]                = &gObjectEventGraphicsInfo_OldTimer,
+    [OBJ_EVENT_GFX_N]                        = &gObjectEventGraphicsInfo_N,
+    [OBJ_EVENT_GFX_SUMMIT_TRAINER]           = &gObjectEventGraphicsInfo_SummitTrainer,
     [OBJ_EVENT_GFX_PIKABLU]                  = &gObjectEventGraphicsInfo_Pikablu,
     [OBJ_EVENT_GFX_MEWTWO_SHADOW]            = &gObjectEventGraphicsInfo_MewtwoShadow,
     [OBJ_EVENT_GFX_CAPSULE_SHARDS]           = &gObjectEventGraphicsInfo_CapsuleShards,

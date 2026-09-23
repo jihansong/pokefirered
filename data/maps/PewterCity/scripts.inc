@@ -5,6 +5,27 @@ PewterCity_MapScripts::
 PewterCity_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_PEWTER_CITY
 	setvar VAR_MAP_SCENE_PEWTER_CITY_MUSEUM_1F, 0
+	setflag FLAG_TEMP_5
+	goto_if_set FLAG_MET_N_PEWTER, PewterCity_EventScript_TransitionEnd
+	call_if_set FLAG_BADGE01_GET, PewterCity_EventScript_ShowN
+PewterCity_EventScript_TransitionEnd::
+	end
+
+PewterCity_EventScript_ShowN::
+	clearflag FLAG_TEMP_5
+	return
+
+@ v0.6.0: N looks at the MUSEUM after the player's first BADGE (data/scripts/n.inc).
+PewterCity_EventScript_N::
+	lock
+	faceplayer
+	msgbox PewterCity_Text_NFossils
+	call EventScript_NHearsPikachu
+	msgbox PewterCity_Text_NLetsBattle
+	trainerbattle_no_intro TRAINER_N_PEWTER, PewterCity_Text_NDefeat
+	msgbox PewterCity_Text_NAfter
+	setflag FLAG_MET_N_PEWTER
+	goto EventScript_NLeaves
 	end
 
 @ Impossible to speak to this NPC from a facing dir != DIR_EAST normally, so they arent checked

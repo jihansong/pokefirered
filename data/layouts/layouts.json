@@ -8790,6 +8790,54 @@
       "secondary_tileset": "gTileset_PokemonMansion",
       "border_filepath": "data/layouts/NewIsland/border.bin",
       "blockdata_filepath": "data/layouts/NewIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_SILVER_MOUNTAIN_1F",
+      "name": "SilverMountain_1F_Layout",
+      "width": 15,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SilverCave",
+      "border_filepath": "data/layouts/SilverMountain_1F/border.bin",
+      "blockdata_filepath": "data/layouts/SilverMountain_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SILVER_MOUNTAIN_2F",
+      "name": "SilverMountain_2F_Layout",
+      "width": 48,
+      "height": 46,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SilverCave",
+      "border_filepath": "data/layouts/SilverMountain_2F/border.bin",
+      "blockdata_filepath": "data/layouts/SilverMountain_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SILVER_MOUNTAIN_3F",
+      "name": "SilverMountain_3F_Layout",
+      "width": 15,
+      "height": 11,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SilverCave",
+      "border_filepath": "data/layouts/SilverMountain_3F/border.bin",
+      "blockdata_filepath": "data/layouts/SilverMountain_3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SILVER_MOUNTAIN_SUMMIT",
+      "name": "SilverMountain_Summit_Layout",
+      "width": 19,
+      "height": 22,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_SilverGeneral",
+      "secondary_tileset": "gTileset_SilverPeak",
+      "border_filepath": "data/layouts/SilverMountain_Summit/border.bin",
+      "blockdata_filepath": "data/layouts/SilverMountain_Summit/map.bin"
     }
   ]
 }

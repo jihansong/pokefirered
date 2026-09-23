@@ -5,6 +5,102 @@ ViridianForest_MapScripts::
 
 ViridianForest_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_VIRIDIAN_FOREST
+	special OldTimer_Setup
+	end
+
+@ Thunder Yellow v0.6.0: on any night after the BOULDERBADGE, an OLD-TIMER in
+@ Game Boy greens waits in the clearing. His team only knows moves from the
+@ first generation; how strong it is depends on the player's badges. Beating
+@ him earns a TM that existed back then, and he's gone until the next night.
+ViridianForest_EventScript_OldTimer::
+	lock
+	faceplayer
+	msgbox ViridianForest_Text_OldTimerIntro
+	goto_if_set FLAG_BADGE07_GET, ViridianForest_EventScript_OldTimer3
+	goto_if_set FLAG_BADGE03_GET, ViridianForest_EventScript_OldTimer2
+	msgbox ViridianForest_Text_OldTimerChallenge
+	cleartrainerflag TRAINER_OLD_TIMER_KEN_1
+	trainerbattle_no_intro TRAINER_OLD_TIMER_KEN_1, ViridianForest_Text_OldTimerDefeat
+	random 3
+	switch VAR_RESULT
+	case 0, ViridianForest_EventScript_OldTimerGiveReflect
+	case 1, ViridianForest_EventScript_OldTimerGiveLightScreen
+	goto ViridianForest_EventScript_OldTimerGiveDoubleTeam
+	end
+
+ViridianForest_EventScript_OldTimer2::
+	msgbox ViridianForest_Text_OldTimerChallenge
+	cleartrainerflag TRAINER_OLD_TIMER_KEN_2
+	trainerbattle_no_intro TRAINER_OLD_TIMER_KEN_2, ViridianForest_Text_OldTimerDefeat
+	random 3
+	switch VAR_RESULT
+	case 0, ViridianForest_EventScript_OldTimerGiveToxic
+	case 1, ViridianForest_EventScript_OldTimerGiveRest
+	goto ViridianForest_EventScript_OldTimerGiveDig
+	end
+
+ViridianForest_EventScript_OldTimer3::
+	msgbox ViridianForest_Text_OldTimerChallengeStrong
+	cleartrainerflag TRAINER_OLD_TIMER_KEN_3
+	trainerbattle_no_intro TRAINER_OLD_TIMER_KEN_3, ViridianForest_Text_OldTimerDefeat
+	random 4
+	switch VAR_RESULT
+	case 0, ViridianForest_EventScript_OldTimerGiveIceBeam
+	case 1, ViridianForest_EventScript_OldTimerGiveThunderbolt
+	case 2, ViridianForest_EventScript_OldTimerGivePsychic
+	goto ViridianForest_EventScript_OldTimerGiveEarthquake
+	end
+
+ViridianForest_EventScript_OldTimerGiveReflect::
+	setvar VAR_0x8008, ITEM_TM33
+	goto ViridianForest_EventScript_OldTimerReward
+
+ViridianForest_EventScript_OldTimerGiveLightScreen::
+	setvar VAR_0x8008, ITEM_TM16
+	goto ViridianForest_EventScript_OldTimerReward
+
+ViridianForest_EventScript_OldTimerGiveDoubleTeam::
+	setvar VAR_0x8008, ITEM_TM32
+	goto ViridianForest_EventScript_OldTimerReward
+
+ViridianForest_EventScript_OldTimerGiveToxic::
+	setvar VAR_0x8008, ITEM_TM06
+	goto ViridianForest_EventScript_OldTimerReward
+
+ViridianForest_EventScript_OldTimerGiveRest::
+	setvar VAR_0x8008, ITEM_TM44
+	goto ViridianForest_EventScript_OldTimerReward
+
+ViridianForest_EventScript_OldTimerGiveDig::
+	setvar VAR_0x8008, ITEM_TM28
+	goto ViridianForest_EventScript_OldTimerReward
+
+ViridianForest_EventScript_OldTimerGiveIceBeam::
+	setvar VAR_0x8008, ITEM_TM13
+	goto ViridianForest_EventScript_OldTimerReward
+
+ViridianForest_EventScript_OldTimerGiveThunderbolt::
+	setvar VAR_0x8008, ITEM_TM24
+	goto ViridianForest_EventScript_OldTimerReward
+
+ViridianForest_EventScript_OldTimerGivePsychic::
+	setvar VAR_0x8008, ITEM_TM29
+	goto ViridianForest_EventScript_OldTimerReward
+
+ViridianForest_EventScript_OldTimerGiveEarthquake::
+	setvar VAR_0x8008, ITEM_TM26
+	goto ViridianForest_EventScript_OldTimerReward
+
+ViridianForest_EventScript_OldTimerReward::
+	special OldTimer_RecordWin
+	msgbox ViridianForest_Text_OldTimerTakeThis
+	giveitem VAR_0x8008
+	msgbox ViridianForest_Text_OldTimerFarewell
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_VIRIDIAN_FOREST_OLD_TIMER
+	fadescreen FADE_FROM_BLACK
+	release
 	end
 
 ViridianForest_EventScript_Youngster::

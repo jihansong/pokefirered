@@ -1,6 +1,6 @@
 const u8 gTrainerClassNames[][13] = {
     [TRAINER_CLASS_NONE]                = _("{PKMN} TRAINER"),
-    [TRAINER_CLASS_PKMN_TRAINER_UNUSED] = _("{PKMN} TRAINER"),
+    [TRAINER_CLASS_OLD_TIMER]           = _("OLD-TIMER"),
     [TRAINER_CLASS_AQUA_LEADER]         = _("AQUA LEADER"),
     [TRAINER_CLASS_TEAM_AQUA]           = _("TEAM AQUA"),
     [TRAINER_CLASS_RS_AROMA_LADY]       = _("AROMA LADY"),

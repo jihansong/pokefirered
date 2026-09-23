@@ -1,0 +1,8 @@
+{
+  "object_overrides": [
+    {
+      "match_script": "Route109_SeashoreHouse_EventScript_H0",
+      "script": "Route109_SeashoreHouse_EventScript_Owner"
+    }
+  ]
+}

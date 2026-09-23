@@ -60,4 +60,3 @@ SlateportCity_OceanicMuseum_1F_EventScript_H13::
 SlateportCity_OceanicMuseum_1F_EventScript_H14::
 	msgbox SlateportCity_OceanicMuseum_1F_Text_H14, MSGBOX_SIGN
 	end
-

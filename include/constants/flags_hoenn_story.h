@@ -1,0 +1,51 @@
+#ifndef GUARD_CONSTANTS_FLAGS_HOENN_STORY_H
+#define GUARD_CONSTANTS_FLAGS_HOENN_STORY_H
+
+// Flags the Hoenn story writes itself, as opposed to the ones the import
+// script generates (0x000..0x1FF of the Hoenn flag block) and the world map's
+// (0x400..). They are kept in this hand-written file so a re-import cannot
+// clobber them, and they share gSaveBlock2Ptr->hoennFlags, so nothing in the
+// save moves.
+
+#define HOENN_STORY_FLAGS_START           (HOENN_FLAGS_START + 0x200)
+
+// Hoenn's own badges. The trainer card shows Kanto's eight and its layout is
+// part of the save, so Hoenn's are plain flags and an NPC reports them.
+#define FLAG_HOENN_BADGE01_GET            (HOENN_STORY_FLAGS_START + 0)  // STONE
+#define FLAG_HOENN_BADGE02_GET            (HOENN_STORY_FLAGS_START + 1)  // KNUCKLE (BRAWLY, stage 1)
+#define FLAG_HOENN_BADGE03_GET            (HOENN_STORY_FLAGS_START + 2)  // DYNAMO
+#define FLAG_HOENN_BADGE04_GET            (HOENN_STORY_FLAGS_START + 3)  // HEAT
+#define FLAG_HOENN_BADGE05_GET            (HOENN_STORY_FLAGS_START + 4)  // BALANCE
+#define FLAG_HOENN_BADGE06_GET            (HOENN_STORY_FLAGS_START + 5)  // FEATHER
+#define FLAG_HOENN_BADGE07_GET            (HOENN_STORY_FLAGS_START + 6)  // MIND
+#define FLAG_HOENN_BADGE08_GET            (HOENN_STORY_FLAGS_START + 7)  // RAIN
+
+// Stage 1 — the Slateport harbour zone
+#define FLAG_HOENN_MET_STERN              (HOENN_STORY_FLAGS_START + 8)
+#define FLAG_HOENN_MUSEUM_DEFENDED        (HOENN_STORY_FLAGS_START + 9)
+#define FLAG_HOENN_ARCHIE_WARNED          (HOENN_STORY_FLAGS_START + 10)
+#define FLAG_HOENN_SURVEY_LETTER_GOT      (HOENN_STORY_FLAGS_START + 11)
+#define FLAG_HOENN_SURVEY_LETTER_DONE     (HOENN_STORY_FLAGS_START + 12)
+#define FLAG_HOENN_SCANNER_DELIVERED      (HOENN_STORY_FLAGS_START + 13)
+#define FLAG_HOENN_DEEP_SEA_ITEM_TAKEN    (HOENN_STORY_FLAGS_START + 14)
+#define FLAG_HOENN_ROUTE109_BROTHERS_DONE (HOENN_STORY_FLAGS_START + 15)
+#define FLAG_HOENN_GOT_TM08_FROM_BRAWLY   (HOENN_STORY_FLAGS_START + 16)
+#define FLAG_HOENN_GOT_TM47_IN_CAVE       (HOENN_STORY_FLAGS_START + 17)
+
+// Objects the story shows and hides
+#define FLAG_HIDE_HOENN_HARBOR_STERN      (HOENN_STORY_FLAGS_START + 18)
+#define FLAG_HIDE_HOENN_MUSEUM_GRUNTS     (HOENN_STORY_FLAGS_START + 19)
+#define FLAG_HIDE_HOENN_MUSEUM_ARCHIE     (HOENN_STORY_FLAGS_START + 20)
+#define FLAG_HIDE_HOENN_SHIPYARD_STERN    (HOENN_STORY_FLAGS_START + 21)
+
+// Event 7: the three places the starter PIKACHU gets a line of its own
+#define FLAG_HOENN_PIKACHU_GYM_SEEN       (HOENN_STORY_FLAGS_START + 22)
+#define FLAG_HOENN_PIKACHU_MUSEUM_SEEN    (HOENN_STORY_FLAGS_START + 23)
+#define FLAG_HOENN_PIKACHU_SHIPYARD_SEEN  (HOENN_STORY_FLAGS_START + 24)
+
+// The SCANNER in the wreck's captain's office (event 5)
+#define FLAG_HOENN_SCANNER_FOUND          (HOENN_STORY_FLAGS_START + 25)
+
+#define HOENN_STORY_FLAGS_USED 26
+
+#endif  // GUARD_CONSTANTS_FLAGS_HOENN_STORY_H

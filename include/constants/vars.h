@@ -291,6 +291,13 @@
 #define VARS_END                   0x40FF
 #define VARS_COUNT                 (VARS_END - VARS_START + 1)
 
+// Vars for the imported Hoenn story. Like the Hoenn flags they are numbered past
+// FR/LG's own var array and stored in gSaveBlock2Ptr->hoennVars, which used to be
+// padding, so the save keeps its layout (see GetVarPointer).
+#define HOENN_VARS_START           0x4100
+#define HOENN_VARS_COUNT           0x80
+#define HOENN_VARS_END             (HOENN_VARS_START + HOENN_VARS_COUNT - 1)
+
 #define SPECIAL_VARS_START         0x8000
 
 #define VAR_0x8000                 0x8000
@@ -323,5 +330,7 @@
 #define NPC_TEXT_COLOR_MON       2 // Black, for Pokémon
 #define NPC_TEXT_COLOR_NEUTRAL   3 // Black, for inanimate objects and messages from the game
 #define NPC_TEXT_COLOR_DEFAULT 255 // If an NPC is selected, use the color specified by GetColorFromTextColorTable, otherwise use Neutral.
+
+#include "constants/vars_hoenn.h"
 
 #endif // GUARD_CONSTANTS_VARS_H

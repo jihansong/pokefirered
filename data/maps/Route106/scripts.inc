@@ -28,4 +28,3 @@ Route106_EventScript_HItem14::
 Route106_EventScript_H4::
 	msgbox Route106_Text_H4, MSGBOX_SIGN
 	end
-

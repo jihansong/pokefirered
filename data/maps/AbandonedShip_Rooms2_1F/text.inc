@@ -1,49 +1,53 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 AbandonedShip_Rooms2_1F_Text_H0_0::
-	.string "DAN: While searching for treasures,\n"
-	.string "we discovered a TRAINER!$"
+    .string "DAN: We came for treasure and\n"
+    .string "found a trainer instead.$"
 
 AbandonedShip_Rooms2_1F_Text_H0_1::
-	.string "DAN: We couldn't win even though\n"
-	.string "we worked together…$"
+    .string "DAN: Both of us, and still not\n"
+    .string "enough.$"
 
 AbandonedShip_Rooms2_1F_Text_H0_2::
-	.string "DAN: We can't find any treasures… I\n"
-	.string "wonder if someone got them already?$"
+    .string "DAN: There's nothing aboard. I\n"
+    .string "think someone emptied her the week\l"
+    .string "she sank.$"
 
 AbandonedShip_Rooms2_1F_Text_H1_0::
-	.string "KIRA: Oh? We were searching for\n"
-	.string "treasures. But we discovered a\l"
-	.string "TRAINER instead!$"
+    .string "KIRA: Treasure hunting, we were.\n"
+    .string "You'll do instead.$"
 
 AbandonedShip_Rooms2_1F_Text_H1_1::
-	.string "KIRA: Ooh, so strong!$"
+    .string "KIRA: Oh, you're strong.$"
 
 AbandonedShip_Rooms2_1F_Text_H1_2::
-	.string "KIRA: Where could the treasures be?\p"
-	.string "I've already decided what I'm buying\n"
-	.string "when we find the treasures!$"
+    .string "KIRA: I'd already decided what to\n"
+    .string "spend it on. That's the worst\l"
+    .string "part.$"
 
 AbandonedShip_Rooms2_1F_Text_H2_0::
-	.string "Strength and compassion…\n"
-	.string "Those are a TRAINER's treasures!$"
+    .string "A trainer's treasure is what walks\n"
+    .string "beside them. Everything else is\l"
+    .string "salvage.$"
 
 AbandonedShip_Rooms2_1F_Text_H2_1::
-	.string "Ah, there is something about you\n"
-	.string "that sparkles.$"
+    .string "Yours walk very well indeed.$"
 
 AbandonedShip_Rooms2_1F_Text_H2_2::
-	.string "In a cabin somewhere on board,\n"
-	.string "I saw something sparkle.$"
+    .string "There is something that shines in\n"
+    .string "one of these cabins. I have not\l"
+    .string "gone looking. It isn't mine.$"
 
 AbandonedShip_Rooms2_1F_Text_H3_0::
-	.string "I'm not good at swimming,\n"
-	.string "but I am good at battles!$"
+    .string "Can't swim, can battle. That's why\n"
+    .string "I came by boat.$"
 
 AbandonedShip_Rooms2_1F_Text_H3_1::
-	.string "Oops.\n"
-	.string "That didn't go very well.$"
+    .string "That went about as well as\n"
+    .string "swimming would have.$"
 
 AbandonedShip_Rooms2_1F_Text_H3_2::
-	.string "Walking around barefoot in this ship\n"
-	.string "is kind of gross.$"
-
+    .string "Don't go barefoot below deck. I\n"
+    .string "learned that this morning.$"
+@ END PATCH

@@ -8,4 +8,3 @@ SlateportCity_SternsShipyard_2F_EventScript_H0::
 SlateportCity_SternsShipyard_2F_EventScript_H1::
 	msgbox SlateportCity_SternsShipyard_2F_Text_H1, MSGBOX_NPC
 	end
-

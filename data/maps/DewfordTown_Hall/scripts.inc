@@ -28,4 +28,3 @@ DewfordTown_Hall_EventScript_H5::
 DewfordTown_Hall_EventScript_H6::
 	msgbox DewfordTown_Hall_Text_H6, MSGBOX_SIGN
 	end
-

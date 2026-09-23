@@ -18,4 +18,3 @@ AbandonedShip_Rooms_1F_EventScript_H2::
 	trainerbattle_single TRAINER_HOENN_DEMETRIUS, AbandonedShip_Rooms_1F_Text_H2_0, AbandonedShip_Rooms_1F_Text_H2_1
 	msgbox AbandonedShip_Rooms_1F_Text_H2_2, MSGBOX_AUTOCLOSE
 	end
-

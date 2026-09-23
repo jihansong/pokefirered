@@ -32,4 +32,3 @@ SlateportCity_Mart_EventScript_H1::
 SlateportCity_Mart_EventScript_H2::
 	msgbox SlateportCity_Mart_Text_H2, MSGBOX_NPC
 	end
-

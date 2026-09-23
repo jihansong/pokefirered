@@ -1,213 +1,230 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
+@ The beach below SLATEPORT: swimmers, tubers, a sailor or two, and the
+@ families who use the sand. Nobody here has met a champion before.
 Route109_Text_H0_0::
-	.string "Hiyah! Look at my chiseled abs!\n"
-	.string "This is what you call “cut”!$"
+    .string "Out past the rope it's over your\n"
+    .string "head. Battle me here instead.$"
 
 Route109_Text_H0_1::
-	.string "Aiyah!\n"
-	.string "Flubbed out!$"
+    .string "Over my head as well, that was.$"
 
 Route109_Text_H0_2::
-	.string "Hiyah!\p"
-	.string "My sculpted abs have nothing to do\n"
-	.string "with POKéMON battles!$"
+    .string "The current runs south along this\n"
+    .string "beach. Swim across it, never\l"
+    .string "against it.$"
 
 Route109_Text_H1_0::
-	.string "Are you properly protected against\n"
-	.string "the sun?$"
+    .string "Everyone comes down from the city\n"
+    .string "to stand in the water and do\l"
+    .string "nothing.\p"
+    .string "I come down to win.$"
 
 Route109_Text_H1_1::
-	.string "Ouch, ouch, ouch!$"
+    .string "Back to standing in the water,\n"
+    .string "then.$"
 
 Route109_Text_H1_2::
-	.string "Cheeks are the most prone to\n"
-	.string "burning!$"
+    .string "You'll want the SEASHORE HOUSE.\n"
+    .string "They battle three in a row in\l"
+    .string "there and pay you for it.$"
 
 Route109_Text_H2_0::
-	.string "I've laid anchor in ports around\n"
-	.string "the world, but SLATEPORT's the best.$"
+    .string "My POKéMON have sand in them, I've\n"
+    .string "sand in me, and we're battling\l"
+    .string "anyway.$"
 
 Route109_Text_H2_1::
-	.string "You're the best!$"
+    .string "Sand and salt and losing.$"
 
 Route109_Text_H2_2::
-	.string "In the best port was the best\n"
-	.string "TRAINER…$"
+    .string "Rinse your POKéMON off before you\n"
+    .string "go up to the city. The nurse can\l"
+    .string "always tell.$"
 
 Route109_Text_H3_0::
-	.string "Urrrrppp…\n"
-	.string "Battle? With me?$"
+    .string "You're that trainer off the plane.\p"
+    .string "Go on then. Show the beach.$"
 
 Route109_Text_H3_1::
-	.string "Urp… Ooooooohhhhhh…\n"
-	.string "Urrrrpppp…$"
+    .string "The beach has been shown.$"
 
 Route109_Text_H3_2::
-	.string "I'm usually stronger than this!\n"
-	.string "I'm just seasick as a dog!\p"
-	.string "I'm a SAILOR, but…$"
+    .string "Half of SLATEPORT will say they\n"
+    .string "were standing here.$"
 
 Route109_Text_H4_0::
-	.string "I'm thirsty… I could go for a SODA\n"
-	.string "POP at the SEASHORE HOUSE…$"
+    .string "Swim out to the buoy and back and\n"
+    .string "then we'll talk about battling.\p"
+    .string "…Or we could just battle.$"
 
 Route109_Text_H4_1::
-	.string "Groan…$"
+    .string "Should have made you swim.$"
 
 Route109_Text_H4_2::
-	.string "I'm getting famished… My inner tube\n"
-	.string "looks like a giant doughnut…$"
+    .string "CAPTAIN STERN's ship goes out past\n"
+    .string "that buoy. Watch for it in the\l"
+    .string "morning.$"
 
 Route109_Text_H5_0::
-	.string "Doesn't a beach umbrella look like\n"
-	.string "a giant flower?$"
+    .string "I train here because the sand\n"
+    .string "takes the speed out of everything.\p"
+    .string "Whatever wins on sand wins\n"
+    .string "anywhere.$"
 
 Route109_Text_H5_1::
-	.string "Mommy!$"
+    .string "There goes that theory.$"
 
 Route109_Text_H5_2::
-	.string "If you look at the beach from the\n"
-	.string "sky, it looks like a big flower\l"
-	.string "garden!$"
+    .string "Try it. Run the length of the\n"
+    .string "beach and then battle. It's\l"
+    .string "humbling.$"
 
 Route109_Text_H6::
-	.string "Yo, TRAINERS!\n"
-	.string "Whether you're hot to trot,\l"
-	.string "or cool cat not,\l"
-	.string "chill at my papa's spot!$"
+    .string "Come on in, trainers!\p"
+    .string "Three battles, no resting, cold\n"
+    .string "SODA POP for anyone still\l"
+    .string "standing at the end!\p"
+    .string "That's my papa's house, that is.$"
 
 Route109_Text_H7_0::
-	.string "Hi, big TRAINER.\n"
-	.string "Will you battle with me?$"
+    .string "Don't kick sand on my towel. That\n"
+    .string "is the only rule I have.$"
 
 Route109_Text_H7_1::
-	.string "Oh, you're strong.$"
+    .string "You didn't even kick sand and I\n"
+    .string "still lost.$"
 
 Route109_Text_H7_2::
-	.string "How did you get to be so strong?$"
+    .string "There's a wreck out west, past the\n"
+    .string "channel. People swim to it on a\l"
+    .string "dare and regret it.$"
 
 Route109_Text_H8_0::
-	.string "I can't swim without my inner tube,\n"
-	.string "but I won't lose at POKéMON!$"
+    .string "My brother's inside the SEASHORE\n"
+    .string "HOUSE. He hasn't lost this week.\p"
+    .string "Beat me first and he'll hear about\n"
+    .string "it.$"
 
 Route109_Text_H8_1::
-	.string "Did I lose because I have an inner\n"
-	.string "tube?$"
+    .string "He'll hear about it, all right.$"
 
 Route109_Text_H8_2::
-	.string "My inner tube is a fashion item.\n"
-	.string "I can't be seen without it.$"
+    .string "Three in a row is the house rule.\n"
+    .string "No potions between, either.$"
 
 Route109_Text_H9_0::
-	.string "Wahahah! This dude's going to catch\n"
-	.string "himself a big one!$"
+    .string "Been fishing this beach since\n"
+    .string "before the museum was built.\p"
+    .string "I've pulled up two boots and a\n"
+    .string "kettle.$"
 
 Route109_Text_H9_1::
-	.string "This dude just lost one…$"
+    .string "And now a beating.$"
 
 Route109_Text_H9_2::
-	.string "This dude thinks you're a big one.\n"
-	.string "No, you're a big-one-to-be!$"
+    .string "Something's changed in the water\n"
+    .string "this year. Fish are shy and the\l"
+    .string "weed comes up dead.$"
 
 Route109_Text_H10::
-	.string "Our sand castle's taking a long time\n"
-	.string "to make.$"
+    .string "Our sand castle is nearly done.\p"
+    .string "It's the SLATEPORT museum. That\n"
+    .string "bit's the roof and that bit fell\l"
+    .string "over.$"
 
 Route109_Text_H11::
-	.string "You can have this!$"
+    .string "You can hold my shell if you like.\p"
+    .string "…No, give it back. I've changed my\n"
+    .string "mind.$"
 
 Route109_Text_H12::
-	.string "Little kids can dart around so\n"
-	.string "quickly…\p"
-	.string "You don't dare take your eyes off\n"
-	.string "them for an instant. It's very\l"
-	.string "taxing.\p"
-	.string "Mine are with my POKéMON, so they\n"
-	.string "should be okay, but…$"
+    .string "Look away for a moment and they're\n"
+    .string "in the water.\p"
+    .string "Their POKéMON watch them better\n"
+    .string "than I do, if I'm honest.$"
 
 Route109_Text_H13_0::
-	.string "MEL: We're, like, totally in love.\n"
-	.string "Our romance is heating up all of\l"
-	.string "HOENN!$"
+    .string "I'm faster in the water than on\n"
+    .string "the sand. Everyone is.$"
 
 Route109_Text_H13_1::
-	.string "MEL: We lost, and it's my fault!\n"
-	.string "PAUL will hate me!$"
+    .string "Faster and still second.$"
 
 Route109_Text_H13_2::
-	.string "MEL: Um, PAUL, are you angry with\n"
-	.string "me? Please don't be angry.$"
+    .string "If you swim west far enough you'll\n"
+    .string "reach DEWFORD. Don't.$"
 
 Route109_Text_H14_0::
-	.string "PAUL: Well, this is a mood-breaker.\p"
-	.string "I wish you wouldn't disturb our\n"
-	.string "precious time together.$"
+    .string "One battle. I've a boat to catch\n"
+    .string "and I'll blame you if I miss it.$"
 
 Route109_Text_H14_1::
-	.string "PAUL: Well, I give up.$"
+    .string "I'm missing the boat.$"
 
 Route109_Text_H14_2::
-	.string "PAUL: Well, don't tell anyone that\n"
-	.string "we're here. This is just our private\l"
-	.string "world of two!$"
+    .string "The DEWFORD boat goes when the\n"
+    .string "tide's right, not when the sign\l"
+    .string "says.$"
 
 Route109_Text_H15::
-	.string "The water around these parts is\n"
-	.string "clean.\p"
-	.string "But, I get my ZIGZAGOON to pick up\n"
-	.string "litter from the shoreline at times.\p"
-	.string "Dirty water becomes rain and joins\n"
-	.string "our rivers, which we drink from…\p"
-	.string "If we pollute the sea, it all comes\n"
-	.string "back to haunt us eventually.$"
+    .string "The water here is clean, and it\n"
+    .string "stays clean because people pick\l"
+    .string "things up.\p"
+    .string "My ZIGZAGOON does most of it. It\n"
+    .string "thinks we're playing.\p"
+    .string "What goes into this sea comes back\n"
+    .string "as rain. That's all anybody needs\l"
+    .string "to know.$"
 
 Route109_Text_H16::
-	.string "ZIGZAGOON: Guguu?$"
+    .string "ZIGZAGOON: Guguu?$"
 
 Route109_Text_H17_0::
-	.string "I can't swim, so I'm pretending\n"
-	.string "to swim.$"
+    .string "Sun, sand and a battle. That's the\n"
+    .string "whole day sorted.$"
 
 Route109_Text_H17_1::
-	.string "I thought so!\n"
-	.string "I didn't think we could win.$"
+    .string "Well, most of the day.$"
 
 Route109_Text_H17_2::
-	.string "When I learn how to swim, I think\n"
-	.string "my POKéMON will become tougher.$"
+    .string "The museum up the hill is free to\n"
+    .string "walk round now. It wasn't always.$"
 
 Route109_Text_H18_0::
-	.string "Tadaah! See?\n"
-	.string "My inner tube's round!$"
+    .string "You've walked past six trainers to\n"
+    .string "get to me.\p"
+    .string "I watched all six.$"
 
 Route109_Text_H18_1::
-	.string "Oh, oh!\n"
-	.string "Too bad!$"
+    .string "And now I've watched a seventh.$"
 
 Route109_Text_H18_2::
-	.string "After I showed you my round inner\n"
-	.string "tube, too…$"
+    .string "BADGES from across the sea and you\n"
+    .string "still stop for a beach battle.\p"
+    .string "That's the part I didn't expect.$"
 
 Route109_Text_H19_0::
-	.string "For a guy as macho as me, this kind\n"
-	.string "of POKéMON is the perfect match!$"
+    .string "Careful where you tread. There are\n"
+    .string "shells in this sand that bite.$"
 
 Route109_Text_H19_1::
-	.string "I'm cool even in defeat, hey?$"
+    .string "Should have let the shells do it.$"
 
 Route109_Text_H19_2::
-	.string "For a guy as macho as me, a port\n"
-	.string "is the perfect setting!\p"
-	.string "I guess I'll head for SLATEPORT.$"
+    .string "SHELLDER, mostly. They come in on\n"
+    .string "the tide and sulk.$"
 
 Route109_Text_H20::
-	.string "SEASHORE HOUSE\p"
-	.string "“May hot battles rage on hot sands!\n"
-	.string "The place for hot TRAINERS!”$"
+    .string "SEASHORE HOUSE\p"
+    .string "“Three battles, no rest, cold\n"
+    .string "drinks for whoever's left.”$"
 
 Route109_Text_H21::
-	.string "TRAINER TIPS\p"
-	.string "POKéMON at the same level may not\n"
-	.string "always have identical stats.\p"
-	.string "POKéMON raised by TRAINERS are said\n"
-	.string "to grow stronger than wild POKéMON.$"
-
+    .string "TRAINER TIPS\p"
+    .string "Two POKéMON of the same level are\n"
+    .string "not the same POKéMON.\p"
+    .string "One raised by a trainer will\n"
+    .string "outgrow one left in the wild.$"
+@ END PATCH

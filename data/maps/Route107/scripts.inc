@@ -35,4 +35,3 @@ Route107_EventScript_H6::
 	trainerbattle_single TRAINER_HOENN_CAMRON, Route107_Text_H6_0, Route107_Text_H6_1
 	msgbox Route107_Text_H6_2, MSGBOX_AUTOCLOSE
 	end
-

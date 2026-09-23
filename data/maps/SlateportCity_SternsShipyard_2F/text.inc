@@ -1,11 +1,18 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 SlateportCity_SternsShipyard_2F_Text_H0::
-	.string "Designing a large ship is more like\n"
-	.string "making a big building than putting\l"
-	.string "together a transportation vehicle.$"
+    .string "Drawing a big ship is closer to\n"
+    .string "drawing a building than a boat.\p"
+    .string "Stairs, doors, where the weight\n"
+    .string "sits. Only this building has to\l"
+    .string "float afterwards.$"
 
 SlateportCity_SternsShipyard_2F_Text_H1::
-	.string "Don't you think it's strange that\n"
-	.string "a ship made of heavy iron floats?\p"
-	.string "It floats because of a principle\n"
-	.string "called buoyancy.$"
-
+    .string "Doesn't it strike you as unlikely,\n"
+    .string "all that iron floating?\p"
+    .string "She pushes aside more water than\n"
+    .string "she weighs. That's the whole trick,\l"
+    .string "and it never stops sounding like a\l"
+    .string "trick.$"
+@ END PATCH

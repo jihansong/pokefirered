@@ -1,55 +1,51 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
+@ Emerald ran these NPCs off its trendy-phrase system, which FR/LG has no
+@ buffers for, so the imported lines printed whatever was left in STR_VAR_1.
+@ The hall is the island's news exchange instead, and points at the zone's events.
 DewfordTown_Hall_Text_H0::
-	.string "What's in vogue? Why, it has to be\n"
-	.string "“{STR_VAR_1}”!\p"
-	.string "I can't imagine what life would be\n"
-	.string "like without “{STR_VAR_1}”!$"
+    .string "This is where the island puts its\n"
+    .string "news, since there's nowhere else\l"
+    .string "to put it.\p"
+    .string "Today's news is you.$"
 
 DewfordTown_Hall_Text_H1::
-	.string "I'm teaching my POKéMON about\n"
-	.string "“{STR_VAR_1},”\l"
-	.string "but it's not going well.\p"
-	.string "It's a bit too much, I think.$"
+    .string "A ship went down off ROUTE 108\n"
+    .string "years back and nobody raised it.\p"
+    .string "People swim out to look. They come\n"
+    .string "back with rust and stories.$"
 
 DewfordTown_Hall_Text_H2::
-	.string "I'm studying up on the hip and\n"
-	.string "trendy “{STR_VAR_1}” now.\p"
-	.string "Is it true that there's a deep link\n"
-	.string "between “{STR_VAR_1}”\l"
-	.string "and “{STR_VAR_2}”?$"
+    .string "GRANITE CAVE, north of here, has a\n"
+    .string "man living in it.\p"
+    .string "Not living rough, mind. He's down\n"
+    .string "there reading the rock like it owes\l"
+    .string "him an answer.$"
 
 DewfordTown_Hall_Text_H3::
-	.string "This whole business about\n"
-	.string "“{STR_VAR_1}”…\l"
-	.string "Isn't there a TV show on it?$"
+    .string "My POKéMON came up out of the cave\n"
+    .string "with me and hasn't been the same\l"
+    .string "since.\p"
+    .string "Braver. Quieter. I don't know which\n"
+    .string "I prefer.$"
 
 DewfordTown_Hall_Text_H4::
-	.string "Across the sea…\p"
-	.string "Is “{STR_VAR_1}”\n"
-	.string "even more popular?$"
+    .string "Men in blue bandannas came through\n"
+    .string "on the SLATEPORT boat.\p"
+    .string "They asked what the water's like\n"
+    .string "over the wreck. Not about the\l"
+    .string "wreck. About the water.$"
 
 DewfordTown_Hall_Text_H5::
-	.string "I collect official\n"
-	.string "“{STR_VAR_1}”\l"
-	.string "licensed merchandise.\p"
-	.string "I have official\n"
-	.string "“{STR_VAR_1}” DOLLS…\p"
-	.string "Official “{STR_VAR_1}”\n"
-	.string "brand clothing…\p"
-	.string "And officially licensed\n"
-	.string "“{STR_VAR_1}”\l"
-	.string "picture books.\p"
-	.string "Heheh, I own!\n"
-	.string "I'm not sharing anything with you!$"
+    .string "BADGES from another LEAGUE are\n"
+    .string "worth exactly one thing here: the\l"
+    .string "look on BRAWLY's face.\p"
+    .string "He'll enjoy it. He enjoys losing\n"
+    .string "nearly as much as the other thing.$"
 
 DewfordTown_Hall_Text_H6::
-	.string "IDENTIFYING GOOD\n"
-	.string "“{STR_VAR_1}” &\l"
-	.string "BAD “{STR_VAR_1}”…\p"
-	.string "THE LINK BETWEEN\n"
-	.string "“{STR_VAR_1}” AND\l"
-	.string "POKéMON…\p"
-	.string "USEFUL\n"
-	.string "“{STR_VAR_1}”…\p"
-	.string "It's neatly jammed with books about\n"
-	.string "“{STR_VAR_1}.”$"
-
+    .string "Tide tables, ferry times, and a\n"
+    .string "notice about a lost BOAT KEY that\l"
+    .string "has been up for six years.$"
+@ END PATCH

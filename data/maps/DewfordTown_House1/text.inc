@@ -1,16 +1,21 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 DewfordTown_House1_Text_H0::
-	.string "I left the major port of SLATEPORT\n"
-	.string "CITY when I married my husband\l"
-	.string "here.\p"
-	.string "Life goes by slowly on this little\n"
-	.string "island. But being surrounded by the\l"
-	.string "beautiful sea--that's happiness, too.$"
+    .string "I came from SLATEPORT when I\n"
+    .string "married. Two hours by boat, and a\l"
+    .string "different world.\p"
+    .string "There, the sea is something you\n"
+    .string "ship things across.\p"
+    .string "Here it's the thing you live\n"
+    .string "beside, and mind your manners\l"
+    .string "around.$"
 
 DewfordTown_House1_Text_H1::
-	.string "There's a lot to be said for living\n"
-	.string "on a small island like this in\l"
-	.string "harmony with POKéMON and the family.$"
+    .string "One street, one GYM, one hall.\p"
+    .string "Everyone's POKéMON know everyone\n"
+    .string "else's. Saves a lot of battling.$"
 
 DewfordTown_House1_Text_H2::
-	.string "ZIGZAGOON: Guguuh!$"
-
+    .string "ZIGZAGOON: Gugugih!$"
+@ END PATCH

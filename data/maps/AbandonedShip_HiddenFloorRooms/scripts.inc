@@ -40,4 +40,3 @@ AbandonedShip_HiddenFloorRooms_EventScript_H4::
 AbandonedShip_HiddenFloorRooms_EventScript_H5::
 	msgbox AbandonedShip_HiddenFloorRooms_Text_H5, MSGBOX_SIGN
 	end
-

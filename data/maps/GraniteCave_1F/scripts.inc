@@ -8,4 +8,3 @@ GraniteCave_1F_EventScript_H0::
 GraniteCave_1F_EventScript_HItem90::
 	finditem ITEM_ESCAPE_ROPE
 	end
-

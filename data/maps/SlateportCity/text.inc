@@ -1,152 +1,169 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
+SlateportCity_Text_NorthRoadNotice::
+    .string "NOTICE\p"
+    .string "The coast road north is dug up\n"
+    .string "past the tree line.\p"
+    .string "The crews say the work runs into\n"
+    .string "next season. There's mud and rope\l"
+    .string "up there and little else.$"
+
+SlateportCity_Text_BattleTentNotice::
+    .string "The BATTLE TENT is dark inside.\p"
+    .string "A card in the window: CLOSED WHILE\n"
+    .string "WE LOOK FOR A NEW TENT MASTER.\p"
+    .string "The canvas smells of new rope.\n"
+    .string "Somebody means to open it again.$"
+
 SlateportCity_Text_H0::
-	.string "Whew… I'm just bushed…\p"
-	.string "I hiked over from MAUVILLE CITY.\n"
-	.string "But, boy, this city's huge.\p"
-	.string "If I'd known this, I would've ridden\n"
-	.string "my BIKE here.$"
+    .string "I walked in from MAUVILLE and my\n"
+    .string "legs have only just forgiven me.\p"
+    .string "Nobody warns you how far this city\n"
+    .string "spreads out along the water.$"
 
 SlateportCity_Text_H1::
-	.string "STERN, the fellow who built the\n"
-	.string "MUSEUM, also happens to be the\l"
-	.string "leader of an undersea exploration\l"
-	.string "team.\p"
-	.string "So, everyone calls him CAPT. STERN.$"
+    .string "The man who put up the museum runs\n"
+    .string "the survey ship as well.\p"
+    .string "That's why the whole harbor calls\n"
+    .string "him CAPTAIN and nobody calls him\l"
+    .string "anything else.$"
 
 SlateportCity_Text_H2::
-	.string "Wroooar! I'm going to compete in\n"
-	.string "the BATTLE TENT, too!\p"
-	.string "But before that, I need to catch\n"
-	.string "some POKéMON!$"
+    .string "I'm going to enter the BATTLE TENT\n"
+    .string "the day it opens again!\p"
+    .string "I've a year to catch something\n"
+    .string "worth entering with, haven't I.$"
 
 SlateportCity_Text_H3::
-	.string "What is that over there?\n"
-	.string "That long line…$"
+    .string "Look at that queue down the market.\p"
+    .string "Word went round that the one who\n"
+    .string "won KANTO's LEAGUE came in on the\l"
+    .string "plane. Everyone wants a look.$"
 
 SlateportCity_Text_H4::
-	.string "Ooh, look at this!\p"
-	.string "The seaweed you can get around\n"
-	.string "these parts is fresh and full of\l"
-	.string "life.\p"
-	.string "Why, it looks like it can even rear\n"
-	.string "up and attack!$"
+    .string "Taste this. Go on.\p"
+    .string "Seaweed pulled off the rocks this\n"
+    .string "morning. You can't buy this in\l"
+    .string "KANTO at any price.$"
 
 SlateportCity_Text_H5::
-	.string "Where the water is clean, the fruits\n"
-	.string "of bountiful harvest gather.\p"
-	.string "And where people gather, a market\n"
-	.string "soon starts.\p"
-	.string "That is how a town is born and\n"
-	.string "grows.$"
+    .string "Clean water brings a good catch.\n"
+    .string "A good catch brings people.\p"
+    .string "People bring stalls, and stalls\n"
+    .string "bring a city. That's the whole\l"
+    .string "story of SLATEPORT.$"
 
 SlateportCity_Text_H6::
-	.string "Shopping where you can breathe the\n"
-	.string "scent of the ocean…\p"
-	.string "SLATEPORT is such a wonderful\n"
-	.string "place!$"
+    .string "Shopping with the sea right there\n"
+    .string "at the end of the street!\p"
+    .string "I could do this every single day.$"
 
 SlateportCity_Text_H7::
-	.string "The sea is just so vast…\p"
-	.string "Could the sea have been made by\n"
-	.string "the tears shed by POKéMON?$"
+    .string "Forty years at sea and it still\n"
+    .string "looks bigger than it did.\p"
+    .string "Whatever is under the part the\n"
+    .string "CAPTAIN can't chart, it was there\l"
+    .string "before any of us.$"
 
 SlateportCity_Text_H8::
-	.string "Do you know what they do with old\n"
-	.string "ships that become too creaky to\l"
-	.string "sail?\p"
-	.string "They sink them in the sea so they\n"
-	.string "become habitats for POKéMON.$"
+    .string "Know what becomes of a ship too\n"
+    .string "tired to sail?\p"
+    .string "Down she goes, and inside a year\n"
+    .string "there's more POKéMON living in her\l"
+    .string "than there ever were sailors.$"
 
 SlateportCity_Text_H9::
-	.string "Whenever I visit here, I get carried\n"
-	.string "away and buy too much.$"
+    .string "I come down for one thing and go\n"
+    .string "home with six.\p"
+    .string "Every market in HOENN is the same\n"
+    .string "and this one is the worst of them.$"
 
 SlateportCity_Text_H10::
-	.string "Recently, a BATTLE TENT was built\n"
-	.string "in SLATEPORT.\p"
-	.string "GYMS are fun, but the BATTLE TENT's\n"
-	.string "awesome in its own way.\p"
-	.string "You should go find tough POKéMON\n"
-	.string "for the BATTLE TENT!$"
+    .string "The BATTLE TENT hasn't opened its\n"
+    .string "flap since the master left.\p"
+    .string "A GYM tells you how good you are.\n"
+    .string "The TENT told you how quick you\l"
+    .string "were. I miss the second one.$"
 
 SlateportCity_Text_H11::
-	.string "If you want to change your\n"
-	.string "POKéMON's nickname, you'll have to\l"
-	.string "get the NAME RATER to help you.$"
+    .string "Tired of a nickname you picked\n"
+    .string "when you were eleven?\p"
+    .string "The NAME RATER up the hill will\n"
+    .string "hear you out about it.$"
 
 SlateportCity_Text_H12::
-	.string "Any POKéMON you get in a trade,\n"
-	.string "you can't change its nickname.\p"
-	.string "The original TRAINER's love for that\n"
-	.string "POKéMON is in the nickname.$"
+    .string "A traded POKéMON keeps the name\n"
+    .string "it came with, and that's right.\p"
+    .string "Somebody else chose it, and they\n"
+    .string "meant it.$"
 
 SlateportCity_Text_H13::
-	.string "Welcome!\p"
-	.string "How may I serve you?$"
+    .string "Fresh off the boats this morning!\n"
+    .string "Come and look before it's gone!$"
 
 SlateportCity_Text_H14::
-	.string "Welcome!\p"
-	.string "How may I serve you?$"
+    .string "Nothing on this table is sold\n"
+    .string "anywhere else in HOENN.\p"
+    .string "Ask the woman at the next stall.\n"
+    .string "She'll tell you the same, and she's\l"
+    .string "honest.$"
 
 SlateportCity_Text_H15::
-	.string "The light of the lighthouse reaches\n"
-	.string "dozens of miles away.\p"
-	.string "I wonder if it doesn't startle\n"
-	.string "POKéMON in the sea.$"
+    .string "The lighthouse throws its beam\n"
+    .string "dozens of miles out.\p"
+    .string "I've always wondered what the\n"
+    .string "POKéMON out there make of it,\l"
+    .string "night after night.$"
 
 SlateportCity_Text_H16::
-	.string "Oh?\n"
-	.string "Your {STR_VAR_1}…$"
+    .string "You came off the KANTO plane, then.\p"
+    .string "Buy something while you're here.\n"
+    .string "My husband's stall is the one with\l"
+    .string "the blue cloth.$"
 
 SlateportCity_Text_H18::
-	.string "If a wild POKéMON gets hurt, it\n"
-	.string "heals itself by chewing on BERRIES.\p"
-	.string "Did you know that?\p"
-	.string "Somebody saw that and got the idea\n"
-	.string "of making medicine from BERRIES.\p"
-	.string "Did you know that?\p"
-	.string "To turn BERRIES into medicine,\n"
-	.string "they must be crushed into powder.\p"
-	.string "Did you know that?\p"
-	.string "You seem to have an interest\n"
-	.string "in BERRIES!\p"
-	.string "I've got something good for someone\n"
-	.string "like you.$"
+    .string "A hurt POKéMON in the wild chews\n"
+    .string "BERRIES until it feels better.\p"
+    .string "Somebody watched that happen and\n"
+    .string "invented medicine.\p"
+    .string "Crush them to powder, and you've\n"
+    .string "half a chemist's shop in a pouch.$"
 
 SlateportCity_Text_H19::
-	.string "NAME RATER'S HOUSE\n"
-	.string "“POKéMON nicknames rated.”$"
+    .string "NAME RATER'S HOUSE\n"
+    .string "“Nicknames heard and judged.”$"
 
 SlateportCity_Text_H20::
-	.string "SLATEPORT HARBOR\p"
-	.string "“The ferry S.S. TIDAL is under\n"
-	.string "construction in the SHIPYARD.\p"
-	.string "“Service is scheduled to begin\n"
-	.string "shortly.”$"
+    .string "SLATEPORT HARBOR\p"
+    .string "“Survey ship berth 1. Flights to\n"
+    .string "KANTO from the counter inside.”$"
 
 SlateportCity_Text_H21::
-	.string "SLATEPORT MARKET\n"
-	.string "“Unique items found nowhere else!”$"
+    .string "SLATEPORT MARKET\n"
+    .string "“If the sea has it, this row\l"
+    .string "sells it.”$"
 
 SlateportCity_Text_H22::
-	.string "“The endless sea sustains\n"
-	.string "all life.”\p"
-	.string "OCEANIC MUSEUM$"
+    .string "“The sea keeps everything it is\n"
+    .string "given.”\p"
+    .string "OCEANIC MUSEUM$"
 
 SlateportCity_Text_H23::
-	.string "SLATEPORT CITY\p"
-	.string "“The port where people and POKéMON\n"
-	.string "cross paths.”$"
+    .string "SLATEPORT CITY\p"
+    .string "“Where the water brings people,\n"
+    .string "and the people stay.”$"
 
 SlateportCity_Text_H24::
-	.string "POKéMON FAN CLUB\n"
-	.string "“Calling all fans of POKéMON!”$"
+    .string "POKéMON FAN CLUB\n"
+    .string "“Come in and talk about yours.”$"
 
 SlateportCity_Text_H25::
-	.string "BATTLE TENT SLATEPORT SITE\n"
-	.string "“Find it! The ultimate POKéMON!”$"
+    .string "BATTLE TENT, SLATEPORT SITE\n"
+    .string "“Closed. Enquire at the window.”$"
 
 SlateportCity_Text_H26::
-	.string "STERN'S SHIPYARD\p"
-	.string "“Wanted: A sailor capable of sailing\n"
-	.string "in all currents.”$"
-
+    .string "STERN'S SHIPYARD\p"
+    .string "“Wanted: hands who can read a\n"
+    .string "current. No experience refused.”$"
+@ END PATCH

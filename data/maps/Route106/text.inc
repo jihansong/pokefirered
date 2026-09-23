@@ -1,58 +1,59 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 Route106_Text_H0_0::
-	.string "Hahahah! I'm a lousy runner, but in\n"
-	.string "the water you can't catch me!$"
+    .string "On land I'm nothing. Out here I'm\n"
+    .string "the fastest thing you'll meet.$"
 
 Route106_Text_H0_1::
-	.string "I give up!$"
+    .string "Beaten in my own water.$"
 
 Route106_Text_H0_2::
-	.string "I wouldn't lose in a swim race…$"
+    .string "Race me sometime, champion. No\n"
+    .string "POKéMON, just the two of us and\l"
+    .string "the headland.$"
 
 Route106_Text_H1_0::
-	.string "The sea is my backyard. I'm not\n"
-	.string "going to take it easy because you're\l"
-	.string "a kid!$"
+    .string "This stretch is my back garden.\p"
+    .string "I don't go easy in my own garden.$"
 
 Route106_Text_H1_1::
-	.string "Did you take it easy on me by any\n"
-	.string "chance?$"
+    .string "You went easy on me, didn't you.\n"
+    .string "Don't answer that.$"
 
 Route106_Text_H1_2::
-	.string "Drifting along with the waves… I\n"
-	.string "love it! Why don't you give it a\l"
-	.string "try?$"
+    .string "Float on your back a while. The\n"
+    .string "cave mouth looks less grim from\l"
+    .string "out here.$"
 
 Route106_Text_H2_0::
-	.string "Which do you prefer, fishing in the\n"
-	.string "sea or a stream?$"
+    .string "Sea or stream, which is the better\n"
+    .string "fishing?\p"
+    .string "Wrong answer and we battle.$"
 
 Route106_Text_H2_1::
-	.string "Like in deep-sea fishing, I lost\n"
-	.string "spectacularly!$"
+    .string "Landed and gutted, that's me.$"
 
 Route106_Text_H2_2::
-	.string "Fishing is the greatest whether it's\n"
-	.string "in the sea or a stream.\l"
-	.string "You agree with me, right?$"
+    .string "Sea, obviously. A stream has never\n"
+    .string "surprised anybody.$"
 
 Route106_Text_H3_0::
-	.string "What do people do if they need to\n"
-	.string "go to a washroom?\p"
-	.string "What if my ROD hooks a big one while\n"
-	.string "I'm in the washroom? I just can't\l"
-	.string "go…$"
+    .string "Shh. I've had a bite twice and\n"
+    .string "lost it twice.\p"
+    .string "Battle me quick, before it comes\n"
+    .string "back.$"
 
 Route106_Text_H3_1::
-	.string "I lost because I'm trying to not go\n"
-	.string "to the washroom…$"
+    .string "There it goes. Gone again.$"
 
 Route106_Text_H3_2::
-	.string "Oh, no! I've got this feeling I'll\n"
-	.string "hook a big one!$"
+    .string "Whatever's down there is bigger\n"
+    .string "than my ROD deserves.$"
 
 Route106_Text_H4::
-	.string "TRAINER TIPS\p"
-	.string "Advice on catching POKéMON with a\n"
-	.string "ROD: Press the A Button if you get a\l"
-	.string "bite.$"
-
+    .string "TRAINER TIPS\p"
+    .string "A bite on the ROD is over in a\n"
+    .string "moment. Press the A Button the\l"
+    .string "instant you feel it.$"
+@ END PATCH

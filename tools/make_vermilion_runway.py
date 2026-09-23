@@ -56,6 +56,7 @@ DOOR_X, DOOR_Y = 35, 12
 X0, X1, Y0, Y1 = 30, 47, 0, 13     # the rectangle this tool owns
 RUNWAY_X, RUNWAY_Y0, RUNWAY_Y1 = 42, 3, 12
 ATTRS = FR + '/data/tilesets/secondary/vermilion_city/metatile_attributes.bin'
+MB_WARP_DOOR = 0x69
 
 
 def tree(x, y, bottom=False, left=False):
@@ -169,8 +170,13 @@ def main():
     # MB_POKEMART_SIGN behavior, so reading the terminal wall printed the mart's
     # sign text. Only the terminal uses these blocks, so clear them to MB_NORMAL.
     attrs = bytearray(open(ATTRS, 'rb').read())
+    # The terminal's blocks came from the MART, whose sign behavior made the wall
+    # print the mart's line, so they are cleared. The two blocks the entrance sits
+    # on keep MB_WARP_DOOR, or the door stops being a door.
+    door = {TERMINAL[DOOR_Y - TERMINAL_Y][DOOR_X - TERMINAL_X - 1],
+            TERMINAL[DOOR_Y - TERMINAL_Y][DOOR_X - TERMINAL_X]}
     for block in {b for row in TERMINAL for b in row}:
-        attrs[(block - 640) * 4] = 0
+        attrs[(block - 640) * 4] = MB_WARP_DOOR if block in door else 0
     open(ATTRS, 'wb').write(attrs)
     print(f'{LAYOUT}: terminal 8x4 at x={TERMINAL_X}..{TERMINAL_X + 7}, runway x={RUNWAY_X}..'
           f'{RUNWAY_X + 3} y={RUNWAY_Y0}..{RUNWAY_Y1}, airside x=31..45 y=2..12')

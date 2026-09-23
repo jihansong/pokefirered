@@ -1,55 +1,48 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 SlateportCity_PokemonFanClub_Text_H0::
-	.string "If you keep letting a POKéMON faint\n"
-	.string "in battle, it'll come to resent it.\p"
-	.string "Soon, it will become less trusting\n"
-	.string "of the TRAINER.\p"
-	.string "In other words, it certainly won't\n"
-	.string "like you very much.$"
+    .string "Let a POKéMON faint over and over\n"
+    .string "and it stops looking at you the\l"
+    .string "same way.\p"
+    .string "They forgive a great deal. They\n"
+    .string "don't forget any of it.$"
 
 SlateportCity_PokemonFanClub_Text_H1::
-	.string "Do POKéMON enjoy having items used\n"
-	.string "on them?\p"
-	.string "Mine acted really happy when I gave\n"
-	.string "it some PROTEIN.$"
+    .string "Do they like being given things?\p"
+    .string "Mine went round the room twice\n"
+    .string "after a dose of PROTEIN, so I'd\l"
+    .string "say yes.$"
 
 SlateportCity_PokemonFanClub_Text_H2::
-	.string "Wow!\p"
-	.string "It's plain to see that you lavish\n"
-	.string "your love on your {STR_VAR_1}.\p"
-	.string "Okay, it's named {STR_VAR_2}.\p"
-	.string "Can I ask you a favor?\p"
-	.string "I'm a TV reporter, and I'm running\n"
-	.string "a survey on POKéMON.\p"
-	.string "Would you be willing to answer a few\n"
-	.string "simple questions for me?$"
+    .string "You're the one who flew in, aren't\n"
+    .string "you. KANTO's champion, in our\l"
+    .string "little club room.\p"
+    .string "Sit down, sit down. Tell us about\n"
+    .string "the one that walks behind you.$"
 
 SlateportCity_PokemonFanClub_Text_H3::
-	.string "I love seeing POKéMON that love\n"
-	.string "their TRAINERS.\p"
-	.string "POKéMON are very sensitive to\n"
-	.string "the feelings of their TRAINERS.\p"
-	.string "If you treat your POKéMON with love\n"
-	.string "and care, they'll love you back.\p"
-	.string "When your POKéMON grow to love you,\n"
-	.string "please come show me.$"
+    .string "I like watching a POKéMON that\n"
+    .string "plainly likes its TRAINER.\p"
+    .string "You can't fake it. They lean the\n"
+    .string "wrong way if it isn't true.\p"
+    .string "Bring yours by when they've been\n"
+    .string "with you a while longer.$"
 
 SlateportCity_PokemonFanClub_Text_H4::
-	.string "ZIGZAGOON: Kyuuu…$"
+    .string "ZIGZAGOON: Kyuuu…$"
 
 SlateportCity_PokemonFanClub_Text_H5::
-	.string "SKITTY: Fffnyaaaah…$"
+    .string "SKITTY: Fffnyaaaah…$"
 
 SlateportCity_PokemonFanClub_Text_H6::
-	.string "AZUMARILL: Marimari?$"
+    .string "AZUMARILL: Marimari?$"
 
 SlateportCity_PokemonFanClub_Text_H7::
-	.string "Heh! My POKéMON totally rules!\n"
-	.string "It's cooler than any POKéMON!\p"
-	.string "I was lipping off with a swagger in\n"
-	.string "my step like that when the CHAIRMAN\l"
-	.string "chewed me out.\p"
-	.string "That took the swagger out of my\n"
-	.string "step.\p"
-	.string "If you'd like, I'll teach the move\n"
-	.string "SWAGGER to a POKéMON of yours.$"
-
+    .string "Mine's the best POKéMON on this\n"
+    .string "coast, I used to say. Loudly.\p"
+    .string "The CHAIRMAN took me aside and\n"
+    .string "asked whether I'd told it that, or\l"
+    .string "only everyone else.\p"
+    .string "I talk about it differently now.$"
+@ END PATCH

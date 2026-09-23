@@ -13,4 +13,3 @@ AbandonedShip_Corridors_B1F_EventScript_H1::
 AbandonedShip_Corridors_B1F_EventScript_H2::
 	msgbox AbandonedShip_Corridors_B1F_Text_H2, MSGBOX_SIGN
 	end
-

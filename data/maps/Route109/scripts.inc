@@ -110,4 +110,3 @@ Route109_EventScript_H20::
 Route109_EventScript_H21::
 	msgbox Route109_Text_H21, MSGBOX_SIGN
 	end
-

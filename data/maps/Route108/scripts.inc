@@ -34,4 +34,3 @@ Route108_EventScript_H5::
 Route108_EventScript_HItem15::
 	finditem ITEM_STAR_PIECE
 	end
-

@@ -6,7 +6,11 @@ Static checks over the map data and the flag/var constants. Read-only.
   warps       warp events and scripted warps to a map that does not exist, or to a
               warp id the destination does not have (WARP_ID_DYNAMIC is skipped);
               warps whose destination does not lead back are counted (INFO: holes,
-              one-way doors and several doors into one room are normal)
+              one-way doors and several doors into one room are normal); a warp
+              event on a tile whose behavior does not warp is INFO when retail has
+              the same warp there (holes, cave mouths, script-opened doors) and
+              WARN when this project added the warp, because our own doors are
+              meant to work (this is how the v0.6.0 airport door was found)
   connections map connections to unknown maps; connections the other map does not
               mirror (opposite direction, negated offset)
   flags/vars  #define values that share a number. An explicit alias
@@ -73,6 +77,17 @@ class Report:
                 out.write(f'- {lv}: {text}\n')
 
 
+def retail_warp_tiles(name):
+    """The (x, y) of every warp retail FR/LG has on this map, or None when the map is ours."""
+    raw = C.git_show('upstream/master', f'data/maps/{name}/map.json')
+    if raw is None:
+        return set()  # a map this project added: none of its warps come from retail
+    try:
+        return {(w['x'], w['y']) for w in (json.loads(raw).get('warp_events') or [])}
+    except (ValueError, KeyError):
+        return None
+
+
 def check_warps(maps, ids, scripts, rep):
     for name, d in maps.items():
         for i, w in enumerate(d.get('warp_events') or []):
@@ -99,11 +114,22 @@ def check_warps(maps, ids, scripts, rep):
     # swaps the metatile (E4 doors, TERRA CAVE, ALTERING CAVE...), or never
     mt = C.Metatiles()
     inert = collections.defaultdict(list)
+    ours = collections.defaultdict(list)
     for name, d in maps.items():
+        retail = retail_warp_tiles(name)
         for i, w in enumerate(d.get('warp_events') or []):
-            if mt.warp_is_live(d, w) is False:
-                inert[name].append(f'{i}->{w["dest_map"].replace("MAP_", "")}'
-                                   f' [{mt.mb_name.get(mt.behavior(d["layout"], w["x"], w["y"]), "?")}]')
+            if mt.warp_is_live(d, w) is not False:
+                continue
+            entry = (f'{i} ({w["x"]},{w["y"]})->{w["dest_map"].replace("MAP_", "")}'
+                     f' [{mt.mb_name.get(mt.behavior(d["layout"], w["x"], w["y"]), "?")}]')
+            # A door this project put on the map is meant to work. Retail's own dead
+            # warp tiles are the normal kind (holes, cave mouths, doors a script opens).
+            if retail is not None and (w['x'], w['y']) not in retail and not d['_hoenn']:
+                ours[name].append(entry)
+            else:
+                inert[name].append(entry)
+    for name, lst in sorted(ours.items()):
+        rep.add('inert warps', 'WARN', f'{name}: warp we added sits on a tile that does not warp: {", ".join(lst)}')
     for name, lst in sorted(inert.items()):
         region = 'Hoenn' if maps[name]['_hoenn'] else 'Kanto'
         rep.add('inert warps', 'INFO', f'{region} {name}: {", ".join(lst)}')

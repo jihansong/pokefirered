@@ -1,35 +1,42 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 SlateportCity_BattleTentLobby_Text_H0::
-	.string "Welcome to the BATTLE TENT\n"
-	.string "SLATEPORT SITE!\p"
-	.string "I am your guide to the Battle Swap\n"
-	.string "Tournament.$"
+    .string "Welcome to the BATTLE TENT,\n"
+    .string "SLATEPORT SITE.\p"
+    .string "I'd take your name for the next\n"
+    .string "tournament, but there isn't one.\p"
+    .string "The TENT MASTER left in the spring\n"
+    .string "and the tent has been quiet since.$"
 
 SlateportCity_BattleTentLobby_Text_H1::
-	.string "So, like, I couldn't find myself any\n"
-	.string "POKéMON that were, like, for me.\p"
-	.string "So, I figured, like, hey, I should\n"
-	.string "file a complaint to the guy there?\p"
-	.string "And he wouldn't hear me out, like,\n"
-	.string "hey! So, like, total bummer, man!\p"
-	.string "Hey, like, you! Zip it, you know?\n"
-	.string "Just, you know, take this!$"
+    .string "I came all the way down the coast\n"
+    .string "for a battle and the canvas is\l"
+    .string "shut.\p"
+    .string "Still. It's a nice walk back.$"
 
 SlateportCity_BattleTentLobby_Text_H2::
-	.string "I don't really like BUG POKéMON,\n"
-	.string "but maybe I'll try using some for\l"
-	.string "a change of pace.\p"
-	.string "Who knows, I might even get to like\n"
-	.string "them!$"
+    .string "The TENT used to hand you three\n"
+    .string "POKéMON you'd never met and let\l"
+    .string "you get on with it.\p"
+    .string "I lost with BUG types twice and\n"
+    .string "liked them by the end.$"
 
 SlateportCity_BattleTentLobby_Text_H3::
-	.string "You can battle all you want here\n"
-	.string "even if you don't have any tough\l"
-	.string "POKéMON.$"
+    .string "You didn't need strong POKéMON\n"
+    .string "here. That was the whole point of\l"
+    .string "it.\p"
+    .string "I hope whoever takes over keeps\n"
+    .string "that part.$"
 
 SlateportCity_BattleTentLobby_Text_H4::
-	.string "Wouldn't it be nice if they had more\n"
-	.string "of a selection?$"
+    .string "They'll reopen it. There's new rope\n"
+    .string "on the frame, and nobody buys rope\l"
+    .string "for a tent they're finished with.$"
 
 SlateportCity_BattleTentLobby_Text_H5::
-	.string "The Battle Swap rules are listed.$"
-
+    .string "The tournament rules are still\n"
+    .string "pinned to the board.\p"
+    .string "Somebody has written UNTIL FURTHER\n"
+    .string "NOTICE across the bottom in pencil.$"
+@ END PATCH

@@ -1,0 +1,77 @@
+@ HOENN's rumor collector, the counterpart of the one in CELADON CITY. Every
+@ event the Hoenn chapters add gets a rumor here so it can be found in game.
+SlateportCity_PokemonCenter_1F_EventScript_RumorCollector::
+	lock
+	faceplayer
+	msgbox SlateportCity_PokemonCenter_1F_Text_RumorIntro
+	switch VAR_HOENN_RUMOR_STATE
+	case 0, SlateportCity_PokemonCenter_1F_EventScript_Rumor0
+	case 1, SlateportCity_PokemonCenter_1F_EventScript_Rumor1
+	case 2, SlateportCity_PokemonCenter_1F_EventScript_Rumor2
+	case 3, SlateportCity_PokemonCenter_1F_EventScript_Rumor3
+	case 4, SlateportCity_PokemonCenter_1F_EventScript_Rumor4
+	case 5, SlateportCity_PokemonCenter_1F_EventScript_Rumor5
+	case 6, SlateportCity_PokemonCenter_1F_EventScript_Rumor6
+	case 7, SlateportCity_PokemonCenter_1F_EventScript_Rumor7
+	case 8, SlateportCity_PokemonCenter_1F_EventScript_Rumor8
+	case 9, SlateportCity_PokemonCenter_1F_EventScript_Rumor9
+	setvar VAR_HOENN_RUMOR_STATE, 0
+	goto SlateportCity_PokemonCenter_1F_EventScript_Rumor0
+	end
+
+SlateportCity_PokemonCenter_1F_EventScript_Rumor0::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Rumor0
+	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+SlateportCity_PokemonCenter_1F_EventScript_Rumor1::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Rumor1
+	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+SlateportCity_PokemonCenter_1F_EventScript_Rumor2::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Rumor2
+	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+SlateportCity_PokemonCenter_1F_EventScript_Rumor3::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Rumor3
+	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+SlateportCity_PokemonCenter_1F_EventScript_Rumor4::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Rumor4
+	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+SlateportCity_PokemonCenter_1F_EventScript_Rumor5::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Rumor5
+	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+SlateportCity_PokemonCenter_1F_EventScript_Rumor6::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Rumor6
+	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+SlateportCity_PokemonCenter_1F_EventScript_Rumor7::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Rumor7
+	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+SlateportCity_PokemonCenter_1F_EventScript_Rumor8::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Rumor8
+	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+SlateportCity_PokemonCenter_1F_EventScript_Rumor9::
+	msgbox SlateportCity_PokemonCenter_1F_Text_Rumor9
+	goto SlateportCity_PokemonCenter_1F_EventScript_NextRumor
+	end
+
+SlateportCity_PokemonCenter_1F_EventScript_NextRumor::
+	addvar VAR_HOENN_RUMOR_STATE, 1
+	goto_if_lt VAR_HOENN_RUMOR_STATE, 10, EventScript_ReleaseEnd
+	setvar VAR_HOENN_RUMOR_STATE, 0
+	release
+	end

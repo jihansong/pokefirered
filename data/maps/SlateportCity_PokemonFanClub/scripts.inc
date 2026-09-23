@@ -32,4 +32,3 @@ SlateportCity_PokemonFanClub_EventScript_H6::
 SlateportCity_PokemonFanClub_EventScript_H7::
 	msgbox SlateportCity_PokemonFanClub_Text_H7, MSGBOX_NPC
 	end
-

@@ -1,29 +1,34 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 AbandonedShip_Rooms_1F_Text_H0::
-	.string "Ships of this sort are rare, so I'm\n"
-	.string "taking a look around.\p"
-	.string "Hmhm…\n"
-	.string "There appear to be other cabins…$"
+    .string "You don't see a hull built this way\n"
+    .string "any more, so I came to look at it.\p"
+    .string "There are more cabins aft. Some of\n"
+    .string "them still lock.$"
 
 AbandonedShip_Rooms_1F_Text_H1_0::
-	.string "What on earth would compel you to\n"
-	.string "come here? You must be curious!$"
+    .string "What brings anyone out to a wreck?\p"
+    .string "Curiosity, usually. Let's see if\n"
+    .string "that's all you brought.$"
 
 AbandonedShip_Rooms_1F_Text_H1_1::
-	.string "Not just curious, but also strong…$"
+    .string "Curious and dangerous, then.$"
 
 AbandonedShip_Rooms_1F_Text_H1_2::
-	.string "The man next door…\p"
-	.string "He says he's just sightseeing,\n"
-	.string "but I don't know about that.$"
+    .string "The man in the next cabin says\n"
+    .string "he's only sightseeing.\p"
+    .string "Sightseers don't measure things.$"
 
 AbandonedShip_Rooms_1F_Text_H2_0::
-	.string "Waaah!\n"
-	.string "I've been found! …Huh?$"
+    .string "Eeek! Found me! …Oh. You're not\n"
+    .string "her.$"
 
 AbandonedShip_Rooms_1F_Text_H2_1::
-	.string "Oh, you're not my mom.$"
+    .string "You're worse than her.$"
 
 AbandonedShip_Rooms_1F_Text_H2_2::
-	.string "I'm in trouble with my mom, so I\n"
-	.string "ran. Keep it a secret where I am!$"
-
+    .string "I'm hiding from my mum. If she\n"
+    .string "swims out here, you haven't seen\l"
+    .string "me.$"
+@ END PATCH

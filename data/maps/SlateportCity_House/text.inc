@@ -1,13 +1,19 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 SlateportCity_House_Text_H0::
-	.string "My POKéMON has a HASTY nature.\p"
-	.string "It has higher SPEED compared to\n"
-	.string "my other POKéMON.\p"
-	.string "Maybe their nature has something to\n"
-	.string "do with the stat gains of POKéMON.$"
+    .string "Mine has a HASTY nature, and it\n"
+    .string "shows: quick as anything, and it\l"
+    .string "takes a hit badly.\p"
+    .string "Two of the same kind can grow up\n"
+    .string "quite different. Their nature sees\l"
+    .string "to that.$"
 
 SlateportCity_House_Text_H1::
-	.string "You're a TRAINER, aren't you?\p"
-	.string "Since you came to SLATEPORT CITY,\n"
-	.string "you must be going to the BATTLE\l"
-	.string "TENT.$"
-
+    .string "You're a TRAINER, I can tell.\p"
+    .string "Everyone who comes to SLATEPORT\n"
+    .string "asks about the TENT, and everyone\l"
+    .string "finds it shut.\p"
+    .string "Go and look at the harbor instead.\n"
+    .string "That's where things are happening.$"
+@ END PATCH

@@ -357,7 +357,8 @@ struct SaveBlock2
     /*0xB20*/ u8 hoennTrainerFlags[0x80]; // Hoenn trainers sit past the flag block, so their
                                          // "defeated" bits live in this unused padding instead
     /*0xBA0*/ u8 hoennFlags[0x100];       // flags past FLAGS_COUNT (Hoenn's items and events)
-    /*0xCA0*/ u8 filler_CA0[0x280];
+    /*0xCA0*/ u16 hoennVars[0x80];       // vars past VARS_END for the Hoenn story (see GetVarPointer)
+    /*0xDA0*/ u8 filler_DA0[0x180];
     /*0xF20*/ u32 encryptionKey;
 }; // size: 0xF24
 

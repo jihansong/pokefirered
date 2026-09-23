@@ -1,13 +1,18 @@
-GraniteCave_1F_Text_H0::
-	.string "Hey, you.\n"
-	.string "It gets awfully dark ahead.\l"
-	.string "It'll be tough trying to explore.\p"
-	.string "That guy who came by earlier…\n"
-	.string "STEVEN, I think it was.\p"
-	.string "He knew how to use FLASH, so he\n"
-	.string "ought to be all right, but…\p"
-	.string "Well, for us HIKERS, helping out\n"
-	.string "those that we meet is our motto.\p"
-	.string "Here you go, I'll pass this on to\n"
-	.string "you.$"
 
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
+@ In Emerald this HIKER hands over HM05. The import brought the words without
+@ the item, and a KANTO champion has FLASH already, so he gives directions.
+GraniteCave_1F_Text_H0::
+    .string "Hold up. It's black as a pocket\n"
+    .string "further in.\p"
+    .string "A fellow went down ahead of you\n"
+    .string "with a light of his own. STEVEN,\l"
+    .string "he said his name was.\p"
+    .string "You've the look of someone who\n"
+    .string "carries FLASH already, so I'll\l"
+    .string "save my breath and give you the\l"
+    .string "way instead.\p"
+    .string "Down, then left at the water, and\n"
+    .string "keep the wall on your right.$"
+@ END PATCH

@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 SlateportCity_Mart_Text_H1::
     .string "The market row outside has things\n"
     .string "you'll see nowhere else.\p"
@@ -14,4 +11,3 @@ SlateportCity_Mart_Text_H2::
     .string "There's one out past the harbor\n"
     .string "I've been failing to catch since\l"
     .string "spring.$"
-@ END PATCH

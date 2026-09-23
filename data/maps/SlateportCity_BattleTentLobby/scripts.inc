@@ -24,4 +24,3 @@ SlateportCity_BattleTentLobby_EventScript_H4::
 SlateportCity_BattleTentLobby_EventScript_H5::
 	msgbox SlateportCity_BattleTentLobby_Text_H5, MSGBOX_SIGN
 	end
-

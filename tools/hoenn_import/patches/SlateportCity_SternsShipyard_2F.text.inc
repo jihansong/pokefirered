@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 SlateportCity_SternsShipyard_2F_Text_H0::
     .string "Drawing a big ship is closer to\n"
     .string "drawing a building than a boat.\p"
@@ -15,4 +12,3 @@ SlateportCity_SternsShipyard_2F_Text_H1::
     .string "she weighs. That's the whole trick,\l"
     .string "and it never stops sounding like a\l"
     .string "trick.$"
-@ END PATCH

@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 SlateportCity_OceanicMuseum_1F_Text_H0::
     .string "Welcome to the OCEANIC MUSEUM.\p"
     .string "The CAPTAIN's own survey is\n"
@@ -98,4 +95,3 @@ SlateportCity_OceanicMuseum_1F_Text_H14::
     .string "A second sounder, its dial stopped\n"
     .string "at a number somebody circled.\p"
     .string "“No return. Reading discarded.”$"
-@ END PATCH

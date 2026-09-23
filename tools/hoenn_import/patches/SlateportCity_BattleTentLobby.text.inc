@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 SlateportCity_BattleTentLobby_Text_H0::
     .string "Welcome to the BATTLE TENT,\n"
     .string "SLATEPORT SITE.\p"
@@ -39,4 +36,3 @@ SlateportCity_BattleTentLobby_Text_H5::
     .string "pinned to the board.\p"
     .string "Somebody has written UNTIL FURTHER\n"
     .string "NOTICE across the bottom in pencil.$"
-@ END PATCH

@@ -62,3 +62,17 @@ SlateportCity_PokemonCenter_1F_Text_Rumor9::
     .string "turns heads in this city.\p"
     .string "The museum's current exhibit would\n"
     .string "dearly like to meet one.$"
+
+SlateportCity_PokemonCenter_1F_Text_H0::
+    .string "Advice, off a sailor?\p"
+    .string "Don't build one POKéMON and hope.\n"
+    .string "The sea doesn't care how strong\l"
+    .string "your best one is if it's the wrong\l"
+    .string "one for the weather.$"
+
+SlateportCity_PokemonCenter_1F_Text_H1::
+    .string "I trade with friends up and down\n"
+    .string "the coast.\p"
+    .string "When one arrives holding something\n"
+    .string "as well, that's two presents at\l"
+    .string "once, isn't it.$"

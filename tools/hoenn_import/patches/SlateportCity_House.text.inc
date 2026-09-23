@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 SlateportCity_House_Text_H0::
     .string "Mine has a HASTY nature, and it\n"
     .string "shows: quick as anything, and it\l"
@@ -16,4 +13,3 @@ SlateportCity_House_Text_H1::
     .string "finds it shut.\p"
     .string "Go and look at the harbor instead.\n"
     .string "That's where things are happening.$"
-@ END PATCH

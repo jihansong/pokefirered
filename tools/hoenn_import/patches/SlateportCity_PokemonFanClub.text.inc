@@ -1,6 +1,3 @@
-
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 SlateportCity_PokemonFanClub_Text_H0::
     .string "Let a POKéMON faint over and over\n"
     .string "and it stops looking at you the\l"
@@ -45,4 +42,3 @@ SlateportCity_PokemonFanClub_Text_H7::
     .string "asked whether I'd told it that, or\l"
     .string "only everyone else.\p"
     .string "I talk about it differently now.$"
-@ END PATCH

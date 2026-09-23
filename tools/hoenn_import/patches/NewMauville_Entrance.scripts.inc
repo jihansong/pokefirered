@@ -1,9 +1,3 @@
-NewMauville_Entrance_MapScripts::
-	map_script MAP_SCRIPT_ON_LOAD, NewMauville_Entrance_OnLoad
-	map_script MAP_SCRIPT_ON_TRANSITION, NewMauville_Entrance_OnTransition
-	.byte 0
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 @ Ported from pokeemerald (the map data is identical), text written fresh.
 NewMauville_Entrance_OnLoad:
 	call_if_eq VAR_HOENN_NEW_MAUVILLE_STATE, 0, NewMauville_Entrance_EventScript_CloseDoor
@@ -46,4 +40,3 @@ NewMauville_Entrance_EventScript_Door::
 NewMauville_Entrance_EventScript_DontOpenDoor::
 	releaseall
 	end
-@ END PATCH

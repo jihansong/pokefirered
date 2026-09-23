@@ -1,0 +1,29 @@
+{
+  "exact": {
+    "FLAG_SYS_CTRL_OBJ_DELETE": "FLAG_SYS_SPECIAL_WILD_BATTLE",
+    "Common_EventScript_NopReturn": "EventScript_Return",
+    "VAR_NEW_MAUVILLE_STATE": "VAR_HOENN_NEW_MAUVILLE_STATE",
+    "FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE": "FLAG_HOENN_VOLTORB_1",
+    "FLAG_DEFEATED_VOLTORB_2_NEW_MAUVILLE": "FLAG_HOENN_VOLTORB_2",
+    "FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE": "FLAG_HOENN_VOLTORB_3",
+    "FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1": "FLAG_HOENN_HIDE_VOLTORB_1",
+    "FLAG_HIDE_NEW_MAUVILLE_VOLTORB_2": "FLAG_HOENN_HIDE_VOLTORB_2",
+    "FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3": "FLAG_HOENN_HIDE_VOLTORB_3",
+    "Common_EventScript_RemoveStaticPokemon": "EventScript_RemoveStaticMon",
+    "Common_EventScript_LegendaryFlewAway": "EventScript_MonFlewAway"
+  },
+  "regex": [
+    [
+      "\\bTRAINER_(?!HOENN_|TYPE_|BATTLE_|PIC_|CLASS_|ENCOUNTER_)([A-Z0-9_]+)\\b",
+      "TRAINER_HOENN_\\1"
+    ],
+    [
+      "\\tapplywaitmovement (\\w+), (\\w+)\\n",
+      "\\tapplymovement \\1, \\2\n\twaitmovement 0\n"
+    ]
+  ],
+  "drop_lines": [
+    "FLAG_LANDMARK_",
+    "setvar VAR_ICE_STEP_COUNT"
+  ]
+}

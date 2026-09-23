@@ -45,3 +45,34 @@ MauvilleCity_Gym_Text_GymStatue::
     .string "MAUVILLE CITY POKéMON GYM\n"
     .string "LEADER: WATTSON\p"
     .string "“The current runs through him.”$"
+
+MauvilleCity_Gym_Text_WattsonErrand::
+    .string "Now then. A favour, since you're\n"
+    .string "standing there looking capable.\p"
+    .string "NEW MAUVILLE runs under this city.\n"
+    .string "I built it. I sealed it. And it is\l"
+    .string "still drawing power it has no\l"
+    .string "business drawing.\p"
+    .string "Take the key. Find the generator\n"
+    .string "and shut it down.$"
+
+MauvilleCity_Gym_Text_ReceivedBasementKey::
+    .string "{PLAYER} received the BASEMENT\n"
+    .string "KEY from WATTSON!$"
+
+MauvilleCity_Gym_Text_WattsonErrandWaiting::
+    .string "The entrance is on ROUTE 110, in\n"
+    .string "the bank below the cycling road.\p"
+    .string "Mind the POKéMON down there. They\n"
+    .string "have had the run of it since I\l"
+    .string "locked the door.$"
+
+MauvilleCity_Gym_Text_WattsonThanks::
+    .string "Wahahah! The meters went quiet an\n"
+    .string "hour ago and I knew it was you.\p"
+    .string "That place can stay off now. Take\n"
+    .string "this for the walk.$"
+
+MauvilleCity_Gym_Text_ReceivedTM24::
+    .string "{PLAYER} received TM24 from\n"
+    .string "WATTSON!$"

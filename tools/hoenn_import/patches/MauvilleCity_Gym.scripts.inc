@@ -168,7 +168,42 @@ MauvilleCity_Gym_EventScript_NoRoomForTM34::
 	release
 	end
 
+@ Event 4: after the BADGE, WATTSON hands over the BASEMENT KEY and asks the
+@ champion to find where NEW MAUVILLE is leaking power. Shutting the generator
+@ off brings TM24 back here.
 MauvilleCity_Gym_EventScript_WattsonPostBattle::
+	goto_if_unset FLAG_HOENN_WATTSON_ERRAND, MauvilleCity_Gym_EventScript_WattsonGiveErrand
+	goto_if_set FLAG_HOENN_NEW_MAUVILLE_DONE, MauvilleCity_Gym_EventScript_WattsonDone
+	goto_if_eq VAR_HOENN_NEW_MAUVILLE_STATE, 2, MauvilleCity_Gym_EventScript_WattsonReward
+	msgbox MauvilleCity_Gym_Text_WattsonErrandWaiting
+	release
+	end
+
+MauvilleCity_Gym_EventScript_WattsonGiveErrand::
+	msgbox MauvilleCity_Gym_Text_WattsonErrand
+	checkitemspace ITEM_BASEMENT_KEY
+	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_Gym_EventScript_NoRoomForKey
+	giveitem_msg MauvilleCity_Gym_Text_ReceivedBasementKey, ITEM_BASEMENT_KEY
+	setflag FLAG_HOENN_WATTSON_ERRAND
+	setflag FLAG_HOENN_GOT_BASEMENT_KEY
+	msgbox MauvilleCity_Gym_Text_WattsonErrandWaiting
+	release
+	end
+
+MauvilleCity_Gym_EventScript_NoRoomForKey::
+	msgbox MauvilleCity_Gym_Text_NoRoomForTM34
+	release
+	end
+
+MauvilleCity_Gym_EventScript_WattsonReward::
+	msgbox MauvilleCity_Gym_Text_WattsonThanks
+	checkitemspace ITEM_TM24
+	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_Gym_EventScript_NoRoomForKey
+	giveitem_msg MauvilleCity_Gym_Text_ReceivedTM24, ITEM_TM24
+	setflag FLAG_HOENN_NEW_MAUVILLE_DONE
+	goto_if_ge VAR_HOENN_STAGE1_PROGRESS, 7, MauvilleCity_Gym_EventScript_WattsonDone
+	setvar VAR_HOENN_STAGE1_PROGRESS, 7
+MauvilleCity_Gym_EventScript_WattsonDone::
 	msgbox MauvilleCity_Gym_Text_WattsonPostBattle
 	release
 	end

@@ -1,62 +1,3 @@
-NewMauville_Inside_MapScripts::
-	map_script MAP_SCRIPT_ON_RESUME, NewMauville_Inside_OnResume
-	map_script MAP_SCRIPT_ON_TRANSITION, NewMauville_Inside_OnTransition
-	map_script MAP_SCRIPT_ON_LOAD, NewMauville_Inside_OnLoad
-	.byte 0
-
-NewMauville_Inside_EventScript_HItem121::
-	finditem ITEM_ULTRA_BALL
-	end
-
-NewMauville_Inside_EventScript_HItem122::
-	finditem ITEM_ESCAPE_ROPE
-	end
-
-NewMauville_Inside_EventScript_HItem123::
-	finditem ITEM_THUNDER_STONE
-	end
-
-NewMauville_Inside_EventScript_HItem124::
-	finditem ITEM_FULL_HEAL
-	end
-
-NewMauville_Inside_EventScript_HItem125::
-	finditem ITEM_PARALYZE_HEAL
-	end
-
-NewMauville_Inside_EventScript_H0::
-	msgbox NewMauville_Inside_Text_H0, MSGBOX_SIGN
-	end
-
-NewMauville_Inside_EventScript_H1::
-	msgbox NewMauville_Inside_Text_H1, MSGBOX_SIGN
-	end
-
-NewMauville_Inside_EventScript_H2::
-	msgbox NewMauville_Inside_Text_H2, MSGBOX_SIGN
-	end
-
-NewMauville_Inside_EventScript_H3::
-	msgbox NewMauville_Inside_Text_H3, MSGBOX_SIGN
-	end
-
-NewMauville_Inside_EventScript_H4::
-	msgbox NewMauville_Inside_Text_H4, MSGBOX_SIGN
-	end
-
-NewMauville_Inside_EventScript_H5::
-	msgbox NewMauville_Inside_Text_H5, MSGBOX_SIGN
-	end
-
-NewMauville_Inside_EventScript_H6::
-	msgbox NewMauville_Inside_Text_H6, MSGBOX_SIGN
-	end
-
-NewMauville_Inside_EventScript_H7::
-	msgbox NewMauville_Inside_Text_H7, MSGBOX_SIGN
-	end
-
-@ BEGIN PATCH (tools/hoenn_import/patches)
 @ Ported from pokeemerald (the map data is identical), text written fresh.
 NewMauville_Inside_OnResume:
 	call_if_eq VAR_TEMP_1, 1, NewMauville_Inside_EventScript_SetBarrierStateBlueButton
@@ -298,4 +239,3 @@ NewMauville_Inside_EventScript_DefeatedVoltorb3::
 	setflag FLAG_HOENN_VOLTORB_3
 	goto EventScript_RemoveStaticMon
 	end
-@ END PATCH

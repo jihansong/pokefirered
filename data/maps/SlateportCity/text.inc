@@ -3,11 +3,12 @@
 @ BEGIN PATCH (tools/hoenn_import/patches)
 SlateportCity_Text_NorthRoadNotice::
     .string "NOTICE\p"
-    .string "The coast road north is dug up\n"
-    .string "past the tree line.\p"
-    .string "The crews say the work runs into\n"
-    .string "next season. There's mud and rope\l"
-    .string "up there and little else.$"
+    .string "The coast road north is open again.\n"
+    .string "The crews finished ahead of the\l"
+    .string "season.\p"
+    .string "CYCLING ROAD runs from the gate up\n"
+    .string "to MAUVILLE CITY. Bicycles only on\l"
+    .string "the upper deck.$"
 
 SlateportCity_Text_BattleTentNotice::
     .string "The BATTLE TENT is dark inside.\p"

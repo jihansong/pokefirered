@@ -16,10 +16,19 @@ Steps, in order:
     A | B | START | SELECT | L | R      press once;  "A*5" presses five times
     UP | DOWN | LEFT | RIGHT [N]         face/walk N tiles (default 1)
     wait N                               run N frames
+    mash [N]                             press A (at most N times, default 300)
+                                         until the overworld is idle: no battle,
+                                         no script running, the player free
     shot NAME                            save NAME.png (in --shots)
     expect flag NAME = 0|1               check a flag in the live game
     expect var NAME = N                  check a var in the live game
     expect trainer NAME = 0|1            check a trainer's beaten flag
+    expect money = N                     check the player's money
+    expect item ITEM = N                 check how many of ITEM the bag holds
+    expect egg SPECIES = N               count EGGS of SPECIES in party and PC
+    expect fateful SPECIES = N           count SPECIES (EGGS too) in party and PC
+                                         with the fateful encounter bit (MEW's
+                                         and DEOXYS's obedience)
     expect map MAP                       check the player's current map
     expect battle | expect overworld     check what the game is doing
 The save is continued (title, CONTINUE, quest-log recap skipped) before the
@@ -36,8 +45,8 @@ import tempfile
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from emu import Emu, GameReset                    # noqa: E402
-from gamedata import REPO, map_info, off          # noqa: E402
-from savefile import Blocks                       # noqa: E402
+from gamedata import REPO, const, map_info, off   # noqa: E402
+from savefile import Blocks, Mon                  # noqa: E402
 import savedit                                    # noqa: E402
 
 BUTTONS = {'A', 'B', 'START', 'SELECT', 'L', 'R'}
@@ -46,6 +55,22 @@ DIRS = {'UP', 'DOWN', 'LEFT', 'RIGHT'}
 
 def live_blocks(e):
     return Blocks(e.read(e.ptr('gSaveBlock1Ptr'), off('sb1')), e.read(e.ptr('gSaveBlock2Ptr'), off('sb2')))
+
+
+def live_mons(e):
+    """The party (gPlayerParty, not the save's copy) and every PC box slot."""
+    size = off('pokemon')
+    party = bytearray(e.read(e.sym('gPlayerParty'), 6 * size))
+    mons = [Mon(party, i * size) for i in range(e.u8(e.sym('gPlayerPartyCount')))]
+    bsize = off('boxmon')
+    n = const('TOTAL_BOXES_COUNT') * const('IN_BOX_COUNT')
+    boxes = bytearray(e.read(e.ptr('gPokemonStoragePtr') + off('storage.boxes'), n * bsize))
+    mons += [Mon(boxes, i * bsize) for i in range(n)]
+    return [m for m in mons if m.has_species()]
+
+
+def species_id(name):
+    return const(name if name.startswith('SPECIES_') or name.isdigit() else 'SPECIES_' + name)
 
 
 def run_case(case, rom, shots):
@@ -82,6 +107,15 @@ def run_case(case, rom, shots):
                     e.walk(head, int(p[1]) if len(p) > 1 else 1)
                 elif head == 'WAIT':
                     e.run(int(p[1]))
+                elif head == 'MASH':
+                    for _ in range(int(p[1]) if len(p) > 1 else 300):
+                        if e.field_idle():
+                            e.run(20)
+                            if e.field_idle():
+                                break
+                        e.press('A', hold=3, after=20)
+                    else:
+                        fails.append('%s: the game never went idle' % step)
                 elif head == 'SHOT':
                     if shots:
                         e.shot(os.path.join(shots, '%s_%s.png' % (name, p[1])))
@@ -94,6 +128,20 @@ def run_case(case, rom, shots):
                                'trainer': lambda n: int(blocks.trainer_beaten(n))}[what](p[2])
                         if got != want:
                             fails.append('%s: %s %s is %d, expected %d' % (step, what, p[2], got, want))
+                    elif what == 'money':
+                        got, want = live_blocks(e).money(), int(p[3], 0)
+                        if got != want:
+                            fails.append('%s: money is %d' % (step, got))
+                    elif what in ('item', 'egg', 'fateful'):
+                        want = int(p[4], 0)
+                        if what == 'item':
+                            got = live_blocks(e).item_count(p[2])
+                        else:
+                            sp = species_id(p[2])
+                            mons = [m for m in live_mons(e) if m.species() == sp]
+                            got = sum(1 for m in mons if (m.is_egg() if what == 'egg' else m.fateful()))
+                        if got != want:
+                            fails.append('%s: %s %s is %d' % (step, what, p[2], got))
                     elif what == 'map':
                         m = map_info(p[2])
                         g, n, _, _ = e.location()

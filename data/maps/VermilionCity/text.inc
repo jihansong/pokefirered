@@ -202,3 +202,41 @@ VermilionCity_Text_SailorFogLifted::
     .string "The fog hasn't come back since\n"
     .string "that night. Guess that island\l"
     .string "gave up all its secrets.$"
+
+VermilionCity_Text_MeowthMissedBoat::
+    .string "MEOWTH: We missed da boat! A whole\n"
+    .string "ship fulla loot, sailin' away!$"
+
+VermilionCity_Text_JessieBlamesJames::
+    .string "JESSIE: Because SOMEBODY stopped\n"
+    .string "to haggle over a MAGIKARP!$"
+
+VermilionCity_Text_JamesGoldenEggs::
+    .string "JAMES: It lays golden eggs,\n"
+    .string "JESSIE! You'll thank me one day!$"
+
+VermilionCity_Text_MeowthSpotsPikachu::
+    .string "MEOWTH: Wait… Da twerp with da\n"
+    .string "super PIKACHU! No ship? Fine!\l"
+    .string "We'll take DAT home instead!$"
+
+VermilionCity_Text_RocketHarborIntro::
+    .string "JESSIE & JAMES: Consider it our\n"
+    .string "consolation prize!$"
+
+VermilionCity_Text_RocketHarborDefeat::
+    .string "We missed the boat AND the win…$"
+
+VermilionCity_Text_JamesDroppedPouch::
+    .string "JAMES dropped a pouch as he flew\n"
+    .string "off over the harbor!$"
+
+VermilionCity_Text_MagikarpFood::
+    .string "There's a RARE CANDY in it, too.\n"
+    .string "The label says “MAGIKARP FOOD.”$"
+
+VermilionCity_Text_TruckPinkHair::
+    .string "A few pink hairs are caught under\n"
+    .string "the truck.\p"
+    .string "Whatever slept here has gone\n"
+    .string "home.$"

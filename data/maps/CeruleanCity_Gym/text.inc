@@ -126,3 +126,8 @@ CeruleanCity_Gym_Text_MistyMysticWater::
     .string "WATER-type moves. Good for a\l"
     .string "PIKACHU that SURFS, too!$"
 
+CeruleanCity_Gym_Text_MistyWaterStone::
+    .string "MISTY: And this WATER STONE was\n"
+    .string "a prop for the show. Keep it.\p"
+    .string "I'd rather it went to someone who\n"
+    .string "actually protects POKéMON.$"

@@ -44,3 +44,18 @@ IndigoPlateau_Exterior_Text_OfficialThanks::
 IndigoPlateau_Exterior_Text_OfficialGoodLuck::
     .string "The ELITE FOUR await you inside.\n"
     .string "Good luck!$"
+
+IndigoPlateau_Exterior_Text_JessieEarnTheTorch::
+    .string "JESSIE: Want the torch? Then earn\n"
+    .string "it, twerp!\p"
+    .string "Before any CHAMPION, you get past\n"
+    .string "TEAM ROCKET!$"
+
+IndigoPlateau_Exterior_Text_RocketTorchDefeat::
+    .string "JAMES: Our finest team, and still\n"
+    .string "not enough…$"
+
+IndigoPlateau_Exterior_Text_OfficialFireStone::
+    .string "And this FIRE STONE as well.\p"
+    .string "They say a spark from the INDIGO\n"
+    .string "TORCH sleeps inside it.$"

@@ -565,7 +565,7 @@
 #define FLAG_BEAT_N_FINAL        0x21F // v0.6.0: beat N at his cabin on the WATER PATH
 #define FLAG_BEAT_SUMMIT_TRAINER 0x220 // v0.6.0: beat the silent TRAINER on the snowbound summit
 #define FLAG_WON_CHAMPION_TOURNAMENT 0x221 // v0.6.0: won the INDIGO PLATEAU champion tournament
-#define FLAG_0x222               0x222
+#define FLAG_GOT_MEW_EGG         0x222 // v0.9.0: took the MEW EGG from the NEW ISLAND lab (the truck on the VERMILION quay is empty)
 #define FLAG_0x223               0x223
 #define FLAG_0x224               0x224
 #define FLAG_0x225               0x225

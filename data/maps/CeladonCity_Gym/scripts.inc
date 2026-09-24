@@ -21,6 +21,7 @@ CeladonCity_Gym_EventScript_RocketPerfume::
 	setvar VAR_TEMP_1, 0
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
+	goto_if_eq VAR_ROCKET_RETRY, 7, CeladonCity_Gym_EventScript_RocketRetry
 	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox CeladonCity_Gym_Text_TraineeGreeting
 	closemessage
@@ -36,6 +37,7 @@ CeladonCity_Gym_EventScript_RocketPerfume::
 	fadescreenspeed FADE_FROM_WHITE, 1
 	playbgm MUS_ENCOUNTER_ROCKET, 0
 	msgbox CeladonCity_Gym_Text_JamesReveal
+	msgbox CeladonCity_Gym_Text_JamesVictreebel
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	textcolor NPC_TEXT_COLOR_FEMALE
@@ -56,8 +58,12 @@ CeladonCity_Gym_EventScript_RocketPerfume::
 	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox CeladonCity_Gym_Text_JessieFurious
 	closemessage
+CeladonCity_Gym_EventScript_RocketBattle::
+	setvar VAR_0x8004, 7
+	call EventScript_RocketTrioBeforeBattle
 	setvar VAR_LAST_TALKED, LOCALID_CELADON_GYM_JESSIE
 	trainerbattle_no_intro TRAINER_JESSIE_JAMES_CELADON_GYM, CeladonCity_Gym_Text_RocketDefeat
+	setvar VAR_ROCKET_RETRY, ROCKET_RETRY_NONE
 	setvar VAR_0x8008, LOCALID_CELADON_GYM_JESSIE
 	setvar VAR_0x8009, LOCALID_CELADON_GYM_JAMES
 	setvar VAR_0x800A, LOCALID_CELADON_GYM_MEOWTH
@@ -67,12 +73,41 @@ CeladonCity_Gym_EventScript_RocketPerfume::
 	removeobject LOCALID_CELADON_GYM_MEOWTH
 	setflag FLAG_ROCKET_CELADON_GYM
 	fadedefaultbgm
+	addmoney 792
+	setvar VAR_0x8004, 792
+	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, CeladonCity_Gym_EventScript_RocketCoins
+	addmoney 1056
+	setvar VAR_0x8004, 1848
+CeladonCity_Gym_EventScript_RocketCoins::
+	call EventScript_RocketMeowthCoins
 	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox CeladonCity_Gym_Text_ErikaThanks
 	giveitem ITEM_MIRACLE_SEED
+	setvar VAR_0x8004, ROCKET_HELD_MIRACLE_SEED
+	call EventScript_RocketRewardResult
+	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox CeladonCity_Gym_Text_ErikaMiracleSeed
+	msgbox CeladonCity_Gym_Text_ErikaLeafStone
+	giveitem ITEM_LEAF_STONE
+	setvar VAR_0x8004, ROCKET_BONUS_LEAF_STONE
+	call EventScript_RocketRewardResult
 	releaseall
 	end
+
+@ After a loss: JAMES drops the disguise straight away.
+CeladonCity_Gym_EventScript_RocketRetry::
+	clearflag FLAG_TEMP_2
+	addobject LOCALID_CELADON_GYM_JESSIE
+	addobject LOCALID_CELADON_GYM_MEOWTH
+	fadescreenspeed FADE_TO_WHITE, 1
+	removeobject LOCALID_CELADON_GYM_TRAINEE
+	addobject LOCALID_CELADON_GYM_JAMES
+	fadescreenspeed FADE_FROM_WHITE, 1
+	playbgm MUS_ENCOUNTER_ROCKET, 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	call EventScript_RocketTrioRetry
+	goto CeladonCity_Gym_EventScript_RocketBattle
 
 CeladonCity_Gym_Movement_Cough:
 	walk_in_place_faster_down

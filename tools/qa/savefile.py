@@ -10,7 +10,7 @@ and writes them back to the same physical sectors with fresh checksums.
 
 import struct
 
-from gamedata import off, const, map_info, Rom
+from gamedata import off, const, map_info, Rom, POCKETS, items, item_name
 
 SECTOR_SIZE = 0x1000
 DATA_SIZE = 3968
@@ -105,6 +105,75 @@ class Blocks:
         blk, o = self._var_loc(var)
         struct.pack_into('<H', blk, o, const(value) & 0xFFFF)
 
+    # ---------------------------------------------------------- money, bag
+    def _key(self):
+        return struct.unpack_from('<I', self.sb2, off('sb2.encryptionKey'))[0]
+
+    def money(self):
+        return struct.unpack_from('<I', self.sb1, off('sb1.money'))[0] ^ self._key()
+
+    def set_money(self, n):
+        struct.pack_into('<I', self.sb1, off('sb1.money'), n ^ self._key())
+
+    def _pocket(self, item):
+        """(offset, slot count) of the bag pocket that holds item."""
+        field, count = POCKETS[items()[item_name(item)]]
+        return off(field), const(count)
+
+    def _slots(self, item):
+        o, n = self._pocket(item)
+        return [o + 4 * i for i in range(n)]
+
+    def item_count(self, item):
+        """How many of item the bag holds (quantities are XORed with the key)."""
+        want = const(item_name(item))
+        total = 0
+        for o in self._slots(item):
+            iid, qty = struct.unpack_from('<HH', self.sb1, o)
+            if iid == want:
+                total += qty ^ (self._key() & 0xFFFF)
+        return total
+
+    def set_item(self, item, n):
+        """Put exactly n of item in its pocket (0 removes it)."""
+        want = const(item_name(item))
+        key = self._key() & 0xFFFF
+        slots = self._slots(item)
+        for o in slots:
+            if struct.unpack_from('<H', self.sb1, o)[0] == want:
+                struct.pack_into('<HH', self.sb1, o, 0, key)
+        if n <= 0:
+            self._compact(slots)
+            return
+        for o in slots:
+            if struct.unpack_from('<H', self.sb1, o)[0] == 0:
+                struct.pack_into('<HH', self.sb1, o, want, n ^ key)
+                return
+        raise ValueError('no free slot for %s' % item)
+
+    def _compact(self, slots):
+        key = self._key() & 0xFFFF
+        kept = [struct.unpack_from('<HH', self.sb1, o) for o in slots]
+        kept = [k for k in kept if k[0]]
+        for i, o in enumerate(slots):
+            struct.pack_into('<HH', self.sb1, o, *(kept[i] if i < len(kept) else (0, key)))
+
+    def fill_items(self, keep_free=()):
+        """Fill every empty slot of the ITEMS pocket with a different item, one
+        of each, skipping keep_free, so that giving any other item fails."""
+        key = self._key() & 0xFFFF
+        slots = self._slots('ITEM_POTION')
+        have = {struct.unpack_from('<H', self.sb1, o)[0] for o in slots}
+        skip = {const(item_name(i)) for i in keep_free}
+        spare = [const(k) for k, p in items().items() if p == 'POCKET_ITEMS' and k != 'ITEM_NONE']
+        spare = [v for v in spare if v not in have and v not in skip]
+        filled = 0
+        for o in slots:
+            if struct.unpack_from('<H', self.sb1, o)[0] == 0:
+                struct.pack_into('<HH', self.sb1, o, spare.pop(0), 1 ^ key)
+                filled += 1
+        return filled
+
 
 class SaveFile(Blocks):
     def __init__(self, path):
@@ -179,11 +248,59 @@ class SaveFile(Blocks):
         struct.pack_into('<H', self.sb1, off('sb1.mapLayoutId'), m['layout_id'])
         self.sb2[off('sb2.specialSaveWarpFlags')] |= 1   # CONTINUE_GAME_WARP
 
+    # ---------------------------------------------------------------- options
+    def fast_battles(self):
+        """Battle style SET (no "Will you switch?" after a foe faints), battle
+        animations off and fast text. The u16 after optionsButtonMode holds
+        textSpeed:3, windowFrameType:5, sound:1, battleStyle:1, sceneOff:1."""
+        o = off('sb2.optionsButtonMode') + 1
+        v = struct.unpack_from('<H', self.sb2, o)[0]
+        v = (v & ~7) | 2            # OPTIONS_TEXT_SPEED_FAST
+        v |= 1 << 9 | 1 << 10       # OPTIONS_BATTLE_STYLE_SET, animations off
+        struct.pack_into('<H', self.sb2, o, v)
+
     # ------------------------------------------------------------------ clock
+    # The game clock (src/time_of_day.c) is the RTC plus localTimeOffset when
+    # the cart has a working RTC, else a virtual clock: six game minutes per
+    # minute of play time plus an offset kept in lastBerryTreeUpdate. mGBA
+    # runs this ROM without an RTC, so the virtual clock is the one that
+    # counts in the QA tools; both are moved so either way agrees.
     def add_days(self, n):
-        o = off('sb2.localTimeOffset') + off('time.days')
-        d = struct.unpack_from('<h', self.sb2, o)[0]
-        struct.pack_into('<h', self.sb2, o, d + n)
+        for field in ('sb2.localTimeOffset', 'sb2.lastBerryTreeUpdate'):
+            o = off(field) + off('time.days')
+            d = struct.unpack_from('<h', self.sb2, o)[0]
+            struct.pack_into('<h', self.sb2, o, d + n)
+
+    def _virtual_offset(self):
+        o = off('sb2.lastBerryTreeUpdate')
+        days = struct.unpack_from('<h', self.sb2, o + off('time.days'))[0]
+        hours = struct.unpack_from('<b', self.sb2, o + off('time.hours'))[0]
+        minutes = struct.unpack_from('<b', self.sb2, o + off('time.minutes'))[0]
+        return days * 1440 + hours * 60 + minutes
+
+    def _play_minutes(self):
+        h = struct.unpack_from('<H', self.sb2, off('sb2.playTimeHours'))[0]
+        m = self.sb2[off('sb2.playTimeMinutes')]
+        sec = self.sb2[off('sb2.playTimeSeconds')]
+        return (h * 60 + m) * 6 + sec // 10
+
+    def clock_minutes(self):
+        """The virtual game clock in minutes since day 0, 00:00."""
+        return max(0, self._play_minutes() + self._virtual_offset())
+
+    def set_hour(self, hour):
+        """Move the virtual clock forward to the next HOUR:00."""
+        now = self.clock_minutes()
+        target = now - now % 1440 + hour * 60
+        if target < now:
+            target += 1440
+        new = self._virtual_offset() + (target - now)
+        days, rest = divmod(new, 1440)
+        o = off('sb2.lastBerryTreeUpdate')
+        struct.pack_into('<h', self.sb2, o + off('time.days'), days)
+        struct.pack_into('<b', self.sb2, o + off('time.hours'), rest // 60)
+        struct.pack_into('<b', self.sb2, o + off('time.minutes'), rest % 60)
+        return target
 
     # ------------------------------------------------------------------- dex
     def set_dex(self, species_national, seen=True, owned=True):
@@ -208,6 +325,50 @@ class SaveFile(Blocks):
         size = off('pokemon')
         o = off('sb1.playerParty') + slot * size
         return Mon(self.sb1, o)
+
+    def _party_slot(self, slot):
+        size = off('pokemon')
+        o = off('sb1.playerParty') + slot * size
+        return o, size
+
+    def set_lead(self, slot):
+        """Swap party SLOT with the first one."""
+        a, size = self._party_slot(0)
+        b, _ = self._party_slot(slot)
+        first = bytes(self.sb1[a:a + size])
+        self.sb1[a:a + size] = self.sb1[b:b + size]
+        self.sb1[b:b + size] = first
+
+    def keep_party(self, n):
+        """Keep only the first n party POKéMON."""
+        for slot in range(n, 6):
+            o, size = self._party_slot(slot)
+            self.sb1[o:o + size] = bytes(size)
+        self.sb1[off('sb1.playerPartyCount')] = min(n, self.party_count())
+
+    def set_hp(self, slot, hp):
+        o, _ = self._party_slot(slot)
+        struct.pack_into('<H', self.sb1, o + 86, hp)
+
+    # ------------------------------------------------------------ PC boxes
+    def box_mons(self):
+        size = off('boxmon')
+        base = off('storage.boxes')
+        n = const('TOTAL_BOXES_COUNT') * const('IN_BOX_COUNT')
+        return [Mon(self.blocks['storage'], base + i * size) for i in range(n)]
+
+    def fill_boxes(self):
+        """Fill every empty PC box slot with a copy of the first party
+        POKéMON, so a POKéMON (or EGG) given now has nowhere to go."""
+        size = off('boxmon')
+        a, _ = self._party_slot(0)
+        copy = bytes(self.sb1[a:a + size])
+        filled = 0
+        for m in self.box_mons():
+            if not m.has_species():
+                self.blocks['storage'][m.o:m.o + size] = copy
+                filled += 1
+        return filled
 
 
 # Gen 3 box data: 4 substructures of 12 bytes in one of 24 orders, XORed with
@@ -242,6 +403,17 @@ class Mon:
 
     def species(self):
         return struct.unpack_from('<H', self.subs()['G'], 0)[0]
+
+    def has_species(self):
+        # BoxPokemon.hasSpecies, outside the encrypted data
+        return bool(self.blk[self.o + 19] & 2)
+
+    def is_egg(self):
+        return bool(struct.unpack_from('<I', self.subs()['M'], 4)[0] >> 30 & 1)
+
+    def fateful(self):
+        # PokemonSubstruct3.modernFatefulEncounter, the top bit of the ribbons
+        return bool(struct.unpack_from('<I', self.subs()['M'], 8)[0] >> 31 & 1)
 
     def level(self):
         return self.blk[self.o + 84]

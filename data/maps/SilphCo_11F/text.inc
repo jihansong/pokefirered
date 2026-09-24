@@ -93,19 +93,20 @@ SilphCo_11F_Text_FloorSign::
     .string "11F$"
 
 SilphCo_11F_Text_JessieJamesStop::
-    .string "Hold it right there, brat!$"
+    .string "Hold it, twerp!$"
 
 SilphCo_11F_Text_JessieJamesIntro::
-    .string "Our BOSS is in a meeting!\p"
-    .string "You better not disturb him!$"
+    .string "JESSIE: The BOSS is closing a deal\n"
+    .string "upstairs. No visitors!\p"
+    .string "Meet my new LICKITUNG. It'll lick\n"
+    .string "you right back down the stairs!$"
 
 SilphCo_11F_Text_JessieJamesDefeat::
-    .string "Like always…$"
+    .string "The deal of the century… ruined!$"
 
 SilphCo_11F_Text_JessieJamesBlastOff::
-    .string "TEAM ROCKET, blast off at the\n"
-    .string "speed of light!\p"
-    .string "Again…$"
+    .string "JAMES: Back to the elevator!\n"
+    .string "MEOWTH: Da stairs are faster!$"
 
 SilphCo_11F_Text_NTools::
     .string "N: The man in black called\n"
@@ -130,3 +131,7 @@ SilphCo_11F_Text_NAfter::
     .string "I'll be at the end of the WATER\n"
     .string "PATH on SIX ISLAND, where the sea\l"
     .string "is quiet enough to hear everything.$"
+
+SilphCo_11F_Text_UpGradeDropped::
+    .string "They dropped a SILPH prototype\n"
+    .string "they must have swiped on the way.$"

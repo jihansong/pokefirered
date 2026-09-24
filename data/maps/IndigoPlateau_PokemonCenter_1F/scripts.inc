@@ -7,6 +7,22 @@ IndigoPlateau_PokemonCenter_1F_OnTransition::
 	setrespawn HEAL_LOCATION_INDIGO_PLATEAU
 	specialvar VAR_RESULT, IsNationalPokedexEnabled
 	call_if_eq VAR_RESULT, TRUE, IndigoPlateau_PokemonCenter_1F_EventScript_CheckBlockDoor
+	call IndigoPlateau_PokemonCenter_1F_EventScript_CheckTorchStolen
+	goto_if_eq VAR_RESULT, TRUE, IndigoPlateau_PokemonCenter_1F_EventScript_BlockDoor
+	end
+
+@ v0.9.0: TEAM ROCKET run off with the INDIGO TORCH when the player first comes
+@ with eight badges (IndigoPlateau_Exterior). Until the player wins it back
+@ outside, no challenge starts: the guard stands in the doorway.
+IndigoPlateau_PokemonCenter_1F_EventScript_CheckTorchStolen::
+	setvar VAR_RESULT, FALSE
+	goto_if_unset FLAG_BADGE08_GET, EventScript_Return
+	goto_if_set FLAG_ROCKET_INDIGO_TORCH, EventScript_Return
+	setvar VAR_RESULT, TRUE
+	return
+
+IndigoPlateau_PokemonCenter_1F_EventScript_BlockDoor::
+	setobjectxyperm LOCALID_LEAGUE_DOOR_GUARD, 4, 2
 	end
 
 IndigoPlateau_PokemonCenter_1F_EventScript_CheckBlockDoor::
@@ -17,9 +33,16 @@ IndigoPlateau_PokemonCenter_1F_EventScript_CheckBlockDoor::
 IndigoPlateau_PokemonCenter_1F_EventScript_DoorGuard::
 	lock
 	faceplayer
+	call IndigoPlateau_PokemonCenter_1F_EventScript_CheckTorchStolen
+	goto_if_eq VAR_RESULT, TRUE, IndigoPlateau_PokemonCenter_1F_EventScript_TorchStolen
 	specialvar VAR_RESULT, IsNationalPokedexEnabled
 	goto_if_eq VAR_RESULT, TRUE, IndigoPlateau_PokemonCenter_1F_EventScript_CheckSeviiIslandComplete
 	msgbox IndigoPlateau_PokemonCenter_1F_Text_FaceEliteFourGoodLuck
+	release
+	end
+
+IndigoPlateau_PokemonCenter_1F_EventScript_TorchStolen::
+	msgbox IndigoPlateau_PokemonCenter_1F_Text_TorchStolen
 	release
 	end
 

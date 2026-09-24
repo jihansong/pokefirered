@@ -188,6 +188,16 @@ class Emu:
     def in_battle(self):
         return (self.callback2() & ~1) == self.syms.get('BattleMainCB2', -1)
 
+    def field_idle(self):
+        """In the overworld with no script running and the player free to
+        move (script.c: sGlobalScriptContextStatus CONTEXT_SHUTDOWN, controls
+        unlocked)."""
+        if not self.in_overworld():
+            return False
+        status = self.syms.get('sGlobalScriptContextStatus')
+        lock = self.syms.get('sLockFieldControls')
+        return (status is None or self.u8(status) == 2) and (lock is None or not self.u8(lock))
+
     def quest_log_playing(self):
         return bool(self.u8(self.syms['gQuestLogState']) or self.u8(self.syms['gQuestLogPlaybackState']))
 

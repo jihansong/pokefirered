@@ -196,3 +196,13 @@ CeladonCity_Gym_Text_ErikaMiracleSeed::
     .string "GRASS-type moves. It suits a gym\l"
     .string "full of flowers, don't you think?$"
 
+CeladonCity_Gym_Text_JamesVictreebel::
+    .string "JAMES: One sniff of that LEAF\n"
+    .string "STONE in your greenhouse, and my\l"
+    .string "WEEPINBELL became VICTREEBEL!$"
+
+CeladonCity_Gym_Text_ErikaLeafStone::
+    .string "ERIKA: That LEAF STONE was one\n"
+    .string "of a pair from our greenhouse.\p"
+    .string "Please take the other. I'd like it\n"
+    .string "to bloom for someone kind.$"

@@ -430,31 +430,42 @@ static const struct TrainerMonNoItemDefaultMoves sParty_TourneyN[] = {
     },
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_TourneyJessieJames[] = {
+static const struct TrainerMonNoItemCustomMoves sParty_TourneyJessieJames[] = {
     {
         .iv = 255,
-        .lvl = 68,
-        .species = SPECIES_WEEZING,
-    },
-    {
-        .iv = 255,
-        .lvl = 68,
+        .lvl = 70,
         .species = SPECIES_ARBOK,
+        .moves = {MOVE_SLUDGE_BOMB, MOVE_BITE, MOVE_GLARE, MOVE_IRON_TAIL},
     },
     {
         .iv = 255,
-        .lvl = 69,
+        .lvl = 70,
+        .species = SPECIES_WEEZING,
+        .moves = {MOVE_SLUDGE_BOMB, MOVE_FLAMETHROWER, MOVE_THUNDERBOLT, MOVE_SHADOW_BALL},
+    },
+    {
+        .iv = 255,
+        .lvl = 70,
         .species = SPECIES_VICTREEBEL,
-    },
-    {
-        .iv = 255,
-        .lvl = 69,
-        .species = SPECIES_GYARADOS,
+        .moves = {MOVE_GIGA_DRAIN, MOVE_SLUDGE_BOMB, MOVE_RAZOR_LEAF, MOVE_SLEEP_POWDER},
     },
     {
         .iv = 255,
         .lvl = 71,
+        .species = SPECIES_GYARADOS,
+        .moves = {MOVE_HYDRO_PUMP, MOVE_BITE, MOVE_DRAGON_DANCE, MOVE_HYPER_BEAM},
+    },
+    {
+        .iv = 255,
+        .lvl = 71,
+        .species = SPECIES_WOBBUFFET,
+        .moves = {MOVE_COUNTER, MOVE_MIRROR_COAT, MOVE_SAFEGUARD, MOVE_DESTINY_BOND},
+    },
+    {
+        .iv = 255,
+        .lvl = 73,
         .species = SPECIES_MEOWTH,
+        .moves = {MOVE_PAY_DAY, MOVE_SLASH, MOVE_FAKE_OUT, MOVE_SHADOW_BALL},
     },
 };
 

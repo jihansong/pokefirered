@@ -57,3 +57,9 @@ IndigoPlateau_PokemonCenter_1F_Text_TourneyClosed::
     .string "TRAINERS who have entered the\l"
     .string "HALL OF FAME and settled the\l"
     .string "trouble on the SEVII ISLANDS.$"
+
+IndigoPlateau_PokemonCenter_1F_Text_TorchStolen::
+    .string "The INDIGO TORCH has been stolen!\n"
+    .string "No challenge can begin without it.\p"
+    .string "The thieves ran outside. Please,\n"
+    .string "get it back!$"

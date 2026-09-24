@@ -152,3 +152,8 @@ FuchsiaCity_Text_AttendantDragonFang::
     .string "DRAGON-type moves. Our DRATINI\l"
     .string "would want you to have it.$"
 
+FuchsiaCity_Text_AttendantDragonScale::
+    .string "ATTENDANT: The DRATINI shed this\n"
+    .string "DRAGON SCALE in the sack.\p"
+    .string "I think it wants you to have that,\n"
+    .string "too.$"

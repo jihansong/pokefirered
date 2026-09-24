@@ -34,7 +34,77 @@ VermilionCity_OnTransition::
 	call_if_eq VAR_VERMILION_CITY_TRUCK_PUSHED, DIR_NORTH, VermilionCity_EventScript_TruckPushedNorth
 	call_if_eq VAR_VERMILION_CITY_TRUCK_PUSHED, DIR_WEST, VermilionCity_EventScript_TruckPushedWest
 	call_if_eq VAR_VERMILION_CITY_TRUCK_PUSHED, DIR_EAST, VermilionCity_EventScript_TruckPushedEast
+	setflag FLAG_TEMP_2
+	call_if_ge VAR_MAP_SCENE_VERMILION_CITY, 3, VermilionCity_EventScript_ReadyRocketHarbor
 	end
+
+@ v0.9.0 (#4'): if the S.S. ANNE sailed before the player stopped TEAM ROCKET on
+@ board (a save from before v0.5.0, or a loss on board and no second try),
+@ the trio wait at the harbor, having missed the boat. Same trainer, party and
+@ flag as on the ship, so only one of the two can happen.
+VermilionCity_EventScript_ReadyRocketHarbor::
+	goto_if_set FLAG_ROCKET_SS_ANNE, EventScript_Return
+	clearflag FLAG_TEMP_2
+	setvar VAR_TEMP_2, 1
+	return
+
+VermilionCity_EventScript_RocketHarbor::
+	lockall
+	setvar VAR_TEMP_2, 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	playbgm MUS_ENCOUNTER_ROCKET, 0
+	goto_if_eq VAR_ROCKET_RETRY, 4, VermilionCity_EventScript_RocketHarborRetry
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox VermilionCity_Text_MeowthMissedBoat
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox VermilionCity_Text_JessieBlamesJames
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox VermilionCity_Text_JamesGoldenEggs
+	closemessage
+	applymovement LOCALID_VERMILION_HARBOR_MEOWTH, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox VermilionCity_Text_MeowthSpotsPikachu
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox VermilionCity_Text_RocketHarborIntro
+	closemessage
+VermilionCity_EventScript_RocketHarborBattle::
+	setvar VAR_0x8004, 4
+	call EventScript_RocketTrioBeforeBattle
+	setvar VAR_LAST_TALKED, LOCALID_VERMILION_HARBOR_JESSIE
+	trainerbattle_no_intro TRAINER_JESSIE_JAMES_SS_ANNE, VermilionCity_Text_RocketHarborDefeat
+	setvar VAR_ROCKET_RETRY, ROCKET_RETRY_NONE
+	setvar VAR_0x8008, LOCALID_VERMILION_HARBOR_JESSIE
+	setvar VAR_0x8009, LOCALID_VERMILION_HARBOR_JAMES
+	setvar VAR_0x800A, LOCALID_VERMILION_HARBOR_MEOWTH
+	call EventScript_RocketTrioBlastOff
+	removeobject LOCALID_VERMILION_HARBOR_JESSIE
+	removeobject LOCALID_VERMILION_HARBOR_MEOWTH
+	removeobject LOCALID_VERMILION_HARBOR_JAMES
+	setflag FLAG_ROCKET_SS_ANNE
+	fadedefaultbgm
+	addmoney 576
+	setvar VAR_0x8004, 576
+	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, VermilionCity_EventScript_RocketHarborCoins
+	addmoney 768
+	setvar VAR_0x8004, 1344
+VermilionCity_EventScript_RocketHarborCoins::
+	call EventScript_RocketMeowthCoins
+	msgbox VermilionCity_Text_JamesDroppedPouch
+	giveitem ITEM_NUGGET
+	setvar VAR_0x8004, ROCKET_HELD_NUGGET
+	call EventScript_RocketRewardResult
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox VermilionCity_Text_MagikarpFood
+	giveitem ITEM_RARE_CANDY
+	setvar VAR_0x8004, ROCKET_BONUS_SS_ANNE_CANDY
+	call EventScript_RocketRewardResult
+	releaseall
+	end
+
+VermilionCity_EventScript_RocketHarborRetry::
+	call EventScript_RocketTrioRetry
+	goto VermilionCity_EventScript_RocketHarborBattle
 
 VermilionCity_EventScript_HideOaksAide::
 	setflag FLAG_HIDE_VERMILION_CITY_OAKS_AIDE
@@ -415,6 +485,7 @@ VermilionCity_EventScript_TruckPushedEast::
 VermilionCity_EventScript_Truck::
 	goto_if_questlog EventScript_ReleaseEnd
 	lockall
+	goto_if_set FLAG_GOT_MEW_EGG, VermilionCity_EventScript_TruckMewGone
 	goto_if_set FLAG_FOUGHT_MEW, VermilionCity_EventScript_TruckWontBudge
 	goto_if_lt VAR_MAP_SCENE_VERMILION_CITY, 3, VermilionCity_EventScript_TruckWontBudge
 	checkpartymove MOVE_STRENGTH
@@ -493,6 +564,12 @@ VermilionCity_EventScript_MewJumpsOutLeft::
 	applymovement LOCALID_VERMILION_MEW, VermilionCity_Movement_MewJumpOutLeft
 	waitmovement 0
 	return
+
+@ v0.9.0: the player took the MEW EGG from the NEW ISLAND lab.
+VermilionCity_EventScript_TruckMewGone::
+	msgbox VermilionCity_Text_TruckPinkHair
+	releaseall
+	end
 
 VermilionCity_EventScript_TruckWontBudge::
 	msgbox VermilionCity_Text_TruckWontBudge

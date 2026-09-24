@@ -519,4 +519,8 @@ gSpecials::
 	def_special CyclingRoad_GetRecord
 	def_special Wattson_CanRematch
 	def_special Wattson_RecordRematch
+	def_special CheckRocketRewardBit
+	def_special SetRocketRewardBit
+	def_special ClearRocketRewardBit
+	def_special GiveMewEgg
 gSpecialsEnd::

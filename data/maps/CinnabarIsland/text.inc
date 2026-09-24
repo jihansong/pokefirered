@@ -106,3 +106,12 @@ CinnabarIsland_Text_CallerFallsSilent::
     .string "The MAGMAR CALLER sparked once and\n"
     .string "fell silent.$"
 
+CinnabarIsland_Text_FossilInLoot::
+    .string "In the junk TEAM ROCKET left\n"
+    .string "behind lay a FOSSIL from the LAB!\p"
+    .string "The LAB can revive it. Maybe they\n"
+    .string "won't mind who brings it in.$"
+
+CinnabarIsland_Text_FossilToOfficer::
+    .string "It's hard to tell which FOSSIL it\n"
+    .string "is. The police will sort it out.$"

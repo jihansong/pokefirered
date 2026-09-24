@@ -13,9 +13,21 @@ Commands (names are the C constant names; numbers work too):
     warp MAP @N                ... at that map's warp event N
     strong SLOT LEVEL          party SLOT (0-5) at LEVEL with its experience,
                                IVs 31 and stats set to match, HP full
+    lead SLOT                  swap party SLOT with the first POKéMON
+    party N                    keep only the first N party POKéMON
+    hp SLOT N                  party SLOT's current HP (0 = fainted)
     day N                      move the game clock N days forward (or back)
+    hour H                     move the game clock forward to the next H:00
     dex SPECIES                mark a species seen and owned (all 4 places)
     money N / coins N          money and coins (both kept XORed with the save key)
+    item ITEM N                exactly N of ITEM in the bag (0 removes it)
+    fillitems [ITEM ...]       fill the ITEMS pocket's free slots with one each
+                               of other items, never the ITEMs listed, so
+                               giving any of those fails
+    fillboxes                  fill every free PC box slot with a copy of the
+                               first party POKéMON
+    fastbattle                 options: battle style SET, animations off, fast
+                               text (A-mashing through singles never switches)
 
 Without -o the input file is rewritten in place.
 """
@@ -30,7 +42,8 @@ from gamedata import const, map_info, maps, off, Rom           # noqa: E402
 from savefile import SaveFile                                   # noqa: E402
 
 
-COMMANDS = {'info', 'flag', 'var', 'trainer', 'warp', 'strong', 'day', 'dex', 'money', 'coins'}
+COMMANDS = {'info', 'flag', 'var', 'trainer', 'warp', 'strong', 'lead', 'party', 'hp', 'day', 'hour', 'dex',
+            'money', 'coins', 'item', 'fillitems', 'fillboxes', 'fastbattle'}
 
 
 def _map_name(g, n):
@@ -49,6 +62,9 @@ def cmd_info(s, args):
         print('party %d   species %d Lv%d' % (i, m.species(), m.level()))
     days = struct.unpack_from('<h', s.sb2, off('sb2.localTimeOffset') + off('time.days'))[0]
     print('day offset %d' % days)
+    t = s.clock_minutes()
+    print('game clock day %d %02d:%02d (virtual)' % (t // 1440, t % 1440 // 60, t % 60))
+    print('money %d' % s.money())
     return 0
 
 
@@ -103,11 +119,51 @@ def run(argv):
             stats = s.party_mon(slot).make_strong(level, rom)
             dirty = True
             print('slot %d Lv%d stats %s' % (slot, level, stats))
+        elif cmd == 'lead':
+            slot = int(argv.pop(0))
+            s.set_lead(slot)
+            dirty = True
+            print('party slot %d leads' % slot)
+        elif cmd == 'party':
+            n = int(argv.pop(0))
+            s.keep_party(n)
+            dirty = True
+            print('party of %d' % s.party_count())
+        elif cmd == 'hp':
+            slot, hp = int(argv.pop(0)), int(argv.pop(0))
+            s.set_hp(slot, hp)
+            dirty = True
+            print('slot %d HP %d' % (slot, hp))
         elif cmd == 'day':
             n = int(argv.pop(0))
             s.add_days(n)
             dirty = True
             print('clock %+d days' % n)
+        elif cmd == 'hour':
+            h = int(argv.pop(0))
+            t = s.set_hour(h)
+            dirty = True
+            print('clock day %d %02d:00' % (t // 1440, h))
+        elif cmd == 'item':
+            name, n = argv.pop(0), int(argv.pop(0))
+            s.set_item(name, n)
+            dirty = True
+            print('%s x%d' % (name, s.item_count(name)))
+        elif cmd == 'fillitems':
+            leave = []
+            while argv and argv[0].startswith('ITEM_'):
+                leave.append(argv.pop(0))
+            n = s.fill_items(leave)
+            dirty = True
+            print('filled %d item slots' % n)
+        elif cmd == 'fastbattle':
+            s.fast_battles()
+            dirty = True
+            print('battle style SET, animations off, fast text')
+        elif cmd == 'fillboxes':
+            n = s.fill_boxes()
+            dirty = True
+            print('filled %d box slots' % n)
         elif cmd == 'dex':
             name = argv.pop(0)
             sp = const(name if name.startswith('SPECIES_') or name.isdigit() else 'SPECIES_' + name)
@@ -115,9 +171,7 @@ def run(argv):
             dirty = True
             print('dex %s seen+owned' % name)
         elif cmd == 'money':
-            n = int(argv.pop(0))
-            key = struct.unpack_from('<I', s.sb2, off('sb2.encryptionKey'))[0]
-            struct.pack_into('<I', s.sb1, off('sb1.money'), n ^ key)
+            s.set_money(int(argv.pop(0)))
             dirty = True
         elif cmd == 'coins':
             n = int(argv.pop(0))

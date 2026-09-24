@@ -26,6 +26,7 @@ CeruleanCity_Gym_EventScript_RocketWaterShow::
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
 	playbgm MUS_ENCOUNTER_ROCKET, 0
+	goto_if_eq VAR_ROCKET_RETRY, 3, CeruleanCity_Gym_EventScript_RocketRetry
 	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox CeruleanCity_Gym_Text_JessieWaterShow
 	textcolor NPC_TEXT_COLOR_MALE
@@ -36,8 +37,12 @@ CeruleanCity_Gym_EventScript_RocketWaterShow::
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox CeruleanCity_Gym_Text_RocketBattleIntro
 	closemessage
+CeruleanCity_Gym_EventScript_RocketBattle::
+	setvar VAR_0x8004, 3
+	call EventScript_RocketTrioBeforeBattle
 	setvar VAR_LAST_TALKED, LOCALID_CERULEAN_GYM_JESSIE
 	trainerbattle_no_intro TRAINER_JESSIE_JAMES_CERULEAN_GYM, CeruleanCity_Gym_Text_RocketDefeat
+	setvar VAR_ROCKET_RETRY, ROCKET_RETRY_NONE
 	setvar VAR_0x8008, LOCALID_CERULEAN_GYM_JESSIE
 	setvar VAR_0x8009, LOCALID_CERULEAN_GYM_JAMES
 	setvar VAR_0x800A, LOCALID_CERULEAN_GYM_MEOWTH
@@ -47,12 +52,30 @@ CeruleanCity_Gym_EventScript_RocketWaterShow::
 	removeobject LOCALID_CERULEAN_GYM_JAMES
 	setflag FLAG_ROCKET_CERULEAN_GYM
 	fadedefaultbgm
+	addmoney 352
+	setvar VAR_0x8004, 352
+	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, CeruleanCity_Gym_EventScript_RocketCoins
+	addmoney 704
+	setvar VAR_0x8004, 1056
+CeruleanCity_Gym_EventScript_RocketCoins::
+	call EventScript_RocketMeowthCoins
 	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox CeruleanCity_Gym_Text_MistyThanks
 	giveitem ITEM_MYSTIC_WATER
+	setvar VAR_0x8004, ROCKET_HELD_MYSTIC_WATER
+	call EventScript_RocketRewardResult
+	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox CeruleanCity_Gym_Text_MistyMysticWater
+	msgbox CeruleanCity_Gym_Text_MistyWaterStone
+	giveitem ITEM_WATER_STONE
+	setvar VAR_0x8004, ROCKET_BONUS_WATER_STONE
+	call EventScript_RocketRewardResult
 	releaseall
 	end
+
+CeruleanCity_Gym_EventScript_RocketRetry::
+	call EventScript_RocketTrioRetry
+	goto CeruleanCity_Gym_EventScript_RocketBattle
 
 CeruleanCity_Gym_EventScript_MeowthSpotsPikachu::
 	textcolor NPC_TEXT_COLOR_MALE

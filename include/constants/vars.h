@@ -233,9 +233,9 @@
 #define VAR_PLAYER_MON_FORM        0x40C7 // species the player looks like after BILL's teleporter, 0 = normal
 #define VAR_SEA_COTTAGE_TELEPORT   0x40C8 // 1 = transform, 2 = change back, run on arrival in the pod
 #define VAR_BILLS_GARDEN_LAST_DAY  0x40C9 // game clock day + 1 when a mon last left the garden
-#define VAR_0x40CA                 0x40CA
-#define VAR_0x40CB                 0x40CB
-#define VAR_0x40CC                 0x40CC
+#define VAR_ROCKET_BONUS_GIVEN     0x40CA // v0.9.0: bit per ROCKET_BONUS_*: that TEAM ROCKET trio reward was handed over (special, constants/rocket_trio.h)
+#define VAR_ROCKET_REWARD_HELD     0x40CB // v0.9.0: bit per ROCKET_HELD_* - 16: a reward the bag had no room for, kept by the VIRIDIAN OFFICER
+#define VAR_ROCKET_RETRY           0x40CC // v0.9.0: the TEAM ROCKET trio event (2..13) last lost, 0 = none; shortens the next try
 #define VAR_0x40CD                 0x40CD
 #define VAR_0x40CE                 0x40CE
 #define VAR_FRONTIER_FACILITY      0x40CF

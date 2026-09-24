@@ -39,11 +39,21 @@ FIELDS = {
     'sb1.flags': ('SaveBlock1', 'flags'),
     'sb1.vars': ('SaveBlock1', 'vars'),
     'sb1.daycare': ('SaveBlock1', 'daycare'),
+    'sb1.pcItems': ('SaveBlock1', 'pcItems'),
+    'sb1.bagPocket_Items': ('SaveBlock1', 'bagPocket_Items'),
+    'sb1.bagPocket_KeyItems': ('SaveBlock1', 'bagPocket_KeyItems'),
+    'sb1.bagPocket_PokeBalls': ('SaveBlock1', 'bagPocket_PokeBalls'),
+    'sb1.bagPocket_TMHM': ('SaveBlock1', 'bagPocket_TMHM'),
+    'sb1.bagPocket_Berries': ('SaveBlock1', 'bagPocket_Berries'),
     'sb1': ('SaveBlock1', None),
     'sb2.playerName': ('SaveBlock2', 'playerName'),
     'sb2.specialSaveWarpFlags': ('SaveBlock2', 'specialSaveWarpFlags'),
+    'sb2.optionsButtonMode': ('SaveBlock2', 'optionsButtonMode'),
     'sb2.playTimeHours': ('SaveBlock2', 'playTimeHours'),
     'sb2.playTimeVBlanks': ('SaveBlock2', 'playTimeVBlanks'),
+    'sb2.playTimeMinutes': ('SaveBlock2', 'playTimeMinutes'),
+    'sb2.playTimeSeconds': ('SaveBlock2', 'playTimeSeconds'),
+    'sb2.lastBerryTreeUpdate': ('SaveBlock2', 'lastBerryTreeUpdate'),
     'sb2.pokedex': ('SaveBlock2', 'pokedex'),
     'sb2.localTimeOffset': ('SaveBlock2', 'localTimeOffset'),
     'sb2.hoennTrainerFlags': ('SaveBlock2', 'hoennTrainerFlags'),
@@ -52,6 +62,10 @@ FIELDS = {
     'sb2.encryptionKey': ('SaveBlock2', 'encryptionKey'),
     'sb2': ('SaveBlock2', None),
     'storage': ('PokemonStorage', None),
+    'storage.boxes': ('PokemonStorage', 'boxes'),
+    'boxmon': ('BoxPokemon', None),
+    'time.hours': ('Time', 'hours'),
+    'time.minutes': ('Time', 'minutes'),
     'dex.owned': ('Pokedex', 'owned'),
     'dex.seen': ('Pokedex', 'seen'),
     'warp.mapGroup': ('WarpData', 'mapGroup'),
@@ -130,7 +144,8 @@ def off(name):
 # ---------------------------------------------------------------- constants
 
 CONST_HEADERS = ['constants/flags.h', 'constants/vars.h', 'constants/map_groups.h', 'constants/layouts.h',
-                 'constants/species.h', 'constants/items.h', 'constants/moves.h', 'constants/opponents.h']
+                 'constants/species.h', 'constants/items.h', 'constants/moves.h', 'constants/opponents.h',
+                 'pokemon_storage_system.h']
 _CONST_CACHE = {}
 
 
@@ -209,6 +224,40 @@ def map_info(name):
         if m['dir'] == name or m['name'] == name:
             return m
     raise KeyError('unknown map %s' % name)
+
+
+# -------------------------------------------------------------------- items
+
+# bag pockets in SaveBlock1: POCKET_* -> (field, slot count constant)
+POCKETS = {
+    'POCKET_ITEMS': ('sb1.bagPocket_Items', 'BAG_ITEMS_COUNT'),
+    'POCKET_KEY_ITEMS': ('sb1.bagPocket_KeyItems', 'BAG_KEYITEMS_COUNT'),
+    'POCKET_POKE_BALLS': ('sb1.bagPocket_PokeBalls', 'BAG_POKEBALLS_COUNT'),
+    'POCKET_TM_CASE': ('sb1.bagPocket_TMHM', 'BAG_TMHM_COUNT'),
+    'POCKET_BERRY_POUCH': ('sb1.bagPocket_Berries', 'BAG_BERRIES_COUNT'),
+}
+_ITEMS = None
+
+
+def items():
+    """ITEM_* name -> its bag pocket (POCKET_*), from src/data/items.json."""
+    global _ITEMS
+    if _ITEMS is None:
+        with open(os.path.join(REPO, 'src', 'data', 'items.json')) as f:
+            _ITEMS = {i['itemId']: i['pocket'] for i in json.load(f)['items']}
+    return _ITEMS
+
+
+def item_name(name_or_number):
+    """Accepts ITEM_RARE_CANDY, RARE_CANDY or a number; returns the ITEM_ name."""
+    s = str(name_or_number)
+    if s.isdigit():
+        n = int(s)
+        for k in items():
+            if const(k) == n:
+                return k
+        raise KeyError('no item %d' % n)
+    return s if s.startswith('ITEM_') else 'ITEM_' + s
 
 
 # ---------------------------------------------------------------- ROM tables

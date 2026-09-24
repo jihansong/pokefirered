@@ -6,7 +6,9 @@
 #include "sound.h"
 #include "sprite.h"
 #include "task.h"
+#include "constants/rocket_trio.h"
 #include "constants/songs.h"
+#include "constants/vars.h"
 
 // JESSIE, JAMES and MEOWTH blasting off after a defeat: a bang, the screen shakes, and
 // the three of them fly up and out of sight, each drifting its own way, ending on a
@@ -78,4 +80,41 @@ static void Task_RocketTrioBlastOff(u8 taskId)
         DestroyTask(taskId);
         ScriptContext_Enable();
     }
+}
+
+// v0.9.0: which of the trio's rewards the player has had (constants/rocket_trio.h).
+// Scripts have no bit operations, so these take the bit in VAR_0x8004: 0..15
+// are VAR_ROCKET_BONUS_GIVEN, 16..31 are VAR_ROCKET_REWARD_HELD.
+static u16 *GetRocketRewardVar(u16 *mask)
+{
+    u16 bit = gSpecialVar_0x8004;
+
+    if (bit >= ROCKET_HELD_FIRST)
+    {
+        *mask = 1 << ((bit - ROCKET_HELD_FIRST) & 15);
+        return GetVarPointer(VAR_ROCKET_REWARD_HELD);
+    }
+    *mask = 1 << (bit & 15);
+    return GetVarPointer(VAR_ROCKET_BONUS_GIVEN);
+}
+
+void CheckRocketRewardBit(void)
+{
+    u16 mask;
+
+    gSpecialVar_Result = (*GetRocketRewardVar(&mask) & mask) != 0;
+}
+
+void SetRocketRewardBit(void)
+{
+    u16 mask;
+
+    *GetRocketRewardVar(&mask) |= mask;
+}
+
+void ClearRocketRewardBit(void)
+{
+    u16 mask;
+
+    *GetRocketRewardVar(&mask) &= ~mask;
 }

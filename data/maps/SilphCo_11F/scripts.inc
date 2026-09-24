@@ -170,10 +170,16 @@ SilphCo_11F_EventScript_JessieJames::
 	call_if_eq VAR_TEMP_1, 0, SilphCo_11F_EventScript_JessieJamesAppear0
 	call_if_eq VAR_TEMP_1, 1, SilphCo_11F_EventScript_JessieJamesAppear1
 	call_if_eq VAR_TEMP_1, 2, SilphCo_11F_EventScript_JessieJamesAppear2
+	goto_if_eq VAR_ROCKET_RETRY, 8, SilphCo_11F_EventScript_JessieJamesRetry
 	msgbox SilphCo_11F_Text_JessieJamesIntro
 	closemessage
+SilphCo_11F_EventScript_JessieJamesBattle::
+	setvar VAR_0x8004, 8
+	call EventScript_RocketTrioBeforeBattle
 	setvar VAR_LAST_TALKED, LOCALID_SILPH_CO_JESSIE
 	trainerbattle_no_intro TRAINER_JESSIE_JAMES_SILPH_CO, SilphCo_11F_Text_JessieJamesDefeat
+	setvar VAR_ROCKET_RETRY, ROCKET_RETRY_NONE
+	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox SilphCo_11F_Text_JessieJamesBlastOff
 	closemessage
 	fadescreen FADE_TO_BLACK
@@ -181,8 +187,23 @@ SilphCo_11F_EventScript_JessieJames::
 	removeobject LOCALID_SILPH_CO_JAMES
 	fadescreen FADE_FROM_BLACK
 	setvar VAR_MAP_SCENE_SILPH_CO_11F_JESSIE_JAMES, 1
+	addmoney 1344
+	setvar VAR_0x8004, 1344
+	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, SilphCo_11F_EventScript_RocketCoins
+	addmoney 1344
+	setvar VAR_0x8004, 2688
+SilphCo_11F_EventScript_RocketCoins::
+	call EventScript_RocketMeowthCoins
+	msgbox SilphCo_11F_Text_UpGradeDropped
+	giveitem ITEM_UP_GRADE
+	setvar VAR_0x8004, ROCKET_BONUS_UP_GRADE
+	call EventScript_RocketRewardResult
 	releaseall
 	end
+
+SilphCo_11F_EventScript_JessieJamesRetry::
+	call EventScript_RocketTrioRetry
+	goto SilphCo_11F_EventScript_JessieJamesBattle
 
 SilphCo_11F_EventScript_JessieJamesAppear0::
 	setobjectxyperm LOCALID_SILPH_CO_JESSIE, 0, 11

@@ -176,6 +176,7 @@ MtMoon_B2F_EventScript_JessieJames::
 	waitmovement 0
 	playmoncry SPECIES_CLEFAIRY, CRY_MODE_NORMAL
 	waitmoncry
+	goto_if_eq VAR_ROCKET_RETRY, 2, MtMoon_B2F_EventScript_JessieJamesRetry
 	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox MtMoon_B2F_Text_JessieFollowClefairy
 	textcolor NPC_TEXT_COLOR_MALE
@@ -185,8 +186,13 @@ MtMoon_B2F_EventScript_JessieJames::
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox MtMoon_B2F_Text_JessieJamesIntro
 	closemessage
+MtMoon_B2F_EventScript_JessieJamesBattle::
+	setvar VAR_0x8004, 2
+	call EventScript_RocketTrioBeforeBattle
 	setvar VAR_LAST_TALKED, LOCALID_MT_MOON_JESSIE
 	trainerbattle_no_intro TRAINER_JESSIE_JAMES_MT_MOON, MtMoon_B2F_Text_JessieJamesDefeat
+	setvar VAR_ROCKET_RETRY, ROCKET_RETRY_NONE
+	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox MtMoon_B2F_Text_JessieJamesBlastOff
 	closemessage
 	setvar VAR_0x8008, LOCALID_MT_MOON_JESSIE
@@ -199,9 +205,20 @@ MtMoon_B2F_EventScript_JessieJames::
 	removeobject LOCALID_MT_MOON_MEOWTH
 	setvar VAR_MAP_SCENE_MT_MOON_B2F_JESSIE_JAMES, 2
 	fadedefaultbgm
+	addmoney 224
+	setvar VAR_0x8004, 224
+	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, MtMoon_B2F_EventScript_RocketCoins
+	addmoney 448
+	setvar VAR_0x8004, 672
+MtMoon_B2F_EventScript_RocketCoins::
+	call EventScript_RocketMeowthCoins
 	call MtMoon_B2F_EventScript_ClefairyThanks
 	releaseall
 	end
+
+MtMoon_B2F_EventScript_JessieJamesRetry::
+	call EventScript_RocketTrioRetry
+	goto MtMoon_B2F_EventScript_JessieJamesBattle
 
 MtMoon_B2F_EventScript_MeowthRemembersPikachu::
 	textcolor NPC_TEXT_COLOR_MALE
@@ -222,10 +239,16 @@ MtMoon_B2F_EventScript_ClefairyThanks::
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox MtMoon_B2F_Text_ClefairyGrateful
 	giveitem ITEM_MOON_STONE
+	@ v0.9.0: with a full bag the CLEFAIRY waits here for the next visit
+	goto_if_eq VAR_0x8007, FALSE, MtMoon_B2F_EventScript_ClefairyBagFull
 	setflag FLAG_ROCKET_MT_MOON_CLEFAIRY
 	msgbox MtMoon_B2F_Text_ClefairyHopsAway
 	closemessage
 	removeobject LOCALID_MT_MOON_ROCKET_CLEFAIRY
+	return
+
+MtMoon_B2F_EventScript_ClefairyBagFull::
+	msgbox Text_TooBadBagFull
 	return
 
 @ Saves that beat JESSIE & JAMES here before v0.5.0 find the CLEFAIRY waiting.

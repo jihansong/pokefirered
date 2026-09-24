@@ -32,10 +32,18 @@ import tempfile
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from emu import Emu, GameReset                     # noqa: E402
-from gamedata import REPO, maps, map_info          # noqa: E402
+from gamedata import REPO, Rom, maps, map_info     # noqa: E402
 from savefile import SaveFile                      # noqa: E402
 
 _LAYOUTS = None
+_ROM = None
+
+
+def _rom():
+    global _ROM
+    if _ROM is None:
+        _ROM = Rom()
+    return _ROM
 
 
 def layout_size(name):
@@ -90,7 +98,9 @@ def smoke_at(mapid, m, x, y, rom, base, frames, shots, idx):
     try:
         s = SaveFile(base)
         s.warp(mapid, x, y)
-        s.set_var('VAR_REPEL_STEP_COUNT', 250)   # no wild battles while walking about
+        # A Lv100 lead under a repel: no wild battles while walking about
+        s.party_mon(0).make_strong(100, _rom())
+        s.set_var('VAR_REPEL_STEP_COUNT', 250)
         s.save(sav)
         with Emu(rom, sav) as e:
             try:

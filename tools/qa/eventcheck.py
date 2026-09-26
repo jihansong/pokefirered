@@ -24,6 +24,8 @@ Steps, in order:
     evomash [N]                          press A (at most N times, default 200)
                                          until an evolution scene has come and
                                          gone; fails if none started
+    mashto CB2 [N]                       press A (at most N times, default 60)
+                                         until gMain.callback2 is CB2
     shot NAME                            save NAME.png (in --shots)
     expect flag NAME = 0|1               check a flag in the live game
     expect var NAME = N                  check a var in the live game
@@ -31,12 +33,15 @@ Steps, in order:
     expect money = N                     check the player's money
     expect item ITEM = N                 check how many of ITEM the bag holds
     expect egg SPECIES = N               count EGGS of SPECIES in party and PC
+    expect mons SPECIES = N              count SPECIES (not EGGS) in party and PC
     expect fateful SPECIES = N           count SPECIES (EGGS too) in party and PC
                                          with the fateful encounter bit (MEW's
                                          and DEOXYS's obedience)
     expect species SLOT NAME[|NAME]      check the species in party SLOT (0-5)
     expect sym NAME = N                  check the byte at a RAM symbol (statics
                                          too, e.g. sClockWindowShown)
+    expect move SLOT MOVE                check that party SLOT knows MOVE
+    expect cb2 NAME                      check gMain.callback2 (e.g. CB2_UpdatePartyMenu)
     expect map MAP                       check the player's current map
     expect battle | expect overworld     check what the game is doing
 The save is continued (title, CONTINUE, quest-log recap skipped) before the
@@ -47,6 +52,7 @@ first step. A case passes when every expect holds; screenshots are for eyes.
 import argparse
 import json
 import os
+import struct
 import sys
 import tempfile
 
@@ -146,6 +152,14 @@ def run_case(case, rom, shots):
                         e.press('A', hold=3, after=37)
                     else:
                         fails.append('%s: %s' % (step, 'the evolution never ended' if seen else 'no evolution scene'))
+                elif head == 'MASHTO':
+                    want = e.sym(p[1])
+                    for _ in range(int(p[2]) if len(p) > 2 else 60):
+                        if (e.callback2() & ~1) == want:
+                            break
+                        e.press('A', hold=3, after=27)
+                    else:
+                        fails.append('%s: never got there' % step)
                 elif head == 'SHOT':
                     if shots:
                         e.shot(os.path.join(shots, '%s_%s.png' % (name, p[1])))
@@ -162,10 +176,13 @@ def run_case(case, rom, shots):
                         got, want = live_blocks(e).money(), int(p[3], 0)
                         if got != want:
                             fails.append('%s: money is %d' % (step, got))
-                    elif what in ('item', 'egg', 'fateful'):
+                    elif what in ('item', 'egg', 'fateful', 'mons'):
                         want = int(p[4], 0)
                         if what == 'item':
                             got = live_blocks(e).item_count(p[2])
+                        elif what == 'mons':
+                            sp = species_id(p[2])
+                            got = sum(1 for m in live_mons(e) if m.species() == sp and not m.is_egg())
                         else:
                             sp = species_id(p[2])
                             mons = [m for m in live_mons(e) if m.species() == sp]
@@ -183,6 +200,15 @@ def run_case(case, rom, shots):
                         got, want = e.u8(e.sym(p[2])), int(p[4], 0)
                         if got != want:
                             fails.append('%s: %s is %d' % (step, p[2], got))
+                    elif what == 'move':
+                        size = off('pokemon')
+                        mon = Mon(bytearray(e.read(e.sym('gPlayerParty') + int(p[2]) * size, size)), 0)
+                        moves = struct.unpack_from('<4H', mon.subs()['A'], 0)
+                        if const(p[3] if p[3].startswith('MOVE_') else 'MOVE_' + p[3]) not in moves:
+                            fails.append('%s: party slot %s knows %s' % (step, p[2], list(moves)))
+                    elif what == 'cb2':
+                        if (e.callback2() & ~1) != e.sym(p[2]):
+                            fails.append('%s: callback2 is %08x' % (step, e.callback2()))
                     elif what == 'map':
                         m = map_info(p[2])
                         g, n, _, _ = e.location()

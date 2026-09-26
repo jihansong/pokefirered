@@ -30,3 +30,7 @@ Quality bar (user, 2026-09-26): the opening and every ending credits sequence ar
 animation at the level of the official Gen 1-3 games' intros and credits (R/B/Y, G/S/C,
 R/S/E, FR/LG): scrolling and parallax backgrounds, several characters and POKéMON moving
 continuously, camera moves, effects. A slideshow of still pictures does not pass.
+Floor (user, 2026-09-26): length and quality may exceed the official Gen 1-3 level but never
+fall below it. Opening: at least the replaced span (752 frames) and 24.3 s power-on to
+title; each ending: at least the original credits (about 174 s). Anything shorter or less
+dense than the official sequences is REJECTED.

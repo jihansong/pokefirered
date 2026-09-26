@@ -70,22 +70,129 @@ def _noise(x, y, seed):
     return v
 
 
+# The storm sky (art review of 4-5 draft A, change 6): banks of cumulus, one in front
+# of the other, each with a scalloped top of round puffs of different sizes that
+# repeats every 128 pixels (so its tiles repeat), puffs lying over puffs; the top of
+# every puff lit one step lighter for 2 pixels (1 on the steep sides; the light is
+# above and behind the clouds), the belly two steps darker under a 1 pixel dither row.
+# The banks darken downward: the lightest high up round the break the lightning comes
+# from, the darkest low over the field, with a pale band of horizon under the last
+# bank's flat bottom, behind the trees. Up top, a low overcast hangs down with a lit
+# bottom edge and opens over the break. World rows: wy 0 is the top of the picture at
+# rest; the camera tilts up to wy -112.
+# (top wy, [(puff centre x in the 128 repeat, half width, height)], body, rim, belly,
+#  rows from the top to the belly)
+SKY_BANKS = (
+    (-84, [(4, 14, 10), (24, 18, 17), (47, 12, 9), (66, 16, 13), (88, 22, 19), (112, 12, 8)],
+     C5, C6, C3, 10),
+    (-42, [(10, 20, 16), (33, 12, 9), (52, 17, 14), (78, 13, 10), (96, 19, 17), (118, 10, 6)],
+     C4, C5, C2, 11),
+    (4, [(0, 16, 12), (20, 13, 16), (41, 20, 15), (66, 12, 8), (84, 18, 18), (108, 14, 10)],
+     C3, C4, C1, 11),
+    (38, [(12, 18, 12), (36, 12, 8), (55, 20, 15), (82, 14, 10), (104, 17, 13), (124, 9, 5)],
+     C2, C3, DEEP, 6),
+)
+SKY_PERIOD = 128
+SKY_BOTTOM = 50                     # the last bank's flat bottom; the horizon band below
+BREAK = (140,)                      # the break in the clouds: its centre x
+BREAK_GLOW = -98                    # above this row the light behind it is brightest
+BREAK_DIP = (140, 56, 22)            # the top bank sinks round the break: x, half width, depth
+OVERCAST = -104                     # the hanging overcast's bottom edge, away from the break
+OVERCAST_PUFFS = [(6, 12, 7), (26, 14, 11), (48, 10, 6), (66, 15, 12), (88, 11, 8), (108, 16, 10)]
+
+
+def _dither(x, y):
+    return (x + y) % 2 == 0
+
+
+def _wrap_dx(x, c):
+    d = (x - c) % MAP
+    return d - MAP if d > MAP // 2 else d
+
+
+def _puff_tops(x, puffs, period):
+    """(height, index) of every puff over column x, in a repeat of `period`."""
+    out = []
+    for i, (pc, hw, h) in enumerate(puffs):
+        for rep in (-period, 0, period):
+            dx = (x % period) - (pc + rep)
+            if abs(dx) < hw:
+                out.append((round(h * math.sqrt(1 - (dx / hw) ** 2)), i + 1))
+    return out
+
+
 def sky_layer():
-    """The storm sky over the whole 256x256 map. World row wy = 0 is the top of the
-    picture at rest; negative rows are the sky above, seen when the camera tilts up.
-    Big flat cloud masses (few tiles), lighter toward the horizon, and a pale break
-    high up where the lightning comes from."""
+    """The storm sky over the whole 256x256 map (see SKY_BANKS)."""
     img = [[0] * MAP for _ in range(MAP)]
     for r in range(MAP):
         wy = ((r - VIEW_Y + 128) % MAP) - 128
         for x in range(MAP):
-            n = _noise(x, r, 0.0) * 0.9 + _noise(x * 2 % MAP, r, 1.7) * 0.25
-            base = 2.2 + wy / 40.0                 # lighter toward the horizon
-            if wy < -60:                           # the break in the clouds above
-                d = math.hypot((x - 130) / 70.0, (wy + 95) / 26.0)
-                base += max(0.0, 1.4 - d) * 2.2
-            v = base + n * 0.9
-            img[r][x] = (C1, C2, C3, C4, C5, C6)[max(0, min(5, int(v)))]
+            if wy < 0:                               # the light behind the clouds, in bands
+                k = BREAK_GLOW - wy                  # a 3-row dithered step, 3/4, 1/2, 1/4
+                if k > 1:
+                    c = GLOW
+                elif k < -1:
+                    c = C6
+                else:
+                    c = GLOW if (x + 2 * (wy % 2)) % 4 < 2 + k else C6
+            else:                                    # the horizon band under the storm
+                c = C4 if wy > SKY_BOTTOM else C3
+                if wy == SKY_BOTTOM + 1 and _dither(x, wy):
+                    c = C3
+            img[r][x] = c
+    # the overcast hanging down from the top, its bottom edge lit, open over the break
+    for x in range(MAP):
+        dx = _wrap_dx(x, BREAK[0])
+        half = 40.0 if dx < 0 else 52.0                                 # a lopsided hole
+        lift = round(30 * math.sqrt(max(0.0, 1 - (dx / half) ** 2)))
+        hang = max([h for h, _ in _puff_tops(x, OVERCAST_PUFFS, SKY_PERIOD)], default=0)
+        edge = OVERCAST + hang - lift
+        for wy in range(-128, edge + 1):
+            r = (wy + VIEW_Y) % MAP
+            if wy == edge:                           # the underside lit by the break
+                c = C5
+            elif wy == edge - 1:
+                c = C4 if _dither(x, wy) else C3
+            else:
+                c = C3
+            img[r][x] = c
+    for n, (top, puffs, body, rim, belly, deep) in enumerate(SKY_BANKS):
+        last = n == len(SKY_BANKS) - 1
+
+        def base(x):
+            b = top + round(2 * math.sin(2 * math.pi * x / MAP * 2 + n))
+            if n == 0:
+                dx = abs(_wrap_dx(x, BREAK_DIP[0]))
+                b += round(BREAK_DIP[2] * max(0.0, 1 - (dx / BREAK_DIP[1]) ** 2))
+            return b
+        cols = []
+        for x in range(MAP):
+            b = base(x)
+            cols.append([(b, 0)] + [(b - h, i) for h, i in _puff_tops(x, puffs, SKY_PERIOD)])
+        belly_wave = [round(3 * math.sin(2 * math.pi * x / 128 + n) + 2 * math.sin(2 * math.pi * x / 64 + 2 * n))
+                      for x in range(MAP)]
+        for x in range(MAP):
+            layers = cols[x]
+            y_top = min(t for t, _ in layers)
+            nxt = min(t for t, _ in cols[(x + 1) % MAP])
+            prv = min(t for t, _ in cols[x - 1])
+            rim_rows = 1 if max(abs(nxt - y_top), abs(prv - y_top)) >= 3 else 2
+            for wy in range(y_top, SKY_BOTTOM + 1 if last else 128):
+                r = (wy + VIEW_Y) % MAP
+                # the puff in front here (the last drawn that reaches this row); its lit top
+                front = max(i for t, i in layers if t <= wy)
+                t_front = min(t for t, i in layers if i == front)
+                # the belly line rolls gently, not a ruled line
+                b = layers[0][0] + deep + belly_wave[x]
+                if wy - t_front < rim_rows:
+                    c = rim
+                elif wy > b:
+                    c = belly
+                elif wy == b:
+                    c = belly if _dither(x, wy) else body
+                else:
+                    c = body
+                img[r][x] = c
     return img
 
 
@@ -131,35 +238,51 @@ def rain_layer():
 
 
 # ---------------------------------------------------------------- sprites
-SPEAROW_PAL = [(0, 0, 0), (255, 213, 180), (246, 189, 148), (222, 148, 115), (123, 65, 65),
+SPEAROW_PAL = [(0, 0, 0), (255, 222, 74), (255, 150, 110), (222, 148, 115), (123, 65, 65),
                (205, 172, 98), (123, 115, 65), (57, 57, 24), (230, 106, 74), (148, 57, 41),
                (82, 16, 0), (197, 197, 213), (139, 139, 148), (74, 74, 90), (255, 255, 255), (16, 16, 16)]
-SP_COLORS = {
+SP_BEAK, SP_CREST = 1, 2                  # a bright beak and a light crest, so the bird reads
+SP_COLORS = {                             # on the dark sky at 1x (art review 4-5 A, change 8)
     'B': dict(base=6, rim=7, rim_dark=15, line=7, mid=7, shade=(2, 2)),      # brown body
     'W': dict(base=8, rim=9, rim_dark=15, line=9, mid=9, shade=(2, 2)),      # red-brown wings
     'F': dict(base=5, rim=6, rim_dark=15, mid=6, shade=(1, 1)),              # beige face
-    'K': dict(base=5, rim=15, rim_dark=15),                                   # beak
+    'K': dict(base=SP_BEAK, rim=15, rim_dark=15),                             # beak
+    'C': dict(base=8, rim=9, rim_dark=15),                                    # head crest
 }
 
 
 def spearow_frames():
-    """SPEAROW far off, 16x16, flying left: wings up, wings down."""
+    """SPEAROW far off, 16x16, flying left. Frames: 0 wings up, 1 wings down, 2 wings
+    level (the cycle is 0, 2, 1, 2); 3 and 4: frames 0 and 1 as a white silhouette,
+    the moment THUNDERBOLT hits it."""
     out = []
-    for up in (True, False):
+    for wing in ('up', 'down', 'level'):
         f = Figure(16, 16)
-        if up:
+        if wing == 'up':
             f.poly('wingFar', [(8, 8), (12, 1), (14, 2), (11, 9)], kind='W')
+        elif wing == 'level':
+            f.poly('wingFar', [(8, 7.5), (13, 5), (15, 6), (11, 9)], kind='W')
         f.poly('tail', [(11, 8), (15, 6), (15, 10), (11, 10)], kind='B')
+        f.poly('crest', [(4, 5.5), (7.5, 3), (8, 4.5), (6.5, 6.5)], kind='C')
         f.ellipse('body', 8.5, 9, 4.2, 2.8, kind='B')
         f.ellipse('head', 4.5, 7.5, 2.6, 2.4, kind='F')
         f.poly('beak', [(2.5, 7), (0, 8), (2.5, 9)], kind='K')
-        if up:
+        if wing == 'up':
             f.poly('wing', [(6, 8), (9, 1), (11.5, 2), (10, 9)], kind='W')
-        else:
+        elif wing == 'down':
             f.poly('wing', [(6, 9), (9, 15), (11.5, 14), (10, 8.5)], kind='W')
+        else:
+            f.poly('wing', [(6, 8.5), (12, 6), (14.5, 7.5), (10, 10)], kind='W')
         img = f.render(SP_COLORS)
         stamp(img, 4, 7, ['K'], {'K': 15})
+        stamp(img, 1, 7, ['b'], {'b': SP_BEAK})          # the beak's lit top
+        for y in range(16):                               # the crest's tip lit
+            for x in range(16):
+                if f.owner[y][x] == 'crest' and img[y][x] != 15 and f.owner[y - 1][x] != 'crest':
+                    img[y][x] = SP_CREST
         out.append(img)
+    for src in out[:2]:
+        out.append([[0 if v == 0 else 11 if v == 15 else 14 for v in row] for row in src])
     return out
 
 
@@ -202,29 +325,135 @@ def bolt_down_frames():
     return out
 
 
-def burst_frame():
-    """One quarter of the THUNDERBOLT burst, 64x64: jagged rays from the lower right
-    corner (PIKACHU's middle) out to the upper left. The other quarters are this one
-    mirrored; swapping the mirrors changes the rays without any blinking."""
-    img = [[0] * 64 for _ in range(64)]
-    for ang, length, wiggle in ((198, 58, 5), (222, 62, 6), (246, 54, 5), (262, 40, 4), (184, 36, 4), (234, 30, 3)):
-        a = math.radians(ang)
-        pts = []
-        for k in range(8):
-            d = 10 + (length - 10) * k / 7
-            off = wiggle * (1 if k % 2 else -1)
-            x = 63 + d * math.cos(a) - off * math.sin(a)
-            y = 63 + d * math.sin(a) + off * math.cos(a)
-            pts.append((round(x), round(y)))
-        _zig(img, pts, pika.WHITE, pika.SPARK_PALE, pika.SPARK_RIM, pale=pika.SPARK)
-    # the glow round the middle
-    for y in range(64):
-        for x in range(64):
-            d = math.hypot(63 - x, 63 - y)
-            if d < 9 and img[y][x] == 0:
-                img[y][x] = pika.SPARK_PALE if d < 6 else pika.SPARK
+# THUNDERBOLT (art review of 4-5 draft A, change 4): three different drawings of the
+# burst, each 128x128 round PIKACHU's middle (the 'zap' pose's sprite sits at
+# (32, 28) in it), cut into four 64x64 quarters for the four burst tracks. The strip
+# is drawing-major: frame 4 * d + q, q = 0 upper left, 1 upper right, 2 lower left,
+# 3 lower right; no flips. Each drawing: 4-5 thick trunks that leave the cheeks,
+# different on the left and the right, forking on the way and splitting into twigs
+# at the ends; nothing within 4 pixels of PIKACHU's outline (it stays clear and in
+# front, in both discharge poses); every lit pixel inside local rows BURST_ROWS, so with the sprite at
+# (PIKA_X, PIKA_Y) (+/- 1 for the bob and the shake) the burst stays inside the
+# letterbox.
+BURST = 128
+BURST_ROWS = (8, 99)
+BURST_POSES = ('zap', 'zap2')
+BURST_AT = (32, 28)                       # where the pose's 64x64 sits in the drawing
+CHEEKS = ((52, 54), (75, 54))             # the cheeks, in the drawing
+BURST_KEEPOUT = 4
+# (cheek 0 left / 1 right, end, segments, zigzag amplitude, forks as (where along,
+# turn in degrees, length))
+BURSTS = (
+    ((0, (8, 12), 7, 4, ((0.55, -38, 14), (0.8, 30, 8))),
+     (0, (5, 78), 6, 3, ((0.6, 32, 10),)),
+     (1, (118, 24), 6, 4, ((0.5, -40, 12),)),
+     (1, (110, 96), 5, 3, ((0.65, -30, 9),))),
+    ((0, (22, 8), 6, 4, ((0.6, -35, 13),)),
+     (0, (2, 46), 7, 4, ((0.5, 38, 12), (0.82, -30, 8))),
+     (0, (32, 98), 4, 3, ()),
+     (1, (124, 62), 7, 4, ((0.55, -36, 14),)),
+     (1, (104, 9), 5, 3, ((0.7, 34, 8),))),
+    ((0, (3, 28), 7, 4, ((0.45, 36, 11), (0.75, -34, 9))),
+     (0, (16, 97), 5, 3, ((0.6, -30, 8),)),
+     (1, (110, 9), 6, 3, ((0.6, -36, 9),)),
+     (1, (125, 40), 6, 4, ((0.5, 40, 12),)),
+     (1, (120, 92), 6, 3, ((0.7, -34, 8),))),
+)
+
+
+def _jag(p, q, n, amp, rnd):
+    """A zigzag from p to q in n segments, the bends pushed alternately either side."""
+    (x0, y0), (x1, y1) = p, q
+    length = math.hypot(x1 - x0, y1 - y0)
+    nx, ny = -(y1 - y0) / length, (x1 - x0) / length
+    pts = [p]
+    for k in range(1, n):
+        t = k / n
+        off = amp * (1 if k % 2 else -1) * (0.55 + 0.45 * rnd.random())
+        pts.append((round(x0 + (x1 - x0) * t + nx * off), round(y0 + (y1 - y0) * t + ny * off)))
+    pts.append(q)
+    return pts
+
+
+def _burst_drawing(spec, seed, keepout):
+    import random
+    rnd = random.Random(seed)
+    trunk, branch, twig = set(), set(), set()
+
+    def path_pixels(pts):
+        out = set()
+        for a, b in zip(pts, pts[1:]):
+            out |= s2._line(a, b)
+        return out
+    for cheek, end, n, amp, forks in spec:
+        start = CHEEKS[cheek]
+        pts = _jag(start, end, n, amp, rnd)
+        seg = len(pts) - 1
+        for i, (a, b) in enumerate(zip(pts, pts[1:])):
+            (trunk if i < seg * 0.7 else branch).update(s2._line(a, b))
+        # forks off the trunk, thinner
+        for where, turn, flen in forks:
+            k = max(1, min(seg - 1, round(where * seg)))
+            bx, by = pts[k]
+            ang = math.atan2(end[1] - start[1], end[0] - start[0]) + math.radians(turn)
+            fe = (round(bx + math.cos(ang) * flen), round(by + math.sin(ang) * flen))
+            fp = _jag((bx, by), fe, 3, 2, rnd)
+            branch |= path_pixels(fp)
+            twig |= path_pixels([fe, (fe[0] + round(math.cos(ang - 0.7) * 4), fe[1] + round(math.sin(ang - 0.7) * 4))])
+        # the end splits into small twigs
+        ang = math.atan2(end[1] - start[1], end[0] - start[0])
+        for turn, tl in ((-0.6, 5), (0.5, 4), (0.05, 3)):
+            te = (round(end[0] + math.cos(ang + turn) * tl), round(end[1] + math.sin(ang + turn) * tl))
+            twig |= path_pixels([end, te])
+    core = set(trunk)
+    for x, y in trunk:                      # the trunks' core two pixels thick
+        core |= {(x + 1, y), (x, y + 1)}
+    core |= branch
+    halo1 = {(x + dx, y + dy) for x, y in core for dx in (-1, 0, 1) for dy in (-1, 0, 1)}
+    halo2 = {(x + dx, y + dy) for x, y in trunk for dx in (-2, -1, 0, 1, 2) for dy in (-2, -1, 0, 1, 2)
+             if abs(dx) + abs(dy) <= 3}
+    img = [[0] * BURST for _ in range(BURST)]
+    for layer, col in ((halo2, pika.SPARK), (halo1, pika.SPARK_PALE), (twig, pika.SPARK_PALE), (core, pika.WHITE)):
+        for x, y in layer:
+            if 0 <= x < BURST and BURST_ROWS[0] <= y <= BURST_ROWS[1]:
+                img[y][x] = col
+    # cut back one pixel further than the keep-out, then rim the cut ends, so every
+    # lit pixel, rim included, stays BURST_KEEPOUT clear of PIKACHU
+    for x, y in keepout[1]:
+        img[y][x] = 0
     s2._rim(img, pika.SPARK_RIM)
+    for y in range(BURST):
+        for x in range(BURST):
+            if (x, y) in keepout[0] or not BURST_ROWS[0] - 1 <= y <= BURST_ROWS[1] + 1:
+                img[y][x] = 0
     return img
+
+
+def burst_keepout(r=BURST_KEEPOUT):
+    """Every pixel within r of the discharge poses' outlines, in the drawing."""
+    ox, oy = BURST_AT
+    solid = set()
+    for stage in BURST_POSES:
+        pose = pika.jump_frame(stage)
+        solid |= {(x + ox, y + oy) for y in range(64) for x in range(64) if pose[y][x]}
+    disc = [(dx, dy) for dx in range(-r, r + 1) for dy in range(-r, r + 1) if max(abs(dx), abs(dy)) <= r]
+    return {(x + dx, y + dy) for x, y in solid for dx, dy in disc}
+
+
+def burst_drawings():
+    """The three 128x128 drawings."""
+    keep = (burst_keepout(), burst_keepout(BURST_KEEPOUT + 1))
+    return [_burst_drawing(spec, 11 + i, keep) for i, spec in enumerate(BURSTS)]
+
+
+def burst_frames():
+    """The burst strip: 4 * drawing + quarter (see BURSTS)."""
+    out = []
+    for img in burst_drawings():
+        for qy in (0, 64):
+            for qx in (0, 64):
+                out.append([row[qx:qx + 64] for row in img[qy:qy + 64]])
+    return out
 
 
 # ---------------------------------------------------------------- choreography helpers
@@ -254,7 +483,10 @@ def hidden():
 def scene4_art():
     rv = red
     return {
-        'red': ([rv.side_run(i) for i in range(4)] + [rv.back_view('stand')], rv.PAL, 64, 64),
+        # 0-3 the run with the small PIKACHU in his arms, 4 turned (holding it), 5-6 the
+        # in-betweens down into the crouch (the crouch itself is 'shield' 0)
+        'red': ([rv.side_run(i, carry=True) for i in range(4)] + [rv.back_view(p) for p in ('stand', 'bend1', 'bend2')],
+                rv.PAL, 64, 64),
         'shield': ([rv.back_view('shield'), rv.back_view('shield-open')], rv.SHIELD_PAL, 64, 64),
         'bird': (spearow_frames(), SPEAROW_PAL, 16, 16),
     }
@@ -327,12 +559,13 @@ def scene5_art():
         'shield5': ([red.back_view('shield', pikachu=False), red.back_view('shield-open', pikachu=False)],
                    red.SHIELD_PAL, 64, 64),
         'small': ([sm['crouch'], sm['leap']], pika.PAL, 32, 32),
-        'pika': ([pika.jump_frame('rise'), pika.jump_frame('air')], pika.PAL, 64, 64),
+        # 0 rise, 1 air, 2 the wind-up (t74-76), 3-4 THUNDERBOLT (alternate from t77)
+        'pika': ([pika.jump_frame(st) for st in ('rise', 'air', 'charge', 'zap', 'zap2')], pika.PAL, 64, 64),
         'crackleL': (s2.crackle_frames(), pika.PAL, 16, 16),
         'crackleR': (s2.crackle_frames(), pika.PAL, 16, 16),
         'boltA': (bolt_down_frames(), pika.PAL, 32, 64),
         'boltB': (bolt_down_frames(), pika.PAL, 32, 64),
-        'burst': ([burst_frame()], pika.PAL, 64, 64),
+        'burst': (burst_frames(), pika.PAL, 64, 64),
         'bird': (spearow_frames(), SPEAROW_PAL, 16, 16),
     }
 

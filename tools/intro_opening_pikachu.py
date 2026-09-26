@@ -531,14 +531,23 @@ def jump_frame(stage):
     """The THUNDERBOLT leap, facing the viewer: 'crouch' (squashed, ears back, about
     to spring), 'launch' (stretched up, arms raised), 'rise' (flying upward: body long,
     arms tight, legs trailing, ears laid together), 'air' (spread in the air, tail
-    up, cheeks lit), 'fall' (curled, coming down)."""
+    up, cheeks lit), 'fall' (curled, coming down).
+    THUNDERBOLT (scene 5, art review of 4-5 draft A, change 5), from 'air':
+    'charge' (the wind-up: the body pressed down 2 pixels and wider, arms pulled in,
+    ears laid back, eyes squeezed shut), 'zap' (the discharge: body stretched tall,
+    chest out, arms down and back with the fists at the hips as in the approved scene 2
+    model, legs apart, ears swept back, fierce eyes, mouth open, sparks at the
+    cheeks), 'zap2' (the same, shouting with the eyes squeezed shut and the sparks
+    moved on, to alternate with 'zap')."""
     f = Scaled(1)
     k = {'crouch': (1.07, 0.9, 4, -0.35), 'launch': (0.9, 1.12, -4, 0.1), 'rise': (0.88, 1.12, -3, 0.28),
-         'air': (1.0, 1.0, -2, 0.15), 'fall': (1.0, 0.95, 0, -0.2)}[stage]
+         'air': (1.0, 1.0, -2, 0.15), 'fall': (1.0, 0.95, 0, -0.2),
+         'charge': (1.07, 0.9, 0, -0.32), 'zap': (0.95, 1.07, -3, -0.2), 'zap2': (0.95, 1.07, -3, -0.26)}[stage]
     sx, sy, dy, ear_tilt = k
     hx, hy = 32, 24 + dy
     by = 45 + dy
-    tail(f, 'flick' if stage in ('launch', 'air') else 'lag' if stage == 'rise' else 'rest')
+    tail(f, 'flick' if stage in ('launch', 'air', 'zap', 'zap2') else 'lag' if stage in ('rise', 'charge')
+         else 'rest')
     if stage == 'launch':
         f.ellipse('armL', 20, by + 6, 2.6, 5, rot=0.7)
         f.ellipse('armR', 44, by + 6, 2.6, 5, rot=-0.7)
@@ -558,6 +567,16 @@ def jump_frame(stage):
         f.ellipse('footR', 36, by + 15, 2.8, 4.5, rot=-0.1)
         f.ellipse('armL', 23, by + 2, 2.4, 4.6, rot=0.25)
         f.ellipse('armR', 41, by + 2, 2.4, 4.6, rot=-0.25)
+    elif stage == 'charge':                      # pulled in tight, about to let go
+        f.ellipse('footL', 25, by + 11, 3.5, 3, rot=0.4)
+        f.ellipse('footR', 39, by + 11, 3.5, 3, rot=-0.4)
+        f.ellipse('armL', 26, by - 2, 2.4, 3.8, rot=-0.7)     # fists drawn up to the chest
+        f.ellipse('armR', 38, by - 2, 2.4, 3.8, rot=0.7)
+    elif stage in ('zap', 'zap2'):               # stretched out: arms down and back, legs apart
+        f.ellipse('footL', 23, by + 14, 3, 4.4, rot=0.45)
+        f.ellipse('footR', 41, by + 14, 3, 4.4, rot=-0.45)
+        f.ellipse('armL', 19.5, by + 6, 2.6, 5, rot=0.75)
+        f.ellipse('armR', 44.5, by + 6, 2.6, 5, rot=-0.75)
     elif stage == 'air':
         f.ellipse('footL', 20, by + 10, 3.2, 4, rot=0.8)
         f.ellipse('footR', 44, by + 10, 3.2, 4, rot=-0.8)
@@ -571,7 +590,7 @@ def jump_frame(stage):
     for i, side in enumerate((-1, 1)):
         base = (hx + side * 8, hy - 7)
         ang = side * (0.55 - ear_tilt)
-        length = 14 if stage == 'rise' else 17     # laid back in the rush of air
+        length = {'rise': 14, 'charge': 14, 'zap': 16, 'zap2': 15}.get(stage, 17)   # laid back
         tip = (base[0] + math.sin(ang) * length, base[1] - math.cos(ang) * length)
         ear(f, 'ear%d' % i, base[0], base[1], tip[0], tip[1])
     f.ellipse('head', hx, hy, 14, 11.5)
@@ -583,6 +602,17 @@ def jump_frame(stage):
         stamp(img, hx - 8, hy - 3, ['oo...', '.KKK.', '.WKK.', '.KKK.'], KEY)
         stamp(img, hx + 4, hy - 3, ['...oo', '.KKK.', '.WKK.', '.KKK.'], KEY)
         stamp(img, hx - 1, hy + 3, ['ooo'], KEY)
+    elif stage in ('charge', 'zap2'):            # eyes squeezed shut: > <
+        stamp(img, hx - 8, hy - 2, ['KK..', '..KK', 'KK..'], KEY)
+        stamp(img, hx + 5, hy - 2, ['..KK', 'KK..', '..KK'], KEY)
+        if stage == 'charge':
+            stamp(img, hx - 1, hy + 4, ['ooo'], KEY)
+        else:                                    # shouting
+            stamp(img, hx - 3, hy + 3, ['ooooooo', 'oRRtRRo', '.oRRRo.', '..ooo..'], KEY)
+    elif stage == 'zap':                         # fierce: brows down hard, mouth open
+        stamp(img, hx - 9, hy - 4, ['oo....', '.ooKK.', '.KWKK.', '.KKKK.', '..Kg.'], KEY)
+        stamp(img, hx + 3, hy - 4, ['....oo', '.KKoo.', '.KWKK.', '.KKKK.', '..Kg.'], KEY)
+        stamp(img, hx - 3, hy + 3, ['ooooooo', 'oRtttRo', '.oRRRo.', '..ooo..'], KEY)
     else:
         stamp(img, hx - 8, hy - 3, ['.KK.', 'KWKK', 'KKKK', 'KKKK', '.Kg.'], KEY)
         stamp(img, hx + 4, hy - 3, ['.KK.', 'KWKK', 'KKKK', 'KKKK', '.Kg.'], KEY)
@@ -590,6 +620,14 @@ def jump_frame(stage):
     stamp(img, hx, hy + 1, ['K'], KEY)
     for cx in (hx - 14, hx + 9):
         stamp(img, cx, hy + 3, ['.rrr.', 'prrrr', 'rrrrR', 'rrrRR', '.RRR.'], KEY)
+    if stage in ('zap', 'zap2'):                 # the cheeks lit: sparks jump off them
+        sk = {'W': WHITE, 's': SPARK_PALE, 'S': SPARK}
+        if stage == 'zap':
+            stamp(img, hx - 18, hy + 1, ['S..s.', '.sWs.', '..sWW', '.sWs.', 'S....'], sk, clip=False)
+            stamp(img, hx + 13, hy + 2, ['.s..', 'WWs.', '.sWs', '...S'], sk, clip=False)
+        else:
+            stamp(img, hx - 17, hy + 3, ['..s.', 'sWWs', '.s..', 'S...'], sk, clip=False)
+            stamp(img, hx + 13, hy + 0, ['...S', '.s..', 'sWWs', '..sW', '...s'], sk, clip=False)
     return img
 
 
@@ -599,18 +637,21 @@ def jump_frame(stage):
 # the head, the lightning tail with its brown root, two short stripes on the back).
 # 32x32 sprites; (x, y) is where each stamp goes.
 SMALL = {
-    'crouch': [((5, 13), [          # squashed on the shoulder, ears laid back
-        'KK................KK',
-        'KKK..............KKK',
-        '.oyyK..........oyyK.',
-        '..oyyK........oyyK..',
-        '...oyyyooooooyyyK...',
-        '...oyyllyyyyyyyymK..',
-        '..oyyllllyyyyyyymK..',
-        '..oyyyllyyyyyyymmK..',
-        '..ryyyyyyyyyyyymmr..',
-        '..KmyyyyyyyyyyymmK..',
-        '...KmmyyyyyyyymmK...',
+    'crouch': [((5, 10), [          # squashed on the shoulder: a round dome between two
+        '.K................K.',     # ears splayed in a V, yellow with black tips (art
+        '.KK..............KK.',     # review R1: one head and two ears, not a crown)
+        '.KKK............KKK.',
+        '..KKK..........KKK..',
+        '..oyyK........oyymK.',
+        '...oyyK.oooo.oyymK..',
+        '...oyyyoyyyyooyymK..',
+        '....oyyyyyyyyyyymK..',
+        '...oyllyyyyyyyyymK..',
+        '..oyllllyyyyyyyymmK.',
+        '..oyyllyyyyyyyyymmK.',
+        '..ryyyyyyyyyyyyymmr.',
+        '..KmyyyyyyyyyyyymmK.',
+        '...KmmyyyyyyyymmmK..',
         '..oyKKmmmmmmmmKKmK..',
         '.oyyyyyyyyyyyyymmK..',
         '.oyyoooyyyyyyymmmK..',
@@ -633,13 +674,13 @@ SMALL = {
         '.ooK.......',
     ])],
     'leap': [((5, 2), [             # stretched up off the shoulder, arms up and out
-        '...K.........K...',
-        '...KK.......KK...',
-        '...KK.......KK...',
-        '...oyK.....oyK...',
-        '...oyK.....oyK...',
-        '...oyyK...oyyK...',
-        '..oyyyoooooyyymK.',
+        'K...............K',
+        'KK.............KK',
+        '.KK...........KK.',
+        '.oyK.........oyK.',
+        '..oyK.......oyK..',
+        '..oyyK.ooo.oyymK.',
+        '..oyyyoyyyoyyymK.',
         '..oyllyyyyyyyymK.',
         '.oyllllyyyyyyymK.',
         '.oyyllyyyyyyyymK.',
@@ -692,6 +733,6 @@ def model_views():
            'side': side_view(), 'side, ears back': side_view('open', 'open', 'back', 'up')}
     for i in range(len(RUN)):
         out['run %d' % i] = run_frame(i)
-    for st in ('crouch', 'launch', 'rise', 'air', 'fall'):
+    for st in ('crouch', 'launch', 'rise', 'air', 'fall', 'charge', 'zap', 'zap2'):
         out['jump: ' + st] = jump_frame(st)
     return out

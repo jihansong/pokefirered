@@ -94,9 +94,10 @@ SKY_BANKS = (
 )
 SKY_PERIOD = 128
 SKY_BOTTOM = 50                     # the last bank's flat bottom; the horizon band below
-BREAK = (140,)                      # the break in the clouds: its centre x
+BREAK = (215,)                      # the break in the clouds: its centre x (off to the
+                                    # right of PIKACHU, not a moon behind its head)
 BREAK_GLOW = -98                    # above this row the light behind it is brightest
-BREAK_DIP = (140, 56, 22)            # the top bank sinks round the break: x, half width, depth
+BREAK_DIP = (215, 56, 22)            # the top bank sinks round the break: x, half width, depth
 OVERCAST = -104                     # the hanging overcast's bottom edge, away from the break
 OVERCAST_PUFFS = [(6, 12, 7), (26, 14, 11), (48, 10, 6), (66, 15, 12), (88, 11, 8), (108, 16, 10)]
 
@@ -495,68 +496,13 @@ def scene4_art():
 S4_TRACKS = ['red', 'shield'] + ['bird%d' % i for i in range(N_BIRDS)]
 
 
-def scene4():
-    keys, scroll, layout, events = [], [], [], []
-    for t in range(FRAMES):
-        k = {tr: hidden() for tr in S4_TRACKS}
-        if t < 77:
-            cam = round(44 * ease_io(t / 76))
-            sx = 0
-            scroll.append((cam // 4, 0, cam, 0, (t * 2) % 256, (-t * 5) % 256))
-            layout.append(1 if t >= 8 else 0)
-            wx = -60 + 210 * ease_out(t / 44)
-            x = round(wx - cam)
-            if t < 44:
-                k['red'] = (x, 60, (t // 3) % 4, 0)
-            elif t < 48:
-                k['red'] = (x, 60, 1, 0)                   # the stop
-            else:
-                k['red'] = (x, 60, 4, 0)                   # turned: back view
-            for i in range(N_BIRDS):                      # the flock sweeps across
-                s = t - 30 - (i % 4) * 2
-                if s < 0:
-                    continue
-                bx = 250 - s * 6 + (i % 3) * 14 - (i // 3) * 6
-                by = 40 + 10 * math.sin((s + i * 5) / 6.0) + (i % 4) * 7 - 12
-                if bx < -16:
-                    continue
-                k['bird%d' % i] = (round(bx), round(by), ((t + i) // 3) % 2, 0)
-        else:
-            u = t - 77
-            shake = {35: 1, 36: -1, 37: 1}.get(u, 0)
-            scroll.append((20 - shake, 0, 70 - shake, 4, (t * 2) % 256, (-t * 5) % 256))
-            layout.append(1)
-            frame = 1 if 33 <= u < 63 else 0
-            breathe = -1 if frame == 0 and (u // 8) % 2 else 0
-            k['shield'] = (88 + shake, 60 + breathe, frame, 0)
-            for i in range(N_BIRDS):                      # circling, diving at u 33
-                a = u * 0.09 + i * (2 * math.pi / N_BIRDS)
-                dive = 1.0 - 0.45 * math.sin(math.pi * max(0.0, min(1.0, (u - 30) / 25.0)))
-                rx, ry = 100 * dive, 26 * dive
-                bx = 120 + rx * math.cos(a) - 8 + shake
-                by = 66 + ry * math.sin(a) - 8 - 10
-                front = FRONT if math.sin(a) > 0 else 0
-                flip = HFLIP if math.sin(a) < 0 else 0     # flying right on the far side
-                k['bird%d' % i] = (round(bx), round(by), ((t + i) // 3) % 2, front | flip)
-        keys.append(k)
-    # the sky darkens over the first beat; the sprites take the storm's gloom
-    for t in range(0, 25):
-        events.append((t, EV_BLEND, T_BG, round(8 * (1 - t / 24)), (200, 204, 220)))
-    events.append((0, EV_BLEND, T_OBJ, 5, STORM))
-    # one distant flash (4b u 53 = t 130), BG only
-    for i, c in enumerate((10, 6, 3, 0)):
-        events.append((130 + i, EV_BLEND, T_BG, c, GLOW_RGB))
-    return keys, scroll, layout, events
-
-
-GLOW_RGB = (230, 236, 255)
-
-
 # ---------------------------------------------------------------- scene 5
 def scene5_art():
     sm = pika.small_frames()
     return {
-        'shield5': ([red.back_view('shield', pikachu=False), red.back_view('shield-open', pikachu=False)],
+        # 0 crouched without PIKACHU, 1 arms out, 2 crouched with it (as scene 4 ends)
+        'shield5': ([red.back_view('shield', pikachu=False), red.back_view('shield-open', pikachu=False),
+                     red.back_view('shield')],
                    red.SHIELD_PAL, 64, 64),
         'small': ([sm['crouch'], sm['leap']], pika.PAL, 32, 32),
         # 0 rise, 1 air, 2 the wind-up (t74-76), 3-4 THUNDERBOLT (alternate from t77)
@@ -576,97 +522,212 @@ PIKA_X, PIKA_Y = 88, 54                       # big PIKACHU's corner in the sky 
                                               # for the strike to show coming down)
 
 
+# ---------------------------------------------------------------- scene 4 (draft B)
+FLAP = (0, 2, 1, 2)                     # wings up, level, down, level
+RED_WORLD_X = 150                       # where RED stops (front layer coordinates)
+CAM_END = 62                            # the camera's pan, so RED ends in the middle
+T_HIT = 88                              # scene 5: the flock is struck
+
+
+def flap(t, i):
+    return FLAP[((t + i) // 3) % 4]
+
+
+def cam4(t):
+    """One continuous pan: with RED running in, then on toward him while he turns and
+    crouches (no cut: art review 4-5 A, change 1 b)."""
+    return round(CAM_END * ease_io(min(1.0, t / 86.0)))
+
+
+def _sweep(t, i):
+    s = t - 30 - (i % 4) * 2
+    if s < 0:
+        return None
+    return (250 - s * 6 + (i % 3) * 14 - (i // 3) * 6,
+            40 + 10 * math.sin((s + i * 5) / 6.0) + (i % 4) * 7 - 12)
+
+
+def _circle(u, i, cx, shake=0):
+    """The flock circling RED; u counts from the start of bar 5."""
+    a = u * 0.09 + i * (2 * math.pi / N_BIRDS)
+    dive = 1.0 - 0.45 * math.sin(math.pi * max(0.0, min(1.0, (u - 30) / 25.0)))
+    return (cx + 100 * dive * math.cos(a) - 8 + shake, 66 + 26 * dive * math.sin(a) - 18, math.sin(a) > 0)
+
+
+def _bird_key(t, i, pos, prev, front, cx, frame=None, extra=0):
+    """A bird's key: faces its way of flight; in front of RED only when it is not over
+    his head and the small PIKACHU (art review 4-5 A, change 3)."""
+    bx, by = pos
+    if bx < -16 or bx > 240 or by > 160:
+        return hidden()
+    if front and abs(bx + 8 - cx) < 24:
+        front = False
+    flags = (FRONT if front else 0) | extra
+    if prev is not None and pos[0] - prev[0] > 0.3:
+        flags |= HFLIP                                       # flying right
+    return (round(bx), round(by), flap(t, i) if frame is None else frame, flags)
+
+
+def scene4():
+    keys, scroll, layout, events = [], [], [], []
+    prev = [None] * N_BIRDS
+    for t in range(FRAMES):
+        k = {tr: hidden() for tr in S4_TRACKS}
+        cam = cam4(t)
+        u = t - 77
+        shake = {35: 1, 36: -1, 37: 1}.get(u, 0)
+        scroll.append((cam // 4 - shake, 0, cam - shake, 0, (t * 2) % 256, (-t * 5) % 256))
+        layout.append(1 if t >= 8 else 0)
+        wx = -60 + 210 * ease_out(t / 44) if t < 44 else RED_WORLD_X
+        x = round(wx - cam) + shake
+        # RED: runs in carrying the small PIKACHU, stops, turns, bends, crouches
+        if t < 44:
+            k['red'] = (x, 60, (t // 3) % 4, 0)
+        elif t < 48:
+            k['red'] = (x, 60, 1, 0)
+        elif t < 56:
+            k['red'] = (x, 60, 4, 0)                     # turned, holding it
+        elif t < 60:
+            k['red'] = (x, 60, 5, 0)                     # knees bending
+        elif t < 64:
+            k['red'] = (x, 60, 6, 0)
+        else:
+            frame = 1 if 110 <= t < 140 else 0           # arms out as they dive
+            breathe = -1 if frame == 0 and t >= 72 and (t // 8) % 2 else 0
+            k['shield'] = (x, 60 + breathe, frame, 0)
+        cx = RED_WORLD_X + 32 - cam + shake              # RED's middle on screen
+        # the flock sweeps across, turns back and circles him
+        for i in range(N_BIRDS):
+            sw = _sweep(t, i)
+            ci = _circle(u, i, cx, shake)
+            if t < 66:
+                pos, front = sw, False
+            elif t < 86:
+                p = ease_io((t - 66) / 20.0)
+                pos = (sw[0] + (ci[0] - sw[0]) * p, sw[1] + (ci[1] - sw[1]) * p)
+                front = ci[2] and p > 0.5
+            else:
+                pos, front = (ci[0], ci[1]), ci[2]
+            if pos is None:
+                continue
+            k['bird%d' % i] = _bird_key(t, i, pos, prev[i], front, cx)
+            prev[i] = pos
+        keys.append(k)
+    # the sky darkens over the first beat; the sprites take the storm's gloom
+    for t in range(0, 25):
+        events.append((t, EV_BLEND, T_BG, round(8 * (1 - t / 24)), (200, 204, 220)))
+    events.append((0, EV_BLEND, T_OBJ, 5, STORM))
+    # the distant flash on beat 4 of bar 5 (F1129, music direction): the sky lights,
+    # the field only a little (art review change 10)
+    for i, (c_sky, c_field) in enumerate(((10, 3), (6, 2), (3, 1), (0, 0))):
+        events.append((134 + i, EV_BLEND_RANGE, rng(C1, 6), c_sky, GLOW_RGB))
+        events.append((134 + i, EV_BLEND_RANGE, rng(GLOW, 2), c_sky, GLOW_RGB))
+        events.append((134 + i, EV_BLEND_RANGE, rng(TREES, 5), c_field, GLOW_RGB))
+    return keys, scroll, layout, events
+
+
+EV_BLEND_RANGE = 2
+
+
+def rng(first, count):
+    """A BG palette range as an event target: first colour, count."""
+    return first | ((count - 1) << 4)
+
+
+GLOW_RGB = (230, 236, 255)
+
+
+# ---------------------------------------------------------------- scene 5 (draft B)
 def scene5():
     keys, scroll, layout, events = [], [], [], []
+    prev = [None] * N_BIRDS
+    ring_pos = [None] * N_BIRDS
+    sky0, field0 = CAM_END // 4, CAM_END
     for t in range(FRAMES):
         k = {tr: hidden() for tr in S5_TRACKS}
         tilt = -round(112 * ease_io((t - 19) / 12.0)) if t >= 19 else 0
         shake = ((1 if (t // 2) % 2 else -1) if 77 <= t < 87 else 0)
         rain = ((t + 153) * 2 % 256, (-(t + 153) * 5) % 256)
-        scroll.append((20 - shake, tilt, 70 - shake, 4 + tilt, rain[0], rain[1]))
-        layout.append(1)
+        scroll.append((sky0 - shake, tilt, field0 - shake, tilt, rain[0], rain[1]))
+        layout.append(0 if 37 <= t <= 44 else 1)          # no rain over its face at the strike
+        cx = RED_WORLD_X + 32 - CAM_END
         # RED, crouched: PIKACHU has left his arms; he looks up after it (arms out)
         ry = 60 - tilt
         if ry < 128:
-            k['shield5'] = (88 + shake, ry, 0 if t < 9 else 1, 0)
+            k['shield5'] = (88 + shake, ry, 2 if t < 4 else 0 if t < 9 else 1, 0)
         # the small PIKACHU: crouched on his shoulder, then the spring
-        if t < 8:
-            k['small'] = (94, 64 + (1 if t >= 4 else 0) - tilt, 0, 0)
-        elif t < 19:
+        if 4 <= t < 8:                       # it gets up on his shoulder (the cut itself
+            k['small'] = (99, 64 + (1 if t >= 6 else 0) - tilt, 0, 0)   # keeps scene 4's picture)
+        elif 8 <= t < 19:
             y = 58 - (t - 8) * 7
             if y > 0:
                 k['small'] = (92, y, 1, 0)
-        # the big PIKACHU rises into the sky once RED is out of the picture
+        # the big PIKACHU: rises once RED is out of the picture, is struck, hangs,
+        # winds up (t74-76) and discharges from bar 7 (t77)
         if 30 <= t < 39:
-            y = round(128 - 74 * ease_out((t - 29) / 9.0))
-            k['pika'] = (PIKA_X, y, 0, 0)
-        elif t >= 39:
-            bob = -1 if (t // 8) % 2 else 0
-            k['pika'] = (PIKA_X + shake, PIKA_Y + bob, 1, 0)
+            k['pika'] = (PIKA_X, round(128 - 74 * ease_out((t - 29) / 9.0)), 0, 0)
+        elif 39 <= t < 74:
+            k['pika'] = (PIKA_X, PIKA_Y + (-1 if (t // 8) % 2 else 0), 1, 0)
+        elif 74 <= t < 77:
+            k['pika'] = (PIKA_X, PIKA_Y, 2, 0)
+        elif t >= 77:
+            k['pika'] = (PIKA_X + shake, PIKA_Y, 3 + ((t - 77) // 3) % 2, 0)
         py = k['pika'][1]
         # the strike: two stacked bolts from the top of the picture to its head
         if 37 <= t < 44:
             k['boltA'] = (PIKA_X + 16, py - 96, t % 2, 0)
             k['boltB'] = (PIKA_X + 16, py - 32, (t + 1) % 2, 0)
-        # cheeks crackling
-        if t >= 44 and t < 77 or t >= 77:
-            if (t // 2) % 3 != 2:
-                k['crackleL'] = (PIKA_X + 4 + shake, py + 18, (t // 2) % 2, 0)
-                k['crackleR'] = (PIKA_X + 44 + shake, py + 18, (t // 2) % 2, HFLIP)
-        # THUNDERBOLT: four mirrored quarters round its middle, the mirrors swapped
+        # cheeks crackling while it hangs (the discharge poses spark by themselves)
+        if 44 <= t < 74 and (t // 2) % 3 != 2:
+            k['crackleL'] = (PIKA_X + 4, py + 18, (t // 2) % 2, 0)
+            k['crackleR'] = (PIKA_X + 44, py + 18, (t // 2) % 2, HFLIP)
+        # THUNDERBOLT: three different drawings in turn, 4 frames each, 4 quarters
         if t >= 77:
-            cx, cy = PIKA_X + 32 + shake, py + 36
-            swap = (t // 4) % 2
-            quads = [(cx - 64, cy - 64, 0), (cx, cy - 64, HFLIP), (cx - 64, cy, VFLIP), (cx, cy, HFLIP | VFLIP)]
-            for q, (x, y, fl) in enumerate(quads):
-                if swap:
-                    fl ^= HFLIP | VFLIP
-                    x, y = quads[3 - q][0], quads[3 - q][1]
-                    fl = quads[q][2] ^ (HFLIP | VFLIP)
-                    x, y = (cx - 64 if fl & HFLIP == 0 else cx), (cy - 64 if fl & VFLIP == 0 else cy)
-                k['burst%d' % q] = (x, y, 0, fl)
-        # the flock keeps circling RED (as at the end of scene 4) until the tilt leaves it
-        if t < 34:
-            u = t + 76
-            for i in range(N_BIRDS):
-                a = u * 0.09 + i * (2 * math.pi / N_BIRDS)
-                bx = 120 + 100 * math.cos(a) - 8 + shake
-                by = 66 + 26 * math.sin(a) - 18 - tilt
-                if by < 128:
-                    front = FRONT if math.sin(a) > 0 else 0
-                    flip = HFLIP if math.sin(a) < 0 else 0
-                    k['bird%d' % i] = (round(bx), round(by), ((u + 77 + i) // 3) % 2, front | flip)
-        # the flock: rushes in from both sides, is caught, scatters tumbling
+            d = ((t - 77) // 4) % 3
+            bx0, by0 = PIKA_X - BURST_AT[0] + shake, PIKA_Y - BURST_AT[1]
+            for q in range(4):
+                k['burst%d' % q] = (bx0 + (q % 2) * 64, by0 + (q // 2) * 64, 4 * d + q, 0)
         for i in range(N_BIRDS):
             side = -1 if i % 2 == 0 else 1
             lane = (i // 2) % 6
-            ring = 50 + lane * 5                  # they close in, but not onto PIKACHU
-            if 60 <= t < 88:
+            ring = 50 + lane * 5
+            key = None
+            if t < 34:                       # still circling RED, carried off by the tilt
+                bx, by, front = _circle(t + 76, i, cx, shake)
+                key = _bird_key(t, i, (bx, by - tilt), prev[i], front, cx) if by - tilt < 128 else hidden()
+                pos = (bx, by - tilt)
+            elif 60 <= t < T_HIT:            # rushing in from both sides to a ring round it
                 s = max(0.0, (t - 60 - lane * 2) / 28.0)
                 start = 150 + lane * 10
-                bx = 120 + side * (start - (start - ring) * s) - 8
-                by = 34 + lane * 10 + 4 * math.sin(t / 4.0 + i) - 8
-                if -16 < bx < 240:
-                    k['bird%d' % i] = (round(bx), round(by), (t + i) // 3 % 2, FRONT | (HFLIP if side < 0 else 0))
-            elif 88 <= t < 130:
-                s = t - 88
-                ang = math.radians(-150 + i * 27)
-                bx = 120 + math.cos(ang) * (ring + s * 5) - 8
-                by = 80 + math.sin(ang) * (26 + s * 3) - 8 + s * s * 0.03
-                if -16 < bx < 240 and -16 < by < 160:
-                    k['bird%d' % i] = (round(bx), round(by), (t + i) % 2,
-                                       FRONT | VFLIP | (HFLIP if math.cos(ang) > 0 else 0))
+                pos = (120 + side * (start - (start - ring) * s) - 8,
+                       34 + lane * 10 + 4 * math.sin(t / 4.0 + i) - 8)
+                ring_pos[i] = pos
+                key = _bird_key(t, i, pos, prev[i], True, -999)
+            elif T_HIT <= t < T_HIT + 2:     # struck: a white silhouette, 2 frames
+                pos = ring_pos[i]
+                key = _bird_key(t, i, pos, None, True, -999, frame=3 + (t - T_HIT), extra=HFLIP if side < 0 else 0)
+            elif t >= T_HIT + 2:             # upside down, falling away
+                s = t - T_HIT - 2
+                hx, hy = ring_pos[i]
+                pos = (hx - side * 1.2 * s, hy - 2.5 * s + 0.22 * s * s)
+                key = _bird_key(t, i, pos, None, True, -999, frame=1 + (t // 4) % 2,
+                                extra=VFLIP | (HFLIP if side < 0 else 0))
+            else:
+                pos = None
+            if key is not None:
+                k['bird%d' % i] = key
+            prev[i] = pos
         keys.append(k)
     events.append((0, EV_BLEND, T_OBJ, 5, STORM))
-    # the strike: the sky lights once; the cry
+    # the strike (beat 3, F1186): the whole sky lights once; the cry
     for i, c in enumerate((12, 7, 3, 0)):
         events.append((38 + i, EV_BLEND, T_BG, c, GLOW_RGB))
     events.append((39, EV_CRY, 0, 0, (0, 0, 0)))
-    # the sprites lose the gloom once PIKACHU is up in the light
     events.append((30, EV_BLEND, T_OBJ, 0, STORM))
-    # white-out into scene 6: +1 every 2 frames from t118
-    for t in range(118, FRAMES):
-        events.append((t, EV_BLEND, T_ALL, min(16, (t - 118) // 2 + 1), WHITE_RGB))
+    # white-out into scene 6 from beat 3 of bar 7 (t115 = F1263, music direction): +1
+    # every 2 frames, white at bar 8
+    for t in range(115, FRAMES):
+        events.append((t, EV_BLEND, T_ALL, min(16, (t - 115) // 2 + 1), WHITE_RGB))
     return keys, scroll, layout, events
 
 
@@ -694,11 +755,14 @@ class Mock:
         self.tracks = tracks
         self.events = events
         self.coeff = {T_BG: (0, (0, 0, 0)), T_OBJ: (0, (0, 0, 0)), T_ALL: (0, (0, 0, 0))}
+        self.bg = [(0, (0, 0, 0))] * 16            # BG blends are per colour (ranges)
 
     def pal(self, pal, target):
         c, col = self.coeff[T_ALL]
         if c:
             return [blend(p, c, col) for p in pal]
+        if target == T_BG:
+            return [blend(p, c, col) if c else gba(p) for p, (c, col) in zip(pal, self.bg)]
         c, col = self.coeff[target]
         return [blend(p, c, col) if c else gba(p) for p in pal]
 
@@ -706,6 +770,12 @@ class Mock:
         for (et, typ, target, coeff, col) in self.events:
             if et == t and typ == EV_BLEND:
                 self.coeff[target] = (coeff, col)
+                if target == T_BG:
+                    self.bg = [(coeff, col)] * 16
+            elif et == t and typ == EV_BLEND_RANGE:
+                first, count = target & 15, (target >> 4) + 1
+                for i in range(first, first + count):
+                    self.bg[i] = (coeff, col)
         screen = Image.new('RGB', (240, 160), (0, 0, 0))
         bgpal = self.pal(BG_PAL, T_BG)
         px = screen.load()

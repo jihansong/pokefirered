@@ -2,6 +2,7 @@
 #include "gflib.h"
 #include "m4a.h"
 #include "sound.h"
+#include "blend_palette.h"
 #include "intro_opening.h"
 #include "constants/songs.h"
 #include "constants/species.h"
@@ -88,6 +89,8 @@ struct OpeningEvent
 enum {
     EVENT_BLEND,        // BlendPalettes(target, coeff, color): coeff 0 undoes it
     EVENT_CRY,          // PIKACHU's cry
+    EVENT_BLEND_RANGE,  // BlendPalette on colours of the scene's BG palette: target =
+                        // first colour | (count - 1) << 4
 };
 
 enum {
@@ -812,6 +815,8 @@ static void Table_Update(u8 scene, u16 t)
             BlendPalettes(EventTarget(ts, ev->target), ev->coeff, ev->color);
         else if (ev->type == EVENT_CRY)
             PlayCry_Normal(SPECIES_PIKACHU, 0);
+        else if (ev->type == EVENT_BLEND_RANGE)
+            BlendPalette(BG_PLTT_ID(ts->bgBank) + (ev->target & 15), (ev->target >> 4) + 1, ev->coeff, ev->color);
     }
     sOpening->lastEventT = t;
     if (ts->layout[t] != sOpening->layout)

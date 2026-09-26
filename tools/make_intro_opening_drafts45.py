@@ -34,20 +34,26 @@ from emu import Emu  # noqa: E402
 SPAN = (960, 1330)
 S4, S5 = (996, 1148), (1149, 1301)
 KEYS = [(1000, '4a: the storm gathers, RED runs in'),
-        (1036, '4a: the camera follows; the flock comes in'),
-        (1060, '4a: he has stopped and turned; the flock sweeps over'),
+        (1036, '4a: running with the small PIKACHU in his arms; the flock comes in'),
+        (1060, '4a: bending down (no cut: one shot from here to 5b)'),
         (1090, '4b: crouched over the small PIKACHU, the flock circling'),
         (1115, '4b: arms out as they dive (screen shakes)'),
-        (1126, '4b: the distant flash'),
+        (1130, '4b: the distant flash on beat 4 (sky lit, field barely)'),
         (1154, '5a: the small PIKACHU crouches on his shoulder'),
         (1162, '5a: it springs up out of the picture'),
         (1175, '5b: the camera tilts up into the clouds'),
         (1187, '5b: beat 3: the lightning strikes PIKACHU (cry)'),
         (1215, '5b: hanging in the storm, cheeks crackling'),
-        (1236, '5c: THUNDERBOLT, the flock caught'),
-        (1260, '5c: the flock scattered'),
-        (1290, '5c: the white-out into scene 6')]
-CUTS = [995, 996, 1072, 1073, 1148, 1149, 1167, 1180, 1301, 1302]
+        (1236, '5c: THUNDERBOLT, the flock closing in'),
+        (1260, '5c: the flock struck, falling upside down'),
+        (1290, '5c: the white-out into scene 6'),
+        (1050, '4a: turned, holding it'),
+        (1058, '4a: in-between 1: knees bending'),
+        (1062, '4a: in-between 2: into the crouch'),
+        (1223, '5b: the wind-up before THUNDERBOLT'),
+        (1237, '5c: the flock struck: white for 2 frames'),
+        (1242, '5c: the second burst drawing')]
+CUTS = [995, 996, 1072, 1073, 1147, 1148, 1149, 1150, 1301, 1302]
 
 
 def capture(rom, frames):
@@ -91,14 +97,19 @@ def stack(*parts):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('rom', nargs='?', default=os.path.join(ROOT, 'pokemonthyl.gba'))
-    ap.add_argument('--out', default=os.path.join(ROOT, 'docs/anim/drafts/scene45-A'))
-    ap.add_argument('--label', default='A')
+    ap.add_argument('--out', default=os.path.join(ROOT, 'docs/anim/drafts/scene45-B'))
+    ap.add_argument('--label', default='B')
     ap.add_argument('--wav-tool', default=None)
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     shots = capture(a.rom, set(range(SPAN[0], SPAN[1] + 1)))
     for i, (f, _) in enumerate(KEYS, 1):
         shots[f].save(os.path.join(a.out, 'key%02d_F%04d.png' % (i, f)))
+        box = (64, 32, 176, 128)                   # the middle of the picture at 1x and 3x
+        crop = shots[f].crop(box)
+        crop.save(os.path.join(a.out, 'key%02d_F%04d_mid.png' % (i, f)))
+        crop.resize((crop.size[0] * 3, crop.size[1] * 3), Image.NEAREST).save(
+            os.path.join(a.out, 'key%02d_F%04d_mid_x3.png' % (i, f)))
         shots[f].resize((720, 480), Image.NEAREST).save(os.path.join(a.out, 'key%02d_F%04d_x3.png' % (i, f)))
     for n, (f0, f1) in (('scene4', S4), ('scene5', S5)):
         every = list(range(f0, f1 + 1, 3))
@@ -106,8 +117,8 @@ def main():
                  '%s draft %s in the emulator, every 3rd frame (t = frame of the scene)' % (n, a.label)).save(
             os.path.join(a.out, 'emu-every3-%s.png' % n))
     labelled([shots[f] for f in CUTS], ['F%d' % f for f in CUTS], 2, 1,
-             'cuts: into 4 (F995|996), inside 4 (F1072|1073), into 5 (F1148|1149), '
-             'the tilt (F1167, F1180), into 6 (F1301|1302)').save(os.path.join(a.out, 'cuts.png'))
+             'cuts: into 4 (F995|996), no cut any more at F1072|1073 (one continuous shot), '
+             'into 5 (F1147-1150), into 6 (F1301|1302)').save(os.path.join(a.out, 'cuts.png'))
     frames = [shots[f].resize((480, 320), Image.NEAREST) for f in range(SPAN[0], SPAN[1] + 1, 2)]
     durations = [30 if i % 3 else 40 for i in range(len(frames))]
     frames[0].save(os.path.join(a.out, 'preview.gif'), save_all=True, append_images=frames[1:],

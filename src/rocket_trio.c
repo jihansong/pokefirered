@@ -8,6 +8,7 @@
 #include "money.h"
 #include "script.h"
 #include "script_pokemon_util.h"
+#include "snag.h"
 #include "sound.h"
 #include "sprite.h"
 #include "string_util.h"
@@ -108,6 +109,35 @@ static u16 *GetRocketRewardVar(u16 *mask)
     }
     *mask = 1 << (bit & 15);
     return GetVarPointer(VAR_ROCKET_BONUS_GIVEN);
+}
+
+// v0.10.0: EventScript_RocketTrioBeforeBattle's test for VAR_ROCKET_DOUBLES
+// (VAR_0x8004 = the event number). Like HasEnoughMonsForDoubleBattle, but a
+// trio left with MEOWTH alone by snagging fights a single battle too
+// (CreateNPCTrainerParty), so the coins make up for that as well.
+static const u16 sRocketTrioTrainers[] = {
+    [2]  = TRAINER_JESSIE_JAMES_MT_MOON,
+    [3]  = TRAINER_JESSIE_JAMES_CERULEAN_GYM,
+    [4]  = TRAINER_JESSIE_JAMES_SS_ANNE,
+    [5]  = TRAINER_JESSIE_JAMES_ROCKET_HIDEOUT,
+    [6]  = TRAINER_JESSIE_JAMES_POKEMON_TOWER,
+    [7]  = TRAINER_JESSIE_JAMES_CELADON_GYM,
+    [8]  = TRAINER_JESSIE_JAMES_SILPH_CO,
+    [9]  = TRAINER_JESSIE_JAMES_SAFARI,
+    [10] = TRAINER_JESSIE_JAMES_CINNABAR,
+    [11] = TRAINER_JESSIE_JAMES_VIRIDIAN_GYM,
+    [12] = TRAINER_JESSIE_JAMES_INDIGO,
+    [13] = TRAINER_JESSIE_JAMES_NEW_ISLAND,
+};
+
+void RocketTrioWillBeDouble(void)
+{
+    gSpecialVar_Result = GetMonsStateToDoubles();
+    if (gSpecialVar_Result == PLAYER_HAS_TWO_USABLE_MONS
+     && gSpecialVar_0x8004 < ARRAY_COUNT(sRocketTrioTrainers)
+     && sRocketTrioTrainers[gSpecialVar_0x8004] != TRAINER_NONE
+     && SnagCountTrainerParty(sRocketTrioTrainers[gSpecialVar_0x8004]) < 2)
+        gSpecialVar_Result = PLAYER_HAS_ONE_USABLE_MON;
 }
 
 void CheckRocketRewardBit(void)
@@ -256,7 +286,8 @@ void GiveRocketOfficerRewards(void)
     u8 word[ITEM_NAME_LENGTH + 8];
     u8 kinds = 0, given = 0, lines = 0, eggsToPC = 0;
     u16 lineWidth;
-    bool8 bagFull = FALSE, boxesFull = FALSE;
+    bool8 bagFull = FALSE;
+    u8 eggsKept = 0;
     u8 *end, *w;
     u8 i, j;
 
@@ -272,7 +303,7 @@ void GiveRocketOfficerRewards(void)
 
             if (result == MON_CANT_GIVE)
             {
-                boxesFull = TRUE;
+                eggsKept++;
                 continue;
             }
             if (result == MON_GIVEN_TO_PC)
@@ -334,5 +365,5 @@ void GiveRocketOfficerRewards(void)
 
     gSpecialVar_0x8005 = given;
     gSpecialVar_0x8006 = bagFull;
-    gSpecialVar_0x8007 = boxesFull;
+    gSpecialVar_0x8007 = eggsKept;  // EGGs kept for want of room (the line says EGG or EGGS)
 }

@@ -385,8 +385,12 @@
 #define STRINGID_TRAINER1MON2COMEBACK 384
 #define STRINGID_TRAINER1MON1AND2COMEBACK 385
 #define STRINGID_MISSINGNODEXGLITCH 386
+#define STRINGID_SNAGGOTCHA 387          // v0.10.0 trainer-battle snagging
+#define STRINGID_SNAGREFUSED_MEOWTH 388
+#define STRINGID_SNAGBALLRETURNED 389
+#define STRINGID_SNAGADDEDTODEX 390
 
-#define BATTLESTRINGS_COUNT     387
+#define BATTLESTRINGS_COUNT     391
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

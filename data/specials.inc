@@ -527,4 +527,6 @@ gSpecials::
 	def_special ClosePokeWatchWindow
 	def_special AddRocketMeowthCoins
 	def_special GiveRocketOfficerRewards
+	def_special IsMonOTNotPlayersUnlessSnagged
+	def_special RocketTrioWillBeDouble
 gSpecialsEnd::

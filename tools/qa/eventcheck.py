@@ -32,11 +32,25 @@ Steps, in order:
                                          until gMain.callback2 is CB2
     watch LABEL                          from here on, note whether the text at
                                          ROM label LABEL is shown (gStringVar4,
-                                         looked at after every key press)
+                                         looked at after every key press); a text
+                                         that starts with a placeholder is found
+                                         by its longest plain part, in battle
+                                         text (gDisplayedStringBattle) too
     mashtext LABEL [N]                   press A (at most N times, default 300)
                                          until the text at LABEL is shown
     waitcb2 CB2 [N]                      run frames (at most N, default 3000) until
                                          gMain.callback2 is CB2, e.g. CB2_Credits
+    mashbattle [N]                       press A (at most N times, default 100)
+                                         until a battle has started
+    throw ITEM [L|R]                     in a battle: wait for the action menu,
+                                         BAG, the POKé BALLS pocket, ITEM (the
+                                         cursor is moved there from what the bag
+                                         remembers), USE; L or R then picks that
+                                         opponent with the BALL target cursor
+                                         (trainer doubles with both out)
+    fight N                              wait for the action menu, FIGHT, move N
+                                         (1-4); in a double battle A once more
+                                         for the first target
     shot NAME                            save NAME.png (in --shots)
     expect flag NAME = 0|1               check a flag in the live game
     expect var NAME = N                  check a var in the live game
@@ -48,6 +62,17 @@ Steps, in order:
     expect fateful SPECIES = N           count SPECIES (EGGS too) in party and PC
                                          with the fateful encounter bit (MEW's
                                          and DEOXYS's obedience)
+    expect count SPECIES = N             same as expect mons
+    expect mon NAME[|NAME] KEY=VALUE ... some such POKéMON in party or PC matches all
+                                         of: ot=NAME, otid=player|N, metloc=
+                                         MAPSEC_X|N, metlvl=N, ball=ITEM_X,
+                                         snagged=0|1, item=ITEM_X|ITEM_NONE,
+                                         where=party|box
+    expect dex SPECIES = none|seen|caught  all four dex places agree (caught:
+                                         owned + 3 seen; seen: 3 seen, not owned)
+    expect enemy SPECIES = N             count SPECIES in gEnemyParty
+    expect enemycount = N                count the POKéMON in gEnemyParty
+    expect double = 0|1                  a double battle or not
     expect species SLOT NAME[|NAME]      check the species in party SLOT (0-5)
     expect sym NAME = N                  check the byte at a RAM symbol (statics
                                          too, e.g. sClockWindowShown)
@@ -73,15 +98,17 @@ first step. A case passes when every expect holds; screenshots are for eyes.
 import argparse
 import json
 import os
+import re
 import struct
 import sys
 import tempfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from emu import Emu, GameReset                    # noqa: E402
-from gamedata import REPO, const, map_info, off   # noqa: E402
+from emu import Emu, GameReset, fresh_syms        # noqa: E402
+from gamedata import REPO, const, item_name, map_info, mapsec, off   # noqa: E402
 from savefile import Blocks, Mon                  # noqa: E402
+from textwidth import load_charmap                # noqa: E402
 import savedit                                    # noqa: E402
 
 BUTTONS = {'A', 'B', 'START', 'SELECT', 'L', 'R'}
@@ -102,6 +129,196 @@ def live_mons(e):
     boxes = bytearray(e.read(e.ptr('gPokemonStoragePtr') + off('storage.boxes'), n * bsize))
     mons += [Mon(boxes, i * bsize) for i in range(n)]
     return [m for m in mons if m.has_species()]
+
+
+def live_mons_where(e):
+    """(where, Mon) for the party ('party') and the PC ('box')."""
+    size = off('pokemon')
+    party = bytearray(e.read(e.sym('gPlayerParty'), 6 * size))
+    mons = [('party', Mon(party, i * size)) for i in range(e.u8(e.sym('gPlayerPartyCount')))]
+    bsize = off('boxmon')
+    n = const('TOTAL_BOXES_COUNT') * const('IN_BOX_COUNT')
+    boxes = bytearray(e.read(e.ptr('gPokemonStoragePtr') + off('storage.boxes'), n * bsize))
+    mons += [('box', Mon(boxes, i * bsize)) for i in range(n)]
+    return [(w, m) for w, m in mons if m.has_species()]
+
+
+def enemy_mons(e):
+    size = off('pokemon')
+    party = bytearray(e.read(e.sym('gEnemyParty'), 6 * size))
+    return [m for m in (Mon(party, i * size) for i in range(6)) if m.has_species()]
+
+
+_CHARS = None
+
+
+def game_text(raw):
+    global _CHARS
+    if _CHARS is None:
+        chars, _ = load_charmap()
+        _CHARS = {}
+        for c, bs in chars.items():
+            if len(bs) == 1 and len(c) == 1:
+                _CHARS.setdefault(bs[0], c)
+    out = []
+    for b in raw:
+        if b == 0xFF:
+            break
+        out.append(_CHARS.get(b, '?'))
+    return ''.join(out)
+
+
+def mon_mismatches(e, where, m, keys):
+    """The KEY=VALUE pairs of 'expect mon' that m doesn't match."""
+    loc, lvl, ball, _ = m.met()
+    bad = []
+    for k, v in keys:
+        if k == 'ot':
+            got = game_text(m.ot_name_raw())
+            ok = got == v
+        elif k == 'otid':
+            want = struct.unpack_from('<I', e.read(e.ptr('gSaveBlock2Ptr') + off('sb2.playerTrainerId'), 4))[0] \
+                if v == 'player' else int(v, 0)
+            got, ok = '%08x' % m.otid, m.otid == want
+        elif k == 'metloc':
+            got, ok = loc, loc == mapsec(v)
+        elif k == 'metlvl':
+            got, ok = lvl, lvl == int(v)
+        elif k == 'ball':
+            got, ok = ball, ball == const(item_name(v))
+        elif k == 'snagged':
+            got, ok = int(m.snagged()), int(m.snagged()) == int(v)
+        elif k == 'item':
+            got, ok = m.held(), m.held() == const(item_name(v))
+        elif k == 'where':
+            got, ok = where, where == v
+        else:
+            raise ValueError('unknown key %s' % k)
+        if not ok:
+            bad.append('%s=%s' % (k, got))
+    return bad
+
+
+_SYM_ADDRS = {}
+
+
+def sym_addrs(rom, name):
+    """Every address of NAME in the .sym: statics can share a name
+    (HandleInputChooseAction is in four battle controllers)."""
+    key = (rom, name)
+    if key not in _SYM_ADDRS:
+        found = set()
+        with open(fresh_syms(rom)) as f:
+            for line in f:
+                p = line.split()
+                if len(p) >= 4 and p[3] == name:
+                    found.add(int(p[0], 16))
+        _SYM_ADDRS[key] = found
+    return _SYM_ADDRS[key]
+
+
+def wait_action_menu(e, rom, presses=150):
+    """Press B through battle text until a player battler's action menu (FIGHT/
+    BAG/POKeMON/RUN) takes input. False if the battle ended first. (B never
+    reaches the right battler's menu: pressed on the left one's, it does nothing.)"""
+    want = sym_addrs(rom, 'HandleInputChooseAction')
+    funcs = e.sym('gBattlerControllerFuncs')
+
+    def menu_up():
+        return any((e.u32(funcs + 4 * b) & ~1) in want for b in (0, 2))   # either player battler (doubles)
+
+    for _ in range(120):            # the right battler's menu follows the left one's choice: no B for it
+        if menu_up():
+            e.run(20)
+            return True
+        e.run(1)
+    for _ in range(presses):
+        if not e.in_battle():
+            return False
+        if menu_up():
+            e.run(20)
+            return True
+        e.press('B', hold=3, after=17)
+    return False
+
+
+def throw_ball(e, rom, item, side):
+    """The 'throw' step; returns an error or None."""
+    if not wait_action_menu(e, rom):
+        return 'no action menu'
+    blocks = live_blocks(e)
+    want = const(item_name(item))
+    index = None
+    n = 0
+    for o in blocks._slots(item):
+        iid = struct.unpack_from('<H', blocks.sb1, o)[0]
+        if iid == want:
+            index = n
+            break
+        if iid:
+            n += 1
+    if index is None:
+        return 'no %s in the bag' % item
+    for key in ('UP', 'LEFT', 'RIGHT', 'A'):      # the action cursor to BAG
+        e.press(key, hold=3, after=12)
+    bag = e.sym('CB2_BagMenuRun')
+    for _ in range(300):
+        if (e.callback2() & ~1) == bag:
+            break
+        e.run(1)
+    else:
+        return 'the bag never opened'
+    e.run(40)
+    state = e.sym('gBagMenuState')
+    pocket = e.u16(state + 6)                     # 0 ITEMS, 1 KEY ITEMS, 2 POKe BALLS
+    balls = const('POCKET_POKE_BALLS') - 1
+    for _ in range(abs(balls - pocket)):
+        e.press('RIGHT' if balls > pocket else 'LEFT', hold=3, after=30)
+    if e.u16(state + 6) != balls:
+        return 'could not reach the POKe BALLS pocket'
+    at = e.u16(state + 8 + 2 * balls) + e.u16(state + 14 + 2 * balls)    # itemsAbove + cursorPos
+    for _ in range(abs(index - at)):
+        e.press('DOWN' if index > at else 'UP', hold=3, after=10)
+    e.press('A', hold=3, after=30)                # the item, then USE
+    e.press('A', hold=3, after=30)
+    if side:                                      # the target cursor (trainer doubles)
+        cursor = sym_addrs(rom, 'HandleInputChooseBallTarget')
+        funcs = e.sym('gBattlerControllerFuncs')
+        for _ in range(300):
+            if any((e.u32(funcs + 4 * b) & ~1) in cursor for b in (0, 2)):
+                break
+            e.run(1)
+        else:
+            return 'no BALL target cursor'
+        e.run(10)
+        want = 1 if side == 'L' else 3            # B_POSITION_OPPONENT_LEFT / _RIGHT
+        if e.u8(e.sym('gMultiUsePlayerCursor')) != want:
+            e.press('RIGHT', hold=3, after=12)
+        e.press('A', hold=3, after=12)
+    return None
+
+
+def fight(e, rom, n):
+    """The 'fight' step; returns an error or None."""
+    if not wait_action_menu(e, rom):
+        return 'no action menu'
+    for key in ('UP', 'LEFT', 'A'):               # FIGHT
+        e.press(key, hold=3, after=12)
+    e.run(20)
+    for key in ('UP', 'LEFT'):                    # the move cursor to the first move
+        e.press(key, hold=3, after=10)
+    i = n - 1
+    if i & 1:
+        e.press('RIGHT', hold=3, after=10)
+    if i & 2:
+        e.press('DOWN', hold=3, after=10)
+    e.press('A', hold=3, after=20)
+    if e.u32(e.sym('gBattleTypeFlags')) & BATTLE_TYPE_DOUBLE:
+        e.press('A', hold=3, after=20)
+    return None
+
+
+BATTLE_TYPE_DOUBLE = 1                            # include/constants/battle.h
 
 
 def species_id(name):
@@ -140,15 +357,36 @@ def decode_text(raw):
 def rom_text_prefix(e, label):
     """The first bytes of the text at LABEL, up to its first placeholder or
     control code (those differ once expanded into gStringVar4)."""
-    raw = e.read(e.sym(label), 64)
+    raw = e.read(e.sym(label), 96)
     out = bytearray()
     for b in raw:
-        if b >= 0xF7:       # placeholders, control codes, line breaks, the end
+        # line breaks stay as they are in gStringVar4; placeholders, control
+        # codes and the end don't
+        if b >= 0xF7 and b not in (0xFA, 0xFB, 0xFE):
             break
         out.append(b)
     if len(out) < 4:
         raise ValueError('text %s starts with too little plain text to watch' % label)
-    return bytes(out[:32])
+    return bytes(out[:90])
+
+
+def rom_text_run(e, label):
+    """The longest stretch of plain text in the first bytes at LABEL, for texts
+    that start with a placeholder (battle texts: "{B_ATK_NAME} is loafing")."""
+    raw = e.read(e.sym(label), 64)
+    best, cur = b'', bytearray()
+    for b in raw:
+        if b >= 0xF7:
+            if len(cur) > len(best):
+                best = bytes(cur)
+            cur = bytearray()
+            if b == 0xFF:
+                break
+        else:
+            cur.append(b)
+    if len(best) < 4:
+        raise ValueError('text %s has too little plain text to watch' % label)
+    return best[:32]
 
 
 def run_case(case, rom, shots, presses_log=None):
@@ -184,9 +422,10 @@ def run_case(case, rom, shots, presses_log=None):
 
             def look():
                 if watches:
-                    shown = e.read(e.sym('gStringVar4'), 32)
+                    shown = e.read(e.sym('gStringVar4'), 96)
+                    battle = e.read(e.sym('gDisplayedStringBattle'), 64)
                     for w in watches.values():
-                        if shown.startswith(w[0]):
+                        if shown.startswith(w[0]) or (w[2] and (w[0] in shown or w[0] in battle)):
                             w[1] = True
 
             def press(key, after):
@@ -205,13 +444,16 @@ def run_case(case, rom, shots, presses_log=None):
                 elif head == 'WAIT':
                     e.run(int(p[1]))
                 elif head == 'WATCH':
-                    watches[p[1]] = [rom_text_prefix(e, p[1]), False]
+                    try:
+                        watches[p[1]] = [rom_text_prefix(e, p[1]), False, False]
+                    except ValueError:      # starts with a placeholder: look for its plain part anywhere
+                        watches[p[1]] = [rom_text_run(e, p[1]), False, True]
                     look()
                 elif head == 'MASHTEXT':
                     want = rom_text_prefix(e, p[1])
                     last_presses[0] = 0
                     for _ in range(int(p[2]) if len(p) > 2 else 300):
-                        if e.read(e.sym('gStringVar4'), 32).startswith(want):
+                        if e.read(e.sym('gStringVar4'), 96).startswith(want):
                             break
                         press('A', 20)
                         last_presses[0] += 1
@@ -268,6 +510,21 @@ def run_case(case, rom, shots, presses_log=None):
                         e.run(1)
                     else:
                         fails.append('%s: never got there' % step)
+                elif head == 'MASHBATTLE':
+                    for _ in range(int(p[1]) if len(p) > 1 else 100):
+                        if e.in_battle():
+                            break
+                        e.press('A', hold=3, after=20)
+                    else:
+                        fails.append('%s: no battle started' % step)
+                elif head == 'THROW':
+                    err = throw_ball(e, rom, p[1], p[2].upper() if len(p) > 2 else None)
+                    if err:
+                        fails.append('%s: %s' % (step, err))
+                elif head == 'FIGHT':
+                    err = fight(e, rom, int(p[1]))
+                    if err:
+                        fails.append('%s: %s' % (step, err))
                 elif head == 'SHOT':
                     if shots:
                         e.shot(os.path.join(shots, '%s_%s.png' % (name, p[1])))
@@ -301,11 +558,38 @@ def run_case(case, rom, shots, presses_log=None):
                         got, want = live_blocks(e).money(), int(p[3], 0)
                         if got != want:
                             fails.append('%s: money is %d' % (step, got))
-                    elif what in ('item', 'egg', 'fateful', 'mons'):
+                    elif what == 'mon':
+                        sp = [species_id(n) for n in p[2].split('|')]
+                        keys = [kv.split('=', 1) for kv in p[3:]]
+                        cands = [(w, m) for w, m in live_mons_where(e) if m.species() in sp and not m.is_egg()]
+                        misses = [mon_mismatches(e, w, m, keys) for w, m in cands]
+                        if not cands:
+                            fails.append('%s: no %s' % (step, p[2]))
+                        elif all(misses):
+                            fails.append('%s: closest has %s' % (step, ' '.join(min(misses, key=len))))
+                    elif what == 'dex':
+                        state = live_blocks(e).dex_state(savedit._national(species_id(p[2])))
+                        want = {'none': (False,) * 4, 'seen': (False, True, True, True),
+                                'caught': (True,) * 4}[p[4]]
+                        if state != want:
+                            fails.append('%s: owned/seen/seen1/seen2 = %s' % (step, ''.join('01'[b] for b in state)))
+                    elif what in ('enemy', 'enemycount'):
+                        mons = enemy_mons(e)
+                        if what == 'enemy':
+                            got, want = sum(1 for m in mons if m.species() == species_id(p[2])), int(p[4], 0)
+                        else:
+                            got, want = len(mons), int(p[3], 0)
+                        if got != want:
+                            fails.append('%s: got %d' % (step, got))
+                    elif what == 'double':
+                        got = int(bool(e.u32(e.sym('gBattleTypeFlags')) & BATTLE_TYPE_DOUBLE))
+                        if got != int(p[3]):
+                            fails.append('%s: got %d' % (step, got))
+                    elif what in ('item', 'egg', 'fateful', 'mons', 'count'):
                         want = int(p[4], 0)
                         if what == 'item':
                             got = live_blocks(e).item_count(p[2])
-                        elif what == 'mons':
+                        elif what in ('mons', 'count'):
                             sp = species_id(p[2])
                             got = sum(1 for m in live_mons(e) if m.species() == sp and not m.is_egg())
                         else:

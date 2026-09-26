@@ -179,7 +179,11 @@
 // Special Trainer Ids.
 #define TRAINER_UNION_ROOM          0xC00
 #define TRAINER_LINK_OPPONENT       0x800
-#define TRAINER_SECRET_BASE         0x400
+// Thunder Yellow: was 0x400, which is TRAINER_HOENN_ISAAC_1 (HOENN_TRAINERS_START
+// + 256) now that Hoenn trainers are numbered past MAX_TRAINERS_COUNT: his battle
+// took the secret base branches and had no party. FR/LG has no secret bases, so
+// the id only needs to stay out of the trainer range (below 0x800 with Hoenn's).
+#define TRAINER_SECRET_BASE         0xA00
 
 #define TRAINER_CLASS_NONE                0
 #define TRAINER_CLASS_PKMN_TRAINER_UNUSED 1

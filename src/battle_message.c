@@ -480,6 +480,11 @@ static const u8 sText_Someones[] = _("someone's");
 static const u8 sText_Bills[] = _("BILL's");
 static const u8 sText_PkmnDataAddedToDex[] = _("{B_OPPONENT_MON1_NAME}'s data was\nadded to the POKéDEX.\p");
 static const u8 sText_MissingNoDexGlitch[] = _("POKéDEX No. 000 ??? was added…\p…The data vanished!\p");
+// v0.10.0 snagging: B_BUFF1 is the snagged POKéMON (either side of a double)
+static const u8 sText_SnagGotcha[] = _("Gotcha! {B_BUFF1} was taken\nfrom {B_TRAINER1_NAME}!{WAIT_SE}{PLAY_BGM MUS_CAUGHT}\p");
+static const u8 sText_SnagRefusedMeowth[] = _("MEOWTH swatted the BALL away!\nIt won't leave its team!");
+static const u8 sText_SnagBallReturned[] = _("The BALL rolled back to you.");
+static const u8 sText_SnagAddedToDex[] = _("{B_BUFF1}'s data was\nadded to the POKéDEX.\p");
 static const u8 sText_ItIsRaining[] = _("It is raining."); // used only in RSE when a battle starts in a rainy area
 static const u8 sText_SandstormIsRaging[] = _("A sandstorm is raging.");
 static const u8 sText_BoxIsFull[] = _("The BOX is full!\nYou can't catch any more!\p");
@@ -891,6 +896,10 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT - BATTLESTRINGS_TABLE_ST
     [STRINGID_TRAINER1MON2COMEBACK - BATTLESTRINGS_TABLE_START]          = sText_Trainer1RecallPkmn2,
     [STRINGID_TRAINER1MON1AND2COMEBACK - BATTLESTRINGS_TABLE_START]      = sText_Trainer1RecallBoth,
     [STRINGID_MISSINGNODEXGLITCH - BATTLESTRINGS_TABLE_START]            = sText_MissingNoDexGlitch,
+    [STRINGID_SNAGGOTCHA - BATTLESTRINGS_TABLE_START]                    = sText_SnagGotcha,
+    [STRINGID_SNAGREFUSED_MEOWTH - BATTLESTRINGS_TABLE_START]            = sText_SnagRefusedMeowth,
+    [STRINGID_SNAGBALLRETURNED - BATTLESTRINGS_TABLE_START]              = sText_SnagBallReturned,
+    [STRINGID_SNAGADDEDTODEX - BATTLESTRINGS_TABLE_START]                = sText_SnagAddedToDex,
 };
 
 const u16 gMissStringIds[] =

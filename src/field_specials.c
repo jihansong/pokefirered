@@ -1671,6 +1671,21 @@ void BufferMonNickname(void)
     StringGet_Nickname(gStringVar1);
 }
 
+// Thunder Yellow (v0.10.0): the NAME RATER's check. Another trainer's POKéMON
+// keeps its name, unless the player snagged it (its original trainer is the
+// trainer it was taken from, but it is the player's now).
+bool8 IsMonOTNotPlayersUnlessSnagged(void)
+{
+    u8 otName[PLAYER_NAME_LENGTH + 1];
+    struct Pokemon *mon = &gPlayerParty[gSpecialVar_0x8004];
+
+    if (GetMonData(mon, MON_DATA_SNAGGED, NULL))
+        return FALSE;
+    GetMonData(mon, MON_DATA_OT_NAME, otName);
+    return GetPlayerTrainerId() != GetMonData(mon, MON_DATA_OT_ID, NULL)
+        || StringCompare(gSaveBlock2Ptr->playerName, otName);
+}
+
 void IsMonOTIDNotPlayers(void)
 {
     if (GetPlayerTrainerId() == GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_OT_ID, NULL))

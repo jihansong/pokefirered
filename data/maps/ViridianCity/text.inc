@@ -69,6 +69,12 @@ ViridianCity_Text_WatchThatToLearnBasics::
     .string "It will teach you about the basics\n"
     .string "of being a POKéMON TRAINER.$"
 
+@ v0.10.0: a BALL catches in trainer battles now (snagging)
+ViridianCity_Text_BallsStickNowadays::
+    .string "Back in my day, a BALL thrown at\n"
+    .string "a TRAINER's POKéMON just bounced.\p"
+    .string "These days, folks say it sticks!$"
+
 ViridianCity_Text_WeakenMonsFirstToCatch::
     .string "Well, now, I've had my coffee, and\n"
     .string "that's what I need to get going!\p"

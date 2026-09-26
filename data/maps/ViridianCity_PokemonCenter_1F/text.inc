@@ -92,6 +92,10 @@ ViridianCity_PokemonCenter_1F_Text_OfficerBoxesFull::
     .string "OFFICER: Your party and PC BOXES\n"
     .string "are full. I'll keep the EGG safe.$"
 
+ViridianCity_PokemonCenter_1F_Text_OfficerBoxesFullEggs::
+    .string "OFFICER: Your party and PC BOXES\n"
+    .string "are full. I'll keep the EGGS safe.$"
+
 ViridianCity_PokemonCenter_1F_Text_OfficerNothing::
     .string "OFFICER: Nothing new in the case\n"
     .string "file. Stay sharp out there.$"

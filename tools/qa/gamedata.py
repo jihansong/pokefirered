@@ -49,6 +49,7 @@ FIELDS = {
     'questlogscene': ('QuestLogScene', None),
     'sb1': ('SaveBlock1', None),
     'sb2.playerName': ('SaveBlock2', 'playerName'),
+    'sb2.playerTrainerId': ('SaveBlock2', 'playerTrainerId'),
     'sb2.specialSaveWarpFlags': ('SaveBlock2', 'specialSaveWarpFlags'),
     'sb2.optionsButtonMode': ('SaveBlock2', 'optionsButtonMode'),
     'sb2.playTimeHours': ('SaveBlock2', 'playTimeHours'),
@@ -147,7 +148,7 @@ def off(name):
 
 CONST_HEADERS = ['constants/flags.h', 'constants/vars.h', 'constants/map_groups.h', 'constants/layouts.h',
                  'constants/species.h', 'constants/items.h', 'constants/moves.h', 'constants/opponents.h',
-                 'pokemon_storage_system.h']
+                 'constants/trainers.h', 'pokemon_storage_system.h']
 _CONST_CACHE = {}
 
 
@@ -178,6 +179,20 @@ def consts(names):
                 raise KeyError('unknown constant %s' % n)
             _CONST_CACHE[n] = _c_eval(val)
     return {n: _CONST_CACHE[n] for n in names}
+
+
+_MAPSECS = None
+
+
+def mapsec(name):
+    """MAPSEC_* is an enum (no values written), so count its members."""
+    global _MAPSECS
+    if str(name).isdigit():
+        return int(name)
+    if _MAPSECS is None:
+        with open(os.path.join(REPO, 'include', 'constants', 'region_map_sections.h')) as f:
+            _MAPSECS = {n: i for i, n in enumerate(re.findall(r'^\s*(MAPSEC_\w+),', f.read(), re.M))}
+    return _MAPSECS[name if name.startswith('MAPSEC_') else 'MAPSEC_' + name]
 
 
 def const(name_or_number):

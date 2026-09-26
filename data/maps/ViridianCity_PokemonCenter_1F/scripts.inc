@@ -104,7 +104,7 @@ ViridianCity_PokemonCenter_1F_EventScript_Officer::
 	special GiveRocketOfficerRewards
 	copyvar VAR_TEMP_2, VAR_0x8005  @ things handed over
 	copyvar VAR_TEMP_3, VAR_0x8006  @ the BAG had no room for something
-	copyvar VAR_TEMP_4, VAR_0x8007  @ the party and PC had no room for an EGG
+	copyvar VAR_TEMP_4, VAR_0x8007  @ how many EGGS the party and PC had no room for
 	textcolor NPC_TEXT_COLOR_MALE
 	goto_if_eq VAR_TEMP_2, 0, ViridianCity_PokemonCenter_1F_EventScript_OfficerNothingGiven
 	msgbox ViridianCity_PokemonCenter_1F_Text_OfficerHandOver
@@ -122,7 +122,7 @@ ViridianCity_PokemonCenter_1F_EventScript_Officer::
 ViridianCity_PokemonCenter_1F_EventScript_OfficerNothingGiven::
 	msgbox ViridianCity_PokemonCenter_1F_Text_OfficerIntro
 	goto_if_eq VAR_TEMP_3, 1, ViridianCity_PokemonCenter_1F_EventScript_OfficerKeeps
-	goto_if_eq VAR_TEMP_4, 1, ViridianCity_PokemonCenter_1F_EventScript_OfficerKeeps
+	goto_if_ne VAR_TEMP_4, 0, ViridianCity_PokemonCenter_1F_EventScript_OfficerKeeps
 	msgbox ViridianCity_PokemonCenter_1F_Text_OfficerNothing
 	release
 	end
@@ -134,7 +134,7 @@ ViridianCity_PokemonCenter_1F_EventScript_OfficerKeeps::
 
 ViridianCity_PokemonCenter_1F_EventScript_OfficerNoRoom::
 	call_if_eq VAR_TEMP_3, 1, ViridianCity_PokemonCenter_1F_EventScript_OfficerBagFull
-	call_if_eq VAR_TEMP_4, 1, ViridianCity_PokemonCenter_1F_EventScript_OfficerBoxesFull
+	call_if_ne VAR_TEMP_4, 0, ViridianCity_PokemonCenter_1F_EventScript_OfficerBoxesFull
 	return
 
 ViridianCity_PokemonCenter_1F_EventScript_OfficerBagFull::
@@ -142,7 +142,12 @@ ViridianCity_PokemonCenter_1F_EventScript_OfficerBagFull::
 	return
 
 ViridianCity_PokemonCenter_1F_EventScript_OfficerBoxesFull::
+	goto_if_ge VAR_TEMP_4, 2, ViridianCity_PokemonCenter_1F_EventScript_OfficerBoxesFullEggs
 	msgbox ViridianCity_PokemonCenter_1F_Text_OfficerBoxesFull
+	return
+
+ViridianCity_PokemonCenter_1F_EventScript_OfficerBoxesFullEggs::
+	msgbox ViridianCity_PokemonCenter_1F_Text_OfficerBoxesFullEggs
 	return
 
 ViridianCity_PokemonCenter_1F_EventScript_Nurse::

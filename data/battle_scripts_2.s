@@ -10,6 +10,7 @@
 #include "constants/songs.h"
 #include "constants/game_stat.h"
 #include "constants/battle_string_ids.h"
+#include "constants/snag.h"
 	.include "asm/macros/battle_script.inc"
 @ Define these here since misc_constants.inc conflicts with the C headers
 	.set NULL, 0
@@ -124,6 +125,36 @@ BattleScript_TrainerBallBlock::
 	printstring STRINGID_TRAINERBLOCKEDBALL
 	waitmessage B_WAIT_TIME_LONG
 	printstring STRINGID_DONTBEATHIEF
+	waitmessage B_WAIT_TIME_LONG
+	finishaction
+
+@ v0.10.0: a POKéMON caught in a trainer battle is taken like a fainted one:
+@ snaggivemon gives it to the player, zeroes its HP (no EXP) and the battle
+@ goes on; HandleFaintedMonActions sends out the next one or ends it.
+BattleScript_SnagSuccess::
+	incrementgamestat GAME_STAT_POKEMON_CAPTURES
+	snagprepare
+	printstring STRINGID_SNAGGOTCHA
+	waitmessage B_WAIT_TIME_LONG
+	snaggivemon
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, SNAG_MSG_PARTY, BattleScript_SnagSkipPcMsg
+	printfromtable gCaughtMonStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_SnagSkipPcMsg::
+	jumpifbyte CMP_EQUAL, gBattleCommunication, FALSE, BattleScript_SnagRestoreBgm
+	printstring STRINGID_SNAGADDEDTODEX
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_SnagRestoreBgm::
+	snagrestorebgm
+	finishaction
+
+@ JESSIE & JAMES's MEOWTH: the BALL bounces off and comes back; the turn is used
+BattleScript_SnagRefused::
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_SNAGREFUSED_MEOWTH
+	waitmessage B_WAIT_TIME_LONG
+	snagreturnball
+	printstring STRINGID_SNAGBALLRETURNED
 	waitmessage B_WAIT_TIME_LONG
 	finishaction
 

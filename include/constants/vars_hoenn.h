@@ -15,7 +15,7 @@
 #define VAR_HOENN_PIKACHU_SCENES       (HOENN_VARS_START + 7)  // 이벤트 7 피카츄 분기 3곳을 본 기록 (비트 0~2)
 #define VAR_HOENN_RUMOR_STATE          (HOENN_VARS_START + 8)  // 카이나 소문 수집가가 말할 다음 소문
 #define VAR_HOENN_STERN_REQUEST        (HOENN_VARS_START + 9)  // STERN 선장 의뢰 단계
-#define VAR_HOENN_DEEP_SEA_ITEM        (HOENN_VARS_START + 10)  // 심해 도구 선택 기록 (0=미선택, 1=이빨, 2=비늘)
+#define VAR_HOENN_DEEP_SEA_ITEM        (HOENN_VARS_START + 10)  // 심해 도구 (0=아직, 1=이빨, 2=비늘, 3=둘 다. v0.9.0부터 둘 다 준다)
 #define VAR_HOENN_BADGE_NPC_STATE      (HOENN_VARS_START + 11)  // 배지 기록처 NPC가 마지막으로 알려 준 배지 수
 
 // Still free: the rest of the block, named so scripts can use them as they go.

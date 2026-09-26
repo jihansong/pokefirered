@@ -27,12 +27,15 @@
     push the pictures off the music.
 
     Cuts. The picture keeps FR/LG's letterbox (window 1, rows 32-127, opened by the
-    GAME FREAK scene). Each scene draws on BG3 from one of two slots: slot 0 is char
-    block 0 and screen block 28, slot 1 char block 1 and screen block 29, and scenes
-    alternate. The next scene's tiles and map go into the free slot (and its sprite
-    tiles into OBJ VRAM) a few frames before its cut; at the cut its palettes, sprites
-    and the switch of BG3 to its slot are all set in one frame and reach the screen
-    together at the next VBlank, so no frame is blank or mixed.
+    GAME FREAK scene). A scene draws on up to two layers, BG3 behind (priority 3) and
+    BG2 in front (priority 2), from one of two slots: slot 0 is char block 0 and screen
+    blocks 28 (BG3) and 29 (BG2), slot 1 char block 1 and screen blocks 30 and 31;
+    scenes alternate. The next scene's tiles and maps go into the free slot (and its
+    sprite tiles into OBJ VRAM) a few frames before its cut; at the cut its palettes and
+    sprites are set up, and the switch of the layers to its slot waits for the VBlank
+    callback, so that all of it reaches the screen together and no frame is blank or
+    mixed. The layers' scroll (camera moves, parallax, shakes) goes the same way: set
+    during the frame, written in the VBlank that also uploads that frame's sprites.
 
     Scenes not drawn yet show a flat colour card with their number (the skeleton,
     docs/v0.11.0-plan.md 10.1 O0). Scene 2 is drawn: tools/make_intro_opening_scene2.py
@@ -49,6 +52,12 @@ struct OpeningKey
 #define KEY_HIDE  (1 << 0)
 #define KEY_FRONT (1 << 1)
 
+struct OpeningScroll
+{
+    s16 backX, backY;   // BG3
+    s16 frontX, frontY; // BG2
+};
+
 #include "data/intro_opening_scene2.h"
 
 #define MUSIC_START   20
@@ -56,10 +65,11 @@ struct OpeningKey
 #define PRELOAD_LEAD  4     // frames before a cut the next scene's graphics are loaded
 
 #define NUM_SCENES    7
-#define MAX_SPRITES_PER_SCENE 8
+#define MAX_SPRITES_PER_SCENE 10
 
-#define BG_SCENE      3
-#define BG_MAP_BASE   28    // + slot
+#define BG_BACK       3
+#define BG_FRONT      2
+#define BG_MAP_BASE   28    // + 2 * slot (back), + 2 * slot + 1 (front)
 
 #define PAL_CARD      1     // BG palette of the colour cards
 #define PAL_SCENE2    2     // BG palette of scene 2 (baked into its tilemap)
@@ -68,14 +78,15 @@ enum {
     TAG_DIGITS = 0x1400,
     TAG_S2_PIKACHU,
     TAG_S2_ARM,
-    TAG_S2_PROPS,
+    TAG_S2_BALL,
+    TAG_S2_SPARK,
     TAG_S2_BOLT,
 };
 
 enum {
     PALTAG_DIGITS = 0x1400,
-    PALTAG_S2_PIKACHU,
-    PALTAG_S2_PROPS,
+    PALTAG_S2_PIKACHU,  // PIKACHU, its sparks and bolt
+    PALTAG_S2_PROPS,    // OAK's arm, the ball, the puff
 };
 
 struct OpeningScene
@@ -95,7 +106,9 @@ struct Opening
     bool8 musicStarted;
     u8 numSprites;
     u8 spriteIds[MAX_SPRITES_PER_SCENE];
-    u8 pendingSlot; // slot BG3 switches to at the next VBlank, NO_SLOT if none
+    u8 pendingSlot; // slot the layers switch to at the next VBlank, NO_SLOT if none
+    bool8 pendingFront; // whether that slot shows its front layer
+    struct OpeningScroll scroll; // written to the layers at the next VBlank
 };
 
 #define NO_SLOT 0xFF
@@ -128,13 +141,15 @@ static const u32 sDigits_Gfx[] = INCBIN_U32("graphics/intro/opening/placeholder_
 static const u16 sDigits_Pal[] = INCBIN_U16("graphics/intro/opening/placeholder_digits.gbapal");
 
 static const u32 sScene2_Bg_Gfx[]      = INCBIN_U32("graphics/intro/opening/scene2/bg.4bpp");
-static const u16 sScene2_Bg_Map[]      = INCBIN_U16("graphics/intro/opening/scene2/bg.bin");
+static const u16 sScene2_BgBack_Map[]  = INCBIN_U16("graphics/intro/opening/scene2/bg_back.bin");
+static const u16 sScene2_BgFront_Map[] = INCBIN_U16("graphics/intro/opening/scene2/bg_front.bin");
 static const u16 sScene2_Bg_Pal[]      = INCBIN_U16("graphics/intro/opening/scene2/bg.gbapal");
 static const u32 sScene2_Pikachu_Gfx[] = INCBIN_U32("graphics/intro/opening/scene2/pikachu.4bpp");
 static const u16 sScene2_Pikachu_Pal[] = INCBIN_U16("graphics/intro/opening/scene2/pikachu.gbapal");
 static const u32 sScene2_Arm_Gfx[]     = INCBIN_U32("graphics/intro/opening/scene2/arm.4bpp");
-static const u32 sScene2_Props_Gfx[]   = INCBIN_U32("graphics/intro/opening/scene2/props.4bpp");
-static const u16 sScene2_Props_Pal[]   = INCBIN_U16("graphics/intro/opening/scene2/props.gbapal");
+static const u16 sScene2_Props_Pal[]   = INCBIN_U16("graphics/intro/opening/scene2/arm.gbapal");
+static const u32 sScene2_Ball_Gfx[]    = INCBIN_U32("graphics/intro/opening/scene2/ball.4bpp");
+static const u32 sScene2_Spark_Gfx[]   = INCBIN_U32("graphics/intro/opening/scene2/spark.4bpp");
 static const u32 sScene2_Bolt_Gfx[]    = INCBIN_U32("graphics/intro/opening/scene2/bolt.4bpp");
 
 // The colour of each scene's stand-in card: dawn, lab, friends, storm, thunder,
@@ -202,11 +217,10 @@ void Opening_Init(void)
     // faded backdrop) stays until the first card replaces it at the first VBlank.
     HideBg(0);
     HideBg(1);
-    HideBg(2);
+    HideBg(BG_FRONT);
     SetGpuReg(REG_OFFSET_BLDCNT, 0);
-    SetBgControlAttributes(BG_SCENE, 0, BG_MAP_BASE, 0, 0, 3, 0, 0);
-    ChangeBgX(BG_SCENE, 0, BG_COORD_SET);
-    ChangeBgY(BG_SCENE, 0, BG_COORD_SET);
+    SetBgControlAttributes(BG_BACK, 0, BG_MAP_BASE, 0, 0, 3, 0, 0);
+    SetBgControlAttributes(BG_FRONT, 0, BG_MAP_BASE + 1, 0, 0, 2, 0, 0);
     gPlttBufferUnfaded[0] = RGB_BLACK;
     gPlttBufferFaded[0] = RGB_BLACK;
 
@@ -267,7 +281,8 @@ void Opening_Free(void)
         sScenes[o->scene].end(o->scene);
     FreeSpriteTilesByTag(TAG_S2_PIKACHU);
     FreeSpriteTilesByTag(TAG_S2_ARM);
-    FreeSpriteTilesByTag(TAG_S2_PROPS);
+    FreeSpriteTilesByTag(TAG_S2_BALL);
+    FreeSpriteTilesByTag(TAG_S2_SPARK);
     FreeSpriteTilesByTag(TAG_S2_BOLT);
     FreeSpriteTilesByTag(TAG_DIGITS);
     FreeSpritePaletteByTag(PALTAG_DIGITS);
@@ -277,14 +292,20 @@ void Opening_Free(void)
     sOpening = NULL;
 }
 
-// Point BG3 at a slot and show it, at the next VBlank. The opening's code runs at
-// the start of the frame, often still inside VBlank, where SetGpuReg writes at once:
-// the new background would then show a frame before the sprites (OAM) and palettes
-// set up on the same frame, which the VBlank callback uploads only at the next
-// VBlank. So the switch waits for that same VBlank.
-static void ShowSlot(u8 slot)
+// Point the layers at a slot and show them, at the next VBlank. The opening's code
+// runs at the start of the frame, often still inside VBlank, where SetGpuReg writes at
+// once: the new background would then show a frame before the sprites (OAM) and
+// palettes set up on the same frame, which the VBlank callback uploads only at the
+// next VBlank. So the switch, and every scroll, waits for that same VBlank.
+static void ShowSlot(u8 slot, bool8 front)
 {
     sOpening->pendingSlot = slot;
+    sOpening->pendingFront = front;
+}
+
+static void SetScroll(const struct OpeningScroll *scroll)
+{
+    sOpening->scroll = *scroll;
 }
 
 static void VBlankCB_Opening(void)
@@ -294,12 +315,23 @@ static void VBlankCB_Opening(void)
     LoadOam();
     ProcessSpriteCopyRequests();
     TransferPlttBuffer();
-    if (o != NULL && o->pendingSlot != NO_SLOT)
+    if (o == NULL)
+        return;
+    if (o->pendingSlot != NO_SLOT)
     {
-        SetBgControlAttributes(BG_SCENE, o->pendingSlot, BG_MAP_BASE + o->pendingSlot, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF);
-        ShowBg(BG_SCENE);
+        SetBgControlAttributes(BG_BACK, o->pendingSlot, BG_MAP_BASE + 2 * o->pendingSlot, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF);
+        SetBgControlAttributes(BG_FRONT, o->pendingSlot, BG_MAP_BASE + 2 * o->pendingSlot + 1, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF);
+        ShowBg(BG_BACK);
+        if (o->pendingFront)
+            ShowBg(BG_FRONT);
+        else
+            HideBg(BG_FRONT);
         o->pendingSlot = NO_SLOT;
     }
+    SetGpuReg(REG_OFFSET_BG3HOFS, o->scroll.backX);
+    SetGpuReg(REG_OFFSET_BG3VOFS, o->scroll.backY);
+    SetGpuReg(REG_OFFSET_BG2HOFS, o->scroll.frontX);
+    SetGpuReg(REG_OFFSET_BG2VOFS, o->scroll.frontY);
 }
 
 static u8 AddSprite(const struct SpriteTemplate *template, u8 subpriority)
@@ -334,8 +366,10 @@ static void Card_Load(u8 scene, u8 slot)
 {
     CpuFill32(0, BG_CHAR_ADDR(slot), TILE_SIZE_4BPP);
     CpuFill32(0x11111111, (u8 *)BG_CHAR_ADDR(slot) + TILE_SIZE_4BPP, TILE_SIZE_4BPP);
-    CpuFill16(1 | (PAL_CARD << 12), BG_SCREEN_ADDR(BG_MAP_BASE + slot), BG_SCREEN_SIZE);
+    CpuFill16(1 | (PAL_CARD << 12), BG_SCREEN_ADDR(BG_MAP_BASE + 2 * slot), BG_SCREEN_SIZE);
 }
+
+static const struct OpeningScroll sNoScroll = {0, 0, 0, 0};
 
 static void Card_Begin(u8 scene, u8 slot)
 {
@@ -350,7 +384,8 @@ static void Card_Begin(u8 scene, u8 slot)
         gSprites[spriteId].oam.tileNum += scene * 16;
         gSprites[spriteId].invisible = FALSE;
     }
-    ShowSlot(slot);
+    ShowSlot(slot, FALSE);
+    SetScroll(&sNoScroll);
     if (scene == 0)
     {
         // Out of the white, as the original did after the GAME FREAK logo
@@ -368,86 +403,60 @@ static void Card_Update(u8 scene, u16 t)
 
 // ------------------------------------------------------------ scene 2
 
-static const struct SpriteTemplate sSpriteTemplate_S2_Pikachu = {
-    .tileTag = TAG_S2_PIKACHU,
-    .paletteTag = PALTAG_S2_PIKACHU,
-    .oam = &sOam_64x64,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy,
-};
+#define S2_TEMPLATE(name, tag, pal, oamData)             \
+static const struct SpriteTemplate name = {             \
+    .tileTag = tag,                                     \
+    .paletteTag = pal,                                  \
+    .oam = &oamData,                                    \
+    .anims = gDummySpriteAnimTable,                     \
+    .images = NULL,                                     \
+    .affineAnims = gDummySpriteAffineAnimTable,         \
+    .callback = SpriteCallbackDummy,                    \
+}
 
-static const struct SpriteTemplate sSpriteTemplate_S2_Arm = {
-    .tileTag = TAG_S2_ARM,
-    .paletteTag = PALTAG_S2_PROPS,
-    .oam = &sOam_64x64,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy,
-};
+S2_TEMPLATE(sSpriteTemplate_S2_Pikachu, TAG_S2_PIKACHU, PALTAG_S2_PIKACHU, sOam_64x64);
+S2_TEMPLATE(sSpriteTemplate_S2_Arm,     TAG_S2_ARM,     PALTAG_S2_PROPS,   sOam_64x64);
+S2_TEMPLATE(sSpriteTemplate_S2_Ball,    TAG_S2_BALL,    PALTAG_S2_PROPS,   sOam_16x16);
+S2_TEMPLATE(sSpriteTemplate_S2_Spark,   TAG_S2_SPARK,   PALTAG_S2_PIKACHU, sOam_16x16);
+S2_TEMPLATE(sSpriteTemplate_S2_Bolt,    TAG_S2_BOLT,    PALTAG_S2_PIKACHU, sOam_64x32);
 
-static const struct SpriteTemplate sSpriteTemplate_S2_Prop = {
-    .tileTag = TAG_S2_PROPS,
-    .paletteTag = PALTAG_S2_PROPS,
-    .oam = &sOam_16x16,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy,
-};
-
-static const struct SpriteTemplate sSpriteTemplate_S2_Bolt = {
-    .tileTag = TAG_S2_BOLT,
-    .paletteTag = PALTAG_S2_PROPS,
-    .oam = &sOam_64x32,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy,
-};
-
-// Per track: template, size, the first tile of its frames in the sheet
-// (sparks follow the five ball frames in props.png) and its draw order
-// (lower is in front; the ball moves in front of the hand once it is knocked away).
+// Per track: template, size and draw order (lower is in front; the ball moves in
+// front of the hand once it is knocked away). Same order as the tool's mock-ups.
 static const struct {
     const struct SpriteTemplate *template;
     u8 width, height;
-    u8 firstFrame;
     u8 subpriority;
 } sScene2_Tracks[SCENE2_TRACK_COUNT] = {
-    [SCENE2_TRACK_PIKACHU]     = {&sSpriteTemplate_S2_Pikachu, 64, 64, 0, 7},
-    [SCENE2_TRACK_SLEEVE]      = {&sSpriteTemplate_S2_Arm,     64, 64, 0, 5},
-    [SCENE2_TRACK_HAND]        = {&sSpriteTemplate_S2_Arm,     64, 64, 0, 4},
-    [SCENE2_TRACK_BALL]        = {&sSpriteTemplate_S2_Prop,    16, 16, 0, 6},
-    [SCENE2_TRACK_SPARK_CHEEK] = {&sSpriteTemplate_S2_Prop,    16, 16, 5, 0},
-    [SCENE2_TRACK_SPARK_BALL]  = {&sSpriteTemplate_S2_Prop,    16, 16, 5, 1},
-    [SCENE2_TRACK_BOLT]        = {&sSpriteTemplate_S2_Bolt,    64, 32, 0, 2},
+    [SCENE2_TRACK_PIKACHU]     = {&sSpriteTemplate_S2_Pikachu, 64, 64, 8},
+    [SCENE2_TRACK_SLEEVE]      = {&sSpriteTemplate_S2_Arm,     64, 64, 6},
+    [SCENE2_TRACK_HAND]        = {&sSpriteTemplate_S2_Arm,     64, 64, 5},
+    [SCENE2_TRACK_BALL]        = {&sSpriteTemplate_S2_Ball,    16, 16, 7},
+    [SCENE2_TRACK_SMOKE]       = {&sSpriteTemplate_S2_Ball,    16, 16, 3},
+    [SCENE2_TRACK_SPARK_CHEEK] = {&sSpriteTemplate_S2_Spark,   16, 16, 0},
+    [SCENE2_TRACK_SPARK_BALL]  = {&sSpriteTemplate_S2_Spark,   16, 16, 1},
+    [SCENE2_TRACK_BOLT]        = {&sSpriteTemplate_S2_Bolt,    64, 32, 2},
 };
 
-static void Scene2_Load(u8 scene, u8 slot)
+static void LoadSheet(const u32 *gfx, u16 size, u16 tag)
 {
     struct SpriteSheet sheet;
 
+    sheet.data = gfx;
+    sheet.size = size;
+    sheet.tag = tag;
+    LoadSpriteSheet(&sheet);
+}
+
+static void Scene2_Load(u8 scene, u8 slot)
+{
     CpuFastCopy(sScene2_Bg_Gfx, BG_CHAR_ADDR(slot), sizeof(sScene2_Bg_Gfx));
-    CpuFastCopy(sScene2_Bg_Map, BG_SCREEN_ADDR(BG_MAP_BASE + slot), sizeof(sScene2_Bg_Map));
-    sheet.data = sScene2_Pikachu_Gfx;
-    sheet.size = sizeof(sScene2_Pikachu_Gfx);
-    sheet.tag = TAG_S2_PIKACHU;
-    LoadSpriteSheet(&sheet);
-    sheet.data = sScene2_Arm_Gfx;
-    sheet.size = sizeof(sScene2_Arm_Gfx);
-    sheet.tag = TAG_S2_ARM;
-    LoadSpriteSheet(&sheet);
-    sheet.data = sScene2_Props_Gfx;
-    sheet.size = sizeof(sScene2_Props_Gfx);
-    sheet.tag = TAG_S2_PROPS;
-    LoadSpriteSheet(&sheet);
-    sheet.data = sScene2_Bolt_Gfx;
-    sheet.size = sizeof(sScene2_Bolt_Gfx);
-    sheet.tag = TAG_S2_BOLT;
-    LoadSpriteSheet(&sheet);
+    CpuFastCopy(sScene2_BgBack_Map, BG_SCREEN_ADDR(BG_MAP_BASE + 2 * slot), sizeof(sScene2_BgBack_Map));
+    CpuFastCopy(sScene2_BgFront_Map, BG_SCREEN_ADDR(BG_MAP_BASE + 2 * slot + 1), sizeof(sScene2_BgFront_Map));
+    LoadSheet(sScene2_Pikachu_Gfx, sizeof(sScene2_Pikachu_Gfx), TAG_S2_PIKACHU);
+    LoadSheet(sScene2_Arm_Gfx, sizeof(sScene2_Arm_Gfx), TAG_S2_ARM);
+    LoadSheet(sScene2_Ball_Gfx, sizeof(sScene2_Ball_Gfx), TAG_S2_BALL);
+    LoadSheet(sScene2_Spark_Gfx, sizeof(sScene2_Spark_Gfx), TAG_S2_SPARK);
+    LoadSheet(sScene2_Bolt_Gfx, sizeof(sScene2_Bolt_Gfx), TAG_S2_BOLT);
 }
 
 static void Scene2_Begin(u8 scene, u8 slot)
@@ -464,7 +473,7 @@ static void Scene2_Begin(u8 scene, u8 slot)
     LoadSpritePalette(&pal);
     for (i = 0; i < SCENE2_TRACK_COUNT; i++)
         AddSprite(sScene2_Tracks[i].template, sScene2_Tracks[i].subpriority);
-    ShowSlot(slot);
+    ShowSlot(slot, TRUE);
 }
 
 static void Scene2_Update(u8 scene, u16 t)
@@ -476,12 +485,12 @@ static void Scene2_Update(u8 scene, u16 t)
     if (t >= SCENE2_FRAMES)
         t = SCENE2_FRAMES - 1;
     keys = sScene2_Keys[t];
+    SetScroll(&sScene2_Scroll[t]);
     for (i = 0; i < SCENE2_TRACK_COUNT && i < o->numSprites; i++)
     {
         struct Sprite *sprite;
         u8 w = sScene2_Tracks[i].width;
         u8 h = sScene2_Tracks[i].height;
-        u8 tilesPerFrame = (w / 8) * (h / 8);
 
         if (o->spriteIds[i] == MAX_SPRITES)
             continue;
@@ -489,9 +498,9 @@ static void Scene2_Update(u8 scene, u16 t)
         sprite->x = keys[i].x + w / 2;
         sprite->y = keys[i].y + h / 2;
         sprite->invisible = (keys[i].flags & KEY_HIDE) ? TRUE : FALSE;
-        sprite->oam.tileNum = sprite->sheetTileStart + (sScene2_Tracks[i].firstFrame + keys[i].frame) * tilesPerFrame;
+        sprite->oam.tileNum = sprite->sheetTileStart + keys[i].frame * (w / 8) * (h / 8);
         if (i == SCENE2_TRACK_BALL)
-            sprite->subpriority = (keys[i].flags & KEY_FRONT) ? 3 : 6;
+            sprite->subpriority = (keys[i].flags & KEY_FRONT) ? 4 : 7;
     }
 }
 
@@ -500,7 +509,8 @@ static void Scene2_End(u8 scene)
     Scene_DestroySprites(scene);
     FreeSpriteTilesByTag(TAG_S2_PIKACHU);
     FreeSpriteTilesByTag(TAG_S2_ARM);
-    FreeSpriteTilesByTag(TAG_S2_PROPS);
+    FreeSpriteTilesByTag(TAG_S2_BALL);
+    FreeSpriteTilesByTag(TAG_S2_SPARK);
     FreeSpriteTilesByTag(TAG_S2_BOLT);
     FreeSpritePaletteByTag(PALTAG_S2_PIKACHU);
     FreeSpritePaletteByTag(PALTAG_S2_PROPS);

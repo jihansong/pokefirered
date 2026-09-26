@@ -2,33 +2,31 @@
 """Draw and time scene 2 of the new opening: "the PIKACHU that hates POKe BALLS".
 
 docs/anim/opening-storyboard.md 3.3, scene 2 (F842-917, 76 frames, bar 2 of
-MUS_INTRO_FIGHT): in OAK's lab the professor's forearm (sleeve and hand only, no face)
-holds out a POKe BALL; the ball starts to open and PIKACHU snaps its head away on
-beat 2; a spark from its cheek knocks the ball out of the hand; the ball bounces on the
-desk (beat 3) and rolls off; PIKACHU sulks, cheeks crackling (beat 4).
+MUS_INTRO_FIGHT). Draft B, after the art direction review of draft A
+(docs/team/art/v0.11.0-opening-scene2-A.md, -A-style.md).
 
-Everything is drawn by rule here (tools/intro_opening_art.py). Nothing is traced or
-copied from the anime:
+In OAK's lab the camera trucks right while the professor's forearm (sleeve and hand
+only) brings in a POKe BALL. PIKACHU watches, twitches an ear, narrows its eyes as the
+ball comes close; on beat 2 the ball starts to open and PIKACHU snaps its head away
+(a turning frame, a squeezed smear, an overshoot of ears and tail); sparks gather on
+the ball, a bolt from its cheek hits the ball, the screen shakes, the ball pops out of
+the hand in a puff, lands on the table on beat 3 and rolls off; PIKACHU sulks, lifts
+its chin "hmph!" with a crackle on beat 4 and flicks its tail at the second crackle.
 
-- PIKACHU is built in the palette of its FR/LG front sprite
-  (graphics/pokemon/pikachu/normal.pal) with FR/LG's coloured outlines and upper-left
-  light, proportioned after the front sprite, the partner PIKACHU and the title screen
-  PIKACHU. Poses: A looks at the ball, B the snap (a squeezed smear frame), C turned
-  away, arms folded, "hmph". This is the model for the PIKACHU of the later scenes.
-- The forearm, ball and sparks share one palette: the thrown POKe BALL's colours in
-  the slots graphics/interface/ball/poke.png uses (its frames are used as they are),
-  a white lab coat with grey shading, FR/LG overworld skin tones, spark yellows.
-- The lab is a soft wall and bookshelf without outlines and a wooden desk, so the
-  sprites read in front of it. The picture is 240x96: the intro keeps FR/LG's
-  letterbox (the GAME FREAK scene opens it and the original fight kept it).
+Everything is drawn by rule (tools/intro_opening_art.py, the PIKACHU model in
+tools/intro_opening_pikachu.py); nothing is traced or copied from the anime.
 
-The timing lives here too: choreography() gives every sprite's position and frame for
-each of the 76 frames. The game plays that table back (src/data/intro_opening_scene2.h),
-so the previews and the game agree.
+- Background in two layers for parallax: the lab wall (window with morning light, a
+  white metal shelf of books and a machine, FR/LG lab colours) on BG3 at half speed,
+  the green-topped lab table (where FR/LG's starter balls lie) on BG2 at full speed.
+- The picture is 240x96, inside the intro's letterbox (screen rows 32-127).
+- choreography() gives every sprite's place and frame and the two layers' scroll for
+  each of the 76 frames. The game plays that table back (src/data/intro_opening_scene2.h),
+  so the previews and the game show the same thing.
 
-Writes graphics/intro/opening/scene2/{bg.png,bg.bin,pikachu.png,arm.png,props.png}
-and src/data/intro_opening_scene2.h. With --preview DIR it also writes the model
-sheets and a mock-up of every frame (DIR/mock/tNN.png, as the game should draw it).
+Writes graphics/intro/opening/scene2/{bg.png,bg_back.bin,bg_front.bin,pikachu.png,
+arm.png,ball.png,spark.png,bolt.png} and src/data/intro_opening_scene2.h. With
+--preview DIR also the model sheets and a mock-up of every frame (DIR/mock/tNN.png).
 """
 import argparse
 import math
@@ -39,139 +37,34 @@ import sys
 from PIL import Image
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from intro_opening_art import Figure, stamp, to_image, enlarge, flat_palette  # noqa: E402
+from intro_opening_art import Figure, stamp, to_image, enlarge  # noqa: E402
+import intro_opening_pikachu as pika  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 OUT = ROOT + '/graphics/intro/opening/scene2'
 HEADER = ROOT + '/src/data/intro_opening_scene2.h'
 
-# ---------------------------------------------------------------- PIKACHU
-# 1-6 and 10-14 are graphics/pokemon/pikachu/normal.pal
-PIKA_PAL = [(0, 0, 0), (255, 255, 255), (255, 255, 123), (255, 238, 0), (238, 189, 0),
-            (197, 139, 0), (131, 82, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0),
-            (255, 74, 74), (230, 0, 0), (180, 0, 0), (106, 106, 106), (16, 16, 16), (0, 0, 0)]
-CLEAR, WHITE, LIGHT, YELLOW, MID, DARK, BROWN = 0, 1, 2, 3, 4, 5, 6
-PINK, RED, DRED, GREY, BLACK = 10, 11, 12, 13, 14
+PIKA_PAL = pika.PAL
+PIKA_FRAMES = ('A', 'A_twitch', 'A_sus', 'MID', 'B', 'C_over', 'C', 'C_hmph', 'C_flick')
 
-PIKA_COLORS = {
-    'Y': dict(base=YELLOW, rim=BROWN, line=DARK, light=LIGHT, mid=MID, no_line_over=('K',)),
-    'K': dict(base=BLACK, rim=BLACK),
-    'B': dict(base=DARK, rim=BROWN, line=BROWN),        # the brown root of the tail
-}
-KEY = {'K': BLACK, 'W': WHITE, 'o': BROWN, 'r': RED, 'R': DRED, 'p': PINK, 'm': DRED, 't': PINK}
-PS = 64
-
-
-def ear(f, name, ex, ey, rot, length=10.5, width=3.5):
-    """An ear: a long ellipse around (ex, ey) tilted by rot, its far end black."""
-    pts = f.ellipse(name, ex, ey, width, length, rot=rot)
-    ux, uy = math.sin(rot), -math.cos(rot)
-    f.pixels(name + 'tip', [(x, y) for x, y in pts
-                            if (x + 0.5 - ex) * ux + (y + 0.5 - ey) * uy > length * 0.3], kind='K')
-
-
-def cheek(img, x, y, w):
-    rows = {5: ['.rrr.', 'prrrr', 'rrrrR', '.rRR.'],
-            3: ['.r.', 'prR', 'rR.']}[w]
-    stamp(img, x, y, rows, KEY)
-
-
-def pikachu(d, arms, eyes, mouth, hx=29, hy=24, squash=1.0):
-    """PIKACHU sitting on the desk, feet forward, tail rising behind on the right.
-    d: where the face turns, -1 three quarters left, 0 front, 1 three quarters right."""
-    stamp.rims = (BROWN,)
-    f = Figure(PS, PS)
-    f.poly('tail', [(37, 52), (45, 46), (42, 42), (52, 35), (48, 31), (58, 20), (63, 24),
-                    (57, 33), (60, 36), (51, 44), (54, 47), (42, 57)])
-    f.poly('tailroot', [(37, 52), (44, 47), (47, 51), (42, 57)], kind='B')
-    f.ellipse('body', 30, 45, 12.5, 11)
-    f.ellipse('hips', 30, 52.5, 14, 6.5)
-    f.merged('body', 'hips')
-    f.ellipse('footL', 21, 58.5, 5, 3)
-    f.ellipse('footR', 37.5, 59, 5, 3)
-    if arms == 'side':
-        f.ellipse('armL', 19, 45, 2.6, 5, rot=0.6)
-        f.ellipse('armR', 41, 45, 2.6, 5, rot=-0.6)
-    elif arms == 'up':                           # startled, paws up
-        f.ellipse('armL', 19, 40, 2.6, 4.8, rot=1.0)
-        f.ellipse('armR', 41, 40, 2.6, 4.8, rot=-1.0)
-    elif arms == 'crossed':
-        f.ellipse('armR', 32.5, 42.5, 7, 2.6, rot=0.42)
-        f.ellipse('armL', 27.5, 42.5, 7, 2.6, rot=-0.42)
-    tilt = 0.12 * d
-    ear(f, 'ear0', hx - 10.5 + 1.5 * d, hy - 13.5, -0.50 + tilt)
-    ear(f, 'ear1', hx + 10.5 + 1.5 * d, hy - 13.5, 0.50 + tilt)
-    for n in ('ear0', 'ear1'):
-        f.clip(n, lambda x, y: y < hy - 5)      # the roots stay hidden in the head
-    f.ellipse('head', hx - 1.5 * d, hy, 13.5 * squash, 10.5)
-    f.ellipse('jowl', hx - 0.5 * d, hy + 4, 14.5 * squash, 7.2)
-    if d:
-        f.ellipse('muzzle', hx + 11 * d, hy + 4, 4.5, 4)
-    for a in ('head', 'jowl', 'muzzle'):
-        for b in ('body', 'hips', 'head', 'jowl', 'muzzle'):
-            if a != b:
-                f.merge.add(frozenset((a, b)))
-    img = f.render(PIKA_COLORS)
-    fx = hx + round(6 * d)                       # middle of the face
-    near, far = (fx - 6, fx + 5) if d > 0 else (fx + 5, fx - 6)
-    if eyes == 'open':                           # black, a white glint up and to the left
-        stamp(img, near - 1, hy - 2, ['.KK.', 'KWKK', 'KKKK', '.KK.'], KEY)
-        if d:
-            rows = ['.KK', 'KWK', 'KKK', '.KK'] if d < 0 else ['KK.', 'KWK', 'KKK', 'KK.']
-            stamp(img, far - (1 if d > 0 else 0), hy - 2, rows, KEY)
-        else:
-            stamp(img, far - 1, hy - 2, ['.KK.', 'KWKK', 'KKKK', '.KK.'], KEY)
-    elif eyes == 'squeeze':                      # > <
-        stamp(img, fx - 8, hy - 2, ['KK..', '..KK', 'KK..'], KEY)
-        stamp(img, fx + 4, hy - 2, ['..KK', 'KK..', '..KK'], KEY)
-    elif eyes == 'shut':
-        stamp(img, near - 2, hy - 1, ['K...', '.KKK'] if d > 0 else ['...K', 'KKK.'], KEY)
-        stamp(img, far - 1, hy - 1, ['K..', '.KK'] if d > 0 else ['..K', 'KK.'], KEY)
-    nose = fx + (d > 0) - (d < 0)
-    stamp(img, nose, hy + 2, ['K'], KEY)
-    if mouth == 'smile':
-        stamp(img, nose - 3, hy + 4, ['o..o..o', '.oo.oo.'], KEY)
-    elif mouth == 'open':
-        stamp(img, nose - 2, hy + 4, ['ooooo', 'omtmo', '.ooo.'], KEY)
-    elif mouth == 'pout':
-        stamp(img, nose - 2 + d, hy + 4, ['.ooo.', 'o...o'], KEY)
-    # cheeks: the near one whole, the far one cut off by the rim of the head
-    cy = hy + 3
-    if d < 0:
-        cheek(img, fx + 8, cy, 5)
-        cheek(img, fx - 13, cy, 3)
-    elif d > 0:
-        cheek(img, fx - 12, cy, 5)
-        cheek(img, fx + 11, cy, 3)
-    else:
-        cheek(img, fx - 14, cy, 5)
-        cheek(img, fx + 10, cy, 5)
-    return img
-
-
-def pikachu_poses():
-    return {
-        'A': pikachu(-1, 'side', 'open', 'smile'),                  # looks at the ball
-        'B': pikachu(0, 'up', 'squeeze', 'open', squash=0.9),       # the snap: a squeezed smear
-        'C': pikachu(1, 'crossed', 'shut', 'pout'),                 # turned away, "hmph"
-    }
-
-
-# ---------------------------------------------------------------- forearm, ball, sparks
+# ---------------------------------------------------------------- forearm, ball, smoke
+# 1-8: the thrown POKe BALL's colours in the slots graphics/interface/ball/poke.png
+# uses (its frames are used as they are). 9, 14, 15: OAK's lab coat (light grey body,
+# blue-grey folds, grey lit rim; white is the highlight). 10-13: OAK's skin.
 PROP_PAL = [(0, 0, 0), (131, 0, 0), (172, 0, 0), (213, 41, 41), (255, 156, 123), (255, 255, 255),
-            (148, 148, 148), (65, 65, 65), (24, 24, 24), (213, 213, 230), (255, 222, 189),
-            (246, 189, 148), (222, 148, 115), (148, 82, 65), (255, 230, 57), (255, 255, 172)]
+            (148, 148, 148), (65, 65, 65), (24, 24, 24), (213, 213, 222), (255, 222, 205),
+            (238, 180, 148), (197, 139, 106), (106, 74, 74), (139, 156, 164), (115, 115, 115)]
 P_WHITE, P_GREY, P_DGREY, P_BLACK, P_COAT = 5, 6, 7, 8, 9
 P_SKIN_L, P_SKIN, P_SKIN_S, P_SKIN_O = 10, 11, 12, 13
-P_SPARK, P_SPARK_L = 14, 15
+P_FOLD, P_COAT_RIM = 14, 15
 PROP_COLORS = {
-    'C': dict(base=P_WHITE, rim=P_DGREY, line=P_GREY, light=P_WHITE, mid=P_COAT),
-    'S': dict(base=P_SKIN, rim=P_SKIN_O, line=P_SKIN_S, light=P_SKIN_L, mid=P_SKIN_S),
+    'C': dict(base=P_COAT, rim=P_COAT_RIM, rim_dark=P_BLACK, line=P_FOLD, mid=P_FOLD, shade=(0, 4)),
+    'S': dict(base=P_SKIN, rim=P_SKIN_O, rim_dark=P_BLACK, line=P_SKIN_O, mid=P_SKIN_S, shade=(2, 2)),
 }
 BALL_PNG = ROOT + '/graphics/interface/ball/poke.png'
 ARM_W, ARM_H = 128, 64          # two 64x64 sprites side by side
 ARM_ANGLE = -0.58               # the forearm rises to the right
-ARM_CUFF = (74, 24)             # middle of the cuff on the arm canvas
+ARM_CUFF = (72, 26)             # middle of the cuff on the arm canvas
 
 
 def _along(t, s):
@@ -181,70 +74,97 @@ def _along(t, s):
     return (ARM_CUFF[0] + t * c - s * sn, ARM_CUFF[1] + t * sn + s * c)
 
 
+def palm_centre():
+    return _along(14, -1)
+
+
 def ball_centre():
-    """Where the ball's centre sits on the arm canvas while the hand holds it:
-    straight above the palm."""
-    px, py = _along(12, -1)
-    return px, py - 10
+    """The ball's centre on the arm canvas while the hand holds it: above the palm."""
+    px, py = palm_centre()
+    return px + 1, py - 10
 
 
 def ball_on_hand():
-    """Corner of the 16x16 ball sprite while the hand holds it (the game's ball is
-    12 pixels across, rows and columns 2-13 of its sprite)."""
+    """Corner of the 16x16 ball sprite while the hand holds it (the game's ball is 12
+    pixels across, rows and columns 2-13 of its sprite)."""
     bx, by = ball_centre()
     return round(bx - 7.5), round(by - 7.5)
 
 
 def arm(grip='hold'):
-    """The professor's forearm reaching in from the lower left in a white lab coat
-    sleeve (long enough to leave the picture), a cuff and the hand, palm up.
-    'hold': fingers and thumb cup the ball (the hand is drawn over the ball);
-    'open': the hand springs open when the spark knocks the ball away."""
-    stamp.rims = ()
+    """The professor's forearm reaching in from the lower left: a lab coat sleeve long
+    enough to leave the picture, the cuff, and a hand in the FR/LG people style (one
+    mitten of four fingers split by creases, a thumb joined to the palm).
+    'hold': the fingers curl round the front of the ball, only its top half shows.
+    'open': the hand springs open, fingers fanned up, thumb out to the side."""
     f = Figure(ARM_W, ARM_H)
     f.poly('sleeve', [_along(-130, -12), _along(-2, -11), _along(1, -8), _along(1, 8),
                       _along(-2, 11), _along(-130, 13)], kind='C')
     cx, cy = _along(0, 0)
     f.ellipse('cuff', cx, cy, 3, 10.5, kind='C', rot=ARM_ANGLE)
-    f.poly('wrist', [_along(1, -4.5), _along(8, -5), _along(8, 4), _along(1, 4.5)], kind='S')
-    px, py = _along(12, -1)
-    f.ellipse('palm', px, py, 8.5, 4.5, kind='S', rot=ARM_ANGLE)
+    f.poly('wrist', [_along(1, -5), _along(9, -5.5), _along(9, 5), _along(1, 5)], kind='S')
+    px, py = palm_centre()
+    f.ellipse('palm', px, py, 10, 5.5, kind='S', rot=ARM_ANGLE)
+    f.merged('wrist', 'palm')
     bx, by = ball_centre()
     if grip == 'hold':
-        f.ellipse('fingers', bx + 5.5, by + 3, 2.8, 5.5, kind='S', rot=-0.3)
-        f.ellipse('thumb', bx - 5.5, by + 4, 2.2, 4.2, kind='S', rot=0.5)
+        f.ellipse('thumb', bx - 6, by + 4, 2.3, 4.5, kind='S', rot=0.5)
+        for i in range(4):                       # fingers across the front of the ball
+            f.ellipse('finger%d' % i, bx + 4.5 - i * 0.8, by + 0.5 + i * 2.2, 3.6, 1.7, kind='S', rot=-0.25)
     else:
-        f.ellipse('fingers', bx + 7, by + 2, 2.6, 6, kind='S', rot=0.6)
-        f.ellipse('thumb', bx - 6.5, by + 4.5, 2.2, 4.5, kind='S', rot=-0.6)
-    f.merged('wrist', 'palm')
+        f.ellipse('thumb', bx - 6, by + 5, 2.2, 4.5, kind='S', rot=-0.5)
+        for i, a in enumerate((-0.55, -0.2, 0.15, 0.5)):
+            fx = px + 5 + math.sin(a) * 6
+            fy = py - 5 - math.cos(a) * 6 + abs(a) * 3
+            f.ellipse('finger%d' % i, fx, fy, 1.7, 4, kind='S', rot=a)
+            f.merged('finger%d' % i, 'palm')
     img = f.render(PROP_COLORS)
-    # soft folds across the sleeve
-    for t, s0, s1 in ((-40, -9, 1), (-33, -4, 6), (-12, 2, 9), (-6, -9, -3)):
+    owner = f.owner
+    # white highlight band along the lit (upper) side of the sleeve
+    for y in range(ARM_H):
+        for x in range(ARM_W):
+            if owner[y][x] == 'sleeve' and img[y][x] == P_COAT:
+                if any(y - k >= 0 and owner[y - k][x] is None for k in (2, 3)):
+                    img[y][x] = P_WHITE
+    # folds: two V creases toward the elbow, one short one before the cuff
+    for t0, s0, s1 in ((-44, -6, 4), (-38, -2, 7), (-18, -3, 6), (-10, 2, 8)):
         for k in range(s0 * 2, s1 * 2 + 1):
-            x, y = _along(t + k * 0.35, k * 0.5)
-            if 0 <= int(x) < ARM_W and 0 <= int(y) < ARM_H and img[int(y)][int(x)] == P_WHITE:
-                img[int(y)][int(x)] = P_COAT
-    # the curled fingers seen from the back: a crease between each
-    if grip == 'hold':
-        for dy in (-2, 0, 2):
-            for dx in (0, 1):
-                x, y = round(bx + 5 + dx), round(by + 2 + dy)
-                if img[y][x] in (P_SKIN, P_SKIN_L):
-                    img[y][x] = P_SKIN_S
+            x, y = _along(t0 + abs(k) * 0.45, k * 0.5)
+            x, y = int(x), int(y)
+            if 0 <= x < ARM_W and 0 <= y < ARM_H and img[y][x] in (P_COAT, P_WHITE):
+                img[y][x] = P_FOLD
     return img
 
 
 def ball_frames():
     """16x16: the game's thrown POKe BALL, the same turned 90/180/270 degrees
-    (rolling), and the game's 'opening' frame."""
+    (rolling), the game's 'opening' frame, then two frames of a small grey puff."""
     src = Image.open(BALL_PNG)
     still = src.crop((0, 0, 16, 16))
     opening = src.crop((0, 16, 16, 32))
     frames = [still, still.transpose(Image.ROTATE_270), still.transpose(Image.ROTATE_180),
               still.transpose(Image.ROTATE_90), opening]
-    return [[[fr.getpixel((x, y)) for x in range(16)] for y in range(16)] for fr in frames]
+    out = [[[fr.getpixel((x, y)) for x in range(16)] for y in range(16)] for fr in frames]
+    for size in (3.5, 5.5):
+        f = Figure(16, 16)
+        for i, (dx, dy) in enumerate(((-2, 1), (2, 1), (0, -1.5))):
+            f.ellipse('puff%d' % i, 8 + dx * size / 3.5, 8 + dy * size / 3.5, size * 0.6, size * 0.55, kind='C')
+        f.merged('puff0', 'puff1', 'puff2')
+        img = f.render({'C': dict(base=P_WHITE, rim=P_GREY, rim_dark=P_DGREY, mid=P_GREY, shade=(2, 2))})
+        if size > 4:                             # the second puff thins out
+            for y in range(16):
+                for x in range(16):
+                    if (x + y) % 3 == 0 and img[y][x] == P_WHITE:
+                        img[y][x] = 0
+        out.append(img)
+    return out
 
 
+BALL_ROLL = (0, 3, 2, 1)         # ball frames turning anticlockwise (rolling left)
+BALL_OPENING, SMOKE_FIRST = 4, 5
+
+
+# ---------------------------------------------------------------- sparks and bolt (PIKACHU palette)
 SPARKS = (['................',
            '.......y........',
            '......yl........',
@@ -279,146 +199,186 @@ SPARKS = (['................',
            '................'])
 
 
+def _rim(img, color):
+    w, h = len(img[0]), len(img)
+    rim = [(x, y) for y in range(h) for x in range(w) if img[y][x] == 0 and
+           any(0 <= x + dx < w and 0 <= y + dy < h and img[y + dy][x + dx] not in (0, color)
+               for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)))]
+    for x, y in rim:
+        img[y][x] = color
+
+
 def spark_frames():
-    """Two 16x16 crackles: a white core, pale yellow, a yellow zigzag, and a dark
-    orange rim so they read on PIKACHU's yellow as well as on the shelves."""
+    """Two 16x16 crackles like the game's battle sparks: white core, pale yellow,
+    yellow, an orange rim (graphics/battle_anims/sprites/spark colours)."""
     out = []
     for rows in SPARKS:
         img = [[0] * 16 for _ in range(16)]
-        stamp(img, 0, 0, rows, {'y': P_SPARK, 'l': P_SPARK_L, 'W': P_WHITE}, clip=False)
-        rim = [(x, y) for y in range(16) for x in range(16) if img[y][x] == 0 and
-               any(0 <= x + dx < 16 and 0 <= y + dy < 16 and img[y + dy][x + dx]
-                   for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)))]
-        for x, y in rim:
-            img[y][x] = P_SKIN_O
+        stamp(img, 0, 0, rows, {'y': pika.SPARK, 'l': pika.SPARK_PALE, 'W': pika.WHITE}, clip=False)
+        _rim(img, pika.SPARK_RIM)
         out.append(img)
     return out
 
 
 BOLT_W, BOLT_H = 64, 32
-BOLT_PATHS = (((61, 17), (50, 12), (44, 19), (33, 13), (25, 20), (15, 14), (3, 17)),
-              ((61, 17), (52, 21), (43, 13), (35, 20), (24, 12), (14, 19), (3, 16)))
+# (main path from the cheek, right, to the ball, left; branches)
+BOLTS = ((((61, 17), (52, 12), (45, 18), (35, 12), (26, 18), (16, 13), (4, 16)),
+          (((45, 18), (41, 25)), ((26, 18), (22, 24)))),
+         (((61, 17), (53, 22), (44, 14), (35, 20), (25, 12), (14, 18), (4, 15)),
+          (((44, 14), (40, 7)), ((25, 12), (29, 6)))))
+
+
+def _line(p, q):
+    (x0, y0), (x1, y1) = p, q
+    n = max(abs(x1 - x0), abs(y1 - y0), 1)
+    return {(round(x0 + (x1 - x0) * i / n), round(y0 + (y1 - y0) * i / n)) for i in range(n + 1)}
 
 
 def bolt_frames():
-    """Two 64x32 frames of the zap from PIKACHU's cheek (right end) to the ball (left
-    end): a jagged white line inside pale yellow, yellow and the dark orange rim."""
+    """Two 64x32 frames of the zap from PIKACHU's cheek (right) to the ball (left):
+    a 1 pixel white core, yellow round it, pale yellow at the bends, the orange rim,
+    thinner toward the ball, two short forks."""
     out = []
-    for path in BOLT_PATHS:
+    for path, forks in BOLTS:
         img = [[0] * BOLT_W for _ in range(BOLT_H)]
         core = set()
-        for (x0, y0), (x1, y1) in zip(path, path[1:]):
-            n = max(abs(x1 - x0), abs(y1 - y0))
-            for i in range(n + 1):
-                core.add((round(x0 + (x1 - x0) * i / n), round(y0 + (y1 - y0) * i / n)))
-
-        def grow(pts):
-            return pts | {(x + dx, y + dy) for x, y in pts for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))
-                          if 0 <= x + dx < BOLT_W and 0 <= y + dy < BOLT_H}
-        pale = grow(core)
-        yellow = grow(pale)
-        rim = grow(yellow)
-        for pts, c in ((rim, P_SKIN_O), (yellow, P_SPARK), (pale, P_SPARK_L), (core, P_WHITE)):
-            for x, y in pts:
-                img[y][x] = c
+        for p, q in zip(path, path[1:]):
+            core |= _line(p, q)
+        fork = set()
+        for p, q in forks:
+            fork |= _line(p, q)
+        for x, y in core:
+            thick = 1 if x > 30 else 0
+            for dx in range(-1, 2):
+                for dy in range(-1 - thick, 2 + thick):
+                    if 0 <= x + dx < BOLT_W and 0 <= y + dy < BOLT_H and img[y + dy][x + dx] == 0:
+                        img[y + dy][x + dx] = pika.SPARK
+        for x, y in fork:
+            img[y][x] = pika.SPARK
+        for x, y in path[1:-1]:
+            for dx, dy in ((0, 0), (1, 0), (-1, 0), (0, 1), (0, -1)):
+                img[y + dy][x + dx] = pika.SPARK_PALE
+        for x, y in core:
+            img[y][x] = pika.WHITE
+        _rim(img, pika.SPARK_RIM)
         out.append(img)
     return out
 
 
-# ---------------------------------------------------------------- the lab
+# ---------------------------------------------------------------- the lab, two layers
 VIEW_W, VIEW_H, VIEW_Y = 240, 96, 32      # the letterboxed picture: screen rows 32-127
-BG_PAL = [(0, 0, 0), (238, 228, 196), (214, 200, 164), (186, 170, 136), (112, 78, 56),
-          (146, 104, 72), (176, 132, 92), (120, 150, 148), (96, 122, 124), (170, 114, 104),
-          (140, 92, 86), (184, 166, 110), (230, 172, 106), (205, 142, 80), (160, 104, 60),
-          (112, 70, 42)]
-BG_PAL_BANK = 2                  # BG palette the tilemap points at (src/intro_opening.c)
-W_LIGHT, W_MID, W_DARK, WOOD_D, WOOD_M, WOOD_L = 1, 2, 3, 4, 5, 6
-BOOKS = ((7, 8), (9, 10), (11, 3), (6, 5), (7, 8), (11, 3), (9, 10))
-DESK_L, DESK, DESK_D, DESK_E = 12, 13, 14, 15
-DESK_TOP = 68                    # first row of the desk, in picture rows
-SHELF_X = 124
-PIKA_POS = (144, 46)             # PIKACHU sprite corner on screen
-BALL_REST = (100, 78)            # ball centre on screen while the hand holds it out
+MAP_W = 256                                # one 32x32 tile screen, wraps horizontally
+# From FR/LG's lab tiles (gTileset_Lab / gTileset_Building palettes).
+BG_PAL = [(0, 0, 0), (238, 238, 205), (222, 222, 180), (197, 197, 148), (255, 255, 255),
+          (189, 197, 213), (139, 131, 148), (82, 82, 106), (205, 82, 65), (82, 148, 197),
+          (222, 205, 106), (205, 230, 246), (156, 205, 139), (139, 197, 139), (106, 172, 115),
+          (180, 172, 180)]
+BG_PAL_BANK = 2                  # BG palette the tilemaps point at (src/intro_opening.c)
+W_LIGHT, W_BASE, W_SHADE, S_WHITE, S_FACE, S_EDGE, S_DARK = 1, 2, 3, 4, 5, 6, 7
+B_RED, B_BLUE, B_YELLOW, GLASS = 8, 9, 10, 11
+T_LIGHT, T_BASE, T_SHADE, T_EDGE = 12, 13, 14, 15
+DESK_TOP = 68                    # first row of the table, in picture rows
+SHELF_X = 194                    # shelf's left edge on the back layer (x 188 on screen at the end)
+CAM_END = 12                     # the camera trucks right this far over t 0-19
+PIKA_WORLD = (156, 46)           # PIKACHU sprite corner, front layer coordinates
+BALL_REST = (112, 78)            # ball centre while the hand holds it out (front layer)
 
 
-def arm_rest():
-    """Arm sprite corner on screen when it holds the ball out."""
-    bx, by = ball_on_hand()
-    return BALL_REST[0] - bx - 8, BALL_REST[1] - by - 8
-
-
-def background():
-    """Soft, outline-free lab wall with a bookshelf, and the desk PIKACHU sits on."""
-    img = [[W_LIGHT] * VIEW_W for _ in range(VIEW_H)]
+def back_layer():
+    """Wall with a window and its patch of morning light, a white metal lab shelf with
+    books and a machine on the right. Soft: no outlines except the shelf's bottoms."""
+    img = [[W_BASE] * MAP_W for _ in range(VIEW_H)]
 
     def rect(x0, y0, x1, y1, c):
         for y in range(max(0, y0), min(VIEW_H, y1)):
-            for x in range(max(0, x0), min(VIEW_W, x1)):
+            for x in range(max(0, x0), min(MAP_W, x1)):
                 img[y][x] = c
-    # wall: faint panel seams, a rail and the lower panelling
-    for x in range(8, SHELF_X, 38):
-        rect(x, 0, x + 1, 50, W_MID)
-    rect(0, 50, SHELF_X, 51, W_MID)
-    rect(0, 51, SHELF_X, 53, W_DARK)
-    rect(0, 53, SHELF_X, DESK_TOP, W_MID)
-    for x in range(20, SHELF_X, 38):
-        rect(x, 57, x + 26, 58, W_DARK)
-        rect(x, 58, x + 1, 66, W_DARK)
-    # bookshelf: posts, boards, rows of books of varying height
-    rect(SHELF_X - 4, 0, VIEW_W, DESK_TOP, WOOD_D)
-    rect(SHELF_X - 4, 0, SHELF_X - 2, DESK_TOP, WOOD_M)
-    widths = (5, 6, 4, 7, 5, 5, 6, 4, 6, 5, 7, 4, 5, 6)
-    for r, (top, bottom) in enumerate(((4, 21), (26, 43), (48, 65))):
-        x, i = SHELF_X + 1, r * 3
-        while x < VIEW_W:
+    # light from the window falling on the wall (a slanted patch, down and right)
+    for y in range(8, 50):
+        x0 = 30 + (y - 8) // 2
+        rect(x0 + 50, y, x0 + 84, y + 1, W_LIGHT)
+    # window: white frame, pale glass, a cross bar, a sill
+    rect(22, 4, 76, 44, S_WHITE)
+    rect(25, 7, 73, 41, GLASS)
+    rect(48, 7, 50, 41, S_WHITE)
+    rect(25, 23, 73, 25, S_WHITE)
+    for k in range(10):                          # two shine streaks on the glass
+        rect(29 + k, 36 - k * 2, 30 + k, 38 - k * 2, S_WHITE)
+        rect(54 + k, 37 - k * 2, 55 + k, 38 - k * 2, S_WHITE)
+    rect(20, 44, 78, 46, S_FACE)
+    rect(20, 46, 78, 47, S_EDGE)
+    # panelling
+    rect(0, 52, MAP_W, 53, W_SHADE)
+    rect(0, 53, MAP_W, DESK_TOP, W_SHADE)
+    rect(0, 53, MAP_W, 54, W_BASE)
+    for x in range(12, SHELF_X, 44):
+        rect(x, 57, x + 32, 58, W_BASE)
+        rect(x, 58, x + 1, 66, W_BASE)
+    rect(0, DESK_TOP, MAP_W, VIEW_H, T_BASE)        # under the table (never seen)
+    # shelf: white metal, grey faces, dark bottoms, short saturated books, one machine
+    rect(SHELF_X, 0, MAP_W, DESK_TOP, S_WHITE)
+    rect(SHELF_X, 0, SHELF_X + 2, DESK_TOP, S_FACE)
+    widths = (4, 5, 3, 4, 5, 4, 3, 5, 4, 4)
+    books = (B_RED, B_BLUE, B_YELLOW, B_BLUE, B_RED, B_YELLOW, B_BLUE, T_BASE)
+    for r, (top, bottom) in enumerate(((4, 20), (24, 40), (44, 62))):
+        rect(SHELF_X + 3, top, MAP_W, bottom, S_FACE)
+        x, i = SHELF_X + 4, r * 3
+        while x < MAP_W - 2:
+            if r == 1 and x > SHELF_X + 30:          # the machine: a grey box with lights
+                rect(x, top + 3, x + 24, bottom, S_EDGE)
+                rect(x + 1, top + 4, x + 23, bottom - 1, S_FACE)
+                rect(x + 3, top + 6, x + 12, top + 11, S_DARK)
+                rect(x + 4, top + 7, x + 11, top + 10, GLASS)
+                for k, c in enumerate((B_RED, B_BLUE, T_BASE)):
+                    rect(x + 15 + k * 3, top + 7, x + 17 + k * 3, top + 9, c)
+                rect(x + 3, bottom - 4, x + 21, bottom - 3, S_EDGE)
+                x += 26
+                continue
             w = widths[i % len(widths)]
-            c, dark = BOOKS[(i * 3 + r) % len(BOOKS)]
-            h = bottom - top - (i * 7 + r * 5) % 5
-            if (i + r) % 9 == 5:                     # a gap, then a leaning book
-                for k in range(w + 2):
-                    rect(x + k, bottom - (k * (h - 2)) // (w + 2) - 3, x + k + 1, bottom,
-                         c if k < w + 1 else dark)
-                x += w + 5
-            else:
-                rect(x, bottom - h, x + w, bottom, c)
-                rect(x + w - 1, bottom - h, x + w, bottom, dark)
-                rect(x, bottom - h + 3, x + w - 1, bottom - h + 4, dark)
-                x += w
+            c = books[(i * 3 + r) % len(books)]
+            h = bottom - top - 3 - (i * 7 + r * 5) % 3
+            rect(x, bottom - h, x + w, bottom, c)
+            rect(x + w - 1, bottom - h, x + w, bottom, S_EDGE)
+            x += w + (1 if i % 4 == 3 else 0)
             i += 1
-        rect(SHELF_X - 2, bottom, VIEW_W, bottom + 3, WOOD_M)
-        rect(SHELF_X - 2, bottom, VIEW_W, bottom + 1, WOOD_L)
-    rect(SHELF_X - 2, 0, VIEW_W, 2, WOOD_M)
-    # desk: a dark back edge, a lit strip, the top with a little grain, the front edge
-    rect(0, DESK_TOP, VIEW_W, DESK_TOP + 1, DESK_E)
-    rect(0, DESK_TOP + 1, VIEW_W, DESK_TOP + 3, DESK_L)
-    rect(0, DESK_TOP + 3, VIEW_W, VIEW_H - 6, DESK)
-    for y, x0, x1 in ((74, 6, 60), (79, 90, 150), (84, 20, 70), (77, 180, 236), (86, 160, 210)):
-        rect(x0, y, x1, y + 1, DESK_D)
-    rect(0, VIEW_H - 6, VIEW_W, VIEW_H - 5, DESK_L)
-    rect(0, VIEW_H - 5, VIEW_W, VIEW_H, DESK_D)
-    # PIKACHU's shadow on the desk
-    sx, sy = PIKA_POS[0] + 30, PIKA_POS[1] + 61 - VIEW_Y
+        rect(SHELF_X + 3, bottom, MAP_W, bottom + 1, S_DARK)
+    return img
+
+
+def front_layer():
+    """The lab table: a green top with a lit back edge, a white front rim, PIKACHU's
+    shadow. Everything above the table is clear (the back layer shows through)."""
+    img = [[0] * MAP_W for _ in range(VIEW_H)]
+
+    def rect(x0, y0, x1, y1, c):
+        for y in range(max(0, y0), min(VIEW_H, y1)):
+            for x in range(max(0, x0), min(MAP_W, x1)):
+                img[y][x] = c
+    rect(0, DESK_TOP, MAP_W, DESK_TOP + 1, T_SHADE)
+    rect(0, DESK_TOP + 1, MAP_W, DESK_TOP + 3, T_LIGHT)
+    rect(0, DESK_TOP + 3, MAP_W, VIEW_H - 7, T_BASE)
+    for y, x0, x1 in ((75, 10, 70), (80, 96, 150), (85, 20, 60), (78, 200, 250), (86, 170, 226)):
+        rect(x0, y, x1, y + 1, T_LIGHT)
+    rect(0, VIEW_H - 7, MAP_W, VIEW_H - 6, T_SHADE)
+    rect(0, VIEW_H - 6, MAP_W, VIEW_H - 4, S_WHITE)
+    rect(0, VIEW_H - 4, MAP_W, VIEW_H, T_EDGE)
+    sx, sy = PIKA_WORLD[0] + 30, PIKA_WORLD[1] + 60 - VIEW_Y
     for y in range(VIEW_H):
-        for x in range(VIEW_W):
-            if ((x + 0.5 - sx) / 19) ** 2 + ((y + 0.5 - sy) / 3.2) ** 2 <= 1 and img[y][x] in (DESK, DESK_L):
-                img[y][x] = DESK_D
+        for x in range(MAP_W):
+            if ((x + 0.5 - sx) / 18) ** 2 + ((y + 0.5 - sy) / 3) ** 2 <= 1 and img[y][x] in (T_BASE, T_LIGHT):
+                img[y][x] = T_SHADE
     return img
 
 
 # ---------------------------------------------------------------- choreography
 FRAMES = 76                      # F842-917 = bar 2 of MUS_INTRO_FIGHT (19.15 frames a beat)
-TRACKS = ('pikachu', 'sleeve', 'hand', 'ball', 'spark_cheek', 'spark_ball', 'bolt')
+TRACKS = ('pikachu', 'sleeve', 'hand', 'ball', 'smoke', 'spark_cheek', 'spark_ball', 'bolt')
 HIDE, FRONT = 1, 2               # key flags: not drawn / drawn in front of the arm
-POSE = {'A': 0, 'B': 1, 'C': 2}
 HAND_HOLD, HAND_OPEN = 1, 2      # frames of arm.png (0 is the sleeve half)
-BALL_ROLL = (0, 3, 2, 1)         # ball frames turning anticlockwise (rolling left)
-BALL_OPENING = 4
-SPARK_FIRST = 5                  # the sparks follow the five ball frames in props.png
-T_SNAP, T_POP = 19, 23           # beat 2: the ball opens, PIKACHU turns away; the spark
-CHEEK = (152, 66)                # spark sprite corner at PIKACHU's near cheek (pose C)
-DESK_Y = 112                     # ball centre on the desk (in front of the arm)
-SPARK_TIMES = ((T_POP, 6), (57, 5), (66, 5))   # beat 2 (the pop), beat 4, once more
-BOLT_AT = (100, 60)              # bolt sprite corner: from the cheek (right) to the ball (left)
+T_SNAP, T_POP = 19, 24           # beat 2: the ball opens and PIKACHU turns; the ball is hit
+DESK_Y = 112                     # ball centre on the table (screen row, in front of the arm)
+CHEEK_WORLD = (170, 67)          # spark sprite corner at PIKACHU's near cheek (poses C)
+SHAKE = {23: 1, 24: -1, 25: 1}   # the hit: screen shake, 1 pixel, no change of brightness
 
 
 def ease_out(p):
@@ -433,14 +393,21 @@ def lerp(a, b, p):
     return a + (b - a) * p
 
 
+def camera(t):
+    """Camera x (front layer scroll) at frame t: a slow truck right while the arm
+    comes in, from the ball in the middle to PIKACHU on the right third."""
+    return round(CAM_END * ease_out(min(1, (t + 1) / 20)))
+
+
 def ball_path():
-    """Ball centre and frame for each frame from the pop: knocked up and to the left,
-    two bounces on the desk (the first on beat 3), then it rolls off the left edge."""
+    """Ball centre (front layer) and frame for each frame from the pop: knocked up and
+    to the left, first bounce on the table on beat 3 (left of the sleeve), a second
+    smaller one, then it rolls off the left edge."""
     x, y = BALL_REST[0] + 4, BALL_REST[1] - 2
-    vx, vy, g = -3.0, -4.0, 0.85
+    vx, vy, g = -3.6, -4.0, 0.85
     out, spin, bounces = {}, 0.0, 0
     for t in range(T_POP, FRAMES):
-        out[t] = (x, y, BALL_ROLL[int(spin) % 4])
+        out[t] = (x, y, BALL_ROLL[int(spin) % 4], bounces)
         x += vx
         vy += g
         y += vy
@@ -449,32 +416,55 @@ def ball_path():
             bounces += 1
             if bounces < 3:
                 vy, vx = -vy * 0.45, vx * 0.85
-            else:                                # rolling
+            else:
                 vy = g = 0.0
-        spin += abs(vx) / 4.5            # a quarter turn every ~9 pixels
+        spin += abs(vx) / 4.5
     return out
 
 
+def pikachu_track(t):
+    """Frame name and y offset for PIKACHU at frame t."""
+    breathe = -1 if (t // 8) % 2 else 0
+    if t < 8 or 11 <= t < 14:
+        return 'A', breathe
+    if t < 11:
+        return 'A_twitch', breathe
+    if t < T_SNAP:
+        return 'A_sus', 0
+    if t == T_SNAP:
+        return 'MID', -1
+    if t < T_SNAP + 3:
+        return 'B', -2
+    if t < 25:
+        return 'C_over', -1
+    if 57 <= t < 61:
+        return 'C_hmph', -1
+    if 66 <= t < 69:
+        return 'C_flick', 0
+    return 'C', breathe if t >= 28 else 0
+
+
 def choreography():
-    """keys[t][track] = (x, y, frame, flags), x and y the sprite's corner on screen."""
-    ax0, ay0 = arm_rest()
+    """keys[t][track] = (x, y, frame, flags) on screen; scroll[t] = (back x, back y,
+    front x, front y) for BG3 and BG2."""
+    bx, by = ball_on_hand()
+    # arm corner at rest, front layer coordinates
+    ax0, ay0 = BALL_REST[0] - bx - 8, BALL_REST[1] - by - 8
     path = ball_path()
-    keys = []
+    keys, scroll = [], []
     for t in range(FRAMES):
+        cam = camera(t)
+        sx = SHAKE.get(t, 0)
+        bump = 1 if path.get(t, (0, 0, 0, 0))[3] == 1 and path.get(t - 1, (0, 0, 0, 0))[3] == 0 else 0
+        scroll.append((cam // 2 - sx, 0, cam - sx, bump))
+
+        def screen(wx, wy):
+            return round(wx - cam + sx), round(wy)
         k = {}
-        # PIKACHU looks at the ball; on beat 2 it snaps away (smear frame, 2 pixel
-        # flinch) and sulks; a 1 pixel hop each time its cheeks crackle
-        if t < T_SNAP:
-            pose, dy = 'A', 0
-        elif t < T_SNAP + 3:
-            pose, dy = 'B', -2
-        else:
-            pose, dy = 'C', 0
-        if any(t0 <= t < t0 + 2 for t0, _ in SPARK_TIMES[1:]):
-            dy = -1
-        k['pikachu'] = (PIKA_POS[0], PIKA_POS[1] + dy, POSE[pose], 0)
-        # the arm: in from the lower left, a small nudge ("here"), a flinch when the
-        # ball is knocked away, then it withdraws
+        name, dy = pikachu_track(t)
+        k['pikachu'] = screen(PIKA_WORLD[0], PIKA_WORLD[1] + dy) + (PIKA_FRAMES.index(name), 0)
+        # the arm: in from the lower left, a nudge ("here"), a flinch when the ball is
+        # knocked away, then it withdraws
         if t < 14:
             p = ease_out((t + 1) / 14)
             dx, dy = lerp(-70, 0, p), lerp(46, 0, p)
@@ -486,63 +476,80 @@ def choreography():
         elif t < T_POP + 5:
             p = ease_out((t - T_POP + 1) / 5)
             dx, dy = lerp(4, -4, p), lerp(-2, 3, p)
-        elif t < 34:
-            dx, dy = -4, 3
         else:
-            p = ease_in(min(1, (t - 33) / 16))
-            dx, dy = lerp(-4, -84, p), lerp(3, 60, p)
-        hidden = HIDE if t >= 50 else 0
-        ax, ay = round(ax0 + dx), round(ay0 + dy)
+            p = ease_in(min(1, (t - T_POP - 4) / 11))
+            dx, dy = lerp(-4, -90, p), lerp(3, 64, p)
+        hidden = HIDE if t >= T_POP + 15 else 0
+        ax, ay = screen(ax0 + dx, ay0 + dy)
         k['sleeve'] = (ax, ay, 0, hidden)
         k['hand'] = (ax + 64, ay, HAND_HOLD if t < T_POP else HAND_OPEN, hidden)
-        # the ball: in the hand (behind the fingers), opening at the snap, then flying
+        # the ball: in the hand (behind the fingers), opening from the snap, then flying
         if t < T_POP:
-            bx, by = ball_on_hand()
             k['ball'] = (ax + bx, ay + by, BALL_OPENING if t >= T_SNAP else 0, 0)
         else:
-            x, y, frame = path[t]
-            k['ball'] = (round(x - 7.5), round(y - 7.5), frame, FRONT | (HIDE if x < -8 else 0))
-        k['spark_cheek'] = (0, 0, 0, HIDE)
-        for t0, n in SPARK_TIMES:
-            if t0 <= t < t0 + n:
-                k['spark_cheek'] = (CHEEK[0], CHEEK[1], (t - t0) // 2 % 2, 0)
-        if T_POP <= t < T_POP + 5:
-            k['spark_ball'] = (k['ball'][0], k['ball'][1], (t - T_POP + 1) // 2 % 2, FRONT)
+            x, y, frame, _ = path[t]
+            px, py = screen(x - 7.5, y - 7.5)
+            k['ball'] = (px, py, frame, FRONT | (HIDE if px < -16 else 0))
+        # a puff where the ball was hit
+        if T_POP <= t < T_POP + 4:
+            hx, hy = screen(ax0 + 4 + bx, ay0 - 2 + by)
+            k['smoke'] = (hx, hy - (t - T_POP), SMOKE_FIRST + (t - T_POP) // 2, FRONT)
         else:
-            k['spark_ball'] = (0, 0, 0, HIDE)
-        # the zap itself, cheek to ball, on the two frames before the ball flies
-        if T_POP - 1 <= t <= T_POP:
-            k['bolt'] = (BOLT_AT[0], BOLT_AT[1], t - (T_POP - 1), FRONT)
+            k['smoke'] = (0, 0, 0, HIDE)
+        # sparks: on the ball first (the warning), at the cheek from the zap on
+        k['spark_ball'] = (0, 0, 0, HIDE)
+        if T_SNAP + 1 <= t < T_SNAP + 3:
+            k['spark_ball'] = (k['ball'][0], k['ball'][1], (t - T_SNAP) % 2, FRONT)
+        elif T_POP <= t < T_POP + 4:
+            k['spark_ball'] = (k['ball'][0], k['ball'][1], (t - T_POP + 1) // 2 % 2, FRONT)
+        k['spark_cheek'] = (0, 0, 0, HIDE)
+        for t0, n in ((22, 6), (57, 5), (66, 5)):
+            if t0 <= t < t0 + n:
+                cx, cy = screen(*CHEEK_WORLD)
+                k['spark_cheek'] = (cx, cy + (-1 if name == 'C_hmph' else 0), (t - t0) // 2 % 2, 0)
+        # the bolt, cheek to ball, four frames
+        if 22 <= t < 26:
+            bxs, bys = screen(BALL_REST[0], BALL_REST[1] - 18)
+            k['bolt'] = (bxs, bys, t % 2, FRONT)
         else:
             k['bolt'] = (0, 0, 0, HIDE)
         keys.append(k)
-    return keys
+    return keys, scroll
 
 
 # ---------------------------------------------------------------- output
 def art():
     """Every sprite frame, by track (frame numbers as in the key table)."""
-    poses = pikachu_poses()
+    poses = pika.frames()
     hold, opened = arm('hold'), arm('open')
     sleeve = [r[:64] for r in hold]
+    balls = ball_frames()
     sparks = spark_frames()
-    return {'pikachu': ([poses['A'], poses['B'], poses['C']], PIKA_PAL),
+    return {'pikachu': ([poses[n] for n in PIKA_FRAMES], PIKA_PAL),
             'sleeve': ([sleeve], PROP_PAL),
             'hand': ([sleeve, [r[64:] for r in hold], [r[64:] for r in opened]], PROP_PAL),
-            'ball': (ball_frames(), PROP_PAL),
-            'spark_cheek': (sparks, PROP_PAL),
-            'spark_ball': (sparks, PROP_PAL),
-            'bolt': (bolt_frames(), PROP_PAL)}
+            'ball': (balls, PROP_PAL),
+            'smoke': (balls, PROP_PAL),
+            'spark_cheek': (sparks, PIKA_PAL),
+            'spark_ball': (sparks, PIKA_PAL),
+            'bolt': (bolt_frames(), PIKA_PAL)}
 
 
 def mask_of(im):
     return Image.frombytes('L', im.size, bytes(255 if v else 0 for v in im.getdata()))
 
 
-def render_frame(k, bg, sheets):
-    """The 240x160 screen for one key table entry, the way the game draws it."""
+def render_frame(k, sc, back, front, sheets):
+    """The 240x160 screen for one frame of the table, the way the game draws it:
+    BG3 (back), BG2 (front, colour 0 clear), then the sprites back to front."""
     screen = Image.new('RGB', (240, 160), (0, 0, 0))
-    screen.paste(bg, (0, VIEW_Y))
+    bx, by, fx, fy = sc
+    for layer, lx, ly in ((back, bx, by), (front, fx, fy)):
+        for y in range(VIEW_H):
+            for x in range(240):
+                v = layer[y + ly][(x + lx) % MAP_W] if 0 <= y + ly < VIEW_H else 0
+                if v:
+                    screen.putpixel((x, y + VIEW_Y), BG_PAL[v])
 
     def put(track):
         x, y, frame, flags = k[track]
@@ -551,10 +558,10 @@ def render_frame(k, bg, sheets):
         frames, pal = sheets[track]
         im = to_image(frames[frame], pal)
         screen.paste(im.convert('RGB'), (x, y), mask_of(im))
-    front = k['ball'][3] & FRONT
-    order = ['pikachu'] + ([] if front else ['ball']) + ['sleeve', 'hand'] + \
-            (['ball'] if front else []) + ['bolt', 'spark_ball', 'spark_cheek']
-    for track in order:                          # back to front
+    front_ball = k['ball'][3] & FRONT
+    order = ['pikachu'] + ([] if front_ball else ['ball']) + ['sleeve', 'hand'] + \
+            (['ball'] if front_ball else []) + ['smoke', 'bolt', 'spark_ball', 'spark_cheek']
+    for track in order:
         put(track)
     black = Image.new('RGB', (240, VIEW_Y), (0, 0, 0))
     screen.paste(black, (0, 0))
@@ -564,35 +571,36 @@ def render_frame(k, bg, sheets):
 
 def strip(frames, pal):
     """Frames stacked top to bottom: the 1D OBJ tile order the game loads."""
-    w, h = len(frames[0][0]), len(frames[0])
     rows = [r for f in frames for r in f]
-    im = to_image(rows, pal)
-    assert im.size == (w, h * len(frames))
-    return im
+    return to_image(rows, pal)
 
 
-def tiles_and_map(img, bank):
-    """Cut a 240x96 picture into 8x8 tiles (flipped copies reused) and a 32x32 tilemap
-    whose rows 4-15 hold it (screen rows 32-127); tile 0 is left empty."""
+def tiles_and_maps(layers, bank):
+    """Cut the layers (256x96 each) into one shared set of 8x8 tiles (flipped copies
+    reused; tile 0 empty) and one 32x32 tilemap per layer, rows 4-15 holding the
+    picture (screen rows 32-127)."""
     def flip(t, h, v):
         return tuple(t[(7 - y if v else y) * 8 + (7 - x if h else x)] for y in range(8) for x in range(8))
     uniq = [tuple([0] * 64)]
     index = {uniq[0]: 0}
-    entries = [0] * (32 * 32)
-    for ty in range(VIEW_H // 8):
-        for tx in range(VIEW_W // 8):
-            t = tuple(img[ty * 8 + y][tx * 8 + x] for y in range(8) for x in range(8))
-            entry = None
-            for h, v, bits in ((0, 0, 0), (1, 0, 0x400), (0, 1, 0x800), (1, 1, 0xC00)):
-                f = flip(t, h, v)
-                if f in index:
-                    entry = index[f] | bits
-                    break
-            if entry is None:
-                index[t] = len(uniq)
-                uniq.append(t)
-                entry = index[t]
-            entries[(ty + VIEW_Y // 8) * 32 + tx] = entry | (bank << 12)
+    maps = []
+    for img in layers:
+        entries = [0] * (32 * 32)
+        for ty in range(VIEW_H // 8):
+            for tx in range(MAP_W // 8):
+                t = tuple(img[ty * 8 + y][tx * 8 + x] for y in range(8) for x in range(8))
+                entry = None
+                for h, v, bits in ((0, 0, 0), (1, 0, 0x400), (0, 1, 0x800), (1, 1, 0xC00)):
+                    f = flip(t, h, v)
+                    if f in index:
+                        entry = index[f] | bits
+                        break
+                if entry is None:
+                    index[t] = len(uniq)
+                    uniq.append(t)
+                    entry = index[t]
+                entries[(ty + VIEW_Y // 8) * 32 + tx] = entry | (bank << 12)
+        maps.append(entries)
     per_row = 16
     rows = (len(uniq) + per_row - 1) // per_row
     sheet = [[0] * (per_row * 8) for _ in range(rows * 8)]
@@ -600,14 +608,15 @@ def tiles_and_map(img, bank):
         r, c = divmod(i, per_row)
         for k, v in enumerate(t):
             sheet[r * 8 + k // 8][c * 8 + k % 8] = v
-    return sheet, entries, len(uniq)
+    return sheet, maps, len(uniq)
 
 
-def write_header(keys, path):
+def write_header(keys, scroll, path):
     lines = ['// Generated by tools/make_intro_opening_scene2.py. Do not edit: change the',
              '// choreography there and run it again.',
              '// Scene 2 of the opening, one row per frame (F842-917): for each sprite',
-             '// track {x, y, frame, flags}, x and y the corner of the sprite on screen.',
+             '// track {x, y, frame, flags}, x and y the corner of the sprite on screen;',
+             '// and the scroll of the back (BG3) and front (BG2) layers.',
              '',
              '#define SCENE2_FRAMES %d' % FRAMES,
              '',
@@ -616,52 +625,49 @@ def write_header(keys, path):
     lines += ['    SCENE2_TRACK_COUNT', '};', '',
               'static const struct OpeningKey sScene2_Keys[SCENE2_FRAMES][SCENE2_TRACK_COUNT] = {']
     for t, k in enumerate(keys):
-        cells = ', '.join('{%d, %d, %d, %d}' % k[tr] for tr in TRACKS)
-        lines.append('    [%d] = {%s},' % (t, cells))
+        lines.append('    [%d] = {%s},' % (t, ', '.join('{%d, %d, %d, %d}' % k[tr] for tr in TRACKS)))
+    lines += ['};', '', 'static const struct OpeningScroll sScene2_Scroll[SCENE2_FRAMES] = {']
+    for t, s in enumerate(scroll):
+        lines.append('    [%d] = {%d, %d, %d, %d},' % ((t,) + s))
     lines += ['};', '']
     with open(path, 'w') as f:
         f.write('\n'.join(lines))
 
 
+def model_sheet(scale=6):
+    """PIKACHU's scene 2 frames beside the FR/LG front sprite, and the props."""
+    ref = Image.open(ROOT + '/graphics/pokemon/pikachu/front.png')
+    items = [(ref, 'FR/LG front.png')] + [(to_image(f, PIKA_PAL), n) for n, f in zip(PIKA_FRAMES, art()['pikachu'][0])]
+    return items
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--preview', default=None, help='also write model sheets and mock-ups here')
+    ap.add_argument('--preview', default=None, help='also write mock-ups of every frame here')
     a = ap.parse_args()
     os.makedirs(OUT, exist_ok=True)
     sheets = art()
-    bg = background()
-    tiles, entries, n = tiles_and_map(bg, BG_PAL_BANK)
+    back, front = back_layer(), front_layer()
+    tiles, (mback, mfront), n = tiles_and_maps((back, front), BG_PAL_BANK)
     to_image(tiles, BG_PAL).save(OUT + '/bg.png')
-    with open(OUT + '/bg.bin', 'wb') as f:
-        f.write(struct.pack('<%dH' % len(entries), *entries))
+    for name, m in (('bg_back', mback), ('bg_front', mfront)):
+        with open(OUT + '/%s.bin' % name, 'wb') as f:
+            f.write(struct.pack('<%dH' % len(m), *m))
     strip(sheets['pikachu'][0], PIKA_PAL).save(OUT + '/pikachu.png')
     strip(sheets['hand'][0], PROP_PAL).save(OUT + '/arm.png')
-    strip(ball_frames() + spark_frames(), PROP_PAL).save(OUT + '/props.png')
-    strip(bolt_frames(), PROP_PAL).save(OUT + '/bolt.png')
-    keys = choreography()
-    write_header(keys, HEADER)
+    strip(sheets['ball'][0], PROP_PAL).save(OUT + '/ball.png')
+    strip(sheets['spark_cheek'][0], PIKA_PAL).save(OUT + '/spark.png')
+    strip(sheets['bolt'][0], PIKA_PAL).save(OUT + '/bolt.png')
+    for old in ('bg.bin', 'props.png'):
+        if os.path.exists(OUT + '/' + old):
+            os.remove(OUT + '/' + old)
+    keys, scroll = choreography()
+    write_header(keys, scroll, HEADER)
     print('scene 2: %d background tiles, %d frames' % (n, len(keys)))
     if a.preview:
         os.makedirs(a.preview + '/mock', exist_ok=True)
-        bg_rgb = to_image(bg, BG_PAL).convert('RGB')
-        for t, k in enumerate(keys):
-            render_frame(k, bg_rgb, sheets).save('%s/mock/t%02d.png' % (a.preview, t))
-        model = Image.new('RGB', (3 * 64 * 4 + 32, 64 * 4 + 16), (150, 190, 230))
-        for i, p in enumerate(sheets['pikachu'][0]):
-            im = to_image(p, PIKA_PAL)
-            big = enlarge(im, 4)
-            model.paste(big, (8 + i * (64 * 4 + 8), 8), mask_of(im).resize(big.size))
-        model.save(a.preview + '/pikachu_model.png')
-        props = [arm('hold'), arm('open')]
-        pw = sum(len(p[0]) * 3 + 8 for p in props) + 8 + 7 * (16 * 3 + 8)
-        sheet = Image.new('RGB', (pw, 64 * 3 + 16), (150, 190, 230))
-        x = 8
-        for p in props + ball_frames() + spark_frames():
-            im = to_image(p, PROP_PAL)
-            big = enlarge(im, 3)
-            sheet.paste(big, (x, 8), mask_of(im).resize(big.size))
-            x += big.size[0] + 8
-        sheet.save(a.preview + '/props_model.png')
+        for t in range(FRAMES):
+            render_frame(keys[t], scroll[t], back, front, sheets).save('%s/mock/t%02d.png' % (a.preview, t))
 
 
 if __name__ == '__main__':

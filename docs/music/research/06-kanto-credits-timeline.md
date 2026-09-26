@@ -1,5 +1,7 @@
 # 06. 칸토 엔딩 크레딧: 음악과 화면 타임라인 실측
 
+> **정정(2026-09-26, 엔지니어 실측)**: 이 문서의 "원판은 THE END를 곡의 마지막 화음에 맞췄다"는 결론은 틀렸다. 측정 ROM에 이미 Joseph Song 페이지가 들어 있었고 원판 값은 그 페이지 길이를 빼서 추정한 것이다. v0.8.0 원판(`qa-base/v0.8.0`)을 직접 재면 곡 끝 F14970, THE END F15207 — **THE END는 곡이 끝나고 237프레임(약 4초) 뒤**에 뜬다. v0.9.0은 페이지 시간을 덜어 THE END를 원판과 −6프레임 안에 맞췄다(`tools/qa/creditstime.py`). 마디·구간·심벌 표 등 곡 자체의 측정값은 그대로 유효하다.
+
 - 작성: 음악 리서처, 2026-09-26. 칸토(1세대) 애니메이션 엔딩 제작의 선행 조사
 - 대상 ROM: rocket-trio 워크트리 빌드(`.claude/worktrees/agent-ac238b4c4ba278d64/pokemonthyl.gba`, 커밋 68eed249d, Joseph Song 페이지 포함)를 scratchpad로 복사해 사용. 코드·빌드는 건드리지 않았다
 - 단위: **F = MUS_CREDITS 시작 프레임(F0)부터 센 GBA 프레임**(59.7275 fps). 초 = F / 59.7275. `CB2` 열은 CB2_Credits 첫 프레임(F1440)부터 센 값(= F − 1440, `tools/qa/cases/credits.jsonl` 의 프레임 기준과 같다)

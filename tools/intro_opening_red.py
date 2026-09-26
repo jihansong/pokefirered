@@ -161,17 +161,19 @@ PIKA_Y, PIKA_M, PIKA_O = 5, 9, 14
 SHIELD_PAL = list(PAL)
 SHIELD_PAL[PIKA_Y], SHIELD_PAL[PIKA_M], SHIELD_PAL[PIKA_O] = (255, 238, 0), (238, 189, 0), (131, 82, 0)
 PKEY = {'K': BLACK, 'y': PIKA_Y, 'm': PIKA_M, 'o': PIKA_O}
-P_EARS = [          # the top of its head and two long ears (black tips) over his shoulder
-    'K......K.',
-    'KK.....KK',
-    'oK....oK.',
-    'oyK...oyK',
-    'oyK...oyK',
-    'oyyK.oyyK',
-    '.oyyoyyymK',
-    'oyyyyyyymK',
-    'oyyyyyymmK',
-    'oyyyyymmmK',
+P_EARS = [          # the top of its head, a round dome between two ears splayed in a V
+    'KK............',   # (the outer ear leans out about 30 degrees, the inner one tucks
+    '.KK..........K',   # behind RED's head), so it reads as one head and two ears, not a crown
+    '..KK........KK',
+    '..oyK.oooo.oyK',
+    '...oyoyyyyoyyK',
+    '...oyyyyyyyyyK',
+    '...oyyyyyyyymK',
+    '...oyyyyyyyymK',
+    '...oyyyyyyymmK',
+    '...oyyyyyymmmK',
+    '...oyyyyymmmK.',
+    '....oyyymmmK..',
 ]
 P_TAIL = [          # the lightning tail's last two segments, out past his right side
     '....oyK',
@@ -218,7 +220,9 @@ def back_view(pose='stand', pikachu=True):
         f.ellipse('shoe%d' % side, ex + side, ey + 1.5, 3.5, 2.3, kind='R')
     if pose == 'shield-open':          # arms out wide against the birds
         for side in (-1, 1):
-            _limb(f, 'arm%d' % side, cx + side * 10, sy + 1, side * 105, side * 125, 8, 7, 4.2, 3.6, 'S')
+            # elbows a little bent, the forearms raised, open hands like shields
+            hx, hy = _limb(f, 'arm%d' % side, cx + side * 10, sy + 1, side * 98, side * 142, 8, 6, 4.2, 3.6, 'S')
+            f.ellipse('hand%d' % side, hx + side * 0.5, hy - 0.5, 2.2, 2.6, kind='S')
     else:                              # upper arms only: the forearms hug PIKACHU in front
         for side in (-1, 1):
             _limb(f, 'arm%d' % side, cx + side * 10, sy + 1, side * 12, -side * 40, 7, 3, 4.4, 4, 'S')
@@ -239,7 +243,7 @@ def back_view(pose='stand', pikachu=True):
     # small PIKACHU: ears behind the left shoulder, tail tip past the right side
     for y, r in enumerate(P_EARS):
         for x, ch in enumerate(r):
-            px, py = 18 + x, 19 + y
+            px, py = 14 + x, 18 + y
             if ch != '.' and img[py][px] == 0:
                 img[py][px] = PKEY[ch]
     tx = 44 if pose == 'shield' else 41

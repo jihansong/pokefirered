@@ -1,5 +1,6 @@
 #include "global.h"
 #include "battle.h"
+#include "battle_anim.h"
 #include "characters.h"
 #include "event_data.h"
 #include "overworld.h"
@@ -195,11 +196,31 @@ void SnagRecordTaken(u16 trainerNum, u16 species)
         FlagSet(SNAG_FLAGS_START + slot);
 }
 
-// The opposing battler a BALL thrown by THROWER goes to: the one across from it,
-// or, if that one is gone (fainted or snagged earlier this turn), its partner.
+static bool8 IsOpponentOut(u8 battler)
+{
+    return battler < gBattlersCount && gBattleMons[battler].hp != 0 && !(gAbsentBattlerFlags & gBitTable[battler]);
+}
+
+// Whether a BALL chosen in the bag needs a target: a trainer double (not one
+// snagging leaves out) with both opponents still out.
+bool8 IsSnagTargetChoice(void)
+{
+    return (gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE)) == (BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE)
+        && !IsSnagBlockedBattle()
+        && IsOpponentOut(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT))
+        && IsOpponentOut(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT));
+}
+
+// The opposing battler a BALL thrown by THROWER goes to: the one chosen with
+// the target cursor (plan 2.6), else the one across from it; if that one is
+// gone (fainted or snagged earlier this turn), its partner. A POKéMON sent out
+// in its place since is the target, like for a move.
 u8 GetSnagBallTarget(u8 thrower)
 {
-    u8 target = thrower ^ BIT_SIDE;
+    u8 target = gBattleStruct->snagTarget[thrower];
+
+    if (!(gBattleTypeFlags & BATTLE_TYPE_DOUBLE) || target >= MAX_BATTLERS_COUNT || GetBattlerSide(target) != B_SIDE_OPPONENT)
+        target = thrower ^ BIT_SIDE;
 
     if ((gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
      && (gBattleMons[target].hp == 0 || (gAbsentBattlerFlags & gBitTable[target]))

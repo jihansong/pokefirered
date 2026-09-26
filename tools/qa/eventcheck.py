@@ -45,9 +45,9 @@ Steps, in order:
     throw ITEM [L|R]                     in a battle: wait for the action menu,
                                          BAG, the POKé BALLS pocket, ITEM (the
                                          cursor is moved there from what the bag
-                                         remembers), USE; L or R then presses
-                                         that direction and A for the target
-                                         (doubles, v0.10.0 stage 4)
+                                         remembers), USE; L or R then picks that
+                                         opponent with the BALL target cursor
+                                         (trainer doubles with both out)
     fight N                              wait for the action menu, FIGHT, move N
                                          (1-4); in a double battle A once more
                                          for the first target
@@ -232,13 +232,24 @@ def sym_addrs(rom, name):
 
 
 def wait_action_menu(e, rom, presses=150):
-    """Press B through battle text until battler 0's action menu (FIGHT/BAG/
-    POKeMON/RUN) takes input. False if the battle ended first."""
+    """Press B through battle text until a player battler's action menu (FIGHT/
+    BAG/POKeMON/RUN) takes input. False if the battle ended first. (B never
+    reaches the right battler's menu: pressed on the left one's, it does nothing.)"""
     want = sym_addrs(rom, 'HandleInputChooseAction')
+    funcs = e.sym('gBattlerControllerFuncs')
+
+    def menu_up():
+        return any((e.u32(funcs + 4 * b) & ~1) in want for b in (0, 2))   # either player battler (doubles)
+
+    for _ in range(120):            # the right battler's menu follows the left one's choice: no B for it
+        if menu_up():
+            e.run(20)
+            return True
+        e.run(1)
     for _ in range(presses):
         if not e.in_battle():
             return False
-        if (e.u32(e.sym('gBattlerControllerFuncs')) & ~1) in want:
+        if menu_up():
             e.run(20)
             return True
         e.press('B', hold=3, after=17)
@@ -284,9 +295,19 @@ def throw_ball(e, rom, item, side):
         e.press('DOWN' if index > at else 'UP', hold=3, after=10)
     e.press('A', hold=3, after=30)                # the item, then USE
     e.press('A', hold=3, after=30)
-    if side:
-        e.run(60)
-        e.press('LEFT' if side == 'L' else 'RIGHT', hold=3, after=12)
+    if side:                                      # the target cursor (trainer doubles)
+        cursor = sym_addrs(rom, 'HandleInputChooseBallTarget')
+        funcs = e.sym('gBattlerControllerFuncs')
+        for _ in range(300):
+            if any((e.u32(funcs + 4 * b) & ~1) in cursor for b in (0, 2)):
+                break
+            e.run(1)
+        else:
+            return 'no BALL target cursor'
+        e.run(10)
+        want = 1 if side == 'L' else 3            # B_POSITION_OPPONENT_LEFT / _RIGHT
+        if e.u8(e.sym('gMultiUsePlayerCursor')) != want:
+            e.press('RIGHT', hold=3, after=12)
         e.press('A', hold=3, after=12)
     return None
 

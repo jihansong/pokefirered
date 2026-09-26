@@ -18,6 +18,7 @@
 #include "battle_message.h"
 #include "battle_script_commands.h"
 #include "reshow_battle_screen.h"
+#include "snag.h"
 #include "constants/battle_anim.h"
 #include "constants/items.h"
 #include "constants/moves.h"
@@ -90,6 +91,7 @@ static void MoveSelectionDisplayMoveNames(void);
 static void HandleMoveSwitching(void);
 static void WaitForMonSelection(void);
 static void CompleteWhenChoseItem(void);
+static void HandleInputChooseBallTarget(void);
 static void Task_LaunchLvlUpAnim(u8 taskId);
 static void Task_PrepareToGiveExpWithExpBar(u8 taskId);
 static void DestroyExpTaskAndCompleteOnInactiveTextPrinter(u8 taskId);
@@ -1333,12 +1335,60 @@ static void OpenBagAndChooseItem(void)
     }
 }
 
+static const u8 sText_ThrowAtWhichOne[] = _("Throw it at which one?");
+
 static void CompleteWhenChoseItem(void)
 {
     if (gMain.callback2 == BattleMainCB2 && !gPaletteFade.active)
     {
+        // Thunder Yellow (v0.10.0): a BALL in a trainer double with both
+        // opponents out: choose which one to throw it at
+        gBattleStruct->snagTarget[gActiveBattler] = 0;
+        if (gSpecialVar_ItemId != ITEM_NONE && gSpecialVar_ItemId <= ITEM_PREMIER_BALL
+         && IsSnagTargetChoice())
+        {
+            gMultiUsePlayerCursor = GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(gActiveBattler)));
+            gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_ShowAsMoveTarget;
+            BattlePutTextOnWindow(sText_ThrowAtWhichOne, B_WIN_MSG);
+            gBattlerControllerFuncs[gActiveBattler] = HandleInputChooseBallTarget;
+            return;
+        }
         BtlController_EmitOneReturnValue(1, gSpecialVar_ItemId);
         PlayerBufferExecCompleted();
+    }
+}
+
+// Like HandleInputChooseTarget, between the two opponents only. B puts the
+// BALL back in the bag and goes back to the action menu.
+static void HandleInputChooseBallTarget(void)
+{
+    DoBounceEffect(gMultiUsePlayerCursor, BOUNCE_HEALTHBOX, 15, 1);
+    EndBounceEffect(gMultiUsePlayerCursor ^ BIT_FLANK, BOUNCE_HEALTHBOX);
+    if (JOY_NEW(A_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_HideAsMoveTarget;
+        EndBounceEffect(gMultiUsePlayerCursor, BOUNCE_HEALTHBOX);
+        gBattleStruct->snagTarget[gActiveBattler] = gMultiUsePlayerCursor;
+        BtlController_EmitOneReturnValue(1, gSpecialVar_ItemId);
+        PlayerBufferExecCompleted();
+    }
+    else if (JOY_NEW(B_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_HideAsMoveTarget;
+        EndBounceEffect(gMultiUsePlayerCursor, BOUNCE_HEALTHBOX);
+        AddBagItem(gSpecialVar_ItemId, 1);
+        BtlController_EmitOneReturnValue(1, ITEM_NONE);
+        PlayerBufferExecCompleted();
+    }
+    else if (JOY_NEW(DPAD_ANY))
+    {
+        PlaySE(SE_SELECT);
+        gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_HideAsMoveTarget;
+        EndBounceEffect(gMultiUsePlayerCursor, BOUNCE_HEALTHBOX);
+        gMultiUsePlayerCursor ^= BIT_FLANK;
+        gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_ShowAsMoveTarget;
     }
 }
 

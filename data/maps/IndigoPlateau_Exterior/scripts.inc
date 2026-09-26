@@ -94,10 +94,8 @@ IndigoPlateau_Exterior_EventScript_TorchFlares::
 	removeobject LOCALID_INDIGO_JAMES
 	setflag FLAG_ROCKET_INDIGO_TORCH
 	fadedefaultbgm
-	addmoney 2200
 	setvar VAR_0x8004, 2200
 	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, IndigoPlateau_Exterior_EventScript_RocketCoins
-	addmoney 1760
 	setvar VAR_0x8004, 3960
 IndigoPlateau_Exterior_EventScript_RocketCoins::
 	call EventScript_RocketMeowthCoins

@@ -165,10 +165,8 @@ ViridianCity_Gym_EventScript_RocketBattleStart::
 	removeobject LOCALID_VIRIDIAN_GYM_JAMES
 	setflag FLAG_ROCKET_VIRIDIAN_GYM
 	fadedefaultbgm
-	addmoney 2120
 	setvar VAR_0x8004, 2120
 	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, ViridianCity_Gym_EventScript_RocketCoins
-	addmoney 1696
 	setvar VAR_0x8004, 3816
 ViridianCity_Gym_EventScript_RocketCoins::
 	call EventScript_RocketMeowthCoins

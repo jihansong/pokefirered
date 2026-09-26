@@ -2,6 +2,7 @@
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "field_camera.h"
+#include "money.h"
 #include "script.h"
 #include "sound.h"
 #include "sprite.h"
@@ -117,4 +118,12 @@ void ClearRocketRewardBit(void)
     u16 mask;
 
     *GetRocketRewardVar(&mask) &= ~mask;
+}
+
+// MEOWTH's PAY DAY coins: VAR_0x8004 of them (addmoney takes only a constant).
+// The script opens the money box first and updates it after this, so the
+// player sees the amount go up.
+void AddRocketMeowthCoins(void)
+{
+    AddMoney(&gSaveBlock1Ptr->money, gSpecialVar_0x8004);
 }

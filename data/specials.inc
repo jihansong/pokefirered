@@ -525,4 +525,5 @@ gSpecials::
 	def_special GiveMewEgg
 	def_special OpenPokeWatchWindow
 	def_special ClosePokeWatchWindow
+	def_special AddRocketMeowthCoins
 gSpecialsEnd::

@@ -52,10 +52,8 @@ CeruleanCity_Gym_EventScript_RocketBattle::
 	removeobject LOCALID_CERULEAN_GYM_JAMES
 	setflag FLAG_ROCKET_CERULEAN_GYM
 	fadedefaultbgm
-	addmoney 352
 	setvar VAR_0x8004, 352
 	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, CeruleanCity_Gym_EventScript_RocketCoins
-	addmoney 704
 	setvar VAR_0x8004, 1056
 CeruleanCity_Gym_EventScript_RocketCoins::
 	call EventScript_RocketMeowthCoins

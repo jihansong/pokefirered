@@ -66,10 +66,8 @@ FuchsiaCity_EventScript_RocketDratiniBattle::
 	removeobject LOCALID_FUCHSIA_JAMES
 	setflag FLAG_ROCKET_SAFARI_DRATINI
 	fadedefaultbgm
-	addmoney 1440
 	setvar VAR_0x8004, 1440
 	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, FuchsiaCity_EventScript_RocketCoins
-	addmoney 1440
 	setvar VAR_0x8004, 2880
 FuchsiaCity_EventScript_RocketCoins::
 	call EventScript_RocketMeowthCoins

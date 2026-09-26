@@ -64,10 +64,8 @@ NewIsland_EventScript_RocketTrioBattle::
 	removeobject LOCALID_NEW_ISLAND_MEOWTH
 	removeobject LOCALID_NEW_ISLAND_JAMES
 	fadedefaultbgm
-	addmoney 2600
 	setvar VAR_0x8004, 2600
 	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, NewIsland_EventScript_RocketCoins
-	addmoney 2080
 	setvar VAR_0x8004, 4680
 NewIsland_EventScript_RocketCoins::
 	call EventScript_RocketMeowthCoins

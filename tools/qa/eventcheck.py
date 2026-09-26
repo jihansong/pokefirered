@@ -29,6 +29,8 @@ Steps, in order:
     watch LABEL                          from here on, note whether the text at
                                          ROM label LABEL is shown (gStringVar4,
                                          looked at after every key press)
+    mashtext LABEL [N]                   press A (at most N times, default 300)
+                                         until the text at LABEL is shown
     waitcb2 CB2 [N]                      run frames (at most N, default 3000) until
                                          gMain.callback2 is CB2, e.g. CB2_Credits
     shot NAME                            save NAME.png (in --shots)
@@ -49,6 +51,9 @@ Steps, in order:
                                          pointer points to (e.g. sCreditsMgr 6 is
                                          the credits script command index)
     expect saw LABEL = 0|1               whether a watched text was shown
+    expect text WORDS...                 the message now in gStringVar4 contains
+                                         WORDS (plain characters; line breaks
+                                         read as spaces)
     expect presses <= N                  A presses the last mash/mashto took
     expect move SLOT MOVE                check that party SLOT knows MOVE
     expect cb2 NAME                      check gMain.callback2 (e.g. CB2_UpdatePartyMenu)
@@ -95,6 +100,35 @@ def live_mons(e):
 
 def species_id(name):
     return const(name if name.startswith('SPECIES_') or name.isdigit() else 'SPECIES_' + name)
+
+
+_CHARS = None
+
+
+def decode_text(raw):
+    """Game text to a str, single characters only (placeholders dropped)."""
+    global _CHARS
+    if _CHARS is None:
+        _CHARS = {}
+        with open(os.path.join(REPO, 'charmap.txt'), encoding='utf-8') as f:
+            for line in f:
+                q = line.split('=')
+                if len(q) == 2 and len(q[0].strip()) == 3 and q[0].strip()[0] == "'":
+                    code = q[1].split('@')[0].strip()
+                    if len(code) == 2:
+                        _CHARS.setdefault(int(code, 16), q[0].strip()[1])
+    out = []
+    i = 0
+    while i < len(raw) and raw[i] != 0xFF:
+        b = raw[i]
+        if b in (0xFA, 0xFB, 0xFE):         # line breaks and the paragraph
+            out.append(' ')
+        elif b == 0xFD or b == 0xFC:        # placeholder / control code + arg
+            i += 1
+        elif b in _CHARS:
+            out.append(_CHARS[b])
+        i += 1
+    return ''.join(out)
 
 
 def rom_text_prefix(e, label):
@@ -162,6 +196,16 @@ def run_case(case, rom, shots, presses_log=None):
                 elif head == 'WATCH':
                     watches[p[1]] = [rom_text_prefix(e, p[1]), False]
                     look()
+                elif head == 'MASHTEXT':
+                    want = rom_text_prefix(e, p[1])
+                    last_presses[0] = 0
+                    for _ in range(int(p[2]) if len(p) > 2 else 300):
+                        if e.read(e.sym('gStringVar4'), 32).startswith(want):
+                            break
+                        press('A', 20)
+                        last_presses[0] += 1
+                    else:
+                        fails.append('%s: never shown' % step)
                 elif head == 'MASH':
                     last_presses[0] = 0
                     for _ in range(int(p[1]) if len(p) > 1 else 300):
@@ -222,6 +266,10 @@ def run_case(case, rom, shots, presses_log=None):
                         got = int(watches[p[2]][1]) if p[2] in watches else None
                         if got != int(p[4]):
                             fails.append('%s: saw %s' % (step, got))
+                    elif what == 'text':
+                        shown = decode_text(e.read(e.sym('gStringVar4'), 400))
+                        if ' '.join(p[2:]) not in shown:
+                            fails.append('%s: the message is %r' % (step, shown))
                     elif what == 'presses':
                         if presses_log is not None:
                             presses_log.append(last_presses[0])

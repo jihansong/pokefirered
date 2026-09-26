@@ -399,10 +399,8 @@ CinnabarIsland_EventScript_RocketMagmarBattle::
 	removeobject LOCALID_CINNABAR_MEOWTH
 	removeobject LOCALID_CINNABAR_JAMES
 	setflag FLAG_ROCKET_CINNABAR
-	addmoney 1600
 	setvar VAR_0x8004, 1600
 	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, CinnabarIsland_EventScript_RocketCoins
-	addmoney 1600
 	setvar VAR_0x8004, 3200
 CinnabarIsland_EventScript_RocketCoins::
 	call EventScript_RocketMeowthCoins

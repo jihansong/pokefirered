@@ -189,10 +189,8 @@ MtMoon_B2F_EventScript_JessieJamesBattle::
 	removeobject LOCALID_MT_MOON_MEOWTH
 	setvar VAR_MAP_SCENE_MT_MOON_B2F_JESSIE_JAMES, 2
 	fadedefaultbgm
-	addmoney 224
 	setvar VAR_0x8004, 224
 	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, MtMoon_B2F_EventScript_RocketCoins
-	addmoney 448
 	setvar VAR_0x8004, 672
 MtMoon_B2F_EventScript_RocketCoins::
 	call EventScript_RocketMeowthCoins

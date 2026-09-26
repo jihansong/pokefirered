@@ -83,10 +83,8 @@ VermilionCity_EventScript_RocketHarborBattle::
 	removeobject LOCALID_VERMILION_HARBOR_JAMES
 	setflag FLAG_ROCKET_SS_ANNE
 	fadedefaultbgm
-	addmoney 576
 	setvar VAR_0x8004, 576
 	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, VermilionCity_EventScript_RocketHarborCoins
-	addmoney 768
 	setvar VAR_0x8004, 1344
 VermilionCity_EventScript_RocketHarborCoins::
 	call EventScript_RocketMeowthCoins

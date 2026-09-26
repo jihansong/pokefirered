@@ -73,10 +73,8 @@ CeladonCity_Gym_EventScript_RocketBattle::
 	removeobject LOCALID_CELADON_GYM_MEOWTH
 	setflag FLAG_ROCKET_CELADON_GYM
 	fadedefaultbgm
-	addmoney 792
 	setvar VAR_0x8004, 792
 	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, CeladonCity_Gym_EventScript_RocketCoins
-	addmoney 1056
 	setvar VAR_0x8004, 1848
 CeladonCity_Gym_EventScript_RocketCoins::
 	call EventScript_RocketMeowthCoins

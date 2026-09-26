@@ -26,6 +26,9 @@ Steps, in order:
                                          gone; fails if none started
     mashto CB2 [N]                       press A (at most N times, default 60)
                                          until gMain.callback2 is CB2
+    watch LABEL                          from here on, note whether the text at
+                                         ROM label LABEL is shown (gStringVar4,
+                                         looked at after every key press)
     waitcb2 CB2 [N]                      run frames (at most N, default 3000) until
                                          gMain.callback2 is CB2, e.g. CB2_Credits
     shot NAME                            save NAME.png (in --shots)
@@ -45,6 +48,8 @@ Steps, in order:
     expect deref NAME OFF = N            check the u16 at OFF in the block a RAM
                                          pointer points to (e.g. sCreditsMgr 6 is
                                          the credits script command index)
+    expect saw LABEL = 0|1               whether a watched text was shown
+    expect presses <= N                  A presses the last mash/mashto took
     expect move SLOT MOVE                check that party SLOT knows MOVE
     expect cb2 NAME                      check gMain.callback2 (e.g. CB2_UpdatePartyMenu)
     expect map MAP                       check the player's current map
@@ -92,7 +97,21 @@ def species_id(name):
     return const(name if name.startswith('SPECIES_') or name.isdigit() else 'SPECIES_' + name)
 
 
-def run_case(case, rom, shots):
+def rom_text_prefix(e, label):
+    """The first bytes of the text at LABEL, up to its first placeholder or
+    control code (those differ once expanded into gStringVar4)."""
+    raw = e.read(e.sym(label), 64)
+    out = bytearray()
+    for b in raw:
+        if b >= 0xF7:       # placeholders, control codes, line breaks, the end
+            break
+        out.append(b)
+    if len(out) < 4:
+        raise ValueError('text %s starts with too little plain text to watch' % label)
+    return bytes(out[:32])
+
+
+def run_case(case, rom, shots, presses_log=None):
     name = case['name']
     base = case.get('base', 'saves/hoenn.sav')
     base = base if os.path.isabs(base) else os.path.join(REPO, base)
@@ -115,24 +134,43 @@ def run_case(case, rom, shots):
                 e.boot_continue()
             except (TimeoutError, GameReset) as ex:
                 return False, ['could not continue: %s' % ex]
+            watches = {}            # label -> [prefix, seen]
+            last_presses = [0]
+
+            def look():
+                if watches:
+                    shown = e.read(e.sym('gStringVar4'), 32)
+                    for w in watches.values():
+                        if shown.startswith(w[0]):
+                            w[1] = True
+
+            def press(key, after):
+                e.press(key, hold=3, after=after)
+                look()
+
             for step in case.get('steps', []):
                 p = step.split()
                 head = p[0].upper()
                 if head.split('*')[0] in BUTTONS:
                     key, _, times = head.partition('*')
                     for _ in range(int(times or 1)):
-                        e.press(key, hold=3, after=20)
+                        press(key, 20)
                 elif head in DIRS:
                     e.walk(head, int(p[1]) if len(p) > 1 else 1)
                 elif head == 'WAIT':
                     e.run(int(p[1]))
+                elif head == 'WATCH':
+                    watches[p[1]] = [rom_text_prefix(e, p[1]), False]
+                    look()
                 elif head == 'MASH':
+                    last_presses[0] = 0
                     for _ in range(int(p[1]) if len(p) > 1 else 300):
                         if e.field_idle():
                             e.run(20)
                             if e.field_idle():
                                 break
-                        e.press('A', hold=3, after=20)
+                        press('A', 20)
+                        last_presses[0] += 1
                     else:
                         fails.append('%s: the game never went idle' % step)
                 elif head == 'ENCOUNTER':
@@ -159,10 +197,12 @@ def run_case(case, rom, shots):
                         fails.append('%s: %s' % (step, 'the evolution never ended' if seen else 'no evolution scene'))
                 elif head == 'MASHTO':
                     want = e.sym(p[1])
+                    last_presses[0] = 0
                     for _ in range(int(p[2]) if len(p) > 2 else 60):
                         if (e.callback2() & ~1) == want:
                             break
-                        e.press('A', hold=3, after=27)
+                        press('A', 27)
+                        last_presses[0] += 1
                     else:
                         fails.append('%s: never got there' % step)
                 elif head == 'WAITCB2':
@@ -178,7 +218,16 @@ def run_case(case, rom, shots):
                         e.shot(os.path.join(shots, '%s_%s.png' % (name, p[1])))
                 elif head == 'EXPECT':
                     what = p[1]
-                    if what in ('flag', 'var', 'trainer'):
+                    if what == 'saw':
+                        got = int(watches[p[2]][1]) if p[2] in watches else None
+                        if got != int(p[4]):
+                            fails.append('%s: saw %s' % (step, got))
+                    elif what == 'presses':
+                        if presses_log is not None:
+                            presses_log.append(last_presses[0])
+                        if not last_presses[0] <= int(p[3]):
+                            fails.append('%s: took %d' % (step, last_presses[0]))
+                    elif what in ('flag', 'var', 'trainer'):
                         blocks = live_blocks(e)
                         want = int(p[4], 0)
                         got = {'flag': lambda n: int(blocks.flag(n)), 'var': blocks.var,
@@ -263,12 +312,15 @@ def main():
             if a.only and case['name'] != a.only:
                 continue
             total += 1
-            ok, fails = run_case(case, a.rom, a.shots)
+            presses = []
+            ok, fails = run_case(case, a.rom, a.shots, presses)
             if case.get('xfail'):
                 # a negative control: it must fail, or the checks prove nothing
                 ok, fails = (not ok), (['expected to fail but passed'] if ok else [])
             passed += ok
-            print('%-4s %s%s' % ('ok' if ok else 'FAIL', case['name'], ''.join('\n     ' + x for x in fails)),
+            print('%-4s %s%s%s' % ('ok' if ok else 'FAIL', case['name'],
+                                   ''.join(' (A x%d)' % n for n in presses),
+                                   ''.join('\n     ' + x for x in fails)),
                   flush=True)
     print('%d/%d cases passed' % (passed, total))
     return 0 if passed == total else 1

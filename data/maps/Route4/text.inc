@@ -47,6 +47,13 @@ Text_MegaPunchTaught::
     .string "his silly kicking. Learn it too, if\l"
     .string "you must, and see which is better!$"
 
+Text_MegaPunchAgain::
+    .string "Back for more MEGA PUNCH?\n"
+    .string "Shall I teach another POKéMON?$"
+
+Text_MegaPunchTaughtAgain::
+    .string "Another fist of fury! Hah!$"
+
 Text_MegaKickTeach::
     .string "A kick of brutal ferocity!\p"
     .string "Packed with destructive power!\p"
@@ -71,6 +78,13 @@ Text_MegaKickTaught::
     .string "That nitwit over there teaches only\n"
     .string "simple punching. Go learn it too,\l"
     .string "then prove that kicking wins!$"
+
+Text_MegaKickAgain::
+    .string "More MEGA KICK? I'll teach it to\n"
+    .string "another POKéMON. All right?$"
+
+Text_MegaKickTaughtAgain::
+    .string "Another mighty leg! Kick on!$"
 
 Route4_Text_PeopleLikeAndRespectBrock::
     .string "Oh, wow, that's the BOULDERBADGE!\n"

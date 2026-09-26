@@ -283,7 +283,9 @@ def spearow_frames():
                     img[y][x] = SP_CREST
         out.append(img)
     for src in out[:2]:
-        out.append([[0 if v == 0 else 11 if v == 15 else 14 for v in row] for row in src])
+        # outlined in the beak's yellow, not grey, so they still read where they
+        # cross the white gap in the clouds (art re-review B-4)
+        out.append([[0 if v == 0 else SP_BEAK if v == 15 else 14 for v in row] for row in src])
     return out
 
 
@@ -346,18 +348,18 @@ BURST_KEEPOUT = 4
 # turn in degrees, length))
 BURSTS = (
     ((0, (8, 12), 7, 4, ((0.55, -38, 14), (0.8, 30, 8))),
-     (0, (5, 78), 6, 3, ((0.6, 32, 10),)),
-     (1, (118, 24), 6, 4, ((0.5, -40, 12),)),
+     (0, (24, 72), 4, 3, ()),
+     (1, (124, 8), 7, 4, ((0.5, -40, 12), (0.8, 30, 7))),
      (1, (110, 96), 5, 3, ((0.65, -30, 9),))),
     ((0, (22, 8), 6, 4, ((0.6, -35, 13),)),
      (0, (2, 46), 7, 4, ((0.5, 38, 12), (0.82, -30, 8))),
      (0, (32, 98), 4, 3, ()),
      (1, (124, 62), 7, 4, ((0.55, -36, 14),)),
-     (1, (104, 9), 5, 3, ((0.7, 34, 8),))),
+     (1, (94, 22), 4, 3, ())),
     ((0, (3, 28), 7, 4, ((0.45, 36, 11), (0.75, -34, 9))),
      (0, (16, 97), 5, 3, ((0.6, -30, 8),)),
      (1, (110, 9), 6, 3, ((0.6, -36, 9),)),
-     (1, (125, 40), 6, 4, ((0.5, 40, 12),)),
+     (1, (108, 46), 4, 3, ()),
      (1, (120, 92), 6, 3, ((0.7, -34, 8),))),
 )
 
@@ -376,7 +378,7 @@ def _jag(p, q, n, amp, rnd):
     return pts
 
 
-def _burst_drawing(spec, seed, keepout):
+def _burst_drawing(spec, seed, keepout, solid):
     import random
     rnd = random.Random(seed)
     trunk, branch, twig = set(), set(), set()
@@ -386,9 +388,11 @@ def _burst_drawing(spec, seed, keepout):
         for a, b in zip(pts, pts[1:]):
             out |= s2._line(a, b)
         return out
+    roots = []
     for cheek, end, n, amp, forks in spec:
         start = CHEEKS[cheek]
         pts = _jag(start, end, n, amp, rnd)
+        roots.append((start, [p for a, b in zip(pts, pts[1:]) for p in _ordered_line(a, b)]))
         seg = len(pts) - 1
         for i, (a, b) in enumerate(zip(pts, pts[1:])):
             (trunk if i < seg * 0.7 else branch).update(s2._line(a, b))
@@ -427,7 +431,35 @@ def _burst_drawing(spec, seed, keepout):
         for x in range(BURST):
             if (x, y) in keepout[0] or not BURST_ROWS[0] - 1 <= y <= BURST_ROWS[1] + 1:
                 img[y][x] = 0
+    # the roots (art re-review B-3): a 2-3 pixel spark off the cheek towards each
+    # trunk and the trunk reaching two thin pixels back towards it, a dark pixel or
+    # more between, so each trunk reads as leaving the cheek. Only these thin 1-pixel
+    # sparks enter the keep-out; the trunks and their halo stay clear of it
+    for i, (start, path) in enumerate(roots):
+        first = next((p for p in path if p not in keepout[1] and img[p[1]][p[0]]), None)
+        if first is None:
+            continue
+        line = [p for p in _ordered_line(start, first) if p not in solid][:-1]
+        n = 2 + i % 2
+        spark = line[:n]
+        # the trunk reaches back in two pixels; one pixel of dark between them
+        twig = line[max(n + 1, len(line) - 2):]
+        for j, (x, y) in enumerate(spark):
+            img[y][x] = pika.WHITE if j == 0 else pika.SPARK_PALE
+        for x, y in twig:
+            img[y][x] = pika.SPARK_PALE
     return img
+
+
+def _ordered_line(a, b):
+    """The pixels from a to b, in order."""
+    n = max(abs(b[0] - a[0]), abs(b[1] - a[1]), 1)
+    out = []
+    for k in range(n + 1):
+        p = (round(a[0] + (b[0] - a[0]) * k / n), round(a[1] + (b[1] - a[1]) * k / n))
+        if not out or out[-1] != p:
+            out.append(p)
+    return out
 
 
 def burst_keepout(r=BURST_KEEPOUT):
@@ -444,7 +476,8 @@ def burst_keepout(r=BURST_KEEPOUT):
 def burst_drawings():
     """The three 128x128 drawings."""
     keep = (burst_keepout(), burst_keepout(BURST_KEEPOUT + 1))
-    return [_burst_drawing(spec, 11 + i, keep) for i, spec in enumerate(BURSTS)]
+    solid = burst_keepout(0)
+    return [_burst_drawing(spec, 11 + i, keep, solid) for i, spec in enumerate(BURSTS)]
 
 
 def burst_frames():
@@ -485,8 +518,10 @@ def scene4_art():
     rv = red
     return {
         # 0-3 the run with the small PIKACHU in his arms, 4 turned (holding it), 5-6 the
-        # in-betweens down into the crouch (the crouch itself is 'shield' 0)
-        'red': ([rv.side_run(i, carry=True) for i in range(4)] + [rv.back_view(p) for p in ('stand', 'bend1', 'bend2')],
+        # in-betweens down into the crouch (the crouch itself is 'shield' 0), 7 the
+        # three-quarter turn between the run and 4 (art re-review B-2)
+        'red': ([rv.side_run(i, carry=True) for i in range(4)] + [rv.back_view(p) for p in ('stand', 'bend1', 'bend2')]
+                + [rv.turn_view()],
                 rv.PAL, 64, 64),
         'shield': ([rv.back_view('shield'), rv.back_view('shield-open')], rv.SHIELD_PAL, 64, 64),
         'bird': (spearow_frames(), SPEAROW_PAL, 16, 16),

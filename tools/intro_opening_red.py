@@ -86,7 +86,7 @@ FAR = {
 # outline brown as its outline.
 PIKA_Y, PIKA_M, PIKA_O = 5, BAG, SKIN_O
 SHIELD_PAL = list(PAL)
-PKEY = {'K': BLACK, 'y': PIKA_Y, 'm': PIKA_M, 'o': PIKA_O}
+PKEY = {'K': BLACK, 'y': PIKA_Y, 'm': PIKA_M, 'o': PIKA_O, 'r': RED}
 
 # The small PIKACHU carried in his arms on the run (art review of 4-5 draft A, change
 # 2): curled against his chest, facing forward, eyes shut, its ears up in a V in
@@ -219,20 +219,20 @@ def _stamp_clear(img, x0, y0, rows, key, keep_below=None):
                 img[y][x0 + dx] = 0 if ch == '.' else key[ch]
 
 
-P_EARS = [          # the top of its head over his left shoulder (art review R1): a round
-    '.K.............',  # dome, 6 wide and 2 high, between two ears splayed in a V; the
-    '.KKK...........',  # outer ear leans out about 30 degrees, the inner one stands
-    '..KKK.......K..',  # nearly straight and tucks 1 pixel behind RED's head. Yellow ears
-    '..KKK......KK..',  # with black tips (not black strokes), no notch between them:
-    '...oyK.....KK..',  # one head and two ears, not a crown
-    '...oyyK...oyK..',
-    '....oyK.oooyK..',
-    '....oyyoyyyymK.',
-    '...oyyyyyyyymK.',
-    '...oyyyyyyyymmK',
-    '..oyyyyyyyyymmK',
-    '..oyyyyyyyymmmK',
-    '..oyyyyyyyymmmK',
+P_EARS = [          # its head over his left shoulder, drawn like the small sprite crouched
+    'K.............K...',  # there in scene 5 (art re-review B-1): a round dome between
+    'KK...........KK...',  # two ears splayed in a V, yellow with black tips, the cheek
+    'KKK.........KKK...',  # curving in to his shoulder. Drawn behind RED, so his head
+    '.KKK.......KKK....',  # and arm hide the rest. One head and two ears, not a crown
+    '.oyyK.....oyymK...',
+    '..oyyK.ooooyymK...',
+    '..oyyyoyyyyyymK...',
+    '...oyyyyyyyyyymK..',
+    '..oyyyyyyyyyyymK..',
+    '..oyyyyyyyyyyyymK.',
+    '..ryyyyyyyyyyyymK.',
+    '...Kmyyyyyyyyymm..',
+    '....KKmmmmmmmmm...',
 ]
 P_TAIL = [          # the lightning tail's last two segments, out past his right side
     '....oyK',
@@ -309,13 +309,74 @@ def back_view(pose='stand', pikachu=True):
     # small PIKACHU: ears behind the left shoulder, tail tip past the right side
     for y, r in enumerate(P_EARS):
         for x, ch in enumerate(r):
-            px, py = 12 + x, sy - 12 + y
+            px, py = round(_mix(10, 14, c)) + x, sy - 11 + y
             if ch != '.' and img[py][px] == 0:
                 img[py][px] = PKEY[ch]
     tx = {'shield-open': 41}.get(pose, round(_mix(45, 44, c)))
     for y, r in enumerate(P_TAIL):
         for x, ch in enumerate(r):
             px, py = tx + x, sy + 8 + y
+            if ch != '.' and img[py][px] == 0:
+                img[py][px] = PKEY[ch]
+    return img
+
+
+# The turn from the run to the back view (art re-review B-2): three quarters from
+# behind, turning away to the upper right as the last step slides to a stop. The cap's
+# brim sticks out past the right of his head over a sliver of cheek and ear, the
+# backpack sits left of the middle, the far (right) arm and leg a step darker. The small
+# PIKACHU is on its way from his chest up to his left shoulder: its head a little lower
+# and nearer his head than in the back view, the tail's flag by his right hip.
+TURN_HEAD = [
+    '.....ddddddK......',
+    '...ddccccccccK....',
+    '..dcccccccccccK...',
+    '.dcccccccccccccK..',
+    '.dccchhhhhccccrK..',
+    '.dcchhhHHhhcccrrK.',
+    '.drrrrrrrrrrrrrrrK',
+    '..KhhhhhhhhhhKKKK.',
+    '..KhhhHhhhhhHSsK..',
+    '..shhhHhhhhHHSsK..',
+    '..shhhhHhhHHSsK...',
+    '..KhhhhHhhHHsK....',
+    '..KhhhhhhhHHHK....',
+    '...hKhhsshHKK.....',
+    '...K.KssssK.......',
+    '......KssK........',
+]
+
+
+def turn_view():
+    """Three quarters from behind, turning away to the right (see TURN_HEAD)."""
+    f = Figure(S, S)
+    cx, hipy, sy = 31, 39, 23
+    # the far leg braking out to the right, the near one planted under him
+    ex, ey = _limb(f, 'legR', cx + 3, hipy, 26, 10, 11, 11, 6.2, 5.2, 'JF')
+    f.ellipse('shoeR', ex + 2, ey + 1, 4, 2.4, kind='RF')
+    ex, ey = _limb(f, 'legL', cx - 3, hipy, -6, -2, 11, 11, 6.5, 5.5, 'J')
+    f.ellipse('shoeL', ex - 0.5, ey + 1, 3.6, 2.5, kind='R')
+    # arms bent round PIKACHU in front: the far one only shows its shoulder
+    _limb(f, 'armR', cx + 8, sy + 2, 14, -30, 7, 3, 4, 3.6, 'SF')
+    _limb(f, 'armL', cx - 9, sy + 2, -10, 40, 8, 3, 4.2, 4, 'S')
+    f.ellipse('shirt', cx + 1, 32, 9, 10, kind='D')
+    f.ellipse('vest', cx + 1.5, 32, 8.5, 9.5, kind='R')
+    f.ellipse('hipsJ', cx, hipy, 7.5, 4.2, kind='J')
+    f.ellipse('bag', cx - 2, 33, 7, 8.5, kind='B', rot=0.08)
+    f.stroke('strapL', [(cx - 8, sy - 1), (cx - 7, sy + 6)], [2, 2], kind='B')
+    f.stroke('strapR', [(cx + 4, sy - 1), (cx + 3.5, sy + 6)], [2, 2], kind='B')
+    img = f.render(dict(COLORS, **FAR))
+    _stamp_clear(img, cx - 8, 6, TURN_HEAD, dict(KEY, h=SKIN_O, H=HAIR_D, s=SKIN_S, S=SKIN, d=RED, c=RED_L))
+    stamp(img, cx - 7, 32, ['s' * 11], {'s': BAG_S})
+    stamp(img, cx - 4, 33, ['KKKKK'], {'K': BAG_S})
+    for y, r in enumerate(P_EARS):
+        for x, ch in enumerate(r):
+            px, py = 9 + x, sy - 9 + y
+            if ch != '.' and img[py][px] == 0:
+                img[py][px] = PKEY[ch]
+    for y, r in enumerate(P_TAIL):
+        for x, ch in enumerate(r):
+            px, py = 42 + x, sy + 10 + y
             if ch != '.' and img[py][px] == 0:
                 img[py][px] = PKEY[ch]
     return img
@@ -329,6 +390,7 @@ def model_views():
         out['run carrying %d' % i] = side_run(i, carry=True)
     out['back'] = back_view('stand', pikachu=False)
     out['back, holding'] = back_view('stand')
+    out['turning'] = turn_view()
     out['back, bend 1'] = back_view('bend1')
     out['back, bend 2'] = back_view('bend2')
     out['back, shielding'] = back_view('shield')

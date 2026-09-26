@@ -12,7 +12,11 @@ tools/intro_opening_red.py):
   pictures and overworld sprite;
 - compare.png: one page, 1x and 4x: the approved front poses and the close-up next
   to the new back, side, run and jump views, and RED at the same scale;
-- run-cycles.png: both run cycles laid out as film strips at 1x and 4x.
+- run-cycles.png: both run cycles laid out as film strips at 1x and 4x;
+- pikachu/small-<pose>.png: the small PIKACHU (RED's scale, 32x32) of scene 5's first cut;
+- scene4-shield-mock.png: RED shielding PIKACHU (both frames) and the small PIKACHU on
+  his shoulder, at 1x and 3x, over a TEMPORARY storm-and-field backdrop (flat colours,
+  diagonal rain) until scene 4's real background exists.
 """
 import argparse
 import os
@@ -99,8 +103,15 @@ def main():
     sheet(ref_items + pims, 8, 4, 'PIKACHU model, 4x (tools/intro_opening_pikachu.py)').save(
         os.path.join(pdir, 'sheet-4x.png'))
 
+    small = pika.small_frames()
+    sims = [(rgba(v, pika.PAL), 'small ' + n) for n, v in small.items()]
+    for im, n in sims:
+        im.save(os.path.join(pdir, slug(n) + '.png'))
+    sheet(sims, 2, 4, 'Small PIKACHU (RED scale, 32x32, pixelled at 1x), 4x').save(
+        os.path.join(pdir, 'small-4x.png'))
+
     rv = red.model_views()
-    rims = [(rgba(v, red.PAL), n) for n, v in rv.items()]
+    rims = [(rgba(v, red.SHIELD_PAL if 'shielding' in n else red.PAL), n) for n, v in rv.items()]
     for im, n in rims:
         im.save(os.path.join(rdir, slug(n) + '.png'))
     refs = []
@@ -116,9 +127,9 @@ def main():
         os.path.join(rdir, 'sheet-4x.png'))
 
     # one page: 1x rows, then 4x of the key views
-    ones = sheet(pims + cims + rims, 12, 1, 'All views at 1x (as the game shows them)')
+    ones = sheet(pims + cims + rims + sims, 12, 1, 'All views at 1x (as the game shows them)')
     fours = sheet([(im, n) for im, n in pims if n in ('front A', 'front C', 'back', 'side', 'run 0', 'jump: air')]
-                  + [(im, n) for im, n in rims if n in ('run 0', 'back')], 8, 4,
+                  + [(im, n) for im, n in rims if n in ('run 0', 'back', 'back, shielding')], 9, 4,
                   'Key views at 4x: approved front poses, new back / side / run / jump, RED')
     close = sheet(cims, 2, 2, 'The approved 2x close-up at 2x')
     stack(ones, fours, close).save(os.path.join(a.out, 'compare.png'))
@@ -127,7 +138,43 @@ def main():
            [(im, 'RED ' + n) for im, n in rims if n.startswith('run')]
     stack(sheet(runs, 8, 1, 'Run cycles at 1x (4 frames each, loop)'),
           sheet(runs, 4, 4, 'Run cycles at 4x')).save(os.path.join(a.out, 'run-cycles.png'))
+    shield_mock({n: im for im, n in rims}, small).save(os.path.join(a.out, 'scene4-shield-mock.png'))
     print('wrote', a.out)
+
+
+def shield_mock(rims, small):
+    """Scene 4's shielding cut at 1x (and 3x) on a TEMPORARY backdrop: the storyboard's
+    storm sky and route 1 field in flat colours with diagonal rain, 240x96 (the intro's
+    letterbox). Three panels: RED crouched over PIKACHU, arms out, and the small PIKACHU
+    springing off his shoulder (scene 5, first cut)."""
+    W, H = 240, 96
+    panels = []
+    for name, extra in (('back, shielding', None), ('back, shielding, arms out', None),
+                        ('back, shielding', 'crouch')):
+        bg = Image.new('RGB', (W, H), (58, 66, 90))
+        d = ImageDraw.Draw(bg)
+        d.rectangle((0, 0, W, 22), fill=(41, 49, 66))           # storm clouds
+        d.rectangle((0, 58, W, H), fill=(49, 82, 57))           # the field
+        d.rectangle((0, 58, W, 61), fill=(66, 98, 66))
+        for x in range(-H, W, 11):                              # rain, 8x8-tile rhythm
+            for y in range(0, H, 8):
+                if (x // 11 + y // 8) % 3 == 0:
+                    d.line((x + y // 2, y, x + y // 2 + 2, y + 5), fill=(140, 156, 190))
+        if extra:                                               # PIKACHU has sprung out
+            rd = rgba(red.back_view('shield', pikachu=False), red.SHIELD_PAL)
+            bg.paste(rd, (88, H - 64), rd)
+            sp = rgba(small[extra], pika.PAL)
+            bg.paste(sp, (88 + 22 - 15, H - 64 - 3), sp)       # feet on his left shoulder
+        else:
+            bg.paste(rims[name], (88, H - 64), rims[name])
+        panels.append(bg)
+    one = Image.new('RGB', (W * 3 + 16, H + 16), (40, 40, 40))
+    for i, p in enumerate(panels):
+        one.paste(p, (4 + i * (W + 4), 12))
+    ImageDraw.Draw(one).text((4, 0), 'Scene 4/5 at 1x on a TEMPORARY backdrop (no scene 4 background yet)',
+                             fill=(255, 255, 255))
+    big = one.resize((one.size[0] * 3, one.size[1] * 3), Image.NEAREST)
+    return stack(one, big)
 
 
 if __name__ == '__main__':

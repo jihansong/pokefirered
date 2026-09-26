@@ -31,6 +31,7 @@ SAVES = [
     ('saves/pokemonthyl_v3.gba.sav', 'v0.3.0'),
     ('saves/v0.5.1.sav', 'v0.5.1'),
     ('saves/hoenn.sav', 'v0.7.0'),
+    ('saves/pokemonthyl_hoenn_QAed.sav', 'v0.8.0'),   # the user's own play, 2026-09-26
 ]
 
 BLOCKS = [('SaveBlock1', 'gSaveBlock1Ptr', 'sb1'), ('SaveBlock2', 'gSaveBlock2Ptr', 'sb2'),

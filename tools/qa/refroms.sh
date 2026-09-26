@@ -9,7 +9,7 @@
 set -e
 REPO=$(cd "$(dirname "$0")/../.." && pwd)
 BASE="$REPO/qa-base"
-TAGS=${*:-"v0.1.0 v0.2.1 v0.3.0 v0.5.1 v0.7.0"}
+TAGS=${*:-"v0.1.0 v0.2.1 v0.3.0 v0.5.1 v0.7.0 v0.8.0"}
 JOBS=$(nproc)
 mkdir -p "$BASE"
 cd "$REPO"

@@ -29,7 +29,7 @@
 
 `/workspaces` 아래는 남고, 그 밖(`/root`, 시스템 패키지)은 사라진다. 그래서:
 
-- **남는 것**: 저장소, `baserom_leafgreen.gba`, `saves/`(세이브 5개, gitignore), `qa-base/`(기준 ROM, gitignore), `../agbcc` 소스
+- **남는 것**: 저장소, `baserom_leafgreen.gba`, `saves/`(세이브 6개, gitignore), `qa-base/`(기준 ROM, gitignore), `../agbcc` 소스
 - **사라지고 setup.sh가 되살리는 것**: apt 패키지, `/root/src/pokeemerald`
 - **직접 다시 해야 하는 것**: 없음. 단 `qa-base/`가 없으면 `tools/qa/refroms.sh`를 한 번 돌린다(아래)
 
@@ -63,7 +63,7 @@ python3 tools/make_bps_patch.py           # pokemonthyl.bps, 적용 결과를 �
 | `refroms.sh` | 세이브 검사용 기준 ROM을 태그에서 빌드해 `qa-base/<tag>/`에 둔다. gh로 로그인돼 있으면 그 태그 릴리스의 BPS와 바이트 단위로 대조한다 |
 | `savetest.py` / `savetest_all.sh` | 세이브 호환: 세이브를 저장한 릴리스 ROM과 현재 ROM에서 각각 메인 메뉴까지 켜서 SaveBlock1·2·PC 보관함을 바이트 단위로 비교(IDENTICAL), 이어서 현재 ROM으로 이어하기가 제자리에서 도는지 확인 |
 | `mapsmoke.py` | 맵 전부(896개)에 세이브를 워프시켜 이어하기 → 멈춤·검은 화면·리셋·다른 맵으로 튕김을 잡는다. 맵의 모든 오브젝트가 한 번씩 화면에 들어오도록 출발점을 여러 개 잡는다(`--quick`은 하나). 약 80분(`-j 2`) |
-| `eventcheck.py` | 이벤트 실행 검사. JSON 한 줄에 세이브 수정·키 입력·스크린샷·기대값(플래그·변수·트레이너·맵·전투 여부·돈·가방 수량·알·운명적 만남 비트). `mash N`은 전투·대사가 끝나 조작이 풀릴 때까지 A를 누른다. `encounter`는 풀숲에서 좌우로 걸어 야생 전투를 낸다. `evomash`는 진화 장면이 시작되고 끝날 때까지 A. `expect species 0 METAPOD|…`는 파티 칸의 종, `expect sym sClockWindowShown = 1`은 RAM 심볼(정적 변수 포함)의 바이트. `expect mons HITMONLEE = 1`(파티+PC 마릿수), `expect move 0 MEGA_PUNCH`, `expect cb2 CB2_UpdatePartyMenu`, `mashto CB2_… N`(그 화면이 될 때까지 A). `"xfail": true`는 실패해야 통과하는 대조군. 예: `cases/z2.jsonl`, `cases/rocket.jsonl`, `cases/evolution.jsonl`, `cases/clock.jsonl`, `cases/choices.jsonl` |
+| `eventcheck.py` | 이벤트 실행 검사. JSON 한 줄에 세이브 수정·키 입력·스크린샷·기대값(플래그·변수·트레이너·맵·전투 여부·돈·가방 수량·알·운명적 만남 비트). `mash N`은 전투·대사가 끝나 조작이 풀릴 때까지 A를 누른다. `encounter`는 풀숲에서 좌우로 걸어 야생 전투를 낸다. `evomash`는 진화 장면이 시작되고 끝날 때까지 A. `expect species 0 METAPOD|…`는 파티 칸의 종, `expect sym sClockWindowShown = 1`은 RAM 심볼(정적 변수 포함)의 바이트. `expect mons HITMONLEE = 1`(파티+PC 마릿수), `expect move 0 MEGA_PUNCH`, `expect cb2 CB2_UpdatePartyMenu`, `mashto CB2_… N`(그 화면이 될 때까지 A). `"xfail": true`는 실패해야 통과하는 대조군. 예: `cases/z2.jsonl`, `cases/rocket.jsonl`, `cases/evolution.jsonl`, `cases/clock.jsonl`, `cases/choices.jsonl`, `cases/qaed.jsonl` |
 | `textaudit.py` | 구역별로 아직 에메랄드 원문 그대로인 대사(도달 가능한 것만)를 센다. 표지판·울음소리처럼 바꿀 필요가 없는 것은 따로 분류 |
 | `textwidth.py` | 모든 맵 대사의 한 줄 폭을 게임 글꼴 폭으로 계산해 208px 초과를 찾는다 |
 | `dexcheck.py` | 386종이 모두 게임 안에서 얻을 수 있는지 정적으로 확인 |
@@ -78,11 +78,12 @@ python3 tools/make_bps_patch.py           # pokemonthyl.bps, 적용 결과를 �
 | `saves/pokemonthyl_v3.gba.sav` (사용자 세이브) | v0.3.0 |
 | `saves/v0.5.1.sav` | v0.5.1 |
 | `saves/hoenn.sav` | v0.7.0 |
+| `saves/pokemonthyl_hoenn_QAed.sav` (사용자 세이브, 2026-09-26) | v0.8.0 |
 
 ### 단계마다 돌리는 것
 
 ```sh
-tools/qa/savetest_all.sh                       # 5종 모두 OK (load IDENTICAL)
+tools/qa/savetest_all.sh                       # 6종 모두 OK (load IDENTICAL)
 python3 tools/check_map_integrity.py           # ERROR 0
 python3 tools/check_event_wiring.py
 python3 tools/qa/mapsmoke.py -j $(nproc)       # RESET·BLACK·TIMEOUT·ERROR 0 (BATTLE은 참고)
@@ -91,6 +92,7 @@ python3 tools/qa/eventcheck.py tools/qa/cases/rocket.jsonl --shots /tmp/ec
 python3 tools/qa/eventcheck.py tools/qa/cases/evolution.jsonl --shots /tmp/ec
 python3 tools/qa/eventcheck.py tools/qa/cases/clock.jsonl --shots /tmp/ec
 python3 tools/qa/eventcheck.py tools/qa/cases/choices.jsonl --shots /tmp/ec
+python3 tools/qa/eventcheck.py tools/qa/cases/qaed.jsonl --shots /tmp/ec       # 사용자 세이브로 이어 하기
 python3 tools/qa/textaudit.py --zone Z2 --fail
 python3 tools/qa/textwidth.py
 python3 tools/qa/dexcheck.py

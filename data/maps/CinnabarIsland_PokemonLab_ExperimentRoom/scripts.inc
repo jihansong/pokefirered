@@ -275,8 +275,8 @@ CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_RevivedAllFossils::
 	end
 
 @ TRUE once every fossil the player has had from MT. MOON is revived. v0.9.0:
-@ TEAM ROCKET's loot on CINNABAR can bring the other one, so a player may hold
-@ both; each must be revived before this says all are done.
+@ MIGUEL lets the player take both, so a player may hold both; each must be
+@ revived before this says all are done.
 CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_CheckRevivedMtMoonFossil::
 	goto_if_unset FLAG_GOT_FOSSIL_FROM_MT_MOON, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_SetResultFalse
 	call CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_CheckAddHelixFossilToList

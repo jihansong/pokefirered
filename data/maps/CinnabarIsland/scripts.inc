@@ -406,8 +406,10 @@ CinnabarIsland_EventScript_RocketMagmarBattle::
 	setvar VAR_0x8004, 3200
 CinnabarIsland_EventScript_RocketCoins::
 	call EventScript_RocketMeowthCoins
-	msgbox CinnabarIsland_Text_FossilInLoot
-	call CinnabarIsland_EventScript_RocketFossil
+	msgbox CinnabarIsland_Text_CandyInLoot
+	giveitem ITEM_RARE_CANDY, 2
+	setvar VAR_0x8004, ROCKET_BONUS_CINNABAR_CANDY
+	call EventScript_RocketRewardResult
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox CinnabarIsland_Text_CallerStillBuzzing
 	closemessage
@@ -436,35 +438,4 @@ CinnabarIsland_EventScript_RocketMagmarRetry::
 	playbgm MUS_ENCOUNTER_ROCKET, 0
 	call EventScript_RocketTrioRetry
 	goto CinnabarIsland_EventScript_RocketMagmarBattle
-
-@ v0.9.0: the trio stole a FOSSIL from the LAB. The player gets the one not
-@ picked at MT. MOON. With neither picked yet there is no telling which to
-@ give (and giving one could leave two of a kind and no KABUTO ever), so the
-@ OFFICER at the VIRIDIAN POKéMON CENTER keeps it until the player has picked.
-CinnabarIsland_EventScript_RocketFossil::
-	goto_if_unset FLAG_GOT_FOSSIL_FROM_MT_MOON, CinnabarIsland_EventScript_RocketFossilToOfficer
-	goto_if_set FLAG_GOT_DOME_FOSSIL, CinnabarIsland_EventScript_RocketHelixFossil
-	goto_if_set FLAG_GOT_HELIX_FOSSIL, CinnabarIsland_EventScript_RocketDomeFossil
-CinnabarIsland_EventScript_RocketFossilToOfficer::
-	msgbox CinnabarIsland_Text_FossilToOfficer
-	return
-
-CinnabarIsland_EventScript_RocketHelixFossil::
-	giveitem ITEM_HELIX_FOSSIL
-	goto_if_eq VAR_0x8007, FALSE, CinnabarIsland_EventScript_RocketFossilHeld
-	setflag FLAG_GOT_HELIX_FOSSIL
-	goto CinnabarIsland_EventScript_RocketFossilGiven
-
-CinnabarIsland_EventScript_RocketDomeFossil::
-	giveitem ITEM_DOME_FOSSIL
-	goto_if_eq VAR_0x8007, FALSE, CinnabarIsland_EventScript_RocketFossilHeld
-	setflag FLAG_GOT_DOME_FOSSIL
-CinnabarIsland_EventScript_RocketFossilGiven::
-	setvar VAR_0x8004, ROCKET_BONUS_FOSSIL
-	special SetRocketRewardBit
-	return
-
-CinnabarIsland_EventScript_RocketFossilHeld::
-	setvar VAR_0x8004, ROCKET_BONUS_FOSSIL
-	goto EventScript_RocketRewardHeld
 

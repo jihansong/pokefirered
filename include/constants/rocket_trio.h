@@ -17,7 +17,7 @@
 #define ROCKET_BONUS_LEAF_STONE     4   // #7  CELADON GYM
 #define ROCKET_BONUS_UP_GRADE       5   // #8  SILPH CO.
 #define ROCKET_BONUS_DRAGON_SCALE   6   // #9  SAFARI ZONE gate
-#define ROCKET_BONUS_FOSSIL         7   // #10 CINNABAR, the MT. MOON fossil not picked
+#define ROCKET_BONUS_CINNABAR_CANDY 7   // #10 CINNABAR, RARE CANDY x2 (was the MT. MOON fossil not picked)
 #define ROCKET_BONUS_GYM_CANDY      8   // #11 VIRIDIAN GYM, RARE CANDY x3
 #define ROCKET_BONUS_EEVEE_EGG      9   // #11 VIRIDIAN GYM, an EEVEE EGG
 #define ROCKET_BONUS_FIRE_STONE     10  // #12 INDIGO PLATEAU

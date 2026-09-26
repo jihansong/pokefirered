@@ -110,7 +110,7 @@ ViridianCity_PokemonCenter_1F_EventScript_Officer::
 	call ViridianCity_PokemonCenter_1F_EventScript_OfficerLeafStone
 	call ViridianCity_PokemonCenter_1F_EventScript_OfficerUpGrade
 	call ViridianCity_PokemonCenter_1F_EventScript_OfficerDragonScale
-	call ViridianCity_PokemonCenter_1F_EventScript_OfficerFossil
+	call ViridianCity_PokemonCenter_1F_EventScript_OfficerCinnabarCandy
 	call ViridianCity_PokemonCenter_1F_EventScript_OfficerGymCandy
 	call ViridianCity_PokemonCenter_1F_EventScript_OfficerEeveeEgg
 	call ViridianCity_PokemonCenter_1F_EventScript_OfficerFireStone
@@ -201,18 +201,12 @@ ViridianCity_PokemonCenter_1F_EventScript_OfficerDragonScale::
 	setvar VAR_0x8006, 1
 	goto ViridianCity_PokemonCenter_1F_EventScript_OfficerGiveBonus
 
-@ The FOSSIL from CINNABAR: the one not picked at MT. MOON, so only once the
-@ player has picked.
-ViridianCity_PokemonCenter_1F_EventScript_OfficerFossil::
+ViridianCity_PokemonCenter_1F_EventScript_OfficerCinnabarCandy::
 	goto_if_unset FLAG_ROCKET_CINNABAR, EventScript_Return
-	goto_if_unset FLAG_GOT_FOSSIL_FROM_MT_MOON, EventScript_Return
-	setvar VAR_0x8004, ROCKET_BONUS_FOSSIL
-	setvar VAR_0x8006, 1
-	setvar VAR_0x8005, ITEM_HELIX_FOSSIL
-	goto_if_unset FLAG_GOT_HELIX_FOSSIL, ViridianCity_PokemonCenter_1F_EventScript_OfficerGiveBonus
-	setvar VAR_0x8005, ITEM_DOME_FOSSIL
-	goto_if_unset FLAG_GOT_DOME_FOSSIL, ViridianCity_PokemonCenter_1F_EventScript_OfficerGiveBonus
-	return
+	setvar VAR_0x8004, ROCKET_BONUS_CINNABAR_CANDY
+	setvar VAR_0x8005, ITEM_RARE_CANDY
+	setvar VAR_0x8006, 2
+	goto ViridianCity_PokemonCenter_1F_EventScript_OfficerGiveBonus
 
 ViridianCity_PokemonCenter_1F_EventScript_OfficerGymCandy::
 	goto_if_unset FLAG_ROCKET_VIRIDIAN_GYM, EventScript_Return
@@ -235,18 +229,8 @@ ViridianCity_PokemonCenter_1F_EventScript_OfficerGiveBonus::
 	call ViridianCity_PokemonCenter_1F_EventScript_OfficerHandOver
 	giveitem VAR_0x8005, VAR_0x8006
 	goto_if_eq VAR_0x8007, FALSE, ViridianCity_PokemonCenter_1F_EventScript_OfficerNoRoom
-	call_if_eq VAR_0x8005, ITEM_HELIX_FOSSIL, ViridianCity_PokemonCenter_1F_EventScript_OfficerGotHelix
-	call_if_eq VAR_0x8005, ITEM_DOME_FOSSIL, ViridianCity_PokemonCenter_1F_EventScript_OfficerGotDome
 	special SetRocketRewardBit
 	addvar VAR_TEMP_2, 1
-	return
-
-ViridianCity_PokemonCenter_1F_EventScript_OfficerGotHelix::
-	setflag FLAG_GOT_HELIX_FOSSIL
-	return
-
-ViridianCity_PokemonCenter_1F_EventScript_OfficerGotDome::
-	setflag FLAG_GOT_DOME_FOSSIL
 	return
 
 @ An old reward the bag had no room for: VAR_0x8004 = its held bit,

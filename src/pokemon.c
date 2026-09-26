@@ -72,7 +72,6 @@ static u8 GetNatureFromPersonality(u32 personality);
 static bool8 PartyMonHasStatus(struct Pokemon *mon, u32 unused, u32 healMask, u8 battleId);
 static bool8 HealStatusConditions(struct Pokemon *mon, u32 unused, u32 healMask, u8 battleId);
 static bool8 IsPokemonStorageFull(void);
-static u8 SendMonToPC(struct Pokemon* mon);
 static void EncryptBoxMon(struct BoxPokemon *boxMon);
 static void DeleteFirstMoveAndGiveMoveToBoxMon(struct BoxPokemon *boxMon, u16 move);
 static void GiveBoxMonInitialMoveset(struct BoxPokemon *boxMon);
@@ -2855,6 +2854,17 @@ static void DecryptBoxMon(struct BoxPokemon *boxMon)
     }
 }
 
+// Thunder Yellow: gives an existing POKéMON another original trainer ID (a snagged
+// one gets the player's). The ID is half of the encryption key, so the data is
+// decrypted with the old key and encrypted again with the new one; the checksum
+// is over the decrypted data and stays valid.
+void SetBoxMonOtIdReencrypt(struct BoxPokemon *boxMon, u32 otId)
+{
+    DecryptBoxMon(boxMon);
+    boxMon->otId = otId;
+    EncryptBoxMon(boxMon);
+}
+
 #define SUBSTRUCT_CASE(n, v1, v2, v3, v4)                               \
 case n:                                                                 \
     {                                                                   \
@@ -3026,6 +3036,8 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
     // stored next to isEgg, outside the encrypted substructs
     if (field == MON_DATA_STARTER_PIKACHU)
         return boxMon->isStarterPikachu;
+    if (field == MON_DATA_SNAGGED)
+        return boxMon->isSnagged;
 
     if (field > MON_DATA_ENCRYPT_SEPARATOR)
     {
@@ -3463,6 +3475,11 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         boxMon->isStarterPikachu = *data ? TRUE : FALSE;
         return;
     }
+    if (field == MON_DATA_SNAGGED)
+    {
+        boxMon->isSnagged = *data ? TRUE : FALSE;
+        return;
+    }
 
     if (field > MON_DATA_ENCRYPT_SEPARATOR)
     {
@@ -3757,7 +3774,7 @@ u8 GiveMonToPlayer(struct Pokemon *mon)
     return MON_GIVEN_TO_PARTY;
 }
 
-static u8 SendMonToPC(struct Pokemon* mon)
+u8 SendMonToPC(struct Pokemon* mon)
 {
     s32 boxNo, boxPos;
 

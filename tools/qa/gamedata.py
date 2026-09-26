@@ -49,6 +49,7 @@ FIELDS = {
     'questlogscene': ('QuestLogScene', None),
     'sb1': ('SaveBlock1', None),
     'sb2.playerName': ('SaveBlock2', 'playerName'),
+    'sb2.playerTrainerId': ('SaveBlock2', 'playerTrainerId'),
     'sb2.specialSaveWarpFlags': ('SaveBlock2', 'specialSaveWarpFlags'),
     'sb2.optionsButtonMode': ('SaveBlock2', 'optionsButtonMode'),
     'sb2.playTimeHours': ('SaveBlock2', 'playTimeHours'),
@@ -147,7 +148,7 @@ def off(name):
 
 CONST_HEADERS = ['constants/flags.h', 'constants/vars.h', 'constants/map_groups.h', 'constants/layouts.h',
                  'constants/species.h', 'constants/items.h', 'constants/moves.h', 'constants/opponents.h',
-                 'pokemon_storage_system.h']
+                 'constants/trainers.h', 'pokemon_storage_system.h']
 _CONST_CACHE = {}
 
 

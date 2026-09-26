@@ -20,6 +20,7 @@ Commands (names are the C constant names; numbers work too):
     held SLOT ITEM             party SLOT holds ITEM (ITEM_NONE takes it away)
     friendship SLOT N          party SLOT's friendship (0-255)
     starterbit SLOT 0|1        party SLOT's isStarterPikachu bit (Oak's PIKACHU)
+    snagbit SLOT 0|1           party SLOT's isSnagged bit (taken from a trainer)
     otid SLOT N                party SLOT's original trainer ID (N may be 0x...),
                                as if another player's POKéMON had been traded in
     frombox INDEX SLOT         party SLOT becomes a copy of PC box POKéMON
@@ -30,6 +31,7 @@ Commands (names are the C constant names; numbers work too):
     day N                      move the game clock N days forward (or back)
     hour H                     move the game clock forward to the next H:00
     dex SPECIES                mark a species seen and owned (all 4 places)
+    dexclear SPECIES           mark a species neither seen nor owned (all 4)
     money N / coins N          money and coins (both kept XORed with the save key)
     item ITEM N                exactly N of ITEM in the bag (0 removes it)
     firstitem ITEM N           exactly N of ITEM, first in its pocket, where the
@@ -59,7 +61,7 @@ from savefile import SaveFile                                   # noqa: E402
 
 
 COMMANDS = {'info', 'flag', 'var', 'trainer', 'warp', 'strong', 'mon', 'tonext', 'held', 'friendship',
-            'starterbit', 'otid', 'frombox', 'lead', 'party', 'hp', 'day', 'hour', 'dex',
+            'starterbit', 'snagbit', 'dexclear', 'otid', 'frombox', 'lead', 'party', 'hp', 'day', 'hour', 'dex',
             'money', 'coins', 'item', 'firstitem', 'fillitems', 'fillboxes', 'fastbattle',
             'noquestlog'}
 
@@ -166,6 +168,11 @@ def run(argv):
             s.party_mon(slot).set_starter_bit(on)
             dirty = True
             print('slot %d isStarterPikachu %d' % (slot, on))
+        elif cmd == 'snagbit':
+            slot, on = int(argv.pop(0)), argv.pop(0) == '1'
+            s.party_mon(slot).set_snagged(on)
+            dirty = True
+            print('slot %d isSnagged %d' % (slot, on))
         elif cmd == 'otid':
             slot, n = int(argv.pop(0)), int(argv.pop(0), 0)
             s.party_mon(slot).set_otid(n)
@@ -239,6 +246,11 @@ def run(argv):
             s.set_dex(_national(sp))
             dirty = True
             print('dex %s seen+owned' % name)
+        elif cmd == 'dexclear':
+            name = argv.pop(0)
+            s.clear_dex(_national(_species(name)))
+            dirty = True
+            print('dex %s neither seen nor owned' % name)
         elif cmd == 'money':
             s.set_money(int(argv.pop(0)))
             dirty = True

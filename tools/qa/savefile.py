@@ -186,6 +186,35 @@ class Blocks:
                 filled += 1
         return filled
 
+    # ------------------------------------------------------------------- dex
+    def set_dex(self, species_national, seen=True, owned=True):
+        """Seen/owned must agree in all four places or the game treats the
+        entry as tampered with (SaveBlock2 pokedex, SaveBlock1 seen1/seen2)."""
+        i = species_national - 1
+        byte, bit = i // 8, i % 8
+        places = []
+        if owned:
+            places.append((self.sb2, off('sb2.pokedex') + off('dex.owned')))
+        if seen:
+            places += [(self.sb2, off('sb2.pokedex') + off('dex.seen')),
+                       (self.sb1, off('sb1.seen1')), (self.sb1, off('sb1.seen2'))]
+        for blk, o in places:
+            blk[o + byte] |= 1 << bit
+
+    def clear_dex(self, species_national):
+        """Neither seen nor owned, in all four places."""
+        i = species_national - 1
+        for blk, o in [(self.sb2, off('sb2.pokedex') + off('dex.owned')), (self.sb2, off('sb2.pokedex') + off('dex.seen')),
+                       (self.sb1, off('sb1.seen1')), (self.sb1, off('sb1.seen2'))]:
+            blk[o + i // 8] &= ~(1 << i % 8) & 0xFF
+
+    def dex_state(self, species_national):
+        """The four dex bits: (owned, seen, seen1, seen2)."""
+        i = species_national - 1
+        places = [(self.sb2, off('sb2.pokedex') + off('dex.owned')), (self.sb2, off('sb2.pokedex') + off('dex.seen')),
+                  (self.sb1, off('sb1.seen1')), (self.sb1, off('sb1.seen2'))]
+        return tuple(bool(blk[o + i // 8] >> (i % 8) & 1) for blk, o in places)
+
 
 class SaveFile(Blocks):
     def __init__(self, path):
@@ -313,21 +342,6 @@ class SaveFile(Blocks):
         struct.pack_into('<b', self.sb2, o + off('time.hours'), rest // 60)
         struct.pack_into('<b', self.sb2, o + off('time.minutes'), rest % 60)
         return target
-
-    # ------------------------------------------------------------------- dex
-    def set_dex(self, species_national, seen=True, owned=True):
-        """Seen/owned must agree in all four places or the game treats the
-        entry as tampered with (SaveBlock2 pokedex, SaveBlock1 seen1/seen2)."""
-        i = species_national - 1
-        byte, bit = i // 8, i % 8
-        places = []
-        if owned:
-            places.append((self.sb2, off('sb2.pokedex') + off('dex.owned')))
-        if seen:
-            places += [(self.sb2, off('sb2.pokedex') + off('dex.seen')),
-                       (self.sb1, off('sb1.seen1')), (self.sb1, off('sb1.seen2'))]
-        for blk, o in places:
-            blk[o + byte] |= 1 << bit
 
     # ----------------------------------------------------------------- party
     def party_count(self):
@@ -496,6 +510,25 @@ class Mon:
 
     def set_starter_bit(self, on):
         self.blk[self.o + 19] = (self.blk[self.o + 19] & ~0x10) | (0x10 if on else 0)
+
+    def snagged(self):
+        # BoxPokemon.isSnagged (v0.10.0), bit 5 of the same byte
+        return bool(self.blk[self.o + 19] & 0x20)
+
+    def set_snagged(self, on):
+        self.blk[self.o + 19] = (self.blk[self.o + 19] & ~0x20) | (0x20 if on else 0)
+
+    def ot_name_raw(self):
+        return bytes(self.blk[self.o + 20:self.o + 27])
+
+    def held(self):
+        return struct.unpack_from('<H', self.subs()['G'], 2)[0]
+
+    def met(self):
+        """(met location, met level, BALL item, OT gender) from PokemonSubstruct3."""
+        m = self.subs()['M']
+        loc, word = m[1], struct.unpack_from('<H', m, 2)[0]
+        return loc, word & 0x7F, word >> 11 & 0xF, word >> 15
 
     def make_strong(self, level, rom=None):
         """Level, experience, IVs 31 and all six stats set together, HP full."""

@@ -296,10 +296,10 @@ def frames():
         'A_sus': pose(-1, 'side', 'half', 'flat', lean=-1),
         'MID': pose(0, 'tucked', 'half', 'flat', ears='drag'),
         'B': pose(0.5, 'tucked', 'squeeze', 'tight', ears='drag', squash=0.93),
-        'C_over': pose(1, 'crossed', 'shut', 'pout', ears='fling', tail_mode='lag', lean=1, chin=1),
-        'C': pose(1, 'crossed', 'shut', 'pout', ears='back', lean=1, chin=1),
-        'C_hmph': pose(1, 'crossed', 'shut', 'pout', ears='back', lean=1, chin=2),
-        'C_flick': pose(1, 'crossed', 'shut', 'pout', ears='back', tail_mode='flick', lean=1, chin=1),
+        'C_over': pose(1, 'tucked', 'shut', 'pout', ears='fling', tail_mode='lag', lean=1, chin=1),
+        'C': pose(1, 'tucked', 'shut', 'pout', ears='back', lean=1, chin=1),
+        'C_hmph': pose(1, 'tucked', 'shut', 'pout', ears='back', lean=1, chin=2),
+        'C_flick': pose(1, 'tucked', 'shut', 'pout', ears='back', tail_mode='flick', lean=1, chin=1),
     }
 
 
@@ -307,6 +307,6 @@ def closeup_frames():
     """The 2x close-up (128x128, only the top shows in the letterbox): sulking, and
     the "hmph!" with the chin raised."""
     return {
-        'CU': pose(1, 'crossed', 'shut', 'pout', ears='back', lean=1, chin=1, sc=2),
-        'CU_hmph': pose(1, 'crossed', 'shut', 'pout', ears='back', lean=1, chin=2, sc=2),
+        'CU': pose(1, 'tucked', 'shut', 'pout', ears='back', lean=1, chin=1, sc=2),
+        'CU_hmph': pose(1, 'tucked', 'shut', 'pout', ears='back', lean=1, chin=2, sc=2),
     }

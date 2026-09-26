@@ -262,6 +262,34 @@ def crackle_frames():
     return out
 
 
+CRACKLE_CU = (((29, 29), [(22, 25), (18, 17), (11, 14), (7, 6), (3, 3)],
+                          [(24, 29), (17, 27), (12, 30), (6, 26), (1, 27)]),
+              ((29, 29), [(23, 22), (16, 20), (13, 12), (6, 10), (2, 5)],
+                          [(24, 27), (18, 29), (13, 24), (7, 25), (2, 20)]))
+
+
+def crackle_cu_frames():
+    """Two 32x32 frames of the close-up's crackle: two zigzag strands from the rim
+    of the near cheek (lower right corner) up and to the left, out past the head's
+    outline; white core, pale yellow round it, the orange rim only on the outside."""
+    out = []
+    for start, a, b in CRACKLE_CU:
+        img = [[0] * 32 for _ in range(32)]
+        core = set()
+        for path in ([start] + a, [start] + b):
+            for p, q in zip(path, path[1:]):
+                core |= _line(p, q)
+        for x, y in core:
+            for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                if 0 <= x + dx < 32 and 0 <= y + dy < 32:
+                    img[y + dy][x + dx] = pika.SPARK_PALE
+        for x, y in core:
+            img[y][x] = pika.WHITE
+        _rim(img, pika.SPARK_RIM)
+        out.append(img)
+    return out
+
+
 def spark_frames():
     """Two 16x16 crackles like the game's battle sparks: white core, pale yellow,
     yellow, an orange rim (graphics/battle_anims/sprites/spark colours)."""
@@ -435,8 +463,8 @@ def closeup_layer():
 # ---------------------------------------------------------------- choreography
 FRAMES = 76                      # F842-917 = bar 2 of MUS_INTRO_FIGHT (19.15 frames a beat)
 TRACKS = ('pikachu', 'sleeve', 'hand', 'ball', 'smoke', 'spark_cheek', 'spark_ball', 'bolt',
-          'bust0', 'bust1', 'bust2', 'bust3')
-BUST_TRACKS = TRACKS[-4:]        # the 2x close-up, 128x128 as four 64x64 quarters
+          'bust0', 'bust1', 'bust2', 'bust3', 'crackle_cu')
+BUST_TRACKS = TRACKS[8:12]        # the 2x close-up, 128x128 as four 64x64 quarters
 HIDE, FRONT = 1, 2               # key flags: not drawn / drawn in front of the arm
 HAND_HOLD, HAND_OPEN = 1, 2      # frames of arm.png (0 is the sleeve half)
 BURST, CRACKLE = 0, 2            # first frames of the two effects in spark.png
@@ -445,8 +473,8 @@ T_CU = 48                        # half a beat before beat 4: cut to the close-u
 T_HMPH, T_CRACKLE2 = 57, 66      # beat 4: "hmph!"; the second crackle
 DESK_Y = 112                     # ball centre on the table (screen row, in front of the arm)
 CHEEK_WORLD = (170, 60)          # crackle sprite corner at PIKACHU's near cheek (poses C)
-BUST_AT = (58, 30)               # close-up corner on screen at the cut
-BUST_CHEEK = (37, 40)            # crackle corner relative to the close-up's corner
+BUST_AT = (58, 34)               # close-up corner on screen at the cut (ear tips clear the letterbox)
+BUST_CHEEK = (18, 24)            # close-up crackle corner relative to the close-up's corner
 SHAKE = {23: 1, 24: -1, 25: 1}   # the hit: screen shake, 1 pixel, no change of brightness
 LAYOUT_LAB, LAYOUT_CLOSEUP = 0, 1
 
@@ -517,8 +545,10 @@ def bust_track(t):
     chin raised on beat 4."""
     push = (t - T_CU) // 7                       # 0..3: the camera creeps closer
     breathe = -1 if ((t - T_CU) // 8) % 2 else 0
-    if T_HMPH <= t < T_HMPH + 5:
-        return 1, -push, -2 - push // 2
+    if t == T_HMPH:
+        return 0, -push, 1 - push // 2          # on the beat: pressed down a pixel ...
+    if T_HMPH < t < T_HMPH + 5:
+        return 1, -push, -2 - push // 2         # ... then "hmph!", chin up
     return 0, -push, breathe - push // 2
 
 
@@ -545,8 +575,8 @@ def choreography():
             for t0, n in ((T_HMPH, 5), (T_CRACKLE2, 5)):
                 if t0 <= t < t0 + n:
                     lift = -2 if frame == 1 else 0
-                    k['spark_cheek'] = (x0 + BUST_CHEEK[0], y0 + BUST_CHEEK[1] + lift,
-                                        CRACKLE + (t - t0) // 2 % 2, 0)
+                    k['crackle_cu'] = (x0 + BUST_CHEEK[0], y0 + BUST_CHEEK[1] + lift,
+                                       (t - t0) // 2 % 2, 0)
             keys.append(k)
             continue
         layout.append(LAYOUT_LAB)
@@ -609,7 +639,7 @@ def choreography():
             k['bolt'] = (bxs, bys, t % 2, FRONT)
         else:
             k['bolt'] = hidden
-        for tr in BUST_TRACKS:
+        for tr in BUST_TRACKS + ('crackle_cu',):
             k[tr] = hidden
         keys.append(k)
     return keys, scroll, layout
@@ -641,6 +671,7 @@ def art():
            'bolt': (bolt_frames(), PIKA_PAL)}
     for q, frames in enumerate(bust_quarters()):
         out[BUST_TRACKS[q]] = (frames, PIKA_PAL)
+    out['crackle_cu'] = (crackle_cu_frames(), PIKA_PAL)
     return out
 
 
@@ -671,7 +702,7 @@ def render_frame(k, sc, lay, layers, sheets):
         screen.paste(im.convert('RGB'), (x, y), mask_of(im))
     front_ball = k['ball'][3] & FRONT
     order = list(BUST_TRACKS) + ['pikachu'] + ([] if front_ball else ['ball']) + ['sleeve', 'hand'] + \
-        (['ball'] if front_ball else []) + ['smoke', 'bolt', 'spark_ball', 'spark_cheek']
+        (['ball'] if front_ball else []) + ['smoke', 'bolt', 'spark_ball', 'spark_cheek', 'crackle_cu']
     for track in order:
         put(track)
     black = Image.new('RGB', (240, VIEW_Y), (0, 0, 0))
@@ -767,6 +798,7 @@ def main():
     strip(sheets['spark_cheek'][0], PIKA_PAL).save(OUT + '/spark.png')
     strip(sheets['bolt'][0], PIKA_PAL).save(OUT + '/bolt.png')
     strip([f for q in bust_quarters() for f in q], PIKA_PAL).save(OUT + '/closeup.png')
+    strip(crackle_cu_frames(), PIKA_PAL).save(OUT + '/crackle_cu.png')
     keys, scroll, layout = choreography()
     write_header(keys, scroll, layout, HEADER)
     print('scene 2: %d background tiles, %d frames' % (n, len(keys)))

@@ -45,7 +45,13 @@
     holds OBJ VRAM for one frame only: when its frame changes, the new frame's tiles are
     copied from ROM in the next VBlank (ProcessSpriteCopyRequests, before the OAM that
     shows them takes effect). So a scene can have any number of frames; what it needs
-    in OBJ VRAM is the sum of its tracks' frame sizes (scene 2: 240 tiles of 1024).
+    in OBJ VRAM is the sum of its tracks' frame sizes (scene 2: 500 tiles of 1024).
+    A scene's sprites are made, hidden, when its graphics are preloaded, with one block
+    of OBJ tiles for all of them (one allocation, not one per sprite: the cut frame must
+    stay short), in the track set of its slot; the cut only shows them.
+
+    A frame that runs late must not show half a cut: the VBlank callback switches the
+    layers and writes the scroll only when that frame's sprites have been built.
 
     Scenes not drawn yet show a flat colour card with their number (the skeleton,
     docs/v0.11.0-plan.md 10.1 O0). Scene 2 is drawn: tools/make_intro_opening_scene2.py
@@ -100,6 +106,11 @@ struct OpeningTrack
 #define PAL_CARD      1     // BG palette of the colour cards
 #define PAL_SCENE2    2     // BG palette of scene 2 (baked into its tilemap)
 
+#define TAG_ANCHOR 0x1400  // one tile, so the scenes' sprites count as sheet sprites
+
+extern u8 gSpriteTileAllocBitmap[];
+extern bool8 gShouldProcessSpriteCopyRequests;
+
 enum {
     PALTAG_DIGITS = 0x1400,
     PALTAG_S2_PIKACHU,  // PIKACHU, its sparks and bolt
@@ -115,23 +126,30 @@ struct OpeningScene
     void (*end)(u8 scene);              // after its last frame
 };
 
+struct OpeningTrackSet
+{
+    u8 count;
+    s16 tileStart;                      // one block of OBJ tiles for all the tracks
+    u16 tileCount;
+    const struct OpeningTrack *tracks[MAX_TRACKS];
+    u8 spriteIds[MAX_TRACKS];
+    u8 shownFrame[MAX_TRACKS];          // frame whose tiles are in the track's VRAM
+    u16 tileOffset[MAX_TRACKS];
+    struct SpriteTemplate templates[MAX_TRACKS];
+};
+
 struct Opening
 {
     u32 startVblank;
     s8 scene;       // index of the scene on screen, -1 before the first
     s8 loaded;      // index of the scene whose graphics wait in the free slot
     bool8 musicStarted;
-    u8 numTracks;
     u8 pendingSlot; // char block the layers switch to at the next VBlank, NO_SLOT if none
     u8 pendingBackMap;  // screen block for BG3
     u8 pendingFrontMap; // screen block for BG2, NO_SLOT to hide BG2
     u8 layout;      // scene 2: which backgrounds show (lab or close-up)
     struct OpeningScroll scroll; // written to the layers at the next VBlank
-    const struct OpeningTrack *tracks[MAX_TRACKS];
-    u8 spriteIds[MAX_TRACKS];
-    u8 shownFrame[MAX_TRACKS];          // frame whose tiles are in the track's VRAM
-    struct SpriteFrameImage images[MAX_TRACKS];
-    struct SpriteTemplate templates[MAX_TRACKS];
+    struct OpeningTrackSet sets[2];     // by slot: the scene on screen, the next one
 #if OPENING_TILE_STRESS_TEST
     u32 calls;
 #endif
@@ -147,6 +165,7 @@ static EWRAM_DATA u16 sOpeningStressTiles = 0;  // OBJ tiles the test's tracks h
 #endif
 
 static void VBlankCB_Opening(void);
+static void DestroyTracks(u8 set);
 static void Card_Load(u8 scene, u8 slot);
 static void Card_Begin(u8 scene, u8 slot);
 static void Card_Update(u8 scene, u16 t);
@@ -155,9 +174,10 @@ static void Scene2_Load(u8 scene, u8 slot);
 static void Scene2_Begin(u8 scene, u8 slot);
 static void Scene2_Update(u8 scene, u16 t);
 #if OPENING_TILE_STRESS_TEST
+static void Stress_Load(u8 scene, u8 slot);
 static void Stress_Begin(u8 scene, u8 slot);
 static void Stress_Update(u8 scene, u16 t);
-#define SCENE4_5 Card_Load, Stress_Begin, Stress_Update, Scene_End
+#define SCENE4_5 Stress_Load, Stress_Begin, Stress_Update, Scene_End
 #else
 #define SCENE4_5 Card_Load, Card_Begin, Card_Update, Scene_End
 #endif
@@ -190,6 +210,7 @@ static const u32 sScene2_Ball_Gfx[]    = INCBIN_U32("graphics/intro/opening/scen
 static const u32 sScene2_Spark_Gfx[]   = INCBIN_U32("graphics/intro/opening/scene2/spark.4bpp");
 static const u32 sScene2_Bolt_Gfx[]    = INCBIN_U32("graphics/intro/opening/scene2/bolt.4bpp");
 static const u32 sScene2_Closeup_Gfx[] = INCBIN_U32("graphics/intro/opening/scene2/closeup.4bpp");
+static const u32 sScene2_CrackleCu_Gfx[] = INCBIN_U32("graphics/intro/opening/scene2/crackle_cu.4bpp");
 
 // closeup.png: for each quarter of the 128x128 close-up, its two frames (64x64 each)
 #define CLOSEUP_QUARTER(q) (sScene2_Closeup_Gfx + (q) * 2 * (64 * 64 / 2) / 4)
@@ -238,6 +259,7 @@ void Opening_Init(void)
 {
     struct Opening *o = AllocZeroed(sizeof(*o));
     struct SpritePalette digitsPal;
+    struct SpriteSheet anchor;
 
     sOpening = o;
     o->startVblank = gMain.vblankCounter2;
@@ -260,6 +282,10 @@ void Opening_Init(void)
     digitsPal.data = sDigits_Pal;
     digitsPal.tag = PALTAG_DIGITS;
     LoadSpritePalette(&digitsPal);
+    anchor.data = sDigits_Gfx;
+    anchor.size = TILE_SIZE_4BPP;
+    anchor.tag = TAG_ANCHOR;
+    LoadSpriteSheet(&anchor);
 }
 
 u8 Opening_Run(void)
@@ -311,7 +337,10 @@ void Opening_Free(void)
         return;
     if (o->scene >= 0)
         sScenes[o->scene].end(o->scene);
+    DestroyTracks(0);
+    DestroyTracks(1);
     FreeSpritePaletteByTag(PALTAG_DIGITS);
+    FreeSpriteTilesByTag(TAG_ANCHOR);
     Free(o);
     sOpening = NULL;
 }
@@ -342,11 +371,13 @@ static void VBlankCB_Opening(void)
 {
     struct Opening *o = sOpening;
 
+    bool8 spritesBuilt = gShouldProcessSpriteCopyRequests;
+
     LoadOam();
     ProcessSpriteCopyRequests();
     TransferPlttBuffer();
-    if (o == NULL)
-        return;
+    if (o == NULL || !spritesBuilt)
+        return;     // the frame ran late: keep the layers as they are, with its sprites
     if (o->pendingSlot != NO_SLOT)
     {
         SetBgControlAttributes(BG_BACK, o->pendingSlot, o->pendingBackMap, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF);
@@ -375,81 +406,122 @@ static u16 TrackFrameSize(const struct OpeningTrack *track)
     return track->width * track->height / 2;
 }
 
-// Create a track's sprite (hidden). It holds OBJ VRAM for one frame of the track;
-// no tiles are copied until TrackShow asks for a frame.
-static u8 AddTrack(const struct OpeningTrack *track)
+// Make the sprites of a scene's tracks, hidden, in track set `set` (the scene's slot):
+// one block of OBJ tiles holds one frame of each track. No tiles are copied until
+// TrackShow asks for a frame; palettes are set when the scene begins (ActivateTracks).
+static void CreateTracks(u8 set, const struct OpeningTrack *tracks, u8 count)
 {
-    struct Opening *o = sOpening;
-    u8 i = o->numTracks;
-    struct SpriteTemplate *template;
-    u8 spriteId;
+    struct OpeningTrackSet *ts = &sOpening->sets[set];
+    u16 tiles = 0;
+    u8 i;
 
-    if (i >= MAX_TRACKS)
-        return MAX_TRACKS;
-    o->images[i].data = track->gfx;
-    o->images[i].size = TrackFrameSize(track);
-    template = &o->templates[i];
-    template->tileTag = TAG_NONE;
-    template->paletteTag = track->paletteTag;
-    template->oam = track->oam;
-    template->anims = gDummySpriteAnimTable;
-    template->images = &o->images[i];
-    template->affineAnims = gDummySpriteAffineAnimTable;
-    template->callback = SpriteCallbackDummy;
-    spriteId = CreateSprite(template, 0, 0, track->subpriority);
-    if (spriteId != MAX_SPRITES)
-        gSprites[spriteId].invisible = TRUE;
-    o->tracks[i] = track;
-    o->spriteIds[i] = spriteId;
-    o->shownFrame[i] = NO_FRAME;
-    o->numTracks++;
-    return i;
+    DestroyTracks(set);
+    for (i = 0; i < count && i < MAX_TRACKS; i++)
+    {
+        ts->tileOffset[i] = tiles;
+        tiles += TrackFrameSize(&tracks[i]) / TILE_SIZE_4BPP;
+    }
+    ts->tileStart = AllocSpriteTiles(tiles);
+    if (ts->tileStart < 0)
+        return;
+    ts->tileCount = tiles;
+    for (i = 0; i < count && i < MAX_TRACKS; i++)
+    {
+        struct SpriteTemplate *template = &ts->templates[i];
+        u8 spriteId;
+
+        template->tileTag = TAG_ANCHOR;
+        template->paletteTag = TAG_NONE;
+        template->oam = tracks[i].oam;
+        template->anims = gDummySpriteAnimTable;
+        template->images = NULL;
+        template->affineAnims = gDummySpriteAffineAnimTable;
+        template->callback = SpriteCallbackDummy;
+        spriteId = CreateSprite(template, 0, 0, tracks[i].subpriority);
+        if (spriteId != MAX_SPRITES)
+        {
+            gSprites[spriteId].invisible = TRUE;
+            gSprites[spriteId].oam.tileNum = ts->tileStart + ts->tileOffset[i];
+        }
+        ts->tracks[i] = &tracks[i];
+        ts->spriteIds[i] = spriteId;
+        ts->shownFrame[i] = NO_FRAME;
+    }
+    ts->count = i;
+}
+
+// The scene begins: its sprites take their palettes (loaded just before).
+static void ActivateTracks(u8 set)
+{
+    struct OpeningTrackSet *ts = &sOpening->sets[set];
+    u8 i;
+
+    for (i = 0; i < ts->count; i++)
+    {
+        if (ts->spriteIds[i] != MAX_SPRITES)
+            gSprites[ts->spriteIds[i]].oam.paletteNum = IndexOfSpritePaletteTag(ts->tracks[i]->paletteTag);
+    }
+}
+
+static void DestroyTracks(u8 set)
+{
+    struct OpeningTrackSet *ts = &sOpening->sets[set];
+    u16 n;
+    u8 i;
+
+    for (i = 0; i < ts->count; i++)
+    {
+        if (ts->spriteIds[i] != MAX_SPRITES)
+            DestroySprite(&gSprites[ts->spriteIds[i]]);
+    }
+    for (n = 0; n < ts->tileCount; n++)
+        gSpriteTileAllocBitmap[(ts->tileStart + n) >> 3] &= ~(1 << ((ts->tileStart + n) & 7));
+    ts->count = 0;
+    ts->tileCount = 0;
+}
+
+static struct OpeningTrackSet *CurrentTracks(void)
+{
+    return &sOpening->sets[sOpening->scene & 1];
 }
 
 // Put track i at (x, y) (corner on screen) showing frame; a new frame's tiles are
 // copied from ROM in the coming VBlank.
 static void TrackShow(u8 i, s16 x, s16 y, u8 frame)
 {
-    struct Opening *o = sOpening;
-    const struct OpeningTrack *track = o->tracks[i];
+    struct OpeningTrackSet *ts = CurrentTracks();
+    const struct OpeningTrack *track;
     struct Sprite *sprite;
     u16 size;
 
-    if (i >= o->numTracks || o->spriteIds[i] == MAX_SPRITES)
+    if (i >= ts->count || ts->spriteIds[i] == MAX_SPRITES)
         return;
-    sprite = &gSprites[o->spriteIds[i]];
+    track = ts->tracks[i];
+    sprite = &gSprites[ts->spriteIds[i]];
     sprite->x = x + track->width / 2;
     sprite->y = y + track->height / 2;
     sprite->invisible = FALSE;
-    if (o->shownFrame[i] != frame)
+    if (ts->shownFrame[i] != frame)
     {
         size = TrackFrameSize(track);
         RequestSpriteCopy((const u8 *)track->gfx + frame * size,
                           (u8 *)OBJ_VRAM0 + sprite->oam.tileNum * TILE_SIZE_4BPP, size);
-        o->shownFrame[i] = frame;
+        ts->shownFrame[i] = frame;
     }
 }
 
 static void TrackHide(u8 i)
 {
-    struct Opening *o = sOpening;
+    struct OpeningTrackSet *ts = CurrentTracks();
 
-    if (i < o->numTracks && o->spriteIds[i] != MAX_SPRITES)
-        gSprites[o->spriteIds[i]].invisible = TRUE;
+    if (i < ts->count && ts->spriteIds[i] != MAX_SPRITES)
+        gSprites[ts->spriteIds[i]].invisible = TRUE;
 }
 
 // End of a scene: its sprites go and give their OBJ VRAM back.
 static void Scene_End(u8 scene)
 {
-    struct Opening *o = sOpening;
-    u8 i;
-
-    for (i = 0; i < o->numTracks; i++)
-    {
-        if (o->spriteIds[i] != MAX_SPRITES)
-            DestroySprite(&gSprites[o->spriteIds[i]]);
-    }
-    o->numTracks = 0;
+    DestroyTracks(scene & 1);
     FreeSpritePaletteByTag(PALTAG_S2_PIKACHU);
     FreeSpritePaletteByTag(PALTAG_S2_PROPS);
 }
@@ -464,12 +536,13 @@ static void Card_Load(u8 scene, u8 slot)
     CpuFill32(0, BG_CHAR_ADDR(slot), TILE_SIZE_4BPP);
     CpuFill32(0x11111111, (u8 *)BG_CHAR_ADDR(slot) + TILE_SIZE_4BPP, TILE_SIZE_4BPP);
     CpuFill16(1 | (PAL_CARD << 12), BG_SCREEN_ADDR(BG_MAP_BASE + 2 * slot), BG_SCREEN_SIZE);
+    CreateTracks(slot, &sDigitTrack, 1);
 }
 
 static void Card_Begin(u8 scene, u8 slot)
 {
     LoadPalette(&sCardColors[scene], BG_PLTT_ID(PAL_CARD) + 1, PLTT_SIZEOF(1));
-    AddTrack(&sDigitTrack);
+    ActivateTracks(slot);
     ShowSlot(slot, FALSE);
     SetScroll(&sNoScroll);
     if (scene == 0)
@@ -505,6 +578,7 @@ static const struct OpeningTrack sScene2_Tracks[SCENE2_TRACK_COUNT] = {
     [SCENE2_TRACK_BUST1]       = {CLOSEUP_QUARTER(1),  &sOam_64x64, PALTAG_S2_PIKACHU, 64, 64, 9},
     [SCENE2_TRACK_BUST2]       = {CLOSEUP_QUARTER(2),  &sOam_64x64, PALTAG_S2_PIKACHU, 64, 64, 9},
     [SCENE2_TRACK_BUST3]       = {CLOSEUP_QUARTER(3),  &sOam_64x64, PALTAG_S2_PIKACHU, 64, 64, 9},
+    [SCENE2_TRACK_CRACKLE_CU]  = {sScene2_CrackleCu_Gfx, &sOam_32x32, PALTAG_S2_PIKACHU, 32, 32, 0},
 };
 
 static void Scene2_Load(u8 scene, u8 slot)
@@ -513,12 +587,12 @@ static void Scene2_Load(u8 scene, u8 slot)
     CpuFastCopy(sScene2_BgBack_Map, BG_SCREEN_ADDR(BG_MAP_BASE + 2 * slot), sizeof(sScene2_BgBack_Map));
     CpuFastCopy(sScene2_BgFront_Map, BG_SCREEN_ADDR(BG_MAP_BASE + 2 * slot + 1), sizeof(sScene2_BgFront_Map));
     CpuFastCopy(sScene2_BgCloseup_Map, BG_SCREEN_ADDR(BG_MAP_EXTRA), sizeof(sScene2_BgCloseup_Map));
+    CreateTracks(slot, sScene2_Tracks, SCENE2_TRACK_COUNT);
 }
 
 static void Scene2_Begin(u8 scene, u8 slot)
 {
     struct SpritePalette pal;
-    u8 i;
 
     LoadPalette(sScene2_Bg_Pal, BG_PLTT_ID(PAL_SCENE2), sizeof(sScene2_Bg_Pal));
     pal.data = sScene2_Pikachu_Pal;
@@ -527,8 +601,7 @@ static void Scene2_Begin(u8 scene, u8 slot)
     pal.data = sScene2_Props_Pal;
     pal.tag = PALTAG_S2_PROPS;
     LoadSpritePalette(&pal);
-    for (i = 0; i < SCENE2_TRACK_COUNT; i++)
-        AddTrack(&sScene2_Tracks[i]);
+    ActivateTracks(slot);
     ShowSlot(slot, TRUE);
     sOpening->layout = 0;
 }
@@ -558,8 +631,8 @@ static void Scene2_Update(u8 scene, u16 t)
         else
             TrackShow(i, keys[i].x, keys[i].y, keys[i].frame);
     }
-    if (sOpening->spriteIds[SCENE2_TRACK_BALL] != MAX_SPRITES)
-        gSprites[sOpening->spriteIds[SCENE2_TRACK_BALL]].subpriority =
+    if (CurrentTracks()->spriteIds[SCENE2_TRACK_BALL] != MAX_SPRITES)
+        gSprites[CurrentTracks()->spriteIds[SCENE2_TRACK_BALL]].subpriority =
             (keys[SCENE2_TRACK_BALL].flags & KEY_FRONT) ? 4 : 7;
 }
 
@@ -570,33 +643,34 @@ static void Scene2_Update(u8 scene, u16 t)
 // effect with 8 frames and 16 birds 16x16 with 4 frames each, about 1,300 tiles of
 // frames in all. The frames are any ROM data (scene 2's sheets and what follows them).
 #define STRESS_BIRDS 16
-static const struct OpeningTrack sStressTracks[3 + 1] = {
+#define STRESS_BIRD {sScene2_Ball_Gfx, &sOam_16x16, PALTAG_S2_PROPS, 16, 16, 0}
+static const struct OpeningTrack sStressTracks[1 + 3 + STRESS_BIRDS] = {
+    {sDigits_Gfx, &sOam_32x32, PALTAG_DIGITS, 32, 32, 0},
     {sScene2_Pikachu_Gfx, &sOam_64x64, PALTAG_S2_PIKACHU, 64, 64, 2},
     {sScene2_Arm_Gfx,     &sOam_64x64, PALTAG_S2_PROPS,   64, 64, 3},
     {sScene2_Bolt_Gfx,    &sOam_64x32, PALTAG_S2_PIKACHU, 64, 32, 1},
-    {sScene2_Ball_Gfx,    &sOam_16x16, PALTAG_S2_PROPS,   16, 16, 0},
+    STRESS_BIRD, STRESS_BIRD, STRESS_BIRD, STRESS_BIRD, STRESS_BIRD, STRESS_BIRD, STRESS_BIRD, STRESS_BIRD,
+    STRESS_BIRD, STRESS_BIRD, STRESS_BIRD, STRESS_BIRD, STRESS_BIRD, STRESS_BIRD, STRESS_BIRD, STRESS_BIRD,
 };
+
+static void Stress_Load(u8 scene, u8 slot)
+{
+    Card_Load(scene, slot);
+    CreateTracks(slot, sStressTracks, ARRAY_COUNT(sStressTracks));
+    sOpeningStressTiles = sOpening->sets[slot].tileCount;
+}
 
 static void Stress_Begin(u8 scene, u8 slot)
 {
     struct SpritePalette pal;
-    u8 i, n;
-    u16 tiles = 0;
 
-    Card_Begin(scene, slot);
     pal.data = sScene2_Pikachu_Pal;
     pal.tag = PALTAG_S2_PIKACHU;
     LoadSpritePalette(&pal);
     pal.data = sScene2_Props_Pal;
     pal.tag = PALTAG_S2_PROPS;
     LoadSpritePalette(&pal);
-    for (i = 0; i < 3 + STRESS_BIRDS; i++)
-    {
-        n = AddTrack(&sStressTracks[i < 3 ? i : 3]);
-        if (n < MAX_TRACKS && sOpening->spriteIds[n] != MAX_SPRITES)
-            tiles += TrackFrameSize(sOpening->tracks[n]) / TILE_SIZE_4BPP;
-    }
-    sOpeningStressTiles = tiles;
+    Card_Begin(scene, slot);
 }
 
 static void Stress_Update(u8 scene, u16 t)

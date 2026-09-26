@@ -2,14 +2,14 @@
 """Review material for scene 2 of the opening, from the built ROM.
 
     python3 tools/make_intro_opening_drafts.py [rom] [--out docs/anim/drafts/scene2-C]
-        [--label C] [--wav-tool path/to/audiocap.py]
+        [--label final] [--wav-tool path/to/audiocap.py]
 
 Boots the ROM with no save and no input in the headless emulator (tools/qa/emu.py),
 captures F760-930 (the end of scene 1, all of scene 2, the start of scene 3) and writes:
 
 - keyN_FXXXX.png and keyN_FXXXX_x3.png: the key frames, 240x160 and 3x;
-- arms-1x.png: PIKACHU at 1x (and 4x) at two wide-shot moments with folded arms as
-  built, beside the same moments with the arms lowered (the art direction's fallback);
+- keyN_FXXXX_crop.png and keyN_FXXXX_crop_x3.png: PIKACHU cropped at 1x and 3x for the
+  wide sulk (F890) and the close-up "hmph" (F900);
 - emu-every3.png: every third frame of the scene as captured;
 - cuts.png: the frames either side of each cut (into scene 2, into the close-up, out);
 - models.png: PIKACHU's frames beside FR/LG's front sprite at 6x, the close-up at 3x,
@@ -47,11 +47,11 @@ KEYS = [(843, 'camera truck starts, ball and hand in the middle'),
         (866, 'the bolt hits the ball, the screen shakes'),
         (868, 'the ball pops out in a puff, ears and tail overshoot'),
         (882, 'beat 3: the ball lands, the table bumps, the tail slaps'),
-        (890, 'sulking, arms folded (last wide frame)'),
+        (890, 'sulking, arms at its sides (last wide frame)'),
         (891, 'cut to the close-up (half a beat before beat 4)'),
-        (900, 'beat 4: "hmph!" chin up, the cheek crackles'),
+        (900, 'beat 4: pressed down a pixel, the cheek crackles'),
         (910, 'second crackle, the camera has crept in')]
-ARM_KEYS = (882, 890)            # wide-shot moments for the folded/lowered arms check
+CROPS = {890: (132, 36, 212, 120), 900: (40, 32, 200, 128)}   # PIKACHU at the wide sulk, the close-up
 CUTS = [842, 843, 890, 891, 918, 919]
 
 
@@ -119,34 +119,6 @@ def models():
     return stack(top, close, mid, low)
 
 
-def arms_check(shots):
-    """PIKACHU at 1x and 4x at two wide moments: folded arms (as built) and the same
-    frames with the arms lowered."""
-    keys, scroll, layout = s2.choreography()
-    sheets = s2.art()
-    lowered = dict(sheets)
-    frames = list(sheets['pikachu'][0])
-    for n in ('C', 'C_hmph', 'C_flick', 'C_over'):
-        i = s2.PIKA_FRAMES.index(n)
-        chin = 2 if n == 'C_hmph' else 1
-        ears = 'fling' if n == 'C_over' else 'back'
-        tail = {'C_flick': 'flick', 'C_over': 'lag'}.get(n, 'rest')
-        frames[i] = pika.pose(1, 'tucked', 'shut', 'pout', ears=ears, tail_mode=tail, lean=1, chin=chin)
-    lowered['pikachu'] = (frames, s2.PIKA_PAL)
-    layers = (s2.back_layer(), s2.front_layer(), s2.closeup_layer())
-    ims, labels = [], []
-    for f in ARM_KEYS:
-        t = f - FIRST
-        x, y = keys[t]['pikachu'][:2]
-        box = (x - 6, y - 4, x + 70, y + 68)
-        alt = s2.render_frame(keys[t], scroll[t], layout[t], layers, lowered)
-        for im, what in ((shots[f], 'folded (built)'), (alt, 'lowered (fallback)')):
-            crop = im.crop(box)
-            ims += [crop, crop.resize((crop.size[0] * 4, crop.size[1] * 4), Image.NEAREST)]
-            labels += ['F%d %s 1x' % (f, what), '4x']
-    return labelled(ims, labels, 4, 1, 'N1: folded arms as built vs. lowered, 1x and 4x')
-
-
 def gif(shots, path):
     frames = [shots[f].resize((480, 320), Image.NEAREST) for f in range(SPAN[0], SPAN[1] + 1, 2)]
     durations = [30 if i % 3 else 40 for i in range(len(frames))]   # 33.3 ms on average
@@ -156,8 +128,8 @@ def gif(shots, path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('rom', nargs='?', default=os.path.join(ROOT, 'pokemonthyl.gba'))
-    ap.add_argument('--out', default=os.path.join(ROOT, 'docs/anim/drafts/scene2-C'))
-    ap.add_argument('--label', default='C')
+    ap.add_argument('--out', default=os.path.join(ROOT, 'docs/anim/drafts/scene2-final'))
+    ap.add_argument('--label', default='final')
     ap.add_argument('--wav-tool', default=None, help='an audio-capable tools/qa/audiocap.py')
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
@@ -166,7 +138,11 @@ def main():
     for i, (f, _) in enumerate(KEYS, 1):
         shots[f].save(os.path.join(a.out, 'key%d_F%04d.png' % (i, f)))
         shots[f].resize((720, 480), Image.NEAREST).save(os.path.join(a.out, 'key%d_F%04d_x3.png' % (i, f)))
-    arms_check(shots).save(os.path.join(a.out, 'arms-1x.png'))
+        if f in CROPS:
+            crop = shots[f].crop(CROPS[f])
+            crop.save(os.path.join(a.out, 'key%d_F%04d_crop.png' % (i, f)))
+            crop.resize((crop.size[0] * 3, crop.size[1] * 3), Image.NEAREST).save(
+                os.path.join(a.out, 'key%d_F%04d_crop_x3.png' % (i, f)))
     every = list(range(FIRST, LAST + 1, 3))
     labelled([shots[f] for f in every], ['F%d (t%d)' % (f, f - FIRST) for f in every], 6, 1,
              'scene 2 draft %s in the emulator, every 3rd frame (t = frame of the scene)' % a.label).save(

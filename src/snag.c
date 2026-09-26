@@ -89,8 +89,7 @@ static const u8 sText_James[] = _("JAMES");
 
 // Battles where the trainer still blocks the BALL: link and Union Room, the
 // record facilities (Trainer Tower, Battle Tower, e-Reader), the scripted
-// tutorials (Oak's Lab, POKé DUDE, the old man). (FR/LG has no secret bases,
-// and TRAINER_SECRET_BASE's number is a Hoenn trainer's here: ISAAC on Route 117.)
+// tutorials (Oak's Lab, POKé DUDE, the old man). FR/LG has no secret bases.
 bool8 IsSnagBlockedBattle(void)
 {
     if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_TRAINER_TOWER | BATTLE_TYPE_BATTLE_TOWER

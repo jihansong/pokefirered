@@ -13,6 +13,17 @@ Commands (names are the C constant names; numbers work too):
     warp MAP @N                ... at that map's warp event N
     strong SLOT LEVEL          party SLOT (0-5) at LEVEL with its experience,
                                IVs 31 and stats set to match, HP full
+    mon SLOT SPECIES LEVEL     turn party SLOT into SPECIES at LEVEL (as strong,
+                               keeping its moves; the nickname is the species')
+    tonext SLOT N              party SLOT's experience N points short of its
+                               next level
+    held SLOT ITEM             party SLOT holds ITEM (ITEM_NONE takes it away)
+    friendship SLOT N          party SLOT's friendship (0-255)
+    starterbit SLOT 0|1        party SLOT's isStarterPikachu bit (Oak's PIKACHU)
+    otid SLOT N                party SLOT's original trainer ID (N may be 0x...),
+                               as if another player's POKéMON had been traded in
+    frombox INDEX SLOT         party SLOT becomes a copy of PC box POKéMON
+                               INDEX (0-419, box by box)
     lead SLOT                  swap party SLOT with the first POKéMON
     party N                    keep only the first N party POKéMON
     hp SLOT N                  party SLOT's current HP (0 = fainted)
@@ -21,6 +32,8 @@ Commands (names are the C constant names; numbers work too):
     dex SPECIES                mark a species seen and owned (all 4 places)
     money N / coins N          money and coins (both kept XORed with the save key)
     item ITEM N                exactly N of ITEM in the bag (0 removes it)
+    firstitem ITEM N           exactly N of ITEM, first in its pocket, where the
+                               cursor is when the bag is first opened
     fillitems [ITEM ...]       fill the ITEMS pocket's free slots with one each
                                of other items, never the ITEMs listed, so
                                giving any of those fails
@@ -38,12 +51,13 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from gamedata import const, map_info, maps, off, Rom           # noqa: E402
+from gamedata import const, item_name, map_info, maps, off, Rom           # noqa: E402
 from savefile import SaveFile                                   # noqa: E402
 
 
-COMMANDS = {'info', 'flag', 'var', 'trainer', 'warp', 'strong', 'lead', 'party', 'hp', 'day', 'hour', 'dex',
-            'money', 'coins', 'item', 'fillitems', 'fillboxes', 'fastbattle'}
+COMMANDS = {'info', 'flag', 'var', 'trainer', 'warp', 'strong', 'mon', 'tonext', 'held', 'friendship',
+            'starterbit', 'otid', 'frombox', 'lead', 'party', 'hp', 'day', 'hour', 'dex',
+            'money', 'coins', 'item', 'firstitem', 'fillitems', 'fillboxes', 'fastbattle'}
 
 
 def _map_name(g, n):
@@ -119,6 +133,46 @@ def run(argv):
             stats = s.party_mon(slot).make_strong(level, rom)
             dirty = True
             print('slot %d Lv%d stats %s' % (slot, level, stats))
+        elif cmd == 'mon':
+            slot, name, level = int(argv.pop(0)), argv.pop(0), int(argv.pop(0))
+            rom = rom or Rom()
+            m = s.party_mon(slot)
+            m.set_species(_species(name), rom)
+            m.make_strong(level, rom)
+            dirty = True
+            print('slot %d %s Lv%d' % (slot, name, level))
+        elif cmd == 'tonext':
+            slot, n = int(argv.pop(0)), int(argv.pop(0))
+            rom = rom or Rom()
+            s.party_mon(slot).set_exp_to_next(n, rom)
+            dirty = True
+            print('slot %d %d exp short of the next level' % (slot, n))
+        elif cmd == 'held':
+            slot, name = int(argv.pop(0)), argv.pop(0)
+            s.party_mon(slot).set_held(const(item_name(name)))
+            dirty = True
+            print('slot %d holds %s' % (slot, name))
+        elif cmd == 'friendship':
+            slot, n = int(argv.pop(0)), int(argv.pop(0))
+            s.party_mon(slot).set_friendship(n)
+            dirty = True
+            print('slot %d friendship %d' % (slot, n))
+        elif cmd == 'starterbit':
+            slot, on = int(argv.pop(0)), argv.pop(0) == '1'
+            s.party_mon(slot).set_starter_bit(on)
+            dirty = True
+            print('slot %d isStarterPikachu %d' % (slot, on))
+        elif cmd == 'otid':
+            slot, n = int(argv.pop(0)), int(argv.pop(0), 0)
+            s.party_mon(slot).set_otid(n)
+            dirty = True
+            print('slot %d OT ID %08x' % (slot, n))
+        elif cmd == 'frombox':
+            index, slot = int(argv.pop(0)), int(argv.pop(0))
+            rom = rom or Rom()
+            species, level = s.copy_box_mon_to_party(index, slot, rom)
+            dirty = True
+            print('slot %d is box mon %d (species %d Lv%d)' % (slot, index, species, level))
         elif cmd == 'lead':
             slot = int(argv.pop(0))
             s.set_lead(slot)
@@ -149,6 +203,11 @@ def run(argv):
             s.set_item(name, n)
             dirty = True
             print('%s x%d' % (name, s.item_count(name)))
+        elif cmd == 'firstitem':
+            name, n = argv.pop(0), int(argv.pop(0))
+            s.put_item_first(name, n)
+            dirty = True
+            print('%s x%d, first in its pocket' % (name, s.item_count(name)))
         elif cmd == 'fillitems':
             leave = []
             while argv and argv[0].startswith('ITEM_'):
@@ -166,7 +225,7 @@ def run(argv):
             print('filled %d box slots' % n)
         elif cmd == 'dex':
             name = argv.pop(0)
-            sp = const(name if name.startswith('SPECIES_') or name.isdigit() else 'SPECIES_' + name)
+            sp = _species(name)
             s.set_dex(_national(sp))
             dirty = True
             print('dex %s seen+owned' % name)
@@ -184,6 +243,10 @@ def run(argv):
     if dirty or out != src:
         s.save(out)
     return 0
+
+
+def _species(name):
+    return const(name if name.startswith('SPECIES_') or name.isdigit() else 'SPECIES_' + name)
 
 
 _NAT = None

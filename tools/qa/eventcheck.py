@@ -19,6 +19,11 @@ Steps, in order:
     mash [N]                             press A (at most N times, default 300)
                                          until the overworld is idle: no battle,
                                          no script running, the player free
+    encounter [N]                        walk LEFT and RIGHT (at most N steps,
+                                         default 200) until a wild battle starts
+    evomash [N]                          press A (at most N times, default 200)
+                                         until an evolution scene has come and
+                                         gone; fails if none started
     shot NAME                            save NAME.png (in --shots)
     expect flag NAME = 0|1               check a flag in the live game
     expect var NAME = N                  check a var in the live game
@@ -29,6 +34,7 @@ Steps, in order:
     expect fateful SPECIES = N           count SPECIES (EGGS too) in party and PC
                                          with the fateful encounter bit (MEW's
                                          and DEOXYS's obedience)
+    expect species SLOT NAME[|NAME]      check the species in party SLOT (0-5)
     expect map MAP                       check the player's current map
     expect battle | expect overworld     check what the game is doing
 The save is continued (title, CONTINUE, quest-log recap skipped) before the
@@ -116,6 +122,28 @@ def run_case(case, rom, shots):
                         e.press('A', hold=3, after=20)
                     else:
                         fails.append('%s: the game never went idle' % step)
+                elif head == 'ENCOUNTER':
+                    for i in range(int(p[1]) if len(p) > 1 else 200):
+                        if not e.in_overworld():
+                            break
+                        e.walk('LEFT' if i % 2 == 0 else 'RIGHT')
+                    for _ in range(40):     # the battle transition
+                        if e.in_battle():
+                            break
+                        e.run(15)
+                    if not e.in_battle():
+                        fails.append('%s: no wild battle started' % step)
+                elif head == 'EVOMASH':
+                    evo = {e.syms.get('CB2_EvolutionSceneUpdate'), e.syms.get('CB2_TradeEvolutionSceneUpdate')}
+                    seen = False
+                    for _ in range(int(p[1]) if len(p) > 1 else 200):
+                        inside = (e.callback2() & ~1) in evo
+                        if seen and not inside:
+                            break
+                        seen = seen or inside
+                        e.press('A', hold=3, after=37)
+                    else:
+                        fails.append('%s: %s' % (step, 'the evolution never ended' if seen else 'no evolution scene'))
                 elif head == 'SHOT':
                     if shots:
                         e.shot(os.path.join(shots, '%s_%s.png' % (name, p[1])))
@@ -142,6 +170,13 @@ def run_case(case, rom, shots):
                             got = sum(1 for m in mons if (m.is_egg() if what == 'egg' else m.fateful()))
                         if got != want:
                             fails.append('%s: %s %s is %d' % (step, what, p[2], got))
+                    elif what == 'species':
+                        slot = int(p[2])
+                        want = [species_id(n) for n in p[3].split('|')]
+                        size = off('pokemon')
+                        got = Mon(bytearray(e.read(e.sym('gPlayerParty') + slot * size, size)), 0).species()
+                        if got not in want:
+                            fails.append('%s: party slot %d is species %d' % (step, slot, got))
                     elif what == 'map':
                         m = map_info(p[2])
                         g, n, _, _ = e.location()

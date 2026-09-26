@@ -59,11 +59,11 @@ python3 tools/make_bps_patch.py           # pokemonthyl.bps, 적용 결과를 �
 |---|---|
 | `emu.py` | 에뮬레이터 래퍼. ROM+세이브로 켜기, 키 입력, 프레임 진행, 메모리 읽기·쓰기, 스크린샷, `boot_continue()`(타이틀→이어하기, "지난 이야기" 건너뛰기, 이어하기 뒤 리셋 감지) |
 | `gamedata.py` | 구조체 오프셋(헤더를 devkitARM gcc로 컴파일해 얻음, `.cache/`에 보관), C 상수(`FLAG_*`·`VAR_*`·`MAP_*`…), 맵 목록, ROM 표(종족값·경험치 표) |
-| `savefile.py` / `savedit.py` | 세이브 읽고 쓰기. `savedit.py IN.sav -o OUT.sav warp Route110 @0 flag FLAG_X 1 var VAR_Y 2 trainer TRAINER_Z 1 strong 0 70 day 1 dex PIKACHU coins 2000 info`. v0.9.0에 더함: `lead 5`(그 칸을 선두로), `party 1`(앞 N마리만), `hp 0 1`, `hour 22`(게임 시계를 다음 22:00으로), `money N`, `item ITEM_X N`, `fillitems [ITEM_…]`(도구 칸의 빈칸을 다른 도구로 채움, 적은 도구는 빼고), `fillboxes`(PC 빈칸 전부). 에뮬레이터에는 RTC가 없어 게임 시계는 가상 시계(`lastBerryTreeUpdate` 오프셋)다. `day`·`hour`는 이쪽을 바꾼다 |
+| `savefile.py` / `savedit.py` | 세이브 읽고 쓰기. `savedit.py IN.sav -o OUT.sav warp Route110 @0 flag FLAG_X 1 var VAR_Y 2 trainer TRAINER_Z 1 strong 0 70 day 1 dex PIKACHU coins 2000 info`. v0.9.0에 더함: `lead 5`(그 칸을 선두로), `party 1`(앞 N마리만), `hp 0 1`, `hour 22`(게임 시계를 다음 22:00으로), `money N`, `item ITEM_X N`, `fillitems [ITEM_…]`(도구 칸의 빈칸을 다른 도구로 채움, 적은 도구는 빼고), `fillboxes`(PC 빈칸 전부). v0.9.0 수정에 더함: `mon 0 CATERPIE 6`(그 칸을 다른 종·레벨로), `tonext 0 1`(다음 레벨까지 경험치 1), `held 0 ITEM_X`, `friendship 0 255`, `starterbit 0 1`, `otid 0 0x…`(교환해 온 것처럼), `frombox 8 0`(PC 8번째 포켓몬을 그 칸에 복사), `firstitem ITEM_X N`(주머니 맨 앞에 — 가방을 처음 열면 커서가 거기 있다). 에뮬레이터에는 RTC가 없어 게임 시계는 가상 시계(`lastBerryTreeUpdate` 오프셋)다. `day`·`hour`는 이쪽을 바꾼다 |
 | `refroms.sh` | 세이브 검사용 기준 ROM을 태그에서 빌드해 `qa-base/<tag>/`에 둔다. gh로 로그인돼 있으면 그 태그 릴리스의 BPS와 바이트 단위로 대조한다 |
 | `savetest.py` / `savetest_all.sh` | 세이브 호환: 세이브를 저장한 릴리스 ROM과 현재 ROM에서 각각 메인 메뉴까지 켜서 SaveBlock1·2·PC 보관함을 바이트 단위로 비교(IDENTICAL), 이어서 현재 ROM으로 이어하기가 제자리에서 도는지 확인 |
 | `mapsmoke.py` | 맵 전부(896개)에 세이브를 워프시켜 이어하기 → 멈춤·검은 화면·리셋·다른 맵으로 튕김을 잡는다. 맵의 모든 오브젝트가 한 번씩 화면에 들어오도록 출발점을 여러 개 잡는다(`--quick`은 하나). 약 80분(`-j 2`) |
-| `eventcheck.py` | 이벤트 실행 검사. JSON 한 줄에 세이브 수정·키 입력·스크린샷·기대값(플래그·변수·트레이너·맵·전투 여부·돈·가방 수량·알·운명적 만남 비트). `mash N`은 전투·대사가 끝나 조작이 풀릴 때까지 A를 누른다. `"xfail": true`는 실패해야 통과하는 대조군. 예: `cases/z2.jsonl`, `cases/rocket.jsonl` |
+| `eventcheck.py` | 이벤트 실행 검사. JSON 한 줄에 세이브 수정·키 입력·스크린샷·기대값(플래그·변수·트레이너·맵·전투 여부·돈·가방 수량·알·운명적 만남 비트). `mash N`은 전투·대사가 끝나 조작이 풀릴 때까지 A를 누른다. `encounter`는 풀숲에서 좌우로 걸어 야생 전투를 낸다. `evomash`는 진화 장면이 시작되고 끝날 때까지 A. `expect species 0 METAPOD|…`는 파티 칸의 종. `"xfail": true`는 실패해야 통과하는 대조군. 예: `cases/z2.jsonl`, `cases/rocket.jsonl`, `cases/evolution.jsonl` |
 | `textaudit.py` | 구역별로 아직 에메랄드 원문 그대로인 대사(도달 가능한 것만)를 센다. 표지판·울음소리처럼 바꿀 필요가 없는 것은 따로 분류 |
 | `textwidth.py` | 모든 맵 대사의 한 줄 폭을 게임 글꼴 폭으로 계산해 208px 초과를 찾는다 |
 | `dexcheck.py` | 386종이 모두 게임 안에서 얻을 수 있는지 정적으로 확인 |
@@ -88,6 +88,7 @@ python3 tools/check_event_wiring.py
 python3 tools/qa/mapsmoke.py -j $(nproc)       # RESET·BLACK·TIMEOUT·ERROR 0 (BATTLE은 참고)
 python3 tools/qa/eventcheck.py tools/qa/cases/z2.jsonl --shots /tmp/ec
 python3 tools/qa/eventcheck.py tools/qa/cases/rocket.jsonl --shots /tmp/ec
+python3 tools/qa/eventcheck.py tools/qa/cases/evolution.jsonl --shots /tmp/ec
 python3 tools/qa/textaudit.py --zone Z2 --fail
 python3 tools/qa/textwidth.py
 python3 tools/qa/dexcheck.py

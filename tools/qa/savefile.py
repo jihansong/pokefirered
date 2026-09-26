@@ -151,6 +151,18 @@ class Blocks:
                 return
         raise ValueError('no free slot for %s' % item)
 
+    def put_item_first(self, item, n):
+        """Exactly n of item, in the first slot of its pocket (the bag opens there)."""
+        want = const(item_name(item))
+        key = self._key() & 0xFFFF
+        slots = self._slots(item)
+        kept = [struct.unpack_from('<HH', self.sb1, o) for o in slots]
+        kept = [(want, n ^ key)] + [k for k in kept if k[0] and k[0] != want]
+        if len(kept) > len(slots):
+            raise ValueError('no free slot for %s' % item)
+        for i, o in enumerate(slots):
+            struct.pack_into('<HH', self.sb1, o, *(kept[i] if i < len(kept) else (0, key)))
+
     def _compact(self, slots):
         key = self._key() & 0xFFFF
         kept = [struct.unpack_from('<HH', self.sb1, o) for o in slots]
@@ -350,6 +362,29 @@ class SaveFile(Blocks):
         o, _ = self._party_slot(slot)
         struct.pack_into('<H', self.sb1, o + 86, hp)
 
+    def copy_box_mon_to_party(self, index, slot, rom=None):
+        """Party SLOT becomes a copy of PC box mon INDEX (0-419), as a withdrawal
+        would make it: its level from its experience; stats are left for the game
+        to work out at the next level up (HP 1 so it can take part)."""
+        rom = rom or Rom()
+        box = self.box_mons()[index]
+        size = off('boxmon')
+        o, psize = self._party_slot(slot)
+        self.sb1[o:o + psize] = bytes(psize)
+        self.sb1[o:o + size] = box.blk[box.o:box.o + size]
+        m = self.party_mon(slot)
+        subs = m.subs()
+        species, _, exp = struct.unpack_from('<HHI', subs['G'], 0)
+        growth = rom.species_info(species)['growthRate']
+        level = 1
+        while level < 100 and rom.exp_for_level(growth, level + 1) <= exp:
+            level += 1
+        self.sb1[o + 84] = level
+        struct.pack_into('<7H', self.sb1, o + 86, 1, 1, 1, 1, 1, 1, 1)
+        if slot >= self.party_count():
+            self.sb1[off('sb1.playerPartyCount')] = slot + 1
+        return species, level
+
     # ------------------------------------------------------------ PC boxes
     def box_mons(self):
         size = off('boxmon')
@@ -417,6 +452,50 @@ class Mon:
 
     def level(self):
         return self.blk[self.o + 84]
+
+    # PokemonSubstruct0 ('G'): species, heldItem, experience, ppBonuses, friendship
+    def set_species(self, species, rom=None):
+        """Another species, keeping everything else; the nickname becomes the
+        species name. Call make_strong afterwards for matching stats."""
+        rom = rom or Rom()
+        subs = self.subs()
+        struct.pack_into('<H', subs['G'], 0, species)
+        self.put_subs(subs)
+        name = rom.at(rom.syms['gSpeciesNames'] + species * 11, 11)
+        self.blk[self.o + 8:self.o + 18] = name[:10]
+
+    def set_held(self, item):
+        subs = self.subs()
+        struct.pack_into('<H', subs['G'], 2, item)
+        self.put_subs(subs)
+
+    def set_friendship(self, n):
+        subs = self.subs()
+        subs['G'][9] = n
+        self.put_subs(subs)
+
+    def set_exp_to_next(self, n, rom=None):
+        """Experience N points short of the next level (the level is kept)."""
+        rom = rom or Rom()
+        subs = self.subs()
+        species = struct.unpack_from('<H', subs['G'], 0)[0]
+        growth = rom.species_info(species)['growthRate']
+        struct.pack_into('<I', subs['G'], 4, rom.exp_for_level(growth, self.level() + 1) - n)
+        self.put_subs(subs)
+
+    def set_otid(self, otid):
+        """Another original trainer ID (as if traded in); the data is re-encrypted."""
+        subs = self.subs()
+        self.otid = otid
+        struct.pack_into('<I', self.blk, self.o + 4, otid)
+        self.put_subs(subs)
+
+    def starter_bit(self):
+        # BoxPokemon.isStarterPikachu, bit 4 of the flags byte after the language
+        return bool(self.blk[self.o + 19] & 0x10)
+
+    def set_starter_bit(self, on):
+        self.blk[self.o + 19] = (self.blk[self.o + 19] & ~0x10) | (0x10 if on else 0)
 
     def make_strong(self, level, rom=None):
         """Level, experience, IVs 31 and all six stats set together, HP full."""

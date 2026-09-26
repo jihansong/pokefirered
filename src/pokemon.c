@@ -5195,17 +5195,15 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
                 targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_TRADE_ITEM:
+                // FR/LG kept the item and let the evolution scene cancel a
+                // cross-generational evolution (SCIZOR, STEELIX) before the National
+                // Pokedex. Thunder Yellow lets every evolution happen (see
+                // Task_EvolutionScene), so the item is always used up.
                 if (gEvolutionTable[species][i].param == heldItem)
                 {
+                    heldItem = ITEM_NONE;
+                    SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
-                    
-                    // Prevent cross-generational evolutions like Scizor and Steelix until the National Pokedex is obtained
-                    if (IsNationalPokedexEnabled() || targetSpecies <= KANTO_SPECIES_END)
-                    {
-                        heldItem = ITEM_NONE;
-                        SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
-                        targetSpecies = gEvolutionTable[species][i].targetSpecies;
-                    }
                 }
                 break;
             }

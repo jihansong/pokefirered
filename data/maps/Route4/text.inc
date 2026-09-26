@@ -41,10 +41,11 @@ Text_MegaPunchWhichMon::
 
 Text_MegaPunchTaught::
     .string "Now, we are comrades in the way of\n"
-    .string "punching!\p"
-    .string "You should go before you're seen\n"
-    .string "by the misguided fool who trains\l"
-    .string "only his silly kicking over there.$"
+    .string "punching! Come back any time, and\l"
+    .string "bring more POKéMON to teach!\p"
+    .string "That fool over there teaches only\n"
+    .string "his silly kicking. Learn it too, if\l"
+    .string "you must, and see which is better!$"
 
 Text_MegaKickTeach::
     .string "A kick of brutal ferocity!\p"
@@ -65,10 +66,11 @@ Text_MegaKickWhichMon::
 
 Text_MegaKickTaught::
     .string "Now, we are soul mates in the way\n"
-    .string "of kicking!\p"
-    .string "You should run before you're seen\n"
-    .string "by the deluded nitwit who trains\l"
-    .string "only simple punching over there.$"
+    .string "of kicking! I'll teach it again,\l"
+    .string "to as many POKéMON as you like!\p"
+    .string "That nitwit over there teaches only\n"
+    .string "simple punching. Go learn it too,\l"
+    .string "then prove that kicking wins!$"
 
 Route4_Text_PeopleLikeAndRespectBrock::
     .string "Oh, wow, that's the BOULDERBADGE!\n"

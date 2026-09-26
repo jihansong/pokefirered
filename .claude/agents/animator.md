@@ -32,5 +32,6 @@ R/S/E, FR/LG): scrolling and parallax backgrounds, several characters and POKéM
 continuously, camera moves, effects. A slideshow of still pictures does not pass.
 Floor (user, 2026-09-26): length and quality may exceed the official Gen 1-3 level but never
 fall below it. Opening: at least the replaced span (752 frames) and 24.3 s power-on to
-title; each ending: at least the original credits (about 174 s). Anything shorter or less
+title; each ending (all three): at least 250.6 s = 14,970 frames, the whole MUS_CREDITS
+including the plateau epilogue (docs/music/research/06-kanto-credits-timeline.md). Anything shorter or less
 dense than the official sequences is REJECTED.

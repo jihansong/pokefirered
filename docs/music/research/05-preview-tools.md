@@ -79,7 +79,7 @@ python3 tools/qa/audiocap.py pokemonthyl.gba /tmp/scene.wav --sav saves/x.sav --
 python3 tools/qa/audiocap.py preview.gba /tmp/title.wav --skip 1465 --seconds 60 --small
 ```
 
-- 녹음이 끝나면 길이와 **소리가 시작·끝나는 초와 프레임**(-50dBFS 넘는 50ms 창)을 출력한다. 크레딧(174초), 오프닝(752프레임), 비행 장면(560프레임)처럼 길이가 정해진 큐를 이 값으로 잰다.
+- 녹음이 끝나면 길이와 **소리가 시작·끝나는 초와 프레임**(-50dBFS 넘는 50ms 창)을 출력한다. 크레딧(250.6초, 곡 전체), 오프닝(752프레임), 비행 장면(560프레임)처럼 길이가 정해진 큐를 이 값으로 잰다.
 - `--continue`는 ROM 옆에 `.sym` 파일이 있어야 한다(`make syms`, 또는 ROM과 함께 `pokemonthyl.sym`을 복사).
 - 시험 결과(scratchpad에 복사한 ROM, 메인 트리 ROM은 쓰지 않음)
   - 전원 켜고 1,500프레임을 5.9초에 녹음했다. 소리가 **206프레임**에서 시작해 콘티의 실측값(209프레임 `MUS_GAME_FREAK`, `docs/anim/opening-storyboard.md:25`)과 맞았다.

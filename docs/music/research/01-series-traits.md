@@ -228,4 +228,4 @@
 
 - 조 추정이 틀릴 수 있는 곡: caught·victory_wild(A minor로 나오지만 장조 느낌의 곡일 가능성), obtain_badge(D minor), mt_moon·sevii_cave(0.44). 조가 중요한 판단이라면 검수자가 귀로 확인해야 한다.
 - sevii_123은 pewter와, sevii_cave·rg_sevii_cave는 mt_moon과, sevii_dungeon은 viridian_forest와 같은 곡이다(수치 일치). "원곡 표본 수"를 셀 때 중복으로 본다.
-- 크레딧 곡 길이(249.5초)는 MIDI 템포 맵으로 계산한 값이다. 크레딧 스크립트 길이(10,450프레임 ≈ 174초, `docs/master-plan.md:369`)보다 길다. `MUS_CREDITS`는 석영고원 바깥 장면에서 먼저 시작한다(`IndigoPlateau_Exterior/scripts.inc:18`). 그래서 앞부분이 그 걷는 장면을 덮는 것으로 보인다. 정확한 맞춤은 05 문서의 에뮬레이터 캡처로 확인해야 한다.
+- 크레딧 곡 길이(249.5초)는 MIDI 템포 맵으로 계산한 값이다. 크레딧 스크립트 합계(10,450프레임 ≈ 174초)보다 길다. 실측은 250.6초(06 문서)이고, 엔딩 길이 기준은 이 값으로 통일됐다(2026-09-26). `MUS_CREDITS`는 석영고원 바깥 장면에서 먼저 시작한다(`IndigoPlateau_Exterior/scripts.inc:18`). 그래서 앞부분이 그 걷는 장면을 덮는 것으로 보인다. 정확한 맞춤은 05 문서의 에뮬레이터 캡처로 확인해야 한다.

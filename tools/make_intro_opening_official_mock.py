@@ -247,7 +247,7 @@ def cut4(t):
     """THUNDERBOLT: the Thunder battle background, PIKACHU zooming in, the flock struck."""
     th = bg('graphics/battle_anims/backgrounds/thunder')
     view = tiled(th, 0, -t * 2)
-    sc = 1.0 + min(1.0, t / 60.0)
+    sc = 1.0 + min(0.25, t / 240.0)       # up to 1.25x: more blurs the pixels
     pk = affine(mon('pikachu'), sc)
     put(view, pk, W // 2 - pk.size[0] // 2, VIEW_H // 2 - pk.size[1] // 2 + 8)
     for k in range(6):

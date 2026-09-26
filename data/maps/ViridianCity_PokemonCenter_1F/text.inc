@@ -81,17 +81,16 @@ ViridianCity_PokemonCenter_1F_Text_OfficerIntro::
     .string "we recover what they dropped.$"
 
 ViridianCity_PokemonCenter_1F_Text_OfficerHandOver::
-    .string "OFFICER: {PLAYER}, isn't it?\n"
-    .string "These belong to you now.$"
+    .string "OFFICER: {PLAYER}! Here's what we\n"
+    .string "got back from TEAM ROCKET.$"
 
-ViridianCity_PokemonCenter_1F_Text_OfficerMewEgg::
-    .string "OFFICER: This EGG came from the\n"
-    .string "island lab. Nobody knows what's\l"
-    .string "inside. You'll look after it?$"
+ViridianCity_PokemonCenter_1F_Text_OfficerBagFull::
+    .string "OFFICER: Your BAG is full. I'll hold\n"
+    .string "the rest till you make room.$"
 
-ViridianCity_PokemonCenter_1F_Text_OfficerComeBack::
-    .string "OFFICER: No room? I'll hold the\n"
-    .string "rest. Come back any time.$"
+ViridianCity_PokemonCenter_1F_Text_OfficerBoxesFull::
+    .string "OFFICER: Your party and PC BOXES\n"
+    .string "are full. I'll keep the EGG safe.$"
 
 ViridianCity_PokemonCenter_1F_Text_OfficerNothing::
     .string "OFFICER: Nothing new in the case\n"

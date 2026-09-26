@@ -526,4 +526,5 @@ gSpecials::
 	def_special OpenPokeWatchWindow
 	def_special ClosePokeWatchWindow
 	def_special AddRocketMeowthCoins
+	def_special GiveRocketOfficerRewards
 gSpecialsEnd::

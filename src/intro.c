@@ -23,9 +23,10 @@
     The intro is grouped into the following scenes
     - Copyright screen
     - GF Logo
-    - The Thunder Yellow opening (src/intro_opening.c): seven short scenes after
-      the anime's first season, cut to the bars of MUS_INTRO_FIGHT. It replaces
-      FR/LG's Gengar/Nidorino fight and lasts exactly as long (752 frames).
+    - The Thunder Yellow opening (src/intro_opening.c): five short cuts after
+      the anime's first season, made of official graphics only and cut to the bars
+      of MUS_INTRO_FIGHT. It replaces FR/LG's Gengar/Nidorino fight and lasts 595
+      frames, to the first beat of the song's bar 8.
 
     After this it progresses to the title screen
 */
@@ -71,7 +72,7 @@ typedef void (*IntroCallback)(struct IntroSequenceData *);
 struct IntroSequenceData
 {
     IntroCallback callback;
-    u8 state; // IntroCB_Opening: the number of the scene on screen (1-7)
+    u8 state; // IntroCB_Opening: the number of the cut on screen (1-5)
     u8 taskId;
     u16 data[5]; // [0] and [1] are set but never read, the rest are unused
     u16 timer;
@@ -767,7 +768,7 @@ static void IntroCB_GF_RevealLogo(struct IntroSequenceData * this)
 
 // The opening runs itself (src/intro_opening.c); this only starts it, keeps the scene
 // number in state for tools/qa/intro_timeline.py and moves on to the title screen
-// on the frame the original fight did (F1457 after power on).
+// when it ends (F1301 after power on, on the first beat of bar 8).
 static void IntroCB_Opening(struct IntroSequenceData * this)
 {
     u8 scene;

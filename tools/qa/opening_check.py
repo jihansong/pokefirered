@@ -2,7 +2,7 @@
 """Check the new opening in a built ROM against the tools' mock-ups and the timing.
 
     python3 tools/qa/opening_check.py [rom] --mock scene2=DIR [--mock scene4=DIR ...]
-                                      [--skips 400,850,1000,1300]
+                                      [--skips 400,850,1000,1290]
 
 - Boots the ROM with no save and no input, captures every frame of each named scene
   and compares it with the mock-up the scene's tool drew (DIR/tNN.png or tNNN.png, as
@@ -23,8 +23,10 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from emu import Emu  # noqa: E402
 
 FR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
-SCENE_CODE_START = {'scene2': 842, 'scene4': 995, 'scene5': 1148, 'scene6': 1301}   # code frames
-SCENE_FRAMES = {'scene2': 76, 'scene4': 153, 'scene5': 153, 'scene6': 77}
+# plan B (tools/make_intro_opening_b.py --preview DIR writes DIR/c1 ... DIR/c5)
+SCENE_CODE_START = {'c1': 706, 'c2': 842, 'c3': 918, 'c4': 1071, 'c5': 1225}   # code frames
+SCENE_FRAMES = {'c1': 136, 'c2': 76, 'c3': 153, 'c4': 154, 'c5': 76}
+TITLE_EXPECTED = 1303   # F1301 hand-over, then two frames of IntroCB_ExitToTitleScreen
 
 
 def q(im):
@@ -40,6 +42,7 @@ def mock_path(d, t):
 
 
 def run(rom, mocks, frames=1470):
+    dropped = None
     want = {}
     for scene, d in mocks.items():
         f0 = SCENE_CODE_START[scene] + 1
@@ -56,7 +59,6 @@ def run(rom, mocks, frames=1470):
                 shots[f] = Image.frombytes('RGB', (240, 160), e.screen())
             if title is None and names.get(e.callback2() & ~1) == 'CB2_InitTitleScreen':
                 title = f
-            if f == 1456:
                 dropped = e.u16(s['gOpeningDroppedFrames'])
     bad = {}
     for f, (scene, t, d) in sorted(want.items()):
@@ -96,7 +98,7 @@ def main():
         b = bad.get(scene, [])
         print('%s: %d of %d frames differ from the mock-ups %s' % (scene, len(b), SCENE_FRAMES[scene], b[:8]))
     print('dropped frames: %d' % dropped)
-    print('title screen: F%s (original F1459)' % title)
+    print('title screen: F%s (expected F%d; FR/LG original F1459)' % (title, TITLE_EXPECTED))
     for at in [int(x) for x in a.skips.split(',') if x]:
         print('A at F%d -> title F%s (original F%d)' % (at, skip_title(a.rom, at), at + 1))
 

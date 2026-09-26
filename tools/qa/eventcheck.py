@@ -371,15 +371,17 @@ def decode_text(raw):
 def rom_text_prefix(e, label):
     """The first bytes of the text at LABEL, up to its first placeholder or
     control code (those differ once expanded into gStringVar4)."""
-    raw = e.read(e.sym(label), 64)
+    raw = e.read(e.sym(label), 96)
     out = bytearray()
     for b in raw:
-        if b >= 0xF7:       # placeholders, control codes, line breaks, the end
+        # line breaks stay as they are in gStringVar4; placeholders, control
+        # codes and the end don't
+        if b >= 0xF7 and b not in (0xFA, 0xFB, 0xFE):
             break
         out.append(b)
     if len(out) < 4:
         raise ValueError('text %s starts with too little plain text to watch' % label)
-    return bytes(out[:32])
+    return bytes(out[:90])
 
 
 def rom_text_run(e, label):
@@ -434,7 +436,7 @@ def run_case(case, rom, shots, presses_log=None):
 
             def look():
                 if watches:
-                    shown = e.read(e.sym('gStringVar4'), 64)
+                    shown = e.read(e.sym('gStringVar4'), 96)
                     battle = e.read(e.sym('gDisplayedStringBattle'), 64)
                     for w in watches.values():
                         if shown.startswith(w[0]) or (w[2] and (w[0] in shown or w[0] in battle)):
@@ -465,7 +467,7 @@ def run_case(case, rom, shots, presses_log=None):
                     want = rom_text_prefix(e, p[1])
                     last_presses[0] = 0
                     for _ in range(int(p[2]) if len(p) > 2 else 300):
-                        if e.read(e.sym('gStringVar4'), 32).startswith(want):
+                        if e.read(e.sym('gStringVar4'), 96).startswith(want):
                             break
                         press('A', 20)
                         last_presses[0] += 1

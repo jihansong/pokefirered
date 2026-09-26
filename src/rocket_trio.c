@@ -286,7 +286,8 @@ void GiveRocketOfficerRewards(void)
     u8 word[ITEM_NAME_LENGTH + 8];
     u8 kinds = 0, given = 0, lines = 0, eggsToPC = 0;
     u16 lineWidth;
-    bool8 bagFull = FALSE, boxesFull = FALSE;
+    bool8 bagFull = FALSE;
+    u8 eggsKept = 0;
     u8 *end, *w;
     u8 i, j;
 
@@ -302,7 +303,7 @@ void GiveRocketOfficerRewards(void)
 
             if (result == MON_CANT_GIVE)
             {
-                boxesFull = TRUE;
+                eggsKept++;
                 continue;
             }
             if (result == MON_GIVEN_TO_PC)
@@ -364,5 +365,5 @@ void GiveRocketOfficerRewards(void)
 
     gSpecialVar_0x8005 = given;
     gSpecialVar_0x8006 = bagFull;
-    gSpecialVar_0x8007 = boxesFull;
+    gSpecialVar_0x8007 = eggsKept;  // EGGs kept for want of room (the line says EGG or EGGS)
 }

@@ -145,6 +145,7 @@ struct OpeningTableScene
 
 #include "data/intro_opening_scene2.h"
 #include "data/intro_opening_scene45.h"
+#include "data/intro_opening_scene6.h"
 
 #define MUSIC_START   20
 #define OPENING_END   751
@@ -173,6 +174,9 @@ enum {
     PALTAG_RED,
     PALTAG_RED_SHIELD,  // RED crouched, with the small PIKACHU's colours
     PALTAG_SPEAROW,
+    PALTAG_RED_FIELD,   // RED and PIKACHU as field sprites (scene 6)
+    PALTAG_PIKA_FIELD,
+    PALTAG_HO_OH,       // HO-OH's silhouette and its sparkles
 };
 
 struct OpeningScene
@@ -237,7 +241,7 @@ static const struct OpeningScene sScenes[NUM_SCENES] = {
     {212, CARD},
     {289, TABLE},
     {442, TABLE},
-    {595, CARD},
+    {595, TABLE},
     {672, CARD},
 };
 
@@ -282,6 +286,18 @@ static const u16 sStorm_Pika_Pal[]    = INCBIN_U16("graphics/intro/opening/scene
 static const u32 sStorm_Crackle_Gfx[] = INCBIN_U32("graphics/intro/opening/scene45/crackleL.4bpp");
 static const u32 sStorm_BoltDown_Gfx[] = INCBIN_U32("graphics/intro/opening/scene45/boltA.4bpp");
 static const u32 sStorm_Burst_Gfx[]   = INCBIN_U32("graphics/intro/opening/scene45/burst.4bpp");
+static const u32 sSky_Bg_Gfx[]        = INCBIN_U32("graphics/intro/opening/scene6/bg.4bpp");
+static const u16 sSky_Sky_Map[]       = INCBIN_U16("graphics/intro/opening/scene6/bg_sky.bin");
+static const u16 sSky_Hill_Map[]      = INCBIN_U16("graphics/intro/opening/scene6/bg_hill.bin");
+static const u16 sSky_Clouds_Map[]    = INCBIN_U16("graphics/intro/opening/scene6/bg_clouds.bin");
+static const u16 sSky_Bg_Pal[]        = INCBIN_U16("graphics/intro/opening/scene6/bg.gbapal");
+static const u32 sSky_Red_Gfx[]       = INCBIN_U32("graphics/intro/opening/scene6/red.4bpp");
+static const u16 sSky_Red_Pal[]       = INCBIN_U16("graphics/intro/opening/scene6/red.gbapal");
+static const u32 sSky_Pika_Gfx[]      = INCBIN_U32("graphics/intro/opening/scene6/pika.4bpp");
+static const u16 sSky_Pika_Pal[]      = INCBIN_U16("graphics/intro/opening/scene6/pika.gbapal");
+static const u32 sSky_HoOh_Gfx[]      = INCBIN_U32("graphics/intro/opening/scene6/hooh.4bpp");
+static const u16 sSky_HoOh_Pal[]      = INCBIN_U16("graphics/intro/opening/scene6/hooh.gbapal");
+static const u32 sSky_Spark_Gfx[]     = INCBIN_U32("graphics/intro/opening/scene6/spark.4bpp");
 
 // The colour of each scene's stand-in card: dawn, lab, friends, storm, thunder,
 // rainbow sky, dusk.
@@ -316,6 +332,18 @@ static const struct OamData sOam_32x64 = {
 static const struct OamData sOam_32x32 = {
     .shape = SPRITE_SHAPE(32x32),
     .size = SPRITE_SIZE(32x32),
+    .priority = 1,
+};
+
+static const struct OamData sOam_16x32 = {
+    .shape = SPRITE_SHAPE(16x32),
+    .size = SPRITE_SIZE(16x32),
+    .priority = 1,
+};
+
+static const struct OamData sOam_8x8 = {
+    .shape = SPRITE_SHAPE(8x8),
+    .size = SPRITE_SIZE(8x8),
     .priority = 1,
 };
 
@@ -393,6 +421,25 @@ static const u16 sScene4_ObjPalTags[] = {PALTAG_RED, PALTAG_RED_SHIELD, PALTAG_S
 static const u16 *const sScene5_ObjPals[] = {sStorm_Shield_Pal, sStorm_Pika_Pal, sStorm_Bird_Pal};
 static const u16 sScene5_ObjPalTags[] = {PALTAG_RED_SHIELD, PALTAG_S2_PIKACHU, PALTAG_SPEAROW};
 
+// ------------------------------------------------------------ scene 6: the rainbow
+
+#define SPARK(i) {sSky_Spark_Gfx, &sOam_8x8, PALTAG_HO_OH, 8, 8, 13 + (i), 13 + (i)}
+
+static const struct OpeningTrack sScene6_Tracks[SCENE6_TRACK_COUNT] = {
+    {sSky_Red_Gfx,  &sOam_16x32, PALTAG_RED_FIELD, 16, 32, 10, 10},
+    {sSky_Pika_Gfx, &sOam_16x16, PALTAG_PIKA_FIELD, 16, 16, 11, 11},
+    {sSky_HoOh_Gfx, &sOam_32x32, PALTAG_HO_OH,     32, 32, 12, 12},
+    SPARK(0), SPARK(1), SPARK(2), SPARK(3), SPARK(4), SPARK(5),
+};
+
+static const struct OpeningLayout sScene6_Layouts[] = {
+    {MAP_BACK, MAP_FRONT, MAP_NONE},
+    {MAP_BACK, MAP_FRONT, MAP_EXTRA},    // and the near clouds in front of HO-OH
+};
+
+static const u16 *const sScene6_ObjPals[] = {sSky_Red_Pal, sSky_Pika_Pal, sSky_HoOh_Pal};
+static const u16 sScene6_ObjPalTags[] = {PALTAG_RED_FIELD, PALTAG_PIKA_FIELD, PALTAG_HO_OH};
+
 static const struct OpeningTableScene sTableScenes[NUM_SCENES] = {
     [1] = {
         sScene2_Tracks, SCENE2_TRACK_COUNT, SCENE2_FRAMES, sScene2_Keys[0], sScene2_Scroll,
@@ -411,6 +458,12 @@ static const struct OpeningTableScene sTableScenes[NUM_SCENES] = {
         sScene5_Layout, sStorm_Layouts, sScene5_Events, sStorm_Bg_Gfx, sizeof(sStorm_Bg_Gfx),
         {sStorm_Sky_Map, sStorm_Field_Map, sStorm_Rain_Map}, sStorm_Bg_Pal, 3,
         sScene5_ObjPals, sScene5_ObjPalTags, ARRAY_COUNT(sScene5_ObjPalTags),
+    },
+    [5] = {
+        sScene6_Tracks, SCENE6_TRACK_COUNT, SCENE6_FRAMES, sScene6_Keys[0], sScene6_Scroll,
+        sScene6_Layout, sScene6_Layouts, sScene6_Events, sSky_Bg_Gfx, sizeof(sSky_Bg_Gfx),
+        {sSky_Sky_Map, sSky_Hill_Map, sSky_Clouds_Map}, sSky_Bg_Pal, 4,
+        sScene6_ObjPals, sScene6_ObjPalTags, ARRAY_COUNT(sScene6_ObjPalTags),
     },
 };
 

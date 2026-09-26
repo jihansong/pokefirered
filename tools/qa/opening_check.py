@@ -23,8 +23,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from emu import Emu  # noqa: E402
 
 FR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
-SCENE_CODE_START = {'scene2': 842, 'scene4': 995, 'scene5': 1148}   # code frames
-SCENE_FRAMES = {'scene2': 76, 'scene4': 153, 'scene5': 153}
+SCENE_CODE_START = {'scene2': 842, 'scene4': 995, 'scene5': 1148, 'scene6': 1301}   # code frames
+SCENE_FRAMES = {'scene2': 76, 'scene4': 153, 'scene5': 153, 'scene6': 77}
 
 
 def q(im):

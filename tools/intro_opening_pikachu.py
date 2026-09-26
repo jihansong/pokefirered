@@ -529,15 +529,16 @@ def run_frame(i):
 
 def jump_frame(stage):
     """The THUNDERBOLT leap, facing the viewer: 'crouch' (squashed, ears back, about
-    to spring), 'launch' (stretched up, arms raised), 'air' (spread in the air, tail
+    to spring), 'launch' (stretched up, arms raised), 'rise' (flying upward: body long,
+    arms tight, legs trailing, ears laid together), 'air' (spread in the air, tail
     up, cheeks lit), 'fall' (curled, coming down)."""
     f = Scaled(1)
-    k = {'crouch': (1.07, 0.9, 4, -0.35), 'launch': (0.9, 1.12, -4, 0.1),
+    k = {'crouch': (1.07, 0.9, 4, -0.35), 'launch': (0.9, 1.12, -4, 0.1), 'rise': (0.88, 1.12, -3, 0.28),
          'air': (1.0, 1.0, -2, 0.15), 'fall': (1.0, 0.95, 0, -0.2)}[stage]
     sx, sy, dy, ear_tilt = k
     hx, hy = 32, 24 + dy
     by = 45 + dy
-    tail(f, 'flick' if stage in ('launch', 'air') else 'rest')
+    tail(f, 'flick' if stage in ('launch', 'air') else 'lag' if stage == 'rise' else 'rest')
     if stage == 'launch':
         f.ellipse('armL', 20, by + 6, 2.6, 5, rot=0.7)
         f.ellipse('armR', 44, by + 6, 2.6, 5, rot=-0.7)
@@ -552,6 +553,11 @@ def jump_frame(stage):
     elif stage == 'launch':                      # toes still on the ground, arms swept back
         f.ellipse('footL', 28, 57.5, 3, 4, rot=0.15)
         f.ellipse('footR', 36, 57.5, 3, 4, rot=-0.15)
+    elif stage == 'rise':                        # in flight upward: streamlined, legs trailing
+        f.ellipse('footL', 28, by + 15, 2.8, 4.5, rot=0.1)
+        f.ellipse('footR', 36, by + 15, 2.8, 4.5, rot=-0.1)
+        f.ellipse('armL', 23, by + 2, 2.4, 4.6, rot=0.25)
+        f.ellipse('armR', 41, by + 2, 2.4, 4.6, rot=-0.25)
     elif stage == 'air':
         f.ellipse('footL', 20, by + 10, 3.2, 4, rot=0.8)
         f.ellipse('footR', 44, by + 10, 3.2, 4, rot=-0.8)
@@ -565,7 +571,7 @@ def jump_frame(stage):
     for i, side in enumerate((-1, 1)):
         base = (hx + side * 8, hy - 7)
         ang = side * (0.55 - ear_tilt)
-        length = 17
+        length = 14 if stage == 'rise' else 17     # laid back in the rush of air
         tip = (base[0] + math.sin(ang) * length, base[1] - math.cos(ang) * length)
         ear(f, 'ear%d' % i, base[0], base[1], tip[0], tip[1])
     f.ellipse('head', hx, hy, 14, 11.5)
@@ -686,6 +692,6 @@ def model_views():
            'side': side_view(), 'side, ears back': side_view('open', 'open', 'back', 'up')}
     for i in range(len(RUN)):
         out['run %d' % i] = run_frame(i)
-    for st in ('crouch', 'launch', 'air', 'fall'):
+    for st in ('crouch', 'launch', 'rise', 'air', 'fall'):
         out['jump: ' + st] = jump_frame(st)
     return out

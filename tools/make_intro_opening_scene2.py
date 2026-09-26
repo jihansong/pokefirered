@@ -771,11 +771,11 @@ def write_header(keys, scroll, layout, path):
         lines.append('    [%d] = {%s},' % (t, ', '.join('{%d, %d, %d, %d}' % k[tr] for tr in TRACKS)))
     lines += ['};', '', 'static const struct OpeningScroll sScene2_Scroll[SCENE2_FRAMES] = {']
     for t, s in enumerate(scroll):
-        lines.append('    [%d] = {%d, %d, %d, %d},' % ((t,) + s))
+        lines.append('    [%d] = {%d, %d, %d, %d, 0, 0},' % ((t,) + s))
     lines += ['};', '', 'static const u8 sScene2_Layout[SCENE2_FRAMES] = {']
     for i in range(0, FRAMES, 19):
         lines.append('    ' + ', '.join(str(v) for v in layout[i:i + 19]) + ',')
-    lines += ['};', '']
+    lines += ['};', '', 'static const struct OpeningEvent sScene2_Events[] = {', '    {0xFFFF},', '};', '']
     with open(path, 'w') as f:
         f.write('\n'.join(lines))
 

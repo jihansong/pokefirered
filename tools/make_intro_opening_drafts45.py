@@ -47,7 +47,7 @@ KEYS = [(1000, '4a: the storm gathers, RED runs in'),
         (1236, '5c: THUNDERBOLT, the flock closing in'),
         (1260, '5c: the flock struck, falling upside down'),
         (1290, '5c: the white-out into scene 6'),
-        (1050, '4a: turned, holding it'),
+        (1050, '4a: turned (back view), PIKACHU on his shoulder'),
         (1058, '4a: in-between 1: knees bending'),
         (1062, '4a: in-between 2: into the crouch'),
         (1223, '5b: the wind-up before THUNDERBOLT'),
@@ -97,9 +97,10 @@ def stack(*parts):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('rom', nargs='?', default=os.path.join(ROOT, 'pokemonthyl.gba'))
-    ap.add_argument('--out', default=os.path.join(ROOT, 'docs/anim/drafts/scene45-B'))
-    ap.add_argument('--label', default='B')
+    ap.add_argument('--out', default=os.path.join(ROOT, 'docs/anim/drafts/scene45-C'))
+    ap.add_argument('--label', default='C')
     ap.add_argument('--wav-tool', default=None)
+    ap.add_argument('--strip', default=None, help='F0-F1: every frame of that span, 1x and 3x (centre crop)')
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     shots = capture(a.rom, set(range(SPAN[0], SPAN[1] + 1)))
@@ -116,6 +117,13 @@ def main():
         labelled([shots[f] for f in every], ['F%d (t%d)' % (f, f - f0) for f in every], 6, 1,
                  '%s draft %s in the emulator, every 3rd frame (t = frame of the scene)' % (n, a.label)).save(
             os.path.join(a.out, 'emu-every3-%s.png' % n))
+    if a.strip:
+        f0, f1 = [int(v) for v in a.strip.split('-')]
+        fr = list(range(f0, f1 + 1))
+        crops = [shots[f].crop((60, 32, 180, 128)) for f in fr]
+        for scale, name in ((1, 'strip_F%d-%d.png'), (3, 'strip_F%d-%d_x3.png')):
+            labelled(crops, ['F%d' % f for f in fr], 7, scale,
+                     'every frame F%d-%d (centre of the picture)' % (f0, f1)).save(os.path.join(a.out, name % (f0, f1)))
     labelled([shots[f] for f in CUTS], ['F%d' % f for f in CUTS], 2, 1,
              'cuts: into 4 (F995|996), no cut any more at F1072|1073 (one continuous shot), '
              'into 5 (F1147-1150), into 6 (F1301|1302)').save(os.path.join(a.out, 'cuts.png'))

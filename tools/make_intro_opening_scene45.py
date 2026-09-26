@@ -613,13 +613,19 @@ def scene4():
         shake = {35: 1, 36: -1, 37: 1}.get(u, 0)
         scroll.append((cam // 4 - shake, 0, cam - shake, 0, (t * 2) % 256, (-t * 5) % 256))
         layout.append(1 if t >= 8 else 0)
-        wx = -60 + 210 * ease_out(t / 44) if t < 44 else RED_WORLD_X
+        # the run eases out 2 px short of his mark; the turn slides the last 2 px
+        if t < 44:
+            wx = -60 + 208 * ease_out(t / 44)
+        elif t < 48:
+            wx = RED_WORLD_X - 2 + (0.5, 1.2, 1.7, 2.0)[t - 44]
+        else:
+            wx = RED_WORLD_X
         x = round(wx - cam) + shake
         # RED: runs in carrying the small PIKACHU, stops, turns, bends, crouches
         if t < 44:
             k['red'] = (x, 60, (t // 3) % 4, 0)
         elif t < 48:
-            k['red'] = (x, 60, 1, 0)
+            k['red'] = (x, 60, 7, 0)                     # the 3/4 turn: PIKACHU climbs to his shoulder
         elif t < 56:
             k['red'] = (x, 60, 4, 0)                     # turned, holding it
         elif t < 60:

@@ -228,10 +228,14 @@ class Emu:
         cb = self.callback2() & ~1
         return cb == 0 or cb in {self.syms.get(n) for n in BOOT_CALLBACKS}
 
-    def boot_continue(self, timeout=3600):
+    def boot_continue(self, timeout=3600, on_menu=None, leave_menu_only=False):
         """From power-on, mash through the intro and title and pick CONTINUE.
         Returns the frame count at which the overworld came up; raises
-        GameReset if the game resets after leaving the main menu."""
+        GameReset if the game resets after leaving the main menu. on_menu(self)
+        is called once, on the main menu, before CONTINUE is picked. With
+        leave_menu_only it returns as soon as CONTINUE is picked (for scenes
+        that start on their own, like the credits' quest-log epilogue, where
+        the overworld never looks idle)."""
         start = self.frame()
         menu = self.syms.get('CB2_MainMenu')
         seen_menu = left_menu = False
@@ -240,9 +244,14 @@ class Emu:
             if left_menu and self.reset_seen():
                 raise GameReset('reset after CONTINUE (callback2=%08x)' % self.callback2())
             if cb == menu:
+                if not seen_menu and on_menu:
+                    self.run(60)
+                    on_menu(self)
                 seen_menu = True
             elif seen_menu:
                 left_menu = True
+                if leave_menu_only:
+                    return self.frame() - start
             if self.quest_log_playing():
                 # "Previously on your quest..." replays old scenes on the
                 # old maps; B skips to the end and the real map loads after.

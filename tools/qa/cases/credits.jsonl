@@ -1,9 +1,15 @@
 # The ending credits (Joseph Song's page, 2026-09-26). Run: tools/qa/eventcheck.py tools/qa/cases/credits.jsonl --shots DIR
-# The real post-champion flow: HALL OF FAME warps the player to INDIGO PLATEAU with VAR_MAP_SCENE_INDIGO_PLATEAU_EXTERIOR 1,
-# whose ON_TRANSITION plays MUS_CREDITS and whose ON_FRAME script walks the rival out and calls DoCredits.
+# The real post-champion flow, as SetWarpsToRollCredits leaves it (docs/music/research/06-kanto-credits-timeline.md):
+# INDIGO PLATEAU (11,6) with VAR_MAP_SCENE_INDIGO_PLATEAU_EXTERIOR 1, the quest log empty, and on the main menu
+# gDisableMapMusicChangeOnMapLoad 2 and FLAG_DONT_SHOW_MAP_NAME_POPUP (sSpecialFlags bit 0). CONTINUE then loads the map
+# through CB2_LoadMap, ON_TRANSITION's playbgm MUS_CREDITS really plays, and ON_FRAME walks the rival out and calls DoCredits.
 # sCreditsMgr+6 is scrcmdidx: while script command N is on screen it holds N+1. Command 61 is the last SPECIAL THANKS,
-# 62 the POKeMON Thunder Yellow / Joseph Song page, then a 52-frame gap, the black hold, THE END (65) and WAITBUTTON (66).
-# Frames count from the first frame of CB2_Credits (credits_joseph_song: page 62 on screen from frame 13104 to 13350).
-{"name": "credits_joseph_song", "edit": ["warp IndigoPlateau_Exterior 11 7", "var VAR_MAP_SCENE_INDIGO_PLATEAU_EXTERIOR 1"], "steps": ["waitcb2 CB2_Credits 3000", "wait 13000", "shot special_thanks", "expect deref sCreditsMgr 6 = 62", "wait 220", "shot joseph_song", "expect cb2 CB2_Credits", "expect deref sCreditsMgr 6 = 63", "wait 930", "shot the_end", "expect cb2 CB2_Credits", "expect deref sCreditsMgr 6 = 67"]}
+# 62 the POKeMON Thunder Yellow / Joseph Song page, 63 a 52-frame gap, 64 the copyright, 65 THE END and 66 WAITBUTTON.
+# Frames count from the first frame of CB2_Credits: page 62 from 12857 to 13103, THE END from 13460, WAITBUTTON from 13764;
+# MUS_CREDITS ends at about 13531. How THE END falls against the song, against v0.8.0: tools/qa/creditstime.py.
+{"name": "credits_joseph_song", "edit": ["warp IndigoPlateau_Exterior 11 6", "var VAR_MAP_SCENE_INDIGO_PLATEAU_EXTERIOR 1", "noquestlog"], "menu": ["poke gDisableMapMusicChangeOnMapLoad 2", "poke sSpecialFlags 1"], "leave_menu_only": true, "steps": ["waitcb2 CB2_Credits 3000", "wait 60", "expect song mus_credits", "wait 12640", "shot special_thanks", "expect deref sCreditsMgr 6 = 62", "wait 220", "shot joseph_song", "expect cb2 CB2_Credits", "expect deref sCreditsMgr 6 = 63", "expect song mus_credits", "wait 600", "shot the_end", "expect cb2 CB2_Credits", "expect deref sCreditsMgr 6 = 66", "wait 300", "expect deref sCreditsMgr 6 = 67"]}
+# Negative control: a plain CONTINUE (no gDisableMapMusicChangeOnMapLoad) skips the playbgm and plays the map's own music,
+# so the song check must fail there.
+{"name": "control_credits_plain_continue_no_mus_credits", "xfail": true, "edit": ["warp IndigoPlateau_Exterior 11 6", "var VAR_MAP_SCENE_INDIGO_PLATEAU_EXTERIOR 1"], "steps": ["waitcb2 CB2_Credits 3000", "wait 60", "expect song mus_credits"]}
 # Negative control: without the HALL OF FAME scene var the plateau is just the plateau, and no credits roll.
 {"name": "credits_not_without_hof", "xfail": true, "edit": ["warp IndigoPlateau_Exterior 11 7", "var VAR_MAP_SCENE_INDIGO_PLATEAU_EXTERIOR 0"], "steps": ["waitcb2 CB2_Credits 3000"]}

@@ -41,6 +41,9 @@ Commands (names are the C constant names; numbers work too):
                                first party POKéMON
     fastbattle                 options: battle style SET, animations off, fast
                                text (A-mashing through singles never switches)
+    noquestlog                 empty the quest log, so CONTINUE shows no
+                               "Previously on your quest" (whose playback
+                               ignores playbgm) and loads the map at once
 
 Without -o the input file is rewritten in place.
 """
@@ -57,7 +60,8 @@ from savefile import SaveFile                                   # noqa: E402
 
 COMMANDS = {'info', 'flag', 'var', 'trainer', 'warp', 'strong', 'mon', 'tonext', 'held', 'friendship',
             'starterbit', 'otid', 'frombox', 'lead', 'party', 'hp', 'day', 'hour', 'dex',
-            'money', 'coins', 'item', 'firstitem', 'fillitems', 'fillboxes', 'fastbattle'}
+            'money', 'coins', 'item', 'firstitem', 'fillitems', 'fillboxes', 'fastbattle',
+            'noquestlog'}
 
 
 def _map_name(g, n):
@@ -219,6 +223,12 @@ def run(argv):
             s.fast_battles()
             dirty = True
             print('battle style SET, animations off, fast text')
+        elif cmd == 'noquestlog':
+            size = off('questlogscene')
+            for i in range(const('QUEST_LOG_SCENE_COUNT')):
+                s.sb1[off('sb1.questLog') + i * size] = 0   # startType: no scene
+            dirty = True
+            print('quest log emptied')
         elif cmd == 'fillboxes':
             n = s.fill_boxes()
             dirty = True

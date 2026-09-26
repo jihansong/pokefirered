@@ -12,6 +12,10 @@ A case:
      "steps": ["UP", "A*3", "wait 60", "shot rematch", "expect var VAR_X = 2"]}
 
 "edit" lines are savedit.py commands applied to a copy of the base save.
+"menu" lines ("poke SYMBOL VALUE", a byte) are written to RAM on the main
+menu, before CONTINUE, e.g. gDisableMapMusicChangeOnMapLoad 2 for the real
+post-champion credits (the map's playbgm MUS_CREDITS then plays).
+"leave_menu_only": true starts the steps as soon as CONTINUE is picked.
 Steps, in order:
     A | B | START | SELECT | L | R      press once;  "A*5" presses five times
     UP | DOWN | LEFT | RIGHT [N]         face/walk N tiles (default 1)
@@ -58,6 +62,8 @@ Steps, in order:
     expect move SLOT MOVE                check that party SLOT knows MOVE
     expect cb2 NAME                      check gMain.callback2 (e.g. CB2_UpdatePartyMenu)
     expect map MAP                       check the player's current map
+    expect song LABEL                    the BGM player plays the song at LABEL
+                                         (e.g. mus_credits), with tracks active
     expect battle | expect overworld     check what the game is doing
 The save is continued (title, CONTINUE, quest-log recap skipped) before the
 first step. A case passes when every expect holds; screenshots are for eyes.
@@ -164,8 +170,13 @@ def run_case(case, rom, shots, presses_log=None):
         if rc:
             return False, ['savedit failed: %s' % ' '.join(argv[3:])]
         with Emu(rom, sav) as e:
+            def on_menu(emu):
+                for line in case.get('menu', []):
+                    q = line.split()
+                    assert q[0] == 'poke', line
+                    emu.write(emu.sym(q[1]), bytes([int(q[2], 0)]))
             try:
-                e.boot_continue()
+                e.boot_continue(on_menu=on_menu, leave_menu_only=case.get('leave_menu_only', False))
             except (TimeoutError, GameReset) as ex:
                 return False, ['could not continue: %s' % ex]
             watches = {}            # label -> [prefix, seen]
@@ -270,6 +281,10 @@ def run_case(case, rom, shots, presses_log=None):
                         shown = decode_text(e.read(e.sym('gStringVar4'), 400))
                         if ' '.join(p[2:]) not in shown:
                             fails.append('%s: the message is %r' % (step, shown))
+                    elif what == 'song':
+                        header, status = struct.unpack('<II', e.read(e.sym('gMPlayInfo_BGM'), 8))
+                        if header != e.sym(p[2]) or not status & 0xFFFF:
+                            fails.append('%s: BGM header %08x, status %08x' % (step, header, status))
                     elif what == 'presses':
                         if presses_log is not None:
                             presses_log.append(last_presses[0])

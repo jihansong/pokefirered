@@ -45,6 +45,8 @@ FIELDS = {
     'sb1.bagPocket_PokeBalls': ('SaveBlock1', 'bagPocket_PokeBalls'),
     'sb1.bagPocket_TMHM': ('SaveBlock1', 'bagPocket_TMHM'),
     'sb1.bagPocket_Berries': ('SaveBlock1', 'bagPocket_Berries'),
+    'sb1.questLog': ('SaveBlock1', 'questLog'),
+    'questlogscene': ('QuestLogScene', None),
     'sb1': ('SaveBlock1', None),
     'sb2.playerName': ('SaveBlock2', 'playerName'),
     'sb2.specialSaveWarpFlags': ('SaveBlock2', 'specialSaveWarpFlags'),

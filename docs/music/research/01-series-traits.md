@@ -2,7 +2,7 @@
 
 - 작성: 음악 리서처, 2026-09-26. 음악 감독 브리프(프로듀서 대행) 1번 항목
 - 표본: `sound/songs/midi/mus_*.mid` 141곡 전부. FR/LG 원곡 92곡과 에메랄드에서 이식한 곡 49곡(`// BEGIN HOENN MUSIC`, `include/constants/songs.h:356-406`)
-- 방법: 파이썬 표준 라이브러리로 MIDI를 직접 파싱했다. 스크립트는 scratchpad에 있다: `analyze.py`, `summarize.py`, `roles.py`, `render.py`
+- 방법: 파이썬 표준 라이브러리로 MIDI를 직접 파싱했다. 곡별 수치는 `tools/music/songinfo.py`로 다시 낼 수 있다(`--all`이면 전곡 JSON). 장르별 집계는 그 JSON을 묶은 일회성 스크립트로 냈다
   - 악기: `midi.cfg`의 `-G` 값으로 voicegroup을 찾고, 프로그램 번호를 `sound/voice_groups.inc`(include 포함)의 실제 항목으로 풀었다
   - 조: 음 길이로 가중한 피치 클래스 분포에 Krumhansl-Schmuckler 프로파일을 맞춘 **추정값**이다(괄호 안은 상관계수). 0.7 미만은 믿지 말 것. MIDI에 조표 메타 이벤트는 한 곡에도 없다
   - 길이: 템포 맵을 반영한 초 단위. 마디는 첫 박자표 기준이라 박자가 바뀌는 곡(route3, game_freak 등)은 마디 수가 이상하게 나온다
@@ -24,7 +24,7 @@
 | 리버브·음량 | 140곡이 `-R50`. `-V` 중앙값 90(범위 48~105). 트랙 VOL 중앙값 108(p10 55, p90 127) | `midi.cfg` |
 | 비브라토 | 트랙의 38%가 MOD(CC1)를 쓴다. LFO 속도(CC21)도 거의 같이 쓴다 | `per_track.mod`, `lfos` |
 | 음역 | 곡 최고음 중앙값 MIDI 93(A6), 최저음 중앙값 37(C#2) | `lo`, `hi` |
-| DirectSound 동시음 | 한 순간에 눌린 DS(샘플) 음 최대치: 4가 69곡, 5가 50곡, 6은 11곡(순간 겹침). 원곡들은 사실상 5 이하, 대부분 4를 지킨다 | `render.py` 통계 모드. 02 문서 참고 |
+| DirectSound 동시음 | 한 순간에 눌린 DS(샘플) 음 최대치(`max_held_ds`): 4가 70곡, 5가 61곡, 3 이하 10곡. 11곡은 5음 제한 때문에 눌린 음이 1~15번 잘린다(credits 15번). 원곡들은 5 이하, 절반은 4를 지킨다 | `tools/music/songinfo.py --all`. 02 문서 참고 |
 
 ### 1.1 장르별 패턴
 

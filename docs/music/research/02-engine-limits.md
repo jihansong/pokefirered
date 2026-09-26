@@ -47,9 +47,9 @@
 ### 4.1 원곡들이 지키는 실제 한도(측정)
 
 - 음표 있는 트랙: 최대 10(24곡이 정확히 10). 분포: 10트랙 24곡, 9트랙 32곡, 8트랙 33곡, 7트랙 26곡
-- 동시에 눌린 샘플 음(DS)의 최대치: 4가 69곡, 5가 50곡. 6은 11곡인데 게이트가 겹치는 순간뿐이다(credits, hall_of_fame, intro_fight, vermillion 등). 측정은 `render.py` 통계 모드로 했다
+- 동시에 눌린 샘플 음(DS)의 최대치(`max_held_ds`): 4가 70곡, 5가 61곡. 5음 제한에 눌린 음이 잘리는 곡(`held_ds_steals` > 0)이 11곡 있다: credits, hall_of_fame, intro_fight, vermillion, route104, sevii_route, mt_pyre_exterior, b_dome, b_palace, caught_intro, new_game_exit. 측정은 `tools/music/songinfo.py --all`로 했다
 - 전투곡(vs_trainer, vs_gym_leader, vs_champion)도 샘플 동시음 5, 트랙 10이다. **전투 화면에서 이 수치가 돌아간다는 것이 실측 근거다.** 여기서 더 늘리면 안 된다
-- 권장(작곡가용): **트랙 ≤ 9, 동시 샘플 음 ≤ 4**. 1트랙과 샘플 1음을 효과음과 울음소리 몫으로 남긴다. 화음 패드는 샘플 대신 PSG나 짧은 샘플 스택으로 만든다
+- **검수 기준(채택, 2026-09-26 프로듀서)**: 트랙 ≤ 9, `max_held_ds ≤ 4`, `held_ds_steals = 0`. 1트랙과 샘플 1음을 효과음과 울음소리 몫으로 남긴다. `python3 tools/music/songinfo.py mus_<곡>`이 이 기준을 검사한다(실패하면 종료 코드 1, 팡파르는 `--one-shot`). 화음 패드는 샘플 대신 PSG나 짧은 샘플 스택으로 만든다
 
 ### 4.2 무거운 화면
 
@@ -80,7 +80,7 @@
 | `_b_frontier`, `_b_tower` | 배틀 프런티어·타워 | 1 드럼, 14 튜블러 벨, 46 하프, 47 팀파니, 48 현, 56 트럼펫, 60 호른, PSG | 토너먼트 |
 | `_route119`, `_route120` | 도로 | 현·트럼펫·튜바·호른 키스플릿, 하프, 팀파니, 글로켄 | 여행·비행 |
 
-- 전체 목록(voicegroup마다 프로그램→악기)은 scratchpad `voicegroups.json`에, 곡별로 쓰는 프로그램은 `songs.json`에 있다
+- 곡별로 쓰는 프로그램과 악기는 `python3 tools/music/songinfo.py mus_<곡> --json`의 `tracks[].programs`로 볼 수 있다
 - **새 샘플을 넣지 않는 것을 기본으로 한다.** 기존 voicegroup을 그대로 쓰면 ROM 비용이 0이다. 새 voicegroup(기존 샘플 조합)은 128항목 × 12바이트 = 1.5KB다. 새 샘플은 1개에 중앙값 5KB, 최대 36KB다(`sound/direct_sound_samples`, 197개 파일 9MB는 wav와 bin을 합친 크기)
 
 ## 6. 곡 추가 방법(작곡가 체크리스트)

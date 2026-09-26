@@ -14,6 +14,8 @@ u8 GetSnagOtName(u16 trainerNum, u16 species, u8 *dest);
 u8 GetSnagGroup(u16 trainerNum);
 u8 GetSnagSlot(u16 trainerNum, u16 species);
 u32 SnagGetExcludedSlots(u16 trainerNum);
+u16 GetTrainerPartySpecies(u16 trainerNum, s32 i);
+u8 SnagCountTrainerParty(u16 trainerNum);
 bool8 IsExcludedBySnag(u16 trainerNum, u16 species, u32 excluded);
 void SnagRecordTaken(u16 trainerNum, u16 species);
 bool8 IsSnagTargetChoice(void);

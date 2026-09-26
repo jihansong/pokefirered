@@ -31,7 +31,7 @@ EventScript_RocketTrioBlastOff::
 @ the event in VAR_ROCKET_RETRY: losing leaves it set, so the next try can skip
 @ the long lines. Set VAR_ROCKET_RETRY back to ROCKET_RETRY_NONE after a win.
 EventScript_RocketTrioBeforeBattle::
-	special HasEnoughMonsForDoubleBattle
+	special RocketTrioWillBeDouble   @ v0.10.0: or MEOWTH alone, all the others snagged
 	copyvar VAR_ROCKET_DOUBLES, VAR_RESULT
 	copyvar VAR_ROCKET_RETRY, VAR_0x8004
 	return

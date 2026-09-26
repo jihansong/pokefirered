@@ -89,14 +89,15 @@ static const u8 sText_James[] = _("JAMES");
 
 // Battles where the trainer still blocks the BALL: link and Union Room, the
 // record facilities (Trainer Tower, Battle Tower, e-Reader), the scripted
-// tutorials (Oak's Lab, POKé DUDE, the old man) and secret bases.
+// tutorials (Oak's Lab, POKé DUDE, the old man). (FR/LG has no secret bases,
+// and TRAINER_SECRET_BASE's number is a Hoenn trainer's here: ISAAC on Route 117.)
 bool8 IsSnagBlockedBattle(void)
 {
     if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_TRAINER_TOWER | BATTLE_TYPE_BATTLE_TOWER
                           | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_FIRST_BATTLE
                           | BATTLE_TYPE_POKEDUDE | BATTLE_TYPE_OLD_MAN_TUTORIAL))
         return TRUE;
-    if (gTrainerBattleOpponent_A == TRAINER_UNION_ROOM || gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
+    if (gTrainerBattleOpponent_A == TRAINER_UNION_ROOM)
         return TRUE;
     return FALSE;
 }
@@ -113,7 +114,7 @@ bool8 IsSnagRefusedMon(u16 trainerNum, u16 species)
 // BLUE, and JESSIE & JAMES (by their picture; the class is shared with grunts).
 u8 GetSnagGroup(u16 trainerNum)
 {
-    if (trainerNum == TRAINER_UNION_ROOM || trainerNum == TRAINER_SECRET_BASE)
+    if (trainerNum >= TRAINER_LINK_OPPONENT)
         return SNAG_GROUP_NONE;
     if (gTrainers[trainerNum].trainerPic == TRAINER_PIC_JESSIE_JAMES)
         return SNAG_GROUP_ROCKET;
@@ -177,6 +178,38 @@ u32 SnagGetExcludedSlots(u16 trainerNum)
             excluded |= 1u << slot;
     }
     return excluded;
+}
+
+// The species in slot i of a trainer's party data
+u16 GetTrainerPartySpecies(u16 trainerNum, s32 i)
+{
+    switch (gTrainers[trainerNum].partyFlags)
+    {
+    case 0:
+        return gTrainers[trainerNum].party.NoItemDefaultMoves[i].species;
+    case F_TRAINER_PARTY_CUSTOM_MOVESET:
+        return gTrainers[trainerNum].party.NoItemCustomMoves[i].species;
+    case F_TRAINER_PARTY_HELD_ITEM:
+        return gTrainers[trainerNum].party.ItemDefaultMoves[i].species;
+    default:
+        return gTrainers[trainerNum].party.ItemCustomMoves[i].species;
+    }
+}
+
+// How many POKéMON TRAINERNUM brings once snagged families are left out (at
+// least one, see CreateNPCTrainerParty).
+u8 SnagCountTrainerParty(u16 trainerNum)
+{
+    u32 excluded = SnagGetExcludedSlots(trainerNum);
+    s32 i;
+    u8 count = 0;
+
+    for (i = 0; i < gTrainers[trainerNum].partySize; i++)
+    {
+        if (!IsExcludedBySnag(trainerNum, GetTrainerPartySpecies(trainerNum, i), excluded))
+            count++;
+    }
+    return count != 0 ? count : 1;
 }
 
 bool8 IsExcludedBySnag(u16 trainerNum, u16 species, u32 excluded)

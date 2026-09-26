@@ -61,7 +61,9 @@ REL_IMAGE = 'http://schemas.openxmlformats.org/officeDocument/2006/relationships
 # ---------------------------------------------------------------- XML pieces
 
 def esc(s):
-    return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+    # quotes too: captions also land in a descr="..." attribute
+    return (s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+             .replace('"', '&quot;'))
 
 
 def rpr(size, bold=False, italic=False, color=None):

@@ -6076,6 +6076,10 @@ bool8 IsTradedMon(struct Pokemon *mon)
 {
     u8 otName[PLAYER_NAME_LENGTH + 1];
     u32 otId;
+    // Thunder Yellow (v0.10.0): a snagged POKéMON has a trainer's name as its
+    // original trainer but is no trade: no boosted EXP
+    if (GetMonData(mon, MON_DATA_SNAGGED, NULL))
+        return FALSE;
     GetMonData(mon, MON_DATA_OT_NAME, otName);
     otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
     return IsOtherTrainer(otId, otName);

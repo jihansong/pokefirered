@@ -32,7 +32,10 @@ Steps, in order:
                                          until gMain.callback2 is CB2
     watch LABEL                          from here on, note whether the text at
                                          ROM label LABEL is shown (gStringVar4,
-                                         looked at after every key press)
+                                         looked at after every key press); a text
+                                         that starts with a placeholder is found
+                                         by its longest plain part, in battle
+                                         text (gDisplayedStringBattle) too
     mashtext LABEL [N]                   press A (at most N times, default 300)
                                          until the text at LABEL is shown
     waitcb2 CB2 [N]                      run frames (at most N, default 3000) until
@@ -358,6 +361,25 @@ def rom_text_prefix(e, label):
     return bytes(out[:32])
 
 
+def rom_text_run(e, label):
+    """The longest stretch of plain text in the first bytes at LABEL, for texts
+    that start with a placeholder (battle texts: "{B_ATK_NAME} is loafing")."""
+    raw = e.read(e.sym(label), 64)
+    best, cur = b'', bytearray()
+    for b in raw:
+        if b >= 0xF7:
+            if len(cur) > len(best):
+                best = bytes(cur)
+            cur = bytearray()
+            if b == 0xFF:
+                break
+        else:
+            cur.append(b)
+    if len(best) < 4:
+        raise ValueError('text %s has too little plain text to watch' % label)
+    return best[:32]
+
+
 def run_case(case, rom, shots, presses_log=None):
     name = case['name']
     base = case.get('base', 'saves/hoenn.sav')
@@ -391,9 +413,10 @@ def run_case(case, rom, shots, presses_log=None):
 
             def look():
                 if watches:
-                    shown = e.read(e.sym('gStringVar4'), 32)
+                    shown = e.read(e.sym('gStringVar4'), 64)
+                    battle = e.read(e.sym('gDisplayedStringBattle'), 64)
                     for w in watches.values():
-                        if shown.startswith(w[0]):
+                        if shown.startswith(w[0]) or (w[2] and (w[0] in shown or w[0] in battle)):
                             w[1] = True
 
             def press(key, after):
@@ -412,7 +435,10 @@ def run_case(case, rom, shots, presses_log=None):
                 elif head == 'WAIT':
                     e.run(int(p[1]))
                 elif head == 'WATCH':
-                    watches[p[1]] = [rom_text_prefix(e, p[1]), False]
+                    try:
+                        watches[p[1]] = [rom_text_prefix(e, p[1]), False, False]
+                    except ValueError:      # starts with a placeholder: look for its plain part anywhere
+                        watches[p[1]] = [rom_text_run(e, p[1]), False, True]
                     look()
                 elif head == 'MASHTEXT':
                     want = rom_text_prefix(e, p[1])

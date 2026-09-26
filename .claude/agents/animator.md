@@ -25,3 +25,8 @@ Method:
 Be honest about quality: if a scene cannot look good within the limits, say so and propose
 a simpler staging. Reply with the storyboard, files changed, preview paths and open
 questions for the user (who approves key frames). Do not commit.
+
+Quality bar (user, 2026-09-26): the opening and every ending credits sequence are real
+animation at the level of the official Gen 1-3 games' intros and credits (R/B/Y, G/S/C,
+R/S/E, FR/LG): scrolling and parallax backgrounds, several characters and POKéMON moving
+continuously, camera moves, effects. A slideshow of still pictures does not pass.

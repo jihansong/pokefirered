@@ -33,3 +33,8 @@ APPROVED-WITH-CHANGES / REJECTED, what works, and numbered change requests tagge
 owning role (illustrator, animator, designer, music-director when staging and music meet)
 and severity, each specific enough to act on (which frame/tile, what to change, why).
 Reply with the verdict and the must-fix items.
+
+Quality bar (user, 2026-09-26): the opening and every ending credits sequence are real
+animation at the level of the official Gen 1-3 games' intros and credits (R/B/Y, G/S/C,
+R/S/E, FR/LG): scrolling and parallax backgrounds, several characters and POKéMON moving
+continuously, camera moves, effects. A slideshow of still pictures does not pass.

@@ -89,12 +89,14 @@ MtMoon_B2F_EventScript_HelixFossil::
 	goto MtMoon_B2F_EventScript_TookFossil
 	end
 
-@ The first fossil taken sets JESSIE and JAMES up to ambush the player on the
-@ way out, as before; the second changes nothing more.
+@ v0.9.0: JESSIE and JAMES no longer wait for a fossil to be taken. They
+@ ambush the player at (3,7)/(4,7), the only way between the fossils and the
+@ ladder up to ROUTE 4, whenever VAR_MAP_SCENE_MT_MOON_B2F_JESSIE_JAMES is 0 or
+@ 1 (1 is what a fossil set before), so a player who takes neither fossil, or
+@ comes back from ROUTE 4, still meets them. Taking a fossil no longer touches
+@ the var: after the battle (2) that would bring them back.
 MtMoon_B2F_EventScript_TookFossil::
-	goto_if_set FLAG_GOT_FOSSIL_FROM_MT_MOON, MtMoon_B2F_EventScript_DontTakeFossil
 	setflag FLAG_GOT_FOSSIL_FROM_MT_MOON
-	setvar VAR_MAP_SCENE_MT_MOON_B2F_JESSIE_JAMES, 1
 	release
 	end
 
@@ -134,7 +136,8 @@ MtMoon_B2F_EventScript_JessieJamesTrigger1::
 	goto MtMoon_B2F_EventScript_JessieJames
 	end
 
-@ Jessie & James ambush the player, as in Pokémon Yellow.
+@ Jessie & James ambush the player, as in Pokémon Yellow. Once: the battle
+@ won sets the var to 2, which neither trigger matches.
 MtMoon_B2F_EventScript_JessieJames::
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	playbgm MUS_ENCOUNTER_ROCKET, 0

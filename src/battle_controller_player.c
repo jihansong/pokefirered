@@ -2286,10 +2286,15 @@ static void PlayerHandleSuccessBallThrowAnim(void)
 static void PlayerHandleBallThrowAnim(void)
 {
     u8 ballThrowCaseId = gBattleBufferA[gActiveBattler][1];
+    // Thunder Yellow (v0.10.0): in a trainer double the BALL can go to either
+    // opponent (Cmd_handleballthrow's target); wild and safari throws go left
+    u8 target = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
 
+    if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER) && GetBattlerSide(gBattlerTarget) == B_SIDE_OPPONENT)
+        target = gBattlerTarget;
     gBattleSpritesDataPtr->animationData->ballThrowCaseId = ballThrowCaseId;
     gDoingBattleAnim = TRUE;
-    InitAndLaunchSpecialAnimation(gActiveBattler, gActiveBattler, GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT), B_ANIM_BALL_THROW);
+    InitAndLaunchSpecialAnimation(gActiveBattler, gActiveBattler, target, B_ANIM_BALL_THROW);
     gBattlerControllerFuncs[gActiveBattler] = CompleteOnSpecialAnimDone;
 }
 

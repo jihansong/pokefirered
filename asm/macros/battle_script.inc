@@ -1302,6 +1302,23 @@
 	various \battler, VARIOUS_WAIT_FANFARE
 	.endm
 
+	@ v0.10.0 trainer-battle snagging (src/battle_script_commands.c)
+	.macro snagprepare
+	various BS_TARGET, VARIOUS_SNAG_PREPARE
+	.endm
+
+	.macro snaggivemon
+	various BS_TARGET, VARIOUS_SNAG_GIVE_MON
+	.endm
+
+	.macro snagrestorebgm
+	various BS_ATTACKER, VARIOUS_SNAG_RESTORE_BGM
+	.endm
+
+	.macro snagreturnball
+	various BS_ATTACKER, VARIOUS_SNAG_RETURN_BALL
+	.endm
+
 @ helpful macros
 	.macro setstatchanger stat:req, stages:req, down:req
 	setbyte sSTATCHANGER \stat | \stages << 4 | \down << 7

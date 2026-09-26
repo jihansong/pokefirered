@@ -16,6 +16,7 @@ u8 GetSnagSlot(u16 trainerNum, u16 species);
 u32 SnagGetExcludedSlots(u16 trainerNum);
 bool8 IsExcludedBySnag(u16 trainerNum, u16 species, u32 excluded);
 void SnagRecordTaken(u16 trainerNum, u16 species);
+u8 GetSnagBallTarget(u8 thrower);
 bool8 IsSnaggedBoxMon(struct BoxPokemon *boxMon);
 void SnagMakeTakenMon(struct Pokemon *mon, u16 trainerNum);
 u8 GiveSnaggedMonToPlayer(struct Pokemon *mon);

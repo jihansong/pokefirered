@@ -26,6 +26,9 @@
 #include "reshow_battle_screen.h"
 #include "battle_controllers.h"
 #include "battle_interface.h"
+#include "battle_main.h"
+#include "battle_util.h"
+#include "snag.h"
 #include "constants/battle_anim.h"
 #include "constants/battle_move_effects.h"
 #include "constants/battle_script_commands.h"
@@ -179,6 +182,7 @@ static void Cmd_hpthresholds(void);
 static void Cmd_hpthresholds2(void);
 static void Cmd_useitemonopponent(void);
 static void Cmd_various(void);
+static void SnagTakeBattler(u8 battler);
 static void Cmd_setprotectlike(void);
 static void Cmd_tryexplosion(void);
 static void Cmd_setatkhptozero(void);
@@ -6211,9 +6215,79 @@ static void Cmd_various(void)
         if (!IsFanfareTaskInactive())
             return;
         break;
+    case VARIOUS_SNAG_PREPARE:
+        // the BALL animation removes the POKéMON's sprite a while after the
+        // controller has finished with it; wait for all of it
+        if (gBattleSpritesDataPtr->healthBoxesData[gBattlerAttacker].specialAnimActive)
+            return;
+        PREPARE_MON_NICK_BUFFER(gBattleTextBuff1, gActiveBattler, gBattlerPartyIndexes[gActiveBattler]);
+        break;
+    case VARIOUS_SNAG_GIVE_MON:
+        SnagTakeBattler(gActiveBattler);
+        break;
+    case VARIOUS_SNAG_RESTORE_BGM:
+        PlayBattleBGM();
+        break;
+    case VARIOUS_SNAG_RETURN_BALL:
+        AddBagItem(gLastUsedItem, 1);
+        break;
     }
 
     gBattlescriptCurrInstr += 3;
+}
+
+// Thunder Yellow (v0.10.0): the snagged POKéMON (battler) leaves the battle as if
+// it had fainted, without EXP: it is given to the player (party or PC, with the
+// PC message in MULTISTRING_CHOOSER, SNAG_MSG_PARTY for none) and registered as
+// caught (gBattleCommunication[MULTIUSE_STATE] TRUE if that's new), the rival's
+// or JESSIE & JAMES's parties remember its family, and its slot is left at HP 0
+// for HandleFaintedMonActions to send out the next one or end the battle.
+static void SnagTakeBattler(u8 battler)
+{
+    u8 slot = gBattlerPartyIndexes[battler];
+    struct Pokemon mon = gEnemyParty[slot];
+    u16 species = GetMonData(&mon, MON_DATA_SPECIES);
+    u16 nationalNum = SpeciesToNationalPokedexNum(species);
+    u32 personality = GetMonData(&mon, MON_DATA_PERSONALITY);
+    u16 hp = 0;
+
+    SnagMakeTakenMon(&mon, gTrainerBattleOpponent_A);
+    gBattleCommunication[MULTISTRING_CHOOSER] = SNAG_MSG_PARTY;
+    if (GiveSnaggedMonToPlayer(&mon) == MON_GIVEN_TO_PC)
+    {
+        GetMonData(&mon, MON_DATA_NICKNAME, gStringVar2);
+        StringCopy(gStringVar1, GetBoxNamePtr(VarGet(VAR_PC_BOX_TO_SEND_MON)));
+        if (!ShouldShowBoxWasFullMessage())
+        {
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SENT_SOMEONES_PC;
+        }
+        else
+        {
+            StringCopy(gStringVar3, GetBoxNamePtr(GetPCBoxToSendMon()));
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SOMEONES_BOX_FULL;
+        }
+        if (FlagGet(FLAG_SYS_NOT_SOMEONES_PC))
+            gBattleCommunication[MULTISTRING_CHOOSER]++;
+    }
+
+    gBattleCommunication[MULTIUSE_STATE] = !GetSetPokedexFlag(nationalNum, FLAG_GET_CAUGHT);
+    HandleSetPokedexFlag(nationalNum, FLAG_SET_SEEN, personality);
+    HandleSetPokedexFlag(nationalNum, FLAG_SET_CAUGHT, personality);
+    SnagRecordTaken(gTrainerBattleOpponent_A, species);
+
+    // out of the battle like a fainted POKéMON, but no EXP for it
+    gBattleMons[battler].hp = 0;
+    SetMonData(&gEnemyParty[slot], MON_DATA_HP, &hp);
+    gBattleStruct->givenExpMons |= gBitTable[slot];
+    gHitMarker |= HITMARKER_FAINTED(battler);
+    gActiveBattler = battler;
+    gBattleMons[battler].status1 = 0;
+    BtlController_EmitSetMonData(BUFFER_A, REQUEST_STATUS_BATTLE, 0, sizeof(gBattleMons[battler].status1), &gBattleMons[battler].status1);
+    MarkBattlerForControllerExec(battler);
+    FaintClearSetData(); // what it did to the player's side (wrap, Mean Look, Leech Seed, ...) ends
+    SetHealthboxSpriteInvisible(gHealthboxSpriteIds[battler]);
+    gBattleSpritesDataPtr->battlerData[battler].behindSubstitute = FALSE;
+    OpponentSwitchInResetSentPokesToOpponentValue(battler);
 }
 
  // Protect and Endure
@@ -9476,7 +9550,9 @@ static void Cmd_handleballthrow(void)
         MarkBattlerForControllerExec(gActiveBattler);
         gBattlescriptCurrInstr = BattleScript_GhostBallDodge;
     }
-    else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+    // Thunder Yellow (v0.10.0): trainers only block the BALL in the battles snagging
+    // leaves out (link, facilities, tutorials); everywhere else it catches.
+    else if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER) && IsSnagBlockedBattle())
     {
         BtlController_EmitBallThrowAnim(BUFFER_A, BALL_TRAINER_BLOCK);
         MarkBattlerForControllerExec(gActiveBattler);
@@ -9487,6 +9563,13 @@ static void Cmd_handleballthrow(void)
         BtlController_EmitBallThrowAnim(BUFFER_A, BALL_3_SHAKES_SUCCESS);
         MarkBattlerForControllerExec(gActiveBattler);
         gBattlescriptCurrInstr = BattleScript_OldMan_Pokedude_CaughtMessage;
+    }
+    else if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+          && IsSnagRefusedMon(gTrainerBattleOpponent_A, gBattleMons[gBattlerTarget = GetSnagBallTarget(gBattlerAttacker)].species))
+    {
+        BtlController_EmitBallThrowAnim(BUFFER_A, BALL_TRAINER_BLOCK);
+        MarkBattlerForControllerExec(gActiveBattler);
+        gBattlescriptCurrInstr = BattleScript_SnagRefused;
     }
     else
     {
@@ -9575,7 +9658,9 @@ static void Cmd_handleballthrow(void)
             gBattlescriptCurrInstr = BattleScript_SuccessBallThrow;
             SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_POKEBALL, &gLastUsedItem);
 
-            if (CalculatePlayerPartyCount() == PARTY_SIZE)
+            if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+                gBattlescriptCurrInstr = BattleScript_SnagSuccess;
+            else if (CalculatePlayerPartyCount() == PARTY_SIZE)
                 gBattleCommunication[MULTISTRING_CHOOSER] = 0;
             else
                 gBattleCommunication[MULTISTRING_CHOOSER] = 1;
@@ -9600,7 +9685,9 @@ static void Cmd_handleballthrow(void)
                 gBattlescriptCurrInstr = BattleScript_SuccessBallThrow;
                 SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_POKEBALL, &gLastUsedItem);
 
-                if (CalculatePlayerPartyCount() == PARTY_SIZE)
+                if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+                    gBattlescriptCurrInstr = BattleScript_SnagSuccess;
+                else if (CalculatePlayerPartyCount() == PARTY_SIZE)
                     gBattleCommunication[MULTISTRING_CHOOSER] = 0;
                 else
                     gBattleCommunication[MULTISTRING_CHOOSER] = 1;

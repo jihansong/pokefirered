@@ -6,6 +6,7 @@
 #include "pokemon.h"
 #include "snag.h"
 #include "string_util.h"
+#include "util.h"
 #include "constants/battle.h"
 #include "constants/flags.h"
 #include "constants/opponents.h"
@@ -192,6 +193,20 @@ void SnagRecordTaken(u16 trainerNum, u16 species)
 
     if (slot != SNAG_SLOT_NONE)
         FlagSet(SNAG_FLAGS_START + slot);
+}
+
+// The opposing battler a BALL thrown by THROWER goes to: the one across from it,
+// or, if that one is gone (fainted or snagged earlier this turn), its partner.
+u8 GetSnagBallTarget(u8 thrower)
+{
+    u8 target = thrower ^ BIT_SIDE;
+
+    if ((gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
+     && (gBattleMons[target].hp == 0 || (gAbsentBattlerFlags & gBitTable[target]))
+     && gBattleMons[target ^ BIT_FLANK].hp != 0
+     && !(gAbsentBattlerFlags & gBitTable[target ^ BIT_FLANK]))
+        target ^= BIT_FLANK;
+    return target;
 }
 
 bool8 IsSnaggedBoxMon(struct BoxPokemon *boxMon)

@@ -523,4 +523,6 @@ gSpecials::
 	def_special SetRocketRewardBit
 	def_special ClearRocketRewardBit
 	def_special GiveMewEgg
+	def_special OpenPokeWatchWindow
+	def_special ClosePokeWatchWindow
 gSpecialsEnd::

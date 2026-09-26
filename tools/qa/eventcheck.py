@@ -35,6 +35,8 @@ Steps, in order:
                                          with the fateful encounter bit (MEW's
                                          and DEOXYS's obedience)
     expect species SLOT NAME[|NAME]      check the species in party SLOT (0-5)
+    expect sym NAME = N                  check the byte at a RAM symbol (statics
+                                         too, e.g. sClockWindowShown)
     expect map MAP                       check the player's current map
     expect battle | expect overworld     check what the game is doing
 The save is continued (title, CONTINUE, quest-log recap skipped) before the
@@ -177,6 +179,10 @@ def run_case(case, rom, shots):
                         got = Mon(bytearray(e.read(e.sym('gPlayerParty') + slot * size, size)), 0).species()
                         if got not in want:
                             fails.append('%s: party slot %d is species %d' % (step, slot, got))
+                    elif what == 'sym':
+                        got, want = e.u8(e.sym(p[2])), int(p[4], 0)
+                        if got != want:
+                            fails.append('%s: %s is %d' % (step, p[2], got))
                     elif what == 'map':
                         m = map_info(p[2])
                         g, n, _, _ = e.location()

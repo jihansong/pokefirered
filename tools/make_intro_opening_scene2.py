@@ -126,13 +126,21 @@ def arm(grip='hold'):
             if owner[y][x] == 'sleeve' and img[y][x] == P_COAT:
                 if any(y - k >= 0 and owner[y - k][x] is None for k in (2, 3)):
                     img[y][x] = P_WHITE
-    # folds: two V creases toward the elbow, one short one before the cuff
-    for t0, s0, s1 in ((-44, -6, 4), (-38, -2, 7), (-18, -3, 6), (-10, 2, 8)):
+    # folds: a long one toward the elbow, a short one, one before the cuff (uneven)
+    for t0, s0, s1 in ((-46, -7, 5), (-30, -1, 6), (-12, -4, 2)):
         for k in range(s0 * 2, s1 * 2 + 1):
             x, y = _along(t0 + abs(k) * 0.45, k * 0.5)
             x, y = int(x), int(y)
             if 0 <= x < ARM_W and 0 <= y < ARM_H and img[y][x] in (P_COAT, P_WHITE):
                 img[y][x] = P_FOLD
+    # the cuff's hem: a lighter band, a black line under it (wrist side)
+    for y in range(ARM_H):
+        for x in range(ARM_W):
+            if owner[y][x] == 'cuff' and img[y][x] in (P_COAT, P_FOLD):
+                img[y][x] = P_WHITE
+            if owner[y][x] == 'cuff' and x + 1 < ARM_W and owner[y][x + 1] in ('wrist', 'palm') \
+                    and img[y][x] not in (P_BLACK,):
+                img[y][x] = P_BLACK
     return img
 
 
@@ -208,6 +216,52 @@ def _rim(img, color):
         img[y][x] = color
 
 
+CRACKLES = (['................',
+             '................',
+             '................',
+             '................',
+             '................',
+             '....y...........',
+             '.....y..y.......',
+             '....y..y........',
+             '.....yy..y......',
+             '.......y.y......',
+             '..y....lyy......',
+             '...yy...ly......',
+             '.....yyy.l......',
+             '.........lW.....',
+             '................',
+             '................'],
+            ['................',
+             '................',
+             '................',
+             '................',
+             '.......y........',
+             '......y.........',
+             '.......y........',
+             '...y...y..y.....',
+             '....y..y.y......',
+             '.....y.yly......',
+             '......yly.......',
+             '..yyy..lly......',
+             '.....yyyll......',
+             '.........lW.....',
+             '................',
+             '................'])
+
+
+def crackle_frames():
+    """Two 16x16 frames of short zigzag strands going up and to the left from the
+    lower right corner (the rim of a cheek): the cheek itself stays visible."""
+    out = []
+    for rows in CRACKLES:
+        img = [[0] * 16 for _ in range(16)]
+        stamp(img, 0, 0, rows, {'y': pika.SPARK, 'l': pika.SPARK_PALE, 'W': pika.WHITE}, clip=False)
+        _rim(img, pika.SPARK_RIM)
+        out.append(img)
+    return out
+
+
 def spark_frames():
     """Two 16x16 crackles like the game's battle sparks: white core, pale yellow,
     yellow, an orange rim (graphics/battle_anims/sprites/spark colours)."""
@@ -278,7 +332,7 @@ W_LIGHT, W_BASE, W_SHADE, S_WHITE, S_FACE, S_EDGE, S_DARK = 1, 2, 3, 4, 5, 6, 7
 B_RED, B_BLUE, B_YELLOW, GLASS = 8, 9, 10, 11
 T_LIGHT, T_BASE, T_SHADE, T_EDGE = 12, 13, 14, 15
 DESK_TOP = 68                    # first row of the table, in picture rows
-SHELF_X = 194                    # shelf's left edge on the back layer (x 188 on screen at the end)
+SHELF_X = 218                    # shelf's left edge on the back layer (x 212 on screen at the end)
 CAM_END = 12                     # the camera trucks right this far over t 0-19
 PIKA_WORLD = (156, 46)           # PIKACHU sprite corner, front layer coordinates
 BALL_REST = (112, 78)            # ball centre while the hand holds it out (front layer)
@@ -370,15 +424,31 @@ def front_layer():
     return img
 
 
+# ---------------------------------------------------------------- the close-up background
+def closeup_layer():
+    """The close-up's backdrop: wide diagonal bands of pale sky and white (they scroll
+    slowly sideways so the picture never stands still). 32 pixel period, so the
+    256 pixel map wraps without a seam."""
+    return [[GLASS if ((x + y) // 16) % 2 else S_WHITE for x in range(MAP_W)] for y in range(VIEW_H)]
+
+
 # ---------------------------------------------------------------- choreography
 FRAMES = 76                      # F842-917 = bar 2 of MUS_INTRO_FIGHT (19.15 frames a beat)
-TRACKS = ('pikachu', 'sleeve', 'hand', 'ball', 'smoke', 'spark_cheek', 'spark_ball', 'bolt')
+TRACKS = ('pikachu', 'sleeve', 'hand', 'ball', 'smoke', 'spark_cheek', 'spark_ball', 'bolt',
+          'bust0', 'bust1', 'bust2', 'bust3')
+BUST_TRACKS = TRACKS[-4:]        # the 2x close-up, 128x128 as four 64x64 quarters
 HIDE, FRONT = 1, 2               # key flags: not drawn / drawn in front of the arm
 HAND_HOLD, HAND_OPEN = 1, 2      # frames of arm.png (0 is the sleeve half)
+BURST, CRACKLE = 0, 2            # first frames of the two effects in spark.png
 T_SNAP, T_POP = 19, 24           # beat 2: the ball opens and PIKACHU turns; the ball is hit
+T_CU = 48                        # half a beat before beat 4: cut to the close-up
+T_HMPH, T_CRACKLE2 = 57, 66      # beat 4: "hmph!"; the second crackle
 DESK_Y = 112                     # ball centre on the table (screen row, in front of the arm)
-CHEEK_WORLD = (170, 67)          # spark sprite corner at PIKACHU's near cheek (poses C)
+CHEEK_WORLD = (170, 60)          # crackle sprite corner at PIKACHU's near cheek (poses C)
+BUST_AT = (58, 30)               # close-up corner on screen at the cut
+BUST_CHEEK = (37, 40)            # crackle corner relative to the close-up's corner
 SHAKE = {23: 1, 24: -1, 25: 1}   # the hit: screen shake, 1 pixel, no change of brightness
+LAYOUT_LAB, LAYOUT_CLOSEUP = 0, 1
 
 
 def ease_out(p):
@@ -402,7 +472,7 @@ def camera(t):
 def ball_path():
     """Ball centre (front layer) and frame for each frame from the pop: knocked up and
     to the left, first bounce on the table on beat 3 (left of the sleeve), a second
-    smaller one, then it rolls off the left edge."""
+    smaller one, then it rolls toward the left edge."""
     x, y = BALL_REST[0] + 4, BALL_REST[1] - 2
     vx, vy, g = -3.6, -4.0, 0.85
     out, spin, bounces = {}, 0.0, 0
@@ -423,7 +493,7 @@ def ball_path():
 
 
 def pikachu_track(t):
-    """Frame name and y offset for PIKACHU at frame t."""
+    """Frame name and y offset for PIKACHU at frame t (wide shot)."""
     breathe = -1 if (t // 8) % 2 else 0
     if t < 8 or 11 <= t < 14:
         return 'A', breathe
@@ -437,22 +507,49 @@ def pikachu_track(t):
         return 'B', -2
     if t < 25:
         return 'C_over', -1
-    if 57 <= t < 61:
-        return 'C_hmph', -1
-    if 66 <= t < 69:
-        return 'C_flick', 0
+    if 38 <= t < 41:
+        return 'C_flick', 0                      # the tail slaps as the ball lands
     return 'C', breathe if t >= 28 else 0
+
+
+def bust_track(t):
+    """Close-up frame (0 sulk, 1 "hmph") and offset: a slow push in, breathing, the
+    chin raised on beat 4."""
+    push = (t - T_CU) // 7                       # 0..3: the camera creeps closer
+    breathe = -1 if ((t - T_CU) // 8) % 2 else 0
+    if T_HMPH <= t < T_HMPH + 5:
+        return 1, -push, -2 - push // 2
+    return 0, -push, breathe - push // 2
 
 
 def choreography():
     """keys[t][track] = (x, y, frame, flags) on screen; scroll[t] = (back x, back y,
-    front x, front y) for BG3 and BG2."""
+    front x, front y) for BG3 and BG2; layout[t] = which backgrounds show."""
     bx, by = ball_on_hand()
-    # arm corner at rest, front layer coordinates
-    ax0, ay0 = BALL_REST[0] - bx - 8, BALL_REST[1] - by - 8
+    ax0, ay0 = BALL_REST[0] - bx - 8, BALL_REST[1] - by - 8    # arm corner at rest
     path = ball_path()
-    keys, scroll = [], []
+    keys, scroll, layout = [], [], []
+    hidden = (0, 0, 0, HIDE)
     for t in range(FRAMES):
+        k = {}
+        if t >= T_CU:
+            # the close-up: PIKACHU's head and chest twice as large, bands behind
+            layout.append(LAYOUT_CLOSEUP)
+            scroll.append(((t - T_CU) // 2, 0, 0, 0))
+            for tr in TRACKS:
+                k[tr] = hidden
+            frame, dx, dy = bust_track(t)
+            x0, y0 = BUST_AT[0] + dx, BUST_AT[1] + dy
+            for q, tr in enumerate(BUST_TRACKS):
+                k[tr] = (x0 + (q % 2) * 64, y0 + (q // 2) * 64, frame, 0)
+            for t0, n in ((T_HMPH, 5), (T_CRACKLE2, 5)):
+                if t0 <= t < t0 + n:
+                    lift = -2 if frame == 1 else 0
+                    k['spark_cheek'] = (x0 + BUST_CHEEK[0], y0 + BUST_CHEEK[1] + lift,
+                                        CRACKLE + (t - t0) // 2 % 2, 0)
+            keys.append(k)
+            continue
+        layout.append(LAYOUT_LAB)
         cam = camera(t)
         sx = SHAKE.get(t, 0)
         bump = 1 if path.get(t, (0, 0, 0, 0))[3] == 1 and path.get(t - 1, (0, 0, 0, 0))[3] == 0 else 0
@@ -460,14 +557,13 @@ def choreography():
 
         def screen(wx, wy):
             return round(wx - cam + sx), round(wy)
-        k = {}
         name, dy = pikachu_track(t)
         k['pikachu'] = screen(PIKA_WORLD[0], PIKA_WORLD[1] + dy) + (PIKA_FRAMES.index(name), 0)
         # the arm: in from the lower left, a nudge ("here"), a flinch when the ball is
         # knocked away, then it withdraws
         if t < 14:
             p = ease_out((t + 1) / 14)
-            dx, dy = lerp(-70, 0, p), lerp(46, 0, p)
+            dx, dy = lerp(-70, 0, p), lerp(42, 0, p)
         elif t < T_SNAP:
             p = min(1, (t - 13) / 4)
             dx, dy = lerp(0, 4, p), lerp(0, -2, p)
@@ -479,10 +575,10 @@ def choreography():
         else:
             p = ease_in(min(1, (t - T_POP - 4) / 11))
             dx, dy = lerp(-4, -90, p), lerp(3, 64, p)
-        hidden = HIDE if t >= T_POP + 15 else 0
+        gone = HIDE if t >= T_POP + 15 else 0
         ax, ay = screen(ax0 + dx, ay0 + dy)
-        k['sleeve'] = (ax, ay, 0, hidden)
-        k['hand'] = (ax + 64, ay, HAND_HOLD if t < T_POP else HAND_OPEN, hidden)
+        k['sleeve'] = (ax, ay, 0, gone)
+        k['hand'] = (ax + 64, ay, HAND_HOLD if t < T_POP else HAND_OPEN, gone)
         # the ball: in the hand (behind the fingers), opening from the snap, then flying
         if t < T_POP:
             k['ball'] = (ax + bx, ay + by, BALL_OPENING if t >= T_SNAP else 0, 0)
@@ -495,56 +591,71 @@ def choreography():
             hx, hy = screen(ax0 + 4 + bx, ay0 - 2 + by)
             k['smoke'] = (hx, hy - (t - T_POP), SMOKE_FIRST + (t - T_POP) // 2, FRONT)
         else:
-            k['smoke'] = (0, 0, 0, HIDE)
-        # sparks: on the ball first (the warning), at the cheek from the zap on
-        k['spark_ball'] = (0, 0, 0, HIDE)
+            k['smoke'] = hidden
+        # sparks: on the ball first (the warning), then the hit
+        k['spark_ball'] = hidden
         if T_SNAP + 1 <= t < T_SNAP + 3:
-            k['spark_ball'] = (k['ball'][0], k['ball'][1], (t - T_SNAP) % 2, FRONT)
+            k['spark_ball'] = (k['ball'][0], k['ball'][1], BURST + (t - T_SNAP) % 2, FRONT)
         elif T_POP <= t < T_POP + 4:
-            k['spark_ball'] = (k['ball'][0], k['ball'][1], (t - T_POP + 1) // 2 % 2, FRONT)
-        k['spark_cheek'] = (0, 0, 0, HIDE)
-        for t0, n in ((22, 6), (57, 5), (66, 5)):
-            if t0 <= t < t0 + n:
-                cx, cy = screen(*CHEEK_WORLD)
-                k['spark_cheek'] = (cx, cy + (-1 if name == 'C_hmph' else 0), (t - t0) // 2 % 2, 0)
+            k['spark_ball'] = (k['ball'][0], k['ball'][1], BURST + (t - T_POP + 1) // 2 % 2, FRONT)
+        # crackle off the cheek while the bolt flies
+        k['spark_cheek'] = hidden
+        if 22 <= t < 28:
+            cx, cy = screen(*CHEEK_WORLD)
+            k['spark_cheek'] = (cx, cy, CRACKLE + (t - 22) // 2 % 2, 0)
         # the bolt, cheek to ball, four frames
         if 22 <= t < 26:
-            bxs, bys = screen(BALL_REST[0], BALL_REST[1] - 18)
+            bxs, bys = screen(BALL_REST[0] + 3, BALL_REST[1] - 18)
             k['bolt'] = (bxs, bys, t % 2, FRONT)
         else:
-            k['bolt'] = (0, 0, 0, HIDE)
+            k['bolt'] = hidden
+        for tr in BUST_TRACKS:
+            k[tr] = hidden
         keys.append(k)
-    return keys, scroll
+    return keys, scroll, layout
 
 
 # ---------------------------------------------------------------- output
+def bust_quarters():
+    """The close-up frames cut into four 64x64 quarters: quarters[q] = [sulk, hmph]."""
+    cu = pika.closeup_frames()
+    frames = [cu['CU'], cu['CU_hmph']]
+    return [[[row[(q % 2) * 64:(q % 2) * 64 + 64] for row in f[(q // 2) * 64:(q // 2) * 64 + 64]]
+             for f in frames] for q in range(4)]
+
+
 def art():
     """Every sprite frame, by track (frame numbers as in the key table)."""
     poses = pika.frames()
     hold, opened = arm('hold'), arm('open')
     sleeve = [r[:64] for r in hold]
     balls = ball_frames()
-    sparks = spark_frames()
-    return {'pikachu': ([poses[n] for n in PIKA_FRAMES], PIKA_PAL),
-            'sleeve': ([sleeve], PROP_PAL),
-            'hand': ([sleeve, [r[64:] for r in hold], [r[64:] for r in opened]], PROP_PAL),
-            'ball': (balls, PROP_PAL),
-            'smoke': (balls, PROP_PAL),
-            'spark_cheek': (sparks, PIKA_PAL),
-            'spark_ball': (sparks, PIKA_PAL),
-            'bolt': (bolt_frames(), PIKA_PAL)}
+    sparks = spark_frames() + crackle_frames()
+    out = {'pikachu': ([poses[n] for n in PIKA_FRAMES], PIKA_PAL),
+           'sleeve': ([sleeve], PROP_PAL),
+           'hand': ([sleeve, [r[64:] for r in hold], [r[64:] for r in opened]], PROP_PAL),
+           'ball': (balls, PROP_PAL),
+           'smoke': (balls, PROP_PAL),
+           'spark_cheek': (sparks, PIKA_PAL),
+           'spark_ball': (sparks, PIKA_PAL),
+           'bolt': (bolt_frames(), PIKA_PAL)}
+    for q, frames in enumerate(bust_quarters()):
+        out[BUST_TRACKS[q]] = (frames, PIKA_PAL)
+    return out
 
 
 def mask_of(im):
     return Image.frombytes('L', im.size, bytes(255 if v else 0 for v in im.getdata()))
 
 
-def render_frame(k, sc, back, front, sheets):
+def render_frame(k, sc, lay, layers, sheets):
     """The 240x160 screen for one frame of the table, the way the game draws it:
     BG3 (back), BG2 (front, colour 0 clear), then the sprites back to front."""
+    back, front, closeup = layers
     screen = Image.new('RGB', (240, 160), (0, 0, 0))
     bx, by, fx, fy = sc
-    for layer, lx, ly in ((back, bx, by), (front, fx, fy)):
+    shown = ((closeup, bx, by),) if lay == LAYOUT_CLOSEUP else ((back, bx, by), (front, fx, fy))
+    for layer, lx, ly in shown:
         for y in range(VIEW_H):
             for x in range(240):
                 v = layer[y + ly][(x + lx) % MAP_W] if 0 <= y + ly < VIEW_H else 0
@@ -559,8 +670,8 @@ def render_frame(k, sc, back, front, sheets):
         im = to_image(frames[frame], pal)
         screen.paste(im.convert('RGB'), (x, y), mask_of(im))
     front_ball = k['ball'][3] & FRONT
-    order = ['pikachu'] + ([] if front_ball else ['ball']) + ['sleeve', 'hand'] + \
-            (['ball'] if front_ball else []) + ['smoke', 'bolt', 'spark_ball', 'spark_cheek']
+    order = list(BUST_TRACKS) + ['pikachu'] + ([] if front_ball else ['ball']) + ['sleeve', 'hand'] + \
+        (['ball'] if front_ball else []) + ['smoke', 'bolt', 'spark_ball', 'spark_cheek']
     for track in order:
         put(track)
     black = Image.new('RGB', (240, VIEW_Y), (0, 0, 0))
@@ -611,12 +722,13 @@ def tiles_and_maps(layers, bank):
     return sheet, maps, len(uniq)
 
 
-def write_header(keys, scroll, path):
+def write_header(keys, scroll, layout, path):
     lines = ['// Generated by tools/make_intro_opening_scene2.py. Do not edit: change the',
              '// choreography there and run it again.',
-             '// Scene 2 of the opening, one row per frame (F842-917): for each sprite',
-             '// track {x, y, frame, flags}, x and y the corner of the sprite on screen;',
-             '// and the scroll of the back (BG3) and front (BG2) layers.',
+             '// Scene 2 of the opening, one row per frame (set up at F842-917, seen at',
+             '// F843-918): for each sprite track {x, y, frame, flags}, x and y the corner',
+             '// of the sprite on screen; the scroll of the back (BG3) and front (BG2)',
+             '// layers; which backgrounds show (0 the lab, 1 the close-up).',
              '',
              '#define SCENE2_FRAMES %d' % FRAMES,
              '',
@@ -629,16 +741,12 @@ def write_header(keys, scroll, path):
     lines += ['};', '', 'static const struct OpeningScroll sScene2_Scroll[SCENE2_FRAMES] = {']
     for t, s in enumerate(scroll):
         lines.append('    [%d] = {%d, %d, %d, %d},' % ((t,) + s))
+    lines += ['};', '', 'static const u8 sScene2_Layout[SCENE2_FRAMES] = {']
+    for i in range(0, FRAMES, 19):
+        lines.append('    ' + ', '.join(str(v) for v in layout[i:i + 19]) + ',')
     lines += ['};', '']
     with open(path, 'w') as f:
         f.write('\n'.join(lines))
-
-
-def model_sheet(scale=6):
-    """PIKACHU's scene 2 frames beside the FR/LG front sprite, and the props."""
-    ref = Image.open(ROOT + '/graphics/pokemon/pikachu/front.png')
-    items = [(ref, 'FR/LG front.png')] + [(to_image(f, PIKA_PAL), n) for n, f in zip(PIKA_FRAMES, art()['pikachu'][0])]
-    return items
 
 
 def main():
@@ -647,10 +755,10 @@ def main():
     a = ap.parse_args()
     os.makedirs(OUT, exist_ok=True)
     sheets = art()
-    back, front = back_layer(), front_layer()
-    tiles, (mback, mfront), n = tiles_and_maps((back, front), BG_PAL_BANK)
+    layers = (back_layer(), front_layer(), closeup_layer())
+    tiles, maps, n = tiles_and_maps(layers, BG_PAL_BANK)
     to_image(tiles, BG_PAL).save(OUT + '/bg.png')
-    for name, m in (('bg_back', mback), ('bg_front', mfront)):
+    for name, m in zip(('bg_back', 'bg_front', 'bg_closeup'), maps):
         with open(OUT + '/%s.bin' % name, 'wb') as f:
             f.write(struct.pack('<%dH' % len(m), *m))
     strip(sheets['pikachu'][0], PIKA_PAL).save(OUT + '/pikachu.png')
@@ -658,16 +766,14 @@ def main():
     strip(sheets['ball'][0], PROP_PAL).save(OUT + '/ball.png')
     strip(sheets['spark_cheek'][0], PIKA_PAL).save(OUT + '/spark.png')
     strip(sheets['bolt'][0], PIKA_PAL).save(OUT + '/bolt.png')
-    for old in ('bg.bin', 'props.png'):
-        if os.path.exists(OUT + '/' + old):
-            os.remove(OUT + '/' + old)
-    keys, scroll = choreography()
-    write_header(keys, scroll, HEADER)
+    strip([f for q in bust_quarters() for f in q], PIKA_PAL).save(OUT + '/closeup.png')
+    keys, scroll, layout = choreography()
+    write_header(keys, scroll, layout, HEADER)
     print('scene 2: %d background tiles, %d frames' % (n, len(keys)))
     if a.preview:
         os.makedirs(a.preview + '/mock', exist_ok=True)
         for t in range(FRAMES):
-            render_frame(keys[t], scroll[t], back, front, sheets).save('%s/mock/t%02d.png' % (a.preview, t))
+            render_frame(keys[t], scroll[t], layout[t], layers, sheets).save('%s/mock/t%02d.png' % (a.preview, t))
 
 
 if __name__ == '__main__':

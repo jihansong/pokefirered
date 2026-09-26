@@ -42,6 +42,31 @@ S = 64
 HEAD_PARTS = ('head', 'jowl', 'muzzle', 'ear0', 'ear1')
 
 
+class Scaled(Figure):
+    """A Figure whose shapes are given in 64x64 model units and drawn sc times larger
+    (outlines stay 1 pixel: the shapes are scaled, not the drawing)."""
+
+    def __init__(self, sc):
+        Figure.__init__(self, S * sc, S * sc)
+        self.sc = sc
+
+    def ellipse(self, name, cx, cy, rx, ry, kind='Y', rot=0.0):
+        k = self.sc
+        return Figure.ellipse(self, name, cx * k, cy * k, rx * k, ry * k, kind, rot)
+
+    def lens(self, name, x0, y0, x1, y1, width, kind='Y'):
+        k = self.sc
+        return Figure.lens(self, name, x0 * k, y0 * k, x1 * k, y1 * k, width * k, kind)
+
+    def stroke(self, name, points, widths, kind='Y'):
+        k = self.sc
+        return Figure.stroke(self, name, [(x * k, y * k) for x, y in points], [w * k for w in widths], kind)
+
+    def clip(self, name, keep):
+        k = self.sc
+        return Figure.clip(self, name, lambda x, y: keep(x / k, y / k))
+
+
 def tail(f, mode):
     """Lightning tail behind the body, rising to the right: thin brown root, a middle
     segment, and the widest flag at the end. mode 'rest', 'lag' (swung left, still
@@ -62,32 +87,51 @@ def tail(f, mode):
 def ear(f, name, bx, by, tx, ty, width=8):
     """An ear from its root (bx, by) inside the head to the pointed tip (tx, ty); the
     far 35 percent black."""
+    k = f.sc
     pts = f.lens(name, bx, by, tx, ty, width)
-    length = math.hypot(tx - bx, ty - by)
-    ux, uy = (tx - bx) / length, (ty - by) / length
+    length = math.hypot(tx - bx, ty - by) * k
+    ux, uy = (tx - bx) * k / length, (ty - by) * k / length
     f.pixels(name + 'tip', [(x, y) for x, y in pts
-                            if (x + 0.5 - bx) * ux + (y + 0.5 - by) * uy > length * 0.58], kind='K')
+                            if (x + 0.5 - bx * k) * ux + (y + 0.5 - by * k) * uy > length * 0.58], kind='K')
+
+
+def blow_up(rows, k):
+    return [''.join(ch * k for ch in r) for r in rows for _ in range(k)]
+
+
+# Face stamps drawn for the 2x close-up (1 pixel lines, not blown up).
+FACE2 = {
+    'shut_near': ['KKKKKKKK', '......KK', '.......K'],
+    'shut_far': ['KKKKKK', '.....K', '.....K'],
+    'nose': ['KK'],
+    'pout': ['.oooo.', 'o....o', 'o....o'],
+    'cheek': ['..rrrrr..', '.rrrrrrr.', 'rpprrrrrr', 'rpprrrrrR', 'rrrrrrrRR',
+              'rrrrrrRRR', '.rrrrRRR.', '..RRRRR..'],
+}
 
 
 def pose(d=-1.0, arms='side', eyes='open', mouth='w', ears='up', tail_mode='rest',
-         lean=0, chin=0, squash=1.0):
-    """One 64x64 frame of PIKACHU sitting, feet forward.
+         lean=0, chin=0, squash=1.0, sc=1):
+    """One frame of PIKACHU sitting, feet forward: 64x64, or (sc=2) 128x128 drawn
+    twice as large with the same rules (the close-up; only the turned-away face
+    with shut eyes and a pout is drawn at 2x).
     d: face turn, -1 three quarters left, 0 front, +1 three quarters right.
     arms: 'side', 'tucked' (pressed to the body), 'crossed'.
     eyes: 'open', 'half' (suspicious), 'squeeze' (> <), 'shut' (turned-away, content).
     mouth: 'w', 'flat', 'tight', 'pout'.
     ears: 'up', 'twitch', 'drag' (trailing a turn to the right), 'fling' (overshooting
     to the right), 'back' (face-side ear laid back).
-    lean: body shift in pixels (-1 leans toward the ball). chin: head raised in pixels."""
-    f = Figure(S, S)
+    lean: body shift in model pixels (-1 leans toward the ball). chin: head raised."""
+    f = Scaled(sc)
+    W = S * sc
     hx, hy = 29, 25 - chin
     tail(f, tail_mode)
     bx = 30 + lean
     f.ellipse('body', bx, 44.5, 11, 10.5)
     f.ellipse('hips', bx, 51, 13.5, 6.5)
     f.merged('body', 'hips')
-    f.ellipse('footL', 22 + lean, 58, 4.5, 2.5)
-    f.ellipse('footR', 38 + lean, 58.5, 4.5, 2.5)
+    f.ellipse('footL', 22 + lean, 58, 4, 2.8)
+    f.ellipse('footR', 38 + lean, 58.5, 4, 2.8)
     if arms == 'side':
         f.ellipse('armL', bx - 11.5, 45, 2.6, 5, rot=0.55)
         f.ellipse('armR', bx + 11.5, 45.5, 2.6, 5, rot=-0.55)
@@ -95,8 +139,10 @@ def pose(d=-1.0, arms='side', eyes='open', mouth='w', ears='up', tail_mode='rest
         f.ellipse('armL', bx - 9, 44, 2.6, 4.6, rot=0.2)
         f.ellipse('armR', bx + 9, 44, 2.6, 4.6, rot=-0.2)
     elif arms == 'crossed':
-        f.ellipse('armBack', bx + 5, 45, 8, 3, rot=-0.10)
-        f.ellipse('armFront', bx - 4, 42.5, 8.5, 3, rot=0.10)
+        # folded arms at chest height: only the far fist of the back arm shows past the
+        # front arm, the near elbow rounds out of the body's silhouette
+        f.ellipse('armBack', bx + 8.5, 39.8, 2, 2)
+        f.ellipse('armFront', bx - 3, 40.8, 10.3, 2.9, rot=0.04)
     # ears (roots hidden in the head)
     tilt = {'up': 0.0, 'twitch': 0.08, 'drag': -0.35, 'fling': 0.32, 'back': 0.18}[ears]
     spread = 1.0 if ears != 'twitch' else 1.12
@@ -114,107 +160,131 @@ def pose(d=-1.0, arms='side', eyes='open', mouth='w', ears='up', tail_mode='rest
         f.ellipse('muzzle', hx + 11 * d, hy + 4 - (1 if chin else 0), 4.5, 4)
     names = ('head', 'jowl', 'muzzle', 'body', 'hips', 'ear0', 'ear1')
     f.merged(*names)
-    img = f.render(COLORS)
+    colors = dict(COLORS)
+    colors['Y'] = dict(COLORS['Y'], shade=(4 * sc, 4 * sc))
+    img = f.render(colors)
     owner = f.owner
 
     def at(x, y):
-        return owner[y][x] if 0 <= x < S and 0 <= y < S else None
+        return owner[y][x] if 0 <= x < W and 0 <= y < W else None
 
     def solid(x, y):
         return img[y][x] in (YELLOW, MID)
     # shade the head throws on the top of the body, deeper on the right
-    for y in range(S):
-        for x in range(S):
+    for y in range(W):
+        for x in range(W):
             if at(x, y) in ('body', 'hips') and solid(x, y):
-                if at(x, y - 1) in HEAD_PARTS and x > bx + 2:
+                above = [at(x, y - k) for k in range(1, 3 * sc + 1)]
+                if above[0] in HEAD_PARTS and x > (bx + 2) * sc:
                     img[y][x] = DARK
-                elif at(x, y - 1) in HEAD_PARTS or at(x, y - 2) in HEAD_PARTS or \
-                        (x > bx and at(x, y - 3) in HEAD_PARTS):
+                elif any(a in HEAD_PARTS for a in above[:2 * sc]) or \
+                        (x > bx * sc and any(a in HEAD_PARTS for a in above)):
                     img[y][x] = MID
-    # shade under the arms
-    for y in range(S):
-        for x in range(S):
-            if at(x, y) in ('body', 'hips', 'armBack') and solid(x, y) and \
-                    str(at(x, y - 1)).startswith('arm') and at(x, y - 1) != at(x, y):
-                img[y][x] = DARK
+    # shade under the arms (two rows under folded arms)
+    for y in range(W):
+        for x in range(W):
+            if at(x, y) in ('body', 'hips', 'armBack') and solid(x, y):
+                above = [at(x, y - k) for k in range(1, (2 if arms == 'crossed' else 1) * sc + 1)]
+                if any(str(a).startswith('arm') and a != at(x, y) for a in above):
+                    img[y][x] = DARK
+    # the folded front arm: light on its upper edge, its brown line only underneath
+    if arms == 'crossed':
+        for y in range(W):
+            for x in range(W):
+                if at(x, y) == 'armFront' and img[y][x] == BROWN and at(x, y - 1) not in (None, 'armFront'):
+                    img[y][x] = LIGHT
     # shade between the feet, under the hips
-    for y in range(S):
-        for x in range(S):
-            if at(x, y) == 'hips' and solid(x, y) and y >= 54 and 26 + lean <= x <= 34 + lean:
+    for y in range(W):
+        for x in range(W):
+            if at(x, y) == 'hips' and solid(x, y) and y >= 54 * sc and (26 + lean) * sc <= x <= (34 + lean) * sc:
                 img[y][x] = DARK
     # grey glint in the black of the ear tips (upper left, inside)
     for n in ('ear0tip', 'ear1tip'):
-        pts = sorted((y, x) for y in range(S) for x in range(S) if at(x, y) == n)
+        pts = sorted((y, x) for y in range(W) for x in range(W) if at(x, y) == n)
         if pts:
             mid_y = pts[len(pts) // 2][0]
             row = [x for y, x in pts if y == mid_y]
             if len(row) >= 3:
-                img[mid_y][row[0] + 1] = GREY
-                if mid_y + 1 < S and img[mid_y + 1][row[0] + 1] == BLACK:
-                    img[mid_y + 1][row[0] + 1] = GREY
+                for k in range(sc * 2):
+                    if mid_y + k < W and img[mid_y + k][row[0] + 1] == BLACK:
+                        img[mid_y + k][row[0] + 1] = GREY
+
+    def put(x, y, rows):
+        """A face stamp placed at model coordinates."""
+        stamp(img, round(x * sc), round(y * sc), rows, KEY)
     # light blobs: forehead (upper left of the head) and belly
-    stamp(img, round(hx - 1.5 * d) - 8, hy - 8, ['.llll.', 'llllll', '.llll.'], KEY)
-    stamp(img, bx - 7, 38, ['.ll', 'lll', 'lll', '.l.'], KEY)
+    put(round(hx - 1.5 * d) - 8, hy - 8, blow_up(['.llll.', 'llllll', '.llll.'], sc))
+    put(bx - 7, 38, blow_up(['.ll', 'lll', 'lll', '.l.'], sc))
     # face
     fx = hx + round(6 * d)
     ey = hy - 3 - (1 if chin else 0)
     near, far = (fx - 5, fx + 5) if d > 0 else (fx + 4, fx - 5)
     if d == 0:
         near, far = fx + 4, fx - 5
-    if eyes == 'open':
-        stamp(img, near - 1, ey, ['.KK.', 'KWKK', 'KKKK', 'KKKK', '.Kg.'], KEY)
-        if d < 0:
-            stamp(img, far - 1, ey, ['.KK', 'KWK', 'KKK', 'KKK', '.g.'], KEY)
-        elif d > 0:
-            stamp(img, far - 1, ey, ['KK.', 'WKK', 'KKK', 'KKK', '.g.'], KEY)
-        else:
-            stamp(img, far - 1, ey, ['.KK.', 'KWKK', 'KKKK', 'KKKK', '.Kg.'], KEY)
-    elif eyes == 'half':                 # lids down: suspicious
-        stamp(img, near - 1, ey + 1, ['oooo', 'KWKK', 'KKKK', '.Kg.'], KEY)
-        stamp(img, far - 1, ey + 1, ['ooo', 'KWK', 'KKK', '.g.'] if d < 0 else ['ooo', 'WKK', 'KKK', '.g.'], KEY)
-    elif eyes == 'squeeze':              # > <
-        stamp(img, fx - 8, ey + 1, ['KK..', '..KK', 'KK..'], KEY)
-        stamp(img, fx + 4, ey + 1, ['..KK', 'KK..', '..KK'], KEY)
-    elif eyes == 'shut':                 # closed, lids curved down: "hmph"
-        if d > 0:
-            stamp(img, near - 2, ey + 2, ['KKKK', '...K'], KEY)
-            stamp(img, far - 1, ey + 2, ['KKK', '..K'], KEY)
-        else:
-            stamp(img, near - 1, ey + 2, ['KKKK', 'K...'], KEY)
-            stamp(img, far - 1, ey + 2, ['KKK', 'K..'], KEY)
     nose = fx + (1 if d > 0 else -1 if d < 0 else 0)
     ny = hy + 1 - (1 if chin else 0)
-    stamp(img, nose, ny, ['K'], KEY)
     my = ny + 2
-    if mouth == 'w':
-        stamp(img, nose - 2, my, ['o.o.o', '.o.o.'], KEY)
-    elif mouth == 'flat':
-        stamp(img, nose - 1, my, ['ooo'], KEY)
-    elif mouth == 'tight':
-        stamp(img, nose - 1, my + 1, ['ooo'], KEY)
-    elif mouth == 'pout':
-        stamp(img, nose - 1 + (1 if d > 0 else 0), my, ['.oo.', 'o..o'], KEY)
-    # cheeks: the near one whole, the far one on the rim of the head
     cy = hy + 3 - (1 if chin else 0)
     near_cheek = ['.rrr.', 'prrrr', 'rrrrR', 'rrrRR', '.RRR.']
-    if d > 0:
-        stamp(img, fx - 12, cy, near_cheek, KEY)
-        far_side = 1
-    elif d < 0:
-        stamp(img, fx + 7, cy, near_cheek, KEY)
-        far_side = -1
+    if sc == 2:
+        assert d > 0 and eyes == 'shut' and mouth == 'pout', 'the 2x face exists turned away only'
+        put(near - 2, ey + 2, FACE2['shut_near'])
+        put(far - 1, ey + 2, FACE2['shut_far'])
+        put(nose, ny, FACE2['nose'])
+        put(nose, my, FACE2['pout'])
+        put(fx - 12, cy, FACE2['cheek'])
     else:
-        stamp(img, fx - 13, cy, near_cheek, KEY)
-        stamp(img, fx + 8, cy, near_cheek, KEY)
-        far_side = 0
+        if eyes == 'open':
+            put(near - 1, ey, ['.KK.', 'KWKK', 'KKKK', 'KKKK', '.Kg.'])
+            if d < 0:
+                put(far - 1, ey, ['.KK', 'KWK', 'KKK', 'KKK', '.g.'])
+            elif d > 0:
+                put(far - 1, ey, ['KK.', 'WKK', 'KKK', 'KKK', '.g.'])
+            else:
+                put(far - 1, ey, ['.KK.', 'KWKK', 'KKKK', 'KKKK', '.Kg.'])
+        elif eyes == 'half':                 # lids down: suspicious
+            put(near - 1, ey + 1, ['oooo', 'KWKK', 'KKKK', '.Kg.'])
+            put(far - 1, ey + 1, ['ooo', 'KWK', 'KKK', '.g.'] if d < 0 else ['ooo', 'WKK', 'KKK', '.g.'])
+        elif eyes == 'squeeze':              # > <
+            put(fx - 8, ey + 1, ['KK..', '..KK', 'KK..'])
+            put(fx + 4, ey + 1, ['..KK', 'KK..', '..KK'])
+        elif eyes == 'shut':                 # closed, lids curved down: "hmph"
+            if d > 0:
+                put(near - 2, ey + 2, ['KKKK', '...K'])
+                put(far - 1, ey + 2, ['KKK', '..K'])
+            else:
+                put(near - 1, ey + 2, ['KKKK', 'K...'])
+                put(far - 1, ey + 2, ['KKK', 'K..'])
+        put(nose, ny, ['K'])
+        if mouth == 'w':
+            put(nose - 2, my, ['o.o.o', '.o.o.'])
+        elif mouth == 'flat':
+            put(nose - 1, my, ['ooo'])
+        elif mouth == 'tight':
+            put(nose - 1, my + 1, ['ooo'])
+        elif mouth == 'pout':
+            put(nose - 1 + (1 if d > 0 else 0), my, ['.oo.', 'o..o'])
+        # cheeks: the near one whole
+        if d > 0:
+            put(fx - 12, cy, near_cheek)
+        elif d < 0:
+            put(fx + 7, cy, near_cheek)
+        else:
+            put(fx - 13, cy, near_cheek)
+            put(fx + 8, cy, near_cheek)
+    # the far cheek on the rim of the head
+    far_side = 1 if d > 0 else -1 if d < 0 else 0
     if far_side:
-        for dy, (outer, inner) in enumerate(((DRED, RED), (DRED, RED), (DRED, DRED))):
-            y = cy + 1 + dy
-            xs = [x for x in range(S) if at(x, y) in HEAD_PARTS]
+        rows = ((DRED, RED), (DRED, RED), (DRED, DRED))
+        for dy in range(3 * sc):
+            outer, inner = rows[dy // sc]
+            y = (cy + 1) * sc + dy
+            xs = [x for x in range(W) if at(x, y) in HEAD_PARTS]
             if xs:
                 x = max(xs) if far_side > 0 else min(xs)
                 img[y][x] = outer
-                img[y][x - far_side] = inner
+                for k in range(1, sc + 1):
+                    img[y][x - far_side * k] = inner
     return img
 
 
@@ -230,4 +300,13 @@ def frames():
         'C': pose(1, 'crossed', 'shut', 'pout', ears='back', lean=1, chin=1),
         'C_hmph': pose(1, 'crossed', 'shut', 'pout', ears='back', lean=1, chin=2),
         'C_flick': pose(1, 'crossed', 'shut', 'pout', ears='back', tail_mode='flick', lean=1, chin=1),
+    }
+
+
+def closeup_frames():
+    """The 2x close-up (128x128, only the top shows in the letterbox): sulking, and
+    the "hmph!" with the chin raised."""
+    return {
+        'CU': pose(1, 'crossed', 'shut', 'pout', ears='back', lean=1, chin=1, sc=2),
+        'CU_hmph': pose(1, 'crossed', 'shut', 'pout', ears='back', lean=1, chin=2, sc=2),
     }

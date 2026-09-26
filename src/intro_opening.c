@@ -95,6 +95,7 @@ struct OpeningTrack
 #define BG_BACK       3
 #define BG_FRONT      2
 #define BG_MAP_BASE   28    // + 2 * slot (back), + 2 * slot + 1 (front)
+#define BG_MAP_EXTRA  20    // a third map for a scene (in char block 2's space, unused)
 
 #define PAL_CARD      1     // BG palette of the colour cards
 #define PAL_SCENE2    2     // BG palette of scene 2 (baked into its tilemap)
@@ -121,8 +122,10 @@ struct Opening
     s8 loaded;      // index of the scene whose graphics wait in the free slot
     bool8 musicStarted;
     u8 numTracks;
-    u8 pendingSlot; // slot the layers switch to at the next VBlank, NO_SLOT if none
-    bool8 pendingFront; // whether that slot shows its front layer
+    u8 pendingSlot; // char block the layers switch to at the next VBlank, NO_SLOT if none
+    u8 pendingBackMap;  // screen block for BG3
+    u8 pendingFrontMap; // screen block for BG2, NO_SLOT to hide BG2
+    u8 layout;      // scene 2: which backgrounds show (lab or close-up)
     struct OpeningScroll scroll; // written to the layers at the next VBlank
     const struct OpeningTrack *tracks[MAX_TRACKS];
     u8 spriteIds[MAX_TRACKS];
@@ -177,6 +180,7 @@ static const u16 sDigits_Pal[] = INCBIN_U16("graphics/intro/opening/placeholder_
 static const u32 sScene2_Bg_Gfx[]      = INCBIN_U32("graphics/intro/opening/scene2/bg.4bpp");
 static const u16 sScene2_BgBack_Map[]  = INCBIN_U16("graphics/intro/opening/scene2/bg_back.bin");
 static const u16 sScene2_BgFront_Map[] = INCBIN_U16("graphics/intro/opening/scene2/bg_front.bin");
+static const u16 sScene2_BgCloseup_Map[] = INCBIN_U16("graphics/intro/opening/scene2/bg_closeup.bin");
 static const u16 sScene2_Bg_Pal[]      = INCBIN_U16("graphics/intro/opening/scene2/bg.gbapal");
 static const u32 sScene2_Pikachu_Gfx[] = INCBIN_U32("graphics/intro/opening/scene2/pikachu.4bpp");
 static const u16 sScene2_Pikachu_Pal[] = INCBIN_U16("graphics/intro/opening/scene2/pikachu.gbapal");
@@ -185,6 +189,10 @@ static const u16 sScene2_Props_Pal[]   = INCBIN_U16("graphics/intro/opening/scen
 static const u32 sScene2_Ball_Gfx[]    = INCBIN_U32("graphics/intro/opening/scene2/ball.4bpp");
 static const u32 sScene2_Spark_Gfx[]   = INCBIN_U32("graphics/intro/opening/scene2/spark.4bpp");
 static const u32 sScene2_Bolt_Gfx[]    = INCBIN_U32("graphics/intro/opening/scene2/bolt.4bpp");
+static const u32 sScene2_Closeup_Gfx[] = INCBIN_U32("graphics/intro/opening/scene2/closeup.4bpp");
+
+// closeup.png: for each quarter of the 128x128 close-up, its two frames (64x64 each)
+#define CLOSEUP_QUARTER(q) (sScene2_Closeup_Gfx + (q) * 2 * (64 * 64 / 2) / 4)
 
 // The colour of each scene's stand-in card: dawn, lab, friends, storm, thunder,
 // rainbow sky, dusk.
@@ -313,10 +321,16 @@ void Opening_Free(void)
 // once: the new background would then show a frame before the sprites (OAM) and
 // palettes set up on the same frame, which the VBlank callback uploads only at the
 // next VBlank. So the switch, and every scroll, waits for that same VBlank.
+static void ShowMaps(u8 charBase, u8 backMap, u8 frontMap)
+{
+    sOpening->pendingSlot = charBase;
+    sOpening->pendingBackMap = backMap;
+    sOpening->pendingFrontMap = frontMap;
+}
+
 static void ShowSlot(u8 slot, bool8 front)
 {
-    sOpening->pendingSlot = slot;
-    sOpening->pendingFront = front;
+    ShowMaps(slot, BG_MAP_BASE + 2 * slot, front ? BG_MAP_BASE + 2 * slot + 1 : NO_SLOT);
 }
 
 static void SetScroll(const struct OpeningScroll *scroll)
@@ -335,13 +349,17 @@ static void VBlankCB_Opening(void)
         return;
     if (o->pendingSlot != NO_SLOT)
     {
-        SetBgControlAttributes(BG_BACK, o->pendingSlot, BG_MAP_BASE + 2 * o->pendingSlot, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF);
-        SetBgControlAttributes(BG_FRONT, o->pendingSlot, BG_MAP_BASE + 2 * o->pendingSlot + 1, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF);
+        SetBgControlAttributes(BG_BACK, o->pendingSlot, o->pendingBackMap, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF);
         ShowBg(BG_BACK);
-        if (o->pendingFront)
+        if (o->pendingFrontMap != NO_SLOT)
+        {
+            SetBgControlAttributes(BG_FRONT, o->pendingSlot, o->pendingFrontMap, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF);
             ShowBg(BG_FRONT);
+        }
         else
+        {
             HideBg(BG_FRONT);
+        }
         o->pendingSlot = NO_SLOT;
     }
     SetGpuReg(REG_OFFSET_BG3HOFS, o->scroll.backX);
@@ -483,6 +501,10 @@ static const struct OpeningTrack sScene2_Tracks[SCENE2_TRACK_COUNT] = {
     [SCENE2_TRACK_SPARK_CHEEK] = {sScene2_Spark_Gfx,   &sOam_16x16, PALTAG_S2_PIKACHU, 16, 16, 0},
     [SCENE2_TRACK_SPARK_BALL]  = {sScene2_Spark_Gfx,   &sOam_16x16, PALTAG_S2_PIKACHU, 16, 16, 1},
     [SCENE2_TRACK_BOLT]        = {sScene2_Bolt_Gfx,    &sOam_64x32, PALTAG_S2_PIKACHU, 64, 32, 2},
+    [SCENE2_TRACK_BUST0]       = {CLOSEUP_QUARTER(0),  &sOam_64x64, PALTAG_S2_PIKACHU, 64, 64, 9},
+    [SCENE2_TRACK_BUST1]       = {CLOSEUP_QUARTER(1),  &sOam_64x64, PALTAG_S2_PIKACHU, 64, 64, 9},
+    [SCENE2_TRACK_BUST2]       = {CLOSEUP_QUARTER(2),  &sOam_64x64, PALTAG_S2_PIKACHU, 64, 64, 9},
+    [SCENE2_TRACK_BUST3]       = {CLOSEUP_QUARTER(3),  &sOam_64x64, PALTAG_S2_PIKACHU, 64, 64, 9},
 };
 
 static void Scene2_Load(u8 scene, u8 slot)
@@ -490,6 +512,7 @@ static void Scene2_Load(u8 scene, u8 slot)
     CpuFastCopy(sScene2_Bg_Gfx, BG_CHAR_ADDR(slot), sizeof(sScene2_Bg_Gfx));
     CpuFastCopy(sScene2_BgBack_Map, BG_SCREEN_ADDR(BG_MAP_BASE + 2 * slot), sizeof(sScene2_BgBack_Map));
     CpuFastCopy(sScene2_BgFront_Map, BG_SCREEN_ADDR(BG_MAP_BASE + 2 * slot + 1), sizeof(sScene2_BgFront_Map));
+    CpuFastCopy(sScene2_BgCloseup_Map, BG_SCREEN_ADDR(BG_MAP_EXTRA), sizeof(sScene2_BgCloseup_Map));
 }
 
 static void Scene2_Begin(u8 scene, u8 slot)
@@ -507,6 +530,7 @@ static void Scene2_Begin(u8 scene, u8 slot)
     for (i = 0; i < SCENE2_TRACK_COUNT; i++)
         AddTrack(&sScene2_Tracks[i]);
     ShowSlot(slot, TRUE);
+    sOpening->layout = 0;
 }
 
 static void Scene2_Update(u8 scene, u16 t)
@@ -518,6 +542,15 @@ static void Scene2_Update(u8 scene, u16 t)
         t = SCENE2_FRAMES - 1;
     keys = sScene2_Keys[t];
     SetScroll(&sScene2_Scroll[t]);
+    if (sScene2_Layout[t] != sOpening->layout)
+    {
+        // the cut to the close-up: bands on BG3, no table
+        sOpening->layout = sScene2_Layout[t];
+        if (sOpening->layout)
+            ShowMaps(scene & 1, BG_MAP_EXTRA, NO_SLOT);
+        else
+            ShowSlot(scene & 1, TRUE);
+    }
     for (i = 0; i < SCENE2_TRACK_COUNT; i++)
     {
         if (keys[i].flags & KEY_HIDE)

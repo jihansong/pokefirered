@@ -310,3 +310,235 @@ def closeup_frames():
         'CU': pose(1, 'tucked', 'shut', 'pout', ears='back', lean=1, chin=1, sc=2),
         'CU_hmph': pose(1, 'tucked', 'shut', 'pout', ears='back', lean=1, chin=2, sc=2),
     }
+
+
+# ---------------------------------------------------------------- more views (scenes 4-6)
+# Back, side (standing and a four-legged run cycle) and jump poses, with the same
+# rules: selective outline, mass shading, the same palette, the same proportions
+# (head 28 wide and 23 tall, body 22 wide, ears 17 long with black tips).
+
+def _ear_glints(img, owner, W):
+    for n in ('ear0tip', 'ear1tip'):
+        pts = sorted((y, x) for y in range(W) for x in range(W) if owner[y][x] == n)
+        if pts:
+            mid_y = pts[len(pts) // 2][0]
+            row = [x for y, x in pts if y == mid_y]
+            if len(row) >= 3 and img[mid_y][row[0] + 1] == BLACK:
+                img[mid_y][row[0] + 1] = GREY
+
+
+def _render(f):
+    colors = dict(COLORS)
+    colors['Y'] = dict(COLORS['Y'], shade=(4, 4))
+    img = f.render(colors)
+    _ear_glints(img, f.owner, f.w)
+    return img
+
+
+def back_view(tail_mode='rest', ears='up'):
+    """From behind: no face, the two brown stripes across the back, the tail rising
+    from the small of the back (it covers part of the body), the black backs of the
+    ear tips. For scene 4 (shielded, seen past RED) and scene 6 (the hill)."""
+    f = Scaled(1)
+    hx, hy = 31, 25
+    f.ellipse('body', 31, 45, 11, 10.5)
+    f.ellipse('hips', 31, 51, 13.5, 6.5)
+    f.merged('body', 'hips')
+    f.ellipse('footL', 23, 58.5, 4, 2.6)
+    f.ellipse('footR', 39, 58.5, 4, 2.6)
+    f.ellipse('armL', 19, 44.5, 2.6, 4.6, rot=0.35)
+    f.ellipse('armR', 43, 44.5, 2.6, 4.6, rot=-0.35)
+    tilt = {'up': 0.0, 'back': -0.15}[ears]
+    for i, side in enumerate((-1, 1)):
+        base = (hx + side * 8, hy - 7)
+        ang = side * (0.55 + tilt)
+        tip = (base[0] + math.sin(ang) * 17, base[1] - math.cos(ang) * 17)
+        ear(f, 'ear%d' % i, base[0], base[1], tip[0], tip[1])
+    f.ellipse('head', hx, hy, 14, 11.5)
+    f.ellipse('jowl', hx, hy + 5, 15, 7.5)
+    f.merged('head', 'jowl', 'body', 'hips', 'ear0', 'ear1')
+    # the tail, rising from the middle of the back to the upper right, in front
+    rot = {'rest': 0.0, 'flick': 0.12, 'lag': -0.12}[tail_mode]
+    pts = [(33, 52), (39, 46), (36, 41), (45, 34), (41, 29), (53, 17)]
+    ox, oy = pts[1]
+    c, s = math.cos(rot), math.sin(rot)
+    pts = pts[:2] + [(ox + (x - ox) * c - (y - oy) * s, oy + (x - ox) * s + (y - oy) * c) for x, y in pts[2:]]
+    f.stroke('tail', pts, [3, 4, 5, 6, 8, 9])
+    f.stroke('tailroot', [pts[0], ((pts[0][0] + pts[1][0]) / 2, (pts[0][1] + pts[1][1]) / 2)], [3, 3.5], kind='B')
+    img = _render(f)
+    owner = f.owner
+    # two brown stripes across the back (under the tail)
+    for y0, x0, x1 in ((39, 26, 36), (44, 25, 37)):          # two short stripes
+        for y in range(y0, y0 + 2):
+            for x in range(x0 + (y - y0), x1 - (y - y0)):
+                if owner[y][x] in ('body', 'hips') and img[y][x] in (YELLOW, MID):
+                    img[y][x] = BROWN if y == y0 else DARK
+    stamp(img, hx - 9, hy - 8, ['.llll.', 'llllll', '.llll.'], KEY)
+    return img
+
+
+def side_view(eyes='open', mouth='w', ears='up', arms='front', lean=0):
+    """Standing in profile, facing right: one eye, the cheek on the side of the face,
+    the muzzle and the nose on the right, the tail rising behind on the left."""
+    f = Scaled(1)
+    hx, hy = 33, 25
+    pts = [(24, 53), (18, 47), (22, 42), (13, 35), (18, 30), (6, 18)]
+    f.stroke('tail', pts, [3, 4, 5, 6, 8, 9])
+    f.stroke('tailroot', pts[:2] + [(20, 44.5)], [3, 4, 4], kind='B')
+    f.clip('tailroot', lambda x, y: y >= 45)
+    f.ellipse('footB', 27 + lean, 58.5, 4.5, 2.6)
+    f.ellipse('body', 31 + lean, 45, 10, 10.5)
+    f.ellipse('hips', 29 + lean, 51, 11, 6.5)
+    f.merged('body', 'hips')
+    f.ellipse('footF', 36 + lean, 59, 5, 2.6)
+    tilt = {'up': 0.0, 'back': -0.45}[ears]
+    ear(f, 'ear0', hx - 6, hy - 7, hx - 6 - 7 + tilt * 10, hy - 23 + abs(tilt) * 6)
+    f.ellipse('head', hx, hy, 12.5, 11.5)
+    f.ellipse('jowl', hx + 1, hy + 5, 13, 7.5)
+    f.ellipse('muzzle', hx + 10, hy + 4, 5, 4.2)
+    ear(f, 'ear1', hx - 1, hy - 8, hx - 1 + 3 + tilt * 12, hy - 25 + abs(tilt) * 7)
+    f.merged('head', 'jowl', 'muzzle', 'body', 'hips', 'ear0', 'ear1')
+    if arms == 'front':
+        f.ellipse('arm', 38 + lean, 43, 2.6, 5, rot=-0.9)
+    elif arms == 'up':
+        f.ellipse('arm', 40 + lean, 37, 2.6, 5, rot=-2.3)
+    img = _render(f)
+    owner = f.owner
+    for y in range(64):
+        for x in range(64):
+            if owner[y][x] in ('body', 'hips') and img[y][x] in (YELLOW, MID) and \
+                    owner[y - 1][x] in HEAD_PARTS:
+                img[y][x] = DARK if x > 30 else MID
+    stamp(img, hx - 8, hy - 8, ['.llll.', 'llllll', '.llll.'], KEY)
+    ex, ey = hx + 4, hy - 3
+    if eyes == 'open':
+        stamp(img, ex, ey, ['.KK', 'KWK', 'KKK', 'KKK', '.g.'], KEY)
+    elif eyes == 'shut':
+        stamp(img, ex, ey + 2, ['KKK', '..K'], KEY)
+    elif eyes == 'fierce':                       # brow down: THUNDERBOLT
+        stamp(img, ex - 1, ey, ['oo..', '.KKK', '.WKK', '.KKK', '..g.'], KEY)
+    stamp(img, hx + 14, hy + 2, ['K'], KEY)      # nose, at the tip of the muzzle
+    if mouth == 'w':
+        stamp(img, hx + 10, hy + 5, ['o.o', '.o.'], KEY)
+    elif mouth == 'open':
+        stamp(img, hx + 9, hy + 5, ['oooo', 'omto', '.oo.'], KEY)
+    stamp(img, hx + 1, hy + 3, ['.rrr.', 'prrrr', 'rrrrR', 'rrrRR', '.RRR.'], KEY)
+    return img
+
+
+RUN = (  # (body dy, front leg dx, back leg dx, front lift, back lift, tail rot)
+    (1, 4, -4, 0, 0, 0.00),     # stretched: fore feet reaching, hind feet pushing off
+    (0, 1, 1, 1, 0, 0.06),      # the fore feet land and gather under the chest
+    (-1, -3, 3, 0, 1, 0.10),    # gathered: hind feet swing forward under the belly
+    (-2, 2, -2, 2, 2, 0.04),    # all four off the ground
+)
+
+
+def run_frame(i):
+    """A four-legged run to the right (the anime PIKACHU runs on all fours), one of
+    four frames; body bob and legs from RUN, ears laid back, tail streaming."""
+    bob, fdx, bdx, flift, blift, trot = RUN[i]
+    f = Scaled(1)
+    by = 44 + bob
+    # tail streaming back and up (behind everything)
+    pts = [(18, by + 2), (12, by - 3), (15, by - 7), (7, by - 12), (11, by - 16), (1, by - 25)]
+    ox, oy = pts[1]
+    c, s = math.cos(trot), math.sin(trot)
+    pts = pts[:2] + [(ox + (x - ox) * c - (y - oy) * s, oy + (x - ox) * s + (y - oy) * c) for x, y in pts[2:]]
+    f.stroke('tail', pts, [3, 4, 5, 6, 7, 8])
+    f.stroke('tailroot', pts[:2] + [((pts[1][0] + pts[2][0]) / 2, (pts[1][1] + pts[2][1]) / 2)], [3, 4, 4], kind='B')
+    # far legs (behind the body)
+    f.ellipse('legBF', 24 - bdx * 0.6, by + 7 - blift, 3, 4.5, rot=0.4 - bdx * 0.08)
+    f.ellipse('legFF', 39 - fdx * 0.6, by + 6 - flift, 2.6, 4.5, rot=-0.3 - fdx * 0.08)
+    f.ellipse('body', 30, by, 13, 8.5, rot=-0.08)
+    f.ellipse('rump', 22, by + 2, 8, 7)
+    f.merged('body', 'rump')
+    # near legs
+    f.ellipse('legB', 21 + bdx, by + 7 - blift, 3.2, 5, rot=0.3 - bdx * 0.1)
+    f.ellipse('legF', 38 + fdx, by + 6 - flift, 2.8, 5, rot=-0.2 - fdx * 0.1)
+    hx, hy = 46, by - 11
+    ear(f, 'ear0', hx - 7, hy - 5, hx - 23, hy - 13)
+    f.ellipse('head', hx, hy, 11.5, 10)
+    f.ellipse('muzzle', hx + 8.5, hy + 3, 4.5, 3.8)
+    ear(f, 'ear1', hx - 3, hy - 7, hx - 19, hy - 17)
+    f.merged('head', 'muzzle', 'body', 'rump', 'ear0', 'ear1')
+    img = _render(f)
+    stamp(img, hx - 7, hy - 7, ['.lll.', 'lllll'], KEY)
+    stamp(img, 24, by - 6, ['.lll', 'llll'], KEY)
+    stamp(img, hx + 3, hy - 3, ['.KK', 'KWK', 'KKK', '.g.'], KEY)
+    stamp(img, hx + 12, hy + 1, ['K'], KEY)
+    stamp(img, hx + 9, hy + 4, ['oo.', '..o'], KEY)
+    stamp(img, hx - 1, hy + 2, ['.rrr.', 'prrrr', 'rrrrR', '.RRR.'], KEY)
+    return img
+
+
+def jump_frame(stage):
+    """The THUNDERBOLT leap, facing the viewer: 'crouch' (squashed, ears back, about
+    to spring), 'launch' (stretched up, arms raised), 'air' (spread in the air, tail
+    up, cheeks lit), 'fall' (curled, coming down)."""
+    f = Scaled(1)
+    k = {'crouch': (1.12, 0.84, 6, -0.35), 'launch': (0.9, 1.12, -4, 0.1),
+         'air': (1.0, 1.0, -2, 0.15), 'fall': (1.0, 0.95, 0, -0.2)}[stage]
+    sx, sy, dy, ear_tilt = k
+    hx, hy = 32, 24 + dy
+    by = 45 + dy
+    tail(f, 'flick' if stage in ('launch', 'air') else 'rest')
+    f.ellipse('body', 32, by, 11 * sx, 10.5 * sy)
+    f.ellipse('hips', 32, by + 6 * sy, 13 * sx, 6.5 * sy)
+    f.merged('body', 'hips')
+    if stage == 'crouch':
+        f.ellipse('footL', 23, 59, 5, 2.5)
+        f.ellipse('footR', 41, 59, 5, 2.5)
+        f.ellipse('armL', 20, by + 2, 2.6, 4.5, rot=0.3)
+        f.ellipse('armR', 44, by + 2, 2.6, 4.5, rot=-0.3)
+    elif stage == 'launch':
+        f.ellipse('footL', 27, by + 13, 3.2, 4.2, rot=0.2)
+        f.ellipse('footR', 37, by + 13, 3.2, 4.2, rot=-0.2)
+        f.ellipse('armL', 20, by - 8, 2.6, 5, rot=-0.5)
+        f.ellipse('armR', 44, by - 8, 2.6, 5, rot=0.5)
+    elif stage == 'air':
+        f.ellipse('footL', 20, by + 10, 3.2, 4, rot=0.8)
+        f.ellipse('footR', 44, by + 10, 3.2, 4, rot=-0.8)
+        f.ellipse('armL', 17, by - 3, 2.6, 5.2, rot=-1.1)
+        f.ellipse('armR', 47, by - 3, 2.6, 5.2, rot=1.1)
+    else:
+        f.ellipse('footL', 26, by + 11, 3.5, 3, rot=0.3)
+        f.ellipse('footR', 38, by + 11, 3.5, 3, rot=-0.3)
+        f.ellipse('armL', 22, by + 1, 2.6, 4.5, rot=0.6)
+        f.ellipse('armR', 42, by + 1, 2.6, 4.5, rot=-0.6)
+    for i, side in enumerate((-1, 1)):
+        base = (hx + side * 8, hy - 7)
+        ang = side * (0.55 - ear_tilt)
+        length = 17 if stage != 'crouch' else 15
+        tip = (base[0] + math.sin(ang) * length, base[1] - math.cos(ang) * length)
+        ear(f, 'ear%d' % i, base[0], base[1], tip[0], tip[1])
+    f.ellipse('head', hx, hy, 14, 11.5)
+    f.ellipse('jowl', hx, hy + 5, 15, 7.5)
+    f.merged('head', 'jowl', 'body', 'hips', 'ear0', 'ear1')
+    img = _render(f)
+    stamp(img, hx - 9, hy - 8, ['.llll.', 'llllll', '.llll.'], KEY)
+    if stage == 'crouch':                        # determined, brows down
+        stamp(img, hx - 8, hy - 3, ['oo...', '.KKK.', '.WKK.', '.KKK.'], KEY)
+        stamp(img, hx + 4, hy - 3, ['...oo', '.KKK.', '.WKK.', '.KKK.'], KEY)
+        stamp(img, hx - 1, hy + 3, ['ooo'], KEY)
+    else:
+        stamp(img, hx - 8, hy - 3, ['.KK.', 'KWKK', 'KKKK', 'KKKK', '.Kg.'], KEY)
+        stamp(img, hx + 4, hy - 3, ['.KK.', 'KWKK', 'KKKK', 'KKKK', '.Kg.'], KEY)
+        stamp(img, hx - 2, hy + 3, ['ooooo', 'omtmo', '.ooo.'], KEY)
+    stamp(img, hx, hy + 1, ['K'], KEY)
+    for cx in (hx - 14, hx + 9):
+        stamp(img, cx, hy + 3, ['.rrr.', 'prrrr', 'rrrrR', 'rrrRR', '.RRR.'], KEY)
+    return img
+
+
+def model_views():
+    """Every view on the model sheet, by name."""
+    out = {'front A': pose(-1, 'side', 'open', 'w', lean=-1),
+           'front C': pose(1, 'tucked', 'shut', 'pout', ears='back', lean=1, chin=1),
+           'back': back_view(), 'back, tail flick': back_view('flick'),
+           'side': side_view(), 'side, ears back': side_view('open', 'open', 'back', 'up')}
+    for i in range(len(RUN)):
+        out['run %d' % i] = run_frame(i)
+    for st in ('crouch', 'launch', 'air', 'fall'):
+        out['jump: ' + st] = jump_frame(st)
+    return out

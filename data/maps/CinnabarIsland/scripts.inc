@@ -367,6 +367,7 @@ CinnabarIsland_EventScript_ReadyRocketMagmar::
 CinnabarIsland_EventScript_RocketMagmar::
 	lockall
 	setvar VAR_TEMP_2, 0
+	goto_if_eq VAR_ROCKET_RETRY, 10, CinnabarIsland_EventScript_RocketMagmarRetry
 	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox CinnabarIsland_Text_JessieMagmarCaller
 	textcolor NPC_TEXT_COLOR_MALE
@@ -384,8 +385,12 @@ CinnabarIsland_EventScript_RocketMagmar::
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox CinnabarIsland_Text_RocketMagmarIntro
 	closemessage
+CinnabarIsland_EventScript_RocketMagmarBattle::
+	setvar VAR_0x8004, 10
+	call EventScript_RocketTrioBeforeBattle
 	setvar VAR_LAST_TALKED, LOCALID_CINNABAR_JESSIE
 	trainerbattle_no_intro TRAINER_JESSIE_JAMES_CINNABAR, CinnabarIsland_Text_RocketMagmarDefeat
+	setvar VAR_ROCKET_RETRY, ROCKET_RETRY_NONE
 	setvar VAR_0x8008, LOCALID_CINNABAR_JESSIE
 	setvar VAR_0x8009, LOCALID_CINNABAR_JAMES
 	setvar VAR_0x800A, LOCALID_CINNABAR_MEOWTH
@@ -394,6 +399,15 @@ CinnabarIsland_EventScript_RocketMagmar::
 	removeobject LOCALID_CINNABAR_MEOWTH
 	removeobject LOCALID_CINNABAR_JAMES
 	setflag FLAG_ROCKET_CINNABAR
+	setvar VAR_0x8004, 1600
+	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, CinnabarIsland_EventScript_RocketCoins
+	setvar VAR_0x8004, 3200
+CinnabarIsland_EventScript_RocketCoins::
+	call EventScript_RocketMeowthCoins
+	msgbox CinnabarIsland_Text_CandyInLoot
+	giveitem ITEM_RARE_CANDY, 2
+	setvar VAR_0x8004, ROCKET_BONUS_CINNABAR_CANDY
+	call EventScript_RocketRewardResult
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox CinnabarIsland_Text_CallerStillBuzzing
 	closemessage
@@ -407,10 +421,19 @@ CinnabarIsland_EventScript_RocketMagmar::
 	waitmoncry
 	msgbox CinnabarIsland_Text_MagmarBurstsOut
 	closemessage
-	setwildbattle SPECIES_MAGMAR, 36
+	setwildbattle SPECIES_MAGMAR, 45
 	dowildbattle
 	fadedefaultbgm
 	msgbox CinnabarIsland_Text_CallerFallsSilent
 	releaseall
 	end
+
+CinnabarIsland_EventScript_RocketMagmarRetry::
+	applymovement LOCALID_CINNABAR_JESSIE, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_CINNABAR_MEOWTH, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_CINNABAR_JAMES, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	playbgm MUS_ENCOUNTER_ROCKET, 0
+	call EventScript_RocketTrioRetry
+	goto CinnabarIsland_EventScript_RocketMagmarBattle
 

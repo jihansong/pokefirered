@@ -14,9 +14,10 @@ SaffronCity_Dojo_Text_ChoosePrizedFightingMon::
     .string "Indeed, I have lost!\p"
     .string "But, I beseech you, do not take\n"
     .string "our emblem as your trophy!\p"
-    .string "In return, I will give you a prized\n"
-    .string "FIGHTING POKéMON!\p"
-    .string "Choose whichever one you like!$"
+    .string "In return, I will give you our\n"
+    .string "prized FIGHTING POKéMON!\p"
+    .string "Take both of them!\n"
+    .string "The kicker and the puncher!$"
 
 SaffronCity_Dojo_Text_StayAndTrainWithUs::
     .string "Grunt!\n"
@@ -88,8 +89,9 @@ SaffronCity_Dojo_Text_ReceivedMonFromKarateMaster2::
     .string "{PLAYER}は　カラテ　だいおう　から\n"
     .string "{STR_VAR_1}を　もらった！$"
 
-SaffronCity_Dojo_Text_BetterNotGetGreedy::
-    .string "Better not get greedy…$"
+SaffronCity_Dojo_Text_TakeTheOtherOneToo::
+    .string "Grunt! The other POKé BALL is\n"
+    .string "yours too! Take it with you!$"
 
 SaffronCity_Dojo_Text_EnemiesOnEverySide::
     .string "Enemies on every side!$"

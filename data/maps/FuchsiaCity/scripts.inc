@@ -36,6 +36,7 @@ FuchsiaCity_EventScript_RocketDratini::
 	playbgm MUS_ENCOUNTER_ROCKET, 0
 	playmoncry SPECIES_DRATINI, CRY_MODE_WEAK
 	waitmoncry
+	goto_if_eq VAR_ROCKET_RETRY, 9, FuchsiaCity_EventScript_RocketDratiniRetry
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox FuchsiaCity_Text_SomethingInSack
 	textcolor NPC_TEXT_COLOR_FEMALE
@@ -45,8 +46,12 @@ FuchsiaCity_EventScript_RocketDratini::
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox FuchsiaCity_Text_RocketDratiniIntro
 	closemessage
+FuchsiaCity_EventScript_RocketDratiniBattle::
+	setvar VAR_0x8004, 9
+	call EventScript_RocketTrioBeforeBattle
 	setvar VAR_LAST_TALKED, LOCALID_FUCHSIA_JESSIE
 	trainerbattle_no_intro TRAINER_JESSIE_JAMES_SAFARI, FuchsiaCity_Text_RocketDratiniDefeat
+	setvar VAR_ROCKET_RETRY, ROCKET_RETRY_NONE
 	playmoncry SPECIES_DRATINI, CRY_MODE_NORMAL
 	waitmoncry
 	textcolor NPC_TEXT_COLOR_NEUTRAL
@@ -61,12 +66,34 @@ FuchsiaCity_EventScript_RocketDratini::
 	removeobject LOCALID_FUCHSIA_JAMES
 	setflag FLAG_ROCKET_SAFARI_DRATINI
 	fadedefaultbgm
+	setvar VAR_0x8004, 1440
+	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, FuchsiaCity_EventScript_RocketCoins
+	setvar VAR_0x8004, 2880
+FuchsiaCity_EventScript_RocketCoins::
+	call EventScript_RocketMeowthCoins
 	textcolor NPC_TEXT_COLOR_MALE
 	msgbox FuchsiaCity_Text_AttendantThanks
 	giveitem ITEM_DRAGON_FANG
-	msgbox FuchsiaCity_Text_AttendantDragonFang
+	setvar VAR_0x8004, ROCKET_HELD_DRAGON_FANG
+	call EventScript_RocketRewardResult
+	textcolor NPC_TEXT_COLOR_MALE
+	call_if_ne VAR_0x8007, FALSE, FuchsiaCity_EventScript_AttendantDragonFang
+	msgbox FuchsiaCity_Text_AttendantDragonScale
+	giveitem ITEM_DRAGON_SCALE
+	setvar VAR_0x8004, ROCKET_BONUS_DRAGON_SCALE
+	call EventScript_RocketRewardResult
 	releaseall
 	end
+
+@ What the first reward does, told only when it went into the bag (not
+@ when the OFFICER at VIRIDIAN keeps it for now).
+FuchsiaCity_EventScript_AttendantDragonFang::
+	msgbox FuchsiaCity_Text_AttendantDragonFang
+	return
+
+FuchsiaCity_EventScript_RocketDratiniRetry::
+	call EventScript_RocketTrioRetry
+	goto FuchsiaCity_EventScript_RocketDratiniBattle
 
 FuchsiaCity_EventScript_SetOmanyteGfx::
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_OMANYTE

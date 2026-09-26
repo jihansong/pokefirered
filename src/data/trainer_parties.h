@@ -3717,95 +3717,136 @@ static const struct TrainerMonItemDefaultMoves sParty_BlackBeltDaisuke[] = {
     },
 };
 
-// Jessie & James (Pokémon Yellow)
-static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesMtMoon[] = {
+// Jessie & James (Pokémon Yellow). v0.9.0: 1, 3, 4, 5 then 6 POKéMON, MEOWTH
+// always last and highest (the prize money reads the last one's level), and
+// every move set given, since custom moves apply to the whole party.
+static const struct TrainerMonNoItemCustomMoves sParty_JessieJamesMtMoon[] = {
     {
         .iv = 0,
-        .lvl = 14,
+        .lvl = 13,
         .species = SPECIES_EKANS,
+        .moves = {MOVE_WRAP, MOVE_LEER, MOVE_POISON_STING, MOVE_BITE},
+    },
+    {
+        .iv = 0,
+        .lvl = 13,
+        .species = SPECIES_KOFFING,
+        .moves = {MOVE_POISON_GAS, MOVE_TACKLE, MOVE_SMOG, MOVE_NONE},
     },
     {
         .iv = 0,
         .lvl = 14,
         .species = SPECIES_MEOWTH,
-    },
-    {
-        .iv = 0,
-        .lvl = 14,
-        .species = SPECIES_KOFFING,
+        .moves = {MOVE_SCRATCH, MOVE_GROWL, MOVE_BITE, MOVE_PAY_DAY},
     },
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesRocketHideout[] = {
+static const struct TrainerMonNoItemCustomMoves sParty_JessieJamesRocketHideout[] = {
     {
         .iv = 0,
-        .lvl = 25,
-        .species = SPECIES_KOFFING,
-    },
-    {
-        .iv = 0,
-        .lvl = 25,
-        .species = SPECIES_MEOWTH,
-    },
-    {
-        .iv = 0,
-        .lvl = 25,
-        .species = SPECIES_EKANS,
-    },
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesPokemonTower[] = {
-    {
-        .iv = 0,
-        .lvl = 27,
-        .species = SPECIES_MEOWTH,
-    },
-    {
-        .iv = 0,
-        .lvl = 27,
+        .lvl = 28,
         .species = SPECIES_ARBOK,
+        .moves = {MOVE_POISON_STING, MOVE_BITE, MOVE_GLARE, MOVE_SCREECH},
+    },
+    {
+        .iv = 0,
+        .lvl = 28,
+        .species = SPECIES_WEEZING,
+        .moves = {MOVE_SMOG, MOVE_SLUDGE, MOVE_SMOKESCREEN, MOVE_SELF_DESTRUCT},
     },
     {
         .iv = 0,
         .lvl = 27,
-        .species = SPECIES_WEEZING,
-    },
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesSilphCo[] = {
-    {
-        .iv = 0,
-        .lvl = 31,
-        .species = SPECIES_WEEZING,
+        .species = SPECIES_WEEPINBELL,
+        .moves = {MOVE_VINE_WHIP, MOVE_ACID, MOVE_SLEEP_POWDER, MOVE_WRAP},
     },
     {
         .iv = 0,
-        .lvl = 31,
-        .species = SPECIES_ARBOK,
-    },
-    {
-        .iv = 0,
-        .lvl = 31,
+        .lvl = 30,
         .species = SPECIES_MEOWTH,
+        .moves = {MOVE_BITE, MOVE_PAY_DAY, MOVE_FAINT_ATTACK, MOVE_SCREECH},
     },
 };
 
-// v0.5.0 TEAM ROCKET events: between MT. MOON (14) and the ROCKET HIDEOUT (25)
-static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesCeruleanGym[] = {
+static const struct TrainerMonNoItemCustomMoves sParty_JessieJamesPokemonTower[] = {
+    {
+        .iv = 0,
+        .lvl = 30,
+        .species = SPECIES_ARBOK,
+        .moves = {MOVE_POISON_STING, MOVE_BITE, MOVE_GLARE, MOVE_SCREECH},
+    },
+    {
+        .iv = 0,
+        .lvl = 30,
+        .species = SPECIES_WEEZING,
+        .moves = {MOVE_SMOG, MOVE_SLUDGE, MOVE_SMOKESCREEN, MOVE_SELF_DESTRUCT},
+    },
+    {
+        .iv = 0,
+        .lvl = 29,
+        .species = SPECIES_WEEPINBELL,
+        .moves = {MOVE_VINE_WHIP, MOVE_ACID, MOVE_SLEEP_POWDER, MOVE_WRAP},
+    },
+    {
+        .iv = 0,
+        .lvl = 32,
+        .species = SPECIES_MEOWTH,
+        .moves = {MOVE_BITE, MOVE_PAY_DAY, MOVE_FAINT_ATTACK, MOVE_SCREECH},
+    },
+};
+
+static const struct TrainerMonNoItemCustomMoves sParty_JessieJamesSilphCo[] = {
+    {
+        .iv = 0,
+        .lvl = 40,
+        .species = SPECIES_ARBOK,
+        .moves = {MOVE_BITE, MOVE_GLARE, MOVE_ACID, MOVE_SCREECH},
+    },
+    {
+        .iv = 0,
+        .lvl = 40,
+        .species = SPECIES_WEEZING,
+        .moves = {MOVE_SLUDGE, MOVE_SMOKESCREEN, MOVE_HAZE, MOVE_SELF_DESTRUCT},
+    },
+    {
+        .iv = 0,
+        .lvl = 39,
+        .species = SPECIES_VICTREEBEL,
+        .moves = {MOVE_RAZOR_LEAF, MOVE_ACID, MOVE_SLEEP_POWDER, MOVE_SWEET_SCENT},
+    },
+    {
+        .iv = 0,
+        .lvl = 39,
+        .species = SPECIES_LICKITUNG,
+        .moves = {MOVE_STOMP, MOVE_KNOCK_OFF, MOVE_SUPERSONIC, MOVE_WRAP},
+    },
+    {
+        .iv = 0,
+        .lvl = 42,
+        .species = SPECIES_MEOWTH,
+        .moves = {MOVE_PAY_DAY, MOVE_FAINT_ATTACK, MOVE_FURY_SWIPES, MOVE_SLASH},
+    },
+};
+
+// v0.5.0 TEAM ROCKET events (levels from v0.9.0)
+static const struct TrainerMonNoItemCustomMoves sParty_JessieJamesCeruleanGym[] = {
     {
         .iv = 0,
         .lvl = 20,
         .species = SPECIES_EKANS,
+        .moves = {MOVE_LEER, MOVE_POISON_STING, MOVE_BITE, MOVE_GLARE},
     },
     {
         .iv = 0,
         .lvl = 20,
         .species = SPECIES_KOFFING,
+        .moves = {MOVE_POISON_GAS, MOVE_TACKLE, MOVE_SMOG, MOVE_SELF_DESTRUCT},
     },
     {
         .iv = 0,
-        .lvl = 21,
+        .lvl = 22,
         .species = SPECIES_MEOWTH,
+        .moves = {MOVE_SCRATCH, MOVE_GROWL, MOVE_BITE, MOVE_PAY_DAY},
     },
 };
 
@@ -3836,148 +3877,202 @@ static const struct TrainerMonNoItemDefaultMoves sParty_RocketSSAnne2[] = {
 };
 
 // JAMES's "golden egg" MAGIKARP, bought on board
-static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesSSAnne[] = {
+static const struct TrainerMonNoItemCustomMoves sParty_JessieJamesSSAnne[] = {
     {
         .iv = 0,
         .lvl = 22,
         .species = SPECIES_EKANS,
+        .moves = {MOVE_LEER, MOVE_POISON_STING, MOVE_BITE, MOVE_GLARE},
     },
     {
         .iv = 0,
         .lvl = 22,
         .species = SPECIES_KOFFING,
+        .moves = {MOVE_TACKLE, MOVE_SMOG, MOVE_SELF_DESTRUCT, MOVE_SLUDGE},
     },
     {
         .iv = 0,
         .lvl = 15,
         .species = SPECIES_MAGIKARP,
+        .moves = {MOVE_SPLASH, MOVE_TACKLE, MOVE_NONE, MOVE_NONE},
     },
     {
         .iv = 0,
-        .lvl = 23,
+        .lvl = 24,
         .species = SPECIES_MEOWTH,
+        .moves = {MOVE_SCRATCH, MOVE_GROWL, MOVE_BITE, MOVE_PAY_DAY},
     },
 };
 
-// between POKéMON TOWER (27) and SILPH CO. (31); JAMES has a WEEPINBELL now
-static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesCeladonGym[] = {
+// JAMES's WEEPINBELL became VICTREEBEL in the GYM's LEAF STONE greenhouse
+static const struct TrainerMonNoItemCustomMoves sParty_JessieJamesCeladonGym[] = {
     {
         .iv = 0,
-        .lvl = 29,
+        .lvl = 31,
         .species = SPECIES_ARBOK,
-    },
-    {
-        .iv = 0,
-        .lvl = 29,
-        .species = SPECIES_KOFFING,
-    },
-    {
-        .iv = 0,
-        .lvl = 28,
-        .species = SPECIES_WEEPINBELL,
-    },
-    {
-        .iv = 0,
-        .lvl = 29,
-        .species = SPECIES_MEOWTH,
-    },
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesSafari[] = {
-    {
-        .iv = 0,
-        .lvl = 32,
-        .species = SPECIES_ARBOK,
-    },
-    {
-        .iv = 0,
-        .lvl = 32,
-        .species = SPECIES_KOFFING,
+        .moves = {MOVE_POISON_STING, MOVE_BITE, MOVE_GLARE, MOVE_SCREECH},
     },
     {
         .iv = 0,
         .lvl = 31,
-        .species = SPECIES_WEEPINBELL,
-    },
-    {
-        .iv = 0,
-        .lvl = 32,
-        .species = SPECIES_MEOWTH,
-    },
-};
-
-// after SILPH CO. (31): KOFFING has grown into WEEZING
-static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesCinnabar[] = {
-    {
-        .iv = 0,
-        .lvl = 36,
         .species = SPECIES_WEEZING,
+        .moves = {MOVE_SMOG, MOVE_SLUDGE, MOVE_SMOKESCREEN, MOVE_SELF_DESTRUCT},
     },
     {
         .iv = 0,
-        .lvl = 36,
-        .species = SPECIES_ARBOK,
-    },
-    {
-        .iv = 0,
-        .lvl = 35,
-        .species = SPECIES_WEEPINBELL,
-    },
-    {
-        .iv = 0,
-        .lvl = 36,
-        .species = SPECIES_MEOWTH,
-    },
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesViridianGym[] = {
-    {
-        .iv = 0,
-        .lvl = 40,
-        .species = SPECIES_WEEZING,
-    },
-    {
-        .iv = 0,
-        .lvl = 40,
-        .species = SPECIES_ARBOK,
-    },
-    {
-        .iv = 0,
-        .lvl = 39,
+        .lvl = 31,
         .species = SPECIES_VICTREEBEL,
+        .moves = {MOVE_RAZOR_LEAF, MOVE_ACID, MOVE_SLEEP_POWDER, MOVE_WRAP},
     },
     {
         .iv = 0,
-        .lvl = 40,
+        .lvl = 33,
         .species = SPECIES_MEOWTH,
+        .moves = {MOVE_BITE, MOVE_PAY_DAY, MOVE_FAINT_ATTACK, MOVE_SCREECH},
     },
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_JessieJamesNewIsland[] = {
+static const struct TrainerMonNoItemCustomMoves sParty_JessieJamesSafari[] = {
     {
-        .iv = 100,
-        .lvl = 58,
-        .species = SPECIES_WEEZING,
-    },
-    {
-        .iv = 100,
-        .lvl = 58,
+        .iv = 0,
+        .lvl = 43,
         .species = SPECIES_ARBOK,
+        .moves = {MOVE_BITE, MOVE_GLARE, MOVE_ACID, MOVE_SCREECH},
     },
     {
-        .iv = 100,
-        .lvl = 57,
+        .iv = 0,
+        .lvl = 43,
+        .species = SPECIES_WEEZING,
+        .moves = {MOVE_SLUDGE, MOVE_SMOKESCREEN, MOVE_HAZE, MOVE_SELF_DESTRUCT},
+    },
+    {
+        .iv = 0,
+        .lvl = 42,
         .species = SPECIES_VICTREEBEL,
+        .moves = {MOVE_RAZOR_LEAF, MOVE_ACID, MOVE_SLEEP_POWDER, MOVE_SWEET_SCENT},
     },
     {
-        .iv = 100,
-        .lvl = 57,
+        .iv = 0,
+        .lvl = 42,
+        .species = SPECIES_LICKITUNG,
+        .moves = {MOVE_STOMP, MOVE_KNOCK_OFF, MOVE_SUPERSONIC, MOVE_WRAP},
+    },
+    {
+        .iv = 0,
+        .lvl = 45,
+        .species = SPECIES_MEOWTH,
+        .moves = {MOVE_PAY_DAY, MOVE_FAINT_ATTACK, MOVE_SLASH, MOVE_FAKE_OUT},
+    },
+};
+
+static const struct TrainerMonNoItemCustomMoves sParty_JessieJamesCinnabar[] = {
+    {
+        .iv = 0,
+        .lvl = 48,
+        .species = SPECIES_ARBOK,
+        .moves = {MOVE_SLUDGE_BOMB, MOVE_BITE, MOVE_GLARE, MOVE_IRON_TAIL},
+    },
+    {
+        .iv = 0,
+        .lvl = 48,
+        .species = SPECIES_WEEZING,
+        .moves = {MOVE_SLUDGE_BOMB, MOVE_FLAMETHROWER, MOVE_SMOKESCREEN, MOVE_SHADOW_BALL},
+    },
+    {
+        .iv = 0,
+        .lvl = 47,
+        .species = SPECIES_VICTREEBEL,
+        .moves = {MOVE_RAZOR_LEAF, MOVE_ACID, MOVE_SLEEP_POWDER, MOVE_SWEET_SCENT},
+    },
+    {
+        .iv = 0,
+        .lvl = 47,
+        .species = SPECIES_LICKITUNG,
+        .moves = {MOVE_STOMP, MOVE_KNOCK_OFF, MOVE_SUPERSONIC, MOVE_WRAP},
+    },
+    {
+        .iv = 0,
+        .lvl = 50,
+        .species = SPECIES_MEOWTH,
+        .moves = {MOVE_PAY_DAY, MOVE_FAINT_ATTACK, MOVE_SLASH, MOVE_FAKE_OUT},
+    },
+};
+
+static const struct TrainerMonNoItemCustomMoves sParty_JessieJamesViridianGym[] = {
+    {
+        .iv = 0,
+        .lvl = 51,
+        .species = SPECIES_ARBOK,
+        .moves = {MOVE_SLUDGE_BOMB, MOVE_BITE, MOVE_GLARE, MOVE_IRON_TAIL},
+    },
+    {
+        .iv = 0,
+        .lvl = 51,
+        .species = SPECIES_WEEZING,
+        .moves = {MOVE_SLUDGE_BOMB, MOVE_FLAMETHROWER, MOVE_SMOKESCREEN, MOVE_SHADOW_BALL},
+    },
+    {
+        .iv = 0,
+        .lvl = 50,
+        .species = SPECIES_VICTREEBEL,
+        .moves = {MOVE_GIGA_DRAIN, MOVE_SLUDGE_BOMB, MOVE_RAZOR_LEAF, MOVE_SLEEP_POWDER},
+    },
+    {
+        .iv = 0,
+        .lvl = 50,
+        .species = SPECIES_LICKITUNG,
+        .moves = {MOVE_SLAM, MOVE_KNOCK_OFF, MOVE_SUPERSONIC, MOVE_ICE_BEAM},
+    },
+    {
+        .iv = 0,
+        .lvl = 50,
         .species = SPECIES_GYARADOS,
+        .moves = {MOVE_WATERFALL, MOVE_BITE, MOVE_TWISTER, MOVE_DRAGON_DANCE},
+    },
+    {
+        .iv = 0,
+        .lvl = 53,
+        .species = SPECIES_MEOWTH,
+        .moves = {MOVE_PAY_DAY, MOVE_SLASH, MOVE_FAKE_OUT, MOVE_SHADOW_BALL},
+    },
+};
+
+static const struct TrainerMonNoItemCustomMoves sParty_JessieJamesNewIsland[] = {
+    {
+        .iv = 100,
+        .lvl = 63,
+        .species = SPECIES_ARBOK,
+        .moves = {MOVE_SLUDGE_BOMB, MOVE_BITE, MOVE_GLARE, MOVE_IRON_TAIL},
     },
     {
         .iv = 100,
-        .lvl = 60,
+        .lvl = 63,
+        .species = SPECIES_WEEZING,
+        .moves = {MOVE_SLUDGE_BOMB, MOVE_FLAMETHROWER, MOVE_THUNDERBOLT, MOVE_SHADOW_BALL},
+    },
+    {
+        .iv = 100,
+        .lvl = 62,
+        .species = SPECIES_VICTREEBEL,
+        .moves = {MOVE_GIGA_DRAIN, MOVE_SLUDGE_BOMB, MOVE_RAZOR_LEAF, MOVE_SLEEP_POWDER},
+    },
+    {
+        .iv = 100,
+        .lvl = 62,
+        .species = SPECIES_GYARADOS,
+        .moves = {MOVE_HYDRO_PUMP, MOVE_BITE, MOVE_DRAGON_DANCE, MOVE_HYPER_BEAM},
+    },
+    {
+        .iv = 100,
+        .lvl = 62,
+        .species = SPECIES_WOBBUFFET,
+        .moves = {MOVE_COUNTER, MOVE_MIRROR_COAT, MOVE_SAFEGUARD, MOVE_DESTINY_BOND},
+    },
+    {
+        .iv = 100,
+        .lvl = 65,
         .species = SPECIES_MEOWTH,
+        .moves = {MOVE_PAY_DAY, MOVE_SLASH, MOVE_FAKE_OUT, MOVE_SHADOW_BALL},
     },
 };
 
@@ -11122,3 +11217,4 @@ static const struct TrainerMonNoItemDefaultMoves sParty_RocketHideoutCameraGrunt
 #include "trainer_parties_hoenn.h"
 // END HOENN TRAINERS
 #include "trainer_parties_tournament.h"
+#include "trainer_parties_rocket.h"

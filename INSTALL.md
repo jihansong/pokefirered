@@ -1,5 +1,7 @@
 # Instructions
 
+> **Thunder Yellow:** the project's own container setup, pinned tool versions and QA tools are in [docs/INSTALL.md](docs/INSTALL.md) (Korean). The rest of this file is pret's generic guide.
+
 These instructions explain how to set up the tools required to build **pokefirered**, which assembles the source files into a ROM.
 
 These instructions come with notes which can be expanded by clicking the "<i>Note...</i>" text.

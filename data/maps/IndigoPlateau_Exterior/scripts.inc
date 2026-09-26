@@ -22,7 +22,10 @@ IndigoPlateau_Exterior_EventScript_PlayCreditsMusic::
 @ the plateau with all eight badges, the trio sneak out of the LEAGUE with the
 @ INDIGO TORCH, the flame that opens every LEAGUE challenge. It flares up in
 @ MEOWTH's paws and sends them flying. A LEAGUE official gives a FULL RESTORE.
-@ Plays once and never blocks the way to the ELITE FOUR.
+@ v0.9.0 (#12): a double battle first. The trigger sits on the one-tile-wide
+@ road up from ROUTE 23, so it can't be walked around, and until the torch is
+@ back the door guard inside keeps the way to the ELITE FOUR shut. A loss sends
+@ the player to the plateau's own POKéMON CENTER, a few steps away.
 IndigoPlateau_Exterior_EventScript_RocketTorch::
 	lockall
 	setvar VAR_TEMP_1, 0
@@ -39,6 +42,7 @@ IndigoPlateau_Exterior_EventScript_RocketTorch::
 	waitmovement 0
 	closedoor 11, 6
 	waitdooranim
+	goto_if_eq VAR_ROCKET_RETRY, 12, IndigoPlateau_Exterior_EventScript_RocketTorchRetry
 	textcolor NPC_TEXT_COLOR_MALE
 	msgbox IndigoPlateau_Exterior_Text_MeowthGotTheTorch
 	applymovement LOCALID_INDIGO_MEOWTH, Common_Movement_ExclamationMark
@@ -49,7 +53,16 @@ IndigoPlateau_Exterior_EventScript_RocketTorch::
 	msgbox IndigoPlateau_Exterior_Text_JessieIndigoTorch
 	textcolor NPC_TEXT_COLOR_MALE
 	msgbox IndigoPlateau_Exterior_Text_JamesNoChallenges
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox IndigoPlateau_Exterior_Text_JessieEarnTheTorch
 	closemessage
+IndigoPlateau_Exterior_EventScript_RocketTorchBattle::
+	setrespawn HEAL_LOCATION_INDIGO_PLATEAU
+	setvar VAR_0x8004, 12
+	call EventScript_RocketTrioBeforeBattle
+	setvar VAR_LAST_TALKED, LOCALID_INDIGO_JESSIE
+	trainerbattle_no_intro TRAINER_JESSIE_JAMES_INDIGO, IndigoPlateau_Exterior_Text_RocketTorchDefeat
+	setvar VAR_ROCKET_RETRY, ROCKET_RETRY_NONE
 	specialvar VAR_RESULT, GetStarterPikachuPartySlotForScript
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	goto_if_eq VAR_RESULT, PARTY_SIZE, IndigoPlateau_Exterior_EventScript_TorchFlaresInWind
@@ -81,6 +94,11 @@ IndigoPlateau_Exterior_EventScript_TorchFlares::
 	removeobject LOCALID_INDIGO_JAMES
 	setflag FLAG_ROCKET_INDIGO_TORCH
 	fadedefaultbgm
+	setvar VAR_0x8004, 2200
+	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, IndigoPlateau_Exterior_EventScript_RocketCoins
+	setvar VAR_0x8004, 3960
+IndigoPlateau_Exterior_EventScript_RocketCoins::
+	call EventScript_RocketMeowthCoins
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox IndigoPlateau_Exterior_Text_TorchLanded
 	closemessage
@@ -94,6 +112,14 @@ IndigoPlateau_Exterior_EventScript_TorchFlares::
 	textcolor NPC_TEXT_COLOR_MALE
 	msgbox IndigoPlateau_Exterior_Text_OfficialThanks
 	giveitem ITEM_FULL_RESTORE
+	setvar VAR_0x8004, ROCKET_HELD_FULL_RESTORE
+	call EventScript_RocketRewardResult
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox IndigoPlateau_Exterior_Text_OfficialFireStone
+	giveitem ITEM_FIRE_STONE
+	setvar VAR_0x8004, ROCKET_BONUS_FIRE_STONE
+	call EventScript_RocketRewardResult
+	textcolor NPC_TEXT_COLOR_MALE
 	msgbox IndigoPlateau_Exterior_Text_OfficialGoodLuck
 	closemessage
 	applymovement LOCALID_INDIGO_OFFICIAL, IndigoPlateau_Exterior_Movement_OfficialReturn
@@ -108,10 +134,20 @@ IndigoPlateau_Exterior_EventScript_TorchFlares::
 	releaseall
 	end
 
+IndigoPlateau_Exterior_EventScript_RocketTorchRetry::
+	applymovement LOCALID_INDIGO_MEOWTH, Common_Movement_ExclamationMark
+	waitmovement 0
+	playbgm MUS_ENCOUNTER_ROCKET, 0
+	call EventScript_RocketTrioRetry
+	goto IndigoPlateau_Exterior_EventScript_RocketTorchBattle
+
+@ The trio stop two tiles above the player on row 13.
 IndigoPlateau_Exterior_Movement_JessieExit::
 	walk_down
 	walk_down
 	walk_left
+	walk_down
+	walk_down
 	walk_down
 	face_down
 	step_end
@@ -121,10 +157,14 @@ IndigoPlateau_Exterior_Movement_JamesExit::
 	walk_down
 	walk_right
 	walk_down
+	walk_down
+	walk_down
 	face_down
 	step_end
 
 IndigoPlateau_Exterior_Movement_MeowthExit::
+	walk_down
+	walk_down
 	walk_down
 	walk_down
 	walk_down
@@ -141,9 +181,13 @@ IndigoPlateau_Exterior_Movement_OfficialExit::
 	walk_down
 	walk_down
 	walk_down
+	walk_down
+	walk_down
 	step_end
 
 IndigoPlateau_Exterior_Movement_OfficialReturn::
+	walk_up
+	walk_up
 	walk_up
 	walk_up
 	step_end

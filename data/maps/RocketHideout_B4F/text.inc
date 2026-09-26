@@ -55,16 +55,25 @@ RocketHideout_B4F_Text_Grunt1PostBattle::
     .string "I dropped the LIFT KEY!$"
 
 RocketHideout_B4F_Text_JessieJamesStop::
-    .string "Not another step, brat!$"
+    .string "Not one more step, twerp!$"
 
 RocketHideout_B4F_Text_JessieJamesIntro::
-    .string "How dare you humiliate us at\n"
-    .string "MT. MOON!\p"
-    .string "It's payback time, you brat!$"
+    .string "JESSIE: You embarrassed us in front\n"
+    .string "of the whole cave at MT. MOON!\p"
+    .string "JAMES: And in our own BASE, the\n"
+    .string "score gets settled!$"
 
 RocketHideout_B4F_Text_JessieJamesDefeat::
-    .string "Such a dreadful twerp!$"
+    .string "Not even on home ground…$"
 
 RocketHideout_B4F_Text_JessieJamesBlastOff::
-    .string "Looks like TEAM ROCKET's blasting\n"
-    .string "off again!$"
+    .string "MEOWTH: Retreat! Dis way, dis way!$"
+
+RocketHideout_B4F_Text_SomethingClattered::
+    .string "Something heavy clattered to the\n"
+    .string "floor where they stood.$"
+
+RocketHideout_B4F_Text_PikachuRefusesStone::
+    .string "PIKACHU took one look at the\n"
+    .string "THUNDER STONE and turned away.\p"
+    .string "It seems happy just as it is.$"

@@ -13,7 +13,9 @@ import os
 R = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 BASE = 520  # offset past the imported Hoenn trainers
 
-# name, class, pic, music, doubles, [(species, level, item, [moves])]
+# name, class, pic, music, doubles, [(species, level[, [moves]])]
+# An entrant whose POKéMON list moves gets a custom-move party (all four
+# moves for every one of them: the engine sets that per party, not per POKéMON).
 ENTRANTS = [
  ('BROCK', 'LEADER', 'LEADER_BROCK', 'MALE', False,
   [('ONIX', 66), ('GOLEM', 68), ('RHYDON', 68), ('AERODACTYL', 69), ('STEELIX', 70)]),
@@ -45,8 +47,14 @@ ENTRANTS = [
   [('TAUROS', 70), ('EXEGGUTOR', 71), ('ARCANINE', 72), ('LAPRAS', 72), ('GYARADOS', 73), ('VENUSAUR', 75)]),
  ('N', 'PKMN_TRAINER', 'N', 'MALE', False,
   [('MIGHTYENA', 69), ('SWELLOW', 70), ('SHIFTRY', 71), ('BANETTE', 71), ('GARDEVOIR', 73)]),
+ # v0.9.0: MEOWTH last and highest (the prize reads the last one's level)
  ('JESSIE&JAMES', 'TEAM_ROCKET', 'JESSIE_JAMES', 'AQUA', True,
-  [('WEEZING', 68), ('ARBOK', 68), ('VICTREEBEL', 69), ('GYARADOS', 69), ('MEOWTH', 71)]),
+  [('ARBOK', 70, ['SLUDGE_BOMB', 'BITE', 'GLARE', 'IRON_TAIL']),
+   ('WEEZING', 70, ['SLUDGE_BOMB', 'FLAMETHROWER', 'THUNDERBOLT', 'SHADOW_BALL']),
+   ('VICTREEBEL', 70, ['GIGA_DRAIN', 'SLUDGE_BOMB', 'RAZOR_LEAF', 'SLEEP_POWDER']),
+   ('GYARADOS', 71, ['HYDRO_PUMP', 'BITE', 'DRAGON_DANCE', 'HYPER_BEAM']),
+   ('WOBBUFFET', 71, ['COUNTER', 'MIRROR_COAT', 'SAFEGUARD', 'DESTINY_BOND']),
+   ('MEOWTH', 73, ['PAY_DAY', 'SLASH', 'FAKE_OUT', 'SHADOW_BALL'])]),
 ]
 
 
@@ -71,9 +79,15 @@ parties = '// Tournament parties (tools/make_tournament.py)\n\n'
 trainers = '// Tournament entrants (tools/make_tournament.py)\n\n'
 for name, cls, pic, music, doubles, mons in ENTRANTS:
     label = 'sParty_Tourney' + camel(name)
-    parties += 'static const struct TrainerMonNoItemDefaultMoves %s[] = {\n' % label
-    for species, lvl in mons:
-        parties += '    {\n        .iv = 255,\n        .lvl = %d,\n        .species = SPECIES_%s,\n    },\n' % (lvl, species)
+    custom = any(len(m) > 2 for m in mons)
+    parties += 'static const struct TrainerMonNoItem%sMoves %s[] = {\n' % ('Custom' if custom else 'Default', label)
+    for mon in mons:
+        species, lvl = mon[:2]
+        parties += '    {\n        .iv = 255,\n        .lvl = %d,\n        .species = SPECIES_%s,\n' % (lvl, species)
+        if custom:
+            moves = (list(mon[2]) + ['NONE'] * 4)[:4]
+            parties += '        .moves = {%s},\n' % ', '.join('MOVE_' + m for m in moves)
+        parties += '    },\n'
     parties += '};\n\n'
     trainers += '''    [TRAINER_TOURNEY_%s] = {
         .trainerClass = TRAINER_CLASS_%s,
@@ -83,9 +97,9 @@ for name, cls, pic, music, doubles, mons in ENTRANTS:
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = %s,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
-        .party = NO_ITEM_DEFAULT_MOVES(%s),
+        .party = NO_ITEM_%s_MOVES(%s),
     },
-''' % (ident(name), cls, music, pic, name, 'TRUE' if doubles else 'FALSE', label)
+''' % (ident(name), cls, music, pic, name, 'TRUE' if doubles else 'FALSE', 'CUSTOM' if custom else 'DEFAULT', label)
 open(R + '/src/data/trainer_parties_tournament.h', 'w').write(parties)
 open(R + '/src/data/trainers_tournament.h', 'w').write(trainers)
 

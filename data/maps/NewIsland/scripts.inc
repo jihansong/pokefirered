@@ -18,6 +18,7 @@ NewIsland_EventScript_TransitionEnd::
 NewIsland_EventScript_RocketTrio::
 	lockall
 	setvar VAR_TEMP_1, 0
+	goto_if_eq VAR_ROCKET_RETRY, 13, NewIsland_EventScript_RocketTrioRetry
 	textcolor NPC_TEXT_COLOR_MALE
 	msgbox NewIsland_Text_MeowthReadsFiles
 	textcolor NPC_TEXT_COLOR_FEMALE
@@ -39,13 +40,17 @@ NewIsland_EventScript_RocketTrio::
 	applymovement LOCALID_NEW_ISLAND_JAMES, NewIsland_Movement_TrioStepForward
 	waitmovement 0
 	call EventScript_RocketTrioMotto
-	textcolor NPC_TEXT_COLOR_MALE
-	msgbox NewIsland_Text_JamesMagikarpEvolved
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox NewIsland_Text_JessieWobbuffet
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox NewIsland_Text_RocketFinalIntro
 	closemessage
+NewIsland_EventScript_RocketTrioBattle::
+	setvar VAR_0x8004, 13
+	call EventScript_RocketTrioBeforeBattle
 	setvar VAR_LAST_TALKED, LOCALID_NEW_ISLAND_JESSIE
 	trainerbattle_no_intro TRAINER_JESSIE_JAMES_NEW_ISLAND, NewIsland_Text_RocketFinalDefeat
+	setvar VAR_ROCKET_RETRY, ROCKET_RETRY_NONE
 	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox NewIsland_Text_JessieAfterFinal
 	textcolor NPC_TEXT_COLOR_MALE
@@ -59,13 +64,58 @@ NewIsland_EventScript_RocketTrio::
 	removeobject LOCALID_NEW_ISLAND_MEOWTH
 	removeobject LOCALID_NEW_ISLAND_JAMES
 	fadedefaultbgm
+	setvar VAR_0x8004, 2600
+	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, NewIsland_EventScript_RocketCoins
+	setvar VAR_0x8004, 4680
+NewIsland_EventScript_RocketCoins::
+	call EventScript_RocketMeowthCoins
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox NewIsland_Text_SomethingFluttered
 	giveitem ITEM_CARGO_TAG
+	setvar VAR_0x8004, ROCKET_HELD_CARGO_TAG
+	call EventScript_RocketRewardResult
 	setflag FLAG_ROCKET_NEW_ISLAND
+	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox NewIsland_Text_CargoTagReads
+	goto_if_set FLAG_FOUGHT_MEW, NewIsland_EventScript_EmptyIncubator
+	@ v0.9.0: MEW is still under the truck on the VERMILION quay, so this is its
+	@ EGG, the lab's reserve sample. Taking it empties the truck's hiding place.
+	msgbox NewIsland_Text_IncubatorHums
+	msgbox NewIsland_Text_EggInside
+	specialvar VAR_RESULT, GiveMewEgg
+	call EventScript_RocketEggResult
+	goto_if_eq VAR_RESULT, 2, NewIsland_EventScript_RocketTrioDone
+	call EventScript_GotMewEgg
+NewIsland_EventScript_RocketTrioDone::
 	releaseall
 	end
+
+@ The player has met MEW already: the reserve sample hatched long ago.
+NewIsland_EventScript_EmptyIncubator::
+	msgbox NewIsland_Text_IncubatorOpen
+	msgbox NewIsland_Text_CandyBesideShell
+	giveitem ITEM_RARE_CANDY, 3
+	setvar VAR_0x8004, ROCKET_BONUS_NEW_ISLAND
+	call EventScript_RocketRewardResult
+	releaseall
+	end
+
+NewIsland_EventScript_RocketTrioRetry::
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	applymovement LOCALID_NEW_ISLAND_JESSIE, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_NEW_ISLAND_MEOWTH, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_NEW_ISLAND_JAMES, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	applymovement LOCALID_NEW_ISLAND_MEOWTH, Common_Movement_ExclamationMark
+	waitmovement 0
+	playbgm MUS_ENCOUNTER_ROCKET, 0
+	applymovement LOCALID_NEW_ISLAND_JESSIE, NewIsland_Movement_TrioStepForward
+	applymovement LOCALID_NEW_ISLAND_MEOWTH, NewIsland_Movement_TrioStepForward
+	applymovement LOCALID_NEW_ISLAND_JAMES, NewIsland_Movement_TrioStepForward
+	waitmovement 0
+	call EventScript_RocketTrioRetry
+	goto NewIsland_EventScript_RocketTrioBattle
 
 NewIsland_Movement_TrioStepForward::
 	walk_down

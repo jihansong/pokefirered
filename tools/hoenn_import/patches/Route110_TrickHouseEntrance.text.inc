@@ -105,13 +105,14 @@ Route110_TrickHouseEntrance_Text_DidYouNotComeToClaimReward::
     .string "carrying it about.$"
 
 Route110_TrickHouseEntrance_Text_MechadollWhichTent::
-    .string "For finishing every room, a prize.\p"
-    .string "Choose. I shall pretend the other\n"
-    .string "was my favourite.$"
+    .string "For finishing every room, the\n"
+    .string "prizes. Both of them, as promised.$"
 
-Route110_TrickHouseEntrance_Text_ReceivedPrize::
-    .string "{PLAYER} received the TRICK\n"
-    .string "MASTER's prize!$"
+Route110_TrickHouseEntrance_Text_MechadollOtherPrize::
+    .string "For finishing every room, a prize.\p"
+    .string "The MASTER has changed his mind.\n"
+    .string "You may have both!\p"
+    .string "Which one did you not take?$"
 
 Route110_TrickHouseEntrance_Text_PCFullAgain::
     .string "Your BAG will not take it.\p"

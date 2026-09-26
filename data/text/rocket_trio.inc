@@ -27,3 +27,33 @@ Text_RocketTrioBlastOff::
 	.string "JESSIE & JAMES: Not agaaaain!\p"
 	.string "MEOWTH: TEAM ROCKET's off to the\n"
 	.string "stars!$"
+
+@ v0.9.0
+
+Text_RocketTrioRetry::
+	.string "JESSIE: Back for more, twerp?\n"
+	.string "JAMES: Then we'll skip the speech!\p"
+	.string "MEOWTH: TEAM ROCKET, round two!$"
+
+Text_RocketMeowthCoinsScattered::
+	.string "The coins MEOWTH flung with PAY DAY\n"
+	.string "are scattered all over the ground!$"
+
+Text_RocketMeowthCoins::
+	.string "{PLAYER} picked up ¥{STR_VAR_1}!$"
+
+Text_RocketBagFullOfficer::
+	.string "The OFFICER at the VIRIDIAN\n"
+	.string "POKéMON CENTER will hold it until\l"
+	.string "you have room.$"
+
+Text_RocketEggReceived::
+	.string "{PLAYER} received an EGG!$"
+
+Text_RocketEggSentToPC::
+	.string "There was no room in your party,\n"
+	.string "so the EGG was sent to the PC.$"
+
+Text_RocketEggNoRoom::
+	.string "There's no room for an EGG in your\n"
+	.string "party or in your PC BOXES…$"

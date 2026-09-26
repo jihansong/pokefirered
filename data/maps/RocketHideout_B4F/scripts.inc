@@ -149,10 +149,16 @@ RocketHideout_B4F_EventScript_JessieJames::
 	waitmovement 0
 	call_if_eq VAR_TEMP_1, 0, RocketHideout_B4F_EventScript_JessieJamesAppear0
 	call_if_eq VAR_TEMP_1, 1, RocketHideout_B4F_EventScript_JessieJamesAppear1
+	goto_if_eq VAR_ROCKET_RETRY, 5, RocketHideout_B4F_EventScript_JessieJamesRetry
 	msgbox RocketHideout_B4F_Text_JessieJamesIntro
 	closemessage
+RocketHideout_B4F_EventScript_JessieJamesBattle::
+	setvar VAR_0x8004, 5
+	call EventScript_RocketTrioBeforeBattle
 	setvar VAR_LAST_TALKED, LOCALID_ROCKET_HIDEOUT_JESSIE
 	trainerbattle_no_intro TRAINER_JESSIE_JAMES_ROCKET_HIDEOUT, RocketHideout_B4F_Text_JessieJamesDefeat
+	setvar VAR_ROCKET_RETRY, ROCKET_RETRY_NONE
+	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox RocketHideout_B4F_Text_JessieJamesBlastOff
 	closemessage
 	fadescreen FADE_TO_BLACK
@@ -160,8 +166,30 @@ RocketHideout_B4F_EventScript_JessieJames::
 	removeobject LOCALID_ROCKET_HIDEOUT_JAMES
 	fadescreen FADE_FROM_BLACK
 	setvar VAR_MAP_SCENE_ROCKET_HIDEOUT_B4F_JESSIE_JAMES, 1
+	setvar VAR_0x8004, 720
+	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, RocketHideout_B4F_EventScript_RocketCoins
+	setvar VAR_0x8004, 1680
+RocketHideout_B4F_EventScript_RocketCoins::
+	call EventScript_RocketMeowthCoins
+	@ v0.9.0: a THUNDER STONE they drop, which OAK's PIKACHU wants nothing to do
+	@ with (it never evolves, party_menu.c). Another PIKACHU or EEVEE can use it.
+	msgbox RocketHideout_B4F_Text_SomethingClattered
+	giveitem ITEM_THUNDER_STONE
+	setvar VAR_0x8004, ROCKET_BONUS_THUNDER_STONE
+	call EventScript_RocketRewardResult
+	specialvar VAR_RESULT, GetStarterPikachuPartySlotForScript
+	goto_if_eq VAR_RESULT, PARTY_SIZE, RocketHideout_B4F_EventScript_JessieJamesDone
+	playmoncry SPECIES_PIKACHU, CRY_MODE_NORMAL
+	waitmoncry
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox RocketHideout_B4F_Text_PikachuRefusesStone
+RocketHideout_B4F_EventScript_JessieJamesDone::
 	releaseall
 	end
+
+RocketHideout_B4F_EventScript_JessieJamesRetry::
+	call EventScript_RocketTrioRetry
+	goto RocketHideout_B4F_EventScript_JessieJamesBattle
 
 RocketHideout_B4F_EventScript_JessieJamesAppear0::
 	setobjectxyperm LOCALID_ROCKET_HIDEOUT_JESSIE, 14, 24

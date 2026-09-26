@@ -11,11 +11,6 @@ NewIsland_Text_MeowthTwerpFollowedUs::
     .string "MEOWTH: Da twerp and dat PIKACHU!\n"
     .string "Dey followed us all da way here?!$"
 
-NewIsland_Text_JamesMagikarpEvolved::
-    .string "JAMES: And this time I have a\n"
-    .string "secret weapon! My MAGIKARP\l"
-    .string "finally evolved!$"
-
 NewIsland_Text_RocketFinalIntro::
     .string "JESSIE & JAMES: This island's\n"
     .string "secrets belong to TEAM ROCKET!$"
@@ -83,3 +78,31 @@ NewIsland_Text_SailorCastOff::
 NewIsland_Text_SailorWait::
     .string "Take your time. I'll wait\n"
     .string "right here by the boat.$"
+
+NewIsland_Text_JessieWobbuffet::
+    .string "JESSIE: And meet my newest member!\n"
+    .string "…Not quite what I ordered, but!\p"
+    .string "WOBBUFFET: Wobbu-u-u-ffet!$"
+
+NewIsland_Text_IncubatorHums::
+    .string "A glass case hums in the corner\n"
+    .string "where TEAM ROCKET was digging.\p"
+    .string "Its label reads:\n"
+    .string "“M - RESERVE SAMPLE.”$"
+
+NewIsland_Text_EggInside::
+    .string "Inside, an EGG glows faintly pink.\n"
+    .string "It feels warm, as if it waited.$"
+
+NewIsland_Text_IncubatorOpen::
+    .string "A glass case stands open in the\n"
+    .string "corner. Its label reads:\l"
+    .string "“M - RESERVE SAMPLE.”\p"
+    .string "Only an empty eggshell is left.\n"
+    .string "Whatever hatched left long ago.\p"
+    .string "Something small and pink under a\n"
+    .string "truck on the VERMILION quay…?$"
+
+NewIsland_Text_CandyBesideShell::
+    .string "Beside the shell lies a box of\n"
+    .string "lab supplies.$"

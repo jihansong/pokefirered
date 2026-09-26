@@ -89,14 +89,22 @@ static bool8 IsLegacyStarterPikachuBoxMon(struct BoxPokemon *boxMon)
     return TRUE;
 }
 
-// The one test every special rule for Oak's PIKACHU goes through: the species and the
-// isStarterPikachu bit, which Oak's Lab sets. The bit lives in the BoxPokemon itself,
-// so it stays with the PIKACHU through the PC, the Day Care, party reordering and trades.
+// The one test every special rule for Oak's PIKACHU goes through: the species, the
+// isStarterPikachu bit, which Oak's Lab sets, and the player as its original trainer.
+// The bit lives in the BoxPokemon itself, so it stays with the PIKACHU through the PC,
+// the Day Care, party reordering and a trade away and back. Another player's starter
+// traded in keeps its bit but isn't this player's PIKACHU: as in Yellow, it is an
+// ordinary PIKACHU here and a THUNDERSTONE evolves it.
 bool8 IsStarterPikachuBoxMon(struct BoxPokemon *boxMon)
 {
+    u8 otName[PLAYER_NAME_LENGTH + 1];
+
     if (GetBoxMonData(boxMon, MON_DATA_SPECIES_OR_EGG, NULL) != SPECIES_PIKACHU)
         return FALSE;
-    return GetBoxMonData(boxMon, MON_DATA_STARTER_PIKACHU, NULL);
+    if (!GetBoxMonData(boxMon, MON_DATA_STARTER_PIKACHU, NULL))
+        return FALSE;
+    GetBoxMonData(boxMon, MON_DATA_OT_NAME, otName);
+    return !IsOtherTrainer(GetBoxMonData(boxMon, MON_DATA_OT_ID, NULL), otName);
 }
 
 static void MigrateBoxMon(struct BoxPokemon *boxMon)

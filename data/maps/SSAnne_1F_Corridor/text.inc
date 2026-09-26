@@ -82,3 +82,7 @@ SSAnne_1F_Corridor_Text_SalesmanBye::
     .string "pretty penny. Now, if you'll excuse\l"
     .string "me, I have MAGIKARP to sell!$"
 
+SSAnne_1F_Corridor_Text_SalesmanRareCandy::
+    .string "SALESMAN: Oh, and a RARE CANDY!\n"
+    .string "Faster than waiting for a golden\l"
+    .string "egg, I promise you that.$"

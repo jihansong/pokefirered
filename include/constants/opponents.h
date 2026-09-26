@@ -1302,4 +1302,5 @@
 // END HOENN TRAINERS
 #include "constants/opponents_tournament.h"
 #include "constants/opponents_hoenn_story.h"
+#include "constants/opponents_rocket.h"
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

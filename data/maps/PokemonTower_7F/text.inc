@@ -49,20 +49,19 @@ PokemonTower_7F_Text_MrFujiThankYouFollowMe::
     .string "HOUSE, at the foot of this tower.$"
 
 PokemonTower_7F_Text_JessieJamesStop::
-    .string "Stop right there!$"
+    .string "Not so fast!$"
 
 PokemonTower_7F_Text_JessieJamesIntro::
-    .string "Grampa here wanted to complain,\n"
-    .string "so we're setting him straight.\p"
-    .string "So render yourself invisible, or\n"
-    .string "prepare to fight!$"
+    .string "JESSIE: The old man won't stop\n"
+    .string "whining, so we're keeping him.\p"
+    .string "JAMES: Go home, or join him!$"
 
 PokemonTower_7F_Text_JessieJamesDefeat::
-    .string "You will regret this!$"
+    .string "Even the ghosts are laughing…$"
 
 PokemonTower_7F_Text_JessieJamesBlastOff::
-    .string "Looks like TEAM ROCKET's blasting\n"
-    .string "off again!$"
+    .string "MEOWTH: Outta here before dem\n"
+    .string "ghosts come back! GO GO GO!$"
 
 PokemonTower_7F_Text_JessieNoGhostsHere::
     .string "JESSIE: Ghosts? Please. There's\n"
@@ -114,3 +113,7 @@ PokemonTower_7F_Text_NAfter::
     .string "people save them.\p"
     .string "I don't know yet which one is\n"
     .string "the truth about people.$"
+
+PokemonTower_7F_Text_CleanseTagLeft::
+    .string "JESSIE left something behind in\n"
+    .string "her hurry. A charm against ghosts?$"

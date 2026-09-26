@@ -261,3 +261,15 @@ ViridianCity_Gym_Text_GymGuyTrapsOff::
     .string "Yo! The floor's stopped humming!\p"
     .string "Those three are holed up in the\n"
     .string "LEADER's room. Go get 'em, champ!$"
+
+ViridianCity_Gym_Text_JamesGyarados::
+    .string "JAMES: Remember my MAGIKARP from\n"
+    .string "the S.S. ANNE? Look at it now!$"
+
+ViridianCity_Gym_Text_LootSackLeft::
+    .string "TEAM ROCKET's loot sack was left\n"
+    .string "lying on the GYM floor.$"
+
+ViridianCity_Gym_Text_GiovanniKeepIt::
+    .string "GIOVANNI: Keep what those fools\n"
+    .string "dropped. My GYM wants none of it.$"

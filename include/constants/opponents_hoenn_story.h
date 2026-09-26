@@ -8,6 +8,7 @@
 //
 //   +536 .. +639   new story trainers, one release at a time
 //   +640 .. +767   rematch versions of story trainers
+//   +768 .. +783   TEAM ROCKET trio appearances (opponents_rocket.h)
 //
 // The import script only ever rewrites the block between the BEGIN/END markers
 // in opponents.h, so names added here survive a re-import.

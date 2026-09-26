@@ -106,3 +106,8 @@ CinnabarIsland_Text_CallerFallsSilent::
     .string "The MAGMAR CALLER sparked once and\n"
     .string "fell silent.$"
 
+@ v0.9.0: this was the MT. MOON fossil the player hadn't picked, until MIGUEL
+@ let the player have both
+CinnabarIsland_Text_CandyInLoot::
+    .string "In the junk TEAM ROCKET left\n"
+    .string "behind lay RARE CANDY from the LAB!$"

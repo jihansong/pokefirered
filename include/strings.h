@@ -478,6 +478,8 @@ extern const u8 gCreditsString_Braille_Code_Check_4[];
 extern const u8 gCreditsString_The_Royal_New_Zealand_Foundation_of_the_Blind_Greg_Moran[];
 extern const u8 gCreditsString_Graphic_Designer[];
 extern const u8 gCreditsString_Akira_Kinashi[];
+extern const u8 gCreditsString_POKeMON_Thunder_Yellow[];
+extern const u8 gCreditsString_Joseph_Song[];
 
 // berry_pouch
 extern const u8 gText_TheStrVar1CantBeHeldHere[];

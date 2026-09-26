@@ -268,12 +268,20 @@ PokemonTower_7F_EventScript_JessieJames::
 	call_if_eq VAR_TEMP_1, 0, PokemonTower_7F_EventScript_JessieJamesAppear0
 	call_if_eq VAR_TEMP_1, 1, PokemonTower_7F_EventScript_JessieJamesAppear1
 	call_if_eq VAR_TEMP_1, 2, PokemonTower_7F_EventScript_JessieJamesAppear2
+	setobjectxyperm LOCALID_POKEMON_TOWER_MEOWTH, 11, 12
+	addobject LOCALID_POKEMON_TOWER_MEOWTH
+	goto_if_eq VAR_ROCKET_RETRY, 6, PokemonTower_7F_EventScript_JessieJamesRetry
 	call PokemonTower_7F_EventScript_GhostPrank
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox PokemonTower_7F_Text_JessieJamesIntro
 	closemessage
+PokemonTower_7F_EventScript_JessieJamesBattle::
+	setvar VAR_0x8004, 6
+	call EventScript_RocketTrioBeforeBattle
 	setvar VAR_LAST_TALKED, LOCALID_POKEMON_TOWER_JESSIE
 	trainerbattle_no_intro TRAINER_JESSIE_JAMES_POKEMON_TOWER, PokemonTower_7F_Text_JessieJamesDefeat
+	setvar VAR_ROCKET_RETRY, ROCKET_RETRY_NONE
+	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox PokemonTower_7F_Text_JessieJamesBlastOff
 	closemessage
 	setvar VAR_0x8008, LOCALID_POKEMON_TOWER_JESSIE
@@ -285,14 +293,25 @@ PokemonTower_7F_EventScript_JessieJames::
 	removeobject LOCALID_POKEMON_TOWER_JAMES
 	removeobject LOCALID_POKEMON_TOWER_MEOWTH
 	setvar VAR_MAP_SCENE_POKEMON_TOWER_7F_JESSIE_JAMES, 1
+	setvar VAR_0x8004, 768
+	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, PokemonTower_7F_EventScript_RocketCoins
+	setvar VAR_0x8004, 1792
+PokemonTower_7F_EventScript_RocketCoins::
+	call EventScript_RocketMeowthCoins
+	msgbox PokemonTower_7F_Text_CleanseTagLeft
+	giveitem ITEM_CLEANSE_TAG
+	setvar VAR_0x8004, ROCKET_BONUS_CLEANSE_TAG
+	call EventScript_RocketRewardResult
 	releaseall
 	end
 
+PokemonTower_7F_EventScript_JessieJamesRetry::
+	call EventScript_RocketTrioRetry
+	goto PokemonTower_7F_EventScript_JessieJamesBattle
+
 @ Thunder Yellow v0.5.0, TEAM ROCKET event 5: before the battle the tower's GASTLY
-@ and HAUNTER play a trick on the trio, and MEOWTH comes along.
+@ and HAUNTER play a trick on the trio, with MEOWTH along.
 PokemonTower_7F_EventScript_GhostPrank::
-	setobjectxyperm LOCALID_POKEMON_TOWER_MEOWTH, 11, 12
-	addobject LOCALID_POKEMON_TOWER_MEOWTH
 	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox PokemonTower_7F_Text_JessieNoGhostsHere
 	closemessage

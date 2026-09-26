@@ -17,10 +17,12 @@ SaffronCity_Dojo_EventScript_TriggerMasterBattleRight::
 	releaseall
 	end
 
+@ Thunder Yellow: the KARATE MASTER gives both HITMONLEE and HITMONCHAN (every
+@ either-or reward can be had in full). Each ball disappears once taken, so a
+@ save that took one before this still finds the other waiting.
 SaffronCity_Dojo_EventScript_HitmonleeBall::
 	lock
 	faceplayer
-	goto_if_set FLAG_GOT_HITMON_FROM_DOJO, SaffronCity_Dojo_EventScript_AlreadyGotHitmon
 	showmonpic SPECIES_HITMONLEE, 10, 3
 	setvar VAR_TEMP_1, SPECIES_HITMONLEE
 	applymovement LOCALID_KARATE_MASTER, Common_Movement_WalkInPlaceFasterUp
@@ -33,15 +35,9 @@ SaffronCity_Dojo_EventScript_HitmonleeBall::
 	release
 	end
 
-SaffronCity_Dojo_EventScript_AlreadyGotHitmon::
-	msgbox SaffronCity_Dojo_Text_BetterNotGetGreedy
-	release
-	end
-
 SaffronCity_Dojo_EventScript_HitmonchanBall::
 	lock
 	faceplayer
-	goto_if_set FLAG_GOT_HITMON_FROM_DOJO, SaffronCity_Dojo_EventScript_AlreadyGotHitmon
 	showmonpic SPECIES_HITMONCHAN, 10, 3
 	setvar VAR_TEMP_1, SPECIES_HITMONCHAN
 	applymovement LOCALID_KARATE_MASTER, Common_Movement_WalkInPlaceFasterUp
@@ -135,12 +131,19 @@ SaffronCity_Dojo_EventScript_Mike::
 
 SaffronCity_Dojo_EventScript_MasterKoichi::
 	trainerbattle_single TRAINER_BLACK_BELT_KOICHI, SaffronCity_Dojo_Text_MasterKoichiIntro, SaffronCity_Dojo_Text_MasterKoichiDefeat, SaffronCity_Dojo_EventScript_DefeatedMasterKoichi
-	goto_if_set FLAG_GOT_HITMON_FROM_DOJO, SaffronCity_Dojo_EventScript_MasterKoichiAlreadyGotHitmon
+	goto_if_unset FLAG_GOT_HITMON_FROM_DOJO, SaffronCity_Dojo_EventScript_MasterKoichiOfferHitmons
+	goto_if_unset FLAG_HIDE_DOJO_HITMONLEE_BALL, SaffronCity_Dojo_EventScript_MasterKoichiOtherHitmon
+	goto_if_unset FLAG_HIDE_DOJO_HITMONCHAN_BALL, SaffronCity_Dojo_EventScript_MasterKoichiOtherHitmon
+	msgbox SaffronCity_Dojo_Text_StayAndTrainWithUs
+	release
+	end
+
+SaffronCity_Dojo_EventScript_MasterKoichiOfferHitmons::
 	msgbox SaffronCity_Dojo_Text_ChoosePrizedFightingMon, MSGBOX_AUTOCLOSE
 	end
 
-SaffronCity_Dojo_EventScript_MasterKoichiAlreadyGotHitmon::
-	msgbox SaffronCity_Dojo_Text_StayAndTrainWithUs
+SaffronCity_Dojo_EventScript_MasterKoichiOtherHitmon::
+	msgbox SaffronCity_Dojo_Text_TakeTheOtherOneToo
 	release
 	end
 

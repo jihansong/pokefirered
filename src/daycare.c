@@ -2229,3 +2229,26 @@ u8 GiveEggAppraiserEgg(void)
     Free(mon);
     return result;
 }
+
+// v0.9.0: the MEW EGG the NEW ISLAND lab kept as a "reserve sample". MEW's own
+// 120 egg cycles would be some 30,000 steps, so it hatches in 40 (about
+// 10,000). The fateful encounter bit makes the MEW obey (battle_util.c) and
+// hatching carries it over; it is set before the EGG leaves, so an EGG sent to
+// the PC has it too. Returns 0 if it went to the party, 1 to the PC, 2 if there
+// was no room.
+#define MEW_EGG_CYCLES 40
+
+u8 GiveMewEgg(void)
+{
+    struct Pokemon *mon = AllocZeroed(sizeof(struct Pokemon));
+    u8 cycles = MEW_EGG_CYCLES;
+    bool8 fateful = TRUE;
+    u8 result;
+
+    CreateEgg(mon, SPECIES_MEW, TRUE);
+    SetMonData(mon, MON_DATA_FRIENDSHIP, &cycles);
+    SetMonData(mon, MON_DATA_MODERN_FATEFUL_ENCOUNTER, &fateful);
+    result = GiveMonToPlayer(mon);
+    Free(mon);
+    return result;
+}

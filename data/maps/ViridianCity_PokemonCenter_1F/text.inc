@@ -51,3 +51,47 @@ ViridianCity_PokemonCenter_1F_Text_NurseRested::
     .string "for those three. They looked like\l"
     .string "they'd be back.$"
 
+ViridianCity_PokemonCenter_1F_Text_MeowthSizesUp::
+    .string "MEOWTH: Hold it, you two! Dat\n"
+    .string "PIKACHU's throwin' off sparks like\l"
+    .string "nothin' I ever seen.\p"
+    .string "Da brains of TEAM ROCKET is gonna\n"
+    .string "size it up personally!$"
+
+ViridianCity_PokemonCenter_1F_Text_MeowthDefeat::
+    .string "MEOWTH: Yeowch! Dis little guy\n"
+    .string "packs a real wallop!$"
+
+ViridianCity_PokemonCenter_1F_Text_MeowthVictory::
+    .string "MEOWTH: Ha! Scratch one PIKACHU!\n"
+    .string "…Hey, why's it still sparkin'?$"
+
+ViridianCity_PokemonCenter_1F_Text_JessieMeowthLost::
+    .string "JESSIE: MEOWTH, you lost to a\n"
+    .string "PIKACHU that just left its BALL?$"
+
+ViridianCity_PokemonCenter_1F_Text_PikachuGetsUp::
+    .string "PIKACHU struggled back to its feet,\n"
+    .string "its cheeks crackling harder!$"
+
+ViridianCity_PokemonCenter_1F_Text_OfficerIntro::
+    .string "OFFICER: I'm on the TEAM ROCKET\n"
+    .string "trio case. Those three again…\p"
+    .string "Every time you drive them off,\n"
+    .string "we recover what they dropped.$"
+
+ViridianCity_PokemonCenter_1F_Text_OfficerHandOver::
+    .string "OFFICER: {PLAYER}! Here's what we\n"
+    .string "got back from TEAM ROCKET.$"
+
+ViridianCity_PokemonCenter_1F_Text_OfficerBagFull::
+    .string "OFFICER: Your BAG is full. I'll hold\n"
+    .string "the rest till you make room.$"
+
+ViridianCity_PokemonCenter_1F_Text_OfficerBoxesFull::
+    .string "OFFICER: Your party and PC BOXES\n"
+    .string "are full. I'll keep the EGG safe.$"
+
+ViridianCity_PokemonCenter_1F_Text_OfficerNothing::
+    .string "OFFICER: Nothing new in the case\n"
+    .string "file. Stay sharp out there.$"

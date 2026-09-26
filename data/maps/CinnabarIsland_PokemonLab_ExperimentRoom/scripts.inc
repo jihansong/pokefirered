@@ -274,19 +274,15 @@ CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_RevivedAllFossils::
 	release
 	end
 
+@ TRUE once every fossil the player has had from MT. MOON is revived. v0.9.0:
+@ MIGUEL lets the player take both, so a player may hold both; each must be
+@ revived before this says all are done.
 CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_CheckRevivedMtMoonFossil::
-	goto_if_set FLAG_GOT_HELIX_FOSSIL, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_CheckRevivedHelix
-	goto_if_set FLAG_GOT_DOME_FOSSIL, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_CheckRevivedDome
-	goto CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_SetResultFalse
-	end
-
-CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_CheckRevivedHelix::
-	goto_if_unset FLAG_REVIVED_HELIX, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_SetResultFalse
-	setvar VAR_RESULT, TRUE
-	return
-
-CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_CheckRevivedDome::
-	goto_if_unset FLAG_REVIVED_DOME, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_SetResultFalse
+	goto_if_unset FLAG_GOT_FOSSIL_FROM_MT_MOON, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_SetResultFalse
+	call CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_CheckAddHelixFossilToList
+	goto_if_eq VAR_RESULT, TRUE, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_SetResultFalse
+	call CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_CheckAddDomeFossilToList
+	goto_if_eq VAR_RESULT, TRUE, CinnabarIsland_PokemonLab_ExperimentRoom_EventScript_SetResultFalse
 	setvar VAR_RESULT, TRUE
 	return
 

@@ -5,15 +5,11 @@ MtMoon_B2F_Text_MiguelIntro::
 
 MtMoon_B2F_Text_MiguelDefeat::
     .string "Okay!\n"
-    .string "I'll share!$"
+    .string "You win!$"
 
-MtMoon_B2F_Text_WellEachTakeAFossil::
-    .string "We'll each take a fossil!\n"
-    .string "No being greedy!$"
-
-MtMoon_B2F_Text_ThenThisFossilIsMine::
-    .string "All right.\n"
-    .string "Then this fossil is mine!$"
+MtMoon_B2F_Text_TakeBothFossils::
+    .string "A deal's a deal. Take both\n"
+    .string "fossils! I'll dig up more.$"
 
 MtMoon_B2F_Text_LabOnCinnabarRegeneratesFossils::
     .string "Far away, on CINNABAR ISLAND,\n"
@@ -83,19 +79,20 @@ MtMoon_B2F_Text_ObtainedDomeFossil::
     .string "Obtained the DOME FOSSIL!$"
 
 MtMoon_B2F_Text_JessieJamesStop::
-    .string "Stop right there!$"
+    .string "Freeze, twerp!$"
 
 MtMoon_B2F_Text_JessieJamesIntro::
-    .string "That fossil is TEAM ROCKET's!\p"
-    .string "Surrender now, or prepare to\n"
-    .string "fight!$"
+    .string "JESSIE: The MOON STONE, the\n"
+    .string "fossils AND a super PIKACHU!\p"
+    .string "JAMES: Hand them over nicely, or\n"
+    .string "we'll take them not so nicely!$"
 
 MtMoon_B2F_Text_JessieJamesDefeat::
-    .string "A brat beat us?$"
+    .string "Beaten by a kid in a cave…$"
 
 MtMoon_B2F_Text_JessieJamesBlastOff::
-    .string "TEAM ROCKET, blast off at the\n"
-    .string "speed of light!$"
+    .string "JESSIE & JAMES: This isn't over!\n"
+    .string "MEOWTH: …It kinda is, for today.$"
 
 MtMoon_B2F_Text_ClefairyDancing::
     .string "CLEFAIRY are dancing in a circle\n"
@@ -161,4 +158,3 @@ MtMoon_B2F_Text_ClefairyRemembersYou::
     .string "It's the CLEFAIRY that TEAM ROCKET\n"
     .string "was after. It seems to remember\l"
     .string "you drove them off.$"
-

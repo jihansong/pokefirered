@@ -66,16 +66,25 @@ Text_WallClockNight::
 Text_WallClockChange::
     .string "Change the time?$"
 
+@ The POKéWATCH's window shows the day and time live while its messages are
+@ up; it closes before the clock setting window, which takes its tiles.
 EventScript_UsePokeWatch::
 	lockall
+	special OpenPokeWatchWindow
 	special BufferGameClock
 	msgbox Text_PokeWatchShows
-	goto EventScript_ClockTimeOfDay
+	call_if_eq VAR_RESULT, TIME_MORNING, EventScript_WallClockMorning
+	call_if_eq VAR_RESULT, TIME_DAY, EventScript_WallClockDay
+	call_if_eq VAR_RESULT, TIME_NIGHT, EventScript_WallClockNight
+	msgbox Text_WallClockChange, MSGBOX_YESNO
+	special ClosePokeWatchWindow
+	call_if_eq VAR_RESULT, YES, EventScript_SetGameClock
+	releaseall
 	end
 
+@ No time in the text: the window has it, and keeps it up to date
 Text_PokeWatchShows::
-    .string "{PLAYER} checked the POKéWATCH.\p"
-    .string "It's {STR_VAR_1}.$"
+    .string "{PLAYER} checked the POKéWATCH.$"
 
 @ Boards the plane: VAR_0x8004 is the destination (AIRPLANE_DEST_*)
 EventScript_TakeAirplane::

@@ -140,15 +140,22 @@ ViridianCity_Gym_EventScript_RocketBattle::
 	setvar VAR_TEMP_2, 0
 	applymovement LOCALID_VIRIDIAN_GYM_MEOWTH, Common_Movement_ExclamationMark
 	waitmovement 0
+	goto_if_eq VAR_ROCKET_RETRY, 11, ViridianCity_Gym_EventScript_RocketRetry
 	textcolor NPC_TEXT_COLOR_MALE
 	msgbox ViridianCity_Gym_Text_MeowthFloorsOff
 	closemessage
 	call EventScript_RocketTrioMotto
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox ViridianCity_Gym_Text_JamesGyarados
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox ViridianCity_Gym_Text_RocketGymIntro
 	closemessage
+ViridianCity_Gym_EventScript_RocketBattleStart::
+	setvar VAR_0x8004, 11
+	call EventScript_RocketTrioBeforeBattle
 	setvar VAR_LAST_TALKED, LOCALID_VIRIDIAN_GYM_JESSIE
 	trainerbattle_no_intro TRAINER_JESSIE_JAMES_VIRIDIAN_GYM, ViridianCity_Gym_Text_RocketGymDefeat
+	setvar VAR_ROCKET_RETRY, ROCKET_RETRY_NONE
 	setvar VAR_0x8008, LOCALID_VIRIDIAN_GYM_JESSIE
 	setvar VAR_0x8009, LOCALID_VIRIDIAN_GYM_JAMES
 	setvar VAR_0x800A, LOCALID_VIRIDIAN_GYM_MEOWTH
@@ -158,6 +165,18 @@ ViridianCity_Gym_EventScript_RocketBattle::
 	removeobject LOCALID_VIRIDIAN_GYM_JAMES
 	setflag FLAG_ROCKET_VIRIDIAN_GYM
 	fadedefaultbgm
+	setvar VAR_0x8004, 2120
+	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, ViridianCity_Gym_EventScript_RocketCoins
+	setvar VAR_0x8004, 3816
+ViridianCity_Gym_EventScript_RocketCoins::
+	call EventScript_RocketMeowthCoins
+	msgbox ViridianCity_Gym_Text_LootSackLeft
+	giveitem ITEM_RARE_CANDY, 3
+	setvar VAR_0x8004, ROCKET_BONUS_GYM_CANDY
+	call EventScript_RocketRewardResult
+	giveegg SPECIES_EEVEE
+	call EventScript_RocketEggResult
+	call_if_ne VAR_RESULT, 2, ViridianCity_Gym_EventScript_GotEeveeEgg
 	delay 30
 	fadescreen FADE_TO_BLACK
 	clearflag FLAG_HIDE_VIRIDIAN_GIOVANNI
@@ -165,8 +184,19 @@ ViridianCity_Gym_EventScript_RocketBattle::
 	fadescreen FADE_FROM_BLACK
 	textcolor NPC_TEXT_COLOR_MALE
 	msgbox ViridianCity_Gym_Text_GiovanniReturns
+	msgbox ViridianCity_Gym_Text_GiovanniKeepIt
 	releaseall
 	end
+
+ViridianCity_Gym_EventScript_GotEeveeEgg::
+	setvar VAR_0x8004, ROCKET_BONUS_EEVEE_EGG
+	special SetRocketRewardBit
+	return
+
+ViridianCity_Gym_EventScript_RocketRetry::
+	playbgm MUS_ENCOUNTER_ROCKET, 0
+	call EventScript_RocketTrioRetry
+	goto ViridianCity_Gym_EventScript_RocketBattleStart
 
 ViridianCity_Gym_EventScript_Giovanni::
 	famechecker FAMECHECKER_GIOVANNI, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005

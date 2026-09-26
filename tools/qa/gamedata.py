@@ -181,6 +181,20 @@ def consts(names):
     return {n: _CONST_CACHE[n] for n in names}
 
 
+_MAPSECS = None
+
+
+def mapsec(name):
+    """MAPSEC_* is an enum (no values written), so count its members."""
+    global _MAPSECS
+    if str(name).isdigit():
+        return int(name)
+    if _MAPSECS is None:
+        with open(os.path.join(REPO, 'include', 'constants', 'region_map_sections.h')) as f:
+            _MAPSECS = {n: i for i, n in enumerate(re.findall(r'^\s*(MAPSEC_\w+),', f.read(), re.M))}
+    return _MAPSECS[name if name.startswith('MAPSEC_') else 'MAPSEC_' + name]
+
+
 def const(name_or_number):
     if isinstance(name_or_number, int):
         return name_or_number

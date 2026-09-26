@@ -4125,6 +4125,13 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapsec)
 }
 
 // Unclear why this function is used over GetMapNameGeneric
+// Thunder Yellow: whether a Hoenn map section has a name (the summary screen's
+// trainer memo shows it instead of "a trade")
+bool8 IsNamedHoennMapSec(u16 mapsec)
+{
+    return mapsec < KANTO_MAPSEC_START && sHoennMapNames[mapsec] != NULL;
+}
+
 u8 *GetMapNameGeneric_(u8 *dest, u16 mapsec)
 {
     return GetMapNameGeneric(dest, mapsec);

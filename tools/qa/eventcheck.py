@@ -106,7 +106,7 @@ import tempfile
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from emu import Emu, GameReset, fresh_syms        # noqa: E402
-from gamedata import REPO, const, item_name, map_info, off   # noqa: E402
+from gamedata import REPO, const, item_name, map_info, mapsec, off   # noqa: E402
 from savefile import Blocks, Mon                  # noqa: E402
 from textwidth import load_charmap                # noqa: E402
 import savedit                                    # noqa: E402
@@ -197,20 +197,6 @@ def mon_mismatches(e, where, m, keys):
         if not ok:
             bad.append('%s=%s' % (k, got))
     return bad
-
-
-_MAPSECS = None
-
-
-def mapsec(name):
-    """MAPSEC_* is an enum (no values written), so count its members."""
-    global _MAPSECS
-    if name.isdigit():
-        return int(name)
-    if _MAPSECS is None:
-        with open(os.path.join(REPO, 'include', 'constants', 'region_map_sections.h')) as f:
-            _MAPSECS = {n: i for i, n in enumerate(re.findall(r'^\s*(MAPSEC_\w+),', f.read(), re.M))}
-    return _MAPSECS[name]
 
 
 _SYM_ADDRS = {}

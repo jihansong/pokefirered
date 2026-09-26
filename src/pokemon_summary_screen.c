@@ -2614,7 +2614,7 @@ static void PokeSum_PrintTrainerMemo_Mon_HeldByOT(void)
     u8 metLocation;
     u8 levelStr[5];
     u8 mapNameStr[32];
-    u8 natureMetOrHatchedAtLevelStr[152];
+    u8 *natureMetOrHatchedAtLevelStr = gStringVar4; // Thunder Yellow: was a stack buffer; here tools/qa can read the memo
 
     DynamicPlaceholderTextUtil_Reset();
     nature = GetNature(&sMonSummaryScreen->currentMon);
@@ -2629,7 +2629,8 @@ static void PokeSum_PrintTrainerMemo_Mon_HeldByOT(void)
 
     metLocation = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_MET_LOCATION);
 
-    if (MapSecIsInKantoOrSevii(metLocation) == TRUE)
+    // Thunder Yellow (v0.10.0): the Hoenn maps have their names too (was "a trade")
+    if (MapSecIsInKantoOrSevii(metLocation) == TRUE || IsNamedHoennMapSec(metLocation))
         GetMapNameGeneric_(mapNameStr, metLocation);
     else
     {
@@ -2688,7 +2689,7 @@ static void PokeSum_PrintTrainerMemo_Mon_NotHeldByOT(void)
     u8 metLocation;
     u8 levelStr[5];
     u8 mapNameStr[32];
-    u8 natureMetOrHatchedAtLevelStr[152];
+    u8 *natureMetOrHatchedAtLevelStr = gStringVar4; // Thunder Yellow: was a stack buffer; here tools/qa can read the memo
 
     DynamicPlaceholderTextUtil_Reset();
     nature = GetNature(&sMonSummaryScreen->currentMon);
@@ -2704,7 +2705,10 @@ static void PokeSum_PrintTrainerMemo_Mon_NotHeldByOT(void)
 
     metLocation = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_MET_LOCATION);
 
-    if (!MapSecIsInKantoOrSevii(metLocation) || !CurrentMonIsFromGBA())
+    // Thunder Yellow (v0.10.0): a POKéMON snagged in Hoenn shows where, like
+    // one snagged in Kanto; one traded in from a Hoenn place is still "a trade"
+    if (!(GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SNAGGED) && IsNamedHoennMapSec(metLocation))
+     && (!MapSecIsInKantoOrSevii(metLocation) || !CurrentMonIsFromGBA()))
     {
         if (IsMultiBattlePartner() == TRUE)
         {
@@ -2731,7 +2735,7 @@ static void PokeSum_PrintTrainerMemo_Mon_NotHeldByOT(void)
         return;
     }
 
-    if (MapSecIsInKantoOrSevii(metLocation) == TRUE)
+    if (MapSecIsInKantoOrSevii(metLocation) == TRUE || IsNamedHoennMapSec(metLocation))
         GetMapNameGeneric_(mapNameStr, metLocation);
     else
         StringCopy(mapNameStr, gText_PokeSum_ATrade);

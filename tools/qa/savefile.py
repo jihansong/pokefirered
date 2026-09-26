@@ -518,6 +518,15 @@ class Mon:
     def set_snagged(self, on):
         self.blk[self.o + 19] = (self.blk[self.o + 19] & ~0x20) | (0x20 if on else 0)
 
+    def set_met(self, location, level=None):
+        """Met location (a MAPSEC) and, if given, met level."""
+        subs = self.subs()
+        subs['M'][1] = location
+        if level is not None:
+            word = struct.unpack_from('<H', subs['M'], 2)[0]
+            struct.pack_into('<H', subs['M'], 2, (word & ~0x7F) | level)
+        self.put_subs(subs)
+
     def ot_name_raw(self):
         return bytes(self.blk[self.o + 20:self.o + 27])
 

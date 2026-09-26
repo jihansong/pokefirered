@@ -21,6 +21,8 @@ Commands (names are the C constant names; numbers work too):
     friendship SLOT N          party SLOT's friendship (0-255)
     starterbit SLOT 0|1        party SLOT's isStarterPikachu bit (Oak's PIKACHU)
     snagbit SLOT 0|1           party SLOT's isSnagged bit (taken from a trainer)
+    met SLOT MAPSEC [LEVEL]    party SLOT's met location (MAPSEC_ROUTE_117 or
+                               ROUTE_117) and level
     otid SLOT N                party SLOT's original trainer ID (N may be 0x...),
                                as if another player's POKéMON had been traded in
     frombox INDEX SLOT         party SLOT becomes a copy of PC box POKéMON
@@ -56,12 +58,12 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from gamedata import const, item_name, map_info, maps, off, Rom           # noqa: E402
+from gamedata import const, item_name, map_info, mapsec, maps, off, Rom           # noqa: E402
 from savefile import SaveFile                                   # noqa: E402
 
 
 COMMANDS = {'info', 'flag', 'var', 'trainer', 'warp', 'strong', 'mon', 'tonext', 'held', 'friendship',
-            'starterbit', 'snagbit', 'dexclear', 'otid', 'frombox', 'lead', 'party', 'hp', 'day', 'hour', 'dex',
+            'starterbit', 'snagbit', 'met', 'dexclear', 'otid', 'frombox', 'lead', 'party', 'hp', 'day', 'hour', 'dex',
             'money', 'coins', 'item', 'firstitem', 'fillitems', 'fillboxes', 'fastbattle',
             'noquestlog'}
 
@@ -173,6 +175,12 @@ def run(argv):
             s.party_mon(slot).set_snagged(on)
             dirty = True
             print('slot %d isSnagged %d' % (slot, on))
+        elif cmd == 'met':
+            slot, where = int(argv.pop(0)), argv.pop(0)
+            level = int(argv.pop(0)) if argv and argv[0].isdigit() else None
+            s.party_mon(slot).set_met(mapsec(where), level)
+            dirty = True
+            print('slot %d met in %s' % (slot, where))
         elif cmd == 'otid':
             slot, n = int(argv.pop(0)), int(argv.pop(0), 0)
             s.party_mon(slot).set_otid(n)

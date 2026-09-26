@@ -58,7 +58,8 @@ Thunder Yellow 개발 팀의 역할, 진행 방식, 결정 기록. 에이전트�
 |---|---|---|
 | hoennFlags `HOENN_FLAGS_START+0x780`~`+0x79F` | 스내그: 라이벌 13칸·로사·로이 6칸 진화 계열 기록 | v0.10.0 |
 | BoxPokemon `unused` 비트 1개(isStarterPikachu 옆) | isSnagged | v0.10.0 |
-| hoennFlags 스토리 +52~+94, hoennVars 0x24~0x28 | 호연 Z3 | v0.11.0 |
+| hoennFlags 스토리 +52·+53 | 트릭하우스 최종 상품 두 개(부적금화·학습장치) 기록 | v0.9.0 (사용 중) |
+| hoennFlags 스토리 **+54~+96**(원래 +52~+94에서 두 칸 밀림), hoennVars 0x24~0x28 | 호연 Z3 | v0.11.0 |
 
 ## 기준선
 

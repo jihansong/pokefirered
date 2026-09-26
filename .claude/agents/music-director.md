@@ -18,6 +18,15 @@ Read first: docs/team/log.md, the stage plan, docs/anim/*.md for scenes with mus
 sound/songs/midi/midi.cfg, include/constants/songs.h, sound/song_table.inc, and how maps
 and scripts choose music (map.json "music", playbgm/playfanfare in scripts).
 
+Scope limit (user decision 2026-09-26, overrides anything below):
+- Original tracks only where no existing FR/LG or Emerald track fits (new events, the
+  title, ending credits and the like). Everywhere else, assign an existing track.
+- First deliver two lists to the producer for the user: scenes that need a new track and
+  scenes an existing track covers (with which track). Compose only the scenes the user
+  approves.
+- Every composed track gets a WAV preview for the user, and nothing goes into the game
+  (song table, map music, scripts) before the user approves that track.
+
 Direction:
 - Scope: only places, events and characters that exist in no other version (Thunder
   Yellow's own events, the Rocket trio's scenes, new towns and event spots, the endings).

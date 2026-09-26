@@ -22,6 +22,8 @@ Method:
 - Fit the m4a engine: the voicegroup the cue uses, program numbers that exist in it, track
   count, loop markers the way existing midi.cfg entries and MIDI files do it, volume and
   reverb matched to neighbouring songs, sensible length for ROM size.
+- Wire it in ONLY after the user has approved that track's WAV preview (log decision
+  2026-09-26); until then keep the MIDI and preview out of the song table and maps.
 - Wire it in: new song constants at the end of the list (never renumber), song table
   entry, map music or script playbgm/fadenewbgm/playfanfare as the cue sheet says.
 - Build (make leafgreen -j$(nproc)), then render a preview if the tools allow

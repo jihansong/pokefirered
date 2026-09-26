@@ -26,6 +26,8 @@ Steps, in order:
                                          gone; fails if none started
     mashto CB2 [N]                       press A (at most N times, default 60)
                                          until gMain.callback2 is CB2
+    waitcb2 CB2 [N]                      run frames (at most N, default 3000) until
+                                         gMain.callback2 is CB2, e.g. CB2_Credits
     shot NAME                            save NAME.png (in --shots)
     expect flag NAME = 0|1               check a flag in the live game
     expect var NAME = N                  check a var in the live game
@@ -40,6 +42,9 @@ Steps, in order:
     expect species SLOT NAME[|NAME]      check the species in party SLOT (0-5)
     expect sym NAME = N                  check the byte at a RAM symbol (statics
                                          too, e.g. sClockWindowShown)
+    expect deref NAME OFF = N            check the u16 at OFF in the block a RAM
+                                         pointer points to (e.g. sCreditsMgr 6 is
+                                         the credits script command index)
     expect move SLOT MOVE                check that party SLOT knows MOVE
     expect cb2 NAME                      check gMain.callback2 (e.g. CB2_UpdatePartyMenu)
     expect map MAP                       check the player's current map
@@ -160,6 +165,14 @@ def run_case(case, rom, shots):
                         e.press('A', hold=3, after=27)
                     else:
                         fails.append('%s: never got there' % step)
+                elif head == 'WAITCB2':
+                    want = e.sym(p[1])
+                    for _ in range(int(p[2]) if len(p) > 2 else 3000):
+                        if (e.callback2() & ~1) == want:
+                            break
+                        e.run(1)
+                    else:
+                        fails.append('%s: never got there' % step)
                 elif head == 'SHOT':
                     if shots:
                         e.shot(os.path.join(shots, '%s_%s.png' % (name, p[1])))
@@ -200,6 +213,11 @@ def run_case(case, rom, shots):
                         got, want = e.u8(e.sym(p[2])), int(p[4], 0)
                         if got != want:
                             fails.append('%s: %s is %d' % (step, p[2], got))
+                    elif what == 'deref':
+                        base = e.ptr(p[2])
+                        got, want = (e.u16(base + int(p[3], 0)) if base else None), int(p[5], 0)
+                        if got != want:
+                            fails.append('%s: got %s' % (step, got))
                     elif what == 'move':
                         size = off('pokemon')
                         mon = Mon(bytearray(e.read(e.sym('gPlayerParty') + int(p[2]) * size, size)), 0)

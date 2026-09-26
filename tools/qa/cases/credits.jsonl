@@ -1,0 +1,9 @@
+# The ending credits (Joseph Song's page, 2026-09-26). Run: tools/qa/eventcheck.py tools/qa/cases/credits.jsonl --shots DIR
+# The real post-champion flow: HALL OF FAME warps the player to INDIGO PLATEAU with VAR_MAP_SCENE_INDIGO_PLATEAU_EXTERIOR 1,
+# whose ON_TRANSITION plays MUS_CREDITS and whose ON_FRAME script walks the rival out and calls DoCredits.
+# sCreditsMgr+6 is scrcmdidx: while script command N is on screen it holds N+1. Command 61 is the last SPECIAL THANKS,
+# 62 the POKeMON Thunder Yellow / Joseph Song page, then a 52-frame gap, the black hold, THE END (65) and WAITBUTTON (66).
+# Frames count from the first frame of CB2_Credits (credits_joseph_song: page 62 on screen from frame 13104 to 13350).
+{"name": "credits_joseph_song", "edit": ["warp IndigoPlateau_Exterior 11 7", "var VAR_MAP_SCENE_INDIGO_PLATEAU_EXTERIOR 1"], "steps": ["waitcb2 CB2_Credits 3000", "wait 13000", "shot special_thanks", "expect deref sCreditsMgr 6 = 62", "wait 220", "shot joseph_song", "expect cb2 CB2_Credits", "expect deref sCreditsMgr 6 = 63", "wait 930", "shot the_end", "expect cb2 CB2_Credits", "expect deref sCreditsMgr 6 = 67"]}
+# Negative control: without the HALL OF FAME scene var the plateau is just the plateau, and no credits roll.
+{"name": "credits_not_without_hof", "xfail": true, "edit": ["warp IndigoPlateau_Exterior 11 7", "var VAR_MAP_SCENE_INDIGO_PLATEAU_EXTERIOR 0"], "steps": ["waitcb2 CB2_Credits 3000"]}

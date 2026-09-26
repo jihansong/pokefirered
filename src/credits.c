@@ -113,6 +113,7 @@ enum CreditsString
     CREDITS_STRING_SPECIAL_THANKS_5,
     CREDITS_STRING_BRAILLE_CODE_CHECK_4,
     CREDITS_STRING_GRAPHIC_DESIGNER,
+    CREDITS_STRING_THUNDER_YELLOW,
     CREDITS_STRING_DUMMY
 };
 
@@ -443,6 +444,8 @@ static const struct CreditsScrcmd sCreditsScript[] = {
     CREDITS_PRINT(BRAILLE_CODE_CHECK_4, 221),
     CREDITS_PRINT(SPECIAL_THANKS_4, 221),
     CREDITS_PRINT(SPECIAL_THANKS_5, 221),
+    // Thunder Yellow: the hack's own page closes the staff roll, just before THE END.
+    CREDITS_PRINT(THUNDER_YELLOW, 221),
     CREDITS_PRINT(DUMMY, 52),
     CREDITS_THEENDGFX(ALLRIGHTSRESERVED, 224),
     CREDITS_THEENDGFX(THEEND, 240),
@@ -705,6 +708,7 @@ static const struct CreditsTextHeader sCreditsTexts[] = {
     { gCreditsString_Special_Thanks_5, gCreditsString_Nicola_Pratt_Barlow_Shellie_Dow_Anthony_Howitt_Naoko_Saeki_Kyoko_Onishi, FALSE },
     { gCreditsString_Braille_Code_Check_4, gCreditsString_The_Royal_New_Zealand_Foundation_of_the_Blind_Greg_Moran, FALSE },
     { gCreditsString_Graphic_Designer, gCreditsString_Akira_Kinashi, FALSE },
+    { gCreditsString_POKeMON_Thunder_Yellow, gCreditsString_Joseph_Song, FALSE },
     { gString_Dummy, gString_Dummy, FALSE }
 };
 

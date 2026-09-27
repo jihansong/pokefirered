@@ -1547,6 +1547,7 @@ extern const u8 gText_PokeSum_EggHatch_AlmostReady[];
 extern const u8 gText_PokeSum_EggOrigin_DayCare[];
 extern const u8 gText_PokeSum_EggOrigin_Trade[];
 extern const u8 gText_PokeSum_EggOrigin_TravelingMan[];
+extern const u8 gText_PokeSum_EggOrigin_RocketTrio[];
 extern const u8 gText_PokeSum_EggOrigin_Trade[];
 extern const u8 gText_PokeSum_EggOrigin_NicePlace[];
 extern const u8 gText_PokeSum_EggOrigin_Spa[];

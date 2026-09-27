@@ -2840,6 +2840,14 @@ static void PokeSum_PrintTrainerMemo_Egg(void)
     if (sMonSummaryScreen->isBadEgg)
         chosenStrIndex = 0;
 
+    // The only EEVEE EGGS handed out as special eggs come from JESSIE & JAMES
+    // (VIRIDIAN GYM, and the officer who keeps what they left behind).
+    if (chosenStrIndex == 2 && GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPECIES) == SPECIES_EEVEE)
+    {
+        AddTextPrinterParameterized4(sMonSummaryScreen->windowIds[POKESUM_WIN_TRAINER_MEMO], FONT_NORMAL, 0, 3, 0, 0, sLevelNickTextColors[0], TEXT_SKIP_DRAW, gText_PokeSum_EggOrigin_RocketTrio);
+        return;
+    }
+
     AddTextPrinterParameterized4(sMonSummaryScreen->windowIds[POKESUM_WIN_TRAINER_MEMO], FONT_NORMAL, 0, 3, 0, 0, sLevelNickTextColors[0], TEXT_SKIP_DRAW, sEggOriginTexts[chosenStrIndex]);
 }
 

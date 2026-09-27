@@ -824,6 +824,7 @@ const u8 gText_PokeSum_ApparentlyFatefulEncounterHatched[] = _("{DYNAMIC 0x00} n
 const u8 gText_PokeSum_ApparentlyFatefulEncounterHatched_BoldGentleGrammar[] = _("{DYNAMIC 0x00} nature. Apparently met in\na fateful encounter (hatched:\n{DYNAMIC 0x02} at {LV_2} {DYNAMIC 0x01}).");
 const u8 gText_PokeSum_EggOrigin_DayCare[] = _("An odd POKéMON EGG found by the\nDAY-CARE couple.");
 const u8 gText_PokeSum_EggOrigin_TravelingMan[] = _("An odd POKéMON EGG obtained from\nthe traveling man.");
+const u8 gText_PokeSum_EggOrigin_RocketTrio[] = _("An odd POKéMON EGG obtained from\nJESSIE & JAMES.");
 const u8 gText_PokeSum_EggOrigin_NicePlace[] = _("A wondrously peculiar POKéMON EGG\nobtained at a nice place.");
 const u8 gText_PokeSum_EggOrigin_Spa[] = _("An odd POKéMON EGG obtained from\nan old woman at the SPA.");
 const u8 gText_PokeSum_EggOrigin_Trade[] = _("A peculiar POKéMON EGG obtained\nin a trade.");

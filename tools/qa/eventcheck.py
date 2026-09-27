@@ -54,6 +54,7 @@ Steps, in order:
                                          scene and resume the script), releaseall,
                                          end, once the overworld is idle. Tests a
                                          special before any map script calls it
+    run                                  wait for the action menu, RUN
     fight N                              wait for the action menu, FIGHT, move N
                                          (1-4); in a double battle A once more
                                          for the first target
@@ -93,6 +94,7 @@ Steps, in order:
                                          read as spaces)
     expect presses <= N                  A presses the last mash/mashto took
     expect move SLOT MOVE                check that party SLOT knows MOVE
+    expect hp SLOT = N|full              party SLOT's current HP (full: = max HP)
     expect cb2 NAME                      check gMain.callback2 (e.g. CB2_UpdatePartyMenu)
     expect map MAP                       check the player's current map
     expect song LABEL                    the BGM player plays the song at LABEL
@@ -323,6 +325,15 @@ def fight(e, rom, n):
     e.press('A', hold=3, after=20)
     if e.u32(e.sym('gBattleTypeFlags')) & BATTLE_TYPE_DOUBLE:
         e.press('A', hold=3, after=20)
+    return None
+
+
+def run_away(e, rom):
+    """The 'run' step: RUN from the action menu; returns an error or None."""
+    if not wait_action_menu(e, rom):
+        return 'no action menu'
+    for key in ('DOWN', 'RIGHT', 'A'):            # RUN, bottom right
+        e.press(key, hold=3, after=12)
     return None
 
 
@@ -559,6 +570,10 @@ def run_case(case, rom, shots, presses_log=None):
                     if err:
                         fails.append('%s: %s' % (step, err))
                     e.run(2)
+                elif head == 'RUN':
+                    err = run_away(e, rom)
+                    if err:
+                        fails.append('%s: %s' % (step, err))
                 elif head == 'FIGHT':
                     err = fight(e, rom, int(p[1]))
                     if err:
@@ -657,6 +672,11 @@ def run_case(case, rom, shots, presses_log=None):
                         got, want = (e.u16(base + int(p[3], 0)) if base else None), int(p[5], 0)
                         if got != want:
                             fails.append('%s: got %s' % (step, got))
+                    elif what == 'hp':
+                        base = e.sym('gPlayerParty') + int(p[2]) * off('pokemon')
+                        hp, maxhp = e.u16(base + 86), e.u16(base + 88)
+                        if hp != (maxhp if p[4] == 'full' else int(p[4], 0)):
+                            fails.append('%s: HP %d/%d' % (step, hp, maxhp))
                     elif what == 'move':
                         size = off('pokemon')
                         mon = Mon(bytearray(e.read(e.sym('gPlayerParty') + int(p[2]) * size, size)), 0)

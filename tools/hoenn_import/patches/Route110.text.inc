@@ -244,9 +244,7 @@ Route110_Text_H25::
 
 Route110_Text_H26::
     .string "ROUTE 110\n"
-    .string "{LEFT_ARROW} ROUTE 103\p"
-    .string "NOTICE: the west path is closed\n"
-    .string "while the bridge is replaced.$"
+    .string "{LEFT_ARROW} ROUTE 103, OLDALE TOWN$"
 
 Route110_Text_H27::
     .string "ROUTE 110\n"

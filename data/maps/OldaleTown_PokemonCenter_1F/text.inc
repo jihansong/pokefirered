@@ -1,18 +1,23 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 OldaleTown_PokemonCenter_1F_Text_H0::
-	.string "That PC in the corner there is\n"
-	.string "for any POKéMON TRAINER to use.\p"
-	.string "Naturally, that means you're welcome\n"
-	.string "to use it, too.$"
+    .string "The PC in the corner reaches the\n"
+    .string "same BOXES as the ones in KANTO,\l"
+    .string "I'm told.\p"
+    .string "Your POKéMON followed you across\n"
+    .string "the sea. Rather convenient.$"
 
 OldaleTown_PokemonCenter_1F_Text_H1::
-	.string "POKéMON CENTERS are great!\p"
-	.string "You can use their services as much\n"
-	.string "as you like, and it's all for free.\l"
-	.string "You never have to worry!$"
+    .string "PROF. BIRCH comes in here all the\n"
+    .string "time, covered in bites.\p"
+    .string "The NURSE heals his POKéMON, then\n"
+    .string "puts plasters on him as well.$"
 
 OldaleTown_PokemonCenter_1F_Text_H2::
-	.string "The POKéMON WIRELESS CLUB on\n"
-	.string "the second floor was built recently.\p"
-	.string "But they say they're still making\n"
-	.string "adjustments.$"
-
+    .string "Upstairs is meant to be for trading\n"
+    .string "and battling with friends.\p"
+    .string "The machines aren't hooked up yet.\n"
+    .string "They've been saying “soon” for\l"
+    .string "ages.$"
+@ END PATCH

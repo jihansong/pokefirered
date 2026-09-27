@@ -1,12 +1,14 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 OldaleTown_Mart_Text_H1::
-	.string "The clerk says they're all sold out.\n"
-	.string "I can't buy any POKé BALLS.$"
+    .string "They never have POKé BALLS here.\p"
+    .string "The clerk says OLDALE's for\n"
+    .string "patching up, not catching.\l"
+    .string "PETALBURG's MART sells them.$"
 
 OldaleTown_Mart_Text_H2::
-	.string "If a POKéMON gets hurt and loses its\n"
-	.string "HP and faints, it won't be able to\l"
-	.string "battle.\p"
-	.string "To prevent your POKéMON from\n"
-	.string "fainting, restore its HP with a\l"
-	.string "POTION.$"
-
+    .string "A POTION is plenty for my POKéMON.\p"
+    .string "Yours look like they'd drink the\n"
+    .string "whole shelf.$"
+@ END PATCH

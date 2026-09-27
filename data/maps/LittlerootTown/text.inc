@@ -1,19 +1,26 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 LittlerootTown_Text_H0::
-	.string "Um, um, um!\p"
-	.string "If you go outside and go in the\n"
-	.string "grass, wild POKéMON will jump out!$"
+    .string "Don't run on ROUTE 101.\p"
+    .string "The POOCHYENA there chase anything\n"
+    .string "that runs. So I walk very fast.\p"
+    .string "PROF. BIRCH never learns. He runs\n"
+    .string "everywhere.$"
 
 LittlerootTown_Text_H1::
-	.string "PROF. BIRCH spends days in his LAB\n"
-	.string "studying, then he'll suddenly go out\l"
-	.string "in the wild to do more research…\p"
-	.string "When does PROF. BIRCH spend time\n"
-	.string "at home?$"
+    .string "The PROF's house is right next to\n"
+    .string "his LAB, and he still never sleeps\l"
+    .string "in it.\p"
+    .string "He goes out at dawn and comes back\n"
+    .string "with grass in his hair and a new\l"
+    .string "theory.$"
 
 LittlerootTown_Text_H2::
-	.string "LITTLEROOT TOWN “A town that can't\n"
-	.string "be shaded any hue.”$"
+    .string "LITTLEROOT TOWN\n"
+    .string "“Small roots, long roads.”$"
 
 LittlerootTown_Text_H3::
-	.string "PROF. BIRCH'S POKéMON LAB$"
-
+    .string "PROF. BIRCH'S POKéMON LAB\n"
+    .string "“Not in? Try ROUTE 101.”$"
+@ END PATCH

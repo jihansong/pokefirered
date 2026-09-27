@@ -1022,6 +1022,14 @@ SECTIONS {
         sound/songs/midi/mus_trick_house.o(.rodata);
         sound/songs/midi/mus_underwater.o(.rodata);
         sound/songs/midi/mus_verdanturf.o(.rodata);
+        sound/songs/midi/mus_help.o(.rodata);
+        sound/songs/midi/mus_encounter_may.o(.rodata);
+        sound/songs/midi/mus_encounter_brendan.o(.rodata);
+        sound/songs/midi/mus_vs_rival.o(.rodata);
+        sound/songs/midi/mus_encounter_aqua.o(.rodata);
+        sound/songs/midi/mus_vs_aqua_magma.o(.rodata);
+        sound/songs/midi/mus_victory_aqua_magma.o(.rodata);
+        sound/songs/midi/mus_rs_follow_me.o(.rodata);
         /* END HOENN MUSIC */
         sound/songs/midi/mus_teachy_tv_menu.o(.rodata);
     } > ROM =0

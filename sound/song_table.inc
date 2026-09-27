@@ -396,6 +396,14 @@ gSongTable::
 	song mus_trick_house, 0, 0
 	song mus_underwater, 0, 0
 	song mus_verdanturf, 0, 0
+	song mus_help, 0, 0
+	song mus_encounter_may, 0, 0
+	song mus_encounter_brendan, 0, 0
+	song mus_vs_rival, 0, 0
+	song mus_encounter_aqua, 0, 0
+	song mus_vs_aqua_magma, 0, 0
+	song mus_victory_aqua_magma, 0, 0
+	song mus_rs_follow_me, 0, 0
 @ END HOENN MUSIC
 
 dummy_song_header:

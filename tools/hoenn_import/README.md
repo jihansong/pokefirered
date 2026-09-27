@@ -27,7 +27,10 @@ import, so they survive a re-import (e.g. SLATEPORT harbor's airline counter).
 - `import_music.py`: copies the songs the Hoenn maps ask for with their
   voicegroups, keysplit tables and samples, and appends them to the song
   table. Emerald names its voicegroups while FR/LG numbers them, so
-  `tools/mid2agb` now takes either form.
+  `tools/mid2agb` now takes either form. `EVENT_SONGS` in the script adds
+  the songs story scripts and battles play (encounters, rival, Team Aqua);
+  a name that clashes with FR/LG gets its own (`MUS_RS_FOLLOW_ME`). A rerun
+  keeps every song id it gave out before and appends new songs at the end.
 
 Build note: `make` does not track `.incbin`/constant dependencies for the
 generated map data. After an import, delete `build/leafgreen/data/maps.o`

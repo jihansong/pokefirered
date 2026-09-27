@@ -11,6 +11,16 @@
     # skip 1465 frames unrecorded (reach the title screen), then record 60 s
     python3 tools/qa/audiocap.py preview.gba /tmp/title.wav --skip 1465 --seconds 60
 
+    # one song from its first tick, whether or not the game plays it anywhere yet
+    python3 tools/qa/audiocap.py pokemonthyl.gba /tmp/help.wav --sav saves/hoenn.sav \\
+        --song MUS_HELP --seconds 16.5 --small
+
+--song MUS_X records a song of the built ROM that nothing plays yet (a port or
+a new cue before it is wired in): it runs a copy of the ROM whose song table
+points every music id (256 and up) at that song, picks CONTINUE on --sav, and
+cuts the recording at the frame the BGM player starts the song (clock 0), so
+the WAV opens on its first tick. The song data is the ROM's own, byte for byte.
+
 --press KEY@FRAME (repeatable) presses a key (A B SELECT START RIGHT LEFT UP DOWN
 R L, or A+B) for --hold frames at FRAME counted from the start of the recording.
 Frames are the GBA's 59.73 a second. Output is 16-bit stereo at --rate Hz
@@ -29,11 +39,14 @@ import argparse
 import array
 import math
 import os
+import re
+import shutil
 import sys
+import tempfile
 import wave
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from emu import Emu, KEYS  # noqa: E402
+from emu import Emu, KEYS, fresh_syms, load_syms  # noqa: E402
 
 FPS = 59.7275
 
@@ -83,6 +96,59 @@ def to_small(pcm, rate):
     return out.tobytes()
 
 
+def song_rom(rom, const, out):
+    """Copy rom to out with every music entry (ids 256..) of gSongTable
+    pointing at const's entry. Returns (sym path, song header address)."""
+    root = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../..')
+    songs = dict((n, int(v)) for n, v in re.findall(
+        r'#define (MUS_\w+)\s+(\d+)', open(os.path.join(root, 'include/constants/songs.h')).read()))
+    if const not in songs:
+        sys.exit('unknown song %s' % const)
+    sym = fresh_syms(rom)
+    table = load_syms(sym)['gSongTable'] - 0x08000000
+    d = bytearray(open(rom, 'rb').read())
+    entry = bytes(d[table + 8 * songs[const]:table + 8 * songs[const] + 8])
+    for i in range(256, max(songs.values()) + 1):
+        d[table + 8 * i:table + 8 * i + 8] = entry
+    open(out, 'wb').write(d)
+    return sym, int.from_bytes(entry[:4], 'little')
+
+
+def record_song(rom, sav, const, frames, rate):
+    """PCM of const from its first tick, frames long (see --song)."""
+    tmp = tempfile.mkdtemp(prefix='songcap-')
+    try:
+        prom = os.path.join(tmp, 'song.gba')
+        sym, header = song_rom(rom, const, prom)
+        with Emu(prom, sav, sym=sym) as e:
+            bgm = e.syms['gMPlayInfo_BGM']
+            e.boot_continue(leave_menu_only=True)
+            e.audio_start(rate)
+            chunks, start, prev, pressing = [], None, None, 0
+            for _ in range(frames + 20000):
+                # every frame is recorded, the ones spent pressing B too
+                if pressing == 0 and e.quest_log_playing():
+                    chunks, start, prev = [], None, None
+                    e.hold('B')
+                    pressing = 16
+                chunks.append(e.run_audio(1))
+                if pressing:
+                    pressing -= 1
+                    if pressing == 14:
+                        e.hold()
+                h, clock = e.u32(bgm), e.u32(bgm + 12)    # songHeader, clock
+                if h == header and (prev is None or clock < prev):
+                    start = len(chunks) - 1                  # (re)started this frame
+                prev = clock if h == header else None
+                if start is not None and len(chunks) - start >= frames:
+                    break
+            if start is None or e.u32(bgm) != header:
+                sys.exit('%s did not play through the recording' % const)
+            return b''.join(chunks[start:start + frames])
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split('\n\n')[0],
                                  formatter_class=argparse.RawDescriptionHelpFormatter, epilog=__doc__)
@@ -99,9 +165,21 @@ def main():
     ap.add_argument('--hold', type=int, default=3, help='frames a --press key is held (default 3)')
     ap.add_argument('--rate', type=int, default=32768)
     ap.add_argument('--small', action='store_true', help='write 22050 Hz mono')
+    ap.add_argument('--song', metavar='MUS_X',
+                    help='record this song from its first tick (needs --sav; see below)')
     a = ap.parse_args()
     frames = a.frames if a.frames is not None else int(round((a.seconds or 30) * FPS))
+    if a.song and not a.sav:
+        ap.error('--song needs --sav')
 
+    if a.song:
+        pcm = record_song(a.rom, a.sav, a.song, frames, a.rate)
+    else:
+        pcm = record(a, frames)
+    write_wav(a, pcm, frames)
+
+
+def record(a, frames):
     with Emu(a.rom, a.sav) as e:
         if a.cont:
             e.boot_continue()
@@ -121,8 +199,10 @@ def main():
             if keys is None:
                 break
             e.hold(*keys)
-        pcm = b''.join(pcm)
+        return b''.join(pcm)
 
+
+def write_wav(a, pcm, frames):
     span = loud_span(pcm, a.rate, 2)
     rate, channels = a.rate, 2
     if a.small:

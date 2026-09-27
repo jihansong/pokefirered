@@ -8,6 +8,10 @@ while FR/LG numbers them (voicegroup132), so the two sets never collide.
 
 Everything generated sits between markers, so rerunning replaces the import.
 New songs are appended to the song table, which keeps the existing song ids.
+
+Besides the map songs, EVENT_SONGS lists the Emerald songs the story scripts
+and battles play (encounters, the rival and Team Aqua battles). A song whose
+Emerald name clashes with an FR/LG song gets its own constant and file name.
 """
 import json, glob, os, re, shutil, collections
 
@@ -20,6 +24,20 @@ MARKERS = {
     'c': ('// BEGIN HOENN MUSIC' + GEN, '// END HOENN MUSIC'),
     'ld': ('        /* BEGIN HOENN MUSIC' + GEN + ' */', '        /* END HOENN MUSIC */'),
 }
+
+
+# Emerald songs the Hoenn story plays from scripts or battle code rather than
+# from a map header: (our constant, Emerald song file). Hoenn Z3 (v0.11.0).
+EVENT_SONGS = [
+    ('MUS_HELP', 'mus_help'),                            # Route 101, Birch chased
+    ('MUS_ENCOUNTER_MAY', 'mus_encounter_may'),          # rival, player is a boy
+    ('MUS_ENCOUNTER_BRENDAN', 'mus_encounter_brendan'),  # rival, player is a girl
+    ('MUS_VS_RIVAL', 'mus_vs_rival'),                    # May/Brendan battle
+    ('MUS_ENCOUNTER_AQUA', 'mus_encounter_aqua'),        # Petalburg Woods, Rustboro, Rusturf Tunnel
+    ('MUS_VS_AQUA_MAGMA', 'mus_vs_aqua_magma'),          # Team Aqua grunt battle
+    ('MUS_VICTORY_AQUA_MAGMA', 'mus_victory_aqua_magma'),
+    ('MUS_RS_FOLLOW_ME', 'mus_follow_me'),               # Wally and Norman; FR/LG's MUS_FOLLOW_ME is Kanto's
+]
 
 
 def read(p):
@@ -61,8 +79,25 @@ def wanted_songs():
     return [s for s in used if s not in have and s != 'MUS_NONE']
 
 
+def existing_order():
+    """Constants in our block as they stand, so a rerun never renumbers them."""
+    s = read(f'{FR}/include/constants/songs.h')
+    begin, end = MARKERS['c']
+    if begin not in s:
+        return []
+    return re.findall(r'#define (MUS_\w+)', s[s.index(begin):s.index(end)])
+
+
 def main():
-    songs = sorted(wanted_songs())
+    wanted = {mus: 'mus_' + mus[len('MUS_'):].lower() for mus in wanted_songs()}
+    wanted.update(EVENT_SONGS)
+    old = existing_order()
+    for m in old:
+        if m not in wanted:     # keep it: dropping it would renumber the songs after it
+            print('  no longer used by a map, kept:', m)
+            wanted[m] = 'mus_' + m[len('MUS_'):].lower()
+    order = old + sorted(m for m in wanted if m not in old and m not in dict(EVENT_SONGS))
+    order += [m for m, _ in EVENT_SONGS if m not in order]
     cfg = {}
     for line in read(f'{EM}/sound/songs/midi/midi.cfg').splitlines():
         if ':' in line:
@@ -106,19 +141,20 @@ def main():
             need_keysplits.add(k)
 
     song_files = []
-    for mus in songs:
-        song = 'mus_' + mus[len('MUS_'):].lower()
-        if song not in cfg:
-            print('  no midi.cfg entry, skipped:', song)
+    for mus in order:
+        em_song = wanted[mus]
+        song = 'mus_' + mus[len('MUS_'):].lower()   # our file name (differs on a clash)
+        if em_song not in cfg:
+            print('  no midi.cfg entry, skipped:', em_song)
             continue
-        vg = re.search(r'-G(\S+)', cfg[song]).group(1)
+        vg = re.search(r'-G(\S+)', cfg[em_song]).group(1)
         name = vg[1:] if vg.startswith('_') else vg
         if name not in vg_file:
-            print('  unknown voicegroup, skipped:', song, vg)
+            print('  unknown voicegroup, skipped:', em_song, vg)
             continue
         want_voicegroup(name)
-        shutil.copy(f'{EM}/sound/songs/midi/{song}.mid', f'{FR}/sound/songs/midi/{song}.mid')
-        song_files.append((mus, song, cfg[song]))
+        shutil.copy(f'{EM}/sound/songs/midi/{em_song}.mid', f'{FR}/sound/songs/midi/{song}.mid')
+        song_files.append((mus, song, cfg[em_song]))
 
     # assets
     os.makedirs(f'{FR}/sound/voicegroups', exist_ok=True)

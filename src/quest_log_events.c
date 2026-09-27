@@ -1926,9 +1926,10 @@ static const u16 *LoadEvent_DefeatedTrainer(const u16 *eventData)
     GetMapNameGeneric(gStringVar1, r6[0]);
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, gStringVar1);
 
-    if (gTrainers[r5[2]].trainerClass == TRAINER_CLASS_RIVAL_EARLY
-     || gTrainers[r5[2]].trainerClass == TRAINER_CLASS_RIVAL_LATE
-     || gTrainers[r5[2]].trainerClass == TRAINER_CLASS_CHAMPION)
+    if ((r5[2] < HOENN_TRAINERS_START || r5[2] == TRAINER_TOURNEY_BLUE)   // HOENN's rivals keep their names (v0.11.0)
+     && (gTrainers[r5[2]].trainerClass == TRAINER_CLASS_RIVAL_EARLY
+      || gTrainers[r5[2]].trainerClass == TRAINER_CLASS_RIVAL_LATE
+      || gTrainers[r5[2]].trainerClass == TRAINER_CLASS_CHAMPION))
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, GetExpandedPlaceholder(PLACEHOLDER_ID_RIVAL));
     else
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, gTrainers[r5[2]].trainerName);

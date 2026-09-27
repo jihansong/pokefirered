@@ -11,6 +11,7 @@
 #include "strings.h"
 #include "battle.h"
 #include "battle_anim.h"
+#include "battle_setup.h"
 #include "battle_controllers.h"
 #include "battle_interface.h"
 #include "battle_message.h"
@@ -1583,11 +1584,14 @@ static void OakOldManHandleDrawTrainerPic(void)
     }
     else
     {
-        DecompressTrainerBackPalette(TRAINER_BACK_PIC_OLD_MAN, gActiveBattler);
-        SetMultiuseSpriteTemplateToTrainerBack(TRAINER_BACK_PIC_OLD_MAN, GetBattlerPosition(gActiveBattler));
+        // v0.11.0: the old man, or WALLY in his catching demo
+        u8 backPic = GetOldManTutorialBackPic();
+
+        DecompressTrainerBackPalette(backPic, gActiveBattler);
+        SetMultiuseSpriteTemplateToTrainerBack(backPic, GetBattlerPosition(gActiveBattler));
         gBattlerSpriteIds[gActiveBattler] = CreateSprite(&gMultiuseSpriteTemplate,
                                                          80,
-                                                         (8 - gTrainerBackPicCoords[TRAINER_BACK_PIC_OLD_MAN].size) * 4 + 80,
+                                                         (8 - gTrainerBackPicCoords[backPic].size) * 4 + 80,
                                                          30);
     }
     gSprites[gBattlerSpriteIds[gActiveBattler]].oam.paletteNum = gActiveBattler;
@@ -1610,11 +1614,14 @@ static void OakOldManHandleTrainerSlide(void)
     }
     else
     {
-        DecompressTrainerBackPalette(TRAINER_BACK_PIC_OLD_MAN, gActiveBattler);
-        SetMultiuseSpriteTemplateToTrainerBack(TRAINER_BACK_PIC_OLD_MAN, GetBattlerPosition(gActiveBattler));
+        // v0.11.0: the old man, or WALLY in his catching demo
+        u8 backPic = GetOldManTutorialBackPic();
+
+        DecompressTrainerBackPalette(backPic, gActiveBattler);
+        SetMultiuseSpriteTemplateToTrainerBack(backPic, GetBattlerPosition(gActiveBattler));
         gBattlerSpriteIds[gActiveBattler] = CreateSprite(&gMultiuseSpriteTemplate,
                                                          80,
-                                                         (8 - gTrainerBackPicCoords[TRAINER_BACK_PIC_OLD_MAN].size) * 4 + 80,
+                                                         (8 - gTrainerBackPicCoords[backPic].size) * 4 + 80,
                                                          30);
     }
     gSprites[gBattlerSpriteIds[gActiveBattler]].oam.paletteNum = gActiveBattler;
@@ -1821,6 +1828,8 @@ static void OakOldManHandleChooseAction(void)
     ActionSelectionCreateCursorAt(gActionSelectionCursor[gActiveBattler], 0);
     if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
         BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillPkmnDo);
+    else if (IsWallyTutorialBattle())
+        BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillWallyDo);
     else
         BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillOldManDo);
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);

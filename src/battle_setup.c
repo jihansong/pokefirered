@@ -82,6 +82,8 @@ static EWRAM_DATA u8 *sTrainerCannotBattleSpeech = NULL;
 static EWRAM_DATA u8 *sTrainerBattleEndScript = NULL;
 static EWRAM_DATA u8 *sTrainerABattleScriptRetAddr = NULL;
 static EWRAM_DATA u16 sRivalBattleFlags = 0;
+// v0.11.0: the old man's catching demo, with WALLY in his place (StartWallyTutorialBattle)
+static EWRAM_DATA bool8 sWallyTutorial = FALSE;
 
 // The first transition is used if the enemy pokemon are lower level than our pokemon.
 // Otherwise, the second transition is used.
@@ -304,11 +306,37 @@ static void DoTrainerBattle(void)
 
 void StartOldManTutorialBattle(void)
 {
+    sWallyTutorial = FALSE;
     CreateMaleMon(&gEnemyParty[0], SPECIES_WEEDLE, 5);
     LockPlayerFieldControls();
     gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
     gBattleTypeFlags = BATTLE_TYPE_OLD_MAN_TUTORIAL;
     CreateBattleStartTask(B_TRANSITION_SLICE, 0);
+}
+
+// v0.11.0 (Hoenn stage 3): WALLY catches his RALTS on ROUTE 102. Emerald's
+// BATTLE_TYPE_WALLY_TUTORIAL is the same bit as the old man's, so this is the
+// old man's demo with WALLY's back and name (GetOldManTutorialBackPic and the
+// battle strings); the RALTS is not the player's to keep, as the WEEDLE isn't.
+void StartWallyTutorialBattle(void)
+{
+    sWallyTutorial = TRUE;
+    CreateMaleMon(&gEnemyParty[0], SPECIES_RALTS, 5);
+    LockPlayerFieldControls();
+    gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
+    gBattleTypeFlags = BATTLE_TYPE_OLD_MAN_TUTORIAL;
+    CreateBattleStartTask(B_TRANSITION_SLICE, 0);
+}
+
+bool8 IsWallyTutorialBattle(void)
+{
+    return (gBattleTypeFlags & BATTLE_TYPE_OLD_MAN_TUTORIAL) && sWallyTutorial;
+}
+
+// Whose back the catching demo shows
+u8 GetOldManTutorialBackPic(void)
+{
+    return sWallyTutorial ? TRAINER_BACK_PIC_WALLY : TRAINER_BACK_PIC_OLD_MAN;
 }
 
 void StartScriptedWildBattle(void)

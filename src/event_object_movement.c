@@ -194,6 +194,9 @@ static u8 setup##_callback(struct ObjectEvent *objectEvent, struct Sprite *sprit
 
 EWRAM_DATA u8 sCurrentReflectionType = 0;
 EWRAM_DATA u16 sCurrentSpecialObjectPaletteTag = 0;
+// v0.11.0: TRUE on HOENN's maps, where the NPC reflection slots hold Emerald's
+// four NPC palettes (InitObjectEventPalettes, GetObjectEventPaletteNum)
+static EWRAM_DATA bool8 sHoennNpcPalettes = FALSE;
 
 const u8 gReflectionEffectPaletteMap[16] = {
     [PALSLOT_PLAYER]                 = PALSLOT_PLAYER_REFLECTION,
@@ -723,6 +726,14 @@ static const u16 sObjectPaletteTags3[] = {
     OBJ_EVENT_PAL_TAG_NPC_PINK_REFLECTION,
     OBJ_EVENT_PAL_TAG_NPC_GREEN_REFLECTION,
     OBJ_EVENT_PAL_TAG_NPC_WHITE_REFLECTION,
+};
+
+// v0.11.0: Emerald's NPC palettes, in the NPC reflection slots on HOENN's maps
+static const u16 sHoennNpcPaletteTags[] = {
+    OBJ_EVENT_PAL_TAG_HOENN_NPC_1,
+    OBJ_EVENT_PAL_TAG_HOENN_NPC_2,
+    OBJ_EVENT_PAL_TAG_HOENN_NPC_3,
+    OBJ_EVENT_PAL_TAG_HOENN_NPC_4,
 };
 
 static const u16 *const gObjectPaletteTagSets[] = {
@@ -1648,7 +1659,7 @@ static u8 TrySetupObjectEventSprite(const struct ObjectEventTemplate *objectEven
     sprite->centerToCornerVecY = -(graphicsInfo->height >> 1);
     sprite->x += 8;
     sprite->y += 16 + sprite->centerToCornerVecY;
-    sprite->oam.paletteNum = graphicsInfo->paletteSlot;
+    sprite->oam.paletteNum = GetObjectEventPaletteNum(graphicsInfo);
     sprite->coordOffsetEnabled = TRUE;
     sprite->data[0] = objectEventId;
     objectEvent->spriteId = spriteId;
@@ -1802,7 +1813,7 @@ u8 CreateVirtualObject(u8 graphicsId, u8 virtualObjId, s16 x, s16 y, u8 elevatio
         sprite->centerToCornerVecX = -(graphicsInfo->width >> 1);
         sprite->centerToCornerVecY = -(graphicsInfo->height >> 1);
         sprite->y += sprite->centerToCornerVecY;
-        sprite->oam.paletteNum = graphicsInfo->paletteSlot;
+        sprite->oam.paletteNum = GetObjectEventPaletteNum(graphicsInfo);
         sprite->coordOffsetEnabled = TRUE;
         sprite->sVirtualObjId = virtualObjId;
         sprite->sVirtualObjElev = elevation;
@@ -1984,7 +1995,7 @@ static void SpawnObjectEventOnReturnToField(u8 objectEventId, s16 x, s16 y)
         if (subspriteTables != NULL)
             SetSubspriteTables(sprite, subspriteTables);
 
-        sprite->oam.paletteNum = graphicsInfo->paletteSlot;
+        sprite->oam.paletteNum = GetObjectEventPaletteNum(graphicsInfo);
         sprite->coordOffsetEnabled = TRUE;
         sprite->data[0] = objectEventId;
         objectEvent->spriteId = spriteId;
@@ -2042,7 +2053,7 @@ void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u8 graphicsId)
     sprite->images = graphicsInfo->images;
     sprite->anims = graphicsInfo->anims;
     sprite->subspriteTables = graphicsInfo->subspriteTables;
-    sprite->oam.paletteNum = graphicsInfo->paletteSlot;
+    sprite->oam.paletteNum = GetObjectEventPaletteNum(graphicsInfo);
     if (!sprite->usingSheet)
     {
         s32 var2;
@@ -2725,15 +2736,61 @@ void InitObjectEventPalettes(u8 palSlot)
     FreeAndReserveObjectSpritePalettes();
     sCurrentSpecialObjectPaletteTag = OBJ_EVENT_PAL_TAG_NONE;
     sCurrentReflectionType = palSlot;
+    sHoennNpcPalettes = FALSE;
     if (palSlot == 1)
     {
         PatchObjectPaletteRange(gObjectPaletteTagSets[sCurrentReflectionType], 0, 6);
         gReservedSpritePaletteCount = 8;
     }
+    else if (gSaveBlock1Ptr->location.mapGroup >= MAP_GROUP(MAP_PETALBURG_CITY))
+    {
+        // v0.11.0: HOENN. Its imported sprites were drawn for Emerald's four NPC
+        // palettes, but FR/LG draws NPCs from four fixed slots holding KANTO's,
+        // so they came out in the wrong colours. Here the four NPC reflection
+        // slots take Emerald's palettes instead, and an NPC's reflection uses
+        // the NPC's own palette (GetReflectionPaletteNum). The reserved slots
+        // stay the same twelve, so the sprite palette budget doesn't change.
+        PatchObjectPaletteRange(gObjectPaletteTagSets[sCurrentReflectionType], 0, 6);
+        PatchObjectPaletteRange(sHoennNpcPaletteTags, PALSLOT_NPC_1_REFLECTION, PALSLOT_NPC_4_REFLECTION + 1);
+        sHoennNpcPalettes = TRUE;
+    }
     else
     {
         PatchObjectPaletteRange(gObjectPaletteTagSets[sCurrentReflectionType], 0, 10);
     }
+}
+
+// The palette an object event's sprite is drawn with: its graphics' slot, or
+// on HOENN's maps the slot holding its Emerald NPC palette
+u8 GetObjectEventPaletteNum(const struct ObjectEventGraphicsInfo *graphicsInfo)
+{
+    u8 i;
+
+    if (sHoennNpcPalettes)
+    {
+        for (i = 0; i < ARRAY_COUNT(sHoennNpcPaletteTags); i++)
+        {
+            if (graphicsInfo->paletteTag == sHoennNpcPaletteTags[i])
+                return PALSLOT_NPC_1_REFLECTION + i;
+        }
+    }
+    return graphicsInfo->paletteSlot;
+}
+
+// TRUE when the reflection of a sprite drawn with PALETTENUM shares the
+// sprite's palette (NPCs on HOENN's maps), which then must not be patched
+// with a reflection palette
+bool8 IsNpcReflectionOwnPalette(u8 paletteNum)
+{
+    return sHoennNpcPalettes && paletteNum >= PALSLOT_NPC_1 && paletteNum <= PALSLOT_NPC_4_REFLECTION;
+}
+
+// The palette the reflection of a sprite drawn with PALETTENUM uses
+u8 GetReflectionPaletteNum(u8 paletteNum)
+{
+    if (IsNpcReflectionOwnPalette(paletteNum))
+        return paletteNum;
+    return gReflectionEffectPaletteMap[paletteNum];
 }
 
 u16 GetObjectPaletteTag(u8 palSlot)
@@ -9335,7 +9392,7 @@ void SetVirtualObjectGraphics(u8 virtualObjId, u8 direction)
         u16 baseBlock = sprite->oam.tileNum;
         sprite->oam = *info->oam;
         sprite->oam.tileNum = baseBlock;
-        sprite->oam.paletteNum = info->paletteSlot;
+        sprite->oam.paletteNum = GetObjectEventPaletteNum(info);
         sprite->images = info->images;
         if (info->subspriteTables == NULL)
         {

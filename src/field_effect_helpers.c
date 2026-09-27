@@ -40,7 +40,7 @@ void SetUpReflection(struct ObjectEvent * objectEvent, struct Sprite *sprite, bo
     reflectionSprite = &gSprites[CreateCopySpriteAt(sprite, sprite->x, sprite->y, 0x98)];
     reflectionSprite->callback = UpdateObjectReflectionSprite;
     reflectionSprite->oam.priority = 3;
-    reflectionSprite->oam.paletteNum = gReflectionEffectPaletteMap[reflectionSprite->oam.paletteNum];
+    reflectionSprite->oam.paletteNum = GetReflectionPaletteNum(reflectionSprite->oam.paletteNum);
     reflectionSprite->usingSheet = TRUE;
     reflectionSprite->anims = gDummySpriteAnimTable;
     StartSpriteAnim(reflectionSprite, 0);
@@ -82,7 +82,7 @@ static void LoadObjectRegularReflectionPalette(struct ObjectEvent * objectEvent,
     const struct ObjectEventGraphicsInfo * graphicsInfo;
 
     graphicsInfo = GetObjectEventGraphicsInfo(objectEvent->graphicsId);
-    if (graphicsInfo->reflectionPaletteTag != OBJ_EVENT_PAL_TAG_NONE)
+    if (graphicsInfo->reflectionPaletteTag != OBJ_EVENT_PAL_TAG_NONE && !IsNpcReflectionOwnPalette(paletteIndex))
     {
         if (graphicsInfo->paletteSlot == PALSLOT_PLAYER)
             LoadPlayerObjectReflectionPalette(graphicsInfo->paletteTag, paletteIndex);
@@ -101,7 +101,7 @@ static void LoadObjectHighBridgeReflectionPalette(struct ObjectEvent * objectEve
     const struct ObjectEventGraphicsInfo * graphicsInfo;
 
     graphicsInfo = GetObjectEventGraphicsInfo(objectEvent->graphicsId);
-    if (graphicsInfo->reflectionPaletteTag != OBJ_EVENT_PAL_TAG_NONE)
+    if (graphicsInfo->reflectionPaletteTag != OBJ_EVENT_PAL_TAG_NONE && !IsNpcReflectionOwnPalette(paletteNum))
     {
         PatchObjectPalette(graphicsInfo->reflectionPaletteTag, paletteNum);
         UpdateSpritePaletteWithWeather(paletteNum);
@@ -121,7 +121,7 @@ static void UpdateObjectReflectionSprite(struct Sprite *reflectionSprite)
     }
     else
     {
-        reflectionSprite->oam.paletteNum = gReflectionEffectPaletteMap[mainSprite->oam.paletteNum];
+        reflectionSprite->oam.paletteNum = GetReflectionPaletteNum(mainSprite->oam.paletteNum);
         reflectionSprite->oam.shape = mainSprite->oam.shape;
         reflectionSprite->oam.size = mainSprite->oam.size;
         reflectionSprite->oam.matrixNum = mainSprite->oam.matrixNum | ST_OAM_VFLIP;

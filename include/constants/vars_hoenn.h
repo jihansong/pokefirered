@@ -43,11 +43,11 @@
 #define VAR_HOENN_TRICK_PUZZLE_8_STATE (HOENN_VARS_START + 33)  // 트릭하우스
 #define VAR_HOENN_CYCLING_START        (HOENN_VARS_START + 34)  // 타임트라이얼 시작 시각(초, u16)
 #define VAR_HOENN_WATTSON_REMATCH_DAY  (HOENN_VARS_START + 35)  // WATTSON 재대결을 마지막으로 한 게임 시계 날짜 + 1
-#define VAR_HOENN_0x24                 (HOENN_VARS_START + 36)
-#define VAR_HOENN_0x25                 (HOENN_VARS_START + 37)
-#define VAR_HOENN_0x26                 (HOENN_VARS_START + 38)
-#define VAR_HOENN_0x27                 (HOENN_VARS_START + 39)
-#define VAR_HOENN_0x28                 (HOENN_VARS_START + 40)
+#define VAR_HOENN_SCENE_BIRCH          (HOENN_VARS_START + 36)  // 3단계 털보박사 (0 전, 1 구출, 2 아차모, 3 라이벌 끝)
+#define VAR_HOENN_SCENE_DEVON          (HOENN_VARS_START + 37)  // 3단계 데봉 소포 (0 전, 1 숲, 2 도난, 3 되찾음, 4 사장 의뢰, 5 배달, 6 학습장치)
+#define VAR_HOENN_SCENE_WALLY          (HOENN_VARS_START + 38)  // 3단계 WALLY (0 전, 1 로비 만남, 2 랄토스 포획)
+#define VAR_HOENN_BRINEY_STATE         (HOENN_VARS_START + 39)  // BRINEY 씨 배 위치 (0 104번 도로, 1 Dewford, 2 109번 도로)
+#define VAR_HOENN_FLOWER_BERRY_DAY     (HOENN_VARS_START + 40)  // 꽃집 매일 열매를 마지막으로 준 게임 시계 날짜 + 1
 #define VAR_HOENN_0x29                 (HOENN_VARS_START + 41)
 #define VAR_HOENN_0x2A                 (HOENN_VARS_START + 42)
 #define VAR_HOENN_0x2B                 (HOENN_VARS_START + 43)

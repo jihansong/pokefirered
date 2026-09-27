@@ -19,7 +19,10 @@ import mapdata_common as C  # noqa: E402
 
 # phrasings that only make sense when something actually changes hands
 PROMISE = re.compile(r'\breceived\b|\bhere you go\b|\byou can have (this|it|these)\b'
-                     r"|\bI'?ll (give you|pass this)\b|\btake this\b|\bI want you to have\b", re.I)
+                     r"|\bI'?ll (give you|pass this)\b|\btake this\b|\bI want you to have\b"
+                     # v0.11.0: phrasings the Z3 survey found the list above missed ("take it!"
+                     # only with the "!", or every "take it easy" and full BAG would count)
+                     r"|\bshare this\b|\btake it!|\busing this item\b|\btrade (you|it)\b", re.I)
 GIVE = ('giveitem', 'giveitem_msg', 'givemon', 'givemon_msg', 'giveegg', 'givecoins', 'givemoney',
         'bufferitemname', 'checkitemspace', 'giveitemfanfare', 'additem', 'setflag')
 

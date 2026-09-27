@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""hoenn_levels.py [--zone Z1] [--min 45] [--max 55] [--apply]
+"""hoenn_levels.py [--zone Z1] [--min 45] [--max 55] [--exclude-map MAP ...] [--apply]
 
 The Hoenn maps were imported with Emerald's levels, which a KANTO champion
 walks straight through. This lifts one zone's trainers into a band, keeping
@@ -9,7 +9,12 @@ spread survives.
 
 Running it twice changes nothing (levels already inside the band map to
 themselves), so it is safe to re-run after tools/hoenn_import/import_trainers.py
-has rewritten the parties.
+has rewritten the parties. The last line says how many parties would change
+(or changed): after hand-written parties, a re-run without --apply should say 0.
+
+--exclude-map leaves a map's trainers alone (repeatable), e.g. PETALBURG GYM's,
+which sit in Z3's maps but are fought in Z4 (docs/v0.11.0-plan.md 6.1). A
+trainer who also battles on a map that is not excluded still counts.
 """
 import argparse, json, os, re, sys
 
@@ -67,10 +72,15 @@ def main():
     ap.add_argument('--zone', default='Z1')
     ap.add_argument('--min', type=int, default=45)
     ap.add_argument('--max', type=int, default=55)
+    ap.add_argument('--exclude-map', action='append', default=[], metavar='MAP')
     ap.add_argument('--apply', action='store_true')
     a = ap.parse_args()
 
     maps = zone_maps(a.zone)
+    for m in a.exclude_map:
+        if m not in maps:
+            sys.exit('--exclude-map %s: not a %s map' % (m, a.zone))
+    maps = [m for m in maps if m not in a.exclude_map]
     where = trainers_of(maps)
     sym = party_symbols()
     txt, spans = party_blocks()
@@ -101,14 +111,17 @@ def main():
         new[s] = [min(a.max, max(a.min, l + d)) for l in lvls[s]]
         rows.append((use[s][0], where[use[s][0]], lvls[s], new[s], outside[s]))
 
-    print('%s: %d maps, %d trainers, %d parties, original top levels %d..%d -> %d..%d'
-          % (a.zone, len(maps), len(where), len(use), zmin, zmax, a.min, a.max))
+    print('%s: %d maps%s, %d trainers, %d parties, original top levels %d..%d -> %d..%d'
+          % (a.zone, len(maps), ' (excluded %s)' % ', '.join(a.exclude_map) if a.exclude_map else '',
+             len(where), len(use), zmin, zmax, a.min, a.max))
     for t, m, old, nw, out in rows:
         print('  %-38s %-28s %s -> %s%s'
               % (t.replace('TRAINER_HOENN_', ''), m, old, nw,
                  '  (party shared with %s)' % ', '.join(out) if out else ''))
+    changes = sum(1 for s in use if new[s] != lvls[s])
     if not a.apply:
-        print('(dry run; pass --apply to write %s)' % os.path.relpath(PARTIES, R))
+        print('%d parties would change (dry run; pass --apply to write %s)'
+              % (changes, os.path.relpath(PARTIES, R)))
         return
 
     out = []
@@ -121,7 +134,7 @@ def main():
         pos = en
     out.append(txt[pos:])
     open(PARTIES, 'w').write(''.join(out))
-    print('wrote %s' % os.path.relpath(PARTIES, R))
+    print('%d parties changed, wrote %s' % (changes, os.path.relpath(PARTIES, R)))
 
 
 if __name__ == '__main__':

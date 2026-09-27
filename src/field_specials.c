@@ -41,6 +41,7 @@
 #include "party_menu.h"
 #include "dynamic_placeholder_text_util.h"
 #include "new_menu_helpers.h"
+#include "battle_setup.h"
 #include "constants/songs.h"
 #include "constants/items.h"
 #include "constants/maps.h"
@@ -3458,4 +3459,93 @@ void Wattson_CanRematch(void)
 void Wattson_RecordRematch(void)
 {
     VarSet(VAR_HOENN_WATTSON_REMATCH_DAY, GetGameClockDay() + 1);
+}
+
+// ---------------------------------------------------------------------------
+// Hoenn stage 3 (v0.11.0): LITTLEROOT to RUSTBORO, docs/v0.11.0-plan.md.
+// ---------------------------------------------------------------------------
+
+// Special: VAR_RESULT = how many of the HOENN POKéDEX's first 200 the player
+// has caught, for PROF. BIRCH's rating (40/80/120/160/200). JIRACHI and DEOXYS,
+// the last two, don't count, as in Emerald's rating and HasAllHoennMons.
+void GetHoennDexCaughtCount(void)
+{
+    u16 i;
+    u16 count = 0;
+
+    for (i = 0; i < HOENN_DEX_COUNT - 2; i++)
+    {
+        if (GetSetPokedexFlag(HoennToNationalOrder(i + 1), FLAG_GET_CAUGHT))
+            count++;
+    }
+    gSpecialVar_Result = count;
+}
+
+static bool8 IsPlayerOnMap(u16 map)
+{
+    return gSaveBlock1Ptr->location.mapGroup == (map >> 8)
+        && gSaveBlock1Ptr->location.mapNum == (map & 0xFF);
+}
+
+static void SetHideFlag(u16 flag, bool8 hide)
+{
+    if (hide)
+        FlagSet(flag);
+    else
+        FlagClear(flag);
+}
+
+// Special, from the ON_TRANSITION scripts of the stage-3 maps: sets every
+// stage-3 hide flag from the story state. A save from before v0.11.0 reads
+// all of them as 0 (shown), and scripts can't be trusted with specialvar and
+// goto_if on transition, so C does it (plan 4, map entry scripts). It only
+// reads the story, so running it on any map, any number of times, is safe.
+// MR. BRINEY and WANDA's boyfriend stand in two places at different points of
+// the story, so their flag depends on the map being entered.
+void HoennZ3_SetupObjects(void)
+{
+    u16 birch = VarGet(VAR_HOENN_SCENE_BIRCH);
+    u16 devon = VarGet(VAR_HOENN_SCENE_DEVON);
+    u16 wally = VarGet(VAR_HOENN_SCENE_WALLY);
+
+    // BIRCH runs from the POOCHYENA on ROUTE 101 until he is rescued, then
+    // waits in his lab; his child stands on ROUTE 103 until their battle
+    SetHideFlag(FLAG_HIDE_HOENN_BIRCH_ROUTE101, birch != 0);
+    SetHideFlag(FLAG_HIDE_HOENN_BIRCH_LAB, birch == 0);
+    SetHideFlag(FLAG_HIDE_HOENN_RIVAL_ROUTE103, birch != 2);
+    if (IsPlayerOnMap(MAP_ROUTE103))   // the rival is of the other gender (Emerald's rule)
+        VarSet(VAR_OBJ_GFX_ID_0, gSaveBlock2Ptr->playerGender == MALE ? OBJ_EVENT_GFX_RIVAL_MAY_NORMAL
+                                                                      : OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL);
+
+    // PETALBURG WOODS: the AQUA GRUNT and the DEVON researcher until the grunt
+    // is beaten; TEAM ROCKET from then until they are
+    SetHideFlag(FLAG_HIDE_HOENN_WOODS_GRUNT, devon != 0);
+    SetHideFlag(FLAG_HIDE_HOENN_WOODS_RESEARCHER, devon != 0);
+    SetHideFlag(FLAG_HIDE_HOENN_ROCKET_WOODS, FlagGet(FLAG_HOENN_ROCKET_WOODS)
+                                           || !HasTrainerBeenFought(TRAINER_HOENN_GRUNT_PETALBURG_WOODS));
+
+    // The DEVON GOODS: the thief in RUSTBORO once ROXANNE is beaten, then the
+    // grunt and PEEKO in RUSTURF TUNNEL until the goods are back
+    SetHideFlag(FLAG_HIDE_HOENN_RUSTBORO_THIEF, !(devon == 1 && FlagGet(FLAG_HOENN_BADGE01_GET)));
+    SetHideFlag(FLAG_HIDE_HOENN_RUSTURF_GRUNT, devon != 2);
+    SetHideFlag(FLAG_HIDE_HOENN_RUSTURF_PEEKO, devon != 2 || FlagGet(FLAG_HOENN_PEEKO_RESCUED));
+
+    // MR. BRINEY asks for help on ROUTE 116 while PEEKO is missing, and is at
+    // his cottage and his boat once she is back
+    if (IsPlayerOnMap(MAP_ROUTE116))
+        SetHideFlag(FLAG_HIDE_HOENN_BRINEY, devon != 2 || FlagGet(FLAG_HOENN_PEEKO_RESCUED));
+    else
+        SetHideFlag(FLAG_HIDE_HOENN_BRINEY, !FlagGet(FLAG_HOENN_PEEKO_RESCUED));
+
+    // WALLY: in PETALBURG from meeting him to his catching demo, then with
+    // WANDA's family in VERDANTURF
+    SetHideFlag(FLAG_HIDE_HOENN_WALLY_PETALBURG, wally != 1);
+    SetHideFlag(FLAG_HIDE_HOENN_WALLY_VERDANTURF, wally < 2);
+
+    // WANDA's boyfriend digs in RUSTURF TUNNEL once the goods are back, until
+    // the tunnel is through; then he is with WANDA
+    if (IsPlayerOnMap(MAP_RUSTURF_TUNNEL))
+        SetHideFlag(FLAG_HIDE_HOENN_WANDA_BOYFRIEND, devon < 3 || FlagGet(FLAG_HOENN_RUSTURF_OPEN));
+    else
+        SetHideFlag(FLAG_HIDE_HOENN_WANDA_BOYFRIEND, !FlagGet(FLAG_HOENN_RUSTURF_OPEN));
 }

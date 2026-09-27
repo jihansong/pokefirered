@@ -50,7 +50,7 @@ import sys
 REPO = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 EMERALD = '/root/src/pokeemerald'
 # Zones opened so far: Z1 in v0.7.0, Z2 in v0.8.0.
-OPEN_ZONES = ('Z1', 'Z2')
+OPEN_ZONES = ('Z1', 'Z2', 'Z3')   # Z3 opened in v0.11.0: its originals are the step-7 work list
 # tools/hoenn_import/import_maps.py RENAME, the other way round
 EM_NAME = {'HoennVictoryRoad_1F': 'VictoryRoad_1F', 'HoennSafariZone_North': 'SafariZone_North'}
 

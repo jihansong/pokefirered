@@ -7,6 +7,7 @@
 #include "battle.h"
 #include "battle_interface.h"
 #include "battle_anim.h"
+#include "battle_setup.h"
 #include "battle_controllers.h"
 
 static void CB2_ReshowBattleScreenAfterMenu(void);
@@ -204,7 +205,7 @@ static bool8 LoadBattlerSpriteGfx(u8 battler)
         else if (gBattleTypeFlags & BATTLE_TYPE_SAFARI && battler == B_POSITION_PLAYER_LEFT) // Should be checking position, not battler.
             DecompressTrainerBackPalette(gSaveBlock2Ptr->playerGender, battler);
         else if (gBattleTypeFlags & BATTLE_TYPE_OLD_MAN_TUTORIAL && battler == B_POSITION_PLAYER_LEFT) // Should be checking position, not battler.
-            DecompressTrainerBackPalette(TRAINER_BACK_PIC_OLD_MAN, battler);
+            DecompressTrainerBackPalette(GetOldManTutorialBackPic(), battler);
         else if (!gBattleSpritesDataPtr->battlerData[battler].behindSubstitute)
             BattleLoadPlayerMonSpriteGfx(&gPlayerParty[gBattlerPartyIndexes[battler]], battler);
         else
@@ -250,9 +251,9 @@ static void CreateBattlerSprite(u8 battler)
         }
         else if (gBattleTypeFlags & BATTLE_TYPE_OLD_MAN_TUTORIAL && battler == B_POSITION_PLAYER_LEFT)
         {
-            SetMultiuseSpriteTemplateToTrainerBack(5, GetBattlerPosition(0));
+            SetMultiuseSpriteTemplateToTrainerBack(GetOldManTutorialBackPic(), GetBattlerPosition(0));
             gBattlerSpriteIds[battler] = CreateSprite(&gMultiuseSpriteTemplate, 0x50,
-                                                      (8 - gTrainerBackPicCoords[5].size) * 4 + 80,
+                                                      (8 - gTrainerBackPicCoords[GetOldManTutorialBackPic()].size) * 4 + 80,
                                                       GetBattlerSpriteSubpriority(0));
             gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = battler;
             gSprites[gBattlerSpriteIds[battler]].callback = SpriteCallbackDummy;

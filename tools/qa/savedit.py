@@ -34,6 +34,11 @@ Commands (names are the C constant names; numbers work too):
     hour H                     move the game clock forward to the next H:00
     dex SPECIES                mark a species seen and owned (all 4 places)
     dexclear SPECIES           mark a species neither seen nor owned (all 4)
+    hoenndex N                 exactly N HOENN POKéDEX entries caught: HOENN
+                               numbers 1..N seen and owned, the rest of the
+                               HOENN POKéDEX neither (all 4 places), e.g. for
+                               PROF. BIRCH's rating (national-only species kept)
+    gender M|F                 the player is RED (M) or LEAF (F)
     money N / coins N          money and coins (both kept XORed with the save key)
     item ITEM N                exactly N of ITEM in the bag (0 removes it)
     firstitem ITEM N           exactly N of ITEM, first in its pocket, where the
@@ -65,7 +70,7 @@ from savefile import SaveFile                                   # noqa: E402
 COMMANDS = {'info', 'flag', 'var', 'trainer', 'warp', 'strong', 'mon', 'tonext', 'held', 'friendship',
             'starterbit', 'snagbit', 'met', 'dexclear', 'otid', 'frombox', 'lead', 'party', 'hp', 'day', 'hour', 'dex',
             'money', 'coins', 'item', 'firstitem', 'fillitems', 'fillboxes', 'fastbattle',
-            'noquestlog'}
+            'noquestlog', 'hoenndex', 'gender'}
 
 
 def _map_name(g, n):
@@ -259,6 +264,27 @@ def run(argv):
             s.clear_dex(_national(_species(name)))
             dirty = True
             print('dex %s neither seen nor owned' % name)
+        elif cmd == 'hoenndex':
+            n = int(argv.pop(0))
+            order = _hoenn_order()
+            if not 0 <= n <= len(order):
+                print('hoenndex: 0..%d' % len(order), file=sys.stderr)
+                return 2
+            for i, nat in enumerate(order):
+                if i < n:
+                    s.set_dex(nat)
+                else:
+                    s.clear_dex(nat)
+            dirty = True
+            print('HOENN dex: %d caught' % n)
+        elif cmd == 'gender':
+            g = argv.pop(0).upper()
+            if g not in ('M', 'F'):
+                print('gender M or F', file=sys.stderr)
+                return 2
+            s.sb2[off('sb2.playerGender')] = const('MALE' if g == 'M' else 'FEMALE')
+            dirty = True
+            print('player %s' % ('RED (male)' if g == 'M' else 'LEAF (female)'))
         elif cmd == 'money':
             s.set_money(int(argv.pop(0)))
             dirty = True
@@ -280,6 +306,18 @@ def _species(name):
 
 
 _NAT = None
+_HOENN = None
+HOENN_DEX_COUNT = 202       # HOENN_DEX_DEOXYS, an enum in constants/pokedex.h that const() can't read
+
+
+def _hoenn_order():
+    """National dex numbers of HOENN POKéDEX 1..HOENN_DEX_COUNT (HoennToNationalOrder)."""
+    global _HOENN
+    if _HOENN is None:
+        rom = Rom()
+        n = HOENN_DEX_COUNT
+        _HOENN = struct.unpack('<%dH' % n, rom.at(rom.syms['sHoennToNationalOrder'], n * 2))
+    return _HOENN
 
 
 def _national(species):

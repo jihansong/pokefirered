@@ -49,6 +49,7 @@ FIELDS = {
     'questlogscene': ('QuestLogScene', None),
     'sb1': ('SaveBlock1', None),
     'sb2.playerName': ('SaveBlock2', 'playerName'),
+    'sb2.playerGender': ('SaveBlock2', 'playerGender'),
     'sb2.playerTrainerId': ('SaveBlock2', 'playerTrainerId'),
     'sb2.specialSaveWarpFlags': ('SaveBlock2', 'specialSaveWarpFlags'),
     'sb2.optionsButtonMode': ('SaveBlock2', 'optionsButtonMode'),

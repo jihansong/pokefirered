@@ -6,6 +6,9 @@
 void StartWildBattle(void);
 void StartRoamerBattle(void);
 void StartOldManTutorialBattle(void);
+void StartWallyTutorialBattle(void);
+bool8 IsWallyTutorialBattle(void);
+u8 GetOldManTutorialBackPic(void);
 void StartScriptedWildBattle(void);
 void StartMarowakBattle(void);
 void StartSouthernIslandBattle(void);

@@ -48,6 +48,12 @@ Steps, in order:
                                          remembers), USE; L or R then picks that
                                          opponent with the BALL target cursor
                                          (trainer doubles with both out)
+    special NAME [wait]                  run the special NAME (data/specials.inc) as a
+                                         script of its own: special, waitstate if
+                                         "wait" (specials that start a battle or a
+                                         scene and resume the script), releaseall,
+                                         end, once the overworld is idle. Tests a
+                                         special before any map script calls it
     fight N                              wait for the action menu, FIGHT, move N
                                          (1-4); in a double battle A once more
                                          for the first target
@@ -63,6 +69,8 @@ Steps, in order:
                                          with the fateful encounter bit (MEW's
                                          and DEOXYS's obedience)
     expect count SPECIES = N             same as expect mons
+    expect mon SPECIES = N               same as expect mons (the v0.11.0 plan's
+                                         spelling; "=" tells it from the next form)
     expect mon NAME[|NAME] KEY=VALUE ... some such POKéMON in party or PC matches all
                                          of: ot=NAME, otid=player|N, metloc=
                                          MAPSEC_X|N, metlvl=N, ball=ITEM_X,
@@ -321,6 +329,31 @@ def fight(e, rom, n):
 BATTLE_TYPE_DOUBLE = 1                            # include/constants/battle.h
 
 
+def run_special(e, name, wait):
+    """Start a four-command script that calls special NAME. The script lives in
+    the global script context's own data[] words, which nothing a special does
+    touches, so it survives a battle the special starts."""
+    fn = e.sym(name) | 1
+    table, end = e.sym('gSpecials'), e.sym('gSpecialsEnd')
+    ids = [i for i in range((end - table) // 4) if e.u32(table + 4 * i) == fn]
+    if not ids:
+        return 'no special %s' % name
+    for _ in range(60):                           # continuing, the map's scripts may still run
+        if e.field_idle():
+            break
+        e.run(10)
+    else:
+        return 'the overworld is not idle'
+    ctx = e.sym('sGlobalScriptContext')
+    code = bytes([0x25]) + struct.pack('<H', ids[0]) + (b'\x27' if wait else b'') + b'\x6b\x02'
+    data = ctx + 100                              # struct ScriptContext data[4]
+    e.write(data, code.ljust(16, b'\0'))
+    e.write(ctx, struct.pack('<BBBxII', 0, 1, 0, 0, data))   # stackDepth, mode BYTECODE, nativePtr, scriptPtr
+    e.write(ctx + 92, struct.pack('<II', e.sym('gScriptCmdTable'), e.sym('gScriptCmdTableEnd')))
+    e.write(e.sym('sGlobalScriptContextStatus'), b'\0')     # CONTEXT_RUNNING
+    return None
+
+
 def species_id(name):
     return const(name if name.startswith('SPECIES_') or name.isdigit() else 'SPECIES_' + name)
 
@@ -521,6 +554,11 @@ def run_case(case, rom, shots, presses_log=None):
                     err = throw_ball(e, rom, p[1], p[2].upper() if len(p) > 2 else None)
                     if err:
                         fails.append('%s: %s' % (step, err))
+                elif head == 'SPECIAL':
+                    err = run_special(e, p[1], len(p) > 2 and p[2].lower() == 'wait')
+                    if err:
+                        fails.append('%s: %s' % (step, err))
+                    e.run(2)
                 elif head == 'FIGHT':
                     err = fight(e, rom, int(p[1]))
                     if err:
@@ -558,6 +596,11 @@ def run_case(case, rom, shots, presses_log=None):
                         got, want = live_blocks(e).money(), int(p[3], 0)
                         if got != want:
                             fails.append('%s: money is %d' % (step, got))
+                    elif what == 'mon' and p[3:4] == ['=']:
+                        sp = species_id(p[2])
+                        got, want = sum(1 for m in live_mons(e) if m.species() == sp and not m.is_egg()), int(p[4], 0)
+                        if got != want:
+                            fails.append('%s: mon %s is %d' % (step, p[2], got))
                     elif what == 'mon':
                         sp = [species_id(n) for n in p[2].split('|')]
                         keys = [kv.split('=', 1) for kv in p[3:]]

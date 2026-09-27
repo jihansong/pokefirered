@@ -3990,6 +3990,7 @@ extern const u8 gTrainerBackPic_Red[];
 extern const u8 gTrainerBackPic_Leaf[];
 extern const u8 gTrainerBackPic_Pokedude[];
 extern const u8 gTrainerBackPic_OldMan[];
+extern const u8 gTrainerBackPic_Wally[];
 extern const u8 gTrainerBackPic_RSBrendan[];
 extern const u8 gTrainerBackPic_RSMay[];
 

@@ -12,7 +12,7 @@ through the .sym) and fails when:
     FLAG_SNAG_* constants, or another flag constant lands in the reserved
     Hoenn flags 0x780..0x79F;
   - the number of rival or JESSIE & JAMES battles differs from the plan's
-    (19 + Tournament BLUE, 14): a new battle needs its species checked here;
+    (19 + Tournament BLUE, 15): a new battle needs its species checked here;
   - some trainer's snagged POKéMON would get an empty original trainer name
     or one longer than 7 characters (the rules of GetSnagOtName, plan 3.2).
 -v also lists the names the rules shorten.
@@ -33,7 +33,7 @@ from textwidth import load_charmap                           # noqa: E402
 TRAINER_SIZE = 0x28          # struct Trainer (include/battle.h)
 FAMILY_SIZE = 4              # struct SnagFamily in src/snag.c
 PLAN_RIVALS = 20             # 19 Kanto rival battles + Tournament BLUE (plan 5.3)
-PLAN_ROCKETS = 14            # JESSIE & JAMES #1..#13 + the tournament
+PLAN_ROCKETS = 15            # JESSIE & JAMES #1..#13 + the tournament + PETALBURG WOODS (v0.11.0)
 OT_NAME_LENGTH = 7           # PLAYER_NAME_LENGTH
 
 

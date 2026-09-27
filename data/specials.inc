@@ -529,4 +529,7 @@ gSpecials::
 	def_special GiveRocketOfficerRewards
 	def_special IsMonOTNotPlayersUnlessSnagged
 	def_special RocketTrioWillBeDouble
+	def_special GetHoennDexCaughtCount
+	def_special StartWallyTutorialBattle
+	def_special HoennZ3_SetupObjects
 gSpecialsEnd::

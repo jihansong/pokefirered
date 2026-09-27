@@ -39,8 +39,32 @@ NEW_PIC = ('HOENN_LEADER_JUAN', 'graphics/trainers/front_pics/leader_juan.png',
 NEW_CLASS = ('HOENN_WINSTRATE', 'WINSTRATE', 15)   # name and money multiplier
 
 
+# Written by hand after the import (docs/v0.11.0-plan.md 5.1-5.2): a re-import
+# keeps what src/data/ has for these instead of Emerald's party or entry. Run
+# tools/hoenn_levels.py afterwards as usual; it leaves levels inside a band alone.
+HAND_PARTIES = ('sHoennParty_Roxanne1', 'sHoennParty_MayRoute103Torchic',
+                'sHoennParty_BrendanRoute103Torchic', 'sHoennParty_GruntPetalburgWoods',
+                'sHoennParty_GruntRusturfTunnel')
+HAND_TRAINERS = ('TRAINER_HOENN_MAY_ROUTE_103_TORCHIC', 'TRAINER_HOENN_BRENDAN_ROUTE_103_TORCHIC')
+
+
 def read(p):
     return open(p).read()
+
+
+def hand_written(path):
+    """The HAND_PARTIES blocks (with their comment lines) and HAND_TRAINERS
+    entries as they stand in the current generated file."""
+    if not os.path.exists(path):
+        return {}
+    s, out = read(path), {}
+    for m in re.finditer(r'((?://[^\n]*\n)*)static const struct \w+ (\w+)\[\] = \{.*?\n\};\n', s, re.S):
+        if m.group(2) in HAND_PARTIES:
+            out[m.group(2)] = m.group(0)
+    for m in re.finditer(r'    \[(TRAINER_HOENN_\w+)\] =\n    \{.*?\n    \},\n', s, re.S):
+        if m.group(1) in HAND_TRAINERS:
+            out[m.group(1)] = m.group(0)
+    return out
 
 
 def put_block(path, body, before=None):
@@ -157,6 +181,8 @@ def main():
             return rs
         return None
 
+    keep = hand_written(f'{FR}/src/data/trainer_parties_hoenn.h')
+    keep.update(hand_written(f'{FR}/src/data/trainers_hoenn.h'))
     wanted = sorted(t for t in trainers_used() if t in entries)
     out_parties, out_entries, consts, skipped = [], [], [], []
     next_id = 0
@@ -181,7 +207,10 @@ def main():
 
         struct_name, party_body = parties[party.group(2)]
         new_party = 'sHoennParty_' + party.group(2)[len('sParty_'):]
-        if f'static const struct {struct_name} {new_party}[]' not in ''.join(out_parties):
+        if new_party in keep:
+            if keep[new_party] not in out_parties:
+                out_parties.append(keep[new_party])
+        elif f'static const struct {struct_name} {new_party}[]' not in ''.join(out_parties):
             out_parties.append(f'static const struct {struct_name} {new_party}[] = {{{party_body}\n}};\n')
 
         new_t = 'TRAINER_HOENN_' + t[len('TRAINER_'):]
@@ -193,7 +222,7 @@ def main():
         if mus:
             new_body = new_body.replace(mus.group(0), f'.encounterMusic_gender = {music}')
         new_body = new_body.replace(f'{party.group(1)}({party.group(2)})', f'{party.group(1)}({new_party})')
-        out_entries.append(f'    [{new_t}] =\n    {{{new_body}\n    }},\n')
+        out_entries.append(keep.get(new_t) or f'    [{new_t}] =\n    {{{new_body}\n    }},\n')
 
     # gSaveBlock2Ptr->hoennTrainerFlags is 0x80 bytes, one bit per trainer
     assert next_id <= 0x80 * 8, f'{next_id} Hoenn trainers do not fit in the flag space'

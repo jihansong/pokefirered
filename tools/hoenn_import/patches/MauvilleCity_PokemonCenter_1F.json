@@ -1,0 +1,9 @@
+{
+  "object_overrides": [
+    {
+      "x": 2,
+      "y": 3,
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1"
+    }
+  ]
+}

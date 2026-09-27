@@ -175,6 +175,7 @@
 #define TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY      3
 #define TRAINER_BACK_PIC_POKEDUDE               4
 #define TRAINER_BACK_PIC_OLD_MAN                5
+#define TRAINER_BACK_PIC_WALLY                  6  // v0.11.0, Emerald's (WALLY's catching demo)
 
 // Special Trainer Ids.
 #define TRAINER_UNION_ROOM          0xC00

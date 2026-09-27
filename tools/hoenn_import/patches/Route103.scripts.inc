@@ -2,7 +2,8 @@
 @ to the player (one object; HoennZ3_SetupObjects picks the picture), shown
 @ while VAR_HOENN_SCENE_BIRCH = 2. After the battle they go back to the LAB
 @ (user decision 2026-09-27). Losing whites out with the var still 2, so the
-@ battle is there again.
+@ battle is there again. Emerald's encounter themes play from the first line;
+@ the battle has MUS_VS_RIVAL (GetBattleBGM).
 .equ LOCALID_ROUTE103_RIVAL, 14
 
 Route103_OnTransition::
@@ -16,9 +17,10 @@ Route103_EventScript_Rival::
 	copyvar VAR_0x8008, VAR_RESULT
 	checkplayergender
 	goto_if_eq VAR_RESULT, FEMALE, Route103_EventScript_Brendan
+	playbgm MUS_ENCOUNTER_MAY, FALSE
 	msgbox Route103_Text_MayIntro
 	call_if_ne VAR_0x8008, PARTY_SIZE, Route103_EventScript_MayPikachu
-	trainerbattle_single TRAINER_HOENN_MAY_ROUTE_103_TORCHIC, Route103_Text_MayBattleIntro, Route103_Text_MayDefeat, Route103_EventScript_MayDefeated
+	trainerbattle_single TRAINER_HOENN_MAY_ROUTE_103_TORCHIC, Route103_Text_MayBattleIntro, Route103_Text_MayDefeat, Route103_EventScript_MayDefeated, NO_MUSIC
 	goto Route103_EventScript_MayDefeated
 	end
 
@@ -32,9 +34,10 @@ Route103_EventScript_MayDefeated::
 	end
 
 Route103_EventScript_Brendan::
+	playbgm MUS_ENCOUNTER_BRENDAN, FALSE
 	msgbox Route103_Text_BrendanIntro
 	call_if_ne VAR_0x8008, PARTY_SIZE, Route103_EventScript_BrendanPikachu
-	trainerbattle_single TRAINER_HOENN_BRENDAN_ROUTE_103_TORCHIC, Route103_Text_BrendanBattleIntro, Route103_Text_BrendanDefeat, Route103_EventScript_BrendanDefeated
+	trainerbattle_single TRAINER_HOENN_BRENDAN_ROUTE_103_TORCHIC, Route103_Text_BrendanBattleIntro, Route103_Text_BrendanDefeat, Route103_EventScript_BrendanDefeated, NO_MUSIC
 	goto Route103_EventScript_BrendanDefeated
 	end
 
@@ -57,5 +60,7 @@ Route103_EventScript_RivalGoesToLab::
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_ROUTE103_RIVAL
 	fadescreen FADE_FROM_BLACK
+	savebgm MUS_DUMMY
+	fadedefaultbgm
 	release
 	end

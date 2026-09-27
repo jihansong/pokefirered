@@ -2,7 +2,7 @@
 @ Both ends of the route start it: the south end as in Emerald, the north end
 @ for players coming down from OLDALE. BIRCH and the POOCHYENA wait on the
 @ ledge at (9,13) and (10,13) and are moved off it first, as Emerald's script
-@ does.
+@ does. MUS_HELP plays from the shout until BIRCH has gone.
 .equ LOCALID_ROUTE101_BIRCH, 2
 .equ LOCALID_ROUTE101_POOCHYENA, 3
 
@@ -12,6 +12,7 @@ Route101_OnTransition::
 
 Route101_EventScript_BirchRescueSouth::
 	lockall
+	playbgm MUS_HELP, TRUE
 	msgbox Route101_Text_BirchHelp
 	closemessage
 	setvar VAR_0x8009, 0
@@ -34,6 +35,7 @@ Route101_EventScript_BirchRescueSouth::
 @ open ground to the west, (4,2)-(7,4)
 Route101_EventScript_BirchRescueNorth::
 	lockall
+	playbgm MUS_HELP, TRUE
 	msgbox Route101_Text_BirchHelp
 	closemessage
 	setvar VAR_0x8009, 1
@@ -85,6 +87,8 @@ Route101_EventScript_BirchRescue::
 	call_if_eq VAR_0x8009, 0, Route101_EventScript_BirchLeavesSouth
 	call_if_eq VAR_0x8009, 1, Route101_EventScript_BirchLeavesNorth
 	removeobject LOCALID_ROUTE101_BIRCH
+	savebgm MUS_DUMMY
+	fadedefaultbgm
 	releaseall
 	end
 

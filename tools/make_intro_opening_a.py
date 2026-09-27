@@ -349,8 +349,16 @@ def c1_red_feet(t):
     return max(RED_STOP, RED_START - 2 * max(0, t - RED_GO))
 
 
+CAM_FEET = 56                                  # G-3: RED's feet at view y 56 while he runs
+CAM_END, CAM_PAN = 24, 12                      # then up to frame SURGE and the '!' (t104-115)
+
+
 def c1_cam(t):
-    return min(max(c1_red_feet(t) - 88, 24), RED_START - 88)
+    arrive = RED_GO + (RED_START - RED_STOP) // 2
+    if t < arrive:
+        return c1_red_feet(t) - CAM_FEET
+    f = s_ease((t - arrive) / float(CAM_PAN))
+    return round(RED_STOP - CAM_FEET + (CAM_END - (RED_STOP - CAM_FEET)) * f)
 
 
 def cut1(c):
@@ -478,6 +486,49 @@ CHEEKS_FLIPPED = [(64 - 1 - 33, 26), (64 - 1 - 17, 27)]    # red pixels of pikac
 ORANGE = (31, 18, 0)                                        # graphics/intro/scene_2/bg.gbapal
 
 
+def affine_mask(sh, frame, kx, ky, a):
+    """Opaque view pixels of an affine track's frame, sampled as Gba.obj_layer does."""
+    fr, out = sh.frames[frame], set()
+    cx, cy = kx + sh.w // 2, ky + sh.h // 2
+    bw, bh, d = 2 * sh.w, 2 * sh.h, abs(a)
+    for by in range(bh):
+        ty = ((d * (by - bh // 2)) >> 8) + sh.h // 2
+        if not 0 <= ty < sh.h:
+            continue
+        for bx in range(bw):
+            tx = ((a * (bx - bw // 2)) >> 8) + sh.w // 2
+            if 0 <= tx < sh.w and fr[ty][tx]:
+                out.add((cx - sh.w + bx, cy - sh.h + by))
+    return out
+
+
+def cheek_sparks(px, py):
+    """G-2: each 2x cheek spark starts at the outer edge of its cheek and lies wholly
+    outside PIKACHU (no pixel on the face or body, 1 px clear), for all three frames.
+    Returns [(key x, key y, affine a)] for the left and the right cheek."""
+    key = (px, py)
+    if key in _SPARK_CACHE:
+        return _SPARK_CACHE[key]
+    pk = affine_mask(SHEETS['pika_front'], 0, px + 32, py + 32, -0x80)
+    near = {(x + dx, y + dy) for x, y in pk for dx in (-1, 0, 1) for dy in (-1, 0, 1)}
+    out = []
+    sp = SHEETS['spark2_eo']
+    for (cx, cy), side in zip(CHEEKS_FLIPPED, (-1, 1)):
+        sx, sy = px + cx * 2 + 1, py + cy * 2 + 1       # the cheek on screen
+        a = -0x80 if side < 0 else 0x80                 # the arc opens away from the face
+        for step in range(0, 80):
+            kx = sx + side * step - 8 + (-8 if side < 0 else 8)
+            ky = sy - 8
+            if all(not (affine_mask(sp, f, kx, ky, a) & near) for f in range(3)):
+                break
+        out.append((kx, ky, a))
+    _SPARK_CACHE[key] = out
+    return out
+
+
+_SPARK_CACHE = {}
+
+
 def cut3(c):
     c.layers[0] = solid_layer(ORANGE)
     for n, s, a in (('sp0', 'spark2_eo', True), ('sp1', 'spark2_eo', True),
@@ -491,10 +542,9 @@ def cut3(c):
             g = s_ease((u - 19) / 12.0)
             c.key(u, 'raichu', 240 - 124 * g + 32, -14 + 32, 1 if u >= 30 else 0, 0, 0x80)
         if u >= 28:
-            for k, (cx, cy) in enumerate(CHEEKS_FLIPPED):
+            for k, (kx, ky, a) in enumerate(cheek_sparks(px, py)):
                 if (u + k * 2) % 6 < 4:
-                    bx, by = px + cx * 2 - 16 + (8 if k else -8), py + cy * 2 - 16
-                    c.key(u, 'sp%d' % k, bx + 8, by + 8, (u // 3 + k) % 3, 0, 0x80)
+                    c.key(u, 'sp%d' % k, kx, ky, (u // 3 + k) % 3, 0, a)
         c.set_scroll(u, 0, 0)
 
 
@@ -771,6 +821,8 @@ def cut_s6(c):
                 c.key(i, 's%d' % k, body[0] + 24 + 24 * math.cos(a), body[1] + 10 + 10 * math.sin(a), (u // 3 + k) % 3)
         if 47 <= u < 57:
             c.ev(i, EV_OBJ_BLEND, 'raichu', 16 if (u - 47) % 4 < 2 else 0, WHITE)
+        if u == 56:                                 # G-1: the faint in RAICHU's own colours
+            c.ev(i, EV_OBJ_BLEND, 'raichu', 0, WHITE)
         if u >= 70:
             c.ev(i, EV_BLEND, T_ALL, min(16, (u - 69) * 3), WHITE)
 
@@ -845,6 +897,11 @@ def check_contact():
             out.append('S6 u%d: gap %d px' % (u, dist))
     rel = [(thunder_phase(t)[1] - thunder_phase(t)[0]) % 256 for t in range(BARS[6], BARS[8])]
     out.append('R2-1 cloud layers: lower minus upper phase %d..%d px (period 256; 0 would line up)' % (min(rel), max(rel)))
+    px, py = -24, -22
+    pk = affine_mask(SHEETS['pika_front'], 0, px + 32, py + 32, -0x80)
+    for k, (kx, ky, a) in enumerate(cheek_sparks(px, py)):
+        hits = sum(len(affine_mask(SHEETS['spark2_eo'], f, kx, ky, a) & pk) for f in range(3))
+        out.append('G-2 spark %d at (%d,%d): %d pixels on PIKACHU' % (k, kx, ky, hits))
     red, pk = s7_layout()
     rb, pf = content_box(SHEETS['red_back'], 1), content_box(SHEETS['pika_front'])
     out.append('S7 gap %d px, RED y %d..%d in the view' % (pk[0] + pf[0] - (red[0] + rb[2]) - 1, red[1] + rb[1], red[1] + rb[3]))

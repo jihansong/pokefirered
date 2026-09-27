@@ -21,14 +21,15 @@ sys.path.insert(0, HERE)
 from emu import Emu  # noqa: E402
 
 START = 706
+TITLE_HOLD = 90     # G-4: the GIF ends after the finished title screen has shown 1.5 s
 W, H = 240, 160
 SHOTS = [  # shot, key code frames, official FR/LG frames of the beat it replaces
-    ('S1 VERMILION GYM', (10, 60, 85, 122), (720, 746)),
+    ('S1 VERMILION GYM', (10, 60, 85, 104, 122), (720, 746)),
     ('S2 the battle begins', (150, 190, 200, 205, 211), (790, 820)),
-    ('S3 close-ups, face-off', (226, 244, 255, 275), (860, 920, 950)),
+    ('S3 close-ups, face-off', (226, 240, 244, 248, 255, 275), (860, 920, 950)),
     ('S4 high-speed exchanges', (300, 309, 335, 344, 347, 384, 422), (1000, 1120, 1160)),
     ('S5 THUNDERBOLT', (455, 470, 481, 510), (1236, 1256)),
-    ('S6 AGILITY', (519, 523, 528, 538, 543, 547, 560, 566, 585), (1280, 1300)),
+    ('S6 AGILITY', (519, 523, 528, 538, 543, 547, 560, 566, 576, 585, 590), (1280, 1300)),
     ('S7 the win, the song rings out', (600, 610, 620, 650, 684, 740), (1340, 1376, 1390, 1430)),
 ]
 
@@ -42,17 +43,20 @@ def main():
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     frames = {}
-    title = None
+    title = shown = None
     with Emu(a.rom) as e:
         names = {v & ~1: k for k, v in e.syms.items()}
         f = 0
-        while f < 1600:
+        while f < 2000:
             e.run(1)
             f += 1
             frames[f] = Image.frombytes('RGB', (W, H), e.screen())
             if title is None and names.get(e.callback2() & ~1) == 'CB2_InitTitleScreen':
                 title = f
-            if title and f >= title + 40:
+            # the title screen draws in over about 4 s; count from when it is complete
+            if title and shown is None and sum(1 for p in frames[f].getdata() if p != (0, 0, 0)) > 20000:
+                shown = f
+            if shown and f >= shown + TITLE_HOLD:
                 break
     rows = []
     for shot, keys, orig in SHOTS:
@@ -82,13 +86,14 @@ def main():
                 d.text((x + 2, y + 14), label, fill=(160, 200, 255) if c < len(off) else (255, 255, 255))
                 sheet.paste(im.resize((W * scale, H * scale), Image.NEAREST), (x, y + 28))
         sheet.save(os.path.join(a.out, fn))
-    # GIF: power-on to the title screen (and 40 frames of it)
+    # GIF: power-on to the title screen, until it has been complete for 1.5 s
     last = max(frames)
     seq = [frames[f].convert('P', palette=Image.ADAPTIVE, colors=255) for f in range(1, last + 1, a.gif_step)]
     dur = int(round(1000.0 * a.gif_step / 59.7275))
     seq[0].save(os.path.join(a.out, 'opening.gif'), save_all=True, append_images=seq[1:], duration=dur, loop=0, optimize=True)
-    print('title screen F%s; %d key frames, compare.png, opening.gif (%d frames, %d ms each) in %s' % (
-        title, sum(len(k) for _, k, _ in SHOTS), len(seq), dur, a.out))
+    print('title screen F%s (complete F%s, GIF to F%d);' % (title, shown, last))
+    print('%d key frames, compare.png, opening.gif (%d frames, %d ms each) in %s' % (
+        sum(len(k) for _, k, _ in SHOTS), len(seq), dur, a.out))
 
 
 if __name__ == '__main__':

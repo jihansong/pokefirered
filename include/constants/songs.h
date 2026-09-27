@@ -403,6 +403,14 @@
 #define MUS_TRICK_HOUSE           393 // Hoenn
 #define MUS_UNDERWATER            394 // Hoenn
 #define MUS_VERDANTURF            395 // Hoenn
+#define MUS_HELP                  396 // Hoenn
+#define MUS_ENCOUNTER_MAY         397 // Hoenn
+#define MUS_ENCOUNTER_BRENDAN     398 // Hoenn
+#define MUS_VS_RIVAL              399 // Hoenn
+#define MUS_ENCOUNTER_AQUA        400 // Hoenn
+#define MUS_VS_AQUA_MAGMA         401 // Hoenn
+#define MUS_VICTORY_AQUA_MAGMA    402 // Hoenn
+#define MUS_RS_FOLLOW_ME          403 // Hoenn
 // END HOENN MUSIC
 #define MUS_NONE                    0xFFFF
 

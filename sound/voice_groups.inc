@@ -8134,4 +8134,12 @@ voicegroup190::
 	.include "sound/voicegroups/trick_house.inc"
 	.include "sound/voicegroups/underwater.inc"
 	.include "sound/voicegroups/verdanturf.inc"
+	.include "sound/voicegroups/help.inc"
+	.include "sound/voicegroups/encounter_may.inc"
+	.include "sound/voicegroups/encounter_brendan.inc"
+	.include "sound/voicegroups/vs_rival.inc"
+	.include "sound/voicegroups/encounter_aqua.inc"
+	.include "sound/voicegroups/vs_aqua_magma.inc"
+	.include "sound/voicegroups/victory_aqua_magma.inc"
+	.include "sound/voicegroups/follow_me.inc"
 @ END HOENN MUSIC

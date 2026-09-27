@@ -8,25 +8,30 @@
 #include "constants/species.h"
 
 /*
-    The Thunder Yellow opening, plan B (docs/anim/opening-storyboard-B.md): five cuts
-    made only of official graphics already in this repository (field maps and sprites,
-    trainer and POKeMON pictures, the FR/LG intro's forest, battle backgrounds, battle
-    animation and weather sprites). The pictures are FR/LG's own; this file only plays
-    them: it places, scrolls and times them and blends palettes.
+    The Thunder Yellow opening, direction (a): PIKACHU vs RAICHU in VERMILION GYM
+    (docs/anim/opening-storyboard-A.md, approved 2026-09-27). It follows the structure
+    of FR/LG's Gengar/Nidorino fight and is made only of official in-game graphics
+    (FR/LG, and Emerald's two-frame RAICHU and PIKACHU's second frame): the gym's map,
+    field, trainer and POKeMON pictures, the battle's stage, battle animation
+    backgrounds and sprites. This file only plays them: it places, scrolls, flips and
+    scales (the OBJ affine unit) them, blends palettes and makes afterimages
+    semi-transparent, and times all of it.
 
-    It starts on the frame FR/LG's Gengar/Nidorino fight did (F706 after power on,
-    frame 0 below). MUS_INTRO_FIGHT starts on frame 20 as before; its bars start on
-    frames 59, 136, 212, 289, 365, 442, 519 and 595. Every cut is on a bar, and on the
-    first beat of bar 8 (frame 595, F1301) the opening hands over to the title screen,
-    whose music takes over from there.
+    It starts on the frame FR/LG's fight did (F706 after power on, frame 0 below).
+    MUS_INTRO_FIGHT starts on frame 20 as before; its bars start on frames 59, 136,
+    212, 289, 365, 442, 519, 595 and 672. Every cut is on a bar or a beat. As in FR/LG
+    the song rings out to its end and the opening hands over to the title screen on
+    frame 751 (F1457, the original's frame).
 
-      #  frames    F          bars  cut
-      1    0-135   706- 841   0-1   Pallet Town at dawn, setting off
-      2  136-211   842- 917   2     the POKe BALL PIKACHU hates
-      3  212-364   918-1070   3-4   rain and SPEAROW
-      4  365-518  1071-1224   5-6   THUNDERBOLT
-      5  519-594  1225-1300   7     the clear sky and HO-OH, fade to black
-         595      1301              to the title screen
+      frames    F          bars  shot
+        0-135    706- 841  0-1   S1  VERMILION GYM: RED runs in, the beams go off, "!"
+      136-211    842- 917  2     S2  the battle begins: LT. SURGE sends RAICHU, PIKACHU runs in
+      212-288    918- 994  3     S3  close-ups on FR/LG's orange, the face-off
+      289-441    995-1147  4-5   S4  high-speed exchanges (Quick Attack)
+      442-518   1148-1224  6     S5  THUNDERBOLT clash
+      519-594   1225-1300  7     S6  AGILITY: THUNDER hits only afterimages; the last hit
+      595-750   1301-1456  8-9   S7  the win on FR/LG's white, then black as the song ends
+         751    1457             to the title screen
 
     (F is the frame the code sets a picture up; a screen capture shows it one frame
     later, storyboard 3.7.)
@@ -60,15 +65,17 @@
 
 struct OpeningKey
 {
-    s16 x, y;       // corner of the sprite on screen
+    s16 x, y;       // corner of the sprite on screen (unscaled, for affine tracks too)
     u8 frame;
     u8 flags;
+    s16 affine;     // affine tracks: the matrix's a (8.8; 0x80 = 2x, negative = mirrored)
 };
 
 #define KEY_HIDE  (1 << 0)
 #define KEY_FRONT (1 << 1)  // drawn with the track's front subpriority
 #define KEY_HFLIP (1 << 2)
 #define KEY_VFLIP (1 << 3)
+#define KEY_BLEND (1 << 4)  // semi-transparent (an afterimage)
 
 struct OpeningScroll
 {
@@ -88,7 +95,7 @@ struct OpeningEvent
 
 enum {
     EVENT_BLEND,        // BlendPalettes(target, coeff, color): coeff 0 undoes it
-    EVENT_CRY,          // PIKACHU's cry
+    EVENT_CRY,          // a cry: coeff 0 PIKACHU, 1 RAICHU
     EVENT_OBJ_BLEND,    // BlendPalette on one of the cut's sprite palettes (target: its
                         // index in objPalTags)
 };
@@ -100,6 +107,7 @@ enum {
 };
 
 // One sprite of a cut: its frames in ROM, its size and draw order (lower in front).
+// An affine track (oam in double-size affine mode) gets an OAM matrix of its own.
 struct OpeningTrack
 {
     const u32 *gfx;
@@ -108,6 +116,16 @@ struct OpeningTrack
     u8 width, height;
     u8 subpriority;
     u8 frontSubpriority;    // with KEY_FRONT
+};
+
+// A change of a map at frame t (the gym's beams going off, their tile animation):
+// w x h entries written into layer `layer` of the cut's slot at tile (x, y).
+struct OpeningPatch
+{
+    u16 t;
+    u8 layer;
+    u8 x, y, w, h;
+    const u16 *entries;
 };
 
 struct OpeningTableScene
@@ -126,13 +144,17 @@ struct OpeningTableScene
     const u16 *const *objPals;
     const u16 *objPalTags;
     u8 objPalCount;
+    u16 bldAlpha;                           // BLDALPHA for the afterimages, 0 if none
+    u8 splitRow;                            // BG2 hidden above this screen row (window 0), 0: off
+    const struct OpeningPatch *patches;     // in time order, ended by t = 0xFFFF; or NULL
 };
 
 #define MUSIC_START   20
 #define PRELOAD_LEAD  4     // frames before a cut the next cut's graphics are loaded
 
-#define NUM_SCENES    5
 #define MAX_TRACKS    32
+#define MAX_PATCHES   8     // map patches waiting for one VBlank
+#define OBJ_TILES_PER_SLOT 511  // OBJ VRAM tiles 1-511 for slot 0, 512-1022 for slot 1
 
 #define BG_BACK       3
 #define BG_FRONT      2
@@ -170,14 +192,29 @@ static const struct OamData sOam_16x16 = {
     .priority = 1,
 };
 
+static const struct OamData sOam_64x64_Affine = {
+    .affineMode = ST_OAM_AFFINE_DOUBLE,
+    .shape = SPRITE_SHAPE(64x64),
+    .size = SPRITE_SIZE(64x64),
+    .priority = 1,
+};
+
+static const struct OamData sOam_16x16_Affine = {
+    .affineMode = ST_OAM_AFFINE_DOUBLE,
+    .shape = SPRITE_SHAPE(16x16),
+    .size = SPRITE_SIZE(16x16),
+    .priority = 1,
+};
+
 static const struct OamData sOam_8x8 = {
     .shape = SPRITE_SHAPE(8x8),
     .size = SPRITE_SIZE(8x8),
     .priority = 1,
 };
 
-// The cuts: graphics, tracks, keys, scroll and events (tools/make_intro_opening_b.py)
-#include "data/intro_opening_b.h"
+// The cuts: graphics, tracks, keys, scroll, events and map patches
+// (tools/make_intro_opening_a.py)
+#include "data/intro_opening_a.h"
 
 static const u32 sAnchorTile[TILE_SIZE_4BPP / 4] = {0};
 
@@ -204,6 +241,11 @@ struct Opening
     u8 pendingShow;     // which of BG3, BG2, BG1 (bits 0-2) show from that slot
     s32 lastEventT;     // last cut frame whose events were run
     struct OpeningScroll scroll; // written to the layers at the next VBlank
+    bool8 pendingRegs;  // the cut's blend and window registers, with the slot switch
+    u16 pendingBldAlpha;
+    u8 pendingSplitRow;
+    u8 patchCount;      // map patches for the next VBlank
+    const struct OpeningPatch *patches[MAX_PATCHES];
     struct OpeningTrackSet sets[2];     // by slot: the cut on screen, the next one
 };
 
@@ -356,6 +398,38 @@ static void VBlankCB_Opening(void)
         }
         o->pendingSlot = NO_SLOT;
     }
+    if (o->pendingRegs)
+    {
+        // Afterimages: semi-transparent sprites blend with the layers under them.
+        SetGpuReg(REG_OFFSET_BLDCNT, o->pendingBldAlpha ? (BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3 | BLDCNT_TGT2_BD) : 0);
+        SetGpuReg(REG_OFFSET_BLDALPHA, o->pendingBldAlpha);
+        // Window 0 (rows 32 to splitRow, over the letterbox window 1) hides BG2 above
+        // splitRow: the two cloud layers of THUNDER then meet on an exact pixel row.
+        if (o->pendingSplitRow)
+        {
+            SetGpuReg(REG_OFFSET_WIN0H, DISPLAY_WIDTH);
+            SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(32, o->pendingSplitRow));
+            SetGpuReg(REG_OFFSET_WININ, WININ_WIN1_ALL | WININ_WIN0_BG0 | WININ_WIN0_BG1 | WININ_WIN0_BG3 | WININ_WIN0_OBJ | WININ_WIN0_CLR);
+            SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
+        }
+        else
+        {
+            ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
+            SetGpuReg(REG_OFFSET_WININ, WININ_WIN1_ALL);
+        }
+        o->pendingRegs = FALSE;
+    }
+    for (i = 0; i < o->patchCount; i++)
+    {
+        const struct OpeningPatch *p = o->patches[i];
+        u16 *map = (u16 *)BG_SCREEN_ADDR(SlotMap(o->scene & 1, p->layer));
+        u8 x, y;
+
+        for (y = 0; y < p->h; y++)
+            for (x = 0; x < p->w; x++)
+                map[((p->x + x) / 32) * 1024 + (p->y + y) * 32 + (p->x + x) % 32] = p->entries[y * p->w + x];
+    }
+    o->patchCount = 0;
     SetGpuReg(REG_OFFSET_BG3HOFS, o->scroll.backX);
     SetGpuReg(REG_OFFSET_BG3VOFS, o->scroll.backY);
     SetGpuReg(REG_OFFSET_BG2HOFS, o->scroll.frontX);
@@ -377,7 +451,7 @@ static u16 TrackFrameSize(const struct OpeningTrack *track)
 static void CreateTracks(u8 set, const struct OpeningTrack *tracks, u8 count)
 {
     struct OpeningTrackSet *ts = &sOpening->sets[set];
-    u16 tiles = 0;
+    u16 tiles = 0, n;
     u8 i;
 
     DestroyTracks(set);
@@ -386,9 +460,14 @@ static void CreateTracks(u8 set, const struct OpeningTrack *tracks, u8 count)
         ts->tileOffset[i] = tiles;
         tiles += TrackFrameSize(&tracks[i]) / TILE_SIZE_4BPP;
     }
-    ts->tileStart = AllocSpriteTiles(tiles);
-    if (ts->tileStart < 0)
+    // Each slot owns half of OBJ VRAM (tile 0 is the anchor): the next cut's tiles
+    // are taken while the current cut's are in use, and a first-fit allocation would
+    // fragment the space over thirteen cuts. The tool keeps every cut within its half.
+    if (tiles > OBJ_TILES_PER_SLOT)
         return;
+    ts->tileStart = set ? OBJ_TILES_PER_SLOT + 1 : 1;
+    for (n = 0; n < tiles; n++)
+        gSpriteTileAllocBitmap[(ts->tileStart + n) >> 3] |= 1 << ((ts->tileStart + n) & 7);
     ts->tileCount = tiles;
     for (i = 0; i < count && i < MAX_TRACKS; i++)
     {
@@ -407,6 +486,9 @@ static void CreateTracks(u8 set, const struct OpeningTrack *tracks, u8 count)
         {
             gSprites[spriteId].invisible = TRUE;
             gSprites[spriteId].oam.tileNum = ts->tileStart + ts->tileOffset[i];
+            // affine tracks keep the matrix CreateSprite gave them and set it themselves
+            gSprites[spriteId].affineAnimBeginning = FALSE;
+            gSprites[spriteId].affineAnimPaused = TRUE;
         }
         ts->tracks[i] = &tracks[i];
         ts->spriteIds[i] = spriteId;
@@ -437,7 +519,13 @@ static void DestroyTracks(u8 set)
     for (i = 0; i < ts->count; i++)
     {
         if (ts->spriteIds[i] != MAX_SPRITES)
-            DestroySprite(&gSprites[ts->spriteIds[i]]);
+        {
+            struct Sprite *sprite = &gSprites[ts->spriteIds[i]];
+
+            if (sprite->oam.affineMode & ST_OAM_AFFINE_ON_MASK)
+                FreeOamMatrix(sprite->oam.matrixNum);
+            DestroySprite(sprite);
+        }
     }
     for (n = 0; n < ts->tileCount; n++)
         gSpriteTileAllocBitmap[(ts->tileStart + n) >> 3] &= ~(1 << ((ts->tileStart + n) & 7));
@@ -452,7 +540,7 @@ static struct OpeningTrackSet *CurrentTracks(void)
 
 // Put track i at (x, y) (corner on screen) showing frame, with the KEY_* flags; a new
 // frame's tiles are copied from ROM in the coming VBlank.
-static void TrackShow(u8 i, s16 x, s16 y, u8 frame, u8 flags)
+static void TrackShow(u8 i, s16 x, s16 y, u8 frame, u8 flags, s16 affine)
 {
     struct OpeningTrackSet *ts = CurrentTracks();
     const struct OpeningTrack *track;
@@ -467,7 +555,11 @@ static void TrackShow(u8 i, s16 x, s16 y, u8 frame, u8 flags)
     sprite->y = y + track->height / 2;
     sprite->invisible = FALSE;
     sprite->subpriority = (flags & KEY_FRONT) ? track->frontSubpriority : track->subpriority;
-    sprite->oam.matrixNum = ((flags & KEY_HFLIP) ? ST_OAM_HFLIP : 0) | ((flags & KEY_VFLIP) ? ST_OAM_VFLIP : 0);
+    sprite->oam.objMode = (flags & KEY_BLEND) ? ST_OAM_OBJ_BLEND : ST_OAM_OBJ_NORMAL;
+    if (sprite->oam.affineMode & ST_OAM_AFFINE_ON_MASK)
+        SetOamMatrix(sprite->oam.matrixNum, affine, 0, 0, affine < 0 ? -affine : affine);
+    else
+        sprite->oam.matrixNum = ((flags & KEY_HFLIP) ? ST_OAM_HFLIP : 0) | ((flags & KEY_VFLIP) ? ST_OAM_VFLIP : 0);
     if (ts->shownFrame[i] != frame)
     {
         size = TrackFrameSize(track);
@@ -521,6 +613,9 @@ static void Table_Begin(u8 scene, u8 slot)
             show |= 1 << i;
     }
     ShowSlot(slot, show);
+    sOpening->pendingBldAlpha = ts->bldAlpha;
+    sOpening->pendingSplitRow = ts->splitRow;
+    sOpening->pendingRegs = TRUE;
     sOpening->lastEventT = -1;
 }
 
@@ -558,9 +653,19 @@ static void Table_Update(u8 scene, u16 t)
         if (ev->type == EVENT_BLEND)
             BlendPalettes(EventTarget(ts, ev->target), ev->coeff, ev->color);
         else if (ev->type == EVENT_CRY)
-            PlayCry_Normal(SPECIES_PIKACHU, 0);
+            PlayCry_Normal(ev->coeff ? SPECIES_RAICHU : SPECIES_PIKACHU, 0);
         else if (ev->type == EVENT_OBJ_BLEND)
             BlendPalette(OBJ_PLTT_ID(IndexOfSpritePaletteTag(ts->objPalTags[ev->target])), 16, ev->coeff, ev->color);
+    }
+    if (ts->patches != NULL)
+    {
+        const struct OpeningPatch *p;
+
+        for (p = ts->patches; p->t != 0xFFFF; p++)
+        {
+            if ((s32)p->t > sOpening->lastEventT && p->t <= t && sOpening->patchCount < MAX_PATCHES)
+                sOpening->patches[sOpening->patchCount++] = p;
+        }
     }
     sOpening->lastEventT = t;
     sOpening->scroll = ts->scroll[t];
@@ -570,7 +675,7 @@ static void Table_Update(u8 scene, u16 t)
         if (keys[i].flags & KEY_HIDE)
             TrackHide(i);
         else
-            TrackShow(i, keys[i].x, keys[i].y, keys[i].frame, keys[i].flags);
+            TrackShow(i, keys[i].x, keys[i].y, keys[i].frame, keys[i].flags, keys[i].affine);
     }
 }
 

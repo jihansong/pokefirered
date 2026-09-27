@@ -117,6 +117,7 @@ ViridianCity_EventScript_TeachyTVNotHelpful::
 
 ViridianCity_EventScript_TutorialCompleted::
 	msgbox ViridianCity_Text_WeakenMonsFirstToCatch
+	msgbox ViridianCity_Text_BallsStickNowadays
 	release
 	end
 
@@ -234,4 +235,5 @@ ViridianCity_EventScript_DoTutorialBattle::
 	setvar VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 2
 	giveitem ITEM_TEACHY_TV
 	msgbox ViridianCity_Text_WatchThatToLearnBasics
+	msgbox ViridianCity_Text_BallsStickNowadays
 	return

@@ -31,7 +31,7 @@ EventScript_RocketTrioBlastOff::
 @ the event in VAR_ROCKET_RETRY: losing leaves it set, so the next try can skip
 @ the long lines. Set VAR_ROCKET_RETRY back to ROCKET_RETRY_NONE after a win.
 EventScript_RocketTrioBeforeBattle::
-	special HasEnoughMonsForDoubleBattle
+	special RocketTrioWillBeDouble   @ v0.10.0: or MEOWTH alone, all the others snagged
 	copyvar VAR_ROCKET_DOUBLES, VAR_RESULT
 	copyvar VAR_ROCKET_RETRY, VAR_0x8004
 	return
@@ -44,16 +44,20 @@ EventScript_RocketTrioRetry::
 	closemessage
 	return
 
-@ MEOWTH's PAY DAY coins, picked up after the trio blast off. The caller has
-@ already added the money (addmoney takes only a constant): 8 x MEOWTH's level
-@ for each POKéMON past the first, and when the player had only one POKéMON to
-@ send out, the half of the prize a single battle loses as well.
-@ VAR_0x8004 = the amount picked up, for the message.
+@ MEOWTH's PAY DAY coins, picked up after the trio blast off: 8 x MEOWTH's
+@ level for each POKéMON past the first, and when the player had only one
+@ POKéMON to send out, the half of the prize a single battle loses as well.
+@ VAR_0x8004 = the amount. The money box opens on the old amount and goes up
+@ as the coins are picked up.
 EventScript_RocketMeowthCoins::
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	showmoneybox 0, 0
-	buffernumberstring STR_VAR_1, VAR_0x8004
+	msgbox Text_RocketMeowthCoinsScattered
+	special AddRocketMeowthCoins
+	updatemoneybox
 	playse SE_SHOP
+	@ after updatemoneybox, which prints the money through gStringVar1
+	buffernumberstring STR_VAR_1, VAR_0x8004
 	msgbox Text_RocketMeowthCoins
 	hidemoneybox
 	return

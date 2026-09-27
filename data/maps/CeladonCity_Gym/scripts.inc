@@ -73,10 +73,8 @@ CeladonCity_Gym_EventScript_RocketBattle::
 	removeobject LOCALID_CELADON_GYM_MEOWTH
 	setflag FLAG_ROCKET_CELADON_GYM
 	fadedefaultbgm
-	addmoney 792
 	setvar VAR_0x8004, 792
 	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, CeladonCity_Gym_EventScript_RocketCoins
-	addmoney 1056
 	setvar VAR_0x8004, 1848
 CeladonCity_Gym_EventScript_RocketCoins::
 	call EventScript_RocketMeowthCoins
@@ -86,13 +84,19 @@ CeladonCity_Gym_EventScript_RocketCoins::
 	setvar VAR_0x8004, ROCKET_HELD_MIRACLE_SEED
 	call EventScript_RocketRewardResult
 	textcolor NPC_TEXT_COLOR_FEMALE
-	msgbox CeladonCity_Gym_Text_ErikaMiracleSeed
+	call_if_ne VAR_0x8007, FALSE, CeladonCity_Gym_EventScript_ErikaMiracleSeed
 	msgbox CeladonCity_Gym_Text_ErikaLeafStone
 	giveitem ITEM_LEAF_STONE
 	setvar VAR_0x8004, ROCKET_BONUS_LEAF_STONE
 	call EventScript_RocketRewardResult
 	releaseall
 	end
+
+@ What the first reward does, told only when it went into the bag (not
+@ when the OFFICER at VIRIDIAN keeps it for now).
+CeladonCity_Gym_EventScript_ErikaMiracleSeed::
+	msgbox CeladonCity_Gym_Text_ErikaMiracleSeed
+	return
 
 @ After a loss: JAMES drops the disguise straight away.
 CeladonCity_Gym_EventScript_RocketRetry::

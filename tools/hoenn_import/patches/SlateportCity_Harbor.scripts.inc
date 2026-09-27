@@ -97,8 +97,11 @@ SlateportCity_Harbor_EventScript_SternErrandWaiting::
 	release
 	end
 
-@ Event 5: the SCANNER in the wreck's captain's office, and the pick of what
-@ came up with it
+@ Event 5: the SCANNER in the wreck's captain's office, and what came up with
+@ it. Thunder Yellow gives both the DEEPSEATOOTH and the DEEPSEASCALE (every
+@ either-or reward can be had in full). VAR_HOENN_DEEP_SEA_ITEM: 0 = neither
+@ yet, 1 = the TOOTH, 2 = the SCALE, 3 = both. 1 and 2 are also saves from
+@ when the player had to pick; STERN hands those the other one.
 SlateportCity_Harbor_EventScript_SternScanner::
 	checkitem ITEM_SCANNER
 	goto_if_eq VAR_RESULT, TRUE, SlateportCity_Harbor_EventScript_SternTakeScanner
@@ -111,31 +114,25 @@ SlateportCity_Harbor_EventScript_SternTakeScanner::
 	msgbox SlateportCity_Harbor_Text_SternGotScanner
 	removeitem ITEM_SCANNER
 	setflag FLAG_HOENN_SCANNER_DELIVERED
-	goto_if_ge VAR_HOENN_STAGE1_PROGRESS, 5, SlateportCity_Harbor_EventScript_SternChooseItem
+	goto_if_ge VAR_HOENN_STAGE1_PROGRESS, 5, SlateportCity_Harbor_EventScript_SternGiveItems
 	setvar VAR_HOENN_STAGE1_PROGRESS, 5
-	goto SlateportCity_Harbor_EventScript_SternChooseItem
+	goto SlateportCity_Harbor_EventScript_SternGiveItems
 	end
 
-SlateportCity_Harbor_EventScript_SternChooseItem::
-	msgbox SlateportCity_Harbor_Text_SternChoose, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, SlateportCity_Harbor_EventScript_SternGiveScale
-	goto SlateportCity_Harbor_EventScript_SternGiveTooth
-	end
-
+SlateportCity_Harbor_EventScript_SternGiveItems::
+	goto_if_eq VAR_HOENN_DEEP_SEA_ITEM, 1, SlateportCity_Harbor_EventScript_SternGiveScale
 SlateportCity_Harbor_EventScript_SternGiveTooth::
 	checkitemspace ITEM_DEEP_SEA_TOOTH
 	goto_if_eq VAR_RESULT, FALSE, SlateportCity_Harbor_EventScript_SternNoRoom
 	giveitem_msg SlateportCity_Harbor_Text_ReceivedTooth, ITEM_DEEP_SEA_TOOTH
+	goto_if_eq VAR_HOENN_DEEP_SEA_ITEM, 2, SlateportCity_Harbor_EventScript_SternGaveBoth
 	setvar VAR_HOENN_DEEP_SEA_ITEM, 1
-	msgbox SlateportCity_Harbor_Text_SternAfterGift
-	release
-	end
-
 SlateportCity_Harbor_EventScript_SternGiveScale::
 	checkitemspace ITEM_DEEP_SEA_SCALE
 	goto_if_eq VAR_RESULT, FALSE, SlateportCity_Harbor_EventScript_SternNoRoom
 	giveitem_msg SlateportCity_Harbor_Text_ReceivedScale, ITEM_DEEP_SEA_SCALE
-	setvar VAR_HOENN_DEEP_SEA_ITEM, 2
+SlateportCity_Harbor_EventScript_SternGaveBoth::
+	setvar VAR_HOENN_DEEP_SEA_ITEM, 3
 	msgbox SlateportCity_Harbor_Text_SternAfterGift
 	release
 	end
@@ -146,7 +143,13 @@ SlateportCity_Harbor_EventScript_SternNoRoom::
 	end
 
 SlateportCity_Harbor_EventScript_SternDone::
-	goto_if_eq VAR_HOENN_DEEP_SEA_ITEM, 0, SlateportCity_Harbor_EventScript_SternChooseItem
+	goto_if_eq VAR_HOENN_DEEP_SEA_ITEM, 0, SlateportCity_Harbor_EventScript_SternGiveItems
+	goto_if_ne VAR_HOENN_DEEP_SEA_ITEM, 3, SlateportCity_Harbor_EventScript_SternOtherItem
 	msgbox SlateportCity_Harbor_Text_SternDone
 	release
+	end
+
+SlateportCity_Harbor_EventScript_SternOtherItem::
+	msgbox SlateportCity_Harbor_Text_SternOtherItem
+	goto SlateportCity_Harbor_EventScript_SternGiveItems
 	end

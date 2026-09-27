@@ -35,9 +35,11 @@ Text_RocketTrioRetry::
 	.string "JAMES: Then we'll skip the speech!\p"
 	.string "MEOWTH: TEAM ROCKET, round two!$"
 
-Text_RocketMeowthCoins::
+Text_RocketMeowthCoinsScattered::
 	.string "The coins MEOWTH flung with PAY DAY\n"
-	.string "are scattered all over the ground!\p"
+	.string "are scattered all over the ground!$"
+
+Text_RocketMeowthCoins::
 	.string "{PLAYER} picked up ¥{STR_VAR_1}!$"
 
 Text_RocketBagFullOfficer::

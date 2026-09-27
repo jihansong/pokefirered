@@ -73,15 +73,9 @@ SlateportCity_Harbor_Text_SternAskScanner::
 SlateportCity_Harbor_Text_SternGotScanner::
     .string "That's it. Salt in every seam and\n"
     .string "it still reads.\p"
-    .string "Take something from the hold for\n"
-    .string "your trouble. Two things came up\l"
-    .string "with it, and only one is yours.$"
-
-SlateportCity_Harbor_Text_SternChoose::
-    .string "The DEEPSEATOOTH, or the\n"
-    .string "DEEPSEASCALE?\p"
-    .string "Yes for the TOOTH, no for the\n"
-    .string "SCALE. Take your time.$"
+    .string "Two things came up from the hold\n"
+    .string "with it. Both are yours, for your\l"
+    .string "trouble.$"
 
 SlateportCity_Harbor_Text_ReceivedTooth::
     .string "{PLAYER} received the\n"
@@ -92,9 +86,14 @@ SlateportCity_Harbor_Text_ReceivedScale::
     .string "DEEPSEASCALE!$"
 
 SlateportCity_Harbor_Text_SternAfterGift::
-    .string "The other one stays in the hold\n"
-    .string "until someone earns it.\p"
-    .string "That's how a harbor works.$"
+    .string "A CLAMPERL that grows up holding\n"
+    .string "one of those turns into something\l"
+    .string "else. Which, depends on the one.$"
+
+SlateportCity_Harbor_Text_SternOtherItem::
+    .string "Hold on. The other one from the\n"
+    .string "hold is still here. You earned\l"
+    .string "that one too. Take it.$"
 
 SlateportCity_Harbor_Text_SternNoRoom::
     .string "Your BAG won't take it. Come back\n"

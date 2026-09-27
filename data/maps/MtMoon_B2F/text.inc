@@ -5,15 +5,11 @@ MtMoon_B2F_Text_MiguelIntro::
 
 MtMoon_B2F_Text_MiguelDefeat::
     .string "Okay!\n"
-    .string "I'll share!$"
+    .string "You win!$"
 
-MtMoon_B2F_Text_WellEachTakeAFossil::
-    .string "We'll each take a fossil!\n"
-    .string "No being greedy!$"
-
-MtMoon_B2F_Text_ThenThisFossilIsMine::
-    .string "All right.\n"
-    .string "Then this fossil is mine!$"
+MtMoon_B2F_Text_TakeBothFossils::
+    .string "A deal's a deal. Take both\n"
+    .string "fossils! I'll dig up more.$"
 
 MtMoon_B2F_Text_LabOnCinnabarRegeneratesFossils::
     .string "Far away, on CINNABAR ISLAND,\n"

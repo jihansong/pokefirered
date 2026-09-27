@@ -6,6 +6,7 @@
 #include "berry.h"
 #include "random.h"
 #include "pokemon.h"
+#include "snag.h"
 #include "string_util.h"
 #include "field_weather.h"
 #include "event_data.h"
@@ -3149,6 +3150,9 @@ u8 IsMonDisobedient(void)
     if ((gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_POKEDUDE)))
         return 0;
     if (GetBattlerSide(gBattlerAttacker) == B_SIDE_OPPONENT)
+        return 0;
+    // Thunder Yellow (v0.10.0): a POKéMON snagged from a trainer always obeys
+    if (IsSnaggedBoxMon(&gPlayerParty[gBattlerPartyIndexes[gBattlerAttacker]].box))
         return 0;
 
     if (IsBattlerModernFatefulEncounter(gBattlerAttacker)) // only false if illegal Mew or Deoxys

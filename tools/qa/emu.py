@@ -6,6 +6,7 @@
         e.press('A'); e.run(60)
         e.shot('/tmp/x.png')
         print(e.sym_read('gSaveBlock1Ptr', 4))
+        e.record_wav('/tmp/x.wav', 600)   # the next 600 frames of sound
 
 The save is copied to a temporary file first, so the game can write to it
 without touching the original. Symbols come from the ROM's .sym file
@@ -18,6 +19,7 @@ import shutil
 import struct
 import subprocess
 import tempfile
+import wave
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 LIB = os.path.join(HERE, 'libqa.so')
@@ -25,6 +27,7 @@ LIB = os.path.join(HERE, 'libqa.so')
 KEYS = {'A': 0, 'B': 1, 'SELECT': 2, 'START': 3, 'RIGHT': 4, 'LEFT': 5,
         'UP': 6, 'DOWN': 7, 'R': 8, 'L': 9}
 W, H = 240, 160
+AUDIO_RATE = 32768   # Hz, 16-bit stereo; the game mixes at 13379 Hz
 
 
 def _lib():
@@ -47,6 +50,16 @@ def _lib():
     lib.qa_save_state.argtypes = [ctypes.c_void_p, ctypes.c_char_p]
     lib.qa_load_state.argtypes = [ctypes.c_void_p, ctypes.c_char_p]
     return lib
+
+
+def _bind_audio(lib):
+    """The audio calls, bound on first use so an older libqa.so still loads."""
+    if not hasattr(lib, 'qa_run_audio'):
+        raise RuntimeError('libqa.so has no audio; rebuild it with tools/qa/build.sh')
+    lib.qa_audio_start.argtypes = [ctypes.c_void_p, ctypes.c_int]
+    lib.qa_audio_start.restype = None
+    lib.qa_run_audio.argtypes = [ctypes.c_void_p, ctypes.c_int, ctypes.c_void_p, ctypes.c_uint]
+    lib.qa_run_audio.restype = ctypes.c_uint
 
 
 _LIBQA = None
@@ -104,6 +117,7 @@ class Emu:
             tsav = os.path.join(self.tmp, 'game.sav')
             shutil.copyfile(sav, tsav)
         self.sav_path = tsav
+        self.audio_rate = None
         self.h = self.lib.qa_open(rom.encode(), tsav.encode() if tsav else None)
         if not self.h:
             raise RuntimeError('mGBA could not open %s' % rom)
@@ -214,10 +228,14 @@ class Emu:
         cb = self.callback2() & ~1
         return cb == 0 or cb in {self.syms.get(n) for n in BOOT_CALLBACKS}
 
-    def boot_continue(self, timeout=3600):
+    def boot_continue(self, timeout=3600, on_menu=None, leave_menu_only=False):
         """From power-on, mash through the intro and title and pick CONTINUE.
         Returns the frame count at which the overworld came up; raises
-        GameReset if the game resets after leaving the main menu."""
+        GameReset if the game resets after leaving the main menu. on_menu(self)
+        is called once, on the main menu, before CONTINUE is picked. With
+        leave_menu_only it returns as soon as CONTINUE is picked (for scenes
+        that start on their own, like the credits' quest-log epilogue, where
+        the overworld never looks idle)."""
         start = self.frame()
         menu = self.syms.get('CB2_MainMenu')
         seen_menu = left_menu = False
@@ -226,9 +244,14 @@ class Emu:
             if left_menu and self.reset_seen():
                 raise GameReset('reset after CONTINUE (callback2=%08x)' % self.callback2())
             if cb == menu:
+                if not seen_menu and on_menu:
+                    self.run(60)
+                    on_menu(self)
                 seen_menu = True
             elif seen_menu:
                 left_menu = True
+                if leave_menu_only:
+                    return self.frame() - start
             if self.quest_log_playing():
                 # "Previously on your quest..." replays old scenes on the
                 # old maps; B skips to the end and the real map loads after.
@@ -260,6 +283,41 @@ class Emu:
         s = self.screen()
         dark = sum(1 for i in range(0, len(s), 3) if s[i] < threshold and s[i + 1] < threshold and s[i + 2] < threshold)
         return dark / (W * H)
+
+    # -- audio
+    def audio_start(self, rate=AUDIO_RATE):
+        """Start keeping the sound. Until then run() throws it away."""
+        _bind_audio(self.lib)
+        self.lib.qa_audio_start(self.h, rate)
+        self.audio_rate = rate
+
+    def run_audio(self, frames):
+        """Run frames like run() and return their sound: 16-bit little-endian
+        stereo PCM bytes at self.audio_rate (starts the audio if needed)."""
+        if self.audio_rate is None:
+            self.audio_start()
+        room = int(frames * self.audio_rate / 59.0) + 2048
+        buf = ctypes.create_string_buffer(room * 4)
+        n = self.lib.qa_run_audio(self.h, int(frames), buf, room)
+        return buf.raw[:n * 4]
+
+    def record_wav(self, path, frames, rate=None, chunk=600):
+        """Run frames and write their sound to a WAV file. Returns seconds recorded."""
+        if rate is not None or self.audio_rate is None:
+            self.audio_start(rate or AUDIO_RATE)
+        w = wave.open(path, 'wb')
+        w.setnchannels(2)
+        w.setsampwidth(2)
+        w.setframerate(self.audio_rate)
+        total = 0
+        while frames > 0:
+            step = min(chunk, frames)
+            pcm = self.run_audio(step)
+            w.writeframes(pcm)
+            total += len(pcm) // 4
+            frames -= step
+        w.close()
+        return total / self.audio_rate
 
     # -- states
     def save_state(self):

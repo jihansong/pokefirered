@@ -68,13 +68,8 @@ Route110_TrickHouseEnd_Text_FountainOfIdeasRunDry::
     .string "champion. That is your doing.$"
 
 Route110_TrickHouseEnd_Text_DefeatedMePreferWhichTent::
-    .string "So. A parting prize, and you shall\n"
-    .string "choose it.\p"
-    .string "Which?$"
-
-Route110_TrickHouseEnd_Text_ReceivedPrize::
-    .string "{PLAYER} received the TRICK\n"
-    .string "MASTER's prize!$"
+    .string "So. A parting prize! No, two of\n"
+    .string "them. You have earned both.$"
 
 Route110_TrickHouseEnd_Text_LeavingOnJourney::
     .string "I am leaving on a journey!\p"

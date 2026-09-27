@@ -303,6 +303,104 @@ void BufferGameClock(void)
 }
 
 // ---------------------------------------------------------------------------
+// A small window in the top left corner with the day and time over the time of
+// day ("SUN 12:34" / "NIGHT"). The start menu shows it next to the menu, and the
+// POKéWATCH while the player reads it. It follows the clock while it is open:
+// call UpdateGameClockWindow every frame, it only redraws when the minute changes.
+// Only one is ever open, so one remembered minute serves both.
+
+static const u8 sText_TimeMorning[] = _("MORNING");
+static const u8 sText_TimeDay[] = _("DAY");
+static const u8 sText_TimeNight[] = _("NIGHT");
+static const u8 *const sTimeOfDayNames[] = {
+    [TIME_MORNING] = sText_TimeMorning,
+    [TIME_DAY]     = sText_TimeDay,
+    [TIME_NIGHT]   = sText_TimeNight,
+};
+
+// Same place and tiles as the SAFARI ZONE's step and ball window, which the
+// start menu shows instead there
+static const struct WindowTemplate sGameClockWindowTemplate = {
+    .bg = 0,
+    .tilemapLeft = 1,
+    .tilemapTop = 1,
+    .width = 10,
+    .height = 4,
+    .paletteNum = 15,
+    .baseBlock = 0x008
+};
+
+static s16 sGameClockWindowMinute;
+
+void UpdateGameClockWindow(u8 windowId)
+{
+    struct Time now;
+    u8 text[16];
+    u8 *str;
+
+    GetGameClock(&now);
+    if (now.hours * 60 + now.minutes == sGameClockWindowMinute)
+        return;
+    sGameClockWindowMinute = now.hours * 60 + now.minutes;
+
+    // Not gStringVar4: a message may be printing from it underneath
+    str = StringCopy(text, sDayNames[now.days % DAYS_PER_WEEK]);
+    *str++ = CHAR_SPACE;
+    str = ConvertIntToDecimalStringN(str, now.hours, STR_CONV_MODE_LEADING_ZEROS, 2);
+    *str++ = CHAR_COLON;
+    ConvertIntToDecimalStringN(str, now.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
+    AddTextPrinterParameterized(windowId, FONT_NORMAL, text, 4, 1, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized(windowId, FONT_NORMAL, sTimeOfDayNames[GetTimeOfDay()], 4, 16, TEXT_SKIP_DRAW, NULL);
+    CopyWindowToVram(windowId, COPYWIN_GFX);
+}
+
+u8 AddGameClockWindow(void)
+{
+    u8 windowId = AddWindow(&sGameClockWindowTemplate);
+
+    DrawStdWindowFrame(windowId, FALSE);
+    sGameClockWindowMinute = -1;
+    UpdateGameClockWindow(windowId);
+    CopyWindowToVram(windowId, COPYWIN_FULL);
+    return windowId;
+}
+
+void RemoveGameClockWindow(u8 windowId)
+{
+    ClearStdWindowAndFrameToTransparent(windowId, TRUE);
+    RemoveWindow(windowId);
+}
+
+#define tWindowId data[0]
+
+static void Task_PokeWatchWindow(u8 taskId)
+{
+    UpdateGameClockWindow(gTasks[taskId].tWindowId);
+}
+
+// Special: the POKéWATCH's clock window, open while its messages show
+void OpenPokeWatchWindow(void)
+{
+    u8 taskId = CreateTask(Task_PokeWatchWindow, 80);
+
+    gTasks[taskId].tWindowId = AddGameClockWindow();
+}
+
+// Special
+void ClosePokeWatchWindow(void)
+{
+    u8 taskId = FindTaskIdByFunc(Task_PokeWatchWindow);
+
+    if (taskId == TASK_NONE)
+        return;
+    RemoveGameClockWindow(gTasks[taskId].tWindowId);
+    DestroyTask(taskId);
+}
+
+#undef tWindowId
+
+// ---------------------------------------------------------------------------
 // Outdoor maps take on a light warm tint in the morning and a dark blue one at
 // night. Applied to palettes as the field loads them (the same place the
 // Quest Log applies its sepia), so fades and weather start from the tinted

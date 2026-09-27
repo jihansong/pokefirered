@@ -92,6 +92,7 @@
 #define MON_DATA_SPATK2                   87
 #define MON_DATA_SPDEF2                   88
 #define MON_DATA_STARTER_PIKACHU          89 // BoxPokemon.isStarterPikachu
+#define MON_DATA_SNAGGED                  90 // BoxPokemon.isSnagged
 
 // Pokemon types
 #define TYPE_NONE           255

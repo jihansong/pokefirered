@@ -37,6 +37,7 @@
 #include "constants/songs.h"
 #include "constants/field_weather.h"
 #include "sloopsvc.h"
+#include "time_of_day.h"
 
 enum StartMenuOption
 {
@@ -66,6 +67,8 @@ static EWRAM_DATA u8 sNumStartMenuItems = 0;
 static EWRAM_DATA u8 sStartMenuOrder[MAX_STARTMENU_ITEMS] = {};
 static EWRAM_DATA s8 sDrawStartMenuState[2] = {};
 static EWRAM_DATA u8 sSafariZoneStatsWindowId = 0;
+static EWRAM_DATA u8 sClockWindowId = 0;
+static EWRAM_DATA bool8 sClockWindowShown = FALSE;
 static ALIGNED(4) EWRAM_DATA u8 sSaveStatsWindowId = 0;
 
 static u8 (*sSaveDialogCB)(void);
@@ -267,13 +270,30 @@ static void DrawSafariZoneStatsWindow(void)
     CopyWindowToVram(sSafariZoneStatsWindowId, COPYWIN_GFX);
 }
 
-static void DestroySafariZoneStatsWindow(void)
+// Outside the SAFARI ZONE the same corner shows the game clock, once it has been
+// set. Not in link rooms, where the clock isn't part of the game.
+static void DrawClockWindow(void)
+{
+    sClockWindowShown = FALSE;
+    if (!IsGameClockSet() || MenuHelpers_IsLinkActive() || InUnionRoom() == TRUE)
+        return;
+    sClockWindowId = AddGameClockWindow();
+    sClockWindowShown = TRUE;
+}
+
+// The SAFARI ZONE's window or the clock, whichever the menu shows
+static void DestroyStartMenuSideWindow(void)
 {
     if (GetSafariZoneFlag())
     {
         ClearStdWindowAndFrameToTransparent(sSafariZoneStatsWindowId, FALSE);
         CopyWindowToVram(sSafariZoneStatsWindowId, COPYWIN_GFX);
         RemoveWindow(sSafariZoneStatsWindowId);
+    }
+    else if (sClockWindowShown)
+    {
+        RemoveGameClockWindow(sClockWindowId);
+        sClockWindowShown = FALSE;
     }
 }
 
@@ -321,6 +341,8 @@ static s8 DoDrawStartMenu(void)
     case 3:
         if (GetSafariZoneFlag())
             DrawSafariZoneStatsWindow();
+        else
+            DrawClockWindow();
         sDrawStartMenuState[0]++;
         break;
     case 4:
@@ -409,6 +431,8 @@ void ShowStartMenu(void)
 
 static bool8 StartCB_HandleInput(void)
 {
+    if (sClockWindowShown)
+        UpdateGameClockWindow(sClockWindowId);
     if (JOY_NEW(DPAD_UP))
     {
         PlaySE(SE_SELECT);
@@ -438,7 +462,7 @@ static bool8 StartCB_HandleInput(void)
     }
     if (JOY_NEW(B_BUTTON | START_BUTTON))
     {
-        DestroySafariZoneStatsWindow();
+        DestroyStartMenuSideWindow();
         DestroyHelpMessageWindow_();
         CloseStartMenu();
         return TRUE;
@@ -470,7 +494,7 @@ static bool8 StartMenuPokedexCallback(void)
     {
         IncrementGameStat(GAME_STAT_CHECKED_POKEDEX);
         PlayRainStoppingSoundEffect();
-        DestroySafariZoneStatsWindow();
+        DestroyStartMenuSideWindow();
         CleanupOverworldWindowsAndTilemaps();
         SetMainCallback2(CB2_OpenPokedexFromStartMenu);
         return TRUE;
@@ -483,7 +507,7 @@ static bool8 StartMenuPokemonCallback(void)
     if (!gPaletteFade.active)
     {
         PlayRainStoppingSoundEffect();
-        DestroySafariZoneStatsWindow();
+        DestroyStartMenuSideWindow();
         CleanupOverworldWindowsAndTilemaps();
         SetMainCallback2(CB2_PartyMenuFromStartMenu);
         return TRUE;
@@ -496,7 +520,7 @@ static bool8 StartMenuBagCallback(void)
     if (!gPaletteFade.active)
     {
         PlayRainStoppingSoundEffect();
-        DestroySafariZoneStatsWindow();
+        DestroyStartMenuSideWindow();
         CleanupOverworldWindowsAndTilemaps();
         SetMainCallback2(CB2_BagMenuFromStartMenu);
         return TRUE;
@@ -509,7 +533,7 @@ static bool8 StartMenuPlayerCallback(void)
     if (!gPaletteFade.active)
     {
         PlayRainStoppingSoundEffect();
-        DestroySafariZoneStatsWindow();
+        DestroyStartMenuSideWindow();
         CleanupOverworldWindowsAndTilemaps();
         ShowPlayerTrainerCard(CB2_ReturnToFieldWithOpenMenu);
         return TRUE;
@@ -519,6 +543,8 @@ static bool8 StartMenuPlayerCallback(void)
 
 static bool8 StartMenuSaveCallback(void)
 {
+    // The save's stats window takes the clock's place
+    DestroyStartMenuSideWindow();
     sStartMenuCallback = StartCB_Save1;
     return FALSE;
 }
@@ -528,7 +554,7 @@ static bool8 StartMenuOptionCallback(void)
     if (!gPaletteFade.active)
     {
         PlayRainStoppingSoundEffect();
-        DestroySafariZoneStatsWindow();
+        DestroyStartMenuSideWindow();
         CleanupOverworldWindowsAndTilemaps();
         SetMainCallback2(CB2_OptionsMenuFromStartMenu);
         gMain.savedCallback = CB2_ReturnToFieldWithOpenMenu;
@@ -539,7 +565,7 @@ static bool8 StartMenuOptionCallback(void)
 
 static bool8 StartMenuExitCallback(void)
 {
-    DestroySafariZoneStatsWindow();
+    DestroyStartMenuSideWindow();
     DestroyHelpMessageWindow_();
     CloseStartMenu();
     return TRUE;
@@ -547,7 +573,7 @@ static bool8 StartMenuExitCallback(void)
 
 static bool8 StartMenuSafariZoneRetireCallback(void)
 {
-    DestroySafariZoneStatsWindow();
+    DestroyStartMenuSideWindow();
     DestroyHelpMessageWindow_();
     CloseStartMenu();
     SafariZoneRetirePrompt();

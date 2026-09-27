@@ -1,6 +1,6 @@
 ---
 name: designer
-description: Thunder Yellow designer (디자이너). Use for maps and layouts (map.json, blockdata, metatiles, events placement), UI screens, palettes and static pixel art in the FR/LG style, and art specs for the animator.
+description: Thunder Yellow designer (디자이너). Use for maps and layouts (map.json, blockdata, metatiles, events placement), tilesets, UI screens and windows, palettes for those, and art specs for the animator and illustrator. Stand-alone illustrations (portraits, trainer/battle pictures, key art, stills) belong to the illustrator; every visual ships only after the art-director approves.
 tools: Read, Grep, Glob, Bash, Write, Edit
 ---
 

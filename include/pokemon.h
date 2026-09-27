@@ -113,7 +113,8 @@ struct BoxPokemon
     u8 isEgg:1;
     u8 blockBoxRS:1; // Unused, but Pokémon Box Ruby & Sapphire will refuse to deposit a Pokémon with this flag set
     u8 isStarterPikachu:1; // Thunder Yellow: the PIKACHU from Oak's Lab (outside the encrypted data, so no checksum)
-    u8 unused:3;
+    u8 isSnagged:1; // Thunder Yellow: taken from a trainer in battle (src/snag.c); same byte, no checksum
+    u8 unused:2;
     u8 otName[PLAYER_NAME_LENGTH];
     u8 markings;
     u16 checksum;
@@ -352,6 +353,8 @@ void SetMonData(struct Pokemon *mon, s32 field, const void *dataArg);
 void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg);
 void CopyMon(void *dest, void *src, size_t size);
 u8 GiveMonToPlayer(struct Pokemon *mon);
+u8 SendMonToPC(struct Pokemon *mon);
+void SetBoxMonOtIdReencrypt(struct BoxPokemon *boxMon, u32 otId);
 u8 CalculatePlayerPartyCount(void);
 u8 CalculateEnemyPartyCount(void);
 u8 GetMonsStateToDoubles(void);

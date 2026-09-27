@@ -455,7 +455,8 @@ struct BattleStruct
         struct LinkBattlerHeader linkBattlerHeader;
         struct MultiBattlePokemonTx multiBattleMons[3];
     } multiBuffer;
-    u8 padding_1E4[0x1C];
+    u8 snagTarget[MAX_BATTLERS_COUNT]; // Thunder Yellow (v0.10.0): the opponent a player battler's BALL is for
+    u8 padding_1E8[0x18];
 }; // size == 0x200 bytes
 
 extern struct BattleStruct *gBattleStruct;

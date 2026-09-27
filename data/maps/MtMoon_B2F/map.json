@@ -395,6 +395,24 @@
       "var": "VAR_MAP_SCENE_MT_MOON_B2F_JESSIE_JAMES",
       "var_value": "1",
       "script": "MtMoon_B2F_EventScript_JessieJamesTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 7,
+      "elevation": 3,
+      "var": "VAR_MAP_SCENE_MT_MOON_B2F_JESSIE_JAMES",
+      "var_value": "0",
+      "script": "MtMoon_B2F_EventScript_JessieJamesTrigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 7,
+      "elevation": 3,
+      "var": "VAR_MAP_SCENE_MT_MOON_B2F_JESSIE_JAMES",
+      "var_value": "0",
+      "script": "MtMoon_B2F_EventScript_JessieJamesTrigger1"
     }
   ],
   "bg_events": [

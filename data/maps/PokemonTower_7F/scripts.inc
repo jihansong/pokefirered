@@ -293,10 +293,8 @@ PokemonTower_7F_EventScript_JessieJamesBattle::
 	removeobject LOCALID_POKEMON_TOWER_JAMES
 	removeobject LOCALID_POKEMON_TOWER_MEOWTH
 	setvar VAR_MAP_SCENE_POKEMON_TOWER_7F_JESSIE_JAMES, 1
-	addmoney 768
 	setvar VAR_0x8004, 768
 	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, PokemonTower_7F_EventScript_RocketCoins
-	addmoney 1024
 	setvar VAR_0x8004, 1792
 PokemonTower_7F_EventScript_RocketCoins::
 	call EventScript_RocketMeowthCoins

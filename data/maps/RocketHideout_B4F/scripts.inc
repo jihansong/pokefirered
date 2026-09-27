@@ -166,10 +166,8 @@ RocketHideout_B4F_EventScript_JessieJamesBattle::
 	removeobject LOCALID_ROCKET_HIDEOUT_JAMES
 	fadescreen FADE_FROM_BLACK
 	setvar VAR_MAP_SCENE_ROCKET_HIDEOUT_B4F_JESSIE_JAMES, 1
-	addmoney 720
 	setvar VAR_0x8004, 720
 	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, RocketHideout_B4F_EventScript_RocketCoins
-	addmoney 960
 	setvar VAR_0x8004, 1680
 RocketHideout_B4F_EventScript_RocketCoins::
 	call EventScript_RocketMeowthCoins

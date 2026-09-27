@@ -284,6 +284,7 @@ SECTIONS {
         src/starter_pikachu.o(.text);
         src/follower_pikachu.o(.text);
         src/pikachu_emotions.o(.text);
+        src/snag.o(.text);
         src/mystery_gift_menu.o(.text);
         src/ereader_screen.o(.text);
         src/mystery_gift.o(.text);
@@ -582,6 +583,7 @@ SECTIONS {
         src/starter_pikachu.o(.rodata);
         src/follower_pikachu.o(.rodata);
         src/pikachu_emotions.o(.rodata);
+        src/snag.o(.rodata);
         src/mystery_gift_menu.o(.rodata);
         src/ereader_screen.o(.rodata);
         src/mystery_gift.o(.rodata);

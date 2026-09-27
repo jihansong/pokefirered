@@ -66,10 +66,8 @@ FuchsiaCity_EventScript_RocketDratiniBattle::
 	removeobject LOCALID_FUCHSIA_JAMES
 	setflag FLAG_ROCKET_SAFARI_DRATINI
 	fadedefaultbgm
-	addmoney 1440
 	setvar VAR_0x8004, 1440
 	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, FuchsiaCity_EventScript_RocketCoins
-	addmoney 1440
 	setvar VAR_0x8004, 2880
 FuchsiaCity_EventScript_RocketCoins::
 	call EventScript_RocketMeowthCoins
@@ -79,13 +77,19 @@ FuchsiaCity_EventScript_RocketCoins::
 	setvar VAR_0x8004, ROCKET_HELD_DRAGON_FANG
 	call EventScript_RocketRewardResult
 	textcolor NPC_TEXT_COLOR_MALE
-	msgbox FuchsiaCity_Text_AttendantDragonFang
+	call_if_ne VAR_0x8007, FALSE, FuchsiaCity_EventScript_AttendantDragonFang
 	msgbox FuchsiaCity_Text_AttendantDragonScale
 	giveitem ITEM_DRAGON_SCALE
 	setvar VAR_0x8004, ROCKET_BONUS_DRAGON_SCALE
 	call EventScript_RocketRewardResult
 	releaseall
 	end
+
+@ What the first reward does, told only when it went into the bag (not
+@ when the OFFICER at VIRIDIAN keeps it for now).
+FuchsiaCity_EventScript_AttendantDragonFang::
+	msgbox FuchsiaCity_Text_AttendantDragonFang
+	return
 
 FuchsiaCity_EventScript_RocketDratiniRetry::
 	call EventScript_RocketTrioRetry

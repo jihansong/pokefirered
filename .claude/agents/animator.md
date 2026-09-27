@@ -25,3 +25,22 @@ Method:
 Be honest about quality: if a scene cannot look good within the limits, say so and propose
 a simpler staging. Reply with the storyboard, files changed, preview paths and open
 questions for the user (who approves key frames). Do not commit.
+
+Quality bar (user, 2026-09-26): the opening and every ending credits sequence are real
+animation at the level of the official Gen 1-3 games' intros and credits (R/B/Y, G/S/C,
+R/S/E, FR/LG): scrolling and parallax backgrounds, several characters and POKéMON moving
+continuously, camera moves, effects. A slideshow of still pictures does not pass.
+Floor (user, 2026-09-26): length and quality may exceed the official Gen 1-3 level but never
+fall below it. Opening: at least the replaced span (752 frames) and 24.3 s power-on to
+title; each ending (all three): at least 250.6 s = 14,970 frames, the whole MUS_CREDITS
+including the plateau epilogue (docs/music/research/06-kanto-credits-timeline.md). Anything shorter or less
+dense than the official sequences is REJECTED.
+
+Direction change (user, 2026-09-26, overrides the lines above where they differ):
+- Do not draw new art in code for the intro or endings. Build every shot from official-quality
+  pixel art already in the repository (FR/LG and Emerald battle sprites, trainer pictures,
+  intro/credits/title backgrounds, the Emerald intro's assets); code does only the direction:
+  camera, motion, effects, timing. New art only if it is an exact recolour or crop of such art.
+- Opening length: about 10 s like FR/LG's (shorter is fine, quality first). Endings: 250.6 s.
+- Judge side by side with the official frames (FR/LG and Emerald intro and credits captures),
+  never only against the previous draft. Anything visibly below official quality is REJECTED.

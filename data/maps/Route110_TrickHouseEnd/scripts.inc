@@ -156,7 +156,7 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle8::
 	delay 30
 	msgbox Route110_TrickHouseEnd_Text_DefeatedMePreferWhichTent, MSGBOX_DEFAULT
 	setvar VAR_HOENN_TRICK_PRIZE_PICKUP, 0
-	call Route110_TrickHouseEnd_EventScript_ChooseTent
+	call Route110_TrickHouseEnd_EventScript_GivePrizes
 	call_if_eq VAR_RESULT, FALSE, Route110_TrickHouseEnd_EventScript_NoRoomForTent
 	msgbox Route110_TrickHouseEnd_Text_LeavingOnJourney, MSGBOX_DEFAULT
 	call Route110_TrickHouseEnd_EventScript_TrickMasterExit
@@ -164,18 +164,25 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle8::
 	release
 	end
 
-Route110_TrickHouseEnd_EventScript_ChooseTent::
-	multichoice 0, 0, MULTICHOICE_TRICK_PRIZE, TRUE
-	switch VAR_RESULT
-	case 0, Route110_TrickHouseEnd_EventScript_GiveRedTent
-	goto Route110_TrickHouseEnd_EventScript_GiveBlueTent
-
-Route110_TrickHouseEnd_EventScript_GiveRedTent::
-	giveitem_msg Route110_TrickHouseEnd_Text_ReceivedPrize, ITEM_AMULET_COIN
-	return
-
-Route110_TrickHouseEnd_EventScript_GiveBlueTent::
-	giveitem_msg Route110_TrickHouseEnd_Text_ReceivedPrize, ITEM_EXP_SHARE
+@ Thunder Yellow: the final prize is both the AMULET COIN and the EXP. SHARE
+@ (every either-or reward can be had in full). Gives whichever the player
+@ doesn't have yet (a flag each); VAR_RESULT is FALSE if the BAG stopped it, and
+@ then VAR_HOENN_TRICK_PRIZE_PICKUP = 1 has the MECHADOLL in the entrance give
+@ the rest (Route110_TrickHouseEntrance_EventScript_MechadollReward).
+Route110_TrickHouseEnd_EventScript_GivePrizes::
+	goto_if_set FLAG_HOENN_TRICK_PRIZE_AMULET_COIN, Route110_TrickHouseEnd_EventScript_GiveExpShare
+	checkitemspace ITEM_AMULET_COIN
+	goto_if_eq VAR_RESULT, FALSE, EventScript_Return
+	giveitem ITEM_AMULET_COIN
+	setflag FLAG_HOENN_TRICK_PRIZE_AMULET_COIN
+Route110_TrickHouseEnd_EventScript_GiveExpShare::
+	goto_if_set FLAG_HOENN_TRICK_PRIZE_EXP_SHARE, Route110_TrickHouseEnd_EventScript_GavePrizes
+	checkitemspace ITEM_EXP_SHARE
+	goto_if_eq VAR_RESULT, FALSE, EventScript_Return
+	giveitem ITEM_EXP_SHARE
+	setflag FLAG_HOENN_TRICK_PRIZE_EXP_SHARE
+Route110_TrickHouseEnd_EventScript_GavePrizes::
+	setvar VAR_RESULT, TRUE
 	return
 
 Route110_TrickHouseEnd_EventScript_TrickMasterExit::

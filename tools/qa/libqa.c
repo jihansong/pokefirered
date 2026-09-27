@@ -1,11 +1,13 @@
 // A thin, headless wrapper around libmgba for the QA scripts in tools/qa.
 // Python drives it through ctypes (tools/qa/emu.py); everything here is one
-// emulator instance per handle, no threads, no audio, no BIOS file needed.
+// emulator instance per handle, no threads, no BIOS file needed. Sound is off
+// until qa_audio_start; then qa_run_audio records it (tools/qa/audiocap.py).
 //
 // Build: cc -O2 -shared -fPIC -o tools/qa/libqa.so tools/qa/libqa.c -lmgba
 // (tools/qa/build.sh does this and is run by .devcontainer/setup.sh).
 
 #include <mgba/flags.h>
+#include <mgba/core/blip_buf.h>
 #include <mgba/core/core.h>
 #include <mgba/core/log.h>
 #include <mgba-util/vfs.h>
@@ -110,3 +112,49 @@ void qa_screen(struct QA *qa, unsigned char *out)
 unsigned qa_state_size(struct QA *qa) { return qa->core->stateSize(qa->core); }
 int qa_save_state(struct QA *qa, void *buf) { return qa->core->saveState(qa->core, buf); }
 int qa_load_state(struct QA *qa, const void *buf) { return qa->core->loadState(qa->core, buf); }
+
+// -- audio
+// The core mixes the GBA's sound into two band-limited buffers (left and
+// right). qa_audio_start sets the output rate and empties them; after that,
+// qa_run_audio runs frames and drains the buffers every frame, so nothing is
+// dropped however long the recording. Samples are 16-bit, interleaved L R.
+
+void qa_audio_start(struct QA *qa, int rate)
+{
+    struct blip_t *left, *right;
+
+    qa->core->setAudioBufferSize(qa->core, 4096);
+    left = qa->core->getAudioChannel(qa->core, 0);
+    right = qa->core->getAudioChannel(qa->core, 1);
+    blip_set_rates(left, qa->core->frequency(qa->core), rate);
+    blip_set_rates(right, qa->core->frequency(qa->core), rate);
+    blip_clear(left);
+    blip_clear(right);
+}
+
+// Runs frames and appends the sound to out (room for max stereo samples,
+// i.e. 2 * max shorts). Returns the stereo samples written; stops early,
+// keeping the rest of the frames unrun, only when out is full.
+unsigned qa_run_audio(struct QA *qa, int frames, short *out, unsigned max)
+{
+    struct blip_t *left = qa->core->getAudioChannel(qa->core, 0);
+    struct blip_t *right = qa->core->getAudioChannel(qa->core, 1);
+    unsigned n = 0;
+
+    while (frames-- > 0) {
+        int avail;
+
+        qa->core->runFrame(qa->core);
+        avail = blip_samples_avail(left);
+        if (avail > (int)(max - n))
+            avail = max - n;
+        if (avail > 0) {
+            blip_read_samples(left, out + n * 2, avail, 1);
+            blip_read_samples(right, out + n * 2 + 1, avail, 1);
+            n += avail;
+        }
+        if (n == max)
+            break;
+    }
+    return n;
+}

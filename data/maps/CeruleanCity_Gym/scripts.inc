@@ -52,10 +52,8 @@ CeruleanCity_Gym_EventScript_RocketBattle::
 	removeobject LOCALID_CERULEAN_GYM_JAMES
 	setflag FLAG_ROCKET_CERULEAN_GYM
 	fadedefaultbgm
-	addmoney 352
 	setvar VAR_0x8004, 352
 	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, CeruleanCity_Gym_EventScript_RocketCoins
-	addmoney 704
 	setvar VAR_0x8004, 1056
 CeruleanCity_Gym_EventScript_RocketCoins::
 	call EventScript_RocketMeowthCoins
@@ -65,13 +63,19 @@ CeruleanCity_Gym_EventScript_RocketCoins::
 	setvar VAR_0x8004, ROCKET_HELD_MYSTIC_WATER
 	call EventScript_RocketRewardResult
 	textcolor NPC_TEXT_COLOR_FEMALE
-	msgbox CeruleanCity_Gym_Text_MistyMysticWater
+	call_if_ne VAR_0x8007, FALSE, CeruleanCity_Gym_EventScript_MistyMysticWater
 	msgbox CeruleanCity_Gym_Text_MistyWaterStone
 	giveitem ITEM_WATER_STONE
 	setvar VAR_0x8004, ROCKET_BONUS_WATER_STONE
 	call EventScript_RocketRewardResult
 	releaseall
 	end
+
+@ What the first reward does, told only when it went into the bag (not
+@ when the OFFICER at VIRIDIAN keeps it for now).
+CeruleanCity_Gym_EventScript_MistyMysticWater::
+	msgbox CeruleanCity_Gym_Text_MistyMysticWater
+	return
 
 CeruleanCity_Gym_EventScript_RocketRetry::
 	call EventScript_RocketTrioRetry

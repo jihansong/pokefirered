@@ -6,6 +6,7 @@
 #include "battle_controllers.h"
 #include "battle_interface.h"
 #include "battle_main.h"
+#include "snag.h"
 #include "battle_message.h"
 #include "battle_scripts.h"
 #include "battle_setup.h"
@@ -1546,6 +1547,9 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
     u32 personalityValue;
     u8 fixedIV;
     s32 i, j;
+    s32 n = 0;
+    u32 excluded;
+    s32 keepSlot = -1;
 
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
@@ -1554,6 +1558,23 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
      && !(gBattleTypeFlags & (BATTLE_TYPE_BATTLE_TOWER | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_TRAINER_TOWER)))
     {
         ZeroEnemyPartyMons();
+
+        // Thunder Yellow (v0.10.0): the Kanto rival and JESSIE & JAMES leave out
+        // the evolution families the player has snagged from them. The rival
+        // keeps at least his last POKéMON (the ace); JESSIE & JAMES always have
+        // MEOWTH, which can't be snagged.
+        excluded = SnagGetExcludedSlots(trainerNum);
+        if (excluded)
+        {
+            for (i = 0; i < gTrainers[trainerNum].partySize; i++)
+            {
+                if (!IsExcludedBySnag(trainerNum, GetTrainerPartySpecies(trainerNum, i), excluded))
+                    break;
+            }
+            if (i == gTrainers[trainerNum].partySize)
+                keepSlot = i - 1;
+        }
+
         for (i = 0; i < gTrainers[trainerNum].partySize; i++)
         {
 
@@ -1567,6 +1588,17 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
             for (j = 0; gTrainers[trainerNum].trainerName[j] != EOS; j++)
                 nameHash += gTrainers[trainerNum].trainerName[j];
 
+            // a left-out POKéMON still counts toward nameHash, so the others
+            // keep the personality (nature, gender) they always had
+            if (excluded && i != keepSlot && IsExcludedBySnag(trainerNum, GetTrainerPartySpecies(trainerNum, i), excluded))
+            {
+                const u8 *speciesName = gSpeciesNames[GetTrainerPartySpecies(trainerNum, i)];
+
+                for (j = 0; speciesName[j] != EOS; j++)
+                    nameHash += speciesName[j];
+                continue;
+            }
+
             switch (gTrainers[trainerNum].partyFlags)
             {
             case 0:
@@ -1578,7 +1610,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                CreateMon(&party[n], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
                 break;
             }
             case F_TRAINER_PARTY_CUSTOM_MOVESET:
@@ -1590,12 +1622,12 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                CreateMon(&party[n], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
 
                 for (j = 0; j < MAX_MON_MOVES; j++)
                 {
-                    SetMonData(&party[i], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
-                    SetMonData(&party[i], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
+                    SetMonData(&party[n], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
+                    SetMonData(&party[n], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
                 }
                 break;
             }
@@ -1608,9 +1640,9 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                CreateMon(&party[n], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
 
-                SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
+                SetMonData(&party[n], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
                 break;
             }
             case F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM:
@@ -1622,22 +1654,24 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
-                SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
+                CreateMon(&party[n], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                SetMonData(&party[n], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
 
                 for (j = 0; j < MAX_MON_MOVES; j++)
                 {
-                    SetMonData(&party[i], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
-                    SetMonData(&party[i], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
+                    SetMonData(&party[n], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
+                    SetMonData(&party[n], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
                 }
                 break;
             }
             }
+            n++;
         }
 
         // A scripted double battle (e.g. Jessie & James) against a player with only one
         // usable Pokémon would send that Pokémon out twice, so fall back to a single battle.
-        if (gTrainers[trainerNum].doubleBattle && GetMonsStateToDoubles() == PLAYER_HAS_TWO_USABLE_MONS)
+        // The same when snagging has left the trainer only one.
+        if (gTrainers[trainerNum].doubleBattle && n >= 2 && GetMonsStateToDoubles() == PLAYER_HAS_TWO_USABLE_MONS)
             gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
     }
 

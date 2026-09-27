@@ -89,6 +89,10 @@
 #define VARIOUS_RETURN_OPPONENT_MON2            10
 #define VARIOUS_CHECK_POKEFLUTE                 11
 #define VARIOUS_WAIT_FANFARE                    12
+#define VARIOUS_SNAG_PREPARE                    13 // v0.10.0 trainer-battle snagging
+#define VARIOUS_SNAG_GIVE_MON                   14
+#define VARIOUS_SNAG_RESTORE_BGM                15
+#define VARIOUS_SNAG_RETURN_BALL                16
 
 // Cmd_manipulatedmg
 #define DMG_CHANGE_SIGN            0

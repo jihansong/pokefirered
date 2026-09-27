@@ -7,11 +7,19 @@ MtMoon_B2F_OnTransition::
 	call MtMoon_B2F_EventScript_SetUpRocketClefairy
 	call MtMoon_B2F_EventScript_SetUpClefairyDance
 	call MtMoon_B2F_EventScript_SetUpJirachiStar
-	call_if_unset FLAG_GOT_FOSSIL_FROM_MT_MOON, MtMoon_B2F_EventScript_ShowFossils
+	call_if_unset FLAG_GOT_DOME_FOSSIL, MtMoon_B2F_EventScript_ShowDomeFossil
+	call_if_unset FLAG_GOT_HELIX_FOSSIL, MtMoon_B2F_EventScript_ShowHelixFossil
 	end
 
-MtMoon_B2F_EventScript_ShowFossils::
+@ Thunder Yellow: MIGUEL lets the player have both fossils (every either-or
+@ reward can be had in full). Each fossil lies here until the player has it, so
+@ a save from before, where MIGUEL walked off with the other one, finds it
+@ back on the ground.
+MtMoon_B2F_EventScript_ShowDomeFossil::
 	clearflag FLAG_HIDE_DOME_FOSSIL
+	return
+
+MtMoon_B2F_EventScript_ShowHelixFossil::
 	clearflag FLAG_HIDE_HELIX_FOSSIL
 	return
 
@@ -26,7 +34,12 @@ MtMoon_B2F_EventScript_MiguelTrigger::
 MtMoon_B2F_EventScript_Miguel::
 	lock
 	faceplayer
-	goto_if_set FLAG_GOT_FOSSIL_FROM_MT_MOON, MtMoon_B2F_EventScript_MiguelFossilPicked
+	goto_if_unset FLAG_GOT_DOME_FOSSIL, MtMoon_B2F_EventScript_MiguelNotPickedBoth
+	goto_if_unset FLAG_GOT_HELIX_FOSSIL, MtMoon_B2F_EventScript_MiguelNotPickedBoth
+	goto MtMoon_B2F_EventScript_MiguelFossilPicked
+	end
+
+MtMoon_B2F_EventScript_MiguelNotPickedBoth::
 	goto_if_defeated TRAINER_SUPER_NERD_MIGUEL, MtMoon_B2F_EventScript_MiguelGoPickFossil
 	call MtMoon_B2F_EventScript_BattleMiguel
 	release
@@ -41,7 +54,7 @@ MtMoon_B2F_EventScript_BattleMiguel::
 	setvar VAR_LAST_TALKED, LOCALID_MIGUEL
 	trainerbattle_no_intro TRAINER_SUPER_NERD_MIGUEL, MtMoon_B2F_Text_MiguelDefeat
 	setvar VAR_MAP_SCENE_MT_MOON_B2F, 1
-	msgbox MtMoon_B2F_Text_WellEachTakeAFossil
+	msgbox MtMoon_B2F_Text_TakeBothFossils
 	return
 
 MtMoon_B2F_EventScript_MiguelFossilPicked::
@@ -50,7 +63,7 @@ MtMoon_B2F_EventScript_MiguelFossilPicked::
 	end
 
 MtMoon_B2F_EventScript_MiguelGoPickFossil::
-	msgbox MtMoon_B2F_Text_WellEachTakeAFossil
+	msgbox MtMoon_B2F_Text_TakeBothFossils
 	release
 	end
 
@@ -61,30 +74,9 @@ MtMoon_B2F_EventScript_DomeFossil::
 	goto_if_eq VAR_RESULT, NO, MtMoon_B2F_EventScript_DontTakeFossil
 	removeobject LOCALID_DOME_FOSSIL
 	giveitem_msg MtMoon_B2F_Text_ObtainedDomeFossil, ITEM_DOME_FOSSIL, 1, MUS_OBTAIN_KEY_ITEM
-	closemessage
-	special QuestLog_CutRecording
-	delay 10
-	applymovement LOCALID_MIGUEL, MtMoon_B2F_Movement_MiguelToHelixFossil
-	waitmovement 0
-	copyobjectxytoperm LOCALID_MIGUEL
-	textcolor NPC_TEXT_COLOR_MALE
-	playfanfare MUS_OBTAIN_KEY_ITEM
-	message MtMoon_B2F_Text_ThenThisFossilIsMine
-	waitmessage
-	waitfanfare
-	removeobject LOCALID_HELIX_FOSSIL
 	setflag FLAG_GOT_DOME_FOSSIL
-	setflag FLAG_GOT_FOSSIL_FROM_MT_MOON
-	setvar VAR_MAP_SCENE_MT_MOON_B2F_JESSIE_JAMES, 1
-	release
+	goto MtMoon_B2F_EventScript_TookFossil
 	end
-
-MtMoon_B2F_Movement_MiguelToHelixFossil::
-	walk_right
-	walk_up
-	walk_up
-	walk_up
-	step_end
 
 MtMoon_B2F_EventScript_HelixFossil::
 	lock
@@ -93,33 +85,24 @@ MtMoon_B2F_EventScript_HelixFossil::
 	goto_if_eq VAR_RESULT, NO, MtMoon_B2F_EventScript_DontTakeFossil
 	removeobject LOCALID_HELIX_FOSSIL
 	giveitem_msg MtMoon_B2F_Text_ObtainedHelixFossil, ITEM_HELIX_FOSSIL, 1, MUS_OBTAIN_KEY_ITEM
-	closemessage
-	special QuestLog_CutRecording
-	delay 10
-	applymovement LOCALID_MIGUEL, MtMoon_B2F_Movement_MiguelToDomeFossil
-	waitmovement 0
-	copyobjectxytoperm LOCALID_MIGUEL
-	textcolor NPC_TEXT_COLOR_MALE
-	playfanfare MUS_OBTAIN_KEY_ITEM
-	message MtMoon_B2F_Text_ThenThisFossilIsMine
-	waitmessage
-	waitfanfare
-	removeobject LOCALID_DOME_FOSSIL
 	setflag FLAG_GOT_HELIX_FOSSIL
+	goto MtMoon_B2F_EventScript_TookFossil
+	end
+
+@ v0.9.0: JESSIE and JAMES no longer wait for a fossil to be taken. They
+@ ambush the player at (3,7)/(4,7), the only way between the fossils and the
+@ ladder up to ROUTE 4, whenever VAR_MAP_SCENE_MT_MOON_B2F_JESSIE_JAMES is 0 or
+@ 1 (1 is what a fossil set before), so a player who takes neither fossil, or
+@ comes back from ROUTE 4, still meets them. Taking a fossil no longer touches
+@ the var: after the battle (2) that would bring them back.
+MtMoon_B2F_EventScript_TookFossil::
 	setflag FLAG_GOT_FOSSIL_FROM_MT_MOON
-	setvar VAR_MAP_SCENE_MT_MOON_B2F_JESSIE_JAMES, 1
 	release
 	end
 
 MtMoon_B2F_EventScript_DontTakeFossil::
 	release
 	end
-
-MtMoon_B2F_Movement_MiguelToDomeFossil::
-	walk_up
-	walk_up
-	walk_up
-	step_end
 
 MtMoon_B2F_EventScript_Grunt1::
 	trainerbattle_single TRAINER_TEAM_ROCKET_GRUNT, MtMoon_B2F_Text_Grunt1Intro, MtMoon_B2F_Text_Grunt1Defeat
@@ -153,7 +136,8 @@ MtMoon_B2F_EventScript_JessieJamesTrigger1::
 	goto MtMoon_B2F_EventScript_JessieJames
 	end
 
-@ Jessie & James ambush the player, as in Pokémon Yellow.
+@ Jessie & James ambush the player, as in Pokémon Yellow. Once: the battle
+@ won sets the var to 2, which neither trigger matches.
 MtMoon_B2F_EventScript_JessieJames::
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	playbgm MUS_ENCOUNTER_ROCKET, 0
@@ -205,10 +189,8 @@ MtMoon_B2F_EventScript_JessieJamesBattle::
 	removeobject LOCALID_MT_MOON_MEOWTH
 	setvar VAR_MAP_SCENE_MT_MOON_B2F_JESSIE_JAMES, 2
 	fadedefaultbgm
-	addmoney 224
 	setvar VAR_0x8004, 224
 	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, MtMoon_B2F_EventScript_RocketCoins
-	addmoney 448
 	setvar VAR_0x8004, 672
 MtMoon_B2F_EventScript_RocketCoins::
 	call EventScript_RocketMeowthCoins

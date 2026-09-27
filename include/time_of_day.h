@@ -13,5 +13,8 @@ u8 GetGameClockDayOfWeek(void);
 void SetGameClock(u8 dayOfWeek, u8 hour, u8 minute);
 bool8 IsGameClockSet(void);
 bool8 TintPaletteForTimeOfDay(u16 *palette, u16 count);
+u8 AddGameClockWindow(void);
+void UpdateGameClockWindow(u8 windowId);
+void RemoveGameClockWindow(u8 windowId);
 
 #endif // GUARD_TIME_OF_DAY_H

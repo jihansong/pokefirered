@@ -187,10 +187,8 @@ SilphCo_11F_EventScript_JessieJamesBattle::
 	removeobject LOCALID_SILPH_CO_JAMES
 	fadescreen FADE_FROM_BLACK
 	setvar VAR_MAP_SCENE_SILPH_CO_11F_JESSIE_JAMES, 1
-	addmoney 1344
 	setvar VAR_0x8004, 1344
 	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, SilphCo_11F_EventScript_RocketCoins
-	addmoney 1344
 	setvar VAR_0x8004, 2688
 SilphCo_11F_EventScript_RocketCoins::
 	call EventScript_RocketMeowthCoins

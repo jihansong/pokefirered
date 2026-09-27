@@ -88,3 +88,6 @@ __pycache__/
 tools/qa/libqa.so
 tools/qa/.cache/
 qa-base/
+
+# User-supplied reference material (videos, screenshots): kept local, never committed
+reference/

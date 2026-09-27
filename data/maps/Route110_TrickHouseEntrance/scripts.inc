@@ -18,6 +18,8 @@ Route110_TrickHouseEntrance_MapScripts::
 Route110_TrickHouseEntrance_OnTransition:
 	goto_if_eq VAR_HOENN_TRICK_ENTER_FROM_CORRIDOR, 1, Route110_TrickHouseEntrance_EventScript_EnterFromCorridor
 	goto_if_eq VAR_HOENN_TRICK_PRIZE_PICKUP, 1, Route110_TrickHouseEntrance_EventScript_SetReadyToGiveReward
+	call Route110_TrickHouseEntrance_EventScript_CheckChosenPrizeOnly
+	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_SetReadyToGiveReward
 	goto_if_eq VAR_HOENN_TRICK_FOUND_TRICK_MASTER, 1, Route110_TrickHouseEntrance_EventScript_MoveTrickMasterToDoor
 	call_if_eq VAR_HOENN_TRICK_ENTRANCE_STATE, 5, Route110_TrickHouseEntrance_EventScript_CheckReadyForNextPuzzle
 	call_if_eq VAR_HOENN_TRICK_ENTRANCE_STATE, 3, Route110_TrickHouseEntrance_EventScript_CheckReadyForNextPuzzle
@@ -34,6 +36,16 @@ Route110_TrickHouseEntrance_EventScript_SetReadyToGiveReward::
 	goto_if_eq VAR_HOENN_TRICK_LEVEL, 8, Route110_TrickHouseEntrance_EventScript_ReadyToGiveTentReward
 	setvar VAR_HOENN_TRICK_ENTRANCE_STATE, 2
 	end
+
+@ A save from before v0.9.0 that finished every room took one final prize and
+@ left no record of which: TRUE for it, so the MECHADOLL offers the other.
+Route110_TrickHouseEntrance_EventScript_CheckChosenPrizeOnly::
+	setvar VAR_RESULT, FALSE
+	goto_if_ne VAR_HOENN_TRICK_LEVEL, 8, EventScript_Return
+	goto_if_set FLAG_HOENN_TRICK_PRIZE_AMULET_COIN, EventScript_Return
+	goto_if_set FLAG_HOENN_TRICK_PRIZE_EXP_SHARE, EventScript_Return
+	setvar VAR_RESULT, TRUE
+	return
 
 Route110_TrickHouseEntrance_EventScript_ReadyToGiveTentReward::
 	setvar VAR_HOENN_TRICK_ENTRANCE_STATE, 6
@@ -394,29 +406,49 @@ Route110_TrickHouseEntrance_EventScript_GotReward::
 	releaseall
 	end
 
+@ VAR_HOENN_TRICK_PRIZE_PICKUP = 1: the BAG was full at the end, so the rest
+@ of the prizes. 0: a save that had to choose (see CheckChosenPrizeOnly).
 Route110_TrickHouseEntrance_EventScript_MechadollReward::
 	applymovement LOCALID_TRICK_MASTER, Common_Movement_FacePlayer
 	waitmovement 0
+	goto_if_eq VAR_HOENN_TRICK_PRIZE_PICKUP, 0, Route110_TrickHouseEntrance_EventScript_MechadollOtherPrize
 	msgbox Route110_TrickHouseEntrance_Text_MechadollWhichTent, MSGBOX_DEFAULT
-	call Route110_TrickHouseEntrance_EventScript_ChooseTent
+	call Route110_TrickHouseEnd_EventScript_GivePrizes
 	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_ReceivedTent
-	call_if_eq VAR_RESULT, FALSE, EventScript_BagIsFull
+	call EventScript_BagIsFull
 	msgbox Route110_TrickHouseEntrance_Text_PCFullAgain, MSGBOX_DEFAULT
 	releaseall
 	end
 
-Route110_TrickHouseEntrance_EventScript_ChooseTent::
+Route110_TrickHouseEntrance_EventScript_MechadollOtherPrize::
+	msgbox Route110_TrickHouseEntrance_Text_MechadollOtherPrize, MSGBOX_DEFAULT
+	call Route110_TrickHouseEntrance_EventScript_ChooseOtherPrize
+	goto_if_eq VAR_RESULT, TRUE, Route110_TrickHouseEntrance_EventScript_ReceivedTent
+	call EventScript_BagIsFull
+	msgbox Route110_TrickHouseEntrance_Text_PCFullAgain, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Route110_TrickHouseEntrance_EventScript_ChooseOtherPrize::
 	multichoice 0, 0, MULTICHOICE_TRICK_PRIZE, TRUE
 	switch VAR_RESULT
-	case 0, Route110_TrickHouseEntrance_EventScript_GiveRedTent
-	goto Route110_TrickHouseEntrance_EventScript_GiveBlueTent
+	case 0, Route110_TrickHouseEntrance_EventScript_GiveOtherAmuletCoin
+	goto Route110_TrickHouseEntrance_EventScript_GiveOtherExpShare
 
-Route110_TrickHouseEntrance_EventScript_GiveRedTent::
-	giveitem_msg Route110_TrickHouseEntrance_Text_ReceivedPrize, ITEM_AMULET_COIN
-	return
+Route110_TrickHouseEntrance_EventScript_GiveOtherAmuletCoin::
+	checkitemspace ITEM_AMULET_COIN
+	goto_if_eq VAR_RESULT, FALSE, EventScript_Return
+	giveitem ITEM_AMULET_COIN
+	goto Route110_TrickHouseEntrance_EventScript_GotBothPrizes
 
-Route110_TrickHouseEntrance_EventScript_GiveBlueTent::
-	giveitem_msg Route110_TrickHouseEntrance_Text_ReceivedPrize, ITEM_EXP_SHARE
+Route110_TrickHouseEntrance_EventScript_GiveOtherExpShare::
+	checkitemspace ITEM_EXP_SHARE
+	goto_if_eq VAR_RESULT, FALSE, EventScript_Return
+	giveitem ITEM_EXP_SHARE
+Route110_TrickHouseEntrance_EventScript_GotBothPrizes::
+	setflag FLAG_HOENN_TRICK_PRIZE_AMULET_COIN
+	setflag FLAG_HOENN_TRICK_PRIZE_EXP_SHARE
+	setvar VAR_RESULT, TRUE
 	return
 
 Route110_TrickHouseEntrance_EventScript_ReceivedTent::

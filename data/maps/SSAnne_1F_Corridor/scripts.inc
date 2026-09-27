@@ -63,10 +63,8 @@ SSAnne_1F_Corridor_EventScript_RocketBattle::
 	removeobject LOCALID_SSANNE_MEOWTH
 	setflag FLAG_ROCKET_SS_ANNE
 	fadedefaultbgm
-	addmoney 576
 	setvar VAR_0x8004, 576
 	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, SSAnne_1F_Corridor_EventScript_RocketCoins
-	addmoney 768
 	setvar VAR_0x8004, 1344
 SSAnne_1F_Corridor_EventScript_RocketCoins::
 	call EventScript_RocketMeowthCoins

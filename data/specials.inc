@@ -532,4 +532,5 @@ gSpecials::
 	def_special GetHoennDexCaughtCount
 	def_special StartWallyTutorialBattle
 	def_special HoennZ3_SetupObjects
+	def_special IsPlayerPartyHurt
 gSpecialsEnd::

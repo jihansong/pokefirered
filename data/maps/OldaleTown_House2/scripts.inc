@@ -8,4 +8,3 @@ OldaleTown_House2_EventScript_H0::
 OldaleTown_House2_EventScript_H1::
 	msgbox OldaleTown_House2_Text_H1, MSGBOX_NPC
 	end
-

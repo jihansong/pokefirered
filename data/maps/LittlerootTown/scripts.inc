@@ -16,4 +16,3 @@ LittlerootTown_EventScript_H2::
 LittlerootTown_EventScript_H3::
 	msgbox LittlerootTown_Text_H3, MSGBOX_SIGN
 	end
-

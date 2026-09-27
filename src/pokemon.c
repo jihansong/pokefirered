@@ -34,6 +34,7 @@
 #include "constants/songs.h"
 #include "constants/item_effects.h"
 #include "constants/trainers.h"
+#include "constants/opponents.h"
 #include "constants/hold_effects.h"
 #include "constants/battle_move_effects.h"
 #include "constants/union_room.h"
@@ -5965,6 +5966,28 @@ void ClearBattleMonForms(void)
         gBattleMonForms[i] = 0;
 }
 
+// v0.11.0: HOENN's own battle themes (Emerald's, ported), keyed on the
+// trainer and never on a class alone: KANTO shares RIVAL_LATE and LEADER, and
+// the tournament's KANTO leaders sit in the HOENN trainer range.
+static const u16 sHoennGymLeaders[] = {
+    TRAINER_HOENN_ROXANNE_1, TRAINER_HOENN_BRAWLY_1, TRAINER_HOENN_WATTSON_1, TRAINER_HOENN_FLANNERY_1,
+    TRAINER_HOENN_NORMAN_1, TRAINER_HOENN_WINONA_1, TRAINER_HOENN_TATE_AND_LIZA_1, TRAINER_HOENN_JUAN_1,
+};
+
+static u16 GetHoennTrainerBattleBGM(u16 trainerId)
+{
+    u8 i;
+
+    if (trainerId == TRAINER_HOENN_MAY_ROUTE_103_TORCHIC || trainerId == TRAINER_HOENN_BRENDAN_ROUTE_103_TORCHIC)
+        return MUS_VS_RIVAL;
+    for (i = 0; i < ARRAY_COUNT(sHoennGymLeaders); i++)
+    {
+        if (trainerId == sHoennGymLeaders[i])
+            return MUS_RS_VS_GYM_LEADER;
+    }
+    return MUS_DUMMY;
+}
+
 static u16 GetBattleBGM(void)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_KYOGRE_GROUDON)
@@ -5973,6 +5996,8 @@ static u16 GetBattleBGM(void)
         return MUS_RS_VS_TRAINER;
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
         return MUS_RS_VS_TRAINER;
+    if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER) && GetHoennTrainerBattleBGM(gTrainerBattleOpponent_A) != MUS_DUMMY)
+        return GetHoennTrainerBattleBGM(gTrainerBattleOpponent_A);
     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {
         switch (gTrainers[gTrainerBattleOpponent_A].trainerClass)

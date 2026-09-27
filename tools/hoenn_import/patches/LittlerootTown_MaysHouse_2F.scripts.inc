@@ -1,0 +1,7 @@
+LittlerootTown_MaysHouse_2F_EventScript_PC::
+	msgbox LittlerootTown_MaysHouse_2F_Text_PC, MSGBOX_SIGN
+	end
+
+LittlerootTown_MaysHouse_2F_EventScript_WallClock::
+	msgbox LittlerootTown_MaysHouse_2F_Text_WallClock, MSGBOX_SIGN
+	end

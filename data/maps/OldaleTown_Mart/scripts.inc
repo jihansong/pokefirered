@@ -27,4 +27,3 @@ OldaleTown_Mart_EventScript_H1::
 OldaleTown_Mart_EventScript_H2::
 	msgbox OldaleTown_Mart_Text_H2, MSGBOX_NPC
 	end
-

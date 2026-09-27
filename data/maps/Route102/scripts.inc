@@ -40,4 +40,3 @@ Route102_EventScript_H6::
 Route102_EventScript_H7::
 	msgbox Route102_Text_H7, MSGBOX_SIGN
 	end
-

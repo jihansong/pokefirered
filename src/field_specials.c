@@ -3481,6 +3481,29 @@ void GetHoennDexCaughtCount(void)
     gSpecialVar_Result = count;
 }
 
+// BIRCH's child, of the other gender to the player (Emerald's rule)
+static u16 GetHoennRivalGfx(void)
+{
+    return gSaveBlock2Ptr->playerGender == MALE ? OBJ_EVENT_GFX_RIVAL_MAY_NORMAL : OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL;
+}
+
+// Special: VAR_RESULT = TRUE if a party POKéMON (not an EGG) is missing HP or
+// has a status problem (the LITTLEROOT landlady's hint about the bed)
+void IsPlayerPartyHurt(void)
+{
+    u8 i;
+
+    gSpecialVar_Result = FALSE;
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG, NULL))
+            continue;
+        if (GetMonData(&gPlayerParty[i], MON_DATA_HP, NULL) < GetMonData(&gPlayerParty[i], MON_DATA_MAX_HP, NULL)
+         || GetMonData(&gPlayerParty[i], MON_DATA_STATUS, NULL) != STATUS1_NONE)
+            gSpecialVar_Result = TRUE;
+    }
+}
+
 static bool8 IsPlayerOnMap(u16 map)
 {
     return gSaveBlock1Ptr->location.mapGroup == (map >> 8)
@@ -3509,13 +3532,14 @@ void HoennZ3_SetupObjects(void)
     u16 wally = VarGet(VAR_HOENN_SCENE_WALLY);
 
     // BIRCH runs from the POOCHYENA on ROUTE 101 until he is rescued, then
-    // waits in his lab; his child stands on ROUTE 103 until their battle
+    // waits in his lab; his child stands on ROUTE 103 until their battle,
+    // then goes back to the LAB
     SetHideFlag(FLAG_HIDE_HOENN_BIRCH_ROUTE101, birch != 0);
     SetHideFlag(FLAG_HIDE_HOENN_BIRCH_LAB, birch == 0);
     SetHideFlag(FLAG_HIDE_HOENN_RIVAL_ROUTE103, birch != 2);
-    if (IsPlayerOnMap(MAP_ROUTE103))   // the rival is of the other gender (Emerald's rule)
-        VarSet(VAR_OBJ_GFX_ID_0, gSaveBlock2Ptr->playerGender == MALE ? OBJ_EVENT_GFX_RIVAL_MAY_NORMAL
-                                                                      : OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL);
+    SetHideFlag(FLAG_HIDE_HOENN_RIVAL_LAB, birch < 3);
+    if (IsPlayerOnMap(MAP_ROUTE103) || IsPlayerOnMap(MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB))
+        VarSet(VAR_OBJ_GFX_ID_0, GetHoennRivalGfx());
 
     // PETALBURG WOODS: the AQUA GRUNT and the DEVON researcher until the grunt
     // is beaten; TEAM ROCKET from then until they are

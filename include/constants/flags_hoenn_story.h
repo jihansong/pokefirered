@@ -142,6 +142,11 @@
 #define FLAG_HOENN_ROCKET_WOODS             (HOENN_STORY_FLAGS_START + 95)
 #define FLAG_HIDE_HOENN_ROCKET_WOODS        (HOENN_STORY_FLAGS_START + 96)
 
-#define HOENN_STORY_FLAGS_USED 97
+// LITTLEROOT (2026-09-27 user decisions): the rival back in the LAB after
+// ROUTE 103, and the boarding house's landlady
+#define FLAG_HIDE_HOENN_RIVAL_LAB           (HOENN_STORY_FLAGS_START + 97)
+#define FLAG_HOENN_MET_LANDLADY             (HOENN_STORY_FLAGS_START + 98)
+
+#define HOENN_STORY_FLAGS_USED 99
 
 #endif  // GUARD_CONSTANTS_FLAGS_HOENN_STORY_H

@@ -8,4 +8,3 @@ PetalburgCity_House1_EventScript_H0::
 PetalburgCity_House1_EventScript_H1::
 	msgbox PetalburgCity_House1_Text_H1, MSGBOX_NPC
 	end
-

@@ -1,0 +1,2 @@
+	map_script MAP_SCRIPT_ON_TRANSITION, Route102_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route102_OnFrame

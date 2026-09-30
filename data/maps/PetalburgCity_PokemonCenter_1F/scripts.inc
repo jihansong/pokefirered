@@ -19,4 +19,3 @@ PetalburgCity_PokemonCenter_1F_EventScript_H1::
 PetalburgCity_PokemonCenter_1F_EventScript_H2::
 	msgbox PetalburgCity_PokemonCenter_1F_Text_H2, MSGBOX_NPC
 	end
-

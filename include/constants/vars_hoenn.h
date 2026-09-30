@@ -48,6 +48,13 @@
 #define VAR_HOENN_SCENE_WALLY          (HOENN_VARS_START + 38)  // 3단계 WALLY (0 전, 1 로비 만남, 2 랄토스 포획)
 #define VAR_HOENN_BRINEY_STATE         (HOENN_VARS_START + 39)  // BRINEY 씨 배 위치 (0 104번 도로, 1 Dewford, 2 109번 도로)
 #define VAR_HOENN_FLOWER_BERRY_DAY     (HOENN_VARS_START + 40)  // 꽃집 매일 열매를 마지막으로 준 게임 시계 날짜 + 1
+
+// VAR_HOENN_BRINEY_STATE: the dock MR. BRINEY's boat is waiting at
+#define BRINEY_AT_ROUTE104             0
+#define BRINEY_AT_DEWFORD              1
+#define BRINEY_AT_ROUTE109             2
+#define BRINEY_ARRIVING                0x10  // set for the trip's last step: the dock map greets on arrival
+
 #define VAR_HOENN_0x29                 (HOENN_VARS_START + 41)
 #define VAR_HOENN_0x2A                 (HOENN_VARS_START + 42)
 #define VAR_HOENN_0x2B                 (HOENN_VARS_START + 43)

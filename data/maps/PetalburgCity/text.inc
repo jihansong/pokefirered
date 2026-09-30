@@ -1,34 +1,31 @@
-PetalburgCity_Text_H0::
-	.string "My face is reflected in the water.\p"
-	.string "It's a shining grin full of hope…\p"
-	.string "Or it could be a look of somber\n"
-	.string "silence struggling with fear…\p"
-	.string "What do you see reflected in your\n"
-	.string "face?$"
-
-PetalburgCity_Text_H1::
-	.string "Let's say you have six POKéMON.\n"
-	.string "If you catch another one…\p"
-	.string "It is automatically sent to a\n"
-	.string "STORAGE BOX over a PC connection.$"
-
-PetalburgCity_Text_H2::
-	.string "Hiya! Are you maybe…\n"
-	.string "A rookie TRAINER?\p"
-	.string "Do you know what POKéMON TRAINERS\n"
-	.string "do when they reach a new town?\p"
-	.string "They first check what kind of GYM\n"
-	.string "is in the town.$"
-
-PetalburgCity_Text_H3::
-	.string "PETALBURG CITY POKéMON GYM\n"
-	.string "LEADER: NORMAN\l"
-	.string "“A man in pursuit of power!”$"
-
-PetalburgCity_Text_H4::
-	.string "PETALBURG CITY\n"
-	.string "“Where people mingle with nature.”$"
-
 PetalburgCity_Text_H5::
 	.string "WALLY'S HOUSE$"
 
+@ BEGIN PATCH (tools/hoenn_import/patches)
+PetalburgCity_Text_H0::
+    .string "If you lean over the pond, you can\n"
+    .string "see yourself in the water.\p"
+    .string "I look braver in the water.\n"
+    .string "I don't know why.$"
+
+PetalburgCity_Text_H1::
+    .string "PETALBURG was farmland once. The\n"
+    .string "grass still thinks it is.\p"
+    .string "Cut it on Monday and it's at the\n"
+    .string "door again by Friday.$"
+
+PetalburgCity_Text_H2::
+    .string "Going to the GYM? We've got a new\n"
+    .string "LEADER. NORMAN. Came from JOHTO.\p"
+    .string "He doesn't say much. He doesn't\n"
+    .string "have to. You'll see.$"
+
+PetalburgCity_Text_H3::
+    .string "PETALBURG CITY POKéMON GYM\n"
+    .string "LEADER: NORMAN\l"
+    .string "“He came a long way to be here.”$"
+
+PetalburgCity_Text_H4::
+    .string "PETALBURG CITY\n"
+    .string "“The grass grows right to the door.”$"
+@ END PATCH

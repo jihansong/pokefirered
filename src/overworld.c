@@ -151,6 +151,7 @@ static bool32 LoadMapInStepsLink(u8 *state);
 static bool32 ReturnToFieldLocal(u8 *state);
 static bool32 ReturnToFieldLink(u8 *state);
 static void DoMapLoadLoop(u8 *state);
+static EWRAM_DATA bool8 sSpawnObjectsOnContinue = FALSE;
 static void MoveSaveBlocks_ResetHeap_(void);
 static void ResetScreenForMapLoad(void);
 static void InitViewGraphics(void);
@@ -1723,6 +1724,8 @@ void CB2_ContinueSavedGame(void)
     }
     else
     {
+        // v0.11.0: HOENN's stage-3 objects, set up as entering the map would
+        sSpawnObjectsOnContinue = HoennZ3_SetupObjectsOnContinue();
         gFieldCallback = FieldCB_ShowMapNameOnContinue;
         SetMainCallback1(CB1_Overworld);
         CB2_ReturnToField();
@@ -2163,6 +2166,12 @@ static void InitObjectEventsLocal(void)
 static void ReloadObjectsAndRunReturnToFieldMapScript(void)
 {
     SpawnObjectEventsOnReturnToField(0, 0);
+    if (sSpawnObjectsOnContinue)
+    {
+        // objects in view the save didn't have (already spawned ones are skipped)
+        TrySpawnObjectEvents(0, 0);
+        sSpawnObjectsOnContinue = FALSE;
+    }
     FollowerPikachu_Update();
     RunOnReturnToFieldMapScript();
 }

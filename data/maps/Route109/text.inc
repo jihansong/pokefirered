@@ -227,4 +227,9 @@ Route109_Text_H21::
     .string "not the same POKéMON.\p"
     .string "One raised by a trainer will\n"
     .string "outgrow one left in the wild.$"
+
+Route109_Text_H14_2_BrineyBack::
+    .string "Old BRINEY's boat is running again.\n"
+    .string "His WINGULL came home, they say.\p"
+    .string "Tide or no tide, he'll take you.$"
 @ END PATCH

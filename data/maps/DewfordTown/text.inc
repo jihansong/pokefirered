@@ -35,4 +35,10 @@ DewfordTown_Text_H4::
 DewfordTown_Text_H5::
     .string "DEWFORD HALL\n"
     .string "“Where the island keeps its news.”$"
+
+DewfordTown_Text_H0_BrineyBack::
+    .string "MR. BRINEY's boat is back at our\n"
+    .string "dock! First time in weeks.\p"
+    .string "The whole island knew before the\n"
+    .string "rope was tied.$"
 @ END PATCH

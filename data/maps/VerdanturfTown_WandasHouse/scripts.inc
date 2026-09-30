@@ -1,4 +1,5 @@
 VerdanturfTown_WandasHouse_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, VerdanturfTown_WandasHouse_OnTransition
 	.byte 0
 
 VerdanturfTown_WandasHouse_EventScript_H0::
@@ -6,8 +7,13 @@ VerdanturfTown_WandasHouse_EventScript_H0::
 	end
 
 @ BEGIN PATCH (tools/hoenn_import/patches)
-@ Event 6: WANDA. Her cousin is on the far side of RUSTURF TUNNEL (stage 3),
-@ so all she can do here is vouch for the player with the friendship rater.
+@ Event 6: WANDA. Her cousin WALLY lives in PETALBURG (stage 3, v0.11.0); until
+@ he comes to stay, all she can do is vouch for the player with the friendship
+@ rater.
+VerdanturfTown_WandasHouse_OnTransition::
+	special HoennZ3_SetupObjects
+	end
+
 VerdanturfTown_WandasHouse_EventScript_Wanda::
 	lock
 	faceplayer
@@ -25,7 +31,18 @@ VerdanturfTown_WandasHouse_EventScript_WandaBefore::
 	end
 
 VerdanturfTown_WandasHouse_EventScript_WandaDone::
+	goto_if_ge VAR_HOENN_SCENE_WALLY, 2, VerdanturfTown_WandasHouse_EventScript_WandaWallyHere
 	msgbox VerdanturfTown_WandasHouse_Text_WandaDone
 	release
+	end
+
+@ v0.11.0: WALLY stays here after his catching demo in PETALBURG (E5)
+VerdanturfTown_WandasHouse_EventScript_WandaWallyHere::
+	msgbox VerdanturfTown_WandasHouse_Text_WandaWallyHere
+	release
+	end
+
+VerdanturfTown_WandasHouse_EventScript_Wally::
+	msgbox VerdanturfTown_WandasHouse_Text_Wally, MSGBOX_NPC
 	end
 @ END PATCH

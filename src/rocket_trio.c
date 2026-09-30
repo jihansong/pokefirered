@@ -128,6 +128,7 @@ static const u16 sRocketTrioTrainers[] = {
     [11] = TRAINER_JESSIE_JAMES_VIRIDIAN_GYM,
     [12] = TRAINER_JESSIE_JAMES_INDIGO,
     [13] = TRAINER_JESSIE_JAMES_NEW_ISLAND,
+    [15] = TRAINER_JESSIE_JAMES_PETALBURG_WOODS,    // v0.11.0 (#14 is the tournament's)
 };
 
 void RocketTrioWillBeDouble(void)
@@ -218,6 +219,7 @@ static const struct RocketReward sRocketRewards[] =
     {ROCKET_BONUS_FIRE_STONE,     REWARD_IF_FLAG,     FLAG_ROCKET_INDIGO_TORCH,            ITEM_FIRE_STONE,    1},
     {ROCKET_BONUS_NEW_ISLAND,     REWARD_IF_MEW_GONE, FLAG_ROCKET_NEW_ISLAND,              ITEM_RARE_CANDY,    3},
     {ROCKET_BONUS_NEW_ISLAND,     REWARD_IF_MEW_HERE, FLAG_ROCKET_NEW_ISLAND,              OFFICER_EGG,        0},
+    {ROCKET_BONUS_SILVER_POWDER,  REWARD_IF_FLAG,     FLAG_HOENN_ROCKET_WOODS,             ITEM_SILVER_POWDER, 1},
     {ROCKET_HELD_MYSTIC_WATER,    REWARD_HELD,        0,                                   ITEM_MYSTIC_WATER,  1},
     {ROCKET_HELD_NUGGET,          REWARD_HELD,        0,                                   ITEM_NUGGET,        1},
     {ROCKET_HELD_MIRACLE_SEED,    REWARD_HELD,        0,                                   ITEM_MIRACLE_SEED,  1},

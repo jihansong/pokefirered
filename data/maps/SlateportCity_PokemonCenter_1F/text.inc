@@ -127,4 +127,24 @@ SlateportCity_PokemonCenter_1F_Text_Rumor17::
     .string "twelve machines and pays in coins.\p"
     .string "Coins only. Ask what the coins are\n"
     .string "worth and they change the subject.$"
+
+SlateportCity_PokemonCenter_1F_Text_Rumor18::
+    .string "Something guards the big tree in\n"
+    .string "PETALBURG WOODS. Green, small,\l"
+    .string "and very cross.$"
+
+SlateportCity_PokemonCenter_1F_Text_Rumor19::
+    .string "Webbed footprints were seen by\n"
+    .string "OLDALE, all heading west toward\l"
+    .string "the ROUTE 104 shore.$"
+
+SlateportCity_PokemonCenter_1F_Text_Rumor20::
+    .string "Old BRINEY stopped sailing when\n"
+    .string "his WINGULL went missing. Find the\l"
+    .string "bird and the boat comes back.$"
+
+SlateportCity_PokemonCenter_1F_Text_Rumor21::
+    .string "PETALBURG's new LEADER came from\n"
+    .string "JOHTO. He won't battle anyone with\l"
+    .string "fewer than four HOENN BADGES.$"
 @ END PATCH

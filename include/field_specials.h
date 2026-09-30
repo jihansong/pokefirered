@@ -35,4 +35,7 @@ bool8 UsedPokemonCenterWarp(void);
 void QuestLog_CheckDepartingIndoorsMap(void);
 void QuestLog_TryRecordDepartedLocation(void);
 
+void HoennZ3_SetupObjects(void);
+bool8 HoennZ3_SetupObjectsOnContinue(void);
+
 #endif // GUARD_FIELD_SPECIALS_H

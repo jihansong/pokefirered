@@ -1,19 +1,20 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 PetalburgCity_Mart_Text_H1::
-	.string "Do you have any ANTIDOTES with\n"
-	.string "you?\p"
-	.string "If you walk around with a poisoned\n"
-	.string "POKéMON, it will lose HP until it\l"
-	.string "faints. Take some ANTIDOTES with\l"
-	.string "you.$"
+    .string "Poison doesn't wait for a battle.\n"
+    .string "It keeps working while you walk.\p"
+    .string "I learned that halfway through\n"
+    .string "PETALBURG WOODS. Buy ANTIDOTES.$"
 
 PetalburgCity_Mart_Text_H2::
-	.string "Do you use REPEL?\n"
-	.string "It keeps POKéMON away, so it's\l"
-	.string "useful when you're in a hurry.$"
+    .string "Mum buys REPEL for the garden.\p"
+    .string "It doesn't work on ZIGZAGOON.\n"
+    .string "Nothing works on ZIGZAGOON.$"
 
 PetalburgCity_Mart_Text_H3::
-	.string "Even if a POKéMON is weak now,\n"
-	.string "it will grow stronger.\p"
-	.string "The most important thing is love!\n"
-	.string "Love for your POKéMON!$"
-
+    .string "My POKéMON is small and slow and\n"
+    .string "I wouldn't swap it for anything.\p"
+    .string "Not even for yours. Well…\n"
+    .string "Probably not.$"
+@ END PATCH

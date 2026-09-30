@@ -1,13 +1,15 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 PetalburgCity_House2_Text_H0::
-	.string "NORMAN became our town's new\n"
-	.string "GYM LEADER.\p"
-	.string "I think he called his family over\n"
-	.string "from somewhere far away.$"
+    .string "NORMAN took over the GYM last year.\n"
+    .string "He came all the way from JOHTO.\p"
+    .string "You'd think he'd miss it. He never\n"
+    .string "says so. He just trains.$"
 
 PetalburgCity_House2_Text_H1::
-	.string "I battled NORMAN once, but, whew,\n"
-	.string "he was way too strong.\p"
-	.string "How would I put it?\p"
-	.string "I just got the feeling that he\n"
-	.string "lives for POKéMON.$"
-
+    .string "I asked NORMAN for a battle once.\p"
+    .string "He said, “Come back with four\n"
+    .string "BADGES.” So I'm working on it.\p"
+    .string "I have none. It's slow going.$"
+@ END PATCH

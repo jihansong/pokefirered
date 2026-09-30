@@ -3487,6 +3487,19 @@ static u16 GetHoennRivalGfx(void)
     return gSaveBlock2Ptr->playerGender == MALE ? OBJ_EVENT_GFX_RIVAL_MAY_NORMAL : OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL;
 }
 
+// Special: VAR_RESULT is TRUE when the PRETTY PETAL girl has a BERRY for the
+// player today (one a game clock day, like WATTSON's rematch)
+void FlowerShop_CanGiveBerry(void)
+{
+    gSpecialVar_Result = (VarGet(VAR_HOENN_FLOWER_BERRY_DAY) != GetGameClockDay() + 1);
+}
+
+// Special: today's BERRY has been given
+void FlowerShop_RecordBerry(void)
+{
+    VarSet(VAR_HOENN_FLOWER_BERRY_DAY, GetGameClockDay() + 1);
+}
+
 // Special: VAR_RESULT = TRUE if a party POKéMON (not an EGG) is missing HP or
 // has a status problem (the LITTLEROOT landlady's hint about the bed)
 void IsPlayerPartyHurt(void)
@@ -3502,6 +3515,33 @@ void IsPlayerPartyHurt(void)
          || GetMonData(&gPlayerParty[i], MON_DATA_STATUS, NULL) != STATUS1_NONE)
             gSpecialVar_Result = TRUE;
     }
+}
+
+// Called from CB2_ContinueSavedGame, before the saved objects are put back:
+// a save continued standing in a HOENN map never ran its ON_TRANSITION
+// script, so a save from before v0.11.0 (or from before a story step) can
+// hold stage-3 objects shown or hidden wrongly. Set the hide flags from the
+// story, then drop the saved objects those flags now hide. Returns TRUE on a
+// HOENN map, when the caller should also spawn the map's objects in view that
+// the save didn't have (the ones the flags now show).
+bool8 HoennZ3_SetupObjectsOnContinue(void)
+{
+    u8 i;
+
+    if (gSaveBlock1Ptr->location.mapGroup < MAP_GROUP(MAP_PETALBURG_CITY))
+        return FALSE;
+    HoennZ3_SetupObjects();
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {
+        struct ObjectEvent *objectEvent = &gObjectEvents[i];
+
+        if (objectEvent->active && !objectEvent->isPlayer
+         && objectEvent->mapNum == gSaveBlock1Ptr->location.mapNum
+         && objectEvent->mapGroup == gSaveBlock1Ptr->location.mapGroup
+         && IsObjectEventFlaggedHidden(i))
+            objectEvent->active = FALSE;    // no sprite yet: they are made after this
+    }
+    return TRUE;
 }
 
 static bool8 IsPlayerOnMap(u16 map)
@@ -3530,6 +3570,7 @@ void HoennZ3_SetupObjects(void)
     u16 birch = VarGet(VAR_HOENN_SCENE_BIRCH);
     u16 devon = VarGet(VAR_HOENN_SCENE_DEVON);
     u16 wally = VarGet(VAR_HOENN_SCENE_WALLY);
+    bool8 peeko = FlagGet(FLAG_HOENN_PEEKO_RESCUED);
 
     // BIRCH runs from the POOCHYENA on ROUTE 101 until he is rescued, then
     // waits in his lab; his child stands on ROUTE 103 until their battle,
@@ -3541,9 +3582,10 @@ void HoennZ3_SetupObjects(void)
     if (IsPlayerOnMap(MAP_ROUTE103) || IsPlayerOnMap(MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB))
         VarSet(VAR_OBJ_GFX_ID_0, GetHoennRivalGfx());
 
-    // PETALBURG WOODS: the AQUA GRUNT and the DEVON researcher until the grunt
-    // is beaten; TEAM ROCKET from then until they are
-    SetHideFlag(FLAG_HIDE_HOENN_WOODS_GRUNT, devon != 0);
+    // PETALBURG WOODS: the AQUA GRUNT until he is beaten, the DEVON researcher
+    // until he has handed over his GREAT BALL; TEAM ROCKET from the grunt's
+    // defeat until they are beaten
+    SetHideFlag(FLAG_HIDE_HOENN_WOODS_GRUNT, devon != 0 || HasTrainerBeenFought(TRAINER_HOENN_GRUNT_PETALBURG_WOODS));
     SetHideFlag(FLAG_HIDE_HOENN_WOODS_RESEARCHER, devon != 0);
     SetHideFlag(FLAG_HIDE_HOENN_ROCKET_WOODS, FlagGet(FLAG_HOENN_ROCKET_WOODS)
                                            || !HasTrainerBeenFought(TRAINER_HOENN_GRUNT_PETALBURG_WOODS));
@@ -3552,14 +3594,21 @@ void HoennZ3_SetupObjects(void)
     // grunt and PEEKO in RUSTURF TUNNEL until the goods are back
     SetHideFlag(FLAG_HIDE_HOENN_RUSTBORO_THIEF, !(devon == 1 && FlagGet(FLAG_HOENN_BADGE01_GET)));
     SetHideFlag(FLAG_HIDE_HOENN_RUSTURF_GRUNT, devon != 2);
-    SetHideFlag(FLAG_HIDE_HOENN_RUSTURF_PEEKO, devon != 2 || FlagGet(FLAG_HOENN_PEEKO_RESCUED));
+    SetHideFlag(FLAG_HIDE_HOENN_RUSTURF_PEEKO, devon != 2 || peeko);
 
-    // MR. BRINEY asks for help on ROUTE 116 while PEEKO is missing, and is at
-    // his cottage and his boat once she is back
+    // MR. BRINEY asks for help on ROUTE 116 while PEEKO is missing. Once she
+    // is back he is at his cottage, and he and the boat wait at whichever of
+    // the three docks the last trip ended (VAR_HOENN_BRINEY_STATE)
     if (IsPlayerOnMap(MAP_ROUTE116))
-        SetHideFlag(FLAG_HIDE_HOENN_BRINEY, devon != 2 || FlagGet(FLAG_HOENN_PEEKO_RESCUED));
+        SetHideFlag(FLAG_HIDE_HOENN_BRINEY, devon != 2 || peeko);
+    else if (IsPlayerOnMap(MAP_ROUTE104))
+        SetHideFlag(FLAG_HIDE_HOENN_BRINEY, !peeko || (VarGet(VAR_HOENN_BRINEY_STATE) & ~BRINEY_ARRIVING) != BRINEY_AT_ROUTE104);
+    else if (IsPlayerOnMap(MAP_DEWFORD_TOWN))
+        SetHideFlag(FLAG_HIDE_HOENN_BRINEY, !peeko || (VarGet(VAR_HOENN_BRINEY_STATE) & ~BRINEY_ARRIVING) != BRINEY_AT_DEWFORD);
+    else if (IsPlayerOnMap(MAP_ROUTE109))
+        SetHideFlag(FLAG_HIDE_HOENN_BRINEY, !peeko || (VarGet(VAR_HOENN_BRINEY_STATE) & ~BRINEY_ARRIVING) != BRINEY_AT_ROUTE109);
     else
-        SetHideFlag(FLAG_HIDE_HOENN_BRINEY, !FlagGet(FLAG_HOENN_PEEKO_RESCUED));
+        SetHideFlag(FLAG_HIDE_HOENN_BRINEY, !peeko);
 
     // WALLY: in PETALBURG from meeting him to his catching demo, then with
     // WANDA's family in VERDANTURF

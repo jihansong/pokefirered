@@ -67,4 +67,17 @@ Route102_Text_H5_1::
 Route102_Text_H5_2::
     .string "Still no wins. But I'm losing to\n"
     .string "better TRAINERS every week.$"
+
+Route102_Text_WallyNervous::
+    .string "WALLY: The grass is taller than\n"
+    .string "me…\p"
+    .string "What if nothing comes out?\n"
+    .string "What if something big comes out?\p"
+    .string "…Something's moving. Here goes!$"
+
+Route102_Text_WallyCaughtRalts::
+    .string "WALLY: I… I caught it!\n"
+    .string "A RALTS! It's really mine!\p"
+    .string "Let's go back. I want Mr. NORMAN\n"
+    .string "to see.$"
 @ END PATCH

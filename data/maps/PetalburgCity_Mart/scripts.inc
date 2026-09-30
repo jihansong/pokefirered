@@ -38,4 +38,3 @@ PetalburgCity_Mart_EventScript_H2::
 PetalburgCity_Mart_EventScript_H3::
 	msgbox PetalburgCity_Mart_Text_H3, MSGBOX_NPC
 	end
-

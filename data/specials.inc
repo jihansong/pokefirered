@@ -533,4 +533,6 @@ gSpecials::
 	def_special StartWallyTutorialBattle
 	def_special HoennZ3_SetupObjects
 	def_special IsPlayerPartyHurt
+	def_special FlowerShop_CanGiveBerry
+	def_special FlowerShop_RecordBerry
 gSpecialsEnd::

@@ -17,12 +17,11 @@ VerdanturfTown_WandasHouse_Text_WandaBefore::
 VerdanturfTown_WandasHouse_Text_WandaAfter::
     .string "WANDA: You have WATTSON's BADGE.\n"
     .string "He doesn't give those out kindly.\p"
-    .string "Listen - my cousin is on the other\n"
-    .string "side of that tunnel, in RUSTBORO.\l"
-    .string "He's small and he's ill and he wants\l"
-    .string "a POKéMON of his own.\p"
-    .string "When the boulders come out, I'd\n"
-    .string "like you to meet him.$"
+    .string "Listen - my cousin WALLY lives in\n"
+    .string "PETALBURG. He's small and he's ill\l"
+    .string "and he wants a POKéMON of his own.\p"
+    .string "If you pass through, would you look\n"
+    .string "in on him? NORMAN's GYM, likely.$"
 
 VerdanturfTown_WandasHouse_Text_WandaIntro::
     .string "WANDA: Go and see the lady in the\n"
@@ -37,3 +36,14 @@ VerdanturfTown_WandasHouse_Text_WandaDone::
     .string "I mean.\p"
     .string "Say WANDA sent you, at the west\n"
     .string "house.$"
+
+VerdanturfTown_WandasHouse_Text_WandaWallyHere::
+    .string "WANDA: WALLY's here with us now,\n"
+    .string "RALTS and all. Thank you.\p"
+    .string "He talks about you every meal.$"
+
+VerdanturfTown_WandasHouse_Text_Wally::
+    .string "WALLY: {PLAYER}! RALTS and I walk\n"
+    .string "a little farther every day.\p"
+    .string "I can breathe here. I'm going to\n"
+    .string "get strong. Then you'll see.$"

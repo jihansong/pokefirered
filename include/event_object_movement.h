@@ -177,6 +177,7 @@ void MoveObjectEventToMapCoords(struct ObjectEvent *objectEvent, s16 x, s16 y);
 u8 CreateCopySpriteAt(struct Sprite *sprite, s16 x, s16 y, u8 subpriority);
 u16 GetObjectPaletteTag(u8 paletteIndex);
 u8 GetObjectEventPaletteNum(const struct ObjectEventGraphicsInfo *graphicsInfo);
+bool8 IsObjectEventFlaggedHidden(u8 objectEventId);
 u8 GetReflectionPaletteNum(u8 paletteNum);
 bool8 IsNpcReflectionOwnPalette(u8 paletteNum);
 void SetSpritePosToMapCoords(s16 x, s16 y, s16 *x2, s16 *y2);

@@ -1085,6 +1085,16 @@ void PlayTrainerEncounterMusic(void)
      && sTrainerBattleMode != TRAINER_BATTLE_CONTINUE_SCRIPT_NO_MUSIC
      && sTrainerBattleMode != TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC)
     {
+        // v0.11.0: TEAM AQUA gets Emerald's theme. TRAINER_ENCOUNTER_MUSIC_AQUA
+        // itself stays the ROCKET theme: KANTO's ROCKETS and the trio use it.
+        switch (gTrainers[gTrainerBattleOpponent_A].trainerClass)
+        {
+        case TRAINER_CLASS_TEAM_AQUA:
+        case TRAINER_CLASS_AQUA_ADMIN:
+        case TRAINER_CLASS_AQUA_LEADER:
+            PlayNewMapMusic(MUS_ENCOUNTER_AQUA);
+            return;
+        }
         switch (GetTrainerEncounterMusicId(gTrainerBattleOpponent_A))
         {
         case TRAINER_ENCOUNTER_MUSIC_FEMALE:

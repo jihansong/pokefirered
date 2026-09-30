@@ -13,3 +13,13 @@ MauvilleCity_PokemonCenter_1F_Text_H2::
     .string "POKéMON obey any better.\p"
     .string "It only proves you got through his\n"
     .string "room.$"
+
+MauvilleCity_PokemonCenter_1F_Text_OldMan::
+    .string "Sit down, sit down. Let me tell you\n"
+    .string "a story I heard from a sailor.\p"
+    .string "In KANTO there's a PIKACHU that\n"
+    .string "won't go in its POKé BALL.\p"
+    .string "It went all the way to the top of\n"
+    .string "the LEAGUE like that. Imagine!\p"
+    .string "…What do you mean, you've heard\n"
+    .string "that one?$"

@@ -1,23 +1,31 @@
+
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 PetalburgCity_WallysHouse_Text_H0::
-	.string "You're…\n"
-	.string "Ah, you must be {PLAYER}{KUN}, right?\p"
-	.string "Thank you for playing with WALLY a\n"
-	.string "little while ago.\p"
-	.string "He's been frail and sickly ever\n"
-	.string "since he was a baby.\p"
-	.string "We've sent him to stay with my\n"
-	.string "relatives in VERDANTURF TOWN for a\l"
-	.string "while.\p"
-	.string "The air is a lot cleaner there\n"
-	.string "than it is here.\p"
-	.string "What's that? Where's WALLY?\n"
-	.string "He's already left, our WALLY.\p"
-	.string "I wonder where he could have\n"
-	.string "gotten by now?$"
+    .string "Our son WALLY has been poorly since\n"
+    .string "he was small.\p"
+    .string "The doctor says clean air. So he's\n"
+    .string "going to his cousin's in\l"
+    .string "VERDANTURF for a while.\p"
+    .string "He's gone to the GYM to see NORMAN\n"
+    .string "first. I don't know why.$"
 
 PetalburgCity_WallysHouse_Text_H1::
-	.string "WALLY was really happy when he told\n"
-	.string "us that he caught a POKéMON.\p"
-	.string "It's been ages since I've seen him\n"
-	.string "smile like that.$"
+    .string "WALLY's been drawing POKéMON all\n"
+    .string "week. The same one, over and over.\p"
+    .string "A little green and white one.\n"
+    .string "He won't tell me what it's called.$"
 
+PetalburgCity_WallysHouse_Text_DadAfter::
+    .string "You went with WALLY to catch his\n"
+    .string "POKéMON? Thank you.\p"
+    .string "He's gone on to VERDANTURF now,\n"
+    .string "with RALTS in his arms the whole\l"
+    .string "way to the gate.$"
+
+PetalburgCity_WallysHouse_Text_MomAfter::
+    .string "A RALTS. That's the one he kept\n"
+    .string "drawing.\p"
+    .string "I haven't seen him smile like that\n"
+    .string "in years.$"
+@ END PATCH

@@ -586,6 +586,15 @@ static const u8 sText_PrizePPUp[] = _("PP UP");
 static const u8 sText_PrizeRareCandy[] = _("RARE CANDY");
 static const struct MenuAction sMultichoiceList_MauvillePrizes[] = { { sText_PrizeNugget }, { sText_PrizePPUp }, { sText_PrizeRareCandy } };
 
+// v0.11.0: MR. BRINEY's destinations (the entries are the ROUTE 104 map's texts)
+extern const u8 Route104_Text_BrineyMenuDewford[];
+extern const u8 Route104_Text_BrineyMenuRoute104[];
+extern const u8 Route104_Text_BrineyMenuRoute109[];
+extern const u8 Route104_Text_BrineyMenuStay[];
+static const struct MenuAction sMultichoiceList_BrineyFromRoute104[] = { { Route104_Text_BrineyMenuDewford }, { Route104_Text_BrineyMenuRoute109 }, { Route104_Text_BrineyMenuStay } };
+static const struct MenuAction sMultichoiceList_BrineyFromDewford[] = { { Route104_Text_BrineyMenuRoute104 }, { Route104_Text_BrineyMenuRoute109 }, { Route104_Text_BrineyMenuStay } };
+static const struct MenuAction sMultichoiceList_BrineyFromRoute109[] = { { Route104_Text_BrineyMenuRoute104 }, { Route104_Text_BrineyMenuDewford }, { Route104_Text_BrineyMenuStay } };
+
 static const struct MultichoiceListStruct sMultichoiceLists[] = {
     [MULTICHOICE_YES_NO]                                     = MULTICHOICE(sMultichoiceList_YesNo),
     [MULTICHOICE_EEVEELUTIONS]                               = MULTICHOICE(sMultichoiceList_Eeveelutions),
@@ -674,6 +683,9 @@ static const struct MultichoiceListStruct sMultichoiceLists[] = {
     [MULTICHOICE_MECHADOLL5_Q3]             = MULTICHOICE(sMultichoiceList_Mechadoll5_Q3),
     [MULTICHOICE_TRICK_PRIZE]                                = MULTICHOICE(sMultichoiceList_TrickPrize),
     [MULTICHOICE_MAUVILLE_PRIZES]                            = MULTICHOICE(sMultichoiceList_MauvillePrizes),
+    [MULTICHOICE_BRINEY_FROM_ROUTE104]                       = MULTICHOICE(sMultichoiceList_BrineyFromRoute104),
+    [MULTICHOICE_BRINEY_FROM_DEWFORD]                        = MULTICHOICE(sMultichoiceList_BrineyFromDewford),
+    [MULTICHOICE_BRINEY_FROM_ROUTE109]                       = MULTICHOICE(sMultichoiceList_BrineyFromRoute109),
 };
 
 // From Cool to Berries goes unused

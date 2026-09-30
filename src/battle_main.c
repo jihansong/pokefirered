@@ -3791,6 +3791,11 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_PKMN_PROF:
             PlayBGM(MUS_VICTORY_GYM_LEADER);
             break;
+        case TRAINER_CLASS_TEAM_AQUA:       // v0.11.0: only HOENN's trainers use these
+        case TRAINER_CLASS_AQUA_ADMIN:
+        case TRAINER_CLASS_AQUA_LEADER:
+            PlayBGM(MUS_VICTORY_AQUA_MAGMA);
+            break;
         case TRAINER_CLASS_BOSS:
         case TRAINER_CLASS_TEAM_ROCKET:
         case TRAINER_CLASS_COOLTRAINER:

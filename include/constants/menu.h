@@ -95,6 +95,11 @@
 
 #define MULTICHOICE_MAUVILLE_PRIZES                            86
 
+// v0.11.0: MR. BRINEY's boat, the two other docks and STAY HERE
+#define MULTICHOICE_BRINEY_FROM_ROUTE104                       87
+#define MULTICHOICE_BRINEY_FROM_DEWFORD                        88
+#define MULTICHOICE_BRINEY_FROM_ROUTE109                       89
+
 #define MULTICHOICE_NONE                                      255
 
 #define LISTMENU_BADGES                    0

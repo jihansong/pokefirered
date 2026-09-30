@@ -2603,6 +2603,17 @@ static u16 GetObjectEventFlagIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGrou
     return obj->flagId;
 }
 
+// v0.11.0: TRUE if this object event's template has a hide flag that is now
+// set (FALSE for objects with no template, like the follower PIKACHU)
+bool8 IsObjectEventFlaggedHidden(u8 objectEventId)
+{
+    const struct ObjectEventTemplate *obj = GetObjectEventTemplateByLocalIdAndMap(gObjectEvents[objectEventId].localId,
+                                                                                  gObjectEvents[objectEventId].mapNum,
+                                                                                  gObjectEvents[objectEventId].mapGroup);
+
+    return obj != NULL && obj->flagId != 0 && FlagGet(obj->flagId);
+}
+
 static u16 GetObjectEventFlagIdByObjectEventId(u8 objectEventId)
 {
     return GetObjectEventFlagIdByLocalIdAndMap(gObjectEvents[objectEventId].localId, gObjectEvents[objectEventId].mapNum, gObjectEvents[objectEventId].mapGroup);

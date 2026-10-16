@@ -1,0 +1,4 @@
+PASS duplicate guard, gradual pitch ramp and cap
+PASS original positive and negative music wobble
+PASS inactive/purified/wrong-group/wrong-map cleanup and pitch reset
+All Lavender task checks passed; no GPU APIs referenced.

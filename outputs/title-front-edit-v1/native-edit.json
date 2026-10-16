@@ -1,0 +1,43 @@
+{
+  "source_sha256": "5733e84e0e06c29d0b3449feca908964085e9aa2de5eb0bec2a5b209e1e301e3",
+  "source_unchanged": true,
+  "selected_cel": "front-mono-fitted.png",
+  "native_size": [
+    86,
+    90
+  ],
+  "palette": [
+    "#281808",
+    "#483008",
+    "#684010",
+    "#885810",
+    "#A87818",
+    "#C89820",
+    "#E0B830",
+    "#F0D040",
+    "#F8E058",
+    "#F8E878",
+    "#F8F0A0",
+    "#F8F8C8",
+    "#D8A828",
+    "#B88828",
+    "#785020"
+  ],
+  "face_changed_native_pixels": 78,
+  "initial_study": {
+    "file": "front-mono-edited.png",
+    "native": [
+      88,
+      80
+    ],
+    "face_changed_native_pixels": 59
+  },
+  "derivative_reference_art": true,
+  "new_original_pose": false,
+  "tail_tip_completed": true,
+  "tail_reposition": "isolated existing tail at 60 percent scale about root, moved 25 source pixels upward, explicit brown connector behind body; body and face proportions unchanged",
+  "monochrome_yellow": true,
+  "rom_integrated": false,
+  "gif_created": false,
+  "user_approved": false
+}

@@ -3,7 +3,9 @@
 @ engine; the register keeper at SLATEPORT's harbour is what reads it back.
 DewfordTown_Gym_EventScript_Brawly::
 	trainerbattle_single TRAINER_HOENN_BRAWLY_1, DewfordTown_Gym_Text_BrawlyIntro, DewfordTown_Gym_Text_BrawlyDefeat, DewfordTown_Gym_EventScript_DefeatedBrawly, NO_MUSIC
+	goto_if_unset FLAG_HOENN_BADGE02_GET, DewfordTown_Gym_EventScript_DefeatedBrawly
 	goto_if_unset FLAG_HOENN_GOT_TM08_FROM_BRAWLY, DewfordTown_Gym_EventScript_GiveTM08
+DewfordTown_Gym_EventScript_LegacyPostBattle::
 	msgbox DewfordTown_Gym_Text_BrawlyPostBattle
 	call DewfordTown_Gym_EventScript_BrawlyPikachu
 	release
@@ -17,6 +19,7 @@ DewfordTown_Gym_EventScript_DefeatedBrawly::
 	end
 
 DewfordTown_Gym_EventScript_GiveTM08::
+	goto_if_set FLAG_HOENN_GOT_TM08_FROM_BRAWLY, DewfordTown_Gym_EventScript_LegacyPostBattle
 	msgbox DewfordTown_Gym_Text_TakeThisTM
 	checkitemspace ITEM_TM08
 	goto_if_eq VAR_RESULT, FALSE, DewfordTown_Gym_EventScript_NoRoomForTM08

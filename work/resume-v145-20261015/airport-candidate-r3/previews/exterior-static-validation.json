@@ -1,0 +1,501 @@
+{
+  "reports": [
+    {
+      "name": "JohtoCherrygroveAirstrip",
+      "map_id": "MAP_JOHTO_CHERRYGROVE_AIRSTRIP",
+      "layout": {
+        "id": "LAYOUT_JOHTO_CHERRYGROVE_AIRSTRIP",
+        "name": "JohtoCherrygroveAirstrip_Layout",
+        "width": 44,
+        "height": 24,
+        "border_width": 2,
+        "border_height": 2,
+        "primary_tileset": "gTileset_General",
+        "secondary_tileset": "gTileset_VermilionCity",
+        "border_filepath": "data/layouts/JohtoCherrygroveAirstrip/border.bin",
+        "blockdata_filepath": "data/layouts/JohtoCherrygroveAirstrip/map.bin"
+      },
+      "blockdata_sha256": "1c3befcc02ba99edca4ee3f3063a066cfdeaf4d4deaa6baa6a640e6a7a22ae15",
+      "tile_binding_errors": [],
+      "walkable_components_ignoring_behavior_and_actors": [
+        {
+          "count": 434,
+          "first": [
+            16,
+            2
+          ],
+          "bounds": [
+            16,
+            0,
+            43,
+            21
+          ]
+        },
+        {
+          "count": 116,
+          "first": [
+            6,
+            2
+          ],
+          "bounds": [
+            6,
+            2,
+            14,
+            21
+          ]
+        }
+      ],
+      "metatile_counts": {
+        "28": 60,
+        "29": 61,
+        "1": 513,
+        "20": 58,
+        "21": 59,
+        "299": 100,
+        "244": 40,
+        "845": 1,
+        "843": 2,
+        "846": 1,
+        "808": 1,
+        "809": 2,
+        "810": 1,
+        "811": 1,
+        "861": 1,
+        "812": 1,
+        "813": 1,
+        "841": 14,
+        "837": 4,
+        "842": 14,
+        "814": 1,
+        "815": 2,
+        "816": 1,
+        "817": 1,
+        "860": 1,
+        "818": 1,
+        "819": 1,
+        "839": 1,
+        "840": 1,
+        "820": 1,
+        "821": 2,
+        "822": 1,
+        "823": 1,
+        "859": 1,
+        "824": 1,
+        "825": 1,
+        "833": 16,
+        "834": 6,
+        "857": 4,
+        "831": 26,
+        "858": 4,
+        "2": 1,
+        "826": 1,
+        "827": 1,
+        "828": 1,
+        "829": 1,
+        "830": 1,
+        "832": 1,
+        "277": 36,
+        "847": 1,
+        "844": 2,
+        "848": 1
+      },
+      "collision_counts": {
+        "1": 506,
+        "0": 550
+      },
+      "behavior_counts": {
+        "0": 918,
+        "21": 100,
+        "132": 1,
+        "105": 1,
+        "33": 36
+      },
+      "events": {
+        "warp_events": [
+          {
+            "x": 37,
+            "y": 10,
+            "elevation": 0,
+            "dest_map": "MAP_JOHTO_AIRPORT_TERMINAL",
+            "dest_warp_id": "0"
+          }
+        ],
+        "object_events": [
+          {
+            "local_id": "LOCALID_JOHTOCHERRYGROVEAIRSTRIP_RETURNCLERK",
+            "type": "object",
+            "graphics_id": "OBJ_EVENT_GFX_CLERK",
+            "x": 22,
+            "y": 10,
+            "elevation": 3,
+            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "trainer_type": "TRAINER_TYPE_NONE",
+            "trainer_sight_or_berry_tree_id": "0",
+            "script": "JohtoCherrygroveAirstrip_ReturnClerk",
+            "flag": "0"
+          },
+          {
+            "local_id": "LOCALID_JOHTOCHERRYGROVEAIRSTRIP_GUIDE",
+            "type": "object",
+            "graphics_id": "OBJ_EVENT_GFX_SAILOR",
+            "x": 26,
+            "y": 15,
+            "elevation": 3,
+            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "trainer_type": "TRAINER_TYPE_NONE",
+            "trainer_sight_or_berry_tree_id": "0",
+            "script": "JohtoCherrygroveAirstrip_Guide",
+            "flag": "0"
+          }
+        ],
+        "coord_events": [],
+        "bg_events": [
+          {
+            "type": "sign",
+            "x": 25,
+            "y": 10,
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "JohtoCherrygroveAirstrip_Sign"
+          }
+        ]
+      },
+      "border_words": [
+        "0x41c",
+        "0x41d",
+        "0x414",
+        "0x415"
+      ],
+      "connections": [
+        {
+          "map": "MAP_JOHTO_ROUTE29",
+          "offset": 0,
+          "direction": "right"
+        },
+        {
+          "map": "MAP_CHERRYGROVE_CITY",
+          "direction": "up",
+          "offset": 0
+        }
+      ],
+      "landscape_preview_static": true,
+      "walking_verified": false,
+      "events_verified": false
+    },
+    {
+      "name": "HoennAirportExterior",
+      "map_id": "MAP_HOENN_AIRPORT_EXTERIOR",
+      "layout": {
+        "id": "LAYOUT_HOENN_AIRPORT_EXTERIOR",
+        "name": "HoennAirportExterior_Layout",
+        "width": 32,
+        "height": 24,
+        "border_width": 2,
+        "border_height": 2,
+        "primary_tileset": "gTileset_General",
+        "secondary_tileset": "gTileset_VermilionCity",
+        "border_filepath": "data/layouts/HoennAirportExterior/border.bin",
+        "blockdata_filepath": "data/layouts/HoennAirportExterior/map.bin"
+      },
+      "blockdata_sha256": "e4305cb7cebcf7ac0e7179a86ef3f7dd30e63834043d7e927a13cd038ed9b118",
+      "tile_binding_errors": [],
+      "walkable_components_ignoring_behavior_and_actors": [
+        {
+          "count": 221,
+          "first": [
+            16,
+            2
+          ],
+          "bounds": [
+            16,
+            2,
+            29,
+            23
+          ]
+        },
+        {
+          "count": 116,
+          "first": [
+            6,
+            2
+          ],
+          "bounds": [
+            6,
+            2,
+            14,
+            21
+          ]
+        }
+      ],
+      "metatile_counts": {
+        "28": 41,
+        "29": 41,
+        "20": 41,
+        "21": 41,
+        "299": 100,
+        "244": 40,
+        "1": 280,
+        "845": 1,
+        "843": 2,
+        "846": 1,
+        "808": 1,
+        "809": 2,
+        "810": 1,
+        "811": 1,
+        "861": 1,
+        "812": 1,
+        "813": 1,
+        "841": 14,
+        "837": 4,
+        "842": 14,
+        "814": 1,
+        "815": 2,
+        "816": 1,
+        "817": 1,
+        "860": 1,
+        "818": 1,
+        "819": 1,
+        "839": 1,
+        "840": 1,
+        "820": 1,
+        "821": 2,
+        "822": 1,
+        "823": 1,
+        "859": 1,
+        "824": 1,
+        "825": 1,
+        "833": 16,
+        "834": 6,
+        "857": 4,
+        "831": 26,
+        "858": 4,
+        "826": 1,
+        "827": 1,
+        "828": 1,
+        "829": 1,
+        "830": 1,
+        "832": 1,
+        "277": 54,
+        "847": 1,
+        "844": 2,
+        "848": 1,
+        "377": 2
+      },
+      "collision_counts": {
+        "1": 431,
+        "0": 337
+      },
+      "behavior_counts": {
+        "0": 611,
+        "21": 100,
+        "105": 1,
+        "33": 54,
+        "101": 2
+      },
+      "events": {
+        "warp_events": [
+          {
+            "x": 22,
+            "y": 23,
+            "elevation": 3,
+            "dest_map": "MAP_SLATEPORT_CITY_HARBOR",
+            "dest_warp_id": "4"
+          },
+          {
+            "x": 23,
+            "y": 23,
+            "elevation": 3,
+            "dest_map": "MAP_SLATEPORT_CITY_HARBOR",
+            "dest_warp_id": "5"
+          },
+          {
+            "x": 25,
+            "y": 10,
+            "elevation": 0,
+            "dest_map": "MAP_HOENN_AIRPORT_TERMINAL",
+            "dest_warp_id": "0"
+          }
+        ],
+        "object_events": [
+          {
+            "type": "object",
+            "graphics_id": "OBJ_EVENT_GFX_SAILOR",
+            "x": 26,
+            "y": 15,
+            "elevation": 3,
+            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "trainer_type": "TRAINER_TYPE_NONE",
+            "trainer_sight_or_berry_tree_id": "0",
+            "script": "HoennAirportExterior_Guide",
+            "flag": "0"
+          }
+        ],
+        "coord_events": [],
+        "bg_events": []
+      },
+      "border_words": [
+        "0x41c",
+        "0x41d",
+        "0x414",
+        "0x415"
+      ],
+      "connections": null,
+      "landscape_preview_static": true,
+      "walking_verified": false,
+      "events_verified": false
+    }
+  ],
+  "reads": {
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\layouts\\layouts.json": {
+      "path": "data/layouts/layouts.json",
+      "source": "snapshot_root",
+      "bytes": 364354,
+      "sha256": "6d0d3340d9e2fc8cdafad56c2e37c8b64081ce5b4449546316db5d6b42ebcfa0"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\src\\data\\tilesets\\headers.h": {
+      "path": "src/data/tilesets/headers.h",
+      "source": "asset_root",
+      "bytes": 22525,
+      "sha256": "8cd61e16513d33b52ad145e0aa399aaaa9a548020138d5e8e35e0c598898b7be"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\src\\data\\tilesets\\metatiles.h": {
+      "path": "src/data/tilesets/metatiles.h",
+      "source": "asset_root",
+      "bytes": 15569,
+      "sha256": "188e08a12509977ad53293fa2f9a7b133dd42ae0bfbb4f8198d4ecfa4d77955c"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\src\\data\\tilesets\\graphics.h": {
+      "path": "src/data/tilesets/graphics.h",
+      "source": "asset_root",
+      "bytes": 88962,
+      "sha256": "f50f8437d2d194a66bff53f237978bf1750e0ecdddcb8b5804d870a737791b4a"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\include\\fieldmap.h": {
+      "path": "include/fieldmap.h",
+      "source": "asset_root",
+      "bytes": 2480,
+      "sha256": "b6f232042fd3f83473f9cce72865901202746aa4cf51213170365ce0715d64e6"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\maps\\JohtoCherrygroveAirstrip\\map.json": {
+      "path": "data/maps/JohtoCherrygroveAirstrip/map.json",
+      "source": "snapshot_root",
+      "bytes": 2032,
+      "sha256": "3494b57ca955e39be993302b8ebaee585d8f6724a2029404f6626f4abd5e101e"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\layouts\\JohtoCherrygroveAirstrip\\map.bin": {
+      "path": "data/layouts/JohtoCherrygroveAirstrip/map.bin",
+      "source": "snapshot_root",
+      "bytes": 2112,
+      "sha256": "1c3befcc02ba99edca4ee3f3063a066cfdeaf4d4deaa6baa6a640e6a7a22ae15"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\layouts\\JohtoCherrygroveAirstrip\\border.bin": {
+      "path": "data/layouts/JohtoCherrygroveAirstrip/border.bin",
+      "source": "snapshot_root",
+      "bytes": 8,
+      "sha256": "4f4aa105dfd88fa5d7cfa853fd7f794bf2acea638cdba8823481fac2ea22a91f"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\tilesets\\primary\\general\\metatiles.bin": {
+      "path": "data/tilesets/primary/general/metatiles.bin",
+      "source": "asset_root",
+      "bytes": 10240,
+      "sha256": "8d950c1a1f151f5e1bded1ecee165b815c3a4d62b69a4a9cec4f676283f9041e"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\tilesets\\primary\\general\\metatile_attributes.bin": {
+      "path": "data/tilesets/primary/general/metatile_attributes.bin",
+      "source": "asset_root",
+      "bytes": 2560,
+      "sha256": "1f62a949da41adca90ad36ca3597754bee953a8f21781f32aedf6158922c89cb"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\tilesets\\primary\\general\\tiles.png": {
+      "path": "data/tilesets/primary/general/tiles.png",
+      "source": "asset_root",
+      "bytes": 8671,
+      "sha256": "9ff889d1b9da5383a0cd0c85ac7b791812867804f3a38566b46172087419e0b9"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\tilesets\\secondary\\vermilion_city\\metatiles.bin": {
+      "path": "data/tilesets/secondary/vermilion_city/metatiles.bin",
+      "source": "asset_root",
+      "bytes": 3552,
+      "sha256": "c3b073d818a8520576fb7f2a8e0bda5738b22eb669768940c485a9cec08cff9b"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\tilesets\\secondary\\vermilion_city\\metatile_attributes.bin": {
+      "path": "data/tilesets/secondary/vermilion_city/metatile_attributes.bin",
+      "source": "asset_root",
+      "bytes": 888,
+      "sha256": "8e736698a372e7ba90640db60b029540065667d99f6cc0161b80a79b75e6c1c8"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\tilesets\\secondary\\vermilion_city\\tiles.png": {
+      "path": "data/tilesets/secondary/vermilion_city/tiles.png",
+      "source": "asset_root",
+      "bytes": 1713,
+      "sha256": "5686194004fc43746b5b1ab5a427b42bb31f794bc889878c07747fa0a691d83c"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\tilesets\\primary\\general\\palettes\\00.pal": {
+      "path": "data/tilesets/primary/general/palettes/00.pal",
+      "source": "asset_root",
+      "bytes": 205,
+      "sha256": "de073336bb3f0592b6075fb8e4497b8c2ecfdf86a9d29f8c88dbec8702ccc9fc"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\tilesets\\primary\\general\\palettes\\04.pal": {
+      "path": "data/tilesets/primary/general/palettes/04.pal",
+      "source": "asset_root",
+      "bytes": 218,
+      "sha256": "50925427da2fc947ae3915f2d1b1c63e115418e8ce12f374b31a3ed45e932c65"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\tilesets\\primary\\general\\palettes\\02.pal": {
+      "path": "data/tilesets/primary/general/palettes/02.pal",
+      "source": "asset_root",
+      "bytes": 211,
+      "sha256": "5a45e240ddd7e5b5c9ef403b2f849b8fd4381d21661255ce49aae79ed991a49b"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\tilesets\\secondary\\vermilion_city\\palettes\\07.pal": {
+      "path": "data/tilesets/secondary/vermilion_city/palettes/07.pal",
+      "source": "asset_root",
+      "bytes": 182,
+      "sha256": "1dbf25b47d3d69ff94d641e6138a8abf6c11a0c27bdc648ca37d45f9eaafc2b9"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\tilesets\\secondary\\vermilion_city\\palettes\\11.pal": {
+      "path": "data/tilesets/secondary/vermilion_city/palettes/11.pal",
+      "source": "asset_root",
+      "bytes": 218,
+      "sha256": "3c2a190d0f04c98fcf899838049a83f3671c1fc1f8de8f1190182880944c4386"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\tilesets\\primary\\general\\palettes\\03.pal": {
+      "path": "data/tilesets/primary/general/palettes/03.pal",
+      "source": "asset_root",
+      "bytes": 214,
+      "sha256": "139eddfe3f2a2d1018a736a480efa505231260662cdbaf30e32c173b1d9a6b76"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\tilesets\\primary\\general\\palettes\\05.pal": {
+      "path": "data/tilesets/primary/general/palettes/05.pal",
+      "source": "asset_root",
+      "bytes": 217,
+      "sha256": "7ab8f3342c37f96f587bff026583e7a5431a10c9f590ac40705b9732a9348098"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\maps\\HoennAirportExterior\\map.json": {
+      "path": "data/maps/HoennAirportExterior/map.json",
+      "source": "snapshot_root",
+      "bytes": 1374,
+      "sha256": "41822d8ce7128f08d781d0720b70c145be7d098811f3eb5bca99daec6ae2de78"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\layouts\\HoennAirportExterior\\map.bin": {
+      "path": "data/layouts/HoennAirportExterior/map.bin",
+      "source": "snapshot_root",
+      "bytes": 1536,
+      "sha256": "e4305cb7cebcf7ac0e7179a86ef3f7dd30e63834043d7e927a13cd038ed9b118"
+    },
+    "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\airport-candidate-render-input-r4\\data\\layouts\\HoennAirportExterior\\border.bin": {
+      "path": "data/layouts/HoennAirportExterior/border.bin",
+      "source": "snapshot_root",
+      "bytes": 8,
+      "sha256": "4f4aa105dfd88fa5d7cfa853fd7f794bf2acea638cdba8823481fac2ea22a91f"
+    }
+  },
+  "native_verified": false
+}

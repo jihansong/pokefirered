@@ -1,0 +1,223 @@
+[
+  {
+    "name": "NewBarkTown",
+    "map": "MAP_NEW_BARK_TOWN",
+    "size": [
+      36,
+      28
+    ],
+    "start": [
+      18,
+      22
+    ],
+    "scroll": [
+      0,
+      -1,
+      160
+    ]
+  },
+  {
+    "name": "NewBarkTown_ElmsLab",
+    "map": "MAP_NEW_BARK_TOWN_ELMS_LAB",
+    "size": [
+      13,
+      14
+    ],
+    "start": [
+      6,
+      9
+    ],
+    "scroll": [
+      0,
+      0,
+      1
+    ]
+  },
+  {
+    "name": "CherrygroveCity",
+    "map": "MAP_CHERRYGROVE_CITY",
+    "size": [
+      36,
+      28
+    ],
+    "start": [
+      18,
+      22
+    ],
+    "scroll": [
+      0,
+      -1,
+      128
+    ]
+  },
+  {
+    "name": "VioletCity",
+    "map": "MAP_VIOLET_CITY",
+    "size": [
+      40,
+      32
+    ],
+    "start": [
+      20,
+      26
+    ],
+    "scroll": [
+      0,
+      -1,
+      160
+    ]
+  },
+  {
+    "name": "AzaleaTown",
+    "map": "MAP_AZALEA_TOWN",
+    "size": [
+      40,
+      28
+    ],
+    "start": [
+      20,
+      22
+    ],
+    "scroll": [
+      0,
+      -1,
+      128
+    ]
+  },
+  {
+    "name": "IlexForest",
+    "map": "MAP_ILEX_FOREST",
+    "size": [
+      40,
+      48
+    ],
+    "start": [
+      20,
+      42
+    ],
+    "scroll": [
+      0,
+      -1,
+      160
+    ]
+  },
+  {
+    "name": "GoldenrodCity",
+    "map": "MAP_GOLDENROD_CITY",
+    "size": [
+      48,
+      40
+    ],
+    "start": [
+      24,
+      34
+    ],
+    "scroll": [
+      0,
+      -1,
+      160
+    ]
+  },
+  {
+    "name": "EcruteakCity",
+    "map": "MAP_ECRUTEAK_CITY",
+    "size": [
+      40,
+      36
+    ],
+    "start": [
+      20,
+      30
+    ],
+    "scroll": [
+      0,
+      -1,
+      160
+    ]
+  },
+  {
+    "name": "BurnedTower_1F",
+    "map": "MAP_BURNED_TOWER_1F",
+    "size": [
+      28,
+      24
+    ],
+    "start": [
+      14,
+      20
+    ],
+    "scroll": [
+      0,
+      -1,
+      80
+    ]
+  },
+  {
+    "name": "OlivineCity",
+    "map": "MAP_OLIVINE_CITY",
+    "size": [
+      44,
+      40
+    ],
+    "start": [
+      22,
+      34
+    ],
+    "scroll": [
+      0,
+      -1,
+      160
+    ]
+  },
+  {
+    "name": "OlivineLighthouse_6F",
+    "map": "MAP_OLIVINE_LIGHTHOUSE_6F",
+    "size": [
+      24,
+      20
+    ],
+    "start": [
+      12,
+      16
+    ],
+    "scroll": [
+      0,
+      -1,
+      80
+    ]
+  },
+  {
+    "name": "LakeOfRage",
+    "map": "MAP_LAKE_OF_RAGE",
+    "size": [
+      40,
+      36
+    ],
+    "start": [
+      20,
+      30
+    ],
+    "scroll": [
+      0,
+      -1,
+      160
+    ]
+  },
+  {
+    "name": "MtMortar_1F",
+    "map": "MAP_MT_MORTAR_1F",
+    "size": [
+      48,
+      40
+    ],
+    "start": [
+      24,
+      34
+    ],
+    "scroll": [
+      0,
+      -1,
+      160
+    ]
+  }
+]

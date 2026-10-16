@@ -1,0 +1,170 @@
+{
+  "apply": false,
+  "files": [
+    "data/event_scripts.s",
+    "data/layouts/GoldenrodCity/map.bin",
+    "data/layouts/GoldenrodCity_RadioTower_1F/map.bin",
+    "data/layouts/GoldenrodCity_RadioTower_2F/border.bin",
+    "data/layouts/GoldenrodCity_RadioTower_2F/map.bin",
+    "data/layouts/GoldenrodCity_RadioTower_3F/border.bin",
+    "data/layouts/GoldenrodCity_RadioTower_3F/map.bin",
+    "data/layouts/GoldenrodCity_RadioTower_4F/border.bin",
+    "data/layouts/GoldenrodCity_RadioTower_4F/map.bin",
+    "data/layouts/GoldenrodCity_RadioTower_5F/border.bin",
+    "data/layouts/GoldenrodCity_RadioTower_5F/map.bin",
+    "data/layouts/GoldenrodUnderground/border.bin",
+    "data/layouts/GoldenrodUnderground/map.bin",
+    "data/layouts/GoldenrodUnderground_Basement/border.bin",
+    "data/layouts/GoldenrodUnderground_Basement/map.bin",
+    "data/layouts/GoldenrodWarehouse/border.bin",
+    "data/layouts/GoldenrodWarehouse/map.bin",
+    "data/layouts/layouts.json",
+    "data/maps/GoldenrodCity/map.json",
+    "data/maps/GoldenrodCity_RadioTower_1F/map.json",
+    "data/maps/GoldenrodCity_RadioTower_1F/scripts.inc",
+    "data/maps/GoldenrodCity_RadioTower_1F/text.inc",
+    "data/maps/GoldenrodCity_RadioTower_2F/map.json",
+    "data/maps/GoldenrodCity_RadioTower_2F/scripts.inc",
+    "data/maps/GoldenrodCity_RadioTower_2F/text.inc",
+    "data/maps/GoldenrodCity_RadioTower_3F/map.json",
+    "data/maps/GoldenrodCity_RadioTower_3F/scripts.inc",
+    "data/maps/GoldenrodCity_RadioTower_3F/text.inc",
+    "data/maps/GoldenrodCity_RadioTower_4F/map.json",
+    "data/maps/GoldenrodCity_RadioTower_4F/scripts.inc",
+    "data/maps/GoldenrodCity_RadioTower_4F/text.inc",
+    "data/maps/GoldenrodCity_RadioTower_5F/map.json",
+    "data/maps/GoldenrodCity_RadioTower_5F/scripts.inc",
+    "data/maps/GoldenrodCity_RadioTower_5F/text.inc",
+    "data/maps/GoldenrodUnderground/map.json",
+    "data/maps/GoldenrodUnderground/scripts.inc",
+    "data/maps/GoldenrodUnderground/text.inc",
+    "data/maps/GoldenrodUnderground_Basement/map.json",
+    "data/maps/GoldenrodUnderground_Basement/scripts.inc",
+    "data/maps/GoldenrodUnderground_Basement/text.inc",
+    "data/maps/GoldenrodWarehouse/map.json",
+    "data/maps/GoldenrodWarehouse/scripts.inc",
+    "data/maps/GoldenrodWarehouse/text.inc",
+    "data/maps/MahoganyTown/text.inc",
+    "data/maps/map_groups.json",
+    "include/constants/flags_johto_story.h",
+    "include/constants/opponents.h",
+    "include/constants/opponents_johto_radio_tower.h",
+    "src/data/trainer_parties.h",
+    "src/data/trainer_parties_johto_radio_tower.h",
+    "src/data/trainers.h",
+    "src/data/trainers_johto_radio_tower.h",
+    "tools/johto/build_mahogany.py"
+  ],
+  "validation": {
+    "chapter": "Goldenrod Radio Tower rescue",
+    "save_layout_changed": false,
+    "native_build_and_emulator": "NOT_RUN_BY_GENERATOR",
+    "visual_limits": [
+      "Existing native Kanto corporate tiles and trainer portraits are reused.",
+      "The director coordinates repairs from the warehouse after the rescue."
+    ],
+    "not_implemented": [
+      "Route44/IcePath/Blackthorn/Clair/DragonDen",
+      "Johto League",
+      "Full original Underground side services"
+    ],
+    "map_count": 7,
+    "new_trainer_ids": [
+      836,
+      837,
+      838,
+      839,
+      840,
+      841,
+      842,
+      843,
+      844,
+      845
+    ],
+    "radio_clear_flag_preexisting_offset": 52,
+    "new_flag_offsets": {
+      "FLAG_JOHTO_RADIO_BASEMENT_ACCESS": 54,
+      "FLAG_JOHTO_RADIO_DIRECTOR_RESCUED": 55,
+      "FLAG_JOHTO_RADIO_GOT_TM11": 56,
+      "FLAG_HIDE_JOHTO_RADIO_SILVER": 57,
+      "FLAG_HIDE_JOHTO_RADIO_PETREL": 58
+    },
+    "city_warp_ids": {
+      "GoldenrodUnderground": 5,
+      "GoldenrodCity_RadioTower_1F": 3
+    },
+    "preserved_research_lobby": {
+      "map_id": "MAP_GOLDENROD_CITY_RADIO_TOWER_1F",
+      "dimensions": [
+        15,
+        12
+      ],
+      "original_objects": 2,
+      "original_warps": 3,
+      "added_stair_warp": 3,
+      "terrain_changed_cells": 1
+    },
+    "johto_map_count": 101,
+    "map_section_growth": 0,
+    "bag_or_pokemon_struct_growth": 0,
+    "saved_bitfield_bounds": {
+      "last_trainer_offset": 845,
+      "trainer_bits": 1024,
+      "last_hoenn_story_offset": 1338,
+      "story_bits": 2048
+    },
+    "static_checks": [
+      {
+        "map": "GoldenrodCity_RadioTower_1F",
+        "reachable_tiles": 98,
+        "buffer_metatiles": 780,
+        "native_warps_checked": 4
+      },
+      {
+        "map": "GoldenrodCity_RadioTower_2F",
+        "reachable_tiles": 620,
+        "buffer_metatiles": 1836,
+        "native_warps_checked": 2
+      },
+      {
+        "map": "GoldenrodCity_RadioTower_3F",
+        "reachable_tiles": 626,
+        "buffer_metatiles": 1836,
+        "native_warps_checked": 2
+      },
+      {
+        "map": "GoldenrodCity_RadioTower_4F",
+        "reachable_tiles": 619,
+        "buffer_metatiles": 1836,
+        "native_warps_checked": 2
+      },
+      {
+        "map": "GoldenrodCity_RadioTower_5F",
+        "reachable_tiles": 618,
+        "buffer_metatiles": 1836,
+        "native_warps_checked": 1
+      },
+      {
+        "map": "GoldenrodUnderground",
+        "reachable_tiles": 607,
+        "buffer_metatiles": 1836,
+        "native_warps_checked": 2
+      },
+      {
+        "map": "GoldenrodUnderground_Basement",
+        "reachable_tiles": 621,
+        "buffer_metatiles": 1836,
+        "native_warps_checked": 2
+      },
+      {
+        "map": "GoldenrodWarehouse",
+        "reachable_tiles": 624,
+        "buffer_metatiles": 1836,
+        "native_warps_checked": 1
+      }
+    ],
+    "native_warp_behaviors_checked": 14,
+    "preserved_original_side_landing_pads": 2,
+    "map_sections_max": 231
+  }
+}

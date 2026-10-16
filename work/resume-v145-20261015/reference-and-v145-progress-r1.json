@@ -1,0 +1,101 @@
+{
+  "schema": "thunder-yellow-reference-and-v145-progress-v1",
+  "date_kst": "2026-10-15",
+  "user_reference_instruction": "Retain and use every named reference; researched design sources are distinct from imported assets and verified ROM behavior.",
+  "references": {
+    "registry": "/workspaces/pokefirered/work/reference-registry-20261015.json",
+    "registry_sha256": "50f45e142a0c5dd5f3ffd15ecf761cb35890d02768af48341fe7f34a24ce877a",
+    "addendum": "/workspaces/pokefirered/work/reference-verification-addendum-20261015.json",
+    "addendum_sha256": "2d15266d3a471c4f300d2e2f00225c3674771bbcb4c4bf913ae74d769363f4bb",
+    "entry_count": 12,
+    "unresolved_exact_titles": [
+      "Legends of Johto",
+      "Johto Adventures 2",
+      "modern HeartGold Deluxe alias"
+    ],
+    "UPS_applied": false,
+    "all_prior_approvals_retained": true
+  },
+  "current_ROM": {
+    "path": "/workspaces/pokefirered/pokemonthyl.gba",
+    "sha256": "fdd021066ee7ce6fa775407c6be6699ba41583f34d92264e65020bd98950b0f4",
+    "ELF_sha256": "7c831da7d91eba1f4132e67a6ce804434003b2249e6abe0af5e19e69d622a53b",
+    "bytes": 33554432,
+    "status": "narrow Route29 and Misty changes built and scoped native verified; not a whole-region release",
+    "ROM_differences_only_in_existing_Route29_and_Misty_allocations": true,
+    "all_RAM_symbols_and_LOAD_headers_unchanged": true,
+    "build_return_code": 0,
+    "build_warnings": [
+      "existing jobserver fallback to -j1",
+      "existing RWX LOAD segment linker warning"
+    ]
+  },
+  "uploaded_save": {
+    "path": "/workspaces/pokefirered/saves/pokemonthyl_v1.45.sav",
+    "sha256": "0949ebf04557a76e2175602e967eefadb7ffb722f2746be8a40ddb1fd66550a9",
+    "original_modified": false,
+    "user_exported_after_BadEgg_in_game_SAVE": true
+  },
+  "native": {
+    "Misty": {
+      "status": "PASS",
+      "cases": 8,
+      "walking_and_running_four_directions": true,
+      "native_SAVE_cold": true,
+      "checksummed_sectors": 14,
+      "party_PC_all_flags_vars_dex_preserved": true,
+      "report": "/workspaces/pokefirered/work/resume-v145-20261015/native-Misty-independent-r6/walk-validation.json",
+      "root_reviewed_front_back_and_side_screens": true
+    },
+    "Route29": {
+      "status": "PASS_WITH_RECORDED_INITIAL_VISIBILITY_SYNC",
+      "cases": 10,
+      "road_steps": 34,
+      "neighbor_round_trips": 2,
+      "report": "/workspaces/pokefirered/work/resume-v145-20261015/native-Route29-canonical-fixture-r7/route29-validation.json",
+      "initial_R6_failure_retained": true,
+      "first_cold_changed_11_derived_Hoenn_NPC_hide_bits": true,
+      "actual_story_vars_zero_and_story_flags_false_verified": true,
+      "second_native_SAVE_cold_all_fields_equal": true,
+      "canonical_QA_save_sha256": "899accf105ec7a1dc5c8f3606ad03c517914cdd0b675e51413214f96da6a5d80",
+      "cold_diagnostic": "/workspaces/pokefirered/work/resume-v145-20261015/Route29-cold-flags-observe-r2/cold-flag-diff.json",
+      "natural_campaign_traversal": false
+    },
+    "Lapras": {
+      "original_baseline_ROM_sha256": "af2677993a75979fb36f0768c390d1bad7424e61f2d569b5054d40702250d2e8",
+      "actual_PC_summary_and_SAVE_cold": "PASS_HEALTHY",
+      "PC_records_preserved": 156,
+      "original_save_modified": false,
+      "report": "/workspaces/pokefirered/work/user-map-bugs-v145-20261015/pc-native-r2/validation.json",
+      "DELTA_case_reproduced": false,
+      "DELTA_root_cause_confirmed": false
+    },
+    "DELTA_device_tested": false,
+    "whole_three_region_story_verified": false,
+    "performance_conclusion": "No new runtime loops introduced by these two visual changes; actual DELTA FPS not measured"
+  },
+  "pending": {
+    "maps": "Whole Johto and Hoenn composition remediation remains; Ilex 3x2 border and airport integration are prepared but unapplied.",
+    "airport_and_Ilex_candidate": {
+      "local_zip": "hoenn/regional-airport-ilex-integrated-candidate-r1.zip",
+      "sha256": "1d5b03ffa95d50bbcd4d40505fb1a7da5fcd39343ae16378bda1869f31c0e2c9",
+      "targets": 27,
+      "applied": false,
+      "native_verified": false
+    },
+    "Elm": "Professor and assistant still both SCIENTIST; dedicated professor-only registration candidate unapplied.",
+    "Birch": "Dedicated PROF_BIRCH binding already exists; current native palette/appearance review remains.",
+    "Misty_battle": "Anime season 1 battle clothing not finished; image generation attempts produced no accepted asset.",
+    "BadEgg": "Original v1.45 is healthy in observed native PC; actual DELTA Bad Egg source unresolved.",
+    "other_authorized_work": "Existing opening/title/endings/story/dex/HM/PP and approved artwork requirements remain in canonical status; no broad completion claimed."
+  },
+  "actions_not_taken": [
+    "original SAV overwrite",
+    "push",
+    "public deployment",
+    "Codespaces restart",
+    "old work deletion",
+    "UPS applied to Thunder Yellow"
+  ],
+  "updated_utc": "2026-10-15T11:19:50.490586+00:00"
+}

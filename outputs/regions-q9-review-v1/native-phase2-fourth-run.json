@@ -1,0 +1,41 @@
+{
+  "status": "FINISHED",
+  "rom_sha256": "af9ba1f61fce4630d488567ed11b83847dfbc1fcff435653bedd4d86dc622818",
+  "jobs_total": 5,
+  "max_workers": 2,
+  "results": [
+    {
+      "name": "rival-110-index-repaired",
+      "exit": 0,
+      "seconds": 34.10980296134949,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-fourth-rival-110-index-repaired.log"
+    },
+    {
+      "name": "tohjo-lookup-repaired",
+      "exit": 1,
+      "seconds": 23.459737539291382,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-fourth-tohjo-lookup-repaired.log"
+    },
+    {
+      "name": "hof-checksum-repaired",
+      "exit": 0,
+      "seconds": 33.06263852119446,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-fourth-hof-checksum-repaired.log"
+    },
+    {
+      "name": "league-nurse-diag",
+      "exit": 1,
+      "seconds": 35.64508008956909,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-fourth-league-nurse-diag.log"
+    },
+    {
+      "name": "misty-call-diag",
+      "exit": 0,
+      "seconds": 6.778160810470581,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-fourth-misty-call-diag.log"
+    }
+  ],
+  "all_pass": false,
+  "main_unchanged": true,
+  "original_saves_unchanged": true
+}

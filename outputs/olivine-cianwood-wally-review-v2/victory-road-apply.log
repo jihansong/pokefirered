@@ -1,0 +1,63 @@
+{
+  "pass": true,
+  "apply": true,
+  "trainers": [
+    {
+      "name": "Edgar",
+      "slot": 539
+    },
+    {
+      "name": "Hope",
+      "slot": 540
+    },
+    {
+      "name": "Albert",
+      "slot": 541
+    },
+    {
+      "name": "Katelynn",
+      "slot": 542
+    },
+    {
+      "name": "Quincy",
+      "slot": 543
+    }
+  ],
+  "save_layout_changes": 0,
+  "original_sight_and_teams": true,
+  "existing_wally_items_warps_preserved": true,
+  "terrain_sha256": "b100693756672442b3f583a8886950d07b68bac1b6eafe07a2b5fe721d1c484e",
+  "files": [
+    {
+      "path": "include/constants/opponents_hoenn_story.h",
+      "before": "3fdbdef3b124c8f348a5ad625e73959f6a0c7404a3f6af1cb4d74924d4174ca9",
+      "after": "81f6785e3bc0673cc8dc7f32f43b0b14a212b6af1015a1f3b8d9774f2c353797"
+    },
+    {
+      "path": "src/data/trainers_hoenn_story.h",
+      "before": "5a574d06891a43dfc2766f42373da2670510860bd3479de088cfe6c8158db255",
+      "after": "b4c34b9573db0019777f86dbcfd0a14b6528eade9fa2adca5c116628c2c0b8c9"
+    },
+    {
+      "path": "src/data/trainer_parties_hoenn_story.h",
+      "before": "a17372ada84acab9a559b5e6a60d2a8d21799ac93f6dea3ee5ac81ebebf529ef",
+      "after": "d97ccc80f4f282fafe7a86e9c4d19134dafd7801dcd5a96a1b0217bb3bdf4313"
+    },
+    {
+      "path": "data/maps/HoennVictoryRoad_1F/map.json",
+      "before": "9020d1b93c963420b77aa92cfd365e4d08448c9f88a18de2a98855a8079b4191",
+      "after": "ada23341a7445f51310f4a5c1cd5c5062533cf6451d785f11bfa066f4adc3765"
+    },
+    {
+      "path": "data/maps/HoennVictoryRoad_1F/scripts.inc",
+      "before": "35c17a06bec19481698d6bb26ae571f97fd01140b9807217b5577d77c5c58bc4",
+      "after": "73e493af2f45a48ce991a978e4feafabea0b9783e2ee7b01734bf91cc6290a24"
+    },
+    {
+      "path": "data/maps/HoennVictoryRoad_1F/text.inc",
+      "before": "34f86ef82dfc67f1f58320457bc8d2d8770b7836d4388169e6ded01c55da93ef",
+      "after": "298e000e6c92d1d105917567520c34261c06bd4a864720c38912ae8561b3e53a"
+    }
+  ],
+  "backup": "/workspaces/pokefirered/work/backups/victory-road-1f-trainers-v1-20261005T183230Z"
+}

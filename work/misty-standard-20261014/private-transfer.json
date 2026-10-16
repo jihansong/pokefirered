@@ -1,0 +1,7 @@
+{
+  "pid": 60306,
+  "port": 27102,
+  "bind": "127.0.0.1",
+  "directory": "/workspaces/pokefirered/outputs/misty-standard-20261014",
+  "stopped_after_verified_download": true
+}

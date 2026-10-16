@@ -1,0 +1,27 @@
+ok   johto_ecruteak_goldenrod_north_into_gate
+ok   johto_ecruteak_north_gate_back_goldenrod
+ok   johto_ecruteak_north_gate_into_route35
+ok   johto_ecruteak_route35_back_north_gate
+ok   johto_ecruteak_route35_into_park_gate
+ok   johto_ecruteak_park_gate_back_route35
+ok   johto_ecruteak_park_gate_into_park
+ok   johto_ecruteak_park_back_south_gate
+ok   johto_ecruteak_park_into_east_gate
+ok   johto_ecruteak_east_gate_back_park
+ok   johto_ecruteak_east_gate_into_route36
+ok   johto_ecruteak_route36_back_east_gate
+ok   johto_ecruteak_route36_north_connection
+ok   johto_ecruteak_route37_south_connection
+ok   johto_ecruteak_route37_north_connection
+ok   johto_ecruteak_ecruteak_south_connection
+ok   johto_ecruteak_tower_descend_stairs
+ok   johto_ecruteak_tower_ascend_stairs
+ok   johto_ecruteak_center_upstairs
+ok   johto_ecruteak_center_downstairs
+ok   johto_ecruteak_center_roundtrip
+ok   johto_ecruteak_mart_roundtrip
+ok   johto_ecruteak_gym_roundtrip
+ok   johto_ecruteak_dance_theater_roundtrip
+ok   johto_ecruteak_burned_tower_roundtrip
+ok   johto_ecruteak_center_native_heal
+26/26 cases passed

@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/work/hoenn-devon-native-20261013/native-devon-v4.py", line 80, in <module>
+    report['after_battle_before_dismiss']=state();report['outcome_before_dismiss']=e.u8(syms['gBattleOutcome']);emit();e.shot(str(out/'after-battle.png'),scale=3);idle();assert blocks(e).trainer_beaten('TRAINER_HOENN_ROXANNE_1')
+                                                                                                                                                                   ^^^^^^
+  File "/workspaces/pokefirered/work/hoenn-devon-native-20261013/native-devon-v4.py", line 25, in idle
+    raise AssertionError(('event did not finish',state()))
+AssertionError: ('event did not finish', {'position': (54, 3, 5, 3), 'devon_scene': 1, 'flags': {'FLAG_HOENN_BADGE01_GET': False, 'FLAG_HOENN_DEFEATED_RUSTBORO_GYM': False, 'FLAG_HOENN_GOT_TM39_FROM_ROXANNE': False, 'FLAG_HIDE_HOENN_RUSTBORO_THIEF': False, 'FLAG_HOENN_WOODS_RESEARCHER_SAVED': True}, 'roxanne_beaten': False, 'idle': False})
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/work/hoenn-devon-native-20261013/native-devon-v4.py", line 101, in <module>
+    report['error']=repr(err);report['traceback']=traceback.format_exc();report['status']='failed';report['failure_state']=state() if e is not None else {};report['script_context_raw']=e.read(syms['gScriptContext1'],160).hex() if e is not None else '';report['battle_outcome_failure']=e.u8(syms['gBattleOutcome']) if e is not None else -1;e.shot(str(root/'outputs/regional-starters-20261013/devon-failure.png'),scale=3) if e is not None else None
+                                                                                                                                                                                                ~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'gScriptContext1'

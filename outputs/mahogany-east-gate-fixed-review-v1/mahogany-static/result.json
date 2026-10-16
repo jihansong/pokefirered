@@ -1,0 +1,210 @@
+{
+  "rom_sha256": "ab47fb761ae2d93e0008c98172f9dee4e89bd034037efa9abef2d86b436f6f81",
+  "cases": [
+    {
+      "case": "gyarados_win",
+      "turns": 1,
+      "outcome": 1,
+      "species_internal": 130,
+      "national_dex": 130,
+      "scripted_shiny_verified": true,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-static/gyarados_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "legal_capture_checksum_verified": false,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "gyarados_loss",
+      "turns": 1,
+      "outcome": 2,
+      "species_internal": 130,
+      "national_dex": 130,
+      "scripted_shiny_verified": true,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-static/gyarados_loss-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "legal_capture_checksum_verified": false,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "gyarados_run",
+      "turns": 0,
+      "outcome": 4,
+      "species_internal": 130,
+      "national_dex": 130,
+      "scripted_shiny_verified": true,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-static/gyarados_run-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "legal_capture_checksum_verified": false,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "gyarados_catch",
+      "turns": 0,
+      "outcome": 7,
+      "species_internal": 130,
+      "national_dex": 130,
+      "scripted_shiny_verified": true,
+      "save": {
+        "counter": [
+          61,
+          62
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-static/gyarados_catch-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "legal_capture_checksum_verified": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "electrode1_win",
+      "turns": 1,
+      "outcome": 1,
+      "species_internal": 101,
+      "national_dex": 101,
+      "scripted_shiny_verified": false,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-static/electrode1_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "legal_capture_checksum_verified": false,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "electrode1_loss",
+      "turns": 2,
+      "outcome": 2,
+      "species_internal": 101,
+      "national_dex": 101,
+      "scripted_shiny_verified": false,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-static/electrode1_loss-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "legal_capture_checksum_verified": false,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "electrode1_run",
+      "turns": 0,
+      "outcome": 4,
+      "species_internal": 101,
+      "national_dex": 101,
+      "scripted_shiny_verified": false,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-static/electrode1_run-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "legal_capture_checksum_verified": false,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "electrode1_catch",
+      "turns": 0,
+      "outcome": 7,
+      "species_internal": 101,
+      "national_dex": 101,
+      "scripted_shiny_verified": false,
+      "save": {
+        "counter": [
+          61,
+          62
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-static/electrode1_catch-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "legal_capture_checksum_verified": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "electrode2_catch",
+      "turns": 0,
+      "outcome": 7,
+      "species_internal": 101,
+      "national_dex": 101,
+      "scripted_shiny_verified": false,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-static/electrode2_catch-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "legal_capture_checksum_verified": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "electrode3_win",
+      "turns": 1,
+      "outcome": 1,
+      "species_internal": 101,
+      "national_dex": 101,
+      "scripted_shiny_verified": false,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-static/electrode3_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "legal_capture_checksum_verified": false,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    }
+  ],
+  "all_pass": true,
+  "native_flee_save_cold_retry": true,
+  "original_files_unchanged": true,
+  "forced_memory_writes": 0,
+  "forced_battle_outcomes": 0
+}

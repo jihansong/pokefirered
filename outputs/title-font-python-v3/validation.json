@@ -1,0 +1,25 @@
+{
+  "status": "FONT_ONLY_REVIEW_PNG",
+  "native_size": [
+    240,
+    160
+  ],
+  "changed_pixels": 3159,
+  "outside_font_rectangle_changed_pixels": 0,
+  "source_svg_sha256": "3847e12d357a45d6167455821021c67c4dcf3179552420f5c609c44db3dc4238",
+  "source_png_sha256": "81fd0c6c1cbece648405a5ce26c6b770c3d3474f93ab5ceb1e9da321c9d8bfa0",
+  "output_rgba_sha256": "4bfde12265e9d35c72f6e9ea4e2865d801d0f0e9bed03a97b2077253f6ae9982",
+  "pikachu_source_unchanged": true,
+  "pikachu_colours": 15,
+  "pikachu_alpha": [
+    0,
+    255
+  ],
+  "new_pikachu_art": false,
+  "gif_created": false,
+  "rom_integrated": false,
+  "user_approved": false,
+  "renderer": "Existing SVG paths; quadratic curves subdivided into 32 segments, binary pixel-centre fill and round stroke; Pillow PNG I/O only",
+  "libvips_pixel_equivalence_claimed": false,
+  "output_png_sha256": "7e370cc2d5b4cd71a1ae68b1da6934b62a049fc9e83efb2fc51619231cc122c5"
+}

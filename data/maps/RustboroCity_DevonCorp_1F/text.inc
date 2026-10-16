@@ -4,16 +4,6 @@ RustboroCity_DevonCorp_1F_Text_H0::
 	.string "It makes me happy when I see\n"
 	.string "someone using something we made.$"
 
-RustboroCity_DevonCorp_1F_Text_H1::
-	.string "I'm sorry, only authorized people\n"
-	.string "are allowed to enter here.$"
-
-RustboroCity_DevonCorp_1F_Text_H2::
-	.string "Hello and welcome to the DEVON\n"
-	.string "CORPORATION.\p"
-	.string "We're proud producers of items and\n"
-	.string "medicine that enhance your life.$"
-
 RustboroCity_DevonCorp_1F_Text_H3::
 	.string "Prototypes and test products fill\n"
 	.string "the glass display case.\p"
@@ -42,3 +32,51 @@ RustboroCity_DevonCorp_1F_Text_H4::
 	.string "“DEVON is now a manufacturer of a\n"
 	.string "wide range of industrial products.”$"
 
+@ BEGIN PATCH (tools/hoenn_import/patches)
+
+
+RustboroCity_DevonCorp_1F_Text_DispatchChase::
+	.string "Our parcel was stolen! The thief\n"
+	.string "fled east along ROUTE 116 to\p"
+	.string "RUSTURF TUNNEL. Please bring the\n"
+	.string "DEVON GOODS back.$"
+
+RustboroCity_DevonCorp_1F_Text_DispatchRecovered::
+	.string "Thank you for recovering our\n"
+	.string "goods! Please take the parcel to\p"
+	.string "MR. STONE in his third-floor\n"
+	.string "office.$"
+
+RustboroCity_DevonCorp_1F_Text_DispatchWaiting::
+	.string "CAPT. STERN is at SLATEPORT's\n"
+	.string "harbor. MR. BRINEY's boat leaves\p"
+	.string "from ROUTE 104. Take the DEVON\n"
+	.string "GOODS to STERN, then return to\p"
+	.string "MR. STONE.$"
+
+RustboroCity_DevonCorp_1F_Text_DispatchReward::
+	.string "Your delivery is complete! Please\n"
+	.string "tell MR. STONE on the third floor.\p"
+	.string "He has a thank-you reward for\n"
+	.string "you.$"
+
+RustboroCity_DevonCorp_1F_Text_DispatchDone::
+	.string "Thank you for helping our\n"
+	.string "research team. Your delivery is\p"
+	.string "complete. Good luck on your\n"
+	.string "travels through HOENN!$"
+
+RustboroCity_DevonCorp_1F_Text_H1::
+	.string "Our researcher in PETALBURG WOODS\n"
+	.string "is checking a delivery. Please\p"
+	.string "speak with him if you have helped\n"
+	.string "in the woods. MR. STONE has an\p"
+	.string "office on the third floor.$"
+
+RustboroCity_DevonCorp_1F_Text_H2::
+	.string "Welcome to DEVON CORPORATION!\n"
+	.string "For delivery updates, ask the\p"
+	.string "staff member near the stairs. MR.\n"
+	.string "STONE has an office on the third\p"
+	.string "floor.$"
+@ END PATCH

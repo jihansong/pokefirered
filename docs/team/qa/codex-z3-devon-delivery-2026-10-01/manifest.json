@@ -1,0 +1,80 @@
+{
+  "source_head": "658baf740cff568cba7f3300f688b8a626e6f5fc",
+  "source_captured_at": "2026-10-01T07:34:04.572327+00:00",
+  "scope": "Devon president request -> existing harbor Stern -> 3 Dive Balls -> president Exp. Share",
+  "remote_applied": false,
+  "new_files": [
+    "tools/hoenn_import/patches/RustboroCity_DevonCorp_3F.scripts.inc",
+    "tools/hoenn_import/patches/RustboroCity_DevonCorp_3F.text.inc",
+    "tools/qa/cases/z3_devon_delivery.jsonl"
+  ],
+  "preconditions": {
+    "data/maps/RustboroCity_DevonCorp_3F/map.json": "04ea081e3cd15a31bc2fd2a284f3d40075f157ebdd8d6a678144421c42cb75c3",
+    "data/maps/RustboroCity_DevonCorp_3F/scripts.inc": "5a9ae2f42461665da7c94133f85f14b7a62c26d978b6b2e319c504a3ec492f3c",
+    "data/maps/RustboroCity_DevonCorp_3F/text.inc": "e72a9ebee1de6f0e4279c3cf94c391de2c09b4b9224568436887d4885db558af",
+    "data/maps/SlateportCity_Harbor/map.json": "31d2a3475249aaaac9325492938dc572520dfcde2398c8091ea1f59c13e99ae7",
+    "data/maps/SlateportCity_Harbor/scripts.inc": "e2768c9cf7eaa49577af871f0b527f3cfc084ec4269ba36f7d6df6200e27251a",
+    "data/maps/SlateportCity_Harbor/text.inc": "6a8474b4d3613e0712bc6e08748872df815accd9f08c2d96a1e03d3f45b4290e",
+    "data/maps/SlateportCity_SternsShipyard_1F/map.json": "c149f738f087c88f46691fd2ce89488ed5e4b7103c6f84ca2827180f7a83bb57",
+    "data/maps/SlateportCity_SternsShipyard_1F/scripts.inc": "d2196f5e19bb96316fe0bf1dfc9fc26d35d1831d615a6543383eaa69381b27ba",
+    "data/maps/SlateportCity_SternsShipyard_1F/text.inc": "44b4eb571e8cb8ff1d6292a2fbb58a87a335bd326b1dc8fb179d36e59c9f87b4",
+    "tools/hoenn_import/patches/SlateportCity_Harbor.json": "185d4cf2d76df7ef2739a00dd18339870499de8a6a0581ca98653f4121d55662",
+    "tools/hoenn_import/patches/SlateportCity_Harbor.mapscripts": "22684821471bf9c4b2bfa513b00c1beff268e67aaace02117f151960208f34e5",
+    "tools/hoenn_import/patches/SlateportCity_Harbor.scripts.inc": "54c2646fc8ca4b4eff6585a4e80138ce36376776e88d0d33f91e83a86ea0ec3e",
+    "tools/hoenn_import/patches/SlateportCity_Harbor.text.inc": "fc4195f56a37c8718670dee291367d6b9fc23146a6abb35669cccff540166599",
+    "tools/hoenn_import/patches/SlateportCity_SternsShipyard_1F.json": "9178474f683cd3c81935fc98ae786a364c44b4246a03a4522c562bae9f13c297",
+    "tools/hoenn_import/patches/SlateportCity_SternsShipyard_1F.scripts.inc": "198b8612570b417282653fef002ffc41d7c3067efb87cd1cfc009776d5f2000d",
+    "tools/hoenn_import/patches/SlateportCity_SternsShipyard_1F.text.inc": "c649ba395616e3c47aa056c95e53d0f7f04def9da514b5a6e90cfdc4e6195e6a",
+    "include/constants/flags_hoenn_story.h": "7a2423cef4157d366c8ed41cb65d4d7e5b1437d7030f10ad97be8c5e3887a004",
+    "include/constants/vars_hoenn.h": "6add3284a2df761f8ffe62e75a0cc111818d3d440f60037672405559292e8d7a",
+    "tools/hoenn_import/apply_patches.py": "50021b65d020d3d6ad40d858d04b0a53d5a5fdc4a53659b0616d67e3f12882bc",
+    "tools/qa/eventcheck.py": "57d219a371a7a5a534d048f1238ea9ed63381e444c4ae99ef109a13d0d08bda2",
+    "tools/qa/savedit.py": "6e464e7ccfb3b66151c25decb81fe51d4c777c6bd98b85433fb58caa934d2aa2",
+    "tools/qa/savefile.py": "e6cc1acb8569dbdca6d1b7b095835a5271c9e16de9d2fa3f976d15b50b9b7daa",
+    "tools/qa/gamedata.py": "acaa4654ed889dc4f98f6c20dc26a85ea8d35963a771967c159ca4edc26a7ab3"
+  },
+  "must_remain_absent": [
+    "tools/hoenn_import/patches/RustboroCity_DevonCorp_3F.json",
+    "tools/hoenn_import/patches/RustboroCity_DevonCorp_3F.mapscripts"
+  ],
+  "files": {
+    "tools/hoenn_import/patches/RustboroCity_DevonCorp_3F.scripts.inc": "adeda511741ed7e73297a351f2b3071d8915d9fcf59a6308bdf3ea2e6f5faead",
+    "tools/hoenn_import/patches/RustboroCity_DevonCorp_3F.text.inc": "ac670b736fa4f82b74bf07df8de59b0c0f9b67f77dda61a5e826b8f89663311c",
+    "tools/hoenn_import/patches/SlateportCity_Harbor.scripts.inc": "3325a971516543ceb8c37e7455299e1a1cb1795b4c8ba1f84987e6309528a9d4",
+    "tools/hoenn_import/patches/SlateportCity_Harbor.text.inc": "0a6495ae49a260202c6cffb827693e9de9d70d89aea7c1d2bfbe8d97c4461b61",
+    "data/maps/RustboroCity_DevonCorp_3F/scripts.inc": "b8949c01ab50d46d770335a6e306c31a79b93103c8838b114705c07a212149d5",
+    "data/maps/RustboroCity_DevonCorp_3F/text.inc": "9fd9729eceea2f9adb5a3fffab2f771c94daab45b92cc956198c946e384a58a4",
+    "data/maps/SlateportCity_Harbor/scripts.inc": "96777927b96b09c23ab24f235c9066d54c128b5abb1246f966eb48271e3ea9ab",
+    "data/maps/SlateportCity_Harbor/text.inc": "645f8a9f0c40bab655af1cbc0993ba3a6f1a492eb183882010e6284f1d925465",
+    "tools/qa/cases/z3_devon_delivery.jsonl": "0ad4224ce5164346f23542cdbdcf9c0b29617c8d201c86ff093e41ccf06271ca"
+  },
+  "local_checks": {
+    "git_apply_check": true,
+    "canonical_regeneration_twice_identical": true,
+    "map_objects_warps_and_coordinates_unchanged": true,
+    "original_stern_z1_logic_unchanged": true,
+    "script_references": 63,
+    "unresolved_references": 0,
+    "textwidth_exit": 0,
+    "runtime_cases_written": 29,
+    "negative_controls": 1,
+    "build_executed": false,
+    "emulator_executed": false,
+    "save_compat_executed": false
+  },
+  "install": "Write all tools/hoenn_import/patches and tools/qa files, including modified existing Harbor canonical patches; regenerate the two maps. Do not write generated files directly.",
+  "runtime_commands": [
+    "make leafgreen -j$(nproc)",
+    "make GAME_VERSION=LEAFGREEN syms",
+    "python3 tools/qa/eventcheck.py tools/qa/cases/z3_devon_delivery.jsonl --shots docs/team/qa/codex-z3-devon-delivery-2026-10-01/events",
+    "python3 tools/qa/eventcheck.py tools/qa/cases/z3_devon.jsonl --shots docs/team/qa/codex-z3-devon-delivery-2026-10-01/devon-regression",
+    "python3 tools/qa/eventcheck.py tools/qa/cases/z3_roxanne.jsonl --shots docs/team/qa/codex-z3-devon-delivery-2026-10-01/roxanne-regression",
+    "bash tools/qa/savetest_all.sh",
+    "python3 tools/check_map_integrity.py",
+    "python3 tools/check_event_wiring.py",
+    "python3 tools/qa/mapsmoke.py RustboroCity_DevonCorp_3F SlateportCity_Harbor -j 2 --shots docs/team/qa/codex-z3-devon-delivery-2026-10-01/mapsmoke --shots-all",
+    "python3 tools/qa/textwidth.py data/maps/RustboroCity_DevonCorp_3F/text.inc data/maps/SlateportCity_Harbor/text.inc"
+  ],
+  "archive_sha256": "1d730fef48248a046b6f5da90ba347e6185c70467d5fdd8259f47bdeb7da9b3a",
+  "archive_bytes": 7017
+}

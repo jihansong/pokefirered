@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "name": "apply",
+      "exit_code": 0,
+      "log": "work/title-publisher-native-validation-20261004T133950Z/apply.log"
+    },
+    {
+      "name": "review-build",
+      "exit_code": 0,
+      "log": "work/title-publisher-native-validation-20261004T133950Z/review-build.log"
+    },
+    {
+      "name": "review-runtime",
+      "exit_code": 0,
+      "log": "work/title-publisher-native-validation-20261004T133950Z/review-runtime.log"
+    },
+    {
+      "name": "main-build",
+      "exit_code": 0,
+      "log": "work/title-publisher-native-validation-20261004T133950Z/main-build.log"
+    },
+    {
+      "name": "main-syms",
+      "exit_code": 0,
+      "log": "work/title-publisher-native-validation-20261004T133950Z/main-syms.log"
+    },
+    {
+      "name": "main-runtime",
+      "exit_code": 0,
+      "log": "work/title-publisher-native-validation-20261004T133950Z/main-runtime.log"
+    }
+  ],
+  "source_url": "https://www.youtube.com/watch?v=gF1FJRM8Wck",
+  "all_pass": true,
+  "delta_device_tested": false,
+  "audio_auditioned": false,
+  "main_rom_sha256": "3eb1e7ce83bf4e47f06a3a10452becb4c2943df43540eec716682d46688a852b",
+  "review_rom_sha256": "3eb1e7ce83bf4e47f06a3a10452becb4c2943df43540eec716682d46688a852b",
+  "original_saves_unchanged": true,
+  "protected_save_count": 7,
+  "finished_utc": "2026-10-04T13:40:54.809757+00:00"
+}

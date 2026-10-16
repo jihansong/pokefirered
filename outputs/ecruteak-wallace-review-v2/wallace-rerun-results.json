@@ -1,0 +1,34 @@
+[
+  {
+    "case": "pc",
+    "exit": 0
+  },
+  {
+    "case": "bag",
+    "exit": 0
+  },
+  {
+    "case": "history",
+    "exit": 0
+  },
+  {
+    "case": "done",
+    "exit": 0
+  },
+  {
+    "case": "early",
+    "exit": 0
+  },
+  {
+    "case": "storm",
+    "exit": 0
+  },
+  {
+    "case": "legacy",
+    "exit": 0
+  },
+  {
+    "case": "full-retry",
+    "exit": 0
+  }
+]

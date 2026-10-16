@@ -64,3 +64,11 @@ KantoAirport_Text_PlaneSpotterSaw::
     .string "Outside, the lawn north of the\n"
     .string "terminal has the best view of the\l"
     .string "runway and the parked planes.$"
+
+KantoAirport_Text_FlyToJohto::
+    .string "Fly to CHERRYGROVE in JOHTO?\n"
+    .string "The return flight is free, too.$"
+
+KantoAirport_Text_JohtoChampionsOnly::
+    .string "The JOHTO service is open to\n"
+    .string "POKéMON LEAGUE CHAMPIONS.$"

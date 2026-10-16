@@ -1,0 +1,27 @@
+{
+  "time": "2026-10-05T18:33:26.292414+00:00",
+  "pass": true,
+  "files": {
+    "gba": {
+      "bytes": 33554432,
+      "sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a"
+    },
+    "elf": {
+      "bytes": 33877744,
+      "sha256": "4b6ab0e3cea92de40cadd88a073d0820e9435b0e122d19079f009e4ae95c11b5"
+    },
+    "sym": {
+      "bytes": 3255819,
+      "sha256": "6a4ea87f13780578d6be875aeaf5447eeb370aed8684785d0a08c2bd24e686d8"
+    },
+    "map": {
+      "bytes": 3272851,
+      "sha256": "b3e62ee16e9389a1c0b4fccff76ee1839852af770bbbfa3848c7820da3839e63"
+    }
+  },
+  "current_main_not_replaced": true,
+  "whole_regions_complete": false,
+  "native_new_chapter_pass": false,
+  "victory_road_five_trainers_restored": true,
+  "cured_dialogue_corrected": true
+}

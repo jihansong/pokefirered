@@ -1,0 +1,275 @@
+[
+  {
+    "label": "boot",
+    "frame": 632,
+    "location": [
+      76,
+      1,
+      9,
+      7
+    ],
+    "overworld": true,
+    "field_idle": true,
+    "battle": false,
+    "callback2": 134574629,
+    "sCachedHeaderId": 259,
+    "sCachedHeaderValid": 1,
+    "sWildEncountersDisabled": 0,
+    "sCacheValid": 1,
+    "sUseRtc": 0,
+    "gSpecialVar_Result": 0,
+    "sLockFieldControls": 0
+  },
+  {
+    "label": "walk0",
+    "frame": 658,
+    "location": [
+      76,
+      1,
+      8,
+      7
+    ],
+    "overworld": true,
+    "field_idle": true,
+    "battle": false,
+    "callback2": 134574629,
+    "sCachedHeaderId": 259,
+    "sCachedHeaderValid": 1,
+    "sWildEncountersDisabled": 0,
+    "sCacheValid": 1,
+    "sUseRtc": 0,
+    "gSpecialVar_Result": 0,
+    "sLockFieldControls": 0
+  },
+  {
+    "label": "walk1",
+    "frame": 684,
+    "location": [
+      76,
+      1,
+      9,
+      7
+    ],
+    "overworld": true,
+    "field_idle": true,
+    "battle": false,
+    "callback2": 134574629,
+    "sCachedHeaderId": 259,
+    "sCachedHeaderValid": 1,
+    "sWildEncountersDisabled": 0,
+    "sCacheValid": 1,
+    "sUseRtc": 0,
+    "gSpecialVar_Result": 0,
+    "sLockFieldControls": 0
+  },
+  {
+    "label": "walk2",
+    "frame": 710,
+    "location": [
+      76,
+      1,
+      8,
+      7
+    ],
+    "overworld": true,
+    "field_idle": true,
+    "battle": false,
+    "callback2": 134574629,
+    "sCachedHeaderId": 259,
+    "sCachedHeaderValid": 1,
+    "sWildEncountersDisabled": 0,
+    "sCacheValid": 1,
+    "sUseRtc": 0,
+    "gSpecialVar_Result": 0,
+    "sLockFieldControls": 0
+  },
+  {
+    "label": "walk3",
+    "frame": 736,
+    "location": [
+      76,
+      1,
+      9,
+      7
+    ],
+    "overworld": true,
+    "field_idle": true,
+    "battle": false,
+    "callback2": 134574629,
+    "sCachedHeaderId": 259,
+    "sCachedHeaderValid": 1,
+    "sWildEncountersDisabled": 0,
+    "sCacheValid": 1,
+    "sUseRtc": 0,
+    "gSpecialVar_Result": 0,
+    "sLockFieldControls": 0
+  },
+  {
+    "label": "walk4",
+    "frame": 762,
+    "location": [
+      76,
+      1,
+      8,
+      7
+    ],
+    "overworld": true,
+    "field_idle": true,
+    "battle": false,
+    "callback2": 134574629,
+    "sCachedHeaderId": 259,
+    "sCachedHeaderValid": 1,
+    "sWildEncountersDisabled": 0,
+    "sCacheValid": 1,
+    "sUseRtc": 0,
+    "gSpecialVar_Result": 0,
+    "sLockFieldControls": 0
+  },
+  {
+    "label": "walk5",
+    "frame": 788,
+    "location": [
+      76,
+      1,
+      9,
+      7
+    ],
+    "overworld": true,
+    "field_idle": true,
+    "battle": false,
+    "callback2": 134574629,
+    "sCachedHeaderId": 259,
+    "sCachedHeaderValid": 1,
+    "sWildEncountersDisabled": 0,
+    "sCacheValid": 1,
+    "sUseRtc": 0,
+    "gSpecialVar_Result": 0,
+    "sLockFieldControls": 0
+  },
+  {
+    "label": "walk6",
+    "frame": 814,
+    "location": [
+      76,
+      1,
+      8,
+      7
+    ],
+    "overworld": true,
+    "field_idle": true,
+    "battle": false,
+    "callback2": 134574629,
+    "sCachedHeaderId": 259,
+    "sCachedHeaderValid": 1,
+    "sWildEncountersDisabled": 0,
+    "sCacheValid": 1,
+    "sUseRtc": 0,
+    "gSpecialVar_Result": 0,
+    "sLockFieldControls": 0
+  },
+  {
+    "label": "walk7",
+    "frame": 840,
+    "location": [
+      76,
+      1,
+      9,
+      7
+    ],
+    "overworld": true,
+    "field_idle": true,
+    "battle": false,
+    "callback2": 134574629,
+    "sCachedHeaderId": 259,
+    "sCachedHeaderValid": 1,
+    "sWildEncountersDisabled": 0,
+    "sCacheValid": 1,
+    "sUseRtc": 0,
+    "gSpecialVar_Result": 0,
+    "sLockFieldControls": 0
+  },
+  {
+    "label": "walk8",
+    "frame": 866,
+    "location": [
+      76,
+      1,
+      8,
+      7
+    ],
+    "overworld": true,
+    "field_idle": true,
+    "battle": false,
+    "callback2": 134574629,
+    "sCachedHeaderId": 259,
+    "sCachedHeaderValid": 1,
+    "sWildEncountersDisabled": 0,
+    "sCacheValid": 1,
+    "sUseRtc": 0,
+    "gSpecialVar_Result": 0,
+    "sLockFieldControls": 0
+  },
+  {
+    "label": "walk9",
+    "frame": 892,
+    "location": [
+      76,
+      1,
+      9,
+      7
+    ],
+    "overworld": true,
+    "field_idle": true,
+    "battle": false,
+    "callback2": 134574629,
+    "sCachedHeaderId": 259,
+    "sCachedHeaderValid": 1,
+    "sWildEncountersDisabled": 0,
+    "sCacheValid": 1,
+    "sUseRtc": 0,
+    "gSpecialVar_Result": 0,
+    "sLockFieldControls": 0
+  },
+  {
+    "label": "walk10",
+    "frame": 918,
+    "location": [
+      76,
+      1,
+      8,
+      7
+    ],
+    "overworld": true,
+    "field_idle": true,
+    "battle": false,
+    "callback2": 134574629,
+    "sCachedHeaderId": 259,
+    "sCachedHeaderValid": 1,
+    "sWildEncountersDisabled": 0,
+    "sCacheValid": 1,
+    "sUseRtc": 0,
+    "gSpecialVar_Result": 0,
+    "sLockFieldControls": 0
+  },
+  {
+    "label": "walk11",
+    "frame": 944,
+    "location": [
+      76,
+      1,
+      9,
+      7
+    ],
+    "overworld": true,
+    "field_idle": true,
+    "battle": false,
+    "callback2": 134574629,
+    "sCachedHeaderId": 259,
+    "sCachedHeaderValid": 1,
+    "sWildEncountersDisabled": 0,
+    "sCacheValid": 1,
+    "sUseRtc": 0,
+    "gSpecialVar_Result": 0,
+    "sLockFieldControls": 0
+  }
+]

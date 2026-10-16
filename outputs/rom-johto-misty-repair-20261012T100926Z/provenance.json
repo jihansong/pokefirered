@@ -1,0 +1,199 @@
+{
+  "created_utc": "20261012T100926Z",
+  "scope": "Oct12 Johto and Misty regression repair; whole Johto/Hoenn campaign remains incomplete",
+  "gba_sha256": "2bafd6478fef5bbda56c6b4bec9c8dec1a4e0f060252fc219dbcc834411509f7",
+  "files": {
+    "pokemonthyl.sym": {
+      "path": "/workspaces/pokefirered/outputs/rom-johto-misty-repair-20261012T100926Z/pokemonthyl.sym",
+      "sha256": "1aa5126b5f3f763875857489ef102169e8263a955f09431a34e86a46218aeb0c",
+      "bytes": 3312588
+    },
+    "pokemonthyl.elf": {
+      "path": "/workspaces/pokefirered/outputs/rom-johto-misty-repair-20261012T100926Z/pokemonthyl.elf",
+      "sha256": "04a7c35b44df9a39ef56eadcc04cc8675d94d3996019fa27c9a913b3fffa9476",
+      "bytes": 34036072
+    },
+    "pokemonthyl.map": {
+      "path": "/workspaces/pokefirered/outputs/rom-johto-misty-repair-20261012T100926Z/pokemonthyl.map",
+      "sha256": "3bbefc6b18e30b6e8b32167aac82495b94233ca26bd927afbdfcbd5259e40915",
+      "bytes": 3334955
+    },
+    "pokemonthyl.gba": {
+      "path": "/workspaces/pokefirered/outputs/rom-johto-misty-repair-20261012T100926Z/pokemonthyl.gba",
+      "sha256": "2bafd6478fef5bbda56c6b4bec9c8dec1a4e0f060252fc219dbcc834411509f7",
+      "bytes": 33554432
+    }
+  },
+  "original_q8_files": {
+    "/workspaces/pokefirered/pokemonthyl.gba": "111d4e1ae7e6572845e5eb31ed33a1216fff8aa3d3e11466f287b74419abe682",
+    "/workspaces/pokefirered/pokemonthyl.elf": "1540cd67af00365cf8212a91cc147ef120365d51deeaf7626546687f529e4d43",
+    "/workspaces/pokefirered/pokemonthyl.sym": "6d5ea01e8b421b5625625b2ec562002fd2c0440043869430f5e384207d058929",
+    "/workspaces/pokefirered/pokemonthyl.map": "5e4d6e9572bb197c58750a0da0baf39b1292511638a4bd31ad019c65a388f197"
+  },
+  "rollback_path": "/workspaces/pokefirered/outputs/rom-johto-misty-repair-20261012T100926Z/rollback-q8",
+  "evidence": {
+    "MistyAirport": {
+      "path": "/workspaces/pokefirered/work/regression-oct12/final-misty-native/misty-airport-result.json",
+      "sha256": "bc09cc15da90af4dce7ecba99bd5f5ecd9e461f04ef445fb04e1b2ca28c69435",
+      "pass": true
+    },
+    "MistyPallet": {
+      "path": "/workspaces/pokefirered/work/regression-oct12/final-pallet-legal-path/validation.json",
+      "sha256": "9318c46f7dc989766aa4bf1cb05f0c51ea03c3e593c1cf4c4d7ce41dc52a5f4f",
+      "pass": true
+    },
+    "ProfessorElm": {
+      "path": "/workspaces/pokefirered/work/regression-oct12/final-elm-native/validation.json",
+      "sha256": "131e7198340ce42397f4b8aefffc2521fdb7b5a9a0d817b4790bd20c0bde86c8",
+      "pass": true
+    },
+    "ContinuousFlightWalk": {
+      "path": "/workspaces/pokefirered/work/regression-oct12/final-johto-walk-observed/validation.json",
+      "sha256": "4023b7c6c593e3b30c00c2576e7e49d5723af29da12284c6f4f67938d328235a",
+      "pass": true
+    },
+    "ColdMapVisual": {
+      "path": "/workspaces/pokefirered/work/regression-oct12/final-native-visual/validation.json",
+      "sha256": "f8efbf9e8a894fb642fc849d0236febc3411f246b7a6a389d92ed57e9c146511",
+      "pass": true
+    },
+    "AssetABI": {
+      "path": "/workspaces/pokefirered/work/regression-oct12/final-candidate/final-binary-preservation-audit.json",
+      "sha256": "84711990eb6b3db85c90da167ac52bb6a857a9639de05bfef783bc5acb1aa2e2",
+      "pass": true
+    },
+    "ColdNurse": {
+      "path": "/workspaces/pokefirered/work/regression-oct12/final-cold-nurse-chain115/result.json",
+      "sha256": "b1c0f66050014f588cfa7b7fecde082e921f23b303f41e7e5d6ca7edb4fa518f",
+      "pass": true
+    },
+    "TohjoNatural": {
+      "path": "/workspaces/pokefirered/work/regression-oct12/final-tohjo-native-correct-cli/validation.json",
+      "sha256": "ce15252c100ce06b7da38e7a1308d5d77b69f81077f55c94e301122dfee6bf71",
+      "pass": true
+    }
+  },
+  "gates": {
+    "checks": [
+      {
+        "check": "map-integrity",
+        "exit_code": 0,
+        "seconds": 8.93,
+        "command": [
+          "python3",
+          "tools/check_map_integrity.py",
+          "--no-upstream"
+        ],
+        "log": "/workspaces/pokefirered/work/regression-oct12/final-gates/map-integrity.log"
+      },
+      {
+        "check": "text-width-touched",
+        "exit_code": 0,
+        "seconds": 0.07,
+        "command": [
+          "python3",
+          "tools/qa/textwidth.py",
+          "data/maps/JohtoCherrygroveAirstrip",
+          "data/maps/JohtoRoute29",
+          "data/maps/NewBarkTown",
+          "data/maps/NewBarkTown_ElmsLab",
+          "data/maps/KantoAirport",
+          "data/maps/PalletTown",
+          "data/scripts/companion_misty.inc"
+        ],
+        "log": "/workspaces/pokefirered/work/regression-oct12/final-gates/text-width-touched.log"
+      },
+      {
+        "check": "text-audit-touched",
+        "exit_code": 0,
+        "seconds": 5.77,
+        "command": [
+          "python3",
+          "tools/qa/textaudit.py",
+          "--fail",
+          "--map",
+          "JohtoCherrygroveAirstrip",
+          "--map",
+          "JohtoRoute29",
+          "--map",
+          "NewBarkTown",
+          "--map",
+          "NewBarkTown_ElmsLab",
+          "--map",
+          "KantoAirport",
+          "--map",
+          "PalletTown"
+        ],
+        "log": "/workspaces/pokefirered/work/regression-oct12/final-gates/text-audit-touched.log"
+      },
+      {
+        "check": "event-wiring-global-existing",
+        "exit_code": 1,
+        "seconds": 6.42,
+        "command": [
+          "python3",
+          "tools/check_event_wiring.py"
+        ],
+        "log": "/workspaces/pokefirered/work/regression-oct12/final-gates/event-wiring-global-existing.log"
+      },
+      {
+        "check": "dexcheck",
+        "exit_code": 0,
+        "seconds": 3.45,
+        "command": [
+          "python3",
+          "tools/qa/dexcheck.py",
+          "--version",
+          "leafgreen",
+          "--hoenn",
+          "open"
+        ],
+        "log": "/workspaces/pokefirered/work/regression-oct12/final-gates/dexcheck.log"
+      },
+      {
+        "check": "save-compat-all",
+        "exit_code": 0,
+        "seconds": 30.14,
+        "command": [
+          "bash",
+          "tools/qa/savetest_all.sh",
+          "--rom",
+          "/workspaces/pokefirered/work/regression-oct12/final-candidate/pokemonthyl-oct12-repair.gba"
+        ],
+        "log": "/workspaces/pokefirered/work/regression-oct12/final-gates/save-compat-all.log"
+      },
+      {
+        "check": "save-compat-user",
+        "exit_code": 0,
+        "seconds": 9.32,
+        "command": [
+          "python3",
+          "tools/qa/savetest.py",
+          "saves/pokemonthyl_v1.1.sav:q8",
+          "saves/pokemonthyl_v1.2.sav:q8",
+          "--rom",
+          "/workspaces/pokefirered/work/regression-oct12/final-candidate/pokemonthyl-oct12-repair.gba",
+          "--base",
+          "/workspaces/pokefirered/outputs/regions-q9-review-v1/required-gates-phase5/qa-base-q8"
+        ],
+        "log": "/workspaces/pokefirered/work/regression-oct12/final-gates/save-compat-user.log"
+      }
+    ],
+    "candidate_sha256": "2bafd6478fef5bbda56c6b4bec9c8dec1a4e0f060252fc219dbcc834411509f7",
+    "original_all_saves_unchanged": true,
+    "save_count": 14,
+    "whole_regions_complete": false,
+    "global_event_gate_known_unfinished": true
+  },
+  "known_global_event_findings": 96,
+  "global_event_findings_identical_to_previous_candidate": true,
+  "all_original_saves_unchanged": true,
+  "user_save_rewritten": false,
+  "approved_assets_preserved": 24,
+  "professor_art": "Temporary Scientist sprite, named Elm dialog verified",
+  "user_reported_initial_tile_failure_reproduced": false,
+  "Delta_device_tested": false,
+  "BadEgg_original_repaired": false,
+  "whole_regions_complete": false,
+  "source_basis": "Current working Q9 sources plus Oct12 source repairs; not a full-campaign release"
+}

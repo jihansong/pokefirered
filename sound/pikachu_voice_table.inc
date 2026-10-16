@@ -42,3 +42,4 @@ gPikachuVoiceTable::
 	cry PikachuVoice_40
 	cry PikachuVoice_41
 	cry PikachuVoice_42
+	cry PikachuVoice_Title

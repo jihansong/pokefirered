@@ -1,0 +1,13 @@
+{
+  "results": [
+    {
+      "name": "dock_capture",
+      "pass": true,
+      "negative_control": false,
+      "errors": []
+    }
+  ],
+  "original_save_preserved": true,
+  "save_reload_tested": false,
+  "delta_device_tested": false
+}

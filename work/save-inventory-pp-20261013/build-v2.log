@@ -1,0 +1,108 @@
+tools/scaninc/scaninc -M build/leafgreen/src/pokemon.d -I include -I tools/agbcc/include src/pokemon.c
+tools/scaninc/scaninc -M build/leafgreen/src/battle_util.d -I include -I tools/agbcc/include src/battle_util.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/battle_util.o src/battle_util.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/pokemon.o src/pokemon.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/pokemon_size_record.o src/pokemon_size_record.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/pokemon_special_anim.o src/pokemon_special_anim.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/pokemon_special_anim_scene.o src/pokemon_special_anim_scene.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/pokemon_storage_system.o src/pokemon_storage_system.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/pokemon_storage_system_data.o src/pokemon_storage_system_data.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/pokemon_storage_system_graphics.o src/pokemon_storage_system_graphics.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/pokemon_storage_system_menu.o src/pokemon_storage_system_menu.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/pokemon_storage_system_misc.o src/pokemon_storage_system_misc.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/pokemon_storage_system_tasks.o src/pokemon_storage_system_tasks.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/pokemon_summary_screen.o src/pokemon_summary_screen.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/post_battle_event_funcs.o src/post_battle_event_funcs.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/prof_pc.o src/prof_pc.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/quest_log_battle.o src/quest_log_battle.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/quest_log.o src/quest_log.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/quest_log_events.o src/quest_log_events.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/quest_log_objects.o src/quest_log_objects.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/quest_log_player.o src/quest_log_player.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/random.o src/random.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/region_map.o src/region_map.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/renewable_hidden_items.o src/renewable_hidden_items.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/reset_save_heap.o src/reset_save_heap.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/reshow_battle_screen.o src/reshow_battle_screen.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/roamer.o src/roamer.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/rocket_trainer_portrait.o src/rocket_trainer_portrait.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/rocket_trio.o src/rocket_trio.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/rom_header_gf.o src/rom_header_gf.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/rotating_tile_puzzle.o src/rotating_tile_puzzle.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/rtc.o src/rtc.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/safari_zone.o src/safari_zone.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/save.o src/save.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/save_failed_screen.o src/save_failed_screen.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/save_location.o src/save_location.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/save_menu_util.o src/save_menu_util.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/scanline_effect.o src/scanline_effect.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/scrcmd.o src/scrcmd.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/script.o src/script.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/script_menu.o src/script_menu.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/script_movement.o src/script_movement.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/script_pokemon_util.o src/script_pokemon_util.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/seagallop.o src/seagallop.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/shop.o src/shop.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/siirtc.o src/siirtc.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/sloopsvc.o src/sloopsvc.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/slot_machine.o src/slot_machine.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/snag.o src/snag.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/sound.o src/sound.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/special_field_anim.o src/special_field_anim.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/sprite.o src/sprite.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/ss_anne.o src/ss_anne.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/starter_pikachu.o src/starter_pikachu.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/start_menu.o src/start_menu.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/strings.o src/strings.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/string_util.o src/string_util.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/surfing_pikachu.o src/surfing_pikachu.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/task.o src/task.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/teachy_tv.o src/teachy_tv.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/text.o src/text.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/text_printer.o src/text_printer.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/text_window.o src/text_window.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/text_window_graphics.o src/text_window_graphics.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/tilemap_util.o src/tilemap_util.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/tileset_anims.o src/tileset_anims.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/tilesets.o src/tilesets.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/time_of_day.o src/time_of_day.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/title_screen.o src/title_screen.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/tm_case.o src/tm_case.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/trade.o src/trade.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/trade_scene.o src/trade_scene.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/trainer_card.o src/trainer_card.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/trainer_fan_club.o src/trainer_fan_club.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/trainer_pokemon_sprites.o src/trainer_pokemon_sprites.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/trainer_see.o src/trainer_see.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/trainer_tower.o src/trainer_tower.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/trainer_tower_sets.o src/trainer_tower_sets.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/trig.o src/trig.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/union_room_battle.o src/union_room_battle.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/union_room.o src/union_room.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/union_room_chat.o src/union_room_chat.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/union_room_chat_display.o src/union_room_chat_display.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/union_room_chat_objects.o src/union_room_chat_objects.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/union_room_message.o src/union_room_message.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/union_room_player_avatar.o src/union_room_player_avatar.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/util.o src/util.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/vs_seeker.o src/vs_seeker.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/wild_encounter.o src/wild_encounter.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/wild_pokemon_area.o src/wild_pokemon_area.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/window_8bpp.o src/window_8bpp.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/window.o src/window.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/wireless_communication_status_screen.o src/wireless_communication_status_screen.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/wonder_news.o src/wonder_news.c
+tools/preproc/preproc data/map_events.s charmap.txt | cc -E -I include -nostdinc -undef -Wno-unicode - | tools/preproc/preproc -ie data/map_events.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build/leafgreen/data/map_events.o
+tools/preproc/preproc data/maps.s charmap.txt | cc -E -I include -nostdinc -undef -Wno-unicode - | tools/preproc/preproc -ie data/maps.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build/leafgreen/data/maps.o
+tools/preproc/preproc data/battle_scripts_1.s charmap.txt | cc -E -I include - | tools/preproc/preproc -ie data/battle_scripts_1.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build/leafgreen/data/battle_scripts_1.o
+tools/preproc/preproc data/event_scripts.s charmap.txt | cc -E -I include - | tools/preproc/preproc -ie data/event_scripts.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build/leafgreen/data/event_scripts.o
+tools/preproc/preproc data/mystery_event_msg.s charmap.txt | cc -E -I include - | tools/preproc/preproc -ie data/mystery_event_msg.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build/leafgreen/data/mystery_event_msg.o
+tools/ramscrgen/ramscrgen COMMON sym_common.txt ENGLISH -c build/leafgreen/src,common_syms > build/leafgreen/sym_common.ld
+/opt/devkitpro/devkitARM/bin/arm-none-eabi-ld: warning: ../../work/save-inventory-pp-20261013/candidate/pokemonthyl.elf has a LOAD segment with RWX permissions
+Memory region         Used Size  Region Size  %age Used
+           EWRAM:      261864 B       256 KB     99.89%
+           IWRAM:       29900 B        32 KB     91.25%
+             ROM:    29830896 B        32 MB     88.90%
+cd build/leafgreen && arm-none-eabi-ld -Map ../../work/save-inventory-pp-20261013/candidate/pokemonthyl.map -T ../../ld_script.ld --print-memory-usage -o ../../work/save-inventory-pp-20261013/candidate/pokemonthyl.elf <objs> <libs> | cat
+tools/gbafix/gbafix work/save-inventory-pp-20261013/candidate/pokemonthyl.elf -t"POKEMON YELT" -cBPGE -m01 -r0 --silent
+arm-none-eabi-objcopy -O binary --gap-fill 0xFF --pad-to 0xA000000 work/save-inventory-pp-20261013/candidate/pokemonthyl.elf work/save-inventory-pp-20261013/candidate/pokemonthyl.gba

@@ -1303,4 +1303,15 @@
 #include "constants/opponents_tournament.h"
 #include "constants/opponents_hoenn_story.h"
 #include "constants/opponents_rocket.h"
+#include "constants/opponents_johto.h"
+#include "constants/opponents_johto_azalea.h"
+#include "constants/opponents_johto_ilex.h"
+#include "constants/opponents_johto_ecruteak.h"
+#include "constants/opponents_johto_olivine.h"
+#include "constants/opponents_johto_mahogany.h"
+#include "constants/opponents_johto_radio_tower.h"
+#include "constants/opponents_johto_blackthorn.h"
+#include "constants/opponents_johto_league.h"
 #endif  // GUARD_CONSTANTS_OPPONENTS_H
+
+#include "opponents_misty_companion.h"

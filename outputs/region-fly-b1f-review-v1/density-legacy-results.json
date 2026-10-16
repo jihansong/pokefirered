@@ -1,0 +1,26 @@
+{
+  "rom_sha256": "3d1a1a4f3e84deb5d9f8d2a5943930354e1a86164fe257eabf79d99ca1232fee",
+  "cases": [
+    {
+      "case": "density-fixture",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "density-performance",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "legacy-fly-kanto-on",
+      "exit": 1,
+      "pass": false
+    },
+    {
+      "case": "legacy-fly-hoenn-on",
+      "exit": 1,
+      "pass": false
+    }
+  ],
+  "all_pass": false
+}

@@ -1,0 +1,61 @@
+{
+  "state": "PREFLIGHT_ONLY",
+  "origin": {
+    "source_file": "pokemon-video-game-pikachu-voice-sound-effect.wav",
+    "source_sha256": "10a2a254c12eed24a7e4d7a4db9ffff3f318ae20c17a5b15dbe53bbcf4c50734",
+    "source_url": "https://www.youtube.com/watch?v=gF1FJRM8Wck",
+    "source_type": "creator_linked_archive",
+    "direct_youtube_extraction": false,
+    "distribution_url": "https://soundsverse.com/wp-content/uploads/s/pokemon-video-game-pikachu-voice-sound-effect.zip",
+    "archive_sha256": "13d6f49f3e208573d9129378bdf8836d060fcdb9c73ea810526cda8921164d93",
+    "archive_bytes": 231523,
+    "archive_entry": "pokemon-video-game-pikachu-voice-sound-effect.wav",
+    "source_bytes": 282436,
+    "selected_by_user": true,
+    "agent_auditioned": false,
+    "extraction_start_seconds": 0,
+    "extraction_end": "source_end",
+    "whole_clip": true,
+    "trimmed": false,
+    "synthesized": false,
+    "pitch_or_time_stretch": false,
+    "processing": [
+      "Original source audio decode",
+      "mono downmix",
+      "11025 Hz resample",
+      "8-bit PCM game format"
+    ],
+    "native_samples": 17638,
+    "native_seconds": 1.5998185941043084,
+    "note_frames": 98,
+    "wav_sha256": "5e625d3e2f34b2c43aa5ed920f81113010a336b3523a8a6446346841cd61f337"
+  },
+  "game_audio_verified": false,
+  "save_layout_changed": false,
+  "files": {
+    "src/title_screen.c": {
+      "before": "c2521f842e2f7385f429465330c50c663a88b24da7d419e6dbe77362643f56d5",
+      "after": "3e1c5bb80401e008f483ca068cff071737ece95c0a0f2c58bfcff529555f4c4a"
+    },
+    "sound/pikachu_voice_table.inc": {
+      "before": "6cd7d3816144d1a6e5e982549928ce266eb011b0e3e0afaeee78920f4c1aa597",
+      "after": "b1858f75336cb7eb3a4a88955aa3106397d209ec193328b2fba294221041f0fa"
+    },
+    "sound/direct_sound_data.inc": {
+      "before": "0129a9a819a5b53baccf371ab5032aef73860f523e017250ab20a44b9abaa20c",
+      "after": "fa7a8b10de2400c9904a6ad7effd6364106bbc27aba5479f304fd6b5d51545cc"
+    },
+    "include/title_pikachu_voice.h": {
+      "before": null,
+      "after": "ad37d9ae6090410789a97323183a6041b00f51ee2cd9567237c8945862c8e025"
+    },
+    "sound/direct_sound_samples/cries/title_pikachu_voice.wav": {
+      "before": null,
+      "after": "5e625d3e2f34b2c43aa5ed920f81113010a336b3523a8a6446346841cd61f337"
+    },
+    "docs/music/title-pikachu-voice-origin.json": {
+      "before": null,
+      "after": "a82df3db72705d6ca5648c92ade010d3a9623927a9501b315a06ec3987721e16"
+    }
+  }
+}

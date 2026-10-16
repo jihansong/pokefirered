@@ -1,0 +1,30 @@
+ok   johto_entry_champion_gate
+FAIL johto_entry_outbound
+     mash 20: the game never went idle
+     expect map JohtoCherrygroveAirstrip: on map 9.8
+     expect overworld: not in the overworld
+ok   johto_entry_outbound_cancel
+ok   johto_entry_champion_gate_negative
+ok   johto_entry_return_without_champion_flag
+ok   johto_entry_return_cancel
+ok   johto_entry_airstrip_to_route
+ok   johto_entry_route_to_airstrip
+ok   johto_entry_route_to_town
+ok   johto_entry_town_to_route
+ok   johto_entry_door_lab
+ok   johto_entry_exit_lab
+ok   johto_entry_door_rest
+ok   johto_entry_exit_rest
+ok   johto_entry_door_neighbor
+ok   johto_entry_exit_neighbor
+ok   johto_entry_rest_heals
+ok   johto_entry_rest_cancel
+ok   johto_entry_town_map_JohtoCherrygroveAirstrip
+ok   johto_entry_town_map_JohtoRoute29
+ok   johto_entry_town_map_NewBarkTown
+ok   johto_entry_town_map_NewBarkTown_ElmsLab
+ok   johto_entry_town_map_NewBarkTown_RestHouse
+ok   johto_entry_town_map_NewBarkTown_NeighborsHouse
+FAIL johto_entry_hoenn_flight_preserved
+     expect map SlateportCity_Harbor: on map 9.8
+23/25 cases passed

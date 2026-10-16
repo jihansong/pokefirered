@@ -1,0 +1,36 @@
+{
+  "pass": false,
+  "scope": "synthetic_fixture_real_UI_capture_save_continue",
+  "original_corruption_reproduced": false,
+  "physical_DELTA_tested": false,
+  "rom_sha256": "1375cdba01ad0c893cb04f71522871b2d964ae695319ecd2763d5e7247214625",
+  "original_pins": {
+    "saves/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "saves/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "saves/hoenn.sav": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+    "saves/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "saves/pokemonthyl_hoenn_QAed.sav": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+    "saves/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "saves/pokemonthyl_v1.1.sav": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+    "saves/pokemonthyl_v1.2.sav": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+    "saves/backup-codex-v1_1-recovery-sort-20261002T002244.307175Z/pokemonthyl_v1.1.original.sav": "417452a3f151dbe0eeaca4d41780739f8137eafd7ff14df4e7eed1685b9b699f",
+    "saves/backup-v0.6.0-era/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "saves/backup-v0.6.0-era/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "saves/backup-v0.6.0-era/hoenn.sav": "d1ed8d987d4e451efb00a6cda2ba770e6472f36a89595a04a3550156876806ad",
+    "saves/backup-v0.6.0-era/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "saves/backup-v0.6.0-era/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "_rom": "1375cdba01ad0c893cb04f71522871b2d964ae695319ecd2763d5e7247214625",
+    "_runner": "57d219a371a7a5a534d048f1238ea9ed63381e444c4ae99ef109a13d0d08bda2"
+  },
+  "native_memory_injection": false,
+  "capture_steps_passed": false,
+  "failures": [
+    "expect mon LICKITUNG where=box ot=JESSIE otid=player metloc=MAPSEC_SILPH_CO metlvl=39 ball=ITEM_MASTER_BALL snagged=1: no LICKITUNG",
+    "expect flag FLAG_SNAG_ROCKET_LICKITUNG = 1: flag FLAG_SNAG_ROCKET_LICKITUNG is 0, expected 1",
+    "mash 800: the game never went idle",
+    "expect overworld: not in the overworld",
+    "expect trainer TRAINER_JESSIE_JAMES_SILPH_CO = 1: trainer TRAINER_JESSIE_JAMES_SILPH_CO is 0, expected 1"
+  ],
+  "observer": {},
+  "originals_and_rom_unchanged": true
+}

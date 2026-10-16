@@ -1,0 +1,160 @@
+{
+  "before": {
+    "data/maps/EverGrandeCity_ChampionsRoom/map.json": "489bc97a2aae82df3263462a7c69778a45fa0866dd845e82679578b0591f7483",
+    "data/maps/EverGrandeCity_ChampionsRoom/scripts.inc": "8892c5537a2c262a7150d3874741b3421dc7435058d6beabd6300431f6fc33dd",
+    "data/maps/EverGrandeCity_ChampionsRoom/text.inc": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/maps/EverGrandeCity_DrakesRoom/map.json": "8445e75bcbb9ab95ccf0788e19ff72f40bbcc6274766e0c0e3c3160afae8f284",
+    "data/maps/EverGrandeCity_DrakesRoom/scripts.inc": "58c598b98424bca0db38683829b48e7214e4e0bb48a398a5a0e2cc46c00dfa01",
+    "data/maps/EverGrandeCity_DrakesRoom/text.inc": "f3bb34319f85204e31d1c56bcea1d756a21ee9737da90b3ac1c0e688643cbedb",
+    "data/maps/EverGrandeCity_GlaciasRoom/map.json": "be73a36e82efd568bb6a94d7434489ea5e01ce5216e11d5335b689b960e7a487",
+    "data/maps/EverGrandeCity_GlaciasRoom/scripts.inc": "830a4a3fab1f7c207a277037b33bdd01b1978bd6987aad2be05af78f51b22d09",
+    "data/maps/EverGrandeCity_GlaciasRoom/text.inc": "fe909f129ec531497308ff6ab291da9272e86130a9ed7d2453e0a6afebefa789",
+    "data/maps/EverGrandeCity_HallOfFame/map.json": "3d454a51a71516a979e3eba57cac34219ee253d217bec9acb058960ed6dcf546",
+    "data/maps/EverGrandeCity_HallOfFame/scripts.inc": "eb3d59a458b62246ca394060b90753061b71c26a8e78dfa390d9b9fc0f89ba8d",
+    "data/maps/EverGrandeCity_HallOfFame/text.inc": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/maps/EverGrandeCity_PhoebesRoom/map.json": "7883d2b776c324c138dc4b58c1e7025fc6de7dc78525997835c9be9809878d6d",
+    "data/maps/EverGrandeCity_PhoebesRoom/scripts.inc": "9da49dd86ae2097666f702c84c9abc203ca2d38aed5d2dba9969d0e9be0a1937",
+    "data/maps/EverGrandeCity_PhoebesRoom/text.inc": "b30d024b51161ea40c4faba9bd7888fc8ff841db6ff619c4f4f00c4153824746",
+    "data/maps/EverGrandeCity_PokemonLeague_1F/map.json": "ced24a86d6a27df0a5e3892d83b409a745316bb57c1404495a485d67e9c07e0a",
+    "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.inc": "efb0c611a0e4db1795c4cea53fccd6f8c161d5fb6a8347e63f3a2a8e39314e3b",
+    "data/maps/EverGrandeCity_PokemonLeague_1F/text.inc": "403af46703ca658fe5ae15d962f0fbec6e34760bd67c09eb70ee5bc48ce2898b",
+    "data/maps/EverGrandeCity_SidneysRoom/map.json": "38c39cf652a92111f1a96decc987218221d133104cc2aff78585c504cabc8f4d",
+    "data/maps/EverGrandeCity_SidneysRoom/scripts.inc": "7790abd3768a1e9be4978cc8ed77145d74eef0d00ca1ea309a9fd2d7080b5fef",
+    "data/maps/EverGrandeCity_SidneysRoom/text.inc": "c96eb51daad54d0e1b4322dd1a69d50a83d35500dc0a3244a89617c6666e51c1",
+    "data/maps/MossdeepCity_Gym/map.json": "c52bff677ed7819f82647c7ebd717a848fc6515e81409de8848bd1152b2ccf1c",
+    "data/maps/MossdeepCity_Gym/scripts.inc": "496ea833e0cca4a448d2f3b67d456b62d7577f6f30d49759e6a65794c5295c17",
+    "data/maps/MossdeepCity_Gym/text.inc": "cf9a715220d93297c5c5ff0126fc23413842a5e8054533e5e25244e5005fb3a8",
+    "data/maps/SootopolisCity_Gym_1F/map.json": "8c407a867e70511a625d8106caaa1cb68db0aac35b3e002858fd0d54207944f9",
+    "data/maps/SootopolisCity_Gym_1F/scripts.inc": "e59952426ccdbe2606a2a81ab65704f453bc0651fc2401c49e413ad04fd5085a",
+    "data/maps/SootopolisCity_Gym_1F/text.inc": "73da97eb985dbd0ebf7239958c6d991a6c694fe19ce7095ca9359a2eeb945cad",
+    "include/constants/flags_hoenn_story.h": "6344d333ad0eff6d58d875cd3e3b1d9bb12ce53aa1747515e128123942f4233a",
+    "include/constants/vars_hoenn.h": "6add3284a2df761f8ffe62e75a0cc111818d3d440f60037672405559292e8d7a",
+    "include/credits.h": "b03e4eceb960bc54feb397bb8b8b0fcc467fbe517789b46480a4387c6e44b677",
+    "src/credits.c": "7f213f6f63cb1394bcaa5a50bd66ddedc5ed3039e04cd07cf38de3c362a0f66b",
+    "src/hall_of_fame.c": "00dd00b63f3edf8e0ee617a09936d1a51306cc9dc33e6021da8f1042af5dd4ab",
+    "src/post_battle_event_funcs.c": "37070b4bf6fe839d2e78dc4a921225488f95e1a26c266b8666972b56eec66bc3",
+    "tools/hoenn_import/patches/EverGrandeCity_ChampionsRoom.json": null,
+    "tools/hoenn_import/patches/EverGrandeCity_ChampionsRoom.mapscripts": null,
+    "tools/hoenn_import/patches/EverGrandeCity_ChampionsRoom.scripts.inc": null,
+    "tools/hoenn_import/patches/EverGrandeCity_ChampionsRoom.text.inc": null,
+    "tools/hoenn_import/patches/EverGrandeCity_DrakesRoom.json": null,
+    "tools/hoenn_import/patches/EverGrandeCity_DrakesRoom.mapscripts": null,
+    "tools/hoenn_import/patches/EverGrandeCity_DrakesRoom.scripts.inc": null,
+    "tools/hoenn_import/patches/EverGrandeCity_DrakesRoom.text.inc": null,
+    "tools/hoenn_import/patches/EverGrandeCity_GlaciasRoom.json": null,
+    "tools/hoenn_import/patches/EverGrandeCity_GlaciasRoom.mapscripts": null,
+    "tools/hoenn_import/patches/EverGrandeCity_GlaciasRoom.scripts.inc": null,
+    "tools/hoenn_import/patches/EverGrandeCity_GlaciasRoom.text.inc": null,
+    "tools/hoenn_import/patches/EverGrandeCity_HallOfFame.json": null,
+    "tools/hoenn_import/patches/EverGrandeCity_HallOfFame.mapscripts": null,
+    "tools/hoenn_import/patches/EverGrandeCity_HallOfFame.scripts.inc": null,
+    "tools/hoenn_import/patches/EverGrandeCity_HallOfFame.text.inc": null,
+    "tools/hoenn_import/patches/EverGrandeCity_PhoebesRoom.json": null,
+    "tools/hoenn_import/patches/EverGrandeCity_PhoebesRoom.mapscripts": null,
+    "tools/hoenn_import/patches/EverGrandeCity_PhoebesRoom.scripts.inc": null,
+    "tools/hoenn_import/patches/EverGrandeCity_PhoebesRoom.text.inc": null,
+    "tools/hoenn_import/patches/EverGrandeCity_PokemonLeague_1F.scripts.inc": null,
+    "tools/hoenn_import/patches/EverGrandeCity_PokemonLeague_1F.text.inc": null,
+    "tools/hoenn_import/patches/EverGrandeCity_SidneysRoom.json": null,
+    "tools/hoenn_import/patches/EverGrandeCity_SidneysRoom.mapscripts": null,
+    "tools/hoenn_import/patches/EverGrandeCity_SidneysRoom.scripts.inc": null,
+    "tools/hoenn_import/patches/EverGrandeCity_SidneysRoom.text.inc": null,
+    "tools/hoenn_import/patches/MossdeepCity_Gym.scripts.inc": null,
+    "tools/hoenn_import/patches/MossdeepCity_Gym.text.inc": null,
+    "tools/hoenn_import/patches/SootopolisCity_Gym_1F.scripts.inc": null,
+    "tools/hoenn_import/patches/SootopolisCity_Gym_1F.text.inc": null
+  },
+  "maps": [
+    "MossdeepCity_Gym",
+    "SootopolisCity_Gym_1F",
+    "EverGrandeCity_PokemonLeague_1F",
+    "EverGrandeCity_SidneysRoom",
+    "EverGrandeCity_PhoebesRoom",
+    "EverGrandeCity_GlaciasRoom",
+    "EverGrandeCity_DrakesRoom",
+    "EverGrandeCity_ChampionsRoom",
+    "EverGrandeCity_HallOfFame"
+  ],
+  "cameras_need_review": [
+    {
+      "map": "SlateportCity",
+      "x": 20,
+      "y": 54,
+      "pan_steps": 160
+    },
+    {
+      "map": "Route101",
+      "x": 10,
+      "y": 14,
+      "pan_steps": 128
+    },
+    {
+      "map": "LittlerootTown_ProfessorBirchsLab",
+      "x": 6,
+      "y": 7,
+      "pan_steps": 16
+    },
+    {
+      "map": "MauvilleCity",
+      "x": 20,
+      "y": 14,
+      "pan_steps": 128
+    },
+    {
+      "map": "MtChimney",
+      "x": 20,
+      "y": 41,
+      "pan_steps": 160
+    },
+    {
+      "map": "Route119_WeatherInstitute_2F",
+      "x": 10,
+      "y": 5,
+      "pan_steps": 0
+    },
+    {
+      "map": "SeafloorCavern_Room9",
+      "x": 13,
+      "y": 40,
+      "pan_steps": 160
+    },
+    {
+      "map": "SkyPillar_Top",
+      "x": 13,
+      "y": 18,
+      "pan_steps": 160
+    },
+    {
+      "map": "SootopolisCity",
+      "x": 30,
+      "y": 54,
+      "pan_steps": 160
+    },
+    {
+      "map": "EverGrandeCity",
+      "x": 20,
+      "y": 74,
+      "pan_steps": 160
+    },
+    {
+      "map": "EverGrandeCity_ChampionsRoom",
+      "x": 6,
+      "y": 7,
+      "pan_steps": 16
+    },
+    {
+      "map": "EverGrandeCity_HallOfFame",
+      "x": 7,
+      "y": 11,
+      "pan_steps": 80
+    },
+    {
+      "map": "SlateportCity",
+      "x": 20,
+      "y": 54,
+      "pan_steps": 160
+    }
+  ],
+  "save_abi_changed": false,
+  "status": "candidate-not-built"
+}

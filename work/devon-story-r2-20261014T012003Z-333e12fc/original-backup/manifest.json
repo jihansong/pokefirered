@@ -1,0 +1,105 @@
+{
+  "status": "CONFIRMED_SOURCE_DRAFT_STATIC_PASS_NATIVE_PENDING",
+  "product_changes_applied": false,
+  "source_snapshot": "work\\hoenn-devon-current-20261013",
+  "files": [
+    {
+      "path": "data/maps/Route116/scripts.inc",
+      "baseline_sha256": "ef836704c16caa8a37b00bfb9143ce62fcb58d92dc62032d9d08d6ddd89b967d",
+      "candidate_sha256": "7f85a43c4f55159727c63b0fe5fef5180c293fed6eb805cdf2aeb0bf06b21fbc",
+      "canonical_path": "tools/hoenn_import/patches/Route116.scripts.inc",
+      "canonical_sha256": "bb2abf84b331e85aef5041cefd4b5699c7190eb62cab00cb5b64050a6999bfdd",
+      "canonical_baseline_sha256": "4b849f7320258fc78e4fc503fd6e750c8c4a22f515760c97da95fa6d9d82c725",
+      "canonical_baseline_must_be_absent": false,
+      "source_provenance": "exported_snapshot"
+    },
+    {
+      "path": "data/maps/Route116/text.inc",
+      "baseline_sha256": "bdd9200eaed652ec3ec1001f326429aa92e41bbb621960ec6896395320eb0ef0",
+      "candidate_sha256": "a245280da56b9b4ebc51b41eb5a5887c2480f2e42616bf302648236220636eb1",
+      "canonical_path": "tools/hoenn_import/patches/Route116.text.inc",
+      "canonical_sha256": "4d15f87ccdc882ee7ccd4a535fe6fa50bffaf17cc8a2876b6d0b670ac93a90c2",
+      "canonical_baseline_sha256": "5cae5dd4d7ffe1ae54166d2b44f90a49981a56473165e187fd63988b41226c69",
+      "canonical_baseline_must_be_absent": false,
+      "source_provenance": "exported_snapshot"
+    },
+    {
+      "path": "data/maps/RusturfTunnel/scripts.inc",
+      "baseline_sha256": "34d9f37556efad1c1567ff3316d7c0b48cdb9db3717036fa1f90633609cb11f7",
+      "candidate_sha256": "e871168b2dce2cee29be187b6a290e46e4e57d62bec462312a38baede5e93715",
+      "canonical_path": "tools/hoenn_import/patches/RusturfTunnel.scripts.inc",
+      "canonical_sha256": "9ba3f0890101766794c8b0b17b973ae2c5b3fa9aef859f7951df3ee635cca6df",
+      "canonical_baseline_sha256": "2c8b6de871b0579c201e1ef529925bab0a1db358c3c1e2e183a1f0bcf304cf94",
+      "canonical_baseline_must_be_absent": false,
+      "source_provenance": "exported_snapshot"
+    },
+    {
+      "path": "data/maps/RusturfTunnel/text.inc",
+      "baseline_sha256": "f56a3e97bf0fb7e0c6963a233fc3cc7a7f454d6af6dfd93ccafe6a725ff77e0f",
+      "candidate_sha256": "721393c95701673fe3b0f4608b070cf0a80e544fa7bb8ce8677ba41e89737f20",
+      "canonical_path": "tools/hoenn_import/patches/RusturfTunnel.text.inc",
+      "canonical_sha256": "65e2806b3b7fdd19e9abc5799835513bfa605d5c5b7409a7e12e95f03f022701",
+      "canonical_baseline_sha256": "77b865535be20fcfdd5cc009135eaffa147fdcae74b28c6b9df874077c02ca56",
+      "canonical_baseline_must_be_absent": false,
+      "source_provenance": "exported_snapshot"
+    },
+    {
+      "path": "data/maps/RustboroCity_DevonCorp_1F/scripts.inc",
+      "baseline_sha256": "e99ecd86327a6ea7ad5058e4106d841886224f367671f314f16976728a6857bf",
+      "candidate_sha256": "0b8f42c5311d986a17d2c65fddb19a43e13b48fd53519a1048ac6e3b526c4e7e",
+      "canonical_path": "tools/hoenn_import/patches/RustboroCity_DevonCorp_1F.scripts.inc",
+      "canonical_sha256": "70ed05b62308793f1c8919f88666516637074b508ce767fa1d11b740b1ef7e38",
+      "canonical_baseline_sha256": null,
+      "canonical_baseline_must_be_absent": true,
+      "source_provenance": "exported_snapshot"
+    },
+    {
+      "path": "data/maps/RustboroCity_DevonCorp_1F/text.inc",
+      "baseline_sha256": "d558cce3a575fdf7d93b570baebc68e11955b85f5d8e72b31e61874ca6d88ee7",
+      "candidate_sha256": "80c63c769532735f121aba899af4f54921ae81594119857ed4d82f96739ea382",
+      "canonical_path": "tools/hoenn_import/patches/RustboroCity_DevonCorp_1F.text.inc",
+      "canonical_sha256": "0b97ddb952029bf64550c18ff769aad9f40104f179631aefc92de08f44b18736",
+      "canonical_baseline_sha256": null,
+      "canonical_baseline_must_be_absent": true,
+      "source_provenance": "exported_snapshot"
+    },
+    {
+      "path": "data/maps/RustboroCity_DevonCorp_3F/scripts.inc",
+      "baseline_sha256": "b8949c01ab50d46d770335a6e306c31a79b93103c8838b114705c07a212149d5",
+      "candidate_sha256": "e5832efa342f5554cbbcf8c46f39d166099c3883baaaed6482707386cd895ba4",
+      "canonical_path": "tools/hoenn_import/patches/RustboroCity_DevonCorp_3F.scripts.inc",
+      "canonical_sha256": "332a5f18a0361bd04b5325934c7c87cebffe5477a8c7f0cd609096f3ccb510c2",
+      "canonical_baseline_sha256": "adeda511741ed7e73297a351f2b3071d8915d9fcf59a6308bdf3ea2e6f5faead",
+      "canonical_baseline_must_be_absent": false,
+      "source_provenance": "exported_snapshot"
+    },
+    {
+      "path": "data/maps/RustboroCity_DevonCorp_3F/text.inc",
+      "baseline_sha256": "9fd9729eceea2f9adb5a3fffab2f771c94daab45b92cc956198c946e384a58a4",
+      "candidate_sha256": "22c06ecd878c1a8826c7187fd276ed96f5e0f11451b0d6f7651163e5915bb2d0",
+      "canonical_path": "tools/hoenn_import/patches/RustboroCity_DevonCorp_3F.text.inc",
+      "canonical_sha256": "949d5d9af2ad740b10e41944ef3553702acfc4f3c13e6a7010147da087ddd15c",
+      "canonical_baseline_sha256": "ac670b736fa4f82b74bf07df8de59b0c0f9b67f77dda61a5e826b8f89663311c",
+      "canonical_baseline_must_be_absent": false,
+      "source_provenance": "exported_snapshot"
+    }
+  ],
+  "static": {
+    "pass": true,
+    "generated_data_files": 8,
+    "replacement_labels": 31,
+    "duplicate_labels": 0,
+    "unresolved_added_map_label_references": 0,
+    "added_lines_over_208px": 0,
+    "canonical_reapply_idempotent": true,
+    "new_state_writes": 0,
+    "unrelated_existing_labels_unchanged": 131,
+    "unreachable_replacement_labels": 0,
+    "new_empty_promises": 0,
+    "native_test_performed": false,
+    "ROM_or_SAV_modified": false
+  },
+  "new_saved_flags": [],
+  "new_items": [],
+  "changed_map_warps_or_tiles": false
+}

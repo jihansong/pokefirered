@@ -1,0 +1,359 @@
+{
+  "time": "20261005T152711034308Z",
+  "validation": {
+    "chapter": "Azalea",
+    "save_layout_changed": false,
+    "visual_limits": [
+      "Bugsy uses native BUG_CATCHER portrait until dedicated art exists",
+      "Well entrance temporarily reuses a native cave mouth"
+    ],
+    "reward_adaptation": "Gen III TM06 TOXIC; the original Gen II TM49 would mean SNATCH in FRLG",
+    "not_implemented": [
+      "Silver Azalea encounter",
+      "Ilex Forest and later Johto towns",
+      "Johto League and its ending gate"
+    ],
+    "new_maps": [
+      "JohtoRoute32",
+      "JohtoUnionCave_1F",
+      "JohtoRoute33",
+      "AzaleaTown",
+      "AzaleaTown_PokemonCenter_1F",
+      "AzaleaTown_PokemonCenter_2F",
+      "AzaleaTown_Mart",
+      "AzaleaTown_KurtsHouse",
+      "AzaleaTown_Gym",
+      "SlowpokeWell_1F"
+    ],
+    "new_flags": {
+      "FLAG_JOHTO_KURT_RESCUE_REQUESTED": 8,
+      "FLAG_JOHTO_SLOWPOKE_WELL_CLEARED": 9,
+      "FLAG_JOHTO_KURT_REPORT_DELIVERED": 10,
+      "FLAG_JOHTO_GOT_TM06_FROM_BUGSY": 11,
+      "FLAG_JOHTO_GOT_NET_BALLS_FROM_KURT": 13,
+      "FLAG_JOHTO_BADGE02_GET": 17
+    },
+    "static_checks": [
+      {
+        "map": "JohtoRoute32",
+        "walkable_reachable": 924,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "JohtoUnionCave_1F",
+        "walkable_reachable": 1153,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "JohtoRoute33",
+        "walkable_reachable": 452,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "AzaleaTown",
+        "walkable_reachable": 750,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "AzaleaTown_PokemonCenter_1F",
+        "walkable_reachable": 84,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "AzaleaTown_PokemonCenter_2F",
+        "native_CableClub_layout": true
+      },
+      {
+        "map": "AzaleaTown_Mart",
+        "walkable_reachable": 40,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "AzaleaTown_KurtsHouse",
+        "walkable_reachable": 58,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "AzaleaTown_Gym",
+        "walkable_reachable": 145,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "SlowpokeWell_1F",
+        "walkable_reachable": 399,
+        "NPC_and_warps": true
+      }
+    ],
+    "native_build_and_emulator": "NOT_RUN_BY_GENERATOR"
+  },
+  "files": {
+    "data/maps/map_groups.json": {
+      "before": "076cb6fdb31442fea8c998a1bd520a95d0b447df58ef5f4ba3171e7ea0fff7c4",
+      "after": "6ac134c3ba85111317f7e43bcab1b76d0189e11288d607953ce629e13ede865f"
+    },
+    "data/layouts/JohtoRoute32/map.bin": {
+      "before": null,
+      "after": "282c063d540b21b41e5f071ce872c696c19c5bd417d6c0af61cc25e847608d65"
+    },
+    "data/layouts/JohtoRoute32/border.bin": {
+      "before": null,
+      "after": "877ba1a8619d96ac55bc6e0f946a551d7ca24ff142d3fedb7d4ad099aa115a78"
+    },
+    "data/layouts/JohtoUnionCave_1F/map.bin": {
+      "before": null,
+      "after": "a31cb684e8188d0003303a3fcca21ff0eb1d152307e281ccb55a1b9da6a96a9c"
+    },
+    "data/layouts/JohtoUnionCave_1F/border.bin": {
+      "before": null,
+      "after": "189fb1a612c29e6635f237997e7477d0c740a209ad88e1208add4ad25eb2d2d4"
+    },
+    "data/layouts/JohtoRoute33/map.bin": {
+      "before": null,
+      "after": "d45395eaf002231f17d376d7641bf53893063e9c811f2ac8fa2a7090fc7cc64a"
+    },
+    "data/layouts/JohtoRoute33/border.bin": {
+      "before": null,
+      "after": "877ba1a8619d96ac55bc6e0f946a551d7ca24ff142d3fedb7d4ad099aa115a78"
+    },
+    "data/layouts/AzaleaTown/map.bin": {
+      "before": null,
+      "after": "f9bd0edefb22c4549087f90141dac0e016e53b46c14294bd64c914535b0952fb"
+    },
+    "data/layouts/AzaleaTown/border.bin": {
+      "before": null,
+      "after": "877ba1a8619d96ac55bc6e0f946a551d7ca24ff142d3fedb7d4ad099aa115a78"
+    },
+    "data/layouts/SlowpokeWell_1F/map.bin": {
+      "before": null,
+      "after": "90d123f5c4170d33cbe459599ebabedd11e3604eb4ca36746ed07ddb83da150e"
+    },
+    "data/layouts/SlowpokeWell_1F/border.bin": {
+      "before": null,
+      "after": "189fb1a612c29e6635f237997e7477d0c740a209ad88e1208add4ad25eb2d2d4"
+    },
+    "data/layouts/layouts.json": {
+      "before": "db050f68298b5ca411ab42c0d8b4c3ee93587b9139f10683236506cbddfee2eb",
+      "after": "780a059b690abc4e54c30c4e7da83e0ece33366f56fc686ddb2820d5e70044e2"
+    },
+    "data/maps/JohtoRoute32/map.json": {
+      "before": null,
+      "after": "da1d57fa76dc6a49ca34352850f18717d10f4cab0ba72c65d0d37f86ce8f14d6"
+    },
+    "data/maps/JohtoRoute32/scripts.inc": {
+      "before": null,
+      "after": "c936a2d9760aaa9127eed806d419bfc186daa0950f4964e51a747329ee39cdd8"
+    },
+    "data/maps/JohtoRoute32/text.inc": {
+      "before": null,
+      "after": "240ccd9d04c3e812079546b73950ce3b7330151fb3f91bea5908267c66a3e1e6"
+    },
+    "data/maps/JohtoUnionCave_1F/map.json": {
+      "before": null,
+      "after": "c6962879743556ec1f2315f7088c001abcb78459447c4fb53ae050acc98bdd14"
+    },
+    "data/maps/JohtoUnionCave_1F/scripts.inc": {
+      "before": null,
+      "after": "601be1400321d0f230c154a6bf703a4a0bcdfcb82ba09fcaec07636c3010934f"
+    },
+    "data/maps/JohtoUnionCave_1F/text.inc": {
+      "before": null,
+      "after": "41771ec5d4cf2d3e1a1cbe7d02340bf8f3fc071aef10e2bc90e1d58611274b0e"
+    },
+    "data/maps/JohtoRoute33/map.json": {
+      "before": null,
+      "after": "9581bbc2cf0d7db1d50db90a6d7b507a13a15116b8e5ca3d25d498e2fd7e1100"
+    },
+    "data/maps/JohtoRoute33/scripts.inc": {
+      "before": null,
+      "after": "6ff6d64b024350943b64befbc818b3e6a9988e0ceb9f61a6a09e226a0f5fd2f3"
+    },
+    "data/maps/JohtoRoute33/text.inc": {
+      "before": null,
+      "after": "a3c885b5cce6ebe849d29660d98c9ab9d720e243e28a50f802f305dec7af090a"
+    },
+    "data/maps/AzaleaTown/map.json": {
+      "before": null,
+      "after": "c013b7b114efccb2aab0923071cf525dc41710ae1ff4777f5bee915d78f2dc45"
+    },
+    "data/maps/AzaleaTown/scripts.inc": {
+      "before": null,
+      "after": "f426f93d3f126ac5d8ac17ca91314132a84a82b092f1fcfaaa6619c302535e18"
+    },
+    "data/maps/AzaleaTown/text.inc": {
+      "before": null,
+      "after": "e48686b308a22a28a60c42c044ddde91cfd84b2b2fad6f70c979b40b083352a9"
+    },
+    "data/maps/AzaleaTown_PokemonCenter_1F/map.json": {
+      "before": null,
+      "after": "d1f8c031f0454ac11ca32144fe746d19ec66e70ff5c85c342216a8d6a8352063"
+    },
+    "data/maps/AzaleaTown_PokemonCenter_1F/scripts.inc": {
+      "before": null,
+      "after": "80c37a7b159e51e90bb53650033065b239cdd4310ea364420d3159894e50cc59"
+    },
+    "data/maps/AzaleaTown_PokemonCenter_1F/text.inc": {
+      "before": null,
+      "after": "2c4a077a547d57f540c1863881e163b43f021e15877411c381772f60f1a6e0e6"
+    },
+    "data/maps/AzaleaTown_PokemonCenter_2F/map.json": {
+      "before": null,
+      "after": "936600183781e4592c2b34d6e88bcc52e1f70e03bfcf2e81d9e3e8ae6d6ea811"
+    },
+    "data/maps/AzaleaTown_PokemonCenter_2F/scripts.inc": {
+      "before": null,
+      "after": "d94dc350bebfd0c6c3036d499f9d78a80f18c61409e9b6782e277dcacca3763b"
+    },
+    "data/maps/AzaleaTown_PokemonCenter_2F/text.inc": {
+      "before": null,
+      "after": "a0dfac1bcbde46cdf6187847f339d03aab6f659d4eb7949c5f14b7614ce6be55"
+    },
+    "data/maps/AzaleaTown_Mart/map.json": {
+      "before": null,
+      "after": "56ddb97ff385911e56dc442a1a61ea40e5dad0fb9e1e0698a310897f1a5dcd65"
+    },
+    "data/maps/AzaleaTown_Mart/scripts.inc": {
+      "before": null,
+      "after": "84191f65eaf9bfc900624674b2e8c4b5eabfecc33540c10618b4edfb0892ce09"
+    },
+    "data/maps/AzaleaTown_Mart/text.inc": {
+      "before": null,
+      "after": "4748d25a3018e2739c7681d7bbb6d67c2dbec5a1ce8da748d525c00f0cdf5e08"
+    },
+    "data/maps/AzaleaTown_KurtsHouse/map.json": {
+      "before": null,
+      "after": "b47858dfd4d7a92f881264b25761cd9a1443f24e41d49ba7f41bb945295abc92"
+    },
+    "data/maps/AzaleaTown_KurtsHouse/scripts.inc": {
+      "before": null,
+      "after": "c709292b2a972437e578186ef904de4897147f3e5a97b51af2934328f44f3de0"
+    },
+    "data/maps/AzaleaTown_KurtsHouse/text.inc": {
+      "before": null,
+      "after": "04c3fc1fc2d401b118992ff532355568aa592d13007f3bf7e62ce820057f9da7"
+    },
+    "data/maps/AzaleaTown_Gym/map.json": {
+      "before": null,
+      "after": "8ecbd3cd62fcb7aaebe6b68b00a3d242e1fb39f72ed382b1f8430df0e0e0e57d"
+    },
+    "data/maps/AzaleaTown_Gym/scripts.inc": {
+      "before": null,
+      "after": "9bece9f64ef6ff532d56117b18d55fd72dd704cb1a3922221a02ba6f9a14be6e"
+    },
+    "data/maps/AzaleaTown_Gym/text.inc": {
+      "before": null,
+      "after": "4fb72bee19be3caad12f773ce6d1ac3a660386ae1c9308c5b2af38ea42875aef"
+    },
+    "data/maps/SlowpokeWell_1F/map.json": {
+      "before": null,
+      "after": "63a0737a3810aa13cc142764108508a832cedd08b297dd3b9403a192fb539bf5"
+    },
+    "data/maps/SlowpokeWell_1F/scripts.inc": {
+      "before": null,
+      "after": "bc6ac6c3f0b5e1bab2d2e788f087b1965baf80d4f294b5966d4f1c4b61b50395"
+    },
+    "data/maps/SlowpokeWell_1F/text.inc": {
+      "before": null,
+      "after": "8db55402128cdcc380bc84d7759e4c52c066ba0b4c188080c6722564db0a602f"
+    },
+    "data/maps/VioletCity/map.json": {
+      "before": "cdb8c4c479c4e2e3e8dd49cd59c3ffb5db7a334bf656a9468fb86985a52443e7",
+      "after": "2e115ce44fafeb0996a4d4c85c2b784f0ea2f07ee110e78bc1eee49be50afec7"
+    },
+    "data/layouts/VioletCity/map.bin": {
+      "before": "36828732885df2c60476d7f202c528c3880beee82357b67b9317dc781f1ea1bd",
+      "after": "1d459dac6f846f06cf09fce50a194888b90fbfe83a6ef6a38fcf5a634a7876ff"
+    },
+    "src/data/region_map/region_map_sections.json": {
+      "before": "0fc6f4b7b1b295a3761f92999aeb7fc61a36735e6a9af7880ebe446d3a677e32",
+      "after": "25979b7e897496e45ea945933d4b4c8931a293548cfa27b19be843f95e78fc7b"
+    },
+    "src/data/heal_locations.json": {
+      "before": "f9169d4437411c2784537fb0613e3962f1da1ba70e2e895fa30104d10b09ee2a",
+      "after": "b155abbdad7287655f5f7138199d308fd261010e25eb2f96b5d199a7f04d68d8"
+    },
+    "include/constants/flags_johto_story.h": {
+      "before": "b396c31f40a9589eb1a7265f9916c1fdac4034121e12509efe090a7cfece8e93",
+      "after": "507fd6726476eb3f2b38e2a10ecf3624df7a82879b0d4038e44d57251a2f1667"
+    },
+    "include/constants/opponents_johto_azalea.h": {
+      "before": null,
+      "after": "4ce7b41f70074aa342ee99553240714ef9b000b79150d8e4cc1d7204949d5e3a"
+    },
+    "include/constants/opponents.h": {
+      "before": "9abcd98773cd58093767419f9963b2c2c3592bf00dbab2bfc98451afe92c543d",
+      "after": "9912bd09a40250b1c1684a7eebbd04d7b07735c93239bab9f6dbeff2049f7490"
+    },
+    "src/data/trainer_parties_johto_azalea.h": {
+      "before": null,
+      "after": "0e2c19498cfffb39ffb4b976cd183a52b1edd3bf692fdb0ad6f5945f7d7da780"
+    },
+    "src/data/trainers_johto_azalea.h": {
+      "before": null,
+      "after": "2f7c4a82828371f59c8504f8177379bde0e9c72188f5caa1d41b16926f5395ba"
+    },
+    "src/data/trainers.h": {
+      "before": "3704bf2d60ee5fb8a12ca8e4d4d7f02a628fd1417d4e7cb0de105cd899952dac",
+      "after": "0f223a528c561ba254272b2ccf3944450640726ca99daebd0dd640a87966056f"
+    },
+    "src/data/trainer_parties.h": {
+      "before": "5dfa130a2cec28977c3131d3f26840b093e36ee8f9c96a8a7fa8e8061a4f8bcf",
+      "after": "87752bd049c2baee2826f24e797378ee2f1882136f82d754caf37ab8eb440d14"
+    },
+    "data/event_scripts.s": {
+      "before": "41773f80d53800f52e8c777d3385a35692fd78fb6b5cc86ae9deddac07bb2b67",
+      "after": "ae379570a54b76799545f2f2ba466bd8e95a310bfb0209c1377bf01d0fade9fc"
+    },
+    "tools/johto/build_violet.py": {
+      "before": "b4c65c08aeefa2fb325ed09fabafac3c92cc09ac3b88e76cb8af8fc63b678634",
+      "after": "e28667b8f36fdf5a12661bff1106035965a357fae0d688b75280dbff2e98b27d"
+    },
+    "tools/johto/johtoroute32_wild.json": {
+      "before": null,
+      "after": "e18596eef58bec4f9242d872db76b652ee799ca5dc527cb2dd66ead456b11c31"
+    },
+    "tools/johto/johtounioncave_1f_wild.json": {
+      "before": null,
+      "after": "abb5c4535928ad98a637d4ad0b63a74e043a564a36c46678423b0074fa2f86c7"
+    },
+    "tools/johto/johtoroute33_wild.json": {
+      "before": null,
+      "after": "238c7a36aabc5ca0d5f07fe1b953c3abbb6fb2ea5fe820ce53aa0812b4812c76"
+    },
+    "tools/johto/slowpokewell_1f_wild.json": {
+      "before": null,
+      "after": "1cef7ca121983de3a72e144a0abf183cb92de9472b3f662e3876b2767fbbc21f"
+    },
+    "src/data/wild_encounters.json": {
+      "before": "c4b82eeb22127262b6eee02df54bf28c100547d75ae1ca6952d674186036ae6f",
+      "after": "1d4d5bfc20518212d73c00a5f8ae289af0dbe5298df63371ccf35413e484a364"
+    },
+    "src/region_map.c": {
+      "before": "a6ac7856db369da87fa2471dffa54d341f9f1e2968831ba83ee3982683e31e32",
+      "after": "33b07044b778c0b7180ff4751feff80b6f81a39d1b5774869f271af5d036cf42"
+    },
+    "src/pokemon_summary_screen.c": {
+      "before": "2fc95999f27886676734d47802c7a5537801cdf8ca4aa697e32138b6b4a2cf90",
+      "after": "345437608b1434869c29ff70789d1d87409d2397d5b702bf399bc6b6e9b67ce5"
+    },
+    "graphics/region_map/johto_entry.bin": {
+      "before": "63222cc835b2c87361f6a2f89e2138739865e923f5a2721d538c3ad6554d9884",
+      "after": "939a2bf39d544b1f0d818627631062dbd16f870dbe1438324121932a06359b22"
+    },
+    "src/wild_pokemon_area.c": {
+      "before": "63c2e9967aa575814599c1af8e5bf01fc528279f522dc31ccfd7e398f83b97f8",
+      "after": "a083d7a8493a810bf9cb853d79f14c7364a0d1726857a6a8c468e09c2fa1b345"
+    },
+    "include/pokedex_area_markers.h": {
+      "before": "ac74066e667bc6cbc444700dc7c38279c2152d681715a7729550582595b4fb5c",
+      "after": "01dc8ebf6ca6b5b671e43398bf3d5c5bf2a2aad2d75af6a38aaa18767300e825"
+    },
+    "src/pokedex_area_markers.c": {
+      "before": "84ac21837b51c36048ba6aebd3390174e60aa97ae697c81493f970202334a17b",
+      "after": "295272d6de35285b3cd9a8908ece2c90034fc35b5d38d81c745540ffdb597bda"
+    },
+    "src/pokedex_screen.c": {
+      "before": "d7c90cc3c8427b2e87dfcc90b6578d55edadab200fe094106a4fa460a4829f62",
+      "after": "bfbd755e4b2597a0a4840df3e5aefc424e94e8dab9904662d3466e64a2a78f75"
+    }
+  }
+}

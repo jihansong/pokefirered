@@ -1,0 +1,6 @@
+ok   start_menu_clock
+ok   start_menu_clock_save_cancel
+ok   pokewatch_clock
+ok   pokewatch_set_clock
+ok   control_no_clock_before_it_is_set
+5/5 cases passed

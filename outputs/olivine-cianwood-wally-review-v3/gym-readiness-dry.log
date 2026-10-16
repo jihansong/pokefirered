@@ -1,0 +1,18 @@
+{
+  "patch": "GYM_CURED_NOTREADY_TEXT_V1",
+  "apply": false,
+  "files": {
+    "tools/johto/build_olivine_cianwood.py": {
+      "before": "f766c00a2a63a7e2ab37fc4c573965f28fe2b6b3260bd3348d09f6d2374c8b8c",
+      "after": "c9de7857bf165ce84fc45e4049c5024794d844c4b10cc390331ba1c3511e53ad"
+    },
+    "data/maps/OlivineCity_Gym/text.inc": {
+      "before": "35625a951141f1153066f7943f365316f958c4b2c0812534b52daf3a5878ec43",
+      "after": "bc821d66d1602191754451c1b1d96cd2c23108cf86fac0efd5a471b50de74ff0"
+    }
+  },
+  "script_and_marker_changes": 0,
+  "story_or_reward_condition_changes": 0,
+  "save_layout_changed": false,
+  "native_qa": "NOT_RUN_BY_THIS_PATCH"
+}

@@ -1,0 +1,27 @@
+{
+  "maps": [
+    "Underwater_SootopolisCity",
+    "SootopolisCity"
+  ],
+  "terrain_unchanged": true,
+  "save_layout_changed": false,
+  "native_runtime_validated": false,
+  "original_files": {
+    "data/maps/Underwater_SootopolisCity/scripts.inc": "b2a66294d29ad5843444d91e3eb503e255b58cff3b4c1bbe73b9c80c06d3bdd7",
+    "data/maps/Underwater_SootopolisCity/text.inc": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tools/hoenn_import/patches/Underwater_SootopolisCity.scripts.inc": null,
+    "tools/hoenn_import/patches/SootopolisCity.mapscripts": null,
+    "data/maps/SootopolisCity/text.inc": "1fc1ac8e376464f94429487b8bd6a4ec0eb8644c3ac8feb037ac04d0748fe837",
+    "data/maps/SootopolisCity/scripts.inc": "f1ed783e4368cf7c2824976e498a3c586627ddd8b7619456f5042c9d013afdb5",
+    "data/maps/Underwater_SootopolisCity/map.json": "308360097526fca358fa1e81d79c0b0153343df12af57840910ac64d5659cbc6",
+    "data/maps/SootopolisCity/map.json": "ca291287ab489b7280b7acafb5f52dbc3698ac60bcc477bf36a7d34e73574aab",
+    "tools/hoenn_import/patches/Underwater_SootopolisCity.mapscripts": null,
+    "tools/hoenn_import/patches/SootopolisCity.scripts.inc": null
+  },
+  "canonical_files": {
+    "tools/hoenn_import/patches/Underwater_SootopolisCity.scripts.inc": "c3bac053d3773bc90f4db1209b19ea68ae9eb10a0c7cdd0003a7ee47cec2b61b",
+    "tools/hoenn_import/patches/Underwater_SootopolisCity.mapscripts": "0c1ba6738cab57f973303417d664bb7f0d792af7530316db7b64fa400a8dd013",
+    "tools/hoenn_import/patches/SootopolisCity.scripts.inc": "609ba5aabbd080f74905ac3776f330dbf75a74ed1fb10e242a66d0c068cf1831",
+    "tools/hoenn_import/patches/SootopolisCity.mapscripts": "554a3bfc7b9b87f793fe14d543818860cf6b1400f093bf7b4a3eeff1def99fef"
+  }
+}

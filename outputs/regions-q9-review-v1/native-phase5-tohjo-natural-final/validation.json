@@ -1,0 +1,803 @@
+{
+  "pass": true,
+  "rom_sha256": "799ef72e82454fdf895550551bc0ef33a5253dfa92fc4c734996b4a1682ea096",
+  "elf_sha256": "35851341f56beb9146b7cd6ea3caa3e0cf8ce940b5023e66afcee58c4dd5598c",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-johto-tohjo-natural-water-route",
+  "fixture": "temporary Lapras mover plus exact copy of genuine original starter Pikachu; original SAV/PC/Dex unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [
+    {
+      "label": "land-to-native-Surf",
+      "player_xy": [
+        10,
+        16
+      ],
+      "water_avatar": true
+    },
+    {
+      "label": "native-tohjo-waterfall-ascent",
+      "steps": [
+        {
+          "frame": 1597,
+          "xy": [
+            10,
+            10
+          ]
+        },
+        {
+          "frame": 1627,
+          "xy": [
+            10,
+            9
+          ]
+        },
+        {
+          "frame": 1658,
+          "xy": [
+            10,
+            8
+          ]
+        },
+        {
+          "frame": 1689,
+          "xy": [
+            10,
+            7
+          ]
+        },
+        {
+          "frame": 1720,
+          "xy": [
+            10,
+            6
+          ]
+        }
+      ],
+      "native_waterfall_task_seen": true
+    },
+    {
+      "label": "native-Surf-to-land",
+      "player_xy": [
+        10,
+        5
+      ]
+    },
+    {
+      "label": "native-Tohjo-north-exit",
+      "arrived_xy": [
+        10,
+        32
+      ],
+      "RAM_warp": false
+    }
+  ],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "candidate_ui_task_symbols": {
+    "Task_HandleChooseMonInput": [
+      135417824
+    ],
+    "Task_HandleSelectionMenuInput": [
+      135430496
+    ],
+    "Task_ReturnToChooseMonAfterText": [
+      135420016
+    ],
+    "Task_CancelAfterAorBPress": [
+      135437988
+    ],
+    "Task_YesNoMenu_HandleInput": [
+      134874320
+    ],
+    "Task_UseWaterfall": [
+      134775160
+    ]
+  },
+  "native_story_not_entire_regions": true,
+  "palette_active_abi_mask": {
+    "size": 16,
+    "offset": 7,
+    "mask": 128
+  },
+  "input_abi_offsets": {
+    "heldKeysRaw": 40,
+    "newKeysRaw": 42,
+    "heldKeys": 44,
+    "newKeys": 46,
+    "newAndRepeatedKeys": 48,
+    "keyRepeatCounter": 50,
+    "vblankCounter2": 36,
+    "link_recv_count": 4029,
+    "link_overworld_max": 3
+  },
+  "follower_checks": [
+    {
+      "label": "native-shore-to-surf",
+      "player_xy": [
+        10,
+        16
+      ],
+      "follower_xy": [
+        10,
+        17
+      ],
+      "water": true,
+      "visible": true,
+      "sprite_active": true
+    },
+    {
+      "label": "step-0",
+      "player_xy": [
+        10,
+        15
+      ],
+      "follower_xy": [
+        10,
+        16
+      ],
+      "water": true,
+      "visible": true,
+      "sprite_active": true
+    },
+    {
+      "label": "step-1",
+      "player_xy": [
+        10,
+        14
+      ],
+      "follower_xy": [
+        10,
+        15
+      ],
+      "water": true,
+      "visible": true,
+      "sprite_active": true
+    },
+    {
+      "label": "step-2",
+      "player_xy": [
+        10,
+        13
+      ],
+      "follower_xy": [
+        10,
+        14
+      ],
+      "water": true,
+      "visible": true,
+      "sprite_active": true
+    },
+    {
+      "label": "step-3",
+      "player_xy": [
+        10,
+        12
+      ],
+      "follower_xy": [
+        10,
+        13
+      ],
+      "water": true,
+      "visible": true,
+      "sprite_active": true
+    },
+    {
+      "label": "step-4",
+      "player_xy": [
+        10,
+        11
+      ],
+      "follower_xy": [
+        10,
+        12
+      ],
+      "water": true,
+      "visible": true,
+      "sprite_active": true
+    },
+    {
+      "label": "native-waterfall-top",
+      "player_xy": [
+        10,
+        6
+      ],
+      "follower_xy": [
+        10,
+        7
+      ],
+      "water": true,
+      "visible": true,
+      "sprite_active": true
+    },
+    {
+      "label": "tohjo-top-cold-right",
+      "map": [
+        76,
+        113
+      ],
+      "player_xy": [
+        11,
+        6
+      ],
+      "follower_xy": [
+        10,
+        6
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "tohjo-top-cold-left",
+      "map": [
+        76,
+        113
+      ],
+      "player_xy": [
+        10,
+        6
+      ],
+      "follower_xy": [
+        11,
+        6
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "step-5",
+      "player_xy": [
+        10,
+        4
+      ],
+      "follower_xy": [
+        10,
+        5
+      ],
+      "water": false,
+      "visible": true,
+      "sprite_active": true
+    },
+    {
+      "label": "step-6",
+      "player_xy": [
+        10,
+        31
+      ],
+      "follower_xy": [
+        10,
+        32
+      ],
+      "water": false,
+      "visible": true,
+      "sprite_active": true
+    },
+    {
+      "label": "step-7",
+      "player_xy": [
+        9,
+        31
+      ],
+      "follower_xy": [
+        10,
+        31
+      ],
+      "water": false,
+      "visible": true,
+      "sprite_active": true
+    },
+    {
+      "label": "step-8",
+      "player_xy": [
+        10,
+        31
+      ],
+      "follower_xy": [
+        9,
+        31
+      ],
+      "water": false,
+      "visible": true,
+      "sprite_active": true
+    },
+    {
+      "label": "step-9",
+      "player_xy": [
+        9,
+        31
+      ],
+      "follower_xy": [
+        10,
+        31
+      ],
+      "water": false,
+      "visible": true,
+      "sprite_active": true
+    },
+    {
+      "label": "step-10",
+      "player_xy": [
+        10,
+        31
+      ],
+      "follower_xy": [
+        9,
+        31
+      ],
+      "water": false,
+      "visible": true,
+      "sprite_active": true
+    }
+  ],
+  "route_steps": [
+    {
+      "key": "UP",
+      "before": [
+        76,
+        113,
+        10,
+        16
+      ],
+      "after": [
+        76,
+        113,
+        10,
+        15
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        76,
+        113,
+        10,
+        15
+      ],
+      "after": [
+        76,
+        113,
+        10,
+        14
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        76,
+        113,
+        10,
+        14
+      ],
+      "after": [
+        76,
+        113,
+        10,
+        13
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        76,
+        113,
+        10,
+        13
+      ],
+      "after": [
+        76,
+        113,
+        10,
+        12
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        76,
+        113,
+        10,
+        12
+      ],
+      "after": [
+        76,
+        113,
+        10,
+        11
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        76,
+        113,
+        10,
+        5
+      ],
+      "after": [
+        76,
+        113,
+        10,
+        4
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        76,
+        114,
+        10,
+        32
+      ],
+      "after": [
+        76,
+        114,
+        10,
+        31
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        76,
+        114,
+        10,
+        31
+      ],
+      "after": [
+        76,
+        114,
+        9,
+        31
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        76,
+        114,
+        9,
+        31
+      ],
+      "after": [
+        76,
+        114,
+        10,
+        31
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        76,
+        114,
+        10,
+        31
+      ],
+      "after": [
+        76,
+        114,
+        9,
+        31
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        76,
+        114,
+        9,
+        31
+      ],
+      "after": [
+        76,
+        114,
+        10,
+        31
+      ]
+    }
+  ],
+  "scope": "One actual land/Surf/Waterfall/north-exit route; not full Johto or replay of completed Hoenn water cases",
+  "original_terrain_sha256": "63ae01d21d19e54cb99ce1186a0c239ce56b4953d8279d73a0721f24837fa875",
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "temporary_continue_object_fixture": {
+    "actual_source_formulas": true,
+    "flags": {
+      "FLAG_HIDE_HOENN_BIRCH_LAB": true,
+      "FLAG_HIDE_HOENN_RIVAL_ROUTE103": true,
+      "FLAG_HIDE_HOENN_RUSTBORO_THIEF": true,
+      "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+      "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+      "FLAG_HIDE_HOENN_BRINEY": true,
+      "FLAG_HIDE_HOENN_WALLY_PETALBURG": true,
+      "FLAG_HIDE_HOENN_WALLY_VERDANTURF": true,
+      "FLAG_HIDE_HOENN_WANDA_BOYFRIEND": true,
+      "FLAG_HIDE_HOENN_ROCKET_WOODS": true,
+      "FLAG_HIDE_HOENN_RIVAL_LAB": true
+    },
+    "original_source_save_changed": false,
+    "native_save_assertions_unchanged": true
+  },
+  "native_repel_guard": {
+    "TohjoFalls": {
+      "fixture_lead": {
+        "slot": 0,
+        "level": 100,
+        "personality": 2710679397,
+        "otid": 2839214970
+      },
+      "actual_candidate_encounters": [
+        {
+          "table": "gWildMonHeaders",
+          "maximum_level": 30,
+          "native_rate": 10
+        },
+        {
+          "table": "gWildMonHeadersMorning",
+          "maximum_level": 30,
+          "native_rate": 10
+        },
+        {
+          "table": "gWildMonHeadersNight",
+          "maximum_level": 30,
+          "native_rate": 10
+        }
+      ],
+      "temporary_repel_steps": 250
+    },
+    "JohtoRoute26": {
+      "fixture_lead": {
+        "slot": 0,
+        "level": 100,
+        "personality": 2710679397,
+        "otid": 2839214970
+      },
+      "actual_candidate_encounters": [
+        {
+          "table": "gWildMonHeaders",
+          "maximum_level": 34,
+          "native_rate": 10
+        },
+        {
+          "table": "gWildMonHeadersMorning",
+          "maximum_level": 34,
+          "native_rate": 10
+        },
+        {
+          "table": "gWildMonHeadersNight",
+          "maximum_level": 34,
+          "native_rate": 10
+        }
+      ],
+      "temporary_repel_steps": 250
+    }
+  },
+  "native_save": {
+    "counter_before": 61,
+    "counter_after": 62,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_JOHTO_ARRIVAL_BRIEFED": false,
+      "FLAG_JOHTO_MET_LAB_ASSISTANT": false,
+      "FLAG_JOHTO_MET_CHERRYGROVE_GUIDE": false,
+      "FLAG_JOHTO_MR_POKEMON_BRIEFED": false,
+      "FLAG_JOHTO_ELM_REPORT_DELIVERED": false,
+      "FLAG_JOHTO_SPROUT_TOWER_CLEARED": false,
+      "FLAG_JOHTO_GOT_TM40_FROM_FALKNER": false,
+      "FLAG_JOHTO_SPROUT_TOWER_FLASH_RECEIVED": false,
+      "FLAG_JOHTO_BADGE01_GET": false,
+      "FLAG_JOHTO_KURT_RESCUE_REQUESTED": false,
+      "FLAG_JOHTO_SLOWPOKE_WELL_CLEARED": false,
+      "FLAG_JOHTO_KURT_REPORT_DELIVERED": false,
+      "FLAG_JOHTO_GOT_TM06_FROM_BUGSY": false,
+      "FLAG_JOHTO_GOT_NET_BALLS_FROM_KURT": false,
+      "FLAG_JOHTO_BADGE02_GET": false,
+      "FLAG_JOHTO_SILVER_AZALEA_DEFEATED": false,
+      "FLAG_JOHTO_ILEX_FARFETCHD_RETURNED": false,
+      "FLAG_JOHTO_ILEX_CUT_BRIEFED": false,
+      "FLAG_JOHTO_BADGE03_GET": false,
+      "FLAG_JOHTO_ILEX_HELP_REQUESTED": false,
+      "FLAG_JOHTO_GOLDENROD_RESEARCH_REGISTERED": false,
+      "FLAG_JOHTO_WHITNEY_ENCOURAGED": false,
+      "FLAG_JOHTO_GOT_TM45_FROM_WHITNEY": false,
+      "FLAG_JOHTO_BADGE04_GET": true,
+      "FLAG_JOHTO_SQUIRTBOTTLE_RECEIVED": false,
+      "FLAG_JOHTO_SUDOWOODO_CLEARED": false,
+      "FLAG_JOHTO_BURNED_TOWER_INVESTIGATED": false,
+      "FLAG_JOHTO_SILVER_BURNED_TOWER_DEFEATED": false,
+      "FLAG_JOHTO_GOT_TM30_FROM_MORTY": false,
+      "FLAG_JOHTO_DANCE_SURF_REWARDED": false,
+      "FLAG_JOHTO_BADGE05_GET": false,
+      "FLAG_JOHTO_BADGE06_GET": false,
+      "FLAG_JOHTO_LIGHTHOUSE_MEDICINE_REQUESTED": false,
+      "FLAG_JOHTO_CIANWOOD_MEDICINE_RECEIVED": false,
+      "FLAG_JOHTO_AMPHY_CURED": false,
+      "FLAG_JOHTO_GOT_TM01_FROM_CHUCK": false,
+      "FLAG_JOHTO_FLY_REWARDED": false,
+      "FLAG_JOHTO_GOT_TM23_FROM_JASMINE": false,
+      "FLAG_HIDE_JOHTO_JASMINE_GYM": false,
+      "FLAG_JOHTO_STRENGTH_REWARDED": false,
+      "FLAG_JOHTO_BADGE07_GET": false,
+      "FLAG_JOHTO_RED_GYARADOS_RESOLVED": false,
+      "FLAG_JOHTO_LANCE_INVESTIGATION_JOINED": false,
+      "FLAG_JOHTO_RED_SCALE_RECEIVED": false,
+      "FLAG_JOHTO_HQ_ELECTRODE1_CLEARED": false,
+      "FLAG_JOHTO_HQ_ELECTRODE2_CLEARED": false,
+      "FLAG_JOHTO_HQ_ELECTRODE3_CLEARED": false,
+      "FLAG_JOHTO_ROCKET_HQ_CLEARED": false,
+      "FLAG_JOHTO_LANCE_TM24_RECEIVED": false,
+      "FLAG_JOHTO_PRYCE_TM13_RECEIVED": false,
+      "FLAG_JOHTO_RADIO_TOWER_CLEARED": true,
+      "FLAG_JOHTO_LANCE_MOVED_TO_HQ": false,
+      "FLAG_JOHTO_RADIO_BASEMENT_ACCESS": false,
+      "FLAG_JOHTO_RADIO_DIRECTOR_RESCUED": false,
+      "FLAG_JOHTO_RADIO_GOT_TM11": false,
+      "FLAG_HIDE_JOHTO_RADIO_SILVER": false,
+      "FLAG_HIDE_JOHTO_RADIO_PETREL": false,
+      "FLAG_JOHTO_BADGE08_GET": true,
+      "FLAG_JOHTO_CLAIR_DEFEATED": false,
+      "FLAG_JOHTO_DRAGON_TRIAL_CLEARED": false,
+      "FLAG_JOHTO_CLAIR_TM02_RECEIVED": false,
+      "FLAG_JOHTO_ICE_PATH_WATERFALL_REWARDED": false,
+      "FLAG_JOHTO_SILVER_LEAGUE_RESOLVED": false,
+      "FLAG_JOHTO_WILL_CLEARED": false,
+      "FLAG_JOHTO_KOGA_CLEARED": false,
+      "FLAG_JOHTO_BRUNO_CLEARED": false,
+      "FLAG_JOHTO_KAREN_CLEARED": false,
+      "FLAG_JOHTO_LANCE_CHAMPION_CLEARED": false,
+      "FLAG_JOHTO_LEAGUE_CLEARED": false,
+      "FLAG_JOHTO_LEAGUE_ARRIVED": false,
+      "FLAG_HOENN_BADGE01_GET": false,
+      "FLAG_HOENN_BADGE02_GET": false,
+      "FLAG_HOENN_BADGE03_GET": false,
+      "FLAG_HOENN_BADGE04_GET": false,
+      "FLAG_HOENN_BADGE05_GET": false,
+      "FLAG_HOENN_BADGE06_GET": false,
+      "FLAG_HOENN_BADGE07_GET": false,
+      "FLAG_HOENN_BADGE08_GET": false,
+      "FLAG_HOENN_MET_STERN": false,
+      "FLAG_HOENN_MUSEUM_DEFENDED": false,
+      "FLAG_HOENN_ARCHIE_WARNED": false,
+      "FLAG_HOENN_SURVEY_LETTER_GOT": false,
+      "FLAG_HOENN_SURVEY_LETTER_DONE": false,
+      "FLAG_HOENN_SCANNER_DELIVERED": false,
+      "FLAG_HOENN_DEEP_SEA_ITEM_TAKEN": false,
+      "FLAG_HOENN_ROUTE109_BROTHERS_DONE": false,
+      "FLAG_HOENN_GOT_TM08_FROM_BRAWLY": false,
+      "FLAG_HOENN_GOT_TM47_IN_CAVE": false,
+      "FLAG_HIDE_HOENN_HARBOR_STERN": false,
+      "FLAG_HIDE_HOENN_MUSEUM_GRUNTS": false,
+      "FLAG_HIDE_HOENN_MUSEUM_ARCHIE": false,
+      "FLAG_HIDE_HOENN_SHIPYARD_STERN": false,
+      "FLAG_HOENN_PIKACHU_GYM_SEEN": false,
+      "FLAG_HOENN_PIKACHU_MUSEUM_SEEN": false,
+      "FLAG_HOENN_PIKACHU_SHIPYARD_SEEN": false,
+      "FLAG_HOENN_SCANNER_FOUND": false,
+      "FLAG_HOENN_MAUVILLE_BARRIERS": false,
+      "FLAG_HOENN_DEFEATED_MAUVILLE_GYM": false,
+      "FLAG_HOENN_GOT_TM34_FROM_WATTSON": false,
+      "FLAG_HOENN_WATTSON_ERRAND": false,
+      "FLAG_HOENN_NEW_MAUVILLE_DONE": false,
+      "FLAG_HOENN_GOT_BASEMENT_KEY": false,
+      "FLAG_HOENN_CYCLING_PRIZE_1": false,
+      "FLAG_HOENN_CYCLING_PRIZE_2": false,
+      "FLAG_HOENN_CYCLING_PRIZE_3": false,
+      "FLAG_HOENN_TRICK_HOUSE_DONE": false,
+      "FLAG_HOENN_DAYCARE_OPEN": false,
+      "FLAG_HOENN_MET_WANDA": false,
+      "FLAG_HOENN_VOLTORB_1": false,
+      "FLAG_HOENN_VOLTORB_2": false,
+      "FLAG_HOENN_VOLTORB_3": false,
+      "FLAG_HOENN_HIDE_VOLTORB_1": false,
+      "FLAG_HOENN_HIDE_VOLTORB_2": false,
+      "FLAG_HOENN_HIDE_VOLTORB_3": false,
+      "FLAG_HOENN_TRICK_PUZZLE_7_SWITCH_1": false,
+      "FLAG_HOENN_TRICK_PUZZLE_7_SWITCH_2": false,
+      "FLAG_HOENN_TRICK_PUZZLE_7_SWITCH_3": false,
+      "FLAG_HOENN_TRICK_PUZZLE_7_SWITCH_4": false,
+      "FLAG_HOENN_TRICK_PUZZLE_7_SWITCH_5": false,
+      "FLAG_HOENN_HIDE_TRICK_MASTER_ENTRANCE": false,
+      "FLAG_HOENN_HIDE_TRICK_MASTER_END": false,
+      "FLAG_HOENN_GOT_TM17_AT_TENT": false,
+      "FLAG_HOENN_TRICK_PRIZE_AMULET_COIN": false,
+      "FLAG_HOENN_TRICK_PRIZE_EXP_SHARE": false,
+      "FLAG_HOENN_BIRCH_RESCUED": false,
+      "FLAG_HOENN_GOT_TORCHIC_FROM_BIRCH": false,
+      "FLAG_HOENN_GOT_TREECKO_IN_WOODS": false,
+      "FLAG_HOENN_GOT_MUDKIP_ON_BEACH": false,
+      "FLAG_HOENN_DEFEATED_RUSTBORO_GYM": false,
+      "FLAG_HOENN_GOT_TM39_FROM_ROXANNE": false,
+      "FLAG_HOENN_WOODS_RESEARCHER_SAVED": false,
+      "FLAG_HOENN_GOT_DEVON_GOODS": false,
+      "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+      "FLAG_HOENN_GOT_EXP_SHARE": false,
+      "FLAG_HOENN_PEEKO_RESCUED": false,
+      "FLAG_HOENN_WALLY_CAUGHT_RALTS": false,
+      "FLAG_HOENN_RUSTURF_OPEN": false,
+      "FLAG_HOENN_GOT_TM09": false,
+      "FLAG_HOENN_GOT_CHESTO_BERRY": false,
+      "FLAG_HOENN_GOT_MIRACLE_SEED": false,
+      "FLAG_HOENN_GOT_PREMIER_BALL": false,
+      "FLAG_HOENN_GOT_QUICK_CLAW": false,
+      "FLAG_HOENN_DID_SEEDOT_TRADE": false,
+      "FLAG_HOENN_GOT_OLDALE_POTION": false,
+      "FLAG_HOENN_BIRCH_DEX_1": false,
+      "FLAG_HOENN_BIRCH_DEX_2": false,
+      "FLAG_HOENN_BIRCH_DEX_3": false,
+      "FLAG_HOENN_BIRCH_DEX_4": false,
+      "FLAG_HOENN_BIRCH_DEX_5": false,
+      "FLAG_HOENN_GOT_WHITE_HERB": false,
+      "FLAG_HIDE_HOENN_BIRCH_ROUTE101": false,
+      "FLAG_HIDE_HOENN_BIRCH_LAB": true,
+      "FLAG_HIDE_HOENN_RIVAL_ROUTE103": true,
+      "FLAG_HIDE_HOENN_WOODS_GRUNT": false,
+      "FLAG_HIDE_HOENN_WOODS_RESEARCHER": false,
+      "FLAG_HIDE_HOENN_RUSTBORO_THIEF": true,
+      "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+      "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+      "FLAG_HIDE_HOENN_BRINEY": true,
+      "FLAG_HIDE_HOENN_WALLY_PETALBURG": true,
+      "FLAG_HIDE_HOENN_WALLY_VERDANTURF": true,
+      "FLAG_HIDE_HOENN_WANDA_BOYFRIEND": true,
+      "FLAG_HOENN_PIKACHU_ROXANNE_SEEN": false,
+      "FLAG_HOENN_GOT_RUSTBORO_GREAT_BALL": false,
+      "FLAG_HOENN_GOT_REPEAT_BALL": false,
+      "FLAG_HOENN_ROCKET_WOODS": false,
+      "FLAG_HIDE_HOENN_ROCKET_WOODS": true,
+      "FLAG_HIDE_HOENN_RIVAL_LAB": true,
+      "FLAG_HOENN_MET_LANDLADY": false,
+      "FLAG_HOENN_GOT_TM50_FROM_FLANNERY": false,
+      "FLAG_HOENN_GOT_TM40_FROM_WINONA": false,
+      "FLAG_HOENN_GOT_TM42_FROM_NORMAN": false,
+      "FLAG_HOENN_LEAGUE_CLEAR": false,
+      "FLAG_HOENN_GOT_TM04": false,
+      "FLAG_HOENN_GOT_TM03": false,
+      "FLAG_HOENN_SEAFLOOR_CLEARED": false,
+      "FLAG_HOENN_RAYQUAZA_AWAKENED": false,
+      "FLAG_HOENN_GOT_WALLACE_WATERFALL_REWARD": false,
+      "FLAG_HOENN_GOT_CUTTER_SHARED_HM_REWARD": false,
+      "FLAG_HOENN_GOT_ROCK_SMASH_SHARED_HM_REWARD": false,
+      "FLAG_HOENN_GOT_WANDA_SHARED_HM_REWARD": false,
+      "FLAG_HOENN_GOT_WALLY_DAD_SHARED_HM_REWARD": false,
+      "FLAG_HOENN_GOT_GRANITE_SHARED_HM_REWARD": false,
+      "FLAG_HOENN_GOT_RIVAL110_GIFT": false,
+      "FLAG_HOENN_GOT_RIVAL_FLY_REWARD": false,
+      "FLAG_HOENN_WEATHER_RESCUED": false,
+      "FLAG_HOENN_GOT_WEATHER_CASTFORM": false,
+      "FLAG_HOENN_SPACE_CENTER_SECURED": false,
+      "FLAG_HIDE_HOENN_SPACE_RAID": false,
+      "FLAG_HOENN_GOT_HM08_FROM_STEVEN": false,
+      "FLAG_BADGE01_GET": true,
+      "FLAG_BADGE02_GET": true,
+      "FLAG_BADGE03_GET": true,
+      "FLAG_BADGE04_GET": true,
+      "FLAG_BADGE05_GET": true,
+      "FLAG_BADGE06_GET": true,
+      "FLAG_BADGE07_GET": true,
+      "FLAG_BADGE08_GET": false,
+      "FLAG_SYS_GAME_CLEAR": true,
+      "FLAG_RECEIVED_STARTER_PIKACHU": true
+    },
+    "trainers": {
+      "TRAINER_HOENN_SHELLY_WEATHER_INSTITUTE": false,
+      "TRAINER_HOENN_TABITHA_SPACE_CENTER": false,
+      "TRAINER_HOENN_MAXIE_SPACE_CENTER": false
+    },
+    "hm08": 0,
+    "sha256": "5de4ed2f7cdcc8534c3b4230a1aa6ef99067ac580f6f723d1bb9cd15fa7adac4"
+  },
+  "full_original_storage_unchanged": true,
+  "original_saves_unchanged": true
+}

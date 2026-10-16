@@ -1,0 +1,570 @@
+{
+  "ANIM_STD_FACE_SOUTH": {
+    "source_name": "sAnim_FaceSouth",
+    "commands": [
+      {
+        "frame": 0,
+        "duration": 16,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_FACE_NORTH": {
+    "source_name": "sAnim_FaceNorth",
+    "commands": [
+      {
+        "frame": 1,
+        "duration": 16,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_FACE_WEST": {
+    "source_name": "sAnim_FaceWest",
+    "commands": [
+      {
+        "frame": 2,
+        "duration": 16,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_FACE_EAST": {
+    "source_name": "sAnim_FaceEast",
+    "commands": [
+      {
+        "frame": 2,
+        "duration": 16,
+        "hflip": true,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_GO_SOUTH": {
+    "source_name": "sAnim_GoSouth",
+    "commands": [
+      {
+        "frame": 3,
+        "duration": 8,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 0,
+        "duration": 8,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 4,
+        "duration": 8,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 0,
+        "duration": 8,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_GO_NORTH": {
+    "source_name": "sAnim_GoNorth",
+    "commands": [
+      {
+        "frame": 5,
+        "duration": 8,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 1,
+        "duration": 8,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 6,
+        "duration": 8,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 1,
+        "duration": 8,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_GO_WEST": {
+    "source_name": "sAnim_GoWest",
+    "commands": [
+      {
+        "frame": 7,
+        "duration": 8,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 2,
+        "duration": 8,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 8,
+        "duration": 8,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 2,
+        "duration": 8,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_GO_EAST": {
+    "source_name": "sAnim_GoEast",
+    "commands": [
+      {
+        "frame": 7,
+        "duration": 8,
+        "hflip": true,
+        "vflip": false
+      },
+      {
+        "frame": 2,
+        "duration": 8,
+        "hflip": true,
+        "vflip": false
+      },
+      {
+        "frame": 8,
+        "duration": 8,
+        "hflip": true,
+        "vflip": false
+      },
+      {
+        "frame": 2,
+        "duration": 8,
+        "hflip": true,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_GO_FAST_SOUTH": {
+    "source_name": "sAnim_GoFastSouth",
+    "commands": [
+      {
+        "frame": 3,
+        "duration": 4,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 0,
+        "duration": 4,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 4,
+        "duration": 4,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 0,
+        "duration": 4,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_GO_FAST_NORTH": {
+    "source_name": "sAnim_GoFastNorth",
+    "commands": [
+      {
+        "frame": 5,
+        "duration": 4,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 1,
+        "duration": 4,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 6,
+        "duration": 4,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 1,
+        "duration": 4,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_GO_FAST_WEST": {
+    "source_name": "sAnim_GoFastWest",
+    "commands": [
+      {
+        "frame": 7,
+        "duration": 4,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 2,
+        "duration": 4,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 8,
+        "duration": 4,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 2,
+        "duration": 4,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_GO_FAST_EAST": {
+    "source_name": "sAnim_GoFastEast",
+    "commands": [
+      {
+        "frame": 7,
+        "duration": 4,
+        "hflip": true,
+        "vflip": false
+      },
+      {
+        "frame": 2,
+        "duration": 4,
+        "hflip": true,
+        "vflip": false
+      },
+      {
+        "frame": 8,
+        "duration": 4,
+        "hflip": true,
+        "vflip": false
+      },
+      {
+        "frame": 2,
+        "duration": 4,
+        "hflip": true,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_GO_FASTER_SOUTH": {
+    "source_name": "sAnim_GoFasterSouth",
+    "commands": [
+      {
+        "frame": 3,
+        "duration": 2,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 0,
+        "duration": 2,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 4,
+        "duration": 2,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 0,
+        "duration": 2,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_GO_FASTER_NORTH": {
+    "source_name": "sAnim_GoFasterNorth",
+    "commands": [
+      {
+        "frame": 5,
+        "duration": 2,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 1,
+        "duration": 2,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 6,
+        "duration": 2,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 1,
+        "duration": 2,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_GO_FASTER_WEST": {
+    "source_name": "sAnim_GoFasterWest",
+    "commands": [
+      {
+        "frame": 7,
+        "duration": 2,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 2,
+        "duration": 2,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 8,
+        "duration": 2,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 2,
+        "duration": 2,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_GO_FASTER_EAST": {
+    "source_name": "sAnim_GoFasterEast",
+    "commands": [
+      {
+        "frame": 7,
+        "duration": 2,
+        "hflip": true,
+        "vflip": false
+      },
+      {
+        "frame": 2,
+        "duration": 2,
+        "hflip": true,
+        "vflip": false
+      },
+      {
+        "frame": 8,
+        "duration": 2,
+        "hflip": true,
+        "vflip": false
+      },
+      {
+        "frame": 2,
+        "duration": 2,
+        "hflip": true,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_GO_FASTEST_SOUTH": {
+    "source_name": "sAnim_GoFastestSouth",
+    "commands": [
+      {
+        "frame": 3,
+        "duration": 1,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 0,
+        "duration": 1,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 4,
+        "duration": 1,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 0,
+        "duration": 1,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_GO_FASTEST_NORTH": {
+    "source_name": "sAnim_GoFastestNorth",
+    "commands": [
+      {
+        "frame": 5,
+        "duration": 1,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 1,
+        "duration": 1,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 6,
+        "duration": 1,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 1,
+        "duration": 1,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_GO_FASTEST_WEST": {
+    "source_name": "sAnim_GoFastestWest",
+    "commands": [
+      {
+        "frame": 7,
+        "duration": 1,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 2,
+        "duration": 1,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 8,
+        "duration": 1,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "frame": 2,
+        "duration": 1,
+        "hflip": false,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  },
+  "ANIM_STD_GO_FASTEST_EAST": {
+    "source_name": "sAnim_GoFastestEast",
+    "commands": [
+      {
+        "frame": 7,
+        "duration": 1,
+        "hflip": true,
+        "vflip": false
+      },
+      {
+        "frame": 2,
+        "duration": 1,
+        "hflip": true,
+        "vflip": false
+      },
+      {
+        "frame": 8,
+        "duration": 1,
+        "hflip": true,
+        "vflip": false
+      },
+      {
+        "frame": 2,
+        "duration": 1,
+        "hflip": true,
+        "vflip": false
+      },
+      {
+        "jump": 0
+      }
+    ]
+  }
+}

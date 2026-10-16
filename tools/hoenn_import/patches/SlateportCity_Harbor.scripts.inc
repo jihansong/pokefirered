@@ -48,16 +48,21 @@ SlateportCity_Harbor_OnFrame::
 
 SlateportCity_Harbor_EventScript_ArrivalScene::
 	lockall
+	goto_if_set FLAG_HOENN_MET_STERN, SlateportCity_Harbor_EventScript_ResumeArrival
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	applymovement LOCALID_SLATEPORT_HARBOR_STERN, Common_Movement_ExclamationMark
 	waitmovement 0
 	delay 30
 	msgbox SlateportCity_Harbor_Text_SternArrival
+	call_if_set FLAG_JOHTO_MET_LAB_ASSISTANT, SlateportCity_Harbor_EventScript_JohtoReferral
 	closemessage
 	setflag FLAG_HOENN_MET_STERN
+SlateportCity_Harbor_EventScript_ResumeArrival::
 	setvar VAR_HOENN_SCENE_HARBOR, 1
+	goto_if_ge VAR_HOENN_STAGE1_PROGRESS, 1, SlateportCity_Harbor_EventScript_ArrivalDone
 	setvar VAR_HOENN_STAGE1_PROGRESS, 1
+SlateportCity_Harbor_EventScript_ArrivalDone::
 	releaseall
 	end
 
@@ -66,6 +71,11 @@ SlateportCity_Harbor_EventScript_ArrivalScene::
 SlateportCity_Harbor_EventScript_Stern::
 	lock
 	faceplayer
+	goto_if_set FLAG_HOENN_GOT_EXP_SHARE, SlateportCity_Harbor_EventScript_DevonAlreadyDelivered
+	goto_if_set FLAG_HOENN_DEVON_GOODS_DELIVERED, SlateportCity_Harbor_EventScript_DevonAlreadyDelivered
+	goto_if_ge VAR_HOENN_SCENE_DEVON, 5, SlateportCity_Harbor_EventScript_DevonAlreadyDelivered
+	goto_if_eq VAR_HOENN_SCENE_DEVON, 4, SlateportCity_Harbor_EventScript_DevonDelivery
+SlateportCity_Harbor_EventScript_SternLegacy::
 	goto_if_unset FLAG_HOENN_MUSEUM_DEFENDED, SlateportCity_Harbor_EventScript_SternMuseum
 	goto_if_set FLAG_HOENN_SCANNER_DELIVERED, SlateportCity_Harbor_EventScript_SternDone
 	goto_if_set FLAG_HOENN_SURVEY_LETTER_DONE, SlateportCity_Harbor_EventScript_SternScanner
@@ -153,3 +163,41 @@ SlateportCity_Harbor_EventScript_SternOtherItem::
 	msgbox SlateportCity_Harbor_Text_SternOtherItem
 	goto SlateportCity_Harbor_EventScript_SternGiveItems
 	end
+
+@ Check all three balls fit before consuming the parcel. No new save fields.
+SlateportCity_Harbor_EventScript_DevonDelivery::
+	checkitem ITEM_DEVON_GOODS
+	goto_if_eq VAR_RESULT, FALSE, SlateportCity_Harbor_EventScript_DevonMissingGoods
+	checkitemspace ITEM_DIVE_BALL, 3
+	goto_if_eq VAR_RESULT, FALSE, SlateportCity_Harbor_EventScript_DevonNoRoom
+	additem ITEM_DIVE_BALL, 3
+	goto_if_eq VAR_RESULT, FALSE, SlateportCity_Harbor_EventScript_DevonNoRoom
+	removeitem ITEM_DEVON_GOODS
+	setflag FLAG_HOENN_DEVON_GOODS_DELIVERED
+	setvar VAR_HOENN_SCENE_DEVON, 5
+	msgbox SlateportCity_Harbor_Text_DevonDelivered
+	msgreceiveditem SlateportCity_Harbor_Text_ReceivedDiveBalls, ITEM_DIVE_BALL, 3
+	msgbox SlateportCity_Harbor_Text_DevonAfterDelivery
+	release
+	end
+
+SlateportCity_Harbor_EventScript_DevonNoRoom::
+	msgbox SlateportCity_Harbor_Text_DevonNoRoom
+	goto SlateportCity_Harbor_EventScript_SternLegacy
+	end
+
+SlateportCity_Harbor_EventScript_DevonMissingGoods::
+	msgbox SlateportCity_Harbor_Text_DevonMissingGoods
+	goto SlateportCity_Harbor_EventScript_SternLegacy
+	end
+
+SlateportCity_Harbor_EventScript_DevonAlreadyDelivered::
+	setflag FLAG_HOENN_DEVON_GOODS_DELIVERED
+	goto_if_ge VAR_HOENN_SCENE_DEVON, 5, SlateportCity_Harbor_EventScript_SternLegacy
+	setvar VAR_HOENN_SCENE_DEVON, 5
+	goto SlateportCity_Harbor_EventScript_SternLegacy
+	end
+
+SlateportCity_Harbor_EventScript_JohtoReferral::
+	msgbox SlateportCity_Harbor_Text_JohtoReferral
+	return

@@ -1,0 +1,46 @@
+{
+  "source_only": true,
+  "maps": [
+    "Route119_WeatherInstitute_1F",
+    "Route119_WeatherInstitute_2F",
+    "MossdeepCity_SpaceCenter_1F",
+    "MossdeepCity_SpaceCenter_2F"
+  ],
+  "flag_offsets": {
+    "FLAG_HOENN_WEATHER_RESCUED": 105,
+    "FLAG_HOENN_GOT_WEATHER_CASTFORM": 106,
+    "FLAG_HOENN_SPACE_CENTER_SECURED": 107,
+    "FLAG_HIDE_HOENN_SPACE_RAID": 108,
+    "FLAG_HOENN_GOT_HM08_FROM_STEVEN": 109
+  },
+  "trainers": {
+    "TABITHA_SPACE_CENTER": 536,
+    "MAXIE_SPACE_CENTER": 537
+  },
+  "files": {
+    "include/constants/flags_hoenn_story.h": "81fc3088e5b764728ce60f7ddef3fd538c160f94aef677c284e3cde6c3ff1bcc",
+    "include/constants/opponents_hoenn_story.h": "6c02c7818796ff8cb8f1e03d3497a4f387aa37cf668c791253bcf47c6f0827e6",
+    "src/data/trainers.h": "3704bf2d60ee5fb8a12ca8e4d4d7f02a628fd1417d4e7cb0de105cd899952dac",
+    "src/data/trainers_hoenn_story.h": "6ffd5e4d3e269ec23dee18d0138dad5e1141fe59120506de32871a15bc48a20f",
+    "src/data/trainer_parties_hoenn_story.h": "8495c36b60106ca4ea6aa637ccefceb56e9d8ca4cfc8b188921258f32eeadb8f",
+    "src/data/trainer_parties.h": "5dfa130a2cec28977c3131d3f26840b093e36ee8f9c96a8a7fa8e8061a4f8bcf",
+    "tools/hoenn_import/patches/Route119_WeatherInstitute_1F.json": "fcae1a10b51a95f8a3f740633c3517c365a34b9512c6c9172c5bedfcad8de58c",
+    "tools/hoenn_import/patches/Route119_WeatherInstitute_1F.scripts.inc": "a4ffddb57959f3a89333faf79791c77d8ef3167926c515089f3eb24e439c95a4",
+    "tools/hoenn_import/patches/Route119_WeatherInstitute_1F.text.inc": "bf2ed3da50ca4e806916cf53ee590ce27fb6ae84034710da13c3a65b569a8e71",
+    "tools/hoenn_import/patches/Route119_WeatherInstitute_2F.json": "708766904c27f3be23c0c3103e42b8ccd9653953b84c9c5d57cc594d4777ed67",
+    "tools/hoenn_import/patches/Route119_WeatherInstitute_2F.mapscripts": "80388f93ef41ac53ae54e75d1a4e14e5f93143fc78678cb72fd4f00d45b1a7da",
+    "tools/hoenn_import/patches/Route119_WeatherInstitute_2F.scripts.inc": "6ca248ccc6fb8126ad1164d392a0d4c468b44754119297ec1668b080ecfb0025",
+    "tools/hoenn_import/patches/Route119_WeatherInstitute_2F.text.inc": "4d82da4c4ce06df0c7bc29ea04cdeba30050681f00217bf8049e1758b986b094",
+    "tools/hoenn_import/patches/MossdeepCity_SpaceCenter_1F.json": "4b6ec77cbe13a0f87c15740b013de9b254b4a3b847183d25e27ebc83fa26f5f4",
+    "tools/hoenn_import/patches/MossdeepCity_SpaceCenter_1F.scripts.inc": "0ecadf68e25a81589d641a8a1083affa61c0a307d1f41b864e3fcdbc3f2cc81e",
+    "tools/hoenn_import/patches/MossdeepCity_SpaceCenter_1F.text.inc": "e16a9fb967b920bdd44b0bdc761c54d739dd5c1cf5dec0646a89e4472af6b0f2",
+    "tools/hoenn_import/patches/MossdeepCity_SpaceCenter_2F.json": "935decbb0f0adcada082ff09ae9440769a91b517d12f13b773f82efc5965a5f4",
+    "tools/hoenn_import/patches/MossdeepCity_SpaceCenter_2F.mapscripts": "6b376bcbb426d07f8d1cba8f78507f4264c44af7586e6951b1a7d58bb04b4b73",
+    "tools/hoenn_import/patches/MossdeepCity_SpaceCenter_2F.scripts.inc": "78a044c3b46209ab24973b316a8bd035a8022ae798fe779f68a024a5d48b4cbd",
+    "tools/hoenn_import/patches/MossdeepCity_SpaceCenter_2F.text.inc": "e82242b64be5497cfba2c084ab1df52642b20ea9e56edeb45e1802871726ca25"
+  },
+  "backup": "/workspaces/pokefirered/work/hoenn-weather-space-v1-backups/20261005T131753Z",
+  "save_layout_changed": false,
+  "runtime_validated": false,
+  "scope": "Weather rescue and Space Center raid; not the complete Hoenn main story."
+}

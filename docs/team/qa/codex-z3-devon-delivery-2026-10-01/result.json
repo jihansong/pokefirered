@@ -1,0 +1,165 @@
+{
+  "source_head": "658baf740cff568cba7f3300f688b8a626e6f5fc",
+  "source_captured_at": "2026-10-01T07:34:04.572327+00:00",
+  "applied": true,
+  "complete": true,
+  "verified": true,
+  "checks": {
+    "wiring-before": {
+      "exit": 1,
+      "seconds": 9.43
+    },
+    "regenerate-1": {
+      "exit": 0,
+      "seconds": 0.03
+    },
+    "regenerate-2": {
+      "exit": 0,
+      "seconds": 0.03
+    },
+    "build": {
+      "exit": 0,
+      "seconds": 19.27
+    },
+    "syms": {
+      "exit": 0,
+      "seconds": 1.94
+    },
+    "events": {
+      "exit": 0,
+      "seconds": 52.36
+    },
+    "devon-fixtures": {
+      "exit": 0,
+      "seconds": 1.8
+    },
+    "devon-regression": {
+      "exit": 0,
+      "seconds": 38.18
+    },
+    "roxanne-regression": {
+      "exit": 0,
+      "seconds": 18.11
+    },
+    "saves": {
+      "exit": 0,
+      "seconds": 22.62
+    },
+    "map-integrity": {
+      "exit": 0,
+      "seconds": 4.11
+    },
+    "wiring-after": {
+      "exit": 1,
+      "seconds": 2.47
+    },
+    "mapsmoke": {
+      "exit": 0,
+      "seconds": 4.1
+    },
+    "textwidth": {
+      "exit": 0,
+      "seconds": 0.03
+    },
+    "textaudit-z3-report": {
+      "exit": 0,
+      "seconds": 4.27
+    },
+    "textaudit-z2": {
+      "exit": 0,
+      "seconds": 1.31
+    },
+    "dexcheck": {
+      "exit": 0,
+      "seconds": 1.15
+    }
+  },
+  "original_save_count": 11,
+  "original_save_sha256": {
+    "saves/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "saves/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "saves/hoenn.sav": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+    "saves/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "saves/pokemonthyl_hoenn_QAed.sav": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+    "saves/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "saves/backup-v0.6.0-era/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "saves/backup-v0.6.0-era/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "saves/backup-v0.6.0-era/hoenn.sav": "d1ed8d987d4e451efb00a6cda2ba770e6472f36a89595a04a3550156876806ad",
+    "saves/backup-v0.6.0-era/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "saves/backup-v0.6.0-era/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424"
+  },
+  "protected_sha256": {
+    "data/maps/Route116/map.json": "d155bbbf94f6e0e48d7fdf66505a24839c26e1dd48b171fc1cd5e9b547cf0299",
+    "data/maps/Route116/scripts.inc": "b80ac252f8a140ac69c3ce85fc754d1bf9ed1d4eb052d400fe6a90a7efcc05cf",
+    "data/maps/Route116/text.inc": "58a986fcda85229abe2a40ab62609f4b99d10beddebdbc27573af73fcce1a7d8",
+    "data/maps/RustboroCity/map.json": "f0271bcea1cf27c09c8e4b659c07fcc011825ee60f885d904d22f5962e2a3d92",
+    "data/maps/RustboroCity/scripts.inc": "70f4a1df10854a9ebe202de377b4a693e3bf9f8e5bf866d377712a1116d7a990",
+    "data/maps/RustboroCity/text.inc": "60facee00075f9670278295fba87aed22b988850e585b9ecb6945e95bdbde6cb",
+    "data/maps/RustboroCity_DevonCorp_3F/map.json": "04ea081e3cd15a31bc2fd2a284f3d40075f157ebdd8d6a678144421c42cb75c3",
+    "data/maps/RustboroCity_Gym/scripts.inc": "b45f041bcb0ef1268db95e9b07a09fd3efe8f909089561d092ac01f68fb4880b",
+    "data/maps/RustboroCity_Gym/text.inc": "d095a55c827d645afe71edd41667383a0a04d1bf541bd44ca9efe3d419fdea53",
+    "data/maps/RusturfTunnel/map.json": "8f7233202b92d77bb445cc27e1b61f2662e00064ab7581a0ead62132d43d7fa8",
+    "data/maps/RusturfTunnel/scripts.inc": "60e9da17726bd86c89ba62d7a3d69552e506960728ca431be403096f641f1429",
+    "data/maps/RusturfTunnel/text.inc": "14e0beb52ac3bb9986e3b61ad81b21f18333d27595f7f0955e0d645c7f478bd6",
+    "data/maps/SlateportCity_Harbor/map.json": "31d2a3475249aaaac9325492938dc572520dfcde2398c8091ea1f59c13e99ae7",
+    "data/maps/SlateportCity_SternsShipyard_1F/map.json": "c149f738f087c88f46691fd2ce89488ed5e4b7103c6f84ca2827180f7a83bb57",
+    "data/maps/SlateportCity_SternsShipyard_1F/scripts.inc": "d2196f5e19bb96316fe0bf1dfc9fc26d35d1831d615a6543383eaa69381b27ba",
+    "data/maps/SlateportCity_SternsShipyard_1F/text.inc": "44b4eb571e8cb8ff1d6292a2fbb58a87a335bd326b1dc8fb179d36e59c9f87b4",
+    "include/constants/flags_hoenn_story.h": "7a2423cef4157d366c8ed41cb65d4d7e5b1437d7030f10ad97be8c5e3887a004",
+    "include/constants/vars_hoenn.h": "6add3284a2df761f8ffe62e75a0cc111818d3d440f60037672405559292e8d7a",
+    "src/field_specials.c": "6a4886c0f3a51f62f7971db45f7d81575761d330d0f39874cce4beecd47b8119",
+    "src/title_screen.c": "c2521f842e2f7385f429465330c50c663a88b24da7d419e6dbe77362643f56d5",
+    "tools/hoenn_import/apply_patches.py": "50021b65d020d3d6ad40d858d04b0a53d5a5fdc4a53659b0616d67e3f12882bc",
+    "tools/hoenn_import/patches/Route116.json": "f85494b3492c61a4010ce1cb694c0fcb5692643e30ce1d85ca35c30bda3e1854",
+    "tools/hoenn_import/patches/Route116.mapscripts": "ffe9ee126a98d6a456f8591561fd0e5385934bf336a1b61b67b8c95d1cdb003e",
+    "tools/hoenn_import/patches/Route116.scripts.inc": "dac4a5bede1e6471234ffc419133b3a40bbc92774964f0b83f64ee5dfec01949",
+    "tools/hoenn_import/patches/Route116.text.inc": "0b77024ff337955cc8027b7121bd81f20d42e66c9402ccb228be81546a5f9191",
+    "tools/hoenn_import/patches/RustboroCity.json": "13fa3bf67cc1668f7050067b0d87477102cf6728406c4ff3da5f7b96b4e5c20e",
+    "tools/hoenn_import/patches/RustboroCity.mapscripts": "41572f4a4d08728af4fa989d9724578629e03fa201b5866d02305f69e3b7eb9b",
+    "tools/hoenn_import/patches/RustboroCity.scripts.inc": "95ea5f047d12be965e12229dcbff81b17f9499155c8af87d782a9b849206aadb",
+    "tools/hoenn_import/patches/RustboroCity.text.inc": "0d4974bc6e21792f27a80877ce183b0d54c92a18cf7df7cd25414a8488c10c15",
+    "tools/hoenn_import/patches/RustboroCity_Gym.scripts.inc": "a107d96163906608a3e48cd7998c016ad0bb9c8fda3565d90f492a6def9fc6d9",
+    "tools/hoenn_import/patches/RustboroCity_Gym.text.inc": "e81e6395cf628f87d9fade4805fa927e576d7da1797edf3741166aab82c181bc",
+    "tools/hoenn_import/patches/RusturfTunnel.json": "f8b5c5ad4b3b58d257609a75abab887d8a106524e34c1c3da00e32494055d05a",
+    "tools/hoenn_import/patches/RusturfTunnel.mapscripts": "2274d2030fd68af49c01092912256fc76e70be19007dfb244854786194365b5b",
+    "tools/hoenn_import/patches/RusturfTunnel.scripts.inc": "4de112a7798795fcc9986d5b88e9ccf3aa0314a101fadf9d6533dedebcf568a9",
+    "tools/hoenn_import/patches/RusturfTunnel.text.inc": "9df620b3ab026f479d725f316fb28db0e6e47ae7f90c6a07081f41681cd6c5d8",
+    "tools/hoenn_import/patches/SlateportCity_Harbor.json": "185d4cf2d76df7ef2739a00dd18339870499de8a6a0581ca98653f4121d55662",
+    "tools/hoenn_import/patches/SlateportCity_Harbor.mapscripts": "22684821471bf9c4b2bfa513b00c1beff268e67aaace02117f151960208f34e5",
+    "tools/hoenn_import/patches/SlateportCity_SternsShipyard_1F.json": "9178474f683cd3c81935fc98ae786a364c44b4246a03a4522c562bae9f13c297",
+    "tools/hoenn_import/patches/SlateportCity_SternsShipyard_1F.scripts.inc": "198b8612570b417282653fef002ffc41d7c3067efb87cd1cfc009776d5f2000d",
+    "tools/hoenn_import/patches/SlateportCity_SternsShipyard_1F.text.inc": "c649ba395616e3c47aa056c95e53d0f7f04def9da514b5a6e90cfdc4e6195e6a",
+    "tools/qa/cases/z3_devon.jsonl": "3132c709c6ccf869658261cc8bf48d316c0d43d71ebe25d79ffd899fe321508a",
+    "tools/qa/cases/z3_roxanne.jsonl": "f47c66e07a59bb296062a75ee820a0d1b7391f505a7eddba6042853b49f01643",
+    "tools/qa/eventcheck.py": "57d219a371a7a5a534d048f1238ea9ed63381e444c4ae99ef109a13d0d08bda2",
+    "tools/qa/gamedata.py": "acaa4654ed889dc4f98f6c20dc26a85ea8d35963a771967c159ca4edc26a7ab3",
+    "tools/qa/prepare_z3_devon.py": "154bd9d57d5beaa473dbfe0e01fca6c664aa90e0bfdfdb68ea831dd600f6daaa",
+    "tools/qa/savedit.py": "6e464e7ccfb3b66151c25decb81fe51d4c777c6bd98b85433fb58caa934d2aa2",
+    "tools/qa/savefile.py": "e6cc1acb8569dbdca6d1b7b095835a5271c9e16de9d2fa3f976d15b50b9b7daa"
+  },
+  "installed_files": [
+    "tools/hoenn_import/patches/RustboroCity_DevonCorp_3F.scripts.inc",
+    "tools/hoenn_import/patches/RustboroCity_DevonCorp_3F.text.inc",
+    "tools/hoenn_import/patches/SlateportCity_Harbor.scripts.inc",
+    "tools/hoenn_import/patches/SlateportCity_Harbor.text.inc",
+    "tools/qa/cases/z3_devon_delivery.jsonl"
+  ],
+  "original_saves_unchanged": true,
+  "changed_protected_paths": [],
+  "protected_sources_unchanged": true,
+  "lavender_fix_unchanged": true,
+  "title_source_unchanged": true,
+  "canonical_regeneration_idempotent": true,
+  "build_warning_lines": [
+    "make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.",
+    "make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.",
+    "make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.",
+    "make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.",
+    "/opt/devkitpro/devkitARM/bin/arm-none-eabi-ld: warning: ../../pokemonthyl.elf has a LOAD segment with RWX permissions"
+  ],
+  "new_wiring_findings": [],
+  "removed_wiring_findings": [],
+  "wiring_output_identical": true,
+  "warning_free": false,
+  "full_z3_text_rewrite_complete": false
+}

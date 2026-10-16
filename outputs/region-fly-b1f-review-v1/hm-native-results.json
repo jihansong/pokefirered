@@ -1,0 +1,97 @@
+{
+  "rom_sha256": "3d1a1a4f3e84deb5d9f8d2a5943930354e1a86164fe257eabf79d99ca1232fee",
+  "cases": [
+    {
+      "case": "strength-a",
+      "pass": true,
+      "earlier_proof_reused": true
+    },
+    {
+      "case": "rock-a",
+      "pass": true,
+      "earlier_proof_reused": true
+    },
+    {
+      "case": "strength-menu",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "rock-menu",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "strength-no-own-a",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "strength-no-own-menu",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "rock-no-own-a",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "rock-no-own-menu",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "strength-no-move-a",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "rock-no-move-a",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "strength-kanto-own",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "strength-kanto-foreign",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "strength-johto-own",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "strength-johto-foreign",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "rock-kanto-own",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "rock-kanto-foreign",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "rock-johto-no-badge",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "b1f-natural-route",
+      "exit": 1,
+      "pass": false
+    }
+  ],
+  "all_pass": false,
+  "tested_original_saves_unchanged": true
+}

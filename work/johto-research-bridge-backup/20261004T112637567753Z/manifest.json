@@ -1,0 +1,38 @@
+{
+  "changed": [
+    "data/maps/JohtoCherrygroveAirstrip/scripts.inc",
+    "data/maps/JohtoCherrygroveAirstrip/text.inc",
+    "data/maps/NewBarkTown_ElmsLab/scripts.inc",
+    "include/constants/flags.h",
+    "tools/johto/build_entry.py",
+    "tools/johto/patches/NewBarkTown_ElmsLab/scripts.inc",
+    "include/constants/flags_johto_story.h",
+    "tools/johto/patches/JohtoCherrygroveAirstrip/scripts.inc",
+    "tools/johto/patches/JohtoCherrygroveAirstrip/text.inc"
+  ],
+  "before": {
+    "data/maps/JohtoCherrygroveAirstrip/scripts.inc": "980e61e641a1f367a73018f8aba050433b7ccc9ebfbd9cae90edb65bf37509c1",
+    "data/maps/JohtoCherrygroveAirstrip/text.inc": "0b8d8643684237cd1d1c61ef48ec9404b0815c1eccf8ee665df8862e57e443ac",
+    "data/maps/NewBarkTown_ElmsLab/scripts.inc": "eb4a38ea935c04e586c7d9521353f95819b5635de2adfcb09fc2043de87d7a18",
+    "data/maps/NewBarkTown_ElmsLab/text.inc": "fe95f5cce305358c294d723dc215925c20060059bbb9b3d46970dbe6818f7475",
+    "include/constants/flags.h": "ff17520d87800e277e102184dd0c46c78bd9134ec0bf7dea4715972e9181dcab",
+    "tools/johto/build_entry.py": "5d859d4d594a20d0164e95de2f81a08a186974dac036ec0e23de94f684173cea",
+    "tools/johto/patches/NewBarkTown_ElmsLab/scripts.inc": "eb4a38ea935c04e586c7d9521353f95819b5635de2adfcb09fc2043de87d7a18",
+    "tools/johto/patches/NewBarkTown_ElmsLab/text.inc": "fe95f5cce305358c294d723dc215925c20060059bbb9b3d46970dbe6818f7475"
+  },
+  "after": {
+    "data/maps/JohtoCherrygroveAirstrip/scripts.inc": "f7b5c2353ef9a9ea15922f6ebdaae67d7383b902f060bd27bed074912e0213db",
+    "data/maps/JohtoCherrygroveAirstrip/text.inc": "18d2739ae1de73e2188d6b9681c23094e9161cca32496acb6b174a7b51fa2c77",
+    "data/maps/NewBarkTown_ElmsLab/scripts.inc": "519888b7c62190ff2e88f532e8081d8b395b3dfbf78433f74423c072ceb20c1f",
+    "include/constants/flags.h": "02a77c5dfec00eab6b1d99987303eb350e28dc8c338eca867e076b2f5e118dea",
+    "tools/johto/build_entry.py": "365e95ed857e9047d255f13d585e8d9d7325066dece2de3317a030bde491bb00",
+    "tools/johto/patches/NewBarkTown_ElmsLab/scripts.inc": "519888b7c62190ff2e88f532e8081d8b395b3dfbf78433f74423c072ceb20c1f",
+    "include/constants/flags_johto_story.h": "58f63eaf344d3d0823fcd5707474c1b200f60ec28fa85122265a4b490f50ac92",
+    "tools/johto/patches/JohtoCherrygroveAirstrip/scripts.inc": "f7b5c2353ef9a9ea15922f6ebdaae67d7383b902f060bd27bed074912e0213db",
+    "tools/johto/patches/JohtoCherrygroveAirstrip/text.inc": "18d2739ae1de73e2188d6b9681c23094e9161cca32496acb6b174a7b51fa2c77"
+  },
+  "applied": false,
+  "save_layout_changed": false,
+  "regional_clear_implemented": false,
+  "build_or_emulator_verified": false
+}

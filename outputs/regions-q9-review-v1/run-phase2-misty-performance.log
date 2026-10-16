@@ -1,0 +1,9 @@
+{"map_load": {"map": "PalletTown", "load_frames": 96, "stable_idle_frames": 12, "vblank_delta": 107, "source_save_sha256": "1e0ccdc6874f0fa1cf7e284740cea89d7f5ea43dfdd3115c4062d77817212030", "fixture_sha256": "1e0ccdc6874f0fa1cf7e284740cea89d7f5ea43dfdd3115c4062d77817212030"}}
+{"joined_misty_performance": {"party_pc_dex_preserved": true, "regional_story_trainer_flags_preserved": true, "active_template_ids": [1, 2], "template_count": 4, "native_object_capacity": 16, "map": "PalletTown", "walking": false, "misty_objects": 1, "misty_visible_frames": 360, "misty_positions": [[13, 16]], "minimum_visible_feet_gap": 16, "long_corridor": [5, 10, 9], "repel": 250, "hardware": 360, "vblank": 360, "callbacks": 360, "missed": 0, "irregular": [], "positions": [[8, 9]], "follower_objects": 1, "follower_tasks": 1, "max_objects": 5, "visible_frames": 360, "counter_survived": true, "pass_all": true}}
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/native_misty_performance_wrapper.py", line 82, in <module>
+    budget.field_budget(name,e,elf,rom,e.syms)
+  File "/workspaces/pokefirered/tools/qa/native_misty_performance_helper.py", line 90, in field_budget
+    assert struct.unpack_from('<hh',ms,16)!=struct.unpack_from('<hh',other,16),'visible Misty tile overlap'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: visible Misty tile overlap

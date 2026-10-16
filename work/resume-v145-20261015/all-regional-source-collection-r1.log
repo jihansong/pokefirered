@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/work/user-map-bugs-v145-20261015/fresh-source-r4/collect_regional_map_provenance_r1.py", line 189, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspaces/pokefirered/work/user-map-bugs-v145-20261015/fresh-source-r4/collect_regional_map_provenance_r1.py", line 147, in main
+    assert len(data)==width*height*2 and len(bdata)==raw[24]*raw[25]*2
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

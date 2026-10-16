@@ -1,0 +1,13 @@
+{
+  "stage": "source-prepared-awaiting-Johto-patch-and-native-QA",
+  "main_ROM_unchanged": true,
+  "save_abi_changes": false,
+  "species_scope": [
+    "CHIKORITA",
+    "CYNDAQUIL",
+    "TOTODILE",
+    "TREECKO",
+    "TORCHIC",
+    "MUDKIP"
+  ]
+}

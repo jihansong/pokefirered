@@ -1,0 +1,32 @@
+{
+  "reports": {
+    "native-double-replacement-r1a": {
+      "report_sha256": "1b1bd854c94ade0a146afac0fa82a8a08d9e10725cd29390aca729e7ba098b53",
+      "path": "work/hoenn-resume-20261014/native-double-replacement-r1a/validation.json",
+      "actual_outcome": 1,
+      "accepted_SEND_OUT": 2,
+      "SAVE_cold_counter": [
+        71,
+        72
+      ],
+      "checksummed_sectors": 14,
+      "original_inputs_unchanged": true
+    },
+    "native-double-loss-r2": {
+      "report_sha256": "d60ff0dca21a3f59cc28de31862664240c1dbf9f37938159e5f6eec4fc877154",
+      "path": "work/hoenn-resume-20261014/native-double-loss-r2/validation.json",
+      "actual_outcome": 2,
+      "accepted_SEND_OUT": 4,
+      "SAVE_cold_counter": [
+        71,
+        72
+      ],
+      "checksummed_sectors": 14,
+      "original_inputs_unchanged": true
+    }
+  },
+  "current_ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+  "next": "Dewford gym and regional-story/dex continuation",
+  "original_SAV_files_protected": 17,
+  "whole_campaign_complete": false
+}

@@ -1,0 +1,2 @@
+warning: in the working copy of 'graphics/trainers/palettes/jessie_james.pal', LF will be replaced by CRLF the next time Git touches it
+{"pass": false, "status": "FAILED_REVIEW_RETAINED_ARTIFACTS_NO_AUTOMATIC_ROLLBACK", "error": "AssertionError('Build emitted warnings; review retained logs')", "compiled_ROM_sha256": null, "compiled_ELF_sha256": null}

@@ -3,6 +3,18 @@
 
 enum
 {
+    STORY_DEX_KANTO,
+    STORY_DEX_JOHTO,
+    STORY_DEX_HOENN
+};
+
+u8 GetStoryRegionalDex(void);
+u16 GetRegionalDexCount(u8 region);
+u16 RegionalDexToNational(u8 region, u16 regionalNo);
+u16 NationalToRegionalDex(u8 region, u16 nationalNo);
+
+enum
+{
     DEX_MODE_KANTO,
     DEX_MODE_NATIONAL
 };

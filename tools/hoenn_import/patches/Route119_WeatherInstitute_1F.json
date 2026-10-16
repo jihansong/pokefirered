@@ -1,0 +1,12 @@
+{
+  "object_overrides": [
+    {
+      "x": 14,
+      "y": 11,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "script": "Route119_WeatherInstitute_1F_EventScript_Shelter"
+    }
+  ]
+}

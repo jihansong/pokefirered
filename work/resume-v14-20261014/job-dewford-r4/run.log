@@ -1,0 +1,1 @@
+{"pass_all": false, "stages": 4, "error": "AssertionError(('Actual battle outcome differs; progression stopped', 2, 819, 1))"}

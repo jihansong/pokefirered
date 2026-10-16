@@ -1,0 +1,20 @@
+{
+  "jobs": [
+    {
+      "case": "control-q8-to-q8",
+      "process_exit": 0,
+      "result": "/workspaces/pokefirered/work/regression-oct12/state-cross-rom-correct-profile/control-q8-to-q8/result.json"
+    },
+    {
+      "case": "control-current-to-current",
+      "process_exit": 0,
+      "result": "/workspaces/pokefirered/work/regression-oct12/state-cross-rom-correct-profile/control-current-to-current/result.json"
+    },
+    {
+      "case": "cross-q8-to-current",
+      "process_exit": 0,
+      "result": "/workspaces/pokefirered/work/regression-oct12/state-cross-rom-correct-profile/cross-q8-to-current/result.json"
+    }
+  ],
+  "scope": "Actual raw-state restore experiment; corrected full-storage vs boxed-record slice diagnostic; originals untouched"
+}

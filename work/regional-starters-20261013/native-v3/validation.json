@@ -1,0 +1,49 @@
+{
+  "pass": false,
+  "rom_sha256": "63904802b37dc5e922ec616361c0be3388f1030e5b2c1a0b7a2949f2a33c1f7c",
+  "RAM_writes": 0,
+  "direct_script_calls": 0,
+  "forced_battle_outcomes": 0,
+  "source_sav": "/workspaces/pokefirered/saves/pokemonthyl_v1.25-items99-iv2x.sav",
+  "cases": [
+    {
+      "case": "treecko-full",
+      "capacity": "full",
+      "party_count": 6,
+      "PC_count": 420,
+      "receipt": false,
+      "gift": null,
+      "original_records_preserved": true,
+      "pass": true
+    }
+  ],
+  "battle_paths": [
+    {
+      "capture": false,
+      "outcome": 4,
+      "enemy": {
+        "species": 277,
+        "pid": 192345554,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "d2f5760b7afb3aa9ceccbfbfbdc5c9ff50200202c4c3c2bbc8ffff006e030000bd0f4ca22f0e4ca2a8484ca2a80e4ca2a80e4ca2a80e4ca2a90e67a2a80e4ca28b104ca2a835c98057f1b39da80e4ca2"
+      }
+    }
+  ],
+  "error": "AssertionError(('interaction did not start', 'MUDKIP', (43, 19, 14, 56)))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/work/regional-starters-20261013/native-v3.py\", line 111, in <module>\n    for capacity in ['party','pc','full']:one('MUDKIP',capacity)\n                                          ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/work/regional-starters-20261013/native-v3.py\", line 103, in one\n    got=entries(e);interact(name,expected=0);assert entries(e)==got,(tag,'duplicate received')\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/work/regional-starters-20261013/native-v3.py\", line 63, in interact\n    assert not e.field_idle(),('interaction did not start',name,e.location())\nAssertionError: ('interaction did not start', 'MUDKIP', (43, 19, 14, 56))\n",
+  "protected_original_inputs_unchanged": true
+}

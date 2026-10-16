@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_hof.py", line 134, in <module>
+    with ReadOnlyEmu(str(rom),str(target),sym='') as e:row=native_hof(e,tag)
+                                                           ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_hof.py", line 66, in native_hof
+    counter=e.u32(syms['gSaveCounter']);abi,expected_team,mask=hof_compiled_oracles(before['party'],before['party_count'])
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_hof.py", line 25, in hof_compiled_oracles
+    row='{.tid='+str(m.otid)+'u,.personality='+str(m.personality)+'u,.species='+str(m.species())+',.lvl='+str(raw[off('pokemon.level')])+',.nick={'+','.join(str(v)for v in raw[8:18])+'}}'
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/gamedata.py", line 145, in off
+    return offsets()[name]
+           ~~~~~~~~~^^^^^^
+KeyError: 'pokemon.level'

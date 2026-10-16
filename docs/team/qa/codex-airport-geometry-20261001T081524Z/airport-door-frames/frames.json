@@ -1,0 +1,512 @@
+{
+  "frames": [
+    {
+      "frame": 2,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-002.png"
+    },
+    {
+      "frame": 3,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-003.png"
+    },
+    {
+      "frame": 4,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-004.png"
+    },
+    {
+      "frame": 5,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-005.png"
+    },
+    {
+      "frame": 6,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-006.png"
+    },
+    {
+      "frame": 7,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-007.png"
+    },
+    {
+      "frame": 8,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-008.png"
+    },
+    {
+      "frame": 9,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-009.png"
+    },
+    {
+      "frame": 10,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-010.png"
+    },
+    {
+      "frame": 11,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-011.png"
+    },
+    {
+      "frame": 12,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-012.png"
+    },
+    {
+      "frame": 13,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-013.png"
+    },
+    {
+      "frame": 14,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-014.png"
+    },
+    {
+      "frame": 15,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-015.png"
+    },
+    {
+      "frame": 16,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-016.png"
+    },
+    {
+      "frame": 17,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-017.png"
+    },
+    {
+      "frame": 18,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-018.png"
+    },
+    {
+      "frame": 19,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-019.png"
+    },
+    {
+      "frame": 20,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        13
+      ],
+      "image": "door-frame-020.png"
+    },
+    {
+      "frame": 24,
+      "door_task_active": false,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-024.png"
+    },
+    {
+      "frame": 36,
+      "door_task_active": false,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-036.png"
+    },
+    {
+      "frame": 38,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-038.png"
+    },
+    {
+      "frame": 39,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-039.png"
+    },
+    {
+      "frame": 40,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-040.png"
+    },
+    {
+      "frame": 41,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-041.png"
+    },
+    {
+      "frame": 42,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-042.png"
+    },
+    {
+      "frame": 43,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-043.png"
+    },
+    {
+      "frame": 44,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-044.png"
+    },
+    {
+      "frame": 45,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-045.png"
+    },
+    {
+      "frame": 46,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-046.png"
+    },
+    {
+      "frame": 47,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-047.png"
+    },
+    {
+      "frame": 48,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-048.png"
+    },
+    {
+      "frame": 49,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-049.png"
+    },
+    {
+      "frame": 50,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-050.png"
+    },
+    {
+      "frame": 51,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-051.png"
+    },
+    {
+      "frame": 52,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-052.png"
+    },
+    {
+      "frame": 53,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-053.png"
+    },
+    {
+      "frame": 54,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-054.png"
+    },
+    {
+      "frame": 55,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-055.png"
+    },
+    {
+      "frame": 56,
+      "door_task_active": true,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-056.png"
+    },
+    {
+      "frame": 60,
+      "door_task_active": false,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-060.png"
+    },
+    {
+      "frame": 72,
+      "door_task_active": false,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-072.png"
+    },
+    {
+      "frame": 84,
+      "door_task_active": false,
+      "location": [
+        3,
+        5,
+        35,
+        12
+      ],
+      "image": "door-frame-084.png"
+    },
+    {
+      "frame": 96,
+      "door_task_active": false,
+      "location": [
+        9,
+        8,
+        12,
+        9
+      ],
+      "image": "door-frame-096.png"
+    },
+    {
+      "frame": 108,
+      "door_task_active": false,
+      "location": [
+        9,
+        8,
+        12,
+        9
+      ],
+      "image": "door-frame-108.png"
+    },
+    {
+      "frame": 120,
+      "door_task_active": false,
+      "location": [
+        9,
+        8,
+        12,
+        9
+      ],
+      "image": "door-frame-120.png"
+    }
+  ],
+  "base_save_unchanged": true,
+  "visual_review_required": true
+}

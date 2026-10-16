@@ -1,0 +1,324 @@
+{
+  "rom_sha256": "af9ba1f61fce4630d488567ed11b83847dfbc1fcff435653bedd4d86dc622818",
+  "native_cases": [
+    {
+      "case": "route27_day",
+      "native_steps": 7,
+      "native_clock_hour": 12,
+      "native_clock_setting": {
+        "requested_hour": 12,
+        "native_hour": 12,
+        "rtc_used": false,
+        "method": "Native registered POKeWATCH SELECT/YES/directions/A",
+        "forced_memory_writes": 0
+      },
+      "time_mode": "day",
+      "species": 84,
+      "level": 30,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-phase2-league-wild/route27_day-native-QA-only.sav"
+      },
+      "capture_identity": {
+        "personality": 2016030731,
+        "otid": 2839214970,
+        "species": 84
+      },
+      "checksum_bad_egg_and_cold_identity_pass": true,
+      "full_pc_preserved": true,
+      "forced_game_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "route27_night",
+      "native_steps": 7,
+      "native_clock_hour": 22,
+      "native_clock_setting": {
+        "requested_hour": 22,
+        "native_hour": 22,
+        "rtc_used": false,
+        "method": "Native registered POKeWATCH SELECT/YES/directions/A",
+        "forced_memory_writes": 0
+      },
+      "time_mode": "night",
+      "species": 77,
+      "level": 29,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-phase2-league-wild/route27_night-native-QA-only.sav"
+      },
+      "capture_identity": {
+        "personality": 3150010933,
+        "otid": 2839214970,
+        "species": 77
+      },
+      "checksum_bad_egg_and_cold_identity_pass": true,
+      "full_pc_preserved": true,
+      "forced_game_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "route26_day",
+      "native_steps": 7,
+      "native_clock_hour": 12,
+      "native_clock_setting": {
+        "requested_hour": 12,
+        "native_hour": 12,
+        "rtc_used": false,
+        "method": "Native registered POKeWATCH SELECT/YES/directions/A",
+        "forced_memory_writes": 0
+      },
+      "time_mode": "day",
+      "species": 85,
+      "level": 31,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-phase2-league-wild/route26_day-native-QA-only.sav"
+      },
+      "capture_identity": {
+        "personality": 2016030731,
+        "otid": 2839214970,
+        "species": 85
+      },
+      "checksum_bad_egg_and_cold_identity_pass": true,
+      "full_pc_preserved": true,
+      "forced_game_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "tohjo_land_day",
+      "native_steps": 7,
+      "native_clock_hour": 12,
+      "native_clock_setting": {
+        "requested_hour": 12,
+        "native_hour": 12,
+        "rtc_used": false,
+        "method": "Native registered POKeWATCH SELECT/YES/directions/A",
+        "forced_memory_writes": 0
+      },
+      "time_mode": "day",
+      "species": 41,
+      "level": 24,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-phase2-league-wild/tohjo_land_day-native-QA-only.sav"
+      },
+      "capture_identity": {
+        "personality": 1349485850,
+        "otid": 2839214970,
+        "species": 41
+      },
+      "checksum_bad_egg_and_cold_identity_pass": true,
+      "full_pc_preserved": true,
+      "forced_game_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "tohjo_water_day",
+      "native_steps": 33,
+      "native_clock_hour": 12,
+      "native_clock_setting": {
+        "requested_hour": 12,
+        "native_hour": 12,
+        "rtc_used": false,
+        "method": "Native registered POKeWATCH SELECT/YES/directions/A",
+        "forced_memory_writes": 0
+      },
+      "time_mode": "day",
+      "species": 118,
+      "level": 20,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-phase2-league-wild/tohjo_water_day-native-QA-only.sav"
+      },
+      "capture_identity": {
+        "personality": 2133899610,
+        "otid": 2839214970,
+        "species": 118
+      },
+      "checksum_bad_egg_and_cold_identity_pass": true,
+      "full_pc_preserved": true,
+      "forced_game_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "victory_road_day",
+      "native_steps": 7,
+      "native_clock_hour": 12,
+      "native_clock_setting": {
+        "requested_hour": 12,
+        "native_hour": 12,
+        "rtc_used": false,
+        "method": "Native registered POKeWATCH SELECT/YES/directions/A",
+        "forced_memory_writes": 0
+      },
+      "time_mode": "day",
+      "species": 232,
+      "level": 34,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-phase2-league-wild/victory_road_day-native-QA-only.sav"
+      },
+      "capture_identity": {
+        "personality": 2016030731,
+        "otid": 2839214970,
+        "species": 232
+      },
+      "checksum_bad_egg_and_cold_identity_pass": true,
+      "full_pc_preserved": true,
+      "forced_game_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    }
+  ],
+  "compiled_table_checks": [
+    {
+      "map": "JohtoRoute27",
+      "area": "land",
+      "time_mode": "morning",
+      "slot_count": 12,
+      "compiled_slots_exact": true
+    },
+    {
+      "map": "JohtoRoute26",
+      "area": "land",
+      "time_mode": "morning",
+      "slot_count": 12,
+      "compiled_slots_exact": true
+    },
+    {
+      "map": "TohjoFalls",
+      "area": "land",
+      "time_mode": "morning",
+      "slot_count": 12,
+      "compiled_slots_exact": true
+    },
+    {
+      "map": "JohtoVictoryRoad_1F",
+      "area": "land",
+      "time_mode": "morning",
+      "slot_count": 12,
+      "compiled_slots_exact": true
+    },
+    {
+      "map": "TohjoFalls",
+      "area": "water",
+      "time_mode": "morning",
+      "slot_count": 5,
+      "compiled_slots_exact": true
+    },
+    {
+      "map": "JohtoRoute27",
+      "area": "land",
+      "time_mode": "day",
+      "slot_count": 12,
+      "compiled_slots_exact": true
+    },
+    {
+      "map": "JohtoRoute26",
+      "area": "land",
+      "time_mode": "day",
+      "slot_count": 12,
+      "compiled_slots_exact": true
+    },
+    {
+      "map": "TohjoFalls",
+      "area": "land",
+      "time_mode": "day",
+      "slot_count": 12,
+      "compiled_slots_exact": true
+    },
+    {
+      "map": "JohtoVictoryRoad_1F",
+      "area": "land",
+      "time_mode": "day",
+      "slot_count": 12,
+      "compiled_slots_exact": true
+    },
+    {
+      "map": "TohjoFalls",
+      "area": "water",
+      "time_mode": "day",
+      "slot_count": 5,
+      "compiled_slots_exact": true
+    },
+    {
+      "map": "JohtoRoute27",
+      "area": "land",
+      "time_mode": "night",
+      "slot_count": 12,
+      "compiled_slots_exact": true
+    },
+    {
+      "map": "JohtoRoute26",
+      "area": "land",
+      "time_mode": "night",
+      "slot_count": 12,
+      "compiled_slots_exact": true
+    },
+    {
+      "map": "TohjoFalls",
+      "area": "land",
+      "time_mode": "night",
+      "slot_count": 12,
+      "compiled_slots_exact": true
+    },
+    {
+      "map": "JohtoVictoryRoad_1F",
+      "area": "land",
+      "time_mode": "night",
+      "slot_count": 12,
+      "compiled_slots_exact": true
+    },
+    {
+      "map": "TohjoFalls",
+      "area": "water",
+      "time_mode": "night",
+      "slot_count": 5,
+      "compiled_slots_exact": true
+    }
+  ],
+  "compiled_wild_abi": {
+    "header": 20,
+    "group": 0,
+    "num": 1,
+    "land": 4,
+    "water": 8,
+    "info": 8,
+    "rate": 0,
+    "slots": 4,
+    "mon": 4,
+    "min": 0,
+    "max": 1,
+    "species": 2
+  },
+  "all_pass": true,
+  "original_files_unchanged": true,
+  "forced_game_memory_writes": 0,
+  "forced_battle_outcomes": 0,
+  "full_johto_encounter_coverage_claimed": false,
+  "initial_party_is_declared_QA_battle_fixture": true
+}

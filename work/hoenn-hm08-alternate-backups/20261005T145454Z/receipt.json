@@ -1,0 +1,15 @@
+{
+  "save_layout_changed": false,
+  "runtime_validated": false,
+  "duplicate_detection": [
+    "bag HM08",
+    "PC item HM08"
+  ],
+  "alternate": "TM49 SNATCH",
+  "old_reward_flags_preserved": true,
+  "failed_gift_flag_unchanged": true,
+  "files": {
+    "tools/hoenn_import/patches/MossdeepCity_SpaceCenter_2F.scripts.inc": "5ad305610eb223f0f58576290731318168283e6a96513e48c359dee55e63665a",
+    "tools/hoenn_import/patches/MossdeepCity_SpaceCenter_2F.text.inc": "a8332a526a2142a4f0f4f59e30316d6909afa2aa9e5e30a27207e62888676e63"
+  }
+}

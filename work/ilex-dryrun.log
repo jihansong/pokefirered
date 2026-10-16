@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/johto/build_ilex_goldenrod.py", line 801, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--root',default='.');p.add_argument('--apply',action='store_true');a=p.parse_args();apply(Path(a.root).resolve(),a.apply)
+                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/johto/build_ilex_goldenrod.py", line 776, in apply
+    s=Source(root);out,stats=build(s);validate(s,out,stats)
+                             ^^^^^^^^
+  File "/workspaces/pokefirered/tools/johto/build_ilex_goldenrod.py", line 483, in build
+    shared(s,out);region(s,out);farfetchd(s,out)
+                  ^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/johto/build_ilex_goldenrod.py", line 607, in region
+    assert all('MAPSEC_'+v in existing for v in oldids),'Johto section source differs'
+AssertionError: Johto section source differs

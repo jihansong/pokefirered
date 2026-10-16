@@ -1,0 +1,10 @@
+{
+  "pass": true,
+  "only_misty_sprite_bytes_changed": true,
+  "changed_rom_bytes": 39,
+  "sprite_addr": "0x855de18",
+  "sprite_bytes": 2304,
+  "all_original_saves_unchanged": true,
+  "original_save_count": 11,
+  "ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa"
+}

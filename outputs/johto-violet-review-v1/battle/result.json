@@ -1,0 +1,64 @@
+{
+  "rom_sha256": "af347df3294d1bb01feab957d7617717e95885092e9391859250a555ad7301e1",
+  "helper_sha256": "b22478d2eac54849a6f5e8effdbb8ad67f5a3a34cc3da02dd63db39f0ad1941b",
+  "input_sav_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "cases": [
+    {
+      "case": "li_win",
+      "turns": 2,
+      "enemies": [
+        69,
+        163
+      ],
+      "pc_preserved": true,
+      "kanto_badges_preserved": true,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/johto-violet-review-v1/battle/li_win-native-QA-only.sav"
+      }
+    },
+    {
+      "case": "li_loss",
+      "turns": 1,
+      "enemies": [
+        69,
+        163
+      ],
+      "pc_preserved": true,
+      "kanto_badges_preserved": true
+    },
+    {
+      "case": "falkner_win",
+      "turns": 2,
+      "enemies": [
+        16,
+        17
+      ],
+      "pc_preserved": true,
+      "kanto_badges_preserved": true,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/johto-violet-review-v1/battle/falkner_win-native-QA-only.sav"
+      }
+    },
+    {
+      "case": "falkner_loss",
+      "turns": 1,
+      "enemies": [
+        16,
+        17
+      ],
+      "pc_preserved": true,
+      "kanto_badges_preserved": true
+    }
+  ],
+  "all_pass": true
+}

@@ -1,0 +1,23 @@
+ok   johto_cherrygrove_guide_requires_lab
+ok   johto_cherrygrove_guide_first_and_repeat
+ok   johto_cherrygrove_guide_after_report
+ok   johto_cherrygrove_mr_pokemon_requires_referral
+ok   johto_cherrygrove_mr_pokemon_first_and_repeat
+ok   johto_cherrygrove_mr_pokemon_after_report
+ok   johto_cherrygrove_oak_aide_links_regions
+ok   johto_cherrygrove_elm_requires_report
+ok   johto_cherrygrove_elm_report_once_preserves_gift
+ok   johto_cherrygrove_elm_report_independent_of_gift_decline
+ok   johto_cherrygrove_airstrip_north_connection
+ok   johto_cherrygrove_city_south_connection
+ok   johto_cherrygrove_city_route30_connection
+ok   johto_cherrygrove_route30_city_connection
+FAIL johto_cherrygrove_center_door_roundtrip
+     expect map CherrygroveCity: on map 76.7
+ok   johto_cherrygrove_mart_door_roundtrip
+ok   johto_cherrygrove_guide_house_door_roundtrip
+ok   johto_cherrygrove_mr_house_door_roundtrip
+FAIL johto_cherrygrove_center_heals
+     expect hp 0 = full: HP 1/158
+ok   johto_cherrygrove_negative_gate_control
+18/20 cases passed

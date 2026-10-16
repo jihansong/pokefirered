@@ -1,0 +1,2965 @@
+{
+  "ROM_sha256": "63904802b37dc5e922ec616361c0be3388f1030e5b2c1a0b7a2949f2a33c1f7c",
+  "files": [
+    {
+      "name": "hoenn.sav",
+      "mtime": "2026-09-23T03:03:12.432908+00:00",
+      "sha256": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+      "counter": 36,
+      "party_count": 6,
+      "items": {
+        "ITEM_MASTER_BALL": 0,
+        "ITEM_RARE_CANDY": 5,
+        "ITEM_TINY_MUSHROOM": 0,
+        "ITEM_PP_UP": 0
+      },
+      "party": [
+        {
+          "slot": 0,
+          "PID": 424634749,
+          "OT": 1762033876,
+          "species": "SPECIES_ABRA",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 100,
+              "name": "MOVE_TELEPORT",
+              "base": 20,
+              "PP": 19,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 1,
+              "id": 138,
+              "name": "MOVE_DREAM_EATER",
+              "base": 15,
+              "PP": 14,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "PID": 1092009980,
+          "OT": 1762033876,
+          "species": "SPECIES_IVYSAUR",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 75,
+              "name": "MOVE_RAZOR_LEAF",
+              "base": 25,
+              "PP": 23,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 1,
+              "id": 22,
+              "name": "MOVE_VINE_WHIP",
+              "base": 10,
+              "PP": 9,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 2,
+              "id": 15,
+              "name": "MOVE_CUT",
+              "base": 30,
+              "PP": 17,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            },
+            {
+              "slot": 3,
+              "id": 230,
+              "name": "MOVE_SWEET_SCENT",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "PID": 836369270,
+          "OT": 1762033876,
+          "species": "SPECIES_WARTORTLE",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 55,
+              "name": "MOVE_WATER_GUN",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 1,
+              "id": 145,
+              "name": "MOVE_BUBBLE",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            },
+            {
+              "slot": 2,
+              "id": 44,
+              "name": "MOVE_BITE",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 3,
+              "id": 229,
+              "name": "MOVE_RAPID_SPIN",
+              "base": 40,
+              "PP": 40,
+              "PP_UPs": 0,
+              "max_PP": 40,
+              "legal_max": 64
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "PID": 2771480446,
+          "OT": 1762033876,
+          "species": "SPECIES_CHARMELEON",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 52,
+              "name": "MOVE_EMBER",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 1,
+              "id": 232,
+              "name": "MOVE_METAL_CLAW",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 2,
+              "id": 10,
+              "name": "MOVE_SCRATCH",
+              "base": 35,
+              "PP": 34,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 3,
+              "id": 69,
+              "name": "MOVE_SEISMIC_TOSS",
+              "base": 20,
+              "PP": 19,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "PID": 3098794371,
+          "OT": 1762033876,
+          "species": "SPECIES_PIDGEOTTO",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 17,
+              "name": "MOVE_WING_ATTACK",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 1,
+              "id": 98,
+              "name": "MOVE_QUICK_ATTACK",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            },
+            {
+              "slot": 2,
+              "id": 16,
+              "name": "MOVE_GUST",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 3,
+              "id": 18,
+              "name": "MOVE_WHIRLWIND",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "PID": 1137192413,
+          "OT": 1762033876,
+          "species": "SPECIES_PIKACHU",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 85,
+              "name": "MOVE_THUNDERBOLT",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 1,
+              "id": 148,
+              "name": "MOVE_FLASH",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 2,
+              "id": 351,
+              "name": "MOVE_SHOCK_WAVE",
+              "base": 20,
+              "PP": 19,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 3,
+              "id": 280,
+              "name": "MOVE_BRICK_BREAK",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pokemonthyl_hoenn_QAed.sav",
+      "mtime": "2026-09-26T08:36:05.943729+00:00",
+      "sha256": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+      "counter": 12,
+      "party_count": 6,
+      "items": {
+        "ITEM_MASTER_BALL": 0,
+        "ITEM_RARE_CANDY": 3,
+        "ITEM_TINY_MUSHROOM": 0,
+        "ITEM_PP_UP": 0
+      },
+      "party": [
+        {
+          "slot": 0,
+          "PID": 1834503066,
+          "OT": 2839214970,
+          "species": "SPECIES_GEODUDE",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 88,
+              "name": "MOVE_ROCK_THROW",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 1,
+              "id": 33,
+              "name": "MOVE_TACKLE",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 2,
+              "id": 120,
+              "name": "MOVE_SELF_DESTRUCT",
+              "base": 5,
+              "PP": 5,
+              "PP_UPs": 0,
+              "max_PP": 5,
+              "legal_max": 8
+            },
+            {
+              "slot": 3,
+              "id": 222,
+              "name": "MOVE_MAGNITUDE",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "PID": 3284656848,
+          "OT": 2839214970,
+          "species": "SPECIES_MANKEY",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 2,
+              "name": "MOVE_KARATE_CHOP",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 1,
+              "id": 67,
+              "name": "MOVE_LOW_KICK",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 2,
+              "id": 116,
+              "name": "MOVE_FOCUS_ENERGY",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            },
+            {
+              "slot": 3,
+              "id": 154,
+              "name": "MOVE_FURY_SWIPES",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "PID": 673404801,
+          "OT": 2839214970,
+          "species": "SPECIES_PIDGEOTTO",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 332,
+              "name": "MOVE_AERIAL_ACE",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 1,
+              "id": 16,
+              "name": "MOVE_GUST",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 2,
+              "id": 98,
+              "name": "MOVE_QUICK_ATTACK",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            },
+            {
+              "slot": 3,
+              "id": 18,
+              "name": "MOVE_WHIRLWIND",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "PID": 2887636515,
+          "OT": 2839214970,
+          "species": "SPECIES_NIDOKING",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 24,
+              "name": "MOVE_DOUBLE_KICK",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            },
+            {
+              "slot": 1,
+              "id": 64,
+              "name": "MOVE_PECK",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 2,
+              "id": 40,
+              "name": "MOVE_POISON_STING",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 3,
+              "id": 37,
+              "name": "MOVE_THRASH",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "PID": 4250510313,
+          "OT": 2839214970,
+          "species": "SPECIES_GYARADOS",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 44,
+              "name": "MOVE_BITE",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 1,
+              "id": 33,
+              "name": "MOVE_TACKLE",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 2,
+              "id": 150,
+              "name": "MOVE_SPLASH",
+              "base": 40,
+              "PP": 40,
+              "PP_UPs": 0,
+              "max_PP": 40,
+              "legal_max": 64
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "PID": 3742077845,
+          "OT": 2839214970,
+          "species": "SPECIES_PIKACHU",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 344,
+              "name": "MOVE_VOLT_TACKLE",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 1,
+              "id": 245,
+              "name": "MOVE_EXTREME_SPEED",
+              "base": 5,
+              "PP": 5,
+              "PP_UPs": 0,
+              "max_PP": 5,
+              "legal_max": 8
+            },
+            {
+              "slot": 2,
+              "id": 209,
+              "name": "MOVE_SPARK",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 3,
+              "id": 86,
+              "name": "MOVE_THUNDER_WAVE",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pokemonthyl_v1.1.sav",
+      "mtime": "2026-10-02T00:22:44.391887+00:00",
+      "sha256": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+      "counter": 42,
+      "party_count": 6,
+      "items": {
+        "ITEM_MASTER_BALL": 0,
+        "ITEM_RARE_CANDY": 14,
+        "ITEM_TINY_MUSHROOM": 0,
+        "ITEM_PP_UP": 0
+      },
+      "party": [
+        {
+          "slot": 0,
+          "PID": 1322632,
+          "OT": 2839214970,
+          "species": "SPECIES_SLOWPOKE",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 70,
+              "name": "MOVE_STRENGTH",
+              "base": 15,
+              "PP": 13,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 1,
+              "id": 50,
+              "name": "MOVE_DISABLE",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 2,
+              "id": 57,
+              "name": "MOVE_SURF",
+              "base": 15,
+              "PP": 11,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 3,
+              "id": 93,
+              "name": "MOVE_CONFUSION",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "PID": 3742077845,
+          "OT": 2839214970,
+          "species": "SPECIES_PIKACHU",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 344,
+              "name": "MOVE_VOLT_TACKLE",
+              "base": 15,
+              "PP": 14,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 1,
+              "id": 87,
+              "name": "MOVE_THUNDER",
+              "base": 10,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 2,
+              "id": 57,
+              "name": "MOVE_SURF",
+              "base": 15,
+              "PP": 12,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 3,
+              "id": 177,
+              "name": "MOVE_AEROBLAST",
+              "base": 5,
+              "PP": 4,
+              "PP_UPs": 0,
+              "max_PP": 5,
+              "legal_max": 8
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "PID": 3957541173,
+          "OT": 2839214970,
+          "species": "SPECIES_BLASTOISE",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 352,
+              "name": "MOVE_WATER_PULSE",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 1,
+              "id": 55,
+              "name": "MOVE_WATER_GUN",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 2,
+              "id": 57,
+              "name": "MOVE_SURF",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 3,
+              "id": 44,
+              "name": "MOVE_BITE",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "PID": 2710679397,
+          "OT": 2839214970,
+          "species": "SPECIES_VENUSAUR",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 75,
+              "name": "MOVE_RAZOR_LEAF",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 1,
+              "id": 202,
+              "name": "MOVE_GIGA_DRAIN",
+              "base": 5,
+              "PP": 5,
+              "PP_UPs": 0,
+              "max_PP": 5,
+              "legal_max": 8
+            },
+            {
+              "slot": 2,
+              "id": 15,
+              "name": "MOVE_CUT",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            },
+            {
+              "slot": 3,
+              "id": 79,
+              "name": "MOVE_SLEEP_POWDER",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "PID": 892704036,
+          "OT": 2839214970,
+          "species": "SPECIES_EEVEE",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 98,
+              "name": "MOVE_QUICK_ATTACK",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            },
+            {
+              "slot": 1,
+              "id": 28,
+              "name": "MOVE_SAND_ATTACK",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 2,
+              "id": 44,
+              "name": "MOVE_BITE",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 3,
+              "id": 270,
+              "name": "MOVE_HELPING_HAND",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "PID": 1847114783,
+          "OT": 2839214970,
+          "species": "SPECIES_CHARIZARD",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 53,
+              "name": "MOVE_FLAMETHROWER",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 1,
+              "id": 157,
+              "name": "MOVE_ROCK_SLIDE",
+              "base": 10,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 2,
+              "id": 91,
+              "name": "MOVE_DIG",
+              "base": 10,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 3,
+              "id": 17,
+              "name": "MOVE_WING_ATTACK",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pokemonthyl_v1.2.sav",
+      "mtime": "2026-10-04T14:49:51.919398+00:00",
+      "sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "counter": 60,
+      "party_count": 6,
+      "items": {
+        "ITEM_MASTER_BALL": 1,
+        "ITEM_RARE_CANDY": 19,
+        "ITEM_TINY_MUSHROOM": 1,
+        "ITEM_PP_UP": 0
+      },
+      "party": [
+        {
+          "slot": 0,
+          "PID": 2710679397,
+          "OT": 2839214970,
+          "species": "SPECIES_VENUSAUR",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 338,
+              "name": "MOVE_FRENZY_PLANT",
+              "base": 5,
+              "PP": 3,
+              "PP_UPs": 0,
+              "max_PP": 5,
+              "legal_max": 8
+            },
+            {
+              "slot": 1,
+              "id": 76,
+              "name": "MOVE_SOLAR_BEAM",
+              "base": 10,
+              "PP": 9,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 2,
+              "id": 75,
+              "name": "MOVE_RAZOR_LEAF",
+              "base": 25,
+              "PP": 21,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 3,
+              "id": 15,
+              "name": "MOVE_CUT",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "PID": 3742077845,
+          "OT": 2839214970,
+          "species": "SPECIES_PIKACHU",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 344,
+              "name": "MOVE_VOLT_TACKLE",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 1,
+              "id": 87,
+              "name": "MOVE_THUNDER",
+              "base": 10,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 2,
+              "id": 57,
+              "name": "MOVE_SURF",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 3,
+              "id": 354,
+              "name": "MOVE_PSYCHO_BOOST",
+              "base": 5,
+              "PP": 5,
+              "PP_UPs": 0,
+              "max_PP": 5,
+              "legal_max": 8
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "PID": 2008717992,
+          "OT": 2839214970,
+          "species": "SPECIES_DRAGONAIR",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 82,
+              "name": "MOVE_DRAGON_RAGE",
+              "base": 10,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 1,
+              "id": 59,
+              "name": "MOVE_BLIZZARD",
+              "base": 5,
+              "PP": 5,
+              "PP_UPs": 0,
+              "max_PP": 5,
+              "legal_max": 8
+            },
+            {
+              "slot": 2,
+              "id": 87,
+              "name": "MOVE_THUNDER",
+              "base": 10,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 3,
+              "id": 86,
+              "name": "MOVE_THUNDER_WAVE",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "PID": 3957541173,
+          "OT": 2839214970,
+          "species": "SPECIES_BLASTOISE",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 57,
+              "name": "MOVE_SURF",
+              "base": 15,
+              "PP": 9,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 1,
+              "id": 352,
+              "name": "MOVE_WATER_PULSE",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 2,
+              "id": 70,
+              "name": "MOVE_STRENGTH",
+              "base": 15,
+              "PP": 14,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 3,
+              "id": 44,
+              "name": "MOVE_BITE",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "PID": 1847114783,
+          "OT": 2839214970,
+          "species": "SPECIES_CHARIZARD",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 126,
+              "name": "MOVE_FIRE_BLAST",
+              "base": 5,
+              "PP": 5,
+              "PP_UPs": 0,
+              "max_PP": 5,
+              "legal_max": 8
+            },
+            {
+              "slot": 1,
+              "id": 53,
+              "name": "MOVE_FLAMETHROWER",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 2,
+              "id": 157,
+              "name": "MOVE_ROCK_SLIDE",
+              "base": 10,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 3,
+              "id": 19,
+              "name": "MOVE_FLY",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "PID": 1679204330,
+          "OT": 2839214970,
+          "species": "SPECIES_ODDISH",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 77,
+              "name": "MOVE_POISON_POWDER",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 1,
+              "id": 78,
+              "name": "MOVE_STUN_SPORE",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            },
+            {
+              "slot": 2,
+              "id": 79,
+              "name": "MOVE_SLEEP_POWDER",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 3,
+              "id": 51,
+              "name": "MOVE_ACID",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pokemonthyl_v1.25-items99-iv2x.sav",
+      "mtime": "2026-10-12T23:46:03.590681+00:00",
+      "sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+      "counter": 67,
+      "party_count": 6,
+      "items": {
+        "ITEM_MASTER_BALL": 99,
+        "ITEM_RARE_CANDY": 99,
+        "ITEM_TINY_MUSHROOM": 1,
+        "ITEM_PP_UP": 0
+      },
+      "party": [
+        {
+          "slot": 0,
+          "PID": 3957541173,
+          "OT": 2839214970,
+          "species": "SPECIES_BLASTOISE",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 57,
+              "name": "MOVE_SURF",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 1,
+              "id": 352,
+              "name": "MOVE_WATER_PULSE",
+              "base": 20,
+              "PP": 18,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 2,
+              "id": 70,
+              "name": "MOVE_STRENGTH",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 3,
+              "id": 89,
+              "name": "MOVE_EARTHQUAKE",
+              "base": 10,
+              "PP": 6,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "PID": 1847114783,
+          "OT": 2839214970,
+          "species": "SPECIES_CHARIZARD",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 126,
+              "name": "MOVE_FIRE_BLAST",
+              "base": 5,
+              "PP": 5,
+              "PP_UPs": 0,
+              "max_PP": 5,
+              "legal_max": 8
+            },
+            {
+              "slot": 1,
+              "id": 53,
+              "name": "MOVE_FLAMETHROWER",
+              "base": 15,
+              "PP": 13,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 2,
+              "id": 157,
+              "name": "MOVE_ROCK_SLIDE",
+              "base": 10,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 3,
+              "id": 19,
+              "name": "MOVE_FLY",
+              "base": 15,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "PID": 2710679397,
+          "OT": 2839214970,
+          "species": "SPECIES_VENUSAUR",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 338,
+              "name": "MOVE_FRENZY_PLANT",
+              "base": 5,
+              "PP": 2,
+              "PP_UPs": 0,
+              "max_PP": 5,
+              "legal_max": 8
+            },
+            {
+              "slot": 1,
+              "id": 76,
+              "name": "MOVE_SOLAR_BEAM",
+              "base": 10,
+              "PP": 6,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 2,
+              "id": 75,
+              "name": "MOVE_RAZOR_LEAF",
+              "base": 25,
+              "PP": 23,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 3,
+              "id": 15,
+              "name": "MOVE_CUT",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "PID": 3742077845,
+          "OT": 2839214970,
+          "species": "SPECIES_PIKACHU",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 344,
+              "name": "MOVE_VOLT_TACKLE",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 1,
+              "id": 87,
+              "name": "MOVE_THUNDER",
+              "base": 10,
+              "PP": 5,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 2,
+              "id": 57,
+              "name": "MOVE_SURF",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 3,
+              "id": 354,
+              "name": "MOVE_PSYCHO_BOOST",
+              "base": 5,
+              "PP": 1,
+              "PP_UPs": 0,
+              "max_PP": 5,
+              "legal_max": 8
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "PID": 2008717992,
+          "OT": 2839214970,
+          "species": "SPECIES_DRAGONAIR",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 82,
+              "name": "MOVE_DRAGON_RAGE",
+              "base": 10,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 1,
+              "id": 59,
+              "name": "MOVE_BLIZZARD",
+              "base": 5,
+              "PP": 5,
+              "PP_UPs": 0,
+              "max_PP": 5,
+              "legal_max": 8
+            },
+            {
+              "slot": 2,
+              "id": 87,
+              "name": "MOVE_THUNDER",
+              "base": 10,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 3,
+              "id": 86,
+              "name": "MOVE_THUNDER_WAVE",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "PID": 259342718,
+          "OT": 2839214970,
+          "species": "SPECIES_OMANYTE",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 341,
+              "name": "MOVE_MUD_SHOT",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 1,
+              "id": 38,
+              "name": "MOVE_DOUBLE_EDGE",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 2,
+              "id": 44,
+              "name": "MOVE_BITE",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 3,
+              "id": 55,
+              "name": "MOVE_WATER_GUN",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pokemonthyl_v1.25.sav",
+      "mtime": "2026-10-12T23:36:25.878700+00:00",
+      "sha256": "53d923bf4668373724b19c9d3c8526b002701606ab7ac082d657ee990e23d7b3",
+      "counter": 67,
+      "party_count": 6,
+      "items": {
+        "ITEM_MASTER_BALL": 1,
+        "ITEM_RARE_CANDY": 24,
+        "ITEM_TINY_MUSHROOM": 1,
+        "ITEM_PP_UP": 0
+      },
+      "party": [
+        {
+          "slot": 0,
+          "PID": 3957541173,
+          "OT": 2839214970,
+          "species": "SPECIES_BLASTOISE",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 57,
+              "name": "MOVE_SURF",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 1,
+              "id": 352,
+              "name": "MOVE_WATER_PULSE",
+              "base": 20,
+              "PP": 18,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 2,
+              "id": 70,
+              "name": "MOVE_STRENGTH",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 3,
+              "id": 89,
+              "name": "MOVE_EARTHQUAKE",
+              "base": 10,
+              "PP": 6,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "PID": 1847114783,
+          "OT": 2839214970,
+          "species": "SPECIES_CHARIZARD",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 126,
+              "name": "MOVE_FIRE_BLAST",
+              "base": 5,
+              "PP": 5,
+              "PP_UPs": 0,
+              "max_PP": 5,
+              "legal_max": 8
+            },
+            {
+              "slot": 1,
+              "id": 53,
+              "name": "MOVE_FLAMETHROWER",
+              "base": 15,
+              "PP": 13,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 2,
+              "id": 157,
+              "name": "MOVE_ROCK_SLIDE",
+              "base": 10,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 3,
+              "id": 19,
+              "name": "MOVE_FLY",
+              "base": 15,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "PID": 2710679397,
+          "OT": 2839214970,
+          "species": "SPECIES_VENUSAUR",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 338,
+              "name": "MOVE_FRENZY_PLANT",
+              "base": 5,
+              "PP": 2,
+              "PP_UPs": 0,
+              "max_PP": 5,
+              "legal_max": 8
+            },
+            {
+              "slot": 1,
+              "id": 76,
+              "name": "MOVE_SOLAR_BEAM",
+              "base": 10,
+              "PP": 6,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 2,
+              "id": 75,
+              "name": "MOVE_RAZOR_LEAF",
+              "base": 25,
+              "PP": 23,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 3,
+              "id": 15,
+              "name": "MOVE_CUT",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "PID": 3742077845,
+          "OT": 2839214970,
+          "species": "SPECIES_PIKACHU",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 344,
+              "name": "MOVE_VOLT_TACKLE",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 1,
+              "id": 87,
+              "name": "MOVE_THUNDER",
+              "base": 10,
+              "PP": 5,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 2,
+              "id": 57,
+              "name": "MOVE_SURF",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 3,
+              "id": 354,
+              "name": "MOVE_PSYCHO_BOOST",
+              "base": 5,
+              "PP": 1,
+              "PP_UPs": 0,
+              "max_PP": 5,
+              "legal_max": 8
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "PID": 2008717992,
+          "OT": 2839214970,
+          "species": "SPECIES_DRAGONAIR",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 82,
+              "name": "MOVE_DRAGON_RAGE",
+              "base": 10,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 1,
+              "id": 59,
+              "name": "MOVE_BLIZZARD",
+              "base": 5,
+              "PP": 5,
+              "PP_UPs": 0,
+              "max_PP": 5,
+              "legal_max": 8
+            },
+            {
+              "slot": 2,
+              "id": 87,
+              "name": "MOVE_THUNDER",
+              "base": 10,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 3,
+              "id": 86,
+              "name": "MOVE_THUNDER_WAVE",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "PID": 259342718,
+          "OT": 2839214970,
+          "species": "SPECIES_OMANYTE",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 341,
+              "name": "MOVE_MUD_SHOT",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 1,
+              "id": 38,
+              "name": "MOVE_DOUBLE_EDGE",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 2,
+              "id": 44,
+              "name": "MOVE_BITE",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 3,
+              "id": 55,
+              "name": "MOVE_WATER_GUN",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pokemonthyl_v3.gba.sav",
+      "mtime": "2026-09-22T13:41:44.147420+00:00",
+      "sha256": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+      "counter": 33,
+      "party_count": 6,
+      "items": {
+        "ITEM_MASTER_BALL": 0,
+        "ITEM_RARE_CANDY": 5,
+        "ITEM_TINY_MUSHROOM": 0,
+        "ITEM_PP_UP": 0
+      },
+      "party": [
+        {
+          "slot": 0,
+          "PID": 424634749,
+          "OT": 1762033876,
+          "species": "SPECIES_ABRA",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 100,
+              "name": "MOVE_TELEPORT",
+              "base": 20,
+              "PP": 19,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 1,
+              "id": 138,
+              "name": "MOVE_DREAM_EATER",
+              "base": 15,
+              "PP": 14,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "PID": 1092009980,
+          "OT": 1762033876,
+          "species": "SPECIES_IVYSAUR",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 75,
+              "name": "MOVE_RAZOR_LEAF",
+              "base": 25,
+              "PP": 23,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 1,
+              "id": 22,
+              "name": "MOVE_VINE_WHIP",
+              "base": 10,
+              "PP": 9,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 2,
+              "id": 15,
+              "name": "MOVE_CUT",
+              "base": 30,
+              "PP": 17,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            },
+            {
+              "slot": 3,
+              "id": 230,
+              "name": "MOVE_SWEET_SCENT",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "PID": 836369270,
+          "OT": 1762033876,
+          "species": "SPECIES_WARTORTLE",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 55,
+              "name": "MOVE_WATER_GUN",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 1,
+              "id": 145,
+              "name": "MOVE_BUBBLE",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            },
+            {
+              "slot": 2,
+              "id": 44,
+              "name": "MOVE_BITE",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 3,
+              "id": 229,
+              "name": "MOVE_RAPID_SPIN",
+              "base": 40,
+              "PP": 40,
+              "PP_UPs": 0,
+              "max_PP": 40,
+              "legal_max": 64
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "PID": 2771480446,
+          "OT": 1762033876,
+          "species": "SPECIES_CHARMELEON",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 52,
+              "name": "MOVE_EMBER",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 1,
+              "id": 232,
+              "name": "MOVE_METAL_CLAW",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 2,
+              "id": 10,
+              "name": "MOVE_SCRATCH",
+              "base": 35,
+              "PP": 34,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 3,
+              "id": 69,
+              "name": "MOVE_SEISMIC_TOSS",
+              "base": 20,
+              "PP": 19,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "PID": 3098794371,
+          "OT": 1762033876,
+          "species": "SPECIES_PIDGEOTTO",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 17,
+              "name": "MOVE_WING_ATTACK",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 1,
+              "id": 98,
+              "name": "MOVE_QUICK_ATTACK",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            },
+            {
+              "slot": 2,
+              "id": 16,
+              "name": "MOVE_GUST",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 3,
+              "id": 18,
+              "name": "MOVE_WHIRLWIND",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "PID": 1137192413,
+          "OT": 1762033876,
+          "species": "SPECIES_PIKACHU",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 85,
+              "name": "MOVE_THUNDERBOLT",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 1,
+              "id": 148,
+              "name": "MOVE_FLASH",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 2,
+              "id": 351,
+              "name": "MOVE_SHOCK_WAVE",
+              "base": 20,
+              "PP": 19,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 3,
+              "id": 280,
+              "name": "MOVE_BRICK_BREAK",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "v0.1.0.sav",
+      "mtime": "2026-09-19T14:33:57.138222+00:00",
+      "sha256": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+      "counter": 22,
+      "party_count": 6,
+      "items": {
+        "ITEM_MASTER_BALL": 0,
+        "ITEM_RARE_CANDY": 3,
+        "ITEM_TINY_MUSHROOM": 0,
+        "ITEM_PP_UP": 0
+      },
+      "party": [
+        {
+          "slot": 0,
+          "PID": 217573300,
+          "OT": 1762033876,
+          "species": "SPECIES_VENONAT",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 33,
+              "name": "MOVE_TACKLE",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 1,
+              "id": 50,
+              "name": "MOVE_DISABLE",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 2,
+              "id": 193,
+              "name": "MOVE_FORESIGHT",
+              "base": 40,
+              "PP": 40,
+              "PP_UPs": 0,
+              "max_PP": 40,
+              "legal_max": 64
+            },
+            {
+              "slot": 3,
+              "id": 48,
+              "name": "MOVE_SUPERSONIC",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "PID": 3697404095,
+          "OT": 1762033876,
+          "species": "SPECIES_DROWZEE",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 1,
+              "name": "MOVE_POUND",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 1,
+              "id": 95,
+              "name": "MOVE_HYPNOSIS",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 2,
+              "id": 50,
+              "name": "MOVE_DISABLE",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 3,
+              "id": 93,
+              "name": "MOVE_CONFUSION",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "PID": 3098794371,
+          "OT": 1762033876,
+          "species": "SPECIES_PIDGEOTTO",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 17,
+              "name": "MOVE_WING_ATTACK",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 1,
+              "id": 98,
+              "name": "MOVE_QUICK_ATTACK",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            },
+            {
+              "slot": 2,
+              "id": 16,
+              "name": "MOVE_GUST",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 3,
+              "id": 18,
+              "name": "MOVE_WHIRLWIND",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "PID": 2771480446,
+          "OT": 1762033876,
+          "species": "SPECIES_CHARMELEON",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 52,
+              "name": "MOVE_EMBER",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 1,
+              "id": 232,
+              "name": "MOVE_METAL_CLAW",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 2,
+              "id": 10,
+              "name": "MOVE_SCRATCH",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 3,
+              "id": 184,
+              "name": "MOVE_SCARY_FACE",
+              "base": 10,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "PID": 1092009980,
+          "OT": 1762033876,
+          "species": "SPECIES_IVYSAUR",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 75,
+              "name": "MOVE_RAZOR_LEAF",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 1,
+              "id": 22,
+              "name": "MOVE_VINE_WHIP",
+              "base": 10,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 2,
+              "id": 77,
+              "name": "MOVE_POISON_POWDER",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 3,
+              "id": 79,
+              "name": "MOVE_SLEEP_POWDER",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "PID": 1137192413,
+          "OT": 1762033876,
+          "species": "SPECIES_PIKACHU",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 85,
+              "name": "MOVE_THUNDERBOLT",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 1,
+              "id": 290,
+              "name": "MOVE_SECRET_POWER",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 2,
+              "id": 21,
+              "name": "MOVE_SLAM",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 3,
+              "id": 84,
+              "name": "MOVE_THUNDER_SHOCK",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "v0.2.1.sav",
+      "mtime": "2026-09-22T05:16:26.876993+00:00",
+      "sha256": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+      "counter": 23,
+      "party_count": 6,
+      "items": {
+        "ITEM_MASTER_BALL": 0,
+        "ITEM_RARE_CANDY": 3,
+        "ITEM_TINY_MUSHROOM": 0,
+        "ITEM_PP_UP": 0
+      },
+      "party": [
+        {
+          "slot": 0,
+          "PID": 217573300,
+          "OT": 1762033876,
+          "species": "SPECIES_VENONAT",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 33,
+              "name": "MOVE_TACKLE",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 1,
+              "id": 50,
+              "name": "MOVE_DISABLE",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 2,
+              "id": 193,
+              "name": "MOVE_FORESIGHT",
+              "base": 40,
+              "PP": 40,
+              "PP_UPs": 0,
+              "max_PP": 40,
+              "legal_max": 64
+            },
+            {
+              "slot": 3,
+              "id": 48,
+              "name": "MOVE_SUPERSONIC",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "PID": 3697404095,
+          "OT": 1762033876,
+          "species": "SPECIES_DROWZEE",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 1,
+              "name": "MOVE_POUND",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 1,
+              "id": 95,
+              "name": "MOVE_HYPNOSIS",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 2,
+              "id": 50,
+              "name": "MOVE_DISABLE",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 3,
+              "id": 93,
+              "name": "MOVE_CONFUSION",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "PID": 3098794371,
+          "OT": 1762033876,
+          "species": "SPECIES_PIDGEOTTO",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 17,
+              "name": "MOVE_WING_ATTACK",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 1,
+              "id": 98,
+              "name": "MOVE_QUICK_ATTACK",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            },
+            {
+              "slot": 2,
+              "id": 16,
+              "name": "MOVE_GUST",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 3,
+              "id": 18,
+              "name": "MOVE_WHIRLWIND",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "PID": 2771480446,
+          "OT": 1762033876,
+          "species": "SPECIES_CHARMELEON",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 52,
+              "name": "MOVE_EMBER",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 1,
+              "id": 232,
+              "name": "MOVE_METAL_CLAW",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 2,
+              "id": 10,
+              "name": "MOVE_SCRATCH",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 3,
+              "id": 184,
+              "name": "MOVE_SCARY_FACE",
+              "base": 10,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "PID": 1092009980,
+          "OT": 1762033876,
+          "species": "SPECIES_IVYSAUR",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 75,
+              "name": "MOVE_RAZOR_LEAF",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 1,
+              "id": 22,
+              "name": "MOVE_VINE_WHIP",
+              "base": 10,
+              "PP": 10,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 2,
+              "id": 77,
+              "name": "MOVE_POISON_POWDER",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 3,
+              "id": 79,
+              "name": "MOVE_SLEEP_POWDER",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "PID": 1137192413,
+          "OT": 1762033876,
+          "species": "SPECIES_PIKACHU",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 85,
+              "name": "MOVE_THUNDERBOLT",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 1,
+              "id": 290,
+              "name": "MOVE_SECRET_POWER",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 2,
+              "id": 21,
+              "name": "MOVE_SLAM",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 3,
+              "id": 84,
+              "name": "MOVE_THUNDER_SHOCK",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "v0.5.1.sav",
+      "mtime": "2026-09-23T00:37:11.416489+00:00",
+      "sha256": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+      "counter": 34,
+      "party_count": 6,
+      "items": {
+        "ITEM_MASTER_BALL": 0,
+        "ITEM_RARE_CANDY": 5,
+        "ITEM_TINY_MUSHROOM": 0,
+        "ITEM_PP_UP": 0
+      },
+      "party": [
+        {
+          "slot": 0,
+          "PID": 424634749,
+          "OT": 1762033876,
+          "species": "SPECIES_ABRA",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 100,
+              "name": "MOVE_TELEPORT",
+              "base": 20,
+              "PP": 19,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 1,
+              "id": 138,
+              "name": "MOVE_DREAM_EATER",
+              "base": 15,
+              "PP": 14,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "PID": 1092009980,
+          "OT": 1762033876,
+          "species": "SPECIES_IVYSAUR",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 75,
+              "name": "MOVE_RAZOR_LEAF",
+              "base": 25,
+              "PP": 23,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 1,
+              "id": 22,
+              "name": "MOVE_VINE_WHIP",
+              "base": 10,
+              "PP": 9,
+              "PP_UPs": 0,
+              "max_PP": 10,
+              "legal_max": 16
+            },
+            {
+              "slot": 2,
+              "id": 15,
+              "name": "MOVE_CUT",
+              "base": 30,
+              "PP": 17,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            },
+            {
+              "slot": 3,
+              "id": 230,
+              "name": "MOVE_SWEET_SCENT",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "PID": 836369270,
+          "OT": 1762033876,
+          "species": "SPECIES_WARTORTLE",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 55,
+              "name": "MOVE_WATER_GUN",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 1,
+              "id": 145,
+              "name": "MOVE_BUBBLE",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            },
+            {
+              "slot": 2,
+              "id": 44,
+              "name": "MOVE_BITE",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 3,
+              "id": 229,
+              "name": "MOVE_RAPID_SPIN",
+              "base": 40,
+              "PP": 40,
+              "PP_UPs": 0,
+              "max_PP": 40,
+              "legal_max": 64
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "PID": 2771480446,
+          "OT": 1762033876,
+          "species": "SPECIES_CHARMELEON",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 52,
+              "name": "MOVE_EMBER",
+              "base": 25,
+              "PP": 25,
+              "PP_UPs": 0,
+              "max_PP": 25,
+              "legal_max": 40
+            },
+            {
+              "slot": 1,
+              "id": 232,
+              "name": "MOVE_METAL_CLAW",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 2,
+              "id": 10,
+              "name": "MOVE_SCRATCH",
+              "base": 35,
+              "PP": 34,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 3,
+              "id": 69,
+              "name": "MOVE_SEISMIC_TOSS",
+              "base": 20,
+              "PP": 19,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "PID": 3098794371,
+          "OT": 1762033876,
+          "species": "SPECIES_PIDGEOTTO",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 17,
+              "name": "MOVE_WING_ATTACK",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 1,
+              "id": 98,
+              "name": "MOVE_QUICK_ATTACK",
+              "base": 30,
+              "PP": 30,
+              "PP_UPs": 0,
+              "max_PP": 30,
+              "legal_max": 48
+            },
+            {
+              "slot": 2,
+              "id": 16,
+              "name": "MOVE_GUST",
+              "base": 35,
+              "PP": 35,
+              "PP_UPs": 0,
+              "max_PP": 35,
+              "legal_max": 56
+            },
+            {
+              "slot": 3,
+              "id": 18,
+              "name": "MOVE_WHIRLWIND",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "PID": 1137192413,
+          "OT": 1762033876,
+          "species": "SPECIES_PIKACHU",
+          "moves": [
+            {
+              "slot": 0,
+              "id": 85,
+              "name": "MOVE_THUNDERBOLT",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            },
+            {
+              "slot": 1,
+              "id": 148,
+              "name": "MOVE_FLASH",
+              "base": 20,
+              "PP": 20,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 2,
+              "id": 351,
+              "name": "MOVE_SHOCK_WAVE",
+              "base": 20,
+              "PP": 19,
+              "PP_UPs": 0,
+              "max_PP": 20,
+              "legal_max": 32
+            },
+            {
+              "slot": 3,
+              "id": 280,
+              "name": "MOVE_BRICK_BREAK",
+              "base": 15,
+              "PP": 15,
+              "PP_UPs": 0,
+              "max_PP": 15,
+              "legal_max": 24
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

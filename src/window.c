@@ -358,6 +358,31 @@ void FillWindowPixelRect(u8 windowId, u8 fillValue, u16 x, u16 y, u16 width, u16
     pixelRect.width = 8 * gWindows[windowId].window.width;
     pixelRect.height = 8 * gWindows[windowId].window.height;
 
+    if (((x | width) & 7) == 0 && ((u32)pixelRect.pixels & 3) == 0)
+    {
+        u32 rows, columns, row, column;
+        u32 value = (fillValue & 15) * 0x11111111u;
+
+        if (x >= pixelRect.width || y >= pixelRect.height)
+            return;
+        columns = width;
+        if (columns > pixelRect.width - x)
+            columns = pixelRect.width - x;
+        columns >>= 3;
+        rows = height;
+        if (rows > pixelRect.height - y)
+            rows = pixelRect.height - y;
+        for (row = 0; row < rows; row++)
+        {
+            u32 py = y + row;
+            u8 *dst = pixelRect.pixels
+                + (((py >> 3) * gWindows[windowId].window.width + (x >> 3)) * 32)
+                + ((py & 7) * 4);
+            for (column = 0; column < columns; column++, dst += 32)
+                *(u32 *)dst = value;
+        }
+        return;
+    }
     FillBitmapRect4Bit(&pixelRect, x, y, width, height, fillValue);
 }
 
@@ -407,6 +432,73 @@ void ScrollWindow(u8 windowId, u8 direction, u8 distance, u8 fillValue)
     s32 i;
     s32 srcOffset, destOffset;
     u32 distanceLoop;
+
+    // The numeric dex font scrolls fourteen pixels at a time.
+    // Copy complete word pairs instead of repeating the distance loop.
+    if (distance == 14 && direction <= 1)
+    {
+        u32 rowWords = width * 8;
+        u32 rowBytes = width * 32;
+        u32 tileCount;
+        u32 *dst;
+        u32 *src;
+        u32 *next;
+        if (size == 0)
+            return;
+        if (window.height < 2)
+        {
+            CpuFastFill(fillValue32, tileData, size);
+            return;
+        }
+        tileCount = (window.height - 2) * width;
+        if (direction == 0)
+        {
+            dst = (u32 *)tileData;
+            src = dst + rowWords;
+            next = src + rowWords;
+            for (i = 0; i < tileCount; i++)
+            {
+                dst[0] = src[6]; dst[1] = src[7];
+                dst[2] = next[0]; dst[3] = next[1];
+                dst[4] = next[2]; dst[5] = next[3];
+                dst[6] = next[4]; dst[7] = next[5];
+                dst += 8; src += 8; next += 8;
+            }
+            for (i = 0; i < width; i++)
+            {
+                dst[0] = src[6]; dst[1] = src[7];
+                dst[2] = fillValue32; dst[3] = fillValue32;
+                dst[4] = fillValue32; dst[5] = fillValue32;
+                dst[6] = fillValue32; dst[7] = fillValue32;
+                dst += 8; src += 8;
+            }
+            CpuFastFill(fillValue32, dst, rowBytes);
+        }
+        else
+        {
+            dst = (u32 *)(tileData + size);
+            src = dst - rowWords;
+            next = src - rowWords;
+            for (i = 0; i < tileCount; i++)
+            {
+                dst -= 8; src -= 8; next -= 8;
+                dst[0] = next[2]; dst[1] = next[3];
+                dst[2] = next[4]; dst[3] = next[5];
+                dst[4] = next[6]; dst[5] = next[7];
+                dst[6] = src[0]; dst[7] = src[1];
+            }
+            for (i = 0; i < width; i++)
+            {
+                dst -= 8; src -= 8;
+                dst[0] = fillValue32; dst[1] = fillValue32;
+                dst[2] = fillValue32; dst[3] = fillValue32;
+                dst[4] = fillValue32; dst[5] = fillValue32;
+                dst[6] = src[0]; dst[7] = src[1];
+            }
+            CpuFastFill(fillValue32, tileData, rowBytes);
+        }
+        return;
+    }
 
     switch (direction)
     {

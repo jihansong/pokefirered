@@ -1,0 +1,11 @@
+{
+  "all_pass": false,
+  "ram_writes": 0,
+  "direct_script_calls": 0,
+  "error": "AssertionError()",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/work/regression-oct12/native-professor-elm.py\", line 17, in <module>\n    e.press('A',hold=3,after=40);assert e.u16(e.sym('gSpecialVar_LastTalked'))==2\n                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "checks": [],
+  "original_inputs_unchanged": true,
+  "rom_sha256": "9c14366839526315ea0b4b95925cde6c10cf95c9626fd05507a5e7b382d39afa",
+  "professor_art": "Temporary native scientist sprite; dedicated Elm drawing pending"
+}

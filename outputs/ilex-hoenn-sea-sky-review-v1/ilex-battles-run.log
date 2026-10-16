@@ -1,0 +1,12 @@
+{"case": "silver_azalea_win", "turns": 3, "native_outcome": 1, "enemies": [92, 41, 159], "save": {"counter": [60, 61], "checksummed_sectors": 14, "qa_save": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v1/ilex-battles/silver_azalea_win-native-QA-only.sav"}, "pc_preserved": true, "forced_memory_writes": 0, "forced_battle_outcomes": 0}
+{"case": "silver_azalea_loss", "turns": 1, "native_outcome": 2, "enemies": [92, 41, 159], "save": {"counter": [60, 61], "checksummed_sectors": 14, "qa_save": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v1/ilex-battles/silver_azalea_loss-native-QA-only.sav"}, "pc_preserved": true, "forced_memory_writes": 0, "forced_battle_outcomes": 0}
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/johto_ilex_native_battles.py", line 168, in <module>
+    encourage=dialog_progress(Path(upset['qa_save']),Path(td)/(tag+'-assistant.sav'),('GoldenrodCity_Gym',7,17),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_ilex_native_battles.py", line 119, in dialog_progress
+    interaction(e,c);after=snapshot(e)
+    ^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_ilex_native_battles.py", line 74, in interaction
+    assert seen[0],('dialogue branch not seen',c['name'],c['marker'])
+AssertionError: ('dialogue branch not seen', 'whitney_win_native_assistant', 'GoldenrodCity_Gym_Text_AssistantEncourage')

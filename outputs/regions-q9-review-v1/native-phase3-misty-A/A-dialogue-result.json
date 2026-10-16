@@ -1,0 +1,54 @@
+{
+  "all_pass": true,
+  "rom_sha256": "3b319b64cc1b29a1eacb7a57c50afafd935496614aa9e596b74eb556e1d38806",
+  "joined_native_source_rom_sha256": "af9ba1f61fce4630d488567ed11b83847dfbc1fcff435653bedd4d86dc622818",
+  "original_PIKA_emotion_preserved": true,
+  "ordinary_two_follower_A_access": true,
+  "actual_A_and_yesno_only": true,
+  "companion_coordinates_never_poked": true,
+  "temporary_negative_join_flag_control": true,
+  "party_pc_dex_preserved": true,
+  "story_flags_preserved": true,
+  "native_save_and_cold": true,
+  "friendly_battle_in_this_test": false,
+  "actual_device_fps_measured": false,
+  "checks": [
+    {
+      "case": "unjoined_original_PIKA_A",
+      "pika_emotion": true,
+      "extra_question": false,
+      "temporary_join_flag_control": true,
+      "pass_all": true
+    },
+    {
+      "case": "joined_Misty_choice_NO",
+      "pika_emotion": true,
+      "original_PIKA_selected": true,
+      "no_training_started": true,
+      "pass_all": true
+    },
+    {
+      "case": "joined_Misty_choice_YES_then_training_NO",
+      "pika_emotion": true,
+      "runtime_misty_selected": 253,
+      "actual_A_access": true,
+      "no_script_entry_hook": true,
+      "no_training_started": true,
+      "pass_all": true
+    },
+    {
+      "case": "native_SAVE_cold_then_actual_A",
+      "save": {
+        "counter": [
+          62,
+          63
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-phase3-misty-A/ordinary-pika-Misty-A-native-QA-only.sav"
+      },
+      "actual_A_access": true,
+      "pika_and_misty_trail_visible": true,
+      "pass_all": true
+    }
+  ]
+}

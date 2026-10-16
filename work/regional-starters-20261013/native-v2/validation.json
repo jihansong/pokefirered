@@ -1,0 +1,507 @@
+{
+  "pass": false,
+  "rom_sha256": "63904802b37dc5e922ec616361c0be3388f1030e5b2c1a0b7a2949f2a33c1f7c",
+  "RAM_writes": 0,
+  "direct_script_calls": 0,
+  "forced_battle_outcomes": 0,
+  "source_sav": "/workspaces/pokefirered/saves/pokemonthyl_v1.25-items99-iv2x.sav",
+  "cases": [
+    {
+      "case": "cyndaquil-party",
+      "capacity": "party",
+      "party_count": 6,
+      "PC_count": 120,
+      "receipt": true,
+      "gift": {
+        "species": 155,
+        "pid": 2005629698,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "027b8b777afb3aa9bdd3c8bebbcbcfc3c6ff0202c4c3c2bbc8ffff0014900000e380b1deff80b1de78c6b1de7880b1de7880b1de7880b1de59809ade7880b1de5b9eb1de784834fc877f4ee17880b1de"
+      },
+      "original_records_preserved": true,
+      "pass": true,
+      "repeat_no_duplicate": true,
+      "SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-v2/cyndaquil-party-native-QA-only.sav"
+      }
+    },
+    {
+      "case": "cyndaquil-pc",
+      "capacity": "pc",
+      "party_count": 6,
+      "PC_count": 121,
+      "receipt": true,
+      "gift": {
+        "species": 155,
+        "pid": 2005629698,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "027b8b777afb3aa9bdd3c8bebbcbcfc3c6ff0202c4c3c2bbc8ffff0014900000e380b1deff80b1de78c6b1de7880b1de7880b1de7880b1de59809ade7880b1de5b9eb1de784834fc877f4ee17880b1de"
+      },
+      "original_records_preserved": true,
+      "pass": true,
+      "repeat_no_duplicate": true,
+      "SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-v2/cyndaquil-pc-native-QA-only.sav"
+      }
+    },
+    {
+      "case": "cyndaquil-full",
+      "capacity": "full",
+      "party_count": 6,
+      "PC_count": 420,
+      "receipt": false,
+      "gift": null,
+      "original_records_preserved": true,
+      "pass": true
+    },
+    {
+      "case": "chikorita-party",
+      "capacity": "party",
+      "party_count": 6,
+      "PC_count": 120,
+      "receipt": true,
+      "gift": {
+        "species": 152,
+        "pid": 3079326319,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "6fca8ab77afb3aa9bdc2c3c5c9ccc3cebbff0202c4c3c2bbc8ffff00139a000034319d1e1531b01e3619b01e8d31b01e9231b01e1577b01e15f9353ceace4f211531b01e1531b01e1531b01e1531b01e"
+      },
+      "original_records_preserved": true,
+      "pass": true,
+      "repeat_no_duplicate": true,
+      "SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-v2/chikorita-party-native-QA-only.sav"
+      }
+    },
+    {
+      "case": "chikorita-pc",
+      "capacity": "pc",
+      "party_count": 6,
+      "PC_count": 121,
+      "receipt": true,
+      "gift": {
+        "species": 152,
+        "pid": 3079326319,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "6fca8ab77afb3aa9bdc2c3c5c9ccc3cebbff0202c4c3c2bbc8ffff00139a000034319d1e1531b01e3619b01e8d31b01e9231b01e1577b01e15f9353ceace4f211531b01e1531b01e1531b01e1531b01e"
+      },
+      "original_records_preserved": true,
+      "pass": true,
+      "repeat_no_duplicate": true,
+      "SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-v2/chikorita-pc-native-QA-only.sav"
+      }
+    },
+    {
+      "case": "chikorita-full",
+      "capacity": "full",
+      "party_count": 6,
+      "PC_count": 420,
+      "receipt": false,
+      "gift": null,
+      "original_records_preserved": true,
+      "pass": true
+    },
+    {
+      "case": "totodile-party",
+      "capacity": "party",
+      "party_count": 6,
+      "PC_count": 120,
+      "receipt": true,
+      "gift": {
+        "species": 158,
+        "pid": 432580187,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "5ba6c8197afb3aa9cec9cec9bec3c6bfff730202c4c3c2bbc8ffff00009000002b5dd9b0215df2b00243f2b021957792dea20d8f215df2b0215df2b0215df2b0215df2b0bf5df2b0a65df2b0211bf2b0"
+      },
+      "original_records_preserved": true,
+      "pass": true,
+      "repeat_no_duplicate": true,
+      "SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-v2/totodile-party-native-QA-only.sav"
+      }
+    },
+    {
+      "case": "totodile-pc",
+      "capacity": "pc",
+      "party_count": 6,
+      "PC_count": 121,
+      "receipt": true,
+      "gift": {
+        "species": 158,
+        "pid": 432580187,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "5ba6c8197afb3aa9cec9cec9bec3c6bfff730202c4c3c2bbc8ffff00009000002b5dd9b0215df2b00243f2b021957792dea20d8f215df2b0215df2b0215df2b0215df2b0bf5df2b0a65df2b0211bf2b0"
+      },
+      "original_records_preserved": true,
+      "pass": true,
+      "repeat_no_duplicate": true,
+      "SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-v2/totodile-pc-native-QA-only.sav"
+      }
+    },
+    {
+      "case": "totodile-full",
+      "capacity": "full",
+      "party_count": 6,
+      "PC_count": 420,
+      "receipt": false,
+      "gift": null,
+      "original_records_preserved": true,
+      "pass": true
+    },
+    {
+      "case": "torchic-party",
+      "capacity": "party",
+      "party_count": 6,
+      "PC_count": 120,
+      "receipt": true,
+      "gift": {
+        "species": 280,
+        "pid": 19671907,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "632b2c017afb3aa9cec9ccbdc2c3bdff00000202c4c3c2bbc8ffff007cd2000019d0938ae62fe99719d016a801d116a89ed016a8199616a819d016a819d016a819d016a813d03ba819d016a83af816a8"
+      },
+      "original_records_preserved": true,
+      "pass": true,
+      "repeat_no_duplicate": true,
+      "SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-v2/torchic-party-native-QA-only.sav"
+      }
+    },
+    {
+      "case": "torchic-pc",
+      "capacity": "pc",
+      "party_count": 6,
+      "PC_count": 121,
+      "receipt": true,
+      "gift": {
+        "species": 280,
+        "pid": 19671907,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "632b2c017afb3aa9cec9ccbdc2c3bdff00000202c4c3c2bbc8ffff007cd2000019d0938ae62fe99719d016a801d116a89ed016a8199616a819d016a819d016a819d016a813d03ba819d016a83af816a8"
+      },
+      "original_records_preserved": true,
+      "pass": true,
+      "repeat_no_duplicate": true,
+      "SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-v2/torchic-pc-native-QA-only.sav"
+      }
+    },
+    {
+      "case": "torchic-full",
+      "capacity": "full",
+      "party_count": 6,
+      "PC_count": 420,
+      "receipt": false,
+      "gift": null,
+      "original_records_preserved": true,
+      "pass": true
+    },
+    {
+      "case": "treecko-party",
+      "capacity": "party",
+      "party_count": 6,
+      "PC_count": 120,
+      "receipt": true,
+      "gift": {
+        "species": 277,
+        "pid": 108269001,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "c90d74067afb3aa9ceccbfbfbdc5c9ff00000202c4c3c2bbc8ffff006e030000b2f665afb3f64eaf90e84eafb3f64eafb3f64eafb3f64eafb3cdcb8d4c09b190b3f64eafa6f74eaf34f64eafb3b04eaf"
+      },
+      "original_records_preserved": true,
+      "pass": true,
+      "repeat_no_duplicate": true,
+      "SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-v2/treecko-party-native-QA-only.sav"
+      }
+    },
+    {
+      "case": "treecko-pc",
+      "capacity": "pc",
+      "party_count": 6,
+      "PC_count": 121,
+      "receipt": true,
+      "gift": {
+        "species": 277,
+        "pid": 108269001,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "c90d74067afb3aa9ceccbfbfbdc5c9ff00000202c4c3c2bbc8ffff006e030000b2f665afb3f64eaf90e84eafb3f64eafb3f64eafb3f64eafb3cdcb8d4c09b190b3f64eafa6f74eaf34f64eafb3b04eaf"
+      },
+      "original_records_preserved": true,
+      "pass": true,
+      "repeat_no_duplicate": true,
+      "SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-v2/treecko-pc-native-QA-only.sav"
+      }
+    }
+  ],
+  "battle_paths": [
+    {
+      "capture": false,
+      "outcome": 4,
+      "enemy": {
+        "species": 277,
+        "pid": 192345554,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "d2f5760b7afb3aa9ceccbfbfbdc5c9ff50200202c4c3c2bbc8ffff006e030000bd0f4ca22f0e4ca2a8484ca2a80e4ca2a80e4ca2a80e4ca2a90e67a2a80e4ca28b104ca2a835c98057f1b39da80e4ca2"
+      }
+    },
+    {
+      "capture": false,
+      "outcome": 4,
+      "enemy": {
+        "species": 277,
+        "pid": 192345554,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "d2f5760b7afb3aa9ceccbfbfbdc5c9ff50200202c4c3c2bbc8ffff006e030000bd0f4ca22f0e4ca2a8484ca2a80e4ca2a80e4ca2a80e4ca2a90e67a2a80e4ca28b104ca2a835c98057f1b39da80e4ca2"
+      }
+    },
+    {
+      "capture": false,
+      "outcome": 4,
+      "enemy": {
+        "species": 277,
+        "pid": 192345554,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "d2f5760b7afb3aa9ceccbfbfbdc5c9ff50200202c4c3c2bbc8ffff006e030000bd0f4ca22f0e4ca2a8484ca2a80e4ca2a80e4ca2a80e4ca2a90e67a2a80e4ca28b104ca2a835c98057f1b39da80e4ca2"
+      }
+    }
+  ],
+  "error": "AssertionError('Treecko caught changed after no room')",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/work/regional-starters-20261013/native-v2.py\", line 111, in <module>\n    for capacity in ['party','pc','full']:one(n,capacity)\n                                          ^^^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/work/regional-starters-20261013/native-v2.py\", line 99, in one\n    else:assert all((x==y or i==251 and x[1:]==y[1:]) for i,(x,y) in enumerate(zip(dex0,dex1))),('Treecko caught changed after no room')\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Treecko caught changed after no room\n",
+  "protected_original_inputs_unchanged": true
+}

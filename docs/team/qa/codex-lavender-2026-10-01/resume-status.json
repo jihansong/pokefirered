@@ -1,0 +1,18 @@
+{
+  "lavender_visual_pass": true,
+  "save_compatibility": "6/6 load IDENTICAL",
+  "z3_foundation": "11/11 passed",
+  "z3_latest": [
+    "ok   z3_rumor_18",
+    "ok   z3_rumor_21_wraps",
+    "54/54 cases passed"
+  ],
+  "build": "exit 0; jobserver and RWX linker warnings remain",
+  "user_saves_unchanged": true,
+  "pending": [
+    "opening expressive art generation blocked; size-only preview v2 delivered",
+    "Jessie/James proportional audit complete; edited image generation blocked",
+    "Rustboro Gym badge/TM39 and Devon/Rusturf story not implemented",
+    "title v3 retrieved and reviewed; three endings requirements traced"
+  ]
+}

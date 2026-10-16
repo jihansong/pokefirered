@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python3",
+    "tools/qa/native_cold_nurse_regression_qa.py",
+    "tools/qa/johto_violet_native_bootstrap_v1.py",
+    "--rom",
+    "/workspaces/pokefirered/work/regression-oct12/final-candidate/pokemonthyl-oct12-repair.gba",
+    "--elf",
+    "/workspaces/pokefirered/work/regression-oct12/final-candidate/pokemonthyl-oct12-repair.elf",
+    "--sav",
+    "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-league-chain/chain_silver_opens_plateau_arrival-native-QA-only.sav",
+    "--out",
+    "/workspaces/pokefirered/work/regression-oct12/final-cold-nurse-chain115"
+  ],
+  "input_type": "Previously executed actual native campaign-chain SAVE115, temporary QA only, not player SAV",
+  "sha256": "7eba0a5e5c82e053973210ad13e61725607a4f8aa97a4ad9acda91f65481d140"
+}

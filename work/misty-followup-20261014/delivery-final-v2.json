@@ -1,0 +1,10 @@
+{
+  "ZIP": "/workspaces/pokefirered/outputs/misty-follow-20261014/Thunder-Yellow-Misty-20261014-final.zip",
+  "bytes": 7980975,
+  "sha256": "0f5dc5ade29cf75ebec94aa17e340de3d0ba753154f2f5b129f55f659d0c9776",
+  "ROM_sha256": "1c9a4519a7a6bb5195728977143d42e5f126f8709d992e4602e159ae328d46bf",
+  "SAV_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+  "native_Misty_tests": 33,
+  "native_Hoenn_hint_tests": 15,
+  "every_manifest_member_verified": true
+}

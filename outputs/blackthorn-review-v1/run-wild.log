@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_wild.py", line 162, in <module>
+    with ReadOnlyEmu(str(rom),str(target),sym='') as e:row=attempt(e,c,prepared)
+                                                           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_wild.py", line 119, in attempt
+    moves,hour=walk_until_wild(e,c)
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_wild.py", line 112, in walk_until_wild
+    assert 'sUseRtc' in syms and not e.u8(syms['sUseRtc']),'QA hour requires native virtual clock'
+           ^^^^^^^^^^^^^^^^^
+AssertionError: QA hour requires native virtual clock

@@ -1,0 +1,17 @@
+[
+  {
+    "map": "OlivineCity",
+    "save": "OlivineCity-performance.sav",
+    "sha256": "288acdb7e1e62f2b1edd50500c8a6e3f338401a270df02c9ed98ddd29ff80b46"
+  },
+  {
+    "map": "CianwoodCity",
+    "save": "CianwoodCity-performance.sav",
+    "sha256": "fb4e3f6f1d14aa5906094fcb8b1bade6dabc0c94d107d3c7d895e313540aedda"
+  },
+  {
+    "map": "OlivineLighthouse_6F",
+    "save": "OlivineLighthouse_6F-performance.sav",
+    "sha256": "68db231a59cdb48c8b4c7173b957a63b87c287807429bb3b383e55d52df18104"
+  }
+]

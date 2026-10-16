@@ -1,0 +1,7 @@
+warp MAP_KANTO_AIRPORT (28,3)
+FLAG_SAW_AIRPORT_PLANE_TAXI = 1
+quest log emptied
+PASS window_up player 1 npc 1 plane 2 follower {'local_id': 254, 'x': 28, 'y': 3, 'priority': 1, 'subsprite_table': 2}
+PASS window_left player 1 npc 1 plane 2 follower {'local_id': 254, 'x': 28, 'y': 2, 'priority': 1, 'subsprite_table': 2}
+PASS away_from_window player 2 npc 1 plane 2 follower {'local_id': 254, 'x': 27, 'y': 6, 'priority': 2, 'subsprite_table': 1}
+PASS original save unchanged

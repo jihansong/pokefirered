@@ -1,0 +1,17 @@
+{
+  "status": "PREPARATION_SYNTAX_AND_EXACT_BOUNDARY_AUDIT_PASS_NATIVE_NOT_EXECUTED",
+  "pass": true,
+  "native_executed": false,
+  "product_applied_by_this_agent": false,
+  "script_sha256": "57d86e8c1400d54ac244b16a83295a0e97407fd8156fa26a1aaa1366f1ac55e5",
+  "guard_sha256": "23c5a4a579e4211ba2899a58fa0d67acdee3746793af23d80223a991a876a492",
+  "original_user_input_SHA256": "0949ebf04557a76e2175602e967eefadb7ffb722f2746be8a40ddb1fd66550a9",
+  "previous_R1_preserved": true,
+  "known_first_Continue_visibility_sync_count": 11,
+  "first_cycle_compares_every_other_persistence_field": true,
+  "second_cycle_uses_unchanged_strict_R10_flash_reload": true,
+  "writer_source_actual_local_copy_available": false,
+  "writer_source_remote_fail_closed_guard": "f8448fb911ce7fb8d16a28bd58aeda8890d11c1d7f60211793cb279661331a87",
+  "no_direct_RAM_or_engine_or_state_calls": true,
+  "command": "python3 work/hns-donor-port-20261015/elm-native-qa-r2/native_elm_hns_qa_r2.py --root /workspaces/pokefirered --rom /workspaces/pokefirered/pokemonthyl.gba --elf /workspaces/pokefirered/pokemonthyl.elf --sav /workspaces/pokefirered/saves/pokemonthyl_v1.45.sav --out /workspaces/pokefirered/work/hns-donor-port-20261015/elm-native-r2 --expect-rom-sha 7d66f47ad68e192d9f5916d9ef9bd9c9fb42fd80bcd3e2835b32cd328a208636 --expect-elf-sha fdcb9ec35de57dc4299878af4251193a67c78a6a0d27b2b9bbd03458972207d0 --expect-sav-sha 0949ebf04557a76e2175602e967eefadb7ffb722f2746be8a40ddb1fd66550a9 --verifier /workspaces/pokefirered/work/resume-v145-20261015/route29-misty-integrated-qa-r1/verify_build.py --guard-manifest /workspaces/pokefirered/work/hns-donor-port-20261015/elm-native-qa-r2/elm-native-guard.json --walk-runner /workspaces/pokefirered/work/resume-v145-20261015/route29-misty-native-resume-r3/native_misty_walk_qa_r10.py --elm-manifest /workspaces/pokefirered/work/hns-donor-port-20261015/elm-native-qa-r2/elm-product-manifest.json"
+}

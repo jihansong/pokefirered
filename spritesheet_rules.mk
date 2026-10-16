@@ -531,3 +531,11 @@ $(OBJEVENTGFXDIR)/hoenn/vigoroth.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/hoenn/mr_brineys_boat.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 # END HOENN OBJECT EVENTS
+
+# BEGIN THUNDER YELLOW ORIGINAL HOENN LEGENDS
+$(OBJEVENTGFXDIR)/hoenn/legend_kyogre.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/hoenn/legend_rayquaza.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 8
+# END THUNDER YELLOW ORIGINAL HOENN LEGENDS

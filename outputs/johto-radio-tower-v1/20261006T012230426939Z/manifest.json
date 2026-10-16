@@ -1,0 +1,329 @@
+{
+  "time": "20261006T012230426939Z",
+  "validation": {
+    "chapter": "Goldenrod Radio Tower rescue",
+    "save_layout_changed": false,
+    "native_build_and_emulator": "NOT_RUN_BY_GENERATOR",
+    "visual_limits": [
+      "Existing native Kanto corporate tiles and trainer portraits are reused.",
+      "The director coordinates repairs from the warehouse after the rescue."
+    ],
+    "not_implemented": [
+      "Route44/IcePath/Blackthorn/Clair/DragonDen",
+      "Johto League",
+      "Full original Underground side services"
+    ],
+    "map_count": 7,
+    "new_trainer_ids": [
+      836,
+      837,
+      838,
+      839,
+      840,
+      841,
+      842,
+      843,
+      844,
+      845
+    ],
+    "radio_clear_flag_preexisting_offset": 52,
+    "new_flag_offsets": {
+      "FLAG_JOHTO_RADIO_BASEMENT_ACCESS": 54,
+      "FLAG_JOHTO_RADIO_DIRECTOR_RESCUED": 55,
+      "FLAG_JOHTO_RADIO_GOT_TM11": 56,
+      "FLAG_HIDE_JOHTO_RADIO_SILVER": 57,
+      "FLAG_HIDE_JOHTO_RADIO_PETREL": 58
+    },
+    "city_warp_ids": {
+      "GoldenrodUnderground": 5,
+      "GoldenrodCity_RadioTower_1F": 3
+    },
+    "preserved_research_lobby": {
+      "map_id": "MAP_GOLDENROD_CITY_RADIO_TOWER_1F",
+      "dimensions": [
+        15,
+        12
+      ],
+      "original_objects": 2,
+      "original_warps": 3,
+      "added_stair_warp": 3,
+      "terrain_changed_cells": 1
+    },
+    "johto_map_count": 101,
+    "map_section_growth": 0,
+    "bag_or_pokemon_struct_growth": 0,
+    "saved_bitfield_bounds": {
+      "last_trainer_offset": 845,
+      "trainer_bits": 1024,
+      "last_hoenn_story_offset": 1338,
+      "story_bits": 2048
+    },
+    "static_checks": [
+      {
+        "map": "GoldenrodCity_RadioTower_1F",
+        "reachable_tiles": 98,
+        "buffer_metatiles": 780,
+        "native_warps_checked": 4
+      },
+      {
+        "map": "GoldenrodCity_RadioTower_2F",
+        "reachable_tiles": 620,
+        "buffer_metatiles": 1836,
+        "native_warps_checked": 2
+      },
+      {
+        "map": "GoldenrodCity_RadioTower_3F",
+        "reachable_tiles": 626,
+        "buffer_metatiles": 1836,
+        "native_warps_checked": 2
+      },
+      {
+        "map": "GoldenrodCity_RadioTower_4F",
+        "reachable_tiles": 619,
+        "buffer_metatiles": 1836,
+        "native_warps_checked": 2
+      },
+      {
+        "map": "GoldenrodCity_RadioTower_5F",
+        "reachable_tiles": 618,
+        "buffer_metatiles": 1836,
+        "native_warps_checked": 1
+      },
+      {
+        "map": "GoldenrodUnderground",
+        "reachable_tiles": 607,
+        "buffer_metatiles": 1836,
+        "native_warps_checked": 2
+      },
+      {
+        "map": "GoldenrodUnderground_Basement",
+        "reachable_tiles": 621,
+        "buffer_metatiles": 1836,
+        "native_warps_checked": 2
+      },
+      {
+        "map": "GoldenrodWarehouse",
+        "reachable_tiles": 624,
+        "buffer_metatiles": 1836,
+        "native_warps_checked": 1
+      }
+    ],
+    "native_warp_behaviors_checked": 14,
+    "preserved_original_side_landing_pads": 2,
+    "map_sections_max": 231
+  },
+  "files": {
+    "data/maps/map_groups.json": {
+      "before": "4afcfc230d93deb2278a931bda58fa4843040ed4c503e4d77aae85e840579ef1",
+      "after": "db8b1707dd04070bd54839aa23be64ce8b28104ff29b37ca3af69ce1da9f39b6"
+    },
+    "data/layouts/GoldenrodCity_RadioTower_2F/map.bin": {
+      "before": null,
+      "after": "78e0e81bc6efb3889368fd436c1c9c1ed1d919c6548e1cbf95141736a8893d27"
+    },
+    "data/layouts/GoldenrodCity_RadioTower_2F/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/GoldenrodCity_RadioTower_3F/map.bin": {
+      "before": null,
+      "after": "ac9afcb4bfe6575da466bbb7b09a57183f1757334225e7e3ca793016aca63841"
+    },
+    "data/layouts/GoldenrodCity_RadioTower_3F/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/GoldenrodCity_RadioTower_4F/map.bin": {
+      "before": null,
+      "after": "fc29dbecbb2896e7d52f22f294a963df85e21815f40f152cc64dd86399103574"
+    },
+    "data/layouts/GoldenrodCity_RadioTower_4F/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/GoldenrodCity_RadioTower_5F/map.bin": {
+      "before": null,
+      "after": "8ca62b5f79a31f60e2580e97cebda21badb380d64dc957cfa1dec6522db4e34d"
+    },
+    "data/layouts/GoldenrodCity_RadioTower_5F/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/GoldenrodUnderground/map.bin": {
+      "before": null,
+      "after": "c5234750c5ed206e80db0f3a4251d2f6bf445584a50e585e35b27d983e455c5a"
+    },
+    "data/layouts/GoldenrodUnderground/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/GoldenrodUnderground_Basement/map.bin": {
+      "before": null,
+      "after": "78e0e81bc6efb3889368fd436c1c9c1ed1d919c6548e1cbf95141736a8893d27"
+    },
+    "data/layouts/GoldenrodUnderground_Basement/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/GoldenrodWarehouse/map.bin": {
+      "before": null,
+      "after": "f40db9f517148bb10ad7839caf8f1ade7268fdd3f61b3f195950b0d658c4ccef"
+    },
+    "data/layouts/GoldenrodWarehouse/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/maps/GoldenrodCity/map.json": {
+      "before": "a8211e5542a3af1bcc829ead840916d3bc3fa13069585c594873de060cd759d3",
+      "after": "3b3360e3bc5393ba64a7c707ca8231206a8ba1bdfb626ee7e43a7924bfa025e2"
+    },
+    "data/layouts/GoldenrodCity/map.bin": {
+      "before": "13952fcaa42348ee572e306364210585c51b5915e47a87f6e982e78115ab1544",
+      "after": "4b04cf8993656da5b940b27a8bdd972dc3a4e8073353744ece81bb02740848c4"
+    },
+    "data/layouts/layouts.json": {
+      "before": "b7948f5285c0398bdfb81fdcaf4e697944431848e5f8c1755a78f84b85c1cc63",
+      "after": "bf142dd1afd67fd08c9565cb14e9307fe1c30d2c6f7a5ea95b43584f892290c8"
+    },
+    "data/layouts/GoldenrodCity_RadioTower_1F/map.bin": {
+      "before": "91502b668ca0d321e9611ac0ebf1ba50382b827dd2b6dc314fff33bd9f645186",
+      "after": "8ea4d080279d46eed14cbd47b7439b11c91c21e04c291b5ffc6f4f307411f707"
+    },
+    "data/maps/GoldenrodCity_RadioTower_1F/scripts.inc": {
+      "before": "e8a56698f9bfd2fd687380af24adce467784e577d5fcfb06470b69b8f4e421e9",
+      "after": "e61bc8eb375da60df69bc4680d6e421b5ee18796f9c77f396d6d5d3cafaf4872"
+    },
+    "data/maps/GoldenrodCity_RadioTower_1F/text.inc": {
+      "before": "451d34833fcad086c6e247eb89b9f9bbf1bb88b996c51849ffcd341310553d68",
+      "after": "90738f4051951def820becfb96239bb60e79a3665335afcdb69f6518f0e3cc91"
+    },
+    "data/maps/GoldenrodCity_RadioTower_1F/map.json": {
+      "before": "2b3de94e8c7b772f640720f19c643c8e8607a6b6e7751b6e2aab9dd4d94ef4d1",
+      "after": "39ae3efad27f12e3ad1042cacab0a1ac73dd34366434e71e213744339ff5234f"
+    },
+    "data/maps/GoldenrodCity_RadioTower_2F/map.json": {
+      "before": null,
+      "after": "ad0e14b294dbd93a50ae898a9197358196f9b1adea84eb4113ca9261697bec26"
+    },
+    "data/maps/GoldenrodCity_RadioTower_2F/scripts.inc": {
+      "before": null,
+      "after": "880ca78d385426eb469b410553096d5d648a2c1479b3a8c3eae078ee0f1b6df3"
+    },
+    "data/maps/GoldenrodCity_RadioTower_2F/text.inc": {
+      "before": null,
+      "after": "561e6380677997276451ec10b764df430e8511e7c0a58ecd2004c62c6fedec1e"
+    },
+    "data/maps/GoldenrodCity_RadioTower_3F/map.json": {
+      "before": null,
+      "after": "867d689e194aef09b94c80c566829257b23c06539dbd0ab8ad5804c2d0206968"
+    },
+    "data/maps/GoldenrodCity_RadioTower_3F/scripts.inc": {
+      "before": null,
+      "after": "a57e1e5ee2d2dbdd8e52a7b7937653248c5b024b7b0e19bb3e7bae53d0442e26"
+    },
+    "data/maps/GoldenrodCity_RadioTower_3F/text.inc": {
+      "before": null,
+      "after": "10e2ece7ff539daeed8c816cae5d59e1462aeb8d2161fb2cc09e4253884dc2bb"
+    },
+    "data/maps/GoldenrodCity_RadioTower_4F/map.json": {
+      "before": null,
+      "after": "3c51a74499d7d85d54f497db5abe993cdbb5a76e51966fd93498e70a30e9142a"
+    },
+    "data/maps/GoldenrodCity_RadioTower_4F/scripts.inc": {
+      "before": null,
+      "after": "b71a15fae405e495cdace32940c89826414e73c1d60b848d4c820ebb299da016"
+    },
+    "data/maps/GoldenrodCity_RadioTower_4F/text.inc": {
+      "before": null,
+      "after": "40d89199250034a8b60ec4779fdc783dd12e282e2e8bb5e303fc0f14371a4432"
+    },
+    "data/maps/GoldenrodCity_RadioTower_5F/map.json": {
+      "before": null,
+      "after": "ef3c7de8426b252eb86b3029a6fd74fee3f9d07fb8530106d1ef3d6985b14692"
+    },
+    "data/maps/GoldenrodCity_RadioTower_5F/scripts.inc": {
+      "before": null,
+      "after": "5528c4dc733692155068b47b1fef09ab243102aaf29b33ff4ba786c513ee88b0"
+    },
+    "data/maps/GoldenrodCity_RadioTower_5F/text.inc": {
+      "before": null,
+      "after": "25f448f2b83fa03081e5507df1a82df65003377cad4614fef90dbe70b49d25c0"
+    },
+    "data/maps/GoldenrodUnderground/map.json": {
+      "before": null,
+      "after": "b960e93abfd837e8c399f31491785866744bf3a108a66f7ba52ed4c1046ffecc"
+    },
+    "data/maps/GoldenrodUnderground/scripts.inc": {
+      "before": null,
+      "after": "979a249e80c84e67e8f3df6988a75195663ae25d0c6dfa9c8f4fda6cbd44cba3"
+    },
+    "data/maps/GoldenrodUnderground/text.inc": {
+      "before": null,
+      "after": "02655c150f6e00a6a8a7b7e0f46d25bcd6db3eea234b522a10024942540096d8"
+    },
+    "data/maps/GoldenrodUnderground_Basement/map.json": {
+      "before": null,
+      "after": "b4418a014d74f333eedf7bf3c832a6f46ff19d712d31675c6aadab7126fba1d8"
+    },
+    "data/maps/GoldenrodUnderground_Basement/scripts.inc": {
+      "before": null,
+      "after": "af91553623091496f3513737be59e077c13e4997f28deb4a332cae4f80b8f25c"
+    },
+    "data/maps/GoldenrodUnderground_Basement/text.inc": {
+      "before": null,
+      "after": "2f05acf20431a7f92d16cdc32f2936e577b970a75319f990ec07f9ace4d50b76"
+    },
+    "data/maps/GoldenrodWarehouse/map.json": {
+      "before": null,
+      "after": "cc6faa59968455ae4b14e1d5893ef2baa5e9f0e9082f268f6f0f4078126d2785"
+    },
+    "data/maps/GoldenrodWarehouse/scripts.inc": {
+      "before": null,
+      "after": "03b5151ecfcbf353b84e7da47a8778aa11618722f17f841aa3ab39531032c2a7"
+    },
+    "data/maps/GoldenrodWarehouse/text.inc": {
+      "before": null,
+      "after": "821f33c1e8a059139eaa90ec597889667b1d801d55fbc3ed56c02d7ff1ea7dd0"
+    },
+    "include/constants/flags_johto_story.h": {
+      "before": "34c6f22c466bfefb0a0e85ae43f4e03f510f9617026ccb3249408cee5916e0d7",
+      "after": "3bb8724718457e9908fd9d55a85646472c9cc4d5e19fd11b340200842b88814d"
+    },
+    "include/constants/opponents_johto_radio_tower.h": {
+      "before": null,
+      "after": "f6df2eaf4cbaef32c868eb7d1a65283ab41bb7f67dd704d46f73c100d8d83bd7"
+    },
+    "include/constants/opponents.h": {
+      "before": "4804d2059d61a8a1e61de4a21184c5dcc67579d1340ff1d6f0412ce7adfe5a74",
+      "after": "b611a02131cfa50a271b8e9e53c10f92a42016f294cc812ab34f8c1feb494d1f"
+    },
+    "src/data/trainer_parties_johto_radio_tower.h": {
+      "before": null,
+      "after": "1364509422e5f1d872bb454bc999b9bbe23822d3c6762b723d24969be63366a5"
+    },
+    "src/data/trainers_johto_radio_tower.h": {
+      "before": null,
+      "after": "60e93681d89082848c8426a131bc7f0259c2542ce7acb4d15763281f2f251d72"
+    },
+    "src/data/trainers.h": {
+      "before": "ae1150825bd49241a9b8b01ce85e9a2fb77842451984a7814880c4012e75589d",
+      "after": "8772365fe5be7b864cc0dd95c2da1114e9accd4bd1f87784572b73d4de39d504"
+    },
+    "src/data/trainer_parties.h": {
+      "before": "c7d44b752e65eba9be6de36b3320f5fb454855a2c4fbd213ed1f9dab5263b05b",
+      "after": "17131d1a2cd666e714e1723fd5cba325bda7410ff43fad1adc388b4da6b098b1"
+    },
+    "data/event_scripts.s": {
+      "before": "a32ea36f5b96aa6f9947d2812736d3a7ab497e8b93007f98c2ee75f52999f83f",
+      "after": "a04e63d4aae181e1b3fc3583982f40c0a90fd4146889b27e12b584cd3e26dd5c"
+    },
+    "tools/johto/build_mahogany.py": {
+      "before": "fe667caf94807c5b3e0e22af071da8dcc6a8fa3e77224b4297eddef2c9eabc86",
+      "after": "4ca4635e09fe42fcef5d1cc56d02b6203b442483af65d3ba80fb61a44824d988"
+    },
+    "data/maps/MahoganyTown/text.inc": {
+      "before": "6efc6956fbc375ebc58fa4b11d75cc97ec56fcdee712b81971e99966783137ea",
+      "after": "fcf611eccc7b3d92abe0859b70f84985957e07b0c6fa0e186818710c6a702606"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_kanto_gate_qa.py", line 8, in <module>
+    exec(compile(_boot_text,str(_boot),'exec'),globals())
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 8, in <module>
+    exec(compile(_boot_text,str(_boot),'exec'),globals())
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 8, in <module>
+    base=Path(sys.argv.pop(1));text=base.read_text()
+                                    ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/pathlib.py", line 1060, in read_text
+    return f.read()
+           ^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xea in position 3: invalid continuation byte

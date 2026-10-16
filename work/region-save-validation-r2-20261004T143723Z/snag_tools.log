@@ -1,0 +1,8 @@
+ok   t01_throw_at_trainer_then_fight
+ok   t02_wild_master_ball
+ok   control_t02_wild_catch_is_not_snagged
+ok   t03_dex_and_snag_bit_edits
+ok   control_t03_dex_cleared_is_not_caught
+ok   t04_rocket_double_enemy_party
+ok   control_t04_single_fallback_is_not_double
+7/7 cases passed

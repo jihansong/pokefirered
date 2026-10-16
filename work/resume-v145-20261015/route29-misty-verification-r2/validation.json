@@ -1,0 +1,52 @@
+{
+  "status": "VERIFICATION_FAILED_ARTIFACTS_RETAINED",
+  "pass": false,
+  "prior_failed_QA_report": "/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-verification-r1/validation.json",
+  "prior_failed_QA_report_sha256": "c5b6e77af4ce6cf80c8c1b64b986e75e8f50e8a762b29d1602a97fdc54a4077d",
+  "QA_only_hash_namespace_fix": true,
+  "prior_failed_report": "/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-integration-r1/validation.json",
+  "prior_failed_report_sha256": "f71ec6f9f8b1f574b0902510849d2404e1cd47b26106b5334bd4c045c4b8dfdc",
+  "baseline_backup": "/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-integration-r1/backup",
+  "product_inputs_reapplied": false,
+  "ROM_rebuilt": false,
+  "build_commands_executed": [],
+  "build_warnings_retained": [
+    "make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.",
+    "make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.",
+    "/opt/devkitpro/devkitARM/bin/arm-none-eabi-ld: warning: ../../pokemonthyl.elf has a LOAD segment with RWX permissions"
+  ],
+  "warning_free": false,
+  "warnings_suppressed": false,
+  "native_tests": [],
+  "user_SAV_changed": false,
+  "automatic_rollback": false,
+  "files_deleted": 0,
+  "natural_story_completion_proved": false,
+  "full_Johto_Hoenn_completed": false,
+  "input_SAV_sha256": "0949ebf04557a76e2175602e967eefadb7ffb722f2746be8a40ddb1fd66550a9",
+  "compiled_ROM_sha256": "fdd021066ee7ce6fa775407c6be6699ba41583f34d92264e65020bd98950b0f4",
+  "compiled_ELF_sha256": "7c831da7d91eba1f4132e67a6ce804434003b2249e6abe0af5e19e69d622a53b",
+  "graphics_regeneration_command": {
+    "command": [
+      "/workspaces/pokefirered/tools/gbagfx/gbagfx",
+      "/workspaces/pokefirered/graphics/object_events/pics/people/misty_companion_season1.png",
+      "/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-verification-r2/misty-independent-regenerated.4bpp",
+      "-mwidth",
+      "2",
+      "-mheight",
+      "4"
+    ],
+    "returncode": 0,
+    "log": "/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-verification-r2/gbagfx-independent.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "build_and_ABI_pass": true,
+  "baseline_RWX_already_present": true,
+  "unchanged_LOAD_headers": true,
+  "error": "AssertionError(('Verification command failed; retained artifacts', {'command': ['/usr/bin/python3', '/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-verification-resume-r2/native_misty_walk_qa_r6.py', '--root', '/workspaces/pokefirered', '--rom', '/workspaces/pokefirered/pokemonthyl.gba', '--elf', '/workspaces/pokefirered/pokemonthyl.elf', '--sav', '/workspaces/pokefirered/saves/pokemonthyl_v1.45.sav', '--expect-rom-sha', 'fdd021066ee7ce6fa775407c6be6699ba41583f34d92264e65020bd98950b0f4', '--expect-elf-sha', '7c831da7d91eba1f4132e67a6ce804434003b2249e6abe0af5e19e69d622a53b', '--expect-sav-sha', '0949ebf04557a76e2175602e967eefadb7ffb722f2746be8a40ddb1fd66550a9', '--verifier', '/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-integrated-qa-r1/verify_build.py', '--guard-manifest', '/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-integrated-qa-r1/payload-manifest.json', '--out', '/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-verification-r2/native-Misty-eight-cases'], 'returncode': 1, 'log': '/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-verification-r2/native-Misty-eight-cases.log', 'log_sha256': '509e3d6f1b85c3ec5699414e1c92fa0f911068bb28ab6d9d211d1f476a6f8e04'}))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-verification-resume-r2/resume_verify_route29_misty_r2.py\", line 248, in <module>\n    report['native_tests'].append(run([\n                                  ^^^^^\n  File \"/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-verification-resume-r2/resume_verify_route29_misty_r2.py\", line 155, in run\n    assert process.returncode == 0, ('Verification command failed; retained artifacts', row)\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('Verification command failed; retained artifacts', {'command': ['/usr/bin/python3', '/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-verification-resume-r2/native_misty_walk_qa_r6.py', '--root', '/workspaces/pokefirered', '--rom', '/workspaces/pokefirered/pokemonthyl.gba', '--elf', '/workspaces/pokefirered/pokemonthyl.elf', '--sav', '/workspaces/pokefirered/saves/pokemonthyl_v1.45.sav', '--expect-rom-sha', 'fdd021066ee7ce6fa775407c6be6699ba41583f34d92264e65020bd98950b0f4', '--expect-elf-sha', '7c831da7d91eba1f4132e67a6ce804434003b2249e6abe0af5e19e69d622a53b', '--expect-sav-sha', '0949ebf04557a76e2175602e967eefadb7ffb722f2746be8a40ddb1fd66550a9', '--verifier', '/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-integrated-qa-r1/verify_build.py', '--guard-manifest', '/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-integrated-qa-r1/payload-manifest.json', '--out', '/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-verification-r2/native-Misty-eight-cases'], 'returncode': 1, 'log': '/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-verification-r2/native-Misty-eight-cases.log', 'log_sha256': '509e3d6f1b85c3ec5699414e1c92fa0f911068bb28ab6d9d211d1f476a6f8e04'})\n",
+  "protected_files_changed": [],
+  "all_protected_files_unchanged": true,
+  "prior_failed_artifacts_and_backup_unchanged": true,
+  "prior_failed_QA_artifacts_unchanged": true
+}

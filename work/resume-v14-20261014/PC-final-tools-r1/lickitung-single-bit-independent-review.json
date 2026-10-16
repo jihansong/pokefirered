@@ -1,0 +1,229 @@
+{
+  "status": "INDEPENDENT_SINGLE_PRIMARY_BIT_MODEL_REVIEW_PASS",
+  "model": "One original EXP-bit error followed by the game's checksum-failure BadEgg/egg markers",
+  "bits_exhaustively_examined": 384,
+  "checksum_matching_candidates": 6,
+  "plausible_candidates_under_model_and_ROM_bounds": 1,
+  "original_stored_checksum": 30838,
+  "original_checksum_never_rewritten": true,
+  "recovered_record_sha256": "eec0fe0716f3a24618ef67edbfc2ab5d7fa7d0addf22260021d977645e3684e0",
+  "species": 108,
+  "EXP": 59319,
+  "level": 39,
+  "met_level": 39,
+  "moves": [
+    23,
+    282,
+    48,
+    35
+  ],
+  "PP": [
+    20,
+    20,
+    20,
+    20
+  ],
+  "exact_changes": [
+    {
+      "offset": 19,
+      "before": 39,
+      "after": 34
+    },
+    {
+      "offset": 51,
+      "before": 233,
+      "after": 169
+    },
+    {
+      "offset": 63,
+      "before": 173,
+      "after": 169
+    }
+  ],
+  "unchanged": [
+    "stored_checksum",
+    "PID",
+    "OT_ID",
+    "nickname",
+    "OT_name",
+    "language",
+    "snagged_marker",
+    "IVs",
+    "EVs",
+    "moves",
+    "PP",
+    "held_item",
+    "met_data",
+    "ribbons",
+    "ability"
+  ],
+  "primary_error_bit": "experience bit26 (raw record offset63 bit2)",
+  "forward_model_reproduces_exact_damaged_original": true,
+  "authenticated_healthy_original_or_donor": false,
+  "proof_of_actual_historical_corruption_path": false,
+  "limits": "Unique only within the specified one-primary-bit model; multi-bit corruption and checksum collisions remain possible. A matching checksum and native loading do not authenticate the historical original.",
+  "input_writes": 0,
+  "SAV_or_ROM_changes": 0,
+  "matching_candidates": [
+    {
+      "raw_offset": 45,
+      "bit": 2,
+      "species": 108,
+      "held": 0,
+      "EXP": 67168183,
+      "max_EXP": 1000000,
+      "growth_rate": 0,
+      "level": 100,
+      "met_level": 39,
+      "moves": [
+        23,
+        282,
+        48,
+        35
+      ],
+      "PP": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "violations": [
+        "EXP_above_level100_limit"
+      ],
+      "record_sha256": "ffd4d90fd4e73270c63e42611aa5d09dd3ac388817825d82972b4b3647635c19"
+    },
+    {
+      "raw_offset": 61,
+      "bit": 2,
+      "species": 108,
+      "held": 0,
+      "EXP": 67167159,
+      "max_EXP": 1000000,
+      "growth_rate": 0,
+      "level": 100,
+      "met_level": 39,
+      "moves": [
+        23,
+        282,
+        48,
+        35
+      ],
+      "PP": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "violations": [
+        "EXP_above_level100_limit"
+      ],
+      "record_sha256": "efe05924ec8ad44f50544d4ea733f3209429a546f6c4d2338353e412204882a8"
+    },
+    {
+      "raw_offset": 63,
+      "bit": 2,
+      "species": 108,
+      "held": 0,
+      "EXP": 59319,
+      "max_EXP": 1000000,
+      "growth_rate": 0,
+      "level": 39,
+      "met_level": 39,
+      "moves": [
+        23,
+        282,
+        48,
+        35
+      ],
+      "PP": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "violations": [],
+      "record_sha256": "eec0fe0716f3a24618ef67edbfc2ab5d7fa7d0addf22260021d977645e3684e0"
+    },
+    {
+      "raw_offset": 65,
+      "bit": 2,
+      "species": 108,
+      "held": 0,
+      "EXP": 67168183,
+      "max_EXP": 1000000,
+      "growth_rate": 0,
+      "level": 100,
+      "met_level": 39,
+      "moves": [
+        23,
+        282,
+        48,
+        35
+      ],
+      "PP": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "violations": [
+        "EXP_above_level100_limit"
+      ],
+      "record_sha256": "cf85cc7ec0d6125b8b81fba07d3fbbd0541ae71d4ca48d2a528470ed6dc4f1cf"
+    },
+    {
+      "raw_offset": 77,
+      "bit": 2,
+      "species": 108,
+      "held": 0,
+      "EXP": 67168183,
+      "max_EXP": 1000000,
+      "growth_rate": 0,
+      "level": 100,
+      "met_level": 39,
+      "moves": [
+        23,
+        282,
+        48,
+        35
+      ],
+      "PP": [
+        20,
+        16,
+        20,
+        20
+      ],
+      "violations": [
+        "EXP_above_level100_limit"
+      ],
+      "record_sha256": "39a785b147c3a6664b07057f7e6cff3dc8474b047f02f8001ee86132da10f07d"
+    },
+    {
+      "raw_offset": 79,
+      "bit": 2,
+      "species": 108,
+      "held": 0,
+      "EXP": 67168183,
+      "max_EXP": 1000000,
+      "growth_rate": 0,
+      "level": 100,
+      "met_level": 39,
+      "moves": [
+        23,
+        282,
+        48,
+        35
+      ],
+      "PP": [
+        20,
+        20,
+        20,
+        16
+      ],
+      "violations": [
+        "EXP_above_level100_limit"
+      ],
+      "record_sha256": "c61b4c69229d8fa3ff5468855622e5de5d3cd7daf6b56fd74bc7468b649929d4"
+    }
+  ]
+}

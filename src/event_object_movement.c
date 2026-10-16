@@ -1,4 +1,6 @@
 #include "global.h"
+#include "pokemon_icon.h"
+#include "graphics.h"
 #include "follower_pikachu.h"
 #include "gflib.h"
 #include "event_data.h"
@@ -228,6 +230,10 @@ void (*const gCameraObjectFuncs[])(struct Sprite *) = {
     CameraObject_1,
     CameraObject_2,
 };
+
+#define OBJ_EVENT_PAL_TAG_JOHTO_FARFETCHD 0x1143
+
+#define OBJ_EVENT_PAL_TAG_JOHTO_SUDOWOODO 0x1144
 
 #include "data/object_events/object_event_graphics.h"
 
@@ -501,6 +507,7 @@ static const u8 gInitialMovementTypeFacingDirections[MOVEMENT_TYPES_COUNT] = {
 #define OBJ_EVENT_PAL_TAG_OLD_TIMER                   0x1140
 #define OBJ_EVENT_PAL_TAG_N                           0x1141
 #define OBJ_EVENT_PAL_TAG_SUMMIT_TRAINER              0x1142
+#define OBJ_EVENT_PAL_TAG_PROF_ELM_HNS                   0x1145
 #define OBJ_EVENT_PAL_TAG_NONE                        0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -512,6 +519,9 @@ static const u8 gInitialMovementTypeFacingDirections[MOVEMENT_TYPES_COUNT] = {
 #include "data/object_events/object_event_graphics_info.h"
 
 static const struct SpritePalette sObjectEventSpritePalettes[] = {
+    {gObjectEventPal_ProfElmHns, OBJ_EVENT_PAL_TAG_PROF_ELM_HNS},
+    {gMonIconPalettes[1], OBJ_EVENT_PAL_TAG_JOHTO_SUDOWOODO},
+    {gMonIconPalettes[1], OBJ_EVENT_PAL_TAG_JOHTO_FARFETCHD},
     {gObjectEventPal_NpcBlue,                 OBJ_EVENT_PAL_TAG_NPC_BLUE},
     {gObjectEventPal_NpcPink,                 OBJ_EVENT_PAL_TAG_NPC_PINK},
     {gObjectEventPal_NpcGreen,                OBJ_EVENT_PAL_TAG_NPC_GREEN},
@@ -8512,6 +8522,14 @@ static const u8 sElevationToSubspriteTableNum[] = {
     1, 1, 1, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 0, 0, 1,
 };
 
+// The lounge window frame must cover the outdoor plane, but not people
+// standing indoors. Include the adjacent tiles for sprites crossing the edge.
+static bool8 IsAirportWindowForegroundPosition(s16 x, s16 y)
+{
+    return x >= MAP_OFFSET + 26 && x <= MAP_OFFSET + 31
+        && y >= MAP_OFFSET + 2 && y <= MAP_OFFSET + 3;
+}
+
 static void UpdateObjectEventElevationAndPriority(struct ObjectEvent *objEvent, struct Sprite *sprite)
 {
     if (objEvent->fixedPriority)
@@ -8521,6 +8539,18 @@ static void UpdateObjectEventElevationAndPriority(struct ObjectEvent *objEvent, 
 
     sprite->subspriteTableNum = sElevationToSubspriteTableNum[objEvent->previousElevation];
     sprite->oam.priority = sElevationToPriority[objEvent->previousElevation];
+
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_KANTO_AIRPORT)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_KANTO_AIRPORT)
+     && objEvent->graphicsId != OBJ_EVENT_GFX_AIRPLANE_SMALL
+     && (IsAirportWindowForegroundPosition(objEvent->currentCoords.x, objEvent->currentCoords.y)
+      || IsAirportWindowForegroundPosition(objEvent->previousCoords.x, objEvent->previousCoords.y)))
+    {
+        // Lift both the main OAM and body subsprites without changing collision
+        // elevation. Default priorities are restored on leaving the window area.
+        sprite->subspriteTableNum = sElevationToSubspriteTableNum[4];
+        sprite->oam.priority = sElevationToPriority[4];
+    }
 }
 
 static void InitObjectPriorityByElevation(struct Sprite *sprite, u8 elevation)

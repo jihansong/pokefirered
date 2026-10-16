@@ -1,0 +1,1 @@
+{"pass": false, "cases": 0, "error": "AssertionError(('Wrong direction or missing foot pose', 'RIGHT-walk', {0, 8, 2, 7}, {8, 2, 7}))"}

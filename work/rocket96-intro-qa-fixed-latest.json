@@ -1,0 +1,8 @@
+{
+  "pid": 79054,
+  "qa_after_sha256": "f63f94ab5afd441f8ac784be98b6f0ec78ba223023659011edd213a324e3988e",
+  "output": "/workspaces/pokefirered/outputs/rocket96-game-intro-qa-fixed-20261004T125444Z",
+  "log": "/workspaces/pokefirered/work/rocket96-intro-qa-fixed-20261004T125444Z.log",
+  "qa_only_change": true,
+  "rom_rebuilt": false
+}

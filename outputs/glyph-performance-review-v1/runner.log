@@ -1,0 +1,4 @@
+glyph-bytes {'exit': 1, 'seconds': 7.45}
+native-profile {'exit': 0, 'seconds': 12.95}
+scroll {'exit': 0, 'seconds': 20.57}
+dex-ui {'exit': 0, 'seconds': 36.81}

@@ -16,7 +16,12 @@ PetalburgCity_Gym_OnFrame::
 PetalburgCity_Gym_EventScript_Norman::
 	lock
 	faceplayer
+	checktrainerflag TRAINER_HOENN_NORMAN_1
+	goto_if TRUE, PetalburgCity_Gym_EventScript_DefeatedNorman
 	goto_if_eq VAR_HOENN_SCENE_WALLY, 0, PetalburgCity_Gym_EventScript_NormanFirst
+	goto_if_eq VAR_HOENN_SCENE_WALLY, 1, PetalburgCity_Gym_EventScript_NormanWallyWaiting
+	specialvar VAR_RESULT, CountHoennBadges
+	goto_if_ge VAR_RESULT, 4, PetalburgCity_Gym_EventScript_NormanBattle
 	msgbox PetalburgCity_Gym_Text_NormanAfter
 	call PetalburgCity_Gym_EventScript_NormanBadges
 	release
@@ -24,6 +29,7 @@ PetalburgCity_Gym_EventScript_Norman::
 
 PetalburgCity_Gym_EventScript_NormanBadges::
 	specialvar VAR_RESULT, CountHoennBadges
+	goto_if_ge VAR_RESULT, 4, PetalburgCity_Gym_EventScript_NormanBadgesReady
 	switch VAR_RESULT
 	case 0, PetalburgCity_Gym_EventScript_NormanBadges0
 	case 1, PetalburgCity_Gym_EventScript_NormanBadges1
@@ -114,3 +120,42 @@ PetalburgCity_Gym_Movement_WallyEnters:
 PetalburgCity_Gym_Movement_WallyLeaves:
 	walk_down
 	step_end
+
+PetalburgCity_Gym_EventScript_NormanWallyWaiting::
+	msgbox PetalburgCity_Gym_Text_NormanWallyWaiting
+	release
+	end
+
+PetalburgCity_Gym_EventScript_NormanBadgesReady::
+	msgbox PetalburgCity_Gym_Text_NormanBadgesReady
+	return
+
+PetalburgCity_Gym_EventScript_NormanBattle::
+	trainerbattle_single TRAINER_HOENN_NORMAN_1, PetalburgCity_Gym_Text_NormanBattleIntro, PetalburgCity_Gym_Text_NormanDefeat, PetalburgCity_Gym_EventScript_DefeatedNorman, NO_MUSIC
+	goto PetalburgCity_Gym_EventScript_DefeatedNorman
+	end
+
+PetalburgCity_Gym_EventScript_DefeatedNorman::
+	goto_if_set FLAG_HOENN_BADGE05_GET, PetalburgCity_Gym_EventScript_NormanCheckTM42
+	setflag FLAG_HOENN_BADGE05_GET
+	msgbox PetalburgCity_Gym_Text_ReceivedBalanceBadge
+PetalburgCity_Gym_EventScript_NormanCheckTM42::
+	goto_if_set FLAG_HOENN_GOT_TM42_FROM_NORMAN, PetalburgCity_Gym_EventScript_NormanPostBattle
+	msgbox PetalburgCity_Gym_Text_NormanTakeTM42
+	additem ITEM_TM42
+	goto_if_eq VAR_RESULT, FALSE, PetalburgCity_Gym_EventScript_NormanNoRoom
+	setflag FLAG_HOENN_GOT_TM42_FROM_NORMAN
+	msgreceiveditem PetalburgCity_Gym_Text_ReceivedTM42, ITEM_TM42
+	msgbox PetalburgCity_Gym_Text_NormanExplainTM42
+	goto PetalburgCity_Gym_EventScript_NormanPostBattle
+	end
+
+PetalburgCity_Gym_EventScript_NormanNoRoom::
+	msgbox PetalburgCity_Gym_Text_NormanNoRoom
+	release
+	end
+
+PetalburgCity_Gym_EventScript_NormanPostBattle::
+	msgbox PetalburgCity_Gym_Text_NormanPostBattle
+	release
+	end

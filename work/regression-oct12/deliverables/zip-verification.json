@@ -1,0 +1,11 @@
+{
+  "zip_sha256": "a5fc1fba9a3a1d1c35766c883d6a6f785ebaee7a637d2a9441c505453722a46f",
+  "contents": [
+    "pokemonthyl.gba",
+    "READ-ME.txt",
+    "provenance.json"
+  ],
+  "crc_pass": true,
+  "rom_exact_current_main": true,
+  "contains_player_save": false
+}

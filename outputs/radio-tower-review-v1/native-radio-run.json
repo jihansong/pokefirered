@@ -1,0 +1,42 @@
+{
+  "rom_sha256": "f3b4e13df998d1832544218a88cd0c4845a9b7ebd184628e00c1e9595434204c",
+  "status": "FINISHED",
+  "cases": [
+    {
+      "name": "battles",
+      "exit": 0,
+      "pass": true,
+      "cases": 12,
+      "seconds": 157.67,
+      "result": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-battles/result.json"
+    },
+    {
+      "name": "events",
+      "exit": 0,
+      "pass": true,
+      "cases": 35,
+      "seconds": 203.05,
+      "result": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-events/result.json"
+    },
+    {
+      "name": "maps",
+      "exit": 0,
+      "pass": true,
+      "cases": 16,
+      "seconds": 50.04,
+      "result": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-maps/result.json"
+    },
+    {
+      "name": "chain",
+      "exit": 0,
+      "pass": true,
+      "cases": 21,
+      "seconds": 121.11,
+      "result": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/result.json"
+    }
+  ],
+  "main_replaced": false,
+  "full_regions_complete": false,
+  "all_pass": true,
+  "original_files_unchanged": true
+}

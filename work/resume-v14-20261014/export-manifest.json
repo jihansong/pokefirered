@@ -1,0 +1,394 @@
+{
+  "data/maps/KantoAirport/scripts.inc": {
+    "size": 4052,
+    "sha256": "e9972fd44d44e3c516c6e3f5faea9ade48d9f31f64ca458182e8aabebd197ccd"
+  },
+  "data/maps/LittlerootTown/scripts.inc": {
+    "size": 363,
+    "sha256": "7660a91d8ef3cf911e292dcce8ab56ef7f9890346d2d35867115ea492a0fe7fc"
+  },
+  "data/maps/LittlerootTown_BrendansHouse_1F/scripts.inc": {
+    "size": 1280,
+    "sha256": "135df14ea18ee6c924b960a45e78dfce0861d01a838320f8fb17b7d05d2a2643"
+  },
+  "data/maps/LittlerootTown_BrendansHouse_2F/scripts.inc": {
+    "size": 1101,
+    "sha256": "14c19371386f4cf6c0dddfa47b5a4a07faa96ce5b7300fe2f90bb0fdd28bfd08"
+  },
+  "data/maps/LittlerootTown_MaysHouse_1F/scripts.inc": {
+    "size": 1029,
+    "sha256": "bf04a378fb49310d91da7190a056d7631155e25f8350c98fa324fbaa825e24e7"
+  },
+  "data/maps/LittlerootTown_MaysHouse_2F/scripts.inc": {
+    "size": 551,
+    "sha256": "9bc175ec9f52904958fd1c55da6f3501823de865e3b766fe7794e204a28196a5"
+  },
+  "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc": {
+    "size": 14087,
+    "sha256": "662f47b443c3b59a568990bd6d67828942c1e72e47f48b908025707d1769132b"
+  },
+  "data/maps/NewBarkTown/scripts.inc": {
+    "size": 177,
+    "sha256": "5692df75aaa22b8b10d0c0a5f10c0a065367e9309a2ffd2349d1a4ccccac9c91"
+  },
+  "data/maps/NewBarkTown_ElmsLab/scripts.inc": {
+    "size": 3848,
+    "sha256": "e539a5118c57020f82580089d16e9091e73d5b885a0ec0cfe6e1211558fb1e4a"
+  },
+  "data/maps/NewBarkTown_NeighborsHouse/scripts.inc": {
+    "size": 155,
+    "sha256": "62c4fc2c61132d284eeb398024292d144ed3396da63dfbc1aae3265a227b6d4c"
+  },
+  "data/maps/NewBarkTown_RestHouse/scripts.inc": {
+    "size": 474,
+    "sha256": "9af09a1401437f80fd6e0cfc2426c529c6a8d7a886de0f40caee8a7139c286ba"
+  },
+  "include/constants/flags.h": {
+    "size": 98003,
+    "sha256": "6645d8d43ad378b3f6707c8c3af2cc7da1f5acca7cfb48917b94631ec18f5d29"
+  },
+  "include/constants/flags_hoenn_story.h": {
+    "size": 11442,
+    "sha256": "493679980358d6b5a5f98d1cd7283ec211f20240e435b91711baa8c1a0debb1f"
+  },
+  "include/constants/flags_johto_story.h": {
+    "size": 5581,
+    "sha256": "1d2066e2392afb64ba83b1fe1601e1f66123ea852064cfb06086a8500ca3c9bf"
+  },
+  "include/constants/items.h": {
+    "size": 12495,
+    "sha256": "d2348029aff9b459dce1ed19a71895c9922b5e946a09a3a6da2013c64dc71da8"
+  },
+  "include/constants/pokedex.h": {
+    "size": 21092,
+    "sha256": "aac527819623140d7f44ad99b72654bab59ca5679a80cca33361828cc7e7d0c6"
+  },
+  "include/constants/species.h": {
+    "size": 13077,
+    "sha256": "c6d5e22f66c2308261d6d9a9c3b72d4638ffa622cb1395dbabe69a588aa65dc4"
+  },
+  "include/constants/vars.h": {
+    "size": 18806,
+    "sha256": "c3c27b43a9db279da766aa9d94af0b28aa8c42a49a87fabca1b4a1ec20ade947"
+  },
+  "include/pokedex.h": {
+    "size": 3581,
+    "sha256": "a7ea835c8327b5f17c5a766090829e49e694e5439b796634d1e1746867b29e8a"
+  },
+  "include/pokedex_screen.h": {
+    "size": 976,
+    "sha256": "62151ddb84111da7ae854403335fe7f2ddc7dce45e947a445713f6d70447d9d4"
+  },
+  "outputs/save-pp15-20261013/learning-validation.json": {
+    "size": 767,
+    "sha256": "de939a48d8db3a86efcf72903a36b49b6f50dfb766a5c733d8279b26047384b6"
+  },
+  "outputs/save-pp15-20261013/manifest.json": {
+    "size": 1056,
+    "sha256": "3dd3a2e68d739620b5c426947d0fdef2b55708085db9f7850eed8e90d27e6835"
+  },
+  "outputs/save-pp15-20261013/native-validation.json": {
+    "size": 64420,
+    "sha256": "c0605229003ea2275a8b6bf981b1c45213c46cd9b90c45b028fd5ba4f9314db4"
+  },
+  "outputs/save-pp15-20261013/save-validation.json": {
+    "size": 4253,
+    "sha256": "1cf763ebed96d10b8c918304ef01b5b50725edd25ecdcdb5ef18352e7cc34517"
+  },
+  "outputs/save-v125-items99-iv2x-20261013/edit-manifest.json": {
+    "size": 7083,
+    "sha256": "48cf6dc11194e7ca9a3562e3695e7cf4a0cd4721e41243159d36cbc8aefc0f50"
+  },
+  "outputs/save-v125-items99-iv2x-20261013/independent-raw-audit.json": {
+    "size": 1191,
+    "sha256": "edc8803d5aaa182f21a3d3c7740211fe2e4b5ba60a22cc5f840916ab669dc63d"
+  },
+  "outputs/save-v125-items99-iv2x-20261013/native-validation.json": {
+    "size": 2553,
+    "sha256": "5979dd16011a4b4aae7b55e68585b7caa6c1e6a79b3b951689c391dc3d9505bf"
+  },
+  "saves/backup-codex-v1_1-recovery-sort-20261002T002244.307175Z/pokemonthyl_v1.1.original.sav": {
+    "size": 131072,
+    "sha256": "417452a3f151dbe0eeaca4d41780739f8137eafd7ff14df4e7eed1685b9b699f"
+  },
+  "saves/backup-v0.6.0-era/hoenn.sav": {
+    "size": 131072,
+    "sha256": "d1ed8d987d4e451efb00a6cda2ba770e6472f36a89595a04a3550156876806ad"
+  },
+  "saves/backup-v0.6.0-era/pokemonthyl_v3.gba.sav": {
+    "size": 131072,
+    "sha256": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84"
+  },
+  "saves/backup-v0.6.0-era/v0.1.0.sav": {
+    "size": 131072,
+    "sha256": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424"
+  },
+  "saves/backup-v0.6.0-era/v0.2.1.sav": {
+    "size": 131072,
+    "sha256": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d"
+  },
+  "saves/backup-v0.6.0-era/v0.5.1.sav": {
+    "size": 131072,
+    "sha256": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc"
+  },
+  "saves/hoenn.sav": {
+    "size": 131072,
+    "sha256": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4"
+  },
+  "saves/pokemonthyl_hoenn_QAed.sav": {
+    "size": 131072,
+    "sha256": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91"
+  },
+  "saves/pokemonthyl_v1.1.sav": {
+    "size": 131072,
+    "sha256": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37"
+  },
+  "saves/pokemonthyl_v1.2.sav": {
+    "size": 131072,
+    "sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85"
+  },
+  "saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav": {
+    "size": 131072,
+    "sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604"
+  },
+  "saves/pokemonthyl_v1.25-items99-iv2x.sav": {
+    "size": 131072,
+    "sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5"
+  },
+  "saves/pokemonthyl_v1.25.sav": {
+    "size": 131072,
+    "sha256": "53d923bf4668373724b19c9d3c8526b002701606ab7ac082d657ee990e23d7b3"
+  },
+  "saves/pokemonthyl_v1.4.sav": {
+    "size": 131072,
+    "sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4"
+  },
+  "saves/pokemonthyl_v3.gba.sav": {
+    "size": 131072,
+    "sha256": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84"
+  },
+  "saves/v0.1.0.sav": {
+    "size": 131072,
+    "sha256": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424"
+  },
+  "saves/v0.2.1.sav": {
+    "size": 131072,
+    "sha256": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d"
+  },
+  "saves/v0.5.1.sav": {
+    "size": 131072,
+    "sha256": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc"
+  },
+  "src/data/pokemon/johto_dex_order.h": {
+    "size": 1558,
+    "sha256": "069b9a185d7b9af33b2a7c4270a7942ad1367359252eb9e94be41a84ce00d0d6"
+  },
+  "src/data/pokemon/pokedex_orders.h": {
+    "size": 40154,
+    "sha256": "2a6beb7e624f41ec1abf4813d630bdc385af89ecf051f2622f870001cac1aa38"
+  },
+  "src/event_object_movement.c": {
+    "size": 334864,
+    "sha256": "241a15df4e9977c0fb3a8e84507623476470f18de0a1862a8457bb96fbf6a420"
+  },
+  "src/load_save.c": {
+    "size": 8253,
+    "sha256": "b6a07136288f9330cf2b56f3a101fb62fd99fb23d76c9ab8de81e8cba458c012"
+  },
+  "src/pokedex.c": {
+    "size": 4458,
+    "sha256": "aac08b88d35a69cab82df72d6f759cf3d7f4c1620935657f5450ed7f197ba3e4"
+  },
+  "src/pokedex_area_markers.c": {
+    "size": 19789,
+    "sha256": "af38f08aec2f388b6833d69c49ab10248dee3da4c17a33b7ae9fa27e97110aca"
+  },
+  "src/pokedex_screen.c": {
+    "size": 146283,
+    "sha256": "d7cd34bed4bdee8a2e76950636a093f726eb79268b2aed6b96bf31139c1ea4c7"
+  },
+  "src/pokemon.c": {
+    "size": 230320,
+    "sha256": "373b692e42d952b94b44f0ceda81d56dc75e1abb6af9d60ca5ec47d927b2057c"
+  },
+  "src/pokemon_storage_system.c": {
+    "size": 4838,
+    "sha256": "ebb9e603740f0268e3662e21a18aa30acd3b43f96d6d20abd5d6bd4bb874ff4a"
+  },
+  "src/save.c": {
+    "size": 28672,
+    "sha256": "24f0b70d72cc83c50f7b2d6d73cb211c9b1272ab5fa40dc1d553ad48d1f4511c"
+  },
+  "work/animation-recreation-status.json": {
+    "size": 91774,
+    "sha256": "1c0dfe788c920fc00b428d2328e02913bc2788f5259088f291bdfe3bcd8fd9cf"
+  },
+  "work/region-save-validation-r2-20261004T143723Z/native_continue.json": {
+    "size": 27929,
+    "sha256": "156c374d8cc5ad4977ca37aa7b84d00c9a05594baa136f085f257f8a8b90cbb3"
+  },
+  "work/region-save-validation-r2-20261004T143723Z/result.json": {
+    "size": 2958,
+    "sha256": "68e512a0496dee43bc542bcec00823958787862bf2cdb1b1914032049374709d"
+  },
+  "work/region-save-validation-r2-20261004T143723Z/winona-cases.json": {
+    "size": 2378,
+    "sha256": "febaa7ab414687c1995680529c4b5e9403ca5b7da0176e4f2923cc03ca45fc60"
+  },
+  "work/save-edit-20261013/edit-manifest.json": {
+    "size": 5493,
+    "sha256": "66a7418fffb5ed0d8c5ae887dfdbfaceb14ff78165e2f7a7defb44906c06bf29"
+  },
+  "work/save-edit-v125-20261013/delivery-receipt.json": {
+    "size": 476,
+    "sha256": "fd87094903235cecf52414a5395982229362eea7efb2ff085ce676580d946aa7"
+  },
+  "work/save-edit-v125-20261013/edit-manifest.json": {
+    "size": 7083,
+    "sha256": "48cf6dc11194e7ca9a3562e3695e7cf4a0cd4721e41243159d36cbc8aefc0f50"
+  },
+  "work/save-edit-v125-20261013/independent-raw-audit.json": {
+    "size": 1191,
+    "sha256": "edc8803d5aaa182f21a3d3c7740211fe2e4b5ba60a22cc5f840916ab669dc63d"
+  },
+  "work/save-edit-v125-20261013/native/validation.json": {
+    "size": 2553,
+    "sha256": "5979dd16011a4b4aae7b55e68585b7caa6c1e6a79b3b951689c391dc3d9505bf"
+  },
+  "work/save-edit-v125-20261013/status-before-edit.json": {
+    "size": 70996,
+    "sha256": "340d927ed3e9d8a0cf221ac29ea92cea834b4d4a6bbdec9ec7ad92418ac77e51"
+  },
+  "work/save-inventory-pp-20261013/before-final-promotion/animation-recreation-status.json": {
+    "size": 77155,
+    "sha256": "db7f537bf018d077fac8861dddd8362c469935f4e1150fdd3c03a10aac07ce6e"
+  },
+  "work/save-inventory-pp-20261013/build-launch.json": {
+    "size": 14,
+    "sha256": "d13a14b8093830e5b42f737c9977a43be8357328e09803ba6cc4a6c2889fce26"
+  },
+  "work/save-inventory-pp-20261013/build-result-v2.json": {
+    "size": 6374,
+    "sha256": "6072ec99222e06976b0216d22e45ce45288701fcbc8113f839bd0a5756647350"
+  },
+  "work/save-inventory-pp-20261013/build-result-v3.json": {
+    "size": 1560,
+    "sha256": "838ca175c852e80ec1e9643ba21752ebb0f494a7182d9cd27ed7428ccf76bd0d"
+  },
+  "work/save-inventory-pp-20261013/build-result.json": {
+    "size": 6329,
+    "sha256": "ac46f4a30257ef36b788e7c7accc76c25ac277abbb09c4810df63e402084e864"
+  },
+  "work/save-inventory-pp-20261013/delivery-result.json": {
+    "size": 1260,
+    "sha256": "7748378adc3a11bd04da19a28ef57e11b90456bb5c14f4e8d62e8eaa27179d06"
+  },
+  "work/save-inventory-pp-20261013/facts.json": {
+    "size": 2742,
+    "sha256": "185620df0910137863da32e316da4bf589a22e2f536ec3d08edfee42cbe2073b"
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/01-pika-summary.json": {
+    "size": 159,
+    "sha256": "daf3c81dc1dd46143a67f16fa915b270c107ee204aa78d77b7531a33358e3be4"
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/02-bag-keyitems.json": {
+    "size": 159,
+    "sha256": "38bb5014059c8759d1df6e1cfc867ea2bdbb2b706c01a3dea05e4650490ac063"
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/04-bag-open.json": {
+    "size": 159,
+    "sha256": "f5b253f26a4af2f11e12db67d7a27aab207e3394221f9e85c9990c2d5c359f44"
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/05-start-menu.json": {
+    "size": 159,
+    "sha256": "f5b253f26a4af2f11e12db67d7a27aab207e3394221f9e85c9990c2d5c359f44"
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/06-bag.json": {
+    "size": 159,
+    "sha256": "590fce76ac89ba5554f90a24677efb7246a988d0ecccf7a8388b5cc9c5daf24d"
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/07-tm-case.json": {
+    "size": 159,
+    "sha256": "1a208c2e25bf6921db3968d48dc16e93e72431e5423c32bae4bbb05eba3caa6e"
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/08-tm-selection.json": {
+    "size": 159,
+    "sha256": "1a208c2e25bf6921db3968d48dc16e93e72431e5423c32bae4bbb05eba3caa6e"
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/09-tm17.json": {
+    "size": 159,
+    "sha256": "1a208c2e25bf6921db3968d48dc16e93e72431e5423c32bae4bbb05eba3caa6e"
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/10-protect-selection.json": {
+    "size": 159,
+    "sha256": "1a208c2e25bf6921db3968d48dc16e93e72431e5423c32bae4bbb05eba3caa6e"
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/11-teach-party.json": {
+    "size": 159,
+    "sha256": "38bb5014059c8759d1df6e1cfc867ea2bdbb2b706c01a3dea05e4650490ac063"
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/12-learn-dialog.json": {
+    "size": 159,
+    "sha256": "38bb5014059c8759d1df6e1cfc867ea2bdbb2b706c01a3dea05e4650490ac063"
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/13-forget-selection.json": {
+    "size": 159,
+    "sha256": "38bb5014059c8759d1df6e1cfc867ea2bdbb2b706c01a3dea05e4650490ac063"
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/14-learn-summary.json": {
+    "size": 159,
+    "sha256": "daf3c81dc1dd46143a67f16fa915b270c107ee204aa78d77b7531a33358e3be4"
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/15-learned.json": {
+    "size": 159,
+    "sha256": "d53f63ed243edbcebc456a4a4b4d547d6faf8b7e9e276ebd83be9fd81d837637"
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/16-protect-learned.json": {
+    "size": 159,
+    "sha256": "d53f63ed243edbcebc456a4a4b4d547d6faf8b7e9e276ebd83be9fd81d837637"
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/17-teach-commit.json": {
+    "size": 159,
+    "sha256": "e38404987371429195018de664f7241fb512e18211d6deaf164782d1962fd20b"
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/18-protect-summary.json": {
+    "size": 159,
+    "sha256": "a380347abf95d2cfe45d67d6f118dbd85e1f14e3e66cc2fcdaca731a5d6213d0"
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/validation.json": {
+    "size": 767,
+    "sha256": "de939a48d8db3a86efcf72903a36b49b6f50dfb766a5c733d8279b26047384b6"
+  },
+  "work/save-inventory-pp-20261013/native-v1/validation.json": {
+    "size": 64420,
+    "sha256": "c0605229003ea2275a8b6bf981b1c45213c46cd9b90c45b028fd5ba4f9314db4"
+  },
+  "work/save-inventory-pp-20261013/preflight.json": {
+    "size": 73232,
+    "sha256": "4f12ab90afcd36396784f2dd3bfea73ee05e5e9d2c9befc287b584350079670a"
+  },
+  "work/save-inventory-pp-20261013/progress.json": {
+    "size": 74647,
+    "sha256": "a72cdf1f5f68ebf518702d4655e0e5bdd0b930a46602d563e9d8a2f81127daea"
+  },
+  "work/save-inventory-pp-20261013/runtime-facts.json": {
+    "size": 10509,
+    "sha256": "8a8069886688a38a57b022c5ccabbc50dc4ad017c6d5ad166f5454d40bbc9cb5"
+  },
+  "work/save-inventory-pp-20261013/save-validation.json": {
+    "size": 4253,
+    "sha256": "1cf763ebed96d10b8c918304ef01b5b50725edd25ecdcdb5ef18352e7cc34517"
+  },
+  "work/save-inventory-pp-20261013/source-edit.json": {
+    "size": 1443,
+    "sha256": "176e01ae0eb0e8bdaea3dd9aecdd904a6096ed300b1002664a64ebf937a08f38"
+  },
+  "work/save-v12-native-20261004T145354Z/healthy-seven-diagnostics.json": {
+    "size": 50861,
+    "sha256": "b0641ef6f45daa5c71733b58fa2b9f332802e14be8942f4572759eaab9e59ac8"
+  },
+  "work/save-v12-native-20261004T145354Z/result.json": {
+    "size": 5301,
+    "sha256": "49353243455ee0fa3f9993333f64d7888b038bdee6266f59fcfcde94253ffd48"
+  }
+}

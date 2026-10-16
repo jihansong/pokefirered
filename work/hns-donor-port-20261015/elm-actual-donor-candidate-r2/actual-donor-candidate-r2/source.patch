@@ -1,0 +1,118 @@
+--- a/include/constants/event_objects.h
++++ b/include/constants/event_objects.h
+@@ -244,7 +244,8 @@
+ #define OBJ_EVENT_GFX_JOHTO_FARFETCHD 235
+ #define OBJ_EVENT_GFX_JOHTO_SUDOWOODO 236
+ #define OBJ_EVENT_GFX_MISTY_COMPANION 237
+-#define NUM_OBJ_EVENT_GFX 238
++#define OBJ_EVENT_GFX_PROF_ELM 238
++#define NUM_OBJ_EVENT_GFX 239
+ 
+ // These are dynamic object gfx ids.
+ // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.
+--- a/src/data/object_events/object_event_graphics.h
++++ b/src/data/object_events/object_event_graphics.h
+@@ -341,3 +341,7 @@
+ 
+ const u32 gObjectEventPic_ThunderLegendRayquaza[] = INCBIN_U32("graphics/object_events/pics/hoenn/legend_rayquaza.4bpp");
+ // END THUNDER YELLOW ORIGINAL HOENN LEGENDS
++
++// Actual Pokemon Heart and Soul Elm asset; pinned donor attribution is preserved in work/ reference package.
++const u32 gObjectEventPic_ProfElmHns[] = INCBIN_U32("graphics/object_events/pics/people/prof_elm_hns.4bpp");
++const u16 gObjectEventPal_ProfElmHns[] = INCBIN_U16("graphics/object_events/palettes/prof_elm_hns.gbapal");
+--- a/src/data/object_events/object_event_pic_tables.h
++++ b/src/data/object_events/object_event_pic_tables.h
+@@ -2574,3 +2574,16 @@
+     overworld_frame(gObjectEventPic_MistyCompanion, 2, 4, 0),
+ 
+ };
++
++static const struct SpriteFrameImage sPicTable_ProfElmHns[] = {
++    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 0),
++    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 1),
++    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 2),
++    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 3),
++    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 4),
++    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 5),
++    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 6),
++    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 7),
++    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 8),
++    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 0),
++};
+--- a/src/data/object_events/object_event_graphics_info_pointers.h
++++ b/src/data/object_events/object_event_graphics_info_pointers.h
+@@ -1,3 +1,4 @@
++const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfElmHns;
+ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MistyCompanion;
+ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedNormal;
+ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedBike;
+@@ -483,4 +484,5 @@
+     [OBJ_EVENT_GFX_REGICE] = &gObjectEventGraphicsInfo_HoennRegice,
+     [OBJ_EVENT_GFX_REGISTEEL] = &gObjectEventGraphicsInfo_HoennRegisteel,
+ // END HOENN OBJECT EVENTS
++    [OBJ_EVENT_GFX_PROF_ELM] = &gObjectEventGraphicsInfo_ProfElmHns,
+ };
+--- a/src/data/object_events/object_event_graphics_info.h
++++ b/src/data/object_events/object_event_graphics_info.h
+@@ -4584,3 +4584,22 @@
+     .images = sPicTable_MistyCompanion,
+     .affineAnims = gDummySpriteAffineAnimTable,
+ };
++
++const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfElmHns = {
++    .tileTag = TAG_NONE,
++    .paletteTag = OBJ_EVENT_PAL_TAG_PROF_ELM_HNS,
++    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
++    .size = 256,
++    .width = 16,
++    .height = 32,
++    .paletteSlot = PALSLOT_NPC_SPECIAL,
++    .shadowSize = SHADOW_SIZE_M,
++    .inanimate = FALSE,
++    .disableReflectionPaletteLoad = TRUE,
++    .tracks = TRACKS_FOOT,
++    .oam = &gObjectEventBaseOam_16x32,
++    .subspriteTables = gObjectEventSpriteOamTables_16x32,
++    .anims = sAnimTable_Standard,
++    .images = sPicTable_ProfElmHns,
++    .affineAnims = gDummySpriteAffineAnimTable,
++};
+--- a/graphics_file_rules.mk
++++ b/graphics_file_rules.mk
+@@ -464,3 +464,7 @@
+ # Nine 16x32 frames, frame-major 2x4 tiles, reproducible after clean.
+ graphics/object_events/pics/people/misty_companion_season1.4bpp: %.4bpp: %.png
+ 	$(GFX) $< $@ -mwidth 2 -mheight 4
++
++# Nine 16x32 Elm frames, unchanged standard walk ordering.
++graphics/object_events/pics/people/prof_elm_hns.4bpp: %.4bpp: %.png
++	$(GFX) $< $@ -mwidth 2 -mheight 4
+--- a/data/maps/NewBarkTown_ElmsLab/map.json
++++ b/data/maps/NewBarkTown_ElmsLab/map.json
+@@ -33,7 +33,7 @@
+     {
+       "local_id": "LOCALID_NEWBARKTOWN_ELMSLAB_PROFESSORELM",
+       "type": "object",
+-      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST",
++      "graphics_id": "OBJ_EVENT_GFX_PROF_ELM",
+       "x": 7,
+       "y": 8,
+       "elevation": 3,
+--- a/src/event_object_movement.c
++++ b/src/event_object_movement.c
+@@ -507,6 +507,7 @@
+ #define OBJ_EVENT_PAL_TAG_OLD_TIMER                   0x1140
+ #define OBJ_EVENT_PAL_TAG_N                           0x1141
+ #define OBJ_EVENT_PAL_TAG_SUMMIT_TRAINER              0x1142
++#define OBJ_EVENT_PAL_TAG_PROF_ELM_HNS                   0x1145
+ #define OBJ_EVENT_PAL_TAG_NONE                        0x11FF
+ 
+ #include "data/object_events/object_event_graphics_info_pointers.h"
+@@ -518,6 +519,7 @@
+ #include "data/object_events/object_event_graphics_info.h"
+ 
+ static const struct SpritePalette sObjectEventSpritePalettes[] = {
++    {gObjectEventPal_ProfElmHns, OBJ_EVENT_PAL_TAG_PROF_ELM_HNS},
+     {gMonIconPalettes[1], OBJ_EVENT_PAL_TAG_JOHTO_SUDOWOODO},
+     {gMonIconPalettes[1], OBJ_EVENT_PAL_TAG_JOHTO_FARFETCHD},
+     {gObjectEventPal_NpcBlue,                 OBJ_EVENT_PAL_TAG_NPC_BLUE},

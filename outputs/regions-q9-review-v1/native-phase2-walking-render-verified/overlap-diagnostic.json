@@ -1,0 +1,135 @@
+{
+  "tick": 32,
+  "frame": 855,
+  "walking": true,
+  "direction": "LEFT",
+  "location": [
+    3,
+    0,
+    9,
+    9
+  ],
+  "callback2": "0x8057521",
+  "logical_target_tile_equal": true,
+  "visual_feet_overlap": false,
+  "other_local_id": 255,
+  "feet_gap": 30,
+  "before": [
+    {
+      "local_id": 255,
+      "current": [
+        17,
+        16
+      ],
+      "previous": [
+        17,
+        16
+      ],
+      "object_flags": "0x180c1",
+      "movement_action": 19,
+      "sprite": 0,
+      "sprite_flags": "0x3",
+      "feet": [
+        200,
+        128
+      ]
+    },
+    {
+      "local_id": 254,
+      "current": [
+        16,
+        16
+      ],
+      "previous": [
+        16,
+        16
+      ],
+      "object_flags": "0xc1",
+      "movement_action": 19,
+      "sprite": 3,
+      "sprite_flags": "0x3",
+      "feet": [
+        184,
+        128
+      ]
+    },
+    {
+      "local_id": 253,
+      "current": [
+        15,
+        16
+      ],
+      "previous": [
+        15,
+        16
+      ],
+      "object_flags": "0xc1",
+      "movement_action": 19,
+      "sprite": 4,
+      "sprite_flags": "0x3",
+      "feet": [
+        168,
+        128
+      ]
+    }
+  ],
+  "after": [
+    {
+      "local_id": 255,
+      "current": [
+        16,
+        16
+      ],
+      "previous": [
+        17,
+        16
+      ],
+      "object_flags": "0x18041",
+      "movement_action": 18,
+      "sprite": 0,
+      "sprite_flags": "0x3",
+      "feet": [
+        199,
+        128
+      ]
+    },
+    {
+      "local_id": 254,
+      "current": [
+        17,
+        16
+      ],
+      "previous": [
+        16,
+        16
+      ],
+      "object_flags": "0x41",
+      "movement_action": 19,
+      "sprite": 3,
+      "sprite_flags": "0x3",
+      "feet": [
+        185,
+        128
+      ]
+    },
+    {
+      "local_id": 253,
+      "current": [
+        16,
+        16
+      ],
+      "previous": [
+        15,
+        16
+      ],
+      "object_flags": "0x41",
+      "movement_action": 19,
+      "sprite": 4,
+      "sprite_flags": "0x3",
+      "feet": [
+        169,
+        128
+      ]
+    }
+  ]
+}

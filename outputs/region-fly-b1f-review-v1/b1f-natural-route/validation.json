@@ -1,0 +1,1023 @@
+{
+  "pass": false,
+  "rom_sha256": "3d1a1a4f3e84deb5d9f8d2a5943930354e1a86164fe257eabf79d99ca1232fee",
+  "elf_sha256": "efd67a54f5ad9ecbe8aaa02c0d69ca7ecb6eb6d928f50761199bd8e6f040b0eb",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-original-vr-b1f-route",
+  "fixture": "temporary Lapras mover plus unedited original starter Pikachu; no source save changes",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [
+    {
+      "label": "no-player-obstacle-overlap",
+      "player": [
+        4,
+        7
+      ],
+      "obstacles": [
+        {
+          "slot": 1,
+          "id": 10,
+          "gfx": 97,
+          "xy": [
+            3,
+            7
+          ],
+          "sprite": 1
+        },
+        {
+          "slot": 2,
+          "id": 11,
+          "gfx": 97,
+          "xy": [
+            9,
+            10
+          ],
+          "sprite": 2
+        }
+      ]
+    },
+    {
+      "label": "actual-original-boulder-one",
+      "local_id": 10,
+      "before": [
+        4,
+        7
+      ],
+      "after": [
+        3,
+        7
+      ]
+    },
+    {
+      "label": "no-player-obstacle-overlap",
+      "player": [
+        9,
+        10
+      ],
+      "obstacles": [
+        {
+          "slot": 1,
+          "id": 10,
+          "gfx": 97,
+          "xy": [
+            3,
+            7
+          ],
+          "sprite": 1
+        },
+        {
+          "slot": 2,
+          "id": 11,
+          "gfx": 97,
+          "xy": [
+            10,
+            10
+          ],
+          "sprite": 2
+        },
+        {
+          "slot": 3,
+          "id": 17,
+          "gfx": 96,
+          "xy": [
+            18,
+            12
+          ],
+          "sprite": 3
+        },
+        {
+          "slot": 5,
+          "id": 15,
+          "gfx": 96,
+          "xy": [
+            19,
+            5
+          ],
+          "sprite": 6
+        }
+      ]
+    },
+    {
+      "label": "actual-original-boulder-two",
+      "local_id": 11,
+      "before": [
+        9,
+        10
+      ],
+      "after": [
+        10,
+        10
+      ]
+    },
+    {
+      "trainer": "TRAINER_HOENN_SAMUEL",
+      "enemy_species": [
+        305,
+        355,
+        64,
+        0,
+        0,
+        0
+      ],
+      "start_frame": 4586,
+      "moves": [
+        2,
+        2,
+        0
+      ],
+      "end_frame": 6786
+    }
+  ],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_story_not_entire_regions": true,
+  "johto_badges_defined": [
+    "FLAG_JOHTO_BADGE01_GET",
+    "FLAG_JOHTO_BADGE02_GET",
+    "FLAG_JOHTO_BADGE03_GET",
+    "FLAG_JOHTO_BADGE04_GET",
+    "FLAG_JOHTO_BADGE05_GET",
+    "FLAG_JOHTO_BADGE06_GET"
+  ],
+  "palette_active_abi_mask": {
+    "size": 16,
+    "offset": 7,
+    "mask": 128
+  },
+  "follower_checks": [
+    {
+      "label": "actual-original-boulder-one",
+      "map": [
+        67,
+        44
+      ],
+      "player_xy": [
+        4,
+        7
+      ],
+      "follower_xy": [
+        5,
+        7
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "actual-original-boulder-two",
+      "map": [
+        67,
+        44
+      ],
+      "player_xy": [
+        9,
+        10
+      ],
+      "follower_xy": [
+        8,
+        10
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "actual-original-rock-route",
+      "map": [
+        67,
+        44
+      ],
+      "player_xy": [
+        18,
+        12
+      ],
+      "follower_xy": [
+        17,
+        12
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    }
+  ],
+  "route_steps": [
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        8,
+        3
+      ],
+      "after": [
+        67,
+        44,
+        8,
+        4
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        8,
+        4
+      ],
+      "after": [
+        67,
+        44,
+        9,
+        4
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        9,
+        4
+      ],
+      "after": [
+        67,
+        44,
+        9,
+        5
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        9,
+        5
+      ],
+      "after": [
+        67,
+        44,
+        9,
+        6
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        9,
+        6
+      ],
+      "after": [
+        67,
+        44,
+        9,
+        7
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        44,
+        9,
+        7
+      ],
+      "after": [
+        67,
+        44,
+        8,
+        7
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        44,
+        8,
+        7
+      ],
+      "after": [
+        67,
+        44,
+        7,
+        7
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        44,
+        7,
+        7
+      ],
+      "after": [
+        67,
+        44,
+        6,
+        7
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        44,
+        6,
+        7
+      ],
+      "after": [
+        67,
+        44,
+        5,
+        7
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        44,
+        5,
+        7
+      ],
+      "after": [
+        67,
+        44,
+        4,
+        7
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        4,
+        7
+      ],
+      "after": [
+        67,
+        44,
+        4,
+        8
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        4,
+        8
+      ],
+      "after": [
+        67,
+        44,
+        4,
+        9
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        4,
+        9
+      ],
+      "after": [
+        67,
+        44,
+        4,
+        10
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        4,
+        10
+      ],
+      "after": [
+        67,
+        44,
+        5,
+        10
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        5,
+        10
+      ],
+      "after": [
+        67,
+        44,
+        6,
+        10
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        6,
+        10
+      ],
+      "after": [
+        67,
+        44,
+        7,
+        10
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        7,
+        10
+      ],
+      "after": [
+        67,
+        44,
+        8,
+        10
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        8,
+        10
+      ],
+      "after": [
+        67,
+        44,
+        9,
+        10
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        9,
+        10
+      ],
+      "after": [
+        67,
+        44,
+        9,
+        11
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        9,
+        11
+      ],
+      "after": [
+        67,
+        44,
+        9,
+        12
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        9,
+        12
+      ],
+      "after": [
+        67,
+        44,
+        9,
+        13
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        9,
+        13
+      ],
+      "after": [
+        67,
+        44,
+        10,
+        13
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        10,
+        13
+      ],
+      "after": [
+        67,
+        44,
+        11,
+        13
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        11,
+        13
+      ],
+      "after": [
+        67,
+        44,
+        12,
+        13
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        12,
+        13
+      ],
+      "after": [
+        67,
+        44,
+        13,
+        13
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        13,
+        13
+      ],
+      "after": [
+        67,
+        44,
+        14,
+        13
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        14,
+        13
+      ],
+      "after": [
+        67,
+        44,
+        15,
+        13
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        44,
+        15,
+        13
+      ],
+      "after": [
+        67,
+        44,
+        15,
+        12
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        15,
+        12
+      ],
+      "after": [
+        67,
+        44,
+        16,
+        12
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        16,
+        12
+      ],
+      "after": [
+        67,
+        44,
+        17,
+        12
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        17,
+        12
+      ],
+      "after": [
+        67,
+        44,
+        18,
+        12
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        18,
+        12
+      ],
+      "after": [
+        67,
+        44,
+        19,
+        12
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        19,
+        12
+      ],
+      "after": [
+        67,
+        44,
+        20,
+        12
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        20,
+        12
+      ],
+      "after": [
+        67,
+        44,
+        21,
+        12
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        44,
+        21,
+        12
+      ],
+      "after": [
+        67,
+        44,
+        21,
+        11
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        44,
+        21,
+        11
+      ],
+      "after": [
+        67,
+        44,
+        21,
+        10
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        44,
+        21,
+        10
+      ],
+      "after": [
+        67,
+        44,
+        21,
+        9
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        21,
+        9
+      ],
+      "after": [
+        67,
+        44,
+        22,
+        9
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        22,
+        9
+      ],
+      "after": [
+        67,
+        44,
+        23,
+        9
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        23,
+        9
+      ],
+      "after": [
+        67,
+        44,
+        24,
+        9
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        24,
+        9
+      ],
+      "after": [
+        67,
+        44,
+        25,
+        9
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        25,
+        9
+      ],
+      "after": [
+        67,
+        44,
+        26,
+        9
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        26,
+        9
+      ],
+      "after": [
+        67,
+        44,
+        27,
+        9
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        27,
+        9
+      ],
+      "after": [
+        67,
+        44,
+        28,
+        9
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        28,
+        9
+      ],
+      "after": [
+        67,
+        44,
+        29,
+        9
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        29,
+        9
+      ],
+      "after": [
+        67,
+        44,
+        30,
+        9
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        30,
+        9
+      ],
+      "after": [
+        67,
+        44,
+        31,
+        9
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        31,
+        9
+      ],
+      "after": [
+        67,
+        44,
+        32,
+        9
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        32,
+        9
+      ],
+      "after": [
+        67,
+        44,
+        32,
+        10
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        32,
+        10
+      ],
+      "after": [
+        67,
+        44,
+        32,
+        11
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        32,
+        11
+      ],
+      "after": [
+        67,
+        44,
+        32,
+        12
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        32,
+        12
+      ],
+      "after": [
+        67,
+        44,
+        33,
+        12
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        33,
+        12
+      ],
+      "after": [
+        67,
+        44,
+        34,
+        12
+      ]
+    }
+  ],
+  "scope": "B1F west ladder to original B2F ladder; not entire Hoenn or complete Victory Road",
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "native_samuel_sight_no_a": true,
+  "original_samuel_sight_battle": true,
+  "error": "AssertionError()",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/tools/qa/native_victory_road_b1f_route_qa.py\", line 125, in <module>\n    walk_many([('RIGHT',2)],True)\n  File \"/workspaces/pokefirered/tools/qa/native_victory_road_b1f_route_qa.py\", line 69, in walk_many\n    for _ in range(count):route_step(key,allow_samuel)\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/tools/qa/native_victory_road_b1f_route_qa.py\", line 65, in route_step\n    route_invariants()\n  File \"/workspaces/pokefirered/tools/qa/native_victory_road_b1f_route_qa.py\", line 25, in route_invariants\n    assert digest_dex(blocks(e))==original_dex\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "failure_location": [
+    67,
+    44,
+    34,
+    12
+  ],
+  "original_saves_unchanged": true
+}

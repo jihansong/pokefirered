@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "disabled_fallback": true,
+  "enabled_allocation_failure_cleanup": true,
+  "enabled_repeated_create_destroy_cycles": 100,
+  "real_ROM_render_or_art_validated": false,
+  "source_sha256": "4892fc5079dda7c2c19209ce95e672d78cde7e9ccffa785d71b1943121540635"
+}

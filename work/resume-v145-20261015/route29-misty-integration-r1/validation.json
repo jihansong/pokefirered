@@ -1,0 +1,49 @@
+{
+  "status": "FAILED_REVIEW_RETAINED_ARTIFACTS_NO_AUTOMATIC_ROLLBACK",
+  "pass": false,
+  "product_inputs_applied": [
+    "data/layouts/JohtoRoute29/map.bin",
+    "tools/johto/build_entry.py",
+    "tools/johto/route29_landscape_boundaries.py",
+    "graphics/object_events/pics/people/misty_companion_season1.png"
+  ],
+  "build_commands": [
+    {
+      "command": [
+        "make",
+        "leafgreen",
+        "-j2"
+      ],
+      "returncode": 0,
+      "log": "/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-integration-r1/make-leafgreen.log",
+      "log_sha256": "0ba7953f6d0aa1c4759a0173b2846a8cda2183a49bc64fa2b675e7af49b1e7e6"
+    },
+    {
+      "command": [
+        "make",
+        "GAME_VERSION=LEAFGREEN",
+        "syms"
+      ],
+      "returncode": 0,
+      "log": "/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-integration-r1/make-syms.log",
+      "log_sha256": "1a56efcdb81631c6168352f585d9f5878cd39bc5337183706ddd8dec2b17f4f4"
+    }
+  ],
+  "native_tests": [],
+  "user_SAV_changed": false,
+  "automatic_rollback": false,
+  "files_deleted": 0,
+  "natural_story_completion_proved": false,
+  "full_Johto_Hoenn_completed": false,
+  "baseline_ROM_sha256": "af2677993a75979fb36f0768c390d1bad7424e61f2d569b5054d40702250d2e8",
+  "baseline_ELF_sha256": "2549852a48935c680e06e81719b54663b9c0efa7fdaccd31d1f4683886c5d64e",
+  "input_SAV_sha256": "0949ebf04557a76e2175602e967eefadb7ffb722f2746be8a40ddb1fd66550a9",
+  "build_warnings": [
+    "make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.",
+    "make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.",
+    "/opt/devkitpro/devkitARM/bin/arm-none-eabi-ld: warning: ../../pokemonthyl.elf has a LOAD segment with RWX permissions"
+  ],
+  "error": "AssertionError('Build emitted warnings; review retained logs')",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-integrated-qa-r1/apply_build_route29_misty_r1.py\", line 93, in <module>\n    report['build_warnings']=warnings;assert not warnings,'Build emitted warnings; review retained logs'\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Build emitted warnings; review retained logs\n",
+  "all_original_user_SAV_headers_helpers_and_unrelated_dirty_sources_unchanged": true
+}

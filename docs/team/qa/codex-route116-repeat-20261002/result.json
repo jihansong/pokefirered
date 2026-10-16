@@ -1,0 +1,64 @@
+{
+  "checks": {
+    "baseline-reward-only": {
+      "exit": 1,
+      "seconds": 1.55
+    },
+    "build": {
+      "exit": 0,
+      "seconds": 8.52
+    },
+    "syms": {
+      "exit": 0,
+      "seconds": 1.69
+    },
+    "events": {
+      "exit": 0,
+      "seconds": 13.06
+    },
+    "devon-regression": {
+      "exit": 0,
+      "seconds": 44.16
+    },
+    "save-compat": {
+      "exit": 0,
+      "seconds": 13.65
+    },
+    "map-integrity": {
+      "exit": 0,
+      "seconds": 4.82
+    },
+    "wiring-after": {
+      "exit": 1,
+      "seconds": 3.33
+    },
+    "map-smoke": {
+      "exit": 0,
+      "seconds": 13.4
+    },
+    "text-width": {
+      "exit": 0,
+      "seconds": 0.05
+    },
+    "textaudit-z3": {
+      "exit": 0,
+      "seconds": 4.15
+    },
+    "dex": {
+      "exit": 0,
+      "seconds": 2.31
+    }
+  },
+  "scope": "Route116 repeat ball only",
+  "saves_unchanged": true,
+  "protected_changes": [],
+  "new_wiring": [],
+  "build_warnings": [
+    "make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.",
+    "make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.",
+    "make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.",
+    "make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.",
+    "/opt/devkitpro/devkitARM/bin/arm-none-eabi-ld: warning: ../../pokemonthyl.elf has a LOAD segment with RWX permissions"
+  ],
+  "complete": true
+}

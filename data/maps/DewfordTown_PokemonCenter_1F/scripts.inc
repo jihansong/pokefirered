@@ -15,4 +15,3 @@ DewfordTown_PokemonCenter_1F_EventScript_H0::
 DewfordTown_PokemonCenter_1F_EventScript_H1::
 	msgbox DewfordTown_PokemonCenter_1F_Text_H1, MSGBOX_NPC
 	end
-

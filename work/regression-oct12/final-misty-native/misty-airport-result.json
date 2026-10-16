@@ -1,0 +1,87 @@
+{
+  "all_pass": true,
+  "ram_writes": 0,
+  "direct_MistyJoin_calls": 0,
+  "checks": [
+    {
+      "case": "johto_yes",
+      "actual_clerk_A": true,
+      "actual_yesno": true,
+      "native_menu_SAVE": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regression-oct12/final-misty-native/johto_yes-native-QA-only.sav"
+      },
+      "no_RAM_writes": true,
+      "no_direct_MistyJoin": true,
+      "party_pc_dex_preserved": true,
+      "pikachu_at_start": 1,
+      "received_starter_flag_cold_control": false,
+      "pass_all": true
+    },
+    {
+      "case": "johto_no",
+      "actual_clerk_A": true,
+      "actual_yesno": true,
+      "native_menu_SAVE": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regression-oct12/final-misty-native/johto_no-native-QA-only.sav"
+      },
+      "no_RAM_writes": true,
+      "no_direct_MistyJoin": true,
+      "party_pc_dex_preserved": true,
+      "pikachu_at_start": 1,
+      "received_starter_flag_cold_control": false,
+      "pass_all": true
+    },
+    {
+      "case": "hoenn_yes_starter_follower_disabled",
+      "actual_clerk_A": true,
+      "actual_yesno": true,
+      "native_menu_SAVE": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regression-oct12/final-misty-native/hoenn_yes_starter_follower_disabled-native-QA-only.sav"
+      },
+      "no_RAM_writes": true,
+      "no_direct_MistyJoin": true,
+      "party_pc_dex_preserved": true,
+      "pikachu_at_start": 0,
+      "received_starter_flag_cold_control": true,
+      "pass_all": true
+    },
+    {
+      "case": "hoenn_no",
+      "actual_clerk_A": true,
+      "actual_yesno": true,
+      "native_menu_SAVE": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regression-oct12/final-misty-native/hoenn_no-native-QA-only.sav"
+      },
+      "no_RAM_writes": true,
+      "no_direct_MistyJoin": true,
+      "party_pc_dex_preserved": true,
+      "pikachu_at_start": 1,
+      "received_starter_flag_cold_control": false,
+      "pass_all": true
+    }
+  ],
+  "original_inputs_unchanged": true,
+  "rom_sha256": "2bafd6478fef5bbda56c6b4bec9c8dec1a4e0f060252fc219dbcc834411509f7",
+  "automatic_Pallet_Oak_flow_tested": false,
+  "actual_device_DELTA_tested": false
+}

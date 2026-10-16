@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/native_misty_training_qa.py", line 123, in <module>
+    p=identity_guard(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/native_misty_training_qa.py", line 37, in identity_guard
+    n=e.u8(e.sym('gPlayerPartyCount'));p=e.read(e.sym('gPlayerParty'),600);assert n==6 and identity(p,n)==base_id
+                                                                                           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

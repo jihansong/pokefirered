@@ -1,0 +1,90 @@
+{
+  "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+  "cases": [
+    {
+      "case": "johtoroute38_native_capture",
+      "species_internal": 81,
+      "national_dex": 81,
+      "level": 16,
+      "water": false,
+      "native_outcome": 7,
+      "new_bad_egg": false,
+      "party_checksum_verified": true,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/johto-wild/johtoroute38_native_capture-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "johtoroute39_native_capture",
+      "species_internal": 81,
+      "national_dex": 81,
+      "level": 16,
+      "water": false,
+      "native_outcome": 7,
+      "new_bad_egg": false,
+      "party_checksum_verified": true,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/johto-wild/johtoroute39_native_capture-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "johtoroute40_native_capture",
+      "species_internal": 72,
+      "national_dex": 72,
+      "level": 20,
+      "water": true,
+      "native_outcome": 7,
+      "new_bad_egg": false,
+      "party_checksum_verified": true,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/johto-wild/johtoroute40_native_capture-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "johtoroute41_native_capture",
+      "species_internal": 72,
+      "national_dex": 72,
+      "level": 20,
+      "water": true,
+      "native_outcome": 7,
+      "new_bad_egg": false,
+      "party_checksum_verified": true,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/johto-wild/johtoroute41_native_capture-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0
+    }
+  ],
+  "all_pass": true,
+  "time_limit": "Samples use the current emulator clock; static generator checks cover both land time tables.",
+  "original_files_unchanged": true,
+  "forced_memory_writes": 0,
+  "forced_battle_outcomes": 0
+}

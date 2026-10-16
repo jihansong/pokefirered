@@ -1,0 +1,16 @@
+{
+  "status": "FOUR_INPUT_PREFLIGHT_PASS_NO_PRODUCT_EDITS",
+  "pass": true,
+  "product_inputs_applied": [],
+  "build_commands": [],
+  "native_tests": [],
+  "user_SAV_changed": false,
+  "automatic_rollback": false,
+  "files_deleted": 0,
+  "natural_story_completion_proved": false,
+  "full_Johto_Hoenn_completed": false,
+  "baseline_ROM_sha256": "af2677993a75979fb36f0768c390d1bad7424e61f2d569b5054d40702250d2e8",
+  "baseline_ELF_sha256": "2549852a48935c680e06e81719b54663b9c0efa7fdaccd31d1f4683886c5d64e",
+  "input_SAV_sha256": "0949ebf04557a76e2175602e967eefadb7ffb722f2746be8a40ddb1fd66550a9",
+  "all_original_user_SAV_headers_helpers_and_unrelated_dirty_sources_unchanged": true
+}

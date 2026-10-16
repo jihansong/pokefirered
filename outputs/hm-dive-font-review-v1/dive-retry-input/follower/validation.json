@@ -1,0 +1,34 @@
+{
+  "pass": false,
+  "rom_sha256": "f6e9dd60d10bcca84d2b68ae7c446ed82a72c84e284edd94b818f3f19d44d1d3",
+  "elf_sha256": "7c07968d352c10a7bf5bc64a46c0f664e0afd41a9d897528d592d4d86d357afd",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-dive-route",
+  "fixture": "temporary level-50 LAPRAS; original PC and source SAV unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "follower_checks": [],
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "error": "KeyError('unknown constant OBJ_EVENT_GFX_PIKACHU')",
+  "traceback": "Traceback (most recent call last):\n  File \"tools/qa/native_dive_qa.py\", line 210, in <module>\n  File \"tools/qa/native_dive_qa.py\", line 158, in probe_companion\n    assert not expected_hoenn\n    ^^^^^^^^^^^^^^^^^\n  File \"tools/qa/native_dive_qa.py\", line 136, in companion_state\n    expected_badges=[blocks(e).flag('FLAG_BADGE%02d_GET'%i) for i in range(1,9)]\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/tools/qa/gamedata.py\", line 205, in const\n    return consts([s])[s]\n           ^^^^^^^^^^^\n  File \"/workspaces/pokefirered/tools/qa/gamedata.py\", line 180, in consts\n    raise KeyError('unknown constant %s' % n)\nKeyError: 'unknown constant OBJ_EVENT_GFX_PIKACHU'\n",
+  "failure_location": [
+    43,
+    43,
+    38,
+    27
+  ],
+  "failure_callback2": "0x8057521",
+  "original_saves_unchanged": true
+}

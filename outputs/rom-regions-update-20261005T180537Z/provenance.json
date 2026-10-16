@@ -1,0 +1,940 @@
+{
+  "time_utc": "2026-10-05T18:05:37.690550+00:00",
+  "rom_sha256": "c139724c9b8d94a1195cb0386ced634a0012377f2ee7f3e86b6267259cf8068b",
+  "elf_sha256": "2e187bd051b902ab268d718c5cc02f9b32b16f99c0f81f8d1a88a425282855a3",
+  "bytes": 33554432,
+  "resident_sections_match": true,
+  "save_layout_unchanged": true,
+  "save_layout": {
+    "blocks": {
+      "gSaveBlock1": 15720,
+      "gSaveBlock2": 3876,
+      "gPokemonStorage": 33744
+    },
+    "sector_layout": [
+      [
+        0,
+        3876
+      ],
+      [
+        0,
+        3968
+      ],
+      [
+        3968,
+        3968
+      ],
+      [
+        7936,
+        3968
+      ],
+      [
+        11904,
+        3816
+      ],
+      [
+        0,
+        3968
+      ],
+      [
+        3968,
+        3968
+      ],
+      [
+        7936,
+        3968
+      ],
+      [
+        11904,
+        3968
+      ],
+      [
+        15872,
+        3968
+      ],
+      [
+        19840,
+        3968
+      ],
+      [
+        23808,
+        3968
+      ],
+      [
+        27776,
+        3968
+      ],
+      [
+        31744,
+        2000
+      ]
+    ],
+    "sector_layout_sha256": "ee1f9bc20ab82f62e45a2451450517ea539f6ef48bd31045dc2430b8525fcd68"
+  },
+  "assets": {
+    "sOpeningMoviePixels": {
+      "bytes": 14192640,
+      "sha256": "ff8c4e7f91ef541952f638043efdfe396d416777aaa984350869da3e603b66c3"
+    },
+    "sOpeningMoviePalettes": {
+      "bytes": 178688,
+      "sha256": "f253176e6ead3f2f5dd55c01de2f33881ce143527c464d076d2786bc348724f7"
+    },
+    "sOpeningMovieFrames": {
+      "bytes": 6016,
+      "sha256": "22517a83536902b9c4245234a7bd84fd15b75fcbb00c70dbb274e648268d3938"
+    },
+    "gTrainerFrontPic_JessieJames": {
+      "bytes": 2048,
+      "sha256": "5b036768fc2712765eab94952b2757a7783b953062ef440f26eb7e9e6f38d2b1"
+    },
+    "gTrainerPalette_JessieJames": {
+      "bytes": 32,
+      "sha256": "02951ab3bc6bd04dbce501258a13e92e3ba934728bb8249514b41238f835b792"
+    },
+    "sThunderYellowTitleTiles": {
+      "bytes": 38400,
+      "sha256": "266b8c5764de352fd471c742705cc8744eeff15c16e13c557854b514d6153eff"
+    },
+    "sThunderYellowTitlePalette": {
+      "bytes": 512,
+      "sha256": "e4888a4dcd5539808992724f60e9891393a950904ee06c817a601977285ebdd2"
+    },
+    "sThunderYellowTitleMap": {
+      "bytes": 2048,
+      "sha256": "d36febfb217aed8362ce88627f4ffdab75d5cab305f35b433881ab3d75daab53"
+    },
+    "sTitleText_Pal": {
+      "bytes": 8,
+      "sha256": "4529364d177d57c7ff36be6be8173d1bcc0c499030a5cb4468200eb36b94224c"
+    },
+    "gGraphics_TitleScreen_BoxArtMonPals": {
+      "bytes": 32,
+      "sha256": "86a6b33a4c4a102a932d44ed1c3b8c3292231563ded69318a9424c4b75387773"
+    },
+    "gGraphics_TitleScreen_CopyrightPressStartMap": {
+      "bytes": 276,
+      "sha256": "ee97ab69291ae1d8407c1b7655a2c6fd664ac8c2486fd2ad8c31227295815b35"
+    },
+    "gGraphics_TitleScreen_BackgroundPals": {
+      "bytes": 32,
+      "sha256": "fa04f0364c62c689cde8e3b58d4193ea6c8b879e118eab9afd933e819b64ddd2"
+    },
+    "gGraphics_TitleScreen_BoxArtMonTiles": {
+      "bytes": 1152,
+      "sha256": "a6cebf5a0803d10818c58c7106edef729cae6eca8d617a46787fb25e625e34f2"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoTiles": {
+      "bytes": 5468,
+      "sha256": "aed1c7edbc32bd3b8c33fa95eb280d94a90224d98ddb765ef6164dded55a5b31"
+    },
+    "gGraphics_TitleScreen_CopyrightPressStartTiles": {
+      "bytes": 704,
+      "sha256": "1f72690d788e6f3ccfa7a111bc676f45571b48ce8b40635a2741b7780ccc3ad8"
+    },
+    "gTitleScreen_BlankSprite_Tiles": {
+      "bytes": 128,
+      "sha256": "3c2451d3e0f5b1a598ab8cab6beae858645729fc74f8c1d993274f55e3dbbd41"
+    },
+    "gGraphics_TitleScreen_BoxArtMonMap": {
+      "bytes": 332,
+      "sha256": "25b8be3aa049b9e512e73caac9930fdbc187b66cb46509e7f4b4de5bf66215ba"
+    },
+    "gTitleScreen_Slash_Pal": {
+      "bytes": 32,
+      "sha256": "a57ddb40cb96a23749ff6624ae67421cdf487183577f7dee37069bd02467a4fb"
+    },
+    "gTeachyTvTitle_Tilemap": {
+      "bytes": 556,
+      "sha256": "ae837c6d4d805dd7be188f70e15e784571706f13017392a93ffb89cc1cda645c"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoMap": {
+      "bytes": 544,
+      "sha256": "162d967ed0289b42042be29f24f4fdbf4174bab06d8f05277341b25c2f5e62ab"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoPals": {
+      "bytes": 512,
+      "sha256": "9612068fa48be250345e802e735eab11331ca25d78d98e82eeca8825f02774de"
+    }
+  },
+  "title_version": "V8",
+  "rocket_version": "V11 native64x64",
+  "opening_version": "V7 752frames/FRLG music",
+  "johto_maps_integrated": 23,
+  "hoenn_native_league_verified": true,
+  "full_johto_story_complete": false,
+  "full_hoenn_story_complete": false,
+  "evidence_root": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2",
+  "save_delivery": "/workspaces/pokefirered/outputs/rom-regions-update-20261005T180537Z/pokemonthyl.sav",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "all_original_saves_unchanged": true,
+  "known_existing_bad_egg_repaired": false,
+  "performance": {
+    "water_native": "/workspaces/pokefirered/outputs/hm-dive-font-review-v2/water-performance/result.json",
+    "font_cache_native": "/workspaces/pokefirered/outputs/hm-dive-font-review-v1",
+    "font_cache_evidence_rom_sha256": "f6e9dd60d10bcca84d2b68ae7c446ed82a72c84e284edd94b818f3f19d44d1d3",
+    "delta_device_fps_measured": false,
+    "azalea_land": {
+      "path": "/workspaces/pokefirered/outputs/johto-azalea-native-review-v2/performance/result.json",
+      "cases": 4,
+      "hardware_frames_per_case": 360,
+      "processing_misses": 0,
+      "delta_device_fps_measured": false
+    },
+    "sootopolis_storm_calm": {
+      "samples": [
+        {
+          "map": "SootopolisCity",
+          "label": "city-storm",
+          "weather": 5,
+          "weather_end": 5,
+          "rain_allocated_range": [
+            24,
+            24
+          ],
+          "rain_count_range": [
+            24,
+            24
+          ],
+          "max_active_sprites": 33,
+          "walking": false,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              28,
+              34
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 3,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        },
+        {
+          "map": "SootopolisCity",
+          "label": "city-storm",
+          "weather": 5,
+          "weather_end": 5,
+          "rain_allocated_range": [
+            24,
+            24
+          ],
+          "rain_count_range": [
+            24,
+            24
+          ],
+          "max_active_sprites": 33,
+          "walking": true,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              28,
+              34
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 3,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        },
+        {
+          "map": "SootopolisCity",
+          "label": "city-calm",
+          "weather": 2,
+          "weather_end": 2,
+          "rain_allocated_range": [
+            0,
+            0
+          ],
+          "rain_count_range": [
+            0,
+            0
+          ],
+          "max_active_sprites": 9,
+          "walking": false,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              28,
+              34
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 3,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        },
+        {
+          "map": "SootopolisCity",
+          "label": "city-calm",
+          "weather": 2,
+          "weather_end": 2,
+          "rain_allocated_range": [
+            0,
+            0
+          ],
+          "rain_count_range": [
+            0,
+            0
+          ],
+          "max_active_sprites": 9,
+          "walking": true,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              28,
+              34
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 3,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        }
+      ],
+      "original_core_manual_ram_writes": 0,
+      "instrumentation": "separate emulator clone only",
+      "delta_device_fps_measured": false,
+      "all_thunder_flash_phases_measured": false
+    },
+    "ecruteak_burned_tower": {
+      "samples": [
+        {
+          "party_pc_dex_preserved": true,
+          "map": "EcruteakCity",
+          "walking": false,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              19,
+              23
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 4,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        },
+        {
+          "party_pc_dex_preserved": true,
+          "map": "EcruteakCity",
+          "walking": true,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              19,
+              23
+            ],
+            [
+              20,
+              23
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 4,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        },
+        {
+          "party_pc_dex_preserved": true,
+          "map": "BurnedTower_1F",
+          "walking": false,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              13,
+              19
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 3,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        },
+        {
+          "party_pc_dex_preserved": true,
+          "map": "BurnedTower_1F",
+          "walking": true,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              13,
+              19
+            ],
+            [
+              14,
+              19
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 3,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        }
+      ],
+      "loads": [
+        {
+          "map": "EcruteakCity",
+          "load_frames": 96,
+          "stable_idle_frames": 12,
+          "vblank_delta": 107,
+          "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+          "fixture_sha256": "79c45814337ea6d4f6ad9af010d5fd935108f5490f6b9b351b18a46a0968d2b2"
+        },
+        {
+          "map": "BurnedTower_1F",
+          "load_frames": 89,
+          "stable_idle_frames": 12,
+          "vblank_delta": 100,
+          "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+          "fixture_sha256": "79b9bfd18fd6d7120f0f47c8a2afdb8c3a71fd304e55033e74ff0b5e418383f8"
+        }
+      ],
+      "instrumentation": "separate emulator clone only",
+      "original_core_manual_ram_writes": 0,
+      "delta_device_fps_measured": false
+    }
+  },
+  "resident_sections": [
+    {
+      "index": 3,
+      "bytes": 1469160
+    },
+    {
+      "index": 4,
+      "bytes": 891660
+    },
+    {
+      "index": 5,
+      "bytes": 57820
+    },
+    {
+      "index": 6,
+      "bytes": 7948652
+    },
+    {
+      "index": 7,
+      "bytes": 513436
+    },
+    {
+      "index": 8,
+      "bytes": 1640
+    },
+    {
+      "index": 9,
+      "bytes": 193364
+    },
+    {
+      "index": 10,
+      "bytes": 1782744
+    },
+    {
+      "index": 11,
+      "bytes": 36864
+    },
+    {
+      "index": 12,
+      "bytes": 14377344
+    }
+  ],
+  "additional_title_assets_unchanged": {
+    "gGraphics_TitleScreen_BackgroundPals": {
+      "bytes": 32,
+      "sha256": "fa04f0364c62c689cde8e3b58d4193ea6c8b879e118eab9afd933e819b64ddd2"
+    },
+    "sThunderYellowTitleTiles": {
+      "bytes": 38400,
+      "sha256": "266b8c5764de352fd471c742705cc8744eeff15c16e13c557854b514d6153eff"
+    },
+    "sThunderYellowTitlePalette": {
+      "bytes": 512,
+      "sha256": "e4888a4dcd5539808992724f60e9891393a950904ee06c817a601977285ebdd2"
+    },
+    "gTitleScreen_BlankSprite_Tiles": {
+      "bytes": 128,
+      "sha256": "3c2451d3e0f5b1a598ab8cab6beae858645729fc74f8c1d993274f55e3dbbd41"
+    },
+    "gTitleScreen_Slash_Pal": {
+      "bytes": 32,
+      "sha256": "a57ddb40cb96a23749ff6624ae67421cdf487183577f7dee37069bd02467a4fb"
+    },
+    "gGraphics_TitleScreen_CopyrightPressStartMap": {
+      "bytes": 276,
+      "sha256": "ee97ab69291ae1d8407c1b7655a2c6fd664ac8c2486fd2ad8c31227295815b35"
+    },
+    "gTeachyTvTitle_Tilemap": {
+      "bytes": 556,
+      "sha256": "ae837c6d4d805dd7be188f70e15e784571706f13017392a93ffb89cc1cda645c"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoTiles": {
+      "bytes": 5468,
+      "sha256": "aed1c7edbc32bd3b8c33fa95eb280d94a90224d98ddb765ef6164dded55a5b31"
+    },
+    "sThunderYellowTitleMap": {
+      "bytes": 2048,
+      "sha256": "d36febfb217aed8362ce88627f4ffdab75d5cab305f35b433881ab3d75daab53"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoMap": {
+      "bytes": 544,
+      "sha256": "162d967ed0289b42042be29f24f4fdbf4174bab06d8f05277341b25c2f5e62ab"
+    },
+    "sTitleText_Pal": {
+      "bytes": 8,
+      "sha256": "4529364d177d57c7ff36be6be8173d1bcc0c499030a5cb4468200eb36b94224c"
+    },
+    "gGraphics_TitleScreen_BoxArtMonMap": {
+      "bytes": 332,
+      "sha256": "25b8be3aa049b9e512e73caac9930fdbc187b66cb46509e7f4b4de5bf66215ba"
+    },
+    "sPikachuVoiceLengths": {
+      "bytes": 42,
+      "sha256": "f98284934787ec1071a4f8f0c0c52ad9f2c7c82e52525a7ff70476b7ad97d1a1"
+    },
+    "gGraphics_TitleScreen_CopyrightPressStartTiles": {
+      "bytes": 704,
+      "sha256": "1f72690d788e6f3ccfa7a111bc676f45571b48ce8b40635a2741b7780ccc3ad8"
+    },
+    "gGraphics_TitleScreen_BoxArtMonTiles": {
+      "bytes": 1152,
+      "sha256": "a6cebf5a0803d10818c58c7106edef729cae6eca8d617a46787fb25e625e34f2"
+    },
+    "gGraphics_TitleScreen_BoxArtMonPals": {
+      "bytes": 32,
+      "sha256": "86a6b33a4c4a102a932d44ed1c3b8c3292231563ded69318a9424c4b75387773"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoPals": {
+      "bytes": 512,
+      "sha256": "9612068fa48be250345e802e735eab11331ca25d78d98e82eeca8825f02774de"
+    }
+  },
+  "hoenn_weather_space_integrated": true,
+  "hoenn_weather_space_native_cases": 5,
+  "hm05_tm10_native_cases": 11,
+  "hm08_tm49_native_cases": 8,
+  "pikachu_dive_follow_native_checks": 16,
+  "water_performance_cases": 4,
+  "water_hardware_frames_per_case": 360,
+  "water_processing_misses": 0,
+  "johto_azalea_integrated": true,
+  "johto_existing_maps": 59,
+  "johto_azalea_native_events": 33,
+  "johto_azalea_native_battles": 8,
+  "johto_azalea_native_map_smoke": 10,
+  "johto_azalea_native_gate_steps": 2,
+  "sootopolis_dive_roundtrip_native_cases": 2,
+  "azalea_battle_evidence": {
+    "path": "/workspaces/pokefirered/outputs/johto-azalea-native-review-v1/battle/result.json",
+    "rom_sha256": "49d6c1ae2080abc30f1c60fa5abb3c9d2b9a877d5d6309a483dce1c084dcf94b",
+    "only_candidate_byte_difference": {
+      "offset": 1529850,
+      "reason": "Sootopolis dive surface Y coordinate53 to54"
+    },
+    "battle_assets_and_code_unchanged": true
+  },
+  "remaining": {
+    "johto_full_story_complete": false,
+    "hoenn_full_story_complete": false,
+    "johto_next": "Olivine/Cianwood fifth-sixth gym source prepared; gyms5-8, later radio tower and league remain",
+    "hoenn_next": "VictoryRoad Wally original party source prepared; native integration and natural full VictoryRoad/League route audit remain",
+    "three_region_natural_playthrough_complete": false,
+    "johto_habitat_classifier_audit_pending": false,
+    "delta_old_save_state_corruption_cause_proven": false
+  },
+  "johto_ilex_goldenrod_integrated": true,
+  "johto_ilex_native_events": 28,
+  "johto_ilex_native_battles": 4,
+  "johto_ilex_native_map_links": 17,
+  "hoenn_sea_sky_integrated": true,
+  "hoenn_sea_sky_native_cases": 12,
+  "sky_pillar_ascent_native_cases": 3,
+  "native_validations": {
+    "ecruteak-events/result.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/result.json",
+      "sha256": "5fb7cb4f5e2e53f237fd36baf70cd855a9e01393967152bc14eb02a7f80d5660"
+    },
+    "ecruteak-battles/result.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-battles/result.json",
+      "sha256": "d1cdd9c1af335f81120e981d4b509daa6378e7eb3adec63e5a8ca31a28e01553"
+    },
+    "ecruteak-wild-rerun/result.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-wild-rerun/result.json",
+      "sha256": "b4025583620a949cb867d3908b7bc7102e9d56b31806e4e29a2966eb7b6bed26"
+    },
+    "ecruteak-chapter-chain/chapter-chain-result.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-chapter-chain/chapter-chain-result.json",
+      "sha256": "833869c81885828902105ecdbeb4c812e80739fb4d9d7f41fe00a6bfe3dc2147"
+    },
+    "ecruteak-performance/result.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-performance/result.json",
+      "sha256": "2a5b38c4a70c9b2c5983f4660703ec9bf588dea53d39d6a0470ecadc7728c9b5"
+    },
+    "habitat-pages/result.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/habitat-pages/result.json",
+      "sha256": "3be8dd90ce6d331a8a669d7b3d392944c10240ad0a2079a19f21cf59b33f6133"
+    },
+    "wallace-first-rerun/validation.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/wallace-first-rerun/validation.json",
+      "sha256": "980a1c9f7e9735af671a78602d4e2e25812f13589e264afebc2667692838c95a"
+    },
+    "wallace-bag-rerun/validation.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/wallace-bag-rerun/validation.json",
+      "sha256": "2791ed0ad334fe10f949b8f9b2c1892f8a99e0d67e82f7a4567119faf2bbb7c1"
+    },
+    "wallace-pc-rerun/validation.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/wallace-pc-rerun/validation.json",
+      "sha256": "a92df8c1a9cdfc08c6ce2e378b0b185eba4db8f623e3169a8a522cb368a04001"
+    },
+    "wallace-history-rerun/validation.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/wallace-history-rerun/validation.json",
+      "sha256": "f4222ce38888196c02dcc534b44c82c69931ddfc9b499e3e5108e81abcddfc9d"
+    },
+    "wallace-done-rerun/validation.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/wallace-done-rerun/validation.json",
+      "sha256": "52d3dc730ed1506071deaff51b28568d4c6b54aac296994fe390240071a333d2"
+    },
+    "wallace-early-rerun/validation.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/wallace-early-rerun/validation.json",
+      "sha256": "0ccdea1c5cff44368961dca6e1bba8c7cc5118b58c76b9f22917f4f9e32eaa18"
+    },
+    "wallace-storm-rerun/validation.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/wallace-storm-rerun/validation.json",
+      "sha256": "059bba3ddf2bb3c8530cb900b5ab1cd3dc9ebc0d5838f7a3931633455e051530"
+    },
+    "wallace-legacy-rerun/validation.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/wallace-legacy-rerun/validation.json",
+      "sha256": "abe451f3f209c59bc245e0099e74ef79b9e9bd68abbc139fc4956a3ef1809ff0"
+    },
+    "wallace-full-retry-rerun/validation.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/wallace-full-retry-rerun/validation.json",
+      "sha256": "722ac858478b3a0f7df2be2c3e9f0850844489af8ce914f1271d8667a3fffea8"
+    },
+    "waterfall-a/validation.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/waterfall-a/validation.json",
+      "sha256": "8be0adca424f370bb7f5b77ed1db9296f546117a88bbd80613d9dc5f818ff4e2"
+    },
+    "waterfall-no-rain-a/validation.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/waterfall-no-rain-a/validation.json",
+      "sha256": "fd82c2856aad57b662e7cbf916ffb4b36e8b9f106f3fdb2a97eafb664e59846a"
+    },
+    "waterfall-no-move-a/validation.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/waterfall-no-move-a/validation.json",
+      "sha256": "124e16afde50ab690e5fcac1c03b6860c9d2818fe0d866ff71cf24e040cf54fc"
+    },
+    "waterfall-menu-native-option-rerun/validation.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/waterfall-menu-native-option-rerun/validation.json",
+      "sha256": "e490a3369badc980822804465de9fea0adc7225b40c51c2062b98306933ea429"
+    },
+    "waterfall-no-rain-menu-native-option-rerun/validation.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/waterfall-no-rain-menu-native-option-rerun/validation.json",
+      "sha256": "702892c93b9acacc166c3585033559b440c1f68b79cc07d1dbce63d4765ff7e0"
+    },
+    "waterfall-kanto-badge-native-option-rerun/validation.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/waterfall-kanto-badge-native-option-rerun/validation.json",
+      "sha256": "879a7165c4eeff09d534f7e9cf8badae91fb51b204abdcaeab67800f5cb463cf"
+    },
+    "waterfall-kanto-rain-only-native-option-rerun/validation.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/waterfall-kanto-rain-only-native-option-rerun/validation.json",
+      "sha256": "abf17dcde37f80769c239d57610dafdccffd7255bfef70344a753b988cf15611"
+    },
+    "waterfall-johto-badge-native-option-rerun/validation.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/waterfall-johto-badge-native-option-rerun/validation.json",
+      "sha256": "4818ffeb1f6475465d30137a97cc2027b6e218c964c8e034b51c9cec957270c7"
+    },
+    "waterfall-johto-rain-only-native-option-rerun/validation.json": {
+      "path": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/waterfall-johto-rain-only-native-option-rerun/validation.json",
+      "sha256": "c2cf71a302e8819b166446392596ca42edf4e778ec16d3b1e0dc536c0969f152"
+    }
+  },
+  "visual_review": {
+    "contact": "/workspaces/pokefirered/outputs/rom-regions-update-20261005T180537Z/native-story-contact.png",
+    "checked": true,
+    "limits": [
+      "Johto uses native Kanto tilesets and placeholder portraits; complete original region art is not finished."
+    ]
+  },
+  "johto_ecruteak_integrated": true,
+  "johto_ecruteak_native_events": 31,
+  "johto_ecruteak_native_battles": 9,
+  "johto_ecruteak_native_wild_outcomes": 4,
+  "johto_ecruteak_native_map_links": 26,
+  "johto_ecruteak_same_save_chain": {
+    "pass_all": true,
+    "rom_sha256": "c139724c9b8d94a1195cb0386ced634a0012377f2ee7f3e86b6267259cf8068b",
+    "sequence": [
+      {
+        "case": "waterbottle",
+        "save": {
+          "counter": [
+            60,
+            61
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-chapter-chain/chain_waterbottle-native-QA-only.sav"
+        },
+        "forced_progress_after_setup": 0
+      },
+      {
+        "case": "chain_sudowoodo_win",
+        "turns": 1,
+        "outcome": 1,
+        "save": {
+          "counter": [
+            61,
+            62
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-chapter-chain/chain_sudowoodo_win-native-QA-only.sav"
+        },
+        "pc_preserved": true,
+        "native_capture": false,
+        "forced_memory_writes": 0,
+        "forced_battle_outcomes": 0
+      },
+      {
+        "case": "chain_silver_win",
+        "turns": 4,
+        "native_outcome": 1,
+        "enemies": [
+          93,
+          81,
+          41,
+          159
+        ],
+        "save": {
+          "counter": [
+            62,
+            63
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-chapter-chain/chain_silver_win-native-QA-only.sav"
+        },
+        "pc_preserved": true,
+        "forced_memory_writes": 0,
+        "forced_battle_outcomes": 0
+      },
+      {
+        "case": "three_beasts",
+        "save": {
+          "counter": [
+            63,
+            64
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-chapter-chain/chain_three_beasts-native-QA-only.sav"
+        },
+        "seen_only_added": [
+          "RAIKOU",
+          "ENTEI",
+          "SUICUNE"
+        ],
+        "forced_progress_after_setup": 0
+      },
+      {
+        "case": "chain_morty_win",
+        "turns": 4,
+        "native_outcome": 1,
+        "enemies": [
+          92,
+          93,
+          94,
+          93
+        ],
+        "save": {
+          "counter": [
+            64,
+            65
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-chapter-chain/chain_morty_win-native-QA-only.sav"
+        },
+        "pc_preserved": true,
+        "forced_memory_writes": 0,
+        "forced_battle_outcomes": 0
+      }
+    ],
+    "final_qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-chapter-chain/chain_morty_win-native-QA-only.sav",
+    "native_save_cold_reopens": 5,
+    "qa_position_only_warps": 5,
+    "forced_story_flags_after_setup": 0,
+    "forced_trainer_flags_after_setup": 0,
+    "forced_memory_writes": 0,
+    "forced_battle_outcomes": 0,
+    "initial_fixture": "winning battle fixture after Johto Badge3; temporary setup only",
+    "full_natural_walking_tested": false,
+    "kimono_five_wins_repeated": false,
+    "full_campaign_tested": false,
+    "original_files_unchanged": true
+  },
+  "hoenn_wallace_hm07_integrated": true,
+  "hoenn_wallace_native_cases": 9,
+  "waterfall_shared_region_badge_gate": true,
+  "waterfall_native_cases": 9,
+  "wild_encounters_compiled_audit": {
+    "audit": "compiled-wild-header-regions",
+    "rom_sha256": "c139724c9b8d94a1195cb0386ced634a0012377f2ee7f3e86b6267259cf8068b",
+    "symbol_source": "ELF32_SYMTAB",
+    "tables": 3,
+    "headers_per_table": 274,
+    "time_table_map_alignment": true,
+    "valid_map_pairs": true,
+    "valid_rom_info_and_mon_table_bounds": true,
+    "sentinels_valid": true,
+    "hoenn_group_range": [
+      43,
+      75
+    ],
+    "johto_group": 76,
+    "hoenn_headers": 124,
+    "johto_headers": 15,
+    "johto_maps": [
+      "JohtoRoute29",
+      "JohtoRoute30",
+      "JohtoRoute31",
+      "JohtoRoute32",
+      "JohtoUnionCave_1F",
+      "JohtoRoute33",
+      "SlowpokeWell_1F",
+      "IlexForest",
+      "JohtoRoute34",
+      "JohtoRoute35",
+      "JohtoNationalPark",
+      "JohtoRoute36",
+      "JohtoRoute37",
+      "BurnedTower_1F",
+      "BurnedTower_B1F"
+    ],
+    "save_files_read_or_written": false,
+    "ram_instrumentation": false,
+    "pass_all": true
+  },
+  "habitat_region_page_audit": {
+    "pass_all": true,
+    "rom_sha256": "c139724c9b8d94a1195cb0386ced634a0012377f2ee7f3e86b6267259cf8068b",
+    "pages": [
+      {
+        "region": 0,
+        "markers": 7,
+        "marker_tasks": 1,
+        "map_window": [
+          12,
+          9
+        ],
+        "map_pixels_sha256": "c9d388ea45d2c6bcf4fb31d71351ea4095a17fe5190024dbf9e93fd35cb36715"
+      },
+      {
+        "region": 1,
+        "markers": 7,
+        "marker_tasks": 1,
+        "map_window": [
+          16,
+          9
+        ],
+        "map_pixels_sha256": "de6997b57603b6efe2ead3209681647c795dff22672f6c199d0f439be51984a3"
+      },
+      {
+        "region": 2,
+        "markers": 8,
+        "marker_tasks": 1,
+        "map_window": [
+          16,
+          9
+        ],
+        "map_pixels_sha256": "a41a568fe232e8143c7631b6575049b1fbed11d240cf273e8e78cd79078f8ff4"
+      }
+    ],
+    "select_cycle": true,
+    "negative_egg_regions": 3,
+    "temporary_native_ram_fixture": true,
+    "actual_device_fps_measured": false
+  },
+  "new_capture_identity": {
+    "pass_all": true,
+    "before_sha256": "6866be6da8b3f961594de9195d26514fb653714baa595e51c4056d3cb8f9ce72",
+    "after_sha256": "caefbb593cbdc0531ff9ff43cfdfb8fd8f2544454e48669ff9627c51e7b32b62",
+    "location": "party",
+    "slot_zero_based": 1,
+    "species_internal": 185,
+    "pid": 2139134624,
+    "ot_id": 2839214970,
+    "player_ot_id": 2839214970,
+    "checksum_stored": 14946,
+    "checksum_calculated": 14946,
+    "bad_egg": false,
+    "egg": false,
+    "box80_sha256": "68b55fd455faaf8404eff5d59be2743480a5673590096257353d7ba36cf555de",
+    "party100_sha256": "a6aaef20252ba4f551c90bda0d478fea614c87e1cf02288d0aef29fa50bedd17",
+    "native_proof": {
+      "case": "sudowoodo_catch",
+      "rom_sha256": "c139724c9b8d94a1195cb0386ced634a0012377f2ee7f3e86b6267259cf8068b",
+      "save_sectors": 14,
+      "cold_reload_proof": "existing native flash_reload compared full party600B plus PC/dex/flags; this auditor does not run an emulator"
+    },
+    "read_only": true,
+    "other_rom_save_state_tested": false,
+    "original_damaged_box_repaired": false
+  }
+}

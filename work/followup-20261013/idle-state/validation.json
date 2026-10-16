@@ -1,0 +1,405 @@
+{
+  "pass": true,
+  "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+  "input_sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+  "scope": "same-ROM native idle and raw core state; not DELTA or full campaign",
+  "frames_requested": 36000,
+  "rows": [
+    {
+      "requested_frames": 600,
+      "hardware_frames": 600,
+      "elapsed_seconds": 0.6756755249998605,
+      "preserved": true
+    },
+    {
+      "requested_frames": 1200,
+      "hardware_frames": 1200,
+      "elapsed_seconds": 0.6048018400006185,
+      "preserved": true
+    },
+    {
+      "requested_frames": 1800,
+      "hardware_frames": 1800,
+      "elapsed_seconds": 0.6497532050007067,
+      "preserved": true
+    },
+    {
+      "requested_frames": 2400,
+      "hardware_frames": 2400,
+      "elapsed_seconds": 0.6202898060000734,
+      "preserved": true
+    },
+    {
+      "requested_frames": 3000,
+      "hardware_frames": 3000,
+      "elapsed_seconds": 0.775284432999797,
+      "preserved": true
+    },
+    {
+      "requested_frames": 3600,
+      "hardware_frames": 3600,
+      "elapsed_seconds": 0.6362966369997594,
+      "preserved": true
+    },
+    {
+      "requested_frames": 4200,
+      "hardware_frames": 4200,
+      "elapsed_seconds": 0.6949543009995978,
+      "preserved": true
+    },
+    {
+      "requested_frames": 4800,
+      "hardware_frames": 4800,
+      "elapsed_seconds": 0.6296943829993324,
+      "preserved": true
+    },
+    {
+      "requested_frames": 5400,
+      "hardware_frames": 5400,
+      "elapsed_seconds": 0.6498460359998717,
+      "preserved": true
+    },
+    {
+      "requested_frames": 6000,
+      "hardware_frames": 6000,
+      "elapsed_seconds": 0.6089335950000532,
+      "preserved": true
+    },
+    {
+      "requested_frames": 6600,
+      "hardware_frames": 6600,
+      "elapsed_seconds": 0.6739404119998653,
+      "preserved": true
+    },
+    {
+      "requested_frames": 7200,
+      "hardware_frames": 7200,
+      "elapsed_seconds": 0.6949827369999184,
+      "preserved": true
+    },
+    {
+      "requested_frames": 7800,
+      "hardware_frames": 7800,
+      "elapsed_seconds": 0.6029778600004647,
+      "preserved": true
+    },
+    {
+      "requested_frames": 8400,
+      "hardware_frames": 8400,
+      "elapsed_seconds": 0.5898111980004614,
+      "preserved": true
+    },
+    {
+      "requested_frames": 9000,
+      "hardware_frames": 9000,
+      "elapsed_seconds": 0.6894829449993267,
+      "preserved": true
+    },
+    {
+      "requested_frames": 9600,
+      "hardware_frames": 9600,
+      "elapsed_seconds": 0.6027672600002916,
+      "preserved": true
+    },
+    {
+      "requested_frames": 10200,
+      "hardware_frames": 10200,
+      "elapsed_seconds": 0.5901100119999683,
+      "preserved": true
+    },
+    {
+      "requested_frames": 10800,
+      "hardware_frames": 10800,
+      "elapsed_seconds": 0.7094489289993362,
+      "preserved": true
+    },
+    {
+      "requested_frames": 11400,
+      "hardware_frames": 11400,
+      "elapsed_seconds": 0.5761968400001933,
+      "preserved": true
+    },
+    {
+      "requested_frames": 12000,
+      "hardware_frames": 12000,
+      "elapsed_seconds": 0.6967301829999997,
+      "preserved": true
+    },
+    {
+      "requested_frames": 12600,
+      "hardware_frames": 12600,
+      "elapsed_seconds": 0.7279503569998269,
+      "preserved": true
+    },
+    {
+      "requested_frames": 13200,
+      "hardware_frames": 13200,
+      "elapsed_seconds": 0.6152301770007398,
+      "preserved": true
+    },
+    {
+      "requested_frames": 13800,
+      "hardware_frames": 13800,
+      "elapsed_seconds": 0.6664966589996766,
+      "preserved": true
+    },
+    {
+      "requested_frames": 14400,
+      "hardware_frames": 14400,
+      "elapsed_seconds": 0.603008520000003,
+      "preserved": true
+    },
+    {
+      "requested_frames": 15000,
+      "hardware_frames": 15000,
+      "elapsed_seconds": 0.5959295900001962,
+      "preserved": true
+    },
+    {
+      "requested_frames": 15600,
+      "hardware_frames": 15600,
+      "elapsed_seconds": 0.8922234900001058,
+      "preserved": true
+    },
+    {
+      "requested_frames": 16200,
+      "hardware_frames": 16200,
+      "elapsed_seconds": 0.798388057000011,
+      "preserved": true
+    },
+    {
+      "requested_frames": 16800,
+      "hardware_frames": 16800,
+      "elapsed_seconds": 0.5809545820002313,
+      "preserved": true
+    },
+    {
+      "requested_frames": 17400,
+      "hardware_frames": 17400,
+      "elapsed_seconds": 0.5957431380002163,
+      "preserved": true
+    },
+    {
+      "requested_frames": 18000,
+      "hardware_frames": 18000,
+      "elapsed_seconds": 0.6182842409998557,
+      "preserved": true
+    },
+    {
+      "requested_frames": 18600,
+      "hardware_frames": 18600,
+      "elapsed_seconds": 0.6569719660001283,
+      "preserved": true
+    },
+    {
+      "requested_frames": 19200,
+      "hardware_frames": 19200,
+      "elapsed_seconds": 0.644543335999515,
+      "preserved": true
+    },
+    {
+      "requested_frames": 19800,
+      "hardware_frames": 19800,
+      "elapsed_seconds": 0.7088461970006392,
+      "preserved": true
+    },
+    {
+      "requested_frames": 20400,
+      "hardware_frames": 20400,
+      "elapsed_seconds": 0.6322628899997653,
+      "preserved": true
+    },
+    {
+      "requested_frames": 21000,
+      "hardware_frames": 21000,
+      "elapsed_seconds": 0.7232462190004298,
+      "preserved": true
+    },
+    {
+      "requested_frames": 21600,
+      "hardware_frames": 21600,
+      "elapsed_seconds": 0.6197751670006255,
+      "preserved": true
+    },
+    {
+      "requested_frames": 22200,
+      "hardware_frames": 22200,
+      "elapsed_seconds": 0.7776971760004017,
+      "preserved": true
+    },
+    {
+      "requested_frames": 22800,
+      "hardware_frames": 22800,
+      "elapsed_seconds": 0.6627522200005842,
+      "preserved": true
+    },
+    {
+      "requested_frames": 23400,
+      "hardware_frames": 23400,
+      "elapsed_seconds": 0.5692905629994129,
+      "preserved": true
+    },
+    {
+      "requested_frames": 24000,
+      "hardware_frames": 24000,
+      "elapsed_seconds": 0.7086520619996008,
+      "preserved": true
+    },
+    {
+      "requested_frames": 24600,
+      "hardware_frames": 24600,
+      "elapsed_seconds": 0.5878254950002884,
+      "preserved": true
+    },
+    {
+      "requested_frames": 25200,
+      "hardware_frames": 25200,
+      "elapsed_seconds": 0.5777732010001273,
+      "preserved": true
+    },
+    {
+      "requested_frames": 25800,
+      "hardware_frames": 25800,
+      "elapsed_seconds": 0.7336340989995733,
+      "preserved": true
+    },
+    {
+      "requested_frames": 26400,
+      "hardware_frames": 26400,
+      "elapsed_seconds": 0.6549175190002643,
+      "preserved": true
+    },
+    {
+      "requested_frames": 27000,
+      "hardware_frames": 27000,
+      "elapsed_seconds": 0.5899859940000169,
+      "preserved": true
+    },
+    {
+      "requested_frames": 27600,
+      "hardware_frames": 27600,
+      "elapsed_seconds": 0.6427749900003619,
+      "preserved": true
+    },
+    {
+      "requested_frames": 28200,
+      "hardware_frames": 28200,
+      "elapsed_seconds": 0.5919428170000174,
+      "preserved": true
+    },
+    {
+      "requested_frames": 28800,
+      "hardware_frames": 28800,
+      "elapsed_seconds": 0.592359543999919,
+      "preserved": true
+    },
+    {
+      "requested_frames": 29400,
+      "hardware_frames": 29400,
+      "elapsed_seconds": 0.5806871409995438,
+      "preserved": true
+    },
+    {
+      "requested_frames": 30000,
+      "hardware_frames": 30000,
+      "elapsed_seconds": 0.6177866210000502,
+      "preserved": true
+    },
+    {
+      "requested_frames": 30600,
+      "hardware_frames": 30600,
+      "elapsed_seconds": 0.6630229350002992,
+      "preserved": true
+    },
+    {
+      "requested_frames": 31200,
+      "hardware_frames": 31200,
+      "elapsed_seconds": 0.6176189359994169,
+      "preserved": true
+    },
+    {
+      "requested_frames": 31800,
+      "hardware_frames": 31800,
+      "elapsed_seconds": 0.8100293839997903,
+      "preserved": true
+    },
+    {
+      "requested_frames": 32400,
+      "hardware_frames": 32400,
+      "elapsed_seconds": 0.6245469100003902,
+      "preserved": true
+    },
+    {
+      "requested_frames": 33000,
+      "hardware_frames": 33000,
+      "elapsed_seconds": 0.5746764989999065,
+      "preserved": true
+    },
+    {
+      "requested_frames": 33600,
+      "hardware_frames": 33600,
+      "elapsed_seconds": 0.674314738999783,
+      "preserved": true
+    },
+    {
+      "requested_frames": 34200,
+      "hardware_frames": 34200,
+      "elapsed_seconds": 0.5967948299994532,
+      "preserved": true
+    },
+    {
+      "requested_frames": 34800,
+      "hardware_frames": 34800,
+      "elapsed_seconds": 0.5795881130006819,
+      "preserved": true
+    },
+    {
+      "requested_frames": 35400,
+      "hardware_frames": 35400,
+      "elapsed_seconds": 0.6401123010000447,
+      "preserved": true
+    },
+    {
+      "requested_frames": 36000,
+      "hardware_frames": 36000,
+      "elapsed_seconds": 0.6774955139999292,
+      "preserved": true
+    }
+  ],
+  "ram_writes": 0,
+  "baseline": {
+    "location": [
+      1,
+      78,
+      6,
+      10
+    ],
+    "callback": 134575393,
+    "party": "91c94cef7125e36a2e36a7df9cf1afb29d0af5b42d952c3d4a2144da8fc4eb68",
+    "PC": "1c1416c8653aead681b7ebe4cc76b56e9cae25c6815655c655dfb2d3a2bce0c0",
+    "dex": "d20eb5207987f813f064db10c61bfa184fdc87ea6eba9329f4edc5de2046d740",
+    "count": 6
+  },
+  "state_bytes": 397312,
+  "frame_start": 842,
+  "median_chunk_seconds": 0.6342797634997623,
+  "native_host_fps": 945.9548207708582,
+  "state_restore_checks": [
+    {
+      "additional_frames": 0,
+      "payload_and_location_preserved": true,
+      "reset": false
+    },
+    {
+      "additional_frames": 60,
+      "payload_and_location_preserved": true,
+      "reset": false
+    },
+    {
+      "additional_frames": 180,
+      "payload_and_location_preserved": true,
+      "reset": false
+    }
+  ],
+  "inputs_unchanged": true
+}

@@ -1,3 +1,69 @@
 Route119_WeatherInstitute_2F_MapScripts::
+@ Thunder Yellow weather-space v1
+	map_script MAP_SCRIPT_ON_TRANSITION, Route119_WeatherInstitute_2F_WeatherSpaceOnTransition
+	map_script MAP_SCRIPT_ON_RESUME, Route119_WeatherInstitute_2F_WeatherSpaceOnResume
 	.byte 0
 
+@ BEGIN PATCH (tools/hoenn_import/patches)
+@ Thunder Yellow weather-space v1
+
+Route119_WeatherInstitute_2F_WeatherSpaceOnTransition::
+ call Route119_WeatherInstitute_2F_EventScript_RescueState
+ end
+Route119_WeatherInstitute_2F_WeatherSpaceOnResume::
+ call Route119_WeatherInstitute_2F_EventScript_RescueState
+ goto_if_unset FLAG_HOENN_WEATHER_RESCUED, Route119_WeatherInstitute_2F_EventScript_ResumeEnd
+ removeobject 2
+Route119_WeatherInstitute_2F_EventScript_ResumeEnd::
+ end
+Route119_WeatherInstitute_2F_EventScript_RescueState::
+ goto_if_defeated TRAINER_HOENN_SHELLY_WEATHER_INSTITUTE, Route119_WeatherInstitute_2F_EventScript_RescueBackfill
+ return
+Route119_WeatherInstitute_2F_EventScript_RescueBackfill::
+ setflag FLAG_HOENN_WEATHER_RESCUED
+ return
+Route119_WeatherInstitute_2F_EventScript_Shelly::
+ lock
+ faceplayer
+ goto_if_set FLAG_HOENN_WEATHER_RESCUED, EventScript_ReleaseEnd
+ trainerbattle_single TRAINER_HOENN_SHELLY_WEATHER_INSTITUTE, Route119_WeatherInstitute_2F_Text_ShellyIntro, Route119_WeatherInstitute_2F_Text_ShellyDefeat, Route119_WeatherInstitute_2F_EventScript_AfterShelly
+ goto Route119_WeatherInstitute_2F_EventScript_AfterShelly
+Route119_WeatherInstitute_2F_EventScript_AfterShelly::
+ setflag FLAG_HOENN_WEATHER_RESCUED
+ msgbox Route119_WeatherInstitute_2F_Text_ShellyRetreat
+ closemessage
+ fadescreen FADE_TO_BLACK
+ removeobject 2
+ fadescreen FADE_FROM_BLACK
+ msgbox Route119_WeatherInstitute_2F_Text_Rescued
+ release
+ end
+Route119_WeatherInstitute_2F_EventScript_Researcher::
+ lock
+ faceplayer
+ goto_if_unset FLAG_HOENN_WEATHER_RESCUED, Route119_WeatherInstitute_2F_EventScript_Hostage
+ goto_if_set FLAG_HOENN_GOT_WEATHER_CASTFORM, Route119_WeatherInstitute_2F_EventScript_Report
+ msgbox Route119_WeatherInstitute_2F_Text_OfferCastform, MSGBOX_YESNO
+ goto_if_eq VAR_RESULT, NO, Route119_WeatherInstitute_2F_EventScript_Report
+ setvar VAR_TEMP_1, SPECIES_CASTFORM
+ call EventScript_GiveGiftMonLv25
+ goto_if_eq VAR_RESULT, FALSE, Route119_WeatherInstitute_2F_EventScript_Report
+ setflag FLAG_HOENN_GOT_WEATHER_CASTFORM
+ textcolor NPC_TEXT_COLOR_MALE
+ goto Route119_WeatherInstitute_2F_EventScript_Report
+Route119_WeatherInstitute_2F_EventScript_Hostage::
+ msgbox Route119_WeatherInstitute_2F_Text_Hostage
+ release
+ end
+Route119_WeatherInstitute_2F_EventScript_Report::
+ goto_if_set FLAG_HOENN_SPACE_CENTER_SECURED, Route119_WeatherInstitute_2F_EventScript_ReportAfterSpace
+ msgbox Route119_WeatherInstitute_2F_Text_ResearchReport
+ goto_if_unset FLAG_GOT_CASTFORM, EventScript_ReleaseEnd
+ msgbox Route119_WeatherInstitute_2F_Text_FourIslandColleague
+ release
+ end
+Route119_WeatherInstitute_2F_EventScript_ReportAfterSpace::
+ msgbox Route119_WeatherInstitute_2F_Text_AfterSpace
+ release
+ end
+@ END PATCH

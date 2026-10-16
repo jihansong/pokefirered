@@ -1,0 +1,23 @@
+{
+  "exit": 0,
+  "gba": {
+    "path": "outputs/hm-dive-font-review-v2/hm-dive-candidate.gba",
+    "sha256": "d97da0972679f286e8c535d09fc0d862b198fd9e0a37542cfae9aa861723f661",
+    "bytes": 33554432
+  },
+  "elf": {
+    "path": "outputs/hm-dive-font-review-v2/hm-dive-candidate.elf",
+    "sha256": "8d19272288e09ce9107ed1ec9f437f779f4f5f6827523465dda4a8c16656fe5e",
+    "bytes": 33707512
+  },
+  "sym": {
+    "path": "outputs/hm-dive-font-review-v2/hm-dive-candidate.sym",
+    "sha256": "d0165f8a9f66ce90b51104bc5d73e0175e0f14b89d36f4e13feef325c7a81701",
+    "bytes": 3193315
+  },
+  "map": {
+    "path": "outputs/hm-dive-font-review-v2/hm-dive-candidate.map",
+    "sha256": "04c960897c6b2eb05f0053b227b9b3db283682aefc6a16933738d841621b6855",
+    "bytes": 3207756
+  }
+}

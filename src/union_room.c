@@ -195,7 +195,7 @@ enum {
     PLIST_CONTACTED,
 };
 
-static EWRAM_DATA u8 sUnionRoomPlayerName[12] = {};
+static EWRAM_DATA u8 sUnionRoomPlayerName[12] = {EOS};
 static EWRAM_DATA u8 sPlayerCurrActivity = 0;
 static EWRAM_DATA u8 sPlayerActivityGroupSize = 0;
 static EWRAM_DATA union
@@ -3605,6 +3605,19 @@ static void Task_InitUnionRoom(u8 taskId)
 
 bool16 BufferUnionRoomPlayerName(void)
 {
+    // COLD_PC_UNION_NAME_BOUND_V1: custom centers may never initialize RFU.
+    // An uninitialized, unterminated name must not escape its fixed buffer.
+    u32 length;
+    for (length = 0; length < ARRAY_COUNT(sUnionRoomPlayerName); length++)
+    {
+        if (sUnionRoomPlayerName[length] == EOS)
+            break;
+    }
+    if (length == ARRAY_COUNT(sUnionRoomPlayerName))
+    {
+        sUnionRoomPlayerName[0] = EOS;
+        return FALSE;
+    }
     if (sUnionRoomPlayerName[0] != EOS)
     {
         StringCopy(gStringVar1, sUnionRoomPlayerName);

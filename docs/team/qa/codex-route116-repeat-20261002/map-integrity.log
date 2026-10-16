@@ -1,0 +1,136 @@
+# check_map_integrity: 0 ERROR, 2 WARN, 267 INFO
+
+## warps (INFO 86)
+
+- INFO: SeafoamIslands_B3F warp 5 -> SeafoamIslands_B2F warp 7, which leads to MAP_SEAFOAM_ISLANDS_B1F (not back)
+- INFO: SeafoamIslands_B3F warp 6 -> SeafoamIslands_B2F warp 8, which leads to MAP_SEAFOAM_ISLANDS_B1F (not back)
+- INFO: SixIsland_DottedHole_B2F warp 1 -> SixIsland_DottedHole_1F warp 3, which leads to MAP_SIX_ISLAND_DOTTED_HOLE_B1F (not back)
+- INFO: SixIsland_DottedHole_B2F warp 2 -> SixIsland_DottedHole_1F warp 3, which leads to MAP_SIX_ISLAND_DOTTED_HOLE_B1F (not back)
+- INFO: SixIsland_DottedHole_B2F warp 3 -> SixIsland_DottedHole_1F warp 3, which leads to MAP_SIX_ISLAND_DOTTED_HOLE_B1F (not back)
+- INFO: SixIsland_DottedHole_B3F warp 1 -> SixIsland_DottedHole_1F warp 3, which leads to MAP_SIX_ISLAND_DOTTED_HOLE_B1F (not back)
+- INFO: SixIsland_DottedHole_B3F warp 3 -> SixIsland_DottedHole_1F warp 3, which leads to MAP_SIX_ISLAND_DOTTED_HOLE_B1F (not back)
+- INFO: SixIsland_DottedHole_B3F warp 4 -> SixIsland_DottedHole_1F warp 3, which leads to MAP_SIX_ISLAND_DOTTED_HOLE_B1F (not back)
+- INFO: SixIsland_DottedHole_B4F warp 1 -> SixIsland_DottedHole_1F warp 3, which leads to MAP_SIX_ISLAND_DOTTED_HOLE_B1F (not back)
+- INFO: SixIsland_DottedHole_B4F warp 2 -> SixIsland_DottedHole_1F warp 3, which leads to MAP_SIX_ISLAND_DOTTED_HOLE_B1F (not back)
+- INFO: SixIsland_DottedHole_B4F warp 4 -> SixIsland_DottedHole_1F warp 3, which leads to MAP_SIX_ISLAND_DOTTED_HOLE_B1F (not back)
+- INFO: FiveIsland_LostCave_Room1 warp 4 -> FiveIsland_LostCave_Room1 warp 2, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM2 (not back)
+- INFO: FiveIsland_LostCave_Room2 warp 0 -> FiveIsland_LostCave_Room3 warp 2, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM4 (not back)
+- INFO: FiveIsland_LostCave_Room2 warp 1 -> FiveIsland_LostCave_Room1 warp 4, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room2 warp 2 -> FiveIsland_LostCave_Room11 warp 0, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room3 warp 0 -> FiveIsland_LostCave_Room1 warp 3, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room3 warp 1 -> FiveIsland_LostCave_Room1 warp 4, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room3 warp 2 -> FiveIsland_LostCave_Room4 warp 0, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM12 (not back)
+- INFO: FiveIsland_LostCave_Room3 warp 3 -> FiveIsland_LostCave_Room1 warp 2, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM2 (not back)
+- INFO: FiveIsland_LostCave_Room4 warp 0 -> FiveIsland_LostCave_Room12 warp 0, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room4 warp 1 -> FiveIsland_LostCave_Room1 warp 4, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room4 warp 2 -> FiveIsland_LostCave_Room5 warp 0, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room4 warp 3 -> FiveIsland_LostCave_Room1 warp 2, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM2 (not back)
+- INFO: FiveIsland_LostCave_Room5 warp 0 -> FiveIsland_LostCave_Room1 warp 3, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room5 warp 1 -> FiveIsland_LostCave_Room6 warp 3, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM7 (not back)
+- INFO: FiveIsland_LostCave_Room5 warp 2 -> FiveIsland_LostCave_Room1 warp 1, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room5 warp 3 -> FiveIsland_LostCave_Room1 warp 2, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM2 (not back)
+- INFO: FiveIsland_LostCave_Room6 warp 0 -> FiveIsland_LostCave_Room1 warp 3, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room6 warp 1 -> FiveIsland_LostCave_Room13 warp 0, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room6 warp 2 -> FiveIsland_LostCave_Room1 warp 1, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room6 warp 3 -> FiveIsland_LostCave_Room7 warp 1, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room7 warp 0 -> FiveIsland_LostCave_Room1 warp 3, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room7 warp 1 -> FiveIsland_LostCave_Room1 warp 4, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room7 warp 2 -> FiveIsland_LostCave_Room8 warp 0, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room7 warp 3 -> FiveIsland_LostCave_Room1 warp 2, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM2 (not back)
+- INFO: FiveIsland_LostCave_Room8 warp 0 -> FiveIsland_LostCave_Room1 warp 3, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room8 warp 1 -> FiveIsland_LostCave_Room9 warp 3, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room8 warp 2 -> FiveIsland_LostCave_Room1 warp 1, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room8 warp 3 -> FiveIsland_LostCave_Room14 warp 0, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: FiveIsland_LostCave_Room9 warp 0 -> FiveIsland_LostCave_Room10 warp 0, which leads to MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 (not back)
+- INFO: ... 46 more (use --limit 0)
+
+## inert warps (INFO 165, NOTE 1)
+
+- INFO: Hoenn AbandonedShip_HiddenFloorCorridors: 0 (3,8)->ABANDONED_SHIP_HIDDEN_FLOOR_ROOMS [MB_NORMAL], 1 (6,8)->ABANDONED_SHIP_HIDDEN_FLOOR_ROOMS [MB_NORMAL], 3 (3,3)->ABANDONED_SHIP_HIDDEN_FLOOR_ROOMS [MB_INDOOR_ENCOUNTER], 5 (9,3)->ABANDONED_SHIP_HIDDEN_FLOOR_ROOMS [MB_INDOOR_ENCOUNTER]
+- INFO: Hoenn AquaHideout_1F: 1 (14,27)->LILYCOVE_CITY [MB_OCEAN_WATER]
+- INFO: Hoenn BattleFrontier_BattlePalaceBattleRoom: 0 (0,9)->BATTLE_FRONTIER_BATTLE_PALACE_CORRIDOR [MB_NORMAL], 1 (1,9)->BATTLE_FRONTIER_BATTLE_PALACE_CORRIDOR [MB_NORMAL]
+- INFO: Hoenn BattleFrontier_BattleTowerBattleRoom: 1 (6,8)->BATTLE_FRONTIER_BATTLE_TOWER_LOBBY [MB_NORMAL]
+- INFO: Hoenn BattleFrontier_Lounge9: 0 (1,9)->BATTLE_FRONTIER_OUTSIDE_EAST [MB_NORMAL], 1 (2,9)->BATTLE_FRONTIER_OUTSIDE_EAST [MB_NORMAL]
+- INFO: Hoenn BattleFrontier_OutsideEast: 11 (21,45)->BATTLE_FRONTIER_LOUNGE9 [MB_NORMAL]
+- INFO: Kanto CeladonCity: 10 (29,5)->CELADON_CITY_CONDOMINIUMS_1F [MB_NORMAL], 12 (31,5)->CELADON_CITY_CONDOMINIUMS_1F [MB_NORMAL]
+- INFO: Kanto CeladonCity_Condominiums_1F: 0 (11,19)->CELADON_CITY [MB_NORMAL], 2 (13,19)->CELADON_CITY [MB_NORMAL]
+- INFO: Kanto CeladonCity_Condominiums_RoofRoom: 0 (3,8)->CELADON_CITY_CONDOMINIUMS_ROOF [MB_NORMAL], 2 (5,8)->CELADON_CITY_CONDOMINIUMS_ROOF [MB_NORMAL]
+- INFO: Kanto CeladonCity_DepartmentStore_1F: 0 (1,15)->CELADON_CITY [MB_NORMAL], 2 (3,15)->CELADON_CITY [MB_NORMAL], 3 (9,15)->CELADON_CITY [MB_NORMAL], 5 (11,15)->CELADON_CITY [MB_NORMAL]
+- INFO: Kanto CeladonCity_DepartmentStore_Elevator: 1 (2,6)->DYNAMIC [MB_NORMAL]
+- INFO: Kanto CeladonCity_GameCorner: 1 (10,13)->CELADON_CITY [MB_NORMAL], 2 (11,13)->CELADON_CITY [MB_NORMAL]
+- INFO: Kanto CeladonCity_GameCorner_PrizeRoom: 0 (3,9)->CELADON_CITY [MB_NORMAL], 2 (5,9)->CELADON_CITY [MB_NORMAL]
+- INFO: Kanto CeladonCity_Gym: 0 (5,18)->CELADON_CITY [MB_NORMAL], 2 (7,18)->CELADON_CITY [MB_NORMAL]
+- INFO: Kanto CeladonCity_Hotel: 0 (3,10)->CELADON_CITY [MB_NORMAL], 2 (5,10)->CELADON_CITY [MB_NORMAL]
+- INFO: Kanto CeladonCity_House1: 0 (3,7)->CELADON_CITY [MB_NORMAL], 2 (5,7)->CELADON_CITY [MB_NORMAL]
+- INFO: Kanto CeladonCity_PokemonCenter_1F: 0 (6,8)->CELADON_CITY [MB_NORMAL], 2 (8,8)->CELADON_CITY [MB_NORMAL]
+- INFO: Kanto CeladonCity_Restaurant: 0 (5,9)->CELADON_CITY [MB_NORMAL], 2 (7,9)->CELADON_CITY [MB_NORMAL]
+- INFO: Kanto CeruleanCity: 10 (31,9)->CERULEAN_CITY_HOUSE2 [MB_NORMAL]
+- INFO: Kanto CeruleanCity_BikeShop: 0 (4,9)->CERULEAN_CITY [MB_NORMAL], 2 (6,9)->CERULEAN_CITY [MB_NORMAL]
+- INFO: Kanto CeruleanCity_Gym: 0 (7,18)->CERULEAN_CITY [MB_NORMAL], 2 (9,18)->CERULEAN_CITY [MB_NORMAL]
+- INFO: Kanto CeruleanCity_House1: 0 (2,9)->CERULEAN_CITY [MB_NORMAL], 2 (4,9)->CERULEAN_CITY [MB_NORMAL]
+- INFO: Kanto CeruleanCity_House2: 0 (2,7)->CERULEAN_CITY [MB_NORMAL], 2 (4,7)->CERULEAN_CITY [MB_NORMAL]
+- INFO: Kanto CeruleanCity_House3: 0 (3,7)->CERULEAN_CITY [MB_NORMAL], 2 (5,7)->CERULEAN_CITY [MB_NORMAL]
+- INFO: Kanto CeruleanCity_Mart: 0 (3,7)->CERULEAN_CITY [MB_NORMAL], 2 (5,7)->CERULEAN_CITY [MB_NORMAL]
+- INFO: Kanto CeruleanCity_PokemonCenter_1F: 0 (6,8)->CERULEAN_CITY [MB_NORMAL], 2 (8,8)->CERULEAN_CITY [MB_NORMAL]
+- INFO: Hoenn EverGrandeCity_ChampionsRoom: 0 (6,12)->EVER_GRANDE_CITY_HALL4 [MB_NORMAL], 1 (6,2)->EVER_GRANDE_CITY_HALL_OF_FAME [MB_NORMAL]
+- INFO: Hoenn EverGrandeCity_DrakesRoom: 0 (6,13)->EVER_GRANDE_CITY_HALL3 [MB_NORMAL], 1 (6,2)->EVER_GRANDE_CITY_HALL4 [MB_NORMAL]
+- INFO: Hoenn EverGrandeCity_GlaciasRoom: 0 (6,13)->EVER_GRANDE_CITY_HALL2 [MB_NORMAL], 1 (6,2)->EVER_GRANDE_CITY_HALL3 [MB_NORMAL]
+- INFO: Hoenn EverGrandeCity_Hall1: 0 (5,12)->EVER_GRANDE_CITY_SIDNEYS_ROOM [MB_NORMAL], 2 (4,12)->EVER_GRANDE_CITY_SIDNEYS_ROOM [MB_NORMAL], 3 (6,12)->EVER_GRANDE_CITY_SIDNEYS_ROOM [MB_NORMAL]
+- INFO: Hoenn EverGrandeCity_Hall2: 0 (5,12)->EVER_GRANDE_CITY_PHOEBES_ROOM [MB_NORMAL], 2 (4,12)->EVER_GRANDE_CITY_PHOEBES_ROOM [MB_NORMAL], 3 (6,12)->EVER_GRANDE_CITY_PHOEBES_ROOM [MB_NORMAL]
+- INFO: Hoenn EverGrandeCity_Hall3: 0 (5,12)->EVER_GRANDE_CITY_GLACIAS_ROOM [MB_NORMAL], 2 (4,12)->EVER_GRANDE_CITY_GLACIAS_ROOM [MB_NORMAL], 3 (6,12)->EVER_GRANDE_CITY_GLACIAS_ROOM [MB_NORMAL]
+- INFO: Hoenn EverGrandeCity_Hall4: 0 (5,33)->EVER_GRANDE_CITY_DRAKES_ROOM [MB_NORMAL]
+- INFO: Hoenn EverGrandeCity_Hall5: 0 (5,12)->EVER_GRANDE_CITY_POKEMON_LEAGUE_1F [MB_NORMAL], 2 (4,12)->EVER_GRANDE_CITY_POKEMON_LEAGUE_1F [MB_NORMAL], 3 (6,12)->EVER_GRANDE_CITY_POKEMON_LEAGUE_1F [MB_NORMAL]
+- INFO: Hoenn EverGrandeCity_HallOfFame: 0 (7,11)->EVER_GRANDE_CITY_CHAMPIONS_ROOM [MB_ICE]
+- INFO: Hoenn EverGrandeCity_PhoebesRoom: 0 (6,13)->EVER_GRANDE_CITY_HALL1 [MB_NORMAL], 1 (6,2)->EVER_GRANDE_CITY_HALL2 [MB_NORMAL]
+- INFO: Hoenn EverGrandeCity_SidneysRoom: 0 (6,13)->EVER_GRANDE_CITY_HALL5 [MB_NORMAL], 1 (6,2)->EVER_GRANDE_CITY_HALL1 [MB_NORMAL]
+- INFO: Kanto FuchsiaCity: 9 (39,29)->FUCHSIA_CITY_HOUSE2 [MB_NORMAL]
+- INFO: Kanto FuchsiaCity_Gym: 0 (6,21)->FUCHSIA_CITY [MB_NORMAL], 2 (8,21)->FUCHSIA_CITY [MB_NORMAL]
+- INFO: Kanto FuchsiaCity_House1: 0 (3,7)->FUCHSIA_CITY [MB_NORMAL], 2 (5,7)->FUCHSIA_CITY [MB_NORMAL]
+- INFO: ... 125 more (use --limit 0)
+- NOTE: warp events on a non-warp tile: 303 on 165 maps (Hoenn 83); most are arrival-only spots or entrances a script opens
+
+## connections (INFO 8)
+
+- INFO: SaffronCity --up--> Route5: Route5 has no down connection back (same in upstream)
+- INFO: SaffronCity --down--> Route6: Route6 has no up connection back (same in upstream)
+- INFO: SaffronCity --left--> Route7: Route7 has no right connection back (same in upstream)
+- INFO: SaffronCity --right--> Route8: Route8 has no left connection back (same in upstream)
+- INFO: SaffronCity_Connection --down offset 12--> Route6: back offset 0 (expected -12) (same in upstream)
+- INFO: Route6 --up offset 0--> SaffronCity_Connection: back offset 12 (expected 0) (same in upstream)
+- INFO: Prototype_SeviiIsle_6 --up--> ThreeIsland: ThreeIsland has no down connection back (same in upstream)
+- INFO: Prototype_SeviiIsle_7 --up--> ThreeIsland: ThreeIsland has no down connection back (same in upstream)
+
+## flag numbers (NOTE 2)
+
+- NOTE: flags named free (FLAG_0x*/FLAG_UNUSED_*) that nothing else shares: 533
+- NOTE: hoennFlags: 290 named Hoenn-block flags, highest offset 0x411 of 0x800
+
+## var numbers (NOTE 1)
+
+- NOTE: save vars named free (VAR_0x40xx) that nothing else shares: 49
+
+## object/hidden-item flags (INFO 7, WARN 2)
+
+- WARN: ['FLAG_HIDE_HOENN_BRINEY'] hides objects on 5 maps: DewfordTown, Route104, Route104_MrBrineysHouse, Route109, Route116
+- WARN: ['FLAG_HIDE_HOENN_WALLY_PETALBURG'] hides objects on 2 maps: PetalburgCity_Gym, Route102
+- INFO: ['FLAG_HIDE_MISC_KANTO_ROCKETS'] on 5 maps (as upstream): MtMoon_B2F, RocketHideout_B1F, RocketHideout_B2F, RocketHideout_B3F, RocketHideout_B4F
+- INFO: ['FLAG_HIDE_SAFFRON_CIVILIANS'] on 2 maps (as upstream): SaffronCity, SilphCo_1F
+- INFO: ['FLAG_HIDE_SILPH_ROCKETS'] on 10 maps (as upstream): SilphCo_10F, SilphCo_11F, SilphCo_2F, SilphCo_3F, SilphCo_4F, SilphCo_5F, SilphCo_6F, SilphCo_7F, SilphCo_8F, SilphCo_9F
+- INFO: ['FLAG_HIDE_FIVE_ISLAND_ROCKETS'] on 3 maps (as upstream): FiveIsland_Meadow, FiveIsland_RocketWarehouse, SixIsland_OutcastIsland
+- INFO: ['FLAG_HIDE_POSTGAME_GOSSIPERS'] on 11 maps (as upstream): CeladonCity_DepartmentStore_2F, CeruleanCity_PokemonCenter_1F, CinnabarIsland_PokemonCenter_1F, FiveIsland_PokemonCenter_1F, FuchsiaCity, IndigoPlateau_PokemonCenter_1F, LavenderTown_PokemonCenter_1F, OneIsland_KindleRoad_EmberSpa, SaffronCity, SaffronCity_PokemonTrainerFanClub, SevenIsland_PokemonCenter_1F
+- INFO: ['FLAG_HIDE_THREE_ISLAND_BIKERS'] on 2 maps (as upstream): ThreeIsland, ThreeIsland_Port
+- INFO: ['FLAG_HIDE_MG_DELIVERYMEN'] on 19 maps (as upstream): CeladonCity_PokemonCenter_2F, CeruleanCity_PokemonCenter_2F, CinnabarIsland_PokemonCenter_2F, FiveIsland_PokemonCenter_2F, FourIsland_PokemonCenter_2F, FuchsiaCity_PokemonCenter_2F, IndigoPlateau_PokemonCenter_2F, LavenderTown_PokemonCenter_2F, OneIsland_PokemonCenter_2F, PewterCity_PokemonCenter_2F, Route10_PokemonCenter_2F, Route4_PokemonCenter_2F, SaffronCity_PokemonCenter_2F, SevenIsland_PokemonCenter_2F, SixIsland_PokemonCenter_2F, ThreeIsland_PokemonCenter_2F, TwoIsland_PokemonCenter_2F, VermilionCity_PokemonCenter_2F, ViridianCity_PokemonCenter_2F
+
+## movement types (NOTE 1)
+
+- NOTE: NULL callbacks: MOVEMENT_TYPE_BERRY_TREE_GROWTH; objects using them: 0
+
+## trainers (INFO 1, NOTE 2)
+
+- INFO: TRAINER_JESSIE_JAMES_SS_ANNE battled on 2 maps (one defeat flag): SSAnne_1F_Corridor, VermilionCity
+- NOTE: Hoenn trainers: 520 ids, highest offset 519, hoennTrainerFlags holds 1024 bits (504 free after the last)
+- NOTE: FR/LG trainers: NUM_TRAINERS 761 of MAX_TRAINERS_COUNT 768 (7 free)
+
+## layouts/groups (NOTE 1)
+
+- NOTE: 896 maps in 76 groups, 735 layouts

@@ -1,0 +1,102 @@
+{
+  "pass": false,
+  "status": "failed",
+  "ROM_sha256": "63904802b37dc5e922ec616361c0be3388f1030e5b2c1a0b7a2949f2a33c1f7c",
+  "RAM_writes": 0,
+  "direct_script_calls": 0,
+  "forced_battle_outcomes": 0,
+  "cases": [],
+  "stages": [
+    {
+      "stage": "scene1-Gym-start",
+      "position": [
+        54,
+        3,
+        5,
+        3
+      ],
+      "devon_scene": 1,
+      "flags": {
+        "FLAG_HOENN_BADGE01_GET": false,
+        "FLAG_HOENN_DEFEATED_RUSTBORO_GYM": false,
+        "FLAG_HOENN_GOT_TM39_FROM_ROXANNE": false,
+        "FLAG_HIDE_HOENN_RUSTBORO_THIEF": false,
+        "FLAG_HOENN_WOODS_RESEARCHER_SAVED": true
+      },
+      "roxanne_beaten": false,
+      "idle": true
+    }
+  ],
+  "scope": "Preboot eligible fixtures; actual Roxanne battle and continuous Gym exit to Devon coord; not whole campaign",
+  "objects_before_talk": [
+    {
+      "ptr": 33779296,
+      "slot": 1,
+      "xy": [
+        12,
+        9
+      ],
+      "sprite": 1,
+      "visible": true,
+      "feet": [
+        120,
+        112
+      ]
+    }
+  ],
+  "active_objects": [
+    {
+      "i": 0,
+      "local": 255,
+      "flags": 98497,
+      "xy": [
+        12,
+        10
+      ],
+      "face": 17
+    },
+    {
+      "i": 1,
+      "local": 1,
+      "flags": 1,
+      "xy": [
+        12,
+        9
+      ],
+      "face": 17
+    },
+    {
+      "i": 2,
+      "local": 3,
+      "flags": 1,
+      "xy": [
+        10,
+        16
+      ],
+      "face": 51
+    },
+    {
+      "i": 3,
+      "local": 5,
+      "flags": 1,
+      "xy": [
+        8,
+        13
+      ],
+      "face": 17
+    },
+    {
+      "i": 4,
+      "local": 254,
+      "flags": 8193,
+      "xy": [
+        12,
+        10
+      ],
+      "face": 17
+    }
+  ],
+  "error": "AssertionError(('timeout', 'A', (54, 3, 5, 3), '0x8124115'))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/work/hoenn-devon-native-20261013/native-devon-v3.py\", line 80, in <module>\n    settle(e);idle();assert blocks(e).trainer_beaten('TRAINER_HOENN_ROXANNE_1')\n    ^^^^^^^^^\n  File \"<executed-gauntlet-helpers>\", line 99, in settle\n  File \"<executed-gauntlet-helpers>\", line 97, in mash_until\nAssertionError: ('timeout', 'A', (54, 3, 5, 3), '0x8124115')\n",
+  "protected_original_inputs_unchanged": true
+}

@@ -1,0 +1,40 @@
+@ TY_HOENN_SHARED_HM_SIMPLE_V1
+RustboroCity_CuttersHouse_EventScript_H0::
+	lock
+	faceplayer
+	goto_if_set FLAG_HOENN_GOT_CUTTER_SHARED_HM_REWARD, RustboroCity_CuttersHouse_TYSharedHM_Done
+	goto_if_set FLAG_GOT_HM01, RustboroCity_CuttersHouse_TYSharedHM_Known
+	checkitem ITEM_HM01
+	goto_if_eq VAR_RESULT, TRUE, RustboroCity_CuttersHouse_TYSharedHM_Known
+	checkpcitem ITEM_HM01
+	goto_if_eq VAR_RESULT, TRUE, RustboroCity_CuttersHouse_TYSharedHM_Known
+	msgbox RustboroCity_CuttersHouse_TYSharedHM_FreshText
+	checkitemspace ITEM_HM01
+	goto_if_eq VAR_RESULT, FALSE, RustboroCity_CuttersHouse_TYSharedHM_Full
+	giveitem ITEM_HM01
+	goto_if_eq VAR_RESULT, FALSE, RustboroCity_CuttersHouse_TYSharedHM_Full
+	setflag FLAG_HOENN_GOT_CUTTER_SHARED_HM_REWARD
+	msgbox RustboroCity_CuttersHouse_TYSharedHM_FreshThanks
+	release
+	end
+
+RustboroCity_CuttersHouse_TYSharedHM_Known::
+	msgbox RustboroCity_CuttersHouse_TYSharedHM_KnownText
+	checkitemspace ITEM_TM31
+	goto_if_eq VAR_RESULT, FALSE, RustboroCity_CuttersHouse_TYSharedHM_Full
+	giveitem ITEM_TM31
+	goto_if_eq VAR_RESULT, FALSE, RustboroCity_CuttersHouse_TYSharedHM_Full
+	setflag FLAG_HOENN_GOT_CUTTER_SHARED_HM_REWARD
+	msgbox RustboroCity_CuttersHouse_TYSharedHM_TechniqueText
+	release
+	end
+
+RustboroCity_CuttersHouse_TYSharedHM_Full::
+	msgbox RustboroCity_CuttersHouse_TYSharedHM_FullText
+	release
+	end
+
+RustboroCity_CuttersHouse_TYSharedHM_Done::
+	msgbox RustboroCity_CuttersHouse_TYSharedHM_DoneText
+	release
+	end

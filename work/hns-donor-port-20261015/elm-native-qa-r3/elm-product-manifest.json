@@ -1,0 +1,150 @@
+{
+  "status": "ACTUAL_DONOR_ASSET_AND_TEN_INPUT_REGISTRATION_CANDIDATE_NOT_APPLIED",
+  "repository": "PokemonHnS-Development/pokehns-expansion",
+  "commit": "167aa6d537b109bb229c231ddce4616974c4da71",
+  "donor_source_files": {
+    "graphics/object_events/pics/people/special/elm_hns.png": "2f7b4754a92e7d056beda95560194594dd800ff3cd23b14c2cd2db0710a6272c",
+    "graphics/object_events/palettes/elm_hns.pal": "a1ba9c9bd1da4a787c4a469ecbbdaea36d79af32d402e7dd0e8127c3a06e55bc",
+    "CREDITS.md": "48406bac5c07dd3b55889427eb73a2a5a678453418f70bab5d3bc24ffd4e54a0",
+    "README.md": "e7cbe665ac3e3fb4cc2a40df0c606d01fb4e3390f101dadea83c3692e3b3f391",
+    "include/constants/event_objects.h": "b18b4863b9a7da0f721556cd705f20bdcb2d19b464641479dbbecfcddfc9df9a",
+    "src/data/object_events/object_event_anims.h": "622d38e442f83561922b3619ba743badae1854e140e4f48a38ebfca1cb112c45",
+    "src/data/object_events/object_event_graphics.h": "97569ef04fd02990066dfbfecf7306609bd35dc3d58d71bba94f02c50dcbc626",
+    "src/data/object_events/object_event_graphics_info.h": "c1975cdf02a6446d1b08707138c45c2ff022a6f6c9e8bab9577dc8d5ba5024ce",
+    "src/data/object_events/object_event_graphics_info_pointers.h": "28c9564793b728df4adad89cb4ee700b37acc64c1898efddc067549e9f127327",
+    "src/data/object_events/object_event_pic_tables.h": "56a156d56b3515313308e6839e55ba73b405651e505355c5c1ea6dc871dbf874"
+  },
+  "donor_manifest_snapshot_sha256": "9a101fa6d3c5585f5039fc2c9d6bb6f56af2a376c17bb997b5877870b108dd48",
+  "donor_host_code_executed": false,
+  "native_emulator_executed": false,
+  "ROM_applied": false,
+  "product_writes": false,
+  "SAV_writes": false,
+  "AI_art_used": false,
+  "pixel_art_redrawn": false,
+  "frame_reordered": false,
+  "palette_recolored": false,
+  "source_PNG_byte_identical_in_payload": true,
+  "source_palette_byte_identical_in_payload": true,
+  "indexed_mode": "P",
+  "source_canvas": [
+    144,
+    32
+  ],
+  "frame_canvas": [
+    16,
+    32
+  ],
+  "frames": 9,
+  "unique_frame_count": 9,
+  "source_palette_matches_PNG_first16_entries": true,
+  "engine_transparency_index": 0,
+  "PNG_tRNS_all_16_opaque": true,
+  "PNG_tRNS_does_not_control_GBA_4bpp_index0_transparency": true,
+  "native_4bpp_bytes": 2304,
+  "native_4bpp_sha256": "cd55e8b5202217c29719423366d0dda41d9bf4d126d6b2a161b08642f56c914a",
+  "native_gbapal_bytes": 32,
+  "native_gbapal_sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+  "all_palette_indices_roundtrip_equal": true,
+  "all_9_decoded_frames_equal_source": true,
+  "all_20_donor_standard_anims_parsed": true,
+  "professor_only_map_change": true,
+  "researcher_unchanged": true,
+  "target_frame9_compatibility_alias": "frame0 idle, since donor has nine poses and target cached standard table additionally has ANIM_RAISE_HAND",
+  "target_fresh_animation_header_check_pending": false,
+  "palette_tag": "0x1145",
+  "declared_palette_slot": 10,
+  "native_palette_coexistence_verified": false,
+  "attribution": {
+    "CREDITS_and_README_preserved": true,
+    "official_credit_HTML_preserved": true,
+    "credit": "Pokemon Heart and Soul; upstream chain retained as supplied",
+    "Elm_individual_artist_identified": false
+  },
+  "candidate_entries": [
+    {
+      "path": "include/constants/event_objects.h",
+      "before_sha256": "5fbf0becb7920786392f799dc192b61dc41d6555364e36402acbe4c4f7b1990e",
+      "after_sha256": "c9eb8c4906ec813a1df97578864b6848034b0e9446c8be82d2c747a8a877e286",
+      "bytes": 12488
+    },
+    {
+      "path": "src/data/object_events/object_event_graphics.h",
+      "before_sha256": "70455e68082d7d002b3107a4e00b83c36d1ec2ab41597ad666f3620564ac95ac",
+      "after_sha256": "15aaf779d8dd7d19dfd1fdf77fcf961109b17475aa03c60e94413b1a122c2287",
+      "bytes": 35257
+    },
+    {
+      "path": "src/data/object_events/object_event_pic_tables.h",
+      "before_sha256": "aed387f4d301bbf7270cc72e2a188413a3503a469293b6ba6d44d30dd8ceae0a",
+      "after_sha256": "eb602db45036b0a65ab6cdefa12065797f1873bd34255c935689fb540b04a2b7",
+      "bytes": 125004
+    },
+    {
+      "path": "src/data/object_events/object_event_graphics_info_pointers.h",
+      "before_sha256": "8471b1a9ac7b0f839b59e35861d79da90d82bec6a1356ab53647dd416abdc54c",
+      "after_sha256": "f9aed1565b23db00c033ff7031ebc886c5bb1a84046d457e417f939de64c8628",
+      "bytes": 37306
+    },
+    {
+      "path": "src/data/object_events/object_event_graphics_info.h",
+      "before_sha256": "1d5faf4e76c51ad0fbe5ade0bc15a02ff26e7c78769168d5cba26d4f58fe59a6",
+      "after_sha256": "1b9d41c65370a99d076ecabaf6d982ba18de59b4eed193f85943aff80be8d2bf",
+      "bytes": 154900
+    },
+    {
+      "path": "graphics_file_rules.mk",
+      "before_sha256": "b834fcde208557ec64329d8b481b032eac01894ef7aef48894f9d9453a47b74d",
+      "after_sha256": "8c055ce4fabea9b83833e89d19ba4e416272504268544342b031694aca850867",
+      "bytes": 15757
+    },
+    {
+      "path": "data/maps/NewBarkTown_ElmsLab/map.json",
+      "before_sha256": "c0c6a9b72b295cd45a5340342682aeff1f24f6871977e688797847ad54e38e11",
+      "after_sha256": "80fe5f0452cff562a4d139a6c50943c74d279c8c56846647e2cb9c986856bd7d",
+      "bytes": 1871
+    },
+    {
+      "path": "src/event_object_movement.c",
+      "before_sha256": "241a15df4e9977c0fb3a8e84507623476470f18de0a1862a8457bb96fbf6a420",
+      "after_sha256": "5bcc1fc5203d1f3100f805998c4b89ab0f7884c5e531197d0ab7e964eab2aa26",
+      "bytes": 334994
+    },
+    {
+      "path": "graphics/object_events/pics/people/prof_elm_hns.png",
+      "before_sha256": null,
+      "after_sha256": "2f7b4754a92e7d056beda95560194594dd800ff3cd23b14c2cd2db0710a6272c",
+      "bytes": 835,
+      "donor_path": "graphics/object_events/pics/people/special/elm_hns.png"
+    },
+    {
+      "path": "graphics/object_events/palettes/prof_elm_hns.pal",
+      "before_sha256": null,
+      "after_sha256": "a1ba9c9bd1da4a787c4a469ecbbdaea36d79af32d402e7dd0e8127c3a06e55bc",
+      "bytes": 191,
+      "donor_path": "graphics/object_events/palettes/elm_hns.pal"
+    }
+  ],
+  "baseline_source_paths": {
+    "include/constants/event_objects.h": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015\\include\\constants\\event_objects.h",
+    "src/data/object_events/object_event_graphics.h": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015\\src\\data\\object_events\\object_event_graphics.h",
+    "src/data/object_events/object_event_pic_tables.h": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015\\src\\data\\object_events\\object_event_pic_tables.h",
+    "src/data/object_events/object_event_graphics_info_pointers.h": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015\\src\\data\\object_events\\object_event_graphics_info_pointers.h",
+    "src/data/object_events/object_event_graphics_info.h": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015\\src\\data\\object_events\\object_event_graphics_info.h",
+    "graphics_file_rules.mk": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015\\graphics_file_rules.mk",
+    "data/maps/NewBarkTown_ElmsLab/map.json": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015\\data\\maps\\NewBarkTown_ElmsLab\\map.json",
+    "src/event_object_movement.c": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\current-inputs\\src\\event_object_movement.c"
+  },
+  "limits": [
+    "Fresh target animation source comparison passed; all source guards and ten before hashes must still match at application time.",
+    "Native palette slot10 coexistence, old lab Continue/re-entry and SAVE/cold remain unverified.",
+    "PNG/GIF previews are deterministic source data renders, not gameplay or native animation evidence."
+  ],
+  "source_guards": {
+    "src/data/object_events/object_event_anims.h": "55a05af806c410b2bb357f10ffa7365074fb2b081544184696e47642cb62ad13"
+  },
+  "all_20_donor_anims_equal_target_cache": true,
+  "all_20_donor_anims_equal_actual_fresh_target": true,
+  "R2_product_inputs_byte_identical_to_R1": true,
+  "prior_R1_preserved": true
+}

@@ -1,0 +1,33 @@
+tools/scaninc/scaninc -M build/blackthornlgqa/data/event_scripts.d -I include -I "" data/event_scripts.s
+tools/scaninc/scaninc -M build/blackthornlgqa/src/union_room.d -I include -I tools/agbcc/include src/union_room.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/script_pokemon_util.d -I include -I tools/agbcc/include src/script_pokemon_util.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/scrcmd.d -I include -I tools/agbcc/include src/scrcmd.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/rocket_trio.d -I include -I tools/agbcc/include src/rocket_trio.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/post_battle_event_funcs.d -I include -I tools/agbcc/include src/post_battle_event_funcs.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/overworld.d -I include -I tools/agbcc/include src/overworld.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/cable_club.d -I include -I tools/agbcc/include src/cable_club.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/battle_tower.d -I include -I tools/agbcc/include src/battle_tower.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/battle_setup.d -I include -I tools/agbcc/include src/battle_setup.c
+make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+tools/agbcc/bin/agbcc <flags> -o build/blackthornlgqa/src/battle_setup.o src/battle_setup.c
+tools/agbcc/bin/agbcc <flags> -o build/blackthornlgqa/src/battle_tower.o src/battle_tower.c
+tools/agbcc/bin/agbcc <flags> -o build/blackthornlgqa/src/cable_club.o src/cable_club.c
+tools/agbcc/bin/agbcc <flags> -o build/blackthornlgqa/src/overworld.o src/overworld.c
+tools/agbcc/bin/agbcc <flags> -o build/blackthornlgqa/src/post_battle_event_funcs.o src/post_battle_event_funcs.c
+tools/agbcc/bin/agbcc <flags> -o build/blackthornlgqa/src/rocket_trio.o src/rocket_trio.c
+tools/agbcc/bin/agbcc <flags> -o build/blackthornlgqa/src/scrcmd.o src/scrcmd.c
+tools/agbcc/bin/agbcc <flags> -o build/blackthornlgqa/src/script_pokemon_util.o src/script_pokemon_util.c
+tools/agbcc/bin/agbcc <flags> -o build/blackthornlgqa/src/union_room.o src/union_room.c
+tools/preproc/preproc data/event_scripts.s charmap.txt | cc -E -I include - | tools/preproc/preproc -ie data/event_scripts.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build/blackthornlgqa/data/event_scripts.o
+tools/ramscrgen/ramscrgen COMMON sym_common.txt ENGLISH -c build/blackthornlgqa/src,common_syms > build/blackthornlgqa/sym_common.ld
+/opt/devkitpro/devkitARM/bin/arm-none-eabi-ld: warning: ../../pokeblackthornlgqa.elf has a LOAD segment with RWX permissions
+Memory region         Used Size  Region Size  %age Used
+           EWRAM:      261864 B       256 KB     99.89%
+           IWRAM:       29900 B        32 KB     91.25%
+             ROM:    29830896 B        32 MB     88.90%
+cd build/blackthornlgqa && arm-none-eabi-ld -Map ../../pokeblackthornlgqa.map -T ../../ld_script.ld --print-memory-usage -o ../../pokeblackthornlgqa.elf <objs> <libs> | cat
+tools/gbafix/gbafix pokeblackthornlgqa.elf -t"POKEMON YELT" -cBPGE -m01 -r0 --silent
+arm-none-eabi-objcopy -O binary --gap-fill 0xFF --pad-to 0xA000000 pokeblackthornlgqa.elf pokeblackthornlgqa.gba
+arm-none-eabi-objdump -t pokeblackthornlgqa.elf | sort -u | grep -E "^0[2389]" | perl -p -e 's/^(\w{8}) (\w).{6} \S+\t(\w{8}) (\S+)$/\1 \2 \3 \4/g' > pokeblackthornlgqa.sym
+{"leafgreen": 0, "syms": 0, "hashes": {"gba": "63904802b37dc5e922ec616361c0be3388f1030e5b2c1a0b7a2949f2a33c1f7c", "elf": "7042bba8f7f97f4d3ec08f4acf1f17350884ca7d44905c947d4a52fe96d15d0c", "sym": "d1a1a849dfe2adc272f15eb0e2defe9dbf3c4a2c491d68e4e2ccc6143dfb63ea", "map": "b1a30b874a7642b6d94485b454985e3a291669db42632f0250047ba959a6f756"}}

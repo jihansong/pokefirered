@@ -1,0 +1,24 @@
+{
+  "started_utc": "2026-10-15T12:51:34.075149+00:00",
+  "build_exit": 0,
+  "syms_exit": 0,
+  "files": {
+    "pokemonthyl.gba": {
+      "bytes": 33554432,
+      "sha256": "7d66f47ad68e192d9f5916d9ef9bd9c9fb42fd80bcd3e2835b32cd328a208636"
+    },
+    "pokemonthyl.elf": {
+      "bytes": 34050196,
+      "sha256": "fdcb9ec35de57dc4299878af4251193a67c78a6a0d27b2b9bbd03458972207d0"
+    },
+    "pokemonthyl.sym": {
+      "bytes": 3316948,
+      "sha256": "556213ae8779bb68e2d06fb92b736fdb6b0b1800793e928f69f88cf3b259ec8e"
+    },
+    "saves/pokemonthyl_v1.45.sav": {
+      "bytes": 131072,
+      "sha256": "0949ebf04557a76e2175602e967eefadb7ffb722f2746be8a40ddb1fd66550a9"
+    }
+  },
+  "finished_utc": "2026-10-15T12:52:03.701874+00:00"
+}

@@ -180,3 +180,10 @@ CeruleanCity_Text_GymSign::
     .string "LEADER: MISTY\l"
     .string "The Tomboyish Mermaid!$"
 
+
+
+CeruleanCity_Text_MistyGymClosed::
+    .string "The GYM is closed while MISTY\n"
+    .string "travels with {PLAYER}.\p"
+    .string "The staff are caring for\n"
+    .string "the pool. Your BADGE is valid!$"

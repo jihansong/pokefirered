@@ -1,0 +1,199 @@
+{
+  "map": "MAP_JOHTO_ROUTE39",
+  "base_label": "sJohtoRoute39",
+  "land_mons": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_MEOWTH"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_MAGNEMITE"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_FARFETCHD"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_RATICATE"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_MEOWTH"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_MAGNEMITE"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_TAUROS"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_MILTANK"
+      },
+      {
+        "min_level": 18,
+        "max_level": 18,
+        "species": "SPECIES_PIDGEOTTO"
+      },
+      {
+        "min_level": 18,
+        "max_level": 18,
+        "species": "SPECIES_TAUROS"
+      },
+      {
+        "min_level": 18,
+        "max_level": 18,
+        "species": "SPECIES_MILTANK"
+      }
+    ]
+  },
+  "land_mons_morning": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_MEOWTH"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_MAGNEMITE"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_FARFETCHD"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_RATICATE"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_MEOWTH"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_MAGNEMITE"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_TAUROS"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_MILTANK"
+      },
+      {
+        "min_level": 18,
+        "max_level": 18,
+        "species": "SPECIES_PIDGEOTTO"
+      },
+      {
+        "min_level": 18,
+        "max_level": 18,
+        "species": "SPECIES_TAUROS"
+      },
+      {
+        "min_level": 18,
+        "max_level": 18,
+        "species": "SPECIES_MILTANK"
+      }
+    ]
+  },
+  "land_mons_night": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_MEOWTH"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_MAGNEMITE"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_NOCTOWL"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_RATICATE"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_MEOWTH"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_MAGNEMITE"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_TAUROS"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_MILTANK"
+      },
+      {
+        "min_level": 18,
+        "max_level": 18,
+        "species": "SPECIES_NOCTOWL"
+      },
+      {
+        "min_level": 18,
+        "max_level": 18,
+        "species": "SPECIES_TAUROS"
+      },
+      {
+        "min_level": 18,
+        "max_level": 18,
+        "species": "SPECIES_MILTANK"
+      }
+    ]
+  }
+}

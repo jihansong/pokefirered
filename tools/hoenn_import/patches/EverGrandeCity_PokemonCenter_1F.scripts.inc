@@ -1,0 +1,3 @@
+EverGrandeCity_PokemonCenter_1F_OnTransition::
+	setrespawn HEAL_LOCATION_HOENN_EVER_GRANDE_CITY
+	end

@@ -1,0 +1,14 @@
+[
+  {
+    "check": "build",
+    "exit_code": 0
+  },
+  {
+    "check": "symbols",
+    "exit_code": 0
+  },
+  {
+    "check": "savecompat",
+    "exit_code": 0
+  }
+]

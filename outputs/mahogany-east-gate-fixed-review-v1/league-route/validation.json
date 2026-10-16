@@ -1,0 +1,50 @@
+{
+  "pass": false,
+  "rom_sha256": "ab47fb761ae2d93e0008c98172f9dee4e89bd034037efa9abef2d86b436f6f81",
+  "elf_sha256": "584f0b0f22574a06f1e00d78815bf95fe6f00681814089fd0767edfa0619ec3d",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-original-vr-league-approach",
+  "fixture": "temporary Lapras mover plus unedited original starter Pikachu; no source save changes",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_story_not_entire_regions": true,
+  "johto_badges_defined": [
+    "FLAG_JOHTO_BADGE01_GET",
+    "FLAG_JOHTO_BADGE02_GET",
+    "FLAG_JOHTO_BADGE03_GET",
+    "FLAG_JOHTO_BADGE04_GET",
+    "FLAG_JOHTO_BADGE05_GET",
+    "FLAG_JOHTO_BADGE06_GET",
+    "FLAG_JOHTO_BADGE07_GET"
+  ],
+  "palette_active_abi_mask": {
+    "size": 16,
+    "offset": 7,
+    "mask": 128
+  },
+  "follower_checks": [],
+  "route_steps": [],
+  "scope": "Checkpoint after passed B2F: B1F south puzzle through central 1F to League lobby; not all regions or optional item platforms",
+  "original_terrain_sha256": {
+    "HoennVictoryRoad_B1F": "574316b10f2989df34eb3a53c3fc4bd946bb0e67bb679e15dfc91997cb47d684",
+    "HoennVictoryRoad_1F": "b100693756672442b3f583a8886950d07b68bac1b6eafe07a2b5fe721d1c484e",
+    "HoennEverGrandeCity": "65fe6682e18c1befab20f007b86811bc5cde2346ded25dd908cc15757ce17d1c"
+  },
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "original_pika_friendship": 255,
+  "error": "KeyError('unknown constant TRAINER_HOENN_EDGAR')",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/tools/qa/native_victory_road_league_route_qa.py\", line 152, in <module>\n    s.set_trainer_beaten(HALLE,False);s.set_trainer_beaten(EDGAR,False)\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/tools/qa/savefile.py\", line 86, in set_trainer_beaten\n    blk, o, bit = self._trainer_loc(trainer)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/tools/qa/savefile.py\", line 75, in _trainer_loc\n    t = const(trainer)\n        ^^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/tools/qa/gamedata.py\", line 205, in const\n    return consts([s])[s]\n           ^^^^^^^^^^^\n  File \"/workspaces/pokefirered/tools/qa/gamedata.py\", line 180, in consts\n    raise KeyError('unknown constant %s' % n)\nKeyError: 'unknown constant TRAINER_HOENN_EDGAR'\n",
+  "original_saves_unchanged": true
+}

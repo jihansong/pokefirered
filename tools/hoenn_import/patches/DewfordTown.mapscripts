@@ -1,1 +1,2 @@
+	map_script MAP_SCRIPT_ON_RESUME, DewfordTown_OnResume
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, DewfordTown_OnFrame

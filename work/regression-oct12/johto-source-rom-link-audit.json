@@ -1,0 +1,694 @@
+{
+  "rom_sha256": "111d4e1ae7e6572845e5eb31ed33a1216fff8aa3d3e11466f287b74419abe682",
+  "assets": {
+    "gTileset_General": {
+      "flags": [
+        1,
+        0,
+        0
+      ],
+      "pointers": [
+        {
+          "field": "tiles",
+          "symbol": "gTilesetTiles_General",
+          "rom": "0x8ea4ff8",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "palettes",
+          "symbol": "gTilesetPalettes_General",
+          "rom": "0x8ea4df8",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "metatiles",
+          "symbol": "gMetatiles_General",
+          "rom": "0x835ed00",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "callback",
+          "symbol": "InitTilesetAnim_General",
+          "rom": "0x8071f41",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "metatileAttributes",
+          "symbol": "gMetatileAttributes_General",
+          "rom": "0x8361500",
+          "source_symbol_matches": true
+        }
+      ],
+      "assets": [
+        {
+          "field": "tiles",
+          "source_paths": [],
+          "rom_equal": null,
+          "note": "No compiled INCBIN source found; do not claim comparison PASS"
+        },
+        {
+          "field": "palettes",
+          "source_paths": [],
+          "rom_equal": null,
+          "note": "No compiled INCBIN source found; do not claim comparison PASS"
+        },
+        {
+          "field": "metatiles",
+          "bytes": 10240,
+          "source_paths": [
+            "data/tilesets/primary/general/metatiles.bin"
+          ],
+          "source_sha256": "8d950c1a1f151f5e1bded1ecee165b815c3a4d62b69a4a9cec4f676283f9041e",
+          "rom_equal": true
+        },
+        {
+          "field": "metatileAttributes",
+          "bytes": 2560,
+          "source_paths": [
+            "data/tilesets/primary/general/metatile_attributes.bin"
+          ],
+          "source_sha256": "1f62a949da41adca90ad36ca3597754bee953a8f21781f32aedf6158922c89cb",
+          "rom_equal": true
+        }
+      ]
+    },
+    "gTileset_Building": {
+      "flags": [
+        1,
+        0,
+        0
+      ],
+      "pointers": [
+        {
+          "field": "tiles",
+          "symbol": "gTilesetTiles_Building",
+          "rom": "0x82ec160",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "palettes",
+          "symbol": "gTilesetPalettes_Building",
+          "rom": "0x82ee560",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "metatiles",
+          "symbol": "gMetatiles_Building",
+          "rom": "0x836d224",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "callback",
+          "symbol": "NULL",
+          "rom": "0x0",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "metatileAttributes",
+          "symbol": "gMetatileAttributes_Building",
+          "rom": "0x836fa24",
+          "source_symbol_matches": true
+        }
+      ],
+      "assets": [
+        {
+          "field": "tiles",
+          "bytes": 9216,
+          "source_paths": [
+            "data/tilesets/primary/building/tiles.4bpp.lz"
+          ],
+          "source_sha256": "c59fc5fbfe9e8dbc3bde3ae4665932a41ce1630ef5a3c5157ff457e605711858",
+          "rom_equal": true
+        },
+        {
+          "field": "palettes",
+          "bytes": 512,
+          "source_paths": [
+            "data/tilesets/primary/building/palettes/00.gbapal",
+            "data/tilesets/primary/building/palettes/01.gbapal",
+            "data/tilesets/primary/building/palettes/02.gbapal",
+            "data/tilesets/primary/building/palettes/03.gbapal",
+            "data/tilesets/primary/building/palettes/04.gbapal",
+            "data/tilesets/primary/building/palettes/05.gbapal",
+            "data/tilesets/primary/building/palettes/06.gbapal",
+            "data/tilesets/primary/building/palettes/07.gbapal",
+            "data/tilesets/primary/building/palettes/08.gbapal",
+            "data/tilesets/primary/building/palettes/09.gbapal",
+            "data/tilesets/primary/building/palettes/10.gbapal",
+            "data/tilesets/primary/building/palettes/11.gbapal",
+            "data/tilesets/primary/building/palettes/12.gbapal",
+            "data/tilesets/primary/building/palettes/13.gbapal",
+            "data/tilesets/primary/building/palettes/14.gbapal",
+            "data/tilesets/primary/building/palettes/15.gbapal"
+          ],
+          "source_sha256": "8f164c2c1a221332d826cffc8ab13baba57bb1c3e1dc351b7089d616fae42329",
+          "rom_equal": true
+        },
+        {
+          "field": "metatiles",
+          "bytes": 10240,
+          "source_paths": [
+            "data/tilesets/primary/building/metatiles.bin"
+          ],
+          "source_sha256": "6b53b219dcacf26af58c7174279c24a44ad13194c7292c74fcf24c48a1be4b4b",
+          "rom_equal": true
+        },
+        {
+          "field": "metatileAttributes",
+          "bytes": 2560,
+          "source_paths": [
+            "data/tilesets/primary/building/metatile_attributes.bin"
+          ],
+          "source_sha256": "c609529ecdf1b443b75f144fd733f353a8ddaeb3584ab018a369bb2bea8da5d4",
+          "rom_equal": true
+        }
+      ]
+    },
+    "gTileset_VermilionCity": {
+      "flags": [
+        1,
+        1,
+        0
+      ],
+      "pointers": [
+        {
+          "field": "tiles",
+          "symbol": "gTilesetTiles_VermilionCity",
+          "rom": "0x82e7388",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "palettes",
+          "symbol": "gTilesetPalettes_VermilionCity",
+          "rom": "0x82e7c6c",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "metatiles",
+          "symbol": "gMetatiles_VermilionCity",
+          "rom": "0x8364f0c",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "callback",
+          "symbol": "NULL",
+          "rom": "0x0",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "metatileAttributes",
+          "symbol": "gMetatileAttributes_VermilionCity",
+          "rom": "0x8365cec",
+          "source_symbol_matches": true
+        }
+      ],
+      "assets": [
+        {
+          "field": "tiles",
+          "bytes": 2276,
+          "source_paths": [
+            "data/tilesets/secondary/vermilion_city/tiles.4bpp.lz"
+          ],
+          "source_sha256": "38a12c5e0dfe1d9e2cce30be8e9c2d2cbe730ce1454e9cbf8df0495f1abd010b",
+          "rom_equal": true
+        },
+        {
+          "field": "palettes",
+          "bytes": 512,
+          "source_paths": [
+            "data/tilesets/secondary/vermilion_city/palettes/00.gbapal",
+            "data/tilesets/secondary/vermilion_city/palettes/01.gbapal",
+            "data/tilesets/secondary/vermilion_city/palettes/02.gbapal",
+            "data/tilesets/secondary/vermilion_city/palettes/03.gbapal",
+            "data/tilesets/secondary/vermilion_city/palettes/04.gbapal",
+            "data/tilesets/secondary/vermilion_city/palettes/05.gbapal",
+            "data/tilesets/secondary/vermilion_city/palettes/06.gbapal",
+            "data/tilesets/secondary/vermilion_city/palettes/07.gbapal",
+            "data/tilesets/secondary/vermilion_city/palettes/08.gbapal",
+            "data/tilesets/secondary/vermilion_city/palettes/09.gbapal",
+            "data/tilesets/secondary/vermilion_city/palettes/10.gbapal",
+            "data/tilesets/secondary/vermilion_city/palettes/11.gbapal",
+            "data/tilesets/secondary/vermilion_city/palettes/12.gbapal",
+            "data/tilesets/secondary/vermilion_city/palettes/13.gbapal",
+            "data/tilesets/secondary/vermilion_city/palettes/14.gbapal",
+            "data/tilesets/secondary/vermilion_city/palettes/15.gbapal"
+          ],
+          "source_sha256": "b255c8484d8423080266d1314405fdfa6433d7c530129ffb748413f76bea9372",
+          "rom_equal": true
+        },
+        {
+          "field": "metatiles",
+          "bytes": 3552,
+          "source_paths": [
+            "data/tilesets/secondary/vermilion_city/metatiles.bin"
+          ],
+          "source_sha256": "c3b073d818a8520576fb7f2a8e0bda5738b22eb669768940c485a9cec08cff9b",
+          "rom_equal": true
+        },
+        {
+          "field": "metatileAttributes",
+          "bytes": 888,
+          "source_paths": [
+            "data/tilesets/secondary/vermilion_city/metatile_attributes.bin"
+          ],
+          "source_sha256": "8e736698a372e7ba90640db60b029540065667d99f6cc0161b80a79b75e6c1c8",
+          "rom_equal": true
+        }
+      ]
+    },
+    "gTileset_PalletTown": {
+      "flags": [
+        1,
+        1,
+        0
+      ],
+      "pointers": [
+        {
+          "field": "tiles",
+          "symbol": "gTilesetTiles_PalletTown",
+          "rom": "0x82e40cc",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "palettes",
+          "symbol": "gTilesetPalettes_PalletTown",
+          "rom": "0x82e4510",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "metatiles",
+          "symbol": "gMetatiles_PalletTown",
+          "rom": "0x8361f00",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "callback",
+          "symbol": "NULL",
+          "rom": "0x0",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "metatileAttributes",
+          "symbol": "gMetatileAttributes_PalletTown",
+          "rom": "0x8362490",
+          "source_symbol_matches": true
+        }
+      ],
+      "assets": [
+        {
+          "field": "tiles",
+          "bytes": 1092,
+          "source_paths": [
+            "data/tilesets/secondary/pallet_town/tiles.4bpp.lz"
+          ],
+          "source_sha256": "7845a81e2f77edfbac73241f63c7f52e1f86130787036245cca6b3a9c338110c",
+          "rom_equal": true
+        },
+        {
+          "field": "palettes",
+          "bytes": 512,
+          "source_paths": [
+            "data/tilesets/secondary/pallet_town/palettes/00.gbapal",
+            "data/tilesets/secondary/pallet_town/palettes/01.gbapal",
+            "data/tilesets/secondary/pallet_town/palettes/02.gbapal",
+            "data/tilesets/secondary/pallet_town/palettes/03.gbapal",
+            "data/tilesets/secondary/pallet_town/palettes/04.gbapal",
+            "data/tilesets/secondary/pallet_town/palettes/05.gbapal",
+            "data/tilesets/secondary/pallet_town/palettes/06.gbapal",
+            "data/tilesets/secondary/pallet_town/palettes/07.gbapal",
+            "data/tilesets/secondary/pallet_town/palettes/08.gbapal",
+            "data/tilesets/secondary/pallet_town/palettes/09.gbapal",
+            "data/tilesets/secondary/pallet_town/palettes/10.gbapal",
+            "data/tilesets/secondary/pallet_town/palettes/11.gbapal",
+            "data/tilesets/secondary/pallet_town/palettes/12.gbapal",
+            "data/tilesets/secondary/pallet_town/palettes/13.gbapal",
+            "data/tilesets/secondary/pallet_town/palettes/14.gbapal",
+            "data/tilesets/secondary/pallet_town/palettes/15.gbapal"
+          ],
+          "source_sha256": "84bddb18b472a44dada964908f497d69d80b662ebab65f2018b2511b66a8b2e8",
+          "rom_equal": true
+        },
+        {
+          "field": "metatiles",
+          "bytes": 1424,
+          "source_paths": [
+            "data/tilesets/secondary/pallet_town/metatiles.bin"
+          ],
+          "source_sha256": "3b7ba7f75fd5d750413fc252519569a9f98fac586d87f62066bdf1e3edf35ca2",
+          "rom_equal": true
+        },
+        {
+          "field": "metatileAttributes",
+          "bytes": 356,
+          "source_paths": [
+            "data/tilesets/secondary/pallet_town/metatile_attributes.bin"
+          ],
+          "source_sha256": "8af5fbc8c32e5d0de4fe66735603d46ecd3506c42fcbe8b6cac744496a25203a",
+          "rom_equal": true
+        }
+      ]
+    },
+    "gTileset_Lab": {
+      "flags": [
+        1,
+        1,
+        0
+      ],
+      "pointers": [
+        {
+          "field": "tiles",
+          "symbol": "gTilesetTiles_Lab",
+          "rom": "0x82f75b8",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "palettes",
+          "symbol": "gTilesetPalettes_Lab",
+          "rom": "0x82f7bcc",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "metatiles",
+          "symbol": "gMetatiles_Lab",
+          "rom": "0x8376324",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "callback",
+          "symbol": "NULL",
+          "rom": "0x0",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "metatileAttributes",
+          "symbol": "gMetatileAttributes_Lab",
+          "rom": "0x8376e14",
+          "source_symbol_matches": true
+        }
+      ],
+      "assets": [
+        {
+          "field": "tiles",
+          "bytes": 1556,
+          "source_paths": [
+            "data/tilesets/secondary/lab/tiles.4bpp.lz"
+          ],
+          "source_sha256": "7723bc2f35178eef1461e0c0f68c5eb5e0e6392598910dd0654e1f83fc9fe87b",
+          "rom_equal": true
+        },
+        {
+          "field": "palettes",
+          "bytes": 512,
+          "source_paths": [
+            "data/tilesets/secondary/lab/palettes/00.gbapal",
+            "data/tilesets/secondary/lab/palettes/01.gbapal",
+            "data/tilesets/secondary/lab/palettes/02.gbapal",
+            "data/tilesets/secondary/lab/palettes/03.gbapal",
+            "data/tilesets/secondary/lab/palettes/04.gbapal",
+            "data/tilesets/secondary/lab/palettes/05.gbapal",
+            "data/tilesets/secondary/lab/palettes/06.gbapal",
+            "data/tilesets/secondary/lab/palettes/07.gbapal",
+            "data/tilesets/secondary/lab/palettes/08.gbapal",
+            "data/tilesets/secondary/lab/palettes/09.gbapal",
+            "data/tilesets/secondary/lab/palettes/10.gbapal",
+            "data/tilesets/secondary/lab/palettes/11.gbapal",
+            "data/tilesets/secondary/lab/palettes/12.gbapal",
+            "data/tilesets/secondary/lab/palettes/13.gbapal",
+            "data/tilesets/secondary/lab/palettes/14.gbapal",
+            "data/tilesets/secondary/lab/palettes/15.gbapal"
+          ],
+          "source_sha256": "24bb6488ae8bdd61586ded4069b051128d0923cba611139e7a9bcc3add5e2198",
+          "rom_equal": true
+        },
+        {
+          "field": "metatiles",
+          "bytes": 2800,
+          "source_paths": [
+            "data/tilesets/secondary/lab/metatiles.bin"
+          ],
+          "source_sha256": "ad20e1e58ccf29a884170d612fb6e2fef253688678b06dae43ac3e2942a2e8cf",
+          "rom_equal": true
+        },
+        {
+          "field": "metatileAttributes",
+          "bytes": 700,
+          "source_paths": [
+            "data/tilesets/secondary/lab/metatile_attributes.bin"
+          ],
+          "source_sha256": "ce6594ef39e2421a71b007c13c4696f79a49bd13eeca3e9dfec2a16cb495e0e1",
+          "rom_equal": true
+        }
+      ]
+    },
+    "gTileset_RockTunnel": {
+      "flags": [
+        1,
+        1,
+        0
+      ],
+      "pointers": [
+        {
+          "field": "tiles",
+          "symbol": "gTilesetTiles_RockTunnel",
+          "rom": "0x82ffd2c",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "palettes",
+          "symbol": "gTilesetPalettes_RockTunnel",
+          "rom": "0x8300e94",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "metatiles",
+          "symbol": "gMetatiles_RockTunnel",
+          "rom": "0x837977c",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "callback",
+          "symbol": "NULL",
+          "rom": "0x0",
+          "source_symbol_matches": true
+        },
+        {
+          "field": "metatileAttributes",
+          "symbol": "gMetatileAttributes_RockTunnel",
+          "rom": "0x837a0fc",
+          "source_symbol_matches": true
+        }
+      ],
+      "assets": [
+        {
+          "field": "tiles",
+          "bytes": 4456,
+          "source_paths": [
+            "data/tilesets/secondary/rock_tunnel/tiles.4bpp.lz"
+          ],
+          "source_sha256": "edbb72f717476aba9888f0794e5e48b7d759c718788f4ad901e7d7a73270713b",
+          "rom_equal": true
+        },
+        {
+          "field": "palettes",
+          "bytes": 512,
+          "source_paths": [
+            "data/tilesets/secondary/rock_tunnel/palettes/00.gbapal",
+            "data/tilesets/secondary/rock_tunnel/palettes/01.gbapal",
+            "data/tilesets/secondary/rock_tunnel/palettes/02.gbapal",
+            "data/tilesets/secondary/rock_tunnel/palettes/03.gbapal",
+            "data/tilesets/secondary/rock_tunnel/palettes/04.gbapal",
+            "data/tilesets/secondary/rock_tunnel/palettes/05.gbapal",
+            "data/tilesets/secondary/rock_tunnel/palettes/06.gbapal",
+            "data/tilesets/secondary/rock_tunnel/palettes/07.gbapal",
+            "data/tilesets/secondary/rock_tunnel/palettes/08.gbapal",
+            "data/tilesets/secondary/rock_tunnel/palettes/09.gbapal",
+            "data/tilesets/secondary/rock_tunnel/palettes/10.gbapal",
+            "data/tilesets/secondary/rock_tunnel/palettes/11.gbapal",
+            "data/tilesets/secondary/rock_tunnel/palettes/12.gbapal",
+            "data/tilesets/secondary/rock_tunnel/palettes/13.gbapal",
+            "data/tilesets/secondary/rock_tunnel/palettes/14.gbapal",
+            "data/tilesets/secondary/rock_tunnel/palettes/15.gbapal"
+          ],
+          "source_sha256": "db83ea7183db1310aabdc9d2e68bbdc4a3068a17d91e25b05ee9e14d27006d78",
+          "rom_equal": true
+        },
+        {
+          "field": "metatiles",
+          "bytes": 2432,
+          "source_paths": [
+            "data/tilesets/secondary/rock_tunnel/metatiles.bin"
+          ],
+          "source_sha256": "0c2dc2c319362f7a270ce4452b1c4503616c2ca97567aa119955186b8055d926",
+          "rom_equal": true
+        },
+        {
+          "field": "metatileAttributes",
+          "bytes": 608,
+          "source_paths": [
+            "data/tilesets/secondary/rock_tunnel/metatile_attributes.bin"
+          ],
+          "source_sha256": "528f42a80f5a0fd160430ef803c75b611d23db384f5dfaac92cc276cc4750b45",
+          "rom_equal": true
+        }
+      ]
+    }
+  },
+  "maps": [
+    {
+      "map": "JohtoCherrygroveAirstrip",
+      "group": 76,
+      "number": 0,
+      "map_header": "0x8514364",
+      "layout_pointer": "0x84f1d64",
+      "layout_id": 754,
+      "table_layout": "0x84f1d64",
+      "layout_id_matches_direct_pointer": true,
+      "rom_dimensions": [
+        32,
+        24
+      ],
+      "source_dimensions": [
+        32,
+        24
+      ],
+      "rom_border_dimensions": [
+        2,
+        2
+      ],
+      "source_border_dimensions": [
+        2,
+        2
+      ],
+      "dimensions_equal": true,
+      "primary_equal": true,
+      "secondary_equal": true,
+      "rom_blockdata_equal_source": true,
+      "rom_border_equal_source": true
+    },
+    {
+      "map": "JohtoRoute29",
+      "group": 76,
+      "number": 1,
+      "map_header": "0x8514380",
+      "layout_pointer": "0x84f2508",
+      "layout_id": 755,
+      "table_layout": "0x84f2508",
+      "layout_id_matches_direct_pointer": true,
+      "rom_dimensions": [
+        40,
+        24
+      ],
+      "source_dimensions": [
+        40,
+        24
+      ],
+      "rom_border_dimensions": [
+        2,
+        2
+      ],
+      "source_border_dimensions": [
+        2,
+        2
+      ],
+      "dimensions_equal": true,
+      "primary_equal": true,
+      "secondary_equal": true,
+      "rom_blockdata_equal_source": true,
+      "rom_border_equal_source": true
+    },
+    {
+      "map": "NewBarkTown",
+      "group": 76,
+      "number": 2,
+      "map_header": "0x851439c",
+      "layout_pointer": "0x84f2d0c",
+      "layout_id": 756,
+      "table_layout": "0x84f2d0c",
+      "layout_id_matches_direct_pointer": true,
+      "rom_dimensions": [
+        36,
+        28
+      ],
+      "source_dimensions": [
+        36,
+        28
+      ],
+      "rom_border_dimensions": [
+        2,
+        2
+      ],
+      "source_border_dimensions": [
+        2,
+        2
+      ],
+      "dimensions_equal": true,
+      "primary_equal": true,
+      "secondary_equal": true,
+      "rom_blockdata_equal_source": false,
+      "rom_border_equal_source": true
+    },
+    {
+      "map": "NewBarkTown_ElmsLab",
+      "group": 76,
+      "number": 3,
+      "map_header": "0x85143b8",
+      "layout_pointer": "0x84f2e9c",
+      "layout_id": 757,
+      "table_layout": "0x84f2e9c",
+      "layout_id_matches_direct_pointer": true,
+      "rom_dimensions": [
+        13,
+        14
+      ],
+      "source_dimensions": [
+        13,
+        14
+      ],
+      "rom_border_dimensions": [
+        2,
+        2
+      ],
+      "source_border_dimensions": [
+        2,
+        2
+      ],
+      "dimensions_equal": true,
+      "primary_equal": true,
+      "secondary_equal": true,
+      "rom_blockdata_equal_source": true,
+      "rom_border_equal_source": true
+    },
+    {
+      "map": "MtMortar_1F",
+      "group": 76,
+      "number": 83,
+      "map_header": "0x8514c78",
+      "layout_pointer": "0x8504cf4",
+      "layout_id": 802,
+      "table_layout": "0x8504cf4",
+      "layout_id_matches_direct_pointer": true,
+      "rom_dimensions": [
+        48,
+        40
+      ],
+      "source_dimensions": [
+        48,
+        40
+      ],
+      "rom_border_dimensions": [
+        2,
+        2
+      ],
+      "source_border_dimensions": [
+        2,
+        2
+      ],
+      "dimensions_equal": true,
+      "primary_equal": true,
+      "secondary_equal": true,
+      "rom_blockdata_equal_source": true,
+      "rom_border_equal_source": true
+    }
+  ],
+  "limitation": "Exact ROM/source links and data do not prove visual quality or runtime VRAM correctness."
+}

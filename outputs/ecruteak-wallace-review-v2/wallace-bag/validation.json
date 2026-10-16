@@ -1,0 +1,26 @@
+{
+  "pass": false,
+  "rom_sha256": "c139724c9b8d94a1195cb0386ced634a0012377f2ee7f3e86b6267259cf8068b",
+  "elf_sha256": "2e187bd051b902ab268d718c5cc02f9b32b16f99c0f81f8d1a88a425282855a3",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-wallace-waterfall-bag",
+  "fixture": "temporary story/item fixture; original source SAV and full Pokemon storage unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_story_not_entire_regions": true,
+  "error": "AssertionError(('Gym south approach', (43, 7, 31, 35)))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/tools/qa/native_wallace_waterfall_qa.py\", line 130, in <module>\n    assert e.location()[3]==34,('Gym south approach',e.location())\n           ^^^^^^^^^^^^^^^^^^^\nAssertionError: ('Gym south approach', (43, 7, 31, 35))\n",
+  "failure_location": [
+    43,
+    7,
+    31,
+    35
+  ],
+  "original_saves_unchanged": true
+}

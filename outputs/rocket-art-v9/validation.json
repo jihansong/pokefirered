@@ -1,0 +1,27 @@
+{
+  "status": "PASS_NATIVE_SMALL_CLEANUP_EXPORT",
+  "changed_pixels": 26,
+  "hair_pixels": 17,
+  "glove_pixels": 9,
+  "eyes_changed_pixels": 0,
+  "canvas": [
+    64,
+    64
+  ],
+  "opaque_colours": 15,
+  "palette_bytes_identical": true,
+  "silhouette_changes": 0,
+  "approved_v4_proportions_preserved": true,
+  "native_decode_matches_png_all_4096_pixels": true,
+  "source_v8_files_preserved": 12,
+  "original_comparison_source_preserved": true,
+  "comparison_source_sha256": {
+    "work\\rocket-quality-audit\\current\\graphics\\trainers\\front_pics\\cool_couple_front_pic.png": "0dc95c07084ea8e6a26c5d0d6187c4ba0cdcab410fc7caba18808bea73dca52b",
+    "work\\rocket-quality-audit\\current\\graphics\\trainers\\palettes\\cool_couple.pal": "6c41f60ed2563e12eaa8c29b5fd2e11311c4e9fb14afaa1ce7873e21b00e1a21"
+  },
+  "new_high_resolution_art": false,
+  "image_generation_or_external_service_used": false,
+  "Piskel_UI_claimed": false,
+  "rom_integrated": false,
+  "visual_limit": "Small native shading cleanup only. No claim of equal-to-original final sprite quality; source expression and glove anatomy remain limited by approved small-canvas artwork."
+}

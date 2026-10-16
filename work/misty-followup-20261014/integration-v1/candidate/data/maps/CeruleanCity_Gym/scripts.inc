@@ -1,0 +1,156 @@
+CeruleanCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, CeruleanCity_Gym_OnTransition
+	.byte 0
+
+CeruleanCity_Gym_OnTransition::
+	setflag FLAG_TEMP_1
+	goto_if_set FLAG_MISTY_COMPANION_JOINED, CeruleanCity_Gym_EventScript_NoRockets
+	goto_if_set FLAG_ROCKET_CERULEAN_GYM, CeruleanCity_Gym_EventScript_NoRockets
+	goto_if_unset FLAG_BADGE02_GET, CeruleanCity_Gym_EventScript_NoRockets
+	setvar VAR_TEMP_1, 1
+CeruleanCity_Gym_EventScript_NoRockets::
+	end
+
+@ Thunder Yellow v0.5.0, TEAM ROCKET event 3: back at the CERULEAN GYM after the
+@ CASCADE BADGE, the player finds JESSIE, JAMES and MEOWTH after the stars of the
+@ gym's water show. MISTY asks for help; a double battle, and MISTY's thanks.
+CeruleanCity_Gym_EventScript_RocketWaterShow::
+	lockall
+	setvar VAR_TEMP_1, 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	playse SE_M_EXPLOSION
+	clearflag FLAG_TEMP_1
+	addobject LOCALID_CERULEAN_GYM_JESSIE
+	addobject LOCALID_CERULEAN_GYM_MEOWTH
+	addobject LOCALID_CERULEAN_GYM_JAMES
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	playbgm MUS_ENCOUNTER_ROCKET, 0
+	goto_if_eq VAR_ROCKET_RETRY, 3, CeruleanCity_Gym_EventScript_RocketRetry
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox CeruleanCity_Gym_Text_JessieWaterShow
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox CeruleanCity_Gym_Text_JamesDrainPool
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox CeruleanCity_Gym_Text_MistyNotInMyGym
+	call_if_set FLAG_ROCKET_VIRIDIAN_PC, CeruleanCity_Gym_EventScript_MeowthSpotsPikachu
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox CeruleanCity_Gym_Text_RocketBattleIntro
+	closemessage
+CeruleanCity_Gym_EventScript_RocketBattle::
+	setvar VAR_0x8004, 3
+	call EventScript_RocketTrioBeforeBattle
+	setvar VAR_LAST_TALKED, LOCALID_CERULEAN_GYM_JESSIE
+	trainerbattle_no_intro TRAINER_JESSIE_JAMES_CERULEAN_GYM, CeruleanCity_Gym_Text_RocketDefeat
+	setvar VAR_ROCKET_RETRY, ROCKET_RETRY_NONE
+	setvar VAR_0x8008, LOCALID_CERULEAN_GYM_JESSIE
+	setvar VAR_0x8009, LOCALID_CERULEAN_GYM_JAMES
+	setvar VAR_0x800A, LOCALID_CERULEAN_GYM_MEOWTH
+	call EventScript_RocketTrioBlastOff
+	removeobject LOCALID_CERULEAN_GYM_JESSIE
+	removeobject LOCALID_CERULEAN_GYM_MEOWTH
+	removeobject LOCALID_CERULEAN_GYM_JAMES
+	setflag FLAG_ROCKET_CERULEAN_GYM
+	fadedefaultbgm
+	setvar VAR_0x8004, 352
+	goto_if_eq VAR_ROCKET_DOUBLES, PLAYER_HAS_TWO_USABLE_MONS, CeruleanCity_Gym_EventScript_RocketCoins
+	setvar VAR_0x8004, 1056
+CeruleanCity_Gym_EventScript_RocketCoins::
+	call EventScript_RocketMeowthCoins
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox CeruleanCity_Gym_Text_MistyThanks
+	giveitem ITEM_MYSTIC_WATER
+	setvar VAR_0x8004, ROCKET_HELD_MYSTIC_WATER
+	call EventScript_RocketRewardResult
+	textcolor NPC_TEXT_COLOR_FEMALE
+	call_if_ne VAR_0x8007, FALSE, CeruleanCity_Gym_EventScript_MistyMysticWater
+	msgbox CeruleanCity_Gym_Text_MistyWaterStone
+	giveitem ITEM_WATER_STONE
+	setvar VAR_0x8004, ROCKET_BONUS_WATER_STONE
+	call EventScript_RocketRewardResult
+	releaseall
+	end
+
+@ What the first reward does, told only when it went into the bag (not
+@ when the OFFICER at VIRIDIAN keeps it for now).
+CeruleanCity_Gym_EventScript_MistyMysticWater::
+	msgbox CeruleanCity_Gym_Text_MistyMysticWater
+	return
+
+CeruleanCity_Gym_EventScript_RocketRetry::
+	call EventScript_RocketTrioRetry
+	goto CeruleanCity_Gym_EventScript_RocketBattle
+
+CeruleanCity_Gym_EventScript_MeowthSpotsPikachu::
+	textcolor NPC_TEXT_COLOR_MALE
+	msgbox CeruleanCity_Gym_Text_MeowthSpotsPikachu
+	return
+
+CeruleanCity_Gym_EventScript_Misty::
+	famechecker FAMECHECKER_MISTY, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
+	trainerbattle_single TRAINER_LEADER_MISTY, CeruleanCity_Gym_Text_MistyIntro, CeruleanCity_Gym_Text_MistyDefeat, CeruleanCity_Gym_EventScript_MistyDefeated, NO_MUSIC
+	goto_if_unset FLAG_GOT_TM03_FROM_MISTY, CeruleanCity_Gym_EventScript_GiveTM03
+	msgbox CeruleanCity_Gym_Text_ExplainTM03
+	release
+	end
+
+CeruleanCity_Gym_EventScript_MistyDefeated::
+	famechecker FAMECHECKER_MISTY, 1
+	setflag FLAG_DEFEATED_MISTY
+	setflag FLAG_BADGE02_GET
+	setrespawn HEAL_LOCATION_CERULEAN_CITY
+	set_gym_trainers 2
+	goto CeruleanCity_Gym_EventScript_GiveTM03
+	end
+
+CeruleanCity_Gym_EventScript_GiveTM03::
+	msgbox CeruleanCity_Gym_Text_ExplainCascadeBadge
+	checkitemspace ITEM_TM03
+	goto_if_eq VAR_RESULT, FALSE, CeruleanCity_Gym_EventScript_NoRoomForTM03
+	giveitem_msg CeruleanCity_Gym_Text_ReceivedTM03FromMisty, ITEM_TM03
+	setflag FLAG_GOT_TM03_FROM_MISTY
+	msgbox CeruleanCity_Gym_Text_ExplainTM03
+	release
+	end
+
+CeruleanCity_Gym_EventScript_NoRoomForTM03::
+	msgbox CeruleanCity_Gym_Text_BetterMakeRoomForThis
+	release
+	end
+
+CeruleanCity_Gym_EventScript_Diana::
+	trainerbattle_single TRAINER_PICNICKER_DIANA, CeruleanCity_Gym_Text_DianaIntro, CeruleanCity_Gym_Text_DianaDefeat
+	msgbox CeruleanCity_Gym_Text_DianaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+CeruleanCity_Gym_EventScript_Luis::
+	trainerbattle_single TRAINER_SWIMMER_MALE_LUIS, CeruleanCity_Gym_Text_LuisIntro, CeruleanCity_Gym_Text_LuisDefeat
+	famechecker FAMECHECKER_MISTY, 2
+	msgbox CeruleanCity_Gym_Text_LuisPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+CeruleanCity_Gym_EventScript_GymGuy::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_MISTY, CeruleanCity_Gym_EventScript_GymGuyPostVictory
+	msgbox CeruleanCity_Gym_Text_GymGuyAdvice
+	release
+	end
+
+CeruleanCity_Gym_EventScript_GymGuyPostVictory::
+	msgbox CeruleanCity_Gym_Text_WeMakePrettyGoodTeam
+	release
+	end
+
+CeruleanCity_Gym_EventScript_GymStatue::
+	lockall
+	goto_if_set FLAG_BADGE02_GET, CeruleanCity_Gym_EventScript_GymStatuePostVictory
+	msgbox CeruleanCity_Gym_Text_GymStatue
+	releaseall
+	end
+
+CeruleanCity_Gym_EventScript_GymStatuePostVictory::
+	msgbox CeruleanCity_Gym_Text_GymStatuePlayerWon
+	releaseall
+	end

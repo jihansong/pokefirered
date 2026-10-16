@@ -1,0 +1,1228 @@
+{
+  "pass": true,
+  "status": "complete",
+  "runner_version": 9,
+  "runner_revision": 6,
+  "ROM_sha256": "af2677993a75979fb36f0768c390d1bad7424e61f2d569b5054d40702250d2e8",
+  "ELF_sha256": "2549852a48935c680e06e81719b54663b9c0efa7fdaccd31d1f4683886c5d64e",
+  "SAV_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+  "source_sav": "/workspaces/pokefirered/saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav",
+  "RAM_writes": 0,
+  "direct_script_calls": 0,
+  "forced_battle_outcomes": 0,
+  "cases": [
+    {
+      "case": "Unmodified-natural-SAVE74-native-legacy-and-new-dock-release-check",
+      "pass": true,
+      "Brawly_progression_tested": false,
+      "native_SAVE_cold": {
+        "counter": [
+          74,
+          75
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-dewford-dock-r6/continuous-Dewford-dock-only-native-QA-only.sav"
+      }
+    }
+  ],
+  "stages": [
+    {
+      "stage": "00-natural-SAVE74-legacy-dock-recovery",
+      "frame": 862,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-dewford-dock-r6/00-natural-SAVE74-legacy-dock-recovery.png",
+      "location": [
+        43,
+        11,
+        11,
+        9
+      ],
+      "scene": 6,
+      "briney": 1,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": true,
+        "FLAG_HOENN_GOT_EXP_SHARE": true
+      },
+      "Goods": 0,
+      "DiveBalls": 3,
+      "ExpShare": 1,
+      "grunt_won": true,
+      "twins_won": true,
+      "Badge02": false,
+      "TM08_reward": false,
+      "TM08": 1,
+      "Brawly_won": false,
+      "stage1_progress": 1,
+      "Dewford_visible": true,
+      "Pikachu_gym_seen": false,
+      "idle": true
+    },
+    {
+      "stage": "01-legacy-dock-walks-onto-land",
+      "frame": 891,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-dewford-dock-r6/01-legacy-dock-walks-onto-land.png",
+      "location": [
+        43,
+        11,
+        10,
+        9
+      ],
+      "scene": 6,
+      "briney": 1,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": true,
+        "FLAG_HOENN_GOT_EXP_SHARE": true
+      },
+      "Goods": 0,
+      "DiveBalls": 3,
+      "ExpShare": 1,
+      "grunt_won": true,
+      "twins_won": true,
+      "Badge02": false,
+      "TM08_reward": false,
+      "TM08": 1,
+      "Brawly_won": false,
+      "stage1_progress": 1,
+      "Dewford_visible": true,
+      "Pikachu_gym_seen": false,
+      "idle": true
+    },
+    {
+      "stage": "02-actual-Briney-return104",
+      "frame": 1314,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-dewford-dock-r6/02-actual-Briney-return104.png",
+      "location": [
+        43,
+        19,
+        12,
+        52
+      ],
+      "scene": 6,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": true,
+        "FLAG_HOENN_GOT_EXP_SHARE": true
+      },
+      "Goods": 0,
+      "DiveBalls": 3,
+      "ExpShare": 1,
+      "grunt_won": true,
+      "twins_won": true,
+      "Badge02": false,
+      "TM08_reward": false,
+      "TM08": 1,
+      "Brawly_won": false,
+      "stage1_progress": 1,
+      "Dewford_visible": true,
+      "Pikachu_gym_seen": false,
+      "idle": true
+    },
+    {
+      "stage": "03-new-native-boat-safe-landing",
+      "frame": 1782,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-dewford-dock-r6/03-new-native-boat-safe-landing.png",
+      "location": [
+        43,
+        11,
+        11,
+        9
+      ],
+      "scene": 6,
+      "briney": 1,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": true,
+        "FLAG_HOENN_GOT_EXP_SHARE": true
+      },
+      "Goods": 0,
+      "DiveBalls": 3,
+      "ExpShare": 1,
+      "grunt_won": true,
+      "twins_won": true,
+      "Badge02": false,
+      "TM08_reward": false,
+      "TM08": 1,
+      "Brawly_won": false,
+      "stage1_progress": 1,
+      "Dewford_visible": true,
+      "Pikachu_gym_seen": false,
+      "idle": true
+    },
+    {
+      "stage": "04-new-dock-walks-onto-land",
+      "frame": 1803,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-dewford-dock-r6/04-new-dock-walks-onto-land.png",
+      "location": [
+        43,
+        11,
+        10,
+        9
+      ],
+      "scene": 6,
+      "briney": 1,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": true,
+        "FLAG_HOENN_GOT_EXP_SHARE": true
+      },
+      "Goods": 0,
+      "DiveBalls": 3,
+      "ExpShare": 1,
+      "grunt_won": true,
+      "twins_won": true,
+      "Badge02": false,
+      "TM08_reward": false,
+      "TM08": 1,
+      "Brawly_won": false,
+      "stage1_progress": 1,
+      "Dewford_visible": true,
+      "Pikachu_gym_seen": false,
+      "idle": true
+    },
+    {
+      "stage": "05-native-SAVE-cold-no-teleport-loop",
+      "frame": 782,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-dewford-dock-r6/05-native-SAVE-cold-no-teleport-loop.png",
+      "location": [
+        43,
+        11,
+        10,
+        9
+      ],
+      "scene": 6,
+      "briney": 1,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": true,
+        "FLAG_HOENN_GOT_EXP_SHARE": true
+      },
+      "Goods": 0,
+      "DiveBalls": 3,
+      "ExpShare": 1,
+      "grunt_won": true,
+      "twins_won": true,
+      "Badge02": false,
+      "TM08_reward": false,
+      "TM08": 1,
+      "Brawly_won": false,
+      "stage1_progress": 1,
+      "Dewford_visible": true,
+      "Pikachu_gym_seen": false,
+      "idle": true
+    }
+  ],
+  "scope": "Narrow dock repair only: unmodified natural SAVE74 legacy recovery, real land movement, actual return/reboard boat, safe new landing and native SAVE/cold; Brawly loss retained and progression not claimed",
+  "ELF_source_owned_symbol_bindings": {
+    "CB2_UpdatePartyMenu": {
+      "value": 135414745,
+      "size": 26,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 49549
+    },
+    "Task_HandleChooseMonInput": {
+      "value": 135418721,
+      "size": 124,
+      "section": 3,
+      "info": 18,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 258099
+    },
+    "Task_HandleSelectionMenuInput": {
+      "value": 135431393,
+      "size": 240,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 50260
+    },
+    "CursorCB_SendMon": {
+      "value": 135436665,
+      "size": 96,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 49510
+    },
+    "gPartyMenu": {
+      "value": 33796252,
+      "size": 20,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 252161
+    },
+    "sPartyMenuInternal": {
+      "value": 33796248,
+      "size": 4,
+      "section": 1,
+      "info": 1,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 49390
+    },
+    "sMenu": {
+      "value": 33795552,
+      "size": 12,
+      "section": 1,
+      "info": 1,
+      "translation_unit": "menu.o",
+      "symbol_index": 46912
+    },
+    "gBattlePartyCurrentOrder": {
+      "value": 33796312,
+      "size": 3,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 281142
+    },
+    "gBattlerPartyIndexes": {
+      "value": 33700814,
+      "size": 8,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 250994
+    },
+    "gBattlersCount": {
+      "value": 33700812,
+      "size": 1,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 251596
+    },
+    "gBattlerInMenuId": {
+      "value": 33701892,
+      "size": 1,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 271295
+    },
+    "gBattleStruct": {
+      "value": 33701864,
+      "size": 4,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 268071
+    },
+    "sCursorOptions": {
+      "value": 141652640,
+      "size": 248,
+      "section": 6,
+      "info": 1,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 49499
+    },
+    "gText_SendOut": {
+      "value": 141373400,
+      "size": 9,
+      "section": 6,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 256697
+    },
+    "gSelectedMonPartyId": {
+      "value": 33796285,
+      "size": 1,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 273115
+    },
+    "gTasks": {
+      "value": 50352336,
+      "size": 640,
+      "section": 2,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 282431
+    },
+    "gBattleOutcome": {
+      "value": 33701514,
+      "size": 1,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 274044
+    },
+    "BattleMainCB2": {
+      "value": 134288381,
+      "size": 116,
+      "section": 3,
+      "info": 18,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 258906
+    },
+    "gPaletteFade": {
+      "value": 33782464,
+      "size": 16,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 263484
+    }
+  },
+  "ABI_manifest_sha256": "a1b45d0bb353e6613855e62e30072b7d872714e62992f05cea50aff10eeb6478",
+  "ABI_offsets": {
+    "PartyMenu.slotId": 9,
+    "PartyMenu.action": 11,
+    "Task.size": 40,
+    "Task.func": 0,
+    "Task.isActive": 4,
+    "Pokemon.hp": 86,
+    "PartyMenuInternal.actions": 15,
+    "PartyMenuInternal.numActions": 23,
+    "Menu.cursorPos": 2,
+    "BattleStruct.playerPartyIdx": 139,
+    "CursorOption.size": 8,
+    "CursorOption.text": 0,
+    "CursorOption.func": 4,
+    "PartyMenu.size": 20,
+    "Menu.size": 12,
+    "Pokemon.size": 100,
+    "PaletteFade.size": 16,
+    "PaletteFade.active.byteOffset": 7,
+    "PaletteFade.active.mask": 128
+  },
+  "steps": [
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        11,
+        11,
+        9
+      ],
+      "finish": [
+        43,
+        11,
+        10,
+        9
+      ],
+      "frame": 891
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        11,
+        10,
+        9
+      ],
+      "finish": [
+        43,
+        11,
+        11,
+        9
+      ],
+      "frame": 920
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        12,
+        52
+      ],
+      "finish": [
+        43,
+        19,
+        13,
+        52
+      ],
+      "frame": 1343
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        19,
+        13,
+        52
+      ],
+      "finish": [
+        43,
+        19,
+        13,
+        51
+      ],
+      "frame": 1372
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        11,
+        11,
+        9
+      ],
+      "finish": [
+        43,
+        11,
+        10,
+        9
+      ],
+      "frame": 1803
+    }
+  ],
+  "battles": [],
+  "prior_preboot_eligibility_fixture": true,
+  "this_test_preboot_save_edits": 0,
+  "full_Hoenn_campaign_tested": false,
+  "actual_device_fps_measured": false,
+  "Brawly_completed": false,
+  "earlier_parcel_route_replayed": false,
+  "continuation_seed_sha256": "fc6ab5663fc0384f31a18c2eac3218434c07d71dae33faae586d994b13cc5342",
+  "prior_route_seed_sha256": "888f205f324d696415e9206e55ea2f8dc73d71a7141ff06c3030392270898fb4",
+  "prior_validation_sha256": "37966a11833191dc2ad6cb0ee26df2a4226db9f3d7c673c2fe11bd7a66601641",
+  "prior_native_SAVE": {
+    "counter": [
+      67,
+      68
+    ],
+    "checksummed_sectors": 14,
+    "qa_save": "/workspaces/pokefirered/work/misty-followup-20261014/native-v7-r6/scene1-Devon-native-QA-only.sav"
+  },
+  "compiler_map_offsets": {
+    "next.MapHeader.mapLayout": 0,
+    "next.MapHeader.events": 4,
+    "next.MapLayout.width": 0,
+    "next.MapLayout.height": 4,
+    "next.MapLayout.primaryTileset": 16,
+    "next.MapLayout.secondaryTileset": 20,
+    "next.BackupMapLayout.Xsize": 0,
+    "next.BackupMapLayout.Ysize": 4,
+    "next.BackupMapLayout.map": 8,
+    "next.MapEvents.warpCount": 1,
+    "next.MapEvents.warps": 8,
+    "next.WarpEvent.x": 0,
+    "next.WarpEvent.y": 2,
+    "next.WarpEvent.mapNum": 6,
+    "next.WarpEvent.mapGroup": 7,
+    "next.Tileset.isEmerald": 2,
+    "next.Tileset.metatileAttributes": 20,
+    "next.WarpEvent": 8,
+    "next.BackupMapLayout": 12,
+    "next.MapHeader": 28
+  },
+  "current_ELF_map_symbol_bindings": {
+    "VMap": {
+      "value": 50352256,
+      "size": 12,
+      "section": 2,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 279674
+    },
+    "gMapHeader": {
+      "value": 33779200,
+      "size": 28,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 252118
+    },
+    "gObjectEvents": {
+      "value": 33779260,
+      "size": 576,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 283321
+    }
+  },
+  "checkpoint_sha256": "fc6ab5663fc0384f31a18c2eac3218434c07d71dae33faae586d994b13cc5342",
+  "checkpoint_validation_sha256": "3a9ff1556a8a9771b7df2aee998d0924f1e04457c9e020ed117355d946e7fc80",
+  "prior_partial_Dewford_checkpoints": [
+    {
+      "stage": "00-natural-scene6-resume",
+      "frame": 782,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-dewford-r2/00-natural-scene6-resume.png",
+      "location": [
+        54,
+        2,
+        17,
+        6
+      ],
+      "scene": 6,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": true,
+        "FLAG_HOENN_GOT_EXP_SHARE": true
+      },
+      "Goods": 0,
+      "DiveBalls": 3,
+      "ExpShare": 1,
+      "grunt_won": true,
+      "twins_won": true,
+      "Badge02": false,
+      "TM08_reward": false,
+      "TM08": 1,
+      "Brawly_won": false,
+      "stage1_progress": 1,
+      "Dewford_visible": false,
+      "Pikachu_gym_seen": false,
+      "idle": true
+    },
+    {
+      "stage": "01-native-Devon-exit",
+      "frame": 2303,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-dewford-r2/01-native-Devon-exit.png",
+      "location": [
+        43,
+        3,
+        11,
+        15
+      ],
+      "scene": 6,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": true,
+        "FLAG_HOENN_GOT_EXP_SHARE": true
+      },
+      "Goods": 0,
+      "DiveBalls": 3,
+      "ExpShare": 1,
+      "grunt_won": true,
+      "twins_won": true,
+      "Badge02": false,
+      "TM08_reward": false,
+      "TM08": 1,
+      "Brawly_won": false,
+      "stage1_progress": 1,
+      "Dewford_visible": false,
+      "Pikachu_gym_seen": false,
+      "idle": true
+    },
+    {
+      "stage": "02-briney-actual-dock",
+      "frame": 12734,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-dewford-r2/02-briney-actual-dock.png",
+      "location": [
+        43,
+        19,
+        13,
+        51
+      ],
+      "scene": 6,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": true,
+        "FLAG_HOENN_GOT_EXP_SHARE": true
+      },
+      "Goods": 0,
+      "DiveBalls": 3,
+      "ExpShare": 1,
+      "grunt_won": true,
+      "twins_won": true,
+      "Badge02": false,
+      "TM08_reward": false,
+      "TM08": 1,
+      "Brawly_won": false,
+      "stage1_progress": 1,
+      "Dewford_visible": false,
+      "Pikachu_gym_seen": false,
+      "idle": true
+    },
+    {
+      "stage": "03-native-Dewford-arrival",
+      "frame": 13144,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-dewford-r2/03-native-Dewford-arrival.png",
+      "location": [
+        43,
+        11,
+        13,
+        9
+      ],
+      "scene": 6,
+      "briney": 1,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": true,
+        "FLAG_HOENN_GOT_EXP_SHARE": true
+      },
+      "Goods": 0,
+      "DiveBalls": 3,
+      "ExpShare": 1,
+      "grunt_won": true,
+      "twins_won": true,
+      "Badge02": false,
+      "TM08_reward": false,
+      "TM08": 1,
+      "Brawly_won": false,
+      "stage1_progress": 1,
+      "Dewford_visible": true,
+      "Pikachu_gym_seen": false,
+      "idle": true
+    }
+  ],
+  "prior_checkpoint_SAVE_cold": {
+    "counter": [
+      73,
+      74
+    ],
+    "checksummed_sectors": 14,
+    "qa_save": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-dewford-r2/failed-native-continuation-native-QA-only.sav"
+  },
+  "current_Dewford_route_and_battles_replayed_this_run": true,
+  "previous_failed_r1_report_sha256": "ee95905a4626aca3552e5afe0fb76440e2c1e3b3b5229153d8afcc225e5aedd1",
+  "automatic_legacy_recovery": {
+    "old_position": [
+      43,
+      11,
+      13,
+      9
+    ],
+    "new_position": [
+      43,
+      11,
+      11,
+      9
+    ],
+    "checkpoint_untouched": true,
+    "party_600_PC_33744_dex_Hoenn_flags_vars_preserved": true,
+    "confirmed_old_trap_report_sha256": "c01d976c5474d4d91d0b371d9852b3896e885975a46ea1cce85f5736cccfbd61"
+  },
+  "compiler_double_offsets": {
+    "dc.hp": 40,
+    "dc.attack": 2,
+    "dc.spAttack": 8,
+    "dc.defense": 4,
+    "dc.spDefense": 10,
+    "dc.power": 1,
+    "dc.type": 2,
+    "dc.target": 6
+  },
+  "double_symbol_bindings": {
+    "gBattlerPositions": {
+      "value": 33700822,
+      "size": 4,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 273638
+    },
+    "gBattlerPartyIndexes": {
+      "value": 33700814,
+      "size": 8,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 250994
+    },
+    "gBattlerControllerFuncs": {
+      "value": 50352160,
+      "size": 16,
+      "section": 2,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 275772
+    },
+    "gBattleControllerExecFlags": {
+      "value": 33700808,
+      "size": 4,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 265879
+    },
+    "gMoveSelectionCursor": {
+      "value": 33701884,
+      "size": 4,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 279609
+    },
+    "gActionSelectionCursor": {
+      "value": 33701880,
+      "size": 4,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 259669
+    },
+    "gMultiUsePlayerCursor": {
+      "value": 50352180,
+      "size": 1,
+      "section": 2,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 253438
+    },
+    "gAbsentBattlerFlags": {
+      "value": 33701232,
+      "size": 1,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 276814
+    },
+    "gBattleMons": {
+      "value": 33700836,
+      "size": 352,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 262711
+    },
+    "HandleInputChooseAction": {
+      "value": 134409025,
+      "size": 518,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "battle_controller_player.o",
+      "symbol_index": 6336
+    },
+    "HandleInputChooseTarget": {
+      "value": 134409597,
+      "size": 924,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "battle_controller_player.o",
+      "symbol_index": 6354
+    },
+    "HandleInputChooseMove": {
+      "value": 134410521,
+      "size": 972,
+      "section": 3,
+      "info": 18,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 261732
+    }
+  },
+  "double_forced_replacement_controller": "Current party_menu.c source; real DOWN/A/SEND OUT, UI HP and both active battle indexes excluded",
+  "boat_task_symbol_binding": {
+    "value": 134874581,
+    "size": 176,
+    "section": 3,
+    "info": 2,
+    "translation_unit": "script_menu.o",
+    "symbol_index": 26684
+  },
+  "prior_Brawly_loss_retained": {
+    "report_sha256": "268f81ef7d901ed2ec6a0d83386a0dfd65e4dee35af9a3723847a9667cfdfa01",
+    "actual_battle_outcome": 2,
+    "not_reclassified_as_pass": true
+  },
+  "resumed_natural_SAVE74": {
+    "counter": [
+      73,
+      74
+    ],
+    "checksummed_sectors": 14,
+    "qa_save": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-dewford-r2/failed-native-continuation-native-QA-only.sav"
+  },
+  "forest_delivery_Brawly_replayed_this_run": false,
+  "boat_menus": [
+    {
+      "start": [
+        43,
+        11,
+        11,
+        9
+      ],
+      "local": 5,
+      "choice": 0,
+      "cursor_trace": [
+        0
+      ],
+      "destination": "Route104",
+      "finish": [
+        43,
+        19,
+        12,
+        52
+      ],
+      "actual_keys": true
+    },
+    {
+      "start": [
+        43,
+        19,
+        13,
+        51
+      ],
+      "local": 21,
+      "choice": 0,
+      "cursor_trace": [
+        0
+      ],
+      "destination": "DewfordTown",
+      "finish": [
+        43,
+        11,
+        11,
+        9
+      ],
+      "actual_keys": true
+    }
+  ],
+  "native_SAVE_cold": {
+    "counter": [
+      74,
+      75
+    ],
+    "checksummed_sectors": 14,
+    "qa_save": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-dewford-dock-r6/continuous-Dewford-dock-only-native-QA-only.sav"
+  },
+  "native_save_counter_runtime_type": "tuple",
+  "prior_failed_R5_retained": {
+    "report_sha256": "665ba27317565cf0aded40e334b349457a3e3816fcdb602647926b42a5757798",
+    "counter_JSON_values": [
+      74,
+      75
+    ],
+    "checksummed_sectors": 14,
+    "helper_native_save_return_type": "tuple",
+    "failure_not_overwritten": true
+  },
+  "final_party_ledger": [
+    {
+      "old_slot": 0,
+      "new_slot": 0,
+      "pid": 3957541173,
+      "ot": 2839214970,
+      "species": 9,
+      "EXP_before_after": [
+        136999,
+        136999
+      ],
+      "friendship_before_after": [
+        255,
+        255
+      ],
+      "EV_before_after": [
+        [
+          44,
+          67,
+          90,
+          197,
+          73,
+          39
+        ],
+        [
+          44,
+          67,
+          90,
+          197,
+          73,
+          39
+        ]
+      ],
+      "PP_before_after": [
+        [
+          11,
+          18,
+          15,
+          13
+        ],
+        [
+          11,
+          18,
+          15,
+          13
+        ]
+      ],
+      "party_cache_changed": false,
+      "checksum_ok": true,
+      "IV_and_origin_preserved": true
+    },
+    {
+      "old_slot": 1,
+      "new_slot": 1,
+      "pid": 1847114783,
+      "ot": 2839214970,
+      "species": 6,
+      "EXP_before_after": [
+        135787,
+        135787
+      ],
+      "friendship_before_after": [
+        255,
+        255
+      ],
+      "EV_before_after": [
+        [
+          56,
+          143,
+          35,
+          153,
+          86,
+          37
+        ],
+        [
+          56,
+          143,
+          35,
+          153,
+          86,
+          37
+        ]
+      ],
+      "PP_before_after": [
+        [
+          15,
+          15,
+          13,
+          15
+        ],
+        [
+          15,
+          15,
+          13,
+          15
+        ]
+      ],
+      "party_cache_changed": false,
+      "checksum_ok": true,
+      "IV_and_origin_preserved": true
+    },
+    {
+      "old_slot": 2,
+      "new_slot": 2,
+      "pid": 2710679397,
+      "ot": 2839214970,
+      "species": 3,
+      "EXP_before_after": [
+        139660,
+        139660
+      ],
+      "friendship_before_after": [
+        255,
+        255
+      ],
+      "EV_before_after": [
+        [
+          55,
+          106,
+          74,
+          172,
+          71,
+          32
+        ],
+        [
+          55,
+          106,
+          74,
+          172,
+          71,
+          32
+        ]
+      ],
+      "PP_before_after": [
+        [
+          4,
+          15,
+          23,
+          30
+        ],
+        [
+          4,
+          15,
+          23,
+          30
+        ]
+      ],
+      "party_cache_changed": false,
+      "checksum_ok": true,
+      "IV_and_origin_preserved": true
+    },
+    {
+      "old_slot": 3,
+      "new_slot": 3,
+      "pid": 3742077845,
+      "ot": 2839214970,
+      "species": 25,
+      "EXP_before_after": [
+        149234,
+        149234
+      ],
+      "friendship_before_after": [
+        255,
+        255
+      ],
+      "EV_before_after": [
+        [
+          96,
+          63,
+          58,
+          239,
+          43,
+          11
+        ],
+        [
+          96,
+          63,
+          58,
+          239,
+          43,
+          11
+        ]
+      ],
+      "PP_before_after": [
+        [
+          11,
+          15,
+          12,
+          5
+        ],
+        [
+          11,
+          15,
+          12,
+          5
+        ]
+      ],
+      "party_cache_changed": false,
+      "checksum_ok": true,
+      "IV_and_origin_preserved": true
+    },
+    {
+      "old_slot": 4,
+      "new_slot": 4,
+      "pid": 2008717992,
+      "ot": 2839214970,
+      "species": 148,
+      "EXP_before_after": [
+        195056,
+        195056
+      ],
+      "friendship_before_after": [
+        255,
+        255
+      ],
+      "EV_before_after": [
+        [
+          45,
+          108,
+          84,
+          195,
+          57,
+          21
+        ],
+        [
+          45,
+          108,
+          84,
+          195,
+          57,
+          21
+        ]
+      ],
+      "PP_before_after": [
+        [
+          15,
+          0,
+          13,
+          20
+        ],
+        [
+          15,
+          0,
+          13,
+          20
+        ]
+      ],
+      "party_cache_changed": false,
+      "checksum_ok": true,
+      "IV_and_origin_preserved": true
+    },
+    {
+      "old_slot": 5,
+      "new_slot": 5,
+      "pid": 259342718,
+      "ot": 2839214970,
+      "species": 138,
+      "EXP_before_after": [
+        66718,
+        66718
+      ],
+      "friendship_before_after": [
+        221,
+        221
+      ],
+      "EV_before_after": [
+        [
+          43,
+          82,
+          82,
+          62,
+          27,
+          23
+        ],
+        [
+          43,
+          82,
+          82,
+          62,
+          27,
+          23
+        ]
+      ],
+      "PP_before_after": [
+        [
+          15,
+          15,
+          25,
+          25
+        ],
+        [
+          15,
+          15,
+          25,
+          25
+        ]
+      ],
+      "party_cache_changed": false,
+      "checksum_ok": true,
+      "IV_and_origin_preserved": true
+    }
+  ],
+  "native_old_and_new_dock_escape_verified": true,
+  "PC_33744_bytes_preserved": true,
+  "entire_party_bytes_preserved": true,
+  "story_items_Hoenn_flags_vars_preserved": true,
+  "Brawly_progression_tested": false,
+  "protected_original_inputs_unchanged": true
+}

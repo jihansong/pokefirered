@@ -159,6 +159,11 @@ void GenerateFontHalfRowLookupTable(u8 fgColor, u8 bgColor, u8 shadowColor)
     int i, j, k, l;
     const u32 colors[] = {bgColor, fgColor, shadowColor};
 
+    if (sLastTextFgColor == fgColor
+     && sLastTextBgColor == bgColor
+     && sLastTextShadowColor == shadowColor)
+        return;
+
     sLastTextBgColor = bgColor;
     sLastTextFgColor = fgColor;
     sLastTextShadowColor = shadowColor;
@@ -247,6 +252,48 @@ void CopyGlyphToWindow(struct TextPrinter *textPrinter)
         glyphHeight = gWindows[textPrinter->printerTemplate.windowId].window.height * 8 - textPrinter->printerTemplate.currentY;
     else
         glyphHeight = gGlyphInfo.height;
+
+    // Preserve clipped glyph pixels and transparent colour zero.
+    if (glyphWidth > 0 && glyphWidth <= 16
+     && glyphHeight > 0 && glyphHeight <= 16
+     && (((u32)gGlyphInfo.pixels
+        | (u32)gWindows[textPrinter->printerTemplate.windowId].tileData) & 3) == 0)
+    {
+        u32 tileWidth = gWindows[textPrinter->printerTemplate.windowId].window.width;
+        u32 x = textPrinter->printerTemplate.currentX;
+        u32 y = textPrinter->printerTemplate.currentY;
+        u32 shift = (x & 7) * 4;
+        u32 row, column;
+        for (row = 0; row < glyphHeight; row++)
+        {
+            const u8 *src = gGlyphInfo.pixels + ((row >> 3) * 64) + ((row & 7) * 4);
+            u32 py = y + row;
+            u8 *dst = gWindows[textPrinter->printerTemplate.windowId].tileData
+                + (((py >> 3) * tileWidth + (x >> 3)) * 32) + ((py & 7) * 4);
+            for (column = 0; column < glyphWidth; column += 8)
+            {
+                u32 span = glyphWidth - column;
+                u32 value = *(const u32 *)src;
+                u32 part, mask;
+                if (span < 8)
+                    value &= (1u << (span * 4)) - 1;
+                else
+                    span = 8;
+                part = value << shift;
+                mask = ((part | (part >> 1) | (part >> 2) | (part >> 3)) & 0x11111111) * 15;
+                *(u32 *)dst = (*(u32 *)dst & ~mask) | part;
+                if (shift != 0 && span + (x & 7) > 8)
+                {
+                    part = value >> (32 - shift);
+                    mask = ((part | (part >> 1) | (part >> 2) | (part >> 3)) & 0x11111111) * 15;
+                    *(u32 *)(dst + 32) = (*(u32 *)(dst + 32) & ~mask) | part;
+                }
+                src += 32;
+                dst += 32;
+            }
+        }
+        return;
+    }
 
     sizeType = 0;
     if (glyphWidth > 8)

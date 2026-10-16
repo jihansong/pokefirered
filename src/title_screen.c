@@ -16,6 +16,26 @@
 #include "berry_fix_program.h"
 #include "decompress.h"
 #include "constants/songs.h"
+#include "title_pikachu_voice.h"
+#include "sound.h"
+
+#include "dma3.h"
+#define TY_START_FRAME_COUNT 40
+#define TY_START_FRAME_TICKS 6
+#define TY_START_ROW_BYTES 1152
+#define TY_START_FRAME_BYTES 16128
+static const u32 sThunderYellowTitleTiles[] = INCBIN_U32("graphics/title_screen/thunder_yellow/approved-title-v8.8bpp");
+static const u16 sThunderYellowTitlePalette[] = INCBIN_U16("graphics/title_screen/thunder_yellow/approved-title-v8.gbapal");
+static const u16 sThunderYellowTitleMap[] = INCBIN_U16("graphics/title_screen/thunder_yellow/approved-title-v8.map.bin");
+static const u32 sThunderYellowStartRoiTiles[] = INCBIN_U32("graphics/title_screen/thunder_yellow/approved-title-v8-start-roi.8bpp");
+STATIC_ASSERT(sizeof(sThunderYellowStartRoiTiles) == TY_START_FRAME_COUNT * TY_START_FRAME_BYTES, ThunderYellowStartRoiSize);
+static void LoadThunderYellowTitleArt(void)
+{
+    CpuCopy16(sThunderYellowTitleTiles, (void *)VRAM, sizeof(sThunderYellowTitleTiles));
+    LoadPalette(sThunderYellowTitlePalette, BG_PLTT_ID(0), sizeof(sThunderYellowTitlePalette));
+    CpuCopy16(sThunderYellowTitleMap, (void *)(VRAM + 0xF800), sizeof(sThunderYellowTitleMap));
+}
+
 
 enum TitleScreenScene
 {
@@ -377,6 +397,7 @@ void CB2_InitTitleScreen(void)
         DecompressAndCopyTileDataToVram(3, sBorderBgTiles, 0, 0, 0);
         DecompressAndCopyTileDataToVram(3, sBorderBgMap, 0, 0, 1);
         LoadSpriteGfxAndPals();
+            LoadThunderYellowTitleArt();
         break;
     case 2:
         if (!FreeTempTileDataBuffersIfPossible())
@@ -417,8 +438,43 @@ static void CB2_TitleScreenRun(void)
     UpdatePaletteFade();
 }
 
+static void UpdateThunderYellowTitleAnimationVBlank(void)
+{
+    u8 taskId;
+    volatile s16 *data;
+    const u32 *src;
+    u8 *dest;
+    u16 row;
+    taskId = FindTaskIdByFunc(Task_TitleScreenMain);
+    if (taskId == TASK_NONE)
+        return;
+    data = gTasks[taskId].data;
+    if (data[0] != TITLESCREENSCENE_CRY || data[1] != 1 || data[7] != 1)
+        return;
+    if (data[9] > 0 && --data[9] != 0)
+        return;
+    if ((u16)data[8] >= TY_START_FRAME_COUNT)
+    {
+        data[7] = 2;
+        return;
+    }
+    if (REG_VCOUNT < DISPLAY_HEIGHT || REG_VCOUNT > DISPLAY_HEIGHT + 16 || WaitDma3Request(-1) != 0)
+        return;
+    src = sThunderYellowStartRoiTiles + (u16)data[8] * (TY_START_FRAME_BYTES / 4);
+    dest = (u8 *)VRAM + (6 * 30 + 12) * 64;
+    for (row = 0; row < 14; row++)
+    {
+        DmaCopy32(3, src, dest, TY_START_ROW_BYTES);
+        src += TY_START_ROW_BYTES / 4;
+        dest += 30 * 64;
+    }
+    data[8]++;
+    data[9] = TY_START_FRAME_TICKS;
+}
+
 static void VBlankCB(void)
 {
+    UpdateThunderYellowTitleAnimationVBlank();
     LoadOam();
     ProcessSpriteCopyRequests();
     TransferPlttBuffer();
@@ -471,24 +527,10 @@ static void SetTitleScreenScene(s16 *data, u8 sceneNum)
 
 static void SetTitleScreenScene_Init(s16 *data)
 {
-    struct ScanlineEffectParams params;
-
-    HideBg(0);
-    ShowBg(1);
-    ShowBg(2);
-    ShowBg(3);
-
-    params.dmaDest = (volatile void *)REG_ADDR_BLDY;
-    params.dmaControl = SCANLINE_EFFECT_DMACNT_16BIT;
-    params.initState = 1;
-    params.unused9 = 0;
-
-    CpuFill16(0, gScanlineEffectRegBuffers[0], 0x140);
-    CpuFill16(0, gScanlineEffectRegBuffers[1], 0x140);
-
-    ScanlineEffect_SetParams(params);
-
-    SetTitleScreenScene(data, TITLESCREENSCENE_FLASHSPRITE);
+    LoadMainTitleScreenPalsAndResetBgs();
+    BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+    SetTitleScreenScene(data, TITLESCREENSCENE_RUN);
 }
 
 static void SetTitleScreenScene_FlashSprite(s16 *data)
@@ -617,11 +659,7 @@ static void SetTitleScreenScene_Run(s16 *data)
     case 0:
         SetHelpContext(HELPCONTEXT_TITLE_SCREEN);
         CreateTask(Task_TitleScreen_BlinkPressStart, 0);
-#if defined(FIRERED)
-        CreateTask(Task_FlameSpawner, 5);
-#elif defined(LEAFGREEN)
-        CreateTask(Task_LeafSpawner, 5);
-#endif
+
         SetGpuRegsForTitleScreenRun();
         tSlashSpriteId = CreateSlashSprite();
         HelpSystem_Enable();
@@ -658,10 +696,13 @@ static void SetTitleScreenScene_Run(s16 *data)
 
 static void SetGpuRegsForTitleScreenRun(void)
 {
-    SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_OBJWIN_ON);
-    SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG_ALL | WINOUT_WIN01_OBJ | WINOUT_WINOBJ_ALL);
-    SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_EFFECT_LIGHTEN);
-    SetGpuReg(REG_OFFSET_BLDY, 13);
+    ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON | DISPCNT_WIN1_ON | DISPCNT_OBJWIN_ON | DISPCNT_OBJ_ON);
+    SetGpuReg(REG_OFFSET_BLDCNT, 0);
+    SetGpuReg(REG_OFFSET_BLDY, 0);
+    HideBg(1);
+    HideBg(2);
+    HideBg(3);
+    ShowBg(0);
 }
 
 static void SetTitleScreenScene_Restart(s16 *data)
@@ -712,7 +753,10 @@ static void SetTitleScreenScene_Cry(s16 *data)
     case 0:
         if (!gPaletteFade.active)
         {
-            PlayCry_Normal(TITLE_SPECIES, 0);
+            data[8] = 0;
+            data[9] = 0;
+            data[7] = 1;
+            PlayPikachuVoice(TITLE_PIKACHU_VOICE_ID, TITLE_PIKACHU_VOICE_FRAMES);
             DeactivateSlashSprite(tSlashSpriteId);
             data[2] = 0;
             tState++;
@@ -721,7 +765,7 @@ static void SetTitleScreenScene_Cry(s16 *data)
     case 1:
         if (data[2] < 90)
             data[2]++;
-        else if (!IsSlashSpriteDeactivated(tSlashSpriteId))
+        else if (data[7] == 2 && IsCryFinished() && !IsSlashSpriteDeactivated(tSlashSpriteId))
         {
             BeginNormalPaletteFade((PALETTES_ALL & ~(1 << 0x1C) & ~(1 << 0x1D) & ~(1 << 0x1E) & ~(1 << 0x1F)), 0, 0, 16, RGB_WHITE);
             SignalEndTitleScreenPaletteSomethingTask();
@@ -815,45 +859,10 @@ static void Task_TitleScreen_SlideWin0(u8 taskId)
 static void Task_TitleScreen_BlinkPressStart(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
-    s32 i;
-
     if (data[15] && gPaletteFade.active)
-        data[14] = 1;
+        data[14] = TRUE;
     if (data[14] && !gPaletteFade.active)
         DestroyTask(taskId);
-    else
-    {
-        if (!data[1])
-            data[2] = 60;
-        else
-            data[2] = 30;
-        data[0]++;
-        if (data[0] >= data[2])
-        {
-            data[0] = 0;
-            data[1] ^= 1;
-            if (data[1])
-            {
-                for (i = 0; i < 5; i++)
-                {
-                    gPlttBufferUnfaded[BG_PLTT_ID(15) + 1 + i] = gGraphics_TitleScreen_BackgroundPals[6];
-                    gPlttBufferFaded[BG_PLTT_ID(15) + 1 + i] = gGraphics_TitleScreen_BackgroundPals[6];
-                }
-            }
-            else
-            {
-                for (i = 0; i < 5; i++)
-                {
-                    gPlttBufferUnfaded[BG_PLTT_ID(15) + 1 + i] = gGraphics_TitleScreen_BackgroundPals[1 + i];
-                    gPlttBufferFaded[BG_PLTT_ID(15) + 1 + i] = gGraphics_TitleScreen_BackgroundPals[1 + i];
-                }
-            }
-            if (data[14])
-            {
-                BlendPalettes(0x00008000, gPaletteFade.y, gPaletteFade.blendColor);
-            }
-        }
-    }
 }
 
 static void SignalEndTitleScreenPaletteSomethingTask(void)
@@ -910,16 +919,9 @@ static void LoadMainTitleScreenPalsAndResetBgs(void)
 
     DestroyBlendPalettesGraduallyTask();
     ResetPaletteFadeControl();
-    LoadPalette(gGraphics_TitleScreen_GameTitleLogoPals, BG_PLTT_ID(0), 13 * PLTT_SIZE_4BPP);
-    LoadPalette(gGraphics_TitleScreen_BoxArtMonPals, BG_PLTT_ID(13), PLTT_SIZE_4BPP);
-    LoadPalette(gGraphics_TitleScreen_BackgroundPals, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
-    LoadPalette(gGraphics_TitleScreen_BackgroundPals, BG_PLTT_ID(14), PLTT_SIZE_4BPP);
     ResetBgPositions();
-    ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON | DISPCNT_WIN1_ON | DISPCNT_OBJWIN_ON);
-    ShowBg(1);
-    ShowBg(2);
-    ShowBg(0);
-    ShowBg(3);
+    LoadThunderYellowTitleArt();
+    SetGpuRegsForTitleScreenRun();
 }
 
 static void CB2_FadeOutTransitionToSaveClearScreen(void)

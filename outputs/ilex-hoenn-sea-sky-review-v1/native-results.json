@@ -1,0 +1,70 @@
+[
+  {
+    "case": "ilex-events",
+    "exit": 1
+  },
+  {
+    "case": "ilex-battles",
+    "exit": 1
+  },
+  {
+    "case": "ilex-map-links",
+    "exit": 1
+  },
+  {
+    "case": "ilex-performance",
+    "exit": 0
+  },
+  {
+    "case": "ilex-mapsmoke",
+    "exit": 0
+  },
+  {
+    "case": "hoenn-seafloor",
+    "exit": 0
+  },
+  {
+    "case": "hoenn-seafloor-loss",
+    "exit": 0
+  },
+  {
+    "case": "hoenn-seafloor-early",
+    "exit": 0
+  },
+  {
+    "case": "hoenn-seafloor-no-badge",
+    "exit": 0
+  },
+  {
+    "case": "hoenn-sky",
+    "exit": 1
+  },
+  {
+    "case": "hoenn-sky-early",
+    "exit": 1
+  },
+  {
+    "case": "hoenn-city-storm",
+    "exit": 0
+  },
+  {
+    "case": "hoenn-city-calm",
+    "exit": 0
+  },
+  {
+    "case": "hoenn-gym-locked",
+    "exit": 0
+  },
+  {
+    "case": "hoenn-gym-legacy",
+    "exit": 0
+  },
+  {
+    "case": "hoenn-gym",
+    "exit": 0
+  },
+  {
+    "case": "hoenn-gym-loss",
+    "exit": 0
+  }
+]

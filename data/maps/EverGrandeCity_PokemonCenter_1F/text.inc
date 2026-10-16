@@ -11,4 +11,3 @@ EverGrandeCity_PokemonCenter_1F_Text_H1::
 	.string "traveled in life…\p"
 	.string "Believe in your POKéMON and give it\n"
 	.string "your very best!$"
-

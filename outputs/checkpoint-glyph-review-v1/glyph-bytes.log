@@ -1,0 +1,4 @@
+{"identity": {"rom_sha": "b3b62a31d4a7543876322d3e92947be6516e387f3c2035e834daa05551b19dfc", "save_sha": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85", "ewram_free": 284, "scratch": "0x203fee4", "scope": "copied SAV, temporary emulator-only native function fixture"}}
+{"native_glyph_bytes": {"cases": {"phase": 512, "edge": 32, "fallback": 8}, "byte_equal": true, "transparency": true, "clipping": true, "guards": true}}
+{"original_saves_preserved": true}
+{"original_saves_final_check": true}

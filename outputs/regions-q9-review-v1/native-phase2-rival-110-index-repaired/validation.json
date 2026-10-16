@@ -1,0 +1,431 @@
+{
+  "pass": true,
+  "rom_sha256": "af9ba1f61fce4630d488567ed11b83847dfbc1fcff435653bedd4d86dc622818",
+  "elf_sha256": "12a57e74b48b669ce9021c1fec93934e63bd1fcb22abba827f270b79c8727de4",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-hoenn-rival-progress-110-may-win-2",
+  "fixture": "temporary native battle/gift fixture only; original six-party SAV and full PC storage untouched",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [
+    {
+      "trainer": "TRAINER_HOENN_MAY_ROUTE_110_TORCHIC",
+      "enemy_species": [
+        297,
+        219,
+        285,
+        0,
+        0,
+        0
+      ],
+      "start_frame": 1809,
+      "moves": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "end_frame": 5572
+    }
+  ],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_story_not_entire_regions": true,
+  "johto_badges_defined": [
+    "FLAG_JOHTO_BADGE01_GET",
+    "FLAG_JOHTO_BADGE02_GET",
+    "FLAG_JOHTO_BADGE03_GET",
+    "FLAG_JOHTO_BADGE04_GET",
+    "FLAG_JOHTO_BADGE05_GET",
+    "FLAG_JOHTO_BADGE06_GET",
+    "FLAG_JOHTO_BADGE07_GET",
+    "FLAG_JOHTO_BADGE08_GET"
+  ],
+  "palette_active_abi_mask": {
+    "size": 16,
+    "offset": 7,
+    "mask": 128
+  },
+  "follower_checks": [
+    {
+      "label": "native-rival-before-right",
+      "map": [
+        43,
+        25
+      ],
+      "player_xy": [
+        33,
+        57
+      ],
+      "follower_xy": [
+        34,
+        57
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "native-rival-before-left",
+      "map": [
+        43,
+        25
+      ],
+      "player_xy": [
+        34,
+        57
+      ],
+      "follower_xy": [
+        33,
+        57
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "rival-gift-after-right",
+      "map": [
+        43,
+        25
+      ],
+      "player_xy": [
+        33,
+        55
+      ],
+      "follower_xy": [
+        34,
+        55
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 0
+    },
+    {
+      "label": "rival-gift-after-left",
+      "map": [
+        43,
+        25
+      ],
+      "player_xy": [
+        34,
+        55
+      ],
+      "follower_xy": [
+        33,
+        55
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 0
+    },
+    {
+      "label": "rival-gift-after-right",
+      "map": [
+        43,
+        25
+      ],
+      "player_xy": [
+        33,
+        55
+      ],
+      "follower_xy": [
+        34,
+        55
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 0
+    },
+    {
+      "label": "rival-gift-after-left",
+      "map": [
+        43,
+        25
+      ],
+      "player_xy": [
+        34,
+        55
+      ],
+      "follower_xy": [
+        33,
+        55
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 0
+    }
+  ],
+  "trigger_steps": [
+    {
+      "key": "UP",
+      "before": [
+        43,
+        25,
+        34,
+        57
+      ],
+      "after": [
+        43,
+        25,
+        34,
+        55
+      ],
+      "A_input": false
+    }
+  ],
+  "scope": "Route103-to-110 and Weather-to-119 progression; not complete Hoenn playthrough",
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "temporary_continue_object_fixture": {
+    "actual_source_formulas": true,
+    "flags": {
+      "FLAG_HIDE_HOENN_BIRCH_LAB": false,
+      "FLAG_HIDE_HOENN_RIVAL_ROUTE103": true,
+      "FLAG_HIDE_HOENN_RUSTBORO_THIEF": true,
+      "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+      "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+      "FLAG_HIDE_HOENN_BRINEY": true,
+      "FLAG_HIDE_HOENN_WALLY_PETALBURG": true,
+      "FLAG_HIDE_HOENN_WALLY_VERDANTURF": true,
+      "FLAG_HIDE_HOENN_WANDA_BOYFRIEND": true,
+      "FLAG_HIDE_HOENN_ROCKET_WOODS": true,
+      "FLAG_HIDE_HOENN_RIVAL_LAB": false
+    },
+    "original_source_save_changed": false,
+    "native_save_assertions_unchanged": true
+  },
+  "dex_guard_before_assert": {
+    "actual_revealed_national": [
+      219,
+      260,
+      272
+    ],
+    "caught_unchanged": true,
+    "actual_new_seen_per_replica": [
+      [
+        219,
+        260,
+        272
+      ],
+      [
+        219,
+        260,
+        272
+      ],
+      [
+        219,
+        260,
+        272
+      ]
+    ],
+    "old_seen_removed_per_replica": [
+      [],
+      [],
+      []
+    ]
+  },
+  "dex_guard": {
+    "caught_unchanged": true,
+    "old_seen_preserved": true,
+    "actual_revealed_national": [
+      219,
+      260,
+      272
+    ],
+    "added_per_replica": [
+      [
+        219,
+        260,
+        272
+      ],
+      [
+        219,
+        260,
+        272
+      ],
+      [
+        219,
+        260,
+        272
+      ]
+    ]
+  },
+  "actual_enemy_party": {
+    "species": [
+      297,
+      219,
+      285
+    ],
+    "levels": [
+      64,
+      65,
+      67
+    ]
+  },
+  "original_coordinate_trigger_native_victory": true,
+  "native_save": {
+    "counter_before": 60,
+    "counter_after": 61,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_BADGE01_GET": true,
+      "FLAG_BADGE02_GET": true,
+      "FLAG_BADGE03_GET": true,
+      "FLAG_BADGE04_GET": true,
+      "FLAG_BADGE05_GET": true,
+      "FLAG_BADGE06_GET": true,
+      "FLAG_BADGE07_GET": true,
+      "FLAG_BADGE08_GET": false,
+      "FLAG_HOENN_BADGE01_GET": false,
+      "FLAG_HOENN_BADGE02_GET": false,
+      "FLAG_HOENN_BADGE03_GET": false,
+      "FLAG_HOENN_BADGE04_GET": false,
+      "FLAG_HOENN_BADGE05_GET": false,
+      "FLAG_HOENN_BADGE06_GET": false,
+      "FLAG_HOENN_BADGE07_GET": false,
+      "FLAG_HOENN_BADGE08_GET": false,
+      "FLAG_JOHTO_BADGE01_GET": false,
+      "FLAG_JOHTO_BADGE02_GET": false,
+      "FLAG_JOHTO_BADGE03_GET": false,
+      "FLAG_JOHTO_BADGE04_GET": false,
+      "FLAG_JOHTO_BADGE05_GET": false,
+      "FLAG_JOHTO_BADGE06_GET": false,
+      "FLAG_JOHTO_BADGE07_GET": false,
+      "FLAG_JOHTO_BADGE08_GET": false,
+      "FLAG_RECEIVED_STARTER_PIKACHU": true,
+      "FLAG_HOENN_MET_STERN": false,
+      "FLAG_HOENN_MUSEUM_DEFENDED": false,
+      "FLAG_HOENN_ARCHIE_WARNED": false,
+      "FLAG_HOENN_SURVEY_LETTER_GOT": false,
+      "FLAG_HOENN_SURVEY_LETTER_DONE": false,
+      "FLAG_HOENN_SCANNER_DELIVERED": false,
+      "FLAG_HOENN_DEEP_SEA_ITEM_TAKEN": false,
+      "FLAG_HOENN_ROUTE109_BROTHERS_DONE": false,
+      "FLAG_HOENN_GOT_TM08_FROM_BRAWLY": false,
+      "FLAG_HOENN_GOT_TM47_IN_CAVE": false,
+      "FLAG_HIDE_HOENN_HARBOR_STERN": false,
+      "FLAG_HIDE_HOENN_MUSEUM_GRUNTS": false,
+      "FLAG_HIDE_HOENN_MUSEUM_ARCHIE": false,
+      "FLAG_HIDE_HOENN_SHIPYARD_STERN": false,
+      "FLAG_HOENN_PIKACHU_GYM_SEEN": false,
+      "FLAG_HOENN_PIKACHU_MUSEUM_SEEN": false,
+      "FLAG_HOENN_PIKACHU_SHIPYARD_SEEN": false,
+      "FLAG_HOENN_SCANNER_FOUND": false,
+      "FLAG_HOENN_MAUVILLE_BARRIERS": false,
+      "FLAG_HOENN_DEFEATED_MAUVILLE_GYM": false,
+      "FLAG_HOENN_GOT_TM34_FROM_WATTSON": false,
+      "FLAG_HOENN_WATTSON_ERRAND": false,
+      "FLAG_HOENN_NEW_MAUVILLE_DONE": false,
+      "FLAG_HOENN_GOT_BASEMENT_KEY": false,
+      "FLAG_HOENN_CYCLING_PRIZE_1": false,
+      "FLAG_HOENN_CYCLING_PRIZE_2": false,
+      "FLAG_HOENN_CYCLING_PRIZE_3": false,
+      "FLAG_HOENN_TRICK_HOUSE_DONE": false,
+      "FLAG_HOENN_DAYCARE_OPEN": false,
+      "FLAG_HOENN_MET_WANDA": false,
+      "FLAG_HOENN_VOLTORB_1": false,
+      "FLAG_HOENN_VOLTORB_2": false,
+      "FLAG_HOENN_VOLTORB_3": false,
+      "FLAG_HOENN_HIDE_VOLTORB_1": false,
+      "FLAG_HOENN_HIDE_VOLTORB_2": false,
+      "FLAG_HOENN_HIDE_VOLTORB_3": false,
+      "FLAG_HOENN_TRICK_PUZZLE_7_SWITCH_1": false,
+      "FLAG_HOENN_TRICK_PUZZLE_7_SWITCH_2": false,
+      "FLAG_HOENN_TRICK_PUZZLE_7_SWITCH_3": false,
+      "FLAG_HOENN_TRICK_PUZZLE_7_SWITCH_4": false,
+      "FLAG_HOENN_TRICK_PUZZLE_7_SWITCH_5": false,
+      "FLAG_HOENN_HIDE_TRICK_MASTER_ENTRANCE": false,
+      "FLAG_HOENN_HIDE_TRICK_MASTER_END": false,
+      "FLAG_HOENN_GOT_TM17_AT_TENT": false,
+      "FLAG_HOENN_TRICK_PRIZE_AMULET_COIN": false,
+      "FLAG_HOENN_TRICK_PRIZE_EXP_SHARE": false,
+      "FLAG_HOENN_BIRCH_RESCUED": false,
+      "FLAG_HOENN_GOT_TORCHIC_FROM_BIRCH": false,
+      "FLAG_HOENN_GOT_TREECKO_IN_WOODS": false,
+      "FLAG_HOENN_GOT_MUDKIP_ON_BEACH": false,
+      "FLAG_HOENN_DEFEATED_RUSTBORO_GYM": false,
+      "FLAG_HOENN_GOT_TM39_FROM_ROXANNE": false,
+      "FLAG_HOENN_WOODS_RESEARCHER_SAVED": false,
+      "FLAG_HOENN_GOT_DEVON_GOODS": false,
+      "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+      "FLAG_HOENN_GOT_EXP_SHARE": false,
+      "FLAG_HOENN_PEEKO_RESCUED": false,
+      "FLAG_HOENN_WALLY_CAUGHT_RALTS": false,
+      "FLAG_HOENN_RUSTURF_OPEN": false,
+      "FLAG_HOENN_GOT_TM09": false,
+      "FLAG_HOENN_GOT_CHESTO_BERRY": false,
+      "FLAG_HOENN_GOT_MIRACLE_SEED": false,
+      "FLAG_HOENN_GOT_PREMIER_BALL": false,
+      "FLAG_HOENN_GOT_QUICK_CLAW": false,
+      "FLAG_HOENN_DID_SEEDOT_TRADE": false,
+      "FLAG_HOENN_GOT_OLDALE_POTION": false,
+      "FLAG_HOENN_BIRCH_DEX_1": false,
+      "FLAG_HOENN_BIRCH_DEX_2": false,
+      "FLAG_HOENN_BIRCH_DEX_3": false,
+      "FLAG_HOENN_BIRCH_DEX_4": false,
+      "FLAG_HOENN_BIRCH_DEX_5": false,
+      "FLAG_HOENN_GOT_WHITE_HERB": false,
+      "FLAG_HIDE_HOENN_BIRCH_ROUTE101": true,
+      "FLAG_HIDE_HOENN_BIRCH_LAB": false,
+      "FLAG_HIDE_HOENN_RIVAL_ROUTE103": true,
+      "FLAG_HIDE_HOENN_WOODS_GRUNT": false,
+      "FLAG_HIDE_HOENN_WOODS_RESEARCHER": false,
+      "FLAG_HIDE_HOENN_RUSTBORO_THIEF": true,
+      "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+      "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+      "FLAG_HIDE_HOENN_BRINEY": true,
+      "FLAG_HIDE_HOENN_WALLY_PETALBURG": true,
+      "FLAG_HIDE_HOENN_WALLY_VERDANTURF": true,
+      "FLAG_HIDE_HOENN_WANDA_BOYFRIEND": true,
+      "FLAG_HOENN_PIKACHU_ROXANNE_SEEN": false,
+      "FLAG_HOENN_GOT_RUSTBORO_GREAT_BALL": false,
+      "FLAG_HOENN_GOT_REPEAT_BALL": false,
+      "FLAG_HOENN_ROCKET_WOODS": false,
+      "FLAG_HIDE_HOENN_ROCKET_WOODS": true,
+      "FLAG_HIDE_HOENN_RIVAL_LAB": false,
+      "FLAG_HOENN_MET_LANDLADY": false,
+      "FLAG_HOENN_GOT_TM50_FROM_FLANNERY": false,
+      "FLAG_HOENN_GOT_TM40_FROM_WINONA": false,
+      "FLAG_HOENN_GOT_TM42_FROM_NORMAN": false,
+      "FLAG_HOENN_LEAGUE_CLEAR": false,
+      "FLAG_HOENN_GOT_TM04": false,
+      "FLAG_HOENN_GOT_TM03": false,
+      "FLAG_HOENN_SEAFLOOR_CLEARED": false,
+      "FLAG_HOENN_RAYQUAZA_AWAKENED": false,
+      "FLAG_HOENN_GOT_WALLACE_WATERFALL_REWARD": false,
+      "FLAG_HOENN_GOT_CUTTER_SHARED_HM_REWARD": false,
+      "FLAG_HOENN_GOT_ROCK_SMASH_SHARED_HM_REWARD": false,
+      "FLAG_HOENN_GOT_WANDA_SHARED_HM_REWARD": false,
+      "FLAG_HOENN_GOT_WALLY_DAD_SHARED_HM_REWARD": false,
+      "FLAG_HOENN_GOT_GRANITE_SHARED_HM_REWARD": false,
+      "FLAG_HOENN_GOT_RIVAL110_GIFT": true,
+      "FLAG_HOENN_GOT_RIVAL_FLY_REWARD": false,
+      "FLAG_HOENN_WEATHER_RESCUED": true,
+      "FLAG_HOENN_GOT_WEATHER_CASTFORM": false,
+      "FLAG_HOENN_SPACE_CENTER_SECURED": false,
+      "FLAG_HIDE_HOENN_SPACE_RAID": false,
+      "FLAG_HOENN_GOT_HM08_FROM_STEVEN": false,
+      "FLAG_GOT_HM02": true,
+      "FLAG_GOT_ITEMFINDER": false
+    },
+    "trainers": {
+      "TRAINER_HOENN_MAY_ROUTE_110_TORCHIC": true
+    },
+    "hm08": 0,
+    "sha256": "de1ecada2096e613a9e2a9dc072811460f368f1e68f1731bd7cfcc6136312376"
+  },
+  "original_routes_unmodified": true,
+  "genuine_pika_record_unchanged": true,
+  "original_saves_unchanged": true
+}

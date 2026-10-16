@@ -13,6 +13,7 @@
 #include "battle_interface.h"
 #include "battle_tower.h"
 #include "battle_gfx_sfx_util.h"
+#include "rocket_trainer_portrait.h"
 #include "battle_ai_script_commands.h"
 #include "battle_ai_switch_items.h"
 #include "trainer_tower.h"
@@ -190,10 +191,13 @@ static void FreeTrainerSpriteAfterSlide(void)
 {
     if (gSprites[gBattlerSpriteIds[gActiveBattler]].callback == SpriteCallbackDummy)
     {
-        FreeTrainerFrontPicPaletteAndTile(gSprites[gBattlerSpriteIds[gActiveBattler]].oam.affineParam);
-        gSprites[gBattlerSpriteIds[gActiveBattler]].oam.tileNum = gSprites[gBattlerSpriteIds[gActiveBattler]].data[5];
-        FreeSpriteOamMatrix(&gSprites[gBattlerSpriteIds[gActiveBattler]]);
-        DestroySprite(&gSprites[gBattlerSpriteIds[gActiveBattler]]);
+        if (!TryDestroyRocketTrainerPortrait(&gSprites[gBattlerSpriteIds[gActiveBattler]]))
+        {
+            FreeTrainerFrontPicPaletteAndTile(gSprites[gBattlerSpriteIds[gActiveBattler]].oam.affineParam);
+            gSprites[gBattlerSpriteIds[gActiveBattler]].oam.tileNum = gSprites[gBattlerSpriteIds[gActiveBattler]].data[5];
+            FreeSpriteOamMatrix(&gSprites[gBattlerSpriteIds[gActiveBattler]]);
+            DestroySprite(&gSprites[gBattlerSpriteIds[gActiveBattler]]);
+        }
         OpponentBufferExecCompleted();
     }
 }
@@ -1132,6 +1136,12 @@ static void OpponentHandleDrawTrainerPic(void)
         trainerPicId = GetEreaderTrainerFrontSpriteId();
     else
         trainerPicId = gTrainers[gTrainerBattleOpponent_A].trainerPic;
+    if (TryCreateRocketTrainerPortrait(trainerPicId, 176, -DISPLAY_WIDTH, 2,
+                                       GetBattlerSpriteSubpriority(gActiveBattler), &gBattlerSpriteIds[gActiveBattler]))
+    {
+        gBattlerControllerFuncs[gActiveBattler] = CompleteOnBattlerSpriteCallbackDummy;
+        return;
+    }
     DecompressTrainerFrontPic(trainerPicId, gActiveBattler);
     SetMultiuseSpriteTemplateToTrainerBack(trainerPicId, GetBattlerPosition(gActiveBattler));
     gBattlerSpriteIds[gActiveBattler] = CreateSprite(&gMultiuseSpriteTemplate,
@@ -1162,6 +1172,12 @@ static void OpponentHandleTrainerSlide(void)
         trainerPicId = GetEreaderTrainerFrontSpriteId();
     else
         trainerPicId = gTrainers[gTrainerBattleOpponent_A].trainerPic;
+    if (TryCreateRocketTrainerPortrait(trainerPicId, 200, 96, -2,
+                                       30, &gBattlerSpriteIds[gActiveBattler]))
+    {
+        gBattlerControllerFuncs[gActiveBattler] = CompleteOnBattlerSpriteCallbackDummy2;
+        return;
+    }
     DecompressTrainerFrontPic(trainerPicId, gActiveBattler);
     SetMultiuseSpriteTemplateToTrainerBack(trainerPicId, GetBattlerPosition(gActiveBattler));
     gBattlerSpriteIds[gActiveBattler] = CreateSprite(&gMultiuseSpriteTemplate,
@@ -1183,7 +1199,7 @@ static void OpponentHandleTrainerSlideBack(void)
 {
     SetSpritePrimaryCoordsFromSecondaryCoords(&gSprites[gBattlerSpriteIds[gActiveBattler]]);
     gSprites[gBattlerSpriteIds[gActiveBattler]].data[0] = 35;
-    gSprites[gBattlerSpriteIds[gActiveBattler]].data[2] = 280;
+    gSprites[gBattlerSpriteIds[gActiveBattler]].data[2] = GetTrainerPortraitExitX(&gSprites[gBattlerSpriteIds[gActiveBattler]]);
     gSprites[gBattlerSpriteIds[gActiveBattler]].data[4] = gSprites[gBattlerSpriteIds[gActiveBattler]].y;
     gSprites[gBattlerSpriteIds[gActiveBattler]].callback = StartAnimLinearTranslation;
     StoreSpriteCallbackInData6(&gSprites[gBattlerSpriteIds[gActiveBattler]], SpriteCallbackDummy);
@@ -1630,7 +1646,7 @@ static void OpponentHandleIntroTrainerBallThrow(void)
 
     SetSpritePrimaryCoordsFromSecondaryCoords(&gSprites[gBattlerSpriteIds[gActiveBattler]]);
     gSprites[gBattlerSpriteIds[gActiveBattler]].data[0] = 35;
-    gSprites[gBattlerSpriteIds[gActiveBattler]].data[2] = 280;
+    gSprites[gBattlerSpriteIds[gActiveBattler]].data[2] = GetTrainerPortraitExitX(&gSprites[gBattlerSpriteIds[gActiveBattler]]);
     gSprites[gBattlerSpriteIds[gActiveBattler]].data[4] = gSprites[gBattlerSpriteIds[gActiveBattler]].y;
     gSprites[gBattlerSpriteIds[gActiveBattler]].callback = StartAnimLinearTranslation;
     StoreSpriteCallbackInData6(&gSprites[gBattlerSpriteIds[gActiveBattler]], SpriteCB_FreeOpponentSprite);
@@ -1644,10 +1660,13 @@ static void OpponentHandleIntroTrainerBallThrow(void)
 
 static void SpriteCB_FreeOpponentSprite(struct Sprite *sprite)
 {
-    FreeTrainerFrontPicPaletteAndTile(sprite->oam.affineParam);
-    sprite->oam.tileNum = sprite->data[5];
-    FreeSpriteOamMatrix(sprite);
-    DestroySprite(sprite);
+    if (!TryDestroyRocketTrainerPortrait(sprite))
+    {
+        FreeTrainerFrontPicPaletteAndTile(sprite->oam.affineParam);
+        sprite->oam.tileNum = sprite->data[5];
+        FreeSpriteOamMatrix(sprite);
+        DestroySprite(sprite);
+    }
 }
 
 static void Task_StartSendOutAnim(u8 taskId)

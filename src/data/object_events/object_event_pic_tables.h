@@ -2526,3 +2526,64 @@ static const struct SpriteFrameImage sPicTable_HoennRegi[] = {
     obj_frame_tiles(gObjectEventPic_HoennRegi),
 };
 // END HOENN OBJECT EVENTS
+
+static const struct SpriteFrameImage sPicTable_JohtoFarfetchd[] = {
+    {gMonIcon_Farfetchd, 512},
+};
+
+// BEGIN THUNDER YELLOW ORIGINAL HOENN LEGENDS
+static const struct SpriteFrameImage sPicTable_ThunderLegendKyogreFront[] = {
+    overworld_frame(gObjectEventPic_ThunderLegendKyogre, 4, 4, 0),
+    overworld_frame(gObjectEventPic_ThunderLegendKyogre, 4, 4, 0),
+    overworld_frame(gObjectEventPic_ThunderLegendKyogre, 4, 4, 0),
+    overworld_frame(gObjectEventPic_ThunderLegendKyogre, 4, 4, 1),
+    overworld_frame(gObjectEventPic_ThunderLegendKyogre, 4, 4, 1),
+    overworld_frame(gObjectEventPic_ThunderLegendKyogre, 4, 4, 1),
+    overworld_frame(gObjectEventPic_ThunderLegendKyogre, 4, 4, 1),
+    overworld_frame(gObjectEventPic_ThunderLegendKyogre, 4, 4, 1),
+    overworld_frame(gObjectEventPic_ThunderLegendKyogre, 4, 4, 1),
+};
+
+static const struct SpriteFrameImage sPicTable_ThunderLegendRayquaza[] = {
+    overworld_frame(gObjectEventPic_ThunderLegendRayquaza, 8, 8, 0),
+    overworld_frame(gObjectEventPic_ThunderLegendRayquaza, 8, 8, 1),
+    overworld_frame(gObjectEventPic_ThunderLegendRayquaza, 8, 8, 2),
+    overworld_frame(gObjectEventPic_ThunderLegendRayquaza, 8, 8, 3),
+    overworld_frame(gObjectEventPic_ThunderLegendRayquaza, 8, 8, 4),
+};
+// END THUNDER YELLOW ORIGINAL HOENN LEGENDS
+
+static const struct SpriteFrameImage sPicTable_JohtoSudowoodo[] = {
+    {gMonIcon_Sudowoodo, 512},
+};
+
+// Defined in graphics.c; this table is included by event_object_movement.c.
+extern const u16 gObjectEventPic_MistyCompanion[];
+// Dedicated everyday clothing and alternating walk poses. Index 9 is a safe
+// idle fallback for Standard's optional VS Seeker raise-hand animation.
+static const struct SpriteFrameImage sPicTable_MistyCompanion[] = {
+    overworld_frame(gObjectEventPic_MistyCompanion, 2, 4, 0),
+    overworld_frame(gObjectEventPic_MistyCompanion, 2, 4, 1),
+    overworld_frame(gObjectEventPic_MistyCompanion, 2, 4, 2),
+    overworld_frame(gObjectEventPic_MistyCompanion, 2, 4, 3),
+    overworld_frame(gObjectEventPic_MistyCompanion, 2, 4, 4),
+    overworld_frame(gObjectEventPic_MistyCompanion, 2, 4, 5),
+    overworld_frame(gObjectEventPic_MistyCompanion, 2, 4, 6),
+    overworld_frame(gObjectEventPic_MistyCompanion, 2, 4, 7),
+    overworld_frame(gObjectEventPic_MistyCompanion, 2, 4, 8),
+    overworld_frame(gObjectEventPic_MistyCompanion, 2, 4, 0),
+
+};
+
+static const struct SpriteFrameImage sPicTable_ProfElmHns[] = {
+    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 0),
+    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 1),
+    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 2),
+    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 3),
+    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 4),
+    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 5),
+    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 6),
+    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 7),
+    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 8),
+    overworld_frame(gObjectEventPic_ProfElmHns, 2, 4, 0),
+};

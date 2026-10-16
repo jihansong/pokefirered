@@ -1,0 +1,28 @@
+{
+  "steps": [
+    {
+      "name": "apply",
+      "rc": 0
+    },
+    {
+      "name": "build",
+      "rc": 0
+    },
+    {
+      "name": "syms",
+      "rc": 0
+    },
+    {
+      "name": "map",
+      "rc": 0
+    },
+    {
+      "name": "strict",
+      "rc": 1
+    }
+  ],
+  "rom_sha256": "567e449341459366e94c1826ec0b1ebde969f24b39b2282c4cefec3c41603412",
+  "sym_sha256": "52728e9110729460c6da00e64fb9b64f4eb6eedaec7c4a3314645dc1febb2b43",
+  "all_pass": false,
+  "full_regions_complete": false
+}

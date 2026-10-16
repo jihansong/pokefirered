@@ -1,0 +1,1356 @@
+{
+  "pass": true,
+  "rom_sha256": "3d1a1a4f3e84deb5d9f8d2a5943930354e1a86164fe257eabf79d99ca1232fee",
+  "elf_sha256": "efd67a54f5ad9ecbe8aaa02c0d69ca7ecb6eb6d928f50761199bd8e6f040b0eb",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-original-vr-b2f-route",
+  "fixture": "temporary Lapras mover plus unedited original starter Pikachu; no source save changes",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [
+    {
+      "trainer": "TRAINER_HOENN_JULIE",
+      "enemy_species": [
+        28,
+        38,
+        369,
+        0,
+        0,
+        0
+      ],
+      "start_frame": 1824,
+      "moves": [
+        0,
+        2,
+        0
+      ],
+      "end_frame": 4411
+    },
+    {
+      "label": "original-lower-surf",
+      "before": [
+        67,
+        45,
+        33,
+        17
+      ],
+      "after": [
+        67,
+        45,
+        33,
+        16
+      ],
+      "native_surf_a": true
+    },
+    {
+      "label": "original-island-surf",
+      "before": [
+        67,
+        45,
+        33,
+        12
+      ],
+      "after": [
+        67,
+        45,
+        32,
+        12
+      ],
+      "native_surf_a": true
+    },
+    {
+      "label": "original-waterfall-ascent",
+      "steps": [
+        {
+          "frame": 5736,
+          "xy": [
+            27,
+            12
+          ]
+        },
+        {
+          "frame": 5855,
+          "xy": [
+            27,
+            11
+          ]
+        },
+        {
+          "frame": 5885,
+          "xy": [
+            27,
+            10
+          ]
+        },
+        {
+          "frame": 5916,
+          "xy": [
+            27,
+            9
+          ]
+        },
+        {
+          "frame": 5947,
+          "xy": [
+            27,
+            8
+          ]
+        }
+      ],
+      "native_waterfall_task_seen": true
+    },
+    {
+      "label": "original-waterfall-descent",
+      "steps": [
+        {
+          "frame": 7183,
+          "xy": [
+            9,
+            11
+          ]
+        },
+        {
+          "frame": 7191,
+          "xy": [
+            9,
+            12
+          ]
+        },
+        {
+          "frame": 7197,
+          "xy": [
+            9,
+            13
+          ]
+        },
+        {
+          "frame": 7203,
+          "xy": [
+            9,
+            14
+          ]
+        }
+      ],
+      "native_waterfall_task_seen": false
+    }
+  ],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_story_not_entire_regions": true,
+  "johto_badges_defined": [
+    "FLAG_JOHTO_BADGE01_GET",
+    "FLAG_JOHTO_BADGE02_GET",
+    "FLAG_JOHTO_BADGE03_GET",
+    "FLAG_JOHTO_BADGE04_GET",
+    "FLAG_JOHTO_BADGE05_GET",
+    "FLAG_JOHTO_BADGE06_GET",
+    "FLAG_JOHTO_BADGE07_GET"
+  ],
+  "palette_active_abi_mask": {
+    "size": 16,
+    "offset": 7,
+    "mask": 128
+  },
+  "follower_checks": [
+    {
+      "label": "original-lower-surf",
+      "map": [
+        67,
+        45
+      ],
+      "player_xy": [
+        33,
+        16
+      ],
+      "follower_xy": [
+        33,
+        17
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "lower-water-step",
+      "map": [
+        67,
+        45
+      ],
+      "player_xy": [
+        33,
+        15
+      ],
+      "follower_xy": [
+        33,
+        16
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "original-island-landing",
+      "map": [
+        67,
+        45
+      ],
+      "player_xy": [
+        33,
+        13
+      ],
+      "follower_xy": [
+        33,
+        14
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "original-island-surf",
+      "map": [
+        67,
+        45
+      ],
+      "player_xy": [
+        32,
+        12
+      ],
+      "follower_xy": [
+        33,
+        12
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "original-waterfall-ascent",
+      "map": [
+        67,
+        45
+      ],
+      "player_xy": [
+        27,
+        8
+      ],
+      "follower_xy": [
+        27,
+        9
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "original-waterfall-descent",
+      "map": [
+        67,
+        45
+      ],
+      "player_xy": [
+        9,
+        14
+      ],
+      "follower_xy": [
+        9,
+        13
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "original-west-landing",
+      "map": [
+        67,
+        45
+      ],
+      "player_xy": [
+        18,
+        12
+      ],
+      "follower_xy": [
+        17,
+        12
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "original-b2f-route-b1f-cold-right",
+      "map": [
+        67,
+        44
+      ],
+      "player_xy": [
+        18,
+        17
+      ],
+      "follower_xy": [
+        18,
+        16
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "original-b2f-route-b1f-cold-left",
+      "map": [
+        67,
+        44
+      ],
+      "player_xy": [
+        18,
+        16
+      ],
+      "follower_xy": [
+        18,
+        17
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    }
+  ],
+  "route_steps": [
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        45,
+        30,
+        25
+      ],
+      "after": [
+        67,
+        45,
+        31,
+        25
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        45,
+        31,
+        25
+      ],
+      "after": [
+        67,
+        45,
+        32,
+        25
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        45,
+        32,
+        25
+      ],
+      "after": [
+        67,
+        45,
+        33,
+        25
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        45,
+        33,
+        25
+      ],
+      "after": [
+        67,
+        45,
+        33,
+        24
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        45,
+        33,
+        24
+      ],
+      "after": [
+        67,
+        45,
+        33,
+        23
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        45,
+        33,
+        23
+      ],
+      "after": [
+        67,
+        45,
+        33,
+        22
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        45,
+        33,
+        22
+      ],
+      "after": [
+        67,
+        45,
+        33,
+        21
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        45,
+        33,
+        21
+      ],
+      "after": [
+        67,
+        45,
+        33,
+        20
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        45,
+        33,
+        20
+      ],
+      "after": [
+        67,
+        45,
+        33,
+        19
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        45,
+        33,
+        19
+      ],
+      "after": [
+        67,
+        45,
+        33,
+        18
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        45,
+        33,
+        18
+      ],
+      "after": [
+        67,
+        45,
+        33,
+        17
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        45,
+        33,
+        16
+      ],
+      "after": [
+        67,
+        45,
+        33,
+        15
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        45,
+        33,
+        15
+      ],
+      "after": [
+        67,
+        45,
+        33,
+        14
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        45,
+        33,
+        14
+      ],
+      "after": [
+        67,
+        45,
+        33,
+        13
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        45,
+        33,
+        13
+      ],
+      "after": [
+        67,
+        45,
+        33,
+        12
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        32,
+        12
+      ],
+      "after": [
+        67,
+        45,
+        31,
+        12
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        31,
+        12
+      ],
+      "after": [
+        67,
+        45,
+        30,
+        12
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        30,
+        12
+      ],
+      "after": [
+        67,
+        45,
+        29,
+        12
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        29,
+        12
+      ],
+      "after": [
+        67,
+        45,
+        28,
+        12
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        28,
+        12
+      ],
+      "after": [
+        67,
+        45,
+        27,
+        12
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        45,
+        27,
+        8
+      ],
+      "after": [
+        67,
+        45,
+        27,
+        7
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        45,
+        27,
+        7
+      ],
+      "after": [
+        67,
+        45,
+        27,
+        6
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        45,
+        27,
+        6
+      ],
+      "after": [
+        67,
+        45,
+        27,
+        5
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        45,
+        27,
+        5
+      ],
+      "after": [
+        67,
+        45,
+        27,
+        4
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        27,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        26,
+        4
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        26,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        25,
+        4
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        25,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        24,
+        4
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        24,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        23,
+        4
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        23,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        22,
+        4
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        22,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        21,
+        4
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        21,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        20,
+        4
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        20,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        19,
+        4
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        19,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        18,
+        4
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        18,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        17,
+        4
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        17,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        16,
+        4
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        16,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        15,
+        4
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        15,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        14,
+        4
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        14,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        13,
+        4
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        13,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        12,
+        4
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        12,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        11,
+        4
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        11,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        10,
+        4
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        45,
+        10,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        9,
+        4
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        45,
+        9,
+        4
+      ],
+      "after": [
+        67,
+        45,
+        9,
+        5
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        45,
+        9,
+        5
+      ],
+      "after": [
+        67,
+        45,
+        9,
+        6
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        45,
+        9,
+        6
+      ],
+      "after": [
+        67,
+        45,
+        9,
+        7
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        45,
+        9,
+        7
+      ],
+      "after": [
+        67,
+        45,
+        9,
+        8
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        45,
+        9,
+        8
+      ],
+      "after": [
+        67,
+        45,
+        9,
+        9
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        45,
+        9,
+        9
+      ],
+      "after": [
+        67,
+        45,
+        9,
+        10
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        45,
+        9,
+        14
+      ],
+      "after": [
+        67,
+        45,
+        10,
+        14
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        45,
+        10,
+        14
+      ],
+      "after": [
+        67,
+        45,
+        11,
+        14
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        45,
+        11,
+        14
+      ],
+      "after": [
+        67,
+        45,
+        12,
+        14
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        45,
+        12,
+        14
+      ],
+      "after": [
+        67,
+        45,
+        13,
+        14
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        45,
+        13,
+        14
+      ],
+      "after": [
+        67,
+        45,
+        14,
+        14
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        45,
+        14,
+        14
+      ],
+      "after": [
+        67,
+        45,
+        15,
+        14
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        45,
+        15,
+        14
+      ],
+      "after": [
+        67,
+        45,
+        15,
+        13
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        45,
+        15,
+        13
+      ],
+      "after": [
+        67,
+        45,
+        15,
+        12
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        45,
+        15,
+        12
+      ],
+      "after": [
+        67,
+        45,
+        16,
+        12
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        45,
+        16,
+        12
+      ],
+      "after": [
+        67,
+        45,
+        17,
+        12
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        45,
+        17,
+        12
+      ],
+      "after": [
+        67,
+        45,
+        18,
+        12
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        45,
+        18,
+        12
+      ],
+      "after": [
+        67,
+        44,
+        17,
+        16
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        17,
+        16
+      ],
+      "after": [
+        67,
+        44,
+        18,
+        16
+      ]
+    }
+  ],
+  "scope": "Original B2F entry through Julie, Surf and both waterfalls to B1F; not complete Victory Road or entire Hoenn",
+  "original_terrain_sha256": {
+    "HoennVictoryRoad_B1F": "574316b10f2989df34eb3a53c3fc4bd946bb0e67bb679e15dfc91997cb47d684",
+    "HoennVictoryRoad_B2F": "60f525ef9b6e374604f4dcfd96ef1091b6b9bdaac2b73860b345eb75476c00c0"
+  },
+  "original_julie_object": {
+    "type": "object",
+    "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+    "x": 35,
+    "y": 22,
+    "elevation": 3,
+    "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+    "movement_range_x": 1,
+    "movement_range_y": 1,
+    "trainer_type": "TRAINER_TYPE_NORMAL",
+    "trainer_sight_or_berry_tree_id": "2",
+    "script": "VictoryRoad_B2F_EventScript_H3",
+    "flag": "0"
+  },
+  "original_ladder_event": {
+    "x": 19,
+    "y": 12,
+    "elevation": 3,
+    "dest_map": "MAP_VICTORY_ROAD_B1F",
+    "dest_warp_id": "1"
+  },
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "dex_guard": {
+    "caught_bytes_unchanged": true,
+    "all_old_seen_bits_preserved": true,
+    "only_seen_allowed_national": [
+      28,
+      38,
+      357
+    ],
+    "seen_added_per_replica": [
+      [
+        357
+      ],
+      [
+        357
+      ],
+      [
+        357
+      ]
+    ]
+  },
+  "native_julie_sight_no_a": true,
+  "original_julie_sight_battle": true,
+  "original_ladder_transition": {
+    "from_map": "VictoryRoad_B2F",
+    "to_map": "VictoryRoad_B1F",
+    "arrival": [
+      17,
+      16
+    ]
+  },
+  "native_save": {
+    "counter_before": 60,
+    "counter_after": 61,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_BADGE01_GET": false,
+      "FLAG_BADGE02_GET": false,
+      "FLAG_BADGE03_GET": false,
+      "FLAG_BADGE04_GET": false,
+      "FLAG_BADGE05_GET": false,
+      "FLAG_BADGE06_GET": false,
+      "FLAG_BADGE07_GET": false,
+      "FLAG_BADGE08_GET": false,
+      "FLAG_HOENN_BADGE01_GET": false,
+      "FLAG_HOENN_BADGE02_GET": false,
+      "FLAG_HOENN_BADGE03_GET": true,
+      "FLAG_HOENN_BADGE04_GET": true,
+      "FLAG_HOENN_BADGE05_GET": true,
+      "FLAG_HOENN_BADGE06_GET": false,
+      "FLAG_HOENN_BADGE07_GET": false,
+      "FLAG_HOENN_BADGE08_GET": true,
+      "FLAG_JOHTO_BADGE01_GET": false,
+      "FLAG_JOHTO_BADGE02_GET": false,
+      "FLAG_JOHTO_BADGE03_GET": false,
+      "FLAG_JOHTO_BADGE04_GET": false,
+      "FLAG_JOHTO_BADGE05_GET": false,
+      "FLAG_JOHTO_BADGE06_GET": false,
+      "FLAG_JOHTO_BADGE07_GET": false,
+      "FLAG_RECEIVED_STARTER_PIKACHU": true,
+      "FLAG_SYS_USE_STRENGTH": false,
+      "FLAG_TEMP_11": false,
+      "FLAG_TEMP_12": false,
+      "FLAG_TEMP_13": false,
+      "FLAG_TEMP_14": false,
+      "FLAG_TEMP_15": false,
+      "FLAG_TEMP_16": false,
+      "FLAG_TEMP_17": false,
+      "FLAG_TEMP_18": false,
+      "FLAG_TEMP_19": false,
+      "FLAG_TEMP_1A": false,
+      "FLAG_TEMP_1B": false,
+      "FLAG_TEMP_1C": false,
+      "FLAG_TEMP_1D": false,
+      "FLAG_TEMP_1E": false,
+      "FLAG_TEMP_1F": false
+    },
+    "trainers": {
+      "TRAINER_HOENN_JULIE": true
+    },
+    "hm08": 0,
+    "sha256": "d658c81c34e2e911f7b68dcb3051af451f63263b5cdd38ee0e36e09655d6f8d4"
+  },
+  "full_original_storage_unchanged": true,
+  "original_saves_unchanged": true
+}

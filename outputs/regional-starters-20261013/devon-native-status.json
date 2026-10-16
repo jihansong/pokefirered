@@ -1,0 +1,151 @@
+{
+  "pass": false,
+  "status": "failed",
+  "ROM_sha256": "63904802b37dc5e922ec616361c0be3388f1030e5b2c1a0b7a2949f2a33c1f7c",
+  "RAM_writes": 0,
+  "direct_script_calls": 0,
+  "forced_battle_outcomes": 0,
+  "cases": [],
+  "stages": [
+    {
+      "stage": "scene1-Gym-start",
+      "position": [
+        54,
+        3,
+        5,
+        3
+      ],
+      "devon_scene": 1,
+      "flags": {
+        "FLAG_HOENN_BADGE01_GET": false,
+        "FLAG_HOENN_DEFEATED_RUSTBORO_GYM": false,
+        "FLAG_HOENN_GOT_TM39_FROM_ROXANNE": false,
+        "FLAG_HIDE_HOENN_RUSTBORO_THIEF": false,
+        "FLAG_HOENN_WOODS_RESEARCHER_SAVED": true
+      },
+      "roxanne_beaten": false,
+      "idle": true
+    }
+  ],
+  "scope": "Preboot eligible fixtures; actual Roxanne battle and continuous Gym exit to Devon coord; not whole campaign",
+  "objects_before_talk": [
+    {
+      "ptr": 33779296,
+      "slot": 1,
+      "xy": [
+        12,
+        9
+      ],
+      "sprite": 1,
+      "visible": true,
+      "feet": [
+        120,
+        112
+      ]
+    }
+  ],
+  "active_objects": [
+    {
+      "i": 0,
+      "local": 255,
+      "flags": 98497,
+      "xy": [
+        12,
+        10
+      ],
+      "face": 17
+    },
+    {
+      "i": 1,
+      "local": 1,
+      "flags": 1,
+      "xy": [
+        12,
+        9
+      ],
+      "face": 17
+    },
+    {
+      "i": 2,
+      "local": 3,
+      "flags": 1,
+      "xy": [
+        10,
+        16
+      ],
+      "face": 51
+    },
+    {
+      "i": 3,
+      "local": 5,
+      "flags": 1,
+      "xy": [
+        8,
+        13
+      ],
+      "face": 17
+    },
+    {
+      "i": 4,
+      "local": 254,
+      "flags": 8193,
+      "xy": [
+        12,
+        10
+      ],
+      "face": 17
+    }
+  ],
+  "battle_callback_trace": [
+    {
+      "tick": 0,
+      "state": [
+        "0x80113fd",
+        0,
+        true,
+        false
+      ]
+    },
+    {
+      "tick": 35,
+      "state": [
+        "0x8124145",
+        0,
+        false,
+        false
+      ]
+    },
+    {
+      "tick": 36,
+      "state": [
+        "0x8124115",
+        0,
+        false,
+        false
+      ]
+    }
+  ],
+  "error": "AssertionError(('no confirmed battle end or action menu', ('0x8124115', 0, False, False)))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/work/hoenn-devon-native-20261013/native-devon-v5.py\", line 90, in <module>\n    while battle_menu_checked(e):\n          ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/work/hoenn-devon-native-20261013/native-devon-v5.py\", line 69, in battle_menu_checked\n    raise AssertionError(('no confirmed battle end or action menu',now))\nAssertionError: ('no confirmed battle end or action menu', ('0x8124115', 0, False, False))\n",
+  "failure_state": {
+    "position": [
+      54,
+      3,
+      5,
+      3
+    ],
+    "devon_scene": 1,
+    "flags": {
+      "FLAG_HOENN_BADGE01_GET": false,
+      "FLAG_HOENN_DEFEATED_RUSTBORO_GYM": false,
+      "FLAG_HOENN_GOT_TM39_FROM_ROXANNE": false,
+      "FLAG_HIDE_HOENN_RUSTBORO_THIEF": false,
+      "FLAG_HOENN_WOODS_RESEARCHER_SAVED": true
+    },
+    "roxanne_beaten": false,
+    "idle": false
+  },
+  "script_context_raw": "000100000dd206084b4d20080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000187d16087c801608000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "battle_outcome_failure": 0,
+  "protected_original_inputs_unchanged": true
+}

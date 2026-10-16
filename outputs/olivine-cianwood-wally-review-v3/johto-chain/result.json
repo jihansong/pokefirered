@@ -1,0 +1,125 @@
+{
+  "rom_sha256": "6185cd53db214dd18cf8229726633f75a455353bfc202ac6d88c127477a6ca19",
+  "initial_fixture": "Completed Morty badge4, unstarted medicine/gyms5-6",
+  "stages": [
+    {
+      "case": "chain_jasmine_requests_medicine",
+      "native_dialogue": "OlivineLighthouse_6F_Text_Request",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3/johto-chain/chain_jasmine_requests_medicine-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "chain_pharmacy_reserved_dose",
+      "native_dialogue": "CianwoodCity_Pharmacy_Text_Give",
+      "save": {
+        "counter": [
+          61,
+          62
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3/johto-chain/chain_pharmacy_reserved_dose-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "chain_actual_chuck_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        57,
+        62
+      ],
+      "save": {
+        "counter": [
+          62,
+          63
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3/johto-chain/chain_actual_chuck_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_chuck_wife_fly",
+      "native_dialogue": "CianwoodCity_Text_FlyGiftHM",
+      "save": {
+        "counter": [
+          63,
+          64
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3/johto-chain/chain_chuck_wife_fly-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "chain_medicine_cures_amphy",
+      "native_dialogue": "OlivineLighthouse_6F_Text_Return",
+      "save": {
+        "counter": [
+          64,
+          65
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3/johto-chain/chain_medicine_cures_amphy-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "chain_actual_jasmine_win",
+      "turns": 3,
+      "native_outcome": 1,
+      "enemies": [
+        81,
+        81,
+        208
+      ],
+      "save": {
+        "counter": [
+          65,
+          66
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3/johto-chain/chain_actual_jasmine_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_sailor_strength",
+      "native_dialogue": "OlivineCity_Cafe_Text_StrengthGiftHM",
+      "save": {
+        "counter": [
+          66,
+          67
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3/johto-chain/chain_sailor_strength-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_memory_writes": 0
+    }
+  ],
+  "all_pass": true,
+  "same_native_save_chain": true,
+  "qa_position_only_warps": 7,
+  "forced_story_flags_after_initial_fixture": 0,
+  "forced_trainer_flags_after_initial_fixture": 0,
+  "forced_memory_writes": 0,
+  "forced_battle_outcomes": 0,
+  "original_files_unchanged": true
+}

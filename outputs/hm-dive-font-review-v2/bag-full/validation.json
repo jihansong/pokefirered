@@ -1,0 +1,84 @@
+{
+  "pass": true,
+  "rom_sha256": "d97da0972679f286e8c535d09fc0d862b198fd9e0a37542cfae9aa861723f661",
+  "elf_sha256": "8d19272288e09ce9107ed1ec9f437f779f4f5f6827523465dda4a8c16656fe5e",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "hm08-alternate-bag-full",
+  "fixture": "temporary copy, level-100 Mewtwo party",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_saves": [
+    {
+      "counter_before": 60,
+      "counter_after": 61,
+      "valid_sectors": 14,
+      "cold_reopen": true,
+      "flags": {
+        "FLAG_HOENN_WEATHER_RESCUED": false,
+        "FLAG_HOENN_GOT_WEATHER_CASTFORM": false,
+        "FLAG_HOENN_SPACE_CENTER_SECURED": true,
+        "FLAG_HOENN_GOT_HM08_FROM_STEVEN": false
+      },
+      "trainers": {
+        "TRAINER_HOENN_SHELLY_WEATHER_INSTITUTE": false,
+        "TRAINER_HOENN_TABITHA_SPACE_CENTER": false,
+        "TRAINER_HOENN_MAXIE_SPACE_CENTER": false
+      },
+      "hm08": 1,
+      "sha256": "18f910c568fd504c6a5d418d3bcb079f0e57d331910b3f6789bb285031a67727"
+    },
+    {
+      "counter_before": 61,
+      "counter_after": 62,
+      "valid_sectors": 14,
+      "cold_reopen": true,
+      "flags": {
+        "FLAG_HOENN_WEATHER_RESCUED": false,
+        "FLAG_HOENN_GOT_WEATHER_CASTFORM": false,
+        "FLAG_HOENN_SPACE_CENTER_SECURED": true,
+        "FLAG_HOENN_GOT_HM08_FROM_STEVEN": true
+      },
+      "trainers": {
+        "TRAINER_HOENN_SHELLY_WEATHER_INSTITUTE": false,
+        "TRAINER_HOENN_TABITHA_SPACE_CENTER": false,
+        "TRAINER_HOENN_MAXIE_SPACE_CENTER": false
+      },
+      "hm08": 1,
+      "sha256": "dcc710a0fc782a1e8c41e697051f3c11e36aef74e5913b80de1ca9ff00ae0daa"
+    }
+  ],
+  "native_save": {
+    "counter_before": 61,
+    "counter_after": 62,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_HOENN_WEATHER_RESCUED": false,
+      "FLAG_HOENN_GOT_WEATHER_CASTFORM": false,
+      "FLAG_HOENN_SPACE_CENTER_SECURED": true,
+      "FLAG_HOENN_GOT_HM08_FROM_STEVEN": true
+    },
+    "trainers": {
+      "TRAINER_HOENN_SHELLY_WEATHER_INSTITUTE": false,
+      "TRAINER_HOENN_TABITHA_SPACE_CENTER": false,
+      "TRAINER_HOENN_MAXIE_SPACE_CENTER": false
+    },
+    "hm08": 1,
+    "sha256": "dcc710a0fc782a1e8c41e697051f3c11e36aef74e5913b80de1ca9ff00ae0daa"
+  },
+  "retry_from_native_failed_save": true,
+  "pass_": true,
+  "bag_hm08": 1,
+  "bag_tm49": 999,
+  "pc_hm08": 0,
+  "party_and_learned_moves_preserved": true,
+  "original_pc_pokemon_preserved": true,
+  "repeat_and_cold_reload_no_duplicate": true,
+  "original_saves_unchanged": true
+}

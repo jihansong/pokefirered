@@ -1,0 +1,15 @@
+{
+  "src/script_pokemon_util.c": "cfadee8f8c397485b66fc56a9a6e13fef1bbad47b4c6cd83dd42a9c1f8f9cf30",
+  "include/script_pokemon_util.h": "ead437dcd24c591d20a1f6f2ddd37bbbab152825551a4bd8b5e162c3d86c4e40",
+  "data/specials.inc": "2dbc225f7495badbeb2dab3830c0ae46e30dbbd2aede6f969cbe5869b2fc05fb",
+  "data/scripts/gift_mon.inc": "335fa02468b2fd5eff47f912e41c33816c0b9b8fd2428f5de3c3fced0fe71a77",
+  "data/maps/NewBarkTown_ElmsLab/scripts.inc": "121999fe4a5da0c7b059935d98833121054c2d1f6195d17cd22499cd218f1947",
+  "data/maps/NewBarkTown_ElmsLab/text.inc": "c87f7192765529d08bb4f75c28f6ad292638e1b076f4024c0986062ba3dee9db",
+  "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc": "d8776b6bd4e75875ccbd2aa7f8bd84c36883ff8557847a15789b83bb7311c633",
+  "data/maps/Route104/scripts.inc": "18e108d2fd6cdea6c196f5979a1c14d43f53e0ae8584f894865efa798f6a7844",
+  "data/maps/PetalburgWoods/scripts.inc": "5929e63ce26cfdb5df60776581ab47c2a06a21d36b6cc5b95b388d9bcf82b602",
+  "pokemonthyl.gba": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+  "pokemonthyl.elf": "c7efc258561748b879db8216eb63794f4ff80093c3687f2fb82188136d7da761",
+  "pokemonthyl.sym": "b4d51996640df6aba3755a9f2f8c5a3bf08f565c472fd10c15640dc2249aed9f",
+  "pokemonthyl.map": "707aa065a6e61c2cf0c92375f0163c06c22a338b405ccb1b4adb9dfe73b3cedb"
+}

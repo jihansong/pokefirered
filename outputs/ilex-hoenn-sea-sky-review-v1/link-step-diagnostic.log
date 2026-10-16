@@ -1,0 +1,7 @@
+DIAG_STEP johto_ilex_forest_back_south_gate DOWN 2 (76, 34, 28, 41)
+FAIL johto_ilex_forest_back_south_gate
+     expect map IlexForest_AzaleaGate: on map 76.34
+DIAG_STEP johto_ilex_goldenrod_back_route34 DOWN 3 (76, 38, 21, 39)
+FAIL johto_ilex_goldenrod_back_route34
+     expect map JohtoRoute34: on map 76.38
+0/2 cases passed

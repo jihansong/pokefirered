@@ -1,0 +1,354 @@
+{
+  "pass": true,
+  "rom_sha256": "3d1a1a4f3e84deb5d9f8d2a5943930354e1a86164fe257eabf79d99ca1232fee",
+  "elf_sha256": "efd67a54f5ad9ecbe8aaa02c0d69ca7ecb6eb6d928f50761199bd8e6f040b0eb",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-fly-region-hoenn-on",
+  "fixture": "temporary Fearow mover plus exact copy of genuine original starter Pikachu; original SAV/PC/Dex unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "candidate_ui_task_symbols": {
+    "Task_HandleChooseMonInput": [
+      135415912
+    ],
+    "Task_HandleSelectionMenuInput": [
+      135428584
+    ],
+    "Task_ReturnToChooseMonAfterText": [
+      135418104
+    ],
+    "Task_CancelAfterAorBPress": [
+      135436076
+    ],
+    "Task_FlyMap": [
+      135040196
+    ],
+    "Task_UseFly": [
+      134772572
+    ],
+    "Task_FlyIntoMap": [
+      134772804
+    ]
+  },
+  "native_story_not_entire_regions": true,
+  "palette_active_abi_mask": {
+    "size": 16,
+    "offset": 7,
+    "mask": 128
+  },
+  "follower_checks": [],
+  "private_fly_abi": {
+    "offsets": {
+      "cursor.x": 0,
+      "cursor.y": 2,
+      "cursor.move": 12,
+      "cursor.mapsec": 20,
+      "cursor.type": 22,
+      "fly.state": 0,
+      "icons.fly": 720,
+      "icons.dungeon": 320,
+      "icon.size": 16,
+      "icon.region": 4,
+      "icon.sprite": 8,
+      "region.selected": 20731,
+      "sprite.size": 68,
+      "section.MAPSEC_NEW_BARK_TOWN": 200,
+      "section.MAPSEC_CHERRYGROVE_CITY": 201,
+      "section.MAPSEC_VIOLET_CITY": 204,
+      "section.MAPSEC_AZALEA_TOWN": 208,
+      "section.MAPSEC_GOLDENROD_CITY": 212,
+      "section.MAPSEC_ECRUTEAK_CITY": 217,
+      "section.MAPSEC_OLIVINE_CITY": 221,
+      "section.MAPSEC_CIANWOOD_CITY": 225,
+      "section.MAPSEC_JOHTO_ROUTE40": 223,
+      "section.MAPSEC_PALLET_TOWN": 88,
+      "section.MAPSEC_SLATEPORT_CITY": 8
+    },
+    "source_schema_sha256": "95d638f20fd19cea76a6e0d088386bf07e6c51c00d464ca18e30d777a3c98a8c",
+    "regions": [
+      "REGIONMAP_KANTO",
+      "REGIONMAP_SEVII123",
+      "REGIONMAP_SEVII45",
+      "REGIONMAP_SEVII67",
+      "REGIONMAP_HOENN",
+      "REGIONMAP_JOHTO_ENTRY",
+      "REGIONMAP_COUNT"
+    ],
+    "mapsec_types": [
+      "MAPSECTYPE_NONE",
+      "MAPSECTYPE_ROUTE",
+      "MAPSECTYPE_VISITED",
+      "MAPSECTYPE_NOT_VISITED",
+      "MAPSECTYPE_UNKNOWN"
+    ]
+  },
+  "target_cell_source": "candidate compiled Hoenn LAYER_MAP table",
+  "target_cells": [
+    [
+      8,
+      10
+    ],
+    [
+      8,
+      11
+    ]
+  ],
+  "region": "hoenn",
+  "gate": "on",
+  "method": "party menu then native destination A",
+  "original_party_storage_preserved": true,
+  "fly_destinations_not_story_completion": true,
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "ui_stage": "select-native-destination-A",
+  "icon_allocation": {
+    "fly": [
+      {
+        "slot": 0,
+        "region": 0,
+        "sprite": 21
+      },
+      {
+        "slot": 1,
+        "region": 0,
+        "sprite": 22
+      },
+      {
+        "slot": 2,
+        "region": 0,
+        "sprite": 23
+      },
+      {
+        "slot": 3,
+        "region": 0,
+        "sprite": 24
+      },
+      {
+        "slot": 4,
+        "region": 0,
+        "sprite": 25
+      },
+      {
+        "slot": 5,
+        "region": 0,
+        "sprite": 26
+      },
+      {
+        "slot": 6,
+        "region": 0,
+        "sprite": 27
+      },
+      {
+        "slot": 7,
+        "region": 0,
+        "sprite": 28
+      },
+      {
+        "slot": 8,
+        "region": 0,
+        "sprite": 29
+      },
+      {
+        "slot": 9,
+        "region": 0,
+        "sprite": 30
+      },
+      {
+        "slot": 10,
+        "region": 0,
+        "sprite": 31
+      },
+      {
+        "slot": 11,
+        "region": 0,
+        "sprite": 32
+      },
+      {
+        "slot": 12,
+        "region": 1,
+        "sprite": 33
+      },
+      {
+        "slot": 13,
+        "region": 1,
+        "sprite": 34
+      },
+      {
+        "slot": 14,
+        "region": 1,
+        "sprite": 35
+      },
+      {
+        "slot": 15,
+        "region": 4,
+        "sprite": 36
+      },
+      {
+        "slot": 16,
+        "region": 4,
+        "sprite": 37
+      }
+    ],
+    "dungeon": [
+      {
+        "slot": 0,
+        "region": 0,
+        "sprite": 2
+      },
+      {
+        "slot": 1,
+        "region": 0,
+        "sprite": 3
+      },
+      {
+        "slot": 2,
+        "region": 0,
+        "sprite": 4
+      },
+      {
+        "slot": 3,
+        "region": 0,
+        "sprite": 5
+      },
+      {
+        "slot": 4,
+        "region": 0,
+        "sprite": 6
+      },
+      {
+        "slot": 5,
+        "region": 0,
+        "sprite": 7
+      },
+      {
+        "slot": 6,
+        "region": 0,
+        "sprite": 8
+      },
+      {
+        "slot": 7,
+        "region": 0,
+        "sprite": 9
+      },
+      {
+        "slot": 8,
+        "region": 0,
+        "sprite": 10
+      },
+      {
+        "slot": 9,
+        "region": 0,
+        "sprite": 11
+      },
+      {
+        "slot": 10,
+        "region": 0,
+        "sprite": 12
+      },
+      {
+        "slot": 11,
+        "region": 1,
+        "sprite": 13
+      },
+      {
+        "slot": 12,
+        "region": 1,
+        "sprite": 14
+      },
+      {
+        "slot": 13,
+        "region": 2,
+        "sprite": 15
+      },
+      {
+        "slot": 14,
+        "region": 2,
+        "sprite": 16
+      },
+      {
+        "slot": 15,
+        "region": 3,
+        "sprite": 17
+      },
+      {
+        "slot": 16,
+        "region": 3,
+        "sprite": 18
+      },
+      {
+        "slot": 17,
+        "region": 3,
+        "sprite": 19
+      },
+      {
+        "slot": 18,
+        "region": 3,
+        "sprite": 20
+      }
+    ]
+  },
+  "native_fly_out_task_observed": true,
+  "landing": {
+    "target": "MAPSEC_SLATEPORT_CITY",
+    "expected": [
+      43,
+      1,
+      19,
+      20
+    ],
+    "actual": [
+      43,
+      1,
+      19,
+      20
+    ]
+  },
+  "native_save": {
+    "counter_before": 60,
+    "counter_after": 61,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_BADGE03_GET": false,
+      "FLAG_HOENN_BADGE06_GET": true,
+      "FLAG_JOHTO_BADGE01_GET": false,
+      "FLAG_JOHTO_BADGE02_GET": false,
+      "FLAG_JOHTO_BADGE03_GET": false,
+      "FLAG_JOHTO_BADGE04_GET": false,
+      "FLAG_JOHTO_BADGE05_GET": false,
+      "FLAG_JOHTO_BADGE06_GET": false,
+      "FLAG_JOHTO_BURNED_TOWER_INVESTIGATED": false,
+      "FLAG_JOHTO_CIANWOOD_MEDICINE_RECEIVED": false,
+      "FLAG_JOHTO_ELM_REPORT_DELIVERED": false,
+      "FLAG_JOHTO_GOLDENROD_RESEARCH_REGISTERED": false,
+      "FLAG_JOHTO_KURT_RESCUE_REQUESTED": false,
+      "FLAG_JOHTO_LIGHTHOUSE_MEDICINE_REQUESTED": false,
+      "FLAG_JOHTO_MET_CHERRYGROVE_GUIDE": false,
+      "FLAG_JOHTO_MET_LAB_ASSISTANT": false,
+      "FLAG_JOHTO_SPROUT_TOWER_CLEARED": false,
+      "FLAG_RECEIVED_STARTER_PIKACHU": true
+    },
+    "trainers": {
+      "TRAINER_HOENN_SHELLY_WEATHER_INSTITUTE": false,
+      "TRAINER_HOENN_TABITHA_SPACE_CENTER": false,
+      "TRAINER_HOENN_MAXIE_SPACE_CENTER": false
+    },
+    "hm08": 0,
+    "sha256": "36aada5965b7bf20f5a86727499933a3ae8d7d0712c4e2a9d0f60fd91ccdfd5f"
+  },
+  "pass_": true,
+  "native_region_badge_gate": true,
+  "full_original_storage_unchanged": true,
+  "original_saves_unchanged": true
+}

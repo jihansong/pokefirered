@@ -83,20 +83,55 @@ def in_upstream(path, label, cache={}):
     return cache[key]
 
 
+_STRING_DIRECTIVE = re.compile(r'^\s*\.string\b')
+_STRING_LITERAL = re.compile(r'^\s*\.string\s+("(?:[^"\\]|\\.)*")\s*(?:(?:@|//).*)?$')
+_PLAYER_RECEIPT = re.compile(r'(?:\{(?:PLAYER|BUFFER1|STR_VAR_1)\}|\b(?:PLAYER|you|BUFFER1|STR_VAR_1))\s*$', re.I)
+_PLAYER_MENTION = re.compile(r'\{(?:PLAYER|BUFFER1|STR_VAR_1)\}|\b(?:PLAYER|you|BUFFER1|STR_VAR_1)\b', re.I)
+_NPC_RECEIPT = re.compile(r'\b(?:ELM|I|someone)\s*$', re.I)
+def _joined_game_text(body):
+    chunks = []
+    for line in body.splitlines():
+        if not _STRING_DIRECTIVE.match(line):continue
+        match = _STRING_LITERAL.fullmatch(line)
+        if not match:return None
+        literal = match.group(1)[1:-1];chars=[];i=0
+        while i<len(literal):
+            char=literal[i]
+            if char=='\\':
+                i+=1
+                if i==len(literal):return None
+                escaped=literal[i]
+                if escaped in 'nlp':chars.append(' ')
+                elif escaped in ('"','\\'):chars.append(escaped)
+                else:chars.extend(('\\',escaped))
+            else:chars.append(char)
+            i+=1
+        chunks.append(''.join(chars))
+    return ' '.join(''.join(chunks).split()) if chunks else None
+def has_reward_promise(raw_body):
+    text=_joined_game_text(raw_body)
+    if text is None:return bool(PROMISE.search(raw_body))
+    for match in PROMISE.finditer(text):
+        if match.group(0).strip().casefold()!='received':return True
+        prefix=text[:match.start()]
+        if _PLAYER_RECEIPT.search(prefix):return True
+        clause=re.split(r'[.!?;]',prefix)[-1]
+        if _NPC_RECEIPT.search(prefix) and not _PLAYER_MENTION.search(clause):continue
+        return True
+    return False
+
 def script_body(scripts, lab, seen=None):
-    """The script's own lines plus everything it calls, gotos or falls through into."""
-    seen = seen if seen is not None else set()
-    if lab in seen or lab not in scripts.labels:
-        return ''
-    seen.add(lab)
-    info = scripts.labels[lab]
-    lines = open(C.rel(info['file']), encoding='utf-8', errors='replace').read().split('\n')
-    out, i = '', info['line']
-    while i < len(lines) and not re.match(r'^\w+::', lines[i]):
-        out += lines[i] + '\n'
-        i += 1
-    for nxt in re.findall(r'\b\w*EventScript_\w+\b', out) + ([info['next']] if info['next'] else []):
-        out += script_body(scripts, nxt, seen)
+    """Body and its reachable call/goto/fallthrough labels, including plain names."""
+    if seen is None:seen=set()
+    if lab in seen or lab not in scripts.labels:return ''
+    seen.add(lab);info=scripts.labels[lab]
+    with open(C.rel(info['file']),encoding='utf-8',errors='replace') as f:lines=f.read().split('\n')
+    out,i='',info['line']
+    while i<len(lines) and not C.LABEL_RE.match(lines[i]):
+        out+=lines[i]+'\n';i+=1
+    children=sorted(info['refs'])
+    if info['next']:children.append(info['next'])
+    for nxt in children:out+=script_body(scripts,nxt,seen)
     return out
 
 
@@ -140,7 +175,7 @@ def main():
         if any(g in body for g in GIVE):
             continue
         for ref in re.findall(r'\b\w+_Text_\w+\b', body):
-            if ref in texts and PROMISE.search(texts[ref]) and not in_upstream(f'data/maps/{info["map"]}/text.inc', ref):
+            if ref in texts and has_reward_promise(texts[ref]) and not in_upstream(f'data/maps/{info["map"]}/text.inc', ref):
                 empty.append((info['map'], lab, ref))
                 break
     for m, lab, ref in sorted(empty):

@@ -1,0 +1,47 @@
+{
+  "pass": false,
+  "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+  "sav_sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+  "ram_writes": 0,
+  "direct_script_calls": 0,
+  "mid_run_warps": 0,
+  "mid_run_flag_sets": 0,
+  "scope": "Preboot champion eligibility fixture, actual Kanto flight and first Johto walk to professor; not genuine prior league win or entire campaign",
+  "stages": [
+    {
+      "stage": "before-flight",
+      "position": [
+        9,
+        8,
+        10,
+        7
+      ],
+      "flags": {
+        "FLAG_JOHTO_ARRIVAL_BRIEFED": false,
+        "FLAG_JOHTO_MET_LAB_ASSISTANT": false,
+        "FLAG_JOHTO_MET_CHERRYGROVE_GUIDE": false,
+        "FLAG_JOHTO_MR_POKEMON_BRIEFED": false,
+        "FLAG_JOHTO_ELM_REPORT_DELIVERED": false
+      },
+      "Misty_joined": false,
+      "Misty_objects": 0,
+      "Pikachu_objects": 1,
+      "party_PC_Dex_preserved": true
+    }
+  ],
+  "walk_steps": [],
+  "preboot_fixture_changes": [
+    "Champion eligibility true (source was false)",
+    "Position KantoAirport 10,7 and quest log cleared",
+    "Happiness-step counter zero and Repel250"
+  ],
+  "error": "AssertionError(('Johto flight did not finish', (9, 8, 10, 7)))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/work/continuation-20261013/johto-continuous.py\", line 121, in <module>\n    else:raise AssertionError(('Johto flight did not finish',e.location()))\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('Johto flight did not finish', (9, 8, 10, 7))\n",
+  "failure_location": [
+    9,
+    8,
+    10,
+    7
+  ],
+  "inputs_unchanged": true
+}

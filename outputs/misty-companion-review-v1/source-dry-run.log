@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/companion/build_misty.py", line 16, in <module>
+    t=read(p);actual=H(old[p]);assert actual in [h,previous.get('hashes',{}).get(p)],('source preimage changed',p,actual)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('source preimage changed', 'src/field_control_avatar.c', 'a936a32c7c1c6ddcc2cc49f598871070c44ed682251444179c7d08febd8814fa')

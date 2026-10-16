@@ -1,0 +1,231 @@
+{
+  "status": "FINAL_PC_RECOVERED_SORTED_INDEPENDENT_AUDIT_PASS",
+  "source_sync_sha256": "99f4100d09961196706282a02e96ee9017a0a591777aa3ca0b40249ec8ae89e8",
+  "candidate_sha256": "c06ad0536f1ee13fd88a3cf36346b52d3d5ca0cae7e729723acf6047d916feb8",
+  "user_original_sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4",
+  "all_28_sector_checksums_valid": true,
+  "save_counters": [
+    78,
+    77
+  ],
+  "active_boxes": 14,
+  "active_cells": 420,
+  "active_healthy_records": 138,
+  "active_empty_records": 282,
+  "invalid_PC_records_in_both_banks": 0,
+  "active_physical_order": "National number ascending, duplicate levels ascending, stable ties; no damaged anchor remains",
+  "PC_initial_selected_box_1based": 1,
+  "inactive_bank_order_and_count_preserved": true,
+  "PC_record_multisets_preserved_except_exact_three_byte_inferred_repair_in_both_banks": true,
+  "PID_OT_shiny_duplicate_multiplicities_preserved": true,
+  "entire_SB1_SB2_party_bag_PP_IV_dex_story_location_unchanged": true,
+  "all_non_PC_file_bytes_and_sector_footers_preserved_except_PC_checksums": true,
+  "entire_candidate_matches_independently_constructed_expected_file": true,
+  "healthy_party_egg_preserved": [
+    {
+      "slot": 6,
+      "species": 175,
+      "species_name": "TOGEPI",
+      "pid": 2681606392,
+      "record_sha256": "de9b5b70013088bccf5b89f0baa50d78f244a2c390508bd2c765a0c531b30e3c",
+      "healthy": true,
+      "unchanged": true
+    }
+  ],
+  "inferred_recovery": [
+    {
+      "bank": 0,
+      "counter": 78,
+      "occupied": 138,
+      "before_slot_0based": 51,
+      "after_box": 2,
+      "after_cell": 22,
+      "stored_checksum": 30838
+    },
+    {
+      "bank": 1,
+      "counter": 77,
+      "occupied": 135,
+      "before_slot_0based": 51,
+      "after_box": 2,
+      "after_cell": 22,
+      "stored_checksum": 30838
+    }
+  ],
+  "recovery_model_review_sha256": "979b6eb92d99cd583da06a56fb83ab8bf619e140bb02c376e07f1a14f3815b37",
+  "authenticated_original_Lickitung_donor": false,
+  "limits": "Lickitung is a unique plausible reconstruction under the reviewed one-primary-bit model, not authenticated original donor restoration. Actual matching-ROM PC/summary/SAVE/cold is a separate native validation.",
+  "native_execution": false,
+  "input_writes": 0,
+  "original_and_prior_sync_SAV_unchanged": true,
+  "box_summaries": [
+    {
+      "box": 1,
+      "healthy": 30,
+      "empty": 0,
+      "first": {
+        "cell": 1,
+        "national_no": 12,
+        "species_name": "BUTTERFREE",
+        "level": 10,
+        "egg": false,
+        "shiny": false
+      },
+      "last": {
+        "cell": 30,
+        "national_no": 73,
+        "species_name": "TENTACRUEL",
+        "level": 30,
+        "egg": false,
+        "shiny": false
+      }
+    },
+    {
+      "box": 2,
+      "healthy": 30,
+      "empty": 0,
+      "first": {
+        "cell": 1,
+        "national_no": 76,
+        "species_name": "GOLEM",
+        "level": 37,
+        "egg": false,
+        "shiny": false
+      },
+      "last": {
+        "cell": 30,
+        "national_no": 121,
+        "species_name": "STARMIE",
+        "level": 37,
+        "egg": false,
+        "shiny": false
+      }
+    },
+    {
+      "box": 3,
+      "healthy": 30,
+      "empty": 0,
+      "first": {
+        "cell": 1,
+        "national_no": 122,
+        "species_name": "MR_MIME",
+        "level": 7,
+        "egg": false,
+        "shiny": false
+      },
+      "last": {
+        "cell": 30,
+        "national_no": 146,
+        "species_name": "MOLTRES",
+        "level": 50,
+        "egg": false,
+        "shiny": false
+      }
+    },
+    {
+      "box": 4,
+      "healthy": 30,
+      "empty": 0,
+      "first": {
+        "cell": 1,
+        "national_no": 151,
+        "species_name": "MEW",
+        "level": 30,
+        "egg": false,
+        "shiny": false
+      },
+      "last": {
+        "cell": 30,
+        "national_no": 265,
+        "species_name": "WURMPLE",
+        "level": 8,
+        "egg": false,
+        "shiny": false
+      }
+    },
+    {
+      "box": 5,
+      "healthy": 18,
+      "empty": 12,
+      "first": {
+        "cell": 1,
+        "national_no": 273,
+        "species_name": "SEEDOT",
+        "level": 3,
+        "egg": false,
+        "shiny": false
+      },
+      "last": {
+        "cell": 18,
+        "national_no": 355,
+        "species_name": "DUSKULL",
+        "level": 24,
+        "egg": false,
+        "shiny": false
+      }
+    },
+    {
+      "box": 6,
+      "healthy": 0,
+      "empty": 30,
+      "first": null,
+      "last": null
+    },
+    {
+      "box": 7,
+      "healthy": 0,
+      "empty": 30,
+      "first": null,
+      "last": null
+    },
+    {
+      "box": 8,
+      "healthy": 0,
+      "empty": 30,
+      "first": null,
+      "last": null
+    },
+    {
+      "box": 9,
+      "healthy": 0,
+      "empty": 30,
+      "first": null,
+      "last": null
+    },
+    {
+      "box": 10,
+      "healthy": 0,
+      "empty": 30,
+      "first": null,
+      "last": null
+    },
+    {
+      "box": 11,
+      "healthy": 0,
+      "empty": 30,
+      "first": null,
+      "last": null
+    },
+    {
+      "box": 12,
+      "healthy": 0,
+      "empty": 30,
+      "first": null,
+      "last": null
+    },
+    {
+      "box": 13,
+      "healthy": 0,
+      "empty": 30,
+      "first": null,
+      "last": null
+    },
+    {
+      "box": 14,
+      "healthy": 0,
+      "empty": 30,
+      "first": null,
+      "last": null
+    }
+  ]
+}

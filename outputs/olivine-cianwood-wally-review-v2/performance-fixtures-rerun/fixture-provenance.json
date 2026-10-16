@@ -1,0 +1,33 @@
+{
+  "source": "/workspaces/pokefirered/saves/pokemonthyl_v1.2.sav",
+  "source_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "genuine_starter": {
+    "slot": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "party_sha256": "0ee7112693860531159372b0dc649d23cac78cadca4fbb8dc1115426f41eab51"
+  },
+  "story_flags_preserved": true,
+  "repel": 250,
+  "happiness_step_counter": 0,
+  "wild_headers_at_fixture_maps": 0,
+  "party_pc_dex_preserved": true,
+  "fixtures": [
+    {
+      "map": "OlivineCity",
+      "save": "OlivineCity-performance.sav",
+      "sha256": "288acdb7e1e62f2b1edd50500c8a6e3f338401a270df02c9ed98ddd29ff80b46"
+    },
+    {
+      "map": "CianwoodCity",
+      "save": "CianwoodCity-performance.sav",
+      "sha256": "fb4e3f6f1d14aa5906094fcb8b1bade6dabc0c94d107d3c7d895e313540aedda"
+    },
+    {
+      "map": "OlivineLighthouse_6F",
+      "save": "OlivineLighthouse_6F-performance.sav",
+      "sha256": "68db231a59cdb48c8b4c7173b957a63b87c287807429bb3b383e55d52df18104"
+    }
+  ]
+}

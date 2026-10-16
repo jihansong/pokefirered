@@ -1,0 +1,199 @@
+{
+  "map": "MAP_BURNED_TOWER_1F",
+  "base_label": "sBurnedTower_1F",
+  "land_mons": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_ZUBAT"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_KOFFING"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_ZUBAT"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_KOFFING"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_ZUBAT"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_KOFFING"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_MAGMAR"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_KOFFING"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_MAGMAR"
+      }
+    ]
+  },
+  "land_mons_morning": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_ZUBAT"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_KOFFING"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_ZUBAT"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_KOFFING"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_ZUBAT"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_KOFFING"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_MAGMAR"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_KOFFING"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_MAGMAR"
+      }
+    ]
+  },
+  "land_mons_night": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_ZUBAT"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_KOFFING"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_ZUBAT"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_KOFFING"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_ZUBAT"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_KOFFING"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_MAGMAR"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_KOFFING"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_MAGMAR"
+      }
+    ]
+  }
+}

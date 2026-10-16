@@ -1,0 +1,49 @@
+{
+  "source_head": "658baf740",
+  "scope": "Rustboro gym victory rewards only; no save layout changes",
+  "remote_applied": false,
+  "preconditions": {
+    "data/maps/RustboroCity_Gym/scripts.inc": "c680e2f92b1fe4a5960ee66698b3f72079b2139c03df2a480b3686b9be38e2a4",
+    "data/maps/RustboroCity_Gym/text.inc": "71e850cb9bb03d798d2b3a398ce8d9cd763e6b6f68d2efd5e7f530faa931c868"
+  },
+  "new_files": [
+    "tools/hoenn_import/patches/RustboroCity_Gym.scripts.inc",
+    "tools/hoenn_import/patches/RustboroCity_Gym.text.inc",
+    "tools/qa/cases/z3_roxanne.jsonl"
+  ],
+  "files": {
+    "data/maps/RustboroCity_Gym/scripts.inc": "b45f041bcb0ef1268db95e9b07a09fd3efe8f909089561d092ac01f68fb4880b",
+    "data/maps/RustboroCity_Gym/text.inc": "d095a55c827d645afe71edd41667383a0a04d1bf541bd44ca9efe3d419fdea53",
+    "tools/hoenn_import/patches/RustboroCity_Gym.scripts.inc": "a107d96163906608a3e48cd7998c016ad0bb9c8fda3565d90f492a6def9fc6d9",
+    "tools/hoenn_import/patches/RustboroCity_Gym.text.inc": "e81e6395cf628f87d9fade4805fa927e576d7da1797edf3741166aab82c181bc",
+    "tools/qa/cases/z3_roxanne.jsonl": "16dd0d51de7b000d996a3efa126e933f70f13b97965fb32433d3d6fe9fb227f5"
+  },
+  "local_checks": {
+    "apply_patches_idempotent": true,
+    "map_json_unchanged": true,
+    "dialogue_width": {
+      "files": 1,
+      "labels": 19,
+      "lines": 76,
+      "over_208px": 0,
+      "variable_lines_to_check": 0,
+      "tool": "tools/qa/textwidth.py against existing local game fonts"
+    },
+    "qa_json": {
+      "cases": 10,
+      "negative_controls": 1
+    }
+  },
+  "emulator_checks": "Pending Codespaces build and z3_roxanne.jsonl execution",
+  "verified_remote_party": {
+    "symbol": "sHoennParty_Roxanne1",
+    "species_levels": {
+      "GOLEM": 65,
+      "KABUTOPS": 66,
+      "OMASTAR": 66,
+      "NOSEPASS": 68
+    },
+    "source_sha256": "0c0baa853206a0e758efadaf423855b2c5a8656c459a78a3c3adcf16d3bf1d00",
+    "verified_by": "root Codespaces terminal"
+  }
+}

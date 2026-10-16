@@ -1,0 +1,151 @@
+{
+  "apply": false,
+  "files": [
+    "data/layouts/EcruteakCity/map.bin",
+    "data/layouts/GoldenrodCity/map.bin"
+  ],
+  "validation": {
+    "chapter": "Goldenrod, National Park and Ecruteak",
+    "save_layout_changed": false,
+    "native_build_and_emulator": "NOT_RUN_BY_GENERATOR",
+    "visual_limits": [
+      "Existing Kanto tiles and native character portraits are reused.",
+      "Burned Tower uses mansion interiors and a gym facade; the dance theater uses the native dojo.",
+      "Sudowoodo uses its unmodified native menu-icon pixels. Morty and Kimono girls use placeholder portraits."
+    ],
+    "not_implemented": [
+      "Johto gyms five through eight, Radio Tower takeover and Johto League",
+      "Bug-catching contest scheduling and rewards",
+      "Roaming legendary encounters after the tower scene"
+    ],
+    "new_maps": [
+      "GoldenrodCity_NorthGate",
+      "JohtoRoute35",
+      "JohtoRoute35_NationalParkGate",
+      "JohtoNationalPark",
+      "JohtoNationalPark_Route36Gate",
+      "JohtoRoute36",
+      "JohtoRoute37",
+      "EcruteakCity",
+      "EcruteakCity_PokemonCenter_1F",
+      "EcruteakCity_PokemonCenter_2F",
+      "EcruteakCity_Mart",
+      "EcruteakCity_DanceTheater",
+      "EcruteakCity_Gym",
+      "BurnedTower_1F",
+      "BurnedTower_B1F"
+    ],
+    "new_flags": {
+      "FLAG_JOHTO_BADGE04_GET": 19,
+      "FLAG_JOHTO_SQUIRTBOTTLE_RECEIVED": 29,
+      "FLAG_JOHTO_SUDOWOODO_CLEARED": 30,
+      "FLAG_JOHTO_BURNED_TOWER_INVESTIGATED": 31,
+      "FLAG_JOHTO_SILVER_BURNED_TOWER_DEFEATED": 32,
+      "FLAG_JOHTO_GOT_TM30_FROM_MORTY": 33,
+      "FLAG_JOHTO_DANCE_SURF_REWARDED": 34
+    },
+    "trainer_ids": {
+      "ARNIE": 806,
+      "IVAN": 807,
+      "KIMONO_NAOKO": 808,
+      "KIMONO_SAYO": 809,
+      "KIMONO_ZUKI": 810,
+      "KIMONO_KUNI": 811,
+      "KIMONO_MIKI": 812,
+      "SILVER_BURNED_TOWER": 813,
+      "PING": 814,
+      "GRACE": 815,
+      "MORTY": 816
+    },
+    "static_checks": [
+      {
+        "map": "GoldenrodCity_NorthGate",
+        "walkable_reachable": 100,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 780
+      },
+      {
+        "map": "JohtoRoute35",
+        "walkable_reachable": 614,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 1950
+      },
+      {
+        "map": "JohtoRoute35_NationalParkGate",
+        "walkable_reachable": 101,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 780
+      },
+      {
+        "map": "JohtoNationalPark",
+        "walkable_reachable": 997,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 2550
+      },
+      {
+        "map": "JohtoNationalPark_Route36Gate",
+        "walkable_reachable": 101,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 780
+      },
+      {
+        "map": "JohtoRoute36",
+        "walkable_reachable": 600,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 1938
+      },
+      {
+        "map": "JohtoRoute37",
+        "walkable_reachable": 415,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 1482
+      },
+      {
+        "map": "EcruteakCity",
+        "walkable_reachable": 1054,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 2750
+      },
+      {
+        "map": "EcruteakCity_PokemonCenter_1F",
+        "walkable_reachable": 84,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 720
+      },
+      {
+        "map": "EcruteakCity_PokemonCenter_2F",
+        "native_CableClub_layout": true
+      },
+      {
+        "map": "EcruteakCity_Mart",
+        "walkable_reachable": 40,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 598
+      },
+      {
+        "map": "EcruteakCity_DanceTheater",
+        "walkable_reachable": 116,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 840
+      },
+      {
+        "map": "EcruteakCity_Gym",
+        "walkable_reachable": 146,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 952
+      },
+      {
+        "map": "BurnedTower_1F",
+        "walkable_reachable": 415,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 1634
+      },
+      {
+        "map": "BurnedTower_B1F",
+        "walkable_reachable": 436,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 1634
+      }
+    ]
+  }
+}

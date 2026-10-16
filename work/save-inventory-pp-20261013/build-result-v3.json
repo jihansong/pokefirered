@@ -1,0 +1,13 @@
+{
+  "command": [
+    "make",
+    "GAME_VERSION=LEAFGREEN",
+    "MODERN=0",
+    "ROM=work/save-inventory-pp-20261013/candidate/pokemonthyl.gba",
+    "-j2"
+  ],
+  "exit_code": 0,
+  "main_ROM_unchanged": true,
+  "candidate_ROM_sha256": "e1560c21cf51c7c1c2af8dd04f3f6a429eb3d6af4f3e157bc66aa187bef65c34",
+  "log_tail": "tools/scaninc/scaninc -M build/leafgreen/src/pokemon.d -I include -I tools/agbcc/include src/pokemon.c\ntools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/pokemon.o src/pokemon.c\ntools/ramscrgen/ramscrgen COMMON sym_common.txt ENGLISH -c build/leafgreen/src,common_syms > build/leafgreen/sym_common.ld\n/opt/devkitpro/devkitARM/bin/arm-none-eabi-ld: warning: ../../work/save-inventory-pp-20261013/candidate/pokemonthyl.elf has a LOAD segment with RWX permissions\nMemory region         Used Size  Region Size  %age Used\n           EWRAM:      261864 B       256 KB     99.89%\n           IWRAM:       29900 B        32 KB     91.25%\n             ROM:    29830896 B        32 MB     88.90%\ncd build/leafgreen && arm-none-eabi-ld -Map ../../work/save-inventory-pp-20261013/candidate/pokemonthyl.map -T ../../ld_script.ld --print-memory-usage -o ../../work/save-inventory-pp-20261013/candidate/pokemonthyl.elf <objs> <libs> | cat\ntools/gbafix/gbafix work/save-inventory-pp-20261013/candidate/pokemonthyl.elf -t\"POKEMON YELT\" -cBPGE -m01 -r0 --silent\narm-none-eabi-objcopy -O binary --gap-fill 0xFF --pad-to 0xA000000 work/save-inventory-pp-20261013/candidate/pokemonthyl.elf work/save-inventory-pp-20261013/candidate/pokemonthyl.gba\n"
+}

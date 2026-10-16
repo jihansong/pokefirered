@@ -1,0 +1,117 @@
+{
+  "pass": false,
+  "rom_sha256": "c139724c9b8d94a1195cb0386ced634a0012377f2ee7f3e86b6267259cf8068b",
+  "elf_sha256": "2e187bd051b902ab268d718c5cc02f9b32b16f99c0f81f8d1a88a425282855a3",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-waterfall-menu",
+  "fixture": "temporary Lapras mover plus exact copy of genuine original starter Pikachu; original SAV/PC/Dex unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "candidate_ui_task_symbols": {
+    "Task_HandleChooseMonInput": [
+      135414788
+    ],
+    "Task_HandleSelectionMenuInput": [
+      135427460
+    ],
+    "Task_ReturnToChooseMonAfterText": [
+      135416980
+    ],
+    "Task_CancelAfterAorBPress": [
+      135434880
+    ],
+    "Task_YesNoMenu_HandleInput": [
+      134873944
+    ],
+    "Task_UseWaterfall": [
+      134774784
+    ]
+  },
+  "native_story_not_entire_regions": true,
+  "palette_active_abi_mask": {
+    "size": 16,
+    "offset": 7,
+    "mask": 128
+  },
+  "follower_checks": [
+    {
+      "label": "base-right",
+      "map": [
+        43,
+        8
+      ],
+      "player_xy": [
+        21,
+        68
+      ],
+      "follower_xy": [
+        20,
+        68
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "base-left",
+      "map": [
+        43,
+        8
+      ],
+      "player_xy": [
+        20,
+        68
+      ],
+      "follower_xy": [
+        21,
+        68
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    }
+  ],
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "ui_stage": "select-lapras-context",
+  "ui_debug": {
+    "stage": "select-lapras-context",
+    "tasks": [
+      {
+        "slot": 0,
+        "function": "0x8124404",
+        "names": [
+          "Task_HandleChooseMonInput"
+        ],
+        "cursor_data0": 0
+      }
+    ],
+    "callback2": "0x812347d",
+    "fade_inactive": true,
+    "start_cursor": 1,
+    "party_menu_raw": "1978050800000000000000000000000000000000",
+    "party_slot": 0,
+    "party_mode_byte": 0,
+    "menu_actions": []
+  },
+  "error": "AssertionError(('native waterfall timeout', 'select-lapras-context', (43, 8, 20, 68), '0x812347d'))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/tools/qa/native_waterfall_follower_qa.py\", line 279, in <module>\n    else:start_party()\n         ^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/tools/qa/native_waterfall_follower_qa.py\", line 184, in start_party\n    await_state(lambda:active_task(e,'Task_HandleSelectionMenuInput') and fade_inactive())\n  File \"/workspaces/pokefirered/tools/qa/native_waterfall_follower_qa.py\", line 86, in await_state\n    raise AssertionError(('native waterfall timeout',report.get('ui_stage'),e.location(),hex(e.callback2())))\nAssertionError: ('native waterfall timeout', 'select-lapras-context', (43, 8, 20, 68), '0x812347d')\n",
+  "failure_location": [
+    43,
+    8,
+    20,
+    68
+  ],
+  "original_saves_unchanged": true
+}

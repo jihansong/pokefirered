@@ -1,0 +1,128 @@
+[
+  {
+    "baseline": {
+      "pass": true,
+      "rom_sha256": "b46fb32bb67f89d5a48dfbfdf41ddd4977cc4a2d60dbbe6c72e1bc0281c5606d",
+      "fixture_sha256": "2b9556a7880e546dcffe20468621a0a3ad121a1f93486852c0a7929af6b63136",
+      "requested_render_frames": 600,
+      "requested_warmup_frames": 60,
+      "scope": "Host mGBA software renderer; no DELTA device claim",
+      "continue_seconds": 0.6851839419996395,
+      "continue_frame_requests": 670,
+      "location": [
+        76,
+        0,
+        22,
+        11
+      ],
+      "render_seconds": 0.574341388000903,
+      "wrapper_frame_count_delta": 600,
+      "party_full_PC_Dex_unchanged": true,
+      "inputs_unchanged": true
+    },
+    "candidate": {
+      "pass": true,
+      "rom_sha256": "d3e8e426ddabe92d954bab5159bf3e7dd7766e8dd96f31d3c9368ca375cdfc65",
+      "fixture_sha256": "2b9556a7880e546dcffe20468621a0a3ad121a1f93486852c0a7929af6b63136",
+      "requested_render_frames": 600,
+      "requested_warmup_frames": 60,
+      "scope": "Host mGBA software renderer; no DELTA device claim",
+      "continue_seconds": 0.5791238609999709,
+      "continue_frame_requests": 670,
+      "location": [
+        76,
+        0,
+        22,
+        11
+      ],
+      "render_seconds": 0.6295570710008178,
+      "wrapper_frame_count_delta": 600,
+      "party_full_PC_Dex_unchanged": true,
+      "inputs_unchanged": true
+    }
+  },
+  {
+    "candidate": {
+      "pass": true,
+      "rom_sha256": "d3e8e426ddabe92d954bab5159bf3e7dd7766e8dd96f31d3c9368ca375cdfc65",
+      "fixture_sha256": "2b9556a7880e546dcffe20468621a0a3ad121a1f93486852c0a7929af6b63136",
+      "requested_render_frames": 600,
+      "requested_warmup_frames": 60,
+      "scope": "Host mGBA software renderer; no DELTA device claim",
+      "continue_seconds": 1.4603813809990243,
+      "continue_frame_requests": 670,
+      "location": [
+        76,
+        0,
+        22,
+        11
+      ],
+      "render_seconds": 0.6235537920001661,
+      "wrapper_frame_count_delta": 600,
+      "party_full_PC_Dex_unchanged": true,
+      "inputs_unchanged": true
+    },
+    "baseline": {
+      "pass": true,
+      "rom_sha256": "b46fb32bb67f89d5a48dfbfdf41ddd4977cc4a2d60dbbe6c72e1bc0281c5606d",
+      "fixture_sha256": "2b9556a7880e546dcffe20468621a0a3ad121a1f93486852c0a7929af6b63136",
+      "requested_render_frames": 600,
+      "requested_warmup_frames": 60,
+      "scope": "Host mGBA software renderer; no DELTA device claim",
+      "continue_seconds": 0.7081777060011518,
+      "continue_frame_requests": 670,
+      "location": [
+        76,
+        0,
+        22,
+        11
+      ],
+      "render_seconds": 0.801878291000321,
+      "wrapper_frame_count_delta": 600,
+      "party_full_PC_Dex_unchanged": true,
+      "inputs_unchanged": true
+    }
+  },
+  {
+    "baseline": {
+      "pass": true,
+      "rom_sha256": "b46fb32bb67f89d5a48dfbfdf41ddd4977cc4a2d60dbbe6c72e1bc0281c5606d",
+      "fixture_sha256": "2b9556a7880e546dcffe20468621a0a3ad121a1f93486852c0a7929af6b63136",
+      "requested_render_frames": 600,
+      "requested_warmup_frames": 60,
+      "scope": "Host mGBA software renderer; no DELTA device claim",
+      "continue_seconds": 0.735790138000084,
+      "continue_frame_requests": 670,
+      "location": [
+        76,
+        0,
+        22,
+        11
+      ],
+      "render_seconds": 0.5543368660000851,
+      "wrapper_frame_count_delta": 600,
+      "party_full_PC_Dex_unchanged": true,
+      "inputs_unchanged": true
+    },
+    "candidate": {
+      "pass": true,
+      "rom_sha256": "d3e8e426ddabe92d954bab5159bf3e7dd7766e8dd96f31d3c9368ca375cdfc65",
+      "fixture_sha256": "2b9556a7880e546dcffe20468621a0a3ad121a1f93486852c0a7929af6b63136",
+      "requested_render_frames": 600,
+      "requested_warmup_frames": 60,
+      "scope": "Host mGBA software renderer; no DELTA device claim",
+      "continue_seconds": 0.5761720280006557,
+      "continue_frame_requests": 670,
+      "location": [
+        76,
+        0,
+        22,
+        11
+      ],
+      "render_seconds": 0.7822661209993385,
+      "wrapper_frame_count_delta": 600,
+      "party_full_PC_Dex_unchanged": true,
+      "inputs_unchanged": true
+    }
+  }
+]

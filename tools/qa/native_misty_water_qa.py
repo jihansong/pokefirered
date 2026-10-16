@@ -1,0 +1,90 @@
+#!/usr/bin/env python3
+"""Preserve complete native Dive/Pika route; add Misty hide/land/Continue checks."""
+from pathlib import Path
+import hashlib,json,struct
+old=Path('tools/qa/native_dive_follower_qa.py').read_text()
+assert hashlib.sha256(old.encode()).hexdigest()=='27c87c4e7b07487fb92e0366c0c98d0525a0aaecfb0547d2df49c8e03c376144'
+core=Path('tools/qa/native_dive_qa.py').read_text()
+assert hashlib.sha256(core.encode()).hexdigest()=='f77e31e320de828c7a47de1bc30039fd07e50ac40865eb99725ec15dcead7327'
+misty_extra=r'''
+assert a.case=='route' and not a.loss
+import gamedata as gd
+JOIN='FLAG_MISTY_COMPANION_JOINED';HIDE='FLAG_HIDE_MISTY_PALLET'
+report.update(misty_joined_temporary_fixture=True,original_six_party_preserved_in_fixture=False,companion_checks_preserved=True,misty_checks=[],actual_device_fps_measured=False)
+gd.FIELDS.update({'misty_obj':('ObjectEvent',None),'misty_obj.xy':('ObjectEvent','currentCoords'),'misty_obj.local':('ObjectEvent','localId'),'misty_obj.sprite':('ObjectEvent','spriteId'),'misty_sprite':('Sprite',None),'misty_sprite.x':('Sprite','x'),'misty_sprite.y':('Sprite','y'),'misty_sprite.x2':('Sprite','x2'),'misty_sprite.y2':('Sprite','y2'),'misty_sprite.cy':('Sprite','centerToCornerVecY')});gd._OFFSETS=None
+assert off('misty_obj')==36 and off('misty_sprite')==68
+
+def misty_object(local):
+ found=[]
+ for i in range(16):
+  p=syms['gObjectEvents']+i*36;b=e.read(p,36)
+  if b[0]&1 and b[off('misty_obj.local')]==local:
+   sid=b[off('misty_obj.sprite')];assert sid<64;sp=syms['gSprites']+sid*68;assert e.u8(sp+0x3e)&1
+   xy=struct.unpack_from('<hh',b,off('misty_obj.xy'))
+   visible=not(struct.unpack_from('<I',b)[0]&(1<<13|1<<14)) and not e.u8(sp+0x3e)&4
+   x=struct.unpack('<h',e.read(sp+off('misty_sprite.x'),2))[0]+struct.unpack('<h',e.read(sp+off('misty_sprite.x2'),2))[0]
+   y=struct.unpack('<h',e.read(sp+off('misty_sprite.y'),2))[0]+struct.unpack('<h',e.read(sp+off('misty_sprite.y2'),2))[0]-struct.unpack('<b',e.read(sp+off('misty_sprite.cy'),1))[0]
+   found.append(dict(slot=i,xy=xy,sprite=sid,visible=visible,feet=(x,y)))
+ assert len(found)<=1,('duplicate companion',local,found)
+ return found
+
+def misty_water_check(label):
+ assert blocks(e).flag(JOIN),'joined state lost across water or save'
+ flags=e.u8(syms['gPlayerAvatar']);assert flags&(SURF|UW)
+ assert not misty_object(253),'physical Misty remained underwater or surfing'
+ assert e.read(syms['gPlayerParty']+100,100)==original_pika
+ report['misty_checks'].append(dict(label=label,position=e.location(),avatar_flags=flags,misty_object_count=0,joined=True,genuine_pika100_preserved=True))
+
+_misty_old_reach=reach
+def reach(name,x,y,flag):
+ _misty_old_reach(name,x,y,flag);misty_water_check('reach-'+name)
+_misty_old_save=native_save_reopen
+def native_save_reopen(e,expected_pc):
+ _misty_old_save(e,expected_pc);misty_water_check('water-cold-reopen')
+
+def misty_land_check(label,previous=None,visible=False):
+ flags=e.u8(syms['gPlayerAvatar']);assert not flags&(SURF|UW) and blocks(e).flag(JOIN)
+ ms=misty_object(253);pk=misty_object(254);assert len(ms)==len(pk)==1
+ assert e.read(syms['gPlayerParty']+100,100)==original_pika
+ if previous is not None:
+  assert pk[0]['xy']==tuple(x+7 for x in previous) and pk[0]['visible'],'Pikachu did not follow land return'
+ if visible:assert ms[0]['visible'],'Misty did not reappear after land trail cleared'
+ player=misty_object(255);assert len(player)==1
+ if ms[0]['visible']:
+  for o in player+pk:
+   assert ms[0]['xy']!=o['xy'] and sum(abs(a-b) for a,b in zip(ms[0]['feet'],o['feet']))>=16,'visible land-return overlap'
+ report['misty_checks'].append(dict(label=label,position=e.location(),avatar_flags=flags,misty=ms[0],pikachu=pk[0],joined=True,genuine_pika100_preserved=True))
+
+def misty_land_roundtrip():
+ assert loc_is(e,R) and e.location()[2:]==(38,27)
+ # Candidate source terrain guard: same real coast used by the actual native walk.
+ import json
+ meta=json.loads(Path('data/maps/Route128/map.json').read_text());layouts=json.loads(Path('data/layouts/layouts.json').read_text())['layouts']
+ match=[v for v in layouts if v.get('id')==meta['layout']];assert len(match)==1
+ l=match[0];raw=Path(l['blockdata_filepath']).read_bytes();w=l['width']
+ targets=[(39,27,0x114e),(39,26,0x1170),(39,25,0x1170),(39,24,0x11be),(39,23,0x319e),(39,22,0x319e),(38,22,0x319e),(37,22,0x319e),(36,22,0x319e)]
+ for x,y,value in targets:assert struct.unpack_from('<H',raw,2*(y*w+x))[0]==value,(x,y,'source coast changed')
+ for key,x,y,_ in [('RIGHT',*targets[0]),*[('UP',*v) for v in targets[1:6]],*[('LEFT',*v) for v in targets[6:]]]:
+  previous=e.location()[2:];walk_tile(key);await_state(e.field_idle,600);e.run(20)
+  assert loc_is(e,R) and e.location()[2:]==(x,y),'native coast step differs from guarded source'
+  if e.u8(syms['gPlayerAvatar'])&(SURF|UW):misty_water_check('coast-'+str((x,y)))
+  else:misty_land_check('coast-'+str((x,y)),previous if y==22 else None,visible=(x,y)==(36,22))
+ # Original native SAVE/cold helper, followed by explicit land Pika/Misty guards.
+ _original_save_reopen(e,source_pc);misty_land_check('land-cold-reopen')
+ for j in range(3):
+  previous=e.location()[2:];walk_tile('RIGHT');await_state(e.field_idle,600);e.run(20)
+  misty_land_check('land-cold-trail-'+str(j),previous,visible=j>=2)
+ report['misty_land_save_cold_and_reappearance']=True
+'''
+def augment(q):
+ def once(a,b):
+  nonlocal q
+  assert q.count(a)==1,('Misty Dive QA source changed',a[:90],q.count(a));q=q.replace(a,b)
+ once('e=None\ntry:',misty_extra+'\ne=None\ntry:')
+ once("s=SaveFile(str(sav));original_pika=original_starter_copy(s);s.fast_battles();s.keep_party(1);s.set_var('VAR_REPEL_STEP_COUNT',250)","s=SaveFile(str(sav));original_pika=original_starter_copy(s);s.fast_battles();s.keep_party(1);s.set_var('VAR_REPEL_STEP_COUNT',250);s.set_var('VAR_HAPPINESS_STEP_COUNTER',0);s.set_flag('FLAG_MISTY_COMPANION_JOINED',True);s.set_flag('FLAG_HIDE_MISTY_PALLET',True)")
+ once("  probe_companion('surface-before-dive')\n  initial=e.location()","  probe_companion('surface-before-dive')\n  misty_water_check('surface-before-dive')\n  initial=e.location()")
+ once("  native_save_reopen(e,source_pc)\n  report['pass']=True","  native_save_reopen(e,source_pc)\n  misty_land_roundtrip()\n  report['pass']=True")
+ return q
+end="exec(compile(q,'tools/qa/native_dive_qa.py','exec'))";assert old.count(end)==1
+old=old.replace(end,"q=augment(q)\n"+end)
+exec(compile(old,'<verified-dive-follower-with-Misty-extra-oracles>','exec'))

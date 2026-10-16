@@ -1,0 +1,1 @@
+Thunder Yellow START review v6. Approved base and pose plus v5 nose and W-mouth correction. Click START: full untrimmed original Pika voice with existing FRLG MUS_TITLE and continuous CC0 crackle; synchronized mouth and lightning pixels. Review preview only; ROM not integrated. Relative local media paths fix v5 missing root assets and MP4 decodeAudioData misuse.

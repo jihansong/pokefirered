@@ -1,0 +1,60 @@
+{
+  "pass": true,
+  "rom_sha256": "b3b62a31d4a7543876322d3e92947be6516e387f3c2035e834daa05551b19dfc",
+  "elf_sha256": "7a6c9d3c9513f143269d531c1bcab20d3fef0bbe01496218cd2fddda1f9e05c6",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native_checkpoint_regression",
+  "fixture": "two native center transitions and genuine Sidney losses; HOF precondition fixture does not repeat five wins",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "checkpoints": [
+    {
+      "name": "south",
+      "checkpoint": [
+        43,
+        8,
+        27,
+        49
+      ],
+      "respawn": [
+        59,
+        12,
+        7,
+        4
+      ],
+      "native_loss_turns": 1,
+      "permanent_clear_preserved": true
+    },
+    {
+      "name": "north",
+      "checkpoint": [
+        43,
+        8,
+        18,
+        6
+      ],
+      "respawn": [
+        59,
+        10,
+        3,
+        4
+      ],
+      "native_loss_turns": 1,
+      "permanent_clear_preserved": true
+    }
+  ],
+  "native_hof_save": {
+    "counter_before": 60,
+    "counter_after": 61,
+    "valid_sectors": 14,
+    "save_sha256": "8680f6dbbd8b598d912a43bb09177a6070751f33d0b32a43c5a4b4ef03e4f50b"
+  },
+  "native_hof_continue_and_rematch_reset": true,
+  "original_saves_unchanged": true
+}

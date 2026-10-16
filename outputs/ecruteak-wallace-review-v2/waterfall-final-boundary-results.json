@@ -1,0 +1,37 @@
+[
+  {
+    "case": "kanto-badge",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "proof": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/waterfall-kanto-badge-native-option-rerun/validation.json"
+  },
+  {
+    "case": "no-rain-menu",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "proof": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/waterfall-no-rain-menu-native-option-rerun/validation.json"
+  },
+  {
+    "case": "kanto-rain-only",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "proof": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/waterfall-kanto-rain-only-native-option-rerun/validation.json"
+  },
+  {
+    "case": "johto-badge",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "proof": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/waterfall-johto-badge-native-option-rerun/validation.json"
+  },
+  {
+    "case": "johto-rain-only",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "proof": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/waterfall-johto-rain-only-native-option-rerun/validation.json"
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "assetSymbols": 290,
+  "byteIdentical": 253,
+  "relocatedPointersOnly": 36,
+  "relocatedIdenticalStrings": [
+    "sPikachuIntro_Strings"
+  ],
+  "unexplainedChanges": [],
+  "canonicalSourcePairs": [
+    {
+      "runtime": "data/maps/NewBarkTown_ElmsLab/scripts.inc",
+      "generator": "tools/johto/patches/NewBarkTown_ElmsLab/scripts.inc",
+      "equal": true
+    },
+    {
+      "runtime": "data/maps/NewBarkTown_ElmsLab/text.inc",
+      "generator": "tools/johto/patches/NewBarkTown_ElmsLab/text.inc",
+      "equal": true
+    },
+    {
+      "runtime": "data/maps/Route104/scripts.inc",
+      "generator": "tools/hoenn_import/patches/Route104.scripts.inc",
+      "equal": true
+    },
+    {
+      "runtime": "data/maps/PetalburgWoods/scripts.inc",
+      "generator": "tools/hoenn_import/patches/PetalburgWoods.scripts.inc",
+      "equal": true
+    },
+    {
+      "runtime": "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc",
+      "generator": "tools/hoenn_import/patches/LittlerootTown_ProfessorBirchsLab.scripts.inc",
+      "equal": true
+    }
+  ],
+  "saveFiles": 10
+}

@@ -449,3 +449,22 @@ $(WALLPAPERGFXDIR)/tiles/tiles.4bpp: %.4bpp: %.png
 
 $(WALLPAPERGFXDIR)/volcano/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 57 -Wnum_tiles
+
+# Native 96x96 Rocket candidate uses four-OAM order, not generic PNG tile order.
+ROCKET96_PYTHON ?= python3
+ROCKET96_SOURCE := graphics/trainers/front_pics/jessie_james_hires.png
+ROCKET96_ENCODER := tools/rocket96_encode.py
+
+graphics/trainers/front_pics/jessie_james_hires.4bpp: $(ROCKET96_SOURCE) $(ROCKET96_ENCODER)
+	$(ROCKET96_PYTHON) $(ROCKET96_ENCODER) $< --kind tiles --output $@
+
+graphics/trainers/palettes/jessie_james_hires.gbapal: $(ROCKET96_SOURCE) $(ROCKET96_ENCODER)
+	$(ROCKET96_PYTHON) $(ROCKET96_ENCODER) $< --kind palette --output $@
+
+# Nine 16x32 frames, frame-major 2x4 tiles, reproducible after clean.
+graphics/object_events/pics/people/misty_companion_season1.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+# Nine 16x32 Elm frames, unchanged standard walk ordering.
+graphics/object_events/pics/people/prof_elm_hns.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4

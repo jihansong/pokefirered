@@ -1,0 +1,40 @@
+{
+  "allowed_background_pixels": 3877,
+  "protected_changes": 0,
+  "effect_pixel_changes_total": 577,
+  "palette_entries": 168,
+  "native_gif": {
+    "decoded_frames": 77,
+    "duration_ms": 4000,
+    "exact_pixel_roundtrip": true
+  },
+  "preview_gif": {
+    "decoded_frames": 77,
+    "duration_ms": 4000,
+    "exact_pixel_roundtrip": true
+  },
+  "status": "APPROVED_PNG_EFFECT_DRAFT",
+  "source_png_sha256": "7e370cc2d5b4cd71a1ae68b1da6934b62a049fc9e83efb2fc51619231cc122c5",
+  "source_rgba_sha256": "4bfde12265e9d35c72f6e9ea4e2865d801d0f0e9bed03a97b2077253f6ae9982",
+  "source_png_preserved": true,
+  "pose_face_and_text_preserved": true,
+  "body_ear_tail_animation": false,
+  "gif_is_silent": true,
+  "mp4_audio": "short electric effects only; no music",
+  "rom_integrated": false,
+  "new_music_created": false,
+  "files": {
+    "title-current-native.gif": {
+      "bytes": 119062,
+      "sha256": "5a43ad846f5ffba450d35da997f7d9460e9ccbc057895fdd45c4c86f521ec624"
+    },
+    "title-current-review.gif": {
+      "bytes": 398175,
+      "sha256": "a5c011aef8af36b81434eb14bd91887112955d7ec8309b94bdfbaf17d7e5d9a6"
+    },
+    "title-current-with-sfx.mp4": {
+      "bytes": 66887,
+      "sha256": "aaae96ea56ef7b02261dc4193dd0ae84b74bc3d9ed1d9472cd2c4f0e7f3d7925"
+    }
+  }
+}

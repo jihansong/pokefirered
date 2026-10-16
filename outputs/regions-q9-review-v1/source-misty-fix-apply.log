@@ -1,0 +1,10 @@
+{
+  "dry_pass": true,
+  "applied": true,
+  "product_sha256": "dfaa0fa32d1dd0128132e6d4d7ac986c874a02fded2c06b9d6a1a3f226f9b402",
+  "payload_sha256": "8f04e68b18afe2930e03d8c304616d090e73bd4e94c8da78b144e88ae3fdc8c6",
+  "new_RAM_or_save_fields": 0,
+  "automatic_prompt_rearmed": false,
+  "native_fix_retest_pending": true,
+  "backup": "/workspaces/pokefirered/outputs/misty-companion-v1/continue-fix-backups/20261006T050530Z"
+}

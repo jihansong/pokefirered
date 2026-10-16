@@ -1,0 +1,166 @@
+{
+  "animation-compatibility.json": {
+    "sha256": "8f6997d203d896fe6f2156222f5948956c1d7780c44eaa12f3b4078b4b6d7cc1",
+    "bytes": 4087
+  },
+  "baseline/data/maps/NewBarkTown_ElmsLab/map.json": {
+    "sha256": "c0c6a9b72b295cd45a5340342682aeff1f24f6871977e688797847ad54e38e11",
+    "bytes": 1872
+  },
+  "baseline/graphics_file_rules.mk": {
+    "sha256": "b834fcde208557ec64329d8b481b032eac01894ef7aef48894f9d9453a47b74d",
+    "bytes": 15594
+  },
+  "baseline/include/constants/event_objects.h": {
+    "sha256": "5fbf0becb7920786392f799dc192b61dc41d6555364e36402acbe4c4f7b1990e",
+    "bytes": 12453
+  },
+  "baseline/src/data/object_events/object_event_graphics.h": {
+    "sha256": "70455e68082d7d002b3107a4e00b83c36d1ec2ab41597ad666f3620564ac95ac",
+    "bytes": 34929
+  },
+  "baseline/src/data/object_events/object_event_graphics_info.h": {
+    "sha256": "1d5faf4e76c51ad0fbe5ade0bc15a02ff26e7c78769168d5cba26d4f58fe59a6",
+    "bytes": 154259
+  },
+  "baseline/src/data/object_events/object_event_graphics_info_pointers.h": {
+    "sha256": "8471b1a9ac7b0f839b59e35861d79da90d82bec6a1356ab53647dd416abdc54c",
+    "bytes": 37163
+  },
+  "baseline/src/data/object_events/object_event_pic_tables.h": {
+    "sha256": "aed387f4d301bbf7270cc72e2a188413a3503a469293b6ba6d44d30dd8ceae0a",
+    "bytes": 124356
+  },
+  "baseline/src/event_object_movement.c": {
+    "sha256": "241a15df4e9977c0fb3a8e84507623476470f18de0a1862a8457bb96fbf6a420",
+    "bytes": 334864
+  },
+  "donor-animation-excerpts.txt": {
+    "sha256": "c3c8e8d1c6ef7e31cc8a278494acd73f413e7b6e6340fbcc305ded078e387d18",
+    "bytes": 5052
+  },
+  "donor-animations.json": {
+    "sha256": "229c0f8bf2001f5656772d6ea4c119740139a9a896060205db1578ca18aa2c04",
+    "bytes": 9890
+  },
+  "donor-source/CREDITS.md": {
+    "sha256": "48406bac5c07dd3b55889427eb73a2a5a678453418f70bab5d3bc24ffd4e54a0",
+    "bytes": 29710
+  },
+  "donor-source/graphics/object_events/palettes/elm_hns.pal": {
+    "sha256": "a1ba9c9bd1da4a787c4a469ecbbdaea36d79af32d402e7dd0e8127c3a06e55bc",
+    "bytes": 191
+  },
+  "donor-source/graphics/object_events/pics/people/special/elm_hns.png": {
+    "sha256": "2f7b4754a92e7d056beda95560194594dd800ff3cd23b14c2cd2db0710a6272c",
+    "bytes": 835
+  },
+  "donor-source/hns-credits-official-provenance.json": {
+    "sha256": "c61e41c051b2c2132105c1de72c4905c4932efe44af77b355970667fdb7878b1",
+    "bytes": 202
+  },
+  "donor-source/hns-credits-official.html": {
+    "sha256": "d5ac65835870243cdcf54c412135064b7e30b1ab7eb02adf451cc19e854bb999",
+    "bytes": 13497
+  },
+  "donor-source/hns-source-manifest.snapshot.json": {
+    "sha256": "9a101fa6d3c5585f5039fc2c9d6bb6f56af2a376c17bb997b5877870b108dd48",
+    "bytes": 66298
+  },
+  "donor-source/include/constants/event_objects.h": {
+    "sha256": "b18b4863b9a7da0f721556cd705f20bdcb2d19b464641479dbbecfcddfc9df9a",
+    "bytes": 44794
+  },
+  "donor-source/README.md": {
+    "sha256": "e7cbe665ac3e3fb4cc2a40df0c606d01fb4e3390f101dadea83c3692e3b3f391",
+    "bytes": 6259
+  },
+  "donor-source/src/data/object_events/object_event_anims.h": {
+    "sha256": "622d38e442f83561922b3619ba743badae1854e140e4f48a38ebfca1cb112c45",
+    "bytes": 48913
+  },
+  "donor-source/src/data/object_events/object_event_graphics.h": {
+    "sha256": "97569ef04fd02990066dfbfecf7306609bd35dc3d58d71bba94f02c50dcbc626",
+    "bytes": 90334
+  },
+  "donor-source/src/data/object_events/object_event_graphics_info.h": {
+    "sha256": "c1975cdf02a6446d1b08707138c45c2ff022a6f6c9e8bab9577dc8d5ba5024ce",
+    "bytes": 277131
+  },
+  "donor-source/src/data/object_events/object_event_graphics_info_pointers.h": {
+    "sha256": "28c9564793b728df4adad89cb4ee700b37acc64c1898efddc067549e9f127327",
+    "bytes": 89973
+  },
+  "donor-source/src/data/object_events/object_event_pic_tables.h": {
+    "sha256": "56a156d56b3515313308e6839e55ba73b405651e505355c5c1ea6dc871dbf874",
+    "bytes": 212453
+  },
+  "expected-native/prof_elm_hns.4bpp": {
+    "sha256": "cd55e8b5202217c29719423366d0dda41d9bf4d126d6b2a161b08642f56c914a",
+    "bytes": 2304
+  },
+  "expected-native/prof_elm_hns.gbapal": {
+    "sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+    "bytes": 32
+  },
+  "manifest.json": {
+    "sha256": "a5801bbaac1cb71e187e2eafc4b78730a92044de345126f8212ec4d80f743252",
+    "bytes": 8732
+  },
+  "original-vs-native-preview.png": {
+    "sha256": "fec1f589e16b6735bcced657e5be5173676e56df7e4ad66103dd0b9ad1d6764f",
+    "bytes": 30625
+  },
+  "payload/data/maps/NewBarkTown_ElmsLab/map.json": {
+    "sha256": "80fe5f0452cff562a4d139a6c50943c74d279c8c56846647e2cb9c986856bd7d",
+    "bytes": 1871
+  },
+  "payload/graphics/object_events/palettes/prof_elm_hns.pal": {
+    "sha256": "a1ba9c9bd1da4a787c4a469ecbbdaea36d79af32d402e7dd0e8127c3a06e55bc",
+    "bytes": 191
+  },
+  "payload/graphics/object_events/pics/people/prof_elm_hns.png": {
+    "sha256": "2f7b4754a92e7d056beda95560194594dd800ff3cd23b14c2cd2db0710a6272c",
+    "bytes": 835
+  },
+  "payload/graphics_file_rules.mk": {
+    "sha256": "8c055ce4fabea9b83833e89d19ba4e416272504268544342b031694aca850867",
+    "bytes": 15757
+  },
+  "payload/include/constants/event_objects.h": {
+    "sha256": "c9eb8c4906ec813a1df97578864b6848034b0e9446c8be82d2c747a8a877e286",
+    "bytes": 12488
+  },
+  "payload/src/data/object_events/object_event_graphics.h": {
+    "sha256": "15aaf779d8dd7d19dfd1fdf77fcf961109b17475aa03c60e94413b1a122c2287",
+    "bytes": 35257
+  },
+  "payload/src/data/object_events/object_event_graphics_info.h": {
+    "sha256": "1b9d41c65370a99d076ecabaf6d982ba18de59b4eed193f85943aff80be8d2bf",
+    "bytes": 154900
+  },
+  "payload/src/data/object_events/object_event_graphics_info_pointers.h": {
+    "sha256": "f9aed1565b23db00c033ff7031ebc886c5bb1a84046d457e417f939de64c8628",
+    "bytes": 37306
+  },
+  "payload/src/data/object_events/object_event_pic_tables.h": {
+    "sha256": "eb602db45036b0a65ab6cdefa12065797f1873bd34255c935689fb540b04a2b7",
+    "bytes": 125004
+  },
+  "payload/src/event_object_movement.c": {
+    "sha256": "5bcc1fc5203d1f3100f805998c4b89ab0f7884c5e531197d0ab7e964eab2aa26",
+    "bytes": 334994
+  },
+  "source-vs-native-walk-preview.gif": {
+    "sha256": "30537cc69379a4f3aa1299da3466e53ac01aab8d9ef0ef41c5912445b0c2d266",
+    "bytes": 78402
+  },
+  "source.patch": {
+    "sha256": "32960f01ac0d4ad157077779700de062ddfa95b4f8d501f53eccc75735ded340",
+    "bytes": 5210
+  },
+  "target-source/src/data/object_events/object_event_anims.h": {
+    "sha256": "55a05af806c410b2bb357f10ffa7365074fb2b081544184696e47642cb62ad13",
+    "bytes": 46756
+  }
+}

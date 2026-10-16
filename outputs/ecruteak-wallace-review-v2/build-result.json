@@ -1,0 +1,10 @@
+{
+  "pass": true,
+  "hashes": {
+    "gba": "c139724c9b8d94a1195cb0386ced634a0012377f2ee7f3e86b6267259cf8068b",
+    "elf": "2e187bd051b902ab268d718c5cc02f9b32b16f99c0f81f8d1a88a425282855a3",
+    "sym": "5e5b210f01369034f3ff43f7e17f339f58f7f7ed13fe7a1f130be2abab9e6bad",
+    "map": "9a006102ef0132c78ee6577ba5bb60e2c2b839741395af2485bd874b4ac8f6d0"
+  },
+  "current_main_not_replaced": true
+}

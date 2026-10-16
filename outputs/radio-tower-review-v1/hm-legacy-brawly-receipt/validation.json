@@ -1,0 +1,167 @@
+{
+  "pass": true,
+  "rom_sha256": "f3b4e13df998d1832544218a88cd0c4845a9b7ebd184628e00c1e9595434204c",
+  "elf_sha256": "fcffe85e76e5404f15e552fa84ca18f91e883c0a0613b2678e7ceb27e4d42e47",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-hoenn-legacy-badge-brawly-receipt",
+  "fixture": "temporary legacy trainer win, entire original six-mon party and genuine Pika unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [
+    {
+      "label": "native-old-win-badge-resumed-no-rematch",
+      "trainer": "TRAINER_HOENN_BRAWLY_1",
+      "badge": "FLAG_HOENN_BADGE02_GET",
+      "reward_receipt": "FLAG_HOENN_GOT_TM08_FROM_BRAWLY",
+      "reward": "ITEM_TM08",
+      "quantity": 2,
+      "cold": true
+    }
+  ],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_story_not_entire_regions": true,
+  "johto_badges_defined": [
+    "FLAG_JOHTO_BADGE01_GET",
+    "FLAG_JOHTO_BADGE02_GET",
+    "FLAG_JOHTO_BADGE03_GET",
+    "FLAG_JOHTO_BADGE04_GET",
+    "FLAG_JOHTO_BADGE05_GET",
+    "FLAG_JOHTO_BADGE06_GET",
+    "FLAG_JOHTO_BADGE07_GET"
+  ],
+  "palette_active_abi_mask": {
+    "size": 16,
+    "offset": 7,
+    "mask": 128
+  },
+  "follower_checks": [
+    {
+      "label": "legacy-before-right",
+      "map": [
+        46,
+        3
+      ],
+      "player_xy": [
+        4,
+        5
+      ],
+      "follower_xy": [
+        4,
+        4
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "legacy-before-left",
+      "map": [
+        46,
+        3
+      ],
+      "player_xy": [
+        4,
+        4
+      ],
+      "follower_xy": [
+        4,
+        5
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "legacy-cold-right",
+      "map": [
+        46,
+        3
+      ],
+      "player_xy": [
+        4,
+        5
+      ],
+      "follower_xy": [
+        4,
+        4
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "legacy-cold-left",
+      "map": [
+        46,
+        3
+      ],
+      "player_xy": [
+        4,
+        4
+      ],
+      "follower_xy": [
+        4,
+        5
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    }
+  ],
+  "scope": "Only the previously won leader with a missing badge; not a fresh gym battle or full Hoenn completion",
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "native_save": {
+    "counter_before": 60,
+    "counter_after": 61,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_BADGE01_GET": true,
+      "FLAG_BADGE02_GET": true,
+      "FLAG_BADGE03_GET": true,
+      "FLAG_BADGE04_GET": true,
+      "FLAG_BADGE05_GET": true,
+      "FLAG_BADGE06_GET": true,
+      "FLAG_BADGE07_GET": true,
+      "FLAG_BADGE08_GET": false,
+      "FLAG_HOENN_BADGE01_GET": false,
+      "FLAG_HOENN_BADGE02_GET": true,
+      "FLAG_HOENN_BADGE03_GET": false,
+      "FLAG_HOENN_BADGE04_GET": false,
+      "FLAG_HOENN_BADGE05_GET": false,
+      "FLAG_HOENN_BADGE06_GET": false,
+      "FLAG_HOENN_BADGE07_GET": false,
+      "FLAG_HOENN_BADGE08_GET": false,
+      "FLAG_JOHTO_BADGE01_GET": false,
+      "FLAG_JOHTO_BADGE02_GET": false,
+      "FLAG_JOHTO_BADGE03_GET": false,
+      "FLAG_JOHTO_BADGE04_GET": false,
+      "FLAG_JOHTO_BADGE05_GET": false,
+      "FLAG_JOHTO_BADGE06_GET": false,
+      "FLAG_JOHTO_BADGE07_GET": false,
+      "FLAG_RECEIVED_STARTER_PIKACHU": true,
+      "FLAG_HOENN_PIKACHU_GYM_SEEN": true,
+      "FLAG_HOENN_WATTSON_ERRAND": true,
+      "FLAG_HOENN_NEW_MAUVILLE_DONE": false,
+      "FLAG_HOENN_DEFEATED_MAUVILLE_GYM": false,
+      "FLAG_HOENN_GOT_TM08_FROM_BRAWLY": true
+    },
+    "trainers": {
+      "TRAINER_HOENN_BRAWLY_1": true
+    },
+    "hm08": 0,
+    "sha256": "c0e454e8eae9fecf8f62fc243fa9a154a78f4c847129196548ff13211f0e301a"
+  },
+  "full_original_storage_unchanged": true,
+  "original_saves_unchanged": true
+}

@@ -1,0 +1,13 @@
+{
+  "state": "PREFLIGHT_ONLY",
+  "before_sha256": "1b4393635fc4e199203829ad078bda665c9b9c82a487fe17fbd6cac12a5dba98",
+  "after_sha256": "e8ffdb6b3eb05d980214f9e5f134e33d58283dc71dc9ec5ba64f71aeff4cf71c",
+  "stage_manifest_sha256": "70b498ff4fe5728bc35259e445577402e477f076c8b71b7e9a06e57cd38b62ea",
+  "core_files": {
+    "include/rocket_trainer_portrait.h": "e2e539a46258b82c9c57bcb4e59d4299dfeffc12042ad5762671d9773a554981",
+    "src/rocket_trainer_portrait.c": "2469be1304a7f8cc60f7bd5b093841ccfc48f0b373aaa0b78c4689e970f0ac57",
+    "tools/qa/rocket96_host_check.py": "4892fc5079dda7c2c19209ce95e672d78cde7e9ccffa785d71b1943121540635"
+  },
+  "native_96_enabled": false,
+  "save_layout_changed": false
+}

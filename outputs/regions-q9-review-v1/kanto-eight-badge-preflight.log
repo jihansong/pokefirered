@@ -1,0 +1,38 @@
+{
+  "scope": [
+    "Route27 LeagueGate",
+    "League Receptionist",
+    "Johto Hall of Fame Record"
+  ],
+  "existing_SYS_GAME_CLEAR_condition_preserved": true,
+  "new_story_flags": 0,
+  "save_layout_changed": false,
+  "maps_and_terrain_changed": false,
+  "files": [
+    {
+      "path": "tools/johto/build_johto_league.py",
+      "before_sha256": "ba96cc75de8002aa4e41d6e463bdf5943c05b098a9fed15d67d802d9f4a41bf8",
+      "bytes": 53889,
+      "sha256": "25bc76f948ff4100a0aa05ffa54776a0ed74e4ed664a50109cf8757503a46ba7"
+    },
+    {
+      "path": "data/maps/JohtoRoute27/scripts.inc",
+      "before_sha256": "9b3137badda1d0f0a601795c3571d15535c3905cb16317977b1ba13256b3ddff",
+      "bytes": 1407,
+      "sha256": "51864795b46dfb0a9afd9ba28a459ce3b6026f4fd5af544cb5740e832881759b"
+    },
+    {
+      "path": "data/maps/JohtoLeague_PokemonCenter_1F/scripts.inc",
+      "before_sha256": "0b58ea8eaca2ccf87a86d8be89c9ec44467be7616fb9e5fed5d4ce36b547db0f",
+      "bytes": 2217,
+      "sha256": "4847d6f451a694a7fd9900b3efbd71dd3979363409a1b3595606b07470ae6ce6"
+    },
+    {
+      "path": "data/maps/JohtoLeague_HallOfFame/scripts.inc",
+      "before_sha256": "90797d7d948ac2c4455bad74f3276fc2d801693c783f8956729240ea0985b0a4",
+      "bytes": 1685,
+      "sha256": "a8ca285421e797153cd57d5c266bb3c7fa1eec795f994204ba3ac35ebef4c99a"
+    }
+  ],
+  "apply": false
+}

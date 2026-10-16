@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "attempt": 0,
+      "outcome": 1,
+      "trainer": 1619,
+      "team_count": 3,
+      "turns": 3,
+      "native_switches": 0,
+      "save": {
+        "counter": [
+          62,
+          63
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-phase2-misty-duel-win-mainbit/training-win-repeat-0-native-QA-only.sav"
+      },
+      "mode9": true,
+      "heal_after": true,
+      "pass_all": true
+    },
+    {
+      "attempt": 1,
+      "outcome": 1,
+      "trainer": 1619,
+      "team_count": 3,
+      "turns": 3,
+      "native_switches": 0,
+      "save": {
+        "counter": [
+          63,
+          64
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-phase2-misty-duel-win-mainbit/training-win-repeat-1-native-QA-only.sav"
+      },
+      "mode9": true,
+      "heal_after": true,
+      "pass_all": true
+    }
+  ],
+  "mode": "win-repeat",
+  "source_sav_unchanged": true,
+  "identity_failures": [],
+  "main_battle_flag_abi": [
+    1081,
+    2
+  ]
+}

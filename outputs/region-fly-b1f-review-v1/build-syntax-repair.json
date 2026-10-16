@@ -1,0 +1,6 @@
+{
+  "reason": "Actual repository macro is specialvar opcode 0x26; corrected two live statements and one dynamic generator literal",
+  "generator_after_sha256": "3fa8edc3993ddb91847c7cb02174a6638d8cb5a54868c691fea2238a9c754384",
+  "field_moves_after_sha256": "c52daa711aa03b1b1e92e1c59767e54137100a4372f086896ccb8e76032a1f53",
+  "prior_build_failed": true
+}

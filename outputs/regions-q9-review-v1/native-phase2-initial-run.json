@@ -1,0 +1,53 @@
+{
+  "status": "FINISHED",
+  "rom_sha256": "af9ba1f61fce4630d488567ed11b83847dfbc1fcff435653bedd4d86dc622818",
+  "jobs_total": 7,
+  "max_workers": 2,
+  "results": [
+    {
+      "name": "misty-basic",
+      "exit": 1,
+      "seconds": 7.697815179824829,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-misty-basic.log"
+    },
+    {
+      "name": "misty-join",
+      "exit": 0,
+      "seconds": 19.928967714309692,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-misty-join.log"
+    },
+    {
+      "name": "league-events",
+      "exit": 0,
+      "seconds": 231.29361081123352,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-league-events.log"
+    },
+    {
+      "name": "league-maps",
+      "exit": 0,
+      "seconds": 59.40015363693237,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-league-maps.log"
+    },
+    {
+      "name": "league-battles",
+      "exit": 0,
+      "seconds": 191.18886065483093,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-league-battles.log"
+    },
+    {
+      "name": "league-hof",
+      "exit": 1,
+      "seconds": 14.528339624404907,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-league-hof.log"
+    },
+    {
+      "name": "league-chain",
+      "exit": 1,
+      "seconds": 43.82765245437622,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-league-chain.log"
+    }
+  ],
+  "all_pass": false,
+  "main_unchanged": true,
+  "original_saves_unchanged": true
+}

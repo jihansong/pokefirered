@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/native_misty_join_qa.py", line 70, in <module>
+    assert not blocks(e).flag(hide) and len(npc)==1,'eligible cold Continue lacks talkable static Misty'
+                                        ^^^^^^^^^^^
+AssertionError: eligible cold Continue lacks talkable static Misty

@@ -1,0 +1,43 @@
+{
+  "ROM": "/workspaces/pokefirered/outputs/misty-profile-20261014/pokemonthyl_misty_profile_20261014.gba",
+  "ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+  "ELF_sha256": "e625069ea9379ea3dc2f83e3014fb741a2e0b7383f41f6d56bc37fc0eae6f17b",
+  "pass": true,
+  "checks": {
+    "walk_run_cases": 8,
+    "native_SAVE_cold": {
+      "counter": [
+        67,
+        68
+      ],
+      "checksummed_sectors": 14,
+      "qa_save": "/workspaces/pokefirered/work/misty-profile-20261014/native-walk/Misty-walk-save-cold-native-QA-only.sav"
+    },
+    "only_sprite_change": {
+      "pass": true,
+      "only_misty_sprite_bytes_changed": true,
+      "changed_rom_bytes": 39,
+      "sprite_addr": "0x855de18",
+      "sprite_bytes": 2304,
+      "all_original_saves_unchanged": true,
+      "original_save_count": 11,
+      "ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa"
+    },
+    "preserved_native_pixels_outside_ROI": true
+  },
+  "files": {
+    "art-and-preview-provenance.json": "61b4fa34e14bed57a12745f31a119ab50e8d4a0cc36fd311ff607b1892bdec06",
+    "Misty-profile-actual-walk.gif": "989b9d129ad7ee7800043fedbda986a0c875b427696ae1e3c6a0d5a891cbf8d5",
+    "build-validation.json": "99135033f6ce36597fc3cd219d454e92dcfacc86b37fd192da852a9df03e77f6",
+    "pokemonthyl_misty_profile_20261014.gba": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+    "pokemonthyl_misty_profile_20261014.sav": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+    "Misty-profile-actual-game.png": "eaaeff9c23209b6d3fc404071d595f34668632d96c82136bd3c06e54061a99ff",
+    "imagegen-edit-prompt.txt": "3c5c30141dd83983b363a33928859987a3c42755d476e58987201ec07d398f08",
+    "walk-validation.json": "f4a6e33ad344578d8e384f0ca4285651715e6ccfab0c9f976c674e47d4760ef1",
+    "art-format-validation.json": "e6a321d14509ebcf6578566e537662373539de78316eac576d402b36c4ff9202",
+    "Misty-season1-native.png": "55bbb1d6f30caf9c43d7b38834639d2c635b2870e427b8918ab9d6463360ca7d",
+    "README.txt": "6725b8bcb9b1b92aa5f8fd9d768c2617353a803f36eaf890e7ae357e9dded838",
+    "sprite-only-change-proof.json": "266d87484e4f560557891927a83a6c86042f07163e362433c4ab061c4abee24c",
+    "Misty-profile-before-after.png": "cbe49c3b26b25ae56478170089692016317a1eebe55b0a63889291ab137a0966"
+  }
+}

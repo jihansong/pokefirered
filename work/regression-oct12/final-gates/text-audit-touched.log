@@ -1,0 +1,9 @@
+map                                          zone texts  orig harml   fix unused
+JohtoCherrygroveAirstrip                     -        5     0     0     0      0
+JohtoRoute29                                 -        2     0     0     0      0
+NewBarkTown                                  -        2     0     0     0      0
+NewBarkTown_ElmsLab                          -        9     0     0     0      0
+KantoAirport                                 -       12     0     0     0      1
+PalletTown                                   -       12     0     0     0      0
+
+6 maps, 42 texts in use: 0 still the Emerald original, 0 of them harmless (sign/cry), 0 to rewrite; 1 text labels nothing reaches

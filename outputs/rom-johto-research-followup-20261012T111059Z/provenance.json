@@ -1,0 +1,50 @@
+{
+  "scope": "Early Johto research visit and report-aware NPC dialogue; not a full region campaign release",
+  "timestamp": "20261012T111059Z",
+  "artifacts": {
+    "pokemonthyl.gba": {
+      "sha256": "b46fb32bb67f89d5a48dfbfdf41ddd4977cc4a2d60dbbe6c72e1bc0281c5606d",
+      "bytes": 33554432
+    },
+    "pokemonthyl.elf": {
+      "sha256": "a87031fdbe0db8b2c429a471dfb394e0de9c5c6078cb3bfe03cb3c177fdb279d",
+      "bytes": 34036184
+    },
+    "pokemonthyl.sym": {
+      "sha256": "feb48a2076560f7b57f550a56fa1c68a064f7b6e868eb6e2cb8d2ea929799f87",
+      "bytes": 3312709
+    },
+    "pokemonthyl.map": {
+      "sha256": "2f9797b0de14e6e7f7180c8b9bcc69bee5ef8bb80e6f490a2125b0eb941f3922",
+      "bytes": 3335120
+    }
+  },
+  "rollback_rom_sha256": "2bafd6478fef5bbda56c6b4bec9c8dec1a4e0f060252fc219dbcc834411509f7",
+  "source_before": {
+    "data/maps/NewBarkTown_ElmsLab/scripts.inc": "5550c2b19e1302db6e6f66e3f95fcec1c886b7fff803318fc4270b1aa1554080",
+    "data/maps/NewBarkTown_ElmsLab/text.inc": "343457e2e4d80b329e2cbd1825ccc0f268ce9baa0878f0e4114ed2e343442f06",
+    "data/maps/SproutTower_1F/scripts.inc": "91533c0464e972d2c3bfb794f212769c3b0fbfebb14ceb7d25cd8d5e72c972e8",
+    "data/maps/SproutTower_1F/text.inc": "19289ed13ce9f6b8b9e21725a1527e42dcfcb781c769db2054c5db43dfd4a399"
+  },
+  "source_after": {
+    "data/maps/NewBarkTown_ElmsLab/scripts.inc": "121999fe4a5da0c7b059935d98833121054c2d1f6195d17cd22499cd218f1947",
+    "data/maps/NewBarkTown_ElmsLab/text.inc": "c87f7192765529d08bb4f75c28f6ad292638e1b076f4024c0986062ba3dee9db",
+    "data/maps/SproutTower_1F/scripts.inc": "aa96c1dd1f0782f21ba3dc29c684e4bf0720863ad8994f8f76de1d16deaa981d",
+    "data/maps/SproutTower_1F/text.inc": "ae76d80b1f2d1262a8e4f4aa8fb8830fdd58a1f2bc670959fce8455dcf49ae96"
+  },
+  "native_test": "/workspaces/pokefirered/work/regression-oct12/story-audit/native-after-fixed-position/validation.json",
+  "native_cases": 5,
+  "native_fixture_scope": "Separate immutable temporary preboot NPC fixtures; not a continuous full campaign walk",
+  "arbitrary_RAM_writes": 0,
+  "party_PC_Dex_preserved": true,
+  "original_all_SAVs_preserved": true,
+  "save_compat_v11_v12": "load IDENTICAL versus Q8",
+  "save_layout_unchanged": true,
+  "approved_assets_unchanged": 24,
+  "whole_Johto_Hoenn_campaign_complete": false,
+  "original_BadEgg_repaired": false,
+  "user_initial_tile_corruption_reproduced": false,
+  "Delta_device_performance_verified": false,
+  "raw_state_experiment_target_ROM": "2bafd6478fef5bbda56c6b4bec9c8dec1a4e0f060252fc219dbcc834411509f7",
+  "raw_state_current_candidate_tested": false
+}

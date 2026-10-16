@@ -287,8 +287,271 @@ void GetHoennAreaMarkerSubsprite(s32 i, u16 mapSecId, struct Subsprite * subspri
     subsprites[i].y = marker[2];
 }
 
+
+// Relative to the shared 128x72 window. The entry-page band is at y=33..40.
+void GetJohtoRoute29AreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_MediumHorizontal;
+    subsprites[i].x = 72 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 59;
+}
+
 u8 GetNumPokedexAreaMarkers(u8 taskId)
 {
     struct PAM_TaskData * data = (void *)gTasks[taskId].data;
     return data->subsprites.subspriteCount;
+}
+
+void GetJohtoRoute30AreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_SmallVertical;
+    subsprites[i].x = 59 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 38;
+}
+
+void GetJohtoRoute31AreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_SmallHorizontal;
+    subsprites[i].x = 47 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 31;
+}
+
+void GetJohtoRoute32AreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_SmallVertical;
+    subsprites[i].x = 39 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 40;
+}
+
+void GetJohtoUnionCaveAreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_Circular;
+    subsprites[i].x = 39 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 61;
+}
+
+void GetJohtoRoute33AreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_Circular;
+    subsprites[i].x = 34 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 61;
+}
+
+void GetJohtoSlowpokeWellAreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_Circular;
+    subsprites[i].x = 29 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 55;
+}
+
+void GetJohtoIlexForestAreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_SmallHorizontal;
+    subsprites[i].x = 19 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 61;
+}
+
+void GetJohtoRoute34AreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_SmallVertical;
+    subsprites[i].x = 19 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 40;
+}
+
+void GetJohtoRoute35AreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_Circular;
+    subsprites[i].x = 19 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 25;
+}
+
+void GetJohtoNationalParkAreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_Circular;
+    subsprites[i].x = 19 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 19;
+}
+
+void GetJohtoRoute36AreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_SmallHorizontal;
+    subsprites[i].x = 29 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 19;
+}
+
+void GetJohtoRoute37AreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_Circular;
+    subsprites[i].x = 34 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 13;
+}
+
+void GetJohtoBurnedTowerAreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_Circular;
+    subsprites[i].x = 34 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 1;
+}
+
+void GetJohtoRoute38AreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_SmallHorizontal;
+    subsprites[i].x = 24 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 7;
+}
+
+void GetJohtoRoute39AreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_SmallVertical;
+    subsprites[i].x = 14 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 13;
+}
+
+void GetJohtoRoute40AreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_Circular;
+    subsprites[i].x = 14 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 31;
+}
+
+void GetJohtoRoute41AreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_Circular;
+    subsprites[i].x = 14 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 37;
+}
+
+void GetJohtoRoute42AreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_SmallHorizontal;
+    subsprites[i].x = 54 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 7;
+}
+
+void GetJohtoRoute43AreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_Circular;
+    subsprites[i].x = 74 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 1;
+}
+
+void GetJohtoMtMortarAreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_Circular;
+    subsprites[i].x = 54 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 1;
+}
+
+void GetJohtoLakeOfRageAreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_Circular;
+    subsprites[i].x = 80 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 1;
+}
+
+void GetJohtoRoute44AreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_SmallHorizontal;
+    subsprites[i].x = 96 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 7;
+}
+
+void GetJohtoIcePathAreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_Circular;
+    subsprites[i].x = 114 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 7;
+}
+
+void GetJohtoDragonDenAreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_Circular;
+    subsprites[i].x = 120 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 1;
+}
+
+void GetJohtoRoute27AreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_SmallHorizontal;
+    subsprites[i].x = 90 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 47;
+}
+
+void GetJohtoTohjoAreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_Circular;
+    subsprites[i].x = 107 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 47;
+}
+
+void GetJohtoRoute26AreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_SmallVertical;
+    subsprites[i].x = 112 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 37;
+}
+
+void GetJohtoVictoryAreaMarkerSubsprite(s32 i, struct Subsprite *subsprites)
+{
+    if (subsprites == NULL)
+        return;
+    subsprites[i] = sSubsprite_Circular;
+    subsprites[i].x = 112 + (HOENN_AREA_MAP_LEFT * 8 - 104);
+    subsprites[i].y = 29;
 }

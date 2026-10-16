@@ -1,0 +1,104 @@
+{
+  "schema": "thunder-yellow-user-reference-registry-v1",
+  "date_kst": "2026-10-15",
+  "instruction": "Retain every user reference. Research and use verified design/source material while continuing all approved tasks in parallel. Reference research is not ROM integration.",
+  "save_compatibility_required": true,
+  "references": [
+    {
+      "name": "Pokemon Heart & Soul",
+      "user_site": "https://pokemonheartsoul.com/",
+      "verified_project_source": "https://github.com/PokemonHnS-Development/pokehns-expansion",
+      "status": "website_and_developer_repository_read",
+      "foundation": "pokeemerald-expansion / Modern Emerald",
+      "uses": ["Johto town and route composition", "forest and water transitions", "lab and professor distinction", "following characters", "region travel continuity"],
+      "note": "The supplied website identifies itself as unaffiliated with the creators; technical decisions should be checked against project sources. Website/repository release claims differ."
+    },
+    {
+      "name": "pokemonHnS_v2.0.6.ups",
+      "user_file": "C:/Users/seren/Downloads/pokemonHnS_v2.0.6.ups",
+      "status": "UPS1_header_and_CRC_validated_readonly",
+      "sha256": "0ca1cb9321668458a491eda916fba7a108b0d4d069644393b7490314ec126a4b",
+      "input_bytes": 16777216,
+      "output_bytes": 33554432,
+      "input_crc32": "1f1c08fb",
+      "output_crc32": "01713508",
+      "current_Thunder_Yellow_crc32": "e7dacbee",
+      "applied_to_Thunder_Yellow": false
+    },
+    {
+      "name": "Pokemon CrystalDust",
+      "status": "developer_repository_and_developer_FAQ_read",
+      "sources": ["https://github.com/Sierraffinity/CrystalDust", "https://gist.github.com/Deokishisu/f0e0af70fd14d6bfa7c501da8d766804"],
+      "foundation": "pokeemerald",
+      "uses": ["Gen III-style Johto layout and tile conversion", "classic Crystal progression"],
+      "note": "Do not repeat the supplied claim of a fully completed public release. Developer FAQ distinguishes public v3 alpha from the development progress branch."
+    },
+    {
+      "name": "Pokemon Legends of Johto",
+      "status": "searched_exact_name_no_primary_project_verified_yet",
+      "uses": ["Johto mythology and historical event staging if an authentic source is verified"],
+      "note": "User-supplied claims of NDS/HGSS engine and completed content remain unverified. Do not invent a repository or implementation."
+    },
+    {
+      "name": "Pokemon Johto Adventures 2",
+      "status": "searched_exact_name_no_primary_project_verified_yet",
+      "uses": ["map composition and visual staging if an authentic source is verified"],
+      "note": "Black/White engine description remains unverified."
+    },
+    {
+      "name": "Pokemon Liquid Crystal",
+      "status": "creator_project_thread_and_graphics_developer_article_read",
+      "sources": ["https://www.pokecommunity.com/threads/pok%C3%A9mon-liquid-crystal-3-3-xxxxx-live-beta.242023/", "https://www.gamedeveloper.com/design/five-year-pok-mon-crystal-remake-project-needs-your-feedback"],
+      "foundation": "FireRed",
+      "uses": ["FRLG-compatible Johto visual language", "town and route transitions", "weather and region event integration"]
+    },
+    {
+      "name": "Pokemon Prism",
+      "status": "developer_site_and_project_wiki_read",
+      "sources": ["https://rainbowdevs.com/title/prism/", "https://wiki.rainbowdevs.com/Main_Page"],
+      "foundation": "Pokemon Crystal / GBC",
+      "uses": ["multi-region storytelling", "exploration continuity", "regional identities"],
+      "note": "The provided Gold-engine description does not match the developer's current Crystal-mod description. GBC data is not a drop-in GBA tileset."
+    },
+    {
+      "name": "Pokemon Crystal Clear",
+      "status": "maintainer_documentation_read",
+      "sources": ["https://github.com/ShockSlayer/ccdocs/blob/master/docs/FAQ.md", "https://github.com/ShockSlayer/ccdocs/blob/master/docs/Documentation.md"],
+      "foundation": "Crystal / GBC",
+      "uses": ["region travel UX", "open exploration and revisit flow", "save continuity principles"]
+    },
+    {
+      "name": "Pokemon HeartGold Deluxe",
+      "status": "searched_exact_name_no_primary_project_verified_yet",
+      "uses": ["trainer progression and region presentation if an authentic source is verified"],
+      "note": "Do not treat the supplied Gen I-VIII roster or NDS implementation description as verified."
+    },
+    {
+      "name": "Official Gold / Silver / Crystal / HeartGold / SoulSilver",
+      "status": "user_reference_retained",
+      "uses": ["Elm appearance", "Johto geographic identity", "recognizable town and route compositions"]
+    },
+    {
+      "name": "Official Ruby / Sapphire / Emerald",
+      "status": "user_reference_retained",
+      "source": "https://github.com/pret/pokeemerald",
+      "uses": ["Birch appearance", "Hoenn colored maps and tilesets", "water and shoreline animation", "interior and outdoor consistency"]
+    },
+    {
+      "name": "Earlier user Pikachu images, anime clip, Tenor/Pinterest links, Lightening.png, supplied Pikachu voice",
+      "status": "earlier_approvals_and_references_remain_in_force",
+      "uses": ["approved opening and title identity", "approved effects and original voice", "approved character poses"],
+      "note": "This region-remake request does not cancel prior tasks or revoke approved versions."
+    }
+  ],
+  "active_bug_scope": [
+    "Misty front/back body proportions; approved side views preserved",
+    "Misty battle sprite in anime-season-1 clothing",
+    "Johto and Hoenn map/tile/boundary/animation remediation",
+    "distinct Elm and Birch professor graphics and map-object bindings",
+    "accessible Johto and Hoenn airport exteriors/interiors/travel integration",
+    "v1.45 Lapras Bad Egg observation versus healthy uploaded SAV discrepancy"
+  ],
+  "application_gate": "Bind current map, tileset, palette, metatile attributes and collision data together. Preserve all save structures and existing story/warp identities. Build and verify actual ROM before claiming completion.",
+  "reference_materials_rom_integrated_by_this_registry": false
+}

@@ -1,0 +1,199 @@
+{
+  "map": "MAP_JOHTO_NATIONAL_PARK",
+  "base_label": "sJohtoNationalPark",
+  "land_mons": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_CATERPIE"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_WEEDLE"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_PIDGEY"
+      },
+      {
+        "min_level": 13,
+        "max_level": 13,
+        "species": "SPECIES_METAPOD"
+      },
+      {
+        "min_level": 13,
+        "max_level": 13,
+        "species": "SPECIES_KAKUNA"
+      },
+      {
+        "min_level": 13,
+        "max_level": 13,
+        "species": "SPECIES_PIDGEY"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_SUNKERN"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_METAPOD"
+      },
+      {
+        "min_level": 13,
+        "max_level": 13,
+        "species": "SPECIES_SUNKERN"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_KAKUNA"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_BUTTERFREE"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_BEEDRILL"
+      }
+    ]
+  },
+  "land_mons_morning": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_CATERPIE"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_WEEDLE"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_PIDGEY"
+      },
+      {
+        "min_level": 13,
+        "max_level": 13,
+        "species": "SPECIES_METAPOD"
+      },
+      {
+        "min_level": 13,
+        "max_level": 13,
+        "species": "SPECIES_KAKUNA"
+      },
+      {
+        "min_level": 13,
+        "max_level": 13,
+        "species": "SPECIES_PIDGEY"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_SUNKERN"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_METAPOD"
+      },
+      {
+        "min_level": 13,
+        "max_level": 13,
+        "species": "SPECIES_SUNKERN"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_KAKUNA"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_BUTTERFREE"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_BEEDRILL"
+      }
+    ]
+  },
+  "land_mons_night": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_HOOTHOOT"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_HOOTHOOT"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_HOOTHOOT"
+      },
+      {
+        "min_level": 13,
+        "max_level": 13,
+        "species": "SPECIES_HOOTHOOT"
+      },
+      {
+        "min_level": 13,
+        "max_level": 13,
+        "species": "SPECIES_HOOTHOOT"
+      },
+      {
+        "min_level": 13,
+        "max_level": 13,
+        "species": "SPECIES_HOOTHOOT"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_HOOTHOOT"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_HOOTHOOT"
+      },
+      {
+        "min_level": 13,
+        "max_level": 13,
+        "species": "SPECIES_HOOTHOOT"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_HOOTHOOT"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_NOCTOWL"
+      },
+      {
+        "min_level": 14,
+        "max_level": 14,
+        "species": "SPECIES_NOCTOWL"
+      }
+    ]
+  }
+}

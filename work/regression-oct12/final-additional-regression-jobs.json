@@ -1,0 +1,12 @@
+[
+  {
+    "script": "native_cold_nurse_regression_qa.py",
+    "pid": 51440,
+    "output": "/workspaces/pokefirered/work/regression-oct12/final-cold-nurse"
+  },
+  {
+    "script": "native_johto_tohjo_route_qa.py",
+    "pid": 51441,
+    "output": "/workspaces/pokefirered/work/regression-oct12/final-tohjo-native"
+  }
+]

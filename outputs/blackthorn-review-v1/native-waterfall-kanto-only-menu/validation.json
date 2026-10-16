@@ -1,0 +1,951 @@
+{
+  "pass": true,
+  "rom_sha256": "e1dae61efd6a141c1ae167a196f6257c2aad9d65a4064207ddcd2416bdcf9542",
+  "elf_sha256": "ee9cc4d5d889f7b05bb9341185ce7976806968a0a700299df8a01e78499e24da",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-johto-waterfall-kanto-only-menu",
+  "fixture": "temporary Lapras mover plus exact copy of genuine original starter Pikachu; original SAV/PC/Dex unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "candidate_ui_task_symbols": {
+    "Task_HandleChooseMonInput": [
+      135416944
+    ],
+    "Task_HandleSelectionMenuInput": [
+      135429616
+    ],
+    "Task_ReturnToChooseMonAfterText": [
+      135419136
+    ],
+    "Task_CancelAfterAorBPress": [
+      135437108
+    ],
+    "Task_YesNoMenu_HandleInput": [
+      134874308
+    ],
+    "Task_UseWaterfall": [
+      134775148
+    ]
+  },
+  "native_story_not_entire_regions": true,
+  "palette_active_abi_mask": {
+    "size": 16,
+    "offset": 7,
+    "mask": 128
+  },
+  "input_abi_offsets": {
+    "heldKeysRaw": 40,
+    "newKeysRaw": 42,
+    "heldKeys": 44,
+    "newKeys": 46,
+    "newAndRepeatedKeys": 48,
+    "keyRepeatCounter": 50,
+    "vblankCounter2": 36,
+    "link_recv_count": 4029,
+    "link_overworld_max": 3
+  },
+  "follower_checks": [
+    {
+      "label": "base-right",
+      "map": [
+        76,
+        110
+      ],
+      "player_xy": [
+        21,
+        10
+      ],
+      "follower_xy": [
+        20,
+        10
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "base-left",
+      "map": [
+        76,
+        110
+      ],
+      "player_xy": [
+        20,
+        10
+      ],
+      "follower_xy": [
+        21,
+        10
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "badge-rejected-still-follows-right",
+      "map": [
+        76,
+        110
+      ],
+      "player_xy": [
+        21,
+        10
+      ],
+      "follower_xy": [
+        20,
+        10
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "badge-rejected-still-follows-left",
+      "map": [
+        76,
+        110
+      ],
+      "player_xy": [
+        20,
+        10
+      ],
+      "follower_xy": [
+        21,
+        10
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "badge-rejected-cold-right",
+      "map": [
+        76,
+        110
+      ],
+      "player_xy": [
+        21,
+        10
+      ],
+      "follower_xy": [
+        20,
+        10
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "badge-rejected-cold-left",
+      "map": [
+        76,
+        110
+      ],
+      "player_xy": [
+        20,
+        10
+      ],
+      "follower_xy": [
+        21,
+        10
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    }
+  ],
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "ui_stage": "choose-waterfall-action",
+  "party_confirm_input_trace": [
+    {
+      "stage": "select-lapras-context",
+      "tasks": [
+        {
+          "slot": 0,
+          "function": "0x8124c70",
+          "names": [
+            "Task_HandleChooseMonInput"
+          ],
+          "cursor_data0": 0
+        }
+      ],
+      "callback2": "0x8123ce9",
+      "fade_inactive": true,
+      "start_cursor": 1,
+      "party_menu_raw": "1978050800000000000000000000000000000000",
+      "party_slot": 0,
+      "party_mode_byte": 0,
+      "menu_actions": [],
+      "label": "before-release",
+      "emulator_frame": 966,
+      "input": {
+        "heldKeysRaw": 0,
+        "newKeysRaw": 0,
+        "heldKeys": 0,
+        "newKeys": 0,
+        "newAndRepeatedKeys": 0,
+        "keyRepeatCounter": 40,
+        "vblankCounter2": 953
+      },
+      "callback1": "0x80574a1",
+      "link": {
+        "received_remote_players": 0,
+        "wireless_comm_type": 0,
+        "wired_recv_count": 0,
+        "wired_overworld_max": 3
+      },
+      "hardware_keyinput": 1023
+    },
+    {
+      "stage": "select-lapras-context",
+      "tasks": [
+        {
+          "slot": 0,
+          "function": "0x8124c70",
+          "names": [
+            "Task_HandleChooseMonInput"
+          ],
+          "cursor_data0": 0
+        }
+      ],
+      "callback2": "0x8123ce9",
+      "fade_inactive": true,
+      "start_cursor": 1,
+      "party_menu_raw": "1978050800000000000000000000000000000000",
+      "party_slot": 0,
+      "party_mode_byte": 0,
+      "menu_actions": [],
+      "label": "release-0",
+      "emulator_frame": 967,
+      "input": {
+        "heldKeysRaw": 0,
+        "newKeysRaw": 0,
+        "heldKeys": 0,
+        "newKeys": 0,
+        "newAndRepeatedKeys": 0,
+        "keyRepeatCounter": 40,
+        "vblankCounter2": 954
+      },
+      "callback1": "0x80574a1",
+      "link": {
+        "received_remote_players": 0,
+        "wireless_comm_type": 0,
+        "wired_recv_count": 0,
+        "wired_overworld_max": 3
+      },
+      "hardware_keyinput": 1023
+    },
+    {
+      "stage": "select-lapras-context",
+      "tasks": [
+        {
+          "slot": 0,
+          "function": "0x8124c70",
+          "names": [
+            "Task_HandleChooseMonInput"
+          ],
+          "cursor_data0": 0
+        }
+      ],
+      "callback2": "0x8123ce9",
+      "fade_inactive": true,
+      "start_cursor": 1,
+      "party_menu_raw": "1978050800000000000000000000000000000000",
+      "party_slot": 0,
+      "party_mode_byte": 0,
+      "menu_actions": [],
+      "label": "release-1",
+      "emulator_frame": 968,
+      "input": {
+        "heldKeysRaw": 0,
+        "newKeysRaw": 0,
+        "heldKeys": 0,
+        "newKeys": 0,
+        "newAndRepeatedKeys": 0,
+        "keyRepeatCounter": 40,
+        "vblankCounter2": 955
+      },
+      "callback1": "0x80574a1",
+      "link": {
+        "received_remote_players": 0,
+        "wireless_comm_type": 0,
+        "wired_recv_count": 0,
+        "wired_overworld_max": 3
+      },
+      "hardware_keyinput": 1023
+    },
+    {
+      "stage": "select-lapras-context",
+      "tasks": [
+        {
+          "slot": 0,
+          "function": "0x8124c70",
+          "names": [
+            "Task_HandleChooseMonInput"
+          ],
+          "cursor_data0": 0
+        }
+      ],
+      "callback2": "0x8123ce9",
+      "fade_inactive": true,
+      "start_cursor": 1,
+      "party_menu_raw": "1978050800000000000000000000000000000000",
+      "party_slot": 0,
+      "party_mode_byte": 0,
+      "menu_actions": [],
+      "label": "release-2",
+      "emulator_frame": 969,
+      "input": {
+        "heldKeysRaw": 0,
+        "newKeysRaw": 0,
+        "heldKeys": 0,
+        "newKeys": 0,
+        "newAndRepeatedKeys": 0,
+        "keyRepeatCounter": 40,
+        "vblankCounter2": 956
+      },
+      "callback1": "0x80574a1",
+      "link": {
+        "received_remote_players": 0,
+        "wireless_comm_type": 0,
+        "wired_recv_count": 0,
+        "wired_overworld_max": 3
+      },
+      "hardware_keyinput": 1023
+    },
+    {
+      "stage": "select-lapras-context",
+      "tasks": [
+        {
+          "slot": 0,
+          "function": "0x8124c70",
+          "names": [
+            "Task_HandleChooseMonInput"
+          ],
+          "cursor_data0": 0
+        }
+      ],
+      "callback2": "0x8123ce9",
+      "fade_inactive": true,
+      "start_cursor": 1,
+      "party_menu_raw": "1978050800000000000000000000000000000000",
+      "party_slot": 0,
+      "party_mode_byte": 0,
+      "menu_actions": [
+        0,
+        22,
+        24
+      ],
+      "label": "hold-A-0",
+      "emulator_frame": 970,
+      "input": {
+        "heldKeysRaw": 1,
+        "newKeysRaw": 1,
+        "heldKeys": 1,
+        "newKeys": 1,
+        "newAndRepeatedKeys": 1,
+        "keyRepeatCounter": 40,
+        "vblankCounter2": 957
+      },
+      "callback1": "0x80574a1",
+      "link": {
+        "received_remote_players": 0,
+        "wireless_comm_type": 0,
+        "wired_recv_count": 0,
+        "wired_overworld_max": 3
+      },
+      "hardware_keyinput": 1022
+    },
+    {
+      "stage": "select-lapras-context",
+      "tasks": [
+        {
+          "slot": 0,
+          "function": "0x8124c70",
+          "names": [
+            "Task_HandleChooseMonInput"
+          ],
+          "cursor_data0": 0
+        }
+      ],
+      "callback2": "0x8123ce9",
+      "fade_inactive": true,
+      "start_cursor": 1,
+      "party_menu_raw": "1978050800000000000000000000000000000000",
+      "party_slot": 0,
+      "party_mode_byte": 0,
+      "menu_actions": [
+        0,
+        22,
+        24,
+        1,
+        3,
+        2
+      ],
+      "label": "hold-A-1",
+      "emulator_frame": 971,
+      "input": {
+        "heldKeysRaw": 1,
+        "newKeysRaw": 1,
+        "heldKeys": 1,
+        "newKeys": 1,
+        "newAndRepeatedKeys": 1,
+        "keyRepeatCounter": 40,
+        "vblankCounter2": 958
+      },
+      "callback1": "0x80574a1",
+      "link": {
+        "received_remote_players": 0,
+        "wireless_comm_type": 0,
+        "wired_recv_count": 0,
+        "wired_overworld_max": 3
+      },
+      "hardware_keyinput": 1022
+    },
+    {
+      "stage": "select-lapras-context",
+      "tasks": [
+        {
+          "slot": 0,
+          "function": "0x8124c70",
+          "names": [
+            "Task_HandleChooseMonInput"
+          ],
+          "cursor_data0": 0
+        }
+      ],
+      "callback2": "0x8123ce9",
+      "fade_inactive": true,
+      "start_cursor": 1,
+      "party_menu_raw": "1978050800000000000000000000000000000000",
+      "party_slot": 0,
+      "party_mode_byte": 0,
+      "menu_actions": [
+        0,
+        22,
+        24,
+        1,
+        3,
+        2
+      ],
+      "label": "hold-A-2",
+      "emulator_frame": 972,
+      "input": {
+        "heldKeysRaw": 1,
+        "newKeysRaw": 1,
+        "heldKeys": 1,
+        "newKeys": 1,
+        "newAndRepeatedKeys": 1,
+        "keyRepeatCounter": 40,
+        "vblankCounter2": 959
+      },
+      "callback1": "0x80574a1",
+      "link": {
+        "received_remote_players": 0,
+        "wireless_comm_type": 0,
+        "wired_recv_count": 0,
+        "wired_overworld_max": 3
+      },
+      "hardware_keyinput": 1022
+    },
+    {
+      "stage": "select-lapras-context",
+      "tasks": [
+        {
+          "slot": 0,
+          "function": "0x8124c70",
+          "names": [
+            "Task_HandleChooseMonInput"
+          ],
+          "cursor_data0": 0
+        }
+      ],
+      "callback2": "0x8123ce9",
+      "fade_inactive": true,
+      "start_cursor": 1,
+      "party_menu_raw": "1978050800000000000000000000000000000000",
+      "party_slot": 0,
+      "party_mode_byte": 0,
+      "menu_actions": [
+        0,
+        22,
+        24,
+        1,
+        3,
+        2
+      ],
+      "label": "hold-A-3",
+      "emulator_frame": 973,
+      "input": {
+        "heldKeysRaw": 1,
+        "newKeysRaw": 1,
+        "heldKeys": 1,
+        "newKeys": 1,
+        "newAndRepeatedKeys": 1,
+        "keyRepeatCounter": 40,
+        "vblankCounter2": 960
+      },
+      "callback1": "0x80574a1",
+      "link": {
+        "received_remote_players": 0,
+        "wireless_comm_type": 0,
+        "wired_recv_count": 0,
+        "wired_overworld_max": 3
+      },
+      "hardware_keyinput": 1022
+    },
+    {
+      "stage": "select-lapras-context",
+      "tasks": [
+        {
+          "slot": 0,
+          "function": "0x8127df0",
+          "names": [
+            "Task_HandleSelectionMenuInput"
+          ],
+          "cursor_data0": 255
+        }
+      ],
+      "callback2": "0x8123ce9",
+      "fade_inactive": true,
+      "start_cursor": 1,
+      "party_menu_raw": "1978050800000000000000000000000000000000",
+      "party_slot": 0,
+      "party_mode_byte": 0,
+      "menu_actions": [
+        0,
+        22,
+        24,
+        1,
+        3,
+        2
+      ],
+      "label": "hold-A-4",
+      "emulator_frame": 974,
+      "input": {
+        "heldKeysRaw": 1,
+        "newKeysRaw": 1,
+        "heldKeys": 1,
+        "newKeys": 1,
+        "newAndRepeatedKeys": 1,
+        "keyRepeatCounter": 40,
+        "vblankCounter2": 961
+      },
+      "callback1": "0x80574a1",
+      "link": {
+        "received_remote_players": 0,
+        "wireless_comm_type": 0,
+        "wired_recv_count": 0,
+        "wired_overworld_max": 3
+      },
+      "hardware_keyinput": 1022
+    },
+    {
+      "stage": "select-lapras-context",
+      "tasks": [
+        {
+          "slot": 0,
+          "function": "0x8127df0",
+          "names": [
+            "Task_HandleSelectionMenuInput"
+          ],
+          "cursor_data0": 0
+        }
+      ],
+      "callback2": "0x8123ce9",
+      "fade_inactive": true,
+      "start_cursor": 1,
+      "party_menu_raw": "1978050800000000000000000000000000000000",
+      "party_slot": 0,
+      "party_mode_byte": 0,
+      "menu_actions": [
+        0,
+        22,
+        24,
+        1,
+        3,
+        2
+      ],
+      "label": "hold-A-5",
+      "emulator_frame": 975,
+      "input": {
+        "heldKeysRaw": 1,
+        "newKeysRaw": 0,
+        "heldKeys": 1,
+        "newKeys": 0,
+        "newAndRepeatedKeys": 0,
+        "keyRepeatCounter": 39,
+        "vblankCounter2": 962
+      },
+      "callback1": "0x80574a1",
+      "link": {
+        "received_remote_players": 0,
+        "wireless_comm_type": 0,
+        "wired_recv_count": 0,
+        "wired_overworld_max": 3
+      },
+      "hardware_keyinput": 1022
+    },
+    {
+      "stage": "select-lapras-context",
+      "tasks": [
+        {
+          "slot": 0,
+          "function": "0x8127df0",
+          "names": [
+            "Task_HandleSelectionMenuInput"
+          ],
+          "cursor_data0": 0
+        }
+      ],
+      "callback2": "0x8123ce9",
+      "fade_inactive": true,
+      "start_cursor": 1,
+      "party_menu_raw": "1978050800000000000000000000000000000000",
+      "party_slot": 0,
+      "party_mode_byte": 0,
+      "menu_actions": [
+        0,
+        22,
+        24,
+        1,
+        3,
+        2
+      ],
+      "label": "hold-A-6",
+      "emulator_frame": 976,
+      "input": {
+        "heldKeysRaw": 1,
+        "newKeysRaw": 0,
+        "heldKeys": 1,
+        "newKeys": 0,
+        "newAndRepeatedKeys": 0,
+        "keyRepeatCounter": 38,
+        "vblankCounter2": 963
+      },
+      "callback1": "0x80574a1",
+      "link": {
+        "received_remote_players": 0,
+        "wireless_comm_type": 0,
+        "wired_recv_count": 0,
+        "wired_overworld_max": 3
+      },
+      "hardware_keyinput": 1022
+    },
+    {
+      "stage": "select-lapras-context",
+      "tasks": [
+        {
+          "slot": 0,
+          "function": "0x8127df0",
+          "names": [
+            "Task_HandleSelectionMenuInput"
+          ],
+          "cursor_data0": 0
+        }
+      ],
+      "callback2": "0x8123ce9",
+      "fade_inactive": true,
+      "start_cursor": 1,
+      "party_menu_raw": "1978050800000000000000000000000000000000",
+      "party_slot": 0,
+      "party_mode_byte": 0,
+      "menu_actions": [
+        0,
+        22,
+        24,
+        1,
+        3,
+        2
+      ],
+      "label": "hold-A-7",
+      "emulator_frame": 977,
+      "input": {
+        "heldKeysRaw": 1,
+        "newKeysRaw": 0,
+        "heldKeys": 1,
+        "newKeys": 0,
+        "newAndRepeatedKeys": 0,
+        "keyRepeatCounter": 37,
+        "vblankCounter2": 964
+      },
+      "callback1": "0x80574a1",
+      "link": {
+        "received_remote_players": 0,
+        "wireless_comm_type": 0,
+        "wired_recv_count": 0,
+        "wired_overworld_max": 3
+      },
+      "hardware_keyinput": 1022
+    },
+    {
+      "stage": "select-lapras-context",
+      "tasks": [
+        {
+          "slot": 0,
+          "function": "0x8127df0",
+          "names": [
+            "Task_HandleSelectionMenuInput"
+          ],
+          "cursor_data0": 0
+        }
+      ],
+      "callback2": "0x8123ce9",
+      "fade_inactive": true,
+      "start_cursor": 1,
+      "party_menu_raw": "1978050800000000000000000000000000000000",
+      "party_slot": 0,
+      "party_mode_byte": 0,
+      "menu_actions": [
+        0,
+        22,
+        24,
+        1,
+        3,
+        2
+      ],
+      "label": "hold-A-8",
+      "emulator_frame": 978,
+      "input": {
+        "heldKeysRaw": 1,
+        "newKeysRaw": 0,
+        "heldKeys": 1,
+        "newKeys": 0,
+        "newAndRepeatedKeys": 0,
+        "keyRepeatCounter": 36,
+        "vblankCounter2": 965
+      },
+      "callback1": "0x80574a1",
+      "link": {
+        "received_remote_players": 0,
+        "wireless_comm_type": 0,
+        "wired_recv_count": 0,
+        "wired_overworld_max": 3
+      },
+      "hardware_keyinput": 1022
+    },
+    {
+      "stage": "select-lapras-context",
+      "tasks": [
+        {
+          "slot": 0,
+          "function": "0x8127df0",
+          "names": [
+            "Task_HandleSelectionMenuInput"
+          ],
+          "cursor_data0": 0
+        }
+      ],
+      "callback2": "0x8123ce9",
+      "fade_inactive": true,
+      "start_cursor": 1,
+      "party_menu_raw": "1978050800000000000000000000000000000000",
+      "party_slot": 0,
+      "party_mode_byte": 0,
+      "menu_actions": [
+        0,
+        22,
+        24,
+        1,
+        3,
+        2
+      ],
+      "label": "hold-A-9",
+      "emulator_frame": 979,
+      "input": {
+        "heldKeysRaw": 1,
+        "newKeysRaw": 0,
+        "heldKeys": 1,
+        "newKeys": 0,
+        "newAndRepeatedKeys": 0,
+        "keyRepeatCounter": 35,
+        "vblankCounter2": 966
+      },
+      "callback1": "0x80574a1",
+      "link": {
+        "received_remote_players": 0,
+        "wireless_comm_type": 0,
+        "wired_recv_count": 0,
+        "wired_overworld_max": 3
+      },
+      "hardware_keyinput": 1022
+    },
+    {
+      "stage": "select-lapras-context",
+      "tasks": [
+        {
+          "slot": 0,
+          "function": "0x8127df0",
+          "names": [
+            "Task_HandleSelectionMenuInput"
+          ],
+          "cursor_data0": 0
+        }
+      ],
+      "callback2": "0x8123ce9",
+      "fade_inactive": true,
+      "start_cursor": 1,
+      "party_menu_raw": "1978050800000000000000000000000000000000",
+      "party_slot": 0,
+      "party_mode_byte": 0,
+      "menu_actions": [
+        0,
+        22,
+        24,
+        1,
+        3,
+        2
+      ],
+      "label": "hold-A-10",
+      "emulator_frame": 980,
+      "input": {
+        "heldKeysRaw": 1,
+        "newKeysRaw": 0,
+        "heldKeys": 1,
+        "newKeys": 0,
+        "newAndRepeatedKeys": 0,
+        "keyRepeatCounter": 34,
+        "vblankCounter2": 967
+      },
+      "callback1": "0x80574a1",
+      "link": {
+        "received_remote_players": 0,
+        "wireless_comm_type": 0,
+        "wired_recv_count": 0,
+        "wired_overworld_max": 3
+      },
+      "hardware_keyinput": 1022
+    },
+    {
+      "stage": "select-lapras-context",
+      "tasks": [
+        {
+          "slot": 0,
+          "function": "0x8127df0",
+          "names": [
+            "Task_HandleSelectionMenuInput"
+          ],
+          "cursor_data0": 0
+        }
+      ],
+      "callback2": "0x8123ce9",
+      "fade_inactive": true,
+      "start_cursor": 1,
+      "party_menu_raw": "1978050800000000000000000000000000000000",
+      "party_slot": 0,
+      "party_mode_byte": 0,
+      "menu_actions": [
+        0,
+        22,
+        24,
+        1,
+        3,
+        2
+      ],
+      "label": "hold-A-11",
+      "emulator_frame": 981,
+      "input": {
+        "heldKeysRaw": 1,
+        "newKeysRaw": 0,
+        "heldKeys": 1,
+        "newKeys": 0,
+        "newAndRepeatedKeys": 0,
+        "keyRepeatCounter": 33,
+        "vblankCounter2": 968
+      },
+      "callback1": "0x80574a1",
+      "link": {
+        "received_remote_players": 0,
+        "wireless_comm_type": 0,
+        "wired_recv_count": 0,
+        "wired_overworld_max": 3
+      },
+      "hardware_keyinput": 1022
+    },
+    {
+      "stage": "select-lapras-context",
+      "tasks": [
+        {
+          "slot": 0,
+          "function": "0x8127df0",
+          "names": [
+            "Task_HandleSelectionMenuInput"
+          ],
+          "cursor_data0": 0
+        }
+      ],
+      "callback2": "0x8123ce9",
+      "fade_inactive": true,
+      "start_cursor": 1,
+      "party_menu_raw": "1978050800000000000000000000000000000000",
+      "party_slot": 0,
+      "party_mode_byte": 0,
+      "menu_actions": [
+        0,
+        22,
+        24,
+        1,
+        3,
+        2
+      ],
+      "label": "after-release",
+      "emulator_frame": 1001,
+      "input": {
+        "heldKeysRaw": 0,
+        "newKeysRaw": 0,
+        "heldKeys": 0,
+        "newKeys": 0,
+        "newAndRepeatedKeys": 0,
+        "keyRepeatCounter": 40,
+        "vblankCounter2": 988
+      },
+      "callback1": "0x80574a1",
+      "link": {
+        "received_remote_players": 0,
+        "wireless_comm_type": 0,
+        "wired_recv_count": 0,
+        "wired_overworld_max": 3
+      },
+      "hardware_keyinput": 1023
+    }
+  ],
+  "native_waterfall_cursor_option": 24,
+  "menu_rejection_task": "Task_ReturnToChooseMonAfterText",
+  "native_save": {
+    "counter_before": 60,
+    "counter_after": 61,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_JOHTO_BADGE08_GET": false,
+      "FLAG_JOHTO_BADGE04_GET": true,
+      "FLAG_HOENN_BADGE08_GET": false,
+      "FLAG_BADGE07_GET": true,
+      "FLAG_RECEIVED_STARTER_PIKACHU": true
+    },
+    "trainers": {
+      "TRAINER_HOENN_SHELLY_WEATHER_INSTITUTE": false,
+      "TRAINER_HOENN_TABITHA_SPACE_CENTER": false,
+      "TRAINER_HOENN_MAXIE_SPACE_CENTER": false
+    },
+    "hm08": 0,
+    "sha256": "598b611e4ac5c31bbeafc1285598d8cf5af6578f688c039b426217534d6732f4"
+  },
+  "native_region_badge_boundary": true,
+  "full_original_storage_unchanged": true,
+  "forced_game_memory_writes": 0,
+  "original_sav_modified": false,
+  "original_saves_unchanged": true
+}

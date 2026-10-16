@@ -1,0 +1,47 @@
+{
+  "all_pass": true,
+  "mode": "fixed",
+  "arbitrary_RAM_writes": 0,
+  "direct_script_calls": 0,
+  "native_inputs_only": true,
+  "scope": "Separate immutable temporary preboot NPC fixtures; not a continuous full campaign walk",
+  "checks": [
+    {
+      "case": "professor_first",
+      "lab_visit_after": true,
+      "gift_received_after": false,
+      "report_delivered_after": false,
+      "native_text_sha256": "7658613a9fc23eb35cf0a29445c9a15841ecbcbc188f34988e221007ccd36c4b",
+      "party_PC_Dex_preserved": true
+    },
+    {
+      "case": "guide_after_professor_separate_fixture",
+      "guide_registered": true,
+      "native_text_sha256": "31dec1abd5e6497ead6555836303dc830050ad4426643b4aa340d5589f28419a",
+      "party_PC_Dex_preserved": true
+    },
+    {
+      "case": "visitor-report-0",
+      "native_text_label": "SproutTower_1F_Text_VisitorBeforeElmReport",
+      "report_flag_unchanged": true,
+      "native_text_sha256": "ec1535d0277ff59ed7354c384f9c044150f0fa0a28579c465d2baaa4ba3d2696",
+      "party_PC_Dex_preserved": true
+    },
+    {
+      "case": "visitor-report-1",
+      "native_text_label": "SproutTower_1F_Text_Visitor",
+      "report_flag_unchanged": true,
+      "native_text_sha256": "2fd3d6ce02f34c7742f8e60e32bc718d287524b7af21de306dae4e9487c8d27a",
+      "party_PC_Dex_preserved": true
+    },
+    {
+      "case": "assistant_gift_still_offered_declined",
+      "actual_native_yesno": true,
+      "gift_flag_not_set": true,
+      "party_PC_Dex_preserved": true
+    }
+  ],
+  "rom_sha256": "b46fb32bb67f89d5a48dfbfdf41ddd4977cc4a2d60dbbe6c72e1bc0281c5606d",
+  "original_inputs_unchanged": true,
+  "original_all_SAVs_unchanged": true
+}

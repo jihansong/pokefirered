@@ -1,0 +1,34 @@
+{
+  "map": "MAP_JOHTO_ROUTE41",
+  "base_label": "sJohtoRoute41",
+  "water_mons": {
+    "encounter_rate": 4,
+    "mons": [
+      {
+        "min_level": 20,
+        "max_level": 20,
+        "species": "SPECIES_TENTACOOL"
+      },
+      {
+        "min_level": 21,
+        "max_level": 21,
+        "species": "SPECIES_TENTACOOL"
+      },
+      {
+        "min_level": 22,
+        "max_level": 22,
+        "species": "SPECIES_TENTACOOL"
+      },
+      {
+        "min_level": 25,
+        "max_level": 25,
+        "species": "SPECIES_TENTACRUEL"
+      },
+      {
+        "min_level": 25,
+        "max_level": 25,
+        "species": "SPECIES_MANTINE"
+      }
+    ]
+  }
+}

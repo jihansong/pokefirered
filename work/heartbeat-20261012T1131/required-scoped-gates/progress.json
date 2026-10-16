@@ -1,0 +1,26 @@
+[
+  {
+    "name": "touched-width",
+    "exit_code": 0,
+    "seconds": 0.04066896438598633,
+    "log": "work/heartbeat-20261012T1131/required-scoped-gates/touched-width.log"
+  },
+  {
+    "name": "touched-audit",
+    "exit_code": 1,
+    "seconds": 1.8311591148376465,
+    "log": "work/heartbeat-20261012T1131/required-scoped-gates/touched-audit.log"
+  },
+  {
+    "name": "user-save-compat",
+    "exit_code": 0,
+    "seconds": 5.953894376754761,
+    "log": "work/heartbeat-20261012T1131/required-scoped-gates/user-save-compat.log"
+  },
+  {
+    "name": "event-wiring-existing-global",
+    "exit_code": 1,
+    "seconds": 3.6068179607391357,
+    "log": "work/heartbeat-20261012T1131/required-scoped-gates/event-wiring-existing-global.log"
+  }
+]

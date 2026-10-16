@@ -1,0 +1,297 @@
+{
+  "kind": "unapplied_regional_airport_candidate",
+  "product_edits": false,
+  "inputs": {
+    "data/layouts/layouts.json": {
+      "bytes": 363042,
+      "sha256": "98bf104f2682e018439f22092d0321c3c75b7cb1a0c5d1a45e3135a9076ba75c"
+    },
+    "data/maps/map_groups.json": {
+      "bytes": 37456,
+      "sha256": "b3213c388b45f25af44b1a0ab80d3ef47676d919df2ac5ffd308a6967bd30f5d"
+    },
+    "data/maps/JohtoCherrygroveAirstrip/map.json": {
+      "bytes": 1891,
+      "sha256": "fa5dd30f21b4f5b8e9c334ee50ebbf669faacc7cd2b4906ef40d646fa995e1b8"
+    },
+    "data/layouts/JohtoCherrygroveAirstrip/map.bin": {
+      "bytes": 1536,
+      "sha256": "e6914678371a5fe3c30dae3f14014d6a7b863bcae56a5eca614537ca0262fd00"
+    },
+    "data/layouts/JohtoCherrygroveAirstrip/border.bin": {
+      "bytes": 8,
+      "sha256": "4f4aa105dfd88fa5d7cfa853fd7f794bf2acea638cdba8823481fac2ea22a91f"
+    },
+    "data/maps/KantoAirport/map.json": {
+      "bytes": 5651,
+      "sha256": "9aedd424da7a55c89de1e110aa4088df44e98ff2bb422efaca9b6767cf6da301"
+    },
+    "data/layouts/KantoAirport/map.bin": {
+      "bytes": 660,
+      "sha256": "5690a9a6e8d156812ac576d9eaa184b60427d2b270872349a63058ab4333401d"
+    },
+    "data/layouts/KantoAirport/border.bin": {
+      "bytes": 8,
+      "sha256": "efef8d5a9f8dbe5bb218e6b0cc452583eb9d1452b615b1c7ab66ad49c82e9d70"
+    },
+    "data/maps/VermilionCity/map.json": {
+      "bytes": 12294,
+      "sha256": "25d805e34ca5df23e33d9d01c344e1bd946ce8bfa1f124f46a00292eefdd6ff6"
+    },
+    "data/layouts/VermilionCity/map.bin": {
+      "bytes": 3840,
+      "sha256": "dcd71b5a2f1a70750d025670313f01360ae9f8da881d6f020c14bd4fcb50cab8"
+    },
+    "data/layouts/VermilionCity/border.bin": {
+      "bytes": 8,
+      "sha256": "cba446b7fabf3b13007a0e5d721f52dc5a35423464f23cbfaf7d379b6187d2ce"
+    },
+    "data/maps/SlateportCity_Harbor/map.json": {
+      "bytes": 2746,
+      "sha256": "31d2a3475249aaaac9325492938dc572520dfcde2398c8091ea1f59c13e99ae7"
+    },
+    "data/layouts/HoennHarbor/map.bin": {
+      "bytes": 720,
+      "sha256": "ec418c60c4f5cac3eb4ee9e2a29e1f48709e552411f67086a5352945001afcbc"
+    },
+    "data/layouts/HoennHarbor/border.bin": {
+      "bytes": 8,
+      "sha256": "9ff63640fa3b4682056532b7924b03250ccc7a832f64ccec3dea79ea8595a24d"
+    },
+    "tools/hoenn_import/patches/SlateportCity_Harbor.json": {
+      "bytes": 1692,
+      "sha256": "185d4cf2d76df7ef2739a00dd18339870499de8a6a0581ca98653f4121d55662"
+    },
+    "tools/hoenn_import/apply_patches.py": {
+      "bytes": 5197,
+      "sha256": "50021b65d020d3d6ad40d858d04b0a53d5a5fdc4a53659b0616d67e3f12882bc"
+    },
+    "data/event_scripts.s": {
+      "bytes": 72235,
+      "sha256": "333ec92da552cfafbba9e921fd4f6d5d6f13475ed98b7466f18fe2a7635016ac"
+    },
+    "src/event_object_movement.c": {
+      "bytes": 334864,
+      "sha256": "241a15df4e9977c0fb3a8e84507623476470f18de0a1862a8457bb96fbf6a420"
+    }
+  },
+  "evidence": {
+    "source_landscapes_present_in_rom": {
+      "JohtoCherrygroveAirstrip": "e6914678371a5fe3c30dae3f14014d6a7b863bcae56a5eca614537ca0262fd00",
+      "KantoAirport": "5690a9a6e8d156812ac576d9eaa184b60427d2b270872349a63058ab4333401d",
+      "VermilionCity": "dcd71b5a2f1a70750d025670313f01360ae9f8da881d6f020c14bd4fcb50cab8",
+      "SlateportCity_Harbor": "ec418c60c4f5cac3eb4ee9e2a29e1f48709e552411f67086a5352945001afcbc"
+    },
+    "approved_facade": {
+      "source_rect": [
+        31,
+        5,
+        8,
+        8
+      ],
+      "source_door": [
+        35,
+        12
+      ],
+      "source_sha256": "c4607a64147f02437dd1d0290f24d35b9eb74355291484ffb9658ee89437d262",
+      "destination_rect": [
+        33,
+        3,
+        8,
+        8
+      ],
+      "destination_door": [
+        37,
+        10
+      ],
+      "paving_source_xy": [
+        8,
+        9
+      ],
+      "paving_raw": "0x3115"
+    },
+    "hoenn_facade_destination_door": [
+      25,
+      10
+    ],
+    "airstrip_old_32_columns_identical": true,
+    "old_map_group_indices_preserved": true,
+    "old_layout_indices_preserved": true,
+    "old_harbor_four_warps_and_npcs_preserved": true,
+    "flight_destinations_and_return_scripts_unchanged": true,
+    "save_fields_or_story_flags_added": false,
+    "kanto_taxi_triggers_not_copied": true,
+    "static_reachable_counts": {
+      "johto": 432,
+      "hoenn": 220,
+      "harbor": 87,
+      "terminal": 231
+    },
+    "static_only": true,
+    "compiled": false,
+    "emulator_executed": false
+  },
+  "rom_sha256": "af2677993a75979fb36f0768c390d1bad7424e61f2d569b5054d40702250d2e8",
+  "files": {
+    "data/layouts/JohtoCherrygroveAirstrip/map.bin": {
+      "before": {
+        "bytes": 1536,
+        "sha256": "e6914678371a5fe3c30dae3f14014d6a7b863bcae56a5eca614537ca0262fd00"
+      },
+      "bytes": 2112,
+      "sha256": "1c3befcc02ba99edca4ee3f3063a066cfdeaf4d4deaa6baa6a640e6a7a22ae15"
+    },
+    "data/maps/JohtoCherrygroveAirstrip/map.json": {
+      "before": {
+        "bytes": 1891,
+        "sha256": "fa5dd30f21b4f5b8e9c334ee50ebbf669faacc7cd2b4906ef40d646fa995e1b8"
+      },
+      "bytes": 2032,
+      "sha256": "3494b57ca955e39be993302b8ebaee585d8f6724a2029404f6626f4abd5e101e"
+    },
+    "data/maps/SlateportCity_Harbor/map.json": {
+      "before": {
+        "bytes": 2746,
+        "sha256": "31d2a3475249aaaac9325492938dc572520dfcde2398c8091ea1f59c13e99ae7"
+      },
+      "bytes": 3022,
+      "sha256": "f72f42ffeeace1ee8d9be224e3c135f92f4301534ac286bee7a25910eddf5afc"
+    },
+    "data/layouts/HoennHarbor/map.bin": {
+      "before": {
+        "bytes": 720,
+        "sha256": "ec418c60c4f5cac3eb4ee9e2a29e1f48709e552411f67086a5352945001afcbc"
+      },
+      "bytes": 720,
+      "sha256": "019c463f006d264145bbbe09964fd8bdc08ae959a0b7a14b96ec862a7d2d31ce"
+    },
+    "tools/hoenn_import/patches/SlateportCity_Harbor.json": {
+      "before": {
+        "bytes": 1692,
+        "sha256": "185d4cf2d76df7ef2739a00dd18339870499de8a6a0581ca98653f4121d55662"
+      },
+      "bytes": 2711,
+      "sha256": "71bbe2ea4364ad8a782661b9cae8615d0a2a607323c0d1e02744e9560014095a"
+    },
+    "tools/hoenn_import/apply_patches.py": {
+      "before": {
+        "bytes": 5197,
+        "sha256": "50021b65d020d3d6ad40d858d04b0a53d5a5fdc4a53659b0616d67e3f12882bc"
+      },
+      "bytes": 6729,
+      "sha256": "9875d23111605fd92fdc0345cb2e5d9f4f57ee8f1a5c0f9c62abe3032a4cbc85"
+    },
+    "data/layouts/HoennAirportExterior/border.bin": {
+      "before": null,
+      "bytes": 8,
+      "sha256": "4f4aa105dfd88fa5d7cfa853fd7f794bf2acea638cdba8823481fac2ea22a91f"
+    },
+    "data/layouts/HoennAirportExterior/map.bin": {
+      "before": null,
+      "bytes": 1536,
+      "sha256": "e4305cb7cebcf7ac0e7179a86ef3f7dd30e63834043d7e927a13cd038ed9b118"
+    },
+    "data/maps/HoennAirportExterior/map.json": {
+      "before": null,
+      "bytes": 1374,
+      "sha256": "41822d8ce7128f08d781d0720b70c145be7d098811f3eb5bca99daec6ae2de78"
+    },
+    "data/maps/HoennAirportExterior/scripts.inc": {
+      "before": null,
+      "bytes": 130,
+      "sha256": "048dbefb0d4a18093bd03114997c72784115d85542bf0fc2ae9b5285963a838a"
+    },
+    "data/maps/HoennAirportExterior/text.inc": {
+      "before": null,
+      "bytes": 231,
+      "sha256": "3600c3d1e1de2bd36fe34b155c197d4fdffdb5166da2856c1b68d7207e637cca"
+    },
+    "data/layouts/JohtoAirportTerminal/border.bin": {
+      "before": null,
+      "bytes": 8,
+      "sha256": "efef8d5a9f8dbe5bb218e6b0cc452583eb9d1452b615b1c7ab66ad49c82e9d70"
+    },
+    "data/layouts/JohtoAirportTerminal/map.bin": {
+      "before": null,
+      "bytes": 660,
+      "sha256": "5690a9a6e8d156812ac576d9eaa184b60427d2b270872349a63058ab4333401d"
+    },
+    "data/maps/JohtoAirportTerminal/map.json": {
+      "before": null,
+      "bytes": 3278,
+      "sha256": "b3dc810b9936d3aeaa5ab43ce9733325d2517f1c8280c8458394fa7ede3aa0b6"
+    },
+    "data/maps/JohtoAirportTerminal/scripts.inc": {
+      "before": null,
+      "bytes": 217,
+      "sha256": "4476600ac01e9fa74745f478e689171e31d40304ce3b4e31426a05f60254a846"
+    },
+    "data/maps/JohtoAirportTerminal/text.inc": {
+      "before": null,
+      "bytes": 357,
+      "sha256": "74248d7e5a556b2f26d9cd7b02f7e6eaece861d8c1abf2618200b7b2f98f87c8"
+    },
+    "data/layouts/HoennAirportTerminal/border.bin": {
+      "before": null,
+      "bytes": 8,
+      "sha256": "efef8d5a9f8dbe5bb218e6b0cc452583eb9d1452b615b1c7ab66ad49c82e9d70"
+    },
+    "data/layouts/HoennAirportTerminal/map.bin": {
+      "before": null,
+      "bytes": 660,
+      "sha256": "5690a9a6e8d156812ac576d9eaa184b60427d2b270872349a63058ab4333401d"
+    },
+    "data/maps/HoennAirportTerminal/map.json": {
+      "before": null,
+      "bytes": 3267,
+      "sha256": "40203433031262ab24dea3c3e706eb127465fa703f93aacb1fc7828c52e4c824"
+    },
+    "data/maps/HoennAirportTerminal/scripts.inc": {
+      "before": null,
+      "bytes": 217,
+      "sha256": "0d3a5b1cb2552c143332be684eba3194098bb7be637cf150e2bc89a9c0c58ecc"
+    },
+    "data/maps/HoennAirportTerminal/text.inc": {
+      "before": null,
+      "bytes": 357,
+      "sha256": "bb969aabf62cbc22019acf9dfeca91f2a5463b2a7944d1fb95469b637506df8f"
+    },
+    "data/layouts/layouts.json": {
+      "before": {
+        "bytes": 363042,
+        "sha256": "98bf104f2682e018439f22092d0321c3c75b7cb1a0c5d1a45e3135a9076ba75c"
+      },
+      "bytes": 364354,
+      "sha256": "6d0d3340d9e2fc8cdafad56c2e37c8b64081ce5b4449546316db5d6b42ebcfa0"
+    },
+    "data/maps/map_groups.json": {
+      "before": {
+        "bytes": 37456,
+        "sha256": "b3213c388b45f25af44b1a0ab80d3ef47676d919df2ac5ffd308a6967bd30f5d"
+      },
+      "bytes": 37540,
+      "sha256": "7b91dc1749591c5e32812718cbe52dec3cea1be3096fcc2bfdb8f9c405c13a0f"
+    },
+    "data/event_scripts.s": {
+      "before": {
+        "bytes": 72235,
+        "sha256": "333ec92da552cfafbba9e921fd4f6d5d6f13475ed98b7466f18fe2a7635016ac"
+      },
+      "bytes": 72562,
+      "sha256": "415b7fb3253b0ae8a9f2266b641e5e15a941314ef7e1a89eff97c9c659b18d0e"
+    },
+    "src/event_object_movement.c": {
+      "before": {
+        "bytes": 334864,
+        "sha256": "241a15df4e9977c0fb3a8e84507623476470f18de0a1862a8457bb96fbf6a420"
+      },
+      "bytes": 335204,
+      "sha256": "579b275960fabf85c20de7a2d9660f2b862452b6e828a663f6dd28d4f0bc1649"
+    },
+    "tools/airports/build_regional_airport_terminals.py": {
+      "before": null,
+      "bytes": 19872,
+      "sha256": "8dd225394bb0110560e7aec4da646896b0b5285bf0fa75ed73589fbfba8430c4"
+    }
+  }
+}

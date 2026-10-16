@@ -1,0 +1,9 @@
+{
+  "object_overrides": [
+    {
+      "x": 6,
+      "y": 5,
+      "script": "EverGrandeCity_DrakesRoom_TY_Boss"
+    }
+  ]
+}

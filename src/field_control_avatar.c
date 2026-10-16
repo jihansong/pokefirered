@@ -1,6 +1,7 @@
 #include "global.h"
 #include "time_of_day.h"
 #include "follower_pikachu.h"
+#include "companion_misty.h"
 #include "gflib.h"
 #include "bike.h"
 #include "coord_event_weather.h"
@@ -19,6 +20,7 @@
 #include "wonder_news.h"
 #include "metatile_behavior.h"
 #include "overworld.h"
+#include "region_map.h"
 #include "renewable_hidden_items.h"
 #include "quest_log.h"
 #include "safari_zone.h"
@@ -33,7 +35,11 @@
 #include "constants/event_bg.h"
 #include "constants/event_objects.h"
 #include "constants/maps.h"
+#include "constants/flags.h"
+#include "constants/flags_johto_story.h"
 #include "constants/metatile_behaviors.h"
+
+extern const u8 CeruleanCity_EventScript_MistyGymClosed[];
 
 #define SIGNPOST_POKECENTER 0
 #define SIGNPOST_POKEMART 1
@@ -442,6 +448,14 @@ static const u8 *GetInteractedObjectEventScript(struct MapPosition *position, u8
     const u8 *script;
 
     objectEventId = GetObjectEventIdByPosition(position->x, position->y, position->elevation);
+    if (objectEventId != OBJECT_EVENTS_COUNT && IsMistyCompanionObject(&gObjectEvents[objectEventId]))
+    {
+        if (gObjectEvents[objectEventId].invisible) return NULL;
+        gSelectedObjectEvent = objectEventId;
+        gSpecialVar_LastTalked = LOCALID_MISTY_COMPANION;
+        gSpecialVar_Facing = direction;
+        return EventScript_TalkToMistyCompanion;
+    }
     if (objectEventId != OBJECT_EVENTS_COUNT && IsFollowerPikachuObject(&gObjectEvents[objectEventId]))
     {
         if (gObjectEvents[objectEventId].invisible)
@@ -637,19 +651,83 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
     return NULL;
 }
 
+// One HM works across regions, but Hoenn's climb requires its RAIN BADGE.
+// The named section predicate excludes Kanto, Sevii and Johto map sections.
+// STORY_REGION_STRENGTH_ROCK_GATE_V1
+// Gold/Crystal: PLAIN BADGE permits STRENGTH; ROCK SMASH needs no badge.
+// Keep the same Johto boundary as the existing regional SURF helper.
+bool8 CanUseStrengthAtCurrentMap(void)
+{
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_NEW_BARK_TOWN))
+        return FlagGet(FLAG_JOHTO_BADGE03_GET);
+    if (IsNamedHoennMapSec(gMapHeader.regionMapSectionId))
+        return FlagGet(FLAG_HOENN_BADGE04_GET);
+    return FlagGet(FLAG_BADGE04_GET);
+}
+
+bool8 CanUseRockSmashAtCurrentMap(void)
+{
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_NEW_BARK_TOWN))
+        return TRUE;
+    if (IsNamedHoennMapSec(gMapHeader.regionMapSectionId))
+        return FlagGet(FLAG_HOENN_BADGE03_GET);
+    return FlagGet(FLAG_BADGE06_GET);
+}
+
+bool8 CanUseFlyAtCurrentMap(void)
+{
+    // STORY_REGION_FLY_GATE_V1
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_NEW_BARK_TOWN))
+        return FlagGet(FLAG_JOHTO_BADGE05_GET);
+    if (IsNamedHoennMapSec(gMapHeader.regionMapSectionId))
+        return FlagGet(FLAG_HOENN_BADGE06_GET);
+    return FlagGet(FLAG_BADGE03_GET);
+}
+
+bool8 CanUseSurfAtCurrentMap(void)
+{
+    // STORY_REGION_SURF_GATE_V1
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_NEW_BARK_TOWN))
+        return FlagGet(FLAG_JOHTO_BADGE04_GET);
+    if (IsNamedHoennMapSec(gMapHeader.regionMapSectionId))
+        return FlagGet(FLAG_HOENN_BADGE05_GET);
+    return FlagGet(FLAG_BADGE05_GET);
+}
+
+bool8 CanUseWaterfallAtCurrentMap(void)
+{
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_NEW_BARK_TOWN))
+        return FlagGet(FLAG_JOHTO_BADGE08_GET);
+    if (IsNamedHoennMapSec(gMapHeader.regionMapSectionId))
+        return FlagGet(FLAG_HOENN_BADGE08_GET);
+    return FlagGet(FLAG_BADGE07_GET);
+}
+
 static const u8 *GetInteractedWaterScript(struct MapPosition *unused1, u8 metatileBehavior, u8 direction)
 {
     if (MetatileBehavior_IsFastWater(metatileBehavior) == TRUE && PartyHasMonWithSurf() == TRUE)
         return EventScript_CurrentTooFast;
-    if (FlagGet(FLAG_BADGE05_GET) == TRUE && PartyHasMonWithSurf() == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE)
+    if (CanUseSurfAtCurrentMap() == TRUE && PartyHasMonWithSurf() == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE)
         return EventScript_UseSurf;
 
     if (MetatileBehavior_IsWaterfall(metatileBehavior) == TRUE)
     {
-        if (FlagGet(FLAG_BADGE07_GET) == TRUE && IsPlayerSurfingNorth() == TRUE)
+        if (CanUseWaterfallAtCurrentMap() == TRUE && IsPlayerSurfingNorth() == TRUE)
             return EventScript_Waterfall;
         else
             return EventScript_CantUseWaterfall;
+    }
+    if (gMapHeader.mapType == MAP_TYPE_UNDERWATER)
+    {
+        if (TrySetDiveWarp() == 1)
+            return EventScript_TrySurface;
+        return EventScript_ObstacleCantSurface;
+    }
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) && TrySetDiveWarp() == 2)
+    {
+        if (FlagGet(FLAG_HOENN_BADGE07_GET))
+            return EventScript_DeepWater;
+        return EventScript_CantDive;
     }
     return NULL;
 }
@@ -1046,6 +1124,16 @@ static bool8 TryDoorWarp(struct MapPosition *position, u16 metatileBehavior, u8 
             warpEventId = GetWarpEventAtMapPosition(&gMapHeader, position);
             if (warpEventId != -1 && IsWarpMetatileBehavior(metatileBehavior) == TRUE)
             {
+                // MISTY cannot lead the GYM while traveling with the player.
+                if (FlagGet(FLAG_MISTY_COMPANION_JOINED)
+                    && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_CERULEAN_CITY)
+                    && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_CERULEAN_CITY)
+                    && gMapHeader.events->warps[warpEventId].mapGroup == MAP_GROUP(MAP_CERULEAN_CITY_GYM)
+                    && gMapHeader.events->warps[warpEventId].mapNum == MAP_NUM(MAP_CERULEAN_CITY_GYM))
+                {
+                    ScriptContext_SetupScript(CeruleanCity_EventScript_MistyGymClosed);
+                    return TRUE;
+                }
                 StoreInitialPlayerAvatarState();
                 SetupWarp(&gMapHeader, warpEventId, position);
                 DoDoorWarp();
@@ -1178,7 +1266,9 @@ bool8 dive_warp(struct MapPosition *position, u16 metatileBehavior)
             return TRUE;
         }
     }
-    else if (MetatileBehavior_IsDiveable(metatileBehavior) == TRUE)
+    else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING)
+          && FlagGet(FLAG_HOENN_BADGE07_GET)
+          && MetatileBehavior_IsDiveable(metatileBehavior) == TRUE)
     {
         if (SetDiveWarpDive(position->x - MAP_OFFSET, position->y - MAP_OFFSET))
         {
@@ -1191,7 +1281,7 @@ bool8 dive_warp(struct MapPosition *position, u16 metatileBehavior)
     return FALSE;
 }
 
-static u8 TrySetDiveWarp(void)
+u8 TrySetDiveWarp(void)
 {
     s16 x, y;
     u8 metatileBehavior;
@@ -1203,7 +1293,8 @@ static u8 TrySetDiveWarp(void)
         if (SetDiveWarpEmerge(x - MAP_OFFSET, y - MAP_OFFSET) == TRUE)
             return 1;
     }
-    else if (MetatileBehavior_IsDiveable(metatileBehavior) == TRUE)
+    else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING)
+          && MetatileBehavior_IsDiveable(metatileBehavior) == TRUE)
     {
         if (SetDiveWarpDive(x - MAP_OFFSET, y - MAP_OFFSET) == TRUE)
             return 2;

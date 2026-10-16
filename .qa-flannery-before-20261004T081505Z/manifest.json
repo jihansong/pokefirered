@@ -1,0 +1,32 @@
+{
+  "utc": "20261004T081505Z",
+  "branch": "hoenn-z3",
+  "head": "658baf740cff568cba7f3300f688b8a626e6f5fc",
+  "before": {
+    "data/maps/LavaridgeTown_Gym_1F/scripts.inc": "7fde72799df227e2dcc506dee2cad0f6d956104fce3ccc6c9d69397c170b7eef",
+    "data/maps/LavaridgeTown_Gym_1F/map.json": "2941555e2da8850f728f8cdcdc9d302dddc3f26646dca826b16c4c71d565e7cf",
+    "data/maps/LavaridgeTown_Gym_1F/text.inc": "cd9f3df1586478ec008031c6e44199f44b81a0777b9386f2702bceb6002578e1",
+    "data/layouts/HoennLavaridgeTown_Gym_1F/map.bin": "7e802f74bd6b0e527c0322200d55c50532be0e2b3ec29ed2f9aeecc92ab27af9",
+    "include/constants/flags_hoenn_story.h": "7a2423cef4157d366c8ed41cb65d4d7e5b1437d7030f10ad97be8c5e3887a004",
+    "tools/qa/cases/z4_flannery.jsonl": null,
+    "docs/team/qa/codex-z4-flannery-20261004/README.md": null,
+    "tools/hoenn_import/patches/LavaridgeTown_Gym_1F.scripts.inc": null,
+    "tools/hoenn_import/patches/LavaridgeTown_Gym_1F.text.inc": null,
+    "tools/hoenn_import/patches/LavaridgeTown_Gym_1F.json": null,
+    "tools/hoenn_import/patches/LavaridgeTown_Gym_1F.mapscripts": null
+  },
+  "after": {
+    "include/constants/flags_hoenn_story.h": "d8c20e016f17184f17e31c08d2f11921fe6f1228322acafb22e1f2517f13beb9",
+    "tools/hoenn_import/patches/LavaridgeTown_Gym_1F.scripts.inc": "76830bbf568a3cb998ee03de14980c2929894f39f84545b0807964d8e105bd6e",
+    "tools/hoenn_import/patches/LavaridgeTown_Gym_1F.text.inc": "282d3fd1f4be93697557996ecfe6c1da633d163c633ba2c394bef18e27997bcc",
+    "tools/qa/cases/z4_flannery.jsonl": "b467721b52cfb75c70ce012bd58cef711ba2e187ad2dac3c2a690d360d94d8c8",
+    "docs/team/qa/codex-z4-flannery-20261004/README.md": "70cd77da9cdb80f987dc90fe141ca2b6797b944622a262f7ec083a7c10770ab3",
+    "data/maps/LavaridgeTown_Gym_1F/scripts.inc": "be5d8041eb1090d77f3545d463c783b7050fcaa86c7a314d38b38f028fab211c",
+    "data/maps/LavaridgeTown_Gym_1F/text.inc": "db40a6351bab0ac6d43c0acb4f05797f2d3d961f53855a912fdcdef6336c498e"
+  },
+  "new_flag": "FLAG_HOENN_GOT_TM50_FROM_FLANNERY",
+  "new_flag_id": "0x1263",
+  "save_layout_changed": false,
+  "canonical_idempotent": true,
+  "runtime_qa": "NOT_RUN"
+}

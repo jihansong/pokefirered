@@ -1,0 +1,27 @@
+{
+  "source": "native mGBA full-game captures; no redrawing or interpolation",
+  "ROM_sha256": "1c9a4519a7a6bb5195728977143d42e5f126f8709d992e4602e159ae328d46bf",
+  "native_frame_numbers": [
+    756,
+    759,
+    762,
+    765,
+    771,
+    774,
+    777,
+    780,
+    783
+  ],
+  "durations_ms": [
+    50,
+    50,
+    50,
+    100,
+    50,
+    50,
+    50,
+    50,
+    500
+  ],
+  "last_frame_hold_ms": 500
+}

@@ -1,0 +1,41 @@
+@ Thunder Yellow Hoenn sea-sky chapter v1
+SeafloorCavern_Room9_EventScript_TY_Archie::
+	goto_if_questlog EventScript_ReleaseEnd
+	goto_if_set FLAG_HOENN_SEAFLOOR_CLEARED, SeafloorCavern_Room9_TY_Done
+	goto_if_unset FLAG_HOENN_SPACE_CENTER_SECURED, SeafloorCavern_Room9_TY_NotReady
+	goto_if_unset FLAG_HOENN_BADGE07_GET, SeafloorCavern_Room9_TY_NotReady
+	goto_if_defeated TRAINER_HOENN_ARCHIE, SeafloorCavern_Room9_TY_AfterBattle
+	trainerbattle_single TRAINER_HOENN_ARCHIE, SeafloorCavern_Room9_Text_TY_Intro, SeafloorCavern_Room9_Text_TY_Defeat, SeafloorCavern_Room9_TY_AfterBattle
+	goto SeafloorCavern_Room9_TY_AfterBattle
+
+SeafloorCavern_Room9_TY_AfterBattle::
+	lockall
+	msgbox SeafloorCavern_Room9_Text_TY_Awake, MSGBOX_DEFAULT
+	playmoncry SPECIES_KYOGRE, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement 3, SeafloorCavern_Room9_Movement_TY_Escape
+	waitmovement 0
+	removeobject 3
+	msgbox SeafloorCavern_Room9_Text_TY_Storm, MSGBOX_DEFAULT
+	setflag FLAG_HOENN_SEAFLOOR_CLEARED
+	removeobject 2
+	releaseall
+	end
+
+SeafloorCavern_Room9_TY_NotReady::
+	msgbox SeafloorCavern_Room9_Text_TY_NotReady, MSGBOX_NPC
+	end
+
+SeafloorCavern_Room9_TY_Done::
+	end
+
+SeafloorCavern_Room9_EventScript_TY_Kyogre::
+	goto_if_questlog EventScript_ReleaseEnd
+	msgbox SeafloorCavern_Room9_Text_TY_Sleep, MSGBOX_NPC
+	end
+
+SeafloorCavern_Room9_Movement_TY_Escape::
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end

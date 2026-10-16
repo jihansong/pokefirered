@@ -84,7 +84,8 @@ KantoAirport_EventScript_HoennClerk::
 	lock
 	faceplayer
 	goto_if_unset FLAG_SYS_GAME_CLEAR, KantoAirport_EventScript_NotChampion
-	msgbox KantoAirport_Text_FlyToHoenn, MSGBOX_YESNO
+	call EventScript_MistyPostChampionBridge
+    msgbox KantoAirport_Text_FlyToHoenn, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, KantoAirport_EventScript_ComeAgain
 	msgbox KantoAirport_Text_Boarding
 	closemessage
@@ -103,8 +104,22 @@ KantoAirport_EventScript_ComeAgain::
 	end
 
 KantoAirport_EventScript_JohtoClerk::
-	msgbox KantoAirport_Text_JohtoSoon, MSGBOX_NPC
-	end
+    lock
+    faceplayer
+    goto_if_unset FLAG_SYS_GAME_CLEAR, KantoAirport_EventScript_JohtoNotChampion
+    call EventScript_MistyPostChampionBridge
+    msgbox KantoAirport_Text_FlyToJohto, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, KantoAirport_EventScript_ComeAgain
+    msgbox KantoAirport_Text_Boarding
+    closemessage
+    setvar VAR_0x8004, AIRPLANE_DEST_JOHTO
+    goto EventScript_TakeAirplane
+    end
+
+KantoAirport_EventScript_JohtoNotChampion::
+    msgbox KantoAirport_Text_JohtoChampionsOnly
+    release
+    end
 
 KantoAirport_EventScript_InfoClerk::
 	msgbox KantoAirport_Text_Info, MSGBOX_NPC

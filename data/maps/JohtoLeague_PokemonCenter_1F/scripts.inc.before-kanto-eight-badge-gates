@@ -1,0 +1,46 @@
+JohtoLeague_PokemonCenter_1F_MapScripts::
+    map_script MAP_SCRIPT_ON_TRANSITION, JohtoLeague_PokemonCenter_1F_OnTransition
+    .byte 0
+
+JohtoLeague_PokemonCenter_1F_OnTransition::
+    setrespawn HEAL_LOCATION_JOHTO_INDIGO_PLATEAU
+    end
+
+JohtoLeague_PokemonCenter_1F_Nurse::
+    lock
+    faceplayer
+    call EventScript_PkmnCenterNurse
+    release
+    end
+JohtoLeague_PokemonCenter_1F_Receptionist::
+    lock
+    faceplayer
+    goto_if_unset FLAG_SYS_GAME_CLEAR, JohtoLeague_PokemonCenter_1F_NotReady
+    goto_if_unset FLAG_JOHTO_BADGE08_GET, JohtoLeague_PokemonCenter_1F_NotReady
+    goto_if_unset FLAG_JOHTO_RADIO_TOWER_CLEARED, JohtoLeague_PokemonCenter_1F_NotReady
+    goto_if_unset FLAG_JOHTO_SILVER_LEAGUE_RESOLVED, JohtoLeague_PokemonCenter_1F_NotReady
+    msgbox JohtoLeague_PokemonCenter_1F_Text_Challenge, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, JohtoLeague_PokemonCenter_1F_Later
+    cleartrainerflag TRAINER_JOHTO_WILL
+    cleartrainerflag TRAINER_JOHTO_KOGA
+    cleartrainerflag TRAINER_JOHTO_BRUNO
+    cleartrainerflag TRAINER_JOHTO_KAREN
+    cleartrainerflag TRAINER_JOHTO_LANCE_CHAMPION
+    clearflag FLAG_JOHTO_WILL_CLEARED
+    clearflag FLAG_JOHTO_KOGA_CLEARED
+    clearflag FLAG_JOHTO_BRUNO_CLEARED
+    clearflag FLAG_JOHTO_KAREN_CLEARED
+    clearflag FLAG_JOHTO_LANCE_CHAMPION_CLEARED
+    closemessage
+    warp MAP_JOHTO_LEAGUE_WILLS_ROOM, 0
+    waitstate
+    release
+    end
+JohtoLeague_PokemonCenter_1F_NotReady::
+    msgbox JohtoLeague_PokemonCenter_1F_Text_NotReady
+    release
+    end
+JohtoLeague_PokemonCenter_1F_Later::
+    msgbox JohtoLeague_PokemonCenter_1F_Text_Later
+    release
+    end

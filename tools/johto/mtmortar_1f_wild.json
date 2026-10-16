@@ -1,0 +1,199 @@
+{
+  "map": "MAP_MT_MORTAR_1F",
+  "base_label": "sMtMortar_1F",
+  "land_mons": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_ZUBAT"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_GEODUDE"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_MACHOP"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_ZUBAT"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_GEODUDE"
+      },
+      {
+        "min_level": 18,
+        "max_level": 18,
+        "species": "SPECIES_MACHOP"
+      },
+      {
+        "min_level": 20,
+        "max_level": 20,
+        "species": "SPECIES_GRAVELER"
+      },
+      {
+        "min_level": 19,
+        "max_level": 19,
+        "species": "SPECIES_RATICATE"
+      },
+      {
+        "min_level": 20,
+        "max_level": 20,
+        "species": "SPECIES_GOLBAT"
+      },
+      {
+        "min_level": 22,
+        "max_level": 22,
+        "species": "SPECIES_MACHOKE"
+      },
+      {
+        "min_level": 18,
+        "max_level": 18,
+        "species": "SPECIES_MARILL"
+      }
+    ]
+  },
+  "land_mons_morning": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_ZUBAT"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_GEODUDE"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_MACHOP"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_ZUBAT"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_GEODUDE"
+      },
+      {
+        "min_level": 18,
+        "max_level": 18,
+        "species": "SPECIES_MACHOP"
+      },
+      {
+        "min_level": 20,
+        "max_level": 20,
+        "species": "SPECIES_GRAVELER"
+      },
+      {
+        "min_level": 19,
+        "max_level": 19,
+        "species": "SPECIES_RATICATE"
+      },
+      {
+        "min_level": 20,
+        "max_level": 20,
+        "species": "SPECIES_GOLBAT"
+      },
+      {
+        "min_level": 22,
+        "max_level": 22,
+        "species": "SPECIES_MACHOKE"
+      },
+      {
+        "min_level": 18,
+        "max_level": 18,
+        "species": "SPECIES_MARILL"
+      }
+    ]
+  },
+  "land_mons_night": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_ZUBAT"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_GEODUDE"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_MACHOP"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_ZUBAT"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_GEODUDE"
+      },
+      {
+        "min_level": 18,
+        "max_level": 18,
+        "species": "SPECIES_MACHOP"
+      },
+      {
+        "min_level": 20,
+        "max_level": 20,
+        "species": "SPECIES_GRAVELER"
+      },
+      {
+        "min_level": 19,
+        "max_level": 19,
+        "species": "SPECIES_RATICATE"
+      },
+      {
+        "min_level": 20,
+        "max_level": 20,
+        "species": "SPECIES_GOLBAT"
+      },
+      {
+        "min_level": 22,
+        "max_level": 22,
+        "species": "SPECIES_MACHOKE"
+      },
+      {
+        "min_level": 18,
+        "max_level": 18,
+        "species": "SPECIES_MARILL"
+      }
+    ]
+  }
+}

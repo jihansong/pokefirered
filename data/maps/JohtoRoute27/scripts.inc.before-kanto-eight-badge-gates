@@ -1,0 +1,33 @@
+JohtoRoute27_MapScripts::
+    .byte 0
+
+JohtoRoute27_LeagueWarden::
+    lock
+    faceplayer
+    goto_if_unset FLAG_SYS_GAME_CLEAR, JohtoRoute27_NotReady
+    goto_if_unset FLAG_JOHTO_BADGE08_GET, JohtoRoute27_NotReady
+    goto_if_unset FLAG_JOHTO_RADIO_TOWER_CLEARED, JohtoRoute27_NotReady
+    msgbox JohtoRoute27_Text_Ready
+    release
+    end
+JohtoRoute27_NotReady::
+    msgbox JohtoRoute27_Text_NotReady
+    release
+    end
+JohtoRoute27_LeagueGate::
+    lockall
+    goto_if_unset FLAG_SYS_GAME_CLEAR, JohtoRoute27_GateClosed
+    goto_if_unset FLAG_JOHTO_BADGE08_GET, JohtoRoute27_GateClosed
+    goto_if_unset FLAG_JOHTO_RADIO_TOWER_CLEARED, JohtoRoute27_GateClosed
+    setvar VAR_TEMP_0, 1
+    releaseall
+    end
+JohtoRoute27_GateClosed::
+    msgbox JohtoRoute27_Text_NotReady
+    applymovement LOCALID_PLAYER, JohtoRoute27_PushBack
+    waitmovement 0
+    releaseall
+    end
+JohtoRoute27_PushBack::
+    walk_left
+    step_end

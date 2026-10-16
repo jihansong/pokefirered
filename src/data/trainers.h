@@ -7576,5 +7576,15 @@ const struct Trainer gTrainers[] = {
 #include "trainers_hoenn.h"
 // END HOENN TRAINERS
 #include "trainers_tournament.h"
+#include "trainers_hoenn_story.h"
 #include "trainers_rocket.h"
+#include "trainers_johto.h"
+#include "trainers_johto_azalea.h"
+#include "trainers_johto_ilex.h"
+#include "trainers_johto_ecruteak.h"
+#include "trainers_johto_olivine.h"
+#include "trainers_johto_mahogany.h"
+#include "trainers_johto_radio_tower.h"
+#include "trainers_johto_blackthorn.h"
+#include "trainers_johto_league.h"
 };

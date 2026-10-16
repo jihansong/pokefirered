@@ -1,0 +1,262 @@
+{
+  "source_video_url": "https://www.youtube.com/watch?v=gF1FJRM8Wck",
+  "publisher_page": "https://soundsverse.com/pokemon-video-game/pokemon-red-and-blue/pikachu-voice",
+  "download_url": "https://soundsverse.com/wp-content/uploads/s/pokemon-video-game-pikachu-voice-sound-effect.zip",
+  "synthesized": false,
+  "title_integrated": true,
+  "auditioned": false,
+  "download_complete": true,
+  "final_download_url": "https://soundsverse.com/wp-content/uploads/s/pokemon-video-game-pikachu-voice-sound-effect.zip",
+  "archive_members": [
+    {
+      "name": "pokemon-video-game-pikachu-voice-sound-effect.m4r",
+      "bytes": 48490
+    },
+    {
+      "name": "pokemon-video-game-pikachu-voice-sound-effect.wav",
+      "bytes": 282436
+    }
+  ],
+  "finished_utc": "2026-10-04T13:29:39.925375+00:00",
+  "decode_verified": true,
+  "archive": {
+    "path": "reference/audio/pikachu-gF1FJRM8Wck/publisher-original.zip",
+    "bytes": 231523,
+    "sha256": "13d6f49f3e208573d9129378bdf8836d060fcdb9c73ea810526cda8921164d93"
+  },
+  "files": [
+    {
+      "path": "reference/audio/pikachu-gF1FJRM8Wck/publisher-original/pokemon-video-game-pikachu-voice-sound-effect.m4r",
+      "bytes": 48490,
+      "sha256": "65d5d5573b0492d7aac947675c3ab01840591cf20da9355ca72329b5cc9ed602",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "sample_fmt": "fltp",
+            "sample_rate": "44100",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "id": "0x1",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/44100",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 70560,
+            "duration": "1.600000",
+            "bit_rate": "233920",
+            "nb_frames": "70",
+            "extradata_size": 5,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "SoundHandler",
+              "vendor_id": "[0][0][0][0]"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/workspaces/pokefirered/reference/audio/pikachu-gF1FJRM8Wck/publisher-original/pokemon-video-game-pikachu-voice-sound-effect.m4r",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "1.624000",
+          "size": "48490",
+          "bit_rate": "238866",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2mp41",
+            "encoder": "Lavf57.41.100"
+          }
+        }
+      },
+      "full_decode_pass": true,
+      "unchanged_from_published_archive": true
+    },
+    {
+      "path": "reference/audio/pikachu-gF1FJRM8Wck/publisher-original/pokemon-video-game-pikachu-voice-sound-effect.wav",
+      "bytes": 282436,
+      "sha256": "10a2a254c12eed24a7e4d7a4db9ffff3f318ae20c17a5b15dbe53bbcf4c50734",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_s16le",
+            "codec_long_name": "PCM signed 16-bit little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[1][0][0][0]",
+            "codec_tag": "0x0001",
+            "sample_fmt": "s16",
+            "sample_rate": "44100",
+            "channels": 2,
+            "bits_per_sample": 16,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/44100",
+            "duration_ts": 70551,
+            "duration": "1.599796",
+            "bit_rate": "1411200",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "/workspaces/pokefirered/reference/audio/pikachu-gF1FJRM8Wck/publisher-original/pokemon-video-game-pikachu-voice-sound-effect.wav",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "format_name": "wav",
+          "format_long_name": "WAV / WAVE (Waveform Audio)",
+          "duration": "1.599796",
+          "size": "282436",
+          "bit_rate": "1412360",
+          "probe_score": 99,
+          "tags": {
+            "title": "Pokemon",
+            "artist": "Starter",
+            "comment": "converted by convert2mp3.net"
+          }
+        }
+      },
+      "full_decode_pass": true,
+      "unchanged_from_published_archive": true
+    },
+    {
+      "path": "reference/audio/pikachu-gF1FJRM8Wck/pikachu-original.mp3",
+      "bytes": 26942,
+      "sha256": "52562621f557eb17de5559b361e8509f062ee91e615bd738f7034c02c21ef2ec",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "mp3",
+            "codec_long_name": "MP3 (MPEG audio layer 3)",
+            "codec_type": "audio",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "sample_fmt": "fltp",
+            "sample_rate": "44100",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/14112000",
+            "start_pts": 353600,
+            "start_time": "0.025057",
+            "duration_ts": 23224320,
+            "duration": "1.645714",
+            "bit_rate": "130331",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0
+            },
+            "tags": {
+              "encoder": "Lavc59.37"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/workspaces/pokefirered/reference/audio/pikachu-gF1FJRM8Wck/pikachu-original.mp3",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "format_name": "mp3",
+          "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+          "start_time": "0.025057",
+          "duration": "1.645714",
+          "size": "26942",
+          "bit_rate": "130968",
+          "probe_score": 51,
+          "tags": {
+            "title": "Pokemon",
+            "artist": "Starter",
+            "comment": "converted by convert2mp3.net",
+            "encoder": "Lavf59.27.100"
+          }
+        }
+      },
+      "full_decode_pass": true,
+      "derived_from": "reference/audio/pikachu-gF1FJRM8Wck/publisher-original/pokemon-video-game-pikachu-voice-sound-effect.wav",
+      "trimmed": false,
+      "synthesized": false
+    }
+  ],
+  "selected_original_audio": "reference/audio/pikachu-gF1FJRM8Wck/publisher-original/pokemon-video-game-pikachu-voice-sound-effect.wav",
+  "selected_original_sha256": "10a2a254c12eed24a7e4d7a4db9ffff3f318ae20c17a5b15dbe53bbcf4c50734",
+  "mp3_audio": "reference/audio/pikachu-gF1FJRM8Wck/pikachu-original.mp3",
+  "decoded_11025_mono_samples": 17638,
+  "decoded_seconds": 1.5998185941043084,
+  "whole_voice_frames": 98,
+  "trimmed": false,
+  "native_title_voice_integrated": true,
+  "browser_start_voice_added": false,
+  "native_validation": "work/title-publisher-native-validation-20261004T133950Z/result.json",
+  "native_main_rom_sha256": "3eb1e7ce83bf4e47f06a3a10452becb4c2943df43540eec716682d46688a852b",
+  "native_Start_A_pass": true,
+  "original_saves_unchanged": true,
+  "original_reference_files_preserved": true,
+  "delta_device_tested": false,
+  "audio_auditioned": false,
+  "integration_scope": "Original voice only; latest title PNG/GIF visual ROM integration is a separate pending task"
+}

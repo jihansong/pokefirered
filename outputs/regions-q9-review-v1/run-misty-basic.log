@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/native_misty_basic_qa.py", line 119, in <module>
+    n=call(e,'CreateNPCTrainerParty',e.sym('gEnemyParty'),const('TRAINER_MISTY_COMPANION_STAGE%d'%stage))
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/native_misty_basic_qa.py", line 36, in call
+    raise AssertionError('native call did not return: '+name)
+AssertionError: native call did not return: CreateNPCTrainerParty

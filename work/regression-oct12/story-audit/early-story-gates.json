@@ -1,0 +1,38 @@
+[
+  {
+    "name": "native-after-fixed-position",
+    "exit_code": 0,
+    "seconds": 18.23,
+    "log": "work/regression-oct12/story-audit/native-after-fixed-position.log"
+  },
+  {
+    "name": "text-width",
+    "exit_code": 0,
+    "seconds": 0.11,
+    "log": "work/regression-oct12/story-audit/text-width.log"
+  },
+  {
+    "name": "text-audit",
+    "exit_code": 0,
+    "seconds": 5.73,
+    "log": "work/regression-oct12/story-audit/text-audit.log"
+  },
+  {
+    "name": "approved-assets-save-ABI",
+    "exit_code": 0,
+    "seconds": 1.53,
+    "log": "work/regression-oct12/story-audit/approved-assets-save-ABI.log"
+  },
+  {
+    "name": "save-compat-user",
+    "exit_code": 0,
+    "seconds": 14.79,
+    "log": "work/regression-oct12/story-audit/save-compat-user.log"
+  },
+  {
+    "name": "event-tool-before-comparison",
+    "exit_code": 1,
+    "seconds": 9.61,
+    "log": "work/regression-oct12/story-audit/event-tool-before-comparison.log"
+  }
+]

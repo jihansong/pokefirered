@@ -1,0 +1,545 @@
+{
+  "time": "20261005T165216322229Z",
+  "validation": {
+    "chapter": "Goldenrod, National Park and Ecruteak",
+    "save_layout_changed": false,
+    "native_build_and_emulator": "NOT_RUN_BY_GENERATOR",
+    "visual_limits": [
+      "Existing Kanto tiles and native character portraits are reused.",
+      "Burned Tower uses mansion interiors and a gym facade; the dance theater uses the native dojo.",
+      "Sudowoodo uses its unmodified native menu-icon pixels. Morty and Kimono girls use placeholder portraits."
+    ],
+    "not_implemented": [
+      "Johto gyms five through eight, Radio Tower takeover and Johto League",
+      "Bug-catching contest scheduling and rewards",
+      "Roaming legendary encounters after the tower scene"
+    ],
+    "new_maps": [
+      "GoldenrodCity_NorthGate",
+      "JohtoRoute35",
+      "JohtoRoute35_NationalParkGate",
+      "JohtoNationalPark",
+      "JohtoNationalPark_Route36Gate",
+      "JohtoRoute36",
+      "JohtoRoute37",
+      "EcruteakCity",
+      "EcruteakCity_PokemonCenter_1F",
+      "EcruteakCity_PokemonCenter_2F",
+      "EcruteakCity_Mart",
+      "EcruteakCity_DanceTheater",
+      "EcruteakCity_Gym",
+      "BurnedTower_1F",
+      "BurnedTower_B1F"
+    ],
+    "new_flags": {
+      "FLAG_JOHTO_BADGE04_GET": 19,
+      "FLAG_JOHTO_SQUIRTBOTTLE_RECEIVED": 29,
+      "FLAG_JOHTO_SUDOWOODO_CLEARED": 30,
+      "FLAG_JOHTO_BURNED_TOWER_INVESTIGATED": 31,
+      "FLAG_JOHTO_SILVER_BURNED_TOWER_DEFEATED": 32,
+      "FLAG_JOHTO_GOT_TM30_FROM_MORTY": 33,
+      "FLAG_JOHTO_DANCE_SURF_REWARDED": 34
+    },
+    "trainer_ids": {
+      "ARNIE": 806,
+      "IVAN": 807,
+      "KIMONO_NAOKO": 808,
+      "KIMONO_SAYO": 809,
+      "KIMONO_ZUKI": 810,
+      "KIMONO_KUNI": 811,
+      "KIMONO_MIKI": 812,
+      "SILVER_BURNED_TOWER": 813,
+      "PING": 814,
+      "GRACE": 815,
+      "MORTY": 816
+    },
+    "static_checks": [
+      {
+        "map": "GoldenrodCity_NorthGate",
+        "walkable_reachable": 100,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 780
+      },
+      {
+        "map": "JohtoRoute35",
+        "walkable_reachable": 614,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 1950
+      },
+      {
+        "map": "JohtoRoute35_NationalParkGate",
+        "walkable_reachable": 101,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 780
+      },
+      {
+        "map": "JohtoNationalPark",
+        "walkable_reachable": 997,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 2550
+      },
+      {
+        "map": "JohtoNationalPark_Route36Gate",
+        "walkable_reachable": 101,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 780
+      },
+      {
+        "map": "JohtoRoute36",
+        "walkable_reachable": 600,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 1938
+      },
+      {
+        "map": "JohtoRoute37",
+        "walkable_reachable": 415,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 1482
+      },
+      {
+        "map": "EcruteakCity",
+        "walkable_reachable": 1059,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 2750
+      },
+      {
+        "map": "EcruteakCity_PokemonCenter_1F",
+        "walkable_reachable": 84,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 720
+      },
+      {
+        "map": "EcruteakCity_PokemonCenter_2F",
+        "native_CableClub_layout": true
+      },
+      {
+        "map": "EcruteakCity_Mart",
+        "walkable_reachable": 40,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 598
+      },
+      {
+        "map": "EcruteakCity_DanceTheater",
+        "walkable_reachable": 116,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 840
+      },
+      {
+        "map": "EcruteakCity_Gym",
+        "walkable_reachable": 146,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 952
+      },
+      {
+        "map": "BurnedTower_1F",
+        "walkable_reachable": 415,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 1634
+      },
+      {
+        "map": "BurnedTower_B1F",
+        "walkable_reachable": 436,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 1634
+      }
+    ]
+  },
+  "files": {
+    "data/maps/map_groups.json": {
+      "before": "79c2fd24e826d383620111504fa4c733dfe5cd517be88076275bff3964b37bbd",
+      "after": "6ef46960a7c1b74e6e669c91209d9c7ea1d6f5aa8dd93b850463085e064b9139"
+    },
+    "data/layouts/GoldenrodCity_NorthGate/map.bin": {
+      "before": null,
+      "after": "7d70ccd81337746eaf2a9728f800998834e5227d144300b291d5154e54ce6c6d"
+    },
+    "data/layouts/GoldenrodCity_NorthGate/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/JohtoRoute35/map.bin": {
+      "before": null,
+      "after": "019376c6775da8830a1ac4aea6f8d3e04ae91727a007ad127bd17bae9ae7df7d"
+    },
+    "data/layouts/JohtoRoute35/border.bin": {
+      "before": null,
+      "after": "bd05db219b1304364f4d1c265db9cece1af50fb2332d9f39357fdc8d721dc449"
+    },
+    "data/layouts/JohtoRoute35_NationalParkGate/map.bin": {
+      "before": null,
+      "after": "7d70ccd81337746eaf2a9728f800998834e5227d144300b291d5154e54ce6c6d"
+    },
+    "data/layouts/JohtoRoute35_NationalParkGate/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/JohtoNationalPark/map.bin": {
+      "before": null,
+      "after": "5785c47be5d8301abb396dbb969e3c8c08ac5759114eb3fe76eb6dbe2c5bbf09"
+    },
+    "data/layouts/JohtoNationalPark/border.bin": {
+      "before": null,
+      "after": "bd05db219b1304364f4d1c265db9cece1af50fb2332d9f39357fdc8d721dc449"
+    },
+    "data/layouts/JohtoNationalPark_Route36Gate/map.bin": {
+      "before": null,
+      "after": "7d70ccd81337746eaf2a9728f800998834e5227d144300b291d5154e54ce6c6d"
+    },
+    "data/layouts/JohtoNationalPark_Route36Gate/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/JohtoRoute36/map.bin": {
+      "before": null,
+      "after": "f2b74744b8fd669b6021fddc4f37f19a2edfa350ddefcb0d50b29f8bb2524408"
+    },
+    "data/layouts/JohtoRoute36/border.bin": {
+      "before": null,
+      "after": "bd05db219b1304364f4d1c265db9cece1af50fb2332d9f39357fdc8d721dc449"
+    },
+    "data/layouts/JohtoRoute37/map.bin": {
+      "before": null,
+      "after": "6a9dffddde574777aaae0a961efc3ee753eb888d92339cc4a215c7c3ac031db6"
+    },
+    "data/layouts/JohtoRoute37/border.bin": {
+      "before": null,
+      "after": "bd05db219b1304364f4d1c265db9cece1af50fb2332d9f39357fdc8d721dc449"
+    },
+    "data/layouts/EcruteakCity/map.bin": {
+      "before": null,
+      "after": "5c1c768e8bae4cc46aa8b5d5ed606cbb89441e7faf7bd88fd597bd47f2c785a6"
+    },
+    "data/layouts/EcruteakCity/border.bin": {
+      "before": null,
+      "after": "bd05db219b1304364f4d1c265db9cece1af50fb2332d9f39357fdc8d721dc449"
+    },
+    "data/layouts/BurnedTower_1F/map.bin": {
+      "before": null,
+      "after": "cf3c79e9428177635be20905e405ce04f060788e8eef93f7e76b5e7ac19f6ae1"
+    },
+    "data/layouts/BurnedTower_1F/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/BurnedTower_B1F/map.bin": {
+      "before": null,
+      "after": "9cfa33d0506b3a81f49e8db3e0a0aa96cc5aaade948948e5471fdfc0b2fa2406"
+    },
+    "data/layouts/BurnedTower_B1F/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/layouts.json": {
+      "before": "9bfee3b9eef46f09584affbc68464f51538f83309c81d240bd6cfbf3c6d313e8",
+      "after": "b5d227f789a15daf8ae71bf7cfeaeb0ed47d0fa160f2c72a9ae9371fdbd43c5d"
+    },
+    "data/maps/GoldenrodCity_NorthGate/map.json": {
+      "before": null,
+      "after": "f726b3129e282770df294dd1dab42ade19de334c9eb3ddd7c972d3c478c8fc26"
+    },
+    "data/maps/GoldenrodCity_NorthGate/scripts.inc": {
+      "before": null,
+      "after": "067947cb802d68950933ddfc0963718eac17b3f3db4cf82b5438359263afbb4b"
+    },
+    "data/maps/GoldenrodCity_NorthGate/text.inc": {
+      "before": null,
+      "after": "7b3c7e0544a5c489d5fa43637863e8793d1929cfe10321dbdacff63cb5a5ee7e"
+    },
+    "data/maps/JohtoRoute35/map.json": {
+      "before": null,
+      "after": "196a6c0dc1c1e279395a85c71b0be9e1de4213033fc3573c612220d76dfa8979"
+    },
+    "data/maps/JohtoRoute35/scripts.inc": {
+      "before": null,
+      "after": "a81ac712de37ff3dde91757877b81467f8adcacc5c84ee75fa23d08ecfb1610e"
+    },
+    "data/maps/JohtoRoute35/text.inc": {
+      "before": null,
+      "after": "5c63509ee1f93f884cf6221b5cc6c3f443f9a3d12dbc5074bc65921622354e21"
+    },
+    "data/maps/JohtoRoute35_NationalParkGate/map.json": {
+      "before": null,
+      "after": "6ba8bc28c41665c48e113f9d90ea7131f1b51ef9887379401264bbb50beef31a"
+    },
+    "data/maps/JohtoRoute35_NationalParkGate/scripts.inc": {
+      "before": null,
+      "after": "79c60867e282ae11867348039012459d47fb78c567d575be162511ff55c5eacc"
+    },
+    "data/maps/JohtoRoute35_NationalParkGate/text.inc": {
+      "before": null,
+      "after": "4e221fd9909a8572852c49dbf8f0c4683c39c9386cb49b9b6a2cdf91316d1055"
+    },
+    "data/maps/JohtoNationalPark/map.json": {
+      "before": null,
+      "after": "4bab7ffa0d87787dfd30f3e23471d8cec9405e331461bafff6f1cd9a40952852"
+    },
+    "data/maps/JohtoNationalPark/scripts.inc": {
+      "before": null,
+      "after": "c4a400753eb2d32cd583ed1fa1eab2b90cb255b1893636f72f7b29e4cba1d13a"
+    },
+    "data/maps/JohtoNationalPark/text.inc": {
+      "before": null,
+      "after": "a65562c78132b38f24289195c462292fa343f106afc522d867f3111ec99249d0"
+    },
+    "data/maps/JohtoNationalPark_Route36Gate/map.json": {
+      "before": null,
+      "after": "0e2553eb4b9260987e645978b3ac1602b4f6273855e1b567f66e0e289755c315"
+    },
+    "data/maps/JohtoNationalPark_Route36Gate/scripts.inc": {
+      "before": null,
+      "after": "913d39df89626d355c79aac04e2baa63e5fa80d6b57587ef71de22a25d26c97e"
+    },
+    "data/maps/JohtoNationalPark_Route36Gate/text.inc": {
+      "before": null,
+      "after": "3c1102802d62a33cdcdca2fd9342a86633bee48a931ac1c93aedb8eb01931477"
+    },
+    "data/maps/JohtoRoute36/map.json": {
+      "before": null,
+      "after": "cd309f8f56ee36be0822d2e2be6fc4375bab672911aa6dc50c725087a10a4bcb"
+    },
+    "data/maps/JohtoRoute36/scripts.inc": {
+      "before": null,
+      "after": "18b5fe04c8a46c1f710276b79fc6846905c89d0daeff704e3962080206b2d328"
+    },
+    "data/maps/JohtoRoute36/text.inc": {
+      "before": null,
+      "after": "8b7eab2abe9981b94226c18615fa8ea2b0a422cd8b73716d45d00994ff3b71d6"
+    },
+    "data/maps/JohtoRoute37/map.json": {
+      "before": null,
+      "after": "cd551ffe78c4f2f52d3b7b7274cefc0763cfd6e267ef27b47bd937b073150ee9"
+    },
+    "data/maps/JohtoRoute37/scripts.inc": {
+      "before": null,
+      "after": "06e910b1d7b1dfefafb68e43949eb7dc84ee0b7c476dc02533f94ef81f527cb1"
+    },
+    "data/maps/JohtoRoute37/text.inc": {
+      "before": null,
+      "after": "566fe761a67f83f1e84b70802d0a84461e124ed7670246a77eaeff14af1ce51b"
+    },
+    "data/maps/EcruteakCity/map.json": {
+      "before": null,
+      "after": "f8221ae6f4beebf4287abeb451c94f86f9b582f8306af7c5dca2b9b9c6eda8ff"
+    },
+    "data/maps/EcruteakCity/scripts.inc": {
+      "before": null,
+      "after": "aed1d1ee4dd563cac0691df3caf913f585ecea51c3e697afba11376a55757f65"
+    },
+    "data/maps/EcruteakCity/text.inc": {
+      "before": null,
+      "after": "9ef3722368849e28ef4a3c134cd5c4558d9ff2a6cf495433ae6c93c1ec059cf8"
+    },
+    "data/maps/EcruteakCity_PokemonCenter_1F/map.json": {
+      "before": null,
+      "after": "2ff29cb1f01107b42afc5902257284de37e4d49e612188789a2b97cfec6874c3"
+    },
+    "data/maps/EcruteakCity_PokemonCenter_1F/scripts.inc": {
+      "before": null,
+      "after": "28b66c449426a48cc73bef6490eaa4e37acd5ebdfc460a1c8e49380398ec290b"
+    },
+    "data/maps/EcruteakCity_PokemonCenter_1F/text.inc": {
+      "before": null,
+      "after": "708a76309308b88d5ce0d4baa43e206a01b5aa0ef94f73ca746ee432edffb087"
+    },
+    "data/maps/EcruteakCity_PokemonCenter_2F/map.json": {
+      "before": null,
+      "after": "c1e0774600a47a01ce8aa07176243a72bc445d5bbf900bfa22528cc93ed04e70"
+    },
+    "data/maps/EcruteakCity_PokemonCenter_2F/scripts.inc": {
+      "before": null,
+      "after": "3e42fe2ddf109a398d94074a0bc0f5c4ec0b0f3f3a86ae37ea29bdd289021639"
+    },
+    "data/maps/EcruteakCity_PokemonCenter_2F/text.inc": {
+      "before": null,
+      "after": "a0dfac1bcbde46cdf6187847f339d03aab6f659d4eb7949c5f14b7614ce6be55"
+    },
+    "data/maps/EcruteakCity_Mart/map.json": {
+      "before": null,
+      "after": "607f3ddbee35d34664486b96cc5714db4c35180db653f354d11f91d9be0acd9c"
+    },
+    "data/maps/EcruteakCity_Mart/scripts.inc": {
+      "before": null,
+      "after": "7c18e6d77b7a41fc4047c92e49fcc42c09fd6570a1a01a8619147592a4b75cf1"
+    },
+    "data/maps/EcruteakCity_Mart/text.inc": {
+      "before": null,
+      "after": "0078210d975a526a4e97ec130f47e75ea4696d3a177d1bfb84515d348f8b4551"
+    },
+    "data/maps/EcruteakCity_DanceTheater/map.json": {
+      "before": null,
+      "after": "ff10d0aa9a54643d326516cd0dbcc1dfae59e9e0315348ac987b7f33391e062c"
+    },
+    "data/maps/EcruteakCity_DanceTheater/scripts.inc": {
+      "before": null,
+      "after": "a34fdd36ccd8b8392ce429f2b42233b59428688094e9aded677193b23056152f"
+    },
+    "data/maps/EcruteakCity_DanceTheater/text.inc": {
+      "before": null,
+      "after": "e2a1a3eb2910062b5e6a4d6b62c206134fe833f0bb5bb3830fc122e9b4c5c762"
+    },
+    "data/maps/EcruteakCity_Gym/map.json": {
+      "before": null,
+      "after": "38c2c56aa6ab1aa391d07d7883809481ca9df55d9c7dce7e5f65ff0701d09abc"
+    },
+    "data/maps/EcruteakCity_Gym/scripts.inc": {
+      "before": null,
+      "after": "459ab09c90ecda9dca31727b27206359b1ccd2258ac2a0e7f2e94d694b91d37f"
+    },
+    "data/maps/EcruteakCity_Gym/text.inc": {
+      "before": null,
+      "after": "e11d715eee1c673c5379db9a477384881542c3cf049bf1c21a067f207c03853a"
+    },
+    "data/maps/BurnedTower_1F/map.json": {
+      "before": null,
+      "after": "ce5f2f263cae39de5aa175341e5eb17d60a2e3058e4075339cf5205eab82ecf1"
+    },
+    "data/maps/BurnedTower_1F/scripts.inc": {
+      "before": null,
+      "after": "ba7f93e82ab45dec5d264432bfd4d483ac82d6d28caba4c07af8af8fda1af173"
+    },
+    "data/maps/BurnedTower_1F/text.inc": {
+      "before": null,
+      "after": "ce5f4ee5c3f8a54243d1d232f743a8e776c5b5d062e4153b34ad1bb3ffc8cee9"
+    },
+    "data/maps/BurnedTower_B1F/map.json": {
+      "before": null,
+      "after": "a34da6cc5ed04ee6cfa1569b70a2db01e553e4e0a35ce86c8e7b2d68ad753c74"
+    },
+    "data/maps/BurnedTower_B1F/scripts.inc": {
+      "before": null,
+      "after": "b1f1ebaed186a2a00963f3d93468a2d11fd89d8fdf49804544577d4c170d6502"
+    },
+    "data/maps/BurnedTower_B1F/text.inc": {
+      "before": null,
+      "after": "336f5fcfc782c60eaa4753fc418b5985c27061625f48a4687e46da880a367289"
+    },
+    "data/maps/GoldenrodCity/map.json": {
+      "before": "509b8d666673e92102fd365752d4b580c9c97cf3224d92c84a132a370af05d16",
+      "after": "a8211e5542a3af1bcc829ead840916d3bc3fa13069585c594873de060cd759d3"
+    },
+    "data/layouts/GoldenrodCity/map.bin": {
+      "before": "f38a07267662ebba54e0d00943ad4f72fd6f8ba5e8dfc6cc54be492b7e41d2f2",
+      "after": "7b55f7bb4164fc9ec4b8a974eabc913edbc818fecfa7285d7743f792d6230cd7"
+    },
+    "src/data/heal_locations.json": {
+      "before": "0898d9bd7cf9d1ea31c18b8f3f5b574a155fcdabf5f38069467bb2c27a2abd77",
+      "after": "8f10517e79bf97abe09962c00682a06d1e5cc4c44ee61fc77594d113a86fdcee"
+    },
+    "include/constants/flags_johto_story.h": {
+      "before": "64f7d39c43284e7362fbd658def6520376c9aa3eb5f71415a6b8b1366f7ef3c3",
+      "after": "269d95ea2c2738ae0d56fa331af10a2a97d1d993c620f1d72a71ae4ac49f4df1"
+    },
+    "include/constants/opponents_johto_ecruteak.h": {
+      "before": null,
+      "after": "9d6c7520d2facf3efbecedc63d7dc45ec32d20382f14a6d3c56f9e047abb9a5e"
+    },
+    "include/constants/opponents.h": {
+      "before": "8f83f72a9bb2559fb81c9408210a62f830cd84caf35d1d675fa44a6e5e33ba46",
+      "after": "7264df08f580285df9b724a7fce820312e01c831ac0f0549c803b6875d6af5a9"
+    },
+    "src/data/trainer_parties_johto_ecruteak.h": {
+      "before": null,
+      "after": "61de133d525c62c9e124a07a1b5aae366d452e3da73329f95cb397ce12aeac87"
+    },
+    "src/data/trainers_johto_ecruteak.h": {
+      "before": null,
+      "after": "59be9c598fc0306f054daa8e1bf8c1c2d68915549b4aba1c6492713adea61754"
+    },
+    "src/data/trainers.h": {
+      "before": "48668307c2d83d1ebfa96ca29ebb464fc7849345343ebdf0d92b956a52d618c3",
+      "after": "a4db8930ce0ad8af604d8acadf1b9ab8346d1c7a81feb4059ef45e809008eded"
+    },
+    "src/data/trainer_parties.h": {
+      "before": "d03ec0d7a771d7927f5fb82afd61f96e1bc07eb7fd94b9fd75f25a72c574af50",
+      "after": "9cd7ecfeacf2969fcbd96bb3a359a1573f271f83b24c4fbd9aef2825f49c2cdc"
+    },
+    "data/event_scripts.s": {
+      "before": "a013cec264446633eb50c02c10a7c805fe692a625c889a63385e4940c074d8a2",
+      "after": "e81bdff624d67121c33d7524ce2caa8d1656cc17f26042fcdca3f81b7d2bf8f9"
+    },
+    "tools/johto/build_ilex_goldenrod.py": {
+      "before": "0ec8aadd5544fc262b1d587352fd7bdb908e3edb8799ba067c1f9c888d9eeaad",
+      "after": "0d30f50e9f9d782fc21ef9a11f5c39e93be065d1d623e7b644c63cad08b22a44"
+    },
+    "tools/johto/johtoroute35_wild.json": {
+      "before": null,
+      "after": "3ce3983fd02efa81a6c94e638a7e715c75b945057a1f3eafba29f165ce7e55b3"
+    },
+    "tools/johto/johtonationalpark_wild.json": {
+      "before": null,
+      "after": "e10f639b879a1c1b770155eed906f5fda16ddd8158c627b274b3f42a19d98ea0"
+    },
+    "tools/johto/johtoroute36_wild.json": {
+      "before": null,
+      "after": "76c189e6389a5c08e4e63aa69fc749e5d538e08198d60cc639c5de496781358f"
+    },
+    "tools/johto/johtoroute37_wild.json": {
+      "before": null,
+      "after": "9a38ce3e3a58d18426834d50d4408c3d6a5a028d6d7289b10d6290487fb97466"
+    },
+    "tools/johto/burnedtower_1f_wild.json": {
+      "before": null,
+      "after": "8a6844f63be5de754bcf6054d8525136aec396d5ca2dafd1c046a3bf3bdd5f5a"
+    },
+    "tools/johto/burnedtower_b1f_wild.json": {
+      "before": null,
+      "after": "5c211df7e8887a82a7f29ae6134a0968ee47f463acbfb6ccf127c7604c48be0e"
+    },
+    "src/data/wild_encounters.json": {
+      "before": "9898a2ccaddb1c0157ed529692b9401e9b40a0cdd7b7d89409d2bcc197535056",
+      "after": "a33c6b848a6857a44bb2512bdc24e6ccac2e95c876ac419e02f1b3f1fefb7f74"
+    },
+    "src/data/region_map/region_map_sections.json": {
+      "before": "57f8d88eb6e75d7619994b779e36d29eb99a16fa2d7d6061707fcfdb0e3d0145",
+      "after": "2d3fb835321b191d4b51eacb966ee72d930de6c40d1a35196da23b81b714b1d3"
+    },
+    "src/region_map.c": {
+      "before": "4201798d00239568da439eb3d699756c18b090ba83431eb990b8e18e9412cbb5",
+      "after": "52f8b4b64c5b7ead65788ad4e7aacbc238f5336f2dd5e8b58aa9d57dbfb6d85c"
+    },
+    "src/pokemon_summary_screen.c": {
+      "before": "646063237ae4d17c107c45d89b4aa0477a7ad111971b6307806d2752d68f042c",
+      "after": "b7226d50408d6656a56d7b895e294d190d8afbb81578710267ba515c05fccb8f"
+    },
+    "graphics/region_map/johto_entry.bin": {
+      "before": "69755847ae86a2df9a8db2b1e993f6e4e51d527633631896e9a106e3fb7ae95a",
+      "after": "6955abad2ad26a3f55adce70aa0448e69e4e2b2c429ff4b879035d0749fb7965"
+    },
+    "src/wild_pokemon_area.c": {
+      "before": "debdf61c5711275ce4d750a6ec20f6e3e8b5ae25946b95859d5d979d00f95ad8",
+      "after": "932bc35301a5b6ad792c97cb255636b371e8bbbcc3d9b41c8cd4b4f5317e13a3"
+    },
+    "include/pokedex_area_markers.h": {
+      "before": "e12e6f9a78567939870231f1b148cb3383a571cacee88d991c984dad3999221c",
+      "after": "b53374c6c8c68f8ae7dc7c3a9b3dc163f79fee1c67ef57dccfc982cc9b1a74c4"
+    },
+    "src/pokedex_area_markers.c": {
+      "before": "6c8efb3eb8aee230e4233edd18b5e7a4727a62dbbe25dfbb8c7e4bbaff73f498",
+      "after": "a73636ea2cc9f0ea2bb981d537b31268f4ce664a69095e5e6874a86a20deaa9a"
+    },
+    "src/pokedex_screen.c": {
+      "before": "27990d4639c0d723d76537dabbc3e9f29148147b498023f3c67b0e1e4c0ea3a8",
+      "after": "60ebc9cfb42e93f6c75ab05c939fb6ef254fa6b5b7222886662dc0b1b7c7d0dc"
+    },
+    "include/constants/event_objects.h": {
+      "before": "905698ff7de03e2f18feaf31dfb7de33a92d52e79b2d853856ca794aa7f5d271",
+      "after": "6176d1e7aa38e6a62aa45dbd4acd1af989f0b66981aaa7518ad3e2fd4d0cf388"
+    },
+    "src/event_object_movement.c": {
+      "before": "721d4bf83af7de86c2b6d3dc800345110841eb7c849be0439d226930301b9ccc",
+      "after": "241a15df4e9977c0fb3a8e84507623476470f18de0a1862a8457bb96fbf6a420"
+    },
+    "src/data/object_events/object_event_pic_tables.h": {
+      "before": "12b1895923c664022ec8d89fd663e77e4d33e031bdb8a7ad0aafb777a7e11a9e",
+      "after": "6fd641a20ce078ceb76c6eabbd32e0e857d5c3e2390401b5f8557b57cd75477b"
+    },
+    "src/data/object_events/object_event_graphics_info.h": {
+      "before": "caec1f839cfe660f29092d7b0d1974d6d7aff25db81401ac44a6cdeedc4216f5",
+      "after": "3ad811286be7b006589bcfa69f4d8db90007735190bd24fe2a45ae4c31615706"
+    },
+    "src/data/object_events/object_event_graphics_info_pointers.h": {
+      "before": "5c6329c5727b5ec64ddc5519a2cedd45868a80c01116f436ac3c782593a60bd9",
+      "after": "09119ab7961671f59494973db80c5b9440fea42fb7cd9f915e8e6a5a96d2fded"
+    }
+  }
+}

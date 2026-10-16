@@ -1,0 +1,102 @@
+{
+  "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+  "cases": [
+    {
+      "case": "johto-on-a",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "johto-on-menu",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "johto-off-a",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "johto-off-menu",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "johto-foreign-a",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "johto-foreign-menu",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "kanto-on-a",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "kanto-on-menu",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "kanto-off-a",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "kanto-off-menu",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "kanto-foreign-a",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "kanto-foreign-menu",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "hoenn-on-a",
+      "exit": 0,
+      "pass": true,
+      "result": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/surf-hoenn-verified-on-a/validation.json"
+    },
+    {
+      "case": "hoenn-on-menu",
+      "exit": 0,
+      "pass": true,
+      "result": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/surf-hoenn-verified-on-menu/validation.json"
+    },
+    {
+      "case": "hoenn-off-a",
+      "exit": 0,
+      "pass": true,
+      "result": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/surf-hoenn-verified-off-a/validation.json"
+    },
+    {
+      "case": "hoenn-off-menu",
+      "exit": 0,
+      "pass": true,
+      "result": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/surf-hoenn-verified-off-menu/validation.json"
+    },
+    {
+      "case": "hoenn-foreign-a",
+      "exit": 0,
+      "pass": true,
+      "result": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/surf-hoenn-verified-foreign-a/validation.json"
+    },
+    {
+      "case": "hoenn-foreign-menu",
+      "exit": 0,
+      "pass": true,
+      "result": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/surf-hoenn-verified-foreign-menu/validation.json"
+    }
+  ],
+  "all_pass": true
+}

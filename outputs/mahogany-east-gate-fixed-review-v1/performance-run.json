@@ -1,0 +1,15 @@
+{
+  "steps": [
+    {
+      "step": "fixture",
+      "exit": 0
+    },
+    {
+      "step": "measurement",
+      "exit": 0
+    }
+  ],
+  "pass": true,
+  "original_files_unchanged": true,
+  "actual_delta_device_fps_measured": false
+}

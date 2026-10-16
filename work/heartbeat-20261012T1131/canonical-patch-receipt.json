@@ -1,0 +1,12 @@
+{
+  "canonical_patch_paths": [
+    "tools/hoenn_import/patches/Route114.scripts.inc",
+    "tools/hoenn_import/patches/Route114.text.inc"
+  ],
+  "apply_twice_identical": true,
+  "generated_sha256": {
+    "data/maps/Route114/scripts.inc": "b4180956e9adb205a01036a134c389a85cedf6d6c4bafa56203fda775d25c0ff",
+    "data/maps/Route114/text.inc": "96bc2e08f063934025cc4e0c82c931ae3795ad725a7437841ff2fa48bca5fe57"
+  },
+  "all_other_modified_sources_unchanged": true
+}

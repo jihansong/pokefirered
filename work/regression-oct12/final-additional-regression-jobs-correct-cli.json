@@ -1,0 +1,37 @@
+[
+  {
+    "script": "native_cold_nurse_regression_qa.py",
+    "pid": 52594,
+    "command": [
+      "python3",
+      "/workspaces/pokefirered/tools/qa/native_cold_nurse_regression_qa.py",
+      "/workspaces/pokefirered/tools/qa/johto_violet_native_bootstrap_v1.py",
+      "--rom",
+      "/workspaces/pokefirered/work/regression-oct12/final-candidate/pokemonthyl-oct12-repair.gba",
+      "--elf",
+      "/workspaces/pokefirered/work/regression-oct12/final-candidate/pokemonthyl-oct12-repair.elf",
+      "--sav",
+      "/workspaces/pokefirered/saves/pokemonthyl_v1.2.sav",
+      "--out",
+      "/workspaces/pokefirered/work/regression-oct12/final-cold-nurse-correct-cli"
+    ]
+  },
+  {
+    "script": "native_johto_tohjo_route_qa.py",
+    "pid": 52595,
+    "command": [
+      "python3",
+      "/workspaces/pokefirered/tools/qa/native_johto_tohjo_route_qa.py",
+      "--rom",
+      "/workspaces/pokefirered/work/regression-oct12/final-candidate/pokemonthyl-oct12-repair.gba",
+      "--elf",
+      "/workspaces/pokefirered/work/regression-oct12/final-candidate/pokemonthyl-oct12-repair.elf",
+      "--sav",
+      "/workspaces/pokefirered/saves/pokemonthyl_v1.2.sav",
+      "--out",
+      "/workspaces/pokefirered/work/regression-oct12/final-tohjo-native-correct-cli",
+      "--case",
+      "a"
+    ]
+  }
+]

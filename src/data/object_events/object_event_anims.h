@@ -1331,3 +1331,273 @@ static const struct StepAnimTable sStepAnimTables[] = {
     },
     {}
 };
+
+// BEGIN THUNDER YELLOW ORIGINAL HOENN LEGENDS
+static const union AnimCmd sThunderLegend_sAnim_FaceEast[] =
+{
+    ANIMCMD_FRAME(2, 16, .hFlip = TRUE),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_FaceNorth[] =
+{
+    ANIMCMD_FRAME(1, 16),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_FaceSouth[] =
+{
+    ANIMCMD_FRAME(0, 16),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_FaceWest[] =
+{
+    ANIMCMD_FRAME(2, 16),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_GoEast[] =
+{
+    ANIMCMD_FRAME(7, 8, .hFlip = TRUE),
+    ANIMCMD_FRAME(2, 8, .hFlip = TRUE),
+    ANIMCMD_FRAME(8, 8, .hFlip = TRUE),
+    ANIMCMD_FRAME(2, 8, .hFlip = TRUE),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_GoFastEast[] =
+{
+    ANIMCMD_FRAME(7, 4, .hFlip = TRUE),
+    ANIMCMD_FRAME(2, 4, .hFlip = TRUE),
+    ANIMCMD_FRAME(8, 4, .hFlip = TRUE),
+    ANIMCMD_FRAME(2, 4, .hFlip = TRUE),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_GoFastNorth[] =
+{
+    ANIMCMD_FRAME(5, 4),
+    ANIMCMD_FRAME(1, 4),
+    ANIMCMD_FRAME(6, 4),
+    ANIMCMD_FRAME(1, 4),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_GoFastSouth[] =
+{
+    ANIMCMD_FRAME(3, 4),
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_FRAME(4, 4),
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_GoFastWest[] =
+{
+    ANIMCMD_FRAME(7, 4),
+    ANIMCMD_FRAME(2, 4),
+    ANIMCMD_FRAME(8, 4),
+    ANIMCMD_FRAME(2, 4),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_GoFasterEast[] =
+{
+    ANIMCMD_FRAME(7, 2, .hFlip = TRUE),
+    ANIMCMD_FRAME(2, 2, .hFlip = TRUE),
+    ANIMCMD_FRAME(8, 2, .hFlip = TRUE),
+    ANIMCMD_FRAME(2, 2, .hFlip = TRUE),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_GoFasterNorth[] =
+{
+    ANIMCMD_FRAME(5, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_FRAME(6, 2),
+    ANIMCMD_FRAME(1, 2),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_GoFasterSouth[] =
+{
+    ANIMCMD_FRAME(3, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_FRAME(4, 2),
+    ANIMCMD_FRAME(0, 2),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_GoFasterWest[] =
+{
+    ANIMCMD_FRAME(7, 2),
+    ANIMCMD_FRAME(2, 2),
+    ANIMCMD_FRAME(8, 2),
+    ANIMCMD_FRAME(2, 2),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_GoFastestEast[] =
+{
+    ANIMCMD_FRAME(7, 1, .hFlip = TRUE),
+    ANIMCMD_FRAME(2, 1, .hFlip = TRUE),
+    ANIMCMD_FRAME(8, 1, .hFlip = TRUE),
+    ANIMCMD_FRAME(2, 1, .hFlip = TRUE),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_GoFastestNorth[] =
+{
+    ANIMCMD_FRAME(5, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(6, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_GoFastestSouth[] =
+{
+    ANIMCMD_FRAME(3, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(4, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_GoFastestWest[] =
+{
+    ANIMCMD_FRAME(7, 1),
+    ANIMCMD_FRAME(2, 1),
+    ANIMCMD_FRAME(8, 1),
+    ANIMCMD_FRAME(2, 1),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_GoNorth[] =
+{
+    ANIMCMD_FRAME(5, 8),
+    ANIMCMD_FRAME(1, 8),
+    ANIMCMD_FRAME(6, 8),
+    ANIMCMD_FRAME(1, 8),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_GoSouth[] =
+{
+    ANIMCMD_FRAME(3, 8),
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(4, 8),
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_GoWest[] =
+{
+    ANIMCMD_FRAME(7, 8),
+    ANIMCMD_FRAME(2, 8),
+    ANIMCMD_FRAME(8, 8),
+    ANIMCMD_FRAME(2, 8),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd *const sThunderLegend_sAnimTable_Standard[] = {
+    [ANIM_STD_FACE_SOUTH] = sThunderLegend_sAnim_FaceSouth,
+    [ANIM_STD_FACE_NORTH] = sThunderLegend_sAnim_FaceNorth,
+    [ANIM_STD_FACE_WEST] = sThunderLegend_sAnim_FaceWest,
+    [ANIM_STD_FACE_EAST] = sThunderLegend_sAnim_FaceEast,
+    [ANIM_STD_GO_SOUTH] = sThunderLegend_sAnim_GoSouth,
+    [ANIM_STD_GO_NORTH] = sThunderLegend_sAnim_GoNorth,
+    [ANIM_STD_GO_WEST] = sThunderLegend_sAnim_GoWest,
+    [ANIM_STD_GO_EAST] = sThunderLegend_sAnim_GoEast,
+    [ANIM_STD_GO_FAST_SOUTH] = sThunderLegend_sAnim_GoFastSouth,
+    [ANIM_STD_GO_FAST_NORTH] = sThunderLegend_sAnim_GoFastNorth,
+    [ANIM_STD_GO_FAST_WEST] = sThunderLegend_sAnim_GoFastWest,
+    [ANIM_STD_GO_FAST_EAST] = sThunderLegend_sAnim_GoFastEast,
+    [ANIM_STD_GO_FASTER_SOUTH] = sThunderLegend_sAnim_GoFasterSouth,
+    [ANIM_STD_GO_FASTER_NORTH] = sThunderLegend_sAnim_GoFasterNorth,
+    [ANIM_STD_GO_FASTER_WEST] = sThunderLegend_sAnim_GoFasterWest,
+    [ANIM_STD_GO_FASTER_EAST] = sThunderLegend_sAnim_GoFasterEast,
+    [ANIM_STD_GO_FASTEST_SOUTH] = sThunderLegend_sAnim_GoFastestSouth,
+    [ANIM_STD_GO_FASTEST_NORTH] = sThunderLegend_sAnim_GoFastestNorth,
+    [ANIM_STD_GO_FASTEST_WEST] = sThunderLegend_sAnim_GoFastestWest,
+    [ANIM_STD_GO_FASTEST_EAST] = sThunderLegend_sAnim_GoFastestEast,
+};
+
+static const union AnimCmd sThunderLegend_sAnim_RayquazaCoiledAsleep[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_RayquazaCoiledAwake[] =
+{
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_RayquazaCoiledMouthOpen[] =
+{
+    ANIMCMD_FRAME(2, 1),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_RayquazaFaceEast[] =
+{
+    ANIMCMD_FRAME(3, 1),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_RayquazaFaceNorth[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_RayquazaFaceSouth[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_RayquazaFaceWest[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_RayquazaFlyUp[] =
+{
+    ANIMCMD_FRAME(4, 1),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sThunderLegend_sAnim_RayquazaNormal[] =
+{
+    ANIMCMD_FRAME(3, 1),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd *const sThunderLegend_sAnimTable_Rayquaza[] = {
+    [ANIM_STD_FACE_SOUTH] = sThunderLegend_sAnim_RayquazaFaceSouth,
+    [ANIM_STD_FACE_NORTH] = sThunderLegend_sAnim_RayquazaFaceNorth,
+    [ANIM_STD_FACE_WEST] = sThunderLegend_sAnim_RayquazaFaceWest,
+    [ANIM_STD_FACE_EAST] = sThunderLegend_sAnim_RayquazaFaceEast,
+    [ANIM_STD_GO_SOUTH] = sThunderLegend_sAnim_RayquazaCoiledAsleep,
+    [ANIM_STD_GO_NORTH] = sThunderLegend_sAnim_RayquazaFlyUp,
+    [ANIM_STD_GO_WEST] = sThunderLegend_sAnim_RayquazaCoiledMouthOpen,
+    [ANIM_STD_GO_EAST] = sThunderLegend_sAnim_RayquazaNormal,
+    [ANIM_STD_GO_FAST_SOUTH] = sThunderLegend_sAnim_RayquazaCoiledAsleep,
+    [ANIM_STD_GO_FAST_NORTH] = sThunderLegend_sAnim_RayquazaFlyUp,
+    [ANIM_STD_GO_FAST_WEST] = sThunderLegend_sAnim_RayquazaCoiledAwake,
+    [ANIM_STD_GO_FAST_EAST] = sThunderLegend_sAnim_RayquazaNormal,
+    [ANIM_STD_GO_FASTER_SOUTH] = sThunderLegend_sAnim_RayquazaCoiledAsleep,
+    [ANIM_STD_GO_FASTER_NORTH] = sThunderLegend_sAnim_RayquazaFlyUp,
+    [ANIM_STD_GO_FASTER_WEST] = sThunderLegend_sAnim_RayquazaCoiledMouthOpen,
+    [ANIM_STD_GO_FASTER_EAST] = sThunderLegend_sAnim_RayquazaNormal,
+    [ANIM_STD_GO_FASTEST_SOUTH] = sThunderLegend_sAnim_RayquazaCoiledAsleep,
+    [ANIM_STD_GO_FASTEST_NORTH] = sThunderLegend_sAnim_RayquazaFlyUp,
+    [ANIM_STD_GO_FASTEST_WEST] = sThunderLegend_sAnim_RayquazaCoiledMouthOpen,
+    [ANIM_STD_GO_FASTEST_EAST] = sThunderLegend_sAnim_RayquazaNormal,
+};
+// END THUNDER YELLOW ORIGINAL HOENN LEGENDS

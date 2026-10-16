@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-integrated-qa-r1/native_misty_walk_qa_r5.py", line 32, in <module>
+    assert H(verifier_path.read_bytes())=='40647f774f3e470ffc29b29f82ef2fb188c0473d983f87f72d6d7e3d1642c200'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object is not callable

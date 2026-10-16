@@ -1,0 +1,319 @@
+{
+  "base_save": "/workspaces/pokefirered/saves/hoenn.sav",
+  "base_save_sha256_before": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+  "coordinate": [
+    6,
+    6
+  ],
+  "frames_after_overworld_boot": 300,
+  "runs": {
+    "before": {
+      "active": {
+        "rom": "/tmp/codex-resume-lavender/before/pokemonthyl.gba",
+        "rom_sha256": "08fb87997d82c9cc22ee0f788901e9c75109cade70d9352af02d72659fb7a618",
+        "sym": "/tmp/codex-resume-lavender/before/pokemonthyl.sym",
+        "sym_sha256": "615804658b06eb1ff87d0d35b581b084133cda6a5c7134c98be4249befd0cf85",
+        "boot_frames": 2846,
+        "sample_after_boot_frames": 300,
+        "sample_absolute_frame": 3146,
+        "location": [
+          3,
+          4,
+          6,
+          6
+        ],
+        "syndrome_state": 1,
+        "syndrome_tasks": [
+          {
+            "id": 4,
+            "priority": 80,
+            "data": [
+              768,
+              2659,
+              5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "callback2": 134574493,
+        "registers": {
+          "io_bus_reads": {
+            "DISPCNT": 32608,
+            "WIN0H": 48129,
+            "WIN0V": 48129,
+            "WININ": 31,
+            "WINOUT": 63,
+            "BLDCNT": 255,
+            "BLDY": 48129
+          },
+          "gpu_shadow": {
+            "DISPCNT": 32608,
+            "WIN0H": 3300,
+            "WIN0V": 2200,
+            "WININ": 31,
+            "WINOUT": 63,
+            "BLDCNT": 255,
+            "BLDY": 5
+          },
+          "io_note": "WIN0H/V and BLDY are write-only on GBA; bus reads may be open bus, not configured values."
+        },
+        "screenshot": "/tmp/codex-resume-lavender/verification/before-active.png",
+        "screenshot_sha256": "83e8c1ffb023c0b0cdebbdc6f5cfb609d2b76655cd3961336771f8076875e93a"
+      },
+      "cleansed": {
+        "rom": "/tmp/codex-resume-lavender/before/pokemonthyl.gba",
+        "rom_sha256": "08fb87997d82c9cc22ee0f788901e9c75109cade70d9352af02d72659fb7a618",
+        "sym": "/tmp/codex-resume-lavender/before/pokemonthyl.sym",
+        "sym_sha256": "615804658b06eb1ff87d0d35b581b084133cda6a5c7134c98be4249befd0cf85",
+        "boot_frames": 2846,
+        "sample_after_boot_frames": 300,
+        "sample_absolute_frame": 3146,
+        "location": [
+          3,
+          4,
+          6,
+          6
+        ],
+        "syndrome_state": 2,
+        "syndrome_tasks": [],
+        "callback2": 134574493,
+        "registers": {
+          "io_bus_reads": {
+            "DISPCNT": 32608,
+            "WIN0H": 7192,
+            "WIN0V": 7192,
+            "WININ": 7967,
+            "WINOUT": 257,
+            "BLDCNT": 7744,
+            "BLDY": 7192
+          },
+          "gpu_shadow": {
+            "DISPCNT": 32608,
+            "WIN0H": 255,
+            "WIN0V": 255,
+            "WININ": 7967,
+            "WINOUT": 257,
+            "BLDCNT": 7744,
+            "BLDY": 7
+          },
+          "io_note": "WIN0H/V and BLDY are write-only on GBA; bus reads may be open bus, not configured values."
+        },
+        "screenshot": "/tmp/codex-resume-lavender/verification/before-cleansed.png",
+        "screenshot_sha256": "05e2136312cc723578c21c30869fbb563d4222d60117d13393e3cc15bc21186f"
+      }
+    },
+    "after": {
+      "active": {
+        "rom": "/workspaces/pokefirered/pokemonthyl.gba",
+        "rom_sha256": "2076680c457e37ec7d2e9a4fa8d525b0e10f9b14b8a3ceb3cb537512a685854e",
+        "sym": "/workspaces/pokefirered/pokemonthyl.sym",
+        "sym_sha256": "f56b13ce30c9bd48a655ecbb2456d4d8de7dfeeaf2051939f1b19fc3d675e6bd",
+        "boot_frames": 2846,
+        "sample_after_boot_frames": 300,
+        "sample_absolute_frame": 3146,
+        "location": [
+          3,
+          4,
+          6,
+          6
+        ],
+        "syndrome_state": 1,
+        "syndrome_tasks": [
+          {
+            "id": 4,
+            "priority": 80,
+            "data": [
+              768,
+              2659,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "callback2": 134574493,
+        "registers": {
+          "io_bus_reads": {
+            "DISPCNT": 32608,
+            "WIN0H": 48129,
+            "WIN0V": 48129,
+            "WININ": 7967,
+            "WINOUT": 257,
+            "BLDCNT": 7744,
+            "BLDY": 48129
+          },
+          "gpu_shadow": {
+            "DISPCNT": 32608,
+            "WIN0H": 255,
+            "WIN0V": 255,
+            "WININ": 7967,
+            "WINOUT": 257,
+            "BLDCNT": 7744,
+            "BLDY": 7
+          },
+          "io_note": "WIN0H/V and BLDY are write-only on GBA; bus reads may be open bus, not configured values."
+        },
+        "screenshot": "/tmp/codex-resume-lavender/verification/after-active.png",
+        "screenshot_sha256": "05e2136312cc723578c21c30869fbb563d4222d60117d13393e3cc15bc21186f"
+      },
+      "cleansed": {
+        "rom": "/workspaces/pokefirered/pokemonthyl.gba",
+        "rom_sha256": "2076680c457e37ec7d2e9a4fa8d525b0e10f9b14b8a3ceb3cb537512a685854e",
+        "sym": "/workspaces/pokefirered/pokemonthyl.sym",
+        "sym_sha256": "f56b13ce30c9bd48a655ecbb2456d4d8de7dfeeaf2051939f1b19fc3d675e6bd",
+        "boot_frames": 2846,
+        "sample_after_boot_frames": 300,
+        "sample_absolute_frame": 3146,
+        "location": [
+          3,
+          4,
+          6,
+          6
+        ],
+        "syndrome_state": 2,
+        "syndrome_tasks": [],
+        "callback2": 134574493,
+        "registers": {
+          "io_bus_reads": {
+            "DISPCNT": 32608,
+            "WIN0H": 7192,
+            "WIN0V": 7192,
+            "WININ": 7967,
+            "WINOUT": 257,
+            "BLDCNT": 7744,
+            "BLDY": 7192
+          },
+          "gpu_shadow": {
+            "DISPCNT": 32608,
+            "WIN0H": 255,
+            "WIN0V": 255,
+            "WININ": 7967,
+            "WINOUT": 257,
+            "BLDCNT": 7744,
+            "BLDY": 7
+          },
+          "io_note": "WIN0H/V and BLDY are write-only on GBA; bus reads may be open bus, not configured values."
+        },
+        "screenshot": "/tmp/codex-resume-lavender/verification/after-cleansed.png",
+        "screenshot_sha256": "05e2136312cc723578c21c30869fbb563d4222d60117d13393e3cc15bc21186f"
+      }
+    }
+  },
+  "comparisons": {
+    "before": {
+      "border": {
+        "pixels": 7296,
+        "mean_absolute_rgb_difference": 50.67046,
+        "mean_active_darkening": 50.67046,
+        "fraction_difference_over_8": 1.0
+      },
+      "interior": {
+        "pixels": 31104,
+        "mean_absolute_rgb_difference": 0.0,
+        "mean_active_darkening": 0.0,
+        "fraction_difference_over_8": 0.0
+      },
+      "left": {
+        "pixels": 1920,
+        "mean_absolute_rgb_difference": 54.42882,
+        "mean_active_darkening": 54.42882,
+        "fraction_difference_over_8": 1.0
+      },
+      "right": {
+        "pixels": 1920,
+        "mean_absolute_rgb_difference": 47.40226,
+        "mean_active_darkening": 47.40226,
+        "fraction_difference_over_8": 1.0
+      },
+      "top": {
+        "pixels": 1920,
+        "mean_absolute_rgb_difference": 52.04705,
+        "mean_active_darkening": 52.04705,
+        "fraction_difference_over_8": 1.0
+      },
+      "bottom": {
+        "pixels": 1920,
+        "mean_absolute_rgb_difference": 49.42674,
+        "mean_active_darkening": 49.42674,
+        "fraction_difference_over_8": 1.0
+      },
+      "border_minus_interior_abs_difference": 50.67046
+    },
+    "after": {
+      "border": {
+        "pixels": 7296,
+        "mean_absolute_rgb_difference": 0.0,
+        "mean_active_darkening": 0.0,
+        "fraction_difference_over_8": 0.0
+      },
+      "interior": {
+        "pixels": 31104,
+        "mean_absolute_rgb_difference": 0.0,
+        "mean_active_darkening": 0.0,
+        "fraction_difference_over_8": 0.0
+      },
+      "left": {
+        "pixels": 1920,
+        "mean_absolute_rgb_difference": 0.0,
+        "mean_active_darkening": 0.0,
+        "fraction_difference_over_8": 0.0
+      },
+      "right": {
+        "pixels": 1920,
+        "mean_absolute_rgb_difference": 0.0,
+        "mean_active_darkening": 0.0,
+        "fraction_difference_over_8": 0.0
+      },
+      "top": {
+        "pixels": 1920,
+        "mean_absolute_rgb_difference": 0.0,
+        "mean_active_darkening": 0.0,
+        "fraction_difference_over_8": 0.0
+      },
+      "bottom": {
+        "pixels": 1920,
+        "mean_absolute_rgb_difference": 0.0,
+        "mean_active_darkening": 0.0,
+        "fraction_difference_over_8": 0.0
+      },
+      "border_minus_interior_abs_difference": 0.0
+    }
+  },
+  "checks": {
+    "after_no_legacy_rectangular_mask": true,
+    "after_gpu_state_matches_cleansed": true,
+    "after_border_mean_pixel_difference_under_2": true,
+    "after_border_darkening_under_2": true,
+    "baseline_reproduces_register_signature": true,
+    "baseline_has_broad_dark_border": true,
+    "original_save_unchanged": true
+  },
+  "errors": [],
+  "scope": "Stationary Lavender active/cleansed visual regression only. Does not test dialogue, menus, departure, purification cutscene, or audio.",
+  "safety": "Base save is copied before savedit receives any path; savedit always receives explicit -o; Emu makes another private save copy.",
+  "base_save_sha256_after": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+  "pass": true
+}

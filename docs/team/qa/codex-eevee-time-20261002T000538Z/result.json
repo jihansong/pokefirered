@@ -1,0 +1,148 @@
+{
+  "head": "658baf740cff568cba7f3300f688b8a626e6f5fc",
+  "game_patch_applied": false,
+  "build_performed": false,
+  "cases": [
+    {
+      "name": "eevee_boundary_0359",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_boundary_0400",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_boundary_0437",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_boundary_0959",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_boundary_1000",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_boundary_1337",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_boundary_1959",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_boundary_2000",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_boundary_2037",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_boundary_2359",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_boundary_0000",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_boundary_0247",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_live_0617",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_live_1543",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_live_2229",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_live_0141",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_friendship_182_1337",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_everstone_1337",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_friendship_182_2237",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_everstone_2237",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_national_dex_flag_set",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_battle_1337",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "eevee_battle_2237",
+      "pass": true,
+      "failures": []
+    }
+  ],
+  "rom_sha256": "9bb028a8be683993bdd49b3494953383111116750d5d90ae5b4f3ac5decf007a",
+  "clock_test_method": "12 boundary + 5 condition tests freeze play counter in disposable emulator RAM; 6 off-hour/battle cases use a live virtual clock",
+  "real_rtc_hardware_tested": false,
+  "complete": true,
+  "regressions": {
+    "evolution": {
+      "exit": 0,
+      "reused": true,
+      "evidence_directory": "/workspaces/pokefirered/docs/team/qa/codex-eevee-time-20261001T235431Z",
+      "evidence_sha256": "24350e2b57c9b263c9c7c259bff74b6ef8d825eea8a216cd0922415462c081d5",
+      "summary": "13/13 cases passed"
+    },
+    "clock": {
+      "exit": 0,
+      "reused": true,
+      "evidence_directory": "/workspaces/pokefirered/docs/team/qa/codex-eevee-time-20261001T235431Z",
+      "evidence_sha256": "13337f59691ce6874a6ff74bb6da911b7247fee0e79393aa91fb466155e184d4",
+      "summary": "5/5 cases passed"
+    }
+  },
+  "original_saves_unchanged": true,
+  "protected_sources_unchanged": true,
+  "rom_unchanged": true,
+  "passed": 23,
+  "total": 23,
+  "verified": true
+}

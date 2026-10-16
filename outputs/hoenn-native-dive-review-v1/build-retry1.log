@@ -1,0 +1,15 @@
+tools/scaninc/scaninc -M build/titlev8qa/src/field_control_avatar.d -I include -I tools/agbcc/include src/field_control_avatar.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_effect.o src/field_effect.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_fadetransition.o src/field_fadetransition.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/fieldmap.o src/fieldmap.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_message_box.o src/field_message_box.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_player_avatar.o src/field_player_avatar.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_poison.o src/field_poison.c
+src/field_player_avatar.c: In function `SetPlayerAvatarExtraStateTransition':
+src/field_player_avatar.c:1416: `MAP_TYPE_UNDERWATER' undeclared (first use in this function)
+src/field_player_avatar.c:1416: (Each undeclared identifier is reported only once
+src/field_player_avatar.c:1416: for each function it appears in.)
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_screen_effect.o src/field_screen_effect.c
+make: *** [Makefile:315: build/titlev8qa/src/field_player_avatar.o] Error 1
+make: *** Deleting file 'build/titlev8qa/src/field_player_avatar.o'
+make: *** Waiting for unfinished jobs....

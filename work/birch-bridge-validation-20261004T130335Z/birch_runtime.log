@@ -1,0 +1,12 @@
+{"name": "birch_bridge_new_gift_no_visit", "pass": true, "failures": []}
+{"name": "birch_bridge_new_gift_declined_cyndaquil", "pass": true, "failures": []}
+{"name": "birch_bridge_new_gift_after_celio", "pass": true, "failures": []}
+{"name": "birch_bridge_no_room_keeps_pending", "pass": true, "failures": []}
+{"name": "birch_bridge_received_visit0_cyndaquil0", "pass": true, "failures": []}
+{"name": "birch_bridge_received_visit0_cyndaquil1", "pass": true, "failures": []}
+{"name": "birch_bridge_received_visit1_cyndaquil0", "pass": true, "failures": []}
+{"name": "birch_bridge_received_visit1_cyndaquil1", "pass": true, "failures": []}
+{"name": "birch_bridge_after_rival_visit0", "pass": true, "failures": []}
+{"name": "birch_bridge_after_rival_visit1", "pass": true, "failures": []}
+{"name": "birch_bridge_new_gift_no_visit_negative_control", "pass": true, "failures": ["expect saw LittlerootTown_ProfessorBirchsLab_Text_JohtoReferral = 1: saw 0"]}
+{"name": "birch_bridge_new_gift_declined_cyndaquil_negative_control", "pass": true, "failures": ["expect saw LittlerootTown_ProfessorBirchsLab_Text_JohtoReferral = 0: saw 1"]}

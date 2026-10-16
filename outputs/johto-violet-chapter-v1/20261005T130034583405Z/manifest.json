@@ -1,0 +1,346 @@
+{
+  "time": "20261005T130034583405Z",
+  "validation": {
+    "chapter": "Violet",
+    "save_layout_changed": false,
+    "battle_portrait_limit": "Falkner uses temporary native COOLTRAINER_M art; not final artwork",
+    "tm_choice": "Gen III TM40 AERIAL ACE; GSC TM31 would mean BRICK BREAK here",
+    "new_maps": [
+      "JohtoRoute31",
+      "VioletCity",
+      "VioletCity_PokemonCenter_1F",
+      "VioletCity_PokemonCenter_2F",
+      "VioletCity_Mart",
+      "VioletCity_Academy",
+      "VioletCity_Gym",
+      "SproutTower_1F",
+      "SproutTower_2F",
+      "SproutTower_3F"
+    ],
+    "new_flags": {
+      "FLAG_JOHTO_SPROUT_TOWER_CLEARED": 5,
+      "FLAG_JOHTO_GOT_TM40_FROM_FALKNER": 6,
+      "FLAG_JOHTO_SPROUT_TOWER_FLASH_RECEIVED": 7,
+      "FLAG_JOHTO_BADGE01_GET": 16
+    },
+    "new_trainer_offsets": [
+      784,
+      785,
+      786,
+      787,
+      788,
+      789,
+      790
+    ],
+    "static_checks": [
+      {
+        "map": "JohtoRoute31",
+        "connected_walkable_cells": 494,
+        "doors_and_NPCs_reachable": true
+      },
+      {
+        "map": "VioletCity",
+        "connected_walkable_cells": 847,
+        "doors_and_NPCs_reachable": true
+      },
+      {
+        "map": "VioletCity_PokemonCenter_1F",
+        "connected_walkable_cells": 84,
+        "doors_and_NPCs_reachable": true
+      },
+      {
+        "map": "VioletCity_PokemonCenter_2F",
+        "existing_CableClub_layout_reused": true
+      },
+      {
+        "map": "VioletCity_Mart",
+        "connected_walkable_cells": 40,
+        "doors_and_NPCs_reachable": true
+      },
+      {
+        "map": "VioletCity_Academy",
+        "connected_walkable_cells": 58,
+        "doors_and_NPCs_reachable": true
+      },
+      {
+        "map": "VioletCity_Gym",
+        "connected_walkable_cells": 112,
+        "doors_and_NPCs_reachable": true
+      },
+      {
+        "map": "SproutTower_1F",
+        "connected_walkable_cells": 120,
+        "doors_and_NPCs_reachable": true
+      },
+      {
+        "map": "SproutTower_2F",
+        "connected_walkable_cells": 117,
+        "doors_and_NPCs_reachable": true
+      },
+      {
+        "map": "SproutTower_3F",
+        "connected_walkable_cells": 121,
+        "doors_and_NPCs_reachable": true
+      }
+    ],
+    "native_build_and_emulator": "NOT_RUN_BY_GENERATOR"
+  },
+  "files": {
+    "data/maps/map_groups.json": {
+      "before": "f4be4dc918a7c125298e0eeb9e663913143db316620d90805b707b853a8ceb15",
+      "after": "076cb6fdb31442fea8c998a1bd520a95d0b447df58ef5f4ba3171e7ea0fff7c4"
+    },
+    "data/layouts/JohtoRoute31/map.bin": {
+      "before": null,
+      "after": "7cacfbf3d8ce446664745b9fa4ad95f27efc369192f20b2aaf8b1efaa4e3f6f3"
+    },
+    "data/layouts/JohtoRoute31/border.bin": {
+      "before": null,
+      "after": "877ba1a8619d96ac55bc6e0f946a551d7ca24ff142d3fedb7d4ad099aa115a78"
+    },
+    "data/layouts/VioletCity/map.bin": {
+      "before": null,
+      "after": "36828732885df2c60476d7f202c528c3880beee82357b67b9317dc781f1ea1bd"
+    },
+    "data/layouts/VioletCity/border.bin": {
+      "before": null,
+      "after": "877ba1a8619d96ac55bc6e0f946a551d7ca24ff142d3fedb7d4ad099aa115a78"
+    },
+    "data/layouts/SproutTower_1F/map.bin": {
+      "before": null,
+      "after": "f8f84b4413a927ec732c1476d609c4d215763c70219318fd6fbfcd464e580fee"
+    },
+    "data/layouts/SproutTower_1F/border.bin": {
+      "before": null,
+      "after": "26e55481e138ddc87f41806b5658ef21216628b74bf26b4d3b1cf863ef7e9e24"
+    },
+    "data/layouts/SproutTower_2F/map.bin": {
+      "before": null,
+      "after": "6ee9ab2b7417b1d5c3a79810260fa09c4687a3c4d0665aa5185031a8bba3cfff"
+    },
+    "data/layouts/SproutTower_2F/border.bin": {
+      "before": null,
+      "after": "26e55481e138ddc87f41806b5658ef21216628b74bf26b4d3b1cf863ef7e9e24"
+    },
+    "data/layouts/SproutTower_3F/map.bin": {
+      "before": null,
+      "after": "a6a0013f05f77a55a4e3b46e148f42ba1e14d7cd834d3b981769668b195892d5"
+    },
+    "data/layouts/SproutTower_3F/border.bin": {
+      "before": null,
+      "after": "26e55481e138ddc87f41806b5658ef21216628b74bf26b4d3b1cf863ef7e9e24"
+    },
+    "data/layouts/layouts.json": {
+      "before": "6214289b0bfb30d674fce9e534403517a69bb2e9839130e89813ffd7534c914d",
+      "after": "db050f68298b5ca411ab42c0d8b4c3ee93587b9139f10683236506cbddfee2eb"
+    },
+    "data/maps/JohtoRoute31/map.json": {
+      "before": null,
+      "after": "e1868c9b0e825b9ae4db3768c7c561c48ad97a203c0309286e1845216524d5fc"
+    },
+    "data/maps/JohtoRoute31/scripts.inc": {
+      "before": null,
+      "after": "ec8443dfc59ed2fdbc733ed47cdd4075c034858dc49a3a5a0326d2bec1935a29"
+    },
+    "data/maps/JohtoRoute31/text.inc": {
+      "before": null,
+      "after": "861f401f01d739cce4210b54c6b3a142047cba730bf11e989fd0d239f7625ac7"
+    },
+    "data/maps/VioletCity/map.json": {
+      "before": null,
+      "after": "cdb8c4c479c4e2e3e8dd49cd59c3ffb5db7a334bf656a9468fb86985a52443e7"
+    },
+    "data/maps/VioletCity/scripts.inc": {
+      "before": null,
+      "after": "9e592bd6734d491cf42f5c111f8e7c9b5bda88d5ead6b9f86f49614a4aa9f2b6"
+    },
+    "data/maps/VioletCity/text.inc": {
+      "before": null,
+      "after": "25603614553c622f553f52ffd153b5d5e7bccca765e10a5da8f049bb64edde76"
+    },
+    "data/maps/VioletCity_PokemonCenter_1F/map.json": {
+      "before": null,
+      "after": "07d40eef9aeb19377bb1b65c979cf8bb1f6678e42d95b9c4ac96326df92f7a1e"
+    },
+    "data/maps/VioletCity_PokemonCenter_1F/scripts.inc": {
+      "before": null,
+      "after": "12044d9a174c640167f9692e052662c52b08ecb1d07c36f3b2d38b7e0273befa"
+    },
+    "data/maps/VioletCity_PokemonCenter_1F/text.inc": {
+      "before": null,
+      "after": "ac576b1aa8c920cf05612c92d7d3d28622748400c7aa79bc53ed8634a7c1b333"
+    },
+    "data/maps/VioletCity_PokemonCenter_2F/map.json": {
+      "before": null,
+      "after": "13b0fbc5d977b7a03f9f1607fa79e5cfcdd35c59d7b69192dd1174fd290823ba"
+    },
+    "data/maps/VioletCity_PokemonCenter_2F/scripts.inc": {
+      "before": null,
+      "after": "6212e5fc9ace26dbe9cc2c70963fa0d76a63daf2bb40ef7a498e3457cabbb394"
+    },
+    "data/maps/VioletCity_PokemonCenter_2F/text.inc": {
+      "before": null,
+      "after": "a0dfac1bcbde46cdf6187847f339d03aab6f659d4eb7949c5f14b7614ce6be55"
+    },
+    "data/maps/VioletCity_Mart/map.json": {
+      "before": null,
+      "after": "0d0eba569996cfb54a924a942b6a09384262b7e5f2de40c06ddfdfd0581f7e32"
+    },
+    "data/maps/VioletCity_Mart/scripts.inc": {
+      "before": null,
+      "after": "241bae15781b327c99e0ac0ee5f71867d35a2d06875b7606de3fabafa1b93d36"
+    },
+    "data/maps/VioletCity_Mart/text.inc": {
+      "before": null,
+      "after": "9c2e9105c9cecf3d9e33aebdd7fb6bbb55e8dcb826605731dd885141d327ad9f"
+    },
+    "data/maps/VioletCity_Academy/map.json": {
+      "before": null,
+      "after": "ef4adb8dbd0a55157fab10e996b596fec2de645f1251919fead56de44f1e418c"
+    },
+    "data/maps/VioletCity_Academy/scripts.inc": {
+      "before": null,
+      "after": "9beb67de2f2b532d2a8bb72b19ff481b9b45c6b5b73e82526c4fd43eeb8a4b38"
+    },
+    "data/maps/VioletCity_Academy/text.inc": {
+      "before": null,
+      "after": "154c18c24ef3572fa02f7daa5d05258161b440f3b15d7e8344d7b664ffaf5bd9"
+    },
+    "data/maps/VioletCity_Gym/map.json": {
+      "before": null,
+      "after": "5eca9d74e91391de5577e20bf76717f89dc42a120780ef2f8ba273bc0e83e512"
+    },
+    "data/maps/VioletCity_Gym/scripts.inc": {
+      "before": null,
+      "after": "e12971f93dbeced99d26639ec0069b1592649beca288d18570a5eeaa4b9832dd"
+    },
+    "data/maps/VioletCity_Gym/text.inc": {
+      "before": null,
+      "after": "da793334c0df1e3cf5bc022fd10d2051894bb27533f7871cc733df7243fe5574"
+    },
+    "data/maps/SproutTower_1F/map.json": {
+      "before": null,
+      "after": "f4b013791665dfe24d4d5a588014e807d15da85f9f7a79936a58dd3553e2f5e7"
+    },
+    "data/maps/SproutTower_1F/scripts.inc": {
+      "before": null,
+      "after": "91533c0464e972d2c3bfb794f212769c3b0fbfebb14ceb7d25cd8d5e72c972e8"
+    },
+    "data/maps/SproutTower_1F/text.inc": {
+      "before": null,
+      "after": "19289ed13ce9f6b8b9e21725a1527e42dcfcb781c769db2054c5db43dfd4a399"
+    },
+    "data/maps/SproutTower_2F/map.json": {
+      "before": null,
+      "after": "86311499a4691ab4a36c8f7a0413788753ff5deb714c3d83208f5c81f2676dda"
+    },
+    "data/maps/SproutTower_2F/scripts.inc": {
+      "before": null,
+      "after": "eec4c44bb7a403b361a08861148134fb9fe467b57b627b98f8c30dabfe9682da"
+    },
+    "data/maps/SproutTower_2F/text.inc": {
+      "before": null,
+      "after": "bba41eb81f36c0531bdc7ae0d316c1415354de89b56e1d9154fbc2eb9af0ef4b"
+    },
+    "data/maps/SproutTower_3F/map.json": {
+      "before": null,
+      "after": "1081d430fa9ebc1917805831c708f2f86100e688d6311a0a66edd8b4139706da"
+    },
+    "data/maps/SproutTower_3F/scripts.inc": {
+      "before": null,
+      "after": "7ebb6f080c1f9c6b743ce7f72d55fd434a4798e4d82c314d440176e623960654"
+    },
+    "data/maps/SproutTower_3F/text.inc": {
+      "before": null,
+      "after": "c740dd3f90e06311ccc09a154afcaaf8e582186d8c29331e0630a711294413b4"
+    },
+    "data/maps/JohtoRoute30/map.json": {
+      "before": "f62328987cac5e1d2d2f527e0d1c9aab6beb76ba2c3c602d2c1c0e390b087937",
+      "after": "1250d766c9fbd8ea5b6aba6753faf49491b131f77ca7d18dbabaaac2c2321bbd"
+    },
+    "data/layouts/JohtoRoute30/map.bin": {
+      "before": "1f73192c3a67ff1f4035bfbe3969c6a078b117942456f97cee694080020c7b86",
+      "after": "494014999b22e3014a4f4654a486913513352963e3202b923d65fa4dbf0b966e"
+    },
+    "src/data/region_map/region_map_sections.json": {
+      "before": "1bc2c34bf1bafb48e67ae0b72e9171b1b5bd5d91c609658d7b0e71e492f66474",
+      "after": "0fc6f4b7b1b295a3761f92999aeb7fc61a36735e6a9af7880ebe446d3a677e32"
+    },
+    "src/data/heal_locations.json": {
+      "before": "39527f0c09d5e266bf3f1722d44213712780364468527074265cbd4509bdee22",
+      "after": "f9169d4437411c2784537fb0613e3962f1da1ba70e2e895fa30104d10b09ee2a"
+    },
+    "include/constants/flags_johto_story.h": {
+      "before": "05fd77b14bfc1baae60070dbb57ad45a6a6e9782d0763949f5f070aa1a56fe1a",
+      "after": "b396c31f40a9589eb1a7265f9916c1fdac4034121e12509efe090a7cfece8e93"
+    },
+    "include/constants/opponents_johto.h": {
+      "before": null,
+      "after": "a9873245580876fb3a4d5d861f05572f3cf288bafaa543c5fb74ec8128425b35"
+    },
+    "include/constants/opponents.h": {
+      "before": "f40025f0e64fdd87948ab742fdbc347878adafc7f41cbf2c5c0d5af25eecaa06",
+      "after": "9abcd98773cd58093767419f9963b2c2c3592bf00dbab2bfc98451afe92c543d"
+    },
+    "src/data/trainer_parties_johto.h": {
+      "before": null,
+      "after": "963507104a38cd874810dbfb796ac3fd9eebcada7f9ae61bee94095787383e73"
+    },
+    "src/data/trainers_johto.h": {
+      "before": null,
+      "after": "ea07dc10e2183a7d42aa6e8e6161962c9633fe3d3db0b9703cd9a050cbd24632"
+    },
+    "src/data/trainers.h": {
+      "before": "4ed35f62c7552a1be56ef48ca73ef538fdaf1807724d0a751493c833ce70b0db",
+      "after": "53143228227c599d1829f715ae02083a2bc5deb17fca81401f533e0ee6042fdc"
+    },
+    "src/data/trainer_parties.h": {
+      "before": "44bafe78b3609042134936c8d3046bcb34775a24d07fd0ce560862832172e5eb",
+      "after": "192d334b55a02e2e1d64d52eb6cde95d9082faa97fedabdd896cd74d88ec14c6"
+    },
+    "data/event_scripts.s": {
+      "before": "5e4e277415d047d83ef7a0c1a84c2f627987a0cd2544e266e553c6c0cebaedb8",
+      "after": "41773f80d53800f52e8c777d3385a35692fd78fb6b5cc86ae9deddac07bb2b67"
+    },
+    "tools/johto/build_cherrygrove.py": {
+      "before": "4d7f1cc4bb89470c41568399da3218af5f8d4d1e7192f3094aedb13dafe7e485",
+      "after": "2fd4ff9832d86bb10848e1bfdebe37e20029960c1b412fbfc9b2e19bd0640f4f"
+    },
+    "tools/johto/route31_wild.json": {
+      "before": null,
+      "after": "a41b7c514826892e5371beb44c28849913ad395e3882fef9f99bc38e30a85cc2"
+    },
+    "src/data/wild_encounters.json": {
+      "before": "8324c341f902b20709fc632676ef9ede355cf50a512111941f583184d935cf72",
+      "after": "c4b82eeb22127262b6eee02df54bf28c100547d75ae1ca6952d674186036ae6f"
+    },
+    "src/region_map.c": {
+      "before": "d57e9fcf1560ae874fce7d154543e38e043478c021afe1aa29df4f996c34652c",
+      "after": "a6ac7856db369da87fa2471dffa54d341f9f1e2968831ba83ee3982683e31e32"
+    },
+    "src/pokemon_summary_screen.c": {
+      "before": "be2afdd6698c5c2baa3700e63ad8fa350400ffc5e7ee670be192dbcdab9aed11",
+      "after": "2fc95999f27886676734d47802c7a5537801cdf8ca4aa697e32138b6b4a2cf90"
+    },
+    "graphics/region_map/johto_entry.bin": {
+      "before": "73776a030b00b3b1d8da92219d34ef57863c453a146626873c72f4ca869efc91",
+      "after": "63222cc835b2c87361f6a2f89e2138739865e923f5a2721d538c3ad6554d9884"
+    },
+    "src/pokedex_screen.c": {
+      "before": "9163ff527798d99f2c419c2deefb6f8e2eb673db9a7c0ec050f95f8f671651b4",
+      "after": "d7c90cc3c8427b2e87dfcc90b6578d55edadab200fe094106a4fa460a4829f62"
+    },
+    "src/wild_pokemon_area.c": {
+      "before": "1bdffcc224b138d1d315474e7f18692a2b00a21982d810bbe7e354001edbb7d4",
+      "after": "63c2e9967aa575814599c1af8e5bf01fc528279f522dc31ccfd7e398f83b97f8"
+    },
+    "include/pokedex_area_markers.h": {
+      "before": "69abe324a719c4881b69070467463198115b806c8ddc667c7540140f4a9f13fa",
+      "after": "ac74066e667bc6cbc444700dc7c38279c2152d681715a7729550582595b4fb5c"
+    },
+    "src/pokedex_area_markers.c": {
+      "before": "24c20dfdd3fb68a703ecb25d9dfadd24f7a232b253d6f05c8672d0bea4dd9cf5",
+      "after": "84ac21837b51c36048ba6aebd3390174e60aa97ae697c81493f970202334a17b"
+    }
+  }
+}

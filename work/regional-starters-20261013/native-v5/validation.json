@@ -1,0 +1,75 @@
+{
+  "pass": true,
+  "rom_sha256": "63904802b37dc5e922ec616361c0be3388f1030e5b2c1a0b7a2949f2a33c1f7c",
+  "RAM_writes": 0,
+  "direct_script_calls": 0,
+  "forced_battle_outcomes": 0,
+  "source_sav": "/workspaces/pokefirered/saves/pokemonthyl_v1.25-items99-iv2x.sav",
+  "cases": [
+    {
+      "case": "treecko-pc-capture",
+      "capacity": "pc",
+      "party_count": 6,
+      "PC_count": 121,
+      "receipt": true,
+      "gift": {
+        "species": 277,
+        "pid": 192345554,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "d2f5760b7afb3aa9ceccbfbfbdc5c9ff50200202c4c3c2bbc8ffff006eeb0000bd0f4ca22f0e4ca2a8484ca2a80e4ca2a80e4ca2a80e4ca2a90e67a2a80e4ca28b104ca2a835c9a857f1b39da80e4ca2"
+      },
+      "original_records_preserved": true,
+      "pass": true,
+      "repeat_no_duplicate": true,
+      "SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-v5/treecko-pc-capture-native-QA-only.sav"
+      }
+    }
+  ],
+  "battle_paths": [
+    {
+      "capture": true,
+      "outcome": 0,
+      "enemy": {
+        "species": 277,
+        "pid": 192345554,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "d2f5760b7afb3aa9ceccbfbfbdc5c9ff50200202c4c3c2bbc8ffff006e030000bd0f4ca22f0e4ca2a8484ca2a80e4ca2a80e4ca2a80e4ca2a90e67a2a80e4ca28b104ca2a835c98057f1b39da80e4ca2"
+      }
+    }
+  ],
+  "protected_original_inputs_unchanged": true
+}

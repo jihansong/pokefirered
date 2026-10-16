@@ -1,0 +1,389 @@
+map                                          zone texts  orig harml   fix unused
+AlteringCave                                 Z3       0     0     0     0      0
+LittlerootTown                               Z3       4     0     0     0      0
+LittlerootTown_BrendansHouse_1F              Z3       5     0     0     0      0
+LittlerootTown_BrendansHouse_2F              Z3       6     0     0     0      0
+LittlerootTown_MaysHouse_1F                  Z3       4     0     0     0      0
+LittlerootTown_MaysHouse_2F                  Z3       4     0     0     0      0
+LittlerootTown_ProfessorBirchsLab            Z3      49     0     0     0      0
+OldaleTown                                   Z3       7     0     0     0      0
+OldaleTown_House1                            Z3       1     0     0     0      0
+OldaleTown_House2                            Z3       2     0     0     0      0
+OldaleTown_Mart                              Z3       2     0     0     0      0
+OldaleTown_PokemonCenter_1F                  Z3       3     0     0     0      0
+OldaleTown_PokemonCenter_2F                  Z3       0     0     0     0      0
+PetalburgCity                                Z3       6     1     1     0      0
+PetalburgCity_Gym                            Z3      46     0     0     0      0
+PetalburgCity_House1                         Z3       2     0     0     0      0
+PetalburgCity_House2                         Z3       2     0     0     0      0
+PetalburgCity_Mart                           Z3       3     0     0     0      0
+PetalburgCity_PokemonCenter_1F               Z3       3     0     0     0      0
+PetalburgCity_PokemonCenter_2F               Z3       0     0     0     0      0
+PetalburgCity_WallysHouse                    Z3       4     0     0     0      0
+PetalburgWoods                               Z3      35     0     0     0      0
+Route101                                     Z3      10     1     1     0      0
+Route102                                     Z3      18     2     2     0      0
+Route103                                     Z3      40     2     2     0      0
+Route104                                     Z3      56     2     2     0      0
+Route104_MrBrineysHouse                      Z3       4     0     0     0      0
+Route104_PrettyPetalFlowerShop               Z3       5     0     0     0      0
+Route105                                     Z3      21    21     1    20      0
+    data/maps/Route105/text.inc:2: ORIGINAL Route105_Text_H0_0 = Route105_Text_LuisIntro
+        "Whew! I was worried that a kid was drowning when I saw you. You seem to be okay, so what do you say …"
+    data/maps/Route105/text.inc:11: ORIGINAL Route105_Text_H0_2 = Route105_Text_LuisPostBattle
+        "If you are drowning, the signal is to wave one arm toward the beach."
+    data/maps/Route105/text.inc:15: ORIGINAL Route105_Text_H1_0 = Route105_Text_DominikIntro
+        "Swimming the deep blue sea… It feels the greatest!"
+    data/maps/Route105/text.inc:19: ORIGINAL Route105_Text_H1_1 = Route105_Text_DominikDefeated
+        "I lost… Now I'm feeling blue…"
+    data/maps/Route105/text.inc:23: ORIGINAL Route105_Text_H1_2 = Route105_Text_DominikPostBattle
+        "Why is the sea blue? I learned about that at the MUSEUM in SLATEPORT, but I forgot."
+    data/maps/Route105/text.inc:28: ORIGINAL Route105_Text_H2_0 = Route105_Text_BeverlyIntro
+        "My body feels lighter in the water. It's as if I've gotten slimmer!"
+    data/maps/Route105/text.inc:32: ORIGINAL Route105_Text_H2_1 = Route105_Text_BeverlyDefeated
+        "I'm floating…"
+    data/maps/Route105/text.inc:35: ORIGINAL Route105_Text_H2_2 = Route105_Text_PostBattle
+        "Your body weight is reduced to just one tenth in the water. That would make me… Whoops! I'm not tell…"
+    data/maps/Route105/text.inc:41: ORIGINAL Route105_Text_H3_0 = Route105_Text_ImaniIntro
+        "The blue, blue sky… The vast sea… It's so peaceful…"
+    data/maps/Route105/text.inc:46: ORIGINAL Route105_Text_H3_1 = Route105_Text_ImaniDefeated
+        "I lost while I was lounging!"
+    data/maps/Route105/text.inc:49: ORIGINAL Route105_Text_H3_2 = Route105_Text_ImaniPostBattle
+        "I want to be told I'm relaxing to be with. Giggle."
+    data/maps/Route105/text.inc:53: ORIGINAL Route105_Text_H4_0 = Route105_Text_FosterIntro
+        "There's supposed to be a mystical rock around here. Do you know anything about it?"
+    data/maps/Route105/text.inc:58: ORIGINAL Route105_Text_H4_1 = Route105_Text_FosterDefeated
+        "I was thinking too much about that rock, while my POKéMON remained weak…"
+    data/maps/Route105/text.inc:63: ORIGINAL Route105_Text_H4_2 = Route105_Text_FosterPostBattle
+        "I can spend hours and hours staring at a nice rock without growing bored."
+    data/maps/Route105/text.inc:68: ORIGINAL Route105_Text_H5_0 = Route105_Text_JosueIntro
+        "I'm exhausted from swimming. I'm just not used to it. I need a battle for a change of pace!"
+    data/maps/Route105/text.inc:74: ORIGINAL Route105_Text_H5_1 = Route105_Text_JosueDefeated
+        "I lost because I battled at sea."
+    data/maps/Route105/text.inc:77: ORIGINAL Route105_Text_H5_2 = Route105_Text_JosuePostBattle
+        "Yeah, for me, the sky is a much better match than the sea."
+    data/maps/Route105/text.inc:81: ORIGINAL Route105_Text_H6_0 = Route105_Text_AndresIntro
+        "I'm convinced that the sea keeps secrets from us."
+    data/maps/Route105/text.inc:85: ORIGINAL Route105_Text_H6_1 = Route105_Text_AndresDefeated
+        "Yes… I am no good at battling…"
+    data/maps/Route105/text.inc:89: ORIGINAL Route105_Text_H6_2 = Route105_Text_AndresPostBattle
+        "I'm sure there are many secrets to be discovered in the world's seas. I mean to find them all!"
+Route115                                     Z3      33    33     4    29      0
+    data/maps/Route115/text.inc:2: ORIGINAL Route115_Text_H0 = Route115_Text_NeverKnowWhenCavePokemonWillAppear
+        "Exploring a cave isn't like walking on a road. You never know when wild POKéMON will appear. It's fu…"
+    data/maps/Route115/text.inc:8: ORIGINAL Route115_Text_H1_0 = Route115_Text_TimothyIntro
+        "Hm… You seem rather capable… Let me keep you company!"
+    data/maps/Route115/text.inc:13: ORIGINAL Route115_Text_H1_1 = Route115_Text_TimothyDefeat
+        "You're much stronger than I'd imagined!"
+    data/maps/Route115/text.inc:17: ORIGINAL Route115_Text_H1_2 = Route115_Text_TimothyPostBattle
+        "There is no such thing as a born genius. It all depends on effort! That is what I believe…"
+    data/maps/Route115/text.inc:22: ORIGINAL Route115_Text_H2_0 = Route115_Text_NobIntro
+        "My strongest skill is busting bricks with my forehead!"
+    data/maps/Route115/text.inc:26: ORIGINAL Route115_Text_H2_1 = Route115_Text_NobDefeat
+        "Ugwaaaah! My head is busted!"
+    data/maps/Route115/text.inc:30: ORIGINAL Route115_Text_H2_2 = Route115_Text_NobPostBattle
+        "I've been teaching my POKéMON karate. It looks like they'll get a lot better than me. I'm excited ab…"
+    data/maps/Route115/text.inc:37: ORIGINAL Route115_Text_H3_0 = Route115_Text_CyndyIntro
+        "This beach is my secret training spot! Don't come butting in!"
+    data/maps/Route115/text.inc:41: ORIGINAL Route115_Text_H3_1 = Route115_Text_CyndyDefeat
+        "I haven't trained enough!"
+    data/maps/Route115/text.inc:44: ORIGINAL Route115_Text_H3_2 = Route115_Text_CyndyPostBattle
+        "The sand acts as a cushion to reduce impact and prevent injury. This is the perfect place to train."
+    data/maps/Route115/text.inc:49: ORIGINAL Route115_Text_H4_0 = Route115_Text_KoichiIntro
+        "You! My MACHOP! Demand a battle!"
+    data/maps/Route115/text.inc:57: ORIGINAL Route115_Text_H4_2 = Route115_Text_KoichiPostBattle
+        "My MACHOP crew! So long as they seek power, I will grow strong with them!"
+    data/maps/Route115/text.inc:62: ORIGINAL Route115_Text_H5_0 = Route115_Text_HectorIntro
+        "I have a rare POKéMON! Would you like me to show you?"
+    data/maps/Route115/text.inc:66: ORIGINAL Route115_Text_H5_1 = Route115_Text_HectorDefeat
+        "You… You want my POKéMON, don't you?"
+    data/maps/Route115/text.inc:70: ORIGINAL Route115_Text_H5_2 = Route115_Text_HectorPostBattle
+        "I have this rare POKéMON. It's enough to keep me satisfied."
+    data/maps/Route115/text.inc:74: ORIGINAL Route115_Text_H6_0 = Route115_Text_KyraIntro
+        "I'll battle while I'm running! Try to keep up with me!"
+    data/maps/Route115/text.inc:81: ORIGINAL Route115_Text_H6_2 = Route115_Text_KyraPostBattle
+        "I made the mistake of trying to battle while running! I should take a run to calm down…"
+    data/maps/Route115/text.inc:86: ORIGINAL Route115_Text_H7_0 = Route115_Text_JaidenIntro
+        "Take that! Ultra POKéMON ninja attack!"
+    data/maps/Route115/text.inc:90: ORIGINAL Route115_Text_H7_1 = Route115_Text_JaidenDefeat
+        "Waaah! Our strategy failed!"
+    data/maps/Route115/text.inc:94: ORIGINAL Route115_Text_H7_2 = Route115_Text_JaidenPostBattle
+        "But my POKéMON were ultra, weren't they?"
+    data/maps/Route115/text.inc:98: ORIGINAL Route115_Text_H8_0 = Route115_Text_HeleneIntro
+        "My POKéMON have black belt-level strength!"
+    data/maps/Route115/text.inc:102: ORIGINAL Route115_Text_H8_1 = Route115_Text_HeleneDefeat
+        "This is too humiliating!"
+    data/maps/Route115/text.inc:105: ORIGINAL Route115_Text_H8_2 = Route115_Text_HelenePostBattle
+        "I rarely meet anyone who's better than me… I get it now! You're a GYM LEADER, aren't you?"
+    data/maps/Route115/text.inc:111: ORIGINAL Route115_Text_H9_0 = Route115_Text_AlixIntro
+        "Our eyes met! There's no getting away now!"
+    data/maps/Route115/text.inc:115: ORIGINAL Route115_Text_H9_1 = Route115_Text_AlixDefeat
+        "Gah! Not bad!"
+    data/maps/Route115/text.inc:119: ORIGINAL Route115_Text_H9_2 = Route115_Text_AlixPostBattle
+        "Oh, well. I think I will TELEPORT home."
+    data/maps/Route115/text.inc:123: ORIGINAL Route115_Text_H10_0 = Route115_Text_MarleneIntro
+        "You've disturbed my meditation… You'll be punished for it."
+    data/maps/Route115/text.inc:127: ORIGINAL Route115_Text_H10_1 = Route115_Text_MarleneDefeat
+        "You've broken my concentration!"
+    data/maps/Route115/text.inc:130: ORIGINAL Route115_Text_H10_2 = Route115_Text_MarlenePostBattle
+        "I was meditating with my POKéMON. But this place isn't very peaceful…"
+Route116                                     Z3      40    35     2    33      0
+    data/maps/Route116/text.inc:2: ORIGINAL Route116_Text_H0_0 = Route116_Text_JoeyIntro
+        "My POKéMON rule! Check them out!"
+    data/maps/Route116/text.inc:6: ORIGINAL Route116_Text_H0_1 = Route116_Text_JoeyDefeat
+        "Ouch! A scrape! I have to put on a bandage!"
+    data/maps/Route116/text.inc:10: ORIGINAL Route116_Text_H0_2 = Route116_Text_JoeyPostBattle
+        "Bandages are signs of toughness! I've got another one!"
+    data/maps/Route116/text.inc:14: ORIGINAL Route116_Text_H1_0 = Route116_Text_JoseIntro
+        "My BUG POKéMON are tough! Let's battle!"
+    data/maps/Route116/text.inc:18: ORIGINAL Route116_Text_H1_1 = Route116_Text_JoseDefeat
+        "I lost! I thought I had you!"
+    data/maps/Route116/text.inc:22: ORIGINAL Route116_Text_H1_2 = Route116_Text_JosePostBattle
+        "BUG POKéMON evolve quickly. So they get strong quickly, too."
+    data/maps/Route116/text.inc:26: ORIGINAL Route116_Text_H2_0 = Route116_Text_ClarkIntro
+        "If the tunnel doesn't go through, then I'll just go over the top."
+    data/maps/Route116/text.inc:30: ORIGINAL Route116_Text_H2_1 = Route116_Text_ClarkDefeat
+        "Gasp… Gasp… Losing made me tired…"
+    data/maps/Route116/text.inc:34: ORIGINAL Route116_Text_H2_2 = Route116_Text_ClarkPostBattle
+        "It's no big deal if there's no tunnel. To a HIKER, mountains are roads!"
+    data/maps/Route116/text.inc:38: ORIGINAL Route116_Text_H3_0 = Route116_Text_JaniceIntro
+        "Let me teach you how strong my adorable POKéMON is!"
+    data/maps/Route116/text.inc:42: ORIGINAL Route116_Text_H3_1 = Route116_Text_JaniceDefeat
+        "You're a notch above me…"
+    data/maps/Route116/text.inc:45: ORIGINAL Route116_Text_H3_2 = Route116_Text_JanicePostBattle
+        "POKéMON that possess cuteness and power, that's ideal, I think."
+    data/maps/Route116/text.inc:49: ORIGINAL Route116_Text_H4_0 = Route116_Text_KarenIntro
+        "I study at school, and I study on the way home, too!"
+    data/maps/Route116/text.inc:53: ORIGINAL Route116_Text_H4_1 = Route116_Text_KarenDefeat
+        "I'm in shock--I lost?"
+    data/maps/Route116/text.inc:56: ORIGINAL Route116_Text_H4_2 = Route116_Text_KarenPostBattle
+        "Awww, I'll never become an elegant TRAINER like ROXANNE this way!"
+    data/maps/Route116/text.inc:60: ORIGINAL Route116_Text_H5_0 = Route116_Text_JerryIntro
+        "We learn all sorts of things at the TRAINER'S SCHOOL. I want to test things out for real!"
+    data/maps/Route116/text.inc:65: ORIGINAL Route116_Text_H5_1 = Route116_Text_JerryDefeat
+        "I slacked off in school… That's why I lost."
+    data/maps/Route116/text.inc:69: ORIGINAL Route116_Text_H5_2 = Route116_Text_JerryPostBattle
+        "I'll have to redo some courses at the TRAINER'S SCHOOL. If I don't, ROXANNE will be steamed."
+    data/maps/Route116/text.inc:74: ORIGINAL Route116_Text_H6_0 = Route116_Text_SarahIntro
+        "Just so you know, I've never once been bested by anyone at anything."
+    data/maps/Route116/text.inc:78: ORIGINAL Route116_Text_H6_1 = Route116_Text_SarahDefeat
+        "Oh, my goodness. This is a new experience for me."
+    data/maps/Route116/text.inc:82: ORIGINAL Route116_Text_H6_2 = Route116_Text_SarahPostBattle
+        "My life of luxury affords me all that I could possibly desire. However, when it comes to POKéMON, my…"
+    data/maps/Route116/text.inc:88: ORIGINAL Route116_Text_H7_0 = Route116_Text_DawsonIntro
+        "When you lay your eyes on my POKéMON's gorgeous fur, their beauty will render you helpless!"
+    data/maps/Route116/text.inc:93: ORIGINAL Route116_Text_H7_1 = Route116_Text_DawsonDefeat
+        "Oh, baby, say it isn't so!"
+    data/maps/Route116/text.inc:96: ORIGINAL Route116_Text_H7_2 = Route116_Text_DawsonPostBattle
+        "Oh, no, no, no! You've mussed up my POKéMON's fur! You've ruined my hairdo, too! I'll have to call m…"
+    data/maps/Route116/text.inc:102: ORIGINAL Route116_Text_H8_0 = Route116_Text_JohnsonIntro
+        "It's a dead end up here. I'm bored, so can we battle?"
+    data/maps/Route116/text.inc:106: ORIGINAL Route116_Text_H8_1 = Route116_Text_JohnsonDefeat
+        "That was fun even though I lost."
+    data/maps/Route116/text.inc:109: ORIGINAL Route116_Text_H8_2 = Route116_Text_JohnsonPostBattle
+        "Want to stay here and keep me company?"
+    data/maps/Route116/text.inc:113: ORIGINAL Route116_Text_H9_0 = Route116_Text_DevanIntro
+        "We'll rock you hard!"
+    data/maps/Route116/text.inc:116: ORIGINAL Route116_Text_H9_1 = Route116_Text_DevanDefeat
+        "Aiyiyi! No contest at all!"
+    data/maps/Route116/text.inc:120: ORIGINAL Route116_Text_H9_2 = Route116_Text_DevanPostBattle
+        "I should try different POKéMON types, that's what I ought to do."
+    data/maps/Route116/text.inc:128: ORIGINAL Route116_Text_H11 = Route116_Text_RusturfTunnelSign
+        "RUSTURF TUNNEL “Linking RUSTBORO and VERDANTURF “The tunnel project has been canceled.”"
+    data/maps/Route116/text.inc:137: ORIGINAL Route116_Text_H13 = Route116_Text_TrainerTipsBToStopEvolution
+        "TRAINER TIPS If you want to stop a POKéMON from evolving, press the B Button while it is trying to e…"
+    data/maps/Route116/text.inc:145: ORIGINAL Route116_Text_H14 = Route116_Text_TrainerTipsBagHasPockets
+        "TRAINER TIPS Your BAG has several POCKETS. Items you obtain are automatically placed in the appropri…"
+Route116_TunnelersRestHouse                  Z3       3     3     0     3      0
+    data/maps/Route116_TunnelersRestHouse/text.inc:2: ORIGINAL Route116_TunnelersRestHouse_Text_H0 = Route116_TunnelersRestHouse_Text_WeHadToStopBoring
+        "That RUSTURF TUNNEL there… At first, we had a huge work crew boring through rock with the latest mac…"
+    data/maps/Route116_TunnelersRestHouse/text.inc:13: ORIGINAL Route116_TunnelersRestHouse_Text_H1 = Route116_TunnelersRestHouse_Text_GetToVerdanturfWithoutTunnel
+        "To get to VERDANTURF without using this TUNNEL, you'd have to cross the sea to DEWFORD, sail on to S…"
+    data/maps/Route116_TunnelersRestHouse/text.inc:20: ORIGINAL Route116_TunnelersRestHouse_Text_H2 = Route116_TunnelersRestHouse_Text_ManDiggingHisWayToVerdanturf
+        "There's a man digging his way to VERDANTURF all by his lonesome. He's desperate to get through. He s…"
+RustboroCity                                 Z3      24    17     1    16      0
+    data/maps/RustboroCity/text.inc:2: ORIGINAL RustboroCity_Text_H0 = RustboroCity_Text_GymLeaderIsntEasyWithFire
+        "I challenged the GYM LEADER, but… It's not going to be easy winning with my FIRE-type POKéMON… FIRE-…"
+    data/maps/RustboroCity/text.inc:9: ORIGINAL RustboroCity_Text_H1 = RustboroCity_Text_WeShortenItToDevon
+        "The DEVON CORPORATION… We all just shorten it to DEVON. That company makes all sorts of convenient p…"
+    data/maps/RustboroCity/text.inc:15: ORIGINAL RustboroCity_Text_H2 = RustboroCity_Text_CatchRarePokemonIfIGoToSchool
+        "POKéMON TRAINER'S SCHOOL! If I go to this school, will I be able to catch rare POKéMON easily?"
+    data/maps/RustboroCity/text.inc:20: ORIGINAL RustboroCity_Text_H3 = RustboroCity_Text_WowYouHavePokemon
+        "Wow, you have POKéMON with you, too. When I get bigger, I'm going to go places with POKéMON, too."
+    data/maps/RustboroCity/text.inc:26: ORIGINAL RustboroCity_Text_H4 = RustboroCity_Text_MrBrineyWalksInTheTunnel
+        "The old sailor MR. BRINEY lives in a cottage by the sea. He goes for walks in the tunnel every so of…"
+    data/maps/RustboroCity/text.inc:32: ORIGINAL RustboroCity_Text_H5 = RustboroCity_Text_HaveYouChallengedGym
+        "Have you taken the POKéMON GYM challenge? When you get that shiny GYM BADGE in hand, I guess TRAINER…"
+    data/maps/RustboroCity/text.inc:39: ORIGINAL RustboroCity_Text_H6 = RustboroCity_Text_PokemonCanChangeLookFromExp
+        "If a POKéMON gains experience in battles, it can sometimes change in the way it looks."
+    data/maps/RustboroCity/text.inc:44: ORIGINAL RustboroCity_Text_H7 = RustboroCity_Text_PokemonChangeShape
+        "A POKéMON changes shape? If one did that, I would be shocked!"
+    data/maps/RustboroCity/text.inc:48: ORIGINAL RustboroCity_Text_H8 = RustboroCity_Text_YoureNewAroundHere
+        "Oh? Who might you be? You're a new face around these parts. Have you just transferred into the POKéM…"
+    data/maps/RustboroCity/text.inc:54: ORIGINAL RustboroCity_Text_H9 = RustboroCity_Text_TradePokemonGrowFast
+        "A POKéMON you get in a trade from someone grows fast. But if you don't have certain GYM BADGES, it m…"
+    data/maps/RustboroCity/text.inc:60: ORIGINAL RustboroCity_Text_H10 = RustboroCity_Text_YouCanHave2On2Battle
+        "Did you know this? You can have a 2-on-2 battle even if you're not with another TRAINER. If you catc…"
+    data/maps/RustboroCity/text.inc:71: ORIGINAL RustboroCity_Text_H11 = RustboroCity_Text_GymSign
+        "RUSTBORO CITY POKéMON GYM LEADER: ROXANNE “The ROCK-loving honors student!”"
+    data/maps/RustboroCity/text.inc:76: ORIGINAL RustboroCity_Text_H12 = RustboroCity_Text_TrainersSchoolSign
+        "POKéMON TRAINER'S SCHOOL “We'll teach you anything about POKéMON!”"
+    data/maps/RustboroCity/text.inc:81: ORIGINAL RustboroCity_Text_H13 = RustboroCity_Text_CitySign
+        "RUSTBORO CITY “The city probing the integration of nature and science.”"
+    data/maps/RustboroCity/text.inc:86: ORIGINAL RustboroCity_Text_H14 = RustboroCity_Text_DevonCorpSign
+        "DEVON CORPORATION “For all your living needs, we make it all.”"
+    data/maps/RustboroCity/text.inc:91: ORIGINAL RustboroCity_Text_H15 = RustboroCity_Text_TunnelNearingCompletion
+        "“Timesaving tunnel nearing completion!” …Is what it says on the sign, but there's also a big “X” spl…"
+RustboroCity_CuttersHouse                    Z3       2     2     0     2      0
+    data/maps/RustboroCity_CuttersHouse/text.inc:2: ORIGINAL RustboroCity_CuttersHouse_Text_H0 = RustboroCity_CuttersHouse_Text_YouCanPutThisHMToGoodUse
+        "That determined expression… That limber way you move… And your well-trained POKéMON… You're obviousl…"
+    data/maps/RustboroCity_CuttersHouse/text.inc:14: ORIGINAL RustboroCity_CuttersHouse_Text_H1 = RustboroCity_CuttersHouse_Text_DadHelpedClearLandOfTrees
+        "When they were expanding the city of RUSTBORO, my dad helped out. He made his POKéMON use CUT to cle…"
+RustboroCity_DevonCorp_1F                    Z3       5     5     0     5      0
+    data/maps/RustboroCity_DevonCorp_1F/text.inc:2: ORIGINAL RustboroCity_DevonCorp_1F_Text_H0 = RustboroCity_DevonCorp_1F_Text_ThoseShoesAreOurProduct
+        "Hey, those RUNNING SHOES! They're one of our products! It makes me happy when I see someone using so…"
+    data/maps/RustboroCity_DevonCorp_1F/text.inc:8: ORIGINAL RustboroCity_DevonCorp_1F_Text_H1 = RustboroCity_DevonCorp_1F_Text_OnlyAuthorizedPeopleEnter
+        "I'm sorry, only authorized people are allowed to enter here."
+    data/maps/RustboroCity_DevonCorp_1F/text.inc:12: ORIGINAL RustboroCity_DevonCorp_1F_Text_H2 = RustboroCity_DevonCorp_1F_Text_WelcomeToDevonCorp
+        "Hello and welcome to the DEVON CORPORATION. We're proud producers of items and medicine that enhance…"
+    data/maps/RustboroCity_DevonCorp_1F/text.inc:18: ORIGINAL RustboroCity_DevonCorp_1F_Text_H3 = RustboroCity_DevonCorp_1F_Text_ProductDisplay
+        "Prototypes and test products fill the glass display case. There's a panel with a description… “In ad…"
+    data/maps/RustboroCity_DevonCorp_1F/text.inc:31: ORIGINAL RustboroCity_DevonCorp_1F_Text_H4 = RustboroCity_DevonCorp_1F_Text_RocksMetalDisplay
+        "Samples of rocks and metal are displayed in the glass case. There's a panel with some writing on it……"
+RustboroCity_DevonCorp_2F                    Z3       6     6     0     6      0
+    data/maps/RustboroCity_DevonCorp_2F/text.inc:2: ORIGINAL RustboroCity_DevonCorp_2F_Text_H0 = RustboroCity_DevonCorp_2F_Text_DeviceForTalkingToPokemon
+        "We're developing a device for talking with POKéMON. But we haven't had much success…"
+    data/maps/RustboroCity_DevonCorp_2F/text.inc:7: ORIGINAL RustboroCity_DevonCorp_2F_Text_H1 = RustboroCity_DevonCorp_2F_Text_DevelopingNewBalls
+        "I'm developing new kinds of POKé BALLS… But I haven't made much headway…"
+    data/maps/RustboroCity_DevonCorp_2F/text.inc:12: ORIGINAL RustboroCity_DevonCorp_2F_Text_H2 = RustboroCity_DevonCorp_2F_Text_IMadePokenav
+        "I made the POKéNAV! As an engineer, I feel blessed to have made something so great!"
+    data/maps/RustboroCity_DevonCorp_2F/text.inc:17: ORIGINAL RustboroCity_DevonCorp_2F_Text_H3 = RustboroCity_DevonCorp_2F_Text_DeviceToVisualizePokemonDreams
+        "I'm trying to develop a device that visually reproduces the dreams of POKéMON… But it's not going we…"
+    data/maps/RustboroCity_DevonCorp_2F/text.inc:23: ORIGINAL RustboroCity_DevonCorp_2F_Text_H4 = RustboroCity_DevonCorp_2F_Text_DevelopDeviceToResurrectFossils
+        "I've been trying to develop a device that resurrects POKéMON from fossils… And, it's working!"
+    data/maps/RustboroCity_DevonCorp_2F/text.inc:29: ORIGINAL RustboroCity_DevonCorp_2F_Text_H5 = RustboroCity_DevonCorp_2F_Text_DevelopNewPokenavFeature
+        "I'm trying to develop a new feature for the POKéNAV… But it's not going well."
+RustboroCity_DevonCorp_3F                    Z3      12     3     0     3      1
+    data/maps/RustboroCity_DevonCorp_3F/text.inc:5: ORIGINAL RustboroCity_DevonCorp_3F_Text_H1 = RustboroCity_DevonCorp_3F_Text_CountingOnYou
+        "MR. STONE: I'm counting on you!"
+    data/maps/RustboroCity_DevonCorp_3F/text.inc:8: ORIGINAL RustboroCity_DevonCorp_3F_Text_H2 = RustboroCity_DevonCorp_3F_Text_RareRocksDisplay
+        "It's a collection of rare rocks and stones assembled by the PRESIDENT."
+    data/maps/RustboroCity_DevonCorp_3F/text.inc:12: ORIGINAL RustboroCity_DevonCorp_3F_Text_H3 = RustboroCity_DevonCorp_3F_Text_RareRocksDisplay
+        "It's a collection of rare rocks and stones assembled by the PRESIDENT."
+RustboroCity_Flat1_1F                        Z3       2     2     0     2      0
+    data/maps/RustboroCity_Flat1_1F/text.inc:2: ORIGINAL RustboroCity_Flat1_1F_Text_H0 = RustboroCity_Flat1_1F_Text_EveryPokemonHasAbility
+        "Every POKéMON has a special ability that it can use."
+    data/maps/RustboroCity_Flat1_1F/text.inc:6: ORIGINAL RustboroCity_Flat1_1F_Text_H1 = RustboroCity_Flat1_1F_Text_PokemonStrange
+        "POKéMON are such strange creatures."
+RustboroCity_Flat1_2F                        Z3       6     6     0     6      0
+    data/maps/RustboroCity_Flat1_2F/text.inc:2: ORIGINAL RustboroCity_Flat1_2F_Text_H0 = RustboroCity_Flat1_2F_Text_ComingUpWithMealsIsHard
+        "Oh, it's so hard every day… What's hard? You need to ask? It's trying to figure out what to make for…"
+    data/maps/RustboroCity_Flat1_2F/text.inc:11: ORIGINAL RustboroCity_Flat1_2F_Text_H1 = RustboroCity_Flat1_2F_Text_ItsAPokemonPlushDoll
+        "It's a POKéMON plush DOLL!"
+    data/maps/RustboroCity_Flat1_2F/text.inc:14: ORIGINAL RustboroCity_Flat1_2F_Text_H2 = RustboroCity_Flat1_2F_Text_ItsAPokemonPlushDoll
+        "It's a POKéMON plush DOLL!"
+    data/maps/RustboroCity_Flat1_2F/text.inc:17: ORIGINAL RustboroCity_Flat1_2F_Text_H3 = RustboroCity_Flat1_2F_Text_ItsAPokemonPlushDoll
+        "It's a POKéMON plush DOLL!"
+    data/maps/RustboroCity_Flat1_2F/text.inc:20: ORIGINAL RustboroCity_Flat1_2F_Text_H4 = RustboroCity_Flat1_2F_Text_ItsAPokemonPlushDoll
+        "It's a POKéMON plush DOLL!"
+    data/maps/RustboroCity_Flat1_2F/text.inc:23: ORIGINAL RustboroCity_Flat1_2F_Text_H5 = RustboroCity_Flat1_2F_Text_ItsAPokemonPlushDoll
+        "It's a POKéMON plush DOLL!"
+RustboroCity_Flat2_1F                        Z3       2     2     1     1      0
+    data/maps/RustboroCity_Flat2_1F/text.inc:5: ORIGINAL RustboroCity_Flat2_1F_Text_H1 = RustboroCity_Flat2_1F_Text_DevonWorkersLiveHere
+        "DEVON CORPORATION's workers live in this building."
+RustboroCity_Flat2_2F                        Z3       2     2     0     2      0
+    data/maps/RustboroCity_Flat2_2F/text.inc:2: ORIGINAL RustboroCity_Flat2_2F_Text_H0 = RustboroCity_Flat2_2F_Text_DevonWasTinyInOldDays
+        "Way back in the old days, DEVON was just a teeny, tiny company."
+    data/maps/RustboroCity_Flat2_2F/text.inc:6: ORIGINAL RustboroCity_Flat2_2F_Text_H1 = RustboroCity_Flat2_2F_Text_MyDaddyMadeThisYouCanHaveIt
+        "My daddy's working at the CORPORATION. My daddy made this! But I can't use it, so you can have it."
+RustboroCity_Flat2_3F                        Z3       2     2     0     2      0
+    data/maps/RustboroCity_Flat2_3F/text.inc:2: ORIGINAL RustboroCity_Flat2_3F_Text_H0 = RustboroCity_Flat2_3F_Text_PresidentCollectsRareStones
+        "DEVON's PRESIDENT likes to collect rare stones."
+    data/maps/RustboroCity_Flat2_3F/text.inc:6: ORIGINAL RustboroCity_Flat2_3F_Text_H1 = RustboroCity_Flat2_3F_Text_PresidentsSonAlsoCollectsRareStones
+        "I think the PRESIDENT's son also collects rare stones."
+RustboroCity_Gym                             Z3      19    10     0    10      0
+    data/maps/RustboroCity_Gym/text.inc:2: ORIGINAL RustboroCity_Gym_Text_H1_0 = RustboroCity_Gym_Text_JoshIntro
+        "Don't take us GYM TRAINERS lightly! I'll show you why we're better!"
+    data/maps/RustboroCity_Gym/text.inc:6: ORIGINAL RustboroCity_Gym_Text_H1_1 = RustboroCity_Gym_Text_JoshDefeat
+        "You were too good for me…"
+    data/maps/RustboroCity_Gym/text.inc:9: ORIGINAL RustboroCity_Gym_Text_H1_2 = RustboroCity_Gym_Text_JoshPostBattle
+        "You haven't seen anything of the ROCK type's terrifying power!"
+    data/maps/RustboroCity_Gym/text.inc:13: ORIGINAL RustboroCity_Gym_Text_H2_0 = RustboroCity_Gym_Text_TommyIntro
+        "If you can't beat me, you won't stand a chance against ROXANNE!"
+    data/maps/RustboroCity_Gym/text.inc:17: ORIGINAL RustboroCity_Gym_Text_H2_1 = RustboroCity_Gym_Text_TommyDefeat
+        "Wow! You've got some potential!"
+    data/maps/RustboroCity_Gym/text.inc:20: ORIGINAL RustboroCity_Gym_Text_H2_2 = RustboroCity_Gym_Text_TommyPostBattle
+        "ROXANNE is stronger than me by several times. You'd better be on your guard!"
+    data/maps/RustboroCity_Gym/text.inc:25: ORIGINAL RustboroCity_Gym_Text_H3 = RustboroCity_Gym_Text_GymGuideAdvice
+        "Yo, how's it going? Listen, my friend! Would you like to become the CHAMPION? I'm no TRAINER, not me…"
+    data/maps/RustboroCity_Gym/text.inc:47: ORIGINAL RustboroCity_Gym_Text_H4_0 = RustboroCity_Gym_Text_MarcIntro
+        "We might be in the middle of town, but so what? My ROCK POKéMON need room to rampage!"
+    data/maps/RustboroCity_Gym/text.inc:53: ORIGINAL RustboroCity_Gym_Text_H4_1 = RustboroCity_Gym_Text_MarcDefeat
+        "Oh, man oh man! Our challenger is one feisty customer!"
+    data/maps/RustboroCity_Gym/text.inc:57: ORIGINAL RustboroCity_Gym_Text_H4_2 = RustboroCity_Gym_Text_MarcPostBattle
+        "I have to hand it to our LEADER. It took smarts and sense for her to pick the ROCK type at her young…"
+RustboroCity_House1                          Z3       2     2     0     2      0
+    data/maps/RustboroCity_House1/text.inc:2: ORIGINAL RustboroCity_House1_Text_H0 = RustboroCity_House1_Text_IllTradeIfYouWant
+        "Huh? My POKéMON is cute? Sure, I knew that. But if you really want, I'm willing to trade it to you. …"
+    data/maps/RustboroCity_House1/text.inc:10: ORIGINAL RustboroCity_House1_Text_H1 = RustboroCity_House1_Text_AllSortsOfPlaces
+        "In all sorts of places, there are all sorts of POKéMON and people. I find that fascinating, so I go …"
+RustboroCity_House2                          Z3       2     2     0     2      0
+    data/maps/RustboroCity_House2/text.inc:2: ORIGINAL RustboroCity_House2_Text_H0 = RustboroCity_House2_Text_TrainerSchoolExcellent
+        "The TRAINER'S SCHOOL is excellent. If you study there, you could even become a GYM LEADER."
+    data/maps/RustboroCity_House2/text.inc:7: ORIGINAL RustboroCity_House2_Text_H1 = RustboroCity_House2_Text_RoxanneKnowsALot
+        "ROXANNE, the GYM LEADER, really knows a lot about POKéMON. She's really strong, too!"
+RustboroCity_House3                          Z3       3     3     1     2      0
+    data/maps/RustboroCity_House3/text.inc:2: ORIGINAL RustboroCity_House3_Text_H0 = RustboroCity_House3_Text_IGivePerfectlySuitedNicknames
+        "For my own POKéMON, I give them perfectly suited nicknames! It's my expression of, uh… originality, …"
+    data/maps/RustboroCity_House3/text.inc:8: ORIGINAL RustboroCity_House3_Text_H1 = RustboroCity_House3_Text_NamingPikachuPekachu
+        "But giving the name PEKACHU to a PIKACHU? It seems pointless. I suppose it is good to use a name tha…"
+RustboroCity_Mart                            Z3       4     4     0     4      0
+    data/maps/RustboroCity_Mart/text.inc:2: ORIGINAL RustboroCity_Mart_Text_H0 = elsewhere: data/text/mart_clerk.inc:gText_HowMayIServeYou
+        "Welcome! How may I serve you?"
+    data/maps/RustboroCity_Mart/text.inc:6: ORIGINAL RustboroCity_Mart_Text_H1 = RustboroCity_Mart_Text_ShouldBuySuperPotionsInstead
+        "My POKéMON evolved. It has a lot of HP now. I should buy SUPER POTIONS for it instead of ordinary PO…"
+    data/maps/RustboroCity_Mart/text.inc:12: ORIGINAL RustboroCity_Mart_Text_H2 = RustboroCity_Mart_Text_BuyingHealsInCaseOfShroomish
+        "I'm buying some PARLYZ HEALS and ANTIDOTES. Just in case I run into SHROOMISH in PETALBURG WOODS."
+    data/maps/RustboroCity_Mart/text.inc:18: ORIGINAL RustboroCity_Mart_Text_H3 = RustboroCity_Mart_Text_GettingEscapeRopeJustInCase
+        "I'm getting an ESCAPE ROPE just in case I get lost in a cave. I just need to use it to get back to t…"
+RustboroCity_PokemonCenter_1F                Z3       3     3     0     3      0
+    data/maps/RustboroCity_PokemonCenter_1F/text.inc:2: ORIGINAL RustboroCity_PokemonCenter_1F_Text_H0 = RustboroCity_PokemonCenter_1F_Text_PokemonHavePersonalities
+        "My POKéMON has a NAIVE nature, and my friend's has a JOLLY nature. It's fascinating how POKéMON have…"
+    data/maps/RustboroCity_PokemonCenter_1F/text.inc:8: ORIGINAL RustboroCity_PokemonCenter_1F_Text_H1 = RustboroCity_PokemonCenter_1F_Text_MaleAndFemalePokemon
+        "Just like people, there are male and female POKéMON. But no one seems to have any idea how they're d…"
+    data/maps/RustboroCity_PokemonCenter_1F/text.inc:14: ORIGINAL RustboroCity_PokemonCenter_1F_Text_H2 = RustboroCity_PokemonCenter_1F_Text_HMCutNextDoor
+        "The man next door gave me an HM! I used it to teach my POKéMON how to CUT down skinny trees."
+RustboroCity_PokemonCenter_2F                Z3       0     0     0     0      0
+RustboroCity_PokemonSchool                   Z3      11    11     0    11      0
+    data/maps/RustboroCity_PokemonSchool/text.inc:2: ORIGINAL RustboroCity_PokemonSchool_Text_H0 = RustboroCity_PokemonSchool_Text_TradingRightNow
+        "I'm trading POKéMON with my friend right now."
+    data/maps/RustboroCity_PokemonSchool/text.inc:6: ORIGINAL RustboroCity_PokemonSchool_Text_H1 = RustboroCity_PokemonSchool_Text_AlwaysWantedSeedot
+        "I always wanted a SEEDOT, and I'm finally getting one!"
+    data/maps/RustboroCity_PokemonSchool/text.inc:10: ORIGINAL RustboroCity_PokemonSchool_Text_H2 = RustboroCity_PokemonSchool_Text_PokemontCantUseManMadeItems
+        "POKéMON can hold items, but they don't know what to do with man-made items like POTION and ANTIDOTE."
+    data/maps/RustboroCity_PokemonSchool/text.inc:15: ORIGINAL RustboroCity_PokemonSchool_Text_H3 = RustboroCity_PokemonSchool_Text_ConfusedPokemonAttacksItself
+        "You know how some POKéMON moves can confuse a POKéMON? A confused POKéMON will sometimes attack itse…"
+    data/maps/RustboroCity_PokemonSchool/text.inc:23: ORIGINAL RustboroCity_PokemonSchool_Text_H4 = RustboroCity_PokemonSchool_Text_PokemonHealItselfWithBerry
+        "A POKéMON holding a BERRY will heal itself… There are many kinds of items that POKéMON can hold… Boy…"
+    data/maps/RustboroCity_PokemonSchool/text.inc:31: ORIGINAL RustboroCity_PokemonSchool_Text_H5 = RustboroCity_PokemonSchool_Text_StudentsWhoDontStudyGetQuickClaw
+        "Students who don't study get a little taste of my QUICK CLAW. Whether or not you are a good student …"
+    data/maps/RustboroCity_PokemonSchool/text.inc:38: ORIGINAL RustboroCity_PokemonSchool_Text_H6 = RustboroCity_PokemonSchool_Text_BlackboardListsStatusChanges
+        "The blackboard lists status changes that may affect POKéMON in battle."
+    data/maps/RustboroCity_PokemonSchool/text.inc:42: ORIGINAL RustboroCity_PokemonSchool_Text_H7 = RustboroCity_PokemonSchool_Text_BlackboardListsStatusChanges
+        "The blackboard lists status changes that may affect POKéMON in battle."
+    data/maps/RustboroCity_PokemonSchool/text.inc:46: ORIGINAL RustboroCity_PokemonSchool_Text_H8 = RustboroCity_PokemonSchool_Text_BlackboardListsStatusChanges
+        "The blackboard lists status changes that may affect POKéMON in battle."
+    data/maps/RustboroCity_PokemonSchool/text.inc:50: ORIGINAL RustboroCity_PokemonSchool_Text_H9 = RustboroCity_PokemonSchool_Text_BlackboardListsStatusChanges
+        "The blackboard lists status changes that may affect POKéMON in battle."
+    data/maps/RustboroCity_PokemonSchool/text.inc:54: ORIGINAL RustboroCity_PokemonSchool_Text_H10 = RustboroCity_PokemonSchool_Text_StudentsNotes
+        "It's this student's notebook… POKéMON are to be caught using POKé BALLS. Up to six POKéMON can accom…"
+RusturfTunnel                                Z3      10     3     0     3      0
+    data/maps/RusturfTunnel/text.inc:2: ORIGINAL RusturfTunnel_Text_H0_0 = RusturfTunnel_Text_MikeIntro
+        "What do you call a wild man up in the mountains? A mountain man, right? So why don't they call a POK…"
+    data/maps/RusturfTunnel/text.inc:8: ORIGINAL RusturfTunnel_Text_H0_1 = RusturfTunnel_Text_MikeDefeat
+        "My POKéMON… Ran out of power…"
+    data/maps/RusturfTunnel/text.inc:12: ORIGINAL RusturfTunnel_Text_H0_2 = RusturfTunnel_Text_MikePostBattle
+        "They halted development here to protect POKéMON, right? There's a feel-good story!"
+Underwater_Route105                          Z3       0     0     0     0      0
+
+52 maps, 535 texts in use: 185 still the Emerald original, 18 of them harmless (sign/cry), 167 to rewrite; 1 text labels nothing reaches

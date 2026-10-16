@@ -1,0 +1,12 @@
+[
+  {
+    "path": "tools/johto/build_olivine_cianwood.py",
+    "before": "6e42ffebfa69880bad7e6f1eccf75bbcf360dabfef427588680f080016b5a50d",
+    "after": "13158a26326c49c4e503c1ede6a536fe9a3045b6a42ade60c84cd1b93b15e00c"
+  },
+  {
+    "path": "include/constants/opponents_johto_olivine.h",
+    "before": "11369883f457a5562b05b622d82d707d92a5d158efbc6cbe79f3298fb26a8d0b",
+    "after": "e950ccb2d9edd1b9d8214df0a44d555d709b1ce006a3daba555f23670491f694"
+  }
+]

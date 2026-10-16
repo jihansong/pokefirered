@@ -1,0 +1,227 @@
+{
+  "updated_at": "2026-10-04T06:49:27.327906+00:00",
+  "verified_by": "root",
+  "basis": "Remote file inspection and actual render, not agent completion labels",
+  "opening": {
+    "status": "timing_revision_rendered_and_validated",
+    "directory": "/workspaces/pokefirered/outputs/opening-expression-edit-v4",
+    "duration_seconds": 10,
+    "frames": 600,
+    "fps": 60,
+    "visual_contact_sheet_reviewed": true,
+    "new_original_poses": false,
+    "rom_integrated": false,
+    "remaining": [
+      "Dedicated run/jump/carry artwork",
+      "Final visual review of motion",
+      "ROM integration"
+    ],
+    "regression": {
+      "status": "PASS",
+      "frames": 600,
+      "changed_frames": [
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        370,
+        371,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380,
+        381,
+        382,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390,
+        391,
+        392,
+        393,
+        394,
+        395,
+        396,
+        397,
+        398,
+        399,
+        400,
+        401,
+        402,
+        403,
+        404,
+        405,
+        406,
+        407,
+        408,
+        409,
+        410,
+        411,
+        412,
+        413,
+        414,
+        415,
+        416,
+        417,
+        418,
+        419,
+        420,
+        421,
+        422,
+        423,
+        424,
+        425,
+        426,
+        427,
+        428,
+        429,
+        430,
+        431,
+        432,
+        433,
+        434,
+        435,
+        436,
+        437,
+        438,
+        439
+      ],
+      "unchanged_non_strike_frames": 474,
+      "non_strike_rgb_sha256": "63a9fbb908a14974c1c6c1541c6df333e6302c12b50e200e0686936acbc8a373",
+      "main_flash_global_frames": [
+        389,
+        390,
+        391
+      ],
+      "new_original_poses": false,
+      "rom_integrated": false
+    },
+    "artifacts": {
+      "outputs/opening-expression-edit-v4/opening-10s-native.mp4": {
+        "bytes": 1210989,
+        "sha256": "1e2e4595b75c813bf920577a27ae1c72e653aa8f60d4ba84356f020fba98a640"
+      },
+      "outputs/opening-expression-edit-v4/keyframes-contact-sheet.png": {
+        "bytes": 96780,
+        "sha256": "c66c4eb818f4b2a221a57ea787d04e799729fab81c713406dd449b0c94bb9ffb"
+      },
+      "outputs/opening-expression-edit-v4/opening-10s-preview.mp4": {
+        "bytes": 3117464,
+        "sha256": "afddac4e1e8131909914dcd606d0eeb4a47c1471043a63ae92e4706d66fa7aaa"
+      },
+      "outputs/opening-expression-edit-v4/opening-native-600-frames.zip": {
+        "bytes": 4311041,
+        "sha256": "e3b8f6c1bc835c8f7c3424c0a048f19dc4041c551f04f5761571e63094f5eeb3"
+      },
+      "outputs/opening-expression-edit-v4/validation.json": {
+        "bytes": 1867,
+        "sha256": "599831542e812f2d170f472d046f63c4c8de3a2ba7bfbf0bcf4d31c6d1a80c50"
+      },
+      "outputs/opening-expression-edit-v4/chase-motion-sample.mp4": {
+        "bytes": 1299889,
+        "sha256": "53abe5c6e9b433f02006a33d98c794e81f6b2a5585fcada6d55df71600af5977"
+      },
+      "outputs/opening-expression-edit-v4/original-comparison.png": {
+        "bytes": 66488,
+        "sha256": "3c5d9ed43e3e879264a6a814bc8590285cf07e188818285ccee2d35433488b0d"
+      },
+      "outputs/opening-expression-edit-v4/timing-regression.json": {
+        "bytes": 1066,
+        "sha256": "0b9328697084b84a89a659deac668e94ab6b1a00389a557cda505528a58e33e3"
+      },
+      "outputs/opening-expression-edit-v4/asset-manifest.json": {
+        "bytes": 5042,
+        "sha256": "6c0ef773bfa6773fd9e6960a9a44bbef6831b54c2b4aa919c2db52d9d79738a7"
+      }
+    }
+  },
+  "uploaded_assets": {
+    "status": "55 existing uploaded files copied within Codespaces with byte-identical collision checks",
+    "directories": [
+      "outputs/pikachu-expression-edit-v1",
+      "outputs/title-front-edit-v1",
+      "outputs/rocket-art-v9"
+    ]
+  },
+  "title": {
+    "status": "v1 present; v2 SVG/Sharp edit prepared, not saved remotely",
+    "gif_status": "Not newly generated; PNG approval required before next stage"
+  },
+  "rocket": {
+    "status": "v9 uploaded assets format checked; live-ROM integration and single/double battle QA pending",
+    "native_format": "64x64, 4bpp, 16 palette entries",
+    "approved_ratio": "v4 retained",
+    "quality_limit": "v8 to v9 changes are hair and glove pixels; not a completed eye redraw"
+  },
+  "bag": {
+    "status": "42-to-84 item-kind patch prepared, six remote baseline hashes match; not applied",
+    "save_layout_changed": false,
+    "runtime_qa": "Not run; use QA v2 normal bag menu roundtrip, not v1 direct heap reset",
+    "ewram_before_bytes": 261860,
+    "qa_v2_sha256": "e11559878258fb0c99ebcbff0ddd6c893d7c1f622bb5c9c6e8524ba8044bd7b8"
+  },
+  "regions": {
+    "status": "Not complete",
+    "hoenn_next": "Rusturf Wanda reunion patch and 12 QA cases prepared, remote guards verified, not applied",
+    "johto": "Implementation completion not verified; audit ongoing",
+    "wanda_patch_sha256": "34ae0d640ba419fa6c8d21686746c35302d1e25b20a264852348ff393ea18fd8"
+  },
+  "dock_mew": {
+    "status": "Patch prepared, not applied",
+    "keep": "SSAnne exterior truck and dock",
+    "remove": "Roadside Vermilion truck",
+    "correction": "Use walk_in_place_left, not nonexistent walk_in_place_normal_left"
+  },
+  "endings": {
+    "required_versions": [
+      "Kanto",
+      "Johto",
+      "Hoenn"
+    ],
+    "status": "Not complete; portable renderers and regional clear triggers pending"
+  },
+  "save_v1_2": {
+    "status": "Local inspection complete; no matching file currently found in remote saves folder",
+    "source_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+    "source_modified": false,
+    "bad_egg": "Lickitung in BOX2 slot22; both save slots contain same corruption; authenticated donor not found"
+  },
+  "other_open_work": [
+    "PC capacity expansion remains unimplemented; 32 boxes only a proposal",
+    "Airport runway expansion",
+    "DELTA stutter investigation",
+    "Save v1.2 sync and compatibility verification",
+    "Lavender regression check as changes warrant"
+  ],
+  "agents": {
+    "art_assets_resume": "Portable Kanto/Hoenn ending renderer patch; Rocket runtime QA prepared",
+    "bag_capacity_audit": "Bag QA v2 fixed; now investigating follower performance",
+    "dock_mew_now": "Hoenn/Johto story audit; Wanda patch prepared"
+  },
+  "constraints": [
+    "No Codespaces restart",
+    "No push or public deployment",
+    "No incompatible save-layout changes",
+    "No deletion of existing work",
+    "Title PNG approval before GIF next stage",
+    "New music approval required"
+  ]
+}

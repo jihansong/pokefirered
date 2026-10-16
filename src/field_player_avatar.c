@@ -1,4 +1,5 @@
 #include "global.h"
+#include "constants/map_types.h"
 #include "surfing_pikachu.h"
 #include "gflib.h"
 #include "bike.h"
@@ -510,7 +511,7 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
         return;
     }
 
-    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
+    if (gPlayerAvatar.flags & (PLAYER_AVATAR_FLAG_SURFING | PLAYER_AVATAR_FLAG_UNDERWATER))
     {
         // Same speed as running
         PlayerWalkFast(direction);
@@ -740,7 +741,10 @@ static void PlayerAvatarTransition_Surfing(struct ObjectEvent * playerObjEvent)
 
 static void PlayerAvatarTransition_Underwater(struct ObjectEvent * playerObjEvent)
 {
-
+    // Reuse the player's approved native riding graphics without a surface wake.
+    ObjectEventSetGraphicsId(playerObjEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_GFX_RIDE));
+    ObjectEventTurn(playerObjEvent, playerObjEvent->movementDirection);
+    SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_UNDERWATER);
 }
 
 static void PlayerAvatarTransition_ReturnToField(struct ObjectEvent * playerObjEvent)
@@ -1396,6 +1400,8 @@ u8 GetPlayerAvatarGraphicsIdByCurrentState(void)
     u8 i;
     u8 flags = gPlayerAvatar.flags;
 
+    if (flags & PLAYER_AVATAR_FLAG_UNDERWATER)
+        return GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_GFX_RIDE);
     for (i = 0; i < NELEMS(*sPlayerAvatarGfxToStateFlag); i++)
     {
         if (sPlayerAvatarGfxToStateFlag[gPlayerAvatar.gender][i][1] & flags)
@@ -1408,6 +1414,8 @@ void SetPlayerAvatarExtraStateTransition(u8 graphicsId, u8 extras)
 {
     u8 unk = GetPlayerAvatarStateTransitionByGraphicsId(graphicsId, gPlayerAvatar.gender);
 
+    if (gMapHeader.mapType == MAP_TYPE_UNDERWATER)
+        unk = PLAYER_AVATAR_FLAG_UNDERWATER;
     gPlayerAvatar.transitionFlags |= unk | extras;
     DoPlayerAvatarTransition();
 }

@@ -1,0 +1,91 @@
+{
+  "rom_sha256": "6185cd53db214dd18cf8229726633f75a455353bfc202ac6d88c127477a6ca19",
+  "cases": [
+    {
+      "case": "chuck_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        57,
+        62
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3/johto-battles/chuck_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chuck_loss",
+      "turns": 1,
+      "native_outcome": 2,
+      "enemies": [
+        57,
+        62
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3/johto-battles/chuck_loss-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "jasmine_win",
+      "turns": 3,
+      "native_outcome": 1,
+      "enemies": [
+        81,
+        81,
+        208
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3/johto-battles/jasmine_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "jasmine_loss",
+      "turns": 1,
+      "native_outcome": 2,
+      "enemies": [
+        81,
+        81,
+        208
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3/johto-battles/jasmine_loss-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    }
+  ],
+  "all_pass": true,
+  "original_files_unchanged": true,
+  "forced_memory_writes": 0,
+  "forced_battle_outcomes": 0
+}

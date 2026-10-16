@@ -1,0 +1,29 @@
+{
+  "status": "CONTINUOUS_CC0_CRACKLE",
+  "source_url": "https://opengameart.org/sites/default/files/crackleelectricityloop.wav",
+  "source_page": "https://opengameart.org/content/electricity-game-sound-pack",
+  "author": "faxcorp",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "source_sha256": "c872ff9719f9bdf503e5d87fe9b1b128255fe2f9506e3a380ff022b83e0b7be8",
+  "crossfade_seconds": 0.04,
+  "source_copies": 9,
+  "wav": {
+    "silent_20ms_windows_below_minus60dB": 0,
+    "peak_dBFS": -9.118979937345042,
+    "samples": 176400
+  },
+  "aac": {
+    "silent_20ms_windows_below_minus60dB": 0,
+    "peak_dBFS": -9.14249120066625,
+    "samples": 176400
+  },
+  "video_packets_unchanged": true,
+  "gif_png_unchanged": true,
+  "new_music_created": false,
+  "auditioned": false,
+  "files": {
+    "continuous-electricity.wav": "05fc393c54d7a7030be0bc86506ea7d0ef455e4b26ace4a6e3e3fadd6bcc2189",
+    "title-current-continuous-electricity.mp4": "60ad8bbefc0d4fc2322d58e764977d5dc401c516d84551ce822f0218bd2409f9"
+  }
+}

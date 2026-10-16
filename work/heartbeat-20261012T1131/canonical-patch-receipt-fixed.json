@@ -1,0 +1,11 @@
+{
+  "apply_twice_identical": true,
+  "canonical_script_sha256": "37cb1bd667a71c99e121b5655c0c90b4b8b0cc0ae6a0c60b87da6d020c104a99",
+  "canonical_text_sha256": "adb9dbdc195c465a3dc58fd5b053cdee1f1ea4d26ca25e422ea05829fc5f76ce",
+  "generated": {
+    "data/maps/Route114/scripts.inc": "e23e8b10ee82763af064a3ff643ba437cfaa902ec8e62b665c5fe9c8e52d0bf0",
+    "data/maps/Route114/text.inc": "96bc2e08f063934025cc4e0c82c931ae3795ad725a7437841ff2fa48bca5fe57"
+  },
+  "terminal_tab_artifact_repaired": true,
+  "diagnostic_preserved": "work/heartbeat-20261012T1131/canonical-indent-diagnostic"
+}

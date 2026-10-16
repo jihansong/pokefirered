@@ -1,0 +1,20 @@
+{"name": "norman_new_victory", "ok": true, "native_ok": true, "errors": [], "negative_control": false}
+{"name": "norman_old_winner", "ok": true, "native_ok": true, "errors": [], "negative_control": false}
+{"name": "norman_three_badges_wait", "ok": true, "native_ok": true, "errors": [], "negative_control": false}
+{"name": "norman_new_wally_intro", "ok": true, "native_ok": true, "errors": [], "negative_control": false}
+{"name": "norman_new_wally_return_then_battle", "ok": true, "native_ok": true, "errors": [], "negative_control": false}
+{"name": "norman_before_win", "ok": true, "native_ok": true, "errors": [], "negative_control": false}
+{"name": "norman_loss", "ok": true, "native_ok": true, "errors": [], "negative_control": false}
+{"name": "norman_other_source_tm", "ok": true, "native_ok": true, "errors": [], "negative_control": false}
+{"name": "norman_full_stack", "ok": true, "native_ok": true, "errors": [], "negative_control": false}
+{"name": "norman_retry_room", "ok": true, "native_ok": true, "errors": [], "negative_control": false}
+{"name": "norman_already_received", "ok": true, "native_ok": true, "errors": [], "negative_control": false}
+{"name": "norman_received_but_used", "ok": true, "native_ok": true, "errors": [], "negative_control": false}
+{"name": "norman_receipt_missing_badge", "ok": true, "native_ok": true, "errors": [], "negative_control": false}
+{"name": "norman_badge_not_reannounced", "ok": true, "native_ok": true, "errors": [], "negative_control": false}
+{"name": "norman_other_badges_unchanged", "ok": true, "native_ok": true, "errors": [], "negative_control": false}
+{"name": "norman_duplicate_negative_control", "ok": true, "native_ok": false, "errors": ["expect item ITEM_TM42 = 1: item ITEM_TM42 is 0"], "negative_control": true}
+{"name": "norman_full_negative_control", "ok": true, "native_ok": false, "errors": ["expect flag FLAG_HOENN_GOT_TM42_FROM_NORMAN = 1: flag FLAG_HOENN_GOT_TM42_FROM_NORMAN is 0, expected 1"], "negative_control": true}
+{"name": "norman_old_winner_wally_0", "ok": true, "native_ok": true, "errors": [], "negative_control": false}
+{"name": "norman_old_winner_wally_1", "ok": true, "native_ok": true, "errors": [], "negative_control": false}
+{"report": "/workspaces/pokefirered/work/norman-native-qa-20261004T164044774170Z/result.json", "passed": 19, "total": 19, "ok": true}

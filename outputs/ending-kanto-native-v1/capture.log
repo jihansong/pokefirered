@@ -1,0 +1,37 @@
+warp MAP_INDIGO_PLATEAU_EXTERIOR (11,6)
+VAR_MAP_SCENE_INDIGO_PLATEAU_EXTERIOR = 1
+quest log emptied
+KANTO captured 1800 native frames
+KANTO captured 3600 native frames
+KANTO captured 5400 native frames
+KANTO captured 7200 native frames
+KANTO captured 9000 native frames
+KANTO captured 10800 native frames
+KANTO captured 12600 native frames
+KANTO captured 14400 native frames
+{
+  "pass": true,
+  "region": "kanto",
+  "rom_sha256": "8b2338d4791d68b8b33e06eae08978657ddd6a6cd689c40731288cc2dfe98706",
+  "elf_sha256": "fb264d8158652f1727ee67c9fe3cd2541b2306201f6a83f52b5c09d90a77b559",
+  "fixture_sav_sha256": "b82d6dacf4155e869d410c2f83b15df87662117808a66faaec70a4983164665d",
+  "scope": "native Kanto credits capture from copied clear fixture; not validation of entire preceding story",
+  "frames": 15771,
+  "seconds": 264.04922103881836,
+  "distinct_frames": 7025,
+  "music": "native MUS_CREDITS",
+  "timing": {
+    "song_start_emulator_frame": 666,
+    "credits_callback": 1439,
+    "the_end": 14865,
+    "song_end": 14970,
+    "the_end_wait": 15169,
+    "credits_exit": 15771
+  },
+  "all_original_saves_unchanged": true,
+  "files": {
+    "kanto-native-silent.mp4": "7eaad68ac6b12bc5659526ba2683944cebd5c463e5299ee4f14bae19295f0a37",
+    "kanto-original-frlg.wav": "f3f90b2d97e5b572d92aa56de4e444cdb6113c7c803b6f019892ab9dbbc62143",
+    "kanto-native-with-frlg.mp4": "aa5859df1ded7a6f8180efc0a8d20c13a2fc7941640ea02a12195c963ce306f7"
+  }
+}

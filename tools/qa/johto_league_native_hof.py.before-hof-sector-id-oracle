@@ -1,0 +1,143 @@
+#!/usr/bin/env python3
+"""Native Johto League gates and retained/restarted challenge state."""
+from pathlib import Path
+import hashlib
+_boot=Path(__file__).with_name('johto_league_native_bootstrap.py')
+_boot_text=_boot.read_text()
+assert hashlib.sha256(_boot_text.encode()).hexdigest()=='474c1ff4a38f7c8b77b8ef4bc826b9762a5a92ba09977a7616ffda6ad5aec136'
+exec(compile(_boot_text,str(_boot),'exec'),globals())
+
+gd.FIELDS.update({'pokemon.hp':('Pokemon','hp'),'pokemon.maxHP':('Pokemon','maxHP'),'pokemon.status':('Pokemon','status')})
+gd._OFFSETS=None
+def hof_compiled_oracles(party,count):
+ gd.FIELDS['pokemon.level']=('Pokemon','level');gd._OFFSETS=None
+ src=Path('src/hall_of_fame.c').read_text()
+ definitions=[]
+ for name in ['HallofFameMon','HallofFameTeam']:
+  matches=re.findall(r'struct '+name+r'\s*\{[^{}]*\};',src,re.S);assert len(matches)==1,(name,'native private ABI definition missing')
+  definitions.append(matches[0])
+ assert re.search(r'u16\s+species\s*:\s*9\s*;',definitions[0]) and re.search(r'u16\s+lvl\s*:\s*7\s*;',definitions[0])
+ rows=[]
+ for i in range(6):
+  raw=party[i*100:(i+1)*100]
+  if i<count:
+   m=legal_checksum(raw,'HOF compiler input')
+   assert not m.is_egg(),'HOF QA uses healthy non-egg partners'
+   row='{.tid='+str(m.otid)+'u,.personality='+str(m.personality)+'u,.species='+str(m.species())+',.lvl='+str(raw[off('pokemon.level')])+',.nick={'+','.join(str(v)for v in raw[8:18])+'}}'
+  else:row='{.nick={255}}'
+  rows.append(row)
+ c='#include "global.h"\n#include "pokemon.h"\n#include "save.h"\n#include <stddef.h>\n'+'\n'.join(definitions)+'\n'
+ c+='const struct HallofFameTeam qa_hof_team __attribute__((section(".qa_hof_team")))={.mon={'+','.join(rows)+'}};\n'
+ c+='const union PokemonSubstruct qa_champion __attribute__((section(".qa_champion")))={.type3={.championRibbon=1}};\n'
+ names=['mon','team','nick','hof1','hof2','sector','data','signature_offset','checksum_offset','signature']
+ vals=['sizeof(struct HallofFameMon)','sizeof(struct HallofFameTeam)','offsetof(struct HallofFameMon,nick)',
+ 'SECTOR_ID_HOF_1','SECTOR_ID_HOF_2','SECTOR_SIZE','SECTOR_DATA_SIZE','offsetof(struct SaveSector,signature)',
+ 'offsetof(struct SaveSector,checksum)','SECTOR_SIGNATURE']
+ c+='const u32 qa_hof_abi[] __attribute__((section(".qa_hof_abi")))={'+','.join(vals)+'};\n'
+ tool=Path(os.environ.get('DEVKITARM','/opt/devkitpro/devkitARM'))/'bin'
+ with tempfile.TemporaryDirectory(prefix='native-hof-oracles-') as td:
+  f=Path(td)/'oracle.c';obj=Path(td)/'oracle.o';f.write_text(c)
+  subprocess.run([str(tool/'arm-none-eabi-gcc'),'-c','-w','-mthumb','-mabi=apcs-gnu','-march=armv4t','-fcommon',
+   '-iquote','include','-DLEAFGREEN','-DREVISION=0','-DENGLISH','-DMODERN=1','-o',str(obj),str(f)],check=True)
+  raw={}
+  for label in ['team','champion','abi']:
+   b=Path(td)/(label+'.bin');subprocess.run([str(tool/'arm-none-eabi-objcopy'),'-O','binary','-j','.qa_hof_'+label if label!='champion' else '.qa_champion',str(obj),str(b)],check=True)
+   raw[label]=b.read_bytes()
+ abi=dict(zip(names,struct.unpack('<'+'I'*len(names),raw['abi'])))
+ assert len(raw['team'])==abi['team'] and len(raw['champion'])==12
+ assert sum(v.bit_count()for v in raw['champion'])==1,'champion ribbon layout is not a single bit'
+ return abi,raw['team'],raw['champion']
+def hof_party(before,after,mask):
+ party_identity(before,after,'native HOF')
+ assert after['pc']==before['pc'] and after['dex']==before['dex'],'HOF changed PC or dex history'
+ assert after['items']==before['items'],'HOF changed unrelated items'
+ for i in range(before['party_count']):
+  old=before['party'][i*100:(i+1)*100];new=after['party'][i*100:(i+1)*100]
+  a=legal_checksum(old,'HOF-before').subs();b=legal_checksum(new,'HOF-after').subs()
+  assert b['G']==a['G'] and b['E']==a['E'],'HOF changed growth/effort data'
+  assert b['A'][:8]==a['A'][:8],'HOF changed moves'
+  assert bytes(b['M'])==bytes(x|y for x,y in zip(a['M'],mask)),'HOF changed misc data beyond native Champion Ribbon'
+  assert struct.unpack_from('<H',new,off('pokemon.hp'))[0]==struct.unpack_from('<H',new,off('pokemon.maxHP'))[0]
+  assert struct.unpack_from('<I',new,off('pokemon.status'))[0]==0
+  for j in range(4):
+   if struct.unpack_from('<H',b['A'],j*2)[0]!=const('MOVE_NONE'):assert b['A'][8+j]>=a['A'][8+j] and b['A'][8+j]>0
+def native_hof(e,tag):
+ e.syms=syms;e.boot_continue();settle(e);e.run(60);before=snapshot(e)
+ assert before['flags'][SYS] and all(before['flags'][f]for f in ELITE_FLAGS)
+ counter=e.u32(syms['gSaveCounter']);abi,expected_team,mask=hof_compiled_oracles(before['party'],before['party_count'])
+ native_step(e,'UP')
+ question=e.read(syms['JohtoLeague_HallOfFame_Text_Record'],256).split(b'\xff')[0][:24]
+ seen=False
+ for _ in range(200):
+  if question in e.sym_read('gStringVar4',256):seen=True
+  if yes_no_ready(e):break
+  e.press('A',hold=1,after=8)
+ assert seen and yes_no_ready(e),'native HOF registration question did not open'
+ e.press('A',hold=1,after=12)
+ credits=syms['CB2_Credits']&~1;observed=False;frames=0
+ for _ in range(1500):
+  safe(e)
+  if e.callback2()&~1==credits:
+   mgr=e.u32(syms['sCreditsMgr'])
+   if mgr and e.u8(mgr+16)==1:observed=True;break
+  e.press('A',hold=1,after=24);frames+=25
+ assert observed,'actual Johto HOF did not dispatch the Johto credits profile'
+ assert e.u32(syms['gSaveCounter'])>counter and e.u8(syms['gSaveAttemptStatus'])==1,'native HOF save did not succeed'
+ after=snapshot(e);expected_flags=dict(before['flags']);expected_flags[L_CLEAR]=True
+ assert after['flags']==expected_flags and after['trainers']==before['trainers'],'HOF fabricated other story/trainer progress'
+ hof_party(before,after,mask)
+ e.shot(str(out/(tag+'-johto-credits.png')),scale=3);e.run(30)
+ # Flush actual emulator flash. No additional menu SAVE is issued before checking the HOF save.
+ e.lib.qa_close(e.h);e.h=None;stored=SaveFile(e.sav_path)
+ assert stored.counter>counter,'native HOF counter was not committed to flash'
+ for _,sid,size in stored.layout:
+  pos=stored.where[sid]*4096
+  assert checksum(stored.raw[pos:pos+size])==struct.unpack_from('<H',stored.raw,pos+0xff6)[0],('native HOF game-sector checksum',sid)
+ sectors=[]
+ for sid in [abi['hof1'],abi['hof2']]:
+  chunk=stored.raw[sid*abi['sector']:(sid+1)*abi['sector']]
+  assert struct.unpack_from('<I',chunk,abi['signature_offset'])[0]==abi['signature']
+  assert checksum(chunk[:abi['data']])==struct.unpack_from('<H',chunk,abi['checksum_offset'])[0],('HOF-record sector checksum',sid)
+  sectors.append(chunk[:abi['data']])
+ records=b''.join(sectors);teams=[]
+ for i in range(50):
+  team=records[i*abi['team']:(i+1)*abi['team']]
+  species=struct.unpack_from('<H',team,abi['nick']-2)[0]&511
+  if not species:break
+  teams.append(team)
+ assert teams and teams[-1]==expected_team,'HOF did not record the exact current PID/OT/species/level/nickname team'
+ assert bytes(stored.blocks['storage'])==after['pc']
+ assert bytes(stored.sb1[off('sb1.playerParty'):off('sb1.playerParty')+600])==after['party']
+ assert [stored.dex_state(i)for i in range(1,387)]==after['dex']
+ assert all(stored.flag(f)==v for f,v in after['flags'].items())
+ assert all(stored.trainer_beaten('TRAINER_JOHTO_'+n)==v for n,v in after['trainers'].items())
+ dst=out/(tag+'-native-QA-only.sav');assert not dst.exists();dst.write_bytes(Path(e.sav_path).read_bytes())
+ e.h=e.lib.qa_open(str(rom).encode(),str(e.sav_path).encode());assert e.h
+ e.boot_continue();settle(e);cold=snapshot(e);expected_cold=dict(after['flags']);expected_cold[L_ARRIVED]=True
+ assert cold['flags']==expected_cold
+ for field in ['party','party_count','pc','dex','items','trainers','pc_hm','pc_hm3','pc_hm02','pc_hm04','pc_hm07']:
+  assert cold[field]==after[field],('HOF cold load differs',field)
+ plateau=map_info('JohtoIndigoPlateau')
+ assert e.location()==(plateau['group'],plateau['num'],11,7),('Johto champion continue destination',e.location())
+ return {'case':tag,'native_hof_counter':[counter,stored.counter],'checksummed_game_sectors':len(stored.layout),
+  'checksummed_hof_sectors':2,'actual_current_team_recorded':True,'native_champion_ribbon_and_heal':True,
+  'actual_credits_profile':1,'credits_entry_frames':frames,'credits_complete_playthrough_claimed':False,
+  'native_continue_location':e.location(),'qa_save':str(dst),'forced_memory_writes':0,'forced_battle_outcomes':0}
+
+results=[]
+try:
+ with tempfile.TemporaryDirectory(prefix='johto-league-native-hof-') as td:
+  for already_cleared in [False,True]:
+   tag='registered_champion_rechallenge_hof' if already_cleared else 'first_johto_hof_registration'
+   target=Path(td)/(tag+'.sav')
+   flags={**{f:True for f in ELITE_FLAGS},SILVER_L:True,L_CLEAR:already_cleared}
+   prepared=fixture(target,{'where':('JohtoLeague_HallOfFame',6,6),'flags':flags,'trainers':{n:True for n in LEAGUE_ACTORS}})
+   with ReadOnlyEmu(str(rom),str(target),sym='') as e:row=native_hof(e,tag)
+   row['fixture_elite_qualification_explicit']=True;row['fixture_kanto_champion_explicit']=True
+   results.append(row);print(json.dumps(row),flush=True)
+finally:
+ for path,sh in originals.items():assert digest(path.read_bytes())==sh,('original changed',str(path))
+assert len(results)==2
+(out/'result.json').write_text(json.dumps({'rom_sha256':digest(rom.read_bytes()),'cases':results,'all_pass':True,
+ 'standalone_context_fixtures_not_full_campaign':True,'original_files_unchanged':True,
+ 'forced_memory_writes':0,'forced_battle_outcomes':0},indent=2))

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/work/connect_hoenn_legend_story_v1.py", line 35, in <module>
+    layouts={z['id']:z for z in json.loads((r/'data/layouts/layouts.json').read_text())['layouts']}
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/work/connect_hoenn_legend_story_v1.py", line 35, in <dictcomp>
+    layouts={z['id']:z for z in json.loads((r/'data/layouts/layouts.json').read_text())['layouts']}
+             ~^^^^^^
+KeyError: 'id'

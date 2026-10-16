@@ -1,0 +1,590 @@
+{
+  "scope": "pure_data_model_not_native_runtime_or_cause_confirmation",
+  "source_sha256": "b181299ea44b5fcb486d7d8f86509d840d84283dfcf5ba10a9d1ed063ecdabec",
+  "source_unchanged": true,
+  "give_uses_plain_ot_setter": false,
+  "cases": 72,
+  "foreign_direct_checksum_failures": 48,
+  "same_ot_controls_valid": true,
+  "all_rekey_payload_and_checksum_preserved": true,
+  "already_corrupt_input_not_silently_repaired": true,
+  "user_save_read_or_modified": false,
+  "rows": [
+    {
+      "order": "GAEM",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "GAEM",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "GAEM",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "GAME",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "GAME",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "GAME",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "GEAM",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "GEAM",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "GEAM",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "GEMA",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "GEMA",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "GEMA",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "GMAE",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "GMAE",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "GMAE",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "GMEA",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "GMEA",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "GMEA",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "AGEM",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "AGEM",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "AGEM",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "AGME",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "AGME",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "AGME",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "AEGM",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "AEGM",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "AEGM",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "AEMG",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "AEMG",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "AEMG",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "AMGE",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "AMGE",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "AMGE",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "AMEG",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "AMEG",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "AMEG",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "EGAM",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "EGAM",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "EGAM",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "EGMA",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "EGMA",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "EGMA",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "EAGM",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "EAGM",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "EAGM",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "EAMG",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "EAMG",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "EAMG",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "EMGA",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "EMGA",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "EMGA",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "EMAG",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "EMAG",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "EMAG",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "MGAE",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "MGAE",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "MGAE",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "MGEA",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "MGEA",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "MGEA",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "MAGE",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "MAGE",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "MAGE",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "MAEG",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "MAEG",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "MAEG",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "MEGA",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "MEGA",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "MEGA",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    },
+    {
+      "order": "MEAG",
+      "ot_xor": "0x0",
+      "direct_valid": true,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64089
+    },
+    {
+      "order": "MEAG",
+      "ot_xor": "0x10001",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 64103
+    },
+    {
+      "order": "MEAG",
+      "ot_xor": "0x1010101",
+      "direct_valid": false,
+      "rekey_valid": true,
+      "stored": 64089,
+      "direct_computed": 3687
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "original_hashes": {
+    "work\\current-resumption\\source\\docs\\team\\title\\v3\\ingame_A_1x.png": "5fb98d60932d00522d39b10c609f2713372de6eec54bc4ba462096a8c100a5a3",
+    "work\\art-route-review-20261001\\references\\15-ready-crouch.png": "0a4ff492e1152cabf0b8d19a29be95d2c7476a4348d290c6e2ddd6f42b7f1076",
+    "outputs\\title-front-edit-v1\\source-cutout.png": "32d6c7811df2bae81c675a1be84bed55950eaba2f08e89f81d88efbf9796d018",
+    "outputs\\title-front-edit-v1\\source-editable.svg": "5733e84e0e06c29d0b3449feca908964085e9aa2de5eb0bec2a5b209e1e301e3"
+  },
+  "reference": "User-provided 15-ready-crouch.png",
+  "method": "Adobe cutout and vectorization; explicit native SVG eyelid/mouth/tail-tip edits; fixed yellow RGB555 export; title layout composition",
+  "new_original_pose": false,
+  "derivative_reference_art": true,
+  "changes": [
+    "restored clipped tail tip",
+    "yellow monochrome palette",
+    "focused eye aperture and glints",
+    "mouth separation",
+    "horizontal mirror to fit title composition"
+  ],
+  "unmodified": [
+    "title logo",
+    "TM",
+    "Thunder Yellow Version",
+    "Press Start",
+    "Game Freak footer"
+  ],
+  "limitations": [
+    "Derivative user reference, not newly generated pose artwork",
+    "No animation approval/GIF or ROM",
+    "Static blue sky band composed from exact existing source strip",
+    "Palette packing and VRAM not verified"
+  ]
+}

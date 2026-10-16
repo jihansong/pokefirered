@@ -1,0 +1,57 @@
+{
+  "rom_sha256": "3b319b64cc1b29a1eacb7a57c50afafd935496614aa9e596b74eb556e1d38806",
+  "cases": [
+    {
+      "case": "kanto_badge1_missing_east_gate",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-phase3-kanto-gates/kanto_badge1_missing_east_gate-native-QA-only.sav"
+      },
+      "SYS_GAME_CLEAR_fixture": true,
+      "kanto_badge1_fixture": false,
+      "native_denied_dialogue": "JohtoRoute27_Text_NotReady",
+      "party_pc_dex_all_progress_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "kanto_badge1_missing_reception",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-phase3-kanto-gates/kanto_badge1_missing_reception-native-QA-only.sav"
+      },
+      "SYS_GAME_CLEAR_fixture": true,
+      "kanto_badge1_fixture": false,
+      "native_denied_dialogue": "JohtoLeague_PokemonCenter_1F_Text_NotReady",
+      "party_pc_dex_all_progress_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "kanto_badge1_missing_hof",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-phase3-kanto-gates/kanto_badge1_missing_hof-native-QA-only.sav"
+      },
+      "SYS_GAME_CLEAR_fixture": true,
+      "kanto_badge1_fixture": false,
+      "native_denied_dialogue": "JohtoLeague_HallOfFame_Text_NotReady",
+      "party_pc_dex_all_progress_preserved": true,
+      "forced_memory_writes": 0
+    }
+  ],
+  "all_pass": true,
+  "scope": "Three actual League gates deny missing original Kanto badge1 despite global SYS clear",
+  "original_files_unchanged": true,
+  "forced_memory_writes": 0
+}

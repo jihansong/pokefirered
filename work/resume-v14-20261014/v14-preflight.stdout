@@ -1,0 +1,2364 @@
+{
+  "schema": "thunder-yellow-v14-read-only-preflight-v1",
+  "source": "/workspaces/pokefirered/saves/pokemonthyl_v1.4.sav",
+  "source_sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4",
+  "active_bank": 0,
+  "save_counter": 78,
+  "inventory": [
+    {
+      "path": "saves/backup-codex-v1_1-recovery-sort-20261002T002244.307175Z/pokemonthyl_v1.1.original.sav",
+      "sha256": "417452a3f151dbe0eeaca4d41780739f8137eafd7ff14df4e7eed1685b9b699f",
+      "bytes": 131072,
+      "banks": [
+        {
+          "bank": 0,
+          "valid": true,
+          "counter": 42,
+          "errors": []
+        },
+        {
+          "bank": 1,
+          "valid": true,
+          "counter": 41,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "saves/backup-v0.6.0-era/hoenn.sav",
+      "sha256": "d1ed8d987d4e451efb00a6cda2ba770e6472f36a89595a04a3550156876806ad",
+      "bytes": 131072,
+      "banks": [
+        {
+          "bank": 0,
+          "valid": true,
+          "counter": 34,
+          "errors": []
+        },
+        {
+          "bank": 1,
+          "valid": true,
+          "counter": 35,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "saves/backup-v0.6.0-era/pokemonthyl_v3.gba.sav",
+      "sha256": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+      "bytes": 131072,
+      "banks": [
+        {
+          "bank": 0,
+          "valid": true,
+          "counter": 32,
+          "errors": []
+        },
+        {
+          "bank": 1,
+          "valid": true,
+          "counter": 33,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "saves/backup-v0.6.0-era/v0.1.0.sav",
+      "sha256": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+      "bytes": 131072,
+      "banks": [
+        {
+          "bank": 0,
+          "valid": true,
+          "counter": 22,
+          "errors": []
+        },
+        {
+          "bank": 1,
+          "valid": true,
+          "counter": 21,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "saves/backup-v0.6.0-era/v0.2.1.sav",
+      "sha256": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+      "bytes": 131072,
+      "banks": [
+        {
+          "bank": 0,
+          "valid": true,
+          "counter": 22,
+          "errors": []
+        },
+        {
+          "bank": 1,
+          "valid": true,
+          "counter": 23,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "saves/backup-v0.6.0-era/v0.5.1.sav",
+      "sha256": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+      "bytes": 131072,
+      "banks": [
+        {
+          "bank": 0,
+          "valid": true,
+          "counter": 34,
+          "errors": []
+        },
+        {
+          "bank": 1,
+          "valid": true,
+          "counter": 33,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "saves/hoenn.sav",
+      "sha256": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+      "bytes": 131072,
+      "banks": [
+        {
+          "bank": 0,
+          "valid": true,
+          "counter": 36,
+          "errors": []
+        },
+        {
+          "bank": 1,
+          "valid": true,
+          "counter": 35,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "saves/pokemonthyl_hoenn_QAed.sav",
+      "sha256": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+      "bytes": 131072,
+      "banks": [
+        {
+          "bank": 0,
+          "valid": true,
+          "counter": 12,
+          "errors": []
+        },
+        {
+          "bank": 1,
+          "valid": true,
+          "counter": 11,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "saves/pokemonthyl_v1.1.sav",
+      "sha256": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+      "bytes": 131072,
+      "banks": [
+        {
+          "bank": 0,
+          "valid": true,
+          "counter": 42,
+          "errors": []
+        },
+        {
+          "bank": 1,
+          "valid": true,
+          "counter": 41,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "saves/pokemonthyl_v1.2.sav",
+      "sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "bytes": 131072,
+      "banks": [
+        {
+          "bank": 0,
+          "valid": true,
+          "counter": 60,
+          "errors": []
+        },
+        {
+          "bank": 1,
+          "valid": true,
+          "counter": 59,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav",
+      "sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+      "bytes": 131072,
+      "banks": [
+        {
+          "bank": 0,
+          "valid": true,
+          "counter": 66,
+          "errors": []
+        },
+        {
+          "bank": 1,
+          "valid": true,
+          "counter": 67,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "saves/pokemonthyl_v1.25-items99-iv2x.sav",
+      "sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+      "bytes": 131072,
+      "banks": [
+        {
+          "bank": 0,
+          "valid": true,
+          "counter": 66,
+          "errors": []
+        },
+        {
+          "bank": 1,
+          "valid": true,
+          "counter": 67,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "saves/pokemonthyl_v1.25.sav",
+      "sha256": "53d923bf4668373724b19c9d3c8526b002701606ab7ac082d657ee990e23d7b3",
+      "bytes": 131072,
+      "banks": [
+        {
+          "bank": 0,
+          "valid": true,
+          "counter": 66,
+          "errors": []
+        },
+        {
+          "bank": 1,
+          "valid": true,
+          "counter": 67,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "saves/pokemonthyl_v1.4.sav",
+      "sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4",
+      "bytes": 131072,
+      "banks": [
+        {
+          "bank": 0,
+          "valid": true,
+          "counter": 78,
+          "errors": []
+        },
+        {
+          "bank": 1,
+          "valid": true,
+          "counter": 77,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "saves/pokemonthyl_v3.gba.sav",
+      "sha256": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+      "bytes": 131072,
+      "banks": [
+        {
+          "bank": 0,
+          "valid": true,
+          "counter": 32,
+          "errors": []
+        },
+        {
+          "bank": 1,
+          "valid": true,
+          "counter": 33,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "saves/v0.1.0.sav",
+      "sha256": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+      "bytes": 131072,
+      "banks": [
+        {
+          "bank": 0,
+          "valid": true,
+          "counter": 22,
+          "errors": []
+        },
+        {
+          "bank": 1,
+          "valid": true,
+          "counter": 21,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "saves/v0.2.1.sav",
+      "sha256": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+      "bytes": 131072,
+      "banks": [
+        {
+          "bank": 0,
+          "valid": true,
+          "counter": 22,
+          "errors": []
+        },
+        {
+          "bank": 1,
+          "valid": true,
+          "counter": 23,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "path": "saves/v0.5.1.sav",
+      "sha256": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+      "bytes": 131072,
+      "banks": [
+        {
+          "bank": 0,
+          "valid": true,
+          "counter": 34,
+          "errors": []
+        },
+        {
+          "bank": 1,
+          "valid": true,
+          "counter": 33,
+          "errors": []
+        }
+      ]
+    }
+  ],
+  "party_and_target_records": [
+    {
+      "location": "party",
+      "slot_1based": 1,
+      "pid": 3957541173,
+      "ot_id": 2839214970,
+      "nickname_hex": "bcc6bbcdcec9c3cdbfff",
+      "ot_name_hex": "c4c3c2bbc8ffff",
+      "language": 2,
+      "header_flags": 2,
+      "header_BadEgg": false,
+      "header_egg": false,
+      "secure_egg": false,
+      "stored_checksum": 19289,
+      "computed_checksum": 19289,
+      "checksum_ok": true,
+      "species_untrusted_if_bad": 9,
+      "exp_untrusted_if_bad": 308952,
+      "moves_untrusted_if_bad": [
+        308,
+        57,
+        70,
+        89
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 19289,
+      "hypothetical_residual": 0,
+      "record_sha256": "9fd58727f48025a86e640dcf8047248d21b432e15e1a43e2210d2814f3093984",
+      "IVs_HP_ATK_DEF_SPD_SPATK_SPDEF": [
+        31,
+        31,
+        31,
+        31,
+        22,
+        31
+      ],
+      "EVs_HP_ATK_DEF_SPD_SPATK_SPDEF": [
+        44,
+        67,
+        90,
+        197,
+        73,
+        39
+      ],
+      "current_PP": [
+        15,
+        19,
+        6,
+        16
+      ],
+      "PP_Up_stages": [
+        3,
+        3,
+        0,
+        3
+      ]
+    },
+    {
+      "location": "party",
+      "slot_1based": 2,
+      "pid": 1847114783,
+      "ot_id": 2839214970,
+      "nickname_hex": "bdc2bbccc3d4bbccbeff",
+      "ot_name_hex": "c4c3c2bbc8ffff",
+      "language": 2,
+      "header_flags": 2,
+      "header_BadEgg": false,
+      "header_egg": false,
+      "secure_egg": false,
+      "stored_checksum": 58386,
+      "computed_checksum": 58386,
+      "checksum_ok": true,
+      "species_untrusted_if_bad": 6,
+      "exp_untrusted_if_bad": 300599,
+      "moves_untrusted_if_bad": [
+        126,
+        53,
+        83,
+        19
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 58386,
+      "hypothetical_residual": 0,
+      "record_sha256": "b7d89c7705a8e534fa25894168e7bc05646ea7ea2dcdcb88dccead60b8146ee5",
+      "IVs_HP_ATK_DEF_SPD_SPATK_SPDEF": [
+        31,
+        16,
+        30,
+        14,
+        24,
+        26
+      ],
+      "EVs_HP_ATK_DEF_SPD_SPATK_SPDEF": [
+        56,
+        143,
+        35,
+        153,
+        86,
+        37
+      ],
+      "current_PP": [
+        15,
+        24,
+        18,
+        24
+      ],
+      "PP_Up_stages": [
+        3,
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "location": "party",
+      "slot_1based": 3,
+      "pid": 2710679397,
+      "ot_id": 2839214970,
+      "nickname_hex": "d0bfc8cfcdbbcfccff00",
+      "ot_name_hex": "c4c3c2bbc8ffff",
+      "language": 2,
+      "header_flags": 2,
+      "header_BadEgg": false,
+      "header_egg": false,
+      "secure_egg": false,
+      "stored_checksum": 64525,
+      "computed_checksum": 64525,
+      "checksum_ok": true,
+      "species_untrusted_if_bad": 3,
+      "exp_untrusted_if_bad": 300676,
+      "moves_untrusted_if_bad": [
+        338,
+        76,
+        235,
+        15
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 64525,
+      "hypothetical_residual": 0,
+      "record_sha256": "a28c38106cc63014ccd497db63e509783c7c7f54f7445b7b32139c671fab8d07",
+      "IVs_HP_ATK_DEF_SPD_SPATK_SPDEF": [
+        31,
+        30,
+        31,
+        31,
+        8,
+        0
+      ],
+      "EVs_HP_ATK_DEF_SPD_SPATK_SPDEF": [
+        55,
+        106,
+        74,
+        172,
+        71,
+        32
+      ],
+      "current_PP": [
+        15,
+        16,
+        15,
+        30
+      ],
+      "PP_Up_stages": [
+        3,
+        3,
+        3,
+        0
+      ]
+    },
+    {
+      "location": "party",
+      "slot_1based": 4,
+      "pid": 2008717992,
+      "ot_id": 2839214970,
+      "nickname_hex": "beccbbc1c9c8c3cebfff",
+      "ot_name_hex": "c4c3c2bbc8ffff",
+      "language": 2,
+      "header_flags": 2,
+      "header_BadEgg": false,
+      "header_egg": false,
+      "secure_egg": false,
+      "stored_checksum": 8497,
+      "computed_checksum": 8497,
+      "checksum_ok": true,
+      "species_untrusted_if_bad": 149,
+      "exp_untrusted_if_bad": 376719,
+      "moves_untrusted_if_bad": [
+        127,
+        59,
+        87,
+        200
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 8497,
+      "hypothetical_residual": 0,
+      "record_sha256": "b20bae4827a17e2f91ffcce4450e8814ca22e319540b7873af4186e849f959ff",
+      "IVs_HP_ATK_DEF_SPD_SPATK_SPDEF": [
+        31,
+        31,
+        31,
+        18,
+        31,
+        31
+      ],
+      "EVs_HP_ATK_DEF_SPD_SPATK_SPDEF": [
+        45,
+        108,
+        84,
+        195,
+        57,
+        21
+      ],
+      "current_PP": [
+        15,
+        15,
+        16,
+        24
+      ],
+      "PP_Up_stages": [
+        0,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "location": "party",
+      "slot_1based": 5,
+      "pid": 3742077845,
+      "ot_id": 2839214970,
+      "nickname_hex": "cac3c5bbbdc2cfff4073",
+      "ot_name_hex": "c4c3c2bbc8ffff",
+      "language": 2,
+      "header_flags": 18,
+      "header_BadEgg": false,
+      "header_egg": false,
+      "secure_egg": false,
+      "stored_checksum": 44783,
+      "computed_checksum": 44783,
+      "checksum_ok": true,
+      "species_untrusted_if_bad": 25,
+      "exp_untrusted_if_bad": 374635,
+      "moves_untrusted_if_bad": [
+        355,
+        87,
+        57,
+        354
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 44783,
+      "hypothetical_residual": 0,
+      "record_sha256": "c07ee5bf149c312f37a8ece2900a733b9f3eeb527e301751567aabe800d4030c",
+      "IVs_HP_ATK_DEF_SPD_SPATK_SPDEF": [
+        18,
+        24,
+        21,
+        30,
+        28,
+        27
+      ],
+      "EVs_HP_ATK_DEF_SPD_SPATK_SPDEF": [
+        96,
+        63,
+        58,
+        239,
+        43,
+        11
+      ],
+      "current_PP": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "PP_Up_stages": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "location": "party",
+      "slot_1based": 6,
+      "pid": 2681606392,
+      "ot_id": 2839214970,
+      "nickname_hex": "606f8bfff44b2825724e",
+      "ot_name_hex": "c4c3c2bbc8ffff",
+      "language": 1,
+      "header_flags": 6,
+      "header_BadEgg": false,
+      "header_egg": true,
+      "secure_egg": true,
+      "stored_checksum": 54498,
+      "computed_checksum": 54498,
+      "checksum_ok": true,
+      "species_untrusted_if_bad": 175,
+      "exp_untrusted_if_bad": 100,
+      "moves_untrusted_if_bad": [
+        45,
+        204,
+        118,
+        0
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 38114,
+      "hypothetical_residual": 49152,
+      "record_sha256": "9866b471b9d5fda99aeb9e2d5d657aba490603fd96629e2e5eef039c7855fb53",
+      "IVs_HP_ATK_DEF_SPD_SPATK_SPDEF": [
+        21,
+        29,
+        13,
+        18,
+        31,
+        18
+      ],
+      "EVs_HP_ATK_DEF_SPD_SPATK_SPDEF": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "current_PP": [
+        40,
+        20,
+        10,
+        0
+      ],
+      "PP_Up_stages": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 2,
+      "pid": 2245990591,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6bbcaccbbcdff084073",
+      "ot_name_hex": "c4c3c2bbc8ffff",
+      "language": 2,
+      "header_flags": 7,
+      "header_BadEgg": true,
+      "header_egg": true,
+      "secure_egg": true,
+      "stored_checksum": 24383,
+      "computed_checksum": 57151,
+      "checksum_ok": false,
+      "species_untrusted_if_bad": 131,
+      "exp_untrusted_if_bad": 19531,
+      "moves_untrusted_if_bad": [
+        54,
+        34,
+        109,
+        195
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 40767,
+      "hypothetical_residual": 16384,
+      "record_sha256": "3fbae6a8ec95093b6f52825df22b4a1a68ece7648779ced8c113554cd90ccfcd"
+    },
+    {
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 22,
+      "pid": 3822976,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6c3bdc5c3cecfc8c1ff",
+      "ot_name_hex": "c4bfcdcdc3bfff",
+      "language": 2,
+      "header_flags": 39,
+      "header_BadEgg": true,
+      "header_egg": true,
+      "secure_egg": true,
+      "stored_checksum": 30838,
+      "computed_checksum": 48246,
+      "checksum_ok": false,
+      "species_untrusted_if_bad": 108,
+      "exp_untrusted_if_bad": 67168183,
+      "moves_untrusted_if_bad": [
+        23,
+        282,
+        48,
+        35
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 31862,
+      "hypothetical_residual": 1024,
+      "record_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd"
+    }
+  ],
+  "current_bad_records": [
+    {
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 2,
+      "pid": 2245990591,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6bbcaccbbcdff084073",
+      "ot_name_hex": "c4c3c2bbc8ffff",
+      "language": 2,
+      "header_flags": 7,
+      "header_BadEgg": true,
+      "header_egg": true,
+      "secure_egg": true,
+      "stored_checksum": 24383,
+      "computed_checksum": 57151,
+      "checksum_ok": false,
+      "species_untrusted_if_bad": 131,
+      "exp_untrusted_if_bad": 19531,
+      "moves_untrusted_if_bad": [
+        54,
+        34,
+        109,
+        195
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 40767,
+      "hypothetical_residual": 16384,
+      "record_sha256": "3fbae6a8ec95093b6f52825df22b4a1a68ece7648779ced8c113554cd90ccfcd"
+    },
+    {
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 22,
+      "pid": 3822976,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6c3bdc5c3cecfc8c1ff",
+      "ot_name_hex": "c4bfcdcdc3bfff",
+      "language": 2,
+      "header_flags": 39,
+      "header_BadEgg": true,
+      "header_egg": true,
+      "secure_egg": true,
+      "stored_checksum": 30838,
+      "computed_checksum": 48246,
+      "checksum_ok": false,
+      "species_untrusted_if_bad": 108,
+      "exp_untrusted_if_bad": 67168183,
+      "moves_untrusted_if_bad": [
+        23,
+        282,
+        48,
+        35
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 31862,
+      "hypothetical_residual": 1024,
+      "record_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd"
+    }
+  ],
+  "identity_donor_search": [
+    {
+      "path": "saves/pokemonthyl_v1.2.sav",
+      "sav_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "bank": 0,
+      "counter": 60,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 2,
+      "pid": 2245990591,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6bbcaccbbcdff084073",
+      "ot_name_hex": "c4c3c2bbc8ffff",
+      "language": 2,
+      "header_flags": 2,
+      "header_BadEgg": false,
+      "header_egg": false,
+      "secure_egg": false,
+      "stored_checksum": 24383,
+      "computed_checksum": 24383,
+      "checksum_ok": true,
+      "species_untrusted_if_bad": 131,
+      "exp_untrusted_if_bad": 19531,
+      "moves_untrusted_if_bad": [
+        54,
+        34,
+        109,
+        195
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 24383,
+      "hypothetical_residual": 0,
+      "record_sha256": "60d1c18b1eb7be18e53e23f3d8d5466471fc94095c895d14bed793ad2b9da8d7",
+      "healthy_exact_record_base64": "vxjfhXr7OqnGu8rMu83/CEBzAgLEw8K7yP//AD9fAADz48csqOMmLNvs7ylG4+Usjq/lLMWl5SzFZXwOw5nHuMXj5SzF4+UsxePlLMXj5Sw="
+    },
+    {
+      "path": "saves/pokemonthyl_v1.2.sav",
+      "sav_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "bank": 0,
+      "counter": 60,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 22,
+      "pid": 3822976,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6c3bdc5c3cecfc8c1ff",
+      "ot_name_hex": "c4bfcdcdc3bfff",
+      "language": 2,
+      "header_flags": 39,
+      "header_BadEgg": true,
+      "header_egg": true,
+      "secure_egg": true,
+      "stored_checksum": 30838,
+      "computed_checksum": 48246,
+      "checksum_ok": false,
+      "species_untrusted_if_bad": 108,
+      "exp_untrusted_if_bad": 67168183,
+      "moves_untrusted_if_bad": [
+        23,
+        282,
+        48,
+        35
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 31862,
+      "hypothetical_residual": 1024,
+      "record_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd"
+    },
+    {
+      "path": "saves/pokemonthyl_v1.2.sav",
+      "sav_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "bank": 1,
+      "counter": 59,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 2,
+      "pid": 2245990591,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6bbcaccbbcdff084073",
+      "ot_name_hex": "c4c3c2bbc8ffff",
+      "language": 2,
+      "header_flags": 2,
+      "header_BadEgg": false,
+      "header_egg": false,
+      "secure_egg": false,
+      "stored_checksum": 24383,
+      "computed_checksum": 24383,
+      "checksum_ok": true,
+      "species_untrusted_if_bad": 131,
+      "exp_untrusted_if_bad": 19531,
+      "moves_untrusted_if_bad": [
+        54,
+        34,
+        109,
+        195
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 24383,
+      "hypothetical_residual": 0,
+      "record_sha256": "60d1c18b1eb7be18e53e23f3d8d5466471fc94095c895d14bed793ad2b9da8d7",
+      "healthy_exact_record_base64": "vxjfhXr7OqnGu8rMu83/CEBzAgLEw8K7yP//AD9fAADz48csqOMmLNvs7ylG4+Usjq/lLMWl5SzFZXwOw5nHuMXj5SzF4+UsxePlLMXj5Sw="
+    },
+    {
+      "path": "saves/pokemonthyl_v1.2.sav",
+      "sav_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "bank": 1,
+      "counter": 59,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 22,
+      "pid": 3822976,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6c3bdc5c3cecfc8c1ff",
+      "ot_name_hex": "c4bfcdcdc3bfff",
+      "language": 2,
+      "header_flags": 39,
+      "header_BadEgg": true,
+      "header_egg": true,
+      "secure_egg": true,
+      "stored_checksum": 30838,
+      "computed_checksum": 48246,
+      "checksum_ok": false,
+      "species_untrusted_if_bad": 108,
+      "exp_untrusted_if_bad": 67168183,
+      "moves_untrusted_if_bad": [
+        23,
+        282,
+        48,
+        35
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 31862,
+      "hypothetical_residual": 1024,
+      "record_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd"
+    },
+    {
+      "path": "saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav",
+      "sav_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+      "bank": 0,
+      "counter": 66,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 2,
+      "pid": 2245990591,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6bbcaccbbcdff084073",
+      "ot_name_hex": "c4c3c2bbc8ffff",
+      "language": 2,
+      "header_flags": 2,
+      "header_BadEgg": false,
+      "header_egg": false,
+      "secure_egg": false,
+      "stored_checksum": 24383,
+      "computed_checksum": 24383,
+      "checksum_ok": true,
+      "species_untrusted_if_bad": 131,
+      "exp_untrusted_if_bad": 19531,
+      "moves_untrusted_if_bad": [
+        54,
+        34,
+        109,
+        195
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 24383,
+      "hypothetical_residual": 0,
+      "record_sha256": "60d1c18b1eb7be18e53e23f3d8d5466471fc94095c895d14bed793ad2b9da8d7",
+      "healthy_exact_record_base64": "vxjfhXr7OqnGu8rMu83/CEBzAgLEw8K7yP//AD9fAADz48csqOMmLNvs7ylG4+Usjq/lLMWl5SzFZXwOw5nHuMXj5SzF4+UsxePlLMXj5Sw="
+    },
+    {
+      "path": "saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav",
+      "sav_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+      "bank": 0,
+      "counter": 66,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 22,
+      "pid": 3822976,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6c3bdc5c3cecfc8c1ff",
+      "ot_name_hex": "c4bfcdcdc3bfff",
+      "language": 2,
+      "header_flags": 39,
+      "header_BadEgg": true,
+      "header_egg": true,
+      "secure_egg": true,
+      "stored_checksum": 30838,
+      "computed_checksum": 48246,
+      "checksum_ok": false,
+      "species_untrusted_if_bad": 108,
+      "exp_untrusted_if_bad": 67168183,
+      "moves_untrusted_if_bad": [
+        23,
+        282,
+        48,
+        35
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 31862,
+      "hypothetical_residual": 1024,
+      "record_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd"
+    },
+    {
+      "path": "saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav",
+      "sav_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+      "bank": 1,
+      "counter": 67,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 2,
+      "pid": 2245990591,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6bbcaccbbcdff084073",
+      "ot_name_hex": "c4c3c2bbc8ffff",
+      "language": 2,
+      "header_flags": 2,
+      "header_BadEgg": false,
+      "header_egg": false,
+      "secure_egg": false,
+      "stored_checksum": 24383,
+      "computed_checksum": 24383,
+      "checksum_ok": true,
+      "species_untrusted_if_bad": 131,
+      "exp_untrusted_if_bad": 19531,
+      "moves_untrusted_if_bad": [
+        54,
+        34,
+        109,
+        195
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 24383,
+      "hypothetical_residual": 0,
+      "record_sha256": "60d1c18b1eb7be18e53e23f3d8d5466471fc94095c895d14bed793ad2b9da8d7",
+      "healthy_exact_record_base64": "vxjfhXr7OqnGu8rMu83/CEBzAgLEw8K7yP//AD9fAADz48csqOMmLNvs7ylG4+Usjq/lLMWl5SzFZXwOw5nHuMXj5SzF4+UsxePlLMXj5Sw="
+    },
+    {
+      "path": "saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav",
+      "sav_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+      "bank": 1,
+      "counter": 67,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 22,
+      "pid": 3822976,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6c3bdc5c3cecfc8c1ff",
+      "ot_name_hex": "c4bfcdcdc3bfff",
+      "language": 2,
+      "header_flags": 39,
+      "header_BadEgg": true,
+      "header_egg": true,
+      "secure_egg": true,
+      "stored_checksum": 30838,
+      "computed_checksum": 48246,
+      "checksum_ok": false,
+      "species_untrusted_if_bad": 108,
+      "exp_untrusted_if_bad": 67168183,
+      "moves_untrusted_if_bad": [
+        23,
+        282,
+        48,
+        35
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 31862,
+      "hypothetical_residual": 1024,
+      "record_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd"
+    },
+    {
+      "path": "saves/pokemonthyl_v1.25-items99-iv2x.sav",
+      "sav_sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+      "bank": 0,
+      "counter": 66,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 2,
+      "pid": 2245990591,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6bbcaccbbcdff084073",
+      "ot_name_hex": "c4c3c2bbc8ffff",
+      "language": 2,
+      "header_flags": 2,
+      "header_BadEgg": false,
+      "header_egg": false,
+      "secure_egg": false,
+      "stored_checksum": 24383,
+      "computed_checksum": 24383,
+      "checksum_ok": true,
+      "species_untrusted_if_bad": 131,
+      "exp_untrusted_if_bad": 19531,
+      "moves_untrusted_if_bad": [
+        54,
+        34,
+        109,
+        195
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 24383,
+      "hypothetical_residual": 0,
+      "record_sha256": "60d1c18b1eb7be18e53e23f3d8d5466471fc94095c895d14bed793ad2b9da8d7",
+      "healthy_exact_record_base64": "vxjfhXr7OqnGu8rMu83/CEBzAgLEw8K7yP//AD9fAADz48csqOMmLNvs7ylG4+Usjq/lLMWl5SzFZXwOw5nHuMXj5SzF4+UsxePlLMXj5Sw="
+    },
+    {
+      "path": "saves/pokemonthyl_v1.25-items99-iv2x.sav",
+      "sav_sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+      "bank": 0,
+      "counter": 66,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 22,
+      "pid": 3822976,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6c3bdc5c3cecfc8c1ff",
+      "ot_name_hex": "c4bfcdcdc3bfff",
+      "language": 2,
+      "header_flags": 39,
+      "header_BadEgg": true,
+      "header_egg": true,
+      "secure_egg": true,
+      "stored_checksum": 30838,
+      "computed_checksum": 48246,
+      "checksum_ok": false,
+      "species_untrusted_if_bad": 108,
+      "exp_untrusted_if_bad": 67168183,
+      "moves_untrusted_if_bad": [
+        23,
+        282,
+        48,
+        35
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 31862,
+      "hypothetical_residual": 1024,
+      "record_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd"
+    },
+    {
+      "path": "saves/pokemonthyl_v1.25-items99-iv2x.sav",
+      "sav_sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+      "bank": 1,
+      "counter": 67,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 2,
+      "pid": 2245990591,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6bbcaccbbcdff084073",
+      "ot_name_hex": "c4c3c2bbc8ffff",
+      "language": 2,
+      "header_flags": 2,
+      "header_BadEgg": false,
+      "header_egg": false,
+      "secure_egg": false,
+      "stored_checksum": 24383,
+      "computed_checksum": 24383,
+      "checksum_ok": true,
+      "species_untrusted_if_bad": 131,
+      "exp_untrusted_if_bad": 19531,
+      "moves_untrusted_if_bad": [
+        54,
+        34,
+        109,
+        195
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 24383,
+      "hypothetical_residual": 0,
+      "record_sha256": "60d1c18b1eb7be18e53e23f3d8d5466471fc94095c895d14bed793ad2b9da8d7",
+      "healthy_exact_record_base64": "vxjfhXr7OqnGu8rMu83/CEBzAgLEw8K7yP//AD9fAADz48csqOMmLNvs7ylG4+Usjq/lLMWl5SzFZXwOw5nHuMXj5SzF4+UsxePlLMXj5Sw="
+    },
+    {
+      "path": "saves/pokemonthyl_v1.25-items99-iv2x.sav",
+      "sav_sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+      "bank": 1,
+      "counter": 67,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 22,
+      "pid": 3822976,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6c3bdc5c3cecfc8c1ff",
+      "ot_name_hex": "c4bfcdcdc3bfff",
+      "language": 2,
+      "header_flags": 39,
+      "header_BadEgg": true,
+      "header_egg": true,
+      "secure_egg": true,
+      "stored_checksum": 30838,
+      "computed_checksum": 48246,
+      "checksum_ok": false,
+      "species_untrusted_if_bad": 108,
+      "exp_untrusted_if_bad": 67168183,
+      "moves_untrusted_if_bad": [
+        23,
+        282,
+        48,
+        35
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 31862,
+      "hypothetical_residual": 1024,
+      "record_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd"
+    },
+    {
+      "path": "saves/pokemonthyl_v1.25.sav",
+      "sav_sha256": "53d923bf4668373724b19c9d3c8526b002701606ab7ac082d657ee990e23d7b3",
+      "bank": 0,
+      "counter": 66,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 2,
+      "pid": 2245990591,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6bbcaccbbcdff084073",
+      "ot_name_hex": "c4c3c2bbc8ffff",
+      "language": 2,
+      "header_flags": 2,
+      "header_BadEgg": false,
+      "header_egg": false,
+      "secure_egg": false,
+      "stored_checksum": 24383,
+      "computed_checksum": 24383,
+      "checksum_ok": true,
+      "species_untrusted_if_bad": 131,
+      "exp_untrusted_if_bad": 19531,
+      "moves_untrusted_if_bad": [
+        54,
+        34,
+        109,
+        195
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 24383,
+      "hypothetical_residual": 0,
+      "record_sha256": "60d1c18b1eb7be18e53e23f3d8d5466471fc94095c895d14bed793ad2b9da8d7",
+      "healthy_exact_record_base64": "vxjfhXr7OqnGu8rMu83/CEBzAgLEw8K7yP//AD9fAADz48csqOMmLNvs7ylG4+Usjq/lLMWl5SzFZXwOw5nHuMXj5SzF4+UsxePlLMXj5Sw="
+    },
+    {
+      "path": "saves/pokemonthyl_v1.25.sav",
+      "sav_sha256": "53d923bf4668373724b19c9d3c8526b002701606ab7ac082d657ee990e23d7b3",
+      "bank": 0,
+      "counter": 66,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 22,
+      "pid": 3822976,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6c3bdc5c3cecfc8c1ff",
+      "ot_name_hex": "c4bfcdcdc3bfff",
+      "language": 2,
+      "header_flags": 39,
+      "header_BadEgg": true,
+      "header_egg": true,
+      "secure_egg": true,
+      "stored_checksum": 30838,
+      "computed_checksum": 48246,
+      "checksum_ok": false,
+      "species_untrusted_if_bad": 108,
+      "exp_untrusted_if_bad": 67168183,
+      "moves_untrusted_if_bad": [
+        23,
+        282,
+        48,
+        35
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 31862,
+      "hypothetical_residual": 1024,
+      "record_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd"
+    },
+    {
+      "path": "saves/pokemonthyl_v1.25.sav",
+      "sav_sha256": "53d923bf4668373724b19c9d3c8526b002701606ab7ac082d657ee990e23d7b3",
+      "bank": 1,
+      "counter": 67,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 2,
+      "pid": 2245990591,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6bbcaccbbcdff084073",
+      "ot_name_hex": "c4c3c2bbc8ffff",
+      "language": 2,
+      "header_flags": 2,
+      "header_BadEgg": false,
+      "header_egg": false,
+      "secure_egg": false,
+      "stored_checksum": 24383,
+      "computed_checksum": 24383,
+      "checksum_ok": true,
+      "species_untrusted_if_bad": 131,
+      "exp_untrusted_if_bad": 19531,
+      "moves_untrusted_if_bad": [
+        54,
+        34,
+        109,
+        195
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 24383,
+      "hypothetical_residual": 0,
+      "record_sha256": "60d1c18b1eb7be18e53e23f3d8d5466471fc94095c895d14bed793ad2b9da8d7",
+      "healthy_exact_record_base64": "vxjfhXr7OqnGu8rMu83/CEBzAgLEw8K7yP//AD9fAADz48csqOMmLNvs7ylG4+Usjq/lLMWl5SzFZXwOw5nHuMXj5SzF4+UsxePlLMXj5Sw="
+    },
+    {
+      "path": "saves/pokemonthyl_v1.25.sav",
+      "sav_sha256": "53d923bf4668373724b19c9d3c8526b002701606ab7ac082d657ee990e23d7b3",
+      "bank": 1,
+      "counter": 67,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 22,
+      "pid": 3822976,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6c3bdc5c3cecfc8c1ff",
+      "ot_name_hex": "c4bfcdcdc3bfff",
+      "language": 2,
+      "header_flags": 39,
+      "header_BadEgg": true,
+      "header_egg": true,
+      "secure_egg": true,
+      "stored_checksum": 30838,
+      "computed_checksum": 48246,
+      "checksum_ok": false,
+      "species_untrusted_if_bad": 108,
+      "exp_untrusted_if_bad": 67168183,
+      "moves_untrusted_if_bad": [
+        23,
+        282,
+        48,
+        35
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 31862,
+      "hypothetical_residual": 1024,
+      "record_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd"
+    },
+    {
+      "path": "saves/pokemonthyl_v1.4.sav",
+      "sav_sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4",
+      "bank": 0,
+      "counter": 78,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 2,
+      "pid": 2245990591,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6bbcaccbbcdff084073",
+      "ot_name_hex": "c4c3c2bbc8ffff",
+      "language": 2,
+      "header_flags": 7,
+      "header_BadEgg": true,
+      "header_egg": true,
+      "secure_egg": true,
+      "stored_checksum": 24383,
+      "computed_checksum": 57151,
+      "checksum_ok": false,
+      "species_untrusted_if_bad": 131,
+      "exp_untrusted_if_bad": 19531,
+      "moves_untrusted_if_bad": [
+        54,
+        34,
+        109,
+        195
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 40767,
+      "hypothetical_residual": 16384,
+      "record_sha256": "3fbae6a8ec95093b6f52825df22b4a1a68ece7648779ced8c113554cd90ccfcd"
+    },
+    {
+      "path": "saves/pokemonthyl_v1.4.sav",
+      "sav_sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4",
+      "bank": 0,
+      "counter": 78,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 22,
+      "pid": 3822976,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6c3bdc5c3cecfc8c1ff",
+      "ot_name_hex": "c4bfcdcdc3bfff",
+      "language": 2,
+      "header_flags": 39,
+      "header_BadEgg": true,
+      "header_egg": true,
+      "secure_egg": true,
+      "stored_checksum": 30838,
+      "computed_checksum": 48246,
+      "checksum_ok": false,
+      "species_untrusted_if_bad": 108,
+      "exp_untrusted_if_bad": 67168183,
+      "moves_untrusted_if_bad": [
+        23,
+        282,
+        48,
+        35
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 31862,
+      "hypothetical_residual": 1024,
+      "record_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd"
+    },
+    {
+      "path": "saves/pokemonthyl_v1.4.sav",
+      "sav_sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4",
+      "bank": 1,
+      "counter": 77,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 2,
+      "pid": 2245990591,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6bbcaccbbcdff084073",
+      "ot_name_hex": "c4c3c2bbc8ffff",
+      "language": 2,
+      "header_flags": 7,
+      "header_BadEgg": true,
+      "header_egg": true,
+      "secure_egg": true,
+      "stored_checksum": 24383,
+      "computed_checksum": 57151,
+      "checksum_ok": false,
+      "species_untrusted_if_bad": 131,
+      "exp_untrusted_if_bad": 19531,
+      "moves_untrusted_if_bad": [
+        54,
+        34,
+        109,
+        195
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 40767,
+      "hypothetical_residual": 16384,
+      "record_sha256": "3fbae6a8ec95093b6f52825df22b4a1a68ece7648779ced8c113554cd90ccfcd"
+    },
+    {
+      "path": "saves/pokemonthyl_v1.4.sav",
+      "sav_sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4",
+      "bank": 1,
+      "counter": 77,
+      "location": "PC",
+      "box_1based": 2,
+      "cell_1based": 22,
+      "pid": 3822976,
+      "ot_id": 2839214970,
+      "nickname_hex": "c6c3bdc5c3cecfc8c1ff",
+      "ot_name_hex": "c4bfcdcdc3bfff",
+      "language": 2,
+      "header_flags": 39,
+      "header_BadEgg": true,
+      "header_egg": true,
+      "secure_egg": true,
+      "stored_checksum": 30838,
+      "computed_checksum": 48246,
+      "checksum_ok": false,
+      "species_untrusted_if_bad": 108,
+      "exp_untrusted_if_bad": 67168183,
+      "moves_untrusted_if_bad": [
+        23,
+        282,
+        48,
+        35
+      ],
+      "hypothetical_checksum_after_clearing_secure_egg": 31862,
+      "hypothetical_residual": 1024,
+      "record_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd"
+    }
+  ],
+  "item_inventory": [
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 0,
+      "item": 19,
+      "quantity": 32
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 1,
+      "item": 20,
+      "quantity": 5
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 2,
+      "item": 21,
+      "quantity": 33
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 3,
+      "item": 22,
+      "quantity": 55
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 4,
+      "item": 26,
+      "quantity": 58
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 5,
+      "item": 23,
+      "quantity": 32
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 6,
+      "item": 37,
+      "quantity": 1
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 7,
+      "item": 17,
+      "quantity": 9
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 8,
+      "item": 16,
+      "quantity": 8
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 9,
+      "item": 15,
+      "quantity": 8
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 10,
+      "item": 25,
+      "quantity": 3
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 11,
+      "item": 24,
+      "quantity": 32
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 12,
+      "item": 36,
+      "quantity": 2
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 13,
+      "item": 35,
+      "quantity": 4
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 14,
+      "item": 34,
+      "quantity": 5
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 15,
+      "item": 74,
+      "quantity": 1
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 16,
+      "item": 73,
+      "quantity": 1
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 17,
+      "item": 84,
+      "quantity": 35
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 18,
+      "item": 83,
+      "quantity": 23
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 19,
+      "item": 86,
+      "quantity": 18
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 20,
+      "item": 85,
+      "quantity": 11
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 21,
+      "item": 68,
+      "quantity": 28
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 22,
+      "item": 95,
+      "quantity": 3
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 23,
+      "item": 96,
+      "quantity": 2
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 24,
+      "item": 97,
+      "quantity": 1
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 25,
+      "item": 94,
+      "quantity": 2
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 26,
+      "item": 93,
+      "quantity": 2
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 27,
+      "item": 190,
+      "quantity": 2
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 28,
+      "item": 199,
+      "quantity": 2
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 29,
+      "item": 201,
+      "quantity": 3
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 30,
+      "item": 218,
+      "quantity": 2
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 31,
+      "item": 192,
+      "quantity": 1
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 32,
+      "item": 193,
+      "quantity": 1
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 33,
+      "item": 206,
+      "quantity": 1
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 34,
+      "item": 221,
+      "quantity": 1
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 35,
+      "item": 182,
+      "quantity": 1
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 36,
+      "item": 103,
+      "quantity": 99
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 37,
+      "item": 66,
+      "quantity": 3
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 38,
+      "item": 70,
+      "quantity": 1
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 39,
+      "item": 209,
+      "quantity": 1
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 40,
+      "item": 69,
+      "quantity": 74
+    },
+    {
+      "pocket": "ITEMS",
+      "slot_0based": 41,
+      "item": 212,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 0,
+      "item": 361,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 1,
+      "item": 366,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 2,
+      "item": 364,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 3,
+      "item": 365,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 4,
+      "item": 372,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 5,
+      "item": 363,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 6,
+      "item": 265,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 7,
+      "item": 362,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 8,
+      "item": 262,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 9,
+      "item": 261,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 10,
+      "item": 360,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 11,
+      "item": 260,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 12,
+      "item": 356,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 13,
+      "item": 359,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 14,
+      "item": 350,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 15,
+      "item": 264,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 16,
+      "item": 263,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 17,
+      "item": 355,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 18,
+      "item": 351,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 19,
+      "item": 368,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 20,
+      "item": 370,
+      "quantity": 1
+    },
+    {
+      "pocket": "KEY",
+      "slot_0based": 21,
+      "item": 371,
+      "quantity": 1
+    },
+    {
+      "pocket": "BALLS",
+      "slot_0based": 0,
+      "item": 3,
+      "quantity": 1
+    },
+    {
+      "pocket": "BALLS",
+      "slot_0based": 1,
+      "item": 1,
+      "quantity": 99
+    },
+    {
+      "pocket": "BALLS",
+      "slot_0based": 2,
+      "item": 2,
+      "quantity": 5
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 0,
+      "item": 339,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 1,
+      "item": 340,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 2,
+      "item": 341,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 3,
+      "item": 342,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 4,
+      "item": 343,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 5,
+      "item": 344,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 6,
+      "item": 345,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 7,
+      "item": 289,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 8,
+      "item": 290,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 9,
+      "item": 292,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 10,
+      "item": 293,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 11,
+      "item": 295,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 12,
+      "item": 296,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 13,
+      "item": 297,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 14,
+      "item": 299,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 15,
+      "item": 300,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 16,
+      "item": 304,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 17,
+      "item": 305,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 18,
+      "item": 306,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 19,
+      "item": 308,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 20,
+      "item": 309,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 21,
+      "item": 315,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 22,
+      "item": 319,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 23,
+      "item": 320,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 24,
+      "item": 321,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 25,
+      "item": 325,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 26,
+      "item": 328,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 27,
+      "item": 329,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 28,
+      "item": 331,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 29,
+      "item": 332,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 30,
+      "item": 333,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 31,
+      "item": 334,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 32,
+      "item": 335,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 33,
+      "item": 336,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 34,
+      "item": 337,
+      "quantity": 1
+    },
+    {
+      "pocket": "TMHM",
+      "slot_0based": 35,
+      "item": 338,
+      "quantity": 1
+    },
+    {
+      "pocket": "BERRIES",
+      "slot_0based": 0,
+      "item": 136,
+      "quantity": 3
+    },
+    {
+      "pocket": "BERRIES",
+      "slot_0based": 1,
+      "item": 140,
+      "quantity": 1
+    },
+    {
+      "pocket": "BERRIES",
+      "slot_0based": 2,
+      "item": 135,
+      "quantity": 2
+    },
+    {
+      "pocket": "BERRIES",
+      "slot_0based": 3,
+      "item": 142,
+      "quantity": 1
+    },
+    {
+      "pocket": "BERRIES",
+      "slot_0based": 4,
+      "item": 134,
+      "quantity": 1
+    },
+    {
+      "pocket": "BERRIES",
+      "slot_0based": 5,
+      "item": 133,
+      "quantity": 1
+    },
+    {
+      "pocket": "BERRIES",
+      "slot_0based": 6,
+      "item": 150,
+      "quantity": 1
+    },
+    {
+      "pocket": "BERRIES",
+      "slot_0based": 7,
+      "item": 138,
+      "quantity": 2
+    },
+    {
+      "pocket": "BERRIES",
+      "slot_0based": 8,
+      "item": 141,
+      "quantity": 2
+    },
+    {
+      "pocket": "BERRIES",
+      "slot_0based": 9,
+      "item": 151,
+      "quantity": 1
+    },
+    {
+      "pocket": "BERRIES",
+      "slot_0based": 10,
+      "item": 139,
+      "quantity": 1
+    },
+    {
+      "pocket": "BERRIES",
+      "slot_0based": 11,
+      "item": 137,
+      "quantity": 2
+    },
+    {
+      "pocket": "BERRIES",
+      "slot_0based": 12,
+      "item": 147,
+      "quantity": 1
+    },
+    {
+      "pocket": "BERRIES",
+      "slot_0based": 13,
+      "item": 148,
+      "quantity": 1
+    },
+    {
+      "pocket": "BERRIES",
+      "slot_0based": 14,
+      "item": 149,
+      "quantity": 1
+    },
+    {
+      "pocket": "BERRIES",
+      "slot_0based": 15,
+      "item": 152,
+      "quantity": 1
+    }
+  ],
+  "current_source_hashes": [
+    {
+      "path": "src/pokemon.c",
+      "exists": true,
+      "sha256": "373b692e42d952b94b44f0ceda81d56dc75e1abb6af9d60ca5ec47d927b2057c"
+    },
+    {
+      "path": "src/save.c",
+      "exists": true,
+      "sha256": "24f0b70d72cc83c50f7b2d6d73cb211c9b1272ab5fa40dc1d553ad48d1f4511c"
+    },
+    {
+      "path": "src/load_save.c",
+      "exists": true,
+      "sha256": "b6a07136288f9330cf2b56f3a101fb62fd99fb23d76c9ab8de81e8cba458c012"
+    },
+    {
+      "path": "src/pokemon_storage_system.c",
+      "exists": true,
+      "sha256": "ebb9e603740f0268e3662e21a18aa30acd3b43f96d6d20abd5d6bd4bb874ff4a"
+    },
+    {
+      "path": "src/snag.c",
+      "exists": true,
+      "sha256": "f7484a5b502d090f98aa3867e439b3db392ec292917c0f426352bd5add565944"
+    },
+    {
+      "path": "include/global.h",
+      "exists": true,
+      "sha256": "ff834418cf7bf2727385f91fa7eaf69d618783a46426077338b57a0523af21af"
+    },
+    {
+      "path": "include/pokemon.h",
+      "exists": true,
+      "sha256": "02fbde9fcef7f684b93389c6d31f825ce8e9d43549738dbe7ac1502ebc8d7d40"
+    },
+    {
+      "path": "include/pokemon_storage_system.h",
+      "exists": true,
+      "sha256": "d98c839ab2eeaa0e6c16e4ffdee53d404b074c6ffffa76384f26bd00ceffd537"
+    },
+    {
+      "path": "include/constants/items.h",
+      "exists": true,
+      "sha256": "d2348029aff9b459dce1ed19a71895c9922b5e946a09a3a6da2013c64dc71da8"
+    },
+    {
+      "path": "src/data/pokemon/evolution.h",
+      "exists": true,
+      "sha256": "27f8df0b3084a0cc4ea858e55799cd1e3b851b8d7125746454f5b120eb9d509a"
+    },
+    {
+      "path": "src/data/pokemon/species_info.h",
+      "exists": true,
+      "sha256": "e64d6a9f402bb6942cc084bfcb460b57fffb347fb29c40ffd3dbc405e0ae4f9d"
+    },
+    {
+      "path": "src/data/pokemon/experience_tables.h",
+      "exists": true,
+      "sha256": "9a236761640676e251b76b7950b86e5881ee23dfe920ca27bbe47b4541542731"
+    },
+    {
+      "path": "src/data/pokemon/pokedex_orders.h",
+      "exists": true,
+      "sha256": "2a6beb7e624f41ec1abf4813d630bdc385af89ecf051f2622f870001cac1aa38"
+    }
+  ],
+  "prior_IV_ledger_candidates": [
+    {
+      "path": "work/save-edit-20261013/edit-manifest.json",
+      "sha256": "66a7418fffb5ed0d8c5ae887dfdbfaceb14ff78165e2f7a7defb44906c06bf29",
+      "bytes": 5493
+    },
+    {
+      "path": "work/regional-starters-20261013/native-v2/validation.json",
+      "sha256": "4be329136a48d42c8101f1cbfda9fc7cc157862eea186188fa165cf1932ac33a",
+      "bytes": 13891
+    },
+    {
+      "path": "work/save-edit-v125-20261013/edit-manifest.json",
+      "sha256": "48cf6dc11194e7ca9a3562e3695e7cf4a0cd4721e41243159d36cbc8aefc0f50",
+      "bytes": 7083
+    },
+    {
+      "path": "work/save-edit-v125-20261013/status-before-edit.json",
+      "sha256": "340d927ed3e9d8a0cf221ac29ea92cea834b4d4a6bbdec9ec7ad92418ac77e51",
+      "bytes": 70996
+    },
+    {
+      "path": "work/misty-followup-20261014/native-v7-r3-launch.json",
+      "sha256": "0ed22a7d2a1353aea8b88eb3a2d14ac24e87ad68f926a1e3b5ab8ab3c3e1dae7",
+      "bytes": 883
+    },
+    {
+      "path": "work/misty-followup-20261014/native-v7-r5/validation.json",
+      "sha256": "9e64459bc4012818c3ef3b65dd534066a002fdc144980c0a4f4d5ac3e0090f6e",
+      "bytes": 14481
+    },
+    {
+      "path": "work/misty-followup-20261014/native-v7-r6/validation.json",
+      "sha256": "37966a11833191dc2ad6cb0ee26df2a4226db9f3d7c673c2fe11bd7a66601641",
+      "bytes": 37695
+    },
+    {
+      "path": "work/misty-followup-20261014/native-v7-r4/validation.json",
+      "sha256": "fa00f5a2c22c66fcf056cfd7ec3d9ffb265f1e810a8d556c7d68276f9d9dbca5",
+      "bytes": 14180
+    },
+    {
+      "path": "work/misty-followup-20261014/native-v7-r3/validation.json",
+      "sha256": "a00130247707c68406aeb179e9d83393a1ecee5055bf824c632f73283786d58f",
+      "bytes": 6472
+    },
+    {
+      "path": "work/save-inventory-pp-20261013/delivery-result.json",
+      "sha256": "7748378adc3a11bd04da19a28ef57e11b90456bb5c14f4e8d62e8eaa27179d06",
+      "bytes": 1260
+    },
+    {
+      "path": "work/save-inventory-pp-20261013/save-validation.json",
+      "sha256": "1cf763ebed96d10b8c918304ef01b5b50725edd25ecdcdb5ef18352e7cc34517",
+      "bytes": 4253
+    },
+    {
+      "path": "work/save-inventory-pp-20261013/before-final-promotion/animation-recreation-status.json",
+      "sha256": "db7f537bf018d077fac8861dddd8362c469935f4e1150fdd3c03a10aac07ce6e",
+      "bytes": 77155
+    },
+    {
+      "path": "work/hoenn-resume-20261014/native-continuation-r3/validation.json",
+      "sha256": "b3d98bacf4a83f192e6a8a18ae2cafc29cd52ba87c9cfc99e3e80f218ac0a2e1",
+      "bytes": 91924
+    },
+    {
+      "path": "work/hoenn-resume-20261014/native-continuation-r2/validation.json",
+      "sha256": "a20b0b345fa581bd25772409d6dc11dfd986c07c6f8db700ff3ed91d7e56f11f",
+      "bytes": 83100
+    },
+    {
+      "path": "work/hoenn-resume-20261014/native-continuation-r4/validation.json",
+      "sha256": "090fa55d12da7bf45cb7e769503201208dc25a53fb464afbeda677f582e9298c",
+      "bytes": 37269
+    },
+    {
+      "path": "work/hoenn-resume-20261014/native-delivery-r2/validation.json",
+      "sha256": "032d4a4a81504d47b967dfd4339b152ba2a6451eb673458281b0bd4d9cfd6376",
+      "bytes": 186384
+    },
+    {
+      "path": "work/hoenn-resume-20261014/native-double-loss-r1a/validation.json",
+      "sha256": "dfca567b091709c3c1022ef778d5c97eea7e7e80fc1cd6722907db391b77ae6b",
+      "bytes": 26659
+    },
+    {
+      "path": "work/hoenn-resume-20261014/native-delivery-r1/validation.json",
+      "sha256": "b0ea3d07009558f6ceb6fe0610050fb58ef8661073d37b595e1c8a126aa88443",
+      "bytes": 105522
+    },
+    {
+      "path": "work/hoenn-resume-20261014/native-double-loss-r2/validation.json",
+      "sha256": "d60ff0dca21a3f59cc28de31862664240c1dbf9f37938159e5f6eec4fc877154",
+      "bytes": 37792
+    },
+    {
+      "path": "work/hoenn-resume-20261014/native-double-replacement-r1a/validation.json",
+      "sha256": "1b1bd854c94ade0a146afac0fa82a8a08d9e10725cd29390aca729e7ba098b53",
+      "bytes": 35747
+    },
+    {
+      "path": "outputs/resume-v14-input-20261014/inventory.json",
+      "sha256": "10218cca4be36cb82dd38eaf84bbcfb234057ac4bb0181fbdda7c0ae38abc0e4",
+      "bytes": 7077
+    },
+    {
+      "path": "outputs/regional-starters-20261013/save-pp-validation.json",
+      "sha256": "1cf763ebed96d10b8c918304ef01b5b50725edd25ecdcdb5ef18352e7cc34517",
+      "bytes": 4253
+    },
+    {
+      "path": "outputs/save-pp15-20261013/manifest.json",
+      "sha256": "3dd3a2e68d739620b5c426947d0fdef2b55708085db9f7850eed8e90d27e6835",
+      "bytes": 1056
+    },
+    {
+      "path": "outputs/save-pp15-20261013/save-validation.json",
+      "sha256": "1cf763ebed96d10b8c918304ef01b5b50725edd25ecdcdb5ef18352e7cc34517",
+      "bytes": 4253
+    },
+    {
+      "path": "outputs/rom-integrated-v8-20261005T111752Z/animation-recreation-status.before-native-integration.json",
+      "sha256": "3999f584828545cd86ee74460813d589c1bf3969ca5c2f69f04dc63aa4abc5a9",
+      "bytes": 47418
+    },
+    {
+      "path": "outputs/save-v125-items99-iv2x-20261013/edit-manifest.json",
+      "sha256": "48cf6dc11194e7ca9a3562e3695e7cf4a0cd4721e41243159d36cbc8aefc0f50",
+      "bytes": 7083
+    }
+  ],
+  "all_original_saves_unchanged": true,
+  "write_operations": 0
+}

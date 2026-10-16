@@ -1,0 +1,66 @@
+{
+  "pass": false,
+  "rom_sha256": "2bafd6478fef5bbda56c6b4bec9c8dec1a4e0f060252fc219dbcc834411509f7",
+  "elf_sha256": "04a7c35b44df9a39ef56eadcc04cc8675d94d3996019fa27c9a913b3fffa9476",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-airplane-johto-transition",
+  "fixture": "temporary champion flag and starting position fixture; original party and PC retained",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "transition_samples": [
+    {
+      "step": 0,
+      "frame": 830,
+      "location": [
+        9,
+        8,
+        10,
+        6
+      ],
+      "callback": "0x8057521"
+    },
+    {
+      "step": 20,
+      "frame": 1150,
+      "location": [
+        9,
+        8,
+        10,
+        6
+      ],
+      "callback": "0x8eb3409"
+    },
+    {
+      "step": 40,
+      "frame": 1470,
+      "location": [
+        9,
+        8,
+        10,
+        6
+      ],
+      "callback": "0x8eb3409"
+    }
+  ],
+  "walk_stages": [
+    {
+      "stage": "airstrip-actual-arrival",
+      "location": [
+        76,
+        0,
+        22,
+        12
+      ],
+      "frame": 1894
+    }
+  ],
+  "error": "AssertionError(('blocked axis', 'JohtoCherrygroveAirstrip', 2, 31, (76, 0, 22, 12)))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/work/regression-oct12/native-johto-walk-final.py\", line 64, in <module>\n    axis('JohtoCherrygroveAirstrip',2,31);cross('JohtoCherrygroveAirstrip','JohtoRoute29')\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/work/regression-oct12/native-johto-walk-final.py\", line 54, in axis\n    assert e.location()!=pos,('blocked axis',name,idx,target,pos)\n           ^^^^^^^^^^^^^^^^^\nAssertionError: ('blocked axis', 'JohtoCherrygroveAirstrip', 2, 31, (76, 0, 22, 12))\n",
+  "original_saves_unchanged": true
+}

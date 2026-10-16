@@ -1,0 +1,38 @@
+HOENN captured 1800 native frames
+HOENN captured 3600 native frames
+HOENN captured 5400 native frames
+HOENN captured 7200 native frames
+HOENN captured 9000 native frames
+HOENN captured 10800 native frames
+HOENN captured 12600 native frames
+HOENN captured 14400 native frames
+{
+  "pass": true,
+  "region": "hoenn",
+  "rom_sha256": "f3b4e13df998d1832544218a88cd0c4845a9b7ebd184628e00c1e9595434204c",
+  "elf_sha256": "fcffe85e76e5404f15e552fa84ca18f91e883c0a0613b2678e7ceb27e4d42e47",
+  "fixture_sav_sha256": "ac9b9fc796754b46bf4091ba952a802dc7e13b25122db0a8c9a087817e1ea84a",
+  "scope": "native regional credits replay from a copied HOF/epilogue fixture; not proof of preceding victories or completion of requested bespoke story animation",
+  "temporary_fixture_forced_progress": true,
+  "new_music": false,
+  "audio_region": "hoenn",
+  "native_device_fps_measured": false,
+  "frames": 15742,
+  "seconds": 263.56368255615234,
+  "distinct_frames": 4158,
+  "music": "native MUS_CREDITS",
+  "timing": {
+    "song_start_emulator_frame": 2859,
+    "credits_callback": 0,
+    "the_end": 14836,
+    "song_end": 14970,
+    "the_end_wait": 15140,
+    "credits_exit": 15742
+  },
+  "all_original_saves_unchanged": true,
+  "files": {
+    "hoenn-native-silent.mp4": "92348713b4a467023dbdf71f726fada0d9f35018ebc14afce93c7d616d255e7f",
+    "hoenn-native-frlg.wav": "37b30224df3391bf8baae369e7fc3e2cc8d8589aef0f4630362707d9859ee1af",
+    "hoenn-native-with-frlg.mp4": "1513c92d905d87536702b0552fd9e98b4f7dba3c938eaff7ebb2e7d6f9552f88"
+  }
+}

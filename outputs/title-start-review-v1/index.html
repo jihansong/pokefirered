@@ -1,0 +1,77 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thunder Yellow — START</title><style>
+body{margin:0;background:#0b1020;color:#f9e98a;font:16px system-ui;display:grid;place-items:center;min-height:100vh}
+main{width:min(96vw,960px);text-align:center}canvas{width:100%;image-rendering:pixelated;background:#000}
+button{font:700 22px system-ui;color:#211b07;background:#ffdf54;border:0;border-radius:9px;padding:12px 40px;margin:18px}
+button:disabled{opacity:.45}p{color:#bec7d5}a{color:#f9e98a}</style>
+<main><canvas id="screen" width="240" height="160" aria-label="Thunder Yellow 타이틀 미리보기"></canvas>
+<button id="start" disabled>준비 중…</button><p id="status" role="status">이미지와 원본 음성을 준비하고 있습니다.</p>
+<p><small>START 연출 미리보기</small></p></main><script>
+"use strict";
+const canvas=document.getElementById("screen"),ctx=canvas.getContext("2d",{willReadFrequently:true});
+const startButton=document.getElementById("start"),status=document.getElementById("status");
+ctx.imageSmoothingEnabled=false;
+const loadImage=url=>new Promise((resolve,reject)=>{const im=new Image;im.onload=()=>resolve(im);im.onerror=reject;im.src=url});
+const bytes=async url=>{const r=await fetch(url);if(!r.ok)throw Error(url+" "+r.status);return r.arrayBuffer()};
+let images,raw,ac,buffers,busy=false,raf=0,active=[],music=null,musicOffset=0,musicStarted=0;
+const qa={effectKind:"existing-continuous-electricity",sourceVoice:"publisher-original WAV",startEvents:[],staticPixelsPreserved:false};
+window.titleStartReview=qa;
+function base(){ctx.clearRect(0,0,240,160);ctx.drawImage(images[0],0,0)}
+function paint(t=0,mouth=false){
+ base();if(mouth)ctx.drawImage(images[1],0,0);
+ const f=Math.floor(t*60),ends=[5,10,18,23,28],cell=ends.findIndex(x=>f<x);
+ if(mouth&&f>=0&&cell>=0){ctx.drawImage(images[2],0,cell*32,32,32,204,74,32,32);ctx.drawImage(images[2],0,cell*32,32,32,204,106,32,32)}
+}
+function validateMouth(){
+ base();const before=ctx.getImageData(0,0,240,160).data;
+ ctx.drawImage(images[1],0,0);const after=ctx.getImageData(0,0,240,160).data;
+ let changed=0,outside=0;
+ for(let i=0;i<before.length;i+=4){if(before.slice(i,i+4).some((x,j)=>x!==after[i+j])){changed++;const p=i/4,x=p%240,y=Math.floor(p/240);if(x<170||x>=194||y<109||y>=122)outside++}}
+ base();qa.mouthChangedPixels=changed;qa.mouthOutsideRoi=outside;
+ if(!changed||outside)throw Error("입 오버레이 보존 검증 실패");
+ const restored=ctx.getImageData(0,0,240,160).data;
+ qa.staticPixelsPreserved=restored.every((v,i)=>v===before[i]);
+ if(!qa.staticPixelsPreserved)throw Error("기본 이미지 보존 검증 실패");
+}
+function pauseMusic(){if(music){musicOffset=(Math.max(0,ac.currentTime-musicStarted)+musicOffset)%buffers[2].duration;music.stop();music=null}}
+function resumeMusic(){if(buffers&&!music){musicStarted=ac.currentTime+.02;[music]=source(buffers[2],.75,musicStarted,true,musicOffset)}}
+function stop(resume=true){cancelAnimationFrame(raf);active.forEach(s=>{try{s.stop()}catch{}});active=[];busy=false;if(images)base();if(resume)resumeMusic();startButton.disabled=false}
+function source(buffer,gain,when,loop=false,offset=0){
+ const s=ac.createBufferSource(),g=ac.createGain();s.buffer=buffer;s.loop=loop;g.gain.value=gain;s.connect(g);g.connect(ac.destination);s.start(when,offset);return [s,g];
+}
+async function run(){
+ if(busy)return;busy=true;startButton.disabled=true;
+ try{
+  if(!ac)ac=new AudioContext;
+  await ac.resume();
+  if(!buffers)buffers=await Promise.all(raw.map(b=>ac.decodeAudioData(b.slice(0))));
+  pauseMusic();
+  const when=ac.currentTime+.06,duration=buffers[0].duration;
+  const [voice]=source(buffers[0],.85,when),[effect]=source(buffers[1],.15,when);
+  effect.stop(when+Math.min(duration,buffers[1].duration));active=[voice,effect];
+  const event={voiceStart:when,effectStart:when,voiceDuration:duration,mouthFirstTime:null,finished:false};qa.startEvents.push(event);
+  status.textContent="피카!";
+  function tick(){
+   const t=ac.currentTime-when;
+   if(t<0){base();raf=requestAnimationFrame(tick);return}
+   if(t<duration){if(event.mouthFirstTime===null)event.mouthFirstTime=ac.currentTime;paint(t,true);raf=requestAnimationFrame(tick)}
+   else{event.finished=true;event.visualEnd=ac.currentTime;stop();status.textContent="START를 눌러 다시 재생할 수 있습니다."}
+  }
+  tick();
+ }catch(e){stop();status.textContent="재생하지 못했습니다: "+e.message;qa.error=String(e)}
+}
+startButton.addEventListener("click",run);
+addEventListener("keydown",e=>{if(["Enter"," ","a","A"].includes(e.key)&&!e.repeat&&!startButton.disabled){e.preventDefault();run()}});
+addEventListener("pagehide",()=>{stop(false);pauseMusic()});
+Promise.all([
+ Promise.all(["/title-approved.png","/title-start-mouth.svg","/title-native-lightning.png"].map(loadImage)),
+ Promise.all(["/title-original-pika.wav","/title-start-electricity.wav","/title-current-continuous-electricity.mp4"].map(bytes))
+]).then(([ims,data])=>{
+ images=ims;raw=data;
+ const sheet=document.createElement("canvas");sheet.width=32;sheet.height=160;
+ const c=sheet.getContext("2d");c.drawImage(images[2],0,0);const pixels=c.getImageData(0,0,32,160);
+ for(let i=0;i<pixels.data.length;i+=4)if(pixels.data[i]===0&&pixels.data[i+1]===0&&pixels.data[i+2]===0)pixels.data[i+3]=0;
+ c.putImageData(pixels,0,0);images[2]=sheet;validateMouth();
+ startButton.textContent="START";startButton.disabled=false;status.textContent="소리를 켜고 START를 눌러 주세요.";
+}).catch(e=>{status.textContent="준비하지 못했습니다: "+e.message;qa.error=String(e)});
+</script></html>

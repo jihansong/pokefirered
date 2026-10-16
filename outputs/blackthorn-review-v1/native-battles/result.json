@@ -1,0 +1,159 @@
+{
+  "rom_sha256": "e1dae61efd6a141c1ae167a196f6257c2aad9d65a4064207ddcd2416bdcf9542",
+  "cases": [
+    {
+      "case": "wilton_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        118,
+        119
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-battles/wilton_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "vance_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        17,
+        22
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-battles/vance_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "allen_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        147,
+        148
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-battles/allen_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "fran_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        117,
+        148
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-battles/fran_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "clair_win",
+      "turns": 3,
+      "native_outcome": 1,
+      "enemies": [
+        148,
+        148,
+        230
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-battles/clair_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "clair_loss",
+      "turns": 1,
+      "native_outcome": 2,
+      "enemies": [
+        148,
+        148,
+        230
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-battles/clair_loss-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "clair_full_tm_win",
+      "turns": 3,
+      "native_outcome": 1,
+      "enemies": [
+        148,
+        148,
+        230
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-battles/clair_full_tm_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    }
+  ],
+  "all_pass": true,
+  "original_files_unchanged": true,
+  "forced_memory_writes": 0,
+  "forced_battle_outcomes": 0
+}

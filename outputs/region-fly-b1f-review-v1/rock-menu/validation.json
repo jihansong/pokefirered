@@ -1,0 +1,241 @@
+{
+  "pass": true,
+  "rom_sha256": "3d1a1a4f3e84deb5d9f8d2a5943930354e1a86164fe257eabf79d99ca1232fee",
+  "elf_sha256": "efd67a54f5ad9ecbe8aaa02c0d69ca7ecb6eb6d928f50761199bd8e6f040b0eb",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-regional-puzzle-rock-menu",
+  "fixture": "temporary Lapras mover plus unedited original starter Pikachu; no source save changes",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [
+    {
+      "label": "no-player-obstacle-overlap",
+      "player": [
+        19,
+        5
+      ],
+      "obstacles": [
+        {
+          "slot": 1,
+          "id": 8,
+          "gfx": 97,
+          "xy": [
+            20,
+            5
+          ],
+          "sprite": 1
+        },
+        {
+          "slot": 2,
+          "id": 9,
+          "gfx": 97,
+          "xy": [
+            21,
+            4
+          ],
+          "sprite": 2
+        },
+        {
+          "slot": 5,
+          "id": 16,
+          "gfx": 96,
+          "xy": [
+            20,
+            4
+          ],
+          "sprite": 3
+        },
+        {
+          "slot": 6,
+          "id": 17,
+          "gfx": 96,
+          "xy": [
+            18,
+            12
+          ],
+          "sprite": 4
+        }
+      ]
+    },
+    {
+      "label": "rock-hidden-after-screen-reentry",
+      "temp_flag": true
+    }
+  ],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_story_not_entire_regions": true,
+  "johto_badges_defined": [
+    "FLAG_JOHTO_BADGE01_GET",
+    "FLAG_JOHTO_BADGE02_GET",
+    "FLAG_JOHTO_BADGE03_GET",
+    "FLAG_JOHTO_BADGE04_GET",
+    "FLAG_JOHTO_BADGE05_GET",
+    "FLAG_JOHTO_BADGE06_GET"
+  ],
+  "palette_active_abi_mask": {
+    "size": 16,
+    "offset": 7,
+    "mask": 128
+  },
+  "follower_checks": [
+    {
+      "label": "before-hm-right",
+      "map": [
+        67,
+        44
+      ],
+      "player_xy": [
+        17,
+        5
+      ],
+      "follower_xy": [
+        18,
+        5
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "before-hm-left",
+      "map": [
+        67,
+        44
+      ],
+      "player_xy": [
+        18,
+        5
+      ],
+      "follower_xy": [
+        17,
+        5
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "native-rock-smash",
+      "map": [
+        67,
+        44
+      ],
+      "player_xy": [
+        19,
+        5
+      ],
+      "follower_xy": [
+        18,
+        5
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "rock-smash-cold-right",
+      "map": [
+        67,
+        44
+      ],
+      "player_xy": [
+        18,
+        5
+      ],
+      "follower_xy": [
+        19,
+        5
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "rock-smash-cold-left",
+      "map": [
+        67,
+        44
+      ],
+      "player_xy": [
+        19,
+        5
+      ],
+      "follower_xy": [
+        18,
+        5
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    }
+  ],
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "ui_stage": "choose-waterfall-action",
+  "native_hm_cursor_option": 23,
+  "native_save": {
+    "counter_before": 60,
+    "counter_after": 61,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_BADGE01_GET": false,
+      "FLAG_BADGE02_GET": false,
+      "FLAG_BADGE03_GET": false,
+      "FLAG_BADGE04_GET": false,
+      "FLAG_BADGE05_GET": false,
+      "FLAG_BADGE06_GET": false,
+      "FLAG_BADGE07_GET": false,
+      "FLAG_BADGE08_GET": false,
+      "FLAG_HOENN_BADGE01_GET": false,
+      "FLAG_HOENN_BADGE02_GET": false,
+      "FLAG_HOENN_BADGE03_GET": true,
+      "FLAG_HOENN_BADGE04_GET": false,
+      "FLAG_HOENN_BADGE05_GET": false,
+      "FLAG_HOENN_BADGE06_GET": false,
+      "FLAG_HOENN_BADGE07_GET": false,
+      "FLAG_HOENN_BADGE08_GET": false,
+      "FLAG_JOHTO_BADGE01_GET": false,
+      "FLAG_JOHTO_BADGE02_GET": false,
+      "FLAG_JOHTO_BADGE03_GET": false,
+      "FLAG_JOHTO_BADGE04_GET": false,
+      "FLAG_JOHTO_BADGE05_GET": false,
+      "FLAG_JOHTO_BADGE06_GET": false,
+      "FLAG_RECEIVED_STARTER_PIKACHU": true,
+      "FLAG_SYS_USE_STRENGTH": false,
+      "FLAG_TEMP_11": false,
+      "FLAG_TEMP_12": false,
+      "FLAG_TEMP_13": false,
+      "FLAG_TEMP_14": false,
+      "FLAG_TEMP_15": false,
+      "FLAG_TEMP_16": false,
+      "FLAG_TEMP_17": false,
+      "FLAG_TEMP_18": false,
+      "FLAG_TEMP_19": true,
+      "FLAG_TEMP_1A": false,
+      "FLAG_TEMP_1B": false,
+      "FLAG_TEMP_1C": false,
+      "FLAG_TEMP_1D": false,
+      "FLAG_TEMP_1E": false,
+      "FLAG_TEMP_1F": false
+    },
+    "trainers": {
+      "TRAINER_HOENN_SHELLY_WEATHER_INSTITUTE": false,
+      "TRAINER_HOENN_TABITHA_SPACE_CENTER": false,
+      "TRAINER_HOENN_MAXIE_SPACE_CENTER": false
+    },
+    "hm08": 0,
+    "sha256": "8f3d59fcc6548f15e137f5c2730258cdf6031446d6a6b6502b4aa7873523cc87"
+  },
+  "full_original_storage_unchanged": true,
+  "original_saves_unchanged": true
+}

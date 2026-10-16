@@ -1,0 +1,283 @@
+#include "global.h"
+#include "companion_misty.h"
+#include "event_data.h"
+#include "event_object_movement.h"
+#include "field_player_avatar.h"
+#include "follower_pikachu.h"
+#include "link.h"
+#include "quest_log.h"
+#include "constants/event_object_movement.h"
+#include "constants/event_objects.h"
+#include "constants/flags.h"
+#include "constants/flags_johto_story.h"
+#include "constants/flags_hoenn_story.h"
+#include "constants/quest_log.h"
+#include "constants/vars.h"
+#include "constants/maps.h"
+#include "constants/map_event_ids.h"
+
+// Only transient script visibility is new RAM. Story/growth use existing flags.
+static EWRAM_DATA bool8 sMistyHiddenByScript = FALSE;
+
+struct ObjectEvent *GetMistyCompanionObject(void)
+{
+    u8 i;
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+        if (gObjectEvents[i].active && gObjectEvents[i].localId == LOCALID_MISTY_COMPANION)
+            return &gObjectEvents[i];
+    return NULL;
+}
+
+bool8 IsMistyCompanionObject(struct ObjectEvent *objectEvent)
+{
+    return objectEvent->active && objectEvent->localId == LOCALID_MISTY_COMPANION;
+}
+
+static bool8 ShouldMistyExist(void)
+{
+    if (!FlagGet(FLAG_MISTY_COMPANION_JOINED) || QL_IS_PLAYBACK_STATE || InUnionRoom() == TRUE)
+        return FALSE;
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE
+                            | PLAYER_AVATAR_FLAG_SURFING | PLAYER_AVATAR_FLAG_UNDERWATER))
+        return FALSE;
+    return TRUE;
+}
+
+static void HideMistyUnderPlayer(struct ObjectEvent *misty)
+{
+    struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
+    ObjectEventClearHeldMovementIfActive(misty);
+    MoveObjectEventToMapCoords(misty, player->currentCoords.x, player->currentCoords.y);
+    misty->invisible = TRUE;
+}
+
+static bool8 SameTile(struct ObjectEvent *a, struct ObjectEvent *b)
+{
+    return a->currentCoords.x == b->currentCoords.x && a->currentCoords.y == b->currentCoords.y;
+}
+
+static bool8 SpriteFeetSeparated(struct ObjectEvent *a, struct ObjectEvent *b)
+{
+    struct Sprite *sa, *sb;
+    s16 dx, dy;
+    if (a->spriteId >= MAX_SPRITES || b->spriteId >= MAX_SPRITES)
+        return FALSE;
+    sa = &gSprites[a->spriteId]; sb = &gSprites[b->spriteId];
+    dx = sa->x + sa->x2 - sb->x - sb->x2;
+    dy = sa->y + sa->y2 - sa->centerToCornerVecY - sb->y - sb->y2 + sb->centerToCornerVecY;
+    if (dx < 0) dx = -dx;
+    if (dy < 0) dy = -dy;
+    return dx + dy >= 16;
+}
+
+static bool8 CanRevealMisty(struct ObjectEvent *misty)
+{
+    struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
+    struct ObjectEvent *pika = GetFollowerPikachuObject();
+    u8 i;
+    if (SameTile(misty, player) || !SpriteFeetSeparated(misty, player))
+        return FALSE;
+    // PIKACHU may still be emerging: wait for it to leave this tile as well.
+    if (pika != NULL && (SameTile(misty, pika) || !SpriteFeetSeparated(misty, pika)))
+        return FALSE;
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+        if (gObjectEvents[i].active && !gObjectEvents[i].invisible
+            && &gObjectEvents[i] != misty && SameTile(misty, &gObjectEvents[i]))
+            return FALSE;
+    return TRUE;
+}
+
+// Continue does not necessarily run OnTransition. Old saves have unused HIDE=0.
+// Synchronize only this new NPC; never re-arm the automatic YES/NO frame trigger here.
+static void SyncPalletMistyVisibility(void)
+{
+    bool8 hidden;
+    u8 i;
+    if (QL_IS_PLAYBACK_STATE || gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_PALLET_TOWN)
+        || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_PALLET_TOWN)) return;
+    hidden = FlagGet(FLAG_MISTY_COMPANION_JOINED) || !CanMistyJoin();
+    if (!hidden)
+    {
+        if (FlagGet(FLAG_HIDE_MISTY_PALLET))
+        {
+            FlagClear(FLAG_HIDE_MISTY_PALLET);
+            // Continue can omit OnTransition and already skipped this hidden NPC.
+            // Spawn only the newly revealed static NPC, once on this flag edge.
+            TrySpawnObjectEvent(LOCALID_PALLET_MISTY,
+                gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+        }
+        return;
+    }
+    if (!FlagGet(FLAG_HIDE_MISTY_PALLET)) FlagSet(FLAG_HIDE_MISTY_PALLET);
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+        if (gObjectEvents[i].active && gObjectEvents[i].localId == LOCALID_PALLET_MISTY)
+            RemoveObjectEventWithoutFlag(&gObjectEvents[i]);
+}
+
+void MistyCompanion_Update(void)
+{
+    struct ObjectEvent *misty = GetMistyCompanionObject();
+    struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
+    u8 id;
+    SyncPalletMistyVisibility();
+    if (!ShouldMistyExist())
+    {
+        if (misty != NULL) RemoveObjectEventWithoutFlag(misty);
+        return;
+    }
+    if (misty == NULL)
+    {
+        id = SpawnSpecialObjectEventParameterized(OBJ_EVENT_GFX_MISTY, MOVEMENT_TYPE_NONE,
+                  LOCALID_MISTY_COMPANION, player->currentCoords.x, player->currentCoords.y,
+                  player->currentElevation);
+        if (id >= OBJECT_EVENTS_COUNT) return;
+        misty = &gObjectEvents[id];
+        ObjectEventTurn(misty, player->facingDirection);
+        misty->invisible = TRUE;
+    }
+    // Reversing through the two followers must not leave two visible sprites overlapping.
+    misty->invisible = sMistyHiddenByScript || !CanRevealMisty(misty);
+}
+
+void MistyCompanion_OnMapLoad(void)
+{
+    sMistyHiddenByScript = FALSE;
+    MistyCompanion_Update();
+}
+
+void HideMistyCompanion(void)
+{
+    sMistyHiddenByScript = TRUE;
+    MistyCompanion_Update();
+}
+
+void ShowMistyCompanion(void)
+{
+    struct ObjectEvent *misty = GetMistyCompanionObject();
+    sMistyHiddenByScript = FALSE;
+    if (misty != NULL) HideMistyUnderPlayer(misty);
+    MistyCompanion_Update();
+}
+
+static u8 DirectionFromDelta(s16 dx, s16 dy)
+{
+    if (dx > 0) return DIR_EAST;
+    if (dx < 0) return DIR_WEST;
+    if (dy > 0) return DIR_SOUTH;
+    return DIR_NORTH;
+}
+
+void MistyCompanion_OnPlayerMovement(u8 walkAction)
+{
+    struct ObjectEvent *misty = GetMistyCompanionObject();
+    struct ObjectEvent *leader = GetFollowerPikachuObject();
+    s16 dx, dy, distance;
+    u8 direction;
+    if (misty == NULL || sMistyHiddenByScript || !ShouldMistyExist()) return;
+    if (leader == NULL) leader = &gObjectEvents[gPlayerAvatar.objectEventId];
+    // Called before PIKACHU takes its new step: its current tile is the trail target.
+    if (ObjectEventIsMovementOverridden(misty) && !ObjectEventClearHeldMovementIfFinished(misty))
+    {
+        ObjectEventClearHeldMovementIfActive(misty);
+        MoveObjectEventToMapCoords(misty, misty->currentCoords.x, misty->currentCoords.y);
+    }
+    dx = leader->currentCoords.x - misty->currentCoords.x;
+    dy = leader->currentCoords.y - misty->currentCoords.y;
+    distance = (dx < 0 ? -dx : dx) + (dy < 0 ? -dy : dy);
+    if (distance == 0) return;
+    direction = DirectionFromDelta(dx, dy);
+    if (distance == 1) ObjectEventSetHeldMovement(misty, walkAction + direction - 1);
+    else if (distance == 2 && (dx == 0 || dy == 0))
+        ObjectEventSetHeldMovement(misty, GetJump2MovementAction(direction));
+    else HideMistyUnderPlayer(misty);
+}
+
+void MistyCompanion_OnObjectMovement(struct ObjectEvent *objectEvent, u8 movementActionId)
+{
+    struct ObjectEvent *misty = GetMistyCompanionObject();
+    s16 x, y;
+    u8 direction;
+    if (misty == NULL || misty->invisible || objectEvent->isPlayer
+        || IsMistyCompanionObject(objectEvent) || IsFollowerPikachuObject(objectEvent)) return;
+    direction = FollowerPikachu_GetMovingActionDirection(movementActionId);
+    if (direction == DIR_NONE) return;
+    x = objectEvent->currentCoords.x; y = objectEvent->currentCoords.y;
+    MoveCoords(direction, &x, &y);
+    if (x != misty->currentCoords.x || y != misty->currentCoords.y)
+    {
+        if (movementActionId < MOVEMENT_ACTION_JUMP_2_DOWN || movementActionId >= MOVEMENT_ACTION_JUMP_2_DOWN + 4) return;
+        MoveCoords(direction, &x, &y);
+        if (x != misty->currentCoords.x || y != misty->currentCoords.y) return;
+    }
+    HideMistyUnderPlayer(misty);
+}
+
+u16 CanMistyJoin(void)
+{
+    u8 i;
+    if (!FlagGet(FLAG_SYS_GAME_CLEAR)) return FALSE;
+    // A Hoenn-only Hall of Fame must not substitute for the Kanto challenge.
+    for (i = 0; i < 8; i++)
+        if (!FlagGet(FLAG_BADGE01_GET + i)) return FALSE;
+    return TRUE;
+}
+
+void MistyPreparePalletVisit(void)
+{
+    VarSet(VAR_TEMP_7, FALSE);
+    if (CanMistyJoin() && !FlagGet(FLAG_MISTY_COMPANION_JOINED))
+    {
+        FlagClear(FLAG_HIDE_MISTY_PALLET);
+        // Oak's existing National-Dex scene keeps priority and its original script.
+        if (VarGet(VAR_MAP_SCENE_PALLET_TOWN_OAK) != 2) VarSet(VAR_TEMP_7, TRUE);
+    }
+    else FlagSet(FLAG_HIDE_MISTY_PALLET);
+}
+
+void MistyJoin(void)
+{
+    if (!CanMistyJoin()) return;
+    FlagSet(FLAG_MISTY_COMPANION_JOINED);
+    FlagSet(FLAG_HIDE_MISTY_PALLET);
+    ShowMistyCompanion();
+}
+
+u16 MistyGetGrowthStage(void)
+{
+    if (FlagGet(FLAG_HOENN_BADGE07_GET)) return 4;
+    if (FlagGet(FLAG_HOENN_BIRCH_RESCUED)) return 3;
+    if (FlagGet(FLAG_JOHTO_BADGE06_GET)) return 2;
+    if (FlagGet(FLAG_JOHTO_BADGE02_GET)) return 1;
+    return 0;
+}
+
+// Keep PIKACHU's original reaction, then offer a visible nearby companion's dialogue.
+u16 CanTalkToMistyFromPikachu(void)
+{
+    struct ObjectEvent *misty = GetMistyCompanionObject();
+    struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
+    s16 dx, dy;
+    if (misty == NULL || sMistyHiddenByScript || !ShouldMistyExist()
+        || misty->invisible || misty->offScreen || misty->spriteId >= MAX_SPRITES
+        || gSprites[misty->spriteId].invisible)
+        return FALSE;
+    if (gSelectedObjectEvent >= OBJECT_EVENTS_COUNT
+        || !IsFollowerPikachuObject(&gObjectEvents[gSelectedObjectEvent]))
+        return FALSE;
+    dx = misty->currentCoords.x - player->currentCoords.x;
+    dy = misty->currentCoords.y - player->currentCoords.y;
+    if (dx < 0) dx = -dx;
+    if (dy < 0) dy = -dy;
+    return dx + dy > 0 && dx + dy <= 3;
+}
+
+u16 SelectMistyCompanionForTalk(void)
+{
+    struct ObjectEvent *misty;
+    if (!CanTalkToMistyFromPikachu()) return FALSE;
+    misty = GetMistyCompanionObject();
+    gSelectedObjectEvent = misty - gObjectEvents;
+    gSpecialVar_LastTalked = LOCALID_MISTY_COMPANION;
+    gSpecialVar_Facing = GetPlayerFacingDirection();
+    return TRUE;
+}

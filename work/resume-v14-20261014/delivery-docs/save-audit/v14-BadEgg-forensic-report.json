@@ -1,0 +1,182 @@
+{
+  "scope": "Complete SHA-verified current remote saves/backup inventory snapshot, including uploaded v1.4",
+  "original_SAVs_scanned": 18,
+  "source_sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4",
+  "active_counter": 78,
+  "original_inputs_unchanged": true,
+  "actual_DELTA_SaveState_available": false,
+  "exact_user_observation": "User reported first seeing Bad Egg after loading a DELTA Save State",
+  "cause_is_proved": false,
+  "source": "v14-preflight.json and current-inputs/inventory.json",
+  "records": [
+    {
+      "pid": 2245990591,
+      "current_record_sha256": "3fbae6a8ec95093b6f52825df22b4a1a68ece7648779ced8c113554cd90ccfcd",
+      "current_location": [
+        2,
+        2
+      ],
+      "inferred_species": 131,
+      "stored_checksum": 24383,
+      "actual_checksum": 57151,
+      "residual_after_hypothetically_clearing_secure_egg": 16384,
+      "unique_healthy_record_hashes": [
+        "60d1c18b1eb7be18e53e23f3d8d5466471fc94095c895d14bed793ad2b9da8d7"
+      ],
+      "healthy_generations": [
+        {
+          "path": "saves\\pokemonthyl_v1.2.sav",
+          "counter": 60,
+          "bank": 0
+        },
+        {
+          "path": "saves\\pokemonthyl_v1.2.sav",
+          "counter": 59,
+          "bank": 1
+        },
+        {
+          "path": "saves\\pokemonthyl_v1.25-items99-iv2x-pp15.sav",
+          "counter": 66,
+          "bank": 0
+        },
+        {
+          "path": "saves\\pokemonthyl_v1.25-items99-iv2x-pp15.sav",
+          "counter": 67,
+          "bank": 1
+        },
+        {
+          "path": "saves\\pokemonthyl_v1.25-items99-iv2x.sav",
+          "counter": 66,
+          "bank": 0
+        },
+        {
+          "path": "saves\\pokemonthyl_v1.25-items99-iv2x.sav",
+          "counter": 67,
+          "bank": 1
+        },
+        {
+          "path": "saves\\pokemonthyl_v1.25.sav",
+          "counter": 66,
+          "bank": 0
+        },
+        {
+          "path": "saves\\pokemonthyl_v1.25.sav",
+          "counter": 67,
+          "bank": 1
+        }
+      ],
+      "damaged_generations": [
+        {
+          "path": "saves\\pokemonthyl_v1.4.sav",
+          "counter": 78,
+          "bank": 0
+        },
+        {
+          "path": "saves\\pokemonthyl_v1.4.sav",
+          "counter": 77,
+          "bank": 1
+        }
+      ],
+      "exact80byte_original_restoration_available": true,
+      "raw_byte_differences_to_original": [
+        {
+          "offset": 19,
+          "damaged": 7,
+          "original": 2
+        },
+        {
+          "offset": 47,
+          "damaged": 108,
+          "original": 44
+        },
+        {
+          "offset": 63,
+          "damaged": 248,
+          "original": 184
+        }
+      ],
+      "identified_primary_corruption": "Lapras heldItem field high-byte bit6: original0, damaged0x4000. The engine checksum failure then marks header BadEgg/egg and secure egg bit.",
+      "no_OT_or_PID_encryption_key_change": true,
+      "migration_candidate_action": "Copy authentic entire80-byte donor record into both78/77 generations; do not fabricate a checksum or recreate the Pokemon"
+    },
+    {
+      "pid": 3822976,
+      "current_record_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd",
+      "current_location": [
+        2,
+        22
+      ],
+      "inferred_species": 108,
+      "stored_checksum": 30838,
+      "actual_checksum": 48246,
+      "residual_after_hypothetically_clearing_secure_egg": 1024,
+      "unique_healthy_record_hashes": [],
+      "healthy_generations": [],
+      "damaged_generations": [
+        {
+          "path": "saves\\pokemonthyl_v1.2.sav",
+          "counter": 60,
+          "bank": 0
+        },
+        {
+          "path": "saves\\pokemonthyl_v1.2.sav",
+          "counter": 59,
+          "bank": 1
+        },
+        {
+          "path": "saves\\pokemonthyl_v1.25-items99-iv2x-pp15.sav",
+          "counter": 66,
+          "bank": 0
+        },
+        {
+          "path": "saves\\pokemonthyl_v1.25-items99-iv2x-pp15.sav",
+          "counter": 67,
+          "bank": 1
+        },
+        {
+          "path": "saves\\pokemonthyl_v1.25-items99-iv2x.sav",
+          "counter": 66,
+          "bank": 0
+        },
+        {
+          "path": "saves\\pokemonthyl_v1.25-items99-iv2x.sav",
+          "counter": 67,
+          "bank": 1
+        },
+        {
+          "path": "saves\\pokemonthyl_v1.25.sav",
+          "counter": 66,
+          "bank": 0
+        },
+        {
+          "path": "saves\\pokemonthyl_v1.25.sav",
+          "counter": 67,
+          "bank": 1
+        },
+        {
+          "path": "saves\\pokemonthyl_v1.4.sav",
+          "counter": 78,
+          "bank": 0
+        },
+        {
+          "path": "saves\\pokemonthyl_v1.4.sav",
+          "counter": 77,
+          "bank": 1
+        }
+      ],
+      "exact80byte_original_restoration_available": false,
+      "primary_corruption_origin": "Unknown; no healthy original matching the full identity exists in this complete18-SAV snapshot",
+      "checksum_only_repair_valid": false,
+      "hypothesis_only": "The decrypted apparent EXP67168183 exceeds normal level100 growth bounds. Clearing EXP bit26 would reduce it to59319 and account for residual1024, but the checksum alone cannot identify that byte uniquely or authenticate original EXP/other fields.",
+      "migration_candidate_action": "Preserve exact80-byte damaged record at originalBOX2 cell22. No deletion, new-mon substitution, guessedEXP, flag-only rewrite or checksum fabrication"
+    }
+  ],
+  "causal_boundaries": [
+    "Lickitung corruption already exists in v1.2 generations59/60, before the later v1.25 IV/items/PP edits.",
+    "Lapras is identical and healthy in v1.2 and original/edited v1.25 generations66/67; it is already damaged in the new v1.4 generations77/78.",
+    "The later IV/items/PP edits preserve the entire PC33744 bytes; the Misty profile ROM differs only39 sprite bitmap bytes with unchanged RAM/save ABI.",
+    "A user observation following DELTA Save State loading is a correlation. Proving a mismatched-ROM State, emulator defect or a specific write requires the actual State and the matching old/current GBA identities.",
+    "Fresh direct candidate reconstruction and native battery SAVE/cold checks do not prove compatibility of an old DELTA Save State."
+  ],
+  "recommendation_supported_by_current_evidence": "Deliver matching current ROM plus separately validated v1.4 battery candidate; resume via battery Continue. Preserve old State files and user originals for actual cross-ROM forensic comparison rather than rewriting them."
+}

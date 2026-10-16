@@ -1,0 +1,73 @@
+{
+  "dry_pass": true,
+  "applied": true,
+  "files": 18,
+  "changed": [
+    "src/follower_pikachu.c",
+    "include/follower_pikachu.h",
+    "src/field_control_avatar.c",
+    "src/quest_log_objects.c",
+    "data/specials.inc",
+    "data/maps/PalletTown/scripts.inc",
+    "data/event_scripts.s",
+    "include/constants/flags.h",
+    "include/constants/opponents.h",
+    "src/data/trainer_parties_hoenn.h",
+    "src/data/trainers_hoenn.h",
+    "data/maps/PalletTown/map.json",
+    "include/companion_misty.h",
+    "src/companion_misty.c",
+    "data/scripts/companion_misty.inc",
+    "src/data/trainer_parties_misty_companion.h",
+    "src/data/trainers_misty_companion.h",
+    "include/constants/opponents_misty_companion.h"
+  ],
+  "team_counts": [
+    3,
+    4,
+    5,
+    6,
+    6
+  ],
+  "team_levels": [
+    48,
+    52,
+    56,
+    60,
+    66
+  ],
+  "new_static_ewram_bytes": 1,
+  "save_fields_added": 0,
+  "same_priority80_task": true,
+  "pikachu_water_predicate_preserved": true,
+  "pallet_geometry_word": "0x3296",
+  "original_pallet_objects_preserved": true,
+  "trainer_offset_range": [
+    851,
+    855
+  ],
+  "trainer_flag_capacity_bits": 1024,
+  "native_executed": false,
+  "ally_battle_implemented": false,
+  "backup": "/workspaces/pokefirered/outputs/misty-companion-v1/backups/20261006T044738Z",
+  "hashes": {
+    "src/follower_pikachu.c": "700d746a585700b31de16ef0ed5c8b82fb8515097c36bb8e42882aaa5ddd871a",
+    "include/follower_pikachu.h": "4204e9af2cb9ff3f1d34aa999dab4c81747083a430f55296bcb5a7b29b704dc0",
+    "src/field_control_avatar.c": "053834c29a0ca9172ab9b1f3cf46b85a8d997ae9c1777845923f0a526ec5f115",
+    "src/quest_log_objects.c": "ec4a16bdfbb1e0c000184cf6274e5c9b9aea782fbc2aad03c3a1c948b029ab66",
+    "data/specials.inc": "1c033f38b18e8ceca5d16971685c2919ea010727160c9674b845c231d7283fce",
+    "data/maps/PalletTown/scripts.inc": "0ec3ff71f92328730f65eea065b36f1f32824d848a78122c428b12214b4c3bb0",
+    "data/event_scripts.s": "e2df42a04ba8478d88233d1d5f3b03542e27bce17dde434898819fd9a4cdf493",
+    "include/constants/flags.h": "f11e40150aa0f45bd5608e613f972711482860a450f6101c917fad8fe9464773",
+    "include/constants/opponents.h": "2547ce83646188a195c7bfbed3d15bc0ce0a716bf915bd8ab84d07beee0f55c5",
+    "src/data/trainer_parties_hoenn.h": "ee6b349fb8e90a95eff1165114578eb8634e685bd066fe81e1e455eda30350c4",
+    "src/data/trainers_hoenn.h": "63d2f7be5e278c4c08404f1de241f2157a19a4816710152201549ef4f82b4ecd",
+    "data/maps/PalletTown/map.json": "d8bcfec1665997aab5d0e48519509d492b5d59e192c0328c08a6fd54cc5c5967",
+    "include/companion_misty.h": "79e7995e6fd99763692ccc2335a7b953cd2474b00ea0748b86d270003ff90327",
+    "src/companion_misty.c": "6f5b1fda8545b54441a632cac2e73b93d5a73a3af7f9c0407755c9acb29a8e4c",
+    "data/scripts/companion_misty.inc": "a1c3657a339d14535bdf1d2f67d5ee716416e69ba05ed0f6b434e1dd044eb0a9",
+    "src/data/trainer_parties_misty_companion.h": "6ad995096af0b4240270a6ebdbfaa1954d7d6f19c76fa2e9171ede20401243f7",
+    "src/data/trainers_misty_companion.h": "05c7138d4d956882671c3b14975798c1eb639b7cd57ac653d00e15dcee3c365a",
+    "include/constants/opponents_misty_companion.h": "53f634a4539a589acbf55d6eae9c030660aa8211809b41646dcf9b58804c9745"
+  }
+}

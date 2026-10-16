@@ -1,0 +1,39 @@
+devon-abi-probe.o: \
+ /workspaces/pokefirered/work/misty-standard-20261014/abi-current/devon-abi-probe.c \
+ include/global.h include/config.h include/global.h include/gba/gba.h \
+ include/gba/defines.h include/gba/io_reg.h include/gba/types.h \
+ include/gba/multiboot.h include/gba/syscall.h include/gba/macro.h \
+ include/gba/isagbprint.h include/gba/types.h include/constants/global.h \
+ include/constants/flags.h include/constants/trainers.h \
+ include/constants/opponents.h include/constants/opponents_tournament.h \
+ include/constants/opponents_hoenn_story.h \
+ include/constants/opponents_rocket.h include/constants/opponents_johto.h \
+ include/constants/opponents_johto_azalea.h \
+ include/constants/opponents_johto_ilex.h \
+ include/constants/opponents_johto_ecruteak.h \
+ include/constants/opponents_johto_olivine.h \
+ include/constants/opponents_johto_mahogany.h \
+ include/constants/opponents_johto_radio_tower.h \
+ include/constants/opponents_johto_blackthorn.h \
+ include/constants/opponents_johto_league.h \
+ include/constants/opponents_misty_companion.h \
+ include/constants/flags_hoenn.h include/constants/flags_hoenn_map.h \
+ include/constants/flags_hoenn_story.h \
+ include/constants/flags_johto_story.h include/constants/snag.h \
+ include/constants/vars.h include/constants/vars_hoenn.h \
+ include/constants/species.h include/constants/pokedex.h \
+ include/constants/easy_chat.h include/constants/rgb.h \
+ include/constants/game_stat.h include/global.fieldmap.h \
+ include/global.berry.h include/pokemon.h include/sprite.h \
+ include/constants/pokemon.h include/fame_checker.h include/main.h \
+ include/constants/fame_checker.h include/gflib.h include/bg.h \
+ include/palette.h include/gpu_regs.h include/dma3.h include/malloc.h \
+ include/sound.h include/text.h include/characters.h include/window.h \
+ include/blit.h include/string_util.h include/main.h include/task.h \
+ include/party_menu.h include/task.h include/constants/party_menu.h \
+ include/pokemon.h include/battle.h include/constants/battle.h \
+ include/constants/battle_script_commands.h include/battle_util.h \
+ include/battle_script_commands.h include/battle_main.h \
+ include/constants/abilities.h include/battle_ai_switch_items.h \
+ include/battle_gfx_sfx_util.h include/battle_util2.h include/battle_bg.h \
+ include/palette.h

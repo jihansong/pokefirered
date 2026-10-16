@@ -2592,7 +2592,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                     }
                     if (i != MAX_MON_MOVES)
                     {
-                        u8 maxPP = CalculatePPWithBonus(move, ppBonuses, i);
+                        u8 maxPP = CalculateMonPPWithBonus(mon, move, ppBonuses, i);
                         if (changedPP + battlerHoldEffectParam > maxPP)
                             changedPP = maxPP;
                         else

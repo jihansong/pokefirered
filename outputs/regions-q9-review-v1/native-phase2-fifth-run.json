@@ -1,0 +1,41 @@
+{
+  "status": "FINISHED",
+  "rom_sha256": "af9ba1f61fce4630d488567ed11b83847dfbc1fcff435653bedd4d86dc622818",
+  "jobs_total": 5,
+  "max_workers": 2,
+  "results": [
+    {
+      "name": "misty-duel-loss-mainbit",
+      "exit": 0,
+      "seconds": 58.49938178062439,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-fifth-misty-duel-loss-mainbit.log"
+    },
+    {
+      "name": "misty-duel-win-mainbit",
+      "exit": 0,
+      "seconds": 60.539918422698975,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-fifth-misty-duel-win-mainbit.log"
+    },
+    {
+      "name": "misty-walking-diagnostic",
+      "exit": 1,
+      "seconds": 7.61801815032959,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-fifth-misty-walking-diagnostic.log"
+    },
+    {
+      "name": "misty-basic-stage-diagnostic",
+      "exit": 1,
+      "seconds": 6.140056848526001,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-fifth-misty-basic-stage-diagnostic.log"
+    },
+    {
+      "name": "misty-water-helper-repaired",
+      "exit": 0,
+      "seconds": 20.822000741958618,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-fifth-misty-water-helper-repaired.log"
+    }
+  ],
+  "all_pass": false,
+  "main_unchanged": true,
+  "original_saves_unchanged": true
+}

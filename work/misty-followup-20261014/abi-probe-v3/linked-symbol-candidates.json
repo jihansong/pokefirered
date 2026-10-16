@@ -1,0 +1,200 @@
+{
+  "CB2_UpdatePartyMenu": [
+    {
+      "value": 135414649,
+      "size": 26,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 49546
+    }
+  ],
+  "Task_HandleChooseMonInput": [
+    {
+      "value": 135418625,
+      "size": 124,
+      "section": 3,
+      "info": 18,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 258050
+    }
+  ],
+  "Task_HandleSelectionMenuInput": [
+    {
+      "value": 135431297,
+      "size": 240,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 50257
+    }
+  ],
+  "CursorCB_SendMon": [
+    {
+      "value": 135436569,
+      "size": 96,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 49507
+    }
+  ],
+  "gPartyMenu": [
+    {
+      "value": 33796252,
+      "size": 20,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 252112
+    }
+  ],
+  "sPartyMenuInternal": [
+    {
+      "value": 33796248,
+      "size": 4,
+      "section": 1,
+      "info": 1,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 49387
+    }
+  ],
+  "sMenu": [
+    {
+      "value": 33790416,
+      "size": 4,
+      "section": 1,
+      "info": 1,
+      "translation_unit": "mon_markings.o",
+      "symbol_index": 33082
+    },
+    {
+      "value": 33795552,
+      "size": 12,
+      "section": 1,
+      "info": 1,
+      "translation_unit": "menu.o",
+      "symbol_index": 46909
+    }
+  ],
+  "gBattlePartyCurrentOrder": [
+    {
+      "value": 33796312,
+      "size": 3,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 281070
+    }
+  ],
+  "gBattlerPartyIndexes": [
+    {
+      "value": 33700814,
+      "size": 8,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 250948
+    }
+  ],
+  "gBattlersCount": [
+    {
+      "value": 33700812,
+      "size": 1,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 251549
+    }
+  ],
+  "gBattlerInMenuId": [
+    {
+      "value": 33701892,
+      "size": 1,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 271236
+    }
+  ],
+  "gBattleStruct": [
+    {
+      "value": 33701864,
+      "size": 4,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 268013
+    }
+  ],
+  "sCursorOptions": [
+    {
+      "value": 141647824,
+      "size": 248,
+      "section": 6,
+      "info": 1,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 49496
+    }
+  ],
+  "gText_SendOut": [
+    {
+      "value": 141368584,
+      "size": 9,
+      "section": 6,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 256648
+    }
+  ],
+  "gSelectedMonPartyId": [
+    {
+      "value": 33796285,
+      "size": 1,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 273052
+    }
+  ],
+  "gTasks": [
+    {
+      "value": 50352336,
+      "size": 640,
+      "section": 2,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 282359
+    }
+  ],
+  "gBattleOutcome": [
+    {
+      "value": 33701514,
+      "size": 1,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 273980
+    }
+  ],
+  "BattleMainCB2": [
+    {
+      "value": 134288381,
+      "size": 116,
+      "section": 3,
+      "info": 18,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 258856
+    }
+  ],
+  "gPaletteFade": [
+    {
+      "value": 33782464,
+      "size": 16,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 263429
+    }
+  ]
+}

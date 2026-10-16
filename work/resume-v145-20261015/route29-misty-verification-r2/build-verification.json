@@ -1,0 +1,294 @@
+{
+  "ram": {
+    "pass": true,
+    "baseline_symbol_count": 1179,
+    "candidate_symbol_count": 1179,
+    "baseline_duplicate_local_names": {
+      "$d": 186,
+      "EWRAM_END": 8,
+      "EWRAM_START": 8,
+      "INTR_CHECK": 8,
+      "INTR_VECTOR": 8,
+      "IWRAM_END": 8,
+      "IWRAM_START": 8,
+      "SOUND_INFO_PTR": 8,
+      "sBg1TilemapBuffer": 2,
+      "sBg3TilemapBuffer": 2,
+      "sGame": 2,
+      "sListMenuItems": 6,
+      "sMenu": 2,
+      "sMovementScripts": 2,
+      "sResources": 2,
+      "sSavedIme": 3,
+      "sUnused": 5,
+      "sWindowIds": 2,
+      "sWork": 4,
+      "thenan.3": 2
+    },
+    "removed_or_changed": [],
+    "added_or_changed": [],
+    "save_abi": [
+      {
+        "name": "gSaveBlock1",
+        "baseline": {
+          "addr": "0x202552c",
+          "size": 15720,
+          "section": "ewram"
+        },
+        "candidate": {
+          "addr": "0x202552c",
+          "size": 15720,
+          "section": "ewram"
+        },
+        "pass": true
+      },
+      {
+        "name": "gSaveBlock2",
+        "baseline": {
+          "addr": "0x2024588",
+          "size": 3876,
+          "section": "ewram"
+        },
+        "candidate": {
+          "addr": "0x2024588",
+          "size": 3876,
+          "section": "ewram"
+        },
+        "pass": true
+      },
+      {
+        "name": "gPokemonStorage",
+        "baseline": {
+          "addr": "0x2029314",
+          "size": 33744,
+          "section": "ewram"
+        },
+        "candidate": {
+          "addr": "0x2029314",
+          "size": 33744,
+          "section": "ewram"
+        },
+        "pass": true
+      },
+      {
+        "name": "gSaveBlock1Ptr",
+        "baseline": {
+          "addr": "0x3005048",
+          "size": 4,
+          "section": "iwram"
+        },
+        "candidate": {
+          "addr": "0x3005048",
+          "size": 4,
+          "section": "iwram"
+        },
+        "pass": true
+      },
+      {
+        "name": "gSaveBlock2Ptr",
+        "baseline": {
+          "addr": "0x300504c",
+          "size": 4,
+          "section": "iwram"
+        },
+        "candidate": {
+          "addr": "0x300504c",
+          "size": 4,
+          "section": "iwram"
+        },
+        "pass": true
+      },
+      {
+        "name": "gPokemonStoragePtr",
+        "baseline": {
+          "addr": "0x3005050",
+          "size": 4,
+          "section": "iwram"
+        },
+        "candidate": {
+          "addr": "0x3005050",
+          "size": 4,
+          "section": "iwram"
+        },
+        "pass": true
+      }
+    ]
+  },
+  "baseline_rom_elf": {
+    "pass": true,
+    "segments": [
+      {
+        "index": 2,
+        "physical_addr": "0x8000000",
+        "bytes": 11210488,
+        "pass": true,
+        "elf_sha256": "c6aa82e3333e9e1d7316b0499ac37236eaf2c54d8b9d24553bfdf18372539de0",
+        "rom_sha256": "c6aa82e3333e9e1d7316b0499ac37236eaf2c54d8b9d24553bfdf18372539de0"
+      },
+      {
+        "index": 3,
+        "physical_addr": "0x8d00000",
+        "bytes": 16200484,
+        "pass": true,
+        "elf_sha256": "723a1a357d6be5e6da3994a414ff00fc8eb480421c8b6fa2eefb631541fead2a",
+        "rom_sha256": "723a1a357d6be5e6da3994a414ff00fc8eb480421c8b6fa2eefb631541fead2a"
+      }
+    ]
+  },
+  "candidate_rom_elf": {
+    "pass": true,
+    "segments": [
+      {
+        "index": 2,
+        "physical_addr": "0x8000000",
+        "bytes": 11210488,
+        "pass": true,
+        "elf_sha256": "a8dd6dee453be998f28615f3799ec1e1ce219143eadda15376f283cc3fbde12e",
+        "rom_sha256": "a8dd6dee453be998f28615f3799ec1e1ce219143eadda15376f283cc3fbde12e"
+      },
+      {
+        "index": 3,
+        "physical_addr": "0x8d00000",
+        "bytes": 16200484,
+        "pass": true,
+        "elf_sha256": "723a1a357d6be5e6da3994a414ff00fc8eb480421c8b6fa2eefb631541fead2a",
+        "rom_sha256": "723a1a357d6be5e6da3994a414ff00fc8eb480421c8b6fa2eefb631541fead2a"
+      }
+    ]
+  },
+  "LOAD_segment_permission_review": {
+    "baseline_PT_LOAD_headers": [
+      {
+        "type": 1,
+        "file_offset": 4096,
+        "virtual_address": 33554432,
+        "physical_address": 33554432,
+        "file_size": 0,
+        "memory_size": 261864,
+        "flags": 6,
+        "alignment": 4096
+      },
+      {
+        "type": 1,
+        "file_offset": 4096,
+        "virtual_address": 50331648,
+        "physical_address": 50331648,
+        "file_size": 0,
+        "memory_size": 29900,
+        "flags": 6,
+        "alignment": 4096
+      },
+      {
+        "type": 1,
+        "file_offset": 4096,
+        "virtual_address": 134217728,
+        "physical_address": 134217728,
+        "file_size": 11210488,
+        "memory_size": 11210488,
+        "flags": 7,
+        "alignment": 4096
+      },
+      {
+        "type": 1,
+        "file_offset": 11214848,
+        "virtual_address": 147849216,
+        "physical_address": 147849216,
+        "file_size": 16200484,
+        "memory_size": 16200484,
+        "flags": 5,
+        "alignment": 4096
+      }
+    ],
+    "candidate_PT_LOAD_headers": [
+      {
+        "type": 1,
+        "file_offset": 4096,
+        "virtual_address": 33554432,
+        "physical_address": 33554432,
+        "file_size": 0,
+        "memory_size": 261864,
+        "flags": 6,
+        "alignment": 4096
+      },
+      {
+        "type": 1,
+        "file_offset": 4096,
+        "virtual_address": 50331648,
+        "physical_address": 50331648,
+        "file_size": 0,
+        "memory_size": 29900,
+        "flags": 6,
+        "alignment": 4096
+      },
+      {
+        "type": 1,
+        "file_offset": 4096,
+        "virtual_address": 134217728,
+        "physical_address": 134217728,
+        "file_size": 11210488,
+        "memory_size": 11210488,
+        "flags": 7,
+        "alignment": 4096
+      },
+      {
+        "type": 1,
+        "file_offset": 11214848,
+        "virtual_address": 147849216,
+        "physical_address": 147849216,
+        "file_size": 16200484,
+        "memory_size": 16200484,
+        "flags": 5,
+        "alignment": 4096
+      }
+    ],
+    "all_PT_LOAD_headers_identical": true,
+    "baseline_RWX_headers": [
+      {
+        "type": 1,
+        "file_offset": 4096,
+        "virtual_address": 134217728,
+        "physical_address": 134217728,
+        "file_size": 11210488,
+        "memory_size": 11210488,
+        "flags": 7,
+        "alignment": 4096
+      }
+    ],
+    "candidate_RWX_headers": [
+      {
+        "type": 1,
+        "file_offset": 4096,
+        "virtual_address": 134217728,
+        "physical_address": 134217728,
+        "file_size": 11210488,
+        "memory_size": 11210488,
+        "flags": 7,
+        "alignment": 4096
+      }
+    ],
+    "no_new_RWX_segment": true,
+    "warning_free": false,
+    "linker_or_permission_changes_performed": false
+  },
+  "pass_all": true,
+  "ROM_changed_byte_count": 887,
+  "allowed_ROM_ranges": [
+    [
+      5627504,
+      5629808
+    ],
+    [
+      5202044,
+      5203964
+    ]
+  ],
+  "all_other_ROM_bytes_identical": true,
+  "compiled_Misty_sha256": "e095b1cdcb883a0e9ace966ae7a158f225d93ce9a69c6811bc17e53110f66aaf",
+  "Misty_2304B_allocation_preserved": true,
+  "Route29_1920B_allocation_preserved": true,
+  "native_player_palette_preserved": true,
+  "approved_side_native_frames_2_7_8_byte_identical": true,
+  "original_Misty_overworld_asset_preserved": true,
+  "new_ROM_sha256": "fdd021066ee7ce6fa775407c6be6699ba41583f34d92264e65020bd98950b0f4",
+  "new_ELF_sha256": "7c831da7d91eba1f4132e67a6ce804434003b2249e6abe0af5e19e69d622a53b"
+}

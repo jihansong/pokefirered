@@ -1,0 +1,37 @@
+{
+  "rom_sha256": "6df50d9dd6a4b859f086f38264e915cc88ed620889fd28137f4d2fdbfd1d80b7",
+  "status": "FINISHED",
+  "cases": [
+    {
+      "name": "legacy-fly-layoutfix-sevii123",
+      "exit": 0,
+      "pass": true,
+      "seconds": 10.79,
+      "native_case_count": 1,
+      "error": null,
+      "result_file": "/workspaces/pokefirered/outputs/mahogany-fly-capacity-review-v1/legacy-fly-layoutfix-sevii123/validation.json"
+    },
+    {
+      "name": "legacy-fly-layoutfix-sevii45",
+      "exit": 0,
+      "pass": true,
+      "seconds": 11.75,
+      "native_case_count": 1,
+      "error": null,
+      "result_file": "/workspaces/pokefirered/outputs/mahogany-fly-capacity-review-v1/legacy-fly-layoutfix-sevii45/validation.json"
+    },
+    {
+      "name": "legacy-fly-layoutfix-sevii67",
+      "exit": 0,
+      "pass": true,
+      "seconds": 7.11,
+      "native_case_count": 1,
+      "error": null,
+      "result_file": "/workspaces/pokefirered/outputs/mahogany-fly-capacity-review-v1/legacy-fly-layoutfix-sevii67/validation.json"
+    }
+  ],
+  "full_regions_complete": false,
+  "main_replaced": false,
+  "all_pass": true,
+  "original_files_unchanged": true
+}

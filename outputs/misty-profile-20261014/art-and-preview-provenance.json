@@ -1,0 +1,54 @@
+{
+  "mode": "built-in image_gen",
+  "source_sha256": "317dd66f47c9b00aa25a2991c3cf5588ad3e1bfbba015d61e206b109f705e697",
+  "native_png_sha256": "55bbb1d6f30caf9c43d7b38834639d2c635b2870e427b8918ab9d6463360ca7d",
+  "formatting": "common48x32nearest-sampling, alpha128threshold, existingPLAYER16color, rearpatch registration x+1, ROIonly",
+  "unchanged_frames": [
+    0,
+    1,
+    3,
+    4,
+    5,
+    6
+  ],
+  "native_preview_frames": [
+    [
+      "/workspaces/pokefirered/work/misty-profile-20261014/native-walk/actual-walk-frames/00000756.png",
+      "571e21b5565d46a1795351243eef4daed5c54cff9983874af65d0f44906db38f"
+    ],
+    [
+      "/workspaces/pokefirered/work/misty-profile-20261014/native-walk/actual-walk-frames/00000759.png",
+      "85a6c450eb7c4ce85794af49f3d0539509cdd83773564f3c16eb48f8cfc78122"
+    ],
+    [
+      "/workspaces/pokefirered/work/misty-profile-20261014/native-walk/actual-walk-frames/00000762.png",
+      "61ab5ff6b3da5bde567b761c0ee67f834dfeccb9561678b8270c5f5de947626b"
+    ],
+    [
+      "/workspaces/pokefirered/work/misty-profile-20261014/native-walk/actual-walk-frames/00000765.png",
+      "92972fed322a61bd365cf220097c454a18ffdfd980485765590bd60a6cc62c75"
+    ],
+    [
+      "/workspaces/pokefirered/work/misty-profile-20261014/native-walk/actual-walk-frames/00000771.png",
+      "404a6c69296c155e0133b036aef60bcd5e4c04f6d1b21755eac38c695753cc88"
+    ],
+    [
+      "/workspaces/pokefirered/work/misty-profile-20261014/native-walk/actual-walk-frames/00000774.png",
+      "2219061c20cff2621d1be6724ab7e4d00050cea56dcb101df33ddde4a5ba4035"
+    ],
+    [
+      "/workspaces/pokefirered/work/misty-profile-20261014/native-walk/actual-walk-frames/00000777.png",
+      "c879371d8660ffcb76c20b5f5e2d8f9ab31881df2e5157a67f3f9ca0688365dc"
+    ],
+    [
+      "/workspaces/pokefirered/work/misty-profile-20261014/native-walk/actual-walk-frames/00000780.png",
+      "9dc4c2eea56ab77c96f53f4f994fbadc7985ca394d712a8ed80f4f27382b7ed0"
+    ],
+    [
+      "/workspaces/pokefirered/work/misty-profile-20261014/native-walk/actual-walk-frames/00000783.png",
+      "220b3b84438064a35be150bc16e3531114a636c10b98fe801dca9757dcbd6754"
+    ]
+  ],
+  "preview_is_actual_emulator_capture": true,
+  "DELTA_device_tested": false
+}

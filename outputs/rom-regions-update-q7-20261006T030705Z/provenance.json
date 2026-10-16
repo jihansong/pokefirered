@@ -1,0 +1,56 @@
+{
+  "current_rom": {
+    "gba": "f3b4e13df998d1832544218a88cd0c4845a9b7ebd184628e00c1e9595434204c",
+    "elf": "fcffe85e76e5404f15e552fa84ca18f91e883c0a0613b2678e7ceb27e4d42e47",
+    "sym": "122cad2ba9d871f54b838734e7ede1466685960a1bcddfa5ac7c6d9b55a8b5f8",
+    "map": "810567524b2ac8c4fd40f74c7faf55d9ab2821cf84c0fb3cdda3fa7eb4816848"
+  },
+  "previous_main": {
+    "gba": "ab47fb761ae2d93e0008c98172f9dee4e89bd034037efa9abef2d86b436f6f81",
+    "elf": "584f0b0f22574a06f1e00d78815bf95fe6f00681814089fd0767edfa0619ec3d",
+    "sym": "0046cb1bdf61cd2b2d2452b5829c2ef0abf973f4d07a710ca9e834eee9d6cfb7",
+    "map": "383689e0ab29733a52aa1e776e5bdd2b8298c533d8e02994a4fc77ac2415f395"
+  },
+  "delivery_folder": "/workspaces/pokefirered/outputs/rom-regions-update-q7-20261006T030705Z",
+  "candidate_folder": "/workspaces/pokefirered/outputs/radio-tower-review-v1",
+  "native_checks": {
+    "radio_events": 35,
+    "radio_battles": 12,
+    "radio_map_links": 16,
+    "same_save_chain_stages": 21,
+    "hoenn_reward_cases": 18,
+    "total": 102
+  },
+  "approved_media_assets_unchanged": 21,
+  "additional_title_assets_unchanged": 19,
+  "save_layout_unchanged": true,
+  "original_saves": {
+    "/workspaces/pokefirered/saves/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "/workspaces/pokefirered/saves/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "/workspaces/pokefirered/saves/hoenn.sav": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+    "/workspaces/pokefirered/saves/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "/workspaces/pokefirered/saves/pokemonthyl_hoenn_QAed.sav": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+    "/workspaces/pokefirered/saves/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.1.sav": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.2.sav": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85"
+  },
+  "native_radio_source_counter_chain": [
+    75,
+    96
+  ],
+  "qa_story_progress_not_copied_to_user_save": true,
+  "save_file_copied_without_editing": true,
+  "opening_version": "v7",
+  "title_version": "v8",
+  "rocket_version": "v11",
+  "johto_maps": 101,
+  "johto_badges": 7,
+  "whole_regions_complete": false,
+  "old_bad_egg_repaired": false,
+  "misty_n_space_added_to_scope_not_implemented": true,
+  "evidence": {
+    "radio": "native-radio-run.json",
+    "hm": "native-hoenn-hm-native-retry-run.json",
+    "binary": "native-binary-preservation-audit.json"
+  }
+}

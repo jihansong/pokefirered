@@ -1,0 +1,53 @@
+{
+  "applied": true,
+  "source_head": "658baf740",
+  "map_unchanged": true,
+  "canonical_regeneration_idempotent": true,
+  "checks": {
+    "build": {
+      "exit": 0,
+      "seconds": 5.8
+    },
+    "syms": {
+      "exit": 0,
+      "seconds": 2.02
+    },
+    "roxanne-events": {
+      "exit": 1,
+      "seconds": 35.01
+    },
+    "saves": {
+      "exit": 0,
+      "seconds": 12.46
+    },
+    "map-integrity": {
+      "exit": 0,
+      "seconds": 5.67
+    },
+    "event-wiring": {
+      "exit": 1,
+      "seconds": 3.36,
+      "baseline_output_identical": true,
+      "preexisting_findings": 91
+    },
+    "gym-mapsmoke": {
+      "exit": 0,
+      "seconds": 5.17
+    },
+    "gym-textwidth": {
+      "exit": 0,
+      "seconds": 0.04
+    },
+    "dex": {
+      "exit": 0,
+      "seconds": 3.76
+    },
+    "roxanne-events-final": {
+      "exit": 0
+    }
+  },
+  "complete": true,
+  "original_saves_unchanged": true,
+  "lavender_fix_unchanged": true,
+  "qa_fixture_correction": "Pidgeotto fainted to rock moves; verified Ivysaur/RazorLeaf fixture used instead, full battle still required"
+}

@@ -4,6 +4,7 @@ CeruleanCity_Gym_MapScripts::
 
 CeruleanCity_Gym_OnTransition::
 	setflag FLAG_TEMP_1
+	goto_if_set FLAG_MISTY_COMPANION_JOINED, CeruleanCity_Gym_EventScript_NoRockets
 	goto_if_set FLAG_ROCKET_CERULEAN_GYM, CeruleanCity_Gym_EventScript_NoRockets
 	goto_if_unset FLAG_BADGE02_GET, CeruleanCity_Gym_EventScript_NoRockets
 	setvar VAR_TEMP_1, 1

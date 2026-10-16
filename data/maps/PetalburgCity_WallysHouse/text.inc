@@ -28,4 +28,26 @@ PetalburgCity_WallysHouse_Text_MomAfter::
     .string "drawing.\p"
     .string "I haven't seen him smile like that\n"
     .string "in years.$"
+PetalburgCity_WallysHouse_TYSharedHM_FreshText::
+	.string "You earned NORMAN's BADGE.\p"
+	.string "Let me help you reach the places\n"
+	.string "beyond HOENN's seas. Take SURF!$"
+
+PetalburgCity_WallysHouse_TYSharedHM_FreshThanks::
+	.string "Your local BADGE lets you SURF\n"
+	.string "across HOENN's waters.$"
+
+PetalburgCity_WallysHouse_TYSharedHM_KnownText::
+	.string "You already have SURF.\p"
+	.string "Your local BADGE works with it.\n"
+	.string "Here is another useful technique.$"
+
+PetalburgCity_WallysHouse_TYSharedHM_TechniqueText::
+	.string "The TM teaches ICE BEAM.\n"
+	.string "Put it to good use in HOENN!$"
+
+PetalburgCity_WallysHouse_TYSharedHM_FullText::
+	.string "Your BAG has no room.\p"
+	.string "Make some space, then return.\n"
+	.string "I will keep your reward ready.$"
 @ END PATCH

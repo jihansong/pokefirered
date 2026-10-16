@@ -1,0 +1,28 @@
+{
+  "artifact": "habitat-region-boundary-recipe-live-v2",
+  "path": "src/wild_pokemon_area.c",
+  "before_sha256": "2307f753b3b19802d38c3ae64a09a0cded8611a4fa81260c3912866a64c3a18a",
+  "after_sha256": "debdf61c5711275ce4d750a6ec20f6e3e8b5ae25946b95859d5d979d00f95ad8",
+  "before_bytes": 19376,
+  "after_bytes": 19625,
+  "changes": [
+    {
+      "old": "    return header->mapGroup >= MAP_GROUP(MAP_PETALBURG_CITY);",
+      "new": "    return header->mapGroup >= MAP_GROUP(MAP_PETALBURG_CITY)\n        && header->mapGroup <= MAP_GROUP(MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE);"
+    },
+    {
+      "old": "        mapSecId = GetMapSecIdFromWildMonHeader(header);\n        if (IsHoennWildMonHeader(header))",
+      "new": "        mapSecId = GetMapSecIdFromWildMonHeader(header);\n        // Johto markers are recorded above; never fall back to another region.\n        if (header->mapGroup == MAP_GROUP(MAP_NEW_BARK_TOWN))\n            continue;\n        if (IsHoennWildMonHeader(header))"
+    }
+  ],
+  "preserved_johto_marker_checks": 9,
+  "marker_region_and_drawing_code_identical": true,
+  "writable_structs_identical": true,
+  "live_boundary_constants_confirmed": [
+    43,
+    75,
+    76
+  ],
+  "new_feature_claim": false,
+  "native_run_here": false
+}

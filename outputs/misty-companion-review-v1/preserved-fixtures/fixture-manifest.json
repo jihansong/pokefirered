@@ -1,0 +1,43 @@
+{
+  "original_path": "/workspaces/pokefirered/saves/pokemonthyl_v1.2.sav",
+  "original_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "source_pallet_terrain_sha256": "b709c6d47d6006ff6402026496a9d0d9caab19a4515b02517eaf049c5f7bf2e0",
+  "source_geometry_checked": true,
+  "candidate_native_movement_not_yet_tested": true,
+  "fixtures": [
+    {
+      "name": "basic",
+      "path": "/workspaces/pokefirered/outputs/misty-companion-review-v1/preserved-fixtures/basic.sav",
+      "sha256": "13292138cd7ab4114573a5457c7c51630df6026c930bf81dbd5de7e64b6ed4da",
+      "party600_preserved": true,
+      "storage33744_preserved": true,
+      "dex4_preserved": true,
+      "story_fixture_edits": [
+        "SYS_GAME_CLEAR=false",
+        "JOINED=false",
+        "HIDE_PALLET=true",
+        "RECEIVED_STARTER_PIKACHU=true",
+        "OakScene=3",
+        "questlog cleared"
+      ],
+      "original_save_modified": false
+    },
+    {
+      "name": "join-base",
+      "path": "/workspaces/pokefirered/outputs/misty-companion-review-v1/preserved-fixtures/join-base.sav",
+      "sha256": "1ec8e6c8bd29e60a8ef95e9b44aa6326be3884c15cd9fca743eb25f929533510",
+      "party600_preserved": true,
+      "storage33744_preserved": true,
+      "dex4_preserved": true,
+      "story_fixture_edits": [
+        "SYS_GAME_CLEAR=false",
+        "JOINED=false",
+        "HIDE_PALLET=true",
+        "RECEIVED_STARTER_PIKACHU=true",
+        "OakScene=3",
+        "questlog cleared"
+      ],
+      "original_save_modified": false
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "status": "TITLE_EXISTING_FRLG_MUSIC_AND_CRACKLE_PREVIEW",
+  "song": "MUS_TITLE",
+  "music_gain": 0.7,
+  "electricity_gain": 0.3,
+  "seconds": 4,
+  "capture_start_frame": 1464,
+  "se_active_frames": 0,
+  "audio_peak": 0.330047607421875,
+  "aac_peak": 0.326934814453125,
+  "video_packets_unchanged": true,
+  "protected_inputs_unchanged": true,
+  "new_music_created": false,
+  "pika_voice_added": false,
+  "auditioned": false,
+  "scope": "4-second preview excerpt; native game already selects MUS_TITLE",
+  "input_sha256": {
+    "/workspaces/pokefirered/pokemonthyl.gba": "d92d369507dbeac1f7a8617093fb9e3f75b815431323ac2e745a744d88e118b9",
+    "/workspaces/pokefirered/outputs/title-continuous-crackle-v3/title-current-continuous-electricity.mp4": "60ad8bbefc0d4fc2322d58e764977d5dc401c516d84551ce822f0218bd2409f9",
+    "/workspaces/pokefirered/outputs/title-continuous-crackle-v3/continuous-electricity.wav": "05fc393c54d7a7030be0bc86506ea7d0ef455e4b26ace4a6e3e3fadd6bcc2189",
+    "/workspaces/pokefirered/outputs/title-approved-v3-effects-v1/title-current-native.gif": "5a43ad846f5ffba450d35da997f7d9460e9ccbc057895fdd45c4c86f521ec624",
+    "/workspaces/pokefirered/outputs/title-font-python-v3/title-font-candidate-240x160.png": "7e370cc2d5b4cd71a1ae68b1da6934b62a049fc9e83efb2fc51619231cc122c5"
+  },
+  "files": {
+    "frlg-mus-title.wav": {
+      "bytes": 553068,
+      "sha256": "4b0d8dcd558c7fc790c330cc1358f88e2add8863caa693aaf219f2248deee3a1"
+    },
+    "title-music-and-crackle.wav": {
+      "bytes": 705678,
+      "sha256": "168d5089d95f7e9b55496a4fe2af5c3859854b4757f42df63c9fb85493e224ea"
+    },
+    "title-frlg-music-crackle.mp4": {
+      "bytes": 146220,
+      "sha256": "27fe02d2babb1c10700406aea3569435dd063a383ea9cf2cf4fea81eaf407f6f"
+    }
+  }
+}

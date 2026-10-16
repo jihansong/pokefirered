@@ -1,0 +1,26 @@
+VerdanturfTown_EventScript_H1::
+	goto_if_set FLAG_HOENN_RUSTURF_OPEN, VerdanturfTown_EventScript_ReunionH1
+	msgbox VerdanturfTown_Text_ReunionBeforeH1, MSGBOX_NPC
+	end
+
+VerdanturfTown_EventScript_ReunionH1::
+	msgbox VerdanturfTown_Text_ReunionAfterH1, MSGBOX_NPC
+	end
+
+VerdanturfTown_EventScript_H2::
+	goto_if_set FLAG_HOENN_RUSTURF_OPEN, VerdanturfTown_EventScript_ReunionH2
+	msgbox VerdanturfTown_Text_ReunionBeforeH2, MSGBOX_NPC
+	end
+
+VerdanturfTown_EventScript_ReunionH2::
+	msgbox VerdanturfTown_Text_ReunionAfterH2, MSGBOX_NPC
+	end
+
+VerdanturfTown_EventScript_H7::
+	goto_if_set FLAG_HOENN_RUSTURF_OPEN, VerdanturfTown_EventScript_ReunionH7
+	msgbox VerdanturfTown_Text_ReunionBeforeH7, MSGBOX_SIGN
+	end
+
+VerdanturfTown_EventScript_ReunionH7::
+	msgbox VerdanturfTown_Text_ReunionAfterH7, MSGBOX_SIGN
+	end

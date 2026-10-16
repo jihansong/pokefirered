@@ -1,0 +1,495 @@
+{
+  "time": "20261005T214932892538Z",
+  "validation": {
+    "chapter": "Mahogany forced-evolution investigation and Johto gym seven",
+    "save_layout_changed": false,
+    "native_build_and_emulator": "NOT_RUN_BY_GENERATOR",
+    "visual_limits": [
+      "Native Kanto tiles and class portraits are reused.",
+      "This is the current main-path Mt Mortar chamber, not the entire original cavern."
+    ],
+    "not_implemented": [
+      "Goldenrod Radio Tower takeover",
+      "Blackthorn/Clair/Dragon Den",
+      "Johto League",
+      "Full Mt Mortar side chambers"
+    ],
+    "new_maps": [
+      "EcruteakCity_EastGate",
+      "JohtoRoute42",
+      "MtMortar_1F",
+      "MahoganyTown",
+      "MahoganyTown_PokemonCenter_1F",
+      "MahoganyTown_PokemonCenter_2F",
+      "MahoganyTown_Shop",
+      "MahoganyTown_Gym",
+      "JohtoRoute43",
+      "LakeOfRage",
+      "JohtoRocketHQ_B1F",
+      "JohtoRocketHQ_B2F",
+      "JohtoRocketHQ_B3F"
+    ],
+    "new_flags": {
+      "FLAG_JOHTO_BADGE07_GET": 22,
+      "FLAG_JOHTO_RED_GYARADOS_RESOLVED": 43,
+      "FLAG_JOHTO_LANCE_INVESTIGATION_JOINED": 44,
+      "FLAG_JOHTO_RED_SCALE_RECEIVED": 45,
+      "FLAG_JOHTO_HQ_ELECTRODE1_CLEARED": 46,
+      "FLAG_JOHTO_HQ_ELECTRODE2_CLEARED": 47,
+      "FLAG_JOHTO_HQ_ELECTRODE3_CLEARED": 48,
+      "FLAG_JOHTO_ROCKET_HQ_CLEARED": 49,
+      "FLAG_JOHTO_LANCE_TM24_RECEIVED": 50,
+      "FLAG_JOHTO_PRYCE_TM13_RECEIVED": 51,
+      "FLAG_JOHTO_RADIO_TOWER_CLEARED": 52,
+      "FLAG_JOHTO_LANCE_MOVED_TO_HQ": 53
+    },
+    "trainer_ids": {
+      "HARRISON": 827,
+      "MARKUS": 828,
+      "TIFFANY": 829,
+      "HQ_GUARD_A": 830,
+      "HQ_GUARD_B": 831,
+      "HQ_SCIENTIST": 832,
+      "PETREL": 833,
+      "ARIANA": 834,
+      "PRYCE": 835
+    },
+    "static_checks": [
+      {
+        "map": "EcruteakCity_EastGate",
+        "reachable_tiles": 102,
+        "buffer_metatiles": 780,
+        "native_warps": true
+      },
+      {
+        "map": "JohtoRoute42",
+        "reachable_tiles": 853,
+        "buffer_metatiles": 2394,
+        "native_warps": true
+      },
+      {
+        "map": "MtMortar_1F",
+        "reachable_tiles": 1000,
+        "buffer_metatiles": 3402,
+        "native_warps": true
+      },
+      {
+        "map": "MahoganyTown",
+        "reachable_tiles": 733,
+        "buffer_metatiles": 2162,
+        "native_warps": true
+      },
+      {
+        "map": "MahoganyTown_PokemonCenter_1F",
+        "reachable_tiles": 86,
+        "buffer_metatiles": 720,
+        "native_warps": true
+      },
+      {
+        "map": "MahoganyTown_PokemonCenter_2F",
+        "reachable_tiles": 74,
+        "buffer_metatiles": 720,
+        "native_warps": true
+      },
+      {
+        "map": "MahoganyTown_Shop",
+        "reachable_tiles": 62,
+        "buffer_metatiles": 598,
+        "native_warps": true
+      },
+      {
+        "map": "MahoganyTown_Gym",
+        "reachable_tiles": 116,
+        "buffer_metatiles": 840,
+        "native_warps": true
+      },
+      {
+        "map": "JohtoRoute43",
+        "reachable_tiles": 576,
+        "buffer_metatiles": 1794,
+        "native_warps": true
+      },
+      {
+        "map": "LakeOfRage",
+        "reachable_tiles": 1160,
+        "buffer_metatiles": 2750,
+        "native_warps": true
+      },
+      {
+        "map": "JohtoRocketHQ_B1F",
+        "reachable_tiles": 608,
+        "buffer_metatiles": 1836,
+        "native_warps": true
+      },
+      {
+        "map": "JohtoRocketHQ_B2F",
+        "reachable_tiles": 622,
+        "buffer_metatiles": 1836,
+        "native_warps": true
+      },
+      {
+        "map": "JohtoRocketHQ_B3F",
+        "reachable_tiles": 628,
+        "buffer_metatiles": 1836,
+        "native_warps": true
+      }
+    ],
+    "native_warp_behaviors_checked": 39,
+    "map_sections_max": 231,
+    "fly_destinations_total": 9
+  },
+  "files": {
+    "data/maps/map_groups.json": {
+      "before": "e00f04bc7396aa13f5f35cec200fa99e6eb9cf8d5bf452eef1858984a87f000d",
+      "after": "4afcfc230d93deb2278a931bda58fa4843040ed4c503e4d77aae85e840579ef1"
+    },
+    "data/layouts/EcruteakCity_EastGate/map.bin": {
+      "before": null,
+      "after": "7d70ccd81337746eaf2a9728f800998834e5227d144300b291d5154e54ce6c6d"
+    },
+    "data/layouts/EcruteakCity_EastGate/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/JohtoRoute42/map.bin": {
+      "before": null,
+      "after": "3a664dfe5b9924e964a2791e089da5de85b611b9db9b9265229aba5cd161ab02"
+    },
+    "data/layouts/JohtoRoute42/border.bin": {
+      "before": null,
+      "after": "bd05db219b1304364f4d1c265db9cece1af50fb2332d9f39357fdc8d721dc449"
+    },
+    "data/layouts/MtMortar_1F/map.bin": {
+      "before": null,
+      "after": "041b77379c1541ac2bd7de57a5989c9f2eb84d9054e15197d40674cde0181191"
+    },
+    "data/layouts/MtMortar_1F/border.bin": {
+      "before": null,
+      "after": "379f8d1e17cb9bcad3a11243c396f7ba3e3095d10727d201c0e7b49ecdad94b5"
+    },
+    "data/layouts/MahoganyTown/map.bin": {
+      "before": null,
+      "after": "61cc60b0056a1218c749707314d65e0b78b5a5be29d287fd550fddf6bec58657"
+    },
+    "data/layouts/MahoganyTown/border.bin": {
+      "before": null,
+      "after": "bd05db219b1304364f4d1c265db9cece1af50fb2332d9f39357fdc8d721dc449"
+    },
+    "data/layouts/JohtoRoute43/map.bin": {
+      "before": null,
+      "after": "1a6b90a04bdf1385972febe3fa1ea3e1ff0f126a97ecde7d6d178e353e0fe8df"
+    },
+    "data/layouts/JohtoRoute43/border.bin": {
+      "before": null,
+      "after": "bd05db219b1304364f4d1c265db9cece1af50fb2332d9f39357fdc8d721dc449"
+    },
+    "data/layouts/LakeOfRage/map.bin": {
+      "before": null,
+      "after": "47a13b5e7cf933a757d7f317c99d88345476877c9ceae3eba124e0ad2e9278a5"
+    },
+    "data/layouts/LakeOfRage/border.bin": {
+      "before": null,
+      "after": "bd05db219b1304364f4d1c265db9cece1af50fb2332d9f39357fdc8d721dc449"
+    },
+    "data/layouts/MahoganyTown_Shop/map.bin": {
+      "before": null,
+      "after": "fb1526a529a6c73e664900429dae21ac1a64ce7b568c6a392a413b340ca45c14"
+    },
+    "data/layouts/MahoganyTown_Shop/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/MahoganyTown_Gym/map.bin": {
+      "before": null,
+      "after": "25b90a0b26d8eb64df48dc047d075cadde5dfab1e32c96e98236749fd6d90bd1"
+    },
+    "data/layouts/MahoganyTown_Gym/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/JohtoRocketHQ_B1F/map.bin": {
+      "before": null,
+      "after": "c5234750c5ed206e80db0f3a4251d2f6bf445584a50e585e35b27d983e455c5a"
+    },
+    "data/layouts/JohtoRocketHQ_B1F/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/JohtoRocketHQ_B2F/map.bin": {
+      "before": null,
+      "after": "78e0e81bc6efb3889368fd436c1c9c1ed1d919c6548e1cbf95141736a8893d27"
+    },
+    "data/layouts/JohtoRocketHQ_B2F/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/JohtoRocketHQ_B3F/map.bin": {
+      "before": null,
+      "after": "f40db9f517148bb10ad7839caf8f1ade7268fdd3f61b3f195950b0d658c4ccef"
+    },
+    "data/layouts/JohtoRocketHQ_B3F/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/layouts.json": {
+      "before": "f28617a89004d60827b7a3c18aab1e6474054bd5f57ef75d139fa69f33d115d2",
+      "after": "b7948f5285c0398bdfb81fdcaf4e697944431848e5f8c1755a78f84b85c1cc63"
+    },
+    "data/maps/EcruteakCity_EastGate/map.json": {
+      "before": null,
+      "after": "08c57596af6bc9d3b78e9f5b48341bdd7d093fca34431ce986d541ad846e90b0"
+    },
+    "data/maps/EcruteakCity_EastGate/scripts.inc": {
+      "before": null,
+      "after": "0920676beef6451b70f2b56977bb404e8147ecafc974d142ba10f7ee1b4ddbd7"
+    },
+    "data/maps/EcruteakCity_EastGate/text.inc": {
+      "before": null,
+      "after": "dd481ec978cb0af1615f3381b1e35d6aa822463335ce3bdffa909710f896483b"
+    },
+    "data/maps/JohtoRoute42/map.json": {
+      "before": null,
+      "after": "6e5a1d68e1f8a491f5738c1eb481bcd8a51fdd37bd11fb2e39ce953263313333"
+    },
+    "data/maps/JohtoRoute42/scripts.inc": {
+      "before": null,
+      "after": "956a3d403f8b3fc3f2ca2f58be05e83b04dda10173f4ad75665f6f81e99a63bb"
+    },
+    "data/maps/JohtoRoute42/text.inc": {
+      "before": null,
+      "after": "583311211ca6e0ac850f144f4b1acffead86857473aea4a4d815bf607cd6e2a6"
+    },
+    "data/maps/MtMortar_1F/map.json": {
+      "before": null,
+      "after": "30a80701fbe510864055dd6155b423e271ab16a94a1b38104d78eb8ae77c34f5"
+    },
+    "data/maps/MtMortar_1F/scripts.inc": {
+      "before": null,
+      "after": "54aa6e072f1bfaba44e318f26e6b2c609abac3d2084bcb7ea0e536f75bbab72d"
+    },
+    "data/maps/MtMortar_1F/text.inc": {
+      "before": null,
+      "after": "cc2b8f22b55c446209d91a6e8992bb9c2fc7868a57f845b6fac4368f657ffe6d"
+    },
+    "data/maps/MahoganyTown/map.json": {
+      "before": null,
+      "after": "219ae55370d9bc41b68ec4b2358cfb1686932de35d7c5d2c4b5ea1de7ff6ab7a"
+    },
+    "data/maps/MahoganyTown/scripts.inc": {
+      "before": null,
+      "after": "936f1dbd09db39633e7d2ca77783c9cf76d884106cdeefc3df094860eac679d5"
+    },
+    "data/maps/MahoganyTown/text.inc": {
+      "before": null,
+      "after": "6efc6956fbc375ebc58fa4b11d75cc97ec56fcdee712b81971e99966783137ea"
+    },
+    "data/maps/JohtoRoute43/map.json": {
+      "before": null,
+      "after": "8fdfa904994959058ab475464711b83801826266cc547e76cc78f795fe8fbe85"
+    },
+    "data/maps/JohtoRoute43/scripts.inc": {
+      "before": null,
+      "after": "3a09f2b8a76f5da3796e0693260f6212a0b295c134fa9abd81b1eccef8fadedd"
+    },
+    "data/maps/JohtoRoute43/text.inc": {
+      "before": null,
+      "after": "46f74952d5dc818813c06236603bf25ef0f5a3a40adad3866745d93af948851f"
+    },
+    "data/maps/LakeOfRage/map.json": {
+      "before": null,
+      "after": "446eaa8a34496910ac782365fc58a9e275fc90f5bfba635c543c2db2650f4a2a"
+    },
+    "data/maps/LakeOfRage/scripts.inc": {
+      "before": null,
+      "after": "d5245b99ad451fa160ee30f0571fc16b969e00fd2d95771e528c74fa4e0994ba"
+    },
+    "data/maps/LakeOfRage/text.inc": {
+      "before": null,
+      "after": "99a81c48afc32195b1a5237f05f26a87bc08352fb7289e991beeaa6b4494de2b"
+    },
+    "data/maps/MahoganyTown_PokemonCenter_1F/map.json": {
+      "before": null,
+      "after": "af4f20f67284b28b17fc32b3bb5953c43839e0595c5f226c385ad338e7725b32"
+    },
+    "data/maps/MahoganyTown_PokemonCenter_1F/scripts.inc": {
+      "before": null,
+      "after": "39f98dd680b5983ebe49a98e7bde6c42cecc1044e84274c93067c8fb04da5a39"
+    },
+    "data/maps/MahoganyTown_PokemonCenter_1F/text.inc": {
+      "before": null,
+      "after": "dbb5967db015fe0439756fb7397ab189d4fa59ac01c12cbeea8a487ef876c72e"
+    },
+    "data/maps/MahoganyTown_PokemonCenter_2F/map.json": {
+      "before": null,
+      "after": "e27b5eb27fe1711ff069cafb25ab2ea420cdbad1372473326e971c1f50666984"
+    },
+    "data/maps/MahoganyTown_PokemonCenter_2F/scripts.inc": {
+      "before": null,
+      "after": "22268b2e4890d08923d7a1ffe04f6cbf9d26a8a71aaeb3541aafe6648d59801d"
+    },
+    "data/maps/MahoganyTown_PokemonCenter_2F/text.inc": {
+      "before": null,
+      "after": "a0dfac1bcbde46cdf6187847f339d03aab6f659d4eb7949c5f14b7614ce6be55"
+    },
+    "data/maps/MahoganyTown_Shop/map.json": {
+      "before": null,
+      "after": "4a05e29b74c979c4783f975cf35b33548be1018df81f3c64f541fd316e8fc93d"
+    },
+    "data/maps/MahoganyTown_Shop/scripts.inc": {
+      "before": null,
+      "after": "53bc210635451ff80c8c3e03499834f853d5ff00f9964bdd074e5cbd3130a73e"
+    },
+    "data/maps/MahoganyTown_Shop/text.inc": {
+      "before": null,
+      "after": "ba1abe73378a000460e1fb3e093a4f25f441e673f79cdeadb8da817da2c5d945"
+    },
+    "data/maps/MahoganyTown_Gym/map.json": {
+      "before": null,
+      "after": "fd4af472a145cf45c177e96334ee102dc7ba3d297fb4762729af5ac75d412dfe"
+    },
+    "data/maps/MahoganyTown_Gym/scripts.inc": {
+      "before": null,
+      "after": "0f9e0b1ab005990d4e23a617f97bf61de86fcafcc80a49bd263e3eb04d5cf24c"
+    },
+    "data/maps/MahoganyTown_Gym/text.inc": {
+      "before": null,
+      "after": "3a11ff6e2eefea24c35f772154b279ae511667d08beec1f9856073abe6f88899"
+    },
+    "data/maps/JohtoRocketHQ_B1F/map.json": {
+      "before": null,
+      "after": "636e42101e2ea1ca1fa4eb62624082d0a7d5f8728cefc7006db2f8c48118db9e"
+    },
+    "data/maps/JohtoRocketHQ_B1F/scripts.inc": {
+      "before": null,
+      "after": "14bc8ff91a316c4f665b0c0bd6867e79cd93ed50a853664b8446bb02b845885e"
+    },
+    "data/maps/JohtoRocketHQ_B1F/text.inc": {
+      "before": null,
+      "after": "5f121c1cce40295d4f0ceffbd44a8d02376eb3910e4a5da590aba91553acfef3"
+    },
+    "data/maps/JohtoRocketHQ_B2F/map.json": {
+      "before": null,
+      "after": "d70ef91e9215b518c796bcc45e799d651121d0a66d6c95c23ce0637d31f55383"
+    },
+    "data/maps/JohtoRocketHQ_B2F/scripts.inc": {
+      "before": null,
+      "after": "1f31113936f02e8ead29c87d28fffb71ec24a259557469d3d70e2c1b58e0878f"
+    },
+    "data/maps/JohtoRocketHQ_B2F/text.inc": {
+      "before": null,
+      "after": "39ff6f414bfb84130a7fd8244ad00a5e337cca80c8145d9418f86884a3a604ae"
+    },
+    "data/maps/JohtoRocketHQ_B3F/map.json": {
+      "before": null,
+      "after": "a6d8900714b041bd136c75645d5a0cd07c693c126082dd97f01dd89cd35c2bbd"
+    },
+    "data/maps/JohtoRocketHQ_B3F/scripts.inc": {
+      "before": null,
+      "after": "6d9ff8208811ddd5754e40d84f506917bdc2a7847bce0e7bfe99f17e1bf1ae03"
+    },
+    "data/maps/JohtoRocketHQ_B3F/text.inc": {
+      "before": null,
+      "after": "933b93a4d737ff9e9d681eff29c56b8b1c412536da940c7ca7f5b26a9372751f"
+    },
+    "data/maps/EcruteakCity/map.json": {
+      "before": "63badaf19741710a949a5b4112811a8afcf6640e1952a33819193c2b5eb60f98",
+      "after": "188a27ce47a3da4f3ed4af19c8f026d80fc0c9168622ee31298793ef471e3b4c"
+    },
+    "data/layouts/EcruteakCity/map.bin": {
+      "before": "4728b4b07b38073bc7c333f97896dc4a9901261c5da63c004309847d5d2488ee",
+      "after": "7dc564b89a6c1aa121634d7e1ebb2bd0705d298db48ab51ba316d8137f36f6ef"
+    },
+    "src/data/heal_locations.json": {
+      "before": "d3375be32415a960129e21899d46a39b34b2eae42d5e376758de585d7034d24c",
+      "after": "62e0d1be192eaeb57df15d9d9eb5d1d1cdf953caf4bf7a518faec83e6ec35676"
+    },
+    "include/constants/flags_johto_story.h": {
+      "before": "42c8f829b73bc5bb495e74e1b3553014abbba77674368feed5a6a40f6ba0f486",
+      "after": "34c6f22c466bfefb0a0e85ae43f4e03f510f9617026ccb3249408cee5916e0d7"
+    },
+    "include/constants/opponents_johto_mahogany.h": {
+      "before": null,
+      "after": "4635a812c3f4abfd7a46dd3a4f390f9ae32087bf487251162a1494f42395ea3a"
+    },
+    "include/constants/opponents.h": {
+      "before": "a5b0fc82f3b234c9f1b5ee9d90e1dbbda1aa3691667e170583b6f341e893ecc4",
+      "after": "4804d2059d61a8a1e61de4a21184c5dcc67579d1340ff1d6f0412ce7adfe5a74"
+    },
+    "src/data/trainer_parties_johto_mahogany.h": {
+      "before": null,
+      "after": "7666a74c415ece509cc5880b49e2ddf48e021a758d31b8094541afbf7b35cacf"
+    },
+    "src/data/trainers_johto_mahogany.h": {
+      "before": null,
+      "after": "93baabfe6530a8e684b97665d9c61efd5a3071c9675a6bfe1a816ab05c5c8742"
+    },
+    "src/data/trainers.h": {
+      "before": "fcb2bd9148a7cc06500ff3aadb4f4a13dd0c4170942a48409d488cdbf1f8b883",
+      "after": "ae1150825bd49241a9b8b01ce85e9a2fb77842451984a7814880c4012e75589d"
+    },
+    "src/data/trainer_parties.h": {
+      "before": "968e68e044986c842edfe59e8561acae0031c45518dffb8f26d2da7a23b02b2b",
+      "after": "c7d44b752e65eba9be6de36b3320f5fb454855a2c4fbd213ed1f9dab5263b05b"
+    },
+    "data/event_scripts.s": {
+      "before": "4077966a8aeae1b940626cb2e1b607aba3828c3d8294779431952feec394bc4e",
+      "after": "a32ea36f5b96aa6f9947d2812736d3a7ab497e8b93007f98c2ee75f52999f83f"
+    },
+    "tools/johto/build_olivine_cianwood.py": {
+      "before": "c9de7857bf165ce84fc45e4049c5024794d844c4b10cc390331ba1c3511e53ad",
+      "after": "ca3d14013b4eb6638ad8eccf0719d823b2968feca79614c74c4d6ed9b65dd4cd"
+    },
+    "tools/johto/johtoroute42_wild.json": {
+      "before": null,
+      "after": "c1b56bedf37029030f35a12f31f1a2dc48aabc3648a4773d5c7aee640bc25da9"
+    },
+    "tools/johto/johtoroute43_wild.json": {
+      "before": null,
+      "after": "a836323200bea17fd41712014f49bd83364fd1a05b021151eb6802a0bd7818a8"
+    },
+    "tools/johto/mtmortar_1f_wild.json": {
+      "before": null,
+      "after": "f00065eb49ca655028ed90ca7df4070614170f47c2e04155da637c1a617ff368"
+    },
+    "src/data/wild_encounters.json": {
+      "before": "eba2571438035d18677899580d645a5f477cf4997d05c9b9849b905399f6df90",
+      "after": "723d3c8e6a67f877ac46317384de47ccb62ef97b1ddc5e016498d3794ba51497"
+    },
+    "tools/johto/lakeofrage_wild.json": {
+      "before": null,
+      "after": "6b67ae31b6de711c5dc0054c5ac5d2ba81fb9fa450b363579428f2fb5889c3ba"
+    },
+    "src/data/region_map/region_map_sections.json": {
+      "before": "2923cc6d9616fe53a04eabac8de62c285bac1427675b0b8eb8f8b9cb5d591596",
+      "after": "251a15aa15f0178e50116cb1ad0dc680633032f3187842b9849a11468400b3bb"
+    },
+    "src/region_map.c": {
+      "before": "7897dd367c7246f3811a19c47199d276197787c778b42cc5fdab3d2d4874e526",
+      "after": "40e53a77f8eae6e0b4576eb2cfa3796481f7ee6c9e9362ee5e5f930cc415170d"
+    },
+    "src/pokemon_summary_screen.c": {
+      "before": "957533eb6b4246525478ca2a1aadf738af261878972e8d0ab1e813264335f1b2",
+      "after": "74a37e0d8755b2f9ffa106da54f559916602a9c48d8c902654aa83d62eee88f5"
+    },
+    "graphics/region_map/johto_entry.bin": {
+      "before": "ccb9c206f6b710b0d61ff67e4b9c711d58d889573c67ec3a9241e1951c49f357",
+      "after": "159094093d1bbce744e308e5b8c46d79616198c4c9e4e383fa09ddf43b70d528"
+    },
+    "src/wild_pokemon_area.c": {
+      "before": "86191072b9ecdc76efba43ef8029132fc99b26a583245ce310b2714ce4be09c0",
+      "after": "797f708a7396f29f4e6beeff5325cfea4f48b141e0d5ddd822801ac6ac2150de"
+    },
+    "include/pokedex_area_markers.h": {
+      "before": "9ed701f05ac9a8b712a52d32ccd8372ccb3b6d01b25804c8b4987574339b1f7c",
+      "after": "7d30bf36e3543f8f02b9fb4d9f92f3bcbad50bc60e44b45ccc947dc178b2268f"
+    },
+    "src/pokedex_area_markers.c": {
+      "before": "5cbe254523ba254e32a26e8c609aa68fc885df6a19864d1cb844b3e4f2cffcfa",
+      "after": "3f2ca6838fb7b7a4d47cf5cc819c02670baf5bd73eeb9618dd5ce1efbfd2309e"
+    },
+    "src/pokedex_screen.c": {
+      "before": "cdfde5f930d9d5e800064daddfe68779b430c1a5096193ee8330ad5ed0159354",
+      "after": "be5ffb0aad4a88ee233cda1470a0352c971e630e34aec52a68144eec934378be"
+    }
+  }
+}

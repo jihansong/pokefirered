@@ -423,6 +423,8 @@ static const u8 sGymCityMapSecs[NUM_BADGES] = {
     MAPSEC_VIRIDIAN_CITY,
 };
 
+static const u8 sText_QuestLogUsedDive[] = _("{STR_VAR_1} used DIVE to\nexplore the sea.\p");
+
 static const u8 *const sUsedFieldMoveTexts[] =
 {
     [FIELD_MOVE_FLASH]       = gText_QuestLog_UsedFlash,
@@ -436,7 +438,8 @@ static const u8 *const sUsedFieldMoveTexts[] =
     [FIELD_MOVE_DIG]         = gText_QuestLog_UsedDigInLocation,
     [FIELD_MOVE_MILK_DRINK]  = gText_QuestLog_UsedMilkDrink,
     [FIELD_MOVE_SOFT_BOILED] = gText_QuestLog_UsedSoftboiled,
-    [FIELD_MOVE_SWEET_SCENT] = gText_QuestLog_UsedSweetScent
+    [FIELD_MOVE_SWEET_SCENT] = gText_QuestLog_UsedSweetScent,
+    [FIELD_MOVE_DIVE]        = sText_QuestLogUsedDive
 };
 
 static const u16 sWorldMapFlags[] =

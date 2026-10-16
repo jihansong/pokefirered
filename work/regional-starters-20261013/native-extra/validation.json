@@ -1,0 +1,377 @@
+{
+  "pass": true,
+  "rom_sha256": "63904802b37dc5e922ec616361c0be3388f1030e5b2c1a0b7a2949f2a33c1f7c",
+  "RAM_writes": 0,
+  "direct_script_calls": 0,
+  "forced_battle_outcomes": 0,
+  "source_sav": "/workspaces/pokefirered/saves/pokemonthyl_v1.25-items99-iv2x.sav",
+  "cases": [
+    {
+      "case": "Johto-all-three-in-sequence",
+      "pass": true,
+      "gifts": [
+        {
+          "species": 155,
+          "pid": 2005629698,
+          "ot": 2839214970,
+          "IVs": [
+            31,
+            31,
+            31,
+            31,
+            31,
+            31
+          ],
+          "exp": 135,
+          "met_level": 5,
+          "item": 0,
+          "checksum_ok": true,
+          "egg": false,
+          "bad_egg": false,
+          "raw80": "027b8b777afb3aa9bdd3c8bebbcbcfc3c6ff0202c4c3c2bbc8ffff0014900000e380b1deff80b1de78c6b1de7880b1de7880b1de7880b1de59809ade7880b1de5b9eb1de784834fc877f4ee17880b1de"
+        },
+        {
+          "species": 152,
+          "pid": 4075209637,
+          "ot": 2839214970,
+          "IVs": [
+            31,
+            31,
+            31,
+            31,
+            31,
+            31
+          ],
+          "exp": 135,
+          "met_level": 5,
+          "item": 0,
+          "checksum_ok": true,
+          "egg": false,
+          "bad_egg": false,
+          "raw80": "a5c3e6f27afb3aa9bdc2c3c5c9ccc3cebbff0202c4c3c2bbc8ffff00139a0000df38dc5bdf38dc5bdf38dc5b4738dc5b5838dc5bdf7edc5bdff0597920c72364df38dc5bfe38f15bdf38dc5bfc10dc5b"
+        },
+        {
+          "species": 158,
+          "pid": 2588639699,
+          "ot": 2839214970,
+          "IVs": [
+            31,
+            31,
+            31,
+            31,
+            31,
+            31
+          ],
+          "exp": 135,
+          "met_level": 5,
+          "item": 0,
+          "checksum_ok": true,
+          "egg": false,
+          "bad_egg": false,
+          "raw80": "d3814b9a7afb3aa9cec9cec9bec3c6bfff730202c4c3c2bbc8ffff0000900000a37a5a33a97a71338a647133a9b2f41156858e0ca97a7133a97a7133a97a7133a97a7133377a71332e7a7133a93c7133"
+        }
+      ],
+      "SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-extra/johto-all-three-native-QA-only.sav"
+      },
+      "repeat_no_duplicate": true
+    },
+    {
+      "case": "Johto-decline-then-retry",
+      "pass": true,
+      "gift": {
+        "species": 155,
+        "pid": 1802326597,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "45526d6b7afb3aa9bdd3c8bebbcbcfc3c6ff0202c4c3c2bbc8ffff00149000003fa957c23fa957c23fa957c2a4a957c2b8a957c23fef57c23f61d2e0c056a8fd3fa957c21ea97cc23fa957c21cb757c2"
+      }
+    },
+    {
+      "case": "cyndaquil-full-retry",
+      "pass": true,
+      "full_failed_without_receipt": true,
+      "native_SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-extra/cyndaquil-full-retry-native-QA-only.sav"
+      },
+      "preboot_change": "freed one synthetic fixture box record; no real user file modified",
+      "gift": {
+        "species": 155,
+        "pid": 1490643707,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "fb6ad9587afb3aa9bdd3c8bebbcbcfc3c6ff0202c4c3c2bbc8ffff0014900000a091c8f18191e3f1a28fe3f1815966d37e6e1cce8191e3f18191e3f18191e3f18191e3f11a91e3f10691e3f181d7e3f1"
+      }
+    },
+    {
+      "case": "chikorita-full-retry",
+      "pass": true,
+      "full_failed_without_receipt": true,
+      "native_SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-extra/chikorita-full-retry-native-QA-only.sav"
+      },
+      "preboot_change": "freed one synthetic fixture box record; no real user file modified",
+      "gift": {
+        "species": 152,
+        "pid": 4097551845,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "e5ad3bf47afb3aa9bdc2c3c5c9ccc3cebbff0202c4c3c2bbc8ffff00139a00009f9e847f60a9fe629f56015dbe562c5d9f56015dbc7e015d9f56015d9f56015d9f56015d0756015d1856015d9f10015d"
+      }
+    },
+    {
+      "case": "totodile-full-retry",
+      "pass": true,
+      "full_failed_without_receipt": true,
+      "native_SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-extra/totodile-full-retry-native-QA-only.sav"
+      },
+      "preboot_change": "freed one synthetic fixture box record; no real user file modified",
+      "gift": {
+        "species": 158,
+        "pid": 555623303,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "87231e217afb3aa9cec9cec9bec3c6bfff730202c4c3c2bbc8ffff0000900000fd10a1aa0227dbb7fdd82488fdd82488fdd82488fdd82488f7d80f88fdd82488dec6248863d824887ad82488fd9e2488"
+      }
+    },
+    {
+      "case": "torchic-full-retry",
+      "pass": true,
+      "full_failed_without_receipt": true,
+      "native_SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-extra/torchic-full-retry-native-QA-only.sav"
+      },
+      "preboot_change": "freed one synthetic fixture box record; no real user file modified",
+      "gift": {
+        "species": 280,
+        "pid": 189765885,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "fd984f0b7afb3aa9cec9ccbdc2c3bdff00000202c4c3c2bbc8ffff007cd200008763f080789c8a9d876375a28d6358a2876375a2a44b75a2876375a2876375a2876375a29f6275a2006375a2872575a2"
+      }
+    },
+    {
+      "case": "treecko-full-retry",
+      "pass": true,
+      "full_failed_without_receipt": true,
+      "native_SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-extra/treecko-full-retry-native-QA-only.sav"
+      },
+      "preboot_change": "freed one synthetic fixture box record; no real user file modified",
+      "gift": {
+        "species": 277,
+        "pid": 2222240168,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "a8b174847afb3aa9ceccbfbfbdc5c9ff00000202c4c3c2bbc8ffff006e030000d34a652dd24a4e2df1544e2dd24a4e2dd24a4e2dd24a4e2dc74b4e2d554a4e2dd20c4e2dd271cb0f2db5b112d24a4e2d"
+      }
+    },
+    {
+      "case": "mudkip-full-retry",
+      "pass": true,
+      "full_failed_without_receipt": true,
+      "native_SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-extra/mudkip-full-retry-native-QA-only.sav"
+      },
+      "preboot_change": "freed one synthetic fixture box record; no real user file modified",
+      "gift": {
+        "species": 283,
+        "pid": 15614050,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "6240ee007afb3aa9c7cfbec5c3caff0000000202c4c3c2bbc8ffff0096e5000039bbf9a918bbd4a93b93d4a918a8518be7442b9618bbd4a903bad4a99fbbd4a918fdd4a918bbd4a918bbd4a918bbd4a9"
+      }
+    },
+    {
+      "case": "unedited-v125-Continue-and-3600-native-frames",
+      "pass": true,
+      "position": [
+        1,
+        78,
+        6,
+        10
+      ],
+      "frames": 3600,
+      "original_records_preserved": true
+    }
+  ],
+  "scope": "Sequential Johto gifts; decline; full-storage native SAVE then free synthetic slot in preboot QA copy and retry; original Continue idle",
+  "battle_paths": [
+    {
+      "capture": false,
+      "outcome": 4,
+      "enemy": {
+        "species": 277,
+        "pid": 192345554,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "d2f5760b7afb3aa9ceccbfbfbdc5c9ff50200202c4c3c2bbc8ffff006e030000bd0f4ca22f0e4ca2a8484ca2a80e4ca2a80e4ca2a80e4ca2a90e67a2a80e4ca28b104ca2a835c98057f1b39da80e4ca2"
+      }
+    },
+    {
+      "capture": false,
+      "outcome": 4,
+      "enemy": {
+        "species": 277,
+        "pid": 2917503162,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "ba90e5ad7afb3aa9ceccbfbfbdc5c9ff50200202c4c3c2bbc8ffff006e030000c0505a263f94203bc06bdf04d56adf04476bdf04c02ddf04c16bf404c06bdf04e375df04c06bdf04c06bdf04c06bdf04"
+      }
+    }
+  ],
+  "protected_original_inputs_unchanged": true
+}

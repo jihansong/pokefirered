@@ -1,0 +1,52 @@
+{
+  "source": "saves/hoenn.sav",
+  "source_sha256": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+  "source_unchanged": true,
+  "capacity": 30,
+  "filled_with_distinct_key_items": [
+    "ITEM_MYSTIC_SHARD",
+    "ITEM_RED_SCALE",
+    "ITEM_ENIGMA_STONE",
+    "ITEM_ODD_FRAGMENT",
+    "ITEM_FINAL_NOTES",
+    "ITEM_POKE_WATCH",
+    "ITEM_CARGO_TAG",
+    "ITEM_N_LETTER",
+    "ITEM_MACH_BIKE",
+    "ITEM_COIN_CASE",
+    "ITEM_ITEMFINDER",
+    "ITEM_OLD_ROD",
+    "ITEM_GOOD_ROD",
+    "ITEM_SUPER_ROD",
+    "ITEM_SS_TICKET",
+    "ITEM_CONTEST_PASS",
+    "ITEM_WAILMER_PAIL",
+    "ITEM_SOOT_SACK",
+    "ITEM_BASEMENT_KEY",
+    "ITEM_ACRO_BIKE",
+    "ITEM_POKEBLOCK_CASE",
+    "ITEM_LETTER",
+    "ITEM_EON_TICKET",
+    "ITEM_RED_ORB",
+    "ITEM_BLUE_ORB",
+    "ITEM_SCANNER",
+    "ITEM_GO_GOGGLES",
+    "ITEM_METEORITE",
+    "ITEM_ROOM_1_KEY",
+    "ITEM_ROOM_2_KEY"
+  ],
+  "fixtures": [
+    {
+      "file": "tools/qa/.cache/z3_devon/key-items-full.sav",
+      "free_key_item_slots": 0,
+      "devon_goods": 0,
+      "sha256": "d2bbfbea8974718395622a85469eabb2e02266b0a960ad186a9451f01ee0c110"
+    },
+    {
+      "file": "tools/qa/.cache/z3_devon/key-items-one-free.sav",
+      "free_key_item_slots": 1,
+      "devon_goods": 0,
+      "sha256": "07d7eeb601ea0210390b547bc4fe4c6566ec0c0ca1666538a8f96bf4703cacd5"
+    }
+  ]
+}

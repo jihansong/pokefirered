@@ -1,0 +1,3810 @@
+{
+  "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+  "pass": true,
+  "maps_checked": 457,
+  "maps_expected": 457,
+  "tilesets": 63,
+  "failures": [],
+  "checks": [
+    "ROM layout pointers/flags match source",
+    "map and border ROM bytes equal source",
+    "Emerald512 split",
+    "metatile bounds",
+    "u32 attribute array lengths",
+    "tile graphics and palette bounds"
+  ],
+  "maps": [
+    {
+      "map": "PetalburgCity",
+      "layout": "LAYOUT_HOENN_PETALBURG_CITY",
+      "width": 30,
+      "height": 30,
+      "used_metatiles": 129,
+      "pass": true
+    },
+    {
+      "map": "SlateportCity",
+      "layout": "LAYOUT_HOENN_SLATEPORT_CITY",
+      "width": 40,
+      "height": 60,
+      "used_metatiles": 356,
+      "pass": true
+    },
+    {
+      "map": "MauvilleCity",
+      "layout": "LAYOUT_HOENN_MAUVILLE_CITY",
+      "width": 40,
+      "height": 20,
+      "used_metatiles": 150,
+      "pass": true
+    },
+    {
+      "map": "RustboroCity",
+      "layout": "LAYOUT_HOENN_RUSTBORO_CITY",
+      "width": 40,
+      "height": 60,
+      "used_metatiles": 229,
+      "pass": true
+    },
+    {
+      "map": "FortreeCity",
+      "layout": "LAYOUT_HOENN_FORTREE_CITY",
+      "width": 40,
+      "height": 20,
+      "used_metatiles": 109,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity",
+      "layout": "LAYOUT_HOENN_LILYCOVE_CITY",
+      "width": 80,
+      "height": 40,
+      "used_metatiles": 331,
+      "pass": true
+    },
+    {
+      "map": "MossdeepCity",
+      "layout": "LAYOUT_HOENN_MOSSDEEP_CITY",
+      "width": 80,
+      "height": 40,
+      "used_metatiles": 322,
+      "pass": true
+    },
+    {
+      "map": "SootopolisCity",
+      "layout": "LAYOUT_HOENN_SOOTOPOLIS_CITY",
+      "width": 60,
+      "height": 60,
+      "used_metatiles": 219,
+      "pass": true
+    },
+    {
+      "map": "EverGrandeCity",
+      "layout": "LAYOUT_HOENN_EVER_GRANDE_CITY",
+      "width": 40,
+      "height": 80,
+      "used_metatiles": 213,
+      "pass": true
+    },
+    {
+      "map": "LittlerootTown",
+      "layout": "LAYOUT_HOENN_LITTLEROOT_TOWN",
+      "width": 20,
+      "height": 20,
+      "used_metatiles": 63,
+      "pass": true
+    },
+    {
+      "map": "OldaleTown",
+      "layout": "LAYOUT_HOENN_OLDALE_TOWN",
+      "width": 20,
+      "height": 20,
+      "used_metatiles": 71,
+      "pass": true
+    },
+    {
+      "map": "DewfordTown",
+      "layout": "LAYOUT_HOENN_DEWFORD_TOWN",
+      "width": 20,
+      "height": 20,
+      "used_metatiles": 81,
+      "pass": true
+    },
+    {
+      "map": "LavaridgeTown",
+      "layout": "LAYOUT_HOENN_LAVARIDGE_TOWN",
+      "width": 20,
+      "height": 20,
+      "used_metatiles": 130,
+      "pass": true
+    },
+    {
+      "map": "FallarborTown",
+      "layout": "LAYOUT_HOENN_FALLARBOR_TOWN",
+      "width": 20,
+      "height": 20,
+      "used_metatiles": 116,
+      "pass": true
+    },
+    {
+      "map": "VerdanturfTown",
+      "layout": "LAYOUT_HOENN_VERDANTURF_TOWN",
+      "width": 20,
+      "height": 20,
+      "used_metatiles": 103,
+      "pass": true
+    },
+    {
+      "map": "PacifidlogTown",
+      "layout": "LAYOUT_HOENN_PACIFIDLOG_TOWN",
+      "width": 20,
+      "height": 40,
+      "used_metatiles": 72,
+      "pass": true
+    },
+    {
+      "map": "Route101",
+      "layout": "LAYOUT_HOENN_ROUTE101",
+      "width": 20,
+      "height": 20,
+      "used_metatiles": 31,
+      "pass": true
+    },
+    {
+      "map": "Route102",
+      "layout": "LAYOUT_HOENN_ROUTE102",
+      "width": 50,
+      "height": 20,
+      "used_metatiles": 50,
+      "pass": true
+    },
+    {
+      "map": "Route103",
+      "layout": "LAYOUT_HOENN_ROUTE103",
+      "width": 80,
+      "height": 22,
+      "used_metatiles": 91,
+      "pass": true
+    },
+    {
+      "map": "Route104",
+      "layout": "LAYOUT_HOENN_ROUTE104",
+      "width": 40,
+      "height": 80,
+      "used_metatiles": 185,
+      "pass": true
+    },
+    {
+      "map": "Route105",
+      "layout": "LAYOUT_HOENN_ROUTE105",
+      "width": 40,
+      "height": 80,
+      "used_metatiles": 64,
+      "pass": true
+    },
+    {
+      "map": "Route106",
+      "layout": "LAYOUT_HOENN_ROUTE106",
+      "width": 80,
+      "height": 20,
+      "used_metatiles": 57,
+      "pass": true
+    },
+    {
+      "map": "Route107",
+      "layout": "LAYOUT_HOENN_ROUTE107",
+      "width": 60,
+      "height": 20,
+      "used_metatiles": 32,
+      "pass": true
+    },
+    {
+      "map": "Route108",
+      "layout": "LAYOUT_HOENN_ROUTE108",
+      "width": 60,
+      "height": 20,
+      "used_metatiles": 50,
+      "pass": true
+    },
+    {
+      "map": "Route109",
+      "layout": "LAYOUT_HOENN_ROUTE109",
+      "width": 40,
+      "height": 63,
+      "used_metatiles": 73,
+      "pass": true
+    },
+    {
+      "map": "Route110",
+      "layout": "LAYOUT_HOENN_ROUTE110",
+      "width": 40,
+      "height": 100,
+      "used_metatiles": 277,
+      "pass": true
+    },
+    {
+      "map": "Route111",
+      "layout": "LAYOUT_HOENN_ROUTE111",
+      "width": 40,
+      "height": 140,
+      "used_metatiles": 248,
+      "pass": true
+    },
+    {
+      "map": "Route112",
+      "layout": "LAYOUT_HOENN_ROUTE112",
+      "width": 40,
+      "height": 60,
+      "used_metatiles": 118,
+      "pass": true
+    },
+    {
+      "map": "Route113",
+      "layout": "LAYOUT_HOENN_ROUTE113",
+      "width": 100,
+      "height": 20,
+      "used_metatiles": 112,
+      "pass": true
+    },
+    {
+      "map": "Route114",
+      "layout": "LAYOUT_HOENN_ROUTE114",
+      "width": 40,
+      "height": 80,
+      "used_metatiles": 182,
+      "pass": true
+    },
+    {
+      "map": "Route115",
+      "layout": "LAYOUT_HOENN_ROUTE115",
+      "width": 40,
+      "height": 80,
+      "used_metatiles": 130,
+      "pass": true
+    },
+    {
+      "map": "Route116",
+      "layout": "LAYOUT_HOENN_ROUTE116",
+      "width": 100,
+      "height": 20,
+      "used_metatiles": 87,
+      "pass": true
+    },
+    {
+      "map": "Route117",
+      "layout": "LAYOUT_HOENN_ROUTE117",
+      "width": 60,
+      "height": 20,
+      "used_metatiles": 116,
+      "pass": true
+    },
+    {
+      "map": "Route118",
+      "layout": "LAYOUT_HOENN_ROUTE118",
+      "width": 80,
+      "height": 20,
+      "used_metatiles": 107,
+      "pass": true
+    },
+    {
+      "map": "Route119",
+      "layout": "LAYOUT_HOENN_ROUTE119",
+      "width": 40,
+      "height": 140,
+      "used_metatiles": 254,
+      "pass": true
+    },
+    {
+      "map": "Route120",
+      "layout": "LAYOUT_HOENN_ROUTE120",
+      "width": 40,
+      "height": 100,
+      "used_metatiles": 157,
+      "pass": true
+    },
+    {
+      "map": "Route121",
+      "layout": "LAYOUT_HOENN_ROUTE121",
+      "width": 80,
+      "height": 20,
+      "used_metatiles": 103,
+      "pass": true
+    },
+    {
+      "map": "Route122",
+      "layout": "LAYOUT_HOENN_ROUTE122",
+      "width": 40,
+      "height": 40,
+      "used_metatiles": 49,
+      "pass": true
+    },
+    {
+      "map": "Route123",
+      "layout": "LAYOUT_HOENN_ROUTE123",
+      "width": 140,
+      "height": 20,
+      "used_metatiles": 97,
+      "pass": true
+    },
+    {
+      "map": "Route124",
+      "layout": "LAYOUT_HOENN_ROUTE124",
+      "width": 80,
+      "height": 80,
+      "used_metatiles": 93,
+      "pass": true
+    },
+    {
+      "map": "Route125",
+      "layout": "LAYOUT_HOENN_ROUTE125",
+      "width": 80,
+      "height": 40,
+      "used_metatiles": 88,
+      "pass": true
+    },
+    {
+      "map": "Route126",
+      "layout": "LAYOUT_HOENN_ROUTE126",
+      "width": 80,
+      "height": 80,
+      "used_metatiles": 135,
+      "pass": true
+    },
+    {
+      "map": "Route127",
+      "layout": "LAYOUT_HOENN_ROUTE127",
+      "width": 80,
+      "height": 80,
+      "used_metatiles": 150,
+      "pass": true
+    },
+    {
+      "map": "Route128",
+      "layout": "LAYOUT_HOENN_ROUTE128",
+      "width": 120,
+      "height": 40,
+      "used_metatiles": 97,
+      "pass": true
+    },
+    {
+      "map": "Route129",
+      "layout": "LAYOUT_HOENN_ROUTE129",
+      "width": 80,
+      "height": 40,
+      "used_metatiles": 36,
+      "pass": true
+    },
+    {
+      "map": "Route130",
+      "layout": "LAYOUT_HOENN_ROUTE130",
+      "width": 80,
+      "height": 40,
+      "used_metatiles": 30,
+      "pass": true
+    },
+    {
+      "map": "Route131",
+      "layout": "LAYOUT_HOENN_ROUTE131",
+      "width": 60,
+      "height": 40,
+      "used_metatiles": 35,
+      "pass": true
+    },
+    {
+      "map": "Route132",
+      "layout": "LAYOUT_HOENN_ROUTE132",
+      "width": 80,
+      "height": 40,
+      "used_metatiles": 91,
+      "pass": true
+    },
+    {
+      "map": "Route133",
+      "layout": "LAYOUT_HOENN_ROUTE133",
+      "width": 80,
+      "height": 40,
+      "used_metatiles": 66,
+      "pass": true
+    },
+    {
+      "map": "Route134",
+      "layout": "LAYOUT_HOENN_ROUTE134",
+      "width": 80,
+      "height": 40,
+      "used_metatiles": 63,
+      "pass": true
+    },
+    {
+      "map": "Underwater_Route124",
+      "layout": "LAYOUT_HOENN_UNDERWATER_ROUTE124",
+      "width": 80,
+      "height": 80,
+      "used_metatiles": 31,
+      "pass": true
+    },
+    {
+      "map": "Underwater_Route126",
+      "layout": "LAYOUT_HOENN_UNDERWATER_ROUTE126",
+      "width": 80,
+      "height": 80,
+      "used_metatiles": 51,
+      "pass": true
+    },
+    {
+      "map": "Underwater_Route127",
+      "layout": "LAYOUT_HOENN_UNDERWATER_ROUTE127",
+      "width": 80,
+      "height": 80,
+      "used_metatiles": 89,
+      "pass": true
+    },
+    {
+      "map": "Underwater_Route128",
+      "layout": "LAYOUT_HOENN_UNDERWATER_ROUTE128",
+      "width": 120,
+      "height": 40,
+      "used_metatiles": 66,
+      "pass": true
+    },
+    {
+      "map": "Underwater_Route129",
+      "layout": "LAYOUT_HOENN_UNDERWATER_ROUTE129",
+      "width": 80,
+      "height": 40,
+      "used_metatiles": 33,
+      "pass": true
+    },
+    {
+      "map": "Underwater_Route105",
+      "layout": "LAYOUT_HOENN_UNDERWATER_ROUTE105",
+      "width": 40,
+      "height": 80,
+      "used_metatiles": 37,
+      "pass": true
+    },
+    {
+      "map": "Underwater_Route125",
+      "layout": "LAYOUT_HOENN_UNDERWATER_ROUTE125",
+      "width": 80,
+      "height": 40,
+      "used_metatiles": 39,
+      "pass": true
+    },
+    {
+      "map": "LittlerootTown_BrendansHouse_1F",
+      "layout": "LAYOUT_HOENN_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
+      "width": 11,
+      "height": 9,
+      "used_metatiles": 59,
+      "pass": true
+    },
+    {
+      "map": "LittlerootTown_BrendansHouse_2F",
+      "layout": "LAYOUT_HOENN_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
+      "width": 9,
+      "height": 8,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "LittlerootTown_MaysHouse_1F",
+      "layout": "LAYOUT_HOENN_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
+      "width": 11,
+      "height": 9,
+      "used_metatiles": 52,
+      "pass": true
+    },
+    {
+      "map": "LittlerootTown_MaysHouse_2F",
+      "layout": "LAYOUT_HOENN_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
+      "width": 9,
+      "height": 8,
+      "used_metatiles": 45,
+      "pass": true
+    },
+    {
+      "map": "LittlerootTown_ProfessorBirchsLab",
+      "layout": "LAYOUT_HOENN_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+      "width": 13,
+      "height": 13,
+      "used_metatiles": 67,
+      "pass": true
+    },
+    {
+      "map": "OldaleTown_House1",
+      "layout": "LAYOUT_HOENN_HOUSE1",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 40,
+      "pass": true
+    },
+    {
+      "map": "OldaleTown_House2",
+      "layout": "LAYOUT_HOENN_HOUSE2",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 38,
+      "pass": true
+    },
+    {
+      "map": "OldaleTown_PokemonCenter_1F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_1F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 83,
+      "pass": true
+    },
+    {
+      "map": "OldaleTown_PokemonCenter_2F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_2F",
+      "width": 14,
+      "height": 10,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "OldaleTown_Mart",
+      "layout": "LAYOUT_HOENN_MART",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "DewfordTown_House1",
+      "layout": "LAYOUT_HOENN_HOUSE3",
+      "width": 10,
+      "height": 8,
+      "used_metatiles": 41,
+      "pass": true
+    },
+    {
+      "map": "DewfordTown_PokemonCenter_1F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_1F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 83,
+      "pass": true
+    },
+    {
+      "map": "DewfordTown_PokemonCenter_2F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_2F",
+      "width": 14,
+      "height": 10,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "DewfordTown_Gym",
+      "layout": "LAYOUT_HOENN_DEWFORD_TOWN_GYM",
+      "width": 18,
+      "height": 28,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "DewfordTown_Hall",
+      "layout": "LAYOUT_HOENN_DEWFORD_TOWN_HALL",
+      "width": 17,
+      "height": 9,
+      "used_metatiles": 53,
+      "pass": true
+    },
+    {
+      "map": "DewfordTown_House2",
+      "layout": "LAYOUT_HOENN_HOUSE4",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 33,
+      "pass": true
+    },
+    {
+      "map": "LavaridgeTown_HerbShop",
+      "layout": "LAYOUT_HOENN_LAVARIDGE_TOWN_HERB_SHOP",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 31,
+      "pass": true
+    },
+    {
+      "map": "LavaridgeTown_Gym_1F",
+      "layout": "LAYOUT_HOENN_LAVARIDGE_TOWN_GYM_1F",
+      "width": 17,
+      "height": 19,
+      "used_metatiles": 35,
+      "pass": true
+    },
+    {
+      "map": "LavaridgeTown_Gym_B1F",
+      "layout": "LAYOUT_HOENN_LAVARIDGE_TOWN_GYM_B1F",
+      "width": 17,
+      "height": 19,
+      "used_metatiles": 20,
+      "pass": true
+    },
+    {
+      "map": "LavaridgeTown_House",
+      "layout": "LAYOUT_HOENN_HOUSE3",
+      "width": 10,
+      "height": 8,
+      "used_metatiles": 41,
+      "pass": true
+    },
+    {
+      "map": "LavaridgeTown_Mart",
+      "layout": "LAYOUT_HOENN_MART",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "LavaridgeTown_PokemonCenter_1F",
+      "layout": "LAYOUT_HOENN_LAVARIDGE_TOWN_POKEMON_CENTER_1F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 83,
+      "pass": true
+    },
+    {
+      "map": "LavaridgeTown_PokemonCenter_2F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_2F",
+      "width": 14,
+      "height": 10,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "FallarborTown_Mart",
+      "layout": "LAYOUT_HOENN_MART",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "FallarborTown_BattleTentLobby",
+      "layout": "LAYOUT_HOENN_BATTLE_TENT_LOBBY",
+      "width": 13,
+      "height": 10,
+      "used_metatiles": 72,
+      "pass": true
+    },
+    {
+      "map": "FallarborTown_BattleTentCorridor",
+      "layout": "LAYOUT_HOENN_BATTLE_TENT_CORRIDOR",
+      "width": 5,
+      "height": 8,
+      "used_metatiles": 19,
+      "pass": true
+    },
+    {
+      "map": "FallarborTown_BattleTentBattleRoom",
+      "layout": "LAYOUT_HOENN_BATTLE_TENT_BATTLE_ROOM",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 49,
+      "pass": true
+    },
+    {
+      "map": "FallarborTown_PokemonCenter_1F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_1F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 83,
+      "pass": true
+    },
+    {
+      "map": "FallarborTown_PokemonCenter_2F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_2F",
+      "width": 14,
+      "height": 10,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "FallarborTown_CozmosHouse",
+      "layout": "LAYOUT_HOENN_HOUSE1",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 40,
+      "pass": true
+    },
+    {
+      "map": "FallarborTown_MoveRelearnersHouse",
+      "layout": "LAYOUT_HOENN_HOUSE2",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 38,
+      "pass": true
+    },
+    {
+      "map": "VerdanturfTown_BattleTentLobby",
+      "layout": "LAYOUT_HOENN_BATTLE_TENT_LOBBY",
+      "width": 13,
+      "height": 10,
+      "used_metatiles": 72,
+      "pass": true
+    },
+    {
+      "map": "VerdanturfTown_BattleTentCorridor",
+      "layout": "LAYOUT_HOENN_BATTLE_TENT_CORRIDOR",
+      "width": 5,
+      "height": 8,
+      "used_metatiles": 19,
+      "pass": true
+    },
+    {
+      "map": "VerdanturfTown_BattleTentBattleRoom",
+      "layout": "LAYOUT_HOENN_VERDANTURF_TOWN_BATTLE_TENT_BATTLE_ROOM",
+      "width": 13,
+      "height": 9,
+      "used_metatiles": 50,
+      "pass": true
+    },
+    {
+      "map": "VerdanturfTown_Mart",
+      "layout": "LAYOUT_HOENN_MART",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "VerdanturfTown_PokemonCenter_1F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_1F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 83,
+      "pass": true
+    },
+    {
+      "map": "VerdanturfTown_PokemonCenter_2F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_2F",
+      "width": 14,
+      "height": 10,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "VerdanturfTown_WandasHouse",
+      "layout": "LAYOUT_HOENN_VERDANTURF_TOWN_WANDAS_HOUSE",
+      "width": 17,
+      "height": 8,
+      "used_metatiles": 65,
+      "pass": true
+    },
+    {
+      "map": "VerdanturfTown_FriendshipRatersHouse",
+      "layout": "LAYOUT_HOENN_HOUSE2",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 38,
+      "pass": true
+    },
+    {
+      "map": "VerdanturfTown_House",
+      "layout": "LAYOUT_HOENN_HOUSE1",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 40,
+      "pass": true
+    },
+    {
+      "map": "PacifidlogTown_PokemonCenter_1F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_1F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 83,
+      "pass": true
+    },
+    {
+      "map": "PacifidlogTown_PokemonCenter_2F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_2F",
+      "width": 14,
+      "height": 10,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "PacifidlogTown_House1",
+      "layout": "LAYOUT_HOENN_PACIFIDLOG_TOWN_HOUSE1",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "PacifidlogTown_House2",
+      "layout": "LAYOUT_HOENN_PACIFIDLOG_TOWN_HOUSE2",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 48,
+      "pass": true
+    },
+    {
+      "map": "PacifidlogTown_House3",
+      "layout": "LAYOUT_HOENN_PACIFIDLOG_TOWN_HOUSE1",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "PacifidlogTown_House4",
+      "layout": "LAYOUT_HOENN_PACIFIDLOG_TOWN_HOUSE2",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 48,
+      "pass": true
+    },
+    {
+      "map": "PacifidlogTown_House5",
+      "layout": "LAYOUT_HOENN_PACIFIDLOG_TOWN_HOUSE1",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "PetalburgCity_WallysHouse",
+      "layout": "LAYOUT_HOENN_HOUSE2",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 38,
+      "pass": true
+    },
+    {
+      "map": "PetalburgCity_Gym",
+      "layout": "LAYOUT_HOENN_PETALBURG_CITY_GYM",
+      "width": 9,
+      "height": 112,
+      "used_metatiles": 137,
+      "pass": true
+    },
+    {
+      "map": "PetalburgCity_House1",
+      "layout": "LAYOUT_HOENN_HOUSE1",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 40,
+      "pass": true
+    },
+    {
+      "map": "PetalburgCity_House2",
+      "layout": "LAYOUT_HOENN_HOUSE_WITH_BED",
+      "width": 10,
+      "height": 8,
+      "used_metatiles": 30,
+      "pass": true
+    },
+    {
+      "map": "PetalburgCity_PokemonCenter_1F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_1F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 83,
+      "pass": true
+    },
+    {
+      "map": "PetalburgCity_PokemonCenter_2F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_2F",
+      "width": 14,
+      "height": 10,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "PetalburgCity_Mart",
+      "layout": "LAYOUT_HOENN_MART",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "SlateportCity_SternsShipyard_1F",
+      "layout": "LAYOUT_HOENN_SLATEPORT_CITY_STERNS_SHIPYARD_1F",
+      "width": 21,
+      "height": 15,
+      "used_metatiles": 95,
+      "pass": true
+    },
+    {
+      "map": "SlateportCity_SternsShipyard_2F",
+      "layout": "LAYOUT_HOENN_SLATEPORT_CITY_STERNS_SHIPYARD_2F",
+      "width": 17,
+      "height": 15,
+      "used_metatiles": 65,
+      "pass": true
+    },
+    {
+      "map": "SlateportCity_BattleTentLobby",
+      "layout": "LAYOUT_HOENN_BATTLE_TENT_LOBBY",
+      "width": 13,
+      "height": 10,
+      "used_metatiles": 72,
+      "pass": true
+    },
+    {
+      "map": "SlateportCity_BattleTentCorridor",
+      "layout": "LAYOUT_HOENN_BATTLE_TENT_CORRIDOR",
+      "width": 5,
+      "height": 8,
+      "used_metatiles": 19,
+      "pass": true
+    },
+    {
+      "map": "SlateportCity_BattleTentBattleRoom",
+      "layout": "LAYOUT_HOENN_BATTLE_TENT_BATTLE_ROOM",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 49,
+      "pass": true
+    },
+    {
+      "map": "SlateportCity_NameRatersHouse",
+      "layout": "LAYOUT_HOENN_HOUSE_WITH_BED",
+      "width": 10,
+      "height": 8,
+      "used_metatiles": 30,
+      "pass": true
+    },
+    {
+      "map": "SlateportCity_PokemonFanClub",
+      "layout": "LAYOUT_HOENN_SLATEPORT_CITY_POKEMON_FAN_CLUB",
+      "width": 14,
+      "height": 11,
+      "used_metatiles": 73,
+      "pass": true
+    },
+    {
+      "map": "SlateportCity_OceanicMuseum_1F",
+      "layout": "LAYOUT_HOENN_SLATEPORT_CITY_OCEANIC_MUSEUM_1F",
+      "width": 20,
+      "height": 9,
+      "used_metatiles": 47,
+      "pass": true
+    },
+    {
+      "map": "SlateportCity_OceanicMuseum_2F",
+      "layout": "LAYOUT_HOENN_SLATEPORT_CITY_OCEANIC_MUSEUM_2F",
+      "width": 20,
+      "height": 9,
+      "used_metatiles": 53,
+      "pass": true
+    },
+    {
+      "map": "SlateportCity_Harbor",
+      "layout": "LAYOUT_HOENN_HARBOR",
+      "width": 24,
+      "height": 15,
+      "used_metatiles": 35,
+      "pass": true
+    },
+    {
+      "map": "SlateportCity_House",
+      "layout": "LAYOUT_HOENN_HOUSE2",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 38,
+      "pass": true
+    },
+    {
+      "map": "SlateportCity_PokemonCenter_1F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_1F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 83,
+      "pass": true
+    },
+    {
+      "map": "SlateportCity_PokemonCenter_2F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_2F",
+      "width": 14,
+      "height": 10,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "SlateportCity_Mart",
+      "layout": "LAYOUT_HOENN_MART",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "MauvilleCity_Gym",
+      "layout": "LAYOUT_HOENN_MAUVILLE_CITY_GYM",
+      "width": 10,
+      "height": 21,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "MauvilleCity_BikeShop",
+      "layout": "LAYOUT_HOENN_MAUVILLE_CITY_BIKE_SHOP",
+      "width": 12,
+      "height": 9,
+      "used_metatiles": 74,
+      "pass": true
+    },
+    {
+      "map": "MauvilleCity_House1",
+      "layout": "LAYOUT_HOENN_HOUSE2",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 38,
+      "pass": true
+    },
+    {
+      "map": "MauvilleCity_GameCorner",
+      "layout": "LAYOUT_HOENN_MAUVILLE_CITY_GAME_CORNER",
+      "width": 22,
+      "height": 11,
+      "used_metatiles": 65,
+      "pass": true
+    },
+    {
+      "map": "MauvilleCity_House2",
+      "layout": "LAYOUT_HOENN_HOUSE1",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 40,
+      "pass": true
+    },
+    {
+      "map": "MauvilleCity_PokemonCenter_1F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_1F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 83,
+      "pass": true
+    },
+    {
+      "map": "MauvilleCity_PokemonCenter_2F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_2F",
+      "width": 14,
+      "height": 10,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "MauvilleCity_Mart",
+      "layout": "LAYOUT_HOENN_MART",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "RustboroCity_DevonCorp_1F",
+      "layout": "LAYOUT_HOENN_RUSTBORO_CITY_DEVON_CORP_1F",
+      "width": 19,
+      "height": 9,
+      "used_metatiles": 32,
+      "pass": true
+    },
+    {
+      "map": "RustboroCity_DevonCorp_2F",
+      "layout": "LAYOUT_HOENN_RUSTBORO_CITY_DEVON_CORP_2F",
+      "width": 19,
+      "height": 9,
+      "used_metatiles": 30,
+      "pass": true
+    },
+    {
+      "map": "RustboroCity_DevonCorp_3F",
+      "layout": "LAYOUT_HOENN_RUSTBORO_CITY_DEVON_CORP_3F",
+      "width": 19,
+      "height": 9,
+      "used_metatiles": 42,
+      "pass": true
+    },
+    {
+      "map": "RustboroCity_Gym",
+      "layout": "LAYOUT_HOENN_RUSTBORO_CITY_GYM",
+      "width": 11,
+      "height": 20,
+      "used_metatiles": 56,
+      "pass": true
+    },
+    {
+      "map": "RustboroCity_PokemonSchool",
+      "layout": "LAYOUT_HOENN_RUSTBORO_CITY_POKEMON_SCHOOL",
+      "width": 12,
+      "height": 11,
+      "used_metatiles": 36,
+      "pass": true
+    },
+    {
+      "map": "RustboroCity_PokemonCenter_1F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_1F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 83,
+      "pass": true
+    },
+    {
+      "map": "RustboroCity_PokemonCenter_2F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_2F",
+      "width": 14,
+      "height": 10,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "RustboroCity_Mart",
+      "layout": "LAYOUT_HOENN_MART",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "RustboroCity_Flat1_1F",
+      "layout": "LAYOUT_HOENN_RUSTBORO_CITY_FLAT1_1F",
+      "width": 14,
+      "height": 8,
+      "used_metatiles": 49,
+      "pass": true
+    },
+    {
+      "map": "RustboroCity_Flat1_2F",
+      "layout": "LAYOUT_HOENN_RUSTBORO_CITY_FLAT1_2F",
+      "width": 14,
+      "height": 8,
+      "used_metatiles": 45,
+      "pass": true
+    },
+    {
+      "map": "RustboroCity_House1",
+      "layout": "LAYOUT_HOENN_RUSTBORO_CITY_HOUSE1",
+      "width": 13,
+      "height": 8,
+      "used_metatiles": 44,
+      "pass": true
+    },
+    {
+      "map": "RustboroCity_CuttersHouse",
+      "layout": "LAYOUT_HOENN_RUSTBORO_CITY_CUTTERS_HOUSE",
+      "width": 11,
+      "height": 9,
+      "used_metatiles": 47,
+      "pass": true
+    },
+    {
+      "map": "RustboroCity_House2",
+      "layout": "LAYOUT_HOENN_RUSTBORO_CITY_HOUSE",
+      "width": 12,
+      "height": 9,
+      "used_metatiles": 48,
+      "pass": true
+    },
+    {
+      "map": "RustboroCity_Flat2_1F",
+      "layout": "LAYOUT_HOENN_RUSTBORO_CITY_FLAT2_1F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 36,
+      "pass": true
+    },
+    {
+      "map": "RustboroCity_Flat2_2F",
+      "layout": "LAYOUT_HOENN_RUSTBORO_CITY_FLAT2_2F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 37,
+      "pass": true
+    },
+    {
+      "map": "RustboroCity_Flat2_3F",
+      "layout": "LAYOUT_HOENN_RUSTBORO_CITY_FLAT2_3F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 41,
+      "pass": true
+    },
+    {
+      "map": "RustboroCity_House3",
+      "layout": "LAYOUT_HOENN_RUSTBORO_CITY_HOUSE",
+      "width": 12,
+      "height": 9,
+      "used_metatiles": 48,
+      "pass": true
+    },
+    {
+      "map": "FortreeCity_House1",
+      "layout": "LAYOUT_HOENN_FORTREE_CITY_HOUSE1",
+      "width": 8,
+      "height": 6,
+      "used_metatiles": 22,
+      "pass": true
+    },
+    {
+      "map": "FortreeCity_Gym",
+      "layout": "LAYOUT_HOENN_FORTREE_CITY_GYM",
+      "width": 20,
+      "height": 25,
+      "used_metatiles": 66,
+      "pass": true
+    },
+    {
+      "map": "FortreeCity_PokemonCenter_1F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_1F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 83,
+      "pass": true
+    },
+    {
+      "map": "FortreeCity_PokemonCenter_2F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_2F",
+      "width": 14,
+      "height": 10,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "FortreeCity_Mart",
+      "layout": "LAYOUT_HOENN_MART",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "FortreeCity_House2",
+      "layout": "LAYOUT_HOENN_FORTREE_CITY_HOUSE2",
+      "width": 8,
+      "height": 6,
+      "used_metatiles": 27,
+      "pass": true
+    },
+    {
+      "map": "FortreeCity_House3",
+      "layout": "LAYOUT_HOENN_FORTREE_CITY_HOUSE1",
+      "width": 8,
+      "height": 6,
+      "used_metatiles": 22,
+      "pass": true
+    },
+    {
+      "map": "FortreeCity_House4",
+      "layout": "LAYOUT_HOENN_FORTREE_CITY_HOUSE2",
+      "width": 8,
+      "height": 6,
+      "used_metatiles": 27,
+      "pass": true
+    },
+    {
+      "map": "FortreeCity_House5",
+      "layout": "LAYOUT_HOENN_FORTREE_CITY_HOUSE1",
+      "width": 8,
+      "height": 6,
+      "used_metatiles": 22,
+      "pass": true
+    },
+    {
+      "map": "FortreeCity_DecorationShop",
+      "layout": "LAYOUT_HOENN_FORTREE_CITY_DECORATION_SHOP",
+      "width": 8,
+      "height": 6,
+      "used_metatiles": 26,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_CoveLilyMotel_1F",
+      "layout": "LAYOUT_HOENN_LILYCOVE_CITY_COVE_LILY_MOTEL_1F",
+      "width": 12,
+      "height": 9,
+      "used_metatiles": 42,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_CoveLilyMotel_2F",
+      "layout": "LAYOUT_HOENN_LILYCOVE_CITY_COVE_LILY_MOTEL_2F",
+      "width": 12,
+      "height": 9,
+      "used_metatiles": 34,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_LilycoveMuseum_1F",
+      "layout": "LAYOUT_HOENN_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F",
+      "width": 21,
+      "height": 14,
+      "used_metatiles": 75,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_LilycoveMuseum_2F",
+      "layout": "LAYOUT_HOENN_LILYCOVE_CITY_LILYCOVE_MUSEUM_2F",
+      "width": 22,
+      "height": 13,
+      "used_metatiles": 41,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_ContestLobby",
+      "layout": "LAYOUT_HOENN_LILYCOVE_CITY_CONTEST_LOBBY",
+      "width": 31,
+      "height": 12,
+      "used_metatiles": 48,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_ContestHall",
+      "layout": "LAYOUT_HOENN_LILYCOVE_CITY_CONTEST_HALL",
+      "width": 51,
+      "height": 33,
+      "used_metatiles": 104,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_PokemonCenter_1F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_1F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 83,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_PokemonCenter_2F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_2F",
+      "width": 14,
+      "height": 10,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_UnusedMart",
+      "layout": "LAYOUT_HOENN_MART",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_PokemonTrainerFanClub",
+      "layout": "LAYOUT_HOENN_LILYCOVE_CITY_POKEMON_TRAINER_FAN_CLUB",
+      "width": 12,
+      "height": 14,
+      "used_metatiles": 56,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_Harbor",
+      "layout": "LAYOUT_HOENN_HARBOR",
+      "width": 24,
+      "height": 15,
+      "used_metatiles": 35,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_MoveDeletersHouse",
+      "layout": "LAYOUT_HOENN_HOUSE2",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 38,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_House1",
+      "layout": "LAYOUT_HOENN_HOUSE1",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 40,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_House2",
+      "layout": "LAYOUT_HOENN_LILYCOVE_CITY_HOUSE2",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 35,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_House3",
+      "layout": "LAYOUT_HOENN_HOUSE2",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 38,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_House4",
+      "layout": "LAYOUT_HOENN_HOUSE1",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 40,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_DepartmentStore_1F",
+      "layout": "LAYOUT_HOENN_LILYCOVE_CITY_DEPARTMENT_STORE_1F",
+      "width": 18,
+      "height": 8,
+      "used_metatiles": 44,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_DepartmentStore_2F",
+      "layout": "LAYOUT_HOENN_LILYCOVE_CITY_DEPARTMENT_STORE_2F",
+      "width": 18,
+      "height": 8,
+      "used_metatiles": 43,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_DepartmentStore_3F",
+      "layout": "LAYOUT_HOENN_LILYCOVE_CITY_DEPARTMENT_STORE_3F",
+      "width": 18,
+      "height": 8,
+      "used_metatiles": 45,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_DepartmentStore_4F",
+      "layout": "LAYOUT_HOENN_LILYCOVE_CITY_DEPARTMENT_STORE_4F",
+      "width": 18,
+      "height": 8,
+      "used_metatiles": 39,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_DepartmentStore_5F",
+      "layout": "LAYOUT_HOENN_LILYCOVE_CITY_DEPARTMENT_STORE_5F",
+      "width": 18,
+      "height": 8,
+      "used_metatiles": 54,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_DepartmentStoreRooftop",
+      "layout": "LAYOUT_HOENN_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP",
+      "width": 18,
+      "height": 12,
+      "used_metatiles": 49,
+      "pass": true
+    },
+    {
+      "map": "LilycoveCity_DepartmentStoreElevator",
+      "layout": "LAYOUT_HOENN_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR",
+      "width": 5,
+      "height": 6,
+      "used_metatiles": 17,
+      "pass": true
+    },
+    {
+      "map": "MossdeepCity_Gym",
+      "layout": "LAYOUT_HOENN_MOSSDEEP_CITY_GYM",
+      "width": 26,
+      "height": 36,
+      "used_metatiles": 67,
+      "pass": true
+    },
+    {
+      "map": "MossdeepCity_House1",
+      "layout": "LAYOUT_HOENN_HOUSE2",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 38,
+      "pass": true
+    },
+    {
+      "map": "MossdeepCity_House2",
+      "layout": "LAYOUT_HOENN_HOUSE1",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 40,
+      "pass": true
+    },
+    {
+      "map": "MossdeepCity_PokemonCenter_1F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_1F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 83,
+      "pass": true
+    },
+    {
+      "map": "MossdeepCity_PokemonCenter_2F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_2F",
+      "width": 14,
+      "height": 10,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "MossdeepCity_Mart",
+      "layout": "LAYOUT_HOENN_MART",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "MossdeepCity_House3",
+      "layout": "LAYOUT_HOENN_HOUSE2",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 38,
+      "pass": true
+    },
+    {
+      "map": "MossdeepCity_StevensHouse",
+      "layout": "LAYOUT_HOENN_MOSSDEEP_CITY_STEVENS_HOUSE",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 30,
+      "pass": true
+    },
+    {
+      "map": "MossdeepCity_House4",
+      "layout": "LAYOUT_HOENN_HOUSE_WITH_BED",
+      "width": 10,
+      "height": 8,
+      "used_metatiles": 30,
+      "pass": true
+    },
+    {
+      "map": "MossdeepCity_SpaceCenter_1F",
+      "layout": "LAYOUT_HOENN_MOSSDEEP_CITY_SPACE_CENTER_1F",
+      "width": 16,
+      "height": 10,
+      "used_metatiles": 33,
+      "pass": true
+    },
+    {
+      "map": "MossdeepCity_SpaceCenter_2F",
+      "layout": "LAYOUT_HOENN_MOSSDEEP_CITY_SPACE_CENTER_2F",
+      "width": 16,
+      "height": 10,
+      "used_metatiles": 34,
+      "pass": true
+    },
+    {
+      "map": "MossdeepCity_GameCorner_1F",
+      "layout": "LAYOUT_HOENN_MOSSDEEP_CITY_GAME_CORNER_1F",
+      "width": 12,
+      "height": 10,
+      "used_metatiles": 48,
+      "pass": true
+    },
+    {
+      "map": "MossdeepCity_GameCorner_B1F",
+      "layout": "LAYOUT_HOENN_MOSSDEEP_CITY_GAME_CORNER_B1F",
+      "width": 12,
+      "height": 9,
+      "used_metatiles": 27,
+      "pass": true
+    },
+    {
+      "map": "SootopolisCity_Gym_1F",
+      "layout": "LAYOUT_HOENN_SOOTOPOLIS_CITY_GYM_1F",
+      "width": 17,
+      "height": 26,
+      "used_metatiles": 67,
+      "pass": true
+    },
+    {
+      "map": "SootopolisCity_Gym_B1F",
+      "layout": "LAYOUT_HOENN_SOOTOPOLIS_CITY_GYM_B1F",
+      "width": 17,
+      "height": 26,
+      "used_metatiles": 21,
+      "pass": true
+    },
+    {
+      "map": "SootopolisCity_PokemonCenter_1F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_1F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 83,
+      "pass": true
+    },
+    {
+      "map": "SootopolisCity_PokemonCenter_2F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_2F",
+      "width": 14,
+      "height": 10,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "SootopolisCity_Mart",
+      "layout": "LAYOUT_HOENN_MART",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "SootopolisCity_House1",
+      "layout": "LAYOUT_HOENN_SOOTOPOLIS_CITY_HOUSE1",
+      "width": 8,
+      "height": 7,
+      "used_metatiles": 20,
+      "pass": true
+    },
+    {
+      "map": "SootopolisCity_House2",
+      "layout": "LAYOUT_HOENN_SOOTOPOLIS_CITY_HOUSE2",
+      "width": 8,
+      "height": 7,
+      "used_metatiles": 25,
+      "pass": true
+    },
+    {
+      "map": "SootopolisCity_House3",
+      "layout": "LAYOUT_HOENN_SOOTOPOLIS_CITY_HOUSE3",
+      "width": 8,
+      "height": 7,
+      "used_metatiles": 24,
+      "pass": true
+    },
+    {
+      "map": "SootopolisCity_House4",
+      "layout": "LAYOUT_HOENN_SOOTOPOLIS_CITY_HOUSE1",
+      "width": 8,
+      "height": 7,
+      "used_metatiles": 20,
+      "pass": true
+    },
+    {
+      "map": "SootopolisCity_House5",
+      "layout": "LAYOUT_HOENN_SOOTOPOLIS_CITY_HOUSE2",
+      "width": 8,
+      "height": 7,
+      "used_metatiles": 25,
+      "pass": true
+    },
+    {
+      "map": "SootopolisCity_House6",
+      "layout": "LAYOUT_HOENN_SOOTOPOLIS_CITY_HOUSE3",
+      "width": 8,
+      "height": 7,
+      "used_metatiles": 24,
+      "pass": true
+    },
+    {
+      "map": "SootopolisCity_House7",
+      "layout": "LAYOUT_HOENN_SOOTOPOLIS_CITY_HOUSE1",
+      "width": 8,
+      "height": 7,
+      "used_metatiles": 20,
+      "pass": true
+    },
+    {
+      "map": "SootopolisCity_LotadAndSeedotHouse",
+      "layout": "LAYOUT_HOENN_SOOTOPOLIS_CITY_LOTAD_AND_SEEDOT_HOUSE",
+      "width": 8,
+      "height": 7,
+      "used_metatiles": 23,
+      "pass": true
+    },
+    {
+      "map": "SootopolisCity_MysteryEventsHouse_1F",
+      "layout": "LAYOUT_HOENN_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_1F",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 35,
+      "pass": true
+    },
+    {
+      "map": "SootopolisCity_MysteryEventsHouse_B1F",
+      "layout": "LAYOUT_HOENN_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_B1F",
+      "width": 12,
+      "height": 9,
+      "used_metatiles": 25,
+      "pass": true
+    },
+    {
+      "map": "EverGrandeCity_SidneysRoom",
+      "layout": "LAYOUT_HOENN_EVER_GRANDE_CITY_SIDNEYS_ROOM",
+      "width": 13,
+      "height": 14,
+      "used_metatiles": 69,
+      "pass": true
+    },
+    {
+      "map": "EverGrandeCity_PhoebesRoom",
+      "layout": "LAYOUT_HOENN_EVER_GRANDE_CITY_PHOEBES_ROOM",
+      "width": 13,
+      "height": 14,
+      "used_metatiles": 73,
+      "pass": true
+    },
+    {
+      "map": "EverGrandeCity_GlaciasRoom",
+      "layout": "LAYOUT_HOENN_EVER_GRANDE_CITY_GLACIAS_ROOM",
+      "width": 13,
+      "height": 14,
+      "used_metatiles": 68,
+      "pass": true
+    },
+    {
+      "map": "EverGrandeCity_DrakesRoom",
+      "layout": "LAYOUT_HOENN_EVER_GRANDE_CITY_DRAKES_ROOM",
+      "width": 13,
+      "height": 14,
+      "used_metatiles": 68,
+      "pass": true
+    },
+    {
+      "map": "EverGrandeCity_ChampionsRoom",
+      "layout": "LAYOUT_HOENN_EVER_GRANDE_CITY_CHAMPIONS_ROOM",
+      "width": 13,
+      "height": 13,
+      "used_metatiles": 84,
+      "pass": true
+    },
+    {
+      "map": "EverGrandeCity_Hall1",
+      "layout": "LAYOUT_HOENN_EVER_GRANDE_CITY_SHORT_HALL",
+      "width": 11,
+      "height": 13,
+      "used_metatiles": 25,
+      "pass": true
+    },
+    {
+      "map": "EverGrandeCity_Hall2",
+      "layout": "LAYOUT_HOENN_EVER_GRANDE_CITY_SHORT_HALL",
+      "width": 11,
+      "height": 13,
+      "used_metatiles": 25,
+      "pass": true
+    },
+    {
+      "map": "EverGrandeCity_Hall3",
+      "layout": "LAYOUT_HOENN_EVER_GRANDE_CITY_SHORT_HALL",
+      "width": 11,
+      "height": 13,
+      "used_metatiles": 25,
+      "pass": true
+    },
+    {
+      "map": "EverGrandeCity_Hall4",
+      "layout": "LAYOUT_HOENN_EVER_GRANDE_CITY_HALL4",
+      "width": 11,
+      "height": 34,
+      "used_metatiles": 26,
+      "pass": true
+    },
+    {
+      "map": "EverGrandeCity_Hall5",
+      "layout": "LAYOUT_HOENN_EVER_GRANDE_CITY_SHORT_HALL",
+      "width": 11,
+      "height": 13,
+      "used_metatiles": 25,
+      "pass": true
+    },
+    {
+      "map": "EverGrandeCity_PokemonLeague_1F",
+      "layout": "LAYOUT_HOENN_EVER_GRANDE_CITY_POKEMON_LEAGUE_1F",
+      "width": 19,
+      "height": 12,
+      "used_metatiles": 93,
+      "pass": true
+    },
+    {
+      "map": "EverGrandeCity_HallOfFame",
+      "layout": "LAYOUT_HOENN_EVER_GRANDE_CITY_HALL_OF_FAME",
+      "width": 15,
+      "height": 17,
+      "used_metatiles": 54,
+      "pass": true
+    },
+    {
+      "map": "EverGrandeCity_PokemonCenter_1F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_1F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 83,
+      "pass": true
+    },
+    {
+      "map": "EverGrandeCity_PokemonCenter_2F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_2F",
+      "width": 14,
+      "height": 10,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "EverGrandeCity_PokemonLeague_2F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_2F",
+      "width": 14,
+      "height": 10,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "Route104_MrBrineysHouse",
+      "layout": "LAYOUT_HOENN_ROUTE104_MR_BRINEYS_HOUSE",
+      "width": 12,
+      "height": 9,
+      "used_metatiles": 40,
+      "pass": true
+    },
+    {
+      "map": "Route104_PrettyPetalFlowerShop",
+      "layout": "LAYOUT_HOENN_ROUTE104_PRETTY_PETAL_FLOWER_SHOP",
+      "width": 15,
+      "height": 9,
+      "used_metatiles": 54,
+      "pass": true
+    },
+    {
+      "map": "Route111_WinstrateFamilysHouse",
+      "layout": "LAYOUT_HOENN_HOUSE2",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 38,
+      "pass": true
+    },
+    {
+      "map": "Route111_OldLadysRestStop",
+      "layout": "LAYOUT_HOENN_HOUSE3",
+      "width": 10,
+      "height": 8,
+      "used_metatiles": 41,
+      "pass": true
+    },
+    {
+      "map": "Route112_CableCarStation",
+      "layout": "LAYOUT_HOENN_CABLE_CAR_STATION",
+      "width": 13,
+      "height": 12,
+      "used_metatiles": 36,
+      "pass": true
+    },
+    {
+      "map": "MtChimney_CableCarStation",
+      "layout": "LAYOUT_HOENN_CABLE_CAR_STATION",
+      "width": 13,
+      "height": 12,
+      "used_metatiles": 36,
+      "pass": true
+    },
+    {
+      "map": "Route114_FossilManiacsHouse",
+      "layout": "LAYOUT_HOENN_ROUTE114_FOSSIL_MANIACS_HOUSE",
+      "width": 10,
+      "height": 8,
+      "used_metatiles": 45,
+      "pass": true
+    },
+    {
+      "map": "Route114_FossilManiacsTunnel",
+      "layout": "LAYOUT_HOENN_ROUTE114_FOSSIL_MANIACS_TUNNEL",
+      "width": 13,
+      "height": 26,
+      "used_metatiles": 33,
+      "pass": true
+    },
+    {
+      "map": "Route114_LanettesHouse",
+      "layout": "LAYOUT_HOENN_ROUTE114_LANETTES_HOUSE",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 42,
+      "pass": true
+    },
+    {
+      "map": "Route116_TunnelersRestHouse",
+      "layout": "LAYOUT_HOENN_ROUTE116_TUNNELERS_REST_HOUSE",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 37,
+      "pass": true
+    },
+    {
+      "map": "Route117_PokemonDayCare",
+      "layout": "LAYOUT_HOENN_ROUTE117_POKEMON_DAY_CARE",
+      "width": 12,
+      "height": 9,
+      "used_metatiles": 55,
+      "pass": true
+    },
+    {
+      "map": "Route121_SafariZoneEntrance",
+      "layout": "LAYOUT_HOENN_ROUTE121_SAFARI_ZONE_ENTRANCE",
+      "width": 18,
+      "height": 14,
+      "used_metatiles": 42,
+      "pass": true
+    },
+    {
+      "map": "MeteorFalls_1F_1R",
+      "layout": "LAYOUT_HOENN_METEOR_FALLS_1F_1R",
+      "width": 30,
+      "height": 42,
+      "used_metatiles": 119,
+      "pass": true
+    },
+    {
+      "map": "MeteorFalls_1F_2R",
+      "layout": "LAYOUT_HOENN_METEOR_FALLS_1F_2R",
+      "width": 30,
+      "height": 32,
+      "used_metatiles": 61,
+      "pass": true
+    },
+    {
+      "map": "MeteorFalls_B1F_1R",
+      "layout": "LAYOUT_HOENN_METEOR_FALLS_B1F_1R",
+      "width": 29,
+      "height": 38,
+      "used_metatiles": 63,
+      "pass": true
+    },
+    {
+      "map": "MeteorFalls_B1F_2R",
+      "layout": "LAYOUT_HOENN_METEOR_FALLS_B1F_2R",
+      "width": 11,
+      "height": 18,
+      "used_metatiles": 21,
+      "pass": true
+    },
+    {
+      "map": "RusturfTunnel",
+      "layout": "LAYOUT_HOENN_RUSTURF_TUNNEL",
+      "width": 36,
+      "height": 24,
+      "used_metatiles": 30,
+      "pass": true
+    },
+    {
+      "map": "Underwater_SootopolisCity",
+      "layout": "LAYOUT_HOENN_UNDERWATER_SOOTOPOLIS_CITY",
+      "width": 20,
+      "height": 10,
+      "used_metatiles": 20,
+      "pass": true
+    },
+    {
+      "map": "DesertRuins",
+      "layout": "LAYOUT_HOENN_DESERT_RUINS",
+      "width": 17,
+      "height": 33,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "GraniteCave_1F",
+      "layout": "LAYOUT_HOENN_GRANITE_CAVE_1F",
+      "width": 42,
+      "height": 15,
+      "used_metatiles": 30,
+      "pass": true
+    },
+    {
+      "map": "GraniteCave_B1F",
+      "layout": "LAYOUT_HOENN_GRANITE_CAVE_B1F",
+      "width": 32,
+      "height": 26,
+      "used_metatiles": 27,
+      "pass": true
+    },
+    {
+      "map": "GraniteCave_B2F",
+      "layout": "LAYOUT_HOENN_GRANITE_CAVE_B2F",
+      "width": 32,
+      "height": 26,
+      "used_metatiles": 29,
+      "pass": true
+    },
+    {
+      "map": "GraniteCave_StevensRoom",
+      "layout": "LAYOUT_HOENN_GRANITE_CAVE_STEVENS_ROOM",
+      "width": 15,
+      "height": 14,
+      "used_metatiles": 20,
+      "pass": true
+    },
+    {
+      "map": "PetalburgWoods",
+      "layout": "LAYOUT_HOENN_PETALBURG_WOODS",
+      "width": 48,
+      "height": 44,
+      "used_metatiles": 26,
+      "pass": true
+    },
+    {
+      "map": "MtChimney",
+      "layout": "LAYOUT_HOENN_MT_CHIMNEY",
+      "width": 40,
+      "height": 47,
+      "used_metatiles": 78,
+      "pass": true
+    },
+    {
+      "map": "JaggedPass",
+      "layout": "LAYOUT_HOENN_JAGGED_PASS",
+      "width": 30,
+      "height": 46,
+      "used_metatiles": 85,
+      "pass": true
+    },
+    {
+      "map": "FieryPath",
+      "layout": "LAYOUT_HOENN_FIERY_PATH",
+      "width": 35,
+      "height": 38,
+      "used_metatiles": 30,
+      "pass": true
+    },
+    {
+      "map": "MtPyre_1F",
+      "layout": "LAYOUT_HOENN_MT_PYRE_1F",
+      "width": 22,
+      "height": 19,
+      "used_metatiles": 21,
+      "pass": true
+    },
+    {
+      "map": "MtPyre_2F",
+      "layout": "LAYOUT_HOENN_MT_PYRE_2F",
+      "width": 13,
+      "height": 13,
+      "used_metatiles": 24,
+      "pass": true
+    },
+    {
+      "map": "MtPyre_3F",
+      "layout": "LAYOUT_HOENN_MT_PYRE_3F",
+      "width": 13,
+      "height": 13,
+      "used_metatiles": 24,
+      "pass": true
+    },
+    {
+      "map": "MtPyre_4F",
+      "layout": "LAYOUT_HOENN_MT_PYRE_4F",
+      "width": 13,
+      "height": 13,
+      "used_metatiles": 31,
+      "pass": true
+    },
+    {
+      "map": "MtPyre_5F",
+      "layout": "LAYOUT_HOENN_MT_PYRE_5F",
+      "width": 13,
+      "height": 13,
+      "used_metatiles": 30,
+      "pass": true
+    },
+    {
+      "map": "MtPyre_6F",
+      "layout": "LAYOUT_HOENN_MT_PYRE_6F",
+      "width": 13,
+      "height": 13,
+      "used_metatiles": 22,
+      "pass": true
+    },
+    {
+      "map": "MtPyre_Exterior",
+      "layout": "LAYOUT_HOENN_MT_PYRE_EXTERIOR",
+      "width": 38,
+      "height": 51,
+      "used_metatiles": 52,
+      "pass": true
+    },
+    {
+      "map": "MtPyre_Summit",
+      "layout": "LAYOUT_HOENN_MT_PYRE_SUMMIT",
+      "width": 50,
+      "height": 37,
+      "used_metatiles": 55,
+      "pass": true
+    },
+    {
+      "map": "AquaHideout_1F",
+      "layout": "LAYOUT_HOENN_AQUA_HIDEOUT_1F",
+      "width": 28,
+      "height": 30,
+      "used_metatiles": 103,
+      "pass": true
+    },
+    {
+      "map": "AquaHideout_B1F",
+      "layout": "LAYOUT_HOENN_AQUA_HIDEOUT_B1F",
+      "width": 51,
+      "height": 24,
+      "used_metatiles": 132,
+      "pass": true
+    },
+    {
+      "map": "AquaHideout_B2F",
+      "layout": "LAYOUT_HOENN_AQUA_HIDEOUT_B2F",
+      "width": 34,
+      "height": 24,
+      "used_metatiles": 100,
+      "pass": true
+    },
+    {
+      "map": "Underwater_SeafloorCavern",
+      "layout": "LAYOUT_HOENN_UNDERWATER_SEAFLOOR_CAVERN",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 32,
+      "pass": true
+    },
+    {
+      "map": "SeafloorCavern_Entrance",
+      "layout": "LAYOUT_HOENN_SEAFLOOR_CAVERN_ENTRANCE",
+      "width": 20,
+      "height": 20,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "SeafloorCavern_Room1",
+      "layout": "LAYOUT_HOENN_SEAFLOOR_CAVERN_ROOM1",
+      "width": 20,
+      "height": 21,
+      "used_metatiles": 31,
+      "pass": true
+    },
+    {
+      "map": "SeafloorCavern_Room2",
+      "layout": "LAYOUT_HOENN_SEAFLOOR_CAVERN_ROOM2",
+      "width": 18,
+      "height": 12,
+      "used_metatiles": 28,
+      "pass": true
+    },
+    {
+      "map": "SeafloorCavern_Room3",
+      "layout": "LAYOUT_HOENN_SEAFLOOR_CAVERN_ROOM3",
+      "width": 16,
+      "height": 17,
+      "used_metatiles": 27,
+      "pass": true
+    },
+    {
+      "map": "SeafloorCavern_Room4",
+      "layout": "LAYOUT_HOENN_SEAFLOOR_CAVERN_ROOM4",
+      "width": 18,
+      "height": 19,
+      "used_metatiles": 29,
+      "pass": true
+    },
+    {
+      "map": "SeafloorCavern_Room5",
+      "layout": "LAYOUT_HOENN_SEAFLOOR_CAVERN_ROOM5",
+      "width": 20,
+      "height": 20,
+      "used_metatiles": 33,
+      "pass": true
+    },
+    {
+      "map": "SeafloorCavern_Room6",
+      "layout": "LAYOUT_HOENN_SEAFLOOR_CAVERN_ROOM6",
+      "width": 24,
+      "height": 23,
+      "used_metatiles": 47,
+      "pass": true
+    },
+    {
+      "map": "SeafloorCavern_Room7",
+      "layout": "LAYOUT_HOENN_SEAFLOOR_CAVERN_ROOM7",
+      "width": 23,
+      "height": 25,
+      "used_metatiles": 39,
+      "pass": true
+    },
+    {
+      "map": "SeafloorCavern_Room8",
+      "layout": "LAYOUT_HOENN_SEAFLOOR_CAVERN_ROOM8",
+      "width": 11,
+      "height": 14,
+      "used_metatiles": 25,
+      "pass": true
+    },
+    {
+      "map": "SeafloorCavern_Room9",
+      "layout": "LAYOUT_HOENN_SEAFLOOR_CAVERN_ROOM9",
+      "width": 27,
+      "height": 46,
+      "used_metatiles": 47,
+      "pass": true
+    },
+    {
+      "map": "CaveOfOrigin_Entrance",
+      "layout": "LAYOUT_HOENN_CAVE_OF_ORIGIN_ENTRANCE",
+      "width": 19,
+      "height": 26,
+      "used_metatiles": 24,
+      "pass": true
+    },
+    {
+      "map": "CaveOfOrigin_1F",
+      "layout": "LAYOUT_HOENN_CAVE_OF_ORIGIN_1F",
+      "width": 23,
+      "height": 23,
+      "used_metatiles": 20,
+      "pass": true
+    },
+    {
+      "map": "CaveOfOrigin_UnusedRubySapphireMap1",
+      "layout": "LAYOUT_HOENN_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP1",
+      "width": 23,
+      "height": 23,
+      "used_metatiles": 17,
+      "pass": true
+    },
+    {
+      "map": "CaveOfOrigin_UnusedRubySapphireMap2",
+      "layout": "LAYOUT_HOENN_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP2",
+      "width": 21,
+      "height": 21,
+      "used_metatiles": 17,
+      "pass": true
+    },
+    {
+      "map": "CaveOfOrigin_UnusedRubySapphireMap3",
+      "layout": "LAYOUT_HOENN_CAVE_OF_ORIGIN_UNUSED_RUBY_SAPPHIRE_MAP3",
+      "width": 19,
+      "height": 21,
+      "used_metatiles": 17,
+      "pass": true
+    },
+    {
+      "map": "CaveOfOrigin_B1F",
+      "layout": "LAYOUT_HOENN_CAVE_OF_ORIGIN_B1F",
+      "width": 19,
+      "height": 19,
+      "used_metatiles": 23,
+      "pass": true
+    },
+    {
+      "map": "HoennVictoryRoad_1F",
+      "layout": "LAYOUT_HOENN_VICTORY_ROAD_1F",
+      "width": 46,
+      "height": 45,
+      "used_metatiles": 38,
+      "pass": true
+    },
+    {
+      "map": "VictoryRoad_B1F",
+      "layout": "LAYOUT_HOENN_VICTORY_ROAD_B1F",
+      "width": 46,
+      "height": 31,
+      "used_metatiles": 30,
+      "pass": true
+    },
+    {
+      "map": "VictoryRoad_B2F",
+      "layout": "LAYOUT_HOENN_VICTORY_ROAD_B2F",
+      "width": 46,
+      "height": 31,
+      "used_metatiles": 55,
+      "pass": true
+    },
+    {
+      "map": "ShoalCave_LowTideEntranceRoom",
+      "layout": "LAYOUT_HOENN_SHOAL_CAVE_LOW_TIDE_ENTRANCE_ROOM",
+      "width": 35,
+      "height": 35,
+      "used_metatiles": 54,
+      "pass": true
+    },
+    {
+      "map": "ShoalCave_LowTideInnerRoom",
+      "layout": "LAYOUT_HOENN_SHOAL_CAVE_LOW_TIDE_INNER_ROOM",
+      "width": 46,
+      "height": 38,
+      "used_metatiles": 37,
+      "pass": true
+    },
+    {
+      "map": "ShoalCave_LowTideStairsRoom",
+      "layout": "LAYOUT_HOENN_SHOAL_CAVE_LOW_TIDE_STAIRS_ROOM",
+      "width": 21,
+      "height": 15,
+      "used_metatiles": 19,
+      "pass": true
+    },
+    {
+      "map": "ShoalCave_LowTideLowerRoom",
+      "layout": "LAYOUT_HOENN_SHOAL_CAVE_LOW_TIDE_LOWER_ROOM",
+      "width": 31,
+      "height": 14,
+      "used_metatiles": 25,
+      "pass": true
+    },
+    {
+      "map": "ShoalCave_HighTideEntranceRoom",
+      "layout": "LAYOUT_HOENN_SHOAL_CAVE_HIGH_TIDE_ENTRANCE_ROOM",
+      "width": 35,
+      "height": 35,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "ShoalCave_HighTideInnerRoom",
+      "layout": "LAYOUT_HOENN_SHOAL_CAVE_HIGH_TIDE_INNER_ROOM",
+      "width": 46,
+      "height": 38,
+      "used_metatiles": 52,
+      "pass": true
+    },
+    {
+      "map": "NewMauville_Entrance",
+      "layout": "LAYOUT_HOENN_NEW_MAUVILLE_ENTRANCE",
+      "width": 9,
+      "height": 9,
+      "used_metatiles": 25,
+      "pass": true
+    },
+    {
+      "map": "NewMauville_Inside",
+      "layout": "LAYOUT_HOENN_NEW_MAUVILLE_INSIDE",
+      "width": 41,
+      "height": 41,
+      "used_metatiles": 121,
+      "pass": true
+    },
+    {
+      "map": "AbandonedShip_Deck",
+      "layout": "LAYOUT_HOENN_ABANDONED_SHIP_DECK",
+      "width": 23,
+      "height": 21,
+      "used_metatiles": 43,
+      "pass": true
+    },
+    {
+      "map": "AbandonedShip_Corridors_1F",
+      "layout": "LAYOUT_HOENN_ABANDONED_SHIP_CORRIDORS_1F",
+      "width": 18,
+      "height": 12,
+      "used_metatiles": 42,
+      "pass": true
+    },
+    {
+      "map": "AbandonedShip_Rooms_1F",
+      "layout": "LAYOUT_HOENN_ABANDONED_SHIP_ROOMS_1F",
+      "width": 18,
+      "height": 17,
+      "used_metatiles": 55,
+      "pass": true
+    },
+    {
+      "map": "AbandonedShip_Corridors_B1F",
+      "layout": "LAYOUT_HOENN_ABANDONED_SHIP_CORRIDORS_B1F",
+      "width": 13,
+      "height": 10,
+      "used_metatiles": 34,
+      "pass": true
+    },
+    {
+      "map": "AbandonedShip_Rooms_B1F",
+      "layout": "LAYOUT_HOENN_ABANDONED_SHIP_ROOMS_B1F",
+      "width": 27,
+      "height": 8,
+      "used_metatiles": 53,
+      "pass": true
+    },
+    {
+      "map": "AbandonedShip_Rooms2_B1F",
+      "layout": "LAYOUT_HOENN_ABANDONED_SHIP_ROOMS2_B1F",
+      "width": 18,
+      "height": 8,
+      "used_metatiles": 47,
+      "pass": true
+    },
+    {
+      "map": "AbandonedShip_Underwater1",
+      "layout": "LAYOUT_HOENN_ABANDONED_SHIP_UNDERWATER1",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 21,
+      "pass": true
+    },
+    {
+      "map": "AbandonedShip_Room_B1F",
+      "layout": "LAYOUT_HOENN_ABANDONED_SHIP_ROOM_B1F",
+      "width": 9,
+      "height": 8,
+      "used_metatiles": 16,
+      "pass": true
+    },
+    {
+      "map": "AbandonedShip_Rooms2_1F",
+      "layout": "LAYOUT_HOENN_ABANDONED_SHIP_ROOMS2_1F",
+      "width": 9,
+      "height": 17,
+      "used_metatiles": 35,
+      "pass": true
+    },
+    {
+      "map": "AbandonedShip_CaptainsOffice",
+      "layout": "LAYOUT_HOENN_ABANDONED_SHIP_CAPTAINS_OFFICE",
+      "width": 9,
+      "height": 7,
+      "used_metatiles": 27,
+      "pass": true
+    },
+    {
+      "map": "AbandonedShip_Underwater2",
+      "layout": "LAYOUT_HOENN_ABANDONED_SHIP_UNDERWATER2",
+      "width": 21,
+      "height": 7,
+      "used_metatiles": 23,
+      "pass": true
+    },
+    {
+      "map": "AbandonedShip_HiddenFloorCorridors",
+      "layout": "LAYOUT_HOENN_ABANDONED_SHIP_HIDDEN_FLOOR_CORRIDORS",
+      "width": 13,
+      "height": 11,
+      "used_metatiles": 42,
+      "pass": true
+    },
+    {
+      "map": "AbandonedShip_HiddenFloorRooms",
+      "layout": "LAYOUT_HOENN_ABANDONED_SHIP_HIDDEN_FLOOR_ROOMS",
+      "width": 44,
+      "height": 15,
+      "used_metatiles": 44,
+      "pass": true
+    },
+    {
+      "map": "IslandCave",
+      "layout": "LAYOUT_HOENN_ISLAND_CAVE",
+      "width": 17,
+      "height": 33,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "AncientTomb",
+      "layout": "LAYOUT_HOENN_ANCIENT_TOMB",
+      "width": 17,
+      "height": 33,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "Underwater_Route134",
+      "layout": "LAYOUT_HOENN_UNDERWATER_ROUTE134",
+      "width": 18,
+      "height": 10,
+      "used_metatiles": 20,
+      "pass": true
+    },
+    {
+      "map": "Underwater_SealedChamber",
+      "layout": "LAYOUT_HOENN_UNDERWATER_SEALED_CHAMBER",
+      "width": 22,
+      "height": 48,
+      "used_metatiles": 54,
+      "pass": true
+    },
+    {
+      "map": "SealedChamber_OuterRoom",
+      "layout": "LAYOUT_HOENN_SEALED_CHAMBER_OUTER_ROOM",
+      "width": 21,
+      "height": 23,
+      "used_metatiles": 33,
+      "pass": true
+    },
+    {
+      "map": "SealedChamber_InnerRoom",
+      "layout": "LAYOUT_HOENN_SEALED_CHAMBER_INNER_ROOM",
+      "width": 21,
+      "height": 23,
+      "used_metatiles": 22,
+      "pass": true
+    },
+    {
+      "map": "ScorchedSlab",
+      "layout": "LAYOUT_HOENN_SCORCHED_SLAB",
+      "width": 15,
+      "height": 20,
+      "used_metatiles": 25,
+      "pass": true
+    },
+    {
+      "map": "AquaHideout_UnusedRubyMap1",
+      "layout": "LAYOUT_HOENN_AQUA_HIDEOUT_UNUSED_RUBY_MAP1",
+      "width": 28,
+      "height": 30,
+      "used_metatiles": 97,
+      "pass": true
+    },
+    {
+      "map": "AquaHideout_UnusedRubyMap2",
+      "layout": "LAYOUT_HOENN_AQUA_HIDEOUT_UNUSED_RUBY_MAP2",
+      "width": 62,
+      "height": 24,
+      "used_metatiles": 124,
+      "pass": true
+    },
+    {
+      "map": "AquaHideout_UnusedRubyMap3",
+      "layout": "LAYOUT_HOENN_AQUA_HIDEOUT_UNUSED_RUBY_MAP3",
+      "width": 34,
+      "height": 24,
+      "used_metatiles": 101,
+      "pass": true
+    },
+    {
+      "map": "SkyPillar_Entrance",
+      "layout": "LAYOUT_HOENN_SKY_PILLAR_ENTRANCE",
+      "width": 18,
+      "height": 18,
+      "used_metatiles": 18,
+      "pass": true
+    },
+    {
+      "map": "SkyPillar_Outside",
+      "layout": "LAYOUT_HOENN_SKY_PILLAR_OUTSIDE",
+      "width": 28,
+      "height": 23,
+      "used_metatiles": 68,
+      "pass": true
+    },
+    {
+      "map": "SkyPillar_1F",
+      "layout": "LAYOUT_HOENN_SKY_PILLAR_1F",
+      "width": 14,
+      "height": 14,
+      "used_metatiles": 25,
+      "pass": true
+    },
+    {
+      "map": "SkyPillar_2F",
+      "layout": "LAYOUT_HOENN_SKY_PILLAR_2F",
+      "width": 14,
+      "height": 14,
+      "used_metatiles": 25,
+      "pass": true
+    },
+    {
+      "map": "SkyPillar_3F",
+      "layout": "LAYOUT_HOENN_SKY_PILLAR_3F",
+      "width": 14,
+      "height": 14,
+      "used_metatiles": 24,
+      "pass": true
+    },
+    {
+      "map": "SkyPillar_4F",
+      "layout": "LAYOUT_HOENN_SKY_PILLAR_4F",
+      "width": 14,
+      "height": 14,
+      "used_metatiles": 26,
+      "pass": true
+    },
+    {
+      "map": "ShoalCave_LowTideIceRoom",
+      "layout": "LAYOUT_HOENN_SHOAL_CAVE_LOW_TIDE_ICE_ROOM",
+      "width": 20,
+      "height": 30,
+      "used_metatiles": 27,
+      "pass": true
+    },
+    {
+      "map": "SkyPillar_5F",
+      "layout": "LAYOUT_HOENN_SKY_PILLAR_5F",
+      "width": 14,
+      "height": 14,
+      "used_metatiles": 25,
+      "pass": true
+    },
+    {
+      "map": "SkyPillar_Top",
+      "layout": "LAYOUT_HOENN_SKY_PILLAR_TOP",
+      "width": 27,
+      "height": 24,
+      "used_metatiles": 27,
+      "pass": true
+    },
+    {
+      "map": "MagmaHideout_1F",
+      "layout": "LAYOUT_HOENN_MAGMA_HIDEOUT_1F",
+      "width": 37,
+      "height": 38,
+      "used_metatiles": 47,
+      "pass": true
+    },
+    {
+      "map": "MagmaHideout_2F_1R",
+      "layout": "LAYOUT_HOENN_MAGMA_HIDEOUT_2F_1R",
+      "width": 33,
+      "height": 39,
+      "used_metatiles": 41,
+      "pass": true
+    },
+    {
+      "map": "MagmaHideout_2F_2R",
+      "layout": "LAYOUT_HOENN_MAGMA_HIDEOUT_2F_2R",
+      "width": 49,
+      "height": 28,
+      "used_metatiles": 51,
+      "pass": true
+    },
+    {
+      "map": "MagmaHideout_3F_1R",
+      "layout": "LAYOUT_HOENN_MAGMA_HIDEOUT_3F_1R",
+      "width": 28,
+      "height": 24,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "MagmaHideout_3F_2R",
+      "layout": "LAYOUT_HOENN_MAGMA_HIDEOUT_3F_2R",
+      "width": 24,
+      "height": 17,
+      "used_metatiles": 66,
+      "pass": true
+    },
+    {
+      "map": "MagmaHideout_4F",
+      "layout": "LAYOUT_HOENN_MAGMA_HIDEOUT_4F",
+      "width": 59,
+      "height": 28,
+      "used_metatiles": 75,
+      "pass": true
+    },
+    {
+      "map": "MagmaHideout_3F_3R",
+      "layout": "LAYOUT_HOENN_MAGMA_HIDEOUT_3F_3R",
+      "width": 33,
+      "height": 24,
+      "used_metatiles": 38,
+      "pass": true
+    },
+    {
+      "map": "MagmaHideout_2F_3R",
+      "layout": "LAYOUT_HOENN_MAGMA_HIDEOUT_2F_3R",
+      "width": 60,
+      "height": 19,
+      "used_metatiles": 30,
+      "pass": true
+    },
+    {
+      "map": "MirageTower_1F",
+      "layout": "LAYOUT_HOENN_MIRAGE_TOWER_1F",
+      "width": 21,
+      "height": 17,
+      "used_metatiles": 32,
+      "pass": true
+    },
+    {
+      "map": "MirageTower_2F",
+      "layout": "LAYOUT_HOENN_MIRAGE_TOWER_2F",
+      "width": 21,
+      "height": 17,
+      "used_metatiles": 32,
+      "pass": true
+    },
+    {
+      "map": "MirageTower_3F",
+      "layout": "LAYOUT_HOENN_MIRAGE_TOWER_3F",
+      "width": 21,
+      "height": 17,
+      "used_metatiles": 29,
+      "pass": true
+    },
+    {
+      "map": "MirageTower_4F",
+      "layout": "LAYOUT_HOENN_MIRAGE_TOWER_4F",
+      "width": 13,
+      "height": 10,
+      "used_metatiles": 27,
+      "pass": true
+    },
+    {
+      "map": "DesertUnderpass",
+      "layout": "LAYOUT_HOENN_DESERT_UNDERPASS",
+      "width": 139,
+      "height": 23,
+      "used_metatiles": 34,
+      "pass": true
+    },
+    {
+      "map": "ArtisanCave_B1F",
+      "layout": "LAYOUT_HOENN_ARTISAN_CAVE_B1F",
+      "width": 46,
+      "height": 54,
+      "used_metatiles": 23,
+      "pass": true
+    },
+    {
+      "map": "ArtisanCave_1F",
+      "layout": "LAYOUT_HOENN_ARTISAN_CAVE_1F",
+      "width": 21,
+      "height": 22,
+      "used_metatiles": 17,
+      "pass": true
+    },
+    {
+      "map": "Underwater_MarineCave",
+      "layout": "LAYOUT_HOENN_UNDERWATER_MARINE_CAVE",
+      "width": 20,
+      "height": 10,
+      "used_metatiles": 14,
+      "pass": true
+    },
+    {
+      "map": "MarineCave_Entrance",
+      "layout": "LAYOUT_HOENN_MARINE_CAVE_ENTRANCE",
+      "width": 20,
+      "height": 20,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "MarineCave_End",
+      "layout": "LAYOUT_HOENN_MARINE_CAVE_END",
+      "width": 27,
+      "height": 30,
+      "used_metatiles": 47,
+      "pass": true
+    },
+    {
+      "map": "TerraCave_Entrance",
+      "layout": "LAYOUT_HOENN_TERRA_CAVE_ENTRANCE",
+      "width": 20,
+      "height": 20,
+      "used_metatiles": 25,
+      "pass": true
+    },
+    {
+      "map": "TerraCave_End",
+      "layout": "LAYOUT_HOENN_TERRA_CAVE_END",
+      "width": 27,
+      "height": 30,
+      "used_metatiles": 47,
+      "pass": true
+    },
+    {
+      "map": "AlteringCave",
+      "layout": "LAYOUT_HOENN_ALTERING_CAVE",
+      "width": 32,
+      "height": 24,
+      "used_metatiles": 29,
+      "pass": true
+    },
+    {
+      "map": "MeteorFalls_StevensCave",
+      "layout": "LAYOUT_HOENN_METEOR_FALLS_STEVENS_CAVE",
+      "width": 30,
+      "height": 32,
+      "used_metatiles": 26,
+      "pass": true
+    },
+    {
+      "map": "ContestHall",
+      "layout": "LAYOUT_HOENN_CONTEST_HALL",
+      "width": 15,
+      "height": 11,
+      "used_metatiles": 34,
+      "pass": true
+    },
+    {
+      "map": "ContestHallBeauty",
+      "layout": "LAYOUT_HOENN_CONTEST_HALL_BEAUTY",
+      "width": 15,
+      "height": 11,
+      "used_metatiles": 34,
+      "pass": true
+    },
+    {
+      "map": "ContestHallTough",
+      "layout": "LAYOUT_HOENN_CONTEST_HALL_TOUGH",
+      "width": 15,
+      "height": 11,
+      "used_metatiles": 34,
+      "pass": true
+    },
+    {
+      "map": "ContestHallCool",
+      "layout": "LAYOUT_HOENN_CONTEST_HALL_COOL",
+      "width": 15,
+      "height": 11,
+      "used_metatiles": 34,
+      "pass": true
+    },
+    {
+      "map": "ContestHallSmart",
+      "layout": "LAYOUT_HOENN_CONTEST_HALL_SMART",
+      "width": 15,
+      "height": 11,
+      "used_metatiles": 34,
+      "pass": true
+    },
+    {
+      "map": "ContestHallCute",
+      "layout": "LAYOUT_HOENN_CONTEST_HALL_CUTE",
+      "width": 15,
+      "height": 11,
+      "used_metatiles": 34,
+      "pass": true
+    },
+    {
+      "map": "InsideOfTruck",
+      "layout": "LAYOUT_HOENN_INSIDE_OF_TRUCK",
+      "width": 5,
+      "height": 5,
+      "used_metatiles": 26,
+      "pass": true
+    },
+    {
+      "map": "SSTidalCorridor",
+      "layout": "LAYOUT_HOENN_SS_TIDAL_CORRIDOR",
+      "width": 18,
+      "height": 13,
+      "used_metatiles": 35,
+      "pass": true
+    },
+    {
+      "map": "SSTidalLowerDeck",
+      "layout": "LAYOUT_HOENN_SS_TIDAL_LOWER_DECK",
+      "width": 17,
+      "height": 13,
+      "used_metatiles": 31,
+      "pass": true
+    },
+    {
+      "map": "SSTidalRooms",
+      "layout": "LAYOUT_HOENN_SS_TIDAL_ROOMS",
+      "width": 36,
+      "height": 18,
+      "used_metatiles": 66,
+      "pass": true
+    },
+    {
+      "map": "BattlePyramidSquare01",
+      "layout": "LAYOUT_HOENN_BATTLE_PYRAMID_SQUARE01",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 11,
+      "pass": true
+    },
+    {
+      "map": "BattlePyramidSquare02",
+      "layout": "LAYOUT_HOENN_BATTLE_PYRAMID_SQUARE02",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 10,
+      "pass": true
+    },
+    {
+      "map": "BattlePyramidSquare03",
+      "layout": "LAYOUT_HOENN_BATTLE_PYRAMID_SQUARE03",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 12,
+      "pass": true
+    },
+    {
+      "map": "BattlePyramidSquare04",
+      "layout": "LAYOUT_HOENN_BATTLE_PYRAMID_SQUARE04",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 9,
+      "pass": true
+    },
+    {
+      "map": "BattlePyramidSquare05",
+      "layout": "LAYOUT_HOENN_BATTLE_PYRAMID_SQUARE05",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 10,
+      "pass": true
+    },
+    {
+      "map": "BattlePyramidSquare06",
+      "layout": "LAYOUT_HOENN_BATTLE_PYRAMID_SQUARE06",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 8,
+      "pass": true
+    },
+    {
+      "map": "BattlePyramidSquare07",
+      "layout": "LAYOUT_HOENN_BATTLE_PYRAMID_SQUARE07",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 9,
+      "pass": true
+    },
+    {
+      "map": "BattlePyramidSquare08",
+      "layout": "LAYOUT_HOENN_BATTLE_PYRAMID_SQUARE08",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 9,
+      "pass": true
+    },
+    {
+      "map": "BattlePyramidSquare09",
+      "layout": "LAYOUT_HOENN_BATTLE_PYRAMID_SQUARE09",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 8,
+      "pass": true
+    },
+    {
+      "map": "BattlePyramidSquare10",
+      "layout": "LAYOUT_HOENN_BATTLE_PYRAMID_SQUARE10",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 6,
+      "pass": true
+    },
+    {
+      "map": "BattlePyramidSquare11",
+      "layout": "LAYOUT_HOENN_BATTLE_PYRAMID_SQUARE11",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 13,
+      "pass": true
+    },
+    {
+      "map": "BattlePyramidSquare12",
+      "layout": "LAYOUT_HOENN_BATTLE_PYRAMID_SQUARE12",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 6,
+      "pass": true
+    },
+    {
+      "map": "BattlePyramidSquare13",
+      "layout": "LAYOUT_HOENN_BATTLE_PYRAMID_SQUARE13",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 6,
+      "pass": true
+    },
+    {
+      "map": "BattlePyramidSquare14",
+      "layout": "LAYOUT_HOENN_BATTLE_PYRAMID_SQUARE14",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 4,
+      "pass": true
+    },
+    {
+      "map": "BattlePyramidSquare15",
+      "layout": "LAYOUT_HOENN_BATTLE_PYRAMID_SQUARE15",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 4,
+      "pass": true
+    },
+    {
+      "map": "BattlePyramidSquare16",
+      "layout": "LAYOUT_HOENN_BATTLE_PYRAMID_SQUARE16",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 3,
+      "pass": true
+    },
+    {
+      "map": "SafariZone_Northwest",
+      "layout": "LAYOUT_HOENN_SAFARI_ZONE_NORTHWEST",
+      "width": 40,
+      "height": 40,
+      "used_metatiles": 64,
+      "pass": true
+    },
+    {
+      "map": "HoennSafariZone_North",
+      "layout": "LAYOUT_HOENN_SAFARI_ZONE_NORTH",
+      "width": 40,
+      "height": 40,
+      "used_metatiles": 71,
+      "pass": true
+    },
+    {
+      "map": "SafariZone_Southwest",
+      "layout": "LAYOUT_HOENN_SAFARI_ZONE_SOUTHWEST",
+      "width": 40,
+      "height": 40,
+      "used_metatiles": 92,
+      "pass": true
+    },
+    {
+      "map": "SafariZone_South",
+      "layout": "LAYOUT_HOENN_SAFARI_ZONE_SOUTH",
+      "width": 40,
+      "height": 40,
+      "used_metatiles": 74,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_OutsideWest",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_OUTSIDE_WEST",
+      "width": 56,
+      "height": 72,
+      "used_metatiles": 524,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattleTowerLobby",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_TOWER_LOBBY",
+      "width": 25,
+      "height": 10,
+      "used_metatiles": 60,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattleTowerElevator",
+      "layout": "LAYOUT_HOENN_BATTLE_ELEVATOR",
+      "width": 5,
+      "height": 7,
+      "used_metatiles": 16,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattleTowerCorridor",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_TOWER_CORRIDOR",
+      "width": 17,
+      "height": 5,
+      "used_metatiles": 25,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattleTowerBattleRoom",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_TOWER_BATTLE_ROOM",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 45,
+      "pass": true
+    },
+    {
+      "map": "SouthernIsland_Exterior",
+      "layout": "LAYOUT_HOENN_SOUTHERN_ISLAND_EXTERIOR",
+      "width": 33,
+      "height": 30,
+      "used_metatiles": 50,
+      "pass": true
+    },
+    {
+      "map": "SouthernIsland_Interior",
+      "layout": "LAYOUT_HOENN_SOUTHERN_ISLAND_INTERIOR",
+      "width": 27,
+      "height": 24,
+      "used_metatiles": 31,
+      "pass": true
+    },
+    {
+      "map": "SafariZone_RestHouse",
+      "layout": "LAYOUT_HOENN_SAFARI_ZONE_REST_HOUSE",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 16,
+      "pass": true
+    },
+    {
+      "map": "SafariZone_Northeast",
+      "layout": "LAYOUT_HOENN_SAFARI_ZONE_NORTHEAST",
+      "width": 40,
+      "height": 40,
+      "used_metatiles": 50,
+      "pass": true
+    },
+    {
+      "map": "SafariZone_Southeast",
+      "layout": "LAYOUT_HOENN_SAFARI_ZONE_SOUTHEAST",
+      "width": 40,
+      "height": 40,
+      "used_metatiles": 80,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_OutsideEast",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_OUTSIDE_EAST",
+      "width": 72,
+      "height": 72,
+      "used_metatiles": 545,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattleTowerMultiPartnerRoom",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_TOWER_MULTI_PARTNER_ROOM",
+      "width": 21,
+      "height": 15,
+      "used_metatiles": 21,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattleTowerMultiCorridor",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_TOWER_MULTI_CORRIDOR",
+      "width": 17,
+      "height": 5,
+      "used_metatiles": 22,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattleTowerMultiBattleRoom",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_TOWER_BATTLE_ROOM",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 45,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattleDomeLobby",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_DOME_LOBBY",
+      "width": 23,
+      "height": 17,
+      "used_metatiles": 92,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattleDomeCorridor",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_DOME_CORRIDOR",
+      "width": 48,
+      "height": 7,
+      "used_metatiles": 38,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattleDomePreBattleRoom",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_DOME_PRE_BATTLE_ROOM",
+      "width": 9,
+      "height": 8,
+      "used_metatiles": 39,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattleDomeBattleRoom",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_DOME_BATTLE_ROOM",
+      "width": 20,
+      "height": 10,
+      "used_metatiles": 96,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattlePalaceLobby",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_PALACE_LOBBY",
+      "width": 25,
+      "height": 12,
+      "used_metatiles": 63,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattlePalaceCorridor",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_PALACE_CORRIDOR",
+      "width": 17,
+      "height": 14,
+      "used_metatiles": 39,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattlePalaceBattleRoom",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_PALACE_BATTLE_ROOM",
+      "width": 15,
+      "height": 10,
+      "used_metatiles": 64,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattlePyramidLobby",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_PYRAMID_LOBBY",
+      "width": 15,
+      "height": 18,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattlePyramidFloor",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR",
+      "width": 8,
+      "height": 8,
+      "used_metatiles": 2,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattlePyramidTop",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_PYRAMID_TOP",
+      "width": 34,
+      "height": 23,
+      "used_metatiles": 58,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattleArenaLobby",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_ARENA_LOBBY",
+      "width": 16,
+      "height": 13,
+      "used_metatiles": 74,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattleArenaCorridor",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_ARENA_CORRIDOR",
+      "width": 18,
+      "height": 14,
+      "used_metatiles": 27,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattleArenaBattleRoom",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_ARENA_BATTLE_ROOM",
+      "width": 16,
+      "height": 11,
+      "used_metatiles": 60,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattleFactoryLobby",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_FACTORY_LOBBY",
+      "width": 19,
+      "height": 12,
+      "used_metatiles": 77,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattleFactoryPreBattleRoom",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_FACTORY_PRE_BATTLE_ROOM",
+      "width": 17,
+      "height": 14,
+      "used_metatiles": 102,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattleFactoryBattleRoom",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_FACTORY_BATTLE_ROOM",
+      "width": 13,
+      "height": 12,
+      "used_metatiles": 153,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattlePikeLobby",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_PIKE_LOBBY",
+      "width": 11,
+      "height": 13,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattlePikeCorridor",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_PIKE_CORRIDOR",
+      "width": 14,
+      "height": 8,
+      "used_metatiles": 51,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattlePikeThreePathRoom",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_PIKE_THREE_PATH_ROOM",
+      "width": 13,
+      "height": 11,
+      "used_metatiles": 36,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattlePikeRoomNormal",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_NORMAL",
+      "width": 9,
+      "height": 8,
+      "used_metatiles": 48,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattlePikeRoomFinal",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_FINAL",
+      "width": 5,
+      "height": 8,
+      "used_metatiles": 39,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_BattlePikeRoomWildMons",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS",
+      "width": 9,
+      "height": 20,
+      "used_metatiles": 52,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_RankingHall",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_RANKING_HALL",
+      "width": 53,
+      "height": 15,
+      "used_metatiles": 63,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_Lounge1",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_LOUNGE2",
+      "width": 9,
+      "height": 10,
+      "used_metatiles": 29,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_ExchangeServiceCorner",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_EXCHANGE_SERVICE_CORNER",
+      "width": 15,
+      "height": 11,
+      "used_metatiles": 54,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_Lounge2",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_LOUNGE1",
+      "width": 13,
+      "height": 8,
+      "used_metatiles": 31,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_Lounge3",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_LOUNGE2",
+      "width": 9,
+      "height": 10,
+      "used_metatiles": 29,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_Lounge4",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_LOUNGE2",
+      "width": 9,
+      "height": 10,
+      "used_metatiles": 29,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_ScottsHouse",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_SCOTTS_HOUSE",
+      "width": 6,
+      "height": 8,
+      "used_metatiles": 17,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_Lounge5",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_LOUNGE1",
+      "width": 13,
+      "height": 8,
+      "used_metatiles": 31,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_Lounge6",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_LOUNGE2",
+      "width": 9,
+      "height": 10,
+      "used_metatiles": 29,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_Lounge7",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_LOUNGE2",
+      "width": 9,
+      "height": 10,
+      "used_metatiles": 29,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_ReceptionGate",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_RECEPTION_GATE",
+      "width": 9,
+      "height": 14,
+      "used_metatiles": 43,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_Lounge8",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_LOUNGE2",
+      "width": 9,
+      "height": 10,
+      "used_metatiles": 29,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_Lounge9",
+      "layout": "LAYOUT_HOENN_BATTLE_FRONTIER_LOUNGE2",
+      "width": 9,
+      "height": 10,
+      "used_metatiles": 29,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_PokemonCenter_1F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_1F",
+      "width": 14,
+      "height": 9,
+      "used_metatiles": 83,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_PokemonCenter_2F",
+      "layout": "LAYOUT_HOENN_POKEMON_CENTER_2F",
+      "width": 14,
+      "height": 10,
+      "used_metatiles": 62,
+      "pass": true
+    },
+    {
+      "map": "BattleFrontier_Mart",
+      "layout": "LAYOUT_HOENN_MART",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 46,
+      "pass": true
+    },
+    {
+      "map": "FarawayIsland_Entrance",
+      "layout": "LAYOUT_HOENN_FARAWAY_ISLAND_ENTRANCE",
+      "width": 34,
+      "height": 46,
+      "used_metatiles": 60,
+      "pass": true
+    },
+    {
+      "map": "FarawayIsland_Interior",
+      "layout": "LAYOUT_HOENN_FARAWAY_ISLAND_INTERIOR",
+      "width": 29,
+      "height": 26,
+      "used_metatiles": 24,
+      "pass": true
+    },
+    {
+      "map": "TrainerHill_Entrance",
+      "layout": "LAYOUT_HOENN_TRAINER_HILL_ENTRANCE",
+      "width": 19,
+      "height": 17,
+      "used_metatiles": 81,
+      "pass": true
+    },
+    {
+      "map": "TrainerHill_1F",
+      "layout": "LAYOUT_HOENN_TRAINER_HILL_1F",
+      "width": 16,
+      "height": 21,
+      "used_metatiles": 32,
+      "pass": true
+    },
+    {
+      "map": "TrainerHill_2F",
+      "layout": "LAYOUT_HOENN_TRAINER_HILL_2F",
+      "width": 16,
+      "height": 21,
+      "used_metatiles": 32,
+      "pass": true
+    },
+    {
+      "map": "TrainerHill_3F",
+      "layout": "LAYOUT_HOENN_TRAINER_HILL_3F",
+      "width": 16,
+      "height": 21,
+      "used_metatiles": 32,
+      "pass": true
+    },
+    {
+      "map": "TrainerHill_4F",
+      "layout": "LAYOUT_HOENN_TRAINER_HILL_4F",
+      "width": 16,
+      "height": 21,
+      "used_metatiles": 32,
+      "pass": true
+    },
+    {
+      "map": "TrainerHill_Roof",
+      "layout": "LAYOUT_HOENN_TRAINER_HILL_ROOF",
+      "width": 25,
+      "height": 16,
+      "used_metatiles": 117,
+      "pass": true
+    },
+    {
+      "map": "TrainerHill_Elevator",
+      "layout": "LAYOUT_HOENN_BATTLE_ELEVATOR",
+      "width": 5,
+      "height": 7,
+      "used_metatiles": 16,
+      "pass": true
+    },
+    {
+      "map": "Route109_SeashoreHouse",
+      "layout": "LAYOUT_HOENN_ROUTE109_SEASHORE_HOUSE",
+      "width": 15,
+      "height": 10,
+      "used_metatiles": 45,
+      "pass": true
+    },
+    {
+      "map": "Route110_TrickHouseEntrance",
+      "layout": "LAYOUT_HOENN_ROUTE110_TRICK_HOUSE_ENTRANCE",
+      "width": 12,
+      "height": 8,
+      "used_metatiles": 36,
+      "pass": true
+    },
+    {
+      "map": "Route110_TrickHouseEnd",
+      "layout": "LAYOUT_HOENN_ROUTE110_TRICK_HOUSE_END",
+      "width": 12,
+      "height": 8,
+      "used_metatiles": 33,
+      "pass": true
+    },
+    {
+      "map": "Route110_TrickHouseCorridor",
+      "layout": "LAYOUT_HOENN_ROUTE110_TRICK_HOUSE_CORRIDOR",
+      "width": 15,
+      "height": 24,
+      "used_metatiles": 13,
+      "pass": true
+    },
+    {
+      "map": "Route110_TrickHousePuzzle1",
+      "layout": "LAYOUT_HOENN_ROUTE110_TRICK_HOUSE_PUZZLE1",
+      "width": 15,
+      "height": 22,
+      "used_metatiles": 31,
+      "pass": true
+    },
+    {
+      "map": "Route110_TrickHousePuzzle2",
+      "layout": "LAYOUT_HOENN_ROUTE110_TRICK_HOUSE_PUZZLE2",
+      "width": 15,
+      "height": 22,
+      "used_metatiles": 34,
+      "pass": true
+    },
+    {
+      "map": "Route110_TrickHousePuzzle3",
+      "layout": "LAYOUT_HOENN_ROUTE110_TRICK_HOUSE_PUZZLE3",
+      "width": 15,
+      "height": 22,
+      "used_metatiles": 44,
+      "pass": true
+    },
+    {
+      "map": "Route110_TrickHousePuzzle4",
+      "layout": "LAYOUT_HOENN_ROUTE110_TRICK_HOUSE_PUZZLE4",
+      "width": 15,
+      "height": 22,
+      "used_metatiles": 31,
+      "pass": true
+    },
+    {
+      "map": "Route110_TrickHousePuzzle5",
+      "layout": "LAYOUT_HOENN_ROUTE110_TRICK_HOUSE_PUZZLE5",
+      "width": 15,
+      "height": 22,
+      "used_metatiles": 15,
+      "pass": true
+    },
+    {
+      "map": "Route110_TrickHousePuzzle6",
+      "layout": "LAYOUT_HOENN_ROUTE110_TRICK_HOUSE_PUZZLE6",
+      "width": 15,
+      "height": 22,
+      "used_metatiles": 28,
+      "pass": true
+    },
+    {
+      "map": "Route110_TrickHousePuzzle7",
+      "layout": "LAYOUT_HOENN_ROUTE110_TRICK_HOUSE_PUZZLE7",
+      "width": 15,
+      "height": 22,
+      "used_metatiles": 49,
+      "pass": true
+    },
+    {
+      "map": "Route110_TrickHousePuzzle8",
+      "layout": "LAYOUT_HOENN_ROUTE110_TRICK_HOUSE_PUZZLE8",
+      "width": 15,
+      "height": 22,
+      "used_metatiles": 18,
+      "pass": true
+    },
+    {
+      "map": "Route110_SeasideCyclingRoadSouthEntrance",
+      "layout": "LAYOUT_HOENN_ROUTE110_SEASIDE_CYCLING_ROAD_ENTRANCE",
+      "width": 15,
+      "height": 6,
+      "used_metatiles": 31,
+      "pass": true
+    },
+    {
+      "map": "Route110_SeasideCyclingRoadNorthEntrance",
+      "layout": "LAYOUT_HOENN_ROUTE110_SEASIDE_CYCLING_ROAD_ENTRANCE",
+      "width": 15,
+      "height": 6,
+      "used_metatiles": 31,
+      "pass": true
+    },
+    {
+      "map": "Route113_GlassWorkshop",
+      "layout": "LAYOUT_HOENN_HOUSE4",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 33,
+      "pass": true
+    },
+    {
+      "map": "Route123_BerryMastersHouse",
+      "layout": "LAYOUT_HOENN_HOUSE2",
+      "width": 11,
+      "height": 8,
+      "used_metatiles": 38,
+      "pass": true
+    },
+    {
+      "map": "Route119_WeatherInstitute_1F",
+      "layout": "LAYOUT_HOENN_ROUTE119_WEATHER_INSTITUTE_1F",
+      "width": 20,
+      "height": 13,
+      "used_metatiles": 57,
+      "pass": true
+    },
+    {
+      "map": "Route119_WeatherInstitute_2F",
+      "layout": "LAYOUT_HOENN_ROUTE119_WEATHER_INSTITUTE_2F",
+      "width": 20,
+      "height": 11,
+      "used_metatiles": 44,
+      "pass": true
+    },
+    {
+      "map": "Route119_House",
+      "layout": "LAYOUT_HOENN_HOUSE1",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 40,
+      "pass": true
+    },
+    {
+      "map": "Route124_DivingTreasureHuntersHouse",
+      "layout": "LAYOUT_HOENN_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE",
+      "width": 10,
+      "height": 9,
+      "used_metatiles": 43,
+      "pass": true
+    }
+  ],
+  "palette_edges": [
+    {
+      "map": "LittlerootTown",
+      "mid": 586,
+      "tile": 800,
+      "palette": 14
+    },
+    {
+      "map": "LittlerootTown",
+      "mid": 586,
+      "tile": 801,
+      "palette": 14
+    },
+    {
+      "map": "LittlerootTown",
+      "mid": 586,
+      "tile": 816,
+      "palette": 14
+    },
+    {
+      "map": "LittlerootTown",
+      "mid": 586,
+      "tile": 817,
+      "palette": 14
+    },
+    {
+      "map": "LittlerootTown",
+      "mid": 587,
+      "tile": 802,
+      "palette": 14
+    },
+    {
+      "map": "LittlerootTown",
+      "mid": 587,
+      "tile": 803,
+      "palette": 14
+    },
+    {
+      "map": "LittlerootTown",
+      "mid": 587,
+      "tile": 818,
+      "palette": 14
+    },
+    {
+      "map": "LittlerootTown",
+      "mid": 587,
+      "tile": 819,
+      "palette": 14
+    }
+  ],
+  "graphics_edges": [
+    {
+      "map": "LittlerootTown",
+      "mid": 586,
+      "tile": 800,
+      "palette": 14
+    },
+    {
+      "map": "LittlerootTown",
+      "mid": 586,
+      "tile": 801,
+      "palette": 14
+    },
+    {
+      "map": "LittlerootTown",
+      "mid": 586,
+      "tile": 816,
+      "palette": 14
+    },
+    {
+      "map": "LittlerootTown",
+      "mid": 586,
+      "tile": 817,
+      "palette": 14
+    },
+    {
+      "map": "LittlerootTown",
+      "mid": 587,
+      "tile": 802,
+      "palette": 14
+    },
+    {
+      "map": "LittlerootTown",
+      "mid": 587,
+      "tile": 803,
+      "palette": 14
+    },
+    {
+      "map": "LittlerootTown",
+      "mid": 587,
+      "tile": 818,
+      "palette": 14
+    },
+    {
+      "map": "LittlerootTown",
+      "mid": 587,
+      "tile": 819,
+      "palette": 14
+    },
+    {
+      "map": "RustboroCity_PokemonSchool",
+      "mid": 529,
+      "tile": 791,
+      "palette": 8
+    },
+    {
+      "map": "RustboroCity_PokemonSchool",
+      "mid": 529,
+      "tile": 792,
+      "palette": 8
+    },
+    {
+      "map": "RustboroCity_PokemonSchool",
+      "mid": 530,
+      "tile": 791,
+      "palette": 8
+    },
+    {
+      "map": "RustboroCity_PokemonSchool",
+      "mid": 530,
+      "tile": 792,
+      "palette": 8
+    },
+    {
+      "map": "RustboroCity_PokemonSchool",
+      "mid": 537,
+      "tile": 793,
+      "palette": 8
+    },
+    {
+      "map": "RustboroCity_PokemonSchool",
+      "mid": 538,
+      "tile": 793,
+      "palette": 8
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "apply": false,
+  "changed": [
+    "src/field_control_avatar.c",
+    "include/field_control_avatar.h",
+    "src/party_menu.c",
+    "data/scripts/field_moves.inc",
+    "data/specials.inc"
+  ],
+  "save_structure_changed": false,
+  "all_existing_special_ids_preserved": true,
+  "existing_surf_waterfall_dive_preserved": true,
+  "strength_badges": {
+    "Kanto": 4,
+    "Johto": 3,
+    "Hoenn": 4
+  },
+  "rock_smash_badges": {
+    "Kanto": 6,
+    "Johto": null,
+    "Hoenn": 3
+  },
+  "original_gsc_source": "https://github.com/pret/pokecrystal/blob/master/engine/events/overworld.asm",
+  "native_a_menu_and_region_boundary_qa": "NOT_RUN",
+  "files": {
+    "src/field_control_avatar.c": {
+      "before": "e005c5c937475d3bac4f1edcf06f87bc6ee491ff3890690b23bf69d1c3c13278",
+      "after": "3531bf171a0ede22b10e636542e11403aa8dfc722f97c4a29b7333fd79aeb17b"
+    },
+    "include/field_control_avatar.h": {
+      "before": "a2b58317e4bce8e409cb66bf9529f16e330b3f0a6f9049da2c9e2e78c0cec4a5",
+      "after": "0c6ce3510a689bf12ffb2aedfe2c1880880db472e222f9c14e9af8fd3497cfd4"
+    },
+    "src/party_menu.c": {
+      "before": "7566bd67a76bd33c25debc4a8f2d1811d1399cc1cf99f31cfc6f6cbb8d785f61",
+      "after": "2ad0fd80d5bf96a19ca75e611dfaf5ae07175fdaff7027e62b09f8da00085f22"
+    },
+    "data/scripts/field_moves.inc": {
+      "before": "0a9ffea493966e47114aa8dd61eb2a898510e4fc28217b39a9e656a11d0a235d",
+      "after": "e19dac8ca63e22bf2e17ef6ab6a8938f9d0c69f4213640817169ea8e5beb1a3f"
+    },
+    "data/specials.inc": {
+      "before": "9c8679c353acc1f70f3c3b302996c442674cf182c67d382fe2af31ede0585f28",
+      "after": "64beaa13829a83629621b5c5f5f900239f654042612a5c4a42dffba33b709adf"
+    }
+  },
+  "original_save_sha256": {
+    "/workspaces/pokefirered/saves/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "/workspaces/pokefirered/saves/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "/workspaces/pokefirered/saves/hoenn.sav": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+    "/workspaces/pokefirered/saves/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "/workspaces/pokefirered/saves/pokemonthyl_hoenn_QAed.sav": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+    "/workspaces/pokefirered/saves/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.1.sav": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.2.sav": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+    "/workspaces/pokefirered/saves/backup-codex-v1_1-recovery-sort-20261002T002244.307175Z/pokemonthyl_v1.1.original.sav": "417452a3f151dbe0eeaca4d41780739f8137eafd7ff14df4e7eed1685b9b699f",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/hoenn.sav": "d1ed8d987d4e451efb00a6cda2ba770e6472f36a89595a04a3550156876806ad",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424"
+  }
+}

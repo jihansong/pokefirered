@@ -1,0 +1,27 @@
+{
+  "pass_all": true,
+  "maps": [
+    {
+      "map": "JohtoRoute32",
+      "load_frames": 95,
+      "stable_idle_frames": 12,
+      "vblank_delta": 106,
+      "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "fixture_sha256": "813abcb2f76eff4a4ddaa9ba0f5808122437132750b176450ce374d4bb59e78e"
+    },
+    {
+      "map": "AzaleaTown",
+      "load_frames": 96,
+      "stable_idle_frames": 12,
+      "vblank_delta": 107,
+      "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "fixture_sha256": "d87f4e454c09216ab99024c249d3a60e833f25cc7a70cb82977f084cee157b4f"
+    }
+  ],
+  "rom_sha256": "6484710ad86b8e50ff5308188cdef9208969dc1c39c89d76b16d629dc7febcb7",
+  "elf_sha256": "111a273f1d002a498469b59dae60d2502c693cc2a94d73a900ab89a8eeb3ab6b",
+  "sym_sha256": "12b01acfa059d2586028614b1aae393130583b4f27185a86c85d71ca25100d50",
+  "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "ram_pokes_original": 0,
+  "actual_device_fps_measured": false
+}

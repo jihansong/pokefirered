@@ -1,0 +1,4 @@
+  File "/workspaces/pokefirered/tools/qa/native_hoenn_shared_hm_save_diagnostic.py", line 72
+    _new=" report['cold_counter_diagnostic']={'saved':saved.counter,'cold':e.u32(syms['gSaveCounter'])}
+         ^
+SyntaxError: unterminated string literal (detected at line 72)

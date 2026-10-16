@@ -143,4 +143,6 @@
 #define VAR_HOENN_0x7E                 (HOENN_VARS_START + 126)
 #define VAR_HOENN_0x7F                 (HOENN_VARS_START + 127)
 
+#define VAR_HOENN_LEAGUE_PROGRESS VAR_HOENN_0x29
+
 #endif // GUARD_CONSTANTS_VARS_HOENN_H

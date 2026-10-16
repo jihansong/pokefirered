@@ -1,0 +1,7 @@
+{
+  "tools/hoenn_import/patches/Route104.scripts.inc": "e09bf6a31f9400c34b386c0c7f68e9722bc975e260d8d2122930f72888792c3c",
+  "tools/hoenn_import/patches/PetalburgWoods.scripts.inc": "fe6b8eef9c01cd6b87cc956b705b5aded3cfb558d413c29d78a4758d2b1480b9",
+  "tools/hoenn_import/patches/LittlerootTown_ProfessorBirchsLab.scripts.inc": "662f47b443c3b59a568990bd6d67828942c1e72e47f48b908025707d1769132b",
+  "tools/johto/patches/NewBarkTown_ElmsLab/scripts.inc": "e539a5118c57020f82580089d16e9091e73d5b885a0ec0cfe6e1211558fb1e4a",
+  "tools/johto/patches/NewBarkTown_ElmsLab/text.inc": "fdfc4156a4313d91770bd1d5dd624b50edd9cd53f966e1e8d7fa16fff4ca8c3f"
+}

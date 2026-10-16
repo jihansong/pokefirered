@@ -1,0 +1,1145 @@
+{
+  "time_utc": "2026-10-05T19:11:40.794975+00:00",
+  "rom_sha256": "6185cd53db214dd18cf8229726633f75a455353bfc202ac6d88c127477a6ca19",
+  "elf_sha256": "18f46287e0b1152dfc4aa100f656d1e80bdd5c0e14df5607d3ecb8bb4b9a5666",
+  "bytes": 33554432,
+  "resident_sections_match": true,
+  "save_layout_unchanged": true,
+  "save_layout": {
+    "blocks": {
+      "gSaveBlock1": 15720,
+      "gSaveBlock2": 3876,
+      "gPokemonStorage": 33744
+    },
+    "sector_layout": [
+      [
+        0,
+        3876
+      ],
+      [
+        0,
+        3968
+      ],
+      [
+        3968,
+        3968
+      ],
+      [
+        7936,
+        3968
+      ],
+      [
+        11904,
+        3816
+      ],
+      [
+        0,
+        3968
+      ],
+      [
+        3968,
+        3968
+      ],
+      [
+        7936,
+        3968
+      ],
+      [
+        11904,
+        3968
+      ],
+      [
+        15872,
+        3968
+      ],
+      [
+        19840,
+        3968
+      ],
+      [
+        23808,
+        3968
+      ],
+      [
+        27776,
+        3968
+      ],
+      [
+        31744,
+        2000
+      ]
+    ],
+    "sector_layout_sha256": "ee1f9bc20ab82f62e45a2451450517ea539f6ef48bd31045dc2430b8525fcd68"
+  },
+  "assets": {
+    "sOpeningMoviePixels": {
+      "bytes": 14192640,
+      "sha256": "ff8c4e7f91ef541952f638043efdfe396d416777aaa984350869da3e603b66c3"
+    },
+    "sOpeningMoviePalettes": {
+      "bytes": 178688,
+      "sha256": "f253176e6ead3f2f5dd55c01de2f33881ce143527c464d076d2786bc348724f7"
+    },
+    "sOpeningMovieFrames": {
+      "bytes": 6016,
+      "sha256": "22517a83536902b9c4245234a7bd84fd15b75fcbb00c70dbb274e648268d3938"
+    },
+    "gTrainerFrontPic_JessieJames": {
+      "bytes": 2048,
+      "sha256": "5b036768fc2712765eab94952b2757a7783b953062ef440f26eb7e9e6f38d2b1"
+    },
+    "gTrainerPalette_JessieJames": {
+      "bytes": 32,
+      "sha256": "02951ab3bc6bd04dbce501258a13e92e3ba934728bb8249514b41238f835b792"
+    },
+    "sThunderYellowTitleTiles": {
+      "bytes": 38400,
+      "sha256": "266b8c5764de352fd471c742705cc8744eeff15c16e13c557854b514d6153eff"
+    },
+    "sThunderYellowTitlePalette": {
+      "bytes": 512,
+      "sha256": "e4888a4dcd5539808992724f60e9891393a950904ee06c817a601977285ebdd2"
+    },
+    "sThunderYellowTitleMap": {
+      "bytes": 2048,
+      "sha256": "d36febfb217aed8362ce88627f4ffdab75d5cab305f35b433881ab3d75daab53"
+    },
+    "sTitleText_Pal": {
+      "bytes": 8,
+      "sha256": "4529364d177d57c7ff36be6be8173d1bcc0c499030a5cb4468200eb36b94224c"
+    },
+    "gGraphics_TitleScreen_BoxArtMonPals": {
+      "bytes": 32,
+      "sha256": "86a6b33a4c4a102a932d44ed1c3b8c3292231563ded69318a9424c4b75387773"
+    },
+    "gGraphics_TitleScreen_CopyrightPressStartMap": {
+      "bytes": 276,
+      "sha256": "ee97ab69291ae1d8407c1b7655a2c6fd664ac8c2486fd2ad8c31227295815b35"
+    },
+    "gGraphics_TitleScreen_BackgroundPals": {
+      "bytes": 32,
+      "sha256": "fa04f0364c62c689cde8e3b58d4193ea6c8b879e118eab9afd933e819b64ddd2"
+    },
+    "gGraphics_TitleScreen_BoxArtMonTiles": {
+      "bytes": 1152,
+      "sha256": "a6cebf5a0803d10818c58c7106edef729cae6eca8d617a46787fb25e625e34f2"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoTiles": {
+      "bytes": 5468,
+      "sha256": "aed1c7edbc32bd3b8c33fa95eb280d94a90224d98ddb765ef6164dded55a5b31"
+    },
+    "gGraphics_TitleScreen_CopyrightPressStartTiles": {
+      "bytes": 704,
+      "sha256": "1f72690d788e6f3ccfa7a111bc676f45571b48ce8b40635a2741b7780ccc3ad8"
+    },
+    "gTitleScreen_BlankSprite_Tiles": {
+      "bytes": 128,
+      "sha256": "3c2451d3e0f5b1a598ab8cab6beae858645729fc74f8c1d993274f55e3dbbd41"
+    },
+    "gGraphics_TitleScreen_BoxArtMonMap": {
+      "bytes": 332,
+      "sha256": "25b8be3aa049b9e512e73caac9930fdbc187b66cb46509e7f4b4de5bf66215ba"
+    },
+    "gTitleScreen_Slash_Pal": {
+      "bytes": 32,
+      "sha256": "a57ddb40cb96a23749ff6624ae67421cdf487183577f7dee37069bd02467a4fb"
+    },
+    "gTeachyTvTitle_Tilemap": {
+      "bytes": 556,
+      "sha256": "ae837c6d4d805dd7be188f70e15e784571706f13017392a93ffb89cc1cda645c"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoMap": {
+      "bytes": 544,
+      "sha256": "162d967ed0289b42042be29f24f4fdbf4174bab06d8f05277341b25c2f5e62ab"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoPals": {
+      "bytes": 512,
+      "sha256": "9612068fa48be250345e802e735eab11331ca25d78d98e82eeca8825f02774de"
+    }
+  },
+  "title_version": "V8",
+  "rocket_version": "V11 native64x64",
+  "opening_version": "V7 752frames/FRLG music",
+  "johto_maps_integrated": 23,
+  "hoenn_native_league_verified": true,
+  "full_johto_story_complete": false,
+  "full_hoenn_story_complete": false,
+  "evidence_root": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3",
+  "save_delivery": "/workspaces/pokefirered/outputs/rom-regions-update-20261005T191140Z/pokemonthyl.sav",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "all_original_saves_unchanged": true,
+  "known_existing_bad_egg_repaired": false,
+  "performance": {
+    "water_native": "/workspaces/pokefirered/outputs/hm-dive-font-review-v2/water-performance/result.json",
+    "font_cache_native": "/workspaces/pokefirered/outputs/hm-dive-font-review-v1",
+    "font_cache_evidence_rom_sha256": "f6e9dd60d10bcca84d2b68ae7c446ed82a72c84e284edd94b818f3f19d44d1d3",
+    "delta_device_fps_measured": false,
+    "azalea_land": {
+      "path": "/workspaces/pokefirered/outputs/johto-azalea-native-review-v2/performance/result.json",
+      "cases": 4,
+      "hardware_frames_per_case": 360,
+      "processing_misses": 0,
+      "delta_device_fps_measured": false
+    },
+    "sootopolis_storm_calm": {
+      "samples": [
+        {
+          "map": "SootopolisCity",
+          "label": "city-storm",
+          "weather": 5,
+          "weather_end": 5,
+          "rain_allocated_range": [
+            24,
+            24
+          ],
+          "rain_count_range": [
+            24,
+            24
+          ],
+          "max_active_sprites": 33,
+          "walking": false,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              28,
+              34
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 3,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        },
+        {
+          "map": "SootopolisCity",
+          "label": "city-storm",
+          "weather": 5,
+          "weather_end": 5,
+          "rain_allocated_range": [
+            24,
+            24
+          ],
+          "rain_count_range": [
+            24,
+            24
+          ],
+          "max_active_sprites": 33,
+          "walking": true,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              28,
+              34
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 3,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        },
+        {
+          "map": "SootopolisCity",
+          "label": "city-calm",
+          "weather": 2,
+          "weather_end": 2,
+          "rain_allocated_range": [
+            0,
+            0
+          ],
+          "rain_count_range": [
+            0,
+            0
+          ],
+          "max_active_sprites": 9,
+          "walking": false,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              28,
+              34
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 3,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        },
+        {
+          "map": "SootopolisCity",
+          "label": "city-calm",
+          "weather": 2,
+          "weather_end": 2,
+          "rain_allocated_range": [
+            0,
+            0
+          ],
+          "rain_count_range": [
+            0,
+            0
+          ],
+          "max_active_sprites": 9,
+          "walking": true,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              28,
+              34
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 3,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        }
+      ],
+      "original_core_manual_ram_writes": 0,
+      "instrumentation": "separate emulator clone only",
+      "delta_device_fps_measured": false,
+      "all_thunder_flash_phases_measured": false
+    },
+    "ecruteak_burned_tower": {
+      "samples": [
+        {
+          "party_pc_dex_preserved": true,
+          "map": "EcruteakCity",
+          "walking": false,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              19,
+              23
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 4,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        },
+        {
+          "party_pc_dex_preserved": true,
+          "map": "EcruteakCity",
+          "walking": true,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              19,
+              23
+            ],
+            [
+              20,
+              23
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 4,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        },
+        {
+          "party_pc_dex_preserved": true,
+          "map": "BurnedTower_1F",
+          "walking": false,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              13,
+              19
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 3,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        },
+        {
+          "party_pc_dex_preserved": true,
+          "map": "BurnedTower_1F",
+          "walking": true,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              13,
+              19
+            ],
+            [
+              14,
+              19
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 3,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        }
+      ],
+      "loads": [
+        {
+          "map": "EcruteakCity",
+          "load_frames": 96,
+          "stable_idle_frames": 12,
+          "vblank_delta": 107,
+          "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+          "fixture_sha256": "79c45814337ea6d4f6ad9af010d5fd935108f5490f6b9b351b18a46a0968d2b2"
+        },
+        {
+          "map": "BurnedTower_1F",
+          "load_frames": 89,
+          "stable_idle_frames": 12,
+          "vblank_delta": 100,
+          "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+          "fixture_sha256": "79b9bfd18fd6d7120f0f47c8a2afdb8c3a71fd304e55033e74ff0b5e418383f8"
+        }
+      ],
+      "instrumentation": "separate emulator clone only",
+      "original_core_manual_ram_writes": 0,
+      "delta_device_fps_measured": false
+    },
+    "olivine_cianwood_lighthouse": {
+      "native_cases": 6,
+      "frames_per_case": 360,
+      "processing_misses": 0,
+      "single_follower": true,
+      "evidence": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/performance-rerun/result.json",
+      "measured_rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 gym script-only change; measured city/lighthouse map and field engine unchanged",
+      "delta_device_fps_measured": false
+    }
+  },
+  "resident_sections": [
+    {
+      "index": 3,
+      "bytes": 1470048
+    },
+    {
+      "index": 4,
+      "bytes": 899568
+    },
+    {
+      "index": 5,
+      "bytes": 57820
+    },
+    {
+      "index": 6,
+      "bytes": 7972244
+    },
+    {
+      "index": 7,
+      "bytes": 513436
+    },
+    {
+      "index": 8,
+      "bytes": 1640
+    },
+    {
+      "index": 9,
+      "bytes": 193364
+    },
+    {
+      "index": 10,
+      "bytes": 1782744
+    },
+    {
+      "index": 11,
+      "bytes": 36864
+    },
+    {
+      "index": 12,
+      "bytes": 14377344
+    }
+  ],
+  "additional_title_assets_unchanged": {
+    "sTitleText_Pal": {
+      "bytes": 8,
+      "sha256": "4529364d177d57c7ff36be6be8173d1bcc0c499030a5cb4468200eb36b94224c"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoTiles": {
+      "bytes": 5468,
+      "sha256": "aed1c7edbc32bd3b8c33fa95eb280d94a90224d98ddb765ef6164dded55a5b31"
+    },
+    "sThunderYellowTitleMap": {
+      "bytes": 2048,
+      "sha256": "d36febfb217aed8362ce88627f4ffdab75d5cab305f35b433881ab3d75daab53"
+    },
+    "gGraphics_TitleScreen_BoxArtMonTiles": {
+      "bytes": 1152,
+      "sha256": "a6cebf5a0803d10818c58c7106edef729cae6eca8d617a46787fb25e625e34f2"
+    },
+    "gTitleScreen_Slash_Pal": {
+      "bytes": 32,
+      "sha256": "a57ddb40cb96a23749ff6624ae67421cdf487183577f7dee37069bd02467a4fb"
+    },
+    "gGraphics_TitleScreen_CopyrightPressStartTiles": {
+      "bytes": 704,
+      "sha256": "1f72690d788e6f3ccfa7a111bc676f45571b48ce8b40635a2741b7780ccc3ad8"
+    },
+    "gTeachyTvTitle_Tilemap": {
+      "bytes": 556,
+      "sha256": "ae837c6d4d805dd7be188f70e15e784571706f13017392a93ffb89cc1cda645c"
+    },
+    "gGraphics_TitleScreen_BoxArtMonMap": {
+      "bytes": 332,
+      "sha256": "25b8be3aa049b9e512e73caac9930fdbc187b66cb46509e7f4b4de5bf66215ba"
+    },
+    "gGraphics_TitleScreen_CopyrightPressStartMap": {
+      "bytes": 276,
+      "sha256": "ee97ab69291ae1d8407c1b7655a2c6fd664ac8c2486fd2ad8c31227295815b35"
+    },
+    "gGraphics_TitleScreen_BoxArtMonPals": {
+      "bytes": 32,
+      "sha256": "86a6b33a4c4a102a932d44ed1c3b8c3292231563ded69318a9424c4b75387773"
+    },
+    "gGraphics_TitleScreen_BackgroundPals": {
+      "bytes": 32,
+      "sha256": "fa04f0364c62c689cde8e3b58d4193ea6c8b879e118eab9afd933e819b64ddd2"
+    },
+    "gTitleScreen_BlankSprite_Tiles": {
+      "bytes": 128,
+      "sha256": "3c2451d3e0f5b1a598ab8cab6beae858645729fc74f8c1d993274f55e3dbbd41"
+    },
+    "sPikachuVoiceLengths": {
+      "bytes": 42,
+      "sha256": "f98284934787ec1071a4f8f0c0c52ad9f2c7c82e52525a7ff70476b7ad97d1a1"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoMap": {
+      "bytes": 544,
+      "sha256": "162d967ed0289b42042be29f24f4fdbf4174bab06d8f05277341b25c2f5e62ab"
+    },
+    "sThunderYellowTitlePalette": {
+      "bytes": 512,
+      "sha256": "e4888a4dcd5539808992724f60e9891393a950904ee06c817a601977285ebdd2"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoPals": {
+      "bytes": 512,
+      "sha256": "9612068fa48be250345e802e735eab11331ca25d78d98e82eeca8825f02774de"
+    },
+    "sThunderYellowTitleTiles": {
+      "bytes": 38400,
+      "sha256": "266b8c5764de352fd471c742705cc8744eeff15c16e13c557854b514d6153eff"
+    }
+  },
+  "hoenn_weather_space_integrated": true,
+  "hoenn_weather_space_native_cases": 5,
+  "hm05_tm10_native_cases": 11,
+  "hm08_tm49_native_cases": 8,
+  "pikachu_dive_follow_native_checks": 16,
+  "water_performance_cases": 4,
+  "water_hardware_frames_per_case": 360,
+  "water_processing_misses": 0,
+  "johto_azalea_integrated": true,
+  "johto_existing_maps": 81,
+  "johto_azalea_native_events": 33,
+  "johto_azalea_native_battles": 8,
+  "johto_azalea_native_map_smoke": 10,
+  "johto_azalea_native_gate_steps": 2,
+  "sootopolis_dive_roundtrip_native_cases": 2,
+  "azalea_battle_evidence": {
+    "path": "/workspaces/pokefirered/outputs/johto-azalea-native-review-v1/battle/result.json",
+    "rom_sha256": "49d6c1ae2080abc30f1c60fa5abb3c9d2b9a877d5d6309a483dce1c084dcf94b",
+    "only_candidate_byte_difference": {
+      "offset": 1529850,
+      "reason": "Sootopolis dive surface Y coordinate53 to54"
+    },
+    "battle_assets_and_code_unchanged": true
+  },
+  "remaining": {
+    "johto_full_story_complete": false,
+    "hoenn_full_story_complete": false,
+    "johto_next": "Regional Fly destination/badge support; gyms7-8, Mahogany/lake story, later Radio Tower and League remain",
+    "hoenn_next": "Victory Road B1F14 original obstacles and shared regional Strength/RockSmash gates prepared, not applied; multi-floor natural puzzle path and full League route remain",
+    "three_region_natural_playthrough_complete": false,
+    "delta_old_save_state_corruption_cause_proven": false
+  },
+  "johto_ilex_goldenrod_integrated": true,
+  "johto_ilex_native_events": 28,
+  "johto_ilex_native_battles": 4,
+  "johto_ilex_native_map_links": 17,
+  "hoenn_sea_sky_integrated": true,
+  "hoenn_sea_sky_native_cases": 12,
+  "sky_pillar_ascent_native_cases": 3,
+  "native_validations": {
+    "outputs/olivine-cianwood-wally-review-v3/johto-battles/result.json": {
+      "sha256": "8e767c719adcc350ff2c3e732440cd2eb81fe977822ece1123053e672793c49e",
+      "rom_sha256": "6185cd53db214dd18cf8229726633f75a455353bfc202ac6d88c127477a6ca19",
+      "cases": 4
+    },
+    "outputs/olivine-cianwood-wally-review-v3/johto-chain/result.json": {
+      "sha256": "690ff46366f4a7c42952faec03de1082d03fc813fb945b7ef8822efc86d581f1",
+      "rom_sha256": "6185cd53db214dd18cf8229726633f75a455353bfc202ac6d88c127477a6ca19",
+      "cases": 7
+    },
+    "outputs/olivine-cianwood-wally-review-v3/johto-events/result.json": {
+      "sha256": "d8ff1f8c01b0f4da254b75fbb2d2885ca80fc333974f393d5cdb3e07b4e9959a",
+      "rom_sha256": "6185cd53db214dd18cf8229726633f75a455353bfc202ac6d88c127477a6ca19",
+      "cases": 31
+    },
+    "outputs/olivine-cianwood-wally-review-v2/wally-first/validation.json": {
+      "sha256": "d62182a48340801e6d39f8f9d72aba9584335e816a06f0a0aaff52413e7bfdc0",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 changes only Johto gym victory callback and readiness text; these Hoenn paths unchanged"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/wally-remember/validation.json": {
+      "sha256": "deb2f7799f2474cde19415fd61755fe4da2df5216ea4f645f3d64fb626ed2939",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 changes only Johto gym victory callback and readiness text; these Hoenn paths unchanged"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/wally-loss/validation.json": {
+      "sha256": "b4ae3179a0fcce74eb4ac3c2daaf364b1be215da6eea9ab31bf4b4dc4d90ebab",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 changes only Johto gym victory callback and readiness text; these Hoenn paths unchanged"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/wally-decline/validation.json": {
+      "sha256": "15896c15847573fef4194f5972d8a3e797266198de69c686a00b4d6874405c01",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 changes only Johto gym victory callback and readiness text; these Hoenn paths unchanged"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/wally-early/validation.json": {
+      "sha256": "ef6f47a36e4f3e0c9ed281ed0a0d94cb613f9a95a07d69d5fc37bb9b60a71143",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 changes only Johto gym victory callback and readiness text; these Hoenn paths unchanged"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/wally-done/validation.json": {
+      "sha256": "1d805fc5b2f2599a35c53cae304a5889ec68ab40d2c15688a831408ab9730df9",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 changes only Johto gym victory callback and readiness text; these Hoenn paths unchanged"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/wally-legacy/validation.json": {
+      "sha256": "48a0f512fbb0b6bbe8294d7d200a140ce0138dcad785330a7e9b5fa351333e80",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 changes only Johto gym victory callback and readiness text; these Hoenn paths unchanged"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/vr-hope/validation.json": {
+      "sha256": "6a5a8ec0d1c2e43064f38f175b6079d76beb22a3645386f345798abe0d5ff955",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 changes only Johto gym victory callback and readiness text; these Hoenn paths unchanged"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/vr-albert/validation.json": {
+      "sha256": "6dcfa2f405e9e0d9a71e0bbf6cb1dd79b4db2f2da41c2649d315a5e4002a16cc",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 changes only Johto gym victory callback and readiness text; these Hoenn paths unchanged"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/vr-katelynn/validation.json": {
+      "sha256": "c43666ca1f97274a31fa863b0fd751dc5266fc3e260403a36731ace783dc26ed",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 changes only Johto gym victory callback and readiness text; these Hoenn paths unchanged"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/vr-quincy/validation.json": {
+      "sha256": "cfc8411241d2d619165b1a9a92e970453dd5a8b0e5d1b9ca5c848d954e957b51",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 changes only Johto gym victory callback and readiness text; these Hoenn paths unchanged"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/vr-edgar-loss/validation.json": {
+      "sha256": "a333c88f21221b2c29665da6f7feda77a0554c20980486a5262e0fadf5dd8e49",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 changes only Johto gym victory callback and readiness text; these Hoenn paths unchanged"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/vr-hope-loss/validation.json": {
+      "sha256": "46def85a67a10bc99654f9245abc6f37ce19790792be761e58929fb50d717e51",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 changes only Johto gym victory callback and readiness text; these Hoenn paths unchanged"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/vr-albert-loss/validation.json": {
+      "sha256": "67591c80e1b04fe975e20d25b0558bae1744bfccaa44864412f1e5cf159ca4d8",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 changes only Johto gym victory callback and readiness text; these Hoenn paths unchanged"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/vr-katelynn-loss/validation.json": {
+      "sha256": "01dd4cf383bf85abb23a52e64b00ad3e8f0ac34510690c17856f66886cdc3a2e",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 changes only Johto gym victory callback and readiness text; these Hoenn paths unchanged"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/vr-quincy-loss/validation.json": {
+      "sha256": "081f9af447a39793be073d1ff8e8f855b31eea2604a015b06445e25221699ca7",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 changes only Johto gym victory callback and readiness text; these Hoenn paths unchanged"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/vr-edgar-sight-rerun/validation.json": {
+      "sha256": "2e7a6100e895db2f052926a9d704d92695d8bde0ff1b4fa7adb3e0f1f114d316",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 changes only Johto gym victory callback and readiness text; these Hoenn paths unchanged"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/vr-quincy-done/validation.json": {
+      "sha256": "db5372eaaaa68c1ffdc3846a847a0b0e41fb58fde4be48204676cd97c7a76d0e",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 changes only Johto gym victory callback and readiness text; these Hoenn paths unchanged"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/johto-maps/result.json": {
+      "sha256": "e07ffb688a54a316d7e4b768fdf18584f64c071969258ea99c001beddeac8788",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "cases": 44,
+      "reuse_basis": "map geometry and wild encounter tables unchanged in q3"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/johto-wild/result.json": {
+      "sha256": "c3f40ef8545ac3dc69e9b63e0acc424775496b702b5abe16b7edd01ba4be713a",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "cases": 4,
+      "reuse_basis": "map geometry and wild encounter tables unchanged in q3"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/surf-verified-results.json": {
+      "sha256": "49b8b05aa6944ba3b7e99326d71ff0fa839087f836e0ea5e446afba5a77f4477",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "cases": 18,
+      "reuse_basis": "shared C helper and field scripts unchanged in q3"
+    },
+    "outputs/olivine-cianwood-wally-review-v2/performance-rerun/result.json": {
+      "sha256": "2cbd9871b799d8869bc5bb5d5d917b6f754b03b2b6be6def18b3c431e968f010",
+      "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "cases": 6,
+      "reuse_basis": "three sampled map geometries/events and field engine unchanged in q3; Delta device FPS not measured"
+    }
+  },
+  "visual_review": {
+    "limits": [
+      "Johto uses native Kanto tilesets and placeholder gym portraits; final region art and full natural traversal are unfinished."
+    ]
+  },
+  "johto_ecruteak_integrated": true,
+  "johto_ecruteak_native_events": 31,
+  "johto_ecruteak_native_battles": 9,
+  "johto_ecruteak_native_wild_outcomes": 4,
+  "johto_ecruteak_native_map_links": 26,
+  "johto_ecruteak_same_save_chain": {
+    "pass_all": true,
+    "rom_sha256": "c139724c9b8d94a1195cb0386ced634a0012377f2ee7f3e86b6267259cf8068b",
+    "sequence": [
+      {
+        "case": "waterbottle",
+        "save": {
+          "counter": [
+            60,
+            61
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-chapter-chain/chain_waterbottle-native-QA-only.sav"
+        },
+        "forced_progress_after_setup": 0
+      },
+      {
+        "case": "chain_sudowoodo_win",
+        "turns": 1,
+        "outcome": 1,
+        "save": {
+          "counter": [
+            61,
+            62
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-chapter-chain/chain_sudowoodo_win-native-QA-only.sav"
+        },
+        "pc_preserved": true,
+        "native_capture": false,
+        "forced_memory_writes": 0,
+        "forced_battle_outcomes": 0
+      },
+      {
+        "case": "chain_silver_win",
+        "turns": 4,
+        "native_outcome": 1,
+        "enemies": [
+          93,
+          81,
+          41,
+          159
+        ],
+        "save": {
+          "counter": [
+            62,
+            63
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-chapter-chain/chain_silver_win-native-QA-only.sav"
+        },
+        "pc_preserved": true,
+        "forced_memory_writes": 0,
+        "forced_battle_outcomes": 0
+      },
+      {
+        "case": "three_beasts",
+        "save": {
+          "counter": [
+            63,
+            64
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-chapter-chain/chain_three_beasts-native-QA-only.sav"
+        },
+        "seen_only_added": [
+          "RAIKOU",
+          "ENTEI",
+          "SUICUNE"
+        ],
+        "forced_progress_after_setup": 0
+      },
+      {
+        "case": "chain_morty_win",
+        "turns": 4,
+        "native_outcome": 1,
+        "enemies": [
+          92,
+          93,
+          94,
+          93
+        ],
+        "save": {
+          "counter": [
+            64,
+            65
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-chapter-chain/chain_morty_win-native-QA-only.sav"
+        },
+        "pc_preserved": true,
+        "forced_memory_writes": 0,
+        "forced_battle_outcomes": 0
+      }
+    ],
+    "final_qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-chapter-chain/chain_morty_win-native-QA-only.sav",
+    "native_save_cold_reopens": 5,
+    "qa_position_only_warps": 5,
+    "forced_story_flags_after_setup": 0,
+    "forced_trainer_flags_after_setup": 0,
+    "forced_memory_writes": 0,
+    "forced_battle_outcomes": 0,
+    "initial_fixture": "winning battle fixture after Johto Badge3; temporary setup only",
+    "full_natural_walking_tested": false,
+    "kimono_five_wins_repeated": false,
+    "full_campaign_tested": false,
+    "original_files_unchanged": true
+  },
+  "hoenn_wallace_hm07_integrated": true,
+  "hoenn_wallace_native_cases": 9,
+  "waterfall_shared_region_badge_gate": true,
+  "waterfall_native_cases": 9,
+  "wild_encounters_compiled_audit": {
+    "audit": "compiled-wild-header-regions",
+    "rom_sha256": "c139724c9b8d94a1195cb0386ced634a0012377f2ee7f3e86b6267259cf8068b",
+    "symbol_source": "ELF32_SYMTAB",
+    "tables": 3,
+    "headers_per_table": 274,
+    "time_table_map_alignment": true,
+    "valid_map_pairs": true,
+    "valid_rom_info_and_mon_table_bounds": true,
+    "sentinels_valid": true,
+    "hoenn_group_range": [
+      43,
+      75
+    ],
+    "johto_group": 76,
+    "hoenn_headers": 124,
+    "johto_headers": 15,
+    "johto_maps": [
+      "JohtoRoute29",
+      "JohtoRoute30",
+      "JohtoRoute31",
+      "JohtoRoute32",
+      "JohtoUnionCave_1F",
+      "JohtoRoute33",
+      "SlowpokeWell_1F",
+      "IlexForest",
+      "JohtoRoute34",
+      "JohtoRoute35",
+      "JohtoNationalPark",
+      "JohtoRoute36",
+      "JohtoRoute37",
+      "BurnedTower_1F",
+      "BurnedTower_B1F"
+    ],
+    "save_files_read_or_written": false,
+    "ram_instrumentation": false,
+    "pass_all": true
+  },
+  "habitat_region_page_audit": {
+    "pass_all": true,
+    "rom_sha256": "c139724c9b8d94a1195cb0386ced634a0012377f2ee7f3e86b6267259cf8068b",
+    "pages": [
+      {
+        "region": 0,
+        "markers": 7,
+        "marker_tasks": 1,
+        "map_window": [
+          12,
+          9
+        ],
+        "map_pixels_sha256": "c9d388ea45d2c6bcf4fb31d71351ea4095a17fe5190024dbf9e93fd35cb36715"
+      },
+      {
+        "region": 1,
+        "markers": 7,
+        "marker_tasks": 1,
+        "map_window": [
+          16,
+          9
+        ],
+        "map_pixels_sha256": "de6997b57603b6efe2ead3209681647c795dff22672f6c199d0f439be51984a3"
+      },
+      {
+        "region": 2,
+        "markers": 8,
+        "marker_tasks": 1,
+        "map_window": [
+          16,
+          9
+        ],
+        "map_pixels_sha256": "a41a568fe232e8143c7631b6575049b1fbed11d240cf273e8e78cd79078f8ff4"
+      }
+    ],
+    "select_cycle": true,
+    "negative_egg_regions": 3,
+    "temporary_native_ram_fixture": true,
+    "actual_device_fps_measured": false
+  },
+  "new_capture_identity": {
+    "pass_all": true,
+    "before_sha256": "6866be6da8b3f961594de9195d26514fb653714baa595e51c4056d3cb8f9ce72",
+    "after_sha256": "caefbb593cbdc0531ff9ff43cfdfb8fd8f2544454e48669ff9627c51e7b32b62",
+    "location": "party",
+    "slot_zero_based": 1,
+    "species_internal": 185,
+    "pid": 2139134624,
+    "ot_id": 2839214970,
+    "player_ot_id": 2839214970,
+    "checksum_stored": 14946,
+    "checksum_calculated": 14946,
+    "bad_egg": false,
+    "egg": false,
+    "box80_sha256": "68b55fd455faaf8404eff5d59be2743480a5673590096257353d7ba36cf555de",
+    "party100_sha256": "a6aaef20252ba4f551c90bda0d478fea614c87e1cf02288d0aef29fa50bedd17",
+    "native_proof": {
+      "case": "sudowoodo_catch",
+      "rom_sha256": "c139724c9b8d94a1195cb0386ced634a0012377f2ee7f3e86b6267259cf8068b",
+      "save_sectors": 14,
+      "cold_reload_proof": "existing native flash_reload compared full party600B plus PC/dex/flags; this auditor does not run an emulator"
+    },
+    "read_only": true,
+    "other_rom_save_state_tested": false,
+    "original_damaged_box_repaired": false
+  },
+  "files": {
+    "gba": {
+      "bytes": 33554432,
+      "sha256": "6185cd53db214dd18cf8229726633f75a455353bfc202ac6d88c127477a6ca19"
+    },
+    "elf": {
+      "bytes": 33877824,
+      "sha256": "18f46287e0b1152dfc4aa100f656d1e80bdd5c0e14df5607d3ecb8bb4b9a5666"
+    },
+    "sym": {
+      "bytes": 3255908,
+      "sha256": "83a6c7d78c3e8ba442e1fb00088712f62a8ab0e4dcde4231e2ccabacfcb3607c"
+    },
+    "map": {
+      "bytes": 3272984,
+      "sha256": "038d3e5135eb841ab3c102a71c9bbbad62a1995319fb2ba8fea671eb60f47e42"
+    }
+  },
+  "specific_title_start_and_voice_unchanged": {
+    "sThunderYellowStartRoiTiles": {
+      "bytes": 645120,
+      "sha256": "65f31390c8c1065dc28a3ea36a2990a8c351cd121d4be5c3e2f2d17c266d1e33",
+      "previous_main_identical": true
+    },
+    "PikachuVoice_Title": {
+      "bytes": 9111,
+      "sha256": "aa35fbe68154fe5118ed6b298f18d8c1785d9a06c2109d54f1e818092719c9e6",
+      "previous_main_identical": true
+    }
+  },
+  "johto_olivine_cianwood_integrated": true,
+  "johto_native_events": 31,
+  "johto_native_battles": 4,
+  "johto_native_same_save_chain": {
+    "rom_sha256": "6185cd53db214dd18cf8229726633f75a455353bfc202ac6d88c127477a6ca19",
+    "initial_fixture": "Completed Morty badge4, unstarted medicine/gyms5-6",
+    "stages": [
+      {
+        "case": "chain_jasmine_requests_medicine",
+        "native_dialogue": "OlivineLighthouse_6F_Text_Request",
+        "save": {
+          "counter": [
+            60,
+            61
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3/johto-chain/chain_jasmine_requests_medicine-native-QA-only.sav"
+        },
+        "forced_story_flags": 0,
+        "forced_memory_writes": 0
+      },
+      {
+        "case": "chain_pharmacy_reserved_dose",
+        "native_dialogue": "CianwoodCity_Pharmacy_Text_Give",
+        "save": {
+          "counter": [
+            61,
+            62
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3/johto-chain/chain_pharmacy_reserved_dose-native-QA-only.sav"
+        },
+        "forced_story_flags": 0,
+        "forced_memory_writes": 0
+      },
+      {
+        "case": "chain_actual_chuck_win",
+        "turns": 2,
+        "native_outcome": 1,
+        "enemies": [
+          57,
+          62
+        ],
+        "save": {
+          "counter": [
+            62,
+            63
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3/johto-chain/chain_actual_chuck_win-native-QA-only.sav"
+        },
+        "pc_preserved": true,
+        "forced_memory_writes": 0,
+        "forced_battle_outcomes": 0
+      },
+      {
+        "case": "chain_chuck_wife_fly",
+        "native_dialogue": "CianwoodCity_Text_FlyGiftHM",
+        "save": {
+          "counter": [
+            63,
+            64
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3/johto-chain/chain_chuck_wife_fly-native-QA-only.sav"
+        },
+        "forced_story_flags": 0,
+        "forced_memory_writes": 0
+      },
+      {
+        "case": "chain_medicine_cures_amphy",
+        "native_dialogue": "OlivineLighthouse_6F_Text_Return",
+        "save": {
+          "counter": [
+            64,
+            65
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3/johto-chain/chain_medicine_cures_amphy-native-QA-only.sav"
+        },
+        "forced_story_flags": 0,
+        "forced_memory_writes": 0
+      },
+      {
+        "case": "chain_actual_jasmine_win",
+        "turns": 3,
+        "native_outcome": 1,
+        "enemies": [
+          81,
+          81,
+          208
+        ],
+        "save": {
+          "counter": [
+            65,
+            66
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3/johto-chain/chain_actual_jasmine_win-native-QA-only.sav"
+        },
+        "pc_preserved": true,
+        "forced_memory_writes": 0,
+        "forced_battle_outcomes": 0
+      },
+      {
+        "case": "chain_sailor_strength",
+        "native_dialogue": "OlivineCity_Cafe_Text_StrengthGiftHM",
+        "save": {
+          "counter": [
+            66,
+            67
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v3/johto-chain/chain_sailor_strength-native-QA-only.sav"
+        },
+        "forced_story_flags": 0,
+        "forced_memory_writes": 0
+      }
+    ],
+    "all_pass": true,
+    "same_native_save_chain": true,
+    "qa_position_only_warps": 7,
+    "forced_story_flags_after_initial_fixture": 0,
+    "forced_trainer_flags_after_initial_fixture": 0,
+    "forced_memory_writes": 0,
+    "forced_battle_outcomes": 0,
+    "original_files_unchanged": true
+  },
+  "hoenn_wally_final_integrated": true,
+  "hoenn_wally_native_cases": 7,
+  "hoenn_victory_road_five_trainers_integrated": true,
+  "hoenn_victory_road_native_cases": 11,
+  "surf_shared_region_badge_gate": true,
+  "surf_native_cases": 18,
+  "previous_evidence_root": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2"
+}

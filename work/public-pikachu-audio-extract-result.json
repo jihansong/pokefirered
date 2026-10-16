@@ -1,0 +1,12 @@
+{
+  "source_url": "https://www.youtube.com/watch?v=gF1FJRM8Wck",
+  "source_video_id": "gF1FJRM8Wck",
+  "synthesized": false,
+  "download_complete": false,
+  "decode_verified": false,
+  "title_integrated": false,
+  "package_install_exit": 0,
+  "extract_exit": 1,
+  "error": "Public source audio extraction failed; see log",
+  "finished_utc": "2026-10-04T13:24:03.140514+00:00"
+}

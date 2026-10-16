@@ -1,0 +1,29 @@
+{
+  "status": "EXISTING_FRLG_INTRO_MUSIC_ATTACHED",
+  "song": "MUS_INTRO_FIGHT",
+  "song_id": 277,
+  "song_header": 143832660,
+  "source_rom_sha256": "d92d369507dbeac1f7a8617093fb9e3f75b815431323ac2e745a744d88e118b9",
+  "source_midi_sha256": "87bb74fa5db8b0403bb6ad90a3992e4710e5b4cb3cf0fcddebe8e5b1f35f1287",
+  "temporary_title_entry_only": true,
+  "real_game_rom_modified": false,
+  "user_save_used": false,
+  "capture_start_frame": 1464,
+  "capture_seconds": 12.5235595703125,
+  "se_active_frames": 0,
+  "video_packets_unchanged": true,
+  "audio_seconds": 10,
+  "excerpt": "First 10 seconds; final 0.2 seconds fade out; original tempo",
+  "new_music_created": false,
+  "auditioned": false,
+  "files": {
+    "frlg-mus-intro-fight.wav": {
+      "bytes": 1641532,
+      "sha256": "5120399e966cef14b6a4c00a69461fdd01a83b881128dfe8845b9cc8f67c15d8"
+    },
+    "opening-hooh-v5-frlg-music.mp4": {
+      "bytes": 3380562,
+      "sha256": "3fdf68e86869fd7e18e7f5ecb17498551329c41ace647da48925e94d2c76a9c7"
+    }
+  }
+}

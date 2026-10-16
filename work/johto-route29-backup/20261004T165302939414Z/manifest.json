@@ -1,0 +1,59 @@
+{
+  "status": "dry_run",
+  "changes": {
+    "include/wild_pokemon_area.h": "dd2f3fc68d610c6e7d4e5056ce070a9e8628122e97612eb41aaf8e2a73d2d2b9",
+    "src/wild_pokemon_area.c": "c73c9c260d9a6025b905e5f7a13f9536dd877ad833d3a412ccb448cb3d574e69",
+    "include/pokedex_area_markers.h": "f194f897022ed7f2a2ff37b42c66c7b8134a6e6ffaa6506b14416a035d939f2f",
+    "src/pokedex_area_markers.c": "51349cfdb1a2903cefb19c2ffa5a4035ac8999c5541fee892f65c19bbeb4f461",
+    "src/pokedex_screen.c": "012f39b6a70310f75a254ff9ccedfa2ecd20e732329370f6f45c2ab7a865f7e0",
+    "src/data/wild_encounters.json": "e3f69cefd8db70ae3eeea4b1c5f642b962c952478077b5391b7efa1637f3d488",
+    "tools/johto/route29_wild.json": "61b2499532afb5c9eec0c084c5f1cce271705c759b65e55246c71a508d130323",
+    "tools/johto/apply_route29_wild.py": "603652ddf01d1c301d50c02ddfd19f68f41f7c6615fb6a72247fa1254730dba8",
+    "tools/johto/build_entry.py": "655ac4d4883bc138e035d12bd04f10ca398ffb4ddcf6835daca807c22b937026",
+    "data/layouts/JohtoRoute29/map.bin": "aedcb49f54b0d6fae8d5f2c625a73199181d9d18d9f4c5af1c08f80773418ed8"
+  },
+  "source_sha256": {
+    "src/data/wild_encounters.json": "fea684db1b486e980c74e67e3bac9568b9687c4115efa2667743633e7ecbe977",
+    "src/data/wild_encounters.json.txt": "39bf3af02412bf9dcbdd00068a5efdfa8d846e85045fba6a5c1d5c8bb1d9ca2f",
+    "src/wild_pokemon_area.c": "4d7549c83956633385ae74038855d2eaf7411c486a0728caf3bddc627b0defd2",
+    "include/wild_pokemon_area.h": "5bd063823209809c26476b8fdcc5e0a0c609e1882ab2d89790ab3f79779f9bd6",
+    "src/pokedex_area_markers.c": "b29eea206ed1a7e5131acc83b46c2c4dc3e01bb65078b0095000a405f47da68c",
+    "include/pokedex_area_markers.h": "24c05e359f8db1d0aa73319f8a39cfd706c2e71cceb832441b815c129f739fba",
+    "src/pokedex_screen.c": "4978736c51bdcf77f292df2b777fd9be63a1c6205025f68b972d1b1f547c8fe7",
+    "tools/johto/build_entry.py": "365e95ed857e9047d255f13d585e8d9d7325066dece2de3317a030bde491bb00",
+    "src/data/region_map/region_map_sections.json": "7e969c9a844ee81cb7d93aa4e459000075ee7dc264ffb25b51e6fc542e88dbc7",
+    "data/layouts/JohtoRoute29/map.bin": "a7aee302dcfc8f8cadf7e17be1486d58d0297152c508bc7b2d13b7e8b5640074",
+    "data/layouts/JohtoRoute29/border.bin": "4f4aa105dfd88fa5d7cfa853fd7f794bf2acea638cdba8823481fac2ea22a91f",
+    "data/maps/JohtoRoute29/map.json": "661b02f43cb5c31e2a249014bd72ba37996f4ba6aa46179d0bd0379273b8f4f0",
+    "data/tilesets/primary/general/metatile_attributes.bin": "1f62a949da41adca90ad36ca3597754bee953a8f21781f32aedf6158922c89cb",
+    "src/time_of_day.c": "085ae97022fd04742da19b4b6075243a6c28a663896eb37b43041222dd55d57b"
+  },
+  "save_layout_changed": false,
+  "global_ram_added": 0,
+  "full_region_complete": false,
+  "native_tested": false,
+  "grass": {
+    "rectangle": [
+      6,
+      7,
+      6,
+      2
+    ],
+    "changed_tiles": 12,
+    "grass_metatile": 13,
+    "behavior": 2,
+    "encounter_type": 1,
+    "collision": 0,
+    "elevation": 3,
+    "qa_start": [
+      9,
+      7
+    ],
+    "qa_left": [
+      8,
+      7
+    ],
+    "canonical_build_and_verify": true,
+    "other_generated_outputs_unchanged": true
+  }
+}

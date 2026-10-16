@@ -1,0 +1,1 @@
+arm-none-eabi-objdump -t pokemonthyl.elf | sort -u | grep -E "^0[2389]" | perl -p -e 's/^(\w{8}) (\w).{6} \S+\t(\w{8}) (\S+)$/\1 \2 \3 \4/g' > pokemonthyl.sym

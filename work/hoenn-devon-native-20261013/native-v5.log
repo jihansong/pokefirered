@@ -1,0 +1,1 @@
+{"pass": false, "status": "failed", "cases": 0, "error": "AssertionError(('no confirmed battle end or action menu', ('0x8124115', 0, False, False)))"}

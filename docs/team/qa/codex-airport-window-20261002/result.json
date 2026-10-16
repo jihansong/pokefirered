@@ -1,0 +1,144 @@
+{
+  "save": "saves/pokemonthyl_v1.1.sav",
+  "save_sha256": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+  "original_unchanged": true,
+  "observations": [
+    {
+      "scene": "window_up",
+      "objects": [
+        {
+          "local_id": 255,
+          "x": 28,
+          "y": 2,
+          "priority": 1,
+          "subsprite_table": 2
+        },
+        {
+          "local_id": 5,
+          "x": 22,
+          "y": 7,
+          "priority": 2,
+          "subsprite_table": 1
+        },
+        {
+          "local_id": 7,
+          "x": 27,
+          "y": 1,
+          "priority": 2,
+          "subsprite_table": 1
+        },
+        {
+          "local_id": 8,
+          "x": 30,
+          "y": 2,
+          "priority": 1,
+          "subsprite_table": 2
+        },
+        {
+          "local_id": 254,
+          "x": 28,
+          "y": 3,
+          "priority": 1,
+          "subsprite_table": 2
+        }
+      ],
+      "follower_present": true
+    },
+    {
+      "scene": "window_left",
+      "objects": [
+        {
+          "local_id": 255,
+          "x": 27,
+          "y": 2,
+          "priority": 1,
+          "subsprite_table": 2
+        },
+        {
+          "local_id": 5,
+          "x": 22,
+          "y": 7,
+          "priority": 2,
+          "subsprite_table": 1
+        },
+        {
+          "local_id": 7,
+          "x": 27,
+          "y": 1,
+          "priority": 2,
+          "subsprite_table": 1
+        },
+        {
+          "local_id": 8,
+          "x": 30,
+          "y": 2,
+          "priority": 1,
+          "subsprite_table": 2
+        },
+        {
+          "local_id": 254,
+          "x": 28,
+          "y": 2,
+          "priority": 1,
+          "subsprite_table": 2
+        },
+        {
+          "local_id": 4,
+          "x": 18,
+          "y": 5,
+          "priority": 2,
+          "subsprite_table": 1
+        }
+      ],
+      "follower_present": true
+    },
+    {
+      "scene": "away_from_window",
+      "objects": [
+        {
+          "local_id": 255,
+          "x": 27,
+          "y": 7,
+          "priority": 2,
+          "subsprite_table": 1
+        },
+        {
+          "local_id": 5,
+          "x": 22,
+          "y": 6,
+          "priority": 2,
+          "subsprite_table": 1
+        },
+        {
+          "local_id": 7,
+          "x": 27,
+          "y": 1,
+          "priority": 2,
+          "subsprite_table": 1
+        },
+        {
+          "local_id": 8,
+          "x": 30,
+          "y": 2,
+          "priority": 1,
+          "subsprite_table": 2
+        },
+        {
+          "local_id": 254,
+          "x": 27,
+          "y": 6,
+          "priority": 2,
+          "subsprite_table": 1
+        },
+        {
+          "local_id": 4,
+          "x": 18,
+          "y": 5,
+          "priority": 2,
+          "subsprite_table": 1
+        }
+      ],
+      "follower_present": true
+    }
+  ]
+}

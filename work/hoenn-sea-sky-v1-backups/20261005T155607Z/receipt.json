@@ -1,0 +1,52 @@
+{
+  "chapter": "Seafloor Archie -> Sootopolis storm -> Sky Pillar -> Juan",
+  "new_flags": [
+    "FLAG_HOENN_SEAFLOOR_CLEARED",
+    "FLAG_HOENN_RAYQUAZA_AWAKENED"
+  ],
+  "terrain_unchanged": true,
+  "juan_reward_paths_unchanged": true,
+  "legacy_rain_badge_bypass": true,
+  "native_runtime_validated": false,
+  "save_layout_changed": false,
+  "original_files": {
+    "tools/hoenn_import/patches/SeafloorCavern_Room9.scripts.inc": null,
+    "data/maps/SeafloorCavern_Room9/scripts.inc": "6a02f6f19e7074499ae3d6bb28fe95c145a1af26b8e1760868bbc35b99b160f1",
+    "data/maps/SootopolisCity_Gym_1F/map.json": "8c407a867e70511a625d8106caaa1cb68db0aac35b3e002858fd0d54207944f9",
+    "data/maps/SkyPillar_Top/scripts.inc": "238640447242593d50cc07d1b0e11e9d18438ac14d98938db083a0102e1ffa63",
+    "tools/hoenn_import/patches/SootopolisCity_Gym_1F.scripts.inc": "24758b244a7e59e180ba1d631c6cbea380c1b7bc5ece34aa93f9145583ec693c",
+    "tools/hoenn_import/patches/SootopolisCity_Gym_1F.text.inc": "b84cbf7fc7987d2b65bdf2875a506fd7589a526c874e55d014cab205bf616be6",
+    "tools/hoenn_import/patches/SeafloorCavern_Room9.text.inc": null,
+    "data/maps/SeafloorCavern_Room9/text.inc": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/maps/SkyPillar_Top/text.inc": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tools/hoenn_import/patches/SeafloorCavern_Room9.json": null,
+    "tools/hoenn_import/patches/SkyPillar_Top.json": null,
+    "tools/hoenn_import/patches/SootopolisCity.scripts.inc": "609ba5aabbd080f74905ac3776f330dbf75a74ed1fb10e242a66d0c068cf1831",
+    "data/maps/SeafloorCavern_Room9/map.json": "780b05f46f0e5b4585317d99f07f1959d017b8ebf0e212950dae8333d02e68bc",
+    "data/maps/SootopolisCity/scripts.inc": "48cd98f42f70d2e8a613d9135cecd6a72d299401141e8dddd0c103263564bd61",
+    "include/constants/flags_hoenn_story.h": "81fc3088e5b764728ce60f7ddef3fd538c160f94aef677c284e3cde6c3ff1bcc",
+    "data/maps/SkyPillar_Top/map.json": "5d29fa04cc7ff393e7126e809e668bdc401cd65283d05c0a3716717343b7bea0",
+    "data/maps/SootopolisCity_Gym_1F/scripts.inc": "d222e7013667f0ad3572ff0ffb0ca8f17ae3a0e3b3349397669412db99c211b0",
+    "tools/hoenn_import/patches/SootopolisCity.text.inc": null,
+    "tools/hoenn_import/patches/SkyPillar_Top.scripts.inc": null,
+    "data/maps/SootopolisCity_Gym_1F/text.inc": "2169cca78935c73d6f7645249104eae4d0dba40a5dfcb3f119a8ffb653fe7883",
+    "data/maps/SootopolisCity/text.inc": "e4afe241a3da9fb8c838be9d80a1768faa3215fc5f0bf5888f989d9c43260dc2",
+    "tools/hoenn_import/patches/SkyPillar_Top.text.inc": null,
+    "tools/hoenn_import/patches/SootopolisCity.json": null,
+    "data/maps/SootopolisCity/map.json": "ca291287ab489b7280b7acafb5f52dbc3698ac60bcc477bf36a7d34e73574aab"
+  },
+  "canonical_files": {
+    "include/constants/flags_hoenn_story.h": "64a87989e090a8b7184df8186a5132335b235460eb7b9bb557a0a45710a96c57",
+    "tools/hoenn_import/patches/SeafloorCavern_Room9.json": "9895c95d6c04df8ed97e72928c2340ccb6d2ec9e2939d68fa95a97bfdc21396d",
+    "tools/hoenn_import/patches/SeafloorCavern_Room9.scripts.inc": "8f13a06fccb593489bfc0d0afa61977b2fdad2d4a27550b80db6e568aca24a0d",
+    "tools/hoenn_import/patches/SeafloorCavern_Room9.text.inc": "02019c1a418c3db55ebe3813a0f346fc7a22e9fb0ba28b17dd3737adb70711c1",
+    "tools/hoenn_import/patches/SootopolisCity.json": "9e58c97169e5d0ea7d44ae110febb257c6cbaaaa7a30e8a38be78db6533e682a",
+    "tools/hoenn_import/patches/SootopolisCity.scripts.inc": "35054e8066a37fbb31969156a2ab86a75b48e3741891fd739766fcc41f0fe9c7",
+    "tools/hoenn_import/patches/SootopolisCity.text.inc": "fb576cad6b5a183059cdc4036d4af33bbc818bb8b81a20f2357e28380b834956",
+    "tools/hoenn_import/patches/SkyPillar_Top.json": "c6b73ef226c5f786da4437d9d6f7ceea2f7748fb89b831ece6748f17cfb79ec2",
+    "tools/hoenn_import/patches/SkyPillar_Top.scripts.inc": "f19a47265474327e764f54cf215f7e0435ed7af679defc30a019e84b4358f2e7",
+    "tools/hoenn_import/patches/SkyPillar_Top.text.inc": "3bace1459907f3ab4ea64598f123eac35f1e2561b5b6a36bee9baa7d9e2f8243",
+    "tools/hoenn_import/patches/SootopolisCity_Gym_1F.scripts.inc": "9101b64e22acff500ae103210da7590942b76fbb4cc3a398f5af9a8f184adc30",
+    "tools/hoenn_import/patches/SootopolisCity_Gym_1F.text.inc": "410b2d31e8807a858a6fe4941a9551f236a6576adf38625eb1e6b5444b86159b"
+  }
+}

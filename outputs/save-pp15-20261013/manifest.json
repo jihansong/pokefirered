@@ -1,0 +1,21 @@
+{
+  "created_UTC": "2026-10-13T06:14:39.490831+00:00",
+  "status": "ROM_promoted_and_new_SAV_added",
+  "ROM": "/workspaces/pokefirered/pokemonthyl.gba",
+  "ROM_sha256": "e1560c21cf51c7c1c2af8dd04f3f6a429eb3d6af4f3e157bc66aa187bef65c34",
+  "SAV": "/workspaces/pokefirered/saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav",
+  "SAV_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+  "patch_sha256": "e68af5d6852c5157e716ebbf7a9483fddfafd90dba219597204bff7a7a91a3f8",
+  "previous_ROM_sha256": "63904802b37dc5e922ec616361c0be3388f1030e5b2c1a0b7a2949f2a33c1f7c",
+  "backup": "/workspaces/pokefirered/work/save-inventory-pp-20261013/before-final-promotion",
+  "all_10_existing_SAVs_byte_identical": true,
+  "native_cases_passed": 63,
+  "native_heal_slots": 1464,
+  "actual_TM17_learning_and_summary_pass": true,
+  "stock_356_move_table_entries_unchanged": true,
+  "RAM_symbols_unchanged": 922,
+  "native_RAM_writes": 0,
+  "actual_DELTA_tested": false,
+  "regional_campaign_completion_claimed": false,
+  "existing_BadEgg_repaired": false
+}

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/native_johto_league_nurse_diag.py", line 103, in <module>
+    for field in ['pc','dex','flags','trainers','items']:assert after[field]==before[field],('diagnostic altered story/state',field)
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('diagnostic altered story/state', 'pc')

@@ -1,0 +1,11 @@
+{
+  "pass": true,
+  "root_four_files_match": true,
+  "main_rom_sha256": "111d4e1ae7e6572845e5eb31ed33a1216fff8aa3d3e11466f287b74419abe682",
+  "delivery": "/workspaces/pokefirered/outputs/rom-regions-update-q8-20261006T044242Z",
+  "native_cases": 119,
+  "compiled_wild_tables": 18,
+  "original_saves_unchanged": true,
+  "title_v8_rocket_v11_opening_v7_preserved": true,
+  "whole_regions_complete": false
+}

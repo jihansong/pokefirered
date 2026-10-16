@@ -1,0 +1,21 @@
+{
+  "pass": false,
+  "arbitrary_RAM_writes": 0,
+  "direct_script_calls": 0,
+  "forced_battle_outcomes": 0,
+  "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+  "scope": "Native full-party static wild capture to PC; game SAVE/cold vs same-ROM raw core state restore. Capture to PC and native SAVE/cold on f31 edited v1.25. PC UI is a following separate linked checkpoint.",
+  "stages": [],
+  "preboot_fixture_changes": [
+    "Position/quest log",
+    "SquirtBottle story flag true and Sudowoodo clear false",
+    "Master Ball 99 unchanged until actual capture",
+    "Repel250"
+  ],
+  "error": "AssertionError()",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/work/continuation-20261013/capture-pc.py\", line 62, in <module>\n    baseline=initial(e);assert baseline['party_count']==6 and len(baseline['pc_rows'])==119\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "original_all_SAVs_unchanged": true,
+  "original_inputs_unchanged": true,
+  "original_v12_hash": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+  "current_ROM_unchanged": true
+}

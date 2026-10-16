@@ -1,0 +1,37 @@
+{
+  "status": "CURRENT_ROM_AND_V125_SCOPED_VERIFICATION_COMPLETE",
+  "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+  "sav_sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+  "idle_frames": 36000,
+  "same_ROM_state_restore_applied_verified": true,
+  "Pikachu_dive_samples": 16,
+  "Misty_water_land_samples": 21,
+  "Johto_actual_professor_unlock_151_to_251": true,
+  "Hoenn_eligible_fixture_UI_202": true,
+  "native_list_order_checks": 5,
+  "native_SAVE_cold_door_cases": 2,
+  "inputs_unchanged": true,
+  "product_changes": false,
+  "whole_campaign_complete": false,
+  "actual_DELTA_tested": false,
+  "existing_BadEgg_recovered": false,
+  "manual_visual_scope": [
+    "Johto numerical page",
+    "Hoenn contents menu"
+  ],
+  "remaining": [
+    "whole natural three-region campaign",
+    "all doors and Dive maps",
+    "PC UI and capture/battle stress",
+    "actual DELTA and old state reproduction",
+    "existing Bad Egg recovery",
+    "dedicated Elm sprite and unfinished story expansion"
+  ],
+  "evidence": {
+    "idle-state": "/workspaces/pokefirered/work/followup-20261013/idle-state/validation.json",
+    "state-applied": "/workspaces/pokefirered/work/followup-20261013/state-applied/validation.json",
+    "misty-dive": "/workspaces/pokefirered/work/followup-20261013/misty-dive/validation.json",
+    "doors-dex": "/workspaces/pokefirered/work/followup-20261013/doors-dex/validation.json",
+    "dex-list-order": "/workspaces/pokefirered/work/followup-20261013/dex-list-order/validation.json"
+  }
+}

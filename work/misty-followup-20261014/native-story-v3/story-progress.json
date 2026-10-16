@@ -1,0 +1,106 @@
+{
+  "checks": [
+    {
+      "case": "native-evolved-party-stage-0",
+      "pass_all": true,
+      "count": 3,
+      "species": [
+        "STARMIE",
+        "GOLDUCK",
+        "SEADRA"
+      ],
+      "level": 48,
+      "native_function_hook": true,
+      "player_party_pc_dex_preserved": true
+    },
+    {
+      "case": "native-evolved-party-stage-1",
+      "pass_all": true,
+      "count": 4,
+      "species": [
+        "STARMIE",
+        "GOLDUCK",
+        "SEADRA",
+        "POLITOED"
+      ],
+      "level": 52,
+      "native_function_hook": true,
+      "player_party_pc_dex_preserved": true
+    },
+    {
+      "case": "native-evolved-party-stage-2",
+      "pass_all": true,
+      "count": 5,
+      "species": [
+        "STARMIE",
+        "GOLDUCK",
+        "SEADRA",
+        "POLITOED",
+        "CORSOLA"
+      ],
+      "level": 56,
+      "native_function_hook": true,
+      "player_party_pc_dex_preserved": true
+    },
+    {
+      "case": "native-evolved-party-stage-3",
+      "pass_all": true,
+      "count": 6,
+      "species": [
+        "STARMIE",
+        "GOLDUCK",
+        "KINGDRA",
+        "POLITOED",
+        "CORSOLA",
+        "AZUMARILL"
+      ],
+      "level": 60,
+      "native_function_hook": true,
+      "player_party_pc_dex_preserved": true
+    },
+    {
+      "case": "native-evolved-party-stage-4",
+      "pass_all": true,
+      "count": 6,
+      "species": [
+        "STARMIE",
+        "GOLDUCK",
+        "KINGDRA",
+        "POLITOED",
+        "CORSOLA",
+        "AZUMARILL"
+      ],
+      "level": 66,
+      "native_function_hook": true,
+      "player_party_pc_dex_preserved": true
+    },
+    {
+      "case": "pre-champion-open",
+      "pass_all": true,
+      "actual_UP_door_input": true,
+      "prepared_save_fixture": true,
+      "player_party_pc_dex_preserved": true
+    },
+    {
+      "case": "champion-not-joined-open",
+      "pass_all": true,
+      "actual_UP_door_input": true,
+      "prepared_save_fixture": true,
+      "player_party_pc_dex_preserved": true
+    },
+    {
+      "case": "joined-closed",
+      "pass_all": true,
+      "actual_UP_door_input": true,
+      "prepared_save_fixture": true,
+      "player_party_pc_dex_preserved": true
+    },
+    {
+      "case": "not-joined-near-gym-leader-remains",
+      "pass_all": true,
+      "prepared_near_leader_save_fixture": true
+    }
+  ],
+  "trail_samples": [],
+  "original_savs_unchanged": true
+}

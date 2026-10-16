@@ -1,0 +1,197 @@
+{
+  "status": "FINISHED",
+  "rom_sha256": "af9ba1f61fce4630d488567ed11b83847dfbc1fcff435653bedd4d86dc622818",
+  "jobs_total": 31,
+  "max_workers": 2,
+  "results": [
+    {
+      "name": "rival-110-may-win-3",
+      "exit": 0,
+      "seconds": 23.443145751953125,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-110-may-win-3.log"
+    },
+    {
+      "name": "rival-110-may-win-1",
+      "exit": 0,
+      "seconds": 24.80127501487732,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-110-may-win-1.log"
+    },
+    {
+      "name": "rival-110-may-loss-2",
+      "exit": 1,
+      "seconds": 26.744561672210693,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-110-may-loss-2.log"
+    },
+    {
+      "name": "rival-110-brendan-win-2",
+      "exit": 0,
+      "seconds": 32.53665065765381,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-110-brendan-win-2.log"
+    },
+    {
+      "name": "rival-110-brendan-loss-2",
+      "exit": 1,
+      "seconds": 25.921852827072144,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-110-brendan-loss-2.log"
+    },
+    {
+      "name": "rival-119-may-win-1",
+      "exit": 0,
+      "seconds": 34.666101932525635,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-119-may-win-1.log"
+    },
+    {
+      "name": "rival-119-may-win-2",
+      "exit": 0,
+      "seconds": 39.107192277908325,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-119-may-win-2.log"
+    },
+    {
+      "name": "rival-119-brendan-win-1",
+      "exit": 0,
+      "seconds": 36.17070984840393,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-119-brendan-win-1.log"
+    },
+    {
+      "name": "rival-119-may-loss-1",
+      "exit": 1,
+      "seconds": 27.97683572769165,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-119-may-loss-1.log"
+    },
+    {
+      "name": "rival-119-brendan-loss-1",
+      "exit": 1,
+      "seconds": 27.08752155303955,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-119-brendan-loss-1.log"
+    },
+    {
+      "name": "rival-110-gift-fresh",
+      "exit": 0,
+      "seconds": 20.527070999145508,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-110-gift-fresh.log"
+    },
+    {
+      "name": "rival-110-gift-bag",
+      "exit": 0,
+      "seconds": 20.720637321472168,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-110-gift-bag.log"
+    },
+    {
+      "name": "rival-110-gift-history",
+      "exit": 0,
+      "seconds": 22.899972677230835,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-110-gift-history.log"
+    },
+    {
+      "name": "rival-110-gift-done",
+      "exit": 0,
+      "seconds": 20.464345693588257,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-110-gift-done.log"
+    },
+    {
+      "name": "rival-119-gift-fresh",
+      "exit": 0,
+      "seconds": 20.9808087348938,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-119-gift-fresh.log"
+    },
+    {
+      "name": "rival-119-gift-bag",
+      "exit": 0,
+      "seconds": 20.87698483467102,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-119-gift-bag.log"
+    },
+    {
+      "name": "rival-119-gift-pc",
+      "exit": 0,
+      "seconds": 20.778813123703003,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-119-gift-pc.log"
+    },
+    {
+      "name": "rival-119-gift-history",
+      "exit": 0,
+      "seconds": 20.90283966064453,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-119-gift-history.log"
+    },
+    {
+      "name": "rival-119-gift-done",
+      "exit": 0,
+      "seconds": 19.507439851760864,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-119-gift-done.log"
+    },
+    {
+      "name": "rival-110-before-birch",
+      "exit": 0,
+      "seconds": 20.859334468841553,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-110-before-birch.log"
+    },
+    {
+      "name": "rival-119-before-weather",
+      "exit": 0,
+      "seconds": 20.032273769378662,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-119-before-weather.log"
+    },
+    {
+      "name": "rival-119-before-birch",
+      "exit": 0,
+      "seconds": 20.010555028915405,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-119-before-birch.log"
+    },
+    {
+      "name": "rival-119-before-110-receipt",
+      "exit": 0,
+      "seconds": 20.858973026275635,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-119-before-110-receipt.log"
+    },
+    {
+      "name": "rival-119-before-110-battle",
+      "exit": 0,
+      "seconds": 21.658624172210693,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-rival-119-before-110-battle.log"
+    },
+    {
+      "name": "bridge-blocked-lower",
+      "exit": 0,
+      "seconds": 21.10808300971985,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-bridge-blocked-lower.log"
+    },
+    {
+      "name": "bridge-clear-upper",
+      "exit": 0,
+      "seconds": 21.5383198261261,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-bridge-clear-upper.log"
+    },
+    {
+      "name": "bridge-legacy-badge-upper",
+      "exit": 0,
+      "seconds": 21.618080854415894,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-bridge-legacy-badge-upper.log"
+    },
+    {
+      "name": "bridge-legacy-badge-lower",
+      "exit": 0,
+      "seconds": 20.641798496246338,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-bridge-legacy-badge-lower.log"
+    },
+    {
+      "name": "bridge-legacy-win-upper",
+      "exit": 0,
+      "seconds": 22.255921363830566,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-bridge-legacy-win-upper.log"
+    },
+    {
+      "name": "bridge-legacy-win-lower",
+      "exit": 0,
+      "seconds": 21.73917007446289,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-bridge-legacy-win-lower.log"
+    },
+    {
+      "name": "nurse-storage-diagnostic",
+      "exit": 1,
+      "seconds": 21.755045652389526,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-remaining-nurse-storage-diagnostic.log"
+    }
+  ],
+  "all_pass": false,
+  "main_unchanged": true,
+  "original_saves_unchanged": true
+}

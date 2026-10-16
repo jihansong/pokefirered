@@ -1,0 +1,295 @@
+[
+  {
+    "name": "pokemonthyl",
+    "sha256": "5ce577d64ca930d313ddcbab4e411b9beae801d250836259b52ef49004cd4a97",
+    "rom_bytes": 16777216,
+    "elf_matches_rom": true,
+    "sections": [
+      {
+        "addr": "0x8000000",
+        "size": 1464080,
+        "match": true,
+        "nonheader_mismatch": 0
+      },
+      {
+        "addr": "0x8165710",
+        "size": 856380,
+        "match": true,
+        "nonheader_mismatch": 0
+      },
+      {
+        "addr": "0x823684c",
+        "size": 57820,
+        "match": true,
+        "nonheader_mismatch": 0
+      },
+      {
+        "addr": "0x8244a28",
+        "size": 7185996,
+        "match": true,
+        "nonheader_mismatch": 0
+      },
+      {
+        "addr": "0x891f074",
+        "size": 513436,
+        "match": true,
+        "nonheader_mismatch": 0
+      },
+      {
+        "addr": "0x899c610",
+        "size": 1640,
+        "match": true,
+        "nonheader_mismatch": 0
+      },
+      {
+        "addr": "0x899cc78",
+        "size": 193364,
+        "match": true,
+        "nonheader_mismatch": 0
+      },
+      {
+        "addr": "0x8d00000",
+        "size": 1782744,
+        "match": true,
+        "nonheader_mismatch": 0
+      },
+      {
+        "addr": "0x8eb33d8",
+        "size": 279884,
+        "match": true,
+        "nonheader_mismatch": 0
+      }
+    ],
+    "regions": {
+      "ewram": {
+        "used": 261860,
+        "free": 284
+      },
+      "iwram": {
+        "used": 29900,
+        "free": 2868
+      },
+      "rom": {
+        "used": 15694116,
+        "free": 17860316
+      }
+    },
+    "assets": [
+      {
+        "symbol": "gTrainerFrontPic_JessieJames",
+        "file": "graphics/trainers/front_pics/jessie_james_front_pic.4bpp.lz",
+        "same": true,
+        "size": 2048,
+        "v11_match": "jessie-james-v11-game-size-64.4bpp"
+      },
+      {
+        "symbol": "gTrainerPalette_JessieJames",
+        "file": "graphics/trainers/palettes/jessie_james.gbapal.lz",
+        "same": true,
+        "size": 32,
+        "v11_match": "jessie-james-v11-game-size-64.gbapal"
+      }
+    ],
+    "opening_symbols": [
+      "sHoOhLevelUpLearnset",
+      "sPicTable_HoOh",
+      "sAnim_HoOhFlapWings",
+      "sAnim_HoOhStayStill",
+      "sAnimTable_HoOh",
+      "sEasyChatWord_HooHah",
+      "sOpeningEyeAnimCmds",
+      "sOpeningEyeAnimTable",
+      "IntroCB_Opening",
+      "Movement_HoOhAppear",
+      "Movement_HoOhApproach",
+      "intro_opening.o",
+      "sOpening",
+      "VBlankCB_Opening",
+      "__Opening_Run_veneer",
+      "__Opening_Init_veneer",
+      "__Opening_Free_veneer",
+      "Opening_Run",
+      "Cry_HoOh",
+      "NavelRock_Summit_EventScript_DefeatedHoOh",
+      "gBattleAnimSpriteGfx_OpeningEye",
+      "Help_Text_OpeningMenu",
+      "gMonPalette_HoOh",
+      "Opening_Free",
+      "NavelRock_Summit_EventScript_HoOh",
+      "NavelRock_Summit_EventScript_HideHoOh",
+      "Opening_Init",
+      "gMonFootprint_HoOh",
+      "gBattleAnimSpritePal_OpeningEye",
+      "gHoOhPokedexText",
+      "gObjectEventPic_HoOh",
+      "gOpeningDroppedFrames",
+      "gMonIcon_HoOh",
+      "NavelRock_Summit_EventScript_RanFromHoOh",
+      "NavelRock_Summit_EventScript_TryShowHoOh",
+      "gHoOhPokedexTextUnused",
+      "gOpeningEyeSpriteTemplate",
+      "NavelRock_Summit_EventScript_TryRemoveHoOh",
+      "gObjectEventGraphicsInfo_HoOh",
+      "gMonShinyPalette_HoOh",
+      "gMonFrontPic_HoOh",
+      "gMonBackPic_HoOh"
+    ]
+  },
+  {
+    "name": "pokemonthyl-title-v7-test",
+    "sha256": "d4129ddef01df49a6a2b8a5ac79fb2a9f219d8eb3a41beba0c1bb5975d896f2b",
+    "rom_bytes": 16777216,
+    "elf_matches_rom": true,
+    "sections": [
+      {
+        "addr": "0x8000000",
+        "size": 1464176,
+        "match": true,
+        "nonheader_mismatch": 0
+      },
+      {
+        "addr": "0x8165770",
+        "size": 856380,
+        "match": true,
+        "nonheader_mismatch": 0
+      },
+      {
+        "addr": "0x82368ac",
+        "size": 57820,
+        "match": true,
+        "nonheader_mismatch": 0
+      },
+      {
+        "addr": "0x8244a88",
+        "size": 7227852,
+        "match": true,
+        "nonheader_mismatch": 0
+      },
+      {
+        "addr": "0x8929454",
+        "size": 513436,
+        "match": true,
+        "nonheader_mismatch": 0
+      },
+      {
+        "addr": "0x89a69f0",
+        "size": 1640,
+        "match": true,
+        "nonheader_mismatch": 0
+      },
+      {
+        "addr": "0x89a7058",
+        "size": 193364,
+        "match": true,
+        "nonheader_mismatch": 0
+      },
+      {
+        "addr": "0x8d00000",
+        "size": 1785280,
+        "match": true,
+        "nonheader_mismatch": 0
+      },
+      {
+        "addr": "0x8eb3dc0",
+        "size": 279884,
+        "match": true,
+        "nonheader_mismatch": 0
+      }
+    ],
+    "regions": {
+      "ewram": {
+        "used": 261860,
+        "free": 284
+      },
+      "iwram": {
+        "used": 29900,
+        "free": 2868
+      },
+      "rom": {
+        "used": 15696652,
+        "free": 17857780
+      }
+    },
+    "assets": [
+      {
+        "symbol": "sThunderYellowTitleTiles",
+        "file": "graphics/title_screen/thunder_yellow/approved-title-v7.8bpp",
+        "same": true,
+        "size": 38400,
+        "v11_match": null
+      },
+      {
+        "symbol": "sThunderYellowTitlePalette",
+        "file": "graphics/title_screen/thunder_yellow/approved-title-v7.gbapal",
+        "same": true,
+        "size": 512,
+        "v11_match": null
+      },
+      {
+        "symbol": "sThunderYellowTitleMap",
+        "file": "graphics/title_screen/thunder_yellow/approved-title-v7.map.bin",
+        "same": true,
+        "size": 2048,
+        "v11_match": null
+      },
+      {
+        "symbol": "gTrainerFrontPic_JessieJames",
+        "file": "graphics/trainers/front_pics/jessie_james_front_pic.4bpp.lz",
+        "same": true,
+        "size": 2048,
+        "v11_match": "jessie-james-v11-game-size-64.4bpp"
+      },
+      {
+        "symbol": "gTrainerPalette_JessieJames",
+        "file": "graphics/trainers/palettes/jessie_james.gbapal.lz",
+        "same": true,
+        "size": 32,
+        "v11_match": "jessie-james-v11-game-size-64.gbapal"
+      }
+    ],
+    "opening_symbols": [
+      "sHoOhLevelUpLearnset",
+      "sPicTable_HoOh",
+      "sAnim_HoOhFlapWings",
+      "sAnim_HoOhStayStill",
+      "sAnimTable_HoOh",
+      "sEasyChatWord_HooHah",
+      "sOpeningEyeAnimCmds",
+      "sOpeningEyeAnimTable",
+      "IntroCB_Opening",
+      "Movement_HoOhAppear",
+      "Movement_HoOhApproach",
+      "intro_opening.o",
+      "sOpening",
+      "VBlankCB_Opening",
+      "__Opening_Run_veneer",
+      "__Opening_Init_veneer",
+      "__Opening_Free_veneer",
+      "Opening_Run",
+      "Cry_HoOh",
+      "NavelRock_Summit_EventScript_DefeatedHoOh",
+      "gBattleAnimSpriteGfx_OpeningEye",
+      "Help_Text_OpeningMenu",
+      "gMonPalette_HoOh",
+      "Opening_Free",
+      "NavelRock_Summit_EventScript_HoOh",
+      "NavelRock_Summit_EventScript_HideHoOh",
+      "Opening_Init",
+      "gMonFootprint_HoOh",
+      "gBattleAnimSpritePal_OpeningEye",
+      "gHoOhPokedexText",
+      "gObjectEventPic_HoOh",
+      "gOpeningDroppedFrames",
+      "gMonIcon_HoOh",
+      "NavelRock_Summit_EventScript_RanFromHoOh",
+      "NavelRock_Summit_EventScript_TryShowHoOh",
+      "gHoOhPokedexTextUnused",
+      "gOpeningEyeSpriteTemplate",
+      "NavelRock_Summit_EventScript_TryRemoveHoOh",
+      "gObjectEventGraphicsInfo_HoOh",
+      "gMonShinyPalette_HoOh",
+      "gMonFrontPic_HoOh",
+      "gMonBackPic_HoOh"
+    ]
+  }
+]

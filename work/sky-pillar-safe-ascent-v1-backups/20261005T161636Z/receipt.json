@@ -1,0 +1,24 @@
+{
+  "changed_runtime_tile": [
+    8,
+    2
+  ],
+  "runtime_tile_from": "0x3607",
+  "runtime_tile_to": "0x3235",
+  "map_ids_warp_ids_unchanged": true,
+  "source_terrain_unchanged": true,
+  "save_layout_changed": false,
+  "legacy_rain_badge_bypass": true,
+  "native_runtime_validated": false,
+  "original_files": {
+    "data/maps/SkyPillar_4F/map.json": "eb0aa4bed30c73fd8e160f550f34f4dc87e90b4ac13b033b2fedadc351f735c7",
+    "tools/hoenn_import/patches/SkyPillar_4F.mapscripts": null,
+    "data/maps/SkyPillar_4F/scripts.inc": "d849d83da3a7827d7c3f29a1346b9758de3d7188ce97d93251c2ba02b0b34ccf",
+    "data/maps/SkyPillar_4F/text.inc": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tools/hoenn_import/patches/SkyPillar_4F.scripts.inc": null,
+    "data/maps/SootopolisCity/map.json": "942852871090a4e227005a2f093f424450892106484dc12019b1c6514d4ce88b",
+    "data/maps/SootopolisCity/scripts.inc": "b78ea165550c42d00a8d5d42e25b76595f1d9e2327b1dd0a18c17a7dfc2c6aa8",
+    "data/maps/SootopolisCity/text.inc": "bec61dc618ee68cb5f51449304588e3e62a13ac73e43dcc3f888c89d64df69b7",
+    "tools/hoenn_import/patches/SootopolisCity.text.inc": "fb576cad6b5a183059cdc4036d4af33bbc818bb8b81a20f2357e28380b834956"
+  }
+}

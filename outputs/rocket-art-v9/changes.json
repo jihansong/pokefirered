@@ -1,0 +1,246 @@
+{
+  "status": "native_small_cleanup_draft_pending_visual_review",
+  "method": "Manually selected native 4bpp asset-coordinate edits after 1x/8x source inspection; not AI image generation, not a new drawing, no resampling or palette change. No Piskel/UI operation is claimed for this version.",
+  "changed_pixels": 26,
+  "edits": [
+    {
+      "x": 11,
+      "y": 7,
+      "from": 3,
+      "to": 10,
+      "group": "roy_hair",
+      "reason": "Connect the violet hair shadow; remove isolated grey/blue pixels and disconnected far-side highlight specks."
+    },
+    {
+      "x": 15,
+      "y": 7,
+      "from": 2,
+      "to": 8,
+      "group": "roy_hair",
+      "reason": "Connect the violet hair shadow; remove isolated grey/blue pixels and disconnected far-side highlight specks."
+    },
+    {
+      "x": 18,
+      "y": 7,
+      "from": 14,
+      "to": 8,
+      "group": "roy_hair",
+      "reason": "Connect the violet hair shadow; remove isolated grey/blue pixels and disconnected far-side highlight specks."
+    },
+    {
+      "x": 23,
+      "y": 7,
+      "from": 2,
+      "to": 8,
+      "group": "roy_hair",
+      "reason": "Connect the violet hair shadow; remove isolated grey/blue pixels and disconnected far-side highlight specks."
+    },
+    {
+      "x": 13,
+      "y": 8,
+      "from": 2,
+      "to": 8,
+      "group": "roy_hair",
+      "reason": "Connect the violet hair shadow; remove isolated grey/blue pixels and disconnected far-side highlight specks."
+    },
+    {
+      "x": 20,
+      "y": 7,
+      "from": 10,
+      "to": 9,
+      "group": "roy_hair",
+      "reason": "Connect the violet hair shadow; remove isolated grey/blue pixels and disconnected far-side highlight specks."
+    },
+    {
+      "x": 22,
+      "y": 7,
+      "from": 10,
+      "to": 9,
+      "group": "roy_hair",
+      "reason": "Connect the violet hair shadow; remove isolated grey/blue pixels and disconnected far-side highlight specks."
+    },
+    {
+      "x": 23,
+      "y": 11,
+      "from": 9,
+      "to": 8,
+      "group": "roy_hair",
+      "reason": "Connect the violet hair shadow; remove isolated grey/blue pixels and disconnected far-side highlight specks."
+    },
+    {
+      "x": 23,
+      "y": 12,
+      "from": 9,
+      "to": 8,
+      "group": "roy_hair",
+      "reason": "Connect the violet hair shadow; remove isolated grey/blue pixels and disconnected far-side highlight specks."
+    },
+    {
+      "x": 24,
+      "y": 12,
+      "from": 9,
+      "to": 8,
+      "group": "roy_hair",
+      "reason": "Connect the violet hair shadow; remove isolated grey/blue pixels and disconnected far-side highlight specks."
+    },
+    {
+      "x": 46,
+      "y": 2,
+      "from": 2,
+      "to": 11,
+      "group": "jessie_hair",
+      "reason": "Replace grey hair pixels with the existing dark-red shade; join the bright crown by removing isolated dark flecks."
+    },
+    {
+      "x": 36,
+      "y": 4,
+      "from": 2,
+      "to": 11,
+      "group": "jessie_hair",
+      "reason": "Replace grey hair pixels with the existing dark-red shade; join the bright crown by removing isolated dark flecks."
+    },
+    {
+      "x": 40,
+      "y": 7,
+      "from": 2,
+      "to": 11,
+      "group": "jessie_hair",
+      "reason": "Replace grey hair pixels with the existing dark-red shade; join the bright crown by removing isolated dark flecks."
+    },
+    {
+      "x": 43,
+      "y": 5,
+      "from": 11,
+      "to": 12,
+      "group": "jessie_hair",
+      "reason": "Replace grey hair pixels with the existing dark-red shade; join the bright crown by removing isolated dark flecks."
+    },
+    {
+      "x": 47,
+      "y": 5,
+      "from": 11,
+      "to": 12,
+      "group": "jessie_hair",
+      "reason": "Replace grey hair pixels with the existing dark-red shade; join the bright crown by removing isolated dark flecks."
+    },
+    {
+      "x": 48,
+      "y": 5,
+      "from": 11,
+      "to": 12,
+      "group": "jessie_hair",
+      "reason": "Replace grey hair pixels with the existing dark-red shade; join the bright crown by removing isolated dark flecks."
+    },
+    {
+      "x": 40,
+      "y": 6,
+      "from": 11,
+      "to": 12,
+      "group": "jessie_hair",
+      "reason": "Replace grey hair pixels with the existing dark-red shade; join the bright crown by removing isolated dark flecks."
+    },
+    {
+      "x": 26,
+      "y": 34,
+      "from": 3,
+      "to": 2,
+      "group": "roy_glove",
+      "reason": "Separate the glove thumb edge and lower finger contour using the existing shadow shade without changing alpha or hand outline."
+    },
+    {
+      "x": 26,
+      "y": 35,
+      "from": 3,
+      "to": 2,
+      "group": "roy_glove",
+      "reason": "Separate the glove thumb edge and lower finger contour using the existing shadow shade without changing alpha or hand outline."
+    },
+    {
+      "x": 28,
+      "y": 37,
+      "from": 3,
+      "to": 2,
+      "group": "roy_glove",
+      "reason": "Separate the glove thumb edge and lower finger contour using the existing shadow shade without changing alpha or hand outline."
+    },
+    {
+      "x": 29,
+      "y": 38,
+      "from": 3,
+      "to": 2,
+      "group": "roy_glove",
+      "reason": "Separate the glove thumb edge and lower finger contour using the existing shadow shade without changing alpha or hand outline."
+    },
+    {
+      "x": 30,
+      "y": 38,
+      "from": 3,
+      "to": 2,
+      "group": "roy_glove",
+      "reason": "Separate the glove thumb edge and lower finger contour using the existing shadow shade without changing alpha or hand outline."
+    },
+    {
+      "x": 37,
+      "y": 29,
+      "from": 3,
+      "to": 2,
+      "group": "jessie_glove",
+      "reason": "Connect the underside shadow of the bent glove at the wrist/waist boundary."
+    },
+    {
+      "x": 38,
+      "y": 29,
+      "from": 3,
+      "to": 2,
+      "group": "jessie_glove",
+      "reason": "Connect the underside shadow of the bent glove at the wrist/waist boundary."
+    },
+    {
+      "x": 39,
+      "y": 30,
+      "from": 3,
+      "to": 2,
+      "group": "jessie_glove",
+      "reason": "Connect the underside shadow of the bent glove at the wrist/waist boundary."
+    },
+    {
+      "x": 40,
+      "y": 28,
+      "from": 3,
+      "to": 2,
+      "group": "jessie_glove",
+      "reason": "Connect the underside shadow of the bent glove at the wrist/waist boundary."
+    }
+  ],
+  "group_counts": {
+    "roy_hair": 10,
+    "jessie_hair": 7,
+    "roy_glove": 5,
+    "jessie_glove": 4
+  },
+  "source_sha256": "27ef46e64b7c12668de994e4ec1d84206455dcee66b4ac4e2ee68f7b1db855f0",
+  "output_sha256": "49d5300cdf43cb62643e37131230a129465f74a60d2357e19e92fcc25ecbc406",
+  "palette_sha256": "02951ab3bc6bd04dbce501258a13e92e3ba934728bb8249514b41238f835b792",
+  "preserved_v8_files": {
+    "changes.json": "ea99338504d451f590880783672f5ad71c2c9e4c4d2f71208901b222d4de82a1",
+    "comparison-v7-v8-original.png": "09fe4465496442adcfcc4adeb48784b2fb0309f2f49950c391ebf3a74a22574b",
+    "editor-pixel-checks.json": "1dafb43effd8b302c57f39979f5116ac785acbae47c4b9e2faa9fb2e5d831c6e",
+    "editor-review-proof.png": "12914e7811d2e42acf15f5801ab541b0dc17d31a1111404d6a3b7d745daffb1f",
+    "editor-saved-proof.png": "c90843f54461f6aac816fcb0a7cf5a66579638d98770eccb46a004c185838aca",
+    "jessie-james-v8-64.png": "dd111109e0fc0ec0770d70cd02332cb3cc14e7e17cf61b0ced15d642fe090a43",
+    "jessie-james-v8-8x.png": "a2d77b1d0828751f650af59cad3aeb404a15d61568b8d15155a83af50fbd2c99",
+    "jessie-james-v8.4bpp": "27ef46e64b7c12668de994e4ec1d84206455dcee66b4ac4e2ee68f7b1db855f0",
+    "jessie-james-v8.gbapal": "02951ab3bc6bd04dbce501258a13e92e3ba934728bb8249514b41238f835b792",
+    "jessie-james-v8.pal": "81d6afc568a5512ed7f95ec5392d612cbe672f925111fb5a55ce026826350c17",
+    "README.md": "1dda752e432b68dcf9b1a13983c8746682ee2f200e870a650aeb3020943a101f",
+    "validation.json": "07bdf79d5463b3bcbbcff2d78befe065ee98d4d206b96893f2ac3741f7c02db6"
+  },
+  "source_unchanged": true,
+  "palette_unchanged": true,
+  "silhouette_changes": 0,
+  "approved_proportions_preserved": true,
+  "new_character_art": false,
+  "eyes_edited": false,
+  "piskel_or_image_model_used": false,
+  "rom_integrated": false
+}

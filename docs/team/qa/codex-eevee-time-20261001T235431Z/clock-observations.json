@@ -1,0 +1,1657 @@
+[
+  {
+    "case": "eevee_boundary_0359",
+    "requested_clock": [
+      3,
+      59
+    ],
+    "frozen_play_clock": true,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 3,
+      "minute": 59,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 3,
+      "minute": 59,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 197,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_boundary_0400",
+    "requested_clock": [
+      4,
+      0
+    ],
+    "frozen_play_clock": true,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 4,
+      "minute": 0,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 4,
+      "minute": 0,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 196,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_boundary_0437",
+    "requested_clock": [
+      4,
+      37
+    ],
+    "frozen_play_clock": true,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 4,
+      "minute": 37,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 4,
+      "minute": 37,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 196,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_boundary_0959",
+    "requested_clock": [
+      9,
+      59
+    ],
+    "frozen_play_clock": true,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 9,
+      "minute": 59,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 9,
+      "minute": 59,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 196,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_boundary_1000",
+    "requested_clock": [
+      10,
+      0
+    ],
+    "frozen_play_clock": true,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 10,
+      "minute": 0,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 10,
+      "minute": 0,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 196,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_boundary_1337",
+    "requested_clock": [
+      13,
+      37
+    ],
+    "frozen_play_clock": true,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 13,
+      "minute": 37,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 13,
+      "minute": 37,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 196,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_boundary_1959",
+    "requested_clock": [
+      19,
+      59
+    ],
+    "frozen_play_clock": true,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 19,
+      "minute": 59,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 19,
+      "minute": 59,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 196,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_boundary_2000",
+    "requested_clock": [
+      20,
+      0
+    ],
+    "frozen_play_clock": true,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 20,
+      "minute": 0,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 20,
+      "minute": 0,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 197,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_boundary_2037",
+    "requested_clock": [
+      20,
+      37
+    ],
+    "frozen_play_clock": true,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 20,
+      "minute": 37,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 20,
+      "minute": 37,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 197,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_boundary_2359",
+    "requested_clock": [
+      23,
+      59
+    ],
+    "frozen_play_clock": true,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 23,
+      "minute": 59,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 23,
+      "minute": 59,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 197,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_boundary_0000",
+    "requested_clock": [
+      0,
+      0
+    ],
+    "frozen_play_clock": true,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 0,
+      "minute": 0,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 0,
+      "minute": 0,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 197,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_boundary_0247",
+    "requested_clock": [
+      2,
+      47
+    ],
+    "frozen_play_clock": true,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 2,
+      "minute": 47,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 2,
+      "minute": 47,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 197,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_live_0617",
+    "requested_clock": [
+      6,
+      17
+    ],
+    "frozen_play_clock": false,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 6,
+      "minute": 18,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 6,
+      "minute": 18,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 196,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_live_1543",
+    "requested_clock": [
+      15,
+      43
+    ],
+    "frozen_play_clock": false,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 15,
+      "minute": 44,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 15,
+      "minute": 44,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 196,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_live_2229",
+    "requested_clock": [
+      22,
+      29
+    ],
+    "frozen_play_clock": false,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 22,
+      "minute": 30,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 22,
+      "minute": 30,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 197,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_live_0141",
+    "requested_clock": [
+      1,
+      41
+    ],
+    "frozen_play_clock": false,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 1,
+      "minute": 42,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 1,
+      "minute": 42,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 197,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_friendship_182_1337",
+    "requested_clock": [
+      13,
+      37
+    ],
+    "frozen_play_clock": true,
+    "evolution_seen": false,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 182,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 13,
+      "minute": 37,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 133,
+        "level": 31,
+        "friendship": 185,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_everstone_1337",
+    "requested_clock": [
+      13,
+      37
+    ],
+    "frozen_play_clock": true,
+    "evolution_seen": false,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 195,
+      "is_egg": false
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 13,
+      "minute": 37,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 133,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 195,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_friendship_182_2237",
+    "requested_clock": [
+      22,
+      37
+    ],
+    "frozen_play_clock": true,
+    "evolution_seen": false,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 182,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 22,
+      "minute": 37,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 133,
+        "level": 31,
+        "friendship": 185,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_everstone_2237",
+    "requested_clock": [
+      22,
+      37
+    ],
+    "frozen_play_clock": true,
+    "evolution_seen": false,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 195,
+      "is_egg": false
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 22,
+      "minute": 37,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 133,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 195,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_national_dex_flag_set",
+    "requested_clock": [
+      13,
+      37
+    ],
+    "frozen_play_clock": true,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 133,
+      "level": 30,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 13,
+      "minute": 37,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 13,
+      "minute": 37,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 196,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 25,
+        "level": 36,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_battle_1337",
+    "requested_clock": [
+      13,
+      37
+    ],
+    "frozen_play_clock": false,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 25,
+      "level": 100,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 13,
+      "minute": 39,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 13,
+      "minute": 42,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 25,
+        "level": 100,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 196,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 182,
+        "is_egg": false
+      }
+    ]
+  },
+  {
+    "case": "eevee_battle_2237",
+    "requested_clock": [
+      22,
+      37
+    ],
+    "frozen_play_clock": false,
+    "evolution_seen": true,
+    "rtc_detected_at_boot": 0,
+    "party_slot0_before": {
+      "species": 25,
+      "level": 100,
+      "friendship": 255,
+      "held_item": 0,
+      "is_egg": false
+    },
+    "evolution_clock": {
+      "days": 31,
+      "hour": 22,
+      "minute": 39,
+      "cache_valid": 1
+    },
+    "clock_after": {
+      "days": 31,
+      "hour": 22,
+      "minute": 42,
+      "cache_valid": 1
+    },
+    "party_after": [
+      {
+        "species": 25,
+        "level": 100,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 2,
+        "level": 30,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 8,
+        "level": 31,
+        "friendship": 195,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 5,
+        "level": 31,
+        "friendship": 245,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 17,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 0,
+        "is_egg": false
+      },
+      {
+        "species": 197,
+        "level": 31,
+        "friendship": 255,
+        "held_item": 182,
+        "is_egg": false
+      }
+    ]
+  }
+]

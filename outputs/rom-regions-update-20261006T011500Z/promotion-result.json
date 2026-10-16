@@ -1,0 +1,10 @@
+{
+  "pass": true,
+  "main_rom_sha256": "ab47fb761ae2d93e0008c98172f9dee4e89bd034037efa9abef2d86b436f6f81",
+  "delivery": "/workspaces/pokefirered/outputs/rom-regions-update-20261006T011500Z",
+  "original_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "backup": "/workspaces/pokefirered/outputs/rom-regions-update-20261006T011500Z/previous-main",
+  "johto_maps_integrated": 94,
+  "johto_story_through_badge": 7,
+  "full_regions_complete": false
+}

@@ -1,0 +1,275 @@
+{
+  "created_utc": "2026-10-15T09:51:27.321097+00:00",
+  "product_edits": false,
+  "emulator_executed": false,
+  "files": {
+    "AGENTS.md": {
+      "sha256": "8d0b29559fbbaf435189e2d28a37afeb081d3b6d37a5aee813f394f18b952b1f",
+      "bytes": 1890
+    },
+    "docs/team/log.md": {
+      "sha256": "5064f8102cbda74dbced7796ee47783cbb9d681bb65dafc149afdfe943c5c378",
+      "bytes": 27029
+    },
+    "docs/INSTALL.md": {
+      "sha256": "0dda3f9b24a4ccb37c03e2ee9d86ba6da28c8bb5e3cf186b823532f587f0b541",
+      "bytes": 14385
+    },
+    ".claude/agents/engineer.md": {
+      "sha256": "2370aba892b976a538c968c4c0b3fc04b0491d37be54145f8eb39349b093078b",
+      "bytes": 1782
+    },
+    ".claude/agents/qa.md": {
+      "sha256": "2421d90927091de3f92111e84ce917d49d6a39bd85375a434ec31b65af6b398f",
+      "bytes": 2125
+    },
+    "work/animation-recreation-status.json": {
+      "sha256": "605e14ab97ca7215b5e1bbeef8e53360fe6a21b0e4a18e886ed7242dd3e988c6",
+      "bytes": 99150
+    },
+    "data/maps/KantoAirport/scripts.inc": {
+      "sha256": "e9972fd44d44e3c516c6e3f5faea9ade48d9f31f64ca458182e8aabebd197ccd",
+      "bytes": 4052
+    },
+    "data/maps/SlateportCity_Harbor/scripts.inc": {
+      "sha256": "b2662fae38a01e75163a736b4f9a0e05db05e3e505276b8d052cf146503ced95",
+      "bytes": 8093
+    },
+    "src/pokedex.c": {
+      "sha256": "aac08b88d35a69cab82df72d6f759cf3d7f4c1620935657f5450ed7f197ba3e4",
+      "bytes": 4458
+    },
+    "src/pokedex_screen.c": {
+      "sha256": "d7cd34bed4bdee8a2e76950636a093f726eb79268b2aed6b96bf31139c1ea4c7",
+      "bytes": 146283
+    },
+    "src/airplane_flight.c": {
+      "sha256": "99de98e0c14f0adbc9e10a831075ac0615b04fdcbd7429f652153acbed63dcd5",
+      "bytes": 10789
+    },
+    "src/pokemon.c": {
+      "sha256": "373b692e42d952b94b44f0ceda81d56dc75e1abb6af9d60ca5ec47d927b2057c",
+      "bytes": 230320
+    },
+    "src/battle_script_commands.c": {
+      "sha256": "ea0a382f9d6f9d8596f49365a83631e9f4379d7111280534abebd2409066f5c4",
+      "bytes": 360253
+    },
+    "src/battle_util.c": {
+      "sha256": "e16dae026d248e22f7fde5a477f7cd55cdfc406b965ea93dd085c4f46ab9308a",
+      "bytes": 136999
+    },
+    "include/pokemon.h": {
+      "sha256": "02fbde9fcef7f684b93389c6d31f825ce8e9d43549738dbe7ac1502ebc8d7d40",
+      "bytes": 17061
+    },
+    "include/constants/pokemon.h": {
+      "sha256": "255922c6a3e20de4fc3a164a6d8a89329ff26a7551a61ead06e196c4d1f22e28",
+      "bytes": 11513
+    },
+    "include/constants/flags.h": {
+      "sha256": "6645d8d43ad378b3f6707c8c3af2cc7da1f5acca7cfb48917b94631ec18f5d29",
+      "bytes": 98003
+    },
+    "include/constants/vars.h": {
+      "sha256": "c3c27b43a9db279da766aa9d94af0b28aa8c42a49a87fabca1b4a1ec20ade947",
+      "bytes": 18806
+    },
+    "work/hoenn-resume-20261014/native-dewford-dock-r6/validation.json": {
+      "sha256": "3c03a5af65d76b98198b70cd7a509f08ab54c5a58b9b8c9ed6e67089ef23f614",
+      "bytes": 28406
+    },
+    "data/maps/SlateportCity_OceanicMuseum_1F/map.json": {
+      "sha256": "f35c9377cf50ed1ac768c4de7757ae383ed2bba04a2d5088b5d30ad87bcd016a",
+      "bytes": 4533
+    },
+    "data/maps/SlateportCity_OceanicMuseum_1F/scripts.inc": {
+      "sha256": "3b0d034b9939ccf7422d620c1a28372267fdfe647eeefe6a2bf16f353a6b5326",
+      "bytes": 1771
+    },
+    "data/layouts/HoennSlateportCity_OceanicMuseum_1F/map.bin": {
+      "sha256": "c469fe853404f430fc5a7a268122962ef16c0af90cb557e71036639199d8f88d",
+      "bytes": 360
+    },
+    "data/layouts/HoennSlateportCity_OceanicMuseum_1F/border.bin": {
+      "sha256": "efef8d5a9f8dbe5bb218e6b0cc452583eb9d1452b615b1c7ab66ad49c82e9d70",
+      "bytes": 8
+    },
+    "data/maps/SlateportCity_OceanicMuseum_2F/map.json": {
+      "sha256": "5bf7f7a0b0543800b9605b2a0c7f1abbbb97ef58b9e99ab32620d253634db994",
+      "bytes": 6674
+    },
+    "data/maps/SlateportCity_OceanicMuseum_2F/scripts.inc": {
+      "sha256": "02a3e0883272a84fce12ea2835a1c4ade37b215c6d152eabf050cbc16a54bfcd",
+      "bytes": 5507
+    },
+    "data/layouts/HoennSlateportCity_OceanicMuseum_2F/map.bin": {
+      "sha256": "2657da4b3d4ecd7f1e62ebec37053c3e95cc3f3e3d9e5739c3887edae1c282cb",
+      "bytes": 360
+    },
+    "data/layouts/HoennSlateportCity_OceanicMuseum_2F/border.bin": {
+      "sha256": "efef8d5a9f8dbe5bb218e6b0cc452583eb9d1452b615b1c7ab66ad49c82e9d70",
+      "bytes": 8
+    },
+    "data/maps/VermilionCity/map.json": {
+      "sha256": "25d805e34ca5df23e33d9d01c344e1bd946ce8bfa1f124f46a00292eefdd6ff6",
+      "bytes": 12294
+    },
+    "data/maps/KantoAirport/map.json": {
+      "sha256": "9aedd424da7a55c89de1e110aa4088df44e98ff2bb422efaca9b6767cf6da301",
+      "bytes": 5651
+    },
+    "data/maps/SlateportCity_Harbor/map.json": {
+      "sha256": "31d2a3475249aaaac9325492938dc572520dfcde2398c8091ea1f59c13e99ae7",
+      "bytes": 2746
+    },
+    "tools/hoenn_import/patches/SlateportCity_Harbor.json": {
+      "sha256": "185d4cf2d76df7ef2739a00dd18339870499de8a6a0581ca98653f4121d55662",
+      "bytes": 1692
+    },
+    "src/event_object_movement.c": {
+      "sha256": "241a15df4e9977c0fb3a8e84507623476470f18de0a1862a8457bb96fbf6a420",
+      "bytes": 334864
+    },
+    "data/event_scripts.s": {
+      "sha256": "333ec92da552cfafbba9e921fd4f6d5d6f13475ed98b7466f18fe2a7635016ac",
+      "bytes": 72235
+    },
+    "src/field_door.c": {
+      "sha256": "5e61ee50c9663fdfdba7b8d43cf9cb9b587cb93beb902c021d671b783edc9c4b",
+      "bytes": 25098
+    },
+    "tools/make_airport_lounge.py": {
+      "sha256": "a9dcb63af90edd52294a95ab281103d5040fe0405fdc4d357ec849b0414d955a",
+      "bytes": 15473
+    },
+    "data/layouts/layouts.json": {
+      "sha256": "98bf104f2682e018439f22092d0321c3c75b7cb1a0c5d1a45e3135a9076ba75c",
+      "bytes": 363042
+    },
+    "data/maps/map_groups.json": {
+      "sha256": "b3213c388b45f25af44b1a0ab80d3ef47676d919df2ac5ffd308a6967bd30f5d",
+      "bytes": 37456
+    },
+    "include/event_object_movement.h": {
+      "sha256": "ecc4e09bfcb981fdab022c2da77ffb0e734e9dfcdacc8ab8f54667dd656aad44",
+      "bytes": 11553
+    },
+    "tools/hoenn_import/patches/SlateportCity_Harbor.mapscripts": {
+      "sha256": "22684821471bf9c4b2bfa513b00c1beff268e67aaace02117f151960208f34e5",
+      "bytes": 68
+    },
+    "tools/hoenn_import/patches/SlateportCity_Harbor.scripts.inc": {
+      "sha256": "36f030d929d1b1d4dd0e2ef5e1157df3b9c253c537f539cdcae027c4b6eb829d",
+      "bytes": 7926
+    },
+    "tools/hoenn_import/patches/SlateportCity_Harbor.text.inc": {
+      "sha256": "cb5fbc40cd44879419eed03041a8c8f56047070587dfc5e44f92781dcdae1824",
+      "bytes": 6068
+    },
+    "data/maps/VermilionCity/scripts.inc": {
+      "sha256": "33301b4e60d551253e6bf0ca2dcee661278566392fd73e0af8148994e3fc9839",
+      "bytes": 15843
+    },
+    "data/maps/VermilionCity/text.inc": {
+      "sha256": "cb83643118bc56e81527d7e45ff0ac669c84fa53b8bab490b24da9441b4c73a2",
+      "bytes": 8041
+    },
+    "data/maps/KantoAirport/text.inc": {
+      "sha256": "0d789a4a47b78d71635871e73b70e2d4e21c4baa0d27f560efedd62b6beab7a0",
+      "bytes": 2638
+    },
+    "data/maps/SlateportCity_Harbor/text.inc": {
+      "sha256": "ebacf4b2ef881aef087ba902778b6b968c86ebefd38f37f7e498bf74e02a146e",
+      "bytes": 6125
+    },
+    "data/maps/JohtoCherrygroveAirstrip/map.json": {
+      "sha256": "fa5dd30f21b4f5b8e9c334ee50ebbf669faacc7cd2b4906ef40d646fa995e1b8",
+      "bytes": 1891
+    },
+    "data/maps/JohtoCherrygroveAirstrip/scripts.inc": {
+      "sha256": "84974211556518cdd60ef1ce4d94c83468537bd07c31bfee23f7e02e80b37f9d",
+      "bytes": 1506
+    },
+    "data/maps/JohtoCherrygroveAirstrip/text.inc": {
+      "sha256": "33799726506790a848d15da9c6a0dbec614e4797312752657b12329e8bdc3beb",
+      "bytes": 1008
+    },
+    "data/layouts/VermilionCity/border.bin": {
+      "sha256": "cba446b7fabf3b13007a0e5d721f52dc5a35423464f23cbfaf7d379b6187d2ce",
+      "bytes": 8
+    },
+    "data/layouts/VermilionCity/map.bin": {
+      "sha256": "dcd71b5a2f1a70750d025670313f01360ae9f8da881d6f020c14bd4fcb50cab8",
+      "bytes": 3840
+    },
+    "data/layouts/KantoAirport/border.bin": {
+      "sha256": "efef8d5a9f8dbe5bb218e6b0cc452583eb9d1452b615b1c7ab66ad49c82e9d70",
+      "bytes": 8
+    },
+    "data/layouts/KantoAirport/map.bin": {
+      "sha256": "5690a9a6e8d156812ac576d9eaa184b60427d2b270872349a63058ab4333401d",
+      "bytes": 660
+    },
+    "data/layouts/HoennHarbor/border.bin": {
+      "sha256": "9ff63640fa3b4682056532b7924b03250ccc7a832f64ccec3dea79ea8595a24d",
+      "bytes": 8
+    },
+    "data/layouts/HoennHarbor/map.bin": {
+      "sha256": "ec418c60c4f5cac3eb4ee9e2a29e1f48709e552411f67086a5352945001afcbc",
+      "bytes": 720
+    },
+    "data/layouts/JohtoCherrygroveAirstrip/border.bin": {
+      "sha256": "4f4aa105dfd88fa5d7cfa853fd7f794bf2acea638cdba8823481fac2ea22a91f",
+      "bytes": 8
+    },
+    "data/layouts/JohtoCherrygroveAirstrip/map.bin": {
+      "sha256": "e6914678371a5fe3c30dae3f14014d6a7b863bcae56a5eca614537ca0262fd00",
+      "bytes": 1536
+    }
+  },
+  "missing": [],
+  "versions": {
+    "pokemonthyl.gba": {
+      "sha256": "af2677993a75979fb36f0768c390d1bad7424e61f2d569b5054d40702250d2e8",
+      "bytes": 33554432
+    },
+    "pokemonthyl.elf": {
+      "sha256": "2549852a48935c680e06e81719b54663b9c0efa7fdaccd31d1f4683886c5d64e",
+      "bytes": 34045924
+    },
+    "saves/pokemonthyl_v1.4.sav": {
+      "sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4",
+      "bytes": 131072
+    },
+    "saves/pokemonthyl_v1.4-synced-recovered.sav": {
+      "sha256": "c06ad0536f1ee13fd88a3cf36346b52d3d5ca0cae7e729723acf6047d916feb8",
+      "bytes": 131072
+    },
+    "work/hoenn-resume-20261014/dock-fix-rebound-abi-r1.json": {
+      "sha256": "a1b45d0bb353e6613855e62e30072b7d872714e62992f05cea50aff10eeb6478",
+      "bytes": 16089
+    },
+    "work/hoenn-resume-20261014/native-dewford-dock-r6/continuous-Dewford-dock-only-native-QA-only.sav": {
+      "sha256": "374d437ca56d45b04e5e66d6213203fa8cef85c1e0e3c537474a4e30a5b39190",
+      "bytes": 131072
+    }
+  },
+  "preserved_inputs": {
+    "saves/pokemonthyl_v1.45.sav": "0949ebf04557a76e2175602e967eefadb7ffb722f2746be8a40ddb1fd66550a9",
+    "saves/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "saves/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "saves/hoenn.sav": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+    "saves/pokemonthyl_v1.4-synced-recovered.sav": "c06ad0536f1ee13fd88a3cf36346b52d3d5ca0cae7e729723acf6047d916feb8",
+    "saves/pokemonthyl_v1.25-items99-iv2x.sav": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+    "saves/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "saves/pokemonthyl_hoenn_QAed.sav": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+    "saves/pokemonthyl_v1.25.sav": "53d923bf4668373724b19c9d3c8526b002701606ab7ac082d657ee990e23d7b3",
+    "saves/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "saves/pokemonthyl_v1.4-synced.sav": "99f4100d09961196706282a02e96ee9017a0a591777aa3ca0b40249ec8ae89e8",
+    "saves/pokemonthyl_v1.4.sav": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4",
+    "saves/pokemonthyl_v1.1.sav": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+    "saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+    "saves/pokemonthyl_v1.2.sav": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85"
+  }
+}

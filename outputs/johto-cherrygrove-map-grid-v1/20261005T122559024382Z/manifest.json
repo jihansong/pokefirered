@@ -1,0 +1,38 @@
+{
+  "tiles": [
+    [
+      10,
+      11,
+      5,
+      4097
+    ],
+    [
+      10,
+      8,
+      5,
+      4106
+    ],
+    [
+      10,
+      9,
+      5,
+      4106
+    ],
+    [
+      10,
+      10,
+      5,
+      4106
+    ]
+  ],
+  "files": {
+    "src/region_map.c": {
+      "old": "d84344501622c18ebdfe7e2536bf4cc9454a33c419e5a82749c440101d51bc16",
+      "new": "d57e9fcf1560ae874fce7d154543e38e043478c021afe1aa29df4f996c34652c"
+    },
+    "graphics/region_map/johto_entry.bin": {
+      "old": "5e5d026492e6c5f877234b6469099cda328a5c723c35e4a3b9b621dbfb1367b5",
+      "new": "73776a030b00b3b1d8da92219d34ef57863c453a146626873c72f4ca869efc91"
+    }
+  }
+}

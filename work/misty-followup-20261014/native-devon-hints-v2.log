@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/work/misty-followup-20261014/hint-tools-r1/native_devon_storyhint_qa_r1.py", line 212, in <module>
+    main()
+  File "/workspaces/pokefirered/work/misty-followup-20261014/hint-tools-r1/native_devon_storyhint_qa_r1.py", line 187, in main
+    **actual_A(e, tag, label, facing, local_id)}
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/work/misty-followup-20261014/hint-tools-r1/native_devon_storyhint_qa_r1.py", line 128, in actual_A
+    raise AssertionError(('Native A did not display expected text', tag, label,
+AssertionError: ('Native A did not display expected text', 'dispatch-scene0', 'RustboroCity_DevonCorp_1F_Text_H1', (54, 0, 15, 6), 0)

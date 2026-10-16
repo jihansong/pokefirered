@@ -1,0 +1,9 @@
+{
+  "promoted": true,
+  "delivery": "/workspaces/pokefirered/outputs/rom-johto-misty-repair-20261012T100926Z",
+  "current_sha256": "2bafd6478fef5bbda56c6b4bec9c8dec1a4e0f060252fc219dbcc834411509f7",
+  "rollback": "/workspaces/pokefirered/outputs/rom-johto-misty-repair-20261012T100926Z/rollback-q8",
+  "download_zip": "/workspaces/pokefirered/work/regression-oct12/deliverables/pokemonthyl-oct12-repair.zip",
+  "download_gba": "/workspaces/pokefirered/work/regression-oct12/deliverables/pokemonthyl-oct12-repair.gba",
+  "original_all_saves_unchanged": true
+}

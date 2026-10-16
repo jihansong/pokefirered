@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/johto/build_ecruteak.py", line 859, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--root',default='.');p.add_argument('--apply',action='store_true');a=p.parse_args();apply(Path(a.root).resolve(),a.apply)
+                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/johto/build_ecruteak.py", line 834, in apply
+    s=Source(root);out,stats=build(s);validate(s,out,stats)
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/johto/build_ecruteak.py", line 825, in validate
+    assert not missing,('unknown native constant',missing)
+AssertionError: ('unknown native constant', ['TRAINER_PIC_PSYCHIC'])

@@ -9,3 +9,45 @@ MossdeepCity_SpaceCenter_1F_EventScript_H1::
 	msgbox MossdeepCity_SpaceCenter_1F_Text_H1, MSGBOX_NPC
 	end
 
+@ BEGIN PATCH (tools/hoenn_import/patches)
+@ Thunder Yellow weather-space v1
+
+MossdeepCity_SpaceCenter_1F_EventScript_MissionControl::
+ lock
+ faceplayer
+ goto_if_set FLAG_HOENN_SPACE_CENTER_SECURED, MossdeepCity_SpaceCenter_1F_EventScript_ControlAfter
+ goto_if_unset FLAG_HOENN_WEATHER_RESCUED, MossdeepCity_SpaceCenter_1F_EventScript_ControlBefore
+ goto_if_unset FLAG_HOENN_BADGE07_GET, MossdeepCity_SpaceCenter_1F_EventScript_ControlPrepare
+ msgbox MossdeepCity_SpaceCenter_1F_Text_Raid
+ release
+ end
+MossdeepCity_SpaceCenter_1F_EventScript_ControlBefore::
+ msgbox MossdeepCity_SpaceCenter_1F_Text_BeforeResearch
+ release
+ end
+MossdeepCity_SpaceCenter_1F_EventScript_ControlPrepare::
+ msgbox MossdeepCity_SpaceCenter_1F_Text_Prepare
+ release
+ end
+MossdeepCity_SpaceCenter_1F_EventScript_ControlAfter::
+ msgbox MossdeepCity_SpaceCenter_1F_Text_AfterRaid
+ release
+ end
+MossdeepCity_SpaceCenter_1F_EventScript_Safety::
+ lock
+ faceplayer
+ goto_if_set FLAG_HOENN_SPACE_CENTER_SECURED, MossdeepCity_SpaceCenter_1F_EventScript_SafetyAfter
+ goto_if_unset FLAG_HOENN_WEATHER_RESCUED, MossdeepCity_SpaceCenter_1F_EventScript_SafetyBefore
+ goto_if_unset FLAG_HOENN_BADGE07_GET, MossdeepCity_SpaceCenter_1F_EventScript_SafetyBefore
+ msgbox MossdeepCity_SpaceCenter_1F_Text_SafetyRaid
+ release
+ end
+MossdeepCity_SpaceCenter_1F_EventScript_SafetyBefore::
+ msgbox MossdeepCity_SpaceCenter_1F_Text_Safety
+ release
+ end
+MossdeepCity_SpaceCenter_1F_EventScript_SafetyAfter::
+ msgbox MossdeepCity_SpaceCenter_1F_Text_SafetyAfter
+ release
+ end
+@ END PATCH

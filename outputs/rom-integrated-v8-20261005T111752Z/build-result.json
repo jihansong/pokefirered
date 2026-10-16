@@ -1,0 +1,22 @@
+{
+  "results": [
+    {
+      "command": [
+        "make",
+        "leafgreen",
+        "-j2"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "make",
+        "GAME_VERSION=LEAFGREEN",
+        "syms"
+      ],
+      "returncode": 0
+    }
+  ],
+  "rom_sha256": "72afe776f25a91f8e215282166490da0fa75aaf2b723ac61826e5f12db52e376",
+  "bytes": 33554432
+}

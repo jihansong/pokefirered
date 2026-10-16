@@ -1,0 +1,569 @@
+{
+  "time_utc": "2026-10-05T16:39:07.645574+00:00",
+  "rom_sha256": "475088869b9937e4c1ed81ca920b8c2bb862ac44f1e2f50c9997cf9dadbfb02a",
+  "elf_sha256": "0fbf12e4c77a09628cdb1fb730965993dffadebf454f0cae0cca5b28c11f209b",
+  "bytes": 33554432,
+  "resident_sections_match": true,
+  "save_layout_unchanged": true,
+  "save_layout": {
+    "blocks": {
+      "gSaveBlock1": 15720,
+      "gSaveBlock2": 3876,
+      "gPokemonStorage": 33744
+    },
+    "sector_layout": [
+      [
+        0,
+        3876
+      ],
+      [
+        0,
+        3968
+      ],
+      [
+        3968,
+        3968
+      ],
+      [
+        7936,
+        3968
+      ],
+      [
+        11904,
+        3816
+      ],
+      [
+        0,
+        3968
+      ],
+      [
+        3968,
+        3968
+      ],
+      [
+        7936,
+        3968
+      ],
+      [
+        11904,
+        3968
+      ],
+      [
+        15872,
+        3968
+      ],
+      [
+        19840,
+        3968
+      ],
+      [
+        23808,
+        3968
+      ],
+      [
+        27776,
+        3968
+      ],
+      [
+        31744,
+        2000
+      ]
+    ],
+    "sector_layout_sha256": "ee1f9bc20ab82f62e45a2451450517ea539f6ef48bd31045dc2430b8525fcd68"
+  },
+  "assets": {
+    "sOpeningMoviePixels": {
+      "bytes": 14192640,
+      "sha256": "ff8c4e7f91ef541952f638043efdfe396d416777aaa984350869da3e603b66c3"
+    },
+    "sOpeningMoviePalettes": {
+      "bytes": 178688,
+      "sha256": "f253176e6ead3f2f5dd55c01de2f33881ce143527c464d076d2786bc348724f7"
+    },
+    "sOpeningMovieFrames": {
+      "bytes": 6016,
+      "sha256": "22517a83536902b9c4245234a7bd84fd15b75fcbb00c70dbb274e648268d3938"
+    },
+    "gTrainerFrontPic_JessieJames": {
+      "bytes": 2048,
+      "sha256": "5b036768fc2712765eab94952b2757a7783b953062ef440f26eb7e9e6f38d2b1"
+    },
+    "gTrainerPalette_JessieJames": {
+      "bytes": 32,
+      "sha256": "02951ab3bc6bd04dbce501258a13e92e3ba934728bb8249514b41238f835b792"
+    },
+    "sThunderYellowTitleTiles": {
+      "bytes": 38400,
+      "sha256": "266b8c5764de352fd471c742705cc8744eeff15c16e13c557854b514d6153eff"
+    },
+    "sThunderYellowTitlePalette": {
+      "bytes": 512,
+      "sha256": "e4888a4dcd5539808992724f60e9891393a950904ee06c817a601977285ebdd2"
+    },
+    "sThunderYellowTitleMap": {
+      "bytes": 2048,
+      "sha256": "d36febfb217aed8362ce88627f4ffdab75d5cab305f35b433881ab3d75daab53"
+    },
+    "sTitleText_Pal": {
+      "bytes": 8,
+      "sha256": "4529364d177d57c7ff36be6be8173d1bcc0c499030a5cb4468200eb36b94224c"
+    },
+    "gGraphics_TitleScreen_BoxArtMonPals": {
+      "bytes": 32,
+      "sha256": "86a6b33a4c4a102a932d44ed1c3b8c3292231563ded69318a9424c4b75387773"
+    },
+    "gGraphics_TitleScreen_CopyrightPressStartMap": {
+      "bytes": 276,
+      "sha256": "ee97ab69291ae1d8407c1b7655a2c6fd664ac8c2486fd2ad8c31227295815b35"
+    },
+    "gGraphics_TitleScreen_BackgroundPals": {
+      "bytes": 32,
+      "sha256": "fa04f0364c62c689cde8e3b58d4193ea6c8b879e118eab9afd933e819b64ddd2"
+    },
+    "gGraphics_TitleScreen_BoxArtMonTiles": {
+      "bytes": 1152,
+      "sha256": "a6cebf5a0803d10818c58c7106edef729cae6eca8d617a46787fb25e625e34f2"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoTiles": {
+      "bytes": 5468,
+      "sha256": "aed1c7edbc32bd3b8c33fa95eb280d94a90224d98ddb765ef6164dded55a5b31"
+    },
+    "gGraphics_TitleScreen_CopyrightPressStartTiles": {
+      "bytes": 704,
+      "sha256": "1f72690d788e6f3ccfa7a111bc676f45571b48ce8b40635a2741b7780ccc3ad8"
+    },
+    "gTitleScreen_BlankSprite_Tiles": {
+      "bytes": 128,
+      "sha256": "3c2451d3e0f5b1a598ab8cab6beae858645729fc74f8c1d993274f55e3dbbd41"
+    },
+    "gGraphics_TitleScreen_BoxArtMonMap": {
+      "bytes": 332,
+      "sha256": "25b8be3aa049b9e512e73caac9930fdbc187b66cb46509e7f4b4de5bf66215ba"
+    },
+    "gTitleScreen_Slash_Pal": {
+      "bytes": 32,
+      "sha256": "a57ddb40cb96a23749ff6624ae67421cdf487183577f7dee37069bd02467a4fb"
+    },
+    "gTeachyTvTitle_Tilemap": {
+      "bytes": 556,
+      "sha256": "ae837c6d4d805dd7be188f70e15e784571706f13017392a93ffb89cc1cda645c"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoMap": {
+      "bytes": 544,
+      "sha256": "162d967ed0289b42042be29f24f4fdbf4174bab06d8f05277341b25c2f5e62ab"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoPals": {
+      "bytes": 512,
+      "sha256": "9612068fa48be250345e802e735eab11331ca25d78d98e82eeca8825f02774de"
+    }
+  },
+  "title_version": "V8",
+  "rocket_version": "V11 native64x64",
+  "opening_version": "V7 752frames/FRLG music",
+  "johto_maps_integrated": 23,
+  "hoenn_native_league_verified": true,
+  "full_johto_story_complete": false,
+  "full_hoenn_story_complete": false,
+  "evidence_root": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2",
+  "save_delivery": "/workspaces/pokefirered/outputs/rom-regions-update-20261005T163907Z/pokemonthyl.sav",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "all_original_saves_unchanged": true,
+  "known_existing_bad_egg_repaired": false,
+  "performance": {
+    "water_native": "/workspaces/pokefirered/outputs/hm-dive-font-review-v2/water-performance/result.json",
+    "font_cache_native": "/workspaces/pokefirered/outputs/hm-dive-font-review-v1",
+    "font_cache_evidence_rom_sha256": "f6e9dd60d10bcca84d2b68ae7c446ed82a72c84e284edd94b818f3f19d44d1d3",
+    "delta_device_fps_measured": false,
+    "azalea_land": {
+      "path": "/workspaces/pokefirered/outputs/johto-azalea-native-review-v2/performance/result.json",
+      "cases": 4,
+      "hardware_frames_per_case": 360,
+      "processing_misses": 0,
+      "delta_device_fps_measured": false
+    },
+    "sootopolis_storm_calm": {
+      "samples": [
+        {
+          "map": "SootopolisCity",
+          "label": "city-storm",
+          "weather": 5,
+          "weather_end": 5,
+          "rain_allocated_range": [
+            24,
+            24
+          ],
+          "rain_count_range": [
+            24,
+            24
+          ],
+          "max_active_sprites": 33,
+          "walking": false,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              28,
+              34
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 3,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        },
+        {
+          "map": "SootopolisCity",
+          "label": "city-storm",
+          "weather": 5,
+          "weather_end": 5,
+          "rain_allocated_range": [
+            24,
+            24
+          ],
+          "rain_count_range": [
+            24,
+            24
+          ],
+          "max_active_sprites": 33,
+          "walking": true,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              28,
+              34
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 3,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        },
+        {
+          "map": "SootopolisCity",
+          "label": "city-calm",
+          "weather": 2,
+          "weather_end": 2,
+          "rain_allocated_range": [
+            0,
+            0
+          ],
+          "rain_count_range": [
+            0,
+            0
+          ],
+          "max_active_sprites": 9,
+          "walking": false,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              28,
+              34
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 3,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        },
+        {
+          "map": "SootopolisCity",
+          "label": "city-calm",
+          "weather": 2,
+          "weather_end": 2,
+          "rain_allocated_range": [
+            0,
+            0
+          ],
+          "rain_count_range": [
+            0,
+            0
+          ],
+          "max_active_sprites": 9,
+          "walking": true,
+          "repel": 250,
+          "hardware": 360,
+          "vblank": 360,
+          "callbacks": 360,
+          "missed": 0,
+          "irregular": [],
+          "positions": [
+            [
+              28,
+              34
+            ],
+            [
+              29,
+              34
+            ]
+          ],
+          "follower_objects": 1,
+          "follower_tasks": 1,
+          "max_objects": 3,
+          "visible_frames": 360,
+          "counter_survived": true,
+          "pass_all": true
+        }
+      ],
+      "original_core_manual_ram_writes": 0,
+      "instrumentation": "separate emulator clone only",
+      "delta_device_fps_measured": false,
+      "all_thunder_flash_phases_measured": false
+    }
+  },
+  "resident_sections": [
+    {
+      "index": 3,
+      "bytes": 1468272
+    },
+    {
+      "index": 4,
+      "bytes": 884848
+    },
+    {
+      "index": 5,
+      "bytes": 57820
+    },
+    {
+      "index": 6,
+      "bytes": 7929952
+    },
+    {
+      "index": 7,
+      "bytes": 513436
+    },
+    {
+      "index": 8,
+      "bytes": 1640
+    },
+    {
+      "index": 9,
+      "bytes": 193364
+    },
+    {
+      "index": 10,
+      "bytes": 1782744
+    },
+    {
+      "index": 11,
+      "bytes": 36864
+    },
+    {
+      "index": 12,
+      "bytes": 14377344
+    }
+  ],
+  "additional_title_assets_unchanged": {
+    "gTeachyTvTitle_Tilemap": {
+      "bytes": 556,
+      "sha256": "ae837c6d4d805dd7be188f70e15e784571706f13017392a93ffb89cc1cda645c"
+    },
+    "sThunderYellowTitleMap": {
+      "bytes": 2048,
+      "sha256": "d36febfb217aed8362ce88627f4ffdab75d5cab305f35b433881ab3d75daab53"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoPals": {
+      "bytes": 512,
+      "sha256": "9612068fa48be250345e802e735eab11331ca25d78d98e82eeca8825f02774de"
+    },
+    "sPikachuVoiceLengths": {
+      "bytes": 42,
+      "sha256": "f98284934787ec1071a4f8f0c0c52ad9f2c7c82e52525a7ff70476b7ad97d1a1"
+    },
+    "SignalEndTitleScreenPaletteSomethingTask": {
+      "bytes": 40,
+      "sha256": "881b45af1913bdf599cc3d5858545909f49402a7cc5346e829e8a8bcaf1a74be"
+    },
+    "sThunderYellowTitlePalette": {
+      "bytes": 512,
+      "sha256": "e4888a4dcd5539808992724f60e9891393a950904ee06c817a601977285ebdd2"
+    },
+    "gGraphics_TitleScreen_CopyrightPressStartMap": {
+      "bytes": 276,
+      "sha256": "ee97ab69291ae1d8407c1b7655a2c6fd664ac8c2486fd2ad8c31227295815b35"
+    },
+    "gGraphics_TitleScreen_CopyrightPressStartTiles": {
+      "bytes": 704,
+      "sha256": "1f72690d788e6f3ccfa7a111bc676f45571b48ce8b40635a2741b7780ccc3ad8"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoMap": {
+      "bytes": 544,
+      "sha256": "162d967ed0289b42042be29f24f4fdbf4174bab06d8f05277341b25c2f5e62ab"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoTiles": {
+      "bytes": 5468,
+      "sha256": "aed1c7edbc32bd3b8c33fa95eb280d94a90224d98ddb765ef6164dded55a5b31"
+    },
+    "gGraphics_TitleScreen_BoxArtMonTiles": {
+      "bytes": 1152,
+      "sha256": "a6cebf5a0803d10818c58c7106edef729cae6eca8d617a46787fb25e625e34f2"
+    },
+    "sTitleText_Pal": {
+      "bytes": 8,
+      "sha256": "4529364d177d57c7ff36be6be8173d1bcc0c499030a5cb4468200eb36b94224c"
+    },
+    "gGraphics_TitleScreen_BackgroundPals": {
+      "bytes": 32,
+      "sha256": "fa04f0364c62c689cde8e3b58d4193ea6c8b879e118eab9afd933e819b64ddd2"
+    },
+    "gTitleScreen_BlankSprite_Tiles": {
+      "bytes": 128,
+      "sha256": "3c2451d3e0f5b1a598ab8cab6beae858645729fc74f8c1d993274f55e3dbbd41"
+    },
+    "sThunderYellowTitleTiles": {
+      "bytes": 38400,
+      "sha256": "266b8c5764de352fd471c742705cc8744eeff15c16e13c557854b514d6153eff"
+    },
+    "gGraphics_TitleScreen_BoxArtMonMap": {
+      "bytes": 332,
+      "sha256": "25b8be3aa049b9e512e73caac9930fdbc187b66cb46509e7f4b4de5bf66215ba"
+    },
+    "gGraphics_TitleScreen_BoxArtMonPals": {
+      "bytes": 32,
+      "sha256": "86a6b33a4c4a102a932d44ed1c3b8c3292231563ded69318a9424c4b75387773"
+    },
+    "gTitleScreen_Slash_Pal": {
+      "bytes": 32,
+      "sha256": "a57ddb40cb96a23749ff6624ae67421cdf487183577f7dee37069bd02467a4fb"
+    }
+  },
+  "hoenn_weather_space_integrated": true,
+  "hoenn_weather_space_native_cases": 5,
+  "hm05_tm10_native_cases": 11,
+  "hm08_tm49_native_cases": 8,
+  "pikachu_dive_follow_native_checks": 16,
+  "water_performance_cases": 4,
+  "water_hardware_frames_per_case": 360,
+  "water_processing_misses": 0,
+  "johto_azalea_integrated": true,
+  "johto_existing_maps": 44,
+  "johto_azalea_native_events": 33,
+  "johto_azalea_native_battles": 8,
+  "johto_azalea_native_map_smoke": 10,
+  "johto_azalea_native_gate_steps": 2,
+  "sootopolis_dive_roundtrip_native_cases": 2,
+  "azalea_battle_evidence": {
+    "path": "/workspaces/pokefirered/outputs/johto-azalea-native-review-v1/battle/result.json",
+    "rom_sha256": "49d6c1ae2080abc30f1c60fa5abb3c9d2b9a877d5d6309a483dce1c084dcf94b",
+    "only_candidate_byte_difference": {
+      "offset": 1529850,
+      "reason": "Sootopolis dive surface Y coordinate53 to54"
+    },
+    "battle_assets_and_code_unchanged": true
+  },
+  "remaining": {
+    "johto_full_story_complete": false,
+    "hoenn_full_story_complete": false,
+    "johto_next": "Ecruteak chapter: source prepared, not yet ROM applied; gyms4-8, later radio tower, league remain",
+    "hoenn_next": "Wallace HM07/duplicate rareTM reward and region-matched Waterfall gate pending; natural VictoryRoad/League complete route audit pending",
+    "three_region_natural_playthrough_complete": false,
+    "johto_habitat_classifier_audit_pending": true
+  },
+  "johto_ilex_goldenrod_integrated": true,
+  "johto_ilex_native_events": 28,
+  "johto_ilex_native_battles": 4,
+  "johto_ilex_native_map_links": 17,
+  "hoenn_sea_sky_integrated": true,
+  "hoenn_sea_sky_native_cases": 12,
+  "sky_pillar_ascent_native_cases": 3,
+  "native_validations": {
+    "sky-ascent": {
+      "path": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/sky-ascent/validation.json",
+      "sha256": "14bb56fac67a5ce0db3e67d53770052feb042b0e7177ce2ce4a03dc3375fdd0c"
+    },
+    "sky-ascent-legacy": {
+      "path": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/sky-ascent-legacy/validation.json",
+      "sha256": "32b85ac27f2ab8658367cfc10506c3bac09c927bd00835ec4f87efae97ca1a99"
+    },
+    "sky-ascent-early": {
+      "path": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/sky-ascent-early/validation.json",
+      "sha256": "0f0a0aab5d1bd91fb243a05a3d0a35a76c43d7894b8d3582732038fa09e9d2f4"
+    },
+    "performance-city-storm": {
+      "path": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/performance-city-storm/validation.json",
+      "sha256": "70d4a499761f6454d0381463a2537a4238b65778f3091d1b9668e32c512f8938"
+    },
+    "performance-city-calm": {
+      "path": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/performance-city-calm/validation.json",
+      "sha256": "3c7a33a465eb0f53d2efca7e61d2f4016bba9b4d251de6bb7dcf9e93ec2471df"
+    },
+    "hoenn-seafloor": {
+      "path": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/hoenn-seafloor/validation.json",
+      "sha256": "4381c46432f1df430db53b1c3dcc8eec55a942fa8dc1edd4297517820945597a"
+    },
+    "hoenn-seafloor-loss": {
+      "path": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/hoenn-seafloor-loss/validation.json",
+      "sha256": "ac2dd74177f485ff38072fc8c1e4bd2b707ce82ac52bb62552e9a56f185f48e2"
+    },
+    "hoenn-seafloor-early": {
+      "path": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/hoenn-seafloor-early/validation.json",
+      "sha256": "130225adec4a51a244e899674f97e5344f4262c69d5674101f034e37213c87b2"
+    },
+    "hoenn-seafloor-no-badge": {
+      "path": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/hoenn-seafloor-no-badge/validation.json",
+      "sha256": "941afc284ff6c82fd896ea061d3c9690daecd5fec224bf4c319f13ce0b76cdf0"
+    },
+    "hoenn-sky": {
+      "path": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/hoenn-sky/validation.json",
+      "sha256": "a16034bb4cc91cad7c7f0dee19decc395b1de21923a8270b65c2f88adf5b541f"
+    },
+    "hoenn-sky-early": {
+      "path": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/hoenn-sky-early/validation.json",
+      "sha256": "b82977a1e8a51f643753134fc33d8ed7412f0ba75b636123aa6a3dc2c9768ed3"
+    },
+    "hoenn-city-storm": {
+      "path": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/hoenn-city-storm/validation.json",
+      "sha256": "070dbf863212abae7ed62a2b12209bebb550c3b7746e99a8e7f749303b52603d"
+    },
+    "hoenn-city-calm": {
+      "path": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/hoenn-city-calm/validation.json",
+      "sha256": "34c334ac491fcb8b88fc436654f3767a0516c67830870f8dbfd7b5ebfbf32d83"
+    },
+    "hoenn-gym-locked": {
+      "path": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/hoenn-gym-locked/validation.json",
+      "sha256": "60bd344c999c5770a5ad10b65cd7c857c9a2b5698c67646e0893815525a238b4"
+    },
+    "hoenn-gym-legacy": {
+      "path": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/hoenn-gym-legacy/validation.json",
+      "sha256": "43cfccca5461d2dc8252bd5a7074f5ab6e9b22ffe5fb102135171277ca4624f5"
+    },
+    "hoenn-gym": {
+      "path": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/hoenn-gym/validation.json",
+      "sha256": "f0f308893de90978ff3f0a6919b3e6b6ad9f9cd996eb36fac649c64056d8bf8e"
+    },
+    "hoenn-gym-loss": {
+      "path": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/hoenn-gym-loss/validation.json",
+      "sha256": "19761f438a9c1d33d42d5edaf690f9b7b7b94483683207cac67149ffc30e8bdf"
+    }
+  },
+  "visual_review": {
+    "contact": "/workspaces/pokefirered/outputs/rom-regions-update-20261005T163907Z/native-story-contact.png",
+    "checked": true,
+    "limits": [
+      "Johto reuses native Kanto tilesets and placeholder Silver/Whitney trainer portraits."
+    ]
+  }
+}

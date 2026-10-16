@@ -1,0 +1,96 @@
+{
+  "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+  "cases": [
+    {
+      "case": "hoenn-on-a",
+      "exit": 1,
+      "pass": false
+    },
+    {
+      "case": "hoenn-on-menu",
+      "exit": 1,
+      "pass": false
+    },
+    {
+      "case": "hoenn-off-a",
+      "exit": 1,
+      "pass": false
+    },
+    {
+      "case": "hoenn-off-menu",
+      "exit": 1,
+      "pass": false
+    },
+    {
+      "case": "hoenn-foreign-a",
+      "exit": 1,
+      "pass": false
+    },
+    {
+      "case": "hoenn-foreign-menu",
+      "exit": 1,
+      "pass": false
+    },
+    {
+      "case": "johto-on-a",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "johto-on-menu",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "johto-off-a",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "johto-off-menu",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "johto-foreign-a",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "johto-foreign-menu",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "kanto-on-a",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "kanto-on-menu",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "kanto-off-a",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "kanto-off-menu",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "kanto-foreign-a",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "kanto-foreign-menu",
+      "exit": 0,
+      "pass": true
+    }
+  ],
+  "all_pass": false
+}

@@ -1,0 +1,347 @@
+{
+  "rom_sha256": "5ce577d64ca930d313ddcbab4e411b9beae801d250836259b52ef49004cd4a97",
+  "source_sha256": {
+    "src/pokedex_screen.c": "012f39b6a70310f75a254ff9ccedfa2ecd20e732329370f6f45c2ab7a865f7e0",
+    "src/wild_pokemon_area.c": "c73c9c260d9a6025b905e5f7a13f9536dd877ad833d3a412ccb448cb3d574e69",
+    "src/pokedex_area_markers.c": "51349cfdb1a2903cefb19c2ffa5a4035ac8999c5541fee892f65c19bbeb4f461",
+    "include/wild_pokemon_area.h": "dd2f3fc68d610c6e7d4e5056ce070a9e8628122e97612eb41aaf8e2a73d2d2b9",
+    "tools/johto/route29_wild.json": "61b2499532afb5c9eec0c084c5f1cce271705c759b65e55246c71a508d130323"
+  },
+  "cases": [
+    {
+      "name": "wild_3",
+      "pass": true,
+      "hour": 3,
+      "table": "land_mons_night",
+      "enemy_species": 19,
+      "level": 3,
+      "walk_steps": 7,
+      "clock_before": {
+        "day": 25,
+        "hour": 3,
+        "minute": 0,
+        "second": 0,
+        "source": "native_clock_cache"
+      },
+      "clock_after": {
+        "day": 25,
+        "hour": 3,
+        "minute": 0,
+        "second": 0,
+        "source": "native_clock_cache"
+      }
+    },
+    {
+      "name": "wild_4",
+      "pass": true,
+      "hour": 4,
+      "table": "land_mons_morning",
+      "enemy_species": 161,
+      "level": 3,
+      "walk_steps": 7,
+      "clock_before": {
+        "day": 25,
+        "hour": 4,
+        "minute": 0,
+        "second": 0,
+        "source": "native_clock_cache"
+      },
+      "clock_after": {
+        "day": 25,
+        "hour": 4,
+        "minute": 0,
+        "second": 0,
+        "source": "native_clock_cache"
+      }
+    },
+    {
+      "name": "wild_9",
+      "pass": true,
+      "hour": 9,
+      "table": "land_mons_morning",
+      "enemy_species": 161,
+      "level": 3,
+      "walk_steps": 7,
+      "clock_before": {
+        "day": 24,
+        "hour": 9,
+        "minute": 0,
+        "second": 0,
+        "source": "native_clock_cache"
+      },
+      "clock_after": {
+        "day": 24,
+        "hour": 9,
+        "minute": 0,
+        "second": 0,
+        "source": "native_clock_cache"
+      }
+    },
+    {
+      "name": "wild_10",
+      "pass": true,
+      "hour": 10,
+      "table": "land_mons",
+      "enemy_species": 161,
+      "level": 3,
+      "walk_steps": 7,
+      "clock_before": {
+        "day": 24,
+        "hour": 10,
+        "minute": 0,
+        "second": 0,
+        "source": "native_clock_cache"
+      },
+      "clock_after": {
+        "day": 24,
+        "hour": 10,
+        "minute": 0,
+        "second": 0,
+        "source": "native_clock_cache"
+      }
+    },
+    {
+      "name": "wild_19",
+      "pass": true,
+      "hour": 19,
+      "table": "land_mons",
+      "enemy_species": 161,
+      "level": 3,
+      "walk_steps": 7,
+      "clock_before": {
+        "day": 24,
+        "hour": 19,
+        "minute": 0,
+        "second": 0,
+        "source": "native_clock_cache"
+      },
+      "clock_after": {
+        "day": 24,
+        "hour": 19,
+        "minute": 0,
+        "second": 0,
+        "source": "native_clock_cache"
+      }
+    },
+    {
+      "name": "wild_20",
+      "pass": true,
+      "hour": 20,
+      "table": "land_mons_night",
+      "enemy_species": 19,
+      "level": 3,
+      "walk_steps": 7,
+      "clock_before": {
+        "day": 24,
+        "hour": 20,
+        "minute": 0,
+        "second": 0,
+        "source": "native_clock_cache"
+      },
+      "clock_after": {
+        "day": 24,
+        "hour": 20,
+        "minute": 0,
+        "second": 0,
+        "source": "native_clock_cache"
+      }
+    }
+  ],
+  "state_loads": 0,
+  "native_code_injections": 0,
+  "compiled_tables": {
+    "header_count": 260,
+    "route29_header_index": 259,
+    "tables": {
+      "land_mons": [
+        [
+          2,
+          2,
+          16
+        ],
+        [
+          2,
+          2,
+          161
+        ],
+        [
+          2,
+          2,
+          16
+        ],
+        [
+          2,
+          2,
+          161
+        ],
+        [
+          3,
+          3,
+          16
+        ],
+        [
+          3,
+          3,
+          16
+        ],
+        [
+          3,
+          3,
+          161
+        ],
+        [
+          3,
+          3,
+          161
+        ],
+        [
+          2,
+          2,
+          19
+        ],
+        [
+          3,
+          3,
+          187
+        ],
+        [
+          2,
+          2,
+          19
+        ],
+        [
+          3,
+          3,
+          187
+        ]
+      ],
+      "land_mons_morning": [
+        [
+          2,
+          2,
+          16
+        ],
+        [
+          2,
+          2,
+          161
+        ],
+        [
+          2,
+          2,
+          16
+        ],
+        [
+          2,
+          2,
+          161
+        ],
+        [
+          3,
+          3,
+          16
+        ],
+        [
+          3,
+          3,
+          16
+        ],
+        [
+          3,
+          3,
+          161
+        ],
+        [
+          3,
+          3,
+          161
+        ],
+        [
+          2,
+          2,
+          19
+        ],
+        [
+          3,
+          3,
+          187
+        ],
+        [
+          2,
+          2,
+          19
+        ],
+        [
+          3,
+          3,
+          187
+        ]
+      ],
+      "land_mons_night": [
+        [
+          2,
+          2,
+          163
+        ],
+        [
+          2,
+          2,
+          19
+        ],
+        [
+          2,
+          2,
+          163
+        ],
+        [
+          2,
+          2,
+          19
+        ],
+        [
+          3,
+          3,
+          163
+        ],
+        [
+          3,
+          3,
+          163
+        ],
+        [
+          3,
+          3,
+          19
+        ],
+        [
+          3,
+          3,
+          19
+        ],
+        [
+          2,
+          2,
+          19
+        ],
+        [
+          3,
+          3,
+          163
+        ],
+        [
+          2,
+          2,
+          19
+        ],
+        [
+          3,
+          3,
+          163
+        ]
+      ]
+    }
+  },
+  "all_pass": false,
+  "error": "AssertionError: Species not reached in numerical list",
+  "originals_unchanged": true
+}

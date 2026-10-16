@@ -1,0 +1,38 @@
+{
+  "all_pass": true,
+  "ram_writes": 0,
+  "direct_script_calls": 0,
+  "checks": [
+    {
+      "case": "introduction",
+      "actual_professor_NPC_2": true,
+      "report_delivered_after": false,
+      "party_PC_dex_preserved": true,
+      "pass": true
+    },
+    {
+      "case": "report_delivery",
+      "actual_professor_NPC_2": true,
+      "report_delivered_after": true,
+      "party_PC_dex_preserved": true,
+      "pass": true
+    },
+    {
+      "case": "completed_report",
+      "actual_professor_NPC_2": true,
+      "report_delivered_after": true,
+      "party_PC_dex_preserved": true,
+      "pass": true
+    },
+    {
+      "case": "legacy_completed_without_briefing",
+      "actual_professor_NPC_2": true,
+      "report_delivered_after": true,
+      "party_PC_dex_preserved": true,
+      "pass": true
+    }
+  ],
+  "original_inputs_unchanged": true,
+  "rom_sha256": "2bafd6478fef5bbda56c6b4bec9c8dec1a4e0f060252fc219dbcc834411509f7",
+  "professor_art": "Temporary native scientist sprite; dedicated Elm drawing pending"
+}

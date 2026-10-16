@@ -62,6 +62,7 @@ const struct HealLocation * GetHealLocation(u32 idx)
 void SetWhiteoutRespawnWarpAndHealerNpc(struct WarpData * warp)
 {
     u32 healLocationIdx;
+    u32 i;
 
     if (VarGet(VAR_MAP_SCENE_TRAINER_TOWER) == 1)
     {
@@ -77,6 +78,18 @@ void SetWhiteoutRespawnWarpAndHealerNpc(struct WarpData * warp)
     else
     {
         healLocationIdx = GetHealLocationIndexFromMapGroupAndNum(gSaveBlock1Ptr->lastHealLocation.mapGroup, gSaveBlock1Ptr->lastHealLocation.mapNum);
+        // Checkpoints may share an outdoor map; preserve older map-only fallback.
+        for (i = 0; i < ARRAY_COUNT(sHealLocations); i++)
+        {
+            if (sHealLocations[i].mapGroup == gSaveBlock1Ptr->lastHealLocation.mapGroup
+             && sHealLocations[i].mapNum == gSaveBlock1Ptr->lastHealLocation.mapNum
+             && sHealLocations[i].x == gSaveBlock1Ptr->lastHealLocation.x
+             && sHealLocations[i].y == gSaveBlock1Ptr->lastHealLocation.y)
+            {
+                healLocationIdx = i + 1;
+                break;
+            }
+        }
 #ifdef BUGFIX
         // Avoid out of bounds read
         if (healLocationIdx == HEAL_LOCATION_NONE)
@@ -106,6 +119,12 @@ void SetWhiteoutRespawnWarpAndHealerNpc(struct WarpData * warp)
             warp->x = 4;
             warp->y = 11;
             VarSet(VAR_MAP_SCENE_TRAINER_TOWER, 0);
+        }
+        else if (sWhiteoutRespawnHealCenterMapIdxs[healLocationIdx - 1][0] == MAP_GROUP(MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_1F)
+              && sWhiteoutRespawnHealCenterMapIdxs[healLocationIdx - 1][1] == MAP_NUM(MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_1F))
+        {
+            warp->x = 3;
+            warp->y = 4;
         }
         else
         {

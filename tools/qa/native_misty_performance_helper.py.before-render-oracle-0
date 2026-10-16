@@ -1,0 +1,122 @@
+_field_done=set()
+def field_budget(label,e,elf,rom,syms):
+ import struct,json,gamedata
+ from emu import Emu as PlainEmu
+ location=e.location();selected=None
+ for name,mask,left,right,y in (('PalletTown',1,5,10,9),):
+  m=gamedata.map_info(name)
+  if location[:2]==(m['group'],m['num']):selected=(name,mask,left,right,y)
+ if selected is None or selected[0] in _field_done:return
+ name,mask,left,right,y=selected
+ template_count=4
+ expected_ids=set()
+ assert len(gamedata.map_info(name)['json']['object_events'])==template_count
+ assert location[3]==y and left<=location[2]<=right,(name,location)
+ eb=elf.read_bytes();eh=struct.unpack_from('<16sHHIIIIIHHHHHH',eb)
+ sections=[struct.unpack_from('<IIIIIIIIII',eb,eh[6]+i*eh[11]) for i in range(eh[12])]
+ sc=(max(q[3]+q[5] for q in sections if q[2]&2 and 0x02000000<=q[3]<0x02040000)+3)&~3
+ assert sc+88<=0x02040000
+ original_frame=e.frame();state=e.save_state();results=[]
+ with PlainEmu(str(rom),None,sym='') as pe:
+  pe.syms=e.syms.copy();pe.load_state(state)
+  assert pe.location()==location and pe.field_idle(),'clone state load'
+  def invoke2(name,arg0,arg1):
+   assert 0<=arg1<256
+   vals={'cb':syms['gMain']+4,'prev':pe.callback2(),'a0':arg0,'ret':(sc+20)|1,'fn':syms[name]|1,'res':sc+56}
+   ins=[0xb510,('l',2,'cb'),('l',3,'prev'),0x6013,('l',0,'a0'),0x2100|arg1,('l',2,'ret'),0x4696,('l',2,'fn'),0x4710,('l',2,'res'),0x6010,0xbd10,0x46c0]
+   keys=list(vals)
+   for i,v in enumerate(ins):
+    if isinstance(v,tuple):
+     d=sc+28+4*keys.index(v[2])-((sc+2*i+4)&~3)
+     assert 0<=d<=1020 and d%4==0
+     ins[i]=0x4800+(v[1]<<8)+d//4
+   pe.write(sc,struct.pack('<14H6I',*ins,*vals.values()))
+   pe.write(sc+56,struct.pack('<I',0xdecafbad));pe.write(syms['gMain']+4,struct.pack('<I',sc|1))
+   for _ in range(20):
+    pe.run(1);value=pe.u32(sc+56)
+    if value!=0xdecafbad:return value
+   raise AssertionError(('native metric call',name))
+  repel=gamedata.const('VAR_REPEL_STEP_COUNT')
+  invoke2('VarSet',repel,250);assert invoke2('VarGet',repel,0)==250
+  invoke2('VarSet',gamedata.const('VAR_HAPPINESS_STEP_COUNTER'),0)
+  def records():
+   s1=pe.ptr('gSaveBlock1Ptr');s2=pe.ptr('gSaveBlock2Ptr');n=(gamedata.const('NUM_SPECIES')+7)//8
+   ranges=[(pe.sym('gPlayerParty'),600),(pe.ptr('gPokemonStoragePtr'),33744),(s2+gamedata.off('sb2.pokedex')+gamedata.off('dex.owned'),n),(s2+gamedata.off('sb2.pokedex')+gamedata.off('dex.seen'),n),(s1+gamedata.off('sb1.seen1'),n),(s1+gamedata.off('sb1.seen2'),n)]
+   f=gamedata.off('sb1.flags');end=gamedata.off('sb1.vars')
+   t=gamedata.off('sb2.hoennTrainerFlags');h=gamedata.off('sb2.hoennFlags');v=gamedata.off('sb2.hoennVars')
+   assert 0<f<end and 0<t<h<v
+   ranges.extend(((s1+f,end-f),(s2+t,h-t),(s2+h,v-h)))
+   return tuple(pe.read(a,size) for a,size in ranges)
+  original_records=records();baseline=pe.save_state()
+  def geometry(o):
+   sid=o[4];assert sid<64
+   a=syms['gSprites']+68*sid
+   def s16(k):return struct.unpack('<h',pe.read(a+gamedata.off('misty_sprite.'+k),2))[0]
+   return dict(local_id=o[8],current=struct.unpack_from('<hh',o,16),previous=struct.unpack_from('<hh',o,20),object_flags=hex(int.from_bytes(o[:4],'little')),movement_action=o[28],sprite=sid,sprite_flags=hex(pe.u8(a+0x3e)),feet=[s16('x')+s16('x2'),s16('y')+s16('y2')-struct.unpack('<b',pe.read(a+gamedata.off('misty_sprite.cy'),1))[0]])
+  import os
+  mode=os.environ.get('MISTY_PERF_WORKLOAD','both');assert mode in ('both','walking')
+  for walking in ((True,) if mode=='walking' else (False,True)):
+   pe.load_state(baseline);pe.hold()
+   counter=sc+64
+   pe.write(counter,struct.pack('<10HI',0x1c01,0x0080,0x1840,0x00c0,0x4902,0x1840,0x8801,0x3101,0x8001,0x4770,syms['gTasks']+8))
+   tid=invoke2('CreateTask',counter|1,255);assert tid<16
+   ta=syms['gTasks']+40*tid;c=pe.u16(ta+8);v=pe.u32(syms['gMain']+36);f=pe.frame()
+   path=set();visible=0;misty_visible=0;maxobjects=0;irregular=[];last=c;direction='RIGHT';active_template_ids=set();misty_positions=set();minimum_visible_feet_gap=None
+   for tick in range(360):
+    loc=pe.location()
+    assert loc[:2]==location[:2] and loc[3]==y and left<=loc[2]<=right,('corridor',loc)
+    assert pe.u8(syms['gPlayerAvatar'])&mask and pe.field_idle()
+    if walking:
+     if loc[2]>=right:direction='LEFT'
+     elif loc[2]<=left:direction='RIGHT'
+     pe.hold(direction)
+    else:pe.hold()
+    prior=pe.read(syms['gObjectEvents'],16*36)
+    before_geometry=[geometry(prior[i:i+36]) for i in range(0,576,36) if prior[i]&1 and prior[i+8] in (253,254,255)]
+    pe.run(1);path.add(pe.location()[2:]);now=pe.u16(ta+8)
+    if (now-last)&65535!=1:irregular.append(tick)
+    last=now
+    raw=pe.read(syms['gObjectEvents'],16*36);objects=[raw[i:i+36] for i in range(0,len(raw),36) if raw[i]&1]
+    followers=[o for o in objects if o[8]==254]
+    assert len(followers)==1
+    follower=followers[0];assert follower[4]<64
+    sp=syms['gSprites']+68*follower[4];assert pe.u8(sp+0x3e)&1
+    visible+=not(int.from_bytes(follower[:4],'little')&0x6000) and not(pe.u8(sp+0x3e)&4)
+    misties=[o for o in objects if o[8]==253];players=[o for o in objects if o[8]==255]
+    assert len(misties)==len(players)==1,'missing/duplicate companion or player'
+    assert not any(o[8]==4 for o in objects),'joined static Misty was not hidden'
+    ms=misties[0];assert ms[4]<64
+    msp=syms['gSprites']+68*ms[4];assert pe.u8(msp+0x3e)&1
+    mv=not(int.from_bytes(ms[:4],'little')&0x6000) and not(pe.u8(msp+0x3e)&4)
+    misty_visible+=mv;misty_positions.add(struct.unpack_from('<hh',ms,16))
+    if mv:
+     def feet(o):
+      a=syms['gSprites']+68*o[4];assert o[4]<64 and pe.u8(a+0x3e)&1
+      def s16(k):return struct.unpack('<h',pe.read(a+gamedata.off('misty_sprite.'+k),2))[0]
+      return s16('x')+s16('x2'),s16('y')+s16('y2')-struct.unpack('<b',pe.read(a+gamedata.off('misty_sprite.cy'),1))[0]
+     mf=feet(ms)
+     for other in [players[0],follower]:
+      tile_overlap=struct.unpack_from('<hh',ms,16)==struct.unpack_from('<hh',other,16)
+      gap=sum(abs(x-y) for x,y in zip(mf,feet(other)))
+      if tile_overlap or gap<16:
+       diagnostic=dict(tick=tick,frame=pe.frame(),walking=walking,direction=direction,location=pe.location(),callback2=hex(pe.callback2()),tile_overlap=tile_overlap,other_local_id=other[8],feet_gap=gap,before=before_geometry,after=[geometry(o) for o in [players[0],follower,ms]])
+       pe.shot(str(_diag_out/('walking-overlap-'+str(tick)+'.png')))
+       print(json.dumps({'misty_overlap_diagnostic':diagnostic}),flush=True)
+       (_diag_out/'overlap-diagnostic.json').write_text(json.dumps(diagnostic,indent=2))
+      assert not tile_overlap,'visible Misty tile overlap'
+      minimum_visible_feet_gap=gap if minimum_visible_feet_gap is None else min(minimum_visible_feet_gap,gap)
+      assert gap>=16,('visible Misty sprite-feet overlap',tick,gap)
+    maxobjects=max(maxobjects,len(objects));active_template_ids.update(o[8] for o in objects if 1<=o[8]<=template_count)
+    tasks=pe.read(syms['gTasks'],16*40)
+    assert sum(bool(tasks[i+4]) and (int.from_bytes(tasks[i:i+4],'little')&~1)==(syms['Task_FollowerPikachu']&~1) for i in range(0,640,40))==1
+   dc=(pe.u16(ta+8)-c)&65535;dv=(pe.u32(syms['gMain']+36)-v)&0xffffffff;df=pe.frame()-f
+   alive=pe.u8(ta+4) and (pe.u32(ta)&~1)==counter
+   assert records()==original_records,'performance workload changed party/storage/dex/regional flags'
+   assert expected_ids<=active_template_ids,('source-defined dense NPCs not active',name,sorted(active_template_ids),sorted(expected_ids))
+   assert maxobjects>=3,'player and both companions were not active'
+   r=dict(party_pc_dex_preserved=True,regional_story_trainer_flags_preserved=True,active_template_ids=sorted(active_template_ids),template_count=template_count,native_object_capacity=16,map=name,walking=walking,misty_objects=1,misty_visible_frames=misty_visible,misty_positions=sorted(misty_positions),minimum_visible_feet_gap=minimum_visible_feet_gap,long_corridor=[left,right,y],repel=250,hardware=df,vblank=dv,callbacks=dc,missed=max(0,df-dc),irregular=irregular,positions=sorted(path),follower_objects=1,follower_tasks=1,max_objects=maxobjects,visible_frames=visible,counter_survived=bool(alive))
+   r['pass_all']=bool(alive and df==dv==dc==360 and not irregular and visible>0 and (misty_visible>0 if walking else misty_visible==360) and (not walking or len(path)>=4))
+   print(json.dumps({'joined_misty_performance':r}),flush=True);results.append(r)
+ assert e.frame()==original_frame and e.location()==location,'original core advanced'
+ assert all(r['pass_all'] for r in results),'land field budget/movement failure'
+ _field_done.add(name)

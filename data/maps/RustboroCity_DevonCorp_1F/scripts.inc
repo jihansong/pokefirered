@@ -5,10 +5,6 @@ RustboroCity_DevonCorp_1F_EventScript_H0::
 	msgbox RustboroCity_DevonCorp_1F_Text_H0, MSGBOX_NPC
 	end
 
-RustboroCity_DevonCorp_1F_EventScript_H1::
-	msgbox RustboroCity_DevonCorp_1F_Text_H1, MSGBOX_NPC
-	end
-
 RustboroCity_DevonCorp_1F_EventScript_H2::
 	msgbox RustboroCity_DevonCorp_1F_Text_H2, MSGBOX_NPC
 	end
@@ -21,3 +17,45 @@ RustboroCity_DevonCorp_1F_EventScript_H4::
 	msgbox RustboroCity_DevonCorp_1F_Text_H4, MSGBOX_SIGN
 	end
 
+@ BEGIN PATCH (tools/hoenn_import/patches)
+
+
+RustboroCity_DevonCorp_1F_EventScript_H1::
+	lock
+	faceplayer
+	goto_if_set FLAG_HOENN_GOT_EXP_SHARE, RustboroCity_DevonCorp_1F_EventScript_DispatchDone
+	goto_if_ge VAR_HOENN_SCENE_DEVON, 6, RustboroCity_DevonCorp_1F_EventScript_DispatchDone
+	goto_if_set FLAG_HOENN_DEVON_GOODS_DELIVERED, RustboroCity_DevonCorp_1F_EventScript_DispatchReward
+	goto_if_ge VAR_HOENN_SCENE_DEVON, 5, RustboroCity_DevonCorp_1F_EventScript_DispatchReward
+	goto_if_eq VAR_HOENN_SCENE_DEVON, 4, RustboroCity_DevonCorp_1F_EventScript_DispatchWaiting
+	goto_if_eq VAR_HOENN_SCENE_DEVON, 3, RustboroCity_DevonCorp_1F_EventScript_DispatchRecovered
+	goto_if_eq VAR_HOENN_SCENE_DEVON, 2, RustboroCity_DevonCorp_1F_EventScript_DispatchChase
+	msgbox RustboroCity_DevonCorp_1F_Text_H1
+	release
+	end
+
+RustboroCity_DevonCorp_1F_EventScript_DispatchChase::
+	msgbox RustboroCity_DevonCorp_1F_Text_DispatchChase
+	release
+	end
+
+RustboroCity_DevonCorp_1F_EventScript_DispatchRecovered::
+	msgbox RustboroCity_DevonCorp_1F_Text_DispatchRecovered
+	release
+	end
+
+RustboroCity_DevonCorp_1F_EventScript_DispatchWaiting::
+	msgbox RustboroCity_DevonCorp_1F_Text_DispatchWaiting
+	release
+	end
+
+RustboroCity_DevonCorp_1F_EventScript_DispatchReward::
+	msgbox RustboroCity_DevonCorp_1F_Text_DispatchReward
+	release
+	end
+
+RustboroCity_DevonCorp_1F_EventScript_DispatchDone::
+	msgbox RustboroCity_DevonCorp_1F_Text_DispatchDone
+	release
+	end
+@ END PATCH

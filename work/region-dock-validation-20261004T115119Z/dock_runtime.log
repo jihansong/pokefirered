@@ -1,0 +1,15 @@
+{"name": "dock_no_strength", "pass": true, "negative_control": false, "errors": []}
+{"name": "dock_ship_not_departed", "pass": true, "negative_control": false, "errors": []}
+{"name": "dock_decline", "pass": true, "negative_control": false, "errors": []}
+{"name": "dock_encounter_flee", "pass": true, "negative_control": false, "errors": []}
+{"name": "dock_capture", "pass": false, "negative_control": false, "errors": ["mashtext sText_GiveNicknameCaptured 180: never shown"]}
+{"name": "dock_legacy_egg", "pass": true, "negative_control": false, "errors": []}
+{"name": "dock_legacy_encounter", "pass": true, "negative_control": false, "errors": []}
+{"name": "dock_legacy_pushed_1", "pass": true, "negative_control": false, "errors": []}
+{"name": "dock_legacy_pushed_2", "pass": true, "negative_control": false, "errors": []}
+{"name": "dock_legacy_pushed_3", "pass": true, "negative_control": false, "errors": []}
+{"name": "dock_legacy_pushed_4", "pass": true, "negative_control": false, "errors": []}
+{"name": "dock_roadside_saved", "pass": true, "negative_control": false, "errors": []}
+{"name": "dock_ship_departure", "pass": true, "negative_control": false, "errors": []}
+{"name": "dock_no_strength_negative", "pass": true, "negative_control": true, "errors": ["expect battle: not in a battle"]}
+/workspaces/pokefirered/work/dock-mew-qa-20261004T115244Z

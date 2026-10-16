@@ -1,0 +1,110 @@
+{
+  "pass": true,
+  "rom_sha256": "3d1a1a4f3e84deb5d9f8d2a5943930354e1a86164fe257eabf79d99ca1232fee",
+  "elf_sha256": "efd67a54f5ad9ecbe8aaa02c0d69ca7ecb6eb6d928f50761199bd8e6f040b0eb",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-fly-region-johto-off",
+  "fixture": "temporary Fearow mover plus exact copy of genuine original starter Pikachu; original SAV/PC/Dex unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "candidate_ui_task_symbols": {
+    "Task_HandleChooseMonInput": [
+      135415912
+    ],
+    "Task_HandleSelectionMenuInput": [
+      135428584
+    ],
+    "Task_ReturnToChooseMonAfterText": [
+      135418104
+    ],
+    "Task_CancelAfterAorBPress": [
+      135436076
+    ],
+    "Task_FlyMap": [
+      135040196
+    ],
+    "Task_UseFly": [
+      134772572
+    ],
+    "Task_FlyIntoMap": [
+      134772804
+    ]
+  },
+  "native_story_not_entire_regions": true,
+  "palette_active_abi_mask": {
+    "size": 16,
+    "offset": 7,
+    "mask": 128
+  },
+  "follower_checks": [],
+  "private_fly_abi": {
+    "offsets": {
+      "cursor.x": 0,
+      "cursor.y": 2,
+      "cursor.move": 12,
+      "cursor.mapsec": 20,
+      "cursor.type": 22,
+      "fly.state": 0,
+      "icons.fly": 720,
+      "icons.dungeon": 320,
+      "icon.size": 16,
+      "icon.region": 4,
+      "icon.sprite": 8,
+      "region.selected": 20731,
+      "sprite.size": 68,
+      "section.MAPSEC_NEW_BARK_TOWN": 200,
+      "section.MAPSEC_CHERRYGROVE_CITY": 201,
+      "section.MAPSEC_VIOLET_CITY": 204,
+      "section.MAPSEC_AZALEA_TOWN": 208,
+      "section.MAPSEC_GOLDENROD_CITY": 212,
+      "section.MAPSEC_ECRUTEAK_CITY": 217,
+      "section.MAPSEC_OLIVINE_CITY": 221,
+      "section.MAPSEC_CIANWOOD_CITY": 225,
+      "section.MAPSEC_JOHTO_ROUTE40": 223,
+      "section.MAPSEC_PALLET_TOWN": 88,
+      "section.MAPSEC_SLATEPORT_CITY": 8
+    },
+    "source_schema_sha256": "95d638f20fd19cea76a6e0d088386bf07e6c51c00d464ca18e30d777a3c98a8c",
+    "regions": [
+      "REGIONMAP_KANTO",
+      "REGIONMAP_SEVII123",
+      "REGIONMAP_SEVII45",
+      "REGIONMAP_SEVII67",
+      "REGIONMAP_HOENN",
+      "REGIONMAP_JOHTO_ENTRY",
+      "REGIONMAP_COUNT"
+    ],
+    "mapsec_types": [
+      "MAPSECTYPE_NONE",
+      "MAPSECTYPE_ROUTE",
+      "MAPSECTYPE_VISITED",
+      "MAPSECTYPE_NOT_VISITED",
+      "MAPSECTYPE_UNKNOWN"
+    ]
+  },
+  "target_cell_source": "native section geometry",
+  "region": "johto",
+  "gate": "off",
+  "method": "party menu then native destination A",
+  "original_party_storage_preserved": true,
+  "fly_destinations_not_story_completion": true,
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "ui_stage": "choose-Fly-action",
+  "menu_rejection_task": "Task_ReturnToChooseMonAfterText",
+  "pass_": true,
+  "native_region_badge_gate": true,
+  "full_original_storage_unchanged": true,
+  "original_saves_unchanged": true
+}

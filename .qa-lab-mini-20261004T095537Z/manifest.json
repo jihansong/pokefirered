@@ -1,0 +1,22 @@
+{
+  "tools/johto/patches/NewBarkTown_ElmsLab/scripts.inc": {
+    "before": null,
+    "after": "eb4a38ea935c04e586c7d9521353f95819b5635de2adfcb09fc2043de87d7a18"
+  },
+  "data/maps/NewBarkTown_ElmsLab/scripts.inc": {
+    "before": "fa2a2c9ca600dd8302da407658446260c3000e69d71d7d89e28fd88d479397c3",
+    "after": "eb4a38ea935c04e586c7d9521353f95819b5635de2adfcb09fc2043de87d7a18"
+  },
+  "tools/johto/patches/NewBarkTown_ElmsLab/text.inc": {
+    "before": null,
+    "after": "fe95f5cce305358c294d723dc215925c20060059bbb9b3d46970dbe6818f7475"
+  },
+  "data/maps/NewBarkTown_ElmsLab/text.inc": {
+    "before": "b1cb41aa16ee61e61f45893e1c306a7fe28a44b8ef140691234a32999356e1b9",
+    "after": "fe95f5cce305358c294d723dc215925c20060059bbb9b3d46970dbe6818f7475"
+  },
+  "tools/johto/build_entry.py": {
+    "before": "fc62a8602a9d355c77817f68dc103782c70ae8c0672a1a8737699cb2b4a475e5",
+    "after": "5d859d4d594a20d0164e95de2f81a08a186974dac036ec0e23de94f684173cea"
+  }
+}

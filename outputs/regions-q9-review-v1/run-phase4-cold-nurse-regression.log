@@ -1,0 +1,3002 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/native_cold_nurse_regression_qa.py", line 100, in <module>
+    with ReadOnlyEmu(str(rom),str(path),sym='')as e:row=attempt(e,room,count,prepared,label)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/native_cold_nurse_regression_qa.py", line 65, in attempt
+    e.syms=syms;e.boot_continue();settle(e);e.run(60);before=snapshot(e)
+                                                             ^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/native_cold_nurse_regression_qa.py", line 28, in snapshot
+    d=_original_snapshot(e);b=blocks(e);fs=off('sb1.flags');hf=off('sb2.hoennFlags');ht=off('sb2.hoennTrainerFlags')
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 218, in snapshot
+    d=_olivine_snapshot(e)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 174, in snapshot
+    d=_ecru_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 112, in snapshot
+    d=_ilex_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 56, in snapshot
+    d=_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_bootstrap.py", line 37, in snapshot
+    d=_league_original_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 320, in snapshot
+    d=_radio_snapshot(e);b=blocks(e)
+      ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 275, in snapshot
+    d=_maho_snapshot(e);live=blocks(e)
+      ^^^^^^^^^^^^^^^^^
+RecursionError: maximum recursion depth exceeded

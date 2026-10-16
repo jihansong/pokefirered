@@ -1,0 +1,10 @@
+{
+  "status": "V14_SYNC_AND_NATIVE_DOCK_FIX_PASS",
+  "ZIP": "/workspaces/pokefirered/outputs/v14-sync-dockfix-20261014/Thunder-Yellow-v1.4-dockfix-20261014.zip",
+  "ZIP_sha256": "07a63453027db385ddc28337a243e9f70431be1cb428af324839426c5e1df3c8",
+  "ZIP_bytes": 7740806,
+  "ROM_sha256": "af2677993a75979fb36f0768c390d1bad7424e61f2d569b5054d40702250d2e8",
+  "SAV_sha256": "c06ad0536f1ee13fd88a3cf36346b52d3d5ca0cae7e729723acf6047d916feb8",
+  "created_utc": "2026-10-14T10:40:25.927072+00:00",
+  "created_korea": "2026-10-14T19:40:25.927072+09:00"
+}

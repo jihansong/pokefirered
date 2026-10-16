@@ -1,0 +1,440 @@
+{
+  "time": "20261006T031406438681Z",
+  "validation": {
+    "chapter": "Ice Path and Blackthorn final badge trial",
+    "save_layout_changed": false,
+    "native_build_and_emulator": "NOT_RUN_BY_GENERATOR",
+    "visual_limits": [
+      "Native Kanto tiles and class portraits are reused.",
+      "ICE PATH contains a compact main route and short native sliding strips; the original falling-ice puzzle is not reproduced."
+    ],
+    "not_implemented": [
+      "Johto League",
+      "Route45/46 optional southern return route",
+      "Full original Ice Path boulder puzzle"
+    ],
+    "new_maps": [
+      "JohtoRoute44",
+      "IcePath_1F",
+      "IcePath_B1F",
+      "IcePath_B2F",
+      "BlackthornCity",
+      "BlackthornCity_PokemonCenter_1F",
+      "BlackthornCity_PokemonCenter_2F",
+      "BlackthornCity_Mart",
+      "BlackthornCity_Gym",
+      "DragonDen_1F",
+      "DragonDen_Shrine"
+    ],
+    "new_flags": {
+      "FLAG_JOHTO_BADGE08_GET": 23,
+      "FLAG_JOHTO_CLAIR_DEFEATED": 59,
+      "FLAG_JOHTO_DRAGON_TRIAL_CLEARED": 60,
+      "FLAG_JOHTO_CLAIR_TM02_RECEIVED": 61,
+      "FLAG_JOHTO_ICE_PATH_WATERFALL_REWARDED": 62
+    },
+    "trainer_ids": {
+      "WILTON": 846,
+      "VANCE": 847,
+      "ALLEN": 848,
+      "FRAN": 849,
+      "CLAIR": 850
+    },
+    "johto_map_count": 112,
+    "static_checks": [
+      {
+        "map": "JohtoRoute44",
+        "reachable_tiles": 871,
+        "buffer_metatiles": 2394,
+        "native_warps": 1
+      },
+      {
+        "map": "IcePath_1F",
+        "reachable_tiles": 452,
+        "buffer_metatiles": 1634,
+        "native_warps": 2
+      },
+      {
+        "map": "IcePath_B1F",
+        "reachable_tiles": 452,
+        "buffer_metatiles": 1634,
+        "native_warps": 2
+      },
+      {
+        "map": "IcePath_B2F",
+        "reachable_tiles": 479,
+        "buffer_metatiles": 1634,
+        "native_warps": 2
+      },
+      {
+        "map": "BlackthornCity",
+        "reachable_tiles": 695,
+        "buffer_metatiles": 2162,
+        "native_warps": 5
+      },
+      {
+        "map": "BlackthornCity_PokemonCenter_1F",
+        "reachable_tiles": 84,
+        "buffer_metatiles": 720,
+        "native_warps": 4
+      },
+      {
+        "map": "BlackthornCity_PokemonCenter_2F",
+        "reachable_tiles": 74,
+        "buffer_metatiles": 720,
+        "native_warps": 3
+      },
+      {
+        "map": "BlackthornCity_Mart",
+        "reachable_tiles": 42,
+        "buffer_metatiles": 598,
+        "native_warps": 3
+      },
+      {
+        "map": "BlackthornCity_Gym",
+        "reachable_tiles": 293,
+        "buffer_metatiles": 1110,
+        "native_warps": 3
+      },
+      {
+        "map": "DragonDen_1F",
+        "reachable_tiles": 572,
+        "buffer_metatiles": 1800,
+        "native_warps": 2
+      },
+      {
+        "map": "DragonDen_Shrine",
+        "reachable_tiles": 84,
+        "buffer_metatiles": 700,
+        "native_warps": 3
+      }
+    ],
+    "native_warp_behaviors_checked": 30,
+    "map_sections_max": 235,
+    "fly_destinations_total": 10,
+    "saved_story_last_offset": 1342,
+    "saved_trainer_last_offset": 850
+  },
+  "files": {
+    "data/maps/map_groups.json": {
+      "before": "db8b1707dd04070bd54839aa23be64ce8b28104ff29b37ca3af69ce1da9f39b6",
+      "after": "334f7a8cc10293f92fd6ab5b6bdc1868c83bb8bccef53aa46da5fa7b9e5dd464"
+    },
+    "data/layouts/JohtoRoute44/map.bin": {
+      "before": null,
+      "after": "d63b5bade3d666d00fe5f520a1415303283c756fe6695abded6a844d245b078a"
+    },
+    "data/layouts/JohtoRoute44/border.bin": {
+      "before": null,
+      "after": "bd05db219b1304364f4d1c265db9cece1af50fb2332d9f39357fdc8d721dc449"
+    },
+    "data/layouts/IcePath_1F/map.bin": {
+      "before": null,
+      "after": "5f48e397bf51f16fd2c0f6f5b82a003bca255c64bf14f55913ff9d401b7d2b1d"
+    },
+    "data/layouts/IcePath_1F/border.bin": {
+      "before": null,
+      "after": "379f8d1e17cb9bcad3a11243c396f7ba3e3095d10727d201c0e7b49ecdad94b5"
+    },
+    "data/layouts/IcePath_B1F/map.bin": {
+      "before": null,
+      "after": "38c1969e7638eb3be31dd831fe1215e882df8f6ae3115078b29ea183053f358a"
+    },
+    "data/layouts/IcePath_B1F/border.bin": {
+      "before": null,
+      "after": "379f8d1e17cb9bcad3a11243c396f7ba3e3095d10727d201c0e7b49ecdad94b5"
+    },
+    "data/layouts/IcePath_B2F/map.bin": {
+      "before": null,
+      "after": "57449521d6c37f6afed0d85953c3abe5dfdb4ede90ef7febd3c33e6101cc800f"
+    },
+    "data/layouts/IcePath_B2F/border.bin": {
+      "before": null,
+      "after": "379f8d1e17cb9bcad3a11243c396f7ba3e3095d10727d201c0e7b49ecdad94b5"
+    },
+    "data/layouts/BlackthornCity/map.bin": {
+      "before": null,
+      "after": "c4716c02bbac76e1c8956170696bd14fdc0f0f5d1385cd1c6d75d03920c67575"
+    },
+    "data/layouts/BlackthornCity/border.bin": {
+      "before": null,
+      "after": "bd05db219b1304364f4d1c265db9cece1af50fb2332d9f39357fdc8d721dc449"
+    },
+    "data/layouts/BlackthornCity_Gym/map.bin": {
+      "before": null,
+      "after": "dfcef7966af28ac4cc27cf97ef7dab275640dbc73ac7e59f57c1c75ce92fd6bf"
+    },
+    "data/layouts/BlackthornCity_Gym/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/DragonDen_1F/map.bin": {
+      "before": null,
+      "after": "e01ed3283721a259142e3996ab1e8cb0e13cc557677fe727224677b1b8b708c1"
+    },
+    "data/layouts/DragonDen_1F/border.bin": {
+      "before": null,
+      "after": "379f8d1e17cb9bcad3a11243c396f7ba3e3095d10727d201c0e7b49ecdad94b5"
+    },
+    "data/layouts/DragonDen_Shrine/map.bin": {
+      "before": null,
+      "after": "8fc503c3a846bece5bb0547f17db3e383bc3cf404847dcf0d12d74b17eb12fe8"
+    },
+    "data/layouts/DragonDen_Shrine/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/layouts.json": {
+      "before": "bf142dd1afd67fd08c9565cb14e9307fe1c30d2c6f7a5ea95b43584f892290c8",
+      "after": "fb470d20d2cd75f319f59b2430cef9a2f57151b9e496482e6bcf86684d4efe8a"
+    },
+    "data/maps/JohtoRoute44/map.json": {
+      "before": null,
+      "after": "1438b0ebfbc9494ea8907ad5f991ff612a73c0921cf5e6c8dfdd5ea2ef8e1773"
+    },
+    "data/maps/JohtoRoute44/scripts.inc": {
+      "before": null,
+      "after": "4c4e68a4e3034b1d465ea58d0fabade63a2f024904cb3b4530e9d943e56a3466"
+    },
+    "data/maps/JohtoRoute44/text.inc": {
+      "before": null,
+      "after": "414d7dedb8e0fee4e62276545b098af0538884728dba0a67c12fa78ad1364cc9"
+    },
+    "data/maps/IcePath_1F/map.json": {
+      "before": null,
+      "after": "3da13284b643965416ab652420d2a354021f1c73b4129ce42e2fc97b516ad025"
+    },
+    "data/maps/IcePath_1F/scripts.inc": {
+      "before": null,
+      "after": "18109d95ad2e073f40718f1301b818df424b51532f38e095f82b9fe4411606a6"
+    },
+    "data/maps/IcePath_1F/text.inc": {
+      "before": null,
+      "after": "b31e9688678903724d256b9f636a6825d9cb446dab81447f7360947f7cdc8432"
+    },
+    "data/maps/IcePath_B1F/map.json": {
+      "before": null,
+      "after": "51102c04192a84c824ecfc054eb89f606dfebaa9ab631c0b21aa67e48f6a75e0"
+    },
+    "data/maps/IcePath_B1F/scripts.inc": {
+      "before": null,
+      "after": "575a13d2c581877faa0d85cdac0ea6305dcbc3278d8ea6ad17f5afd6abe03474"
+    },
+    "data/maps/IcePath_B1F/text.inc": {
+      "before": null,
+      "after": "b31e9688678903724d256b9f636a6825d9cb446dab81447f7360947f7cdc8432"
+    },
+    "data/maps/IcePath_B2F/map.json": {
+      "before": null,
+      "after": "41e89ec7d81c42b38187f164df883940e74203708e89534d5607a88adabc424b"
+    },
+    "data/maps/IcePath_B2F/scripts.inc": {
+      "before": null,
+      "after": "4a3cf4f3eeda3fe8dbda19d419c712d5dd8ecd2546822426b8004f8ad32a98f0"
+    },
+    "data/maps/IcePath_B2F/text.inc": {
+      "before": null,
+      "after": "3ad7a42ec278f30ce572f09f587d500bd3951c157f658d1246c5fae6c66c2ee7"
+    },
+    "data/maps/BlackthornCity/map.json": {
+      "before": null,
+      "after": "9cf12803fd4feda71cf97eda4ee71c18a8b37bde8d87aec543a71700ed55d038"
+    },
+    "data/maps/BlackthornCity/scripts.inc": {
+      "before": null,
+      "after": "28bcc90a81742054ad6355f9df84b0392b6e62262efe41d676b92283364d0411"
+    },
+    "data/maps/BlackthornCity/text.inc": {
+      "before": null,
+      "after": "f8a83e12c4c8c79d489ac343af3bb11feb21944611e0b5d419d238ed9a5be094"
+    },
+    "data/maps/BlackthornCity_PokemonCenter_1F/map.json": {
+      "before": null,
+      "after": "3661766daaf93a3551e29d5624de553e9a9ff7825ab2a69b3a4708cec3c7c66d"
+    },
+    "data/maps/BlackthornCity_PokemonCenter_1F/scripts.inc": {
+      "before": null,
+      "after": "53dcc760e0bfda0c08a4c356902d14f645b751e7a1bc2a9530020d4ab839fca6"
+    },
+    "data/maps/BlackthornCity_PokemonCenter_1F/text.inc": {
+      "before": null,
+      "after": "82cb9858d9b3611be5979bf48f724d108a379611a0fbef62e068c767a414af8e"
+    },
+    "data/maps/BlackthornCity_PokemonCenter_2F/map.json": {
+      "before": null,
+      "after": "5ec03893270b7c7f28bad46e2cd9dbc7e785da965da1e4ad951626abd37667fd"
+    },
+    "data/maps/BlackthornCity_PokemonCenter_2F/scripts.inc": {
+      "before": null,
+      "after": "8a77c397095b3d6f43178b13b9406734a9dc17365c2c9be99ac5b9a5f6c9094b"
+    },
+    "data/maps/BlackthornCity_PokemonCenter_2F/text.inc": {
+      "before": null,
+      "after": "a0dfac1bcbde46cdf6187847f339d03aab6f659d4eb7949c5f14b7614ce6be55"
+    },
+    "data/maps/BlackthornCity_Mart/map.json": {
+      "before": null,
+      "after": "b8d0b101b8a7a154b048b536c1592864bff259241e1b52467cd1e1304331169a"
+    },
+    "data/maps/BlackthornCity_Mart/scripts.inc": {
+      "before": null,
+      "after": "56a55ea6c0b33a19a65bbe13d6ad8d6461ca0b6c2a7008c3f6bbcfb2884a8e51"
+    },
+    "data/maps/BlackthornCity_Mart/text.inc": {
+      "before": null,
+      "after": "b31e9688678903724d256b9f636a6825d9cb446dab81447f7360947f7cdc8432"
+    },
+    "data/maps/BlackthornCity_Gym/map.json": {
+      "before": null,
+      "after": "d9eae75062343ab562297b9731d2b5cf3264218d5d4b3e4aaeab94f41790d67d"
+    },
+    "data/maps/BlackthornCity_Gym/scripts.inc": {
+      "before": null,
+      "after": "6508e07d4e13f0b5dc7a529728da24d4b03ad6b05c7dfc7017e83c284864e860"
+    },
+    "data/maps/BlackthornCity_Gym/text.inc": {
+      "before": null,
+      "after": "f6c4eabb062903d78287aa5170c20ffef6f75a62d09a652a595781e2c2856e6c"
+    },
+    "data/maps/DragonDen_1F/map.json": {
+      "before": null,
+      "after": "07994e9f3ecf100929b5c89f8c795bc406ef8ce05294c40a78bfc130b2366430"
+    },
+    "data/maps/DragonDen_1F/scripts.inc": {
+      "before": null,
+      "after": "a41a4e8048e39c8c143c5155f09d9a4e011c0c7590bacc18cdbcfb29fa33c9be"
+    },
+    "data/maps/DragonDen_1F/text.inc": {
+      "before": null,
+      "after": "02e0cefbe42048c8700d8fa2ab3a3f35e2ec69b7d71a1453ce96793e9899bd52"
+    },
+    "data/maps/DragonDen_Shrine/map.json": {
+      "before": null,
+      "after": "70bd8cfe5505eccb1d016172ff18b7216123b2208e7d82b5f19a7b36251a5bd9"
+    },
+    "data/maps/DragonDen_Shrine/scripts.inc": {
+      "before": null,
+      "after": "1d57714cd20786ae087703f1c71bcaad81618082f40e526827121c5c264c822e"
+    },
+    "data/maps/DragonDen_Shrine/text.inc": {
+      "before": null,
+      "after": "18cd48d85b9eb160920ad3e9fbe28426b58303573702fc9bd854b8b47192c547"
+    },
+    "data/maps/MahoganyTown/map.json": {
+      "before": "219ae55370d9bc41b68ec4b2358cfb1686932de35d7c5d2c4b5ea1de7ff6ab7a",
+      "after": "8ee13ab5c945c975edc3d7d3356efdf04e30b9d8e754c0c088df2782ce592144"
+    },
+    "data/layouts/MahoganyTown/map.bin": {
+      "before": "61cc60b0056a1218c749707314d65e0b78b5a5be29d287fd550fddf6bec58657",
+      "after": "4ff403baf84e2f2712650c503f4959244df4964ff08842d2acd6eec2142910d0"
+    },
+    "src/data/heal_locations.json": {
+      "before": "62e0d1be192eaeb57df15d9d9eb5d1d1cdf953caf4bf7a518faec83e6ec35676",
+      "after": "c0c0a660b8503925bd24c2beffbc572e18e9387b762100ea8a910db94797fd07"
+    },
+    "include/constants/flags_johto_story.h": {
+      "before": "3bb8724718457e9908fd9d55a85646472c9cc4d5e19fd11b340200842b88814d",
+      "after": "4f866a4b66aada7d3eb115661eb0ee3c0e336b9a770190600c8af6bf8c3d445e"
+    },
+    "include/constants/opponents_johto_blackthorn.h": {
+      "before": null,
+      "after": "dada024dab0ad91b31a5ca0a8cb8a8743c40f7789ede6c27122ef69c716d6db2"
+    },
+    "include/constants/opponents.h": {
+      "before": "b611a02131cfa50a271b8e9e53c10f92a42016f294cc812ab34f8c1feb494d1f",
+      "after": "6e2902560a82428e1d6f1d4444f3e470808f76c96414649669b1806a7d0189c5"
+    },
+    "src/data/trainer_parties_johto_blackthorn.h": {
+      "before": null,
+      "after": "1033369d943a1efa6c41040eb11c8fc48eeff00546b8d86b71bf5d69c6870fad"
+    },
+    "src/data/trainers_johto_blackthorn.h": {
+      "before": null,
+      "after": "421cb304040909cef955d36bbd929cf57b99ba43dd9958472cc7fc237261b653"
+    },
+    "src/data/trainers.h": {
+      "before": "8772365fe5be7b864cc0dd95c2da1114e9accd4bd1f87784572b73d4de39d504",
+      "after": "745ebd8fb869379ef3c4ad46110e49a906ed0ef92f210ee295ad778d21184f98"
+    },
+    "src/data/trainer_parties.h": {
+      "before": "17131d1a2cd666e714e1723fd5cba325bda7410ff43fad1adc388b4da6b098b1",
+      "after": "74acc71c534e1bfd8fb1fd4b9cd30f4c112d5b348fa6b1c01722599b340f6f42"
+    },
+    "data/event_scripts.s": {
+      "before": "a04e63d4aae181e1b3fc3583982f40c0a90fd4146889b27e12b584cd3e26dd5c",
+      "after": "a9ecad7b4d95abbfb9e49765f30284ce32db9a8c47b48c5061f804b5898651ce"
+    },
+    "tools/johto/build_radio_tower.py": {
+      "before": "9084978ab277c56ada4f965a91230fbc7d428f64f1c20b16d023bb9b18b6ea7a",
+      "after": "ef0c9a53a70e66a9ea482cd4ac32720aa6a56bdc16028041686bf2baa6f43d2b"
+    },
+    "tools/johto/build_mahogany.py": {
+      "before": "4ca4635e09fe42fcef5d1cc56d02b6203b442483af65d3ba80fb61a44824d988",
+      "after": "014e941ea784d79a047e2e5263c883a68bef22851444e06787f3151e1d668386"
+    },
+    "data/maps/MahoganyTown/text.inc": {
+      "before": "fcf611eccc7b3d92abe0859b70f84985957e07b0c6fa0e186818710c6a702606",
+      "after": "6efc6956fbc375ebc58fa4b11d75cc97ec56fcdee712b81971e99966783137ea"
+    },
+    "src/field_control_avatar.c": {
+      "before": "2b72c984b9b8a5264fc0d39215e1712b3bd604e895a1e0a634dd959c27210368",
+      "after": "a936a32c7c1c6ddcc2cc49f598871070c44ed682251444179c7d08febd8814fa"
+    },
+    "tools/johto/johtoroute44_wild.json": {
+      "before": null,
+      "after": "c461a5f30f525bff51dc6822ec0f1ada6dc864c88087429763092e1851722855"
+    },
+    "tools/johto/icepath_1f_wild.json": {
+      "before": null,
+      "after": "9b4b809051497d70a9303a849349ad7dc3b161f980cd77f08654cb3665d099ff"
+    },
+    "tools/johto/icepath_b1f_wild.json": {
+      "before": null,
+      "after": "c72689f4147c0d1237930a57c5de881519edff830bb2f2453025033117c7da25"
+    },
+    "tools/johto/icepath_b2f_wild.json": {
+      "before": null,
+      "after": "ab40fd535b937911668db3f9330e964e83ce0a7be85c8161245e3c549b47bf27"
+    },
+    "tools/johto/dragonden_1f_wild.json": {
+      "before": null,
+      "after": "a120e3ef563b701fa06cc8cc2354190f2d60dce5024bd0102561a6569311a4ee"
+    },
+    "src/data/wild_encounters.json": {
+      "before": "723d3c8e6a67f877ac46317384de47ccb62ef97b1ddc5e016498d3794ba51497",
+      "after": "f95be7c9b854dfcb55ff1de7650f34882a5a09b698f66edfa653a3934936a127"
+    },
+    "src/data/region_map/region_map_sections.json": {
+      "before": "251a15aa15f0178e50116cb1ad0dc680633032f3187842b9849a11468400b3bb",
+      "after": "a002d68a5907203a25b84d1903bca152a398c26f112fb4a797d034090440ed6c"
+    },
+    "src/region_map.c": {
+      "before": "40e53a77f8eae6e0b4576eb2cfa3796481f7ee6c9e9362ee5e5f930cc415170d",
+      "after": "ba7ca00a62d1d894a004f8d814075b4290eed6ec3d2639396caa72e37eb96114"
+    },
+    "src/pokemon_summary_screen.c": {
+      "before": "74a37e0d8755b2f9ffa106da54f559916602a9c48d8c902654aa83d62eee88f5",
+      "after": "45590c372ec4e96354ea87c8bceb48b5ca480d221d26da5d44a1494c4289b057"
+    },
+    "graphics/region_map/johto_entry.bin": {
+      "before": "159094093d1bbce744e308e5b8c46d79616198c4c9e4e383fa09ddf43b70d528",
+      "after": "2f1a293888390c5ce8f0daaf6df012b043243b3157ed2872c80dbd7d5a8e6575"
+    },
+    "src/wild_pokemon_area.c": {
+      "before": "797f708a7396f29f4e6beeff5325cfea4f48b141e0d5ddd822801ac6ac2150de",
+      "after": "8d442c8346b161de536402205be33681d54ee69f23a8d276211b3b82819a77f4"
+    },
+    "include/pokedex_area_markers.h": {
+      "before": "7d30bf36e3543f8f02b9fb4d9f92f3bcbad50bc60e44b45ccc947dc178b2268f",
+      "after": "d7e77a03c14905c94d40eeb47208fa7c1fe3616807613231128704146c09abce"
+    },
+    "src/pokedex_area_markers.c": {
+      "before": "3f2ca6838fb7b7a4d47cf5cc819c02670baf5bd73eeb9618dd5ce1efbfd2309e",
+      "after": "8ac4e6afd6e9445ea17843f54cbf495b45a5071c5a541262259e5f0d5ec9fa00"
+    },
+    "src/pokedex_screen.c": {
+      "before": "be5ffb0aad4a88ee233cda1470a0352c971e630e34aec52a68144eec934378be",
+      "after": "3ba1b04e51e92b45ff3eb91f9e3fe8a98b28ebbd4f4ee43a863bde5d17aba097"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/work/connect_hoenn_legend_story_v1.py", line 273, in <module>
+    assert h0old and h0old.group(0)==h0+'::\n\tgoto '+boss+'\n',('unexpected Juan entry',h0old.group(0) if h0old else None)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('unexpected Juan entry', 'SootopolisCity_Gym_1F_EventScript_H0::\n\tgoto SootopolisCity_Gym_1F_TY_Boss\n')

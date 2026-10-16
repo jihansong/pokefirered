@@ -1,0 +1,1 @@
+{"pid": 15375, "command": "make leafgreen -j$(nproc) && make GAME_VERSION=LEAFGREEN syms", "log": "/workspaces/pokefirered/work/misty-followup-20261014/build-misty-v1.log"}

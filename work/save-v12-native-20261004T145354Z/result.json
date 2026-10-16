@@ -1,0 +1,187 @@
+{
+  "rom_sha256": "1375cdba01ad0c893cb04f71522871b2d964ae695319ecd2763d5e7247214625",
+  "v12_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "native_load_completed": true,
+  "save_integrity_healthy": false,
+  "code_injection": false,
+  "memory_writes": false,
+  "save_requested": false,
+  "slot": 0,
+  "counter": 60,
+  "original_anomalies": [
+    {
+      "index": 51,
+      "box": 2,
+      "slot": 22,
+      "mon": {
+        "pid_ot": "003a5580:a93afb7a",
+        "identity_names_sha256": "64238bc71c32c4bba7e14dd246e9992f353ab19aa7cc21bd0a0d7938a31d64cc",
+        "origin_ivs_sha256": "490409b1a5b81d34278141981b8ae2a43334ca8cb9194e9b12f3509435cb8c78",
+        "raw_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd",
+        "flags": 39,
+        "bad_egg": true,
+        "header_egg": true,
+        "secure_egg": true,
+        "checksum_stored": 30838,
+        "checksum_computed": 48246,
+        "checksum_valid": false,
+        "occupied": true,
+        "errors": [
+          "bad_egg_flag",
+          "mon_checksum"
+        ],
+        "decoded": {
+          "trusted_checksum": false,
+          "species": 108,
+          "item": 0,
+          "experience": 67168183,
+          "friendship": 70,
+          "moves": [
+            23,
+            282,
+            48,
+            35
+          ],
+          "pp": [
+            20,
+            20,
+            20,
+            20
+          ],
+          "order": "EMGA"
+        },
+        "annotation": null,
+        "hypothetical_without_secure_egg_checksum": 31862,
+        "hypothetical_residual_mod65536": 1024
+      }
+    }
+  ],
+  "boot_frames": 638,
+  "phases": [
+    {
+      "phase": "after_continue",
+      "pc_all_bytes_equal": true,
+      "party_all_raw80_equal": true,
+      "anomalies": [
+        {
+          "index": 51,
+          "box": 2,
+          "slot": 22,
+          "mon": {
+            "pid_ot": "003a5580:a93afb7a",
+            "identity_names_sha256": "64238bc71c32c4bba7e14dd246e9992f353ab19aa7cc21bd0a0d7938a31d64cc",
+            "origin_ivs_sha256": "490409b1a5b81d34278141981b8ae2a43334ca8cb9194e9b12f3509435cb8c78",
+            "raw_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd",
+            "flags": 39,
+            "bad_egg": true,
+            "header_egg": true,
+            "secure_egg": true,
+            "checksum_stored": 30838,
+            "checksum_computed": 48246,
+            "checksum_valid": false,
+            "occupied": true,
+            "errors": [
+              "bad_egg_flag",
+              "mon_checksum"
+            ],
+            "decoded": {
+              "trusted_checksum": false,
+              "species": 108,
+              "item": 0,
+              "experience": 67168183,
+              "friendship": 70,
+              "moves": [
+                23,
+                282,
+                48,
+                35
+              ],
+              "pp": [
+                20,
+                20,
+                20,
+                20
+              ],
+              "order": "EMGA"
+            },
+            "annotation": null,
+            "hypothetical_without_secure_egg_checksum": 31862,
+            "hypothetical_residual_mod65536": 1024
+          }
+        }
+      ],
+      "pc_sha256": "50b64dde4fe08155672879522750a2dcf60ff0e196045d72475920a6f17a09fd",
+      "frame": 638,
+      "location": [
+        3,
+        0,
+        6,
+        8
+      ]
+    },
+    {
+      "phase": "after_idle_180",
+      "pc_all_bytes_equal": true,
+      "party_all_raw80_equal": true,
+      "anomalies": [
+        {
+          "index": 51,
+          "box": 2,
+          "slot": 22,
+          "mon": {
+            "pid_ot": "003a5580:a93afb7a",
+            "identity_names_sha256": "64238bc71c32c4bba7e14dd246e9992f353ab19aa7cc21bd0a0d7938a31d64cc",
+            "origin_ivs_sha256": "490409b1a5b81d34278141981b8ae2a43334ca8cb9194e9b12f3509435cb8c78",
+            "raw_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd",
+            "flags": 39,
+            "bad_egg": true,
+            "header_egg": true,
+            "secure_egg": true,
+            "checksum_stored": 30838,
+            "checksum_computed": 48246,
+            "checksum_valid": false,
+            "occupied": true,
+            "errors": [
+              "bad_egg_flag",
+              "mon_checksum"
+            ],
+            "decoded": {
+              "trusted_checksum": false,
+              "species": 108,
+              "item": 0,
+              "experience": 67168183,
+              "friendship": 70,
+              "moves": [
+                23,
+                282,
+                48,
+                35
+              ],
+              "pp": [
+                20,
+                20,
+                20,
+                20
+              ],
+              "order": "EMGA"
+            },
+            "annotation": null,
+            "hypothetical_without_secure_egg_checksum": 31862,
+            "hypothetical_residual_mod65536": 1024
+          }
+        }
+      ],
+      "pc_sha256": "50b64dde4fe08155672879522750a2dcf60ff0e196045d72475920a6f17a09fd",
+      "frame": 818,
+      "location": [
+        3,
+        0,
+        6,
+        8
+      ]
+    }
+  ],
+  "no_new_pc_corruption": true,
+  "party_preserved": true,
+  "originals_unchanged": true
+}

@@ -2,6 +2,8 @@
 #define GUARD_CREDITS_H
 
 extern bool8 gHasHallOfFameRecords;
+void DoHoennCredits(void);
+void DoJohtoCredits(void);
 
 #define CREDITSOVWLDCMD_FB 0xFB
 #define CREDITSOVWLDCMD_FC 0xFC

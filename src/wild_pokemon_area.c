@@ -20,6 +20,35 @@ struct SpeciesHabitats
     u32 dexAreas[(DEX_AREA_COUNT + 31) / 32];       // Kanto and Sevii markers
     u32 hoennMapSecs[(KANTO_MAPSEC_START + 31) / 32]; // Hoenn markers
     bool8 hoennAlteringCave; // pokeemerald's ALTERING CAVE shares FR/LG's MAPSEC
+    bool8 johtoRoute29;
+    bool8 johtoRoute30;
+    bool8 johtoRoute31;
+    bool8 johtoRoute32;
+    bool8 johtoUnionCave;
+    bool8 johtoRoute33;
+    bool8 johtoSlowpokeWell;
+    bool8 johtoIlexForest;
+    bool8 johtoRoute34;
+    bool8 johtoRoute35;
+    bool8 johtoNationalPark;
+    bool8 johtoRoute36;
+    bool8 johtoRoute37;
+    bool8 johtoBurnedTower;
+    bool8 johtoRoute38;
+    bool8 johtoRoute39;
+    bool8 johtoRoute40;
+    bool8 johtoRoute41;
+    bool8 johtoRoute42;
+    bool8 johtoRoute43;
+    bool8 johtoMtMortar;
+    bool8 johtoLakeOfRage;
+    bool8 johtoRoute44;
+    bool8 johtoIcePath;
+    bool8 johtoDragonDen;
+    bool8 johtoRoute27;
+    bool8 johtoTohjoFalls;
+    bool8 johtoRoute26;
+    bool8 johtoVictoryRoad;
     u8 seviiIslands;         // bit n: lives on island n + 1
 };
 
@@ -184,7 +213,8 @@ static const u8 sGrottoDexAreas[] = {
 
 static bool8 IsHoennWildMonHeader(const struct WildPokemonHeader * header)
 {
-    return header->mapGroup >= MAP_GROUP(MAP_PETALBURG_CITY);
+    return header->mapGroup >= MAP_GROUP(MAP_PETALBURG_CITY)
+        && header->mapGroup <= MAP_GROUP(MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE);
 }
 
 // Every real habitat: the land, water, rock smash and fishing tables of all
@@ -216,7 +246,203 @@ static void FindSpeciesHabitats(u16 species, struct SpeciesHabitats * habitats)
          && !IsSpeciesOnMap(&gWildMonHeadersNight[i], species))
             continue;
 
+        // Check the implemented Johto header before the legacy Hoenn group range.
+        if (header->mapGroup == MAP_GROUP(MAP_JOHTO_ROUTE29)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_ROUTE29))
+        {
+            habitats->johtoRoute29 = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_ROUTE30)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_ROUTE30))
+        {
+            habitats->johtoRoute30 = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_ROUTE31)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_ROUTE31))
+        {
+            habitats->johtoRoute31 = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_ROUTE32)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_ROUTE32))
+        {
+            habitats->johtoRoute32 = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_UNION_CAVE_1F)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_UNION_CAVE_1F))
+        {
+            habitats->johtoUnionCave = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_ROUTE33)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_ROUTE33))
+        {
+            habitats->johtoRoute33 = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_SLOWPOKE_WELL_1F)
+         && header->mapNum == MAP_NUM(MAP_SLOWPOKE_WELL_1F))
+        {
+            habitats->johtoSlowpokeWell = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_ILEX_FOREST)
+         && header->mapNum == MAP_NUM(MAP_ILEX_FOREST))
+        {
+            habitats->johtoIlexForest = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_ROUTE34)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_ROUTE34))
+        {
+            habitats->johtoRoute34 = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_ROUTE38)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_ROUTE38))
+        {
+            habitats->johtoRoute38 = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_ROUTE39)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_ROUTE39))
+        {
+            habitats->johtoRoute39 = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_ROUTE40)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_ROUTE40))
+        {
+            habitats->johtoRoute40 = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_ROUTE41)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_ROUTE41))
+        {
+            habitats->johtoRoute41 = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_ROUTE42)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_ROUTE42))
+        {
+            habitats->johtoRoute42 = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_ROUTE43)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_ROUTE43))
+        {
+            habitats->johtoRoute43 = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_MT_MORTAR_1F)
+         && header->mapNum == MAP_NUM(MAP_MT_MORTAR_1F))
+        {
+            habitats->johtoMtMortar = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_LAKE_OF_RAGE)
+         && header->mapNum == MAP_NUM(MAP_LAKE_OF_RAGE))
+        {
+            habitats->johtoLakeOfRage = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_ROUTE44)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_ROUTE44))
+        {
+            habitats->johtoRoute44 = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_ICE_PATH_1F)
+         && header->mapNum == MAP_NUM(MAP_ICE_PATH_1F))
+        {
+            habitats->johtoIcePath = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_ICE_PATH_B1F)
+         && header->mapNum == MAP_NUM(MAP_ICE_PATH_B1F))
+        {
+            habitats->johtoIcePath = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_ICE_PATH_B2F)
+         && header->mapNum == MAP_NUM(MAP_ICE_PATH_B2F))
+        {
+            habitats->johtoIcePath = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_DRAGON_DEN_1F)
+         && header->mapNum == MAP_NUM(MAP_DRAGON_DEN_1F))
+        {
+            habitats->johtoDragonDen = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_ROUTE27)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_ROUTE27))
+        {
+            habitats->johtoRoute27 = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_TOHJO_FALLS)
+         && header->mapNum == MAP_NUM(MAP_TOHJO_FALLS))
+        {
+            habitats->johtoTohjoFalls = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_ROUTE26)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_ROUTE26))
+        {
+            habitats->johtoRoute26 = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_VICTORY_ROAD_1F)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_VICTORY_ROAD_1F))
+        {
+            habitats->johtoVictoryRoad = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_ROUTE35)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_ROUTE35))
+        {
+            habitats->johtoRoute35 = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_NATIONAL_PARK)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_NATIONAL_PARK))
+        {
+            habitats->johtoNationalPark = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_ROUTE36)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_ROUTE36))
+        {
+            habitats->johtoRoute36 = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_JOHTO_ROUTE37)
+         && header->mapNum == MAP_NUM(MAP_JOHTO_ROUTE37))
+        {
+            habitats->johtoRoute37 = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_BURNED_TOWER_1F)
+         && header->mapNum == MAP_NUM(MAP_BURNED_TOWER_1F))
+        {
+            habitats->johtoBurnedTower = TRUE;
+            continue;
+        }
+            if (header->mapGroup == MAP_GROUP(MAP_BURNED_TOWER_B1F)
+         && header->mapNum == MAP_NUM(MAP_BURNED_TOWER_B1F))
+        {
+            habitats->johtoBurnedTower = TRUE;
+            continue;
+        }
         mapSecId = GetMapSecIdFromWildMonHeader(header);
+        // Johto markers are recorded above; never fall back to another region.
+        if (header->mapGroup == MAP_GROUP(MAP_NEW_BARK_TOWN))
+            continue;
         if (IsHoennWildMonHeader(header))
         {
             if (mapSecId < KANTO_MAPSEC_START)
@@ -276,6 +502,8 @@ u8 GetSpeciesPokedexAreaRegions(u16 species, u8 *seviiIslands)
     }
     if (habitats.hoennAlteringCave)
         regions |= 1 << DEX_AREA_REGION_HOENN;
+    if (habitats.johtoRoute29 || habitats.johtoRoute30 || habitats.johtoRoute31 || habitats.johtoRoute32 || habitats.johtoUnionCave || habitats.johtoRoute33 || habitats.johtoSlowpokeWell || habitats.johtoIlexForest || habitats.johtoRoute34 || habitats.johtoRoute35 || habitats.johtoNationalPark || habitats.johtoRoute36 || habitats.johtoRoute37 || habitats.johtoBurnedTower || habitats.johtoRoute38 || habitats.johtoRoute39 || habitats.johtoRoute40 || habitats.johtoRoute41 || habitats.johtoRoute42 || habitats.johtoRoute43 || habitats.johtoMtMortar || habitats.johtoLakeOfRage || habitats.johtoRoute44 || habitats.johtoIcePath || habitats.johtoDragonDen || habitats.johtoRoute27 || habitats.johtoTohjoFalls || habitats.johtoRoute26 || habitats.johtoVictoryRoad)
+        regions |= 1 << DEX_AREA_REGION_JOHTO;
     *seviiIslands = habitats.seviiIslands;
     return regions;
 }
@@ -293,6 +521,68 @@ s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites, u8 
         return region == DEX_AREA_REGION_KANTO ? GetRoamerPokedexAreaMarkers(species, subsprites) : 0;
 
     FindSpeciesHabitats(species, &habitats);
+    if (region == DEX_AREA_REGION_JOHTO)
+    {
+        if (habitats.johtoRoute29)
+            GetJohtoRoute29AreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoRoute30)
+            GetJohtoRoute30AreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoRoute31)
+            GetJohtoRoute31AreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoRoute32)
+            GetJohtoRoute32AreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoUnionCave)
+            GetJohtoUnionCaveAreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoRoute33)
+            GetJohtoRoute33AreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoSlowpokeWell)
+            GetJohtoSlowpokeWellAreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoIlexForest)
+            GetJohtoIlexForestAreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoRoute34)
+            GetJohtoRoute34AreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoRoute35)
+            GetJohtoRoute35AreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoNationalPark)
+            GetJohtoNationalParkAreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoRoute36)
+            GetJohtoRoute36AreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoRoute37)
+            GetJohtoRoute37AreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoBurnedTower)
+            GetJohtoBurnedTowerAreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoRoute38)
+            GetJohtoRoute38AreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoRoute39)
+            GetJohtoRoute39AreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoRoute40)
+            GetJohtoRoute40AreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoRoute41)
+            GetJohtoRoute41AreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoRoute42)
+            GetJohtoRoute42AreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoRoute43)
+            GetJohtoRoute43AreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoMtMortar)
+            GetJohtoMtMortarAreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoLakeOfRage)
+            GetJohtoLakeOfRageAreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoRoute44)
+            GetJohtoRoute44AreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoIcePath)
+            GetJohtoIcePathAreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoDragonDen)
+            GetJohtoDragonDenAreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoRoute27)
+            GetJohtoRoute27AreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoTohjoFalls)
+            GetJohtoTohjoAreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoRoute26)
+            GetJohtoRoute26AreaMarkerSubsprite(areaCount++, subsprites);
+        if (habitats.johtoVictoryRoad)
+            GetJohtoVictoryAreaMarkerSubsprite(areaCount++, subsprites);
+        return areaCount;
+    }
     if (region == DEX_AREA_REGION_HOENN)
     {
         for (i = 0; i < KANTO_MAPSEC_START; i++)

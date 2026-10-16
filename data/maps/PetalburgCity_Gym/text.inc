@@ -205,4 +205,57 @@ PetalburgCity_Gym_Text_NormanAfter::
     .string "WALLY's gone on to VERDANTURF.\p"
     .string "That RALTS chose him as much as he\n"
     .string "chose it. He'll be all right.$"
+
+PetalburgCity_Gym_Text_NormanWallyWaiting::
+    .string "WALLY is waiting on ROUTE 102.\n"
+    .string "Please stay with him until he\l"
+    .string "has caught his first partner.$"
+
+PetalburgCity_Gym_Text_NormanBadgesReady::
+    .string "You've earned enough HOENN BADGES\n"
+    .string "to challenge me.\p"
+    .string "First, let's see WALLY safely\n"
+    .string "through his first catch.$"
+
+PetalburgCity_Gym_Text_NormanBattleIntro::
+    .string "NORMAN: You've kept your promise!\n"
+    .string "Now we can battle as equals.\p"
+    .string "Every journey changes a TRAINER.\n"
+    .string "Show me what yours has taught you!$"
+
+PetalburgCity_Gym_Text_NormanDefeat::
+    .string "You and your partners have grown\n"
+    .string "strong together. I concede!$"
+
+PetalburgCity_Gym_Text_ReceivedBalanceBadge::
+    .string "{PLAYER} received\n"
+    .string "the BALANCE BADGE!$"
+
+PetalburgCity_Gym_Text_NormanTakeTM42::
+    .string "Take this TM as well.\n"
+    .string "It may help on the road ahead.$"
+
+PetalburgCity_Gym_Text_ReceivedTM42::
+    .string "{PLAYER} received TM42\n"
+    .string "from NORMAN.$"
+
+PetalburgCity_Gym_Text_NormanExplainTM42::
+    .string "FACADE turns a status problem\n"
+    .string "into extra power.\p"
+    .string "Think about what your partner\n"
+    .string "needs before choosing a move.$"
+
+PetalburgCity_Gym_Text_NormanNoRoom::
+    .string "Your TM CASE can't hold another.\n"
+    .string "Make room for TM42 and come back.$"
+
+PetalburgCity_Gym_Text_NormanPostBattle::
+    .string "I came from JOHTO to make a new\n"
+    .string "home here in HOENN.\p"
+    .string "Every place has something to\n"
+    .string "teach a TRAINER and their team.\p"
+    .string "East of MAUVILLE, the road leads\n"
+    .string "towards FORTREE's GYM.\p"
+    .string "Keep learning from the people\n"
+    .string "and POKéMON you meet.$"
 @ END PATCH

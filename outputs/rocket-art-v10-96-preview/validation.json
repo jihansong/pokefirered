@@ -1,0 +1,57 @@
+{
+  "status": "EXISTING_V4_NATIVE_96_REVIEW_CANDIDATE",
+  "source_sha256": "40e5a18ea80e4ba71192f0738ef4208073fb6286d6a3080c68a35e496ce98c8f",
+  "source_size": [
+    1254,
+    1254
+  ],
+  "source_crop": [
+    81,
+    112,
+    1175,
+    1196
+  ],
+  "fit_size": [
+    94,
+    93
+  ],
+  "offset": [
+    1,
+    2
+  ],
+  "native_size": [
+    96,
+    96
+  ],
+  "resampling": "NEAREST directly from high-resolution v4, not 64px enlargement",
+  "source_art_redrawn": false,
+  "source_unchanged_verified_locally": true,
+  "ratio_or_pose_intentionally_changed": false,
+  "native_eye_edits": [
+    [
+      56,
+      18,
+      2,
+      14
+    ],
+    [
+      62,
+      17,
+      10,
+      14
+    ]
+  ],
+  "cleanup_changed_pixels": 2,
+  "silhouette_changed_by_cleanup": false,
+  "opaque_pixels": 4192,
+  "opaque_colours": 15,
+  "png_sha256": "210bd8b8c196cb83ce25fb35bc8affc0869743bd4a760b4be9fc90047a9ea438",
+  "packed_sha256": "99f3ff74b5438521ba48e4d7fc403acca7df233f003878ddd525bdba8ab14add",
+  "packed_bytes": 4608,
+  "decoded_pixel_mismatches": 0,
+  "new_original_art": false,
+  "rom_integrated": false,
+  "hires_feature_enabled": false,
+  "game_visual_QA": "pending",
+  "user_review": "pending"
+}

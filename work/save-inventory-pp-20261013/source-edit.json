@@ -1,0 +1,28 @@
+{
+  "pass": true,
+  "source_before": {
+    "src/pokemon.c": "b181299ea44b5fcb486d7d8f86509d840d84283dfcf5ba10a9d1ed063ecdabec",
+    "include/pokemon.h": "c928de3ac4785226a3af517a4a0c25eda112daabdf71adc21548fe3456b16b9f",
+    "src/battle_main.c": "7759f23a7bcf8e8f1b7acadbe1ca218637b33a55855900c2aac93d0074eb3c59",
+    "src/battle_util.c": "5e7c76e9a0f25ba270864756b917d9073d953965379edee78e16b90d019ae6b2",
+    "src/pokemon_summary_screen.c": "0000e46e3e484b806b2203741bcdbd82a12703f7e8762b228bed863fc8f72167",
+    "src/script_pokemon_util.c": "96752ba9093b98d9cc153c9002b91192d803990ba96d59eee98c3727719ee892"
+  },
+  "source_after": {
+    "src/pokemon.c": "0221a6e7a3ef13d856e23dc53d2f93abe35a65fb338cb0fc118efda2928b01dd",
+    "include/pokemon.h": "02fbde9fcef7f684b93389c6d31f825ce8e9d43549738dbe7ac1502ebc8d7d40",
+    "src/battle_main.c": "2a39e045ff105b9c265173de81d5a88c6ab2146052d5a918a63112b0e3562920",
+    "src/battle_util.c": "a1f9606bf248b3da5848d45f9a1ac6c4cd974ab8544841da754a7cc08e7ed99c",
+    "src/pokemon_summary_screen.c": "672b8f79c69718250622aa7207ab3493683a8aa8d1d9228d175a61535cbec7f1",
+    "src/script_pokemon_util.c": "7fa7dbf28af76af426b3102ef62c9f6ab5c8d9db69bef88603a7009f4a803b4b"
+  },
+  "changed_files": [
+    "src/pokemon.c",
+    "include/pokemon.h",
+    "src/battle_main.c",
+    "src/battle_util.c",
+    "src/pokemon_summary_screen.c",
+    "src/script_pokemon_util.c"
+  ],
+  "stock_gBattleMoves_untouched": true
+}

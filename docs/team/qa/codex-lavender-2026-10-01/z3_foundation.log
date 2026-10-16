@@ -1,0 +1,12 @@
+ok   z3f_dex_count_85
+ok   z3f_dex_count_skips_jirachi_deoxys
+ok   z3f_dex_count_off_by_one
+ok   z3f_setup_old_save
+ok   z3f_setup_goods_stolen_route116
+ok   z3f_setup_briney_not_at_cottage_while_peeko_missing
+ok   z3f_setup_rival_may_for_red
+ok   z3f_setup_rival_brendan_for_leaf
+ok   z3f_setup_rival_gone_after_battle
+ok   z3f_wally_demo_ralts
+ok   z3f_old_man_demo_still_weedle
+11/11 cases passed

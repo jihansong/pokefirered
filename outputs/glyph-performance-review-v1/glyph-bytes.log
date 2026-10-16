@@ -1,0 +1,15 @@
+{"identity": {"rom_sha": "c21d9ea269e7c066ecdd3b269d062c76bf9dd4332a8bea51bde21148163449f6", "save_sha": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85", "ewram_free": 284, "scratch": "0x203fee4", "scope": "copied SAV, temporary emulator-only native function fixture"}}
+Traceback (most recent call last):
+  File "native-glyph-qa", line 97, in <module>
+  File "native-glyph-qa", line 40, in call
+TypeError: 'int' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/native_dex_glyph_bytes_qa.py", line 49, in <module>
+    exec(compile(prefix+tail,'native-glyph-qa','exec'))
+  File "native-glyph-qa", line 105, in <module>
+  File "native-glyph-qa", line 40, in call
+TypeError: 'int' object is not callable
+{"original_saves_final_check": true}

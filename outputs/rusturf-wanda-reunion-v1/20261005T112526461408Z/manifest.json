@@ -1,0 +1,65 @@
+{
+  "task": "Rusturf Wanda reunion E10",
+  "scope": [
+    "RusturfTunnel",
+    "VerdanturfTown_WandasHouse",
+    "VerdanturfTown"
+  ],
+  "before": {
+    "data/maps/RusturfTunnel/map.json": "8f7233202b92d77bb445cc27e1b61f2662e00064ab7581a0ead62132d43d7fa8",
+    "data/maps/VerdanturfTown_WandasHouse/map.json": "de70729bf58c1c54f3178b771ab2fc0aca32a52a95cb8d2d02f2b81a11943ef5",
+    "data/maps/VerdanturfTown/map.json": "0389714e969b80e7ab240427c87606303a76a08e0adafea34627926bab97f85b",
+    "data/maps/RusturfTunnel/scripts.inc": "60e9da17726bd86c89ba62d7a3d69552e506960728ca431be403096f641f1429",
+    "data/maps/RusturfTunnel/text.inc": "14e0beb52ac3bb9986e3b61ad81b21f18333d27595f7f0955e0d645c7f478bd6",
+    "data/maps/VerdanturfTown_WandasHouse/scripts.inc": "fcfeafebea229b5c1137ac7374297b175bcc47ca04f9b2492f5eecdab0dce961",
+    "data/maps/VerdanturfTown_WandasHouse/text.inc": "9b012ebedbd8793be8b1e75a01c926119541659617f3fa7a879d50eba8f8687d",
+    "data/maps/VerdanturfTown/scripts.inc": "cb5db000db9f1db776bb987c058619a9e8d225a334104a0ba29713ff75741e40",
+    "data/maps/VerdanturfTown/text.inc": "04828fe409ddf434eaf9bf4b0b611d97ae2d8062e74ae45ebf36de7ea6a82bbf",
+    "tools/hoenn_import/patches/RusturfTunnel.scripts.inc": "4de112a7798795fcc9986d5b88e9ccf3aa0314a101fadf9d6533dedebcf568a9",
+    "tools/hoenn_import/patches/VerdanturfTown_WandasHouse.scripts.inc": "beafc057c6c6d06b52b2869773ff43e90de6dddbe674cbfb0663e03382c63b8d",
+    "tools/hoenn_import/patches/VerdanturfTown.scripts.inc": null,
+    "tools/hoenn_import/patches/RusturfTunnel.text.inc": "9df620b3ab026f479d725f316fb28db0e6e47ae7f90c6a07081f41681cd6c5d8",
+    "tools/hoenn_import/patches/VerdanturfTown_WandasHouse.text.inc": "2b1fe46d8a7317b84dd34ddc7cc5acb08e353c2ef208e9557296036a7b4da8dd",
+    "tools/hoenn_import/patches/VerdanturfTown.text.inc": "6f8aefab20793daefcde7b98d5b9f0269ca8013787aa360f83f9a102d1bcfa7a",
+    "tools/hoenn_import/patches/RusturfTunnel.json": "f8b5c5ad4b3b58d257609a75abab887d8a106524e34c1c3da00e32494055d05a",
+    "tools/hoenn_import/patches/VerdanturfTown_WandasHouse.json": "13e651eb868d4cd77a8c5e2f18b0d13f477d0abf9479e9fdd055fade580442eb"
+  },
+  "planned": {
+    "tools/hoenn_import/patches/RusturfTunnel.scripts.inc": "aafd2f838c1074274ccb2c9b36b53b46973fa443d217a21e61a6871fec86de50",
+    "tools/hoenn_import/patches/VerdanturfTown_WandasHouse.scripts.inc": "20bdc081c405ea5fba50acde664718dd439e478e42814d07ed8e0d761b115137",
+    "tools/hoenn_import/patches/VerdanturfTown.scripts.inc": "73d3f0de0beaf4a2f196ffdaba824a9e6ed33e90eed7c6725b5952e7be0ac266",
+    "tools/hoenn_import/patches/RusturfTunnel.text.inc": "77b865535be20fcfdd5cc009135eaffa147fdcae74b28c6b9df874077c02ca56",
+    "tools/hoenn_import/patches/VerdanturfTown_WandasHouse.text.inc": "72eb42c65920f161812c98494fb4d0ce7ec93f840c542de4c68a9447bfc29662",
+    "tools/hoenn_import/patches/VerdanturfTown.text.inc": "c0f3faeb1cc7a392dae7df23d038227420676aa55fb83ed2c01aec4a20a16766",
+    "tools/hoenn_import/patches/RusturfTunnel.json": "583c89c93f133a3691eb15a34354fc947f360efab6b8af717b43ae9f65b68cfe",
+    "tools/hoenn_import/patches/VerdanturfTown_WandasHouse.json": "086f5936c7b9745b612525e55b580d03a7d4b6d831b12835ea79f4ba1517c4af"
+  },
+  "layout_hash": {
+    "data/layouts/HoennRusturfTunnel/map.bin": "370e492002fed36b8e6bc5e80f7ebba325e68721534d986cae3c70b8f4ae3fe4",
+    "data/layouts/HoennVerdanturfTown_WandasHouse/map.bin": "cfc9d2a0923025f21d5feacbdbd0665f10bb781a34b9ed17f28ee7f9e918f738"
+  },
+  "player_movement": "unchanged",
+  "save_layout": "unchanged",
+  "new_story_flags": 0,
+  "build_and_runtime": "pending",
+  "after": {
+    "data/maps/RusturfTunnel/map.json": "82c4829db0dbb3b244e5b9967d671d4514184fe2e5aec3fb5b1b0663f95032d6",
+    "data/maps/VerdanturfTown_WandasHouse/map.json": "f8ce862cea5198965209c2d686760dca43e916114941f43d7ce64f219b0b21d9",
+    "data/maps/VerdanturfTown/map.json": "0389714e969b80e7ab240427c87606303a76a08e0adafea34627926bab97f85b",
+    "data/maps/RusturfTunnel/scripts.inc": "23346c55574a9364d58a7b02438ee1bc54b37d654de6302ccc31b3040ade92f3",
+    "data/maps/RusturfTunnel/text.inc": "f56a3e97bf0fb7e0c6963a233fc3cc7a7f454d6af6dfd93ccafe6a725ff77e0f",
+    "data/maps/VerdanturfTown_WandasHouse/scripts.inc": "aebf2e0bbca2d92cea53aff574ba3db8a48cba0a2a383fe8f32abde2e2d533fa",
+    "data/maps/VerdanturfTown_WandasHouse/text.inc": "c3009e2b53e456b99996593160c65285f31511aaba05a0abb127f6e2cc2ddf6a",
+    "data/maps/VerdanturfTown/scripts.inc": "5022e4b9009addb073fb316a7e50f846c643d228e49d7597acd4d8fc64d847ba",
+    "data/maps/VerdanturfTown/text.inc": "9ebb4d11e6d11fe0b4d1accbb23018e2be33ecc6e8ce0775991e49d3deae8146",
+    "tools/hoenn_import/patches/RusturfTunnel.scripts.inc": "aafd2f838c1074274ccb2c9b36b53b46973fa443d217a21e61a6871fec86de50",
+    "tools/hoenn_import/patches/VerdanturfTown_WandasHouse.scripts.inc": "20bdc081c405ea5fba50acde664718dd439e478e42814d07ed8e0d761b115137",
+    "tools/hoenn_import/patches/VerdanturfTown.scripts.inc": "73d3f0de0beaf4a2f196ffdaba824a9e6ed33e90eed7c6725b5952e7be0ac266",
+    "tools/hoenn_import/patches/RusturfTunnel.text.inc": "77b865535be20fcfdd5cc009135eaffa147fdcae74b28c6b9df874077c02ca56",
+    "tools/hoenn_import/patches/VerdanturfTown_WandasHouse.text.inc": "72eb42c65920f161812c98494fb4d0ce7ec93f840c542de4c68a9447bfc29662",
+    "tools/hoenn_import/patches/VerdanturfTown.text.inc": "c0f3faeb1cc7a392dae7df23d038227420676aa55fb83ed2c01aec4a20a16766",
+    "tools/hoenn_import/patches/RusturfTunnel.json": "583c89c93f133a3691eb15a34354fc947f360efab6b8af717b43ae9f65b68cfe",
+    "tools/hoenn_import/patches/VerdanturfTown_WandasHouse.json": "086f5936c7b9745b612525e55b580d03a7d4b6d831b12835ea79f4ba1517c4af"
+  },
+  "status": "source applied; build and native-event QA pending"
+}

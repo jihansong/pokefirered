@@ -1,0 +1,19 @@
+{
+  "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+  "expected_maps": 457,
+  "quick_entry_walk_OK": 456,
+  "initial_BLACK": 1,
+  "reset_error_timeout": 0,
+  "black_classification": "unlit requires_flash room; negative/positive preboot flash flag controls verify native dark mask and actual key movement",
+  "actual_menu_Flash_tested": false,
+  "structural_rom_source_maps_pass": 457,
+  "tilesets": 63,
+  "initial_graphics_edge_maps": 2,
+  "edge_result": "all 11 referenced out-of-payload tile slots read as zero/transparent in actual VRAM; palette14 references have no visible nonzero pixels",
+  "native_no_memory_writes": true,
+  "whole_story_playthrough_complete": false,
+  "all_door_warp_traversal_complete": false,
+  "manual_visual_art_approval_complete": false,
+  "inputs_preserved": true,
+  "proof_dir": "/workspaces/pokefirered/work/hoenn-map-review-20261013"
+}

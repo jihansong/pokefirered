@@ -9,6 +9,7 @@ bool8 ShouldIgnoreCollisionWithFollower(struct ObjectEvent *mover, struct Object
 void FollowerPikachu_OnMapLoad(void);
 void FollowerPikachu_Update(void);
 void FollowerPikachu_OnPlayerMovement(u8 movementActionId);
+u8 FollowerPikachu_GetMovingActionDirection(u8 action);
 void FollowerPikachu_OnObjectMovement(struct ObjectEvent *objectEvent, u8 movementActionId);
 void Task_FollowerPikachu(u8 taskId);
 void CreateFollowerPikachuTask(void);

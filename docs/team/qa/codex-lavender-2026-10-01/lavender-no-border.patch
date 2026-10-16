@@ -1,0 +1,55 @@
+--- a/src/field_specials.c
++++ b/src/field_specials.c
+@@ -3132,21 +3132,18 @@
+ }
+ 
+ // Lavender Town Syndrome (urban legend): while it is active, Lavender Town's music
+-// slowly bends upward and wavers, and the screen edges darken. The task undoes it
+-// when the player leaves the town or it gets purified.
++// slowly bends upward and wavers. The task undoes it when the player leaves
++// the town or it gets purified. Keep overworld window/blend registers untouched:
++// the former WIN0 vignette produced a hard rectangular border and overwrote
++// registers also used by field transitions and other screen effects.
+ #define tPitch     data[0]
+ #define tTimer     data[1]
+-#define tDarkness  data[2]
+ 
+ #define SYNDROME_MAX_PITCH 3 * 256 // three semitones up
+-#define SYNDROME_MAX_DARKNESS 5
+ 
+ static void EndLavenderSyndromeEffects(u8 taskId)
+ {
+     m4aMPlayPitchControl(&gMPlayInfo_BGM, TRACKS_ALL, 0);
+-    ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
+-    SetGpuReg(REG_OFFSET_BLDCNT, 0);
+-    SetGpuReg(REG_OFFSET_BLDY, 0);
+     DestroyTask(taskId);
+ }
+ 
+@@ -3166,18 +3163,8 @@
+     tTimer++;
+     if (tTimer % 8 == 0 && tPitch < SYNDROME_MAX_PITCH)
+         tPitch += 4;
+-    if (tTimer % 30 == 0 && tDarkness < SYNDROME_MAX_DARKNESS)
+-        tDarkness++;
+     wobble = gSineTable[(tTimer * 3) & 0xFF] / 8;
+     m4aMPlayPitchControl(&gMPlayInfo_BGM, TRACKS_ALL, tPitch + wobble);
+-
+-    SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(12, DISPLAY_WIDTH - 12));
+-    SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(8, DISPLAY_HEIGHT - 8));
+-    SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ);
+-    SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_ALL);
+-    SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
+-    SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_ALL | BLDCNT_EFFECT_DARKEN);
+-    SetGpuReg(REG_OFFSET_BLDY, tDarkness);
+ }
+ 
+ // Run from Lavender Town's resume script whenever the syndrome is active.
+@@ -3189,7 +3176,6 @@
+ 
+ #undef tPitch
+ #undef tTimer
+-#undef tDarkness
+ 
+ // Returns TRUE if a party mon (not an egg) is species VAR_0x8004.
+ bool8 PartyHasSpecies(void)

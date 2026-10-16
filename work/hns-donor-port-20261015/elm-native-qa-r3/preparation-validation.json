@@ -1,0 +1,65 @@
+{
+  "status": "R3_CENTRAL_EXIT_SOURCE_AND_SYNTAX_PREPARATION_PASS_NATIVE_NOT_EXECUTED",
+  "pass": true,
+  "native_executed": false,
+  "product_changes": false,
+  "R2_preserved": true,
+  "actual_R2_failure_root_reported": {
+    "location": [
+      76,
+      3,
+      7,
+      12
+    ],
+    "wanted_map": [
+      76,
+      2
+    ],
+    "prior_professor_face_and_palette_checks_passed": true
+  },
+  "verified_exit_tiles": [
+    {
+      "x": 5,
+      "y": 12,
+      "word": "0x3290",
+      "attribute": "0x20000000",
+      "behavior": 0
+    },
+    {
+      "x": 6,
+      "y": 12,
+      "word": "0x3291",
+      "attribute": "0x20000065",
+      "behavior": 101
+    },
+    {
+      "x": 7,
+      "y": 12,
+      "word": "0x3292",
+      "attribute": "0x20000000",
+      "behavior": 0
+    }
+  ],
+  "corrected_approach": [
+    [
+      7,
+      10
+    ],
+    [
+      6,
+      10
+    ],
+    [
+      6,
+      11
+    ],
+    [
+      6,
+      12
+    ]
+  ],
+  "script_sha256": "f82a2885421d04a6c319ca1a9ff9bdeac389d6368de34de1aed41abc3f68d462",
+  "guard_sha256": "1c490dcbaa16efdb8239f956d8c75423f7ddde52c5609f92add888927c9eb593",
+  "first_visibility_and_second_strict_cycle_logic_unchanged_from_R2": true,
+  "original_SAV_input_SHA256": "0949ebf04557a76e2175602e967eefadb7ffb722f2746be8a40ddb1fd66550a9"
+}

@@ -1,3 +1,5 @@
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfElmHns;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MistyCompanion;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedNormal;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedBike;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedSurf;
@@ -237,7 +239,14 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoennRegirock;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoennRegice;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoennRegisteel;
 // END HOENN OBJECT EVENT DECLARATIONS
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_JohtoFarfetchd;
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_JohtoSudowoodo;
+
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
+    [OBJ_EVENT_GFX_MISTY_COMPANION] = &gObjectEventGraphicsInfo_MistyCompanion,
+    [OBJ_EVENT_GFX_JOHTO_SUDOWOODO] = &gObjectEventGraphicsInfo_JohtoSudowoodo,
+    [OBJ_EVENT_GFX_JOHTO_FARFETCHD] = &gObjectEventGraphicsInfo_JohtoFarfetchd,
     [OBJ_EVENT_GFX_RED_NORMAL]               = &gObjectEventGraphicsInfo_RedNormal,
     [OBJ_EVENT_GFX_RED_BIKE]                 = &gObjectEventGraphicsInfo_RedBike,
     [OBJ_EVENT_GFX_RED_SURF]                 = &gObjectEventGraphicsInfo_RedSurf,
@@ -475,4 +484,5 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_REGICE] = &gObjectEventGraphicsInfo_HoennRegice,
     [OBJ_EVENT_GFX_REGISTEEL] = &gObjectEventGraphicsInfo_HoennRegisteel,
 // END HOENN OBJECT EVENTS
+    [OBJ_EVENT_GFX_PROF_ELM] = &gObjectEventGraphicsInfo_ProfElmHns,
 };

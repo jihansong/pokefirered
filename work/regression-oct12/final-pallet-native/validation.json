@@ -1,0 +1,57 @@
+{
+  "all_pass": false,
+  "ram_writes": 0,
+  "direct_Join_calls": 0,
+  "actual_Champion_battle_replayed": false,
+  "error": "AssertionError(('native step blocked', (3, 0, 8, 10), 'DOWN'))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/work/regression-oct12/native-misty-pallet-final.py\", line 82, in <module>\n    for _ in range(3):one_tile(e,'DOWN')\n                      ^^^^^^^^^^^^^^^^^^\n  File \"<Misty-native-definitions>\", line 61, in one_tile\nAssertionError: ('native step blocked', (3, 0, 8, 10), 'DOWN')\n",
+  "checks": [],
+  "traces": [
+    {
+      "branch": "no_one_island",
+      "trace": [
+        {
+          "sample": 0,
+          "oak": 2,
+          "queued": 1,
+          "lab_scene": 6,
+          "location": [
+            3,
+            0,
+            6,
+            8
+          ],
+          "yesno": false
+        },
+        {
+          "sample": 55,
+          "oak": 3,
+          "queued": 0,
+          "lab_scene": 6,
+          "location": [
+            3,
+            0,
+            6,
+            8
+          ],
+          "yesno": false
+        },
+        {
+          "sample": 63,
+          "oak": 3,
+          "queued": 0,
+          "lab_scene": 6,
+          "location": [
+            3,
+            0,
+            6,
+            8
+          ],
+          "yesno": true
+        }
+      ]
+    }
+  ],
+  "original_inputs_unchanged": true,
+  "rom_sha256": "2bafd6478fef5bbda56c6b4bec9c8dec1a4e0f060252fc219dbcc834411509f7"
+}

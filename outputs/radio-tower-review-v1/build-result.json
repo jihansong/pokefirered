@@ -1,0 +1,25 @@
+{
+  "exit": 0,
+  "seconds": 69.33,
+  "main_not_replaced": true,
+  "original_saves_unchanged": true,
+  "full_regions_complete": false,
+  "files": {
+    "gba": {
+      "bytes": 33554432,
+      "sha256": "f3b4e13df998d1832544218a88cd0c4845a9b7ebd184628e00c1e9595434204c"
+    },
+    "elf": {
+      "bytes": 33951296,
+      "sha256": "fcffe85e76e5404f15e552fa84ca18f91e883c0a0613b2678e7ceb27e4d42e47"
+    },
+    "sym": {
+      "bytes": 3280980,
+      "sha256": "122cad2ba9d871f54b838734e7ede1466685960a1bcddfa5ac7c6d9b55a8b5f8"
+    },
+    "map": {
+      "bytes": 3300361,
+      "sha256": "810567524b2ac8c4fd40f74c7faf55d9ab2821cf84c0fb3cdda3fa7eb4816848"
+    }
+  }
+}

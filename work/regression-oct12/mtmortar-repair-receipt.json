@@ -1,0 +1,16 @@
+{
+  "status": "source repaired; rebuild and native visual validation pending",
+  "layout": "LAYOUT_MT_MORTAR_1F",
+  "changes": [
+    {
+      "path": "/workspaces/pokefirered/tools/johto/build_mahogany.py",
+      "before_sha256": "014e941ea784d79a047e2e5263c883a68bef22851444e06787f3151e1d668386",
+      "after_sha256": "d2a5caf973caa260fd741173156931a3055e17e46cf81b8044f810c988bb63a0"
+    },
+    {
+      "path": "/workspaces/pokefirered/data/layouts/layouts.json",
+      "before_sha256": "b0363d28273ccbf545e024920169d4dcb30da43e70822e10000c681778078b9b",
+      "after_sha256": "98bf104f2682e018439f22092d0321c3c75b7cb1a0c5d1a45e3135a9076ba75c"
+    }
+  ]
+}

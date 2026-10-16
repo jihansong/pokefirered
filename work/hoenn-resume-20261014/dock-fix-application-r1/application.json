@@ -1,0 +1,31 @@
+{
+  "status": "applied_not_built",
+  "source_files": {
+    "data/maps/Route104/scripts.inc": {
+      "before_sha256": "e09bf6a31f9400c34b386c0c7f68e9722bc975e260d8d2122930f72888792c3c",
+      "after_sha256": "7bf2c88a24b3b77c36836b09264a35e3ea25bcecc35d700f15d3ea59d74d6844"
+    },
+    "data/maps/DewfordTown/scripts.inc": {
+      "before_sha256": "6f17c259cfbae5029e053938f6c42f8dfe4a1930ff04a320d024f68804bd445f",
+      "after_sha256": "fd4e70b1595f1ba543fc4c9d491aa11d9aa2e5c9768248b1fff6f8c3bf106248"
+    },
+    "tools/hoenn_import/patches/Route104.scripts.inc": {
+      "before_sha256": "e09bf6a31f9400c34b386c0c7f68e9722bc975e260d8d2122930f72888792c3c",
+      "after_sha256": "7bf2c88a24b3b77c36836b09264a35e3ea25bcecc35d700f15d3ea59d74d6844"
+    },
+    "tools/hoenn_import/patches/DewfordTown.scripts.inc": {
+      "before_sha256": "310d9a7a01c2fe636ee42b9032a41bc3bc478a69d5f84bcc68b6fabe835a0c2f",
+      "after_sha256": "833e0e767d1c0d6283a39304608d9d9c8c50d8c28536acbee50968de96b4305c"
+    },
+    "tools/hoenn_import/patches/DewfordTown.mapscripts": {
+      "before_sha256": "937e8c161aa339795db14f2e2f4898e328a0ec3c5df89f3ac5d156c059e61f93",
+      "after_sha256": "080fe195b812696479d3bf4ae5fda28e58bb426db03ecfac874aad019e40c668"
+    }
+  },
+  "protected_save_count": 19,
+  "product_maps_and_original_saves_changed": false,
+  "built": false,
+  "native_postfix_verified": false,
+  "protected_input_count": 8119,
+  "all_original_and_synced_saves_preserved": true
+}

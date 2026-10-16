@@ -1,0 +1,22 @@
+{
+  "prepare_dex_ui_probe.py": {
+    "sha256": "92375d1cd8d80b09f1add3bd994b93a230fc28545a69ccff4ddc16a85a4a34e4",
+    "size": 10653
+  },
+  "native_dex_scroll_observer.py": {
+    "sha256": "34ae17a0824f08b0541add4cff00f0f004bf2ee4b8e592904a4d27ef9882bb99",
+    "size": 13009
+  },
+  "dex-ui-source-manifest.json": {
+    "sha256": "eb714a4a9459ce3264bfe6f6411842add8182b5efeeb6662faa2449bbc9545ba",
+    "size": 2689
+  },
+  "README-dex-scroll-observer.txt": {
+    "sha256": "a4a16f4b99bad255100f0dc26ea829c7d14c0e67f0e9c09f23e1c7ec79d218aa",
+    "size": 2827
+  },
+  "locate_dex_timing_provenance.py": {
+    "sha256": "623d03cd7417a4afa6f5cee0d00d601ac50fc97880ae1484976f4b1bf778c01e",
+    "size": 3297
+  }
+}

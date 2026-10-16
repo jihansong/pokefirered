@@ -1,0 +1,92 @@
+{
+  "pass": true,
+  "rom_sha256": "f6e9dd60d10bcca84d2b68ae7c446ed82a72c84e284edd94b818f3f19d44d1d3",
+  "elf_sha256": "7c07968d352c10a7bf5bc64a46c0f664e0afd41a9d897528d592d4d86d357afd",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-dive-teach",
+  "fixture": "temporary level-50 LAPRAS; original PC and source SAV unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [
+    {
+      "map": "Underwater_Route128",
+      "xy": [
+        38,
+        27
+      ],
+      "avatar_flags": 48,
+      "frame": 2274
+    },
+    {
+      "map": "Underwater_Route128",
+      "xy": [
+        38,
+        27
+      ],
+      "avatar_flags": 48,
+      "frame": 670
+    },
+    {
+      "map": "SeafloorCavern_Entrance",
+      "xy": [
+        10,
+        16
+      ],
+      "avatar_flags": 40,
+      "frame": 1178
+    },
+    {
+      "map": "Underwater_SeafloorCavern",
+      "xy": [
+        6,
+        6
+      ],
+      "avatar_flags": 48,
+      "frame": 1665
+    },
+    {
+      "map": "Route128",
+      "xy": [
+        38,
+        27
+      ],
+      "avatar_flags": 40,
+      "frame": 2224
+    }
+  ],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_hm08_teaching": {
+    "move_after": [
+      57,
+      33,
+      291,
+      0
+    ],
+    "hm_quantity_after": 1
+  },
+  "native_save": {
+    "counter_before": 61,
+    "counter_after": 62,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_HOENN_WEATHER_RESCUED": false,
+      "FLAG_HOENN_GOT_WEATHER_CASTFORM": false,
+      "FLAG_HOENN_SPACE_CENTER_SECURED": false,
+      "FLAG_HOENN_GOT_HM08_FROM_STEVEN": false
+    },
+    "trainers": {
+      "TRAINER_HOENN_SHELLY_WEATHER_INSTITUTE": false,
+      "TRAINER_HOENN_TABITHA_SPACE_CENTER": false,
+      "TRAINER_HOENN_MAXIE_SPACE_CENTER": false
+    },
+    "hm08": 1,
+    "sha256": "e5fe9aa4e7506d254962f58a47c4194f99c9d83caffda8afb8d681b906f859b0"
+  },
+  "native_roundtrip": true,
+  "original_saves_unchanged": true
+}

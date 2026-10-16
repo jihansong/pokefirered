@@ -1,0 +1,109 @@
+{
+  "cases": [
+    {
+      "case": "z5_winona_new_victory",
+      "passed": true,
+      "native_ok": true,
+      "errors": [],
+      "A_presses": []
+    },
+    {
+      "case": "z5_winona_old_victory_recovers",
+      "passed": true,
+      "native_ok": true,
+      "errors": [],
+      "A_presses": []
+    },
+    {
+      "case": "z5_winona_other_source_tm_kept",
+      "passed": true,
+      "native_ok": true,
+      "errors": [],
+      "A_presses": []
+    },
+    {
+      "case": "z5_winona_full_stack_pending",
+      "passed": true,
+      "native_ok": true,
+      "errors": [],
+      "A_presses": []
+    },
+    {
+      "case": "z5_winona_retry_after_room",
+      "passed": true,
+      "native_ok": true,
+      "errors": [],
+      "A_presses": []
+    },
+    {
+      "case": "z5_winona_already_received_kept",
+      "passed": true,
+      "native_ok": true,
+      "errors": [],
+      "A_presses": []
+    },
+    {
+      "case": "z5_winona_already_received_used",
+      "passed": true,
+      "native_ok": true,
+      "errors": [],
+      "A_presses": []
+    },
+    {
+      "case": "z5_winona_paid_missing_badge_recovered",
+      "passed": true,
+      "native_ok": true,
+      "errors": [],
+      "A_presses": []
+    },
+    {
+      "case": "z5_winona_badge_not_reannounced",
+      "passed": true,
+      "native_ok": true,
+      "errors": [],
+      "A_presses": []
+    },
+    {
+      "case": "z5_winona_no_reward_before_win",
+      "passed": true,
+      "native_ok": true,
+      "errors": [],
+      "A_presses": []
+    },
+    {
+      "case": "z5_winona_loss_no_reward",
+      "passed": true,
+      "native_ok": true,
+      "errors": [],
+      "A_presses": []
+    },
+    {
+      "case": "z5_winona_other_badges_unchanged",
+      "passed": true,
+      "native_ok": true,
+      "errors": [],
+      "A_presses": []
+    },
+    {
+      "case": "z5_winona_duplicate_negative_control",
+      "passed": true,
+      "native_ok": false,
+      "errors": [
+        "expect item ITEM_TM40 = 1: item ITEM_TM40 is 0"
+      ],
+      "A_presses": []
+    },
+    {
+      "case": "z5_winona_full_stack_negative_control",
+      "passed": true,
+      "native_ok": false,
+      "errors": [
+        "expect flag FLAG_HOENN_GOT_TM40_FROM_WINONA = 1: flag FLAG_HOENN_GOT_TM40_FROM_WINONA is 0, expected 1"
+      ],
+      "A_presses": []
+    }
+  ],
+  "passed": 14,
+  "total": 14,
+  "original_saves_unchanged": true
+}

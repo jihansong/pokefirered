@@ -1,0 +1,10 @@
+{
+  "pass": false,
+  "rom_sha256": "433ef955f92bb045e21c262413116e3aeac379999468eb02eec9b0ed0c7b315a",
+  "fixture": "HOF pre-boot fixture; not evidence of five victories",
+  "cameras": {},
+  "pokemon": {},
+  "manual_visual_review_required": true,
+  "error": "KeyError('mus_credits')",
+  "original_saves_unchanged": true
+}

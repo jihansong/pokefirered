@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/native_misty_training_qa.py", line 121, in <module>
+    outcome=e.u8(e.sym('gBattleOutcome'));assert outcome==(const('B_OUTCOME_LOST') if mode=='loss' else const('B_OUTCOME_WON')),('wrong actual outcome',outcome)
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('wrong actual outcome', 0)

@@ -5,6 +5,7 @@
 enum {
     DEX_AREA_REGION_KANTO, // Kanto and the Sevii Islands
     DEX_AREA_REGION_HOENN,
+    DEX_AREA_REGION_JOHTO, // appended: preserve Kanto=0 and Hoenn=1
     DEX_AREA_REGION_COUNT
 };
 

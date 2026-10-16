@@ -94,6 +94,7 @@ static u8 StatusToAilment(u32 status);
 static void BufferMonMoveI(u8);
 static u16 GetMonMoveBySlotId(struct Pokemon * mon, u8 moveSlot);
 static u16 GetMonPpByMoveSlot(struct Pokemon * mon, u8 moveSlot);
+static u8 PokeSum_GetMaxPP(u8 i);
 static void CreateShinyStarObj(u16, u16);
 static void CreatePokerusIconObj(u16, u16);
 static void PokeSum_CreateMonMarkingsSprite(void);
@@ -2275,16 +2276,16 @@ static void BufferMonMoveI(u8 i)
     if (i >= 4 && sMonSummaryScreen->mode == PSS_MODE_SELECT_MOVE)
     {
         ConvertIntToDecimalStringN(sMonSummaryScreen->summary.moveCurPpStrBufs[i],
-                                   gBattleMoves[sMonSummaryScreen->moveIds[i]].pp, STR_CONV_MODE_LEFT_ALIGN, 3);
+                                   PokeSum_GetMaxPP(i), STR_CONV_MODE_LEFT_ALIGN, 3);
         ConvertIntToDecimalStringN(sMonSummaryScreen->summary.moveMaxPpStrBufs[i],
-                                   gBattleMoves[sMonSummaryScreen->moveIds[i]].pp, STR_CONV_MODE_LEFT_ALIGN, 3);
+                                   PokeSum_GetMaxPP(i), STR_CONV_MODE_LEFT_ALIGN, 3);
     }
     else
     {
         ConvertIntToDecimalStringN(sMonSummaryScreen->summary.moveCurPpStrBufs[i],
                                    GetMonPpByMoveSlot(&sMonSummaryScreen->currentMon, i), STR_CONV_MODE_LEFT_ALIGN, 3);
         ConvertIntToDecimalStringN(sMonSummaryScreen->summary.moveMaxPpStrBufs[i],
-                                   CalculatePPWithBonus(sMonSummaryScreen->moveIds[i], GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_PP_BONUSES), i),
+                                   PokeSum_GetMaxPP(i),
                                    STR_CONV_MODE_LEFT_ALIGN, 3);
     }
 
@@ -2529,13 +2530,25 @@ static void PrintMovesPage(void)
     }
 }
 
+static u8 PokeSum_GetMaxPP(u8 i)
+{
+    u16 move = sMonSummaryScreen->moveIds[i];
+    u8 slot = i < MAX_MON_MOVES ? i : 0;
+    u8 bonus = i < MAX_MON_MOVES ? GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_PP_BONUSES) : 0;
+    if (move == MOVE_NONE)
+        return 0;
+    if (sMonSummaryScreen->isEnemyParty)
+        return CalculatePPWithBonus(move, bonus, slot);
+    return CalculateMonPPWithBonus(&sMonSummaryScreen->currentMon, move, bonus, slot);
+}
+
 static void PokeSum_PrintMoveName(u8 i)
 {
     u8 colorIdx = 0;
     u8 curPP = GetMonPpByMoveSlot(&sMonSummaryScreen->currentMon, i);
     u16 move = sMonSummaryScreen->moveIds[i];
     u8 ppBonuses = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_PP_BONUSES);
-    u8 maxPP = CalculatePPWithBonus(move, ppBonuses, i);
+    u8 maxPP = PokeSum_GetMaxPP(i);
 
     if (i == 4)
         curPP = maxPP;
@@ -5224,6 +5237,9 @@ static bool32 CurrentMonIsFromGBA(void)
 
 static bool32 MapSecIsInKantoOrSevii(u8 mapSec)
 {
+    // Native Johto encounters also have named locations in this game.
+    if (mapSec >= MAPSEC_JOHTO_CHERRYGROVE_AIRSTRIP && mapSec <= MAPSEC_JOHTO_INDIGO_PLATEAU)
+        return TRUE;
     if (mapSec >= KANTO_MAPSEC_START && mapSec < MAPSEC_NONE)
         return TRUE;
     return FALSE;

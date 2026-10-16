@@ -1,0 +1,885 @@
+{
+  "pass": true,
+  "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+  "elf_sha256": "c7efc258561748b879db8216eb63794f4ff80093c3687f2fb82188136d7da761",
+  "save_sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+  "mode": "native-dive-route",
+  "fixture": "temporary level-50 LAPRAS; original PC and source SAV unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [
+    {
+      "map": "Underwater_Route128",
+      "xy": [
+        38,
+        27
+      ],
+      "avatar_flags": 48,
+      "frame": 1074
+    },
+    {
+      "map": "Underwater_Route128",
+      "xy": [
+        38,
+        27
+      ],
+      "avatar_flags": 16,
+      "frame": 792
+    },
+    {
+      "map": "SeafloorCavern_Entrance",
+      "xy": [
+        10,
+        16
+      ],
+      "avatar_flags": 40,
+      "frame": 1422
+    },
+    {
+      "map": "Underwater_SeafloorCavern",
+      "xy": [
+        6,
+        6
+      ],
+      "avatar_flags": 48,
+      "frame": 2031
+    },
+    {
+      "map": "Route128",
+      "xy": [
+        38,
+        27
+      ],
+      "avatar_flags": 40,
+      "frame": 2715
+    }
+  ],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "d87bf72cdfce8f020f5a2e5b503ec4965f97d0cc21e8804ddb78680768b2d7f8",
+  "follower_checks": [
+    {
+      "label": "surface-before-dive-right",
+      "map": [
+        43,
+        43
+      ],
+      "player_xy": [
+        39,
+        27
+      ],
+      "follower_xy": [
+        38,
+        27
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "surface-before-dive-left",
+      "map": [
+        43,
+        43
+      ],
+      "player_xy": [
+        38,
+        27
+      ],
+      "follower_xy": [
+        39,
+        27
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "Underwater_Route128-right",
+      "map": [
+        43,
+        53
+      ],
+      "player_xy": [
+        39,
+        27
+      ],
+      "follower_xy": [
+        38,
+        27
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 16
+    },
+    {
+      "label": "Underwater_Route128-left",
+      "map": [
+        43,
+        53
+      ],
+      "player_xy": [
+        38,
+        27
+      ],
+      "follower_xy": [
+        39,
+        27
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 16
+    },
+    {
+      "label": "cold-reopen-right",
+      "map": [
+        43,
+        53
+      ],
+      "player_xy": [
+        39,
+        27
+      ],
+      "follower_xy": [
+        38,
+        27
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 16
+    },
+    {
+      "label": "cold-reopen-left",
+      "map": [
+        43,
+        53
+      ],
+      "player_xy": [
+        38,
+        27
+      ],
+      "follower_xy": [
+        39,
+        27
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 16
+    },
+    {
+      "label": "Underwater_Route128-right",
+      "map": [
+        43,
+        53
+      ],
+      "player_xy": [
+        39,
+        27
+      ],
+      "follower_xy": [
+        38,
+        27
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 16
+    },
+    {
+      "label": "Underwater_Route128-left",
+      "map": [
+        43,
+        53
+      ],
+      "player_xy": [
+        38,
+        27
+      ],
+      "follower_xy": [
+        39,
+        27
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 16
+    },
+    {
+      "label": "SeafloorCavern_Entrance-right",
+      "map": [
+        67,
+        27
+      ],
+      "player_xy": [
+        11,
+        16
+      ],
+      "follower_xy": [
+        10,
+        16
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "SeafloorCavern_Entrance-left",
+      "map": [
+        67,
+        27
+      ],
+      "player_xy": [
+        10,
+        16
+      ],
+      "follower_xy": [
+        11,
+        16
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "Underwater_SeafloorCavern-right",
+      "map": [
+        67,
+        26
+      ],
+      "player_xy": [
+        7,
+        6
+      ],
+      "follower_xy": [
+        6,
+        6
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 16
+    },
+    {
+      "label": "Underwater_SeafloorCavern-left",
+      "map": [
+        67,
+        26
+      ],
+      "player_xy": [
+        6,
+        6
+      ],
+      "follower_xy": [
+        7,
+        6
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 16
+    },
+    {
+      "label": "Route128-right",
+      "map": [
+        43,
+        43
+      ],
+      "player_xy": [
+        39,
+        27
+      ],
+      "follower_xy": [
+        38,
+        27
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "Route128-left",
+      "map": [
+        43,
+        43
+      ],
+      "player_xy": [
+        38,
+        27
+      ],
+      "follower_xy": [
+        39,
+        27
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "cold-reopen-right",
+      "map": [
+        43,
+        43
+      ],
+      "player_xy": [
+        39,
+        27
+      ],
+      "follower_xy": [
+        38,
+        27
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "cold-reopen-left",
+      "map": [
+        43,
+        43
+      ],
+      "player_xy": [
+        38,
+        27
+      ],
+      "follower_xy": [
+        39,
+        27
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    }
+  ],
+  "misty_joined_temporary_fixture": true,
+  "original_six_party_preserved_in_fixture": false,
+  "companion_checks_preserved": true,
+  "misty_checks": [
+    {
+      "label": "surface-before-dive",
+      "position": [
+        43,
+        43,
+        38,
+        27
+      ],
+      "avatar_flags": 8,
+      "misty_object_count": 0,
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "reach-Underwater_Route128",
+      "position": [
+        43,
+        53,
+        38,
+        27
+      ],
+      "avatar_flags": 16,
+      "misty_object_count": 0,
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "water-cold-reopen",
+      "position": [
+        43,
+        53,
+        38,
+        27
+      ],
+      "avatar_flags": 16,
+      "misty_object_count": 0,
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "reach-Underwater_Route128",
+      "position": [
+        43,
+        53,
+        38,
+        27
+      ],
+      "avatar_flags": 16,
+      "misty_object_count": 0,
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "reach-SeafloorCavern_Entrance",
+      "position": [
+        67,
+        27,
+        10,
+        16
+      ],
+      "avatar_flags": 8,
+      "misty_object_count": 0,
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "reach-Underwater_SeafloorCavern",
+      "position": [
+        67,
+        26,
+        6,
+        6
+      ],
+      "avatar_flags": 16,
+      "misty_object_count": 0,
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "reach-Route128",
+      "position": [
+        43,
+        43,
+        38,
+        27
+      ],
+      "avatar_flags": 8,
+      "misty_object_count": 0,
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "water-cold-reopen",
+      "position": [
+        43,
+        43,
+        38,
+        27
+      ],
+      "avatar_flags": 8,
+      "misty_object_count": 0,
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "coast-(39, 27)",
+      "position": [
+        43,
+        43,
+        39,
+        27
+      ],
+      "avatar_flags": 8,
+      "misty_object_count": 0,
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "coast-(39, 26)",
+      "position": [
+        43,
+        43,
+        39,
+        26
+      ],
+      "avatar_flags": 8,
+      "misty_object_count": 0,
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "coast-(39, 25)",
+      "position": [
+        43,
+        43,
+        39,
+        25
+      ],
+      "avatar_flags": 8,
+      "misty_object_count": 0,
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "coast-(39, 24)",
+      "position": [
+        43,
+        43,
+        39,
+        24
+      ],
+      "avatar_flags": 8,
+      "misty_object_count": 0,
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "coast-(39, 23)",
+      "position": [
+        43,
+        43,
+        39,
+        23
+      ],
+      "avatar_flags": 1,
+      "misty": {
+        "slot": 3,
+        "xy": [
+          46,
+          31
+        ],
+        "sprite": 4,
+        "visible": false,
+        "feet": [
+          136,
+          80
+        ]
+      },
+      "pikachu": {
+        "slot": 2,
+        "xy": [
+          46,
+          31
+        ],
+        "sprite": 2,
+        "visible": true,
+        "feet": [
+          136,
+          80
+        ]
+      },
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "coast-(39, 22)",
+      "position": [
+        43,
+        43,
+        39,
+        22
+      ],
+      "avatar_flags": 1,
+      "misty": {
+        "slot": 3,
+        "xy": [
+          46,
+          31
+        ],
+        "sprite": 4,
+        "visible": true,
+        "feet": [
+          136,
+          80
+        ]
+      },
+      "pikachu": {
+        "slot": 2,
+        "xy": [
+          46,
+          30
+        ],
+        "sprite": 2,
+        "visible": true,
+        "feet": [
+          136,
+          64
+        ]
+      },
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "coast-(38, 22)",
+      "position": [
+        43,
+        43,
+        38,
+        22
+      ],
+      "avatar_flags": 1,
+      "misty": {
+        "slot": 3,
+        "xy": [
+          46,
+          30
+        ],
+        "sprite": 4,
+        "visible": true,
+        "feet": [
+          136,
+          64
+        ]
+      },
+      "pikachu": {
+        "slot": 2,
+        "xy": [
+          46,
+          29
+        ],
+        "sprite": 2,
+        "visible": true,
+        "feet": [
+          136,
+          48
+        ]
+      },
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "coast-(37, 22)",
+      "position": [
+        43,
+        43,
+        37,
+        22
+      ],
+      "avatar_flags": 1,
+      "misty": {
+        "slot": 3,
+        "xy": [
+          46,
+          29
+        ],
+        "sprite": 4,
+        "visible": true,
+        "feet": [
+          136,
+          48
+        ]
+      },
+      "pikachu": {
+        "slot": 2,
+        "xy": [
+          45,
+          29
+        ],
+        "sprite": 2,
+        "visible": true,
+        "feet": [
+          120,
+          48
+        ]
+      },
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "coast-(36, 22)",
+      "position": [
+        43,
+        43,
+        36,
+        22
+      ],
+      "avatar_flags": 1,
+      "misty": {
+        "slot": 3,
+        "xy": [
+          45,
+          29
+        ],
+        "sprite": 4,
+        "visible": true,
+        "feet": [
+          120,
+          48
+        ]
+      },
+      "pikachu": {
+        "slot": 2,
+        "xy": [
+          44,
+          29
+        ],
+        "sprite": 2,
+        "visible": true,
+        "feet": [
+          104,
+          48
+        ]
+      },
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "land-cold-reopen",
+      "position": [
+        43,
+        43,
+        36,
+        22
+      ],
+      "avatar_flags": 33,
+      "misty": {
+        "slot": 3,
+        "xy": [
+          45,
+          29
+        ],
+        "sprite": 2,
+        "visible": true,
+        "feet": [
+          152,
+          128
+        ]
+      },
+      "pikachu": {
+        "slot": 2,
+        "xy": [
+          44,
+          29
+        ],
+        "sprite": 1,
+        "visible": true,
+        "feet": [
+          136,
+          128
+        ]
+      },
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "land-cold-trail-0",
+      "position": [
+        43,
+        43,
+        37,
+        22
+      ],
+      "avatar_flags": 1,
+      "misty": {
+        "slot": 3,
+        "xy": [
+          44,
+          29
+        ],
+        "sprite": 2,
+        "visible": false,
+        "feet": [
+          136,
+          128
+        ]
+      },
+      "pikachu": {
+        "slot": 2,
+        "xy": [
+          43,
+          29
+        ],
+        "sprite": 1,
+        "visible": true,
+        "feet": [
+          120,
+          128
+        ]
+      },
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "land-cold-trail-1",
+      "position": [
+        43,
+        43,
+        38,
+        22
+      ],
+      "avatar_flags": 1,
+      "misty": {
+        "slot": 3,
+        "xy": [
+          43,
+          29
+        ],
+        "sprite": 2,
+        "visible": true,
+        "feet": [
+          120,
+          128
+        ]
+      },
+      "pikachu": {
+        "slot": 2,
+        "xy": [
+          44,
+          29
+        ],
+        "sprite": 1,
+        "visible": true,
+        "feet": [
+          136,
+          128
+        ]
+      },
+      "joined": true,
+      "genuine_pika100_preserved": true
+    },
+    {
+      "label": "land-cold-trail-2",
+      "position": [
+        43,
+        43,
+        39,
+        22
+      ],
+      "avatar_flags": 1,
+      "misty": {
+        "slot": 3,
+        "xy": [
+          44,
+          29
+        ],
+        "sprite": 2,
+        "visible": true,
+        "feet": [
+          136,
+          128
+        ]
+      },
+      "pikachu": {
+        "slot": 2,
+        "xy": [
+          45,
+          29
+        ],
+        "sprite": 1,
+        "visible": true,
+        "feet": [
+          152,
+          128
+        ]
+      },
+      "joined": true,
+      "genuine_pika100_preserved": true
+    }
+  ],
+  "actual_device_fps_measured": false,
+  "follower_original": {
+    "party_index": 3,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "41a2516dbe07b548485709ab782eeec0945a27797ebdabe8f4af667f53cfa230",
+    "copied_without_editing": true
+  },
+  "native_save": {
+    "counter_before": 69,
+    "counter_after": 70,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_HOENN_WEATHER_RESCUED": false,
+      "FLAG_HOENN_GOT_WEATHER_CASTFORM": false,
+      "FLAG_HOENN_SPACE_CENTER_SECURED": false,
+      "FLAG_HOENN_GOT_HM08_FROM_STEVEN": false
+    },
+    "trainers": {
+      "TRAINER_HOENN_SHELLY_WEATHER_INSTITUTE": false,
+      "TRAINER_HOENN_TABITHA_SPACE_CENTER": false,
+      "TRAINER_HOENN_MAXIE_SPACE_CENTER": false
+    },
+    "hm08": 1,
+    "sha256": "0a9390d018a58c3404cdfcb2e3cc7d5ff02cbd7a91b8b10e3386913a7aeeed50"
+  },
+  "native_roundtrip": true,
+  "misty_land_save_cold_and_reappearance": true,
+  "original_saves_unchanged": true
+}

@@ -1,0 +1,217 @@
+{
+  "apply": false,
+  "files": [],
+  "validation": {
+    "chapter": "Olivine lighthouse rescue, Cianwood and Johto gyms five/six",
+    "save_layout_changed": false,
+    "native_build_and_emulator": "NOT_RUN_BY_GENERATOR",
+    "visual_limits": [
+      "Native Kanto tiles and native trainer portraits are reused.",
+      "Lighthouse uses a tall Silph facade and Pokemon Tower stairs; Chuck/Jasmine use native class portraits.",
+      "AMPHY is shown with its native species portrait and cry during the medicine event."
+    ],
+    "not_implemented": [
+      "Johto gyms seven/eight, Radio Tower takeover and Johto League",
+      "Whirl Islands, Lugia encounter and extended lighthouse shortcut"
+    ],
+    "new_maps": [
+      "EcruteakCity_WestGate",
+      "JohtoRoute38",
+      "JohtoRoute39",
+      "OlivineCity",
+      "OlivineCity_PokemonCenter_1F",
+      "OlivineCity_PokemonCenter_2F",
+      "OlivineCity_Mart",
+      "OlivineCity_Gym",
+      "OlivineLighthouse_1F",
+      "OlivineLighthouse_2F",
+      "OlivineLighthouse_3F",
+      "OlivineLighthouse_4F",
+      "OlivineLighthouse_5F",
+      "OlivineLighthouse_6F",
+      "JohtoRoute40",
+      "JohtoRoute41",
+      "CianwoodCity",
+      "CianwoodCity_PokemonCenter_1F",
+      "CianwoodCity_PokemonCenter_2F",
+      "CianwoodCity_Pharmacy",
+      "CianwoodCity_Gym",
+      "OlivineCity_Cafe"
+    ],
+    "new_flags": {
+      "FLAG_JOHTO_BADGE05_GET": 20,
+      "FLAG_JOHTO_BADGE06_GET": 21,
+      "FLAG_JOHTO_LIGHTHOUSE_MEDICINE_REQUESTED": 35,
+      "FLAG_JOHTO_CIANWOOD_MEDICINE_RECEIVED": 36,
+      "FLAG_JOHTO_AMPHY_CURED": 37,
+      "FLAG_JOHTO_GOT_TM01_FROM_CHUCK": 38,
+      "FLAG_JOHTO_FLY_REWARDED": 39,
+      "FLAG_JOHTO_GOT_TM23_FROM_JASMINE": 40,
+      "FLAG_HIDE_JOHTO_JASMINE_GYM": 41,
+      "FLAG_JOHTO_STRENGTH_REWARDED": 42
+    },
+    "trainer_ids": {
+      "CHAD": 817,
+      "DEREK": 818,
+      "PRESTON": 819,
+      "HUEY": 820,
+      "ERNEST": 821,
+      "RANDALL": 822,
+      "DENISE": 823,
+      "YOSHI": 824,
+      "CHUCK": 825,
+      "JASMINE": 826
+    },
+    "native_warp_behaviors_checked": 59,
+    "static_checks": [
+      {
+        "map": "EcruteakCity_WestGate",
+        "reachable_tiles": 101,
+        "native_warps": true,
+        "buffer_metatiles": 780,
+        "surf_route": false
+      },
+      {
+        "map": "JohtoRoute38",
+        "reachable_tiles": 712,
+        "native_warps": true,
+        "buffer_metatiles": 2090,
+        "surf_route": false
+      },
+      {
+        "map": "JohtoRoute39",
+        "reachable_tiles": 574,
+        "native_warps": true,
+        "buffer_metatiles": 1794,
+        "surf_route": false
+      },
+      {
+        "map": "OlivineCity",
+        "reachable_tiles": 1095,
+        "native_warps": true,
+        "buffer_metatiles": 3186,
+        "surf_route": false
+      },
+      {
+        "map": "OlivineCity_PokemonCenter_1F",
+        "reachable_tiles": 84,
+        "native_warps": true,
+        "buffer_metatiles": 720,
+        "surf_route": false
+      },
+      {
+        "map": "OlivineCity_PokemonCenter_2F",
+        "native_CableClub_layout": true
+      },
+      {
+        "map": "OlivineCity_Mart",
+        "reachable_tiles": 40,
+        "native_warps": true,
+        "buffer_metatiles": 598,
+        "surf_route": false
+      },
+      {
+        "map": "OlivineCity_Gym",
+        "reachable_tiles": 113,
+        "native_warps": true,
+        "buffer_metatiles": 840,
+        "surf_route": false
+      },
+      {
+        "map": "OlivineLighthouse_1F",
+        "reachable_tiles": 210,
+        "native_warps": true,
+        "buffer_metatiles": 1326,
+        "surf_route": false
+      },
+      {
+        "map": "OlivineLighthouse_2F",
+        "reachable_tiles": 138,
+        "native_warps": true,
+        "buffer_metatiles": 1326,
+        "surf_route": false
+      },
+      {
+        "map": "OlivineLighthouse_3F",
+        "reachable_tiles": 162,
+        "native_warps": true,
+        "buffer_metatiles": 1326,
+        "surf_route": false
+      },
+      {
+        "map": "OlivineLighthouse_4F",
+        "reachable_tiles": 161,
+        "native_warps": true,
+        "buffer_metatiles": 1326,
+        "surf_route": false
+      },
+      {
+        "map": "OlivineLighthouse_5F",
+        "reachable_tiles": 162,
+        "native_warps": true,
+        "buffer_metatiles": 1326,
+        "surf_route": false
+      },
+      {
+        "map": "OlivineLighthouse_6F",
+        "reachable_tiles": 58,
+        "native_warps": true,
+        "buffer_metatiles": 1326,
+        "surf_route": false
+      },
+      {
+        "map": "JohtoRoute40",
+        "reachable_tiles": 863,
+        "native_warps": true,
+        "buffer_metatiles": 1950,
+        "surf_route": true
+      },
+      {
+        "map": "JohtoRoute41",
+        "reachable_tiles": 895,
+        "native_warps": true,
+        "buffer_metatiles": 1974,
+        "surf_route": true
+      },
+      {
+        "map": "CianwoodCity",
+        "reachable_tiles": 611,
+        "native_warps": true,
+        "buffer_metatiles": 2150,
+        "surf_route": false
+      },
+      {
+        "map": "CianwoodCity_PokemonCenter_1F",
+        "reachable_tiles": 84,
+        "native_warps": true,
+        "buffer_metatiles": 720,
+        "surf_route": false
+      },
+      {
+        "map": "CianwoodCity_PokemonCenter_2F",
+        "native_CableClub_layout": true
+      },
+      {
+        "map": "CianwoodCity_Pharmacy",
+        "reachable_tiles": 59,
+        "native_warps": true,
+        "buffer_metatiles": 598,
+        "surf_route": false
+      },
+      {
+        "map": "CianwoodCity_Gym",
+        "reachable_tiles": 120,
+        "native_warps": true,
+        "buffer_metatiles": 840,
+        "surf_route": false
+      },
+      {
+        "map": "OlivineCity_Cafe",
+        "reachable_tiles": 59,
+        "native_warps": true,
+        "buffer_metatiles": 598,
+        "surf_route": false
+      }
+    ]
+  }
+}

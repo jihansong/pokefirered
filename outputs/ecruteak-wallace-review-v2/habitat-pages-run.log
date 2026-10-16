@@ -1,0 +1,8 @@
+{"identity": {"rom_sha": "c139724c9b8d94a1195cb0386ced634a0012377f2ee7f3e86b6267259cf8068b", "save_sha": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85", "ewram_free": 284, "scratch": "0x203fee4", "scope": "copied SAV, temporary emulator-only native function fixture"}}
+{"native_habitat_page": {"region": 0, "markers": 7, "marker_tasks": 1, "map_window": [12, 9], "map_pixels_sha256": "c9d388ea45d2c6bcf4fb31d71351ea4095a17fe5190024dbf9e93fd35cb36715"}}
+{"native_habitat_page": {"region": 1, "markers": 7, "marker_tasks": 1, "map_window": [16, 9], "map_pixels_sha256": "de6997b57603b6efe2ead3209681647c795dff22672f6c199d0f439be51984a3"}}
+{"native_habitat_page": {"region": 2, "markers": 8, "marker_tasks": 1, "map_window": [16, 9], "map_pixels_sha256": "a41a568fe232e8143c7631b6575049b1fbed11d240cf273e8e78cd79078f8ff4"}}
+{"original_runtime_records_restored": true}
+{"original_saves_preserved": true}
+{"native_habitat_pages": {"pass_all": true, "rom_sha256": "c139724c9b8d94a1195cb0386ced634a0012377f2ee7f3e86b6267259cf8068b", "pages": [{"region": 0, "markers": 7, "marker_tasks": 1, "map_window": [12, 9], "map_pixels_sha256": "c9d388ea45d2c6bcf4fb31d71351ea4095a17fe5190024dbf9e93fd35cb36715"}, {"region": 1, "markers": 7, "marker_tasks": 1, "map_window": [16, 9], "map_pixels_sha256": "de6997b57603b6efe2ead3209681647c795dff22672f6c199d0f439be51984a3"}, {"region": 2, "markers": 8, "marker_tasks": 1, "map_window": [16, 9], "map_pixels_sha256": "a41a568fe232e8143c7631b6575049b1fbed11d240cf273e8e78cd79078f8ff4"}], "select_cycle": true, "negative_egg_regions": 3, "temporary_native_ram_fixture": true, "actual_device_fps_measured": false}}
+{"original_saves_final_check": true}

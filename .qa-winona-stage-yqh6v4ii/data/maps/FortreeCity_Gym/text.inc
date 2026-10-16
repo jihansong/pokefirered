@@ -1,0 +1,134 @@
+FortreeCity_Gym_Text_H1_0::
+	.string "Behold the elegant battle style of\n"
+	.string "BIRD POKéMON!$"
+
+FortreeCity_Gym_Text_H1_1::
+	.string "You…\n"
+	.string "You're strong…$"
+
+FortreeCity_Gym_Text_H1_2::
+	.string "A TRAINER has to be smart to keep\n"
+	.string "up with unexpected turns of events.\p"
+	.string "Do you have the smarts to get to\n"
+	.string "our LEADER?$"
+
+FortreeCity_Gym_Text_H2_0::
+	.string "There's no need for WINONA, our GYM\n"
+	.string "LEADER, to deal with you!\p"
+	.string "I'm plenty good enough for you!$"
+
+FortreeCity_Gym_Text_H2_1::
+	.string "WINONA, I…\n"
+	.string "I lost!$"
+
+FortreeCity_Gym_Text_H2_2::
+	.string "WINONA is cute and she's strong.\n"
+	.string "She's the ultimate LEADER!\p"
+	.string "Blush…$"
+
+FortreeCity_Gym_Text_H3_0::
+	.string "WINONA taught me personally!\n"
+	.string "You can't beat me easily!$"
+
+FortreeCity_Gym_Text_H3_1::
+	.string "I was beaten…$"
+
+FortreeCity_Gym_Text_H3_2::
+	.string "Thanks to WINONA, the people of\n"
+	.string "FORTREE can live without fear.$"
+
+FortreeCity_Gym_Text_H4_0::
+	.string "The lovers of BIRD POKéMON aspire\n"
+	.string "to join this GYM.\p"
+	.string "As a member of the FORTREE GYM,\n"
+	.string "I'm not allowed to lose!$"
+
+FortreeCity_Gym_Text_H4_1::
+	.string "It was too much of a load for me\n"
+	.string "to bear…$"
+
+FortreeCity_Gym_Text_H4_2::
+	.string "The world is huge, and there are\n"
+	.string "countless tough TRAINERS.\p"
+	.string "I'm going to keep training and make\n"
+	.string "myself even stronger.$"
+
+FortreeCity_Gym_Text_H5::
+	.string "Yo, how's it going, CHAMPION-\n"
+	.string "bound {PLAYER}?\p"
+	.string "FORTREE GYM LEADER WINONA is\n"
+	.string "a master of FLYING-type POKéMON.\p"
+	.string "She's waiting at the back of this\n"
+	.string "GYM, behind the rotating doors.\p"
+	.string "She's waiting for new challengers\n"
+	.string "who are trying to take wing!\p"
+	.string "Okay, go for it!$"
+
+FortreeCity_Gym_Text_H6_0::
+	.string "When WINONA takes to battle, her\n"
+	.string "face shines with beautiful\l"
+	.string "determination…\p"
+	.string "I'm not letting you witness that\n"
+	.string "lovely sight!$"
+
+FortreeCity_Gym_Text_H6_1::
+	.string "Urk!\n"
+	.string "I couldn't stop you.$"
+
+FortreeCity_Gym_Text_H6_2::
+	.string "You'd better watch it! Don't get\n"
+	.string "distracted staring at WINONA or\l"
+	.string "you'll go crashing down in a heap!$"
+
+FortreeCity_Gym_Text_H7_0::
+	.string "You'd better know that there are all\n"
+	.string "sorts of FLYING-type POKéMON.\p"
+	.string "You do know that, right?$"
+
+FortreeCity_Gym_Text_H7_1::
+	.string "You seem to know your stuff!$"
+
+FortreeCity_Gym_Text_H7_2::
+	.string "Sure, you beat me all right. But\n"
+	.string "you'd better watch it! Our LEADER\l"
+	.string "WINONA's POKéMON are all business.$"
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
+FortreeCity_Gym_Text_H0_0::
+    .string "WINONA: A champion from KANTO!\n"
+    .string "Your journey has brought you far.\p"
+    .string "Let our partners show us how high\n"
+    .string "they can soar!$"
+
+FortreeCity_Gym_Text_H0_1::
+    .string "Your team moved as one.\n"
+    .string "A beautiful battle!$"
+
+FortreeCity_Gym_Text_H0_2::
+    .string "The sky is vast, and there is\n"
+    .string "always more to learn.\p"
+    .string "I will keep training with my\n"
+    .string "partners among these treetops.$"
+
+FortreeCity_Gym_Text_ReceivedFeatherBadge::
+    .string "{PLAYER} received\n"
+    .string "the FEATHER BADGE!$"
+
+FortreeCity_Gym_Text_TakeTM40::
+    .string "Take this TM as well.\n"
+    .string "Let your partners try it.$"
+
+FortreeCity_Gym_Text_ReceivedTM40::
+    .string "{PLAYER} received TM40\n"
+    .string "from WINONA.$"
+
+FortreeCity_Gym_Text_ExplainTM40::
+    .string "AERIAL ACE strikes with speed\n"
+    .string "and precision.\p"
+    .string "A well-timed move can turn\n"
+    .string "the whole battle around!$"
+
+FortreeCity_Gym_Text_NoRoomForTM40::
+    .string "Your TM CASE can't hold another.\n"
+    .string "Make room for TM40 and come back.$"
+@ END PATCH

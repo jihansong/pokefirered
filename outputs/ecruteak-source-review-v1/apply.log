@@ -1,0 +1,249 @@
+{
+  "apply": true,
+  "files": [
+    "data/event_scripts.s",
+    "data/layouts/BurnedTower_1F/border.bin",
+    "data/layouts/BurnedTower_1F/map.bin",
+    "data/layouts/BurnedTower_B1F/border.bin",
+    "data/layouts/BurnedTower_B1F/map.bin",
+    "data/layouts/EcruteakCity/border.bin",
+    "data/layouts/EcruteakCity/map.bin",
+    "data/layouts/GoldenrodCity/map.bin",
+    "data/layouts/GoldenrodCity_NorthGate/border.bin",
+    "data/layouts/GoldenrodCity_NorthGate/map.bin",
+    "data/layouts/JohtoNationalPark/border.bin",
+    "data/layouts/JohtoNationalPark/map.bin",
+    "data/layouts/JohtoNationalPark_Route36Gate/border.bin",
+    "data/layouts/JohtoNationalPark_Route36Gate/map.bin",
+    "data/layouts/JohtoRoute35/border.bin",
+    "data/layouts/JohtoRoute35/map.bin",
+    "data/layouts/JohtoRoute35_NationalParkGate/border.bin",
+    "data/layouts/JohtoRoute35_NationalParkGate/map.bin",
+    "data/layouts/JohtoRoute36/border.bin",
+    "data/layouts/JohtoRoute36/map.bin",
+    "data/layouts/JohtoRoute37/border.bin",
+    "data/layouts/JohtoRoute37/map.bin",
+    "data/layouts/layouts.json",
+    "data/maps/BurnedTower_1F/map.json",
+    "data/maps/BurnedTower_1F/scripts.inc",
+    "data/maps/BurnedTower_1F/text.inc",
+    "data/maps/BurnedTower_B1F/map.json",
+    "data/maps/BurnedTower_B1F/scripts.inc",
+    "data/maps/BurnedTower_B1F/text.inc",
+    "data/maps/EcruteakCity/map.json",
+    "data/maps/EcruteakCity/scripts.inc",
+    "data/maps/EcruteakCity/text.inc",
+    "data/maps/EcruteakCity_DanceTheater/map.json",
+    "data/maps/EcruteakCity_DanceTheater/scripts.inc",
+    "data/maps/EcruteakCity_DanceTheater/text.inc",
+    "data/maps/EcruteakCity_Gym/map.json",
+    "data/maps/EcruteakCity_Gym/scripts.inc",
+    "data/maps/EcruteakCity_Gym/text.inc",
+    "data/maps/EcruteakCity_Mart/map.json",
+    "data/maps/EcruteakCity_Mart/scripts.inc",
+    "data/maps/EcruteakCity_Mart/text.inc",
+    "data/maps/EcruteakCity_PokemonCenter_1F/map.json",
+    "data/maps/EcruteakCity_PokemonCenter_1F/scripts.inc",
+    "data/maps/EcruteakCity_PokemonCenter_1F/text.inc",
+    "data/maps/EcruteakCity_PokemonCenter_2F/map.json",
+    "data/maps/EcruteakCity_PokemonCenter_2F/scripts.inc",
+    "data/maps/EcruteakCity_PokemonCenter_2F/text.inc",
+    "data/maps/GoldenrodCity/map.json",
+    "data/maps/GoldenrodCity_NorthGate/map.json",
+    "data/maps/GoldenrodCity_NorthGate/scripts.inc",
+    "data/maps/GoldenrodCity_NorthGate/text.inc",
+    "data/maps/JohtoNationalPark/map.json",
+    "data/maps/JohtoNationalPark/scripts.inc",
+    "data/maps/JohtoNationalPark/text.inc",
+    "data/maps/JohtoNationalPark_Route36Gate/map.json",
+    "data/maps/JohtoNationalPark_Route36Gate/scripts.inc",
+    "data/maps/JohtoNationalPark_Route36Gate/text.inc",
+    "data/maps/JohtoRoute35/map.json",
+    "data/maps/JohtoRoute35/scripts.inc",
+    "data/maps/JohtoRoute35/text.inc",
+    "data/maps/JohtoRoute35_NationalParkGate/map.json",
+    "data/maps/JohtoRoute35_NationalParkGate/scripts.inc",
+    "data/maps/JohtoRoute35_NationalParkGate/text.inc",
+    "data/maps/JohtoRoute36/map.json",
+    "data/maps/JohtoRoute36/scripts.inc",
+    "data/maps/JohtoRoute36/text.inc",
+    "data/maps/JohtoRoute37/map.json",
+    "data/maps/JohtoRoute37/scripts.inc",
+    "data/maps/JohtoRoute37/text.inc",
+    "data/maps/map_groups.json",
+    "graphics/region_map/johto_entry.bin",
+    "include/constants/event_objects.h",
+    "include/constants/flags_johto_story.h",
+    "include/constants/opponents.h",
+    "include/constants/opponents_johto_ecruteak.h",
+    "include/pokedex_area_markers.h",
+    "src/data/heal_locations.json",
+    "src/data/object_events/object_event_graphics_info.h",
+    "src/data/object_events/object_event_graphics_info_pointers.h",
+    "src/data/object_events/object_event_pic_tables.h",
+    "src/data/region_map/region_map_sections.json",
+    "src/data/trainer_parties.h",
+    "src/data/trainer_parties_johto_ecruteak.h",
+    "src/data/trainers.h",
+    "src/data/trainers_johto_ecruteak.h",
+    "src/data/wild_encounters.json",
+    "src/event_object_movement.c",
+    "src/pokedex_area_markers.c",
+    "src/pokedex_screen.c",
+    "src/pokemon_summary_screen.c",
+    "src/region_map.c",
+    "src/wild_pokemon_area.c",
+    "tools/johto/build_ilex_goldenrod.py",
+    "tools/johto/burnedtower_1f_wild.json",
+    "tools/johto/burnedtower_b1f_wild.json",
+    "tools/johto/johtonationalpark_wild.json",
+    "tools/johto/johtoroute35_wild.json",
+    "tools/johto/johtoroute36_wild.json",
+    "tools/johto/johtoroute37_wild.json"
+  ],
+  "validation": {
+    "chapter": "Goldenrod, National Park and Ecruteak",
+    "save_layout_changed": false,
+    "native_build_and_emulator": "NOT_RUN_BY_GENERATOR",
+    "visual_limits": [
+      "Existing Kanto tiles and native character portraits are reused.",
+      "Burned Tower uses mansion interiors and a gym facade; the dance theater uses the native dojo.",
+      "Sudowoodo uses its unmodified native menu-icon pixels. Morty and Kimono girls use placeholder portraits."
+    ],
+    "not_implemented": [
+      "Johto gyms five through eight, Radio Tower takeover and Johto League",
+      "Bug-catching contest scheduling and rewards",
+      "Roaming legendary encounters after the tower scene"
+    ],
+    "new_maps": [
+      "GoldenrodCity_NorthGate",
+      "JohtoRoute35",
+      "JohtoRoute35_NationalParkGate",
+      "JohtoNationalPark",
+      "JohtoNationalPark_Route36Gate",
+      "JohtoRoute36",
+      "JohtoRoute37",
+      "EcruteakCity",
+      "EcruteakCity_PokemonCenter_1F",
+      "EcruteakCity_PokemonCenter_2F",
+      "EcruteakCity_Mart",
+      "EcruteakCity_DanceTheater",
+      "EcruteakCity_Gym",
+      "BurnedTower_1F",
+      "BurnedTower_B1F"
+    ],
+    "new_flags": {
+      "FLAG_JOHTO_BADGE04_GET": 19,
+      "FLAG_JOHTO_SQUIRTBOTTLE_RECEIVED": 29,
+      "FLAG_JOHTO_SUDOWOODO_CLEARED": 30,
+      "FLAG_JOHTO_BURNED_TOWER_INVESTIGATED": 31,
+      "FLAG_JOHTO_SILVER_BURNED_TOWER_DEFEATED": 32,
+      "FLAG_JOHTO_GOT_TM30_FROM_MORTY": 33,
+      "FLAG_JOHTO_DANCE_SURF_REWARDED": 34
+    },
+    "trainer_ids": {
+      "ARNIE": 806,
+      "IVAN": 807,
+      "KIMONO_NAOKO": 808,
+      "KIMONO_SAYO": 809,
+      "KIMONO_ZUKI": 810,
+      "KIMONO_KUNI": 811,
+      "KIMONO_MIKI": 812,
+      "SILVER_BURNED_TOWER": 813,
+      "PING": 814,
+      "GRACE": 815,
+      "MORTY": 816
+    },
+    "static_checks": [
+      {
+        "map": "GoldenrodCity_NorthGate",
+        "walkable_reachable": 100,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 780
+      },
+      {
+        "map": "JohtoRoute35",
+        "walkable_reachable": 614,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 1950
+      },
+      {
+        "map": "JohtoRoute35_NationalParkGate",
+        "walkable_reachable": 101,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 780
+      },
+      {
+        "map": "JohtoNationalPark",
+        "walkable_reachable": 997,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 2550
+      },
+      {
+        "map": "JohtoNationalPark_Route36Gate",
+        "walkable_reachable": 101,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 780
+      },
+      {
+        "map": "JohtoRoute36",
+        "walkable_reachable": 600,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 1938
+      },
+      {
+        "map": "JohtoRoute37",
+        "walkable_reachable": 415,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 1482
+      },
+      {
+        "map": "EcruteakCity",
+        "walkable_reachable": 1059,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 2750
+      },
+      {
+        "map": "EcruteakCity_PokemonCenter_1F",
+        "walkable_reachable": 84,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 720
+      },
+      {
+        "map": "EcruteakCity_PokemonCenter_2F",
+        "native_CableClub_layout": true
+      },
+      {
+        "map": "EcruteakCity_Mart",
+        "walkable_reachable": 40,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 598
+      },
+      {
+        "map": "EcruteakCity_DanceTheater",
+        "walkable_reachable": 116,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 840
+      },
+      {
+        "map": "EcruteakCity_Gym",
+        "walkable_reachable": 146,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 952
+      },
+      {
+        "map": "BurnedTower_1F",
+        "walkable_reachable": 415,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 1634
+      },
+      {
+        "map": "BurnedTower_B1F",
+        "walkable_reachable": 436,
+        "NPC_and_warps": true,
+        "buffer_metatiles": 1634
+      }
+    ]
+  }
+}
+APPLIED /workspaces/pokefirered/outputs/johto-ecruteak-v1/20261005T165216322229Z/manifest.json

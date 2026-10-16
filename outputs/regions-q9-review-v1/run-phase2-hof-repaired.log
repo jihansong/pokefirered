@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_hof.py", line 135, in <module>
+    with ReadOnlyEmu(str(rom),str(target),sym='') as e:row=native_hof(e,tag)
+                                                           ^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_hof.py", line 100, in native_hof
+    assert checksum(chunk[:abi['data']])==struct.unpack_from('<H',chunk,abi['checksum_offset'])[0],('HOF-record sector checksum',sid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('HOF-record sector checksum', 28)

@@ -1,0 +1,37 @@
+{
+  "artifacts": {
+    "/workspaces/pokefirered/work/regression-oct12/final-candidate/pokemonthyl-oct12-repair.gba": {
+      "bytes": 33554432,
+      "sha256": "2bafd6478fef5bbda56c6b4bec9c8dec1a4e0f060252fc219dbcc834411509f7"
+    },
+    "/workspaces/pokefirered/work/regression-oct12/final-candidate/pokemonthyl-oct12-repair.elf": {
+      "bytes": 34036072,
+      "sha256": "04a7c35b44df9a39ef56eadcc04cc8675d94d3996019fa27c9a913b3fffa9476"
+    },
+    "/workspaces/pokefirered/work/regression-oct12/final-candidate/pokemonthyl-oct12-repair.sym": {
+      "bytes": 3312588,
+      "sha256": "1aa5126b5f3f763875857489ef102169e8263a955f09431a34e86a46218aeb0c"
+    },
+    "/workspaces/pokefirered/work/regression-oct12/final-candidate/pokemonthyl-oct12-repair.map": {
+      "bytes": 3334955,
+      "sha256": "3bbefc6b18e30b6e8b32167aac82495b94233ca26bd927afbdfcbd5259e40915"
+    }
+  },
+  "saves": {
+    "/workspaces/pokefirered/saves/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "/workspaces/pokefirered/saves/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "/workspaces/pokefirered/saves/hoenn.sav": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+    "/workspaces/pokefirered/saves/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "/workspaces/pokefirered/saves/pokemonthyl_hoenn_QAed.sav": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+    "/workspaces/pokefirered/saves/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.1.sav": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.2.sav": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+    "/workspaces/pokefirered/saves/backup-codex-v1_1-recovery-sort-20261002T002244.307175Z/pokemonthyl_v1.1.original.sav": "417452a3f151dbe0eeaca4d41780739f8137eafd7ff14df4e7eed1685b9b699f",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/hoenn.sav": "d1ed8d987d4e451efb00a6cda2ba770e6472f36a89595a04a3550156876806ad",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424"
+  },
+  "main_sha256": "111d4e1ae7e6572845e5eb31ed33a1216fff8aa3d3e11466f287b74419abe682"
+}

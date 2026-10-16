@@ -159,7 +159,7 @@ Route104_EventScript_BrineySailDewford::
 	bufferstring STR_VAR_1, Route104_Text_BrineyMenuDewford
 	call Route104_EventScript_BrineySetSail
 	setvar VAR_HOENN_BRINEY_STATE, BRINEY_AT_DEWFORD | BRINEY_ARRIVING
-	warp MAP_DEWFORD_TOWN, 13, 9
+	warp MAP_DEWFORD_TOWN, 11, 9
 	waitstate
 	release
 	end
@@ -209,7 +209,7 @@ Route104_EventScript_Water::
 	hidemonpic
 	msgbox Route104_Text_MudkipTended
 	setvar VAR_TEMP_1, SPECIES_MUDKIP
-	call EventScript_GiveGiftMonLv5
+	call EventScript_GivePerfectRegionalStarterLv5
 	goto_if_eq VAR_RESULT, FALSE, Route104_EventScript_MudkipNoRoom
 	setflag FLAG_HOENN_GOT_MUDKIP_ON_BEACH
 	releaseall

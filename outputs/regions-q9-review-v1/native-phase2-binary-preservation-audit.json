@@ -1,0 +1,300 @@
+{
+  "pass": true,
+  "candidate_rom_sha256": "af9ba1f61fce4630d488567ed11b83847dfbc1fcff435653bedd4d86dc622818",
+  "candidate_elf_sha256": "12a57e74b48b669ce9021c1fec93934e63bd1fcb22abba827f270b79c8727de4",
+  "approved_asset_count": 24,
+  "approved_assets_unchanged": {
+    "sOpeningMoviePixels": {
+      "bytes": 14192640,
+      "sha256": "ff8c4e7f91ef541952f638043efdfe396d416777aaa984350869da3e603b66c3",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 14192640
+    },
+    "sOpeningMoviePalettes": {
+      "bytes": 178688,
+      "sha256": "f253176e6ead3f2f5dd55c01de2f33881ce143527c464d076d2786bc348724f7",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 178688
+    },
+    "sOpeningMovieFrames": {
+      "bytes": 6016,
+      "sha256": "22517a83536902b9c4245234a7bd84fd15b75fcbb00c70dbb274e648268d3938",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 6016
+    },
+    "gTrainerFrontPic_JessieJames": {
+      "bytes": 2048,
+      "sha256": "5b036768fc2712765eab94952b2757a7783b953062ef440f26eb7e9e6f38d2b1",
+      "same_bytes_as_q7": true,
+      "encoding": "LZ77",
+      "symbol_size": 1256
+    },
+    "gTrainerPalette_JessieJames": {
+      "bytes": 32,
+      "sha256": "02951ab3bc6bd04dbce501258a13e92e3ba934728bb8249514b41238f835b792",
+      "same_bytes_as_q7": true,
+      "encoding": "LZ77",
+      "symbol_size": 40
+    },
+    "sThunderYellowTitleTiles": {
+      "bytes": 38400,
+      "sha256": "266b8c5764de352fd471c742705cc8744eeff15c16e13c557854b514d6153eff",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 38400
+    },
+    "sThunderYellowTitlePalette": {
+      "bytes": 512,
+      "sha256": "e4888a4dcd5539808992724f60e9891393a950904ee06c817a601977285ebdd2",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 512
+    },
+    "sThunderYellowTitleMap": {
+      "bytes": 2048,
+      "sha256": "d36febfb217aed8362ce88627f4ffdab75d5cab305f35b433881ab3d75daab53",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 2048
+    },
+    "sTitleText_Pal": {
+      "bytes": 8,
+      "sha256": "4529364d177d57c7ff36be6be8173d1bcc0c499030a5cb4468200eb36b94224c",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 8
+    },
+    "gGraphics_TitleScreen_BoxArtMonPals": {
+      "bytes": 32,
+      "sha256": "86a6b33a4c4a102a932d44ed1c3b8c3292231563ded69318a9424c4b75387773",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 32
+    },
+    "gGraphics_TitleScreen_CopyrightPressStartMap": {
+      "bytes": 276,
+      "sha256": "ee97ab69291ae1d8407c1b7655a2c6fd664ac8c2486fd2ad8c31227295815b35",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 276
+    },
+    "gGraphics_TitleScreen_BackgroundPals": {
+      "bytes": 32,
+      "sha256": "fa04f0364c62c689cde8e3b58d4193ea6c8b879e118eab9afd933e819b64ddd2",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 32
+    },
+    "gGraphics_TitleScreen_BoxArtMonTiles": {
+      "bytes": 1152,
+      "sha256": "a6cebf5a0803d10818c58c7106edef729cae6eca8d617a46787fb25e625e34f2",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 1152
+    },
+    "gGraphics_TitleScreen_GameTitleLogoTiles": {
+      "bytes": 5468,
+      "sha256": "aed1c7edbc32bd3b8c33fa95eb280d94a90224d98ddb765ef6164dded55a5b31",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 5468
+    },
+    "gGraphics_TitleScreen_CopyrightPressStartTiles": {
+      "bytes": 704,
+      "sha256": "1f72690d788e6f3ccfa7a111bc676f45571b48ce8b40635a2741b7780ccc3ad8",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 704
+    },
+    "gTitleScreen_BlankSprite_Tiles": {
+      "bytes": 128,
+      "sha256": "3c2451d3e0f5b1a598ab8cab6beae858645729fc74f8c1d993274f55e3dbbd41",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 128
+    },
+    "gGraphics_TitleScreen_BoxArtMonMap": {
+      "bytes": 332,
+      "sha256": "25b8be3aa049b9e512e73caac9930fdbc187b66cb46509e7f4b4de5bf66215ba",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 332
+    },
+    "gTitleScreen_Slash_Pal": {
+      "bytes": 32,
+      "sha256": "a57ddb40cb96a23749ff6624ae67421cdf487183577f7dee37069bd02467a4fb",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 32
+    },
+    "gTeachyTvTitle_Tilemap": {
+      "bytes": 556,
+      "sha256": "ae837c6d4d805dd7be188f70e15e784571706f13017392a93ffb89cc1cda645c",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 556
+    },
+    "gGraphics_TitleScreen_GameTitleLogoMap": {
+      "bytes": 544,
+      "sha256": "162d967ed0289b42042be29f24f4fdbf4174bab06d8f05277341b25c2f5e62ab",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 544
+    },
+    "gGraphics_TitleScreen_GameTitleLogoPals": {
+      "bytes": 512,
+      "sha256": "9612068fa48be250345e802e735eab11331ca25d78d98e82eeca8825f02774de",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 512
+    },
+    "sPikachuVoiceLengths": {
+      "bytes": 42,
+      "sha256": "f98284934787ec1071a4f8f0c0c52ad9f2c7c82e52525a7ff70476b7ad97d1a1",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 42
+    },
+    "PikachuVoice_Title": {
+      "bytes": 9111,
+      "sha256": "aa35fbe68154fe5118ed6b298f18d8c1785d9a06c2109d54f1e818092719c9e6",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 0
+    },
+    "sThunderYellowStartRoiTiles": {
+      "bytes": 645120,
+      "sha256": "65f31390c8c1065dc28a3ea36a2990a8c351cd121d4be5c3e2f2d17c266d1e33",
+      "same_bytes_as_q7": true,
+      "encoding": "stored",
+      "symbol_size": 645120
+    }
+  },
+  "rom_resident_sections_match": [
+    {
+      "section": ".text",
+      "bytes": 1473584
+    },
+    {
+      "section": "script_data",
+      "bytes": 924024
+    },
+    {
+      "section": "lib_text",
+      "bytes": 57820
+    },
+    {
+      "section": ".rodata",
+      "bytes": 8038744
+    },
+    {
+      "section": "song_data",
+      "bytes": 513436
+    },
+    {
+      "section": "lib_rodata",
+      "bytes": 1640
+    },
+    {
+      "section": "multiboot_data",
+      "bytes": 193364
+    },
+    {
+      "section": "gfx_data",
+      "bytes": 1782744
+    },
+    {
+      "section": "extra",
+      "bytes": 38840
+    },
+    {
+      "section": ".opening_movie",
+      "bytes": 14377344
+    }
+  ],
+  "save_layout_unchanged": true,
+  "save_layout": {
+    "blocks": {
+      "gSaveBlock1": 15720,
+      "gSaveBlock2": 3876,
+      "gPokemonStorage": 33744
+    },
+    "sector_layout": [
+      [
+        0,
+        3876
+      ],
+      [
+        0,
+        3968
+      ],
+      [
+        3968,
+        3968
+      ],
+      [
+        7936,
+        3968
+      ],
+      [
+        11904,
+        3816
+      ],
+      [
+        0,
+        3968
+      ],
+      [
+        3968,
+        3968
+      ],
+      [
+        7936,
+        3968
+      ],
+      [
+        11904,
+        3968
+      ],
+      [
+        15872,
+        3968
+      ],
+      [
+        19840,
+        3968
+      ],
+      [
+        23808,
+        3968
+      ],
+      [
+        27776,
+        3968
+      ],
+      [
+        31744,
+        2000
+      ]
+    ],
+    "sector_layout_sha256": "ee1f9bc20ab82f62e45a2451450517ea539f6ef48bd31045dc2430b8525fcd68"
+  },
+  "original_v12_save_unchanged": true,
+  "memory_sections": {
+    "ewram": {
+      "start": 33554432,
+      "bytes": 261864,
+      "end": 33816296
+    },
+    "iwram": {
+      "start": 50331648,
+      "bytes": 29900,
+      "end": 50361548
+    }
+  },
+  "main_rom_unchanged": true,
+  "whole_regions_complete": false
+}

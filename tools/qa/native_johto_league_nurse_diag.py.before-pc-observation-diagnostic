@@ -1,0 +1,112 @@
+#!/usr/bin/env python3
+"""Read-only native diagnosis of the League nurse at actual chain SAVE counter115."""
+from pathlib import Path
+import ast,hashlib,json,os,re,struct,subprocess,sys,tempfile
+_boot=Path(__file__).with_name('johto_league_native_bootstrap.py');t=_boot.read_text()
+assert hashlib.sha256(t.encode()).hexdigest()=='474c1ff4a38f7c8b77b8ef4bc826b9762a5a92ba09977a7616ffda6ad5aec136'
+exec(compile(t,str(_boot),'exec'),globals())
+initial=SaveFile(str(sav));assert initial.counter==115
+assert initial.flag(SILVER_L) and initial.flag(L_ARRIVED) and initial.flag(SYS)
+assert all(initial.flag(f)for f in K)
+def abi():
+ expr={
+ 'script_size':'sizeof(struct ScriptContext)','script_pc':'offsetof(struct ScriptContext,scriptPtr)',
+ 'script_native':'offsetof(struct ScriptContext,nativePtr)','script_mode':'offsetof(struct ScriptContext,mode)',
+ 'script_depth':'offsetof(struct ScriptContext,stackDepth)','task_size':'sizeof(struct Task)',
+ 'task_func':'offsetof(struct Task,func)','task_active':'offsetof(struct Task,isActive)',
+ 'task_data':'offsetof(struct Task,data)','sprite_size':'sizeof(struct Sprite)',
+ 'sprite_callback':'offsetof(struct Sprite,callback)','sprite_data':'offsetof(struct Sprite,data)'}
+ c='#include "global.h"\n#include "gflib.h"\n#include "script.h"\n#include "task.h"\n#include <stddef.h>\n'
+ c+='const u32 qa_nurse_abi[] __attribute__((section(".qa_nurse_abi")))={'+','.join(expr.values())+'};\n'
+ tool=dka/'bin'
+ with tempfile.TemporaryDirectory(prefix='nurse-diag-abi-')as td:
+  f=Path(td)/'a.c';o=Path(td)/'a.o';b=Path(td)/'a.bin';f.write_text(c)
+  subprocess.run([str(tool/'arm-none-eabi-gcc'),'-c','-w','-mthumb','-mabi=apcs-gnu','-march=armv4t','-fcommon',
+   '-iquote','include','-DLEAFGREEN','-DREVISION=0','-DENGLISH','-DMODERN=1','-o',str(o),str(f)],check=True)
+  subprocess.run([str(tool/'arm-none-eabi-objcopy'),'-O','binary','-j','.qa_nurse_abi',str(o),str(b)],check=True)
+  raw=b.read_bytes()
+ assert len(raw)==4*len(expr)
+ return dict(zip(expr,struct.unpack('<'+'I'*len(expr),raw)))
+ABI=abi()
+fx_src=Path('src/field_effect.c').read_text();m=re.search(r'^#define\s+FIELD_EFFECT_COUNT\s+(\d+)',fx_src,re.M);assert m
+FXCOUNT=int(m.group(1));assert 1<=FXCOUNT<=256
+names={}
+for n,v in syms.items():names.setdefault(v&~1,[]).append(n)
+def symbol(address):return {'address':hex(address),'names':names.get(address&~1,[])}
+def dump(e,label):
+ tasks=[];raw=e.read(syms['gTasks'],ABI['task_size']*16)
+ for i in range(16):
+  p=i*ABI['task_size']
+  if raw[p+ABI['task_active']]:
+   tasks.append({'slot':i,'func':symbol(struct.unpack_from('<I',raw,p+ABI['task_func'])[0]),
+    'data':list(struct.unpack_from('<16h',raw,p+ABI['task_data']))})
+ ctx={}
+ for n in ['sGlobalScriptContext','sImmediateScriptContext']:
+  if n in syms:
+   b=e.read(syms[n],ABI['script_size']);pc=struct.unpack_from('<I',b,ABI['script_pc'])[0]
+   native=struct.unpack_from('<I',b,ABI['script_native'])[0]
+   ctx[n]={'raw':b.hex(),'mode':b[ABI['script_mode']],'depth':b[ABI['script_depth']],
+    'script_pc':symbol(pc),'native_callback':symbol(native),'next_script_bytes':e.read(pc,16).hex()if pc else None}
+ objects=[];raw=e.read(syms['gObjectEvents'],36*const('OBJECT_EVENTS_COUNT'))
+ for i in range(const('OBJECT_EVENTS_COUNT')):
+  b=raw[i*36:(i+1)*36]
+  if b[0]&1:objects.append({'slot':i,'local_id':b[8],'map_group':b[10],'map_num':b[9],
+   'position':list(struct.unpack_from('<hh',b,16)),'movement_action':b[28],'sprite_id':b[4],'raw':b.hex()})
+ sprites=[];raw=e.read(syms['gSprites'],ABI['sprite_size']*64)
+ for i in range(64):
+  p=i*ABI['sprite_size'];cb=struct.unpack_from('<I',raw,p+ABI['sprite_callback'])[0]
+  if any(n.startswith(('SpriteCB_PokeballGlow','SpriteCB_PokecenterMonitor'))for n in names.get(cb&~1,[])):
+   sprites.append({'slot':i,'callback':symbol(cb),'data':list(struct.unpack_from('<8h',raw,p+ABI['sprite_data']))})
+ specials={}
+ for n in ['gSpecialVar_LastTalked','gSpecialVar_Result','gSpecialVar_Facing']:
+  if n in syms:specials[n]=e.u16(syms[n])
+ status={}
+ for n in ['sGlobalScriptContextStatus','sLockFieldControls','gQuestLogState']:
+  if n in syms:status[n]=e.u8(syms[n])
+ row={'label':label,'frame':e.frame(),'location':e.location(),'callback2':symbol(e.callback2()),
+  'string_var4':e.sym_read('gStringVar4',256).split(b'\xff')[0].hex(),'tasks':tasks,'script_contexts':ctx,
+  'specials':specials,'status':status,'objects':objects,'heal_sprites':sprites,
+  'field_effects':list(e.read(syms['sFieldEffectActiveList'],FXCOUNT)) if'sFieldEffectActiveList'in syms else None,
+  'field_effect_arguments':list(struct.unpack('<8I',e.read(syms['gFieldEffectArguments'],32))),
+  'save_counter':e.u32(syms['gSaveCounter'])}
+ if row['script_contexts'].get('sGlobalScriptContext'):
+  pc=int(row['script_contexts']['sGlobalScriptContext']['script_pc']['address'],16)
+  earlier=[(addr,values)for addr,values in names.items()if 0x08000000<=addr<=pc]
+  if earlier:
+   addr,values=max(earlier,key=lambda v:v[0]);row['nearest_script_symbol']={'address':hex(addr),'names':values,'distance':pc-addr}
+ return row
+records=[];error=None;settled=False
+try:
+ with tempfile.TemporaryDirectory(prefix='actual-chain115-nurse-diag-')as td:
+  target=Path(td)/'position-only-counter115.sav';initial.warp('JohtoLeague_PokemonCenter_1F',7,4);initial.save(str(target))
+  check=SaveFile(str(target));original=SaveFile(str(sav))
+  for f in STORY:assert check.flag(f)==original.flag(f)
+  for n in ACTORS:assert check.trainer_beaten('TRAINER_JOHTO_'+n)==original.trainer_beaten('TRAINER_JOHTO_'+n)
+  assert bytes(check.blocks['storage'])==bytes(original.blocks['storage'])
+  assert bytes(check.sb1[off('sb1.playerParty'):off('sb1.playerParty')+600])==bytes(original.sb1[off('sb1.playerParty'):off('sb1.playerParty')+600])
+  with ReadOnlyEmu(str(rom),str(target),sym='')as e:
+   e.syms=syms;e.boot_continue();settle(e);e.run(60);before=snapshot(e)
+   records.append(dump(e,'before-nurse-facing'))
+   native_face(e,'UP');records.append(dump(e,'after-facing-up'))
+   oldrun=e.run;elapsed=[0];next_sample=[120]
+   def observe(frames=1):
+    oldrun(frames);elapsed[0]+=frames
+    if elapsed[0]>=next_sample[0]:
+     records.append(dump(e,'interaction-frame-'+str(elapsed[0])))
+     next_sample[0]+=120
+   e.run=observe
+   try:e.press('A',hold=3,after=12);settle(e);settled=True
+   except AssertionError as ex:error=repr(ex)
+   finally:e.run=oldrun
+   records.append(dump(e,'settle-returned'if settled else'settle-failure'))
+   e.shot(str(out/'nurse-diagnostic-final.png'),scale=3);after=snapshot(e)
+   for field in ['pc','dex','flags','trainers','items']:assert after[field]==before[field],('diagnostic altered story/state',field)
+   party_identity(before,after,'nurse diagnostic')
+   assert e.u32(syms['gSaveCounter'])==115,'diagnostic unexpectedly saved game'
+finally:
+ for path,sh in originals.items():assert digest(path.read_bytes())==sh,('original changed',str(path))
+result={'rom_sha256':digest(rom.read_bytes()),'initial_save_sha256':digest(sav.read_bytes()),
+ 'actual_initial_save_counter':115,'native_nurse_settle_returned':settled,'native_error':error,'samples':records,
+ 'abi':ABI,'diagnostic_only':True,'native_story_completion_claimed':False,'forced_memory_writes':0,
+ 'forced_story_flags':0,'original_files_unchanged':True}
+(out/'result.json').write_text(json.dumps(result,indent=2));print(json.dumps(result),flush=True)

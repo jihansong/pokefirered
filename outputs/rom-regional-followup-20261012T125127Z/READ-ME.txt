@@ -1,0 +1,11 @@
+Thunder Yellow  /   
+:  114 TM05  ,  ,   .
+          .
+
+ .sav  .   14  ,  6  v1.1/v1.2  .  ZIP QA   .
+ROM    ROM DELTA Save State   CONTINUE .sav .   DELTA      .
+
+  Bad Egg  .      .
+    , N/ ,      DELTA     .
+/   24    .
+ROM SHA256: f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d

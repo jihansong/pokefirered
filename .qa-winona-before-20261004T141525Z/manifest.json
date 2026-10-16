@@ -1,0 +1,32 @@
+{
+  "utc": "20261004T141525Z",
+  "branch": "hoenn-z3",
+  "head": "658baf740cff568cba7f3300f688b8a626e6f5fc",
+  "before": {
+    "data/maps/FortreeCity_Gym/scripts.inc": "6752c49f19958db4d18778ea22395e7c79d0aa8e5492df11db5cfd1159724263",
+    "data/maps/FortreeCity_Gym/map.json": "c4d65419bf7fd215f1c3b6671a7dfa497466b4d2f36a60dac4c3920754fce0ca",
+    "data/maps/FortreeCity_Gym/text.inc": "e291d288d3e3c6f5efcfe92399395a24a5a6b6664b61924f8bf0b22cd3ddb04c",
+    "data/layouts/HoennFortreeCity_Gym/map.bin": "650a69e942297e0bb4f35256f819a51cbb75778299368c684340167a49d2b7fb",
+    "include/constants/flags_hoenn_story.h": "d8c20e016f17184f17e31c08d2f11921fe6f1228322acafb22e1f2517f13beb9",
+    "tools/qa/cases/z5_winona.jsonl": null,
+    "docs/team/qa/codex-z5-winona-20261004/README.md": null,
+    "tools/hoenn_import/patches/FortreeCity_Gym.scripts.inc": null,
+    "tools/hoenn_import/patches/FortreeCity_Gym.text.inc": null,
+    "tools/hoenn_import/patches/FortreeCity_Gym.json": null,
+    "tools/hoenn_import/patches/FortreeCity_Gym.mapscripts": null
+  },
+  "after": {
+    "include/constants/flags_hoenn_story.h": "03f77024541e910acdcca743a18a3be1757a4330846a88357b4010e30bf75157",
+    "tools/hoenn_import/patches/FortreeCity_Gym.scripts.inc": "01b3987995dfa42e549d43fface2af64cc3cbbfa2deb46de387a64dee9b1c4ce",
+    "tools/hoenn_import/patches/FortreeCity_Gym.text.inc": "8ce013c0d5b2da3851309ba601f48865c8b497005ae4fd010752412710156235",
+    "tools/qa/cases/z5_winona.jsonl": "bd0c35a11f7297a4c0b4b13bedfb2d28c85247b64211a87c1388d3463cd711e3",
+    "docs/team/qa/codex-z5-winona-20261004/README.md": "fd37346e1b5e551cc425772cce36500dc9e451f932d226a2651625bf20311fee",
+    "data/maps/FortreeCity_Gym/scripts.inc": "46e08c783232683b7ff73313478f608aded7978d22b2fa47037af581931cb13c",
+    "data/maps/FortreeCity_Gym/text.inc": "d408092681879542026d056c74bbe321a17e35d491e874344cc7876403388f0b"
+  },
+  "new_flag": "FLAG_HOENN_GOT_TM40_FROM_WINONA",
+  "new_flag_id": "0x1264",
+  "save_layout_changed": false,
+  "canonical_idempotent": true,
+  "runtime_qa": "NOT_RUN"
+}

@@ -1,0 +1,313 @@
+{
+  "schema": "thunder-yellow-dex-ui-compiler-probe-v1",
+  "ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+  "ELF_sha256": "e625069ea9379ea3dc2f83e3014fb741a2e0b7383f41f6d56bc37fc0eae6f17b",
+  "source_sha256": {
+    "src/pokedex_screen.c": "d7cd34bed4bdee8a2e76950636a093f726eb79268b2aed6b96bf31139c1ea4c7",
+    "src/list_menu.c": "1c825cfd52b3f9eb6f70f40439836a348c0fdc7f1d452fa9cbac426870383af4",
+    "src/main.c": "23ba1a0b3c57e9d0e3e651b442575998e99832c4dec97eabe1af97259bc6e4d3",
+    "src/bg.c": "4813ff7fb1b9bcc952d3973d05a46d31c9fee57342c7957165a76a136ccd57da",
+    "src/start_menu.c": "56de3fd5e7d7a7d65b95c3e632f898a8ec92b792d338f86a2275d5a2b4b77d08",
+    "include/main.h": "35f92d00306f7359e825828bb94c1860c43699cbfe108f752f35c0449a06fdd8",
+    "include/palette.h": "3f5ee66bab01538193629ffef3ff3cd6ad7555f7e294f52ae3ccfa36f94ac418",
+    "include/task.h": "4d04e9fd43d54ef551d456da14fdf2a56d9d91fc19a4fc9582b289a06c192612",
+    "include/list_menu.h": "ae7ccb61b49cb84974dcca77973bc332a6e98861de566dd3264ee26363e3acdf",
+    "include/global.h": "ff834418cf7bf2727385f91fa7eaf69d618783a46426077338b57a0523af21af",
+    "include/constants/pokedex.h": "aac527819623140d7f44ad99b72654bab59ca5679a80cca33361828cc7e7d0c6",
+    "include/pokedex_screen.h": "62151ddb84111da7ae854403335fe7f2ddc7dce45e947a445713f6d70447d9d4",
+    "include/pokedex.h": "a7ea835c8327b5f17c5a766090829e49e694e5439b796634d1e1746867b29e8a",
+    "include/constants/species.h": "c6d5e22f66c2308261d6d9a9c3b72d4638ffa622cb1395dbabe69a588aa65dc4",
+    "include/constants/vars.h": "c3c27b43a9db279da766aa9d94af0b28aa8c42a49a87fabca1b4a1ec20ade947"
+  },
+  "offsets": {
+    "dex.size": 1048,
+    "dex.task": 0,
+    "dex.state": 1,
+    "dex.topListTask": 23,
+    "dex.orderedListTask": 65,
+    "dex.order": 66,
+    "dex.count": 72,
+    "dex.region": 110,
+    "dex.national": 111,
+    "list.size": 32,
+    "list.offset": 24,
+    "list.row": 26,
+    "list.template": 0,
+    "listTemplate.size": 24,
+    "listTemplate.items": 0,
+    "listTemplate.count": 12,
+    "listTemplate.shown": 14,
+    "listItem.size": 8,
+    "listItem.index": 4,
+    "task.size": 40,
+    "task.func": 0,
+    "task.active": 4,
+    "task.data": 8,
+    "main.size": 1084,
+    "main.callback2": 4,
+    "main.vblankCounter2": 36,
+    "main.heldKeysRaw": 40,
+    "main.newAndRepeatedKeys": 48,
+    "main.keyRepeatCounter": 50,
+    "palette.size": 16,
+    "menu.numericalItem": 9
+  },
+  "palette_active_byte": 7,
+  "palette_active_mask": 128,
+  "symbols": {
+    "gMain": {
+      "name": "gMain",
+      "value": 50344240,
+      "size": 1084,
+      "info": 17,
+      "section": 2,
+      "local_translation_unit": null
+    },
+    "gTasks": {
+      "name": "gTasks",
+      "value": 50352336,
+      "size": 640,
+      "info": 17,
+      "section": 2,
+      "local_translation_unit": null
+    },
+    "gPaletteFade": {
+      "name": "gPaletteFade",
+      "value": 33782464,
+      "size": 16,
+      "info": 17,
+      "section": 1,
+      "local_translation_unit": null
+    },
+    "sPokedexScreenData": {
+      "name": "sPokedexScreenData",
+      "value": 33795308,
+      "size": 4,
+      "info": 1,
+      "section": 1,
+      "local_translation_unit": "pokedex_screen.o"
+    },
+    "sDmaBusyBitfield": {
+      "name": "sDmaBusyBitfield",
+      "value": 50333992,
+      "size": 16,
+      "info": 1,
+      "section": 2,
+      "local_translation_unit": "bg.o"
+    },
+    "gKeyRepeatStartDelay": {
+      "name": "gKeyRepeatStartDelay",
+      "value": 50344232,
+      "size": 2,
+      "info": 17,
+      "section": 2,
+      "local_translation_unit": null
+    },
+    "gKeyRepeatContinueDelay": {
+      "name": "gKeyRepeatContinueDelay",
+      "value": 50345324,
+      "size": 2,
+      "info": 17,
+      "section": 2,
+      "local_translation_unit": null
+    },
+    "sNumStartMenuItems": {
+      "name": "sNumStartMenuItems",
+      "value": 33779965,
+      "size": 1,
+      "info": 1,
+      "section": 1,
+      "local_translation_unit": "start_menu.o"
+    },
+    "sStartMenuCursorPos": {
+      "name": "sStartMenuCursorPos",
+      "value": 33779964,
+      "size": 1,
+      "info": 1,
+      "section": 1,
+      "local_translation_unit": "start_menu.o"
+    },
+    "sStartMenuOrder": {
+      "name": "sStartMenuOrder",
+      "value": 33779966,
+      "size": 9,
+      "info": 1,
+      "section": 1,
+      "local_translation_unit": "start_menu.o"
+    },
+    "CB2_PokedexScreen": {
+      "name": "CB2_PokedexScreen",
+      "value": 135294185,
+      "size": 56,
+      "info": 18,
+      "section": 3,
+      "local_translation_unit": null
+    },
+    "Task_PokedexScreen": {
+      "name": "Task_PokedexScreen",
+      "value": 135295429,
+      "size": 972,
+      "info": 2,
+      "section": 3,
+      "local_translation_unit": "pokedex_screen.o"
+    },
+    "Task_DexScreen_NumericalOrder": {
+      "name": "Task_DexScreen_NumericalOrder",
+      "value": 135297293,
+      "size": 508,
+      "info": 2,
+      "section": 3,
+      "local_translation_unit": "pokedex_screen.o"
+    },
+    "ListMenuDummyTask": {
+      "name": "ListMenuDummyTask",
+      "value": 135316901,
+      "size": 2,
+      "info": 2,
+      "section": 3,
+      "local_translation_unit": "list_menu.o"
+    }
+  },
+  "private_struct_source_sha256": "d0e7a68368dd258f892321204cf794b46bb397463b559d710d675e65e83fa941",
+  "compiled_object_sha256": "f444cce3bf08585163be54f6ea3654adede08f59d86103e6aec973dae40f1373",
+  "global_STT_FILE_owner_not_inferred": true,
+  "gameplay_inputs_or_ROM_RAM_changes": 0,
+  "helper_symbols": {
+    "sGlobalScriptContextStatus": {
+      "name": "sGlobalScriptContextStatus",
+      "value": 50335400,
+      "size": 1,
+      "info": 1,
+      "section": 2,
+      "local_translation_unit": "script.o"
+    },
+    "gPlayerParty": {
+      "name": "gPlayerParty",
+      "value": 33702532,
+      "size": 600,
+      "info": 17,
+      "section": 1,
+      "local_translation_unit": null
+    },
+    "gPlayerPartyCount": {
+      "name": "gPlayerPartyCount",
+      "value": 33701929,
+      "size": 1,
+      "info": 17,
+      "section": 1,
+      "local_translation_unit": null
+    },
+    "CB2_Intro": {
+      "name": "CB2_Intro",
+      "value": 135210777,
+      "size": 22,
+      "info": 2,
+      "section": 3,
+      "local_translation_unit": "intro.o"
+    },
+    "gPokemonStoragePtr": {
+      "name": "gPokemonStoragePtr",
+      "value": 50352208,
+      "size": 4,
+      "info": 17,
+      "section": 2,
+      "local_translation_unit": null
+    },
+    "CB2_MainMenu": {
+      "name": "CB2_MainMenu",
+      "value": 134268369,
+      "size": 22,
+      "info": 2,
+      "section": 3,
+      "local_translation_unit": "main_menu.o"
+    },
+    "BattleMainCB2": {
+      "name": "BattleMainCB2",
+      "value": 134288381,
+      "size": 116,
+      "info": 18,
+      "section": 3,
+      "local_translation_unit": null
+    },
+    "CB2_SetUpIntro": {
+      "name": "CB2_SetUpIntro",
+      "value": 135210421,
+      "size": 356,
+      "info": 2,
+      "section": 3,
+      "local_translation_unit": "intro.o"
+    },
+    "gQuestLogPlaybackState": {
+      "name": "gQuestLogPlaybackState",
+      "value": 50355912,
+      "size": 1,
+      "info": 17,
+      "section": 2,
+      "local_translation_unit": null
+    },
+    "sLockFieldControls": {
+      "name": "sLockFieldControls",
+      "value": 50335644,
+      "size": 1,
+      "info": 1,
+      "section": 2,
+      "local_translation_unit": "script.o"
+    },
+    "gQuestLogState": {
+      "name": "gQuestLogState",
+      "value": 33795574,
+      "size": 1,
+      "info": 17,
+      "section": 1,
+      "local_translation_unit": null
+    },
+    "gSaveBlock1Ptr": {
+      "name": "gSaveBlock1Ptr",
+      "value": 50352200,
+      "size": 4,
+      "info": 17,
+      "section": 2,
+      "local_translation_unit": null
+    },
+    "CB2_WaitFadeBeforeSetUpIntro": {
+      "name": "CB2_WaitFadeBeforeSetUpIntro",
+      "value": 135209725,
+      "size": 28,
+      "info": 2,
+      "section": 3,
+      "local_translation_unit": "intro.o"
+    },
+    "CB2_Overworld": {
+      "name": "CB2_Overworld",
+      "value": 134576001,
+      "size": 44,
+      "info": 2,
+      "section": 3,
+      "local_translation_unit": "overworld.o"
+    },
+    "CB2_InitCopyrightScreenAfterTitleScreen": {
+      "name": "CB2_InitCopyrightScreenAfterTitleScreen",
+      "value": 135210409,
+      "size": 10,
+      "info": 18,
+      "section": 3,
+      "local_translation_unit": null
+    },
+    "gSaveBlock2Ptr": {
+      "name": "gSaveBlock2Ptr",
+      "value": 50352204,
+      "size": 4,
+      "info": 17,
+      "section": 2,
+      "local_translation_unit": null
+    },
+    "CB2_InitCopyrightScreenAfterBootup": {
+      "name": "CB2_InitCopyrightScreenAfterBootup",
+      "value": 135210341,
+      "size": 68,
+      "info": 18,
+      "section": 3,
+      "local_translation_unit": null
+    }
+  }
+}

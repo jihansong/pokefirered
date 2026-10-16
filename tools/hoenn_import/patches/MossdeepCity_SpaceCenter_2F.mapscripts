@@ -1,0 +1,3 @@
+@ Thunder Yellow weather-space v1
+	map_script MAP_SCRIPT_ON_TRANSITION, MossdeepCity_SpaceCenter_2F_WeatherSpaceOnTransition
+	map_script MAP_SCRIPT_ON_RESUME, MossdeepCity_SpaceCenter_2F_WeatherSpaceOnResume

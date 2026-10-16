@@ -16,6 +16,7 @@
 #include "constants/region_map_sections.h"
 #include "constants/heal_locations.h"
 #include "constants/maps.h"
+#include "constants/flags_johto_story.h"
 
 #define MAP_WIDTH 22
 #define MAP_HEIGHT 15
@@ -35,6 +36,7 @@ enum {
     REGIONMAP_SEVII45,
     REGIONMAP_SEVII67,
     REGIONMAP_HOENN,
+    REGIONMAP_JOHTO_ENTRY,
     REGIONMAP_COUNT
 };
 
@@ -58,6 +60,7 @@ static const struct RegionMapGeometry sRegionMapGeometry[REGIONMAP_COUNT] = {
     [REGIONMAP_SEVII45]  = {MAP_WIDTH, MAP_HEIGHT, 36, 36, CANCEL_BUTTON_X, CANCEL_BUTTON_Y, SWITCH_BUTTON_X, SWITCH_BUTTON_Y},
     [REGIONMAP_SEVII67]  = {MAP_WIDTH, MAP_HEIGHT, 36, 36, CANCEL_BUTTON_X, CANCEL_BUTTON_Y, SWITCH_BUTTON_X, SWITCH_BUTTON_Y},
     [REGIONMAP_HOENN]    = {HOENN_MAP_WIDTH, MAP_HEIGHT, 12, 20, 26, 13, NO_BUTTON, NO_BUTTON},
+    [REGIONMAP_JOHTO_ENTRY] = {MAP_WIDTH, MAP_HEIGHT, 36, 36, CANCEL_BUTTON_X, CANCEL_BUTTON_Y, NO_BUTTON, NO_BUTTON},
 };
 
 enum {
@@ -438,6 +441,7 @@ static const u16 sHoenn_Pal[] = INCBIN_U16("graphics/region_map/hoenn.gbapal");
 static const u32 sHoenn_Tilemap[] = INCBIN_U32("graphics/region_map/hoenn_tilemap.bin.lz");
 
 static const u32 sKanto_Tilemap[] = INCBIN_U32("graphics/region_map/kanto.bin.lz");
+static const u32 sJohtoEntry_Tilemap[] = INCBIN_U32("graphics/region_map/johto_entry.bin.lz");
 static const u32 sSevii123_Tilemap[] = INCBIN_U32("graphics/region_map/sevii_123.bin.lz");
 static const u32 sSevii45_Tilemap[] = INCBIN_U32("graphics/region_map/sevii_45.bin.lz");
 static const u32 sSevii67_Tilemap[] = INCBIN_U32("graphics/region_map/sevii_67.bin.lz");
@@ -868,6 +872,67 @@ struct HoennFlyDestination
 
 #include "data/region_map/fly_destinations_hoenn.h"
 
+// JOHTO_FLY_DESTINATIONS_V1
+struct JohtoFlyDestination
+{
+    u16 mapsec;
+    u16 visitFlag;
+    u16 alternateVisitFlag;
+    u8 destination[3];
+    s8 x;
+    s8 y;
+};
+
+static const struct JohtoFlyDestination sJohtoFlyDestinations[] = {
+    {MAPSEC_NEW_BARK_TOWN, FLAG_JOHTO_MET_LAB_ASSISTANT, FLAG_JOHTO_ELM_REPORT_DELIVERED, {MAP(MAP_NEW_BARK_TOWN), HEAL_LOCATION_NONE}, 11, 10},
+    {MAPSEC_CHERRYGROVE_CITY, FLAG_JOHTO_MET_CHERRYGROVE_GUIDE, FLAG_JOHTO_ELM_REPORT_DELIVERED, {MAP(MAP_CHERRYGROVE_CITY), HEAL_LOCATION_CHERRYGROVE_CITY}, 26, 9},
+    {MAPSEC_VIOLET_CITY, FLAG_JOHTO_SPROUT_TOWER_CLEARED, FLAG_JOHTO_BADGE01_GET, {MAP(MAP_VIOLET_CITY), HEAL_LOCATION_VIOLET_CITY}, 7, 27},
+    {MAPSEC_AZALEA_TOWN, FLAG_JOHTO_KURT_RESCUE_REQUESTED, FLAG_JOHTO_BADGE02_GET, {MAP(MAP_AZALEA_TOWN), HEAL_LOCATION_AZALEA_TOWN}, 7, 23},
+    {MAPSEC_GOLDENROD_CITY, FLAG_JOHTO_GOLDENROD_RESEARCH_REGISTERED, FLAG_JOHTO_BADGE03_GET, {MAP(MAP_GOLDENROD_CITY), HEAL_LOCATION_GOLDENROD_CITY}, 8, 29},
+    {MAPSEC_ECRUTEAK_CITY, FLAG_JOHTO_BURNED_TOWER_INVESTIGATED, FLAG_JOHTO_BADGE04_GET, {MAP(MAP_ECRUTEAK_CITY), HEAL_LOCATION_ECRUTEAK_CITY}, 8, 29},
+    {MAPSEC_OLIVINE_CITY, FLAG_JOHTO_LIGHTHOUSE_MEDICINE_REQUESTED, FLAG_JOHTO_BADGE06_GET, {MAP(MAP_OLIVINE_CITY), HEAL_LOCATION_OLIVINE_CITY}, 7, 20},
+    {MAPSEC_CIANWOOD_CITY, FLAG_JOHTO_CIANWOOD_MEDICINE_RECEIVED, FLAG_JOHTO_BADGE05_GET, {MAP(MAP_CIANWOOD_CITY), HEAL_LOCATION_CIANWOOD_CITY}, 5, 25},
+};
+
+// MAHOGANY_FLY_DESTINATION_V1
+static const struct JohtoFlyDestination sMahoganyFlyDestination = {
+    MAPSEC_MAHOGANY_TOWN, FLAG_JOHTO_LANCE_INVESTIGATION_JOINED,
+    FLAG_JOHTO_BADGE07_GET, {MAP(MAP_MAHOGANY_TOWN), HEAL_LOCATION_MAHOGANY_TOWN}, 7, 25
+};
+
+// BLACKTHORN_FLY_DESTINATION_V1
+static const struct JohtoFlyDestination sBlackthornFlyDestination = {
+    MAPSEC_BLACKTHORN_CITY, FLAG_JOHTO_CLAIR_DEFEATED,
+    FLAG_JOHTO_BADGE08_GET, {MAP(MAP_BLACKTHORN_CITY), HEAL_LOCATION_BLACKTHORN_CITY}, 7, 23
+};
+
+// JOHTO_LEAGUE_FLY_DESTINATION_V1
+static const struct JohtoFlyDestination sJohtoLeagueFlyDestination = {
+    MAPSEC_JOHTO_INDIGO_PLATEAU, FLAG_JOHTO_LEAGUE_ARRIVED,
+    FLAG_JOHTO_LEAGUE_CLEARED, {MAP(MAP_JOHTO_INDIGO_PLATEAU), HEAL_LOCATION_JOHTO_INDIGO_PLATEAU}, 11, 7
+};
+
+static const struct JohtoFlyDestination *GetJohtoFlyDestination(u16 mapsec)
+{
+    u32 i;
+    if (mapsec == MAPSEC_MAHOGANY_TOWN)
+        return &sMahoganyFlyDestination;
+    if (mapsec == MAPSEC_BLACKTHORN_CITY)
+        return &sBlackthornFlyDestination;
+    if (mapsec == MAPSEC_JOHTO_INDIGO_PLATEAU)
+        return &sJohtoLeagueFlyDestination;
+    for (i = 0; i < NELEMS(sJohtoFlyDestinations); i++)
+        if (sJohtoFlyDestinations[i].mapsec == mapsec)
+            return &sJohtoFlyDestinations[i];
+    return NULL;
+}
+
+static bool8 JohtoFlyDestinationWasVisited(const struct JohtoFlyDestination *destination)
+{
+    return FlagGet(destination->visitFlag)
+        || FlagGet(destination->alternateVisitFlag);
+}
+
 static const u8 sMapFlyDestinations[][3] = {
     [MAPSEC_PALLET_TOWN         - KANTO_MAPSEC_START] = {MAP(MAP_PALLET_TOWN),                           HEAL_LOCATION_PALLET_TOWN},
     [MAPSEC_VIRIDIAN_CITY       - KANTO_MAPSEC_START] = {MAP(MAP_VIRIDIAN_CITY),                         HEAL_LOCATION_VIRIDIAN_CITY},
@@ -1076,6 +1141,14 @@ static void InitRegionMapType(void)
         sRegionMap->permissions[MAPPERM_HAS_SWITCH_BUTTON] = FALSE;
     region = REGIONMAP_KANTO;
     j = REGIONMAP_KANTO;
+    if (gMapHeader.regionMapSectionId >= MAPSEC_JOHTO_CHERRYGROVE_AIRSTRIP
+     && gMapHeader.regionMapSectionId <= MAPSEC_JOHTO_INDIGO_PLATEAU)
+    {
+        sRegionMap->permissions[MAPPERM_HAS_SWITCH_BUTTON] = FALSE;
+        sRegionMap->selectedRegion = REGIONMAP_JOHTO_ENTRY;
+        sRegionMap->playersRegion = REGIONMAP_JOHTO_ENTRY;
+        return;
+    }
     if (gMapHeader.regionMapSectionId < KANTO_MAPSEC_START)
     {
         // a Hoenn mapsec: show Hoenn, which has no second map to switch to
@@ -1203,6 +1276,7 @@ static bool8 LoadRegionMapGfx(void)
         break;
     case 9:
         LZ77UnCompWram(sHoenn_Tilemap, sRegionMap->layouts[REGIONMAP_HOENN]);
+        LZ77UnCompWram(sJohtoEntry_Tilemap, sRegionMap->layouts[REGIONMAP_JOHTO_ENTRY]);
         break;
     default:
         LZ77UnCompWram(sBackground_Tilemap, sRegionMap->layouts[REGIONMAP_COUNT]);
@@ -3012,6 +3086,11 @@ static u16 GetDungeonMapsecUnderCursor(void)
 
 static u8 GetMapsecType(u8 mapsec)
 {
+    const struct JohtoFlyDestination *johtoDestination = GetJohtoFlyDestination(mapsec);
+
+    if (johtoDestination != NULL)
+        return JohtoFlyDestinationWasVisited(johtoDestination) ? MAPSECTYPE_VISITED : MAPSECTYPE_NOT_VISITED;
+
     // Hoenn's mapsecs come before Kanto's. A town the player has stood in can
     // be flown to; everything else on that map is shown as a route.
     if (mapsec < KANTO_MAPSEC_START)
@@ -3468,6 +3547,127 @@ static u8 GetSelectedMapSection(u8 whichMap, u8 layer, s16 y, s16 x)
         return sRegionMapSections_Sevii67[layer][y][x];
     case REGIONMAP_HOENN:
         return sRegionMapSections_Hoenn[layer][y][x];
+    case REGIONMAP_JOHTO_ENTRY:
+        // JOHTO_LEAGUE_MAP_GRID_V1
+        if (layer != LAYER_MAP)
+            return MAPSEC_NONE;
+        if (x >= 16 && x <= 19 && y == 8)
+            return MAPSEC_JOHTO_ROUTE27;
+        if (x == 20 && y == 8)
+            return MAPSEC_TOHJO_FALLS;
+        if (x == 21 && y >= 6 && y <= 8)
+            return MAPSEC_JOHTO_ROUTE26;
+        if (x == 21 && y == 5)
+            return MAPSEC_JOHTO_VICTORY_ROAD;
+        if (x == 21 && y == 4)
+            return MAPSEC_JOHTO_INDIGO_PLATEAU;
+        // BLACKTHORN_MAP_GRID_V1
+        if (layer != LAYER_MAP)
+            return MAPSEC_NONE;
+        if (x >= 14 && x <= 18 && y == 1)
+            return MAPSEC_JOHTO_ROUTE44;
+        if (x == 19 && y == 1)
+            return MAPSEC_ICE_PATH;
+        if (x == 20 && y == 1)
+            return MAPSEC_BLACKTHORN_CITY;
+        if (x == 20 && y == 0)
+            return MAPSEC_DRAGON_DEN;
+        // MAHOGANY_MAP_GRID_V1
+        if (layer != LAYER_MAP)
+            return MAPSEC_NONE;
+        if (x >= 6 && x <= 12 && y == 1)
+            return MAPSEC_JOHTO_ROUTE42;
+        if (x == 9 && y == 0)
+            return MAPSEC_MT_MORTAR;
+        if (x == 13 && y == 1)
+            return MAPSEC_MAHOGANY_TOWN;
+        if (x == 13 && y == 0)
+            return MAPSEC_JOHTO_ROUTE43;
+        if (x == 14 && y == 0)
+            return MAPSEC_LAKE_OF_RAGE;
+        if (x == 14 && y == 2)
+            return MAPSEC_JOHTO_ROCKET_HQ;
+        // OLIVINE_CIANWOOD_MAP_GRID_V1
+        if (layer != LAYER_MAP)
+            return MAPSEC_NONE;
+        if (x == 5 && y == 0)
+            return MAPSEC_BURNED_TOWER;
+        if (x >= 2 && x <= 4 && y == 1)
+            return MAPSEC_JOHTO_ROUTE38;
+        if (x == 1 && y >= 1 && y <= 3)
+            return MAPSEC_JOHTO_ROUTE39;
+        if (x == 1 && y == 4)
+            return MAPSEC_OLIVINE_CITY;
+        if (x == 0 && y == 4)
+            return MAPSEC_OLIVINE_LIGHTHOUSE;
+        if (x == 1 && y == 5)
+            return MAPSEC_JOHTO_ROUTE40;
+        if (x == 1 && y == 6)
+            return MAPSEC_JOHTO_ROUTE41;
+        if (x == 0 && y == 6)
+            return MAPSEC_CIANWOOD_CITY;
+        // ECRUTEAK_MAP_GRID_V1
+        if (layer != LAYER_MAP)
+            return MAPSEC_NONE;
+        if (x == 5 && y == 1)
+            return MAPSEC_ECRUTEAK_CITY;
+        if (x == 5 && y == 0)
+            return MAPSEC_BURNED_TOWER;
+        if (x == 5 && y == 2)
+            return MAPSEC_JOHTO_ROUTE37;
+        if (x >= 3 && x <= 5 && y == 3)
+            return MAPSEC_JOHTO_ROUTE36;
+        if (x == 2 && y == 3)
+            return MAPSEC_JOHTO_NATIONAL_PARK;
+        if (x == 2 && y == 4)
+            return MAPSEC_JOHTO_ROUTE35;
+        if (y < 2)
+            return MAPSEC_NONE;
+        y -= 2;
+        // ILEX_GOLDENROD_MAP_GRID_V1
+        if (layer != LAYER_MAP)
+            return MAPSEC_NONE;
+        if (x == 2 && y == 3)
+            return MAPSEC_GOLDENROD_CITY;
+        if (x == 2 && y >= 4 && y <= 7)
+            return MAPSEC_JOHTO_ROUTE34;
+        if (x >= 2 && x <= 3 && y == 8)
+            return MAPSEC_ILEX_FOREST;
+        if (x < 4)
+            return MAPSEC_NONE;
+        x -= 4;
+        // AZALEA_ROUTE32_MAP_GRID_V1
+        if (layer == LAYER_MAP && x == 2 && y >= 4 && y <= 7)
+            return MAPSEC_JOHTO_ROUTE32;
+        if (layer == LAYER_MAP && x == 2 && y == 8)
+            return MAPSEC_JOHTO_UNION_CAVE;
+        if (layer == LAYER_MAP && x == 1 && y == 8)
+            return MAPSEC_JOHTO_ROUTE33;
+        if (layer == LAYER_MAP && x == 0 && y == 8)
+            return MAPSEC_AZALEA_TOWN;
+        if (layer == LAYER_MAP && x == 0 && y == 7)
+            return MAPSEC_SLOWPOKE_WELL;
+        // VIOLET_ROUTE31_MAP_GRID_V1
+        if (layer == LAYER_MAP && x == 2 && y == 3)
+            return MAPSEC_VIOLET_CITY;
+        if (layer == LAYER_MAP && x >= 3 && x <= 6 && y == 3)
+            return MAPSEC_JOHTO_ROUTE31;
+        // CHERRYGROVE_ROUTE30_MAP_GRID_V1
+        if (layer != LAYER_MAP)
+            return MAPSEC_NONE;
+        if (x == 6 && y == 7)
+            return MAPSEC_CHERRYGROVE_CITY;
+        if (x == 6 && y >= 4 && y <= 6)
+            return MAPSEC_JOHTO_ROUTE30;
+        if (y != 8)
+            return MAPSEC_NONE;
+        if (x == 6)
+            return MAPSEC_JOHTO_CHERRYGROVE_AIRSTRIP;
+        if (x >= 7 && x <= 14)
+            return MAPSEC_JOHTO_ROUTE_29;
+        if (x == 15)
+            return MAPSEC_NEW_BARK_TOWN;
+        return MAPSEC_NONE;
     default:
         return MAPSEC_NONE;
     }
@@ -3618,6 +3818,11 @@ static void CreateFlyIconSprite(u8 whichMap, u8 numIcons, u16 x, u16 y, u8 tileT
     LoadSpritePalette(&spritePalette);
     spriteId = CreateSprite(&template, 8 * x + sRegionMapGeometry[whichMap].originX,
                             8 * y + sRegionMapGeometry[whichMap].originY, 1);
+    if (spriteId == MAX_SPRITES)
+    {
+        FreeSpriteTilesByTag(tileTag);
+        return;
+    }
     sMapIcons->flyIcons[numIcons].sprite = &gSprites[spriteId];
     gSprites[spriteId].invisible = TRUE;
     sMapIcons->flyIcons[numIcons].region = whichMap;
@@ -3657,6 +3862,11 @@ static void CreateDungeonIconSprite(u8 whichMap, u8 numIcons, u16 x, u16 y, u8 t
 
     spriteId = CreateSprite(&template, 8 * x + sRegionMapGeometry[whichMap].originX + offset,
                             8 * y + sRegionMapGeometry[whichMap].originY + offset, 3);
+    if (spriteId == MAX_SPRITES)
+    {
+        FreeSpriteTilesByTag(tileTag);
+        return;
+    }
     sMapIcons->dungeonIcons[numIcons].sprite = &gSprites[spriteId];
     gSprites[spriteId].invisible = TRUE;
     sMapIcons->dungeonIcons[numIcons].region = whichMap;
@@ -3670,14 +3880,23 @@ static void CreateFlyIcons(void)
     {
         for (i = 0; i < REGIONMAP_COUNT; i++)
         {
+            // FLY_SELECTED_ICON_SCOPE_V2: Fly has no cross-region switch.
+            if (sRegionMap->type == REGIONMAP_TYPE_FLY && i != GetSelectedRegionMap())
+                continue;
+            // JOHTO_FLY_ICON_SCOPE_V1: Johto has no cross-region switch.
+            if ((GetSelectedRegionMap() == REGIONMAP_JOHTO_ENTRY) != (i == REGIONMAP_JOHTO_ENTRY))
+                continue;
             for (y = 0; y < sRegionMapGeometry[i].height; y++)
             {
                 for (x = 0; x < sRegionMapGeometry[i].width; x++)
                 {
                     if (GetMapsecType(GetSelectedMapSection(i, LAYER_MAP, y, x)) == MAPSECTYPE_VISITED)
                     {
+                        if (numIcons >= NELEMS(sMapIcons->flyIcons))
+                            return;
                         CreateFlyIconSprite(i, numIcons, x, y, numIcons + 100, 10);
-                        numIcons++;
+                        if (sMapIcons->flyIcons[numIcons].sprite != NULL)
+                            numIcons++;
                     }
                 }
             }
@@ -3690,8 +3909,13 @@ static void CreateDungeonIcons(void)
     u16 i, y, x;
     u8 numIcons = 0;
     u8 mapsec;
+    if (GetSelectedRegionMap() == REGIONMAP_JOHTO_ENTRY)
+        return;
     for (i = 0; i < REGIONMAP_COUNT; i++)
     {
+        // FLY_SELECTED_ICON_SCOPE_V2: Fly has no cross-region switch.
+        if (sRegionMap->type == REGIONMAP_TYPE_FLY && i != GetSelectedRegionMap())
+            continue;
         for (y = 0; y < sRegionMapGeometry[i].height; y++)
         {
             for (x = 0; x < sRegionMapGeometry[i].width; x++)
@@ -3701,7 +3925,11 @@ static void CreateDungeonIcons(void)
                     continue;
                 if (mapsec == MAPSEC_CERULEAN_CAVE && !FlagGet(FLAG_SYS_CAN_LINK_WITH_RS))
                     continue;
+                if (numIcons >= NELEMS(sMapIcons->dungeonIcons))
+                    return;
                 CreateDungeonIconSprite(i, numIcons, x, y, numIcons + 35, 10);
+                if (sMapIcons->dungeonIcons[numIcons].sprite == NULL)
+                    continue;
                 if (GetDungeonMapsecType(mapsec) != 2)
                 {
                     StartSpriteAnim(sMapIcons->dungeonIcons[numIcons].sprite, 1);
@@ -3720,13 +3948,13 @@ static void SetFlyIconInvisibility(u8 whichMap, u8 iconNum, bool8 invisible)
         // Set for all fly icons
         for (i = 0; i < NELEMS(sMapIcons->flyIcons); i++)
         {
-            if (sMapIcons->flyIcons[i].region == whichMap || whichMap == 0xFF)
+            if (sMapIcons->flyIcons[i].sprite != NULL && (sMapIcons->flyIcons[i].region == whichMap || whichMap == 0xFF))
                 sMapIcons->flyIcons[i].sprite->invisible = invisible;
         }
     }
     else
     {
-        if (sMapIcons->flyIcons[iconNum].region == whichMap)
+        if (iconNum < NELEMS(sMapIcons->flyIcons) && sMapIcons->flyIcons[iconNum].sprite != NULL && sMapIcons->flyIcons[iconNum].region == whichMap)
             sMapIcons->flyIcons[iconNum].sprite->invisible = invisible;
     }
 }
@@ -3739,13 +3967,13 @@ static void SetDungeonIconInvisibility(u8 whichMap, u8 iconNum, bool8 invisible)
         // Set for all dungeon icons
         for (i = 0; i < NELEMS(sMapIcons->dungeonIcons); i++)
         {
-            if (sMapIcons->dungeonIcons[i].region == whichMap || whichMap == 0xFF)
+            if (sMapIcons->dungeonIcons[i].sprite != NULL && (sMapIcons->dungeonIcons[i].region == whichMap || whichMap == 0xFF))
                 sMapIcons->dungeonIcons[i].sprite->invisible = invisible;
         }
     }
     else
     {
-        if (sMapIcons->dungeonIcons[iconNum].region != whichMap)
+        if (iconNum < NELEMS(sMapIcons->dungeonIcons) && sMapIcons->dungeonIcons[iconNum].sprite != NULL && sMapIcons->dungeonIcons[iconNum].region != whichMap)
             sMapIcons->dungeonIcons[iconNum].sprite->invisible = invisible;
     }
 }
@@ -4097,7 +4325,9 @@ u8 *GetMapName(u8 *dst0, u16 mapsec, u16 fill)
     {
         dst = StringCopy(dst0, sHoennMapNames[mapsec]);
     }
-    else if ((idx = mapsec - KANTO_MAPSEC_START) < MAPSEC_NONE - KANTO_MAPSEC_START)
+    else if (mapsec != MAPSEC_NONE
+          && (idx = mapsec - KANTO_MAPSEC_START) < MAPSEC_COUNT - KANTO_MAPSEC_START
+          && sMapNames[idx] != NULL)
     {
         if (IsCeladonDeptStoreMapsec(mapsec) == TRUE)
             dst = StringCopy(dst0, sMapsecName_CELADON_DEPT_);
@@ -4324,6 +4554,20 @@ static void FreeFlyMap(u8 taskId)
 static void SetFlyWarpDestination(u16 mapsec)
 {
     u16 idx;
+    const struct JohtoFlyDestination *johtoDestination = GetJohtoFlyDestination(mapsec);
+
+    if (johtoDestination != NULL)
+    {
+        if (!JohtoFlyDestinationWasVisited(johtoDestination))
+            return;
+        if (johtoDestination->destination[2] != HEAL_LOCATION_NONE)
+            SetWarpDestinationToHealLocation(johtoDestination->destination[2]);
+        else
+            SetWarpDestination(johtoDestination->destination[0], johtoDestination->destination[1], -1, johtoDestination->x, johtoDestination->y);
+        SetUsedFlyQuestLogEvent(johtoDestination->destination);
+        ReturnToFieldFromFlyMapSelect();
+        return;
+    }
 
     if (mapsec < KANTO_MAPSEC_START)
     {
@@ -4332,6 +4576,8 @@ static void SetFlyWarpDestination(u16 mapsec)
         return;
     }
     idx = mapsec - KANTO_MAPSEC_START;
+    if (idx >= NELEMS(sMapFlyDestinations))
+        return;
     if (sMapFlyDestinations[idx][2])
     {
         SetWarpDestinationToHealLocation(sMapFlyDestinations[idx][2]);

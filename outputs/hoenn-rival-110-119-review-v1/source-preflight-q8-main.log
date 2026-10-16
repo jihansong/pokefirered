@@ -1,0 +1,167 @@
+{
+  "apply": false,
+  "changed": [
+    "include/constants/flags_hoenn_story.h",
+    "src/field_specials.c",
+    "src/data/trainer_parties_hoenn.h",
+    "src/data/trainers_hoenn.h",
+    "data/maps/Route110/scripts.inc",
+    "tools/hoenn_import/patches/Route110.scripts.inc",
+    "data/maps/Route110/text.inc",
+    "tools/hoenn_import/patches/Route110.text.inc",
+    "tools/hoenn_import/patches/Route110.mapscripts",
+    "data/maps/Route110/map.json",
+    "tools/hoenn_import/patches/Route110.json",
+    "data/maps/Route119/scripts.inc",
+    "tools/hoenn_import/patches/Route119.scripts.inc",
+    "data/maps/Route119/text.inc",
+    "tools/hoenn_import/patches/Route119.text.inc",
+    "tools/hoenn_import/patches/Route119.mapscripts",
+    "data/maps/Route119/map.json",
+    "tools/hoenn_import/patches/Route119.json"
+  ],
+  "native_rival_cases": "NOT_RUN",
+  "scope": "103 -> original Route110 rival -> Weather Institute -> original Route119 rival -> shared Fly gift",
+  "save_layout_changed": false,
+  "original_route_tiles_and_warps_changed": false,
+  "map_records": {
+    "Route110": {
+      "object_local_id": 26,
+      "object_xy": [
+        34,
+        54
+      ],
+      "trigger_xy": [
+        [
+          33,
+          56
+        ],
+        [
+          34,
+          56
+        ],
+        [
+          35,
+          56
+        ]
+      ],
+      "original_objects_kept": 25,
+      "terrain_changed": false
+    },
+    "Route119": {
+      "object_local_id": 30,
+      "object_xy": [
+        25,
+        32
+      ],
+      "trigger_xy": [
+        [
+          25,
+          31
+        ],
+        [
+          26,
+          31
+        ]
+      ],
+      "original_objects_kept": 29,
+      "terrain_changed": false
+    }
+  },
+  "party_curve": "Route103 unchanged63-66; Route11064-67; Route11966-69; native enemy levels must verify no extra runtime scaling",
+  "gift_duplicates": "HM02 bag/PC/Kanto history -> TM02; Itemfinder already owned -> acknowledge only",
+  "files": {
+    "include/constants/flags_hoenn_story.h": {
+      "before": "ed5bf6f240176e4eef2d86198a7c8d1e736bf35f8397595a16e5d17582e87606",
+      "after": "2cb078c310f22af4144946b2733b211d12f80af84936b5acdaf3c07d32101d79"
+    },
+    "src/field_specials.c": {
+      "before": "6a4886c0f3a51f62f7971db45f7d81575761d330d0f39874cce4beecd47b8119",
+      "after": "90636754ce030dd0ea240e340dba8694eeddd26aea0f0684dc8e48199ab5915e"
+    },
+    "src/data/trainer_parties_hoenn.h": {
+      "before": "47c01714d86ea82aa8fd4007d80011c89295380b3ddb8205b06b05d7cbac448f",
+      "after": "5c202181da8fa46dee4c249e85a23eafc7302534091588abfc437ec59bcdc62d"
+    },
+    "src/data/trainers_hoenn.h": {
+      "before": "f24e1bb57eb7a5ca54f2ae7987a0ebc4c1ad3174e8ffc2b3b1c9e0006db742df",
+      "after": "fa5585a236c298b95ea2e39f3a86670a53efce165a3d7324fdcd2d973b1f39c6"
+    },
+    "data/maps/Route110/scripts.inc": {
+      "before": "60ab9c533a38449f9e429ce94a174e8e596d0337d8d0cd5e47b51963431b8fde",
+      "after": "aab39c86414b5ea08f07b258aac762bd3909816bf33ee427eca1ab4094f3dbed"
+    },
+    "tools/hoenn_import/patches/Route110.scripts.inc": {
+      "before": "221b6b39a854d2a782d128dfff476147792ad164b5c272d7c7ad183585102f81",
+      "after": "8676a8b7bf0400a11c4b5eb3aacbc671aae059ad7fb2f961ae5598cc10a2e233"
+    },
+    "data/maps/Route110/text.inc": {
+      "before": "10f04aefc69d6fb4f3a7b11275f4800e2623c545b0a7b7e1953c7ee5d80141fd",
+      "after": "947a2a407e4a8fa296e2b0a75ff2f393fff259db8895bdea246674156ea4374e"
+    },
+    "tools/hoenn_import/patches/Route110.text.inc": {
+      "before": "cca011b3ca39895ef6ac572483c8eb91c8212cb95d5cd0138c91b471ee2b2519",
+      "after": "7af13ff598505a15db5e2be66764f4484f810f3874c2a88788b15d922bddcbb6"
+    },
+    "tools/hoenn_import/patches/Route110.mapscripts": {
+      "before": null,
+      "after": "f0683d014d0cf12fa6c9968c7d9aff48e8bb2018cf1f2fb67d4538164258984b"
+    },
+    "data/maps/Route110/map.json": {
+      "before": "5f15bedb8bdd801ef39464069525ce81c8d042b1d82f840aaeaacf8e876d9848",
+      "after": "56022c4db1562c8ce596ba7f7612f31ab04b796bbae4f078fee8b70da5e231ad"
+    },
+    "tools/hoenn_import/patches/Route110.json": {
+      "before": "86bb3c4f45282adf476fc839bc1e1d1419b8b0f3778de49b35094785e68af63b",
+      "after": "f56889a4eb710c6228a32ba005d7b56f073c43148637bd7f8415923d42297dc6"
+    },
+    "data/maps/Route119/scripts.inc": {
+      "before": "01a12b22e057887d16fa80a8a77acf96622476f45505a186b562c2ef83eb928a",
+      "after": "5df47a91199555d0bc6ee6c5c5ff3216162cd606c066d95e133e19cb4e7074f0"
+    },
+    "tools/hoenn_import/patches/Route119.scripts.inc": {
+      "before": null,
+      "after": "7026110c0c246b258ad7bc01547df02fc130bd5f5688d3811be9b662fc3d07a8"
+    },
+    "data/maps/Route119/text.inc": {
+      "before": "937dfecda6e05e81c61b17ff6339556f28b163015380effd12bed0e5a0cbfff1",
+      "after": "6c44402db8a28976b34cf6d42b738f898eb19c7bdef7289df554ed605d84355f"
+    },
+    "tools/hoenn_import/patches/Route119.text.inc": {
+      "before": null,
+      "after": "016ba142818990d09e8555e70a7fc69f1c901573a72bf44d3d5e6bff3e346300"
+    },
+    "tools/hoenn_import/patches/Route119.mapscripts": {
+      "before": null,
+      "after": "e7030fab519ab903ce62d6fcad11f6abf436b5463b99cbb392ee26f05c0ff353"
+    },
+    "data/maps/Route119/map.json": {
+      "before": "27a2d26fb2aea864f86ab43e8c4b3b214ed634aa1f43c3571727dd1057e7ef63",
+      "after": "48eb38d968e0c1dbab7bb1eff0ed89304e2d02b26e74f7106cec4f2a499939b1"
+    },
+    "tools/hoenn_import/patches/Route119.json": {
+      "before": null,
+      "after": "7e4b56d994a909b7164dfb51c6e45e5443bf44b6e1a6b2c40c1c3213528161e4"
+    }
+  },
+  "original_terrain_sha256": {
+    "/workspaces/pokefirered/data/layouts/HoennRoute110/map.bin": "53c4da783116c4b726989d9ebb872ee4cbfaea1e148b39a4e345471e60a3d6da",
+    "/workspaces/pokefirered/data/layouts/HoennRoute119/map.bin": "f6c948a0fb90925afce408b4bf1742ba56e9e6c95ffb899a348d563d1ba5f47d"
+  },
+  "original_save_sha256": {
+    "/workspaces/pokefirered/saves/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "/workspaces/pokefirered/saves/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "/workspaces/pokefirered/saves/hoenn.sav": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+    "/workspaces/pokefirered/saves/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "/workspaces/pokefirered/saves/pokemonthyl_hoenn_QAed.sav": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+    "/workspaces/pokefirered/saves/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.1.sav": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.2.sav": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+    "/workspaces/pokefirered/saves/backup-codex-v1_1-recovery-sort-20261002T002244.307175Z/pokemonthyl_v1.1.original.sav": "417452a3f151dbe0eeaca4d41780739f8137eafd7ff14df4e7eed1685b9b699f",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/hoenn.sav": "d1ed8d987d4e451efb00a6cda2ba770e6472f36a89595a04a3550156876806ad",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424"
+  }
+}

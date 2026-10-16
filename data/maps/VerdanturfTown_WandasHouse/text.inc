@@ -11,20 +11,18 @@ VerdanturfTown_WandasHouse_Text_H0::
     .string "most days.$"
 
 VerdanturfTown_WandasHouse_Text_WandaBefore::
-    .string "WANDA: The tunnel's no good yet.\p"
-    .string "Boulders the size of the room we're\n"
-    .string "standing in.\p"
-    .string "Have you been up to MAUVILLE? The\n"
-    .string "GYM there is worth your time.$"
+	.string "WANDA: He is finishing the tunnel.\n"
+	.string "The passage is safe to use.\p"
+	.string "Have you been up to MAUVILLE?\n"
+	.string "WATTSON's GYM is worth your time.$"
 
 VerdanturfTown_WandasHouse_Text_WandaAfter::
-    .string "WANDA: You have WATTSON's BADGE.\n"
-    .string "He doesn't give those out kindly.\p"
-    .string "Listen - my cousin WALLY lives in\n"
-    .string "PETALBURG. He's small and he's ill\l"
-    .string "and he wants a POKéMON of his own.\p"
-    .string "If you pass through, would you look\n"
-    .string "in on him? NORMAN's GYM, likely.$"
+	.string "WANDA: You have WATTSON's BADGE.\n"
+	.string "He doesn't give those out kindly.\p"
+	.string "My cousin WALLY dreams of becoming\n"
+	.string "a strong POKéMON TRAINER, too.\p"
+	.string "Traveling with a good friend\n"
+	.string "makes all the difference.$"
 
 VerdanturfTown_WandasHouse_Text_WandaIntro::
     .string "WANDA: Go and see the lady in the\n"
@@ -35,10 +33,10 @@ VerdanturfTown_WandasHouse_Text_WandaIntro::
     .string "Say WANDA sent you.$"
 
 VerdanturfTown_WandasHouse_Text_WandaDone::
-    .string "WANDA: Any day now. The boulders,\n"
-    .string "I mean.\p"
-    .string "Say WANDA sent you, at the west\n"
-    .string "house.$"
+	.string "WANDA: He's still at the tunnel,\n"
+	.string "finishing the work quietly.\p"
+	.string "Say WANDA sent you, at the west\n"
+	.string "house.$"
 
 VerdanturfTown_WandasHouse_Text_WandaWallyHere::
     .string "WANDA: WALLY's here with us now,\n"
@@ -50,4 +48,38 @@ VerdanturfTown_WandasHouse_Text_Wally::
     .string "a little farther every day.\p"
     .string "I can breathe here. I'm going to\n"
     .string "get strong. Then you'll see.$"
+
+VerdanturfTown_WandasHouse_Text_ReunionWanda::
+	.string "WANDA: The tunnel is finished,\nand he finally came home!\p"
+	.string "RUSTBORO feels much closer now.\nYou're welcome to visit anytime.$"
+
+VerdanturfTown_WandasHouse_Text_ReunionPartner::
+	.string "Working quietly took longer,\nbut the wild POKéMON are safe.\p"
+	.string "WANDA and I can use the tunnel\ntogether now. It was worth it.$"
+
+VerdanturfTown_WandasHouse_Text_ReunionMother::
+	.string "He finally put down his tools.\nMy daughter looks so happy!\p"
+	.string "You helped bring them home.\nThank you for looking after them.$"
+VerdanturfTown_WandasHouse_TYSharedHM_FreshText::
+	.string "Thanks to you, the tunnel is open.\p"
+	.string "My partner left this HM for you.\n"
+	.string "It teaches STRENGTH.$"
+
+VerdanturfTown_WandasHouse_TYSharedHM_FreshThanks::
+	.string "With FLANNERY's BADGE, you can\n"
+	.string "use STRENGTH on HOENN boulders.$"
+
+VerdanturfTown_WandasHouse_TYSharedHM_KnownText::
+	.string "You already have STRENGTH.\p"
+	.string "The same HM works across regions.\n"
+	.string "Take this different technique.$"
+
+VerdanturfTown_WandasHouse_TYSharedHM_TechniqueText::
+	.string "The TM teaches EARTHQUAKE.\n"
+	.string "Put it to good use in HOENN!$"
+
+VerdanturfTown_WandasHouse_TYSharedHM_FullText::
+	.string "Your BAG has no room.\p"
+	.string "Make some space, then return.\n"
+	.string "I will keep your reward ready.$"
 @ END PATCH

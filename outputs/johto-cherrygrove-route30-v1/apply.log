@@ -1,0 +1,157 @@
+{
+  "apply": true,
+  "changed_files": [
+    "data/event_scripts.s",
+    "data/layouts/CherrygroveCity/border.bin",
+    "data/layouts/CherrygroveCity/map.bin",
+    "data/layouts/JohtoCherrygroveAirstrip/map.bin",
+    "data/layouts/JohtoRoute30/border.bin",
+    "data/layouts/JohtoRoute30/map.bin",
+    "data/layouts/layouts.json",
+    "data/maps/CherrygroveCity/map.json",
+    "data/maps/CherrygroveCity/scripts.inc",
+    "data/maps/CherrygroveCity/text.inc",
+    "data/maps/CherrygroveCity_GuideHouse/map.json",
+    "data/maps/CherrygroveCity_GuideHouse/scripts.inc",
+    "data/maps/CherrygroveCity_GuideHouse/text.inc",
+    "data/maps/CherrygroveCity_Mart/map.json",
+    "data/maps/CherrygroveCity_Mart/scripts.inc",
+    "data/maps/CherrygroveCity_Mart/text.inc",
+    "data/maps/CherrygroveCity_PokemonCenter_1F/map.json",
+    "data/maps/CherrygroveCity_PokemonCenter_1F/scripts.inc",
+    "data/maps/CherrygroveCity_PokemonCenter_1F/text.inc",
+    "data/maps/CherrygroveCity_PokemonCenter_2F/map.json",
+    "data/maps/CherrygroveCity_PokemonCenter_2F/scripts.inc",
+    "data/maps/CherrygroveCity_PokemonCenter_2F/text.inc",
+    "data/maps/JohtoCherrygroveAirstrip/map.json",
+    "data/maps/JohtoRoute30/map.json",
+    "data/maps/JohtoRoute30/scripts.inc",
+    "data/maps/JohtoRoute30/text.inc",
+    "data/maps/JohtoRoute30_MrPokemonsHouse/map.json",
+    "data/maps/JohtoRoute30_MrPokemonsHouse/scripts.inc",
+    "data/maps/JohtoRoute30_MrPokemonsHouse/text.inc",
+    "data/maps/NewBarkTown_ElmsLab/scripts.inc",
+    "data/maps/NewBarkTown_ElmsLab/text.inc",
+    "data/maps/map_groups.json",
+    "include/constants/flags_johto_story.h",
+    "include/pokedex_area_markers.h",
+    "src/data/heal_locations.json",
+    "src/data/region_map/region_map_sections.json",
+    "src/data/wild_encounters.json",
+    "src/pokedex_area_markers.c",
+    "src/pokedex_screen.c",
+    "src/pokemon_summary_screen.c",
+    "src/region_map.c",
+    "src/wild_pokemon_area.c",
+    "tools/johto/build_entry.py",
+    "tools/johto/patches/NewBarkTown_ElmsLab/scripts.inc",
+    "tools/johto/patches/NewBarkTown_ElmsLab/text.inc",
+    "tools/johto/route30_wild.json"
+  ],
+  "checks": {
+    "airstrip_changed_cells": [
+      [
+        22,
+        0,
+        1052,
+        12289
+      ],
+      [
+        23,
+        0,
+        1053,
+        12289
+      ],
+      [
+        24,
+        0,
+        1052,
+        12289
+      ],
+      [
+        22,
+        1,
+        1044,
+        12289
+      ],
+      [
+        23,
+        1,
+        1045,
+        12289
+      ],
+      [
+        24,
+        1,
+        1044,
+        12289
+      ]
+    ],
+    "map_count": 7,
+    "old_johto_maps_preserved": [
+      "JohtoCherrygroveAirstrip",
+      "JohtoRoute29",
+      "NewBarkTown",
+      "NewBarkTown_ElmsLab",
+      "NewBarkTown_RestHouse",
+      "NewBarkTown_NeighborsHouse"
+    ],
+    "new_maps": [
+      "CherrygroveCity",
+      "CherrygroveCity_PokemonCenter_1F",
+      "CherrygroveCity_PokemonCenter_2F",
+      "CherrygroveCity_Mart",
+      "CherrygroveCity_GuideHouse",
+      "JohtoRoute30",
+      "JohtoRoute30_MrPokemonsHouse"
+    ],
+    "no_save_layout_change": true,
+    "new_flags": {
+      "FLAG_JOHTO_MET_CHERRYGROVE_GUIDE": "0x1502",
+      "FLAG_JOHTO_MR_POKEMON_BRIEFED": "0x1503",
+      "FLAG_JOHTO_ELM_REPORT_DELIVERED": "0x1504"
+    },
+    "route30_reachable_grass_cells": 89,
+    "static_checks": [
+      {
+        "map": "CherrygroveCity",
+        "walkable_component_cells": 539,
+        "doors_reachable": true,
+        "NPCs_reachable": true
+      },
+      {
+        "map": "CherrygroveCity_PokemonCenter_1F",
+        "native_layout_reused": "LAYOUT_POKEMON_CENTER_1F",
+        "NPC_floor_cells_valid": true
+      },
+      {
+        "map": "CherrygroveCity_PokemonCenter_2F",
+        "native_layout_reused": "LAYOUT_POKEMON_CENTER_2F",
+        "NPC_floor_cells_valid": true
+      },
+      {
+        "map": "CherrygroveCity_Mart",
+        "native_layout_reused": "LAYOUT_MART",
+        "NPC_floor_cells_valid": true
+      },
+      {
+        "map": "CherrygroveCity_GuideHouse",
+        "native_layout_reused": "LAYOUT_HOUSE1",
+        "NPC_floor_cells_valid": true
+      },
+      {
+        "map": "JohtoRoute30",
+        "walkable_component_cells": 693,
+        "doors_reachable": true,
+        "NPCs_reachable": true
+      },
+      {
+        "map": "JohtoRoute30_MrPokemonsHouse",
+        "native_layout_reused": "LAYOUT_HOUSE1",
+        "NPC_floor_cells_valid": true
+      }
+    ],
+    "native_build_and_emulator": "NOT_RUN_BY_GENERATOR"
+  }
+}
+APPLIED /workspaces/pokefirered/outputs/johto-cherrygrove-route30-v1/20261005T122131146944Z/manifest.json

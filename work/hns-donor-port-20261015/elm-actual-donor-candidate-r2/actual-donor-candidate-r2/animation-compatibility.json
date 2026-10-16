@@ -1,0 +1,125 @@
+{
+  "status": "ACTUAL_FRESH_TARGET_TWENTY_STANDARD_DONOR_ANIMATIONS_MATCH",
+  "target_path": "src/data/object_events/object_event_anims.h",
+  "target_expected_sha256": "55a05af806c410b2bb357f10ffa7365074fb2b081544184696e47642cb62ad13",
+  "target_source_local_path": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\donor-import-20261015\\fresh-target-r1\\src\\data\\object_events\\object_event_anims.h",
+  "target_fresh_remote_SHA_confirmed": true,
+  "all_twenty_standard_commands_equal": true,
+  "checks": [
+    {
+      "animation": "ANIM_STD_FACE_SOUTH",
+      "source_name": "sAnim_FaceSouth",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_FACE_NORTH",
+      "source_name": "sAnim_FaceNorth",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_FACE_WEST",
+      "source_name": "sAnim_FaceWest",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_FACE_EAST",
+      "source_name": "sAnim_FaceEast",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_GO_SOUTH",
+      "source_name": "sAnim_GoSouth",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_GO_NORTH",
+      "source_name": "sAnim_GoNorth",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_GO_WEST",
+      "source_name": "sAnim_GoWest",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_GO_EAST",
+      "source_name": "sAnim_GoEast",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_GO_FAST_SOUTH",
+      "source_name": "sAnim_GoFastSouth",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_GO_FAST_NORTH",
+      "source_name": "sAnim_GoFastNorth",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_GO_FAST_WEST",
+      "source_name": "sAnim_GoFastWest",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_GO_FAST_EAST",
+      "source_name": "sAnim_GoFastEast",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_GO_FASTER_SOUTH",
+      "source_name": "sAnim_GoFasterSouth",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_GO_FASTER_NORTH",
+      "source_name": "sAnim_GoFasterNorth",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_GO_FASTER_WEST",
+      "source_name": "sAnim_GoFasterWest",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_GO_FASTER_EAST",
+      "source_name": "sAnim_GoFasterEast",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_GO_FASTEST_SOUTH",
+      "source_name": "sAnim_GoFastestSouth",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_GO_FASTEST_NORTH",
+      "source_name": "sAnim_GoFastestNorth",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_GO_FASTEST_WEST",
+      "source_name": "sAnim_GoFastestWest",
+      "same_frame_indices_durations_and_flip_commands": true
+    },
+    {
+      "animation": "ANIM_STD_GO_FASTEST_EAST",
+      "source_name": "sAnim_GoFastestEast",
+      "same_frame_indices_durations_and_flip_commands": true
+    }
+  ],
+  "target_only_ANIM_RAISE_HAND": "Requests image9; candidate table aliases9 to original idle0 without adding/altering donor pixels",
+  "candidate_pic_table_source_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    0
+  ],
+  "reordering_needed": false,
+  "emulator_executed": false
+}

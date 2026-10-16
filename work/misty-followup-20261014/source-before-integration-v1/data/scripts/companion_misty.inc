@@ -1,0 +1,170 @@
+PalletTown_EventScript_MistyJoin::
+    setvar VAR_TEMP_7, FALSE
+    lockall
+    specialvar VAR_RESULT, CanMistyJoin
+    goto_if_eq VAR_RESULT, FALSE, PalletTown_EventScript_MistyNotReady
+    msgbox MistyCompanion_Text_Join, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, PalletTown_EventScript_MistyDeclined
+    removeobject LOCALID_PALLET_MISTY
+    special MistyJoin
+    msgbox MistyCompanion_Text_Joined, MSGBOX_DEFAULT
+    releaseall
+    end
+PalletTown_EventScript_MistyNotReady::
+    msgbox MistyCompanion_Text_NotReady, MSGBOX_DEFAULT
+    releaseall
+    end
+PalletTown_EventScript_MistyDeclined::
+    special MistyDeclineCompanionJoin
+    msgbox MistyCompanion_Text_Declined, MSGBOX_DEFAULT
+    releaseall
+    end
+
+EventScript_TalkToMistyCompanion::
+    lock
+    faceplayer
+    msgbox MistyCompanion_Text_TrainQuestion, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, MistyCompanion_EventScript_Moment
+    specialvar VAR_RESULT, MistyGetGrowthStage
+    goto_if_eq VAR_RESULT, 4, MistyCompanion_EventScript_Train4
+    goto_if_eq VAR_RESULT, 3, MistyCompanion_EventScript_Train3
+    goto_if_eq VAR_RESULT, 2, MistyCompanion_EventScript_Train2
+    goto_if_eq VAR_RESULT, 1, MistyCompanion_EventScript_Train1
+    goto MistyCompanion_EventScript_Train0
+
+MistyCompanion_EventScript_Train0::
+    msgbox MistyCompanion_Text_TrainIntro, MSGBOX_DEFAULT
+    trainerbattle_earlyrival TRAINER_MISTY_COMPANION_STAGE0, RIVAL_BATTLE_HEAL_AFTER, MistyCompanion_Text_TrainDefeat, MistyCompanion_Text_TrainVictory
+    goto MistyCompanion_EventScript_AfterTraining
+
+MistyCompanion_EventScript_Train1::
+    msgbox MistyCompanion_Text_TrainIntro, MSGBOX_DEFAULT
+    trainerbattle_earlyrival TRAINER_MISTY_COMPANION_STAGE1, RIVAL_BATTLE_HEAL_AFTER, MistyCompanion_Text_TrainDefeat, MistyCompanion_Text_TrainVictory
+    goto MistyCompanion_EventScript_AfterTraining
+
+MistyCompanion_EventScript_Train2::
+    msgbox MistyCompanion_Text_TrainIntro, MSGBOX_DEFAULT
+    trainerbattle_earlyrival TRAINER_MISTY_COMPANION_STAGE2, RIVAL_BATTLE_HEAL_AFTER, MistyCompanion_Text_TrainDefeat, MistyCompanion_Text_TrainVictory
+    goto MistyCompanion_EventScript_AfterTraining
+
+MistyCompanion_EventScript_Train3::
+    msgbox MistyCompanion_Text_TrainIntro, MSGBOX_DEFAULT
+    trainerbattle_earlyrival TRAINER_MISTY_COMPANION_STAGE3, RIVAL_BATTLE_HEAL_AFTER, MistyCompanion_Text_TrainDefeat, MistyCompanion_Text_TrainVictory
+    goto MistyCompanion_EventScript_AfterTraining
+
+MistyCompanion_EventScript_Train4::
+    msgbox MistyCompanion_Text_TrainIntro, MSGBOX_DEFAULT
+    trainerbattle_earlyrival TRAINER_MISTY_COMPANION_STAGE4, RIVAL_BATTLE_HEAL_AFTER, MistyCompanion_Text_TrainDefeat, MistyCompanion_Text_TrainVictory
+    goto MistyCompanion_EventScript_AfterTraining
+
+MistyCompanion_EventScript_AfterTraining::
+    special HealPlayerParty
+    msgbox MistyCompanion_Text_AfterTraining, MSGBOX_DEFAULT
+    releaseall
+    end
+MistyCompanion_EventScript_Moment::
+    specialvar VAR_RESULT, MistyGetGrowthStage
+    goto_if_eq VAR_RESULT, 4, MistyCompanion_EventScript_Moment4
+    goto_if_eq VAR_RESULT, 3, MistyCompanion_EventScript_Moment3
+    goto_if_eq VAR_RESULT, 2, MistyCompanion_EventScript_Moment2
+    goto_if_eq VAR_RESULT, 1, MistyCompanion_EventScript_Moment1
+    goto MistyCompanion_EventScript_Moment0
+
+MistyCompanion_EventScript_Moment0::
+    msgbox MistyCompanion_Text_Moment0, MSGBOX_DEFAULT
+    release
+    end
+
+MistyCompanion_EventScript_Moment1::
+    msgbox MistyCompanion_Text_Moment1, MSGBOX_DEFAULT
+    release
+    end
+
+MistyCompanion_EventScript_Moment2::
+    msgbox MistyCompanion_Text_Moment2, MSGBOX_DEFAULT
+    release
+    end
+
+MistyCompanion_EventScript_Moment3::
+    msgbox MistyCompanion_Text_Moment3, MSGBOX_DEFAULT
+    release
+    end
+
+MistyCompanion_EventScript_Moment4::
+    msgbox MistyCompanion_Text_Moment4, MSGBOX_DEFAULT
+    release
+    end
+
+MistyCompanion_Text_Join::
+    .string "MISTY: You did it, {PLAYER}!\n"
+    .string "I want to see what comes next.\p"
+    .string "May I travel with you?$"
+
+MistyCompanion_Text_Joined::
+    .string "MISTY: I will walk behind\n"
+    .string "PIKACHU. Our next journey\p"
+    .string "starts together!$"
+
+MistyCompanion_Text_NotReady::
+    .string "MISTY: Finish the KANTO\n"
+    .string "League first. I will be here.$"
+
+MistyCompanion_Text_Declined::
+    .string "MISTY: Take your time.\n"
+    .string "Come talk when you are ready.$"
+
+MistyCompanion_Text_TrainQuestion::
+    .string "MISTY: Ready for a friendly\n"
+    .string "training battle?$"
+
+MistyCompanion_Text_TrainIntro::
+    .string "MISTY: Show me how far\n"
+    .string "you and your team have grown!$"
+
+MistyCompanion_Text_TrainDefeat::
+    .string "That was wonderful, {PLAYER}!$"
+
+MistyCompanion_Text_TrainVictory::
+    .string "We learn from every battle.\n"
+    .string "I will help your team recover.$"
+
+MistyCompanion_Text_AfterTraining::
+    .string "MISTY: Everyone is rested.\n"
+    .string "Let us keep traveling together!$"
+
+MistyCompanion_Text_Moment0::
+    .string "MISTY: I am glad I can\n"
+    .string "share this journey with you.$"
+
+MistyCompanion_Text_Moment1::
+    .string "MISTY: Even a rainy day feels\n"
+    .string "brighter when we are together.$"
+
+MistyCompanion_Text_Moment2::
+    .string "MISTY: When we take a break,\n"
+    .string "how about a date by the sea?$"
+
+MistyCompanion_Text_Moment3::
+    .string "MISTY: I like who you have\n"
+    .string "become. I want to stay with you.$"
+
+MistyCompanion_Text_Moment4::
+    .string "MISTY: Let us go on a real date\n"
+    .string "when this adventure is over.\p"
+    .string "Someday, I would like us\n"
+    .string "to get married.$"
+
+@ Caller retains its existing locks. This helper returns to the airport story.
+EventScript_MistyPostChampionBridge::
+    specialvar VAR_RESULT, CanOfferMistyCompanionJoin
+    goto_if_eq VAR_RESULT, FALSE, MistyCompanion_PostChampionBridgeDone
+    msgbox MistyCompanion_Text_Join, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, NO, MistyCompanion_PostChampionBridgeDeclined
+    special MistyJoin
+    msgbox MistyCompanion_Text_Joined, MSGBOX_DEFAULT
+    return
+MistyCompanion_PostChampionBridgeDeclined::
+    special MistyDeclineCompanionJoin
+    msgbox MistyCompanion_Text_Declined, MSGBOX_DEFAULT
+MistyCompanion_PostChampionBridgeDone::
+    return

@@ -1,0 +1,39 @@
+{
+  "source_applied": true,
+  "native_executed": false,
+  "save_abi_changed": false,
+  "original_savs_modified": false,
+  "flag": "0x228 was free; all active and backup SAV bits zero before assignment",
+  "changes": [
+    {
+      "path": "/workspaces/pokefirered/src/companion_misty.c",
+      "before_sha256": "1ab831929503dc78c88971063b88f221c69c11a6898e4a349f27d6205fe3856f",
+      "after_sha256": "e32b46b1e3d9159add1aa4d07f4f5dc92a18f1b6fbd174e184059fff425394fd"
+    },
+    {
+      "path": "/workspaces/pokefirered/data/scripts/companion_misty.inc",
+      "before_sha256": "a1c3657a339d14535bdf1d2f67d5ee716416e69ba05ed0f6b434e1dd044eb0a9",
+      "after_sha256": "7b8645e76bd8fbaafda91ad38eca19a7ad211cb195eb52840131454612049371"
+    },
+    {
+      "path": "/workspaces/pokefirered/include/companion_misty.h",
+      "before_sha256": "14843338736b830b5699dd02218946c1b0b93269e7bae59d236c66bf2ba5621f",
+      "after_sha256": "bb192e0264ace668b214c870d80c7bfe9ddc4ed1ce3e77a44d660cec74570b4b"
+    },
+    {
+      "path": "/workspaces/pokefirered/data/specials.inc",
+      "before_sha256": "55ce0afb2bd02bd70fb44c9f64d05b80bab48745125f968d1fa2312e17e1a53e",
+      "after_sha256": "2dbc225f7495badbeb2dab3830c0ae46e30dbbd2aede6f969cbe5869b2fc05fb"
+    },
+    {
+      "path": "/workspaces/pokefirered/include/constants/flags.h",
+      "before_sha256": "79fbf69f3c3c1cd1a821eab7c5240d750d361498d17a09a16fef47effc0ccf19",
+      "after_sha256": "6645d8d43ad378b3f6707c8c3af2cc7da1f5acca7cfb48917b94631ec18f5d29"
+    },
+    {
+      "path": "/workspaces/pokefirered/data/maps/KantoAirport/scripts.inc",
+      "before_sha256": "36ea9dc781f56fc4c1afb6cc493019bc4f1180911746f9805b9e159a6714296c",
+      "after_sha256": "e9972fd44d44e3c516c6e3f5faea9ade48d9f31f64ca458182e8aabebd197ccd"
+    }
+  ]
+}

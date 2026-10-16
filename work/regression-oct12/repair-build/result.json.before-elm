@@ -1,0 +1,11 @@
+{
+  "exit_code": 0,
+  "seconds": 79.33410835266113,
+  "warnings": [
+    "/opt/devkitpro/devkitARM/bin/arm-none-eabi-ld: warning: ../../pokeblackthornlgqa.elf has a LOAD segment with RWX permissions"
+  ],
+  "artifacts": {},
+  "main_rom_sha256": "111d4e1ae7e6572845e5eb31ed33a1216fff8aa3d3e11466f287b74419abe682",
+  "source_repairs": "Misty v4 airport/Pallet invitation + MtMortar General pairing",
+  "promoted": false
+}

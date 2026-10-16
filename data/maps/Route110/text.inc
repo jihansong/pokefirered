@@ -288,4 +288,49 @@ Route110_Text_BoardEmpty::
     .string "Nothing chalked on it yet.\p"
     .string "The gate staff start the clock at\n"
     .string "the north end.$"
+Route110_TYRival_MayIntro::
+	.string "MAY: It's good to see you again!\p"
+	.string "My team has grown since ROUTE 103.\n"
+	.string "How is your HOENN journey going?$"
+
+Route110_TYRival_MayBattleIntro::
+	.string "MAY: Even a visiting CHAMPION\n"
+	.string "has new things to learn. Let's battle!$"
+
+Route110_TYRival_MayDefeat::
+	.string "MAY: You learn from every region.\n"
+	.string "I'll keep training to catch up!$"
+
+Route110_TYRival_BrendanIntro::
+	.string "BRENDAN: Long time no see!\p"
+	.string "Since ROUTE 103, we've trained hard.\n"
+	.string "Show me what HOENN has taught you!$"
+
+Route110_TYRival_BrendanBattleIntro::
+	.string "BRENDAN: A title won't decide this.\n"
+	.string "Let's see what our teams can do!$"
+
+Route110_TYRival_BrendanDefeat::
+	.string "BRENDAN: You're stronger again!\n"
+	.string "That's what traveling does for you.$"
+
+Route110_TYRival_FreshText::
+	.string "Take this ITEMFINDER as a reward.\p"
+	.string "It finds hidden items, just like the\n"
+	.string "one used in KANTO.$"
+
+Route110_TYRival_KnownText::
+	.string "You already have an ITEMFINDER.\p"
+	.string "That one works here, too.\n"
+	.string "I'll leave your BAG space free.$"
+
+Route110_TYRival_NextText::
+	.string "BIRCH asked me to check the WEATHER\n"
+	.string "INSTITUTE north of MAUVILLE.\p"
+	.string "Let's meet again on ROUTE 119!$"
+
+Route110_TYRival_FullText::
+	.string "Your BAG has no room for this gift.\p"
+	.string "Make some space, then speak to me.\n"
+	.string "We won't need another battle!$"
 @ END PATCH

@@ -1,0 +1,49 @@
+tools/mapjson/mapjson event_constants firered <MAP_JSONS> include/constants/map_event_ids.h
+tools/scaninc/scaninc -M build/blackthornlgqa/data/event_scripts.d -I include -I "" data/event_scripts.s
+tools/scaninc/scaninc -M build/blackthornlgqa/src/vs_seeker.d -I include -I tools/agbcc/include src/vs_seeker.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/union_room_player_avatar.d -I include -I tools/agbcc/include src/union_room_player_avatar.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/trainer_tower.d -I include -I tools/agbcc/include src/trainer_tower.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/trainer_see.d -I include -I tools/agbcc/include src/trainer_see.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/teachy_tv.d -I include -I tools/agbcc/include src/teachy_tv.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/script_movement.d -I include -I tools/agbcc/include src/script_movement.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/scrcmd.d -I include -I tools/agbcc/include src/scrcmd.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/rotating_tile_puzzle.d -I include -I tools/agbcc/include src/rotating_tile_puzzle.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/quest_log_objects.d -I include -I tools/agbcc/include src/quest_log_objects.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/quest_log.d -I include -I tools/agbcc/include src/quest_log.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/overworld.d -I include -I tools/agbcc/include src/overworld.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/naming_screen.d -I include -I tools/agbcc/include src/naming_screen.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/heal_location.d -I include -I tools/agbcc/include src/heal_location.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/follower_pikachu.d -I include -I tools/agbcc/include src/follower_pikachu.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/fldeff_strength.d -I include -I tools/agbcc/include src/fldeff_strength.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/fldeff_rocksmash.d -I include -I tools/agbcc/include src/fldeff_rocksmash.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/fldeff_cut.d -I include -I tools/agbcc/include src/fldeff_cut.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/field_specials.d -I include -I tools/agbcc/include src/field_specials.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/field_player_avatar.d -I include -I tools/agbcc/include src/field_player_avatar.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/field_fadetransition.d -I include -I tools/agbcc/include src/field_fadetransition.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/field_effect_helpers.d -I include -I tools/agbcc/include src/field_effect_helpers.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/field_control_avatar.d -I include -I tools/agbcc/include src/field_control_avatar.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/fame_checker.d -I include -I tools/agbcc/include src/fame_checker.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/event_object_movement.d -I include -I tools/agbcc/include src/event_object_movement.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/event_object_lock.d -I include -I tools/agbcc/include src/event_object_lock.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/dynamic_placeholder_text_util.d -I include -I tools/agbcc/include src/dynamic_placeholder_text_util.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/decoration.d -I include -I tools/agbcc/include src/decoration.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/companion_misty.d -I include -I tools/agbcc/include src/companion_misty.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/battle_tower.d -I include -I tools/agbcc/include src/battle_tower.c
+tools/scaninc/scaninc -M build/blackthornlgqa/src/battle_setup.d -I include -I tools/agbcc/include src/battle_setup.c
+tools/agbcc/bin/agbcc <flags> -o build/blackthornlgqa/src/battle_setup.o src/battle_setup.c
+tools/agbcc/bin/agbcc <flags> -o build/blackthornlgqa/src/battle_tower.o src/battle_tower.c
+In file included from include/constants/event_objects.h:4,
+                 from src/battle_tower.c:25:
+include/constants/map_event_ids.h:241:9: error: macro names must be identifiers
+  241 | #define 2 2
+      |         ^
+In file included from include/constants/event_objects.h:4,
+                 from src/battle_setup.c:31:
+include/constants/map_event_ids.h:241:9: error: macro names must be identifiers
+  241 | #define 2 2
+      |         ^
+make: *** [Makefile:314: build/blackthornlgqa/src/battle_setup.o] Error 1
+make: *** Deleting file 'build/blackthornlgqa/src/battle_setup.o'
+make: *** Waiting for unfinished jobs....
+make: *** [Makefile:314: build/blackthornlgqa/src/battle_tower.o] Error 1
+make: *** Deleting file 'build/blackthornlgqa/src/battle_tower.o'

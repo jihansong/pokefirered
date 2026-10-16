@@ -1,0 +1,11 @@
+{
+  "image_tool": "built-in imagegen edit",
+  "generated_source_sha256": "6c5faf6c4c698e016c16ad00150c58c8c36d10f160f5044c389df0ab26a81258",
+  "references": [
+    "existing-misty-reference-16x.png",
+    "misty-season1-generated-source-v4.png"
+  ],
+  "prompt_summary": "Redraw nine season1-outfit walk poses in compact FRLG original Misty style, nineteen visible logical rows, small dark eyes and flat simple face.",
+  "native_conversion": "All nine generated poses padded to a shared262x281 source master; same16x19 format transform and common X sampling origin -0.3nativepixel; index to unchanged PLAYER palette; no hand-painted pixels, no per-pose stretching.",
+  "native_PNG_sha256": "1c8a8636dd35248d5d38395d6c5ceae78780b585796c4d3ee297c124fa77cb07"
+}

@@ -1,0 +1,88 @@
+{
+  "apply": true,
+  "changed": [
+    "include/constants/flags_hoenn_story.h",
+    "data/maps/RustboroCity_CuttersHouse/scripts.inc",
+    "tools/hoenn_import/patches/RustboroCity_CuttersHouse.scripts.inc",
+    "data/maps/RustboroCity_CuttersHouse/text.inc",
+    "tools/hoenn_import/patches/RustboroCity_CuttersHouse.text.inc",
+    "data/maps/MauvilleCity_House1/scripts.inc",
+    "tools/hoenn_import/patches/MauvilleCity_House1.scripts.inc",
+    "data/maps/MauvilleCity_House1/text.inc",
+    "tools/hoenn_import/patches/MauvilleCity_House1.text.inc"
+  ],
+  "native_shared_hm_cases": "NOT_RUN",
+  "save_layout_changed": false,
+  "original_npc_positions_warps_or_terrain_changed": false,
+  "rare_tm": {
+    "RustboroCity_CuttersHouse": {
+      "hm": "ITEM_HM01",
+      "duplicate_tm": "ITEM_TM31",
+      "receipt": "FLAG_HOENN_GOT_CUTTER_SHARED_HM_REWARD"
+    },
+    "MauvilleCity_House1": {
+      "hm": "ITEM_HM06",
+      "duplicate_tm": "ITEM_TM23",
+      "receipt": "FLAG_HOENN_GOT_ROCK_SMASH_SHARED_HM_REWARD"
+    }
+  },
+  "files": {
+    "include/constants/flags_hoenn_story.h": {
+      "before": "93f93cf7b06998919ebaa273c3366475983d71ec25ee487893a3231f033c6c6d",
+      "after": "efb2b9b8c1234fa1f0735429e182feefad2cc06f38726cef3a151e67c8888978"
+    },
+    "data/maps/RustboroCity_CuttersHouse/scripts.inc": {
+      "before": "64ee0d6ce58fa31b17fce78e207b9bd06c5c6cec15382484cb71dcdf58018ad7",
+      "after": "4b69f1eabd8b2879f4df3eb843beee6c61c6186d6c2c36cc7e32c483d3adec14"
+    },
+    "tools/hoenn_import/patches/RustboroCity_CuttersHouse.scripts.inc": {
+      "before": null,
+      "after": "b3d35a95d10eb8aff3ae3709011109fe35d4a7d3b4aedafa31339f3d01840e78"
+    },
+    "data/maps/RustboroCity_CuttersHouse/text.inc": {
+      "before": "2c40c66dbc2ada150c75407ac66d5f2d30120d04686b8bdee0b29e8c59600296",
+      "after": "8063ee20e0cb81981d3027746ad99a02376be0b470edfd803043bc06d2c522ce"
+    },
+    "tools/hoenn_import/patches/RustboroCity_CuttersHouse.text.inc": {
+      "before": null,
+      "after": "e7e588b237b0a459d83d12f6f7478e7c4ba03c9a8712e8cdb1347f007b8706ae"
+    },
+    "data/maps/MauvilleCity_House1/scripts.inc": {
+      "before": "2c66babb343cea9033b8716f88e04f07959ddbf02a367a0bf64998981afaf93e",
+      "after": "f219e18686454cee77e45080fe2554d8bb56527bb2dc7ba9f8e7dd1bc13d84f0"
+    },
+    "tools/hoenn_import/patches/MauvilleCity_House1.scripts.inc": {
+      "before": null,
+      "after": "08d9678cb3ff18de398ecafd05d6e7729493226a12a1f40da3ca20e1656e7cd6"
+    },
+    "data/maps/MauvilleCity_House1/text.inc": {
+      "before": "17e16ba37b8caab8e672d7bc37d39e9e837644f82d54ea656caf7bdf7932092f",
+      "after": "18056e4c0cef188983c6eca9782a7085bd92a8b56c47292c3103ebb9fb3af60b"
+    },
+    "tools/hoenn_import/patches/MauvilleCity_House1.text.inc": {
+      "before": "36a8dfb12decad263534c5d7afd55a6b5488ca9a8a20040ac8ce30a13921fc00",
+      "after": "b48a5b3ee003c587deea004dd647800b96bbd33769fa6e64a2c9e982f68414ae"
+    }
+  },
+  "original_map_sha256": {
+    "/workspaces/pokefirered/data/maps/RustboroCity_CuttersHouse/map.json": "410eedd6a8c0bf52198923cf37853ecba70b2443934589abe7749bef1ff7147c",
+    "/workspaces/pokefirered/data/maps/MauvilleCity_House1/map.json": "25c25f91a9303390ed54032d935537a6bb60f4ca4539451bc710784e3cf955d6"
+  },
+  "original_save_sha256": {
+    "/workspaces/pokefirered/saves/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "/workspaces/pokefirered/saves/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "/workspaces/pokefirered/saves/hoenn.sav": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+    "/workspaces/pokefirered/saves/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "/workspaces/pokefirered/saves/pokemonthyl_hoenn_QAed.sav": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+    "/workspaces/pokefirered/saves/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.1.sav": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.2.sav": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+    "/workspaces/pokefirered/saves/backup-codex-v1_1-recovery-sort-20261002T002244.307175Z/pokemonthyl_v1.1.original.sav": "417452a3f151dbe0eeaca4d41780739f8137eafd7ff14df4e7eed1685b9b699f",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/hoenn.sav": "d1ed8d987d4e451efb00a6cda2ba770e6472f36a89595a04a3550156876806ad",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424"
+  },
+  "backup": "work/backups/hoenn-shared-hm-simple-v1-20261006T012230639037Z"
+}

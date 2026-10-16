@@ -1,0 +1,56 @@
+{
+  "status": "SOURCE_UNIT_PASS",
+  "scope": "actual C source-unit checks with host graphics/save shims",
+  "native_emulator_pass": false,
+  "rom_attachment_verified": false,
+  "full_story_playthrough": false,
+  "battery_save_tested": false,
+  "product_source_modified": false,
+  "original_save_modified": false,
+  "required": [
+    "src/pokedex.c",
+    "src/pokedex_screen.c",
+    "src/pokemon.c",
+    "src/data/pokemon/johto_dex_order.h",
+    "src/data/pokemon/pokedex_orders.h",
+    "include/pokedex.h",
+    "include/pokedex_screen.h",
+    "include/constants/pokedex.h",
+    "include/constants/species.h",
+    "include/constants/flags.h",
+    "include/constants/flags_hoenn_story.h",
+    "include/constants/flags_johto_story.h"
+  ],
+  "guard_manifest_sha256": "a9f1b6174622a1b0e35b0479ba6b7b9236bd747a721dff6fce2a345a6a1b792d",
+  "source_sha256": {
+    "src/pokedex.c": "aac08b88d35a69cab82df72d6f759cf3d7f4c1620935657f5450ed7f197ba3e4",
+    "src/pokedex_screen.c": "d7cd34bed4bdee8a2e76950636a093f726eb79268b2aed6b96bf31139c1ea4c7",
+    "src/pokemon.c": "373b692e42d952b94b44f0ceda81d56dc75e1abb6af9d60ca5ec47d927b2057c",
+    "src/data/pokemon/johto_dex_order.h": "069b9a185d7b9af33b2a7c4270a7942ad1367359252eb9e94be41a84ce00d0d6",
+    "src/data/pokemon/pokedex_orders.h": "2a6beb7e624f41ec1abf4813d630bdc385af89ecf051f2622f870001cac1aa38",
+    "include/pokedex.h": "a7ea835c8327b5f17c5a766090829e49e694e5439b796634d1e1746867b29e8a",
+    "include/pokedex_screen.h": "62151ddb84111da7ae854403335fe7f2ddc7dce45e947a445713f6d70447d9d4",
+    "include/constants/pokedex.h": "aac527819623140d7f44ad99b72654bab59ca5679a80cca33361828cc7e7d0c6",
+    "include/constants/species.h": "c6d5e22f66c2308261d6d9a9c3b72d4638ffa622cb1395dbabe69a588aa65dc4",
+    "include/constants/flags.h": "6645d8d43ad378b3f6707c8c3af2cc7da1f5acca7cfb48917b94631ec18f5d29",
+    "include/constants/flags_hoenn_story.h": "493679980358d6b5a5f98d1cd7283ec211f20240e435b91711baa8c1a0debb1f",
+    "include/constants/flags_johto_story.h": "1d2066e2392afb64ba83b1fe1601e1f66123ea852064cfb06086a8500ca3c9bf"
+  },
+  "story_flag_ids": {
+    "FLAG_HOENN_BIRCH_RESCUED": 4662,
+    "FLAG_HOENN_MET_STERN": 4616,
+    "FLAG_JOHTO_ARRIVAL_BRIEFED": 5376,
+    "FLAG_JOHTO_MET_LAB_ASSISTANT": 5377
+  },
+  "generated_c_sha256": "c174a2cd892b639416955d4a176fb987bdfcc2f6b80224c97dad5e7573702846",
+  "compile": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "execution": {
+    "exit_code": 0,
+    "stdout": "SOURCE_UNIT_PASS\nmapping_checks=604 list_fixtures=54 number_checks=6948 story_masks=16\n",
+    "stderr": ""
+  }
+}

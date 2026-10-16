@@ -1,0 +1,31 @@
+{
+  "pid": 61698,
+  "command": [
+    "python3",
+    "/workspaces/pokefirered/outputs/native_dewford_dock_only_r6.py",
+    "--root",
+    "/workspaces/pokefirered",
+    "--rom",
+    "/workspaces/pokefirered/pokemonthyl.gba",
+    "--elf",
+    "/workspaces/pokefirered/pokemonthyl.elf",
+    "--abi-json",
+    "/workspaces/pokefirered/work/hoenn-resume-20261014/dock-fix-rebound-abi-r1.json",
+    "--sav",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav",
+    "--out",
+    "/workspaces/pokefirered/work/hoenn-resume-20261014/native-dewford-dock-r6",
+    "--expect-rom-sha",
+    "af2677993a75979fb36f0768c390d1bad7424e61f2d569b5054d40702250d2e8",
+    "--expect-elf-sha",
+    "2549852a48935c680e06e81719b54663b9c0efa7fdaccd31d1f4683886c5d64e",
+    "--expect-abi-sha",
+    "a1b45d0bb353e6613855e62e30072b7d872714e62992f05cea50aff10eeb6478",
+    "--expect-checkpoint-sha",
+    "fc6ab5663fc0384f31a18c2eac3218434c07d71dae33faae586d994b13cc5342",
+    "--confirmed-dock-report",
+    "/workspaces/pokefirered/work/hoenn-resume-20261014/native-dewford-r3/validation.json",
+    "--expect-dock-report-sha",
+    "c01d976c5474d4d91d0b371d9852b3896e885975a46ea1cce85f5736cccfbd61"
+  ]
+}

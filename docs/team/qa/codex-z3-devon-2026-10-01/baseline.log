@@ -1,0 +1,3 @@
+FAIL devon_theft_missing_before_patch
+     expect var VAR_HOENN_SCENE_DEVON = 2: var VAR_HOENN_SCENE_DEVON is 1, expected 2
+0/1 cases passed

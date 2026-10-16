@@ -1,0 +1,216 @@
+{
+  "check": "READ_ONLY_GBA_RAM_ABI_AND_MISTY_NATIVE_V4",
+  "files": {
+    "baseline_elf": {
+      "path": "/workspaces/pokefirered/work/misty-followup-20261014/rom-before/pokemonthyl.elf",
+      "sha256": "64bad582cd8e51da6fce54e74ff4e59c9626e525596b53b37de7877dc3e224e3"
+    },
+    "candidate_elf": {
+      "path": "/workspaces/pokefirered/pokemonthyl.elf",
+      "sha256": "2fb65bbd1eb2761098a8bc06569f3ccbfcb02612e6e75e7d9f5ac58bccb7c1b0"
+    },
+    "baseline_rom": {
+      "path": "/workspaces/pokefirered/work/misty-followup-20261014/rom-before/pokemonthyl.gba",
+      "sha256": "e1560c21cf51c7c1c2af8dd04f3f6a429eb3d6af4f3e157bc66aa187bef65c34"
+    },
+    "candidate_rom": {
+      "path": "/workspaces/pokefirered/pokemonthyl.gba",
+      "sha256": "0a3a8d39f10f3284bbadf503a6baf80a7c3bed5cd54a27eeceb604beac18155a"
+    }
+  },
+  "ram": {
+    "pass": true,
+    "baseline_symbol_count": 1179,
+    "candidate_symbol_count": 1179,
+    "baseline_duplicate_local_names": {
+      "$d": 186,
+      "EWRAM_END": 8,
+      "EWRAM_START": 8,
+      "INTR_CHECK": 8,
+      "INTR_VECTOR": 8,
+      "IWRAM_END": 8,
+      "IWRAM_START": 8,
+      "SOUND_INFO_PTR": 8,
+      "sBg1TilemapBuffer": 2,
+      "sBg3TilemapBuffer": 2,
+      "sGame": 2,
+      "sListMenuItems": 6,
+      "sMenu": 2,
+      "sMovementScripts": 2,
+      "sResources": 2,
+      "sSavedIme": 3,
+      "sUnused": 5,
+      "sWindowIds": 2,
+      "sWork": 4,
+      "thenan.3": 2
+    },
+    "removed_or_changed": [],
+    "added_or_changed": [],
+    "save_abi": [
+      {
+        "name": "gSaveBlock1",
+        "baseline": {
+          "addr": "0x202552c",
+          "size": 15720,
+          "section": "ewram"
+        },
+        "candidate": {
+          "addr": "0x202552c",
+          "size": 15720,
+          "section": "ewram"
+        },
+        "pass": true
+      },
+      {
+        "name": "gSaveBlock2",
+        "baseline": {
+          "addr": "0x2024588",
+          "size": 3876,
+          "section": "ewram"
+        },
+        "candidate": {
+          "addr": "0x2024588",
+          "size": 3876,
+          "section": "ewram"
+        },
+        "pass": true
+      },
+      {
+        "name": "gPokemonStorage",
+        "baseline": {
+          "addr": "0x2029314",
+          "size": 33744,
+          "section": "ewram"
+        },
+        "candidate": {
+          "addr": "0x2029314",
+          "size": 33744,
+          "section": "ewram"
+        },
+        "pass": true
+      },
+      {
+        "name": "gSaveBlock1Ptr",
+        "baseline": {
+          "addr": "0x3005048",
+          "size": 4,
+          "section": "iwram"
+        },
+        "candidate": {
+          "addr": "0x3005048",
+          "size": 4,
+          "section": "iwram"
+        },
+        "pass": true
+      },
+      {
+        "name": "gSaveBlock2Ptr",
+        "baseline": {
+          "addr": "0x300504c",
+          "size": 4,
+          "section": "iwram"
+        },
+        "candidate": {
+          "addr": "0x300504c",
+          "size": 4,
+          "section": "iwram"
+        },
+        "pass": true
+      },
+      {
+        "name": "gPokemonStoragePtr",
+        "baseline": {
+          "addr": "0x3005050",
+          "size": 4,
+          "section": "iwram"
+        },
+        "candidate": {
+          "addr": "0x3005050",
+          "size": 4,
+          "section": "iwram"
+        },
+        "pass": true
+      }
+    ]
+  },
+  "baseline_rom_elf": {
+    "pass": true,
+    "segments": [
+      {
+        "index": 2,
+        "physical_addr": "0x8000000",
+        "bytes": 11205672,
+        "pass": true,
+        "elf_sha256": "c8a6f89326ca8f1413e4ceee17533e00bd91a874b745d0b38265c4cc100e115e",
+        "rom_sha256": "c8a6f89326ca8f1413e4ceee17533e00bd91a874b745d0b38265c4cc100e115e"
+      },
+      {
+        "index": 3,
+        "physical_addr": "0x8d00000",
+        "bytes": 16199408,
+        "pass": true,
+        "elf_sha256": "64d76f6d19add8e30883ce9393d7af4b6710aaebd1c8aedece4311164394bfb1",
+        "rom_sha256": "64d76f6d19add8e30883ce9393d7af4b6710aaebd1c8aedece4311164394bfb1"
+      }
+    ]
+  },
+  "candidate_rom_elf": {
+    "pass": true,
+    "segments": [
+      {
+        "index": 2,
+        "physical_addr": "0x8000000",
+        "bytes": 11208656,
+        "pass": true,
+        "elf_sha256": "8bca4758b930aee6928d973ca82bea9808eae1416f92897e77d1bb14046147b9",
+        "rom_sha256": "8bca4758b930aee6928d973ca82bea9808eae1416f92897e77d1bb14046147b9"
+      },
+      {
+        "index": 3,
+        "physical_addr": "0x8d00000",
+        "bytes": 16200484,
+        "pass": true,
+        "elf_sha256": "5bdf7a93e53b4dff090442109fbcaad854d853932519ca05a26b4e5e7128cc37",
+        "rom_sha256": "5bdf7a93e53b4dff090442109fbcaad854d853932519ca05a26b4e5e7128cc37"
+      }
+    ]
+  },
+  "native_sprite": {
+    "pass": true,
+    "rom_symbol_addr": "0x855d748",
+    "rom_symbol_bytes": 2304,
+    "expected_bytes": 2304,
+    "unique_frames": 9,
+    "png_sha256": "d4c139c593480d915ef2052fe47b427f46dc266f6230942da96384336791a31d",
+    "png_independent_4bpp_sha256": "74081f901ee964eff7857164f152a2ca33276c4ee3144beb0018564c97aa2f85",
+    "built_4bpp_sha256": "74081f901ee964eff7857164f152a2ca33276c4ee3144beb0018564c97aa2f85",
+    "clean_regenerated_4bpp_sha256": "74081f901ee964eff7857164f152a2ca33276c4ee3144beb0018564c97aa2f85",
+    "rom_4bpp_sha256": "74081f901ee964eff7857164f152a2ca33276c4ee3144beb0018564c97aa2f85",
+    "player_palette_exact_in_rom": true
+  },
+  "preserved_rom_assets": [
+    {
+      "name": "gObjectEventPic_Misty",
+      "pass": true,
+      "bytes": 768,
+      "baseline_addr": "0x855d218",
+      "candidate_addr": "0x855d448",
+      "baseline_sha256": "f60c94f2039033a424a83e7ca9c4a5c2b1a93fb6bf4a3e6852dbeb70bdf97539",
+      "candidate_sha256": "f60c94f2039033a424a83e7ca9c4a5c2b1a93fb6bf4a3e6852dbeb70bdf97539"
+    },
+    {
+      "name": "gObjectEventPal_Player",
+      "pass": true,
+      "bytes": 32,
+      "baseline_addr": "0x8526758",
+      "candidate_addr": "0x8526988",
+      "baseline_sha256": "3f8a1c94699742cf122ca29a9a8f0a212f518d940795450888834b84712a76da",
+      "candidate_sha256": "3f8a1c94699742cf122ca29a9a8f0a212f518d940795450888834b84712a76da"
+    }
+  ],
+  "limitations": [
+    "RAM/save object address and size preservation does not prove identical save field offsets.",
+    "Byte-for-byte save loads, emulator walk/tint/collision tests and DELTA tests are separate."
+  ],
+  "pass": true
+}

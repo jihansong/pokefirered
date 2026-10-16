@@ -1,0 +1,13 @@
+@ Thunder Yellow weather-space v1
+
+Route119_WeatherInstitute_1F_EventScript_Shelter::
+ lock
+ faceplayer
+ goto_if_set FLAG_HOENN_WEATHER_RESCUED, Route119_WeatherInstitute_1F_EventScript_ShelterAfter
+ msgbox Route119_WeatherInstitute_1F_Text_ShelterBefore
+ release
+ end
+Route119_WeatherInstitute_1F_EventScript_ShelterAfter::
+ msgbox Route119_WeatherInstitute_1F_Text_ShelterAfter
+ release
+ end

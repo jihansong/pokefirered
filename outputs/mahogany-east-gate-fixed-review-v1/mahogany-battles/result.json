@@ -1,0 +1,233 @@
+{
+  "rom_sha256": "ab47fb761ae2d93e0008c98172f9dee4e89bd034037efa9abef2d86b436f6f81",
+  "cases": [
+    {
+      "case": "harrison_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        34,
+        31
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-battles/harrison_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "markus_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        74,
+        75
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-battles/markus_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "tiffany_win",
+      "turns": 1,
+      "native_outcome": 1,
+      "enemies": [
+        35
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-battles/tiffany_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "hq_guard_a_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        20,
+        42
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-battles/hq_guard_a_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "hq_guard_b_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        88,
+        20
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-battles/hq_guard_b_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "hq_scientist_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        81,
+        109
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-battles/hq_scientist_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "petrel_win",
+      "turns": 3,
+      "native_outcome": 1,
+      "enemies": [
+        41,
+        20,
+        109
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-battles/petrel_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "ariana_win",
+      "turns": 3,
+      "native_outcome": 1,
+      "enemies": [
+        24,
+        44,
+        198
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-battles/ariana_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "pryce_win",
+      "turns": 3,
+      "native_outcome": 1,
+      "enemies": [
+        86,
+        87,
+        221
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-battles/pryce_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "pryce_loss",
+      "turns": 1,
+      "native_outcome": 2,
+      "enemies": [
+        86,
+        87,
+        221
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-battles/pryce_loss-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "pryce_win_full_tm",
+      "turns": 3,
+      "native_outcome": 1,
+      "enemies": [
+        86,
+        87,
+        221
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-battles/pryce_win_full_tm-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    }
+  ],
+  "all_pass": true,
+  "original_files_unchanged": true,
+  "forced_memory_writes": 0,
+  "forced_battle_outcomes": 0
+}

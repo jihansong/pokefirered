@@ -1,0 +1,1802 @@
+{
+  "pass": true,
+  "status": "complete",
+  "runner_version": 8,
+  "runner_revision": 4,
+  "ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+  "ELF_sha256": "e625069ea9379ea3dc2f83e3014fb741a2e0b7383f41f6d56bc37fc0eae6f17b",
+  "SAV_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+  "source_sav": "/workspaces/pokefirered/saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav",
+  "RAM_writes": 0,
+  "direct_script_calls": 0,
+  "forced_battle_outcomes": 0,
+  "cases": [
+    {
+      "case": "Natural-preStone-checkpoint-to-Stone-request",
+      "pass": true,
+      "native_SAVE_cold": {
+        "counter": [
+          69,
+          70
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r4/continuous-Stone-request-native-QA-only.sav"
+      }
+    }
+  ],
+  "stages": [
+    {
+      "stage": "00-natural-preStone-resume",
+      "frame": 782,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r4/00-natural-preStone-resume.png",
+      "location": [
+        54,
+        2,
+        2,
+        1
+      ],
+      "scene": 3,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "grunt_won": true,
+      "idle": true
+    },
+    {
+      "stage": "10-Stone-request",
+      "frame": 1661,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r4/10-Stone-request.png",
+      "location": [
+        54,
+        2,
+        17,
+        6
+      ],
+      "scene": 4,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "grunt_won": true,
+      "idle": true
+    },
+    {
+      "stage": "11-Stone-repeat",
+      "frame": 1854,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r4/11-Stone-repeat.png",
+      "location": [
+        54,
+        2,
+        17,
+        6
+      ],
+      "scene": 4,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "grunt_won": true,
+      "idle": true
+    },
+    {
+      "stage": "12-SAVE-cold",
+      "frame": 782,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r4/12-SAVE-cold.png",
+      "location": [
+        54,
+        2,
+        17,
+        6
+      ],
+      "scene": 4,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "grunt_won": true,
+      "idle": true
+    }
+  ],
+  "scope": "Native Stone request resumed from naturally saved stage09; Route116/rescue evidence is from the hash-verified prior run",
+  "ELF_source_owned_symbol_bindings": {
+    "CB2_UpdatePartyMenu": {
+      "value": 135414745,
+      "size": 26,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 49549
+    },
+    "Task_HandleChooseMonInput": {
+      "value": 135418721,
+      "size": 124,
+      "section": 3,
+      "info": 18,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 258099
+    },
+    "Task_HandleSelectionMenuInput": {
+      "value": 135431393,
+      "size": 240,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 50260
+    },
+    "CursorCB_SendMon": {
+      "value": 135436665,
+      "size": 96,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 49510
+    },
+    "gPartyMenu": {
+      "value": 33796252,
+      "size": 20,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 252161
+    },
+    "sPartyMenuInternal": {
+      "value": 33796248,
+      "size": 4,
+      "section": 1,
+      "info": 1,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 49390
+    },
+    "sMenu": {
+      "value": 33795552,
+      "size": 12,
+      "section": 1,
+      "info": 1,
+      "translation_unit": "menu.o",
+      "symbol_index": 46912
+    },
+    "gBattlePartyCurrentOrder": {
+      "value": 33796312,
+      "size": 3,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 281139
+    },
+    "gBattlerPartyIndexes": {
+      "value": 33700814,
+      "size": 8,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 250994
+    },
+    "gBattlersCount": {
+      "value": 33700812,
+      "size": 1,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 251596
+    },
+    "gBattlerInMenuId": {
+      "value": 33701892,
+      "size": 1,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 271293
+    },
+    "gBattleStruct": {
+      "value": 33701864,
+      "size": 4,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 268069
+    },
+    "sCursorOptions": {
+      "value": 141652552,
+      "size": 248,
+      "section": 6,
+      "info": 1,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 49499
+    },
+    "gText_SendOut": {
+      "value": 141373312,
+      "size": 9,
+      "section": 6,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 256697
+    },
+    "gSelectedMonPartyId": {
+      "value": 33796285,
+      "size": 1,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 273112
+    },
+    "gTasks": {
+      "value": 50352336,
+      "size": 640,
+      "section": 2,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 282428
+    },
+    "gBattleOutcome": {
+      "value": 33701514,
+      "size": 1,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 274041
+    },
+    "BattleMainCB2": {
+      "value": 134288381,
+      "size": 116,
+      "section": 3,
+      "info": 18,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 258905
+    },
+    "gPaletteFade": {
+      "value": 33782464,
+      "size": 16,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 263483
+    }
+  },
+  "ABI_manifest_sha256": "fb95943ada51c72d99456b5127fe147878593e166c2e9d12a9b46d0a4fb6ffac",
+  "ABI_offsets": {
+    "PartyMenu.slotId": 9,
+    "PartyMenu.action": 11,
+    "Task.size": 40,
+    "Task.func": 0,
+    "Task.isActive": 4,
+    "Pokemon.hp": 86,
+    "PartyMenuInternal.actions": 15,
+    "PartyMenuInternal.numActions": 23,
+    "Menu.cursorPos": 2,
+    "BattleStruct.playerPartyIdx": 139,
+    "CursorOption.size": 8,
+    "CursorOption.text": 0,
+    "CursorOption.func": 4,
+    "PartyMenu.size": 20,
+    "Menu.size": 12,
+    "Pokemon.size": 100,
+    "PaletteFade.size": 16,
+    "PaletteFade.active.byteOffset": 7,
+    "PaletteFade.active.mask": 128
+  },
+  "steps": [
+    {
+      "key": "DOWN",
+      "start": [
+        54,
+        2,
+        2,
+        1
+      ],
+      "finish": [
+        54,
+        2,
+        2,
+        2
+      ],
+      "frame": 811
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        54,
+        2,
+        2,
+        2
+      ],
+      "finish": [
+        54,
+        2,
+        2,
+        3
+      ],
+      "frame": 832
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        2,
+        2,
+        3
+      ],
+      "finish": [
+        54,
+        2,
+        3,
+        3
+      ],
+      "frame": 861
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        2,
+        3,
+        3
+      ],
+      "finish": [
+        54,
+        2,
+        4,
+        3
+      ],
+      "frame": 882
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        2,
+        4,
+        3
+      ],
+      "finish": [
+        54,
+        2,
+        5,
+        3
+      ],
+      "frame": 903
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        2,
+        5,
+        3
+      ],
+      "finish": [
+        54,
+        2,
+        6,
+        3
+      ],
+      "frame": 924
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        2,
+        6,
+        3
+      ],
+      "finish": [
+        54,
+        2,
+        7,
+        3
+      ],
+      "frame": 945
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        2,
+        7,
+        3
+      ],
+      "finish": [
+        54,
+        2,
+        8,
+        3
+      ],
+      "frame": 966
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        2,
+        8,
+        3
+      ],
+      "finish": [
+        54,
+        2,
+        9,
+        3
+      ],
+      "frame": 987
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        2,
+        9,
+        3
+      ],
+      "finish": [
+        54,
+        2,
+        10,
+        3
+      ],
+      "frame": 1008
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        2,
+        10,
+        3
+      ],
+      "finish": [
+        54,
+        2,
+        11,
+        3
+      ],
+      "frame": 1029
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        2,
+        11,
+        3
+      ],
+      "finish": [
+        54,
+        2,
+        12,
+        3
+      ],
+      "frame": 1050
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        2,
+        12,
+        3
+      ],
+      "finish": [
+        54,
+        2,
+        13,
+        3
+      ],
+      "frame": 1071
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        2,
+        13,
+        3
+      ],
+      "finish": [
+        54,
+        2,
+        14,
+        3
+      ],
+      "frame": 1092
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        2,
+        14,
+        3
+      ],
+      "finish": [
+        54,
+        2,
+        15,
+        3
+      ],
+      "frame": 1113
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        2,
+        15,
+        3
+      ],
+      "finish": [
+        54,
+        2,
+        16,
+        3
+      ],
+      "frame": 1134
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        2,
+        16,
+        3
+      ],
+      "finish": [
+        54,
+        2,
+        17,
+        3
+      ],
+      "frame": 1155
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        2,
+        17,
+        3
+      ],
+      "finish": [
+        54,
+        2,
+        18,
+        3
+      ],
+      "frame": 1176
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        54,
+        2,
+        18,
+        3
+      ],
+      "finish": [
+        54,
+        2,
+        18,
+        4
+      ],
+      "frame": 1205
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        54,
+        2,
+        18,
+        4
+      ],
+      "finish": [
+        54,
+        2,
+        18,
+        5
+      ],
+      "frame": 1226
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        54,
+        2,
+        18,
+        5
+      ],
+      "finish": [
+        54,
+        2,
+        18,
+        6
+      ],
+      "frame": 1247
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        2,
+        18,
+        6
+      ],
+      "finish": [
+        54,
+        2,
+        17,
+        6
+      ],
+      "frame": 1276
+    }
+  ],
+  "battles": [],
+  "prior_preboot_eligibility_fixture": true,
+  "this_test_preboot_save_edits": 0,
+  "full_Hoenn_campaign_tested": false,
+  "Stern_delivery_completed": false,
+  "actual_device_fps_measured": false,
+  "continuation_seed_sha256": "9dbb27eb6951a1f62af50f35c4411b8a49adcf5cf8b682f9231db333ce4ebf93",
+  "prior_route_seed_sha256": "888f205f324d696415e9206e55ea2f8dc73d71a7141ff06c3030392270898fb4",
+  "prior_validation_sha256": "37966a11833191dc2ad6cb0ee26df2a4226db9f3d7c673c2fe11bd7a66601641",
+  "prior_native_SAVE": {
+    "counter": [
+      67,
+      68
+    ],
+    "checksummed_sectors": 14,
+    "qa_save": "/workspaces/pokefirered/work/misty-followup-20261014/native-v7-r6/scene1-Devon-native-QA-only.sav"
+  },
+  "compiler_map_offsets": {
+    "next.MapHeader.mapLayout": 0,
+    "next.MapHeader.events": 4,
+    "next.MapLayout.width": 0,
+    "next.MapLayout.height": 4,
+    "next.MapLayout.primaryTileset": 16,
+    "next.MapLayout.secondaryTileset": 20,
+    "next.BackupMapLayout.Xsize": 0,
+    "next.BackupMapLayout.Ysize": 4,
+    "next.BackupMapLayout.map": 8,
+    "next.MapEvents.warpCount": 1,
+    "next.MapEvents.warps": 8,
+    "next.WarpEvent.x": 0,
+    "next.WarpEvent.y": 2,
+    "next.WarpEvent.mapNum": 6,
+    "next.WarpEvent.mapGroup": 7,
+    "next.Tileset.isEmerald": 2,
+    "next.Tileset.metatileAttributes": 20,
+    "next.WarpEvent": 8,
+    "next.BackupMapLayout": 12,
+    "next.MapHeader": 28
+  },
+  "current_ELF_map_symbol_bindings": {
+    "VMap": {
+      "value": 50352256,
+      "size": 12,
+      "section": 2,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 279671
+    },
+    "gMapHeader": {
+      "value": 33779200,
+      "size": 28,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 252118
+    },
+    "gObjectEvents": {
+      "value": 33779260,
+      "size": 576,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 283318
+    }
+  },
+  "checkpoint_sha256": "9dbb27eb6951a1f62af50f35c4411b8a49adcf5cf8b682f9231db333ce4ebf93",
+  "checkpoint_validation_sha256": "b3d98bacf4a83f192e6a8a18ae2cafc29cd52ba87c9cfc99e3e80f218ac0a2e1",
+  "prior_continuous_route_stages": [
+    {
+      "stage": "00-natural-theft-save",
+      "frame": 782,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r3/00-natural-theft-save.png",
+      "location": [
+        43,
+        3,
+        23,
+        20
+      ],
+      "scene": 2,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": false,
+        "FLAG_HOENN_PEEKO_RESCUED": false,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 0,
+      "grunt_won": false,
+      "idle": true
+    },
+    {
+      "stage": "01-route116",
+      "frame": 1481,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r3/01-route116.png",
+      "location": [
+        43,
+        31,
+        0,
+        8
+      ],
+      "scene": 2,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": false,
+        "FLAG_HOENN_PEEKO_RESCUED": false,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": false,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": false,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 0,
+      "grunt_won": false,
+      "idle": true
+    },
+    {
+      "stage": "02-rusturf",
+      "frame": 16013,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r3/02-rusturf.png",
+      "location": [
+        67,
+        4,
+        4,
+        10
+      ],
+      "scene": 2,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": false,
+        "FLAG_HOENN_PEEKO_RESCUED": false,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": false,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": false,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 0,
+      "grunt_won": false,
+      "idle": true
+    },
+    {
+      "stage": "03-grunt-before-A",
+      "frame": 16315,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r3/03-grunt-before-A.png",
+      "location": [
+        67,
+        4,
+        13,
+        5
+      ],
+      "scene": 2,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": false,
+        "FLAG_HOENN_PEEKO_RESCUED": false,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": false,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": false,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 0,
+      "grunt_won": false,
+      "idle": true
+    },
+    {
+      "stage": "04-Goods-Peeko",
+      "frame": 20480,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r3/04-Goods-Peeko.png",
+      "location": [
+        67,
+        4,
+        13,
+        5
+      ],
+      "scene": 3,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "grunt_won": true,
+      "idle": true
+    },
+    {
+      "stage": "05-route116-return",
+      "frame": 20955,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r3/05-route116-return.png",
+      "location": [
+        43,
+        31,
+        47,
+        8
+      ],
+      "scene": 3,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "grunt_won": true,
+      "idle": true
+    },
+    {
+      "stage": "06-city-return",
+      "frame": 22345,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r3/06-city-return.png",
+      "location": [
+        43,
+        3,
+        39,
+        8
+      ],
+      "scene": 3,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "grunt_won": true,
+      "idle": true
+    },
+    {
+      "stage": "07-devon1F",
+      "frame": 23628,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r3/07-devon1F.png",
+      "location": [
+        54,
+        0,
+        5,
+        8
+      ],
+      "scene": 3,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "grunt_won": true,
+      "idle": true
+    },
+    {
+      "stage": "08-devon2F",
+      "frame": 24124,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r3/08-devon2F.png",
+      "location": [
+        54,
+        1,
+        14,
+        1
+      ],
+      "scene": 3,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "grunt_won": true,
+      "idle": true
+    },
+    {
+      "stage": "09-devon3F",
+      "frame": 24570,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r3/09-devon3F.png",
+      "location": [
+        54,
+        2,
+        2,
+        1
+      ],
+      "scene": 3,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "grunt_won": true,
+      "idle": true
+    }
+  ],
+  "prior_actual_battles": [
+    {
+      "opponent": 1072,
+      "turns": 2,
+      "outcome": 1,
+      "actual_keys": true
+    },
+    {
+      "opponent": 871,
+      "turns": 1,
+      "outcome": 1,
+      "actual_keys": true
+    },
+    {
+      "opponent": 1055,
+      "turns": 3,
+      "outcome": 1,
+      "actual_keys": true
+    },
+    {
+      "opponent": 906,
+      "turns": 3,
+      "outcome": 1,
+      "actual_keys": true
+    },
+    {
+      "opponent": 986,
+      "turns": 2,
+      "outcome": 1,
+      "actual_keys": true
+    }
+  ],
+  "prior_checkpoint_SAVE_cold": {
+    "counter": [
+      68,
+      69
+    ],
+    "checksummed_sectors": 14,
+    "qa_save": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r3/pre-Stone-continuous-native-QA-only.sav"
+  },
+  "route_and_battle_replayed_this_run": false,
+  "interaction_diagnostics": [
+    {
+      "label": "front-zero-height",
+      "frame": 1247,
+      "requested_local": 1,
+      "location": [
+        54,
+        2,
+        18,
+        6
+      ],
+      "LastTalked": 0,
+      "objects": [
+        {
+          "slot": 0,
+          "local": 255,
+          "player": true,
+          "graphics": 0,
+          "map": [
+            54,
+            2
+          ],
+          "xy": [
+            18,
+            6
+          ],
+          "flags": "0x180c1",
+          "visible": true,
+          "current_elevation": 0,
+          "previous_elevation": 3,
+          "direction": 1,
+          "single_movement_active": false,
+          "held_movement_active": true,
+          "tile": "0x380",
+          "behavior": "0x0"
+        },
+        {
+          "slot": 3,
+          "local": 1,
+          "player": false,
+          "graphics": 61,
+          "map": [
+            54,
+            2
+          ],
+          "xy": [
+            17,
+            5
+          ],
+          "flags": "0x1",
+          "visible": true,
+          "current_elevation": 4,
+          "previous_elevation": 4,
+          "direction": 3,
+          "single_movement_active": false,
+          "held_movement_active": false,
+          "tile": "0x4307",
+          "behavior": "0x0"
+        }
+      ]
+    },
+    {
+      "label": "front-same-height",
+      "frame": 1276,
+      "requested_local": 1,
+      "location": [
+        54,
+        2,
+        17,
+        6
+      ],
+      "LastTalked": 0,
+      "objects": [
+        {
+          "slot": 0,
+          "local": 255,
+          "player": true,
+          "graphics": 0,
+          "map": [
+            54,
+            2
+          ],
+          "xy": [
+            17,
+            6
+          ],
+          "flags": "0x180c1",
+          "visible": true,
+          "current_elevation": 4,
+          "previous_elevation": 4,
+          "direction": 3,
+          "single_movement_active": false,
+          "held_movement_active": true,
+          "tile": "0x43a9",
+          "behavior": "0x0"
+        },
+        {
+          "slot": 3,
+          "local": 1,
+          "player": false,
+          "graphics": 61,
+          "map": [
+            54,
+            2
+          ],
+          "xy": [
+            17,
+            5
+          ],
+          "flags": "0x1",
+          "visible": true,
+          "current_elevation": 4,
+          "previous_elevation": 4,
+          "direction": 3,
+          "single_movement_active": false,
+          "held_movement_active": false,
+          "tile": "0x4307",
+          "behavior": "0x0"
+        }
+      ]
+    },
+    {
+      "label": "before-turn",
+      "frame": 1276,
+      "requested_local": 1,
+      "location": [
+        54,
+        2,
+        17,
+        6
+      ],
+      "LastTalked": 0,
+      "objects": [
+        {
+          "slot": 0,
+          "local": 255,
+          "player": true,
+          "graphics": 0,
+          "map": [
+            54,
+            2
+          ],
+          "xy": [
+            17,
+            6
+          ],
+          "flags": "0x180c1",
+          "visible": true,
+          "current_elevation": 4,
+          "previous_elevation": 4,
+          "direction": 3,
+          "single_movement_active": false,
+          "held_movement_active": true,
+          "tile": "0x43a9",
+          "behavior": "0x0"
+        },
+        {
+          "slot": 3,
+          "local": 1,
+          "player": false,
+          "graphics": 61,
+          "map": [
+            54,
+            2
+          ],
+          "xy": [
+            17,
+            5
+          ],
+          "flags": "0x1",
+          "visible": true,
+          "current_elevation": 4,
+          "previous_elevation": 4,
+          "direction": 3,
+          "single_movement_active": false,
+          "held_movement_active": false,
+          "tile": "0x4307",
+          "behavior": "0x0"
+        }
+      ]
+    },
+    {
+      "label": "after-turn",
+      "frame": 1310,
+      "requested_local": 1,
+      "location": [
+        54,
+        2,
+        17,
+        6
+      ],
+      "LastTalked": 0,
+      "objects": [
+        {
+          "slot": 0,
+          "local": 255,
+          "player": true,
+          "graphics": 0,
+          "map": [
+            54,
+            2
+          ],
+          "xy": [
+            17,
+            6
+          ],
+          "flags": "0x180c1",
+          "visible": true,
+          "current_elevation": 4,
+          "previous_elevation": 4,
+          "direction": 2,
+          "single_movement_active": false,
+          "held_movement_active": true,
+          "tile": "0x43a9",
+          "behavior": "0x0"
+        },
+        {
+          "slot": 3,
+          "local": 1,
+          "player": false,
+          "graphics": 61,
+          "map": [
+            54,
+            2
+          ],
+          "xy": [
+            17,
+            5
+          ],
+          "flags": "0x1",
+          "visible": true,
+          "current_elevation": 4,
+          "previous_elevation": 4,
+          "direction": 3,
+          "single_movement_active": false,
+          "held_movement_active": false,
+          "tile": "0x4307",
+          "behavior": "0x0"
+        }
+      ]
+    },
+    {
+      "label": "after-actual-A",
+      "frame": 1325,
+      "requested_local": 1,
+      "location": [
+        54,
+        2,
+        17,
+        6
+      ],
+      "LastTalked": 1,
+      "objects": [
+        {
+          "slot": 0,
+          "local": 255,
+          "player": true,
+          "graphics": 0,
+          "map": [
+            54,
+            2
+          ],
+          "xy": [
+            17,
+            6
+          ],
+          "flags": "0x180c1",
+          "visible": true,
+          "current_elevation": 4,
+          "previous_elevation": 4,
+          "direction": 2,
+          "single_movement_active": false,
+          "held_movement_active": true,
+          "tile": "0x43a9",
+          "behavior": "0x0"
+        },
+        {
+          "slot": 3,
+          "local": 1,
+          "player": false,
+          "graphics": 61,
+          "map": [
+            54,
+            2
+          ],
+          "xy": [
+            17,
+            5
+          ],
+          "flags": "0x8000c1",
+          "visible": true,
+          "current_elevation": 4,
+          "previous_elevation": 4,
+          "direction": 1,
+          "single_movement_active": false,
+          "held_movement_active": true,
+          "tile": "0x4307",
+          "behavior": "0x0"
+        }
+      ]
+    },
+    {
+      "label": "before-turn",
+      "frame": 1661,
+      "requested_local": 1,
+      "location": [
+        54,
+        2,
+        17,
+        6
+      ],
+      "LastTalked": 1,
+      "objects": [
+        {
+          "slot": 0,
+          "local": 255,
+          "player": true,
+          "graphics": 0,
+          "map": [
+            54,
+            2
+          ],
+          "xy": [
+            17,
+            6
+          ],
+          "flags": "0x180c1",
+          "visible": true,
+          "current_elevation": 4,
+          "previous_elevation": 4,
+          "direction": 2,
+          "single_movement_active": false,
+          "held_movement_active": true,
+          "tile": "0x43a9",
+          "behavior": "0x0"
+        },
+        {
+          "slot": 3,
+          "local": 1,
+          "player": false,
+          "graphics": 61,
+          "map": [
+            54,
+            2
+          ],
+          "xy": [
+            17,
+            5
+          ],
+          "flags": "0x800001",
+          "visible": true,
+          "current_elevation": 4,
+          "previous_elevation": 4,
+          "direction": 1,
+          "single_movement_active": false,
+          "held_movement_active": false,
+          "tile": "0x4307",
+          "behavior": "0x0"
+        }
+      ]
+    },
+    {
+      "label": "after-turn",
+      "frame": 1695,
+      "requested_local": 1,
+      "location": [
+        54,
+        2,
+        17,
+        6
+      ],
+      "LastTalked": 1,
+      "objects": [
+        {
+          "slot": 0,
+          "local": 255,
+          "player": true,
+          "graphics": 0,
+          "map": [
+            54,
+            2
+          ],
+          "xy": [
+            17,
+            6
+          ],
+          "flags": "0x180c1",
+          "visible": true,
+          "current_elevation": 4,
+          "previous_elevation": 4,
+          "direction": 2,
+          "single_movement_active": false,
+          "held_movement_active": true,
+          "tile": "0x43a9",
+          "behavior": "0x0"
+        },
+        {
+          "slot": 3,
+          "local": 1,
+          "player": false,
+          "graphics": 61,
+          "map": [
+            54,
+            2
+          ],
+          "xy": [
+            17,
+            5
+          ],
+          "flags": "0x800001",
+          "visible": true,
+          "current_elevation": 4,
+          "previous_elevation": 4,
+          "direction": 1,
+          "single_movement_active": false,
+          "held_movement_active": false,
+          "tile": "0x4307",
+          "behavior": "0x0"
+        }
+      ]
+    },
+    {
+      "label": "after-actual-A",
+      "frame": 1710,
+      "requested_local": 1,
+      "location": [
+        54,
+        2,
+        17,
+        6
+      ],
+      "LastTalked": 1,
+      "objects": [
+        {
+          "slot": 0,
+          "local": 255,
+          "player": true,
+          "graphics": 0,
+          "map": [
+            54,
+            2
+          ],
+          "xy": [
+            17,
+            6
+          ],
+          "flags": "0x180c1",
+          "visible": true,
+          "current_elevation": 4,
+          "previous_elevation": 4,
+          "direction": 2,
+          "single_movement_active": false,
+          "held_movement_active": true,
+          "tile": "0x43a9",
+          "behavior": "0x0"
+        },
+        {
+          "slot": 3,
+          "local": 1,
+          "player": false,
+          "graphics": 61,
+          "map": [
+            54,
+            2
+          ],
+          "xy": [
+            17,
+            5
+          ],
+          "flags": "0x8000c1",
+          "visible": true,
+          "current_elevation": 4,
+          "previous_elevation": 4,
+          "direction": 1,
+          "single_movement_active": false,
+          "held_movement_active": true,
+          "tile": "0x4307",
+          "behavior": "0x0"
+        }
+      ]
+    }
+  ],
+  "native_SAVE_cold": {
+    "counter": [
+      69,
+      70
+    ],
+    "checksummed_sectors": 14,
+    "qa_save": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r4/continuous-Stone-request-native-QA-only.sav"
+  },
+  "final_party_ledger": [
+    {
+      "old_slot": 0,
+      "new_slot": 0,
+      "pid": 3957541173,
+      "ot": 2839214970,
+      "species": 9,
+      "EXP_before_after": [
+        136999,
+        136999
+      ],
+      "friendship_before_after": [
+        255,
+        255
+      ],
+      "EV_before_after": [
+        [
+          44,
+          67,
+          90,
+          197,
+          73,
+          39
+        ],
+        [
+          44,
+          67,
+          90,
+          197,
+          73,
+          39
+        ]
+      ],
+      "PP_before_after": [
+        [
+          11,
+          18,
+          15,
+          13
+        ],
+        [
+          11,
+          18,
+          15,
+          13
+        ]
+      ],
+      "party_cache_changed": false,
+      "checksum_ok": true,
+      "IV_and_origin_preserved": true
+    },
+    {
+      "old_slot": 1,
+      "new_slot": 1,
+      "pid": 1847114783,
+      "ot": 2839214970,
+      "species": 6,
+      "EXP_before_after": [
+        135787,
+        135787
+      ],
+      "friendship_before_after": [
+        255,
+        255
+      ],
+      "EV_before_after": [
+        [
+          56,
+          143,
+          35,
+          153,
+          86,
+          37
+        ],
+        [
+          56,
+          143,
+          35,
+          153,
+          86,
+          37
+        ]
+      ],
+      "PP_before_after": [
+        [
+          15,
+          15,
+          13,
+          15
+        ],
+        [
+          15,
+          15,
+          13,
+          15
+        ]
+      ],
+      "party_cache_changed": false,
+      "checksum_ok": true,
+      "IV_and_origin_preserved": true
+    },
+    {
+      "old_slot": 2,
+      "new_slot": 2,
+      "pid": 2710679397,
+      "ot": 2839214970,
+      "species": 3,
+      "EXP_before_after": [
+        139660,
+        139660
+      ],
+      "friendship_before_after": [
+        254,
+        254
+      ],
+      "EV_before_after": [
+        [
+          55,
+          106,
+          74,
+          172,
+          71,
+          32
+        ],
+        [
+          55,
+          106,
+          74,
+          172,
+          71,
+          32
+        ]
+      ],
+      "PP_before_after": [
+        [
+          4,
+          15,
+          23,
+          30
+        ],
+        [
+          4,
+          15,
+          23,
+          30
+        ]
+      ],
+      "party_cache_changed": false,
+      "checksum_ok": true,
+      "IV_and_origin_preserved": true
+    },
+    {
+      "old_slot": 3,
+      "new_slot": 3,
+      "pid": 3742077845,
+      "ot": 2839214970,
+      "species": 25,
+      "EXP_before_after": [
+        146858,
+        146858
+      ],
+      "friendship_before_after": [
+        255,
+        255
+      ],
+      "EV_before_after": [
+        [
+          96,
+          63,
+          58,
+          239,
+          43,
+          11
+        ],
+        [
+          96,
+          63,
+          58,
+          239,
+          43,
+          11
+        ]
+      ],
+      "PP_before_after": [
+        [
+          13,
+          15,
+          14,
+          15
+        ],
+        [
+          13,
+          15,
+          14,
+          15
+        ]
+      ],
+      "party_cache_changed": false,
+      "checksum_ok": true,
+      "IV_and_origin_preserved": true
+    },
+    {
+      "old_slot": 4,
+      "new_slot": 4,
+      "pid": 2008717992,
+      "ot": 2839214970,
+      "species": 148,
+      "EXP_before_after": [
+        189003,
+        189003
+      ],
+      "friendship_before_after": [
+        255,
+        255
+      ],
+      "EV_before_after": [
+        [
+          45,
+          108,
+          84,
+          195,
+          57,
+          21
+        ],
+        [
+          45,
+          108,
+          84,
+          195,
+          57,
+          21
+        ]
+      ],
+      "PP_before_after": [
+        [
+          15,
+          15,
+          15,
+          20
+        ],
+        [
+          15,
+          15,
+          15,
+          20
+        ]
+      ],
+      "party_cache_changed": false,
+      "checksum_ok": true,
+      "IV_and_origin_preserved": true
+    },
+    {
+      "old_slot": 5,
+      "new_slot": 5,
+      "pid": 259342718,
+      "ot": 2839214970,
+      "species": 138,
+      "EXP_before_after": [
+        63797,
+        63797
+      ],
+      "friendship_before_after": [
+        212,
+        212
+      ],
+      "EV_before_after": [
+        [
+          31,
+          82,
+          75,
+          58,
+          27,
+          21
+        ],
+        [
+          31,
+          82,
+          75,
+          58,
+          27,
+          21
+        ]
+      ],
+      "PP_before_after": [
+        [
+          15,
+          15,
+          25,
+          25
+        ],
+        [
+          15,
+          15,
+          25,
+          25
+        ]
+      ],
+      "party_cache_changed": false,
+      "checksum_ok": true,
+      "IV_and_origin_preserved": true
+    }
+  ],
+  "prior_continuous_rescue_proof_verified": true,
+  "native_checkpoint_Stone_request": true,
+  "PC_33744_bytes_preserved": true,
+  "protected_original_inputs_unchanged": true
+}

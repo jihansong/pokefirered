@@ -1,0 +1,10 @@
+[
+  {
+    "case": "route",
+    "exit": 1
+  },
+  {
+    "case": "legacy",
+    "exit": 0
+  }
+]

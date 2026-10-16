@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/johto/build_ecruteak.py", line 859, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--root',default='.');p.add_argument('--apply',action='store_true');a=p.parse_args();apply(Path(a.root).resolve(),a.apply)
+                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/johto/build_ecruteak.py", line 834, in apply
+    s=Source(root);out,stats=build(s);validate(s,out,stats)
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/johto/build_ecruteak.py", line 758, in validate
+    if n!='EcruteakCity_PokemonCenter_2F':assert walk(o['x'],o['y']),(n,'NPC tile',o)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('EcruteakCity_DanceTheater', 'NPC tile', {'type': 'object', 'graphics_id': 'OBJ_EVENT_GFX_WOMAN_1', 'x': 4, 'y': 5, 'elevation': 3, 'movement_type': 'MOVEMENT_TYPE_FACE_DOWN', 'movement_range_x': 0, 'movement_range_y': 0, 'trainer_type': 'TRAINER_TYPE_NONE', 'trainer_sight_or_berry_tree_id': '0', 'script': 'EcruteakCity_DanceTheater_SAYO', 'flag': '0'})

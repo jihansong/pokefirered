@@ -1,0 +1,7 @@
+77 files, 209 labels, 541 lines; limit 208 px ({PLAYER}/{RIVAL} = 42 px, {STR_VAR_n} = 60 px)
+
+over:
+  data/maps/Route110/text.inc:310: 209 px [Route110_TYRival_BrendanBattleIntro] BRENDAN: Your title won't decide this.
+  data/maps/Route119/text.inc:255: 219 px [Route119_TYRival_MayIntro] MAY: You saved the WEATHER INSTITUTE!
+
+2 line(s) over 208 px, 0 to check by hand ({STR_VAR_n})

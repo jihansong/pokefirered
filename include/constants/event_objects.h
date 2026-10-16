@@ -241,7 +241,11 @@
 #define OBJ_EVENT_GFX_OLD_TIMER 232
 #define OBJ_EVENT_GFX_N 233
 #define OBJ_EVENT_GFX_SUMMIT_TRAINER 234
-#define NUM_OBJ_EVENT_GFX     235
+#define OBJ_EVENT_GFX_JOHTO_FARFETCHD 235
+#define OBJ_EVENT_GFX_JOHTO_SUDOWOODO 236
+#define OBJ_EVENT_GFX_MISTY_COMPANION 237
+#define OBJ_EVENT_GFX_PROF_ELM 238
+#define NUM_OBJ_EVENT_GFX 239
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.

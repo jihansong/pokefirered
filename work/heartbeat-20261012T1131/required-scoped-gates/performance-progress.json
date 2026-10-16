@@ -1,0 +1,32 @@
+[
+  {
+    "baseline": {
+      "pass": false,
+      "exit_code": 1
+    },
+    "candidate": {
+      "pass": false,
+      "exit_code": 1
+    }
+  },
+  {
+    "candidate": {
+      "pass": false,
+      "exit_code": 1
+    },
+    "baseline": {
+      "pass": false,
+      "exit_code": 1
+    }
+  },
+  {
+    "baseline": {
+      "pass": false,
+      "exit_code": 1
+    },
+    "candidate": {
+      "pass": false,
+      "exit_code": 1
+    }
+  }
+]

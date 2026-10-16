@@ -1,0 +1,22 @@
+FAIL z3_roxanne_badge_tm39
+     mash 600: the game never went idle
+     expect overworld: not in the overworld
+     expect trainer TRAINER_HOENN_ROXANNE_1 = 1: trainer TRAINER_HOENN_ROXANNE_1 is 0, expected 1
+     expect flag FLAG_HOENN_BADGE01_GET = 1: flag FLAG_HOENN_BADGE01_GET is 0, expected 1
+     expect flag FLAG_HOENN_DEFEATED_RUSTBORO_GYM = 1: flag FLAG_HOENN_DEFEATED_RUSTBORO_GYM is 0, expected 1
+     expect flag FLAG_HOENN_GOT_TM39_FROM_ROXANNE = 1: flag FLAG_HOENN_GOT_TM39_FROM_ROXANNE is 0, expected 1
+     expect item ITEM_TM39 = 1: item ITEM_TM39 is 0
+     expect money = 16800: money is 10000
+     mash: the game never went idle
+     expect overworld: not in the overworld
+     expect item ITEM_TM39 = 1: item ITEM_TM39 is 0
+ok   z3_roxanne_old_victory_recovers_rewards
+ok   z3_roxanne_full_tm_case_keeps_reward_pending
+ok   z3_roxanne_retry_after_making_room
+ok   z3_roxanne_existing_reward_not_given_again
+ok   z3_roxanne_no_rewards_before_victory
+ok   z3_roxanne_pikachu_remark_once
+ok   z3_roxanne_remark_needs_pikachu
+ok   z3_roxanne_duplicate_reward_control
+ok   z3_roxanne_no_repeated_pikachu_remark
+9/10 cases passed

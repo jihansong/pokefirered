@@ -1,0 +1,17 @@
+{
+  "static_pass": true,
+  "fixture_only": true,
+  "emulator_executed": false,
+  "importer_source": "parent_live_remote_sha_confirmed_same_full_source",
+  "importer_source_sha256": "50021b65d020d3d6ad40d858d04b0a53d5a5fdc4a53659b0616d67e3f12882bc",
+  "importer_patched_sha256": "9875d23111605fd92fdc0345cb2e5d9f4f57ee8f1a5c0f9c62abe3032a4cbc85",
+  "exact_changed_byte_offsets": [
+    676,
+    678
+  ],
+  "old_four_warps_preserved": true,
+  "candidate_json_identical_after_host_CRLF_to_LF_only": true,
+  "original_four_npcs_preserved": true,
+  "second_apply_identical": true,
+  "unexpected_upstream_cell_rejected_without_partial_geometry_write": true
+}

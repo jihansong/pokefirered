@@ -1,0 +1,79 @@
+RustboroCity_DevonCorp_3F_MapScripts::
+	.byte 0
+
+RustboroCity_DevonCorp_3F_EventScript_H1::
+	msgbox RustboroCity_DevonCorp_3F_Text_H1, MSGBOX_NPC
+	end
+
+RustboroCity_DevonCorp_3F_EventScript_H2::
+	msgbox RustboroCity_DevonCorp_3F_Text_H2, MSGBOX_SIGN
+	end
+
+RustboroCity_DevonCorp_3F_EventScript_H3::
+	msgbox RustboroCity_DevonCorp_3F_Text_H3, MSGBOX_SIGN
+	end
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
+@ The imported president keeps his existing local ID and position.
+RustboroCity_DevonCorp_3F_EventScript_H0::
+	lock
+	faceplayer
+	goto_if_set FLAG_HOENN_GOT_EXP_SHARE, RustboroCity_DevonCorp_3F_EventScript_AlreadyRewarded
+	goto_if_ge VAR_HOENN_SCENE_DEVON, 6, RustboroCity_DevonCorp_3F_EventScript_AlreadyRewarded
+	goto_if_set FLAG_HOENN_DEVON_GOODS_DELIVERED, RustboroCity_DevonCorp_3F_EventScript_Reward
+	goto_if_ge VAR_HOENN_SCENE_DEVON, 5, RustboroCity_DevonCorp_3F_EventScript_Reward
+	goto_if_eq VAR_HOENN_SCENE_DEVON, 4, RustboroCity_DevonCorp_3F_EventScript_Waiting
+	goto_if_lt VAR_HOENN_SCENE_DEVON, 3, RustboroCity_DevonCorp_3F_EventScript_BeforeRescue
+	checkitem ITEM_DEVON_GOODS
+	goto_if_eq VAR_RESULT, FALSE, RustboroCity_DevonCorp_3F_EventScript_MissingGoods
+	msgbox RustboroCity_DevonCorp_3F_Text_DeliveryRequest
+	setvar VAR_HOENN_SCENE_DEVON, 4
+	release
+	end
+
+RustboroCity_DevonCorp_3F_EventScript_BeforeRescue::
+	msgbox RustboroCity_DevonCorp_3F_Text_BeforeRescue
+	release
+	end
+
+RustboroCity_DevonCorp_3F_EventScript_MissingGoods::
+	msgbox RustboroCity_DevonCorp_3F_Text_MissingGoods
+	release
+	end
+
+RustboroCity_DevonCorp_3F_EventScript_Waiting::
+	msgbox RustboroCity_DevonCorp_3F_Text_DeliveryWaiting
+	release
+	end
+
+@ Completion evidence wins over an older scene variable, without granting twice.
+RustboroCity_DevonCorp_3F_EventScript_Reward::
+	setflag FLAG_HOENN_DEVON_GOODS_DELIVERED
+	setvar VAR_HOENN_SCENE_DEVON, 5
+	checkitemspace ITEM_EXP_SHARE
+	goto_if_eq VAR_RESULT, FALSE, RustboroCity_DevonCorp_3F_EventScript_NoRoom
+	additem ITEM_EXP_SHARE
+	goto_if_eq VAR_RESULT, FALSE, RustboroCity_DevonCorp_3F_EventScript_NoRoom
+	setflag FLAG_HOENN_GOT_EXP_SHARE
+	setvar VAR_HOENN_SCENE_DEVON, 6
+	msgbox RustboroCity_DevonCorp_3F_Text_DeliveryThanks
+	msgreceiveditem RustboroCity_DevonCorp_3F_Text_ReceivedExpShare, ITEM_EXP_SHARE
+	msgbox RustboroCity_DevonCorp_3F_Text_ExpShareUse
+	release
+	end
+
+RustboroCity_DevonCorp_3F_EventScript_NoRoom::
+	msgbox RustboroCity_DevonCorp_3F_Text_NoRoom
+	release
+	end
+
+RustboroCity_DevonCorp_3F_EventScript_AlreadyRewarded::
+	setflag FLAG_HOENN_DEVON_GOODS_DELIVERED
+	setflag FLAG_HOENN_GOT_EXP_SHARE
+	goto_if_ge VAR_HOENN_SCENE_DEVON, 6, RustboroCity_DevonCorp_3F_EventScript_Done
+	setvar VAR_HOENN_SCENE_DEVON, 6
+RustboroCity_DevonCorp_3F_EventScript_Done::
+	msgbox RustboroCity_DevonCorp_3F_Text_Done
+	release
+	end
+@ END PATCH

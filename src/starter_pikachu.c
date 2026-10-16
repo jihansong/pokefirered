@@ -160,7 +160,10 @@ u8 GetStarterPikachuPartySlot(void)
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        if (IsStarterPikachu(&gPlayerParty[i]))
+        // Reject unmarked mons without decrypting their species every field frame.
+        // The bit is outside secure data. Keep the full check for marked candidates.
+        if (gPlayerParty[i].box.isStarterPikachu
+         && IsStarterPikachu(&gPlayerParty[i]))
             return i;
     }
     return PARTY_SIZE;

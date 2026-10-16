@@ -1,0 +1,46 @@
+{
+  "hoenn-win": {
+    "exit": 1,
+    "seconds": 14.0
+  },
+  "hoenn-loss": {
+    "exit": 1,
+    "seconds": 14.0
+  },
+  "johto-maps": {
+    "exit": 0,
+    "seconds": 60.24
+  },
+  "icon-bytes": {
+    "exit": 0,
+    "seconds": 6.66
+  },
+  "scroll": {
+    "exit": 0,
+    "seconds": 14.36
+  },
+  "johto-events": {
+    "exit": 1,
+    "seconds": 101.58
+  },
+  "johto-fields": {
+    "exit": 0,
+    "seconds": 14.21
+  },
+  "johto-habitats": {
+    "exit": 0,
+    "seconds": 6.9
+  },
+  "dex-ui": {
+    "exit": 0,
+    "seconds": 44.43
+  },
+  "native-profile": {
+    "exit": 0,
+    "seconds": 10.08
+  },
+  "hoenn-gates": {
+    "exit": 0,
+    "seconds": 156.66
+  }
+}

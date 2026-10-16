@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/eventcheck.py", line 740, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/workspaces/pokefirered/tools/qa/eventcheck.py", line 726, in main
+    ok, fails = run_case(case, a.rom, a.shots, presses)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/eventcheck.py", line 492, in run_case
+    watches[p[1]] = [rom_text_prefix(e, p[1]), False, False]
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/eventcheck.py", line 404, in rom_text_prefix
+    raw = e.read(e.sym(label), 96)
+                 ^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/emu.py", line 187, in sym
+    return self.syms[name]
+           ~~~~~~~~~^^^^^^
+KeyError: 'Route116_Text_RepeatBallThanks'

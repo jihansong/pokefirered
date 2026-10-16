@@ -1,0 +1,43 @@
+{
+  "directory": "/workspaces/pokefirered/work/birch-bridge-validation-20261004T130335Z",
+  "steps": [
+    {
+      "name": "build",
+      "exit_code": 0,
+      "log": "/workspaces/pokefirered/work/birch-bridge-validation-20261004T130335Z/build.log"
+    },
+    {
+      "name": "symbols",
+      "exit_code": 0,
+      "log": "/workspaces/pokefirered/work/birch-bridge-validation-20261004T130335Z/symbols.log"
+    },
+    {
+      "name": "birch_runtime",
+      "exit_code": 0,
+      "log": "/workspaces/pokefirered/work/birch-bridge-validation-20261004T130335Z/birch_runtime.log"
+    },
+    {
+      "name": "map_integrity",
+      "exit_code": 0,
+      "log": "/workspaces/pokefirered/work/birch-bridge-validation-20261004T130335Z/map_integrity.log"
+    },
+    {
+      "name": "savecompat",
+      "exit_code": 0,
+      "log": "/workspaces/pokefirered/work/birch-bridge-validation-20261004T130335Z/savecompat.log"
+    }
+  ],
+  "original_save_sha256": {
+    "saves/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "saves/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "saves/hoenn.sav": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+    "saves/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "saves/pokemonthyl_hoenn_QAed.sav": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+    "saves/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "saves/pokemonthyl_v1.1.sav": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37"
+  },
+  "all_pass": true,
+  "user_device_tested": false,
+  "original_saves_unchanged": true,
+  "finished": "2026-10-04T13:04:45.847554+00:00"
+}

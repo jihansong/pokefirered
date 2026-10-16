@@ -1,0 +1,1 @@
+{"name": "devon_theft_missing_before_patch", "edit": ["warp RustboroCity 24 23", "var VAR_HOENN_SCENE_DEVON 1", "flag FLAG_HOENN_BADGE01_GET 1", "noquestlog"], "steps": ["LEFT", "mash", "expect overworld", "expect var VAR_HOENN_SCENE_DEVON = 2"]}

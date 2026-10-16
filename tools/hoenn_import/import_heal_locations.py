@@ -47,12 +47,14 @@ def main():
         if h['map'] not in have_maps:
             continue
         respawn_map, npc = center_of(h['map'])
+        if h['id'] == 'HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE':
+            respawn_map, npc = 'MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_1F', 1
         if respawn_map is None:              # a house or a map we did not import
             respawn_map, npc = h['map'], 1
         new = {'id': 'HEAL_LOCATION_HOENN_' + h['id'][len('HEAL_LOCATION_'):], 'map': h['map'],
                'x': h['x'], 'y': h['y'], 'respawn_map': respawn_map, 'respawn_npc': npc}
         added.append(new)
-        by_map[h['map']] = new['id']
+        by_map.setdefault(h['map'], new['id'])
     fr['heal_locations'] = kept + added
     open(fr_path, 'w').write(json.dumps(fr, indent=2) + '\n')
 

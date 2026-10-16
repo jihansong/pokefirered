@@ -1,0 +1,316 @@
+{
+  "rom_sha256": "af9ba1f61fce4630d488567ed11b83847dfbc1fcff435653bedd4d86dc622818",
+  "cases": [
+    {
+      "case": "new_bark_water_connection_enters_route27",
+      "from": [
+        "NewBarkTown",
+        35,
+        20
+      ],
+      "to": "JohtoRoute27",
+      "native_location": [
+        76,
+        112,
+        0,
+        20
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "route27_cave_enters_tohjo_falls",
+      "from": [
+        "JohtoRoute27",
+        33,
+        6
+      ],
+      "to": "TohjoFalls",
+      "native_location": [
+        76,
+        113,
+        10,
+        18
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "tohjo_south_returns_route27",
+      "from": [
+        "TohjoFalls",
+        10,
+        17
+      ],
+      "to": "JohtoRoute27",
+      "native_location": [
+        76,
+        112,
+        33,
+        6
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "tohjo_north_enters_route26",
+      "from": [
+        "TohjoFalls",
+        10,
+        4
+      ],
+      "to": "JohtoRoute26",
+      "native_location": [
+        76,
+        114,
+        10,
+        32
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "route26_south_returns_tohjo",
+      "from": [
+        "JohtoRoute26",
+        10,
+        31
+      ],
+      "to": "TohjoFalls",
+      "native_location": [
+        76,
+        113,
+        10,
+        4
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "route26_cave_enters_victory_road",
+      "from": [
+        "JohtoRoute26",
+        25,
+        6
+      ],
+      "to": "JohtoVictoryRoad_1F",
+      "native_location": [
+        76,
+        115,
+        15,
+        25
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "victory_road_returns_route26",
+      "from": [
+        "JohtoVictoryRoad_1F",
+        15,
+        24
+      ],
+      "to": "JohtoRoute26",
+      "native_location": [
+        76,
+        114,
+        25,
+        6
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "victory_road_opens_plateau",
+      "from": [
+        "JohtoVictoryRoad_1F",
+        15,
+        4
+      ],
+      "to": "JohtoIndigoPlateau",
+      "native_location": [
+        76,
+        116,
+        11,
+        18
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "plateau_returns_victory_road",
+      "from": [
+        "JohtoIndigoPlateau",
+        11,
+        17
+      ],
+      "to": "JohtoVictoryRoad_1F",
+      "native_location": [
+        76,
+        115,
+        15,
+        4
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "plateau_center_enters",
+      "from": [
+        "JohtoIndigoPlateau",
+        11,
+        7
+      ],
+      "to": "JohtoLeague_PokemonCenter_1F",
+      "native_location": [
+        76,
+        117,
+        7,
+        8
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "league_center_exits",
+      "from": [
+        "JohtoLeague_PokemonCenter_1F",
+        7,
+        8
+      ],
+      "to": "JohtoIndigoPlateau",
+      "native_location": [
+        76,
+        116,
+        11,
+        7
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "will_south_exit_returns_reception",
+      "from": [
+        "JohtoLeague_WillsRoom",
+        6,
+        10
+      ],
+      "to": "JohtoLeague_PokemonCenter_1F",
+      "native_location": [
+        76,
+        117,
+        7,
+        8
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "koga_south_exit_returns_reception",
+      "from": [
+        "JohtoLeague_KogasRoom",
+        6,
+        10
+      ],
+      "to": "JohtoLeague_PokemonCenter_1F",
+      "native_location": [
+        76,
+        117,
+        7,
+        8
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "bruno_south_exit_returns_reception",
+      "from": [
+        "JohtoLeague_BrunosRoom",
+        6,
+        10
+      ],
+      "to": "JohtoLeague_PokemonCenter_1F",
+      "native_location": [
+        76,
+        117,
+        7,
+        8
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "karen_south_exit_returns_reception",
+      "from": [
+        "JohtoLeague_KarensRoom",
+        6,
+        10
+      ],
+      "to": "JohtoLeague_PokemonCenter_1F",
+      "native_location": [
+        76,
+        117,
+        7,
+        8
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "lance_champion_south_exit_returns_reception",
+      "from": [
+        "JohtoLeague_LancesRoom",
+        6,
+        10
+      ],
+      "to": "JohtoLeague_PokemonCenter_1F",
+      "native_location": [
+        76,
+        117,
+        7,
+        8
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "hof_returns_lance_room",
+      "from": [
+        "JohtoLeague_HallOfFame",
+        5,
+        11
+      ],
+      "to": "JohtoLeague_LancesRoom",
+      "native_location": [
+        76,
+        122,
+        6,
+        11
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0
+    }
+  ],
+  "all_pass": true,
+  "original_files_unchanged": true,
+  "forced_memory_writes": 0,
+  "wild_events_prevented_by_native_repel_with_healthy_lead_above37": true,
+  "new_bark_reverse_surf_prompt_and_tohjo_waterfall_full_path_tested_separately": true
+}

@@ -1,0 +1,288 @@
+{
+  "rom_sha256": "ab47fb761ae2d93e0008c98172f9dee4e89bd034037efa9abef2d86b436f6f81",
+  "initial_fixture": "Badge6 complete; lake/HQ/Badge7 entirely unstarted",
+  "stages": [
+    {
+      "case": "chain_actual_gyarados_catch",
+      "turns": 0,
+      "outcome": 7,
+      "species_internal": 130,
+      "national_dex": 130,
+      "scripted_shiny_verified": true,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-chain/chain_actual_gyarados_catch-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "legal_capture_checksum_verified": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_lance_joins_and_scale",
+      "native_dialogue": "LakeOfRage_Text_LanceJoined",
+      "save": {
+        "counter": [
+          61,
+          62
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-chain/chain_lance_joins_and_scale-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "chain_shop_uncover_native_warp",
+      "native_dialogue": "MahoganyTown_Shop_Text_Entry",
+      "save": {
+        "counter": [
+          62,
+          63
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-chain/chain_shop_uncover_native_warp-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "chain_actual_hq_guard_a_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        20,
+        42
+      ],
+      "save": {
+        "counter": [
+          63,
+          64
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-chain/chain_actual_hq_guard_a_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_actual_hq_guard_b_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        88,
+        20
+      ],
+      "save": {
+        "counter": [
+          64,
+          65
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-chain/chain_actual_hq_guard_b_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_actual_hq_scientist_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        81,
+        109
+      ],
+      "save": {
+        "counter": [
+          65,
+          66
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-chain/chain_actual_hq_scientist_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_actual_petrel_win",
+      "turns": 3,
+      "native_outcome": 1,
+      "enemies": [
+        41,
+        20,
+        109
+      ],
+      "save": {
+        "counter": [
+          66,
+          67
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-chain/chain_actual_petrel_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_petrel_key_opens_room",
+      "native_dialogue": null,
+      "save": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-chain/chain_petrel_key_opens_room-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "chain_actual_ariana_win",
+      "turns": 3,
+      "native_outcome": 1,
+      "enemies": [
+        24,
+        44,
+        198
+      ],
+      "save": {
+        "counter": [
+          68,
+          69
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-chain/chain_actual_ariana_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_actual_electrode1_win",
+      "turns": 1,
+      "outcome": 1,
+      "species_internal": 101,
+      "national_dex": 101,
+      "scripted_shiny_verified": false,
+      "save": {
+        "counter": [
+          69,
+          70
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-chain/chain_actual_electrode1_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "legal_capture_checksum_verified": false,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_actual_electrode2_win",
+      "turns": 1,
+      "outcome": 1,
+      "species_internal": 101,
+      "national_dex": 101,
+      "scripted_shiny_verified": false,
+      "save": {
+        "counter": [
+          70,
+          71
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-chain/chain_actual_electrode2_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "legal_capture_checksum_verified": false,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_actual_electrode3_win",
+      "turns": 1,
+      "outcome": 1,
+      "species_internal": 101,
+      "national_dex": 101,
+      "scripted_shiny_verified": false,
+      "save": {
+        "counter": [
+          71,
+          72
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-chain/chain_actual_electrode3_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "legal_capture_checksum_verified": false,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_lance_transmitter_shutdown",
+      "native_dialogue": "JohtoRocketHQ_B3F_Text_After",
+      "save": {
+        "counter": [
+          72,
+          73
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-chain/chain_lance_transmitter_shutdown-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "chain_actual_pryce_win",
+      "turns": 3,
+      "native_outcome": 1,
+      "enemies": [
+        86,
+        87,
+        221
+      ],
+      "save": {
+        "counter": [
+          73,
+          74
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-chain/chain_actual_pryce_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_radio_tower_story_handoff",
+      "native_dialogue": "MahoganyTown_Text_RadioNews",
+      "save": {
+        "counter": [
+          74,
+          75
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-chain/chain_radio_tower_story_handoff-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_memory_writes": 0
+    }
+  ],
+  "all_pass": true,
+  "same_native_save_chain": true,
+  "qa_position_only_warps": 15,
+  "forced_story_flags_after_initial_fixture": 0,
+  "forced_trainer_flags_after_initial_fixture": 0,
+  "forced_memory_writes": 0,
+  "forced_battle_outcomes": 0,
+  "radio_tower_still_pending": true,
+  "original_files_unchanged": true
+}

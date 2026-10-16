@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/native_cold_nurse_regression_qa.py", line 213, in <module>
+    label='cold_nurse_'+room+'_'+str(count);path=Path(td)/(label+'.sav');prepared=prepare(path,room,count)
+                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/native_cold_nurse_regression_qa.py", line 141, in prepare
+    s=SaveFile(str(sav));n=s.sb1[off('sb1.playerPartyCount')];assert n==2,'use actual chain SAVE115 with original two partners'
+                                                                     ^^^^
+AssertionError: use actual chain SAVE115 with original two partners

@@ -1,0 +1,1 @@
+{"pass_all": false, "stages": 4, "error": "AssertionError(('No actual collision/elevation-valid path', (13, 9, 3), (8, 18), [(7, 12), (12, 8), (12, 9), (12, 14)]))"}

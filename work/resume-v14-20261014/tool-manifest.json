@@ -1,0 +1,18 @@
+{
+  "hoenn/native_dewford_continuation_r1.py": {
+    "sha256": "e431e4a2f47a67107031794273353aa804545fe55a3cc75aedf923e2c7774213",
+    "size": 36348
+  },
+  "save-audit/remote_v14_preflight.py": {
+    "sha256": "5cd2ad94513ecf65c1ef885ac0a0fc05ffd7b83429a899d7cb9591bea074c4e0",
+    "size": 5746
+  },
+  "save-audit/scan_current_save.py": {
+    "sha256": "9edbc80de00e69424075edff56d307bb6cd242026daa8940e94504958b91e1f0",
+    "size": 9928
+  },
+  "regional/regional_dex_host_audit.py": {
+    "sha256": "4989eb9340ba8b2d3716d573f355d6693b7ab43fbc5471d015264fbb527e0c42",
+    "size": 16778
+  }
+}

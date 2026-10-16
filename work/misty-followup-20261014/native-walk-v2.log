@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/work/misty-followup-20261014/walk-tools-r4/native_misty_walk_qa_r5.py", line 32, in <module>
+    frame_data=r.at(syms[PIC],9*256);expected={H(frame_data[i*256:(i+1)*256]):i for i in range(9)}
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/work/misty-followup-20261014/walk-tools-r4/native_misty_walk_qa_r5.py", line 32, in <dictcomp>
+    frame_data=r.at(syms[PIC],9*256);expected={H(frame_data[i*256:(i+1)*256]):i for i in range(9)}
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object is not callable

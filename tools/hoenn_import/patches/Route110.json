@@ -5,5 +5,50 @@
       "y": 93,
       "script": "Route110_EventScript_Board"
     }
+  ],
+  "object_events": [
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "x": 34,
+      "y": 54,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route110_TYRival_Interact",
+      "flag": "FLAG_TEMP_11"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 56,
+      "elevation": 3,
+      "var": "VAR_TEMP_0",
+      "var_value": 0,
+      "script": "Route110_TYRival_Trigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 56,
+      "elevation": 3,
+      "var": "VAR_TEMP_0",
+      "var_value": 0,
+      "script": "Route110_TYRival_Trigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 56,
+      "elevation": 3,
+      "var": "VAR_TEMP_0",
+      "var_value": 0,
+      "script": "Route110_TYRival_Trigger3"
+    }
   ]
 }

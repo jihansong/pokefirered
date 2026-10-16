@@ -1,0 +1,24 @@
+{
+  "status": "V14_SYNC_NATIVE_SAVE_COLD_PASS",
+  "original": {
+    "path": "saves/pokemonthyl_v1.4.sav",
+    "size": 131072,
+    "sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4"
+  },
+  "synced_sav": "/workspaces/pokefirered/saves/pokemonthyl_v1.4-synced.sav",
+  "synced_sha256": "99f4100d09961196706282a02e96ee9017a0a591777aa3ca0b40249ec8ae89e8",
+  "ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+  "files": {
+    "native-SAVE-cold-validation.json": "2366551812769494e07abd4450a4ca36ffe4035835ed72905e217776544c4c5b",
+    "BadEgg-forensic-report.json": "5235315fb702317995e0015be99a83a838aed7c8094a9bd2e607109b624f1c22",
+    "pokemonthyl_v1.4.gba": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+    "edit-manifest.json": "61ae1e5ea6523b0770deaff49a4f65938d5038400a8f7e78540f32c098515853",
+    "independent-raw-audit.json": "29a201d39dd1aee5b56a4eeeaff2901af3d008d60ce12b13b6e3797b155d9055",
+    "v14-actual-cold-continue.png": "a24eafddce076449817ea079f5adc0121d5d672af11548ceafec0a8b1fe0e708",
+    "pokemonthyl_v1.4.sav": "99f4100d09961196706282a02e96ee9017a0a591777aa3ca0b40249ec8ae89e8",
+    "README.txt": "cdc97e2ca0c4e4dd992f1a3af205b9a4e2177bb6579deece218aad5f4c2b8376"
+  },
+  "unresolved_bad_records": 1,
+  "full_campaign_complete": false,
+  "DELTA_device_FPS_measured": false
+}

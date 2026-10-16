@@ -1,0 +1,148 @@
+{
+  "version": "opening-hooh-color-v5",
+  "source_repo": "jihansong/pokefirered",
+  "preview_label": "방전 표정 3컷 수정 — 참고 원화의 수동 편집",
+  "pikachu_scale_other_scenes_relative_to_initial_preview": 1.5,
+  "meeting_visible_height_px": 38,
+  "meeting_foot_anchor_viewport_px": [
+    183,
+    83
+  ],
+  "opening_specific_character_art_included": "three derivative expression edits in strike only",
+  "new_original_poses": false,
+  "expression_provenance": "outputs/pikachu-expression-edit-v1/provenance.json",
+  "source_snapshot": "48e75f4d1f150c98eecfc82ba15487485c47e5e3",
+  "latest_user_direction": "10-second anime episode 1; FR/LG native asset route",
+  "shots": [
+    {
+      "start_frame": 0,
+      "end_frame_exclusive": 24,
+      "id": "forest",
+      "label": "숲으로 들어가는 도입"
+    },
+    {
+      "start_frame": 24,
+      "end_frame_exclusive": 120,
+      "id": "meeting",
+      "label": "볼을 거부하는 피카츄"
+    },
+    {
+      "start_frame": 120,
+      "end_frame_exclusive": 276,
+      "id": "chase",
+      "label": "폭우 속 깨비참의 추격"
+    },
+    {
+      "start_frame": 276,
+      "end_frame_exclusive": 342,
+      "id": "protect",
+      "label": "앞을 막아서는 레드"
+    },
+    {
+      "start_frame": 342,
+      "end_frame_exclusive": 468,
+      "id": "strike",
+      "label": "피카츄의 도약과 방전"
+    },
+    {
+      "start_frame": 468,
+      "end_frame_exclusive": 600,
+      "id": "sky",
+      "label": "비가 그친 하늘과 칠색조"
+    }
+  ],
+  "limitations": [
+    "Only strike uses three edited expressions from the supplied anime reference. Other shots retain existing gameplay sprites. New original run/leap poses are unfinished.",
+    "Silent compositing prototype, not ROM footage.",
+    "Existing throw pose substitutes for shielding pose.",
+    "Pikachu runs beside Red; no existing carrying pose was found.",
+    "Ho-oh uses head-on flight art on a depth-axis approach.",
+    "Title and ending credits have not been changed."
+  ],
+  "assets": [
+    {
+      "path": "graphics/battle_anims/sprites/electricity.png",
+      "sha256": "47e031374352a8d36214ad7c59c3944bcd8eb8450302131491e9ebfeef62bc6b"
+    },
+    {
+      "path": "graphics/battle_anims/sprites/lightning_2.png",
+      "sha256": "cb5e1dfa65772cfc06c2868802ec92055f86a3946f0c82a9d57f92d05e8faa19"
+    },
+    {
+      "path": "graphics/credits/player_male.png",
+      "sha256": "74a7cf28b621cf7c35a08dca27d177c558b44f4411a294b59b7199e8af613d68"
+    },
+    {
+      "path": "graphics/interface/ball/poke.png",
+      "sha256": "7e8e78babd958f24d282a647f0ea9dfe41b20b6cd49800c7a7b2cffa8bd01450"
+    },
+    {
+      "path": "graphics/intro/scene_1/bg.bin",
+      "sha256": "dd144b0aa1945e340777dbc5e2a458858a3e12f260c8c6fd77c451b806c9215e"
+    },
+    {
+      "path": "graphics/intro/scene_1/bg.png",
+      "sha256": "fcbbb3037c901a980cf874a09e7a86115c51e60d560a2735871a0cea17779398"
+    },
+    {
+      "path": "graphics/intro/scene_1/grass.bin",
+      "sha256": "cb4b99542f6a9afe74adba2220c0f25b0cca1744099c50a24f78b77774f23fff"
+    },
+    {
+      "path": "graphics/intro/scene_1/grass.png",
+      "sha256": "d2244dc1644fb30ab00b68b7bd43e003e4525cce6ae69c865890003a3ceb96e1"
+    },
+    {
+      "path": "graphics/intro/scene_3/bg.bin",
+      "sha256": "370beb9923044d4d26f7b12768459df537d410d4a74d35dfb50e348dad1ec0c0"
+    },
+    {
+      "path": "graphics/intro/scene_3/bg.pal",
+      "sha256": "69d022451ee0ce72eaf2aa0fc6de49e6b28f88ea488a8fca2ded800c7e52a405"
+    },
+    {
+      "path": "graphics/intro/scene_3/bg.png",
+      "sha256": "5d09fced68b001d7d3a44beec8b3804392655b617c72f4d56f494912b7d4a34a"
+    },
+    {
+      "path": "graphics/intro/scene_3/grass.png",
+      "sha256": "90fa24fb3b86d99787b2f248bef014a669c227e8642f447b2380896c4d5ffc94"
+    },
+    {
+      "path": "graphics/object_events/palettes/npc_blue.pal",
+      "sha256": "5501ce3105e8adee0807898f23e7afbc64d3023ff92e275103aea3492904d927"
+    },
+    {
+      "path": "graphics/object_events/pics/pokemon/ho_oh.png",
+      "sha256": "b2416707f2109e040023cc705b03c54ae6621693aeb9feea9e6692fec9838215"
+    },
+    {
+      "path": "graphics/object_events/pics/pokemon/pikachu.png",
+      "sha256": "9f391ae36e07e1797c4ae1538cf647e7d8db2ee30519597fe94cbfb88a952042"
+    },
+    {
+      "path": "graphics/object_events/pics/pokemon/spearow.png",
+      "sha256": "4908831cecff4687c27be5b2681c40db21d09e35dfcdd8704bebd30e7de78430"
+    },
+    {
+      "path": "graphics/pokemon/pikachu/back.png",
+      "sha256": "0c0f50a5be4074b7fffbc04359449a264b4700f27160db8a013dd6153a22cecc"
+    },
+    {
+      "path": "graphics/pokemon/pikachu/front.png",
+      "sha256": "49e9816a16c0c886233e25d9b91f7ee86ac5083c93aa973a9b210528555f72ec"
+    },
+    {
+      "path": "graphics/trainers/back_pics/red_back_pic.png",
+      "sha256": "cd56e9c887a82cf0f95e357eacf9fc7bbeace7f4635e8fe2da2da037830287e9"
+    },
+    {
+      "path": "graphics/weather/cloud.png",
+      "sha256": "726fb4758b335eb10eebdbd918468c2fb5f2a6704cda325db7a598eccd4fe5f2"
+    },
+    {
+      "path": "graphics/weather/rain.png",
+      "sha256": "844a050526cc99e1253dcf37205061ffab0ae8a12cd105dd751cd920ecc4da52"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "raw_native_report_sha256": "032d4a4a81504d47b967dfd4339b152ba2a6451eb673458281b0bd4d9cfd6376",
+  "prior_Devon_Rusturf_rescue_replayed": false,
+  "onward_Route104_pre_twins_to_delivery_route_replayed": true,
+  "raw_legacy_route_and_battle_replayed_this_run_field": false,
+  "meaning": "Legacy field refers only to the earlier rescue route. This run actually replayed the onward route and battles from the natural pre-twins SAVE.",
+  "full_campaign": false,
+  "device_fps_measured": false,
+  "QA_preboot_eligibility_fixture_in_earlier_seed": true
+}

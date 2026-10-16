@@ -1,0 +1,15 @@
+{
+  "pass": false,
+  "status": "failed",
+  "scope": "preboot position/story fixtures; actual walk/run keys and SAVE/cold, not full campaign or mobile FPS",
+  "ROM_sha256": "0a3a8d39f10f3284bbadf503a6baf80a7c3bed5cd54a27eeceb604beac18155a",
+  "ELF_sha256": "2fb65bbd1eb2761098a8bc06569f3ccbfcb02612e6e75e7d9f5ac58bccb7c1b0",
+  "SAV_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+  "RAM_writes": 0,
+  "engine_calls": 0,
+  "cases": [],
+  "native_samples": [],
+  "error": "AssertionError(('No six-tile verified quiet Pallet grass line', 'RIGHT'))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/work/misty-followup-20261014/walk-tools-r4/native_misty_walk_qa_r6.py\", line 126, in <module>\n    fixture,pts=line_fixture(direction)\n                ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/work/misty-followup-20261014/walk-tools-r4/native_misty_walk_qa_r6.py\", line 91, in line_fixture\n    assert lines,('No six-tile verified quiet Pallet grass line',direction)\nAssertionError: ('No six-tile verified quiet Pallet grass line', 'RIGHT')\n",
+  "original_inputs_unchanged": true
+}

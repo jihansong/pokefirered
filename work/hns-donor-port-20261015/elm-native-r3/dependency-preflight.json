@@ -1,0 +1,312 @@
+{
+  "pass": true,
+  "process_local_added_header": "constants/event_objects.h",
+  "guarded_header_sha256": "c9eb8c4906ec813a1df97578864b6848034b0e9446c8be82d2c747a8a877e286",
+  "resolved_constants": {
+    "FLAGS_COUNT": 2304,
+    "FLAG_BADGE01_GET": 2080,
+    "FLAG_BADGE02_GET": 2081,
+    "FLAG_BADGE03_GET": 2082,
+    "FLAG_BADGE04_GET": 2083,
+    "FLAG_BADGE05_GET": 2084,
+    "FLAG_BADGE06_GET": 2085,
+    "FLAG_BADGE07_GET": 2086,
+    "FLAG_BADGE08_GET": 2087,
+    "FLAG_HIDE_MISTY_PALLET": 548,
+    "FLAG_JOHTO_ARRIVAL_BRIEFED": 5376,
+    "FLAG_JOHTO_MET_LAB_ASSISTANT": 5377,
+    "FLAG_MISTY_COMPANION_JOINED": 547,
+    "FLAG_RECEIVED_STARTER_PIKACHU": 175,
+    "FLAG_SYS_GAME_CLEAR": 2092,
+    "HOENN_FLAGS_COUNT": 2048,
+    "HOENN_FLAGS_START": 4096,
+    "HOENN_VARS_END": 16767,
+    "HOENN_VARS_START": 16640,
+    "NUM_SPECIES": 412,
+    "OBJ_EVENT_GFX_MISTY_COMPANION": 237,
+    "QUEST_LOG_SCENE_COUNT": 4,
+    "VARS_COUNT": 256,
+    "VARS_END": 16639,
+    "VARS_START": 16384,
+    "VAR_HAPPINESS_STEP_COUNTER": 16417,
+    "VAR_MAP_SCENE_PALLET_TOWN_OAK": 16464,
+    "VAR_REPEL_STEP_COUNT": 16416,
+    "VAR_TEMP_7": 16391
+  },
+  "resolved_offsets": {
+    "battlemon": 88,
+    "battlemon.moves": 12,
+    "battlemon.pp": 36,
+    "battlemon.type1": 33,
+    "battlemon.type2": 34,
+    "battlemove": 12,
+    "boxmon": 80,
+    "dex.owned": 16,
+    "dex.seen": 68,
+    "misty_obj": 36,
+    "misty_obj.coords": 16,
+    "misty_obj.local": 8,
+    "misty_obj.sprite": 4,
+    "misty_sprite": 68,
+    "misty_sprite.cy": 41,
+    "misty_sprite.x": 32,
+    "misty_sprite.x2": 36,
+    "misty_sprite.y": 34,
+    "misty_sprite.y2": 38,
+    "pokemon": 100,
+    "questlogscene": 1640,
+    "sb1": 15720,
+    "sb1.bagPocket_Berries": 1356,
+    "sb1.bagPocket_Items": 784,
+    "sb1.bagPocket_KeyItems": 952,
+    "sb1.bagPocket_PokeBalls": 1072,
+    "sb1.bagPocket_TMHM": 1124,
+    "sb1.coins": 660,
+    "sb1.continueGameWarp": 12,
+    "sb1.daycare": 12160,
+    "sb1.flags": 3808,
+    "sb1.location": 4,
+    "sb1.mapLayoutId": 50,
+    "sb1.money": 656,
+    "sb1.pcItems": 664,
+    "sb1.playerParty": 56,
+    "sb1.playerPartyCount": 52,
+    "sb1.pos": 0,
+    "sb1.questLog": 4864,
+    "sb1.seen1": 1528,
+    "sb1.seen2": 14872,
+    "sb1.vars": 4096,
+    "sb2": 3876,
+    "sb2.encryptionKey": 3872,
+    "sb2.hoennFlags": 2976,
+    "sb2.hoennTrainerFlags": 2848,
+    "sb2.hoennVars": 3232,
+    "sb2.lastBerryTreeUpdate": 160,
+    "sb2.localTimeOffset": 152,
+    "sb2.optionsButtonMode": 19,
+    "sb2.playTimeHours": 14,
+    "sb2.playTimeMinutes": 16,
+    "sb2.playTimeSeconds": 17,
+    "sb2.playTimeVBlanks": 18,
+    "sb2.playerGender": 8,
+    "sb2.playerName": 0,
+    "sb2.playerTrainerId": 10,
+    "sb2.pokedex": 24,
+    "sb2.specialSaveWarpFlags": 9,
+    "species": 28,
+    "species.growthRate": 19,
+    "storage": 33744,
+    "storage.boxes": 4,
+    "time.days": 0,
+    "time.hours": 2,
+    "time.minutes": 3,
+    "walk.daycare": 284,
+    "walk.daycare.stepCounter": 282,
+    "walk.obj.gfx": 5,
+    "walk.player.objectId": 5,
+    "walk.sprite.anim": 42,
+    "walk.sprite.cmd": 43,
+    "walk.sprite.oam": 0,
+    "warp.mapGroup": 0,
+    "warp.mapNum": 1,
+    "warp.warpId": 2,
+    "warp.x": 4,
+    "warp.y": 6
+  },
+  "maps": {
+    "PalletTown": {
+      "group": 3,
+      "num": 0,
+      "layout_id": 78,
+      "layout": "LAYOUT_PALLET_TOWN",
+      "id": "MAP_PALLET_TOWN"
+    },
+    "JohtoRoute29": {
+      "group": 76,
+      "num": 1,
+      "layout_id": 755,
+      "layout": "LAYOUT_JOHTO_ROUTE29",
+      "id": "MAP_JOHTO_ROUTE29"
+    },
+    "JohtoCherrygroveAirstrip": {
+      "group": 76,
+      "num": 0,
+      "layout_id": 754,
+      "layout": "LAYOUT_JOHTO_CHERRYGROVE_AIRSTRIP",
+      "id": "MAP_JOHTO_CHERRYGROVE_AIRSTRIP"
+    },
+    "NewBarkTown": {
+      "group": 76,
+      "num": 2,
+      "layout_id": 756,
+      "layout": "LAYOUT_NEW_BARK_TOWN",
+      "id": "MAP_NEW_BARK_TOWN"
+    }
+  },
+  "VAR_TEMP_7_preboot_SAV_location_validated": true,
+  "absent_optional_boot_callbacks": [
+    "CB2_CopyrightScreen"
+  ],
+  "unique_ELF_bindings": {
+    "BattleMainCB2": {
+      "addr": "0x80113fd",
+      "size": 116,
+      "owner": "time_of_day.o"
+    },
+    "CB2_InitCopyrightScreenAfterBootup": {
+      "addr": "0x80f2565",
+      "size": 68,
+      "owner": "time_of_day.o"
+    },
+    "CB2_InitCopyrightScreenAfterTitleScreen": {
+      "addr": "0x80f25a9",
+      "size": 10,
+      "owner": "time_of_day.o"
+    },
+    "CB2_Intro": {
+      "addr": "0x80f2719",
+      "size": 22,
+      "owner": "intro.o"
+    },
+    "CB2_MainMenu": {
+      "addr": "0x800c5d1",
+      "size": 22,
+      "owner": "main_menu.o"
+    },
+    "CB2_Overworld": {
+      "addr": "0x8057781",
+      "size": 44,
+      "owner": "overworld.o"
+    },
+    "CB2_SetUpIntro": {
+      "addr": "0x80f25b5",
+      "size": 356,
+      "owner": "intro.o"
+    },
+    "CB2_WaitFadeBeforeSetUpIntro": {
+      "addr": "0x80f22fd",
+      "size": 28,
+      "owner": "intro.o"
+    },
+    "JohtoRoute29_Text_Hiker": {
+      "addr": "0x82295d9",
+      "size": 0,
+      "owner": "time_of_day.o"
+    },
+    "JohtoRoute29_Text_Sign": {
+      "addr": "0x8229631",
+      "size": 0,
+      "owner": "time_of_day.o"
+    },
+    "gMain": {
+      "addr": "0x3003130",
+      "size": 1084,
+      "owner": "time_of_day.o"
+    },
+    "gObjectEventPal_Player": {
+      "addr": "0x85270b0",
+      "size": 32,
+      "owner": "time_of_day.o"
+    },
+    "gObjectEventPic_MistyCompanion": {
+      "addr": "0x855de70",
+      "size": 2304,
+      "owner": "time_of_day.o"
+    },
+    "gObjectEvents": {
+      "addr": "0x2036e3c",
+      "size": 576,
+      "owner": "time_of_day.o"
+    },
+    "gPlayerAvatar": {
+      "addr": "0x203707c",
+      "size": 32,
+      "owner": "time_of_day.o"
+    },
+    "gPlayerParty": {
+      "addr": "0x2024284",
+      "size": 600,
+      "owner": "time_of_day.o"
+    },
+    "gPlayerPartyCount": {
+      "addr": "0x2024029",
+      "size": 1,
+      "owner": "time_of_day.o"
+    },
+    "gPokemonStoragePtr": {
+      "addr": "0x3005050",
+      "size": 4,
+      "owner": "time_of_day.o"
+    },
+    "gQuestLogPlaybackState": {
+      "addr": "0x3005ec8",
+      "size": 1,
+      "owner": "time_of_day.o"
+    },
+    "gQuestLogState": {
+      "addr": "0x203adf6",
+      "size": 1,
+      "owner": "time_of_day.o"
+    },
+    "gSaveAttemptStatus": {
+      "addr": "0x3005460",
+      "size": 2,
+      "owner": "time_of_day.o"
+    },
+    "gSaveBlock1Ptr": {
+      "addr": "0x3005048",
+      "size": 4,
+      "owner": "time_of_day.o"
+    },
+    "gSaveBlock2Ptr": {
+      "addr": "0x300504c",
+      "size": 4,
+      "owner": "time_of_day.o"
+    },
+    "gSaveCounter": {
+      "addr": "0x30053d0",
+      "size": 4,
+      "owner": "time_of_day.o"
+    },
+    "gSprites": {
+      "addr": "0x202063c",
+      "size": 4420,
+      "owner": "time_of_day.o"
+    },
+    "gStringVar4": {
+      "addr": "0x2021d18",
+      "size": 1000,
+      "owner": "time_of_day.o"
+    },
+    "gTypeEffectiveness": {
+      "addr": "0x82ca014",
+      "size": 336,
+      "owner": "time_of_day.o"
+    },
+    "sGlobalScriptContextStatus": {
+      "addr": "0x3000ea8",
+      "size": 1,
+      "owner": "script.o"
+    },
+    "sLockFieldControls": {
+      "addr": "0x3000f9c",
+      "size": 1,
+      "owner": "script.o"
+    },
+    "sNumStartMenuItems": {
+      "addr": "0x20370fd",
+      "size": 1,
+      "owner": "start_menu.o"
+    },
+    "sStartMenuCursorPos": {
+      "addr": "0x20370fc",
+      "size": 1,
+      "owner": "start_menu.o"
+    },
+    "sStartMenuOrder": {
+      "addr": "0x20370fe",
+      "size": 9,
+      "owner": "start_menu.o"
+    }
+  }
+}

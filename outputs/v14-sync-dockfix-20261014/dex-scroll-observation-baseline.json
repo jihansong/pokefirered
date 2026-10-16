@@ -1,0 +1,83 @@
+{
+  "schema": "thunder-yellow-read-only-native-dex-scroll-v1",
+  "pass_all": true,
+  "ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+  "SAV_sha256": "99f4100d09961196706282a02e96ee9017a0a591777aa3ca0b40249ec8ae89e8",
+  "ABI_sha256": "a063364f8676b79b7a416c3fd9c0ad0c1db7991877be20c430d5f01a01907042",
+  "measurement": "Actual UI rendering plus read-only guest-key-repeat heartbeat; no task invocation counter",
+  "RAM_writes": 0,
+  "direct_engine_calls": 0,
+  "State_restore": 0,
+  "preboot_fixtures": 0,
+  "DELTA_device_FPS_measured": false,
+  "full_campaign_verified": false,
+  "cases": [
+    {
+      "label": "cold-down",
+      "hardware_frames": 360,
+      "eligible_steady_held_frames": 359,
+      "excluded_transition_or_first_key_frames": 1,
+      "edge_frames": 0,
+      "actual_cursor_changes": 65,
+      "Main_ReadKeys_heartbeat_anomalies": [
+        {
+          "frame": 1063,
+          "before": 5,
+          "after": 5,
+          "expected_single_loop": 4,
+          "moved": false,
+          "at_edge": false,
+          "dma_bitfield_nonzero": true
+        }
+      ],
+      "guest_vblank_counter2_delta": 360,
+      "interpretation": "Heartbeat anomalies are diagnostic candidates, not measured task counts or DELTA FPS drops"
+    },
+    {
+      "label": "reverse-up",
+      "hardware_frames": 360,
+      "eligible_steady_held_frames": 359,
+      "excluded_transition_or_first_key_frames": 1,
+      "edge_frames": 2,
+      "actual_cursor_changes": 65,
+      "Main_ReadKeys_heartbeat_anomalies": [
+        {
+          "frame": 1636,
+          "before": 5,
+          "after": 5,
+          "expected_single_loop": 4,
+          "moved": false,
+          "at_edge": false,
+          "dma_bitfield_nonzero": true
+        },
+        {
+          "frame": 1662,
+          "before": 5,
+          "after": 5,
+          "expected_single_loop": 4,
+          "moved": false,
+          "at_edge": false,
+          "dma_bitfield_nonzero": true
+        }
+      ],
+      "guest_vblank_counter2_delta": 360,
+      "interpretation": "Heartbeat anomalies are diagnostic candidates, not measured task counts or DELTA FPS drops"
+    },
+    {
+      "label": "warm-down",
+      "hardware_frames": 360,
+      "eligible_steady_held_frames": 359,
+      "excluded_transition_or_first_key_frames": 1,
+      "edge_frames": 0,
+      "actual_cursor_changes": 65,
+      "Main_ReadKeys_heartbeat_anomalies": [],
+      "guest_vblank_counter2_delta": 360,
+      "interpretation": "Heartbeat anomalies are diagnostic candidates, not measured task counts or DELTA FPS drops"
+    }
+  ],
+  "status": "observed",
+  "protected_player_records_preserved": true,
+  "task_invocation_count_available": false,
+  "current_dex_ROM_patch_written": false,
+  "original_inputs_unchanged": true
+}

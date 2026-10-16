@@ -1,0 +1,1076 @@
+tools/scaninc/scaninc -M build/firered/data/event_scripts.d -I include -I "" data/event_scripts.s
+make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+tools/scaninc/scaninc -M build/leafgreen_modern/data/sound_data.d -I include -I "" data/sound_data.s
+tools/scaninc/scaninc -M build/leafgreen_modern/data/mystery_event_script_cmd_table.d -I include -I "" data/mystery_event_script_cmd_table.s
+tools/scaninc/scaninc -M build/leafgreen_modern/data/mystery_event_msg.d -I include -I "" data/mystery_event_msg.s
+tools/scaninc/scaninc -M build/leafgreen_modern/data/multiboot_pokemon_colosseum.d -I include -I "" data/multiboot_pokemon_colosseum.s
+tools/scaninc/scaninc -M build/leafgreen_modern/data/multiboot_ereader.d -I include -I "" data/multiboot_ereader.s
+tools/scaninc/scaninc -M build/leafgreen_modern/data/multiboot_berry_glitch_fix.d -I include -I "" data/multiboot_berry_glitch_fix.s
+tools/scaninc/scaninc -M build/leafgreen_modern/data/field_effect_scripts.d -I include -I "" data/field_effect_scripts.s
+tools/scaninc/scaninc -M build/leafgreen_modern/data/event_scripts.d -I include -I "" data/event_scripts.s
+tools/scaninc/scaninc -M build/leafgreen_modern/data/battle_scripts_2.d -I include -I "" data/battle_scripts_2.s
+tools/scaninc/scaninc -M build/leafgreen_modern/data/battle_scripts_1.d -I include -I "" data/battle_scripts_1.s
+tools/scaninc/scaninc -M build/leafgreen_modern/data/battle_anim_scripts.d -I include -I "" data/battle_anim_scripts.s
+tools/scaninc/scaninc -M build/leafgreen_modern/data/battle_ai_scripts.d -I include -I "" data/battle_ai_scripts.s
+tools/scaninc/scaninc -M build/leafgreen_modern/src/rom_header.d -I include -I "" src/rom_header.s
+tools/scaninc/scaninc -M build/leafgreen_modern/src/m4a_1.d -I include -I "" src/m4a_1.s
+tools/scaninc/scaninc -M build/leafgreen_modern/src/libgcnmultiboot.d -I include -I "" src/libgcnmultiboot.s
+tools/scaninc/scaninc -M build/leafgreen_modern/src/libagbsyscall.d -I include -I "" src/libagbsyscall.s
+tools/scaninc/scaninc -M build/leafgreen_modern/src/crt0.d -I include -I "" src/crt0.s
+tools/scaninc/scaninc -M build/leafgreen_modern/src/wonder_news.d -I include -I tools/agbcc/include src/wonder_news.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/wireless_communication_status_screen.d -I include -I tools/agbcc/include src/wireless_communication_status_screen.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/window.d -I include -I tools/agbcc/include src/window.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/window_8bpp.d -I include -I tools/agbcc/include src/window_8bpp.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/wild_pokemon_area.d -I include -I tools/agbcc/include src/wild_pokemon_area.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/wild_encounter.d -I include -I tools/agbcc/include src/wild_encounter.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/vs_seeker.d -I include -I tools/agbcc/include src/vs_seeker.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/util.d -I include -I tools/agbcc/include src/util.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/union_room_player_avatar.d -I include -I tools/agbcc/include src/union_room_player_avatar.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/union_room_message.d -I include -I tools/agbcc/include src/union_room_message.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/union_room_chat_objects.d -I include -I tools/agbcc/include src/union_room_chat_objects.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/union_room_chat_display.d -I include -I tools/agbcc/include src/union_room_chat_display.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/union_room_chat.d -I include -I tools/agbcc/include src/union_room_chat.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/union_room.d -I include -I tools/agbcc/include src/union_room.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/union_room_battle.d -I include -I tools/agbcc/include src/union_room_battle.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/trig.d -I include -I tools/agbcc/include src/trig.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/trainer_tower_sets.d -I include -I tools/agbcc/include src/trainer_tower_sets.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/trainer_tower.d -I include -I tools/agbcc/include src/trainer_tower.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/trainer_see.d -I include -I tools/agbcc/include src/trainer_see.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/trainer_pokemon_sprites.d -I include -I tools/agbcc/include src/trainer_pokemon_sprites.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/trainer_fan_club.d -I include -I tools/agbcc/include src/trainer_fan_club.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/trainer_card.d -I include -I tools/agbcc/include src/trainer_card.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/trade_scene.d -I include -I tools/agbcc/include src/trade_scene.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/trade.d -I include -I tools/agbcc/include src/trade.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/tm_case.d -I include -I tools/agbcc/include src/tm_case.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/title_screen.d -I include -I tools/agbcc/include src/title_screen.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/time_of_day.d -I include -I tools/agbcc/include src/time_of_day.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/tilesets.d -I include -I tools/agbcc/include src/tilesets.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/tileset_anims.d -I include -I tools/agbcc/include src/tileset_anims.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/tilemap_util.d -I include -I tools/agbcc/include src/tilemap_util.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/text_window_graphics.d -I include -I tools/agbcc/include src/text_window_graphics.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/text_window.d -I include -I tools/agbcc/include src/text_window.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/text_printer.d -I include -I tools/agbcc/include src/text_printer.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/text.d -I include -I tools/agbcc/include src/text.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/teachy_tv.d -I include -I tools/agbcc/include src/teachy_tv.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/task.d -I include -I tools/agbcc/include src/task.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/surfing_pikachu.d -I include -I tools/agbcc/include src/surfing_pikachu.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/string_util.d -I include -I tools/agbcc/include src/string_util.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/strings.d -I include -I tools/agbcc/include src/strings.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/start_menu.d -I include -I tools/agbcc/include src/start_menu.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/starter_pikachu.d -I include -I tools/agbcc/include src/starter_pikachu.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/ss_anne.d -I include -I tools/agbcc/include src/ss_anne.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/sprite.d -I include -I tools/agbcc/include src/sprite.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/special_field_anim.d -I include -I tools/agbcc/include src/special_field_anim.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/sound.d -I include -I tools/agbcc/include src/sound.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/snag.d -I include -I tools/agbcc/include src/snag.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/slot_machine.d -I include -I tools/agbcc/include src/slot_machine.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/sloopsvc.d -I include -I tools/agbcc/include src/sloopsvc.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/siirtc.d -I include -I tools/agbcc/include src/siirtc.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/shop.d -I include -I tools/agbcc/include src/shop.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/seagallop.d -I include -I tools/agbcc/include src/seagallop.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/script_pokemon_util.d -I include -I tools/agbcc/include src/script_pokemon_util.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/script_movement.d -I include -I tools/agbcc/include src/script_movement.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/script_menu.d -I include -I tools/agbcc/include src/script_menu.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/script.d -I include -I tools/agbcc/include src/script.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/scrcmd.d -I include -I tools/agbcc/include src/scrcmd.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/scanline_effect.d -I include -I tools/agbcc/include src/scanline_effect.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/save_menu_util.d -I include -I tools/agbcc/include src/save_menu_util.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/save_location.d -I include -I tools/agbcc/include src/save_location.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/save_failed_screen.d -I include -I tools/agbcc/include src/save_failed_screen.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/save.d -I include -I tools/agbcc/include src/save.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/safari_zone.d -I include -I tools/agbcc/include src/safari_zone.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/rtc.d -I include -I tools/agbcc/include src/rtc.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/rotating_tile_puzzle.d -I include -I tools/agbcc/include src/rotating_tile_puzzle.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/rom_header_gf.d -I include -I tools/agbcc/include src/rom_header_gf.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/rocket_trio.d -I include -I tools/agbcc/include src/rocket_trio.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/rocket_trainer_portrait.d -I include -I tools/agbcc/include src/rocket_trainer_portrait.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/roamer.d -I include -I tools/agbcc/include src/roamer.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/reshow_battle_screen.d -I include -I tools/agbcc/include src/reshow_battle_screen.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/reset_save_heap.d -I include -I tools/agbcc/include src/reset_save_heap.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/renewable_hidden_items.d -I include -I tools/agbcc/include src/renewable_hidden_items.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/region_map.d -I include -I tools/agbcc/include src/region_map.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/random.d -I include -I tools/agbcc/include src/random.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/quest_log_player.d -I include -I tools/agbcc/include src/quest_log_player.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/quest_log_objects.d -I include -I tools/agbcc/include src/quest_log_objects.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/quest_log_events.d -I include -I tools/agbcc/include src/quest_log_events.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/quest_log.d -I include -I tools/agbcc/include src/quest_log.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/quest_log_battle.d -I include -I tools/agbcc/include src/quest_log_battle.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/prof_pc.d -I include -I tools/agbcc/include src/prof_pc.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/post_battle_event_funcs.d -I include -I tools/agbcc/include src/post_battle_event_funcs.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pokemon_summary_screen.d -I include -I tools/agbcc/include src/pokemon_summary_screen.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pokemon_storage_system_tasks.d -I include -I tools/agbcc/include src/pokemon_storage_system_tasks.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pokemon_storage_system_misc.d -I include -I tools/agbcc/include src/pokemon_storage_system_misc.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pokemon_storage_system_menu.d -I include -I tools/agbcc/include src/pokemon_storage_system_menu.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pokemon_storage_system_graphics.d -I include -I tools/agbcc/include src/pokemon_storage_system_graphics.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pokemon_storage_system_data.d -I include -I tools/agbcc/include src/pokemon_storage_system_data.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pokemon_storage_system.d -I include -I tools/agbcc/include src/pokemon_storage_system.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pokemon_special_anim_scene.d -I include -I tools/agbcc/include src/pokemon_special_anim_scene.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pokemon_special_anim.d -I include -I tools/agbcc/include src/pokemon_special_anim.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pokemon_size_record.d -I include -I tools/agbcc/include src/pokemon_size_record.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pokemon_jump.d -I include -I tools/agbcc/include src/pokemon_jump.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pokemon_icon.d -I include -I tools/agbcc/include src/pokemon_icon.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pokemon.d -I include -I tools/agbcc/include src/pokemon.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pokedex_screen.d -I include -I tools/agbcc/include src/pokedex_screen.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pokedex.d -I include -I tools/agbcc/include src/pokedex.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pokedex_area_markers.d -I include -I tools/agbcc/include src/pokedex_area_markers.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pokeball.d -I include -I tools/agbcc/include src/pokeball.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/play_time.d -I include -I tools/agbcc/include src/play_time.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/player_pc.d -I include -I tools/agbcc/include src/player_pc.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pikachu_emotions.d -I include -I tools/agbcc/include src/pikachu_emotions.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/pc_screen_effect.d -I include -I tools/agbcc/include src/pc_screen_effect.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/party_menu_specials.d -I include -I tools/agbcc/include src/party_menu_specials.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/party_menu.d -I include -I tools/agbcc/include src/party_menu.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/palette_util.d -I include -I tools/agbcc/include src/palette_util.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/palette.d -I include -I tools/agbcc/include src/palette.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/overworld.d -I include -I tools/agbcc/include src/overworld.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/option_menu.d -I include -I tools/agbcc/include src/option_menu.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/oak_speech.d -I include -I tools/agbcc/include src/oak_speech.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/new_menu_helpers.d -I include -I tools/agbcc/include src/new_menu_helpers.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/new_game.d -I include -I tools/agbcc/include src/new_game.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/naming_screen.d -I include -I tools/agbcc/include src/naming_screen.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/mystery_gift_show_news.d -I include -I tools/agbcc/include src/mystery_gift_show_news.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/mystery_gift_show_card.d -I include -I tools/agbcc/include src/mystery_gift_show_card.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/mystery_gift_server.d -I include -I tools/agbcc/include src/mystery_gift_server.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/mystery_gift_scripts.d -I include -I tools/agbcc/include src/mystery_gift_scripts.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/mystery_gift_menu.d -I include -I tools/agbcc/include src/mystery_gift_menu.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/mystery_gift_link.d -I include -I tools/agbcc/include src/mystery_gift_link.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/mystery_gift_client.d -I include -I tools/agbcc/include src/mystery_gift_client.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/mystery_gift.d -I include -I tools/agbcc/include src/mystery_gift.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/mystery_event_script.d -I include -I tools/agbcc/include src/mystery_event_script.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/mystery_event_msg.d -I include -I tools/agbcc/include src/mystery_event_msg.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/multiboot.d -I include -I tools/agbcc/include src/multiboot.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/move_descriptions.d -I include -I tools/agbcc/include src/move_descriptions.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/mon_markings.d -I include -I tools/agbcc/include src/mon_markings.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/money.d -I include -I tools/agbcc/include src/money.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/misty_heart.d -I include -I tools/agbcc/include src/misty_heart.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/mini_printf.d -I include -I tools/agbcc/include src/mini_printf.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/minigame_countdown.d -I include -I tools/agbcc/include src/minigame_countdown.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/metatile_behavior.d -I include -I tools/agbcc/include src/metatile_behavior.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/menu_indicators.d -I include -I tools/agbcc/include src/menu_indicators.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/menu_helpers.d -I include -I tools/agbcc/include src/menu_helpers.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/menu.d -I include -I tools/agbcc/include src/menu.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/menu2.d -I include -I tools/agbcc/include src/menu2.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/math_util.d -I include -I tools/agbcc/include src/math_util.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/map_preview_screen.d -I include -I tools/agbcc/include src/map_preview_screen.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/map_name_popup.d -I include -I tools/agbcc/include src/map_name_popup.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/malloc.d -I include -I tools/agbcc/include src/malloc.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/main_menu.d -I include -I tools/agbcc/include src/main_menu.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/main.d -I include -I tools/agbcc/include src/main.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/mail_data.d -I include -I tools/agbcc/include src/mail_data.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/mail.d -I include -I tools/agbcc/include src/mail.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/mailbox_pc.d -I include -I tools/agbcc/include src/mailbox_pc.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/m4a_tables.d -I include -I tools/agbcc/include src/m4a_tables.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/m4a.d -I include -I tools/agbcc/include src/m4a.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/load_save.d -I include -I tools/agbcc/include src/load_save.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/list_menu.d -I include -I tools/agbcc/include src/list_menu.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/link_rfu_3.d -I include -I tools/agbcc/include src/link_rfu_3.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/link_rfu_2.d -I include -I tools/agbcc/include src/link_rfu_2.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/link.d -I include -I tools/agbcc/include src/link.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/librfu_stwi.d -I include -I tools/agbcc/include src/librfu_stwi.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/librfu_sio32id.d -I include -I tools/agbcc/include src/librfu_sio32id.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/librfu_rfu.d -I include -I tools/agbcc/include src/librfu_rfu.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/librfu_intr.d -I include -I tools/agbcc/include src/librfu_intr.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/learn_move.d -I include -I tools/agbcc/include src/learn_move.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/keyboard_text.d -I include -I tools/agbcc/include src/keyboard_text.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/item_use.d -I include -I tools/agbcc/include src/item_use.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/item_pc.d -I include -I tools/agbcc/include src/item_pc.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/item_menu_icons.d -I include -I tools/agbcc/include src/item_menu_icons.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/item_menu.d -I include -I tools/agbcc/include src/item_menu.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/itemfinder.d -I include -I tools/agbcc/include src/itemfinder.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/item.d -I include -I tools/agbcc/include src/item.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/isagbprn.d -I include -I tools/agbcc/include src/isagbprn.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/intro_opening.d -I include -I tools/agbcc/include src/intro_opening.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/intro.d -I include -I tools/agbcc/include src/intro.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/image_processing_effects.d -I include -I tools/agbcc/include src/image_processing_effects.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/hof_pc.d -I include -I tools/agbcc/include src/hof_pc.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/help_system_util.d -I include -I tools/agbcc/include src/help_system_util.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/help_system.d -I include -I tools/agbcc/include src/help_system.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/help_message.d -I include -I tools/agbcc/include src/help_message.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/heal_location.d -I include -I tools/agbcc/include src/heal_location.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/hall_of_fame.d -I include -I tools/agbcc/include src/hall_of_fame.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/graphics.d -I include -I tools/agbcc/include src/graphics.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/gpu_regs.d -I include -I tools/agbcc/include src/gpu_regs.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/follower_pikachu.d -I include -I tools/agbcc/include src/follower_pikachu.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/fldeff_teleport.d -I include -I tools/agbcc/include src/fldeff_teleport.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/fldeff_sweetscent.d -I include -I tools/agbcc/include src/fldeff_sweetscent.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/fldeff_strength.d -I include -I tools/agbcc/include src/fldeff_strength.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/fldeff_softboiled.d -I include -I tools/agbcc/include src/fldeff_softboiled.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/fldeff_rocksmash.d -I include -I tools/agbcc/include src/fldeff_rocksmash.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/fldeff_poison.d -I include -I tools/agbcc/include src/fldeff_poison.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/fldeff_flash.d -I include -I tools/agbcc/include src/fldeff_flash.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/fldeff_dig.d -I include -I tools/agbcc/include src/fldeff_dig.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/fldeff_cut.d -I include -I tools/agbcc/include src/fldeff_cut.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/fldeff_berrytree.d -I include -I tools/agbcc/include src/fldeff_berrytree.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/field_weather_util.d -I include -I tools/agbcc/include src/field_weather_util.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/field_weather_effects.d -I include -I tools/agbcc/include src/field_weather_effects.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/field_weather.d -I include -I tools/agbcc/include src/field_weather.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/field_tasks.d -I include -I tools/agbcc/include src/field_tasks.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/field_special_scene.d -I include -I tools/agbcc/include src/field_special_scene.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/field_specials.d -I include -I tools/agbcc/include src/field_specials.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/field_screen_effect.d -I include -I tools/agbcc/include src/field_screen_effect.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/field_poison.d -I include -I tools/agbcc/include src/field_poison.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/field_player_avatar.d -I include -I tools/agbcc/include src/field_player_avatar.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/field_message_box.d -I include -I tools/agbcc/include src/field_message_box.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/fieldmap.d -I include -I tools/agbcc/include src/fieldmap.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/field_fadetransition.d -I include -I tools/agbcc/include src/field_fadetransition.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/field_effect_helpers.d -I include -I tools/agbcc/include src/field_effect_helpers.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/field_effect.d -I include -I tools/agbcc/include src/field_effect.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/field_door.d -I include -I tools/agbcc/include src/field_door.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/field_control_avatar.d -I include -I tools/agbcc/include src/field_control_avatar.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/field_camera.d -I include -I tools/agbcc/include src/field_camera.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/fame_checker.d -I include -I tools/agbcc/include src/fame_checker.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/evolution_scene.d -I include -I tools/agbcc/include src/evolution_scene.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/evolution_graphics.d -I include -I tools/agbcc/include src/evolution_graphics.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/event_object_movement.d -I include -I tools/agbcc/include src/event_object_movement.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/event_object_lock.d -I include -I tools/agbcc/include src/event_object_lock.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/event_data.d -I include -I tools/agbcc/include src/event_data.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/ereader_screen.d -I include -I tools/agbcc/include src/ereader_screen.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/ereader_helpers.d -I include -I tools/agbcc/include src/ereader_helpers.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/easy_chat.d -I include -I tools/agbcc/include src/easy_chat.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/easy_chat_3.d -I include -I tools/agbcc/include src/easy_chat_3.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/easy_chat_2.d -I include -I tools/agbcc/include src/easy_chat_2.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/dynamic_placeholder_text_util.d -I include -I tools/agbcc/include src/dynamic_placeholder_text_util.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/dodrio_berry_picking_comm.d -I include -I tools/agbcc/include src/dodrio_berry_picking_comm.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/dodrio_berry_picking.d -I include -I tools/agbcc/include src/dodrio_berry_picking.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/dma3_manager.d -I include -I tools/agbcc/include src/dma3_manager.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/diploma.d -I include -I tools/agbcc/include src/diploma.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/digit_obj_util.d -I include -I tools/agbcc/include src/digit_obj_util.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/decoration.d -I include -I tools/agbcc/include src/decoration.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/decompress.d -I include -I tools/agbcc/include src/decompress.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/daycare.d -I include -I tools/agbcc/include src/daycare.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/data.d -I include -I tools/agbcc/include src/data.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/credits.d -I include -I tools/agbcc/include src/credits.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/coord_event_weather.d -I include -I tools/agbcc/include src/coord_event_weather.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/companion_misty.d -I include -I tools/agbcc/include src/companion_misty.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/coins.d -I include -I tools/agbcc/include src/coins.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/clear_save_data_screen.d -I include -I tools/agbcc/include src/clear_save_data_screen.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/cereader_tool.d -I include -I tools/agbcc/include src/cereader_tool.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/cable_club.d -I include -I tools/agbcc/include src/cable_club.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/cable_car_util.d -I include -I tools/agbcc/include src/cable_car_util.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/buy_menu_helpers.d -I include -I tools/agbcc/include src/buy_menu_helpers.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/bug_contest.d -I include -I tools/agbcc/include src/bug_contest.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/braille_text.d -I include -I tools/agbcc/include src/braille_text.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/blit.d -I include -I tools/agbcc/include src/blit.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/blend_palette.d -I include -I tools/agbcc/include src/blend_palette.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/bike.d -I include -I tools/agbcc/include src/bike.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/bg_regs.d -I include -I tools/agbcc/include src/bg_regs.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/bg.d -I include -I tools/agbcc/include src/bg.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/berry_powder.d -I include -I tools/agbcc/include src/berry_powder.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/berry_pouch.d -I include -I tools/agbcc/include src/berry_pouch.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/berry_fix_program.d -I include -I tools/agbcc/include src/berry_fix_program.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/berry_crush.d -I include -I tools/agbcc/include src/berry_crush.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/berry.d -I include -I tools/agbcc/include src/berry.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_util.d -I include -I tools/agbcc/include src/battle_util.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_util2.d -I include -I tools/agbcc/include src/battle_util2.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_transition.d -I include -I tools/agbcc/include src/battle_transition.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_tower.d -I include -I tools/agbcc/include src/battle_tower.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_setup.d -I include -I tools/agbcc/include src/battle_setup.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_script_commands.d -I include -I tools/agbcc/include src/battle_script_commands.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_records.d -I include -I tools/agbcc/include src/battle_records.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_message.d -I include -I tools/agbcc/include src/battle_message.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_main.d -I include -I tools/agbcc/include src/battle_main.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_intro.d -I include -I tools/agbcc/include src/battle_intro.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_interface.d -I include -I tools/agbcc/include src/battle_interface.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_gfx_sfx_util.d -I include -I tools/agbcc/include src/battle_gfx_sfx_util.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_controllers.d -I include -I tools/agbcc/include src/battle_controllers.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_controller_safari.d -I include -I tools/agbcc/include src/battle_controller_safari.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_controller_pokedude.d -I include -I tools/agbcc/include src/battle_controller_pokedude.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_controller_player.d -I include -I tools/agbcc/include src/battle_controller_player.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_controller_opponent.d -I include -I tools/agbcc/include src/battle_controller_opponent.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_controller_oak_old_man.d -I include -I tools/agbcc/include src/battle_controller_oak_old_man.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_controller_link_partner.d -I include -I tools/agbcc/include src/battle_controller_link_partner.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_controller_link_opponent.d -I include -I tools/agbcc/include src/battle_controller_link_opponent.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_bg.d -I include -I tools/agbcc/include src/battle_bg.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_water.d -I include -I tools/agbcc/include src/battle_anim_water.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_utility_funcs.d -I include -I tools/agbcc/include src/battle_anim_utility_funcs.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_status_effects.d -I include -I tools/agbcc/include src/battle_anim_status_effects.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_special.d -I include -I tools/agbcc/include src/battle_anim_special.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_sound_tasks.d -I include -I tools/agbcc/include src/battle_anim_sound_tasks.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_smokescreen.d -I include -I tools/agbcc/include src/battle_anim_smokescreen.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_rock.d -I include -I tools/agbcc/include src/battle_anim_rock.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_psychic.d -I include -I tools/agbcc/include src/battle_anim_psychic.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_poison.d -I include -I tools/agbcc/include src/battle_anim_poison.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_normal.d -I include -I tools/agbcc/include src/battle_anim_normal.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_mons.d -I include -I tools/agbcc/include src/battle_anim_mons.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_mon_movement.d -I include -I tools/agbcc/include src/battle_anim_mon_movement.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_ice.d -I include -I tools/agbcc/include src/battle_anim_ice.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_ground.d -I include -I tools/agbcc/include src/battle_anim_ground.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_ghost.d -I include -I tools/agbcc/include src/battle_anim_ghost.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_flying.d -I include -I tools/agbcc/include src/battle_anim_flying.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_fire.d -I include -I tools/agbcc/include src/battle_anim_fire.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_fight.d -I include -I tools/agbcc/include src/battle_anim_fight.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_electric.d -I include -I tools/agbcc/include src/battle_anim_electric.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_effects_3.d -I include -I tools/agbcc/include src/battle_anim_effects_3.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_effects_2.d -I include -I tools/agbcc/include src/battle_anim_effects_2.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_effects_1.d -I include -I tools/agbcc/include src/battle_anim_effects_1.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_dragon.d -I include -I tools/agbcc/include src/battle_anim_dragon.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_dark.d -I include -I tools/agbcc/include src/battle_anim_dark.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim.d -I include -I tools/agbcc/include src/battle_anim.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_anim_bug.d -I include -I tools/agbcc/include src/battle_anim_bug.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_ai_switch_items.d -I include -I tools/agbcc/include src/battle_ai_switch_items.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/battle_ai_script_commands.d -I include -I tools/agbcc/include src/battle_ai_script_commands.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/bag.d -I include -I tools/agbcc/include src/bag.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/airport_flyover.d -I include -I tools/agbcc/include src/airport_flyover.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/airplane_flight.d -I include -I tools/agbcc/include src/airplane_flight.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/AgbRfu_LinkManager.d -I include -I tools/agbcc/include src/AgbRfu_LinkManager.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/agb_flash_mx.d -I include -I tools/agbcc/include src/agb_flash_mx.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/agb_flash_le.d -I include -I tools/agbcc/include src/agb_flash_le.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/agb_flash.d -I include -I tools/agbcc/include src/agb_flash.c
+tools/scaninc/scaninc -M build/leafgreen_modern/src/agb_flash_1m.d -I include -I tools/agbcc/include src/agb_flash_1m.c
+make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/agb_flash_1m.o src/agb_flash_1m.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/agb_flash.o src/agb_flash.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/agb_flash_le.o src/agb_flash_le.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/agb_flash_mx.o src/agb_flash_mx.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/AgbRfu_LinkManager.o src/AgbRfu_LinkManager.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/airplane_flight.o src/airplane_flight.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/airport_flyover.o src/airport_flyover.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/bag.o src/bag.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_ai_script_commands.o src/battle_ai_script_commands.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_ai_switch_items.o src/battle_ai_switch_items.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_bug.o src/battle_anim_bug.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim.o src/battle_anim.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_dark.o src/battle_anim_dark.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_dragon.o src/battle_anim_dragon.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_effects_1.o src/battle_anim_effects_1.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_effects_2.o src/battle_anim_effects_2.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_effects_3.o src/battle_anim_effects_3.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_electric.o src/battle_anim_electric.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_fight.o src/battle_anim_fight.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_fire.o src/battle_anim_fire.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_flying.o src/battle_anim_flying.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_ghost.o src/battle_anim_ghost.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_ground.o src/battle_anim_ground.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_ice.o src/battle_anim_ice.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_mon_movement.o src/battle_anim_mon_movement.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_mons.o src/battle_anim_mons.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_normal.o src/battle_anim_normal.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_poison.o src/battle_anim_poison.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_psychic.o src/battle_anim_psychic.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_rock.o src/battle_anim_rock.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_smokescreen.o src/battle_anim_smokescreen.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_sound_tasks.o src/battle_anim_sound_tasks.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_special.o src/battle_anim_special.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_status_effects.o src/battle_anim_status_effects.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_utility_funcs.o src/battle_anim_utility_funcs.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_anim_water.o src/battle_anim_water.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_bg.o src/battle_bg.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_controller_link_opponent.o src/battle_controller_link_opponent.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_controller_link_partner.o src/battle_controller_link_partner.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_controller_oak_old_man.o src/battle_controller_oak_old_man.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_controller_opponent.o src/battle_controller_opponent.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_controller_player.o src/battle_controller_player.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_controller_pokedude.o src/battle_controller_pokedude.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_controller_safari.o src/battle_controller_safari.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_controllers.o src/battle_controllers.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_gfx_sfx_util.o src/battle_gfx_sfx_util.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_interface.o src/battle_interface.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_intro.o src/battle_intro.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_main.o src/battle_main.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_message.o src/battle_message.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_records.o src/battle_records.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_script_commands.o src/battle_script_commands.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_setup.o src/battle_setup.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_tower.o src/battle_tower.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_transition.o src/battle_transition.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_util2.o src/battle_util2.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/battle_util.o src/battle_util.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/berry.o src/berry.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/berry_crush.o src/berry_crush.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/berry_fix_program.o src/berry_fix_program.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/berry_pouch.o src/berry_pouch.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/berry_powder.o src/berry_powder.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/bg.o src/bg.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/bg_regs.o src/bg_regs.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/bike.o src/bike.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/blend_palette.o src/blend_palette.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/blit.o src/blit.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/braille_text.o src/braille_text.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/bug_contest.o src/bug_contest.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/buy_menu_helpers.o src/buy_menu_helpers.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/cable_car_util.o src/cable_car_util.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/cable_club.o src/cable_club.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/cereader_tool.o src/cereader_tool.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/clear_save_data_screen.o src/clear_save_data_screen.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/coins.o src/coins.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/companion_misty.o src/companion_misty.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/coord_event_weather.o src/coord_event_weather.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/credits.o src/credits.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/data.o src/data.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/daycare.o src/daycare.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/decompress.o src/decompress.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/decoration.o src/decoration.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/digit_obj_util.o src/digit_obj_util.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/diploma.o src/diploma.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/dma3_manager.o src/dma3_manager.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/dodrio_berry_picking.o src/dodrio_berry_picking.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/dodrio_berry_picking_comm.o src/dodrio_berry_picking_comm.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/dynamic_placeholder_text_util.o src/dynamic_placeholder_text_util.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/easy_chat_2.o src/easy_chat_2.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/easy_chat_3.o src/easy_chat_3.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/easy_chat.o src/easy_chat.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/ereader_helpers.o src/ereader_helpers.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/ereader_screen.o src/ereader_screen.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/event_data.o src/event_data.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/event_object_lock.o src/event_object_lock.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/event_object_movement.o src/event_object_movement.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/evolution_graphics.o src/evolution_graphics.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/evolution_scene.o src/evolution_scene.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/fame_checker.o src/fame_checker.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/field_camera.o src/field_camera.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/field_control_avatar.o src/field_control_avatar.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/field_door.o src/field_door.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/field_effect.o src/field_effect.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/field_effect_helpers.o src/field_effect_helpers.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/field_fadetransition.o src/field_fadetransition.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/fieldmap.o src/fieldmap.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/field_message_box.o src/field_message_box.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/field_player_avatar.o src/field_player_avatar.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/field_poison.o src/field_poison.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/field_screen_effect.o src/field_screen_effect.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/field_specials.o src/field_specials.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/field_special_scene.o src/field_special_scene.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/field_tasks.o src/field_tasks.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/field_weather.o src/field_weather.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/field_weather_effects.o src/field_weather_effects.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/field_weather_util.o src/field_weather_util.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/fldeff_berrytree.o src/fldeff_berrytree.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/fldeff_cut.o src/fldeff_cut.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/fldeff_dig.o src/fldeff_dig.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/fldeff_flash.o src/fldeff_flash.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/fldeff_poison.o src/fldeff_poison.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/fldeff_rocksmash.o src/fldeff_rocksmash.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/fldeff_softboiled.o src/fldeff_softboiled.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/fldeff_strength.o src/fldeff_strength.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/fldeff_sweetscent.o src/fldeff_sweetscent.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/fldeff_teleport.o src/fldeff_teleport.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/follower_pikachu.o src/follower_pikachu.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/gpu_regs.o src/gpu_regs.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/graphics.o src/graphics.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/hall_of_fame.o src/hall_of_fame.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/heal_location.o src/heal_location.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/help_message.o src/help_message.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/help_system.o src/help_system.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/help_system_util.o src/help_system_util.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/hof_pc.o src/hof_pc.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/image_processing_effects.o src/image_processing_effects.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/intro.o src/intro.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/intro_opening.o src/intro_opening.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/isagbprn.o src/isagbprn.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/item.o src/item.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/itemfinder.o src/itemfinder.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/item_menu.o src/item_menu.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/item_menu_icons.o src/item_menu_icons.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/item_pc.o src/item_pc.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/item_use.o src/item_use.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/keyboard_text.o src/keyboard_text.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/learn_move.o src/learn_move.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/librfu_intr.o src/librfu_intr.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/librfu_rfu.o src/librfu_rfu.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/librfu_sio32id.o src/librfu_sio32id.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/librfu_stwi.o src/librfu_stwi.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/link.o src/link.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/link_rfu_2.o src/link_rfu_2.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/link_rfu_3.o src/link_rfu_3.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/list_menu.o src/list_menu.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/load_save.o src/load_save.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/m4a.o src/m4a.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/m4a_tables.o src/m4a_tables.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/mailbox_pc.o src/mailbox_pc.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/mail.o src/mail.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/mail_data.o src/mail_data.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/main.o src/main.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/main_menu.o src/main_menu.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/malloc.o src/malloc.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/map_name_popup.o src/map_name_popup.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/map_preview_screen.o src/map_preview_screen.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/math_util.o src/math_util.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/menu2.o src/menu2.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/menu.o src/menu.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/menu_helpers.o src/menu_helpers.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/menu_indicators.o src/menu_indicators.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/metatile_behavior.o src/metatile_behavior.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/minigame_countdown.o src/minigame_countdown.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/mini_printf.o src/mini_printf.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/misty_heart.o src/misty_heart.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/money.o src/money.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/mon_markings.o src/mon_markings.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/move_descriptions.o src/move_descriptions.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/multiboot.o src/multiboot.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/mystery_event_msg.o src/mystery_event_msg.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/mystery_event_script.o src/mystery_event_script.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/mystery_gift.o src/mystery_gift.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/mystery_gift_client.o src/mystery_gift_client.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/mystery_gift_link.o src/mystery_gift_link.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/mystery_gift_menu.o src/mystery_gift_menu.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/mystery_gift_scripts.o src/mystery_gift_scripts.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/mystery_gift_server.o src/mystery_gift_server.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/mystery_gift_show_card.o src/mystery_gift_show_card.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/mystery_gift_show_news.o src/mystery_gift_show_news.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/naming_screen.o src/naming_screen.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/new_game.o src/new_game.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/new_menu_helpers.o src/new_menu_helpers.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/oak_speech.o src/oak_speech.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/option_menu.o src/option_menu.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/overworld.o src/overworld.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/palette.o src/palette.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/palette_util.o src/palette_util.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/party_menu.o src/party_menu.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/party_menu_specials.o src/party_menu_specials.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pc_screen_effect.o src/pc_screen_effect.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pikachu_emotions.o src/pikachu_emotions.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/player_pc.o src/player_pc.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/play_time.o src/play_time.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pokeball.o src/pokeball.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pokedex_area_markers.o src/pokedex_area_markers.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pokedex.o src/pokedex.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pokedex_screen.o src/pokedex_screen.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pokemon.o src/pokemon.c
+src/pokemon.c:3037:5: warning: 'GetMonData2' alias between functions of incompatible types 'u32(struct Pokemon *, s32)' {aka 'long unsigned int(struct Pokemon *, long int)'} and 'u32(struct Pokemon *, s32,  u8 *)' {aka 'long unsigned int(struct Pokemon *, long int,  unsigned char *)'} [-Wattribute-alias=]
+ 3037 | u32 GetMonData2(struct Pokemon *mon, s32 field) __attribute__((alias("GetMonData3")));
+      |     ^~~~~~~~~~~
+src/pokemon.c:2969:5: note: aliased declaration here
+ 2969 | u32 GetMonData3(struct Pokemon *mon, s32 field, u8 *data)
+      |     ^~~~~~~~~~~
+src/pokemon.c:3405:5: warning: 'GetBoxMonData2' alias between functions of incompatible types 'u32(struct BoxPokemon *, s32)' {aka 'long unsigned int(struct BoxPokemon *, long int)'} and 'u32(struct BoxPokemon *, s32,  u8 *)' {aka 'long unsigned int(struct BoxPokemon *, long int,  unsigned char *)'} [-Wattribute-alias=]
+ 3405 | u32 GetBoxMonData2(struct BoxPokemon *boxMon, s32 field) __attribute__((alias("GetBoxMonData3")));
+      |     ^~~~~~~~~~~~~~
+src/pokemon.c:3043:5: note: aliased declaration here
+ 3043 | u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
+      |     ^~~~~~~~~~~~~~
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pokemon_icon.o src/pokemon_icon.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pokemon_jump.o src/pokemon_jump.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pokemon_size_record.o src/pokemon_size_record.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pokemon_special_anim.o src/pokemon_special_anim.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pokemon_special_anim_scene.o src/pokemon_special_anim_scene.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pokemon_storage_system.o src/pokemon_storage_system.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pokemon_storage_system_data.o src/pokemon_storage_system_data.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pokemon_storage_system_graphics.o src/pokemon_storage_system_graphics.c
+src/pokemon.c: In function 'SetBoxMonData.part.0':
+src/pokemon.c:3593:38: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+ 3593 |         SET8(substruct1->pp[field - MON_DATA_PP1]);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from include/global.h:272,
+                 from src/pokemon.c:3:
+include/pokemon.h:21:8: note: at offset [-2147483648, -7] into destination object 'pp' of size 4
+   21 |     u8 pp[MAX_MON_MOVES];
+      |        ^~
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pokemon_storage_system_menu.o src/pokemon_storage_system_menu.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pokemon_storage_system_misc.o src/pokemon_storage_system_misc.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pokemon_storage_system_tasks.o src/pokemon_storage_system_tasks.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/pokemon_summary_screen.o src/pokemon_summary_screen.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/post_battle_event_funcs.o src/post_battle_event_funcs.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/prof_pc.o src/prof_pc.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/quest_log_battle.o src/quest_log_battle.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/quest_log.o src/quest_log.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/quest_log_events.o src/quest_log_events.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/quest_log_objects.o src/quest_log_objects.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/quest_log_player.o src/quest_log_player.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/random.o src/random.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/region_map.o src/region_map.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/renewable_hidden_items.o src/renewable_hidden_items.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/reset_save_heap.o src/reset_save_heap.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/reshow_battle_screen.o src/reshow_battle_screen.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/roamer.o src/roamer.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/rocket_trainer_portrait.o src/rocket_trainer_portrait.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/rocket_trio.o src/rocket_trio.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/rom_header_gf.o src/rom_header_gf.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/rotating_tile_puzzle.o src/rotating_tile_puzzle.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/rtc.o src/rtc.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/safari_zone.o src/safari_zone.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/save.o src/save.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/save_failed_screen.o src/save_failed_screen.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/save_location.o src/save_location.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/save_menu_util.o src/save_menu_util.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/scanline_effect.o src/scanline_effect.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/scrcmd.o src/scrcmd.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/script.o src/script.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/script_menu.o src/script_menu.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/script_movement.o src/script_movement.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/script_pokemon_util.o src/script_pokemon_util.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/seagallop.o src/seagallop.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/shop.o src/shop.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/siirtc.o src/siirtc.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/sloopsvc.o src/sloopsvc.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/slot_machine.o src/slot_machine.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/snag.o src/snag.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/sound.o src/sound.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/special_field_anim.o src/special_field_anim.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/sprite.o src/sprite.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/ss_anne.o src/ss_anne.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/starter_pikachu.o src/starter_pikachu.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/start_menu.o src/start_menu.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/strings.o src/strings.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/string_util.o src/string_util.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/surfing_pikachu.o src/surfing_pikachu.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/task.o src/task.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/teachy_tv.o src/teachy_tv.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/text.o src/text.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/text_printer.o src/text_printer.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/text_window.o src/text_window.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/text_window_graphics.o src/text_window_graphics.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/tilemap_util.o src/tilemap_util.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/tileset_anims.o src/tileset_anims.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/tilesets.o src/tilesets.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/time_of_day.o src/time_of_day.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/title_screen.o src/title_screen.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/tm_case.o src/tm_case.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/trade.o src/trade.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/trade_scene.o src/trade_scene.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/trainer_card.o src/trainer_card.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/trainer_fan_club.o src/trainer_fan_club.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/trainer_pokemon_sprites.o src/trainer_pokemon_sprites.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/trainer_see.o src/trainer_see.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/trainer_tower.o src/trainer_tower.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/trainer_tower_sets.o src/trainer_tower_sets.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/trig.o src/trig.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/union_room_battle.o src/union_room_battle.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/union_room.o src/union_room.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/union_room_chat.o src/union_room_chat.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/union_room_chat_display.o src/union_room_chat_display.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/union_room_chat_objects.o src/union_room_chat_objects.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/union_room_message.o src/union_room_message.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/union_room_player_avatar.o src/union_room_player_avatar.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/util.o src/util.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/vs_seeker.o src/vs_seeker.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/wild_encounter.o src/wild_encounter.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/wild_pokemon_area.o src/wild_pokemon_area.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/window_8bpp.o src/window_8bpp.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/window.o src/window.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/wireless_communication_status_screen.o src/wireless_communication_status_screen.c
+/opt/devkitpro/devkitARM/libexec/gcc/arm-none-eabi/16.1.0/cc1 -quiet <flags> -o build/leafgreen_modern/src/wonder_news.o src/wonder_news.c
+tools/preproc/preproc src/crt0.s charmap.txt | arm-none-eabi-cpp -I include - | tools/preproc/preproc -ie src/crt0.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/src/crt0.o
+tools/preproc/preproc src/libagbsyscall.s charmap.txt | arm-none-eabi-cpp -I include - | tools/preproc/preproc -ie src/libagbsyscall.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/src/libagbsyscall.o
+tools/preproc/preproc src/libgcnmultiboot.s charmap.txt | arm-none-eabi-cpp -I include - | tools/preproc/preproc -ie src/libgcnmultiboot.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/src/libgcnmultiboot.o
+tools/preproc/preproc src/m4a_1.s charmap.txt | arm-none-eabi-cpp -I include - | tools/preproc/preproc -ie src/m4a_1.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/src/m4a_1.o
+tools/preproc/preproc src/rom_header.s charmap.txt | arm-none-eabi-cpp -I include - | tools/preproc/preproc -ie src/rom_header.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/src/rom_header.o
+tools/preproc/preproc data/battle_ai_scripts.s charmap.txt | arm-none-eabi-cpp -I include - | tools/preproc/preproc -ie data/battle_ai_scripts.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/data/battle_ai_scripts.o
+tools/preproc/preproc data/battle_anim_scripts.s charmap.txt | arm-none-eabi-cpp -I include - | tools/preproc/preproc -ie data/battle_anim_scripts.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/data/battle_anim_scripts.o
+tools/preproc/preproc data/battle_scripts_1.s charmap.txt | arm-none-eabi-cpp -I include - | tools/preproc/preproc -ie data/battle_scripts_1.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/data/battle_scripts_1.o
+tools/preproc/preproc data/battle_scripts_2.s charmap.txt | arm-none-eabi-cpp -I include - | tools/preproc/preproc -ie data/battle_scripts_2.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/data/battle_scripts_2.o
+tools/preproc/preproc data/event_scripts.s charmap.txt | arm-none-eabi-cpp -I include - | tools/preproc/preproc -ie data/event_scripts.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/data/event_scripts.o
+tools/preproc/preproc data/field_effect_scripts.s charmap.txt | arm-none-eabi-cpp -I include - | tools/preproc/preproc -ie data/field_effect_scripts.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/data/field_effect_scripts.o
+tools/preproc/preproc data/map_events.s charmap.txt | arm-none-eabi-cpp -I include -nostdinc -undef -Wno-unicode - | tools/preproc/preproc -ie data/map_events.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/data/map_events.o
+tools/preproc/preproc data/maps.s charmap.txt | arm-none-eabi-cpp -I include -nostdinc -undef -Wno-unicode - | tools/preproc/preproc -ie data/maps.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/data/maps.o
+tools/preproc/preproc data/multiboot_berry_glitch_fix.s charmap.txt | arm-none-eabi-cpp -I include - | tools/preproc/preproc -ie data/multiboot_berry_glitch_fix.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/data/multiboot_berry_glitch_fix.o
+tools/preproc/preproc data/multiboot_ereader.s charmap.txt | arm-none-eabi-cpp -I include - | tools/preproc/preproc -ie data/multiboot_ereader.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/data/multiboot_ereader.o
+tools/preproc/preproc data/multiboot_pokemon_colosseum.s charmap.txt | arm-none-eabi-cpp -I include - | tools/preproc/preproc -ie data/multiboot_pokemon_colosseum.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/data/multiboot_pokemon_colosseum.o
+tools/preproc/preproc data/mystery_event_msg.s charmap.txt | arm-none-eabi-cpp -I include - | tools/preproc/preproc -ie data/mystery_event_msg.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/data/mystery_event_msg.o
+tools/preproc/preproc data/mystery_event_script_cmd_table.s charmap.txt | arm-none-eabi-cpp -I include - | tools/preproc/preproc -ie data/mystery_event_script_cmd_table.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/data/mystery_event_script_cmd_table.o
+tools/preproc/preproc data/sound_data.s charmap.txt | arm-none-eabi-cpp -I include - | tools/preproc/preproc -ie data/sound_data.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -o build/leafgreen_modern/data/sound_data.o
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_abandoned_ship.o sound/songs/midi/mus_abandoned_ship.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_aqua_magma_hideout.o sound/songs/midi/mus_aqua_magma_hideout.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_b_arena.o sound/songs/midi/mus_b_arena.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_b_dome_lobby.o sound/songs/midi/mus_b_dome_lobby.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_b_dome.o sound/songs/midi/mus_b_dome.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_berry_pick.o sound/songs/midi/mus_berry_pick.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_b_factory.o sound/songs/midi/mus_b_factory.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_b_frontier.o sound/songs/midi/mus_b_frontier.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_birch_lab.o sound/songs/midi/mus_birch_lab.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_b_palace.o sound/songs/midi/mus_b_palace.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_b_pike.o sound/songs/midi/mus_b_pike.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_b_pyramid.o sound/songs/midi/mus_b_pyramid.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_b_tower.o sound/songs/midi/mus_b_tower.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_b_tower_rs.o sound/songs/midi/mus_b_tower_rs.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_caught_intro.o sound/songs/midi/mus_caught_intro.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_caught.o sound/songs/midi/mus_caught.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_cave_of_origin.o sound/songs/midi/mus_cave_of_origin.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_celadon.o sound/songs/midi/mus_celadon.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_cinnabar.o sound/songs/midi/mus_cinnabar.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_contest_lobby.o sound/songs/midi/mus_contest_lobby.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_contest.o sound/songs/midi/mus_contest.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_credits.o sound/songs/midi/mus_credits.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_cycling.o sound/songs/midi/mus_cycling.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_dewford.o sound/songs/midi/mus_dewford.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_dex_rating.o sound/songs/midi/mus_dex_rating.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_dummy.o sound/songs/midi/mus_dummy.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_encounter_aqua.o sound/songs/midi/mus_encounter_aqua.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_encounter_boy.o sound/songs/midi/mus_encounter_boy.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_encounter_brendan.o sound/songs/midi/mus_encounter_brendan.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_encounter_deoxys.o sound/songs/midi/mus_encounter_deoxys.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_encounter_girl.o sound/songs/midi/mus_encounter_girl.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_encounter_gym_leader.o sound/songs/midi/mus_encounter_gym_leader.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_encounter_may.o sound/songs/midi/mus_encounter_may.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_encounter_rival.o sound/songs/midi/mus_encounter_rival.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_encounter_rocket.o sound/songs/midi/mus_encounter_rocket.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_ever_grande.o sound/songs/midi/mus_ever_grande.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_evolution_intro.o sound/songs/midi/mus_evolution_intro.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_evolution.o sound/songs/midi/mus_evolution.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_evolved.o sound/songs/midi/mus_evolved.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_fallarbor.o sound/songs/midi/mus_fallarbor.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_follow_me.o sound/songs/midi/mus_follow_me.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_fortree.o sound/songs/midi/mus_fortree.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_fuchsia.o sound/songs/midi/mus_fuchsia.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_game_corner.o sound/songs/midi/mus_game_corner.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_game_freak.o sound/songs/midi/mus_game_freak.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_gym.o sound/songs/midi/mus_gym.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_hall_of_fame.o sound/songs/midi/mus_hall_of_fame.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_hall_of_fame_room.o sound/songs/midi/mus_hall_of_fame_room.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_heal.o sound/songs/midi/mus_heal.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_heal_unused.o sound/songs/midi/mus_heal_unused.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_help.o sound/songs/midi/mus_help.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_intro_fight.o sound/songs/midi/mus_intro_fight.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_jigglypuff.o sound/songs/midi/mus_jigglypuff.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_lavender.o sound/songs/midi/mus_lavender.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_level_up.o sound/songs/midi/mus_level_up.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_lilycove.o sound/songs/midi/mus_lilycove.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_lilycove_museum.o sound/songs/midi/mus_lilycove_museum.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_littleroot.o sound/songs/midi/mus_littleroot.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_move_deleted.o sound/songs/midi/mus_move_deleted.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_mt_chimney.o sound/songs/midi/mus_mt_chimney.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_mt_moon.o sound/songs/midi/mus_mt_moon.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_mt_pyre_exterior.o sound/songs/midi/mus_mt_pyre_exterior.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_mt_pyre.o sound/songs/midi/mus_mt_pyre.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_mystery_gift.o sound/songs/midi/mus_mystery_gift.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_net_center.o sound/songs/midi/mus_net_center.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_new_game_exit.o sound/songs/midi/mus_new_game_exit.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_new_game_instruct.o sound/songs/midi/mus_new_game_instruct.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_new_game_intro.o sound/songs/midi/mus_new_game_intro.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_oak_lab.o sound/songs/midi/mus_oak_lab.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_oak.o sound/songs/midi/mus_oak.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_obtain_badge.o sound/songs/midi/mus_obtain_badge.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_obtain_berry.o sound/songs/midi/mus_obtain_berry.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_obtain_item.o sound/songs/midi/mus_obtain_item.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_obtain_key_item.o sound/songs/midi/mus_obtain_key_item.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_obtain_tmhm.o sound/songs/midi/mus_obtain_tmhm.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_oceanic_museum.o sound/songs/midi/mus_oceanic_museum.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_oldale.o sound/songs/midi/mus_oldale.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_pallet.o sound/songs/midi/mus_pallet.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_petalburg.o sound/songs/midi/mus_petalburg.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_petalburg_woods.o sound/songs/midi/mus_petalburg_woods.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_pewter.o sound/songs/midi/mus_pewter.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_photo.o sound/songs/midi/mus_photo.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_poke_center.o sound/songs/midi/mus_poke_center.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_poke_flute.o sound/songs/midi/mus_poke_flute.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_poke_jump.o sound/songs/midi/mus_poke_jump.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_poke_mansion.o sound/songs/midi/mus_poke_mansion.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_poke_mart.o sound/songs/midi/mus_poke_mart.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_poke_tower.o sound/songs/midi/mus_poke_tower.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_rg_sevii_cave.o sound/songs/midi/mus_rg_sevii_cave.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_rival_exit.o sound/songs/midi/mus_rival_exit.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_rocket_hideout.o sound/songs/midi/mus_rocket_hideout.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_route101.o sound/songs/midi/mus_route101.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_route104.o sound/songs/midi/mus_route104.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_route110.o sound/songs/midi/mus_route110.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_route113.o sound/songs/midi/mus_route113.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_route119.o sound/songs/midi/mus_route119.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_route11.o sound/songs/midi/mus_route11.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_route120.o sound/songs/midi/mus_route120.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_route122.o sound/songs/midi/mus_route122.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_route1.o sound/songs/midi/mus_route1.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_route24.o sound/songs/midi/mus_route24.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_route3.o sound/songs/midi/mus_route3.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_rs_follow_me.o sound/songs/midi/mus_rs_follow_me.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_rs_vs_gym_leader.o sound/songs/midi/mus_rs_vs_gym_leader.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_rs_vs_trainer.o sound/songs/midi/mus_rs_vs_trainer.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_rustboro.o sound/songs/midi/mus_rustboro.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_safari_zone.o sound/songs/midi/mus_safari_zone.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_sailing.o sound/songs/midi/mus_sailing.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_school.o sound/songs/midi/mus_school.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_sealed_chamber.o sound/songs/midi/mus_sealed_chamber.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_sevii_123.o sound/songs/midi/mus_sevii_123.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_sevii_45.o sound/songs/midi/mus_sevii_45.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_sevii_67.o sound/songs/midi/mus_sevii_67.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_sevii_cave.o sound/songs/midi/mus_sevii_cave.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_sevii_dungeon.o sound/songs/midi/mus_sevii_dungeon.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_sevii_route.o sound/songs/midi/mus_sevii_route.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_silph.o sound/songs/midi/mus_silph.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_slateport.o sound/songs/midi/mus_slateport.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_slots_jackpot.o sound/songs/midi/mus_slots_jackpot.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_slots_win.o sound/songs/midi/mus_slots_win.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_slow_pallet.o sound/songs/midi/mus_slow_pallet.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_sootopolis.o sound/songs/midi/mus_sootopolis.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_ss_anne.o sound/songs/midi/mus_ss_anne.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_surf.o sound/songs/midi/mus_surf.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_teachy_tv_menu.o sound/songs/midi/mus_teachy_tv_menu.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_teachy_tv_show.o sound/songs/midi/mus_teachy_tv_show.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_title.o sound/songs/midi/mus_title.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_too_bad.o sound/songs/midi/mus_too_bad.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_trainer_tower.o sound/songs/midi/mus_trainer_tower.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_trick_house.o sound/songs/midi/mus_trick_house.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_underwater.o sound/songs/midi/mus_underwater.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_union_room.o sound/songs/midi/mus_union_room.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_verdanturf.o sound/songs/midi/mus_verdanturf.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_vermillion.o sound/songs/midi/mus_vermillion.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_victory_aqua_magma.o sound/songs/midi/mus_victory_aqua_magma.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_victory_gym_leader.o sound/songs/midi/mus_victory_gym_leader.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_victory_road.o sound/songs/midi/mus_victory_road.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_victory_trainer.o sound/songs/midi/mus_victory_trainer.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_victory_wild.o sound/songs/midi/mus_victory_wild.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_viridian_forest.o sound/songs/midi/mus_viridian_forest.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_vs_aqua_magma.o sound/songs/midi/mus_vs_aqua_magma.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_vs_champion.o sound/songs/midi/mus_vs_champion.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_vs_deoxys.o sound/songs/midi/mus_vs_deoxys.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_vs_gym_leader.o sound/songs/midi/mus_vs_gym_leader.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_vs_legend.o sound/songs/midi/mus_vs_legend.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_vs_mewtwo.o sound/songs/midi/mus_vs_mewtwo.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_vs_rival.o sound/songs/midi/mus_vs_rival.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_vs_trainer.o sound/songs/midi/mus_vs_trainer.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/mus_vs_wild.o sound/songs/midi/mus_vs_wild.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_applause.o sound/songs/midi/se_applause.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_bag_cursor.o sound/songs/midi/se_bag_cursor.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_bag_pocket.o sound/songs/midi/se_bag_pocket.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ball_bounce_1.o sound/songs/midi/se_ball_bounce_1.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ball_bounce_2.o sound/songs/midi/se_ball_bounce_2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ball_bounce_3.o sound/songs/midi/se_ball_bounce_3.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ball_bounce_4.o sound/songs/midi/se_ball_bounce_4.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ball_click.o sound/songs/midi/se_ball_click.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ball.o sound/songs/midi/se_ball.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_balloon_blue.o sound/songs/midi/se_balloon_blue.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_balloon_red.o sound/songs/midi/se_balloon_red.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_balloon_yellow.o sound/songs/midi/se_balloon_yellow.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ball_open.o sound/songs/midi/se_ball_open.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ball_throw.o sound/songs/midi/se_ball_throw.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ball_trade.o sound/songs/midi/se_ball_trade.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ball_tray_ball.o sound/songs/midi/se_ball_tray_ball.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ball_tray_enter.o sound/songs/midi/se_ball_tray_enter.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ball_tray_exit.o sound/songs/midi/se_ball_tray_exit.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_bang.o sound/songs/midi/se_bang.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_berry_blender.o sound/songs/midi/se_berry_blender.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_bike_bell.o sound/songs/midi/se_bike_bell.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_bike_hop.o sound/songs/midi/se_bike_hop.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_boo.o sound/songs/midi/se_boo.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_breakable_door.o sound/songs/midi/se_breakable_door.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_bridge_walk.o sound/songs/midi/se_bridge_walk.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_card_flip.o sound/songs/midi/se_card_flip.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_card_flipping.o sound/songs/midi/se_card_flipping.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_card_open.o sound/songs/midi/se_card_open.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_click.o sound/songs/midi/se_click.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_contest_condition_lose.o sound/songs/midi/se_contest_condition_lose.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_contest_curtain_fall.o sound/songs/midi/se_contest_curtain_fall.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_contest_curtain_rise.o sound/songs/midi/se_contest_curtain_rise.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_contest_heart.o sound/songs/midi/se_contest_heart.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_contest_icon_change.o sound/songs/midi/se_contest_icon_change.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_contest_icon_clear.o sound/songs/midi/se_contest_icon_clear.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_contest_mons_turn.o sound/songs/midi/se_contest_mons_turn.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_contest_place.o sound/songs/midi/se_contest_place.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_deoxys_move.o sound/songs/midi/se_deoxys_move.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_dex_page.o sound/songs/midi/se_dex_page.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_dex_scroll.o sound/songs/midi/se_dex_scroll.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_dex_search.o sound/songs/midi/se_dex_search.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ding_dong.o sound/songs/midi/se_ding_dong.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_door.o sound/songs/midi/se_door.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_downpour.o sound/songs/midi/se_downpour.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_downpour_stop.o sound/songs/midi/se_downpour_stop.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_effective.o sound/songs/midi/se_effective.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_egg_hatch.o sound/songs/midi/se_egg_hatch.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_elevator.o sound/songs/midi/se_elevator.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_escalator.o sound/songs/midi/se_escalator.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_exit.o sound/songs/midi/se_exit.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_exp_max.o sound/songs/midi/se_exp_max.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_exp.o sound/songs/midi/se_exp.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_failure.o sound/songs/midi/se_failure.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_faint.o sound/songs/midi/se_faint.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_fall.o sound/songs/midi/se_fall.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_field_poison.o sound/songs/midi/se_field_poison.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_flee.o sound/songs/midi/se_flee.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_fu_zaku.o sound/songs/midi/se_fu_zaku.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_glass_flute.o sound/songs/midi/se_glass_flute.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_help_close.o sound/songs/midi/se_help_close.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_help_error.o sound/songs/midi/se_help_error.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_help_open.o sound/songs/midi/se_help_open.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ice_break.o sound/songs/midi/se_ice_break.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ice_crack.o sound/songs/midi/se_ice_crack.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ice_stairs.o sound/songs/midi/se_ice_stairs.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_intro_blast.o sound/songs/midi/se_intro_blast.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_itemfinder.o sound/songs/midi/se_itemfinder.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_lavaridge_fall_warp.o sound/songs/midi/se_lavaridge_fall_warp.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ledge.o sound/songs/midi/se_ledge.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_low_health.o sound/songs/midi/se_low_health.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_absorb_2.o sound/songs/midi/se_m_absorb_2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_absorb.o sound/songs/midi/se_m_absorb.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_acid_armor.o sound/songs/midi/se_m_acid_armor.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_attract2.o sound/songs/midi/se_m_attract2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_attract.o sound/songs/midi/se_m_attract.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_barrier.o sound/songs/midi/se_m_barrier.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_baton_pass.o sound/songs/midi/se_m_baton_pass.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_belly_drum.o sound/songs/midi/se_m_belly_drum.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_bind.o sound/songs/midi/se_m_bind.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_bite.o sound/songs/midi/se_m_bite.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_blizzard2.o sound/songs/midi/se_m_blizzard2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_blizzard.o sound/songs/midi/se_m_blizzard.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_bonemerang.o sound/songs/midi/se_m_bonemerang.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_brick_break.o sound/songs/midi/se_m_brick_break.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_bubble2.o sound/songs/midi/se_m_bubble2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_bubble3.o sound/songs/midi/se_m_bubble3.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_bubble_beam2.o sound/songs/midi/se_m_bubble_beam2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_bubble_beam.o sound/songs/midi/se_m_bubble_beam.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_bubble.o sound/songs/midi/se_m_bubble.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_charge.o sound/songs/midi/se_m_charge.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_charm.o sound/songs/midi/se_m_charm.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_comet_punch.o sound/songs/midi/se_m_comet_punch.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_confuse_ray.o sound/songs/midi/se_m_confuse_ray.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_cosmic_power.o sound/songs/midi/se_m_cosmic_power.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_crabhammer.o sound/songs/midi/se_m_crabhammer.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_cut.o sound/songs/midi/se_m_cut.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_detect.o sound/songs/midi/se_m_detect.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_dig.o sound/songs/midi/se_m_dig.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_dive.o sound/songs/midi/se_m_dive.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_dizzy_punch.o sound/songs/midi/se_m_dizzy_punch.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_double_slap.o sound/songs/midi/se_m_double_slap.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_double_team.o sound/songs/midi/se_m_double_team.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_dragon_rage.o sound/songs/midi/se_m_dragon_rage.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_earthquake.o sound/songs/midi/se_m_earthquake.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_ember.o sound/songs/midi/se_m_ember.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_encore2.o sound/songs/midi/se_m_encore2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_encore.o sound/songs/midi/se_m_encore.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_explosion.o sound/songs/midi/se_m_explosion.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_faint_attack.o sound/songs/midi/se_m_faint_attack.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_fire_punch.o sound/songs/midi/se_m_fire_punch.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_flamethrower.o sound/songs/midi/se_m_flamethrower.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_flame_wheel2.o sound/songs/midi/se_m_flame_wheel2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_flame_wheel.o sound/songs/midi/se_m_flame_wheel.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_flatter.o sound/songs/midi/se_m_flatter.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_fly.o sound/songs/midi/se_m_fly.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_giga_drain.o sound/songs/midi/se_m_giga_drain.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_grasswhistle.o sound/songs/midi/se_m_grasswhistle.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_gust2.o sound/songs/midi/se_m_gust2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_gust.o sound/songs/midi/se_m_gust.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_hail.o sound/songs/midi/se_m_hail.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_harden.o sound/songs/midi/se_m_harden.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_haze.o sound/songs/midi/se_m_haze.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_headbutt.o sound/songs/midi/se_m_headbutt.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_heal_bell.o sound/songs/midi/se_m_heal_bell.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_heat_wave.o sound/songs/midi/se_m_heat_wave.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_horn_attack.o sound/songs/midi/se_m_horn_attack.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_hydro_pump.o sound/songs/midi/se_m_hydro_pump.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_hyper_beam2.o sound/songs/midi/se_m_hyper_beam2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_hyper_beam.o sound/songs/midi/se_m_hyper_beam.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_icy_wind.o sound/songs/midi/se_m_icy_wind.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_jump_kick.o sound/songs/midi/se_m_jump_kick.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_leer.o sound/songs/midi/se_m_leer.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_lick.o sound/songs/midi/se_m_lick.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_lock_on.o sound/songs/midi/se_m_lock_on.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_mega_kick2.o sound/songs/midi/se_m_mega_kick2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_mega_kick.o sound/songs/midi/se_m_mega_kick.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_metronome.o sound/songs/midi/se_m_metronome.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_milk_drink.o sound/songs/midi/se_m_milk_drink.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_minimize.o sound/songs/midi/se_m_minimize.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_mist.o sound/songs/midi/se_m_mist.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_moonlight.o sound/songs/midi/se_m_moonlight.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_morning_sun.o sound/songs/midi/se_m_morning_sun.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_nightmare.o sound/songs/midi/se_m_nightmare.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_pay_day.o sound/songs/midi/se_m_pay_day.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_perish_song.o sound/songs/midi/se_m_perish_song.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_petal_dance.o sound/songs/midi/se_m_petal_dance.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_poison_powder.o sound/songs/midi/se_m_poison_powder.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_psybeam2.o sound/songs/midi/se_m_psybeam2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_psybeam.o sound/songs/midi/se_m_psybeam.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_rain_dance.o sound/songs/midi/se_m_rain_dance.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_razor_wind2.o sound/songs/midi/se_m_razor_wind2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_razor_wind.o sound/songs/midi/se_m_razor_wind.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_reflect.o sound/songs/midi/se_m_reflect.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_reversal.o sound/songs/midi/se_m_reversal.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_rock_throw.o sound/songs/midi/se_m_rock_throw.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_sacred_fire2.o sound/songs/midi/se_m_sacred_fire2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_sacred_fire.o sound/songs/midi/se_m_sacred_fire.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_sand_attack.o sound/songs/midi/se_m_sand_attack.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_sandstorm.o sound/songs/midi/se_m_sandstorm.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_sand_tomb.o sound/songs/midi/se_m_sand_tomb.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_scratch.o sound/songs/midi/se_m_scratch.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_screech.o sound/songs/midi/se_m_screech.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_self_destruct.o sound/songs/midi/se_m_self_destruct.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_sing.o sound/songs/midi/se_m_sing.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_sketch.o sound/songs/midi/se_m_sketch.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_sky_uppercut.o sound/songs/midi/se_m_sky_uppercut.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_snore.o sound/songs/midi/se_m_snore.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_solar_beam.o sound/songs/midi/se_m_solar_beam.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_spit_up.o sound/songs/midi/se_m_spit_up.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_stat_decrease.o sound/songs/midi/se_m_stat_decrease.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_stat_increase.o sound/songs/midi/se_m_stat_increase.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_strength.o sound/songs/midi/se_m_strength.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_string_shot2.o sound/songs/midi/se_m_string_shot2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_string_shot.o sound/songs/midi/se_m_string_shot.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_supersonic.o sound/songs/midi/se_m_supersonic.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_surf.o sound/songs/midi/se_m_surf.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_swagger2.o sound/songs/midi/se_m_swagger2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_swagger.o sound/songs/midi/se_m_swagger.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_sweet_scent.o sound/songs/midi/se_m_sweet_scent.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_swift.o sound/songs/midi/se_m_swift.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_swords_dance.o sound/songs/midi/se_m_swords_dance.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_tail_whip.o sound/songs/midi/se_m_tail_whip.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_take_down.o sound/songs/midi/se_m_take_down.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_teeter_dance.o sound/songs/midi/se_m_teeter_dance.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_teleport.o sound/songs/midi/se_m_teleport.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_thunderbolt2.o sound/songs/midi/se_m_thunderbolt2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_thunderbolt.o sound/songs/midi/se_m_thunderbolt.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_thunder_wave.o sound/songs/midi/se_m_thunder_wave.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_toxic.o sound/songs/midi/se_m_toxic.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_tri_attack2.o sound/songs/midi/se_m_tri_attack2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_tri_attack.o sound/songs/midi/se_m_tri_attack.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_twister.o sound/songs/midi/se_m_twister.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_mud_ball.o sound/songs/midi/se_mud_ball.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_mugshot.o sound/songs/midi/se_mugshot.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_uproar.o sound/songs/midi/se_m_uproar.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_vicegrip.o sound/songs/midi/se_m_vicegrip.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_vital_throw2.o sound/songs/midi/se_m_vital_throw2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_vital_throw.o sound/songs/midi/se_m_vital_throw.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_waterfall.o sound/songs/midi/se_m_waterfall.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_whirlpool.o sound/songs/midi/se_m_whirlpool.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_wing_attack.o sound/songs/midi/se_m_wing_attack.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_m_yawn.o sound/songs/midi/se_m_yawn.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_note_a.o sound/songs/midi/se_note_a.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_note_b.o sound/songs/midi/se_note_b.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_note_c_high.o sound/songs/midi/se_note_c_high.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_note_c.o sound/songs/midi/se_note_c.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_note_d.o sound/songs/midi/se_note_d.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_note_e.o sound/songs/midi/se_note_e.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_not_effective.o sound/songs/midi/se_not_effective.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_note_f.o sound/songs/midi/se_note_f.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_note_g.o sound/songs/midi/se_note_g.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_orb.o sound/songs/midi/se_orb.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_pc_login.o sound/songs/midi/se_pc_login.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_pc_off.o sound/songs/midi/se_pc_off.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_pc_on.o sound/songs/midi/se_pc_on.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_pin.o sound/songs/midi/se_pin.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_poke_jump_failure.o sound/songs/midi/se_poke_jump_failure.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_poke_jump_success.o sound/songs/midi/se_poke_jump_success.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_pokenav_off.o sound/songs/midi/se_pokenav_off.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_pokenav_on.o sound/songs/midi/se_pokenav_on.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_puddle.o sound/songs/midi/se_puddle.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_rain.o sound/songs/midi/se_rain.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_rain_stop.o sound/songs/midi/se_rain_stop.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_repel.o sound/songs/midi/se_repel.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_rotating_gate.o sound/songs/midi/se_rotating_gate.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_roulette_ball2.o sound/songs/midi/se_roulette_ball2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_roulette_ball.o sound/songs/midi/se_roulette_ball.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_rs_door.o sound/songs/midi/se_rs_door.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_rs_shop.o sound/songs/midi/se_rs_shop.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_save.o sound/songs/midi/se_save.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_select.o sound/songs/midi/se_select.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_shiny.o sound/songs/midi/se_shiny.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ship.o sound/songs/midi/se_ship.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_shop.o sound/songs/midi/se_shop.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_sliding_door.o sound/songs/midi/se_sliding_door.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_ss_anne_horn.o sound/songs/midi/se_ss_anne_horn.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_success.o sound/songs/midi/se_success.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_super_effective.o sound/songs/midi/se_super_effective.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_switch.o sound/songs/midi/se_switch.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_taillow_wing_flap.o sound/songs/midi/se_taillow_wing_flap.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_thunder2.o sound/songs/midi/se_thunder2.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_thunder.o sound/songs/midi/se_thunder.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_thunderstorm.o sound/songs/midi/se_thunderstorm.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_thunderstorm_stop.o sound/songs/midi/se_thunderstorm_stop.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_truck_door.o sound/songs/midi/se_truck_door.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_truck_move.o sound/songs/midi/se_truck_move.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_truck_stop.o sound/songs/midi/se_truck_stop.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_truck_unload.o sound/songs/midi/se_truck_unload.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_unlock.o sound/songs/midi/se_unlock.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_use_item.o sound/songs/midi/se_use_item.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_vend.o sound/songs/midi/se_vend.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_wall_hit.o sound/songs/midi/se_wall_hit.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_warp_in.o sound/songs/midi/se_warp_in.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_warp_out.o sound/songs/midi/se_warp_out.s
+arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=1 -I sound -o build/leafgreen_modern/sound/songs/midi/se_win_open.o sound/songs/midi/se_win_open.s
+/opt/devkitpro/devkitARM/bin/arm-none-eabi-ld: warning: ../../pokeleafgreen_modern.elf has a LOAD segment with RWX permissions
+`.opening_movie' referenced in section `.text' of src/intro_opening.o: defined in discarded section `.opening_movie' of src/intro_opening.o
+`.opening_movie' referenced in section `.text' of src/intro_opening.o: defined in discarded section `.opening_movie' of src/intro_opening.o
+`.opening_movie' referenced in section `.text' of src/intro_opening.o: defined in discarded section `.opening_movie' of src/intro_opening.o
+Memory region         Used Size  Region Size  %age Used
+           EWRAM:      260008 B       256 KB     99.19%
+           IWRAM:       30200 B        32 KB     92.16%
+             ROM:    13125212 B        32 MB     39.12%
+make[1]: *** [Makefile:397: pokeleafgreen_modern.elf] Error 1
+make: *** [Makefile:247: leafgreen_modern] Error 2

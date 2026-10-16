@@ -1,0 +1,13 @@
+{
+  "path": "src/union_room.c",
+  "before_sha256": "471b382b77048cee552f739c8f4c5acbe20b33dc7607d9782d296f5a5baf5846",
+  "after_sha256": "6d1c4b0a5ed244ccd931732b4f4f21b1e00d473289f2ff5ff44746604ac56350",
+  "before_bytes": 170721,
+  "after_bytes": 171175,
+  "apply": false,
+  "storage_and_save_structures_changed": false,
+  "array_size_and_link_globals_changed": false,
+  "valid_terminated_name_logic_preserved": true,
+  "wireless_service_and_map_hooks_changed": false,
+  "native_validation_pending": true
+}

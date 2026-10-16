@@ -1,0 +1,7402 @@
+{
+  "pass": false,
+  "status": "failed",
+  "runner_version": 8,
+  "runner_revision": 1,
+  "ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+  "ELF_sha256": "e625069ea9379ea3dc2f83e3014fb741a2e0b7383f41f6d56bc37fc0eae6f17b",
+  "SAV_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+  "source_sav": "/workspaces/pokefirered/saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav",
+  "RAM_writes": 0,
+  "direct_script_calls": 0,
+  "forced_battle_outcomes": 0,
+  "cases": [],
+  "stages": [
+    {
+      "stage": "00-natural-Stone-request-save",
+      "frame": 782,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-delivery-r1/00-natural-Stone-request-save.png",
+      "location": [
+        54,
+        2,
+        17,
+        6
+      ],
+      "scene": 4,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "DiveBalls": 0,
+      "ExpShare": 0,
+      "grunt_won": true,
+      "twins_won": false,
+      "idle": true
+    },
+    {
+      "stage": "01-native-Devon-exit",
+      "frame": 2295,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-delivery-r1/01-native-Devon-exit.png",
+      "location": [
+        43,
+        3,
+        11,
+        15
+      ],
+      "scene": 4,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "DiveBalls": 0,
+      "ExpShare": 0,
+      "grunt_won": true,
+      "twins_won": false,
+      "idle": true
+    },
+    {
+      "stage": "02-route104-north",
+      "frame": 3619,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-delivery-r1/02-route104-north.png",
+      "location": [
+        43,
+        19,
+        14,
+        0
+      ],
+      "scene": 4,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "DiveBalls": 0,
+      "ExpShare": 0,
+      "grunt_won": true,
+      "twins_won": false,
+      "idle": true
+    },
+    {
+      "stage": "03-before-twins",
+      "frame": 4263,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-delivery-r1/03-before-twins.png",
+      "location": [
+        43,
+        19,
+        26,
+        16
+      ],
+      "scene": 4,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "DiveBalls": 0,
+      "ExpShare": 0,
+      "grunt_won": true,
+      "twins_won": false,
+      "idle": true
+    },
+    {
+      "stage": "04-woods-native-entry",
+      "frame": 11740,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-delivery-r1/04-woods-native-entry.png",
+      "location": [
+        67,
+        11,
+        14,
+        5
+      ],
+      "scene": 4,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "DiveBalls": 0,
+      "ExpShare": 0,
+      "grunt_won": true,
+      "twins_won": true,
+      "idle": true
+    },
+    {
+      "stage": "05-briney-dock",
+      "frame": 21469,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-delivery-r1/05-briney-dock.png",
+      "location": [
+        43,
+        19,
+        13,
+        51
+      ],
+      "scene": 4,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "DiveBalls": 0,
+      "ExpShare": 0,
+      "grunt_won": true,
+      "twins_won": true,
+      "idle": true
+    },
+    {
+      "stage": "06-route109-boat-arrival",
+      "frame": 21831,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-delivery-r1/06-route109-boat-arrival.png",
+      "location": [
+        43,
+        24,
+        22,
+        24
+      ],
+      "scene": 4,
+      "briney": 2,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "DiveBalls": 0,
+      "ExpShare": 0,
+      "grunt_won": true,
+      "twins_won": true,
+      "idle": true
+    },
+    {
+      "stage": "07-slateport-native-entry",
+      "frame": 28456,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-delivery-r1/07-slateport-native-entry.png",
+      "location": [
+        43,
+        1,
+        22,
+        59
+      ],
+      "scene": 4,
+      "briney": 2,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "DiveBalls": 0,
+      "ExpShare": 0,
+      "grunt_won": true,
+      "twins_won": true,
+      "idle": true
+    }
+  ],
+  "scope": "Actual continuous scene4 SAVE to Route104 boat, Stern parcel delivery and Stone Exp Share; prior rescue is hash-verified evidence",
+  "ELF_source_owned_symbol_bindings": {
+    "CB2_UpdatePartyMenu": {
+      "value": 135414745,
+      "size": 26,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 49549
+    },
+    "Task_HandleChooseMonInput": {
+      "value": 135418721,
+      "size": 124,
+      "section": 3,
+      "info": 18,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 258099
+    },
+    "Task_HandleSelectionMenuInput": {
+      "value": 135431393,
+      "size": 240,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 50260
+    },
+    "CursorCB_SendMon": {
+      "value": 135436665,
+      "size": 96,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 49510
+    },
+    "gPartyMenu": {
+      "value": 33796252,
+      "size": 20,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 252161
+    },
+    "sPartyMenuInternal": {
+      "value": 33796248,
+      "size": 4,
+      "section": 1,
+      "info": 1,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 49390
+    },
+    "sMenu": {
+      "value": 33795552,
+      "size": 12,
+      "section": 1,
+      "info": 1,
+      "translation_unit": "menu.o",
+      "symbol_index": 46912
+    },
+    "gBattlePartyCurrentOrder": {
+      "value": 33796312,
+      "size": 3,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 281139
+    },
+    "gBattlerPartyIndexes": {
+      "value": 33700814,
+      "size": 8,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 250994
+    },
+    "gBattlersCount": {
+      "value": 33700812,
+      "size": 1,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 251596
+    },
+    "gBattlerInMenuId": {
+      "value": 33701892,
+      "size": 1,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 271293
+    },
+    "gBattleStruct": {
+      "value": 33701864,
+      "size": 4,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 268069
+    },
+    "sCursorOptions": {
+      "value": 141652552,
+      "size": 248,
+      "section": 6,
+      "info": 1,
+      "translation_unit": "party_menu.o",
+      "symbol_index": 49499
+    },
+    "gText_SendOut": {
+      "value": 141373312,
+      "size": 9,
+      "section": 6,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 256697
+    },
+    "gSelectedMonPartyId": {
+      "value": 33796285,
+      "size": 1,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 273112
+    },
+    "gTasks": {
+      "value": 50352336,
+      "size": 640,
+      "section": 2,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 282428
+    },
+    "gBattleOutcome": {
+      "value": 33701514,
+      "size": 1,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 274041
+    },
+    "BattleMainCB2": {
+      "value": 134288381,
+      "size": 116,
+      "section": 3,
+      "info": 18,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 258905
+    },
+    "gPaletteFade": {
+      "value": 33782464,
+      "size": 16,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 263483
+    }
+  },
+  "ABI_manifest_sha256": "fb95943ada51c72d99456b5127fe147878593e166c2e9d12a9b46d0a4fb6ffac",
+  "ABI_offsets": {
+    "PartyMenu.slotId": 9,
+    "PartyMenu.action": 11,
+    "Task.size": 40,
+    "Task.func": 0,
+    "Task.isActive": 4,
+    "Pokemon.hp": 86,
+    "PartyMenuInternal.actions": 15,
+    "PartyMenuInternal.numActions": 23,
+    "Menu.cursorPos": 2,
+    "BattleStruct.playerPartyIdx": 139,
+    "CursorOption.size": 8,
+    "CursorOption.text": 0,
+    "CursorOption.func": 4,
+    "PartyMenu.size": 20,
+    "Menu.size": 12,
+    "Pokemon.size": 100,
+    "PaletteFade.size": 16,
+    "PaletteFade.active.byteOffset": 7,
+    "PaletteFade.active.mask": 128
+  },
+  "steps": [
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        2,
+        17,
+        6
+      ],
+      "finish": [
+        54,
+        2,
+        18,
+        6
+      ],
+      "frame": 811
+    },
+    {
+      "key": "UP",
+      "start": [
+        54,
+        2,
+        18,
+        6
+      ],
+      "finish": [
+        54,
+        2,
+        18,
+        5
+      ],
+      "frame": 840
+    },
+    {
+      "key": "UP",
+      "start": [
+        54,
+        2,
+        18,
+        5
+      ],
+      "finish": [
+        54,
+        2,
+        18,
+        4
+      ],
+      "frame": 861
+    },
+    {
+      "key": "UP",
+      "start": [
+        54,
+        2,
+        18,
+        4
+      ],
+      "finish": [
+        54,
+        2,
+        18,
+        3
+      ],
+      "frame": 882
+    },
+    {
+      "key": "UP",
+      "start": [
+        54,
+        2,
+        18,
+        3
+      ],
+      "finish": [
+        54,
+        2,
+        18,
+        2
+      ],
+      "frame": 903
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        2,
+        18,
+        2
+      ],
+      "finish": [
+        54,
+        2,
+        17,
+        2
+      ],
+      "frame": 932
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        2,
+        17,
+        2
+      ],
+      "finish": [
+        54,
+        2,
+        16,
+        2
+      ],
+      "frame": 953
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        2,
+        16,
+        2
+      ],
+      "finish": [
+        54,
+        2,
+        15,
+        2
+      ],
+      "frame": 974
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        2,
+        15,
+        2
+      ],
+      "finish": [
+        54,
+        2,
+        14,
+        2
+      ],
+      "frame": 995
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        2,
+        14,
+        2
+      ],
+      "finish": [
+        54,
+        2,
+        13,
+        2
+      ],
+      "frame": 1016
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        2,
+        13,
+        2
+      ],
+      "finish": [
+        54,
+        2,
+        12,
+        2
+      ],
+      "frame": 1037
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        2,
+        12,
+        2
+      ],
+      "finish": [
+        54,
+        2,
+        11,
+        2
+      ],
+      "frame": 1058
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        2,
+        11,
+        2
+      ],
+      "finish": [
+        54,
+        2,
+        10,
+        2
+      ],
+      "frame": 1079
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        2,
+        10,
+        2
+      ],
+      "finish": [
+        54,
+        2,
+        9,
+        2
+      ],
+      "frame": 1100
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        2,
+        9,
+        2
+      ],
+      "finish": [
+        54,
+        2,
+        8,
+        2
+      ],
+      "frame": 1121
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        2,
+        8,
+        2
+      ],
+      "finish": [
+        54,
+        2,
+        7,
+        2
+      ],
+      "frame": 1142
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        2,
+        7,
+        2
+      ],
+      "finish": [
+        54,
+        2,
+        6,
+        2
+      ],
+      "frame": 1163
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        2,
+        6,
+        2
+      ],
+      "finish": [
+        54,
+        2,
+        5,
+        2
+      ],
+      "frame": 1184
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        2,
+        5,
+        2
+      ],
+      "finish": [
+        54,
+        2,
+        4,
+        2
+      ],
+      "frame": 1205
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        2,
+        4,
+        2
+      ],
+      "finish": [
+        54,
+        2,
+        3,
+        2
+      ],
+      "frame": 1226
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        2,
+        3,
+        2
+      ],
+      "finish": [
+        54,
+        2,
+        2,
+        2
+      ],
+      "frame": 1247
+    },
+    {
+      "key": "UP",
+      "start": [
+        54,
+        2,
+        2,
+        2
+      ],
+      "finish": [
+        54,
+        1,
+        2,
+        1
+      ],
+      "frame": 1404
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        54,
+        1,
+        2,
+        1
+      ],
+      "finish": [
+        54,
+        1,
+        2,
+        2
+      ],
+      "frame": 1433
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        1,
+        2,
+        2
+      ],
+      "finish": [
+        54,
+        1,
+        3,
+        2
+      ],
+      "frame": 1462
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        1,
+        3,
+        2
+      ],
+      "finish": [
+        54,
+        1,
+        4,
+        2
+      ],
+      "frame": 1483
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        1,
+        4,
+        2
+      ],
+      "finish": [
+        54,
+        1,
+        5,
+        2
+      ],
+      "frame": 1504
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        1,
+        5,
+        2
+      ],
+      "finish": [
+        54,
+        1,
+        6,
+        2
+      ],
+      "frame": 1525
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        1,
+        6,
+        2
+      ],
+      "finish": [
+        54,
+        1,
+        7,
+        2
+      ],
+      "frame": 1546
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        1,
+        7,
+        2
+      ],
+      "finish": [
+        54,
+        1,
+        8,
+        2
+      ],
+      "frame": 1567
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        1,
+        8,
+        2
+      ],
+      "finish": [
+        54,
+        1,
+        9,
+        2
+      ],
+      "frame": 1588
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        1,
+        9,
+        2
+      ],
+      "finish": [
+        54,
+        1,
+        10,
+        2
+      ],
+      "frame": 1609
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        1,
+        10,
+        2
+      ],
+      "finish": [
+        54,
+        1,
+        11,
+        2
+      ],
+      "frame": 1630
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        1,
+        11,
+        2
+      ],
+      "finish": [
+        54,
+        1,
+        12,
+        2
+      ],
+      "frame": 1651
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        1,
+        12,
+        2
+      ],
+      "finish": [
+        54,
+        1,
+        13,
+        2
+      ],
+      "frame": 1672
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        54,
+        1,
+        13,
+        2
+      ],
+      "finish": [
+        54,
+        1,
+        14,
+        2
+      ],
+      "frame": 1693
+    },
+    {
+      "key": "UP",
+      "start": [
+        54,
+        1,
+        14,
+        2
+      ],
+      "finish": [
+        54,
+        0,
+        14,
+        1
+      ],
+      "frame": 1850
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        54,
+        0,
+        14,
+        1
+      ],
+      "finish": [
+        54,
+        0,
+        14,
+        2
+      ],
+      "frame": 1879
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        54,
+        0,
+        14,
+        2
+      ],
+      "finish": [
+        54,
+        0,
+        14,
+        3
+      ],
+      "frame": 1900
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        54,
+        0,
+        14,
+        3
+      ],
+      "finish": [
+        54,
+        0,
+        14,
+        4
+      ],
+      "frame": 1921
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        54,
+        0,
+        14,
+        4
+      ],
+      "finish": [
+        54,
+        0,
+        14,
+        5
+      ],
+      "frame": 1942
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        54,
+        0,
+        14,
+        5
+      ],
+      "finish": [
+        54,
+        0,
+        14,
+        6
+      ],
+      "frame": 1963
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        54,
+        0,
+        14,
+        6
+      ],
+      "finish": [
+        54,
+        0,
+        14,
+        7
+      ],
+      "frame": 1984
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        0,
+        14,
+        7
+      ],
+      "finish": [
+        54,
+        0,
+        13,
+        7
+      ],
+      "frame": 2013
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        0,
+        13,
+        7
+      ],
+      "finish": [
+        54,
+        0,
+        12,
+        7
+      ],
+      "frame": 2034
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        0,
+        12,
+        7
+      ],
+      "finish": [
+        54,
+        0,
+        11,
+        7
+      ],
+      "frame": 2055
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        0,
+        11,
+        7
+      ],
+      "finish": [
+        54,
+        0,
+        10,
+        7
+      ],
+      "frame": 2076
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        0,
+        10,
+        7
+      ],
+      "finish": [
+        54,
+        0,
+        9,
+        7
+      ],
+      "frame": 2097
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        0,
+        9,
+        7
+      ],
+      "finish": [
+        54,
+        0,
+        8,
+        7
+      ],
+      "frame": 2118
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        0,
+        8,
+        7
+      ],
+      "finish": [
+        54,
+        0,
+        7,
+        7
+      ],
+      "frame": 2139
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        0,
+        7,
+        7
+      ],
+      "finish": [
+        54,
+        0,
+        6,
+        7
+      ],
+      "frame": 2160
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        54,
+        0,
+        6,
+        7
+      ],
+      "finish": [
+        54,
+        0,
+        5,
+        7
+      ],
+      "frame": 2181
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        54,
+        0,
+        5,
+        7
+      ],
+      "finish": [
+        54,
+        0,
+        5,
+        8
+      ],
+      "frame": 2210
+    },
+    {
+      "key": "DOWN",
+      "transition": true,
+      "start": [
+        54,
+        0,
+        5,
+        8
+      ],
+      "finish": [
+        43,
+        3,
+        11,
+        15
+      ],
+      "frame": 2295
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        11,
+        15
+      ],
+      "finish": [
+        43,
+        3,
+        11,
+        16
+      ],
+      "frame": 2316
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        11,
+        16
+      ],
+      "finish": [
+        43,
+        3,
+        11,
+        17
+      ],
+      "frame": 2337
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        11,
+        17
+      ],
+      "finish": [
+        43,
+        3,
+        11,
+        18
+      ],
+      "frame": 2358
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        11,
+        18
+      ],
+      "finish": [
+        43,
+        3,
+        11,
+        19
+      ],
+      "frame": 2379
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        11,
+        19
+      ],
+      "finish": [
+        43,
+        3,
+        11,
+        20
+      ],
+      "frame": 2400
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        11,
+        20
+      ],
+      "finish": [
+        43,
+        3,
+        11,
+        21
+      ],
+      "frame": 2421
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        11,
+        21
+      ],
+      "finish": [
+        43,
+        3,
+        11,
+        22
+      ],
+      "frame": 2442
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        3,
+        11,
+        22
+      ],
+      "finish": [
+        43,
+        3,
+        12,
+        22
+      ],
+      "frame": 2471
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        3,
+        12,
+        22
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        22
+      ],
+      "frame": 2492
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        3,
+        13,
+        22
+      ],
+      "finish": [
+        43,
+        3,
+        14,
+        22
+      ],
+      "frame": 2513
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        3,
+        14,
+        22
+      ],
+      "finish": [
+        43,
+        3,
+        15,
+        22
+      ],
+      "frame": 2534
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        3,
+        15,
+        22
+      ],
+      "finish": [
+        43,
+        3,
+        16,
+        22
+      ],
+      "frame": 2555
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        3,
+        16,
+        22
+      ],
+      "finish": [
+        43,
+        3,
+        17,
+        22
+      ],
+      "frame": 2576
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        3,
+        17,
+        22
+      ],
+      "finish": [
+        43,
+        3,
+        18,
+        22
+      ],
+      "frame": 2597
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        18,
+        22
+      ],
+      "finish": [
+        43,
+        3,
+        18,
+        23
+      ],
+      "frame": 2626
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        18,
+        23
+      ],
+      "finish": [
+        43,
+        3,
+        18,
+        24
+      ],
+      "frame": 2647
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        18,
+        24
+      ],
+      "finish": [
+        43,
+        3,
+        18,
+        25
+      ],
+      "frame": 2668
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        18,
+        25
+      ],
+      "finish": [
+        43,
+        3,
+        18,
+        26
+      ],
+      "frame": 2689
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        18,
+        26
+      ],
+      "finish": [
+        43,
+        3,
+        18,
+        27
+      ],
+      "frame": 2710
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        18,
+        27
+      ],
+      "finish": [
+        43,
+        3,
+        18,
+        28
+      ],
+      "frame": 2731
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        18,
+        28
+      ],
+      "finish": [
+        43,
+        3,
+        18,
+        29
+      ],
+      "frame": 2752
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        18,
+        29
+      ],
+      "finish": [
+        43,
+        3,
+        18,
+        30
+      ],
+      "frame": 2773
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        18,
+        30
+      ],
+      "finish": [
+        43,
+        3,
+        18,
+        31
+      ],
+      "frame": 2794
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        18,
+        31
+      ],
+      "finish": [
+        43,
+        3,
+        18,
+        32
+      ],
+      "frame": 2815
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        18,
+        32
+      ],
+      "finish": [
+        43,
+        3,
+        18,
+        33
+      ],
+      "frame": 2836
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        18,
+        33
+      ],
+      "finish": [
+        43,
+        3,
+        18,
+        34
+      ],
+      "frame": 2857
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        18,
+        34
+      ],
+      "finish": [
+        43,
+        3,
+        18,
+        35
+      ],
+      "frame": 2878
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        3,
+        18,
+        35
+      ],
+      "finish": [
+        43,
+        3,
+        17,
+        35
+      ],
+      "frame": 2907
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        3,
+        17,
+        35
+      ],
+      "finish": [
+        43,
+        3,
+        16,
+        35
+      ],
+      "frame": 2928
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        3,
+        16,
+        35
+      ],
+      "finish": [
+        43,
+        3,
+        15,
+        35
+      ],
+      "frame": 2949
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        3,
+        15,
+        35
+      ],
+      "finish": [
+        43,
+        3,
+        15,
+        34
+      ],
+      "frame": 2978
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        3,
+        15,
+        34
+      ],
+      "finish": [
+        43,
+        3,
+        14,
+        34
+      ],
+      "frame": 3007
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        3,
+        14,
+        34
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        34
+      ],
+      "frame": 3028
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        34
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        35
+      ],
+      "frame": 3057
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        35
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        36
+      ],
+      "frame": 3078
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        36
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        37
+      ],
+      "frame": 3099
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        37
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        38
+      ],
+      "frame": 3120
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        38
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        39
+      ],
+      "frame": 3141
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        39
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        40
+      ],
+      "frame": 3162
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        40
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        41
+      ],
+      "frame": 3183
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        41
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        42
+      ],
+      "frame": 3204
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        42
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        43
+      ],
+      "frame": 3225
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        43
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        44
+      ],
+      "frame": 3246
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        44
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        45
+      ],
+      "frame": 3267
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        45
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        46
+      ],
+      "frame": 3288
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        46
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        47
+      ],
+      "frame": 3309
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        47
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        48
+      ],
+      "frame": 3330
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        48
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        49
+      ],
+      "frame": 3351
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        49
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        50
+      ],
+      "frame": 3372
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        50
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        51
+      ],
+      "frame": 3393
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        51
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        52
+      ],
+      "frame": 3414
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        52
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        53
+      ],
+      "frame": 3435
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        53
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        54
+      ],
+      "frame": 3456
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        54
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        55
+      ],
+      "frame": 3477
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        55
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        56
+      ],
+      "frame": 3498
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        56
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        57
+      ],
+      "frame": 3519
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        57
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        58
+      ],
+      "frame": 3540
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        3,
+        13,
+        58
+      ],
+      "finish": [
+        43,
+        3,
+        13,
+        59
+      ],
+      "frame": 3561
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        3,
+        13,
+        59
+      ],
+      "finish": [
+        43,
+        3,
+        14,
+        59
+      ],
+      "frame": 3590
+    },
+    {
+      "key": "DOWN",
+      "transition": true,
+      "start": [
+        43,
+        3,
+        14,
+        59
+      ],
+      "finish": [
+        43,
+        19,
+        14,
+        0
+      ],
+      "frame": 3619
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        14,
+        0
+      ],
+      "finish": [
+        43,
+        19,
+        14,
+        1
+      ],
+      "frame": 3640
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        14,
+        1
+      ],
+      "finish": [
+        43,
+        19,
+        14,
+        2
+      ],
+      "frame": 3661
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        14,
+        2
+      ],
+      "finish": [
+        43,
+        19,
+        14,
+        3
+      ],
+      "frame": 3682
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        14,
+        3
+      ],
+      "finish": [
+        43,
+        19,
+        14,
+        4
+      ],
+      "frame": 3703
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        14,
+        4
+      ],
+      "finish": [
+        43,
+        19,
+        14,
+        5
+      ],
+      "frame": 3724
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        14,
+        5
+      ],
+      "finish": [
+        43,
+        19,
+        14,
+        6
+      ],
+      "frame": 3745
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        14,
+        6
+      ],
+      "finish": [
+        43,
+        19,
+        15,
+        6
+      ],
+      "frame": 3774
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        15,
+        6
+      ],
+      "finish": [
+        43,
+        19,
+        16,
+        6
+      ],
+      "frame": 3795
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        16,
+        6
+      ],
+      "finish": [
+        43,
+        19,
+        16,
+        7
+      ],
+      "frame": 3824
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        16,
+        7
+      ],
+      "finish": [
+        43,
+        19,
+        17,
+        7
+      ],
+      "frame": 3853
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        17,
+        7
+      ],
+      "finish": [
+        43,
+        19,
+        18,
+        7
+      ],
+      "frame": 3874
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        18,
+        7
+      ],
+      "finish": [
+        43,
+        19,
+        19,
+        7
+      ],
+      "frame": 3895
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        19,
+        7
+      ],
+      "finish": [
+        43,
+        19,
+        20,
+        7
+      ],
+      "frame": 3916
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        20,
+        7
+      ],
+      "finish": [
+        43,
+        19,
+        20,
+        8
+      ],
+      "frame": 3945
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        20,
+        8
+      ],
+      "finish": [
+        43,
+        19,
+        21,
+        8
+      ],
+      "frame": 3974
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        21,
+        8
+      ],
+      "finish": [
+        43,
+        19,
+        22,
+        8
+      ],
+      "frame": 3995
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        22,
+        8
+      ],
+      "finish": [
+        43,
+        19,
+        23,
+        8
+      ],
+      "frame": 4016
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        23,
+        8
+      ],
+      "finish": [
+        43,
+        19,
+        24,
+        8
+      ],
+      "frame": 4037
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        24,
+        8
+      ],
+      "finish": [
+        43,
+        19,
+        24,
+        9
+      ],
+      "frame": 4066
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        24,
+        9
+      ],
+      "finish": [
+        43,
+        19,
+        24,
+        10
+      ],
+      "frame": 4087
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        24,
+        10
+      ],
+      "finish": [
+        43,
+        19,
+        24,
+        11
+      ],
+      "frame": 4108
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        24,
+        11
+      ],
+      "finish": [
+        43,
+        19,
+        24,
+        12
+      ],
+      "frame": 4129
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        24,
+        12
+      ],
+      "finish": [
+        43,
+        19,
+        24,
+        13
+      ],
+      "frame": 4150
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        24,
+        13
+      ],
+      "finish": [
+        43,
+        19,
+        24,
+        14
+      ],
+      "frame": 4171
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        24,
+        14
+      ],
+      "finish": [
+        43,
+        19,
+        24,
+        15
+      ],
+      "frame": 4192
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        24,
+        15
+      ],
+      "finish": [
+        43,
+        19,
+        24,
+        16
+      ],
+      "frame": 4213
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        24,
+        16
+      ],
+      "finish": [
+        43,
+        19,
+        25,
+        16
+      ],
+      "frame": 4242
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        25,
+        16
+      ],
+      "finish": [
+        43,
+        19,
+        26,
+        16
+      ],
+      "frame": 4263
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        26,
+        16
+      ],
+      "finish": [
+        43,
+        19,
+        27,
+        16
+      ],
+      "frame": 5215
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        27,
+        16
+      ],
+      "finish": [
+        43,
+        19,
+        28,
+        16
+      ],
+      "frame": 5236
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        28,
+        16
+      ],
+      "finish": [
+        43,
+        19,
+        29,
+        16
+      ],
+      "frame": 5257
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        29,
+        16
+      ],
+      "finish": [
+        43,
+        19,
+        30,
+        16
+      ],
+      "frame": 5278
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        30,
+        16
+      ],
+      "finish": [
+        43,
+        19,
+        30,
+        17
+      ],
+      "frame": 5307
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        30,
+        17
+      ],
+      "finish": [
+        43,
+        19,
+        30,
+        18
+      ],
+      "frame": 5328
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        30,
+        18
+      ],
+      "finish": [
+        43,
+        19,
+        30,
+        19
+      ],
+      "frame": 5349
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        30,
+        19
+      ],
+      "finish": [
+        43,
+        19,
+        30,
+        20
+      ],
+      "frame": 5370
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        30,
+        20
+      ],
+      "finish": [
+        43,
+        19,
+        30,
+        21
+      ],
+      "frame": 5391
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        30,
+        21
+      ],
+      "finish": [
+        43,
+        19,
+        30,
+        22
+      ],
+      "frame": 5412
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        30,
+        22
+      ],
+      "finish": [
+        43,
+        19,
+        30,
+        23
+      ],
+      "frame": 5433
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        30,
+        23
+      ],
+      "finish": [
+        43,
+        19,
+        30,
+        24
+      ],
+      "frame": 11029
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        30,
+        24
+      ],
+      "finish": [
+        43,
+        19,
+        30,
+        25
+      ],
+      "frame": 11050
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        30,
+        25
+      ],
+      "finish": [
+        43,
+        19,
+        30,
+        26
+      ],
+      "frame": 11071
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        30,
+        26
+      ],
+      "finish": [
+        43,
+        19,
+        29,
+        26
+      ],
+      "frame": 11100
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        29,
+        26
+      ],
+      "finish": [
+        43,
+        19,
+        28,
+        26
+      ],
+      "frame": 11121
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        28,
+        26
+      ],
+      "finish": [
+        43,
+        19,
+        27,
+        26
+      ],
+      "frame": 11142
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        27,
+        26
+      ],
+      "finish": [
+        43,
+        19,
+        26,
+        26
+      ],
+      "frame": 11163
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        26,
+        26
+      ],
+      "finish": [
+        43,
+        19,
+        25,
+        26
+      ],
+      "frame": 11184
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        25,
+        26
+      ],
+      "finish": [
+        43,
+        19,
+        24,
+        26
+      ],
+      "frame": 11205
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        24,
+        26
+      ],
+      "finish": [
+        43,
+        19,
+        23,
+        26
+      ],
+      "frame": 11226
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        23,
+        26
+      ],
+      "finish": [
+        43,
+        19,
+        22,
+        26
+      ],
+      "frame": 11247
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        22,
+        26
+      ],
+      "finish": [
+        43,
+        19,
+        21,
+        26
+      ],
+      "frame": 11268
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        21,
+        26
+      ],
+      "finish": [
+        43,
+        19,
+        20,
+        26
+      ],
+      "frame": 11289
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        20,
+        26
+      ],
+      "finish": [
+        43,
+        19,
+        19,
+        26
+      ],
+      "frame": 11310
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        19,
+        26
+      ],
+      "finish": [
+        43,
+        19,
+        18,
+        26
+      ],
+      "frame": 11331
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        18,
+        26
+      ],
+      "finish": [
+        43,
+        19,
+        17,
+        26
+      ],
+      "frame": 11352
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        17,
+        26
+      ],
+      "finish": [
+        43,
+        19,
+        16,
+        26
+      ],
+      "frame": 11373
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        16,
+        26
+      ],
+      "finish": [
+        43,
+        19,
+        15,
+        26
+      ],
+      "frame": 11394
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        15,
+        26
+      ],
+      "finish": [
+        43,
+        19,
+        14,
+        26
+      ],
+      "frame": 11415
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        14,
+        26
+      ],
+      "finish": [
+        43,
+        19,
+        13,
+        26
+      ],
+      "frame": 11436
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        13,
+        26
+      ],
+      "finish": [
+        43,
+        19,
+        13,
+        27
+      ],
+      "frame": 11465
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        13,
+        27
+      ],
+      "finish": [
+        43,
+        19,
+        12,
+        27
+      ],
+      "frame": 11494
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        12,
+        27
+      ],
+      "finish": [
+        43,
+        19,
+        11,
+        27
+      ],
+      "frame": 11515
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        11,
+        27
+      ],
+      "finish": [
+        43,
+        19,
+        11,
+        28
+      ],
+      "frame": 11544
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        11,
+        28
+      ],
+      "finish": [
+        43,
+        19,
+        11,
+        29
+      ],
+      "frame": 11565
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        11,
+        29
+      ],
+      "finish": [
+        43,
+        19,
+        10,
+        29
+      ],
+      "frame": 11594
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        10,
+        29
+      ],
+      "finish": [
+        43,
+        19,
+        10,
+        30
+      ],
+      "frame": 11623
+    },
+    {
+      "key": "DOWN",
+      "transition": true,
+      "start": [
+        43,
+        19,
+        10,
+        30
+      ],
+      "finish": [
+        67,
+        11,
+        14,
+        5
+      ],
+      "frame": 11740
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        14,
+        5
+      ],
+      "finish": [
+        67,
+        11,
+        14,
+        6
+      ],
+      "frame": 11761
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        14,
+        6
+      ],
+      "finish": [
+        67,
+        11,
+        14,
+        7
+      ],
+      "frame": 11782
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        14,
+        7
+      ],
+      "finish": [
+        67,
+        11,
+        14,
+        8
+      ],
+      "frame": 11803
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        14,
+        8
+      ],
+      "finish": [
+        67,
+        11,
+        14,
+        9
+      ],
+      "frame": 11824
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        14,
+        9
+      ],
+      "finish": [
+        67,
+        11,
+        14,
+        10
+      ],
+      "frame": 11845
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        14,
+        10
+      ],
+      "finish": [
+        67,
+        11,
+        14,
+        11
+      ],
+      "frame": 11866
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        14,
+        11
+      ],
+      "finish": [
+        67,
+        11,
+        13,
+        11
+      ],
+      "frame": 11895
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        13,
+        11
+      ],
+      "finish": [
+        67,
+        11,
+        12,
+        11
+      ],
+      "frame": 11916
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        12,
+        11
+      ],
+      "finish": [
+        67,
+        11,
+        11,
+        11
+      ],
+      "frame": 11937
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        11,
+        11
+      ],
+      "finish": [
+        67,
+        11,
+        10,
+        11
+      ],
+      "frame": 11958
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        10,
+        11
+      ],
+      "finish": [
+        67,
+        11,
+        9,
+        11
+      ],
+      "frame": 11979
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        9,
+        11
+      ],
+      "finish": [
+        67,
+        11,
+        8,
+        11
+      ],
+      "frame": 12000
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        8,
+        11
+      ],
+      "finish": [
+        67,
+        11,
+        7,
+        11
+      ],
+      "frame": 12021
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        7,
+        11
+      ],
+      "finish": [
+        67,
+        11,
+        7,
+        12
+      ],
+      "frame": 12050
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        7,
+        12
+      ],
+      "finish": [
+        67,
+        11,
+        7,
+        13
+      ],
+      "frame": 12071
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        7,
+        13
+      ],
+      "finish": [
+        67,
+        11,
+        7,
+        14
+      ],
+      "frame": 15242
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        7,
+        14
+      ],
+      "finish": [
+        67,
+        11,
+        7,
+        15
+      ],
+      "frame": 15263
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        7,
+        15
+      ],
+      "finish": [
+        67,
+        11,
+        7,
+        16
+      ],
+      "frame": 15284
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        7,
+        16
+      ],
+      "finish": [
+        67,
+        11,
+        7,
+        17
+      ],
+      "frame": 15305
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        7,
+        17
+      ],
+      "finish": [
+        67,
+        11,
+        7,
+        18
+      ],
+      "frame": 15326
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        7,
+        18
+      ],
+      "finish": [
+        67,
+        11,
+        8,
+        18
+      ],
+      "frame": 15355
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        8,
+        18
+      ],
+      "finish": [
+        67,
+        11,
+        9,
+        18
+      ],
+      "frame": 15376
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        9,
+        18
+      ],
+      "finish": [
+        67,
+        11,
+        10,
+        18
+      ],
+      "frame": 16668
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        10,
+        18
+      ],
+      "finish": [
+        67,
+        11,
+        11,
+        18
+      ],
+      "frame": 16689
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        11,
+        18
+      ],
+      "finish": [
+        67,
+        11,
+        11,
+        19
+      ],
+      "frame": 16718
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        11,
+        19
+      ],
+      "finish": [
+        67,
+        11,
+        12,
+        19
+      ],
+      "frame": 16747
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        12,
+        19
+      ],
+      "finish": [
+        67,
+        11,
+        13,
+        19
+      ],
+      "frame": 16768
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        13,
+        19
+      ],
+      "finish": [
+        67,
+        11,
+        14,
+        19
+      ],
+      "frame": 16789
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        14,
+        19
+      ],
+      "finish": [
+        67,
+        11,
+        15,
+        19
+      ],
+      "frame": 16810
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        15,
+        19
+      ],
+      "finish": [
+        67,
+        11,
+        16,
+        19
+      ],
+      "frame": 16831
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        16,
+        19
+      ],
+      "finish": [
+        67,
+        11,
+        17,
+        19
+      ],
+      "frame": 16852
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        17,
+        19
+      ],
+      "finish": [
+        67,
+        11,
+        18,
+        19
+      ],
+      "frame": 16873
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        18,
+        19
+      ],
+      "finish": [
+        67,
+        11,
+        19,
+        19
+      ],
+      "frame": 16894
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        19,
+        19
+      ],
+      "finish": [
+        67,
+        11,
+        20,
+        19
+      ],
+      "frame": 16915
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        20,
+        19
+      ],
+      "finish": [
+        67,
+        11,
+        21,
+        19
+      ],
+      "frame": 16936
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        21,
+        19
+      ],
+      "finish": [
+        67,
+        11,
+        22,
+        19
+      ],
+      "frame": 18253
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        22,
+        19
+      ],
+      "finish": [
+        67,
+        11,
+        23,
+        19
+      ],
+      "frame": 18274
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        23,
+        19
+      ],
+      "finish": [
+        67,
+        11,
+        24,
+        19
+      ],
+      "frame": 18295
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        24,
+        19
+      ],
+      "finish": [
+        67,
+        11,
+        25,
+        19
+      ],
+      "frame": 18316
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        25,
+        19
+      ],
+      "finish": [
+        67,
+        11,
+        26,
+        19
+      ],
+      "frame": 18337
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        26,
+        19
+      ],
+      "finish": [
+        67,
+        11,
+        26,
+        20
+      ],
+      "frame": 18366
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        26,
+        20
+      ],
+      "finish": [
+        67,
+        11,
+        26,
+        21
+      ],
+      "frame": 18387
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        26,
+        21
+      ],
+      "finish": [
+        67,
+        11,
+        26,
+        22
+      ],
+      "frame": 18408
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        26,
+        22
+      ],
+      "finish": [
+        67,
+        11,
+        26,
+        23
+      ],
+      "frame": 18429
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        26,
+        23
+      ],
+      "finish": [
+        67,
+        11,
+        26,
+        24
+      ],
+      "frame": 18450
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        26,
+        24
+      ],
+      "finish": [
+        67,
+        11,
+        26,
+        25
+      ],
+      "frame": 18471
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        26,
+        25
+      ],
+      "finish": [
+        67,
+        11,
+        26,
+        26
+      ],
+      "frame": 18492
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        26,
+        26
+      ],
+      "finish": [
+        67,
+        11,
+        26,
+        27
+      ],
+      "frame": 18513
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        26,
+        27
+      ],
+      "finish": [
+        67,
+        11,
+        25,
+        27
+      ],
+      "frame": 18542
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        25,
+        27
+      ],
+      "finish": [
+        67,
+        11,
+        24,
+        27
+      ],
+      "frame": 18563
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        24,
+        27
+      ],
+      "finish": [
+        67,
+        11,
+        23,
+        27
+      ],
+      "frame": 18584
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        23,
+        27
+      ],
+      "finish": [
+        67,
+        11,
+        22,
+        27
+      ],
+      "frame": 18605
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        22,
+        27
+      ],
+      "finish": [
+        67,
+        11,
+        21,
+        27
+      ],
+      "frame": 18626
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        21,
+        27
+      ],
+      "finish": [
+        67,
+        11,
+        20,
+        27
+      ],
+      "frame": 18647
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        20,
+        27
+      ],
+      "finish": [
+        67,
+        11,
+        19,
+        27
+      ],
+      "frame": 18668
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        19,
+        27
+      ],
+      "finish": [
+        67,
+        11,
+        18,
+        27
+      ],
+      "frame": 18689
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        18,
+        27
+      ],
+      "finish": [
+        67,
+        11,
+        17,
+        27
+      ],
+      "frame": 18710
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        17,
+        27
+      ],
+      "finish": [
+        67,
+        11,
+        16,
+        27
+      ],
+      "frame": 18731
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        16,
+        27
+      ],
+      "finish": [
+        67,
+        11,
+        15,
+        27
+      ],
+      "frame": 18752
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        15,
+        27
+      ],
+      "finish": [
+        67,
+        11,
+        14,
+        27
+      ],
+      "frame": 18773
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        14,
+        27
+      ],
+      "finish": [
+        67,
+        11,
+        13,
+        27
+      ],
+      "frame": 18794
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        13,
+        27
+      ],
+      "finish": [
+        67,
+        11,
+        12,
+        27
+      ],
+      "frame": 18815
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        12,
+        27
+      ],
+      "finish": [
+        67,
+        11,
+        11,
+        27
+      ],
+      "frame": 18836
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        11,
+        27
+      ],
+      "finish": [
+        67,
+        11,
+        10,
+        27
+      ],
+      "frame": 20153
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        67,
+        11,
+        10,
+        27
+      ],
+      "finish": [
+        67,
+        11,
+        9,
+        27
+      ],
+      "frame": 20174
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        9,
+        27
+      ],
+      "finish": [
+        67,
+        11,
+        9,
+        28
+      ],
+      "frame": 20203
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        9,
+        28
+      ],
+      "finish": [
+        67,
+        11,
+        9,
+        29
+      ],
+      "frame": 20224
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        9,
+        29
+      ],
+      "finish": [
+        67,
+        11,
+        9,
+        30
+      ],
+      "frame": 20245
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        9,
+        30
+      ],
+      "finish": [
+        67,
+        11,
+        9,
+        31
+      ],
+      "frame": 20266
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        9,
+        31
+      ],
+      "finish": [
+        67,
+        11,
+        9,
+        32
+      ],
+      "frame": 20287
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        9,
+        32
+      ],
+      "finish": [
+        67,
+        11,
+        9,
+        33
+      ],
+      "frame": 20308
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        9,
+        33
+      ],
+      "finish": [
+        67,
+        11,
+        9,
+        34
+      ],
+      "frame": 20329
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        9,
+        34
+      ],
+      "finish": [
+        67,
+        11,
+        9,
+        35
+      ],
+      "frame": 20350
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        9,
+        35
+      ],
+      "finish": [
+        67,
+        11,
+        10,
+        35
+      ],
+      "frame": 20379
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        10,
+        35
+      ],
+      "finish": [
+        67,
+        11,
+        11,
+        35
+      ],
+      "frame": 20400
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        11,
+        35
+      ],
+      "finish": [
+        67,
+        11,
+        12,
+        35
+      ],
+      "frame": 20421
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        12,
+        35
+      ],
+      "finish": [
+        67,
+        11,
+        13,
+        35
+      ],
+      "frame": 20442
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        13,
+        35
+      ],
+      "finish": [
+        67,
+        11,
+        14,
+        35
+      ],
+      "frame": 20463
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        14,
+        35
+      ],
+      "finish": [
+        67,
+        11,
+        14,
+        36
+      ],
+      "frame": 20492
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        14,
+        36
+      ],
+      "finish": [
+        67,
+        11,
+        14,
+        37
+      ],
+      "frame": 20513
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        14,
+        37
+      ],
+      "finish": [
+        67,
+        11,
+        15,
+        37
+      ],
+      "frame": 20542
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        67,
+        11,
+        15,
+        37
+      ],
+      "finish": [
+        67,
+        11,
+        16,
+        37
+      ],
+      "frame": 20563
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        67,
+        11,
+        16,
+        37
+      ],
+      "finish": [
+        67,
+        11,
+        16,
+        38
+      ],
+      "frame": 20592
+    },
+    {
+      "key": "DOWN",
+      "transition": true,
+      "start": [
+        67,
+        11,
+        16,
+        38
+      ],
+      "finish": [
+        43,
+        19,
+        10,
+        38
+      ],
+      "frame": 20725
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        10,
+        38
+      ],
+      "finish": [
+        43,
+        19,
+        10,
+        39
+      ],
+      "frame": 20746
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        10,
+        39
+      ],
+      "finish": [
+        43,
+        19,
+        10,
+        40
+      ],
+      "frame": 20767
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        10,
+        40
+      ],
+      "finish": [
+        43,
+        19,
+        10,
+        41
+      ],
+      "frame": 20788
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        10,
+        41
+      ],
+      "finish": [
+        43,
+        19,
+        10,
+        42
+      ],
+      "frame": 20809
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        10,
+        42
+      ],
+      "finish": [
+        43,
+        19,
+        10,
+        43
+      ],
+      "frame": 20830
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        10,
+        43
+      ],
+      "finish": [
+        43,
+        19,
+        10,
+        44
+      ],
+      "frame": 20851
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        10,
+        44
+      ],
+      "finish": [
+        43,
+        19,
+        10,
+        45
+      ],
+      "frame": 20872
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        10,
+        45
+      ],
+      "finish": [
+        43,
+        19,
+        11,
+        45
+      ],
+      "frame": 20901
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        11,
+        45
+      ],
+      "finish": [
+        43,
+        19,
+        11,
+        46
+      ],
+      "frame": 20930
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        11,
+        46
+      ],
+      "finish": [
+        43,
+        19,
+        12,
+        46
+      ],
+      "frame": 20959
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        12,
+        46
+      ],
+      "finish": [
+        43,
+        19,
+        13,
+        46
+      ],
+      "frame": 20980
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        13,
+        46
+      ],
+      "finish": [
+        43,
+        19,
+        14,
+        46
+      ],
+      "frame": 21001
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        14,
+        46
+      ],
+      "finish": [
+        43,
+        19,
+        15,
+        46
+      ],
+      "frame": 21022
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        15,
+        46
+      ],
+      "finish": [
+        43,
+        19,
+        15,
+        47
+      ],
+      "frame": 21051
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        15,
+        47
+      ],
+      "finish": [
+        43,
+        19,
+        16,
+        47
+      ],
+      "frame": 21080
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        16,
+        47
+      ],
+      "finish": [
+        43,
+        19,
+        17,
+        47
+      ],
+      "frame": 21101
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        17,
+        47
+      ],
+      "finish": [
+        43,
+        19,
+        18,
+        47
+      ],
+      "frame": 21122
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        18,
+        47
+      ],
+      "finish": [
+        43,
+        19,
+        19,
+        47
+      ],
+      "frame": 21143
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        19,
+        47
+      ],
+      "finish": [
+        43,
+        19,
+        20,
+        47
+      ],
+      "frame": 21164
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        20,
+        47
+      ],
+      "finish": [
+        43,
+        19,
+        20,
+        48
+      ],
+      "frame": 21193
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        20,
+        48
+      ],
+      "finish": [
+        43,
+        19,
+        20,
+        49
+      ],
+      "frame": 21214
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        19,
+        20,
+        49
+      ],
+      "finish": [
+        43,
+        19,
+        21,
+        49
+      ],
+      "frame": 21243
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        21,
+        49
+      ],
+      "finish": [
+        43,
+        19,
+        21,
+        50
+      ],
+      "frame": 21272
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        19,
+        21,
+        50
+      ],
+      "finish": [
+        43,
+        19,
+        21,
+        51
+      ],
+      "frame": 21293
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        21,
+        51
+      ],
+      "finish": [
+        43,
+        19,
+        20,
+        51
+      ],
+      "frame": 21322
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        20,
+        51
+      ],
+      "finish": [
+        43,
+        19,
+        19,
+        51
+      ],
+      "frame": 21343
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        19,
+        51
+      ],
+      "finish": [
+        43,
+        19,
+        18,
+        51
+      ],
+      "frame": 21364
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        18,
+        51
+      ],
+      "finish": [
+        43,
+        19,
+        17,
+        51
+      ],
+      "frame": 21385
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        17,
+        51
+      ],
+      "finish": [
+        43,
+        19,
+        16,
+        51
+      ],
+      "frame": 21406
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        16,
+        51
+      ],
+      "finish": [
+        43,
+        19,
+        15,
+        51
+      ],
+      "frame": 21427
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        15,
+        51
+      ],
+      "finish": [
+        43,
+        19,
+        14,
+        51
+      ],
+      "frame": 21448
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        19,
+        14,
+        51
+      ],
+      "finish": [
+        43,
+        19,
+        13,
+        51
+      ],
+      "frame": 21469
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        22,
+        24
+      ],
+      "finish": [
+        43,
+        24,
+        22,
+        23
+      ],
+      "frame": 21860
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        22,
+        23
+      ],
+      "finish": [
+        43,
+        24,
+        22,
+        22
+      ],
+      "frame": 21881
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        22,
+        22
+      ],
+      "finish": [
+        43,
+        24,
+        22,
+        21
+      ],
+      "frame": 21902
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        22,
+        21
+      ],
+      "finish": [
+        43,
+        24,
+        22,
+        20
+      ],
+      "frame": 21923
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        22,
+        20
+      ],
+      "finish": [
+        43,
+        24,
+        22,
+        19
+      ],
+      "frame": 21944
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        22,
+        19
+      ],
+      "finish": [
+        43,
+        24,
+        22,
+        18
+      ],
+      "frame": 21965
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        22,
+        18
+      ],
+      "finish": [
+        43,
+        24,
+        22,
+        17
+      ],
+      "frame": 21986
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        22,
+        17
+      ],
+      "finish": [
+        43,
+        24,
+        22,
+        16
+      ],
+      "frame": 22007
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        24,
+        22,
+        16
+      ],
+      "finish": [
+        43,
+        24,
+        21,
+        16
+      ],
+      "frame": 22036
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        24,
+        21,
+        16
+      ],
+      "finish": [
+        43,
+        24,
+        20,
+        16
+      ],
+      "frame": 22057
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        24,
+        20,
+        16
+      ],
+      "finish": [
+        43,
+        24,
+        19,
+        16
+      ],
+      "frame": 22078
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        19,
+        16
+      ],
+      "finish": [
+        43,
+        24,
+        19,
+        15
+      ],
+      "frame": 22107
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        19,
+        15
+      ],
+      "finish": [
+        43,
+        24,
+        19,
+        14
+      ],
+      "frame": 22128
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        19,
+        14
+      ],
+      "finish": [
+        43,
+        24,
+        19,
+        13
+      ],
+      "frame": 27917
+    },
+    {
+      "key": "DOWN",
+      "start": [
+        43,
+        24,
+        19,
+        13
+      ],
+      "finish": [
+        43,
+        24,
+        19,
+        14
+      ],
+      "frame": 27946
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        24,
+        19,
+        14
+      ],
+      "finish": [
+        43,
+        24,
+        18,
+        14
+      ],
+      "frame": 27975
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        24,
+        18,
+        14
+      ],
+      "finish": [
+        43,
+        24,
+        17,
+        14
+      ],
+      "frame": 27996
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        17,
+        14
+      ],
+      "finish": [
+        43,
+        24,
+        17,
+        13
+      ],
+      "frame": 28025
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        17,
+        13
+      ],
+      "finish": [
+        43,
+        24,
+        17,
+        12
+      ],
+      "frame": 28046
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        17,
+        12
+      ],
+      "finish": [
+        43,
+        24,
+        17,
+        11
+      ],
+      "frame": 28067
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        24,
+        17,
+        11
+      ],
+      "finish": [
+        43,
+        24,
+        18,
+        11
+      ],
+      "frame": 28096
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        18,
+        11
+      ],
+      "finish": [
+        43,
+        24,
+        18,
+        10
+      ],
+      "frame": 28125
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        18,
+        10
+      ],
+      "finish": [
+        43,
+        24,
+        18,
+        9
+      ],
+      "frame": 28146
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        18,
+        9
+      ],
+      "finish": [
+        43,
+        24,
+        18,
+        8
+      ],
+      "frame": 28167
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        18,
+        8
+      ],
+      "finish": [
+        43,
+        24,
+        18,
+        7
+      ],
+      "frame": 28188
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        18,
+        7
+      ],
+      "finish": [
+        43,
+        24,
+        18,
+        6
+      ],
+      "frame": 28209
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        18,
+        6
+      ],
+      "finish": [
+        43,
+        24,
+        18,
+        5
+      ],
+      "frame": 28230
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        18,
+        5
+      ],
+      "finish": [
+        43,
+        24,
+        18,
+        4
+      ],
+      "frame": 28251
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        18,
+        4
+      ],
+      "finish": [
+        43,
+        24,
+        18,
+        3
+      ],
+      "frame": 28272
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        18,
+        3
+      ],
+      "finish": [
+        43,
+        24,
+        18,
+        2
+      ],
+      "frame": 28293
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        18,
+        2
+      ],
+      "finish": [
+        43,
+        24,
+        18,
+        1
+      ],
+      "frame": 28314
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        24,
+        18,
+        1
+      ],
+      "finish": [
+        43,
+        24,
+        18,
+        0
+      ],
+      "frame": 28335
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        24,
+        18,
+        0
+      ],
+      "finish": [
+        43,
+        24,
+        19,
+        0
+      ],
+      "frame": 28364
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        24,
+        19,
+        0
+      ],
+      "finish": [
+        43,
+        24,
+        20,
+        0
+      ],
+      "frame": 28385
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        24,
+        20,
+        0
+      ],
+      "finish": [
+        43,
+        24,
+        21,
+        0
+      ],
+      "frame": 28406
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        24,
+        21,
+        0
+      ],
+      "finish": [
+        43,
+        24,
+        22,
+        0
+      ],
+      "frame": 28427
+    },
+    {
+      "key": "UP",
+      "transition": true,
+      "start": [
+        43,
+        24,
+        22,
+        0
+      ],
+      "finish": [
+        43,
+        1,
+        22,
+        59
+      ],
+      "frame": 28456
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        1,
+        22,
+        59
+      ],
+      "finish": [
+        43,
+        1,
+        21,
+        59
+      ],
+      "frame": 28485
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        1,
+        21,
+        59
+      ],
+      "finish": [
+        43,
+        1,
+        20,
+        59
+      ],
+      "frame": 28506
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        1,
+        20,
+        59
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        59
+      ],
+      "frame": 28527
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        59
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        58
+      ],
+      "frame": 28556
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        58
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        57
+      ],
+      "frame": 28577
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        57
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        56
+      ],
+      "frame": 28598
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        56
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        55
+      ],
+      "frame": 28619
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        55
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        54
+      ],
+      "frame": 28640
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        54
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        53
+      ],
+      "frame": 28661
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        53
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        52
+      ],
+      "frame": 28682
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        52
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        51
+      ],
+      "frame": 28703
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        51
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        50
+      ],
+      "frame": 28724
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        50
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        49
+      ],
+      "frame": 28745
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        49
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        48
+      ],
+      "frame": 28766
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        48
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        47
+      ],
+      "frame": 28787
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        47
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        46
+      ],
+      "frame": 28808
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        46
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        45
+      ],
+      "frame": 28829
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        45
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        44
+      ],
+      "frame": 28850
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        44
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        43
+      ],
+      "frame": 28871
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        43
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        42
+      ],
+      "frame": 28892
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        42
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        41
+      ],
+      "frame": 28913
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        41
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        40
+      ],
+      "frame": 28934
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        40
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        39
+      ],
+      "frame": 28955
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        39
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        38
+      ],
+      "frame": 28976
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        38
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        37
+      ],
+      "frame": 28997
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        37
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        36
+      ],
+      "frame": 29018
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        36
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        35
+      ],
+      "frame": 29039
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        35
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        34
+      ],
+      "frame": 29060
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        34
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        33
+      ],
+      "frame": 29081
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        33
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        32
+      ],
+      "frame": 29102
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        32
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        31
+      ],
+      "frame": 29123
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        31
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        30
+      ],
+      "frame": 29144
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        30
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        29
+      ],
+      "frame": 29165
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        29
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        28
+      ],
+      "frame": 29186
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        28
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        27
+      ],
+      "frame": 29207
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        27
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        26
+      ],
+      "frame": 29228
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        26
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        25
+      ],
+      "frame": 29249
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        25
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        24
+      ],
+      "frame": 29270
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        24
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        23
+      ],
+      "frame": 29291
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        23
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        22
+      ],
+      "frame": 29312
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        22
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        21
+      ],
+      "frame": 29333
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        19,
+        21
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        20
+      ],
+      "frame": 29354
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        1,
+        19,
+        20
+      ],
+      "finish": [
+        43,
+        1,
+        18,
+        20
+      ],
+      "frame": 29383
+    },
+    {
+      "key": "LEFT",
+      "start": [
+        43,
+        1,
+        18,
+        20
+      ],
+      "finish": [
+        43,
+        1,
+        17,
+        20
+      ],
+      "frame": 29404
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        17,
+        20
+      ],
+      "finish": [
+        43,
+        1,
+        17,
+        19
+      ],
+      "frame": 29433
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        17,
+        19
+      ],
+      "finish": [
+        43,
+        1,
+        17,
+        18
+      ],
+      "frame": 29454
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        17,
+        18
+      ],
+      "finish": [
+        43,
+        1,
+        17,
+        17
+      ],
+      "frame": 29475
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        17,
+        17
+      ],
+      "finish": [
+        43,
+        1,
+        17,
+        16
+      ],
+      "frame": 29496
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        17,
+        16
+      ],
+      "finish": [
+        43,
+        1,
+        17,
+        15
+      ],
+      "frame": 29517
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        17,
+        15
+      ],
+      "finish": [
+        43,
+        1,
+        17,
+        14
+      ],
+      "frame": 29538
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        17,
+        14
+      ],
+      "finish": [
+        43,
+        1,
+        17,
+        13
+      ],
+      "frame": 29559
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        1,
+        17,
+        13
+      ],
+      "finish": [
+        43,
+        1,
+        18,
+        13
+      ],
+      "frame": 29588
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        1,
+        18,
+        13
+      ],
+      "finish": [
+        43,
+        1,
+        19,
+        13
+      ],
+      "frame": 29609
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        1,
+        19,
+        13
+      ],
+      "finish": [
+        43,
+        1,
+        20,
+        13
+      ],
+      "frame": 29630
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        1,
+        20,
+        13
+      ],
+      "finish": [
+        43,
+        1,
+        21,
+        13
+      ],
+      "frame": 29651
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        1,
+        21,
+        13
+      ],
+      "finish": [
+        43,
+        1,
+        22,
+        13
+      ],
+      "frame": 29672
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        1,
+        22,
+        13
+      ],
+      "finish": [
+        43,
+        1,
+        23,
+        13
+      ],
+      "frame": 29693
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        1,
+        23,
+        13
+      ],
+      "finish": [
+        43,
+        1,
+        24,
+        13
+      ],
+      "frame": 29714
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        1,
+        24,
+        13
+      ],
+      "finish": [
+        43,
+        1,
+        25,
+        13
+      ],
+      "frame": 29735
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        1,
+        25,
+        13
+      ],
+      "finish": [
+        43,
+        1,
+        26,
+        13
+      ],
+      "frame": 29756
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        1,
+        26,
+        13
+      ],
+      "finish": [
+        43,
+        1,
+        27,
+        13
+      ],
+      "frame": 29777
+    },
+    {
+      "key": "RIGHT",
+      "start": [
+        43,
+        1,
+        27,
+        13
+      ],
+      "finish": [
+        43,
+        1,
+        28,
+        13
+      ],
+      "frame": 29798
+    },
+    {
+      "key": "UP",
+      "start": [
+        43,
+        1,
+        28,
+        13
+      ],
+      "finish": [
+        52,
+        9,
+        11,
+        14
+      ],
+      "frame": 29955
+    }
+  ],
+  "battles": [
+    {
+      "opponent": 948,
+      "double": true,
+      "outcome": 1,
+      "actions": 4,
+      "selected_battlers": [
+        0,
+        2
+      ],
+      "actual_keys": true,
+      "start_frame": 1091,
+      "end_frame": 5183
+    },
+    {
+      "opponent": 1006,
+      "double": false,
+      "outcome": 1,
+      "actions": 6,
+      "selected_battlers": [
+        0
+      ],
+      "actual_keys": true,
+      "start_frame": 5742,
+      "end_frame": 10997
+    },
+    {
+      "opponent": 1037,
+      "double": false,
+      "outcome": 1,
+      "actions": 2,
+      "selected_battlers": [
+        0
+      ],
+      "actual_keys": true,
+      "start_frame": 12396,
+      "end_frame": 15210
+    },
+    {
+      "opponent": 1037,
+      "double": false,
+      "outcome": 1,
+      "actions": 1,
+      "selected_battlers": [
+        0
+      ],
+      "actual_keys": true,
+      "start_frame": 15509,
+      "end_frame": 16636
+    },
+    {
+      "opponent": 1037,
+      "double": false,
+      "outcome": 1,
+      "actions": 1,
+      "selected_battlers": [
+        0
+      ],
+      "actual_keys": true,
+      "start_frame": 17069,
+      "end_frame": 18221
+    },
+    {
+      "opponent": 1037,
+      "double": false,
+      "outcome": 1,
+      "actions": 1,
+      "selected_battlers": [
+        0
+      ],
+      "actual_keys": true,
+      "start_frame": 18969,
+      "end_frame": 20121
+    },
+    {
+      "opponent": 924,
+      "double": false,
+      "outcome": 1,
+      "actions": 1,
+      "selected_battlers": [
+        0
+      ],
+      "actual_keys": true,
+      "start_frame": 22517,
+      "end_frame": 24311
+    },
+    {
+      "opponent": 1005,
+      "double": false,
+      "outcome": 1,
+      "actions": 1,
+      "selected_battlers": [
+        0
+      ],
+      "actual_keys": true,
+      "start_frame": 24647,
+      "end_frame": 26134
+    },
+    {
+      "opponent": 1196,
+      "double": false,
+      "outcome": 1,
+      "actions": 1,
+      "selected_battlers": [
+        0
+      ],
+      "actual_keys": true,
+      "start_frame": 26518,
+      "end_frame": 27885
+    }
+  ],
+  "prior_preboot_eligibility_fixture": true,
+  "this_test_preboot_save_edits": 0,
+  "full_Hoenn_campaign_tested": false,
+  "Stern_delivery_completed": false,
+  "actual_device_fps_measured": false,
+  "continuation_seed_sha256": "6db6e30c011568151cbb647be4d4dd92b78489f7c025150c6236df7a0937404c",
+  "prior_route_seed_sha256": "888f205f324d696415e9206e55ea2f8dc73d71a7141ff06c3030392270898fb4",
+  "prior_validation_sha256": "37966a11833191dc2ad6cb0ee26df2a4226db9f3d7c673c2fe11bd7a66601641",
+  "prior_native_SAVE": {
+    "counter": [
+      67,
+      68
+    ],
+    "checksummed_sectors": 14,
+    "qa_save": "/workspaces/pokefirered/work/misty-followup-20261014/native-v7-r6/scene1-Devon-native-QA-only.sav"
+  },
+  "compiler_map_offsets": {
+    "next.MapHeader.mapLayout": 0,
+    "next.MapHeader.events": 4,
+    "next.MapLayout.width": 0,
+    "next.MapLayout.height": 4,
+    "next.MapLayout.primaryTileset": 16,
+    "next.MapLayout.secondaryTileset": 20,
+    "next.BackupMapLayout.Xsize": 0,
+    "next.BackupMapLayout.Ysize": 4,
+    "next.BackupMapLayout.map": 8,
+    "next.MapEvents.warpCount": 1,
+    "next.MapEvents.warps": 8,
+    "next.WarpEvent.x": 0,
+    "next.WarpEvent.y": 2,
+    "next.WarpEvent.mapNum": 6,
+    "next.WarpEvent.mapGroup": 7,
+    "next.Tileset.isEmerald": 2,
+    "next.Tileset.metatileAttributes": 20,
+    "next.WarpEvent": 8,
+    "next.BackupMapLayout": 12,
+    "next.MapHeader": 28
+  },
+  "current_ELF_map_symbol_bindings": {
+    "VMap": {
+      "value": 50352256,
+      "size": 12,
+      "section": 2,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 279671
+    },
+    "gMapHeader": {
+      "value": 33779200,
+      "size": 28,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 252118
+    },
+    "gObjectEvents": {
+      "value": 33779260,
+      "size": 576,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 283318
+    }
+  },
+  "checkpoint_sha256": "6db6e30c011568151cbb647be4d4dd92b78489f7c025150c6236df7a0937404c",
+  "checkpoint_validation_sha256": "090fa55d12da7bf45cb7e769503201208dc25a53fb464afbeda677f582e9298c",
+  "prior_Stone_stages": [
+    {
+      "stage": "00-natural-preStone-resume",
+      "frame": 782,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r4/00-natural-preStone-resume.png",
+      "location": [
+        54,
+        2,
+        2,
+        1
+      ],
+      "scene": 3,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "grunt_won": true,
+      "idle": true
+    },
+    {
+      "stage": "10-Stone-request",
+      "frame": 1661,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r4/10-Stone-request.png",
+      "location": [
+        54,
+        2,
+        17,
+        6
+      ],
+      "scene": 4,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "grunt_won": true,
+      "idle": true
+    },
+    {
+      "stage": "11-Stone-repeat",
+      "frame": 1854,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r4/11-Stone-repeat.png",
+      "location": [
+        54,
+        2,
+        17,
+        6
+      ],
+      "scene": 4,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "grunt_won": true,
+      "idle": true
+    },
+    {
+      "stage": "12-SAVE-cold",
+      "frame": 782,
+      "image": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r4/12-SAVE-cold.png",
+      "location": [
+        54,
+        2,
+        17,
+        6
+      ],
+      "scene": 4,
+      "briney": 0,
+      "flags": {
+        "FLAG_HOENN_GOT_DEVON_GOODS": true,
+        "FLAG_HOENN_PEEKO_RESCUED": true,
+        "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+        "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+        "FLAG_HOENN_DEVON_GOODS_DELIVERED": false,
+        "FLAG_HOENN_GOT_EXP_SHARE": false
+      },
+      "Goods": 1,
+      "grunt_won": true,
+      "idle": true
+    }
+  ],
+  "prior_actual_battles": [
+    {
+      "opponent": 1072,
+      "turns": 2,
+      "outcome": 1,
+      "actual_keys": true
+    },
+    {
+      "opponent": 871,
+      "turns": 1,
+      "outcome": 1,
+      "actual_keys": true
+    },
+    {
+      "opponent": 1055,
+      "turns": 3,
+      "outcome": 1,
+      "actual_keys": true
+    },
+    {
+      "opponent": 906,
+      "turns": 3,
+      "outcome": 1,
+      "actual_keys": true
+    },
+    {
+      "opponent": 986,
+      "turns": 2,
+      "outcome": 1,
+      "actual_keys": true
+    }
+  ],
+  "prior_checkpoint_SAVE_cold": {
+    "counter": [
+      69,
+      70
+    ],
+    "checksummed_sectors": 14,
+    "qa_save": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r4/continuous-Stone-request-native-QA-only.sav"
+  },
+  "route_and_battle_replayed_this_run": false,
+  "compiler_double_offsets": {
+    "dc.hp": 40,
+    "dc.attack": 2,
+    "dc.spAttack": 8,
+    "dc.defense": 4,
+    "dc.spDefense": 10,
+    "dc.power": 1,
+    "dc.type": 2,
+    "dc.target": 6
+  },
+  "double_symbol_bindings": {
+    "gBattlerPositions": {
+      "value": 33700822,
+      "size": 4,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 273635
+    },
+    "gBattlerControllerFuncs": {
+      "value": 50352160,
+      "size": 16,
+      "section": 2,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 275769
+    },
+    "gBattleControllerExecFlags": {
+      "value": 33700808,
+      "size": 4,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 265878
+    },
+    "gMoveSelectionCursor": {
+      "value": 33701884,
+      "size": 4,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 279606
+    },
+    "gActionSelectionCursor": {
+      "value": 33701880,
+      "size": 4,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 259668
+    },
+    "gMultiUsePlayerCursor": {
+      "value": 50352180,
+      "size": 1,
+      "section": 2,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 253438
+    },
+    "gAbsentBattlerFlags": {
+      "value": 33701232,
+      "size": 1,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 276811
+    },
+    "gBattleMons": {
+      "value": 33700836,
+      "size": 352,
+      "section": 1,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 262710
+    },
+    "HandleInputChooseAction": {
+      "value": 134409025,
+      "size": 518,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "battle_controller_player.o",
+      "symbol_index": 6336
+    },
+    "HandleInputChooseTarget": {
+      "value": 134409597,
+      "size": 924,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "battle_controller_player.o",
+      "symbol_index": 6354
+    },
+    "HandleInputChooseMove": {
+      "value": 134410521,
+      "size": 972,
+      "section": 3,
+      "info": 18,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 261731
+    }
+  },
+  "double_forced_replacement_controller": "Current party_menu.c source; real DOWN/A/SEND OUT, UI HP and both active battle indexes excluded",
+  "boat_task_symbol_binding": {
+    "value": 134874581,
+    "size": 176,
+    "section": 3,
+    "info": 2,
+    "translation_unit": "script_menu.o",
+    "symbol_index": 26684
+  },
+  "before_twins_native_SAVE_cold": {
+    "counter": [
+      70,
+      71
+    ],
+    "checksummed_sectors": 14,
+    "qa_save": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-delivery-r1/pre-twins-continuous-native-QA-only.sav"
+  },
+  "double_actions": [
+    {
+      "frame": 1811,
+      "battler": 0,
+      "move_slot": 3,
+      "move": 354,
+      "PP_before": 15,
+      "opponent_candidate": 1,
+      "actual_keys": true
+    },
+    {
+      "frame": 1941,
+      "battler": 2,
+      "move_slot": 1,
+      "move": 59,
+      "PP_before": 15,
+      "opponent_candidate": 1,
+      "actual_keys": true
+    },
+    {
+      "frame": 3449,
+      "battler": 0,
+      "move_slot": 3,
+      "move": 354,
+      "PP_before": 14,
+      "opponent_candidate": 3,
+      "actual_keys": true
+    },
+    {
+      "frame": 3579,
+      "battler": 2,
+      "move_slot": 1,
+      "move": 59,
+      "PP_before": 14,
+      "opponent_candidate": 3,
+      "actual_keys": true
+    },
+    {
+      "frame": 6347,
+      "battler": 0,
+      "move_slot": 3,
+      "move": 354,
+      "PP_before": 13,
+      "opponent_candidate": 1,
+      "actual_keys": true
+    },
+    {
+      "frame": 6909,
+      "battler": 0,
+      "move_slot": 3,
+      "move": 354,
+      "PP_before": 12,
+      "opponent_candidate": 1,
+      "actual_keys": true
+    },
+    {
+      "frame": 7949,
+      "battler": 0,
+      "move_slot": 3,
+      "move": 354,
+      "PP_before": 11,
+      "opponent_candidate": 1,
+      "actual_keys": true
+    },
+    {
+      "frame": 8758,
+      "battler": 0,
+      "move_slot": 3,
+      "move": 354,
+      "PP_before": 10,
+      "opponent_candidate": 1,
+      "actual_keys": true
+    },
+    {
+      "frame": 9613,
+      "battler": 0,
+      "move_slot": 3,
+      "move": 354,
+      "PP_before": 9,
+      "opponent_candidate": 1,
+      "actual_keys": true
+    },
+    {
+      "frame": 10271,
+      "battler": 0,
+      "move_slot": 3,
+      "move": 354,
+      "PP_before": 8,
+      "opponent_candidate": 1,
+      "actual_keys": true
+    },
+    {
+      "frame": 13001,
+      "battler": 0,
+      "move_slot": 2,
+      "move": 57,
+      "PP_before": 14,
+      "opponent_candidate": 1,
+      "actual_keys": true
+    },
+    {
+      "frame": 14044,
+      "battler": 0,
+      "move_slot": 2,
+      "move": 57,
+      "PP_before": 13,
+      "opponent_candidate": 1,
+      "actual_keys": true
+    },
+    {
+      "frame": 15923,
+      "battler": 0,
+      "move_slot": 0,
+      "move": 344,
+      "PP_before": 13,
+      "opponent_candidate": 1,
+      "actual_keys": true
+    },
+    {
+      "frame": 17508,
+      "battler": 0,
+      "move_slot": 3,
+      "move": 354,
+      "PP_before": 7,
+      "opponent_candidate": 1,
+      "actual_keys": true
+    },
+    {
+      "frame": 19409,
+      "battler": 0,
+      "move_slot": 3,
+      "move": 354,
+      "PP_before": 6,
+      "opponent_candidate": 1,
+      "actual_keys": true
+    },
+    {
+      "frame": 23107,
+      "battler": 0,
+      "move_slot": 0,
+      "move": 344,
+      "PP_before": 12,
+      "opponent_candidate": 1,
+      "actual_keys": true
+    },
+    {
+      "frame": 25247,
+      "battler": 0,
+      "move_slot": 2,
+      "move": 87,
+      "PP_before": 15,
+      "opponent_candidate": 1,
+      "actual_keys": true
+    },
+    {
+      "frame": 27116,
+      "battler": 0,
+      "move_slot": 1,
+      "move": 59,
+      "PP_before": 14,
+      "opponent_candidate": 1,
+      "actual_keys": true
+    }
+  ],
+  "double_targets": [
+    {
+      "battler": 0,
+      "target": 1,
+      "cursor_trace": [
+        1
+      ],
+      "actual_keys": true
+    },
+    {
+      "battler": 0,
+      "target": 3,
+      "cursor_trace": [
+        3
+      ],
+      "actual_keys": true
+    }
+  ],
+  "twins_already_defeated_at_resume": false,
+  "boat_menus": [
+    {
+      "start": [
+        43,
+        19,
+        13,
+        51
+      ],
+      "local": 21,
+      "choice": 1,
+      "cursor_trace": [
+        0,
+        1
+      ],
+      "destination": "Route109",
+      "finish": [
+        43,
+        24,
+        22,
+        24
+      ],
+      "actual_keys": true
+    }
+  ],
+  "error": "AssertionError(('Native step blocked', (52, 9, 11, 14), 'UP'))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/work/hoenn-resume-20261014/native_devon_delivery_r1.py\", line 279, in main\n    warp((28,12),'SlateportCity_Harbor');walk((12,13));talk('UP',4);scene(5,0,True,False)\n                                         ^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/work/hoenn-resume-20261014/native_devon_delivery_r1.py\", line 174, in walk\n    step(parents[nxt][1],dest)\n  File \"/workspaces/pokefirered/work/hoenn-resume-20261014/native_devon_delivery_r1.py\", line 153, in step\n    start=e.location();native_step(key,warp=bool(dest));idle()\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<verified-r6-preflight-controller>\", line 383, in step\nAssertionError: ('Native step blocked', (52, 9, 11, 14), 'UP')\n",
+  "failure_location": [
+    52,
+    9,
+    11,
+    14
+  ],
+  "failure_callback": "0x8057781",
+  "protected_original_inputs_unchanged": true
+}

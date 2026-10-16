@@ -3344,7 +3344,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MoonStone = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-// KYOGRE: LUGIA's sprite recolored deep blue with red markings
+// KYOGRE: original Emerald front frames and palette.
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kyogre = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_KYOGRE,
@@ -3355,12 +3355,12 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kyogre = {
     .paletteSlot = PALSLOT_NPC_SPECIAL,
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
-    .disableReflectionPaletteLoad = FALSE,
+    .disableReflectionPaletteLoad = TRUE,
     .tracks = TRACKS_FOOT,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = gObjectEventSpriteOamTables_32x32,
-    .anims = sAnimTable_Standard,
-    .images = sPicTable_Lugia,
+    .anims = sThunderLegend_sAnimTable_Standard,
+    .images = sPicTable_ThunderLegendKyogreFront,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
@@ -3384,23 +3384,23 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Groudon = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-// RAYQUAZA: HO-OH's sprite recolored green
+// RAYQUAZA: original Emerald frames and palette.
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rayquaza = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_RAYQUAZA,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 512,
-    .width = 32,
-    .height = 32,
+    .size = 2048,
+    .width = 64,
+    .height = 64,
     .paletteSlot = PALSLOT_NPC_SPECIAL,
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
-    .disableReflectionPaletteLoad = FALSE,
+    .disableReflectionPaletteLoad = TRUE,
     .tracks = TRACKS_FOOT,
-    .oam = &gObjectEventBaseOam_32x32,
-    .subspriteTables = gObjectEventSpriteOamTables_32x32,
-    .anims = sAnimTable_HoOh,
-    .images = sPicTable_HoOh,
+    .oam = &gObjectEventBaseOam_64x64,
+    .subspriteTables = gObjectEventSpriteOamTables_64x64,
+    .anims = sThunderLegend_sAnimTable_Rayquaza,
+    .images = sPicTable_ThunderLegendRayquaza,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
@@ -4526,3 +4526,80 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoennRegisteel = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 // END HOENN OBJECT EVENTS
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_JohtoFarfetchd = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_JOHTO_FARFETCHD,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = TRUE,
+    .disableReflectionPaletteLoad = TRUE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = gObjectEventSpriteOamTables_32x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_JohtoFarfetchd,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_JohtoSudowoodo = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_JOHTO_SUDOWOODO,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = TRUE,
+    .disableReflectionPaletteLoad = TRUE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = gObjectEventSpriteOamTables_32x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_JohtoSudowoodo,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Shares the already loaded player palette; no competing special NPC slot.
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MistyCompanion = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_PLAYER_RED,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_PLAYER,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = gObjectEventSpriteOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_MistyCompanion,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfElmHns = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_PROF_ELM_HNS,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = TRUE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = gObjectEventSpriteOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_ProfElmHns,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};

@@ -1,0 +1,109 @@
+{
+  "time_utc": "20261005T125922Z",
+  "rom_sha256": "b3b62a31d4a7543876322d3e92947be6516e387f3c2035e834daa05551b19dfc",
+  "elf_sha256": "7a6c9d3c9513f143269d531c1bcab20d3fef0bbe01496218cd2fddda1f9e05c6",
+  "bytes": 33554432,
+  "resident_sections_match": true,
+  "save_layout_unchanged": true,
+  "save_layout": {
+    "blocks": {
+      "gSaveBlock1": 15720,
+      "gSaveBlock2": 3876,
+      "gPokemonStorage": 33744
+    },
+    "sector_layout": [
+      [
+        0,
+        3876
+      ],
+      [
+        0,
+        3968
+      ],
+      [
+        3968,
+        3968
+      ],
+      [
+        7936,
+        3968
+      ],
+      [
+        11904,
+        3816
+      ],
+      [
+        0,
+        3968
+      ],
+      [
+        3968,
+        3968
+      ],
+      [
+        7936,
+        3968
+      ],
+      [
+        11904,
+        3968
+      ],
+      [
+        15872,
+        3968
+      ],
+      [
+        19840,
+        3968
+      ],
+      [
+        23808,
+        3968
+      ],
+      [
+        27776,
+        3968
+      ],
+      [
+        31744,
+        2000
+      ]
+    ],
+    "sector_layout_sha256": "ee1f9bc20ab82f62e45a2451450517ea539f6ef48bd31045dc2430b8525fcd68"
+  },
+  "assets": {
+    "sOpeningMoviePixels": {
+      "sha256": "ff8c4e7f91ef541952f638043efdfe396d416777aaa984350869da3e603b66c3",
+      "bytes": 14192640
+    },
+    "sOpeningMoviePalettes": {
+      "sha256": "f253176e6ead3f2f5dd55c01de2f33881ce143527c464d076d2786bc348724f7",
+      "bytes": 178688
+    },
+    "sOpeningMovieFrames": {
+      "sha256": "22517a83536902b9c4245234a7bd84fd15b75fcbb00c70dbb274e648268d3938",
+      "bytes": 6016
+    },
+    "gTrainerFrontPic_JessieJames": {
+      "sha256": "5b036768fc2712765eab94952b2757a7783b953062ef440f26eb7e9e6f38d2b1",
+      "bytes": 2048
+    },
+    "gTrainerPalette_JessieJames": {
+      "sha256": "02951ab3bc6bd04dbce501258a13e92e3ba934728bb8249514b41238f835b792",
+      "bytes": 32
+    }
+  },
+  "title_version": "V8",
+  "rocket_version": "V11 native64x64",
+  "opening_version": "V7 752frames/FRLG music",
+  "johto_maps_integrated": 13,
+  "hoenn_native_league_verified": true,
+  "full_johto_story_complete": false,
+  "full_hoenn_story_complete": false,
+  "evidence_root": "/workspaces/pokefirered/outputs/checkpoint-glyph-review-v1",
+  "save_delivery": "byte-identical v1.2 copy; story flags update only during actual gameplay",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "all_original_saves_unchanged": true,
+  "known_existing_bad_egg_repaired": false,
+  "performance": "newfield idle/walk360/360; dex DOWN314/360 UP347/360, further optimization pending"
+}

@@ -1,0 +1,145 @@
+{
+  "source_head": "658baf740cff568cba7f3300f688b8a626e6f5fc",
+  "remote_applied": false,
+  "scope": "Devon theft -> Route116 clue -> Rusturf recovery/Peeko and existing boat unlock; city employee Great Ball",
+  "new_files": [
+    "docs/team/qa/codex-z3-devon-preflight-2026-10-01.md",
+    "tools/hoenn_import/patches/Route116.json",
+    "tools/hoenn_import/patches/Route116.mapscripts",
+    "tools/hoenn_import/patches/Route116.scripts.inc",
+    "tools/hoenn_import/patches/Route116.text.inc",
+    "tools/hoenn_import/patches/RustboroCity.json",
+    "tools/hoenn_import/patches/RustboroCity.mapscripts",
+    "tools/hoenn_import/patches/RustboroCity.scripts.inc",
+    "tools/hoenn_import/patches/RustboroCity.text.inc",
+    "tools/hoenn_import/patches/RusturfTunnel.json",
+    "tools/hoenn_import/patches/RusturfTunnel.mapscripts",
+    "tools/hoenn_import/patches/RusturfTunnel.scripts.inc",
+    "tools/hoenn_import/patches/RusturfTunnel.text.inc",
+    "tools/qa/cases/z3_devon.jsonl",
+    "tools/qa/prepare_z3_devon.py"
+  ],
+  "preconditions": {
+    "data/maps/Route116/map.json": "5ba77d20ffd61db8ff4ab25513815679f1f5446357e90adb0c7ec1b4649610e9",
+    "data/maps/Route116/scripts.inc": "2eeffec8fc97162906b134d405148e727063e34cdb3dc712ffe872acfd1e347b",
+    "data/maps/Route116/text.inc": "5b6852ccd59e7c24104cb03af6f6dd65e183d2fe340a2d5f7e8d350452eadc5e",
+    "data/maps/RustboroCity/map.json": "8c426b2f7719651f02acc0f454340e5cfeb82383aeeddd353340c65b00872aaf",
+    "data/maps/RustboroCity/scripts.inc": "17526c33aba12b41abf18601e74faa884ae1ae96a49bf8b3bf12dd316194340c",
+    "data/maps/RustboroCity/text.inc": "069a6ac5b9b25f05a14b9a566e3db44008b127f784a687242e42dc1a28478a15",
+    "data/maps/RusturfTunnel/map.json": "119057f4bdb13418e1cae75b2b2895082d9655929ee9de29a0ca16fdf71a279d",
+    "data/maps/RusturfTunnel/scripts.inc": "76002c45bedf60891aa76f24e3171e1a07520e8341c3a0e894e7ce17bd9afd05",
+    "data/maps/RusturfTunnel/text.inc": "c4f3fa32e7b08df2e3518b01dd9dd8e31c0662976da047c71211662949fd6fd2"
+  },
+  "files": {
+    "data/maps/Route116/map.json": "d155bbbf94f6e0e48d7fdf66505a24839c26e1dd48b171fc1cd5e9b547cf0299",
+    "data/maps/Route116/scripts.inc": "b80ac252f8a140ac69c3ce85fc754d1bf9ed1d4eb052d400fe6a90a7efcc05cf",
+    "data/maps/Route116/text.inc": "58a986fcda85229abe2a40ab62609f4b99d10beddebdbc27573af73fcce1a7d8",
+    "data/maps/RustboroCity/map.json": "f0271bcea1cf27c09c8e4b659c07fcc011825ee60f885d904d22f5962e2a3d92",
+    "data/maps/RustboroCity/scripts.inc": "70f4a1df10854a9ebe202de377b4a693e3bf9f8e5bf866d377712a1116d7a990",
+    "data/maps/RustboroCity/text.inc": "60facee00075f9670278295fba87aed22b988850e585b9ecb6945e95bdbde6cb",
+    "data/maps/RusturfTunnel/map.json": "8f7233202b92d77bb445cc27e1b61f2662e00064ab7581a0ead62132d43d7fa8",
+    "data/maps/RusturfTunnel/scripts.inc": "60e9da17726bd86c89ba62d7a3d69552e506960728ca431be403096f641f1429",
+    "data/maps/RusturfTunnel/text.inc": "14e0beb52ac3bb9986e3b61ad81b21f18333d27595f7f0955e0d645c7f478bd6",
+    "docs/team/qa/codex-z3-devon-preflight-2026-10-01.md": "3fe2d7055d579d50dd955f2696a4f6a4a634980d71517a3299c277560ce92676",
+    "tools/hoenn_import/patches/Route116.json": "f85494b3492c61a4010ce1cb694c0fcb5692643e30ce1d85ca35c30bda3e1854",
+    "tools/hoenn_import/patches/Route116.mapscripts": "ffe9ee126a98d6a456f8591561fd0e5385934bf336a1b61b67b8c95d1cdb003e",
+    "tools/hoenn_import/patches/Route116.scripts.inc": "dac4a5bede1e6471234ffc419133b3a40bbc92774964f0b83f64ee5dfec01949",
+    "tools/hoenn_import/patches/Route116.text.inc": "0b77024ff337955cc8027b7121bd81f20d42e66c9402ccb228be81546a5f9191",
+    "tools/hoenn_import/patches/RustboroCity.json": "13fa3bf67cc1668f7050067b0d87477102cf6728406c4ff3da5f7b96b4e5c20e",
+    "tools/hoenn_import/patches/RustboroCity.mapscripts": "41572f4a4d08728af4fa989d9724578629e03fa201b5866d02305f69e3b7eb9b",
+    "tools/hoenn_import/patches/RustboroCity.scripts.inc": "95ea5f047d12be965e12229dcbff81b17f9499155c8af87d782a9b849206aadb",
+    "tools/hoenn_import/patches/RustboroCity.text.inc": "0d4974bc6e21792f27a80877ce183b0d54c92a18cf7df7cd25414a8488c10c15",
+    "tools/hoenn_import/patches/RusturfTunnel.json": "f8b5c5ad4b3b58d257609a75abab887d8a106524e34c1c3da00e32494055d05a",
+    "tools/hoenn_import/patches/RusturfTunnel.mapscripts": "2274d2030fd68af49c01092912256fc76e70be19007dfb244854786194365b5b",
+    "tools/hoenn_import/patches/RusturfTunnel.scripts.inc": "4de112a7798795fcc9986d5b88e9ccf3aa0314a101fadf9d6533dedebcf568a9",
+    "tools/hoenn_import/patches/RusturfTunnel.text.inc": "9df620b3ab026f479d725f316fb28db0e6e47ae7f90c6a07081f41681cd6c5d8",
+    "tools/qa/cases/z3_devon.jsonl": "3132c709c6ccf869658261cc8bf48d316c0d43d71ebe25d79ffd899fe321508a",
+    "tools/qa/prepare_z3_devon.py": "154bd9d57d5beaa473dbfe0e01fca6c664aa90e0bfdfdb68ea831dd600f6daaa"
+  },
+  "local_checks": {
+    "patch_idempotence": true,
+    "old_object_order_preserved": true,
+    "warps_connections_layout_unchanged": true,
+    "object_counts": {
+      "RustboroCity": 14,
+      "Route116": 16,
+      "RusturfTunnel": 5
+    },
+    "review": {
+      "verdict": "STATIC_CHECKS_PASS_RUNTIME_PENDING",
+      "git_apply_check": {
+        "exit_code": 0,
+        "stderr": ""
+      },
+      "textwidth": {
+        "new_labels": 15,
+        "printed_lines": 43,
+        "over_208px": [],
+        "unknown_glyphs": [],
+        "font_source": "local v0.10.0 src/text.c (current remote check still required)"
+      },
+      "script_links": {
+        "new_references": 32,
+        "unresolved": [],
+        "duplicate_generated_labels": []
+      },
+      "map_preservation": {
+        "RustboroCity": {
+          "old_objects": 12,
+          "new_total": 14,
+          "old_events_and_map_fields_preserved": true
+        },
+        "Route116": {
+          "old_objects": 15,
+          "new_total": 16,
+          "old_events_and_map_fields_preserved": true
+        },
+        "RusturfTunnel": {
+          "old_objects": 3,
+          "new_total": 5,
+          "old_events_and_map_fields_preserved": true
+        }
+      },
+      "failure_paths_do_not_commit_rewards_or_quest": true,
+      "theft_guards_precede_lock": true,
+      "duplicate_item_and_reward_guards_present": true,
+      "jsonl": {
+        "cases": 29,
+        "negative_controls": 1,
+        "syntax_checked": true,
+        "runtime_executed": false
+      },
+      "fixture": {
+        "syntax_checked": true,
+        "executed": false,
+        "victory_party": "Actual saves/hoenn.sav slot 1 Ivysaur; first move 75 Razor Leaf, followed by 22 Vine Whip, 15 Cut, 230 Sweet Scent. Root inspected 2026-10-01.",
+        "normalization": "strong 1 100; held 1 ITEM_NONE; lead 1; party 1; fastbattle. No species or moves replaced."
+      },
+      "not_run": [
+        "remote build/symbols",
+        "save compatibility",
+        "emulator eventcheck",
+        "mapsmoke and screenshots",
+        "map integrity and wiring",
+        "current-ROM textwidth/textaudit/dexcheck"
+      ],
+      "remaining_story": [
+        "Devon president/Stern delivery/Exp Share",
+        "Wanda reunion",
+        "Route116 Repeat Ball worker"
+      ],
+      "review_notes": [
+        "No rocks added; tunnel layout, existing objects, warps and connections preserved.",
+        "Existing Briney boat position is reset to Route104 only on the first Peeko rescue.",
+        "New global C setup code is not changed; three maps call existing HoennZ3_SetupObjects."
+      ]
+    }
+  },
+  "remote_checks": "Not yet run",
+  "remaining_z3": [
+    "Devon president/Stern delivery/Exp Share",
+    "Wanda reunion",
+    "Route116 Repeat Ball worker",
+    "Other Rustboro gifts/trade/dialogue and regional QA"
+  ]
+}

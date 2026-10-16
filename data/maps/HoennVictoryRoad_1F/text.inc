@@ -24,3 +24,86 @@ HoennVictoryRoad_1F_Text_H4::
 	.string "That's why it's called the VICTORY\n"
 	.string "ROAD.$"
 
+
+@ THYL_WALLY_FINAL_V1: branches do not invent a past battle for legacy saves.
+HoennVictoryRoad_1F_Text_TYWallyRemember:
+	.string "WALLY: Hi, {PLAYER}!\p"
+	.string "After our battle in MAUVILLE, I kept\n"
+	.string "training with my POKéMON.\p"
+	.string "Now we've reached VICTORY ROAD!\n"
+	.string "May I challenge you before the LEAGUE?$"
+
+HoennVictoryRoad_1F_Text_TYWallyFirstMeeting:
+	.string "WALLY: I'm WALLY, from VERDANTURF.\n"
+	.string "My partners and I have come this far.\p"
+	.string "The storm is over, and the path to\n"
+	.string "the POKéMON LEAGUE is open again.\p"
+	.string "May I challenge you before we go on?$"
+
+HoennVictoryRoad_1F_Text_TYWallyBattle:
+	.string "WALLY: I'm going to give this my all!\n"
+	.string "For the POKéMON who gave me courage!$"
+
+HoennVictoryRoad_1F_Text_TYWallyDefeat:
+	.string "Wow!\n"
+	.string "{PLAYER}, you are strong, after all!$"
+
+HoennVictoryRoad_1F_Text_TYWallyPost:
+	.string "WALLY: I couldn't beat you today,\n"
+	.string "but I'll keep training with my team.\p"
+	.string "One day, we'll challenge the LEAGUE,\n"
+	.string "just like you!$"
+
+HoennVictoryRoad_1F_Text_TYWallyLegacy:
+	.string "WALLY: You've become HOENN's CHAMPION!\p"
+	.string "I'm still training with my POKéMON.\n"
+	.string "I'll keep working toward the LEAGUE!$"
+
+HoennVictoryRoad_1F_Text_TYWallyEarly:
+	.string "WALLY: Before you climb the waterfall,\n"
+	.string "visit JUAN's GYM in SOOTOPOLIS.\p"
+	.string "The RAINBADGE proves you're ready\n"
+	.string "for this road and its strong TRAINERS.$"
+
+HoennVictoryRoad_1F_Text_TYWallyDeclined:
+	.string "WALLY: All right. I'll be training\n"
+	.string "here when you're ready.$"
+
+@ THYL_VICTORY_ROAD_1F_TRAINERS_V1: original Emerald intro and defeat dialogue.
+HoennVictoryRoad_1F_Text_TYEdgarIntro:
+	.string "I've made it this far a couple times,\n"
+	.string "but the last stretch is so long…$"
+
+HoennVictoryRoad_1F_Text_TYEdgarDefeat:
+	.string "My dream ends here again…$"
+
+HoennVictoryRoad_1F_Text_TYHopeIntro:
+	.string "This seemingly infinite and harsh road\n"
+	.string "lives up to its name of VICTORY.$"
+
+HoennVictoryRoad_1F_Text_TYHopeDefeat:
+	.string "Your battle style is fantastic…$"
+
+HoennVictoryRoad_1F_Text_TYAlbertIntro:
+	.string "I didn't come all this way to lose now.\n"
+	.string "That possibility doesn't exist!$"
+
+HoennVictoryRoad_1F_Text_TYAlbertDefeat:
+	.string "Impossible…\n"
+	.string "I lost?$"
+
+HoennVictoryRoad_1F_Text_TYKatelynnIntro:
+	.string "I have nothing to say to anyone\n"
+	.string "that's come this far. Come on!$"
+
+HoennVictoryRoad_1F_Text_TYKatelynnDefeat:
+	.string "This is a disgrace…$"
+
+HoennVictoryRoad_1F_Text_TYQuincyIntro:
+	.string "What is the VICTORY ROAD?\n"
+	.string "I'll tell you if you win!$"
+
+HoennVictoryRoad_1F_Text_TYQuincyDefeat:
+	.string "Okay!\n"
+	.string "Well done!$"
+

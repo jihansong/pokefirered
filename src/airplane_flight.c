@@ -58,6 +58,7 @@ static const struct BgTemplate sBgTemplates[] = {
 static const s8 sDestinations[AIRPLANE_DEST_COUNT][4] = {
     [AIRPLANE_DEST_KANTO] = {MAP(MAP_KANTO_AIRPORT), 12, 7},
     [AIRPLANE_DEST_HOENN] = {MAP(MAP_SLATEPORT_CITY_HARBOR), 12, 13},
+    [AIRPLANE_DEST_JOHTO] = {MAP(MAP_JOHTO_CHERRYGROVE_AIRSTRIP), 22, 12},
 };
 
 static const struct SpriteSheet sPlaneSheet = {sPlaneTiles, sizeof(sPlaneTiles), TAG_PLANE};

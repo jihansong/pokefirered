@@ -1,0 +1,46 @@
+{
+  "ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+  "ELF_sha256": "e625069ea9379ea3dc2f83e3014fb741a2e0b7383f41f6d56bc37fc0eae6f17b",
+  "symbols": {
+    "gSpeciesInfo": {
+      "value": 137164568,
+      "size": 11536,
+      "info": 17,
+      "section": 6,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 254549,
+      "sha256": "4aba92bc6afc630acbdeed630b6299cc62787b983d81e681354fab4dacfacdce",
+      "file": "gSpeciesInfo.bin"
+    },
+    "sSpeciesToNationalPokedexNum": {
+      "value": 137154434,
+      "size": 822,
+      "info": 1,
+      "section": 6,
+      "translation_unit": "pokemon.o",
+      "symbol_index": 8376,
+      "sha256": "c929fdf33e28cd9a7ffd9b7c2c8d1b321d1a0fe9881e7f8ab79b231b768246b1",
+      "file": "sSpeciesToNationalPokedexNum.bin"
+    },
+    "gExperienceTables": {
+      "value": 137161336,
+      "size": 3232,
+      "info": 17,
+      "section": 6,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 250622,
+      "sha256": "6f153914ffef4c04b9f358ed7941ae51d143639b6eb1de4baf29cffa5d5e56b6",
+      "file": "gExperienceTables.bin"
+    },
+    "gBattleMoves": {
+      "value": 137149324,
+      "size": 4272,
+      "info": 17,
+      "section": 6,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 270303,
+      "sha256": "536484a57d70078e48c8c8cfdc4bb6cd558d0c85db0f8cc0f9f1ce2d0be6140f",
+      "file": "gBattleMoves.bin"
+    }
+  }
+}

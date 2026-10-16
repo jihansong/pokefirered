@@ -1,0 +1,114 @@
+{
+  "schema": 1,
+  "requested_at": "2026-10-06",
+  "status": "accepted-not-yet-ROM-integrated",
+  "save_abi_changes": false,
+  "post_champion": {
+    "unlock": "FLAG_SYS_GAME_CLEAR",
+    "join_scene": "Misty congratulates player for Kanto Champion, admits affection and asks to travel together",
+    "respect_existing_oak_postgame": true,
+    "existing_gym_battle_unchanged": true
+  },
+  "companionship": {
+    "regions": [
+      "Kanto postgame",
+      "Johto",
+      "Hoenn"
+    ],
+    "keep_original_starter_pikachu": true,
+    "field_visual": "Misty travels behind original Pikachu where the map and object pool allow; recovers after doors/warps/save/load",
+    "existing_player_party_unchanged": true,
+    "story_encounters_and_partner_battles": true,
+    "partner_battle_pending_engine_support": true
+  },
+  "romance": {
+    "affection": "recurring affectionate dialogue linked to regional milestones",
+    "dating": "asks player to date her during Johto travel",
+    "marriage": "asks player to marry her later in Hoenn; confession and dialogue, no sexual content",
+    "repeat_without_softlock": true
+  },
+  "growth": [
+    {
+      "stage": "Kanto champion/join",
+      "count": 3,
+      "team": [
+        "Starmie",
+        "Psyduck",
+        "Horsea"
+      ]
+    },
+    {
+      "stage": "Johto early progress",
+      "count": 4,
+      "team": [
+        "Starmie",
+        "Psyduck",
+        "Horsea",
+        "Poliwag"
+      ]
+    },
+    {
+      "stage": "Johto late progress",
+      "count": 5,
+      "team": [
+        "Starmie",
+        "Golduck",
+        "Seadra",
+        "Poliwhirl",
+        "Corsola"
+      ]
+    },
+    {
+      "stage": "Hoenn entry",
+      "count": 6,
+      "team": [
+        "Starmie",
+        "Golduck",
+        "Seadra",
+        "Poliwhirl",
+        "Corsola",
+        "Marill"
+      ]
+    },
+    {
+      "stage": "Hoenn late progress",
+      "count": 6,
+      "team": [
+        "Starmie",
+        "Golduck",
+        "Kingdra",
+        "Politoed",
+        "Corsola",
+        "Azumarill"
+      ]
+    }
+  ],
+  "growth_rules": {
+    "source": "existing regional story/badge flags",
+    "levels": "monotonic increasing NPC team levels, tuned against actual postgame battle baseline",
+    "npc_data_not_stored_in_player_party": true,
+    "dex_internal_ids_and_records_preserved": true
+  },
+  "qa_required": [
+    "Kanto champion gate",
+    "original Oak postgame scene",
+    "original Misty gym and badge",
+    "Pikachu plus Misty walk/run/ledge/door/warp collision",
+    "object pool exhaustion recovery",
+    "surf/dive/space transit companion continuity",
+    "NPC team counts/level/evolution progression",
+    "partner battle win/loss and player-party restoration",
+    "native SAVE and cold continue each stage",
+    "original SAV hash/PC/Pokemon identity unchanged",
+    "regional native frame performance"
+  ],
+  "unimplemented": [
+    "join scene",
+    "affection dialogues",
+    "physical second follower",
+    "team data and trainer selection",
+    "partner battles",
+    "native emulator verification",
+    "main ROM integration"
+  ]
+}

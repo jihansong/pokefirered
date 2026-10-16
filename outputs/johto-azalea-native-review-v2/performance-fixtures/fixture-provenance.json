@@ -1,0 +1,33 @@
+{
+  "source": "/workspaces/pokefirered/saves/pokemonthyl_v1.2.sav",
+  "source_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "genuine_starter": {
+    "slot": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "party_sha256": "0ee7112693860531159372b0dc649d23cac78cadca4fbb8dc1115426f41eab51"
+  },
+  "original_starter_flag": true,
+  "fixture_starter_flag": true,
+  "story_flags": [
+    "FLAG_JOHTO_ARRIVAL_BRIEFED",
+    "FLAG_JOHTO_MET_LAB_ASSISTANT",
+    "FLAG_JOHTO_ELM_REPORT_DELIVERED",
+    "FLAG_JOHTO_BADGE01_GET"
+  ],
+  "repel": 250,
+  "party_pc_dex_preserved": true,
+  "fixtures": [
+    {
+      "map": "JohtoRoute32",
+      "save": "JohtoRoute32-performance.sav",
+      "sha256": "813abcb2f76eff4a4ddaa9ba0f5808122437132750b176450ce374d4bb59e78e"
+    },
+    {
+      "map": "AzaleaTown",
+      "save": "AzaleaTown-performance.sav",
+      "sha256": "d87f4e454c09216ab99024c249d3a60e833f25cc7a70cb82977f084cee157b4f"
+    }
+  ]
+}

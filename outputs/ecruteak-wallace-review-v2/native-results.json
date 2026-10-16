@@ -1,0 +1,98 @@
+[
+  {
+    "case": "ecruteak-battles",
+    "exit": 0
+  },
+  {
+    "case": "ecruteak-wild",
+    "exit": 1
+  },
+  {
+    "case": "ecruteak-events",
+    "exit": 0
+  },
+  {
+    "case": "wallace-first",
+    "exit": 1
+  },
+  {
+    "case": "wallace-bag",
+    "exit": 1
+  },
+  {
+    "case": "ecruteak-map-links",
+    "exit": 0
+  },
+  {
+    "case": "wallace-pc",
+    "exit": 1
+  },
+  {
+    "case": "wallace-history",
+    "exit": 1
+  },
+  {
+    "case": "wallace-done",
+    "exit": 1
+  },
+  {
+    "case": "wallace-early",
+    "exit": 1
+  },
+  {
+    "case": "wallace-storm",
+    "exit": 1
+  },
+  {
+    "case": "wallace-legacy",
+    "exit": 1
+  },
+  {
+    "case": "wallace-full-retry",
+    "exit": 1
+  },
+  {
+    "case": "waterfall-a",
+    "exit": 0
+  },
+  {
+    "case": "waterfall-menu",
+    "exit": 1
+  },
+  {
+    "case": "waterfall-no-rain-a",
+    "exit": 0
+  },
+  {
+    "case": "waterfall-no-rain-menu",
+    "exit": 1
+  },
+  {
+    "case": "waterfall-no-move-a",
+    "exit": 0
+  },
+  {
+    "case": "waterfall-kanto-badge",
+    "exit": 1
+  },
+  {
+    "case": "waterfall-kanto-rain-only",
+    "exit": 1
+  },
+  {
+    "case": "waterfall-johto-badge",
+    "exit": 1
+  },
+  {
+    "case": "wild-header-regions",
+    "exit": 0
+  },
+  {
+    "case": "waterfall-johto-rain-only",
+    "exit": 1
+  },
+  {
+    "case": "habitat-pages",
+    "exit": 0
+  }
+]

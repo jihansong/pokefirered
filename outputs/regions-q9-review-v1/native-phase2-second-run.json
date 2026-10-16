@@ -1,0 +1,47 @@
+{
+  "status": "FINISHED",
+  "rom_sha256": "af9ba1f61fce4630d488567ed11b83847dfbc1fcff435653bedd4d86dc622818",
+  "jobs_total": 6,
+  "max_workers": 2,
+  "results": [
+    {
+      "name": "rival-110-may",
+      "exit": 1,
+      "seconds": 26.15512704849243,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-rival-110-may.log"
+    },
+    {
+      "name": "rival-119-retry",
+      "exit": 0,
+      "seconds": 25.298296689987183,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-rival-119-retry.log"
+    },
+    {
+      "name": "bridge-blocked",
+      "exit": 0,
+      "seconds": 19.17107343673706,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-bridge-blocked.log"
+    },
+    {
+      "name": "bridge-clear",
+      "exit": 0,
+      "seconds": 21.38773536682129,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-bridge-clear.log"
+    },
+    {
+      "name": "tohjo-route",
+      "exit": 1,
+      "seconds": 4.545677900314331,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-tohjo-route.log"
+    },
+    {
+      "name": "hof-repaired",
+      "exit": 1,
+      "seconds": 12.462622165679932,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-hof-repaired.log"
+    }
+  ],
+  "all_pass": false,
+  "main_unchanged": true,
+  "original_saves_unchanged": true
+}

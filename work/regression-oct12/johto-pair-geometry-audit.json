@@ -1,0 +1,1962 @@
+{
+  "map_count": 124,
+  "parse_errors": [],
+  "errors": [],
+  "warnings": [],
+  "maps": [
+    {
+      "map": "JohtoCherrygroveAirstrip",
+      "pair": [
+        "gTileset_General",
+        "gTileset_VermilionCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "JohtoRoute29",
+      "pair": [
+        "gTileset_General",
+        "gTileset_PalletTown"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "NewBarkTown",
+      "pair": [
+        "gTileset_General",
+        "gTileset_PalletTown"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "NewBarkTown_ElmsLab",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_Lab"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "NewBarkTown_RestHouse",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_GenericBuilding2"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "NewBarkTown_NeighborsHouse",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_GenericBuilding2"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "CherrygroveCity",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "CherrygroveCity_PokemonCenter_1F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "CherrygroveCity_PokemonCenter_2F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "CherrygroveCity_Mart",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_Mart"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "CherrygroveCity_GuideHouse",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_GenericBuilding1"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "JohtoRoute30",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "JohtoRoute30_MrPokemonsHouse",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_GenericBuilding1"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "JohtoRoute31",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "VioletCity",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "VioletCity_PokemonCenter_1F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "VioletCity_PokemonCenter_2F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "VioletCity_Mart",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_Mart"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "VioletCity_Academy",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_GenericBuilding1"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "VioletCity_Gym",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PewterGym"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "SproutTower_1F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PewterGym"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "SproutTower_2F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PewterGym"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "SproutTower_3F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PewterGym"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "JohtoRoute32",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "JohtoUnionCave_1F",
+      "pair": [
+        "gTileset_General",
+        "gTileset_Cave"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "JohtoRoute33",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "AzaleaTown",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "AzaleaTown_PokemonCenter_1F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "AzaleaTown_PokemonCenter_2F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "AzaleaTown_Mart",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_Mart"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "AzaleaTown_KurtsHouse",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_GenericBuilding1"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "AzaleaTown_Gym",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_CeladonGym"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "SlowpokeWell_1F",
+      "pair": [
+        "gTileset_General",
+        "gTileset_Cave"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "IlexForest_AzaleaGate",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_GenericBuilding2"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.before-whitney-native-branch.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ],
+          "donor": "LAYOUT_ROUTE2_ENTRANCE",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ]
+        },
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.before-bidirectional-exits.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ],
+          "donor": "LAYOUT_ROUTE2_ENTRANCE",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ]
+        },
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.before-route29-alias.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ],
+          "donor": "LAYOUT_ROUTE2_ENTRANCE",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ]
+        },
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ],
+          "donor": "LAYOUT_ROUTE2_ENTRANCE",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "IlexForest",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianForest"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.before-whitney-native-branch.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianForest"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_FOREST",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianForest"
+          ]
+        },
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.before-bidirectional-exits.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianForest"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_FOREST",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianForest"
+          ]
+        },
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.before-route29-alias.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianForest"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_FOREST",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianForest"
+          ]
+        },
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianForest"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_FOREST",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianForest"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "IlexForest_Route34Gate",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_GenericBuilding2"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "JohtoRoute34",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.before-whitney-native-branch.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ]
+        },
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.before-bidirectional-exits.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ]
+        },
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.before-route29-alias.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ]
+        },
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoRoute34_DayCare",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_FanClubDaycare"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "GoldenrodCity",
+      "pair": [
+        "gTileset_General",
+        "gTileset_SaffronCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.before-whitney-native-branch.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_SaffronCity"
+          ],
+          "donor": "LAYOUT_SAFFRON_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_SaffronCity"
+          ]
+        },
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.before-bidirectional-exits.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_SaffronCity"
+          ],
+          "donor": "LAYOUT_SAFFRON_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_SaffronCity"
+          ]
+        },
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.before-route29-alias.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_SaffronCity"
+          ],
+          "donor": "LAYOUT_SAFFRON_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_SaffronCity"
+          ]
+        },
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_SaffronCity"
+          ],
+          "donor": "LAYOUT_SAFFRON_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_SaffronCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "GoldenrodCity_PokemonCenter_1F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "GoldenrodCity_PokemonCenter_2F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "GoldenrodCity_Mart",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_Mart"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "GoldenrodCity_RadioTower_1F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_GenericBuilding2"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.before-whitney-native-branch.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ],
+          "donor": "LAYOUT_ROUTE2_ENTRANCE",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ]
+        },
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.before-bidirectional-exits.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ],
+          "donor": "LAYOUT_ROUTE2_ENTRANCE",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ]
+        },
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.before-route29-alias.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ],
+          "donor": "LAYOUT_ROUTE2_ENTRANCE",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ]
+        },
+        {
+          "generator": "tools/johto/build_ilex_goldenrod.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ],
+          "donor": "LAYOUT_ROUTE2_ENTRANCE",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "GoldenrodCity_Gym",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_CeladonGym"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "GoldenrodCity_NorthGate",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_GenericBuilding2"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_ecruteak.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ],
+          "donor": "LAYOUT_ROUTE2_ENTRANCE",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoRoute35",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_ecruteak.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoRoute35_NationalParkGate",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_GenericBuilding2"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_ecruteak.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ],
+          "donor": "LAYOUT_ROUTE2_ENTRANCE",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoNationalPark",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_ecruteak.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoNationalPark_Route36Gate",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_GenericBuilding2"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_ecruteak.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ],
+          "donor": "LAYOUT_ROUTE2_ENTRANCE",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoRoute36",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_ecruteak.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoRoute37",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_ecruteak.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "EcruteakCity",
+      "pair": [
+        "gTileset_General",
+        "gTileset_SaffronCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_ecruteak.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_SaffronCity"
+          ],
+          "donor": "LAYOUT_SAFFRON_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_SaffronCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "EcruteakCity_PokemonCenter_1F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "EcruteakCity_PokemonCenter_2F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "EcruteakCity_Mart",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_Mart"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "EcruteakCity_DanceTheater",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PewterGym"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "EcruteakCity_Gym",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_CeladonGym"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "BurnedTower_1F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonMansion"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_ecruteak.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_PokemonMansion"
+          ],
+          "donor": "LAYOUT_POKEMON_MANSION_1F",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_PokemonMansion"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "BurnedTower_B1F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonMansion"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_ecruteak.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_PokemonMansion"
+          ],
+          "donor": "LAYOUT_POKEMON_MANSION_B1F",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_PokemonMansion"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "EcruteakCity_WestGate",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_GenericBuilding2"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_olivine_cianwood.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ],
+          "donor": "LAYOUT_ROUTE2_ENTRANCE",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoRoute38",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_olivine_cianwood.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoRoute39",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_olivine_cianwood.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "OlivineCity",
+      "pair": [
+        "gTileset_General",
+        "gTileset_SaffronCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_olivine_cianwood.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_SaffronCity"
+          ],
+          "donor": "LAYOUT_SAFFRON_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_SaffronCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "OlivineCity_PokemonCenter_1F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "OlivineCity_PokemonCenter_2F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "OlivineCity_Mart",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_Mart"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "OlivineCity_Gym",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PewterGym"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "OlivineLighthouse_1F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonTower"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "OlivineLighthouse_2F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonTower"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "OlivineLighthouse_3F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonTower"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "OlivineLighthouse_4F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonTower"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "OlivineLighthouse_5F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonTower"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "OlivineLighthouse_6F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonTower"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "JohtoRoute40",
+      "pair": [
+        "gTileset_General",
+        "gTileset_CinnabarIsland"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_olivine_cianwood.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_CinnabarIsland"
+          ],
+          "donor": "LAYOUT_CINNABAR_ISLAND",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_CinnabarIsland"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoRoute41",
+      "pair": [
+        "gTileset_General",
+        "gTileset_CinnabarIsland"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_olivine_cianwood.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_CinnabarIsland"
+          ],
+          "donor": "LAYOUT_CINNABAR_ISLAND",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_CinnabarIsland"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "CianwoodCity",
+      "pair": [
+        "gTileset_General",
+        "gTileset_SaffronCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_olivine_cianwood.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_SaffronCity"
+          ],
+          "donor": "LAYOUT_SAFFRON_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_SaffronCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "CianwoodCity_PokemonCenter_1F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "CianwoodCity_PokemonCenter_2F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "CianwoodCity_Pharmacy",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_GenericBuilding1"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "CianwoodCity_Gym",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PewterGym"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "OlivineCity_Cafe",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_GenericBuilding1"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "EcruteakCity_EastGate",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_GenericBuilding2"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_mahogany.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ],
+          "donor": "LAYOUT_ROUTE2_ENTRANCE",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding2"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoRoute42",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_mahogany.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "MtMortar_1F",
+      "pair": [
+        "gTileset_General",
+        "gTileset_RockTunnel"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_mahogany.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_RockTunnel"
+          ],
+          "donor": "LAYOUT_ROCK_TUNNEL_1F",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_RockTunnel"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "MahoganyTown",
+      "pair": [
+        "gTileset_General",
+        "gTileset_SaffronCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_mahogany.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_SaffronCity"
+          ],
+          "donor": "LAYOUT_SAFFRON_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_SaffronCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "MahoganyTown_PokemonCenter_1F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "MahoganyTown_PokemonCenter_2F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "MahoganyTown_Shop",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_GenericBuilding1"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_mahogany.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding1"
+          ],
+          "donor": "LAYOUT_HOUSE5",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_GenericBuilding1"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "MahoganyTown_Gym",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PewterGym"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_mahogany.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_PewterGym"
+          ],
+          "donor": "LAYOUT_PEWTER_CITY_GYM",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_PewterGym"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoRoute43",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_mahogany.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "LakeOfRage",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_mahogany.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoRocketHQ_B1F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_SilphCo"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "JohtoRocketHQ_B2F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_SilphCo"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "JohtoRocketHQ_B3F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_SilphCo"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "GoldenrodCity_RadioTower_2F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_SilphCo"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "GoldenrodCity_RadioTower_3F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_SilphCo"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "GoldenrodCity_RadioTower_4F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_SilphCo"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "GoldenrodCity_RadioTower_5F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_SilphCo"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "GoldenrodUnderground",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_SilphCo"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "GoldenrodUnderground_Basement",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_SilphCo"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "GoldenrodWarehouse",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_SilphCo"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "JohtoRoute44",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_blackthorn.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "IcePath_1F",
+      "pair": [
+        "gTileset_General",
+        "gTileset_SeafoamIslands"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "IcePath_B1F",
+      "pair": [
+        "gTileset_General",
+        "gTileset_SeafoamIslands"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "IcePath_B2F",
+      "pair": [
+        "gTileset_General",
+        "gTileset_SeafoamIslands"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "BlackthornCity",
+      "pair": [
+        "gTileset_General",
+        "gTileset_SaffronCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_blackthorn.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_SaffronCity"
+          ],
+          "donor": "LAYOUT_SAFFRON_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_SaffronCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "BlackthornCity_PokemonCenter_1F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "BlackthornCity_PokemonCenter_2F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "BlackthornCity_Mart",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_Mart"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "BlackthornCity_Gym",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_FuchsiaGym"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_blackthorn.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_FuchsiaGym"
+          ],
+          "donor": "LAYOUT_FUCHSIA_CITY_GYM",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_FuchsiaGym"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "DragonDen_1F",
+      "pair": [
+        "gTileset_General",
+        "gTileset_SeafoamIslands"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "DragonDen_Shrine",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_SafariZoneBuilding"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_blackthorn.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_SafariZoneBuilding"
+          ],
+          "donor": "LAYOUT_SAFARI_ZONE_SECRET_HOUSE",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_SafariZoneBuilding"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoRoute27",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_johto_league.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "TohjoFalls",
+      "pair": [
+        "gTileset_General",
+        "gTileset_SeafoamIslands"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_johto_league.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_SeafoamIslands"
+          ],
+          "donor": "LAYOUT_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_SeafoamIslands"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoRoute26",
+      "pair": [
+        "gTileset_General",
+        "gTileset_ViridianCity"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_johto_league.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ],
+          "donor": "LAYOUT_VIRIDIAN_CITY",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_ViridianCity"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoVictoryRoad_1F",
+      "pair": [
+        "gTileset_General",
+        "gTileset_SeafoamIslands"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_johto_league.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_SeafoamIslands"
+          ],
+          "donor": "LAYOUT_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_SeafoamIslands"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoIndigoPlateau",
+      "pair": [
+        "gTileset_General",
+        "gTileset_IndigoPlateau"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_johto_league.py",
+          "declaration": [
+            "gTileset_General",
+            "gTileset_IndigoPlateau"
+          ],
+          "donor": "LAYOUT_INDIGO_PLATEAU_EXTERIOR",
+          "donor_pair": [
+            "gTileset_General",
+            "gTileset_IndigoPlateau"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoLeague_PokemonCenter_1F",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonCenter"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_johto_league.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_PokemonCenter"
+          ],
+          "donor": "LAYOUT_POKEMON_CENTER_1F",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_PokemonCenter"
+          ]
+        }
+      ]
+    },
+    {
+      "map": "JohtoLeague_WillsRoom",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonLeague"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "JohtoLeague_KogasRoom",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonLeague"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "JohtoLeague_BrunosRoom",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonLeague"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "JohtoLeague_KarensRoom",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonLeague"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "JohtoLeague_LancesRoom",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_PokemonLeague"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": []
+    },
+    {
+      "map": "JohtoLeague_HallOfFame",
+      "pair": [
+        "gTileset_Building",
+        "gTileset_HallOfFame"
+      ],
+      "errors": [],
+      "warnings": [],
+      "donors": [
+        {
+          "generator": "tools/johto/build_johto_league.py",
+          "declaration": [
+            "gTileset_Building",
+            "gTileset_HallOfFame"
+          ],
+          "donor": "LAYOUT_POKEMON_LEAGUE_HALL_OF_FAME",
+          "donor_pair": [
+            "gTileset_Building",
+            "gTileset_HallOfFame"
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": "Static layout pairing/donor/coordinates; does not certify visual quality or full story playthrough"
+}

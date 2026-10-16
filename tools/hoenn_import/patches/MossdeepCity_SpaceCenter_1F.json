@@ -1,0 +1,24 @@
+{
+  "object_overrides": [
+    {
+      "x": 7,
+      "y": 2,
+      "script": "MossdeepCity_SpaceCenter_1F_EventScript_MissionControl"
+    },
+    {
+      "x": 6,
+      "y": 6,
+      "script": "MossdeepCity_SpaceCenter_1F_EventScript_Safety"
+    },
+    {
+      "x": 10,
+      "y": 2,
+      "script": "MossdeepCity_SpaceCenter_1F_EventScript_MissionControl"
+    },
+    {
+      "x": 14,
+      "y": 7,
+      "script": "MossdeepCity_SpaceCenter_1F_EventScript_Safety"
+    }
+  ]
+}

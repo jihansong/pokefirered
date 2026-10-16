@@ -1,0 +1,40 @@
+{
+  "pass_all": true,
+  "maps": [
+    {
+      "map": "OlivineCity",
+      "load_frames": 96,
+      "stable_idle_frames": 12,
+      "vblank_delta": 107,
+      "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "fixture_sha256": "288acdb7e1e62f2b1edd50500c8a6e3f338401a270df02c9ed98ddd29ff80b46"
+    },
+    {
+      "map": "CianwoodCity",
+      "load_frames": 96,
+      "stable_idle_frames": 12,
+      "vblank_delta": 107,
+      "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "fixture_sha256": "fb4e3f6f1d14aa5906094fcb8b1bade6dabc0c94d107d3c7d895e313540aedda"
+    },
+    {
+      "map": "OlivineLighthouse_6F",
+      "load_frames": 90,
+      "stable_idle_frames": 12,
+      "vblank_delta": 101,
+      "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "fixture_sha256": "68db231a59cdb48c8b4c7173b957a63b87c287807429bb3b383e55d52df18104"
+    }
+  ],
+  "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+  "elf_sha256": "4b6ab0e3cea92de40cadd88a073d0820e9435b0e122d19079f009e4ae95c11b5",
+  "sym_sha256": "6a4ea87f13780578d6be875aeaf5447eeb370aed8684785d0a08c2bd24e686d8",
+  "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "ram_pokes_original": 0,
+  "party_pc_dex_preserved": true,
+  "actual_device_fps_measured": false,
+  "workload_frames_per_case": 360,
+  "workload_count": 6,
+  "full_campaign_measured": false,
+  "temporary_native_fixtures": true
+}

@@ -137,6 +137,7 @@ const u16 gObjectEventPic_DeoxysA[] = INCBIN_U16("graphics/object_events/pics/po
 const u16 gObjectEventPic_DeoxysN[] = INCBIN_U16("graphics/object_events/pics/pokemon/deoxys_n.4bpp");
 const u16 gObjectEventPic_Agatha[] = INCBIN_U16("graphics/object_events/pics/people/agatha.4bpp");
 const u16 gObjectEventPic_Misty[] = INCBIN_U16("graphics/object_events/pics/people/misty.4bpp");
+const u16 gObjectEventPic_MistyCompanion[] = INCBIN_U16("graphics/object_events/pics/people/misty_companion_season1.4bpp");
 const u16 gObjectEventPic_Lance[] = INCBIN_U16("graphics/object_events/pics/people/lance.4bpp");
 const u16 gObjectEventPic_GBAKid[] = INCBIN_U16("graphics/object_events/pics/people/gba_kid.4bpp");
 const u16 gObjectEventPic_Mom[] = INCBIN_U16("graphics/object_events/pics/people/mom.4bpp");
@@ -334,3 +335,13 @@ const u32 gObjectEventPic_HoennStatue[] = INCBIN_U32("graphics/object_events/pic
 const u32 gObjectEventPic_HoennBirchsBag[] = INCBIN_U32("graphics/object_events/pics/hoenn/birchs_bag.4bpp");
 const u32 gObjectEventPic_HoennRegi[] = INCBIN_U32("graphics/object_events/pics/hoenn/regi.4bpp");
 // END HOENN OBJECT EVENTS
+
+// BEGIN THUNDER YELLOW ORIGINAL HOENN LEGENDS
+const u32 gObjectEventPic_ThunderLegendKyogre[] = INCBIN_U32("graphics/object_events/pics/hoenn/legend_kyogre.4bpp");
+
+const u32 gObjectEventPic_ThunderLegendRayquaza[] = INCBIN_U32("graphics/object_events/pics/hoenn/legend_rayquaza.4bpp");
+// END THUNDER YELLOW ORIGINAL HOENN LEGENDS
+
+// Actual Pokemon Heart and Soul Elm asset; pinned donor attribution is preserved in work/ reference package.
+const u32 gObjectEventPic_ProfElmHns[] = INCBIN_U32("graphics/object_events/pics/people/prof_elm_hns.4bpp");
+const u16 gObjectEventPal_ProfElmHns[] = INCBIN_U16("graphics/object_events/palettes/prof_elm_hns.gbapal");

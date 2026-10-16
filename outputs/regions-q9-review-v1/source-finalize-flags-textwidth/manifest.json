@@ -1,0 +1,31 @@
+{
+  "changes": [
+    {
+      "path": "include/constants/flags.h",
+      "before": "f11e40150aa0f45bd5608e613f972711482860a450f6101c917fad8fe9464773",
+      "after": "79fbf69f3c3c1cd1a821eab7c5240d750d361498d17a09a16fef47effc0ccf19"
+    },
+    {
+      "path": "data/maps/Route110/text.inc",
+      "before": "947a2a407e4a8fa296e2b0a75ff2f393fff259db8895bdea246674156ea4374e",
+      "after": "37c2d2f2bf4014b87f24e88d029b69a4e0405e12ba18494239cf522065fa9bc6"
+    },
+    {
+      "path": "tools/hoenn_import/patches/Route110.text.inc",
+      "before": "7af13ff598505a15db5e2be66764f4484f810f3874c2a88788b15d922bddcbb6",
+      "after": "2ede8b9944a853a0f6e675d8ae48488a99f06ec0233ce9740a93f1be87dc7ece"
+    },
+    {
+      "path": "data/maps/Route119/text.inc",
+      "before": "da29da0085a4eb429c8d1886ff8e7a923bf01613522f09cf9a9098e3f484086b",
+      "after": "e5f8dd408ae7b5014a8dbfa0abcebb8e469fbb36b26b9a6edab190c2fbdcb057"
+    },
+    {
+      "path": "tools/hoenn_import/patches/Route119.text.inc",
+      "before": "ea87b11f8c96ebf860a38b39545b9948f3fdfe8a352d458c25d3ba37f60e306c",
+      "after": "345a3f4a65b9f749ce205ebcacef4b4d0eb03605c5f7c5ac22c4f9e2f9b0ed75"
+    }
+  ],
+  "numeric_flags_and_SaveABI_unchanged": true,
+  "only_two_overwidth_lines_reworded": true
+}

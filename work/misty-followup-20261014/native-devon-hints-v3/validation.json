@@ -1,0 +1,316 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "case": "dispatch-scene0",
+      "scene_fixture": 0,
+      "opened_fixture": false,
+      "preboot_fixture_Pokemon_unmodified": true,
+      "live_staff_approach": {
+        "staff_xy": [
+          15,
+          5
+        ],
+        "staff_idle": true,
+        "actual_key_approach": true,
+        "ram_writes": 0
+      },
+      "actual_A": true,
+      "expected_compiled_text_label": "RustboroCity_DevonCorp_1F_Text_H1",
+      "compiled_text_sha256": "0a2c4b3b1f0f20ea06624efc27b93b6418a5c54850c2e71662e1fe1b3b6b65bb",
+      "message_task_and_expanded_text_verified": true,
+      "image": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/dispatch-scene0-actual-A.png",
+      "party_PC_dex_preserved": true,
+      "checked_story_state_preserved": true
+    },
+    {
+      "case": "dispatch-scene2",
+      "scene_fixture": 2,
+      "opened_fixture": false,
+      "preboot_fixture_Pokemon_unmodified": true,
+      "live_staff_approach": {
+        "staff_xy": [
+          15,
+          5
+        ],
+        "staff_idle": true,
+        "actual_key_approach": true,
+        "ram_writes": 0
+      },
+      "actual_A": true,
+      "expected_compiled_text_label": "RustboroCity_DevonCorp_1F_Text_DispatchChase",
+      "compiled_text_sha256": "56c3b0369946faa90c5cff5705ede823941b502e54110a2ffaa34be86e980561",
+      "message_task_and_expanded_text_verified": true,
+      "image": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/dispatch-scene2-actual-A.png",
+      "party_PC_dex_preserved": true,
+      "checked_story_state_preserved": true
+    },
+    {
+      "case": "dispatch-scene3",
+      "scene_fixture": 3,
+      "opened_fixture": false,
+      "preboot_fixture_Pokemon_unmodified": true,
+      "live_staff_approach": {
+        "staff_xy": [
+          15,
+          5
+        ],
+        "staff_idle": true,
+        "actual_key_approach": true,
+        "ram_writes": 0
+      },
+      "actual_A": true,
+      "expected_compiled_text_label": "RustboroCity_DevonCorp_1F_Text_DispatchRecovered",
+      "compiled_text_sha256": "0698d7b34a4d5be2a0dbc2e90dbf90b47b698e30e1b2ab66c0630a99d073ea63",
+      "message_task_and_expanded_text_verified": true,
+      "image": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/dispatch-scene3-actual-A.png",
+      "party_PC_dex_preserved": true,
+      "checked_story_state_preserved": true
+    },
+    {
+      "case": "dispatch-scene4",
+      "scene_fixture": 4,
+      "opened_fixture": false,
+      "preboot_fixture_Pokemon_unmodified": true,
+      "live_staff_approach": {
+        "staff_xy": [
+          15,
+          5
+        ],
+        "staff_idle": true,
+        "actual_key_approach": true,
+        "ram_writes": 0
+      },
+      "actual_A": true,
+      "expected_compiled_text_label": "RustboroCity_DevonCorp_1F_Text_DispatchWaiting",
+      "compiled_text_sha256": "17a678941ce0932173a63189aa732c21494dbf36dbb4cd56f7bf3e5a15c2c81b",
+      "message_task_and_expanded_text_verified": true,
+      "image": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/dispatch-scene4-actual-A.png",
+      "party_PC_dex_preserved": true,
+      "checked_story_state_preserved": true,
+      "native_SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/dispatch-scene4-native-QA-only.sav"
+      },
+      "cold_actual_A": {
+        "live_staff_approach": {
+          "staff_xy": [
+            15,
+            5
+          ],
+          "staff_idle": true,
+          "actual_key_approach": true,
+          "ram_writes": 0
+        },
+        "actual_A": true,
+        "expected_compiled_text_label": "RustboroCity_DevonCorp_1F_Text_DispatchWaiting",
+        "compiled_text_sha256": "17a678941ce0932173a63189aa732c21494dbf36dbb4cd56f7bf3e5a15c2c81b",
+        "message_task_and_expanded_text_verified": true,
+        "image": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/dispatch-scene4-cold-actual-A.png",
+        "party_PC_dex_preserved": true,
+        "checked_story_state_preserved": true
+      }
+    },
+    {
+      "case": "dispatch-scene5",
+      "scene_fixture": 5,
+      "opened_fixture": false,
+      "preboot_fixture_Pokemon_unmodified": true,
+      "live_staff_approach": {
+        "staff_xy": [
+          15,
+          5
+        ],
+        "staff_idle": true,
+        "actual_key_approach": true,
+        "ram_writes": 0
+      },
+      "actual_A": true,
+      "expected_compiled_text_label": "RustboroCity_DevonCorp_1F_Text_DispatchReward",
+      "compiled_text_sha256": "df17bf600261eba5c672688a0bbce04dfd3059f3058a802c4c5deb0cd34f24b6",
+      "message_task_and_expanded_text_verified": true,
+      "image": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/dispatch-scene5-actual-A.png",
+      "party_PC_dex_preserved": true,
+      "checked_story_state_preserved": true
+    },
+    {
+      "case": "dispatch-scene6",
+      "scene_fixture": 6,
+      "opened_fixture": false,
+      "preboot_fixture_Pokemon_unmodified": true,
+      "live_staff_approach": {
+        "staff_xy": [
+          15,
+          5
+        ],
+        "staff_idle": true,
+        "actual_key_approach": true,
+        "ram_writes": 0
+      },
+      "actual_A": true,
+      "expected_compiled_text_label": "RustboroCity_DevonCorp_1F_Text_DispatchDone",
+      "compiled_text_sha256": "dcbc3b28c48db61a015b6243b4a6f7371e87f91720830b2faaf2a110181b7bd7",
+      "message_task_and_expanded_text_verified": true,
+      "image": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/dispatch-scene6-actual-A.png",
+      "party_PC_dex_preserved": true,
+      "checked_story_state_preserved": true
+    },
+    {
+      "case": "assistant-scene0",
+      "scene_fixture": 0,
+      "opened_fixture": false,
+      "preboot_fixture_Pokemon_unmodified": true,
+      "live_staff_approach": null,
+      "actual_A": true,
+      "expected_compiled_text_label": "RustboroCity_DevonCorp_3F_Text_H1",
+      "compiled_text_sha256": "b52666e2dde9188da42ae7ccdb3d485cc52451eb42c3e8812c8b9b6ac46c3b3c",
+      "message_task_and_expanded_text_verified": true,
+      "image": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/assistant-scene0-actual-A.png",
+      "party_PC_dex_preserved": true,
+      "checked_story_state_preserved": true
+    },
+    {
+      "case": "assistant-scene3",
+      "scene_fixture": 3,
+      "opened_fixture": false,
+      "preboot_fixture_Pokemon_unmodified": true,
+      "live_staff_approach": null,
+      "actual_A": true,
+      "expected_compiled_text_label": "RustboroCity_DevonCorp_3F_Text_AssistantRecovered",
+      "compiled_text_sha256": "7fe6914a6429e6fd2a9fa058d7307a2211007b1b07b8195499dc4185b97a88d1",
+      "message_task_and_expanded_text_verified": true,
+      "image": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/assistant-scene3-actual-A.png",
+      "party_PC_dex_preserved": true,
+      "checked_story_state_preserved": true
+    },
+    {
+      "case": "assistant-scene4",
+      "scene_fixture": 4,
+      "opened_fixture": false,
+      "preboot_fixture_Pokemon_unmodified": true,
+      "live_staff_approach": null,
+      "actual_A": true,
+      "expected_compiled_text_label": "RustboroCity_DevonCorp_3F_Text_AssistantWaiting",
+      "compiled_text_sha256": "5a8f16b0dd6d4eca009367ececd06186a28335e40f262f9f0b7706ca1e1fd78b",
+      "message_task_and_expanded_text_verified": true,
+      "image": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/assistant-scene4-actual-A.png",
+      "party_PC_dex_preserved": true,
+      "checked_story_state_preserved": true
+    },
+    {
+      "case": "assistant-scene5",
+      "scene_fixture": 5,
+      "opened_fixture": false,
+      "preboot_fixture_Pokemon_unmodified": true,
+      "live_staff_approach": null,
+      "actual_A": true,
+      "expected_compiled_text_label": "RustboroCity_DevonCorp_3F_Text_AssistantReward",
+      "compiled_text_sha256": "3a9f4f7671e37a1d0f85d642f51d1ba5ae6088299c8ae5c91e6fd4c64b875947",
+      "message_task_and_expanded_text_verified": true,
+      "image": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/assistant-scene5-actual-A.png",
+      "party_PC_dex_preserved": true,
+      "checked_story_state_preserved": true
+    },
+    {
+      "case": "assistant-scene6",
+      "scene_fixture": 6,
+      "opened_fixture": false,
+      "preboot_fixture_Pokemon_unmodified": true,
+      "live_staff_approach": null,
+      "actual_A": true,
+      "expected_compiled_text_label": "RustboroCity_DevonCorp_3F_Text_AssistantDone",
+      "compiled_text_sha256": "60ac7aabc64ed7c92af6c77a1a56a9d2462e4cd72f2deb3dcd63d3d6c204e095",
+      "message_task_and_expanded_text_verified": true,
+      "image": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/assistant-scene6-actual-A.png",
+      "party_PC_dex_preserved": true,
+      "checked_story_state_preserved": true
+    },
+    {
+      "case": "tunnel-sign-False",
+      "scene_fixture": 0,
+      "opened_fixture": false,
+      "preboot_fixture_Pokemon_unmodified": true,
+      "live_staff_approach": null,
+      "actual_A": true,
+      "expected_compiled_text_label": "Route116_Text_H11",
+      "compiled_text_sha256": "d512f3210427c0b2de7691c68b8e89c995faa2a1e5ceb50d6519b13aeb0b744a",
+      "message_task_and_expanded_text_verified": true,
+      "image": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/tunnel-sign-False-actual-A.png",
+      "party_PC_dex_preserved": true,
+      "checked_story_state_preserved": true
+    },
+    {
+      "case": "hiker-False",
+      "scene_fixture": 0,
+      "opened_fixture": false,
+      "preboot_fixture_Pokemon_unmodified": true,
+      "live_staff_approach": null,
+      "actual_A": true,
+      "expected_compiled_text_label": "RusturfTunnel_Text_H0_2",
+      "compiled_text_sha256": "9d291c561f69ba7a218df30b2c943a65f9d42b79d4a6d1536b4c50b15ef441fa",
+      "message_task_and_expanded_text_verified": true,
+      "image": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/hiker-False-actual-A.png",
+      "party_PC_dex_preserved": true,
+      "checked_story_state_preserved": true
+    },
+    {
+      "case": "tunnel-sign-True",
+      "scene_fixture": 0,
+      "opened_fixture": true,
+      "preboot_fixture_Pokemon_unmodified": true,
+      "live_staff_approach": null,
+      "actual_A": true,
+      "expected_compiled_text_label": "Route116_Text_TunnelSignFinished",
+      "compiled_text_sha256": "64791c06aef092d52ed9e35b8332523ae2dc0558b30cfd2595f9cae5db159c93",
+      "message_task_and_expanded_text_verified": true,
+      "image": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/tunnel-sign-True-actual-A.png",
+      "party_PC_dex_preserved": true,
+      "checked_story_state_preserved": true
+    },
+    {
+      "case": "hiker-True",
+      "scene_fixture": 0,
+      "opened_fixture": true,
+      "preboot_fixture_Pokemon_unmodified": true,
+      "live_staff_approach": null,
+      "actual_A": true,
+      "expected_compiled_text_label": "RusturfTunnel_Text_HikerFinished",
+      "compiled_text_sha256": "bb69342162503647c6e9b0706d6e1da4396c4d9937e3d201afd14646e1178328",
+      "message_task_and_expanded_text_verified": true,
+      "image": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/hiker-True-actual-A.png",
+      "party_PC_dex_preserved": true,
+      "checked_story_state_preserved": true,
+      "native_SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/hiker-True-native-QA-only.sav"
+      },
+      "cold_actual_A": {
+        "live_staff_approach": null,
+        "actual_A": true,
+        "expected_compiled_text_label": "RusturfTunnel_Text_HikerFinished",
+        "compiled_text_sha256": "bb69342162503647c6e9b0706d6e1da4396c4d9937e3d201afd14646e1178328",
+        "message_task_and_expanded_text_verified": true,
+        "image": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/hiker-True-cold-actual-A.png",
+        "party_PC_dex_preserved": true,
+        "checked_story_state_preserved": true
+      }
+    }
+  ],
+  "ram_writes": 0,
+  "direct_script_calls": 0,
+  "forced_battle_outcomes": 0,
+  "full_Hoenn_campaign_tested": false,
+  "status": "complete",
+  "rom_sha256": "1c9a4519a7a6bb5195728977143d42e5f126f8709d992e4602e159ae328d46bf",
+  "elf_sha256": "fc455fac6fc274185570489cf81671ebb47f60944343904c1b6b96ff7e51ccde",
+  "sav_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+  "original_inputs_and_applied_story_sources_unchanged": true
+}

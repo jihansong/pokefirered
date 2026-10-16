@@ -1,0 +1,86 @@
+{
+  "pass": false,
+  "rom_sha256": "f3b4e13df998d1832544218a88cd0c4845a9b7ebd184628e00c1e9595434204c",
+  "elf_sha256": "fcffe85e76e5404f15e552fa84ca18f91e883c0a0613b2678e7ceb27e4d42e47",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-hoenn-shared-hm-smash-bag",
+  "fixture": "original six-mon party, PC and genuine starter Pika are unchanged in temporary save",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_story_not_entire_regions": true,
+  "johto_badges_defined": [
+    "FLAG_JOHTO_BADGE01_GET",
+    "FLAG_JOHTO_BADGE02_GET",
+    "FLAG_JOHTO_BADGE03_GET",
+    "FLAG_JOHTO_BADGE04_GET",
+    "FLAG_JOHTO_BADGE05_GET",
+    "FLAG_JOHTO_BADGE06_GET",
+    "FLAG_JOHTO_BADGE07_GET"
+  ],
+  "palette_active_abi_mask": {
+    "size": 16,
+    "offset": 7,
+    "mask": 128
+  },
+  "follower_checks": [
+    {
+      "label": "shared-hm-before-right",
+      "map": [
+        53,
+        2
+      ],
+      "player_xy": [
+        4,
+        6
+      ],
+      "follower_xy": [
+        4,
+        5
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "shared-hm-before-left",
+      "map": [
+        53,
+        2
+      ],
+      "player_xy": [
+        4,
+        5
+      ],
+      "follower_xy": [
+        4,
+        6
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    }
+  ],
+  "scope": "Only Cutter HM01/TM31 and Mauville HM06/TM23; not all shared HM recipients or complete Hoenn story",
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "error": "AssertionError()",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/tools/qa/native_hoenn_shared_hm_simple_qa.py\", line 108, in <module>\n    native_save_reopen(e,source_pc);invariants()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"tools/qa/hoenn_weather_space_native_qa.py\", line 115, in native_save_reopen\n    assert {f:b.flag(f) for f in flags}==expected_flags\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "failure_location": [
+    53,
+    2,
+    4,
+    5
+  ],
+  "original_saves_unchanged": true
+}

@@ -1,0 +1,34 @@
+{
+  "pass": false,
+  "cases": [
+    {
+      "case": "r01_viridian_pc_win",
+      "source_save_sha256_before": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+      "pass": false,
+      "error": "KeyError('unknown constant BATTLE_TYPE_DOUBLE')",
+      "source_save_sha256_after": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+      "source_save_preserved": true
+    },
+    {
+      "case": "r02_mtmoon_double",
+      "source_save_sha256_before": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+      "pass": false,
+      "error": "KeyError('unknown constant BATTLE_TYPE_DOUBLE')",
+      "source_save_sha256_after": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+      "source_save_preserved": true
+    },
+    {
+      "case": "r02_mtmoon_single_fallback_same_money",
+      "source_save_sha256_before": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+      "pass": false,
+      "error": "KeyError('unknown constant BATTLE_TYPE_DOUBLE')",
+      "source_save_sha256_after": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+      "source_save_preserved": true
+    }
+  ],
+  "rom_sha256": "03da317fc2aa499746daa08ce5dd9d195aefa6f188af1ffe54633b06948324c9",
+  "rom_preserved": true,
+  "visual_review": "pending",
+  "battle_completion_resource_release_verified": false,
+  "new_original_art_created": false
+}

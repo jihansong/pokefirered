@@ -1,0 +1,147 @@
+{
+  "pass": false,
+  "rom_sha256": "433ef955f92bb045e21c262413116e3aeac379999468eb02eec9b0ed0c7b315a",
+  "elf_sha256": "2af223d7d5a0a58cef7a71d5e3831d3e738504bb2bb643ca4bd673175fd12157",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "five_native_wins",
+  "fixture": "temporary copy, level-100 Mewtwo party",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [
+    {
+      "trainer": "TRAINER_HOENN_SIDNEY",
+      "start_frame": 2226,
+      "enemy_count": 5,
+      "moves": [
+        1,
+        2,
+        2,
+        1,
+        1
+      ],
+      "enemy_species": [
+        287,
+        300,
+        345,
+        327,
+        376,
+        0
+      ],
+      "end_frame": 6469
+    },
+    {
+      "trainer": "TRAINER_HOENN_PHOEBE",
+      "start_frame": 7659,
+      "enemy_count": 5,
+      "moves": [
+        3,
+        3,
+        3,
+        3,
+        1
+      ],
+      "enemy_species": [
+        362,
+        378,
+        322,
+        378,
+        362,
+        0
+      ],
+      "end_frame": 11938
+    },
+    {
+      "trainer": "TRAINER_HOENN_GLACIA",
+      "start_frame": 13128,
+      "enemy_count": 5,
+      "moves": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "enemy_species": [
+        342,
+        347,
+        342,
+        347,
+        343,
+        0
+      ],
+      "end_frame": 17547
+    },
+    {
+      "trainer": "TRAINER_HOENN_DRAKE",
+      "start_frame": 18753,
+      "enemy_count": 5,
+      "moves": [
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "enemy_species": [
+        396,
+        359,
+        230,
+        334,
+        397,
+        0
+      ],
+      "end_frame": 23524
+    },
+    {
+      "trainer": "TRAINER_HOENN_WALLACE",
+      "start_frame": 24842,
+      "enemy_count": 6,
+      "moves": [
+        1,
+        1,
+        0,
+        2,
+        1,
+        1
+      ],
+      "enemy_species": [
+        314,
+        73,
+        297,
+        324,
+        130,
+        329
+      ],
+      "end_frame": 30679
+    }
+  ],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_hof_save": {
+    "counter_before": 60,
+    "counter_after": 61,
+    "slot": 1,
+    "valid_sectors": 14,
+    "party_count": 6,
+    "dex_sha256": [
+      "a346c73eee91eb0efccd20c4a545f5dfe5fc61adb7d31f564b920a786f18454c",
+      "8ad765c7efbb4a9390bbe00a5222b025aec16bd0fa41b5a0c438053968b1997e",
+      "8ad765c7efbb4a9390bbe00a5222b025aec16bd0fa41b5a0c438053968b1997e",
+      "8ad765c7efbb4a9390bbe00a5222b025aec16bd0fa41b5a0c438053968b1997e"
+    ],
+    "save_sha256": "4f391584765d27cf2d67daf973d593f784c2a5289e0be128ea6ae0ccbff13aae"
+  },
+  "error": "AssertionError(('HOF continue destination', (43, 8, 18, 6)))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/tools/qa/hoenn_gauntlet_save_qa.py\", line 271, in <module>\n    assert loc_is(e,lobby),('HOF continue destination',e.location())\nAssertionError: ('HOF continue destination', (43, 8, 18, 6))\n",
+  "failure_location": [
+    43,
+    8,
+    18,
+    6
+  ],
+  "failure_callback2": "0x8057329",
+  "original_saves_unchanged": true
+}

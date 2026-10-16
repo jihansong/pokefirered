@@ -8,6 +8,7 @@ VerdanturfTown_WandasHouse_OnTransition::
 VerdanturfTown_WandasHouse_EventScript_Wanda::
 	lock
 	faceplayer
+	goto_if_set FLAG_HOENN_RUSTURF_OPEN, VerdanturfTown_WandasHouse_EventScript_WandaReunited
 	goto_if_set FLAG_HOENN_MET_WANDA, VerdanturfTown_WandasHouse_EventScript_WandaDone
 	goto_if_unset FLAG_HOENN_DEFEATED_MAUVILLE_GYM, VerdanturfTown_WandasHouse_EventScript_WandaBefore
 	msgbox VerdanturfTown_WandasHouse_Text_WandaAfter
@@ -35,4 +36,66 @@ VerdanturfTown_WandasHouse_EventScript_WandaWallyHere::
 
 VerdanturfTown_WandasHouse_EventScript_Wally::
 	msgbox VerdanturfTown_WandasHouse_Text_Wally, MSGBOX_NPC
+	end
+
+@ E10 completion preserves WALLY's visit and WANDA's friendship-rater referral.
+VerdanturfTown_WandasHouse_EventScript_WandaReunited::
+	msgbox VerdanturfTown_WandasHouse_Text_ReunionWanda
+	goto_if_lt VAR_HOENN_SCENE_WALLY, 2, VerdanturfTown_WandasHouse_EventScript_ReunionReferral
+	msgbox VerdanturfTown_WandasHouse_Text_WandaWallyHere
+VerdanturfTown_WandasHouse_EventScript_ReunionReferral::
+	goto_if_set FLAG_HOENN_MET_WANDA, VerdanturfTown_WandasHouse_EventScript_ReunionDone
+	goto_if_unset FLAG_HOENN_DEFEATED_MAUVILLE_GYM, VerdanturfTown_WandasHouse_EventScript_ReunionDone
+	msgbox VerdanturfTown_WandasHouse_Text_WandaIntro
+	setflag FLAG_HOENN_MET_WANDA
+@ TY_HOENN_SHARED_HM_STORY_V1
+VerdanturfTown_WandasHouse_EventScript_ReunionDone::
+	goto_if_unset FLAG_HOENN_RUSTURF_OPEN, VerdanturfTown_WandasHouse_TYSharedHM_Done
+	goto_if_set FLAG_HOENN_GOT_WANDA_SHARED_HM_REWARD, VerdanturfTown_WandasHouse_TYSharedHM_Done
+	goto_if_set FLAG_GOT_HM04, VerdanturfTown_WandasHouse_TYSharedHM_Known
+	checkitem ITEM_HM04
+	goto_if_eq VAR_RESULT, TRUE, VerdanturfTown_WandasHouse_TYSharedHM_Known
+	checkpcitem ITEM_HM04
+	goto_if_eq VAR_RESULT, TRUE, VerdanturfTown_WandasHouse_TYSharedHM_Known
+	msgbox VerdanturfTown_WandasHouse_TYSharedHM_FreshText
+	checkitemspace ITEM_HM04
+	goto_if_eq VAR_RESULT, FALSE, VerdanturfTown_WandasHouse_TYSharedHM_Full
+	giveitem ITEM_HM04
+	goto_if_eq VAR_RESULT, FALSE, VerdanturfTown_WandasHouse_TYSharedHM_Full
+	setflag FLAG_HOENN_GOT_WANDA_SHARED_HM_REWARD
+	msgbox VerdanturfTown_WandasHouse_TYSharedHM_FreshThanks
+	release
+	end
+
+VerdanturfTown_WandasHouse_TYSharedHM_Known::
+	msgbox VerdanturfTown_WandasHouse_TYSharedHM_KnownText
+	checkitemspace ITEM_TM26
+	goto_if_eq VAR_RESULT, FALSE, VerdanturfTown_WandasHouse_TYSharedHM_Full
+	giveitem ITEM_TM26
+	goto_if_eq VAR_RESULT, FALSE, VerdanturfTown_WandasHouse_TYSharedHM_Full
+	setflag FLAG_HOENN_GOT_WANDA_SHARED_HM_REWARD
+	msgbox VerdanturfTown_WandasHouse_TYSharedHM_TechniqueText
+	release
+	end
+
+VerdanturfTown_WandasHouse_TYSharedHM_Full::
+	msgbox VerdanturfTown_WandasHouse_TYSharedHM_FullText
+	release
+	end
+
+VerdanturfTown_WandasHouse_TYSharedHM_Done::
+	release
+	end
+
+VerdanturfTown_WandasHouse_EventScript_WandaBoyfriend::
+	msgbox VerdanturfTown_WandasHouse_Text_ReunionPartner, MSGBOX_NPC
+	end
+
+VerdanturfTown_WandasHouse_EventScript_H0::
+	goto_if_set FLAG_HOENN_RUSTURF_OPEN, VerdanturfTown_WandasHouse_EventScript_ReunionMother
+	msgbox VerdanturfTown_WandasHouse_Text_H0, MSGBOX_NPC
+	end
+
+VerdanturfTown_WandasHouse_EventScript_ReunionMother::
+	msgbox VerdanturfTown_WandasHouse_Text_ReunionMother, MSGBOX_NPC
 	end

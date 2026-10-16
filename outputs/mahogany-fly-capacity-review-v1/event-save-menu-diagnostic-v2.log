@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/outputs/mahogany-fly-capacity-review-v1/diagnose-event-save-menu-v2.py", line 317, in <module>
+    e.shot(str(out/(c['name']+'.png')),scale=3);saved=flash_reload(e,c['name'])
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "tools/qa/johto_violet_native_bootstrap_v1.py", line 97, in flash_reload
+    counters=native_save(e);live=snapshot(e);e.run(30)
+             ^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/outputs/mahogany-fly-capacity-review-v1/diagnose-event-save-menu-v2.py", line 295, in native_save
+    result=_original_native_save(e);trace['after']=state();return result
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "tools/qa/johto_violet_native_bootstrap_v1.py", line 84, in native_save
+    assert 4 in order;target=order.index(4)
+           ^^^^^^^^^^
+AssertionError

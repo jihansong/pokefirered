@@ -1,0 +1,26 @@
+{
+  "pass": false,
+  "rom_sha256": "b9406f5668d693607a2d11f23259adc7c1018a596a0bb5e19140f5704f5fae1b",
+  "elf_sha256": "09b0703bce42e8b2f9d2d892ddb46c869bad0a41cf9cc02c7a7da8a67f25a546",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-wallace-waterfall-pc",
+  "fixture": "temporary story/item fixture; original source SAV and full Pokemon storage unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_story_not_entire_regions": true,
+  "error": "AssertionError(('blocked route', (43, 7, 29, 33), 28, 34))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/tools/qa/native_wallace_waterfall_qa.py\", line 128, in <module>\n    go(e,28,34);invariants()\n    ^^^^^^^^^^^\n  File \"tools/qa/hoenn_gauntlet_save_qa.py\", line 108, in go\n    assert e.location()[axis]==target,('walk position',e.location(),x,y)\n            ^^^^^^^^^^^^^^^^^\nAssertionError: ('blocked route', (43, 7, 29, 33), 28, 34)\n",
+  "failure_location": [
+    43,
+    7,
+    29,
+    33
+  ],
+  "original_saves_unchanged": true
+}

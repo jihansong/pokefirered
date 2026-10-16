@@ -1,0 +1,140 @@
+{
+  "pass": true,
+  "rom_sha256": "b3b62a31d4a7543876322d3e92947be6516e387f3c2035e834daa05551b19dfc",
+  "elf_sha256": "7a6c9d3c9513f143269d531c1bcab20d3fef0bbe01496218cd2fddda1f9e05c6",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "five_native_wins",
+  "fixture": "temporary copy, level-100 Mewtwo party",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [
+    {
+      "trainer": "TRAINER_HOENN_SIDNEY",
+      "start_frame": 2226,
+      "enemy_count": 5,
+      "moves": [
+        1,
+        2,
+        2,
+        1,
+        1
+      ],
+      "enemy_species": [
+        287,
+        300,
+        345,
+        327,
+        376,
+        0
+      ],
+      "end_frame": 6469
+    },
+    {
+      "trainer": "TRAINER_HOENN_PHOEBE",
+      "start_frame": 7659,
+      "enemy_count": 5,
+      "moves": [
+        3,
+        3,
+        3,
+        3,
+        1
+      ],
+      "enemy_species": [
+        362,
+        378,
+        322,
+        378,
+        362,
+        0
+      ],
+      "end_frame": 11858
+    },
+    {
+      "trainer": "TRAINER_HOENN_GLACIA",
+      "start_frame": 13048,
+      "enemy_count": 5,
+      "moves": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "enemy_species": [
+        342,
+        347,
+        342,
+        347,
+        343,
+        0
+      ],
+      "end_frame": 17547
+    },
+    {
+      "trainer": "TRAINER_HOENN_DRAKE",
+      "start_frame": 18753,
+      "enemy_count": 5,
+      "moves": [
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "enemy_species": [
+        396,
+        359,
+        230,
+        334,
+        397,
+        0
+      ],
+      "end_frame": 23444
+    },
+    {
+      "trainer": "TRAINER_HOENN_WALLACE",
+      "start_frame": 24762,
+      "enemy_count": 6,
+      "moves": [
+        1,
+        1,
+        0,
+        2,
+        1,
+        1
+      ],
+      "enemy_species": [
+        314,
+        73,
+        297,
+        324,
+        130,
+        329
+      ],
+      "end_frame": 30599
+    }
+  ],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_hof_save": {
+    "counter_before": 60,
+    "counter_after": 61,
+    "slot": 1,
+    "valid_sectors": 14,
+    "party_count": 6,
+    "dex_sha256": [
+      "a346c73eee91eb0efccd20c4a545f5dfe5fc61adb7d31f564b920a786f18454c",
+      "8ad765c7efbb4a9390bbe00a5222b025aec16bd0fa41b5a0c438053968b1997e",
+      "8ad765c7efbb4a9390bbe00a5222b025aec16bd0fa41b5a0c438053968b1997e",
+      "8ad765c7efbb4a9390bbe00a5222b025aec16bd0fa41b5a0c438053968b1997e"
+    ],
+    "save_sha256": "2866f19c4b777cea647c84c096d725bd9114515f967c4740055dcaabfc2de106"
+  },
+  "hof_save_reopened_to_hoenn_lobby": true,
+  "pc_after_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "original_saves_unchanged": true
+}

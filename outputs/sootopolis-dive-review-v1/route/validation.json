@@ -1,0 +1,26 @@
+{
+  "pass": false,
+  "rom_sha256": "76ac3172c7c185546f5f405ddad8bc470feef35c5ef40db8ac3f44cb76755f81",
+  "elf_sha256": "f9a7201d200efd3038e776480814481135d742a3722a869c5e5d0b690b880f07",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-sootopolis-dive-route",
+  "fixture": "temporary level-50 LAPRAS; original PC and source SAV unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "error": "AssertionError(('state timeout', (43, 7, 31, 53), '0x8057521'))",
+  "traceback": "Traceback (most recent call last):\n  File \"tools/qa/native_sootopolis_dive_qa.py\", line 141, in <module>\n  File \"tools/qa/native_sootopolis_dive_qa.py\", line 67, in a_dive\n  File \"tools/qa/native_sootopolis_dive_qa.py\", line 23, in await_state\n    lo=sum(map(len,lines[:n.lineno-1]));hi=sum(map(len,lines[:n.end_lineno]))\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('state timeout', (43, 7, 31, 53), '0x8057521')\n",
+  "failure_location": [
+    43,
+    7,
+    31,
+    53
+  ],
+  "failure_callback2": "0x8057521",
+  "original_saves_unchanged": true
+}

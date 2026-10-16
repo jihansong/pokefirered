@@ -1,0 +1,42 @@
+{
+  "RAM_symbols": 908,
+  "changed": [],
+  "save_objects": {
+    "gSaveBlock2": [
+      33703304,
+      3876
+    ],
+    "gPokemonStoragePtr": [
+      50352208,
+      4
+    ],
+    "gPokemonStorage": [
+      33723156,
+      33744
+    ],
+    "gSaveBlock1": [
+      33707308,
+      15720
+    ],
+    "gSaveBlock2_DMA": [
+      33707180,
+      128
+    ],
+    "gSaveBlock3_DMA": [
+      33756900,
+      128
+    ],
+    "gSaveBlock2Ptr": [
+      50352204,
+      4
+    ],
+    "gSaveBlock1Ptr": [
+      50352200,
+      4
+    ],
+    "gSaveBlock1_DMA": [
+      33723028,
+      128
+    ]
+  }
+}

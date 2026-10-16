@@ -6,6 +6,20 @@ VermilionCity_MapScripts::
 
 @ Planes cross the sky over the airport every 30 seconds (src/airport_flyover.c).
 VermilionCity_OnResume::
+	@ Keep legacy local IDs stable; hide the obsolete roadside truck on old saves too.
+	setflag FLAG_HIDE_VERMILION_CITY_MEW
+	removeobject LOCALID_VERMILION_TRUCK
+	removeobject LOCALID_VERMILION_MEW
+	@ A save made on the former north lawn must not resume inside the taller terminal.
+	getplayerxy VAR_0x8004, VAR_0x8005
+	goto_if_lt VAR_0x8004, 31, VermilionCity_EventScript_AirportResume
+	goto_if_gt VAR_0x8004, 38, VermilionCity_EventScript_AirportResume
+	goto_if_lt VAR_0x8005, 5, VermilionCity_EventScript_AirportResume
+	goto_if_gt VAR_0x8005, 8, VermilionCity_EventScript_AirportResume
+	warpsilent MAP_VERMILION_CITY, 255, 30, 8
+	end
+
+VermilionCity_EventScript_AirportResume::
 	special StartAirportFlyover
 	end
 
@@ -27,13 +41,12 @@ VermilionCity_Movement_ExitSSAnne::
 	step_end
 
 VermilionCity_OnTransition::
+	@ Refresh older saves' permanent plane positions before spawning objects.
+	setobjectxyperm LOCALID_VERMILION_AIRPLANE_2, 37, 2
+	setobjectxyperm LOCALID_VERMILION_AIRPLANE_3, 33, 2
 	setworldmapflag FLAG_WORLD_MAP_VERMILION_CITY
 	call_if_set FLAG_TALKED_TO_OAKS_AIDE_IN_VERMILION, VermilionCity_EventScript_HideOaksAide
 	setflag FLAG_HIDE_VERMILION_CITY_MEW
-	call_if_eq VAR_VERMILION_CITY_TRUCK_PUSHED, DIR_SOUTH, VermilionCity_EventScript_TruckPushedSouth
-	call_if_eq VAR_VERMILION_CITY_TRUCK_PUSHED, DIR_NORTH, VermilionCity_EventScript_TruckPushedNorth
-	call_if_eq VAR_VERMILION_CITY_TRUCK_PUSHED, DIR_WEST, VermilionCity_EventScript_TruckPushedWest
-	call_if_eq VAR_VERMILION_CITY_TRUCK_PUSHED, DIR_EAST, VermilionCity_EventScript_TruckPushedEast
 	setflag FLAG_TEMP_2
 	call_if_ge VAR_MAP_SCENE_VERMILION_CITY, 3, VermilionCity_EventScript_ReadyRocketHarbor
 	end
@@ -461,139 +474,7 @@ VermilionCity_EventScript_EndReceiveSquirtle::
 	release
 	end
 
-VermilionCity_EventScript_TruckPushedSouth::
-	setobjectxyperm LOCALID_VERMILION_TRUCK, 27, 30
-	return
-
-VermilionCity_EventScript_TruckPushedNorth::
-	setobjectxyperm LOCALID_VERMILION_TRUCK, 27, 28
-	return
-
-VermilionCity_EventScript_TruckPushedWest::
-	setobjectxyperm LOCALID_VERMILION_TRUCK, 26, 29
-	return
-
-VermilionCity_EventScript_TruckPushedEast::
-	setobjectxyperm LOCALID_VERMILION_TRUCK, 28, 29
-	return
-
-@ Pokémon Yellow's truck, parked on the quay east of the harbor, with Mew hiding under it.
-@ Once the ship has sailed, a Pokémon that knows STRENGTH can push the truck
-@ aside and Mew jumps out of the spot it covered.
-VermilionCity_EventScript_Truck::
-	goto_if_questlog EventScript_ReleaseEnd
-	lockall
-	goto_if_set FLAG_GOT_MEW_EGG, VermilionCity_EventScript_TruckMewGone
-	goto_if_set FLAG_FOUGHT_MEW, VermilionCity_EventScript_TruckWontBudge
-	goto_if_lt VAR_MAP_SCENE_VERMILION_CITY, 3, VermilionCity_EventScript_TruckWontBudge
-	checkpartymove MOVE_STRENGTH
-	goto_if_eq VAR_RESULT, PARTY_SIZE, VermilionCity_EventScript_TruckWontBudge
-	setfieldeffectargument 0, VAR_RESULT
-	setvar VAR_0x8004, LOCALID_VERMILION_TRUCK
-	setvar VAR_0x8005, 0
-	setvar VAR_0x8009, 0
-	specialvar VAR_RESULT, CanPushTruck
-	goto_if_eq VAR_RESULT, FALSE, VermilionCity_EventScript_TruckWontBudge
-	msgbox VermilionCity_Text_TruckLooksHeavy, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, VermilionCity_EventScript_DontPushTruck
-	closemessage
-	special QuestLog_CutRecording
-	dofieldeffect FLDEFF_USE_STRENGTH
-	waitstate
-	special PushTruck
-	waitstate
-	delay 16
-	setobjectxyperm LOCALID_VERMILION_MEW, VAR_0x8006, VAR_0x8007
-	addobject LOCALID_VERMILION_MEW
-	specialvar VAR_RESULT, GetPlayerFacingDirection
-	copyvar VAR_0x8008, VAR_RESULT
-	call_if_eq VAR_RESULT, DIR_SOUTH, VermilionCity_EventScript_MewJumpsOutUp
-	call_if_eq VAR_RESULT, DIR_NORTH, VermilionCity_EventScript_MewJumpsOutDown
-	call_if_eq VAR_RESULT, DIR_WEST, VermilionCity_EventScript_MewJumpsOutRight
-	call_if_eq VAR_RESULT, DIR_EAST, VermilionCity_EventScript_MewJumpsOutLeft
-	applymovement LOCALID_VERMILION_MEW, Common_Movement_ExclamationMark
-	waitmovement 0
-	waitse
-	playmoncry SPECIES_MEW, CRY_MODE_ENCOUNTER
-	waitmoncry
-	delay 20
-	setwildbattle SPECIES_MEW, 30
-	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
-	special StartLegendaryBattle
-	waitstate
-	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
-	setflag FLAG_FOUGHT_MEW
-	copyvar VAR_VERMILION_CITY_TRUCK_PUSHED, VAR_0x8008
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, VermilionCity_EventScript_MewFledAway
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, VermilionCity_EventScript_MewFledAway
-	goto_if_eq VAR_RESULT, B_OUTCOME_MON_FLED, VermilionCity_EventScript_MewFledAway
-	fadescreen FADE_TO_BLACK
-	removeobject LOCALID_VERMILION_MEW
-	fadescreen FADE_FROM_BLACK
-	releaseall
-	end
-
-VermilionCity_EventScript_MewFledAway::
-	fadescreen FADE_TO_BLACK
-	removeobject LOCALID_VERMILION_MEW
-	fadescreen FADE_FROM_BLACK
-	bufferspeciesname STR_VAR_1, SPECIES_MEW
-	msgbox Text_MonFlewAway
-	releaseall
-	end
-
-VermilionCity_EventScript_MewJumpsOutUp::
-	applymovement LOCALID_VERMILION_MEW, VermilionCity_Movement_MewJumpOutUp
-	waitmovement 0
-	return
-
-VermilionCity_EventScript_MewJumpsOutDown::
-	applymovement LOCALID_VERMILION_MEW, VermilionCity_Movement_MewJumpOutDown
-	waitmovement 0
-	return
-
-VermilionCity_EventScript_MewJumpsOutRight::
-	applymovement LOCALID_VERMILION_MEW, VermilionCity_Movement_MewJumpOutRight
-	waitmovement 0
-	return
-
-VermilionCity_EventScript_MewJumpsOutLeft::
-	applymovement LOCALID_VERMILION_MEW, VermilionCity_Movement_MewJumpOutLeft
-	waitmovement 0
-	return
-
-@ v0.9.0: the player took the MEW EGG from the NEW ISLAND lab.
-VermilionCity_EventScript_TruckMewGone::
-	msgbox VermilionCity_Text_TruckPinkHair
-	releaseall
-	end
-
-VermilionCity_EventScript_TruckWontBudge::
-	msgbox VermilionCity_Text_TruckWontBudge
-	releaseall
-	end
-
-VermilionCity_EventScript_DontPushTruck::
-	closemessage
-	releaseall
-	end
-
-VermilionCity_Movement_MewJumpOutUp::
-	jump_in_place_up
-	step_end
-
-VermilionCity_Movement_MewJumpOutDown::
-	jump_in_place_down
-	step_end
-
-VermilionCity_Movement_MewJumpOutRight::
-	jump_in_place_right
-	step_end
-
-VermilionCity_Movement_MewJumpOutLeft::
-	jump_in_place_left
-	step_end
+@ The truck encounter now belongs to the original S.S. ANNE dock truck.
 
 VermilionCity_EventScript_AirportSign::
 	msgbox VermilionCity_Text_AirportSign, MSGBOX_SIGN

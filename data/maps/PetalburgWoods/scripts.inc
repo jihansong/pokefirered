@@ -216,13 +216,13 @@ PetalburgWoods_EventScript_BigTree::
 	specialvar VAR_RESULT, GetStarterPikachuPartySlotForScript
 	call_if_ne VAR_RESULT, PARTY_SIZE, PetalburgWoods_EventScript_TreeckoPikachu
 	closemessage
-	setwildbattle SPECIES_TREECKO, 5
+	special CreatePerfectScriptedTreecko
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, PetalburgWoods_EventScript_TreeckoCaught
 	msgbox PetalburgWoods_Text_TreeckoJoins
 	setvar VAR_TEMP_1, SPECIES_TREECKO
-	call EventScript_GiveGiftMonLv5
+	call EventScript_GivePerfectRegionalStarterLv5
 	goto_if_eq VAR_RESULT, FALSE, PetalburgWoods_EventScript_TreeckoNoRoom
 PetalburgWoods_EventScript_TreeckoCaught::
 	setflag FLAG_HOENN_GOT_TREECKO_IN_WOODS

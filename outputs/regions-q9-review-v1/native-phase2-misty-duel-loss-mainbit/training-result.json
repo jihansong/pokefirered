@@ -1,0 +1,35 @@
+{
+  "all_pass": true,
+  "mode": "loss",
+  "rom_sha256": "af9ba1f61fce4630d488567ed11b83847dfbc1fcff435653bedd4d86dc622818",
+  "input_sav_sha256": "1e0ccdc6874f0fa1cf7e284740cea89d7f5ea43dfdd3115c4062d77817212030",
+  "native_script_hook": true,
+  "actual_A_companion_access_verified": false,
+  "no_forced_battle_outcomes": true,
+  "source_original_party_count_identity_preserved": true,
+  "loss_copy_HP1_PP0": true,
+  "native_save_cold": true,
+  "player_party_temporarily_replaced": false,
+  "actual_device_fps_measured": false,
+  "checks": [
+    {
+      "attempt": 0,
+      "outcome": 2,
+      "trainer": 1623,
+      "team_count": 6,
+      "turns": 6,
+      "native_switches": 5,
+      "save": {
+        "counter": [
+          62,
+          63
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-phase2-misty-duel-loss-mainbit/training-loss-0-native-QA-only.sav"
+      },
+      "mode9": true,
+      "heal_after": true,
+      "pass_all": true
+    }
+  ]
+}

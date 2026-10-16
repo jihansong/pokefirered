@@ -1,0 +1,23 @@
+{
+  "pass": true,
+  "frames": 752,
+  "source_all_frame_hashes_match": true,
+  "rgb555_lossless": true,
+  "max_colors": 149,
+  "unique_pixel_frames": 616,
+  "unique_palettes": 349,
+  "bytes": {
+    "pixels": 14192640,
+    "palettes": 178688,
+    "timeline": 6016
+  },
+  "original_source_sha256": "2517e5d10adc07e303fb1f8b8c93f06d70d6a63fde57c93ccf13ef39d96f69de",
+  "reference_archive_sha256": "30b27a2030ccdd65c02aa0f96e78d7708c00a232984c8cdd7b98db4078bb9758",
+  "assets": {
+    "graphics/intro/opening_movie_v7/pixels.8bpp": "ff8c4e7f91ef541952f638043efdfe396d416777aaa984350869da3e603b66c3",
+    "graphics/intro/opening_movie_v7/frames.bin": "22517a83536902b9c4245234a7bd84fd15b75fcbb00c70dbb274e648268d3938",
+    "graphics/intro/opening_movie_v7/palettes.gbapal": "f253176e6ead3f2f5dd55c01de2f33881ce143527c464d076d2786bc348724f7"
+  },
+  "rom_connected": false,
+  "runtime_qa": false
+}

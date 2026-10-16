@@ -1,0 +1,11 @@
+{
+  "pass_": true,
+  "RAM_symbols_unchanged": 913,
+  "original_saves_unchanged": 15,
+  "compiled_assets_verified": {
+    "graphics/object_events/pics/people/prof_elm_hns.4bpp": "cd55e8b5202217c29719423366d0dda41d9bf4d126d6b2a161b08642f56c914a",
+    "graphics/object_events/palettes/prof_elm_hns.gbapal": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b"
+  },
+  "ROM_sha256": "7d66f47ad68e192d9f5916d9ef9bd9c9fb42fd80bcd3e2835b32cd328a208636",
+  "scope": "Elm ten product inputs only; not full campaign or DELTA validation"
+}

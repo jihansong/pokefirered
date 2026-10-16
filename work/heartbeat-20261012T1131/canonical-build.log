@@ -1,0 +1,11 @@
+tools/scaninc/scaninc -M build/blackthornlgqa/data/event_scripts.d -I include -I "" data/event_scripts.s
+make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+tools/preproc/preproc data/event_scripts.s charmap.txt | cc -E -I include - | tools/preproc/preproc -ie data/event_scripts.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build/blackthornlgqa/data/event_scripts.o
+Assembler messages:
+data/maps/Route114/scripts.inc:116: Error: symbol `Route114_EventScript_H5' is already defined
+data/maps/Route114/scripts.inc:124: Error: symbol `Route114_EventScript_H5_Received' is already defined
+data/maps/Route114/scripts.inc:129: Error: symbol `Route114_EventScript_H5_NoRoom' is already defined
+make[1]: *** [Makefile:351: build/blackthornlgqa/data/event_scripts.o] Error 1
+make: *** [Makefile:234: leafgreen] Error 2
+{"leafgreen": 2}

@@ -1,0 +1,119 @@
+{
+  "rom_sha256": "475088869b9937e4c1ed81ca920b8c2bb862ac44f1e2f50c9997cf9dadbfb02a",
+  "helper_sha256": "83c4557b96c344b241fc6f79e9b17722acfc0b0e81e0f9e6d649ff5d8b1c84bb",
+  "input_sav_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "case_count": 4,
+  "all_pass": true,
+  "cases": [
+    {
+      "case": "silver_azalea_win",
+      "turns": 3,
+      "native_outcome": 1,
+      "enemies": [
+        92,
+        41,
+        159
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/ilex-battles/silver_azalea_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "silver_azalea_loss",
+      "turns": 1,
+      "native_outcome": 2,
+      "enemies": [
+        92,
+        41,
+        159
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/ilex-battles/silver_azalea_loss-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "whitney_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        35,
+        241
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/ilex-battles/whitney_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0,
+      "native_reward_sequence": {
+        "upset_without_badge": {
+          "counter": [
+            61,
+            62
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/ilex-battles/whitney_win_upset_revisit-native-QA-only.sav"
+        },
+        "assistant_without_badge": {
+          "counter": [
+            62,
+            63
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/ilex-battles/whitney_win_native_assistant-native-QA-only.sav"
+        },
+        "revisit_badge_and_tm": {
+          "counter": [
+            63,
+            64
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/ilex-battles/whitney_win_native_badge_reward-native-QA-only.sav"
+        },
+        "qa_position_only_warps": 3,
+        "forced_story_flags": 0
+      }
+    },
+    {
+      "case": "whitney_loss",
+      "turns": 1,
+      "native_outcome": 2,
+      "enemies": [
+        35,
+        241
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2/ilex-battles/whitney_loss-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    }
+  ]
+}

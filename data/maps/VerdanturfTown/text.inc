@@ -46,4 +46,28 @@ VerdanturfTown_Text_H7::
     .string "VERDANTURF. Work suspended.”\p"
     .string "Someone has scratched underneath:\n"
     .string "NOT BY ME.$"
+
+VerdanturfTown_Text_ReunionBeforeH1::
+	.string "Papa says the tunnel's POKéMON\nare timid and dislike loud noise.\p"
+	.string "One man is finishing the work\nquietly, without big machines.$"
+
+VerdanturfTown_Text_ReunionAfterH1::
+	.string "The tunnel is finished now!\nWANDA's friend worked so quietly.\p"
+	.string "Papa says the wild POKéMON\ncan stay in their home.$"
+
+VerdanturfTown_Text_ReunionBeforeH2::
+	.string "The cave by the MART goes west\ntowards RUSTBORO.\p"
+	.string "You can get through. One worker\nis finishing the last supports.$"
+
+VerdanturfTown_Text_ReunionAfterH2::
+	.string "RUSTURF TUNNEL links our town\nwith RUSTBORO. The work is done!$"
+
+VerdanturfTown_Text_ReunionBeforeH7::
+	.string "RUSTURF TUNNEL\p"
+	.string "Passage clear. Finishing work\nin progress. Please tread quietly.$"
+
+VerdanturfTown_Text_ReunionAfterH7::
+	.string "RUSTURF TUNNEL\p"
+	.string "RUSTBORO - VERDANTURF\p"
+	.string "Work complete. Please respect\nthe wild POKéMON's home.$"
 @ END PATCH

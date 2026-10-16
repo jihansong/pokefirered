@@ -1,0 +1,15 @@
+CC0_SOURCE 88300 c872ff9719f9bdf503e5d87fe9b1b128255fe2f9506e3a380ff022b83e0b7be8
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/work/title_continuous_crackle.py", line 47, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspaces/pokefirered/work/title_continuous_crackle.py", line 39, in main
+    with wave.open(str(wav),'rb') as w:assert w.getnframes()==176400;wav_qa=audit(pcm(w.readframes(w.getnframes()),'h'))
+                                              ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/work/title_crackle_worker_v1.py", line 12, in <module>
+    subprocess.run(cmd,cwd=r,check=True)
+  File "/usr/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/bin/python3', 'work/title_continuous_crackle.py', '--wav', '/workspaces/pokefirered/reference/audio/cc0-electricity-faxcorp/crackleelectricityloop.wav', '--video', 'outputs/title-approved-v3-effects-v1/title-current-with-sfx.mp4', '--png', 'outputs/title-font-python-v3/title-font-candidate-240x160.png', '--gif_dir', 'outputs/title-approved-v3-effects-v1', '--out', 'outputs/title-continuous-crackle-v1']' returned non-zero exit status 1.

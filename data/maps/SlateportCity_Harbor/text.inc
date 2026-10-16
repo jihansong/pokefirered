@@ -126,4 +126,43 @@ SlateportCity_Harbor_Text_SternErrandWaiting::
     .string "Take a light with you.\p"
     .string "STEVEN will be the only man down\n"
     .string "there who looks pleased about it.$"
+
+SlateportCity_Harbor_Text_DevonDelivered::
+	.string "STERN: The parts from DEVON!\n"
+	.string "These will seal the submarine.\p"
+	.string "A loose fitting is bad enough on\n"
+	.string "deck. Underwater, it's a disaster.\p"
+	.string "Take these for bringing them here.$"
+
+SlateportCity_Harbor_Text_ReceivedDiveBalls::
+	.string "{PLAYER} received three DIVE BALLS!$"
+
+SlateportCity_Harbor_Text_DevonAfterDelivery::
+	.string "STERN: They work especially well\n"
+	.string "on POKéMON met underwater.\p"
+	.string "If your travels take you below\n"
+	.string "the waves, keep them in mind.\p"
+	.string "Tell MR. STONE the parts arrived\n"
+	.string "safe and sound!$"
+
+SlateportCity_Harbor_Text_DevonNoRoom::
+	.string "STERN: I have three DIVE BALLS\n"
+	.string "to thank you for the delivery.\p"
+	.string "Make room for them in your BAG,\n"
+	.string "then bring me the DEVON GOODS.\p"
+	.string "Now, about our other work…$"
+
+SlateportCity_Harbor_Text_DevonMissingGoods::
+	.string "STERN: MR. STONE sent you?\n"
+	.string "Please bring the DEVON GOODS.\p"
+	.string "Now, about our other work…$"
+
+SlateportCity_Harbor_Text_JohtoReferral::
+    .string "ELM's assistant sent word, too.\p"
+    .string "You met the research team\n"
+    .string "at ELM's lab in JOHTO.\p"
+    .string "BIRCH studies how POKéMON live\n"
+    .string "here in HOENN.\p"
+    .string "Once you have seen SLATEPORT,\n"
+    .string "look for his lab in LITTLEROOT.$"
 @ END PATCH

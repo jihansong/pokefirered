@@ -1,0 +1,12 @@
+GoldenrodCity_RadioTower_2F_MapScripts::
+    .byte 0
+
+GoldenrodCity_RadioTower_2F_RADIO_GRUNT_A::
+trainerbattle_single TRAINER_JOHTO_RADIO_GRUNT_A, GoldenrodCity_RadioTower_2F_Text_RADIO_GRUNT_AIntro, GoldenrodCity_RadioTower_2F_Text_RADIO_GRUNT_ADefeat
+    msgbox GoldenrodCity_RadioTower_2F_Text_RADIO_GRUNT_AAfter, MSGBOX_NPC
+    end
+
+GoldenrodCity_RadioTower_2F_RADIO_GRUNT_B::
+trainerbattle_single TRAINER_JOHTO_RADIO_GRUNT_B, GoldenrodCity_RadioTower_2F_Text_RADIO_GRUNT_BIntro, GoldenrodCity_RadioTower_2F_Text_RADIO_GRUNT_BDefeat
+    msgbox GoldenrodCity_RadioTower_2F_Text_RADIO_GRUNT_BAfter, MSGBOX_NPC
+    end

@@ -1,0 +1,9 @@
+{"identity": {"rom_sha": "433ef955f92bb045e21c262413116e3aeac379999468eb02eec9b0ed0c7b315a", "save_sha": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85", "ewram_free": 284, "scratch": "0x203fee4", "scope": "copied SAV, temporary emulator-only native function fixture"}}
+{"map_fixture": {"map": "CherrygroveCity", "group": 76, "num": 6, "repel": 250, "scope": "temporary copied SAV; emulated frame budget, not Delta FPS"}}
+{"field_performance": {"label": "CherrygroveCity_idle", "hardware": 360, "vblank": 360, "callbacks": 360, "missed": 0, "positions": [[18, 13]], "pass_all": true}}
+{"field_performance": {"label": "CherrygroveCity_walk", "hardware": 360, "vblank": 360, "callbacks": 360, "missed": 0, "positions": [[18, 13], [19, 13]], "pass_all": true}}
+{"map_fixture": {"map": "JohtoRoute30", "group": 76, "num": 11, "repel": 250, "scope": "temporary copied SAV; emulated frame budget, not Delta FPS"}}
+{"field_performance": {"label": "JohtoRoute30_idle", "hardware": 360, "vblank": 360, "callbacks": 360, "missed": 0, "positions": [[7, 44]], "pass_all": true}}
+{"field_performance": {"label": "JohtoRoute30_walk", "hardware": 360, "vblank": 360, "callbacks": 360, "missed": 0, "positions": [[7, 44], [8, 44]], "pass_all": true}}
+{"original_saves_preserved": true}
+{"original_saves_final_check": true}

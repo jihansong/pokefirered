@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/native_johto_tohjo_route_qa.py", line 24, in <module>
+    found=[v for v in layoutrows if v['id']==j['layout']];assert len(found)==1
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/native_johto_tohjo_route_qa.py", line 24, in <listcomp>
+    found=[v for v in layoutrows if v['id']==j['layout']];assert len(found)==1
+                                    ~^^^^^^
+KeyError: 'id'

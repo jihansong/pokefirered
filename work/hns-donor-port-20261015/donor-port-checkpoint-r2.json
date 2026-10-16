@@ -1,0 +1,49 @@
+{
+  "user_intent": "Actual donor map/tiles/story/characters/events/animations reuse and port, not inspiration-only",
+  "donor_commit": "167aa6d537b109bb229c231ddce4616974c4da71",
+  "source_files_verified": 821,
+  "donor_maps_acquired": 166,
+  "source_host_tools_executed": false,
+  "packages": [
+    {
+      "path": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\regional\\elm-hns-donor-integration-r1\\actual-donor-candidate-r1.zip",
+      "bytes": 287612,
+      "sha256": "72039b903b0b2fc6eab8b87ece1f3529ba056b58175ff756f7cedb3095af47f5",
+      "zip_members": 41,
+      "CRC_pass": true
+    },
+    {
+      "path": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\hoenn\\hns-donor-newbark-r3.zip",
+      "bytes": 248186,
+      "sha256": "08f0bc1285e182605cf3a5da3466e3d7e7e758df4e3000bbefe2ecbb07a3c233",
+      "zip_members": 86,
+      "CRC_pass": true
+    },
+    {
+      "path": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\save-audit\\hns-story-candidate-r1.zip",
+      "bytes": 17159,
+      "sha256": "c9361571a96efe07026f39de3b6e854a0cfe727c1a953d604b55e16ed03ac787",
+      "zip_members": 17,
+      "CRC_pass": true
+    }
+  ],
+  "current_ROM_unchanged_this_turn": true,
+  "ROM_applied": false,
+  "native_verified": false,
+  "root_visual_review": [
+    "Actual Elm donor versus native-decoded 9 frames match",
+    "Actual NewBarkTown and Route29 full source landscapes rendered from donor data"
+  ],
+  "original_SAV_modified": false,
+  "runtime_integration_blocker": "After approved existing Codespace restart, browser shows connected but Explorer and PTY are empty; profile picker returns zero profiles and frontend reports remote request timeouts. Source work continues locally.",
+  "next": [
+    "Verify current target animation/behavior headers and tileset animation source",
+    "Port matching tile attributes, animation bindings, map events and seam data together",
+    "Apply exact-SHA guarded candidate, build, inspect actual emulator scenes and SAVE/cold",
+    "Retain all previous approved tasks and assets; no whole region completion claim"
+  ],
+  "latest_map_candidate_status": "R3: matching tile assets and source animation callback port prepared; fresh guards/seams/saved coordinates/extra doors/post-unlock Headbutt remain. deployable=false.",
+  "reserved_behavior_audit": "92 current regional attribute tables/21238 metatiles, no E0-E7 use; code-generated behavior values not proven absent",
+  "Misty_original_asset_review": "Actual HnS/FRLG battle and HnS field art are swimming outfits; unsuitable for requested anime season1, not applied",
+  "runtime_integration_blocker_unchanged": true
+}

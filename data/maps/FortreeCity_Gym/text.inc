@@ -1,24 +1,3 @@
-FortreeCity_Gym_Text_H0_0::
-	.string "I am WINONA. I am the LEADER of\n"
-	.string "the FORTREE POKéMON GYM.\p"
-	.string "I have become one with BIRD\n"
-	.string "POKéMON and have soared the skies…\p"
-	.string "However grueling the battle, we\n"
-	.string "have triumphed with grace…\p"
-	.string "Witness the elegant choreography\n"
-	.string "of BIRD POKéMON and I!$"
-
-FortreeCity_Gym_Text_H0_1::
-	.string "Never before have I seen a TRAINER\n"
-	.string "command POKéMON with more grace\l"
-	.string "than I…\p"
-	.string "In recognition of your prowess,\n"
-	.string "I present to you this GYM BADGE.$"
-
-FortreeCity_Gym_Text_H0_2::
-	.string "Though I fell to you, I will remain\n"
-	.string "devoted to BIRD POKéMON.$"
-
 FortreeCity_Gym_Text_H1_0::
 	.string "Behold the elegant battle style of\n"
 	.string "BIRD POKéMON!$"
@@ -114,3 +93,42 @@ FortreeCity_Gym_Text_H7_2::
 	.string "you'd better watch it! Our LEADER\l"
 	.string "WINONA's POKéMON are all business.$"
 
+@ BEGIN PATCH (tools/hoenn_import/patches)
+FortreeCity_Gym_Text_H0_0::
+    .string "WINONA: A champion from KANTO!\n"
+    .string "Your journey has brought you far.\p"
+    .string "Let our partners show us how high\n"
+    .string "they can soar!$"
+
+FortreeCity_Gym_Text_H0_1::
+    .string "Your team moved as one.\n"
+    .string "A beautiful battle!$"
+
+FortreeCity_Gym_Text_H0_2::
+    .string "The sky is vast, and there is\n"
+    .string "always more to learn.\p"
+    .string "I will keep training with my\n"
+    .string "partners among these treetops.$"
+
+FortreeCity_Gym_Text_ReceivedFeatherBadge::
+    .string "{PLAYER} received\n"
+    .string "the FEATHER BADGE!$"
+
+FortreeCity_Gym_Text_TakeTM40::
+    .string "Take this TM as well.\n"
+    .string "Let your partners try it.$"
+
+FortreeCity_Gym_Text_ReceivedTM40::
+    .string "{PLAYER} received TM40\n"
+    .string "from WINONA.$"
+
+FortreeCity_Gym_Text_ExplainTM40::
+    .string "AERIAL ACE strikes with speed\n"
+    .string "and precision.\p"
+    .string "A well-timed move can turn\n"
+    .string "the whole battle around!$"
+
+FortreeCity_Gym_Text_NoRoomForTM40::
+    .string "Your TM CASE can't hold another.\n"
+    .string "Make room for TM40 and come back.$"
+@ END PATCH

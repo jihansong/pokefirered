@@ -1,0 +1,37 @@
+{
+  "pairs": [
+    {
+      "baseline": {
+        "pass": false,
+        "exit_code": 1
+      },
+      "candidate": {
+        "pass": false,
+        "exit_code": 1
+      }
+    },
+    {
+      "candidate": {
+        "pass": false,
+        "exit_code": 1
+      },
+      "baseline": {
+        "pass": false,
+        "exit_code": 1
+      }
+    },
+    {
+      "baseline": {
+        "pass": false,
+        "exit_code": 1
+      },
+      "candidate": {
+        "pass": false,
+        "exit_code": 1
+      }
+    }
+  ],
+  "all_runs_pass": false,
+  "actual_DELTA_device_tested": false,
+  "scope": "Same QA save, renderer and host; alternating order after build; no claims about full campaign or device"
+}

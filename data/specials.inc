@@ -535,4 +535,16 @@ gSpecials::
 	def_special IsPlayerPartyHurt
 	def_special FlowerShop_CanGiveBerry
 	def_special FlowerShop_RecordBerry
+	def_special CanUseStrengthAtCurrentMap
+	def_special CanUseRockSmashAtCurrentMap
+	def_special CanMistyJoin
+	def_special MistyPreparePalletVisit
+	def_special MistyJoin
+	def_special MistyGetGrowthStage
+	def_special CanTalkToMistyFromPikachu
+	def_special SelectMistyCompanionForTalk
+	def_special CanOfferMistyCompanionJoin
+	def_special MistyDeclineCompanionJoin
+	def_special ScriptGivePerfectRegionalStarter
+	def_special CreatePerfectScriptedTreecko
 gSpecialsEnd::

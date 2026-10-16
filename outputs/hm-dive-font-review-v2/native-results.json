@@ -1,0 +1,65 @@
+[
+  {
+    "case": "absent",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "original_saves_unchanged": true
+  },
+  {
+    "case": "bag",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "original_saves_unchanged": true
+  },
+  {
+    "case": "pc",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "original_saves_unchanged": true
+  },
+  {
+    "case": "bag-full",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "original_saves_unchanged": true
+  },
+  {
+    "case": "pc-full",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "original_saves_unchanged": true
+  },
+  {
+    "case": "done-bag",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "original_saves_unchanged": true
+  },
+  {
+    "case": "done-pc",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "original_saves_unchanged": true
+  },
+  {
+    "case": "done-missing",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "original_saves_unchanged": true
+  },
+  {
+    "case": "follower",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "original_saves_unchanged": true
+  }
+]

@@ -1,0 +1,268 @@
+{
+  "schema": "thunder-yellow-independent-inferred-Lickitung-repair-spec-v1",
+  "pass_all": true,
+  "original_save_sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4",
+  "original_record_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd",
+  "expected_candidate_record_sha256": "eec0fe0716f3a24618ef67edbfc2ab5d7fa7d0addf22260021d977645e3684e0",
+  "expected_record_base64": "gFU6AHr7OqnGw73Fw87PyMH/AiLEv83Nw7//AHZ4AAD6rgCp+q4AqfquAKn6KKcz+q4AqfquAKmWrgCpTUkAqfroAKntrhqoyq4jqe66FL0=",
+  "expected_raw_deltas": [
+    {
+      "offset": 19,
+      "before": 39,
+      "after": 34
+    },
+    {
+      "offset": 51,
+      "before": 233,
+      "after": 169
+    },
+    {
+      "offset": 63,
+      "before": 173,
+      "after": 169
+    }
+  ],
+  "original_checksum_preserved": true,
+  "original_slot": {
+    "box_1based": 2,
+    "cell_1based": 22,
+    "PC_index_0based": 51
+  },
+  "both_original_generations_record_equal": true,
+  "original_counter_epochs": [
+    78,
+    77
+  ],
+  "independent_C_derived_substruct_positions": [
+    2,
+    3,
+    0,
+    1
+  ],
+  "source_pokemon_C_sha256": "373b692e42d952b94b44f0ceda81d56dc75e1abb6af9d60ca5ec47d927b2057c",
+  "engine_mark_logic_locations": [
+    3067,
+    3509
+  ],
+  "engine_mark_inverse": {
+    "header_byte19_mask": 5,
+    "secure_misc_isEgg_bit30_raw_byte": 51,
+    "secure_mask": 64,
+    "all_other_IV_and_ability_bits_preserved": true
+  },
+  "primary_bit_inverse": {
+    "raw_offset": 63,
+    "raw_bit_0based": 2,
+    "decrypted_EXP_bit": 26,
+    "EXP_before": 67168183,
+    "EXP_after": 59319
+  },
+  "checksum_matching_single_bit_alternatives": [
+    {
+      "offset": 45,
+      "bit": 2,
+      "EXP": 67168183,
+      "species": 108,
+      "checksum": 30838,
+      "rejected": [
+        "EXP exceeds actual Lickitung level-100 maximum 1000000"
+      ],
+      "record_sha256": "ffd4d90fd4e73270c63e42611aa5d09dd3ac388817825d82972b4b3647635c19"
+    },
+    {
+      "offset": 61,
+      "bit": 2,
+      "EXP": 67167159,
+      "species": 108,
+      "checksum": 30838,
+      "rejected": [
+        "EXP exceeds actual Lickitung level-100 maximum 1000000"
+      ],
+      "record_sha256": "efe05924ec8ad44f50544d4ea733f3209429a546f6c4d2338353e412204882a8"
+    },
+    {
+      "offset": 63,
+      "bit": 2,
+      "EXP": 59319,
+      "species": 108,
+      "checksum": 30838,
+      "rejected": [],
+      "record_sha256": "eec0fe0716f3a24618ef67edbfc2ab5d7fa7d0addf22260021d977645e3684e0"
+    },
+    {
+      "offset": 65,
+      "bit": 2,
+      "EXP": 67168183,
+      "species": 108,
+      "checksum": 30838,
+      "rejected": [
+        "EXP exceeds actual Lickitung level-100 maximum 1000000"
+      ],
+      "record_sha256": "cf85cc7ec0d6125b8b81fba07d3fbbd0541ae71d4ca48d2a528470ed6dc4f1cf"
+    },
+    {
+      "offset": 77,
+      "bit": 2,
+      "EXP": 67168183,
+      "species": 108,
+      "checksum": 30838,
+      "rejected": [
+        "EXP exceeds actual Lickitung level-100 maximum 1000000"
+      ],
+      "record_sha256": "39a785b147c3a6664b07057f7e6cff3dc8474b047f02f8001ee86132da10f07d"
+    },
+    {
+      "offset": 79,
+      "bit": 2,
+      "EXP": 67168183,
+      "species": 108,
+      "checksum": 30838,
+      "rejected": [
+        "EXP exceeds actual Lickitung level-100 maximum 1000000"
+      ],
+      "record_sha256": "c61b4c69229d8fa3ff5468855622e5de5d3cd7daf6b56fd74bc7468b649929d4"
+    }
+  ],
+  "unique_viable_model_candidate": true,
+  "before": {
+    "pid": 3822976,
+    "ot": 2839214970,
+    "nickname_hex": "c6c3bdc5c3cecfc8c1ff",
+    "language": 2,
+    "OT_name_hex": "c4bfcdcdc3bfff",
+    "header_flags": 39,
+    "stored_checksum": 30838,
+    "computed_checksum": 48246,
+    "species": 108,
+    "item": 0,
+    "EXP": 67168183,
+    "IVs": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "EVs": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "egg": true,
+    "ability_bit": 0,
+    "met_level": 39,
+    "met_game": 5,
+    "ball": 3,
+    "OT_gender": 1,
+    "met_location": 134,
+    "pokerus": 0,
+    "moves": [
+      23,
+      282,
+      48,
+      35
+    ],
+    "PP": [
+      20,
+      20,
+      20,
+      20
+    ],
+    "PP_Up_stages": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "friendship": 70,
+    "markings": 0,
+    "ribbon_word": "00000000",
+    "unknown_header": "0000",
+    "shiny": false,
+    "nature": 1
+  },
+  "after": {
+    "pid": 3822976,
+    "ot": 2839214970,
+    "nickname_hex": "c6c3bdc5c3cecfc8c1ff",
+    "language": 2,
+    "OT_name_hex": "c4bfcdcdc3bfff",
+    "header_flags": 34,
+    "stored_checksum": 30838,
+    "computed_checksum": 30838,
+    "species": 108,
+    "item": 0,
+    "EXP": 59319,
+    "IVs": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "EVs": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "egg": false,
+    "ability_bit": 0,
+    "met_level": 39,
+    "met_game": 5,
+    "ball": 3,
+    "OT_gender": 1,
+    "met_location": 134,
+    "pokerus": 0,
+    "moves": [
+      23,
+      282,
+      48,
+      35
+    ],
+    "PP": [
+      20,
+      20,
+      20,
+      20
+    ],
+    "PP_Up_stages": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "friendship": 70,
+    "markings": 0,
+    "ribbon_word": "00000000",
+    "unknown_header": "0000",
+    "shiny": false,
+    "nature": 1
+  },
+  "actual_ROM_growth_evidence": {
+    "ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+    "growthRate": 0,
+    "EXP_at_met_level39": 59319,
+    "EXP_level100_limit": 1000000,
+    "original_tables_SHA": {
+      "gSpeciesInfo": "4aba92bc6afc630acbdeed630b6299cc62787b983d81e681354fab4dacfacdce",
+      "gExperienceTables": "6f153914ffef4c04b9f358ed7941ae51d143639b6eb1de4baf29cffa5d5e56b6",
+      "gBattleMoves": "536484a57d70078e48c8c8cfdc4bb6cd558d0c85db0f8cc0f9f1ce2d0be6140f"
+    }
+  },
+  "authenticated_normal_donor_found": false,
+  "classification": "INFERRED_MINIMAL_REPAIR_UNDER_SINGLE_PRIMARY_BIT_PLUS_ENGINE_MARKING_MODEL",
+  "user_scope": "User explicitly requested all Bad Egg restoration; root will apply only to a separate copy and preserve the original.",
+  "required_user_disclosure": "\ub77c\ud504\ub77c\uc2a4\ub294 \uc815\uc0c1 \uacfc\uac70 \uc6d0\ubcf8\uc73c\ub85c \ubcf5\uc6d0\ud588\uc2b5\ub2c8\ub2e4. \ub0b4\ub8e8\ubbf8\ub294 \uc815\uc0c1 \uc6d0\ubcf8\uc774 \uc5c6\uc5b4 \uae30\uc874 \uccb4\ud06c\uc12c\u00b7\ud3ec\ud68d \ub808\ubca8\u00b7\uc131\uc7a5\ud45c\uc640 \uc77c\uce58\ud558\ub294 \uc720\uc77c\ud55c \ucd5c\uc18c \uc190\uc0c1 \ud6c4\ubcf4\ub85c \ucd94\uc815 \ubcf5\uad6c\ud588\uc2b5\ub2c8\ub2e4. \uc6d0\ubcf8 \uc138\uc774\ube0c\ub294 \ubcf4\uc874\ud588\uc2b5\ub2c8\ub2e4.",
+  "risk": "This is not authenticated original-record recovery. Multiple primary corruptions, coincident checksum errors or a different original egg status cannot be excluded solely by checksum constraints. The unchanged IV/EV/moves/identity are preserved from the available damaged record rather than externally authenticated.",
+  "SAV_files_written": 0,
+  "product_files_written": 0,
+  "emulator_execution": false
+}

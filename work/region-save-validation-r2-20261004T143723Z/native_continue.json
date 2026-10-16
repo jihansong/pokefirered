@@ -1,0 +1,809 @@
+{
+  "schema": "thunder-yellow-normal-continue-load-v1",
+  "rom_sha256": "1375cdba01ad0c893cb04f71522871b2d964ae695319ecd2763d5e7247214625",
+  "sym_sha256": "f7be9a16817c374d5ef975a1653172d71262a119308880eb98846471c10e3e72",
+  "input_save_count": 7,
+  "code_injection": false,
+  "memory_writes": false,
+  "binary_patch": false,
+  "save_mutation_requested": false,
+  "saves": [
+    {
+      "path": "/workspaces/pokefirered/saves/hoenn.sav",
+      "original_sha256": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+      "pass": true,
+      "active_slot": 0,
+      "counter": 36,
+      "expected_storage_sha256": "996783d230f47d93220df8b071dfa3069c24da99880b089a695adb9c99b074f9",
+      "temporary_save_copy_verified": true,
+      "boot_frames": 638,
+      "after_continue": {
+        "frame": 638,
+        "callback2": 134574629,
+        "location": [
+          52,
+          9,
+          11,
+          13
+        ],
+        "storage_pointer": 33723232,
+        "storage_sha256": "996783d230f47d93220df8b071dfa3069c24da99880b089a695adb9c99b074f9",
+        "party_count": 6,
+        "party_raw80_sha256": [
+          "90829ced48c086d79bd2d925aeb960c56d618e9e9fe364dfe52890abe0f56579",
+          "fce87992ee1cc9a175e0e5627dcf5ee3c1f3dec8b63fe415eea30246067c1d7c",
+          "d9d891b4f83dc30184bf6a7818c53da0a90f1024d0e7505f1ffd732bb8ccfdbf",
+          "6683ebbe0a6655b9278416e3bb003a8fc15c3014beac3791fba49ec336d31f3b",
+          "8d61e81c8c4a60d61dbb34cbc29c6a11f9e5eb2b2a95627a102029633710ba7d",
+          "b012533ee35055c48bb2c11f66e120750881c73e609336504d33ef3f370e40df"
+        ],
+        "party_pid_ot_order": [
+          "194f697d:690680d4",
+          "4116bffc:690680d4",
+          "31d9fb76:690680d4",
+          "a5316f7e:690680d4",
+          "b8b3d983:690680d4",
+          "43c82ddd:690680d4"
+        ],
+        "party_errors": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "checks": {
+          "pc_all_33744_bytes_equal": true,
+          "pc_all_420_mon_checksums_flags_valid": true,
+          "party_count_equal": true,
+          "party_raw80_sequence_equal": true,
+          "party_pid_ot_order_equal": true,
+          "party_all_checksums_flags_valid": true
+        },
+        "pc_mismatches": [],
+        "pc_prefix_equal": true,
+        "pc_names_wallpapers_equal": true,
+        "first_storage_diff_offsets": [],
+        "pass": true
+      },
+      "after_idle_180": {
+        "frame": 818,
+        "callback2": 134574629,
+        "location": [
+          52,
+          9,
+          11,
+          13
+        ],
+        "storage_pointer": 33723232,
+        "storage_sha256": "996783d230f47d93220df8b071dfa3069c24da99880b089a695adb9c99b074f9",
+        "party_count": 6,
+        "party_raw80_sha256": [
+          "90829ced48c086d79bd2d925aeb960c56d618e9e9fe364dfe52890abe0f56579",
+          "fce87992ee1cc9a175e0e5627dcf5ee3c1f3dec8b63fe415eea30246067c1d7c",
+          "d9d891b4f83dc30184bf6a7818c53da0a90f1024d0e7505f1ffd732bb8ccfdbf",
+          "6683ebbe0a6655b9278416e3bb003a8fc15c3014beac3791fba49ec336d31f3b",
+          "8d61e81c8c4a60d61dbb34cbc29c6a11f9e5eb2b2a95627a102029633710ba7d",
+          "b012533ee35055c48bb2c11f66e120750881c73e609336504d33ef3f370e40df"
+        ],
+        "party_pid_ot_order": [
+          "194f697d:690680d4",
+          "4116bffc:690680d4",
+          "31d9fb76:690680d4",
+          "a5316f7e:690680d4",
+          "b8b3d983:690680d4",
+          "43c82ddd:690680d4"
+        ],
+        "party_errors": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "checks": {
+          "pc_all_33744_bytes_equal": true,
+          "pc_all_420_mon_checksums_flags_valid": true,
+          "party_count_equal": true,
+          "party_raw80_sequence_equal": true,
+          "party_pid_ot_order_equal": true,
+          "party_all_checksums_flags_valid": true
+        },
+        "pc_mismatches": [],
+        "pc_prefix_equal": true,
+        "pc_names_wallpapers_equal": true,
+        "first_storage_diff_offsets": [],
+        "pass": true
+      },
+      "source_unchanged": true
+    },
+    {
+      "path": "/workspaces/pokefirered/saves/pokemonthyl_hoenn_QAed.sav",
+      "original_sha256": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+      "pass": true,
+      "active_slot": 0,
+      "counter": 12,
+      "expected_storage_sha256": "480447cbc18745c9ce9af137cddf30b6605a677b7ce64e27bc6b56e30ee9f313",
+      "temporary_save_copy_verified": true,
+      "boot_frames": 638,
+      "after_continue": {
+        "frame": 638,
+        "callback2": 134574629,
+        "location": [
+          3,
+          22,
+          12,
+          8
+        ],
+        "storage_pointer": 33723160,
+        "storage_sha256": "480447cbc18745c9ce9af137cddf30b6605a677b7ce64e27bc6b56e30ee9f313",
+        "party_count": 6,
+        "party_raw80_sha256": [
+          "55221615533b090d146e9fe8ad5ca8ba63ce91ceec0ef51a74ceb120f58554f2",
+          "3317d54fdf5bb2ed8d4e751a28337c3ff594518b89ddc89802af0a02533f22d9",
+          "4af21e400457e65bb18e2b135c9c2150080e5e9a88cdacbc973c2ef79dab4abe",
+          "682eb6de0ce9c3f506df3a5339345a37e90b736533187474484cf0dce138e30c",
+          "8f0b0dc124af5d2aca50ba6ebb6cc8b3ddfe9be786ded46b51c6c63f39e07a1e",
+          "78b0ebcc17df51b93e3276c0a1e5de612a9add9df918a2f7c39985fef9822ed0"
+        ],
+        "party_pid_ot_order": [
+          "6d584b9a:a93afb7a",
+          "c3c7e2d0:a93afb7a",
+          "28235781:a93afb7a",
+          "ac1dd623:a93afb7a",
+          "fd59a3e9:a93afb7a",
+          "df0b9395:a93afb7a"
+        ],
+        "party_errors": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "checks": {
+          "pc_all_33744_bytes_equal": true,
+          "pc_all_420_mon_checksums_flags_valid": true,
+          "party_count_equal": true,
+          "party_raw80_sequence_equal": true,
+          "party_pid_ot_order_equal": true,
+          "party_all_checksums_flags_valid": true
+        },
+        "pc_mismatches": [],
+        "pc_prefix_equal": true,
+        "pc_names_wallpapers_equal": true,
+        "first_storage_diff_offsets": [],
+        "pass": true
+      },
+      "after_idle_180": {
+        "frame": 818,
+        "callback2": 134574629,
+        "location": [
+          3,
+          22,
+          12,
+          8
+        ],
+        "storage_pointer": 33723160,
+        "storage_sha256": "480447cbc18745c9ce9af137cddf30b6605a677b7ce64e27bc6b56e30ee9f313",
+        "party_count": 6,
+        "party_raw80_sha256": [
+          "55221615533b090d146e9fe8ad5ca8ba63ce91ceec0ef51a74ceb120f58554f2",
+          "3317d54fdf5bb2ed8d4e751a28337c3ff594518b89ddc89802af0a02533f22d9",
+          "4af21e400457e65bb18e2b135c9c2150080e5e9a88cdacbc973c2ef79dab4abe",
+          "682eb6de0ce9c3f506df3a5339345a37e90b736533187474484cf0dce138e30c",
+          "8f0b0dc124af5d2aca50ba6ebb6cc8b3ddfe9be786ded46b51c6c63f39e07a1e",
+          "78b0ebcc17df51b93e3276c0a1e5de612a9add9df918a2f7c39985fef9822ed0"
+        ],
+        "party_pid_ot_order": [
+          "6d584b9a:a93afb7a",
+          "c3c7e2d0:a93afb7a",
+          "28235781:a93afb7a",
+          "ac1dd623:a93afb7a",
+          "fd59a3e9:a93afb7a",
+          "df0b9395:a93afb7a"
+        ],
+        "party_errors": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "checks": {
+          "pc_all_33744_bytes_equal": true,
+          "pc_all_420_mon_checksums_flags_valid": true,
+          "party_count_equal": true,
+          "party_raw80_sequence_equal": true,
+          "party_pid_ot_order_equal": true,
+          "party_all_checksums_flags_valid": true
+        },
+        "pc_mismatches": [],
+        "pc_prefix_equal": true,
+        "pc_names_wallpapers_equal": true,
+        "first_storage_diff_offsets": [],
+        "pass": true
+      },
+      "source_unchanged": true
+    },
+    {
+      "path": "/workspaces/pokefirered/saves/pokemonthyl_v1.1.sav",
+      "original_sha256": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+      "pass": true,
+      "active_slot": 0,
+      "counter": 42,
+      "expected_storage_sha256": "65f5d95c41c3fe14cbda46a4a49f1d70110d2f8353631fbafacd20bb6057dce9",
+      "temporary_save_copy_verified": true,
+      "boot_frames": 670,
+      "after_continue": {
+        "frame": 670,
+        "callback2": 134574629,
+        "location": [
+          1,
+          48,
+          20,
+          15
+        ],
+        "storage_pointer": 33723160,
+        "storage_sha256": "65f5d95c41c3fe14cbda46a4a49f1d70110d2f8353631fbafacd20bb6057dce9",
+        "party_count": 6,
+        "party_raw80_sha256": [
+          "f8817c328e1eefb8898dceef98f3d17d39b3958f199383f2bdfbeefb9db08763",
+          "c5d7ae47028c54aebb1c3ab639c74b259880a99282122c048c71ee8eb9af486e",
+          "cb9e927434041f447b1415f60f9c21e6a373194814f299a722c8f3f927964ec8",
+          "e1bc3cab9db8e29814a5630322ca497fff7bfcd6a346473a14dfead68ce6efb7",
+          "44bfbb9fa6ad27ede3749c9a74251e9a9c14f45a64df2311d32831e9c37733c7",
+          "07f68219d124c961fdf07cfb0acd173efbd58e7d033114b9610265713f4e8f41"
+        ],
+        "party_pid_ot_order": [
+          "00142e88:a93afb7a",
+          "df0b9395:a93afb7a",
+          "ebe34935:a93afb7a",
+          "a191af65:a93afb7a",
+          "35359524:a93afb7a",
+          "6e18bc1f:a93afb7a"
+        ],
+        "party_errors": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "checks": {
+          "pc_all_33744_bytes_equal": true,
+          "pc_all_420_mon_checksums_flags_valid": true,
+          "party_count_equal": true,
+          "party_raw80_sequence_equal": true,
+          "party_pid_ot_order_equal": true,
+          "party_all_checksums_flags_valid": true
+        },
+        "pc_mismatches": [],
+        "pc_prefix_equal": true,
+        "pc_names_wallpapers_equal": true,
+        "first_storage_diff_offsets": [],
+        "pass": true
+      },
+      "after_idle_180": {
+        "frame": 850,
+        "callback2": 134574629,
+        "location": [
+          1,
+          48,
+          20,
+          15
+        ],
+        "storage_pointer": 33723160,
+        "storage_sha256": "65f5d95c41c3fe14cbda46a4a49f1d70110d2f8353631fbafacd20bb6057dce9",
+        "party_count": 6,
+        "party_raw80_sha256": [
+          "f8817c328e1eefb8898dceef98f3d17d39b3958f199383f2bdfbeefb9db08763",
+          "c5d7ae47028c54aebb1c3ab639c74b259880a99282122c048c71ee8eb9af486e",
+          "cb9e927434041f447b1415f60f9c21e6a373194814f299a722c8f3f927964ec8",
+          "e1bc3cab9db8e29814a5630322ca497fff7bfcd6a346473a14dfead68ce6efb7",
+          "44bfbb9fa6ad27ede3749c9a74251e9a9c14f45a64df2311d32831e9c37733c7",
+          "07f68219d124c961fdf07cfb0acd173efbd58e7d033114b9610265713f4e8f41"
+        ],
+        "party_pid_ot_order": [
+          "00142e88:a93afb7a",
+          "df0b9395:a93afb7a",
+          "ebe34935:a93afb7a",
+          "a191af65:a93afb7a",
+          "35359524:a93afb7a",
+          "6e18bc1f:a93afb7a"
+        ],
+        "party_errors": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "checks": {
+          "pc_all_33744_bytes_equal": true,
+          "pc_all_420_mon_checksums_flags_valid": true,
+          "party_count_equal": true,
+          "party_raw80_sequence_equal": true,
+          "party_pid_ot_order_equal": true,
+          "party_all_checksums_flags_valid": true
+        },
+        "pc_mismatches": [],
+        "pc_prefix_equal": true,
+        "pc_names_wallpapers_equal": true,
+        "first_storage_diff_offsets": [],
+        "pass": true
+      },
+      "source_unchanged": true
+    },
+    {
+      "path": "/workspaces/pokefirered/saves/pokemonthyl_v3.gba.sav",
+      "original_sha256": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+      "pass": false,
+      "active_slot": 1,
+      "counter": 33,
+      "expected_storage_sha256": "996783d230f47d93220df8b071dfa3069c24da99880b089a695adb9c99b074f9",
+      "temporary_save_copy_verified": true,
+      "boot_frames": 638,
+      "after_continue": {
+        "frame": 638,
+        "callback2": 134574629,
+        "location": [
+          3,
+          24,
+          21,
+          28
+        ],
+        "storage_pointer": 33723200,
+        "storage_sha256": "996783d230f47d93220df8b071dfa3069c24da99880b089a695adb9c99b074f9",
+        "party_count": 6,
+        "party_raw80_sha256": [
+          "90829ced48c086d79bd2d925aeb960c56d618e9e9fe364dfe52890abe0f56579",
+          "fce87992ee1cc9a175e0e5627dcf5ee3c1f3dec8b63fe415eea30246067c1d7c",
+          "d9d891b4f83dc30184bf6a7818c53da0a90f1024d0e7505f1ffd732bb8ccfdbf",
+          "6683ebbe0a6655b9278416e3bb003a8fc15c3014beac3791fba49ec336d31f3b",
+          "8d61e81c8c4a60d61dbb34cbc29c6a11f9e5eb2b2a95627a102029633710ba7d",
+          "b012533ee35055c48bb2c11f66e120750881c73e609336504d33ef3f370e40df"
+        ],
+        "party_pid_ot_order": [
+          "194f697d:690680d4",
+          "4116bffc:690680d4",
+          "31d9fb76:690680d4",
+          "a5316f7e:690680d4",
+          "b8b3d983:690680d4",
+          "43c82ddd:690680d4"
+        ],
+        "party_errors": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "checks": {
+          "pc_all_33744_bytes_equal": true,
+          "pc_all_420_mon_checksums_flags_valid": true,
+          "party_count_equal": true,
+          "party_raw80_sequence_equal": false,
+          "party_pid_ot_order_equal": true,
+          "party_all_checksums_flags_valid": true
+        },
+        "pc_mismatches": [],
+        "pc_prefix_equal": true,
+        "pc_names_wallpapers_equal": true,
+        "first_storage_diff_offsets": [],
+        "pass": false
+      },
+      "after_idle_180": {
+        "frame": 818,
+        "callback2": 134574629,
+        "location": [
+          3,
+          24,
+          21,
+          28
+        ],
+        "storage_pointer": 33723200,
+        "storage_sha256": "996783d230f47d93220df8b071dfa3069c24da99880b089a695adb9c99b074f9",
+        "party_count": 6,
+        "party_raw80_sha256": [
+          "90829ced48c086d79bd2d925aeb960c56d618e9e9fe364dfe52890abe0f56579",
+          "fce87992ee1cc9a175e0e5627dcf5ee3c1f3dec8b63fe415eea30246067c1d7c",
+          "d9d891b4f83dc30184bf6a7818c53da0a90f1024d0e7505f1ffd732bb8ccfdbf",
+          "6683ebbe0a6655b9278416e3bb003a8fc15c3014beac3791fba49ec336d31f3b",
+          "8d61e81c8c4a60d61dbb34cbc29c6a11f9e5eb2b2a95627a102029633710ba7d",
+          "b012533ee35055c48bb2c11f66e120750881c73e609336504d33ef3f370e40df"
+        ],
+        "party_pid_ot_order": [
+          "194f697d:690680d4",
+          "4116bffc:690680d4",
+          "31d9fb76:690680d4",
+          "a5316f7e:690680d4",
+          "b8b3d983:690680d4",
+          "43c82ddd:690680d4"
+        ],
+        "party_errors": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "checks": {
+          "pc_all_33744_bytes_equal": true,
+          "pc_all_420_mon_checksums_flags_valid": true,
+          "party_count_equal": true,
+          "party_raw80_sequence_equal": false,
+          "party_pid_ot_order_equal": true,
+          "party_all_checksums_flags_valid": true
+        },
+        "pc_mismatches": [],
+        "pc_prefix_equal": true,
+        "pc_names_wallpapers_equal": true,
+        "first_storage_diff_offsets": [],
+        "pass": false
+      },
+      "source_unchanged": true
+    },
+    {
+      "path": "/workspaces/pokefirered/saves/v0.1.0.sav",
+      "original_sha256": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+      "pass": false,
+      "active_slot": 0,
+      "counter": 22,
+      "expected_storage_sha256": "17344f7a3c176fa26d45f89da7eada87a4e8c81b623573af155ec5d6caf915af",
+      "temporary_save_copy_verified": true,
+      "boot_frames": 654,
+      "after_continue": {
+        "frame": 654,
+        "callback2": 134574629,
+        "location": [
+          3,
+          5,
+          25,
+          15
+        ],
+        "storage_pointer": 33723172,
+        "storage_sha256": "17344f7a3c176fa26d45f89da7eada87a4e8c81b623573af155ec5d6caf915af",
+        "party_count": 6,
+        "party_raw80_sha256": [
+          "48bb6de4e483795c1cb86406c1ca74ce84784902f803fd13612c1196201e4692",
+          "f74022bcf818969fabba8e515c4b84905eaf541b119eafc566a1c37cfb8ce4ef",
+          "a15e52c248d4408caaac2c15b532349a8c8bad6ce7a0077a3e2cb8618c9f8bf8",
+          "5bb9ea0d91896134ccf5769f35118e2b29ee22dc0c004d178c67d701c83eb352",
+          "a2939e58cd1a009a836f7c62308c397a4d4d522e4f1744097d38d982b45a7643",
+          "6f9df8f07f539e09278ca3faeb573fb5dc14642a229b68e7fe921bb878a9e4f2"
+        ],
+        "party_pid_ot_order": [
+          "0cf7e7b4:690680d4",
+          "dc61e8bf:690680d4",
+          "b8b3d983:690680d4",
+          "a5316f7e:690680d4",
+          "4116bffc:690680d4",
+          "43c82ddd:690680d4"
+        ],
+        "party_errors": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "checks": {
+          "pc_all_33744_bytes_equal": true,
+          "pc_all_420_mon_checksums_flags_valid": true,
+          "party_count_equal": true,
+          "party_raw80_sequence_equal": false,
+          "party_pid_ot_order_equal": true,
+          "party_all_checksums_flags_valid": true
+        },
+        "pc_mismatches": [],
+        "pc_prefix_equal": true,
+        "pc_names_wallpapers_equal": true,
+        "first_storage_diff_offsets": [],
+        "pass": false
+      },
+      "after_idle_180": {
+        "frame": 834,
+        "callback2": 134574629,
+        "location": [
+          3,
+          5,
+          25,
+          15
+        ],
+        "storage_pointer": 33723172,
+        "storage_sha256": "17344f7a3c176fa26d45f89da7eada87a4e8c81b623573af155ec5d6caf915af",
+        "party_count": 6,
+        "party_raw80_sha256": [
+          "48bb6de4e483795c1cb86406c1ca74ce84784902f803fd13612c1196201e4692",
+          "f74022bcf818969fabba8e515c4b84905eaf541b119eafc566a1c37cfb8ce4ef",
+          "a15e52c248d4408caaac2c15b532349a8c8bad6ce7a0077a3e2cb8618c9f8bf8",
+          "5bb9ea0d91896134ccf5769f35118e2b29ee22dc0c004d178c67d701c83eb352",
+          "a2939e58cd1a009a836f7c62308c397a4d4d522e4f1744097d38d982b45a7643",
+          "6f9df8f07f539e09278ca3faeb573fb5dc14642a229b68e7fe921bb878a9e4f2"
+        ],
+        "party_pid_ot_order": [
+          "0cf7e7b4:690680d4",
+          "dc61e8bf:690680d4",
+          "b8b3d983:690680d4",
+          "a5316f7e:690680d4",
+          "4116bffc:690680d4",
+          "43c82ddd:690680d4"
+        ],
+        "party_errors": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "checks": {
+          "pc_all_33744_bytes_equal": true,
+          "pc_all_420_mon_checksums_flags_valid": true,
+          "party_count_equal": true,
+          "party_raw80_sequence_equal": false,
+          "party_pid_ot_order_equal": true,
+          "party_all_checksums_flags_valid": true
+        },
+        "pc_mismatches": [],
+        "pc_prefix_equal": true,
+        "pc_names_wallpapers_equal": true,
+        "first_storage_diff_offsets": [],
+        "pass": false
+      },
+      "source_unchanged": true
+    },
+    {
+      "path": "/workspaces/pokefirered/saves/v0.2.1.sav",
+      "original_sha256": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+      "pass": false,
+      "active_slot": 1,
+      "counter": 23,
+      "expected_storage_sha256": "17344f7a3c176fa26d45f89da7eada87a4e8c81b623573af155ec5d6caf915af",
+      "temporary_save_copy_verified": true,
+      "boot_frames": 654,
+      "after_continue": {
+        "frame": 654,
+        "callback2": 134574629,
+        "location": [
+          3,
+          5,
+          25,
+          15
+        ],
+        "storage_pointer": 33723204,
+        "storage_sha256": "17344f7a3c176fa26d45f89da7eada87a4e8c81b623573af155ec5d6caf915af",
+        "party_count": 6,
+        "party_raw80_sha256": [
+          "48bb6de4e483795c1cb86406c1ca74ce84784902f803fd13612c1196201e4692",
+          "f74022bcf818969fabba8e515c4b84905eaf541b119eafc566a1c37cfb8ce4ef",
+          "a15e52c248d4408caaac2c15b532349a8c8bad6ce7a0077a3e2cb8618c9f8bf8",
+          "5bb9ea0d91896134ccf5769f35118e2b29ee22dc0c004d178c67d701c83eb352",
+          "a2939e58cd1a009a836f7c62308c397a4d4d522e4f1744097d38d982b45a7643",
+          "6f9df8f07f539e09278ca3faeb573fb5dc14642a229b68e7fe921bb878a9e4f2"
+        ],
+        "party_pid_ot_order": [
+          "0cf7e7b4:690680d4",
+          "dc61e8bf:690680d4",
+          "b8b3d983:690680d4",
+          "a5316f7e:690680d4",
+          "4116bffc:690680d4",
+          "43c82ddd:690680d4"
+        ],
+        "party_errors": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "checks": {
+          "pc_all_33744_bytes_equal": true,
+          "pc_all_420_mon_checksums_flags_valid": true,
+          "party_count_equal": true,
+          "party_raw80_sequence_equal": false,
+          "party_pid_ot_order_equal": true,
+          "party_all_checksums_flags_valid": true
+        },
+        "pc_mismatches": [],
+        "pc_prefix_equal": true,
+        "pc_names_wallpapers_equal": true,
+        "first_storage_diff_offsets": [],
+        "pass": false
+      },
+      "after_idle_180": {
+        "frame": 834,
+        "callback2": 134574629,
+        "location": [
+          3,
+          5,
+          25,
+          15
+        ],
+        "storage_pointer": 33723204,
+        "storage_sha256": "17344f7a3c176fa26d45f89da7eada87a4e8c81b623573af155ec5d6caf915af",
+        "party_count": 6,
+        "party_raw80_sha256": [
+          "48bb6de4e483795c1cb86406c1ca74ce84784902f803fd13612c1196201e4692",
+          "f74022bcf818969fabba8e515c4b84905eaf541b119eafc566a1c37cfb8ce4ef",
+          "a15e52c248d4408caaac2c15b532349a8c8bad6ce7a0077a3e2cb8618c9f8bf8",
+          "5bb9ea0d91896134ccf5769f35118e2b29ee22dc0c004d178c67d701c83eb352",
+          "a2939e58cd1a009a836f7c62308c397a4d4d522e4f1744097d38d982b45a7643",
+          "6f9df8f07f539e09278ca3faeb573fb5dc14642a229b68e7fe921bb878a9e4f2"
+        ],
+        "party_pid_ot_order": [
+          "0cf7e7b4:690680d4",
+          "dc61e8bf:690680d4",
+          "b8b3d983:690680d4",
+          "a5316f7e:690680d4",
+          "4116bffc:690680d4",
+          "43c82ddd:690680d4"
+        ],
+        "party_errors": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "checks": {
+          "pc_all_33744_bytes_equal": true,
+          "pc_all_420_mon_checksums_flags_valid": true,
+          "party_count_equal": true,
+          "party_raw80_sequence_equal": false,
+          "party_pid_ot_order_equal": true,
+          "party_all_checksums_flags_valid": true
+        },
+        "pc_mismatches": [],
+        "pc_prefix_equal": true,
+        "pc_names_wallpapers_equal": true,
+        "first_storage_diff_offsets": [],
+        "pass": false
+      },
+      "source_unchanged": true
+    },
+    {
+      "path": "/workspaces/pokefirered/saves/v0.5.1.sav",
+      "original_sha256": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+      "pass": true,
+      "active_slot": 0,
+      "counter": 34,
+      "expected_storage_sha256": "996783d230f47d93220df8b071dfa3069c24da99880b089a695adb9c99b074f9",
+      "temporary_save_copy_verified": true,
+      "boot_frames": 638,
+      "after_continue": {
+        "frame": 638,
+        "callback2": 134574629,
+        "location": [
+          3,
+          24,
+          21,
+          28
+        ],
+        "storage_pointer": 33723200,
+        "storage_sha256": "996783d230f47d93220df8b071dfa3069c24da99880b089a695adb9c99b074f9",
+        "party_count": 6,
+        "party_raw80_sha256": [
+          "90829ced48c086d79bd2d925aeb960c56d618e9e9fe364dfe52890abe0f56579",
+          "fce87992ee1cc9a175e0e5627dcf5ee3c1f3dec8b63fe415eea30246067c1d7c",
+          "d9d891b4f83dc30184bf6a7818c53da0a90f1024d0e7505f1ffd732bb8ccfdbf",
+          "6683ebbe0a6655b9278416e3bb003a8fc15c3014beac3791fba49ec336d31f3b",
+          "8d61e81c8c4a60d61dbb34cbc29c6a11f9e5eb2b2a95627a102029633710ba7d",
+          "b012533ee35055c48bb2c11f66e120750881c73e609336504d33ef3f370e40df"
+        ],
+        "party_pid_ot_order": [
+          "194f697d:690680d4",
+          "4116bffc:690680d4",
+          "31d9fb76:690680d4",
+          "a5316f7e:690680d4",
+          "b8b3d983:690680d4",
+          "43c82ddd:690680d4"
+        ],
+        "party_errors": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "checks": {
+          "pc_all_33744_bytes_equal": true,
+          "pc_all_420_mon_checksums_flags_valid": true,
+          "party_count_equal": true,
+          "party_raw80_sequence_equal": true,
+          "party_pid_ot_order_equal": true,
+          "party_all_checksums_flags_valid": true
+        },
+        "pc_mismatches": [],
+        "pc_prefix_equal": true,
+        "pc_names_wallpapers_equal": true,
+        "first_storage_diff_offsets": [],
+        "pass": true
+      },
+      "after_idle_180": {
+        "frame": 818,
+        "callback2": 134574629,
+        "location": [
+          3,
+          24,
+          21,
+          28
+        ],
+        "storage_pointer": 33723200,
+        "storage_sha256": "996783d230f47d93220df8b071dfa3069c24da99880b089a695adb9c99b074f9",
+        "party_count": 6,
+        "party_raw80_sha256": [
+          "90829ced48c086d79bd2d925aeb960c56d618e9e9fe364dfe52890abe0f56579",
+          "fce87992ee1cc9a175e0e5627dcf5ee3c1f3dec8b63fe415eea30246067c1d7c",
+          "d9d891b4f83dc30184bf6a7818c53da0a90f1024d0e7505f1ffd732bb8ccfdbf",
+          "6683ebbe0a6655b9278416e3bb003a8fc15c3014beac3791fba49ec336d31f3b",
+          "8d61e81c8c4a60d61dbb34cbc29c6a11f9e5eb2b2a95627a102029633710ba7d",
+          "b012533ee35055c48bb2c11f66e120750881c73e609336504d33ef3f370e40df"
+        ],
+        "party_pid_ot_order": [
+          "194f697d:690680d4",
+          "4116bffc:690680d4",
+          "31d9fb76:690680d4",
+          "a5316f7e:690680d4",
+          "b8b3d983:690680d4",
+          "43c82ddd:690680d4"
+        ],
+        "party_errors": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "checks": {
+          "pc_all_33744_bytes_equal": true,
+          "pc_all_420_mon_checksums_flags_valid": true,
+          "party_count_equal": true,
+          "party_raw80_sequence_equal": true,
+          "party_pid_ot_order_equal": true,
+          "party_all_checksums_flags_valid": true
+        },
+        "pc_mismatches": [],
+        "pc_prefix_equal": true,
+        "pc_names_wallpapers_equal": true,
+        "first_storage_diff_offsets": [],
+        "pass": true
+      },
+      "source_unchanged": true
+    }
+  ],
+  "protected_inputs_unchanged": {
+    "/workspaces/pokefirered/pokemonthyl.gba": true,
+    "/workspaces/pokefirered/pokemonthyl.sym": true,
+    "/workspaces/pokefirered/work/save-integrity-audit/readonly_audit.py": true,
+    "/workspaces/pokefirered/tools/qa/emu.py": true,
+    "/workspaces/pokefirered/saves/hoenn.sav": true,
+    "/workspaces/pokefirered/saves/pokemonthyl_hoenn_QAed.sav": true,
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.1.sav": true,
+    "/workspaces/pokefirered/saves/pokemonthyl_v3.gba.sav": true,
+    "/workspaces/pokefirered/saves/v0.1.0.sav": true,
+    "/workspaces/pokefirered/saves/v0.2.1.sav": true,
+    "/workspaces/pokefirered/saves/v0.5.1.sav": true,
+    "/workspaces/pokefirered/tools/qa/libqa.so": true
+  },
+  "all_pass": false,
+  "limits": [
+    "Normal boot and 180 idle frames only; does not reproduce every gameplay/save/load path or DELTA.",
+    "PC comparison includes box names/wallpapers. Party comparison uses each exact encrypted 80-byte BoxPokemon in original order; runtime HP/status bytes are outside this comparison.",
+    "No in-game save is requested and no original save is replaced."
+  ]
+}

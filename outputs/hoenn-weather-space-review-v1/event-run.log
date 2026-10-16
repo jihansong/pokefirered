@@ -1,0 +1,15 @@
+ok   weather_hostage_before_rescue
+ok   weather_old_battle_win_backfills_rescue
+ok   weather_reward_pending_when_party_pc_full
+ok   space_weather_missing_no_raid
+ok   space_seventh_badge_missing_no_raid
+ok   space_both_prerequisites_launch_raid
+ok   space_maxie_cannot_skip_tabitha
+ok   space_tabitha_no_repeat_battle
+ok   space_two_wins_backfill_clear
+ok   space_win_bits_without_prerequisites_do_not_unlock
+ok   space_cleared_stays_clear_on_old_badges
+ok   space_native_hm08_gift_once
+ok   space_existing_hm08_not_duplicated
+ok   space_old_hm08_gift_flag_no_repeat
+14/14 cases passed

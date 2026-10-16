@@ -3132,21 +3132,18 @@ void LeaveHiddenGrotto(void)
 }
 
 // Lavender Town Syndrome (urban legend): while it is active, Lavender Town's music
-// slowly bends upward and wavers, and the screen edges darken. The task undoes it
-// when the player leaves the town or it gets purified.
+// slowly bends upward and wavers. The task undoes it when the player leaves
+// the town or it gets purified. Keep overworld window/blend registers untouched:
+// the former WIN0 vignette produced a hard rectangular border and overwrote
+// registers also used by field transitions and other screen effects.
 #define tPitch     data[0]
 #define tTimer     data[1]
-#define tDarkness  data[2]
 
 #define SYNDROME_MAX_PITCH 3 * 256 // three semitones up
-#define SYNDROME_MAX_DARKNESS 5
 
 static void EndLavenderSyndromeEffects(u8 taskId)
 {
     m4aMPlayPitchControl(&gMPlayInfo_BGM, TRACKS_ALL, 0);
-    ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
-    SetGpuReg(REG_OFFSET_BLDCNT, 0);
-    SetGpuReg(REG_OFFSET_BLDY, 0);
     DestroyTask(taskId);
 }
 
@@ -3166,18 +3163,8 @@ static void Task_LavenderSyndrome(u8 taskId)
     tTimer++;
     if (tTimer % 8 == 0 && tPitch < SYNDROME_MAX_PITCH)
         tPitch += 4;
-    if (tTimer % 30 == 0 && tDarkness < SYNDROME_MAX_DARKNESS)
-        tDarkness++;
     wobble = gSineTable[(tTimer * 3) & 0xFF] / 8;
     m4aMPlayPitchControl(&gMPlayInfo_BGM, TRACKS_ALL, tPitch + wobble);
-
-    SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(12, DISPLAY_WIDTH - 12));
-    SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(8, DISPLAY_HEIGHT - 8));
-    SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ);
-    SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_ALL);
-    SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
-    SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_ALL | BLDCNT_EFFECT_DARKEN);
-    SetGpuReg(REG_OFFSET_BLDY, tDarkness);
 }
 
 // Run from Lavender Town's resume script whenever the syndrome is active.
@@ -3189,7 +3176,6 @@ void StartLavenderSyndrome(void)
 
 #undef tPitch
 #undef tTimer
-#undef tDarkness
 
 // Returns TRUE if a party mon (not an egg) is species VAR_0x8004.
 bool8 PartyHasSpecies(void)
@@ -3579,8 +3565,42 @@ void HoennZ3_SetupObjects(void)
     SetHideFlag(FLAG_HIDE_HOENN_BIRCH_LAB, birch == 0);
     SetHideFlag(FLAG_HIDE_HOENN_RIVAL_ROUTE103, birch != 2);
     SetHideFlag(FLAG_HIDE_HOENN_RIVAL_LAB, birch < 3);
-    if (IsPlayerOnMap(MAP_ROUTE103) || IsPlayerOnMap(MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB))
+    if (IsPlayerOnMap(MAP_ROUTE103) || IsPlayerOnMap(MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB)
+        || IsPlayerOnMap(MAP_ROUTE110) || IsPlayerOnMap(MAP_ROUTE119))
         VarSet(VAR_OBJ_GFX_ID_0, GetHoennRivalGfx());
+
+    // These map-local flags are reset by normal map loading; only the current
+    // chapter owns TEMP_11 / TEMP_0. No saved coordinates or save layout change.
+    if (IsPlayerOnMap(MAP_ROUTE110))
+    {
+        bool8 hidden = birch < 3 || FlagGet(FLAG_HOENN_GOT_RIVAL110_GIFT);
+        SetHideFlag(FLAG_TEMP_11, hidden);
+        VarSet(VAR_TEMP_0, hidden ? 1 : 0);
+    }
+    else if (IsPlayerOnMap(MAP_ROUTE119))
+    {
+        bool8 earlierBattle = gSaveBlock2Ptr->playerGender == FEMALE
+            ? HasTrainerBeenFought(TRAINER_HOENN_BRENDAN_ROUTE_110_TORCHIC)
+            : HasTrainerBeenFought(TRAINER_HOENN_MAY_ROUTE_110_TORCHIC);
+        bool8 hidden = birch < 3
+            || !FlagGet(FLAG_HOENN_GOT_RIVAL110_GIFT)
+            || !earlierBattle
+            || !FlagGet(FLAG_HOENN_WEATHER_RESCUED)
+            || FlagGet(FLAG_HOENN_GOT_RIVAL_FLY_REWARD);
+        SetHideFlag(FLAG_TEMP_11, hidden);
+        VarSet(VAR_TEMP_0, hidden ? 1 : 0);
+    }
+    // Restore the original two Aqua bridge lookouts without trapping
+    // earlier saves whose Fortree Gym progression is already complete.
+    if (IsPlayerOnMap(MAP_ROUTE119))
+    {
+        bool8 bridgeClear = FlagGet(FLAG_HOENN_WEATHER_RESCUED)
+            || FlagGet(FLAG_HOENN_BADGE06_GET)
+            || HasTrainerBeenFought(TRAINER_HOENN_WINONA_1);
+        SetHideFlag(FLAG_TEMP_12, bridgeClear);
+        SetHideFlag(FLAG_TEMP_13, bridgeClear);
+    }
+
 
     // PETALBURG WOODS: the AQUA GRUNT until he is beaten, the DEVON researcher
     // until he has handed over his GREAT BALL; TEAM ROCKET from the grunt's

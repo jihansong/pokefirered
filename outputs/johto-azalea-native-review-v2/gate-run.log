@@ -1,0 +1,2 @@
+{"case": "badge_locked", "first_step": {"held_frames": 1, "start": [76, 23, 9, 3], "finish": [76, 23, 9, 4]}, "second_step": null, "saw_badge_dialogue": true, "temp0": 0, "pc_dex_flags_preserved": true, "forced_memory_writes": 0}
+{"case": "badge_open", "first_step": {"held_frames": 1, "start": [76, 23, 9, 3], "finish": [76, 23, 9, 4]}, "second_step": {"held_frames": 1, "start": [76, 23, 9, 4], "finish": [76, 23, 9, 5]}, "saw_badge_dialogue": false, "temp0": 1, "pc_dex_flags_preserved": true, "forced_memory_writes": 0}

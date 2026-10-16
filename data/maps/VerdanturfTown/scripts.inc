@@ -12,14 +12,6 @@ VerdanturfTown_EventScript_H0::
 	msgbox VerdanturfTown_Text_H0, MSGBOX_NPC
 	end
 
-VerdanturfTown_EventScript_H1::
-	msgbox VerdanturfTown_Text_H1, MSGBOX_NPC
-	end
-
-VerdanturfTown_EventScript_H2::
-	msgbox VerdanturfTown_Text_H2, MSGBOX_NPC
-	end
-
 VerdanturfTown_EventScript_H3::
 	msgbox VerdanturfTown_Text_H3, MSGBOX_NPC
 	end
@@ -36,6 +28,31 @@ VerdanturfTown_EventScript_H6::
 	msgbox VerdanturfTown_Text_H6, MSGBOX_SIGN
 	end
 
-VerdanturfTown_EventScript_H7::
-	msgbox VerdanturfTown_Text_H7, MSGBOX_SIGN
+@ BEGIN PATCH (tools/hoenn_import/patches)
+VerdanturfTown_EventScript_H1::
+	goto_if_set FLAG_HOENN_RUSTURF_OPEN, VerdanturfTown_EventScript_ReunionH1
+	msgbox VerdanturfTown_Text_ReunionBeforeH1, MSGBOX_NPC
 	end
+
+VerdanturfTown_EventScript_ReunionH1::
+	msgbox VerdanturfTown_Text_ReunionAfterH1, MSGBOX_NPC
+	end
+
+VerdanturfTown_EventScript_H2::
+	goto_if_set FLAG_HOENN_RUSTURF_OPEN, VerdanturfTown_EventScript_ReunionH2
+	msgbox VerdanturfTown_Text_ReunionBeforeH2, MSGBOX_NPC
+	end
+
+VerdanturfTown_EventScript_ReunionH2::
+	msgbox VerdanturfTown_Text_ReunionAfterH2, MSGBOX_NPC
+	end
+
+VerdanturfTown_EventScript_H7::
+	goto_if_set FLAG_HOENN_RUSTURF_OPEN, VerdanturfTown_EventScript_ReunionH7
+	msgbox VerdanturfTown_Text_ReunionBeforeH7, MSGBOX_SIGN
+	end
+
+VerdanturfTown_EventScript_ReunionH7::
+	msgbox VerdanturfTown_Text_ReunionAfterH7, MSGBOX_SIGN
+	end
+@ END PATCH

@@ -1,0 +1,5683 @@
+{
+  "pass": true,
+  "status": "complete",
+  "scope": "preboot position/story fixtures; actual walk/run keys and SAVE/cold, not full campaign or mobile FPS",
+  "ROM_sha256": "1c9a4519a7a6bb5195728977143d42e5f126f8709d992e4602e159ae328d46bf",
+  "ELF_sha256": "fc455fac6fc274185570489cf81671ebb47f60944343904c1b6b96ff7e51ccde",
+  "SAV_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+  "RAM_writes": 0,
+  "engine_calls": 0,
+  "cases": [
+    {
+      "direction": "RIGHT",
+      "run": false,
+      "pass": true,
+      "native_image_frames": [
+        0,
+        2,
+        7,
+        8
+      ],
+      "real_player_steps": 5,
+      "per_frame_samples": 31,
+      "player_party_PC_Dex_preserved": true
+    },
+    {
+      "direction": "RIGHT",
+      "run": true,
+      "pass": true,
+      "native_image_frames": [
+        0,
+        2,
+        7,
+        8
+      ],
+      "real_player_steps": 5,
+      "per_frame_samples": 15,
+      "player_party_PC_Dex_preserved": true
+    },
+    {
+      "direction": "LEFT",
+      "run": false,
+      "pass": true,
+      "native_image_frames": [
+        0,
+        2,
+        7,
+        8
+      ],
+      "real_player_steps": 5,
+      "per_frame_samples": 31,
+      "player_party_PC_Dex_preserved": true
+    },
+    {
+      "direction": "LEFT",
+      "run": true,
+      "pass": true,
+      "native_image_frames": [
+        0,
+        2,
+        7,
+        8
+      ],
+      "real_player_steps": 5,
+      "per_frame_samples": 15,
+      "player_party_PC_Dex_preserved": true
+    },
+    {
+      "direction": "UP",
+      "run": false,
+      "pass": true,
+      "native_image_frames": [
+        0,
+        1,
+        5,
+        6
+      ],
+      "real_player_steps": 5,
+      "per_frame_samples": 31,
+      "player_party_PC_Dex_preserved": true
+    },
+    {
+      "direction": "UP",
+      "run": true,
+      "pass": true,
+      "native_image_frames": [
+        0,
+        1,
+        5,
+        6
+      ],
+      "real_player_steps": 5,
+      "per_frame_samples": 15,
+      "player_party_PC_Dex_preserved": true
+    },
+    {
+      "direction": "DOWN",
+      "run": false,
+      "pass": true,
+      "native_image_frames": [
+        0,
+        3,
+        4
+      ],
+      "real_player_steps": 5,
+      "per_frame_samples": 31,
+      "player_party_PC_Dex_preserved": true
+    },
+    {
+      "direction": "DOWN",
+      "run": true,
+      "pass": true,
+      "native_image_frames": [
+        0,
+        3,
+        4
+      ],
+      "real_player_steps": 5,
+      "per_frame_samples": 15,
+      "player_party_PC_Dex_preserved": true
+    }
+  ],
+  "native_samples": [
+    {
+      "tag": "RIGHT-walk-2",
+      "frame": 751,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        121,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-2",
+      "frame": 751,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        121,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-2",
+      "frame": 755,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        125,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 0,
+      "VRAM_sha256": "cb59511833deebaf20b5eefc665830fea5b5676ad6c68a9cb4eb9b8bb4e45096",
+      "compiled_frame": 7,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-3",
+      "frame": 756,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        126,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 0,
+      "VRAM_sha256": "cb59511833deebaf20b5eefc665830fea5b5676ad6c68a9cb4eb9b8bb4e45096",
+      "compiled_frame": 7,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-3",
+      "frame": 757,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        127,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 0,
+      "VRAM_sha256": "cb59511833deebaf20b5eefc665830fea5b5676ad6c68a9cb4eb9b8bb4e45096",
+      "compiled_frame": 7,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-3",
+      "frame": 758,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        128,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 0,
+      "VRAM_sha256": "cb59511833deebaf20b5eefc665830fea5b5676ad6c68a9cb4eb9b8bb4e45096",
+      "compiled_frame": 7,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-3",
+      "frame": 759,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        129,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 1,
+      "VRAM_sha256": "cb59511833deebaf20b5eefc665830fea5b5676ad6c68a9cb4eb9b8bb4e45096",
+      "compiled_frame": 7,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-3",
+      "frame": 760,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        130,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-3",
+      "frame": 761,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        131,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-3",
+      "frame": 762,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        132,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-3",
+      "frame": 763,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        133,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-3",
+      "frame": 764,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        134,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-3",
+      "frame": 765,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        135,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-3",
+      "frame": 766,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        136,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-3",
+      "frame": 767,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        137,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 2,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-3",
+      "frame": 767,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        137,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 2,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-3",
+      "frame": 771,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        141,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 2,
+      "VRAM_sha256": "9c80b8d8af805da2f80a5de8779f154869c63718e53a74967527c715107f3607",
+      "compiled_frame": 8,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-4",
+      "frame": 772,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        142,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 2,
+      "VRAM_sha256": "9c80b8d8af805da2f80a5de8779f154869c63718e53a74967527c715107f3607",
+      "compiled_frame": 8,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-4",
+      "frame": 773,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        143,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 2,
+      "VRAM_sha256": "9c80b8d8af805da2f80a5de8779f154869c63718e53a74967527c715107f3607",
+      "compiled_frame": 8,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-4",
+      "frame": 774,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        144,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 2,
+      "VRAM_sha256": "9c80b8d8af805da2f80a5de8779f154869c63718e53a74967527c715107f3607",
+      "compiled_frame": 8,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-4",
+      "frame": 775,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        145,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 3,
+      "VRAM_sha256": "9c80b8d8af805da2f80a5de8779f154869c63718e53a74967527c715107f3607",
+      "compiled_frame": 8,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-4",
+      "frame": 776,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        146,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-4",
+      "frame": 777,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        147,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-4",
+      "frame": 778,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        148,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-4",
+      "frame": 779,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        149,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-4",
+      "frame": 780,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        150,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-4",
+      "frame": 781,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        151,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-4",
+      "frame": 782,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        152,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-4",
+      "frame": 783,
+      "player": [
+        3,
+        0,
+        11,
+        9
+      ],
+      "Misty_feet": [
+        153,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 0,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-4",
+      "frame": 783,
+      "player": [
+        3,
+        0,
+        11,
+        9
+      ],
+      "Misty_feet": [
+        153,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 0,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-walk-4",
+      "frame": 787,
+      "player": [
+        3,
+        0,
+        11,
+        9
+      ],
+      "Misty_feet": [
+        157,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 7,
+      "anim_cmd": 0,
+      "VRAM_sha256": "cb59511833deebaf20b5eefc665830fea5b5676ad6c68a9cb4eb9b8bb4e45096",
+      "compiled_frame": 7,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "cold-Continue",
+      "frame": 670,
+      "player": [
+        3,
+        0,
+        11,
+        9
+      ],
+      "Misty_feet": [
+        88,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 3,
+      "anim_cmd": 0,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-run-2",
+      "frame": 735,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        122,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 11,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-run-2",
+      "frame": 735,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        122,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 11,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-run-2",
+      "frame": 739,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        130,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 11,
+      "anim_cmd": 1,
+      "VRAM_sha256": "cb59511833deebaf20b5eefc665830fea5b5676ad6c68a9cb4eb9b8bb4e45096",
+      "compiled_frame": 7,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-run-3",
+      "frame": 740,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        132,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 11,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-run-3",
+      "frame": 741,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        134,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 11,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-run-3",
+      "frame": 742,
+      "player": [
+        3,
+        0,
+        9,
+        9
+      ],
+      "Misty_feet": [
+        136,
+        128
+      ],
+      "Misty_xy": [
+        14,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 11,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-run-3",
+      "frame": 743,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        138,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 11,
+      "anim_cmd": 2,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-run-3",
+      "frame": 743,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        138,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 11,
+      "anim_cmd": 2,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-run-3",
+      "frame": 747,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        146,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 11,
+      "anim_cmd": 3,
+      "VRAM_sha256": "9c80b8d8af805da2f80a5de8779f154869c63718e53a74967527c715107f3607",
+      "compiled_frame": 8,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-run-4",
+      "frame": 748,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        148,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 11,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-run-4",
+      "frame": 749,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        150,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 11,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-run-4",
+      "frame": 750,
+      "player": [
+        3,
+        0,
+        10,
+        9
+      ],
+      "Misty_feet": [
+        152,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 11,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-run-4",
+      "frame": 751,
+      "player": [
+        3,
+        0,
+        11,
+        9
+      ],
+      "Misty_feet": [
+        154,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 11,
+      "anim_cmd": 0,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-run-4",
+      "frame": 751,
+      "player": [
+        3,
+        0,
+        11,
+        9
+      ],
+      "Misty_feet": [
+        154,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 11,
+      "anim_cmd": 0,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "RIGHT-run-4",
+      "frame": 755,
+      "player": [
+        3,
+        0,
+        11,
+        9
+      ],
+      "Misty_feet": [
+        162,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 11,
+      "anim_cmd": 1,
+      "VRAM_sha256": "cb59511833deebaf20b5eefc665830fea5b5676ad6c68a9cb4eb9b8bb4e45096",
+      "compiled_frame": 7,
+      "palette_slot": 0,
+      "hflip": true,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-2",
+      "frame": 751,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        119,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-2",
+      "frame": 751,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        119,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-2",
+      "frame": 755,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        115,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 0,
+      "VRAM_sha256": "cb59511833deebaf20b5eefc665830fea5b5676ad6c68a9cb4eb9b8bb4e45096",
+      "compiled_frame": 7,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-3",
+      "frame": 756,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        114,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 0,
+      "VRAM_sha256": "cb59511833deebaf20b5eefc665830fea5b5676ad6c68a9cb4eb9b8bb4e45096",
+      "compiled_frame": 7,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-3",
+      "frame": 757,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        113,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 0,
+      "VRAM_sha256": "cb59511833deebaf20b5eefc665830fea5b5676ad6c68a9cb4eb9b8bb4e45096",
+      "compiled_frame": 7,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-3",
+      "frame": 758,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        112,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 0,
+      "VRAM_sha256": "cb59511833deebaf20b5eefc665830fea5b5676ad6c68a9cb4eb9b8bb4e45096",
+      "compiled_frame": 7,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-3",
+      "frame": 759,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        111,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 1,
+      "VRAM_sha256": "cb59511833deebaf20b5eefc665830fea5b5676ad6c68a9cb4eb9b8bb4e45096",
+      "compiled_frame": 7,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-3",
+      "frame": 760,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        110,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-3",
+      "frame": 761,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        109,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-3",
+      "frame": 762,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        108,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-3",
+      "frame": 763,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        107,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-3",
+      "frame": 764,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        106,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-3",
+      "frame": 765,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        105,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-3",
+      "frame": 766,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        104,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-3",
+      "frame": 767,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        103,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 2,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-3",
+      "frame": 767,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        103,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 2,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-3",
+      "frame": 771,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        99,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 2,
+      "VRAM_sha256": "9c80b8d8af805da2f80a5de8779f154869c63718e53a74967527c715107f3607",
+      "compiled_frame": 8,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-4",
+      "frame": 772,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        98,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 2,
+      "VRAM_sha256": "9c80b8d8af805da2f80a5de8779f154869c63718e53a74967527c715107f3607",
+      "compiled_frame": 8,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-4",
+      "frame": 773,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        97,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 2,
+      "VRAM_sha256": "9c80b8d8af805da2f80a5de8779f154869c63718e53a74967527c715107f3607",
+      "compiled_frame": 8,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-4",
+      "frame": 774,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        96,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 2,
+      "VRAM_sha256": "9c80b8d8af805da2f80a5de8779f154869c63718e53a74967527c715107f3607",
+      "compiled_frame": 8,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-4",
+      "frame": 775,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        95,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 3,
+      "VRAM_sha256": "9c80b8d8af805da2f80a5de8779f154869c63718e53a74967527c715107f3607",
+      "compiled_frame": 8,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-4",
+      "frame": 776,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        94,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-4",
+      "frame": 777,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        93,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-4",
+      "frame": 778,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        92,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-4",
+      "frame": 779,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        91,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-4",
+      "frame": 780,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        90,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-4",
+      "frame": 781,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        89,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-4",
+      "frame": 782,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        88,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-4",
+      "frame": 783,
+      "player": [
+        3,
+        0,
+        6,
+        9
+      ],
+      "Misty_feet": [
+        87,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 0,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-4",
+      "frame": 783,
+      "player": [
+        3,
+        0,
+        6,
+        9
+      ],
+      "Misty_feet": [
+        87,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 0,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-walk-4",
+      "frame": 787,
+      "player": [
+        3,
+        0,
+        6,
+        9
+      ],
+      "Misty_feet": [
+        83,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 6,
+      "anim_cmd": 0,
+      "VRAM_sha256": "cb59511833deebaf20b5eefc665830fea5b5676ad6c68a9cb4eb9b8bb4e45096",
+      "compiled_frame": 7,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-run-2",
+      "frame": 735,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        118,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 10,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-run-2",
+      "frame": 735,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        118,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 10,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-run-2",
+      "frame": 739,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        110,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 10,
+      "anim_cmd": 1,
+      "VRAM_sha256": "cb59511833deebaf20b5eefc665830fea5b5676ad6c68a9cb4eb9b8bb4e45096",
+      "compiled_frame": 7,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-run-3",
+      "frame": 740,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        108,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 10,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-run-3",
+      "frame": 741,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        106,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 10,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-run-3",
+      "frame": 742,
+      "player": [
+        3,
+        0,
+        8,
+        9
+      ],
+      "Misty_feet": [
+        104,
+        128
+      ],
+      "Misty_xy": [
+        17,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 10,
+      "anim_cmd": 1,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-run-3",
+      "frame": 743,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        102,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 10,
+      "anim_cmd": 2,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-run-3",
+      "frame": 743,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        102,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 10,
+      "anim_cmd": 2,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-run-3",
+      "frame": 747,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        94,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 10,
+      "anim_cmd": 3,
+      "VRAM_sha256": "9c80b8d8af805da2f80a5de8779f154869c63718e53a74967527c715107f3607",
+      "compiled_frame": 8,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-run-4",
+      "frame": 748,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        92,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 10,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-run-4",
+      "frame": 749,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        90,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 10,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-run-4",
+      "frame": 750,
+      "player": [
+        3,
+        0,
+        7,
+        9
+      ],
+      "Misty_feet": [
+        88,
+        128
+      ],
+      "Misty_xy": [
+        16,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 10,
+      "anim_cmd": 3,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-run-4",
+      "frame": 751,
+      "player": [
+        3,
+        0,
+        6,
+        9
+      ],
+      "Misty_feet": [
+        86,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 10,
+      "anim_cmd": 0,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-run-4",
+      "frame": 751,
+      "player": [
+        3,
+        0,
+        6,
+        9
+      ],
+      "Misty_feet": [
+        86,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 10,
+      "anim_cmd": 0,
+      "VRAM_sha256": "ed7d062753ce6e520ac2625e14428d96b628630c088cba6bf1668b7fff53df25",
+      "compiled_frame": 2,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "LEFT-run-4",
+      "frame": 755,
+      "player": [
+        3,
+        0,
+        6,
+        9
+      ],
+      "Misty_feet": [
+        78,
+        128
+      ],
+      "Misty_xy": [
+        15,
+        16
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 10,
+      "anim_cmd": 1,
+      "VRAM_sha256": "cb59511833deebaf20b5eefc665830fea5b5676ad6c68a9cb4eb9b8bb4e45096",
+      "compiled_frame": 7,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-2",
+      "frame": 751,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        127
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-2",
+      "frame": 751,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        127
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-2",
+      "frame": 755,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        123
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 0,
+      "VRAM_sha256": "18454d52299a069acc70993c328567f9ea11a431ac86c10331cec36ac4fa160d",
+      "compiled_frame": 5,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-3",
+      "frame": 756,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        122
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 0,
+      "VRAM_sha256": "18454d52299a069acc70993c328567f9ea11a431ac86c10331cec36ac4fa160d",
+      "compiled_frame": 5,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-3",
+      "frame": 757,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        121
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 0,
+      "VRAM_sha256": "18454d52299a069acc70993c328567f9ea11a431ac86c10331cec36ac4fa160d",
+      "compiled_frame": 5,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-3",
+      "frame": 758,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        120
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 0,
+      "VRAM_sha256": "18454d52299a069acc70993c328567f9ea11a431ac86c10331cec36ac4fa160d",
+      "compiled_frame": 5,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-3",
+      "frame": 759,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        119
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 1,
+      "VRAM_sha256": "18454d52299a069acc70993c328567f9ea11a431ac86c10331cec36ac4fa160d",
+      "compiled_frame": 5,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-3",
+      "frame": 760,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        118
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 1,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-3",
+      "frame": 761,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        117
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 1,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-3",
+      "frame": 762,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        116
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 1,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-3",
+      "frame": 763,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        115
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 1,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-3",
+      "frame": 764,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        114
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 1,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-3",
+      "frame": 765,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        113
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 1,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-3",
+      "frame": 766,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        112
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 1,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-3",
+      "frame": 767,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        111
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 2,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-3",
+      "frame": 767,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        111
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 2,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-3",
+      "frame": 771,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        107
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 2,
+      "VRAM_sha256": "f9201b0ba6693e67361d3da21ee3904e72b69543abe4044673c0c432d64ed2d2",
+      "compiled_frame": 6,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-4",
+      "frame": 772,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        106
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 2,
+      "VRAM_sha256": "f9201b0ba6693e67361d3da21ee3904e72b69543abe4044673c0c432d64ed2d2",
+      "compiled_frame": 6,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-4",
+      "frame": 773,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        105
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 2,
+      "VRAM_sha256": "f9201b0ba6693e67361d3da21ee3904e72b69543abe4044673c0c432d64ed2d2",
+      "compiled_frame": 6,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-4",
+      "frame": 774,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        104
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 2,
+      "VRAM_sha256": "f9201b0ba6693e67361d3da21ee3904e72b69543abe4044673c0c432d64ed2d2",
+      "compiled_frame": 6,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-4",
+      "frame": 775,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        103
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 3,
+      "VRAM_sha256": "f9201b0ba6693e67361d3da21ee3904e72b69543abe4044673c0c432d64ed2d2",
+      "compiled_frame": 6,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-4",
+      "frame": 776,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        102
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 3,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-4",
+      "frame": 777,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        101
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 3,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-4",
+      "frame": 778,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        100
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 3,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-4",
+      "frame": 779,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        99
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 3,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-4",
+      "frame": 780,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        98
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 3,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-4",
+      "frame": 781,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        97
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 3,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-4",
+      "frame": 782,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        96
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 3,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-4",
+      "frame": 783,
+      "player": [
+        3,
+        0,
+        11,
+        4
+      ],
+      "Misty_feet": [
+        120,
+        95
+      ],
+      "Misty_xy": [
+        18,
+        13
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 0,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-4",
+      "frame": 783,
+      "player": [
+        3,
+        0,
+        11,
+        4
+      ],
+      "Misty_feet": [
+        120,
+        95
+      ],
+      "Misty_xy": [
+        18,
+        13
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 0,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-walk-4",
+      "frame": 787,
+      "player": [
+        3,
+        0,
+        11,
+        4
+      ],
+      "Misty_feet": [
+        120,
+        91
+      ],
+      "Misty_xy": [
+        18,
+        13
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 5,
+      "anim_cmd": 0,
+      "VRAM_sha256": "18454d52299a069acc70993c328567f9ea11a431ac86c10331cec36ac4fa160d",
+      "compiled_frame": 5,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-run-2",
+      "frame": 735,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        126
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 9,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-run-2",
+      "frame": 735,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        126
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 9,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-run-2",
+      "frame": 739,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        118
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 9,
+      "anim_cmd": 1,
+      "VRAM_sha256": "18454d52299a069acc70993c328567f9ea11a431ac86c10331cec36ac4fa160d",
+      "compiled_frame": 5,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-run-3",
+      "frame": 740,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        116
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 9,
+      "anim_cmd": 1,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-run-3",
+      "frame": 741,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        114
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 9,
+      "anim_cmd": 1,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-run-3",
+      "frame": 742,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        112
+      ],
+      "Misty_xy": [
+        18,
+        15
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 9,
+      "anim_cmd": 1,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-run-3",
+      "frame": 743,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        110
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 9,
+      "anim_cmd": 2,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-run-3",
+      "frame": 743,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        110
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 9,
+      "anim_cmd": 2,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-run-3",
+      "frame": 747,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        102
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 9,
+      "anim_cmd": 3,
+      "VRAM_sha256": "f9201b0ba6693e67361d3da21ee3904e72b69543abe4044673c0c432d64ed2d2",
+      "compiled_frame": 6,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-run-4",
+      "frame": 748,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        100
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 9,
+      "anim_cmd": 3,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-run-4",
+      "frame": 749,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        98
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 9,
+      "anim_cmd": 3,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-run-4",
+      "frame": 750,
+      "player": [
+        3,
+        0,
+        11,
+        5
+      ],
+      "Misty_feet": [
+        120,
+        96
+      ],
+      "Misty_xy": [
+        18,
+        14
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 9,
+      "anim_cmd": 3,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-run-4",
+      "frame": 751,
+      "player": [
+        3,
+        0,
+        11,
+        4
+      ],
+      "Misty_feet": [
+        120,
+        94
+      ],
+      "Misty_xy": [
+        18,
+        13
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 9,
+      "anim_cmd": 0,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-run-4",
+      "frame": 751,
+      "player": [
+        3,
+        0,
+        11,
+        4
+      ],
+      "Misty_feet": [
+        120,
+        94
+      ],
+      "Misty_xy": [
+        18,
+        13
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 9,
+      "anim_cmd": 0,
+      "VRAM_sha256": "1a30729a9cac608a7a6cf797320e48f502f0965a686826eaab8adc0d64c4a49a",
+      "compiled_frame": 1,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "UP-run-4",
+      "frame": 755,
+      "player": [
+        3,
+        0,
+        11,
+        4
+      ],
+      "Misty_feet": [
+        120,
+        86
+      ],
+      "Misty_xy": [
+        18,
+        13
+      ],
+      "sprite": 3,
+      "gfx": 237,
+      "anim": 9,
+      "anim_cmd": 1,
+      "VRAM_sha256": "18454d52299a069acc70993c328567f9ea11a431ac86c10331cec36ac4fa160d",
+      "compiled_frame": 5,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-2",
+      "frame": 743,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        129
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-2",
+      "frame": 743,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        129
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-2",
+      "frame": 747,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        133
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 0,
+      "VRAM_sha256": "77fd8ea3b9aa4ea8a22fbd244acbfd81a715036761f6fdfc026eac2527c5dccb",
+      "compiled_frame": 3,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-3",
+      "frame": 748,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        134
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 0,
+      "VRAM_sha256": "77fd8ea3b9aa4ea8a22fbd244acbfd81a715036761f6fdfc026eac2527c5dccb",
+      "compiled_frame": 3,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-3",
+      "frame": 749,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        135
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 0,
+      "VRAM_sha256": "77fd8ea3b9aa4ea8a22fbd244acbfd81a715036761f6fdfc026eac2527c5dccb",
+      "compiled_frame": 3,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-3",
+      "frame": 750,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        136
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 0,
+      "VRAM_sha256": "77fd8ea3b9aa4ea8a22fbd244acbfd81a715036761f6fdfc026eac2527c5dccb",
+      "compiled_frame": 3,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-3",
+      "frame": 751,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        137
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 1,
+      "VRAM_sha256": "77fd8ea3b9aa4ea8a22fbd244acbfd81a715036761f6fdfc026eac2527c5dccb",
+      "compiled_frame": 3,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-3",
+      "frame": 752,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        138
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 1,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-3",
+      "frame": 753,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        139
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 1,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-3",
+      "frame": 754,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        140
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 1,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-3",
+      "frame": 755,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        141
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 1,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-3",
+      "frame": 756,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        142
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 1,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-3",
+      "frame": 757,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        143
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 1,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-3",
+      "frame": 758,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        144
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 1,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-3",
+      "frame": 759,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        145
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 2,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-3",
+      "frame": 759,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        145
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 2,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-3",
+      "frame": 763,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        149
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 2,
+      "VRAM_sha256": "d41f560b69a088377d4ceaf8886538dabdc00dd47cd77bb910ba9b741da9700d",
+      "compiled_frame": 4,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-4",
+      "frame": 764,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        150
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 2,
+      "VRAM_sha256": "d41f560b69a088377d4ceaf8886538dabdc00dd47cd77bb910ba9b741da9700d",
+      "compiled_frame": 4,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-4",
+      "frame": 765,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        151
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 2,
+      "VRAM_sha256": "d41f560b69a088377d4ceaf8886538dabdc00dd47cd77bb910ba9b741da9700d",
+      "compiled_frame": 4,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-4",
+      "frame": 766,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        152
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 2,
+      "VRAM_sha256": "d41f560b69a088377d4ceaf8886538dabdc00dd47cd77bb910ba9b741da9700d",
+      "compiled_frame": 4,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-4",
+      "frame": 767,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        153
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 3,
+      "VRAM_sha256": "d41f560b69a088377d4ceaf8886538dabdc00dd47cd77bb910ba9b741da9700d",
+      "compiled_frame": 4,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-4",
+      "frame": 768,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        154
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 3,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-4",
+      "frame": 769,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        155
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 3,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-4",
+      "frame": 770,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        156
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 3,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-4",
+      "frame": 771,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        157
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 3,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-4",
+      "frame": 772,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        158
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 3,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-4",
+      "frame": 773,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        159
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 3,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-4",
+      "frame": 774,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        160
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 3,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-4",
+      "frame": 775,
+      "player": [
+        3,
+        0,
+        11,
+        8
+      ],
+      "Misty_feet": [
+        120,
+        161
+      ],
+      "Misty_xy": [
+        18,
+        13
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-4",
+      "frame": 775,
+      "player": [
+        3,
+        0,
+        11,
+        8
+      ],
+      "Misty_feet": [
+        120,
+        161
+      ],
+      "Misty_xy": [
+        18,
+        13
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-walk-4",
+      "frame": 779,
+      "player": [
+        3,
+        0,
+        11,
+        8
+      ],
+      "Misty_feet": [
+        120,
+        165
+      ],
+      "Misty_xy": [
+        18,
+        13
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 4,
+      "anim_cmd": 0,
+      "VRAM_sha256": "77fd8ea3b9aa4ea8a22fbd244acbfd81a715036761f6fdfc026eac2527c5dccb",
+      "compiled_frame": 3,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-run-2",
+      "frame": 727,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        130
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 8,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-run-2",
+      "frame": 727,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        130
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 8,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-run-2",
+      "frame": 731,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        138
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 8,
+      "anim_cmd": 1,
+      "VRAM_sha256": "77fd8ea3b9aa4ea8a22fbd244acbfd81a715036761f6fdfc026eac2527c5dccb",
+      "compiled_frame": 3,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-run-3",
+      "frame": 732,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        140
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 8,
+      "anim_cmd": 1,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-run-3",
+      "frame": 733,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        142
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 8,
+      "anim_cmd": 1,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-run-3",
+      "frame": 734,
+      "player": [
+        3,
+        0,
+        11,
+        6
+      ],
+      "Misty_feet": [
+        120,
+        144
+      ],
+      "Misty_xy": [
+        18,
+        11
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 8,
+      "anim_cmd": 1,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-run-3",
+      "frame": 735,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        146
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 8,
+      "anim_cmd": 2,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-run-3",
+      "frame": 735,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        146
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 8,
+      "anim_cmd": 2,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-run-3",
+      "frame": 739,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        154
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 8,
+      "anim_cmd": 3,
+      "VRAM_sha256": "d41f560b69a088377d4ceaf8886538dabdc00dd47cd77bb910ba9b741da9700d",
+      "compiled_frame": 4,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-run-4",
+      "frame": 740,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        156
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 8,
+      "anim_cmd": 3,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-run-4",
+      "frame": 741,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        158
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 8,
+      "anim_cmd": 3,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-run-4",
+      "frame": 742,
+      "player": [
+        3,
+        0,
+        11,
+        7
+      ],
+      "Misty_feet": [
+        120,
+        160
+      ],
+      "Misty_xy": [
+        18,
+        12
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 8,
+      "anim_cmd": 3,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-run-4",
+      "frame": 743,
+      "player": [
+        3,
+        0,
+        11,
+        8
+      ],
+      "Misty_feet": [
+        120,
+        162
+      ],
+      "Misty_xy": [
+        18,
+        13
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 8,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-run-4",
+      "frame": 743,
+      "player": [
+        3,
+        0,
+        11,
+        8
+      ],
+      "Misty_feet": [
+        120,
+        162
+      ],
+      "Misty_xy": [
+        18,
+        13
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 8,
+      "anim_cmd": 0,
+      "VRAM_sha256": "728c4113b9072929bab16c15af4547e6cebf86bf2191c96ec58a796dbbd16f67",
+      "compiled_frame": 0,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "tag": "DOWN-run-4",
+      "frame": 747,
+      "player": [
+        3,
+        0,
+        11,
+        8
+      ],
+      "Misty_feet": [
+        120,
+        170
+      ],
+      "Misty_xy": [
+        18,
+        13
+      ],
+      "sprite": 2,
+      "gfx": 237,
+      "anim": 8,
+      "anim_cmd": 1,
+      "VRAM_sha256": "77fd8ea3b9aa4ea8a22fbd244acbfd81a715036761f6fdfc026eac2527c5dccb",
+      "compiled_frame": 3,
+      "palette_slot": 0,
+      "hflip": false,
+      "size": [
+        16,
+        32
+      ]
+    }
+  ],
+  "native_SAVE_cold": {
+    "counter": [
+      67,
+      68
+    ],
+    "checksummed_sectors": 14,
+    "qa_save": "/workspaces/pokefirered/work/misty-followup-20261014/native-walk-final-v7/Misty-walk-save-cold-native-QA-only.sav"
+  },
+  "original_inputs_unchanged": true
+}

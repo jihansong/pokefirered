@@ -1,0 +1,24 @@
+{
+  "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+  "cases": [
+    {
+      "case": "wally-first",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/wally-first-run.log"
+    },
+    {
+      "case": "edgar-first",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/edgar-first-run.log"
+    },
+    {
+      "case": "surf-hoenn-on-a",
+      "exit": 1,
+      "pass": false,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/surf-hoenn-on-a-run.log"
+    }
+  ],
+  "all_pass": false
+}

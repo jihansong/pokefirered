@@ -1,0 +1,29 @@
+{
+  "checks": [
+    {
+      "case": "ineligible_continue_and_native_save",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/misty-companion-review-v1/native-phase1-join/base-pallet-saved-native-QA-only.sav"
+      },
+      "pass_all": true
+    },
+    {
+      "case": "eligible_hidden_old_continue",
+      "native_static_count": 0,
+      "hide_flag": false,
+      "position": [
+        3,
+        0,
+        8,
+        9
+      ]
+    }
+  ],
+  "trail_samples": [],
+  "original_sav_unchanged": true
+}

@@ -1,0 +1,323 @@
+[
+  {
+    "case": "route",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "location": null,
+    "follower_checks": null
+  },
+  {
+    "case": "teach",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "location": null,
+    "follower_checks": null
+  },
+  {
+    "case": "hoenn-only",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "location": null,
+    "follower_checks": null
+  },
+  {
+    "case": "follower",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "location": null,
+    "follower_checks": [
+      {
+        "label": "surface-before-dive-right",
+        "map": [
+          43,
+          43
+        ],
+        "player_xy": [
+          39,
+          27
+        ],
+        "follower_xy": [
+          38,
+          27
+        ],
+        "visible": true,
+        "native_sprite_active": true,
+        "avatar_flags": 8
+      },
+      {
+        "label": "surface-before-dive-left",
+        "map": [
+          43,
+          43
+        ],
+        "player_xy": [
+          38,
+          27
+        ],
+        "follower_xy": [
+          39,
+          27
+        ],
+        "visible": true,
+        "native_sprite_active": true,
+        "avatar_flags": 8
+      },
+      {
+        "label": "Underwater_Route128-right",
+        "map": [
+          43,
+          53
+        ],
+        "player_xy": [
+          39,
+          27
+        ],
+        "follower_xy": [
+          38,
+          27
+        ],
+        "visible": true,
+        "native_sprite_active": true,
+        "avatar_flags": 16
+      },
+      {
+        "label": "Underwater_Route128-left",
+        "map": [
+          43,
+          53
+        ],
+        "player_xy": [
+          38,
+          27
+        ],
+        "follower_xy": [
+          39,
+          27
+        ],
+        "visible": true,
+        "native_sprite_active": true,
+        "avatar_flags": 16
+      },
+      {
+        "label": "cold-reopen-right",
+        "map": [
+          43,
+          53
+        ],
+        "player_xy": [
+          39,
+          27
+        ],
+        "follower_xy": [
+          38,
+          27
+        ],
+        "visible": true,
+        "native_sprite_active": true,
+        "avatar_flags": 16
+      },
+      {
+        "label": "cold-reopen-left",
+        "map": [
+          43,
+          53
+        ],
+        "player_xy": [
+          38,
+          27
+        ],
+        "follower_xy": [
+          39,
+          27
+        ],
+        "visible": true,
+        "native_sprite_active": true,
+        "avatar_flags": 16
+      },
+      {
+        "label": "Underwater_Route128-right",
+        "map": [
+          43,
+          53
+        ],
+        "player_xy": [
+          39,
+          27
+        ],
+        "follower_xy": [
+          38,
+          27
+        ],
+        "visible": true,
+        "native_sprite_active": true,
+        "avatar_flags": 16
+      },
+      {
+        "label": "Underwater_Route128-left",
+        "map": [
+          43,
+          53
+        ],
+        "player_xy": [
+          38,
+          27
+        ],
+        "follower_xy": [
+          39,
+          27
+        ],
+        "visible": true,
+        "native_sprite_active": true,
+        "avatar_flags": 16
+      },
+      {
+        "label": "SeafloorCavern_Entrance-right",
+        "map": [
+          67,
+          27
+        ],
+        "player_xy": [
+          11,
+          16
+        ],
+        "follower_xy": [
+          10,
+          16
+        ],
+        "visible": true,
+        "native_sprite_active": true,
+        "avatar_flags": 8
+      },
+      {
+        "label": "SeafloorCavern_Entrance-left",
+        "map": [
+          67,
+          27
+        ],
+        "player_xy": [
+          10,
+          16
+        ],
+        "follower_xy": [
+          11,
+          16
+        ],
+        "visible": true,
+        "native_sprite_active": true,
+        "avatar_flags": 8
+      },
+      {
+        "label": "Underwater_SeafloorCavern-right",
+        "map": [
+          67,
+          26
+        ],
+        "player_xy": [
+          7,
+          6
+        ],
+        "follower_xy": [
+          6,
+          6
+        ],
+        "visible": true,
+        "native_sprite_active": true,
+        "avatar_flags": 16
+      },
+      {
+        "label": "Underwater_SeafloorCavern-left",
+        "map": [
+          67,
+          26
+        ],
+        "player_xy": [
+          6,
+          6
+        ],
+        "follower_xy": [
+          7,
+          6
+        ],
+        "visible": true,
+        "native_sprite_active": true,
+        "avatar_flags": 16
+      },
+      {
+        "label": "Route128-right",
+        "map": [
+          43,
+          43
+        ],
+        "player_xy": [
+          39,
+          27
+        ],
+        "follower_xy": [
+          38,
+          27
+        ],
+        "visible": true,
+        "native_sprite_active": true,
+        "avatar_flags": 8
+      },
+      {
+        "label": "Route128-left",
+        "map": [
+          43,
+          43
+        ],
+        "player_xy": [
+          38,
+          27
+        ],
+        "follower_xy": [
+          39,
+          27
+        ],
+        "visible": true,
+        "native_sprite_active": true,
+        "avatar_flags": 8
+      },
+      {
+        "label": "cold-reopen-right",
+        "map": [
+          43,
+          43
+        ],
+        "player_xy": [
+          39,
+          27
+        ],
+        "follower_xy": [
+          38,
+          27
+        ],
+        "visible": true,
+        "native_sprite_active": true,
+        "avatar_flags": 8
+      },
+      {
+        "label": "cold-reopen-left",
+        "map": [
+          43,
+          43
+        ],
+        "player_xy": [
+          38,
+          27
+        ],
+        "follower_xy": [
+          39,
+          27
+        ],
+        "visible": true,
+        "native_sprite_active": true,
+        "avatar_flags": 8
+      }
+    ]
+  }
+]

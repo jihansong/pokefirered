@@ -8,6 +8,7 @@
 #include "m4a.h"
 #include "help_system.h"
 #include "hall_of_fame.h"
+#include "constants/flags.h"
 #include "quest_log.h"
 #include "pc_screen_effect.h"
 #include "new_menu_helpers.h"
@@ -696,8 +697,31 @@ static void Task_Hof_HandleExit(u8 taskId)
     }
 }
 
+// JOHTO_HOF_ACTUAL_CHAMPION_CONTEXT_V1
+bool8 IsJohtoHallOfFameContext(void)
+{
+    return gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_JOHTO_LEAGUE_HALL_OF_FAME)
+        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_JOHTO_LEAGUE_HALL_OF_FAME)
+        && FlagGet(FLAG_JOHTO_LANCE_CHAMPION_CLEARED)
+        && FlagGet(FLAG_JOHTO_LEAGUE_CLEARED);
+}
+
 static void SetWarpsToRollCredits(void)
 {
+    // JOHTO_HOF_CREDITS_DISPATCH_V1
+    if (IsJohtoHallOfFameContext())
+    {
+        DoJohtoCredits();
+        return;
+    }
+
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_EVER_GRANDE_CITY_HALL_OF_FAME)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_EVER_GRANDE_CITY_HALL_OF_FAME))
+    {
+        DoHoennCredits();
+        return;
+    }
+
     VarSet(VAR_MAP_SCENE_INDIGO_PLATEAU_EXTERIOR, 1);
     FlagSet(FLAG_DONT_SHOW_MAP_NAME_POPUP);
     gDisableMapMusicChangeOnMapLoad = 2;

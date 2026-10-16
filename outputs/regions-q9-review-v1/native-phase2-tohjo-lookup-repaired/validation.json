@@ -1,0 +1,359 @@
+{
+  "pass": false,
+  "rom_sha256": "af9ba1f61fce4630d488567ed11b83847dfbc1fcff435653bedd4d86dc622818",
+  "elf_sha256": "12a57e74b48b669ce9021c1fec93934e63bd1fcb22abba827f270b79c8727de4",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-johto-tohjo-natural-water-route",
+  "fixture": "temporary Lapras mover plus exact copy of genuine original starter Pikachu; original SAV/PC/Dex unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [
+    {
+      "label": "land-to-native-Surf",
+      "player_xy": [
+        10,
+        16
+      ],
+      "water_avatar": true
+    }
+  ],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "candidate_ui_task_symbols": {
+    "Task_HandleChooseMonInput": [
+      135417784
+    ],
+    "Task_HandleSelectionMenuInput": [
+      135430456
+    ],
+    "Task_ReturnToChooseMonAfterText": [
+      135419976
+    ],
+    "Task_CancelAfterAorBPress": [
+      135437948
+    ],
+    "Task_YesNoMenu_HandleInput": [
+      134874320
+    ],
+    "Task_UseWaterfall": [
+      134775160
+    ]
+  },
+  "native_story_not_entire_regions": true,
+  "palette_active_abi_mask": {
+    "size": 16,
+    "offset": 7,
+    "mask": 128
+  },
+  "input_abi_offsets": {
+    "heldKeysRaw": 40,
+    "newKeysRaw": 42,
+    "heldKeys": 44,
+    "newKeys": 46,
+    "newAndRepeatedKeys": 48,
+    "keyRepeatCounter": 50,
+    "vblankCounter2": 36,
+    "link_recv_count": 4029,
+    "link_overworld_max": 3
+  },
+  "follower_checks": [
+    {
+      "label": "native-shore-to-surf",
+      "player_xy": [
+        10,
+        16
+      ],
+      "follower_xy": [
+        10,
+        17
+      ],
+      "water": true,
+      "visible": true,
+      "sprite_active": true
+    },
+    {
+      "label": "step-0",
+      "player_xy": [
+        10,
+        15
+      ],
+      "follower_xy": [
+        10,
+        16
+      ],
+      "water": true,
+      "visible": true,
+      "sprite_active": true
+    },
+    {
+      "label": "step-1",
+      "player_xy": [
+        10,
+        14
+      ],
+      "follower_xy": [
+        10,
+        15
+      ],
+      "water": true,
+      "visible": true,
+      "sprite_active": true
+    },
+    {
+      "label": "step-2",
+      "player_xy": [
+        10,
+        13
+      ],
+      "follower_xy": [
+        10,
+        14
+      ],
+      "water": true,
+      "visible": true,
+      "sprite_active": true
+    },
+    {
+      "label": "step-3",
+      "player_xy": [
+        10,
+        12
+      ],
+      "follower_xy": [
+        10,
+        13
+      ],
+      "water": true,
+      "visible": true,
+      "sprite_active": true
+    },
+    {
+      "label": "step-4",
+      "player_xy": [
+        10,
+        11
+      ],
+      "follower_xy": [
+        10,
+        12
+      ],
+      "water": true,
+      "visible": true,
+      "sprite_active": true
+    }
+  ],
+  "route_steps": [
+    {
+      "key": "UP",
+      "before": [
+        76,
+        113,
+        10,
+        16
+      ],
+      "after": [
+        76,
+        113,
+        10,
+        15
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        76,
+        113,
+        10,
+        15
+      ],
+      "after": [
+        76,
+        113,
+        10,
+        14
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        76,
+        113,
+        10,
+        14
+      ],
+      "after": [
+        76,
+        113,
+        10,
+        13
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        76,
+        113,
+        10,
+        13
+      ],
+      "after": [
+        76,
+        113,
+        10,
+        12
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        76,
+        113,
+        10,
+        12
+      ],
+      "after": [
+        76,
+        113,
+        10,
+        11
+      ]
+    }
+  ],
+  "scope": "One actual land/Surf/Waterfall/north-exit route; not full Johto or replay of completed Hoenn water cases",
+  "original_terrain_sha256": "63ae01d21d19e54cb99ce1186a0c239ce56b4953d8279d73a0721f24837fa875",
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "temporary_continue_object_fixture": {
+    "actual_source_formulas": true,
+    "flags": {
+      "FLAG_HIDE_HOENN_BIRCH_LAB": true,
+      "FLAG_HIDE_HOENN_RIVAL_ROUTE103": true,
+      "FLAG_HIDE_HOENN_RUSTBORO_THIEF": true,
+      "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+      "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+      "FLAG_HIDE_HOENN_BRINEY": true,
+      "FLAG_HIDE_HOENN_WALLY_PETALBURG": true,
+      "FLAG_HIDE_HOENN_WALLY_VERDANTURF": true,
+      "FLAG_HIDE_HOENN_WANDA_BOYFRIEND": true,
+      "FLAG_HIDE_HOENN_ROCKET_WOODS": true,
+      "FLAG_HIDE_HOENN_RIVAL_LAB": true
+    },
+    "original_source_save_changed": false,
+    "native_save_assertions_unchanged": true
+  },
+  "native_repel_guard": {
+    "TohjoFalls": {
+      "fixture_lead": {
+        "slot": 0,
+        "level": 100,
+        "personality": 2710679397,
+        "otid": 2839214970
+      },
+      "actual_candidate_encounters": [
+        {
+          "table": "gWildMonHeaders",
+          "maximum_level": 30,
+          "native_rate": 10
+        },
+        {
+          "table": "gWildMonHeadersMorning",
+          "maximum_level": 30,
+          "native_rate": 10
+        },
+        {
+          "table": "gWildMonHeadersNight",
+          "maximum_level": 30,
+          "native_rate": 10
+        }
+      ],
+      "temporary_repel_steps": 250
+    },
+    "JohtoRoute26": {
+      "fixture_lead": {
+        "slot": 0,
+        "level": 100,
+        "personality": 2710679397,
+        "otid": 2839214970
+      },
+      "actual_candidate_encounters": [
+        {
+          "table": "gWildMonHeaders",
+          "maximum_level": 34,
+          "native_rate": 10
+        },
+        {
+          "table": "gWildMonHeadersMorning",
+          "maximum_level": 34,
+          "native_rate": 10
+        },
+        {
+          "table": "gWildMonHeadersNight",
+          "maximum_level": 34,
+          "native_rate": 10
+        }
+      ],
+      "temporary_repel_steps": 250
+    }
+  },
+  "ui_debug": {
+    "stage": null,
+    "tasks": [
+      {
+        "slot": 0,
+        "function": "0x807c914",
+        "names": [
+          "Task_WeatherMain"
+        ],
+        "cursor_data0": 0
+      },
+      {
+        "slot": 1,
+        "function": "0x8070598",
+        "names": [
+          ".gcc2_compiled.",
+          "Task_RunPerStepCallback"
+        ],
+        "cursor_data0": 0
+      },
+      {
+        "slot": 2,
+        "function": "0x80705c4",
+        "names": [
+          "Task_RunTimeBasedEvents"
+        ],
+        "cursor_data0": 0
+      },
+      {
+        "slot": 3,
+        "function": "0x8148ecc",
+        "names": [
+          "Task_FollowerPikachu"
+        ],
+        "cursor_data0": 0
+      }
+    ],
+    "callback2": "0x8057521",
+    "fade_inactive": true,
+    "start_cursor": 0,
+    "party_menu_raw": "0000000000000000000000000000000000000000",
+    "party_slot": 0,
+    "party_mode_byte": 0
+  },
+  "error": "AssertionError(('native waterfall timeout', None, (76, 113, 10, 11), '0x8057521'))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/tools/qa/native_johto_tohjo_route_qa.py\", line 174, in <module>\n    use_a();trace_ascent()\n    ^^^^^^^\n  File \"tools/qa/native_waterfall_follower_qa.py\", line 247, in use_a\n    await_state(lambda:active_task(e,'Task_YesNoMenu_HandleInput'),1600,'A')\n  File \"tools/qa/native_waterfall_follower_qa.py\", line 128, in await_state\n    raise AssertionError(('native waterfall timeout',report.get('ui_stage'),e.location(),hex(e.callback2())))\nAssertionError: ('native waterfall timeout', None, (76, 113, 10, 11), '0x8057521')\n",
+  "failure_location": [
+    76,
+    113,
+    10,
+    11
+  ],
+  "original_saves_unchanged": true
+}

@@ -1,0 +1,25 @@
+{"case": "native-evolved-party-stage-0", "pass_all": true, "count": 3, "species": ["STARMIE", "GOLDUCK", "SEADRA"], "level": 48, "native_function_hook": true, "player_party_pc_dex_preserved": true}
+{"case": "native-evolved-party-stage-1", "pass_all": true, "count": 4, "species": ["STARMIE", "GOLDUCK", "SEADRA", "POLITOED"], "level": 52, "native_function_hook": true, "player_party_pc_dex_preserved": true}
+{"case": "native-evolved-party-stage-2", "pass_all": true, "count": 5, "species": ["STARMIE", "GOLDUCK", "SEADRA", "POLITOED", "CORSOLA"], "level": 56, "native_function_hook": true, "player_party_pc_dex_preserved": true}
+{"case": "native-evolved-party-stage-3", "pass_all": true, "count": 6, "species": ["STARMIE", "GOLDUCK", "KINGDRA", "POLITOED", "CORSOLA", "AZUMARILL"], "level": 60, "native_function_hook": true, "player_party_pc_dex_preserved": true}
+{"case": "native-evolved-party-stage-4", "pass_all": true, "count": 6, "species": ["STARMIE", "GOLDUCK", "KINGDRA", "POLITOED", "CORSOLA", "AZUMARILL"], "level": 66, "native_function_hook": true, "player_party_pc_dex_preserved": true}
+{"case": "pre-champion-open", "pass_all": true, "actual_UP_door_input": true, "prepared_save_fixture": true, "player_party_pc_dex_preserved": true}
+{"case": "champion-not-joined-open", "pass_all": true, "actual_UP_door_input": true, "prepared_save_fixture": true, "player_party_pc_dex_preserved": true}
+{"case": "joined-closed", "pass_all": true, "actual_UP_door_input": true, "prepared_save_fixture": true, "player_party_pc_dex_preserved": true}
+{"case": "not-joined-near-gym-leader-remains", "pass_all": true, "prepared_near_leader_save_fixture": true}
+{"case": "joined-cold-inside-gym-can-exit", "pass_all": true, "static_Misty_absent": true, "actual_DOWN_exit": true, "prepared_save_fixture": true}
+{"case": "legacy-flag0-normal-Continue-no-duplicate-and-exit", "pass_all": true, "native_base_save": {"counter": [67, 68], "checksummed_sectors": 14, "qa_save": "/workspaces/pokefirered/work/misty-followup-20261014/native-story-final-v7/legacy-gym-base-native-save-native-QA-only.sav"}, "prepared_legacy_template_flag0": true, "continue_game_warp_bit_cleared": true, "old_cached_template_retained": false, "engine_refreshed_template": true, "static_leader_absent": true, "actual_walkway_exit": true}
+{"case": "native-heart-three-repeats-clean-resources", "pass_all": true, "native_function_hook": true, "palette_returns_to_baseline": true, "lifetime_frames_at_most": 60}
+{"case": "absent-companion-heart-negative-does-not-wait", "pass_all": true, "temporary_native_join_flag": true}
+{"case": "full-palette-capacity-negative-does-not-wait", "pass_all": true, "temporary_native_palette_table_fixture": true}
+{"case": "full-sprite-capacity-negative-cleans-palette-and-wait", "pass_all": true, "temporary_native_OAM_fixture": true}
+{"case": "active-heart-native-engine-warp-cleanup", "pass_all": true, "native_SetWarpDestination_and_DoWarp_hooks": true, "map_identity_not_poked": true, "no_owned_resources_or_wait_left": true}
+{"case": "actual-A-affection-stage-0", "pass_all": true, "pika_emotion_preserved": true, "actual_A_and_yesno_only": true, "native_heart": true, "regional_text_from_ROM": true, "temporary_native_growth_flags": true}
+{"case": "actual-A-affection-stage-1", "pass_all": true, "pika_emotion_preserved": true, "actual_A_and_yesno_only": true, "native_heart": true, "regional_text_from_ROM": true, "temporary_native_growth_flags": true}
+{"case": "actual-A-affection-stage-2", "pass_all": true, "pika_emotion_preserved": true, "actual_A_and_yesno_only": true, "native_heart": true, "regional_text_from_ROM": true, "temporary_native_growth_flags": true}
+{"case": "actual-A-affection-stage-3", "pass_all": true, "pika_emotion_preserved": true, "actual_A_and_yesno_only": true, "native_heart": true, "regional_text_from_ROM": true, "temporary_native_growth_flags": true}
+{"case": "actual-A-affection-stage-4", "pass_all": true, "pika_emotion_preserved": true, "actual_A_and_yesno_only": true, "native_heart": true, "regional_text_from_ROM": true, "temporary_native_growth_flags": true}
+{"case": "actual-A-affection-native-SAVE-cold-repeat", "pass_all": true, "save": {"counter": [67, 68], "checksummed_sectors": 14, "qa_save": "/workspaces/pokefirered/work/misty-followup-20261014/native-story-final-v7/affection-native-save-native-QA-only.sav"}, "actual_A_and_yesno_only": true}
+{"case": "TM03-full-stack-actual-A-reward-stays-pending", "pass_all": true, "prepared_max_stack_fixture": true, "actual_A_choice": true}
+{"case": "TM03-pending-native-removal-then-actual-A-retry", "pass_all": true, "native_item_fixture": true, "existing_reward_flag_on_success": true}
+{"case": "TM03-repeat-no-duplicate-native-SAVE-cold", "pass_all": true, "save": {"counter": [67, 68], "checksummed_sectors": 14, "qa_save": "/workspaces/pokefirered/work/misty-followup-20261014/native-story-final-v7/TM03-retry-native-save-native-QA-only.sav"}, "no_duplicate_TM03": true}

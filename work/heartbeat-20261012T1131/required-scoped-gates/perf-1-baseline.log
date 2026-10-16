@@ -1,0 +1,4 @@
+  File "/workspaces/pokefirered/work/heartbeat-20261012T1131/scoped-performance-child.py", line 13
+    d.update(pass=True,location=initial,render_seconds=seconds,wrapper_frame_count_delta=e.frame()-startframe,party_full_PC_Dex_unchanged=True)
+             ^^^^
+SyntaxError: invalid syntax

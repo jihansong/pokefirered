@@ -1,0 +1,346 @@
+{
+  "checks": [
+    {
+      "case": "ineligible_continue_and_native_save",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-misty-join/base-pallet-saved-native-QA-only.sav"
+      },
+      "pass_all": true
+    },
+    {
+      "case": "eligible_hidden_old_continue",
+      "native_static_count": 1,
+      "hide_flag": false,
+      "position": [
+        3,
+        0,
+        8,
+        9
+      ]
+    },
+    {
+      "case": "join_decline_actual_A",
+      "answer": "NO",
+      "joined": false,
+      "static_npc": 1,
+      "runtime_misty": 0,
+      "pass_all": true
+    },
+    {
+      "case": "join_accept_actual_A",
+      "answer": "YES",
+      "joined": true,
+      "static_npc": 0,
+      "runtime_misty": 1,
+      "pass_all": true
+    },
+    {
+      "case": "joined_native_save_cold_trail",
+      "save": {
+        "counter": [
+          61,
+          62
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-misty-join/joined-native-save-native-QA-only.sav"
+      },
+      "pass_all": true
+    }
+  ],
+  "trail_samples": [
+    {
+      "label": "accepted-walk-left-0",
+      "player": {
+        "xy": [
+          14,
+          16
+        ],
+        "feet": [
+          104,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            15,
+            16
+          ],
+          "sprite": 4,
+          "visible": false,
+          "feet": [
+            120,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            15,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            120,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "accepted-walk-left-1",
+      "player": {
+        "xy": [
+          13,
+          16
+        ],
+        "feet": [
+          88,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            15,
+            16
+          ],
+          "sprite": 4,
+          "visible": true,
+          "feet": [
+            120,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            14,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            104,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "accepted-walk-left-2",
+      "player": {
+        "xy": [
+          12,
+          16
+        ],
+        "feet": [
+          72,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            14,
+            16
+          ],
+          "sprite": 4,
+          "visible": true,
+          "feet": [
+            104,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            13,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            88,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "cold-walk-right-0",
+      "player": {
+        "xy": [
+          13,
+          16
+        ],
+        "feet": [
+          136,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            13,
+            16
+          ],
+          "sprite": 4,
+          "visible": false,
+          "feet": [
+            136,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            12,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            120,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "cold-walk-right-1",
+      "player": {
+        "xy": [
+          14,
+          16
+        ],
+        "feet": [
+          152,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            12,
+            16
+          ],
+          "sprite": 4,
+          "visible": true,
+          "feet": [
+            120,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            13,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            136,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "cold-walk-right-2",
+      "player": {
+        "xy": [
+          15,
+          16
+        ],
+        "feet": [
+          168,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            13,
+            16
+          ],
+          "sprite": 4,
+          "visible": true,
+          "feet": [
+            136,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            14,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            152,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    }
+  ],
+  "original_sav_unchanged": true
+}

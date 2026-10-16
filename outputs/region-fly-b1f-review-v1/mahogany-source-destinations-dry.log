@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/johto/build_mahogany.py", line 890, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--root',default='.');p.add_argument('--apply',action='store_true');a=p.parse_args();apply(Path(a.root).resolve(),a.apply)
+                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/johto/build_mahogany.py", line 868, in apply
+    s=Source(root);out,stats=build(s);validate(s,out,stats)
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/johto/build_mahogany.py", line 819, in validate
+    assert z in seen,(n,'unreachable native warp',wp,z)
+           ^^^^^^^^^
+AssertionError: ('MahoganyTown_PokemonCenter_2F', 'unreachable native warp', {'x': 5, 'y': 1, 'elevation': 0, 'dest_map': 'MAP_UNION_ROOM', 'dest_warp_id': '0'}, (5, 1))

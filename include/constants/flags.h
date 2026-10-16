@@ -566,12 +566,12 @@
 #define FLAG_BEAT_SUMMIT_TRAINER 0x220 // v0.6.0: beat the silent TRAINER on the snowbound summit
 #define FLAG_WON_CHAMPION_TOURNAMENT 0x221 // v0.6.0: won the INDIGO PLATEAU champion tournament
 #define FLAG_GOT_MEW_EGG         0x222 // v0.9.0: took the MEW EGG from the NEW ISLAND lab (the truck on the VERMILION quay is empty)
-#define FLAG_0x223               0x223
-#define FLAG_0x224               0x224
+#define FLAG_MISTY_COMPANION_JOINED 0x223
+#define FLAG_HIDE_MISTY_PALLET 0x224
 #define FLAG_0x225               0x225
 #define FLAG_0x226               0x226
 #define FLAG_0x227               0x227
-#define FLAG_0x228               0x228
+#define FLAG_MISTY_COMPANION_DECLINED               0x228
 #define FLAG_0x229               0x229
 #define FLAG_0x22A               0x22A
 #define FLAG_0x22B               0x22B
@@ -1542,6 +1542,11 @@
 #include "constants/flags_hoenn.h"
 #include "constants/flags_hoenn_map.h"
 #include "constants/flags_hoenn_story.h"
+#include "constants/flags_johto_story.h"
 #include "constants/snag.h"
 
 #endif // GUARD_CONSTANTS_FLAGS_H
+
+// Reserved previously-unused Kanto flags; no save fields or bit count changed.
+// FLAG_MISTY_COMPANION_JOINED uses its named, allocated flag above.
+// FLAG_HIDE_MISTY_PALLET uses its named, allocated flag above.

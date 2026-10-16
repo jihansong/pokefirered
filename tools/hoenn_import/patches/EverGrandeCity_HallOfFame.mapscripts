@@ -1,0 +1,3 @@
+
+	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_HallOfFame_TY_Position
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, EverGrandeCity_HallOfFame_TY_OnFrame

@@ -1,0 +1,165 @@
+#!/usr/bin/env python3
+"""Native ARM unit controls for the exact Union name routine; no campaign or game-memory forcing."""
+from pathlib import Path
+import argparse,hashlib,json,os,re,struct,subprocess,sys,tempfile
+p=argparse.ArgumentParser();p.add_argument('--rom',required=True);p.add_argument('--out',required=True);a=p.parse_args()
+rom=Path(a.rom).resolve();out=Path(a.out).resolve();out.mkdir(parents=True,exist_ok=True)
+sys.path.insert(0,str(Path.cwd()/'tools/qa'));from emu import Emu
+digest=lambda b:hashlib.sha256(b).hexdigest()
+original=digest(rom.read_bytes());assert rom.read_bytes()[0xac:0xb0]==b'BPGE'
+source=Path('src/union_room.c').read_text()
+assert digest(source.encode())=='6d1c4b0a5ed244ccd931732b4f4f21b1e00d473289f2ff5ff44746604ac56350'
+assert source.count('static EWRAM_DATA u8 sUnionRoomPlayerName[12] = {EOS};')==1
+def function(text,signature):
+ assert text.count(signature)==1
+ start=text.index(signature);brace=text.index('{',start);depth=0
+ for i in range(brace,len(text)):
+  if text[i]=='{':depth+=1
+  elif text[i]=='}':
+   depth-=1
+   if depth==0:return text[start:i+1]
+ raise AssertionError('unterminated actual C routine')
+buffer=function(source,'bool16 BufferUnionRoomPlayerName(void)')
+assert 'COLD_PC_UNION_NAME_BOUND_V1'in buffer and 'ARRAY_COUNT(sUnionRoomPlayerName)'in buffer
+copy=function(Path('src/string_util.c').read_text(),'u8 *StringCopy(u8 *dest, const u8 *src)')
+c='''typedef unsigned char u8;
+typedef unsigned int u32;
+typedef unsigned short bool16;
+#define EOS 255
+#define TRUE 1
+#define FALSE 0
+#define ARRAY_COUNT(a) (sizeof(a)/sizeof((a)[0]))
+static struct {u8 before;u8 name[12];u8 after;} name_guard={0xa5,{EOS},0x5a};
+static struct {u8 before;u8 bytes[32];u8 after;} dest_guard={0xa5,{0},0x5a};
+#define sUnionRoomPlayerName name_guard.name
+#define gStringVar1 dest_guard.bytes
+volatile u32 qa_results[8];
+'''+copy+'\n'+buffer+'''
+static u32 guards(void)
+{
+ return name_guard.before==0xa5 && name_guard.after==0x5a &&
+        dest_guard.before==0xa5 && dest_guard.after==0x5a;
+}
+static void setup(u8 name_byte)
+{
+ u32 i;name_guard.before=dest_guard.before=0xa5;
+ name_guard.after=dest_guard.after=0x5a;
+ for(i=0;i<12;i++)sUnionRoomPlayerName[i]=name_byte;
+ for(i=0;i<32;i++)gStringVar1[i]=0xa6;
+}
+static u32 untouched(u32 start)
+{
+ u32 i;for(i=start;i<32;i++)if(gStringVar1[i]!=0xa6)return 0;return guards();
+}
+void qa_main(void)
+{
+ u32 i,ok,initial=sUnionRoomPlayerName[0]==EOS;
+ setup(EOS);qa_results[0]=initial && BufferUnionRoomPlayerName()==FALSE && untouched(0);
+ setup(0);qa_results[1]=BufferUnionRoomPlayerName()==FALSE && sUnionRoomPlayerName[0]==EOS && untouched(0);
+ for(i=1;i<12;i++)if(sUnionRoomPlayerName[i]!=0)qa_results[1]=0;
+ setup(0xaa);qa_results[2]=BufferUnionRoomPlayerName()==FALSE && sUnionRoomPlayerName[0]==EOS && untouched(0);
+ for(i=1;i<12;i++)if(sUnionRoomPlayerName[i]!=0xaa)qa_results[2]=0;
+ setup(0xaa);sUnionRoomPlayerName[0]=0xbb;sUnionRoomPlayerName[1]=0xbc;sUnionRoomPlayerName[2]=0xbd;sUnionRoomPlayerName[3]=EOS;
+ qa_results[3]=BufferUnionRoomPlayerName()==TRUE && sUnionRoomPlayerName[0]==EOS &&
+  gStringVar1[0]==0xbb && gStringVar1[1]==0xbc && gStringVar1[2]==0xbd && gStringVar1[3]==EOS && untouched(4);
+ setup(0xaa);for(i=0;i<11;i++)sUnionRoomPlayerName[i]=(u8)(0xbb+i);sUnionRoomPlayerName[11]=EOS;
+ qa_results[4]=BufferUnionRoomPlayerName()==TRUE && sUnionRoomPlayerName[0]==EOS && gStringVar1[11]==EOS && untouched(12);
+ for(i=0;i<11;i++)if(gStringVar1[i]!=(u8)(0xbb+i))qa_results[4]=0;
+ qa_results[5]=BufferUnionRoomPlayerName()==FALSE && guards() && untouched(12);
+ for(i=0;i<11;i++)if(gStringVar1[i]!=(u8)(0xbb+i))qa_results[5]=0;
+ setup(0xaa);sUnionRoomPlayerName[0]=EOS;
+ qa_results[6]=BufferUnionRoomPlayerName()==FALSE && sUnionRoomPlayerName[0]==EOS && untouched(0);
+ ok=1;for(i=0;i<7;i++)if(qa_results[i]!=1)ok=0;
+ qa_results[7]=ok ? 0x4f4b0007 : 0xbad00007;
+}
+'''
+asm='''.syntax unified
+.arm
+.section .text.start,"ax"
+.global _qa_start
+_qa_start:
+ ldr sp,=0x03007f00
+ ldr r0,=_ldata
+ ldr r1,=_sdata
+ ldr r2,=_edata
+1: cmp r1,r2
+ bhs 2f
+ ldrb r3,[r0],#1
+ strb r3,[r1],#1
+ b 1b
+2: ldr r1,=_sbss
+ ldr r2,=_ebss
+ mov r3,#0
+3: cmp r1,r2
+ bhs 4f
+ strb r3,[r1],#1
+ b 3b
+4: bl qa_main
+5: b 5b
+'''
+link='''MEMORY
+{
+    ROM (rx) : ORIGIN = 0x080000C0, LENGTH = 128K
+    RAM (rwx) : ORIGIN = 0x02000000, LENGTH = 256K
+}
+SECTIONS
+{
+    .text :
+    {
+        KEEP(*(.text.start))
+        *(.text*)
+        *(.rodata*)
+    } > ROM
+    .ARM.exidx : { *(.ARM.exidx*) } > ROM
+    .data :
+    {
+        _sdata = .;
+        *(.data*)
+        _edata = .;
+    } > RAM AT > ROM
+    _ldata = LOADADDR(.data);
+    .bss (NOLOAD) :
+    {
+        _sbss = .;
+        *(.bss*)
+        *(COMMON)
+        _ebss = .;
+    } > RAM
+}
+'''
+class ReadOnlyUnitEmu(Emu):
+ def write(self,*args,**kwargs):raise AssertionError('no controller writes in unit control')
+tool=Path(os.environ.get('DEVKITARM','/opt/devkitpro/devkitARM'))/'bin'
+with tempfile.TemporaryDirectory(prefix='native-name-unit-')as td:
+ td=Path(td);cf=td/'a.c';sf=td/'s.S';lf=td/'a.ld';elf=td/'unit.elf';binary=td/'body.bin'
+ cf.write_text(c);sf.write_text(asm);lf.write_text(link)
+ subprocess.run([str(tool/'arm-none-eabi-gcc'),'-marm','-march=armv4t','-mabi=apcs-gnu','-Os',
+  '-ffreestanding','-fno-builtin','-fno-inline','-fno-tree-loop-distribute-patterns',
+  '-fno-unwind-tables','-fno-asynchronous-unwind-tables','-nostdlib','-Wl,--entry=_qa_start',
+  '-Wl,--build-id=none','-Wl,-T,'+str(lf),str(sf),str(cf),'-o',str(elf)],check=True)
+ subprocess.run([str(tool/'arm-none-eabi-objcopy'),'-O','binary',str(elf),str(binary)],check=True)
+ table=subprocess.check_output([str(tool/'arm-none-eabi-objdump'),'-t',str(elf)],text=True)
+ matches=re.findall(r'(?m)^([0-9a-fA-F]{8})\s+.*\bqa_results$',table)
+ assert len(matches)==1
+ address=int(matches[0],16);body=binary.read_bytes();assert 0<len(body)<128*1024
+ header=bytearray(rom.read_bytes()[:0xc0]);struct.pack_into('<I',header,0,0xea00002e)
+ header[0xa0:0xac]=b'QA UNIONNAME';header[0xac:0xb0]=b'QANU'
+ header[0xbd]=(-sum(header[0xa0:0xbd])-0x19)&255
+ image=bytes(header)+body;image+=b'\xff'*(max(32768,len(image))-len(image))
+ unit=td/'native-name-unit.gba';unit.write_bytes(image)
+ with ReadOnlyUnitEmu(str(unit),sym='')as e:
+  values=None
+  for i in range(20):
+   e.run(60);values=struct.unpack('<8I',e.read(address,32))
+   if values[7]in(0x4f4b0007,0xbad00007):break
+  assert values[7]==0x4f4b0007 and all(v==1 for v in values[:7]),('native ARM controls failed',values)
+ (out/'native-name-unit.gba').write_bytes(image);(out/'native-name-unit.elf').write_bytes(elf.read_bytes())
+ result={'product_rom_sha256':original,'product_union_source_sha256':digest(source.encode()),
+  'exact_product_function_sha256':digest(buffer.encode()),'exact_string_copy_sha256':digest(copy.encode()),
+  'native_ARM_controls':dict(zip(['EOS_initializer','all_zero_unterminated_12','nonEOS_unterminated_12',
+   'valid_short_name','valid_maximum_11_name','consumed_name_repeat','explicit_empty_name'],values[:7])),
+  'source_and_destination_canaries_unchanged':True,'native_result_address':hex(address),
+  'unit_rom_sha256':digest(image),'unit_firmware_separate_from_game':True,'gameplay_or_RFUservice_completion_claimed':False,
+  'forced_controller_memory_writes':0,'user_SAV_loaded_or_modified':False,'all_pass':True}
+ assert digest(rom.read_bytes())==original,'input product ROM changed'
+ (out/'result.json').write_text(json.dumps(result,indent=2));print(json.dumps(result),flush=True)

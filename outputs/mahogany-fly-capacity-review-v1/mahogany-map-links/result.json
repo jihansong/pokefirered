@@ -1,0 +1,540 @@
+{
+  "rom_sha256": "6df50d9dd6a4b859f086f38264e915cc88ed620889fd28137f4d2fdbfd1d80b7",
+  "cases": [
+    {
+      "case": "ecruteak_into_east_gate",
+      "from": [
+        "EcruteakCity",
+        36,
+        21
+      ],
+      "to": "EcruteakCity_EastGate",
+      "key": "UP",
+      "actual_location": [
+        76,
+        81,
+        7,
+        10
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "east_gate_back_ecruteak",
+      "from": [
+        "EcruteakCity_EastGate",
+        7,
+        9
+      ],
+      "to": "EcruteakCity",
+      "key": "DOWN",
+      "actual_location": [
+        76,
+        51,
+        36,
+        21
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "east_gate_into_route42",
+      "from": [
+        "EcruteakCity_EastGate",
+        7,
+        2
+      ],
+      "to": "JohtoRoute42",
+      "key": "UP",
+      "actual_location": [
+        76,
+        82,
+        3,
+        10
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "route42_back_east_gate",
+      "from": [
+        "JohtoRoute42",
+        3,
+        10
+      ],
+      "to": "EcruteakCity_EastGate",
+      "key": "UP",
+      "actual_location": [
+        76,
+        81,
+        7,
+        2
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "route42_into_mortar_west",
+      "from": [
+        "JohtoRoute42",
+        10,
+        7
+      ],
+      "to": "MtMortar_1F",
+      "key": "UP",
+      "actual_location": [
+        76,
+        83,
+        17,
+        2
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "mortar_west_back_route42",
+      "from": [
+        "MtMortar_1F",
+        17,
+        3
+      ],
+      "to": "JohtoRoute42",
+      "key": "UP",
+      "actual_location": [
+        76,
+        82,
+        10,
+        7
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "route42_into_mortar_east",
+      "from": [
+        "JohtoRoute42",
+        33,
+        7
+      ],
+      "to": "MtMortar_1F",
+      "key": "UP",
+      "actual_location": [
+        76,
+        83,
+        18,
+        37
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "mortar_east_back_route42",
+      "from": [
+        "MtMortar_1F",
+        18,
+        36
+      ],
+      "to": "JohtoRoute42",
+      "key": "DOWN",
+      "actual_location": [
+        76,
+        82,
+        33,
+        7
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "route42_right_mahogany",
+      "from": [
+        "JohtoRoute42",
+        47,
+        11
+      ],
+      "to": "MahoganyTown",
+      "key": "RIGHT",
+      "actual_location": [
+        76,
+        84,
+        0,
+        16
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "mahogany_left_route42",
+      "from": [
+        "MahoganyTown",
+        0,
+        16
+      ],
+      "to": "JohtoRoute42",
+      "key": "LEFT",
+      "actual_location": [
+        76,
+        82,
+        47,
+        11
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "mahogany_north_route43",
+      "from": [
+        "MahoganyTown",
+        15,
+        0
+      ],
+      "to": "JohtoRoute43",
+      "key": "UP",
+      "actual_location": [
+        76,
+        89,
+        11,
+        31
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "route43_south_mahogany",
+      "from": [
+        "JohtoRoute43",
+        11,
+        31
+      ],
+      "to": "MahoganyTown",
+      "key": "DOWN",
+      "actual_location": [
+        76,
+        84,
+        15,
+        0
+      ],
+      "fresh_native_taps": 1,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "route43_north_lake",
+      "from": [
+        "JohtoRoute43",
+        11,
+        0
+      ],
+      "to": "LakeOfRage",
+      "key": "UP",
+      "actual_location": [
+        76,
+        90,
+        19,
+        35
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "lake_south_route43",
+      "from": [
+        "LakeOfRage",
+        19,
+        35
+      ],
+      "to": "JohtoRoute43",
+      "key": "DOWN",
+      "actual_location": [
+        76,
+        89,
+        11,
+        0
+      ],
+      "fresh_native_taps": 1,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "mahogany_enter_pokemoncenter_1f",
+      "from": [
+        "MahoganyTown",
+        7,
+        25
+      ],
+      "to": "MahoganyTown_PokemonCenter_1F",
+      "key": "UP",
+      "actual_location": [
+        76,
+        85,
+        7,
+        8
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "mahogany_exit_pokemoncenter_1f",
+      "from": [
+        "MahoganyTown_PokemonCenter_1F",
+        7,
+        7
+      ],
+      "to": "MahoganyTown",
+      "key": "DOWN",
+      "actual_location": [
+        76,
+        84,
+        7,
+        25
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "mahogany_enter_shop",
+      "from": [
+        "MahoganyTown",
+        21,
+        24
+      ],
+      "to": "MahoganyTown_Shop",
+      "key": "UP",
+      "actual_location": [
+        76,
+        87,
+        4,
+        7
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "mahogany_exit_shop",
+      "from": [
+        "MahoganyTown_Shop",
+        4,
+        6
+      ],
+      "to": "MahoganyTown",
+      "key": "DOWN",
+      "actual_location": [
+        76,
+        84,
+        21,
+        24
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "mahogany_enter_gym",
+      "from": [
+        "MahoganyTown",
+        15,
+        9
+      ],
+      "to": "MahoganyTown_Gym",
+      "key": "UP",
+      "actual_location": [
+        76,
+        88,
+        6,
+        14
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "mahogany_exit_gym",
+      "from": [
+        "MahoganyTown_Gym",
+        6,
+        13
+      ],
+      "to": "MahoganyTown",
+      "key": "DOWN",
+      "actual_location": [
+        76,
+        84,
+        15,
+        9
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "mahogany_center_upstairs",
+      "from": [
+        "MahoganyTown_PokemonCenter_1F",
+        2,
+        6
+      ],
+      "to": "MahoganyTown_PokemonCenter_2F",
+      "key": "LEFT",
+      "actual_location": [
+        76,
+        86,
+        2,
+        6
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "mahogany_center_downstairs",
+      "from": [
+        "MahoganyTown_PokemonCenter_2F",
+        2,
+        6
+      ],
+      "to": "MahoganyTown_PokemonCenter_1F",
+      "key": "LEFT",
+      "actual_location": [
+        76,
+        85,
+        2,
+        6
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "shop_down_to_hq",
+      "from": [
+        "MahoganyTown_Shop",
+        7,
+        3
+      ],
+      "to": "JohtoRocketHQ_B1F",
+      "key": "UP",
+      "actual_location": [
+        76,
+        91,
+        8,
+        20
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "hq_up_to_shop",
+      "from": [
+        "JohtoRocketHQ_B1F",
+        8,
+        19
+      ],
+      "to": "MahoganyTown_Shop",
+      "key": "DOWN",
+      "actual_location": [
+        76,
+        87,
+        7,
+        2
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "hq_b1_to_b2",
+      "from": [
+        "JohtoRocketHQ_B1F",
+        30,
+        2
+      ],
+      "to": "JohtoRocketHQ_B2F",
+      "key": "RIGHT",
+      "actual_location": [
+        76,
+        92,
+        30,
+        2
+      ],
+      "fresh_native_taps": 3,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "hq_b2_to_b1",
+      "from": [
+        "JohtoRocketHQ_B2F",
+        29,
+        2
+      ],
+      "to": "JohtoRocketHQ_B1F",
+      "key": "RIGHT",
+      "actual_location": [
+        76,
+        91,
+        31,
+        2
+      ],
+      "fresh_native_taps": 3,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "hq_b2_to_b3",
+      "from": [
+        "JohtoRocketHQ_B2F",
+        28,
+        3
+      ],
+      "to": "JohtoRocketHQ_B3F",
+      "key": "UP",
+      "actual_location": [
+        76,
+        93,
+        28,
+        2
+      ],
+      "fresh_native_taps": 2,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "hq_b3_to_b2",
+      "from": [
+        "JohtoRocketHQ_B3F",
+        29,
+        2
+      ],
+      "to": "JohtoRocketHQ_B2F",
+      "key": "LEFT",
+      "actual_location": [
+        76,
+        92,
+        28,
+        2
+      ],
+      "fresh_native_taps": 3,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    }
+  ],
+  "all_pass": true,
+  "original_files_unchanged": true,
+  "forced_memory_writes": 0
+}

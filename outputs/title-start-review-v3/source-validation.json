@@ -1,0 +1,73 @@
+{
+  "generated": true,
+  "browser_review_pending": false,
+  "rom_integrated": false,
+  "approved_png_unchanged": true,
+  "voice_unchanged": true,
+  "new_artwork": false,
+  "method": "Reuse three existing release mouth paths in a native SVG overlay; retain approved base PNG",
+  "mouth_roi": [
+    170,
+    109,
+    194,
+    122
+  ],
+  "mouth_source": "outputs/pikachu-expression-edit-v1/03-release.svg",
+  "title_layout": [
+    152,
+    56,
+    86,
+    90
+  ],
+  "lightning_animation_frames": [
+    5,
+    5,
+    8,
+    5,
+    5
+  ],
+  "effect_kind": "existing-continuous-electricity",
+  "effect_sha256": "05fc393c54d7a7030be0bc86506ea7d0ef455e4b26ace4a6e3e3fadd6bcc2189",
+  "source_hashes": {
+    "outputs/title-font-python-v3/title-font-candidate-240x160.png": "7e370cc2d5b4cd71a1ae68b1da6934b62a049fc9e83efb2fc51619231cc122c5",
+    "outputs/pikachu-expression-edit-v1/03-release.svg": "47369561c896b4e1a99994d3e701b9c02803875000874bab91b033e004c79546",
+    "outputs/title-front-edit-v1/front-mono-fitted.svg": "11f5011985dcbd17add685f9b9387781c0ef71d9f9d97ead06d701275e30a330",
+    "graphics/battle_anims/sprites/lightning.png": "26a0fbf2622cf32ddff6193e8bfaccfa5a655ad85737292b0d1466caba934763",
+    "reference/audio/pikachu-gF1FJRM8Wck/publisher-original/pokemon-video-game-pikachu-voice-sound-effect.wav": "10a2a254c12eed24a7e4d7a4db9ffff3f318ae20c17a5b15dbe53bbcf4c50734"
+  },
+  "routes": {
+    "/title-approved.png": "outputs/title-font-python-v3/title-font-candidate-240x160.png",
+    "/title-start-mouth.svg": "outputs/title-start-review-v3/start-mouth.svg",
+    "/title-native-lightning.png": "graphics/battle_anims/sprites/lightning.png",
+    "/title-original-pika.wav": "reference/audio/pikachu-gF1FJRM8Wck/publisher-original/pokemon-video-game-pikachu-voice-sound-effect.wav",
+    "/title-start-electricity.wav": "outputs/title-continuous-crackle-v3/continuous-electricity.wav",
+    "/title-current-continuous-electricity.mp4": "outputs/title-frlg-music-v4/title-frlg-music-crackle.mp4"
+  },
+  "limitations": [
+    "Interactive browser preview; not installed in the game.",
+    "Mouth is an existing expression overlay, not newly drawn artwork.",
+    "Original thunderbolt SFX is pending if effect_kind is existing-continuous-electricity."
+  ],
+  "diagnostic_dom": "canvas#screen.dataset.review",
+  "previous_html_sha256": "fe197688fb9fa749412420d9c9380b45357bac29aef55469bc471cb56d32b6ba",
+  "new_html_sha256": "84611d14edec4d6d25fc8f72b7e65a15fb4bb2b3530ce28797a74a89b8bc4318",
+  "teeth_visible": false,
+  "upper_edge": "Approved W-shaped closed-mouth curve retained",
+  "mouth_interior": "#483008",
+  "tongue": "#D8A828",
+  "mouth_source_revision": "v3-no-teeth",
+  "mouth_svg_sha256": "8c1063b98b3ad7f40d80e2d4d0f6f2f87919751d0cb979bf97bf028b1f979823",
+  "html_with_static_review_sha256": "8ed00b401fb7ddf535656014231711cac898d025861384b7af76fa1929db3cf7",
+  "browser_validation": {
+    "start_events": 2,
+    "voice_effect_same_scheduled_time": true,
+    "mouth_first_offset_seconds": 0.012,
+    "voice_duration_seconds": 1.5997916666666667,
+    "finished": true,
+    "mouth_changed_pixels": 128,
+    "mouth_outside_roi": 0,
+    "static_pixels_preserved": true,
+    "audio_listening_verified": false,
+    "native_game_integrated": false
+  }
+}

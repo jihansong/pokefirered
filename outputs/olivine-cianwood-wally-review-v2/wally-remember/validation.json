@@ -1,0 +1,61 @@
+{
+  "pass": true,
+  "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+  "elf_sha256": "4b6ab0e3cea92de40cadd88a073d0820e9435b0e122d19079f009e4ae95c11b5",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-wally-final-remember",
+  "fixture": "temporary native battle fixture; original SAV, PC and existing dex records preserved",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [
+    {
+      "trainer": "TRAINER_HOENN_WALLY_VICTORY_ROAD_FINAL",
+      "enemy_species": [
+        359,
+        316,
+        363,
+        82,
+        394,
+        0
+      ],
+      "start_frame": 1727,
+      "moves": [
+        2,
+        1,
+        1,
+        2,
+        3
+      ],
+      "end_frame": 5983
+    }
+  ],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_story_not_entire_regions": true,
+  "initial_native_var_result": 0,
+  "dialogue_branch": "Post",
+  "original_emerald_vr1_enemy_team_verified": true,
+  "native_save": {
+    "counter_before": 60,
+    "counter_after": 61,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_HOENN_BADGE08_GET": true,
+      "FLAG_HOENN_LEAGUE_CLEAR": false
+    },
+    "trainers": {
+      "TRAINER_HOENN_WALLY_VICTORY_ROAD_FINAL": true,
+      "TRAINER_HOENN_WALLY_MAUVILLE": true
+    },
+    "hm08": 0,
+    "sha256": "b108daf4b9a3492e84c287369c79cf0aa85f308295a4cbece86067fa72866ccd"
+  },
+  "native_win_saved_without_repeat": true,
+  "full_original_storage_unchanged": true,
+  "old_owned_and_seen_dex_bits_preserved": true,
+  "original_saves_unchanged": true
+}

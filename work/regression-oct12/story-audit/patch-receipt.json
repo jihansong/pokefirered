@@ -1,0 +1,8 @@
+{
+  "before_exit": 1,
+  "after_exit": 0,
+  "before_sha256": "cf8059fc75a3a70fe17a0879f1b8c6b335107e28c969fd0613f0f9a6e7a36404",
+  "after_sha256": "7f768bbde523f05d06d11281b5d8fe846306b40dfeb1e7936cc017507fe4e6a1",
+  "game_source_changed": false,
+  "ROM_changed": false
+}

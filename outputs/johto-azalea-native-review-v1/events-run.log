@@ -1,0 +1,35 @@
+ok   johto_azalea_violet_south
+ok   johto_azalea_route32_north
+ok   johto_azalea_route33_west
+ok   johto_azalea_azalea_east
+ok   johto_azalea_north_cave_roundtrip
+ok   johto_azalea_south_cave_roundtrip
+ok   johto_azalea_center_door_roundtrip
+ok   johto_azalea_mart_door_roundtrip
+ok   johto_azalea_kurt_door_roundtrip
+ok   johto_azalea_gym_door_roundtrip
+ok   johto_azalea_well_door_roundtrip
+ok   johto_azalea_center_heals
+ok   johto_azalea_kurt_elm_gate
+ok   johto_azalea_kurt_request_once
+ok   johto_azalea_kurt_request_repeat
+ok   johto_azalea_kurt_report_reward_repeat
+ok   johto_azalea_kurt_full_stack_keeps_story_progress
+ok   johto_azalea_kurt_reward_retry_after_space
+ok   johto_azalea_kurt_claimed_reward_not_reissued
+ok   johto_azalea_commander_request_gate
+ok   johto_azalea_commander_neither_guard
+ok   johto_azalea_commander_guard_b_pending
+ok   johto_azalea_commander_guard_a_pending
+ok   johto_azalea_bugsy_first_badge_missing
+ok   johto_azalea_bugsy_report_missing
+ok   johto_azalea_bugsy_tm_award_repeat
+ok   johto_azalea_bugsy_tm_full_retry_kept
+ok   johto_azalea_bugsy_tm_retry_after_space
+ok   johto_azalea_bugsy_claimed_tm_not_reissued
+ok   johto_azalea_slowpoke_worried
+ok   johto_azalea_slowpoke_safe
+ok   johto_azalea_route32_first_badge_gate
+FAIL johto_azalea_route32_first_badge_opens
+     expect deref gSaveBlock1Ptr 2 = 5: got 7
+32/33 cases passed

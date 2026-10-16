@@ -1,0 +1,199 @@
+{
+  "map": "MAP_JOHTO_ROUTE34",
+  "base_label": "sJohtoRoute34",
+  "land_mons": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 10,
+        "max_level": 10,
+        "species": "SPECIES_DROWZEE"
+      },
+      {
+        "min_level": 10,
+        "max_level": 10,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 11,
+        "max_level": 11,
+        "species": "SPECIES_DROWZEE"
+      },
+      {
+        "min_level": 11,
+        "max_level": 11,
+        "species": "SPECIES_PIDGEY"
+      },
+      {
+        "min_level": 11,
+        "max_level": 11,
+        "species": "SPECIES_DROWZEE"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_ABRA"
+      },
+      {
+        "min_level": 10,
+        "max_level": 10,
+        "species": "SPECIES_DITTO"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_PIDGEY"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_ABRA"
+      },
+      {
+        "min_level": 11,
+        "max_level": 11,
+        "species": "SPECIES_DITTO"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_DITTO"
+      }
+    ]
+  },
+  "land_mons_morning": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 10,
+        "max_level": 10,
+        "species": "SPECIES_DROWZEE"
+      },
+      {
+        "min_level": 10,
+        "max_level": 10,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 11,
+        "max_level": 11,
+        "species": "SPECIES_DROWZEE"
+      },
+      {
+        "min_level": 11,
+        "max_level": 11,
+        "species": "SPECIES_PIDGEY"
+      },
+      {
+        "min_level": 11,
+        "max_level": 11,
+        "species": "SPECIES_DROWZEE"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_ABRA"
+      },
+      {
+        "min_level": 10,
+        "max_level": 10,
+        "species": "SPECIES_DITTO"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_PIDGEY"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_ABRA"
+      },
+      {
+        "min_level": 11,
+        "max_level": 11,
+        "species": "SPECIES_DITTO"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_DITTO"
+      }
+    ]
+  },
+  "land_mons_night": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 10,
+        "max_level": 10,
+        "species": "SPECIES_DROWZEE"
+      },
+      {
+        "min_level": 10,
+        "max_level": 10,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 11,
+        "max_level": 11,
+        "species": "SPECIES_DROWZEE"
+      },
+      {
+        "min_level": 11,
+        "max_level": 11,
+        "species": "SPECIES_HOOTHOOT"
+      },
+      {
+        "min_level": 11,
+        "max_level": 11,
+        "species": "SPECIES_DROWZEE"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_ABRA"
+      },
+      {
+        "min_level": 10,
+        "max_level": 10,
+        "species": "SPECIES_DITTO"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_RATTATA"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_HOOTHOOT"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_ABRA"
+      },
+      {
+        "min_level": 11,
+        "max_level": 11,
+        "species": "SPECIES_DITTO"
+      },
+      {
+        "min_level": 12,
+        "max_level": 12,
+        "species": "SPECIES_DITTO"
+      }
+    ]
+  }
+}

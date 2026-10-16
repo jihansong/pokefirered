@@ -1,0 +1,58 @@
+{
+  "generated_utc": "2026-10-15T13:09:28.848956+00:00",
+  "current_rom": {
+    "path": "/workspaces/pokefirered/pokemonthyl.gba",
+    "sha256": "7d66f47ad68e192d9f5916d9ef9bd9c9fb42fd80bcd3e2835b32cd328a208636",
+    "ELF_sha256": "fdcb9ec35de57dc4299878af4251193a67c78a6a0d27b2b9bbd03458972207d0",
+    "bytes": 33554432,
+    "status": "Actual HnS Elm donor integrated and scoped native verified; not whole-region release",
+    "RAM_symbols_address_size_type_unchanged": 913,
+    "save_structures_changed": false,
+    "original_saves_unchanged": 15,
+    "build_return_code": 0,
+    "build_warnings": [
+      "make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.",
+      "/opt/devkitpro/devkitARM/bin/arm-none-eabi-ld: warning: ../../pokemonthyl.elf has a LOAD segment with RWX permissions"
+    ],
+    "native_evidence": "work/hns-donor-port-20261015/elm-native-r3/elm-validation.json"
+  },
+  "progress": {
+    "user_directive": "work/hns-donor-port-20261015/user-reuse-instruction.json",
+    "inspiration_only_interpretation_superseded": true,
+    "donor_repository": "PokemonHnS-Development/pokehns-expansion",
+    "donor_commit": "167aa6d537b109bb229c231ddce4616974c4da71",
+    "Elm": {
+      "ROM_integrated": true,
+      "GFX": 238,
+      "frames": 9,
+      "native_cases_passed": 6,
+      "professor_distinct_from_assistant": true,
+      "root_actual_native_visual_review": true,
+      "natural_full_story_completion": false,
+      "old_lab_cached_NPC_case": "not applicable; original SAV saved elsewhere"
+    },
+    "native_first_fixture_cold": {
+      "strict_equality": false,
+      "exact_derived_Hoenn_hide_bits_initialized": 11,
+      "explicitly_recorded": true
+    },
+    "second_actual_SAVE_cold": {
+      "counter": [
+        85,
+        86
+      ],
+      "checksummed_sectors": 14,
+      "party_PC_all_flags_vars_fourfold_Dex_equal": true
+    },
+    "map_donor_port": {
+      "status": "local frontier r4c candidate; save migration not wired; NOT applied",
+      "NewBark_Route29_Route27_Airstrip_complete": false
+    },
+    "whole_three_region_story_and_maps_complete": false,
+    "DELTA_Bad_Egg_resolved": false,
+    "Misty_S1_battle_art_complete": false,
+    "original_SAV_modified": false,
+    "root_visual_evidence": "work/hns-donor-port-20261015/elm-native-r2/face-south.png"
+  },
+  "status_sha256": "e718abbcd339fa7aa950a242ff5f42ae46cd581531cc81b69233a691af024f95"
+}

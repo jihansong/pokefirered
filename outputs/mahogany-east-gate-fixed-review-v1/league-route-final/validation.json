@@ -1,0 +1,2296 @@
+{
+  "pass": true,
+  "rom_sha256": "ab47fb761ae2d93e0008c98172f9dee4e89bd034037efa9abef2d86b436f6f81",
+  "elf_sha256": "584f0b0f22574a06f1e00d78815bf95fe6f00681814089fd0767edfa0619ec3d",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-original-vr-league-approach",
+  "fixture": "temporary Lapras mover plus unedited original starter Pikachu; no source save changes",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [
+    {
+      "trainer": "TRAINER_HOENN_HALLE",
+      "enemy_species": [
+        322,
+        376,
+        0,
+        0,
+        0,
+        0
+      ],
+      "start_frame": 1785,
+      "moves": [
+        2,
+        2
+      ],
+      "end_frame": 3255
+    },
+    {
+      "label": "original-south-rock-one",
+      "native_removed": true,
+      "flag": "FLAG_TEMP_1C"
+    },
+    {
+      "label": "no-player-obstacle-overlap",
+      "player": [
+        20,
+        26
+      ],
+      "obstacles": [
+        {
+          "slot": 5,
+          "id": 13,
+          "gfx": 97,
+          "xy": [
+            21,
+            25
+          ],
+          "sprite": 3
+        },
+        {
+          "slot": 9,
+          "id": 12,
+          "gfx": 97,
+          "xy": [
+            20,
+            27
+          ],
+          "sprite": 6
+        },
+        {
+          "slot": 10,
+          "id": 19,
+          "gfx": 96,
+          "xy": [
+            21,
+            26
+          ],
+          "sprite": 7
+        }
+      ]
+    },
+    {
+      "label": "original-south-boulder",
+      "before": [
+        20,
+        26
+      ],
+      "after": [
+        20,
+        27
+      ],
+      "native_push": true
+    },
+    {
+      "label": "original-south-rock-two",
+      "native_removed": true,
+      "flag": "FLAG_TEMP_1D"
+    },
+    {
+      "label": "original-central-ladder-to-1f",
+      "from_map": "VictoryRoad_B1F",
+      "to_map": "HoennVictoryRoad_1F",
+      "arrival": [
+        21,
+        32
+      ]
+    },
+    {
+      "trainer": "TRAINER_HOENN_EDGAR_VICTORY_ROAD",
+      "enemy_species": [
+        345,
+        310,
+        0,
+        0,
+        0,
+        0
+      ],
+      "start_frame": 7460,
+      "moves": [
+        3,
+        3
+      ],
+      "end_frame": 9084
+    },
+    {
+      "label": "original-vr-north-city-exit",
+      "arrival": [
+        18,
+        27
+      ]
+    },
+    {
+      "label": "original-vr-to-league-lobby",
+      "arrival": [
+        9,
+        9
+      ],
+      "elite_four_existing_checks_not_repeated": true
+    }
+  ],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_story_not_entire_regions": true,
+  "johto_badges_defined": [
+    "FLAG_JOHTO_BADGE01_GET",
+    "FLAG_JOHTO_BADGE02_GET",
+    "FLAG_JOHTO_BADGE03_GET",
+    "FLAG_JOHTO_BADGE04_GET",
+    "FLAG_JOHTO_BADGE05_GET",
+    "FLAG_JOHTO_BADGE06_GET",
+    "FLAG_JOHTO_BADGE07_GET"
+  ],
+  "palette_active_abi_mask": {
+    "size": 16,
+    "offset": 7,
+    "mask": 128
+  },
+  "follower_checks": [
+    {
+      "label": "south-first-rock-passage",
+      "map": [
+        67,
+        44
+      ],
+      "player_xy": [
+        20,
+        25
+      ],
+      "follower_xy": [
+        19,
+        25
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "original-south-boulder",
+      "map": [
+        67,
+        44
+      ],
+      "player_xy": [
+        20,
+        26
+      ],
+      "follower_xy": [
+        20,
+        25
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "original-league-approach-cold-right",
+      "map": [
+        59,
+        10
+      ],
+      "player_xy": [
+        10,
+        9
+      ],
+      "follower_xy": [
+        9,
+        9
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "original-league-approach-cold-left",
+      "map": [
+        59,
+        10
+      ],
+      "player_xy": [
+        9,
+        9
+      ],
+      "follower_xy": [
+        10,
+        9
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    }
+  ],
+  "route_steps": [
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        18,
+        16
+      ],
+      "after": [
+        67,
+        44,
+        18,
+        17
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        44,
+        18,
+        17
+      ],
+      "after": [
+        67,
+        44,
+        17,
+        17
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        44,
+        17,
+        17
+      ],
+      "after": [
+        67,
+        44,
+        16,
+        17
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        16,
+        17
+      ],
+      "after": [
+        67,
+        44,
+        16,
+        18
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        16,
+        18
+      ],
+      "after": [
+        67,
+        44,
+        16,
+        19
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        44,
+        16,
+        19
+      ],
+      "after": [
+        67,
+        44,
+        15,
+        19
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        15,
+        19
+      ],
+      "after": [
+        67,
+        44,
+        15,
+        20
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        15,
+        20
+      ],
+      "after": [
+        67,
+        44,
+        15,
+        21
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        15,
+        21
+      ],
+      "after": [
+        67,
+        44,
+        15,
+        22
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        15,
+        22
+      ],
+      "after": [
+        67,
+        44,
+        15,
+        23
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        15,
+        23
+      ],
+      "after": [
+        67,
+        44,
+        15,
+        24
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        15,
+        24
+      ],
+      "after": [
+        67,
+        44,
+        15,
+        25
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        15,
+        25
+      ],
+      "after": [
+        67,
+        44,
+        16,
+        25
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        16,
+        25
+      ],
+      "after": [
+        67,
+        44,
+        17,
+        25
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        17,
+        25
+      ],
+      "after": [
+        67,
+        44,
+        18,
+        25
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        18,
+        25
+      ],
+      "after": [
+        67,
+        44,
+        19,
+        25
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        19,
+        25
+      ],
+      "after": [
+        67,
+        44,
+        20,
+        25
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        44,
+        20,
+        25
+      ],
+      "after": [
+        67,
+        44,
+        20,
+        26
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        20,
+        26
+      ],
+      "after": [
+        67,
+        44,
+        21,
+        26
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        44,
+        21,
+        26
+      ],
+      "after": [
+        67,
+        44,
+        22,
+        26
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        44,
+        22,
+        26
+      ],
+      "after": [
+        67,
+        44,
+        22,
+        25
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        44,
+        22,
+        25
+      ],
+      "after": [
+        67,
+        44,
+        22,
+        24
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        44,
+        22,
+        24
+      ],
+      "after": [
+        67,
+        44,
+        22,
+        23
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        44,
+        22,
+        23
+      ],
+      "after": [
+        67,
+        44,
+        22,
+        22
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        44,
+        22,
+        22
+      ],
+      "after": [
+        67,
+        44,
+        22,
+        21
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        44,
+        22,
+        21
+      ],
+      "after": [
+        67,
+        44,
+        21,
+        21
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        44,
+        21,
+        21
+      ],
+      "after": [
+        67,
+        43,
+        21,
+        32
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        21,
+        32
+      ],
+      "after": [
+        67,
+        43,
+        21,
+        31
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        21,
+        31
+      ],
+      "after": [
+        67,
+        43,
+        21,
+        30
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        21,
+        30
+      ],
+      "after": [
+        67,
+        43,
+        21,
+        29
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        21,
+        29
+      ],
+      "after": [
+        67,
+        43,
+        21,
+        28
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        21,
+        28
+      ],
+      "after": [
+        67,
+        43,
+        22,
+        28
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        22,
+        28
+      ],
+      "after": [
+        67,
+        43,
+        23,
+        28
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        23,
+        28
+      ],
+      "after": [
+        67,
+        43,
+        24,
+        28
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        24,
+        28
+      ],
+      "after": [
+        67,
+        43,
+        25,
+        28
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        25,
+        28
+      ],
+      "after": [
+        67,
+        43,
+        26,
+        28
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        26,
+        28
+      ],
+      "after": [
+        67,
+        43,
+        27,
+        28
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        27,
+        28
+      ],
+      "after": [
+        67,
+        43,
+        28,
+        28
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        28,
+        28
+      ],
+      "after": [
+        67,
+        43,
+        29,
+        28
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        29,
+        28
+      ],
+      "after": [
+        67,
+        43,
+        30,
+        28
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        30,
+        28
+      ],
+      "after": [
+        67,
+        43,
+        31,
+        28
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        31,
+        28
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        28
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        32,
+        28
+      ],
+      "after": [
+        67,
+        43,
+        33,
+        28
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        43,
+        33,
+        28
+      ],
+      "after": [
+        67,
+        43,
+        33,
+        29
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        43,
+        33,
+        29
+      ],
+      "after": [
+        67,
+        43,
+        33,
+        30
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        43,
+        33,
+        30
+      ],
+      "after": [
+        67,
+        43,
+        33,
+        31
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        33,
+        31
+      ],
+      "after": [
+        67,
+        43,
+        34,
+        31
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        34,
+        31
+      ],
+      "after": [
+        67,
+        43,
+        35,
+        31
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        35,
+        31
+      ],
+      "after": [
+        67,
+        43,
+        36,
+        31
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        36,
+        31
+      ],
+      "after": [
+        67,
+        43,
+        36,
+        30
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        36,
+        30
+      ],
+      "after": [
+        67,
+        43,
+        36,
+        29
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        36,
+        29
+      ],
+      "after": [
+        67,
+        43,
+        36,
+        28
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        36,
+        28
+      ],
+      "after": [
+        67,
+        43,
+        36,
+        27
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        36,
+        27
+      ],
+      "after": [
+        67,
+        43,
+        36,
+        26
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        36,
+        26
+      ],
+      "after": [
+        67,
+        43,
+        36,
+        25
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        36,
+        25
+      ],
+      "after": [
+        67,
+        43,
+        36,
+        24
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        43,
+        36,
+        24
+      ],
+      "after": [
+        67,
+        43,
+        35,
+        24
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        43,
+        35,
+        24
+      ],
+      "after": [
+        67,
+        43,
+        34,
+        24
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        43,
+        34,
+        24
+      ],
+      "after": [
+        67,
+        43,
+        33,
+        24
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        43,
+        33,
+        24
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        24
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        32,
+        24
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        23
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        32,
+        23
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        22
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        32,
+        22
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        21
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        32,
+        21
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        20
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        32,
+        20
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        19
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        32,
+        19
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        18
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        32,
+        18
+      ],
+      "after": [
+        67,
+        43,
+        33,
+        18
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        33,
+        18
+      ],
+      "after": [
+        67,
+        43,
+        33,
+        17
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        33,
+        17
+      ],
+      "after": [
+        67,
+        43,
+        33,
+        16
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        33,
+        16
+      ],
+      "after": [
+        67,
+        43,
+        33,
+        15
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        67,
+        43,
+        33,
+        15
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        15
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        32,
+        15
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        14
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        32,
+        14
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        13
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        32,
+        13
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        12
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        32,
+        12
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        11
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        32,
+        11
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        10
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        32,
+        10
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        9
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        32,
+        9
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        8
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        32,
+        8
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        7
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        32,
+        7
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        6
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        67,
+        43,
+        32,
+        6
+      ],
+      "after": [
+        67,
+        43,
+        32,
+        5
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        32,
+        5
+      ],
+      "after": [
+        67,
+        43,
+        33,
+        5
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        33,
+        5
+      ],
+      "after": [
+        67,
+        43,
+        34,
+        5
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        34,
+        5
+      ],
+      "after": [
+        67,
+        43,
+        35,
+        5
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        35,
+        5
+      ],
+      "after": [
+        67,
+        43,
+        36,
+        5
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        36,
+        5
+      ],
+      "after": [
+        67,
+        43,
+        37,
+        5
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        37,
+        5
+      ],
+      "after": [
+        67,
+        43,
+        38,
+        5
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        67,
+        43,
+        38,
+        5
+      ],
+      "after": [
+        67,
+        43,
+        39,
+        5
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        67,
+        43,
+        39,
+        5
+      ],
+      "after": [
+        43,
+        8,
+        18,
+        27
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        43,
+        8,
+        18,
+        27
+      ],
+      "after": [
+        43,
+        8,
+        18,
+        28
+      ]
+    },
+    {
+      "key": "DOWN",
+      "before": [
+        43,
+        8,
+        18,
+        28
+      ],
+      "after": [
+        43,
+        8,
+        18,
+        29
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        18,
+        29
+      ],
+      "after": [
+        43,
+        8,
+        18,
+        28
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        43,
+        8,
+        18,
+        28
+      ],
+      "after": [
+        43,
+        8,
+        19,
+        28
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        43,
+        8,
+        19,
+        28
+      ],
+      "after": [
+        43,
+        8,
+        20,
+        28
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        43,
+        8,
+        20,
+        28
+      ],
+      "after": [
+        43,
+        8,
+        21,
+        28
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        21,
+        28
+      ],
+      "after": [
+        43,
+        8,
+        21,
+        27
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        43,
+        8,
+        21,
+        27
+      ],
+      "after": [
+        43,
+        8,
+        22,
+        27
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        43,
+        8,
+        22,
+        27
+      ],
+      "after": [
+        43,
+        8,
+        23,
+        27
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        43,
+        8,
+        23,
+        27
+      ],
+      "after": [
+        43,
+        8,
+        24,
+        27
+      ]
+    },
+    {
+      "key": "RIGHT",
+      "before": [
+        43,
+        8,
+        24,
+        27
+      ],
+      "after": [
+        43,
+        8,
+        25,
+        27
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        25,
+        27
+      ],
+      "after": [
+        43,
+        8,
+        25,
+        26
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        25,
+        26
+      ],
+      "after": [
+        43,
+        8,
+        25,
+        25
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        25,
+        25
+      ],
+      "after": [
+        43,
+        8,
+        25,
+        24
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        25,
+        24
+      ],
+      "after": [
+        43,
+        8,
+        25,
+        23
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        25,
+        23
+      ],
+      "after": [
+        43,
+        8,
+        25,
+        22
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        25,
+        22
+      ],
+      "after": [
+        43,
+        8,
+        25,
+        21
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        25,
+        21
+      ],
+      "after": [
+        43,
+        8,
+        25,
+        20
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        25,
+        20
+      ],
+      "after": [
+        43,
+        8,
+        25,
+        19
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        25,
+        19
+      ],
+      "after": [
+        43,
+        8,
+        25,
+        18
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        25,
+        18
+      ],
+      "after": [
+        43,
+        8,
+        25,
+        17
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        25,
+        17
+      ],
+      "after": [
+        43,
+        8,
+        25,
+        16
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        43,
+        8,
+        25,
+        16
+      ],
+      "after": [
+        43,
+        8,
+        24,
+        16
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        43,
+        8,
+        24,
+        16
+      ],
+      "after": [
+        43,
+        8,
+        23,
+        16
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        43,
+        8,
+        23,
+        16
+      ],
+      "after": [
+        43,
+        8,
+        22,
+        16
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        43,
+        8,
+        22,
+        16
+      ],
+      "after": [
+        43,
+        8,
+        21,
+        16
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        43,
+        8,
+        21,
+        16
+      ],
+      "after": [
+        43,
+        8,
+        20,
+        16
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        20,
+        16
+      ],
+      "after": [
+        43,
+        8,
+        20,
+        15
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        20,
+        15
+      ],
+      "after": [
+        43,
+        8,
+        20,
+        14
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        20,
+        14
+      ],
+      "after": [
+        43,
+        8,
+        20,
+        13
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        20,
+        13
+      ],
+      "after": [
+        43,
+        8,
+        20,
+        12
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        20,
+        12
+      ],
+      "after": [
+        43,
+        8,
+        20,
+        11
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        20,
+        11
+      ],
+      "after": [
+        43,
+        8,
+        20,
+        10
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        20,
+        10
+      ],
+      "after": [
+        43,
+        8,
+        20,
+        9
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        20,
+        9
+      ],
+      "after": [
+        43,
+        8,
+        20,
+        8
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        20,
+        8
+      ],
+      "after": [
+        43,
+        8,
+        20,
+        7
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        20,
+        7
+      ],
+      "after": [
+        43,
+        8,
+        20,
+        6
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        43,
+        8,
+        20,
+        6
+      ],
+      "after": [
+        43,
+        8,
+        19,
+        6
+      ]
+    },
+    {
+      "key": "LEFT",
+      "before": [
+        43,
+        8,
+        19,
+        6
+      ],
+      "after": [
+        43,
+        8,
+        18,
+        6
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        43,
+        8,
+        18,
+        6
+      ],
+      "after": [
+        59,
+        10,
+        9,
+        11
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        59,
+        10,
+        9,
+        11
+      ],
+      "after": [
+        59,
+        10,
+        9,
+        10
+      ]
+    },
+    {
+      "key": "UP",
+      "before": [
+        59,
+        10,
+        9,
+        10
+      ],
+      "after": [
+        59,
+        10,
+        9,
+        9
+      ]
+    }
+  ],
+  "scope": "Checkpoint after passed B2F: B1F south puzzle through central 1F to League lobby; not all regions or optional item platforms",
+  "original_terrain_sha256": {
+    "HoennVictoryRoad_B1F": "574316b10f2989df34eb3a53c3fc4bd946bb0e67bb679e15dfc91997cb47d684",
+    "HoennVictoryRoad_1F": "b100693756672442b3f583a8886950d07b68bac1b6eafe07a2b5fe721d1c484e",
+    "HoennEverGrandeCity": "65fe6682e18c1befab20f007b86811bc5cde2346ded25dd908cc15757ce17d1c"
+  },
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "original_pika_friendship": 255,
+  "dex_guard": {
+    "caught_bytes_unchanged": true,
+    "old_seen_preserved": true,
+    "only_seen_allowed_national": [
+      279,
+      302,
+      332,
+      359
+    ],
+    "seen_added_per_replica": [
+      [
+        279,
+        302,
+        332,
+        359
+      ],
+      [
+        279,
+        302,
+        332,
+        359
+      ],
+      [
+        279,
+        302,
+        332,
+        359
+      ]
+    ]
+  },
+  "native_sight_no_a": [
+    "TRAINER_HOENN_HALLE",
+    "TRAINER_HOENN_EDGAR_VICTORY_ROAD"
+  ],
+  "native_save": {
+    "counter_before": 60,
+    "counter_after": 61,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_BADGE01_GET": false,
+      "FLAG_BADGE02_GET": false,
+      "FLAG_BADGE03_GET": false,
+      "FLAG_BADGE04_GET": false,
+      "FLAG_BADGE05_GET": false,
+      "FLAG_BADGE06_GET": false,
+      "FLAG_BADGE07_GET": false,
+      "FLAG_BADGE08_GET": false,
+      "FLAG_HOENN_BADGE01_GET": true,
+      "FLAG_HOENN_BADGE02_GET": true,
+      "FLAG_HOENN_BADGE03_GET": true,
+      "FLAG_HOENN_BADGE04_GET": true,
+      "FLAG_HOENN_BADGE05_GET": true,
+      "FLAG_HOENN_BADGE06_GET": true,
+      "FLAG_HOENN_BADGE07_GET": true,
+      "FLAG_HOENN_BADGE08_GET": true,
+      "FLAG_JOHTO_BADGE01_GET": false,
+      "FLAG_JOHTO_BADGE02_GET": false,
+      "FLAG_JOHTO_BADGE03_GET": false,
+      "FLAG_JOHTO_BADGE04_GET": false,
+      "FLAG_JOHTO_BADGE05_GET": false,
+      "FLAG_JOHTO_BADGE06_GET": false,
+      "FLAG_JOHTO_BADGE07_GET": false,
+      "FLAG_RECEIVED_STARTER_PIKACHU": true,
+      "FLAG_SYS_USE_STRENGTH": false,
+      "FLAG_TEMP_11": false,
+      "FLAG_TEMP_12": false,
+      "FLAG_TEMP_13": false,
+      "FLAG_TEMP_14": false,
+      "FLAG_TEMP_15": false,
+      "FLAG_TEMP_16": false,
+      "FLAG_TEMP_17": false,
+      "FLAG_TEMP_18": false,
+      "FLAG_TEMP_19": false,
+      "FLAG_TEMP_1A": false,
+      "FLAG_TEMP_1B": false,
+      "FLAG_TEMP_1C": false,
+      "FLAG_TEMP_1D": false,
+      "FLAG_TEMP_1E": false,
+      "FLAG_TEMP_1F": false
+    },
+    "trainers": {
+      "TRAINER_HOENN_HALLE": true,
+      "TRAINER_HOENN_EDGAR_VICTORY_ROAD": true
+    },
+    "hm08": 0,
+    "sha256": "a753b46f19b271af4eb08f90aff6948011880a0791126ad95396670d6584499c"
+  },
+  "full_original_storage_unchanged": true,
+  "original_saves_unchanged": true
+}

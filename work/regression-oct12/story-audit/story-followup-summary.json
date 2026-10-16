@@ -1,0 +1,83 @@
+{
+  "updated_at": "2026-10-12T12:51:27.243139+00:00",
+  "checker_semantic_regression": {
+    "receipt_cases": 14,
+    "graph_cases": 6,
+    "all_pass": true
+  },
+  "global_current_audit_exit": 1,
+  "global_current_counts": [
+    "80 dead",
+    "14 empty promises",
+    "check_event_wiring: 94 to look at"
+  ],
+  "removed_false_positives": [
+    "- JohtoRoute30_MrPokemonsHouse: JohtoRoute30_MrPokemonsHouse_AfterReport shows JohtoRoute30_MrPokemonsHouse_Text_AfterReport, which promises something, but gives nothing",
+    "- JohtoRoute32: JohtoRoute32_Researcher shows JohtoRoute32_Text_Researcher, which promises something, but gives nothing",
+    "- SproutTower_1F: SproutTower_1F_Visitor shows SproutTower_1F_Text_Visitor, which promises something, but gives nothing"
+  ],
+  "newly_exposed_existing_promises": [
+    "- Route114: Route114_EventScript_H5 shows Route114_Text_H5, which promises something, but gives nothing",
+    "- SootopolisCity_House6: SootopolisCity_House6_EventScript_H0 shows SootopolisCity_House6_Text_H0, which promises something, but gives nothing"
+  ],
+  "early_story_promoted": {
+    "promoted": true,
+    "delivery": "/workspaces/pokefirered/outputs/rom-johto-research-followup-20261012T111059Z",
+    "rollback": "/workspaces/pokefirered/outputs/rom-johto-research-followup-20261012T111059Z/rollback-oct12-first-repair",
+    "current_rom_sha256": "b46fb32bb67f89d5a48dfbfdf41ddd4977cc4a2d60dbbe6c72e1bc0281c5606d",
+    "download_zip": "/workspaces/pokefirered/work/regression-oct12/deliverables/pokemonthyl-oct12-research-followup.zip",
+    "zip_sha256": "957f77a31ab80a3bc2324bba547bbae9f8fba93619f70699459a27ba495aae54",
+    "zip_bytes": 7642271,
+    "original_all_SAVs_unchanged": true,
+    "full_campaign_complete": false
+  },
+  "unimplemented_rewards": [
+    {
+      "map": "Route114",
+      "script": "Route114_EventScript_H5",
+      "item": "ITEM_TM05_ROAR",
+      "status": "TM reward and NPC-specific receipt not implemented"
+    },
+    {
+      "map": "SootopolisCity_House6",
+      "script": "SootopolisCity_House6_EventScript_H0",
+      "status": "Decoration script commands are no-ops in current scrcmd.c; storage/PC path not validated"
+    }
+  ],
+  "next_region_chunk": "Continuous natural Kanto champion airport/Misty -> Johto arrival/Route29/Elm/Guide/MrPokemon/report; later natural campaign integration. Completed Azalea/league/rival isolated proofs are not repeated.",
+  "whole_campaign_complete": false,
+  "previous_next_region_chunk": "Review existing records, then Route32 -> Union Cave -> Azalea Kurt/Slowpoke Well/Bugsy natural progression",
+  "current_followup": {
+    "promoted": true,
+    "ROM_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+    "delivery": "/workspaces/pokefirered/outputs/rom-regional-followup-20261012T125127Z",
+    "rollback": "/workspaces/pokefirered/outputs/rom-regional-followup-20261012T125127Z/rollback-b46",
+    "artifact_sha256": {
+      "gba": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+      "elf": "c7efc258561748b879db8216eb63794f4ff80093c3687f2fb82188136d7da761",
+      "sym": "b4d51996640df6aba3755a9f2f8c5a3bf08f565c472fd10c15640dc2249aed9f",
+      "map": "707aa065a6e61c2cf0c92375f0163c06c22a338b405ccb1b4adb9dfe73b3cedb"
+    },
+    "zip": "/workspaces/pokefirered/work/regression-oct12/deliverables/pokemonthyl-regional-followup-20261012T125127Z.zip",
+    "zip_sha256": "d351dfd65fd8804d80d2025d7e4328dfbf8c0e84a987d5bc74fcdeda8d55ae89",
+    "zip_bytes": 7641852,
+    "all14SAVs_unchanged": true,
+    "source_preserved": true,
+    "full_campaign_complete": false
+  },
+  "unimplemented_rewards_current": [
+    {
+      "map": "SootopolisCity_House6",
+      "status": "Decoration commands no-op; valid storage path not implemented"
+    }
+  ],
+  "resolved_rewards_current": [
+    {
+      "map": "Route114",
+      "item": "TM05 ROAR",
+      "verified_ROM_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+      "native_cases": 5,
+      "cold_and_repeat_checked": true
+    }
+  ]
+}

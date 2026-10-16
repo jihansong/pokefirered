@@ -1,0 +1,1 @@
+{"exists": true, "files": ["native.log", "native-devon.py"], "log": "  File \"/workspaces/pokefirered/work/hoenn-devon-native-20261013/native-devon.py\", line 7\n    exec(compile(q.split('\n                         ^\nSyntaxError: unterminated string literal (detected at line 7)\n"}

@@ -1,0 +1,19 @@
+{
+  "status": "FINISHED",
+  "rom_sha256": "db2e2741d80ee82d6ae5151bf8b5bf71e924a0b4880ffc65aedac712dc8a64f5",
+  "results": [
+    {
+      "name": "basic",
+      "exit": 1,
+      "seconds": 4.44384765625,
+      "log": "/workspaces/pokefirered/outputs/misty-companion-review-v1/run-phase1-basic.log"
+    },
+    {
+      "name": "join",
+      "exit": 1,
+      "seconds": 8.07569670677185,
+      "log": "/workspaces/pokefirered/outputs/misty-companion-review-v1/run-phase1-join.log"
+    }
+  ],
+  "all_pass": false
+}

@@ -1,0 +1,25 @@
+ok   harbor_scene0_met0_progress0 (A x0)
+ok   harbor_scene0_met0_progress1 (A x0)
+ok   harbor_scene0_met0_progress5 (A x0)
+ok   harbor_scene0_met0_progress7 (A x0)
+ok   harbor_scene0_met1_progress0 (A x0)
+ok   harbor_scene0_met1_progress1 (A x0)
+ok   harbor_scene0_met1_progress5 (A x0)
+ok   harbor_scene0_met1_progress7 (A x0)
+ok   harbor_scene1_met1_progress0 (A x0)
+ok   harbor_scene1_met1_progress1 (A x0)
+ok   harbor_scene1_met1_progress5 (A x0)
+ok   harbor_scene1_met1_progress7 (A x0)
+ok   control_fresh_intro_not_seen (A x0)
+ok   control_legacy_progress_rolled_back (A x0)
+14/14 cases passed
+{
+  "cases": 14,
+  "positive": 12,
+  "negative_controls": 2,
+  "source_save": "/workspaces/pokefirered/saves/hoenn.sav",
+  "source_save_sha256": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+  "executed": true,
+  "returncode": 0,
+  "source_save_unchanged": true
+}

@@ -1,0 +1,28 @@
+{
+  "pid": 54792,
+  "case": "loss",
+  "cmd": [
+    "python3",
+    "/workspaces/pokefirered/work/hoenn-resume-20261014/native_double_regression_r1a.py",
+    "--root",
+    "/workspaces/pokefirered",
+    "--rom",
+    "/workspaces/pokefirered/work/hoenn-resume-20261014/fixed-profile-rom/pokemonthyl.gba",
+    "--elf",
+    "/workspaces/pokefirered/work/hoenn-resume-20261014/fixed-profile-rom/pokemonthyl.elf",
+    "--sav",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav",
+    "--abi-json",
+    "/workspaces/pokefirered/work/hoenn-resume-20261014/abi-profile/devon-v7-abi.json",
+    "--out",
+    "/workspaces/pokefirered/work/hoenn-resume-20261014/native-double-loss-r1a",
+    "--expect-rom-sha",
+    "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+    "--expect-elf-sha",
+    "e625069ea9379ea3dc2f83e3014fb741a2e0b7383f41f6d56bc37fc0eae6f17b",
+    "--expect-abi-sha",
+    "fb95943ada51c72d99456b5127fe147878593e166c2e9d12a9b46d0a4fb6ffac",
+    "--fixture-case",
+    "loss"
+  ]
+}

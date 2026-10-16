@@ -1,0 +1,25 @@
+{
+  "time_utc": "2026-10-05T21:08:47.146149+00:00",
+  "pass": true,
+  "files": {
+    "gba": {
+      "bytes": 33554432,
+      "sha256": "3d1a1a4f3e84deb5d9f8d2a5943930354e1a86164fe257eabf79d99ca1232fee"
+    },
+    "elf": {
+      "bytes": 33882680,
+      "sha256": "efd67a54f5ad9ecbe8aaa02c0d69ca7ecb6eb6d928f50761199bd8e6f040b0eb"
+    },
+    "sym": {
+      "bytes": 3256180,
+      "sha256": "c2371a68d77f629539d8b1d1c3580bb9a53fce0dd9d68ef54655077052f7ea5a"
+    },
+    "map": {
+      "bytes": 3273187,
+      "sha256": "1ad5f1b9c170c79352c0746867cb6632bb409de140308adebf0a8d117d324f71"
+    }
+  },
+  "current_main_not_replaced": true,
+  "full_regions_complete": false,
+  "native_validation_pending": true
+}

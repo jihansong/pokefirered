@@ -1,0 +1,1869 @@
+{
+  "summary": {
+    "status": "CURRENT_ROM_AND_V125_SCOPED_VERIFICATION_COMPLETE",
+    "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+    "sav_sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+    "idle_frames": 36000,
+    "same_ROM_state_restore_applied_verified": true,
+    "Pikachu_dive_samples": 16,
+    "Misty_water_land_samples": 21,
+    "Johto_actual_professor_unlock_151_to_251": true,
+    "Hoenn_eligible_fixture_UI_202": true,
+    "native_list_order_checks": 5,
+    "native_SAVE_cold_door_cases": 2,
+    "inputs_unchanged": true,
+    "product_changes": false,
+    "whole_campaign_complete": false,
+    "actual_DELTA_tested": false,
+    "existing_BadEgg_recovered": false,
+    "manual_visual_scope": [
+      "Johto numerical page",
+      "Hoenn contents menu"
+    ],
+    "remaining": [
+      "whole natural three-region campaign",
+      "all doors and Dive maps",
+      "PC UI and capture/battle stress",
+      "actual DELTA and old state reproduction",
+      "existing Bad Egg recovery",
+      "dedicated Elm sprite and unfinished story expansion"
+    ],
+    "evidence": {
+      "idle-state": "/workspaces/pokefirered/work/followup-20261013/idle-state/validation.json",
+      "state-applied": "/workspaces/pokefirered/work/followup-20261013/state-applied/validation.json",
+      "misty-dive": "/workspaces/pokefirered/work/followup-20261013/misty-dive/validation.json",
+      "doors-dex": "/workspaces/pokefirered/work/followup-20261013/doors-dex/validation.json",
+      "dex-list-order": "/workspaces/pokefirered/work/followup-20261013/dex-list-order/validation.json"
+    }
+  },
+  "reports": {
+    "idle-state": {
+      "pass": true,
+      "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+      "input_sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+      "scope": "same-ROM native idle and raw core state; not DELTA or full campaign",
+      "frames_requested": 36000,
+      "rows": [
+        {
+          "requested_frames": 600,
+          "hardware_frames": 600,
+          "elapsed_seconds": 0.6756755249998605,
+          "preserved": true
+        },
+        {
+          "requested_frames": 1200,
+          "hardware_frames": 1200,
+          "elapsed_seconds": 0.6048018400006185,
+          "preserved": true
+        },
+        {
+          "requested_frames": 1800,
+          "hardware_frames": 1800,
+          "elapsed_seconds": 0.6497532050007067,
+          "preserved": true
+        },
+        {
+          "requested_frames": 2400,
+          "hardware_frames": 2400,
+          "elapsed_seconds": 0.6202898060000734,
+          "preserved": true
+        },
+        {
+          "requested_frames": 3000,
+          "hardware_frames": 3000,
+          "elapsed_seconds": 0.775284432999797,
+          "preserved": true
+        },
+        {
+          "requested_frames": 3600,
+          "hardware_frames": 3600,
+          "elapsed_seconds": 0.6362966369997594,
+          "preserved": true
+        },
+        {
+          "requested_frames": 4200,
+          "hardware_frames": 4200,
+          "elapsed_seconds": 0.6949543009995978,
+          "preserved": true
+        },
+        {
+          "requested_frames": 4800,
+          "hardware_frames": 4800,
+          "elapsed_seconds": 0.6296943829993324,
+          "preserved": true
+        },
+        {
+          "requested_frames": 5400,
+          "hardware_frames": 5400,
+          "elapsed_seconds": 0.6498460359998717,
+          "preserved": true
+        },
+        {
+          "requested_frames": 6000,
+          "hardware_frames": 6000,
+          "elapsed_seconds": 0.6089335950000532,
+          "preserved": true
+        },
+        {
+          "requested_frames": 6600,
+          "hardware_frames": 6600,
+          "elapsed_seconds": 0.6739404119998653,
+          "preserved": true
+        },
+        {
+          "requested_frames": 7200,
+          "hardware_frames": 7200,
+          "elapsed_seconds": 0.6949827369999184,
+          "preserved": true
+        },
+        {
+          "requested_frames": 7800,
+          "hardware_frames": 7800,
+          "elapsed_seconds": 0.6029778600004647,
+          "preserved": true
+        },
+        {
+          "requested_frames": 8400,
+          "hardware_frames": 8400,
+          "elapsed_seconds": 0.5898111980004614,
+          "preserved": true
+        },
+        {
+          "requested_frames": 9000,
+          "hardware_frames": 9000,
+          "elapsed_seconds": 0.6894829449993267,
+          "preserved": true
+        },
+        {
+          "requested_frames": 9600,
+          "hardware_frames": 9600,
+          "elapsed_seconds": 0.6027672600002916,
+          "preserved": true
+        },
+        {
+          "requested_frames": 10200,
+          "hardware_frames": 10200,
+          "elapsed_seconds": 0.5901100119999683,
+          "preserved": true
+        },
+        {
+          "requested_frames": 10800,
+          "hardware_frames": 10800,
+          "elapsed_seconds": 0.7094489289993362,
+          "preserved": true
+        },
+        {
+          "requested_frames": 11400,
+          "hardware_frames": 11400,
+          "elapsed_seconds": 0.5761968400001933,
+          "preserved": true
+        },
+        {
+          "requested_frames": 12000,
+          "hardware_frames": 12000,
+          "elapsed_seconds": 0.6967301829999997,
+          "preserved": true
+        },
+        {
+          "requested_frames": 12600,
+          "hardware_frames": 12600,
+          "elapsed_seconds": 0.7279503569998269,
+          "preserved": true
+        },
+        {
+          "requested_frames": 13200,
+          "hardware_frames": 13200,
+          "elapsed_seconds": 0.6152301770007398,
+          "preserved": true
+        },
+        {
+          "requested_frames": 13800,
+          "hardware_frames": 13800,
+          "elapsed_seconds": 0.6664966589996766,
+          "preserved": true
+        },
+        {
+          "requested_frames": 14400,
+          "hardware_frames": 14400,
+          "elapsed_seconds": 0.603008520000003,
+          "preserved": true
+        },
+        {
+          "requested_frames": 15000,
+          "hardware_frames": 15000,
+          "elapsed_seconds": 0.5959295900001962,
+          "preserved": true
+        },
+        {
+          "requested_frames": 15600,
+          "hardware_frames": 15600,
+          "elapsed_seconds": 0.8922234900001058,
+          "preserved": true
+        },
+        {
+          "requested_frames": 16200,
+          "hardware_frames": 16200,
+          "elapsed_seconds": 0.798388057000011,
+          "preserved": true
+        },
+        {
+          "requested_frames": 16800,
+          "hardware_frames": 16800,
+          "elapsed_seconds": 0.5809545820002313,
+          "preserved": true
+        },
+        {
+          "requested_frames": 17400,
+          "hardware_frames": 17400,
+          "elapsed_seconds": 0.5957431380002163,
+          "preserved": true
+        },
+        {
+          "requested_frames": 18000,
+          "hardware_frames": 18000,
+          "elapsed_seconds": 0.6182842409998557,
+          "preserved": true
+        },
+        {
+          "requested_frames": 18600,
+          "hardware_frames": 18600,
+          "elapsed_seconds": 0.6569719660001283,
+          "preserved": true
+        },
+        {
+          "requested_frames": 19200,
+          "hardware_frames": 19200,
+          "elapsed_seconds": 0.644543335999515,
+          "preserved": true
+        },
+        {
+          "requested_frames": 19800,
+          "hardware_frames": 19800,
+          "elapsed_seconds": 0.7088461970006392,
+          "preserved": true
+        },
+        {
+          "requested_frames": 20400,
+          "hardware_frames": 20400,
+          "elapsed_seconds": 0.6322628899997653,
+          "preserved": true
+        },
+        {
+          "requested_frames": 21000,
+          "hardware_frames": 21000,
+          "elapsed_seconds": 0.7232462190004298,
+          "preserved": true
+        },
+        {
+          "requested_frames": 21600,
+          "hardware_frames": 21600,
+          "elapsed_seconds": 0.6197751670006255,
+          "preserved": true
+        },
+        {
+          "requested_frames": 22200,
+          "hardware_frames": 22200,
+          "elapsed_seconds": 0.7776971760004017,
+          "preserved": true
+        },
+        {
+          "requested_frames": 22800,
+          "hardware_frames": 22800,
+          "elapsed_seconds": 0.6627522200005842,
+          "preserved": true
+        },
+        {
+          "requested_frames": 23400,
+          "hardware_frames": 23400,
+          "elapsed_seconds": 0.5692905629994129,
+          "preserved": true
+        },
+        {
+          "requested_frames": 24000,
+          "hardware_frames": 24000,
+          "elapsed_seconds": 0.7086520619996008,
+          "preserved": true
+        },
+        {
+          "requested_frames": 24600,
+          "hardware_frames": 24600,
+          "elapsed_seconds": 0.5878254950002884,
+          "preserved": true
+        },
+        {
+          "requested_frames": 25200,
+          "hardware_frames": 25200,
+          "elapsed_seconds": 0.5777732010001273,
+          "preserved": true
+        },
+        {
+          "requested_frames": 25800,
+          "hardware_frames": 25800,
+          "elapsed_seconds": 0.7336340989995733,
+          "preserved": true
+        },
+        {
+          "requested_frames": 26400,
+          "hardware_frames": 26400,
+          "elapsed_seconds": 0.6549175190002643,
+          "preserved": true
+        },
+        {
+          "requested_frames": 27000,
+          "hardware_frames": 27000,
+          "elapsed_seconds": 0.5899859940000169,
+          "preserved": true
+        },
+        {
+          "requested_frames": 27600,
+          "hardware_frames": 27600,
+          "elapsed_seconds": 0.6427749900003619,
+          "preserved": true
+        },
+        {
+          "requested_frames": 28200,
+          "hardware_frames": 28200,
+          "elapsed_seconds": 0.5919428170000174,
+          "preserved": true
+        },
+        {
+          "requested_frames": 28800,
+          "hardware_frames": 28800,
+          "elapsed_seconds": 0.592359543999919,
+          "preserved": true
+        },
+        {
+          "requested_frames": 29400,
+          "hardware_frames": 29400,
+          "elapsed_seconds": 0.5806871409995438,
+          "preserved": true
+        },
+        {
+          "requested_frames": 30000,
+          "hardware_frames": 30000,
+          "elapsed_seconds": 0.6177866210000502,
+          "preserved": true
+        },
+        {
+          "requested_frames": 30600,
+          "hardware_frames": 30600,
+          "elapsed_seconds": 0.6630229350002992,
+          "preserved": true
+        },
+        {
+          "requested_frames": 31200,
+          "hardware_frames": 31200,
+          "elapsed_seconds": 0.6176189359994169,
+          "preserved": true
+        },
+        {
+          "requested_frames": 31800,
+          "hardware_frames": 31800,
+          "elapsed_seconds": 0.8100293839997903,
+          "preserved": true
+        },
+        {
+          "requested_frames": 32400,
+          "hardware_frames": 32400,
+          "elapsed_seconds": 0.6245469100003902,
+          "preserved": true
+        },
+        {
+          "requested_frames": 33000,
+          "hardware_frames": 33000,
+          "elapsed_seconds": 0.5746764989999065,
+          "preserved": true
+        },
+        {
+          "requested_frames": 33600,
+          "hardware_frames": 33600,
+          "elapsed_seconds": 0.674314738999783,
+          "preserved": true
+        },
+        {
+          "requested_frames": 34200,
+          "hardware_frames": 34200,
+          "elapsed_seconds": 0.5967948299994532,
+          "preserved": true
+        },
+        {
+          "requested_frames": 34800,
+          "hardware_frames": 34800,
+          "elapsed_seconds": 0.5795881130006819,
+          "preserved": true
+        },
+        {
+          "requested_frames": 35400,
+          "hardware_frames": 35400,
+          "elapsed_seconds": 0.6401123010000447,
+          "preserved": true
+        },
+        {
+          "requested_frames": 36000,
+          "hardware_frames": 36000,
+          "elapsed_seconds": 0.6774955139999292,
+          "preserved": true
+        }
+      ],
+      "ram_writes": 0,
+      "baseline": {
+        "location": [
+          1,
+          78,
+          6,
+          10
+        ],
+        "callback": 134575393,
+        "party": "91c94cef7125e36a2e36a7df9cf1afb29d0af5b42d952c3d4a2144da8fc4eb68",
+        "PC": "1c1416c8653aead681b7ebe4cc76b56e9cae25c6815655c655dfb2d3a2bce0c0",
+        "dex": "d20eb5207987f813f064db10c61bfa184fdc87ea6eba9329f4edc5de2046d740",
+        "count": 6
+      },
+      "state_bytes": 397312,
+      "frame_start": 842,
+      "median_chunk_seconds": 0.6342797634997623,
+      "native_host_fps": 945.9548207708582,
+      "state_restore_checks": [
+        {
+          "additional_frames": 0,
+          "payload_and_location_preserved": true,
+          "reset": false
+        },
+        {
+          "additional_frames": 60,
+          "payload_and_location_preserved": true,
+          "reset": false
+        },
+        {
+          "additional_frames": 180,
+          "payload_and_location_preserved": true,
+          "reset": false
+        }
+      ],
+      "inputs_unchanged": true
+    },
+    "state-applied": {
+      "pass": true,
+      "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+      "save_sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+      "ram_writes": 0,
+      "scope": "same ROM and same Flash; not old DELTA state",
+      "same_instance": {
+        "saved": {
+          "frame": 782,
+          "rng": 2092733757
+        },
+        "advanced": {
+          "frame": 902,
+          "rng": 38024213
+        },
+        "restored": {
+          "frame": 782,
+          "rng": 2092733757
+        },
+        "load_return": 1
+      },
+      "fresh_instance": {
+        "before": {
+          "frame": 873,
+          "rng": 745114190
+        },
+        "restored": {
+          "frame": 782,
+          "rng": 2092733757
+        },
+        "load_return": 1,
+        "flash_identical": true,
+        "checks": [
+          {
+            "additional_frames": 0,
+            "marker": {
+              "frame": 782,
+              "rng": 2092733757
+            },
+            "payload_preserved": true
+          },
+          {
+            "additional_frames": 60,
+            "marker": {
+              "frame": 842,
+              "rng": 2340102409
+            },
+            "payload_preserved": true
+          },
+          {
+            "additional_frames": 180,
+            "marker": {
+              "frame": 1022,
+              "rng": 2063753197
+            },
+            "payload_preserved": true
+          }
+        ]
+      },
+      "inputs_unchanged": true
+    },
+    "misty-dive": {
+      "pass": true,
+      "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+      "elf_sha256": "c7efc258561748b879db8216eb63794f4ff80093c3687f2fb82188136d7da761",
+      "save_sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+      "mode": "native-dive-route",
+      "fixture": "temporary level-50 LAPRAS; original PC and source SAV unchanged",
+      "ram_writes": 0,
+      "forced_battle_outcomes": 0,
+      "stages": [
+        {
+          "map": "Underwater_Route128",
+          "xy": [
+            38,
+            27
+          ],
+          "avatar_flags": 48,
+          "frame": 1074
+        },
+        {
+          "map": "Underwater_Route128",
+          "xy": [
+            38,
+            27
+          ],
+          "avatar_flags": 16,
+          "frame": 792
+        },
+        {
+          "map": "SeafloorCavern_Entrance",
+          "xy": [
+            10,
+            16
+          ],
+          "avatar_flags": 40,
+          "frame": 1422
+        },
+        {
+          "map": "Underwater_SeafloorCavern",
+          "xy": [
+            6,
+            6
+          ],
+          "avatar_flags": 48,
+          "frame": 2031
+        },
+        {
+          "map": "Route128",
+          "xy": [
+            38,
+            27
+          ],
+          "avatar_flags": 40,
+          "frame": 2715
+        }
+      ],
+      "native_abi": {
+        "BattlePokemon": 88,
+        "BattleMove": 12
+      },
+      "pc_before_sha256": "d87bf72cdfce8f020f5a2e5b503ec4965f97d0cc21e8804ddb78680768b2d7f8",
+      "follower_checks": [
+        {
+          "label": "surface-before-dive-right",
+          "map": [
+            43,
+            43
+          ],
+          "player_xy": [
+            39,
+            27
+          ],
+          "follower_xy": [
+            38,
+            27
+          ],
+          "visible": true,
+          "native_sprite_active": true,
+          "avatar_flags": 8
+        },
+        {
+          "label": "surface-before-dive-left",
+          "map": [
+            43,
+            43
+          ],
+          "player_xy": [
+            38,
+            27
+          ],
+          "follower_xy": [
+            39,
+            27
+          ],
+          "visible": true,
+          "native_sprite_active": true,
+          "avatar_flags": 8
+        },
+        {
+          "label": "Underwater_Route128-right",
+          "map": [
+            43,
+            53
+          ],
+          "player_xy": [
+            39,
+            27
+          ],
+          "follower_xy": [
+            38,
+            27
+          ],
+          "visible": true,
+          "native_sprite_active": true,
+          "avatar_flags": 16
+        },
+        {
+          "label": "Underwater_Route128-left",
+          "map": [
+            43,
+            53
+          ],
+          "player_xy": [
+            38,
+            27
+          ],
+          "follower_xy": [
+            39,
+            27
+          ],
+          "visible": true,
+          "native_sprite_active": true,
+          "avatar_flags": 16
+        },
+        {
+          "label": "cold-reopen-right",
+          "map": [
+            43,
+            53
+          ],
+          "player_xy": [
+            39,
+            27
+          ],
+          "follower_xy": [
+            38,
+            27
+          ],
+          "visible": true,
+          "native_sprite_active": true,
+          "avatar_flags": 16
+        },
+        {
+          "label": "cold-reopen-left",
+          "map": [
+            43,
+            53
+          ],
+          "player_xy": [
+            38,
+            27
+          ],
+          "follower_xy": [
+            39,
+            27
+          ],
+          "visible": true,
+          "native_sprite_active": true,
+          "avatar_flags": 16
+        },
+        {
+          "label": "Underwater_Route128-right",
+          "map": [
+            43,
+            53
+          ],
+          "player_xy": [
+            39,
+            27
+          ],
+          "follower_xy": [
+            38,
+            27
+          ],
+          "visible": true,
+          "native_sprite_active": true,
+          "avatar_flags": 16
+        },
+        {
+          "label": "Underwater_Route128-left",
+          "map": [
+            43,
+            53
+          ],
+          "player_xy": [
+            38,
+            27
+          ],
+          "follower_xy": [
+            39,
+            27
+          ],
+          "visible": true,
+          "native_sprite_active": true,
+          "avatar_flags": 16
+        },
+        {
+          "label": "SeafloorCavern_Entrance-right",
+          "map": [
+            67,
+            27
+          ],
+          "player_xy": [
+            11,
+            16
+          ],
+          "follower_xy": [
+            10,
+            16
+          ],
+          "visible": true,
+          "native_sprite_active": true,
+          "avatar_flags": 8
+        },
+        {
+          "label": "SeafloorCavern_Entrance-left",
+          "map": [
+            67,
+            27
+          ],
+          "player_xy": [
+            10,
+            16
+          ],
+          "follower_xy": [
+            11,
+            16
+          ],
+          "visible": true,
+          "native_sprite_active": true,
+          "avatar_flags": 8
+        },
+        {
+          "label": "Underwater_SeafloorCavern-right",
+          "map": [
+            67,
+            26
+          ],
+          "player_xy": [
+            7,
+            6
+          ],
+          "follower_xy": [
+            6,
+            6
+          ],
+          "visible": true,
+          "native_sprite_active": true,
+          "avatar_flags": 16
+        },
+        {
+          "label": "Underwater_SeafloorCavern-left",
+          "map": [
+            67,
+            26
+          ],
+          "player_xy": [
+            6,
+            6
+          ],
+          "follower_xy": [
+            7,
+            6
+          ],
+          "visible": true,
+          "native_sprite_active": true,
+          "avatar_flags": 16
+        },
+        {
+          "label": "Route128-right",
+          "map": [
+            43,
+            43
+          ],
+          "player_xy": [
+            39,
+            27
+          ],
+          "follower_xy": [
+            38,
+            27
+          ],
+          "visible": true,
+          "native_sprite_active": true,
+          "avatar_flags": 8
+        },
+        {
+          "label": "Route128-left",
+          "map": [
+            43,
+            43
+          ],
+          "player_xy": [
+            38,
+            27
+          ],
+          "follower_xy": [
+            39,
+            27
+          ],
+          "visible": true,
+          "native_sprite_active": true,
+          "avatar_flags": 8
+        },
+        {
+          "label": "cold-reopen-right",
+          "map": [
+            43,
+            43
+          ],
+          "player_xy": [
+            39,
+            27
+          ],
+          "follower_xy": [
+            38,
+            27
+          ],
+          "visible": true,
+          "native_sprite_active": true,
+          "avatar_flags": 8
+        },
+        {
+          "label": "cold-reopen-left",
+          "map": [
+            43,
+            43
+          ],
+          "player_xy": [
+            38,
+            27
+          ],
+          "follower_xy": [
+            39,
+            27
+          ],
+          "visible": true,
+          "native_sprite_active": true,
+          "avatar_flags": 8
+        }
+      ],
+      "misty_joined_temporary_fixture": true,
+      "original_six_party_preserved_in_fixture": false,
+      "companion_checks_preserved": true,
+      "misty_checks": [
+        {
+          "label": "surface-before-dive",
+          "position": [
+            43,
+            43,
+            38,
+            27
+          ],
+          "avatar_flags": 8,
+          "misty_object_count": 0,
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "reach-Underwater_Route128",
+          "position": [
+            43,
+            53,
+            38,
+            27
+          ],
+          "avatar_flags": 16,
+          "misty_object_count": 0,
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "water-cold-reopen",
+          "position": [
+            43,
+            53,
+            38,
+            27
+          ],
+          "avatar_flags": 16,
+          "misty_object_count": 0,
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "reach-Underwater_Route128",
+          "position": [
+            43,
+            53,
+            38,
+            27
+          ],
+          "avatar_flags": 16,
+          "misty_object_count": 0,
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "reach-SeafloorCavern_Entrance",
+          "position": [
+            67,
+            27,
+            10,
+            16
+          ],
+          "avatar_flags": 8,
+          "misty_object_count": 0,
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "reach-Underwater_SeafloorCavern",
+          "position": [
+            67,
+            26,
+            6,
+            6
+          ],
+          "avatar_flags": 16,
+          "misty_object_count": 0,
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "reach-Route128",
+          "position": [
+            43,
+            43,
+            38,
+            27
+          ],
+          "avatar_flags": 8,
+          "misty_object_count": 0,
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "water-cold-reopen",
+          "position": [
+            43,
+            43,
+            38,
+            27
+          ],
+          "avatar_flags": 8,
+          "misty_object_count": 0,
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "coast-(39, 27)",
+          "position": [
+            43,
+            43,
+            39,
+            27
+          ],
+          "avatar_flags": 8,
+          "misty_object_count": 0,
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "coast-(39, 26)",
+          "position": [
+            43,
+            43,
+            39,
+            26
+          ],
+          "avatar_flags": 8,
+          "misty_object_count": 0,
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "coast-(39, 25)",
+          "position": [
+            43,
+            43,
+            39,
+            25
+          ],
+          "avatar_flags": 8,
+          "misty_object_count": 0,
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "coast-(39, 24)",
+          "position": [
+            43,
+            43,
+            39,
+            24
+          ],
+          "avatar_flags": 8,
+          "misty_object_count": 0,
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "coast-(39, 23)",
+          "position": [
+            43,
+            43,
+            39,
+            23
+          ],
+          "avatar_flags": 1,
+          "misty": {
+            "slot": 3,
+            "xy": [
+              46,
+              31
+            ],
+            "sprite": 4,
+            "visible": false,
+            "feet": [
+              136,
+              80
+            ]
+          },
+          "pikachu": {
+            "slot": 2,
+            "xy": [
+              46,
+              31
+            ],
+            "sprite": 2,
+            "visible": true,
+            "feet": [
+              136,
+              80
+            ]
+          },
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "coast-(39, 22)",
+          "position": [
+            43,
+            43,
+            39,
+            22
+          ],
+          "avatar_flags": 1,
+          "misty": {
+            "slot": 3,
+            "xy": [
+              46,
+              31
+            ],
+            "sprite": 4,
+            "visible": true,
+            "feet": [
+              136,
+              80
+            ]
+          },
+          "pikachu": {
+            "slot": 2,
+            "xy": [
+              46,
+              30
+            ],
+            "sprite": 2,
+            "visible": true,
+            "feet": [
+              136,
+              64
+            ]
+          },
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "coast-(38, 22)",
+          "position": [
+            43,
+            43,
+            38,
+            22
+          ],
+          "avatar_flags": 1,
+          "misty": {
+            "slot": 3,
+            "xy": [
+              46,
+              30
+            ],
+            "sprite": 4,
+            "visible": true,
+            "feet": [
+              136,
+              64
+            ]
+          },
+          "pikachu": {
+            "slot": 2,
+            "xy": [
+              46,
+              29
+            ],
+            "sprite": 2,
+            "visible": true,
+            "feet": [
+              136,
+              48
+            ]
+          },
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "coast-(37, 22)",
+          "position": [
+            43,
+            43,
+            37,
+            22
+          ],
+          "avatar_flags": 1,
+          "misty": {
+            "slot": 3,
+            "xy": [
+              46,
+              29
+            ],
+            "sprite": 4,
+            "visible": true,
+            "feet": [
+              136,
+              48
+            ]
+          },
+          "pikachu": {
+            "slot": 2,
+            "xy": [
+              45,
+              29
+            ],
+            "sprite": 2,
+            "visible": true,
+            "feet": [
+              120,
+              48
+            ]
+          },
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "coast-(36, 22)",
+          "position": [
+            43,
+            43,
+            36,
+            22
+          ],
+          "avatar_flags": 1,
+          "misty": {
+            "slot": 3,
+            "xy": [
+              45,
+              29
+            ],
+            "sprite": 4,
+            "visible": true,
+            "feet": [
+              120,
+              48
+            ]
+          },
+          "pikachu": {
+            "slot": 2,
+            "xy": [
+              44,
+              29
+            ],
+            "sprite": 2,
+            "visible": true,
+            "feet": [
+              104,
+              48
+            ]
+          },
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "land-cold-reopen",
+          "position": [
+            43,
+            43,
+            36,
+            22
+          ],
+          "avatar_flags": 33,
+          "misty": {
+            "slot": 3,
+            "xy": [
+              45,
+              29
+            ],
+            "sprite": 2,
+            "visible": true,
+            "feet": [
+              152,
+              128
+            ]
+          },
+          "pikachu": {
+            "slot": 2,
+            "xy": [
+              44,
+              29
+            ],
+            "sprite": 1,
+            "visible": true,
+            "feet": [
+              136,
+              128
+            ]
+          },
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "land-cold-trail-0",
+          "position": [
+            43,
+            43,
+            37,
+            22
+          ],
+          "avatar_flags": 1,
+          "misty": {
+            "slot": 3,
+            "xy": [
+              44,
+              29
+            ],
+            "sprite": 2,
+            "visible": false,
+            "feet": [
+              136,
+              128
+            ]
+          },
+          "pikachu": {
+            "slot": 2,
+            "xy": [
+              43,
+              29
+            ],
+            "sprite": 1,
+            "visible": true,
+            "feet": [
+              120,
+              128
+            ]
+          },
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "land-cold-trail-1",
+          "position": [
+            43,
+            43,
+            38,
+            22
+          ],
+          "avatar_flags": 1,
+          "misty": {
+            "slot": 3,
+            "xy": [
+              43,
+              29
+            ],
+            "sprite": 2,
+            "visible": true,
+            "feet": [
+              120,
+              128
+            ]
+          },
+          "pikachu": {
+            "slot": 2,
+            "xy": [
+              44,
+              29
+            ],
+            "sprite": 1,
+            "visible": true,
+            "feet": [
+              136,
+              128
+            ]
+          },
+          "joined": true,
+          "genuine_pika100_preserved": true
+        },
+        {
+          "label": "land-cold-trail-2",
+          "position": [
+            43,
+            43,
+            39,
+            22
+          ],
+          "avatar_flags": 1,
+          "misty": {
+            "slot": 3,
+            "xy": [
+              44,
+              29
+            ],
+            "sprite": 2,
+            "visible": true,
+            "feet": [
+              136,
+              128
+            ]
+          },
+          "pikachu": {
+            "slot": 2,
+            "xy": [
+              45,
+              29
+            ],
+            "sprite": 1,
+            "visible": true,
+            "feet": [
+              152,
+              128
+            ]
+          },
+          "joined": true,
+          "genuine_pika100_preserved": true
+        }
+      ],
+      "actual_device_fps_measured": false,
+      "follower_original": {
+        "party_index": 3,
+        "personality": 3742077845,
+        "otid": 2839214970,
+        "box_sha256": "41a2516dbe07b548485709ab782eeec0945a27797ebdabe8f4af667f53cfa230",
+        "copied_without_editing": true
+      },
+      "native_save": {
+        "counter_before": 69,
+        "counter_after": 70,
+        "valid_sectors": 14,
+        "cold_reopen": true,
+        "flags": {
+          "FLAG_HOENN_WEATHER_RESCUED": false,
+          "FLAG_HOENN_GOT_WEATHER_CASTFORM": false,
+          "FLAG_HOENN_SPACE_CENTER_SECURED": false,
+          "FLAG_HOENN_GOT_HM08_FROM_STEVEN": false
+        },
+        "trainers": {
+          "TRAINER_HOENN_SHELLY_WEATHER_INSTITUTE": false,
+          "TRAINER_HOENN_TABITHA_SPACE_CENTER": false,
+          "TRAINER_HOENN_MAXIE_SPACE_CENTER": false
+        },
+        "hm08": 1,
+        "sha256": "0a9390d018a58c3404cdfcb2e3cc7d5ff02cbd7a91b8b10e3386913a7aeeed50"
+      },
+      "native_roundtrip": true,
+      "misty_land_save_cold_and_reappearance": true,
+      "original_saves_unchanged": true
+    },
+    "doors-dex": {
+      "pass": true,
+      "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+      "save_sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+      "ram_writes": 0,
+      "scope": "new SAV checkpoint doors and real Pokedex UI; not full travel/story",
+      "cases": [
+        {
+          "case": "johto-lab",
+          "temporary_preboot_warp_only": true,
+          "hoenn_unlock_preboot_fixture": false,
+          "doors": [
+            {
+              "label": "entry",
+              "position": [
+                76,
+                3,
+                6,
+                12
+              ]
+            },
+            {
+              "label": "exit",
+              "position": [
+                76,
+                2,
+                11,
+                9
+              ]
+            },
+            {
+              "label": "reentry",
+              "position": [
+                76,
+                3,
+                6,
+                12
+              ]
+            }
+          ],
+          "UI": [
+            {
+              "label": "before-lab-kanto",
+              "region": 0,
+              "dex_count": 151,
+              "inverse_entries": 151,
+              "numerical_rows": 151,
+              "real_start_menu": true,
+              "party_PC_dex_records_preserved": true
+            },
+            {
+              "label": "after-professor-johto",
+              "region": 1,
+              "dex_count": 251,
+              "inverse_entries": 251,
+              "numerical_rows": 250,
+              "real_start_menu": true,
+              "party_PC_dex_records_preserved": true
+            },
+            {
+              "label": "johto-lab-cold",
+              "region": 1,
+              "dex_count": 251,
+              "inverse_entries": 251,
+              "numerical_rows": 250,
+              "real_start_menu": true,
+              "party_PC_dex_records_preserved": true
+            }
+          ],
+          "actual_professor_first_visit_unlocked_Johto": true,
+          "native_SAVE_cold": {
+            "counter": [
+              67,
+              68
+            ],
+            "checksummed_sectors": 14,
+            "qa_save": "/workspaces/pokefirered/work/followup-20261013/doors-dex/johto-lab-doors-dex-native-QA-only.sav"
+          },
+          "pass": true
+        },
+        {
+          "case": "hoenn-lab",
+          "temporary_preboot_warp_only": true,
+          "hoenn_unlock_preboot_fixture": true,
+          "doors": [
+            {
+              "label": "entry",
+              "position": [
+                44,
+                4,
+                6,
+                12
+              ]
+            },
+            {
+              "label": "exit",
+              "position": [
+                43,
+                9,
+                7,
+                17
+              ]
+            },
+            {
+              "label": "reentry",
+              "position": [
+                44,
+                4,
+                6,
+                12
+              ]
+            }
+          ],
+          "UI": [
+            {
+              "label": "hoenn-checkpoint",
+              "region": 2,
+              "dex_count": 202,
+              "inverse_entries": 202,
+              "numerical_rows": 185,
+              "real_start_menu": true,
+              "party_PC_dex_records_preserved": true
+            },
+            {
+              "label": "hoenn-lab-cold",
+              "region": 2,
+              "dex_count": 202,
+              "inverse_entries": 202,
+              "numerical_rows": 185,
+              "real_start_menu": true,
+              "party_PC_dex_records_preserved": true
+            }
+          ],
+          "native_SAVE_cold": {
+            "counter": [
+              67,
+              68
+            ],
+            "checksummed_sectors": 14,
+            "qa_save": "/workspaces/pokefirered/work/followup-20261013/doors-dex/hoenn-lab-doors-dex-native-QA-only.sav"
+          },
+          "pass": true
+        }
+      ],
+      "source_unlock_flags": {
+        "FLAG_JOHTO_ARRIVAL_BRIEFED": false,
+        "FLAG_JOHTO_MET_LAB_ASSISTANT": false,
+        "FLAG_HOENN_BIRCH_RESCUED": false,
+        "FLAG_HOENN_MET_STERN": false
+      },
+      "current_case": {
+        "case": "hoenn-lab",
+        "temporary_preboot_warp_only": true,
+        "hoenn_unlock_preboot_fixture": true,
+        "doors": [
+          {
+            "label": "entry",
+            "position": [
+              44,
+              4,
+              6,
+              12
+            ]
+          },
+          {
+            "label": "exit",
+            "position": [
+              43,
+              9,
+              7,
+              17
+            ]
+          },
+          {
+            "label": "reentry",
+            "position": [
+              44,
+              4,
+              6,
+              12
+            ]
+          }
+        ],
+        "UI": [
+          {
+            "label": "hoenn-checkpoint",
+            "region": 2,
+            "dex_count": 202,
+            "inverse_entries": 202,
+            "numerical_rows": 185,
+            "real_start_menu": true,
+            "party_PC_dex_records_preserved": true
+          },
+          {
+            "label": "hoenn-lab-cold",
+            "region": 2,
+            "dex_count": 202,
+            "inverse_entries": 202,
+            "numerical_rows": 185,
+            "real_start_menu": true,
+            "party_PC_dex_records_preserved": true
+          }
+        ],
+        "native_SAVE_cold": {
+          "counter": [
+            67,
+            68
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/work/followup-20261013/doors-dex/hoenn-lab-doors-dex-native-QA-only.sav"
+        },
+        "pass": true
+      },
+      "inputs_unchanged": true
+    },
+    "dex-list-order": {
+      "pass": true,
+      "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+      "save_sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+      "ram_writes": 0,
+      "scope": "new SAV checkpoint doors and real Pokedex UI; not full travel/story",
+      "cases": [
+        {
+          "case": "johto-lab",
+          "temporary_preboot_warp_only": true,
+          "hoenn_unlock_preboot_fixture": false,
+          "doors": [
+            {
+              "label": "entry",
+              "position": [
+                76,
+                3,
+                6,
+                12
+              ]
+            },
+            {
+              "label": "exit",
+              "position": [
+                76,
+                2,
+                11,
+                9
+              ]
+            },
+            {
+              "label": "reentry",
+              "position": [
+                76,
+                3,
+                6,
+                12
+              ]
+            }
+          ],
+          "UI": [
+            {
+              "label": "before-lab-kanto",
+              "region": 0,
+              "dex_count": 151,
+              "inverse_entries": 151,
+              "numerical_rows": 151,
+              "real_start_menu": true,
+              "party_PC_dex_records_preserved": true
+            },
+            {
+              "label": "after-professor-johto",
+              "region": 1,
+              "dex_count": 251,
+              "inverse_entries": 251,
+              "numerical_rows": 250,
+              "real_start_menu": true,
+              "party_PC_dex_records_preserved": true
+            },
+            {
+              "label": "johto-lab-cold",
+              "region": 1,
+              "dex_count": 251,
+              "inverse_entries": 251,
+              "numerical_rows": 250,
+              "real_start_menu": true,
+              "party_PC_dex_records_preserved": true
+            }
+          ],
+          "actual_professor_first_visit_unlocked_Johto": true,
+          "native_SAVE_cold": {
+            "counter": [
+              67,
+              68
+            ],
+            "checksummed_sectors": 14,
+            "qa_save": "/workspaces/pokefirered/work/followup-20261013/dex-list-order/johto-lab-doors-dex-native-QA-only.sav"
+          },
+          "pass": true
+        },
+        {
+          "case": "hoenn-lab",
+          "temporary_preboot_warp_only": true,
+          "hoenn_unlock_preboot_fixture": true,
+          "doors": [
+            {
+              "label": "entry",
+              "position": [
+                44,
+                4,
+                6,
+                12
+              ]
+            },
+            {
+              "label": "exit",
+              "position": [
+                43,
+                9,
+                7,
+                17
+              ]
+            },
+            {
+              "label": "reentry",
+              "position": [
+                44,
+                4,
+                6,
+                12
+              ]
+            }
+          ],
+          "UI": [
+            {
+              "label": "hoenn-checkpoint",
+              "region": 2,
+              "dex_count": 202,
+              "inverse_entries": 202,
+              "numerical_rows": 185,
+              "real_start_menu": true,
+              "party_PC_dex_records_preserved": true
+            },
+            {
+              "label": "hoenn-lab-cold",
+              "region": 2,
+              "dex_count": 202,
+              "inverse_entries": 202,
+              "numerical_rows": 185,
+              "real_start_menu": true,
+              "party_PC_dex_records_preserved": true
+            }
+          ],
+          "native_SAVE_cold": {
+            "counter": [
+              67,
+              68
+            ],
+            "checksummed_sectors": 14,
+            "qa_save": "/workspaces/pokefirered/work/followup-20261013/dex-list-order/hoenn-lab-doors-dex-native-QA-only.sav"
+          },
+          "pass": true
+        }
+      ],
+      "source_unlock_flags": {
+        "FLAG_JOHTO_ARRIVAL_BRIEFED": false,
+        "FLAG_JOHTO_MET_LAB_ASSISTANT": false,
+        "FLAG_HOENN_BIRCH_RESCUED": false,
+        "FLAG_HOENN_MET_STERN": false
+      },
+      "current_case": {
+        "case": "hoenn-lab",
+        "temporary_preboot_warp_only": true,
+        "hoenn_unlock_preboot_fixture": true,
+        "doors": [
+          {
+            "label": "entry",
+            "position": [
+              44,
+              4,
+              6,
+              12
+            ]
+          },
+          {
+            "label": "exit",
+            "position": [
+              43,
+              9,
+              7,
+              17
+            ]
+          },
+          {
+            "label": "reentry",
+            "position": [
+              44,
+              4,
+              6,
+              12
+            ]
+          }
+        ],
+        "UI": [
+          {
+            "label": "hoenn-checkpoint",
+            "region": 2,
+            "dex_count": 202,
+            "inverse_entries": 202,
+            "numerical_rows": 185,
+            "real_start_menu": true,
+            "party_PC_dex_records_preserved": true
+          },
+          {
+            "label": "hoenn-lab-cold",
+            "region": 2,
+            "dex_count": 202,
+            "inverse_entries": 202,
+            "numerical_rows": 185,
+            "real_start_menu": true,
+            "party_PC_dex_records_preserved": true
+          }
+        ],
+        "native_SAVE_cold": {
+          "counter": [
+            67,
+            68
+          ],
+          "checksummed_sectors": 14,
+          "qa_save": "/workspaces/pokefirered/work/followup-20261013/dex-list-order/hoenn-lab-doors-dex-native-QA-only.sav"
+        },
+        "pass": true
+      },
+      "native_list_order_checks": [
+        {
+          "label": "before-lab-kanto",
+          "count": 151,
+          "rows": 151,
+          "expected_last_seen": 151,
+          "exact_regional_species_order": true,
+          "seen_caught_bits_match": true,
+          "trailing_unseen_trim_is_existing_UX": true
+        },
+        {
+          "label": "after-professor-johto",
+          "count": 251,
+          "rows": 250,
+          "expected_last_seen": 250,
+          "exact_regional_species_order": true,
+          "seen_caught_bits_match": true,
+          "trailing_unseen_trim_is_existing_UX": true
+        },
+        {
+          "label": "johto-lab-cold",
+          "count": 251,
+          "rows": 250,
+          "expected_last_seen": 250,
+          "exact_regional_species_order": true,
+          "seen_caught_bits_match": true,
+          "trailing_unseen_trim_is_existing_UX": true
+        },
+        {
+          "label": "hoenn-checkpoint",
+          "count": 202,
+          "rows": 185,
+          "expected_last_seen": 185,
+          "exact_regional_species_order": true,
+          "seen_caught_bits_match": true,
+          "trailing_unseen_trim_is_existing_UX": true
+        },
+        {
+          "label": "hoenn-lab-cold",
+          "count": 202,
+          "rows": 185,
+          "expected_last_seen": 185,
+          "exact_regional_species_order": true,
+          "seen_caught_bits_match": true,
+          "trailing_unseen_trim_is_existing_UX": true
+        }
+      ],
+      "inputs_unchanged": true
+    }
+  }
+}

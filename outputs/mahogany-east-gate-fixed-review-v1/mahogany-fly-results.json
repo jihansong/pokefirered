@@ -1,0 +1,34 @@
+{
+  "rom_sha256": "ab47fb761ae2d93e0008c98172f9dee4e89bd034037efa9abef2d86b436f6f81",
+  "cases": [
+    {
+      "case": "town-mahogany_town",
+      "exit": 0,
+      "pass": true,
+      "error": null,
+      "result": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/fly-town-mahogany_town/validation.json"
+    },
+    {
+      "case": "town-mahogany_badge7",
+      "exit": 0,
+      "pass": true,
+      "error": null,
+      "result": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/fly-town-mahogany_badge7/validation.json"
+    },
+    {
+      "case": "town-locked-mahogany",
+      "exit": 0,
+      "pass": true,
+      "error": null,
+      "result": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/fly-town-locked-mahogany/validation.json"
+    },
+    {
+      "case": "town-all-visited",
+      "exit": 0,
+      "pass": true,
+      "error": null,
+      "result": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/fly-town-all-visited/validation.json"
+    }
+  ],
+  "all_pass": true
+}

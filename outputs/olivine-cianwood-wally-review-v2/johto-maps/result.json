@@ -1,0 +1,888 @@
+{
+  "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+  "cases": [
+    {
+      "case": "ecruteak_west_into_gate",
+      "from": [
+        "EcruteakCity",
+        1,
+        21
+      ],
+      "key": "UP",
+      "to": "EcruteakCity_WestGate",
+      "actual_location": [
+        76,
+        59,
+        7,
+        10
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "west_gate_back_ecruteak",
+      "from": [
+        "EcruteakCity_WestGate",
+        7,
+        9
+      ],
+      "key": "DOWN",
+      "to": "EcruteakCity",
+      "actual_location": [
+        76,
+        51,
+        1,
+        21
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "west_gate_into_route38",
+      "from": [
+        "EcruteakCity_WestGate",
+        7,
+        2
+      ],
+      "key": "UP",
+      "to": "JohtoRoute38",
+      "actual_location": [
+        76,
+        60,
+        34,
+        10
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "route38_back_west_gate",
+      "from": [
+        "JohtoRoute38",
+        34,
+        10
+      ],
+      "key": "UP",
+      "to": "EcruteakCity_WestGate",
+      "actual_location": [
+        76,
+        59,
+        7,
+        2
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "route38_left_to_route39",
+      "from": [
+        "JohtoRoute38",
+        0,
+        11
+      ],
+      "key": "LEFT",
+      "to": "JohtoRoute39",
+      "actual_location": [
+        76,
+        61,
+        23,
+        15
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "route39_right_to_route38",
+      "from": [
+        "JohtoRoute39",
+        23,
+        15
+      ],
+      "key": "RIGHT",
+      "to": "JohtoRoute38",
+      "actual_location": [
+        76,
+        60,
+        0,
+        11
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "route39_down_to_olivine",
+      "from": [
+        "JohtoRoute39",
+        9,
+        31
+      ],
+      "key": "DOWN",
+      "to": "OlivineCity",
+      "actual_location": [
+        76,
+        62,
+        19,
+        0
+      ],
+      "fresh_native_taps": 1,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "olivine_up_to_route39",
+      "from": [
+        "OlivineCity",
+        19,
+        0
+      ],
+      "key": "UP",
+      "to": "JohtoRoute39",
+      "actual_location": [
+        76,
+        61,
+        9,
+        31
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "olivine_left_to_route40",
+      "from": [
+        "OlivineCity",
+        0,
+        25
+      ],
+      "key": "LEFT",
+      "to": "JohtoRoute40",
+      "actual_location": [
+        76,
+        73,
+        23,
+        17
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "route40_right_to_olivine",
+      "from": [
+        "JohtoRoute40",
+        23,
+        17
+      ],
+      "key": "RIGHT",
+      "to": "OlivineCity",
+      "actual_location": [
+        76,
+        62,
+        0,
+        25
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "route40_surf_down_to_route41",
+      "from": [
+        "JohtoRoute40",
+        5,
+        35
+      ],
+      "key": "DOWN",
+      "to": "JohtoRoute41",
+      "actual_location": [
+        76,
+        74,
+        5,
+        0
+      ],
+      "fresh_native_taps": 1,
+      "surf": true,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "route41_surf_up_to_route40",
+      "from": [
+        "JohtoRoute41",
+        5,
+        0
+      ],
+      "key": "UP",
+      "to": "JohtoRoute40",
+      "actual_location": [
+        76,
+        73,
+        5,
+        35
+      ],
+      "fresh_native_taps": 2,
+      "surf": true,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "route41_surf_left_to_cianwood",
+      "from": [
+        "JohtoRoute41",
+        0,
+        15
+      ],
+      "key": "LEFT",
+      "to": "CianwoodCity",
+      "actual_location": [
+        76,
+        75,
+        27,
+        23
+      ],
+      "fresh_native_taps": 2,
+      "surf": true,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "cianwood_surf_right_to_route41",
+      "from": [
+        "CianwoodCity",
+        27,
+        23
+      ],
+      "key": "RIGHT",
+      "to": "JohtoRoute41",
+      "actual_location": [
+        76,
+        74,
+        0,
+        15
+      ],
+      "fresh_native_taps": 2,
+      "surf": true,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "olivinecity_enter_pokemoncenter_1f",
+      "from": [
+        "OlivineCity",
+        7,
+        20
+      ],
+      "key": "UP",
+      "to": "OlivineCity_PokemonCenter_1F",
+      "actual_location": [
+        76,
+        63,
+        7,
+        8
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "olivinecity_exit_pokemoncenter_1f",
+      "from": [
+        "OlivineCity_PokemonCenter_1F",
+        7,
+        7
+      ],
+      "key": "DOWN",
+      "to": "OlivineCity",
+      "actual_location": [
+        76,
+        62,
+        7,
+        20
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "olivinecity_enter_mart",
+      "from": [
+        "OlivineCity",
+        15,
+        19
+      ],
+      "key": "UP",
+      "to": "OlivineCity_Mart",
+      "actual_location": [
+        76,
+        65,
+        4,
+        7
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "olivinecity_exit_mart",
+      "from": [
+        "OlivineCity_Mart",
+        4,
+        6
+      ],
+      "key": "DOWN",
+      "to": "OlivineCity",
+      "actual_location": [
+        76,
+        62,
+        15,
+        19
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "olivinecity_enter_gym",
+      "from": [
+        "OlivineCity",
+        28,
+        8
+      ],
+      "key": "UP",
+      "to": "OlivineCity_Gym",
+      "actual_location": [
+        76,
+        66,
+        6,
+        14
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "olivinecity_exit_gym",
+      "from": [
+        "OlivineCity_Gym",
+        6,
+        13
+      ],
+      "key": "DOWN",
+      "to": "OlivineCity",
+      "actual_location": [
+        76,
+        62,
+        28,
+        8
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "olivinecity_enter_cafe",
+      "from": [
+        "OlivineCity",
+        6,
+        9
+      ],
+      "key": "UP",
+      "to": "OlivineCity_Cafe",
+      "actual_location": [
+        76,
+        80,
+        4,
+        7
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "olivinecity_exit_cafe",
+      "from": [
+        "OlivineCity_Cafe",
+        4,
+        6
+      ],
+      "key": "DOWN",
+      "to": "OlivineCity",
+      "actual_location": [
+        76,
+        62,
+        6,
+        9
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "olivinecity_enter_lighthouse",
+      "from": [
+        "OlivineCity",
+        32,
+        27
+      ],
+      "key": "UP",
+      "to": "OlivineLighthouse_1F",
+      "actual_location": [
+        76,
+        67,
+        11,
+        18
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "olivinecity_exit_lighthouse",
+      "from": [
+        "OlivineLighthouse_1F",
+        11,
+        17
+      ],
+      "key": "DOWN",
+      "to": "OlivineCity",
+      "actual_location": [
+        76,
+        62,
+        32,
+        27
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "cianwoodcity_enter_pokemoncenter_1f",
+      "from": [
+        "CianwoodCity",
+        5,
+        25
+      ],
+      "key": "UP",
+      "to": "CianwoodCity_PokemonCenter_1F",
+      "actual_location": [
+        76,
+        76,
+        7,
+        8
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "cianwoodcity_exit_pokemoncenter_1f",
+      "from": [
+        "CianwoodCity_PokemonCenter_1F",
+        7,
+        7
+      ],
+      "key": "DOWN",
+      "to": "CianwoodCity",
+      "actual_location": [
+        76,
+        75,
+        5,
+        25
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "cianwoodcity_enter_pharmacy",
+      "from": [
+        "CianwoodCity",
+        15,
+        24
+      ],
+      "key": "UP",
+      "to": "CianwoodCity_Pharmacy",
+      "actual_location": [
+        76,
+        78,
+        4,
+        7
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "cianwoodcity_exit_pharmacy",
+      "from": [
+        "CianwoodCity_Pharmacy",
+        4,
+        6
+      ],
+      "key": "DOWN",
+      "to": "CianwoodCity",
+      "actual_location": [
+        76,
+        75,
+        15,
+        24
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "cianwoodcity_enter_gym",
+      "from": [
+        "CianwoodCity",
+        9,
+        8
+      ],
+      "key": "UP",
+      "to": "CianwoodCity_Gym",
+      "actual_location": [
+        76,
+        79,
+        6,
+        14
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "cianwoodcity_exit_gym",
+      "from": [
+        "CianwoodCity_Gym",
+        6,
+        13
+      ],
+      "key": "DOWN",
+      "to": "CianwoodCity",
+      "actual_location": [
+        76,
+        75,
+        9,
+        8
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "olivinecity_center_upstairs",
+      "from": [
+        "OlivineCity_PokemonCenter_1F",
+        2,
+        6
+      ],
+      "key": "LEFT",
+      "to": "OlivineCity_PokemonCenter_2F",
+      "actual_location": [
+        76,
+        64,
+        2,
+        6
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "olivinecity_center_downstairs",
+      "from": [
+        "OlivineCity_PokemonCenter_2F",
+        2,
+        6
+      ],
+      "key": "LEFT",
+      "to": "OlivineCity_PokemonCenter_1F",
+      "actual_location": [
+        76,
+        63,
+        2,
+        6
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "cianwoodcity_center_upstairs",
+      "from": [
+        "CianwoodCity_PokemonCenter_1F",
+        2,
+        6
+      ],
+      "key": "LEFT",
+      "to": "CianwoodCity_PokemonCenter_2F",
+      "actual_location": [
+        76,
+        77,
+        2,
+        6
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "cianwoodcity_center_downstairs",
+      "from": [
+        "CianwoodCity_PokemonCenter_2F",
+        2,
+        6
+      ],
+      "key": "LEFT",
+      "to": "CianwoodCity_PokemonCenter_1F",
+      "actual_location": [
+        76,
+        76,
+        2,
+        6
+      ],
+      "fresh_native_taps": 2,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "lighthouse_inverse_stair_1",
+      "from": [
+        "OlivineLighthouse_1F",
+        17,
+        9
+      ],
+      "key": "RIGHT",
+      "to": "OlivineLighthouse_2F",
+      "actual_location": [
+        76,
+        68,
+        18,
+        10
+      ],
+      "fresh_native_taps": 3,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "lighthouse_inverse_stair_2",
+      "from": [
+        "OlivineLighthouse_2F",
+        17,
+        10
+      ],
+      "key": "RIGHT",
+      "to": "OlivineLighthouse_1F",
+      "actual_location": [
+        76,
+        67,
+        18,
+        9
+      ],
+      "fresh_native_taps": 3,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "lighthouse_inverse_stair_3",
+      "from": [
+        "OlivineLighthouse_2F",
+        5,
+        10
+      ],
+      "key": "LEFT",
+      "to": "OlivineLighthouse_3F",
+      "actual_location": [
+        76,
+        69,
+        4,
+        10
+      ],
+      "fresh_native_taps": 3,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "lighthouse_inverse_stair_4",
+      "from": [
+        "OlivineLighthouse_3F",
+        5,
+        10
+      ],
+      "key": "LEFT",
+      "to": "OlivineLighthouse_2F",
+      "actual_location": [
+        76,
+        68,
+        4,
+        10
+      ],
+      "fresh_native_taps": 3,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "lighthouse_inverse_stair_5",
+      "from": [
+        "OlivineLighthouse_3F",
+        17,
+        10
+      ],
+      "key": "RIGHT",
+      "to": "OlivineLighthouse_4F",
+      "actual_location": [
+        76,
+        70,
+        18,
+        10
+      ],
+      "fresh_native_taps": 3,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "lighthouse_inverse_stair_6",
+      "from": [
+        "OlivineLighthouse_4F",
+        17,
+        10
+      ],
+      "key": "RIGHT",
+      "to": "OlivineLighthouse_3F",
+      "actual_location": [
+        76,
+        69,
+        18,
+        10
+      ],
+      "fresh_native_taps": 3,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "lighthouse_inverse_stair_7",
+      "from": [
+        "OlivineLighthouse_4F",
+        5,
+        10
+      ],
+      "key": "LEFT",
+      "to": "OlivineLighthouse_5F",
+      "actual_location": [
+        76,
+        71,
+        4,
+        10
+      ],
+      "fresh_native_taps": 3,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "lighthouse_inverse_stair_8",
+      "from": [
+        "OlivineLighthouse_5F",
+        5,
+        10
+      ],
+      "key": "LEFT",
+      "to": "OlivineLighthouse_4F",
+      "actual_location": [
+        76,
+        70,
+        4,
+        10
+      ],
+      "fresh_native_taps": 3,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "lighthouse_inverse_stair_9",
+      "from": [
+        "OlivineLighthouse_5F",
+        17,
+        10
+      ],
+      "key": "RIGHT",
+      "to": "OlivineLighthouse_6F",
+      "actual_location": [
+        76,
+        72,
+        11,
+        16
+      ],
+      "fresh_native_taps": 3,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "lighthouse_inverse_stair_10",
+      "from": [
+        "OlivineLighthouse_6F",
+        12,
+        16
+      ],
+      "key": "LEFT",
+      "to": "OlivineLighthouse_5F",
+      "actual_location": [
+        76,
+        71,
+        18,
+        10
+      ],
+      "fresh_native_taps": 3,
+      "surf": false,
+      "party_pc_dex_flags_preserved": true,
+      "forced_memory_writes": 0
+    }
+  ],
+  "all_pass": true,
+  "original_files_unchanged": true,
+  "forced_memory_writes": 0
+}

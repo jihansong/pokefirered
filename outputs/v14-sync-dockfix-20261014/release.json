@@ -1,0 +1,39 @@
+{
+  "status": "V14_SYNC_AND_NATIVE_DOCK_FIX_PASS",
+  "created_utc": "2026-10-14T10:40:25.927072+00:00",
+  "created_korea": "2026-10-14T19:40:25.927072+09:00",
+  "ZIP_display_timezone": "Asia/Seoul",
+  "original": {
+    "path": "saves/pokemonthyl_v1.4.sav",
+    "sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4"
+  },
+  "synced_sav": "/workspaces/pokefirered/saves/pokemonthyl_v1.4-synced-recovered.sav",
+  "synced_sha256": "c06ad0536f1ee13fd88a3cf36346b52d3d5ca0cae7e729723acf6047d916feb8",
+  "ROM_sha256": "af2677993a75979fb36f0768c390d1bad7424e61f2d569b5054d40702250d2e8",
+  "ELF_sha256": "2549852a48935c680e06e81719b54663b9c0efa7fdaccd31d1f4683886c5d64e",
+  "files": {
+    "BadEgg-forensic-report.json": "5235315fb702317995e0015be99a83a838aed7c8094a9bd2e607109b624f1c22",
+    "pokemonthyl_v1.4.gba": "af2677993a75979fb36f0768c390d1bad7424e61f2d569b5054d40702250d2e8",
+    "edit-manifest.json": "61ae1e5ea6523b0770deaff49a4f65938d5038400a8f7e78540f32c098515853",
+    "dex-scroll-observation-baseline.json": "ff3625d3743317ac33f174536b8f7289337915e55c613e596658af0b68cccc5b",
+    "independent-raw-audit.json": "29a201d39dd1aee5b56a4eeeaff2901af3d008d60ce12b13b6e3797b155d9055",
+    "v14-actual-cold-continue.png": "a24eafddce076449817ea079f5adc0121d5d672af11548ceafec0a8b1fe0e708",
+    "physical-PC-independent-validation.json": "27cbd03da9ec1ef925888dd9df5933534e7d6f7a0712082ccd0642ba5f689bc3",
+    "native-dock-validation.json": "3c03a5af65d76b98198b70cd7a509f08ab54c5a58b9b8c9ed6e67089ef23f614",
+    "physical-PC-recovery-edit-manifest.json": "eeee313b5d2ce344d6474944e0ef7c0d281eda96ebcb8e872497a4c90e5f1501",
+    "Dewford-safe-land-actual.png": "b9e3c8341e583752f67498a4744c3c15b8246998c4a6d121644b2fdfb46eee6a",
+    "native-v14-new-ROM-validation.json": "72964686c402290cd2c59b33619915134b86c7116466a6e3edeb45d52343640d",
+    "pokemonthyl_v1.4.sav": "c06ad0536f1ee13fd88a3cf36346b52d3d5ca0cae7e729723acf6047d916feb8",
+    "BadEgg-inferred-minimal-repair-spec.json": "fe24f0797822120c265c09702683cc5c38be48c36321347faf0cac522ccd6f2b",
+    "README.txt": "cf06cfabe35088c974de11496e06e2888c217006316dc02f586e76702d99cb73",
+    "regional-UI-validation-baseline.json": "0b8e8878c6468451cd6cc96d717b37358d7b7fc42e288ce245bfe6bfcfcc68bc"
+  },
+  "unresolved_bad_records": 0,
+  "Lickitung_recovery": "Inferred unique minimum-bit model; exact original not donor authenticated",
+  "full_campaign_complete": false,
+  "DELTA_device_FPS_measured": false,
+  "dock_native_pass": true,
+  "v14_new_ROM_native_save_cold_pass": true,
+  "regional_UI_observed_on_preserved_baseline": true,
+  "Brawly_progression_tested": false
+}

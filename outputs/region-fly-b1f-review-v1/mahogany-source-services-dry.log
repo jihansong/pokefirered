@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/johto/build_mahogany.py", line 903, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--root',default='.');p.add_argument('--apply',action='store_true');a=p.parse_args();apply(Path(a.root).resolve(),a.apply)
+                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/johto/build_mahogany.py", line 881, in apply
+    s=Source(root);out,stats=build(s);validate(s,out,stats)
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/johto/build_mahogany.py", line 838, in validate
+    assert any(z in seen for z in [(x-1,y),(x+1,y),(x,y-1),(x,y+1)]),(n,'NPC cannot be faced',o)
+AssertionError: ('MahoganyTown_PokemonCenter_2F', 'NPC cannot be faced', {'type': 'object', 'graphics_id': 'OBJ_EVENT_GFX_MG_DELIVERYMAN', 'x': 1, 'y': 2, 'elevation': 3, 'movement_type': 'MOVEMENT_TYPE_FACE_DOWN', 'movement_range_x': 1, 'movement_range_y': 1, 'trainer_type': 'TRAINER_TYPE_NONE', 'trainer_sight_or_berry_tree_id': '0', 'script': 'CableClub_EventScript_MysteryGiftMan', 'flag': 'FLAG_HIDE_MG_DELIVERYMEN'})

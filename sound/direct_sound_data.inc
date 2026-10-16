@@ -2107,3 +2107,7 @@ DirectSoundWaveData_unknown_open_hihat::
 DirectSoundWaveData_unused_unknown_male_voice::
 	.incbin "sound/direct_sound_samples/unused_unknown_male_voice.bin"
 @ END HOENN MUSIC
+
+	.align 2
+PikachuVoice_Title::
+	.incbin "sound/direct_sound_samples/cries/title_pikachu_voice.bin"

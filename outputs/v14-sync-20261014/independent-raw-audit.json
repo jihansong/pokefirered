@@ -1,0 +1,39 @@
+{
+  "schema": "thunder-yellow-v14-independent-raw-byte-oracle-v1",
+  "pass_all": true,
+  "source_sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4",
+  "candidate_sha256": "99f4100d09961196706282a02e96ee9017a0a591777aa3ca0b40249ec8ae89e8",
+  "source_data_base": "User v1.4 counter78/77; never the older counter67 save",
+  "current_ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+  "both_banks_all_28_sector_checksums_valid": true,
+  "SB2_entire_byte_exact": true,
+  "SB1_outside_two_PP_records_and_two_qty_words_byte_exact": true,
+  "party_headers_identity_IV_EV_EXP_moves_status_level_stats_byte_exact": true,
+  "party_authorized_changes": [
+    {
+      "slot_1based": 1,
+      "pid": 3957541173,
+      "changes": "authorized PP and possibly PP-Up bonus only"
+    },
+    {
+      "slot_1based": 6,
+      "pid": 2681606392,
+      "changes": "authorized PP and possibly PP-Up bonus only"
+    }
+  ],
+  "four_prior_IV2x_vectors_not_redoubled": true,
+  "prior_IV_before_after_ledger_joined_and_exact": true,
+  "actual_remote_vs_local_preflight_semantics_identical": true,
+  "inactive_bank_SB1_byte_exact": true,
+  "inactive_PC_exact_one_donor_replacement_only": true,
+  "authentic_Lapras_record_identical_to_two_authenticated_original_donor_banks": true,
+  "active_PC_record_multiset_preserved_except_authentic_one_donor_replacement": true,
+  "PC_sorted_healthy_records": 137,
+  "PC_empties": 282,
+  "duplicates_shinies_preserved": true,
+  "Lickitung_damaged_record_exact_original_BOX2_cell22_anchor": true,
+  "save_counters_sector_rotation_header_padding_special_sections_preserved": true,
+  "all_18_original_SAVs_unchanged": true,
+  "native_execution": false,
+  "remaining": "Actual matching-ROM Continue, PC display/PP display and native SAVE/cold verification; Lickitung recovery needs a healthy original donor"
+}

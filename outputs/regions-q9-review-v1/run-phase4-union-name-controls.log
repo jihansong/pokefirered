@@ -1,0 +1,8 @@
+/opt/devkitpro/devkitARM/arm-none-eabi/bin/ld:/tmp/native-name-unit-zqa3j7ap/a.ld:1: syntax error
+collect2: error: ld returned 1 exit status
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/native_union_name_arm_controls_qa.py", line 116, in <module>
+    subprocess.run([str(tool/'arm-none-eabi-gcc'),'-marm','-march=armv4t','-mabi=apcs-gnu','-Os',
+  File "/usr/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc', '-marm', '-march=armv4t', '-mabi=apcs-gnu', '-Os', '-ffreestanding', '-fno-builtin', '-fno-inline', '-fno-tree-loop-distribute-patterns', '-fno-unwind-tables', '-fno-asynchronous-unwind-tables', '-nostdlib', '-Wl,--entry=_qa_start', '-Wl,--build-id=none', '-Wl,-T,/tmp/native-name-unit-zqa3j7ap/a.ld', '/tmp/native-name-unit-zqa3j7ap/s.S', '/tmp/native-name-unit-zqa3j7ap/a.c', '-o', '/tmp/native-name-unit-zqa3j7ap/unit.elf']' returned non-zero exit status 1.

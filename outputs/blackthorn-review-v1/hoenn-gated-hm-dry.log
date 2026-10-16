@@ -1,0 +1,123 @@
+{
+  "apply": false,
+  "changed": [
+    "include/constants/flags_hoenn_story.h",
+    "data/maps/VerdanturfTown_WandasHouse/scripts.inc",
+    "tools/hoenn_import/patches/VerdanturfTown_WandasHouse.scripts.inc",
+    "data/maps/VerdanturfTown_WandasHouse/text.inc",
+    "tools/hoenn_import/patches/VerdanturfTown_WandasHouse.text.inc",
+    "data/maps/PetalburgCity_WallysHouse/scripts.inc",
+    "tools/hoenn_import/patches/PetalburgCity_WallysHouse.scripts.inc",
+    "data/maps/PetalburgCity_WallysHouse/text.inc",
+    "tools/hoenn_import/patches/PetalburgCity_WallysHouse.text.inc",
+    "data/maps/GraniteCave_1F/scripts.inc",
+    "tools/hoenn_import/patches/GraniteCave_1F.scripts.inc",
+    "data/maps/GraniteCave_1F/text.inc",
+    "tools/hoenn_import/patches/GraniteCave_1F.text.inc"
+  ],
+  "native_shared_hm_cases": "NOT_RUN",
+  "save_layout_changed": false,
+  "original_npc_positions_warps_or_terrain_changed": false,
+  "chapter_gates": {
+    "Wanda": "RUSTURF_OPEN; preserve the existing Wally/referral dialogue",
+    "WallyDad": "Wally scene >=2 AND Hoenn Badge05 AND actual Norman trainer victory",
+    "Hiker": "Original immediate HM05 gift; Flash usage has its separate badge gate"
+  },
+  "rare_tm": {
+    "VerdanturfTown_WandasHouse": {
+      "hm": "ITEM_HM04",
+      "duplicate_tm": "ITEM_TM26",
+      "receipt": "FLAG_HOENN_GOT_WANDA_SHARED_HM_REWARD"
+    },
+    "PetalburgCity_WallysHouse": {
+      "hm": "ITEM_HM03",
+      "duplicate_tm": "ITEM_TM13",
+      "receipt": "FLAG_HOENN_GOT_WALLY_DAD_SHARED_HM_REWARD"
+    },
+    "GraniteCave_1F": {
+      "hm": "ITEM_HM05",
+      "duplicate_tm": "ITEM_TM29",
+      "receipt": "FLAG_HOENN_GOT_GRANITE_SHARED_HM_REWARD"
+    }
+  },
+  "files": {
+    "include/constants/flags_hoenn_story.h": {
+      "before": "efb2b9b8c1234fa1f0735429e182feefad2cc06f38726cef3a151e67c8888978",
+      "after": "ed5bf6f240176e4eef2d86198a7c8d1e736bf35f8397595a16e5d17582e87606"
+    },
+    "data/maps/VerdanturfTown_WandasHouse/scripts.inc": {
+      "before": "aebf2e0bbca2d92cea53aff574ba3db8a48cba0a2a383fe8f32abde2e2d533fa",
+      "after": "db85ef56713cae8c664330d15f9f6cf25f040dd5711ed7dbdb150ee4d57f9062"
+    },
+    "tools/hoenn_import/patches/VerdanturfTown_WandasHouse.scripts.inc": {
+      "before": "20bdc081c405ea5fba50acde664718dd439e478e42814d07ed8e0d761b115137",
+      "after": "c17a4c7daf0bc905b7acf47a0aa7cff90b25ada2f0c3e4affeb54fa24350a0ab"
+    },
+    "data/maps/VerdanturfTown_WandasHouse/text.inc": {
+      "before": "c3009e2b53e456b99996593160c65285f31511aaba05a0abb127f6e2cc2ddf6a",
+      "after": "1704b72d504bea54bc30e76d4a858ea8bec3db295d6778715d5584c8edae0072"
+    },
+    "tools/hoenn_import/patches/VerdanturfTown_WandasHouse.text.inc": {
+      "before": "72eb42c65920f161812c98494fb4d0ce7ec93f840c542de4c68a9447bfc29662",
+      "after": "dfdcdc11a91fa19215829e16a8f17ead166f6c4a9c1ab6aba6f9957dc340134e"
+    },
+    "data/maps/PetalburgCity_WallysHouse/scripts.inc": {
+      "before": "c10762d63fe3770089ba366889310fa83403fcd2a703f04c20b4790397e34048",
+      "after": "e8e969a57d177ea301b79d82ca842005ac884e7157e8337424732714f8c0f1ae"
+    },
+    "tools/hoenn_import/patches/PetalburgCity_WallysHouse.scripts.inc": {
+      "before": "81717e8b5b159a68f4137dce2a3d24c8b1a56e54cd1f6de28209908d499aadc5",
+      "after": "23b48a1f278437cf0e06e23272c8d9cdbe05060849dfa6b3b39538b8812de300"
+    },
+    "data/maps/PetalburgCity_WallysHouse/text.inc": {
+      "before": "091998cf8b6153d2afaf84e47601363bce5552c84078a950933bf6113eac7e4d",
+      "after": "a3feee60fc2b7b03b5136c305e31ec756f298fcb6496537dfe319c13cfc86309"
+    },
+    "tools/hoenn_import/patches/PetalburgCity_WallysHouse.text.inc": {
+      "before": "c5f6bc359cdced58c70e03ed2b802416cd8c9cb8abb795dad21f4fe54113a120",
+      "after": "81028419b3f01a0c0a673308531ab81751b9671fe0e00b47d155117717eee057"
+    },
+    "data/maps/GraniteCave_1F/scripts.inc": {
+      "before": "6d245e9eb050542692ce1696ec79cb9ccf780be41f42108d7e03b4e8229b4c83",
+      "after": "ece96d165cb2947a5d87a8a2843a12a776400ebbce875c9271a7a28229d98a90"
+    },
+    "tools/hoenn_import/patches/GraniteCave_1F.scripts.inc": {
+      "before": null,
+      "after": "7d0b12cb5bdf6a1c4f07d38a48686ed6e481e686c36ce74fb5f2609d5299a1d5"
+    },
+    "data/maps/GraniteCave_1F/text.inc": {
+      "before": "248bee4596faef5b54cf2d1feae4fbcf0a77098fce2b29855a07da3b6a0dc373",
+      "after": "64ba768b4b939ff5a0e96c8c29843b8c69f08efaf437d9032e64971450a66cd2"
+    },
+    "tools/hoenn_import/patches/GraniteCave_1F.text.inc": {
+      "before": "97386db354f2cfc203586f9c306ee1af0da25981a3642772f47abff9de039a87",
+      "after": "cd6f3e35f0f923d56a63b1c23a5959112a515db6b55e8d8d9c5159b74a9fbcfe"
+    }
+  },
+  "original_map_sha256": {
+    "/workspaces/pokefirered/data/maps/VerdanturfTown_WandasHouse/map.json": "f8ce862cea5198965209c2d686760dca43e916114941f43d7ce64f219b0b21d9",
+    "/workspaces/pokefirered/data/maps/PetalburgCity_WallysHouse/map.json": "61b125b97eade6b91d1cb2a097b9d6d0ffac11d9061b5e114d3e621c373477dd",
+    "/workspaces/pokefirered/data/maps/GraniteCave_1F/map.json": "902c84870a4655ed0b8bccf760f738bd4a4927aa4a14bb4803f99d792c9659c5"
+  },
+  "original_terrain_sha256": {
+    "/workspaces/pokefirered/data/layouts/HoennVerdanturfTown_WandasHouse/map.bin": "cfc9d2a0923025f21d5feacbdbd0665f10bb781a34b9ed17f28ee7f9e918f738",
+    "/workspaces/pokefirered/data/layouts/HoennHouse2/map.bin": "abbbb3ae0dde23f48f41faac137e9533b6095a9f3c69ce2817f459d4dad0fe50",
+    "/workspaces/pokefirered/data/layouts/HoennGraniteCave_1F/map.bin": "6e8e5420747a9e2c18c9ecc04e43e028cac70e6030a8015a52edcac739459bbf"
+  },
+  "original_save_sha256": {
+    "/workspaces/pokefirered/saves/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "/workspaces/pokefirered/saves/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "/workspaces/pokefirered/saves/hoenn.sav": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+    "/workspaces/pokefirered/saves/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "/workspaces/pokefirered/saves/pokemonthyl_hoenn_QAed.sav": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+    "/workspaces/pokefirered/saves/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.1.sav": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.2.sav": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+    "/workspaces/pokefirered/saves/backup-codex-v1_1-recovery-sort-20261002T002244.307175Z/pokemonthyl_v1.1.original.sav": "417452a3f151dbe0eeaca4d41780739f8137eafd7ff14df4e7eed1685b9b699f",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/hoenn.sav": "d1ed8d987d4e451efb00a6cda2ba770e6472f36a89595a04a3550156876806ad",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424"
+  }
+}

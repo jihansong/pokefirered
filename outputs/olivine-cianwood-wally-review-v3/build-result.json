@@ -1,0 +1,26 @@
+{
+  "time": "2026-10-05T18:57:58.431625+00:00",
+  "pass": true,
+  "files": {
+    "gba": {
+      "bytes": 33554432,
+      "sha256": "6185cd53db214dd18cf8229726633f75a455353bfc202ac6d88c127477a6ca19"
+    },
+    "elf": {
+      "bytes": 33877824,
+      "sha256": "18f46287e0b1152dfc4aa100f656d1e80bdd5c0e14df5607d3ecb8bb4b9a5666"
+    },
+    "sym": {
+      "bytes": 3255908,
+      "sha256": "83a6c7d78c3e8ba442e1fb00088712f62a8ab0e4dcde4231e2ccabacfcb3607c"
+    },
+    "map": {
+      "bytes": 3272984,
+      "sha256": "038d3e5135eb841ab3c102a71c9bbbad62a1995319fb2ba8fea671eb60f47e42"
+    }
+  },
+  "current_main_not_replaced": true,
+  "whole_regions_complete": false,
+  "gyms_native_first_win_repaired": true,
+  "native_verification_pending": true
+}

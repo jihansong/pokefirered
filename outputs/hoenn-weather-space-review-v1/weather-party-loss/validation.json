@@ -1,0 +1,53 @@
+{
+  "pass": true,
+  "rom_sha256": "337cf79678b33f77d2d6b6971cadc1adc292f1a47321d4befd3ed3fedcbbd510",
+  "elf_sha256": "414864288c44080bf247d56e181bb35ae23f9d265bb92451f3161392b98a3ed7",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "weather-party-loss",
+  "fixture": "temporary copy, one level-1 Magikarp with Splash",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [
+    {
+      "trainer": "TRAINER_HOENN_SHELLY_WEATHER_INSTITUTE",
+      "enemy_species": [
+        330,
+        287,
+        0,
+        0,
+        0,
+        0
+      ],
+      "start_frame": 1535,
+      "moves": [
+        0
+      ],
+      "end_frame": 3017
+    }
+  ],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_save": {
+    "counter_before": 60,
+    "counter_after": 61,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_HOENN_WEATHER_RESCUED": false,
+      "FLAG_HOENN_GOT_WEATHER_CASTFORM": false,
+      "FLAG_HOENN_SPACE_CENTER_SECURED": false,
+      "FLAG_HOENN_GOT_HM08_FROM_STEVEN": false
+    },
+    "trainers": {
+      "TRAINER_HOENN_SHELLY_WEATHER_INSTITUTE": false,
+      "TRAINER_HOENN_TABITHA_SPACE_CENTER": false,
+      "TRAINER_HOENN_MAXIE_SPACE_CENTER": false
+    },
+    "hm08": 0,
+    "sha256": "4207a496d73944cc68b1b15614b6981451d816ee21d11bd5e5896117580953c2"
+  },
+  "original_saves_unchanged": true
+}

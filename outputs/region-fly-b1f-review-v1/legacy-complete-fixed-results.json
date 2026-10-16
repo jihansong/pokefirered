@@ -1,0 +1,83 @@
+{
+  "results": [
+    {
+      "case": "kanto-on",
+      "returncode": 1,
+      "pass": false,
+      "allocation": {
+        "allocated_fly": 42,
+        "allocated_dungeon": 20,
+        "expected_legacy_fly": 44,
+        "expected_kanto_hoenn": {
+          "REGIONMAP_KANTO": 13,
+          "REGIONMAP_HOENN": 24
+        },
+        "allocated_by_region": {
+          "REGIONMAP_KANTO": 13,
+          "REGIONMAP_SEVII123": 3,
+          "REGIONMAP_SEVII45": 2,
+          "REGIONMAP_SEVII67": 2,
+          "REGIONMAP_HOENN": 22,
+          "REGIONMAP_JOHTO_ENTRY": 0,
+          "REGIONMAP_COUNT": 0
+        },
+        "missing_legacy_fly": 2,
+        "native_active_sprites": 64,
+        "native_sprite_capacity": 64,
+        "pointer_bounds_unique_active_pass": true,
+        "all_visited_icons_complete": false
+      },
+      "grid": {
+        "width": 28,
+        "height": 15,
+        "mapsec_none": 197,
+        "empty_cells": 262,
+        "invalid_nonempty_sections": [],
+        "native_u8": true
+      },
+      "error": null,
+      "traceback": null
+    },
+    {
+      "case": "hoenn-on",
+      "returncode": 1,
+      "pass": false,
+      "allocation": {
+        "allocated_fly": 42,
+        "allocated_dungeon": 20,
+        "expected_legacy_fly": 44,
+        "expected_kanto_hoenn": {
+          "REGIONMAP_KANTO": 13,
+          "REGIONMAP_HOENN": 24
+        },
+        "allocated_by_region": {
+          "REGIONMAP_KANTO": 13,
+          "REGIONMAP_SEVII123": 3,
+          "REGIONMAP_SEVII45": 2,
+          "REGIONMAP_SEVII67": 2,
+          "REGIONMAP_HOENN": 22,
+          "REGIONMAP_JOHTO_ENTRY": 0,
+          "REGIONMAP_COUNT": 0
+        },
+        "missing_legacy_fly": 2,
+        "native_active_sprites": 64,
+        "native_sprite_capacity": 64,
+        "pointer_bounds_unique_active_pass": true,
+        "all_visited_icons_complete": false
+      },
+      "grid": {
+        "width": 28,
+        "height": 15,
+        "mapsec_none": 197,
+        "empty_cells": 262,
+        "invalid_nonempty_sections": [],
+        "native_u8": true
+      },
+      "error": null,
+      "traceback": null
+    }
+  ],
+  "main_unchanged": true,
+  "original_save_unchanged": true,
+  "rom_sha256": "3d1a1a4f3e84deb5d9f8d2a5943930354e1a86164fe257eabf79d99ca1232fee"
+}

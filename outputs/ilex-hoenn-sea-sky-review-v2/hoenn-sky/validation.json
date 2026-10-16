@@ -1,0 +1,194 @@
+{
+  "pass": true,
+  "rom_sha256": "475088869b9937e4c1ed81ca920b8c2bb862ac44f1e2f50c9997cf9dadbfb02a",
+  "elf_sha256": "0fbf12e4c77a09628cdb1fb730965993dffadebf454f0cae0cca5b28c11f209b",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-sea-sky-sky",
+  "fixture": "temporary level-100 battle fixture; original PC/source SAV unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_story_not_entire_regions": true,
+  "rayquaza_native_animation_trace": [
+    {
+      "frame": 707,
+      "slot": 1,
+      "sprite": 1,
+      "gfx": 170,
+      "local_id": 1,
+      "xy": [
+        20,
+        16
+      ],
+      "inanimate": false,
+      "anim": 4
+    },
+    {
+      "frame": 754,
+      "slot": 1,
+      "sprite": 1,
+      "gfx": 170,
+      "local_id": 1,
+      "xy": [
+        20,
+        16
+      ],
+      "inanimate": false,
+      "anim": 10
+    },
+    {
+      "frame": 850,
+      "slot": 1,
+      "sprite": 1,
+      "gfx": 170,
+      "local_id": 1,
+      "xy": [
+        20,
+        16
+      ],
+      "inanimate": false,
+      "anim": 6
+    },
+    {
+      "frame": 899,
+      "slot": 1,
+      "sprite": 1,
+      "gfx": 170,
+      "local_id": 1,
+      "xy": [
+        20,
+        15
+      ],
+      "inanimate": false,
+      "anim": 9
+    },
+    {
+      "frame": 907,
+      "slot": 1,
+      "sprite": 1,
+      "gfx": 170,
+      "local_id": 1,
+      "xy": [
+        20,
+        14
+      ],
+      "inanimate": false,
+      "anim": 9
+    },
+    {
+      "frame": 916,
+      "slot": 1,
+      "sprite": 1,
+      "gfx": 170,
+      "local_id": 1,
+      "xy": [
+        20,
+        13
+      ],
+      "inanimate": false,
+      "anim": 9
+    },
+    {
+      "frame": 923,
+      "slot": 1,
+      "sprite": 1,
+      "gfx": 170,
+      "local_id": 1,
+      "xy": [
+        20,
+        12
+      ],
+      "inanimate": false,
+      "anim": 9
+    },
+    {
+      "frame": 931,
+      "slot": 1,
+      "sprite": 1,
+      "gfx": 170,
+      "local_id": 1,
+      "xy": [
+        20,
+        11
+      ],
+      "inanimate": false,
+      "anim": 9
+    },
+    {
+      "frame": 939,
+      "slot": 1,
+      "sprite": 1,
+      "gfx": 170,
+      "local_id": 1,
+      "xy": [
+        20,
+        10
+      ],
+      "inanimate": false,
+      "anim": 9
+    },
+    {
+      "frame": 947,
+      "slot": 1,
+      "sprite": 1,
+      "gfx": 170,
+      "local_id": 1,
+      "xy": [
+        20,
+        9
+      ],
+      "inanimate": false,
+      "anim": 9
+    },
+    {
+      "frame": 955,
+      "slot": 1,
+      "sprite": 1,
+      "gfx": 170,
+      "local_id": 1,
+      "xy": [
+        20,
+        8
+      ],
+      "inanimate": false,
+      "anim": 9
+    }
+  ],
+  "native_save": {
+    "counter_before": 61,
+    "counter_after": 62,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_HOENN_SEAFLOOR_CLEARED": true,
+      "FLAG_HOENN_RAYQUAZA_AWAKENED": true,
+      "FLAG_HOENN_BADGE07_GET": true,
+      "FLAG_HOENN_BADGE08_GET": false,
+      "FLAG_HOENN_GOT_TM03": false,
+      "FLAG_HOENN_SPACE_CENTER_SECURED": true,
+      "FLAG_HOENN_GOT_HM08_FROM_STEVEN": false
+    },
+    "trainers": {
+      "TRAINER_HOENN_ARCHIE": false,
+      "TRAINER_HOENN_JUAN_1": false
+    },
+    "hm08": 0,
+    "sha256": "f6e9c15a036b0b84a6056009ee80a46a5d23d29a159badfc8e298633d6439d96"
+  },
+  "native_rayquaza_wake_and_rise": true,
+  "story_flags_after": {
+    "FLAG_HOENN_SEAFLOOR_CLEARED": true,
+    "FLAG_HOENN_RAYQUAZA_AWAKENED": true,
+    "FLAG_HOENN_BADGE07_GET": true,
+    "FLAG_HOENN_BADGE08_GET": false,
+    "FLAG_HOENN_GOT_TM03": false,
+    "FLAG_HOENN_SPACE_CENTER_SECURED": true,
+    "FLAG_HOENN_GOT_HM08_FROM_STEVEN": false
+  },
+  "original_saves_unchanged": true
+}

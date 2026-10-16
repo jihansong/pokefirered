@@ -1,0 +1,7 @@
+{
+  "pid": 44236,
+  "bind": "127.0.0.1",
+  "port": 27102,
+  "directory": "/workspaces/pokefirered/outputs/misty-follow-20261014",
+  "stopped_after_verified_download": true
+}

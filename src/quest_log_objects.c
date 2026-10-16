@@ -1,4 +1,5 @@
 #include "global.h"
+#include "companion_misty.h"
 #include "quest_log.h"
 #include "fieldmap.h"
 #include "field_player_avatar.h"
@@ -11,7 +12,7 @@ void QL_RecordObjects(struct QuestLogScene * questLog)
 
     for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
     {
-        questLog->objectEvents[i].active                         = gObjectEvents[i].active && gObjectEvents[i].localId != LOCALID_FOLLOWER;
+        questLog->objectEvents[i].active                         = gObjectEvents[i].active && gObjectEvents[i].localId != LOCALID_FOLLOWER && gObjectEvents[i].localId != LOCALID_MISTY_COMPANION;
         questLog->objectEvents[i].triggerGroundEffectsOnStop     = gObjectEvents[i].triggerGroundEffectsOnStop;
         questLog->objectEvents[i].disableCoveringGroundEffects   = gObjectEvents[i].disableCoveringGroundEffects;
         questLog->objectEvents[i].landingJump                    = gObjectEvents[i].landingJump;

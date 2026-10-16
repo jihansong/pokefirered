@@ -8,6 +8,7 @@
 #include "item.h"
 #include "constants/heal_locations.h"
 #include "constants/items.h"
+#include "constants/maps.h"
 
 bool8 EnterHallOfFame(void)
 {
@@ -30,7 +31,13 @@ bool8 EnterHallOfFame(void)
         SetGameStat(GAME_STAT_FIRST_HOF_PLAY_TIME, (gSaveBlock2Ptr->playTimeHours << 16) | (gSaveBlock2Ptr->playTimeMinutes << 8) | gSaveBlock2Ptr->playTimeSeconds);
     }
     SetContinueGameWarpStatus();
-    SetContinueGameWarpToHealLocation(HEAL_LOCATION_PALLET_TOWN);
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_EVER_GRANDE_CITY_HALL_OF_FAME)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_EVER_GRANDE_CITY_HALL_OF_FAME))
+        SetContinueGameWarpToHealLocation(HEAL_LOCATION_HOENN_EVER_GRANDE_CITY_POKEMON_LEAGUE);
+    else if (IsJohtoHallOfFameContext())
+        SetContinueGameWarpToHealLocation(HEAL_LOCATION_JOHTO_INDIGO_PLATEAU);
+    else
+        SetContinueGameWarpToHealLocation(HEAL_LOCATION_PALLET_TOWN); // JOHTO_HOF_CONTINUE_DESTINATION_V1
     gaveAtLeastOneRibbon = FALSE;
     for (i = 0, r7 = &ribbonState; i < PARTY_SIZE; i++)
     {

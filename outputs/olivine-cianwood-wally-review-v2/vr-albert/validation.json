@@ -1,0 +1,77 @@
+{
+  "pass": true,
+  "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+  "elf_sha256": "4b6ab0e3cea92de40cadd88a073d0820e9435b0e122d19079f009e4ae95c11b5",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-vr1f-trainers-albert-win",
+  "fixture": "temporary native battle fixture; user SAV/PC and old dex records preserved",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [
+    {
+      "trainer": "TRAINER_HOENN_ALBERT_VICTORY_ROAD",
+      "enemy_species": [
+        82,
+        89,
+        0,
+        0,
+        0,
+        0
+      ],
+      "start_frame": 1562,
+      "moves": [
+        1,
+        1
+      ],
+      "end_frame": 3272
+    }
+  ],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_story_not_entire_regions": true,
+  "original_enemy_team": [
+    {
+      "species": "SPECIES_MAGNETON",
+      "level": 43,
+      "moves": [
+        49,
+        86,
+        209,
+        199
+      ]
+    },
+    {
+      "species": "SPECIES_MUK",
+      "level": 43,
+      "moves": [
+        124,
+        107,
+        103,
+        151
+      ]
+    }
+  ],
+  "native_save": {
+    "counter_before": 60,
+    "counter_after": 61,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_HOENN_BADGE08_GET": true,
+      "FLAG_HOENN_LEAGUE_CLEAR": false
+    },
+    "trainers": {
+      "TRAINER_HOENN_ALBERT_VICTORY_ROAD": true,
+      "TRAINER_HOENN_WALLY_VICTORY_ROAD_FINAL": true
+    },
+    "hm08": 0,
+    "sha256": "9ee9e7c0d5e1bab115bd49109e12798c4de0954600d55e604c4a11e18aa5d647"
+  },
+  "native_win_saved_without_repeat": true,
+  "full_original_storage_unchanged": true,
+  "old_owned_and_seen_dex_bits_preserved": true,
+  "original_saves_unchanged": true
+}

@@ -1,0 +1,63 @@
+{
+  "all_pass": true,
+  "rom_sha256": "af9ba1f61fce4630d488567ed11b83847dfbc1fcff435653bedd4d86dc622818",
+  "checks": [
+    {
+      "case": "ineligible_continue_and_native_save",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-misty-join/base-pallet-saved-native-QA-only.sav"
+      },
+      "pass_all": true
+    },
+    {
+      "case": "eligible_hidden_old_continue",
+      "native_static_count": 1,
+      "hide_flag": false,
+      "position": [
+        3,
+        0,
+        8,
+        9
+      ]
+    },
+    {
+      "case": "join_decline_actual_A",
+      "answer": "NO",
+      "joined": false,
+      "static_npc": 1,
+      "runtime_misty": 0,
+      "pass_all": true
+    },
+    {
+      "case": "join_accept_actual_A",
+      "answer": "YES",
+      "joined": true,
+      "static_npc": 0,
+      "runtime_misty": 1,
+      "pass_all": true
+    },
+    {
+      "case": "joined_native_save_cold_trail",
+      "save": {
+        "counter": [
+          61,
+          62
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-misty-join/joined-native-save-native-QA-only.sav"
+      },
+      "pass_all": true
+    }
+  ],
+  "original_party_pc_dex_preserved": true,
+  "actual_A_join_tested": true,
+  "native_battery_save_and_cold": true,
+  "friendly_duel_tested": false,
+  "water_routes_tested": false,
+  "actual_device_fps_measured": false
+}

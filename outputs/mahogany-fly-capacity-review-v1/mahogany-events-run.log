@@ -1,0 +1,12 @@
+{"case": "east_gate_requires_badge6", "dialogue": "EcruteakCity_EastGate_Text_Before", "save": {"counter": [60, 61], "checksummed_sectors": 14, "qa_save": "/workspaces/pokefirered/outputs/mahogany-fly-capacity-review-v1/mahogany-events/east_gate_requires_badge6-native-QA-only.sav"}, "party_pc_dex_preserved": true, "forced_memory_writes": 0, "forced_outcomes": 0}
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/johto_mahogany_native_events.py", line 302, in <module>
+    e.shot(str(out/(c['name']+'.png')),scale=3);saved=flash_reload(e,c['name'])
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_violet_native_bootstrap_v1.py", line 97, in flash_reload
+    counters=native_save(e);live=snapshot(e);e.run(30)
+             ^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_violet_native_bootstrap_v1.py", line 84, in native_save
+    assert 4 in order;target=order.index(4)
+           ^^^^^^^^^^
+AssertionError

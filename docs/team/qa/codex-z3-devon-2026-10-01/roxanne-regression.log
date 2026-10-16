@@ -1,0 +1,11 @@
+ok   z3_roxanne_badge_tm39
+ok   z3_roxanne_old_victory_recovers_rewards
+ok   z3_roxanne_full_tm_case_keeps_reward_pending
+ok   z3_roxanne_retry_after_making_room
+ok   z3_roxanne_existing_reward_not_given_again
+ok   z3_roxanne_no_rewards_before_victory
+ok   z3_roxanne_pikachu_remark_once
+ok   z3_roxanne_remark_needs_pikachu
+ok   z3_roxanne_duplicate_reward_control
+ok   z3_roxanne_no_repeated_pikachu_remark
+10/10 cases passed

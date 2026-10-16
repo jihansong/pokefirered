@@ -1,0 +1,57 @@
+{
+  "created_utc": "2026-10-12T12:51:27.243139+00:00",
+  "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+  "previous_main_sha256": "b46fb32bb67f89d5a48dfbfdf41ddd4977cc4a2d60dbbe6c72e1bc0281c5606d",
+  "artifacts_sha256": {
+    "gba": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+    "elf": "c7efc258561748b879db8216eb63794f4ff80093c3687f2fb82188136d7da761",
+    "sym": "b4d51996640df6aba3755a9f2f8c5a3bf08f565c472fd10c15640dc2249aed9f",
+    "map": "707aa065a6e61c2cf0c92375f0163c06c22a338b405ccb1b4adb9dfe73b3cedb"
+  },
+  "candidate": "/workspaces/pokefirered/work/heartbeat-20261012T1131/canonical-candidate",
+  "build_target": "make leafgreen -j2 BUILD_NAME=blackthornlgqa MODERN=0 COMPARE=0; make GAME_VERSION=LEAFGREEN syms with same settings",
+  "existing_linker_RWX_warning": true,
+  "local_verified_repairs": [
+    "Route114 actual TM05 gift; local success-only receipt; repeat and full-stack handling",
+    "Johto League-complete return desk adds onward Hoenn research via Vermilion; existing return flight unchanged"
+  ],
+  "native_case_count": 7,
+  "eventcheck_cases": 3,
+  "map_smoke": {
+    "OK": 2,
+    "quick": true
+  },
+  "legacy_save_load_IDENTICAL": 6,
+  "user_save_load_IDENTICAL": 2,
+  "protected_original_and_backup_saves": 14,
+  "approved_assets_preserved": 24,
+  "SaveABI_unchanged": true,
+  "dex_obtainable_static": 386,
+  "performance": {
+    "report": "/workspaces/pokefirered/work/heartbeat-20261012T1131/canonical-performance/performance-result.json",
+    "pairs": 3,
+    "frame_requests_each": 600,
+    "possible_regression": false,
+    "baseline_median_seconds": 0.6211164800006372,
+    "candidate_median_seconds": 0.5853070260018285,
+    "actual_DELTA_device_tested": false,
+    "timings_variable": true
+  },
+  "global_incomplete": {
+    "dead_event_findings": 80,
+    "remaining_reward_promises": 14,
+    "Route114_imported_texts_to_rewrite": 42,
+    "whole_three_region_campaign_verified": false
+  },
+  "bad_egg": {
+    "existing_Lickitung_restored": false,
+    "authenticated_donor_available": false,
+    "capture_comparison_ROM_sha256": "b46fb32bb67f89d5a48dfbfdf41ddd4977cc4a2d60dbbe6c72e1bc0281c5606d",
+    "new_Sudowoodo_native_capture_state_profile_passed": true,
+    "actual_DELTA_state_reproduced": false,
+    "PC_UI_browsing_tested": false
+  },
+  "public_release_or_push": false,
+  "promoted_to_main": true,
+  "rollback": "/workspaces/pokefirered/outputs/rom-regional-followup-20261012T125127Z/rollback-b46"
+}

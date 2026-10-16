@@ -1,0 +1,21 @@
+{
+  "rom_sha256": "6185cd53db214dd18cf8229726633f75a455353bfc202ac6d88c127477a6ca19",
+  "cases": [
+    {
+      "case": "battles",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "chain",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "events",
+      "exit": 0,
+      "pass": true
+    }
+  ],
+  "all_pass": true
+}

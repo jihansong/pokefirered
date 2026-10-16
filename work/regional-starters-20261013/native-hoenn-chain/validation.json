@@ -1,0 +1,161 @@
+{
+  "pass": true,
+  "rom_sha256": "63904802b37dc5e922ec616361c0be3388f1030e5b2c1a0b7a2949f2a33c1f7c",
+  "RAM_writes": 0,
+  "direct_script_calls": 0,
+  "forced_battle_outcomes": 0,
+  "source_sav": "/workspaces/pokefirered/saves/pokemonthyl_v1.25-items99-iv2x.sav",
+  "cases": [
+    {
+      "case": "TORCHIC",
+      "gift": {
+        "species": 280,
+        "pid": 19671907,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "632b2c017afb3aa9cec9ccbdc2c3bdff00000202c4c3c2bbc8ffff007cd2000019d0938ae62fe99719d016a801d116a89ed016a8199616a819d016a819d016a819d016a813d03ba819d016a83af816a8"
+      },
+      "SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-hoenn-chain/chain-torchic-native-QA-only.sav"
+      },
+      "receipts": {
+        "CYNDAQUIL": true,
+        "CHIKORITA": true,
+        "TOTODILE": true,
+        "TORCHIC": true,
+        "TREECKO": false,
+        "MUDKIP": false
+      },
+      "original_records_preserved": true,
+      "pass": true
+    },
+    {
+      "case": "TREECKO",
+      "gift": {
+        "species": 277,
+        "pid": 108269001,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "c90d74067afb3aa9ceccbfbfbdc5c9ff00000202c4c3c2bbc8ffff006e030000b2f665afb3f64eaf90e84eafb3f64eafb3f64eafb3f64eafb3cdcb8d4c09b190b3f64eafa6f74eaf34f64eafb3b04eaf"
+      },
+      "SAVE_cold": {
+        "counter": [
+          68,
+          69
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-hoenn-chain/chain-treecko-native-QA-only.sav"
+      },
+      "receipts": {
+        "CYNDAQUIL": true,
+        "CHIKORITA": true,
+        "TOTODILE": true,
+        "TORCHIC": true,
+        "TREECKO": true,
+        "MUDKIP": false
+      },
+      "original_records_preserved": true,
+      "pass": true
+    },
+    {
+      "case": "MUDKIP",
+      "gift": {
+        "species": 283,
+        "pid": 4202748815,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "8fdb80fa7afb3aa9c7cfbec5c3caff0000000202c4c3c2bbc8ffff0096e50000f5333f710adf456cf520ba53f520ba53f520ba53f520ba53d4209753f520ba53d608ba53ee21ba537220ba53f566ba53"
+      },
+      "SAVE_cold": {
+        "counter": [
+          69,
+          70
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-hoenn-chain/chain-mudkip-native-QA-only.sav"
+      },
+      "receipts": {
+        "CYNDAQUIL": true,
+        "CHIKORITA": true,
+        "TOTODILE": true,
+        "TORCHIC": true,
+        "TREECKO": true,
+        "MUDKIP": true
+      },
+      "original_records_preserved": true,
+      "pass": true
+    }
+  ],
+  "scope": "Same native SAVE across three regional gift checkpoints; preboot position/story eligibility only, no live memory writes; not continuous overworld walking",
+  "battle_paths": [
+    {
+      "capture": false,
+      "outcome": 4,
+      "enemy": {
+        "species": 277,
+        "pid": 192345554,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "d2f5760b7afb3aa9ceccbfbfbdc5c9ff50200202c4c3c2bbc8ffff006e030000bd0f4ca22f0e4ca2a8484ca2a80e4ca2a80e4ca2a80e4ca2a90e67a2a80e4ca28b104ca2a835c98057f1b39da80e4ca2"
+      }
+    }
+  ],
+  "protected_original_inputs_unchanged": true
+}

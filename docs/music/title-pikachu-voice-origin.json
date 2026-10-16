@@ -1,0 +1,30 @@
+{
+  "source_file": "pokemon-video-game-pikachu-voice-sound-effect.wav",
+  "source_sha256": "10a2a254c12eed24a7e4d7a4db9ffff3f318ae20c17a5b15dbe53bbcf4c50734",
+  "source_url": "https://www.youtube.com/watch?v=gF1FJRM8Wck",
+  "source_type": "creator_linked_archive",
+  "direct_youtube_extraction": false,
+  "distribution_url": "https://soundsverse.com/wp-content/uploads/s/pokemon-video-game-pikachu-voice-sound-effect.zip",
+  "archive_sha256": "13d6f49f3e208573d9129378bdf8836d060fcdb9c73ea810526cda8921164d93",
+  "archive_bytes": 231523,
+  "archive_entry": "pokemon-video-game-pikachu-voice-sound-effect.wav",
+  "source_bytes": 282436,
+  "selected_by_user": true,
+  "agent_auditioned": false,
+  "extraction_start_seconds": 0,
+  "extraction_end": "source_end",
+  "whole_clip": true,
+  "trimmed": false,
+  "synthesized": false,
+  "pitch_or_time_stretch": false,
+  "processing": [
+    "Original source audio decode",
+    "mono downmix",
+    "11025 Hz resample",
+    "8-bit PCM game format"
+  ],
+  "native_samples": 17638,
+  "native_seconds": 1.5998185941043084,
+  "note_frames": 98,
+  "wav_sha256": "5e625d3e2f34b2c43aa5ed920f81113010a336b3523a8a6446346841cd61f337"
+}

@@ -1,0 +1,72 @@
+HoennVictoryRoad_1F_MapScripts::
+	.byte 0
+
+HoennVictoryRoad_1F_EventScript_H0::
+	msgbox HoennVictoryRoad_1F_Text_H0, MSGBOX_NPC
+	end
+
+HoennVictoryRoad_1F_EventScript_H1::
+	msgbox HoennVictoryRoad_1F_Text_H1, MSGBOX_NPC
+	end
+
+HoennVictoryRoad_1F_EventScript_H2::
+	msgbox HoennVictoryRoad_1F_Text_H2, MSGBOX_NPC
+	end
+
+HoennVictoryRoad_1F_EventScript_HItem113::
+	finditem ITEM_MAX_ELIXIR
+	end
+
+HoennVictoryRoad_1F_EventScript_HItem114::
+	finditem ITEM_PP_UP
+	end
+
+HoennVictoryRoad_1F_EventScript_H3::
+	msgbox HoennVictoryRoad_1F_Text_H3, MSGBOX_NPC
+	end
+
+HoennVictoryRoad_1F_EventScript_H4::
+	msgbox HoennVictoryRoad_1F_Text_H4, MSGBOX_NPC
+	end
+
+
+@ THYL_WALLY_FINAL_V1: an optional native challenge; existing League gates stay intact.
+HoennVictoryRoad_1F_EventScript_TYWallyFinal::
+	lock
+	faceplayer
+	goto_if_set FLAG_HOENN_LEAGUE_CLEAR, HoennVictoryRoad_1F_EventScript_TYWallyLegacy
+	goto_if_unset FLAG_HOENN_BADGE08_GET, HoennVictoryRoad_1F_EventScript_TYWallyEarly
+	goto_if_defeated TRAINER_HOENN_WALLY_VICTORY_ROAD_FINAL, HoennVictoryRoad_1F_EventScript_TYWallyPost
+	goto_if_not_defeated TRAINER_HOENN_WALLY_MAUVILLE, HoennVictoryRoad_1F_EventScript_TYWallyFirstMeeting
+	msgbox HoennVictoryRoad_1F_Text_TYWallyRemember, MSGBOX_YESNO
+	goto HoennVictoryRoad_1F_EventScript_TYWallyAnswer
+
+HoennVictoryRoad_1F_EventScript_TYWallyFirstMeeting::
+	msgbox HoennVictoryRoad_1F_Text_TYWallyFirstMeeting, MSGBOX_YESNO
+
+HoennVictoryRoad_1F_EventScript_TYWallyAnswer::
+	goto_if_eq VAR_RESULT, NO, HoennVictoryRoad_1F_EventScript_TYWallyDeclined
+	trainerbattle_single TRAINER_HOENN_WALLY_VICTORY_ROAD_FINAL, HoennVictoryRoad_1F_Text_TYWallyBattle, HoennVictoryRoad_1F_Text_TYWallyDefeat, HoennVictoryRoad_1F_EventScript_TYWallyFinish
+	goto HoennVictoryRoad_1F_EventScript_TYWallyFinish
+
+HoennVictoryRoad_1F_EventScript_TYWallyFinish::
+	goto_if_not_defeated TRAINER_HOENN_WALLY_VICTORY_ROAD_FINAL, HoennVictoryRoad_1F_EventScript_TYWallyDone
+
+HoennVictoryRoad_1F_EventScript_TYWallyPost::
+	msgbox HoennVictoryRoad_1F_Text_TYWallyPost, MSGBOX_DEFAULT
+	goto HoennVictoryRoad_1F_EventScript_TYWallyDone
+
+HoennVictoryRoad_1F_EventScript_TYWallyLegacy::
+	msgbox HoennVictoryRoad_1F_Text_TYWallyLegacy, MSGBOX_DEFAULT
+	goto HoennVictoryRoad_1F_EventScript_TYWallyDone
+
+HoennVictoryRoad_1F_EventScript_TYWallyEarly::
+	msgbox HoennVictoryRoad_1F_Text_TYWallyEarly, MSGBOX_DEFAULT
+	goto HoennVictoryRoad_1F_EventScript_TYWallyDone
+
+HoennVictoryRoad_1F_EventScript_TYWallyDeclined::
+	msgbox HoennVictoryRoad_1F_Text_TYWallyDeclined, MSGBOX_DEFAULT
+
+HoennVictoryRoad_1F_EventScript_TYWallyDone::
+	release
+	end

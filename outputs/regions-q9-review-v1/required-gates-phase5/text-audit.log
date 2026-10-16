@@ -1,0 +1,128 @@
+map                                          zone texts  orig harml   fix unused
+JohtoRoute27                                 -        2     0     0     0      0
+TohjoFalls                                   -        0     0     0     0      0
+JohtoRoute26                                 -        0     0     0     0      0
+JohtoVictoryRoad_1F                          -        4     0     0     0      0
+JohtoIndigoPlateau                           -        2     0     0     0      0
+JohtoLeague_PokemonCenter_1F                 -        3     0     0     0      0
+JohtoLeague_WillsRoom                        -        4     0     0     0      1
+JohtoLeague_KogasRoom                        -        5     0     0     0      0
+JohtoLeague_BrunosRoom                       -        5     0     0     0      0
+JohtoLeague_KarensRoom                       -        5     0     0     0      0
+JohtoLeague_LancesRoom                       -        5     0     0     0      0
+JohtoLeague_HallOfFame                       -        3     0     0     0      0
+PalletTown                                   -       12     0     0     0      0
+Route110                                     Z2      72     2     2     0      1
+Route119                                     Z5      70    57     2    55      0
+    data/maps/Route119/text.inc:2: ORIGINAL Route119_Text_H0_0 = Route119_Text_GregIntro
+        "You don't know who I am, do you? But, I also don't know you. So, we'll battle!"
+    data/maps/Route119/text.inc:7: ORIGINAL Route119_Text_H0_1 = Route119_Text_GregDefeat
+        "You're pretty strong!"
+    data/maps/Route119/text.inc:10: ORIGINAL Route119_Text_H0_2 = Route119_Text_GregPostBattle
+        "Until you go away somewhere, we'll keep on mimicking your every move."
+    data/maps/Route119/text.inc:14: ORIGINAL Route119_Text_H1_0 = Route119_Text_TaylorIntro
+        "If you step forward, we step forward. If you turn right, we turn, too…"
+    data/maps/Route119/text.inc:19: ORIGINAL Route119_Text_H1_1 = Route119_Text_TaylorDefeat
+        "But if you win, I lose…"
+    data/maps/Route119/text.inc:22: ORIGINAL Route119_Text_H1_2 = Route119_Text_TaylorPostBattle
+        "I can't MIMIC you winning the match. That's just impossible… It's burning me up…"
+    data/maps/Route119/text.inc:27: ORIGINAL Route119_Text_H2_0 = Route119_Text_DonaldIntro
+        "So, we finally meet! My BUG POKéMON will keep you company!"
+    data/maps/Route119/text.inc:31: ORIGINAL Route119_Text_H2_1 = Route119_Text_DonaldDefeat
+        "I wish we'd never met…"
+    data/maps/Route119/text.inc:34: ORIGINAL Route119_Text_H2_2 = Route119_Text_DonaldPostBattle
+        "I want to MIMIC you some more. Can you hurry up and move?"
+    data/maps/Route119/text.inc:38: ORIGINAL Route119_Text_H3_0 = Route119_Text_JacksonIntro
+        "Who has the knowledge and the technique for survival? POKéMON RANGERS, that's who!"
+    data/maps/Route119/text.inc:43: ORIGINAL Route119_Text_H3_1 = Route119_Text_JacksonDefeat
+        "I didn't have enough POKéMON know-how…"
+    data/maps/Route119/text.inc:47: ORIGINAL Route119_Text_H3_2 = Route119_Text_JacksonPostBattle
+        "To break away from civilization and awaken the wild spirit within! That's our vision."
+    data/maps/Route119/text.inc:52: ORIGINAL Route119_Text_H4_0 = Route119_Text_BrentIntro
+        "We're the MIMIC CIRCLE! We MIMIC what you do!"
+    data/maps/Route119/text.inc:56: ORIGINAL Route119_Text_H4_1 = Route119_Text_BrentDefeat
+        "Whoopsie! I lost!"
+    data/maps/Route119/text.inc:60: ORIGINAL Route119_Text_H4_2 = Route119_Text_BrentPostBattle
+        "What's so good about mimicry? Fufufu… You'll never understand…"
+    data/maps/Route119/text.inc:65: ORIGINAL Route119_Text_H5_0 = Route119_Text_CatherineIntro
+        "Oh? Look at you. For someone on an adventure, you're traveling awfully light."
+    data/maps/Route119/text.inc:70: ORIGINAL Route119_Text_H5_1 = Route119_Text_CatherineDefeat
+        "Accidents happen when you're not prepared!"
+    data/maps/Route119/text.inc:74: ORIGINAL Route119_Text_H5_2 = Route119_Text_CatherinePostBattle
+        "You're traveling light but you have everything you need. You're on top of things mentally and physic…"
+    data/maps/Route119/text.inc:80: ORIGINAL Route119_Text_H6_0 = Route119_Text_DougIntro
+        "Yep, you've finally caught me! Or were you trying to avoid me?"
+    data/maps/Route119/text.inc:84: ORIGINAL Route119_Text_H6_1 = Route119_Text_DougDefeat
+        "Whoop, that was a great match!"
+    data/maps/Route119/text.inc:87: ORIGINAL Route119_Text_H6_2 = Route119_Text_DougPostBattle
+        "We're the MIMIC CIRCLE! I hope you enjoyed our performance."
+    data/maps/Route119/text.inc:91: ORIGINAL Route119_Text_H7_0 = Route119_Text_KentIntro
+        "The MIMIC CIRCLE was formed by people who like to MIMIC. A battle starts the instant we meet!"
+    data/maps/Route119/text.inc:96: ORIGINAL Route119_Text_H7_1 = Route119_Text_KentDefeat
+        "I give up!"
+    data/maps/Route119/text.inc:99: ORIGINAL Route119_Text_H7_2 = Route119_Text_KentPostBattle
+        "Won't you join our MIMIC CIRCLE?"
+    data/maps/Route119/text.inc:102: ORIGINAL Route119_Text_H8_0 = Route119_Text_YasuIntro
+        "To lurk in shadows, and live in darkness… That is my destiny. I emerge to challenge you!"
+    data/maps/Route119/text.inc:107: ORIGINAL Route119_Text_H8_1 = Route119_Text_YasuDefeat
+        "I admit defeat!"
+    data/maps/Route119/text.inc:110: ORIGINAL Route119_Text_H8_2 = Route119_Text_YasuPostBattle
+        "Those defeated in battle withdraw quietly back into the shadows. That, too, is destiny…"
+    data/maps/Route119/text.inc:115: ORIGINAL Route119_Text_H9_0 = Route119_Text_TakashiIntro
+        "If you're not on your guard, you're in for some pain!"
+    data/maps/Route119/text.inc:119: ORIGINAL Route119_Text_H9_1 = Route119_Text_TakashiDefeat
+        "You're surprisingly good!"
+    data/maps/Route119/text.inc:122: ORIGINAL Route119_Text_H9_2 = Route119_Text_TakashiPostBattle
+        "My surprise attack ended in failure…"
+    data/maps/Route119/text.inc:126: ORIGINAL Route119_Text_H10_0 = Route119_Text_HughIntro
+        "The vast sky holds untold promise! Nothing can compare to the sheer exhilaration of flight!"
+    data/maps/Route119/text.inc:131: ORIGINAL Route119_Text_H10_1 = Route119_Text_HughDefeat
+        "Down and out!"
+    data/maps/Route119/text.inc:134: ORIGINAL Route119_Text_H10_2 = Route119_Text_HughPostBattle
+        "My BIRD POKéMON made my dreams of flying come true!"
+    data/maps/Route119/text.inc:138: ORIGINAL Route119_Text_H11_0 = Route119_Text_PhilIntro
+        "I'll show you the true potential of me and my BIRD POKéMON!"
+    data/maps/Route119/text.inc:142: ORIGINAL Route119_Text_H11_1 = Route119_Text_PhilDefeat
+        "We lacked potential…"
+    data/maps/Route119/text.inc:145: ORIGINAL Route119_Text_H11_2 = Route119_Text_PhilPostBattle
+        "Ever since I was a little kid, I always admired BIRD POKéMON…"
+    data/maps/Route119/text.inc:149: ORIGINAL Route119_Text_H12 = Route119_Text_ThoughtFlyByCatchingBirdMons
+        "I thought you FLY by catching a whole flock of BIRD POKéMON, and then hanging on to them somehow. Bu…"
+    data/maps/Route119/text.inc:158: ORIGINAL Route119_Text_H13 = Route119_Text_TallGrassSnaresBikeTires
+        "Tch… It's a no-go… The tall grass snares BIKE tires. There's no way you can cycle here."
+    data/maps/Route119/text.inc:164: ORIGINAL Route119_Text_H14 = Route119_Text_CanYourMonMakeSecretBase
+        "Can your POKéMON use its SECRET POWER on a big pile of grass and make a SECRET BASE?"
+    data/maps/Route119/text.inc:169: ORIGINAL Route119_Text_H15_0 = Route119_Text_HideoIntro
+        "To hide a tree, use a forest!"
+    data/maps/Route119/text.inc:172: ORIGINAL Route119_Text_H15_1 = Route119_Text_HideoDefeat
+        "I bow to your superiority."
+    data/maps/Route119/text.inc:175: ORIGINAL Route119_Text_H15_2 = Route119_Text_HideoPostBattle
+        "To hide a tree, use a forest! To hide a POKéMON, use a POKéMON! There is no deep, hidden meaning to …"
+    data/maps/Route119/text.inc:181: ORIGINAL Route119_Text_H16_0 = Route119_Text_ChrisIntro
+        "You spoke to me… So you want to challenge me! Sure! I'll try out the POKéMON I caught while SURFING!"
+    data/maps/Route119/text.inc:187: ORIGINAL Route119_Text_H16_1 = Route119_Text_ChrisDefeat
+        "I don't have a clue about what it takes to win."
+    data/maps/Route119/text.inc:191: ORIGINAL Route119_Text_H16_2 = Route119_Text_ChrisPostBattle
+        "Go for a SURF on my POKéMON… Then fish off its back… It's an indescribably luxuriant moment!"
+    data/maps/Route119/text.inc:197: ORIGINAL Route119_Text_H17_0 = Route119_Text_RachelIntro
+        "Wherever and whenever I may be, I always have my parasol in hand."
+    data/maps/Route119/text.inc:201: ORIGINAL Route119_Text_H17_1 = Route119_Text_RachelDefeat
+        "Oh, but… That's not fair."
+    data/maps/Route119/text.inc:205: ORIGINAL Route119_Text_H17_2 = Route119_Text_RachelPostBattle
+        "You're asking if my parasol is heavy? Your BAG is filled with more junk than I ever carry around."
+    data/maps/Route119/text.inc:210: ORIGINAL Route119_Text_H18_0 = Route119_Text_DaytonIntro
+        "Hohoho! I like kid TRAINERS! Let's have a good one!"
+    data/maps/Route119/text.inc:215: ORIGINAL Route119_Text_H18_1 = Route119_Text_DaytonDefeat
+        "You're pretty amazing! Hohoho!"
+    data/maps/Route119/text.inc:219: ORIGINAL Route119_Text_H18_2 = Route119_Text_DaytonPostBattle
+        "Hohoho! I'll try emulating the pep of kid TRAINERS like you!"
+    data/maps/Route119/text.inc:224: ORIGINAL Route119_Text_H19_0 = Route119_Text_FabianIntro
+        "Hit me with a power chord! Victory is mine! It's our time to shine, whoa, yeah!"
+    data/maps/Route119/text.inc:229: ORIGINAL Route119_Text_H19_1 = Route119_Text_FabianDefeat
+        "You showed me who's the boss! We'll have to take the loss, oh, no!"
+    data/maps/Route119/text.inc:233: ORIGINAL Route119_Text_H19_2 = Route119_Text_FabianPostBattle
+        "Hit me with another power chord! Leave me alone! Your win you have to atone!"
+    data/maps/Route119/text.inc:245: ORIGINAL Route119_Text_H22 = Route119_Text_TrainerTipsDecoration
+        "TRAINER TIPS Up to sixteen decorations and furniture items can be placed in a SECRET BASE. Pick your…"
+
+15 maps, 192 texts in use: 59 still the Emerald original, 4 of them harmless (sign/cry), 55 to rewrite; 2 text labels nothing reaches

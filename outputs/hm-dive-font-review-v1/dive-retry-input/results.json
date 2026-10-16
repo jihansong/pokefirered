@@ -1,0 +1,78 @@
+[
+  {
+    "case": "route",
+    "exit": 1,
+    "pass": false,
+    "error": "AssertionError(('state timeout', (67, 26, 6, 7), '0x8057521'))",
+    "failure_location": [
+      67,
+      26,
+      6,
+      7
+    ],
+    "follower_checks": null
+  },
+  {
+    "case": "teach",
+    "exit": 1,
+    "pass": false,
+    "error": "AssertionError(('state timeout', (67, 26, 6, 7), '0x8057521'))",
+    "failure_location": [
+      67,
+      26,
+      6,
+      7
+    ],
+    "follower_checks": null
+  },
+  {
+    "case": "no-badge",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "failure_location": null,
+    "follower_checks": null
+  },
+  {
+    "case": "hoenn-only",
+    "exit": 1,
+    "pass": false,
+    "error": "AssertionError(('state timeout', (67, 26, 6, 7), '0x8057521'))",
+    "failure_location": [
+      67,
+      26,
+      6,
+      7
+    ],
+    "follower_checks": null
+  },
+  {
+    "case": "invalid",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "failure_location": null,
+    "follower_checks": null
+  },
+  {
+    "case": "land",
+    "exit": 0,
+    "pass": true,
+    "error": null,
+    "failure_location": null,
+    "follower_checks": null
+  },
+  {
+    "case": "follower",
+    "exit": 1,
+    "pass": false,
+    "error": "KeyError('unknown constant OBJ_EVENT_GFX_PIKACHU')",
+    "failure_location": [
+      43,
+      43,
+      38,
+      27
+    ],
+    "follower_checks": []
+  }
+]

@@ -1,0 +1,384 @@
+{
+  "rom_sha256": "111d4e1ae7e6572845e5eb31ed33a1216fff8aa3d3e11466f287b74419abe682",
+  "cases": [
+    {
+      "case": "route44_closed_before_radio",
+      "dialogue": "JohtoRoute44_Text_WestGateClosed",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/route44_closed_before_radio-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "route44_open_consumes_coord_event",
+      "dialogue": null,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/route44_open_consumes_coord_event-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "waterfall_keeper_requires_radio",
+      "dialogue": "IcePath_B2F_Text_WaterfallBefore",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/waterfall_keeper_requires_radio-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "waterfall_first_gift_is_hm07",
+      "dialogue": "IcePath_B2F_Text_WaterfallNew",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/waterfall_first_gift_is_hm07-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "waterfall_duplicate_in_bag_is_tm50",
+      "dialogue": "IcePath_B2F_Text_WaterfallAlternate",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/waterfall_duplicate_in_bag_is_tm50-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "waterfall_duplicate_in_pc_is_tm50",
+      "dialogue": "IcePath_B2F_Text_WaterfallAlternate",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/waterfall_duplicate_in_pc_is_tm50-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "waterfall_kanto_receipt_is_tm50",
+      "dialogue": "IcePath_B2F_Text_WaterfallAlternate",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/waterfall_kanto_receipt_is_tm50-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "waterfall_hoenn_receipt_is_tm50",
+      "dialogue": "IcePath_B2F_Text_WaterfallAlternate",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/waterfall_hoenn_receipt_is_tm50-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "waterfall_owned_hm_and_full_alternate_keeps_receipt",
+      "dialogue": "IcePath_B2F_Text_WaterfallFull",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/waterfall_owned_hm_and_full_alternate_keeps_receipt-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "waterfall_alternate_full_then_retryable",
+      "dialogue": "IcePath_B2F_Text_WaterfallFull",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/waterfall_alternate_full_then_retryable-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "waterfall_alternate_retry_after_full",
+      "dialogue": "IcePath_B2F_Text_WaterfallAlternate",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/waterfall_alternate_retry_after_full-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "waterfall_reward_not_reissued",
+      "dialogue": "IcePath_B2F_Text_WaterfallAfter",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/waterfall_reward_not_reissued-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "clair_requires_pryce_badge",
+      "dialogue": "BlackthornCity_Gym_Text_ClairBefore",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/clair_requires_pryce_badge-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "clair_requires_radio_rescue",
+      "dialogue": "BlackthornCity_Gym_Text_ClairBefore",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/clair_requires_radio_rescue-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "clair_saved_win_grants_trial_only",
+      "dialogue": "BlackthornCity_Gym_Text_ClairTrial",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/clair_saved_win_grants_trial_only-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "clair_waits_for_elder_trial",
+      "dialogue": "BlackthornCity_Gym_Text_ClairTrial",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/clair_waits_for_elder_trial-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "clair_acknowledges_final_badge",
+      "dialogue": "BlackthornCity_Gym_Text_ClairAfter",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/clair_acknowledges_final_badge-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "dragon_den_requires_clair",
+      "dialogue": "DragonDen_1F_Text_TrialGateClosed",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/dragon_den_requires_clair-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "dragon_den_opens_after_actual_clair",
+      "dialogue": null,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/dragon_den_opens_after_actual_clair-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "elder_requires_clair_victory",
+      "dialogue": "DragonDen_Shrine_Text_DragonMasterBefore",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/elder_requires_clair_victory-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "elder_no_answer_keeps_badge_locked",
+      "dialogue": "DragonDen_Shrine_Text_DragonMasterReflect",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/elder_no_answer_keeps_badge_locked-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "elder_yes_awards_badge_and_tm02",
+      "dialogue": "DragonDen_Shrine_Text_DragonMasterAfter",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/elder_yes_awards_badge_and_tm02-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "elder_full_tm_keeps_new_badge",
+      "dialogue": "DragonDen_Shrine_Text_DragonMasterFull",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/elder_full_tm_keeps_new_badge-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "elder_reward_retry_without_new_battle",
+      "dialogue": "DragonDen_Shrine_Text_DragonMasterAfter",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/elder_reward_retry_without_new_battle-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    },
+    {
+      "case": "elder_tm_not_reissued",
+      "dialogue": "DragonDen_Shrine_Text_DragonMasterAfter",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/blackthorn-review-v1/native-lg-events/elder_tm_not_reissued-native-QA-only.sav"
+      },
+      "party_pc_dex_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_outcomes": 0
+    }
+  ],
+  "all_pass": true,
+  "original_files_unchanged": true,
+  "forced_memory_writes": 0,
+  "forced_outcomes": 0
+}

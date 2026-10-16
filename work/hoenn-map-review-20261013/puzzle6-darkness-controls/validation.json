@@ -1,0 +1,49 @@
+{
+  "pass": true,
+  "classification": "BLACK caused by requires_flash and unlit native dark-room radius, not a corrupt tileset or reset",
+  "native_readonly_no_memory_writes": true,
+  "fixtures_only": true,
+  "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+  "cases": [
+    {
+      "flash_flag_fixture": false,
+      "flash_level_native": 4,
+      "before": [
+        71,
+        8,
+        0,
+        21
+      ],
+      "after_keys": [
+        71,
+        8,
+        2,
+        18
+      ],
+      "black_fraction": 0.977578125,
+      "field_idle": true,
+      "reset": false,
+      "party_count": 6
+    },
+    {
+      "flash_flag_fixture": true,
+      "flash_level_native": 0,
+      "before": [
+        71,
+        8,
+        0,
+        21
+      ],
+      "after_keys": [
+        71,
+        8,
+        2,
+        18
+      ],
+      "black_fraction": 0.707890625,
+      "field_idle": true,
+      "reset": false,
+      "party_count": 6
+    }
+  ]
+}

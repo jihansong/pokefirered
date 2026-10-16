@@ -1,0 +1,143 @@
+{
+  "executed": true,
+  "positive": 24,
+  "negative_controls": 2,
+  "results": [
+    {
+      "name": "referral_harbor_scene0_met0_progress0_johto0",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene0_met0_progress0_johto1",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene0_met0_progress1_johto0",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene0_met0_progress1_johto1",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene0_met0_progress5_johto0",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene0_met0_progress5_johto1",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene0_met0_progress7_johto0",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene0_met0_progress7_johto1",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene0_met1_progress0_johto0",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene0_met1_progress0_johto1",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene0_met1_progress1_johto0",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene0_met1_progress1_johto1",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene0_met1_progress5_johto0",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene0_met1_progress5_johto1",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene0_met1_progress7_johto0",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene0_met1_progress7_johto1",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene1_met1_progress0_johto0",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene1_met1_progress0_johto1",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene1_met1_progress1_johto0",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene1_met1_progress1_johto1",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene1_met1_progress5_johto0",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene1_met1_progress5_johto1",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene1_met1_progress7_johto0",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene1_met1_progress7_johto1",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "referral_harbor_scene0_met0_progress0_johto1_negative_control",
+      "pass": true,
+      "failures": [
+        "expect saw SlateportCity_Harbor_Text_JohtoReferral = 0: saw 1"
+      ]
+    },
+    {
+      "name": "referral_harbor_scene0_met1_progress7_johto1_negative_control",
+      "pass": true,
+      "failures": [
+        "expect saw SlateportCity_Harbor_Text_JohtoReferral = 1: saw 0"
+      ]
+    }
+  ],
+  "source_saves_unchanged": true,
+  "all_pass": true
+}

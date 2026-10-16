@@ -338,7 +338,17 @@ CeruleanCity_EventScript_BikeShopSign::
 
 CeruleanCity_EventScript_GymSign::
 	lockall
+	goto_if_set FLAG_MISTY_COMPANION_JOINED, CeruleanCity_EventScript_MistyGymClosedMessage
 	famechecker FAMECHECKER_MISTY, 0
 	msgbox CeruleanCity_Text_GymSign
 	releaseall
 	end
+
+
+@ Only the Gym entrance is closed; an old save inside can still leave normally.
+CeruleanCity_EventScript_MistyGymClosed::
+    lockall
+CeruleanCity_EventScript_MistyGymClosedMessage::
+    msgbox CeruleanCity_Text_MistyGymClosed, MSGBOX_DEFAULT
+    releaseall
+    end

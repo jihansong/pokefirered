@@ -1,0 +1,14 @@
+{
+  "source": "outputs/title-start-final-v6/approved-title.png",
+  "source_sha256": "7e370cc2d5b4cd71a1ae68b1da6934b62a049fc9e83efb2fc51619231cc122c5",
+  "size": [
+    240,
+    160
+  ],
+  "colors": 165,
+  "tiles": 600,
+  "tile_bytes": 38400,
+  "palette_bytes": 512,
+  "tilemap_bytes": 2048,
+  "format": "GBA 8bpp row-major tiles, BGR555 palette, 32x32 tilemap"
+}

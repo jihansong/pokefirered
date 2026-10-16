@@ -7,8 +7,44 @@ PetalburgCity_WallysHouse_EventScript_H0::
 	release
 	end
 
+@ TY_HOENN_SHARED_HM_STORY_V1
 PetalburgCity_WallysHouse_EventScript_DadAfter::
 	msgbox PetalburgCity_WallysHouse_Text_DadAfter
+	goto_if_unset FLAG_HOENN_BADGE05_GET, PetalburgCity_WallysHouse_TYSharedHM_Done
+	goto_if_not_defeated TRAINER_HOENN_NORMAN_1, PetalburgCity_WallysHouse_TYSharedHM_Done
+	goto_if_set FLAG_HOENN_GOT_WALLY_DAD_SHARED_HM_REWARD, PetalburgCity_WallysHouse_TYSharedHM_Done
+	goto_if_set FLAG_GOT_HM03, PetalburgCity_WallysHouse_TYSharedHM_Known
+	checkitem ITEM_HM03
+	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_WallysHouse_TYSharedHM_Known
+	checkpcitem ITEM_HM03
+	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_WallysHouse_TYSharedHM_Known
+	msgbox PetalburgCity_WallysHouse_TYSharedHM_FreshText
+	checkitemspace ITEM_HM03
+	goto_if_eq VAR_RESULT, FALSE, PetalburgCity_WallysHouse_TYSharedHM_Full
+	giveitem ITEM_HM03
+	goto_if_eq VAR_RESULT, FALSE, PetalburgCity_WallysHouse_TYSharedHM_Full
+	setflag FLAG_HOENN_GOT_WALLY_DAD_SHARED_HM_REWARD
+	msgbox PetalburgCity_WallysHouse_TYSharedHM_FreshThanks
+	release
+	end
+
+PetalburgCity_WallysHouse_TYSharedHM_Known::
+	msgbox PetalburgCity_WallysHouse_TYSharedHM_KnownText
+	checkitemspace ITEM_TM13
+	goto_if_eq VAR_RESULT, FALSE, PetalburgCity_WallysHouse_TYSharedHM_Full
+	giveitem ITEM_TM13
+	goto_if_eq VAR_RESULT, FALSE, PetalburgCity_WallysHouse_TYSharedHM_Full
+	setflag FLAG_HOENN_GOT_WALLY_DAD_SHARED_HM_REWARD
+	msgbox PetalburgCity_WallysHouse_TYSharedHM_TechniqueText
+	release
+	end
+
+PetalburgCity_WallysHouse_TYSharedHM_Full::
+	msgbox PetalburgCity_WallysHouse_TYSharedHM_FullText
+	release
+	end
+
+PetalburgCity_WallysHouse_TYSharedHM_Done::
 	release
 	end
 

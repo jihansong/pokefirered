@@ -1,0 +1,398 @@
+{
+  "pass": true,
+  "rom_sha256": "433ef955f92bb045e21c262413116e3aeac379999468eb02eec9b0ed0c7b315a",
+  "fixture": "HOF pre-boot fixture; not evidence of five victories",
+  "cameras": {
+    "0": {
+      "map": "SlateportCity",
+      "shots": {
+        "start": {
+          "file": "map-00-start.png",
+          "frame": 2889,
+          "location": [
+            43,
+            1,
+            20,
+            51
+          ],
+          "sha256": "750d75a1924205dcc834d478eb5fcc0386b06b38980b1d917e339da83a28b163"
+        },
+        "late": {
+          "file": "map-00-late.png",
+          "frame": 3289,
+          "location": [
+            43,
+            1,
+            20,
+            44
+          ],
+          "sha256": "ec5cee4a651fb2c0393993f360baf84fa05f869f4f307808ecc5684c906e894e"
+        }
+      }
+    },
+    "1": {
+      "map": "Route101",
+      "shots": {
+        "start": {
+          "file": "map-01-start.png",
+          "frame": 5965,
+          "location": [
+            43,
+            16,
+            10,
+            11
+          ],
+          "sha256": "da32fe924864615a70fa6eda4c978a1812db44fc9e4ee84081ae574f1914f730"
+        },
+        "late": {
+          "file": "map-01-late.png",
+          "frame": 6365,
+          "location": [
+            43,
+            16,
+            10,
+            6
+          ],
+          "sha256": "b98894da35033291c130e54abfba5f2e1a794b725344f9719cfbeac49080e82f"
+        }
+      }
+    },
+    "2": {
+      "map": "LittlerootTown_ProfessorBirchsLab",
+      "shots": {
+        "start": {
+          "file": "map-02-start.png",
+          "frame": 6702,
+          "location": [
+            44,
+            4,
+            6,
+            6
+          ],
+          "sha256": "29f9f3c89799953fb8f97e92954708db4c4f3f9d7a9dc10f78682157f2228546"
+        },
+        "late": {
+          "file": "map-02-late.png",
+          "frame": 7102,
+          "location": [
+            44,
+            4,
+            6,
+            6
+          ],
+          "sha256": "62977e74696cfc95d1f1b94a1e60fc7a7463dbba1a54da67561acbdee0daf574"
+        }
+      }
+    },
+    "3": {
+      "map": "MauvilleCity",
+      "shots": {
+        "start": {
+          "file": "map-03-start.png",
+          "frame": 7695,
+          "location": [
+            43,
+            2,
+            20,
+            11
+          ],
+          "sha256": "854f99e7ed3be09ff408fe34be69abb4628cd4fb57fbdc3a5cd60f028960d873"
+        },
+        "late": {
+          "file": "map-03-late.png",
+          "frame": 8095,
+          "location": [
+            43,
+            2,
+            20,
+            6
+          ],
+          "sha256": "fedbdcbec17fd9b46168ab4f1ae1da613a34daacdee2659351142d231860a6bb"
+        }
+      }
+    },
+    "4": {
+      "map": "MtChimney",
+      "shots": {
+        "start": {
+          "file": "map-04-start.png",
+          "frame": 8428,
+          "location": [
+            67,
+            12,
+            20,
+            38
+          ],
+          "sha256": "2332d521dabcca06a0ec057be085fcef2daad40aa648baddcb9b643d8cd2738e"
+        },
+        "late": {
+          "file": "map-04-late.png",
+          "frame": 8828,
+          "location": [
+            67,
+            12,
+            20,
+            31
+          ],
+          "sha256": "f8623690f51a66988393e5a68668534eb8b74b37bf5cc32021d90eccd5a1a3b7"
+        }
+      }
+    },
+    "5": {
+      "map": "Route119_WeatherInstitute_2F",
+      "shots": {
+        "start": {
+          "file": "map-05-start.png",
+          "frame": 9159,
+          "location": [
+            74,
+            1,
+            10,
+            5
+          ],
+          "sha256": "7d630b2d7757ba810a71196102a14c6fbfac7244b99a6ae1cd14429b237301a7"
+        },
+        "late": {
+          "file": "map-05-late.png",
+          "frame": 9559,
+          "location": [
+            74,
+            1,
+            10,
+            5
+          ],
+          "sha256": "fa0a9d8d6cd1678fc5b3bab903fb20eb92c7190015342e189478552da9b895af"
+        }
+      }
+    },
+    "6": {
+      "map": "SeafloorCavern_Room9",
+      "shots": {
+        "start": {
+          "file": "map-06-start.png",
+          "frame": 10159,
+          "location": [
+            67,
+            36,
+            13,
+            37
+          ],
+          "sha256": "8a1de7c665f023cea44ed683f082b7eb0addcf2f593f16d5849e4883418523c3"
+        },
+        "late": {
+          "file": "map-06-late.png",
+          "frame": 10559,
+          "location": [
+            67,
+            36,
+            13,
+            30
+          ],
+          "sha256": "3d697ef77c0e4e7273c80d9bc47107d8702aefb50d791de75de2ca96a8072993"
+        }
+      }
+    },
+    "7": {
+      "map": "SkyPillar_Top",
+      "shots": {
+        "start": {
+          "file": "map-07-start.png",
+          "frame": 10915,
+          "location": [
+            67,
+            85,
+            13,
+            15
+          ],
+          "sha256": "69b1b6fd3d520160c55aa85de7639355b95a7a96c52f3f0947657205a830169c"
+        },
+        "late": {
+          "file": "map-07-late.png",
+          "frame": 11315,
+          "location": [
+            67,
+            85,
+            13,
+            8
+          ],
+          "sha256": "0d3814fe9b378e823ab8810e5eef886e899937bd35bf6fb7201d96a69a79655a"
+        }
+      }
+    },
+    "8": {
+      "map": "SootopolisCity",
+      "shots": {
+        "start": {
+          "file": "map-08-start.png",
+          "frame": 12001,
+          "location": [
+            43,
+            7,
+            30,
+            51
+          ],
+          "sha256": "23aa169403075a05a6a9fbc31d0f1a4a2d88725c161035eafbb10364d1379dc4"
+        },
+        "late": {
+          "file": "map-08-late.png",
+          "frame": 12401,
+          "location": [
+            43,
+            7,
+            30,
+            44
+          ],
+          "sha256": "cc9f255873df07fa4818501bc62854cc52d2c9eb8be72a6fc46506595492ec9b"
+        }
+      }
+    },
+    "9": {
+      "map": "EverGrandeCity",
+      "shots": {
+        "start": {
+          "file": "map-09-start.png",
+          "frame": 12995,
+          "location": [
+            43,
+            8,
+            20,
+            71
+          ],
+          "sha256": "0230743eba9e4ca9fcf902078a82b48a11ac747ed4e4f55f07c389b7a5d3c571"
+        },
+        "late": {
+          "file": "map-09-late.png",
+          "frame": 13395,
+          "location": [
+            43,
+            8,
+            20,
+            64
+          ],
+          "sha256": "8b2ae12c42c9573d9410465f2e947867e5d48cab1b208ac34636e434766f4eba"
+        }
+      }
+    },
+    "10": {
+      "map": "EverGrandeCity_ChampionsRoom",
+      "shots": {
+        "start": {
+          "file": "map-10-start.png",
+          "frame": 14336,
+          "location": [
+            59,
+            4,
+            6,
+            6
+          ],
+          "sha256": "07dfe0871997350af4de9ab5dce19405ed79cb7ebced517eb02ef5aee9a0f969"
+        },
+        "late": {
+          "file": "map-10-late.png",
+          "frame": 14736,
+          "location": [
+            59,
+            4,
+            6,
+            6
+          ],
+          "sha256": "f1491b593c16d092ae5425521a9a19de9e743b387021b8b72b6c596d8fc6c237"
+        }
+      }
+    },
+    "11": {
+      "map": "EverGrandeCity_HallOfFame",
+      "shots": {
+        "start": {
+          "file": "map-11-start.png",
+          "frame": 15420,
+          "location": [
+            59,
+            11,
+            7,
+            8
+          ],
+          "sha256": "75cd4f6ec87809e17653bae0a67a437c13111d60bfd0f7b7aed4ebd7df0a9449"
+        },
+        "late": {
+          "file": "map-11-late.png",
+          "frame": 15820,
+          "location": [
+            59,
+            11,
+            7,
+            6
+          ],
+          "sha256": "fc11e8fb59871e226ffc3a5acad7571c4686c446b59ee3de942fb9077d969dec"
+        }
+      }
+    },
+    "12": {
+      "map": "SlateportCity",
+      "shots": {
+        "start": {
+          "file": "map-12-start.png",
+          "frame": 16419,
+          "location": [
+            43,
+            1,
+            20,
+            51
+          ],
+          "sha256": "524a7c90ddaff4c8675423b2a06e3ad3ae56b0dfefa096f31e735a070a5463da"
+        },
+        "late": {
+          "file": "map-12-late.png",
+          "frame": 16819,
+          "location": [
+            43,
+            1,
+            20,
+            44
+          ],
+          "sha256": "7d944a150b9ff82202717889312136898f0a1e148f6fbe71ff938346b744a3a1"
+        }
+      }
+    }
+  },
+  "pokemon": {
+    "0": {
+      "species": "BLAZIKEN",
+      "vram_sha256": "2ee1eff776b6b7bfa4a0bb87a0eb2eb935cbc8ccc8d9d6a46505e7d0bd060bc4",
+      "palette_sha256": "07b8e86b93fc8bb52ac8f54ea7ed1a60873e995dc7961ada43fa28511f78bfbe",
+      "visible_pixels": 1736,
+      "screen_matching_pixels": 1736,
+      "frame": 7472
+    },
+    "1": {
+      "species": "SCEPTILE",
+      "vram_sha256": "b5aaa7ff300e68b46f5624eb38bdafa266422ad8b7a31b0f35a37ff4dcf47f8b",
+      "palette_sha256": "151b58d3b14091a5e246ad098163fe597cc499f282e2a400c705d26f6aa7a1ce",
+      "visible_pixels": 2086,
+      "screen_matching_pixels": 2086,
+      "frame": 9936
+    },
+    "2": {
+      "species": "SWAMPERT",
+      "vram_sha256": "6152943dd13fb069a1b8a1ea9097470ab393a221f3d07bdeae6fa1a938c4800d",
+      "palette_sha256": "ffbfd9304906ee55b994d312ad93bee7f541763b97794f730eb31c645a27f29e",
+      "visible_pixels": 2643,
+      "screen_matching_pixels": 2643,
+      "frame": 12773
+    },
+    "3": {
+      "species": "RAYQUAZA",
+      "vram_sha256": "5ecb2268f206708c655ad22bf9712938e1e895db82728ca05cda0923d88f5774",
+      "palette_sha256": "b361ed24e198a9f63aa1fb8080a1b85f4bd3b4aa4ea4f7a667880416fc8e9baf",
+      "visible_pixels": 2136,
+      "screen_matching_pixels": 2136,
+      "frame": 16196
+    }
+  },
+  "manual_visual_review_required": true,
+  "song_start_frame": 2809,
+  "the_end_frame": 18000,
+  "end_frame": 18602,
+  "native_frames_from_music": 15793,
+  "original_saves_unchanged": true
+}

@@ -1,0 +1,51 @@
+{
+  "status": "BUILD_FAILED",
+  "source_steps": [
+    {
+      "name": "blackthorn-dry",
+      "exit": 0,
+      "seconds": 3.26
+    },
+    {
+      "name": "hoenn-gated-hm-dry",
+      "exit": 0,
+      "seconds": 0.11
+    },
+    {
+      "name": "johto-credit-profile-dry",
+      "exit": 0,
+      "seconds": 0.08
+    },
+    {
+      "name": "blackthorn-apply",
+      "exit": 0,
+      "seconds": 3.06
+    },
+    {
+      "name": "hoenn-gated-hm-apply",
+      "exit": 0,
+      "seconds": 0.33
+    },
+    {
+      "name": "johto-credit-profile-apply",
+      "exit": 0,
+      "seconds": 0.06
+    }
+  ],
+  "original_saves_unchanged": true,
+  "main_not_replaced": true,
+  "whole_regions_complete": false,
+  "build": {
+    "exit": 2,
+    "seconds": 53.15,
+    "command": [
+      "make",
+      "-j2",
+      "GAME_VERSION=FIRERED",
+      "GAME_REVISION=0",
+      "BUILD_NAME=titlev8qa",
+      "MODERN=0",
+      "COMPARE=0"
+    ]
+  }
+}

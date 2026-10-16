@@ -282,4 +282,10 @@ LittlerootTown_ProfessorBirchsLab_Text_BrendanLabAllStarters::
     .string "starters. TREECKO and MUDKIP too.\p"
     .string "…He'll be unbearable for weeks.\n"
     .string "Thanks a lot.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_JohtoReferral::
+    .string "ELM's assistant told me about\n"
+    .string "your visit to the JOHTO LAB.\p"
+    .string "Here in HOENN, I study POKéMON\n"
+    .string "in the wild. Welcome to my LAB!$"
 @ END PATCH

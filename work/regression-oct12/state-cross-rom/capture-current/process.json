@@ -1,0 +1,17 @@
+{
+  "returncode": 0,
+  "seconds": 2.5820348262786865,
+  "command": [
+    "python3",
+    "/workspaces/pokefirered/work/regression-oct12/state-cross-rom-child.py",
+    "/workspaces/pokefirered/work/regression-oct12/state-cross-rom/capture-current/config.json",
+    "--rom",
+    "/workspaces/pokefirered/pokemonthyl.gba",
+    "--elf",
+    "/workspaces/pokefirered/pokemonthyl.elf",
+    "--sav",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.2.sav",
+    "--out",
+    "/workspaces/pokefirered/work/regression-oct12/state-cross-rom/capture-current"
+  ]
+}

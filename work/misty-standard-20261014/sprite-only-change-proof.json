@@ -1,0 +1,9 @@
+{
+  "only_ROM_bitmap_region_changed": true,
+  "addr": "0x855de18",
+  "allocated_bytes": 2304,
+  "different_bytes": 1134,
+  "all_other_ROM_bytes_identical": true,
+  "ROM_sha256": "78db87489b0dadb03a6066af7c0ffad9f784b9d8d400c5cb6c0e22eedf043bd0",
+  "all_original_SAVs_unchanged": true
+}

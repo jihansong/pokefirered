@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 """Lay out the Vermilion City airport grounds: terminal, runway, aprons, fences.
 
-v0.5 layout (about twice the v0.3.0 grounds; the map stays 48x40):
+The map stays 48x40; the terminal is now twice its former map height:
 
-- the terminal is eight blocks wide again (x=31..38, y=9..12), as it was
-  before v0.3.0 narrowed it to six; the door and its warp stay at (35,12);
-- the forest north of the airport is cut back to its top two rows, and the
+- the terminal is 8x8 blocks (x=31..38, y=5..12), up from 8x4;
+  the door and its warp stay at (35,12), with the door pixels centred there;
+- the forest north of the airport is cut back to its top row, and the
   forest east of it to its last two columns (x=46..47);
 - the runway (x=42..45, y=3..12) runs north with its centre line on the left
   edge of column 44 (src/airport_flyover.c flies along it);
 - a taxiway one block wide (x=41) runs along the runway's west side from the
-  north apron (x=31..41, y=2..5) down to the gate apron beside the terminal
+  north apron (x=31..41, y=1..2) down to the gate apron beside the terminal
   (x=39..41, y=10..12), with yellow lines to the parking stands;
 - the lawn north of the terminal is the fenced viewing spot (x=30..39,
-  y=7..8). From its east end (x=39) the camera shows the whole runway and
+  y=4, continuing down x=39 to y=8). From its east end (x=39) the camera shows the whole runway and
   every parked plane.
 
 Everything in the airport's rectangle (x=30..47, y=0..13) is written from the
@@ -44,13 +44,19 @@ TREE_LEFT = {0: 30, 1: 22}
 
 # the terminal, eight blocks wide (its own metatiles; 831 is the second copy
 # of the right-hand window column's bottom block)
-TERMINAL = [
-    [808, 809, 809, 810, 811, 812, 812, 813],
-    [814, 815, 815, 816, 817, 818, 818, 819],
-    [820, 821, 821, 822, 823, 824, 824, 825],
+TERMINAL_BASE = [
+    [808, 809, 809, 810, 811, 861, 812, 813],
+    [814, 815, 815, 816, 817, 860, 818, 819],
+    [820, 821, 821, 822, 823, 859, 824, 825],
     [826, 827, 828, 829, 830, 831, 831, 832],
 ]
-TERMINAL_X, TERMINAL_Y = 31, 9
+# Four glazed facade bands add actual building height below the normal roof.
+# All window/beam/side-wall tiles are reused from the terminal's existing art.
+WALL_LEFT, WALL_RIGHT = 857, 858
+TERMINAL = TERMINAL_BASE[:3] + [
+    [WALL_LEFT, 831, 831, 831, 831, 831, 831, WALL_RIGHT]
+] * 4 + TERMINAL_BASE[3:]
+TERMINAL_X, TERMINAL_Y = 31, 5
 DOOR_X, DOOR_Y = 35, 12
 
 X0, X1, Y0, Y1 = 30, 47, 0, 13     # the rectangle this tool owns
@@ -78,10 +84,10 @@ def fence(block, elevation=0):
 def plan():
     """The airport's blocks as {(x, y): (metatile, collision, elevation)}."""
     g = {}
-    # forest: two rows along the top, two columns down the east side
+    # One row at the north leaves space for the taller terminal and its walkway.
     for x in range(X0, X1 + 1):
         g[(x, 0)] = tree(x, 0)
-        g[(x, 1)] = tree(x, 1, bottom=x < 46)
+        g[(x, 1)] = tree(x, 1, bottom=True) if x >= 46 else (GRASS[0], 1, 0)
     for y in range(2, Y1 + 1):
         g[(46, y)] = tree(46, y, left=True)
         g[(47, y)] = tree(47, y)
@@ -101,11 +107,10 @@ def plan():
         for dx, name in enumerate(row):
             g[(RUNWAY_X + dx, y)] = airside(name)
 
-    # the north apron, x=31..41, y=2..5, with the stand line along the top of
-    # row 5 that its two remote stands are on
+    # The two remote stands move north with the reduced apron (y=1..2).
     for x in range(31, 42):
-        for y in range(2, 6):
-            left, right, top, bottom = x == 31, x == 41, y == 2, y == 5
+        for y in range(1, 3):
+            left, right, top, bottom = x == 31, x == 41, y == 1, y == 2
             if top:
                 name = 'CORNER_TL' if left else 'CORNER_TR' if right else 'EDGE_T'
             elif right:
@@ -116,7 +121,7 @@ def plan():
                 name = 'EDGE_LP' if left else 'ASPHALT'
             g[(x, y)] = airside(name)
     # the taxiway down the runway's west side, one block wide
-    for y in range(6, 10):
+    for y in range(3, 10):
         g[(41, y)] = airside('TAXI_V_1W')
     # the gate apron beside the terminal, x=39..41, y=10..12, with a nose-in
     # stand facing the terminal on the top of row 11
@@ -133,21 +138,21 @@ def plan():
             x, y = TERMINAL_X + dx, TERMINAL_Y + dy
             g[(x, y)] = (block, 0 if (x, y) == (DOOR_X, DOOR_Y) else 1, 0)
     # the lawn beside it and in front of it
-    for y in range(9, 14):
+    for y in range(4, 14):
         g[(30, y)] = GRASS
     for x in range(31, 39):
         g[(x, 13)] = GRASS
 
-    # The viewing spot: the lawn north of the terminal, fenced off from the
-    # airside by the forecourt fence along y=6, which turns south at x=40 and
-    # back west along y=9 to the terminal roof.
+    # A continuous public walkway runs around the north of the taller roof
+    # and down its east side to the existing (39,7..8) viewing position.
     for x in range(30, 40):
-        g[(x, 6)] = fence(SIGN_POST if x == 33 else FENCE_H)
-        g[(x, 7)] = GRASS
-        g[(x, 8)] = GRASS
-    g[(40, 6)] = fence(FENCE_TOP)
-    g[(40, 7)] = fence(FENCE_V, 3)
-    g[(40, 8)] = fence(FENCE_V, 3)
+        g[(x, 3)] = fence(SIGN_POST if x == 33 else FENCE_H)
+        g[(x, 4)] = GRASS
+    g[(40, 3)] = fence(FENCE_TOP)
+    for y in range(4, 9):
+        g[(40, y)] = fence(FENCE_V, 3)
+    for y in range(5, 9):
+        g[(39, y)] = GRASS
     g[(40, 9)] = fence(FENCE_END, 3)
     g[(39, 9)] = fence(FENCE_H, 3)
     # the airside's south fence, meeting the fence that runs on down to y=15
@@ -156,7 +161,49 @@ def plan():
     return g
 
 
+def align_terminal_tiles():
+    """Reuse source tile references; no PNG or palette pixels are changed."""
+    path = FR + '/data/tilesets/secondary/vermilion_city/metatiles.bin'
+    mt = bytearray(open(path, 'rb').read())
+    at = bytearray(open(ATTRS, 'rb').read())
+    source = {809: [639, 639, 639, 639, 45249, 45249, 45265, 45265], 810: [639, 639, 639, 639, 45250, 45251, 45265, 45266], 811: [639, 639, 639, 639, 46275, 46274, 46290, 46289], 812: [639, 639, 639, 639, 46273, 46273, 46289, 46289], 815: [639, 639, 639, 639, 45265, 45265, 45265, 45265], 816: [639, 45266, 639, 45266, 45265, 45266, 45265, 45299], 817: [46290, 639, 46290, 639, 46290, 46289, 46323, 46289], 818: [639, 639, 639, 639, 46289, 46289, 46289, 46289], 821: [639, 639, 639, 639, 12529, 12529, 12545, 12545], 822: [12530, 12530, 12545, 12546, 12561, 12547, 12579, 12563], 823: [13554, 13554, 12545, 12545, 13571, 13585, 13587, 13603], 824: [639, 639, 639, 639, 13553, 13553, 13570, 13570], 829: [639, 12580, 639, 12581, 12562, 0, 12578, 0], 830: [13604, 639, 13605, 639, 0, 12562, 0, 12578]}
+    def put(block, entries, behavior=0):
+        index = block - 640
+        if len(mt) < (index + 1) * 16:
+            mt.extend(bytes((index + 1) * 16 - len(mt)))
+            at.extend(bytes((index + 1) * 4 - len(at)))
+        mt[index * 16:(index + 1) * 16] = struct.pack('<8H', *entries)
+        at[index * 4:(index + 1) * 4] = struct.pack('<I', behavior)
+    # Each half of the old door was in a different map cell, straddling x=35.
+    # The single live warp's centre is 8px to the right; put the whole door in it.
+    put(829, [639] * 4 + [source[829][4], source[829][4], source[829][6], source[829][6]])
+    put(830, [source[829][1], source[830][0], source[829][3], source[830][2]] + [0] * 4, MB_WARP_DOOR)
+    # Move the sign and its roof seam together. Right-hand parts need private
+    # metatiles because the original right-hand window/roof blocks are reused.
+    for plain, left_id, centre_id, right_id, output in (
+            (809, 810, 811, 812, 861),
+            (815, 816, 817, 818, 860),
+            (821, 822, 823, 824, 859)):
+        shifted = {left_id: [], centre_id: [], output: []}
+        for layer in (0, 1):
+            off = layer * 4
+            left, centre, right = [source[i][off:off + 4] for i in (left_id, centre_id, right_id)]
+            shifted[left_id] += [source[plain][off + 1], left[0], source[plain][off + 3], left[2]]
+            shifted[centre_id] += [left[1], centre[0], left[3], centre[2]]
+            shifted[output] += [centre[1], right[1], centre[3], right[3]]
+        for block, entries in shifted.items():
+            put(block, entries)
+        put(right_id, source[right_id])
+    # Straight shaded side strips reuse existing roof-side tiles in the wall
+    # palette; glass panes and horizontal sills come from the original facade.
+    put(WALL_LEFT, [639] * 4 + [0x30e0, 0x3512, 0x30e0, 0x3122])
+    put(WALL_RIGHT, [639] * 4 + [0x3512, 0x34e0, 0x3122, 0x34e0])
+    open(path, 'wb').write(mt)
+    open(ATTRS, 'wb').write(at)
+
+
 def main():
+    align_terminal_tiles()
     lay = next(l for l in json.load(open(FR + '/data/layouts/layouts.json'))['layouts']
                if l.get('id') == LAYOUT)
     w, h = lay['width'], lay['height']
@@ -173,13 +220,12 @@ def main():
     # The terminal's blocks came from the MART, whose sign behavior made the wall
     # print the mart's line, so they are cleared. The two blocks the entrance sits
     # on keep MB_WARP_DOOR, or the door stops being a door.
-    door = {TERMINAL[DOOR_Y - TERMINAL_Y][DOOR_X - TERMINAL_X - 1],
-            TERMINAL[DOOR_Y - TERMINAL_Y][DOOR_X - TERMINAL_X]}
+    door = {TERMINAL[DOOR_Y - TERMINAL_Y][DOOR_X - TERMINAL_X]}
     for block in {b for row in TERMINAL for b in row}:
         attrs[(block - 640) * 4] = MB_WARP_DOOR if block in door else 0
     open(ATTRS, 'wb').write(attrs)
-    print(f'{LAYOUT}: terminal 8x4 at x={TERMINAL_X}..{TERMINAL_X + 7}, runway x={RUNWAY_X}..'
-          f'{RUNWAY_X + 3} y={RUNWAY_Y0}..{RUNWAY_Y1}, airside x=31..45 y=2..12')
+    print(f'{LAYOUT}: terminal 8x8 at x={TERMINAL_X}..{TERMINAL_X + 7}, runway x={RUNWAY_X}..'
+          f'{RUNWAY_X + 3} y={RUNWAY_Y0}..{RUNWAY_Y1}, airside x=31..45 y=1..12')
 
 
 if __name__ == '__main__':

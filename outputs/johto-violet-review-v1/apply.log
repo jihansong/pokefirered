@@ -1,0 +1,155 @@
+{
+  "apply": true,
+  "files": [
+    "data/event_scripts.s",
+    "data/layouts/JohtoRoute30/map.bin",
+    "data/layouts/JohtoRoute31/border.bin",
+    "data/layouts/JohtoRoute31/map.bin",
+    "data/layouts/SproutTower_1F/border.bin",
+    "data/layouts/SproutTower_1F/map.bin",
+    "data/layouts/SproutTower_2F/border.bin",
+    "data/layouts/SproutTower_2F/map.bin",
+    "data/layouts/SproutTower_3F/border.bin",
+    "data/layouts/SproutTower_3F/map.bin",
+    "data/layouts/VioletCity/border.bin",
+    "data/layouts/VioletCity/map.bin",
+    "data/layouts/layouts.json",
+    "data/maps/JohtoRoute30/map.json",
+    "data/maps/JohtoRoute31/map.json",
+    "data/maps/JohtoRoute31/scripts.inc",
+    "data/maps/JohtoRoute31/text.inc",
+    "data/maps/SproutTower_1F/map.json",
+    "data/maps/SproutTower_1F/scripts.inc",
+    "data/maps/SproutTower_1F/text.inc",
+    "data/maps/SproutTower_2F/map.json",
+    "data/maps/SproutTower_2F/scripts.inc",
+    "data/maps/SproutTower_2F/text.inc",
+    "data/maps/SproutTower_3F/map.json",
+    "data/maps/SproutTower_3F/scripts.inc",
+    "data/maps/SproutTower_3F/text.inc",
+    "data/maps/VioletCity/map.json",
+    "data/maps/VioletCity/scripts.inc",
+    "data/maps/VioletCity/text.inc",
+    "data/maps/VioletCity_Academy/map.json",
+    "data/maps/VioletCity_Academy/scripts.inc",
+    "data/maps/VioletCity_Academy/text.inc",
+    "data/maps/VioletCity_Gym/map.json",
+    "data/maps/VioletCity_Gym/scripts.inc",
+    "data/maps/VioletCity_Gym/text.inc",
+    "data/maps/VioletCity_Mart/map.json",
+    "data/maps/VioletCity_Mart/scripts.inc",
+    "data/maps/VioletCity_Mart/text.inc",
+    "data/maps/VioletCity_PokemonCenter_1F/map.json",
+    "data/maps/VioletCity_PokemonCenter_1F/scripts.inc",
+    "data/maps/VioletCity_PokemonCenter_1F/text.inc",
+    "data/maps/VioletCity_PokemonCenter_2F/map.json",
+    "data/maps/VioletCity_PokemonCenter_2F/scripts.inc",
+    "data/maps/VioletCity_PokemonCenter_2F/text.inc",
+    "data/maps/map_groups.json",
+    "graphics/region_map/johto_entry.bin",
+    "include/constants/flags_johto_story.h",
+    "include/constants/opponents.h",
+    "include/constants/opponents_johto.h",
+    "include/pokedex_area_markers.h",
+    "src/data/heal_locations.json",
+    "src/data/region_map/region_map_sections.json",
+    "src/data/trainer_parties.h",
+    "src/data/trainer_parties_johto.h",
+    "src/data/trainers.h",
+    "src/data/trainers_johto.h",
+    "src/data/wild_encounters.json",
+    "src/pokedex_area_markers.c",
+    "src/pokedex_screen.c",
+    "src/pokemon_summary_screen.c",
+    "src/region_map.c",
+    "src/wild_pokemon_area.c",
+    "tools/johto/build_cherrygrove.py",
+    "tools/johto/route31_wild.json"
+  ],
+  "validation": {
+    "chapter": "Violet",
+    "save_layout_changed": false,
+    "battle_portrait_limit": "Falkner uses temporary native COOLTRAINER_M art; not final artwork",
+    "tm_choice": "Gen III TM40 AERIAL ACE; GSC TM31 would mean BRICK BREAK here",
+    "new_maps": [
+      "JohtoRoute31",
+      "VioletCity",
+      "VioletCity_PokemonCenter_1F",
+      "VioletCity_PokemonCenter_2F",
+      "VioletCity_Mart",
+      "VioletCity_Academy",
+      "VioletCity_Gym",
+      "SproutTower_1F",
+      "SproutTower_2F",
+      "SproutTower_3F"
+    ],
+    "new_flags": {
+      "FLAG_JOHTO_SPROUT_TOWER_CLEARED": 5,
+      "FLAG_JOHTO_GOT_TM40_FROM_FALKNER": 6,
+      "FLAG_JOHTO_SPROUT_TOWER_FLASH_RECEIVED": 7,
+      "FLAG_JOHTO_BADGE01_GET": 16
+    },
+    "new_trainer_offsets": [
+      784,
+      785,
+      786,
+      787,
+      788,
+      789,
+      790
+    ],
+    "static_checks": [
+      {
+        "map": "JohtoRoute31",
+        "connected_walkable_cells": 494,
+        "doors_and_NPCs_reachable": true
+      },
+      {
+        "map": "VioletCity",
+        "connected_walkable_cells": 847,
+        "doors_and_NPCs_reachable": true
+      },
+      {
+        "map": "VioletCity_PokemonCenter_1F",
+        "connected_walkable_cells": 84,
+        "doors_and_NPCs_reachable": true
+      },
+      {
+        "map": "VioletCity_PokemonCenter_2F",
+        "existing_CableClub_layout_reused": true
+      },
+      {
+        "map": "VioletCity_Mart",
+        "connected_walkable_cells": 40,
+        "doors_and_NPCs_reachable": true
+      },
+      {
+        "map": "VioletCity_Academy",
+        "connected_walkable_cells": 58,
+        "doors_and_NPCs_reachable": true
+      },
+      {
+        "map": "VioletCity_Gym",
+        "connected_walkable_cells": 112,
+        "doors_and_NPCs_reachable": true
+      },
+      {
+        "map": "SproutTower_1F",
+        "connected_walkable_cells": 120,
+        "doors_and_NPCs_reachable": true
+      },
+      {
+        "map": "SproutTower_2F",
+        "connected_walkable_cells": 117,
+        "doors_and_NPCs_reachable": true
+      },
+      {
+        "map": "SproutTower_3F",
+        "connected_walkable_cells": 121,
+        "doors_and_NPCs_reachable": true
+      }
+    ],
+    "native_build_and_emulator": "NOT_RUN_BY_GENERATOR"
+  }
+}
+APPLIED /workspaces/pokefirered/outputs/johto-violet-chapter-v1/20261005T130034583405Z/manifest.json

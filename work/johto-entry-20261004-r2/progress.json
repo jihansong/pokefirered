@@ -1,0 +1,32 @@
+[
+  {
+    "check": "build",
+    "exit": 0,
+    "log": "/workspaces/pokefirered/work/johto-entry-20261004-r2/build.log"
+  },
+  {
+    "check": "symbols",
+    "exit": 0,
+    "log": "/workspaces/pokefirered/work/johto-entry-20261004-r2/symbols.log"
+  },
+  {
+    "check": "johto",
+    "exit": 1,
+    "log": "/workspaces/pokefirered/work/johto-entry-20261004-r2/johto.log"
+  },
+  {
+    "check": "maps",
+    "exit": 0,
+    "log": "/workspaces/pokefirered/work/johto-entry-20261004-r2/maps.log"
+  },
+  {
+    "check": "map_integrity",
+    "exit": 0,
+    "log": "/workspaces/pokefirered/work/johto-entry-20261004-r2/map_integrity.log"
+  },
+  {
+    "check": "savecompat",
+    "exit": 0,
+    "log": "/workspaces/pokefirered/work/johto-entry-20261004-r2/savecompat.log"
+  }
+]

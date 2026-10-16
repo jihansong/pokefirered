@@ -1,0 +1,234 @@
+{
+  "rom_sha256": "da26db1c7136e42fe0b0205d2c42cb7cb71b76136150a145074824e91d3d82e6",
+  "input_save_sha256": "7eba0a5e5c82e053973210ad13e61725607a4f8aa97a4ad9acda91f65481d140",
+  "diagnostic_only": true,
+  "all_preservation_assertions_unchanged": true,
+  "snapshots": [
+    {
+      "case": "cold_nurse_JohtoLeague_PokemonCenter_1F_2",
+      "snapshot_index": 0,
+      "phase": "before-native-heal",
+      "frame": 730,
+      "location": [
+        76,
+        117,
+        7,
+        4
+      ],
+      "callback2": "0x8057521",
+      "save_counter": 115,
+      "saveblock1_pointer": "0x202558c",
+      "saveblock2_pointer": "0x20245e8",
+      "regional_flags_size": 256,
+      "regional_flags_sha256": "42caafd025e0daab7d47baeed65167bcf3313d3258316146070ae396b1e618c9",
+      "regional_flags_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f3d0fffdfffdffff40000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001a00000000000000000000000000",
+      "regional_flags_file": "cold_nurse_JohtoLeague_PokemonCenter_1F_2-snapshot-0-regional-flags.bin",
+      "differences_from_previous_snapshot": [],
+      "flash_counter": 115,
+      "flash_regional_flags_sha256": "42caafd025e0daab7d47baeed65167bcf3313d3258316146070ae396b1e618c9",
+      "flash_regional_flags_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f3d0fffdfffdffff40000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001a00000000000000000000000000",
+      "flash_native_different_byte_indices": []
+    },
+    {
+      "case": "cold_nurse_JohtoLeague_PokemonCenter_1F_2",
+      "snapshot_index": 1,
+      "phase": "after-native-heal",
+      "frame": 1344,
+      "location": [
+        76,
+        117,
+        7,
+        4
+      ],
+      "callback2": "0x8057521",
+      "save_counter": 115,
+      "saveblock1_pointer": "0x202558c",
+      "saveblock2_pointer": "0x20245e8",
+      "regional_flags_size": 256,
+      "regional_flags_sha256": "42caafd025e0daab7d47baeed65167bcf3313d3258316146070ae396b1e618c9",
+      "regional_flags_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f3d0fffdfffdffff40000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001a00000000000000000000000000",
+      "regional_flags_file": "cold_nurse_JohtoLeague_PokemonCenter_1F_2-snapshot-1-regional-flags.bin",
+      "differences_from_previous_snapshot": [],
+      "flash_counter": 115,
+      "flash_regional_flags_sha256": "42caafd025e0daab7d47baeed65167bcf3313d3258316146070ae396b1e618c9",
+      "flash_regional_flags_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f3d0fffdfffdffff40000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001a00000000000000000000000000",
+      "flash_native_different_byte_indices": []
+    },
+    {
+      "case": "cold_nurse_JohtoLeague_PokemonCenter_1F_2",
+      "snapshot_index": 2,
+      "phase": "native-SAVE-and-cold-reload",
+      "frame": 1980,
+      "location": [
+        76,
+        117,
+        7,
+        4
+      ],
+      "callback2": "0x8057521",
+      "save_counter": 116,
+      "saveblock1_pointer": "0x202558c",
+      "saveblock2_pointer": "0x20245e8",
+      "regional_flags_size": 256,
+      "regional_flags_sha256": "42caafd025e0daab7d47baeed65167bcf3313d3258316146070ae396b1e618c9",
+      "regional_flags_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f3d0fffdfffdffff40000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001a00000000000000000000000000",
+      "regional_flags_file": "cold_nurse_JohtoLeague_PokemonCenter_1F_2-snapshot-2-regional-flags.bin",
+      "differences_from_previous_snapshot": [],
+      "flash_counter": 116,
+      "flash_regional_flags_sha256": "42caafd025e0daab7d47baeed65167bcf3313d3258316146070ae396b1e618c9",
+      "flash_regional_flags_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f3d0fffdfffdffff40000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001a00000000000000000000000000",
+      "flash_native_different_byte_indices": []
+    },
+    {
+      "case": "cold_nurse_JohtoLeague_PokemonCenter_1F_2",
+      "snapshot_index": 3,
+      "phase": "native-SAVE-and-cold-reload",
+      "frame": 670,
+      "location": [
+        76,
+        117,
+        7,
+        4
+      ],
+      "callback2": "0x8057521",
+      "save_counter": 116,
+      "saveblock1_pointer": "0x202556c",
+      "saveblock2_pointer": "0x20245c8",
+      "regional_flags_size": 256,
+      "regional_flags_sha256": "412ce6db2ba14453f4453f9cdf6600a5a8de7d77021f89506fe70c2328b29815",
+      "regional_flags_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e60f030000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f3d0fffdfffdffff40000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001a00000000000000000000000000",
+      "regional_flags_file": "cold_nurse_JohtoLeague_PokemonCenter_1F_2-snapshot-3-regional-flags.bin",
+      "differences_from_previous_snapshot": [
+        {
+          "byte_index": 74,
+          "bit": 1,
+          "flag_id": 4689,
+          "flag_hex": "0x1251",
+          "names": [
+            "FLAG_HIDE_HOENN_BIRCH_LAB"
+          ],
+          "before": false,
+          "after": true
+        },
+        {
+          "byte_index": 74,
+          "bit": 2,
+          "flag_id": 4690,
+          "flag_hex": "0x1252",
+          "names": [
+            "FLAG_HIDE_HOENN_RIVAL_ROUTE103"
+          ],
+          "before": false,
+          "after": true
+        },
+        {
+          "byte_index": 74,
+          "bit": 5,
+          "flag_id": 4693,
+          "flag_hex": "0x1255",
+          "names": [
+            "FLAG_HIDE_HOENN_RUSTBORO_THIEF"
+          ],
+          "before": false,
+          "after": true
+        },
+        {
+          "byte_index": 74,
+          "bit": 6,
+          "flag_id": 4694,
+          "flag_hex": "0x1256",
+          "names": [
+            "FLAG_HIDE_HOENN_RUSTURF_GRUNT"
+          ],
+          "before": false,
+          "after": true
+        },
+        {
+          "byte_index": 74,
+          "bit": 7,
+          "flag_id": 4695,
+          "flag_hex": "0x1257",
+          "names": [
+            "FLAG_HIDE_HOENN_RUSTURF_PEEKO"
+          ],
+          "before": false,
+          "after": true
+        },
+        {
+          "byte_index": 75,
+          "bit": 0,
+          "flag_id": 4696,
+          "flag_hex": "0x1258",
+          "names": [
+            "FLAG_HIDE_HOENN_BRINEY"
+          ],
+          "before": false,
+          "after": true
+        },
+        {
+          "byte_index": 75,
+          "bit": 1,
+          "flag_id": 4697,
+          "flag_hex": "0x1259",
+          "names": [
+            "FLAG_HIDE_HOENN_WALLY_PETALBURG"
+          ],
+          "before": false,
+          "after": true
+        },
+        {
+          "byte_index": 75,
+          "bit": 2,
+          "flag_id": 4698,
+          "flag_hex": "0x125a",
+          "names": [
+            "FLAG_HIDE_HOENN_WALLY_VERDANTURF"
+          ],
+          "before": false,
+          "after": true
+        },
+        {
+          "byte_index": 75,
+          "bit": 3,
+          "flag_id": 4699,
+          "flag_hex": "0x125b",
+          "names": [
+            "FLAG_HIDE_HOENN_WANDA_BOYFRIEND"
+          ],
+          "before": false,
+          "after": true
+        },
+        {
+          "byte_index": 76,
+          "bit": 0,
+          "flag_id": 4704,
+          "flag_hex": "0x1260",
+          "names": [
+            "FLAG_HIDE_HOENN_ROCKET_WOODS"
+          ],
+          "before": false,
+          "after": true
+        },
+        {
+          "byte_index": 76,
+          "bit": 1,
+          "flag_id": 4705,
+          "flag_hex": "0x1261",
+          "names": [
+            "FLAG_HIDE_HOENN_RIVAL_LAB"
+          ],
+          "before": false,
+          "after": true
+        }
+      ],
+      "flash_counter": 116,
+      "flash_regional_flags_sha256": "42caafd025e0daab7d47baeed65167bcf3313d3258316146070ae396b1e618c9",
+      "flash_regional_flags_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f3d0fffdfffdffff40000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001a00000000000000000000000000",
+      "flash_native_different_byte_indices": [
+        74,
+        75,
+        76
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "pass": true,
+  "rom_sha256": "9c14366839526315ea0b4b95925cde6c10cf95c9626fd05507a5e7b382d39afa",
+  "elf_sha256": "847d1e4d9823525c23f4682706981e1ea85cfa13d5e33d417030601b9957665e",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-airplane-johto-transition",
+  "fixture": "temporary champion flag and starting position fixture; original party and PC retained",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "transition_samples": [
+    {
+      "step": 0,
+      "frame": 830,
+      "location": [
+        9,
+        8,
+        10,
+        6
+      ],
+      "callback": "0x8057521"
+    },
+    {
+      "step": 20,
+      "frame": 1150,
+      "location": [
+        9,
+        8,
+        10,
+        6
+      ],
+      "callback": "0x8eb3409"
+    },
+    {
+      "step": 40,
+      "frame": 1470,
+      "location": [
+        9,
+        8,
+        10,
+        6
+      ],
+      "callback": "0x8eb3409"
+    }
+  ],
+  "arrival": [
+    76,
+    0,
+    22,
+    12
+  ],
+  "flight_frames": 1064,
+  "native_inputs_only": true,
+  "party_pc_dex_unchanged": true,
+  "original_saves_unchanged": true
+}

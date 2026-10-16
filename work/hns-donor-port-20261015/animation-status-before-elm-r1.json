@@ -1,0 +1,2288 @@
+{
+  "updated_at": "2026-10-15T11:19:50.490586+00:00",
+  "verified_by": "root native gym/battle/events/sameSAV SAVE/cold QA; scoped reused map/wild/Surf/performance/Hoenn native evidence; ELF/ROM asset/SAV provenance",
+  "basis": "Remote file inspection and actual render, not agent completion labels",
+  "opening": {
+    "status": "approved_full_frlg_v7_native_ROM_verified",
+    "directory": "/workspaces/pokefirered/outputs/opening-full-frlg-v7",
+    "duration_seconds": 12.533333333333333,
+    "frames": 752,
+    "fps": 60,
+    "visual_contact_sheet_reviewed": true,
+    "new_original_poses": false,
+    "rom_integrated": true,
+    "remaining": [],
+    "regression": {
+      "status": "PASS",
+      "frames": 600,
+      "changed_frames": [
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        370,
+        371,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380,
+        381,
+        382,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390,
+        391,
+        392,
+        393,
+        394,
+        395,
+        396,
+        397,
+        398,
+        399,
+        400,
+        401,
+        402,
+        403,
+        404,
+        405,
+        406,
+        407,
+        408,
+        409,
+        410,
+        411,
+        412,
+        413,
+        414,
+        415,
+        416,
+        417,
+        418,
+        419,
+        420,
+        421,
+        422,
+        423,
+        424,
+        425,
+        426,
+        427,
+        428,
+        429,
+        430,
+        431,
+        432,
+        433,
+        434,
+        435,
+        436,
+        437,
+        438,
+        439
+      ],
+      "unchanged_non_strike_frames": 474,
+      "non_strike_rgb_sha256": "63a9fbb908a14974c1c6c1541c6df333e6302c12b50e200e0686936acbc8a373",
+      "main_flash_global_frames": [
+        389,
+        390,
+        391
+      ],
+      "new_original_poses": false,
+      "rom_integrated": false
+    },
+    "artifacts": {
+      "outputs/opening-expression-edit-v4/opening-10s-native.mp4": {
+        "bytes": 1210989,
+        "sha256": "1e2e4595b75c813bf920577a27ae1c72e653aa8f60d4ba84356f020fba98a640"
+      },
+      "outputs/opening-expression-edit-v4/keyframes-contact-sheet.png": {
+        "bytes": 96780,
+        "sha256": "c66c4eb818f4b2a221a57ea787d04e799729fab81c713406dd449b0c94bb9ffb"
+      },
+      "outputs/opening-expression-edit-v4/opening-10s-preview.mp4": {
+        "bytes": 3117464,
+        "sha256": "afddac4e1e8131909914dcd606d0eeb4a47c1471043a63ae92e4706d66fa7aaa"
+      },
+      "outputs/opening-expression-edit-v4/opening-native-600-frames.zip": {
+        "bytes": 4311041,
+        "sha256": "e3b8f6c1bc835c8f7c3424c0a048f19dc4041c551f04f5761571e63094f5eeb3"
+      },
+      "outputs/opening-expression-edit-v4/validation.json": {
+        "bytes": 1867,
+        "sha256": "599831542e812f2d170f472d046f63c4c8de3a2ba7bfbf0bcf4d31c6d1a80c50"
+      },
+      "outputs/opening-expression-edit-v4/chase-motion-sample.mp4": {
+        "bytes": 1299889,
+        "sha256": "53abe5c6e9b433f02006a33d98c794e81f6b2a5585fcada6d55df71600af5977"
+      },
+      "outputs/opening-expression-edit-v4/original-comparison.png": {
+        "bytes": 66488,
+        "sha256": "3c5d9ed43e3e879264a6a814bc8590285cf07e188818285ccee2d35433488b0d"
+      },
+      "outputs/opening-expression-edit-v4/timing-regression.json": {
+        "bytes": 1066,
+        "sha256": "0b9328697084b84a89a659deac668e94ab6b1a00389a557cda505528a58e33e3"
+      },
+      "outputs/opening-expression-edit-v4/asset-manifest.json": {
+        "bytes": 5042,
+        "sha256": "6c0ef773bfa6773fd9e6960a9a44bbef6831b54c2b4aa919c2db52d9d79738a7"
+      }
+    },
+    "visual_source_directory": "/workspaces/pokefirered/outputs/opening-hooh-color-v5",
+    "music": "native MUS_INTRO_FIGHT",
+    "player_url": "https://effective-meme-v6pxvx5qx6vghwj56-31582.app.github.dev/opening.html",
+    "native_runtime": {
+      "all_frames_matched": 752,
+      "dropped_frames": 0,
+      "max_vcount": 198,
+      "skip_verified": [
+        "A",
+        "START",
+        "SELECT"
+      ],
+      "evidence": "outputs/opening-rom-v7/runtime-qa/validation.json"
+    }
+  },
+  "uploaded_assets": {
+    "status": "55 existing uploaded files copied within Codespaces with byte-identical collision checks",
+    "directories": [
+      "outputs/pikachu-expression-edit-v1",
+      "outputs/title-front-edit-v1",
+      "outputs/rocket-art-v9"
+    ]
+  },
+  "title": {
+    "status": "approved_v8_native_ROM_verified",
+    "gif_status": "Actual approved PNG effects GIF generated and visually checked",
+    "directory": "/workspaces/pokefirered/outputs/title-final-v8",
+    "gif_directory": "/workspaces/pokefirered/outputs/title-approved-v3-effects-v1",
+    "music": {
+      "status": "TITLE_EXISTING_FRLG_MUSIC_AND_CRACKLE_PREVIEW",
+      "song": "MUS_TITLE",
+      "music_gain": 0.7,
+      "electricity_gain": 0.3,
+      "seconds": 4,
+      "capture_start_frame": 1464,
+      "se_active_frames": 0,
+      "audio_peak": 0.330047607421875,
+      "aac_peak": 0.326934814453125,
+      "video_packets_unchanged": true,
+      "protected_inputs_unchanged": true,
+      "new_music_created": false,
+      "pika_voice_added": false,
+      "auditioned": false,
+      "scope": "4-second preview excerpt; native game already selects MUS_TITLE",
+      "input_sha256": {
+        "/workspaces/pokefirered/pokemonthyl.gba": "d92d369507dbeac1f7a8617093fb9e3f75b815431323ac2e745a744d88e118b9",
+        "/workspaces/pokefirered/outputs/title-continuous-crackle-v3/title-current-continuous-electricity.mp4": "60ad8bbefc0d4fc2322d58e764977d5dc401c516d84551ce822f0218bd2409f9",
+        "/workspaces/pokefirered/outputs/title-continuous-crackle-v3/continuous-electricity.wav": "05fc393c54d7a7030be0bc86506ea7d0ef455e4b26ace4a6e3e3fadd6bcc2189",
+        "/workspaces/pokefirered/outputs/title-approved-v3-effects-v1/title-current-native.gif": "5a43ad846f5ffba450d35da997f7d9460e9ccbc057895fdd45c4c86f521ec624",
+        "/workspaces/pokefirered/outputs/title-font-python-v3/title-font-candidate-240x160.png": "7e370cc2d5b4cd71a1ae68b1da6934b62a049fc9e83efb2fc51619231cc122c5"
+      },
+      "files": {
+        "frlg-mus-title.wav": {
+          "bytes": 553068,
+          "sha256": "4b0d8dcd558c7fc790c330cc1358f88e2add8863caa693aaf219f2248deee3a1"
+        },
+        "title-music-and-crackle.wav": {
+          "bytes": 705678,
+          "sha256": "168d5089d95f7e9b55496a4fe2af5c3859854b4757f42df63c9fb85493e224ea"
+        },
+        "title-frlg-music-crackle.mp4": {
+          "bytes": 146220,
+          "sha256": "27fe02d2babb1c10700406aea3569435dd063a383ea9cf2cf4fea81eaf407f6f"
+        }
+      }
+    },
+    "player_url": "https://effective-meme-v6pxvx5qx6vghwj56-31582.app.github.dev/title.html",
+    "start_voice": {
+      "required_source": "Original Lets Go Pikachu or anime recording only; no synthesis",
+      "reference_video_sha256": "38a3a9557821d3db8106d86adc1c24819c0db66b07d889d7e2fec291aac3effe",
+      "clip_selected": false,
+      "rom_integrated": false
+    },
+    "rom_integrated": true,
+    "native_start_voice": {
+      "status": "APPLIED_NATIVE_START_A_RUNTIME_PASS",
+      "reference_mp3": "reference/audio/pikachu-gF1FJRM8Wck/pikachu-original.mp3",
+      "reference_wav": "reference/audio/pikachu-gF1FJRM8Wck/publisher-original/pokemon-video-game-pikachu-voice-sound-effect.wav",
+      "source_url": "https://www.youtube.com/watch?v=gF1FJRM8Wck",
+      "distribution_url": "https://soundsverse.com/wp-content/uploads/s/pokemon-video-game-pikachu-voice-sound-effect.zip",
+      "whole_clip_seconds": 1.5998185941043084,
+      "synthesized": false,
+      "trimmed": false,
+      "runtime_result": "work/title-publisher-native-validation-20261004T133950Z/result.json",
+      "main_runtime_result": "work/title-publisher-native-validation-20261004T133950Z/main-runtime/validation.json",
+      "main_rom_sha256": "3eb1e7ce83bf4e47f06a3a10452becb4c2943df43540eec716682d46688a852b",
+      "protected_save_count": 7,
+      "original_saves_unchanged": true,
+      "audio_auditioned": false,
+      "delta_device_tested": false,
+      "gif_audio_added": false,
+      "browser_start_voice_added": false
+    },
+    "version": "V8",
+    "lightning_source": "outputs/title-start-review-v15/Lightening.png",
+    "original_pika_voice": true,
+    "closed_and_open_mouth": "approved V7 retained",
+    "frames": 40,
+    "interval_vblanks": 6,
+    "native_ROI_frames_compared": 40,
+    "evidence": "outputs/title-final-v8/native-frame-qa2/validation.json"
+  },
+  "rocket": {
+    "status": "REVIEW_ROM_INTRO_AND_FINISH_RUNTIME_PASS",
+    "native_format": "64x64, 4bpp, 16 palette entries",
+    "approved_ratio": "v4 retained",
+    "quality_limit": "v8 to v9 changes are hair and glove pixels; not a completed eye redraw",
+    "intro_result": "outputs/rocket96-game-intro-qa-fixed-20261004T125444Z/result.json",
+    "finish_result": "outputs/rocket96-game-finish-qa-v1/result.json",
+    "normal_game_hires_enabled": false,
+    "normal_game_portrait_size": "64x64",
+    "review_portrait_size": "96x96",
+    "new_complete_hand_redraw": false,
+    "single_double_fallback_verified": true,
+    "resource_cleanup_verified": true,
+    "visual_reviewed_screenshot": "outputs/rocket96-game-intro-qa-fixed-20261004T125444Z/r02_mtmoon_double.png",
+    "all_visual_cases_reviewed": false
+  },
+  "bag": {
+    "status": "42-to-84 item-kind patch prepared, six remote baseline hashes match; not applied",
+    "save_layout_changed": false,
+    "runtime_qa": "Not run; use QA v2 normal bag menu roundtrip, not v1 direct heap reset",
+    "ewram_before_bytes": 261860,
+    "qa_v2_sha256": "e11559878258fb0c99ebcbff0ddd6c893d7c1f622bb5c9c6e8524ba8044bd7b8"
+  },
+  "regions": {
+    "status": "PARTIAL_NATIVE_VERIFIED_NOT_WHOLE_CAMPAIGN_COMPLETE",
+    "hoenn_next": "HM03/04/05 chapter-gated sharing integrated; Route110/119 rival and Weather Institute bridge prerequisite prepared, not applied",
+    "johto": "Main ROM: 112 maps, badges 1-8 including Blackthorn/Clair/DragonDen; independent Johto League remains",
+    "wanda_patch_sha256": "34ae0d640ba419fa6c8d21686746c35302d1e25b20a264852348ff393ea18fd8",
+    "birch_johto_referral": {
+      "status": "SOURCE_APPLIED_12_RUNTIME_CASES_BUILD_MAP_SAVE_CHECK_PASS",
+      "result": "work/birch-bridge-validation-20261004T130335Z/result.json",
+      "all_regions_story_complete": false
+    },
+    "main_rom_sha256": "111d4e1ae7e6572845e5eb31ed33a1216fff8aa3d3e11466f287b74419abe682"
+  },
+  "dock_mew": {
+    "status": "Patch prepared, not applied",
+    "keep": "SSAnne exterior truck and dock",
+    "remove": "Roadside Vermilion truck",
+    "correction": "Use walk_in_place_left, not nonexistent walk_in_place_normal_left"
+  },
+  "endings": {
+    "required_versions": [
+      "Kanto",
+      "Johto",
+      "Hoenn"
+    ],
+    "status": "Not complete; portable renderers and regional clear triggers pending",
+    "hoenn_native_review": {
+      "status": "NATIVE_CAPTURE_VERIFIED",
+      "folder": "outputs/ending-hoenn-native-v1",
+      "frames": 15742,
+      "duration_seconds": 263.563682556,
+      "original_frlg_music": true,
+      "bespoke_storyboard_film_complete": false,
+      "capture_fixture_not_whole_story_walkthrough": true
+    },
+    "johto_native_profile": {
+      "status": "PROFILE_IN_MAIN_MANUAL_PREVIEW_NOT_LEAGUE_DISPATCH",
+      "region_mode": 1,
+      "scene_count": 13,
+      "league_clear_dispatch_pending": true,
+      "full_native_capture_pending": true,
+      "bespoke_final_film_complete": false
+    }
+  },
+  "save_v1_2": {
+    "status": "present in remote saves; original unchanged and compatible with native updated ROM",
+    "source_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+    "source_modified": false,
+    "bad_egg": "Lickitung in BOX2 slot22; both save slots contain same corruption; authenticated donor not found"
+  },
+  "other_open_work": [
+    "PC capacity expansion remains unimplemented; 32 boxes only a proposal",
+    "Airport runway expansion",
+    "DELTA stutter investigation",
+    "Save v1.2 sync and compatibility verification",
+    "Lavender regression check as changes warrant"
+  ],
+  "agents": {
+    "art_assets_resume": "Portable Kanto/Hoenn ending renderer patch; Rocket runtime QA prepared",
+    "bag_capacity_audit": "Bag QA v2 fixed; now investigating follower performance",
+    "dock_mew_now": "Hoenn/Johto story audit; Wanda patch prepared"
+  },
+  "constraints": [
+    "No Codespaces restart",
+    "No push or public deployment",
+    "No incompatible save-layout changes",
+    "No deletion of existing work",
+    "Title PNG approval before GIF next stage",
+    "New music approval required"
+  ],
+  "parallel_ownership": {
+    "updated_at": "2026-10-04T07:43:08.917895+00:00",
+    "rule": "New user requests append to the backlog; they do not replace or complete earlier tasks. Root integrates and verifies. Three agent slots plus root.",
+    "streams": [
+      {
+        "owner": "art_assets_resume",
+        "items": [
+          "opening 10s and Ho-oh detail/color",
+          "title Pokemon-like lettering, Pikachu front face PNG approval, subsequent GIF",
+          "Jessie and James v4 proportions, eyes/outlines, genuine detail and 96x96 display"
+        ],
+        "state": "running",
+        "limits": "No new art generated by failed image calls; preserve approval gates."
+      },
+      {
+        "owner": "bag_capacity_audit",
+        "items": [
+          "Kanto ending",
+          "Johto ending",
+          "Hoenn ending",
+          "regional completion playback conditions",
+          "Pikachu reference ZIP: blocked at upload; inventory and memory verification complete"
+        ],
+        "state": "ending work continues; reference ZIP awaits upload permission state change",
+        "handoff": "Bag/PC/save/performance source and QA handed to root; those tasks remain open."
+      },
+      {
+        "owner": "dock_mew_now",
+        "items": [
+          "Hoenn maps/story/rewards/league",
+          "Johto maps/story",
+          "Kanto-Johto-Hoenn bidirectional connections"
+        ],
+        "state": "running"
+      },
+      {
+        "owner": "root",
+        "items": [
+          "apply and verify agent results",
+          "42 to 84 distinct ordinary bag items",
+          "save-compatible PC expansion, Delta verification",
+          "v1.2 save sync, preserve and investigate corrupt egg",
+          "Eevee day/night verification",
+          "airport height/doors/window foreground/runway",
+          "dock truck removal and Strength Mew event",
+          "Lavender regression",
+          "performance verification"
+        ],
+        "state": "running"
+      }
+    ]
+  },
+  "latest_verified_20261004": {
+    "opening_v5": {
+      "path": "outputs/opening-hooh-color-v5",
+      "render_completed": true,
+      "native_mp4_bytes": 1214032,
+      "preview_mp4_bytes": 3127198,
+      "frames": 600,
+      "description": "Existing Ho-oh field palette restored and size transition smoothed; not new original art.",
+      "full_frame_regression": {
+        "passed": true,
+        "frames": 600,
+        "unchanged_first_frames": 468,
+        "changed_hooh_frames": 130,
+        "outside_hooh_pixels": 0,
+        "report": "/workspaces/pokefirered/outputs/opening-hooh-color-v5/hooh-regression.json"
+      }
+    },
+    "follower_optimization": {
+      "source_sha256": "64870bd92a579f62e90da6c981e38d0c1f7822e4279e8f8079a92f2bd808c7c3",
+      "source_applied": true,
+      "build_exit": 0,
+      "symbols_exit": 0,
+      "savecompat_exit": 0,
+      "original_saves_unchanged": 7,
+      "runtime_qa": {
+        "passed": true,
+        "save_files": 7,
+        "fixture_cases_per_rom": 98,
+        "original_saves_unchanged": true,
+        "report": "work/follower-flag-20261004/runtime.json",
+        "delta_fps_measured": false
+      },
+      "delta_fps": "not measured",
+      "build_warnings": [
+        "make jobserver warning",
+        "linker RWX load segment warning"
+      ],
+      "savecompat_cases": 6
+    },
+    "title_new_png": "not generated; image tool returned output-filter error",
+    "rocket_new_art": "not generated; image tool returned output-filter error",
+    "bag_84": "prepared plaintext handed to root; not applied",
+    "regions": "incomplete; Flannery canonical reward bridge applied, QA result in work/flannery-20261004/result.json",
+    "flannery_reward_bridge": {
+      "utc": "2026-10-04T08:20:10.671761+00:00",
+      "results": [
+        {
+          "check": "build",
+          "exit": 0,
+          "log": "/workspaces/pokefirered/work/flannery-20261004/build.log"
+        },
+        {
+          "check": "symbols",
+          "exit": 0,
+          "log": "/workspaces/pokefirered/work/flannery-20261004/symbols.log"
+        },
+        {
+          "check": "flannery",
+          "exit": 0,
+          "log": "/workspaces/pokefirered/work/flannery-20261004/flannery.log"
+        },
+        {
+          "check": "roxanne",
+          "exit": 0,
+          "log": "/workspaces/pokefirered/work/flannery-20261004/roxanne.log"
+        },
+        {
+          "check": "textwidth",
+          "exit": 0,
+          "log": "/workspaces/pokefirered/work/flannery-20261004/textwidth.log"
+        },
+        {
+          "check": "map_integrity",
+          "exit": 0,
+          "log": "/workspaces/pokefirered/work/flannery-20261004/map_integrity.log"
+        },
+        {
+          "check": "event_wiring",
+          "exit": 1,
+          "log": "/workspaces/pokefirered/work/flannery-20261004/event_wiring.log"
+        },
+        {
+          "check": "map_smoke",
+          "exit": 0,
+          "log": "/workspaces/pokefirered/work/flannery-20261004/map_smoke.log"
+        },
+        {
+          "check": "dex",
+          "exit": 0,
+          "log": "/workspaces/pokefirered/work/flannery-20261004/dex.log"
+        },
+        {
+          "check": "savecompat",
+          "exit": 0,
+          "log": "/workspaces/pokefirered/work/flannery-20261004/savecompat.log"
+        }
+      ],
+      "original_saves_unchanged": true,
+      "source_saves_count": 7,
+      "save_layout_changed": false,
+      "actual_SAVE_reload_tested": false,
+      "Delta_tested": false,
+      "region_complete": false
+    },
+    "title_font_v3": {
+      "report": "outputs/title-font-python-v3/validation.json",
+      "result": {
+        "status": "FONT_ONLY_REVIEW_PNG",
+        "native_size": [
+          240,
+          160
+        ],
+        "changed_pixels": 3159,
+        "outside_font_rectangle_changed_pixels": 0,
+        "source_svg_sha256": "3847e12d357a45d6167455821021c67c4dcf3179552420f5c609c44db3dc4238",
+        "source_png_sha256": "81fd0c6c1cbece648405a5ce26c6b770c3d3474f93ab5ceb1e9da321c9d8bfa0",
+        "output_rgba_sha256": "4bfde12265e9d35c72f6e9ea4e2865d801d0f0e9bed03a97b2077253f6ae9982",
+        "pikachu_source_unchanged": true,
+        "pikachu_colours": 15,
+        "pikachu_alpha": [
+          0,
+          255
+        ],
+        "new_pikachu_art": false,
+        "gif_created": false,
+        "rom_integrated": false,
+        "user_approved": false,
+        "renderer": "Existing SVG paths; quadratic curves subdivided into 32 segments, binary pixel-centre fill and round stroke; Pillow PNG I/O only",
+        "libvips_pixel_equivalence_claimed": false,
+        "output_png_sha256": "7e370cc2d5b4cd71a1ae68b1da6934b62a049fc9e83efb2fc51619231cc122c5"
+      }
+    },
+    "johto_ending_first_scene": {
+      "report": "outputs/ending-johto-new-bark-v1/validation.json",
+      "result": {
+        "status": "first_scene_video",
+        "region": "johto",
+        "story_beat": "new_bark",
+        "story_beats_total": 10,
+        "complete_johto_ending": false,
+        "ROM_integrated": false,
+        "audio": false,
+        "new_music": false,
+        "new_art_authored": false,
+        "source_map": "NewBarkTown",
+        "source_map_sha256": "af15a84de2d5ca1f51c9aa5f8fd493167bc9ce8dd2b2057c03ed387278beeae3",
+        "source_sha256": {
+          "src/data/tilesets/graphics.h": "f50f8437d2d194a66bff53f237978bf1750e0ecdddcb8b5804d870a737791b4a",
+          "src/data/tilesets/hoenn_graphics.h": "897f49ab2ac9861a352fb5a8931472010716762eaf5cb8d3a972d083dfd5cc4b",
+          "src/graphics.c": "65f71604b006c1f302aa8e86763dc6d064dd4f421cea3e349e6eaa244da06fa3",
+          "data/layouts/layouts.json": "ce500221f6d756d7540949403b926299b337af8fae2ef23ab9b19b91750a1a2f",
+          "data/layouts/NewBarkTown/map.bin": "af15a84de2d5ca1f51c9aa5f8fd493167bc9ce8dd2b2057c03ed387278beeae3",
+          "data/maps/NewBarkTown/map.json": "1cf9f333ef7e6a12b98c06afed801b959c1e49912d878b330ec8a62ecae4d43c",
+          "data/tilesets/primary/general/tiles.png": "9ff889d1b9da5383a0cd0c85ac7b791812867804f3a38566b46172087419e0b9",
+          "data/tilesets/primary/general/metatiles.bin": "8d950c1a1f151f5e1bded1ecee165b815c3a4d62b69a4a9cec4f676283f9041e",
+          "data/tilesets/secondary/pallet_town/tiles.png": "321a23f388126175b34b85cf46c2d8f943daab5ee4d0916129c345b99b9108d2",
+          "data/tilesets/secondary/pallet_town/metatiles.bin": "3b7ba7f75fd5d750413fc252519569a9f98fac586d87f62066bdf1e3edf35ca2",
+          "data/tilesets/primary/general/palettes/00.pal": "de073336bb3f0592b6075fb8e4497b8c2ecfdf86a9d29f8c88dbec8702ccc9fc",
+          "data/tilesets/primary/general/palettes/01.pal": "e5fa084be81a8b081a33de05c13a799778899c4ef750bbb2185f997f9d41dea4",
+          "data/tilesets/primary/general/palettes/02.pal": "5a45e240ddd7e5b5c9ef403b2f849b8fd4381d21661255ce49aae79ed991a49b",
+          "data/tilesets/primary/general/palettes/03.pal": "139eddfe3f2a2d1018a736a480efa505231260662cdbaf30e32c173b1d9a6b76",
+          "data/tilesets/primary/general/palettes/04.pal": "50925427da2fc947ae3915f2d1b1c63e115418e8ce12f374b31a3ed45e932c65",
+          "data/tilesets/primary/general/palettes/05.pal": "7ab8f3342c37f96f587bff026583e7a5431a10c9f590ac40705b9732a9348098",
+          "data/tilesets/primary/general/palettes/06.pal": "46af7d618b34a9f330fb154bb4933f171b1947a6d224f8fe9c8ea2a84f461a0d",
+          "data/tilesets/secondary/pallet_town/palettes/07.pal": "b9cf2edee66f156d17ad0252cbf82862a807b7805334df817e66ce138f9061ed",
+          "data/tilesets/secondary/pallet_town/palettes/08.pal": "3f664939118dd2b4f480e041b3db423e05795d06fef0bfdf2d28fa12acbb4598",
+          "data/tilesets/secondary/pallet_town/palettes/09.pal": "04ac2f7421d737e8006c5d374cc6198eab0005baf4fe3b11b94cea65da53d54e",
+          "data/tilesets/secondary/pallet_town/palettes/10.pal": "c91f49f35db89d9b314d63341811e95cc0959f9df5df9b2faa6091cc5f3db0dd",
+          "data/tilesets/secondary/pallet_town/palettes/11.pal": "402a1b250a1fc0abbf8c9f33a1576563e5fae27a5ceaab16a6d6bd96b727c175",
+          "data/tilesets/secondary/pallet_town/palettes/12.pal": "eb2d1792c862747f587d037336e87445e45bd8b3eaf4a60a554cff2dd88cbbf9",
+          "data/tilesets/secondary/pallet_town/palettes/13.pal": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+          "data/tilesets/secondary/pallet_town/palettes/14.pal": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+          "data/tilesets/secondary/pallet_town/palettes/15.pal": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+          "graphics/object_events/pics/people/red_normal.png": "94eb37499a8bd663f47a0767c34b93569cf0c222a9906852943016e3a771054d",
+          "graphics/object_events/pics/pokemon/pikachu.png": "9f391ae36e07e1797c4ae1538cf647e7d8db2ee30519597fe94cbfb88a952042"
+        },
+        "frames": 597,
+        "fps": "262144/4389",
+        "seconds": 9.99539566040039,
+        "red_route_tiles": [
+          [
+            4,
+            12
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            11,
+            10
+          ],
+          [
+            11,
+            9
+          ]
+        ],
+        "pikachu_trailing_distance_pixels": 16,
+        "native_dimensions": [
+          240,
+          160
+        ],
+        "sample_frame_sha256": {
+          "0": "3def9b9176152ab8bdd5bf5ab2fab651b2488498236b094b76508e8631517c3e",
+          "45": "3def9b9176152ab8bdd5bf5ab2fab651b2488498236b094b76508e8631517c3e",
+          "46": "3def9b9176152ab8bdd5bf5ab2fab651b2488498236b094b76508e8631517c3e",
+          "100": "22b8fddaaa574847262545d193cacbd8cc9a9a9ece54866e323efba0bbecd21a",
+          "200": "df10928ee8abde5dce59dc2e333b9565cb0e7254933f16f39f54bfd14fb11894",
+          "320": "702fc863b46c6a600d4a6d88134d71e38b06b88155f42bd7291c88db28dc4746",
+          "440": "b1427385a2a89aab000be9a3d9a98a9560cee33a677a7404c45c760ada045209",
+          "441": "9ed96f737b660d31c0685fedc25c909442ffc86a67e83b598180d4df02a24b6c",
+          "596": "9ed96f737b660d31c0685fedc25c909442ffc86a67e83b598180d4df02a24b6c"
+        },
+        "limits": [
+          "Only first of ten journey beats.",
+          "Game collision execution not claimed.",
+          "Existing field cels reused.",
+          "Staff roll, remaining scenes and completion trigger pending."
+        ],
+        "native_sha256": "b209c06a4887f15cafb1d19b7872b7faae1fd990f7b3f118dc78a431ff6db14a",
+        "preview_sha256": "6bc894fa941b2a743371cb5b94d21803ecd6d8a0cf41a6fbe1983dbbfd25e52d",
+        "decoded_frames": 597,
+        "decoded_frame_equality": "PASS"
+      }
+    },
+    "rocket96_candidate": {
+      "report": "outputs/rocket-art-v10-96-preview/validation.json",
+      "result": {
+        "status": "EXISTING_V4_NATIVE_96_REVIEW_CANDIDATE",
+        "source_sha256": "40e5a18ea80e4ba71192f0738ef4208073fb6286d6a3080c68a35e496ce98c8f",
+        "source_size": [
+          1254,
+          1254
+        ],
+        "source_crop": [
+          81,
+          112,
+          1175,
+          1196
+        ],
+        "fit_size": [
+          94,
+          93
+        ],
+        "offset": [
+          1,
+          2
+        ],
+        "native_size": [
+          96,
+          96
+        ],
+        "resampling": "NEAREST directly from high-resolution v4, not 64px enlargement",
+        "source_art_redrawn": false,
+        "source_unchanged_verified_locally": true,
+        "ratio_or_pose_intentionally_changed": false,
+        "native_eye_edits": [
+          [
+            56,
+            18,
+            2,
+            14
+          ],
+          [
+            62,
+            17,
+            10,
+            14
+          ]
+        ],
+        "cleanup_changed_pixels": 2,
+        "silhouette_changed_by_cleanup": false,
+        "opaque_pixels": 4192,
+        "opaque_colours": 15,
+        "png_sha256": "210bd8b8c196cb83ce25fb35bc8affc0869743bd4a760b4be9fc90047a9ea438",
+        "packed_sha256": "99f3ff74b5438521ba48e4d7fc403acca7df233f003878ddd525bdba8ab14add",
+        "packed_bytes": 4608,
+        "decoded_pixel_mismatches": 0,
+        "new_original_art": false,
+        "rom_integrated": false,
+        "hires_feature_enabled": false,
+        "game_visual_QA": "pending",
+        "user_review": "pending"
+      }
+    },
+    "johto_entry_pilot": {
+      "utc": "2026-10-04T09:22:03.855467+00:00",
+      "results": [
+        {
+          "check": "build",
+          "exit": 0,
+          "log": "/workspaces/pokefirered/work/johto-entry-20261004-r2/build.log"
+        },
+        {
+          "check": "symbols",
+          "exit": 0,
+          "log": "/workspaces/pokefirered/work/johto-entry-20261004-r2/symbols.log"
+        },
+        {
+          "check": "johto",
+          "exit": 1,
+          "log": "/workspaces/pokefirered/work/johto-entry-20261004-r2/johto.log"
+        },
+        {
+          "check": "maps",
+          "exit": 0,
+          "log": "/workspaces/pokefirered/work/johto-entry-20261004-r2/maps.log"
+        },
+        {
+          "check": "map_integrity",
+          "exit": 0,
+          "log": "/workspaces/pokefirered/work/johto-entry-20261004-r2/map_integrity.log"
+        },
+        {
+          "check": "savecompat",
+          "exit": 0,
+          "log": "/workspaces/pokefirered/work/johto-entry-20261004-r2/savecompat.log"
+        }
+      ],
+      "original_saves_unchanged": true,
+      "save_layout_changed": false,
+      "actual_SAVE_reload_tested": false,
+      "Delta_tested": false,
+      "region_complete": false
+    },
+    "pikachu_reference_zip": {
+      "status": "user_created_and_readonly_verified",
+      "path": "C:/Users/seren/OneDrive/Desktop/Pikachu-references-21-b00cf29a.zip",
+      "count": 21,
+      "original_bytes_match": true,
+      "crc_pass": true,
+      "sha256": "671f391e9b33d76002e1661c40bee66a6ae085e3019fdab508f49e38724b8f77",
+      "remote_uploaded": false
+    },
+    "ongoing_parallel_streams": [
+      "art_assets_resume:opening/title/Rocket",
+      "bag_capacity_audit:three regional endings",
+      "dock_mew_now:Johto/Hoenn/story",
+      "root:remote application/runtime QA/backlog"
+    ],
+    "updated_utc": "2026-10-04T09:27:19.293033+00:00"
+  },
+  "pikachu_reference_archive": {
+    "owner": "bag_capacity_audit",
+    "source_count": 21,
+    "unique_contents": 20,
+    "duplicate_attachment_orders": [
+      3,
+      7
+    ],
+    "original_total_bytes": 4931429,
+    "source_png_and_sha_checks": "passed locally by assigned agent",
+    "archive_memory_test": "23 entries; CRC and original bytes passed; no file written",
+    "expected_zip_bytes": 4948072,
+    "expected_zip_sha256": "b298c4fcada6bae05aae762ae36234306b71ca1ff899e86e364344fc2bb0faf2",
+    "incoming_folder": "/workspaces/pokefirered/reference/pikachu/user-pasted-20261004/incoming",
+    "intended_zip": "outputs/pikachu-user-references-20261004.zip",
+    "actual_zip_created": false,
+    "user_explicit_upload_authorization": true,
+    "blocked_action": "standard browser fileChooser.setFiles for 21 images",
+    "tool_result": "user denied permission for this request; same rejection after explicit user reauthorization",
+    "next_action": "Requires browser upload permission state to change; no alternate upload workaround",
+    "new_user_instruction_replaces_existing_development": false
+  },
+  "latest_verified_results": {
+    "title_approved_v3_effects_v1": {
+      "allowed_background_pixels": 3877,
+      "protected_changes": 0,
+      "effect_pixel_changes_total": 577,
+      "palette_entries": 168,
+      "native_gif": {
+        "decoded_frames": 77,
+        "duration_ms": 4000,
+        "exact_pixel_roundtrip": true
+      },
+      "preview_gif": {
+        "decoded_frames": 77,
+        "duration_ms": 4000,
+        "exact_pixel_roundtrip": true
+      },
+      "status": "APPROVED_PNG_EFFECT_DRAFT",
+      "source_png_sha256": "7e370cc2d5b4cd71a1ae68b1da6934b62a049fc9e83efb2fc51619231cc122c5",
+      "source_rgba_sha256": "4bfde12265e9d35c72f6e9ea4e2865d801d0f0e9bed03a97b2077253f6ae9982",
+      "source_png_preserved": true,
+      "pose_face_and_text_preserved": true,
+      "body_ear_tail_animation": false,
+      "gif_is_silent": true,
+      "mp4_audio": "short electric effects only; no music",
+      "rom_integrated": false,
+      "new_music_created": false,
+      "files": {
+        "title-current-native.gif": {
+          "bytes": 119062,
+          "sha256": "5a43ad846f5ffba450d35da997f7d9460e9ccbc057895fdd45c4c86f521ec624"
+        },
+        "title-current-review.gif": {
+          "bytes": 398175,
+          "sha256": "a5c011aef8af36b81434eb14bd91887112955d7ec8309b94bdfbaf17d7e5d9a6"
+        },
+        "title-current-with-sfx.mp4": {
+          "bytes": 66887,
+          "sha256": "aaae96ea56ef7b02261dc4193dd0ae84b74bc3d9ed1d9472cd2c4f0e7f3d7925"
+        }
+      }
+    },
+    "johto_lab_mini": {
+      "results": {
+        "cases": {
+          "exit_code": 0,
+          "log": "work/johto-lab-20261004-v1/cases.log"
+        },
+        "build": {
+          "exit_code": 0,
+          "log": "work/johto-lab-20261004-v1/build.log"
+        },
+        "symbols": {
+          "exit_code": 0,
+          "log": "work/johto-lab-20261004-v1/symbols.log"
+        },
+        "lab": {
+          "exit_code": 0,
+          "log": "work/johto-lab-20261004-v1/lab.log"
+        },
+        "airport_regression": {
+          "exit_code": 0,
+          "log": "work/johto-lab-20261004-v1/airport_regression.log"
+        },
+        "savecompat": {
+          "exit_code": 0,
+          "log": "work/johto-lab-20261004-v1/savecompat.log"
+        }
+      },
+      "original_saves_preserved": true,
+      "save_sha256_before": {
+        "saves/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+        "saves/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+        "saves/hoenn.sav": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+        "saves/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+        "saves/pokemonthyl_hoenn_QAed.sav": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+        "saves/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+        "saves/pokemonthyl_v1.1.sav": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37"
+      },
+      "backup": ".qa-lab-build-before-20261004T095826Z",
+      "actual_delta_test": false,
+      "actual_save_reload_test": false
+    }
+  },
+  "title_png_approval": {
+    "approved": true,
+    "source_sha256": "7e370cc2d5b4cd71a1ae68b1da6934b62a049fc9e83efb2fc51619231cc122c5",
+    "instruction": "Current PNG effects and GIF creation explicitly approved"
+  },
+  "rejected_title_artifacts": [
+    "outputs/title-animation-tech-v1/title-tech-review.gif",
+    "outputs/title-animation-tech-v1/title-tech-loop-240x160.gif"
+  ],
+  "verified_history": [
+    {
+      "opening_previous": {
+        "status": "v5_visuals_with_existing_FRLG_music_preview_verified",
+        "directory": "/workspaces/pokefirered/outputs/opening-frlg-music-v6",
+        "duration_seconds": 10,
+        "frames": 600,
+        "fps": 60,
+        "visual_contact_sheet_reviewed": true,
+        "new_original_poses": false,
+        "rom_integrated": false,
+        "remaining": [
+          "Dedicated run/jump/carry artwork",
+          "Final visual review of motion",
+          "ROM integration"
+        ],
+        "regression": {
+          "status": "PASS",
+          "frames": 600,
+          "changed_frames": [
+            357,
+            358,
+            359,
+            360,
+            361,
+            362,
+            363,
+            364,
+            365,
+            366,
+            367,
+            368,
+            369,
+            370,
+            371,
+            372,
+            373,
+            374,
+            375,
+            376,
+            377,
+            378,
+            379,
+            380,
+            381,
+            382,
+            383,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389,
+            390,
+            391,
+            392,
+            393,
+            394,
+            395,
+            396,
+            397,
+            398,
+            399,
+            400,
+            401,
+            402,
+            403,
+            404,
+            405,
+            406,
+            407,
+            408,
+            409,
+            410,
+            411,
+            412,
+            413,
+            414,
+            415,
+            416,
+            417,
+            418,
+            419,
+            420,
+            421,
+            422,
+            423,
+            424,
+            425,
+            426,
+            427,
+            428,
+            429,
+            430,
+            431,
+            432,
+            433,
+            434,
+            435,
+            436,
+            437,
+            438,
+            439
+          ],
+          "unchanged_non_strike_frames": 474,
+          "non_strike_rgb_sha256": "63a9fbb908a14974c1c6c1541c6df333e6302c12b50e200e0686936acbc8a373",
+          "main_flash_global_frames": [
+            389,
+            390,
+            391
+          ],
+          "new_original_poses": false,
+          "rom_integrated": false
+        },
+        "artifacts": {
+          "outputs/opening-expression-edit-v4/opening-10s-native.mp4": {
+            "bytes": 1210989,
+            "sha256": "1e2e4595b75c813bf920577a27ae1c72e653aa8f60d4ba84356f020fba98a640"
+          },
+          "outputs/opening-expression-edit-v4/keyframes-contact-sheet.png": {
+            "bytes": 96780,
+            "sha256": "c66c4eb818f4b2a221a57ea787d04e799729fab81c713406dd449b0c94bb9ffb"
+          },
+          "outputs/opening-expression-edit-v4/opening-10s-preview.mp4": {
+            "bytes": 3117464,
+            "sha256": "afddac4e1e8131909914dcd606d0eeb4a47c1471043a63ae92e4706d66fa7aaa"
+          },
+          "outputs/opening-expression-edit-v4/opening-native-600-frames.zip": {
+            "bytes": 4311041,
+            "sha256": "e3b8f6c1bc835c8f7c3424c0a048f19dc4041c551f04f5761571e63094f5eeb3"
+          },
+          "outputs/opening-expression-edit-v4/validation.json": {
+            "bytes": 1867,
+            "sha256": "599831542e812f2d170f472d046f63c4c8de3a2ba7bfbf0bcf4d31c6d1a80c50"
+          },
+          "outputs/opening-expression-edit-v4/chase-motion-sample.mp4": {
+            "bytes": 1299889,
+            "sha256": "53abe5c6e9b433f02006a33d98c794e81f6b2a5585fcada6d55df71600af5977"
+          },
+          "outputs/opening-expression-edit-v4/original-comparison.png": {
+            "bytes": 66488,
+            "sha256": "3c5d9ed43e3e879264a6a814bc8590285cf07e188818285ccee2d35433488b0d"
+          },
+          "outputs/opening-expression-edit-v4/timing-regression.json": {
+            "bytes": 1066,
+            "sha256": "0b9328697084b84a89a659deac668e94ab6b1a00389a557cda505528a58e33e3"
+          },
+          "outputs/opening-expression-edit-v4/asset-manifest.json": {
+            "bytes": 5042,
+            "sha256": "6c0ef773bfa6773fd9e6960a9a44bbef6831b54c2b4aa919c2db52d9d79738a7"
+          }
+        },
+        "visual_source_directory": "/workspaces/pokefirered/outputs/opening-hooh-color-v5",
+        "music": {
+          "status": "EXISTING_FRLG_INTRO_MUSIC_ATTACHED",
+          "song": "MUS_INTRO_FIGHT",
+          "song_id": 277,
+          "song_header": 143832660,
+          "source_rom_sha256": "d92d369507dbeac1f7a8617093fb9e3f75b815431323ac2e745a744d88e118b9",
+          "source_midi_sha256": "87bb74fa5db8b0403bb6ad90a3992e4710e5b4cb3cf0fcddebe8e5b1f35f1287",
+          "temporary_title_entry_only": true,
+          "real_game_rom_modified": false,
+          "user_save_used": false,
+          "capture_start_frame": 1464,
+          "capture_seconds": 12.5235595703125,
+          "se_active_frames": 0,
+          "video_packets_unchanged": true,
+          "audio_seconds": 10,
+          "excerpt": "First 10 seconds; final 0.2 seconds fade out; original tempo",
+          "new_music_created": false,
+          "auditioned": false,
+          "files": {
+            "frlg-mus-intro-fight.wav": {
+              "bytes": 1641532,
+              "sha256": "5120399e966cef14b6a4c00a69461fdd01a83b881128dfe8845b9cc8f67c15d8"
+            },
+            "opening-hooh-v5-frlg-music.mp4": {
+              "bytes": 3380562,
+              "sha256": "3fdf68e86869fd7e18e7f5ecb17498551329c41ace647da48925e94d2c76a9c7"
+            }
+          }
+        },
+        "player_url": "https://effective-meme-v6pxvx5qx6vghwj56-31582.app.github.dev/opening.html"
+      },
+      "title_previous": {
+        "status": "approved_PNG_GIF_with_FRLG_title_music_and_continuous_CC0_crackle_preview_verified",
+        "gif_status": "Actual approved PNG effects GIF generated and visually checked",
+        "directory": "/workspaces/pokefirered/outputs/title-frlg-music-v4",
+        "gif_directory": "/workspaces/pokefirered/outputs/title-approved-v3-effects-v1",
+        "music": {
+          "status": "TITLE_EXISTING_FRLG_MUSIC_AND_CRACKLE_PREVIEW",
+          "song": "MUS_TITLE",
+          "music_gain": 0.7,
+          "electricity_gain": 0.3,
+          "seconds": 4,
+          "capture_start_frame": 1464,
+          "se_active_frames": 0,
+          "audio_peak": 0.330047607421875,
+          "aac_peak": 0.326934814453125,
+          "video_packets_unchanged": true,
+          "protected_inputs_unchanged": true,
+          "new_music_created": false,
+          "pika_voice_added": false,
+          "auditioned": false,
+          "scope": "4-second preview excerpt; native game already selects MUS_TITLE",
+          "input_sha256": {
+            "/workspaces/pokefirered/pokemonthyl.gba": "d92d369507dbeac1f7a8617093fb9e3f75b815431323ac2e745a744d88e118b9",
+            "/workspaces/pokefirered/outputs/title-continuous-crackle-v3/title-current-continuous-electricity.mp4": "60ad8bbefc0d4fc2322d58e764977d5dc401c516d84551ce822f0218bd2409f9",
+            "/workspaces/pokefirered/outputs/title-continuous-crackle-v3/continuous-electricity.wav": "05fc393c54d7a7030be0bc86506ea7d0ef455e4b26ace4a6e3e3fadd6bcc2189",
+            "/workspaces/pokefirered/outputs/title-approved-v3-effects-v1/title-current-native.gif": "5a43ad846f5ffba450d35da997f7d9460e9ccbc057895fdd45c4c86f521ec624",
+            "/workspaces/pokefirered/outputs/title-font-python-v3/title-font-candidate-240x160.png": "7e370cc2d5b4cd71a1ae68b1da6934b62a049fc9e83efb2fc51619231cc122c5"
+          },
+          "files": {
+            "frlg-mus-title.wav": {
+              "bytes": 553068,
+              "sha256": "4b0d8dcd558c7fc790c330cc1358f88e2add8863caa693aaf219f2248deee3a1"
+            },
+            "title-music-and-crackle.wav": {
+              "bytes": 705678,
+              "sha256": "168d5089d95f7e9b55496a4fe2af5c3859854b4757f42df63c9fb85493e224ea"
+            },
+            "title-frlg-music-crackle.mp4": {
+              "bytes": 146220,
+              "sha256": "27fe02d2babb1c10700406aea3569435dd063a383ea9cf2cf4fea81eaf407f6f"
+            }
+          }
+        },
+        "player_url": "https://effective-meme-v6pxvx5qx6vghwj56-31582.app.github.dev/title.html",
+        "start_voice": {
+          "required_source": "Original Lets Go Pikachu or anime recording only; no synthesis",
+          "reference_video_sha256": "38a3a9557821d3db8106d86adc1c24819c0db66b07d889d7e2fec291aac3effe",
+          "clip_selected": false,
+          "rom_integrated": false
+        },
+        "rom_integrated": false
+      }
+    },
+    {
+      "verified_utc": "2026-10-04T13:45:36.313437+00:00",
+      "original_start_voice": {
+        "status": "APPLIED_NATIVE_START_A_RUNTIME_PASS",
+        "reference_mp3": "reference/audio/pikachu-gF1FJRM8Wck/pikachu-original.mp3",
+        "reference_wav": "reference/audio/pikachu-gF1FJRM8Wck/publisher-original/pokemon-video-game-pikachu-voice-sound-effect.wav",
+        "source_url": "https://www.youtube.com/watch?v=gF1FJRM8Wck",
+        "distribution_url": "https://soundsverse.com/wp-content/uploads/s/pokemon-video-game-pikachu-voice-sound-effect.zip",
+        "whole_clip_seconds": 1.5998185941043084,
+        "synthesized": false,
+        "trimmed": false,
+        "runtime_result": "work/title-publisher-native-validation-20261004T133950Z/result.json",
+        "main_runtime_result": "work/title-publisher-native-validation-20261004T133950Z/main-runtime/validation.json",
+        "main_rom_sha256": "3eb1e7ce83bf4e47f06a3a10452becb4c2943df43540eec716682d46688a852b",
+        "protected_save_count": 7,
+        "original_saves_unchanged": true,
+        "audio_auditioned": false,
+        "delta_device_tested": false,
+        "gif_audio_added": false,
+        "browser_start_voice_added": false
+      },
+      "rocket96": {
+        "status": "REVIEW_ROM_INTRO_AND_FINISH_RUNTIME_PASS",
+        "intro_result": "outputs/rocket96-game-intro-qa-fixed-20261004T125444Z/result.json",
+        "finish_result": "outputs/rocket96-game-finish-qa-v1/result.json",
+        "normal_game_hires_enabled": false,
+        "normal_game_portrait_size": "64x64",
+        "review_portrait_size": "96x96",
+        "new_complete_hand_redraw": false,
+        "single_double_fallback_verified": true,
+        "resource_cleanup_verified": true,
+        "visual_reviewed_screenshot": "outputs/rocket96-game-intro-qa-fixed-20261004T125444Z/r02_mtmoon_double.png",
+        "all_visual_cases_reviewed": false
+      },
+      "birch_johto_referral": {
+        "status": "SOURCE_APPLIED_12_RUNTIME_CASES_BUILD_MAP_SAVE_CHECK_PASS",
+        "result": "work/birch-bridge-validation-20261004T130335Z/result.json",
+        "all_regions_story_complete": false
+      },
+      "regional_endings_complete": false,
+      "dedicated_opening_poses_created": false
+    },
+    {
+      "time": "2026-10-13T04:21:09.440778+00:00",
+      "task": "regional_starters_20261013",
+      "status": "ROM_promoted_after_32_native_checks",
+      "sha256": "63904802b37dc5e922ec616361c0be3388f1030e5b2c1a0b7a2949f2a33c1f7c",
+      "evidence": "/workspaces/pokefirered/work/regional-starters-20261013/validation-final.json"
+    }
+  ],
+  "original_start_voice_only": true,
+  "story_continuity_20261004": {
+    "required_order": [
+      "Kanto",
+      "Johto",
+      "Hoenn"
+    ],
+    "events_and_motivation_must_be_coherent": true,
+    "preserve_existing_Hoenn_progress": true,
+    "all_regions_complete": false,
+    "first_Johto_referral_source_applied": true,
+    "first_Johto_referral_runtime_tested": false,
+    "Harbor_progress_guard_source_applied": true,
+    "Harbor_progress_guard_runtime_tested": false
+  },
+  "parallel_ownership_current": {
+    "root": "live Codespaces integration, ROM candidates, strict original-save preservation and release gates",
+    "johto_resume": "cold nurse native controls and N regional continuation",
+    "dive_hm_resume": "natural Tohjo path, Route120 Scope/Fortree and actual Aqua/Magma hideout follow-ups",
+    "performance_resume": "Misty separate ally team buffer and real NPC ally engine controls",
+    "policy": "Independently authorized unfinished tasks proceed in parallel; reuse existing owners and do not repeat completed bag/airport/dock work."
+  },
+  "latest_verified_original_voice_and_rocket96": {
+    "verified_utc": "2026-10-04T13:45:36.313437+00:00",
+    "original_start_voice": {
+      "status": "APPLIED_NATIVE_START_A_RUNTIME_PASS",
+      "reference_mp3": "reference/audio/pikachu-gF1FJRM8Wck/pikachu-original.mp3",
+      "reference_wav": "reference/audio/pikachu-gF1FJRM8Wck/publisher-original/pokemon-video-game-pikachu-voice-sound-effect.wav",
+      "source_url": "https://www.youtube.com/watch?v=gF1FJRM8Wck",
+      "distribution_url": "https://soundsverse.com/wp-content/uploads/s/pokemon-video-game-pikachu-voice-sound-effect.zip",
+      "whole_clip_seconds": 1.5998185941043084,
+      "synthesized": false,
+      "trimmed": false,
+      "runtime_result": "work/title-publisher-native-validation-20261004T133950Z/result.json",
+      "main_runtime_result": "work/title-publisher-native-validation-20261004T133950Z/main-runtime/validation.json",
+      "main_rom_sha256": "3eb1e7ce83bf4e47f06a3a10452becb4c2943df43540eec716682d46688a852b",
+      "protected_save_count": 7,
+      "original_saves_unchanged": true,
+      "audio_auditioned": false,
+      "delta_device_tested": false,
+      "gif_audio_added": false,
+      "browser_start_voice_added": false
+    },
+    "rocket96": {
+      "status": "REVIEW_ROM_INTRO_AND_FINISH_RUNTIME_PASS",
+      "intro_result": "outputs/rocket96-game-intro-qa-fixed-20261004T125444Z/result.json",
+      "finish_result": "outputs/rocket96-game-finish-qa-v1/result.json",
+      "normal_game_hires_enabled": false,
+      "normal_game_portrait_size": "64x64",
+      "review_portrait_size": "96x96",
+      "new_complete_hand_redraw": false,
+      "single_double_fallback_verified": true,
+      "resource_cleanup_verified": true,
+      "visual_reviewed_screenshot": "outputs/rocket96-game-intro-qa-fixed-20261004T125444Z/r02_mtmoon_double.png",
+      "all_visual_cases_reviewed": false
+    },
+    "birch_johto_referral": {
+      "status": "SOURCE_APPLIED_12_RUNTIME_CASES_BUILD_MAP_SAVE_CHECK_PASS",
+      "result": "work/birch-bridge-validation-20261004T130335Z/result.json",
+      "all_regions_story_complete": false
+    },
+    "regional_endings_complete": false,
+    "dedicated_opening_poses_created": false
+  },
+  "current_rom": {
+    "path": "/workspaces/pokefirered/pokemonthyl.gba",
+    "sha256": "fdd021066ee7ce6fa775407c6be6699ba41583f34d92264e65020bd98950b0f4",
+    "ELF_sha256": "7c831da7d91eba1f4132e67a6ce804434003b2249e6abe0af5e19e69d622a53b",
+    "bytes": 33554432,
+    "status": "narrow Route29 and Misty changes built and scoped native verified; not a whole-region release",
+    "ROM_differences_only_in_existing_Route29_and_Misty_allocations": true,
+    "all_RAM_symbols_and_LOAD_headers_unchanged": true,
+    "build_return_code": 0,
+    "build_warnings": [
+      "existing jobserver fallback to -j1",
+      "existing RWX LOAD segment linker warning"
+    ]
+  },
+  "rocket_current_rom": {
+    "version": "V11",
+    "canvas": [
+      64,
+      64
+    ],
+    "verified_rom_asset_sha256": "5b036768fc2712765eab94952b2757a7783b953062ef440f26eb7e9e6f38d2b1",
+    "rom_integrated": true,
+    "reference": "outputs/rocket-art-v11-nose-and-size-review/jessie-james-v11-game-size-64.4bpp"
+  },
+  "regional_dex_current_rom": {
+    "status": "native regional UI/category/counts and save/reload verified; all records/internal IDs preserved",
+    "rom_integrated": true,
+    "counts": [
+      151,
+      251,
+      202
+    ],
+    "default": "highest story-unlocked region",
+    "national_mode_retained": true,
+    "internal_ids_and_records_preserved": true,
+    "save_structures_changed": false,
+    "evidence": [
+      "outputs/regional-dex-story-v1/ui-qa.log",
+      "outputs/regional-dex-story-v1/save-reload-qa.log"
+    ],
+    "latest_v125_doors_actual_professor_and_native_list_order_verification": "/workspaces/pokefirered/work/followup-20261013/dex-list-order/validation.json",
+    "whole_three_region_natural_campaign_verified": false
+  },
+  "regional_story_remaining": {
+    "johto_existing_maps": 81,
+    "johto_full_story_complete": false,
+    "hoenn_full_story_complete": false,
+    "hoenn_league": "native five wins/loss/HOF save/cold reload/rematch checkpoint verified",
+    "rusturf_reunion": "integrated; 11 events+3 map QA passed",
+    "owners": {
+      "johto": "johto_resume",
+      "hoenn": "dive_hm_resume",
+      "performance": "performance_resume"
+    },
+    "hoenn_weather_space": "integrated; native five actual battle win/loss cases passed",
+    "johto_azalea": "integrated:10maps/33events/8nativebattlewinloss/2gatechecks; compatible native saves",
+    "johto_ilex_goldenrod": "integrated:11maps/28events/4nativebattlewinloss/17links; Whitney reward and forest/city reverse exits fixed",
+    "hoenn_sea_sky": "integrated:12nativeevents/3full-ascent-gates; original Kyogre/Rayquaza graphics/animations; compatible native saves",
+    "johto_ecruteak": "integrated:15newmaps/31events/9nativebattles/4wildoutcomes/26links; sameSAV five-stage chain and native14sectorcold saves passed",
+    "hoenn_wallace_hm07_waterfall": "integrated:9rewardcases/9A-menu-regioncases, genuine Pikachu follower and cold saves passed",
+    "johto_next": "Continuous natural Kanto airport -> Johto early research -> later chapters -> Hoenn traversal. Existing Johto League native five wins/HOF proof is historical and not pending.",
+    "hoenn_next": "Natural full story traversal; Route110/119 rival prerequisites have historical native26-case proof, not a pending isolated test.",
+    "johto_habitat_classifier_audit_pending": false,
+    "three_region_natural_playthrough_complete": false,
+    "delta_old_save_state_corruption_cause_proven": false,
+    "johto_olivine_cianwood": "integrated:22newmaps/31events/4actualbattles/sameSAV7stages SAVE60to67; Johto maps81, sixthbadge through Amphy recovery",
+    "hoenn_wally_victory_road": "integrated:original5mon Wally and original5VR1Ftrainers; 7+11nativecases on previous same-function candidate",
+    "johto_maps_integrated": 112,
+    "johto_native_story_through_badge": 8,
+    "johto_fly_towns_integrated": 10,
+    "mahogany": "ROM integrated: 13 maps, 32events, 11trainer, 10static, sameSAV15stages60-75; Gate TEMP0 once fix",
+    "full_three_region_campaign_verified": false,
+    "remaining": [
+      "Continuous natural Kanto-Johto-Hoenn whole-campaign traversal and story/UI integration",
+      "N continuity, later antagonist and space expansion; companion combined battles",
+      "Three separate final regional ending movies; actual DELTA device performance",
+      "Authenticated original Bad Egg recovery and actual user DELTA Save State cause reproduction",
+      "Remaining Hoenn event promises and imported NPC text adaptation"
+    ],
+    "johto_source_map_count": 124
+  },
+  "performance_current": {
+    "glyph_native_cases": 552,
+    "icons_native_cases": 240,
+    "new_fields_full_frames": true,
+    "dex_down_frames": [
+      343,
+      360
+    ],
+    "dex_up_frames": [
+      349,
+      360
+    ],
+    "aligned_fill_cases": 296,
+    "remaining_dex_scroll_lag": true,
+    "water_current_rom": {
+      "cases": 4,
+      "hardware_frames_per_case": 360,
+      "processing_misses": 0,
+      "single_follower": true,
+      "evidence": "/workspaces/pokefirered/outputs/hm-dive-font-review-v2/water-performance/result.json",
+      "delta_fps_measured": false
+    },
+    "font_cache_evidence": {
+      "rom_sha256": "f6e9dd60d10bcca84d2b68ae7c446ed82a72c84e284edd94b818f3f19d44d1d3",
+      "source_same_as_current": true,
+      "evidence_folder": "outputs/hm-dive-font-review-v1"
+    },
+    "azalea_land": {
+      "cases": 4,
+      "hardware_frames_per_case": 360,
+      "processing_misses": 0,
+      "single_follower": true,
+      "evidence": "/workspaces/pokefirered/outputs/johto-azalea-native-review-v2/performance/result.json",
+      "delta_device_fps_measured": false
+    },
+    "sootopolis_storm_calm": {
+      "cases": 4,
+      "hardware_frames_per_case": 360,
+      "processing_misses": 0,
+      "single_follower": true,
+      "evidence_root": "/workspaces/pokefirered/outputs/ilex-hoenn-sea-sky-review-v2",
+      "instrumentation": "separate emulator clone",
+      "delta_device_fps_measured": false
+    },
+    "ecruteak_burned_tower": {
+      "cases": 4,
+      "hardware_frames_per_case": 360,
+      "processing_misses": 0,
+      "single_follower": true,
+      "evidence_root": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2",
+      "instrumentation": "separate emulator clone",
+      "delta_device_fps_measured": false
+    },
+    "olivine_cianwood_lighthouse": {
+      "native_cases": 6,
+      "frames_per_case": 360,
+      "processing_misses": 0,
+      "single_follower": true,
+      "evidence": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/performance-rerun/result.json",
+      "measured_rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+      "reuse_basis": "q3 gym script-only change; measured city/lighthouse map and field engine unchanged",
+      "delta_device_fps_measured": false
+    },
+    "mahogany": {
+      "cases": 4,
+      "hardware_frames_per_case": 360,
+      "processing_misses": 0,
+      "single_follower": true,
+      "evidence_root": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1",
+      "delta_device_fps_measured": false
+    },
+    "latest_v125_idle": {
+      "hardware_frames": 36000,
+      "scope": "native idle only; not DELTA FPS",
+      "evidence": "/workspaces/pokefirered/work/followup-20261013/idle-state/validation.json"
+    }
+  },
+  "save_current": {
+    "path": "/workspaces/pokefirered/saves/pokemonthyl_v1.4-synced-recovered.sav",
+    "sha256": "c06ad0536f1ee13fd88a3cf36346b52d3d5ca0cae7e729723acf6047d916feb8",
+    "source_original": "saves/pokemonthyl_v1.4.sav",
+    "source_sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4",
+    "native_SAVE_cold_PASS": true,
+    "unresolved_bad_records": 0,
+    "Lickitung_inferred_recovery": true,
+    "healthy_PC_count": 138,
+    "PC_physical_sort_reapplied": true,
+    "PC_current_box_1based": 1
+  },
+  "pikachu_dive_current_rom": {
+    "rom_integrated": true,
+    "native_checks_passed": 16,
+    "source_pokemon_identity_preserved": true,
+    "evidence": "/workspaces/pokefirered/outputs/hm-dive-font-review-v2/follower/validation.json"
+  },
+  "hm_alternate_current_rom": {
+    "HM05": "TM10 when previously received",
+    "HM08": "TM49 when already owned in bag/PC",
+    "native_cases_passed": {
+      "HM05": 11,
+      "HM08": 8
+    },
+    "no_duplicate_receipt": true,
+    "HM01_TM48": "pending Ilex chapter",
+    "Hoenn_HM01": "TM31 if HM already received in Kanto or held in bag/PC",
+    "Hoenn_HM06": "TM23 if HM already received in Kanto or held in bag/PC",
+    "legacy_brawly_wattson_badge_reward_resume": true,
+    "q7_native_cases": 18,
+    "all_hm_recipients_complete": false,
+    "Hoenn_HM03": "TM13 ICE BEAM when HM03 already received/held; Wally/Norman prerequisites",
+    "Hoenn_HM04": "TM26 EARTHQUAKE when HM04 already received/held; Rusturf reunion prerequisite",
+    "Hoenn_HM05": "TM29 PSYCHIC when HM05 already received/held; Granite Cave NPC",
+    "Blackthorn_HM07": "TM50 when already obtained; Clair/DragonDen elder trial prerequisite",
+    "q8_native_cases": 24
+  },
+  "sootopolis_dive_current_rom": {
+    "surface": [
+      31,
+      54
+    ],
+    "underwater": [
+      9,
+      6
+    ],
+    "native_roundtrip_cases": 2,
+    "legacy_save_emerge": true,
+    "terrain_unchanged": true,
+    "evidence": "/workspaces/pokefirered/outputs/johto-azalea-native-review-v2/soot-native-results.json"
+  },
+  "regional_next_candidate": {
+    "status": "SCOPED_OCT12_REPAIR_PROMOTED_FULL_CAMPAIGN_INCOMPLETE",
+    "source_johto_maps": 124,
+    "source_johto_league": "tools/johto/build_johto_league.py",
+    "source_hoenn_rivals": "work/patch_hoenn_rival_110_119_v1.py",
+    "source_weather_bridge": "tools/hoenn_import/restore_weather_bridge_blockade.py",
+    "source_misty": "src/companion_misty.c",
+    "misty_cold_continue_bug_confirmed_then_source_fixed": true,
+    "misty_native_retest_pending": false,
+    "main_rom_unchanged_q8": false,
+    "all_regions_complete": false,
+    "current_repair_provenance": "/workspaces/pokefirered/outputs/rom-johto-misty-repair-20261012T100926Z/provenance.json"
+  },
+  "regional_candidate": {
+    "status": "SCOPED_OCT12_REPAIR_PROMOTED_FULL_CAMPAIGN_INCOMPLETE",
+    "source_johto_maps": 124,
+    "source_johto_league": "tools/johto/build_johto_league.py",
+    "source_hoenn_rivals": "work/patch_hoenn_rival_110_119_v1.py",
+    "source_weather_bridge": "tools/hoenn_import/restore_weather_bridge_blockade.py",
+    "source_misty": "src/companion_misty.c",
+    "misty_cold_continue_bug_confirmed_then_source_fixed": true,
+    "misty_native_retest_pending": false,
+    "main_rom_unchanged_q8": false,
+    "all_regions_complete": false,
+    "current_repair_provenance": "/workspaces/pokefirered/outputs/rom-johto-misty-repair-20261012T100926Z/provenance.json"
+  },
+  "story_expansion_20261006": {
+    "misty": {
+      "schema": 1,
+      "requested_at": "2026-10-06",
+      "status": "accepted-not-yet-ROM-integrated",
+      "save_abi_changes": false,
+      "post_champion": {
+        "unlock": "FLAG_SYS_GAME_CLEAR",
+        "join_scene": "Misty congratulates player for Kanto Champion, admits affection and asks to travel together",
+        "respect_existing_oak_postgame": true,
+        "existing_gym_battle_unchanged": true
+      },
+      "companionship": {
+        "regions": [
+          "Kanto postgame",
+          "Johto",
+          "Hoenn"
+        ],
+        "keep_original_starter_pikachu": true,
+        "field_visual": "Misty travels behind original Pikachu where the map and object pool allow; recovers after doors/warps/save/load",
+        "existing_player_party_unchanged": true,
+        "story_encounters_and_partner_battles": true,
+        "partner_battle_pending_engine_support": true
+      },
+      "romance": {
+        "affection": "recurring affectionate dialogue linked to regional milestones",
+        "dating": "asks player to date her during Johto travel",
+        "marriage": "asks player to marry her later in Hoenn; confession and dialogue, no sexual content",
+        "repeat_without_softlock": true
+      },
+      "growth": [
+        {
+          "stage": "Kanto champion/join",
+          "count": 3,
+          "team": [
+            "Starmie",
+            "Psyduck",
+            "Horsea"
+          ]
+        },
+        {
+          "stage": "Johto early progress",
+          "count": 4,
+          "team": [
+            "Starmie",
+            "Psyduck",
+            "Horsea",
+            "Poliwag"
+          ]
+        },
+        {
+          "stage": "Johto late progress",
+          "count": 5,
+          "team": [
+            "Starmie",
+            "Golduck",
+            "Seadra",
+            "Poliwhirl",
+            "Corsola"
+          ]
+        },
+        {
+          "stage": "Hoenn entry",
+          "count": 6,
+          "team": [
+            "Starmie",
+            "Golduck",
+            "Seadra",
+            "Poliwhirl",
+            "Corsola",
+            "Marill"
+          ]
+        },
+        {
+          "stage": "Hoenn late progress",
+          "count": 6,
+          "team": [
+            "Starmie",
+            "Golduck",
+            "Kingdra",
+            "Politoed",
+            "Corsola",
+            "Azumarill"
+          ]
+        }
+      ],
+      "growth_rules": {
+        "source": "existing regional story/badge flags",
+        "levels": "monotonic increasing NPC team levels, tuned against actual postgame battle baseline",
+        "npc_data_not_stored_in_player_party": true,
+        "dex_internal_ids_and_records_preserved": true
+      },
+      "qa_required": [
+        "Kanto champion gate",
+        "original Oak postgame scene",
+        "original Misty gym and badge",
+        "Pikachu plus Misty walk/run/ledge/door/warp collision",
+        "object pool exhaustion recovery",
+        "surf/dive/space transit companion continuity",
+        "NPC team counts/level/evolution progression",
+        "partner battle win/loss and player-party restoration",
+        "native SAVE and cold continue each stage",
+        "original SAV hash/PC/Pokemon identity unchanged",
+        "regional native frame performance"
+      ],
+      "unimplemented": [
+        "join scene",
+        "affection dialogues",
+        "physical second follower",
+        "team data and trainer selection",
+        "partner battles",
+        "native emulator verification",
+        "main ROM integration"
+      ]
+    },
+    "n_continuation": {
+      "status": "accepted-not-yet-implemented",
+      "existing_kanto_cameos": 4,
+      "existing_letter_and_final_flag_preserved": true,
+      "regions": [
+        "Kanto",
+        "Johto",
+        "Hoenn"
+      ],
+      "followup_after_old_farewell": true,
+      "new_antagonist_after_N_arc": true
+    },
+    "space_story": {
+      "status": "accepted-not-yet-implemented",
+      "unlocks_after_regional_story": true,
+      "needs": [
+        "spacecraft exterior",
+        "launchpad and dock",
+        "interior cabin cockpit seats and space windows",
+        "pilot crew launch staff",
+        "space flight scene",
+        "space/alien Pokemon encounters",
+        "new antagonist group and inside/outside battles"
+      ],
+      "native_species_reuse_first": true,
+      "original_player_save_preserved": true
+    },
+    "all_previous_authorized_work_continues": true,
+    "parallel_owners": {
+      "johto": "johto_resume",
+      "hoenn": "dive_hm_resume",
+      "endings_and_independent_qa": "performance_resume",
+      "misty_n_space_integration": "root"
+    }
+  },
+  "radio_tower_current_rom": {
+    "native_pass": true,
+    "maps_added": 7,
+    "checks": 84,
+    "same_native_save_chain": [
+      75,
+      96
+    ],
+    "blackthorn_and_league_pending": false,
+    "main_rom_sha256": "111d4e1ae7e6572845e5eb31ed33a1216fff8aa3d3e11466f287b74419abe682",
+    "league_pending": true
+  },
+  "blackthorn_current_rom": {
+    "native_pass": true,
+    "maps_added": 11,
+    "johto_maps": 112,
+    "johto_badges": 8,
+    "native_cases": 119,
+    "compiled_wild_tables": 18,
+    "RTC_game_clock_UI_tested": true,
+    "main_rom_sha256": "111d4e1ae7e6572845e5eb31ed33a1216fff8aa3d3e11466f287b74419abe682",
+    "proof_folder": "/workspaces/pokefirered/outputs/blackthorn-review-v1"
+  },
+  "q9_validation_checkpoint": {
+    "updated_utc": "20261006T095317Z",
+    "current_main_unchanged": "q8",
+    "candidate_phase5": {
+      "gba": {
+        "path": "/workspaces/pokefirered/outputs/regions-q9-review-v1/pokemonthyl-q9-phase5.gba",
+        "size": 33554432,
+        "sha256": "799ef72e82454fdf895550551bc0ef33a5253dfa92fc4c734996b4a1682ea096"
+      },
+      "elf": {
+        "path": "/workspaces/pokefirered/outputs/regions-q9-review-v1/pokemonthyl-q9-phase5.elf",
+        "size": 34035192,
+        "sha256": "35851341f56beb9146b7cd6ea3caa3e0cf8ce940b5023e66afcee58c4dd5598c"
+      },
+      "sym": {
+        "path": "/workspaces/pokefirered/outputs/regions-q9-review-v1/pokemonthyl-q9-phase5.sym",
+        "size": 3311952,
+        "sha256": "595a69112a9fe5a42f3bbe8f63971e7e93c637a750e0b372237b7b9fe84e7d4d"
+      },
+      "map": {
+        "path": "/workspaces/pokefirered/outputs/regions-q9-review-v1/pokemonthyl-q9-phase5.map",
+        "size": 3334030,
+        "sha256": "73839497f35a559d03736c117353aee28651f1bfa28f8db597e080edbc64bf56"
+      }
+    },
+    "candidate_promoted": false,
+    "phase4_native_pass": [
+      "actual Silver plus five Elite Four/champion wins, native HOF SAVE112-128 and cold Continue",
+      "Misty full-basic ten checks including five growth teams and walking/running/reversal",
+      "Misty ordinary Pikachu A-dialogue four branches, native SAVE and cold reload",
+      "Hoenn Route110/119 all26 rival branches across phase2/phase3",
+      "eight original saves load IDENTICAL and Continue",
+      "dexcheck 386/386",
+      "cold nurse healing with complete PC/dex/story/party preservation",
+      "exact bounded-name ARM function seven canary controls"
+    ],
+    "remaining_release_checks": [
+      "multi-map cold nurse QA fixture must match existing native NPC visibility formulas; all flag comparison remains strict",
+      "natural Tohjo Waterfall prompt/ascent/north exit; extra UP control under per-frame observation",
+      "phase5 map-integrity/text-width and resident assets/save ABI"
+    ],
+    "whole_Johto_Hoenn_story_complete": false,
+    "actual_NPC_ally_battle_implemented": false,
+    "Bad_Egg_original_repaired": false,
+    "Delta_device_fps_tested": false,
+    "historical_checkpoint": true,
+    "superseded_by_current_rom_sha256": "2bafd6478fef5bbda56c6b4bec9c8dec1a4e0f060252fc219dbcc834411509f7"
+  },
+  "johto_misty_repair_20261012": {
+    "status": "SCOPED_REPAIR_PROMOTED",
+    "evidence": {
+      "MistyAirport": {
+        "path": "/workspaces/pokefirered/work/regression-oct12/final-misty-native/misty-airport-result.json",
+        "sha256": "bc09cc15da90af4dce7ecba99bd5f5ecd9e461f04ef445fb04e1b2ca28c69435",
+        "pass": true
+      },
+      "MistyPallet": {
+        "path": "/workspaces/pokefirered/work/regression-oct12/final-pallet-legal-path/validation.json",
+        "sha256": "9318c46f7dc989766aa4bf1cb05f0c51ea03c3e593c1cf4c4d7ce41dc52a5f4f",
+        "pass": true
+      },
+      "ProfessorElm": {
+        "path": "/workspaces/pokefirered/work/regression-oct12/final-elm-native/validation.json",
+        "sha256": "131e7198340ce42397f4b8aefffc2521fdb7b5a9a0d817b4790bd20c0bde86c8",
+        "pass": true
+      },
+      "ContinuousFlightWalk": {
+        "path": "/workspaces/pokefirered/work/regression-oct12/final-johto-walk-observed/validation.json",
+        "sha256": "4023b7c6c593e3b30c00c2576e7e49d5723af29da12284c6f4f67938d328235a",
+        "pass": true
+      },
+      "ColdMapVisual": {
+        "path": "/workspaces/pokefirered/work/regression-oct12/final-native-visual/validation.json",
+        "sha256": "f8efbf9e8a894fb642fc849d0236febc3411f246b7a6a389d92ed57e9c146511",
+        "pass": true
+      },
+      "AssetABI": {
+        "path": "/workspaces/pokefirered/work/regression-oct12/final-candidate/final-binary-preservation-audit.json",
+        "sha256": "84711990eb6b3db85c90da167ac52bb6a857a9639de05bfef783bc5acb1aa2e2",
+        "pass": true
+      },
+      "ColdNurse": {
+        "path": "/workspaces/pokefirered/work/regression-oct12/final-cold-nurse-chain115/result.json",
+        "sha256": "b1c0f66050014f588cfa7b7fecde082e921f23b303f41e7e5d6ca7edb4fa518f",
+        "pass": true
+      },
+      "TohjoNatural": {
+        "path": "/workspaces/pokefirered/work/regression-oct12/final-tohjo-native-correct-cli/validation.json",
+        "sha256": "ce15252c100ce06b7da38e7a1308d5d77b69f81077f55c94e301122dfee6bf71",
+        "pass": true
+      }
+    },
+    "main_rom_sha256": "2bafd6478fef5bbda56c6b4bec9c8dec1a4e0f060252fc219dbcc834411509f7",
+    "original_saves_unchanged": true,
+    "first_four_maps_native_visual_pass": true,
+    "actual_flight_continuous_walk_to_professor_pass": true,
+    "user_tile_failure_reproduced": false,
+    "whole_Johto_Hoenn_story_complete": false,
+    "existing_global_event_findings": 96,
+    "temporary_Elm_graphic": true,
+    "BadEgg_original_repaired": false
+  },
+  "state_compatibility_investigation_20261012": {
+    "report": "/workspaces/pokefirered/work/regression-oct12/state-compatibility-audit.json",
+    "same_rom_controls_pass": 2,
+    "cross_old_rom_to_current_native_reboot_reproduced": true,
+    "actual_delta_cause_confirmed": false,
+    "new_bad_egg_observed": false,
+    "original_saves_unchanged": true,
+    "baseline_bad_egg": "BOX2 slot22 Lickitung retained; authenticated donor unavailable",
+    "tested_target_rom_sha256": "2bafd6478fef5bbda56c6b4bec9c8dec1a4e0f060252fc219dbcc834411509f7",
+    "current_followup_ROM_cross_state_tested": false
+  },
+  "early_johto_story_followup_20261012": {
+    "status": "SCOPED_RESEARCH_FOLLOWUP_PROMOTED",
+    "native_cases_pass": 5,
+    "professor_visit_allows_guide": true,
+    "gift_receipt_flag_unchanged": true,
+    "visitor_dialogue_follows_report_flag": true,
+    "evidence": "/workspaces/pokefirered/work/regression-oct12/story-audit",
+    "rom_sha256": "b46fb32bb67f89d5a48dfbfdf41ddd4977cc4a2d60dbbe6c72e1bc0281c5606d",
+    "original_all_saves_preserved": true,
+    "whole_regions_complete": false,
+    "remaining_work_record": "/workspaces/pokefirered/work/regression-oct12/story-audit/story-followup-summary.json"
+  },
+  "regional_followup_repair_20261012T1131": {
+    "state": "verified scoped local ROM repair; whole campaign incomplete",
+    "ROM_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+    "delivery": "/workspaces/pokefirered/outputs/rom-regional-followup-20261012T125127Z",
+    "canonical_patch": "/workspaces/pokefirered/work/heartbeat-20261012T1131/canonical-patch-receipt-fixed.json",
+    "native_report": "/workspaces/pokefirered/work/heartbeat-20261012T1131/final-canonical-checks/native/validation.json",
+    "checks": "/workspaces/pokefirered/work/heartbeat-20261012T1131/final-canonical-checks/result.json",
+    "native_cases": 7,
+    "eventcheck_cases": 3,
+    "8_save_load_profiles_IDENTICAL": true,
+    "14_original_and_backup_SAVs_unchanged": true,
+    "SaveABI_changed": false,
+    "performance_report": "/workspaces/pokefirered/work/heartbeat-20261012T1131/canonical-performance/performance-result.json",
+    "full_campaign_complete": false,
+    "global_event_gate_complete": false
+  },
+  "capture_state_investigation_20261012T1131": {
+    "tested_ROM_sha256": "b46fb32bb67f89d5a48dfbfdf41ddd4977cc4a2d60dbbe6c72e1bc0281c5606d",
+    "report": "/workspaces/pokefirered/work/heartbeat-20261012T1131/capture-state-offset-fixed/validation.json",
+    "actual_capture_to_PC_and_native_SAVE_cold": true,
+    "same_ROM_raw_core_state_restore_and_SAVE_cold": true,
+    "new_bad_egg_observed": false,
+    "old119_box_records_unchanged": true,
+    "original_bad_egg_restored": false,
+    "actual_user_DELTA_state_tested": false,
+    "PC_UI_browsing_tested": false,
+    "scope": "Single native static wild capture path on b46; not a user cause or recovery proof"
+  },
+  "save_edit_20261013": {
+    "status": "INSTALLED_SEPARATE_EDITED_COPY_NATIVE_SAVE_COLD_VERIFIED",
+    "input": "/workspaces/pokefirered/saves/pokemonthyl_v1.25.sav",
+    "input_sha256": "53d923bf4668373724b19c9d3c8526b002701606ab7ac082d657ee990e23d7b3",
+    "edited_save": "/workspaces/pokefirered/saves/pokemonthyl_v1.25-items99-iv2x.sav",
+    "edited_sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+    "backup": "/workspaces/pokefirered/work/save-edit-v125-20261013/pokemonthyl_v1.25-original.sav",
+    "items99": true,
+    "owned_species": [
+      "BLASTOISE",
+      "CHARIZARD",
+      "VENUSAUR",
+      "DRAGONAIR"
+    ],
+    "iv_rule": "individual IV min(31,old*2)",
+    "rom_unchanged": true,
+    "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+    "native_menu_save_cold_verified": true,
+    "original_and_existing_bad_egg_preserved": true,
+    "proof": "/workspaces/pokefirered/work/save-edit-v125-20261013",
+    "local_download_sav": "C:/Users/seren/Documents/Codex/2026-10-01/https-effective-meme-v6pxvx5qx6vghwj56-github-dev/outputs/pokemonthyl_v1.25-items99-iv2x.sav",
+    "local_download_zip": "C:/Users/seren/Documents/Codex/2026-10-01/https-effective-meme-v6pxvx5qx6vghwj56-github-dev/outputs/pokemonthyl-v1.25-items99-iv2x-20261013.zip",
+    "local_download_sav_sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+    "delivery_verified_bytes": 131072
+  },
+  "hoenn_map_review_20261013": {
+    "status": "CURRENT_ROM_457_MAP_ENTRY_AND_STRUCTURE_CHECKS_COMPLETE_SCOPED",
+    "summary": {
+      "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+      "expected_maps": 457,
+      "quick_entry_walk_OK": 456,
+      "initial_BLACK": 1,
+      "reset_error_timeout": 0,
+      "black_classification": "unlit requires_flash room; negative/positive preboot flash flag controls verify native dark mask and actual key movement",
+      "actual_menu_Flash_tested": false,
+      "structural_rom_source_maps_pass": 457,
+      "tilesets": 63,
+      "initial_graphics_edge_maps": 2,
+      "edge_result": "all 11 referenced out-of-payload tile slots read as zero/transparent in actual VRAM; palette14 references have no visible nonzero pixels",
+      "native_no_memory_writes": true,
+      "whole_story_playthrough_complete": false,
+      "all_door_warp_traversal_complete": false,
+      "manual_visual_art_approval_complete": false,
+      "inputs_preserved": true,
+      "proof_dir": "/workspaces/pokefirered/work/hoenn-map-review-20261013"
+    },
+    "limitations": [
+      "not whole natural story traversal",
+      "not all door/warp traversal",
+      "not all visual art approval",
+      "Flash controls used preboot flags, not an actual menu field-move execution"
+    ]
+  },
+  "verification_followup_20261013": {
+    "status": "CURRENT_ROM_AND_V125_SCOPED_VERIFICATION_COMPLETE",
+    "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+    "sav_sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+    "idle_frames": 36000,
+    "same_ROM_state_restore_applied_verified": true,
+    "Pikachu_dive_samples": 16,
+    "Misty_water_land_samples": 21,
+    "Johto_actual_professor_unlock_151_to_251": true,
+    "Hoenn_eligible_fixture_UI_202": true,
+    "native_list_order_checks": 5,
+    "native_SAVE_cold_door_cases": 2,
+    "inputs_unchanged": true,
+    "product_changes": false,
+    "whole_campaign_complete": false,
+    "actual_DELTA_tested": false,
+    "existing_BadEgg_recovered": false,
+    "manual_visual_scope": [
+      "Johto numerical page",
+      "Hoenn contents menu"
+    ],
+    "remaining": [
+      "whole natural three-region campaign",
+      "all doors and Dive maps",
+      "PC UI and capture/battle stress",
+      "actual DELTA and old state reproduction",
+      "existing Bad Egg recovery",
+      "dedicated Elm sprite and unfinished story expansion"
+    ],
+    "evidence": {
+      "idle-state": "/workspaces/pokefirered/work/followup-20261013/idle-state/validation.json",
+      "state-applied": "/workspaces/pokefirered/work/followup-20261013/state-applied/validation.json",
+      "misty-dive": "/workspaces/pokefirered/work/followup-20261013/misty-dive/validation.json",
+      "doors-dex": "/workspaces/pokefirered/work/followup-20261013/doors-dex/validation.json",
+      "dex-list-order": "/workspaces/pokefirered/work/followup-20261013/dex-list-order/validation.json"
+    }
+  },
+  "regional_starters_20261013": {
+    "status": "implemented_built_native_verified_and_ROM_promoted",
+    "six_IVs": 31,
+    "native_cases_passed": 32,
+    "delivery": "/workspaces/pokefirered/outputs/regional-starters-20261013/Thunder-Yellow-regional-starters-20261013.zip",
+    "verification": "/workspaces/pokefirered/work/regional-starters-20261013/validation-final.json",
+    "existing_SAV_files_unchanged": true,
+    "prior_gift_flags_preserved": true,
+    "whole_campaign_complete": false
+  },
+  "player_pp_update_20261013": {
+    "created_UTC": "2026-10-13T06:14:39.490831+00:00",
+    "status": "ROM_promoted_and_new_SAV_added",
+    "ROM": "/workspaces/pokefirered/pokemonthyl.gba",
+    "ROM_sha256": "e1560c21cf51c7c1c2af8dd04f3f6a429eb3d6af4f3e157bc66aa187bef65c34",
+    "SAV": "/workspaces/pokefirered/saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav",
+    "SAV_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+    "patch_sha256": "e68af5d6852c5157e716ebbf7a9483fddfafd90dba219597204bff7a7a91a3f8",
+    "previous_ROM_sha256": "63904802b37dc5e922ec616361c0be3388f1030e5b2c1a0b7a2949f2a33c1f7c",
+    "backup": "/workspaces/pokefirered/work/save-inventory-pp-20261013/before-final-promotion",
+    "all_10_existing_SAVs_byte_identical": true,
+    "native_cases_passed": 63,
+    "native_heal_slots": 1464,
+    "actual_TM17_learning_and_summary_pass": true,
+    "stock_356_move_table_entries_unchanged": true,
+    "RAM_symbols_unchanged": 922,
+    "native_RAM_writes": 0,
+    "actual_DELTA_tested": false,
+    "regional_campaign_completion_claimed": false,
+    "existing_BadEgg_repaired": false
+  },
+  "misty_followup_20261014": {
+    "created_UTC": "2026-10-14T01:44:10.823506+00:00",
+    "status": "MISTY_IMPLEMENTED_BUILT_NATIVE_33_PASS",
+    "ROM": "/workspaces/pokefirered/outputs/misty-follow-20261014/pokemonthyl_misty_20261014.gba",
+    "ROM_sha256": "1c9a4519a7a6bb5195728977143d42e5f126f8709d992e4602e159ae328d46bf",
+    "ELF_sha256": "fc455fac6fc274185570489cf81671ebb47f60944343904c1b6b96ff7e51ccde",
+    "SAV": "/workspaces/pokefirered/outputs/misty-follow-20261014/pokemonthyl_misty_20261014.sav",
+    "SAV_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+    "SAV_is_unchanged_copy": true,
+    "native_story_checks": 25,
+    "native_walk_run_checks": 8,
+    "all_10_original_SAVs_unchanged": true,
+    "full_campaign_complete": false,
+    "actual_DELTA_tested": false,
+    "existing_BadEgg_recovered": false,
+    "visible_size_review": {
+      "new_Misty_px": 24,
+      "stock_Red_Misty_woman_px": 19,
+      "same_size_approval_claimed": false,
+      "status": "REJECTED_BY_USER_REPLACED_WITH_18_19_PIXEL_ART"
+    },
+    "hoenn_hint_native_status": "15_ACTUAL_A_CASES_AND_2_SAVE_COLD_PASS",
+    "source_backups": [
+      "/workspaces/pokefirered/work/misty-followup-20261014/source-before-integration-v1",
+      "/workspaces/pokefirered/work/devon-story-r2-20261014T012003Z-333e12fc/original-backup"
+    ],
+    "files": {
+      "preview-provenance.json": "eb204599c179eb2e654a523b847ac79b52aa2861d05e10ac9f59100e1cd8a5d6",
+      "Misty-actual-game-walk.gif": "6e05fc19686cd4ff946c3d1cbbb457a67349d446b8adda89213fc0d3621a3b94",
+      "pokemonthyl_misty_20261014.sav": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+      "README-사용법.txt": "1d94ca0cd7c0278ff423cd8a2a2724db89c6193532b88b2c7c21f04a4b5e0f6c",
+      "Misty-heart-actual-game.png": "224951fd0b0bb70101dadf5d743d1478438d67075370cacc670cc043a462e21d",
+      "pokemonthyl_misty_20261014.gba": "1c9a4519a7a6bb5195728977143d42e5f126f8709d992e4602e159ae328d46bf",
+      "Misty-actual-game.png": "3a366ac028220e13df0950ec390c1376cfd7a98fd45f9361f14bc0aebb8246e5",
+      "qa/rom-build-validation.json": "5ab85a38af071593349897cb87da58a170fd05ad9d932d7e47d875bb9022ef49",
+      "qa/misty-walk-8.json": "46cc32618a19293442e11e84ab3657bb3237627f7eaf768e47887f1406aa5e49",
+      "qa/misty-story-25.json": "cef837c963cc699f4b9445aabcf5bb30df172eb281d54a2c83443f6574f31c1e",
+      "qa/hoenn-hints-15.json": "65cd3ccf7bb0f6ce128b7efe2011b4db30d65597dd7e49fdf96fccdbbb2d6c60"
+    },
+    "hoenn_hint_maps": [
+      "Route116",
+      "RusturfTunnel",
+      "RustboroCity_DevonCorp_1F",
+      "RustboroCity_DevonCorp_3F"
+    ],
+    "delivery_ZIP": "/workspaces/pokefirered/outputs/misty-follow-20261014/Thunder-Yellow-Misty-20261014-final.zip",
+    "local_download_verified": {
+      "path": "C:/Users/seren/Documents/Codex/2026-10-01/https-effective-meme-v6pxvx5qx6vghwj56-github-dev/outputs/misty-follow-20261014/Thunder-Yellow-Misty-20261014-final.zip",
+      "sha256": "0f5dc5ade29cf75ebec94aa17e340de3d0ba753154f2f5b129f55f659d0c9776",
+      "bytes": 7980975,
+      "every_manifest_file_verified": true
+    },
+    "superseded_by": "/workspaces/pokefirered/outputs/misty-standard-20261014/release.json"
+  },
+  "devon_followup_20261014": {
+    "status": "15_ACTUAL_A_CASES_AND_2_SAVE_COLD_PASS",
+    "ROM_sha256": "1c9a4519a7a6bb5195728977143d42e5f126f8709d992e4602e159ae328d46bf",
+    "native_cases": 15,
+    "native_SAVE_cold_cases": 2,
+    "sources_applied": 16,
+    "safe_importer_isolated_regeneration_passes": 2,
+    "full_campaign_complete": false,
+    "remaining": [
+      "Route116_to_Rusturf_actual_Grunt_and_goods_Peeko_rescue",
+      "actual_Stone_delivery_and_rest_of_Hoenn_story"
+    ],
+    "evidence": "/workspaces/pokefirered/work/misty-followup-20261014/native-devon-hints-v3/validation.json"
+  },
+  "misty_stock_proportions_20261014": {
+    "created_UTC": "2026-10-14T02:38:47.494116+00:00",
+    "status": "MISTY_STOCK_PROPORTIONS_BUILT_NATIVE_WALK_8_PASS",
+    "ROM_sha256": "78db87489b0dadb03a6066af7c0ffad9f784b9d8d400c5cb6c0e22eedf043bd0",
+    "ELF_sha256": "4f1039f8d78c402d4cd090e07cb75ad251a550954174c147d327e7f5ff2b54ec",
+    "SAV_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+    "native_art_sha256": "1c8a8636dd35248d5d38395d6c5ceae78780b585796c4d3ee297c124fa77cb07",
+    "visible_height_px": [
+      18,
+      19
+    ],
+    "previous_24px_art_rejected": true,
+    "only_sprite_ROM_region_changed": true,
+    "native_walk_run_cases": 8,
+    "all_10_original_SAVs_unchanged": true,
+    "full_campaign_complete": false,
+    "actual_DELTA_tested": false,
+    "art_reference": "original FRLG Misty/NPC proportions",
+    "art_tool": "built-in imagegen edit; source SHA6c5faf6c…",
+    "delivery_folder": "/workspaces/pokefirered/outputs/misty-standard-20261014",
+    "files": {
+      "preview-provenance.json": "d340bfbf3a2aad1c4c19f208fe8cba9e5ba4f2484c4c1ba809f72606502f2f1b",
+      "README-사용법.txt": "9ce6fb744de8107d39f16bbbac8ce1e1d6f3cff120bafd9d91e1bd57069bf4d5",
+      "pokemonthyl_misty_standard_20261014.gba": "78db87489b0dadb03a6066af7c0ffad9f784b9d8d400c5cb6c0e22eedf043bd0",
+      "Misty-standard-actual-walk.gif": "1a8b838135711c1a0cf5fd71a3396d159d21e0c7442fd9296295db1471757450",
+      "Misty-standard-actual-game.png": "2db35c3c0f9e92daea8685287d9e5b7fd68e68df9373ab0de628b6640aef40f0",
+      "pokemonthyl_misty_standard_20261014.sav": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+      "Misty-season1-native.png": "1c8a8636dd35248d5d38395d6c5ceae78780b585796c4d3ee297c124fa77cb07",
+      "art-provenance.json": "6945d9be4c789184e80934b8f85cc192f4df265863285037400d674475ae7940",
+      "qa/native-art-format.json": "a9ce0b368c59d3f47013abff83208c8e84cc7432ff28334f7504a5f00b8d1c8a",
+      "qa/walk-run-8.json": "a23db6863ed3b54a86b6942fc01bc64ae215ede7ba757849aa1021f1f16e4a39",
+      "qa/ROM-native-sprite-validation.json": "e87ee48e0f3624cbb668d6b874d76ffcdd321afef666d554deb89444773eb794",
+      "qa/sprite-only-change-proof.json": "457b6dc3e8b5254ffa4c29188b973cbe1ee6175967c9cc6b6e2f045209a3e009"
+    },
+    "local_download_verified": {
+      "path": "C:/Users/seren/Documents/Codex/2026-10-01/https-effective-meme-v6pxvx5qx6vghwj56-github-dev/outputs/misty-standard-20261014/Thunder-Yellow-Misty-standard-20261014.zip",
+      "sha256": "2284dfb58d47805a221d4f8addc732207416caeb823152db314a4fb2a194f414",
+      "manifest_members_verified": true
+    },
+    "superseded_by_profile_only": "misty_profile_20261014"
+  },
+  "misty_profile_20261014": {
+    "ROM": "/workspaces/pokefirered/outputs/misty-profile-20261014/pokemonthyl_misty_profile_20261014.gba",
+    "ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+    "ELF_sha256": "e625069ea9379ea3dc2f83e3014fb741a2e0b7383f41f6d56bc37fc0eae6f17b",
+    "pass": true,
+    "checks": {
+      "walk_run_cases": 8,
+      "native_SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/misty-profile-20261014/native-walk/Misty-walk-save-cold-native-QA-only.sav"
+      },
+      "only_sprite_change": {
+        "pass": true,
+        "only_misty_sprite_bytes_changed": true,
+        "changed_rom_bytes": 39,
+        "sprite_addr": "0x855de18",
+        "sprite_bytes": 2304,
+        "all_original_saves_unchanged": true,
+        "original_save_count": 11,
+        "ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa"
+      },
+      "preserved_native_pixels_outside_ROI": true
+    },
+    "files": {
+      "art-and-preview-provenance.json": "61b4fa34e14bed57a12745f31a119ab50e8d4a0cc36fd311ff607b1892bdec06",
+      "Misty-profile-actual-walk.gif": "989b9d129ad7ee7800043fedbda986a0c875b427696ae1e3c6a0d5a891cbf8d5",
+      "build-validation.json": "99135033f6ce36597fc3cd219d454e92dcfacc86b37fd192da852a9df03e77f6",
+      "pokemonthyl_misty_profile_20261014.gba": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+      "pokemonthyl_misty_profile_20261014.sav": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+      "Misty-profile-actual-game.png": "eaaeff9c23209b6d3fc404071d595f34668632d96c82136bd3c06e54061a99ff",
+      "imagegen-edit-prompt.txt": "3c5c30141dd83983b363a33928859987a3c42755d476e58987201ec07d398f08",
+      "walk-validation.json": "f4a6e33ad344578d8e384f0ca4285651715e6ccfab0c9f976c674e47d4760ef1",
+      "art-format-validation.json": "e6a321d14509ebcf6578566e537662373539de78316eac576d402b36c4ff9202",
+      "Misty-season1-native.png": "55bbb1d6f30caf9c43d7b38834639d2c635b2870e427b8918ab9d6463360ca7d",
+      "README.txt": "6725b8bcb9b1b92aa5f8fd9d768c2617353a803f36eaf890e7ae357e9dded838",
+      "sprite-only-change-proof.json": "266d87484e4f560557891927a83a6c86042f07163e362433c4ab061c4abee24c",
+      "Misty-profile-before-after.png": "cbe49c3b26b25ae56478170089692016317a1eebe55b0a63889291ab137a0966"
+    },
+    "status": "BUILT_NATIVE_WALK8_SAVE_COLD_PASS",
+    "delivery": {
+      "path": "/workspaces/pokefirered/outputs/misty-profile-20261014/Thunder-Yellow-Misty-profile-20261014.zip",
+      "bytes": 7970624,
+      "sha256": "6e2ce221f7a4e9be87c886886bd7ee45accc01dc3796c2203f29d51491419a1e",
+      "delivery_folder": "/workspaces/pokefirered/outputs/misty-profile-20261014"
+    },
+    "user_request": "round flat posterior side head; preserve established height and all other sprites",
+    "DELTA_device_tested": false
+  },
+  "devon_continuation_20261014": {
+    "status": "NATIVE_RESCUE_CHECKPOINT_AND_STONE_REQUEST_VERIFIED",
+    "ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+    "ELF_sha256": "e625069ea9379ea3dc2f83e3014fb741a2e0b7383f41f6d56bc37fc0eae6f17b",
+    "r3_partial_evidence": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r3/validation.json",
+    "r4_pass": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r4/validation.json",
+    "r4_sha256": "090fa55d12da7bf45cb7e769503201208dc25a53fb464afbeda677f582e9298c",
+    "native_SAVE_cold": {
+      "counter": [
+        69,
+        70
+      ],
+      "checksummed_sectors": 14,
+      "qa_save": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-continuation-r4/continuous-Stone-request-native-QA-only.sav"
+    },
+    "map_height_changed": false,
+    "normal_Stone_access": "(18,6) height0, actual LEFT to (17,6) height4, UP+A",
+    "original_SAVs_unchanged": true,
+    "whole_Johto_Hoenn_complete": false,
+    "actual_device_FPS_measured": false,
+    "next": "Briney boat, Stern Harbor delivery, Stone Exp Share"
+  },
+  "devon_delivery_20261014": {
+    "status": "NATIVE_PRE_TWINS_BOAT_PARCEL_EXP_SHARE_SAVE_COLD_PASS",
+    "ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+    "ELF_sha256": "e625069ea9379ea3dc2f83e3014fb741a2e0b7383f41f6d56bc37fc0eae6f17b",
+    "native_report": "work/hoenn-resume-20261014/native-delivery-r2/validation.json",
+    "native_report_sha256": "032d4a4a81504d47b967dfd4339b152ba2a6451eb673458281b0bd4d9cfd6376",
+    "scope_clarification": "work/hoenn-resume-20261014/native-delivery-r2/scope-clarification.json",
+    "stages": 12,
+    "actual_battles": 13,
+    "both_ordinary_double_player_actions": true,
+    "actual_boat_round_trips": 2,
+    "Devon_scene": [
+      4,
+      5,
+      6
+    ],
+    "Goods": [
+      1,
+      0
+    ],
+    "DiveBalls_added": 3,
+    "ExpShare_added": 1,
+    "duplicate_rewards": false,
+    "SAVE_cold_counter": [
+      72,
+      73
+    ],
+    "sector_checksums": 14,
+    "original_inputs_unchanged": true,
+    "whole_campaign_complete": false,
+    "actual_DELTA_device_measured": false,
+    "earlier_failed_reports_retained": true,
+    "next": "Separate forced replacement/loss QA copies; Dewford gym and regional progression from native scene6 battery checkpoint"
+  },
+  "hoenn_double_regression_20261014": {
+    "status": "QA_ONLY_NATIVE_REPLACEMENT_AND_LOSS_SAVE_COLD_PASS",
+    "reports": {
+      "native-double-replacement-r1a": {
+        "report_sha256": "1b1bd854c94ade0a146afac0fa82a8a08d9e10725cd29390aca729e7ba098b53",
+        "path": "work/hoenn-resume-20261014/native-double-replacement-r1a/validation.json",
+        "actual_outcome": 1,
+        "accepted_SEND_OUT": 2,
+        "SAVE_cold_counter": [
+          71,
+          72
+        ],
+        "checksummed_sectors": 14,
+        "original_inputs_unchanged": true
+      },
+      "native-double-loss-r2": {
+        "report_sha256": "d60ff0dca21a3f59cc28de31862664240c1dbf9f37938159e5f6eec4fc877154",
+        "path": "work/hoenn-resume-20261014/native-double-loss-r2/validation.json",
+        "actual_outcome": 2,
+        "accepted_SEND_OUT": 4,
+        "SAVE_cold_counter": [
+          71,
+          72
+        ],
+        "checksummed_sectors": 14,
+        "original_inputs_unchanged": true
+      }
+    },
+    "fixture_scope": "Separate preboot HP/status/Splash party copies only; prior natural checkpoint and user saves unchanged",
+    "RAM_writes": 0,
+    "direct_script_calls": 0,
+    "forced_battle_outcomes": 0,
+    "new_controller": "work/hoenn-resume-20261014/native_double_controller_r2.py",
+    "new_controller_sha256": "30346bab00d76d1b553c6aaffa89212909042fc11a24624c6715a23f850073ec",
+    "old_loss_failure_retained": true,
+    "QA_fix": "gBattlerPartyIndexes is u16[4], size8, stride2. No product code changed.",
+    "full_campaign": false,
+    "DELTA_device_FPS_measured": false
+  },
+  "save_v14_sync_20261014": {
+    "status": "V14_SYNC_NATIVE_SAVE_COLD_PASS",
+    "original": {
+      "path": "saves/pokemonthyl_v1.4.sav",
+      "size": 131072,
+      "sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4"
+    },
+    "synced_sav": "/workspaces/pokefirered/saves/pokemonthyl_v1.4-synced.sav",
+    "synced_sha256": "99f4100d09961196706282a02e96ee9017a0a591777aa3ca0b40249ec8ae89e8",
+    "ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+    "files": {
+      "native-SAVE-cold-validation.json": "2366551812769494e07abd4450a4ca36ffe4035835ed72905e217776544c4c5b",
+      "BadEgg-forensic-report.json": "5235315fb702317995e0015be99a83a838aed7c8094a9bd2e607109b624f1c22",
+      "pokemonthyl_v1.4.gba": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+      "edit-manifest.json": "61ae1e5ea6523b0770deaff49a4f65938d5038400a8f7e78540f32c098515853",
+      "independent-raw-audit.json": "29a201d39dd1aee5b56a4eeeaff2901af3d008d60ce12b13b6e3797b155d9055",
+      "v14-actual-cold-continue.png": "a24eafddce076449817ea079f5adc0121d5d672af11548ceafec0a8b1fe0e708",
+      "pokemonthyl_v1.4.sav": "99f4100d09961196706282a02e96ee9017a0a591777aa3ca0b40249ec8ae89e8",
+      "README.txt": "cdc97e2ca0c4e4dd992f1a3af205b9a4e2177bb6579deece218aad5f4c2b8376"
+    },
+    "unresolved_bad_records": 1,
+    "full_campaign_complete": false,
+    "DELTA_device_FPS_measured": false,
+    "delivery_zip": "/workspaces/pokefirered/outputs/v14-sync-20261014/Thunder-Yellow-v1.4-synced-20261014.zip",
+    "delivery_zip_sha256": "8c24fb6319b74475d7060b33d4b44bfdaad9ecaeb2b9060d1dc87f667a70327c",
+    "originals_protected_count": 18,
+    "previous_IV_receipts_preserved": true
+  },
+  "previous_save_current_before_v14": {
+    "original_v1_2_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+    "all_original_files_preserved": true,
+    "legacy_load_cases_passed": 6,
+    "native_regional_save_reload_profiles_passed": 3,
+    "pc_and_party_bytes_preserved": true,
+    "existing_bad_egg_repaired": false,
+    "old_delta_save_states_compatibility": "not verified",
+    "native_hoenn_league_save_reload_verified": true,
+    "latest_user_sav_v125_original_sha256": "53d923bf4668373724b19c9d3c8526b002701606ab7ac082d657ee990e23d7b3",
+    "latest_edited_save": "/workspaces/pokefirered/saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav",
+    "latest_edited_save_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+    "latest_v125_native_idle_state_and_regional_UI_verification": "/workspaces/pokefirered/work/followup-20261013/review-summary.json"
+  },
+  "regional_dex_host_20261014": {
+    "status": "SOURCE_UNIT_PASS",
+    "report": "work/resume-v14-20261014/regional-host/validation.json",
+    "native_UI_complete": false
+  },
+  "hoenn_dewford_20261014": {
+    "status": "NATIVE_DOCK_FIX_PASS",
+    "report": "/workspaces/pokefirered/work/hoenn-resume-20261014/native-dewford-dock-r6/validation.json",
+    "report_sha256": "3c03a5af65d76b98198b70cd7a509f08ab54c5a58b9b8c9ed6e67089ef23f614",
+    "Brawly_progression_complete": false,
+    "full_Hoenn_campaign_complete": false
+  },
+  "previous_verified_ROM_before_dockfix": {
+    "path": "/workspaces/pokefirered/pokemonthyl.gba",
+    "sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+    "bytes": 33554432,
+    "provenance": "/workspaces/pokefirered/outputs/misty-profile-20261014/release.json",
+    "verified_delivery_folder": "/workspaces/pokefirered/outputs/misty-profile-20261014"
+  },
+  "previous_save_current_before_PC_resort": {
+    "path": "/workspaces/pokefirered/saves/pokemonthyl_v1.4-synced.sav",
+    "sha256": "99f4100d09961196706282a02e96ee9017a0a591777aa3ca0b40249ec8ae89e8",
+    "source_original": "saves/pokemonthyl_v1.4.sav",
+    "source_sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4",
+    "native_SAVE_cold_PASS": true,
+    "unresolved_bad_records": 1
+  },
+  "v14_dockfix_release_20261014": {
+    "status": "V14_SYNC_AND_NATIVE_DOCK_FIX_PASS",
+    "created_utc": "2026-10-14T10:40:25.927072+00:00",
+    "created_korea": "2026-10-14T19:40:25.927072+09:00",
+    "ZIP_display_timezone": "Asia/Seoul",
+    "original": {
+      "path": "saves/pokemonthyl_v1.4.sav",
+      "sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4"
+    },
+    "synced_sav": "/workspaces/pokefirered/saves/pokemonthyl_v1.4-synced-recovered.sav",
+    "synced_sha256": "c06ad0536f1ee13fd88a3cf36346b52d3d5ca0cae7e729723acf6047d916feb8",
+    "ROM_sha256": "af2677993a75979fb36f0768c390d1bad7424e61f2d569b5054d40702250d2e8",
+    "ELF_sha256": "2549852a48935c680e06e81719b54663b9c0efa7fdaccd31d1f4683886c5d64e",
+    "files": {
+      "BadEgg-forensic-report.json": "5235315fb702317995e0015be99a83a838aed7c8094a9bd2e607109b624f1c22",
+      "pokemonthyl_v1.4.gba": "af2677993a75979fb36f0768c390d1bad7424e61f2d569b5054d40702250d2e8",
+      "edit-manifest.json": "61ae1e5ea6523b0770deaff49a4f65938d5038400a8f7e78540f32c098515853",
+      "dex-scroll-observation-baseline.json": "ff3625d3743317ac33f174536b8f7289337915e55c613e596658af0b68cccc5b",
+      "independent-raw-audit.json": "29a201d39dd1aee5b56a4eeeaff2901af3d008d60ce12b13b6e3797b155d9055",
+      "v14-actual-cold-continue.png": "a24eafddce076449817ea079f5adc0121d5d672af11548ceafec0a8b1fe0e708",
+      "physical-PC-independent-validation.json": "27cbd03da9ec1ef925888dd9df5933534e7d6f7a0712082ccd0642ba5f689bc3",
+      "native-dock-validation.json": "3c03a5af65d76b98198b70cd7a509f08ab54c5a58b9b8c9ed6e67089ef23f614",
+      "physical-PC-recovery-edit-manifest.json": "eeee313b5d2ce344d6474944e0ef7c0d281eda96ebcb8e872497a4c90e5f1501",
+      "Dewford-safe-land-actual.png": "b9e3c8341e583752f67498a4744c3c15b8246998c4a6d121644b2fdfb46eee6a",
+      "native-v14-new-ROM-validation.json": "72964686c402290cd2c59b33619915134b86c7116466a6e3edeb45d52343640d",
+      "pokemonthyl_v1.4.sav": "c06ad0536f1ee13fd88a3cf36346b52d3d5ca0cae7e729723acf6047d916feb8",
+      "BadEgg-inferred-minimal-repair-spec.json": "fe24f0797822120c265c09702683cc5c38be48c36321347faf0cac522ccd6f2b",
+      "README.txt": "cf06cfabe35088c974de11496e06e2888c217006316dc02f586e76702d99cb73",
+      "regional-UI-validation-baseline.json": "0b8e8878c6468451cd6cc96d717b37358d7b7fc42e288ce245bfe6bfcfcc68bc"
+    },
+    "unresolved_bad_records": 0,
+    "Lickitung_recovery": "Inferred unique minimum-bit model; exact original not donor authenticated",
+    "full_campaign_complete": false,
+    "DELTA_device_FPS_measured": false,
+    "dock_native_pass": true,
+    "v14_new_ROM_native_save_cold_pass": true,
+    "regional_UI_observed_on_preserved_baseline": true,
+    "Brawly_progression_tested": false,
+    "ZIP_path": "/workspaces/pokefirered/outputs/v14-sync-dockfix-20261014/Thunder-Yellow-v1.4-dockfix-20261014.zip",
+    "ZIP_sha256": "07a63453027db385ddc28337a243e9f70431be1cb428af324839426c5e1df3c8",
+    "protected_save_files": 19,
+    "old_verified_package_preserved": "/workspaces/pokefirered/outputs/v14-sync-20261014"
+  },
+  "regional_dex_native_ui_20261014": {
+    "status": "NATIVE_CURRENT_REGION_UI_SAVE_COLD_PASS",
+    "report": "/workspaces/pokefirered/work/resume-v14-20261014/regional-ui-native-r2/validation.json",
+    "ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+    "all_three_regions_tested": false
+  },
+  "dex_scroll_observation_20261014": {
+    "status": "READ_ONLY_UI_OBSERVED",
+    "report": "/workspaces/pokefirered/work/resume-v14-20261014/dex-scroll-observe-r1/validation.json",
+    "hardware_frames": 1080,
+    "observed_key_heartbeat_anomalies": 3,
+    "DELTA_device_FPS_measured": false,
+    "product_patch_written": false
+  },
+  "previous_verified_delivery_before_reference_v145_20261015": {
+    "path": "/workspaces/pokefirered/pokemonthyl.gba",
+    "sha256": "af2677993a75979fb36f0768c390d1bad7424e61f2d569b5054d40702250d2e8",
+    "bytes": 33554432,
+    "provenance": "/workspaces/pokefirered/outputs/v14-sync-dockfix-20261014/release.json",
+    "verified_delivery_folder": "/workspaces/pokefirered/outputs/v14-sync-dockfix-20261014"
+  },
+  "latest_user_uploaded_save": {
+    "path": "/workspaces/pokefirered/saves/pokemonthyl_v1.45.sav",
+    "sha256": "0949ebf04557a76e2175602e967eefadb7ffb722f2746be8a40ddb1fd66550a9",
+    "original_modified": false,
+    "user_exported_after_BadEgg_in_game_SAVE": true
+  },
+  "reference_and_v145_remediation_20261015": {
+    "report": "/workspaces/pokefirered/work/resume-v145-20261015/reference-and-v145-progress-r1.json",
+    "sha256": "ed45b8114e35b397586fda883bf602ff70f467adb005f538c480ca5e4ecfb451",
+    "registry": "/workspaces/pokefirered/work/reference-registry-20261015.json",
+    "whole_region_complete": false
+  }
+}

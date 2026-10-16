@@ -1,0 +1,26 @@
+{
+  "applied": false,
+  "changed": [
+    "tools/hoenn_import/patches/LittlerootTown_ProfessorBirchsLab.scripts.inc",
+    "tools/hoenn_import/patches/LittlerootTown_ProfessorBirchsLab.text.inc",
+    "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc",
+    "data/maps/LittlerootTown_ProfessorBirchsLab/text.inc"
+  ],
+  "before": {
+    "tools/hoenn_import/patches/LittlerootTown_ProfessorBirchsLab.scripts.inc": "1e738c356ea19010f2834b28831435f382c612f27f4b5e2485dda04f31ce8203",
+    "tools/hoenn_import/patches/LittlerootTown_ProfessorBirchsLab.text.inc": "570de2c6d2b4aeca18e5a4eb19fd93592e9f834c4ed2b347d22be01c7d975c30",
+    "data/maps/LittlerootTown_ProfessorBirchsLab/map.json": "d31e359af884c163083afbfc3266a97383fadf039be75e2c10bfe660f9c5d337",
+    "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc": "a67008303aa554ca3b217f2e3295afc4d05377a7ed953b0c784e886edb8a2c59",
+    "data/maps/LittlerootTown_ProfessorBirchsLab/text.inc": "12c03f3d42219db2cec1c30de3d5afaba0da4c34f1e8bd7fa5161a28d5e7840c"
+  },
+  "after": {
+    "tools/hoenn_import/patches/LittlerootTown_ProfessorBirchsLab.scripts.inc": "23531be02cc2e6193152135e9a9d70fffc571734e2b8995a81edee91927f159a",
+    "tools/hoenn_import/patches/LittlerootTown_ProfessorBirchsLab.text.inc": "efbbb2253791da604c0f8fc4831c0502a66795746e5303e8b4d73716b2b9ac71",
+    "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc": "d8776b6bd4e75875ccbd2aa7f8bd84c36883ff8557847a15789b83bb7311c633",
+    "data/maps/LittlerootTown_ProfessorBirchsLab/text.inc": "068d774d410f2292e1292df45260ec1d53a4fec7de1b34daa73b769e165a7166"
+  },
+  "existing_script_restored_exactly": true,
+  "new_save_fields": false,
+  "new_flags": false,
+  "runtime_verified": false
+}

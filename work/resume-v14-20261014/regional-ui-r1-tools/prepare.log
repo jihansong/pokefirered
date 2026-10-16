@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/work/resume-v14-20261014/regional-ui-r1-tools/prepare_regional_native_abi.py", line 170, in <module>
+    if __name__ == "__main__": main()
+                               ^^^^^^
+  File "/workspaces/pokefirered/work/resume-v14-20261014/regional-ui-r1-tools/prepare_regional_native_abi.py", line 151, in main
+    bound = elf.bind(name, OWNERS.get(name))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/work/resume-v14-20261014/regional-ui-r1-tools/prepare_regional_native_abi.py", line 82, in bind
+    assert len(rows) == 1, ("missing/ambiguous current source-owned symbol", name, rows)
+           ^^^^^^^^^^^^^^
+AssertionError: ('missing/ambiguous current source-owned symbol', 'sPokedexScreenData', [])

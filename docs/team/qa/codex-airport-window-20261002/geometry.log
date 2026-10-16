@@ -1,0 +1,15 @@
+ok   airport_overview
+ok   airport_aligned_entry_return
+ok   airport_left_wall_blocked
+ok   airport_right_wall_blocked
+ok   airport_old_lawn_save_resume
+ok   airport_old_lawn_east_edge_resume
+ok   airport_viewing_position_not_relocated
+ok   airport_north_walkway
+ok   airport_window_first_taxi
+ok   airport_window_return_visit
+ok   airport_flyover_after_geometry
+ok   airport_wrong_entry_negative_control
+ok   airport_regression_original_house
+ok   airport_regression_original_pokecenter
+14/14 cases passed

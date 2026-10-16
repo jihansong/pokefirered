@@ -754,5 +754,40 @@ void ListMenuLoadStdPalAt(u8 palOffset, u8 palId)
 
 void BlitMenuInfoIcon(u8 windowId, u8 iconId, u16 x, u16 y)
 {
-    BlitBitmapRectToWindow(windowId, &gMenuInfoElements_Gfx[sMenuInfoIcons[iconId].offset * TILE_SIZE_4BPP], 0, 0, 128, 128, x, y, sMenuInfoIcons[iconId].width, sMenuInfoIcons[iconId].height);
+    const struct MoveMenuInfoIcon *icon = &sMenuInfoIcons[iconId];
+    const u8 *pixels = &gMenuInfoElements_Gfx[icon->offset * TILE_SIZE_4BPP];
+    struct Window *window = &gWindows[windowId];
+    u32 tileWidth = window->window.width;
+    u32 row, column;
+
+    if ((x & 7) == 0
+     && (icon->width & 3) == 0
+     && x + icon->width <= tileWidth * 8
+     && y + icon->height <= window->window.height * 8
+     && (((u32)pixels | (u32)window->tileData) & 3) == 0)
+    {
+        for (row = 0; row < icon->height; row++)
+        {
+            const u8 *src = pixels + ((row >> 3) * 512) + ((row & 7) * 4);
+            u8 *dst = window->tileData
+                + ((((y + row) >> 3) * tileWidth + (x >> 3)) * 32)
+                + (((y + row) & 7) * 4);
+            for (column = 0; column + 8 <= icon->width; column += 8)
+            {
+                u32 value = *(const u32 *)src;
+                u32 mask = ((value | (value >> 1) | (value >> 2) | (value >> 3)) & 0x11111111) * 15;
+                *(u32 *)dst = (*(u32 *)dst & ~mask) | value;
+                src += 32;
+                dst += 32;
+            }
+            if (column < icon->width)
+            {
+                u32 value = *(const u16 *)src;
+                u32 mask = ((value | (value >> 1) | (value >> 2) | (value >> 3)) & 0x1111) * 15;
+                *(u16 *)dst = (*(u16 *)dst & ~mask) | value;
+            }
+        }
+        return;
+    }
+    BlitBitmapRectToWindow(windowId, pixels, 0, 0, 128, 128, x, y, icon->width, icon->height);
 }

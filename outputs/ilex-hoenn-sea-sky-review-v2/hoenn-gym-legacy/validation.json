@@ -1,0 +1,49 @@
+{
+  "pass": true,
+  "rom_sha256": "475088869b9937e4c1ed81ca920b8c2bb862ac44f1e2f50c9997cf9dadbfb02a",
+  "elf_sha256": "0fbf12e4c77a09628cdb1fb730965993dffadebf454f0cae0cca5b28c11f209b",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-sea-sky-gym-legacy",
+  "fixture": "temporary level-100 battle fixture; original PC/source SAV unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_story_not_entire_regions": true,
+  "legacy_badge_preserved_and_tm_retry": true,
+  "native_save": {
+    "counter_before": 60,
+    "counter_after": 61,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_HOENN_SEAFLOOR_CLEARED": false,
+      "FLAG_HOENN_RAYQUAZA_AWAKENED": false,
+      "FLAG_HOENN_BADGE07_GET": true,
+      "FLAG_HOENN_BADGE08_GET": true,
+      "FLAG_HOENN_GOT_TM03": true,
+      "FLAG_HOENN_SPACE_CENTER_SECURED": true,
+      "FLAG_HOENN_GOT_HM08_FROM_STEVEN": false
+    },
+    "trainers": {
+      "TRAINER_HOENN_ARCHIE": false,
+      "TRAINER_HOENN_JUAN_1": true
+    },
+    "hm08": 0,
+    "sha256": "b00f213731f211e2e9db7d8fefef7d3f74320b7001e8e967097d0ff43799122a"
+  },
+  "story_flags_after": {
+    "FLAG_HOENN_SEAFLOOR_CLEARED": false,
+    "FLAG_HOENN_RAYQUAZA_AWAKENED": false,
+    "FLAG_HOENN_BADGE07_GET": true,
+    "FLAG_HOENN_BADGE08_GET": true,
+    "FLAG_HOENN_GOT_TM03": true,
+    "FLAG_HOENN_SPACE_CENTER_SECURED": true,
+    "FLAG_HOENN_GOT_HM08_FROM_STEVEN": false
+  },
+  "original_saves_unchanged": true
+}

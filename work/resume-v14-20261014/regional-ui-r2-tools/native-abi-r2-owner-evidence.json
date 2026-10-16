@@ -1,0 +1,52 @@
+{
+  "status": "EXACT_STT_FILE_OWNER_CORRECTION",
+  "elf_sha256": "e625069ea9379ea3dc2f83e3014fb741a2e0b7383f41f6d56bc37fc0eae6f17b",
+  "source_owner_before": {
+    "sPokedexScreenData": "pokedex_screen.c",
+    "Task_PokedexScreen": "pokedex_screen.c",
+    "Task_DexScreen_NumericalOrder": "pokedex_screen.c",
+    "Task_DexScreen_ShowMonPage": "pokedex_screen.c",
+    "sText_DexTitleKanto": "pokedex_screen.c",
+    "sText_DexTitleJohto": "pokedex_screen.c",
+    "sText_DexTitleHoenn": "pokedex_screen.c",
+    "sText_DexOrderJohto": "pokedex_screen.c",
+    "sText_DexOrderHoenn": "pokedex_screen.c",
+    "sNumStartMenuItems": "start_menu.c",
+    "sStartMenuOrder": "start_menu.c",
+    "sStartMenuCursorPos": "start_menu.c",
+    "ListMenuDummyTask": "list_menu.c",
+    "sHoennToNationalOrder": "pokemon.c",
+    "sSpeciesToNationalPokedexNum": "pokemon.c",
+    "sJohtoToNationalOrder": "pokedex.c"
+  },
+  "actual_owner_after": {
+    "sPokedexScreenData": "pokedex_screen.o",
+    "Task_PokedexScreen": "pokedex_screen.o",
+    "Task_DexScreen_NumericalOrder": "pokedex_screen.o",
+    "Task_DexScreen_ShowMonPage": "pokedex_screen.o",
+    "sText_DexTitleKanto": "pokedex_screen.o",
+    "sText_DexTitleJohto": "pokedex_screen.o",
+    "sText_DexTitleHoenn": "pokedex_screen.o",
+    "sText_DexOrderJohto": "pokedex_screen.o",
+    "sText_DexOrderHoenn": "pokedex_screen.o",
+    "sNumStartMenuItems": "start_menu.o",
+    "sStartMenuOrder": "start_menu.o",
+    "sStartMenuCursorPos": "start_menu.o",
+    "ListMenuDummyTask": "list_menu.o",
+    "sHoennToNationalOrder": "pokemon.o",
+    "sSpeciesToNationalPokedexNum": "pokemon.o",
+    "sJohtoToNationalOrder": "pokedex.o"
+  },
+  "duplicate_policy": "still exactly one source-qualified row; no unqualified fallback",
+  "r1_preserved": true,
+  "native_started": false,
+  "root_observed_sPokedexScreenData": {
+    "value": 33795308,
+    "size": 4,
+    "section": 1,
+    "info": 1,
+    "translation_unit": "pokedex_screen.o",
+    "symbol_index": 44850
+  },
+  "new_probe_sha256": "5389bc06c82abb229865c29651063e03c999709b1a290e486941a2f9f99affac"
+}

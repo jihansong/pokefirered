@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/work/title_continuous_crackle_v2.py", line 48, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspaces/pokefirered/work/title_continuous_crackle_v2.py", line 40, in main
+    with wave.open(str(wav),'rb') as w:assert w.getnframes()==176400;wav_qa=audit(pcm(w.readframes(w.getnframes()),'h'))
+                                              ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

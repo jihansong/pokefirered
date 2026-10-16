@@ -1,0 +1,52 @@
+{
+  "dry_pass": true,
+  "applied": false,
+  "files": 18,
+  "changed": [
+    "src/follower_pikachu.c",
+    "include/follower_pikachu.h",
+    "src/field_control_avatar.c",
+    "src/quest_log_objects.c",
+    "data/specials.inc",
+    "data/maps/PalletTown/scripts.inc",
+    "data/event_scripts.s",
+    "include/constants/flags.h",
+    "include/constants/opponents.h",
+    "src/data/trainer_parties_hoenn.h",
+    "src/data/trainers_hoenn.h",
+    "data/maps/PalletTown/map.json",
+    "include/companion_misty.h",
+    "src/companion_misty.c",
+    "data/scripts/companion_misty.inc",
+    "src/data/trainer_parties_misty_companion.h",
+    "src/data/trainers_misty_companion.h",
+    "include/constants/opponents_misty_companion.h"
+  ],
+  "team_counts": [
+    3,
+    4,
+    5,
+    6,
+    6
+  ],
+  "team_levels": [
+    48,
+    52,
+    56,
+    60,
+    66
+  ],
+  "new_static_ewram_bytes": 1,
+  "save_fields_added": 0,
+  "same_priority80_task": true,
+  "pikachu_water_predicate_preserved": true,
+  "pallet_geometry_word": "0x3296",
+  "original_pallet_objects_preserved": true,
+  "trainer_offset_range": [
+    851,
+    855
+  ],
+  "trainer_flag_capacity_bits": 1024,
+  "native_executed": false,
+  "ally_battle_implemented": false
+}

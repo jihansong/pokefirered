@@ -1,0 +1,163 @@
+{
+  "pass": false,
+  "rom_sha256": "63904802b37dc5e922ec616361c0be3388f1030e5b2c1a0b7a2949f2a33c1f7c",
+  "RAM_writes": 0,
+  "direct_script_calls": 0,
+  "forced_battle_outcomes": 0,
+  "source_sav": "/workspaces/pokefirered/saves/pokemonthyl_v1.25-items99-iv2x.sav",
+  "cases": [
+    {
+      "case": "mudkip-party",
+      "capacity": "party",
+      "party_count": 6,
+      "PC_count": 120,
+      "receipt": true,
+      "gift": {
+        "species": 283,
+        "pid": 3300479535,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "2f52b9c47afb3aa9c7cfbec5c3caff0000000202c4c3c2bbc8ffff0096e5000055a9836d55a9836d55a9836d74a9ae6d55a9836d7681836d55ba064faa567c5255a9836d4ea8836dd2a9836d55ef836d"
+      },
+      "original_records_preserved": true,
+      "pass": true,
+      "repeat_no_duplicate": true,
+      "SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-v4/mudkip-party-native-QA-only.sav"
+      }
+    },
+    {
+      "case": "mudkip-pc",
+      "capacity": "pc",
+      "party_count": 6,
+      "PC_count": 121,
+      "receipt": true,
+      "gift": {
+        "species": 283,
+        "pid": 3300479535,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "2f52b9c47afb3aa9c7cfbec5c3caff0000000202c4c3c2bbc8ffff0096e5000055a9836d55a9836d55a9836d74a9ae6d55a9836d7681836d55ba064faa567c5255a9836d4ea8836dd2a9836d55ef836d"
+      },
+      "original_records_preserved": true,
+      "pass": true,
+      "repeat_no_duplicate": true,
+      "SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-v4/mudkip-pc-native-QA-only.sav"
+      }
+    },
+    {
+      "case": "mudkip-full",
+      "capacity": "full",
+      "party_count": 6,
+      "PC_count": 420,
+      "receipt": false,
+      "gift": null,
+      "original_records_preserved": true,
+      "pass": true
+    },
+    {
+      "case": "torchic-pc-late",
+      "capacity": "pc",
+      "party_count": 6,
+      "PC_count": 121,
+      "receipt": true,
+      "gift": {
+        "species": 280,
+        "pid": 19671907,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "632b2c017afb3aa9cec9ccbdc2c3bdff00000202c4c3c2bbc8ffff007cd2000019d0938ae62fe99719d016a801d116a89ed016a8199616a819d016a819d016a819d016a813d03ba819d016a83af816a8"
+      },
+      "original_records_preserved": true,
+      "pass": true,
+      "repeat_no_duplicate": true,
+      "SAVE_cold": {
+        "counter": [
+          67,
+          68
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/work/regional-starters-20261013/native-v4/torchic-pc-late-native-QA-only.sav"
+      }
+    }
+  ],
+  "battle_paths": [
+    {
+      "capture": true,
+      "outcome": 0,
+      "enemy": {
+        "species": 277,
+        "pid": 192345554,
+        "ot": 2839214970,
+        "IVs": [
+          31,
+          31,
+          31,
+          31,
+          31,
+          31
+        ],
+        "exp": 135,
+        "met_level": 5,
+        "item": 0,
+        "checksum_ok": true,
+        "egg": false,
+        "bad_egg": false,
+        "raw80": "d2f5760b7afb3aa9ceccbfbfbdc5c9ff50200202c4c3c2bbc8ffff006e030000bd0f4ca22f0e4ca2a8484ca2a80e4ca2a80e4ca2a80e4ca2a90e67a2a80e4ca28b104ca2a835c98057f1b39da80e4ca2"
+      }
+    }
+  ],
+  "error": "AssertionError()",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/work/regional-starters-20261013/native-v4.py\", line 116, in <module>\n    one('TREECKO','pc',capture=True)\n  File \"/workspaces/pokefirered/work/regional-starters-20261013/native-v4.py\", line 91, in one\n    interact(name,0 if capacity=='full' else 1,capture)\n  File \"/workspaces/pokefirered/work/regional-starters-20261013/native-v4.py\", line 73, in interact\n    assert name=='TREECKO' and not battle\n           ^^^^^^^^^^^^^^^\nAssertionError\n",
+  "protected_original_inputs_unchanged": true
+}

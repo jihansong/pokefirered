@@ -1,0 +1,137 @@
+{
+  "frames": 600,
+  "fps": 60,
+  "duration_seconds": 10,
+  "size": [
+    240,
+    160
+  ],
+  "pikachu_scale_other_scenes_relative_to_initial_preview": 1.5,
+  "preview_label": "\ubc29\uc804 \ud45c\uc815 3\ucef7 \uc218\uc815 \u2014 \ucc38\uace0 \uc6d0\ud654\uc758 \uc218\ub3d9 \ud3b8\uc9d1",
+  "meeting_visible_height_px": 38,
+  "meeting_foot_anchor_viewport_px": [
+    183,
+    83
+  ],
+  "opening_specific_character_art_included": "three derivative expression edits in strike only",
+  "new_original_poses": false,
+  "viewport": [
+    0,
+    32,
+    240,
+    96
+  ],
+  "distinct_frames": 527,
+  "identical_adjacent_frames": [
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    25,
+    29,
+    30,
+    32,
+    34,
+    35,
+    37,
+    40,
+    42,
+    43,
+    45,
+    48,
+    52,
+    53,
+    56,
+    58,
+    63,
+    65,
+    107,
+    109,
+    112,
+    114,
+    115,
+    117,
+    119,
+    482,
+    488,
+    493,
+    494,
+    501,
+    502,
+    507,
+    510,
+    511,
+    517,
+    519,
+    520,
+    524,
+    526,
+    527,
+    530,
+    535,
+    536,
+    538,
+    542,
+    543,
+    544,
+    551,
+    555,
+    557,
+    560,
+    561,
+    563,
+    569,
+    570,
+    574,
+    577,
+    580,
+    582
+  ],
+  "audio": "none / visual study",
+  "rom_integrated": false,
+  "gba_palette_vram_oam_budget_validated": false,
+  "keyframes": [
+    {
+      "frame": 18,
+      "name": "01-forest"
+    },
+    {
+      "frame": 67,
+      "name": "02-meeting"
+    },
+    {
+      "frame": 93,
+      "name": "03-rejection"
+    },
+    {
+      "frame": 184,
+      "name": "04-chase"
+    },
+    {
+      "frame": 312,
+      "name": "05-protection"
+    },
+    {
+      "frame": 375,
+      "name": "06-leap"
+    },
+    {
+      "frame": 415,
+      "name": "07-thunderbolt"
+    },
+    {
+      "frame": 534,
+      "name": "08-clear-sky"
+    }
+  ]
+}

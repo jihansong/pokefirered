@@ -5,6 +5,11 @@ EventScript_GiveGiftMonLv5::
 	givemon VAR_TEMP_1, 5
 	goto EventScript_GiftMonGiven
 
+@ Special entry still returns the common TRUE/FALSE gift contract.
+EventScript_GivePerfectRegionalStarterLv5::
+	special ScriptGivePerfectRegionalStarter
+	goto EventScript_GiftMonGiven
+
 EventScript_GiveGiftMonLv25::
 	givemon VAR_TEMP_1, 25
 EventScript_GiftMonGiven::

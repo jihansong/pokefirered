@@ -1,0 +1,21 @@
+{
+  "utc": "20261004T114449Z",
+  "branch": "hoenn-z3",
+  "head": "658baf740cff568cba7f3300f688b8a626e6f5fc",
+  "before": {
+    "data/maps/VermilionCity/map.json": "b90b1fd927132267de088e89a68985ba37bbe485e8e277fd6f65b66ffee889fa",
+    "data/maps/VermilionCity/scripts.inc": "94582cd2fd5eaee4b2476dfbcf9314236bf4272668e7902e5de94fde57c86034",
+    "data/maps/SSAnne_Exterior/map.json": "b61c2239d951708715a265802796df7c18adaeff8a277e90db1fe341d7c1c543",
+    "data/maps/SSAnne_Exterior/scripts.inc": "c48ec72f06a9f3805ba67a85413bc378dde4eb5047d177a5d24504703fce9cd3",
+    "data/layouts/SSAnne_Exterior/map.bin": "41affa56fb4673824704a7e31e8006ec73c6b44b28f50daa3bb6c487ee0d76bc"
+  },
+  "after": {
+    "data/maps/VermilionCity/map.json": "25d805e34ca5df23e33d9d01c344e1bd946ce8bfa1f124f46a00292eefdd6ff6",
+    "data/maps/VermilionCity/scripts.inc": "33301b4e60d551253e6bf0ca2dcee661278566392fd73e0af8148994e3fc9839",
+    "data/maps/SSAnne_Exterior/map.json": "cc4ea58d4be21921d2cf3f9b4922348a9e716f55bc47e8f4cef7f2f3da1a7d8d",
+    "data/maps/SSAnne_Exterior/scripts.inc": "3f7f1e057bd9c1c807ac2fc0dc3164e4144bb7acc860384536d042ec096b274b",
+    "data/layouts/SSAnne_Exterior/map.bin": "bddb07cfea64ca1b1c15e4bd00aee98dc135456f8639f437a612e84b1e06157a"
+  },
+  "save_layout_changes": false,
+  "requires_runtime_qa": true
+}

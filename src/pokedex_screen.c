@@ -80,6 +80,10 @@ struct PokedexScreenData
     u16 numOwnedKanto;
     u16 numSeenNational;
     u16 numOwnedNational;
+    u8 regionalDex;
+    bool8 showNationalNumbers;
+    u16 regionalNumberByNational[NATIONAL_DEX_COUNT + 1];
+    struct ListMenuItem modeSelectItems[20];
 };
 
 struct PokedexScreenWindowGfx
@@ -892,6 +896,63 @@ void CB2_PokedexScreen(void)
     }
 }
 
+static const u8 sText_DexJohto[] = _("JOHTO");
+static const u8 sText_DexHoenn[] = _("HOENN");
+static const u8 sText_DexOrderJohto[] = _("NUMERICAL MODE: JOHTO");
+static const u8 sText_DexOrderHoenn[] = _("NUMERICAL MODE: HOENN");
+static const u8 sText_DexTitleKanto[] = _("KANTO POKéDEX - 151");
+static const u8 sText_DexTitleJohto[] = _("JOHTO POKéDEX - 251");
+static const u8 sText_DexTitleHoenn[] = _("HOENN POKéDEX - 202");
+
+static const u8 *const sRegionalDexNames[] =
+{
+    gText_Kanto, sText_DexJohto, sText_DexHoenn
+};
+static const u8 *const sRegionalDexOrderNames[] =
+{
+    gText_NumericalModeKanto, sText_DexOrderJohto, sText_DexOrderHoenn
+};
+static const u8 *const sRegionalDexTitles[] =
+{
+    sText_DexTitleKanto, sText_DexTitleJohto, sText_DexTitleHoenn
+};
+
+static void DexScreen_InitRegionalView(void)
+{
+    u16 i, nationalNo;
+
+    sPokedexScreenData->regionalDex = GetStoryRegionalDex();
+    sPokedexScreenData->showNationalNumbers = FALSE;
+    for (i = 0; i <= NATIONAL_DEX_COUNT; i++)
+        sPokedexScreenData->regionalNumberByNational[i] = 0;
+    for (i = 1; i <= GetRegionalDexCount(sPokedexScreenData->regionalDex); i++)
+    {
+        nationalNo = RegionalDexToNational(sPokedexScreenData->regionalDex, i);
+        if (nationalNo > 0 && nationalNo <= NATIONAL_DEX_COUNT)
+            sPokedexScreenData->regionalNumberByNational[nationalNo] = i;
+    }
+}
+
+static bool8 DexScreen_IsRegionalMon(u16 nationalNo)
+{
+    return nationalNo > 0 && nationalNo <= NATIONAL_DEX_COUNT
+        && sPokedexScreenData->regionalNumberByNational[nationalNo] != 0;
+}
+
+static void DexScreen_SetRegionalMenuLabels(struct ListMenuTemplate *template)
+{
+    u16 i;
+
+    for (i = 0; i < template->totalItems; i++)
+        sPokedexScreenData->modeSelectItems[i] = template->items[i];
+    sPokedexScreenData->modeSelectItems[1].label =
+        sRegionalDexOrderNames[sPokedexScreenData->regionalDex];
+    template->items = sPokedexScreenData->modeSelectItems;
+}
+
+STATIC_ASSERT(ARRAY_COUNT(sListMenuItems_NatDexModeSelect) <= 20, RegionalDexNatMenuSize);
+STATIC_ASSERT(ARRAY_COUNT(sListMenuItems_KantoDexModeSelect) <= 20, RegionalDexMenuSize);
+
 void DexScreen_LoadResources(void)
 {
     bool8 natDex;
@@ -923,6 +984,7 @@ void DexScreen_LoadResources(void)
     sPokedexScreenData = Alloc(sizeof(struct PokedexScreenData));
     *sPokedexScreenData = sDexScreenDataInitialState;
     sPokedexScreenData->taskId = taskId;
+    DexScreen_InitRegionalView();
     sPokedexScreenData->listItems = Alloc(NATIONAL_DEX_COUNT * sizeof(struct ListMenuItem));
     sPokedexScreenData->numSeenNational = DexScreen_GetDexCount(FLAG_GET_SEEN, 1);
     sPokedexScreenData->numOwnedNational = DexScreen_GetDexCount(FLAG_GET_CAUGHT, 1);
@@ -1006,6 +1068,7 @@ static void Task_PokedexScreen(u8 taskId)
     switch (sPokedexScreenData->state)
     {
     case 0:
+        sPokedexScreenData->showNationalNumbers = FALSE;
         sPokedexScreenData->unlockedCategories = 0;
         for (i = 0; i < 9; i++)
             sPokedexScreenData->unlockedCategories |= (DexScreen_IsCategoryUnlocked(i) << i);
@@ -1083,6 +1146,7 @@ static void Task_PokedexScreen(u8 taskId)
             case DEX_MODE(NUMERICAL_NATIONAL):
                 RemoveScrollIndicatorArrowPair(sPokedexScreenData->scrollArrowsTaskId);
                 sPokedexScreenData->dexOrderId = sPokedexScreenData->modeSelectInput - DEX_CATEGORY_COUNT;
+                sPokedexScreenData->showNationalNumbers = sPokedexScreenData->dexOrderId == DEX_ORDER_NUMERICAL_NATIONAL;
                 BeginNormalPaletteFade(~0x8000, 0, 0, 16, RGB_WHITEALPHA);
                 sPokedexScreenData->state = 9;
                 break;
@@ -1151,15 +1215,16 @@ static void DexScreen_InitGfxForTopMenu(void)
     {
         listMenuTemplate = sListMenuTemplate_NatDexModeSelect;
         listMenuTemplate.windowId = sPokedexScreenData->modeSelectWindowId;
+        DexScreen_SetRegionalMenuLabels(&listMenuTemplate);
         sPokedexScreenData->modeSelectListMenuId = ListMenuInit(&listMenuTemplate, sPokedexScreenData->modeSelectCursorPos, sPokedexScreenData->modeSelectItemsAbove);
         FillWindowPixelBuffer(sPokedexScreenData->dexCountsWindowId, PIXEL_FILL(0));
         DexScreen_AddTextPrinterParameterized(sPokedexScreenData->dexCountsWindowId, FONT_SMALL, gText_Seen, 0, 2, 0);
-        DexScreen_AddTextPrinterParameterized(sPokedexScreenData->dexCountsWindowId, FONT_SMALL, gText_Kanto, 8, 13, 0);
+        DexScreen_AddTextPrinterParameterized(sPokedexScreenData->dexCountsWindowId, FONT_SMALL, sRegionalDexNames[sPokedexScreenData->regionalDex], 8, 13, 0);
         DexScreen_PrintNum3RightAlign(sPokedexScreenData->dexCountsWindowId, 0, sPokedexScreenData->numSeenKanto, 52, 13, 2);
         DexScreen_AddTextPrinterParameterized(sPokedexScreenData->dexCountsWindowId, FONT_SMALL, gText_National, 8, 24, 0);
         DexScreen_PrintNum3RightAlign(sPokedexScreenData->dexCountsWindowId, 0, sPokedexScreenData->numSeenNational, 52, 24, 2);
         DexScreen_AddTextPrinterParameterized(sPokedexScreenData->dexCountsWindowId, FONT_SMALL, gText_Owned, 0, 37, 0);
-        DexScreen_AddTextPrinterParameterized(sPokedexScreenData->dexCountsWindowId, FONT_SMALL, gText_Kanto, 8, 48, 0);
+        DexScreen_AddTextPrinterParameterized(sPokedexScreenData->dexCountsWindowId, FONT_SMALL, sRegionalDexNames[sPokedexScreenData->regionalDex], 8, 48, 0);
         DexScreen_PrintNum3RightAlign(sPokedexScreenData->dexCountsWindowId, 0, sPokedexScreenData->numOwnedKanto, 52, 48, 2);
         DexScreen_AddTextPrinterParameterized(sPokedexScreenData->dexCountsWindowId, FONT_SMALL, gText_National, 8, 59, 0);
         DexScreen_PrintNum3RightAlign(sPokedexScreenData->dexCountsWindowId, 0, sPokedexScreenData->numOwnedNational, 52, 59, 2);
@@ -1168,6 +1233,7 @@ static void DexScreen_InitGfxForTopMenu(void)
     {
         listMenuTemplate = sListMenuTemplate_KantoDexModeSelect;
         listMenuTemplate.windowId = sPokedexScreenData->modeSelectWindowId;
+        DexScreen_SetRegionalMenuLabels(&listMenuTemplate);
         sPokedexScreenData->modeSelectListMenuId = ListMenuInit(&listMenuTemplate, sPokedexScreenData->modeSelectCursorPos, sPokedexScreenData->modeSelectItemsAbove);
         FillWindowPixelBuffer(sPokedexScreenData->dexCountsWindowId, PIXEL_FILL(0));
         DexScreen_AddTextPrinterParameterized(sPokedexScreenData->dexCountsWindowId, FONT_NORMAL_COPY_1, gText_Seen, 0, 9, 0);
@@ -1292,7 +1358,8 @@ static void DexScreen_InitGfxForNumericalOrderList(void)
     template.totalItems = sPokedexScreenData->orderedDexCount;
     DexScreen_InitListMenuForOrderedList(&template, sPokedexScreenData->dexOrderId);
     FillWindowPixelBuffer(0, PIXEL_FILL(15));
-    DexScreen_PrintStringWithAlignment(gText_PokemonListNoColor, TEXT_CENTER);
+    DexScreen_PrintStringWithAlignment(sPokedexScreenData->showNationalNumbers
+        ? gText_NumericalModeNational : sRegionalDexTitles[sPokedexScreenData->regionalDex], TEXT_CENTER);
     FillWindowPixelBuffer(1, PIXEL_FILL(15));
     DexScreen_PrintControlInfo(gText_PickOKExit);
     CopyWindowToVram(0, COPYWIN_GFX);
@@ -1387,7 +1454,6 @@ static void DexScreen_CreateCharacteristicListMenu(void)
 
 static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
 {
-    s32 max_n = IsNationalPokedexEnabled() ? NATIONAL_DEX_COUNT : KANTO_DEX_COUNT;
     u16 ndex_num;
     u16 ret = NATIONAL_DEX_NONE;
     s32 i;
@@ -1398,15 +1464,15 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
     {
     default:
     case DEX_ORDER_NUMERICAL_KANTO:
-        for (i = 0; i < KANTO_DEX_COUNT; i++)
+        for (i = 0; i < GetRegionalDexCount(sPokedexScreenData->regionalDex); i++)
         {
-            ndex_num = i + 1;
+            ndex_num = RegionalDexToNational(sPokedexScreenData->regionalDex, i + 1);
             seen = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_SEEN, FALSE);
             caught = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_CAUGHT, FALSE);
             if (seen)
             {
                 sPokedexScreenData->listItems[i].label = gSpeciesNames[NationalPokedexNumToSpecies(ndex_num)];
-                ret = ndex_num;
+                ret = i + 1;
             }
             else
             {
@@ -1419,7 +1485,7 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
         for (i = 0; i < NUM_SPECIES - 1; i++)
         {
             ndex_num = gPokedexOrder_Alphabetical[i];
-            if (ndex_num <= max_n)
+            if (DexScreen_IsRegionalMon(ndex_num))
             {
                 seen = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_SEEN, FALSE);
                 caught = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_CAUGHT, FALSE);
@@ -1436,7 +1502,7 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
         for (i = 0; i < NUM_SPECIES - 1; i++)
         {
             ndex_num = SpeciesToNationalPokedexNum(gPokedexOrder_Type[i]);
-            if (ndex_num <= max_n)
+            if (DexScreen_IsRegionalMon(ndex_num))
             {
                 seen = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_SEEN, FALSE);
                 caught = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_CAUGHT, FALSE);
@@ -1453,7 +1519,7 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
         for (i = 0; i < NATIONAL_DEX_COUNT; i++)
         {
             ndex_num = gPokedexOrder_Weight[i];
-            if (ndex_num <= max_n)
+            if (DexScreen_IsRegionalMon(ndex_num))
             {
                 seen = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_SEEN, FALSE);
                 caught = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_CAUGHT, FALSE);
@@ -1470,7 +1536,7 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
         for (i = 0; i < NATIONAL_DEX_COUNT; i++)
         {
             ndex_num = gPokedexOrder_Height[i];
-            if (ndex_num <= max_n)
+            if (DexScreen_IsRegionalMon(ndex_num))
             {
                 seen = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_SEEN, FALSE);
                 caught = DexScreen_GetSetPokedexFlag(ndex_num, FLAG_GET_CAUGHT, FALSE);
@@ -1492,7 +1558,7 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
             if (seen)
             {
                 sPokedexScreenData->listItems[i].label = gSpeciesNames[NationalPokedexNumToSpecies(ndex_num)];
-                ret = ndex_num;
+                ret = i + 1;
             }
             else
             {
@@ -1501,6 +1567,13 @@ static u16 DexScreen_CountMonsInOrderedList(u8 orderIdx)
             sPokedexScreenData->listItems[i].index = (caught << 17) + (seen << 16) + NationalPokedexNumToSpecies(ndex_num);
         }
         break;
+    }
+    // An empty regional search still needs one non-selectable list row.
+    if (ret == 0)
+    {
+        sPokedexScreenData->listItems[0].label = gText_5Dashes;
+        sPokedexScreenData->listItems[0].index = SPECIES_NONE;
+        return 1;
     }
     return ret;
 }
@@ -1568,6 +1641,8 @@ static void ItemPrintFunc_OrderedListMenu(u8 windowId, u32 itemId, u8 y)
     bool8 seen = (itemId >> 16) & 1;  // not used but required to match
     bool8 caught = (itemId >> 17) & 1;
     u8 type1;
+    if (species == SPECIES_NONE)
+        return;
     DexScreen_PrintMonDexNo(sPokedexScreenData->numericalOrderWindowId, FONT_SMALL, species, 12, y);
     if (caught)
     {
@@ -2234,6 +2309,8 @@ static void DexScreen_LoadMonPicInWindow(u8 windowId, u16 species, u16 paletteOf
 static void DexScreen_PrintMonDexNo(u8 windowId, u8 fontId, u16 species, u8 x, u8 y)
 {
     u16 dexNum = SpeciesToNationalPokedexNum(species);
+    if (!sPokedexScreenData->showNationalNumbers && DexScreen_IsRegionalMon(dexNum))
+        dexNum = sPokedexScreenData->regionalNumberByNational[dexNum];
     DexScreen_AddTextPrinterParameterized(windowId, fontId, gText_PokedexNo, x, y, 0);
     DexScreen_PrintNum3LeadingZeroes(windowId, fontId, dexNum, x + 9, y, 0);
 }
@@ -2306,10 +2383,10 @@ static u16 DexScreen_GetDexCount(u8 caseId, bool8 whichDex)
 
     switch (whichDex)
     {
-    case 0: // Kanto
-        for (i = 0; i < KANTO_DEX_COUNT; i++)
+    case 0: // Active regional dex
+        for (i = 1; i <= GetRegionalDexCount(sPokedexScreenData->regionalDex); i++)
         {
-            if (DexScreen_GetSetPokedexFlag(i + 1, caseId, FALSE))
+            if (DexScreen_GetSetPokedexFlag(RegionalDexToNational(sPokedexScreenData->regionalDex, i), caseId, FALSE))
                 count++;
         }
         break;
@@ -3028,6 +3105,199 @@ u8 RemoveDexPageWindows(void)
     return 0;
 }
 
+
+static const u8 sText_JohtoArea[] = _("JOHTO AREA");
+static const u8 sText_JohtoRoute29[] = _("ROUTE 29");
+static const u8 sText_JohtoAirstrip[] = _("AIRSTRIP");
+static const u8 sText_JohtoNewBark[] = _("NEW BARK");
+
+static const u8 sText_JohtoCherrygrove[] = _("CHERRYGROVE");
+static const u8 sText_JohtoRoute30[] = _("ROUTE 30");
+static const u8 sText_JohtoViolet[] = _("VIOLET");
+static const u8 sText_JohtoRoute31[] = _("ROUTE 31");
+static const u8 sText_JohtoR29[] = _("29");
+static const u8 sText_JohtoR30[] = _("30");
+static const u8 sText_JohtoR31[] = _("31");
+static const u8 sText_JohtoR32[] = _("32");
+static const u8 sText_JohtoR33[] = _("33");
+static const u8 sText_JohtoGold[] = _("GOLD");
+static const u8 sText_JohtoVio[] = _("VIO");
+static const u8 sText_JohtoR34[] = _("34");
+static const u8 sText_JohtoEcr[] = _("ECR");
+static const u8 sText_JohtoR35[] = _("35");
+static const u8 sText_JohtoPark[] = _("PARK");
+static const u8 sText_JohtoR36[] = _("36");
+static const u8 sText_JohtoR37[] = _("37");
+static const u8 sText_JohtoBurn[] = _("BURN");
+static const u8 sText_JohtoOliv[] = _("OLIV");
+static const u8 sText_JohtoLight[] = _("LAMP");
+static const u8 sText_JohtoCian[] = _("CIAN");
+static const u8 sText_JohtoMah[] = _("MAHO");
+static const u8 sText_JohtoRage[] = _("RAGE");
+static const u8 sText_JohtoMortar[] = _("MT");
+static const u8 sText_JohtoR42[] = _("42");
+static const u8 sText_JohtoR43[] = _("43");
+static const u8 sText_JohtoHQ[] = _("HQ");
+static const u8 sText_JohtoBlack[] = _("BLACK");
+static const u8 sText_JohtoIce[] = _("ICE");
+static const u8 sText_JohtoDen[] = _("DEN");
+static const u8 sText_JohtoR44[] = _("44");
+static const u8 sText_JohtoR27[] = _("27");
+static const u8 sText_JohtoTohjo[] = _("TOHJO");
+static const u8 sText_JohtoR26[] = _("26");
+static const u8 sText_JohtoRoad[] = _("ROAD");
+static const u8 sText_JohtoLeague[] = _("LEAG");
+static const u8 sText_JohtoR38[] = _("38");
+static const u8 sText_JohtoR39[] = _("39");
+static const u8 sText_JohtoR40[] = _("40");
+static const u8 sText_JohtoR41[] = _("41");
+static const u8 sText_JohtoIlex[] = _("ILEX");
+static const u8 sText_JohtoAza[] = _("AZA");
+static const u8 sText_JohtoCG[] = _("CG");
+static const u8 sText_JohtoAirShort[] = _("AIR");
+static const u8 sText_JohtoUnion[] = _("UNION");
+static const u8 sText_JohtoAzalea[] = _("AZALEA");
+static const u8 sText_JohtoWell[] = _("WELL");
+static const u8 sText_JohtoCherryShort[] = _("CHERRY");
+// A schematic of the three connected entry maps, not the whole Johto region.
+// These use the existing area-map palette: frame 2, light 3, white 5, land 6.
+static void DexScreen_DrawJohtoEntryArea(u8 windowId)
+{
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(2));
+    FillWindowPixelRect(windowId, PIXEL_FILL(6), 3, 3, 122, 66);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 59, 61, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 60, 62, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 64, 61, 39, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 65, 62, 37, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 104, 61, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 105, 62, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 59, 55, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 60, 56, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 59, 37, 4, 16);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 60, 38, 2, 14);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 44, 31, 19, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 45, 32, 17, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 39, 31, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 40, 32, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 39, 37, 4, 22);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 40, 38, 2, 20);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 39, 61, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 40, 62, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 34, 61, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 35, 62, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 29, 61, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 30, 62, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 29, 55, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 30, 56, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 19, 61, 9, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 20, 62, 7, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 19, 37, 4, 22);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 20, 38, 2, 20);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 19, 31, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 20, 32, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 19, 25, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 20, 26, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 19, 19, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 20, 20, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 24, 19, 14, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 25, 20, 12, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 34, 13, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 35, 14, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 34, 7, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 35, 8, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 34, 1, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 35, 2, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 19, 7, 14, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 20, 8, 12, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 14, 7, 4, 16);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 15, 8, 2, 14);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 14, 25, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 15, 26, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 9, 25, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 10, 26, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 14, 31, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 15, 32, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 14, 37, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 15, 38, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 9, 37, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 10, 38, 2, 2);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoEcr, 40, 5, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoBurn, 40, 0, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoPark, 23, 14, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoR35, 23, 22, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoR36, 23, 21, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoR37, 39, 14, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoGold, 24, 34, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoVio, 42, 35, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoR31, 50, 26, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoR34, 24, 47, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoR32, 45, 48, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoR30, 68, 48, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoCG, 68, 54, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoIlex, 4, 61, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoAza, 27, 61, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoUnion, 40, 61, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoR29, 81, 54, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoAirShort, 60, 61, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoNewBark, 84, 61, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoWell, 24, 49, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoOliv, 1, 22, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoLight, 1, 29, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoCian, 1, 39, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoR38, 17, 0, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoR39, 1, 10, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoR40, 16, 29, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoR41, 16, 36, 0);
+    // MAHOGANY_DEX_DIAGRAM_V1
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 39, 7, 34, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 40, 8, 32, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 54, 1, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 55, 2, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 74, 7, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 75, 8, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 74, 1, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 75, 2, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 79, 1, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 80, 2, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 79, 13, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 80, 14, 2, 2);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoMah, 75, 9, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoRage, 82, 0, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoMortar, 56, 0, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoR42, 57, 9, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoR43, 75, 0, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoHQ, 80, 15, 0);
+    // BLACKTHORN_DEX_DIAGRAM_V1
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 79, 7, 24, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 80, 8, 22, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 104, 7, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 105, 8, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 109, 7, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 110, 8, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 109, 1, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 110, 2, 2, 2);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoBlack, 94, 18, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoIce, 104, 9, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoDen, 102, 0, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoR44, 84, 9, 0);
+    // JOHTO_LEAGUE_DEX_DIAGRAM_V1
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 89, 49, 19, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 90, 50, 17, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 109, 49, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 110, 50, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 114, 37, 4, 16);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 115, 38, 2, 14);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 114, 31, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 115, 32, 2, 2);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), 114, 25, 4, 4);
+    FillWindowPixelRect(windowId, PIXEL_FILL(5), 115, 26, 2, 2);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoR27, 83, 53, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoTohjo, 96, 53, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoR26, 107, 40, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoRoad, 102, 34, 0);
+    DexScreen_AddTextPrinterParameterized(windowId, FONT_SMALL, sText_JohtoLeague, 101, 27, 0);
+}
+
 u8 DexScreen_DrawMonAreaPage(void)
 {
     int i;
@@ -3079,6 +3349,8 @@ u8 DexScreen_DrawMonAreaPage(void)
     {
         if (!(regions & (1 << DEX_AREA_REGION_KANTO)) && (regions & (1 << DEX_AREA_REGION_HOENN)))
             sPokedexScreenData->areaRegion = DEX_AREA_REGION_HOENN;
+        else if (!(regions & (1 << DEX_AREA_REGION_KANTO)) && (regions & (1 << DEX_AREA_REGION_JOHTO)))
+            sPokedexScreenData->areaRegion = DEX_AREA_REGION_JOHTO;
         else
             sPokedexScreenData->areaRegion = DEX_AREA_REGION_KANTO;
     }
@@ -3093,7 +3365,14 @@ u8 DexScreen_DrawMonAreaPage(void)
         if ((sPokedexScreenData->unlockedSeviiAreas >> i) & 1)
             kantoMapVoff = 0;
 
-    if (sPokedexScreenData->areaRegion == DEX_AREA_REGION_HOENN)
+    if (sPokedexScreenData->areaRegion == DEX_AREA_REGION_JOHTO)
+    {
+        kantoMapVoff = HOENN_AREA_MAP_TOP - 4;
+        sPokedexScreenData->windowIds[0] = AddWindow(&sWindowTemplate_AreaMap_Hoenn);
+        DexScreen_DrawJohtoEntryArea(sPokedexScreenData->windowIds[0]);
+        PutWindowTilemap(sPokedexScreenData->windowIds[0]);
+    }
+    else if (sPokedexScreenData->areaRegion == DEX_AREA_REGION_HOENN)
     {
         kantoMapVoff = HOENN_AREA_MAP_TOP - 4; // moves the AREA label and the markers
         sPokedexScreenData->windowIds[0] = AddWindow(&sWindowTemplate_AreaMap_Hoenn);
@@ -3142,7 +3421,7 @@ u8 DexScreen_DrawMonAreaPage(void)
     // Print "Kanto area" / "Hoenn area"
     FillWindowPixelBuffer(sPokedexScreenData->windowIds[10], PIXEL_FILL(0));
     {
-        const u8 *areaText = sPokedexScreenData->areaRegion == DEX_AREA_REGION_HOENN ? gText_HoennArea : gText_KantoArea;
+        const u8 *areaText = sPokedexScreenData->areaRegion == DEX_AREA_REGION_JOHTO ? sText_JohtoArea : (sPokedexScreenData->areaRegion == DEX_AREA_REGION_HOENN ? gText_HoennArea : gText_KantoArea);
         s32 strWidth = GetStringWidth(FONT_SMALL, areaText, 0);
         DexScreen_AddTextPrinterParameterized(sPokedexScreenData->windowIds[10], FONT_SMALL, areaText, (sWindowTemplate_AreaMap_Area.width * 8 - strWidth) / 2, 4, 0);
     }
@@ -3203,7 +3482,7 @@ u8 DexScreen_DrawMonAreaPage(void)
     if (GetNumPokedexAreaMarkers(sPokedexScreenData->areaMarkersTaskId) == 0)
     {
         // No markers, display "Area Unknown"
-        s32 mapWidth = sPokedexScreenData->areaRegion == DEX_AREA_REGION_HOENN ? sWindowTemplate_AreaMap_Hoenn.width * 8 : 96;
+        s32 mapWidth = sPokedexScreenData->areaRegion != DEX_AREA_REGION_KANTO ? sWindowTemplate_AreaMap_Hoenn.width * 8 : 96;
         BlitBitmapRectToWindow(sPokedexScreenData->windowIds[0], (void *)sBlitTiles_WideEllipse, 0, 0, 88, 16, (mapWidth - 88) / 2, 28, 88, 16);
         {
             s32 strWidth = GetStringWidth(FONT_SMALL, gText_AreaUnknown, 0);
@@ -3239,17 +3518,16 @@ u8 DexScreen_DestroyAreaScreenResources(void)
     return 0;
 }
 
-// SELECT on the area screen flips between the Kanto and Hoenn maps (L and R
+// SELECT cycles Kanto, Hoenn and the Johto entry map (L and R
 // open the help system in the default button mode)
 static bool8 DexScreen_TrySwitchAreaRegion(void)
 {
     if (!JOY_NEW(SELECT_BUTTON))
         return FALSE;
     DexScreen_DestroyAreaScreenResources();
-    if (sPokedexScreenData->areaRegion == DEX_AREA_REGION_HOENN)
+    sPokedexScreenData->areaRegion++;
+    if (sPokedexScreenData->areaRegion >= DEX_AREA_REGION_COUNT)
         sPokedexScreenData->areaRegion = DEX_AREA_REGION_KANTO;
-    else
-        sPokedexScreenData->areaRegion = DEX_AREA_REGION_HOENN;
     PlaySE(SE_SELECT);
     DexScreen_DrawMonAreaPage();
     CopyBgTilemapBufferToVram(3);
@@ -3261,11 +3539,11 @@ static bool8 DexScreen_TrySwitchAreaRegion(void)
 
 static int DexScreen_CanShowMonInDex(u16 species)
 {
-    if (IsNationalPokedexEnabled() == TRUE)
-        return TRUE;
-    if (SpeciesToNationalPokedexNum(species) <= KANTO_DEX_COUNT)
-        return TRUE;
-    return FALSE;
+    u16 nationalNo = SpeciesToNationalPokedexNum(species);
+
+    if (sPokedexScreenData->showNationalNumbers)
+        return nationalNo > 0 && nationalNo <= NATIONAL_DEX_COUNT;
+    return DexScreen_IsRegionalMon(nationalNo);
 }
 
 static u8 DexScreen_IsPageUnlocked(u8 categoryNum, u8 pageNum)
@@ -3400,13 +3678,17 @@ void DexScreen_InputHandler_StartToCry(void)
 
 u8 DexScreen_RegisterMonToPokedex(u16 species)
 {
+    u16 regionalNo = NationalToRegionalDex(GetStoryRegionalDex(), SpeciesToNationalPokedexNum(species));
+
     DexScreen_GetSetPokedexFlag(species, FLAG_SET_SEEN, TRUE);
     DexScreen_GetSetPokedexFlag(species, FLAG_SET_CAUGHT, TRUE);
 
-    if (!IsNationalPokedexEnabled() && SpeciesToNationalPokedexNum(species) > KANTO_DEX_COUNT)
+    if (!IsNationalPokedexEnabled() && regionalNo == 0)
         return CreateTask(Task_DexScreen_RegisterNonKantoMonBeforeNationalDex, 0);
 
     DexScreen_LoadResources();
+    // A non-regional catch can still be registered in the unlocked national dex.
+    sPokedexScreenData->showNationalNumbers = regionalNo == 0;
     gTasks[sPokedexScreenData->taskId].func = Task_DexScreen_RegisterMonToPokedex;
     DexScreen_LookUpCategoryBySpecies(species);
 

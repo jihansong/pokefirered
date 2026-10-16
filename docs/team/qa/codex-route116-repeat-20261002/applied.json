@@ -1,0 +1,16 @@
+{
+  "changed": {
+    "tools/hoenn_import/patches/Route116.json": "7aef9dee8a0a4fcaf58e2a5bb4b9fdb2dfda74dd70ff76190701496bf9d48faa",
+    "tools/hoenn_import/patches/Route116.scripts.inc": "4b849f7320258fc78e4fc503fd6e750c8c4a22f515760c97da95fa6d9d82c725",
+    "tools/hoenn_import/patches/Route116.text.inc": "5cae5dd4d7ffe1ae54166d2b44f90a49981a56473165e187fd63988b41226c69",
+    "data/maps/Route116/map.json": "87357fa5dbf320ce677184ac0c4d0dffde33be3738d4517e0898b498edd799f4",
+    "data/maps/Route116/scripts.inc": "ef836704c16caa8a37b00bfb9143ce62fcb58d92dc62032d9d08d6ddd89b967d",
+    "data/maps/Route116/text.inc": "bdd9200eaed652ec3ec1001f326429aa92e41bbb621960ec6896395320eb0ef0"
+  },
+  "case_count": 9,
+  "employee_xy": [
+    46,
+    11
+  ],
+  "final_idempotent": true
+}

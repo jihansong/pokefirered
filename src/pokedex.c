@@ -1,6 +1,61 @@
 #include "global.h"
 #include "pokedex.h"
 #include "pokedex_screen.h"
+#include "event_data.h"
+#include "constants/flags_johto_story.h"
+#include "data/pokemon/johto_dex_order.h"
+
+u8 GetStoryRegionalDex(void)
+{
+    // Use only existing story progress; no new save fields or flag writes.
+    if (FlagGet(FLAG_HOENN_BIRCH_RESCUED) || FlagGet(FLAG_HOENN_MET_STERN))
+        return STORY_DEX_HOENN;
+    if (FlagGet(FLAG_JOHTO_ARRIVAL_BRIEFED) || FlagGet(FLAG_JOHTO_MET_LAB_ASSISTANT))
+        return STORY_DEX_JOHTO;
+    return STORY_DEX_KANTO;
+}
+
+u16 GetRegionalDexCount(u8 region)
+{
+    switch (region)
+    {
+    case STORY_DEX_JOHTO:
+        return JOHTO_DEX_COUNT;
+    case STORY_DEX_HOENN:
+        return HOENN_DEX_COUNT;
+    default:
+        return KANTO_DEX_COUNT;
+    }
+}
+
+u16 RegionalDexToNational(u8 region, u16 regionalNo)
+{
+    if (regionalNo == 0 || regionalNo > GetRegionalDexCount(region))
+        return NATIONAL_DEX_NONE;
+
+    switch (region)
+    {
+    case STORY_DEX_JOHTO:
+        return sJohtoToNationalOrder[regionalNo - 1];
+    case STORY_DEX_HOENN:
+        return HoennToNationalOrder(regionalNo);
+    default:
+        return regionalNo;
+    }
+}
+
+u16 NationalToRegionalDex(u8 region, u16 nationalNo)
+{
+    u16 i;
+
+    if (nationalNo == 0 || nationalNo > NATIONAL_DEX_COUNT)
+        return 0;
+    for (i = 1; i <= GetRegionalDexCount(region); i++)
+        if (RegionalDexToNational(region, i) == nationalNo)
+            return i;
+    return 0;
+}
+
 
 // Unused
 const u8 *GetPokedexCategoryName(u16 dexNum)

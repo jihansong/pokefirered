@@ -1,0 +1,9 @@
+{
+  "bg_overrides": [
+    {
+      "x": 32,
+      "y": 93,
+      "script": "Route110_EventScript_Board"
+    }
+  ]
+}

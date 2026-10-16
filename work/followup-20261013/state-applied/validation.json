@@ -1,0 +1,61 @@
+{
+  "pass": true,
+  "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+  "save_sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+  "ram_writes": 0,
+  "scope": "same ROM and same Flash; not old DELTA state",
+  "same_instance": {
+    "saved": {
+      "frame": 782,
+      "rng": 2092733757
+    },
+    "advanced": {
+      "frame": 902,
+      "rng": 38024213
+    },
+    "restored": {
+      "frame": 782,
+      "rng": 2092733757
+    },
+    "load_return": 1
+  },
+  "fresh_instance": {
+    "before": {
+      "frame": 873,
+      "rng": 745114190
+    },
+    "restored": {
+      "frame": 782,
+      "rng": 2092733757
+    },
+    "load_return": 1,
+    "flash_identical": true,
+    "checks": [
+      {
+        "additional_frames": 0,
+        "marker": {
+          "frame": 782,
+          "rng": 2092733757
+        },
+        "payload_preserved": true
+      },
+      {
+        "additional_frames": 60,
+        "marker": {
+          "frame": 842,
+          "rng": 2340102409
+        },
+        "payload_preserved": true
+      },
+      {
+        "additional_frames": 180,
+        "marker": {
+          "frame": 1022,
+          "rng": 2063753197
+        },
+        "payload_preserved": true
+      }
+    ]
+  },
+  "inputs_unchanged": true
+}

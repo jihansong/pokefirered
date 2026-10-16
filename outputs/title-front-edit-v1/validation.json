@@ -1,0 +1,68 @@
+{
+  "native": [
+    240,
+    160
+  ],
+  "character_native": [
+    86,
+    90
+  ],
+  "position": [
+    152,
+    56
+  ],
+  "opaque_pixels": 3079,
+  "opaque_colors": 15,
+  "rgb555_channels": true,
+  "protected_regions": [
+    {
+      "name": "logo and top",
+      "x": 0,
+      "y": 0,
+      "w": 240,
+      "h": 33,
+      "changed": 0
+    },
+    {
+      "name": "logo+TM",
+      "x": 0,
+      "y": 33,
+      "w": 169,
+      "h": 30,
+      "changed": 0
+    },
+    {
+      "name": "subtitle",
+      "x": 0,
+      "y": 63,
+      "w": 153,
+      "h": 48,
+      "changed": 0
+    },
+    {
+      "name": "press start",
+      "x": 0,
+      "y": 111,
+      "w": 153,
+      "h": 39,
+      "changed": 0
+    },
+    {
+      "name": "footer",
+      "x": 0,
+      "y": 150,
+      "w": 240,
+      "h": 10,
+      "changed": 0
+    }
+  ],
+  "character_clipped_pixels": 0,
+  "character_overlaps_text": 0,
+  "character_altered_in_composite": 0,
+  "character_edge_pixels": 0,
+  "sources_unchanged": true,
+  "visual_review": "pending",
+  "user_approved": false,
+  "gif_created": false,
+  "rom_integrated": false
+}

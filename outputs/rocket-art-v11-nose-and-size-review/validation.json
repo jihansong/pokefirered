@@ -1,0 +1,71 @@
+{
+  "new_artwork": false,
+  "game_applied": false,
+  "source_png_sha256": "210bd8b8c196cb83ce25fb35bc8affc0869743bd4a760b4be9fc90047a9ea438",
+  "source_changed_pixels": 1,
+  "nose_pixel": {
+    "x": 57,
+    "y": 19,
+    "old": 6,
+    "new": 7
+  },
+  "packed_changed_bytes": [
+    [
+      748,
+      102,
+      118
+    ]
+  ],
+  "palette_unchanged": true,
+  "source_silhouette_and_proportions_unchanged": true,
+  "approved_96": {
+    "height": 93,
+    "bbox": [
+      1,
+      2,
+      95,
+      95
+    ]
+  },
+  "display64": {
+    "height": 60,
+    "bbox": [
+      1,
+      3,
+      62,
+      63
+    ],
+    "nose_pixel": [
+      37,
+      14
+    ],
+    "method": "Uniform nearest indexed fit from approved96 master; display derivative only"
+  },
+  "reference_adult_height": 60,
+  "artifacts": {
+    "jessie-james-v11-96.gbapal": {
+      "bytes": 32,
+      "sha256": "02951ab3bc6bd04dbce501258a13e92e3ba934728bb8249514b41238f835b792"
+    },
+    "jessie-james-v11-game-size-64.4bpp": {
+      "bytes": 2048,
+      "sha256": "5b036768fc2712765eab94952b2757a7783b953062ef440f26eb7e9e6f38d2b1"
+    },
+    "jessie-james-v11-96.4bpp": {
+      "bytes": 4608,
+      "sha256": "16bf9132df6734149b60783f7ac7d5ec7f6df69747ca5de230146560e4463df8"
+    },
+    "jessie-james-v11-game-size-64.png": {
+      "bytes": 1064,
+      "sha256": "1a98a46f4f3a15392a14431799fba58e3263c6032865ee7675022f02058eaba1"
+    },
+    "jessie-james-v11-96.png": {
+      "bytes": 1849,
+      "sha256": "f4b9184a6b87c70b5479a642c0ec511688d174e7135270d7dd589ac94dbfed17"
+    },
+    "jessie-james-v11-game-size-64.gbapal": {
+      "bytes": 32,
+      "sha256": "02951ab3bc6bd04dbce501258a13e92e3ba934728bb8249514b41238f835b792"
+    }
+  }
+}

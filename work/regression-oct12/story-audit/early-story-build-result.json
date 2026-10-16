@@ -1,0 +1,24 @@
+{
+  "exit_code": 0,
+  "seconds": 6.86,
+  "candidate_artifacts": {
+    "pokeblackthornlgqa.gba": {
+      "sha256": "b46fb32bb67f89d5a48dfbfdf41ddd4977cc4a2d60dbbe6c72e1bc0281c5606d",
+      "bytes": 33554432
+    },
+    "pokeblackthornlgqa.elf": {
+      "sha256": "a87031fdbe0db8b2c429a471dfb394e0de9c5c6078cb3bfe03cb3c177fdb279d",
+      "bytes": 34036184
+    },
+    "pokeblackthornlgqa.sym": {
+      "sha256": "feb48a2076560f7b57f550a56fa1c68a064f7b6e868eb6e2cb8d2ea929799f87",
+      "bytes": 3312709
+    },
+    "pokeblackthornlgqa.map": {
+      "sha256": "2f9797b0de14e6e7f7180c8b9bcc69bee5ef8bb80e6f490a2125b0eb941f3922",
+      "bytes": 3335120
+    }
+  },
+  "main_artifacts_unchanged": true,
+  "original_all_saves_unchanged": true
+}

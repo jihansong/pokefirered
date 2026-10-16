@@ -1,0 +1,206 @@
+PetalburgCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PetalburgCity_Gym_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, PetalburgCity_Gym_OnFrame
+	.byte 0
+
+PetalburgCity_Gym_EventScript_H0::
+	trainerbattle_single TRAINER_HOENN_MARY, PetalburgCity_Gym_Text_H0_0, PetalburgCity_Gym_Text_H0_1
+	msgbox PetalburgCity_Gym_Text_H0_2, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_Gym_EventScript_H1::
+	trainerbattle_single TRAINER_HOENN_RANDALL, PetalburgCity_Gym_Text_H1_0, PetalburgCity_Gym_Text_H1_1
+	msgbox PetalburgCity_Gym_Text_H1_2, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_Gym_EventScript_H2::
+	trainerbattle_single TRAINER_HOENN_PARKER, PetalburgCity_Gym_Text_H2_0, PetalburgCity_Gym_Text_H2_1
+	msgbox PetalburgCity_Gym_Text_H2_2, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_Gym_EventScript_H3::
+	trainerbattle_single TRAINER_HOENN_ALEXIA, PetalburgCity_Gym_Text_H3_0, PetalburgCity_Gym_Text_H3_1
+	msgbox PetalburgCity_Gym_Text_H3_2, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_Gym_EventScript_H4::
+	trainerbattle_single TRAINER_HOENN_GEORGE, PetalburgCity_Gym_Text_H4_0, PetalburgCity_Gym_Text_H4_1
+	msgbox PetalburgCity_Gym_Text_H4_2, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_Gym_EventScript_H5::
+	trainerbattle_single TRAINER_HOENN_JODY, PetalburgCity_Gym_Text_H5_0, PetalburgCity_Gym_Text_H5_1
+	msgbox PetalburgCity_Gym_Text_H5_2, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_Gym_EventScript_H6::
+	trainerbattle_single TRAINER_HOENN_BERKE, PetalburgCity_Gym_Text_H6_0, PetalburgCity_Gym_Text_H6_1
+	msgbox PetalburgCity_Gym_Text_H6_2, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_Gym_EventScript_H7::
+	msgbox PetalburgCity_Gym_Text_H7, MSGBOX_SIGN
+	end
+
+PetalburgCity_Gym_EventScript_H8::
+	msgbox PetalburgCity_Gym_Text_H8, MSGBOX_SIGN
+	end
+
+PetalburgCity_Gym_EventScript_H9::
+	msgbox PetalburgCity_Gym_Text_H9, MSGBOX_SIGN
+	end
+
+PetalburgCity_Gym_EventScript_H10::
+	msgbox PetalburgCity_Gym_Text_H10, MSGBOX_SIGN
+	end
+
+PetalburgCity_Gym_EventScript_H11::
+	msgbox PetalburgCity_Gym_Text_H11, MSGBOX_SIGN
+	end
+
+PetalburgCity_Gym_EventScript_H12::
+	msgbox PetalburgCity_Gym_Text_H12, MSGBOX_SIGN
+	end
+
+PetalburgCity_Gym_EventScript_H13::
+	msgbox PetalburgCity_Gym_Text_H13, MSGBOX_SIGN
+	end
+
+PetalburgCity_Gym_EventScript_H14::
+	msgbox PetalburgCity_Gym_Text_H14, MSGBOX_SIGN
+	end
+
+PetalburgCity_Gym_EventScript_H15::
+	msgbox PetalburgCity_Gym_Text_H15, MSGBOX_SIGN
+	end
+
+PetalburgCity_Gym_EventScript_H16::
+	msgbox PetalburgCity_Gym_Text_H16, MSGBOX_SIGN
+	end
+
+PetalburgCity_Gym_EventScript_H17::
+	msgbox PetalburgCity_Gym_Text_H17, MSGBOX_SIGN
+	end
+
+PetalburgCity_Gym_EventScript_H18::
+	msgbox PetalburgCity_Gym_Text_H18, MSGBOX_SIGN
+	end
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
+@ v0.11.0 E4/E5 (docs/v0.11.0-plan.md 4.4-4.5): NORMAN waits in the lobby
+@ (no battle before v0.12.0). The first talk brings WALLY in; the catching
+@ demo plays on ROUTE 102 (Route102_EventScript_WallyDemo) and the scene ends
+@ back here, in the lobby, on this map's frame script. VAR_HOENN_SCENE_WALLY:
+@ 0 before, 1 while the scene runs, 2 after.
+.equ LOCALID_PETALBURG_GYM_WALLY, 9
+
+PetalburgCity_Gym_OnTransition::
+	special HoennZ3_SetupObjects
+	end
+
+PetalburgCity_Gym_OnFrame::
+	map_script_2 VAR_HOENN_SCENE_WALLY, 1, PetalburgCity_Gym_EventScript_WallyBack
+	.2byte 0
+
+PetalburgCity_Gym_EventScript_Norman::
+	lock
+	faceplayer
+	goto_if_eq VAR_HOENN_SCENE_WALLY, 0, PetalburgCity_Gym_EventScript_NormanFirst
+	msgbox PetalburgCity_Gym_Text_NormanAfter
+	call PetalburgCity_Gym_EventScript_NormanBadges
+	release
+	end
+
+PetalburgCity_Gym_EventScript_NormanBadges::
+	specialvar VAR_RESULT, CountHoennBadges
+	switch VAR_RESULT
+	case 0, PetalburgCity_Gym_EventScript_NormanBadges0
+	case 1, PetalburgCity_Gym_EventScript_NormanBadges1
+	case 2, PetalburgCity_Gym_EventScript_NormanBadges2
+	msgbox PetalburgCity_Gym_Text_NormanBadges3
+	return
+
+PetalburgCity_Gym_EventScript_NormanBadges0::
+	msgbox PetalburgCity_Gym_Text_NormanBadges0
+	return
+
+PetalburgCity_Gym_EventScript_NormanBadges1::
+	msgbox PetalburgCity_Gym_Text_NormanBadges1
+	return
+
+PetalburgCity_Gym_EventScript_NormanBadges2::
+	msgbox PetalburgCity_Gym_Text_NormanBadges2
+	return
+
+PetalburgCity_Gym_EventScript_NormanPikachu::
+	msgbox PetalburgCity_Gym_Text_NormanPikachu
+	return
+
+PetalburgCity_Gym_EventScript_WallyPikachu::
+	msgbox PetalburgCity_Gym_Text_WallyPikachu
+	return
+
+PetalburgCity_Gym_EventScript_NormanFirst::
+	msgbox PetalburgCity_Gym_Text_NormanFirst
+	call PetalburgCity_Gym_EventScript_NormanBadges
+	specialvar VAR_RESULT, GetStarterPikachuPartySlotForScript
+	copyvar VAR_0x8008, VAR_RESULT
+	call_if_ne VAR_0x8008, PARTY_SIZE, PetalburgCity_Gym_EventScript_NormanPikachu
+	closemessage
+	playbgm MUS_RS_FOLLOW_ME, FALSE
+	clearflag FLAG_HIDE_HOENN_WALLY_PETALBURG
+	addobject LOCALID_PETALBURG_GYM_WALLY
+	applymovement LOCALID_PETALBURG_GYM_WALLY, PetalburgCity_Gym_Movement_WallyEnters
+	waitmovement 0
+	msgbox PetalburgCity_Gym_Text_WallyExcuseMe
+	msgbox PetalburgCity_Gym_Text_NormanHelloWally
+	msgbox PetalburgCity_Gym_Text_WallyWantsPokemon
+	msgbox PetalburgCity_Gym_Text_NormanLendsZigzagoon
+	call_if_ne VAR_0x8008, PARTY_SIZE, PetalburgCity_Gym_EventScript_WallyPikachu
+	closemessage
+	setvar VAR_HOENN_SCENE_WALLY, 1
+	fadescreen FADE_TO_BLACK
+	warp MAP_ROUTE102, 11, 5
+	waitstate
+	release
+	end
+
+@ Back from ROUTE 102 with the RALTS: WALLY thanks the player and leaves
+@ for VERDANTURF. (With VAR 1 and no RALTS, the demo is played again.)
+PetalburgCity_Gym_EventScript_WallyBack::
+	lockall
+	goto_if_unset FLAG_HOENN_WALLY_CAUGHT_RALTS, PetalburgCity_Gym_EventScript_WallyDemoAgain
+	playbgm MUS_RS_FOLLOW_ME, FALSE
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	msgbox PetalburgCity_Gym_Text_WallyThanks
+	closemessage
+	setvar VAR_HOENN_SCENE_WALLY, 2
+	applymovement LOCALID_PETALBURG_GYM_WALLY, PetalburgCity_Gym_Movement_WallyLeaves
+	waitmovement 0
+	playse SE_EXIT
+	removeobject LOCALID_PETALBURG_GYM_WALLY
+	setflag FLAG_HIDE_HOENN_WALLY_PETALBURG
+	clearflag FLAG_HIDE_HOENN_WALLY_VERDANTURF
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	releaseall
+	end
+
+PetalburgCity_Gym_EventScript_WallyDemoAgain::
+	fadescreen FADE_TO_BLACK
+	warp MAP_ROUTE102, 11, 5
+	waitstate
+	releaseall
+	end
+
+@ From the door (4,110) up to the player's side
+PetalburgCity_Gym_Movement_WallyEnters:
+	walk_up
+	walk_in_place_faster_up
+	step_end
+
+PetalburgCity_Gym_Movement_WallyLeaves:
+	walk_down
+	step_end
+@ END PATCH

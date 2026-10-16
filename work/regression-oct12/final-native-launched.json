@@ -1,0 +1,22 @@
+[
+  {
+    "script": "native-professor-elm-final.py",
+    "pid": 43670,
+    "out": "/workspaces/pokefirered/work/regression-oct12/final-elm-native"
+  },
+  {
+    "script": "native-misty-pallet-final.py",
+    "pid": 43671,
+    "out": "/workspaces/pokefirered/work/regression-oct12/final-pallet-native"
+  },
+  {
+    "script": "native-misty-airport-final.py",
+    "pid": 43672,
+    "out": "/workspaces/pokefirered/work/regression-oct12/final-misty-native"
+  },
+  {
+    "script": "native-johto-walk-final.py",
+    "pid": 43673,
+    "out": "/workspaces/pokefirered/work/regression-oct12/final-johto-walk"
+  }
+]

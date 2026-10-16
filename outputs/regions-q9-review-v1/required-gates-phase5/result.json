@@ -1,0 +1,137 @@
+{
+  "candidate_sha256": "799ef72e82454fdf895550551bc0ef33a5253dfa92fc4c734996b4a1682ea096",
+  "checks": [
+    {
+      "check": "map-integrity",
+      "exit_code": 0,
+      "seconds": 5.81,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/required-gates-phase5/map-integrity.log",
+      "command": [
+        "python3",
+        "tools/check_map_integrity.py",
+        "--no-upstream"
+      ]
+    },
+    {
+      "check": "event-wiring",
+      "exit_code": 1,
+      "seconds": 4.66,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/required-gates-phase5/event-wiring.log",
+      "command": [
+        "python3",
+        "tools/check_event_wiring.py"
+      ]
+    },
+    {
+      "check": "text-width",
+      "exit_code": 0,
+      "seconds": 0.07,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/required-gates-phase5/text-width.log",
+      "command": [
+        "python3",
+        "tools/qa/textwidth.py",
+        "data/maps/JohtoRoute27",
+        "data/maps/TohjoFalls",
+        "data/maps/JohtoRoute26",
+        "data/maps/JohtoVictoryRoad_1F",
+        "data/maps/JohtoIndigoPlateau",
+        "data/maps/JohtoLeague_PokemonCenter_1F",
+        "data/maps/JohtoLeague_WillsRoom",
+        "data/maps/JohtoLeague_KogasRoom",
+        "data/maps/JohtoLeague_BrunosRoom",
+        "data/maps/JohtoLeague_KarensRoom",
+        "data/maps/JohtoLeague_LancesRoom",
+        "data/maps/JohtoLeague_HallOfFame",
+        "data/maps/PalletTown",
+        "data/maps/Route110",
+        "data/maps/Route119",
+        "data/scripts/companion_misty.inc",
+        "data/scripts/follower_pikachu.inc"
+      ]
+    },
+    {
+      "check": "text-audit",
+      "exit_code": 1,
+      "seconds": 2.34,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/required-gates-phase5/text-audit.log",
+      "command": [
+        "python3",
+        "tools/qa/textaudit.py",
+        "--fail",
+        "--map",
+        "JohtoRoute27",
+        "--map",
+        "TohjoFalls",
+        "--map",
+        "JohtoRoute26",
+        "--map",
+        "JohtoVictoryRoad_1F",
+        "--map",
+        "JohtoIndigoPlateau",
+        "--map",
+        "JohtoLeague_PokemonCenter_1F",
+        "--map",
+        "JohtoLeague_WillsRoom",
+        "--map",
+        "JohtoLeague_KogasRoom",
+        "--map",
+        "JohtoLeague_BrunosRoom",
+        "--map",
+        "JohtoLeague_KarensRoom",
+        "--map",
+        "JohtoLeague_LancesRoom",
+        "--map",
+        "JohtoLeague_HallOfFame",
+        "--map",
+        "PalletTown",
+        "--map",
+        "Route110",
+        "--map",
+        "Route119"
+      ]
+    },
+    {
+      "check": "dexcheck",
+      "exit_code": 0,
+      "seconds": 3.55,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/required-gates-phase5/dexcheck.log",
+      "command": [
+        "python3",
+        "tools/qa/dexcheck.py",
+        "--version",
+        "leafgreen",
+        "--hoenn",
+        "open"
+      ]
+    },
+    {
+      "check": "save-compat-all",
+      "exit_code": 0,
+      "seconds": 17.69,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/required-gates-phase5/save-compat-all.log",
+      "command": [
+        "bash",
+        "tools/qa/savetest_all.sh",
+        "--rom",
+        "/workspaces/pokefirered/outputs/regions-q9-review-v1/pokemonthyl-q9-phase5.gba"
+      ]
+    },
+    {
+      "check": "save-compat-user-v11-v12",
+      "exit_code": 0,
+      "seconds": 5.52,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/required-gates-phase5/save-compat-user-v11-v12.log",
+      "command": [
+        "python3",
+        "tools/qa/savetest.py",
+        "saves/pokemonthyl_v1.1.sav:q8",
+        "saves/pokemonthyl_v1.2.sav:q8",
+        "--rom",
+        "/workspaces/pokefirered/outputs/regions-q9-review-v1/pokemonthyl-q9-phase5.gba",
+        "--base",
+        "/workspaces/pokefirered/outputs/regions-q9-review-v1/required-gates-phase5/qa-base-q8"
+      ]
+    }
+  ],
+  "originals_unchanged": true
+}

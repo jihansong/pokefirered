@@ -1,0 +1,26 @@
+{
+  "source": "actual mGBA full-game frames; no synthetic interpolation",
+  "ROM_sha256": "78db87489b0dadb03a6066af7c0ffad9f784b9d8d400c5cb6c0e22eedf043bd0",
+  "frame_numbers": [
+    756,
+    759,
+    762,
+    765,
+    771,
+    774,
+    777,
+    780,
+    783
+  ],
+  "durations_ms": [
+    50,
+    50,
+    50,
+    100,
+    50,
+    50,
+    50,
+    50,
+    500
+  ]
+}

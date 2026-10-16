@@ -1,0 +1,329 @@
+{
+  "version": 1,
+  "files": {
+    "include/companion_misty.h": "#ifndef GUARD_COMPANION_MISTY_H\n#define GUARD_COMPANION_MISTY_H\n#define LOCALID_MISTY_COMPANION 253\nstruct ObjectEvent *GetMistyCompanionObject(void);\nbool8 IsMistyCompanionObject(struct ObjectEvent *objectEvent);\nvoid MistyCompanion_Update(void);\nvoid MistyCompanion_OnMapLoad(void);\nvoid MistyCompanion_OnPlayerMovement(u8 walkAction);\nvoid MistyCompanion_OnObjectMovement(struct ObjectEvent *objectEvent, u8 movementActionId);\nvoid HideMistyCompanion(void);\nvoid ShowMistyCompanion(void);\nu16 CanMistyJoin(void);\nvoid MistyPreparePalletVisit(void);\nvoid MistyJoin(void);\nu16 MistyGetGrowthStage(void);\nextern const u8 EventScript_TalkToMistyCompanion[];\n#endif\n",
+    "src/companion_misty.c": "#include \"global.h\"\n#include \"companion_misty.h\"\n#include \"event_data.h\"\n#include \"event_object_movement.h\"\n#include \"field_player_avatar.h\"\n#include \"follower_pikachu.h\"\n#include \"link.h\"\n#include \"quest_log.h\"\n#include \"constants/event_object_movement.h\"\n#include \"constants/event_objects.h\"\n#include \"constants/flags.h\"\n#include \"constants/flags_johto_story.h\"\n#include \"constants/flags_hoenn_story.h\"\n#include \"constants/quest_log.h\"\n#include \"constants/vars.h\"\n#include \"constants/maps.h\"\n#include \"constants/map_event_ids.h\"\n\n// Only transient script visibility is new RAM. Story/growth use existing flags.\nstatic EWRAM_DATA bool8 sMistyHiddenByScript = FALSE;\n\nstruct ObjectEvent *GetMistyCompanionObject(void)\n{\n    u8 i;\n    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)\n        if (gObjectEvents[i].active && gObjectEvents[i].localId == LOCALID_MISTY_COMPANION)\n            return &gObjectEvents[i];\n    return NULL;\n}\n\nbool8 IsMistyCompanionObject(struct ObjectEvent *objectEvent)\n{\n    return objectEvent->active && objectEvent->localId == LOCALID_MISTY_COMPANION;\n}\n\nstatic bool8 ShouldMistyExist(void)\n{\n    if (!FlagGet(FLAG_MISTY_COMPANION_JOINED) || QL_IS_PLAYBACK_STATE || InUnionRoom() == TRUE)\n        return FALSE;\n    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE\n                            | PLAYER_AVATAR_FLAG_SURFING | PLAYER_AVATAR_FLAG_UNDERWATER))\n        return FALSE;\n    return TRUE;\n}\n\nstatic void HideMistyUnderPlayer(struct ObjectEvent *misty)\n{\n    struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];\n    ObjectEventClearHeldMovementIfActive(misty);\n    MoveObjectEventToMapCoords(misty, player->currentCoords.x, player->currentCoords.y);\n    misty->invisible = TRUE;\n}\n\nstatic bool8 SameTile(struct ObjectEvent *a, struct ObjectEvent *b)\n{\n    return a->currentCoords.x == b->currentCoords.x && a->currentCoords.y == b->currentCoords.y;\n}\n\nstatic bool8 SpriteFeetSeparated(struct ObjectEvent *a, struct ObjectEvent *b)\n{\n    struct Sprite *sa, *sb;\n    s16 dx, dy;\n    if (a->spriteId >= MAX_SPRITES || b->spriteId >= MAX_SPRITES)\n        return FALSE;\n    sa = &gSprites[a->spriteId]; sb = &gSprites[b->spriteId];\n    dx = sa->x + sa->x2 - sb->x - sb->x2;\n    dy = sa->y + sa->y2 - sa->centerToCornerVecY - sb->y - sb->y2 + sb->centerToCornerVecY;\n    if (dx < 0) dx = -dx;\n    if (dy < 0) dy = -dy;\n    return dx + dy >= 16;\n}\n\nstatic bool8 CanRevealMisty(struct ObjectEvent *misty)\n{\n    struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];\n    struct ObjectEvent *pika = GetFollowerPikachuObject();\n    u8 i;\n    if (SameTile(misty, player) || !SpriteFeetSeparated(misty, player))\n        return FALSE;\n    // PIKACHU may still be emerging: wait for it to leave this tile as well.\n    if (pika != NULL && (SameTile(misty, pika) || !SpriteFeetSeparated(misty, pika)))\n        return FALSE;\n    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)\n        if (gObjectEvents[i].active && !gObjectEvents[i].invisible\n            && &gObjectEvents[i] != misty && SameTile(misty, &gObjectEvents[i]))\n            return FALSE;\n    return TRUE;\n}\n\n// Continue does not necessarily run OnTransition. Old saves have unused HIDE=0.\n// Synchronize only this new NPC; never re-arm the automatic YES/NO frame trigger here.\nstatic void SyncPalletMistyVisibility(void)\n{\n    bool8 hidden;\n    u8 i;\n    if (QL_IS_PLAYBACK_STATE || gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_PALLET_TOWN)\n        || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_PALLET_TOWN)) return;\n    hidden = FlagGet(FLAG_MISTY_COMPANION_JOINED) || !CanMistyJoin();\n    if (!hidden)\n    {\n        if (FlagGet(FLAG_HIDE_MISTY_PALLET))\n        {\n            FlagClear(FLAG_HIDE_MISTY_PALLET);\n            // Continue can omit OnTransition and already skipped this hidden NPC.\n            // Spawn only the newly revealed static NPC, once on this flag edge.\n            TrySpawnObjectEvent(LOCALID_PALLET_MISTY,\n                gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);\n        }\n        return;\n    }\n    if (!FlagGet(FLAG_HIDE_MISTY_PALLET)) FlagSet(FLAG_HIDE_MISTY_PALLET);\n    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)\n        if (gObjectEvents[i].active && gObjectEvents[i].localId == LOCALID_PALLET_MISTY)\n            RemoveObjectEventWithoutFlag(&gObjectEvents[i]);\n}\n\nvoid MistyCompanion_Update(void)\n{\n    struct ObjectEvent *misty = GetMistyCompanionObject();\n    struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];\n    u8 id;\n    SyncPalletMistyVisibility();\n    if (!ShouldMistyExist())\n    {\n        if (misty != NULL) RemoveObjectEventWithoutFlag(misty);\n        return;\n    }\n    if (misty == NULL)\n    {\n        id = SpawnSpecialObjectEventParameterized(OBJ_EVENT_GFX_MISTY, MOVEMENT_TYPE_NONE,\n                  LOCALID_MISTY_COMPANION, player->currentCoords.x, player->currentCoords.y,\n                  player->currentElevation);\n        if (id >= OBJECT_EVENTS_COUNT) return;\n        misty = &gObjectEvents[id];\n        ObjectEventTurn(misty, player->facingDirection);\n        misty->invisible = TRUE;\n    }\n    // Reversing through the two followers must not leave two visible sprites overlapping.\n    misty->invisible = sMistyHiddenByScript || !CanRevealMisty(misty);\n}\n\nvoid MistyCompanion_OnMapLoad(void)\n{\n    sMistyHiddenByScript = FALSE;\n    MistyCompanion_Update();\n}\n\nvoid HideMistyCompanion(void)\n{\n    sMistyHiddenByScript = TRUE;\n    MistyCompanion_Update();\n}\n\nvoid ShowMistyCompanion(void)\n{\n    struct ObjectEvent *misty = GetMistyCompanionObject();\n    sMistyHiddenByScript = FALSE;\n    if (misty != NULL) HideMistyUnderPlayer(misty);\n    MistyCompanion_Update();\n}\n\nstatic u8 DirectionFromDelta(s16 dx, s16 dy)\n{\n    if (dx > 0) return DIR_EAST;\n    if (dx < 0) return DIR_WEST;\n    if (dy > 0) return DIR_SOUTH;\n    return DIR_NORTH;\n}\n\nvoid MistyCompanion_OnPlayerMovement(u8 walkAction)\n{\n    struct ObjectEvent *misty = GetMistyCompanionObject();\n    struct ObjectEvent *leader = GetFollowerPikachuObject();\n    s16 dx, dy, distance;\n    u8 direction;\n    if (misty == NULL || sMistyHiddenByScript || !ShouldMistyExist()) return;\n    if (leader == NULL) leader = &gObjectEvents[gPlayerAvatar.objectEventId];\n    // Called before PIKACHU takes its new step: its current tile is the trail target.\n    if (ObjectEventIsMovementOverridden(misty) && !ObjectEventClearHeldMovementIfFinished(misty))\n    {\n        ObjectEventClearHeldMovementIfActive(misty);\n        MoveObjectEventToMapCoords(misty, misty->currentCoords.x, misty->currentCoords.y);\n    }\n    dx = leader->currentCoords.x - misty->currentCoords.x;\n    dy = leader->currentCoords.y - misty->currentCoords.y;\n    distance = (dx < 0 ? -dx : dx) + (dy < 0 ? -dy : dy);\n    if (distance == 0) return;\n    direction = DirectionFromDelta(dx, dy);\n    if (distance == 1) ObjectEventSetHeldMovement(misty, walkAction + direction - 1);\n    else if (distance == 2 && (dx == 0 || dy == 0))\n        ObjectEventSetHeldMovement(misty, GetJump2MovementAction(direction));\n    else HideMistyUnderPlayer(misty);\n}\n\nvoid MistyCompanion_OnObjectMovement(struct ObjectEvent *objectEvent, u8 movementActionId)\n{\n    struct ObjectEvent *misty = GetMistyCompanionObject();\n    s16 x, y;\n    u8 direction;\n    if (misty == NULL || misty->invisible || objectEvent->isPlayer\n        || IsMistyCompanionObject(objectEvent) || IsFollowerPikachuObject(objectEvent)) return;\n    direction = FollowerPikachu_GetMovingActionDirection(movementActionId);\n    if (direction == DIR_NONE) return;\n    x = objectEvent->currentCoords.x; y = objectEvent->currentCoords.y;\n    MoveCoords(direction, &x, &y);\n    if (x != misty->currentCoords.x || y != misty->currentCoords.y)\n    {\n        if (movementActionId < MOVEMENT_ACTION_JUMP_2_DOWN || movementActionId >= MOVEMENT_ACTION_JUMP_2_DOWN + 4) return;\n        MoveCoords(direction, &x, &y);\n        if (x != misty->currentCoords.x || y != misty->currentCoords.y) return;\n    }\n    HideMistyUnderPlayer(misty);\n}\n\nu16 CanMistyJoin(void)\n{\n    u8 i;\n    if (!FlagGet(FLAG_SYS_GAME_CLEAR)) return FALSE;\n    // A Hoenn-only Hall of Fame must not substitute for the Kanto challenge.\n    for (i = 0; i < 8; i++)\n        if (!FlagGet(FLAG_BADGE01_GET + i)) return FALSE;\n    return TRUE;\n}\n\nvoid MistyPreparePalletVisit(void)\n{\n    VarSet(VAR_TEMP_7, FALSE);\n    if (CanMistyJoin() && !FlagGet(FLAG_MISTY_COMPANION_JOINED))\n    {\n        FlagClear(FLAG_HIDE_MISTY_PALLET);\n        // Oak's existing National-Dex scene keeps priority and its original script.\n        if (VarGet(VAR_MAP_SCENE_PALLET_TOWN_OAK) != 2) VarSet(VAR_TEMP_7, TRUE);\n    }\n    else FlagSet(FLAG_HIDE_MISTY_PALLET);\n}\n\nvoid MistyJoin(void)\n{\n    if (!CanMistyJoin()) return;\n    FlagSet(FLAG_MISTY_COMPANION_JOINED);\n    FlagSet(FLAG_HIDE_MISTY_PALLET);\n    ShowMistyCompanion();\n}\n\nu16 MistyGetGrowthStage(void)\n{\n    if (FlagGet(FLAG_HOENN_BADGE07_GET)) return 4;\n    if (FlagGet(FLAG_HOENN_BIRCH_RESCUED)) return 3;\n    if (FlagGet(FLAG_JOHTO_BADGE06_GET)) return 2;\n    if (FlagGet(FLAG_JOHTO_BADGE02_GET)) return 1;\n    return 0;\n}\n",
+    "data/scripts/companion_misty.inc": "PalletTown_EventScript_MistyJoin::\n    setvar VAR_TEMP_7, FALSE\n    lockall\n    specialvar VAR_RESULT, CanMistyJoin\n    goto_if_eq VAR_RESULT, FALSE, PalletTown_EventScript_MistyNotReady\n    msgbox MistyCompanion_Text_Join, MSGBOX_YESNO\n    goto_if_eq VAR_RESULT, NO, PalletTown_EventScript_MistyDeclined\n    removeobject LOCALID_PALLET_MISTY\n    special MistyJoin\n    msgbox MistyCompanion_Text_Joined, MSGBOX_DEFAULT\n    releaseall\n    end\nPalletTown_EventScript_MistyNotReady::\n    msgbox MistyCompanion_Text_NotReady, MSGBOX_DEFAULT\n    releaseall\n    end\nPalletTown_EventScript_MistyDeclined::\n    msgbox MistyCompanion_Text_Declined, MSGBOX_DEFAULT\n    releaseall\n    end\n\nEventScript_TalkToMistyCompanion::\n    lock\n    faceplayer\n    msgbox MistyCompanion_Text_TrainQuestion, MSGBOX_YESNO\n    goto_if_eq VAR_RESULT, NO, MistyCompanion_EventScript_Moment\n    specialvar VAR_RESULT, MistyGetGrowthStage\n    goto_if_eq VAR_RESULT, 4, MistyCompanion_EventScript_Train4\n    goto_if_eq VAR_RESULT, 3, MistyCompanion_EventScript_Train3\n    goto_if_eq VAR_RESULT, 2, MistyCompanion_EventScript_Train2\n    goto_if_eq VAR_RESULT, 1, MistyCompanion_EventScript_Train1\n    goto MistyCompanion_EventScript_Train0\n\nMistyCompanion_EventScript_Train0::\n    msgbox MistyCompanion_Text_TrainIntro, MSGBOX_DEFAULT\n    trainerbattle_earlyrival TRAINER_MISTY_COMPANION_STAGE0, RIVAL_BATTLE_HEAL_AFTER, MistyCompanion_Text_TrainDefeat, MistyCompanion_Text_TrainVictory\n    goto MistyCompanion_EventScript_AfterTraining\n\nMistyCompanion_EventScript_Train1::\n    msgbox MistyCompanion_Text_TrainIntro, MSGBOX_DEFAULT\n    trainerbattle_earlyrival TRAINER_MISTY_COMPANION_STAGE1, RIVAL_BATTLE_HEAL_AFTER, MistyCompanion_Text_TrainDefeat, MistyCompanion_Text_TrainVictory\n    goto MistyCompanion_EventScript_AfterTraining\n\nMistyCompanion_EventScript_Train2::\n    msgbox MistyCompanion_Text_TrainIntro, MSGBOX_DEFAULT\n    trainerbattle_earlyrival TRAINER_MISTY_COMPANION_STAGE2, RIVAL_BATTLE_HEAL_AFTER, MistyCompanion_Text_TrainDefeat, MistyCompanion_Text_TrainVictory\n    goto MistyCompanion_EventScript_AfterTraining\n\nMistyCompanion_EventScript_Train3::\n    msgbox MistyCompanion_Text_TrainIntro, MSGBOX_DEFAULT\n    trainerbattle_earlyrival TRAINER_MISTY_COMPANION_STAGE3, RIVAL_BATTLE_HEAL_AFTER, MistyCompanion_Text_TrainDefeat, MistyCompanion_Text_TrainVictory\n    goto MistyCompanion_EventScript_AfterTraining\n\nMistyCompanion_EventScript_Train4::\n    msgbox MistyCompanion_Text_TrainIntro, MSGBOX_DEFAULT\n    trainerbattle_earlyrival TRAINER_MISTY_COMPANION_STAGE4, RIVAL_BATTLE_HEAL_AFTER, MistyCompanion_Text_TrainDefeat, MistyCompanion_Text_TrainVictory\n    goto MistyCompanion_EventScript_AfterTraining\n\nMistyCompanion_EventScript_AfterTraining::\n    special HealPlayerParty\n    msgbox MistyCompanion_Text_AfterTraining, MSGBOX_DEFAULT\n    releaseall\n    end\nMistyCompanion_EventScript_Moment::\n    specialvar VAR_RESULT, MistyGetGrowthStage\n    goto_if_eq VAR_RESULT, 4, MistyCompanion_EventScript_Moment4\n    goto_if_eq VAR_RESULT, 3, MistyCompanion_EventScript_Moment3\n    goto_if_eq VAR_RESULT, 2, MistyCompanion_EventScript_Moment2\n    goto_if_eq VAR_RESULT, 1, MistyCompanion_EventScript_Moment1\n    goto MistyCompanion_EventScript_Moment0\n\nMistyCompanion_EventScript_Moment0::\n    msgbox MistyCompanion_Text_Moment0, MSGBOX_DEFAULT\n    release\n    end\n\nMistyCompanion_EventScript_Moment1::\n    msgbox MistyCompanion_Text_Moment1, MSGBOX_DEFAULT\n    release\n    end\n\nMistyCompanion_EventScript_Moment2::\n    msgbox MistyCompanion_Text_Moment2, MSGBOX_DEFAULT\n    release\n    end\n\nMistyCompanion_EventScript_Moment3::\n    msgbox MistyCompanion_Text_Moment3, MSGBOX_DEFAULT\n    release\n    end\n\nMistyCompanion_EventScript_Moment4::\n    msgbox MistyCompanion_Text_Moment4, MSGBOX_DEFAULT\n    release\n    end\n\nMistyCompanion_Text_Join::\n    .string \"MISTY: You did it, {PLAYER}!\\n\"\n    .string \"I want to see what comes next.\\p\"\n    .string \"May I travel with you?$\"\n\nMistyCompanion_Text_Joined::\n    .string \"MISTY: I will walk behind\\n\"\n    .string \"PIKACHU. Our next journey\\p\"\n    .string \"starts together!$\"\n\nMistyCompanion_Text_NotReady::\n    .string \"MISTY: Finish the KANTO\\n\"\n    .string \"League first. I will be here.$\"\n\nMistyCompanion_Text_Declined::\n    .string \"MISTY: Take your time.\\n\"\n    .string \"Come talk when you are ready.$\"\n\nMistyCompanion_Text_TrainQuestion::\n    .string \"MISTY: Ready for a friendly\\n\"\n    .string \"training battle?$\"\n\nMistyCompanion_Text_TrainIntro::\n    .string \"MISTY: Show me how far\\n\"\n    .string \"you and your team have grown!$\"\n\nMistyCompanion_Text_TrainDefeat::\n    .string \"That was wonderful, {PLAYER}!$\"\n\nMistyCompanion_Text_TrainVictory::\n    .string \"We learn from every battle.\\n\"\n    .string \"I will help your team recover.$\"\n\nMistyCompanion_Text_AfterTraining::\n    .string \"MISTY: Everyone is rested.\\n\"\n    .string \"Let us keep traveling together!$\"\n\nMistyCompanion_Text_Moment0::\n    .string \"MISTY: I am glad I can\\n\"\n    .string \"share this journey with you.$\"\n\nMistyCompanion_Text_Moment1::\n    .string \"MISTY: Even a rainy day feels\\n\"\n    .string \"brighter when we are together.$\"\n\nMistyCompanion_Text_Moment2::\n    .string \"MISTY: When we take a break,\\n\"\n    .string \"how about a date by the sea?$\"\n\nMistyCompanion_Text_Moment3::\n    .string \"MISTY: I like who you have\\n\"\n    .string \"become. I want to stay with you.$\"\n\nMistyCompanion_Text_Moment4::\n    .string \"MISTY: Let us go on a real date\\n\"\n    .string \"when this adventure is over.\\p\"\n    .string \"Someday, I would like us\\n\"\n    .string \"to get married.$\"\n",
+    "src/data/trainer_parties_misty_companion.h": "static const struct TrainerMonNoItemCustomMoves sPartyMistyCompanionStage0[] = {\n    { .iv = 220, .lvl = 48, .species = SPECIES_STARMIE,\n      .moves = {MOVE_WATER_PULSE, MOVE_PSYCHIC, MOVE_RECOVER, MOVE_SWIFT} },\n    { .iv = 220, .lvl = 48, .species = SPECIES_PSYDUCK,\n      .moves = {MOVE_WATER_PULSE, MOVE_CONFUSION, MOVE_DISABLE, MOVE_AMNESIA} },\n    { .iv = 220, .lvl = 48, .species = SPECIES_HORSEA,\n      .moves = {MOVE_BUBBLE_BEAM, MOVE_WATER_GUN, MOVE_SMOKESCREEN, MOVE_AGILITY} },\n};\n\nstatic const struct TrainerMonNoItemCustomMoves sPartyMistyCompanionStage1[] = {\n    { .iv = 220, .lvl = 52, .species = SPECIES_STARMIE,\n      .moves = {MOVE_SURF, MOVE_PSYCHIC, MOVE_RECOVER, MOVE_SWIFT} },\n    { .iv = 220, .lvl = 52, .species = SPECIES_PSYDUCK,\n      .moves = {MOVE_SURF, MOVE_CONFUSION, MOVE_DISABLE, MOVE_AMNESIA} },\n    { .iv = 220, .lvl = 52, .species = SPECIES_HORSEA,\n      .moves = {MOVE_BUBBLE_BEAM, MOVE_WATER_GUN, MOVE_SMOKESCREEN, MOVE_AGILITY} },\n    { .iv = 220, .lvl = 52, .species = SPECIES_POLIWHIRL,\n      .moves = {MOVE_BUBBLE_BEAM, MOVE_BODY_SLAM, MOVE_HYPNOSIS, MOVE_RAIN_DANCE} },\n};\n\nstatic const struct TrainerMonNoItemCustomMoves sPartyMistyCompanionStage2[] = {\n    { .iv = 220, .lvl = 56, .species = SPECIES_STARMIE,\n      .moves = {MOVE_SURF, MOVE_PSYCHIC, MOVE_RECOVER, MOVE_THUNDERBOLT} },\n    { .iv = 220, .lvl = 56, .species = SPECIES_GOLDUCK,\n      .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_PSYCHIC, MOVE_CALM_MIND} },\n    { .iv = 220, .lvl = 56, .species = SPECIES_SEADRA,\n      .moves = {MOVE_SURF, MOVE_DRAGON_BREATH, MOVE_ICE_BEAM, MOVE_AGILITY} },\n    { .iv = 220, .lvl = 56, .species = SPECIES_POLIWHIRL,\n      .moves = {MOVE_SURF, MOVE_BODY_SLAM, MOVE_HYPNOSIS, MOVE_RAIN_DANCE} },\n    { .iv = 220, .lvl = 56, .species = SPECIES_CORSOLA,\n      .moves = {MOVE_SURF, MOVE_ANCIENT_POWER, MOVE_RECOVER, MOVE_REFLECT} },\n};\n\nstatic const struct TrainerMonNoItemCustomMoves sPartyMistyCompanionStage3[] = {\n    { .iv = 220, .lvl = 60, .species = SPECIES_STARMIE,\n      .moves = {MOVE_SURF, MOVE_PSYCHIC, MOVE_RECOVER, MOVE_THUNDERBOLT} },\n    { .iv = 220, .lvl = 60, .species = SPECIES_GOLDUCK,\n      .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_PSYCHIC, MOVE_CALM_MIND} },\n    { .iv = 220, .lvl = 60, .species = SPECIES_KINGDRA,\n      .moves = {MOVE_SURF, MOVE_DRAGON_BREATH, MOVE_ICE_BEAM, MOVE_AGILITY} },\n    { .iv = 220, .lvl = 60, .species = SPECIES_POLITOED,\n      .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_HYPNOSIS, MOVE_PROTECT} },\n    { .iv = 220, .lvl = 60, .species = SPECIES_CORSOLA,\n      .moves = {MOVE_SURF, MOVE_ANCIENT_POWER, MOVE_RECOVER, MOVE_REFLECT} },\n    { .iv = 220, .lvl = 60, .species = SPECIES_AZUMARILL,\n      .moves = {MOVE_SURF, MOVE_RETURN, MOVE_ICE_BEAM, MOVE_PROTECT} },\n};\n\nstatic const struct TrainerMonNoItemCustomMoves sPartyMistyCompanionStage4[] = {\n    { .iv = 220, .lvl = 66, .species = SPECIES_STARMIE,\n      .moves = {MOVE_SURF, MOVE_PSYCHIC, MOVE_RECOVER, MOVE_THUNDERBOLT} },\n    { .iv = 220, .lvl = 66, .species = SPECIES_GOLDUCK,\n      .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_PSYCHIC, MOVE_CALM_MIND} },\n    { .iv = 220, .lvl = 66, .species = SPECIES_KINGDRA,\n      .moves = {MOVE_SURF, MOVE_DRAGON_BREATH, MOVE_ICE_BEAM, MOVE_AGILITY} },\n    { .iv = 220, .lvl = 66, .species = SPECIES_POLITOED,\n      .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_HYPNOSIS, MOVE_PROTECT} },\n    { .iv = 220, .lvl = 66, .species = SPECIES_CORSOLA,\n      .moves = {MOVE_SURF, MOVE_ANCIENT_POWER, MOVE_RECOVER, MOVE_REFLECT} },\n    { .iv = 220, .lvl = 66, .species = SPECIES_AZUMARILL,\n      .moves = {MOVE_SURF, MOVE_RETURN, MOVE_ICE_BEAM, MOVE_PROTECT} },\n};\n\n",
+    "src/data/trainers_misty_companion.h": "[TRAINER_MISTY_COMPANION_STAGE0] =\n{\n    .trainerClass = TRAINER_CLASS_LEADER,\n    .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,\n    .trainerPic = TRAINER_PIC_LEADER_MISTY,\n    .trainerName = _(\"MISTY\"),\n    .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},\n    .doubleBattle = FALSE,\n    .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,\n    .party = NO_ITEM_CUSTOM_MOVES(sPartyMistyCompanionStage0),\n},\n[TRAINER_MISTY_COMPANION_STAGE1] =\n{\n    .trainerClass = TRAINER_CLASS_LEADER,\n    .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,\n    .trainerPic = TRAINER_PIC_LEADER_MISTY,\n    .trainerName = _(\"MISTY\"),\n    .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},\n    .doubleBattle = FALSE,\n    .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,\n    .party = NO_ITEM_CUSTOM_MOVES(sPartyMistyCompanionStage1),\n},\n[TRAINER_MISTY_COMPANION_STAGE2] =\n{\n    .trainerClass = TRAINER_CLASS_LEADER,\n    .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,\n    .trainerPic = TRAINER_PIC_LEADER_MISTY,\n    .trainerName = _(\"MISTY\"),\n    .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},\n    .doubleBattle = FALSE,\n    .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,\n    .party = NO_ITEM_CUSTOM_MOVES(sPartyMistyCompanionStage2),\n},\n[TRAINER_MISTY_COMPANION_STAGE3] =\n{\n    .trainerClass = TRAINER_CLASS_LEADER,\n    .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,\n    .trainerPic = TRAINER_PIC_LEADER_MISTY,\n    .trainerName = _(\"MISTY\"),\n    .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},\n    .doubleBattle = FALSE,\n    .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,\n    .party = NO_ITEM_CUSTOM_MOVES(sPartyMistyCompanionStage3),\n},\n[TRAINER_MISTY_COMPANION_STAGE4] =\n{\n    .trainerClass = TRAINER_CLASS_LEADER,\n    .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,\n    .trainerPic = TRAINER_PIC_LEADER_MISTY,\n    .trainerName = _(\"MISTY\"),\n    .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},\n    .doubleBattle = FALSE,\n    .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,\n    .party = NO_ITEM_CUSTOM_MOVES(sPartyMistyCompanionStage4),\n},\n",
+    "include/constants/opponents_misty_companion.h": "#ifndef GUARD_OPPONENTS_MISTY_COMPANION_H\n#define GUARD_OPPONENTS_MISTY_COMPANION_H\n#define TRAINER_MISTY_COMPANION_STAGE0 (HOENN_TRAINERS_START + 851)\n#define TRAINER_MISTY_COMPANION_STAGE1 (HOENN_TRAINERS_START + 852)\n#define TRAINER_MISTY_COMPANION_STAGE2 (HOENN_TRAINERS_START + 853)\n#define TRAINER_MISTY_COMPANION_STAGE3 (HOENN_TRAINERS_START + 854)\n#define TRAINER_MISTY_COMPANION_STAGE4 (HOENN_TRAINERS_START + 855)\n#endif\n"
+  },
+  "recipes": [
+    {
+      "path": "src/follower_pikachu.c",
+      "old": "#include \"follower_pikachu.h\"\n",
+      "new": "#include \"follower_pikachu.h\"\n#include \"companion_misty.h\"\n"
+    },
+    {
+      "path": "src/follower_pikachu.c",
+      "old": "    if (other->localId != LOCALID_FOLLOWER)\n        return FALSE;\n    // The player walks through PIKACHU (they swap places), and so do trainers' lines of sight.\n    return mover->isPlayer || gIgnoreFollowerPikachuCollision;",
+      "new": "    if (other->localId != LOCALID_FOLLOWER && other->localId != LOCALID_MISTY_COMPANION)\n        return FALSE;\n    return mover->isPlayer || IsFollowerPikachuObject(mover) || IsMistyCompanionObject(mover)\n        || gIgnoreFollowerPikachuCollision;"
+    },
+    {
+      "path": "src/follower_pikachu.c",
+      "old": "    sHiddenByScript = FALSE;\n    FollowerPikachu_Update();\n",
+      "new": "    sHiddenByScript = FALSE;\n    MistyCompanion_OnMapLoad();\n    FollowerPikachu_Update();\n"
+    },
+    {
+      "path": "src/follower_pikachu.c",
+      "old": "\n}\n\nvoid Task_FollowerPikachu(u8 taskId)",
+      "new": "\n    MistyCompanion_Update();\n}\n\nvoid Task_FollowerPikachu(u8 taskId)"
+    },
+    {
+      "path": "src/follower_pikachu.c",
+      "old": "    sHiddenByScript = TRUE;\n    FollowerPikachu_Update();",
+      "new": "    sHiddenByScript = TRUE;\n    HideMistyCompanion();\n    FollowerPikachu_Update();"
+    },
+    {
+      "path": "src/follower_pikachu.c",
+      "old": "    sHiddenByScript = FALSE;\n    if (follower != NULL)",
+      "new": "    sHiddenByScript = FALSE;\n    ShowMistyCompanion();\n    if (follower != NULL)"
+    },
+    {
+      "path": "src/follower_pikachu.c",
+      "old": "    if (follower == NULL || objectEvent == follower || follower->invisible)",
+      "new": "    MistyCompanion_OnObjectMovement(objectEvent, movementActionId);\n    if (follower == NULL || IsFollowerPikachuObject(objectEvent) || IsMistyCompanionObject(objectEvent) || follower->invisible)"
+    },
+    {
+      "path": "src/follower_pikachu.c",
+      "old": "    if (follower == NULL || speed == FOLLOW_SPEED_NONE)\n        return;",
+      "new": "    if (speed != FOLLOW_SPEED_NONE)\n        MistyCompanion_OnPlayerMovement(sWalkActionsBySpeed[speed]);\n    if (follower == NULL || speed == FOLLOW_SPEED_NONE)\n        return;"
+    },
+    {
+      "path": "src/follower_pikachu.c",
+      "append": "\nu8 FollowerPikachu_GetMovingActionDirection(u8 action)\n{\n    return GetMovingActionDirection(action);\n}\n"
+    },
+    {
+      "path": "include/follower_pikachu.h",
+      "old": "void FollowerPikachu_OnPlayerMovement(u8 movementActionId);",
+      "new": "void FollowerPikachu_OnPlayerMovement(u8 movementActionId);\nu8 FollowerPikachu_GetMovingActionDirection(u8 action);"
+    },
+    {
+      "path": "src/field_control_avatar.c",
+      "old": "#include \"follower_pikachu.h\"\n",
+      "new": "#include \"follower_pikachu.h\"\n#include \"companion_misty.h\"\n"
+    },
+    {
+      "path": "src/field_control_avatar.c",
+      "old": "    objectEventId = GetObjectEventIdByPosition(position->x, position->y, position->elevation);\n    if (objectEventId != OBJECT_EVENTS_COUNT && IsFollowerPikachuObject(&gObjectEvents[objectEventId]))",
+      "new": "    objectEventId = GetObjectEventIdByPosition(position->x, position->y, position->elevation);\n    if (objectEventId != OBJECT_EVENTS_COUNT && IsMistyCompanionObject(&gObjectEvents[objectEventId]))\n    {\n        if (gObjectEvents[objectEventId].invisible) return NULL;\n        gSelectedObjectEvent = objectEventId;\n        gSpecialVar_LastTalked = LOCALID_MISTY_COMPANION;\n        gSpecialVar_Facing = direction;\n        return EventScript_TalkToMistyCompanion;\n    }\n    if (objectEventId != OBJECT_EVENTS_COUNT && IsFollowerPikachuObject(&gObjectEvents[objectEventId]))"
+    },
+    {
+      "path": "src/quest_log_objects.c",
+      "old": "#include \"global.h\"\n",
+      "new": "#include \"global.h\"\n#include \"companion_misty.h\"\n"
+    },
+    {
+      "path": "src/quest_log_objects.c",
+      "old": "gObjectEvents[i].active && gObjectEvents[i].localId != LOCALID_FOLLOWER;",
+      "new": "gObjectEvents[i].active && gObjectEvents[i].localId != LOCALID_FOLLOWER && gObjectEvents[i].localId != LOCALID_MISTY_COMPANION;"
+    },
+    {
+      "path": "data/specials.inc",
+      "old": "gSpecialsEnd::",
+      "new": "\tdef_special CanMistyJoin\n\tdef_special MistyPreparePalletVisit\n\tdef_special MistyJoin\n\tdef_special MistyGetGrowthStage\ngSpecialsEnd::"
+    },
+    {
+      "path": "data/maps/PalletTown/scripts.inc",
+      "old": "\tsetworldmapflag FLAG_WORLD_MAP_PALLET_TOWN\n",
+      "new": "\tsetworldmapflag FLAG_WORLD_MAP_PALLET_TOWN\n\tspecial MistyPreparePalletVisit\n"
+    },
+    {
+      "path": "data/maps/PalletTown/scripts.inc",
+      "old": "\tmap_script_2 VAR_MAP_SCENE_PALLET_TOWN_OAK, 2, PalletTown_EventScript_OakRatingScene\n\t.2byte 0",
+      "new": "\tmap_script_2 VAR_MAP_SCENE_PALLET_TOWN_OAK, 2, PalletTown_EventScript_OakRatingScene\n\tmap_script_2 VAR_TEMP_7, TRUE, PalletTown_EventScript_MistyJoin\n\t.2byte 0"
+    },
+    {
+      "path": "data/event_scripts.s",
+      "old": "\t.include \"data/scripts/follower_pikachu.inc\"",
+      "new": "\t.include \"data/scripts/follower_pikachu.inc\"\n\t.include \"data/scripts/companion_misty.inc\""
+    },
+    {
+      "path": "include/constants/flags.h",
+      "append": "\n// Reserved previously-unused Kanto flags; no save fields or bit count changed.\n#define FLAG_MISTY_COMPANION_JOINED FLAG_0x223\n#define FLAG_HIDE_MISTY_PALLET FLAG_0x224\n"
+    },
+    {
+      "path": "include/constants/opponents.h",
+      "append": "\n#include \"opponents_misty_companion.h\"\n"
+    },
+    {
+      "path": "src/data/trainer_parties_hoenn.h",
+      "append": "\n#include \"trainer_parties_misty_companion.h\"\n"
+    },
+    {
+      "path": "src/data/trainers_hoenn.h",
+      "append": "\n#include \"trainers_misty_companion.h\"\n"
+    }
+  ],
+  "preimages": {
+    "src/follower_pikachu.c": "8f70c2288abb2b33c566672b8513be9b46ee2e1e4843f4232c74a2cf389bc738",
+    "include/follower_pikachu.h": "e06ef9c2e73a8bc498103726fd898ff28882b33ed7db9c2f7e8006fdf25b3a3b",
+    "data/maps/PalletTown/scripts.inc": "ca9ae01d210ebfeda42895a152145940b7c444a03b6416b26353ceb0adac9190",
+    "data/maps/PalletTown/text.inc": "6fe28872b8f6ad72ad26dc64a6f6922258cf187f5efb40dfeddc9e2d1f2469b2",
+    "data/maps/PalletTown/map.json": "2816338934241bac34f52dae8b101ac3add59e0ebdde3e3fb6575f3b525b01c3",
+    "data/specials.inc": "64beaa13829a83629621b5c5f5f900239f654042612a5c4a42dffba33b709adf",
+    "src/field_control_avatar.c": "a936a32c7c1c6ddcc2cc49f598871070c44ed682251444179c7d08febd8814fa",
+    "src/quest_log_objects.c": "91a04515db1d8d2997079005aa39aa173c15668882408f237607dda7929c4987"
+  },
+  "pallet_original_map": {
+    "id": "MAP_PALLET_TOWN",
+    "name": "PalletTown",
+    "layout": "LAYOUT_PALLET_TOWN",
+    "music": "MUS_PALLET",
+    "region_map_section": "MAPSEC_PALLET_TOWN",
+    "requires_flash": false,
+    "weather": "WEATHER_SUNNY",
+    "map_type": "MAP_TYPE_TOWN",
+    "allow_cycling": true,
+    "allow_escaping": false,
+    "allow_running": true,
+    "show_map_name": true,
+    "floor_number": 0,
+    "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+    "connections": [
+      {
+        "map": "MAP_ROUTE1",
+        "offset": 0,
+        "direction": "up"
+      },
+      {
+        "map": "MAP_ROUTE21_NORTH",
+        "offset": 0,
+        "direction": "down"
+      }
+    ],
+    "object_events": [
+      {
+        "local_id": "LOCALID_PALLET_SIGN_LADY",
+        "type": "object",
+        "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
+        "x": 3,
+        "y": 10,
+        "elevation": 3,
+        "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+        "movement_range_x": 1,
+        "movement_range_y": 4,
+        "trainer_type": "TRAINER_TYPE_NONE",
+        "trainer_sight_or_berry_tree_id": "0",
+        "script": "PalletTown_EventScript_SignLady",
+        "flag": "0"
+      },
+      {
+        "local_id": "LOCALID_PALLET_FAT_MAN",
+        "type": "object",
+        "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
+        "x": 13,
+        "y": 17,
+        "elevation": 3,
+        "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+        "movement_range_x": 6,
+        "movement_range_y": 2,
+        "trainer_type": "TRAINER_TYPE_NONE",
+        "trainer_sight_or_berry_tree_id": "0",
+        "script": "PalletTown_EventScript_FatMan",
+        "flag": "0"
+      },
+      {
+        "local_id": "LOCALID_PALLET_PROF_OAK",
+        "type": "object",
+        "graphics_id": "OBJ_EVENT_GFX_PROF_OAK",
+        "x": 10,
+        "y": 8,
+        "elevation": 3,
+        "movement_type": "MOVEMENT_TYPE_FACE_UP",
+        "movement_range_x": 1,
+        "movement_range_y": 1,
+        "trainer_type": "TRAINER_TYPE_NONE",
+        "trainer_sight_or_berry_tree_id": "0",
+        "script": "0x0",
+        "flag": "FLAG_HIDE_OAK_IN_PALLET_TOWN"
+      }
+    ],
+    "warp_events": [
+      {
+        "x": 6,
+        "y": 7,
+        "elevation": 0,
+        "dest_map": "MAP_PALLET_TOWN_PLAYERS_HOUSE_1F",
+        "dest_warp_id": "1"
+      },
+      {
+        "x": 15,
+        "y": 7,
+        "elevation": 0,
+        "dest_map": "MAP_PALLET_TOWN_RIVALS_HOUSE",
+        "dest_warp_id": "0"
+      },
+      {
+        "x": 16,
+        "y": 13,
+        "elevation": 0,
+        "dest_map": "MAP_PALLET_TOWN_PROFESSOR_OAKS_LAB",
+        "dest_warp_id": "0"
+      }
+    ],
+    "coord_events": [
+      {
+        "type": "trigger",
+        "x": 12,
+        "y": 1,
+        "elevation": 3,
+        "var": "VAR_MAP_SCENE_PALLET_TOWN_OAK",
+        "var_value": "0",
+        "script": "PalletTown_EventScript_OakTriggerLeft"
+      },
+      {
+        "type": "trigger",
+        "x": 13,
+        "y": 1,
+        "elevation": 3,
+        "var": "VAR_MAP_SCENE_PALLET_TOWN_OAK",
+        "var_value": "0",
+        "script": "PalletTown_EventScript_OakTriggerRight"
+      },
+      {
+        "type": "trigger",
+        "x": 13,
+        "y": 2,
+        "elevation": 3,
+        "var": "VAR_TEMP_2",
+        "var_value": "1",
+        "script": "PalletTown_EventScript_SignLadyTrigger"
+      }
+    ],
+    "bg_events": [
+      {
+        "type": "sign",
+        "x": 16,
+        "y": 16,
+        "elevation": 0,
+        "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+        "script": "PalletTown_EventScript_OaksLabSign"
+      },
+      {
+        "type": "sign",
+        "x": 4,
+        "y": 7,
+        "elevation": 0,
+        "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+        "script": "PalletTown_EventScript_PlayersHouseSign"
+      },
+      {
+        "type": "sign",
+        "x": 13,
+        "y": 7,
+        "elevation": 0,
+        "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+        "script": "PalletTown_EventScript_RivalsHouseSign"
+      },
+      {
+        "type": "sign",
+        "x": 9,
+        "y": 11,
+        "elevation": 0,
+        "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+        "script": "PalletTown_EventScript_TownSign"
+      },
+      {
+        "type": "sign",
+        "x": 5,
+        "y": 14,
+        "elevation": 0,
+        "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+        "script": "PalletTown_EventScript_TrainerTips"
+      }
+    ]
+  },
+  "pallet_object": {
+    "local_id": "LOCALID_PALLET_MISTY",
+    "type": "object",
+    "graphics_id": "OBJ_EVENT_GFX_MISTY",
+    "x": 8,
+    "y": 10,
+    "elevation": 3,
+    "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+    "movement_range_x": 0,
+    "movement_range_y": 0,
+    "trainer_type": "TRAINER_TYPE_NONE",
+    "trainer_sight_or_berry_tree_id": "0",
+    "script": "PalletTown_EventScript_MistyJoin",
+    "flag": "FLAG_HIDE_MISTY_PALLET"
+  },
+  "team_counts": [
+    3,
+    4,
+    5,
+    6,
+    6
+  ],
+  "team_levels": [
+    48,
+    52,
+    56,
+    60,
+    66
+  ],
+  "new_static_ewram_bytes": 1,
+  "save_fields_added": 0,
+  "ally_battle_implemented": false
+}

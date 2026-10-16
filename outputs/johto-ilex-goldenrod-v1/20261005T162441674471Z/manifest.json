@@ -1,0 +1,114 @@
+{
+  "time": "20261005T162441674471Z",
+  "validation": {
+    "chapter": "Ilex and Goldenrod entrance",
+    "save_layout_changed": false,
+    "native_build_and_emulator": "NOT_RUN_BY_GENERATOR",
+    "visual_limits": [
+      "Native Kanto tilesets are reused; the radio exterior uses the Silph facade.",
+      "Silver and Whitney use native placeholder portraits. FARFETCHD reuses its exact native menu-icon pixels."
+    ],
+    "not_implemented": [
+      "Goldenrod upper radio floors, underground and department-store floors",
+      "Gyms four through eight and Johto League"
+    ],
+    "new_maps": [
+      "IlexForest_AzaleaGate",
+      "IlexForest",
+      "IlexForest_Route34Gate",
+      "JohtoRoute34",
+      "JohtoRoute34_DayCare",
+      "GoldenrodCity",
+      "GoldenrodCity_PokemonCenter_1F",
+      "GoldenrodCity_PokemonCenter_2F",
+      "GoldenrodCity_Mart",
+      "GoldenrodCity_RadioTower_1F",
+      "GoldenrodCity_Gym"
+    ],
+    "new_flags": {
+      "FLAG_JOHTO_SILVER_AZALEA_DEFEATED": 12,
+      "FLAG_JOHTO_ILEX_FARFETCHD_RETURNED": 14,
+      "FLAG_JOHTO_ILEX_CUT_BRIEFED": 15,
+      "FLAG_JOHTO_BADGE03_GET": 18,
+      "FLAG_JOHTO_ILEX_HELP_REQUESTED": 24,
+      "FLAG_JOHTO_GOLDENROD_RESEARCH_REGISTERED": 26,
+      "FLAG_JOHTO_WHITNEY_ENCOURAGED": 27,
+      "FLAG_JOHTO_GOT_TM45_FROM_WHITNEY": 28
+    },
+    "trainer_ids": {
+      "SILVER_AZALEA": 799,
+      "TODD": 800,
+      "GINA": 801,
+      "BRANDON": 802,
+      "VICTORIA": 803,
+      "SAMANTHA": 804,
+      "WHITNEY": 805
+    },
+    "static_checks": [
+      {
+        "map": "IlexForest_AzaleaGate",
+        "walkable_reachable": 100,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "IlexForest",
+        "walkable_reachable": 787,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "IlexForest_Route34Gate",
+        "walkable_reachable": 100,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "JohtoRoute34",
+        "walkable_reachable": 793,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "JohtoRoute34_DayCare",
+        "walkable_reachable": 57,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "GoldenrodCity",
+        "walkable_reachable": 1256,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "GoldenrodCity_PokemonCenter_1F",
+        "walkable_reachable": 84,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "GoldenrodCity_PokemonCenter_2F",
+        "native_CableClub_layout": true
+      },
+      {
+        "map": "GoldenrodCity_Mart",
+        "walkable_reachable": 40,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "GoldenrodCity_RadioTower_1F",
+        "walkable_reachable": 99,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "GoldenrodCity_Gym",
+        "walkable_reachable": 145,
+        "NPC_and_warps": true
+      }
+    ]
+  },
+  "files": {
+    "data/layouts/IlexForest/map.bin": {
+      "before": "065dee218edb0222ce950347ced6cc34396b82f4fe214edc2468b864476ee904",
+      "after": "96ce44c42d3bff636c69a2af75ffe93a33b562d67a678ae1129f6bf32297f976"
+    },
+    "data/maps/GoldenrodCity/map.json": {
+      "before": "7f1bfae9593b3014d93317ec36e580f7748938c749c0b4551df4139f00c7476a",
+      "after": "509b8d666673e92102fd365752d4b580c9c97cf3224d92c84a132a370af05d16"
+    }
+  }
+}

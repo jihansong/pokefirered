@@ -1,0 +1,122 @@
+{
+  "rom_sha256": "3d1a1a4f3e84deb5d9f8d2a5943930354e1a86164fe257eabf79d99ca1232fee",
+  "qa_sha256": "c99fcc261c0354689d53f3c7d3f285c4eb45056cf0c700255f6841fe4028f2e8",
+  "cases": [
+    {
+      "case": "fly-fixed-kanto-on",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-kanto-off",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-kanto-foreign",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-johto-on",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-johto-off",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-johto-foreign",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-hoenn-on",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-hoenn-off",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-hoenn-foreign",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-town-new_bark_town",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-town-cherrygrove_city",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-town-violet_city",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-town-azalea_town",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-town-goldenrod_city",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-town-ecruteak_city",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-town-olivine_city",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-town-cianwood_city",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-town-locked-olivine",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-town-locked-route",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-town-alternate-violet",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "fly-fixed-town-all-visited",
+      "exit": 0,
+      "pass": true
+    },
+    {
+      "case": "legacy-fixed-kanto-on",
+      "exit": 1,
+      "pass": false
+    },
+    {
+      "case": "legacy-fixed-hoenn-on",
+      "exit": 1,
+      "pass": false
+    }
+  ],
+  "all_pass": false
+}

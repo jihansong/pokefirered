@@ -1,6 +1,45 @@
 MauvilleCity_House1_MapScripts::
 	.byte 0
 
+@ BEGIN PATCH (tools/hoenn_import/patches)
+@ TY_HOENN_SHARED_HM_SIMPLE_V1
 MauvilleCity_House1_EventScript_H0::
-	msgbox MauvilleCity_House1_Text_H0, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_HOENN_GOT_ROCK_SMASH_SHARED_HM_REWARD, MauvilleCity_House1_TYSharedHM_Done
+	goto_if_set FLAG_GOT_HM06, MauvilleCity_House1_TYSharedHM_Known
+	checkitem ITEM_HM06
+	goto_if_eq VAR_RESULT, TRUE, MauvilleCity_House1_TYSharedHM_Known
+	checkpcitem ITEM_HM06
+	goto_if_eq VAR_RESULT, TRUE, MauvilleCity_House1_TYSharedHM_Known
+	msgbox MauvilleCity_House1_TYSharedHM_FreshText
+	checkitemspace ITEM_HM06
+	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_House1_TYSharedHM_Full
+	giveitem ITEM_HM06
+	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_House1_TYSharedHM_Full
+	setflag FLAG_HOENN_GOT_ROCK_SMASH_SHARED_HM_REWARD
+	msgbox MauvilleCity_House1_TYSharedHM_FreshThanks
+	release
 	end
+
+MauvilleCity_House1_TYSharedHM_Known::
+	msgbox MauvilleCity_House1_TYSharedHM_KnownText
+	checkitemspace ITEM_TM23
+	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_House1_TYSharedHM_Full
+	giveitem ITEM_TM23
+	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_House1_TYSharedHM_Full
+	setflag FLAG_HOENN_GOT_ROCK_SMASH_SHARED_HM_REWARD
+	msgbox MauvilleCity_House1_TYSharedHM_TechniqueText
+	release
+	end
+
+MauvilleCity_House1_TYSharedHM_Full::
+	msgbox MauvilleCity_House1_TYSharedHM_FullText
+	release
+	end
+
+MauvilleCity_House1_TYSharedHM_Done::
+	msgbox MauvilleCity_House1_TYSharedHM_DoneText
+	release
+	end
+@ END PATCH

@@ -1,0 +1,1342 @@
+{
+  "source_saves_unchanged": true,
+  "source_sha256": {
+    "/workspaces/pokefirered/saves/hoenn.sav": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+    "/workspaces/pokefirered/saves/pokemonthyl_hoenn_QAed.sav": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.1.sav": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+    "/workspaces/pokefirered/saves/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "/workspaces/pokefirered/saves/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "/workspaces/pokefirered/saves/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "/workspaces/pokefirered/saves/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc"
+  },
+  "baseline_rom_sha256": "be6a5f0615c72d6304e3c71d1e842381c1dbb7ae386d4d2a12ba6feabda9517b",
+  "patched_rom_sha256": "2c7d8b6184d16b139b89f93eaaf98640fe1ecf2045de03109960501e70d5f3d8",
+  "results": [
+    {
+      "save": "/workspaces/pokefirered/saves/hoenn.sav",
+      "baseline": {
+        "actual": [
+          5,
+          true
+        ],
+        "cases": [
+          {
+            "case": "own_slot_0",
+            "slot": 0,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_1",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_2",
+            "slot": 2,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_3",
+            "slot": 3,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_4",
+            "slot": 4,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_5",
+            "slot": 5,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "absent",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "wild_pikachu",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "foreign_starter",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "egg",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "marked_other_species",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "first_starter_fainted",
+            "slot": 0,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "damaged_unmarked_read_only",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": false
+          },
+          {
+            "case": "immediate_return",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          }
+        ],
+        "fixture_limit": null
+      },
+      "patched": {
+        "actual": [
+          5,
+          true
+        ],
+        "cases": [
+          {
+            "case": "own_slot_0",
+            "slot": 0,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_1",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_2",
+            "slot": 2,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_3",
+            "slot": 3,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_4",
+            "slot": 4,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_5",
+            "slot": 5,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "absent",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "wild_pikachu",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "foreign_starter",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "egg",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "marked_other_species",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "first_starter_fainted",
+            "slot": 0,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "damaged_unmarked_read_only",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "immediate_return",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          }
+        ],
+        "fixture_limit": null
+      }
+    },
+    {
+      "save": "/workspaces/pokefirered/saves/pokemonthyl_hoenn_QAed.sav",
+      "baseline": {
+        "actual": [
+          5,
+          true
+        ],
+        "cases": [
+          {
+            "case": "own_slot_0",
+            "slot": 0,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_1",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_2",
+            "slot": 2,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_3",
+            "slot": 3,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_4",
+            "slot": 4,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_5",
+            "slot": 5,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "absent",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "wild_pikachu",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "foreign_starter",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "egg",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "marked_other_species",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "first_starter_fainted",
+            "slot": 0,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "damaged_unmarked_read_only",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": false
+          },
+          {
+            "case": "immediate_return",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          }
+        ],
+        "fixture_limit": null
+      },
+      "patched": {
+        "actual": [
+          5,
+          true
+        ],
+        "cases": [
+          {
+            "case": "own_slot_0",
+            "slot": 0,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_1",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_2",
+            "slot": 2,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_3",
+            "slot": 3,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_4",
+            "slot": 4,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_5",
+            "slot": 5,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "absent",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "wild_pikachu",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "foreign_starter",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "egg",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "marked_other_species",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "first_starter_fainted",
+            "slot": 0,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "damaged_unmarked_read_only",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "immediate_return",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          }
+        ],
+        "fixture_limit": null
+      }
+    },
+    {
+      "save": "/workspaces/pokefirered/saves/pokemonthyl_v1.1.sav",
+      "baseline": {
+        "actual": [
+          1,
+          true
+        ],
+        "cases": [
+          {
+            "case": "own_slot_0",
+            "slot": 0,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_1",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_2",
+            "slot": 2,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_3",
+            "slot": 3,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_4",
+            "slot": 4,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_5",
+            "slot": 5,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "absent",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "wild_pikachu",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "foreign_starter",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "egg",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "marked_other_species",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "first_starter_fainted",
+            "slot": 0,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "damaged_unmarked_read_only",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": false
+          },
+          {
+            "case": "immediate_return",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          }
+        ],
+        "fixture_limit": null
+      },
+      "patched": {
+        "actual": [
+          1,
+          true
+        ],
+        "cases": [
+          {
+            "case": "own_slot_0",
+            "slot": 0,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_1",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_2",
+            "slot": 2,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_3",
+            "slot": 3,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_4",
+            "slot": 4,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_5",
+            "slot": 5,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "absent",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "wild_pikachu",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "foreign_starter",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "egg",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "marked_other_species",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "first_starter_fainted",
+            "slot": 0,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "damaged_unmarked_read_only",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "immediate_return",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          }
+        ],
+        "fixture_limit": null
+      }
+    },
+    {
+      "save": "/workspaces/pokefirered/saves/pokemonthyl_v3.gba.sav",
+      "baseline": {
+        "actual": [
+          5,
+          true
+        ],
+        "cases": [
+          {
+            "case": "own_slot_0",
+            "slot": 0,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_1",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_2",
+            "slot": 2,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_3",
+            "slot": 3,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_4",
+            "slot": 4,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_5",
+            "slot": 5,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "absent",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "wild_pikachu",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "foreign_starter",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "egg",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "marked_other_species",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "first_starter_fainted",
+            "slot": 0,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "damaged_unmarked_read_only",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": false
+          },
+          {
+            "case": "immediate_return",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          }
+        ],
+        "fixture_limit": null
+      },
+      "patched": {
+        "actual": [
+          5,
+          true
+        ],
+        "cases": [
+          {
+            "case": "own_slot_0",
+            "slot": 0,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_1",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_2",
+            "slot": 2,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_3",
+            "slot": 3,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_4",
+            "slot": 4,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_5",
+            "slot": 5,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "absent",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "wild_pikachu",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "foreign_starter",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "egg",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "marked_other_species",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "first_starter_fainted",
+            "slot": 0,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "damaged_unmarked_read_only",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "immediate_return",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          }
+        ],
+        "fixture_limit": null
+      }
+    },
+    {
+      "save": "/workspaces/pokefirered/saves/v0.1.0.sav",
+      "baseline": {
+        "actual": [
+          5,
+          true
+        ],
+        "cases": [
+          {
+            "case": "own_slot_0",
+            "slot": 0,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_1",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_2",
+            "slot": 2,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_3",
+            "slot": 3,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_4",
+            "slot": 4,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_5",
+            "slot": 5,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "absent",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "wild_pikachu",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "foreign_starter",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "egg",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "marked_other_species",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "first_starter_fainted",
+            "slot": 0,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "damaged_unmarked_read_only",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": false
+          },
+          {
+            "case": "immediate_return",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          }
+        ],
+        "fixture_limit": null
+      },
+      "patched": {
+        "actual": [
+          5,
+          true
+        ],
+        "cases": [
+          {
+            "case": "own_slot_0",
+            "slot": 0,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_1",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_2",
+            "slot": 2,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_3",
+            "slot": 3,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_4",
+            "slot": 4,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_5",
+            "slot": 5,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "absent",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "wild_pikachu",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "foreign_starter",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "egg",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "marked_other_species",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "first_starter_fainted",
+            "slot": 0,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "damaged_unmarked_read_only",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "immediate_return",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          }
+        ],
+        "fixture_limit": null
+      }
+    },
+    {
+      "save": "/workspaces/pokefirered/saves/v0.2.1.sav",
+      "baseline": {
+        "actual": [
+          5,
+          true
+        ],
+        "cases": [
+          {
+            "case": "own_slot_0",
+            "slot": 0,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_1",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_2",
+            "slot": 2,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_3",
+            "slot": 3,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_4",
+            "slot": 4,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_5",
+            "slot": 5,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "absent",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "wild_pikachu",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "foreign_starter",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "egg",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "marked_other_species",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "first_starter_fainted",
+            "slot": 0,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "damaged_unmarked_read_only",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": false
+          },
+          {
+            "case": "immediate_return",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          }
+        ],
+        "fixture_limit": null
+      },
+      "patched": {
+        "actual": [
+          5,
+          true
+        ],
+        "cases": [
+          {
+            "case": "own_slot_0",
+            "slot": 0,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_1",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_2",
+            "slot": 2,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_3",
+            "slot": 3,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_4",
+            "slot": 4,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_5",
+            "slot": 5,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "absent",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "wild_pikachu",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "foreign_starter",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "egg",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "marked_other_species",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "first_starter_fainted",
+            "slot": 0,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "damaged_unmarked_read_only",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "immediate_return",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          }
+        ],
+        "fixture_limit": null
+      }
+    },
+    {
+      "save": "/workspaces/pokefirered/saves/v0.5.1.sav",
+      "baseline": {
+        "actual": [
+          5,
+          true
+        ],
+        "cases": [
+          {
+            "case": "own_slot_0",
+            "slot": 0,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_1",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_2",
+            "slot": 2,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_3",
+            "slot": 3,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_4",
+            "slot": 4,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_5",
+            "slot": 5,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "absent",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "wild_pikachu",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "foreign_starter",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "egg",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "marked_other_species",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "first_starter_fainted",
+            "slot": 0,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "damaged_unmarked_read_only",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": false
+          },
+          {
+            "case": "immediate_return",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          }
+        ],
+        "fixture_limit": null
+      },
+      "patched": {
+        "actual": [
+          5,
+          true
+        ],
+        "cases": [
+          {
+            "case": "own_slot_0",
+            "slot": 0,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_1",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_2",
+            "slot": 2,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_3",
+            "slot": 3,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_4",
+            "slot": 4,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "own_slot_5",
+            "slot": 5,
+            "alive": true,
+            "party_unchanged": true
+          },
+          {
+            "case": "absent",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "wild_pikachu",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "foreign_starter",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "egg",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "marked_other_species",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "first_starter_fainted",
+            "slot": 0,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "damaged_unmarked_read_only",
+            "slot": 6,
+            "alive": false,
+            "party_unchanged": true
+          },
+          {
+            "case": "immediate_return",
+            "slot": 1,
+            "alive": true,
+            "party_unchanged": true
+          }
+        ],
+        "fixture_limit": null
+      }
+    }
+  ],
+  "timing_measured": false,
+  "delta_measured": false,
+  "flagged_corrupt_mon_getter_behavior_changed": false
+}

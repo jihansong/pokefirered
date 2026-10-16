@@ -1,0 +1,89 @@
+map                                          zone texts  orig harml   fix unused
+Route114                                     Z4      47    45     3    42      0
+    data/maps/Route114/text.inc:2: ORIGINAL Route114_Text_H0_0 = Route114_Text_LennyIntro
+        "Yodelayhihoo! … … You're supposed to shout “yodelayhihoo” since it doesn't echo here!"
+    data/maps/Route114/text.inc:12: ORIGINAL Route114_Text_H0_2 = Route114_Text_LennyPostBattle
+        "When I was a wee tyke, I believed there was someone copying me and shouting back, “Yodelayhihoo.”"
+    data/maps/Route114/text.inc:17: ORIGINAL Route114_Text_H1_0 = Route114_Text_LucasIntro
+        "If you're not prepared, you shouldn't be up in the mountains!"
+    data/maps/Route114/text.inc:21: ORIGINAL Route114_Text_H1_1 = Route114_Text_LucasDefeat
+        "The mountains are unforgiving…"
+    data/maps/Route114/text.inc:24: ORIGINAL Route114_Text_H1_2 = Route114_Text_LucasPostBattle
+        "In the winter, mountains turn deadly with blizzards and avalanches."
+    data/maps/Route114/text.inc:28: ORIGINAL Route114_Text_H2_0 = Route114_Text_ShaneIntro
+        "Camping's fun! You can fish, roast marshmallows, and tell spooky stories! But the best of all are th…"
+    data/maps/Route114/text.inc:35: ORIGINAL Route114_Text_H2_1 = Route114_Text_ShaneDefeat
+        "Way too strong!"
+    data/maps/Route114/text.inc:38: ORIGINAL Route114_Text_H2_2 = Route114_Text_ShanePostBattle
+        "I think it's great that I can go camping with my POKéMON."
+    data/maps/Route114/text.inc:42: ORIGINAL Route114_Text_H3_0 = Route114_Text_NancyIntro
+        "I need to exercise after a meal. Let's have a match!"
+    data/maps/Route114/text.inc:46: ORIGINAL Route114_Text_H3_1 = Route114_Text_NancyDefeat
+        "Oh, no!"
+    data/maps/Route114/text.inc:49: ORIGINAL Route114_Text_H3_2 = Route114_Text_NancyPostBattle
+        "I just had a tasty meal. I'm getting drowsy…"
+    data/maps/Route114/text.inc:53: ORIGINAL Route114_Text_H4_0 = Route114_Text_SteveIntro
+        "Ufufufufufu… Want to battle against my POKéMON?"
+    data/maps/Route114/text.inc:57: ORIGINAL Route114_Text_H4_1 = Route114_Text_SteveDefeat
+        "M-My POKéMON…"
+    data/maps/Route114/text.inc:60: ORIGINAL Route114_Text_H4_2 = Route114_Text_StevePostBattle
+        "A big body that's all lumpy and hard, enormous horns, and vicious fangs… Ufufufufu… I wish I had a P…"
+    data/maps/Route114/text.inc:67: ORIGINAL Route114_Text_H5 = Route114_Text_AllMyMonDoesIsRoarTakeThis
+        "All my POKéMON does is ROAR… No one dares to come near me… Sigh… If you would, please take this TM a…"
+    data/maps/Route114/text.inc:73: ORIGINAL Route114_Text_H6 = Route114_Text_Poochyena
+        "Bow! Bowwow!"
+    data/maps/Route114/text.inc:76: ORIGINAL Route114_Text_H7 = Route114_Text_LoveUsingBerryCrushShareBerry
+        "I love using the BERRY CRUSH machine, so I'm collecting BERRIES. I'll share one with you, if you'd l…"
+    data/maps/Route114/text.inc:82: ORIGINAL Route114_Text_H8_0 = Route114_Text_NolanIntro
+        "I like to fish. But I also like to battle! If anyone challenges me, I'm there, even if I'm fishing."
+    data/maps/Route114/text.inc:88: ORIGINAL Route114_Text_H8_1 = Route114_Text_NolanDefeat
+        "I like to battle, but that doesn't mean I'm good at it…"
+    data/maps/Route114/text.inc:92: ORIGINAL Route114_Text_H8_2 = Route114_Text_NolanPostBattle
+        "This time I'll do it! I always think that, so I can't walk away from fishing or POKéMON."
+    data/maps/Route114/text.inc:97: ORIGINAL Route114_Text_H9_0 = Route114_Text_ClaudeIntro
+        "If we were fishing, you wouldn't stand a chance against me. So, bring on your POKéMON!"
+    data/maps/Route114/text.inc:102: ORIGINAL Route114_Text_H9_1 = Route114_Text_ClaudeDefeat
+        "If we were fishing, I would've won…"
+    data/maps/Route114/text.inc:105: ORIGINAL Route114_Text_H9_2 = Route114_Text_ClaudePostBattle
+        "I think I'll try my luck at landing a big one at METEOR FALLS. There has to be something in there. I…"
+    data/maps/Route114/text.inc:111: ORIGINAL Route114_Text_H10_0 = Route114_Text_BernieIntro
+        "If you're lighting a campfire, make sure you have water handy."
+    data/maps/Route114/text.inc:115: ORIGINAL Route114_Text_H10_1 = Route114_Text_BernieDefeat
+        "Thanks for dousing my fire!"
+    data/maps/Route114/text.inc:118: ORIGINAL Route114_Text_H10_2 = Route114_Text_BerniePostBattle
+        "You really do have to be careful with any sort of fire in a forest. Don't ever underestimate the pow…"
+    data/maps/Route114/text.inc:124: ORIGINAL Route114_Text_H11_0 = Route114_Text_IvyIntro
+        "IVY: Who taught you about POKéMON?"
+    data/maps/Route114/text.inc:127: ORIGINAL Route114_Text_H11_1 = Route114_Text_IvyDefeat
+        "IVY: What an amazing battle style!"
+    data/maps/Route114/text.inc:130: ORIGINAL Route114_Text_H11_2 = Route114_Text_IvyPostBattle
+        "IVY: I started training POKéMON because TYRA, my student mentor, taught me!"
+    data/maps/Route114/text.inc:135: ORIGINAL Route114_Text_H12_0 = Route114_Text_TyraIntro
+        "TYRA: Well, sure. I'm in the mood for it. I'll teach you a little about POKéMON."
+    data/maps/Route114/text.inc:140: ORIGINAL Route114_Text_H12_1 = Route114_Text_TyraDefeat
+        "TYRA: What an amazing battle style!"
+    data/maps/Route114/text.inc:143: ORIGINAL Route114_Text_H12_2 = Route114_Text_TyraPostBattle
+        "TYRA: I was teaching my junior IVY about POKéMON."
+    data/maps/Route114/text.inc:147: ORIGINAL Route114_Text_H13_0 = Route114_Text_CharlotteIntro
+        "Me! I'm not just a pretty face!"
+    data/maps/Route114/text.inc:151: ORIGINAL Route114_Text_H13_1 = Route114_Text_CharlotteDefeat
+        "That wasn't cute in the least!"
+    data/maps/Route114/text.inc:154: ORIGINAL Route114_Text_H13_2 = Route114_Text_CharlottePostBattle
+        "I don't want a POKéMON that's just cute. I adore cute ones that have a quirk or two!"
+    data/maps/Route114/text.inc:160: ORIGINAL Route114_Text_H14_0 = Route114_Text_AngelinaIntro
+        "Have you made your POKéMON evolve very much?"
+    data/maps/Route114/text.inc:164: ORIGINAL Route114_Text_H14_1 = Route114_Text_AngelinaDefeat
+        "Oh, I see. That's good to know."
+    data/maps/Route114/text.inc:168: ORIGINAL Route114_Text_H14_2 = Route114_Text_AngelinaPostBattle
+        "Some POKéMON change so much when they evolve, it's startling!"
+    data/maps/Route114/text.inc:172: ORIGINAL Route114_Text_H15_0 = Route114_Text_KaiIntro
+        "I landed a big one! A huge one, I tell you!"
+    data/maps/Route114/text.inc:176: ORIGINAL Route114_Text_H15_1 = Route114_Text_KaiDefeat
+        "What was that about? Did mine lose in size?"
+    data/maps/Route114/text.inc:180: ORIGINAL Route114_Text_H15_2 = Route114_Text_KaiPostBattle
+        "Okay! I'll just fish me a bigger one!"
+    data/maps/Route114/text.inc:188: ORIGINAL Route114_Text_H17 = Route114_Text_FossilManiacsHouseSign
+        "FOSSIL MANIAC'S HOUSE “Fossils gratefully accepted!”"
+JohtoCherrygroveAirstrip                     -        6     0     0     0      0
+
+2 maps, 53 texts in use: 45 still the Emerald original, 3 of them harmless (sign/cry), 42 to rewrite; 0 text labels nothing reaches

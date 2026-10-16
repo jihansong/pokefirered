@@ -1,0 +1,295 @@
+{
+  "created_utc": "20261005T122131146944Z",
+  "branch": "hoenn-z3",
+  "files": {
+    "data/maps/map_groups.json": {
+      "old_sha256": "d6949329134a04f87647b539c920451ef7b682a6a9648444a1d86d67f0c11cd1",
+      "new_sha256": "f4be4dc918a7c125298e0eeb9e663913143db316620d90805b707b853a8ceb15"
+    },
+    "data/layouts/CherrygroveCity/map.bin": {
+      "old_sha256": null,
+      "new_sha256": "ecb06700a5c892861dcfb024259553a2cecec747b1fc8cdf357e0f2b974d351b"
+    },
+    "data/layouts/CherrygroveCity/border.bin": {
+      "old_sha256": null,
+      "new_sha256": "877ba1a8619d96ac55bc6e0f946a551d7ca24ff142d3fedb7d4ad099aa115a78"
+    },
+    "data/layouts/JohtoRoute30/map.bin": {
+      "old_sha256": null,
+      "new_sha256": "1f73192c3a67ff1f4035bfbe3969c6a078b117942456f97cee694080020c7b86"
+    },
+    "data/layouts/JohtoRoute30/border.bin": {
+      "old_sha256": null,
+      "new_sha256": "877ba1a8619d96ac55bc6e0f946a551d7ca24ff142d3fedb7d4ad099aa115a78"
+    },
+    "data/layouts/layouts.json": {
+      "old_sha256": "ce500221f6d756d7540949403b926299b337af8fae2ef23ab9b19b91750a1a2f",
+      "new_sha256": "6214289b0bfb30d674fce9e534403517a69bb2e9839130e89813ffd7534c914d"
+    },
+    "src/data/region_map/region_map_sections.json": {
+      "old_sha256": "7e969c9a844ee81cb7d93aa4e459000075ee7dc264ffb25b51e6fc542e88dbc7",
+      "new_sha256": "1bc2c34bf1bafb48e67ae0b72e9171b1b5bd5d91c609658d7b0e71e492f66474"
+    },
+    "data/maps/CherrygroveCity/map.json": {
+      "old_sha256": null,
+      "new_sha256": "ede66b8ee58e82bf791a5238e4e1bedc377f24d27acda00f9a73d208bd859d80"
+    },
+    "data/maps/CherrygroveCity/scripts.inc": {
+      "old_sha256": null,
+      "new_sha256": "794dc14c892d87aec7517566299e38e90395815135241bf01f3ed4146f90f341"
+    },
+    "data/maps/CherrygroveCity/text.inc": {
+      "old_sha256": null,
+      "new_sha256": "52f91124dff4af826fc01d3bcf4c521d419b7491ce79a642650bbd29ecd76bfb"
+    },
+    "data/maps/CherrygroveCity_PokemonCenter_1F/map.json": {
+      "old_sha256": null,
+      "new_sha256": "abbd849bf0ef09d225ff5005c0131b48583dc5f7bdd89165843e27cac60828b7"
+    },
+    "data/maps/CherrygroveCity_PokemonCenter_1F/scripts.inc": {
+      "old_sha256": null,
+      "new_sha256": "887026e4dcc0f270b6ab6a8b150ec9885b031f76e644600eece1e4fd30604fca"
+    },
+    "data/maps/CherrygroveCity_PokemonCenter_1F/text.inc": {
+      "old_sha256": null,
+      "new_sha256": "d9d1db68ba31c6fc82708d681bfaa17a5c9391341b1866ac6d01ad36593a710a"
+    },
+    "data/maps/CherrygroveCity_PokemonCenter_2F/map.json": {
+      "old_sha256": null,
+      "new_sha256": "af4b11d6dd8f3d427985c716a39693257f3e9e78104b7ab72efb098858809ccb"
+    },
+    "data/maps/CherrygroveCity_PokemonCenter_2F/scripts.inc": {
+      "old_sha256": null,
+      "new_sha256": "b300c0ccc2209984e11c33bebd56e7a175fc58ec957629825285ee9fc24db50f"
+    },
+    "data/maps/CherrygroveCity_PokemonCenter_2F/text.inc": {
+      "old_sha256": null,
+      "new_sha256": "a0dfac1bcbde46cdf6187847f339d03aab6f659d4eb7949c5f14b7614ce6be55"
+    },
+    "data/maps/CherrygroveCity_Mart/map.json": {
+      "old_sha256": null,
+      "new_sha256": "468be8ab5a4f5a2e81b9df027bccdb3a6a54723edc4bd978a0991b17851930f3"
+    },
+    "data/maps/CherrygroveCity_Mart/scripts.inc": {
+      "old_sha256": null,
+      "new_sha256": "1ff3742088456abe720ffe0edc2069530c0288633e19f0b28bea2b49baaa1b07"
+    },
+    "data/maps/CherrygroveCity_Mart/text.inc": {
+      "old_sha256": null,
+      "new_sha256": "0ede88e6f13738a6d5cceb9cc0e42a5c700b8a38878b56d8038029ac69ae7d04"
+    },
+    "data/maps/CherrygroveCity_GuideHouse/map.json": {
+      "old_sha256": null,
+      "new_sha256": "a08510ecb6c8125ee522ddc0958b1ac9b9888d345d1ed040f7e32cc021a246e9"
+    },
+    "data/maps/CherrygroveCity_GuideHouse/scripts.inc": {
+      "old_sha256": null,
+      "new_sha256": "e5b1bf848ae12af834a4acd3cd28d585f85099078797ac0e85fbc3d8253a19f8"
+    },
+    "data/maps/CherrygroveCity_GuideHouse/text.inc": {
+      "old_sha256": null,
+      "new_sha256": "c6eb819ba4003c1c8d125a9543a740d126cb21eb7077ced30fdd64937b55efb8"
+    },
+    "data/maps/JohtoRoute30/map.json": {
+      "old_sha256": null,
+      "new_sha256": "f62328987cac5e1d2d2f527e0d1c9aab6beb76ba2c3c602d2c1c0e390b087937"
+    },
+    "data/maps/JohtoRoute30/scripts.inc": {
+      "old_sha256": null,
+      "new_sha256": "eb7a3a42c8b3d8f40158064ecd9a3662da0e96b9b3c232068e683c6df32c12fd"
+    },
+    "data/maps/JohtoRoute30/text.inc": {
+      "old_sha256": null,
+      "new_sha256": "0016ec70aeac5cba2471d1fb3c995d205409dd82bbaba0863d4f42b635160188"
+    },
+    "data/maps/JohtoRoute30_MrPokemonsHouse/map.json": {
+      "old_sha256": null,
+      "new_sha256": "93bd03707de0a0497c22ee12d624f09f2f22a0286d72a8c4868c7cd90118b7ab"
+    },
+    "data/maps/JohtoRoute30_MrPokemonsHouse/scripts.inc": {
+      "old_sha256": null,
+      "new_sha256": "8e4e9268e27d41801456936233c3f93be59065c8ecd276d011009fe6dbbe9505"
+    },
+    "data/maps/JohtoRoute30_MrPokemonsHouse/text.inc": {
+      "old_sha256": null,
+      "new_sha256": "d61961fdcc85a7ffae51ca24adeac980a22dc8a3eac3cf1f315df33127812e2d"
+    },
+    "data/maps/JohtoCherrygroveAirstrip/map.json": {
+      "old_sha256": "8e69b551a6a4138dce2c3b7f0efff0090ccfcec3f531507584c9e72974bee219",
+      "new_sha256": "fa5dd30f21b4f5b8e9c334ee50ebbf669faacc7cd2b4906ef40d646fa995e1b8"
+    },
+    "data/layouts/JohtoCherrygroveAirstrip/map.bin": {
+      "old_sha256": "8849ccd0fc068a471dfdb2d9c8cd23db1d300feb5aa56cb320f25e722f17ac23",
+      "new_sha256": "e6914678371a5fe3c30dae3f14014d6a7b863bcae56a5eca614537ca0262fd00"
+    },
+    "src/data/heal_locations.json": {
+      "old_sha256": "82af8bd3318ea6f9ef7fb5394f45c1622b5fa60d191586ecfd31d9db52304ebd",
+      "new_sha256": "6990ce9285630541da4c9f6c1a49667a9148234a945ca51bfba62b340310000d"
+    },
+    "include/constants/flags_johto_story.h": {
+      "old_sha256": "58f63eaf344d3d0823fcd5707474c1b200f60ec28fa85122265a4b490f50ac92",
+      "new_sha256": "05fd77b14bfc1baae60070dbb57ad45a6a6e9782d0763949f5f070aa1a56fe1a"
+    },
+    "tools/johto/patches/NewBarkTown_ElmsLab/scripts.inc": {
+      "old_sha256": "519888b7c62190ff2e88f532e8081d8b395b3dfbf78433f74423c072ceb20c1f",
+      "new_sha256": "6d0dec095c749836137c45e0f7852ac9c625e31777b2feee3b27c7c3efed949b"
+    },
+    "data/maps/NewBarkTown_ElmsLab/scripts.inc": {
+      "old_sha256": "519888b7c62190ff2e88f532e8081d8b395b3dfbf78433f74423c072ceb20c1f",
+      "new_sha256": "6d0dec095c749836137c45e0f7852ac9c625e31777b2feee3b27c7c3efed949b"
+    },
+    "tools/johto/patches/NewBarkTown_ElmsLab/text.inc": {
+      "old_sha256": "fe95f5cce305358c294d723dc215925c20060059bbb9b3d46970dbe6818f7475",
+      "new_sha256": "2a755ed6a18b2ce6c1cc9c0c33887a4c50bc8ec5ca854c09fd5e9c9d04995534"
+    },
+    "data/maps/NewBarkTown_ElmsLab/text.inc": {
+      "old_sha256": "fe95f5cce305358c294d723dc215925c20060059bbb9b3d46970dbe6818f7475",
+      "new_sha256": "2a755ed6a18b2ce6c1cc9c0c33887a4c50bc8ec5ca854c09fd5e9c9d04995534"
+    },
+    "tools/johto/build_entry.py": {
+      "old_sha256": "655ac4d4883bc138e035d12bd04f10ca398ffb4ddcf6835daca807c22b937026",
+      "new_sha256": "834034c710c98c2eaa0fdf62f5be26e743acc2c7f8ee536022e16967a0525f39"
+    },
+    "data/event_scripts.s": {
+      "old_sha256": "b8db2536c197efcb3262581147f2b26207ea30ddba6f17e3976eeb5d48cf2289",
+      "new_sha256": "5e4e277415d047d83ef7a0c1a84c2f627987a0cd2544e266e553c6c0cebaedb8"
+    },
+    "tools/johto/route30_wild.json": {
+      "old_sha256": null,
+      "new_sha256": "e0a9c391f26bc8a5bef2791ae1ea03c1aeb253406661b4ef20087b90c849ccc5"
+    },
+    "src/data/wild_encounters.json": {
+      "old_sha256": "e3f69cefd8db70ae3eeea4b1c5f642b962c952478077b5391b7efa1637f3d488",
+      "new_sha256": "8324c341f902b20709fc632676ef9ede355cf50a512111941f583184d935cf72"
+    },
+    "src/pokemon_summary_screen.c": {
+      "old_sha256": "7a11643af90201968476854eabcabb04f5e6d2ae33bd4145ca4105c5aa7b1b72",
+      "new_sha256": "be2afdd6698c5c2baa3700e63ad8fa350400ffc5e7ee670be192dbcdab9aed11"
+    },
+    "src/region_map.c": {
+      "old_sha256": "f790420ff2f53f015c4d06f13a43ac98b32d006096a557d1476eb6328dfe1673",
+      "new_sha256": "d84344501622c18ebdfe7e2536bf4cc9454a33c419e5a82749c440101d51bc16"
+    },
+    "src/pokedex_screen.c": {
+      "old_sha256": "3ababc641bd44be7267aef3ecdfa7759e347c6eebc2c9751a54fc7379ffb8ca7",
+      "new_sha256": "9163ff527798d99f2c419c2deefb6f8e2eb673db9a7c0ec050f95f8f671651b4"
+    },
+    "src/wild_pokemon_area.c": {
+      "old_sha256": "c73c9c260d9a6025b905e5f7a13f9536dd877ad833d3a412ccb448cb3d574e69",
+      "new_sha256": "1bdffcc224b138d1d315474e7f18692a2b00a21982d810bbe7e354001edbb7d4"
+    },
+    "include/pokedex_area_markers.h": {
+      "old_sha256": "f194f897022ed7f2a2ff37b42c66c7b8134a6e6ffaa6506b14416a035d939f2f",
+      "new_sha256": "69abe324a719c4881b69070467463198115b806c8ddc667c7540140f4a9f13fa"
+    },
+    "src/pokedex_area_markers.c": {
+      "old_sha256": "51349cfdb1a2903cefb19c2ffa5a4035ac8999c5541fee892f65c19bbeb4f461",
+      "new_sha256": "24c20dfdd3fb68a703ecb25d9dfadd24f7a232b253d6f05c8672d0bea4dd9cf5"
+    }
+  },
+  "validation": {
+    "airstrip_changed_cells": [
+      [
+        22,
+        0,
+        1052,
+        12289
+      ],
+      [
+        23,
+        0,
+        1053,
+        12289
+      ],
+      [
+        24,
+        0,
+        1052,
+        12289
+      ],
+      [
+        22,
+        1,
+        1044,
+        12289
+      ],
+      [
+        23,
+        1,
+        1045,
+        12289
+      ],
+      [
+        24,
+        1,
+        1044,
+        12289
+      ]
+    ],
+    "map_count": 7,
+    "old_johto_maps_preserved": [
+      "JohtoCherrygroveAirstrip",
+      "JohtoRoute29",
+      "NewBarkTown",
+      "NewBarkTown_ElmsLab",
+      "NewBarkTown_RestHouse",
+      "NewBarkTown_NeighborsHouse"
+    ],
+    "new_maps": [
+      "CherrygroveCity",
+      "CherrygroveCity_PokemonCenter_1F",
+      "CherrygroveCity_PokemonCenter_2F",
+      "CherrygroveCity_Mart",
+      "CherrygroveCity_GuideHouse",
+      "JohtoRoute30",
+      "JohtoRoute30_MrPokemonsHouse"
+    ],
+    "no_save_layout_change": true,
+    "new_flags": {
+      "FLAG_JOHTO_MET_CHERRYGROVE_GUIDE": "0x1502",
+      "FLAG_JOHTO_MR_POKEMON_BRIEFED": "0x1503",
+      "FLAG_JOHTO_ELM_REPORT_DELIVERED": "0x1504"
+    },
+    "route30_reachable_grass_cells": 89,
+    "static_checks": [
+      {
+        "map": "CherrygroveCity",
+        "walkable_component_cells": 539,
+        "doors_reachable": true,
+        "NPCs_reachable": true
+      },
+      {
+        "map": "CherrygroveCity_PokemonCenter_1F",
+        "native_layout_reused": "LAYOUT_POKEMON_CENTER_1F",
+        "NPC_floor_cells_valid": true
+      },
+      {
+        "map": "CherrygroveCity_PokemonCenter_2F",
+        "native_layout_reused": "LAYOUT_POKEMON_CENTER_2F",
+        "NPC_floor_cells_valid": true
+      },
+      {
+        "map": "CherrygroveCity_Mart",
+        "native_layout_reused": "LAYOUT_MART",
+        "NPC_floor_cells_valid": true
+      },
+      {
+        "map": "CherrygroveCity_GuideHouse",
+        "native_layout_reused": "LAYOUT_HOUSE1",
+        "NPC_floor_cells_valid": true
+      },
+      {
+        "map": "JohtoRoute30",
+        "walkable_component_cells": 693,
+        "doors_reachable": true,
+        "NPCs_reachable": true
+      },
+      {
+        "map": "JohtoRoute30_MrPokemonsHouse",
+        "native_layout_reused": "LAYOUT_HOUSE1",
+        "NPC_floor_cells_valid": true
+      }
+    ],
+    "native_build_and_emulator": "NOT_RUN_BY_GENERATOR"
+  }
+}

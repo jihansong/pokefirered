@@ -1,37 +1,3 @@
-LavaridgeTown_Gym_1F_Text_H0_0::
-	.string "Welcome… No, wait.\p"
-	.string "Puny TRAINER, how good to see\n"
-	.string "you've made it here!\p"
-	.string "I have been entrusted with the…\n"
-	.string "No, wait.\p"
-	.string "I am FLANNERY, and I'm the GYM\n"
-	.string "LEADER here!\p"
-	.string "Uh… Dare not underestimate me,\n"
-	.string "though I have been LEADER only a\l"
-	.string "short time!\p"
-	.string "With skills inherited from my grand-\n"
-	.string "father, I shall, uh…demonstrate the\l"
-	.string "hot moves we have honed on this\l"
-	.string "land!$"
-
-LavaridgeTown_Gym_1F_Text_H0_1::
-	.string "Oh…\n"
-	.string "I guess I was trying too hard…\p"
-	.string "I… I've only recently become\n"
-	.string "a GYM LEADER.\p"
-	.string "I tried too hard to be someone\n"
-	.string "I'm not.\p"
-	.string "I have to do things my natural way.\n"
-	.string "If I don't, my POKéMON will be\l"
-	.string "confused.\p"
-	.string "Thanks for teaching me that.\n"
-	.string "For that, you deserve this.$"
-
-LavaridgeTown_Gym_1F_Text_H0_2::
-	.string "Your power reminds me of someone…\p"
-	.string "Oh! I know! You battle like NORMAN,\n"
-	.string "the GYM LEADER of PETALBURG.$"
-
 LavaridgeTown_Gym_1F_Text_H1::
 	.string "Being buried in hot sand promotes\n"
 	.string "circulation.\p"
@@ -64,3 +30,41 @@ LavaridgeTown_Gym_1F_Text_H5::
 	.string "burn! Hose her down with water and\l"
 	.string "then go for it!$"
 
+@ BEGIN PATCH (tools/hoenn_import/patches)
+LavaridgeTown_Gym_1F_Text_H0_0::
+	.string "FLANNERY: A champion from KANTO!\n"
+	.string "Then I can give this all I've got.\p"
+	.string "The heat here isn't just the springs.\n"
+	.string "My POKéMON burn to battle, too!$"
+
+LavaridgeTown_Gym_1F_Text_H0_1::
+	.string "Whew! Your team kept its cool\n"
+	.string "right through all that heat!$"
+
+LavaridgeTown_Gym_1F_Text_H0_2::
+	.string "Power alone isn't enough.\n"
+	.string "You knew just when to use it.\p"
+	.string "I'll keep training beside my team.\n"
+	.string "Next time, we'll burn even brighter!$"
+
+LavaridgeTown_Gym_1F_Text_ReceivedHeatBadge::
+	.string "{PLAYER} received\n"
+	.string "the HEAT BADGE!$"
+
+LavaridgeTown_Gym_1F_Text_TakeTM50::
+	.string "Take this TM, too.\n"
+	.string "It suits a fiery battle.$"
+
+LavaridgeTown_Gym_1F_Text_ReceivedTM50::
+	.string "{PLAYER} received TM50\n"
+	.string "from FLANNERY.$"
+
+LavaridgeTown_Gym_1F_Text_ExplainTM50::
+	.string "OVERHEAT hits hard, but it lowers\n"
+	.string "the user's SP. ATK after use.\p"
+	.string "Make that first strike count!$"
+
+LavaridgeTown_Gym_1F_Text_NoRoomForTM50::
+	.string "Your TM CASE can't hold another.\n"
+	.string "Make room for TM50 and come back.$"
+@ END PATCH

@@ -1,0 +1,27 @@
+{
+  "test_execution_pass": true,
+  "normal_two_follower_direct_Misty_A_available": false,
+  "conditional_no_runtime_Pika_A_available": true,
+  "source_original_sav_unchanged": true,
+  "coordinates_never_poked": true,
+  "temporary_native_flag_control": true,
+  "actual_device_fps_measured": false,
+  "checks": [
+    {
+      "case": "ordinary_trail_actual_A",
+      "misty_visible": true,
+      "misty_player_tile_distance": 2,
+      "last_talked": 254,
+      "original_pika_emotion_preserved": true,
+      "misty_direct_A_reached": false,
+      "scope": "This normal trail pose, not proof that every possible movement timing is unreachable"
+    },
+    {
+      "case": "no-runtime-Pika_control_actual_A",
+      "temporary_received_starter_flag": false,
+      "real_pika100_and_party600_preserved": true,
+      "last_talked": 253,
+      "misty_direct_A_reached": true
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "applied": true,
+  "data_validation": [
+    {
+      "profile": 0,
+      "count": 151,
+      "pikachu": 25
+    },
+    {
+      "profile": 1,
+      "count": 251,
+      "pikachu": 22
+    },
+    {
+      "profile": 2,
+      "count": 202,
+      "pikachu": 156
+    }
+  ],
+  "matched_replacements": 26,
+  "getter_identical": true,
+  "rom_build": "not run",
+  "runtime_qa": "not run",
+  "files": {
+    "include/pokedex.h": {
+      "before": "9105b78155bb163e0a64d11b88cda8a94004a7e7cc5f8741a2cec5b3947128c2",
+      "after": "a7ea835c8327b5f17c5a766090829e49e694e5439b796634d1e1746867b29e8a"
+    },
+    "src/pokedex.c": {
+      "before": "b6283039a19fe1a5b781f6dd7ef3f61b1a022c460ce2588b8b6f99932a4682b7",
+      "after": "aac08b88d35a69cab82df72d6f759cf3d7f4c1620935657f5450ed7f197ba3e4"
+    },
+    "src/pokedex_screen.c": {
+      "before": "012f39b6a70310f75a254ff9ccedfa2ecd20e732329370f6f45c2ab7a865f7e0",
+      "after": "3ababc641bd44be7267aef3ecdfa7759e347c6eebc2c9751a54fc7379ffb8ca7"
+    },
+    "src/data/pokemon/johto_dex_order.h": {
+      "before": null,
+      "after": "069b9a185d7b9af33b2a7c4270a7942ad1367359252eb9e94be41a84ce00d0d6"
+    }
+  }
+}

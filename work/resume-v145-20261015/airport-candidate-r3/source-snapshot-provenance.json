@@ -1,0 +1,1503 @@
+{
+  "data/maps/KantoAirport/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "e9972fd44d44e3c516c6e3f5faea9ade48d9f31f64ca458182e8aabebd197ccd",
+    "replaced": null
+  },
+  "data/maps/SlateportCity_Harbor/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "b2662fae38a01e75163a736b4f9a0e05db05e3e505276b8d052cf146503ced95",
+    "replaced": null
+  },
+  "src/pokedex.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "aac08b88d35a69cab82df72d6f759cf3d7f4c1620935657f5450ed7f197ba3e4",
+    "replaced": null
+  },
+  "src/pokedex_screen.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "d7cd34bed4bdee8a2e76950636a093f726eb79268b2aed6b96bf31139c1ea4c7",
+    "replaced": null
+  },
+  "src/airplane_flight.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "99de98e0c14f0adbc9e10a831075ac0615b04fdcbd7429f652153acbed63dcd5",
+    "replaced": null
+  },
+  "src/pokemon.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "373b692e42d952b94b44f0ceda81d56dc75e1abb6af9d60ca5ec47d927b2057c",
+    "replaced": null
+  },
+  "src/battle_script_commands.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "ea0a382f9d6f9d8596f49365a83631e9f4379d7111280534abebd2409066f5c4",
+    "replaced": null
+  },
+  "src/battle_util.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "e16dae026d248e22f7fde5a477f7cd55cdfc406b965ea93dd085c4f46ab9308a",
+    "replaced": null
+  },
+  "include/pokemon.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "02fbde9fcef7f684b93389c6d31f825ce8e9d43549738dbe7ac1502ebc8d7d40",
+    "replaced": null
+  },
+  "include/constants/pokemon.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "255922c6a3e20de4fc3a164a6d8a89329ff26a7551a61ead06e196c4d1f22e28",
+    "replaced": null
+  },
+  "include/constants/flags.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "6645d8d43ad378b3f6707c8c3af2cc7da1f5acca7cfb48917b94631ec18f5d29",
+    "replaced": null
+  },
+  "include/constants/vars.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "c3c27b43a9db279da766aa9d94af0b28aa8c42a49a87fabca1b4a1ec20ade947",
+    "replaced": null
+  },
+  "data/maps/SlateportCity_OceanicMuseum_1F/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "f35c9377cf50ed1ac768c4de7757ae383ed2bba04a2d5088b5d30ad87bcd016a",
+    "replaced": null
+  },
+  "data/maps/SlateportCity_OceanicMuseum_1F/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "3b0d034b9939ccf7422d620c1a28372267fdfe647eeefe6a2bf16f353a6b5326",
+    "replaced": null
+  },
+  "data/layouts/HoennSlateportCity_OceanicMuseum_1F/map.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "c469fe853404f430fc5a7a268122962ef16c0af90cb557e71036639199d8f88d",
+    "replaced": null
+  },
+  "data/layouts/HoennSlateportCity_OceanicMuseum_1F/border.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "efef8d5a9f8dbe5bb218e6b0cc452583eb9d1452b615b1c7ab66ad49c82e9d70",
+    "replaced": null
+  },
+  "data/maps/SlateportCity_OceanicMuseum_2F/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "5bf7f7a0b0543800b9605b2a0c7f1abbbb97ef58b9e99ab32620d253634db994",
+    "replaced": null
+  },
+  "data/maps/SlateportCity_OceanicMuseum_2F/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "02a3e0883272a84fce12ea2835a1c4ade37b215c6d152eabf050cbc16a54bfcd",
+    "replaced": null
+  },
+  "data/layouts/HoennSlateportCity_OceanicMuseum_2F/map.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "2657da4b3d4ecd7f1e62ebec37053c3e95cc3f3e3d9e5739c3887edae1c282cb",
+    "replaced": null
+  },
+  "data/layouts/HoennSlateportCity_OceanicMuseum_2F/border.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "efef8d5a9f8dbe5bb218e6b0cc452583eb9d1452b615b1c7ab66ad49c82e9d70",
+    "replaced": null
+  },
+  "data/layouts/layouts.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "98bf104f2682e018439f22092d0321c3c75b7cb1a0c5d1a45e3135a9076ba75c",
+    "replaced": null
+  },
+  "data/maps/map_groups.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "b3213c388b45f25af44b1a0ab80d3ef47676d919df2ac5ffd308a6967bd30f5d",
+    "replaced": null
+  },
+  "src/data/tilesets/headers.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "8cd61e16513d33b52ad145e0aa399aaaa9a548020138d5e8e35e0c598898b7be",
+    "replaced": null
+  },
+  "src/data/tilesets/graphics.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "f50f8437d2d194a66bff53f237978bf1750e0ecdddcb8b5804d870a737791b4a",
+    "replaced": null
+  },
+  "src/data/tilesets/metatiles.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "188e08a12509977ad53293fa2f9a7b133dd42ae0bfbb4f8198d4ecfa4d77955c",
+    "replaced": null
+  },
+  "src/data/trainers.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "bef8144b78fec2356558ea5b054034a3f11e343d1a84f1c8e25bad7a488b3a11",
+    "replaced": null
+  },
+  "src/companion_misty.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "7acf4b9a66101a46687c71b3563f942c712990844c0c2927fc2afa797a8692d9",
+    "replaced": null
+  },
+  "include/constants/event_objects.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "5fbf0becb7920786392f799dc192b61dc41d6555364e36402acbe4c4f7b1990e",
+    "replaced": null
+  },
+  "include/constants/trainers.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "b91922d6515a2de4ff31cddc84d55a7160fe4b84c25ec1883b342237ac2984f3",
+    "replaced": null
+  },
+  "src/data/object_events/object_event_graphics_info.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "1d5faf4e76c51ad0fbe5ade0bc15a02ff26e7c78769168d5cba26d4f58fe59a6",
+    "replaced": null
+  },
+  "src/data/object_events/object_event_graphics.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "70455e68082d7d002b3107a4e00b83c36d1ec2ab41597ad666f3620564ac95ac",
+    "replaced": null
+  },
+  "src/data/object_events/object_event_graphics_info_pointers.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "8471b1a9ac7b0f839b59e35861d79da90d82bec6a1356ab53647dd416abdc54c",
+    "replaced": null
+  },
+  "data/maps/NewBarkTown/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "81cdf8f69b17fa4a553299b6aa69e5f7e9902407e4f51b8a353d13ca21612b0c",
+    "replaced": null
+  },
+  "data/maps/NewBarkTown/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "5692df75aaa22b8b10d0c0a5f10c0a065367e9309a2ffd2349d1a4ccccac9c91",
+    "replaced": null
+  },
+  "data/maps/NewBarkTown/text.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "4502bc9b1e472aee992bdcae1bbc9de0256c6669bbece72bb75017fdcbbbc364",
+    "replaced": null
+  },
+  "data/maps/CherrygroveCity/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ede66b8ee58e82bf791a5238e4e1bedc377f24d27acda00f9a73d208bd859d80",
+    "replaced": null
+  },
+  "data/maps/CherrygroveCity/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "794dc14c892d87aec7517566299e38e90395815135241bf01f3ed4146f90f341",
+    "replaced": null
+  },
+  "data/maps/CherrygroveCity/text.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "52f91124dff4af826fc01d3bcf4c521d419b7491ce79a642650bbd29ecd76bfb",
+    "replaced": null
+  },
+  "data/maps/JohtoRoute29/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "661b02f43cb5c31e2a249014bd72ba37996f4ba6aa46179d0bd0379273b8f4f0",
+    "replaced": null
+  },
+  "data/maps/JohtoRoute29/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "f414805c33ba10c1a6e1c88a61ca9b3ff2e8deb656d039293e73b11634501742",
+    "replaced": null
+  },
+  "data/maps/JohtoRoute29/text.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "c0879acf06e1df5b8d7dec2a48cbcc4e12543ba569f9ea620c1f9966d091e7c4",
+    "replaced": null
+  },
+  "data/maps/JohtoRoute30/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "1250d766c9fbd8ea5b6aba6753faf49491b131f77ca7d18dbabaaac2c2321bbd",
+    "replaced": null
+  },
+  "data/maps/JohtoRoute30/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "eb7a3a42c8b3d8f40158064ecd9a3662da0e96b9b3c232068e683c6df32c12fd",
+    "replaced": null
+  },
+  "data/maps/JohtoRoute30/text.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "0016ec70aeac5cba2471d1fb3c995d205409dd82bbaba0863d4f42b635160188",
+    "replaced": null
+  },
+  "data/maps/JohtoCherrygroveAirstrip/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "fa5dd30f21b4f5b8e9c334ee50ebbf669faacc7cd2b4906ef40d646fa995e1b8",
+    "replaced": null
+  },
+  "data/maps/JohtoCherrygroveAirstrip/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "84974211556518cdd60ef1ce4d94c83468537bd07c31bfee23f7e02e80b37f9d",
+    "replaced": null
+  },
+  "data/maps/JohtoCherrygroveAirstrip/text.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "33799726506790a848d15da9c6a0dbec614e4797312752657b12329e8bdc3beb",
+    "replaced": null
+  },
+  "data/maps/NewBarkTown_ElmsLab/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "c0c6a9b72b295cd45a5340342682aeff1f24f6871977e688797847ad54e38e11",
+    "replaced": null
+  },
+  "data/maps/NewBarkTown_ElmsLab/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "e539a5118c57020f82580089d16e9091e73d5b885a0ec0cfe6e1211558fb1e4a",
+    "replaced": null
+  },
+  "data/maps/NewBarkTown_ElmsLab/text.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "fdfc4156a4313d91770bd1d5dd624b50edd9cd53f966e1e8d7fa16fff4ca8c3f",
+    "replaced": null
+  },
+  "data/maps/LittlerootTown_ProfessorBirchsLab/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "d31e359af884c163083afbfc3266a97383fadf039be75e2c10bfe660f9c5d337",
+    "replaced": null
+  },
+  "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "662f47b443c3b59a568990bd6d67828942c1e72e47f48b908025707d1769132b",
+    "replaced": null
+  },
+  "data/maps/LittlerootTown_ProfessorBirchsLab/text.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "068d774d410f2292e1292df45260ec1d53a4fec7de1b34daa73b769e165a7166",
+    "replaced": null
+  },
+  "data/maps/LittlerootTown/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "af2acd66957124d985f775a22e16e9485c439d0ad971d5246fb3f28833cd64c9",
+    "replaced": null
+  },
+  "data/maps/LittlerootTown/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "7660a91d8ef3cf911e292dcce8ab56ef7f9890346d2d35867115ea492a0fe7fc",
+    "replaced": null
+  },
+  "data/maps/LittlerootTown/text.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "0a679ce00526e6ae253c3a7e5ee7f690f9cae4c87bc8b23be4bf0ffca22007b0",
+    "replaced": null
+  },
+  "data/maps/SlateportCity/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "4e768ba910ba8767b99d5c3ce29a02c8e9aaf7d66dd09a703f91edb5cbb33fe4",
+    "replaced": null
+  },
+  "data/maps/SlateportCity/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "d824178a79762249d651aa0cbbb01e42c7d5b1d42b6413895ab6b1bd9be53934",
+    "replaced": null
+  },
+  "data/maps/SlateportCity/text.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "5253092c86da28265e609f5f2b0cc39a07fe55a0a2d42c734aefc07bfa50fa8d",
+    "replaced": null
+  },
+  "data/layouts/NewBarkTown/map.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ec485c3937f083435ddb1d74d028fe267c893967726196f948feef1384fbeee9",
+    "replaced": null
+  },
+  "data/layouts/NewBarkTown/border.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "4f4aa105dfd88fa5d7cfa853fd7f794bf2acea638cdba8823481fac2ea22a91f",
+    "replaced": null
+  },
+  "data/layouts/CherrygroveCity/map.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ecb06700a5c892861dcfb024259553a2cecec747b1fc8cdf357e0f2b974d351b",
+    "replaced": null
+  },
+  "data/layouts/CherrygroveCity/border.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "877ba1a8619d96ac55bc6e0f946a551d7ca24ff142d3fedb7d4ad099aa115a78",
+    "replaced": null
+  },
+  "data/layouts/JohtoRoute29/map.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "aedcb49f54b0d6fae8d5f2c625a73199181d9d18d9f4c5af1c08f80773418ed8",
+    "replaced": null
+  },
+  "data/layouts/JohtoRoute29/border.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "4f4aa105dfd88fa5d7cfa853fd7f794bf2acea638cdba8823481fac2ea22a91f",
+    "replaced": null
+  },
+  "data/layouts/JohtoRoute30/map.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "494014999b22e3014a4f4654a486913513352963e3202b923d65fa4dbf0b966e",
+    "replaced": null
+  },
+  "data/layouts/JohtoRoute30/border.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "877ba1a8619d96ac55bc6e0f946a551d7ca24ff142d3fedb7d4ad099aa115a78",
+    "replaced": null
+  },
+  "data/layouts/JohtoCherrygroveAirstrip/map.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "e6914678371a5fe3c30dae3f14014d6a7b863bcae56a5eca614537ca0262fd00",
+    "replaced": null
+  },
+  "data/layouts/JohtoCherrygroveAirstrip/border.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "4f4aa105dfd88fa5d7cfa853fd7f794bf2acea638cdba8823481fac2ea22a91f",
+    "replaced": null
+  },
+  "data/layouts/NewBarkTown_ElmsLab/map.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "a1ca472215cd91f5128360af49880035be67b82fb43120758826a21e6a8d803f",
+    "replaced": null
+  },
+  "data/layouts/NewBarkTown_ElmsLab/border.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/metatiles.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "8d950c1a1f151f5e1bded1ecee165b815c3a4d62b69a4a9cec4f676283f9041e",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/tiles.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "9ff889d1b9da5383a0cd0c85ac7b791812867804f3a38566b46172087419e0b9",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/metatile_attributes.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "1f62a949da41adca90ad36ca3597754bee953a8f21781f32aedf6158922c89cb",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/palettes/09.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "c5324d9f8aee4ea00a736684a0f9580bdbbbb9a64ba47ff977cd9569132c0e22",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/palettes/12.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/palettes/04.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "50925427da2fc947ae3915f2d1b1c63e115418e8ce12f374b31a3ed45e932c65",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/palettes/15.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/palettes/13.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/palettes/10.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "c5324d9f8aee4ea00a736684a0f9580bdbbbb9a64ba47ff977cd9569132c0e22",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/palettes/08.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "c5324d9f8aee4ea00a736684a0f9580bdbbbb9a64ba47ff977cd9569132c0e22",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/palettes/14.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/palettes/05.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "7ab8f3342c37f96f587bff026583e7a5431a10c9f590ac40705b9732a9348098",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/palettes/03.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "139eddfe3f2a2d1018a736a480efa505231260662cdbaf30e32c173b1d9a6b76",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/palettes/06.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "46af7d618b34a9f330fb154bb4933f171b1947a6d224f8fe9c8ea2a84f461a0d",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/palettes/11.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "c5324d9f8aee4ea00a736684a0f9580bdbbbb9a64ba47ff977cd9569132c0e22",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/palettes/01.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "e5fa084be81a8b081a33de05c13a799778899c4ef750bbb2185f997f9d41dea4",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/palettes/00.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "de073336bb3f0592b6075fb8e4497b8c2ecfdf86a9d29f8c88dbec8702ccc9fc",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/palettes/02.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "5a45e240ddd7e5b5c9ef403b2f849b8fd4381d21661255ce49aae79ed991a49b",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/palettes/07.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "c5324d9f8aee4ea00a736684a0f9580bdbbbb9a64ba47ff977cd9569132c0e22",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/flower/4.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "b81ea7b895fd3ad95f60f075de88e901496c172325121116df8ee83dad1cf8b3",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/flower/1.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "56b7b97e3e05c4d36395e1a75430a9f0bce26f01dcd71a670df022cbb7caf99d",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/flower/3.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "512afc7073b9fba5b926002e9498795fc4178e32c9b62f884b0854fed5fd648f",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/flower/2.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "cda8d10a44dff6e0fab7cdc660910d00dcc42ccf46d50244bcb960e3aded10ad",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/flower/0.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "7196fa1936dea03f7aa0693f3ac7ee63f7caf87c7b6f55133e10cb6e75c893b4",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/sandwatersedge/6.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "8adb5d0ecb63d3722381327ed34c2c5f0263b457cc64f6cf213b702a04156b20",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/sandwatersedge/4.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "7f8ce7450f6ec754d4c2a49e671935f4368422bcfcfb47cf62df3c2901e5b846",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/sandwatersedge/1.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "40c17d35de6aaf2ceb133bbe3b24cc12f09173a553b793c8a2c90c27d0241c55",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/sandwatersedge/3.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "f0ce8f52fa3832b6f8614acfdf5ec9adc6b701ba4b97757cafc6d54573318b22",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/sandwatersedge/5.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "9fb659fa98d3f7ff6cd47b5c9662416aceb616f97254b1a9ea63158ab9a5abc4",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/sandwatersedge/2.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "cc6f80e0e2dbdde18642d421f4e3800840a5b9e188f8dcee07c06d00276fcffa",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/sandwatersedge/0.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "de297c7c37a19210cd1558c23c1aa2f64176055954cbea02c61a0e96ada62ccb",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/sandwatersedge/7.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "69045e6423ba5d7e976f42d9a5c4d9828625f3f0fdd9f5bd24caaed907c466c1",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/water_current_landwatersedge/6.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "cd0937992eed69745357b11356600ebb63abd2f317c6b39160b84158adc62f45",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/water_current_landwatersedge/4.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "20b3b45cb97fe75c6c7ad5b3474d595decc54590b2a0b429f3feb057261f408b",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/water_current_landwatersedge/1.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "7170ba98d59e8e895b2c9d475b8933965b6ddc2c7a8352fc725fbb6ad848921a",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/water_current_landwatersedge/3.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "44e80621d9b4cd503f2cec23f23c4114855c957ed4667840ecf5f3ef0c670bed",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/water_current_landwatersedge/5.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "18deff08c810376455ce3f9372313945f678e747071936ef4be95e417bf69631",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/water_current_landwatersedge/2.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "75f1040ab3775c7757fa18fb5130cbd7eb63771bc3c849e34000a3cc386155fc",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/water_current_landwatersedge/0.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "6d6e97d10cb8a0a8e7c5635c7e641a41ec947696f6ac0d666714f7efaa712927",
+    "replaced": null
+  },
+  "data/tilesets/primary/general/anim/water_current_landwatersedge/7.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "4c132b2f5d7201dec2269507b19a3b4fea4434523964efc1fca0a956dda20e48",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/metatiles.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "3b7ba7f75fd5d750413fc252519569a9f98fac586d87f62066bdf1e3edf35ca2",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/tiles.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "321a23f388126175b34b85cf46c2d8f943daab5ee4d0916129c345b99b9108d2",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/metatile_attributes.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "8af5fbc8c32e5d0de4fe66735603d46ecd3506c42fcbe8b6cac744496a25203a",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/palettes/09.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "04ac2f7421d737e8006c5d374cc6198eab0005baf4fe3b11b94cea65da53d54e",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/palettes/12.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "eb2d1792c862747f587d037336e87445e45bd8b3eaf4a60a554cff2dd88cbbf9",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/palettes/04.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "23b1a6ba32fb8fbc237b6a24073f33b38faf34d7ac23e88a8da77cc575223b32",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/palettes/15.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/palettes/13.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/palettes/10.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "c91f49f35db89d9b314d63341811e95cc0959f9df5df9b2faa6091cc5f3db0dd",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/palettes/08.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "3f664939118dd2b4f480e041b3db423e05795d06fef0bfdf2d28fa12acbb4598",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/palettes/14.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/palettes/05.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "fef52059cd545578c2e34b2886e933d2be98452b0a87551f1bbe8c7f7cf05722",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/palettes/03.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "dba11b573e9c585187c6d2ea0084d1f1d9e0e5c1c8d84e5e09a06d8a4415140f",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/palettes/06.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/palettes/11.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "402a1b250a1fc0abbf8c9f33a1576563e5fae27a5ceaab16a6d6bd96b727c175",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/palettes/01.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "53ffefb61f35f0d1a7b02327beeaf59fda5b9be50002c15523b0a7664d45c2c0",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/palettes/00.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "4d64fffdd7e8c32a6aa094d93c35db19fe94a25718f971e651ec6f5c4f543efd",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/palettes/02.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "8d7e01098f7e62f8f7aea120bdf3da76b4a2c7b5df3494a3b8aa3087d61c87c7",
+    "replaced": null
+  },
+  "data/tilesets/secondary/pallet_town/palettes/07.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "b9cf2edee66f156d17ad0252cbf82862a807b7805334df817e66ce138f9061ed",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/metatiles.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "8491038f93b038fd271a50821b51eaee2d3b3cf9aa99050632ed96306232f4e5",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/tiles.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "5c5348d6cccf3bccb3c1bd8c28951ff84c2ecece8256e59273c966672ebc5451",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/metatile_attributes.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "6e2643efb546a161feb0d3b0346fbd345f744997ddce4fe0d0379e9c51cf3d34",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/palettes/09.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "3f76ed39876d2afab0e04c6e25635c94c959627a0710066e98874cea28139d42",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/palettes/12.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "50871c39dc5dd716f67e2db4409332bb5d7afe09faeb7a04513023e1a6f96c57",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/palettes/04.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "c0b70a1f2046a8fecf8c16e5cd7b1fccdb6ed31529ddea2c9a1ecac6e0b4840a",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/palettes/15.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/palettes/13.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/palettes/10.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "7c9cc9a66f4f37d14f823f7acae9b99a47e9cb5cbf9ea30c94f101735c721976",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/palettes/08.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "33fcf96b6492d2920887c2487159240391146b77754c5d98dcc72c0701d2bb92",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/palettes/14.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/palettes/05.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "7e9680ef763bb3eb16680fdccc2eb4017919a61f4c0ceb96fc8a7173ddf95971",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/palettes/03.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "eb70d6bd8bc5a9ed194910e467efb9ff44e03393c3834f1516bd663f26497fb3",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/palettes/06.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "0c15f77fff425743f7a3c8ff631706f740d67148462d415d9391dc343e427873",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/palettes/11.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "30aaecf57788416187d86b4d3f787849cbafa3ac4f222b5f86b1e73d6e366b18",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/palettes/01.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ff426e73d6c78601f89aa9a9b957e26702e91774233c154bf86d13924b9140ab",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/palettes/00.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "de073336bb3f0592b6075fb8e4497b8c2ecfdf86a9d29f8c88dbec8702ccc9fc",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/palettes/02.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "fb95b6a0574a9ff2ef91bd5bfad78a7dec8b37ebe22bb4e31ee90ff32ab9876d",
+    "replaced": null
+  },
+  "data/tilesets/secondary/viridian_city/palettes/07.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "d35b9cffa5d500d3504f83f44fc5d4b476b71a5b55f81171fd774674a1e6e885",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/metatiles.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "c3b073d818a8520576fb7f2a8e0bda5738b22eb669768940c485a9cec08cff9b",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/tiles.png": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "5686194004fc43746b5b1ab5a427b42bb31f794bc889878c07747fa0a691d83c",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/metatile_attributes.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "8e736698a372e7ba90640db60b029540065667d99f6cc0161b80a79b75e6c1c8",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/palettes/09.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "646b760652df66eb544b594c20fc46970d5f3a084db71bb8feed998b8d7d3b1d",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/palettes/12.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "eb147d83d3f71fc79cfe281c5423174132eb2d67dc0f63cc057c9ba8192dc27c",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/palettes/04.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "9fbdd928294b6ae1cea94dd64d6f1ba0b3c137f94e30dc114775c4109f4250ae",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/palettes/15.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "256ea9aa87b39cc625f86f956e76308668f23311f36dc905756596c0ce694608",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/palettes/13.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/palettes/10.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "8c9f64526c47bc7c32f4cdd3b461de5bb5730ca45edbe54a2c73095305aa8ea4",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/palettes/08.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "039aa4bf8025b807df276155fce8bfb1906922be72c0ab23608e1d6c50ae4d56",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/palettes/14.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/palettes/05.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "7ab8f3342c37f96f587bff026583e7a5431a10c9f590ac40705b9732a9348098",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/palettes/03.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "139eddfe3f2a2d1018a736a480efa505231260662cdbaf30e32c173b1d9a6b76",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/palettes/06.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "d79c9d0bbbd9d96b468f9868194e47e0b5b0a8f52acec54ec318ef41461c7d1a",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/palettes/11.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "3c2a190d0f04c98fcf899838049a83f3671c1fc1f8de8f1190182880944c4386",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/palettes/01.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "e5fa084be81a8b081a33de05c13a799778899c4ef750bbb2185f997f9d41dea4",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/palettes/00.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "de073336bb3f0592b6075fb8e4497b8c2ecfdf86a9d29f8c88dbec8702ccc9fc",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/palettes/02.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "fb95b6a0574a9ff2ef91bd5bfad78a7dec8b37ebe22bb4e31ee90ff32ab9876d",
+    "replaced": null
+  },
+  "data/tilesets/secondary/vermilion_city/palettes/07.pal": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "1dbf25b47d3d69ff94d641e6138a8abf6c11a0c27bdc648ca37d45f9eaafc2b9",
+    "replaced": null
+  },
+  "tools/johto/lakeofrage_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "6b67ae31b6de711c5dc0054c5ac5d2ba81fb9fa450b363579428f2fb5889c3ba",
+    "replaced": null
+  },
+  "tools/johto/johtoroute32_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "e18596eef58bec4f9242d872db76b652ee799ca5dc527cb2dd66ead456b11c31",
+    "replaced": null
+  },
+  "tools/johto/patch_fly_region_gate.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "62523e7a9d20069710a4e3524ddcdbc93c455aab1ca63bbecf58be5dc3798c16",
+    "replaced": null
+  },
+  "tools/johto/build_violet.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "e28667b8f36fdf5a12661bff1106035965a357fae0d688b75280dbff2e98b27d",
+    "replaced": null
+  },
+  "tools/johto/repair_gym_callbacks.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "efc8c9d6867a4be614344271a5ad95fd9adac29b7f95138d6aec97e55a5486a9",
+    "replaced": null
+  },
+  "tools/johto/build_olivine_cianwood.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ca3d14013b4eb6638ad8eccf0719d823b2968feca79614c74c4d6ed9b65dd4cd",
+    "replaced": null
+  },
+  "tools/johto/mtmortar_1f_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "f00065eb49ca655028ed90ca7df4070614170f47c2e04155da637c1a617ff368",
+    "replaced": null
+  },
+  "tools/johto/johtoroute26_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "1848fa0d85250f92a64504505447b12b4b7c9d882879911ebe1996c0fd99a34e",
+    "replaced": null
+  },
+  "tools/johto/johtounioncave_1f_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "abb5c4535928ad98a637d4ad0b63a74e043a564a36c46678423b0074fa2f86c7",
+    "replaced": null
+  },
+  "tools/johto/johtoroute34_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "dae2f91ea7ba4512aa74f8cceafd119f3d698aa0b5a609a1c21773b36a998f19",
+    "replaced": null
+  },
+  "tools/johto/build_blackthorn.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "c05e9e905e74a7dbc4ff764aedda821ad7ceb483ddce5d717776b34a3b6eb839",
+    "replaced": null
+  },
+  "tools/johto/build_lab_cases.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "1ccb67e4398aeebdf1543d8c90f3490b297c7f5fb2d372a47ead95e2704b3fb3",
+    "replaced": null
+  },
+  "tools/johto/johtoroute37_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "9a38ce3e3a58d18426834d50d4408c3d6a5a028d6d7289b10d6290487fb97466",
+    "replaced": null
+  },
+  "tools/johto/build_ilex_goldenrod.before-whitney-native-branch.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "837c6735a1de75a75fbb2e689a4f5826f810de786783a453f87e679c31f6f107",
+    "replaced": null
+  },
+  "tools/johto/burnedtower_b1f_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "5c211df7e8887a82a7f29ae6134a0968ee47f463acbfb6ccf127c7604c48be0e",
+    "replaced": null
+  },
+  "tools/johto/build_violet_cases.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "bdfbb2f65ba022a848eb00d6da10137883168c5a20722bfc8aa312a27690aba4",
+    "replaced": null
+  },
+  "tools/johto/johtoroute36_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "76c189e6389a5c08e4e63aa69fc749e5d538e08198d60cc639c5de496781358f",
+    "replaced": null
+  },
+  "tools/johto/johtoroute41_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "23639b23af7fea56fa2c89783fb49cd3c10de046405b98c9a06709dc6c2f94b1",
+    "replaced": null
+  },
+  "tools/johto/build_ilex_goldenrod.before-bidirectional-exits.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "f776fcf2a763c513ecd2a9af7fee9c3c4b4d66678cb4e74726d8f1979745e0ce",
+    "replaced": null
+  },
+  "tools/johto/route29_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "61b2499532afb5c9eec0c084c5f1cce271705c759b65e55246c71a508d130323",
+    "replaced": null
+  },
+  "tools/johto/johtoroute43_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "a836323200bea17fd41712014f49bd83364fd1a05b021151eb6802a0bd7818a8",
+    "replaced": null
+  },
+  "tools/johto/dragonden_1f_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "a120e3ef563b701fa06cc8cc2354190f2d60dce5024bd0102561a6569311a4ee",
+    "replaced": null
+  },
+  "tools/johto/johtoroute42_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "c1b56bedf37029030f35a12f31f1a2dc48aabc3648a4773d5c7aee640bc25da9",
+    "replaced": null
+  },
+  "tools/johto/johtoroute33_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "238c7a36aabc5ca0d5f07fe1b953c3abbb6fb2ea5fe820ce53aa0812b4812c76",
+    "replaced": null
+  },
+  "tools/johto/build_johto_league.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "25bc76f948ff4100a0aa05ffa54776a0ed74e4ed664a50109cf8757503a46ba7",
+    "replaced": null
+  },
+  "tools/johto/build_ecruteak.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "b8009fa8ac15d0ee7a776df2b5a7a1a8016c3bac3a7459129c95ba908c46b495",
+    "replaced": null
+  },
+  "tools/johto/johtoroute44_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "c461a5f30f525bff51dc6822ec0f1ada6dc864c88087429763092e1851722855",
+    "replaced": null
+  },
+  "tools/johto/build_cherrygrove.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "2fd4ff9832d86bb10848e1bfdebe37e20029960c1b412fbfc9b2e19bd0640f4f",
+    "replaced": null
+  },
+  "tools/johto/build_ilex_goldenrod.before-route29-alias.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "0d90a8f9f13adf6459a89742eea6e422feb8355a02385e4b45644161581dc704",
+    "replaced": null
+  },
+  "tools/johto/patch_hm_rewards.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "a207f58ee10e9c9b7a49690e46744211641465e6b7acbeefaf646b3b59f0311e",
+    "replaced": null
+  },
+  "tools/johto/build_entry.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "d33a553f89549d14918d86e9888fd1a1d4dfa20032e700601ada332528c1d1a8",
+    "replaced": null
+  },
+  "tools/johto/johtoroute27_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "3065a855f07d305c7a8d3ed1444df543037889d7cf8d53b9fad4cb82e364effe",
+    "replaced": null
+  },
+  "tools/johto/build_cherrygrove_cases.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "2dafa924e6fcccf1d207050685b2768d5a161e762063d2cdc9fb518890ecb623",
+    "replaced": null
+  },
+  "tools/johto/icepath_b1f_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "c72689f4147c0d1237930a57c5de881519edff830bb2f2453025033117c7da25",
+    "replaced": null
+  },
+  "tools/johto/johtoroute40_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "54e93df664900358df398f2ffac047af7e9cc980bd5d2343d705deca8f07fb68",
+    "replaced": null
+  },
+  "tools/johto/icepath_b2f_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ab40fd535b937911668db3f9330e964e83ce0a7be85c8161245e3c549b47bf27",
+    "replaced": null
+  },
+  "tools/johto/ilexforest_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "d589ebbb71028ba6dd5c5288d0480aefe304bd7b6352e4cd5e106895c3cf92e6",
+    "replaced": null
+  },
+  "tools/johto/apply_route29_wild.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "603652ddf01d1c301d50c02ddfd19f68f41f7c6615fb6a72247fa1254730dba8",
+    "replaced": null
+  },
+  "tools/johto/johtoroute39_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "40cef3f8ff03f653b7fbf1d0ef200b3b38306746df21c63ddee66f3ba0967d98",
+    "replaced": null
+  },
+  "tools/johto/johtovictoryroad_1f_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "c7e4d4aa8e5554386e4918d5395f8e6ef65d02f0393ef1e1b51d3d590c1854d1",
+    "replaced": null
+  },
+  "tools/johto/tohjofalls_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "a9c7c191f242553f0cf3525ebb225c9d053cd313e80afd67d4b81530e7302e98",
+    "replaced": null
+  },
+  "tools/johto/route30_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "e0a9c391f26bc8a5bef2791ae1ea03c1aeb253406661b4ef20087b90c849ccc5",
+    "replaced": null
+  },
+  "tools/johto/johtoroute35_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "3ce3983fd02efa81a6c94e638a7e715c75b945057a1f3eafba29f165ce7e55b3",
+    "replaced": null
+  },
+  "tools/johto/route29_entry_apply.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "fda60565ac48f4c0eb311f00ba51acf3521c165cf4e8a382d33ed1221ca833c5",
+    "replaced": null
+  },
+  "tools/johto/build_mahogany.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "d2a5caf973caa260fd741173156931a3055e17e46cf81b8044f810c988bb63a0",
+    "replaced": null
+  },
+  "tools/johto/slowpokewell_1f_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "1cef7ca121983de3a72e144a0abf183cb92de9472b3f662e3876b2767fbbc21f",
+    "replaced": null
+  },
+  "tools/johto/johtonationalpark_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "e10f639b879a1c1b770155eed906f5fda16ddd8158c627b274b3f42a19d98ea0",
+    "replaced": null
+  },
+  "tools/johto/build_radio_tower.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "ef0c9a53a70e66a9ea482cd4ac32720aa6a56bdc16028041686bf2baa6f43d2b",
+    "replaced": null
+  },
+  "tools/johto/build_azalea.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "0e9e0bd90218dfe3fbd633bdaac7c58c78ff77f885b1b90fe7437cf2911faadc",
+    "replaced": null
+  },
+  "tools/johto/route31_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "a41b7c514826892e5371beb44c28849913ad395e3882fef9f99bc38e30a85cc2",
+    "replaced": null
+  },
+  "tools/johto/icepath_1f_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "9b4b809051497d70a9303a849349ad7dc3b161f980cd77f08654cb3665d099ff",
+    "replaced": null
+  },
+  "tools/johto/patch_surf_region_gate.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "c02a905752e2ce950185e0666e15eea4849f9dfe9cff13edc8d91831ab3eb5fd",
+    "replaced": null
+  },
+  "tools/johto/johtoroute38_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "6aeb28db7d2cbdb46818d9033fadc5d41b209b33af2af7c6f4fd64cff75e8473",
+    "replaced": null
+  },
+  "tools/johto/patch_fly_destinations.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "0bb583f88d4ac4505d80f1a9b828c3345638457b42ace7d78f2b6353c972243d",
+    "replaced": null
+  },
+  "tools/johto/burnedtower_1f_wild.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "8a6844f63be5de754bcf6054d8525136aec396d5ca2dafd1c046a3bf3bdd5f5a",
+    "replaced": null
+  },
+  "tools/johto/build_ilex_goldenrod.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-20261015",
+    "sha256": "0d30f50e9f9d782fc21ef9a11f5c39e93be065d1d623e7b644c63cad08b22a44",
+    "replaced": null
+  },
+  "src/pokemon_summary_screen.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "672b8f79c69718250622aa7207ab3493683a8aa8d1d9228d175a61535cbec7f1",
+    "replaced": null
+  },
+  "include/pokemon_storage_system_internal.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "29028503a377cf3bd081b44badf58b041965464da6101a0a7200095f28155a0e",
+    "replaced": null
+  },
+  "include/pokemon_summary_screen.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "ea5e3a36569e795ac8689e1c19d8aa8bd530cb45ac1f83410aa34d48187e4c58",
+    "replaced": null
+  },
+  "src/player_pc.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "0f458b68a43999cf207e6f30bb203100dafa6bbe3da899e8be4c0015395405eb",
+    "replaced": null
+  },
+  "tools/qa/eventcheck.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "57d219a371a7a5a534d048f1238ea9ed63381e444c4ae99ef109a13d0d08bda2",
+    "replaced": null
+  },
+  "tools/qa/johto_violet_native_bootstrap_v1.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "83c4557b96c344b241fc6f79e9b17722acfc0b0e81e0f9e6d649ff5d8b1c84bb",
+    "replaced": null
+  },
+  "src/data/object_events/object_event_pic_tables.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "aed387f4d301bbf7270cc72e2a188413a3503a469293b6ba6d44d30dd8ceae0a",
+    "replaced": null
+  },
+  "src/data/trainer_graphics/front_pic_tables.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "66a0718ba486ec4ed09244c57026c7e66564a5fd2719b831ac88f31d293fb82d",
+    "replaced": null
+  },
+  "src/graphics.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "65f71604b006c1f302aa8e86763dc6d064dd4f421cea3e349e6eaa244da06fa3",
+    "replaced": null
+  },
+  "src/text.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "5696f49443eeaaac74b530421ac7f0cbfc71996c557399583788111c322dd80c",
+    "replaced": null
+  },
+  "src/text_printer.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "6f084c018233604ece73cff105366de1897c3f052f08c780fe52a2b27fe403e6",
+    "replaced": null
+  },
+  "include/text.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "ca0d1447747d042d92da4df693be353a5af5a26a6c9dcfdf1e3bbc0d01530299",
+    "replaced": null
+  },
+  "data/event_scripts.s": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "333ec92da552cfafbba9e921fd4f6d5d6f13475ed98b7466f18fe2a7635016ac",
+    "replaced": null
+  },
+  "src/pokemon_storage_system.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "ebb9e603740f0268e3662e21a18aa30acd3b43f96d6d20abd5d6bd4bb874ff4a",
+    "replaced": null
+  },
+  "src/pokemon_storage_system_misc.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "3986eefd77597fb36792e67dd1c978572bb9e6331ee699918b64f6f42c627a60",
+    "replaced": null
+  },
+  "src/pokemon_storage_system_tasks.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "ac9e5037b244339c48a930cecbeb07a4cea20086c9347bdf9536164be8d74188",
+    "replaced": null
+  },
+  "src/pokemon_storage_system_graphics.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "b50c3b7c0f5e9a2678df6204a6d217671ad62e3eac35d162e2af5d423a7aa75a",
+    "replaced": null
+  },
+  "src/pokemon_storage_system_menu.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "4d2a4e128a1d0b516dbd1e7f804d8d1443f4eaa957503cbac86e4a87add3cbaa",
+    "replaced": null
+  },
+  "src/pokemon_storage_system_data.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "43407c5c98ef6db9c5bc2f129a5f413fe3631f6f99e11364a33a15999e4cc753",
+    "replaced": null
+  },
+  "src/item_menu.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "155bd6b0943e8df179cbc9892e573cee52fd8f67a1d0dd39b962bdbec2e3546a",
+    "replaced": null
+  },
+  "src/item_use.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "3170cced9ce04c638726af915b1822a421114b7b8dee0ca316437eaf0278a9fc",
+    "replaced": null
+  },
+  "src/menu.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "19158e25455ffed14afa516f0aa89c3412b3243dd11b5d7050cd41402db2a8ad",
+    "replaced": null
+  },
+  "src/start_menu.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "56de3fd5e7d7a7d65b95c3e632f898a8ec92b792d338f86a2275d5a2b4b77d08",
+    "replaced": null
+  },
+  "include/item_menu.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "4050f310cffb682b701370fe7c36fdfbe96606bcdedf298f76267287cc5eba68",
+    "replaced": null
+  },
+  "include/item.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "010970f78c4bc3282db164a7e3b7835537206e2a1b460c557376519569035f05",
+    "replaced": null
+  },
+  "include/menu.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "2a52fde974ed20eb571f15b5661a068b368fa9e97bc5fec17b5df37add8e0edd",
+    "replaced": null
+  },
+  "include/pokemon_storage_system.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "d98c839ab2eeaa0e6c16e4ffdee53d404b074c6ffffa76384f26bd00ceffd537",
+    "replaced": null
+  },
+  "include/constants/items.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "d2348029aff9b459dce1ed19a71895c9922b5e946a09a3a6da2013c64dc71da8",
+    "replaced": null
+  },
+  "data/scripts/pc.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "9e2d8abcd0e8e96ca1ac8b63c7021b552a6f441ea181e24471340a9d2f0b9e99",
+    "replaced": null
+  },
+  "include/fieldmap.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "b6f232042fd3f83473f9cce72865901202746aa4cf51213170365ce0715d64e6",
+    "replaced": null
+  },
+  "data/maps/FiveIsland_RocketWarehouse/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "cb7ace86537355b5c9c1a635a7304c1a3fabe751df1e2cb00d5efe323ec6bf66",
+    "replaced": null
+  },
+  "data/maps/FiveIsland_RocketWarehouse/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "b449c6890230455482311d27df2a70c2d818bcb067cf62fdf967da4e23f591f9",
+    "replaced": null
+  },
+  "data/maps/FiveIsland_Meadow/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "d7481b444b2c3b73044297b7052a6b985cc2ba08a5b69642d39aa99d6c1edbef",
+    "replaced": null
+  },
+  "data/maps/FiveIsland_Meadow/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "f7d580566f280c0575d2107824849402bfe69ebe5d40db3d01e60cb8a70e89da",
+    "replaced": null
+  },
+  "data/maps/FiveIsland/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "8106f7385487610f1fc217fd8f495dc0c21d1faef6457c7bbbf9cc7fe4792a25",
+    "replaced": null
+  },
+  "data/maps/FiveIsland/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "83e9d96d3e4e2038b117d389a5cc66d1d0ab7f048d38e677a77f3a65ff461ec0",
+    "replaced": null
+  },
+  "data/maps/FiveIsland_PokemonCenter_1F/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "dc2b2f7728851bdfa73e36a238f07fb49c45afec2ecb2d1f370bef4951e8c0ab",
+    "replaced": null
+  },
+  "data/maps/FiveIsland_PokemonCenter_1F/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "76ced550e3c6272ac15be7c3a98fd9208b71fe872ff01ce26d7ace946037b400",
+    "replaced": null
+  },
+  "data/maps/JohtoRoute27/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "85634fb76370c64d5b46771cfc9ae3543e42b49bc0e8c68ba7819a4e3fe13c08",
+    "replaced": null
+  },
+  "data/maps/JohtoRoute27/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "51864795b46dfb0a9afd9ba28a459ce3b6026f4fd5af544cb5740e832881759b",
+    "replaced": null
+  },
+  "data/maps/JohtoRoute31/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "e1868c9b0e825b9ae4db3768c7c561c48ad97a203c0309286e1845216524d5fc",
+    "replaced": null
+  },
+  "data/maps/JohtoRoute31/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "ec8443dfc59ed2fdbc733ed47cdd4075c034858dc49a3a5a0326d2bec1935a29",
+    "replaced": null
+  },
+  "data/layouts/FiveIsland_RocketWarehouse/border.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196",
+    "replaced": null
+  },
+  "data/layouts/FiveIsland_RocketWarehouse/map.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "3709bd1556fa0a1fbefb0b3660da55dbe94efb927aa2cc9ec035f6f750b918fa",
+    "replaced": null
+  },
+  "data/layouts/FiveIsland_Meadow/border.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "cba446b7fabf3b13007a0e5d721f52dc5a35423464f23cbfaf7d379b6187d2ce",
+    "replaced": null
+  },
+  "data/layouts/FiveIsland_Meadow/map.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "0f6e0d0cd7f89f5cb12cbcf3523b3623230b5917aab0c95d1a852f5447c84543",
+    "replaced": null
+  },
+  "data/layouts/FiveIsland/border.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "cba446b7fabf3b13007a0e5d721f52dc5a35423464f23cbfaf7d379b6187d2ce",
+    "replaced": null
+  },
+  "data/layouts/FiveIsland/map.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "5e37c55393c46609576239efef916f4358929afb77ded7efea24acde88d58dd0",
+    "replaced": null
+  },
+  "data/layouts/PokemonCenter_1F/border.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196",
+    "replaced": null
+  },
+  "data/layouts/PokemonCenter_1F/map.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "32a6f854088ca261ed410ebff549e73d7e732aa1143223377e8f290e8df52e0d",
+    "replaced": null
+  },
+  "data/layouts/JohtoRoute27/border.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "bd05db219b1304364f4d1c265db9cece1af50fb2332d9f39357fdc8d721dc449",
+    "replaced": null
+  },
+  "data/layouts/JohtoRoute27/map.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "c8c727173b4209bf6cd47b1cf148ac813ffd25a3714eed1f9ecf3ec53397d9f4",
+    "replaced": null
+  },
+  "data/layouts/JohtoRoute31/border.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "877ba1a8619d96ac55bc6e0f946a551d7ca24ff142d3fedb7d4ad099aa115a78",
+    "replaced": null
+  },
+  "data/layouts/JohtoRoute31/map.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r3-20261015",
+    "sha256": "7cacfbf3d8ce446664745b9fa4ad95f27efc369192f20b2aaf8b1efaa4e3f6f3",
+    "replaced": null
+  },
+  "data/maps/VermilionCity/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "25d805e34ca5df23e33d9d01c344e1bd946ce8bfa1f124f46a00292eefdd6ff6",
+    "replaced": null
+  },
+  "data/maps/KantoAirport/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "9aedd424da7a55c89de1e110aa4088df44e98ff2bb422efaca9b6767cf6da301",
+    "replaced": null
+  },
+  "data/maps/SlateportCity_Harbor/map.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "31d2a3475249aaaac9325492938dc572520dfcde2398c8091ea1f59c13e99ae7",
+    "replaced": null
+  },
+  "tools/hoenn_import/patches/SlateportCity_Harbor.json": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "185d4cf2d76df7ef2739a00dd18339870499de8a6a0581ca98653f4121d55662",
+    "replaced": null
+  },
+  "src/event_object_movement.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "241a15df4e9977c0fb3a8e84507623476470f18de0a1862a8457bb96fbf6a420",
+    "replaced": null
+  },
+  "src/field_door.c": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "5e61ee50c9663fdfdba7b8d43cf9cb9b587cb93beb902c021d671b783edc9c4b",
+    "replaced": null
+  },
+  "tools/make_airport_lounge.py": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "a9dcb63af90edd52294a95ab281103d5040fe0405fdc4d357ec849b0414d955a",
+    "replaced": null
+  },
+  "include/event_object_movement.h": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "ecc4e09bfcb981fdab022c2da77ffb0e734e9dfcdacc8ab8f54667dd656aad44",
+    "replaced": null
+  },
+  "tools/hoenn_import/patches/SlateportCity_Harbor.mapscripts": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "22684821471bf9c4b2bfa513b00c1beff268e67aaace02117f151960208f34e5",
+    "replaced": null
+  },
+  "tools/hoenn_import/patches/SlateportCity_Harbor.scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "36f030d929d1b1d4dd0e2ef5e1157df3b9c253c537f539cdcae027c4b6eb829d",
+    "replaced": null
+  },
+  "tools/hoenn_import/patches/SlateportCity_Harbor.text.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "cb5fbc40cd44879419eed03041a8c8f56047070587dfc5e44f92781dcdae1824",
+    "replaced": null
+  },
+  "data/maps/VermilionCity/scripts.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "33301b4e60d551253e6bf0ca2dcee661278566392fd73e0af8148994e3fc9839",
+    "replaced": null
+  },
+  "data/maps/VermilionCity/text.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "cb83643118bc56e81527d7e45ff0ac669c84fa53b8bab490b24da9441b4c73a2",
+    "replaced": null
+  },
+  "data/maps/KantoAirport/text.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "0d789a4a47b78d71635871e73b70e2d4e21c4baa0d27f560efedd62b6beab7a0",
+    "replaced": null
+  },
+  "data/maps/SlateportCity_Harbor/text.inc": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "ebacf4b2ef881aef087ba902778b6b968c86ebefd38f37f7e498bf74e02a146e",
+    "replaced": null
+  },
+  "data/layouts/VermilionCity/border.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "cba446b7fabf3b13007a0e5d721f52dc5a35423464f23cbfaf7d379b6187d2ce",
+    "replaced": null
+  },
+  "data/layouts/VermilionCity/map.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "dcd71b5a2f1a70750d025670313f01360ae9f8da881d6f020c14bd4fcb50cab8",
+    "replaced": null
+  },
+  "data/layouts/KantoAirport/border.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "efef8d5a9f8dbe5bb218e6b0cc452583eb9d1452b615b1c7ab66ad49c82e9d70",
+    "replaced": null
+  },
+  "data/layouts/KantoAirport/map.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "5690a9a6e8d156812ac576d9eaa184b60427d2b270872349a63058ab4333401d",
+    "replaced": null
+  },
+  "data/layouts/HoennHarbor/border.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "9ff63640fa3b4682056532b7924b03250ccc7a832f64ccec3dea79ea8595a24d",
+    "replaced": null
+  },
+  "data/layouts/HoennHarbor/map.bin": {
+    "snapshot": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\user-bugs-v145-fresh-r4-20261015",
+    "sha256": "ec418c60c4f5cac3eb4ee9e2a29e1f48709e552411f67086a5352945001afcbc",
+    "replaced": null
+  },
+  "tools/hoenn_import/apply_patches.py": {
+    "snapshot": "C:\\Users\\seren\\Documents\\Codex\\2026-10-01\\https-effective-meme-v6pxvx5qx6vghwj56-github-dev\\work\\pokefirered",
+    "sha256": "50021b65d020d3d6ad40d858d04b0a53d5a5fdc4a53659b0616d67e3f12882bc",
+    "parent_remote_sha_attestation": "2026-10-15 live Codespace source SHA equals cached full body",
+    "replaced": null
+  }
+}

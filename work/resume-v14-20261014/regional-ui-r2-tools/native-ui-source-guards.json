@@ -1,0 +1,558 @@
+{
+  "data/maps/KantoAirport/scripts.inc": {
+    "sha256": "e9972fd44d44e3c516c6e3f5faea9ade48d9f31f64ca458182e8aabebd197ccd",
+    "size": 4052
+  },
+  "data/maps/LittlerootTown/scripts.inc": {
+    "sha256": "7660a91d8ef3cf911e292dcce8ab56ef7f9890346d2d35867115ea492a0fe7fc",
+    "size": 363
+  },
+  "data/maps/LittlerootTown_BrendansHouse_1F/scripts.inc": {
+    "sha256": "135df14ea18ee6c924b960a45e78dfce0861d01a838320f8fb17b7d05d2a2643",
+    "size": 1280
+  },
+  "data/maps/LittlerootTown_BrendansHouse_2F/scripts.inc": {
+    "sha256": "14c19371386f4cf6c0dddfa47b5a4a07faa96ce5b7300fe2f90bb0fdd28bfd08",
+    "size": 1101
+  },
+  "data/maps/LittlerootTown_MaysHouse_1F/scripts.inc": {
+    "sha256": "bf04a378fb49310d91da7190a056d7631155e25f8350c98fa324fbaa825e24e7",
+    "size": 1029
+  },
+  "data/maps/LittlerootTown_MaysHouse_2F/scripts.inc": {
+    "sha256": "9bc175ec9f52904958fd1c55da6f3501823de865e3b766fe7794e204a28196a5",
+    "size": 551
+  },
+  "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc": {
+    "sha256": "662f47b443c3b59a568990bd6d67828942c1e72e47f48b908025707d1769132b",
+    "size": 14087
+  },
+  "data/maps/NewBarkTown/scripts.inc": {
+    "sha256": "5692df75aaa22b8b10d0c0a5f10c0a065367e9309a2ffd2349d1a4ccccac9c91",
+    "size": 177
+  },
+  "data/maps/NewBarkTown_ElmsLab/scripts.inc": {
+    "sha256": "e539a5118c57020f82580089d16e9091e73d5b885a0ec0cfe6e1211558fb1e4a",
+    "size": 3848
+  },
+  "data/maps/NewBarkTown_NeighborsHouse/scripts.inc": {
+    "sha256": "62c4fc2c61132d284eeb398024292d144ed3396da63dfbc1aae3265a227b6d4c",
+    "size": 155
+  },
+  "data/maps/NewBarkTown_RestHouse/scripts.inc": {
+    "sha256": "9af09a1401437f80fd6e0cfc2426c529c6a8d7a886de0f40caee8a7139c286ba",
+    "size": 474
+  },
+  "include/constants/flags.h": {
+    "sha256": "6645d8d43ad378b3f6707c8c3af2cc7da1f5acca7cfb48917b94631ec18f5d29",
+    "size": 98003
+  },
+  "include/constants/flags_hoenn_story.h": {
+    "sha256": "493679980358d6b5a5f98d1cd7283ec211f20240e435b91711baa8c1a0debb1f",
+    "size": 11442
+  },
+  "include/constants/flags_johto_story.h": {
+    "sha256": "1d2066e2392afb64ba83b1fe1601e1f66123ea852064cfb06086a8500ca3c9bf",
+    "size": 5581
+  },
+  "include/constants/items.h": {
+    "sha256": "d2348029aff9b459dce1ed19a71895c9922b5e946a09a3a6da2013c64dc71da8",
+    "size": 12495
+  },
+  "include/constants/pokedex.h": {
+    "sha256": "aac527819623140d7f44ad99b72654bab59ca5679a80cca33361828cc7e7d0c6",
+    "size": 21092
+  },
+  "include/constants/species.h": {
+    "sha256": "c6d5e22f66c2308261d6d9a9c3b72d4638ffa622cb1395dbabe69a588aa65dc4",
+    "size": 13077
+  },
+  "include/constants/vars.h": {
+    "sha256": "c3c27b43a9db279da766aa9d94af0b28aa8c42a49a87fabca1b4a1ec20ade947",
+    "size": 18806
+  },
+  "include/pokedex.h": {
+    "sha256": "a7ea835c8327b5f17c5a766090829e49e694e5439b796634d1e1746867b29e8a",
+    "size": 3581
+  },
+  "include/pokedex_screen.h": {
+    "sha256": "62151ddb84111da7ae854403335fe7f2ddc7dce45e947a445713f6d70447d9d4",
+    "size": 976
+  },
+  "outputs/save-pp15-20261013/learning-validation.json": {
+    "sha256": "de939a48d8db3a86efcf72903a36b49b6f50dfb766a5c733d8279b26047384b6",
+    "size": 767
+  },
+  "outputs/save-pp15-20261013/manifest.json": {
+    "sha256": "3dd3a2e68d739620b5c426947d0fdef2b55708085db9f7850eed8e90d27e6835",
+    "size": 1056
+  },
+  "outputs/save-pp15-20261013/native-validation.json": {
+    "sha256": "c0605229003ea2275a8b6bf981b1c45213c46cd9b90c45b028fd5ba4f9314db4",
+    "size": 64420
+  },
+  "outputs/save-pp15-20261013/save-validation.json": {
+    "sha256": "1cf763ebed96d10b8c918304ef01b5b50725edd25ecdcdb5ef18352e7cc34517",
+    "size": 4253
+  },
+  "outputs/save-v125-items99-iv2x-20261013/edit-manifest.json": {
+    "sha256": "48cf6dc11194e7ca9a3562e3695e7cf4a0cd4721e41243159d36cbc8aefc0f50",
+    "size": 7083
+  },
+  "outputs/save-v125-items99-iv2x-20261013/independent-raw-audit.json": {
+    "sha256": "edc8803d5aaa182f21a3d3c7740211fe2e4b5ba60a22cc5f840916ab669dc63d",
+    "size": 1191
+  },
+  "outputs/save-v125-items99-iv2x-20261013/native-validation.json": {
+    "sha256": "5979dd16011a4b4aae7b55e68585b7caa6c1e6a79b3b951689c391dc3d9505bf",
+    "size": 2553
+  },
+  "saves/backup-codex-v1_1-recovery-sort-20261002T002244.307175Z/pokemonthyl_v1.1.original.sav": {
+    "sha256": "417452a3f151dbe0eeaca4d41780739f8137eafd7ff14df4e7eed1685b9b699f",
+    "size": 131072
+  },
+  "saves/backup-v0.6.0-era/hoenn.sav": {
+    "sha256": "d1ed8d987d4e451efb00a6cda2ba770e6472f36a89595a04a3550156876806ad",
+    "size": 131072
+  },
+  "saves/backup-v0.6.0-era/pokemonthyl_v3.gba.sav": {
+    "sha256": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "size": 131072
+  },
+  "saves/backup-v0.6.0-era/v0.1.0.sav": {
+    "sha256": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "size": 131072
+  },
+  "saves/backup-v0.6.0-era/v0.2.1.sav": {
+    "sha256": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "size": 131072
+  },
+  "saves/backup-v0.6.0-era/v0.5.1.sav": {
+    "sha256": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "size": 131072
+  },
+  "saves/hoenn.sav": {
+    "sha256": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+    "size": 131072
+  },
+  "saves/pokemonthyl_hoenn_QAed.sav": {
+    "sha256": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+    "size": 131072
+  },
+  "saves/pokemonthyl_v1.1.sav": {
+    "sha256": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+    "size": 131072
+  },
+  "saves/pokemonthyl_v1.2.sav": {
+    "sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+    "size": 131072
+  },
+  "saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav": {
+    "sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+    "size": 131072
+  },
+  "saves/pokemonthyl_v1.25-items99-iv2x.sav": {
+    "sha256": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+    "size": 131072
+  },
+  "saves/pokemonthyl_v1.25.sav": {
+    "sha256": "53d923bf4668373724b19c9d3c8526b002701606ab7ac082d657ee990e23d7b3",
+    "size": 131072
+  },
+  "saves/pokemonthyl_v1.4.sav": {
+    "sha256": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4",
+    "size": 131072
+  },
+  "saves/pokemonthyl_v3.gba.sav": {
+    "sha256": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "size": 131072
+  },
+  "saves/v0.1.0.sav": {
+    "sha256": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "size": 131072
+  },
+  "saves/v0.2.1.sav": {
+    "sha256": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "size": 131072
+  },
+  "saves/v0.5.1.sav": {
+    "sha256": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "size": 131072
+  },
+  "src/data/pokemon/johto_dex_order.h": {
+    "sha256": "069b9a185d7b9af33b2a7c4270a7942ad1367359252eb9e94be41a84ce00d0d6",
+    "size": 1558
+  },
+  "src/data/pokemon/pokedex_orders.h": {
+    "sha256": "2a6beb7e624f41ec1abf4813d630bdc385af89ecf051f2622f870001cac1aa38",
+    "size": 40154
+  },
+  "src/event_object_movement.c": {
+    "sha256": "241a15df4e9977c0fb3a8e84507623476470f18de0a1862a8457bb96fbf6a420",
+    "size": 334864
+  },
+  "src/load_save.c": {
+    "sha256": "b6a07136288f9330cf2b56f3a101fb62fd99fb23d76c9ab8de81e8cba458c012",
+    "size": 8253
+  },
+  "src/pokedex.c": {
+    "sha256": "aac08b88d35a69cab82df72d6f759cf3d7f4c1620935657f5450ed7f197ba3e4",
+    "size": 4458
+  },
+  "src/pokedex_area_markers.c": {
+    "sha256": "af38f08aec2f388b6833d69c49ab10248dee3da4c17a33b7ae9fa27e97110aca",
+    "size": 19789
+  },
+  "src/pokedex_screen.c": {
+    "sha256": "d7cd34bed4bdee8a2e76950636a093f726eb79268b2aed6b96bf31139c1ea4c7",
+    "size": 146283
+  },
+  "src/pokemon.c": {
+    "sha256": "373b692e42d952b94b44f0ceda81d56dc75e1abb6af9d60ca5ec47d927b2057c",
+    "size": 230320
+  },
+  "src/pokemon_storage_system.c": {
+    "sha256": "ebb9e603740f0268e3662e21a18aa30acd3b43f96d6d20abd5d6bd4bb874ff4a",
+    "size": 4838
+  },
+  "src/save.c": {
+    "sha256": "24f0b70d72cc83c50f7b2d6d73cb211c9b1272ab5fa40dc1d553ad48d1f4511c",
+    "size": 28672
+  },
+  "work/animation-recreation-status.json": {
+    "sha256": "1c0dfe788c920fc00b428d2328e02913bc2788f5259088f291bdfe3bcd8fd9cf",
+    "size": 91774
+  },
+  "work/region-save-validation-r2-20261004T143723Z/native_continue.json": {
+    "sha256": "156c374d8cc5ad4977ca37aa7b84d00c9a05594baa136f085f257f8a8b90cbb3",
+    "size": 27929
+  },
+  "work/region-save-validation-r2-20261004T143723Z/result.json": {
+    "sha256": "68e512a0496dee43bc542bcec00823958787862bf2cdb1b1914032049374709d",
+    "size": 2958
+  },
+  "work/region-save-validation-r2-20261004T143723Z/winona-cases.json": {
+    "sha256": "febaa7ab414687c1995680529c4b5e9403ca5b7da0176e4f2923cc03ca45fc60",
+    "size": 2378
+  },
+  "work/save-edit-20261013/edit-manifest.json": {
+    "sha256": "66a7418fffb5ed0d8c5ae887dfdbfaceb14ff78165e2f7a7defb44906c06bf29",
+    "size": 5493
+  },
+  "work/save-edit-v125-20261013/delivery-receipt.json": {
+    "sha256": "fd87094903235cecf52414a5395982229362eea7efb2ff085ce676580d946aa7",
+    "size": 476
+  },
+  "work/save-edit-v125-20261013/edit-manifest.json": {
+    "sha256": "48cf6dc11194e7ca9a3562e3695e7cf4a0cd4721e41243159d36cbc8aefc0f50",
+    "size": 7083
+  },
+  "work/save-edit-v125-20261013/independent-raw-audit.json": {
+    "sha256": "edc8803d5aaa182f21a3d3c7740211fe2e4b5ba60a22cc5f840916ab669dc63d",
+    "size": 1191
+  },
+  "work/save-edit-v125-20261013/native/validation.json": {
+    "sha256": "5979dd16011a4b4aae7b55e68585b7caa6c1e6a79b3b951689c391dc3d9505bf",
+    "size": 2553
+  },
+  "work/save-edit-v125-20261013/status-before-edit.json": {
+    "sha256": "340d927ed3e9d8a0cf221ac29ea92cea834b4d4a6bbdec9ec7ad92418ac77e51",
+    "size": 70996
+  },
+  "work/save-inventory-pp-20261013/before-final-promotion/animation-recreation-status.json": {
+    "sha256": "db7f537bf018d077fac8861dddd8362c469935f4e1150fdd3c03a10aac07ce6e",
+    "size": 77155
+  },
+  "work/save-inventory-pp-20261013/build-launch.json": {
+    "sha256": "d13a14b8093830e5b42f737c9977a43be8357328e09803ba6cc4a6c2889fce26",
+    "size": 14
+  },
+  "work/save-inventory-pp-20261013/build-result-v2.json": {
+    "sha256": "6072ec99222e06976b0216d22e45ce45288701fcbc8113f839bd0a5756647350",
+    "size": 6374
+  },
+  "work/save-inventory-pp-20261013/build-result-v3.json": {
+    "sha256": "838ca175c852e80ec1e9643ba21752ebb0f494a7182d9cd27ed7428ccf76bd0d",
+    "size": 1560
+  },
+  "work/save-inventory-pp-20261013/build-result.json": {
+    "sha256": "ac46f4a30257ef36b788e7c7accc76c25ac277abbb09c4810df63e402084e864",
+    "size": 6329
+  },
+  "work/save-inventory-pp-20261013/delivery-result.json": {
+    "sha256": "7748378adc3a11bd04da19a28ef57e11b90456bb5c14f4e8d62e8eaa27179d06",
+    "size": 1260
+  },
+  "work/save-inventory-pp-20261013/facts.json": {
+    "sha256": "185620df0910137863da32e316da4bf589a22e2f536ec3d08edfee42cbe2073b",
+    "size": 2742
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/01-pika-summary.json": {
+    "sha256": "daf3c81dc1dd46143a67f16fa915b270c107ee204aa78d77b7531a33358e3be4",
+    "size": 159
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/02-bag-keyitems.json": {
+    "sha256": "38bb5014059c8759d1df6e1cfc867ea2bdbb2b706c01a3dea05e4650490ac063",
+    "size": 159
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/04-bag-open.json": {
+    "sha256": "f5b253f26a4af2f11e12db67d7a27aab207e3394221f9e85c9990c2d5c359f44",
+    "size": 159
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/05-start-menu.json": {
+    "sha256": "f5b253f26a4af2f11e12db67d7a27aab207e3394221f9e85c9990c2d5c359f44",
+    "size": 159
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/06-bag.json": {
+    "sha256": "590fce76ac89ba5554f90a24677efb7246a988d0ecccf7a8388b5cc9c5daf24d",
+    "size": 159
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/07-tm-case.json": {
+    "sha256": "1a208c2e25bf6921db3968d48dc16e93e72431e5423c32bae4bbb05eba3caa6e",
+    "size": 159
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/08-tm-selection.json": {
+    "sha256": "1a208c2e25bf6921db3968d48dc16e93e72431e5423c32bae4bbb05eba3caa6e",
+    "size": 159
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/09-tm17.json": {
+    "sha256": "1a208c2e25bf6921db3968d48dc16e93e72431e5423c32bae4bbb05eba3caa6e",
+    "size": 159
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/10-protect-selection.json": {
+    "sha256": "1a208c2e25bf6921db3968d48dc16e93e72431e5423c32bae4bbb05eba3caa6e",
+    "size": 159
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/11-teach-party.json": {
+    "sha256": "38bb5014059c8759d1df6e1cfc867ea2bdbb2b706c01a3dea05e4650490ac063",
+    "size": 159
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/12-learn-dialog.json": {
+    "sha256": "38bb5014059c8759d1df6e1cfc867ea2bdbb2b706c01a3dea05e4650490ac063",
+    "size": 159
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/13-forget-selection.json": {
+    "sha256": "38bb5014059c8759d1df6e1cfc867ea2bdbb2b706c01a3dea05e4650490ac063",
+    "size": 159
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/14-learn-summary.json": {
+    "sha256": "daf3c81dc1dd46143a67f16fa915b270c107ee204aa78d77b7531a33358e3be4",
+    "size": 159
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/15-learned.json": {
+    "sha256": "d53f63ed243edbcebc456a4a4b4d547d6faf8b7e9e276ebd83be9fd81d837637",
+    "size": 159
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/16-protect-learned.json": {
+    "sha256": "d53f63ed243edbcebc456a4a4b4d547d6faf8b7e9e276ebd83be9fd81d837637",
+    "size": 159
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/17-teach-commit.json": {
+    "sha256": "e38404987371429195018de664f7241fb512e18211d6deaf164782d1962fd20b",
+    "size": 159
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/18-protect-summary.json": {
+    "sha256": "a380347abf95d2cfe45d67d6f118dbd85e1f14e3e66cc2fcdaca731a5d6213d0",
+    "size": 159
+  },
+  "work/save-inventory-pp-20261013/native-ux-v1/validation.json": {
+    "sha256": "de939a48d8db3a86efcf72903a36b49b6f50dfb766a5c733d8279b26047384b6",
+    "size": 767
+  },
+  "work/save-inventory-pp-20261013/native-v1/validation.json": {
+    "sha256": "c0605229003ea2275a8b6bf981b1c45213c46cd9b90c45b028fd5ba4f9314db4",
+    "size": 64420
+  },
+  "work/save-inventory-pp-20261013/preflight.json": {
+    "sha256": "4f12ab90afcd36396784f2dd3bfea73ee05e5e9d2c9befc287b584350079670a",
+    "size": 73232
+  },
+  "work/save-inventory-pp-20261013/progress.json": {
+    "sha256": "a72cdf1f5f68ebf518702d4655e0e5bdd0b930a46602d563e9d8a2f81127daea",
+    "size": 74647
+  },
+  "work/save-inventory-pp-20261013/runtime-facts.json": {
+    "sha256": "8a8069886688a38a57b022c5ccabbc50dc4ad017c6d5ad166f5454d40bbc9cb5",
+    "size": 10509
+  },
+  "work/save-inventory-pp-20261013/save-validation.json": {
+    "sha256": "1cf763ebed96d10b8c918304ef01b5b50725edd25ecdcdb5ef18352e7cc34517",
+    "size": 4253
+  },
+  "work/save-inventory-pp-20261013/source-edit.json": {
+    "sha256": "176e01ae0eb0e8bdaea3dd9aecdd904a6096ed300b1002664a64ebf937a08f38",
+    "size": 1443
+  },
+  "work/save-v12-native-20261004T145354Z/healthy-seven-diagnostics.json": {
+    "sha256": "b0641ef6f45daa5c71733b58fa2b9f332802e14be8942f4572759eaab9e59ac8",
+    "size": 50861
+  },
+  "work/save-v12-native-20261004T145354Z/result.json": {
+    "sha256": "49353243455ee0fa3f9993333f64d7888b038bdee6266f59fcfcde94253ffd48",
+    "size": 5301
+  },
+  "data/maps/CherrygroveCity/scripts.inc": {
+    "sha256": "794dc14c892d87aec7517566299e38e90395815135241bf01f3ed4146f90f341",
+    "size": 1171
+  },
+  "data/maps/JohtoCherrygroveAirstrip/scripts.inc": {
+    "sha256": "84974211556518cdd60ef1ce4d94c83468537bd07c31bfee23f7e02e80b37f9d",
+    "size": 1506
+  },
+  "data/maps/Route101/scripts.inc": {
+    "sha256": "00c055e739deb67bd21c6fd9930b6ddc764aa9e1a7eae1129df4244144df4e20",
+    "size": 7946
+  },
+  "data/maps/SlateportCity_Harbor/scripts.inc": {
+    "sha256": "b2662fae38a01e75163a736b4f9a0e05db05e3e505276b8d052cf146503ced95",
+    "size": 8093
+  },
+  "data/scripts/game_clock.inc": {
+    "sha256": "456e73321101b5505f72d6cfac1b215b266f9b36f4f92d2e5aa89d4812b85ba8",
+    "size": 2627
+  },
+  "include/battle.h": {
+    "sha256": "9b774f757d1e5aa72f3ebcf4ced3a12c165c28ff848e2bb529d228534a4b206d",
+    "size": 21987
+  },
+  "include/constants/moves.h": {
+    "sha256": "4d31037fecac808ad68267be51d0c70445e272a07e32c2098adc89fadf743c95",
+    "size": 10741
+  },
+  "include/constants/pokemon.h": {
+    "sha256": "255922c6a3e20de4fc3a164a6d8a89329ff26a7551a61ead06e196c4d1f22e28",
+    "size": 11513
+  },
+  "include/global.h": {
+    "sha256": "ff834418cf7bf2727385f91fa7eaf69d618783a46426077338b57a0523af21af",
+    "size": 26051
+  },
+  "include/pokemon.h": {
+    "sha256": "02fbde9fcef7f684b93389c6d31f825ce8e9d43549738dbe7ac1502ebc8d7d40",
+    "size": 17061
+  },
+  "outputs/resume-v14-input-20261014/gBattleMoves.bin": {
+    "sha256": "536484a57d70078e48c8c8cfdc4bb6cd558d0c85db0f8cc0f9f1ce2d0be6140f",
+    "size": 4272
+  },
+  "outputs/resume-v14-input-20261014/gExperienceTables.bin": {
+    "sha256": "6f153914ffef4c04b9f358ed7941ae51d143639b6eb1de4baf29cffa5d5e56b6",
+    "size": 3232
+  },
+  "outputs/resume-v14-input-20261014/gSpeciesInfo.bin": {
+    "sha256": "4aba92bc6afc630acbdeed630b6299cc62787b983d81e681354fab4dacfacdce",
+    "size": 11536
+  },
+  "outputs/resume-v14-input-20261014/rom-table-layout.json": {
+    "sha256": "9b6b2309f706e05372155e04933e4ba7bf327ddad0c15ff086d93bad3609eb40",
+    "size": 1436
+  },
+  "outputs/resume-v14-input-20261014/sSpeciesToNationalPokedexNum.bin": {
+    "sha256": "c929fdf33e28cd9a7ffd9b7c2c8d1b321d1a0fe9881e7f8ab79b231b768246b1",
+    "size": 822
+  },
+  "src/airplane_flight.c": {
+    "sha256": "99de98e0c14f0adbc9e10a831075ac0615b04fdcbd7429f652153acbed63dcd5",
+    "size": 10789
+  },
+  "src/companion_misty.c": {
+    "sha256": "7acf4b9a66101a46687c71b3563f942c712990844c0c2927fc2afa797a8692d9",
+    "size": 12045
+  },
+  "src/data/battle_moves.h": {
+    "sha256": "d74e375a5392ab9791079c2be297d7937e0cb897d5aa8dc67a1bcf987d91c194",
+    "size": 121927
+  },
+  "src/data/pokemon/experience_tables.h": {
+    "sha256": "9a236761640676e251b76b7950b86e5881ee23dfe920ca27bbe47b4541542731",
+    "size": 22610
+  },
+  "src/data/pokemon/species_info.h": {
+    "sha256": "e64d6a9f402bb6942cc084bfcb460b57fffb347fb29c40ffd3dbc405e0ae4f9d",
+    "size": 343506
+  },
+  "src/region_map.c": {
+    "sha256": "5d6a7eca3477c2925f5cd6dccb38d6c606862c9a8d8d0ee0051dc4dae054941d",
+    "size": 165424
+  },
+  "tools/qa/emu.py": {
+    "sha256": "c8d3ba672d7ecc84dcefab513d84223f410e9d8cb43081cee4b37555e1378e69",
+    "size": 12246
+  },
+  "tools/qa/gamedata.py": {
+    "sha256": "acaa4654ed889dc4f98f6c20dc26a85ea8d35963a771967c159ca4edc26a7ab3",
+    "size": 11621
+  },
+  "tools/qa/savefile.py": {
+    "sha256": "e6cc1acb8569dbdca6d1b7b095835a5271c9e16de9d2fa3f976d15b50b9b7daa",
+    "size": 24039
+  },
+  "work/hoenn-resume-20261014/abi-profile/devon-v7-abi.json": {
+    "sha256": "fb95943ada51c72d99456b5127fe147878593e166c2e9d12a9b46d0a4fb6ffac",
+    "size": 13663
+  },
+  "work/hoenn-resume-20261014/native-dewford-r1/failure.png": {
+    "sha256": "dd24e30218064ba708b143093208e853fe2803e58f65c2e89e5cfcd04c14ed12",
+    "size": 1085
+  },
+  "work/hoenn-resume-20261014/native-dewford-r1/validation.json": {
+    "sha256": "ee95905a4626aca3552e5afe0fb76440e2c1e3b3b5229153d8afcc225e5aedd1",
+    "size": 64451
+  },
+  "work/resume-v14-20261014/export-manifest.json": {
+    "sha256": "a9f1b6174622a1b0e35b0479ba6b7b9236bd747a721dff6fce2a345a6a1b792d",
+    "size": 15397
+  },
+  "work/resume-v14-20261014/v14-preflight.stdout": {
+    "sha256": "2f5f7f45d4dc52d3f56eeeb1f0dd147aa76ea428c28b69e27418edd846f9990b",
+    "size": 58351
+  },
+  "src/start_menu.c": {
+    "sha256": "56de3fd5e7d7a7d65b95c3e632f898a8ec92b792d338f86a2275d5a2b4b77d08",
+    "size": 30281
+  },
+  "src/list_menu.c": {
+    "sha256": "1c825cfd52b3f9eb6f70f40439836a348c0fdc7f1d452fa9cbac426870383af4",
+    "size": 26945
+  },
+  "include/list_menu.h": {
+    "sha256": "ae7ccb61b49cb84974dcca77973bc332a6e98861de566dd3264ee26363e3acdf",
+    "size": 3103
+  },
+  "include/task.h": {
+    "sha256": "4d04e9fd43d54ef551d456da14fdf2a56d9d91fc19a4fc9582b289a06c192612",
+    "size": 895
+  },
+  "data/maps/KantoAirport/map.json": {
+    "sha256": "9aedd424da7a55c89de1e110aa4088df44e98ff2bb422efaca9b6767cf6da301",
+    "size": 5651
+  },
+  "data/maps/JohtoCherrygroveAirstrip/map.json": {
+    "sha256": "fa5dd30f21b4f5b8e9c334ee50ebbf669faacc7cd2b4906ef40d646fa995e1b8",
+    "size": 1891
+  },
+  "data/maps/SlateportCity_Harbor/map.json": {
+    "sha256": "31d2a3475249aaaac9325492938dc572520dfcde2398c8091ea1f59c13e99ae7",
+    "size": 2746
+  },
+  "tools/qa/johto_violet_native_bootstrap_v1.py": {
+    "sha256": "83c4557b96c344b241fc6f79e9b17722acfc0b0e81e0f9e6d649ff5d8b1c84bb",
+    "size": 9018
+  },
+  "tools/qa/hoenn_gauntlet_save_qa.py": {
+    "sha256": "b22478d2eac54849a6f5e8effdbb8ad67f5a3a34cc3da02dd63db39f0ad1941b",
+    "size": 15079
+  },
+  "work/resume-v14-20261014/native-v14-save-r2/validation.json": {
+    "sha256": "ea8189f12d123c996f49fabe37e6cac1c5d72e8e0bf58b59a8b28eaca3f7ef14",
+    "size": 2189
+  },
+  "work/resume-v14-20261014/native-v14-save-r2/v14-continue-menu.png": {
+    "sha256": "6d2bff6c6bd05074de959e7f6c75821edf8a0693cf0e3339823a0461c4eb9b6f",
+    "size": 5690
+  },
+  "work/resume-v14-20261014/native-v14-save-r2/failure.png": {
+    "sha256": "f37165c7296dc0409e167fe65e3ede01b69cb16cb2ba85e4e2ec33b0dffda3f9",
+    "size": 23140
+  }
+}

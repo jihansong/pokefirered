@@ -1,0 +1,35 @@
+{
+  "created_UTC": "2026-10-14T02:38:47.494116+00:00",
+  "status": "MISTY_STOCK_PROPORTIONS_BUILT_NATIVE_WALK_8_PASS",
+  "ROM_sha256": "78db87489b0dadb03a6066af7c0ffad9f784b9d8d400c5cb6c0e22eedf043bd0",
+  "ELF_sha256": "4f1039f8d78c402d4cd090e07cb75ad251a550954174c147d327e7f5ff2b54ec",
+  "SAV_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+  "native_art_sha256": "1c8a8636dd35248d5d38395d6c5ceae78780b585796c4d3ee297c124fa77cb07",
+  "visible_height_px": [
+    18,
+    19
+  ],
+  "previous_24px_art_rejected": true,
+  "only_sprite_ROM_region_changed": true,
+  "native_walk_run_cases": 8,
+  "all_10_original_SAVs_unchanged": true,
+  "full_campaign_complete": false,
+  "actual_DELTA_tested": false,
+  "art_reference": "original FRLG Misty/NPC proportions",
+  "art_tool": "built-in imagegen edit; source SHA6c5faf6c…",
+  "delivery_folder": "/workspaces/pokefirered/outputs/misty-standard-20261014",
+  "files": {
+    "preview-provenance.json": "d340bfbf3a2aad1c4c19f208fe8cba9e5ba4f2484c4c1ba809f72606502f2f1b",
+    "README-사용법.txt": "9ce6fb744de8107d39f16bbbac8ce1e1d6f3cff120bafd9d91e1bd57069bf4d5",
+    "pokemonthyl_misty_standard_20261014.gba": "78db87489b0dadb03a6066af7c0ffad9f784b9d8d400c5cb6c0e22eedf043bd0",
+    "Misty-standard-actual-walk.gif": "1a8b838135711c1a0cf5fd71a3396d159d21e0c7442fd9296295db1471757450",
+    "Misty-standard-actual-game.png": "2db35c3c0f9e92daea8685287d9e5b7fd68e68df9373ab0de628b6640aef40f0",
+    "pokemonthyl_misty_standard_20261014.sav": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+    "Misty-season1-native.png": "1c8a8636dd35248d5d38395d6c5ceae78780b585796c4d3ee297c124fa77cb07",
+    "art-provenance.json": "6945d9be4c789184e80934b8f85cc192f4df265863285037400d674475ae7940",
+    "qa/native-art-format.json": "a9ce0b368c59d3f47013abff83208c8e84cc7432ff28334f7504a5f00b8d1c8a",
+    "qa/walk-run-8.json": "a23db6863ed3b54a86b6942fc01bc64ae215ede7ba757849aa1021f1f16e4a39",
+    "qa/ROM-native-sprite-validation.json": "e87ee48e0f3624cbb668d6b874d76ffcdd321afef666d554deb89444773eb794",
+    "qa/sprite-only-change-proof.json": "457b6dc3e8b5254ffa4c29188b973cbe1ee6175967c9cc6b6e2f045209a3e009"
+  }
+}

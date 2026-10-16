@@ -1,0 +1,263 @@
+{
+  "input": "/workspaces/pokefirered/saves/pokemonthyl_v1.2.sav",
+  "input_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "backup": "/workspaces/pokefirered/work/save-edit-20261013/pokemonthyl_v1.2-original.sav",
+  "candidate": "/workspaces/pokefirered/work/save-edit-20261013/pokemonthyl_v1.2-items99-iv2x.sav",
+  "candidate_sha256": "2f548e43152224cd5f994f0f0e5eb659cd0ad4990569556276ea53f1eeaa168b",
+  "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+  "bytes": 131072,
+  "items_before": {
+    "ITEM_MASTER_BALL": 1,
+    "ITEM_RARE_CANDY": 19
+  },
+  "items_after": {
+    "ITEM_MASTER_BALL": 99,
+    "ITEM_RARE_CANDY": 99
+  },
+  "matches": [
+    {
+      "place": "party",
+      "index": 0,
+      "name": "VENUSAUR",
+      "pid": 2710679397,
+      "ot": 2839214970,
+      "iv_before": [
+        30,
+        15,
+        25,
+        30,
+        4,
+        0
+      ],
+      "iv_after": [
+        31,
+        30,
+        31,
+        31,
+        8,
+        0
+      ],
+      "ev": [
+        55,
+        106,
+        74,
+        172,
+        71,
+        32
+      ],
+      "experience": 115470,
+      "nature": 22,
+      "base": [
+        80,
+        82,
+        83,
+        80,
+        100,
+        100
+      ],
+      "level": 49,
+      "stats_before": [
+        152,
+        158,
+        105,
+        107,
+        107,
+        113,
+        116
+      ],
+      "stats_after": [
+        152,
+        158,
+        112,
+        110,
+        107,
+        115,
+        116
+      ],
+      "header_before": "65af91a17afb3aa9d0bfc8cfcdbbcfccff000202c4c3c2bbc8ffff008e060000",
+      "header_after": "65af91a17afb3aa9d0bfc8cfcdbbcfccff000202c4c3c2bbc8ffff00afa00000",
+      "sub_before": {
+        "M": "005b8a22fe654f0000000000",
+        "A": "52014c004b000f000309151e",
+        "E": "376a4aac4720000000000000",
+        "G": "0300cd000ec3010000ff0000"
+      },
+      "sub_after": {
+        "M": "005b8a22dfff8f0000000000",
+        "A": "52014c004b000f000309151e",
+        "E": "376a4aac4720000000000000",
+        "G": "0300cd000ec3010000ff0000"
+      }
+    },
+    {
+      "place": "party",
+      "index": 3,
+      "name": "BLASTOISE",
+      "pid": 3957541173,
+      "ot": 2839214970,
+      "iv_before": [
+        30,
+        25,
+        26,
+        23,
+        11,
+        16
+      ],
+      "iv_after": [
+        31,
+        31,
+        31,
+        31,
+        22,
+        31
+      ],
+      "ev": [
+        44,
+        67,
+        90,
+        197,
+        73,
+        39
+      ],
+      "experience": 117418,
+      "nature": 23,
+      "base": [
+        79,
+        83,
+        100,
+        78,
+        85,
+        105
+      ],
+      "level": 50,
+      "stats_before": [
+        159,
+        159,
+        108,
+        129,
+        119,
+        93,
+        134
+      ],
+      "stats_after": [
+        160,
+        160,
+        111,
+        131,
+        123,
+        99,
+        143
+      ],
+      "header_before": "3549e3eb7afb3aa9bcc6bbcdcec9c3cdbfff0202c4c3c2bbc8ffff00f9b40000",
+      "header_after": "3549e3eb7afb3aa9bcc6bbcdcec9c3cdbfff0202c4c3c2bbc8ffff006ee80000",
+      "sub_before": {
+        "M": "005d8a223eebbb2000000000",
+        "A": "3900600146002c0009140e19",
+        "E": "2c435ac54927000000000000",
+        "G": "0900d100aaca010000ff0000"
+      },
+      "sub_after": {
+        "M": "005d8a22ffff6f3f00000000",
+        "A": "3900600146002c0009140e19",
+        "E": "2c435ac54927000000000000",
+        "G": "0900d100aaca010000ff0000"
+      }
+    },
+    {
+      "place": "party",
+      "index": 4,
+      "name": "CHARIZARD",
+      "pid": 1847114783,
+      "ot": 2839214970,
+      "iv_before": [
+        29,
+        8,
+        15,
+        7,
+        12,
+        13
+      ],
+      "iv_after": [
+        31,
+        16,
+        30,
+        14,
+        24,
+        26
+      ],
+      "ev": [
+        56,
+        143,
+        35,
+        153,
+        86,
+        37
+      ],
+      "experience": 117802,
+      "nature": 8,
+      "base": [
+        78,
+        84,
+        78,
+        100,
+        109,
+        85
+      ],
+      "level": 50,
+      "stats_before": [
+        159,
+        159,
+        110,
+        103,
+        127,
+        117,
+        101
+      ],
+      "stats_after": [
+        160,
+        160,
+        114,
+        112,
+        131,
+        122,
+        107
+      ],
+      "header_before": "1fbc186e7afb3aa9bdc2bbccc3d4bbccbeff0202c4c3c2bbc8ffff0095af0000",
+      "header_after": "1fbc186e7afb3aa9bdc2bbccc3d4bbccbeff0202c4c3c2bbc8ffff005b870000",
+      "sub_before": {
+        "M": "007c8a221dbdc31a00000000",
+        "E": "388f23995625000000000000",
+        "A": "7e0035009d001300050f0a0f",
+        "G": "0600d7002acc010000ff0000"
+      },
+      "sub_after": {
+        "M": "007c8a221f7a873500000000",
+        "E": "388f23995625000000000000",
+        "A": "7e0035009d001300050f0a0f",
+        "G": "0600d7002acc010000ff0000"
+      }
+    }
+  ],
+  "missing_species": [
+    "DRAGONITE"
+  ],
+  "known_corrupt_unchanged": [
+    {
+      "place": "box",
+      "index": 51,
+      "sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd",
+      "species": 108
+    }
+  ],
+  "non_target_blocks_preserved": true,
+  "sb2_preserved": true,
+  "all_non_target_records_preserved": true,
+  "active_sector_checksums_valid": 14,
+  "inactive_bank_preserved": true,
+  "counter_before_after": [
+    60,
+    60
+  ],
+  "hp_policy": "native CalculateMonStats maxHP delta; fainted zero preserved",
+  "native_verified": false
+}

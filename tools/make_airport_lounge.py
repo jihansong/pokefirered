@@ -19,7 +19,7 @@ the lounge tiles, written into metatile slots the terminal does not use.
 
 Running it again rebuilds the same files.
 """
-import json, os, re, shutil, struct, sys
+import io, json, os, re, shutil, struct, sys
 from PIL import Image
 
 FR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
@@ -39,6 +39,7 @@ FIRST_METATILE = 440       # slots 440..508 are not used by the terminal
 VIEW_PAL, FRAME_PAL = 12, 6  # the two secondary palettes the set leaves unused
 
 OLD_WIDTH, LOUNGE_X, LOUNGE_W = 25, 25, 8
+WINDOW_TILE_TOP = 1  # one 8px ceiling strip; visible window stays inside the wall
 WINDOW_X, WINDOW_W, WINDOW_ROWS = 27, 4, 2   # x=27..30, rows 0..1 (the wall's height)
 
 # Battle Frontier blocks the lounge reuses
@@ -243,13 +244,13 @@ def tile_index(i):
 
 
 def copy_base():
-    if os.path.isdir(DST):
-        shutil.rmtree(DST)
-    os.makedirs(DST + '/palettes')
+    previous = open(DST + '/tiles.png', 'rb').read() if os.path.isfile(DST + '/tiles.png') else None
+    os.makedirs(DST + '/palettes', exist_ok=True)
     for f in ('tiles.png', 'metatiles.bin', 'metatile_attributes.bin'):
         shutil.copy(f'{SRC}/{f}', f'{DST}/{f}')
     for i in range(16):
         shutil.copy(f'{SRC}/palettes/{i:02d}.pal', f'{DST}/palettes/{i:02d}.pal')
+    return previous
 
 
 def write_pal(slot, colours):
@@ -257,7 +258,7 @@ def write_pal(slot, colours):
     open(f'{DST}/palettes/{slot:02d}.pal', 'w', newline='\r\n').write('\n'.join(lines) + '\n')
 
 
-def add_tiles():
+def add_tiles(previous=None):
     """Append the half-scale view tiles and the frame tiles."""
     im = Image.open(DST + '/tiles.png')
     w, h = im.size
@@ -279,7 +280,11 @@ def add_tiles():
         for y, line in enumerate(rows):
             for x, ch in enumerate(line):
                 im.putpixel((c * 8 + x, r * 8 + y), legend[ch])
-    im.save(DST + '/tiles.png')
+    old = Image.open(io.BytesIO(previous)) if previous is not None else None
+    if old is not None and old.mode == im.mode and old.size == im.size and old.tobytes() == im.tobytes() and old.getpalette() == im.getpalette():
+        open(DST + '/tiles.png', 'wb').write(previous)
+    else:
+        im.save(DST + '/tiles.png')
     return index
 
 
@@ -299,7 +304,9 @@ def frame_tile_grid(index):
 
     for ty in range(th):
         for tx in range(tw):
-            top, bottom = ty == 0, ty == th - 1
+            top, bottom = ty == WINDOW_TILE_TOP, ty == th - 1
+            if ty < WINDOW_TILE_TOP:
+                continue
             # a post sits on the left edge of its tile; the one closing the
             # lounge on the right is the last tile column, flipped
             post_l = tx in POST_COLUMNS
@@ -321,10 +328,16 @@ def add_metatiles(view, frame):
     mt = bytearray(open(DST + '/metatiles.bin', 'rb').read())
     at = bytearray(open(DST + '/metatile_attributes.bin', 'rb').read())
     blocks, slot, seen = {}, FIRST_METATILE, {}
+    wall = struct.unpack_from('<8H', mt, (WALL_TOP - PRIMARY_METATILES) * 16)
     for by in range(WINDOW_ROWS):
         for bx in range(WINDOW_W):
             bottom = [view[by * 2 + dy][bx * 2 + dx] for dy in (0, 1) for dx in (0, 1)]
             top = [frame[by * 2 + dy][bx * 2 + dx] for dy in (0, 1) for dx in (0, 1)]
+            if by == 0:
+                # Use the original ceiling tiles on both layers: the upper copy
+                # occludes the taxiing plane while it is above the glass.
+                bottom[:2] = wall[:2]
+                top[:2] = wall[:2]
             key = tuple(bottom + top)
             if key not in seen:
                 if slot * 16 + 16 > len(mt):
@@ -396,15 +409,15 @@ def write_layout(window):
     end = text.index('}', start)
     entry = re.sub(r'"width": \d+', '"width": %d' % nw, text[start:end])
     entry = re.sub(r'"secondary_tileset": "\w+"', '"secondary_tileset": "%s"' % TILESET, entry)
-    open(path, 'w').write(text[:start] + entry + text[end:])
+    open(path, 'w', newline='').write(text[:start] + entry + text[end:])
 
 
 def main():
     check_free_slots()
-    copy_base()
+    previous_tiles = copy_base()
     write_pal(VIEW_PAL, view_colours())
     write_pal(FRAME_PAL, FRAME_COLOURS)
-    index = add_tiles()
+    index = add_tiles(previous_tiles)
     window, count = add_metatiles(view_tile_grid(index), frame_tile_grid(index))
     write_layout(window)
     print(f'{TILESET}: +{len(HALF_ORDER) + len(FRAME_ORDER)} tiles, +{count} metatiles '

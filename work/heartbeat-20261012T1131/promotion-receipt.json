@@ -1,0 +1,24 @@
+{
+  "promoted": true,
+  "ROM_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+  "delivery": "/workspaces/pokefirered/outputs/rom-regional-followup-20261012T125127Z",
+  "rollback": "/workspaces/pokefirered/outputs/rom-regional-followup-20261012T125127Z/rollback-b46",
+  "artifact_sha256": {
+    "gba": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+    "elf": "c7efc258561748b879db8216eb63794f4ff80093c3687f2fb82188136d7da761",
+    "sym": "b4d51996640df6aba3755a9f2f8c5a3bf08f565c472fd10c15640dc2249aed9f",
+    "map": "707aa065a6e61c2cf0c92375f0163c06c22a338b405ccb1b4adb9dfe73b3cedb"
+  },
+  "zip": "/workspaces/pokefirered/work/regression-oct12/deliverables/pokemonthyl-regional-followup-20261012T125127Z.zip",
+  "zip_sha256": "d351dfd65fd8804d80d2025d7e4328dfbf8c0e84a987d5bc74fcdeda8d55ae89",
+  "zip_bytes": 7641852,
+  "all14SAVs_unchanged": true,
+  "source_preserved": true,
+  "full_campaign_complete": false,
+  "download_URL_verified": {
+    "status": 200,
+    "content_type": "application/zip",
+    "bytes": 7641852,
+    "URL": "https://effective-meme-v6pxvx5qx6vghwj56-31812.app.github.dev/deliverables/pokemonthyl-regional-followup-20261012T125127Z.zip"
+  }
+}

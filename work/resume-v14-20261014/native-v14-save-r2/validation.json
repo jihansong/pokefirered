@@ -1,0 +1,23 @@
+{
+  "pass_all": false,
+  "scope": "v1.4 actual Continue, idle, native SAVE and cold Continue",
+  "original_SAV_sha256": "99f4100d09961196706282a02e96ee9017a0a591777aa3ca0b40249ec8ae89e8",
+  "ROM_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+  "ELF_sha256": "e625069ea9379ea3dc2f83e3014fb741a2e0b7383f41f6d56bc37fc0eae6f17b",
+  "preboot_fixture_edits": 0,
+  "RAM_writes": 0,
+  "state_loads": 0,
+  "direct_engine_calls": 0,
+  "full_campaign_tested": false,
+  "DELTA_device_FPS_measured": false,
+  "stages": [],
+  "initial_load_exact": {
+    "SaveBlock1": true,
+    "PC": true,
+    "SaveBlock2_except_playTime": true
+  },
+  "status": "failed",
+  "error": "SyntaxError('invalid syntax', ('<string>', 1, 33, '(((412) / (8)) + (((412) % (8)) ? 1 : 0))', 1, 34))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/work/resume-v14-20261014/r3/native_v14_save_cold_r2.py\", line 109, in <module>\n    before = snapshot(e)\n             ^^^^^^^^^^^\n  File \"/workspaces/pokefirered/work/resume-v14-20261014/r3/native_v14_save_cold_r2.py\", line 74, in snapshot\n    'dex_raw': sb1[off('sb1.seen1'):off('sb1.seen1')+const('DEX_FLAGS_NO')] + sb1[off('sb1.seen2'):off('sb1.seen2')+const('DEX_FLAGS_NO')] + sb2[off('sb2.pokedex')+off('dex.owned'):off('sb2.pokedex')+off('dex.owned')+const('DEX_FLAGS_NO')] + sb2[off('sb2.pokedex')+off('dex.seen'):off('sb2.pokedex')+off('dex.seen')+const('DEX_FLAGS_NO')],\n                                                     ^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/tools/qa/gamedata.py\", line 205, in const\n    return consts([s])[s]\n           ^^^^^^^^^^^\n  File \"/workspaces/pokefirered/tools/qa/gamedata.py\", line 181, in consts\n    _CONST_CACHE[n] = _c_eval(val)\n                      ^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/tools/qa/gamedata.py\", line 160, in _c_eval\n    return int(eval(expr, {'__builtins__': {}}, {}))\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 1\n    (((412) / (8)) + (((412) % (8)) ? 1 : 0))\n                                    ^\nSyntaxError: invalid syntax\n",
+  "all_original_inputs_unchanged": true
+}

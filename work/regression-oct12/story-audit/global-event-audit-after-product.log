@@ -1,0 +1,106 @@
+## dead scripts (nothing can reach them)
+
+- data/maps/DewfordTown_Gym/scripts.inc:4 DewfordTown_Gym_EventScript_H0
+- data/maps/EverGrandeCity_DrakesRoom/scripts.inc:6 EverGrandeCity_DrakesRoom_EventScript_H0
+- data/maps/EverGrandeCity_GlaciasRoom/scripts.inc:6 EverGrandeCity_GlaciasRoom_EventScript_H0
+- data/maps/EverGrandeCity_PhoebesRoom/scripts.inc:6 EverGrandeCity_PhoebesRoom_EventScript_H0
+- data/maps/EverGrandeCity_SidneysRoom/scripts.inc:6 EverGrandeCity_SidneysRoom_EventScript_H0
+- data/maps/MauvilleCity_BikeShop/scripts.inc:4 MauvilleCity_BikeShop_EventScript_H0
+- data/maps/MauvilleCity_GameCorner/scripts.inc:12 MauvilleCity_GameCorner_EventScript_H2
+- data/maps/MauvilleCity_GameCorner/scripts.inc:36 MauvilleCity_GameCorner_EventScript_H8
+- data/maps/MossdeepCity_SpaceCenter_1F/scripts.inc:8 MossdeepCity_SpaceCenter_1F_EventScript_H1
+- data/maps/NewMauville_Inside/scripts.inc:27 NewMauville_Inside_EventScript_H0
+- data/maps/NewMauville_Inside/scripts.inc:31 NewMauville_Inside_EventScript_H1
+- data/maps/NewMauville_Inside/scripts.inc:35 NewMauville_Inside_EventScript_H2
+- data/maps/NewMauville_Inside/scripts.inc:39 NewMauville_Inside_EventScript_H3
+- data/maps/NewMauville_Inside/scripts.inc:43 NewMauville_Inside_EventScript_H4
+- data/maps/NewMauville_Inside/scripts.inc:47 NewMauville_Inside_EventScript_H5
+- data/maps/NewMauville_Inside/scripts.inc:51 NewMauville_Inside_EventScript_H6
+- data/maps/NewMauville_Inside/scripts.inc:55 NewMauville_Inside_EventScript_H7
+- data/maps/Route109_SeashoreHouse/scripts.inc:4 Route109_SeashoreHouse_EventScript_H0
+- data/maps/Route110/scripts.inc:156 Route110_EventScript_H31
+- data/maps/Route110_SeasideCyclingRoadNorthEntrance/scripts.inc:4 Route110_SeasideCyclingRoadNorthEntrance_EventScript_H0
+- data/maps/Route110_SeasideCyclingRoadSouthEntrance/scripts.inc:4 Route110_SeasideCyclingRoadSouthEntrance_EventScript_H0
+- data/maps/Route110_TrickHouseEntrance/scripts.inc:224 Route110_TrickHouseEntrance_EventScript_UnusedRelease
+- data/maps/Route110_TrickHousePuzzle1/scripts.inc:5 Route110_TrickHousePuzzle1_EventScript_H0
+- data/maps/Route110_TrickHousePuzzle1/scripts.inc:10 Route110_TrickHousePuzzle1_EventScript_H1
+- data/maps/Route110_TrickHousePuzzle1/scripts.inc:15 Route110_TrickHousePuzzle1_EventScript_H2
+- data/maps/Route110_TrickHousePuzzle2/scripts.inc:6 Route110_TrickHousePuzzle2_EventScript_H0
+- data/maps/Route110_TrickHousePuzzle2/scripts.inc:11 Route110_TrickHousePuzzle2_EventScript_H1
+- data/maps/Route110_TrickHousePuzzle2/scripts.inc:16 Route110_TrickHousePuzzle2_EventScript_H2
+- data/maps/Route110_TrickHousePuzzle3/scripts.inc:6 Route110_TrickHousePuzzle3_EventScript_H0
+- data/maps/Route110_TrickHousePuzzle3/scripts.inc:11 Route110_TrickHousePuzzle3_EventScript_H1
+- data/maps/Route110_TrickHousePuzzle3/scripts.inc:16 Route110_TrickHousePuzzle3_EventScript_H2
+- data/maps/Route110_TrickHousePuzzle4/scripts.inc:4 Route110_TrickHousePuzzle4_EventScript_H0
+- data/maps/Route110_TrickHousePuzzle4/scripts.inc:9 Route110_TrickHousePuzzle4_EventScript_H1
+- data/maps/Route110_TrickHousePuzzle4/scripts.inc:14 Route110_TrickHousePuzzle4_EventScript_H2
+- data/maps/Route110_TrickHousePuzzle5/scripts.inc:199 Route110_TrickHousePuzzle5_EventScript_Mechadoll4Trigger5
+- data/maps/Route110_TrickHousePuzzle5/scripts.inc:494 Route110_TrickHousePuzzle5_EventScript_MechadollWalkLeft5
+- data/maps/Route110_TrickHousePuzzle5/scripts.inc:642 Route110_TrickHousePuzzle5_EventScript_Mechadoll1WalkLeft5
+- data/maps/Route110_TrickHousePuzzle5/scripts.inc:647 Route110_TrickHousePuzzle5_EventScript_Mechadoll2WalkLeft5
+- data/maps/Route110_TrickHousePuzzle5/scripts.inc:652 Route110_TrickHousePuzzle5_EventScript_Mechadoll3WalkLeft5
+- data/maps/Route110_TrickHousePuzzle5/scripts.inc:657 Route110_TrickHousePuzzle5_EventScript_Mechadoll4WalkLeft5
+- data/maps/Route110_TrickHousePuzzle5/scripts.inc:662 Route110_TrickHousePuzzle5_EventScript_Mechadoll5WalkLeft5
+- data/maps/Route110_TrickHousePuzzle6/scripts.inc:6 Route110_TrickHousePuzzle6_EventScript_H0
+- data/maps/Route110_TrickHousePuzzle6/scripts.inc:11 Route110_TrickHousePuzzle6_EventScript_H1
+- data/maps/Route110_TrickHousePuzzle6/scripts.inc:16 Route110_TrickHousePuzzle6_EventScript_H2
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:8 Route110_TrickHousePuzzle7_EventScript_H0
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:13 Route110_TrickHousePuzzle7_EventScript_H1
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:18 Route110_TrickHousePuzzle7_EventScript_H2
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:27 Route110_TrickHousePuzzle7_EventScript_H3
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:32 Route110_TrickHousePuzzle7_EventScript_H4
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:37 Route110_TrickHousePuzzle7_EventScript_H5
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:85 Route110_TrickHousePuzzle7_EventScript_SetSwitch1MetatilesOff
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:90 Route110_TrickHousePuzzle7_EventScript_SetSwitch2MetatilesOff
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:95 Route110_TrickHousePuzzle7_EventScript_SetSwitch3MetatilesOff
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:100 Route110_TrickHousePuzzle7_EventScript_SetSwitch4MetatilesOff
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:105 Route110_TrickHousePuzzle7_EventScript_SetSwitch5MetatilesOff
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:146 Route110_TrickHousePuzzle7_EventScript_TeleportPad
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:155 Route110_TrickHousePuzzle7_EventScript_Switch1
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:166 Route110_TrickHousePuzzle7_EventScript_Switch2
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:177 Route110_TrickHousePuzzle7_EventScript_Switch3
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:188 Route110_TrickHousePuzzle7_EventScript_Switch4
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:199 Route110_TrickHousePuzzle7_EventScript_Switch5
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:211 Route110_TrickHousePuzzle7_EventScript_SetSwitch1On
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:216 Route110_TrickHousePuzzle7_EventScript_SetSwitch1Off
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:221 Route110_TrickHousePuzzle7_EventScript_SetSwitch2On
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:226 Route110_TrickHousePuzzle7_EventScript_SetSwitch2Off
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:231 Route110_TrickHousePuzzle7_EventScript_SetSwitch3On
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:236 Route110_TrickHousePuzzle7_EventScript_SetSwitch3Off
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:241 Route110_TrickHousePuzzle7_EventScript_SetSwitch4On
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:246 Route110_TrickHousePuzzle7_EventScript_SetSwitch4Off
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:251 Route110_TrickHousePuzzle7_EventScript_SetSwitch5On
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:256 Route110_TrickHousePuzzle7_EventScript_SetSwitch5Off
+- data/maps/Route110_TrickHousePuzzle7/scripts.inc:303 Route110_TrickHousePuzzle7_EventScript_RedButton
+- data/maps/Route110_TrickHousePuzzle8/scripts.inc:4 Route110_TrickHousePuzzle8_EventScript_H0
+- data/maps/Route110_TrickHousePuzzle8/scripts.inc:9 Route110_TrickHousePuzzle8_EventScript_H1
+- data/maps/Route110_TrickHousePuzzle8/scripts.inc:14 Route110_TrickHousePuzzle8_EventScript_H2
+- data/maps/Route117_PokemonDayCare/scripts.inc:170 Route117_PokemonDayCare_EventScript_UnusedEnd
+- data/maps/Route117_PokemonDayCare/scripts.inc:186 Route117_PokemonDayCare_EventScript_UnusedRetrieveMon
+- data/maps/Route119_WeatherInstitute_1F/scripts.inc:4 Route119_WeatherInstitute_1F_EventScript_H0
+- data/maps/VerdanturfTown_BattleTentLobby/scripts.inc:8 VerdanturfTown_BattleTentLobby_EventScript_H1
+- data/maps/VerdanturfTown_FriendshipRatersHouse/scripts.inc:4 VerdanturfTown_FriendshipRatersHouse_EventScript_H0
+
+80 dead
+
+## text promises something the script does not give
+
+- LavaridgeTown: LavaridgeTown_EventScript_H6 shows LavaridgeTown_Text_H6, which promises something, but gives nothing
+- LavaridgeTown_HerbShop: LavaridgeTown_HerbShop_EventScript_H1 shows LavaridgeTown_HerbShop_Text_H1, which promises something, but gives nothing
+- LilycoveCity_House2: LilycoveCity_House2_EventScript_H0 shows LilycoveCity_House2_Text_H0, which promises something, but gives nothing
+- MossdeepCity: MossdeepCity_EventScript_H2 shows MossdeepCity_Text_H2, which promises something, but gives nothing
+- MtPyre_1F: MtPyre_1F_EventScript_H0 shows MtPyre_1F_Text_H0, which promises something, but gives nothing
+- PacifidlogTown_House3: PacifidlogTown_House3_EventScript_H1 shows PacifidlogTown_House3_Text_H1, which promises something, but gives nothing
+- Route111: Route111_EventScript_H19 shows Route111_Text_H19_0, which promises something, but gives nothing
+- Route111: Route111_EventScript_H6 shows Route111_Text_H6, which promises something, but gives nothing
+- Route113: Route113_EventScript_H1 shows Route113_Text_H1, which promises something, but gives nothing
+- Route114: Route114_EventScript_H5 shows Route114_Text_H5, which promises something, but gives nothing
+- Route114_FossilManiacsHouse: Route114_FossilManiacsHouse_EventScript_H0 shows Route114_FossilManiacsHouse_Text_H0, which promises something, but gives nothing
+- Route131: Route131_EventScript_H7 shows Route131_Text_H7_0, which promises something, but gives nothing
+- RustboroCity_Flat2_2F: RustboroCity_Flat2_2F_EventScript_H1 shows RustboroCity_Flat2_2F_Text_H1, which promises something, but gives nothing
+- RustboroCity_House1: RustboroCity_House1_EventScript_H0 shows RustboroCity_House1_Text_H0, which promises something, but gives nothing
+- SootopolisCity_House6: SootopolisCity_House6_EventScript_H0 shows SootopolisCity_House6_Text_H0, which promises something, but gives nothing
+
+15 empty promises
+
+# check_event_wiring: 95 to look at

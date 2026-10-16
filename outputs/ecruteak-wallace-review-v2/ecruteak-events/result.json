@@ -1,0 +1,508 @@
+{
+  "rom_sha256": "c139724c9b8d94a1195cb0386ced634a0012377f2ee7f3e86b6267259cf8068b",
+  "cases": [
+    {
+      "case": "gate_badge3_closed",
+      "native_dialogue": "GoldenrodCity_NorthGate_Text_Stop",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/gate_badge3_closed-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "gate_badge3_open",
+      "native_dialogue": null,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/gate_badge3_open-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "florist_before_badge",
+      "native_dialogue": "GoldenrodCity_NorthGate_Text_FloristBefore",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/florist_before_badge-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "florist_lends_once",
+      "native_dialogue": "GoldenrodCity_NorthGate_Text_FloristLend",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/florist_lends_once-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "florist_lending_repeat",
+      "native_dialogue": "GoldenrodCity_NorthGate_Text_FloristAfter",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/florist_lending_repeat-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "sudowoodo_needs_water",
+      "native_dialogue": "JohtoRoute36_Text_NeedWater",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/sudowoodo_needs_water-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "silver_needs_badge3",
+      "native_dialogue": "BurnedTower_1F_Text_Before",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/silver_needs_badge3-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "tower_cannot_awaken_before_silver",
+      "native_dialogue": null,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/tower_cannot_awaken_before_silver-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "tower_native_awakening",
+      "native_dialogue": "BurnedTower_B1F_Text_Escaped",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/tower_native_awakening-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [
+        "RAIKOU",
+        "ENTEI",
+        "SUICUNE"
+      ],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "tower_awakened_not_repeated",
+      "native_dialogue": null,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/tower_awakened_not_repeated-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "morty_below_before",
+      "native_dialogue": "BurnedTower_B1F_Text_MortyBefore",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/morty_below_before-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "morty_below_after",
+      "native_dialogue": "BurnedTower_B1F_Text_MortyReady",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/morty_below_after-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "patron_requires_kimono_naoko",
+      "native_dialogue": "EcruteakCity_DanceTheater_Text_PatronBefore",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/patron_requires_kimono_naoko-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "patron_requires_kimono_sayo",
+      "native_dialogue": "EcruteakCity_DanceTheater_Text_PatronBefore",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/patron_requires_kimono_sayo-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "patron_requires_kimono_zuki",
+      "native_dialogue": "EcruteakCity_DanceTheater_Text_PatronBefore",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/patron_requires_kimono_zuki-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "patron_requires_kimono_kuni",
+      "native_dialogue": "EcruteakCity_DanceTheater_Text_PatronBefore",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/patron_requires_kimono_kuni-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "patron_requires_kimono_miki",
+      "native_dialogue": "EcruteakCity_DanceTheater_Text_PatronBefore",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/patron_requires_kimono_miki-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "patron_first_surf_hm",
+      "native_dialogue": "EcruteakCity_DanceTheater_Text_Surf",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/patron_first_surf_hm-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "patron_bag_hm_alternate",
+      "native_dialogue": "EcruteakCity_DanceTheater_Text_Alternate",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/patron_bag_hm_alternate-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "patron_pc_hm_alternate",
+      "native_dialogue": "EcruteakCity_DanceTheater_Text_Alternate",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/patron_pc_hm_alternate-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "patron_history_hm_alternate",
+      "native_dialogue": "EcruteakCity_DanceTheater_Text_Alternate",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/patron_history_hm_alternate-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "patron_learned_surf_not_history",
+      "native_dialogue": "EcruteakCity_DanceTheater_Text_Surf",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/patron_learned_surf_not_history-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "patron_alternate_full_stack",
+      "native_dialogue": "EcruteakCity_DanceTheater_Text_BagFull",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/patron_alternate_full_stack-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "patron_alternate_retry_space",
+      "native_dialogue": "EcruteakCity_DanceTheater_Text_Alternate",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/patron_alternate_retry_space-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "patron_reward_not_reissued",
+      "native_dialogue": "EcruteakCity_DanceTheater_Text_PatronAfter",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/patron_reward_not_reissued-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "patron_tmcase_created",
+      "native_dialogue": "EcruteakCity_DanceTheater_Text_Surf",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/patron_tmcase_created-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "morty_badge3_gate",
+      "native_dialogue": "EcruteakCity_Gym_Text_NotReady",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/morty_badge3_gate-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "morty_tower_gate",
+      "native_dialogue": "EcruteakCity_Gym_Text_NotReady",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/morty_tower_gate-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "morty_tm_full_keeps_badge",
+      "native_dialogue": "EcruteakCity_Gym_Text_BagFull",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/morty_tm_full_keeps_badge-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "morty_tm_retry",
+      "native_dialogue": "EcruteakCity_Gym_Text_TM",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/morty_tm_retry-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "morty_tm_not_reissued",
+      "native_dialogue": "EcruteakCity_Gym_Text_After",
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-events/morty_tm_not_reissued-native-QA-only.sav"
+      },
+      "pc_party_preserved": true,
+      "seen_only_added": [],
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    }
+  ],
+  "original_files_unchanged": true,
+  "forced_memory_writes": 0,
+  "forced_battle_outcomes": 0
+}

@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-04T09:15:25.994238+00:00",
+  "results": [
+    {
+      "check": "build",
+      "exit": 2,
+      "log": "/workspaces/pokefirered/work/johto-entry-20261004/build.log"
+    }
+  ],
+  "original_saves_unchanged": true,
+  "save_layout_changed": false,
+  "actual_SAVE_reload_tested": false,
+  "Delta_tested": false,
+  "region_complete": false
+}

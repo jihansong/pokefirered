@@ -1,0 +1,22 @@
+{"case": "chain_eligible_league_road_opens", "native_dialogue": null, "native_nurse_heal": false, "save": {"counter": [112, 113], "checksummed_sectors": 14, "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-league-chain/chain_eligible_league_road_opens-native-QA-only.sav"}, "forced_story_flags": 0, "forced_trainer_flags": 0, "forced_memory_writes": 0}
+{"case": "chain_actual_silver_victory_road_win", "native_outcome": 1, "actual_turns": 6, "native_enemy_species": [215, 169, 82, 94, 65, 160], "save": {"counter": [113, 114], "checksummed_sectors": 14, "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-league-chain/chain_actual_silver_victory_road_win-native-QA-only.sav"}, "legal_party_identity_pc_and_history_preserved": true, "forced_memory_writes": 0, "forced_battle_outcomes": 0}
+{"case": "chain_silver_opens_plateau_arrival", "native_dialogue": null, "native_nurse_heal": false, "save": {"counter": [114, 115], "checksummed_sectors": 14, "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-league-chain/chain_silver_opens_plateau_arrival-native-QA-only.sav"}, "forced_story_flags": 0, "forced_trainer_flags": 0, "forced_memory_writes": 0}
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_chain.py", line 78, in <module>
+    if kind=='dialog':row=dialog_stage(previous,target,where,c)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_chain.py", line 37, in dialog_stage
+    interaction(e,c);after=snapshot(e)
+    ^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_events.py", line 47, in interaction
+    if c.get('answer')!='YES' or not c.get('dest'):return _league_base_interaction(e,c)
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 330, in interaction
+    if 'answer' not in c:return _prior_interaction(e,c)
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py", line 241, in interaction
+    e.press('A',hold=3,after=12);settle(e)
+                                 ^^^^^^^^^
+  File "<executed-gauntlet-helpers>", line 99, in settle
+  File "<executed-gauntlet-helpers>", line 97, in mash_until
+AssertionError: ('timeout', 'A', (0, 0, 0, 0), '0x8057521')

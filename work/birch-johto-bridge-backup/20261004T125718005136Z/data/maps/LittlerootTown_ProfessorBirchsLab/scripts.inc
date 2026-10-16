@@ -1,0 +1,317 @@
+LittlerootTown_ProfessorBirchsLab_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_ProfessorBirchsLab_OnTransition
+	.byte 0
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H1::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H1, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H2::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H2, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H3::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H3, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H4::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H4, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H5::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H5, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H6::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H6, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H7::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H7, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H8::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H8, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H9::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H9, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H10::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H10, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H11::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H11, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H12::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H12, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H13::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H13, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H14::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H14, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H15::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H15, MSGBOX_SIGN
+	end
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
+@ v0.11.0 E2 (docs/v0.11.0-plan.md 4.2): PROF. BIRCH gives TORCHIC once, then
+@ rates the HOENN POKéDEX on every visit and hands over each reward tier
+@ reached (40/80/120/160/200 caught, JIRACHI and DEOXYS not counted). The
+@ rival waits here after ROUTE 103 (user decision 2026-09-27): one object,
+@ its picture set by HoennZ3_SetupObjects from the player's gender.
+
+LittlerootTown_ProfessorBirchsLab_OnTransition::
+	special HoennZ3_SetupObjects
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_H0::
+	lock
+	faceplayer
+	goto_if_eq VAR_HOENN_SCENE_BIRCH, 0, LittlerootTown_ProfessorBirchsLab_EventScript_AideBirchAway
+	goto_if_eq VAR_HOENN_SCENE_BIRCH, 1, LittlerootTown_ProfessorBirchsLab_EventScript_AideBirchIsBack
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_AideLater
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_AideBirchAway::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_H0
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_AideBirchIsBack::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_AideBirchIsBack
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_Birch::
+	lock
+	faceplayer
+	goto_if_eq VAR_HOENN_SCENE_BIRCH, 1, LittlerootTown_ProfessorBirchsLab_EventScript_BirchGiveTorchic
+	goto_if_ge VAR_HOENN_SCENE_BIRCH, 3, LittlerootTown_ProfessorBirchsLab_EventScript_BirchAfterRival
+	call LittlerootTown_ProfessorBirchsLab_EventScript_Rating
+	call LittlerootTown_ProfessorBirchsLab_EventScript_RivalHint
+	call LittlerootTown_ProfessorBirchsLab_EventScript_StarterHints
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_BirchAfterRival::
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, LittlerootTown_ProfessorBirchsLab_EventScript_BirchAfterRivalMay
+	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_ProfessorBirchsLab_EventScript_BirchAfterRivalBrendan
+	call LittlerootTown_ProfessorBirchsLab_EventScript_Rating
+	call LittlerootTown_ProfessorBirchsLab_EventScript_StarterHints
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_BirchAfterRivalMay::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchAfterRivalMay
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_BirchAfterRivalBrendan::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchAfterRivalBrendan
+	return
+
+@ TORCHIC is BIRCH's own gift, whatever CELIO has given: its flag is separate
+@ (user decision 1, 2026-09-26). No room anywhere: the flag stays off and
+@ BIRCH asks again next time.
+LittlerootTown_ProfessorBirchsLab_EventScript_BirchGiveTorchic::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchWelcome
+	call_if_set FLAG_GOT_TORCHIC_FROM_CELIO, LittlerootTown_ProfessorBirchsLab_EventScript_BirchTorchicCelio
+	setvar VAR_TEMP_1, SPECIES_TORCHIC
+	call EventScript_GiveGiftMonLv5
+	goto_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_BirchTorchicNoRoom
+	setflag FLAG_HOENN_GOT_TORCHIC_FROM_BIRCH
+	setvar VAR_HOENN_SCENE_BIRCH, 2
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchExplainRating
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchBoardingHint
+	call LittlerootTown_ProfessorBirchsLab_EventScript_Rating
+	call LittlerootTown_ProfessorBirchsLab_EventScript_RivalHint
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_BirchTorchicCelio::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchTorchicCelio
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_BirchTorchicNoRoom::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchTorchicNoRoom
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_RivalHint::
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, LittlerootTown_ProfessorBirchsLab_EventScript_RivalHintMay
+	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_ProfessorBirchsLab_EventScript_RivalHintBrendan
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_RivalHintMay::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchRivalHintMay
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_RivalHintBrendan::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchRivalHintBrendan
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_StarterHints::
+	call_if_unset FLAG_HOENN_GOT_TREECKO_IN_WOODS, LittlerootTown_ProfessorBirchsLab_EventScript_HintTreecko
+	call_if_unset FLAG_HOENN_GOT_MUDKIP_ON_BEACH, LittlerootTown_ProfessorBirchsLab_EventScript_HintMudkip
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_HintTreecko::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchHintTreecko
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_HintMudkip::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchHintMudkip
+	return
+
+@ The HOENN POKéDEX rating. VAR_0x8004 = HOENN kinds caught (of the first
+@ 200). Every tier reached and not yet given is handed over in order; a full
+@ BAG stops at that tier, its flag off, for next time.
+LittlerootTown_ProfessorBirchsLab_EventScript_Rating::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchRatingIntro
+	special GetHoennDexCaughtCount
+	copyvar VAR_0x8004, VAR_RESULT
+	buffernumberstring STR_VAR_1, VAR_0x8004
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchRatingCount
+	goto_if_ge VAR_0x8004, 200, LittlerootTown_ProfessorBirchsLab_EventScript_Rating5
+	goto_if_ge VAR_0x8004, 160, LittlerootTown_ProfessorBirchsLab_EventScript_Rating4
+	goto_if_ge VAR_0x8004, 120, LittlerootTown_ProfessorBirchsLab_EventScript_Rating3
+	goto_if_ge VAR_0x8004, 80, LittlerootTown_ProfessorBirchsLab_EventScript_Rating2
+	goto_if_ge VAR_0x8004, 40, LittlerootTown_ProfessorBirchsLab_EventScript_Rating1
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchRating0
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_Rewards
+
+LittlerootTown_ProfessorBirchsLab_EventScript_Rating1::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchRating1
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_Rewards
+
+LittlerootTown_ProfessorBirchsLab_EventScript_Rating2::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchRating2
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_Rewards
+
+LittlerootTown_ProfessorBirchsLab_EventScript_Rating3::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchRating3
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_Rewards
+
+LittlerootTown_ProfessorBirchsLab_EventScript_Rating4::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchRating4
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_Rewards
+
+LittlerootTown_ProfessorBirchsLab_EventScript_Rating5::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchRating5
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_Rewards
+
+LittlerootTown_ProfessorBirchsLab_EventScript_Rewards::
+	goto_if_lt VAR_0x8004, 40, LittlerootTown_ProfessorBirchsLab_EventScript_NextGoal
+	goto_if_set FLAG_HOENN_BIRCH_DEX_1, LittlerootTown_ProfessorBirchsLab_EventScript_Reward2
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchReward1
+	giveitem ITEM_NET_BALL, 5
+	goto_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_BagFull
+	setflag FLAG_HOENN_BIRCH_DEX_1
+LittlerootTown_ProfessorBirchsLab_EventScript_Reward2::
+	goto_if_lt VAR_0x8004, 80, LittlerootTown_ProfessorBirchsLab_EventScript_NextGoal
+	goto_if_set FLAG_HOENN_BIRCH_DEX_2, LittlerootTown_ProfessorBirchsLab_EventScript_Reward3
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchReward2
+	giveitem ITEM_REPEAT_BALL, 5
+	goto_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_BagFull
+	setflag FLAG_HOENN_BIRCH_DEX_2
+LittlerootTown_ProfessorBirchsLab_EventScript_Reward3::
+	goto_if_lt VAR_0x8004, 120, LittlerootTown_ProfessorBirchsLab_EventScript_NextGoal
+	goto_if_set FLAG_HOENN_BIRCH_DEX_3, LittlerootTown_ProfessorBirchsLab_EventScript_Reward4
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchReward3
+	giveitem ITEM_TIMER_BALL, 5
+	goto_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_BagFull
+	setflag FLAG_HOENN_BIRCH_DEX_3
+LittlerootTown_ProfessorBirchsLab_EventScript_Reward4::
+	goto_if_lt VAR_0x8004, 160, LittlerootTown_ProfessorBirchsLab_EventScript_NextGoal
+	goto_if_set FLAG_HOENN_BIRCH_DEX_4, LittlerootTown_ProfessorBirchsLab_EventScript_Reward5
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchReward4
+	giveitem ITEM_LUCKY_EGG
+	goto_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_BagFull
+	setflag FLAG_HOENN_BIRCH_DEX_4
+LittlerootTown_ProfessorBirchsLab_EventScript_Reward5::
+	goto_if_lt VAR_0x8004, 200, LittlerootTown_ProfessorBirchsLab_EventScript_NextGoal
+	goto_if_set FLAG_HOENN_BIRCH_DEX_5, LittlerootTown_ProfessorBirchsLab_EventScript_NextGoal
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchReward5
+	giveitem ITEM_RARE_CANDY, 5
+	goto_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_BagFull
+	setflag FLAG_HOENN_BIRCH_DEX_5
+LittlerootTown_ProfessorBirchsLab_EventScript_NextGoal::
+	goto_if_unset FLAG_HOENN_BIRCH_DEX_1, LittlerootTown_ProfessorBirchsLab_EventScript_NextGoal40
+	goto_if_unset FLAG_HOENN_BIRCH_DEX_2, LittlerootTown_ProfessorBirchsLab_EventScript_NextGoal80
+	goto_if_unset FLAG_HOENN_BIRCH_DEX_3, LittlerootTown_ProfessorBirchsLab_EventScript_NextGoal120
+	goto_if_unset FLAG_HOENN_BIRCH_DEX_4, LittlerootTown_ProfessorBirchsLab_EventScript_NextGoal160
+	goto_if_unset FLAG_HOENN_BIRCH_DEX_5, LittlerootTown_ProfessorBirchsLab_EventScript_NextGoal200
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchAllRewardsGiven
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_NextGoal40::
+	setvar VAR_0x8005, 40
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_ShowNextGoal
+
+LittlerootTown_ProfessorBirchsLab_EventScript_NextGoal80::
+	setvar VAR_0x8005, 80
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_ShowNextGoal
+
+LittlerootTown_ProfessorBirchsLab_EventScript_NextGoal120::
+	setvar VAR_0x8005, 120
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_ShowNextGoal
+
+LittlerootTown_ProfessorBirchsLab_EventScript_NextGoal160::
+	setvar VAR_0x8005, 160
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_ShowNextGoal
+
+LittlerootTown_ProfessorBirchsLab_EventScript_NextGoal200::
+	setvar VAR_0x8005, 200
+LittlerootTown_ProfessorBirchsLab_EventScript_ShowNextGoal::
+	buffernumberstring STR_VAR_2, VAR_0x8005
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchNextGoal
+	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_BagFull::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchBagFull
+	return
+
+@ The rival, back from ROUTE 103; the all-starters line once TREECKO and
+@ MUDKIP have joined too (their own flags, nothing new stored)
+LittlerootTown_ProfessorBirchsLab_EventScript_Rival::
+	lock
+	faceplayer
+	setvar VAR_0x8004, 0
+	goto_if_unset FLAG_HOENN_GOT_TREECKO_IN_WOODS, LittlerootTown_ProfessorBirchsLab_EventScript_RivalTalk
+	goto_if_unset FLAG_HOENN_GOT_MUDKIP_ON_BEACH, LittlerootTown_ProfessorBirchsLab_EventScript_RivalTalk
+	setvar VAR_0x8004, 1
+LittlerootTown_ProfessorBirchsLab_EventScript_RivalTalk::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_ProfessorBirchsLab_EventScript_BrendanTalk
+	goto_if_eq VAR_0x8004, 1, LittlerootTown_ProfessorBirchsLab_EventScript_MayAllStarters
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayLab
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_MayAllStarters::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayLabAllStarters
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_BrendanTalk::
+	goto_if_eq VAR_0x8004, 1, LittlerootTown_ProfessorBirchsLab_EventScript_BrendanAllStarters
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanLab
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_BrendanAllStarters::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanLabAllStarters
+	release
+	end
+@ END PATCH

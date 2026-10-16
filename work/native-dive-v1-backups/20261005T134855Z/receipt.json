@@ -1,0 +1,24 @@
+{
+  "source_only": true,
+  "save_layout_changed": false,
+  "fixed_ewram_added": 0,
+  "runtime_validated": false,
+  "files": {
+    "include/constants/party_menu.h": "fc481059b8088c9e64d8a813e93232bd11b0ae31e7853e269c982372b682283f",
+    "src/data/party_menu.h": "9bbf14a1f421b6e4d80537ebb9dca96ba941e890c8d7ee20068bce237af5e842",
+    "src/party_menu.c": "885c59898c6fb49b541646b988cd974cd2924ab5ee2650b1af88efcdaf246f99",
+    "include/field_control_avatar.h": "53846a9dc05b849a05728e6c0bac4d68eb2f9ce38b2620357f7bac594ab9feb4",
+    "include/event_scripts.h": "bd672cb3431372c389d6f94ce5c8147060e170b0dfc2cb2472e821891f69f6f4",
+    "src/field_control_avatar.c": "e46cfe59ecc1ba09aaa6a482c0c4a1bad43854911497d8a298451cb5f5484895",
+    "data/scripts/field_moves.inc": "0a9ffea493966e47114aa8dd61eb2a898510e4fc28217b39a9e656a11d0a235d",
+    "src/field_effect.c": "ee7ab07d2886a898a8f06862c59e92fd4f5f51db677aac4e1d38e7b73bbfa715",
+    "src/overworld.c": "aeb4e892957225951654c399bd18cc2a6ff26940fddd9424f666fb377cdfb97e",
+    "src/field_player_avatar.c": "49438ce8ea17ceab87d79c99f0ed1ead6462672283ef9cf942e38cb4d2965e3a",
+    "src/bike.c": "110497cbdba4461731e8177d0defea66c8107da12ad1023e129b1325112b8658",
+    "src/quest_log_events.c": "d32d20d743aeba539cdc4ee401b6482ee653a6e01bcff838fa7f5a266eddd7e7",
+    "tools/hoenn_import/patches/Underwater_SeafloorCavern.mapscripts": "f3f90cf38969ca7ab40a34f6ade91246bad9aa1c798419a3c002c29d7bf7a2d9",
+    "tools/hoenn_import/patches/Underwater_SeafloorCavern.scripts.inc": "6c9078d882400cda9ac13662ba90210202aa53c2698f55fe06f63c811e4e3add",
+    "tools/hoenn_import/patches/SeafloorCavern_Entrance.mapscripts": "b72e9a525a7e9a6a87d87a0e81a1c959defb2cc390806782a5066d87fd92c050",
+    "tools/hoenn_import/patches/SeafloorCavern_Entrance.scripts.inc": "8a810502abbeb3467b8fdeae66c60a41369a522cecf0863482c2d6b03aaf7821"
+  }
+}

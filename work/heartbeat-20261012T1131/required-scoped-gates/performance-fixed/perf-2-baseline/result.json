@@ -1,0 +1,20 @@
+{
+  "pass": true,
+  "rom_sha256": "b46fb32bb67f89d5a48dfbfdf41ddd4977cc4a2d60dbbe6c72e1bc0281c5606d",
+  "fixture_sha256": "2b9556a7880e546dcffe20468621a0a3ad121a1f93486852c0a7929af6b63136",
+  "requested_render_frames": 600,
+  "requested_warmup_frames": 60,
+  "scope": "Host mGBA software renderer; no DELTA device claim",
+  "continue_seconds": 0.735790138000084,
+  "continue_frame_requests": 670,
+  "location": [
+    76,
+    0,
+    22,
+    11
+  ],
+  "render_seconds": 0.5543368660000851,
+  "wrapper_frame_count_delta": 600,
+  "party_full_PC_Dex_unchanged": true,
+  "inputs_unchanged": true
+}

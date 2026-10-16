@@ -1,0 +1,44 @@
+{
+  "state": "prepared, not executed",
+  "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+  "owner": "root with johto_regression_oct12 independent review",
+  "scope": "One continuous actual-key early research journey; not whole campaign proof",
+  "route": [
+    "Kanto airport Johto clerk and actual Misty invitation",
+    "Native flight arrival JohtoCherrygroveAirstrip 22,12",
+    "Walk through JohtoRoute29 to NewBarkTown",
+    "Real lab door; ProfessorElm localID2 at7,8; talk from7,9; decline optional Cyndaquil",
+    "Walk back to Cherrygrove Guide",
+    "Route30 and MrPokemonsHouse research report",
+    "Walk back to Elm and hand over report",
+    "Native menu SAVE and new cold CONTINUE"
+  ],
+  "checkpoints": [
+    "FLAG_JOHTO_ARRIVAL_BRIEFED",
+    "FLAG_JOHTO_MET_LAB_ASSISTANT",
+    "FLAG_JOHTO_MET_CHERRYGROVE_GUIDE",
+    "FLAG_JOHTO_MR_POKEMON_BRIEFED",
+    "FLAG_JOHTO_ELM_REPORT_DELIVERED"
+  ],
+  "constraints": [
+    "Original v1.2 and all14 SAVs immutable",
+    "Preboot QA fixture only; record exact flag and position changes",
+    "No mid-run warp, flag injection, script call or RAM write",
+    "Confirm actual map.json connections, door indices, Guide and MrPokemon coordinates; do not guess",
+    "Preserve original Pokemon PID/OT/checksums/full PC and caught/seen bits",
+    "If wild encounter happens, record it and normal run input; report legitimate HP changes separately",
+    "If path blocks, preserve failure evidence and stop that case rather than bypass"
+  ],
+  "historical_done_do_not_repeat": [
+    "Bag and dock/Mew",
+    "Isolated Azalea through Johto League cases",
+    "Route110/119 rival26 profiles"
+  ],
+  "already_verified_this_turn": [
+    "Route114 TM05 five native profiles",
+    "Johto return clerk two native profiles",
+    "Eventcheck3, mapSmoke2, legacy6 and user2 load compatibility",
+    "Approved24 assets and SaveABI preservation"
+  ],
+  "user_delta_limit": "Actual user DELTA state and authenticated pre-corruption donor unavailable; Lickitung remains unrepaired"
+}

@@ -1,0 +1,17 @@
+{
+  "returncode": 0,
+  "seconds": 4.949091911315918,
+  "command": [
+    "python3",
+    "/workspaces/pokefirered/work/regression-oct12/state-cross-rom-child.py",
+    "/workspaces/pokefirered/work/regression-oct12/state-cross-rom/control-q8-to-q8/config.json",
+    "--rom",
+    "/workspaces/pokefirered/outputs/rom-johto-misty-repair-20261012T100926Z/rollback-q8/pokemonthyl.gba",
+    "--elf",
+    "/workspaces/pokefirered/outputs/rom-johto-misty-repair-20261012T100926Z/rollback-q8/pokemonthyl.elf",
+    "--sav",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.2.sav",
+    "--out",
+    "/workspaces/pokefirered/work/regression-oct12/state-cross-rom/control-q8-to-q8"
+  ]
+}

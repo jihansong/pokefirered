@@ -12,6 +12,7 @@
 #include "easy_chat.h"
 #include "event_data.h"
 #include "evolution_scene.h"
+#include "field_control_avatar.h"
 #include "field_effect.h"
 #include "field_player_avatar.h"
 #include "field_fadetransition.h"
@@ -171,6 +172,7 @@ static void CursorCB_FieldMove(u8 taskId);
 static bool8 SetUpFieldMove_Fly(void);
 static bool8 SetUpFieldMove_Waterfall(void);
 static bool8 SetUpFieldMove_Surf(void);
+static bool8 SetUpFieldMove_Dive(void);
 static void CB2_InitPartyMenu(void);
 static void ResetPartyMenu(void);
 static bool8 ShowPartyMenu(void);
@@ -3937,7 +3939,16 @@ static void CursorCB_FieldMove(u8 taskId)
     else
     {
         // All field moves before WATERFALL are HMs.
-        if (fieldMove <= FIELD_MOVE_WATERFALL && FlagGet(FLAG_BADGE01_GET + fieldMove) != TRUE)
+        if ((fieldMove < FIELD_MOVE_WATERFALL && fieldMove != FIELD_MOVE_FLY && fieldMove != FIELD_MOVE_SURF
+          && fieldMove != FIELD_MOVE_STRENGTH && fieldMove != FIELD_MOVE_ROCK_SMASH
+          && FlagGet(FLAG_BADGE01_GET + fieldMove) != TRUE)
+         || (fieldMove == FIELD_MOVE_STRENGTH && !CanUseStrengthAtCurrentMap())
+         || (fieldMove == FIELD_MOVE_ROCK_SMASH && !CanUseRockSmashAtCurrentMap())
+         || (fieldMove == FIELD_MOVE_FLY && !CanUseFlyAtCurrentMap())
+         || (fieldMove == FIELD_MOVE_SURF && !CanUseSurfAtCurrentMap())
+         || (fieldMove == FIELD_MOVE_WATERFALL && !CanUseWaterfallAtCurrentMap())
+         || (fieldMove == FIELD_MOVE_DIVE && gMapHeader.mapType != MAP_TYPE_UNDERWATER
+          && !FlagGet(FLAG_HOENN_BADGE07_GET)))
         {
             DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
             gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
@@ -4086,6 +4097,26 @@ static bool8 SetUpFieldMove_Surf(void)
         return TRUE;
     }
     return FALSE;
+}
+
+static void FieldCallback_Dive(void)
+{
+    gFieldEffectArguments[0] = GetCursorSelectionMonId();
+    gFieldEffectArguments[1] = 0;
+    FieldEffectStart(FLDEFF_USE_DIVE);
+}
+
+static bool8 SetUpFieldMove_Dive(void)
+{
+    // Surfacing remains available for legacy saves already underwater.
+    if (gMapHeader.mapType != MAP_TYPE_UNDERWATER
+     && !FlagGet(FLAG_HOENN_BADGE07_GET))
+        return FALSE;
+    if (TrySetDiveWarp() == 0)
+        return FALSE;
+    gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+    gPostMenuFieldCallback = FieldCallback_Dive;
+    return TRUE;
 }
 
 static void DisplayCantUseSurfMessage(void)
@@ -4739,7 +4770,7 @@ bool8 IsMoveHm(u16 move)
 {
     u8 i;
 
-    for (i = 0; i < NUM_HIDDEN_MACHINES - 1; ++i) // no dive
+    for (i = 0; i < NUM_HIDDEN_MACHINES; ++i)
         if (sTMHMMoves[i + NUM_TECHNICAL_MACHINES] == move)
             return TRUE;
     return FALSE;

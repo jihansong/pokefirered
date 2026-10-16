@@ -1,0 +1,27 @@
+{
+  "verdict": "PASS-WITH-NOTES",
+  "reviewed_at": "2026-10-01T08:22:41.332469+00:00",
+  "qa_directory": "/workspaces/pokefirered/docs/team/qa/codex-airport-geometry-20261001T081524Z",
+  "automated_checks_passed": true,
+  "visual_review": "Inspected 11 selected actual airport entry animation frames and 15 actual event captures. Door opens in the drawn entry cell, player passes through it, the ceiling remains above windows, and the taller facade and viewing route are intact.",
+  "airport_cases_passed": 14,
+  "story_regression_cases_passed": 68,
+  "save_compatibility_identical": 6,
+  "original_save_count_unchanged": 13,
+  "protected_sources_unchanged": 13663,
+  "existing_build_warning_lines": [
+    "make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.",
+    "make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.",
+    "make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.",
+    "make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.",
+    "/opt/devkitpro/devkitARM/bin/arm-none-eabi-ld: warning: ../../pokemonthyl.elf has a LOAD segment with RWX permissions"
+  ],
+  "existing_wiring_findings": 91,
+  "new_wiring_findings": 0,
+  "original_result_sha256": "46ab7626940e6ed859dc0f158eb0f57099cff21e3e6253131170d9e3d18800d1",
+  "limitations": [
+    "DELTA device not tested directly",
+    "Artwork aesthetic approval not inferred from functional tests",
+    "Existing build warnings and unrelated story wiring findings remain"
+  ]
+}

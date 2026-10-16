@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/native_misty_basic_qa.py", line 117, in <module>
+    e.write(e.sym('gBattleTypeFlags'),struct.pack('<I',const('BATTLE_TYPE_TRAINER')))
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/gamedata.py", line 205, in const
+    return consts([s])[s]
+           ^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/gamedata.py", line 180, in consts
+    raise KeyError('unknown constant %s' % n)
+KeyError: 'unknown constant BATTLE_TYPE_TRAINER'

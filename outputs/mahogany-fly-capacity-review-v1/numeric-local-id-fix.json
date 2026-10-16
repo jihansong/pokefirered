@@ -1,0 +1,24 @@
+{
+  "time_utc": "2026-10-05T22:05:19.254345+00:00",
+  "numeric_ids_removed": 7,
+  "generator_sha_before": "0e6e6d174025fd4d0ac208c4a780737a5ce045e5c710b0d80f494adf8fc129b9",
+  "generator_sha_after": "9361ee5aad75cc22ae8425cc7c3a45f89008f423189b02474b42ac66d69ee519",
+  "map_changes": [
+    {
+      "map": "LakeOfRage",
+      "removed_numeric_local_ids": 2,
+      "array_runtime_ids_preserved": true,
+      "sha_before": "446eaa8a34496910ac782365fc58a9e275fc90f5bfba635c543c2db2650f4a2a",
+      "sha_after": "81daa802b8c346caf2e15d489187a930d7e82e0de671f158d557020b7e1999ea"
+    },
+    {
+      "map": "JohtoRocketHQ_B3F",
+      "removed_numeric_local_ids": 5,
+      "array_runtime_ids_preserved": true,
+      "sha_before": "a6d8900714b041bd136c75645d5a0cd07c693c126082dd97f01dd89cd35c2bbd",
+      "sha_after": "b1c861cba298d7e5886b3fb180939e50ad7acba32fd91f03e0f5efbcd8b480a0"
+    }
+  ],
+  "script_bytes_changed": false,
+  "native_pending": true
+}

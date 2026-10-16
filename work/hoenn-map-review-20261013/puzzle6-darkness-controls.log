@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/work/hoenn-map-review-20261013/puzzle6-darkness-controls.py", line 17, in <module>
+    assert not rows['reset'] and before[:2]==list(map_info('Route110_TrickHousePuzzle6')[k] for k in ['group','num'])
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

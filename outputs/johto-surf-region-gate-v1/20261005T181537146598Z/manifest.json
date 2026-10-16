@@ -1,0 +1,23 @@
+{
+  "save_structure_changed": false,
+  "regions": {
+    "Kanto": "FLAG_BADGE05_GET",
+    "Johto": "FLAG_JOHTO_BADGE04_GET",
+    "Hoenn": "FLAG_HOENN_BADGE05_GET"
+  },
+  "native_checks": "NOT_RUN_BY_PATCH",
+  "paths": {
+    "src/field_control_avatar.c": {
+      "before": "54d22e81e3b851e281f43dbe43ec527ca977d7df5e9372e4f11f8586ebb35ca4",
+      "after": "e005c5c937475d3bac4f1edcf06f87bc6ee491ff3890690b23bf69d1c3c13278"
+    },
+    "include/field_control_avatar.h": {
+      "before": "9d5e648faab5cf29c9b21a9ef678ecc0f098d67ac36c28b44c751ee03a9aba2b",
+      "after": "a2b58317e4bce8e409cb66bf9529f16e330b3f0a6f9049da2c9e2e78c0cec4a5"
+    },
+    "src/party_menu.c": {
+      "before": "8605112f9abf18838f07eba4ae0025c9b34b21afe0e494cdc66175445638e765",
+      "after": "7566bd67a76bd33c25debc4a8f2d1811d1399cc1cf99f31cfc6f6cbb8d785f61"
+    }
+  }
+}

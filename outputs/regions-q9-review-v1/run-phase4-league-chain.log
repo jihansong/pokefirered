@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_chain.py", line 73, in <module>
+    td=Path(td);previous=td/'explicit-kanto-eligible-initial-QA-only.sav';initialization=eligible_initial_copy(previous)
+                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_league_native_chain.py", line 34, in eligible_initial_copy
+    assert all(initial.flag(f)for f in ['FLAG_JOHTO_BADGE%02d_GET'%i for i in range(1,9)])
+AssertionError

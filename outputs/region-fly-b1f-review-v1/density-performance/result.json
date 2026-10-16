@@ -1,0 +1,25 @@
+{
+  "pass_all": true,
+  "maps": [
+    {
+      "map": "VictoryRoad_B1F",
+      "load_frames": 97,
+      "stable_idle_frames": 12,
+      "vblank_delta": 108,
+      "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "fixture_sha256": "2a321bed88b430e126cff7fb88c256256c7e54ed020bd607f3a26bae6c247a17"
+    }
+  ],
+  "rom_sha256": "3d1a1a4f3e84deb5d9f8d2a5943930354e1a86164fe257eabf79d99ca1232fee",
+  "elf_sha256": "efd67a54f5ad9ecbe8aaa02c0d69ca7ecb6eb6d928f50761199bd8e6f040b0eb",
+  "sym_sha256": "c2371a68d77f629539d8b1d1c3580bb9a53fce0dd9d68ef54655077052f7ea5a",
+  "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "ram_pokes_original": 0,
+  "party_pc_dex_preserved": true,
+  "regional_story_trainer_flags_preserved": true,
+  "actual_device_fps_measured": false,
+  "workload_frames_per_case": 360,
+  "workload_count": 2,
+  "full_campaign_measured": false,
+  "temporary_native_fixtures": true
+}

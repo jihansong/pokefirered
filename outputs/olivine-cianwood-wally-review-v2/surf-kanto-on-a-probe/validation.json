@@ -1,0 +1,105 @@
+{
+  "pass": false,
+  "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+  "elf_sha256": "4b6ab0e3cea92de40cadd88a073d0820e9435b0e122d19079f009e4ae95c11b5",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-surf-region-kanto-on-a",
+  "fixture": "temporary Lapras mover plus exact copy of genuine original starter Pikachu; original SAV/PC/Dex unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "candidate_ui_task_symbols": {
+    "Task_HandleChooseMonInput": [
+      135415364
+    ],
+    "Task_HandleSelectionMenuInput": [
+      135428036
+    ],
+    "Task_ReturnToChooseMonAfterText": [
+      135417556
+    ],
+    "Task_CancelAfterAorBPress": [
+      135435476
+    ],
+    "Task_YesNoMenu_HandleInput": [
+      134874012
+    ],
+    "Task_FldEffUseSurf": [
+      134782228
+    ]
+  },
+  "native_story_not_entire_regions": true,
+  "palette_active_abi_mask": {
+    "size": 16,
+    "offset": 7,
+    "mask": 128
+  },
+  "follower_checks": [
+    {
+      "label": "land-before-right",
+      "map": [
+        3,
+        0
+      ],
+      "player_xy": [
+        12,
+        18
+      ],
+      "follower_xy": [
+        11,
+        18
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "land-before-left",
+      "map": [
+        3,
+        0
+      ],
+      "player_xy": [
+        11,
+        18
+      ],
+      "follower_xy": [
+        12,
+        18
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    }
+  ],
+  "region": "kanto",
+  "gate": "on",
+  "method": "a",
+  "expected_permission": true,
+  "water_target": [
+    10,
+    18
+  ],
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "ui_stage": "await-surf-mount",
+  "error": "AssertionError(('one native step blocked', 'RIGHT', (3, 0, 10, 18)))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/tools/qa/native_surf_region_qa.py\", line 259, in <module>\n    photo(e,'surf-native-mounted');invariants();probe_companion('surf-mounted')\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/tools/qa/native_surf_region_qa.py\", line 152, in probe_companion\n    walk_tile('RIGHT');await_state(e.field_idle,600);e.run(20)\n    ^^^^^^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/tools/qa/native_surf_region_qa.py\", line 93, in walk_tile\n    else:raise AssertionError(('one native step blocked',key,initial))\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('one native step blocked', 'RIGHT', (3, 0, 10, 18))\n",
+  "failure_location": [
+    3,
+    0,
+    10,
+    18
+  ],
+  "original_saves_unchanged": true
+}

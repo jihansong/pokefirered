@@ -1,0 +1,199 @@
+{
+  "map": "MAP_ILEX_FOREST",
+  "base_label": "sIlexForest",
+  "land_mons": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_CATERPIE"
+      },
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_METAPOD"
+      },
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_WEEDLE"
+      },
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_KAKUNA"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_PARAS"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_CATERPIE"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_PARAS"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_METAPOD"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_ODDISH"
+      },
+      {
+        "min_level": 7,
+        "max_level": 7,
+        "species": "SPECIES_PARAS"
+      },
+      {
+        "min_level": 7,
+        "max_level": 7,
+        "species": "SPECIES_ODDISH"
+      },
+      {
+        "min_level": 7,
+        "max_level": 7,
+        "species": "SPECIES_BUTTERFREE"
+      }
+    ]
+  },
+  "land_mons_morning": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_CATERPIE"
+      },
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_METAPOD"
+      },
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_WEEDLE"
+      },
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_KAKUNA"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_PARAS"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_CATERPIE"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_PARAS"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_METAPOD"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_ODDISH"
+      },
+      {
+        "min_level": 7,
+        "max_level": 7,
+        "species": "SPECIES_PARAS"
+      },
+      {
+        "min_level": 7,
+        "max_level": 7,
+        "species": "SPECIES_ODDISH"
+      },
+      {
+        "min_level": 7,
+        "max_level": 7,
+        "species": "SPECIES_BUTTERFREE"
+      }
+    ]
+  },
+  "land_mons_night": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_HOOTHOOT"
+      },
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_ODDISH"
+      },
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_PARAS"
+      },
+      {
+        "min_level": 5,
+        "max_level": 5,
+        "species": "SPECIES_VENONAT"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_HOOTHOOT"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_ODDISH"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_PARAS"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_VENONAT"
+      },
+      {
+        "min_level": 6,
+        "max_level": 6,
+        "species": "SPECIES_ZUBAT"
+      },
+      {
+        "min_level": 7,
+        "max_level": 7,
+        "species": "SPECIES_PARAS"
+      },
+      {
+        "min_level": 7,
+        "max_level": 7,
+        "species": "SPECIES_ZUBAT"
+      },
+      {
+        "min_level": 7,
+        "max_level": 7,
+        "species": "SPECIES_NOCTOWL"
+      }
+    ]
+  }
+}

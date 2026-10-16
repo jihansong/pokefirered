@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/native_legacy_fly_allocation_qa.py", line 12, in <module>
+    exec(compile(prefix,str(base),'exec'))
+  File "tools/qa/native_fly_region_qa.py", line 234, in <module>
+    target_cell=(sections[target_section]['x'],sections[target_section]['y'])
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+KeyError: 'x'

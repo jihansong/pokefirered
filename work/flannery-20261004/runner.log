@@ -1,0 +1,21 @@
+START build
+FINISH build 0
+START symbols
+FINISH symbols 0
+START flannery
+FINISH flannery 0
+START roxanne
+FINISH roxanne 0
+START textwidth
+FINISH textwidth 0
+START map_integrity
+FINISH map_integrity 0
+START event_wiring
+FINISH event_wiring 1
+START map_smoke
+FINISH map_smoke 0
+START dex
+FINISH dex 0
+START savecompat
+FINISH savecompat 0
+COMPLETE {"utc": "2026-10-04T08:20:10.671761+00:00", "results": [{"check": "build", "exit": 0, "log": "/workspaces/pokefirered/work/flannery-20261004/build.log"}, {"check": "symbols", "exit": 0, "log": "/workspaces/pokefirered/work/flannery-20261004/symbols.log"}, {"check": "flannery", "exit": 0, "log": "/workspaces/pokefirered/work/flannery-20261004/flannery.log"}, {"check": "roxanne", "exit": 0, "log": "/workspaces/pokefirered/work/flannery-20261004/roxanne.log"}, {"check": "textwidth", "exit": 0, "log": "/workspaces/pokefirered/work/flannery-20261004/textwidth.log"}, {"check": "map_integrity", "exit": 0, "log": "/workspaces/pokefirered/work/flannery-20261004/map_integrity.log"}, {"check": "event_wiring", "exit": 1, "log": "/workspaces/pokefirered/work/flannery-20261004/event_wiring.log"}, {"check": "map_smoke", "exit": 0, "log": "/workspaces/pokefirered/work/flannery-20261004/map_smoke.log"}, {"check": "dex", "exit": 0, "log": "/workspaces/pokefirered/work/flannery-20261004/dex.log"}, {"check": "savecompat", "exit": 0, "log": "/workspaces/pokefirered/work/flannery-20261004/savecompat.log"}], "original_saves_unchanged": true, "source_saves_count": 7, "save_layout_changed": false, "actual_SAVE_reload_tested": false, "Delta_tested": false, "region_complete": false}

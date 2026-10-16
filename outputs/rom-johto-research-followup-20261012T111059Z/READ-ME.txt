@@ -1,0 +1,7 @@
+Thunder Yellow: early Johto research followup, 2026-10-12
+The professor now registers the research-team visit, so visiting him first permits the Cherrygrove guide referral. His instructions explicitly direct the player to the guide before Mr. Pokemon. The separate Cyndaquil gift receipt flag is unchanged.
+Before delivering Elm's report, the Sprout Tower visitor directs the player to his lab. After delivery, the existing dialogue remains.
+Native checks: five NPC/flag cases, original party/full PC/Dex preserved; text width and live labels pass; v1.1/v1.2 battery saves load identically versus Q8; 24 approved title/opening/Rocket/audio assets and SaveBlock/PC sector layout preserved.
+All original and backup SAVs were left unchanged. This ZIP contains no player save. Keep the original SAV and Save States. Use game CONTINUE from the battery SAV for this update.
+A raw mGBA experiment restored an older Q8 Save State into the previous Oct12 repair and rebooted instead of resuming the field. Same-ROM controls worked. This was not the user's DELTA state and does not establish the cause of the reported map corruption or original Bad Egg. The new candidate was not tested in that cross-ROM state experiment.
+Full Johto/Hoenn campaign and multi-region story, allied battles, original Bad Egg restoration and DELTA performance remain unfinished/unverified. This is a scoped continuation of the prior repair.

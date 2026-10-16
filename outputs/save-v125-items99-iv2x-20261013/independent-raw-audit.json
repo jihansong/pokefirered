@@ -1,0 +1,88 @@
+{
+  "pass": true,
+  "checked": [
+    {
+      "party_slot": 1,
+      "pid": 3957541173,
+      "ivs_before": [
+        30,
+        25,
+        26,
+        23,
+        11,
+        16
+      ],
+      "ivs_after": [
+        31,
+        31,
+        31,
+        31,
+        22,
+        31
+      ]
+    },
+    {
+      "party_slot": 2,
+      "pid": 1847114783,
+      "ivs_before": [
+        29,
+        8,
+        15,
+        7,
+        12,
+        13
+      ],
+      "ivs_after": [
+        31,
+        16,
+        30,
+        14,
+        24,
+        26
+      ]
+    },
+    {
+      "party_slot": 3,
+      "pid": 2710679397,
+      "ivs_before": [
+        30,
+        15,
+        25,
+        30,
+        4,
+        0
+      ],
+      "ivs_after": [
+        31,
+        30,
+        31,
+        31,
+        8,
+        0
+      ]
+    },
+    {
+      "party_slot": 5,
+      "pid": 2008717992,
+      "ivs_before": [
+        29,
+        22,
+        17,
+        9,
+        21,
+        31
+      ],
+      "ivs_after": [
+        31,
+        31,
+        31,
+        18,
+        31,
+        31
+      ]
+    }
+  ],
+  "storage_and_sb2_unchanged": true,
+  "independent_12_u32_xor_checksum": true,
+  "no_Mon_subs_reuse": true
+}

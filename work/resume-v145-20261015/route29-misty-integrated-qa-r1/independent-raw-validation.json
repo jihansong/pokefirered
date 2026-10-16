@@ -1,0 +1,141 @@
+{
+  "status": "INDEPENDENT_RAW_INPUT_CHECK_PASS_NOT_BUILT_NOT_NATIVE",
+  "changed_map_cells": 241,
+  "map_cells_checked": 960,
+  "collision_and_elevation_all_identical": true,
+  "raw_attribute_changes": 99,
+  "raw_attribute_difference_bits": [
+    "0x0",
+    "0x20000000"
+  ],
+  "lower_29_attribute_bits_identical": true,
+  "not_all_32bit_attribute_values_identical": true,
+  "attribute_note": "Only bit29 (render layer) changes. Do not claim byte-identical 32-bit attributes. Current fieldmap mask semantics are rebound by the native/compiler stage.",
+  "native_wild_grass_cells_identical": [
+    [
+      6,
+      7
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      8,
+      7
+    ],
+    [
+      9,
+      7
+    ],
+    [
+      10,
+      7
+    ],
+    [
+      11,
+      7
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      8,
+      8
+    ],
+    [
+      9,
+      8
+    ],
+    [
+      10,
+      8
+    ],
+    [
+      11,
+      8
+    ]
+  ],
+  "outer_2tile_buffers_identical": true,
+  "events_warps_connections_scripts_text_border_unchanged": true,
+  "PNG_palette_all_bytes_identical": true,
+  "immutable_side_frames": [
+    2,
+    7,
+    8
+  ],
+  "independently_encoded_4bpp_sha256": "e095b1cdcb883a0e9ace966ae7a158f225d93ce9a69c6811bc17e53110f66aaf",
+  "source_frame_bounding_boxes": [
+    [
+      1,
+      12,
+      16,
+      31
+    ],
+    [
+      1,
+      12,
+      16,
+      31
+    ],
+    [
+      1,
+      12,
+      16,
+      31
+    ],
+    [
+      1,
+      13,
+      16,
+      32
+    ],
+    [
+      1,
+      13,
+      16,
+      32
+    ],
+    [
+      1,
+      13,
+      16,
+      32
+    ],
+    [
+      1,
+      13,
+      16,
+      32
+    ],
+    [
+      1,
+      12,
+      16,
+      31
+    ],
+    [
+      0,
+      12,
+      16,
+      31
+    ]
+  ],
+  "walking_frames_3_to_6_touch_bottom_pixel_row": true,
+  "clipping_and_feet_line_require_actual_native_visual_review": true,
+  "ROM_changed": false,
+  "SAV_changed": false,
+  "native_executed": false,
+  "source_manifest_sha256": [
+    "49e17e3fdc0637f43ddaf5ac1482fca669a84c9a011e58158a2e7153f477742a",
+    "56c460af67497213557291bb41973b7634859f90d112e436c4580feb2fa5cfa7"
+  ],
+  "all_960_physical_walkability_words_equal": true,
+  "original_walkable_cell_count": 595,
+  "native_front_back_foot_clipping_pending": true
+}

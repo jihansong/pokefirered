@@ -1,0 +1,1229 @@
+{
+  "all_pass": true,
+  "rom_sha256": "da26db1c7136e42fe0b0205d2c42cb7cb71b76136150a145074824e91d3d82e6",
+  "input_sav_sha256": "13292138cd7ab4114573a5457c7c51630df6026c930bf81dbd5de7e64b6ed4da",
+  "checks": [
+    {
+      "case": "eligibility",
+      "system_clear": false,
+      "kanto_badges": 0,
+      "hoenn_hof": true,
+      "expected_join": false,
+      "pass_all": true
+    },
+    {
+      "case": "eligibility",
+      "system_clear": true,
+      "kanto_badges": 0,
+      "hoenn_hof": true,
+      "expected_join": false,
+      "pass_all": true
+    },
+    {
+      "case": "eligibility",
+      "system_clear": false,
+      "kanto_badges": 8,
+      "hoenn_hof": true,
+      "expected_join": false,
+      "pass_all": true
+    },
+    {
+      "case": "eligibility",
+      "system_clear": true,
+      "kanto_badges": 7,
+      "hoenn_hof": true,
+      "expected_join": false,
+      "pass_all": true
+    },
+    {
+      "case": "eligibility",
+      "system_clear": true,
+      "kanto_badges": 8,
+      "hoenn_hof": true,
+      "expected_join": true,
+      "pass_all": true
+    },
+    {
+      "case": "native_enemy_team_growth",
+      "stage": 0,
+      "count": 3,
+      "species": [
+        121,
+        54,
+        116
+      ],
+      "player_party_replaced": false,
+      "pass_all": true
+    },
+    {
+      "case": "native_enemy_team_growth",
+      "stage": 1,
+      "count": 4,
+      "species": [
+        121,
+        54,
+        116,
+        61
+      ],
+      "player_party_replaced": false,
+      "pass_all": true
+    },
+    {
+      "case": "native_enemy_team_growth",
+      "stage": 2,
+      "count": 5,
+      "species": [
+        121,
+        55,
+        117,
+        61,
+        222
+      ],
+      "player_party_replaced": false,
+      "pass_all": true
+    },
+    {
+      "case": "native_enemy_team_growth",
+      "stage": 3,
+      "count": 6,
+      "species": [
+        121,
+        55,
+        230,
+        186,
+        222,
+        184
+      ],
+      "player_party_replaced": false,
+      "pass_all": true
+    },
+    {
+      "case": "native_enemy_team_growth",
+      "stage": 4,
+      "count": 6,
+      "species": [
+        121,
+        55,
+        230,
+        186,
+        222,
+        184
+      ],
+      "player_party_replaced": false,
+      "pass_all": true
+    }
+  ],
+  "trail_samples": [
+    {
+      "label": "walk-right-0",
+      "player": {
+        "xy": [
+          13,
+          16
+        ],
+        "feet": [
+          136,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            12,
+            16
+          ],
+          "sprite": 5,
+          "visible": false,
+          "feet": [
+            120,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            12,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            120,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "walk-right-1",
+      "player": {
+        "xy": [
+          14,
+          16
+        ],
+        "feet": [
+          152,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            12,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            120,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            13,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            136,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "walk-right-2",
+      "player": {
+        "xy": [
+          15,
+          16
+        ],
+        "feet": [
+          168,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            13,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            136,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            14,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            152,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "walk-right-3",
+      "player": {
+        "xy": [
+          16,
+          16
+        ],
+        "feet": [
+          184,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            14,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            152,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            15,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            168,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "walk-right-4",
+      "player": {
+        "xy": [
+          17,
+          16
+        ],
+        "feet": [
+          200,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            15,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            168,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            16,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            184,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "run-reverse-left-0",
+      "player": {
+        "xy": [
+          16,
+          16
+        ],
+        "feet": [
+          184,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            16,
+            16
+          ],
+          "sprite": 5,
+          "visible": false,
+          "feet": [
+            184,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            17,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            200,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "run-reverse-left-1",
+      "player": {
+        "xy": [
+          15,
+          16
+        ],
+        "feet": [
+          168,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            17,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            200,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            16,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            184,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "run-reverse-left-2",
+      "player": {
+        "xy": [
+          14,
+          16
+        ],
+        "feet": [
+          152,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            16,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            184,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            15,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            168,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "run-reverse-left-3",
+      "player": {
+        "xy": [
+          13,
+          16
+        ],
+        "feet": [
+          136,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            15,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            168,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            14,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            152,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "run-reverse-left-4",
+      "player": {
+        "xy": [
+          12,
+          16
+        ],
+        "feet": [
+          120,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            14,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            152,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            13,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            136,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "run-right-0",
+      "player": {
+        "xy": [
+          13,
+          16
+        ],
+        "feet": [
+          136,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            13,
+            16
+          ],
+          "sprite": 5,
+          "visible": false,
+          "feet": [
+            136,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            12,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            120,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "run-right-1",
+      "player": {
+        "xy": [
+          14,
+          16
+        ],
+        "feet": [
+          152,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            12,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            120,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            13,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            136,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "run-right-2",
+      "player": {
+        "xy": [
+          15,
+          16
+        ],
+        "feet": [
+          168,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            13,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            136,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            14,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            152,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "run-right-3",
+      "player": {
+        "xy": [
+          16,
+          16
+        ],
+        "feet": [
+          184,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            14,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            152,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            15,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            168,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "run-right-4",
+      "player": {
+        "xy": [
+          17,
+          16
+        ],
+        "feet": [
+          200,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            15,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            168,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            16,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            184,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "walk-reverse-left-0",
+      "player": {
+        "xy": [
+          16,
+          16
+        ],
+        "feet": [
+          184,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            16,
+            16
+          ],
+          "sprite": 5,
+          "visible": false,
+          "feet": [
+            184,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            17,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            200,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "walk-reverse-left-1",
+      "player": {
+        "xy": [
+          15,
+          16
+        ],
+        "feet": [
+          168,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            17,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            200,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            16,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            184,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "walk-reverse-left-2",
+      "player": {
+        "xy": [
+          14,
+          16
+        ],
+        "feet": [
+          152,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            16,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            184,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            15,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            168,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "walk-reverse-left-3",
+      "player": {
+        "xy": [
+          13,
+          16
+        ],
+        "feet": [
+          136,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            15,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            168,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            14,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            152,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "walk-reverse-left-4",
+      "player": {
+        "xy": [
+          12,
+          16
+        ],
+        "feet": [
+          120,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            14,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            152,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            13,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            136,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "without-pikachu-0",
+      "player": {
+        "xy": [
+          13,
+          16
+        ],
+        "feet": [
+          136,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            12,
+            16
+          ],
+          "sprite": 5,
+          "visible": false,
+          "feet": [
+            131,
+            119
+          ]
+        }
+      ],
+      "pikachu": [],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "without-pikachu-1",
+      "player": {
+        "xy": [
+          14,
+          16
+        ],
+        "feet": [
+          152,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            13,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            136,
+            119
+          ]
+        }
+      ],
+      "pikachu": [],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "without-pikachu-2",
+      "player": {
+        "xy": [
+          15,
+          16
+        ],
+        "feet": [
+          168,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            14,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            152,
+            119
+          ]
+        }
+      ],
+      "pikachu": [],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "without-pikachu-3",
+      "player": {
+        "xy": [
+          16,
+          16
+        ],
+        "feet": [
+          184,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            15,
+            16
+          ],
+          "sprite": 5,
+          "visible": true,
+          "feet": [
+            168,
+            119
+          ]
+        }
+      ],
+      "pikachu": [],
+      "follower_tasks": [
+        3
+      ]
+    }
+  ],
+  "original_party_pc_dex_preserved": true,
+  "temporary_native_ram_fixture": true,
+  "native_battery_save_tested": false,
+  "creation_call_budget_frames": 60,
+  "other_call_budget_frames": 20,
+  "budget_basis": {
+    "rom_sha256": "3b319b64cc1b29a1eacb7a57c50afafd935496614aa9e596b74eb556e1d38806",
+    "natural_creation_frames": [
+      15,
+      23,
+      29,
+      34,
+      35
+    ],
+    "original_20F_failure_preserved": true
+  },
+  "actual_device_fps_measured": false,
+  "friendly_duel_tested": false,
+  "real_surf_dive_ascend_tested": false
+}

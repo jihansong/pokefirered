@@ -1,0 +1,86 @@
+{
+  "pass": true,
+  "rom_sha256": "799ef72e82454fdf895550551bc0ef33a5253dfa92fc4c734996b4a1682ea096",
+  "elf_sha256": "35851341f56beb9146b7cd6ea3caa3e0cf8ce940b5023e66afcee58c4dd5598c",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "cold-native-map-visual",
+  "fixture": "position and quest-log fields changed only in temporary SAV copy; original party retained",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "maps": [
+    {
+      "map": "JohtoCherrygroveAirstrip",
+      "location": [
+        76,
+        0,
+        22,
+        12
+      ],
+      "frame": 1030,
+      "screenshot": "/workspaces/pokefirered/work/regression-oct12/q9-native-visual/JohtoCherrygroveAirstrip.png"
+    },
+    {
+      "map": "JohtoRoute29",
+      "location": [
+        76,
+        1,
+        18,
+        12
+      ],
+      "frame": 790,
+      "screenshot": "/workspaces/pokefirered/work/regression-oct12/q9-native-visual/JohtoRoute29.png"
+    },
+    {
+      "map": "NewBarkTown",
+      "location": [
+        76,
+        2,
+        17,
+        12
+      ],
+      "frame": 790,
+      "screenshot": "/workspaces/pokefirered/work/regression-oct12/q9-native-visual/NewBarkTown.png"
+    },
+    {
+      "map": "NewBarkTown_ElmsLab",
+      "location": [
+        76,
+        3,
+        5,
+        6
+      ],
+      "frame": 790,
+      "screenshot": "/workspaces/pokefirered/work/regression-oct12/q9-native-visual/NewBarkTown_ElmsLab.png"
+    },
+    {
+      "map": "PalletTown",
+      "location": [
+        3,
+        0,
+        9,
+        10
+      ],
+      "frame": 790,
+      "screenshot": "/workspaces/pokefirered/work/regression-oct12/q9-native-visual/PalletTown.png"
+    },
+    {
+      "map": "PalletTown_ProfessorOaksLab",
+      "location": [
+        4,
+        3,
+        5,
+        6
+      ],
+      "frame": 790,
+      "screenshot": "/workspaces/pokefirered/work/regression-oct12/q9-native-visual/PalletTown_ProfessorOaksLab.png"
+    }
+  ],
+  "original_saves_unchanged": true,
+  "scope": "Independent position-only cold SAV fixtures; native pixels, no continuous airport journey tested"
+}

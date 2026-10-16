@@ -1,0 +1,8 @@
+{
+  "pid": 62105,
+  "directory": "/workspaces/pokefirered/outputs/hoenn-native-front-review-20261014",
+  "port": 27102,
+  "bind": "127.0.0.1",
+  "visibility": "Private",
+  "status": "STOPPED_AFTER_VERIFIED_DOWNLOAD"
+}

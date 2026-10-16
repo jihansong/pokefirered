@@ -1,0 +1,35 @@
+{
+  "status": "FINISHED",
+  "rom_sha256": "3b319b64cc1b29a1eacb7a57c50afafd935496614aa9e596b74eb556e1d38806",
+  "jobs_total": 4,
+  "max_workers": 2,
+  "results": [
+    {
+      "name": "110-brendan-loss-2",
+      "exit": 0,
+      "seconds": 22.46889853477478,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase3-loss-empty-110-brendan-loss-2.log"
+    },
+    {
+      "name": "110-may-loss-2",
+      "exit": 0,
+      "seconds": 22.505730628967285,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase3-loss-empty-110-may-loss-2.log"
+    },
+    {
+      "name": "119-may-loss-1",
+      "exit": 0,
+      "seconds": 23.260215759277344,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase3-loss-empty-119-may-loss-1.log"
+    },
+    {
+      "name": "119-brendan-loss-1",
+      "exit": 0,
+      "seconds": 24.04054355621338,
+      "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase3-loss-empty-119-brendan-loss-1.log"
+    }
+  ],
+  "all_pass": true,
+  "main_unchanged": true,
+  "original_saves_unchanged": true
+}

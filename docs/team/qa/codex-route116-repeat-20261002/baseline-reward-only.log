@@ -1,0 +1,6 @@
+FAIL z3_repeat_first_and_no_duplicate
+     expect item ITEM_REPEAT_BALL = 1: item ITEM_REPEAT_BALL is 0
+     expect flag FLAG_HOENN_GOT_REPEAT_BALL = 1: flag FLAG_HOENN_GOT_REPEAT_BALL is 0, expected 1
+     expect item ITEM_REPEAT_BALL = 1: item ITEM_REPEAT_BALL is 0
+     expect flag FLAG_HOENN_GOT_REPEAT_BALL = 1: flag FLAG_HOENN_GOT_REPEAT_BALL is 0, expected 1
+0/1 cases passed

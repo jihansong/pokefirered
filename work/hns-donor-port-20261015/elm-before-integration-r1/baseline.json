@@ -1,0 +1,24 @@
+{
+  "preflight_pass": true,
+  "applied": false,
+  "product_inputs": 10,
+  "source_archive_sha256": "8d91fde1e058f0b34d5d7ff28f54b758c2452f65592dbf6a7812edc07db7b6f8",
+  "save_sha256": {
+    "saves/pokemonthyl_v1.45.sav": "0949ebf04557a76e2175602e967eefadb7ffb722f2746be8a40ddb1fd66550a9",
+    "saves/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "saves/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "saves/hoenn.sav": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+    "saves/pokemonthyl_v1.4-synced-recovered.sav": "c06ad0536f1ee13fd88a3cf36346b52d3d5ca0cae7e729723acf6047d916feb8",
+    "saves/pokemonthyl_v1.25-items99-iv2x.sav": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+    "saves/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "saves/pokemonthyl_hoenn_QAed.sav": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+    "saves/pokemonthyl_v1.25.sav": "53d923bf4668373724b19c9d3c8526b002701606ab7ac082d657ee990e23d7b3",
+    "saves/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "saves/pokemonthyl_v1.4-synced.sav": "99f4100d09961196706282a02e96ee9017a0a591777aa3ca0b40249ec8ae89e8",
+    "saves/pokemonthyl_v1.4.sav": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4",
+    "saves/pokemonthyl_v1.1.sav": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+    "saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+    "saves/pokemonthyl_v1.2.sav": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85"
+  },
+  "generated_utc": "2026-10-15T12:51:00.986911+00:00"
+}

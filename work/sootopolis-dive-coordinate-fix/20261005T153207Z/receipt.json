@@ -1,0 +1,17 @@
+{
+  "surface_xy": [
+    31,
+    54
+  ],
+  "underwater_xy": [
+    9,
+    6
+  ],
+  "terrain_unchanged": true,
+  "reason": "surface31,53 is ordinary water;31,54 is diveable deep water",
+  "files": {
+    "tools/hoenn_import/patches/Underwater_SootopolisCity.scripts.inc": "a40763b7958f952025fd94fb47164c350a9c9f5bc2dad886f848380144616735",
+    "work/connect_sootopolis_dive_v1.py": "6e317ce554d679351837fe830e91181c6fbe9cda37633b80c8e19a2febaf6a06",
+    "tools/qa/native_sootopolis_dive_qa.py": "78c81e1aae5d21f91e864752ea71092c2a8ab05c9f4f6e111990d2dc2686ba01"
+  }
+}

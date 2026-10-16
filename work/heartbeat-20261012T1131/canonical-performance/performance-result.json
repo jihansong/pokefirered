@@ -1,0 +1,142 @@
+{
+  "pairs": [
+    {
+      "baseline": {
+        "pass": true,
+        "rom_sha256": "b46fb32bb67f89d5a48dfbfdf41ddd4977cc4a2d60dbbe6c72e1bc0281c5606d",
+        "fixture_sha256": "2b9556a7880e546dcffe20468621a0a3ad121a1f93486852c0a7929af6b63136",
+        "requested_render_frames": 600,
+        "requested_warmup_frames": 60,
+        "scope": "Host mGBA software renderer; no DELTA device claim",
+        "continue_seconds": 0.9473942139993596,
+        "continue_frame_requests": 670,
+        "location": [
+          76,
+          0,
+          22,
+          11
+        ],
+        "render_seconds": 0.9959718169993721,
+        "wrapper_frame_count_delta": 600,
+        "party_full_PC_Dex_unchanged": true,
+        "inputs_unchanged": true
+      },
+      "candidate": {
+        "pass": true,
+        "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+        "fixture_sha256": "2b9556a7880e546dcffe20468621a0a3ad121a1f93486852c0a7929af6b63136",
+        "requested_render_frames": 600,
+        "requested_warmup_frames": 60,
+        "scope": "Host mGBA software renderer; no DELTA device claim",
+        "continue_seconds": 0.5680954050003493,
+        "continue_frame_requests": 670,
+        "location": [
+          76,
+          0,
+          22,
+          11
+        ],
+        "render_seconds": 0.5624714969999332,
+        "wrapper_frame_count_delta": 600,
+        "party_full_PC_Dex_unchanged": true,
+        "inputs_unchanged": true
+      }
+    },
+    {
+      "candidate": {
+        "pass": true,
+        "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+        "fixture_sha256": "2b9556a7880e546dcffe20468621a0a3ad121a1f93486852c0a7929af6b63136",
+        "requested_render_frames": 600,
+        "requested_warmup_frames": 60,
+        "scope": "Host mGBA software renderer; no DELTA device claim",
+        "continue_seconds": 1.0443811250006547,
+        "continue_frame_requests": 670,
+        "location": [
+          76,
+          0,
+          22,
+          11
+        ],
+        "render_seconds": 1.0175153950003732,
+        "wrapper_frame_count_delta": 600,
+        "party_full_PC_Dex_unchanged": true,
+        "inputs_unchanged": true
+      },
+      "baseline": {
+        "pass": true,
+        "rom_sha256": "b46fb32bb67f89d5a48dfbfdf41ddd4977cc4a2d60dbbe6c72e1bc0281c5606d",
+        "fixture_sha256": "2b9556a7880e546dcffe20468621a0a3ad121a1f93486852c0a7929af6b63136",
+        "requested_render_frames": 600,
+        "requested_warmup_frames": 60,
+        "scope": "Host mGBA software renderer; no DELTA device claim",
+        "continue_seconds": 0.6485462009986804,
+        "continue_frame_requests": 670,
+        "location": [
+          76,
+          0,
+          22,
+          11
+        ],
+        "render_seconds": 0.6211164800006372,
+        "wrapper_frame_count_delta": 600,
+        "party_full_PC_Dex_unchanged": true,
+        "inputs_unchanged": true
+      }
+    },
+    {
+      "baseline": {
+        "pass": true,
+        "rom_sha256": "b46fb32bb67f89d5a48dfbfdf41ddd4977cc4a2d60dbbe6c72e1bc0281c5606d",
+        "fixture_sha256": "2b9556a7880e546dcffe20468621a0a3ad121a1f93486852c0a7929af6b63136",
+        "requested_render_frames": 600,
+        "requested_warmup_frames": 60,
+        "scope": "Host mGBA software renderer; no DELTA device claim",
+        "continue_seconds": 1.376433036999515,
+        "continue_frame_requests": 670,
+        "location": [
+          76,
+          0,
+          22,
+          11
+        ],
+        "render_seconds": 0.5550893279978482,
+        "wrapper_frame_count_delta": 600,
+        "party_full_PC_Dex_unchanged": true,
+        "inputs_unchanged": true
+      },
+      "candidate": {
+        "pass": true,
+        "rom_sha256": "f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d",
+        "fixture_sha256": "2b9556a7880e546dcffe20468621a0a3ad121a1f93486852c0a7929af6b63136",
+        "requested_render_frames": 600,
+        "requested_warmup_frames": 60,
+        "scope": "Host mGBA software renderer; no DELTA device claim",
+        "continue_seconds": 0.6440639059983368,
+        "continue_frame_requests": 670,
+        "location": [
+          76,
+          0,
+          22,
+          11
+        ],
+        "render_seconds": 0.5853070260018285,
+        "wrapper_frame_count_delta": 600,
+        "party_full_PC_Dex_unchanged": true,
+        "inputs_unchanged": true
+      }
+    }
+  ],
+  "all_runs_pass": true,
+  "actual_DELTA_device_tested": false,
+  "scope": "Same QA save, renderer and host; alternating order after build; no claims about full campaign or device",
+  "pair_ratios": [
+    0.56474639884342,
+    1.638203827725404,
+    1.0544375409143112
+  ],
+  "baseline_median_seconds": 0.6211164800006372,
+  "candidate_median_seconds": 0.5853070260018285,
+  "median_ratio": 0.9423466368195994,
+  "possible_regression": false
+}

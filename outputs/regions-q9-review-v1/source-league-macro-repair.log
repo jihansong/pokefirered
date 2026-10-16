@@ -1,0 +1,1 @@
+{"path": "tools/johto/build_johto_league.py", "bytes": 53347, "sha256": "cb9ba7049d9dc0fb66a5e4079626f7742f849509c9cff006e2986a71246d70be", "native_header": "include/battle.h", "exact_native_party_macros": ["ITEM_CUSTOM_MOVES", "ITEM_DEFAULT_MOVES"], "unknown_real_constant_check_unchanged": true}

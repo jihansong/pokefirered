@@ -1,0 +1,82 @@
+{
+  "pass": false,
+  "rom_sha256": "f6e9dd60d10bcca84d2b68ae7c446ed82a72c84e284edd94b818f3f19d44d1d3",
+  "elf_sha256": "7c07968d352c10a7bf5bc64a46c0f664e0afd41a9d897528d592d4d86d357afd",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-dive-route",
+  "fixture": "temporary level-50 LAPRAS; original PC and source SAV unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [
+    {
+      "map": "Underwater_Route128",
+      "xy": [
+        38,
+        27
+      ],
+      "avatar_flags": 48,
+      "frame": 952
+    },
+    {
+      "map": "Underwater_Route128",
+      "xy": [
+        38,
+        27
+      ],
+      "avatar_flags": 48,
+      "frame": 670
+    },
+    {
+      "map": "SeafloorCavern_Entrance",
+      "xy": [
+        10,
+        16
+      ],
+      "avatar_flags": 40,
+      "frame": 1178
+    },
+    {
+      "map": "Underwater_SeafloorCavern",
+      "xy": [
+        6,
+        6
+      ],
+      "avatar_flags": 48,
+      "frame": 1665
+    }
+  ],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_save": {
+    "counter_before": 60,
+    "counter_after": 61,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_HOENN_WEATHER_RESCUED": false,
+      "FLAG_HOENN_GOT_WEATHER_CASTFORM": false,
+      "FLAG_HOENN_SPACE_CENTER_SECURED": false,
+      "FLAG_HOENN_GOT_HM08_FROM_STEVEN": false
+    },
+    "trainers": {
+      "TRAINER_HOENN_SHELLY_WEATHER_INSTITUTE": false,
+      "TRAINER_HOENN_TABITHA_SPACE_CENTER": false,
+      "TRAINER_HOENN_MAXIE_SPACE_CENTER": false
+    },
+    "hm08": 1,
+    "sha256": "12546920ba0433266a4460c21f11ba6c494acbeb9c54ad0bcc4283f3df38e57f"
+  },
+  "error": "AssertionError(('state timeout', (67, 26, 6, 7), '0x8057521'))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/tools/qa/native_dive_qa.py\", line 152, in <module>\n    walk_tile('DOWN');await_state(lambda:loc_is(e,U) and e.field_idle(),1800)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/tools/qa/native_dive_qa.py\", line 23, in await_state\n    raise AssertionError(('state timeout',e.location(),hex(e.callback2())))\nAssertionError: ('state timeout', (67, 26, 6, 7), '0x8057521')\n",
+  "failure_location": [
+    67,
+    26,
+    6,
+    7
+  ],
+  "failure_callback2": "0x8057521",
+  "original_saves_unchanged": true
+}

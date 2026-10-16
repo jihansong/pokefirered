@@ -1,0 +1,19 @@
+{
+  "apply": false,
+  "before": "ab15e005ef20e92694f840c72033a5808711ce2bb1808d8532221ec68025b6dc",
+  "after": "9f1ab875551d1b3e7eaa13e35f3b4a59ad9c1a998b0baf849ea0da88e109e435",
+  "validation": {
+    "destinations": 8,
+    "existing_heal_ids": 7,
+    "new_save_fields": 0,
+    "new_flags": 0,
+    "new_EWRAM_globals": 0,
+    "newbark_landing": {
+      "x": 11,
+      "y": 10,
+      "raw": "0x3296"
+    },
+    "icon_scope": "Johto8 separate from old44; fixed arrays preserved",
+    "native_status": "PENDING"
+  }
+}

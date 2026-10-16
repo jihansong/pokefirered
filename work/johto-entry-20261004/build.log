@@ -1,0 +1,169 @@
+tools/mapjson/mapjson groups firered data/maps/map_groups.json data/maps include/constants
+tools/mapjson/mapjson layouts firered data/layouts/layouts.json data/layouts include/constants
+tools/mapjson/mapjson event_constants firered <MAP_JSONS> include/constants/map_event_ids.h
+tools/jsonproc/jsonproc src/data/region_map/region_map_sections.json src/data/region_map/region_map_sections.entries.json.txt src/data/region_map/region_map_entries.h
+tools/jsonproc/jsonproc src/data/region_map/region_map_sections.json src/data/region_map/region_map_sections.strings.json.txt src/data/region_map/region_map_entry_strings.h
+tools/jsonproc/jsonproc src/data/region_map/region_map_sections.json src/data/region_map/region_map_sections.constants.json.txt include/constants/region_map_sections.h
+tools/scaninc/scaninc -M build/firered/data/mystery_event_msg.d -I include -I "" data/mystery_event_msg.s
+tools/scaninc/scaninc -M build/firered/data/event_scripts.d -I include -I "" data/event_scripts.s
+tools/scaninc/scaninc -M build/firered/src/wild_pokemon_area.d -I include -I tools/agbcc/include src/wild_pokemon_area.c
+tools/scaninc/scaninc -M build/firered/src/wild_encounter.d -I include -I tools/agbcc/include src/wild_encounter.c
+tools/scaninc/scaninc -M build/firered/src/vs_seeker.d -I include -I tools/agbcc/include src/vs_seeker.c
+tools/scaninc/scaninc -M build/firered/src/union_room_player_avatar.d -I include -I tools/agbcc/include src/union_room_player_avatar.c
+tools/scaninc/scaninc -M build/firered/src/union_room.d -I include -I tools/agbcc/include src/union_room.c
+tools/scaninc/scaninc -M build/firered/src/trainer_tower.d -I include -I tools/agbcc/include src/trainer_tower.c
+tools/scaninc/scaninc -M build/firered/src/trainer_see.d -I include -I tools/agbcc/include src/trainer_see.c
+tools/scaninc/scaninc -M build/firered/src/trade_scene.d -I include -I tools/agbcc/include src/trade_scene.c
+tools/scaninc/scaninc -M build/firered/src/teachy_tv.d -I include -I tools/agbcc/include src/teachy_tv.c
+tools/scaninc/scaninc -M build/firered/src/seagallop.d -I include -I tools/agbcc/include src/seagallop.c
+tools/scaninc/scaninc -M build/firered/src/script_movement.d -I include -I tools/agbcc/include src/script_movement.c
+tools/scaninc/scaninc -M build/firered/src/script.d -I include -I tools/agbcc/include src/script.c
+tools/scaninc/scaninc -M build/firered/src/scrcmd.d -I include -I tools/agbcc/include src/scrcmd.c
+tools/scaninc/scaninc -M build/firered/src/save_location.d -I include -I tools/agbcc/include src/save_location.c
+tools/scaninc/scaninc -M build/firered/src/rotating_tile_puzzle.d -I include -I tools/agbcc/include src/rotating_tile_puzzle.c
+tools/scaninc/scaninc -M build/firered/src/roamer.d -I include -I tools/agbcc/include src/roamer.c
+tools/scaninc/scaninc -M build/firered/src/renewable_hidden_items.d -I include -I tools/agbcc/include src/renewable_hidden_items.c
+tools/scaninc/scaninc -M build/firered/src/region_map.d -I include -I tools/agbcc/include src/region_map.c
+tools/scaninc/scaninc -M build/firered/src/quest_log_objects.d -I include -I tools/agbcc/include src/quest_log_objects.c
+tools/scaninc/scaninc -M build/firered/src/quest_log_events.d -I include -I tools/agbcc/include src/quest_log_events.c
+tools/scaninc/scaninc -M build/firered/src/quest_log.d -I include -I tools/agbcc/include src/quest_log.c
+tools/scaninc/scaninc -M build/firered/src/pokemon_summary_screen.d -I include -I tools/agbcc/include src/pokemon_summary_screen.c
+tools/scaninc/scaninc -M build/firered/src/pokedex_area_markers.d -I include -I tools/agbcc/include src/pokedex_area_markers.c
+tools/scaninc/scaninc -M build/firered/src/pikachu_emotions.d -I include -I tools/agbcc/include src/pikachu_emotions.c
+tools/scaninc/scaninc -M build/firered/src/party_menu.d -I include -I tools/agbcc/include src/party_menu.c
+tools/scaninc/scaninc -M build/firered/src/overworld.d -I include -I tools/agbcc/include src/overworld.c
+tools/scaninc/scaninc -M build/firered/src/new_game.d -I include -I tools/agbcc/include src/new_game.c
+tools/scaninc/scaninc -M build/firered/src/naming_screen.d -I include -I tools/agbcc/include src/naming_screen.c
+tools/scaninc/scaninc -M build/firered/src/menu_helpers.d -I include -I tools/agbcc/include src/menu_helpers.c
+tools/scaninc/scaninc -M build/firered/src/map_preview_screen.d -I include -I tools/agbcc/include src/map_preview_screen.c
+tools/scaninc/scaninc -M build/firered/src/item_use.d -I include -I tools/agbcc/include src/item_use.c
+tools/scaninc/scaninc -M build/firered/src/item.d -I include -I tools/agbcc/include src/item.c
+tools/scaninc/scaninc -M build/firered/src/help_system.d -I include -I tools/agbcc/include src/help_system.c
+tools/scaninc/scaninc -M build/firered/src/heal_location.d -I include -I tools/agbcc/include src/heal_location.c
+tools/scaninc/scaninc -M build/firered/src/hall_of_fame.d -I include -I tools/agbcc/include src/hall_of_fame.c
+tools/scaninc/scaninc -M build/firered/src/follower_pikachu.d -I include -I tools/agbcc/include src/follower_pikachu.c
+tools/scaninc/scaninc -M build/firered/src/fldeff_strength.d -I include -I tools/agbcc/include src/fldeff_strength.c
+tools/scaninc/scaninc -M build/firered/src/fldeff_rocksmash.d -I include -I tools/agbcc/include src/fldeff_rocksmash.c
+tools/scaninc/scaninc -M build/firered/src/fldeff_cut.d -I include -I tools/agbcc/include src/fldeff_cut.c
+tools/scaninc/scaninc -M build/firered/src/field_specials.d -I include -I tools/agbcc/include src/field_specials.c
+tools/scaninc/scaninc -M build/firered/src/field_screen_effect.d -I include -I tools/agbcc/include src/field_screen_effect.c
+tools/scaninc/scaninc -M build/firered/src/field_player_avatar.d -I include -I tools/agbcc/include src/field_player_avatar.c
+tools/scaninc/scaninc -M build/firered/src/field_fadetransition.d -I include -I tools/agbcc/include src/field_fadetransition.c
+tools/scaninc/scaninc -M build/firered/src/field_effect_helpers.d -I include -I tools/agbcc/include src/field_effect_helpers.c
+tools/scaninc/scaninc -M build/firered/src/field_control_avatar.d -I include -I tools/agbcc/include src/field_control_avatar.c
+tools/scaninc/scaninc -M build/firered/src/fame_checker.d -I include -I tools/agbcc/include src/fame_checker.c
+tools/scaninc/scaninc -M build/firered/src/event_object_movement.d -I include -I tools/agbcc/include src/event_object_movement.c
+tools/scaninc/scaninc -M build/firered/src/event_object_lock.d -I include -I tools/agbcc/include src/event_object_lock.c
+tools/scaninc/scaninc -M build/firered/src/dynamic_placeholder_text_util.d -I include -I tools/agbcc/include src/dynamic_placeholder_text_util.c
+tools/scaninc/scaninc -M build/firered/src/decoration.d -I include -I tools/agbcc/include src/decoration.c
+tools/scaninc/scaninc -M build/firered/src/daycare.d -I include -I tools/agbcc/include src/daycare.c
+tools/scaninc/scaninc -M build/firered/src/credits.d -I include -I tools/agbcc/include src/credits.c
+tools/scaninc/scaninc -M build/firered/src/cable_club.d -I include -I tools/agbcc/include src/cable_club.c
+tools/scaninc/scaninc -M build/firered/src/bug_contest.d -I include -I tools/agbcc/include src/bug_contest.c
+tools/scaninc/scaninc -M build/firered/src/battle_tower.d -I include -I tools/agbcc/include src/battle_tower.c
+tools/scaninc/scaninc -M build/firered/src/battle_setup.d -I include -I tools/agbcc/include src/battle_setup.c
+tools/scaninc/scaninc -M build/firered/src/battle_script_commands.d -I include -I tools/agbcc/include src/battle_script_commands.c
+tools/scaninc/scaninc -M build/firered/src/battle_records.d -I include -I tools/agbcc/include src/battle_records.c
+tools/scaninc/scaninc -M build/firered/src/battle_bg.d -I include -I tools/agbcc/include src/battle_bg.c
+tools/scaninc/scaninc -M build/firered/src/airport_flyover.d -I include -I tools/agbcc/include src/airport_flyover.c
+tools/scaninc/scaninc -M build/firered/src/airplane_flight.d -I include -I tools/agbcc/include src/airplane_flight.c
+make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+tools/scaninc/scaninc -M build/leafgreen/data/mystery_event_msg.d -I include -I "" data/mystery_event_msg.s
+tools/scaninc/scaninc -M build/leafgreen/data/event_scripts.d -I include -I "" data/event_scripts.s
+tools/scaninc/scaninc -M build/leafgreen/src/wild_pokemon_area.d -I include -I tools/agbcc/include src/wild_pokemon_area.c
+tools/scaninc/scaninc -M build/leafgreen/src/wild_encounter.d -I include -I tools/agbcc/include src/wild_encounter.c
+tools/scaninc/scaninc -M build/leafgreen/src/vs_seeker.d -I include -I tools/agbcc/include src/vs_seeker.c
+tools/scaninc/scaninc -M build/leafgreen/src/union_room_player_avatar.d -I include -I tools/agbcc/include src/union_room_player_avatar.c
+tools/scaninc/scaninc -M build/leafgreen/src/union_room.d -I include -I tools/agbcc/include src/union_room.c
+tools/scaninc/scaninc -M build/leafgreen/src/trainer_tower.d -I include -I tools/agbcc/include src/trainer_tower.c
+tools/scaninc/scaninc -M build/leafgreen/src/trainer_see.d -I include -I tools/agbcc/include src/trainer_see.c
+tools/scaninc/scaninc -M build/leafgreen/src/trade_scene.d -I include -I tools/agbcc/include src/trade_scene.c
+tools/scaninc/scaninc -M build/leafgreen/src/teachy_tv.d -I include -I tools/agbcc/include src/teachy_tv.c
+tools/scaninc/scaninc -M build/leafgreen/src/seagallop.d -I include -I tools/agbcc/include src/seagallop.c
+tools/scaninc/scaninc -M build/leafgreen/src/script_movement.d -I include -I tools/agbcc/include src/script_movement.c
+tools/scaninc/scaninc -M build/leafgreen/src/script.d -I include -I tools/agbcc/include src/script.c
+tools/scaninc/scaninc -M build/leafgreen/src/scrcmd.d -I include -I tools/agbcc/include src/scrcmd.c
+tools/scaninc/scaninc -M build/leafgreen/src/save_location.d -I include -I tools/agbcc/include src/save_location.c
+tools/scaninc/scaninc -M build/leafgreen/src/rotating_tile_puzzle.d -I include -I tools/agbcc/include src/rotating_tile_puzzle.c
+tools/scaninc/scaninc -M build/leafgreen/src/roamer.d -I include -I tools/agbcc/include src/roamer.c
+tools/scaninc/scaninc -M build/leafgreen/src/renewable_hidden_items.d -I include -I tools/agbcc/include src/renewable_hidden_items.c
+tools/scaninc/scaninc -M build/leafgreen/src/region_map.d -I include -I tools/agbcc/include src/region_map.c
+tools/scaninc/scaninc -M build/leafgreen/src/quest_log_objects.d -I include -I tools/agbcc/include src/quest_log_objects.c
+tools/scaninc/scaninc -M build/leafgreen/src/quest_log_events.d -I include -I tools/agbcc/include src/quest_log_events.c
+tools/scaninc/scaninc -M build/leafgreen/src/quest_log.d -I include -I tools/agbcc/include src/quest_log.c
+tools/scaninc/scaninc -M build/leafgreen/src/pokemon_summary_screen.d -I include -I tools/agbcc/include src/pokemon_summary_screen.c
+tools/scaninc/scaninc -M build/leafgreen/src/pokedex_area_markers.d -I include -I tools/agbcc/include src/pokedex_area_markers.c
+tools/scaninc/scaninc -M build/leafgreen/src/pikachu_emotions.d -I include -I tools/agbcc/include src/pikachu_emotions.c
+tools/scaninc/scaninc -M build/leafgreen/src/party_menu.d -I include -I tools/agbcc/include src/party_menu.c
+tools/scaninc/scaninc -M build/leafgreen/src/overworld.d -I include -I tools/agbcc/include src/overworld.c
+tools/scaninc/scaninc -M build/leafgreen/src/new_game.d -I include -I tools/agbcc/include src/new_game.c
+tools/scaninc/scaninc -M build/leafgreen/src/naming_screen.d -I include -I tools/agbcc/include src/naming_screen.c
+tools/scaninc/scaninc -M build/leafgreen/src/menu_helpers.d -I include -I tools/agbcc/include src/menu_helpers.c
+tools/scaninc/scaninc -M build/leafgreen/src/map_preview_screen.d -I include -I tools/agbcc/include src/map_preview_screen.c
+tools/scaninc/scaninc -M build/leafgreen/src/item_use.d -I include -I tools/agbcc/include src/item_use.c
+tools/scaninc/scaninc -M build/leafgreen/src/item.d -I include -I tools/agbcc/include src/item.c
+tools/scaninc/scaninc -M build/leafgreen/src/help_system.d -I include -I tools/agbcc/include src/help_system.c
+tools/scaninc/scaninc -M build/leafgreen/src/heal_location.d -I include -I tools/agbcc/include src/heal_location.c
+tools/scaninc/scaninc -M build/leafgreen/src/hall_of_fame.d -I include -I tools/agbcc/include src/hall_of_fame.c
+tools/scaninc/scaninc -M build/leafgreen/src/follower_pikachu.d -I include -I tools/agbcc/include src/follower_pikachu.c
+tools/scaninc/scaninc -M build/leafgreen/src/fldeff_strength.d -I include -I tools/agbcc/include src/fldeff_strength.c
+tools/scaninc/scaninc -M build/leafgreen/src/fldeff_rocksmash.d -I include -I tools/agbcc/include src/fldeff_rocksmash.c
+tools/scaninc/scaninc -M build/leafgreen/src/fldeff_cut.d -I include -I tools/agbcc/include src/fldeff_cut.c
+tools/scaninc/scaninc -M build/leafgreen/src/field_specials.d -I include -I tools/agbcc/include src/field_specials.c
+tools/scaninc/scaninc -M build/leafgreen/src/field_screen_effect.d -I include -I tools/agbcc/include src/field_screen_effect.c
+tools/scaninc/scaninc -M build/leafgreen/src/field_player_avatar.d -I include -I tools/agbcc/include src/field_player_avatar.c
+tools/scaninc/scaninc -M build/leafgreen/src/field_fadetransition.d -I include -I tools/agbcc/include src/field_fadetransition.c
+tools/scaninc/scaninc -M build/leafgreen/src/field_effect_helpers.d -I include -I tools/agbcc/include src/field_effect_helpers.c
+tools/scaninc/scaninc -M build/leafgreen/src/field_control_avatar.d -I include -I tools/agbcc/include src/field_control_avatar.c
+tools/scaninc/scaninc -M build/leafgreen/src/fame_checker.d -I include -I tools/agbcc/include src/fame_checker.c
+tools/scaninc/scaninc -M build/leafgreen/src/event_object_movement.d -I include -I tools/agbcc/include src/event_object_movement.c
+tools/scaninc/scaninc -M build/leafgreen/src/event_object_lock.d -I include -I tools/agbcc/include src/event_object_lock.c
+tools/scaninc/scaninc -M build/leafgreen/src/dynamic_placeholder_text_util.d -I include -I tools/agbcc/include src/dynamic_placeholder_text_util.c
+tools/scaninc/scaninc -M build/leafgreen/src/decoration.d -I include -I tools/agbcc/include src/decoration.c
+tools/scaninc/scaninc -M build/leafgreen/src/daycare.d -I include -I tools/agbcc/include src/daycare.c
+tools/scaninc/scaninc -M build/leafgreen/src/credits.d -I include -I tools/agbcc/include src/credits.c
+tools/scaninc/scaninc -M build/leafgreen/src/cable_club.d -I include -I tools/agbcc/include src/cable_club.c
+tools/scaninc/scaninc -M build/leafgreen/src/bug_contest.d -I include -I tools/agbcc/include src/bug_contest.c
+tools/scaninc/scaninc -M build/leafgreen/src/battle_tower.d -I include -I tools/agbcc/include src/battle_tower.c
+tools/scaninc/scaninc -M build/leafgreen/src/battle_setup.d -I include -I tools/agbcc/include src/battle_setup.c
+tools/scaninc/scaninc -M build/leafgreen/src/battle_script_commands.d -I include -I tools/agbcc/include src/battle_script_commands.c
+tools/scaninc/scaninc -M build/leafgreen/src/battle_records.d -I include -I tools/agbcc/include src/battle_records.c
+tools/scaninc/scaninc -M build/leafgreen/src/battle_bg.d -I include -I tools/agbcc/include src/battle_bg.c
+tools/scaninc/scaninc -M build/leafgreen/src/airport_flyover.d -I include -I tools/agbcc/include src/airport_flyover.c
+tools/scaninc/scaninc -M build/leafgreen/src/airplane_flight.d -I include -I tools/agbcc/include src/airplane_flight.c
+make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/airplane_flight.o src/airplane_flight.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/airport_flyover.o src/airport_flyover.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/battle_bg.o src/battle_bg.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/battle_records.o src/battle_records.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/battle_script_commands.o src/battle_script_commands.c
+tools/agbcc/bin/agbcc <flags> -o build/leafgreen/src/battle_setup.o src/battle_setup.c
+In file included from include/constants/event_objects.h:4,
+                 from src/battle_setup.c:31:
+include/constants/map_event_ids.h:165:9: error: macro names must be identifiers
+  165 | #define 1 1
+      |         ^
+include/constants/map_event_ids.h:166:9: error: macro names must be identifiers
+  166 | #define 2 2
+      |         ^
+include/constants/map_event_ids.h:169:9: error: macro names must be identifiers
+  169 | #define 1 1
+      |         ^
+include/constants/map_event_ids.h:207:9: error: macro names must be identifiers
+  207 | #define 1 1
+      |         ^
+include/constants/map_event_ids.h:210:9: error: macro names must be identifiers
+  210 | #define 1 1
+      |         ^
+include/constants/map_event_ids.h:213:9: error: macro names must be identifiers
+  213 | #define 1 1
+      |         ^
+include/constants/map_event_ids.h:216:9: error: macro names must be identifiers
+  216 | #define 1 1
+      |         ^
+make[1]: *** [Makefile:315: build/leafgreen/src/battle_setup.o] Error 1
+make[1]: *** Deleting file 'build/leafgreen/src/battle_setup.o'
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:234: leafgreen] Error 2

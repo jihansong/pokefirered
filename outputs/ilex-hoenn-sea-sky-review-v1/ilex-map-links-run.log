@@ -1,0 +1,20 @@
+ok   johto_ilex_azalea_into_gate
+ok   johto_ilex_gate_back_azalea
+ok   johto_ilex_south_gate_into_forest
+FAIL johto_ilex_forest_back_south_gate
+     expect map IlexForest_AzaleaGate: on map 76.34
+ok   johto_ilex_forest_into_north_gate
+ok   johto_ilex_north_gate_back_forest
+ok   johto_ilex_north_gate_into_route34
+ok   johto_ilex_route34_back_north_gate
+ok   johto_ilex_route34_into_goldenrod
+FAIL johto_ilex_goldenrod_back_route34
+     expect map JohtoRoute34: on map 76.38
+ok   johto_ilex_daycare_roundtrip
+ok   johto_ilex_center_roundtrip
+ok   johto_ilex_mart_roundtrip
+ok   johto_ilex_gym_roundtrip
+ok   johto_ilex_radio_roundtrip
+ok   johto_ilex_center_native_heal
+ok   johto_ilex_daycare_shared_nursery_information
+15/17 cases passed

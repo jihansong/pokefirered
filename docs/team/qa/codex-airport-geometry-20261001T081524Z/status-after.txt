@@ -1,0 +1,58 @@
+## hoenn-z3
+ M data/layouts/VermilionCity/map.bin
+ M data/maps/Route116/map.json
+ M data/maps/Route116/scripts.inc
+ M data/maps/Route116/text.inc
+ M data/maps/RustboroCity/map.json
+ M data/maps/RustboroCity/scripts.inc
+ M data/maps/RustboroCity/text.inc
+ M data/maps/RustboroCity_DevonCorp_3F/scripts.inc
+ M data/maps/RustboroCity_DevonCorp_3F/text.inc
+ M data/maps/RustboroCity_Gym/scripts.inc
+ M data/maps/RustboroCity_Gym/text.inc
+ M data/maps/RusturfTunnel/map.json
+ M data/maps/RusturfTunnel/scripts.inc
+ M data/maps/RusturfTunnel/text.inc
+ M data/maps/SlateportCity_Harbor/scripts.inc
+ M data/maps/SlateportCity_Harbor/text.inc
+ M data/maps/VermilionCity/map.json
+ M data/maps/VermilionCity/scripts.inc
+ M data/tilesets/secondary/kanto_airport/metatiles.bin
+ M data/tilesets/secondary/vermilion_city/metatile_attributes.bin
+ M data/tilesets/secondary/vermilion_city/metatiles.bin
+ M include/constants/metatile_labels.h
+ M src/field_door.c
+ M src/field_specials.c
+ M tools/hoenn_import/patches/SlateportCity_Harbor.scripts.inc
+ M tools/hoenn_import/patches/SlateportCity_Harbor.text.inc
+ M tools/make_airport_lounge.py
+ M tools/make_vermilion_runway.py
+?? AGENTS.md
+?? docs/team/qa/codex-airport-geometry-20261001T081524Z/
+?? docs/team/qa/codex-lavender-2026-10-01/
+?? docs/team/qa/codex-z3-devon-2026-10-01/
+?? docs/team/qa/codex-z3-devon-delivery-2026-10-01/
+?? docs/team/qa/codex-z3-devon-preflight-2026-10-01.md
+?? docs/team/qa/codex-z3-roxanne-2026-10-01/
+?? tools/hoenn_import/patches/Route116.json
+?? tools/hoenn_import/patches/Route116.mapscripts
+?? tools/hoenn_import/patches/Route116.scripts.inc
+?? tools/hoenn_import/patches/Route116.text.inc
+?? tools/hoenn_import/patches/RustboroCity.json
+?? tools/hoenn_import/patches/RustboroCity.mapscripts
+?? tools/hoenn_import/patches/RustboroCity.scripts.inc
+?? tools/hoenn_import/patches/RustboroCity.text.inc
+?? tools/hoenn_import/patches/RustboroCity_DevonCorp_3F.scripts.inc
+?? tools/hoenn_import/patches/RustboroCity_DevonCorp_3F.text.inc
+?? tools/hoenn_import/patches/RustboroCity_Gym.scripts.inc
+?? tools/hoenn_import/patches/RustboroCity_Gym.text.inc
+?? tools/hoenn_import/patches/RusturfTunnel.json
+?? tools/hoenn_import/patches/RusturfTunnel.mapscripts
+?? tools/hoenn_import/patches/RusturfTunnel.scripts.inc
+?? tools/hoenn_import/patches/RusturfTunnel.text.inc
+?? tools/qa/airport_door_frames.py
+?? tools/qa/cases/airport_geometry.jsonl
+?? tools/qa/cases/z3_devon.jsonl
+?? tools/qa/cases/z3_devon_delivery.jsonl
+?? tools/qa/cases/z3_roxanne.jsonl
+?? tools/qa/prepare_z3_devon.py

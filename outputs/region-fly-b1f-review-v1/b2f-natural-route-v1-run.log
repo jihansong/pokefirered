@@ -1,0 +1,18 @@
+{"trainer": "TRAINER_HOENN_JULIE", "turns": 3, "native_outcome": "win"}
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/native_vr_b2_route_qa.py", line 170, in <module>
+    after={p:sha(Path(p).read_bytes()) for p in before}
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/native_vr_b2_route_qa.py", line 170, in <dictcomp>
+    after={p:sha(Path(p).read_bytes()) for p in before}
+                 ^^^^^^^
+  File "/usr/lib/python3.11/pathlib.py", line 872, in __new__
+    self = cls._from_parts(args)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/pathlib.py", line 510, in _from_parts
+    drv, root, parts = self._parse_args(args)
+                       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/pathlib.py", line 494, in _parse_args
+    a = os.fspath(a)
+        ^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not int

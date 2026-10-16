@@ -1,0 +1,361 @@
+{
+  "checks": [
+    {
+      "case": "ordinary_trail_actual_A",
+      "misty_visible": true,
+      "misty_player_tile_distance": 2,
+      "last_talked": 254,
+      "original_pika_emotion_preserved": true,
+      "misty_direct_A_reached": false,
+      "scope": "This normal trail pose, not proof that every possible movement timing is unreachable"
+    },
+    {
+      "case": "no-runtime-Pika_control_actual_A",
+      "temporary_received_starter_flag": false,
+      "real_pika100_and_party600_preserved": true,
+      "last_talked": 253,
+      "misty_direct_A_reached": true
+    }
+  ],
+  "trail_samples": [
+    {
+      "label": "normal-A-trail-0",
+      "player": {
+        "xy": [
+          13,
+          16
+        ],
+        "feet": [
+          136,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            13,
+            16
+          ],
+          "sprite": 4,
+          "visible": false,
+          "feet": [
+            136,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            12,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            120,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "normal-A-trail-1",
+      "player": {
+        "xy": [
+          14,
+          16
+        ],
+        "feet": [
+          152,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            12,
+            16
+          ],
+          "sprite": 4,
+          "visible": true,
+          "feet": [
+            120,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            13,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            136,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "normal-A-trail-2",
+      "player": {
+        "xy": [
+          15,
+          16
+        ],
+        "feet": [
+          168,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            13,
+            16
+          ],
+          "sprite": 4,
+          "visible": true,
+          "feet": [
+            136,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            14,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            152,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "normal-A-trail-3",
+      "player": {
+        "xy": [
+          16,
+          16
+        ],
+        "feet": [
+          184,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            14,
+            16
+          ],
+          "sprite": 4,
+          "visible": true,
+          "feet": [
+            152,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            15,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            168,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "normal-A-before-turn",
+      "player": {
+        "xy": [
+          16,
+          16
+        ],
+        "feet": [
+          184,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            14,
+            16
+          ],
+          "sprite": 4,
+          "visible": true,
+          "feet": [
+            152,
+            128
+          ]
+        }
+      ],
+      "pikachu": [
+        {
+          "ptr": 33779368,
+          "slot": 3,
+          "xy": [
+            15,
+            16
+          ],
+          "sprite": 3,
+          "visible": true,
+          "feet": [
+            168,
+            128
+          ]
+        }
+      ],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "without-Pika-A-trail-0",
+      "player": {
+        "xy": [
+          17,
+          16
+        ],
+        "feet": [
+          200,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            16,
+            16
+          ],
+          "sprite": 4,
+          "visible": true,
+          "feet": [
+            173,
+            119
+          ]
+        }
+      ],
+      "pikachu": [],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "without-Pika-A-trail-1",
+      "player": {
+        "xy": [
+          18,
+          16
+        ],
+        "feet": [
+          216,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            17,
+            16
+          ],
+          "sprite": 4,
+          "visible": true,
+          "feet": [
+            200,
+            119
+          ]
+        }
+      ],
+      "pikachu": [],
+      "follower_tasks": [
+        3
+      ]
+    },
+    {
+      "label": "without-Pika-A-before-turn",
+      "player": {
+        "xy": [
+          18,
+          16
+        ],
+        "feet": [
+          216,
+          128
+        ]
+      },
+      "misty": [
+        {
+          "ptr": 33779404,
+          "slot": 4,
+          "xy": [
+            17,
+            16
+          ],
+          "sprite": 4,
+          "visible": true,
+          "feet": [
+            200,
+            119
+          ]
+        }
+      ],
+      "pikachu": [],
+      "follower_tasks": [
+        3
+      ]
+    }
+  ]
+}

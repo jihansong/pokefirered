@@ -171,6 +171,7 @@ MauvilleCity_Gym_EventScript_ClearBarriersAltState::
 @ WATTSON himself: HOENN's second BADGE for a champion starting over
 MauvilleCity_Gym_EventScript_Wattson::
 	trainerbattle_single TRAINER_HOENN_WATTSON_1, MauvilleCity_Gym_Text_WattsonIntro, MauvilleCity_Gym_Text_WattsonDefeat, MauvilleCity_Gym_EventScript_DefeatedWattson, NO_MUSIC
+	goto_if_unset FLAG_HOENN_BADGE03_GET, MauvilleCity_Gym_EventScript_DefeatedWattson
 	goto_if_unset FLAG_HOENN_GOT_TM34_FROM_WATTSON, MauvilleCity_Gym_EventScript_GiveTM34
 	goto MauvilleCity_Gym_EventScript_WattsonPostBattle
 	end
@@ -188,6 +189,7 @@ MauvilleCity_Gym_EventScript_BadgeText::
 	end
 
 MauvilleCity_Gym_EventScript_GiveTM34::
+	goto_if_set FLAG_HOENN_GOT_TM34_FROM_WATTSON, MauvilleCity_Gym_EventScript_WattsonPostBattle
 	msgbox MauvilleCity_Gym_Text_TakeThisTM
 	checkitemspace ITEM_TM34
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_Gym_EventScript_NoRoomForTM34

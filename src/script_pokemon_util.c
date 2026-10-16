@@ -10,6 +10,8 @@
 #include "script_pokemon_util.h"
 #include "constants/items.h"
 #include "constants/pokemon.h"
+#include "constants/species.h"
+#include "constants/vars.h"
 
 static void CB2_ReturnFromChooseHalfParty(void);
 static void CB2_ReturnFromChooseBattleTowerParty(void);
@@ -32,7 +34,7 @@ void HealPlayerParty(void)
         // restore PP.
         for(j = 0; j < MAX_MON_MOVES; j++)
         {
-            arg[0] = CalculatePPWithBonus(GetMonData(&gPlayerParty[i], MON_DATA_MOVE1 + j), ppBonuses, j);
+            arg[0] = CalculateMonPPWithBonus(&gPlayerParty[i], GetMonData(&gPlayerParty[i], MON_DATA_MOVE1 + j), ppBonuses, j);
             SetMonData(&gPlayerParty[i], MON_DATA_PP1 + j, arg);
         }
 
@@ -45,21 +47,24 @@ void HealPlayerParty(void)
     }
 }
 
-u8 ScriptGiveMon(u16 species, u8 level, u16 item, u32 unused1, u32 unused2, u8 unused3)
+static u8 ScriptGiveMonWithFixedIV(u16 species, u8 level, u16 item, u8 fixedIV)
 {
     u16 nationalDexNum;
     int sentToPc;
     u8 heldItem[2];
     struct Pokemon *mon = AllocZeroed(sizeof(struct Pokemon));
 
-    CreateMon(mon, species, level, 32, 0, 0, OT_ID_PLAYER_ID, 0);
+    if (mon == NULL)
+        return MON_CANT_GIVE;
+
+    CreateMon(mon, species, level, fixedIV, 0, 0, OT_ID_PLAYER_ID, 0);
     heldItem[0] = item;
     heldItem[1] = item >> 8;
     SetMonData(mon, MON_DATA_HELD_ITEM, heldItem);
     sentToPc = GiveMonToPlayer(mon);
     nationalDexNum = SpeciesToNationalPokedexNum(species);
 
-    switch(sentToPc)
+    switch (sentToPc)
     {
     case MON_GIVEN_TO_PARTY:
     case MON_GIVEN_TO_PC:
@@ -70,6 +75,29 @@ u8 ScriptGiveMon(u16 species, u8 level, u16 item, u32 unused1, u32 unused2, u8 u
 
     Free(mon);
     return sentToPc;
+}
+
+u8 ScriptGiveMon(u16 species, u8 level, u16 item, u32 unused1, u32 unused2, u8 unused3)
+{
+    return ScriptGiveMonWithFixedIV(species, level, item, 32);
+}
+
+// Only regional starter gift scripts use this entry; all other gifts retain random IVs.
+void ScriptGivePerfectRegionalStarter(void)
+{
+    u16 species = VarGet(VAR_TEMP_1);
+    gSpecialVar_Result = MON_CANT_GIVE;
+    switch (species)
+    {
+    case SPECIES_CHIKORITA:
+    case SPECIES_CYNDAQUIL:
+    case SPECIES_TOTODILE:
+    case SPECIES_TREECKO:
+    case SPECIES_TORCHIC:
+    case SPECIES_MUDKIP:
+        gSpecialVar_Result = ScriptGiveMonWithFixedIV(species, 5, ITEM_NONE, 31);
+        break;
+    }
 }
 
 u8 ScriptGiveEgg(u16 species)
@@ -137,6 +165,13 @@ void CreateScriptedWildMon(u16 species, u8 level, u16 item)
         heldItem[1] = item >> 8;
         SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem);
     }
+}
+
+// Preserve Treecko's existing optional battle/capture event, with perfect IVs in either outcome.
+void CreatePerfectScriptedTreecko(void)
+{
+    ZeroEnemyPartyMons();
+    CreateMon(&gEnemyParty[0], SPECIES_TREECKO, 5, 31, 0, 0, OT_ID_PLAYER_ID, 0);
 }
 
 void ScriptSetMonMoveSlot(u8 monIndex, u16 move, u8 slot)

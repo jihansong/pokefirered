@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/native_cold_nurse_regression_qa.py", line 100, in <module>
+    with ReadOnlyEmu(str(rom),str(path),sym='')as e:row=attempt(e,room,count,prepared,label)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/native_cold_nurse_regression_qa.py", line 68, in attempt
+    assert name_before[0]==255,(label,'native cold initialized name is not EOS',name_before.hex())
+           ^^^^^^^^^^^^^^^^^^^
+AssertionError: ('cold_nurse_JohtoLeague_PokemonCenter_1F_2', 'native cold initialized name is not EOS', '000000000000000000000000')

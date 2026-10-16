@@ -1,0 +1,30 @@
+{
+  "checks": [
+    {
+      "attempt": 0,
+      "outcome": 2,
+      "trainer": 1623,
+      "team_count": 6,
+      "turns": 6,
+      "native_switches": 5,
+      "save": {
+        "counter": [
+          62,
+          63
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-phase2-misty-duel-loss-mainbit/training-loss-0-native-QA-only.sav"
+      },
+      "mode9": true,
+      "heal_after": true,
+      "pass_all": true
+    }
+  ],
+  "mode": "loss",
+  "source_sav_unchanged": true,
+  "identity_failures": [],
+  "main_battle_flag_abi": [
+    1081,
+    2
+  ]
+}

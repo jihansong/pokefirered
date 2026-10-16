@@ -1,0 +1,7 @@
+{
+  "generator": "/workspaces/pokefirered/tools/hoenn_import/build_weather_space.py",
+  "sha256": "a5a5571906b60c799b261998a8cf129a174efce087497f7a8a5a4f72efed1944",
+  "canonical_reward_sha256": "564e25f17f9244f2995ef488e2b0b855ea50fd5fd0d6ee954db7fcd3283d4990",
+  "generator_executed": false,
+  "save_layout_changed": false
+}

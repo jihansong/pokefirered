@@ -1,0 +1,134 @@
+{
+  "schema": "thunder-yellow-reference-verification-addendum-v1",
+  "date_kst": "2026-10-15",
+  "existing_registry": {
+    "path": "C:\\Users\\seren\\.codex\\visualizations\\2026\\09\\30\\01a0f491-dbbc-7a63-a2ee-9ef6d36f2882\\thunder-yellow-continue-20261014\\reference-registry-20261015.json",
+    "sha256": "50f45e142a0c5dd5f3ffd15ecf761cb35890d02768af48341fe7f34a24ce877a",
+    "reference_count": 12,
+    "modified": false,
+    "all_user_references_retained": true
+  },
+  "bounded_search": {
+    "rounds": 4,
+    "queries": [
+      "\"Pokemon Legends of Johto\" rom hack creator",
+      "\"Pokemon Johto Adventures 2\" developer",
+      "\"Pokemon HeartGold Deluxe\" creator developer",
+      "\"Legends of Johto\" (\"rom\" OR \"hack\" OR \"game\") -site:reddit.com -site:fanfiction.net",
+      "\"Johto Adventures 2\" Pokemon game developer",
+      "\"HeartGold Deluxe\" [github.com,pokecommunity.com,projectpokemon.org]",
+      "\"Johto Adventures\" \"Rebirth\" creator",
+      "\"Legends of Johto\" site:pokecommunity.com",
+      "\"Pokemon Heart Gold DX\" metalflygon08",
+      "\"Johto Adventures\" Co500 [pokecommunity.com,github.com]",
+      "\"Legends of Johto\" developer game [github.com,pokecommunity.com,eeveeexpo.com]",
+      "\"HeartGold Deluxe\" Pokemon developer gen 8"
+    ],
+    "stopped_after_focused_exact_name_and_maker_followups": true,
+    "search_is_not_proof_a_project_does_not_exist": true,
+    "unrelated_search_hits_not_accepted": true
+  },
+  "references": [
+    {
+      "user_name": "Pokemon Legends of Johto",
+      "status": "EXACT_GAME_PRIMARY_PROJECT_UNRESOLVED",
+      "verified_maker": null,
+      "verified_game_repository": null,
+      "findings": "Exact-name searches did not establish a creator-owned ROM hack/game source. A same-name fanfiction by Elia41 is a different medium and is not accepted as the requested game.",
+      "excluded_name_collision": {
+        "title": "Pokemon: Legends of Johto",
+        "medium": "fanfiction",
+        "author": "Elia41",
+        "author_page": "https://m.fanfiction.net/u/2059155/?a=b"
+      },
+      "unverified_claims_retained_as_unverified": [
+        "NDS/HGSS engine",
+        "completed game",
+        "map or sprite source"
+      ],
+      "map_style_material_approved_from_this_reference": false,
+      "user_reference_retained": true
+    },
+    {
+      "user_name": "Pokemon Johto Adventures 2",
+      "status": "EXACT_SEQUEL_TITLE_UNRESOLVED_RELATED_CREATOR_PRIMARY_FOUND",
+      "verified_related_maker": "Co500",
+      "verified_related_title": "Pokemon Johto Adventures",
+      "primary_source": {
+        "url": "https://www.pokecommunity.com/threads/your-rom-hacking-history.263756/",
+        "author": "Co500",
+        "post_date": "2011-10-08",
+        "post_number": 10,
+        "access": "Creator-authored search-index excerpt obtained; full-page fetch failed. No code or maps reviewed."
+      },
+      "supported_fact": "Co500 describes creating and resuming Pokemon Johto Adventures.",
+      "not_established": [
+        "that a separate Johto Adventures 2 is this project",
+        "Black/White engine",
+        "official Rebirth/Alpha 2.1 alias equivalence",
+        "a public source repository"
+      ],
+      "secondary_alias_not_promoted_to_verified": {
+        "alias": "Pokemon Johto Adventures - Rebirth",
+        "reported_author": "Co500",
+        "reported_base": "FireRed",
+        "reported_version": "Alpha 2.1",
+        "note": "Mirror pages supplied these labels, but they do not verify the exact requested sequel name or engine. No mirror download was used."
+      },
+      "map_style_material_approved_from_this_reference": false,
+      "user_reference_retained": true
+    },
+    {
+      "user_name": "Pokemon HeartGold Deluxe",
+      "status": "HISTORICAL_RELATED_PRIMARY_HGDX_VERIFIED_USER_ALIAS_AMBIGUOUS",
+      "verified_related_maker": "metalflygon08",
+      "verified_related_title": "Pokemon Heart Gold DX",
+      "primary_sources": [
+        {
+          "url": "https://www.pokecommunity.com/threads/pokemon-heart-gold-dx.236840/",
+          "post_number": 1,
+          "post_date": "2010-11-15",
+          "access": "Full creator post read"
+        },
+        {
+          "url": "https://www.pokecommunity.com/threads/pokemon-heart-gold-dx.236840/page-4",
+          "post_number": 65,
+          "post_date": "2011-01-22",
+          "access": "Creator search-index excerpt; page fetch failed"
+        }
+      ],
+      "supported_fact": "제작자 소개글은 HeartGold 개조작이며 필드 Lyra 전투와 야생 종류 확대를 설명한다. 뒤의 제작자 글은 Heart Gold X와 Heart Gold Deluxe의 두 단계를 구분한다.",
+      "not_established": [
+        "same project as a modern Gen I-VIII/Gen IX claim",
+        "completed present-day release",
+        "modern public engine/source repository",
+        "any map or sprite image reuse permission or compatibility"
+      ],
+      "name_collision_excluded": "Garbage Gold Deluxe aggregator page uses HeartGold Deluxe wording but has not established the requested title identity; not treated as this reference.",
+      "user_reference_retained": true
+    }
+  ],
+  "confirmed_material_design_inferences": [
+    {
+      "source": "https://www.pokecommunity.com/threads/pokemon-heart-gold-dx.236840/",
+      "basis": "Creator describes optional recurring Lyra encounters and a visible partner cue for battle versus nonbattle state.",
+      "inference": "라이벌·N의 재등장은 지역 진행 단계마다 갱신하고, 대화/전투 의도를 필드 포즈나 동행 포켓몬으로 미리 보여줄 수 있다.",
+      "implemented": false
+    },
+    {
+      "source": "https://www.pokecommunity.com/threads/pokemon-heart-gold-dx.236840/",
+      "basis": "Creator discusses tying access toward Mahogany to the lighthouse event; this was a plan, not evidence of a delivered gate.",
+      "inference": "길을 막는 이유와 해제 조건을 현재 사건에 맞춘 안내 대사로 연결한다. 높은 레벨만으로 막히는 것처럼 느끼게 두지 않는다.",
+      "implemented": false
+    },
+    {
+      "source": "https://www.pokecommunity.com/threads/pokemon-heart-gold-dx.236840/",
+      "basis": "Creator describes varying early route encounters.",
+      "inference": "초반 성도 도로의 조우를 성도 도감·진행 단계에 맞춰 구분한다. 해당 작품의 후대 포켓몬이나 데이터는 그대로 가져오지 않는다.",
+      "implemented": false
+    }
+  ],
+  "visual_map_style_conclusion": "이 세 이름에서 검증된 맵/타일 원화 파일을 확보한 것은 아니다. 존재가 확인된 제작자 글의 설계 아이디어만 위에 추론으로 구분했으며, 구체적인 숲/물/건물 구성의 근거는 기존 확인된 Heart & Soul·CrystalDust·FRLG 호환 참고자료에서 계속 찾는다.",
+  "ROM_or_SAV_or_product_edits": false,
+  "references_downloaded_into_or_imported_to_ROM": false
+}

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/johto_ecruteak_native_events.py", line 180, in <module>
+    interaction(e,c);after=snapshot(e)
+    ^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_ecruteak_native_events.py", line 133, in interaction
+    if marker:assert seen[0],('dialogue branch not seen',c['name'],marker,e.location())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('dialogue branch not seen', 'gate_badge3_closed', 'GoldenrodCity_NorthGate_Text_Stop', (76, 44, 7, 3))

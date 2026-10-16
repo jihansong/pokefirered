@@ -1,0 +1,102 @@
+{
+  "exit": 0,
+  "water_checks": [
+    {
+      "map": "Route128",
+      "walking": false,
+      "repel": 250,
+      "hardware": 360,
+      "vblank": 360,
+      "callbacks": 360,
+      "missed": 0,
+      "irregular": [],
+      "positions": [
+        [
+          38,
+          27
+        ]
+      ],
+      "follower_objects": 1,
+      "follower_tasks": 1,
+      "max_objects": 3,
+      "visible_frames": 360,
+      "counter_survived": true,
+      "pass_all": true
+    },
+    {
+      "map": "Route128",
+      "walking": true,
+      "repel": 250,
+      "hardware": 360,
+      "vblank": 360,
+      "callbacks": 360,
+      "missed": 0,
+      "irregular": [],
+      "positions": [
+        [
+          38,
+          27
+        ],
+        [
+          39,
+          27
+        ]
+      ],
+      "follower_objects": 1,
+      "follower_tasks": 1,
+      "max_objects": 3,
+      "visible_frames": 360,
+      "counter_survived": true,
+      "pass_all": true
+    },
+    {
+      "map": "Underwater_Route128",
+      "walking": false,
+      "repel": 250,
+      "hardware": 360,
+      "vblank": 360,
+      "callbacks": 360,
+      "missed": 0,
+      "irregular": [],
+      "positions": [
+        [
+          38,
+          27
+        ]
+      ],
+      "follower_objects": 1,
+      "follower_tasks": 1,
+      "max_objects": 2,
+      "visible_frames": 360,
+      "counter_survived": true,
+      "pass_all": true
+    },
+    {
+      "map": "Underwater_Route128",
+      "walking": true,
+      "repel": 250,
+      "hardware": 360,
+      "vblank": 360,
+      "callbacks": 360,
+      "missed": 0,
+      "irregular": [],
+      "positions": [
+        [
+          38,
+          27
+        ],
+        [
+          39,
+          27
+        ]
+      ],
+      "follower_objects": 1,
+      "follower_tasks": 1,
+      "max_objects": 2,
+      "visible_frames": 360,
+      "counter_survived": true,
+      "pass_all": true
+    }
+  ],
+  "all_pass": true
+}

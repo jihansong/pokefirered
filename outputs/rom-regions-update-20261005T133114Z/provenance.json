@@ -1,0 +1,173 @@
+{
+  "time_utc": "20261005T133114Z",
+  "rom_sha256": "db5a29af95d648cc2c114c34a2c1e2e62d7d96b349eb4bfb0ef04a4302a59e56",
+  "elf_sha256": "7f7e8a9457b4a3fdd7fddbc2b951bb4e18e6e44baa519fc6f9093c3574dc6729",
+  "bytes": 33554432,
+  "resident_sections_match": true,
+  "save_layout_unchanged": true,
+  "save_layout": {
+    "blocks": {
+      "gSaveBlock1": 15720,
+      "gSaveBlock2": 3876,
+      "gPokemonStorage": 33744
+    },
+    "sector_layout": [
+      [
+        0,
+        3876
+      ],
+      [
+        0,
+        3968
+      ],
+      [
+        3968,
+        3968
+      ],
+      [
+        7936,
+        3968
+      ],
+      [
+        11904,
+        3816
+      ],
+      [
+        0,
+        3968
+      ],
+      [
+        3968,
+        3968
+      ],
+      [
+        7936,
+        3968
+      ],
+      [
+        11904,
+        3968
+      ],
+      [
+        15872,
+        3968
+      ],
+      [
+        19840,
+        3968
+      ],
+      [
+        23808,
+        3968
+      ],
+      [
+        27776,
+        3968
+      ],
+      [
+        31744,
+        2000
+      ]
+    ],
+    "sector_layout_sha256": "ee1f9bc20ab82f62e45a2451450517ea539f6ef48bd31045dc2430b8525fcd68"
+  },
+  "assets": {
+    "sOpeningMoviePixels": {
+      "sha256": "ff8c4e7f91ef541952f638043efdfe396d416777aaa984350869da3e603b66c3",
+      "bytes": 14192640
+    },
+    "sOpeningMoviePalettes": {
+      "sha256": "f253176e6ead3f2f5dd55c01de2f33881ce143527c464d076d2786bc348724f7",
+      "bytes": 178688
+    },
+    "sOpeningMovieFrames": {
+      "sha256": "22517a83536902b9c4245234a7bd84fd15b75fcbb00c70dbb274e648268d3938",
+      "bytes": 6016
+    },
+    "gTrainerFrontPic_JessieJames": {
+      "sha256": "5b036768fc2712765eab94952b2757a7783b953062ef440f26eb7e9e6f38d2b1",
+      "bytes": 2048
+    },
+    "gTrainerPalette_JessieJames": {
+      "sha256": "02951ab3bc6bd04dbce501258a13e92e3ba934728bb8249514b41238f835b792",
+      "bytes": 32
+    },
+    "sThunderYellowTitleTiles": {
+      "bytes": 38400,
+      "sha256": "266b8c5764de352fd471c742705cc8744eeff15c16e13c557854b514d6153eff"
+    },
+    "sThunderYellowTitlePalette": {
+      "bytes": 512,
+      "sha256": "e4888a4dcd5539808992724f60e9891393a950904ee06c817a601977285ebdd2"
+    },
+    "sThunderYellowTitleMap": {
+      "bytes": 2048,
+      "sha256": "d36febfb217aed8362ce88627f4ffdab75d5cab305f35b433881ab3d75daab53"
+    },
+    "sTitleText_Pal": {
+      "bytes": 8,
+      "sha256": "4529364d177d57c7ff36be6be8173d1bcc0c499030a5cb4468200eb36b94224c"
+    },
+    "gGraphics_TitleScreen_BoxArtMonPals": {
+      "bytes": 32,
+      "sha256": "86a6b33a4c4a102a932d44ed1c3b8c3292231563ded69318a9424c4b75387773"
+    },
+    "gGraphics_TitleScreen_CopyrightPressStartMap": {
+      "bytes": 276,
+      "sha256": "ee97ab69291ae1d8407c1b7655a2c6fd664ac8c2486fd2ad8c31227295815b35"
+    },
+    "gGraphics_TitleScreen_BackgroundPals": {
+      "bytes": 32,
+      "sha256": "fa04f0364c62c689cde8e3b58d4193ea6c8b879e118eab9afd933e819b64ddd2"
+    },
+    "gGraphics_TitleScreen_BoxArtMonTiles": {
+      "bytes": 1152,
+      "sha256": "a6cebf5a0803d10818c58c7106edef729cae6eca8d617a46787fb25e625e34f2"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoTiles": {
+      "bytes": 5468,
+      "sha256": "aed1c7edbc32bd3b8c33fa95eb280d94a90224d98ddb765ef6164dded55a5b31"
+    },
+    "gGraphics_TitleScreen_CopyrightPressStartTiles": {
+      "bytes": 704,
+      "sha256": "1f72690d788e6f3ccfa7a111bc676f45571b48ce8b40635a2741b7780ccc3ad8"
+    },
+    "gTitleScreen_BlankSprite_Tiles": {
+      "bytes": 128,
+      "sha256": "3c2451d3e0f5b1a598ab8cab6beae858645729fc74f8c1d993274f55e3dbbd41"
+    },
+    "gGraphics_TitleScreen_BoxArtMonMap": {
+      "bytes": 332,
+      "sha256": "25b8be3aa049b9e512e73caac9930fdbc187b66cb46509e7f4b4de5bf66215ba"
+    },
+    "gTitleScreen_Slash_Pal": {
+      "bytes": 32,
+      "sha256": "a57ddb40cb96a23749ff6624ae67421cdf487183577f7dee37069bd02467a4fb"
+    },
+    "gTeachyTvTitle_Tilemap": {
+      "bytes": 556,
+      "sha256": "ae837c6d4d805dd7be188f70e15e784571706f13017392a93ffb89cc1cda645c"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoMap": {
+      "bytes": 544,
+      "sha256": "162d967ed0289b42042be29f24f4fdbf4174bab06d8f05277341b25c2f5e62ab"
+    },
+    "gGraphics_TitleScreen_GameTitleLogoPals": {
+      "bytes": 512,
+      "sha256": "9612068fa48be250345e802e735eab11331ca25d78d98e82eeca8825f02774de"
+    }
+  },
+  "title_version": "V8",
+  "rocket_version": "V11 native64x64",
+  "opening_version": "V7 752frames/FRLG music",
+  "johto_maps_integrated": 23,
+  "hoenn_native_league_verified": true,
+  "full_johto_story_complete": false,
+  "full_hoenn_story_complete": false,
+  "evidence_root": "/workspaces/pokefirered/outputs/fill-performance-review-v1",
+  "save_delivery": "byte-identical v1.2 copy; story flags update only during actual gameplay",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "all_original_saves_unchanged": true,
+  "known_existing_bad_egg_repaired": false,
+  "performance": "VioletCity/Route31 idle+walk360/360; dex DOWN343/360 UP349/360; native aligned fill296 cases; some scroll misses remain"
+}

@@ -1,0 +1,4 @@
+  File "/workspaces/pokefirered/work/regression-oct12/native-johto-flight.py", line 36
+    report.update(pass=True,arrival=e.location(),flight_frames=e.frame()-start,native_inputs_only=True,party_pc_dex_unchanged=True)
+                  ^^^^
+SyntaxError: invalid syntax

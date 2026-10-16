@@ -1,0 +1,4 @@
+usage: native_johto_tohjo_prompt_diagnostic_qa.py [-h] --rom ROM --elf ELF
+                                                  --sav SAV --out OUT --case
+                                                  {a} [--loss]
+native_johto_tohjo_prompt_diagnostic_qa.py: error: the following arguments are required: --case

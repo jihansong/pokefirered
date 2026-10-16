@@ -1,0 +1,8 @@
+PERF_COMPARE old 1   File "/workspaces/pokefirered/outputs/regional-dex-story-v1/kanto-old-new-comparison.py", line 91
+    pristine=e.save_state()
+IndentationError: unexpected indent
+
+PERF_COMPARE new 1   File "/workspaces/pokefirered/outputs/regional-dex-story-v1/kanto-old-new-comparison.py", line 91
+    pristine=e.save_state()
+IndentationError: unexpected indent
+

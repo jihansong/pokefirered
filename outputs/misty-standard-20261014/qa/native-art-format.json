@@ -1,0 +1,126 @@
+{
+  "source_generated_sha256": "6c5faf6c4c698e016c16ad00150c58c8c36d10f160f5044c389df0ab26a81258",
+  "master_source_box": [
+    262,
+    281
+  ],
+  "same_format_transform_for_all_poses": true,
+  "phase_x_native_pixels": -0.3,
+  "pupil_black_positions": [
+    [
+      [
+        5,
+        21
+      ],
+      [
+        8,
+        21
+      ],
+      [
+        5,
+        22
+      ],
+      [
+        8,
+        22
+      ]
+    ],
+    [
+      [
+        5,
+        21
+      ],
+      [
+        8,
+        21
+      ],
+      [
+        3,
+        22
+      ],
+      [
+        10,
+        22
+      ]
+    ],
+    [
+      [
+        5,
+        21
+      ],
+      [
+        8,
+        21
+      ],
+      [
+        3,
+        22
+      ],
+      [
+        10,
+        22
+      ]
+    ]
+  ],
+  "per_pose_box_stretching": false,
+  "native_png_sha256": "1c8a8636dd35248d5d38395d6c5ceae78780b585796c4d3ee297c124fa77cb07",
+  "raw_4bpp_sha256": "165827494131714fa4caadc919153b235566bebfbf70ff4dc6e53cdbe41a3ab6",
+  "unique_frames": 9,
+  "frames": [
+    [
+      1,
+      13,
+      16,
+      31
+    ],
+    [
+      1,
+      12,
+      16,
+      31
+    ],
+    [
+      1,
+      12,
+      16,
+      31
+    ],
+    [
+      1,
+      13,
+      16,
+      31
+    ],
+    [
+      1,
+      12,
+      16,
+      31
+    ],
+    [
+      1,
+      12,
+      16,
+      31
+    ],
+    [
+      1,
+      12,
+      16,
+      31
+    ],
+    [
+      1,
+      12,
+      16,
+      31
+    ],
+    [
+      0,
+      12,
+      16,
+      31
+    ]
+  ],
+  "status": "VISUAL_REVIEW_PENDING"
+}

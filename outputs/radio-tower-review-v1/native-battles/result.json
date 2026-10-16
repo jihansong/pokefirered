@@ -1,0 +1,271 @@
+{
+  "rom_sha256": "f3b4e13df998d1832544218a88cd0c4845a9b7ebd184628e00c1e9595434204c",
+  "cases": [
+    {
+      "case": "radio_grunt_a_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        20,
+        42
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-battles/radio_grunt_a_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "radio_grunt_b_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        88,
+        89
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-battles/radio_grunt_b_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "radio_scientist_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        81,
+        82
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-battles/radio_scientist_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "petrel_radio_win",
+      "turns": 4,
+      "native_outcome": 1,
+      "enemies": [
+        109,
+        109,
+        109,
+        110
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-battles/petrel_radio_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "silver_underground_win",
+      "turns": 5,
+      "native_outcome": 1,
+      "enemies": [
+        42,
+        81,
+        93,
+        215,
+        160
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-battles/silver_underground_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "warehouse_grunt_a_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        20,
+        109
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-battles/warehouse_grunt_a_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "warehouse_grunt_b_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        44,
+        42
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-battles/warehouse_grunt_b_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "warehouse_scientist_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        81,
+        82
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-battles/warehouse_scientist_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "ariana_radio_win",
+      "turns": 3,
+      "native_outcome": 1,
+      "enemies": [
+        24,
+        44,
+        198
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-battles/ariana_radio_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "archer_win",
+      "turns": 3,
+      "native_outcome": 1,
+      "enemies": [
+        228,
+        109,
+        229
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-battles/archer_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "petrel_radio_loss",
+      "turns": 1,
+      "native_outcome": 2,
+      "enemies": [
+        109,
+        109,
+        109,
+        110
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-battles/petrel_radio_loss-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "archer_loss",
+      "turns": 1,
+      "native_outcome": 2,
+      "enemies": [
+        228,
+        109,
+        229
+      ],
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-battles/archer_loss-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    }
+  ],
+  "all_pass": true,
+  "original_files_unchanged": true,
+  "forced_memory_writes": 0,
+  "forced_battle_outcomes": 0
+}

@@ -109,3 +109,39 @@ Thunder Yellow 개발 팀의 역할, 진행 방식, 결정 기록. 에이전트�
 |---|---|---|
 | 2026-09-24 | v0.8.0 코드, `mapsmoke.py -j 2`(선두 Lv100·스프레이, 오브젝트 전부 화면 통과) | **896/896 OK** |
 | 2026-09-24 | v0.8.0 코드, `savetest_all.sh` | 5종 OK (load IDENTICAL) |
+
+## 2026-10-02 — Airport indoor window foreground fix (Codex)
+
+Applied and built the window foreground priority fix in event_object_movement.c. Player, NPC and follower remain in front of the glass while the exterior plane stays behind its frame. Airport 14/14, six legacy saves and three user-save runtime scenes pass; all seven original top-level saves unchanged. Evidence: docs/team/qa/codex-airport-window-20261002/QA.md. No commit/push/release. Animation/title/Rocket art, regional endings and expansion/storage backlog remain open; this result does not mark them complete.
+
+
+## 2026-10-02 - Route116 DEVON repeat-ball reward (Codex)
+Restored the employee at (46,11) and the approved E12 reward after DEVON recovery. Nine cases, existing DEVON regression, six legacy save compatibility checks, Route116 map smoke, map integrity, text width and dex checks passed. All saves and unrelated changes were preserved; canonical patch reapplication is idempotent. Existing warning baseline remains. Evidence: docs/team/qa/codex-route116-repeat-20261002/QA.md. No commit/push/release.
+
+
+## 2026-10-05T11:40:07.749896+00:00 — Native V8, approved opening and regional dex integration
+
+Main LEAFGREEN pokemonthyl.gba now contains title V8 (exact user Lightening.png, native original Pika voice), approved opening-full-frlg-v7 pixels with MUS_INTRO_FIGHT and V11 Jessie/James game-size64 graphics. Native title40-frame ROI comparison and voice START/A passed; all752 opening frames/palettes matched with zero drops; A/START/SELECT skip passed. Story regional dex151/251/202 UI and save/reload passed without save layout changes; 6 legacy battery saves load. Original v1.2 and all saves unchanged. Existing Bad Egg preserved, not fabricated as repaired.
+
+Rusturf Wanda reunion source canonicalized; review build passed, 11/11 native event cases and3/3 map smoke passed; main rebuild pending. Old/current Kanto scroll360 frames:277/278 task callbacks respectively (existing cost, no added-regional-dex regression). Tile-row scroll candidate awaiting native byte/performance tests. Johto full story and Hoenn League still incomplete; assigned in parallel. No push/deploy. Evidence: outputs/rom-integrated-v8-20261005T111752Z/rom-provenance.json, outputs/regional-dex-story-v1 and outputs/rusturf-wanda-reunion-v1.
+
+## 20261005T125922Z native region integration
+Validated ROM b3b62a31d4a7543876322d3e92947be6516e387f3c2035e834daa05551b19dfc; thirteen Johto maps, Rusturf/Wanda, Hoenn badges7/8 and league/HOF/credits/checkpoints integrated. Native five wins/loss, north/south checkpoint and HOF cold reload preserve party/PC/dex and all original saves. Save ABI unchanged; compatible v1.2 delivery is byte-identical, existing damaged box record not repaired. Full Johto/Hoenn story remains incomplete; Violet chapter pending. Dex glyph552/icon240 byte tests pass; DOWN46/UP13 missed task frames remain. Delivery: /workspaces/pokefirered/outputs/rom-regions-update-20261005T125922Z
+
+## 20261005T133114Z native region integration
+Validated ROM db5a29af95d648cc2c114c34a2c1e2e62d7d96b349eb4bfb0ef04a4302a59e56; twenty-three Johto maps, Rusturf/Wanda, Hoenn badges7/8 and league/HOF/credits/checkpoints integrated. Native five wins/loss, north/south checkpoint and HOF cold reload preserve party/PC/dex and all original saves. Save ABI unchanged; compatible v1.2 delivery is byte-identical, existing damaged box record not repaired. Full Johto/Hoenn story remains incomplete; Violet chapter native Li/Falkner wins/loss, native saves/cold reload, 10 map smoke tests, 16 habitat species, 11 clock cases/144 generated records pass. Azalea pending. Dex glyph552/icon240 byte tests pass; DOWN17/UP11 missed task frames remain after native whole-tile aligned window fill optimization. Delivery: /workspaces/pokefirered/outputs/rom-regions-update-20261005T133114Z
+
+## 2026-10-12T12:51:27.243139+00:00  Regional followup scoped repair
+
+Route114 TM05 actual reward and success-only local receipt canonicalized through patches and applied idempotently. Johto League-cleared airstrip clerk adds onward research guidance while existing flight stays. Exact ROM f31b2eea1ae45fd1dd40057c80510a8875936394e5807d00806a90cff1dee73d native7/eventcheck3/map2/legacy6+user2 loads pass; original14 SAV unchanged, approved24 assets and SaveABI preserved. Host paired600-frame comparisons show no sustained slowdown criterion; actual DELTA device not tested. Whole campaign/N/space/three endings remain incomplete; global80dead+14promises and Route11442 original texts remain. Existing Lickitung Bad Egg is not repaired. Capture comparison passed on previousb46 only; not a DELTA cause proof. Local main updated with rollback, no push/public release. Evidence: /workspaces/pokefirered/docs/team/qa/codex-regional-followup-20261012/QA.md
+
+### 2026-10-13  1.25 IV/   ROM   
+
+ 99,  /// IV 31  SAV. nativeSAVE/cold  /byte . 457quick456OK+darkroom1 , 457 . /  .  docs/team/qa/codex-save-hoenn-review-20261013/QA.md. ROM f31 , SAV   .
+
+### 2026-10-13 Native verification follow-up
+
+Current f31/v1.25: 36000 idle frames, state load return/frame/RNG proof, 16 Pika/21 Misty water/land samples, Johto professor 151->251, eligible Hoenn 202 UI, two lab door/cold chains, five exact list/seen/caught checks. Inputs preserved. No product ROM changes. Full campaign/DELTA/old BadEgg recovery remain pending. Evidence: docs/team/qa/codex-verification-followup-20261013/QA.md.
+
+
+2026-10-13T04:21:09.440778+00:00 Regional starters: six gift events use IV31, Johto repeat assistant sequence, canonical scripts synchronized. 32 native cases pass on 63904802b37dc5e922ec616361c0be3388f1030e5b2c1a0b7a2949f2a33c1f7c. Main ROM promoted; 10 SAV files unchanged. Scope excludes full campaign, DELTA device and existing BadEgg recovery. Evidence: work/regional-starters-20261013/validation-final.json

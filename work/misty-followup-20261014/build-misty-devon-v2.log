@@ -1,0 +1,4 @@
+make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+make[1]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+make[1]: Nothing to be done for 'all'.
+make: Nothing to be done for 'syms'.

@@ -1,0 +1,190 @@
+{
+  "RustboroCity_Gym": {
+    "canonical": true,
+    "objects": 5,
+    "coords": 0,
+    "state_commands": [
+      "setflag FLAG_HOENN_DEFEATED_RUSTBORO_GYM",
+      "setflag FLAG_HOENN_BADGE01_GET",
+      "setflag FLAG_HOENN_GOT_TM39_FROM_ROXANNE",
+      "setvar VAR_0x8004, SPECIES_PIKACHU",
+      "setflag FLAG_HOENN_PIKACHU_ROXANNE_SEEN"
+    ]
+  },
+  "DewfordTown_Gym": {
+    "canonical": true,
+    "objects": 8,
+    "coords": 0,
+    "state_commands": [
+      "goto_if_unset FLAG_HOENN_GOT_TM08_FROM_BRAWLY, DewfordTown_Gym_EventScript_GiveTM08",
+      "setflag FLAG_HOENN_BADGE02_GET",
+      "setvar VAR_HOENN_STAGE1_PROGRESS, 3",
+      "setflag FLAG_HOENN_GOT_TM08_FROM_BRAWLY",
+      "setflag FLAG_HOENN_PIKACHU_GYM_SEEN"
+    ]
+  },
+  "MauvilleCity_Gym": {
+    "canonical": true,
+    "objects": 7,
+    "coords": 4,
+    "state_commands": [
+      "setvar VAR_0x8004, 0",
+      "setvar VAR_0x8004, 1",
+      "setvar VAR_0x8004, 2",
+      "setvar VAR_0x8004, 3",
+      "setvar VAR_HOENN_MAUVILLE_GYM_STATE, 1",
+      "setvar VAR_0x8004, 0",
+      "setvar VAR_HOENN_MAUVILLE_GYM_STATE, 2",
+      "setvar VAR_0x8004, 1",
+      "setvar VAR_HOENN_MAUVILLE_GYM_STATE, 3",
+      "setvar VAR_0x8004, 2",
+      "setvar VAR_HOENN_MAUVILLE_GYM_STATE, 4",
+      "setvar VAR_0x8004, 3",
+      "goto_if_unset FLAG_HOENN_MAUVILLE_BARRIERS, MauvilleCity_Gym_EventScript_SetBarriersAltState",
+      "setflag FLAG_HOENN_MAUVILLE_BARRIERS",
+      "goto_if_unset FLAG_HOENN_GOT_TM34_FROM_WATTSON, MauvilleCity_Gym_EventScript_GiveTM34",
+      "setflag FLAG_HOENN_BADGE03_GET",
+      "setflag FLAG_HOENN_DEFEATED_MAUVILLE_GYM",
+      "setvar VAR_HOENN_STAGE1_PROGRESS, 6"
+    ]
+  },
+  "LavaridgeTown_Gym_1F": {
+    "canonical": true,
+    "objects": 6,
+    "coords": 0,
+    "state_commands": [
+      "setflag FLAG_HOENN_BADGE04_GET",
+      "setflag FLAG_HOENN_GOT_TM50_FROM_FLANNERY"
+    ]
+  },
+  "PetalburgCity_Gym": {
+    "canonical": true,
+    "objects": 9,
+    "coords": 0,
+    "state_commands": [
+      "setvar VAR_HOENN_SCENE_WALLY, 1",
+      "warp MAP_ROUTE102, 11, 5",
+      "goto_if_unset FLAG_HOENN_WALLY_CAUGHT_RALTS, PetalburgCity_Gym_EventScript_WallyDemoAgain",
+      "setvar VAR_HOENN_SCENE_WALLY, 2",
+      "setflag FLAG_HIDE_HOENN_WALLY_PETALBURG",
+      "warp MAP_ROUTE102, 11, 5",
+      "setflag FLAG_HOENN_BADGE05_GET",
+      "setflag FLAG_HOENN_GOT_TM42_FROM_NORMAN"
+    ]
+  },
+  "FortreeCity_Gym": {
+    "canonical": true,
+    "objects": 8,
+    "coords": 0,
+    "state_commands": [
+      "setflag FLAG_HOENN_BADGE06_GET",
+      "setflag FLAG_HOENN_GOT_TM40_FROM_WINONA"
+    ]
+  },
+  "RustboroCity_DevonCorp_3F": {
+    "canonical": true,
+    "objects": 2,
+    "coords": 0,
+    "state_commands": [
+      "setvar VAR_HOENN_SCENE_DEVON, 4",
+      "setflag FLAG_HOENN_DEVON_GOODS_DELIVERED",
+      "setvar VAR_HOENN_SCENE_DEVON, 5",
+      "setflag FLAG_HOENN_GOT_EXP_SHARE",
+      "setvar VAR_HOENN_SCENE_DEVON, 6",
+      "setflag FLAG_HOENN_DEVON_GOODS_DELIVERED",
+      "setflag FLAG_HOENN_GOT_EXP_SHARE",
+      "setvar VAR_HOENN_SCENE_DEVON, 6"
+    ]
+  },
+  "SlateportCity_Harbor": {
+    "canonical": true,
+    "objects": 4,
+    "coords": 0,
+    "state_commands": [
+      "setvar VAR_0x8004, AIRPLANE_DEST_KANTO",
+      "goto_if_unset FLAG_HOENN_BADGE02_GET, EventScript_ReleaseEnd",
+      "setflag FLAG_HOENN_MET_STERN",
+      "setvar VAR_HOENN_SCENE_HARBOR, 1",
+      "setvar VAR_HOENN_STAGE1_PROGRESS, 1",
+      "goto_if_unset FLAG_HOENN_MUSEUM_DEFENDED, SlateportCity_Harbor_EventScript_SternMuseum",
+      "goto_if_unset FLAG_HOENN_BADGE02_GET, SlateportCity_Harbor_EventScript_SternBadgeFirst",
+      "setflag FLAG_HOENN_SURVEY_LETTER_GOT",
+      "setvar VAR_HOENN_STERN_REQUEST, 1",
+      "setvar VAR_HOENN_STERN_REQUEST, 3",
+      "setflag FLAG_HOENN_SCANNER_DELIVERED",
+      "setvar VAR_HOENN_STAGE1_PROGRESS, 5",
+      "setvar VAR_HOENN_DEEP_SEA_ITEM, 1",
+      "setvar VAR_HOENN_DEEP_SEA_ITEM, 3",
+      "setflag FLAG_HOENN_DEVON_GOODS_DELIVERED",
+      "setvar VAR_HOENN_SCENE_DEVON, 5",
+      "setflag FLAG_HOENN_DEVON_GOODS_DELIVERED",
+      "setvar VAR_HOENN_SCENE_DEVON, 5"
+    ]
+  },
+  "Route119_WeatherInstitute_1F": {
+    "canonical": false,
+    "objects": 1,
+    "coords": 0,
+    "state_commands": []
+  },
+  "Route119_WeatherInstitute_2F": {
+    "canonical": false,
+    "objects": 1,
+    "coords": 0,
+    "state_commands": []
+  },
+  "MossdeepCity_SpaceCenter_1F": {
+    "canonical": false,
+    "objects": 5,
+    "coords": 0,
+    "state_commands": []
+  },
+  "MossdeepCity_SpaceCenter_2F": {
+    "canonical": false,
+    "objects": 3,
+    "coords": 0,
+    "state_commands": []
+  },
+  "MtChimney": {
+    "canonical": false,
+    "objects": 0,
+    "coords": 0,
+    "state_commands": []
+  },
+  "MeteorFalls_1F_1R": {
+    "canonical": false,
+    "objects": 4,
+    "coords": 0,
+    "state_commands": []
+  },
+  "MagmaHideout_4F": {
+    "canonical": false,
+    "objects": 1,
+    "coords": 0,
+    "state_commands": []
+  },
+  "AquaHideout_B2F": {
+    "canonical": false,
+    "objects": 1,
+    "coords": 0,
+    "state_commands": []
+  },
+  "SeafloorCavern_Room9": {
+    "canonical": false,
+    "objects": 1,
+    "coords": 0,
+    "state_commands": []
+  },
+  "SootopolisCity": {
+    "canonical": false,
+    "objects": 5,
+    "coords": 0,
+    "state_commands": []
+  },
+  "SkyPillar_Top": {
+    "canonical": false,
+    "objects": 0,
+    "coords": 0,
+    "state_commands": []
+  }
+}

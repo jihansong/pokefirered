@@ -1,0 +1,42 @@
+{
+  "verified_utc": "2026-10-04T13:45:36.313437+00:00",
+  "original_start_voice": {
+    "status": "APPLIED_NATIVE_START_A_RUNTIME_PASS",
+    "reference_mp3": "reference/audio/pikachu-gF1FJRM8Wck/pikachu-original.mp3",
+    "reference_wav": "reference/audio/pikachu-gF1FJRM8Wck/publisher-original/pokemon-video-game-pikachu-voice-sound-effect.wav",
+    "source_url": "https://www.youtube.com/watch?v=gF1FJRM8Wck",
+    "distribution_url": "https://soundsverse.com/wp-content/uploads/s/pokemon-video-game-pikachu-voice-sound-effect.zip",
+    "whole_clip_seconds": 1.5998185941043084,
+    "synthesized": false,
+    "trimmed": false,
+    "runtime_result": "work/title-publisher-native-validation-20261004T133950Z/result.json",
+    "main_runtime_result": "work/title-publisher-native-validation-20261004T133950Z/main-runtime/validation.json",
+    "main_rom_sha256": "3eb1e7ce83bf4e47f06a3a10452becb4c2943df43540eec716682d46688a852b",
+    "protected_save_count": 7,
+    "original_saves_unchanged": true,
+    "audio_auditioned": false,
+    "delta_device_tested": false,
+    "gif_audio_added": false,
+    "browser_start_voice_added": false
+  },
+  "rocket96": {
+    "status": "REVIEW_ROM_INTRO_AND_FINISH_RUNTIME_PASS",
+    "intro_result": "outputs/rocket96-game-intro-qa-fixed-20261004T125444Z/result.json",
+    "finish_result": "outputs/rocket96-game-finish-qa-v1/result.json",
+    "normal_game_hires_enabled": false,
+    "normal_game_portrait_size": "64x64",
+    "review_portrait_size": "96x96",
+    "new_complete_hand_redraw": false,
+    "single_double_fallback_verified": true,
+    "resource_cleanup_verified": true,
+    "visual_reviewed_screenshot": "outputs/rocket96-game-intro-qa-fixed-20261004T125444Z/r02_mtmoon_double.png",
+    "all_visual_cases_reviewed": false
+  },
+  "birch_johto_referral": {
+    "status": "SOURCE_APPLIED_12_RUNTIME_CASES_BUILD_MAP_SAVE_CHECK_PASS",
+    "result": "work/birch-bridge-validation-20261004T130335Z/result.json",
+    "all_regions_story_complete": false
+  },
+  "regional_endings_complete": false,
+  "dedicated_opening_poses_created": false
+}

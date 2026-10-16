@@ -1,0 +1,157 @@
+tools/mapjson/mapjson event_constants firered <MAP_JSONS> include/constants/map_event_ids.h
+tools/scaninc/scaninc -M build/titlev8qa/data/event_scripts.d -I include -I "" data/event_scripts.s
+tools/scaninc/scaninc -M build/titlev8qa/src/wild_encounter.d -I include -I tools/agbcc/include src/wild_encounter.c
+tools/scaninc/scaninc -M build/titlev8qa/src/vs_seeker.d -I include -I tools/agbcc/include src/vs_seeker.c
+tools/scaninc/scaninc -M build/titlev8qa/src/union_room_player_avatar.d -I include -I tools/agbcc/include src/union_room_player_avatar.c
+tools/scaninc/scaninc -M build/titlev8qa/src/union_room_chat.d -I include -I tools/agbcc/include src/union_room_chat.c
+tools/scaninc/scaninc -M build/titlev8qa/src/union_room.d -I include -I tools/agbcc/include src/union_room.c
+tools/scaninc/scaninc -M build/titlev8qa/src/trainer_tower.d -I include -I tools/agbcc/include src/trainer_tower.c
+tools/scaninc/scaninc -M build/titlev8qa/src/trainer_see.d -I include -I tools/agbcc/include src/trainer_see.c
+tools/scaninc/scaninc -M build/titlev8qa/src/trade_scene.d -I include -I tools/agbcc/include src/trade_scene.c
+tools/scaninc/scaninc -M build/titlev8qa/src/text.d -I include -I tools/agbcc/include src/text.c
+tools/scaninc/scaninc -M build/titlev8qa/src/teachy_tv.d -I include -I tools/agbcc/include src/teachy_tv.c
+tools/scaninc/scaninc -M build/titlev8qa/src/start_menu.d -I include -I tools/agbcc/include src/start_menu.c
+tools/scaninc/scaninc -M build/titlev8qa/src/sound.d -I include -I tools/agbcc/include src/sound.c
+tools/scaninc/scaninc -M build/titlev8qa/src/slot_machine.d -I include -I tools/agbcc/include src/slot_machine.c
+tools/scaninc/scaninc -M build/titlev8qa/src/shop.d -I include -I tools/agbcc/include src/shop.c
+tools/scaninc/scaninc -M build/titlev8qa/src/script_movement.d -I include -I tools/agbcc/include src/script_movement.c
+tools/scaninc/scaninc -M build/titlev8qa/src/script_menu.d -I include -I tools/agbcc/include src/script_menu.c
+tools/scaninc/scaninc -M build/titlev8qa/src/script.d -I include -I tools/agbcc/include src/script.c
+tools/scaninc/scaninc -M build/titlev8qa/src/scrcmd.d -I include -I tools/agbcc/include src/scrcmd.c
+tools/scaninc/scaninc -M build/titlev8qa/src/rotating_tile_puzzle.d -I include -I tools/agbcc/include src/rotating_tile_puzzle.c
+tools/scaninc/scaninc -M build/titlev8qa/src/region_map.d -I include -I tools/agbcc/include src/region_map.c
+tools/scaninc/scaninc -M build/titlev8qa/src/quest_log_player.d -I include -I tools/agbcc/include src/quest_log_player.c
+tools/scaninc/scaninc -M build/titlev8qa/src/quest_log_objects.d -I include -I tools/agbcc/include src/quest_log_objects.c
+tools/scaninc/scaninc -M build/titlev8qa/src/quest_log_events.d -I include -I tools/agbcc/include src/quest_log_events.c
+tools/scaninc/scaninc -M build/titlev8qa/src/quest_log.d -I include -I tools/agbcc/include src/quest_log.c
+tools/scaninc/scaninc -M build/titlev8qa/src/quest_log_battle.d -I include -I tools/agbcc/include src/quest_log_battle.c
+tools/scaninc/scaninc -M build/titlev8qa/src/pokemon_storage_system_tasks.d -I include -I tools/agbcc/include src/pokemon_storage_system_tasks.c
+tools/scaninc/scaninc -M build/titlev8qa/src/pokemon_storage_system_misc.d -I include -I tools/agbcc/include src/pokemon_storage_system_misc.c
+tools/scaninc/scaninc -M build/titlev8qa/src/pokemon_storage_system_menu.d -I include -I tools/agbcc/include src/pokemon_storage_system_menu.c
+tools/scaninc/scaninc -M build/titlev8qa/src/pokemon_storage_system_graphics.d -I include -I tools/agbcc/include src/pokemon_storage_system_graphics.c
+tools/scaninc/scaninc -M build/titlev8qa/src/pokemon_storage_system_data.d -I include -I tools/agbcc/include src/pokemon_storage_system_data.c
+tools/scaninc/scaninc -M build/titlev8qa/src/pokemon_storage_system.d -I include -I tools/agbcc/include src/pokemon_storage_system.c
+tools/scaninc/scaninc -M build/titlev8qa/src/party_menu.d -I include -I tools/agbcc/include src/party_menu.c
+tools/scaninc/scaninc -M build/titlev8qa/src/overworld.d -I include -I tools/agbcc/include src/overworld.c
+tools/scaninc/scaninc -M build/titlev8qa/src/new_menu_helpers.d -I include -I tools/agbcc/include src/new_menu_helpers.c
+tools/scaninc/scaninc -M build/titlev8qa/src/new_game.d -I include -I tools/agbcc/include src/new_game.c
+tools/scaninc/scaninc -M build/titlev8qa/src/naming_screen.d -I include -I tools/agbcc/include src/naming_screen.c
+tools/scaninc/scaninc -M build/titlev8qa/src/map_preview_screen.d -I include -I tools/agbcc/include src/map_preview_screen.c
+tools/scaninc/scaninc -M build/titlev8qa/src/map_name_popup.d -I include -I tools/agbcc/include src/map_name_popup.c
+tools/scaninc/scaninc -M build/titlev8qa/src/main_menu.d -I include -I tools/agbcc/include src/main_menu.c
+tools/scaninc/scaninc -M build/titlev8qa/src/main.d -I include -I tools/agbcc/include src/main.c
+tools/scaninc/scaninc -M build/titlev8qa/src/load_save.d -I include -I tools/agbcc/include src/load_save.c
+tools/scaninc/scaninc -M build/titlev8qa/src/link_rfu_2.d -I include -I tools/agbcc/include src/link_rfu_2.c
+tools/scaninc/scaninc -M build/titlev8qa/src/link.d -I include -I tools/agbcc/include src/link.c
+tools/scaninc/scaninc -M build/titlev8qa/src/item_use.d -I include -I tools/agbcc/include src/item_use.c
+tools/scaninc/scaninc -M build/titlev8qa/src/item.d -I include -I tools/agbcc/include src/item.c
+tools/scaninc/scaninc -M build/titlev8qa/src/help_system.d -I include -I tools/agbcc/include src/help_system.c
+tools/scaninc/scaninc -M build/titlev8qa/src/heal_location.d -I include -I tools/agbcc/include src/heal_location.c
+tools/scaninc/scaninc -M build/titlev8qa/src/hall_of_fame.d -I include -I tools/agbcc/include src/hall_of_fame.c
+tools/scaninc/scaninc -M build/titlev8qa/src/follower_pikachu.d -I include -I tools/agbcc/include src/follower_pikachu.c
+tools/scaninc/scaninc -M build/titlev8qa/src/fldeff_strength.d -I include -I tools/agbcc/include src/fldeff_strength.c
+tools/scaninc/scaninc -M build/titlev8qa/src/fldeff_rocksmash.d -I include -I tools/agbcc/include src/fldeff_rocksmash.c
+tools/scaninc/scaninc -M build/titlev8qa/src/fldeff_cut.d -I include -I tools/agbcc/include src/fldeff_cut.c
+tools/scaninc/scaninc -M build/titlev8qa/src/field_tasks.d -I include -I tools/agbcc/include src/field_tasks.c
+tools/scaninc/scaninc -M build/titlev8qa/src/field_specials.d -I include -I tools/agbcc/include src/field_specials.c
+tools/scaninc/scaninc -M build/titlev8qa/src/field_player_avatar.d -I include -I tools/agbcc/include src/field_player_avatar.c
+tools/scaninc/scaninc -M build/titlev8qa/src/field_message_box.d -I include -I tools/agbcc/include src/field_message_box.c
+tools/scaninc/scaninc -M build/titlev8qa/src/fieldmap.d -I include -I tools/agbcc/include src/fieldmap.c
+tools/scaninc/scaninc -M build/titlev8qa/src/field_fadetransition.d -I include -I tools/agbcc/include src/field_fadetransition.c
+tools/scaninc/scaninc -M build/titlev8qa/src/field_effect_helpers.d -I include -I tools/agbcc/include src/field_effect_helpers.c
+tools/scaninc/scaninc -M build/titlev8qa/src/field_effect.d -I include -I tools/agbcc/include src/field_effect.c
+tools/scaninc/scaninc -M build/titlev8qa/src/field_control_avatar.d -I include -I tools/agbcc/include src/field_control_avatar.c
+tools/scaninc/scaninc -M build/titlev8qa/src/fame_checker.d -I include -I tools/agbcc/include src/fame_checker.c
+tools/scaninc/scaninc -M build/titlev8qa/src/event_object_movement.d -I include -I tools/agbcc/include src/event_object_movement.c
+tools/scaninc/scaninc -M build/titlev8qa/src/event_object_lock.d -I include -I tools/agbcc/include src/event_object_lock.c
+tools/scaninc/scaninc -M build/titlev8qa/src/event_data.d -I include -I tools/agbcc/include src/event_data.c
+tools/scaninc/scaninc -M build/titlev8qa/src/dynamic_placeholder_text_util.d -I include -I tools/agbcc/include src/dynamic_placeholder_text_util.c
+tools/scaninc/scaninc -M build/titlev8qa/src/decoration.d -I include -I tools/agbcc/include src/decoration.c
+tools/scaninc/scaninc -M build/titlev8qa/src/credits.d -I include -I tools/agbcc/include src/credits.c
+tools/scaninc/scaninc -M build/titlev8qa/src/cable_club.d -I include -I tools/agbcc/include src/cable_club.c
+tools/scaninc/scaninc -M build/titlev8qa/src/berry_powder.d -I include -I tools/agbcc/include src/berry_powder.c
+tools/scaninc/scaninc -M build/titlev8qa/src/battle_tower.d -I include -I tools/agbcc/include src/battle_tower.c
+tools/scaninc/scaninc -M build/titlev8qa/src/battle_setup.d -I include -I tools/agbcc/include src/battle_setup.c
+tools/scaninc/scaninc -M build/titlev8qa/src/battle_main.d -I include -I tools/agbcc/include src/battle_main.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/battle_main.o src/battle_main.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/battle_setup.o src/battle_setup.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/battle_tower.o src/battle_tower.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/berry_powder.o src/berry_powder.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/cable_club.o src/cable_club.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/credits.o src/credits.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/decoration.o src/decoration.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/dynamic_placeholder_text_util.o src/dynamic_placeholder_text_util.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/event_data.o src/event_data.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/event_object_lock.o src/event_object_lock.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/event_object_movement.o src/event_object_movement.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/fame_checker.o src/fame_checker.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_control_avatar.o src/field_control_avatar.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_effect.o src/field_effect.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_effect_helpers.o src/field_effect_helpers.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_fadetransition.o src/field_fadetransition.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/fieldmap.o src/fieldmap.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_message_box.o src/field_message_box.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_player_avatar.o src/field_player_avatar.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_specials.o src/field_specials.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_tasks.o src/field_tasks.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/fldeff_cut.o src/fldeff_cut.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/fldeff_rocksmash.o src/fldeff_rocksmash.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/fldeff_strength.o src/fldeff_strength.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/follower_pikachu.o src/follower_pikachu.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/hall_of_fame.o src/hall_of_fame.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/heal_location.o src/heal_location.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/help_system.o src/help_system.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/item.o src/item.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/item_use.o src/item_use.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/link.o src/link.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/link_rfu_2.o src/link_rfu_2.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/load_save.o src/load_save.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/main.o src/main.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/main_menu.o src/main_menu.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/map_name_popup.o src/map_name_popup.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/map_preview_screen.o src/map_preview_screen.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/naming_screen.o src/naming_screen.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/new_game.o src/new_game.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/new_menu_helpers.o src/new_menu_helpers.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/overworld.o src/overworld.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/party_menu.o src/party_menu.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/pokemon_storage_system.o src/pokemon_storage_system.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/pokemon_storage_system_data.o src/pokemon_storage_system_data.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/pokemon_storage_system_graphics.o src/pokemon_storage_system_graphics.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/pokemon_storage_system_menu.o src/pokemon_storage_system_menu.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/pokemon_storage_system_misc.o src/pokemon_storage_system_misc.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/pokemon_storage_system_tasks.o src/pokemon_storage_system_tasks.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/quest_log_battle.o src/quest_log_battle.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/quest_log.o src/quest_log.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/quest_log_events.o src/quest_log_events.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/quest_log_objects.o src/quest_log_objects.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/quest_log_player.o src/quest_log_player.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/region_map.o src/region_map.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/rotating_tile_puzzle.o src/rotating_tile_puzzle.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/scrcmd.o src/scrcmd.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/script.o src/script.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/script_menu.o src/script_menu.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/script_movement.o src/script_movement.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/shop.o src/shop.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/slot_machine.o src/slot_machine.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/sound.o src/sound.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/start_menu.o src/start_menu.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/teachy_tv.o src/teachy_tv.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/text.o src/text.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/trade_scene.o src/trade_scene.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/trainer_see.o src/trainer_see.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/trainer_tower.o src/trainer_tower.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/union_room.o src/union_room.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/union_room_chat.o src/union_room_chat.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/union_room_player_avatar.o src/union_room_player_avatar.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/vs_seeker.o src/vs_seeker.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/wild_encounter.o src/wild_encounter.c
+tools/preproc/preproc data/event_scripts.s charmap.txt | cc -E -I include - | tools/preproc/preproc -ie data/event_scripts.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build/titlev8qa/data/event_scripts.o
+tools/mapjson/mapjson map firered data/maps/VictoryRoad_B1F/map.json data/layouts/layouts.json data/maps/VictoryRoad_B1F
+tools/ramscrgen/ramscrgen COMMON sym_common.txt ENGLISH -c build/titlev8qa/src,common_syms > build/titlev8qa/sym_common.ld
+tools/preproc/preproc data/map_events.s charmap.txt | cc -E -I include -nostdinc -undef -Wno-unicode - | tools/preproc/preproc -ie data/map_events.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build/titlev8qa/data/map_events.o
+Assembler messages:
+data/scripts/field_moves.inc:62: Error: bad instruction `special_result 0x800D,CanUseRockSmashAtCurrentMap'
+data/scripts/field_moves.inc:123: Error: bad instruction `special_result 0x800D,CanUseStrengthAtCurrentMap'
+make: *** [Makefile:351: build/titlev8qa/data/event_scripts.o] Error 1
+make: *** Waiting for unfinished jobs....

@@ -834,18 +834,18 @@ static const struct TrainerMonNoItemDefaultMoves sHoennParty_BrendanRoute110Mudk
 static const struct TrainerMonNoItemDefaultMoves sHoennParty_BrendanRoute110Torchic[] = {
     {
     .iv = 50,
-    .lvl = 18,
-    .species = SPECIES_LOMBRE,
+    .lvl = 64,
+    .species = SPECIES_LUDICOLO,
     },
     {
     .iv = 50,
-    .lvl = 18,
-    .species = SPECIES_SLUGMA,
+    .lvl = 65,
+    .species = SPECIES_MAGCARGO,
     },
     {
     .iv = 100,
-    .lvl = 20,
-    .species = SPECIES_MARSHTOMP,
+    .lvl = 67,
+    .species = SPECIES_SWAMPERT,
     }
 };
 
@@ -888,18 +888,23 @@ static const struct TrainerMonNoItemDefaultMoves sHoennParty_BrendanRoute119Mudk
 static const struct TrainerMonNoItemDefaultMoves sHoennParty_BrendanRoute119Torchic[] = {
     {
     .iv = 100,
-    .lvl = 29,
-    .species = SPECIES_LOMBRE,
+    .lvl = 66,
+    .species = SPECIES_PELIPPER,
     },
     {
     .iv = 100,
-    .lvl = 29,
-    .species = SPECIES_SLUGMA,
+    .lvl = 67,
+    .species = SPECIES_LUDICOLO,
+    },
+    {
+    .iv = 100,
+    .lvl = 67,
+    .species = SPECIES_MAGCARGO,
     },
     {
     .iv = 150,
-    .lvl = 31,
-    .species = SPECIES_MARSHTOMP,
+    .lvl = 69,
+    .species = SPECIES_SWAMPERT,
     }
 };
 
@@ -4692,18 +4697,18 @@ static const struct TrainerMonNoItemDefaultMoves sHoennParty_MayRoute110Mudkip[]
 static const struct TrainerMonNoItemDefaultMoves sHoennParty_MayRoute110Torchic[] = {
     {
     .iv = 50,
-    .lvl = 18,
-    .species = SPECIES_LOMBRE,
+    .lvl = 64,
+    .species = SPECIES_LUDICOLO,
     },
     {
     .iv = 50,
-    .lvl = 18,
-    .species = SPECIES_SLUGMA,
+    .lvl = 65,
+    .species = SPECIES_MAGCARGO,
     },
     {
     .iv = 100,
-    .lvl = 20,
-    .species = SPECIES_MARSHTOMP,
+    .lvl = 67,
+    .species = SPECIES_SWAMPERT,
     }
 };
 
@@ -4746,18 +4751,23 @@ static const struct TrainerMonNoItemDefaultMoves sHoennParty_MayRoute119Mudkip[]
 static const struct TrainerMonNoItemDefaultMoves sHoennParty_MayRoute119Torchic[] = {
     {
     .iv = 100,
-    .lvl = 29,
-    .species = SPECIES_LOMBRE,
+    .lvl = 66,
+    .species = SPECIES_PELIPPER,
     },
     {
     .iv = 100,
-    .lvl = 29,
-    .species = SPECIES_SLUGMA,
+    .lvl = 67,
+    .species = SPECIES_LUDICOLO,
+    },
+    {
+    .iv = 100,
+    .lvl = 67,
+    .species = SPECIES_MAGCARGO,
     },
     {
     .iv = 150,
-    .lvl = 31,
-    .species = SPECIES_MARSHTOMP,
+    .lvl = 69,
+    .species = SPECIES_SWAMPERT,
     }
 };
 
@@ -5088,28 +5098,28 @@ static const struct TrainerMonNoItemDefaultMoves sHoennParty_Nolen[] = {
 static const struct TrainerMonItemCustomMoves sHoennParty_Norman1[] = {
     {
     .iv = 200,
-    .lvl = 27,
+    .lvl = 68,
     .species = SPECIES_SPINDA,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_TEETER_DANCE, MOVE_PSYBEAM, MOVE_FACADE, MOVE_ENCORE}
     },
     {
     .iv = 200,
-    .lvl = 27,
+    .lvl = 68,
     .species = SPECIES_VIGOROTH,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_SLASH, MOVE_FACADE, MOVE_ENCORE, MOVE_FAINT_ATTACK}
     },
     {
     .iv = 200,
-    .lvl = 29,
+    .lvl = 70,
     .species = SPECIES_LINOONE,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_SLASH, MOVE_BELLY_DRUM, MOVE_FACADE, MOVE_HEADBUTT}
     },
     {
     .iv = 250,
-    .lvl = 31,
+    .lvl = 72,
     .species = SPECIES_SLAKING,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_COUNTER, MOVE_YAWN, MOVE_FACADE, MOVE_FAINT_ATTACK}
@@ -6748,3 +6758,5 @@ static const struct TrainerMonNoItemDefaultMoves sHoennParty_Zander[] = {
     .species = SPECIES_HARIYAMA,
     }
 };
+
+#include "trainer_parties_misty_companion.h"

@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/native_dive_qa.py", line 10, in <module>
+    DIVE=const('MOVE_DIVE'); SURF=const('PLAYER_AVATAR_FLAG_SURFING'); UW=const('PLAYER_AVATAR_FLAG_UNDERWATER')
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/gamedata.py", line 205, in const
+    return consts([s])[s]
+           ^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/gamedata.py", line 181, in consts
+    _CONST_CACHE[n] = _c_eval(val)
+                      ^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/gamedata.py", line 160, in _c_eval
+    return int(eval(expr, {'__builtins__': {}}, {}))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+NameError: name 'PLAYER_AVATAR_STATE_SURFING' is not defined

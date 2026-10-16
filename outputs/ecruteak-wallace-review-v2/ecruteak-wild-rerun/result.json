@@ -1,0 +1,77 @@
+{
+  "rom_sha256": "c139724c9b8d94a1195cb0386ced634a0012377f2ee7f3e86b6267259cf8068b",
+  "cases": [
+    {
+      "case": "sudowoodo_win",
+      "turns": 1,
+      "outcome": 1,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-wild-rerun/sudowoodo_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "native_capture": false,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "sudowoodo_loss",
+      "turns": 1,
+      "outcome": 2,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-wild-rerun/sudowoodo_loss-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "native_capture": false,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "sudowoodo_run",
+      "turns": 0,
+      "outcome": 4,
+      "save": {
+        "counter": [
+          60,
+          61
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-wild-rerun/sudowoodo_run-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "native_capture": false,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "sudowoodo_catch",
+      "turns": 0,
+      "outcome": 7,
+      "save": {
+        "counter": [
+          61,
+          62
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/ecruteak-wallace-review-v2/ecruteak-wild-rerun/sudowoodo_catch-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "native_capture": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    }
+  ],
+  "all_pass": true,
+  "original_files_unchanged": true,
+  "forced_memory_writes": 0,
+  "forced_battle_outcomes": 0
+}

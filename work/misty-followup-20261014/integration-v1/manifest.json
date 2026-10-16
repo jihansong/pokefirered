@@ -1,0 +1,95 @@
+{
+  "files": {
+    "src/data/trainer_parties_misty_companion.h": {
+      "before_sha256": "6ad995096af0b4240270a6ebdbfaa1954d7d6f19c76fa2e9171ede20401243f7",
+      "after_sha256": "6154dd0af98afe14caa9c7e77f38fad2124724c17d11a804cdef2b911e2114a3",
+      "bytes": 3625
+    },
+    "data/maps/CeruleanCity_Gym/map.json": {
+      "before_sha256": "6e83c05d4afc16de9bdcb90becb4273dcc83c00e1d54510dde8c44ecaed2a17d",
+      "after_sha256": "881250d853c6b5d79da20ee8cef8eff9ec4017fc07d31a26c877230626d4c965",
+      "bytes": 4877
+    },
+    "data/maps/CeruleanCity_Gym/scripts.inc": {
+      "before_sha256": "d9eaa95074de6691aa09f4e866439a0782f46b2da7e3bd8a428eff094d8af61b",
+      "after_sha256": "5bdd3c76e50c2901e1c25c37be2f7b194b024a2d34caca1a722baa5d78382db7",
+      "bytes": 5692
+    },
+    "src/field_control_avatar.c": {
+      "before_sha256": "053834c29a0ca9172ab9b1f3cf46b85a8d997ae9c1777845923f0a526ec5f115",
+      "after_sha256": "828d074e3fa7ba29176f6e27735ea7e75d68ed2cc49920a2e861f248cf6322e3",
+      "bytes": 46663
+    },
+    "data/maps/CeruleanCity/scripts.inc": {
+      "before_sha256": "a5babee98011be437586ad4d50bd5cca90f24e77ea49efd7754ca3ef7e608a3b",
+      "after_sha256": "e57ae952ff38e4fc8b549309fef67c6aa7662da6b18fbb57a9166e32d21bc6e9",
+      "bytes": 9171
+    },
+    "data/maps/CeruleanCity/text.inc": {
+      "before_sha256": "0c563fd3540f9a2e6e27dd9c64f580e00ff1002411138c1c9d5c5b2fd33e383e",
+      "after_sha256": "61b1eb011ad0a297a09bbadd8ef663d627a3cc92bf2bd2f9331489bfe941a74a",
+      "bytes": 6164
+    },
+    "include/constants/field_effects.h": {
+      "before_sha256": "ea4276af2ba5997c7639df6629ca7cebcc61f308b62c43ceabbfc7dd744473f0",
+      "after_sha256": "a8ab8cfbe04d853cf5bacf3f07eef0a02ee7bc0cb1b4e4bfc445f9f425e1b74f",
+      "bytes": 5153
+    },
+    "data/field_effect_scripts.s": {
+      "before_sha256": "ebcc3ca762e1c9a6da8a455368651155f4c1d7058a7b0da3b4fcb9b3bbdc9c6e",
+      "after_sha256": "ba7263073f6ea41f6cc9cefafb16f05bdf49d5ed9aab9f7693c840bb4c639312",
+      "bytes": 10961
+    },
+    "data/scripts/companion_misty.inc": {
+      "before_sha256": "7b8645e76bd8fbaafda91ad38eca19a7ad211cb195eb52840131454612049371",
+      "after_sha256": "01ab247df9e5ee7ed2588ef9df17f49e920c5d12739b9ac2ddfc149a8f5f9b43",
+      "bytes": 7273
+    },
+    "src/misty_heart.c": {
+      "before_sha256": null,
+      "after_sha256": "3a4e219920b83daf22aaffe3be13faac36765b03af44f2e8457a0a41ec9082d2",
+      "bytes": 4918
+    },
+    "include/constants/event_objects.h": {
+      "before_sha256": "6176d1e7aa38e6a62aa45dbd4acd1af989f0b66981aaa7518ad3e2fd4d0cf388",
+      "after_sha256": "5fbf0becb7920786392f799dc192b61dc41d6555364e36402acbe4c4f7b1990e"
+    },
+    "src/data/object_events/object_event_graphics.h": {
+      "before_sha256": "f30483c7470fad41f8b7e973854264fa9c30db85d7207a7c6fe86c8b7455da4f",
+      "after_sha256": "70455e68082d7d002b3107a4e00b83c36d1ec2ab41597ad666f3620564ac95ac"
+    },
+    "src/data/object_events/object_event_pic_tables.h": {
+      "before_sha256": "6fd641a20ce078ceb76c6eabbd32e0e857d5c3e2390401b5f8557b57cd75477b",
+      "after_sha256": "aed387f4d301bbf7270cc72e2a188413a3503a469293b6ba6d44d30dd8ceae0a"
+    },
+    "src/data/object_events/object_event_graphics_info.h": {
+      "before_sha256": "3ad811286be7b006589bcfa69f4d8db90007735190bd24fe2a45ae4c31615706",
+      "after_sha256": "1d5faf4e76c51ad0fbe5ade0bc15a02ff26e7c78769168d5cba26d4f58fe59a6"
+    },
+    "src/data/object_events/object_event_graphics_info_pointers.h": {
+      "before_sha256": "09119ab7961671f59494973db80c5b9440fea42fb7cd9f915e8e6a5a96d2fded",
+      "after_sha256": "8471b1a9ac7b0f839b59e35861d79da90d82bec6a1356ab53647dd416abdc54c"
+    },
+    "graphics_file_rules.mk": {
+      "before_sha256": "2264bc83d9af562984eb3a94673b7b10525d3b57df4604e53f115ce788429986",
+      "after_sha256": "b834fcde208557ec64329d8b481b032eac01894ef7aef48894f9d9453a47b74d"
+    },
+    "data/maps/PalletTown/map.json": {
+      "before_sha256": "d8bcfec1665997aab5d0e48519509d492b5d59e192c0328c08a6fd54cc5c5967",
+      "after_sha256": "935bcd9d66afc8154af8e79c25115860744667559752e302dddd03e762ab9028"
+    },
+    "graphics/object_events/pics/people/misty_companion_season1.png": {
+      "before_sha256": null,
+      "after_sha256": "d4c139c593480d915ef2052fe47b427f46dc266f6230942da96384336791a31d"
+    },
+    "src/companion_misty.c": {
+      "before_sha256": "e32b46b1e3d9159add1aa4d07f4f5dc92a18f1b6fbd174e184059fff425394fd",
+      "after_sha256": "7acf4b9a66101a46687c71b3563f942c712990844c0c2927fc2afa797a8692d9",
+      "bytes": 12045
+    }
+  },
+  "product_applied": false,
+  "native_execution": "NOT_RUN",
+  "source_count": 19,
+  "cold_companion_merge_pending": false
+}

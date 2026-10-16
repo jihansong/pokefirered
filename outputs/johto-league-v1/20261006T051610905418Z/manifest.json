@@ -1,0 +1,488 @@
+{
+  "time": "20261006T051610905418Z",
+  "validation": {
+    "chapter": "Johto independent Indigo challenge",
+    "save_layout_changed": false,
+    "native_build_and_emulator": "NOT_RUN_BY_GENERATOR",
+    "visual_limits": [
+      "Reused native Kanto tiles and class portraits."
+    ],
+    "not_implemented": [
+      "Optional Route45/46 loop",
+      "Whirl Islands and Bell Tower side quests"
+    ],
+    "new_maps": [
+      "JohtoRoute27",
+      "TohjoFalls",
+      "JohtoRoute26",
+      "JohtoVictoryRoad_1F",
+      "JohtoIndigoPlateau",
+      "JohtoLeague_PokemonCenter_1F",
+      "JohtoLeague_WillsRoom",
+      "JohtoLeague_KogasRoom",
+      "JohtoLeague_BrunosRoom",
+      "JohtoLeague_KarensRoom",
+      "JohtoLeague_LancesRoom",
+      "JohtoLeague_HallOfFame"
+    ],
+    "new_flags": {
+      "FLAG_JOHTO_SILVER_LEAGUE_RESOLVED": 63,
+      "FLAG_JOHTO_WILL_CLEARED": 64,
+      "FLAG_JOHTO_KOGA_CLEARED": 65,
+      "FLAG_JOHTO_BRUNO_CLEARED": 66,
+      "FLAG_JOHTO_KAREN_CLEARED": 67,
+      "FLAG_JOHTO_LANCE_CHAMPION_CLEARED": 68,
+      "FLAG_JOHTO_LEAGUE_CLEARED": 69,
+      "FLAG_JOHTO_LEAGUE_ARRIVED": 70
+    },
+    "trainer_ids": {
+      "SILVER_VICTORY_ROAD": 880,
+      "WILL": 881,
+      "KOGA": 882,
+      "BRUNO": 883,
+      "KAREN": 884,
+      "LANCE_CHAMPION": 885
+    },
+    "johto_map_count": 124,
+    "static_checks": [
+      {
+        "map": "JohtoRoute27",
+        "reachable_tiles": 873,
+        "buffer_metatiles": 2360,
+        "native_warps": 1
+      },
+      {
+        "map": "TohjoFalls",
+        "reachable_tiles": 332,
+        "buffer_metatiles": 1476,
+        "native_warps": 2
+      },
+      {
+        "map": "JohtoRoute26",
+        "reachable_tiles": 1010,
+        "buffer_metatiles": 2550,
+        "native_warps": 2
+      },
+      {
+        "map": "JohtoVictoryRoad_1F",
+        "reachable_tiles": 671,
+        "buffer_metatiles": 1974,
+        "native_warps": 2
+      },
+      {
+        "map": "JohtoIndigoPlateau",
+        "reachable_tiles": 66,
+        "buffer_metatiles": 1326,
+        "native_warps": 2
+      },
+      {
+        "map": "JohtoLeague_PokemonCenter_1F",
+        "reachable_tiles": 85,
+        "buffer_metatiles": 720,
+        "native_warps": 3
+      },
+      {
+        "map": "JohtoLeague_WillsRoom",
+        "reachable_tiles": 99,
+        "buffer_metatiles": 756,
+        "native_warps": 1
+      },
+      {
+        "map": "JohtoLeague_KogasRoom",
+        "reachable_tiles": 99,
+        "buffer_metatiles": 756,
+        "native_warps": 1
+      },
+      {
+        "map": "JohtoLeague_BrunosRoom",
+        "reachable_tiles": 99,
+        "buffer_metatiles": 756,
+        "native_warps": 1
+      },
+      {
+        "map": "JohtoLeague_KarensRoom",
+        "reachable_tiles": 99,
+        "buffer_metatiles": 756,
+        "native_warps": 1
+      },
+      {
+        "map": "JohtoLeague_LancesRoom",
+        "reachable_tiles": 99,
+        "buffer_metatiles": 756,
+        "native_warps": 1
+      },
+      {
+        "map": "JohtoLeague_HallOfFame",
+        "reachable_tiles": 112,
+        "buffer_metatiles": 702,
+        "native_warps": 1
+      }
+    ],
+    "native_warp_behaviors_checked": 18,
+    "map_section_count": 241,
+    "signed_map_num_max": 123,
+    "fly_destinations_total": 11
+  },
+  "files": {
+    "data/maps/map_groups.json": {
+      "before": "334f7a8cc10293f92fd6ab5b6bdc1868c83bb8bccef53aa46da5fa7b9e5dd464",
+      "after": "b3213c388b45f25af44b1a0ab80d3ef47676d919df2ac5ffd308a6967bd30f5d"
+    },
+    "data/layouts/JohtoRoute27/map.bin": {
+      "before": null,
+      "after": "c8c727173b4209bf6cd47b1cf148ac813ffd25a3714eed1f9ecf3ec53397d9f4"
+    },
+    "data/layouts/JohtoRoute27/border.bin": {
+      "before": null,
+      "after": "bd05db219b1304364f4d1c265db9cece1af50fb2332d9f39357fdc8d721dc449"
+    },
+    "data/layouts/TohjoFalls/map.bin": {
+      "before": null,
+      "after": "63ae01d21d19e54cb99ce1186a0c239ce56b4953d8279d73a0721f24837fa875"
+    },
+    "data/layouts/TohjoFalls/border.bin": {
+      "before": null,
+      "after": "379f8d1e17cb9bcad3a11243c396f7ba3e3095d10727d201c0e7b49ecdad94b5"
+    },
+    "data/layouts/JohtoRoute26/map.bin": {
+      "before": null,
+      "after": "5d46f626eebb1d6fc1a1a5ef0411cdef221df0cf08dd55e6869aad4cbaf2d241"
+    },
+    "data/layouts/JohtoRoute26/border.bin": {
+      "before": null,
+      "after": "bd05db219b1304364f4d1c265db9cece1af50fb2332d9f39357fdc8d721dc449"
+    },
+    "data/layouts/JohtoVictoryRoad_1F/map.bin": {
+      "before": null,
+      "after": "15eb75abcfa9cf87ffeb5c30c15ce98e41ce7d6687ecba53a75b8ef16a9c1bf6"
+    },
+    "data/layouts/JohtoVictoryRoad_1F/border.bin": {
+      "before": null,
+      "after": "379f8d1e17cb9bcad3a11243c396f7ba3e3095d10727d201c0e7b49ecdad94b5"
+    },
+    "data/layouts/JohtoIndigoPlateau/map.bin": {
+      "before": null,
+      "after": "84e69d023e0df01941827147dc075ab300a2f39c9d642253c9850a1cfad1b549"
+    },
+    "data/layouts/JohtoIndigoPlateau/border.bin": {
+      "before": null,
+      "after": "bd05db219b1304364f4d1c265db9cece1af50fb2332d9f39357fdc8d721dc449"
+    },
+    "data/layouts/JohtoLeague_PokemonCenter_1F/map.bin": {
+      "before": null,
+      "after": "e7e58fd4ad189d2392dfac2b6096570d781c4efa94761060051002df25d4ded3"
+    },
+    "data/layouts/JohtoLeague_PokemonCenter_1F/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/JohtoLeague_WillsRoom/map.bin": {
+      "before": null,
+      "after": "3b46bbcf79c1cced0b598c88a929638faaf6695697759e523e7b5c43063b9083"
+    },
+    "data/layouts/JohtoLeague_WillsRoom/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/JohtoLeague_KogasRoom/map.bin": {
+      "before": null,
+      "after": "aa2db70cd6ed0a36c675cc3b484908af0718f79747c87aab2fe9a58e838f2303"
+    },
+    "data/layouts/JohtoLeague_KogasRoom/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/JohtoLeague_BrunosRoom/map.bin": {
+      "before": null,
+      "after": "a8652f9cb9c7b06a7d770119065e2dd5207062da07fc3fdaee91ae2cc4859771"
+    },
+    "data/layouts/JohtoLeague_BrunosRoom/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/JohtoLeague_KarensRoom/map.bin": {
+      "before": null,
+      "after": "aa2db70cd6ed0a36c675cc3b484908af0718f79747c87aab2fe9a58e838f2303"
+    },
+    "data/layouts/JohtoLeague_KarensRoom/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/JohtoLeague_LancesRoom/map.bin": {
+      "before": null,
+      "after": "3b46bbcf79c1cced0b598c88a929638faaf6695697759e523e7b5c43063b9083"
+    },
+    "data/layouts/JohtoLeague_LancesRoom/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/JohtoLeague_HallOfFame/map.bin": {
+      "before": null,
+      "after": "1ab1f70bc71c3b452e0acdb3fd43dbbae5bae788eedd1630c8c58b2e6bb3dd01"
+    },
+    "data/layouts/JohtoLeague_HallOfFame/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/layouts.json": {
+      "before": "fb470d20d2cd75f319f59b2430cef9a2f57151b9e496482e6bcf86684d4efe8a",
+      "after": "b0363d28273ccbf545e024920169d4dcb30da43e70822e10000c681778078b9b"
+    },
+    "data/maps/JohtoRoute27/map.json": {
+      "before": null,
+      "after": "85634fb76370c64d5b46771cfc9ae3543e42b49bc0e8c68ba7819a4e3fe13c08"
+    },
+    "data/maps/JohtoRoute27/scripts.inc": {
+      "before": null,
+      "after": "9b3137badda1d0f0a601795c3571d15535c3905cb16317977b1ba13256b3ddff"
+    },
+    "data/maps/JohtoRoute27/text.inc": {
+      "before": null,
+      "after": "c422fa14e2251206b40b48679c822c5568a35c57e4285bbbcaf0325150bb6ed5"
+    },
+    "data/maps/TohjoFalls/map.json": {
+      "before": null,
+      "after": "8184b3390aa7df5740be67ae291df1971cab107c2d55799c6f4bb23b6660a7f2"
+    },
+    "data/maps/TohjoFalls/scripts.inc": {
+      "before": null,
+      "after": "5306d3a5fdc1d89a5fda1f7c3c6062d64e9d73a9ed2e7a10ef67cdabc7d18a1d"
+    },
+    "data/maps/TohjoFalls/text.inc": {
+      "before": null,
+      "after": "b31e9688678903724d256b9f636a6825d9cb446dab81447f7360947f7cdc8432"
+    },
+    "data/maps/JohtoRoute26/map.json": {
+      "before": null,
+      "after": "d139eda0cce690a892640a205e044461b43f42243dbde23fe3827a4c87e4aa1c"
+    },
+    "data/maps/JohtoRoute26/scripts.inc": {
+      "before": null,
+      "after": "1760923b35945883231c5bcc0a8d8c47a9ff9b09243a1594b45a2b391d7007ca"
+    },
+    "data/maps/JohtoRoute26/text.inc": {
+      "before": null,
+      "after": "b31e9688678903724d256b9f636a6825d9cb446dab81447f7360947f7cdc8432"
+    },
+    "data/maps/JohtoVictoryRoad_1F/map.json": {
+      "before": null,
+      "after": "ddb49877242d9f6819fcac0bbf56bbf324e4f918289b5442b5ab9abab82af97e"
+    },
+    "data/maps/JohtoVictoryRoad_1F/scripts.inc": {
+      "before": null,
+      "after": "46ad4094df5b229b8b1f84a68ba22348c16cfec4ad2f307fb9df2ead2f6b7c55"
+    },
+    "data/maps/JohtoVictoryRoad_1F/text.inc": {
+      "before": null,
+      "after": "ad464731205cacf1edc23c3fe0f3e5f8cff2499c97d52da4cb8b8f4e3bb6a0ec"
+    },
+    "data/maps/JohtoIndigoPlateau/map.json": {
+      "before": null,
+      "after": "08eaa44823acbca44b781938a01a1fd7d64bcdf3d3ac91db872602351a9006f0"
+    },
+    "data/maps/JohtoIndigoPlateau/scripts.inc": {
+      "before": null,
+      "after": "e6fc59d5365905762717a86d53c0d8ab7cb35308b22514af8396bca3fadf467c"
+    },
+    "data/maps/JohtoIndigoPlateau/text.inc": {
+      "before": null,
+      "after": "e4fb0592e0af63a91cfe3c73ef80d5dbf75e5d0b3a63c2907e3391d05b7a12e7"
+    },
+    "data/maps/JohtoLeague_PokemonCenter_1F/map.json": {
+      "before": null,
+      "after": "21237e268fc2a439c4acdb11412bc55111ae10aa8fd6323299bad05b2a3cbebc"
+    },
+    "data/maps/JohtoLeague_PokemonCenter_1F/scripts.inc": {
+      "before": null,
+      "after": "0b58ea8eaca2ccf87a86d8be89c9ec44467be7616fb9e5fed5d4ce36b547db0f"
+    },
+    "data/maps/JohtoLeague_PokemonCenter_1F/text.inc": {
+      "before": null,
+      "after": "ca078fd20da4ea2acc24c11583d025fc6367bd8aa8c9bb58b4e520da58bf9096"
+    },
+    "data/maps/JohtoLeague_WillsRoom/map.json": {
+      "before": null,
+      "after": "f10f457f397c5ea5a926a43a6d1beb436e6ae6f8fef11bcabd990980d7b70c28"
+    },
+    "data/maps/JohtoLeague_WillsRoom/scripts.inc": {
+      "before": null,
+      "after": "c24275934510f754cd4b1f23436097dd51482d9deb5c3c730df9f765250ec5da"
+    },
+    "data/maps/JohtoLeague_WillsRoom/text.inc": {
+      "before": null,
+      "after": "714ff7ed44cd8d4f2c49ddd4885f1f94d0772f5b356a3cd6a6a8ea47d219b54e"
+    },
+    "data/maps/JohtoLeague_KogasRoom/map.json": {
+      "before": null,
+      "after": "d2f3b233dc5e2d9879b1bc7d2d93da184f993d8727ac7d6c176cc6e23f76df9d"
+    },
+    "data/maps/JohtoLeague_KogasRoom/scripts.inc": {
+      "before": null,
+      "after": "8fb5216078a98f98021071633d246caea612eca2016d4e7b633ad0b89506285a"
+    },
+    "data/maps/JohtoLeague_KogasRoom/text.inc": {
+      "before": null,
+      "after": "e48f6f94e96992e3d8019eb513607096ca5de8ec16cb706f153e3661eab7fa60"
+    },
+    "data/maps/JohtoLeague_BrunosRoom/map.json": {
+      "before": null,
+      "after": "cf497310bba5a44dff14455898ae014727f1ddcda2dd0245cd8e9d89b4e9d511"
+    },
+    "data/maps/JohtoLeague_BrunosRoom/scripts.inc": {
+      "before": null,
+      "after": "b9937e790bc254b229531dda2929ec419f04d93b60f7211732485232eedf12c9"
+    },
+    "data/maps/JohtoLeague_BrunosRoom/text.inc": {
+      "before": null,
+      "after": "784349a2d85273804fde6ff78be5d2de9af8f1e75fb56517ce0698da38f15a0a"
+    },
+    "data/maps/JohtoLeague_KarensRoom/map.json": {
+      "before": null,
+      "after": "c77ed91c002cec82aadcad575a8d0d638ddc2ef8d6b614d9c2e0b1d3537220da"
+    },
+    "data/maps/JohtoLeague_KarensRoom/scripts.inc": {
+      "before": null,
+      "after": "cb8a3b00c346cb1c284a17a31ba6ef7d4486ec3448a00a44a9e52480a43845b3"
+    },
+    "data/maps/JohtoLeague_KarensRoom/text.inc": {
+      "before": null,
+      "after": "7e63e8c162ff6ad4cb08bc0adb6e7e6e6bcccded9ad73ebb50780c335073ceb6"
+    },
+    "data/maps/JohtoLeague_LancesRoom/map.json": {
+      "before": null,
+      "after": "dfe876ba3d48431559ce3e6dab3696e6bfe6c00bcb955276191185b55d9f16e9"
+    },
+    "data/maps/JohtoLeague_LancesRoom/scripts.inc": {
+      "before": null,
+      "after": "3b7b1a9d68d2214922b52f16ebd72cf5c0a809685ccaf1c3c9d5fe13ffbe3d74"
+    },
+    "data/maps/JohtoLeague_LancesRoom/text.inc": {
+      "before": null,
+      "after": "0ad08ba95c6491e7e2d472ee1e40338298903b745c015e2344d4327795371dad"
+    },
+    "data/maps/JohtoLeague_HallOfFame/map.json": {
+      "before": null,
+      "after": "85137ec797b59e7d3b9786a6a231dddb131a978058c651c4cdaa9d44beb48205"
+    },
+    "data/maps/JohtoLeague_HallOfFame/scripts.inc": {
+      "before": null,
+      "after": "90797d7d948ac2c4455bad74f3276fc2d801693c783f8956729240ea0985b0a4"
+    },
+    "data/maps/JohtoLeague_HallOfFame/text.inc": {
+      "before": null,
+      "after": "410e4ce3beb9ef24d0dac9e2bab0012ccd14cb63f72425c68caaba60918fe1d6"
+    },
+    "data/maps/NewBarkTown/map.json": {
+      "before": "f5926f973988383838b8a4cccb6b1f6a2cf0af0c2ff1e29a59273d90645dfee8",
+      "after": "81cdf8f69b17fa4a553299b6aa69e5f7e9902407e4f51b8a353d13ca21612b0c"
+    },
+    "data/layouts/NewBarkTown/map.bin": {
+      "before": "af15a84de2d5ca1f51c9aa5f8fd493167bc9ce8dd2b2057c03ed387278beeae3",
+      "after": "ec485c3937f083435ddb1d74d028fe267c893967726196f948feef1384fbeee9"
+    },
+    "src/data/heal_locations.json": {
+      "before": "c0c0a660b8503925bd24c2beffbc572e18e9387b762100ea8a910db94797fd07",
+      "after": "d737ae0cdb14c55f1e58cb9b7a57a356bbbdcc089e6d06b4fcc0d5052ad2a67d"
+    },
+    "include/constants/flags_johto_story.h": {
+      "before": "4f866a4b66aada7d3eb115661eb0ee3c0e336b9a770190600c8af6bf8c3d445e",
+      "after": "1d2066e2392afb64ba83b1fe1601e1f66123ea852064cfb06086a8500ca3c9bf"
+    },
+    "include/constants/opponents_johto_league.h": {
+      "before": null,
+      "after": "74ee606183593254463d94b1933102d3b567ff74110ba696aabd6228ab9a1d6c"
+    },
+    "include/constants/opponents.h": {
+      "before": "2547ce83646188a195c7bfbed3d15bc0ce0a716bf915bd8ab84d07beee0f55c5",
+      "after": "e13302abe6e9c35377deebcfa5c803fbd76679911073ae6d1938599b46761efe"
+    },
+    "src/data/trainer_parties_johto_league.h": {
+      "before": null,
+      "after": "10fb646ccb9b5481d31a74dc0b147c49173740d3c394611636b2f456e39bd49e"
+    },
+    "src/data/trainers_johto_league.h": {
+      "before": null,
+      "after": "52dd5acd879c7740f6c224ba99cd4d4b7facbcf276decf69628a137a72f475cf"
+    },
+    "src/data/trainers.h": {
+      "before": "745ebd8fb869379ef3c4ad46110e49a906ed0ef92f210ee295ad778d21184f98",
+      "after": "bef8144b78fec2356558ea5b054034a3f11e343d1a84f1c8e25bad7a488b3a11"
+    },
+    "src/data/trainer_parties.h": {
+      "before": "74acc71c534e1bfd8fb1fd4b9cd30f4c112d5b348fa6b1c01722599b340f6f42",
+      "after": "1585e2ed90ae1a37519e3495ac6efa3e1f3f38ff321fe22ccdb79db8e5765dfd"
+    },
+    "data/event_scripts.s": {
+      "before": "e2df42a04ba8478d88233d1d5f3b03542e27bce17dde434898819fd9a4cdf493",
+      "after": "333ec92da552cfafbba9e921fd4f6d5d6f13475ed98b7466f18fe2a7635016ac"
+    },
+    "tools/johto/build_blackthorn.py": {
+      "before": "c26bddbd6bc6ae005684d26b59c59a7ffea629a27295ff9180e97388988b9469",
+      "after": "c05e9e905e74a7dbc4ff764aedda821ad7ceb483ddce5d717776b34a3b6eb839"
+    },
+    "include/hall_of_fame.h": {
+      "before": "5db8e1a8049d3bf40a3407c4e876830fb233746dff7a14c7e176f886cac4a740",
+      "after": "e63a6433a3ad9232f11f845aeb939165dda05ee840e09aa08ac9484d91942d31"
+    },
+    "src/hall_of_fame.c": {
+      "before": "0391710db1c8ff3953c91673ece8a5eb15172bc371a217cac0cbde25a58e6b6d",
+      "after": "aeb672777efdb9178ee0b9459b6723bafb6e4b1d95fc2c0ade9f77fabcd4b7b9"
+    },
+    "src/post_battle_event_funcs.c": {
+      "before": "51d52568894ef8ce1d79e9de765f36e4efe3008831b1dddac3cb41968217ae02",
+      "after": "8862905edb4e36e0f6ec3de66a1958a913059da4b491d5c5aa8446d098a101a2"
+    },
+    "tools/johto/johtoroute27_wild.json": {
+      "before": null,
+      "after": "3065a855f07d305c7a8d3ed1444df543037889d7cf8d53b9fad4cb82e364effe"
+    },
+    "tools/johto/johtoroute26_wild.json": {
+      "before": null,
+      "after": "1848fa0d85250f92a64504505447b12b4b7c9d882879911ebe1996c0fd99a34e"
+    },
+    "tools/johto/tohjofalls_wild.json": {
+      "before": null,
+      "after": "a9c7c191f242553f0cf3525ebb225c9d053cd313e80afd67d4b81530e7302e98"
+    },
+    "tools/johto/johtovictoryroad_1f_wild.json": {
+      "before": null,
+      "after": "c7e4d4aa8e5554386e4918d5395f8e6ef65d02f0393ef1e1b51d3d590c1854d1"
+    },
+    "src/data/wild_encounters.json": {
+      "before": "f95be7c9b854dfcb55ff1de7650f34882a5a09b698f66edfa653a3934936a127",
+      "after": "82f045ad49ad1e502aa2823b3773bd0a63f103ff3c911ab18a5f3fdff527acea"
+    },
+    "src/data/region_map/region_map_sections.json": {
+      "before": "a002d68a5907203a25b84d1903bca152a398c26f112fb4a797d034090440ed6c",
+      "after": "6c340e10db87894f0da5d292c0c6d70cb2b17d751bea1b482e4fa08d6713cdc4"
+    },
+    "src/region_map.c": {
+      "before": "ba7ca00a62d1d894a004f8d814075b4290eed6ec3d2639396caa72e37eb96114",
+      "after": "5d6a7eca3477c2925f5cd6dccb38d6c606862c9a8d8d0ee0051dc4dae054941d"
+    },
+    "src/pokemon_summary_screen.c": {
+      "before": "45590c372ec4e96354ea87c8bceb48b5ca480d221d26da5d44a1494c4289b057",
+      "after": "0000e46e3e484b806b2203741bcdbd82a12703f7e8762b228bed863fc8f72167"
+    },
+    "graphics/region_map/johto_entry.bin": {
+      "before": "2f1a293888390c5ce8f0daaf6df012b043243b3157ed2872c80dbd7d5a8e6575",
+      "after": "2c17703addf03c9ee8978aab645dea21f0971cfd74343e315c33d1a73fbcf824"
+    },
+    "src/wild_pokemon_area.c": {
+      "before": "8d442c8346b161de536402205be33681d54ee69f23a8d276211b3b82819a77f4",
+      "after": "3b226b6efe917a1f24eaff3f46f8305e893e303d5a76f0871c33c9daa0c16527"
+    },
+    "include/pokedex_area_markers.h": {
+      "before": "d7e77a03c14905c94d40eeb47208fa7c1fe3616807613231128704146c09abce",
+      "after": "244b866c83476824d8f407f4b4b681a210a292e056b49c3ce60f6b66a0e3e341"
+    },
+    "src/pokedex_area_markers.c": {
+      "before": "8ac4e6afd6e9445ea17843f54cbf495b45a5071c5a541262259e5f0d5ec9fa00",
+      "after": "af38f08aec2f388b6833d69c49ab10248dee3da4c17a33b7ae9fa27e97110aca"
+    },
+    "src/pokedex_screen.c": {
+      "before": "3ba1b04e51e92b45ff3eb91f9e3fe8a98b28ebbd4f4ee43a863bde5d17aba097",
+      "after": "d7cd34bed4bdee8a2e76950636a093f726eb79268b2aed6b96bf31139c1ea4c7"
+    }
+  }
+}

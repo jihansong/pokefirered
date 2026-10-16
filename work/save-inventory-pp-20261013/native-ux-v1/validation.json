@@ -1,0 +1,32 @@
+{
+  "pass": true,
+  "ROM_sha256": "e1560c21cf51c7c1c2af8dd04f3f6a429eb3d6af4f3e157bc66aa187bef65c34",
+  "product_SAV_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+  "QA_fixture_only": true,
+  "RAM_writes": 0,
+  "direct_script_calls": 0,
+  "learned_via_actual_TM_Case_and_party_menu": "ITEM_TM17 / MOVE_PROTECT",
+  "stock_PP": 10,
+  "learned_PP": 15,
+  "summary_visual": "18-protect-summary.png",
+  "native_state": {
+    "callback": "0x813dd51",
+    "species": 25,
+    "moves": [
+      182,
+      87,
+      57,
+      354
+    ],
+    "PP": [
+      15,
+      15,
+      15,
+      15
+    ],
+    "bonus": 204
+  },
+  "other_move_PP_and_bonus_preserved": true,
+  "UI_state_before_commit_is_not_final_party_state": true,
+  "DELTA_tested": false
+}

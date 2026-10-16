@@ -1,0 +1,21 @@
+{
+  "apply": true,
+  "reward": "HM05 or TM10 HIDDEN POWER",
+  "legacy_completed_rewards": "preserved without additional award",
+  "save_layout_changed": false,
+  "files": {
+    "tools/johto/build_violet.py": {
+      "before": "3dc4d53be02dacdf820b40338e8c6efbee66ed3b851d21d742ca024ed2c56bfa",
+      "after": "b4c65c08aeefa2fb325ed09fabafac3c92cc09ac3b88e76cb8af8fc63b678634"
+    },
+    "data/maps/SproutTower_3F/scripts.inc": {
+      "before": "7ebb6f080c1f9c6b743ce7f72d55fd434a4798e4d82c314d440176e623960654",
+      "after": "16a986221343b35eb9c99627438e2579dd2c67e5314718b43387604abd0b62d1"
+    },
+    "data/maps/SproutTower_3F/text.inc": {
+      "before": "c740dd3f90e06311ccc09a154afcaaf8e582186d8c29331e0630a711294413b4",
+      "after": "29556b67b4c2f59008efe063a59f90ac226a38e003007da0b1e17da0b5cd3af5"
+    }
+  }
+}
+APPLIED /workspaces/pokefirered/outputs/johto-hm-reward-v1/20261005T141142364603Z

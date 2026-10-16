@@ -1,0 +1,53 @@
+{
+  "direct_dependencies_current": true,
+  "files": [
+    {
+      "path": "src/pokemon_summary_screen.c",
+      "sha256": "672b8f79c69718250622aa7207ab3493683a8aa8d1d9228d175a61535cbec7f1",
+      "pass_hash": true
+    },
+    {
+      "path": "src/pokemon_storage_system_data.c",
+      "sha256": "43407c5c98ef6db9c5bc2f129a5f413fe3631f6f99e11364a33a15999e4cc753",
+      "pass_hash": true
+    },
+    {
+      "path": "src/pokemon_storage_system_tasks.c",
+      "sha256": "ac9e5037b244339c48a930cecbeb07a4cea20086c9347bdf9536164be8d74188",
+      "pass_hash": true
+    },
+    {
+      "path": "src/pokemon_storage_system_menu.c",
+      "sha256": "4d2a4e128a1d0b516dbd1e7f804d8d1443f4eaa957503cbac86e4a87add3cbaa",
+      "pass_hash": true
+    },
+    {
+      "path": "src/menu.c",
+      "sha256": "19158e25455ffed14afa516f0aa89c3412b3243dd11b5d7050cd41402db2a8ad",
+      "pass_hash": true
+    },
+    {
+      "path": "include/pokemon_storage_system_internal.h",
+      "sha256": "29028503a377cf3bd081b44badf58b041965464da6101a0a7200095f28155a0e",
+      "pass_hash": true
+    },
+    {
+      "path": "include/pokemon_storage_system.h",
+      "sha256": "d98c839ab2eeaa0e6c16e4ffdee53d404b074c6ffffa76384f26bd00ceffd537",
+      "pass_hash": true
+    },
+    {
+      "path": "include/pokemon.h",
+      "sha256": "02fbde9fcef7f684b93389c6d31f825ce8e9d43549738dbe7ac1502ebc8d7d40",
+      "pass_hash": true
+    },
+    {
+      "path": "include/constants/items.h",
+      "sha256": "d2348029aff9b459dce1ed19a71895c9922b5e946a09a3a6da2013c64dc71da8",
+      "pass_hash": true
+    }
+  ],
+  "native_executed": false,
+  "compiled_abi_remote_pending": true,
+  "transitive_headers_recorded_by_compiler": true
+}

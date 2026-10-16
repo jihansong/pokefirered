@@ -1,0 +1,39 @@
+{
+  "version": "v8",
+  "base_gif": "outputs/title-final-v7-approved-20261005/Thunder-Yellow-title-final.gif",
+  "base_mp4": "outputs/title-final-v7-approved-20261005/Thunder-Yellow-title-final.mp4",
+  "lightning_source": "outputs/title-start-review-v15/Lightening.png",
+  "lightning_sha256": "2cc5352014cf32d39ef6da93e29a543c985117231616138ed89dc3248f7aeecc",
+  "lightning_crop": [
+    39,
+    0,
+    1658,
+    941
+  ],
+  "lightning_size": [
+    150,
+    87
+  ],
+  "lightning_position": [
+    100,
+    58
+  ],
+  "duration_seconds": 4,
+  "native_size": [
+    240,
+    160
+  ],
+  "frames": 40,
+  "voice_audio_copied_unchanged": true,
+  "rom_integrated": false,
+  "native_roi": {
+    "x": 96,
+    "y": 48,
+    "width": 144,
+    "height": 112,
+    "bytes_per_frame": 16128,
+    "frames": 40,
+    "shared_palette": true,
+    "new_ewram_arrays": false
+  }
+}

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/work/misty-followup-20261014/walk-tools-r4/native_misty_walk_qa_r4.py", line 29, in <module>
+    GFX=const('OBJ_EVENT_GFX_MISTY_COMPANION');assert GFX==237
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/gamedata.py", line 205, in const
+    return consts([s])[s]
+           ^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/gamedata.py", line 180, in consts
+    raise KeyError('unknown constant %s' % n)
+KeyError: 'unknown constant OBJ_EVENT_GFX_MISTY_COMPANION'

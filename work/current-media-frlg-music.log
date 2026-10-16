@@ -1,0 +1,11 @@
+127.0.0.1 - - [04/Oct/2026 11:39:56] "HEAD /opening-10s-preview.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 11:39:56] "HEAD /title-current-continuous-electricity.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 11:40:24] "GET /opening.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 11:40:24] "GET /opening-10s-preview.mp4 HTTP/1.1" 206 -
+127.0.0.1 - - [04/Oct/2026 11:40:24] "GET /title.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 11:40:25] "GET /title-current-review.gif HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 11:40:25] "GET /title-current-continuous-electricity.mp4 HTTP/1.1" 206 -
+127.0.0.1 - - [04/Oct/2026 14:53:16] "GET /opening-10s-preview.mp4 HTTP/1.1" 206 -
+127.0.0.1 - - [04/Oct/2026 14:55:04] "GET /title-current-continuous-electricity.mp4 HTTP/1.1" 206 -
+127.0.0.1 - - [04/Oct/2026 15:00:35] "GET /opening-10s-preview.mp4 HTTP/1.1" 206 -
+127.0.0.1 - - [04/Oct/2026 15:00:54] "GET /title-current-continuous-electricity.mp4 HTTP/1.1" 206 -

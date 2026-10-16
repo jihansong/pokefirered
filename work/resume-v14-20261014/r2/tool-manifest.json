@@ -1,0 +1,22 @@
+{
+  "hoenn/native_dewford_continuation_r2.py": {
+    "sha256": "c14e66e662b0ece3a15b5565dda5218b13890c4d30a5cc112343c09a62d2fd24",
+    "size": 37141
+  },
+  "regional/regional_dex_host_audit.py": {
+    "sha256": "2d80535dab09029fcc6c897397b7950fa9b766186594e5c73b673afe1f954a3d",
+    "size": 16925
+  },
+  "native_v14_save_cold_r1.py": {
+    "sha256": "5b919e7e6f50e66d3e82abb141a4be5b41c705381f7c2b7c5a2725f094a4bdfa",
+    "size": 6346
+  },
+  "save-audit/pokemonthyl_v1.4-synced-candidate.sav": {
+    "sha256": "99f4100d09961196706282a02e96ee9017a0a591777aa3ca0b40249ec8ae89e8",
+    "size": 131072
+  },
+  "save-audit/v14-candidate-report.json": {
+    "sha256": "61ae1e5ea6523b0770deaff49a4f65938d5038400a8f7e78540f32c098515853",
+    "size": 42121
+  }
+}

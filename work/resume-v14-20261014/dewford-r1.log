@@ -1,0 +1,1 @@
+{"pass_all": false, "stages": 2, "error": "AssertionError(('Native step blocked', (67, 11, 10, 18), 'DOWN'))"}

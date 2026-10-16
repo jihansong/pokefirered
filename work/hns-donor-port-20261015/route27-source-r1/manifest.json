@@ -1,0 +1,33 @@
+{
+  "commit": "167aa6d537b109bb229c231ddce4616974c4da71",
+  "files": [
+    {
+      "path": "data/layouts/Route27_hns/border.bin",
+      "bytes": 8,
+      "git_blob_sha1": "e5ef99a87f1fd2cad12476d34ea3a44587d3c70b",
+      "sha256": "a99112d532b404a0dbf8a92a6857bcff981021db103446ee87fd658f31a7d218",
+      "url": "https://raw.githubusercontent.com/PokemonHnS-Development/pokehns-expansion/167aa6d537b109bb229c231ddce4616974c4da71/data/layouts/Route27_hns/border.bin"
+    },
+    {
+      "path": "data/layouts/Route27_hns/map.bin",
+      "bytes": 12800,
+      "git_blob_sha1": "0fd8c9165b36552982a0ef0f99f092463d0fb841",
+      "sha256": "f70a8f5e258fd346471b2efc85db367e752492a60e9158f65fd8b8d8403108e2",
+      "url": "https://raw.githubusercontent.com/PokemonHnS-Development/pokehns-expansion/167aa6d537b109bb229c231ddce4616974c4da71/data/layouts/Route27_hns/map.bin"
+    },
+    {
+      "path": "data/maps/Route27_hns/map.json",
+      "bytes": 10365,
+      "git_blob_sha1": "d429cbce766273c55d5b5fdea73bf85a3ac2d578",
+      "sha256": "09b9aa7d831d1cfd999c096fd8ef0d8c5eed96c4e7be0b27d6e92ceee6a9d2b4",
+      "url": "https://raw.githubusercontent.com/PokemonHnS-Development/pokehns-expansion/167aa6d537b109bb229c231ddce4616974c4da71/data/maps/Route27_hns/map.json"
+    },
+    {
+      "path": "data/maps/Route27_hns/scripts.inc",
+      "bytes": 9398,
+      "git_blob_sha1": "c2ba0d61adb9eeb4d139c224b428e0c554dbcee1",
+      "sha256": "139015d5f3798f1e0d54f0bf51d2a6aae3f72f75966405a255a32a83a9262171",
+      "url": "https://raw.githubusercontent.com/PokemonHnS-Development/pokehns-expansion/167aa6d537b109bb229c231ddce4616974c4da71/data/maps/Route27_hns/scripts.inc"
+    }
+  ]
+}

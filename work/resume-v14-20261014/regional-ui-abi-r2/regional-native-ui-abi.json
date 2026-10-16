@@ -1,0 +1,226 @@
+{
+  "rom_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+  "elf_sha256": "e625069ea9379ea3dc2f83e3014fb741a2e0b7383f41f6d56bc37fc0eae6f17b",
+  "source_sha256": {
+    "src/pokedex.c": "aac08b88d35a69cab82df72d6f759cf3d7f4c1620935657f5450ed7f197ba3e4",
+    "src/pokedex_screen.c": "d7cd34bed4bdee8a2e76950636a093f726eb79268b2aed6b96bf31139c1ea4c7",
+    "src/pokemon.c": "373b692e42d952b94b44f0ceda81d56dc75e1abb6af9d60ca5ec47d927b2057c",
+    "src/start_menu.c": "56de3fd5e7d7a7d65b95c3e632f898a8ec92b792d338f86a2275d5a2b4b77d08",
+    "src/list_menu.c": "1c825cfd52b3f9eb6f70f40439836a348c0fdc7f1d452fa9cbac426870383af4",
+    "include/global.h": "ff834418cf7bf2727385f91fa7eaf69d618783a46426077338b57a0523af21af",
+    "include/pokedex.h": "a7ea835c8327b5f17c5a766090829e49e694e5439b796634d1e1746867b29e8a",
+    "include/pokedex_screen.h": "62151ddb84111da7ae854403335fe7f2ddc7dce45e947a445713f6d70447d9d4",
+    "include/task.h": "4d04e9fd43d54ef551d456da14fdf2a56d9d91fc19a4fc9582b289a06c192612",
+    "include/list_menu.h": "ae7ccb61b49cb84974dcca77973bc332a6e98861de566dd3264ee26363e3acdf",
+    "include/constants/pokedex.h": "aac527819623140d7f44ad99b72654bab59ca5679a80cca33361828cc7e7d0c6",
+    "include/constants/species.h": "c6d5e22f66c2308261d6d9a9c3b72d4638ffa622cb1395dbabe69a588aa65dc4",
+    "include/constants/flags.h": "6645d8d43ad378b3f6707c8c3af2cc7da1f5acca7cfb48917b94631ec18f5d29",
+    "include/constants/flags_johto_story.h": "1d2066e2392afb64ba83b1fe1601e1f66123ea852064cfb06086a8500ca3c9bf",
+    "include/constants/flags_hoenn_story.h": "493679980358d6b5a5f98d1cd7283ec211f20240e435b91711baa8c1a0debb1f",
+    "src/data/pokemon/johto_dex_order.h": "069b9a185d7b9af33b2a7c4270a7942ad1367359252eb9e94be41a84ce00d0d6",
+    "src/data/pokemon/pokedex_orders.h": "2a6beb7e624f41ec1abf4813d630bdc385af89ecf051f2622f870001cac1aa38"
+  },
+  "guard_manifest_sha256": "7ceef622d55c4be05fb2eba5cd1a70fa84b1a0244f6f2b45c5e94b1fda81e37a",
+  "probe_c_sha256": "7ea5f925acbeb728c3932ccb04cb9ad2800326627384f34113f443b798519a0e",
+  "probe_method": "verbatim private UI structure and enum + current ARM compiler offsetof/sizeof",
+  "compiler_flags": [
+    "-c",
+    "-w",
+    "-mthumb",
+    "-mabi=apcs-gnu",
+    "-march=armv4t",
+    "-fcommon",
+    "-iquote",
+    "include",
+    "-DLEAFGREEN",
+    "-DREVISION=0",
+    "-DENGLISH",
+    "-DMODERN=1"
+  ],
+  "offsets": {
+    "pokedex": 1048,
+    "task": 40,
+    "template.items": 0,
+    "template.total": 12,
+    "item": 8,
+    "item.index": 4,
+    "item.label": 0,
+    "pokedex.taskId": 0,
+    "pokedex.state": 1,
+    "pokedex.regionalDex": 110,
+    "pokedex.showNationalNumbers": 111,
+    "pokedex.regionalNumberByNational": 112,
+    "task.func": 0,
+    "pokedex.listItems": 68,
+    "pokedex.orderedDexCount": 72,
+    "pokedex.dexOrderId": 66,
+    "pokedex.modeSelectListMenuId": 23,
+    "pokedex.orderedListMenuTaskId": 65,
+    "pokedex.dexSpecies": 90,
+    "pokedex.modeSelectItems": 888,
+    "pokedex.numSeenKanto": 102,
+    "pokedex.numOwnedKanto": 104,
+    "pokedex.numSeenNational": 106,
+    "task.active": 4,
+    "pokedex.numOwnedNational": 108,
+    "task.data": 8,
+    "list": 32,
+    "list.template": 0,
+    "list.cursor": 24,
+    "list.above": 26,
+    "template": 24
+  },
+  "constants": {
+    "STARTMENU_POKEDEX": 0,
+    "MAX_STARTMENU_ITEMS": 9,
+    "NUM_TASKS": 16,
+    "DEX_ORDER_NUMERICAL_KANTO": 0,
+    "DEX_ORDER_NUMERICAL_NATIONAL": 5,
+    "DEX_CATEGORY_COUNT": 9,
+    "NATIONAL_DEX_COUNT": 386,
+    "JOHTO_DEX_COUNT": 251,
+    "HOENN_DEX_COUNT": 202,
+    "KANTO_DEX_COUNT": 151,
+    "NUM_SPECIES": 412
+  },
+  "symbols": {
+    "sPokedexScreenData": {
+      "value": 33795308,
+      "size": 4,
+      "section": 1,
+      "info": 1,
+      "translation_unit": "pokedex_screen.o",
+      "symbol_index": 44850
+    },
+    "Task_PokedexScreen": {
+      "value": 135295429,
+      "size": 972,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "pokedex_screen.o",
+      "symbol_index": 45075
+    },
+    "Task_DexScreen_NumericalOrder": {
+      "value": 135297293,
+      "size": 508,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "pokedex_screen.o",
+      "symbol_index": 45125
+    },
+    "Task_DexScreen_ShowMonPage": {
+      "value": 135302385,
+      "size": 904,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "pokedex_screen.o",
+      "symbol_index": 45163
+    },
+    "sText_DexTitleKanto": {
+      "value": 141621028,
+      "size": 20,
+      "section": 6,
+      "info": 1,
+      "translation_unit": "pokedex_screen.o",
+      "symbol_index": 45053
+    },
+    "sText_DexTitleJohto": {
+      "value": 141621048,
+      "size": 20,
+      "section": 6,
+      "info": 1,
+      "translation_unit": "pokedex_screen.o",
+      "symbol_index": 45054
+    },
+    "sText_DexTitleHoenn": {
+      "value": 141621068,
+      "size": 20,
+      "section": 6,
+      "info": 1,
+      "translation_unit": "pokedex_screen.o",
+      "symbol_index": 45055
+    },
+    "sText_DexOrderJohto": {
+      "value": 141620984,
+      "size": 22,
+      "section": 6,
+      "info": 1,
+      "translation_unit": "pokedex_screen.o",
+      "symbol_index": 45051
+    },
+    "sText_DexOrderHoenn": {
+      "value": 141621006,
+      "size": 22,
+      "section": 6,
+      "info": 1,
+      "translation_unit": "pokedex_screen.o",
+      "symbol_index": 45052
+    },
+    "sNumStartMenuItems": {
+      "value": 33779965,
+      "size": 1,
+      "section": 1,
+      "info": 1,
+      "translation_unit": "start_menu.o",
+      "symbol_index": 18063
+    },
+    "sStartMenuOrder": {
+      "value": 33779966,
+      "size": 9,
+      "section": 1,
+      "info": 1,
+      "translation_unit": "start_menu.o",
+      "symbol_index": 18064
+    },
+    "sStartMenuCursorPos": {
+      "value": 33779964,
+      "size": 1,
+      "section": 1,
+      "info": 1,
+      "translation_unit": "start_menu.o",
+      "symbol_index": 18062
+    },
+    "ListMenuDummyTask": {
+      "value": 135316901,
+      "size": 2,
+      "section": 3,
+      "info": 2,
+      "translation_unit": "list_menu.o",
+      "symbol_index": 45604
+    },
+    "sHoennToNationalOrder": {
+      "value": 137155256,
+      "size": 822,
+      "section": 6,
+      "info": 1,
+      "translation_unit": "pokemon.o",
+      "symbol_index": 8377
+    },
+    "sSpeciesToNationalPokedexNum": {
+      "value": 137154434,
+      "size": 822,
+      "section": 6,
+      "info": 1,
+      "translation_unit": "pokemon.o",
+      "symbol_index": 8376
+    },
+    "sJohtoToNationalOrder": {
+      "value": 149651888,
+      "size": 502,
+      "section": 11,
+      "info": 1,
+      "translation_unit": "pokedex.o",
+      "symbol_index": 23131
+    },
+    "gTasks": {
+      "value": 50352336,
+      "size": 640,
+      "section": 2,
+      "info": 17,
+      "translation_unit": "time_of_day.o",
+      "symbol_index": 282428
+    }
+  },
+  "native_executed": false,
+  "product_changed": false
+}

@@ -1,0 +1,4 @@
+{"identity": {"rom_sha": "8b2338d4791d68b8b33e06eae08978657ddd6a6cd689c40731288cc2dfe98706", "save_sha": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85", "ewram_free": 284, "scratch": "0x203fee4", "scope": "copied SAV, temporary emulator-only native function fixture"}}
+{"native_scroll_bytes": {"cases": {"aligned": 320, "unaligned": 80, "noop": 5}, "byte_equal": true, "guards_preserved": true}}
+{"original_saves_preserved": true}
+{"original_saves_final_check": true}

@@ -15,12 +15,21 @@
 #include "constants/maps.h"
 #include "constants/field_weather.h"
 #include "constants/sound.h"
+#include "constants/songs.h"
+#include "sound.h"
 
 #if defined(FIRERED)
 #define TITLE_TEXT gString_PokemonFireRed_Staff
 #elif defined(LEAFGREEN)
 #define TITLE_TEXT gString_PokemonLeafGreen_Staff
 #endif
+
+enum CreditsRegion
+{
+    CREDITS_REGION_KANTO = 0,
+    CREDITS_REGION_JOHTO = 1,
+    CREDITS_REGION_HOENN = 2
+};
 
 enum CreditsSceneIdx
 {
@@ -43,6 +52,8 @@ enum CreditsSceneIdx
     CREDITSSCENE_THEEND_SHOW,
     CREDITSSCENE_WAITBUTTON,
     CREDITSSCENE_TERMINATE,
+    CREDITSSCENE_HOENN_INIT,
+    CREDITSSCENE_HOENN_PROLOGUE,
 };
 
 enum CreditsScrCmd
@@ -198,6 +209,7 @@ static bool32 DoCreditsMonScene(void);
 static bool32 DoCopyrightOrTheEndGfxScene(void);
 static void DestroyPlayerOrRivalSprite(void);
 static void LoadPlayerOrRivalSprite(u8 a0);
+static u16 GetCreditsMonSpecies(u8 whichMon);
 
 static const struct BgTemplate sBgTemplates_MonSceneOrTheEnd[] = {
     {
@@ -430,6 +442,8 @@ static const struct CreditsScrcmd sCreditsScript[] = {
     CREDITS_MON(BLASTOISE),
     CREDITS_MAP(ROUTE17, 16),
     CREDITS_PRINT(EXECUTIVE_DIRECTOR, 325),
+    // Approved Thunder Yellow credit follows the executive director.
+    CREDITS_PRINT(THUNDER_YELLOW, 221),
     CREDITS_PRINT(EXECUTIVE_PRODUCER, 325),
     CREDITS_PRINT(EXECUTIVE_PRODUCER_2, 325),
     CREDITS_MAPNEXT(FUCHSIA_CITY, 16),
@@ -448,8 +462,6 @@ static const struct CreditsScrcmd sCreditsScript[] = {
     CREDITS_PRINT(BRAILLE_CODE_CHECK_4, 215),
     CREDITS_PRINT(SPECIAL_THANKS_4, 215),
     CREDITS_PRINT(SPECIAL_THANKS_5, 215),
-    // Thunder Yellow: the hack's own page closes the staff roll, just before THE END.
-    CREDITS_PRINT(THUNDER_YELLOW, 221),
     CREDITS_PRINT(DUMMY, 52),
     CREDITS_THEENDGFX(ALLRIGHTSRESERVED, 224),
     CREDITS_THEENDGFX(THEEND, 240),
@@ -669,6 +681,174 @@ static const struct CreditsOverworldCmd *const sOverworldMapScenes[] = {
     sOverworldCmd_Route21
 };
 
+
+/* THYL_LEAGUE_V1: existing native maps and pictures; no movie raster. */
+static const struct CreditsOverworldCmd sHoennCreditsScene0[] = {
+    CREDITSOVWLDLOADMAP(MAP_SLATEPORT_CITY, 20, 54, 1),
+    CREDITSOVWLDSCROLL(0, -1, 160),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sHoennCreditsScene1[] = {
+    CREDITSOVWLDLOADMAP(MAP_ROUTE101, 10, 14, 1),
+    CREDITSOVWLDSCROLL(0, -1, 128),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sHoennCreditsScene2[] = {
+    CREDITSOVWLDLOADMAP(MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 6, 7, 1),
+    CREDITSOVWLDSCROLL(0, -1, 16),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sHoennCreditsScene3[] = {
+    CREDITSOVWLDLOADMAP(MAP_MAUVILLE_CITY, 20, 14, 1),
+    CREDITSOVWLDSCROLL(0, -1, 128),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sHoennCreditsScene4[] = {
+    CREDITSOVWLDLOADMAP(MAP_MT_CHIMNEY, 20, 41, 1),
+    CREDITSOVWLDSCROLL(0, -1, 160),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sHoennCreditsScene5[] = {
+    CREDITSOVWLDLOADMAP(MAP_ROUTE119_WEATHER_INSTITUTE_2F, 10, 5, 1),
+    CREDITSOVWLDSCROLL(0, 0, 1),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sHoennCreditsScene6[] = {
+    CREDITSOVWLDLOADMAP(MAP_SEAFLOOR_CAVERN_ROOM9, 13, 40, 1),
+    CREDITSOVWLDSCROLL(0, -1, 160),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sHoennCreditsScene7[] = {
+    CREDITSOVWLDLOADMAP(MAP_SKY_PILLAR_TOP, 13, 18, 1),
+    CREDITSOVWLDSCROLL(0, -1, 160),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sHoennCreditsScene8[] = {
+    CREDITSOVWLDLOADMAP(MAP_SOOTOPOLIS_CITY, 30, 54, 1),
+    CREDITSOVWLDSCROLL(0, -1, 160),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sHoennCreditsScene9[] = {
+    CREDITSOVWLDLOADMAP(MAP_EVER_GRANDE_CITY, 20, 74, 1),
+    CREDITSOVWLDSCROLL(0, -1, 160),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sHoennCreditsScene10[] = {
+    CREDITSOVWLDLOADMAP(MAP_EVER_GRANDE_CITY_CHAMPIONS_ROOM, 6, 7, 1),
+    CREDITSOVWLDSCROLL(0, -1, 16),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sHoennCreditsScene11[] = {
+    CREDITSOVWLDLOADMAP(MAP_EVER_GRANDE_CITY_HALL_OF_FAME, 7, 11, 1),
+    CREDITSOVWLDSCROLL(0, -1, 80),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sHoennCreditsScene12[] = {
+    CREDITSOVWLDLOADMAP(MAP_SLATEPORT_CITY, 20, 54, 1),
+    CREDITSOVWLDSCROLL(0, -1, 160),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd *const sHoennOverworldMapScenes[] = {
+    sHoennCreditsScene0,
+    sHoennCreditsScene1,
+    sHoennCreditsScene2,
+    sHoennCreditsScene3,
+    sHoennCreditsScene4,
+    sHoennCreditsScene5,
+    sHoennCreditsScene6,
+    sHoennCreditsScene7,
+    sHoennCreditsScene8,
+    sHoennCreditsScene9,
+    sHoennCreditsScene10,
+    sHoennCreditsScene11,
+    sHoennCreditsScene12,
+};
+static const u8 sHoennCreditsTitle[] = _("POKéMON THUNDER YELLOW\nHOENN STAFF");
+
+
+/* THYL_JOHTO_CREDITS_REVIEW_V1: existing maps only; no automatic clear trigger. */
+static const struct CreditsOverworldCmd sJohtoCreditsScene0[] = {
+    CREDITSOVWLDLOADMAP(MAP_NEW_BARK_TOWN, 18, 22, 1),
+    CREDITSOVWLDSCROLL(0, -1, 160),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sJohtoCreditsScene1[] = {
+    CREDITSOVWLDLOADMAP(MAP_NEW_BARK_TOWN_ELMS_LAB, 6, 9, 1),
+    CREDITSOVWLDSCROLL(0, 0, 1),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sJohtoCreditsScene2[] = {
+    CREDITSOVWLDLOADMAP(MAP_CHERRYGROVE_CITY, 18, 22, 1),
+    CREDITSOVWLDSCROLL(0, -1, 128),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sJohtoCreditsScene3[] = {
+    CREDITSOVWLDLOADMAP(MAP_VIOLET_CITY, 20, 26, 1),
+    CREDITSOVWLDSCROLL(0, -1, 160),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sJohtoCreditsScene4[] = {
+    CREDITSOVWLDLOADMAP(MAP_AZALEA_TOWN, 20, 22, 1),
+    CREDITSOVWLDSCROLL(0, -1, 128),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sJohtoCreditsScene5[] = {
+    CREDITSOVWLDLOADMAP(MAP_ILEX_FOREST, 20, 42, 1),
+    CREDITSOVWLDSCROLL(0, -1, 160),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sJohtoCreditsScene6[] = {
+    CREDITSOVWLDLOADMAP(MAP_GOLDENROD_CITY, 24, 34, 1),
+    CREDITSOVWLDSCROLL(0, -1, 160),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sJohtoCreditsScene7[] = {
+    CREDITSOVWLDLOADMAP(MAP_ECRUTEAK_CITY, 20, 30, 1),
+    CREDITSOVWLDSCROLL(0, -1, 160),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sJohtoCreditsScene8[] = {
+    CREDITSOVWLDLOADMAP(MAP_BURNED_TOWER_1F, 14, 20, 1),
+    CREDITSOVWLDSCROLL(0, -1, 80),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sJohtoCreditsScene9[] = {
+    CREDITSOVWLDLOADMAP(MAP_OLIVINE_CITY, 22, 34, 1),
+    CREDITSOVWLDSCROLL(0, -1, 160),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sJohtoCreditsScene10[] = {
+    CREDITSOVWLDLOADMAP(MAP_OLIVINE_LIGHTHOUSE_6F, 12, 16, 1),
+    CREDITSOVWLDSCROLL(0, -1, 80),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sJohtoCreditsScene11[] = {
+    CREDITSOVWLDLOADMAP(MAP_LAKE_OF_RAGE, 20, 30, 1),
+    CREDITSOVWLDSCROLL(0, -1, 160),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd sJohtoCreditsScene12[] = {
+    CREDITSOVWLDLOADMAP(MAP_MT_MORTAR_1F, 24, 34, 1),
+    CREDITSOVWLDSCROLL(0, -1, 160),
+    CREDITSOVWLDEND,
+};
+static const struct CreditsOverworldCmd *const sJohtoOverworldMapScenes[] = {
+    sJohtoCreditsScene0,
+    sJohtoCreditsScene1,
+    sJohtoCreditsScene2,
+    sJohtoCreditsScene3,
+    sJohtoCreditsScene4,
+    sJohtoCreditsScene5,
+    sJohtoCreditsScene6,
+    sJohtoCreditsScene7,
+    sJohtoCreditsScene8,
+    sJohtoCreditsScene9,
+    sJohtoCreditsScene10,
+    sJohtoCreditsScene11,
+    sJohtoCreditsScene12,
+};
+static const u8 sJohtoCreditsTitle[] = _("POKéMON THUNDER YELLOW\nJOHTO STAFF");
+
 static const struct CreditsTextHeader sCreditsTexts[] = {
     { gCreditsString_Director, gCreditsString_Junichi_Masuda, FALSE },
     { gCreditsString_Art_Director_Battle_Director, gCreditsString_Ken_Sugimori_Shigeki_Morimoto, FALSE },
@@ -716,14 +896,58 @@ static const struct CreditsTextHeader sCreditsTexts[] = {
     { gString_Dummy, gString_Dummy, FALSE }
 };
 
-void DoCredits(void)
+static const struct CreditsOverworldCmd *const *GetRegionalCreditsMapScenes(void)
+{
+    switch (sCreditsMgr->filler_10[0])
+    {
+    case CREDITS_REGION_JOHTO:
+        return sJohtoOverworldMapScenes;
+    case CREDITS_REGION_HOENN:
+        return sHoennOverworldMapScenes;
+    default:
+        return sOverworldMapScenes;
+    }
+}
+
+static const u8 *GetRegionalCreditsTitle(void)
+{
+    switch (sCreditsMgr->filler_10[0])
+    {
+    case CREDITS_REGION_JOHTO:
+        return sJohtoCreditsTitle;
+    case CREDITS_REGION_HOENN:
+        return sHoennCreditsTitle;
+    default:
+        return TITLE_TEXT;
+    }
+}
+
+static void StartRegionalCredits(u8 region)
 {
     sCreditsMgr = AllocZeroed(sizeof(*sCreditsMgr));
     ResetTasks();
     sCreditsMgr->taskId = TASK_NONE;
     sCreditsMgr->unk_1D = 0;
+    sCreditsMgr->filler_10[0] = region;
+    if (region != CREDITS_REGION_KANTO)
+        sCreditsMgr->mainseqno = CREDITSSCENE_HOENN_INIT;
     ResetSpriteData();
     SetMainCallback2(CB2_Credits);
+}
+
+void DoCredits(void)
+{
+    StartRegionalCredits(CREDITS_REGION_KANTO);
+}
+
+void DoJohtoCredits(void)
+{
+    StartRegionalCredits(CREDITS_REGION_JOHTO);
+}
+
+void DoHoennCredits(void)
+{
+    StartRegionalCredits(CREDITS_REGION_HOENN);
 }
 
 static void CB2_Credits(void)
@@ -804,7 +1028,7 @@ static bool32 DoOverworldMapScrollScene(u8 whichMon)
         sCreditsMgr->subseqno++;
         // fallthrough
     case 1:
-        if (!Overworld_DoScrollSceneForCredits(&sCreditsMgr->ovwldseqno, sOverworldMapScenes[sCreditsMgr->whichMon], QL_TINT_NONE))
+        if (!Overworld_DoScrollSceneForCredits(&sCreditsMgr->ovwldseqno, GetRegionalCreditsMapScenes()[sCreditsMgr->whichMon], QL_TINT_NONE))
             return FALSE;
         CreateCreditsWindow();
         SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(0, DISPLAY_WIDTH));
@@ -826,6 +1050,23 @@ static s32 RollCredits(void)
 
     switch (sCreditsMgr->mainseqno)
     {
+    case CREDITSSCENE_HOENN_INIT:
+        if (!DoOverworldMapScrollScene(0))
+            return 0;
+        PlayBGM(MUS_CREDITS);
+        LoadPlayerOrRivalSprite(0);
+        sCreditsMgr->timer = 1440;
+        sCreditsMgr->mainseqno = CREDITSSCENE_HOENN_PROLOGUE;
+        return 1;
+    case CREDITSSCENE_HOENN_PROLOGUE:
+        if (sCreditsMgr->timer != 0)
+        {
+            sCreditsMgr->timer--;
+            return 1;
+        }
+        SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(DISPLAY_HEIGHT / 2 - 1, DISPLAY_HEIGHT / 2 + 1));
+        sCreditsMgr->mainseqno = CREDITSSCENE_OPEN_WIN0;
+        return 0;
     case CREDITSSCENE_INIT_WIN0:
         SwitchWin1OffWin0On();
         SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(0, DISPLAY_WIDTH));
@@ -873,7 +1114,7 @@ static s32 RollCredits(void)
             
         }
         sCreditsMgr->timer = 360;
-        AddTextPrinterParameterized4(sCreditsMgr->windowId, FONT_NORMAL_COPY_1, 0x08, 0x29, 1, 2, sTextColor_Header, 0, TITLE_TEXT);
+        AddTextPrinterParameterized4(sCreditsMgr->windowId, FONT_NORMAL_COPY_1, 0x08, 0x29, 1, 2, sTextColor_Header, 0, GetRegionalCreditsTitle());
         sCreditsMgr->mainseqno = CREDITSSCENE_WAIT_TITLE_STAFF;
         return 0;
     case CREDITSSCENE_WAIT_TITLE_STAFF:
@@ -1053,6 +1294,18 @@ static void VBlankCB(void)
 
 static void LoadCreditsMonPic(u8 whichMon)
 {
+    if (sCreditsMgr->filler_10[0] != CREDITS_REGION_KANTO)
+    {
+        InitWindows(sWindowTemplates_Pikachu);
+        FillWindowPixelBuffer(0, PIXEL_FILL(0));
+        FillWindowPixelBuffer(1, PIXEL_FILL(0));
+        FillWindowPixelBuffer(2, PIXEL_FILL(0));
+        LoadMonPicInWindow(GetCreditsMonSpecies(whichMon), SHINY_ODDS, 0, TRUE, 10, 0);
+        CopyWindowToVram(0, COPYWIN_GFX);
+        CopyWindowToVram(1, COPYWIN_GFX);
+        CopyWindowToVram(2, COPYWIN_GFX);
+        return;
+    }
     switch (whichMon)
     {
     case CREDITSMON_CHARIZARD:
@@ -1091,6 +1344,16 @@ static void LoadCreditsMonPic(u8 whichMon)
 
 static u16 GetCreditsMonSpecies(u8 whichMon)
 {
+    if (sCreditsMgr->filler_10[0] == CREDITS_REGION_JOHTO)
+    {
+        static const u16 species[] = {SPECIES_TYPHLOSION, SPECIES_MEGANIUM, SPECIES_FERALIGATR, SPECIES_HO_OH};
+        return whichMon < ARRAY_COUNT(species) ? species[whichMon] : SPECIES_NONE;
+    }
+    if (sCreditsMgr->filler_10[0] == CREDITS_REGION_HOENN)
+    {
+        static const u16 species[] = {SPECIES_BLAZIKEN, SPECIES_SCEPTILE, SPECIES_SWAMPERT, SPECIES_RAYQUAZA};
+        return whichMon < ARRAY_COUNT(species) ? species[whichMon] : SPECIES_NONE;
+    }
     switch (whichMon)
     {
     case CREDITSMON_CHARIZARD:
@@ -1179,8 +1442,11 @@ static bool32 DoCreditsMonScene(void)
         {
             if (sCreditsMgr->unk_0E < 3)
             {
-                PutWindowTilemap(sCreditsMgr->unk_0E);
-                CopyBgTilemapBufferToVram(0);
+                if (sCreditsMgr->filler_10[0] == CREDITS_REGION_KANTO)
+                {
+                    PutWindowTilemap(sCreditsMgr->unk_0E);
+                    CopyBgTilemapBufferToVram(0);
+                }
                 sCreditsMgr->creditsMonTimer = 4;
                 sCreditsMgr->unk_0E++;
             }

@@ -1,0 +1,5 @@
+Q9_NATIVE_FIFTH {"name": "misty-duel-loss-mainbit", "exit": 0, "seconds": 58.49938178062439, "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-fifth-misty-duel-loss-mainbit.log"}
+Q9_NATIVE_FIFTH {"name": "misty-duel-win-mainbit", "exit": 0, "seconds": 60.539918422698975, "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-fifth-misty-duel-win-mainbit.log"}
+Q9_NATIVE_FIFTH {"name": "misty-walking-diagnostic", "exit": 1, "seconds": 7.61801815032959, "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-fifth-misty-walking-diagnostic.log"}
+Q9_NATIVE_FIFTH {"name": "misty-basic-stage-diagnostic", "exit": 1, "seconds": 6.140056848526001, "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-fifth-misty-basic-stage-diagnostic.log"}
+Q9_NATIVE_FIFTH {"name": "misty-water-helper-repaired", "exit": 0, "seconds": 20.822000741958618, "log": "/workspaces/pokefirered/outputs/regions-q9-review-v1/run-phase2-fifth-misty-water-helper-repaired.log"}

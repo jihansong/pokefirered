@@ -1,0 +1,49 @@
+{
+  "repository": "https://github.com/pret/pokeemerald",
+  "commit": "5eff78649e7170a877b961ef0b3da13b81a16038",
+  "files": [
+    {
+      "path": "include/constants/metatile_behaviors.h",
+      "git_blob": "4a11795ea99044e8e1c7e1aaad87833ee1640bf8",
+      "bytes": 5939,
+      "sha256": "213bfcb92984f848272b6aba404cabc82932e0c553ad4362e69d10a09afda854"
+    },
+    {
+      "path": "data/layouts/LittlerootTown_ProfessorBirchsLab/map.bin",
+      "git_blob": "0f84e80b2c16f51ba97989d278b2edfa17c99b08",
+      "bytes": 338,
+      "sha256": "dfb4b37b84e99ae5b82f822bdeb16db665ba7048acd2513522efd7d0fd776f7a"
+    },
+    {
+      "path": "data/layouts/LittlerootTown_ProfessorBirchsLab/border.bin",
+      "git_blob": "19d90667980ced4e6b00a744509ce6de9504511a",
+      "bytes": 8,
+      "sha256": "9ff63640fa3b4682056532b7924b03250ccc7a832f64ccec3dea79ea8595a24d"
+    },
+    {
+      "path": "data/tilesets/primary/building/metatile_attributes.bin",
+      "git_blob": "efc3708aa9a361bbfbaf8673f551625464fc0528",
+      "bytes": 16,
+      "sha256": "7a153a1748dc4bd03e621acad6c6b7e90c2d3acfc467a928ad23d21f34e73128"
+    },
+    {
+      "path": "data/tilesets/secondary/lab/metatile_attributes.bin",
+      "git_blob": "28199c4c76089567fe9b5e63198f6bd4bc1a69e5",
+      "bytes": 316,
+      "sha256": "f161a8b562196a6454d4b2842e8469f08330628fd0212188111d7e1172a39532"
+    },
+    {
+      "path": "src/data/tilesets/graphics.h",
+      "git_blob": "53b3bc7acfde48d375ce0e9db3b3d801b1fbdd91",
+      "bytes": 111474,
+      "sha256": "40360ef93657a608e8a20c92a126e903813bc33fb709754441f96713f05d7d71"
+    },
+    {
+      "path": "include/constants/metatile_labels.h",
+      "git_blob": "3b63d80f8482885da784063b428cd4739a54f4bf",
+      "bytes": 42388,
+      "sha256": "6f53ac68b105d8d72c7daa3d57c4c669a828f68d3f8d84d1902e9f6309b818f2"
+    }
+  ],
+  "target_rules_sha256": "50d446317873e38a8bfe336dc6114f6e5ba77a458b90d1ccd2b025a7bb42c011"
+}

@@ -1,0 +1,4 @@
+127.0.0.1 - - [04/Oct/2026 16:26:51] "GET /rocket.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 16:27:15] "GET /rocket.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 16:27:15] "GET /rocket-v10-review.png HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 16:27:15] "GET /rocket-v9-review.png HTTP/1.1" 200 -

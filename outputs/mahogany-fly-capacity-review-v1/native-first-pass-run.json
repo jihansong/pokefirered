@@ -1,0 +1,77 @@
+{
+  "rom_sha256": "6df50d9dd6a4b859f086f38264e915cc88ed620889fd28137f4d2fdbfd1d80b7",
+  "status": "FINISHED",
+  "cases": [
+    {
+      "name": "mahogany-events",
+      "exit": 1,
+      "pass": false,
+      "seconds": 29.95,
+      "native_case_count": 1,
+      "error": null,
+      "result_file": null,
+      "log_tail": "{\"case\": \"east_gate_requires_badge6\", \"dialogue\": \"EcruteakCity_EastGate_Text_Before\", \"save\": {\"counter\": [60, 61], \"checksummed_sectors\": 14, \"qa_save\": \"/workspaces/pokefirered/outputs/mahogany-fly-capacity-review-v1/mahogany-events/east_gate_requires_badge6-native-QA-only.sav\"}, \"party_pc_dex_preserved\": true, \"forced_memory_writes\": 0, \"forced_outcomes\": 0}\nTraceback (most recent call last):\n  File \"/workspaces/pokefirered/tools/qa/johto_mahogany_native_events.py\", line 302, in <module>\n    e.shot(str(out/(c['name']+'.png')),scale=3);saved=flash_reload(e,c['name'])\n                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/tools/qa/johto_violet_native_bootstrap_v1.py\", line 97, in flash_reload\n    counters=native_save(e);live=snapshot(e);e.run(30)\n             ^^^^^^^^^^^^^^\n  File \"/workspaces/pokefirered/tools/qa/johto_violet_native_bootstrap_v1.py\", line 84, in native_save\n    assert 4 in order;target=order.index(4)\n           ^^^^^^^^^^\nAssertionError\n"
+    },
+    {
+      "name": "legacy-fly-kanto",
+      "exit": 0,
+      "pass": true,
+      "seconds": 12.55,
+      "native_case_count": 1,
+      "error": null,
+      "result_file": "/workspaces/pokefirered/outputs/mahogany-fly-capacity-review-v1/legacy-fly-kanto/validation.json"
+    },
+    {
+      "name": "legacy-fly-sevii123",
+      "exit": 1,
+      "pass": false,
+      "seconds": 7.96,
+      "native_case_count": 1,
+      "error": "KeyError('id')",
+      "result_file": "/workspaces/pokefirered/outputs/mahogany-fly-capacity-review-v1/legacy-fly-sevii123/validation.json",
+      "log_tail": "SEC_ROUTE_111\": 26, \"section.MAPSEC_ROUTE_119\": 34, \"section.MAPSEC_FORTREE_CITY\": 11, \"section.MAPSEC_ROUTE_120\": 35, \"section.MAPSEC_MT_CHIMNEY\": 56, \"section.MAPSEC_ROUTE_115\": 30, \"section.MAPSEC_SAFARI_ZONE\": 57, \"section.MAPSEC_LAVARIDGE_TOWN\": 3, \"section.MAPSEC_ROUTE_112\": 27, \"section.MAPSEC_ROUTE_121\": 36, \"section.MAPSEC_LILYCOVE_CITY\": 12, \"section.MAPSEC_ROUTE_124\": 39, \"section.MAPSEC_ROUTE_125\": 40, \"section.MAPSEC_ROUTE_122\": 37, \"section.MAPSEC_RUSTBORO_CITY\": 10, \"section.MAPSEC_ROUTE_116\": 31, \"section.MAPSEC_MOSSDEEP_CITY\": 13, \"section.MAPSEC_VERDANTURF_TOWN\": 5, \"section.MAPSEC_ROUTE_117\": 32, \"section.MAPSEC_MAUVILLE_CITY\": 9, \"section.MAPSEC_ROUTE_118\": 33, \"section.MAPSEC_ROUTE_123\": 38, \"section.MAPSEC_ROUTE_126\": 41, \"section.MAPSEC_ROUTE_127\": 42, \"section.MAPSEC_ROUTE_104\": 19, \"section.MAPSEC_ROUTE_110\": 25, \"section.MAPSEC_SOOTOPOLIS_CITY\": 14, \"section.MAPSEC_ROUTE_103\": 18, \"section.MAPSEC_EVER_GRANDE_CITY\": 15, \"section.MAPSEC_PETALBURG_CITY\": 7, \"section.MAPSEC_ROUTE_102\": 17, \"section.MAPSEC_OLDALE_TOWN\": 1, \"section.MAPSEC_ROUTE_128\": 43, \"section.MAPSEC_ROUTE_105\": 20, \"section.MAPSEC_ROUTE_101\": 16, \"section.MAPSEC_ROUTE_134\": 49, \"section.MAPSEC_ROUTE_133\": 48, \"section.MAPSEC_ROUTE_132\": 47, \"section.MAPSEC_PACIFIDLOG_TOWN\": 6, \"section.MAPSEC_ROUTE_131\": 46, \"section.MAPSEC_ROUTE_130\": 45, \"section.MAPSEC_ROUTE_129\": 44, \"section.MAPSEC_LITTLEROOT_TOWN\": 0, \"section.MAPSEC_ROUTE_109\": 24, \"section.MAPSEC_BATTLE_FRONTIER\": 58, \"section.MAPSEC_ROUTE_106\": 21, \"section.MAPSEC_DEWFORD_TOWN\": 2, \"section.MAPSEC_ROUTE_107\": 22, \"section.MAPSEC_ROUTE_108\": 23, \"section.MAPSEC_SOUTHERN_ISLAND\": 73, \"section.MAPSEC_OUTCAST_ISLAND\": 163, \"section.MAPSEC_GREEN_PATH\": 164, \"section.MAPSEC_WATER_PATH\": 165, \"section.MAPSEC_SIX_ISLAND\": 149, \"section.MAPSEC_TRAINER_TOWER\": 167, \"section.MAPSEC_RUIN_VALLEY\": 166, \"section.MAPSEC_SEVEN_ISLAND\": 148, \"section.MAPSEC_CANYON_ENTRANCE\": 168, \"section.MAPSEC_SEVAULT_CANYON\": 169, \"section.MAPSEC_TANOBY_RUINS\": 170, \"section.MAPSEC_BIRTH_ISLAND\": 187, \"section.MAPSEC_ALTERING_CAVE\": 183, \"section.MAPSEC_PATTERN_BUSH\": 182, \"section.MAPSEC_DOTTED_HOLE\": 180, \"section.MAPSEC_TANOBY_CHAMBERS\": 184, \"section.REGIONMAP_TYPE_FLY\": 2, \"section.MAPPERM_HAS_SWITCH_BUTTON\": 0, \"section.LAYER_MAP\": 0, \"section.LAYER_DUNGEON\": 1, \"section.LAYER_COUNT\": 2}, \"source_schema_sha256\": \"6d1bd09a387636c6fee0278c972804f8067f4b23c4fc2927b748705bce6d6aa2\", \"regions\": [\"REGIONMAP_KANTO\", \"REGIONMAP_SEVII123\", \"REGIONMAP_SEVII45\", \"REGIONMAP_SEVII67\", \"REGIONMAP_HOENN\", \"REGIONMAP_JOHTO_ENTRY\", \"REGIONMAP_COUNT\"], \"mapsec_types\": [\"MAPSECTYPE_NONE\", \"MAPSECTYPE_ROUTE\", \"MAPSECTYPE_VISITED\", \"MAPSECTYPE_NOT_VISITED\", \"MAPSECTYPE_UNKNOWN\"]}, \"target_cell_source\": \"native section geometry\", \"region\": \"kanto\", \"gate\": \"on\", \"method\": \"party menu then native destination A\", \"original_party_storage_preserved\": true, \"fly_destinations_not_story_completion\": true, \"legacy_selected_region\": \"REGIONMAP_SEVII123\", \"legacy_total_fly_cells_over_five_maps\": 44, \"original_44_destination_requirement_retained\": true, \"legacy_all_visited\": true, \"existing_21_cases_changed\": false, \"full_campaign_measured\": false, \"actual_device_fps_measured\": false, \"follower_original\": {\"party_index\": 1, \"personality\": 3742077845, \"otid\": 2839214970, \"box_sha256\": \"b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2\", \"copied_without_editing\": true}, \"error\": \"KeyError('id')\", \"original_saves_unchanged\": true}\n"
+    },
+    {
+      "name": "legacy-fly-sevii45",
+      "exit": 1,
+      "pass": false,
+      "seconds": 7.74,
+      "native_case_count": 1,
+      "error": "KeyError('id')",
+      "result_file": "/workspaces/pokefirered/outputs/mahogany-fly-capacity-review-v1/legacy-fly-sevii45/validation.json",
+      "log_tail": "PSEC_ROUTE_111\": 26, \"section.MAPSEC_ROUTE_119\": 34, \"section.MAPSEC_FORTREE_CITY\": 11, \"section.MAPSEC_ROUTE_120\": 35, \"section.MAPSEC_MT_CHIMNEY\": 56, \"section.MAPSEC_ROUTE_115\": 30, \"section.MAPSEC_SAFARI_ZONE\": 57, \"section.MAPSEC_LAVARIDGE_TOWN\": 3, \"section.MAPSEC_ROUTE_112\": 27, \"section.MAPSEC_ROUTE_121\": 36, \"section.MAPSEC_LILYCOVE_CITY\": 12, \"section.MAPSEC_ROUTE_124\": 39, \"section.MAPSEC_ROUTE_125\": 40, \"section.MAPSEC_ROUTE_122\": 37, \"section.MAPSEC_RUSTBORO_CITY\": 10, \"section.MAPSEC_ROUTE_116\": 31, \"section.MAPSEC_MOSSDEEP_CITY\": 13, \"section.MAPSEC_VERDANTURF_TOWN\": 5, \"section.MAPSEC_ROUTE_117\": 32, \"section.MAPSEC_MAUVILLE_CITY\": 9, \"section.MAPSEC_ROUTE_118\": 33, \"section.MAPSEC_ROUTE_123\": 38, \"section.MAPSEC_ROUTE_126\": 41, \"section.MAPSEC_ROUTE_127\": 42, \"section.MAPSEC_ROUTE_104\": 19, \"section.MAPSEC_ROUTE_110\": 25, \"section.MAPSEC_SOOTOPOLIS_CITY\": 14, \"section.MAPSEC_ROUTE_103\": 18, \"section.MAPSEC_EVER_GRANDE_CITY\": 15, \"section.MAPSEC_PETALBURG_CITY\": 7, \"section.MAPSEC_ROUTE_102\": 17, \"section.MAPSEC_OLDALE_TOWN\": 1, \"section.MAPSEC_ROUTE_128\": 43, \"section.MAPSEC_ROUTE_105\": 20, \"section.MAPSEC_ROUTE_101\": 16, \"section.MAPSEC_ROUTE_134\": 49, \"section.MAPSEC_ROUTE_133\": 48, \"section.MAPSEC_ROUTE_132\": 47, \"section.MAPSEC_PACIFIDLOG_TOWN\": 6, \"section.MAPSEC_ROUTE_131\": 46, \"section.MAPSEC_ROUTE_130\": 45, \"section.MAPSEC_ROUTE_129\": 44, \"section.MAPSEC_LITTLEROOT_TOWN\": 0, \"section.MAPSEC_ROUTE_109\": 24, \"section.MAPSEC_BATTLE_FRONTIER\": 58, \"section.MAPSEC_ROUTE_106\": 21, \"section.MAPSEC_DEWFORD_TOWN\": 2, \"section.MAPSEC_ROUTE_107\": 22, \"section.MAPSEC_ROUTE_108\": 23, \"section.MAPSEC_SOUTHERN_ISLAND\": 73, \"section.MAPSEC_OUTCAST_ISLAND\": 163, \"section.MAPSEC_GREEN_PATH\": 164, \"section.MAPSEC_WATER_PATH\": 165, \"section.MAPSEC_SIX_ISLAND\": 149, \"section.MAPSEC_TRAINER_TOWER\": 167, \"section.MAPSEC_RUIN_VALLEY\": 166, \"section.MAPSEC_SEVEN_ISLAND\": 148, \"section.MAPSEC_CANYON_ENTRANCE\": 168, \"section.MAPSEC_SEVAULT_CANYON\": 169, \"section.MAPSEC_TANOBY_RUINS\": 170, \"section.MAPSEC_BIRTH_ISLAND\": 187, \"section.MAPSEC_ALTERING_CAVE\": 183, \"section.MAPSEC_PATTERN_BUSH\": 182, \"section.MAPSEC_DOTTED_HOLE\": 180, \"section.MAPSEC_TANOBY_CHAMBERS\": 184, \"section.REGIONMAP_TYPE_FLY\": 2, \"section.MAPPERM_HAS_SWITCH_BUTTON\": 0, \"section.LAYER_MAP\": 0, \"section.LAYER_DUNGEON\": 1, \"section.LAYER_COUNT\": 2}, \"source_schema_sha256\": \"6d1bd09a387636c6fee0278c972804f8067f4b23c4fc2927b748705bce6d6aa2\", \"regions\": [\"REGIONMAP_KANTO\", \"REGIONMAP_SEVII123\", \"REGIONMAP_SEVII45\", \"REGIONMAP_SEVII67\", \"REGIONMAP_HOENN\", \"REGIONMAP_JOHTO_ENTRY\", \"REGIONMAP_COUNT\"], \"mapsec_types\": [\"MAPSECTYPE_NONE\", \"MAPSECTYPE_ROUTE\", \"MAPSECTYPE_VISITED\", \"MAPSECTYPE_NOT_VISITED\", \"MAPSECTYPE_UNKNOWN\"]}, \"target_cell_source\": \"native section geometry\", \"region\": \"kanto\", \"gate\": \"on\", \"method\": \"party menu then native destination A\", \"original_party_storage_preserved\": true, \"fly_destinations_not_story_completion\": true, \"legacy_selected_region\": \"REGIONMAP_SEVII45\", \"legacy_total_fly_cells_over_five_maps\": 44, \"original_44_destination_requirement_retained\": true, \"legacy_all_visited\": true, \"existing_21_cases_changed\": false, \"full_campaign_measured\": false, \"actual_device_fps_measured\": false, \"follower_original\": {\"party_index\": 1, \"personality\": 3742077845, \"otid\": 2839214970, \"box_sha256\": \"b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2\", \"copied_without_editing\": true}, \"error\": \"KeyError('id')\", \"original_saves_unchanged\": true}\n"
+    },
+    {
+      "name": "legacy-fly-sevii67",
+      "exit": 1,
+      "pass": false,
+      "seconds": 8.0,
+      "native_case_count": 1,
+      "error": "KeyError('id')",
+      "result_file": "/workspaces/pokefirered/outputs/mahogany-fly-capacity-review-v1/legacy-fly-sevii67/validation.json",
+      "log_tail": "PSEC_ROUTE_111\": 26, \"section.MAPSEC_ROUTE_119\": 34, \"section.MAPSEC_FORTREE_CITY\": 11, \"section.MAPSEC_ROUTE_120\": 35, \"section.MAPSEC_MT_CHIMNEY\": 56, \"section.MAPSEC_ROUTE_115\": 30, \"section.MAPSEC_SAFARI_ZONE\": 57, \"section.MAPSEC_LAVARIDGE_TOWN\": 3, \"section.MAPSEC_ROUTE_112\": 27, \"section.MAPSEC_ROUTE_121\": 36, \"section.MAPSEC_LILYCOVE_CITY\": 12, \"section.MAPSEC_ROUTE_124\": 39, \"section.MAPSEC_ROUTE_125\": 40, \"section.MAPSEC_ROUTE_122\": 37, \"section.MAPSEC_RUSTBORO_CITY\": 10, \"section.MAPSEC_ROUTE_116\": 31, \"section.MAPSEC_MOSSDEEP_CITY\": 13, \"section.MAPSEC_VERDANTURF_TOWN\": 5, \"section.MAPSEC_ROUTE_117\": 32, \"section.MAPSEC_MAUVILLE_CITY\": 9, \"section.MAPSEC_ROUTE_118\": 33, \"section.MAPSEC_ROUTE_123\": 38, \"section.MAPSEC_ROUTE_126\": 41, \"section.MAPSEC_ROUTE_127\": 42, \"section.MAPSEC_ROUTE_104\": 19, \"section.MAPSEC_ROUTE_110\": 25, \"section.MAPSEC_SOOTOPOLIS_CITY\": 14, \"section.MAPSEC_ROUTE_103\": 18, \"section.MAPSEC_EVER_GRANDE_CITY\": 15, \"section.MAPSEC_PETALBURG_CITY\": 7, \"section.MAPSEC_ROUTE_102\": 17, \"section.MAPSEC_OLDALE_TOWN\": 1, \"section.MAPSEC_ROUTE_128\": 43, \"section.MAPSEC_ROUTE_105\": 20, \"section.MAPSEC_ROUTE_101\": 16, \"section.MAPSEC_ROUTE_134\": 49, \"section.MAPSEC_ROUTE_133\": 48, \"section.MAPSEC_ROUTE_132\": 47, \"section.MAPSEC_PACIFIDLOG_TOWN\": 6, \"section.MAPSEC_ROUTE_131\": 46, \"section.MAPSEC_ROUTE_130\": 45, \"section.MAPSEC_ROUTE_129\": 44, \"section.MAPSEC_LITTLEROOT_TOWN\": 0, \"section.MAPSEC_ROUTE_109\": 24, \"section.MAPSEC_BATTLE_FRONTIER\": 58, \"section.MAPSEC_ROUTE_106\": 21, \"section.MAPSEC_DEWFORD_TOWN\": 2, \"section.MAPSEC_ROUTE_107\": 22, \"section.MAPSEC_ROUTE_108\": 23, \"section.MAPSEC_SOUTHERN_ISLAND\": 73, \"section.MAPSEC_OUTCAST_ISLAND\": 163, \"section.MAPSEC_GREEN_PATH\": 164, \"section.MAPSEC_WATER_PATH\": 165, \"section.MAPSEC_SIX_ISLAND\": 149, \"section.MAPSEC_TRAINER_TOWER\": 167, \"section.MAPSEC_RUIN_VALLEY\": 166, \"section.MAPSEC_SEVEN_ISLAND\": 148, \"section.MAPSEC_CANYON_ENTRANCE\": 168, \"section.MAPSEC_SEVAULT_CANYON\": 169, \"section.MAPSEC_TANOBY_RUINS\": 170, \"section.MAPSEC_BIRTH_ISLAND\": 187, \"section.MAPSEC_ALTERING_CAVE\": 183, \"section.MAPSEC_PATTERN_BUSH\": 182, \"section.MAPSEC_DOTTED_HOLE\": 180, \"section.MAPSEC_TANOBY_CHAMBERS\": 184, \"section.REGIONMAP_TYPE_FLY\": 2, \"section.MAPPERM_HAS_SWITCH_BUTTON\": 0, \"section.LAYER_MAP\": 0, \"section.LAYER_DUNGEON\": 1, \"section.LAYER_COUNT\": 2}, \"source_schema_sha256\": \"6d1bd09a387636c6fee0278c972804f8067f4b23c4fc2927b748705bce6d6aa2\", \"regions\": [\"REGIONMAP_KANTO\", \"REGIONMAP_SEVII123\", \"REGIONMAP_SEVII45\", \"REGIONMAP_SEVII67\", \"REGIONMAP_HOENN\", \"REGIONMAP_JOHTO_ENTRY\", \"REGIONMAP_COUNT\"], \"mapsec_types\": [\"MAPSECTYPE_NONE\", \"MAPSECTYPE_ROUTE\", \"MAPSECTYPE_VISITED\", \"MAPSECTYPE_NOT_VISITED\", \"MAPSECTYPE_UNKNOWN\"]}, \"target_cell_source\": \"native section geometry\", \"region\": \"kanto\", \"gate\": \"on\", \"method\": \"party menu then native destination A\", \"original_party_storage_preserved\": true, \"fly_destinations_not_story_completion\": true, \"legacy_selected_region\": \"REGIONMAP_SEVII67\", \"legacy_total_fly_cells_over_five_maps\": 44, \"original_44_destination_requirement_retained\": true, \"legacy_all_visited\": true, \"existing_21_cases_changed\": false, \"full_campaign_measured\": false, \"actual_device_fps_measured\": false, \"follower_original\": {\"party_index\": 1, \"personality\": 3742077845, \"otid\": 2839214970, \"box_sha256\": \"b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2\", \"copied_without_editing\": true}, \"error\": \"KeyError('id')\", \"original_saves_unchanged\": true}\n"
+    },
+    {
+      "name": "legacy-fly-hoenn",
+      "exit": 0,
+      "pass": true,
+      "seconds": 10.89,
+      "native_case_count": 1,
+      "error": null,
+      "result_file": "/workspaces/pokefirered/outputs/mahogany-fly-capacity-review-v1/legacy-fly-hoenn/validation.json"
+    },
+    {
+      "name": "mahogany-map-links",
+      "exit": 0,
+      "pass": true,
+      "seconds": 85.68,
+      "native_case_count": 28,
+      "error": null,
+      "result_file": "/workspaces/pokefirered/outputs/mahogany-fly-capacity-review-v1/mahogany-map-links/result.json"
+    }
+  ],
+  "full_regions_complete": false,
+  "main_replaced": false,
+  "all_pass": false,
+  "original_files_unchanged": true
+}

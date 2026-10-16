@@ -1,0 +1,21 @@
+{
+  "pid": 67139,
+  "command": [
+    "python3",
+    "/workspaces/pokefirered/work/resume-v14-20261014/r3/native_v14_save_cold_r3.py",
+    "--root",
+    "/workspaces/pokefirered",
+    "--rom",
+    "/workspaces/pokefirered/pokemonthyl.gba",
+    "--elf",
+    "/workspaces/pokefirered/pokemonthyl.elf",
+    "--abi-json",
+    "/workspaces/pokefirered/work/hoenn-resume-20261014/dock-fix-rebound-abi-r1.json",
+    "--sav",
+    "/workspaces/pokefirered/work/resume-v14-20261014/PC-final-tools-r1/pokemonthyl_v1.4-recovered-PCsorted.sav",
+    "--out",
+    "/workspaces/pokefirered/work/resume-v14-20261014/native-v14-recovered-r1",
+    "--expect-sav-sha",
+    "c06ad0536f1ee13fd88a3cf36346b52d3d5ca0cae7e729723acf6047d916feb8"
+  ]
+}

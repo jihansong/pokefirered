@@ -1,0 +1,12 @@
+{
+  "applied_utc": "2026-10-04T14:29:46.258767+00:00",
+  "source": "src/pokemon.c",
+  "before_sha256": "c536c95b57b405fcb3ed1395712081a4e7839bd7fdc56bab131653b74cd3572c",
+  "after_sha256": "b181299ea44b5fcb486d7d8f86509d840d84283dfcf5ba10a9d1ed063ecdabec",
+  "scope": "prevent generic foreign-OT delivery key mismatch; does not identify recurring one-bit corruption",
+  "data_model_cases": 72,
+  "native_foreign_ot_reproduction": false,
+  "save_fields_changed": false,
+  "user_saves_modified": false,
+  "recurring_bad_egg_cause_proven": false
+}

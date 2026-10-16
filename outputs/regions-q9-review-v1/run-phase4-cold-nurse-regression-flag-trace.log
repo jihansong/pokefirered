@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/native_cold_nurse_regression_qa.py", line 146, in <module>
+    with ReadOnlyEmu(str(rom),str(path),sym='')as e:row=attempt(e,room,count,prepared,label)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/native_cold_nurse_regression_qa.py", line 131, in attempt
+    _cold_nurse_flag_trace_phase='native-SAVE-and-cold-reload';saved=flash_reload(e,label)
+                                                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "tools/qa/johto_violet_native_bootstrap_v1.py", line 114, in flash_reload
+    assert cold==live,('cold-load differs',[k for k in cold if cold[k]!=live[k]])
+           ^^^^^^^^^^
+AssertionError: ('cold-load differs', ['full_hoenn_johto_flags'])

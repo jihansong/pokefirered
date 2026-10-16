@@ -1,0 +1,263 @@
+{
+  "status": "FINISHED",
+  "jobs_total": 42,
+  "max_workers": 2,
+  "candidate_sha256": "e1dae61efd6a141c1ae167a196f6257c2aad9d65a4064207ddcd2416bdcf9542",
+  "results": [
+    {
+      "name": "events",
+      "exit": 0,
+      "seconds": 160.29,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-events.log"
+    },
+    {
+      "name": "battles",
+      "exit": 0,
+      "seconds": 98.31,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-battles.log"
+    },
+    {
+      "name": "maps",
+      "exit": 0,
+      "seconds": 83.05,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-maps.log"
+    },
+    {
+      "name": "chain",
+      "exit": 0,
+      "seconds": 155.12,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-chain.log"
+    },
+    {
+      "name": "wild",
+      "exit": 1,
+      "seconds": 14.6,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-wild.log"
+    },
+    {
+      "name": "waterfall-a",
+      "exit": 0,
+      "seconds": 17.82,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-waterfall-a.log"
+    },
+    {
+      "name": "waterfall-menu",
+      "exit": 0,
+      "seconds": 16.35,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-waterfall-menu.log"
+    },
+    {
+      "name": "waterfall-no-badge-a",
+      "exit": 0,
+      "seconds": 11.74,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-waterfall-no-badge-a.log"
+    },
+    {
+      "name": "waterfall-no-badge-menu",
+      "exit": 0,
+      "seconds": 13.54,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-waterfall-no-badge-menu.log"
+    },
+    {
+      "name": "waterfall-kanto-only-a",
+      "exit": 0,
+      "seconds": 12.68,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-waterfall-kanto-only-a.log"
+    },
+    {
+      "name": "waterfall-kanto-only-menu",
+      "exit": 0,
+      "seconds": 12.37,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-waterfall-kanto-only-menu.log"
+    },
+    {
+      "name": "waterfall-hoenn-only-a",
+      "exit": 0,
+      "seconds": 11.7,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-waterfall-hoenn-only-a.log"
+    },
+    {
+      "name": "waterfall-hoenn-only-menu",
+      "exit": 0,
+      "seconds": 12.9,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-waterfall-hoenn-only-menu.log"
+    },
+    {
+      "name": "fly-town-blackthorn_city",
+      "exit": 0,
+      "seconds": 13.92,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-fly-town-blackthorn_city.log"
+    },
+    {
+      "name": "fly-town-blackthorn_badge8",
+      "exit": 0,
+      "seconds": 15.3,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-fly-town-blackthorn_badge8.log"
+    },
+    {
+      "name": "fly-town-locked-blackthorn",
+      "exit": 0,
+      "seconds": 9.85,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-fly-town-locked-blackthorn.log"
+    },
+    {
+      "name": "fly-town-all-visited",
+      "exit": 0,
+      "seconds": 17.27,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-fly-town-all-visited.log"
+    },
+    {
+      "name": "hm-wanda-fresh",
+      "exit": 0,
+      "seconds": 21.89,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-wanda-fresh.log"
+    },
+    {
+      "name": "hm-wanda-bag",
+      "exit": 0,
+      "seconds": 18.58,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-wanda-bag.log"
+    },
+    {
+      "name": "hm-wanda-pc",
+      "exit": 0,
+      "seconds": 16.7,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-wanda-pc.log"
+    },
+    {
+      "name": "hm-wanda-history",
+      "exit": 0,
+      "seconds": 14.32,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-wanda-history.log"
+    },
+    {
+      "name": "hm-wanda-done",
+      "exit": 0,
+      "seconds": 13.65,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-wanda-done.log"
+    },
+    {
+      "name": "hm-wanda-full-retry",
+      "exit": 0,
+      "seconds": 24.0,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-wanda-full-retry.log"
+    },
+    {
+      "name": "hm-dad-fresh",
+      "exit": 0,
+      "seconds": 17.49,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-dad-fresh.log"
+    },
+    {
+      "name": "hm-dad-bag",
+      "exit": 0,
+      "seconds": 19.75,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-dad-bag.log"
+    },
+    {
+      "name": "hm-dad-pc",
+      "exit": 0,
+      "seconds": 19.96,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-dad-pc.log"
+    },
+    {
+      "name": "hm-dad-history",
+      "exit": 0,
+      "seconds": 18.9,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-dad-history.log"
+    },
+    {
+      "name": "hm-dad-done",
+      "exit": 0,
+      "seconds": 18.91,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-dad-done.log"
+    },
+    {
+      "name": "hm-dad-full-retry",
+      "exit": 0,
+      "seconds": 26.55,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-dad-full-retry.log"
+    },
+    {
+      "name": "hm-flash-fresh",
+      "exit": 0,
+      "seconds": 19.38,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-flash-fresh.log"
+    },
+    {
+      "name": "hm-flash-bag",
+      "exit": 0,
+      "seconds": 20.7,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-flash-bag.log"
+    },
+    {
+      "name": "hm-flash-pc",
+      "exit": 0,
+      "seconds": 19.15,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-flash-pc.log"
+    },
+    {
+      "name": "hm-flash-history",
+      "exit": 0,
+      "seconds": 18.46,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-flash-history.log"
+    },
+    {
+      "name": "hm-flash-done",
+      "exit": 0,
+      "seconds": 18.52,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-flash-done.log"
+    },
+    {
+      "name": "hm-flash-full-retry",
+      "exit": 0,
+      "seconds": 26.81,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-flash-full-retry.log"
+    },
+    {
+      "name": "hm-wanda-before-open",
+      "exit": 0,
+      "seconds": 18.98,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-wanda-before-open.log"
+    },
+    {
+      "name": "hm-wanda-referral",
+      "exit": 0,
+      "seconds": 22.49,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-wanda-referral.log"
+    },
+    {
+      "name": "hm-dad-before-wally",
+      "exit": 0,
+      "seconds": 20.31,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-dad-before-wally.log"
+    },
+    {
+      "name": "hm-dad-before-norman",
+      "exit": 0,
+      "seconds": 18.39,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-dad-before-norman.log"
+    },
+    {
+      "name": "hm-dad-badge-only",
+      "exit": 0,
+      "seconds": 19.17,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-dad-badge-only.log"
+    },
+    {
+      "name": "hm-dad-trainer-only",
+      "exit": 0,
+      "seconds": 17.4,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-hm-dad-trainer-only.log"
+    },
+    {
+      "name": "habitat",
+      "exit": 1,
+      "seconds": 10.82,
+      "log": "/workspaces/pokefirered/outputs/blackthorn-review-v1/run-habitat.log"
+    }
+  ],
+  "all_pass": false,
+  "original_saves_unchanged": true,
+  "main_not_replaced": true
+}

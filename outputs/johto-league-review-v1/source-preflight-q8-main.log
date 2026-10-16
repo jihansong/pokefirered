@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/johto/build_johto_league.py", line 915, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--root',default='.');p.add_argument('--apply',action='store_true');a=p.parse_args();apply(Path(a.root).resolve(),a.apply)
+                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/johto/build_johto_league.py", line 892, in apply
+    s=Source(root);out,stats=build(s);validate(s,out,stats)
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/johto/build_johto_league.py", line 773, in validate
+    assert b in warp_b or flank,(n,wp,hex(a[y*w+x]),hex(b),'warp lacks native behavior')
+           ^^^^^^^^^^^
+AssertionError: ('JohtoLeague_HallOfFame', {'x': 5, 'y': 12, 'elevation': 3, 'dest_map': 'MAP_JOHTO_LEAGUE_LANCES_ROOM', 'dest_warp_id': '0'}, '0x32b0', '0x23', 'warp lacks native behavior')

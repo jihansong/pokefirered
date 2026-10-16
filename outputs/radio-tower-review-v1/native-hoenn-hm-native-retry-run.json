@@ -1,0 +1,175 @@
+{
+  "status": "FINISHED",
+  "rom_sha256": "f3b4e13df998d1832544218a88cd0c4845a9b7ebd184628e00c1e9595434204c",
+  "cases": [
+    {
+      "kind": "shared",
+      "case": "cutter-fresh",
+      "exit": 0,
+      "pass": true,
+      "seconds": 18.0,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-native-retry-shared-cutter-fresh"
+    },
+    {
+      "kind": "legacy",
+      "case": "brawly-full-retry",
+      "exit": 0,
+      "pass": true,
+      "seconds": 19.52,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-native-retry-legacy-brawly-full-retry"
+    },
+    {
+      "kind": "legacy",
+      "case": "brawly-legacy",
+      "exit": 0,
+      "pass": true,
+      "seconds": 13.77,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-native-retry-legacy-brawly-legacy"
+    },
+    {
+      "kind": "legacy",
+      "case": "brawly-receipt",
+      "exit": 0,
+      "pass": true,
+      "seconds": 12.88,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-native-retry-legacy-brawly-receipt"
+    },
+    {
+      "kind": "legacy",
+      "case": "wattson-legacy",
+      "exit": 0,
+      "pass": true,
+      "seconds": 15.83,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-native-retry-legacy-wattson-legacy"
+    },
+    {
+      "kind": "legacy",
+      "case": "wattson-receipt",
+      "exit": 0,
+      "pass": true,
+      "seconds": 15.45,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-native-retry-legacy-wattson-receipt"
+    },
+    {
+      "kind": "legacy",
+      "case": "wattson-full-retry",
+      "exit": 0,
+      "pass": true,
+      "seconds": 22.05,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-native-retry-legacy-wattson-full-retry"
+    },
+    {
+      "kind": "shared",
+      "case": "cutter-bag",
+      "exit": 0,
+      "pass": true,
+      "seconds": 18.43,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-native-retry-shared-cutter-bag"
+    },
+    {
+      "kind": "shared",
+      "case": "cutter-pc",
+      "exit": 0,
+      "pass": true,
+      "seconds": 19.16,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-native-retry-shared-cutter-pc"
+    },
+    {
+      "kind": "shared",
+      "case": "cutter-history",
+      "exit": 0,
+      "pass": true,
+      "seconds": 19.04,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-native-retry-shared-cutter-history"
+    },
+    {
+      "kind": "shared",
+      "case": "cutter-done",
+      "exit": 0,
+      "pass": true,
+      "seconds": 18.06,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-native-retry-shared-cutter-done"
+    },
+    {
+      "kind": "shared",
+      "case": "cutter-full-retry",
+      "exit": 0,
+      "pass": true,
+      "seconds": 27.69,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-native-retry-shared-cutter-full-retry"
+    },
+    {
+      "kind": "shared",
+      "case": "smash-fresh",
+      "exit": 0,
+      "pass": true,
+      "seconds": 19.26,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-native-retry-shared-smash-fresh"
+    },
+    {
+      "kind": "shared",
+      "case": "smash-bag",
+      "exit": 0,
+      "pass": true,
+      "seconds": 19.81,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-native-retry-shared-smash-bag"
+    },
+    {
+      "kind": "shared",
+      "case": "smash-pc",
+      "exit": 0,
+      "pass": true,
+      "seconds": 20.85,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-native-retry-shared-smash-pc"
+    },
+    {
+      "kind": "shared",
+      "case": "smash-history",
+      "exit": 0,
+      "pass": true,
+      "seconds": 20.67,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-native-retry-shared-smash-history"
+    },
+    {
+      "kind": "shared",
+      "case": "smash-done",
+      "exit": 0,
+      "pass": true,
+      "seconds": 19.02,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-native-retry-shared-smash-done"
+    },
+    {
+      "kind": "shared",
+      "case": "smash-full-retry",
+      "exit": 0,
+      "pass": true,
+      "seconds": 17.99,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-native-retry-shared-smash-full-retry"
+    }
+  ],
+  "fixture_only_visibility_normalized": true,
+  "assertions_weakened": false,
+  "first_failure_history_retained": "native-hoenn-hm-run.json",
+  "main_replaced": false,
+  "all_pass": true,
+  "original_saves_unchanged": true,
+  "main_unchanged": true
+}

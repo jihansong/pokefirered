@@ -1,0 +1,195 @@
+{
+  "pass": true,
+  "rom_sha256": "e1dae61efd6a141c1ae167a196f6257c2aad9d65a4064207ddcd2416bdcf9542",
+  "elf_sha256": "ee9cc4d5d889f7b05bb9341185ce7976806968a0a700299df8a01e78499e24da",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-johto-waterfall-kanto-only-a",
+  "fixture": "temporary Lapras mover plus exact copy of genuine original starter Pikachu; original SAV/PC/Dex unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "candidate_ui_task_symbols": {
+    "Task_HandleChooseMonInput": [
+      135416944
+    ],
+    "Task_HandleSelectionMenuInput": [
+      135429616
+    ],
+    "Task_ReturnToChooseMonAfterText": [
+      135419136
+    ],
+    "Task_CancelAfterAorBPress": [
+      135437108
+    ],
+    "Task_YesNoMenu_HandleInput": [
+      134874308
+    ],
+    "Task_UseWaterfall": [
+      134775148
+    ]
+  },
+  "native_story_not_entire_regions": true,
+  "palette_active_abi_mask": {
+    "size": 16,
+    "offset": 7,
+    "mask": 128
+  },
+  "input_abi_offsets": {
+    "heldKeysRaw": 40,
+    "newKeysRaw": 42,
+    "heldKeys": 44,
+    "newKeys": 46,
+    "newAndRepeatedKeys": 48,
+    "keyRepeatCounter": 50,
+    "vblankCounter2": 36,
+    "link_recv_count": 4029,
+    "link_overworld_max": 3
+  },
+  "follower_checks": [
+    {
+      "label": "base-right",
+      "map": [
+        76,
+        110
+      ],
+      "player_xy": [
+        21,
+        10
+      ],
+      "follower_xy": [
+        20,
+        10
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "base-left",
+      "map": [
+        76,
+        110
+      ],
+      "player_xy": [
+        20,
+        10
+      ],
+      "follower_xy": [
+        21,
+        10
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "badge-rejected-still-follows-right",
+      "map": [
+        76,
+        110
+      ],
+      "player_xy": [
+        21,
+        10
+      ],
+      "follower_xy": [
+        20,
+        10
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "badge-rejected-still-follows-left",
+      "map": [
+        76,
+        110
+      ],
+      "player_xy": [
+        20,
+        10
+      ],
+      "follower_xy": [
+        21,
+        10
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "badge-rejected-cold-right",
+      "map": [
+        76,
+        110
+      ],
+      "player_xy": [
+        21,
+        10
+      ],
+      "follower_xy": [
+        20,
+        10
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    },
+    {
+      "label": "badge-rejected-cold-left",
+      "map": [
+        76,
+        110
+      ],
+      "player_xy": [
+        20,
+        10
+      ],
+      "follower_xy": [
+        21,
+        10
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 8
+    }
+  ],
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "native_save": {
+    "counter_before": 60,
+    "counter_after": 61,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_JOHTO_BADGE08_GET": false,
+      "FLAG_JOHTO_BADGE04_GET": true,
+      "FLAG_HOENN_BADGE08_GET": false,
+      "FLAG_BADGE07_GET": true,
+      "FLAG_RECEIVED_STARTER_PIKACHU": true
+    },
+    "trainers": {
+      "TRAINER_HOENN_SHELLY_WEATHER_INSTITUTE": false,
+      "TRAINER_HOENN_TABITHA_SPACE_CENTER": false,
+      "TRAINER_HOENN_MAXIE_SPACE_CENTER": false
+    },
+    "hm08": 0,
+    "sha256": "3c53349e2df65a7b6454967127c83d2fb4c35e0838c70a8c5a595580c29729e3"
+  },
+  "native_region_badge_boundary": true,
+  "full_original_storage_unchanged": true,
+  "forced_game_memory_writes": 0,
+  "original_sav_modified": false,
+  "original_saves_unchanged": true
+}

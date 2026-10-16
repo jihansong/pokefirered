@@ -1,0 +1,35 @@
+{
+  "apply": true,
+  "save_layout_changed": false,
+  "native_revalidation": "PENDING",
+  "targets": {
+    "tools/johto/build_olivine_cianwood.py": {
+      "before": "63a2eeb6177d44c7710931a19e3af200e068d249c9d6e424f899e74fe05bec6a",
+      "after": "f766c00a2a63a7e2ab37fc4c573965f28fe2b6b3260bd3348d09f6d2374c8b8c",
+      "bytes": 50118
+    },
+    "data/maps/CianwoodCity_Gym/scripts.inc": {
+      "before": "26e101c3091574f2ff9f7b1d9ca006f3f1986624f186f8e89cd3915215a8a9c5",
+      "after": "927d3717c63f7d1a22ac08b9f1bbfe41a43d90bc0f54cb10326ae2883b2e4ef7",
+      "bytes": 1235
+    },
+    "data/maps/OlivineCity_Gym/scripts.inc": {
+      "before": "72544103cc34b37d605a481415fcca87b8153d50d9abae23c2d109bcb1ed594f",
+      "after": "05b2ed91a40c5ff26281b9c0edae98c1e47c542801c9939b5a068833f5f9e875",
+      "bytes": 1613
+    }
+  },
+  "evidence": {
+    "CianwoodCity_Gym": {
+      "callback": "CianwoodCity_Gym_Victory",
+      "battle_mode": "TRAINER_BATTLE_CONTINUE_SCRIPT_NO_MUSIC",
+      "badge_and_TM_assertions_unchanged": true
+    },
+    "OlivineCity_Gym": {
+      "callback": "OlivineCity_Gym_Victory",
+      "battle_mode": "TRAINER_BATTLE_CONTINUE_SCRIPT_NO_MUSIC",
+      "badge_and_TM_assertions_unchanged": true
+    }
+  }
+}
+APPLIED /workspaces/pokefirered/outputs/johto-gym-callback-repair/20261005T185750764864Z/manifest.json

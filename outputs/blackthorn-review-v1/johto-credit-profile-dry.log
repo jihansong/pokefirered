@@ -1,0 +1,269 @@
+{
+  "applied": false,
+  "region": "johto",
+  "profile_stage": "native review draft",
+  "automatic_regional_clear_trigger": false,
+  "league_hof_implemented": false,
+  "film_captured": false,
+  "visual_review_required": true,
+  "new_music": false,
+  "original_music": "MUS_CREDITS",
+  "new_artwork": false,
+  "credits_object_layout_changed": false,
+  "save_layout_changed": false,
+  "original_staff_map_tables_preserved": true,
+  "scene_slots": [
+    {
+      "name": "NewBarkTown",
+      "map": "MAP_NEW_BARK_TOWN",
+      "size": [
+        36,
+        28
+      ],
+      "start": [
+        18,
+        22
+      ],
+      "scroll": [
+        0,
+        -1,
+        160
+      ],
+      "map_sha256": "f5926f973988383838b8a4cccb6b1f6a2cf0af0c2ff1e29a59273d90645dfee8"
+    },
+    {
+      "name": "NewBarkTown_ElmsLab",
+      "map": "MAP_NEW_BARK_TOWN_ELMS_LAB",
+      "size": [
+        13,
+        14
+      ],
+      "start": [
+        6,
+        9
+      ],
+      "scroll": [
+        0,
+        0,
+        1
+      ],
+      "map_sha256": "7ff591f096cead30d014fba6bf0c82f6ce08b2e140943da55b6bc6ff4ff6f11e"
+    },
+    {
+      "name": "CherrygroveCity",
+      "map": "MAP_CHERRYGROVE_CITY",
+      "size": [
+        36,
+        28
+      ],
+      "start": [
+        18,
+        22
+      ],
+      "scroll": [
+        0,
+        -1,
+        128
+      ],
+      "map_sha256": "ede66b8ee58e82bf791a5238e4e1bedc377f24d27acda00f9a73d208bd859d80"
+    },
+    {
+      "name": "VioletCity",
+      "map": "MAP_VIOLET_CITY",
+      "size": [
+        40,
+        32
+      ],
+      "start": [
+        20,
+        26
+      ],
+      "scroll": [
+        0,
+        -1,
+        160
+      ],
+      "map_sha256": "2e115ce44fafeb0996a4d4c85c2b784f0ea2f07ee110e78bc1eee49be50afec7"
+    },
+    {
+      "name": "AzaleaTown",
+      "map": "MAP_AZALEA_TOWN",
+      "size": [
+        40,
+        28
+      ],
+      "start": [
+        20,
+        22
+      ],
+      "scroll": [
+        0,
+        -1,
+        128
+      ],
+      "map_sha256": "bcdb1a16f0317151bd4a1847c770d59b18cff657113b7c0acd61a2b9bf76ef69"
+    },
+    {
+      "name": "IlexForest",
+      "map": "MAP_ILEX_FOREST",
+      "size": [
+        40,
+        48
+      ],
+      "start": [
+        20,
+        42
+      ],
+      "scroll": [
+        0,
+        -1,
+        160
+      ],
+      "map_sha256": "831f403b96bf12ba59b0bca6294c825ce5180cf25f7542c2286d6f8fc760f504"
+    },
+    {
+      "name": "GoldenrodCity",
+      "map": "MAP_GOLDENROD_CITY",
+      "size": [
+        48,
+        40
+      ],
+      "start": [
+        24,
+        34
+      ],
+      "scroll": [
+        0,
+        -1,
+        160
+      ],
+      "map_sha256": "3b3360e3bc5393ba64a7c707ca8231206a8ba1bdfb626ee7e43a7924bfa025e2"
+    },
+    {
+      "name": "EcruteakCity",
+      "map": "MAP_ECRUTEAK_CITY",
+      "size": [
+        40,
+        36
+      ],
+      "start": [
+        20,
+        30
+      ],
+      "scroll": [
+        0,
+        -1,
+        160
+      ],
+      "map_sha256": "188a27ce47a3da4f3ed4af19c8f026d80fc0c9168622ee31298793ef471e3b4c"
+    },
+    {
+      "name": "BurnedTower_1F",
+      "map": "MAP_BURNED_TOWER_1F",
+      "size": [
+        28,
+        24
+      ],
+      "start": [
+        14,
+        20
+      ],
+      "scroll": [
+        0,
+        -1,
+        80
+      ],
+      "map_sha256": "ce5f2f263cae39de5aa175341e5eb17d60a2e3058e4075339cf5205eab82ecf1"
+    },
+    {
+      "name": "OlivineCity",
+      "map": "MAP_OLIVINE_CITY",
+      "size": [
+        44,
+        40
+      ],
+      "start": [
+        22,
+        34
+      ],
+      "scroll": [
+        0,
+        -1,
+        160
+      ],
+      "map_sha256": "f4fb8b79b8b952a0e6e4d88c94c4fcf4b03156c6b26b43706d386f64e7d536cc"
+    },
+    {
+      "name": "OlivineLighthouse_6F",
+      "map": "MAP_OLIVINE_LIGHTHOUSE_6F",
+      "size": [
+        24,
+        20
+      ],
+      "start": [
+        12,
+        16
+      ],
+      "scroll": [
+        0,
+        -1,
+        80
+      ],
+      "map_sha256": "5fe36fb1dfed0c4dfa8d7f8e38933038b9dde04d7b24a1fb9e744e3ab3054a8f"
+    },
+    {
+      "name": "LakeOfRage",
+      "map": "MAP_LAKE_OF_RAGE",
+      "size": [
+        40,
+        36
+      ],
+      "start": [
+        20,
+        30
+      ],
+      "scroll": [
+        0,
+        -1,
+        160
+      ],
+      "map_sha256": "81daa802b8c346caf2e15d489187a930d7e82e0de671f158d557020b7e1999ea"
+    },
+    {
+      "name": "MtMortar_1F",
+      "map": "MAP_MT_MORTAR_1F",
+      "size": [
+        48,
+        40
+      ],
+      "start": [
+        24,
+        34
+      ],
+      "scroll": [
+        0,
+        -1,
+        160
+      ],
+      "map_sha256": "30a80701fbe510864055dd6155b423e271ab16a94a1b38104d78eb8ae77c34f5"
+    }
+  ],
+  "manual_entrypoint": "DoJohtoCredits",
+  "missing_required_story_beats": [
+    "Ruins of Alph",
+    "Bell Tower",
+    "Whirl Islands",
+    "Dragon Den",
+    "Johto League and Hall of Fame"
+  ],
+  "files": {
+    "src/credits.c": {
+      "before": "3d2505328dbe43f4d15c9a63ac4868f07981b48feca2b18560835d5ce39f0a18",
+      "after": "2bedffbb8772d80c8a45c93166483c9f8de68326781078c42fe59362d28aa9e4"
+    },
+    "include/credits.h": {
+      "before": "bcde46054969d89e44053de52b88e8ef3f2fa6f694d2edca63239af0677b36ca",
+      "after": "e5fd26fe38fefcd929caf3a553125b9e10cfb928f6d8164d1a121c9eafb65ca0"
+    }
+  }
+}

@@ -1,0 +1,412 @@
+{
+  "rom_sha256": "f3b4e13df998d1832544218a88cd0c4845a9b7ebd184628e00c1e9595434204c",
+  "initial_save": "/workspaces/pokefirered/outputs/mahogany-east-gate-fixed-review-v1/mahogany-chain/chain_radio_tower_story_handoff-native-QA-only.sav",
+  "initial_save_sha256": "ee87b75fb06a34d789fad4fd35a20adae5463c102bc9f926840688ab9f100bc2",
+  "initial_context": "Actual q6 native chapter-chain Badge7 completion save",
+  "stages": [
+    {
+      "case": "chain_prepare_with_native_nurse",
+      "native_dialogue": "Text_RestoredPkmnToFullHealth",
+      "native_nurse_heal": true,
+      "save": {
+        "counter": [
+          75,
+          76
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_prepare_with_native_nurse-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_trainer_flags": 0,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "chain_broadcast_alarm",
+      "native_dialogue": "GoldenrodCity_RadioTower_1F_Text_BroadcastClerkAlarm",
+      "native_nurse_heal": false,
+      "save": {
+        "counter": [
+          76,
+          77
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_broadcast_alarm-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_trainer_flags": 0,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "chain_enter_studios",
+      "native_dialogue": null,
+      "native_nurse_heal": false,
+      "save": {
+        "counter": [
+          77,
+          78
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_enter_studios-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_trainer_flags": 0,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "chain_actual_radio_grunt_a_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        20,
+        42
+      ],
+      "save": {
+        "counter": [
+          78,
+          79
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_actual_radio_grunt_a_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_actual_radio_grunt_b_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        88,
+        89
+      ],
+      "save": {
+        "counter": [
+          79,
+          80
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_actual_radio_grunt_b_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_actual_radio_scientist_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        81,
+        82
+      ],
+      "save": {
+        "counter": [
+          80,
+          81
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_actual_radio_scientist_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_heal_after_lower_studios",
+      "native_dialogue": "Text_RestoredPkmnToFullHealth",
+      "native_nurse_heal": true,
+      "save": {
+        "counter": [
+          81,
+          82
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_heal_after_lower_studios-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_trainer_flags": 0,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "chain_actual_petrel_radio_win",
+      "turns": 4,
+      "native_outcome": 1,
+      "enemies": [
+        109,
+        109,
+        109,
+        110
+      ],
+      "save": {
+        "counter": [
+          82,
+          83
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_actual_petrel_radio_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_code_opens_basement",
+      "native_dialogue": null,
+      "native_nurse_heal": false,
+      "save": {
+        "counter": [
+          83,
+          84
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_code_opens_basement-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_trainer_flags": 0,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "chain_actual_silver_underground_win",
+      "turns": 5,
+      "native_outcome": 1,
+      "enemies": [
+        42,
+        81,
+        93,
+        215,
+        160
+      ],
+      "save": {
+        "counter": [
+          84,
+          85
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_actual_silver_underground_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_actual_warehouse_grunt_a_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        20,
+        109
+      ],
+      "save": {
+        "counter": [
+          85,
+          86
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_actual_warehouse_grunt_a_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_actual_warehouse_grunt_b_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        44,
+        42
+      ],
+      "save": {
+        "counter": [
+          86,
+          87
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_actual_warehouse_grunt_b_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_actual_warehouse_scientist_win",
+      "turns": 2,
+      "native_outcome": 1,
+      "enemies": [
+        81,
+        82
+      ],
+      "save": {
+        "counter": [
+          87,
+          88
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_actual_warehouse_scientist_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_rescue_real_director",
+      "native_dialogue": "GoldenrodWarehouse_Text_DirectorRescued",
+      "native_nurse_heal": false,
+      "save": {
+        "counter": [
+          88,
+          89
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_rescue_real_director-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_trainer_flags": 0,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "chain_heal_before_executives",
+      "native_dialogue": "Text_RestoredPkmnToFullHealth",
+      "native_nurse_heal": true,
+      "save": {
+        "counter": [
+          89,
+          90
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_heal_before_executives-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_trainer_flags": 0,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "chain_director_opens_upper_studio",
+      "native_dialogue": null,
+      "native_nurse_heal": false,
+      "save": {
+        "counter": [
+          90,
+          91
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_director_opens_upper_studio-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_trainer_flags": 0,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "chain_actual_ariana_radio_win",
+      "turns": 3,
+      "native_outcome": 1,
+      "enemies": [
+        24,
+        44,
+        198
+      ],
+      "save": {
+        "counter": [
+          91,
+          92
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_actual_ariana_radio_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_ariana_opens_transmitter",
+      "native_dialogue": null,
+      "native_nurse_heal": false,
+      "save": {
+        "counter": [
+          92,
+          93
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_ariana_opens_transmitter-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_trainer_flags": 0,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "chain_actual_archer_win",
+      "turns": 3,
+      "native_outcome": 1,
+      "enemies": [
+        228,
+        109,
+        229
+      ],
+      "save": {
+        "counter": [
+          93,
+          94
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_actual_archer_win-native-QA-only.sav"
+      },
+      "pc_preserved": true,
+      "player_pid_ot_species_and_checksum_preserved": true,
+      "forced_memory_writes": 0,
+      "forced_battle_outcomes": 0
+    },
+    {
+      "case": "chain_director_reward",
+      "native_dialogue": "GoldenrodWarehouse_Text_DirectorAfter",
+      "native_nurse_heal": false,
+      "save": {
+        "counter": [
+          94,
+          95
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_director_reward-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_trainer_flags": 0,
+      "forced_memory_writes": 0
+    },
+    {
+      "case": "chain_normal_broadcast_returns",
+      "native_dialogue": "GoldenrodCity_RadioTower_1F_Text_BroadcastClerkAfter",
+      "native_nurse_heal": false,
+      "save": {
+        "counter": [
+          95,
+          96
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/radio-tower-review-v1/native-chain/chain_normal_broadcast_returns-native-QA-only.sav"
+      },
+      "forced_story_flags": 0,
+      "forced_trainer_flags": 0,
+      "forced_memory_writes": 0
+    }
+  ],
+  "all_pass": true,
+  "same_native_save_chain": true,
+  "qa_position_only_warps": 21,
+  "native_nurse_heals": 3,
+  "forced_story_flags_after_initial_fixture": 0,
+  "forced_trainer_flags_after_initial_fixture": 0,
+  "forced_memory_writes": 0,
+  "forced_battle_outcomes": 0,
+  "hoenn_crisis_flags_unchanged": true,
+  "blackthorn_and_league_still_pending": true,
+  "original_files_unchanged": true
+}

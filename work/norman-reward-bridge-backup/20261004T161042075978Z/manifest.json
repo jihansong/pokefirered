@@ -1,0 +1,40 @@
+{
+  "changed": [
+    "include/constants/flags_hoenn_story.h",
+    "tools/hoenn_import/patches/PetalburgCity_Gym.scripts.inc",
+    "tools/hoenn_import/patches/PetalburgCity_Gym.text.inc",
+    "data/maps/PetalburgCity_Gym/scripts.inc",
+    "data/maps/PetalburgCity_Gym/text.inc",
+    "src/data/trainer_parties_hoenn.h"
+  ],
+  "before": {
+    "tools/hoenn_import/patches/PetalburgCity_Gym.scripts.inc": "1f824095d9df812b00f4c682fff342cae6c1f46e373986ca59561ddd5b8dc13b",
+    "tools/hoenn_import/patches/PetalburgCity_Gym.text.inc": "a0c82d3fe9c0a9c29bbc5d22a1b1185a67e3797c5db063e961f40ec78406c0d5",
+    "data/maps/PetalburgCity_Gym/scripts.inc": "86addf2774acded7e7101992f0e7ba343c90256cb0765fdbd219dfc1d85a4750",
+    "data/maps/PetalburgCity_Gym/text.inc": "8bfed456084c606a81d3cb440022298bf2fe22756ee3207b4c53a8bdd8af89cf",
+    "src/data/trainer_parties_hoenn.h": "0c0baa853206a0e758efadaf423855b2c5a8656c459a78a3c3adcf16d3bf1d00",
+    "data/maps/PetalburgCity_Gym/map.json": "a09214557af8fa0064572f192764841a946be7511efbc5162e4a1b264b845a3e",
+    "data/layouts/HoennPetalburgCity_Gym/map.bin": "b75cd4f08b42faf760a95d2610fa8be868e47d37eb8d0c55ab6724ffc45883db",
+    "include/constants/flags_hoenn_story.h": "03f77024541e910acdcca743a18a3be1757a4330846a88357b4010e30bf75157"
+  },
+  "after": {
+    "include/constants/flags_hoenn_story.h": "6344d333ad0eff6d58d875cd3e3b1d9bb12ce53aa1747515e128123942f4233a",
+    "tools/hoenn_import/patches/PetalburgCity_Gym.scripts.inc": "3b7d3d8ed553409778ad834542afe5927181559045ba27a6bd4727c76b2138d5",
+    "tools/hoenn_import/patches/PetalburgCity_Gym.text.inc": "0436abb37c3c67eeec0c692df81d049fc70ae07fa3efcf8a132f71cb6c682ffa",
+    "data/maps/PetalburgCity_Gym/scripts.inc": "5b1525d62f3f3816b4749754588014f60f4e9149cc516602215a8a3accd25c4c",
+    "data/maps/PetalburgCity_Gym/text.inc": "f7beac1e127bf528af0386748f1be3f54898ed099790a51e7e8afd05e0a70e5c",
+    "src/data/trainer_parties_hoenn.h": "47c01714d86ea82aa8fd4007d80011c89295380b3ddb8205b06b05d7cbac448f"
+  },
+  "applied": false,
+  "save_layout_changed": false,
+  "map_or_object_position_changed": false,
+  "gym_doors_implemented": false,
+  "legacy_win_before_wally_gate": true,
+  "leader_levels": [
+    68,
+    68,
+    70,
+    72
+  ],
+  "build_or_emulator_verified": false
+}

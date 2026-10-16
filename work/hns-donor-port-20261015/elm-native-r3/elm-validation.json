@@ -1,0 +1,1642 @@
+{
+  "pass": true,
+  "status": "NATIVE_ELM_DONOR_LAB_COEXISTENCE_SAVE_COLD_PASS",
+  "scope": "Actual native donor-Elm art in an explicitly preboot lab/story fixture; not natural Elm quest completion, whole Johto completion, or mobile FPS",
+  "ROM_sha256": "7d66f47ad68e192d9f5916d9ef9bd9c9fb42fd80bcd3e2835b32cd328a208636",
+  "ELF_sha256": "fdcb9ec35de57dc4299878af4251193a67c78a6a0d27b2b9bbd03458972207d0",
+  "SAV_sha256": "0949ebf04557a76e2175602e967eefadb7ffb722f2746be8a40ddb1fd66550a9",
+  "dependency_preflight": {
+    "pass": true,
+    "process_local_added_header": "constants/event_objects.h",
+    "guarded_header_sha256": "c9eb8c4906ec813a1df97578864b6848034b0e9446c8be82d2c747a8a877e286",
+    "resolved_constants": {
+      "FLAGS_COUNT": 2304,
+      "FLAG_BADGE01_GET": 2080,
+      "FLAG_BADGE02_GET": 2081,
+      "FLAG_BADGE03_GET": 2082,
+      "FLAG_BADGE04_GET": 2083,
+      "FLAG_BADGE05_GET": 2084,
+      "FLAG_BADGE06_GET": 2085,
+      "FLAG_BADGE07_GET": 2086,
+      "FLAG_BADGE08_GET": 2087,
+      "FLAG_HIDE_MISTY_PALLET": 548,
+      "FLAG_JOHTO_ARRIVAL_BRIEFED": 5376,
+      "FLAG_JOHTO_MET_LAB_ASSISTANT": 5377,
+      "FLAG_MISTY_COMPANION_JOINED": 547,
+      "FLAG_RECEIVED_STARTER_PIKACHU": 175,
+      "FLAG_SYS_GAME_CLEAR": 2092,
+      "HOENN_FLAGS_COUNT": 2048,
+      "HOENN_FLAGS_START": 4096,
+      "HOENN_VARS_END": 16767,
+      "HOENN_VARS_START": 16640,
+      "NUM_SPECIES": 412,
+      "OBJ_EVENT_GFX_MISTY_COMPANION": 237,
+      "QUEST_LOG_SCENE_COUNT": 4,
+      "VARS_COUNT": 256,
+      "VARS_END": 16639,
+      "VARS_START": 16384,
+      "VAR_HAPPINESS_STEP_COUNTER": 16417,
+      "VAR_MAP_SCENE_PALLET_TOWN_OAK": 16464,
+      "VAR_REPEL_STEP_COUNT": 16416,
+      "VAR_TEMP_7": 16391
+    },
+    "resolved_offsets": {
+      "battlemon": 88,
+      "battlemon.moves": 12,
+      "battlemon.pp": 36,
+      "battlemon.type1": 33,
+      "battlemon.type2": 34,
+      "battlemove": 12,
+      "boxmon": 80,
+      "dex.owned": 16,
+      "dex.seen": 68,
+      "misty_obj": 36,
+      "misty_obj.coords": 16,
+      "misty_obj.local": 8,
+      "misty_obj.sprite": 4,
+      "misty_sprite": 68,
+      "misty_sprite.cy": 41,
+      "misty_sprite.x": 32,
+      "misty_sprite.x2": 36,
+      "misty_sprite.y": 34,
+      "misty_sprite.y2": 38,
+      "pokemon": 100,
+      "questlogscene": 1640,
+      "sb1": 15720,
+      "sb1.bagPocket_Berries": 1356,
+      "sb1.bagPocket_Items": 784,
+      "sb1.bagPocket_KeyItems": 952,
+      "sb1.bagPocket_PokeBalls": 1072,
+      "sb1.bagPocket_TMHM": 1124,
+      "sb1.coins": 660,
+      "sb1.continueGameWarp": 12,
+      "sb1.daycare": 12160,
+      "sb1.flags": 3808,
+      "sb1.location": 4,
+      "sb1.mapLayoutId": 50,
+      "sb1.money": 656,
+      "sb1.pcItems": 664,
+      "sb1.playerParty": 56,
+      "sb1.playerPartyCount": 52,
+      "sb1.pos": 0,
+      "sb1.questLog": 4864,
+      "sb1.seen1": 1528,
+      "sb1.seen2": 14872,
+      "sb1.vars": 4096,
+      "sb2": 3876,
+      "sb2.encryptionKey": 3872,
+      "sb2.hoennFlags": 2976,
+      "sb2.hoennTrainerFlags": 2848,
+      "sb2.hoennVars": 3232,
+      "sb2.lastBerryTreeUpdate": 160,
+      "sb2.localTimeOffset": 152,
+      "sb2.optionsButtonMode": 19,
+      "sb2.playTimeHours": 14,
+      "sb2.playTimeMinutes": 16,
+      "sb2.playTimeSeconds": 17,
+      "sb2.playTimeVBlanks": 18,
+      "sb2.playerGender": 8,
+      "sb2.playerName": 0,
+      "sb2.playerTrainerId": 10,
+      "sb2.pokedex": 24,
+      "sb2.specialSaveWarpFlags": 9,
+      "species": 28,
+      "species.growthRate": 19,
+      "storage": 33744,
+      "storage.boxes": 4,
+      "time.days": 0,
+      "time.hours": 2,
+      "time.minutes": 3,
+      "walk.daycare": 284,
+      "walk.daycare.stepCounter": 282,
+      "walk.obj.gfx": 5,
+      "walk.player.objectId": 5,
+      "walk.sprite.anim": 42,
+      "walk.sprite.cmd": 43,
+      "walk.sprite.oam": 0,
+      "warp.mapGroup": 0,
+      "warp.mapNum": 1,
+      "warp.warpId": 2,
+      "warp.x": 4,
+      "warp.y": 6
+    },
+    "maps": {
+      "PalletTown": {
+        "group": 3,
+        "num": 0,
+        "layout_id": 78,
+        "layout": "LAYOUT_PALLET_TOWN",
+        "id": "MAP_PALLET_TOWN"
+      },
+      "JohtoRoute29": {
+        "group": 76,
+        "num": 1,
+        "layout_id": 755,
+        "layout": "LAYOUT_JOHTO_ROUTE29",
+        "id": "MAP_JOHTO_ROUTE29"
+      },
+      "JohtoCherrygroveAirstrip": {
+        "group": 76,
+        "num": 0,
+        "layout_id": 754,
+        "layout": "LAYOUT_JOHTO_CHERRYGROVE_AIRSTRIP",
+        "id": "MAP_JOHTO_CHERRYGROVE_AIRSTRIP"
+      },
+      "NewBarkTown": {
+        "group": 76,
+        "num": 2,
+        "layout_id": 756,
+        "layout": "LAYOUT_NEW_BARK_TOWN",
+        "id": "MAP_NEW_BARK_TOWN"
+      }
+    },
+    "VAR_TEMP_7_preboot_SAV_location_validated": true,
+    "absent_optional_boot_callbacks": [
+      "CB2_CopyrightScreen"
+    ],
+    "unique_ELF_bindings": {
+      "BattleMainCB2": {
+        "addr": "0x80113fd",
+        "size": 116,
+        "owner": "time_of_day.o"
+      },
+      "CB2_InitCopyrightScreenAfterBootup": {
+        "addr": "0x80f2565",
+        "size": 68,
+        "owner": "time_of_day.o"
+      },
+      "CB2_InitCopyrightScreenAfterTitleScreen": {
+        "addr": "0x80f25a9",
+        "size": 10,
+        "owner": "time_of_day.o"
+      },
+      "CB2_Intro": {
+        "addr": "0x80f2719",
+        "size": 22,
+        "owner": "intro.o"
+      },
+      "CB2_MainMenu": {
+        "addr": "0x800c5d1",
+        "size": 22,
+        "owner": "main_menu.o"
+      },
+      "CB2_Overworld": {
+        "addr": "0x8057781",
+        "size": 44,
+        "owner": "overworld.o"
+      },
+      "CB2_SetUpIntro": {
+        "addr": "0x80f25b5",
+        "size": 356,
+        "owner": "intro.o"
+      },
+      "CB2_WaitFadeBeforeSetUpIntro": {
+        "addr": "0x80f22fd",
+        "size": 28,
+        "owner": "intro.o"
+      },
+      "JohtoRoute29_Text_Hiker": {
+        "addr": "0x82295d9",
+        "size": 0,
+        "owner": "time_of_day.o"
+      },
+      "JohtoRoute29_Text_Sign": {
+        "addr": "0x8229631",
+        "size": 0,
+        "owner": "time_of_day.o"
+      },
+      "gMain": {
+        "addr": "0x3003130",
+        "size": 1084,
+        "owner": "time_of_day.o"
+      },
+      "gObjectEventPal_Player": {
+        "addr": "0x85270b0",
+        "size": 32,
+        "owner": "time_of_day.o"
+      },
+      "gObjectEventPic_MistyCompanion": {
+        "addr": "0x855de70",
+        "size": 2304,
+        "owner": "time_of_day.o"
+      },
+      "gObjectEvents": {
+        "addr": "0x2036e3c",
+        "size": 576,
+        "owner": "time_of_day.o"
+      },
+      "gPlayerAvatar": {
+        "addr": "0x203707c",
+        "size": 32,
+        "owner": "time_of_day.o"
+      },
+      "gPlayerParty": {
+        "addr": "0x2024284",
+        "size": 600,
+        "owner": "time_of_day.o"
+      },
+      "gPlayerPartyCount": {
+        "addr": "0x2024029",
+        "size": 1,
+        "owner": "time_of_day.o"
+      },
+      "gPokemonStoragePtr": {
+        "addr": "0x3005050",
+        "size": 4,
+        "owner": "time_of_day.o"
+      },
+      "gQuestLogPlaybackState": {
+        "addr": "0x3005ec8",
+        "size": 1,
+        "owner": "time_of_day.o"
+      },
+      "gQuestLogState": {
+        "addr": "0x203adf6",
+        "size": 1,
+        "owner": "time_of_day.o"
+      },
+      "gSaveAttemptStatus": {
+        "addr": "0x3005460",
+        "size": 2,
+        "owner": "time_of_day.o"
+      },
+      "gSaveBlock1Ptr": {
+        "addr": "0x3005048",
+        "size": 4,
+        "owner": "time_of_day.o"
+      },
+      "gSaveBlock2Ptr": {
+        "addr": "0x300504c",
+        "size": 4,
+        "owner": "time_of_day.o"
+      },
+      "gSaveCounter": {
+        "addr": "0x30053d0",
+        "size": 4,
+        "owner": "time_of_day.o"
+      },
+      "gSprites": {
+        "addr": "0x202063c",
+        "size": 4420,
+        "owner": "time_of_day.o"
+      },
+      "gStringVar4": {
+        "addr": "0x2021d18",
+        "size": 1000,
+        "owner": "time_of_day.o"
+      },
+      "gTypeEffectiveness": {
+        "addr": "0x82ca014",
+        "size": 336,
+        "owner": "time_of_day.o"
+      },
+      "sGlobalScriptContextStatus": {
+        "addr": "0x3000ea8",
+        "size": 1,
+        "owner": "script.o"
+      },
+      "sLockFieldControls": {
+        "addr": "0x3000f9c",
+        "size": 1,
+        "owner": "script.o"
+      },
+      "sNumStartMenuItems": {
+        "addr": "0x20370fd",
+        "size": 1,
+        "owner": "start_menu.o"
+      },
+      "sStartMenuCursorPos": {
+        "addr": "0x20370fc",
+        "size": 1,
+        "owner": "start_menu.o"
+      },
+      "sStartMenuOrder": {
+        "addr": "0x20370fe",
+        "size": 9,
+        "owner": "start_menu.o"
+      }
+    }
+  },
+  "RAM_writes": 0,
+  "engine_calls": 0,
+  "preboot_visual_fixtures": true,
+  "natural_story_completion": false,
+  "current_compiler_cache_isolated": true,
+  "unique_ELF_bindings": {
+    "BattleMainCB2": {
+      "addr": "0x80113fd",
+      "size": 116,
+      "owner": "time_of_day.o"
+    },
+    "CB2_InitCopyrightScreenAfterBootup": {
+      "addr": "0x80f2565",
+      "size": 68,
+      "owner": "time_of_day.o"
+    },
+    "CB2_InitCopyrightScreenAfterTitleScreen": {
+      "addr": "0x80f25a9",
+      "size": 10,
+      "owner": "time_of_day.o"
+    },
+    "CB2_Intro": {
+      "addr": "0x80f2719",
+      "size": 22,
+      "owner": "intro.o"
+    },
+    "CB2_MainMenu": {
+      "addr": "0x800c5d1",
+      "size": 22,
+      "owner": "main_menu.o"
+    },
+    "CB2_Overworld": {
+      "addr": "0x8057781",
+      "size": 44,
+      "owner": "overworld.o"
+    },
+    "CB2_SetUpIntro": {
+      "addr": "0x80f25b5",
+      "size": 356,
+      "owner": "intro.o"
+    },
+    "CB2_WaitFadeBeforeSetUpIntro": {
+      "addr": "0x80f22fd",
+      "size": 28,
+      "owner": "intro.o"
+    },
+    "JohtoRoute29_Text_Hiker": {
+      "addr": "0x82295d9",
+      "size": 0,
+      "owner": "time_of_day.o"
+    },
+    "JohtoRoute29_Text_Sign": {
+      "addr": "0x8229631",
+      "size": 0,
+      "owner": "time_of_day.o"
+    },
+    "gMain": {
+      "addr": "0x3003130",
+      "size": 1084,
+      "owner": "time_of_day.o"
+    },
+    "gObjectEventPal_Player": {
+      "addr": "0x85270b0",
+      "size": 32,
+      "owner": "time_of_day.o"
+    },
+    "gObjectEventPic_MistyCompanion": {
+      "addr": "0x855de70",
+      "size": 2304,
+      "owner": "time_of_day.o"
+    },
+    "gObjectEvents": {
+      "addr": "0x2036e3c",
+      "size": 576,
+      "owner": "time_of_day.o"
+    },
+    "gPlayerAvatar": {
+      "addr": "0x203707c",
+      "size": 32,
+      "owner": "time_of_day.o"
+    },
+    "gPlayerParty": {
+      "addr": "0x2024284",
+      "size": 600,
+      "owner": "time_of_day.o"
+    },
+    "gPlayerPartyCount": {
+      "addr": "0x2024029",
+      "size": 1,
+      "owner": "time_of_day.o"
+    },
+    "gPokemonStoragePtr": {
+      "addr": "0x3005050",
+      "size": 4,
+      "owner": "time_of_day.o"
+    },
+    "gQuestLogPlaybackState": {
+      "addr": "0x3005ec8",
+      "size": 1,
+      "owner": "time_of_day.o"
+    },
+    "gQuestLogState": {
+      "addr": "0x203adf6",
+      "size": 1,
+      "owner": "time_of_day.o"
+    },
+    "gSaveAttemptStatus": {
+      "addr": "0x3005460",
+      "size": 2,
+      "owner": "time_of_day.o"
+    },
+    "gSaveBlock1Ptr": {
+      "addr": "0x3005048",
+      "size": 4,
+      "owner": "time_of_day.o"
+    },
+    "gSaveBlock2Ptr": {
+      "addr": "0x300504c",
+      "size": 4,
+      "owner": "time_of_day.o"
+    },
+    "gSaveCounter": {
+      "addr": "0x30053d0",
+      "size": 4,
+      "owner": "time_of_day.o"
+    },
+    "gSprites": {
+      "addr": "0x202063c",
+      "size": 4420,
+      "owner": "time_of_day.o"
+    },
+    "gStringVar4": {
+      "addr": "0x2021d18",
+      "size": 1000,
+      "owner": "time_of_day.o"
+    },
+    "gTypeEffectiveness": {
+      "addr": "0x82ca014",
+      "size": 336,
+      "owner": "time_of_day.o"
+    },
+    "sGlobalScriptContextStatus": {
+      "addr": "0x3000ea8",
+      "size": 1,
+      "owner": "script.o"
+    },
+    "sLockFieldControls": {
+      "addr": "0x3000f9c",
+      "size": 1,
+      "owner": "script.o"
+    },
+    "sNumStartMenuItems": {
+      "addr": "0x20370fd",
+      "size": 1,
+      "owner": "start_menu.o"
+    },
+    "sStartMenuCursorPos": {
+      "addr": "0x20370fc",
+      "size": 1,
+      "owner": "start_menu.o"
+    },
+    "sStartMenuOrder": {
+      "addr": "0x20370fe",
+      "size": 9,
+      "owner": "start_menu.o"
+    }
+  },
+  "cases": [
+    {
+      "case": "compiled_all_nine_donor_frames_and_palette",
+      "pass": true
+    },
+    {
+      "case": "actual_three_accessible_faceplayer_interactions",
+      "pass": true,
+      "frames": [
+        0,
+        2,
+        1
+      ]
+    },
+    {
+      "case": "researcher_55_and_dynamic_followers_palette_coexistence",
+      "pass": true
+    },
+    {
+      "case": "actual_lab_door_roundtrip",
+      "pass": true
+    },
+    {
+      "case": "first_Continue_exact_11_NPC_hide_bits_initialized",
+      "pass": true,
+      "first_strict_equality": false
+    },
+    {
+      "case": "actual_menu_SAVE_14sectors_and_cold_reentry",
+      "pass": true
+    }
+  ],
+  "native_samples": [
+    {
+      "tag": "lab-boot",
+      "frame": 710,
+      "visible": true,
+      "gfx": 238,
+      "local_id": 2,
+      "sprite": 2,
+      "native_size": [
+        16,
+        32
+      ],
+      "palette_slot": 10,
+      "hflip": false,
+      "VRAM_sha256": "de3f1b02e3609c8335d9a6384696e7c77fb83857de4e20190884721cb004a120",
+      "compiled_frame": 0,
+      "hardware_palette_sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+      "unfaded_palette_sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+      "hardware_palette_equals_unfaded_donor": true,
+      "researcher": {
+        "tag": "lab-boot-researcher",
+        "frame": 710,
+        "visible": true,
+        "gfx": 55,
+        "local_id": 1,
+        "sprite": 1,
+        "native_size": [
+          16,
+          32
+        ],
+        "palette_slot": 5,
+        "hflip": false,
+        "VRAM_sha256": "9d84374a6371981c349d67ed5a6a9a2d77b8a6f776ef31f2494027cd33b645f2",
+        "compiled_frame": null,
+        "hardware_palette_sha256": "a08041541f7cdf8bf76504c1ef07edb1f58e900ed21778892021120dacbd1089",
+        "unfaded_palette_sha256": "a08041541f7cdf8bf76504c1ef07edb1f58e900ed21778892021120dacbd1089"
+      }
+    },
+    {
+      "tag": "face-south",
+      "frame": 869,
+      "visible": true,
+      "gfx": 238,
+      "local_id": 2,
+      "sprite": 2,
+      "native_size": [
+        16,
+        32
+      ],
+      "palette_slot": 10,
+      "hflip": false,
+      "VRAM_sha256": "de3f1b02e3609c8335d9a6384696e7c77fb83857de4e20190884721cb004a120",
+      "compiled_frame": 0,
+      "hardware_palette_sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+      "unfaded_palette_sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+      "hardware_palette_equals_unfaded_donor": true,
+      "researcher": {
+        "tag": "face-south-researcher",
+        "frame": 869,
+        "visible": true,
+        "gfx": 55,
+        "local_id": 1,
+        "sprite": 1,
+        "native_size": [
+          16,
+          32
+        ],
+        "palette_slot": 5,
+        "hflip": false,
+        "VRAM_sha256": "9d84374a6371981c349d67ed5a6a9a2d77b8a6f776ef31f2494027cd33b645f2",
+        "compiled_frame": null,
+        "hardware_palette_sha256": "a08041541f7cdf8bf76504c1ef07edb1f58e900ed21778892021120dacbd1089",
+        "unfaded_palette_sha256": "a08041541f7cdf8bf76504c1ef07edb1f58e900ed21778892021120dacbd1089"
+      }
+    },
+    {
+      "tag": "face-west",
+      "frame": 1297,
+      "visible": true,
+      "gfx": 238,
+      "local_id": 2,
+      "sprite": 2,
+      "native_size": [
+        16,
+        32
+      ],
+      "palette_slot": 10,
+      "hflip": false,
+      "VRAM_sha256": "97a21c0d33455952c164c2342f35c66ef0945784a486f119ae9440960ec43012",
+      "compiled_frame": 2,
+      "hardware_palette_sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+      "unfaded_palette_sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+      "hardware_palette_equals_unfaded_donor": true,
+      "researcher": {
+        "tag": "face-west-researcher",
+        "frame": 1297,
+        "visible": true,
+        "gfx": 55,
+        "local_id": 1,
+        "sprite": 1,
+        "native_size": [
+          16,
+          32
+        ],
+        "palette_slot": 5,
+        "hflip": false,
+        "VRAM_sha256": "9d84374a6371981c349d67ed5a6a9a2d77b8a6f776ef31f2494027cd33b645f2",
+        "compiled_frame": null,
+        "hardware_palette_sha256": "a08041541f7cdf8bf76504c1ef07edb1f58e900ed21778892021120dacbd1089",
+        "unfaded_palette_sha256": "a08041541f7cdf8bf76504c1ef07edb1f58e900ed21778892021120dacbd1089"
+      }
+    },
+    {
+      "tag": "face-north",
+      "frame": 1725,
+      "visible": true,
+      "gfx": 238,
+      "local_id": 2,
+      "sprite": 2,
+      "native_size": [
+        16,
+        32
+      ],
+      "palette_slot": 10,
+      "hflip": false,
+      "VRAM_sha256": "8df74e93730bac5ce6850174c0dcc01825c84dbb516583b9d3698a108a564666",
+      "compiled_frame": 1,
+      "hardware_palette_sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+      "unfaded_palette_sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+      "hardware_palette_equals_unfaded_donor": true,
+      "researcher": {
+        "tag": "face-north-researcher",
+        "frame": 1725,
+        "visible": true,
+        "gfx": 55,
+        "local_id": 1,
+        "sprite": 1,
+        "native_size": [
+          16,
+          32
+        ],
+        "palette_slot": 5,
+        "hflip": false,
+        "VRAM_sha256": "9d84374a6371981c349d67ed5a6a9a2d77b8a6f776ef31f2494027cd33b645f2",
+        "compiled_frame": null,
+        "hardware_palette_sha256": "a08041541f7cdf8bf76504c1ef07edb1f58e900ed21778892021120dacbd1089",
+        "unfaded_palette_sha256": "a08041541f7cdf8bf76504c1ef07edb1f58e900ed21778892021120dacbd1089"
+      }
+    },
+    {
+      "tag": "coexist-before-exit",
+      "frame": 2262,
+      "visible": true,
+      "gfx": 238,
+      "local_id": 2,
+      "sprite": 2,
+      "native_size": [
+        16,
+        32
+      ],
+      "palette_slot": 10,
+      "hflip": false,
+      "VRAM_sha256": "8df74e93730bac5ce6850174c0dcc01825c84dbb516583b9d3698a108a564666",
+      "compiled_frame": 1,
+      "hardware_palette_sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+      "unfaded_palette_sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+      "hardware_palette_equals_unfaded_donor": true,
+      "researcher": {
+        "tag": "coexist-before-exit-researcher",
+        "frame": 2262,
+        "visible": true,
+        "gfx": 55,
+        "local_id": 1,
+        "sprite": 1,
+        "native_size": [
+          16,
+          32
+        ],
+        "palette_slot": 5,
+        "hflip": false,
+        "VRAM_sha256": "9d84374a6371981c349d67ed5a6a9a2d77b8a6f776ef31f2494027cd33b645f2",
+        "compiled_frame": null,
+        "hardware_palette_sha256": "a08041541f7cdf8bf76504c1ef07edb1f58e900ed21778892021120dacbd1089",
+        "unfaded_palette_sha256": "a08041541f7cdf8bf76504c1ef07edb1f58e900ed21778892021120dacbd1089"
+      },
+      "Misty": {
+        "tag": "coexist-before-exit-Misty",
+        "frame": 2262,
+        "visible": true,
+        "gfx": 237,
+        "local_id": 253,
+        "sprite": 3,
+        "native_size": [
+          16,
+          32
+        ],
+        "palette_slot": 0,
+        "hflip": false,
+        "VRAM_sha256": "b5b95507461620d765220ed3b08982c50cfdad2a9f7fa6ba41573d0c5e685a19",
+        "compiled_frame": null,
+        "hardware_palette_sha256": "3f8a1c94699742cf122ca29a9a8f0a212f518d940795450888834b84712a76da",
+        "unfaded_palette_sha256": "3f8a1c94699742cf122ca29a9a8f0a212f518d940795450888834b84712a76da"
+      },
+      "Pikachu": {
+        "tag": "coexist-before-exit-Pikachu",
+        "frame": 2262,
+        "visible": true,
+        "gfx": 120,
+        "local_id": 254,
+        "sprite": 4,
+        "native_size": [
+          16,
+          16
+        ],
+        "palette_slot": 2,
+        "hflip": true,
+        "VRAM_sha256": "9ce97e7a2ae6a5ebeb74d1173edaff98d7acbca1bd6ff7951c55df03ee481e43",
+        "compiled_frame": null,
+        "hardware_palette_sha256": "ca8a3523c5558aa3f0ea6c00f493db726dcb32730cbe5e7c1c56719dfee1e071",
+        "unfaded_palette_sha256": "ca8a3523c5558aa3f0ea6c00f493db726dcb32730cbe5e7c1c56719dfee1e071"
+      }
+    },
+    {
+      "tag": "coexist-after-reentry",
+      "frame": 3213,
+      "visible": true,
+      "gfx": 238,
+      "local_id": 2,
+      "sprite": 2,
+      "native_size": [
+        16,
+        32
+      ],
+      "palette_slot": 10,
+      "hflip": false,
+      "VRAM_sha256": "de3f1b02e3609c8335d9a6384696e7c77fb83857de4e20190884721cb004a120",
+      "compiled_frame": 0,
+      "hardware_palette_sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+      "unfaded_palette_sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+      "hardware_palette_equals_unfaded_donor": true,
+      "researcher": {
+        "tag": "coexist-after-reentry-researcher",
+        "frame": 3213,
+        "visible": true,
+        "gfx": 55,
+        "local_id": 1,
+        "sprite": 1,
+        "native_size": [
+          16,
+          32
+        ],
+        "palette_slot": 5,
+        "hflip": false,
+        "VRAM_sha256": "9d84374a6371981c349d67ed5a6a9a2d77b8a6f776ef31f2494027cd33b645f2",
+        "compiled_frame": null,
+        "hardware_palette_sha256": "a08041541f7cdf8bf76504c1ef07edb1f58e900ed21778892021120dacbd1089",
+        "unfaded_palette_sha256": "a08041541f7cdf8bf76504c1ef07edb1f58e900ed21778892021120dacbd1089"
+      },
+      "Misty": {
+        "tag": "coexist-after-reentry-Misty",
+        "frame": 3213,
+        "visible": true,
+        "gfx": 237,
+        "local_id": 253,
+        "sprite": 3,
+        "native_size": [
+          16,
+          32
+        ],
+        "palette_slot": 0,
+        "hflip": false,
+        "VRAM_sha256": "b590484280fcd28ac3433cbc6b29d94f4783b854f07634c5e998e6d1d3f0fcc6",
+        "compiled_frame": null,
+        "hardware_palette_sha256": "3f8a1c94699742cf122ca29a9a8f0a212f518d940795450888834b84712a76da",
+        "unfaded_palette_sha256": "3f8a1c94699742cf122ca29a9a8f0a212f518d940795450888834b84712a76da"
+      },
+      "Pikachu": {
+        "tag": "coexist-after-reentry-Pikachu",
+        "frame": 3213,
+        "visible": true,
+        "gfx": 120,
+        "local_id": 254,
+        "sprite": 4,
+        "native_size": [
+          16,
+          16
+        ],
+        "palette_slot": 2,
+        "hflip": false,
+        "VRAM_sha256": "593a9005549d6aceb6987bfa229050a2164de1aee392cb86d6ec708f7192e476",
+        "compiled_frame": null,
+        "hardware_palette_sha256": "ca8a3523c5558aa3f0ea6c00f493db726dcb32730cbe5e7c1c56719dfee1e071",
+        "unfaded_palette_sha256": "ca8a3523c5558aa3f0ea6c00f493db726dcb32730cbe5e7c1c56719dfee1e071"
+      }
+    },
+    {
+      "tag": "after-actual-SAVE-cold",
+      "frame": 710,
+      "visible": true,
+      "gfx": 238,
+      "local_id": 2,
+      "sprite": 2,
+      "native_size": [
+        16,
+        32
+      ],
+      "palette_slot": 10,
+      "hflip": false,
+      "VRAM_sha256": "de3f1b02e3609c8335d9a6384696e7c77fb83857de4e20190884721cb004a120",
+      "compiled_frame": 0,
+      "hardware_palette_sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+      "unfaded_palette_sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+      "hardware_palette_equals_unfaded_donor": true,
+      "researcher": {
+        "tag": "after-actual-SAVE-cold-researcher",
+        "frame": 710,
+        "visible": true,
+        "gfx": 55,
+        "local_id": 1,
+        "sprite": 1,
+        "native_size": [
+          16,
+          32
+        ],
+        "palette_slot": 5,
+        "hflip": false,
+        "VRAM_sha256": "9d84374a6371981c349d67ed5a6a9a2d77b8a6f776ef31f2494027cd33b645f2",
+        "compiled_frame": null,
+        "hardware_palette_sha256": "a08041541f7cdf8bf76504c1ef07edb1f58e900ed21778892021120dacbd1089",
+        "unfaded_palette_sha256": "a08041541f7cdf8bf76504c1ef07edb1f58e900ed21778892021120dacbd1089"
+      }
+    },
+    {
+      "tag": "after-cold-actual-follower-steps",
+      "frame": 986,
+      "visible": true,
+      "gfx": 238,
+      "local_id": 2,
+      "sprite": 2,
+      "native_size": [
+        16,
+        32
+      ],
+      "palette_slot": 10,
+      "hflip": false,
+      "VRAM_sha256": "de3f1b02e3609c8335d9a6384696e7c77fb83857de4e20190884721cb004a120",
+      "compiled_frame": 0,
+      "hardware_palette_sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+      "unfaded_palette_sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+      "hardware_palette_equals_unfaded_donor": true,
+      "researcher": {
+        "tag": "after-cold-actual-follower-steps-researcher",
+        "frame": 986,
+        "visible": true,
+        "gfx": 55,
+        "local_id": 1,
+        "sprite": 1,
+        "native_size": [
+          16,
+          32
+        ],
+        "palette_slot": 5,
+        "hflip": false,
+        "VRAM_sha256": "9d84374a6371981c349d67ed5a6a9a2d77b8a6f776ef31f2494027cd33b645f2",
+        "compiled_frame": null,
+        "hardware_palette_sha256": "a08041541f7cdf8bf76504c1ef07edb1f58e900ed21778892021120dacbd1089",
+        "unfaded_palette_sha256": "a08041541f7cdf8bf76504c1ef07edb1f58e900ed21778892021120dacbd1089"
+      },
+      "Misty": {
+        "tag": "after-cold-actual-follower-steps-Misty",
+        "frame": 986,
+        "visible": true,
+        "gfx": 237,
+        "local_id": 253,
+        "sprite": 3,
+        "native_size": [
+          16,
+          32
+        ],
+        "palette_slot": 0,
+        "hflip": false,
+        "VRAM_sha256": "b590484280fcd28ac3433cbc6b29d94f4783b854f07634c5e998e6d1d3f0fcc6",
+        "compiled_frame": null,
+        "hardware_palette_sha256": "3f8a1c94699742cf122ca29a9a8f0a212f518d940795450888834b84712a76da",
+        "unfaded_palette_sha256": "3f8a1c94699742cf122ca29a9a8f0a212f518d940795450888834b84712a76da"
+      },
+      "Pikachu": {
+        "tag": "after-cold-actual-follower-steps-Pikachu",
+        "frame": 986,
+        "visible": true,
+        "gfx": 120,
+        "local_id": 254,
+        "sprite": 4,
+        "native_size": [
+          16,
+          16
+        ],
+        "palette_slot": 2,
+        "hflip": false,
+        "VRAM_sha256": "593a9005549d6aceb6987bfa229050a2164de1aee392cb86d6ec708f7192e476",
+        "compiled_frame": null,
+        "hardware_palette_sha256": "ca8a3523c5558aa3f0ea6c00f493db726dcb32730cbe5e7c1c56719dfee1e071",
+        "unfaded_palette_sha256": "ca8a3523c5558aa3f0ea6c00f493db726dcb32730cbe5e7c1c56719dfee1e071"
+      }
+    }
+  ],
+  "native_executed": true,
+  "save_state_calls": 0,
+  "skipped": [
+    "Elm east-neighbor interaction: cabinet collision at (8,8)",
+    "Elm walking: stationary professor has no natural walking route"
+  ],
+  "Elm_dependency_preflight": {
+    "pass": true,
+    "unique_data_bindings": {
+      "gObjectEventPic_ProfElmHns": {
+        "addr": "0x858ddf0",
+        "size": 2304,
+        "owner": "time_of_day.o"
+      },
+      "gObjectEventPal_ProfElmHns": {
+        "addr": "0x858e6f0",
+        "size": 32,
+        "owner": "time_of_day.o"
+      },
+      "gPlttBufferUnfaded": {
+        "addr": "0x2037200",
+        "size": 1024,
+        "owner": "time_of_day.o"
+      }
+    },
+    "constants": {
+      "OBJ_EVENT_GFX_PROF_ELM": 238,
+      "OBJ_EVENT_GFX_SCIENTIST": 55,
+      "FLAG_JOHTO_MET_LAB_ASSISTANT": 5377,
+      "FLAG_JOHTO_ELM_REPORT_DELIVERED": 5380,
+      "MB_SOUTH_ARROW_WARP": 101
+    },
+    "ROM_2304B_all_nine_frames_sha256": "cd55e8b5202217c29719423366d0dda41d9bf4d126d6b2a161b08642f56c914a",
+    "compiler_palette_enum": {
+      "PALSLOT_PLAYER": 0,
+      "PALSLOT_NPC_1": 2,
+      "PALSLOT_NPC_4": 5,
+      "PALSLOT_NPC_SPECIAL": 10,
+      "OBJ_PALSLOT_COUNT": 12
+    },
+    "exact_initial_Continue_visibility_flag_ids": {
+      "FLAG_HIDE_HOENN_BIRCH_LAB": 4689,
+      "FLAG_HIDE_HOENN_RIVAL_ROUTE103": 4690,
+      "FLAG_HIDE_HOENN_RUSTBORO_THIEF": 4693,
+      "FLAG_HIDE_HOENN_RUSTURF_GRUNT": 4694,
+      "FLAG_HIDE_HOENN_RUSTURF_PEEKO": 4695,
+      "FLAG_HIDE_HOENN_BRINEY": 4696,
+      "FLAG_HIDE_HOENN_WALLY_PETALBURG": 4697,
+      "FLAG_HIDE_HOENN_WALLY_VERDANTURF": 4698,
+      "FLAG_HIDE_HOENN_WANDA_BOYFRIEND": 4699,
+      "FLAG_HIDE_HOENN_ROCKET_WOODS": 4704,
+      "FLAG_HIDE_HOENN_RIVAL_LAB": 4705
+    },
+    "actual_exit_tile_behavior": {
+      "x": [
+        5,
+        6,
+        7
+      ],
+      "y": 12,
+      "words": [
+        12944,
+        12945,
+        12946
+      ],
+      "behaviors": [
+        0,
+        101,
+        0
+      ],
+      "walk_via_central_x": 6
+    },
+    "ROM_32B_palette_sha256": "7f40f77e926668d11f5c3d63d374096093beff8dfb41028f164eaf50b41c132b",
+    "lab": {
+      "group": 76,
+      "num": 3,
+      "layout_id": 757
+    },
+    "town": {
+      "group": 76,
+      "num": 2,
+      "layout_id": 756
+    },
+    "three_accessible_professor_neighbors_verified": true,
+    "east_cabinet_collision": true
+  },
+  "original_save_Continue": {
+    "location": [
+      1,
+      114,
+      14,
+      11
+    ],
+    "unchanged_party_PC_Dex_loaded": true,
+    "same_map_cached_template_case_applicable": false,
+    "same_map_cached_template_status": "NOT_APPLICABLE_SOURCE_SAVED_ELSEWHERE"
+  },
+  "preboot_fixture": {
+    "story_flags_set_true": [
+      "FLAG_MISTY_COMPANION_JOINED",
+      "FLAG_HIDE_MISTY_PALLET",
+      "FLAG_SYS_GAME_CLEAR",
+      "FLAG_RECEIVED_STARTER_PIKACHU",
+      "FLAG_JOHTO_MET_LAB_ASSISTANT",
+      "FLAG_JOHTO_ELM_REPORT_DELIVERED",
+      "FLAG_BADGE01_GET",
+      "FLAG_BADGE02_GET",
+      "FLAG_BADGE03_GET",
+      "FLAG_BADGE04_GET",
+      "FLAG_BADGE05_GET",
+      "FLAG_BADGE06_GET",
+      "FLAG_BADGE07_GET",
+      "FLAG_BADGE08_GET"
+    ],
+    "position": [
+      "NewBarkTown_ElmsLab",
+      7,
+      10
+    ],
+    "daycare_and_happiness_step_counters_reset": true,
+    "quest_log_scenes_cleared": true,
+    "all_six_party_records_PC_and_fourfold_Dex_preserved": true,
+    "natural_story_completion": false,
+    "source_sha256": "0949ebf04557a76e2175602e967eefadb7ffb722f2746be8a40ddb1fd66550a9",
+    "fixture_sha256": "d577788ca05ba753c78814226694c2695209eac33b51bfae03cb1fdcad21bef8"
+  },
+  "actual_steps": [
+    {
+      "from": [
+        76,
+        3,
+        7,
+        10
+      ],
+      "key": "UP",
+      "to": [
+        76,
+        3,
+        7,
+        9
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        7,
+        9
+      ],
+      "key": "LEFT",
+      "to": [
+        76,
+        3,
+        6,
+        9
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        6,
+        9
+      ],
+      "key": "UP",
+      "to": [
+        76,
+        3,
+        6,
+        8
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        6,
+        8
+      ],
+      "key": "UP",
+      "to": [
+        76,
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        6,
+        7
+      ],
+      "key": "RIGHT",
+      "to": [
+        76,
+        3,
+        7,
+        7
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        7,
+        7
+      ],
+      "key": "LEFT",
+      "to": [
+        76,
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        6,
+        7
+      ],
+      "key": "DOWN",
+      "to": [
+        76,
+        3,
+        6,
+        8
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        6,
+        8
+      ],
+      "key": "DOWN",
+      "to": [
+        76,
+        3,
+        6,
+        9
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        6,
+        9
+      ],
+      "key": "RIGHT",
+      "to": [
+        76,
+        3,
+        7,
+        9
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        7,
+        9
+      ],
+      "key": "DOWN",
+      "to": [
+        76,
+        3,
+        7,
+        10
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        7,
+        10
+      ],
+      "key": "LEFT",
+      "to": [
+        76,
+        3,
+        6,
+        10
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        6,
+        10
+      ],
+      "key": "DOWN",
+      "to": [
+        76,
+        3,
+        6,
+        11
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        6,
+        12
+      ],
+      "key": "UP",
+      "to": [
+        76,
+        3,
+        6,
+        11
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        6,
+        11
+      ],
+      "key": "RIGHT",
+      "to": [
+        76,
+        3,
+        7,
+        11
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        7,
+        11
+      ],
+      "key": "UP",
+      "to": [
+        76,
+        3,
+        7,
+        10
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        7,
+        10
+      ],
+      "key": "UP",
+      "to": [
+        76,
+        3,
+        7,
+        9
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        7,
+        9
+      ],
+      "key": "LEFT",
+      "to": [
+        76,
+        3,
+        6,
+        9
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        6,
+        9
+      ],
+      "key": "DOWN",
+      "to": [
+        76,
+        3,
+        6,
+        10
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        6,
+        10
+      ],
+      "key": "RIGHT",
+      "to": [
+        76,
+        3,
+        7,
+        10
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        7,
+        10
+      ],
+      "key": "UP",
+      "to": [
+        76,
+        3,
+        7,
+        9
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        7,
+        9
+      ],
+      "key": "LEFT",
+      "to": [
+        76,
+        3,
+        6,
+        9
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        6,
+        9
+      ],
+      "key": "DOWN",
+      "to": [
+        76,
+        3,
+        6,
+        10
+      ]
+    },
+    {
+      "from": [
+        76,
+        3,
+        6,
+        10
+      ],
+      "key": "RIGHT",
+      "to": [
+        76,
+        3,
+        7,
+        10
+      ]
+    }
+  ],
+  "actual_interaction_turns": [
+    {
+      "tag": "face-south",
+      "key": "UP",
+      "position": [
+        76,
+        3,
+        7,
+        9
+      ]
+    },
+    {
+      "tag": "face-west",
+      "key": "RIGHT",
+      "position": [
+        76,
+        3,
+        6,
+        8
+      ]
+    },
+    {
+      "tag": "face-north",
+      "key": "DOWN",
+      "position": [
+        76,
+        3,
+        7,
+        7
+      ]
+    }
+  ],
+  "actual_door_warps": [
+    {
+      "key": "DOWN",
+      "arrived": [
+        76,
+        2,
+        11,
+        9
+      ]
+    },
+    {
+      "key": "UP",
+      "arrived": [
+        76,
+        3,
+        6,
+        12
+      ]
+    }
+  ],
+  "initial_Continue_visibility_normalization": {
+    "status": "FIRST_CONTINUE_EXACT_11_DERIVED_NPC_HIDE_BITS_INITIALIZED",
+    "strict_cold_equals_pre_save_live": false,
+    "unexpected_changes": false,
+    "counter": [
+      84,
+      85
+    ],
+    "checksummed_sectors": 14,
+    "changes": [
+      {
+        "name": "FLAG_HIDE_HOENN_BIRCH_LAB",
+        "flag_id": "0x1251",
+        "byte": 74,
+        "bit": 1,
+        "before": 0,
+        "after": 1
+      },
+      {
+        "name": "FLAG_HIDE_HOENN_RIVAL_ROUTE103",
+        "flag_id": "0x1252",
+        "byte": 74,
+        "bit": 2,
+        "before": 0,
+        "after": 1
+      },
+      {
+        "name": "FLAG_HIDE_HOENN_RUSTBORO_THIEF",
+        "flag_id": "0x1255",
+        "byte": 74,
+        "bit": 5,
+        "before": 0,
+        "after": 1
+      },
+      {
+        "name": "FLAG_HIDE_HOENN_RUSTURF_GRUNT",
+        "flag_id": "0x1256",
+        "byte": 74,
+        "bit": 6,
+        "before": 0,
+        "after": 1
+      },
+      {
+        "name": "FLAG_HIDE_HOENN_RUSTURF_PEEKO",
+        "flag_id": "0x1257",
+        "byte": 74,
+        "bit": 7,
+        "before": 0,
+        "after": 1
+      },
+      {
+        "name": "FLAG_HIDE_HOENN_BRINEY",
+        "flag_id": "0x1258",
+        "byte": 75,
+        "bit": 0,
+        "before": 0,
+        "after": 1
+      },
+      {
+        "name": "FLAG_HIDE_HOENN_WALLY_PETALBURG",
+        "flag_id": "0x1259",
+        "byte": 75,
+        "bit": 1,
+        "before": 0,
+        "after": 1
+      },
+      {
+        "name": "FLAG_HIDE_HOENN_WALLY_VERDANTURF",
+        "flag_id": "0x125a",
+        "byte": 75,
+        "bit": 2,
+        "before": 0,
+        "after": 1
+      },
+      {
+        "name": "FLAG_HIDE_HOENN_WANDA_BOYFRIEND",
+        "flag_id": "0x125b",
+        "byte": 75,
+        "bit": 3,
+        "before": 0,
+        "after": 1
+      },
+      {
+        "name": "FLAG_HIDE_HOENN_ROCKET_WOODS",
+        "flag_id": "0x1260",
+        "byte": 76,
+        "bit": 0,
+        "before": 0,
+        "after": 1
+      },
+      {
+        "name": "FLAG_HIDE_HOENN_RIVAL_LAB",
+        "flag_id": "0x1261",
+        "byte": 76,
+        "bit": 1,
+        "before": 0,
+        "after": 1
+      }
+    ],
+    "changed_groups": [
+      "hoenn_flags"
+    ],
+    "party_PC_Dex_all_other_story_and_location_equal": true,
+    "stored_SAVE_equal_live_before_Continue": true,
+    "first_pre_normalization_QA_save": "/workspaces/pokefirered/work/hns-donor-port-20261015/elm-native-r3/elm-first-native-SAVE-before-Continue-visibility-init-QA-only.sav",
+    "visibility_writer_source": "src/field_specials.c:HoennZ3_SetupObjectsOnContinue",
+    "following_cycle_must_pass_unmodified_strict_flash_reload": true
+  },
+  "actual_menu_SAVE_cold": {
+    "counter": [
+      85,
+      86
+    ],
+    "checksummed_sectors": 14,
+    "qa_save": "/workspaces/pokefirered/work/hns-donor-port-20261015/elm-native-r3/elm-lab-second-strict-cycle-native-QA-only.sav",
+    "party_PC_location_all_flags_vars_fourfold_dex_live_stored_cold_equal": true
+  },
+  "original_inputs_unchanged": {
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.4-synced-recovered.sav": true,
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.45.sav": true,
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.1.0.sav": true,
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.1.sav": true,
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.4-synced.sav": true,
+    "/workspaces/pokefirered/saves/pokemonthyl_v3.gba.sav": true,
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/pokemonthyl_v3.gba.sav": true,
+    "/workspaces/pokefirered/pokemonthyl.gba": true,
+    "/workspaces/pokefirered/saves/v0.2.1.sav": true,
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.25-items99-iv2x.sav": true,
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.2.sav": true,
+    "/workspaces/pokefirered/tools/qa/native_misty_basic_qa.py": true,
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.5.1.sav": true,
+    "/workspaces/pokefirered/saves/hoenn.sav": true,
+    "/workspaces/pokefirered/pokemonthyl.elf": true,
+    "/workspaces/pokefirered/saves/v0.5.1.sav": true,
+    "/workspaces/pokefirered/saves/pokemonthyl_hoenn_QAed.sav": true,
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.2.1.sav": true,
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav": true,
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/hoenn.sav": true,
+    "/workspaces/pokefirered/saves/v0.1.0.sav": true,
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.25.sav": true,
+    "/workspaces/pokefirered/saves/backup-codex-v1_1-recovery-sort-20261002T002244.307175Z/pokemonthyl_v1.1.original.sav": true,
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.4.sav": true,
+    "/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-integrated-qa-r1/verify_build.py": true,
+    "/workspaces/pokefirered/work/hns-donor-port-20261015/elm-native-qa-r3/elm-native-guard.json": true,
+    "/workspaces/pokefirered/work/hns-donor-port-20261015/elm-native-qa-r3/native_elm_hns_qa_r3.py": true,
+    "/workspaces/pokefirered/data/maps/JohtoRoute29/map.json": true,
+    "/workspaces/pokefirered/data/maps/JohtoRoute29/scripts.inc": true,
+    "/workspaces/pokefirered/data/maps/JohtoRoute29/text.inc": true,
+    "/workspaces/pokefirered/data/layouts/JohtoRoute29/border.bin": true,
+    "/workspaces/pokefirered/data/layouts/layouts.json": true,
+    "/workspaces/pokefirered/data/tilesets/primary/general/metatile_attributes.bin": true,
+    "/workspaces/pokefirered/data/tilesets/secondary/pallet_town/metatile_attributes.bin": true,
+    "/workspaces/pokefirered/graphics/object_events/palettes/player.pal": true,
+    "/workspaces/pokefirered/src/companion_misty.c": true,
+    "/workspaces/pokefirered/include/constants/event_objects.h": true,
+    "/workspaces/pokefirered/src/data/object_events/object_event_graphics.h": true,
+    "/workspaces/pokefirered/src/data/object_events/object_event_graphics_info.h": true,
+    "/workspaces/pokefirered/src/data/object_events/object_event_graphics_info_pointers.h": true,
+    "/workspaces/pokefirered/src/data/object_events/object_event_pic_tables.h": true,
+    "/workspaces/pokefirered/graphics_file_rules.mk": true,
+    "/workspaces/pokefirered/spritesheet_rules.mk": true,
+    "/workspaces/pokefirered/src/pokemon.c": true,
+    "/workspaces/pokefirered/tools/johto/route29_wild.json": true,
+    "/workspaces/pokefirered/tools/johto/apply_route29_wild.py": true,
+    "/workspaces/pokefirered/src/data/object_events/object_event_anims.h": true,
+    "/workspaces/pokefirered/tools/qa/johto_violet_native_bootstrap_v1.py": true,
+    "/workspaces/pokefirered/tools/qa/emu.py": true,
+    "/workspaces/pokefirered/tools/qa/gamedata.py": true,
+    "/workspaces/pokefirered/tools/qa/savefile.py": true,
+    "/workspaces/pokefirered/tools/qa/hoenn_gauntlet_save_qa.py": true,
+    "/workspaces/pokefirered/include/event_object_movement.h": true,
+    "/workspaces/pokefirered/data/maps/NewBarkTown_ElmsLab/scripts.inc": true,
+    "/workspaces/pokefirered/data/maps/NewBarkTown_ElmsLab/text.inc": true,
+    "/workspaces/pokefirered/data/maps/NewBarkTown/map.json": true,
+    "/workspaces/pokefirered/data/layouts/NewBarkTown_ElmsLab/map.bin": true,
+    "/workspaces/pokefirered/data/layouts/NewBarkTown/map.bin": true,
+    "/workspaces/pokefirered/src/field_specials.c": true,
+    "/workspaces/pokefirered/include/constants/flags_hoenn_story.h": true,
+    "/workspaces/pokefirered/data/tilesets/primary/building/metatile_attributes.bin": true,
+    "/workspaces/pokefirered/data/tilesets/secondary/lab/metatile_attributes.bin": true,
+    "/workspaces/pokefirered/include/constants/metatile_behaviors.h": true,
+    "/workspaces/pokefirered/data/layouts/JohtoRoute29/map.bin": true,
+    "/workspaces/pokefirered/tools/johto/build_entry.py": true,
+    "/workspaces/pokefirered/tools/johto/route29_landscape_boundaries.py": true,
+    "/workspaces/pokefirered/graphics/object_events/pics/people/misty_companion_season1.png": true,
+    "/workspaces/pokefirered/data/maps/NewBarkTown_ElmsLab/map.json": true,
+    "/workspaces/pokefirered/src/event_object_movement.c": true,
+    "/workspaces/pokefirered/graphics/object_events/pics/people/prof_elm_hns.png": true,
+    "/workspaces/pokefirered/graphics/object_events/palettes/prof_elm_hns.pal": true,
+    "/workspaces/pokefirered/work/resume-v145-20261015/route29-misty-native-resume-r3/native_misty_walk_qa_r10.py": true,
+    "/workspaces/pokefirered/work/hns-donor-port-20261015/elm-native-qa-r3/elm-product-manifest.json": true
+  }
+}

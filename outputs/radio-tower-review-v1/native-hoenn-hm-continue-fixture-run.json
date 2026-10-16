@@ -1,0 +1,31 @@
+{
+  "status": "FINISHED",
+  "rom_sha256": "f3b4e13df998d1832544218a88cd0c4845a9b7ebd184628e00c1e9595434204c",
+  "cases": [
+    {
+      "kind": "shared",
+      "case": "cutter-fresh",
+      "exit": 0,
+      "pass": true,
+      "seconds": 15.71,
+      "error": null,
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-continue-shared-cutter-fresh"
+    },
+    {
+      "kind": "legacy",
+      "case": "brawly-full-retry",
+      "exit": 1,
+      "pass": false,
+      "seconds": 12.63,
+      "error": "AssertionError()",
+      "output": "/workspaces/pokefirered/outputs/radio-tower-review-v1/hm-continue-legacy-brawly-full-retry"
+    }
+  ],
+  "fixture_only_visibility_normalized": true,
+  "assertions_weakened": false,
+  "first_failure_history_retained": "native-hoenn-hm-run.json",
+  "main_replaced": false,
+  "all_pass": false,
+  "original_saves_unchanged": true,
+  "main_unchanged": true
+}

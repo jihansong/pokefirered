@@ -1,0 +1,33 @@
+{
+  "pass_all": true,
+  "maps": [
+    {
+      "map": "MtMortar_1F",
+      "load_frames": 96,
+      "stable_idle_frames": 12,
+      "vblank_delta": 107,
+      "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "fixture_sha256": "62f2af589f55161189ad96879e17913bbc87e20f4fef0a3a0860e46bcf02d622"
+    },
+    {
+      "map": "JohtoRocketHQ_B3F",
+      "load_frames": 96,
+      "stable_idle_frames": 12,
+      "vblank_delta": 107,
+      "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "fixture_sha256": "83d86a35a9d03ccff4d366f2a2b5694ebe24fe2aac9c1f8b88c82032e9ea5750"
+    }
+  ],
+  "rom_sha256": "ab47fb761ae2d93e0008c98172f9dee4e89bd034037efa9abef2d86b436f6f81",
+  "elf_sha256": "584f0b0f22574a06f1e00d78815bf95fe6f00681814089fd0767edfa0619ec3d",
+  "sym_sha256": "0046cb1bdf61cd2b2d2452b5829c2ef0abf973f4d07a710ca9e834eee9d6cfb7",
+  "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "ram_pokes_original": 0,
+  "party_pc_dex_preserved": true,
+  "regional_story_trainer_flags_preserved": true,
+  "actual_device_fps_measured": false,
+  "workload_frames_per_case": 360,
+  "workload_count": 4,
+  "full_campaign_measured": false,
+  "temporary_native_fixtures": true
+}

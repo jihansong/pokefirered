@@ -1,0 +1,1 @@
+[{"case": "route", "exit": 1}, {"case": "teach", "exit": 1}, {"case": "no-badge", "exit": 1}, {"case": "hoenn-only", "exit": 1}, {"case": "legacy", "exit": 1}, {"case": "invalid", "exit": 1}, {"case": "land", "exit": 1}, {"case": "no-move", "exit": 1}, {"case": "tower-rewards", "exit": 0}]

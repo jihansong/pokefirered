@@ -1,0 +1,28 @@
+{
+  "pass_all": true,
+  "maps": [
+    {
+      "map": "EcruteakCity",
+      "load_frames": 96,
+      "stable_idle_frames": 12,
+      "vblank_delta": 107,
+      "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "fixture_sha256": "79c45814337ea6d4f6ad9af010d5fd935108f5490f6b9b351b18a46a0968d2b2"
+    },
+    {
+      "map": "BurnedTower_1F",
+      "load_frames": 89,
+      "stable_idle_frames": 12,
+      "vblank_delta": 100,
+      "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "fixture_sha256": "79b9bfd18fd6d7120f0f47c8a2afdb8c3a71fd304e55033e74ff0b5e418383f8"
+    }
+  ],
+  "rom_sha256": "c139724c9b8d94a1195cb0386ced634a0012377f2ee7f3e86b6267259cf8068b",
+  "elf_sha256": "2e187bd051b902ab268d718c5cc02f9b32b16f99c0f81f8d1a88a425282855a3",
+  "sym_sha256": "5e5b210f01369034f3ff43f7e17f339f58f7f7ed13fe7a1f130be2abab9e6bad",
+  "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "ram_pokes_original": 0,
+  "party_pc_dex_preserved": true,
+  "actual_device_fps_measured": false
+}

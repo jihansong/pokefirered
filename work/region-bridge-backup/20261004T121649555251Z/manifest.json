@@ -1,0 +1,19 @@
+{
+  "before": {
+    "tools/hoenn_import/patches/SlateportCity_Harbor.scripts.inc": "d7529ae1dd6840f3e215480d8f0ff5c1ca3a1c42065e205ef36b29e5027cc881",
+    "data/maps/SlateportCity_Harbor/scripts.inc": "0c1c53b1c4d7c5faa39e1fb5725eb3888417601551abeea2bd459a3a3da243b7",
+    "tools/hoenn_import/patches/SlateportCity_Harbor.text.inc": "0a6495ae49a260202c6cffb827693e9de9d70d89aea7c1d2bfbe8d97c4461b61",
+    "data/maps/SlateportCity_Harbor/text.inc": "645f8a9f0c40bab655af1cbc0993ba3a6f1a492eb183882010e6284f1d925465"
+  },
+  "after": {
+    "tools/hoenn_import/patches/SlateportCity_Harbor.scripts.inc": "36f030d929d1b1d4dd0e2ef5e1157df3b9c253c537f539cdcae027c4b6eb829d",
+    "tools/hoenn_import/patches/SlateportCity_Harbor.text.inc": "cb5fbc40cd44879419eed03041a8c8f56047070587dfc5e44f92781dcdae1824",
+    "data/maps/SlateportCity_Harbor/scripts.inc": "b2662fae38a01e75163a736b4f9a0e05db05e3e505276b8d052cf146503ced95",
+    "data/maps/SlateportCity_Harbor/text.inc": "ebacf4b2ef881aef087ba902778b6b968c86ebefd38f37f7e498bf74e02a146e"
+  },
+  "applied": false,
+  "new_flags": 0,
+  "save_layout_changed": false,
+  "regional_clear_unlocked": false,
+  "scope": "Optional first-arrival acknowledgment of the actual Johto lab visit only"
+}

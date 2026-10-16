@@ -1,0 +1,344 @@
+--- a/data/maps/Route116/scripts.inc
++++ b/data/maps/Route116/scripts.inc
+@@ -76,10 +76,6 @@
+ 	msgbox Route116_Text_H10, MSGBOX_SIGN
+ 	end
+ 
+-Route116_EventScript_H11::
+-	msgbox Route116_Text_H11, MSGBOX_SIGN
+-	end
+-
+ Route116_EventScript_H12::
+ 	msgbox Route116_Text_H12, MSGBOX_SIGN
+ 	end
+@@ -131,4 +127,13 @@
+ 	msgbox Route116_Text_RepeatBallNoRoom
+ 	release
+ 	end
++
++Route116_EventScript_H11::
++	goto_if_set FLAG_HOENN_RUSTURF_OPEN, Route116_EventScript_TunnelSignFinished
++	msgbox Route116_Text_H11, MSGBOX_SIGN
++	end
++
++Route116_EventScript_TunnelSignFinished::
++	msgbox Route116_Text_TunnelSignFinished, MSGBOX_SIGN
++	end
+ @ END PATCH
+--- a/data/maps/Route116/text.inc
++++ b/data/maps/Route116/text.inc
+@@ -124,12 +124,6 @@
+ 	.string "ROUTE 116\n"
+ 	.string "{LEFT_ARROW} RUSTBORO CITY$"
+ 
+-Route116_Text_H11::
+-	.string "RUSTURF TUNNEL\n"
+-	.string "“Linking RUSTBORO and VERDANTURF\p"
+-	.string "“The tunnel project has been\n"
+-	.string "canceled.”$"
+-
+ Route116_Text_H12::
+ 	.string "TUNNELER'S REST HOUSE$"
+ 
+@@ -178,4 +172,16 @@
+ Route116_Text_RepeatBallNoRoom::
+ 	.string "You cannot carry this ball now.\n"
+ 	.string "I will keep it here for you.$"
++
++Route116_Text_H11::
++	.string "RUSTURF TUNNEL. The narrow\n"
++	.string "footpath is passable. Noisy\p"
++	.string "digging was stopped to protect\n"
++	.string "wild POKEMON.$"
++
++Route116_Text_TunnelSignFinished::
++	.string "RUSTURF TUNNEL. The quiet\n"
++	.string "footpath is complete. RUSTBORO\p"
++	.string "and VERDANTURF can meet without\n"
++	.string "disturbing wild POKEMON.$"
+ @ END PATCH
+--- a/data/maps/RusturfTunnel/scripts.inc
++++ b/data/maps/RusturfTunnel/scripts.inc
+@@ -8,11 +8,6 @@
+ 
+ RusturfTunnel_EventScript_HItem89::
+ 	finditem ITEM_MAX_ETHER
+-	end
+-
+-RusturfTunnel_EventScript_H0::
+-	trainerbattle_single TRAINER_HOENN_MIKE_2, RusturfTunnel_Text_H0_0, RusturfTunnel_Text_H0_1
+-	msgbox RusturfTunnel_Text_H0_2, MSGBOX_AUTOCLOSE
+ 	end
+ 
+ @ BEGIN PATCH (tools/hoenn_import/patches)
+@@ -160,4 +155,14 @@
+ RusturfTunnel_Movement_ReunionFaceRight::
+ 	face_right
+ 	step_end
++
++RusturfTunnel_EventScript_H0::
++	trainerbattle_single TRAINER_HOENN_MIKE_2, RusturfTunnel_Text_H0_0, RusturfTunnel_Text_H0_1
++	goto_if_set FLAG_HOENN_RUSTURF_OPEN, RusturfTunnel_EventScript_HikerFinished
++	msgbox RusturfTunnel_Text_H0_2, MSGBOX_AUTOCLOSE
++	end
++
++RusturfTunnel_EventScript_HikerFinished::
++	msgbox RusturfTunnel_Text_HikerFinished, MSGBOX_AUTOCLOSE
++	end
+ @ END PATCH
+--- a/data/maps/RusturfTunnel/text.inc
++++ b/data/maps/RusturfTunnel/text.inc
+@@ -7,11 +7,6 @@
+ RusturfTunnel_Text_H0_1::
+ 	.string "My POKéMON…\n"
+ 	.string "Ran out of power…$"
+-
+-RusturfTunnel_Text_H0_2::
+-	.string "They halted development here to\n"
+-	.string "protect POKéMON, right?\l"
+-	.string "There's a feel-good story!$"
+ 
+ @ BEGIN PATCH (tools/hoenn_import/patches)
+ RusturfTunnel_Text_DevonGruntIntro::
+@@ -60,4 +55,15 @@
+ RusturfTunnel_Text_ReunionHome::
+ 	.string "WANDA: Thank you for helping\neveryone here. We'll head home.\p"
+ 	.string "Come visit us in VERDANTURF!$"
++
++RusturfTunnel_Text_H0_2::
++	.string "They stopped noisy digging to\n"
++	.string "protect POKEMON. We can still use\p"
++	.string "the narrow footpath.$"
++
++RusturfTunnel_Text_HikerFinished::
++	.string "WANDA and her partner finished a\n"
++	.string "quiet footpath. People can cross\p"
++	.string "without disturbing the wild\n"
++	.string "POKEMON!$"
+ @ END PATCH
+--- a/data/maps/RustboroCity_DevonCorp_1F/scripts.inc
++++ b/data/maps/RustboroCity_DevonCorp_1F/scripts.inc
+@@ -3,10 +3,6 @@
+ 
+ RustboroCity_DevonCorp_1F_EventScript_H0::
+ 	msgbox RustboroCity_DevonCorp_1F_Text_H0, MSGBOX_NPC
+-	end
+-
+-RustboroCity_DevonCorp_1F_EventScript_H1::
+-	msgbox RustboroCity_DevonCorp_1F_Text_H1, MSGBOX_NPC
+ 	end
+ 
+ RustboroCity_DevonCorp_1F_EventScript_H2::
+@@ -21,3 +17,45 @@
+ 	msgbox RustboroCity_DevonCorp_1F_Text_H4, MSGBOX_SIGN
+ 	end
+ 
++@ BEGIN PATCH (tools/hoenn_import/patches)
++
++
++RustboroCity_DevonCorp_1F_EventScript_H1::
++	lock
++	faceplayer
++	goto_if_set FLAG_HOENN_GOT_EXP_SHARE, RustboroCity_DevonCorp_1F_EventScript_DispatchDone
++	goto_if_ge VAR_HOENN_SCENE_DEVON, 6, RustboroCity_DevonCorp_1F_EventScript_DispatchDone
++	goto_if_set FLAG_HOENN_DEVON_GOODS_DELIVERED, RustboroCity_DevonCorp_1F_EventScript_DispatchReward
++	goto_if_ge VAR_HOENN_SCENE_DEVON, 5, RustboroCity_DevonCorp_1F_EventScript_DispatchReward
++	goto_if_eq VAR_HOENN_SCENE_DEVON, 4, RustboroCity_DevonCorp_1F_EventScript_DispatchWaiting
++	goto_if_eq VAR_HOENN_SCENE_DEVON, 3, RustboroCity_DevonCorp_1F_EventScript_DispatchRecovered
++	goto_if_eq VAR_HOENN_SCENE_DEVON, 2, RustboroCity_DevonCorp_1F_EventScript_DispatchChase
++	msgbox RustboroCity_DevonCorp_1F_Text_H1
++	release
++	end
++
++RustboroCity_DevonCorp_1F_EventScript_DispatchChase::
++	msgbox RustboroCity_DevonCorp_1F_Text_DispatchChase
++	release
++	end
++
++RustboroCity_DevonCorp_1F_EventScript_DispatchRecovered::
++	msgbox RustboroCity_DevonCorp_1F_Text_DispatchRecovered
++	release
++	end
++
++RustboroCity_DevonCorp_1F_EventScript_DispatchWaiting::
++	msgbox RustboroCity_DevonCorp_1F_Text_DispatchWaiting
++	release
++	end
++
++RustboroCity_DevonCorp_1F_EventScript_DispatchReward::
++	msgbox RustboroCity_DevonCorp_1F_Text_DispatchReward
++	release
++	end
++
++RustboroCity_DevonCorp_1F_EventScript_DispatchDone::
++	msgbox RustboroCity_DevonCorp_1F_Text_DispatchDone
++	release
++	end
++@ END PATCH
+--- a/data/maps/RustboroCity_DevonCorp_1F/text.inc
++++ b/data/maps/RustboroCity_DevonCorp_1F/text.inc
+@@ -3,16 +3,6 @@
+ 	.string "They're one of our products!\p"
+ 	.string "It makes me happy when I see\n"
+ 	.string "someone using something we made.$"
+-
+-RustboroCity_DevonCorp_1F_Text_H1::
+-	.string "I'm sorry, only authorized people\n"
+-	.string "are allowed to enter here.$"
+-
+-RustboroCity_DevonCorp_1F_Text_H2::
+-	.string "Hello and welcome to the DEVON\n"
+-	.string "CORPORATION.\p"
+-	.string "We're proud producers of items and\n"
+-	.string "medicine that enhance your life.$"
+ 
+ RustboroCity_DevonCorp_1F_Text_H3::
+ 	.string "Prototypes and test products fill\n"
+@@ -42,3 +32,51 @@
+ 	.string "“DEVON is now a manufacturer of a\n"
+ 	.string "wide range of industrial products.”$"
+ 
++@ BEGIN PATCH (tools/hoenn_import/patches)
++
++
++RustboroCity_DevonCorp_1F_Text_DispatchChase::
++	.string "Our parcel was stolen! The thief\n"
++	.string "fled east along ROUTE 116 to\p"
++	.string "RUSTURF TUNNEL. Please bring the\n"
++	.string "DEVON GOODS back.$"
++
++RustboroCity_DevonCorp_1F_Text_DispatchRecovered::
++	.string "Thank you for recovering our\n"
++	.string "goods! Please take the parcel to\p"
++	.string "MR. STONE in his third-floor\n"
++	.string "office.$"
++
++RustboroCity_DevonCorp_1F_Text_DispatchWaiting::
++	.string "CAPT. STERN is at SLATEPORT's\n"
++	.string "harbor. MR. BRINEY's boat leaves\p"
++	.string "from ROUTE 104. Take the DEVON\n"
++	.string "GOODS to STERN, then return to\p"
++	.string "MR. STONE.$"
++
++RustboroCity_DevonCorp_1F_Text_DispatchReward::
++	.string "Your delivery is complete! Please\n"
++	.string "tell MR. STONE on the third floor.\p"
++	.string "He has a thank-you reward for\n"
++	.string "you.$"
++
++RustboroCity_DevonCorp_1F_Text_DispatchDone::
++	.string "Thank you for helping our\n"
++	.string "research team. Your delivery is\p"
++	.string "complete. Good luck on your\n"
++	.string "travels through HOENN!$"
++
++RustboroCity_DevonCorp_1F_Text_H1::
++	.string "Our researcher in PETALBURG WOODS\n"
++	.string "is checking a delivery. Please\p"
++	.string "speak with him if you have helped\n"
++	.string "in the woods. MR. STONE has an\p"
++	.string "office on the third floor.$"
++
++RustboroCity_DevonCorp_1F_Text_H2::
++	.string "Welcome to DEVON CORPORATION!\n"
++	.string "For delivery updates, ask the\p"
++	.string "staff member near the stairs. MR.\n"
++	.string "STONE has an office on the third\p"
++	.string "floor.$"
++@ END PATCH
+--- a/data/maps/RustboroCity_DevonCorp_3F/scripts.inc
++++ b/data/maps/RustboroCity_DevonCorp_3F/scripts.inc
+@@ -1,9 +1,5 @@
+ RustboroCity_DevonCorp_3F_MapScripts::
+ 	.byte 0
+-
+-RustboroCity_DevonCorp_3F_EventScript_H1::
+-	msgbox RustboroCity_DevonCorp_3F_Text_H1, MSGBOX_NPC
+-	end
+ 
+ RustboroCity_DevonCorp_3F_EventScript_H2::
+ 	msgbox RustboroCity_DevonCorp_3F_Text_H2, MSGBOX_SIGN
+@@ -76,4 +72,37 @@
+ 	msgbox RustboroCity_DevonCorp_3F_Text_Done
+ 	release
+ 	end
++
++RustboroCity_DevonCorp_3F_EventScript_H1::
++	lock
++	faceplayer
++	goto_if_set FLAG_HOENN_GOT_EXP_SHARE, RustboroCity_DevonCorp_3F_EventScript_AssistantDone
++	goto_if_ge VAR_HOENN_SCENE_DEVON, 6, RustboroCity_DevonCorp_3F_EventScript_AssistantDone
++	goto_if_set FLAG_HOENN_DEVON_GOODS_DELIVERED, RustboroCity_DevonCorp_3F_EventScript_AssistantReward
++	goto_if_ge VAR_HOENN_SCENE_DEVON, 5, RustboroCity_DevonCorp_3F_EventScript_AssistantReward
++	goto_if_eq VAR_HOENN_SCENE_DEVON, 4, RustboroCity_DevonCorp_3F_EventScript_AssistantWaiting
++	goto_if_eq VAR_HOENN_SCENE_DEVON, 3, RustboroCity_DevonCorp_3F_EventScript_AssistantRecovered
++	msgbox RustboroCity_DevonCorp_3F_Text_H1
++	release
++	end
++
++RustboroCity_DevonCorp_3F_EventScript_AssistantRecovered::
++	msgbox RustboroCity_DevonCorp_3F_Text_AssistantRecovered
++	release
++	end
++
++RustboroCity_DevonCorp_3F_EventScript_AssistantWaiting::
++	msgbox RustboroCity_DevonCorp_3F_Text_AssistantWaiting
++	release
++	end
++
++RustboroCity_DevonCorp_3F_EventScript_AssistantReward::
++	msgbox RustboroCity_DevonCorp_3F_Text_AssistantReward
++	release
++	end
++
++RustboroCity_DevonCorp_3F_EventScript_AssistantDone::
++	msgbox RustboroCity_DevonCorp_3F_Text_AssistantDone
++	release
++	end
+ @ END PATCH
+--- a/data/maps/RustboroCity_DevonCorp_3F/text.inc
++++ b/data/maps/RustboroCity_DevonCorp_3F/text.inc
+@@ -1,7 +1,4 @@
+ RustboroCity_DevonCorp_3F_Text_H0::
+-	.string "MR. STONE: I'm counting on you!$"
+-
+-RustboroCity_DevonCorp_3F_Text_H1::
+ 	.string "MR. STONE: I'm counting on you!$"
+ 
+ RustboroCity_DevonCorp_3F_Text_H2::
+@@ -65,4 +62,35 @@
+ RustboroCity_DevonCorp_3F_Text_Done::
+ 	.string "MR. STONE: How is your team doing?\n"
+ 	.string "Give that EXP. SHARE a good home.$"
++
++RustboroCity_DevonCorp_3F_Text_AssistantRecovered::
++	.string "Have you brought the recovered\n"
++	.string "DEVON GOODS? Please speak to MR.\p"
++	.string "STONE on the right side of this\n"
++	.string "desk. He will explain the\p"
++	.string "delivery.$"
++
++RustboroCity_DevonCorp_3F_Text_AssistantWaiting::
++	.string "CAPT. STERN is at SLATEPORT's\n"
++	.string "harbor. MR. STONE can repeat the\p"
++	.string "boat directions. He is on the\n"
++	.string "right side of this desk.$"
++
++RustboroCity_DevonCorp_3F_Text_AssistantReward::
++	.string "I hear your delivery is complete!\n"
++	.string "Please speak to MR. STONE on the\p"
++	.string "right side of this desk to receive\n"
++	.string "his thanks.$"
++
++RustboroCity_DevonCorp_3F_Text_AssistantDone::
++	.string "MR. STONE is grateful for your\n"
++	.string "help. Your delivery is already\p"
++	.string "complete. You are welcome to\n"
++	.string "visit us again.$"
++
++RustboroCity_DevonCorp_3F_Text_H1::
++	.string "MR. STONE is on the right side of\n"
++	.string "this desk. He is looking for help\p"
++	.string "with our research shipments.\n"
++	.string "Please speak to him directly.$"
+ @ END PATCH

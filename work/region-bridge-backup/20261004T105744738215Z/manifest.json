@@ -1,0 +1,17 @@
+{
+  "changed": [
+    "tools/hoenn_import/patches/SlateportCity_Harbor.scripts.inc",
+    "data/maps/SlateportCity_Harbor/scripts.inc"
+  ],
+  "before": {
+    "tools/hoenn_import/patches/SlateportCity_Harbor.scripts.inc": "3325a971516543ceb8c37e7455299e1a1cb1795b4c8ba1f84987e6309528a9d4",
+    "data/maps/SlateportCity_Harbor/scripts.inc": "96777927b96b09c23ab24f235c9066d54c128b5abb1246f966eb48271e3ea9ab"
+  },
+  "after": {
+    "tools/hoenn_import/patches/SlateportCity_Harbor.scripts.inc": "d7529ae1dd6840f3e215480d8f0ff5c1ca3a1c42065e205ef36b29e5027cc881",
+    "data/maps/SlateportCity_Harbor/scripts.inc": "0c1c53b1c4d7c5faa39e1fb5725eb3888417601551abeea2bd459a3a3da243b7"
+  },
+  "applied": false,
+  "save_layout_changed": false,
+  "build_or_emulator_verified": false
+}

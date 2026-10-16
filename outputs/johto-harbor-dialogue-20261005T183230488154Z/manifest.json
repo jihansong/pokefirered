@@ -1,0 +1,43 @@
+{
+  "patch": "HARBOR_CURED_DIALOGUE_V1",
+  "apply": true,
+  "story_flag_for_branch": "FLAG_JOHTO_AMPHY_CURED",
+  "npc_branches": 4,
+  "map_scripts": 3,
+  "map_texts": 3,
+  "source_before_sha256": "13158a26326c49c4e503c1ede6a536fe9a3045b6a42ade60c84cd1b93b15e00c",
+  "source_after_sha256": "63a2eeb6177d44c7710931a19e3af200e068d249c9d6e424f899e74fe05bec6a",
+  "files": {
+    "data/maps/OlivineCity/scripts.inc": {
+      "before": "ca1e0a2fcc3864bf41137535633539ed96413d69d5dde3cfb6965f07ec5816ec",
+      "after": "5186ce319d818547a647f3289cfd6bb700131575add4416cfb71270718975514"
+    },
+    "data/maps/OlivineCity/text.inc": {
+      "before": "6865679b13c34e8928e1200697e82c7b67c846164d033c5debc1250708b6fb08",
+      "after": "653a8d1229a032eee62e3ecc3e08bf1239f0a04451fab6d24084b7124b1e3dee"
+    },
+    "data/maps/OlivineLighthouse_1F/scripts.inc": {
+      "before": "5d10da9383a60d9cd56f91133cdf26b26cfe8b81d55850dd451cd86fb5285be7",
+      "after": "5f0ec31d15888220c04f6e7805fcf5cba9b2551b524689f5821fbc3ee718cb2a"
+    },
+    "data/maps/OlivineLighthouse_1F/text.inc": {
+      "before": "bf4a5b58c92f193089d84fe66500f2dac88056300047d06c58112fb1139bd2bd",
+      "after": "ef3fdbdca362ef66c9ffb00ade7f854cd1d31f89d8fdf1e61ace4baf82307ccf"
+    },
+    "data/maps/OlivineCity_Gym/scripts.inc": {
+      "before": "d7983e64ce7c844260eb1b9b7e940a53d52b6d51f44f8bc204d82ee0fa7bc246",
+      "after": "72544103cc34b37d605a481415fcca87b8153d50d9abae23c2d109bcb1ed594f"
+    },
+    "data/maps/OlivineCity_Gym/text.inc": {
+      "before": "2af39482ab264a8f86ebee0bb729d18004fbf14061ca23d15338b49c8b03a3bf",
+      "after": "35625a951141f1153066f7943f365316f958c4b2c0812534b52daf3a5878ec43"
+    },
+    "tools/johto/build_olivine_cianwood.py": {
+      "before": "13158a26326c49c4e503c1ede6a536fe9a3045b6a42ade60c84cd1b93b15e00c",
+      "after": "63a2eeb6177d44c7710931a19e3af200e068d249c9d6e424f899e74fe05bec6a"
+    }
+  },
+  "save_layout_changed": false,
+  "native_qa": "NOT_RUN_BY_THIS_PATCH",
+  "unrelated_generated_dialogue_preserved": true
+}

@@ -1,0 +1,11 @@
+{
+  "promoted": true,
+  "delivery": "/workspaces/pokefirered/outputs/rom-johto-research-followup-20261012T111059Z",
+  "rollback": "/workspaces/pokefirered/outputs/rom-johto-research-followup-20261012T111059Z/rollback-oct12-first-repair",
+  "current_rom_sha256": "b46fb32bb67f89d5a48dfbfdf41ddd4977cc4a2d60dbbe6c72e1bc0281c5606d",
+  "download_zip": "/workspaces/pokefirered/work/regression-oct12/deliverables/pokemonthyl-oct12-research-followup.zip",
+  "zip_sha256": "957f77a31ab80a3bc2324bba547bbae9f8fba93619f70699459a27ba495aae54",
+  "zip_bytes": 7642271,
+  "original_all_SAVs_unchanged": true,
+  "full_campaign_complete": false
+}

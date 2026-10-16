@@ -8,4 +8,7 @@ void HealPlayerParty(void);
 void ReducePlayerPartyToThree(void);
 void CreateScriptedWildMon(u16 species, u8 level, u16 item);
 
+void ScriptGivePerfectRegionalStarter(void);
+void CreatePerfectScriptedTreecko(void);
+
 #endif //GUARD_SCRIPT_POKEMON_UTIL_H

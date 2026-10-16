@@ -1,0 +1,60 @@
+{
+  "source_head": "658baf740cff568cba7f3300f688b8a626e6f5fc",
+  "applied": true,
+  "checks": {
+    "baseline": {
+      "exit": 1,
+      "seconds": 1.17
+    },
+    "wiring-before": {
+      "exit": 1,
+      "seconds": 6.09
+    },
+    "build": {
+      "exit": 0,
+      "seconds": 16.27
+    },
+    "syms": {
+      "exit": 0,
+      "seconds": 1.93
+    },
+    "fixtures": {
+      "exit": 0,
+      "seconds": 3.72
+    },
+    "events": {
+      "exit": 0,
+      "seconds": 37.84
+    },
+    "roxanne-regression": {
+      "exit": 0,
+      "seconds": 18.08
+    },
+    "saves": {
+      "exit": 0,
+      "seconds": 21.47
+    },
+    "map-integrity": {
+      "exit": 0,
+      "seconds": 4.07
+    },
+    "wiring-after": {
+      "exit": 1,
+      "seconds": 2.48
+    },
+    "mapsmoke": {
+      "exit": 0,
+      "seconds": 28.33
+    },
+    "textwidth": {
+      "exit": 0,
+      "seconds": 0.04
+    }
+  },
+  "complete": true,
+  "canonical_regeneration_idempotent": true,
+  "new_wiring_findings": [],
+  "original_saves_unchanged": true,
+  "lavender_fix_unchanged": true,
+  "verified": true
+}

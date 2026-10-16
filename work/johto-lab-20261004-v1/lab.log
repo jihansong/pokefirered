@@ -1,0 +1,9 @@
+ok   j1_lab_gift_party
+ok   j1_lab_decline
+ok   j1_lab_gift_pc
+ok   j1_lab_no_room_retry_pending
+ok   j1_lab_party_room_pc_full
+ok   j1_lab_legacy_receipt_even_after_release
+ok   j1_lab_negative_duplicate
+ok   j1_lab_negative_full_consumed
+8/8 cases passed

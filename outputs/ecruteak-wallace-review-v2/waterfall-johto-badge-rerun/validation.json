@@ -1,0 +1,54 @@
+{
+  "pass": false,
+  "rom_sha256": "c139724c9b8d94a1195cb0386ced634a0012377f2ee7f3e86b6267259cf8068b",
+  "elf_sha256": "2e187bd051b902ab268d718c5cc02f9b32b16f99c0f81f8d1a88a425282855a3",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-waterfall-johto-badge",
+  "fixture": "temporary Lapras mover plus exact copy of genuine original starter Pikachu; original SAV/PC/Dex unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "candidate_ui_task_symbols": {
+    "Task_HandleChooseMonInput": [
+      135414788
+    ],
+    "Task_HandleSelectionMenuInput": [
+      135427460
+    ],
+    "Task_ReturnToChooseMonAfterText": [
+      135416980
+    ],
+    "Task_CancelAfterAorBPress": [
+      135434880
+    ],
+    "Task_YesNoMenu_HandleInput": [
+      134873944
+    ],
+    "Task_UseWaterfall": [
+      134774784
+    ]
+  },
+  "native_story_not_entire_regions": true,
+  "follower_checks": [],
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "error": "AssertionError(('native waterfall timeout', (76, 2, 11, 10), '0x812347d'))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/tools/qa/native_waterfall_follower_qa.py\", line 221, in <module>\n    reject_menu(a.case.endswith('rain-only'))\n  File \"/workspaces/pokefirered/tools/qa/native_waterfall_follower_qa.py\", line 151, in reject_menu\n    start_party()\n  File \"/workspaces/pokefirered/tools/qa/native_waterfall_follower_qa.py\", line 143, in start_party\n    await_state(lambda:active_task(e,'Task_HandleSelectionMenuInput'))\n  File \"/workspaces/pokefirered/tools/qa/native_waterfall_follower_qa.py\", line 49, in await_state\n    raise AssertionError(('native waterfall timeout',e.location(),hex(e.callback2())))\nAssertionError: ('native waterfall timeout', (76, 2, 11, 10), '0x812347d')\n",
+  "failure_location": [
+    76,
+    2,
+    11,
+    10
+  ],
+  "original_saves_unchanged": true
+}

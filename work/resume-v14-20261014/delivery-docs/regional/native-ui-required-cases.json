@@ -1,0 +1,70 @@
+{
+  "status": "REQUIRED_NOT_EXECUTED",
+  "rom_sha256": "0845f8cbc1afa5d957a64f76a4ae2700606175dd55bcd101184e6ba2a650b7fa",
+  "elf_sha256": "e625069ea9379ea3dc2f83e3014fb741a2e0b7383f41f6d56bc37fc0eae6f17b",
+  "source_screen_sha256": "d7cd34bed4bdee8a2e76950636a093f726eb79268b2aed6b96bf31139c1ea4c7",
+  "observation_bindings": [
+    "sPokedexScreenData: unique local STT_OBJECT in pokedex_screen.c, pointer size 4, current ELF RAM section",
+    "PokedexScreenData: derive member offsets and size from current compiler DWARF; do not reuse prior packed offsets",
+    "Task_PokedexScreen / Task_DexScreen_NumericalOrder: TU-owned current ELF STT_FUNC, normalize Thumb addresses",
+    "gTasks: current ELF task object and compiler-derived task size, read-only observation",
+    "national and regional order tables: current guarded compiled symbols and species conversions"
+  ],
+  "execution_rules": [
+    "Continue a verified battery clone using real inputs; never inject RAM, call game routines, or invoke scripts directly",
+    "Use an actual naturally reached checkpoint where available",
+    "Preboot flag/record fixture cases must be separate QA clones and identified as fixtures; they do not prove story unlock dialogues",
+    "Preserve original files; check original hashes after execution",
+    "Capture actual game pixels and compiler-bound state at each checkpoint",
+    "Native SAVE and cold Continue must validate fourteen section checksums and compare unchanged party, PC, and all national seen/caught mirrors"
+  ],
+  "cases": [
+    {
+      "id": "kanto_pre_unlock",
+      "expected_region": 0,
+      "count": 151,
+      "flags": {"4662": false, "4616": false, "5376": false, "5377": false},
+      "expect": ["Regional default after START→POKéDEX", "KANTO POKéDEX - 151 title", "No internal species renumbering", "National seen/caught record bytes unchanged"]
+    },
+    {
+      "id": "johto_post_arrival_or_elm",
+      "expected_region": 1,
+      "count": 251,
+      "flags": {"4662": false, "4616": false, "5376_or_5377": true},
+      "expect": ["NUMERICAL MODE: JOHTO label", "JOHTO POKéDEX - 251 title", "Chikorita 001 / Cyndaquil 004 / Totodile 007 / Pikachu 022", "Detail page numbers agree with list order", "Existing Kanto records remain present under Johto numbering"]
+    },
+    {
+      "id": "hoenn_post_birch_or_stern",
+      "expected_region": 2,
+      "count": 202,
+      "flags": {"4662_or_4616": true},
+      "expect": ["NUMERICAL MODE: HOENN label", "HOENN POKéDEX - 202 title", "Treecko 001 / Torchic 004 / Mudkip 007", "Compiled internal species correctly converts to regional number", "Earlier national records remain unchanged"]
+    },
+    {
+      "id": "national_mode_and_return",
+      "precondition": "National Dex enabled; perform independently in Johto and Hoenn checkpoints",
+      "expect": ["National list prints national numbers", "National-only species is selectable after being seen", "B back to top menu restores showNationalNumbers=false", "Regional label and category filtering are restored"]
+    },
+    {
+      "id": "regional_empty_and_sparse_lists",
+      "precondition": "Separate disclosed preboot QA clones for no regional seen bits and sparse regional seen bits; national mirrors remain synchronized",
+      "expect": ["Exactly one non-selectable SPECIES_NONE placeholder for empty search", "No selection or scroll crash", "Sparse numerical list preserves missing-entry positions through last seen regional entry", "Characteristic lists contain only active-region species", "No national bit writes during browsing"]
+    },
+    {
+      "id": "regional_and_off_region_catch_registration",
+      "precondition": "Actual catch through native battle, not forced catch result",
+      "expect": ["Seen/caught set at national bit index and original seen mirrors", "Regional species registration displays regional number", "Off-region species uses national number when National Dex is enabled", "Close registration without incorrect category/page selection"]
+    },
+    {
+      "id": "save_cold_continue_and_reopen",
+      "precondition": "Run at each natural region unlock checkpoint",
+      "expect": ["Native SAVE counter advances", "Fourteen section checksums valid", "Cold Continue reopens same active region", "List and detail numbers remain correct", "Party/PC and existing national record bytes are preserved"]
+    },
+    {
+      "id": "actual_story_flag_writers",
+      "precondition": "Hash-verified actual arrival and professor scripts plus common flight destination definition",
+      "expect": ["Actual welcome/professor dialogue reaches intended flag set using real movement/A input", "Do not count preboot fixture masks as story proof", "Previous region story continuation text is present at relevant event", "No unavailable-region flight bypass if a linear campaign gate is implemented"]
+    }
+  ],
+  "not_claimed": ["Whole regional maps/gyms/leagues pass", "Fresh Kanto-to-Hoenn campaign completion", "DELTA device frame rate", "Bad Egg recovery", "Source host tests equal ROM runtime tests"]
+}

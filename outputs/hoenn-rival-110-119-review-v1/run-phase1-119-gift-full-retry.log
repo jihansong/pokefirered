@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/native_hoenn_rival_110_119_qa.py", line 13, in <module>
+    assert prefix.count('assert not a.loss\n')==1;prefix=prefix.replace('assert not a.loss\n','',1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

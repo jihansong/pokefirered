@@ -1,0 +1,3610 @@
+#include "global.h"
+#include "gflib.h"
+#include "quest_log.h"
+#include "list_menu.h"
+#include "diploma.h"
+#include "script.h"
+#include "event_scripts.h"
+#include "field_player_avatar.h"
+#include "overworld.h"
+#include "field_message_box.h"
+#include "event_data.h"
+#include "strings.h"
+#include "battle.h"
+#include "fieldmap.h"
+#include "field_specials.h"
+#include "time_of_day.h"
+#include "bug_contest.h"
+#include "wild_encounter.h"
+#include "region_map.h"
+#include "task.h"
+#include "battle_tower.h"
+#include "field_camera.h"
+#include "field_effect.h"
+#include "event_object_movement.h"
+#include "menu_indicators.h"
+#include "random.h"
+#include "mail_data.h"
+#include "help_system.h"
+#include "pokemon_storage_system.h"
+#include "script_menu.h"
+#include "trig.h"
+#include "gba/m4a_internal.h"
+#include "m4a.h"
+#include "field_fadetransition.h"
+#include "data.h"
+#include "pokedex.h"
+#include "text_window.h"
+#include "menu.h"
+#include "mystery_gift.h"
+#include "naming_screen.h"
+#include "party_menu.h"
+#include "dynamic_placeholder_text_util.h"
+#include "new_menu_helpers.h"
+#include "battle_setup.h"
+#include "constants/songs.h"
+#include "constants/items.h"
+#include "constants/maps.h"
+#include "constants/region_map_sections.h"
+#include "constants/moves.h"
+#include "constants/menu.h"
+#include "constants/event_objects.h"
+#include "constants/metatile_labels.h"
+#include "constants/easy_chat.h"
+#include "constants/opponents.h"
+#include "data.h"
+
+static EWRAM_DATA u8 sElevatorCurrentFloorWindowId = 0;
+static EWRAM_DATA u16 sElevatorScroll = 0;
+static EWRAM_DATA u16 sElevatorCursorPos = 0;
+static EWRAM_DATA struct ListMenuItem * sListMenuItems = NULL;
+static EWRAM_DATA u16 sListMenuLastScrollPosition = 0;
+static EWRAM_DATA u8 sPCBoxToSendMon = 0;
+static EWRAM_DATA u8 sBrailleTextCursorSpriteID = 0;
+
+COMMON_DATA struct ListMenuTemplate sFieldSpecialsListMenuTemplate = {0};
+COMMON_DATA u16 sFieldSpecialsListMenuScrollBuffer = 0;
+
+static void Task_AnimatePcTurnOn(u8 taskId);
+static void PcTurnOnUpdateMetatileId(bool16 flag);
+static void Task_ShakeScreen(u8 taskId);
+static void Task_EndScreenShake(u8 taskId);
+static u16 SampleResortGorgeousMon(void);
+static u16 SampleResortGorgeousReward(void);
+static void Task_ElevatorShake(u8 taskId);
+static void AnimateElevatorWindowView(u16 nfloors, bool8 direction);
+static void Task_AnimateElevatorWindowView(u8 taskId);
+static void Task_CreateScriptListMenu(u8 taskId);
+static void CreateScriptListMenu(void);
+static void ScriptListMenuMoveCursorFunction(s32 nothing, bool8 is, struct ListMenu * used);
+static void Task_ListMenuHandleInput(u8 taskId);
+static void Task_DestroyListMenu(u8 taskId);
+static void Task_SuspendListMenu(u8 taskId);
+static void Task_RedrawScrollArrowsAndWaitInput(u8 taskId);
+static void Task_CreateMenuRemoveScrollIndicatorArrowPair(u8 taskId);
+static void Task_ListMenuRemoveScrollIndicatorArrowPair(u8 taskId);
+static void ChangeBoxPokemonNickname_CB(void);
+static void ChangePokemonNickname_CB(void);
+static void Task_RunPokemonLeagueLightingEffect(u8 taskId);
+static void Task_CancelPokemonLeagueLightingEffect(u8 taskId);
+static void Task_DoDeoxysTriangleInteraction(u8 taskId);
+static void MoveDeoxysObject(u8 num);
+static void Task_WaitDeoxysFieldEffect(u8 taskId);
+static void Task_WingFlapSound(u8 taskId);
+
+static u8 *const sStringVarPtrs[] = {
+    gStringVar1,
+    gStringVar2,
+    gStringVar3
+};
+
+void ShowDiploma(void)
+{
+    QuestLog_CutRecording();
+    SetMainCallback2(CB2_ShowDiploma);
+    LockPlayerFieldControls();
+}
+
+void ForcePlayerOntoBike(void)
+{
+    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
+        SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_MACH_BIKE);
+    Overworld_SetSavedMusic(MUS_CYCLING);
+    Overworld_ChangeMusicTo(MUS_CYCLING);
+}
+
+void ResetCyclingRoadChallengeData(void)
+{
+
+}
+
+u8 GetPlayerAvatarBike(void)
+{
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_ACRO_BIKE))
+        return 1;
+    else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE))
+        return 2;
+    else
+        return 0;
+}
+
+void ShowFieldMessageStringVar4(void)
+{
+    ShowFieldMessage(gStringVar4);
+}
+
+void GetPlayerXY(void)
+{
+    gSpecialVar_0x8004 = gSaveBlock1Ptr->pos.x;
+    gSpecialVar_0x8005 = gSaveBlock1Ptr->pos.y;
+}
+
+u8 GetPlayerTrainerIdOnesDigit(void)
+{
+    u16 playerId = (gSaveBlock2Ptr->playerTrainerId[1] << 8) | gSaveBlock2Ptr->playerTrainerId[0];
+    return playerId % 10;
+}
+
+void BufferBigGuyOrBigGirlString(void)
+{
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        StringCopy(gStringVar1, gText_BigGuy);
+    else
+        StringCopy(gStringVar1, gText_BigGirl);
+}
+
+void BufferSonOrDaughterString(void)
+{
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        StringCopy(gStringVar1, gText_Daughter);
+    else
+        StringCopy(gStringVar1, gText_Son);
+}
+
+u8 GetBattleOutcome(void)
+{
+    return gBattleOutcome;
+}
+
+void SetHiddenItemFlag(void)
+{
+    FlagSet(gSpecialVar_0x8004);
+}
+
+u8 GetLeadMonFriendship(void)
+{
+    struct Pokemon * pokemon = &gPlayerParty[GetLeadMonIndex()];
+    if (GetMonData(pokemon, MON_DATA_FRIENDSHIP) == 255)
+        return 6;
+    else if (GetMonData(pokemon, MON_DATA_FRIENDSHIP) >= 200)
+        return 5;
+    else if (GetMonData(pokemon, MON_DATA_FRIENDSHIP) >= 150)
+        return 4;
+    else if (GetMonData(pokemon, MON_DATA_FRIENDSHIP) >= 100)
+        return 3;
+    else if (GetMonData(pokemon, MON_DATA_FRIENDSHIP) >= 50)
+        return 2;
+    else if (GetMonData(pokemon, MON_DATA_FRIENDSHIP) > 0)
+        return 1;
+    else
+        return 0;
+}
+
+void ShowTownMap(void)
+{
+    QuestLog_CutRecording();
+    InitRegionMapWithExitCB(REGIONMAP_TYPE_WALL, CB2_ReturnToFieldContinueScriptPlayMapMusic);
+}
+
+bool8 PlayerHasGrassPokemonInParty(void)
+{
+    u8 i;
+    struct Pokemon * pokemon;
+    u16 species;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES)
+         && !GetMonData(pokemon, MON_DATA_IS_EGG)
+        )
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if (gSpeciesInfo[species].types[0] == TYPE_GRASS || gSpeciesInfo[species].types[1] == TYPE_GRASS)
+                return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+#define tState data[0]
+#define tTimer data[1]
+
+void AnimatePcTurnOn(void)
+{
+    u8 taskId;
+
+    if (FuncIsActiveTask(Task_AnimatePcTurnOn) != TRUE)
+    {
+        taskId = CreateTask(Task_AnimatePcTurnOn, 8);
+        gTasks[taskId].tState = 0;
+        gTasks[taskId].tTimer = 0;
+    }
+}
+
+// PC flickers on and off while turning on
+static void Task_AnimatePcTurnOn(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+    if (tTimer == 6)
+    {
+        PcTurnOnUpdateMetatileId(tState & 1);
+        DrawWholeMapView();
+        tTimer = 0;
+        tState++;
+        if (tState == 5)
+            DestroyTask(taskId);
+    }
+    tTimer++;
+}
+
+#undef tState
+#undef tTimer
+
+static void PcTurnOnUpdateMetatileId(bool16 flickerOff)
+{
+    u16 metatileId = 0;
+    s8 deltaX = 0;
+    s8 deltaY = 0;
+    u8 direction = GetPlayerFacingDirection();
+
+    switch (direction)
+    {
+    case DIR_NORTH:
+        deltaX = 0;
+        deltaY = -1;
+        break;
+    case DIR_WEST:
+        deltaX = -1;
+        deltaY = -1;
+        break;
+    case DIR_EAST:
+        deltaX = 1;
+        deltaY = -1;
+        break;
+    }
+    if (flickerOff)
+    {
+        if (gSpecialVar_0x8004 == 0)
+            metatileId = METATILE_Building_PCOff;
+        else if (gSpecialVar_0x8004 == 1)
+            metatileId = METATILE_GenericBuilding1_PlayersPCOff;
+        else if (gSpecialVar_0x8004 == 2)
+            metatileId = METATILE_GenericBuilding1_PlayersPCOff;
+    }
+    else
+    {
+        if (gSpecialVar_0x8004 == 0)
+            metatileId = METATILE_Building_PCOn;
+        else if (gSpecialVar_0x8004 == 1)
+            metatileId = METATILE_GenericBuilding1_PlayersPCOn;
+        else if (gSpecialVar_0x8004 == 2)
+            metatileId = METATILE_GenericBuilding1_PlayersPCOn;
+    }
+    MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + deltaX + MAP_OFFSET, gSaveBlock1Ptr->pos.y + deltaY + MAP_OFFSET, metatileId | MAPGRID_COLLISION_MASK);
+}
+
+void AnimatePcTurnOff()
+{
+    u16 metatileId = 0;
+    s8 deltaX = 0;
+    s8 deltaY = 0;
+    u8 direction = GetPlayerFacingDirection();
+
+    switch (direction)
+    {
+    case DIR_NORTH:
+        deltaX = 0;
+        deltaY = -1;
+        break;
+    case DIR_WEST:
+        deltaX = -1;
+        deltaY = -1;
+        break;
+    case DIR_EAST:
+        deltaX = 1;
+        deltaY = -1;
+        break;
+    }
+    if (gSpecialVar_0x8004 == 0)
+        metatileId = METATILE_Building_PCOff;
+    else if (gSpecialVar_0x8004 == 1)
+        metatileId = METATILE_GenericBuilding1_PlayersPCOff;
+    else if (gSpecialVar_0x8004 == 2)
+        metatileId = METATILE_GenericBuilding1_PlayersPCOff;
+    MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + deltaX + MAP_OFFSET, gSaveBlock1Ptr->pos.y + deltaY + MAP_OFFSET, metatileId | MAPGRID_COLLISION_MASK);
+    DrawWholeMapView();
+}
+
+void SpawnCameraObject(void)
+{
+    u8 objectEventId = SpawnSpecialObjectEventParameterized(OBJ_EVENT_GFX_YOUNGSTER, 8, LOCALID_CAMERA, gSaveBlock1Ptr->pos.x + MAP_OFFSET, gSaveBlock1Ptr->pos.y + MAP_OFFSET, 3);
+    gObjectEvents[objectEventId].invisible = TRUE;
+    CameraObjectSetFollowedObjectId(gObjectEvents[objectEventId].spriteId);
+}
+
+void RemoveCameraObject(void)
+{
+    CameraObjectSetFollowedObjectId(GetPlayerAvatarObjectId());
+    RemoveObjectEventByLocalIdAndMap(LOCALID_CAMERA, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+}
+
+void BufferEReaderTrainerName(void)
+{
+    CopyEReaderTrainerName5(gStringVar1);
+}
+
+// Unused
+static const u8 sSlotMachineRandomSeeds[] = {
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    12,
+    2,
+    4,
+    5,
+    1,
+    8,
+    7,
+    11,
+    3,
+    10,
+    9,
+    6
+};
+
+static const u8 sSlotMachineIndices[] = {
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    2,
+    2,
+    2,
+    3,
+    3,
+    3,
+    4,
+    4,
+    5
+};
+
+u8 GetRandomSlotMachineId(void)
+{
+    u16 rval = Random() % NELEMS(sSlotMachineIndices);
+    return sSlotMachineIndices[rval];
+}
+
+bool8 LeadMonHasEffortRibbon(void)
+{
+    u8 leadMonIdx = GetLeadMonIndex();
+    return GetMonData(&gPlayerParty[leadMonIdx], MON_DATA_EFFORT_RIBBON, NULL);
+}
+
+void GiveLeadMonEffortRibbon(void)
+{
+    u8 leadMonIdx;
+    bool8 param;
+    IncrementGameStat(GAME_STAT_RECEIVED_RIBBONS);
+    FlagSet(FLAG_SYS_RIBBON_GET);
+    param = TRUE;
+    leadMonIdx = GetLeadMonIndex();
+    SetMonData(&gPlayerParty[leadMonIdx], MON_DATA_EFFORT_RIBBON, &param);
+}
+
+bool8 AreLeadMonEVsMaxedOut(void)
+{
+    u8 leadMonIndex = GetLeadMonIndex();
+    if (GetMonEVCount(&gPlayerParty[leadMonIndex]) >= 510)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 IsStarterFirstStageInParty(void)
+{
+    u16 species = GetStarterSpecies();
+    u8 partyCount = CalculatePlayerPartyCount();
+    u8 i;
+    for (i = 0; i < partyCount; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == species)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 IsThereRoomInAnyBoxForMorePokemon(void)
+{
+    u16 i;
+    u16 j;
+    for (i = 0; i < TOTAL_BOXES_COUNT; i++)
+    {
+        for (j = 0; j < IN_BOX_COUNT; j++)
+        {
+            if (GetBoxMonDataAt(i, j, MON_DATA_SPECIES) == SPECIES_NONE)
+                return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+bool8 IsPokerusInParty(void)
+{
+    if (!CheckPartyPokerus(gPlayerParty, 0x3F))
+        return FALSE;
+    else
+        return TRUE;
+}
+
+#define tXtrans   data[0]
+#define tTimer    data[1]
+#define tNremain  data[2]
+#define tDuration data[3]
+#define tYtrans   data[4]
+
+void ShakeScreen(void)
+{
+    /*
+     * 0x8004 = x translation
+     * 0x8005 = y translation
+     * 0x8006 = num interations
+     * 0x8007 = duration of an iteration
+     */
+    u8 taskId = CreateTask(Task_ShakeScreen, 9);
+    gTasks[taskId].tXtrans = gSpecialVar_0x8005;
+    gTasks[taskId].tTimer = 0;
+    gTasks[taskId].tNremain = gSpecialVar_0x8006;
+    gTasks[taskId].tDuration = gSpecialVar_0x8007;
+    gTasks[taskId].tYtrans = gSpecialVar_0x8004;
+    SetCameraPanningCallback(NULL);
+    PlaySE(SE_M_STRENGTH);
+}
+
+static void Task_ShakeScreen(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+    tTimer++;
+    if (tTimer % tDuration == 0)
+    {
+        tTimer = 0;
+        tNremain--;
+        tXtrans = -tXtrans;
+        tYtrans = -tYtrans;
+        SetCameraPanning(tXtrans, tYtrans);
+        if (tNremain == 0)
+        {
+            Task_EndScreenShake(taskId);
+            InstallCameraPanAheadCallback();
+        }
+    }
+}
+
+static void Task_EndScreenShake(u8 taskId)
+{
+    DestroyTask(taskId);
+    ScriptContext_Enable();
+}
+
+#undef tYtrans
+#undef tDuration
+#undef tNremain
+#undef tTimer
+#undef tXtrans
+
+u8 GetLeadMonIndex(void)
+{
+    u8 partyCount = CalculatePlayerPartyCount();
+    u8 i;
+    struct Pokemon * pokemon;
+    for (i = 0; i < partyCount; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SPECIES_OR_EGG, NULL) != SPECIES_EGG && GetMonData(pokemon, MON_DATA_SPECIES_OR_EGG, NULL) != SPECIES_NONE)
+            return i;
+    }
+    return 0;
+}
+
+u16 GetPartyMonSpecies(void)
+{
+    return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES_OR_EGG, NULL);
+}
+
+bool8 IsMonOTNameNotPlayers(void)
+{
+    GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_OT_NAME, gStringVar1);
+    
+    if (!StringCompare(gSaveBlock2Ptr->playerName, gStringVar1))
+        return FALSE;
+    else
+        return TRUE;
+}
+
+// Used to nop all the unused specials from RS
+void NullFieldSpecial(void)
+{
+
+}
+
+void DoPicboxCancel(void)
+{
+    u8 t = EOS;
+    AddTextPrinterParameterized(0, FONT_NORMAL, &t, 0, 1, 0, NULL);
+    PicboxCancel();
+}
+
+void SetVermilionTrashCans(void)
+{
+    u16 idx = (Random() % 15) + 1;
+    gSpecialVar_0x8004 = idx;
+    gSpecialVar_0x8005 = idx;
+    switch (gSpecialVar_0x8004)
+    {
+    case 1:
+        idx = Random() % 2;
+        if (idx == 0)
+            gSpecialVar_0x8005 += 1;
+        else
+            gSpecialVar_0x8005 += 5;
+        break;
+    case 2:
+    case 3:
+    case 4:
+        idx = Random() % 3;
+        if (idx == 0)
+            gSpecialVar_0x8005 += 1;
+        else if (idx == 1)
+            gSpecialVar_0x8005 += 5;
+        else
+            gSpecialVar_0x8005 -= 1;
+        break;
+    case 5:
+        idx = Random() % 2;
+        if (idx == 0)
+            gSpecialVar_0x8005 += 5;
+        else
+            gSpecialVar_0x8005 -= 1;
+        break;
+    case 6:
+        idx = Random() % 3;
+        if (idx == 0)
+            gSpecialVar_0x8005 -= 5;
+        else if (idx == 1)
+            gSpecialVar_0x8005 += 1;
+        else
+            gSpecialVar_0x8005 += 5;
+        break;
+    case 7:
+    case 8:
+    case 9:
+        idx = Random() % 4;
+        if (idx == 0)
+            gSpecialVar_0x8005 -= 5;
+        else if (idx == 1)
+            gSpecialVar_0x8005 += 1;
+        else if (idx == 2)
+            gSpecialVar_0x8005 += 5;
+        else
+            gSpecialVar_0x8005 -= 1;
+        break;
+    case 10:
+        idx = Random() % 3;
+        if (idx == 0)
+            gSpecialVar_0x8005 -= 5;
+        else if (idx == 1)
+            gSpecialVar_0x8005 += 5;
+        else
+            gSpecialVar_0x8005 -= 1;
+        break;
+    case 11:
+        idx = Random() % 2;
+        if (idx == 0)
+            gSpecialVar_0x8005 -= 5;
+        else
+            gSpecialVar_0x8005 += 1;
+        break;
+    case 12:
+    case 13:
+    case 14:
+        idx = Random() % 3;
+        if (idx == 0)
+            gSpecialVar_0x8005 -= 5;
+        else if (idx == 1)
+            gSpecialVar_0x8005 += 1;
+        else
+            gSpecialVar_0x8005 -= 1;
+        break;
+    case 15:
+        idx = Random() % 2;
+        if (idx == 0)
+            gSpecialVar_0x8005 -= 5;
+        else
+            gSpecialVar_0x8005 -= 1;
+        break;
+    }
+    if (gSpecialVar_0x8005 > 15)
+    {
+        if (gSpecialVar_0x8004 % 5 == 1)
+            gSpecialVar_0x8005 = gSpecialVar_0x8004 + 1;
+        else if (gSpecialVar_0x8004 % 5 == 0)
+            gSpecialVar_0x8005 = gSpecialVar_0x8004 - 1;
+        else
+            gSpecialVar_0x8005 = gSpecialVar_0x8004 + 1;
+    }
+}
+
+static const u16 sResortGorgeousDeluxeRewards[] = {
+    ITEM_BIG_PEARL,
+    ITEM_PEARL,
+    ITEM_STARDUST,
+    ITEM_STAR_PIECE,
+    ITEM_NUGGET,
+    ITEM_RARE_CANDY
+};
+
+void IncrementResortGorgeousStepCounter(void)
+{
+    u16 var4035 = VarGet(VAR_RESORT_GOREGEOUS_STEP_COUNTER);
+    if (VarGet(VAR_RESORT_GORGEOUS_REQUESTED_MON) != SPECIES_NONE)
+    {
+        var4035++;
+        if (var4035 >= 250)
+        {
+            VarSet(VAR_RESORT_GORGEOUS_REQUESTED_MON, 0xFFFF);
+            VarSet(VAR_RESORT_GOREGEOUS_STEP_COUNTER, 0);
+        }
+        else
+        {
+            VarSet(VAR_RESORT_GOREGEOUS_STEP_COUNTER, var4035);
+        }
+    }
+}
+
+void SampleResortGorgeousMonAndReward(void)
+{
+    u16 requestedSpecies = VarGet(VAR_RESORT_GORGEOUS_REQUESTED_MON);
+    if (requestedSpecies == SPECIES_NONE || requestedSpecies == 0xFFFF)
+    {
+        VarSet(VAR_RESORT_GORGEOUS_REQUESTED_MON, SampleResortGorgeousMon());
+        VarSet(VAR_RESORT_GORGEOUS_REWARD, SampleResortGorgeousReward());
+        VarSet(VAR_RESORT_GOREGEOUS_STEP_COUNTER, 0);
+    }
+    StringCopy(gStringVar1, gSpeciesNames[VarGet(VAR_RESORT_GORGEOUS_REQUESTED_MON)]);
+}
+
+static u16 SampleResortGorgeousMon(void)
+{
+    u16 i;
+    u16 species;
+    for (i = 0; i < 100; i++)
+    {
+        species = (Random() % (NUM_SPECIES - 1)) + 1;
+        if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), 0) == TRUE)
+            return species;
+    }
+    while (GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), 0) != TRUE)
+    {
+        if (species == SPECIES_BULBASAUR)
+            species = NUM_SPECIES - 1;
+        else
+            species--;
+    }
+    return species;
+}
+
+static u16 SampleResortGorgeousReward(void)
+{
+    if ((Random() % 100) >= 30)
+        return ITEM_LUXURY_BALL;
+    else
+        return sResortGorgeousDeluxeRewards[Random() % NELEMS(sResortGorgeousDeluxeRewards)];
+}
+
+bool8 CheckAddCoins(void)
+{
+    if (gSpecialVar_Result + gSpecialVar_0x8006 > 9999)
+        return FALSE;
+    else
+        return TRUE;
+}
+
+static const struct WindowTemplate sElevatorCurrentFloorWindowTemplate = {
+    .bg = 0,
+    .tilemapLeft = 22,
+    .tilemapTop = 1,
+    .width = 7,
+    .height = 4,
+    .paletteNum = 15,
+    .baseBlock = 0x008
+};
+
+static const u8 *const sFloorNamePointers[] = {
+    gText_B4F,
+    gText_B3F,
+    gText_B2F,
+    gText_B1F,
+    gText_1F,
+    gText_2F,
+    gText_3F,
+    gText_4F,
+    gText_5F,
+    gText_6F,
+    gText_7F,
+    gText_8F,
+    gText_9F,
+    gText_10F,
+    gText_11F,
+    gText_Rooftop
+};
+
+// Unused
+static const u8 sFloorNameWidthPadding[] = {
+    26,
+    26,
+    26,
+    26,
+    30,
+    30,
+    30,
+    30,
+    30,
+    30,
+    30,
+    30,
+    30,
+    26,
+    26,
+    18
+};
+
+static const u16 sElevatorWindowMetatilesGoingUp[][3] = {
+    {
+        METATILE_SilphCo_ElevatorWindow_Top0, 
+        METATILE_SilphCo_ElevatorWindow_Top1, 
+        METATILE_SilphCo_ElevatorWindow_Top2
+    },
+    {
+        METATILE_SilphCo_ElevatorWindow_Mid0, 
+        METATILE_SilphCo_ElevatorWindow_Mid1, 
+        METATILE_SilphCo_ElevatorWindow_Mid2
+    },
+    {
+        METATILE_SilphCo_ElevatorWindow_Bottom0, 
+        METATILE_SilphCo_ElevatorWindow_Bottom1, 
+        METATILE_SilphCo_ElevatorWindow_Bottom2
+    }
+};
+
+static const u16 sElevatorWindowMetatilesGoingDown[][3] = {
+    {
+        METATILE_SilphCo_ElevatorWindow_Top0, 
+        METATILE_SilphCo_ElevatorWindow_Top2, 
+        METATILE_SilphCo_ElevatorWindow_Top1
+    },
+    {
+        METATILE_SilphCo_ElevatorWindow_Mid0, 
+        METATILE_SilphCo_ElevatorWindow_Mid2, 
+        METATILE_SilphCo_ElevatorWindow_Mid1
+    },
+    {
+        METATILE_SilphCo_ElevatorWindow_Bottom0, 
+        METATILE_SilphCo_ElevatorWindow_Bottom2, 
+        METATILE_SilphCo_ElevatorWindow_Bottom1
+    }
+};
+
+static const u8 sElevatorAnimationDuration[] = {
+    8,
+    16,
+    24,
+    32,
+    38,
+    46,
+    53,
+    56,
+    57
+};
+
+static const u8 sElevatorWindowAnimDuration[] = {
+    3,
+    6,
+    9,
+    12,
+    15,
+    18,
+    21,
+    24,
+    27
+};
+
+void GetElevatorFloor(void)
+{
+    u16 floor = 4;
+    if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(MAP_ROCKET_HIDEOUT_B1F))
+    {
+        switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
+        {
+        case MAP_NUM(MAP_SILPH_CO_1F):
+            floor = 4;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_2F):
+            floor = 5;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_3F):
+            floor = 6;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_4F):
+            floor = 7;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_5F):
+            floor = 8;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_6F):
+            floor = 9;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_7F):
+            floor = 10;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_8F):
+            floor = 11;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_9F):
+            floor = 12;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_10F):
+            floor = 13;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_11F):
+            floor = 14;
+            break;
+        case MAP_NUM(MAP_ROCKET_HIDEOUT_B1F):
+            floor = 3;
+            break;
+        case MAP_NUM(MAP_ROCKET_HIDEOUT_B2F):
+            floor = 2;
+            break;
+        case MAP_NUM(MAP_ROCKET_HIDEOUT_B4F):
+            floor = 0;
+            break;
+        }
+    }
+    if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(MAP_CELADON_CITY_DEPARTMENT_STORE_1F))
+    {
+        switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
+        {
+        case MAP_NUM(MAP_CELADON_CITY_DEPARTMENT_STORE_1F):
+            floor = 4;
+            break;
+        case MAP_NUM(MAP_CELADON_CITY_DEPARTMENT_STORE_2F):
+            floor = 5;
+            break;
+        case MAP_NUM(MAP_CELADON_CITY_DEPARTMENT_STORE_3F):
+            floor = 6;
+            break;
+        case MAP_NUM(MAP_CELADON_CITY_DEPARTMENT_STORE_4F):
+            floor = 7;
+            break;
+        case MAP_NUM(MAP_CELADON_CITY_DEPARTMENT_STORE_5F):
+            floor = 8;
+            break;
+        }
+    }
+    if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(MAP_TRAINER_TOWER_1F))
+    {
+        switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
+        {
+        case MAP_NUM(MAP_TRAINER_TOWER_1F):
+        case MAP_NUM(MAP_TRAINER_TOWER_2F):
+        case MAP_NUM(MAP_TRAINER_TOWER_3F):
+        case MAP_NUM(MAP_TRAINER_TOWER_4F):
+        case MAP_NUM(MAP_TRAINER_TOWER_5F):
+        case MAP_NUM(MAP_TRAINER_TOWER_6F):
+        case MAP_NUM(MAP_TRAINER_TOWER_7F):
+        case MAP_NUM(MAP_TRAINER_TOWER_8F):
+        case MAP_NUM(MAP_TRAINER_TOWER_ROOF):
+            floor = 15;
+            break;
+        case MAP_NUM(MAP_TRAINER_TOWER_LOBBY):
+            floor = 3;
+            break;
+        }
+    }
+    VarSet(VAR_ELEVATOR_FLOOR, floor);
+}
+
+u16 InitElevatorFloorSelectMenuPos(void)
+{
+    sElevatorScroll = 0;
+    sElevatorCursorPos = 0;
+
+    if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(MAP_ROCKET_HIDEOUT_B1F))
+    {
+        switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
+        {
+        case MAP_NUM(MAP_SILPH_CO_11F):
+            sElevatorScroll = 0;
+            sElevatorCursorPos = 0;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_10F):
+            sElevatorScroll = 0;
+            sElevatorCursorPos = 1;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_9F):
+            sElevatorScroll = 0;
+            sElevatorCursorPos = 2;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_8F):
+            sElevatorScroll = 0;
+            sElevatorCursorPos = 3;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_7F):
+            sElevatorScroll = 0;
+            sElevatorCursorPos = 4;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_6F):
+            sElevatorScroll = 1;
+            sElevatorCursorPos = 4;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_5F):
+            sElevatorScroll = 2;
+            sElevatorCursorPos = 4;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_4F):
+            sElevatorScroll = 3;
+            sElevatorCursorPos = 4;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_3F):
+            sElevatorScroll = 4;
+            sElevatorCursorPos = 4;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_2F):
+            sElevatorScroll = 5;
+            sElevatorCursorPos = 4;
+            break;
+        case MAP_NUM(MAP_SILPH_CO_1F):
+            sElevatorScroll = 5;
+            sElevatorCursorPos = 5;
+            break;
+        case MAP_NUM(MAP_ROCKET_HIDEOUT_B1F):
+            sElevatorScroll = 0;
+            sElevatorCursorPos = 0;
+            break;
+        case MAP_NUM(MAP_ROCKET_HIDEOUT_B2F):
+            sElevatorScroll = 0;
+            sElevatorCursorPos = 1;
+            break;
+        case MAP_NUM(MAP_ROCKET_HIDEOUT_B4F):
+            sElevatorScroll = 0;
+            sElevatorCursorPos = 2;
+            break;
+        }
+    }
+    if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(MAP_CELADON_CITY_DEPARTMENT_STORE_1F))
+    {
+        switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
+        {
+        case MAP_NUM(MAP_CELADON_CITY_DEPARTMENT_STORE_5F):
+            sElevatorScroll = 0;
+            sElevatorCursorPos = 0;
+            break;
+        case MAP_NUM(MAP_CELADON_CITY_DEPARTMENT_STORE_4F):
+            sElevatorScroll = 0;
+            sElevatorCursorPos = 1;
+            break;
+        case MAP_NUM(MAP_CELADON_CITY_DEPARTMENT_STORE_3F):
+            sElevatorScroll = 0;
+            sElevatorCursorPos = 2;
+            break;
+        case MAP_NUM(MAP_CELADON_CITY_DEPARTMENT_STORE_2F):
+            sElevatorScroll = 0;
+            sElevatorCursorPos = 3;
+            break;
+        case MAP_NUM(MAP_CELADON_CITY_DEPARTMENT_STORE_1F):
+            sElevatorScroll = 0;
+            sElevatorCursorPos = 4;
+            break;
+        }
+    }
+    if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(MAP_TRAINER_TOWER_1F))
+    {
+        switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
+        {
+        case MAP_NUM(MAP_TRAINER_TOWER_1F):
+        case MAP_NUM(MAP_TRAINER_TOWER_2F):
+        case MAP_NUM(MAP_TRAINER_TOWER_3F):
+        case MAP_NUM(MAP_TRAINER_TOWER_4F):
+        case MAP_NUM(MAP_TRAINER_TOWER_5F):
+        case MAP_NUM(MAP_TRAINER_TOWER_6F):
+        case MAP_NUM(MAP_TRAINER_TOWER_7F):
+        case MAP_NUM(MAP_TRAINER_TOWER_8F):
+        case MAP_NUM(MAP_TRAINER_TOWER_ROOF):
+            sElevatorScroll = 0;
+            sElevatorCursorPos = 0;
+            break;
+        case MAP_NUM(MAP_TRAINER_TOWER_LOBBY):
+            sElevatorScroll = 0;
+            sElevatorCursorPos = 1;
+            break;
+        }
+    }
+    return sElevatorCursorPos;
+}
+
+void AnimateElevator(void)
+{
+    u16 nfloors;
+    s16 *data = gTasks[CreateTask(Task_ElevatorShake, 9)].data;
+    data[1] = 0;
+    data[2] = 0;
+    data[4] = 1;
+    if (gSpecialVar_0x8005 > gSpecialVar_0x8006)
+    {
+        nfloors = gSpecialVar_0x8005 - gSpecialVar_0x8006;
+        data[6] = 1;
+    }
+    else
+    {
+        nfloors = gSpecialVar_0x8006 - gSpecialVar_0x8005;
+        data[6] = 0;
+    }
+    if (nfloors > 8)
+        nfloors = 8;
+    data[5] = sElevatorAnimationDuration[nfloors];
+    SetCameraPanningCallback(NULL);
+    AnimateElevatorWindowView(nfloors, data[6]);
+    PlaySE(SE_ELEVATOR);
+}
+
+static void Task_ElevatorShake(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+    data[1]++;
+    if ((data[1] % 3) == 0)
+    {
+        data[1] = 0;
+        data[2]++;
+        data[4] = -data[4];
+        SetCameraPanning(0, data[4]);
+        if (data[2] == data[5])
+        {
+            PlaySE(SE_DING_DONG);
+            DestroyTask(taskId);
+            ScriptContext_Enable();
+            InstallCameraPanAheadCallback();
+        }
+    }
+}
+
+void DrawElevatorCurrentFloorWindow(void)
+{
+    const u8 *floorname;
+    u32 strwidth;
+
+    if (QL_AvoidDisplay(QL_DestroyAbortedDisplay) == TRUE)
+        return;
+
+    sElevatorCurrentFloorWindowId = AddWindow(&sElevatorCurrentFloorWindowTemplate);
+    LoadStdWindowGfx(sElevatorCurrentFloorWindowId, 0x21D, BG_PLTT_ID(13));
+    DrawStdFrameWithCustomTileAndPalette(sElevatorCurrentFloorWindowId, FALSE, 0x21D, 13);
+    AddTextPrinterParameterized(sElevatorCurrentFloorWindowId, FONT_NORMAL, gText_NowOn, 0, 2, 0xFF, NULL);
+    floorname = sFloorNamePointers[gSpecialVar_0x8005];
+    strwidth = GetStringWidth(FONT_NORMAL, floorname, 0);
+    AddTextPrinterParameterized(sElevatorCurrentFloorWindowId, FONT_NORMAL, floorname, 56 - strwidth, 16, 0xFF, NULL);
+    PutWindowTilemap(sElevatorCurrentFloorWindowId);
+    CopyWindowToVram(sElevatorCurrentFloorWindowId, COPYWIN_FULL);
+}
+
+void CloseElevatorCurrentFloorWindow(void)
+{
+    ClearStdWindowAndFrameToTransparent(sElevatorCurrentFloorWindowId, TRUE);
+    RemoveWindow(sElevatorCurrentFloorWindowId);
+}
+
+static void AnimateElevatorWindowView(u16 nfloors, u8 direction)
+{
+    u8 taskId;
+    if (FuncIsActiveTask(Task_AnimateElevatorWindowView) != TRUE)
+    {
+        taskId = CreateTask(Task_AnimateElevatorWindowView, 8);
+        gTasks[taskId].data[0] = 0;
+        gTasks[taskId].data[1] = 0;
+        gTasks[taskId].data[2] = direction;
+        gTasks[taskId].data[3] = sElevatorWindowAnimDuration[nfloors];
+    }
+}
+
+static void Task_AnimateElevatorWindowView(u8 taskId)
+{
+    u8 i;
+    u8 j;
+    s16 *data = gTasks[taskId].data;
+    if (data[1] == 6)
+    {
+        data[0]++;
+        if (data[2] == 0)
+        {
+            for (i = 0; i < 3; i++)
+            {
+                for (j = 0; j < 3; j++)
+                    MapGridSetMetatileIdAt(j + 1 + MAP_OFFSET, i + MAP_OFFSET, sElevatorWindowMetatilesGoingUp[i][data[0] % 3] | MAPGRID_COLLISION_MASK);
+            }
+        }
+        else
+        {
+            for (i = 0; i < 3; i++)
+            {
+                for (j = 0; j < 3; j++)
+                    MapGridSetMetatileIdAt(j + 1 + MAP_OFFSET, i + MAP_OFFSET, sElevatorWindowMetatilesGoingDown[i][data[0] % 3] | MAPGRID_COLLISION_MASK);
+            }
+        }
+        DrawWholeMapView();
+        data[1] = 0;
+        if (data[0] == data[3])
+            DestroyTask(taskId);
+    }
+    data[1]++;
+}
+
+void ListMenu(void)
+{
+    u8 taskId;
+    struct Task *task;
+
+    if (QL_AvoidDisplay(QL_DestroyAbortedDisplay) == TRUE)
+        return;
+        
+    taskId = CreateTask(Task_CreateScriptListMenu, 8);
+    task = &gTasks[taskId];
+    switch (gSpecialVar_0x8004)
+    {
+    case LISTMENU_BADGES:
+        task->data[0] = 4;
+        task->data[1] = 9;
+        task->data[2] = 1;
+        task->data[3] = 1;
+        task->data[4] = 12;
+        task->data[5] = 7;
+        task->data[6] = 1;
+        task->data[15] = taskId;
+        break;
+    case LISTMENU_SILPHCO_FLOORS:
+        task->data[0] = 7;
+        task->data[1] = 12;
+        task->data[2] = 1;
+        task->data[3] = 1;
+        task->data[4] = 8;
+        task->data[5] = 12;
+        task->data[6] = 0;
+        task->data[15] = taskId;
+        task->data[7] = sElevatorScroll;
+        task->data[8] = sElevatorCursorPos;
+        break;
+    case LISTMENU_ROCKET_HIDEOUT_FLOORS: // Multichoice used instead
+        task->data[0] = 4;
+        task->data[1] = 4;
+        task->data[2] = 1;
+        task->data[3] = 1;
+        task->data[4] = 8;
+        task->data[5] = 8;
+        task->data[6] = 0;
+        task->data[15] = taskId;
+        break;
+    case LISTMENU_DEPT_STORE_FLOORS: // Multichoice used instead
+        task->data[0] = 4;
+        task->data[1] = 6;
+        task->data[2] = 1;
+        task->data[3] = 1;
+        task->data[4] = 8;
+        task->data[5] = 8;
+        task->data[6] = 0;
+        task->data[15] = taskId;
+        break;
+    case LISTMENU_WIRELESS_LECTURE_HEADERS: // Multichoice used instead
+        task->data[0] = 4;
+        task->data[1] = 4;
+        task->data[2] = 1;
+        task->data[3] = 1;
+        task->data[4] = 17;
+        task->data[5] = 8;
+        task->data[6] = 1;
+        task->data[15] = taskId;
+        break;
+    case LISTMENU_BERRY_POWDER:
+        task->data[0] = 7;
+        task->data[1] = 12;
+        task->data[2] = 16;
+        task->data[3] = 1;
+        task->data[4] = 17;
+        task->data[5] = 12;
+        task->data[6] = 0;
+        task->data[15] = taskId;
+        break;
+    case LISTMENU_TRAINER_TOWER_FLOORS: // Mulitchoice used instead
+        task->data[0] = 3;
+        task->data[1] = 3;
+        task->data[2] = 1;
+        task->data[3] = 1;
+        task->data[4] = 8;
+        task->data[5] = 6;
+        task->data[6] = 0;
+        task->data[15] = taskId;
+        break;
+    case 99:
+        break;
+    default:
+        gSpecialVar_Result = 0x7F;
+        DestroyTask(taskId);
+        break;
+    }
+}
+
+static const u8 *const sListMenuLabels[][12] = {
+    [LISTMENU_BADGES] = 
+    {
+        gText_BoulderBadge,
+        gText_CascadeBadge,
+        gText_ThunderBadge,
+        gText_RainbowBadge,
+        gText_SoulBadge,
+        gText_MarshBadge,
+        gText_VolcanoBadge,
+        gText_EarthBadge,
+        gOtherText_Exit,
+    }, 
+    [LISTMENU_SILPHCO_FLOORS] = 
+    {
+        gText_11F,
+        gText_10F,
+        gText_9F,
+        gText_8F,
+        gText_7F,
+        gText_6F,
+        gText_5F,
+        gText_4F,
+        gText_3F,
+        gText_2F,
+        gText_1F,
+        gOtherText_Exit,
+    }, 
+    [LISTMENU_ROCKET_HIDEOUT_FLOORS] = // Unncessary, MULTICHOICE_ROCKET_HIDEOUT_ELEVATOR is used instead
+    {
+        gText_B1F,
+        gText_B2F,
+        gText_B4F,
+        gOtherText_Exit,
+    }, 
+    [LISTMENU_DEPT_STORE_FLOORS] = // Unncessary, MULTICHOICE_DEPT_STORE_ELEVATOR is used instead
+    {
+        gText_5F,
+        gText_4F,
+        gText_3F,
+        gText_2F,
+        gText_1F,
+        gOtherText_Exit,
+    }, 
+    [LISTMENU_WIRELESS_LECTURE_HEADERS] = // Unnecessary, MULTICHOICE_LINKED_DIRECT_UNION is used instead
+    {
+        gText_LinkedGamePlay,
+        gText_DirectCorner,
+        gText_UnionRoom,
+        gOtherText_Quit,
+    }, 
+    [LISTMENU_BERRY_POWDER] = 
+    {
+        gText_Energypowder_50,
+        gText_EnergyRoot_80,
+        gText_HealPowder_50,
+        gText_RevivalHerb_300,
+        gText_Protein_1000,
+        gText_Iron_1000,
+        gText_Carbos_1000,
+        gText_Calcium_1000,
+        gText_Zinc_1000,
+        gText_HpUp_1000,
+        gText_PpUp_3000,
+        gOtherText_Exit,
+    }, 
+    [LISTMENU_TRAINER_TOWER_FLOORS] = // Unnecessary, MULTICHOICE_ROOFTOP_B1F is used instead
+    {
+        gText_Rooftop,
+        gText_B1F,
+        gOtherText_Exit,
+    }
+};
+
+static void Task_CreateScriptListMenu(u8 taskId)
+{
+    struct WindowTemplate template;
+    u8 i;
+    s32 width;
+    s32 mwidth;
+    struct Task *task = &gTasks[taskId];
+    u8 windowId;
+    LockPlayerFieldControls();
+    if (gSpecialVar_0x8004 == LISTMENU_SILPHCO_FLOORS)
+        sListMenuLastScrollPosition = sElevatorScroll;
+    else
+        sListMenuLastScrollPosition = 0;
+    sListMenuItems = AllocZeroed(task->data[1] * sizeof(struct ListMenuItem));
+    CreateScriptListMenu();
+    mwidth = 0;
+    for (i = 0; i < task->data[1]; i++)
+    {
+        sListMenuItems[i].label = sListMenuLabels[gSpecialVar_0x8004][i];
+        sListMenuItems[i].index = i;
+        width = GetStringWidth(FONT_NORMAL, sListMenuItems[i].label, 0);
+        if (width > mwidth)
+            mwidth = width;
+    }
+    task->data[4] = (mwidth + 9) / 8 + 1;
+    if (task->data[2] + task->data[4] > 29)
+        task->data[2] = 29 - task->data[4];
+    template = SetWindowTemplateFields(0, task->data[2], task->data[3], task->data[4], task->data[5], 15, 0x038);
+    task->data[13] = windowId = AddWindow(&template);
+    SetStdWindowBorderStyle(task->data[13], 0);
+    sFieldSpecialsListMenuTemplate.totalItems = task->data[1];
+    sFieldSpecialsListMenuTemplate.maxShowed = task->data[0];
+    sFieldSpecialsListMenuTemplate.windowId = task->data[13];
+    Task_CreateMenuRemoveScrollIndicatorArrowPair(taskId);
+    task->data[14] = ListMenuInit(&sFieldSpecialsListMenuTemplate, task->data[7], task->data[8]);
+    PutWindowTilemap(task->data[13]);
+    CopyWindowToVram(task->data[13], COPYWIN_FULL);
+    gTasks[taskId].func = Task_ListMenuHandleInput;
+}
+
+static void CreateScriptListMenu(void)
+{
+    sFieldSpecialsListMenuTemplate.items = sListMenuItems;
+    sFieldSpecialsListMenuTemplate.moveCursorFunc = ScriptListMenuMoveCursorFunction;
+    sFieldSpecialsListMenuTemplate.itemPrintFunc = NULL;
+    sFieldSpecialsListMenuTemplate.totalItems = 1;
+    sFieldSpecialsListMenuTemplate.maxShowed = 1;
+    sFieldSpecialsListMenuTemplate.windowId = 0;
+    sFieldSpecialsListMenuTemplate.header_X = 0;
+    sFieldSpecialsListMenuTemplate.item_X = 8;
+    sFieldSpecialsListMenuTemplate.cursor_X = 0;
+    sFieldSpecialsListMenuTemplate.upText_Y = 0;
+    sFieldSpecialsListMenuTemplate.cursorPal = 2;
+    sFieldSpecialsListMenuTemplate.fillValue = 1;
+    sFieldSpecialsListMenuTemplate.cursorShadowPal = 3;
+    sFieldSpecialsListMenuTemplate.lettersSpacing = 1;
+    sFieldSpecialsListMenuTemplate.itemVerticalPadding = 0;
+    sFieldSpecialsListMenuTemplate.scrollMultiple = 0;
+    sFieldSpecialsListMenuTemplate.fontId = FONT_NORMAL;
+    sFieldSpecialsListMenuTemplate.cursorKind = 0;
+}
+
+static void ScriptListMenuMoveCursorFunction(s32 nothing, bool8 is, struct ListMenu * used)
+{
+    u8 taskId;
+    struct Task *task;
+    PlaySE(SE_SELECT);
+    taskId = FindTaskIdByFunc(Task_ListMenuHandleInput);
+    if (taskId != 0xFF)
+    {
+        task = &gTasks[taskId];
+        ListMenuGetScrollAndRow(task->data[14], &sFieldSpecialsListMenuScrollBuffer, NULL);
+        sListMenuLastScrollPosition = sFieldSpecialsListMenuScrollBuffer;
+    }
+}
+
+static void Task_ListMenuHandleInput(u8 taskId)
+{
+    s32 input;
+    struct Task *task;
+
+    task = &gTasks[taskId];
+    task++;task--;
+    input = ListMenu_ProcessInput(task->data[14]);
+    switch (input)
+    {
+    case -1:
+        break;
+    case -2:
+        gSpecialVar_Result = 0x7F;
+        PlaySE(SE_SELECT);
+        Task_DestroyListMenu(taskId);
+        break;
+    default:
+        gSpecialVar_Result = input;
+        PlaySE(SE_SELECT);
+        if (task->data[6] == 0 || input == task->data[1] - 1)
+        {
+            Task_DestroyListMenu(taskId);
+        }
+        else
+        {
+            Task_ListMenuRemoveScrollIndicatorArrowPair(taskId);
+            task->func = Task_SuspendListMenu;
+            ScriptContext_Enable();
+        }
+        break;
+    }
+}
+
+static void Task_DestroyListMenu(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    Task_ListMenuRemoveScrollIndicatorArrowPair(taskId);
+    DestroyListMenuTask(task->data[14], NULL, NULL);
+    Free(sListMenuItems);
+    ClearStdWindowAndFrameToTransparent(task->data[13], TRUE);
+    FillWindowPixelBuffer(task->data[13], PIXEL_FILL(0));
+    ClearWindowTilemap(task->data[13]);
+    CopyWindowToVram(task->data[13], COPYWIN_GFX);
+    RemoveWindow(task->data[13]);
+    DestroyTask(taskId);
+    ScriptContext_Enable();
+}
+
+static void Task_SuspendListMenu(u8 taskId)
+{
+    switch (gTasks[taskId].data[6])
+    {
+    case 1:
+        break;
+    case 2:
+        gTasks[taskId].data[6] = 1;
+        gTasks[taskId].func = Task_RedrawScrollArrowsAndWaitInput;
+        break;
+    }
+}
+
+void ReturnToListMenu(void)
+{
+    u8 taskId = FindTaskIdByFunc(Task_SuspendListMenu);
+    if (taskId == 0xFF)
+        ScriptContext_Enable();
+    else
+        gTasks[taskId].data[6]++;
+}
+
+static void Task_RedrawScrollArrowsAndWaitInput(u8 taskId)
+{
+    LockPlayerFieldControls();
+    Task_CreateMenuRemoveScrollIndicatorArrowPair(taskId);
+    gTasks[taskId].func = Task_ListMenuHandleInput;
+}
+
+static void Task_CreateMenuRemoveScrollIndicatorArrowPair(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    struct ScrollArrowsTemplate template = {
+        .firstArrowType = 2,
+        .secondArrowType = 3,
+        .tileTag = 2000,
+        .palTag = 100
+    };
+    if (task->data[0] != task->data[1])
+    {
+        template.firstX = 4 * task->data[4] + 8 * task->data[2];
+        template.firstY = 8;
+        template.secondX = 4 * task->data[4] + 8 * task->data[2];
+        template.secondY = 8 * task->data[5] + 10;
+        template.fullyUpThreshold = 0;
+        template.fullyDownThreshold = task->data[1] - task->data[0];
+        task->data[12] = AddScrollIndicatorArrowPair(&template, &sListMenuLastScrollPosition);
+    }
+}
+
+static void Task_ListMenuRemoveScrollIndicatorArrowPair(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    if (task->data[0] != task->data[1])
+        RemoveScrollIndicatorArrowPair(task->data[12]);
+}
+
+void ForcePlayerToStartSurfing(void)
+{
+    SetHelpContext(HELPCONTEXT_SURFING);
+    SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_SURFING);
+}
+
+u16 GetStarterSpecies(void)
+{
+    return SPECIES_PIKACHU;
+}
+
+void SetSeenMon(void)
+{
+    GetSetPokedexFlag(SpeciesToNationalPokedexNum(gSpecialVar_0x8004), 2);
+}
+
+void ResetContextNpcTextColor(void)
+{
+    gSelectedObjectEvent = 0;
+    gSpecialVar_TextColor = NPC_TEXT_COLOR_DEFAULT;
+}
+
+u8 ContextNpcGetTextColor(void)
+{
+    u8 gfxId;
+    if (gSpecialVar_TextColor != NPC_TEXT_COLOR_DEFAULT)
+    {
+        // A text color has been specified, use that
+        return gSpecialVar_TextColor;
+    }
+    else if (gSelectedObjectEvent == 0)
+    {
+        // No text color specified and no object selected, use neutral
+        return NPC_TEXT_COLOR_NEUTRAL;
+    }
+    else
+    {
+        // An object is selected and no color has been specified.
+        // Use the text color normally associated with this object's sprite.
+        gfxId = gObjectEvents[gSelectedObjectEvent].graphicsId;
+        if (gfxId >= OBJ_EVENT_GFX_VAR_0)
+            gfxId = VarGetObjectEventGraphicsId(gfxId - OBJ_EVENT_GFX_VAR_0);
+        return GetColorFromTextColorTable(gfxId);
+    }
+}
+
+static bool8 HasMonBeenRenamed(u8 idx)
+{
+    struct Pokemon * pokemon = &gPlayerParty[idx];
+    u8 language;
+    GetMonData(pokemon, MON_DATA_NICKNAME, gStringVar1);
+    language = GetMonData(pokemon, MON_DATA_LANGUAGE, &language);
+    if (language != LANGUAGE_ENGLISH)
+        return TRUE;
+    else if (StringCompare(gSpeciesNames[GetMonData(pokemon, MON_DATA_SPECIES, NULL)], gStringVar1) != 0)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 HasLeadMonBeenRenamed(void)
+{
+    return HasMonBeenRenamed(GetLeadMonIndex());
+}
+
+void TV_PrintIntToStringVar(u8 varidx, s32 number)
+{
+    s32 n = CountDigits(number);
+    ConvertIntToDecimalStringN(sStringVarPtrs[varidx], number, STR_CONV_MODE_LEFT_ALIGN, n);
+}
+
+s32 CountDigits(s32 number)
+{
+    if (number / 10 == 0)
+        return 1;
+    else if (number / 100 == 0)
+        return 2;
+    else if (number / 1000 == 0)
+        return 3;
+    else if (number / 10000 == 0)
+        return 4;
+    else if (number / 100000 == 0)
+        return 5;
+    else if (number / 1000000 == 0)
+        return 6;
+    else if (number / 10000000 == 0)
+        return 7;
+    else if (number / 100000000 == 0)
+        return 8;
+    else
+        return 1;
+}
+
+bool8 NameRaterWasNicknameChanged(void)
+{
+    struct Pokemon * pokemon = &gPlayerParty[gSpecialVar_0x8004];
+    GetMonData(pokemon, MON_DATA_NICKNAME, gStringVar1);
+    if (StringCompare(gStringVar3, gStringVar1) == 0)
+        return FALSE;
+    else
+        return TRUE;
+}
+
+void ChangeBoxPokemonNickname(void)
+{
+    struct BoxPokemon * pokemon = GetBoxedMonPtr(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos);
+    u16 species;
+    u8 gender;
+    u32 personality;
+
+
+    GetBoxMonData(pokemon, MON_DATA_NICKNAME, gStringVar3);
+    GetBoxMonData(pokemon, MON_DATA_NICKNAME, gStringVar2);
+    species = GetBoxMonData(pokemon, MON_DATA_SPECIES, NULL);
+    gender = GetBoxMonGender(pokemon);
+    personality = GetBoxMonData(pokemon, MON_DATA_PERSONALITY, NULL);
+    DoNamingScreen(NAMING_SCREEN_NICKNAME, gStringVar2, species, gender, personality, ChangeBoxPokemonNickname_CB);
+}
+
+static void ChangeBoxPokemonNickname_CB(void)
+{
+    SetBoxMonNickAt(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos, gStringVar2);
+    CB2_ReturnToFieldContinueScriptPlayMapMusic();
+}
+
+void ChangePokemonNickname(void)
+{
+    u16 species;
+    u8 gender;
+    u32 personality;
+
+    GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar3);
+    GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar2);
+    species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES, NULL);
+    gender = GetMonGender(&gPlayerParty[gSpecialVar_0x8004]);
+    personality = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_PERSONALITY, NULL);
+    DoNamingScreen(NAMING_SCREEN_NICKNAME, gStringVar2, species, gender, personality, ChangePokemonNickname_CB);
+}
+
+static void ChangePokemonNickname_CB(void)
+{
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar2);
+    CB2_ReturnToFieldContinueScriptPlayMapMusic();
+}
+
+void BufferMonNickname(void)
+{
+    GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar1);
+    StringGet_Nickname(gStringVar1);
+}
+
+// Thunder Yellow (v0.10.0): the NAME RATER's check. Another trainer's POKéMON
+// keeps its name, unless the player snagged it (its original trainer is the
+// trainer it was taken from, but it is the player's now).
+bool8 IsMonOTNotPlayersUnlessSnagged(void)
+{
+    u8 otName[PLAYER_NAME_LENGTH + 1];
+    struct Pokemon *mon = &gPlayerParty[gSpecialVar_0x8004];
+
+    if (GetMonData(mon, MON_DATA_SNAGGED, NULL))
+        return FALSE;
+    GetMonData(mon, MON_DATA_OT_NAME, otName);
+    return GetPlayerTrainerId() != GetMonData(mon, MON_DATA_OT_ID, NULL)
+        || StringCompare(gSaveBlock2Ptr->playerName, otName);
+}
+
+void IsMonOTIDNotPlayers(void)
+{
+    if (GetPlayerTrainerId() == GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_OT_ID, NULL))
+        gSpecialVar_Result = FALSE;
+    else
+        gSpecialVar_Result = TRUE;
+}
+
+u32 GetPlayerTrainerId(void)
+{
+    return (gSaveBlock2Ptr->playerTrainerId[3] << 24) | (gSaveBlock2Ptr->playerTrainerId[2] << 16) | (gSaveBlock2Ptr->playerTrainerId[1] << 8) | gSaveBlock2Ptr->playerTrainerId[0];
+}
+
+u8 GetUnlockedSeviiAreas(void)
+{
+    u8 result = 0;
+    if (FlagGet(FLAG_WORLD_MAP_ONE_ISLAND) == TRUE)
+        result |= 1 << 0;
+    if (FlagGet(FLAG_WORLD_MAP_TWO_ISLAND) == TRUE)
+        result |= 1 << 1;
+    if (FlagGet(FLAG_WORLD_MAP_THREE_ISLAND) == TRUE)
+        result |= 1 << 2;
+    if (FlagGet(FLAG_WORLD_MAP_FOUR_ISLAND) == TRUE)
+        result |= 1 << 3;
+    if (FlagGet(FLAG_WORLD_MAP_FIVE_ISLAND) == TRUE)
+        result |= 1 << 4;
+    if (FlagGet(FLAG_WORLD_MAP_SIX_ISLAND) == TRUE)
+        result |= 1 << 5;
+    if (FlagGet(FLAG_WORLD_MAP_SEVEN_ISLAND) == TRUE)
+        result |= 1 << 6;
+    return result;
+}
+
+void UpdateTrainerCardPhotoIcons(void)
+{
+    u16 species[PARTY_SIZE];
+    u32 personality[PARTY_SIZE];
+    u8 i;
+    u8 partyCount;
+    for (i = 0; i < PARTY_SIZE; i++)
+        species[i] = SPECIES_NONE;
+    partyCount = CalculatePlayerPartyCount();
+    for (i = 0; i < partyCount; i++)
+    {
+        species[i] = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL);
+        personality[i] = GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY, NULL);
+    }
+    VarSet(VAR_TRAINER_CARD_MON_ICON_1, SpeciesToMailSpecies(species[0], personality[0]));
+    VarSet(VAR_TRAINER_CARD_MON_ICON_2, SpeciesToMailSpecies(species[1], personality[1]));
+    VarSet(VAR_TRAINER_CARD_MON_ICON_3, SpeciesToMailSpecies(species[2], personality[2]));
+    VarSet(VAR_TRAINER_CARD_MON_ICON_4, SpeciesToMailSpecies(species[3], personality[3]));
+    VarSet(VAR_TRAINER_CARD_MON_ICON_5, SpeciesToMailSpecies(species[4], personality[4]));
+    VarSet(VAR_TRAINER_CARD_MON_ICON_6, SpeciesToMailSpecies(species[5], personality[5]));
+    VarSet(VAR_TRAINER_CARD_MON_ICON_TINT_IDX, gSpecialVar_0x8004);
+}
+
+u16 StickerManGetBragFlags(void)
+{
+    u16 result = 0;
+    u32 numEggs;
+    gSpecialVar_0x8004 = GetGameStat(GAME_STAT_ENTERED_HOF);
+    numEggs = GetGameStat(GAME_STAT_HATCHED_EGGS);
+    gSpecialVar_0x8006 = GetGameStat(GAME_STAT_LINK_BATTLE_WINS);
+    if (numEggs > 0xFFFF)
+        gSpecialVar_0x8005 = 0xFFFF;
+    else
+        gSpecialVar_0x8005 = numEggs;
+    if (gSpecialVar_0x8004 != 0)
+        result |= 1 << 0;
+    if (gSpecialVar_0x8005 != 0)
+        result |= 1 << 1;
+    if (gSpecialVar_0x8006 != 0)
+        result |= 1 << 2;
+    return result;
+}
+
+u16 GetHiddenItemAttr(u32 hiddenItem, u8 attr)
+{
+    if (attr == HIDDEN_ITEM_ITEM)
+        return GET_HIDDEN_ITEM_ITEM(hiddenItem);
+    else if (attr == HIDDEN_ITEM_FLAG)
+        return GET_HIDDEN_ITEM_FLAG(hiddenItem) + FLAG_HIDDEN_ITEMS_START;
+    else if (attr == HIDDEN_ITEM_QUANTITY)
+        return GET_HIDDEN_ITEM_QUANTITY(hiddenItem);
+    else if (attr == HIDDEN_ITEM_UNDERFOOT)
+        return GET_HIDDEN_ITEM_UNDERFOOT(hiddenItem);
+    else // Invalid
+        return 1;
+}
+
+bool8 DoesPlayerPartyContainSpecies(void)
+{
+    u8 partyCount = CalculatePlayerPartyCount();
+    u8 i;
+    for (i = 0; i < partyCount; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == gSpecialVar_0x8004)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+static const u8 sMartMaps[][3] = {
+    {MAP(MAP_VIRIDIAN_CITY_MART),   1},
+    {MAP(MAP_PEWTER_CITY_MART),     3},
+    {MAP(MAP_CERULEAN_CITY_MART),   1},
+    {MAP(MAP_LAVENDER_TOWN_MART),   1},
+    {MAP(MAP_VERMILION_CITY_MART),  1},
+    {MAP(MAP_FUCHSIA_CITY_MART),    1},
+    {MAP(MAP_CINNABAR_ISLAND_MART), 1},
+    {MAP(MAP_SAFFRON_CITY_MART),    1},
+    {MAP(MAP_THREE_ISLAND_MART),    1},
+    {MAP(MAP_FOUR_ISLAND_MART),     1},
+    {MAP(MAP_SEVEN_ISLAND_MART),    1},
+    {MAP(MAP_SIX_ISLAND_MART),      1}
+};
+
+u8 GetMartClerkObjectId(void)
+{
+    u8 i;
+    for (i = 0; i < NELEMS(sMartMaps); i++)
+    {
+        if (gSaveBlock1Ptr->location.mapGroup == sMartMaps[i][0] && gSaveBlock1Ptr->location.mapNum == sMartMaps[i][1])
+            return sMartMaps[i][2];
+    }
+    return 1;
+}
+
+void SetUsedPkmnCenterQuestLogEvent(void)
+{
+    SetQuestLogEvent(QL_EVENT_USED_PKMN_CENTER, NULL);
+}
+
+static const struct {
+    u16 inside_grp;
+    u16 inside_num;
+    u16 outside_grp;
+    u16 outside_num;
+} sInsideOutsidePairs[] = {
+    [QL_LOCATION_HOME]               = {MAP(MAP_PALLET_TOWN_PLAYERS_HOUSE_1F),          MAP(MAP_PALLET_TOWN)},
+    [QL_LOCATION_OAKS_LAB]           = {MAP(MAP_PALLET_TOWN_PROFESSOR_OAKS_LAB),        MAP(MAP_PALLET_TOWN)},
+    [QL_LOCATION_VIRIDIAN_GYM]       = {MAP(MAP_VIRIDIAN_CITY_GYM),                     MAP(MAP_VIRIDIAN_CITY)},
+    [QL_LOCATION_LEAGUE_GATE_1]      = {MAP(MAP_ROUTE22_NORTH_ENTRANCE),                MAP(MAP_ROUTE22)},
+    [QL_LOCATION_LEAGUE_GATE_2]      = {MAP(MAP_ROUTE22_NORTH_ENTRANCE),                MAP(MAP_ROUTE23)},
+    [QL_LOCATION_VIRIDIAN_FOREST_1]  = {MAP(MAP_VIRIDIAN_FOREST),                       MAP(MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE)},
+    [QL_LOCATION_VIRIDIAN_FOREST_2]  = {MAP(MAP_VIRIDIAN_FOREST),                       MAP(MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE)},
+    [QL_LOCATION_PEWTER_MUSEUM]      = {MAP(MAP_PEWTER_CITY_MUSEUM_1F),                 MAP(MAP_PEWTER_CITY)},
+    [QL_LOCATION_PEWTER_GYM]         = {MAP(MAP_PEWTER_CITY_GYM),                       MAP(MAP_PEWTER_CITY)},
+    [QL_LOCATION_MT_MOON_1]          = {MAP(MAP_MT_MOON_1F),                            MAP(MAP_ROUTE4)},
+    [QL_LOCATION_MT_MOON_2]          = {MAP(MAP_MT_MOON_B1F),                           MAP(MAP_ROUTE4)},
+    [QL_LOCATION_CERULEAN_GYM]       = {MAP(MAP_CERULEAN_CITY_GYM),                     MAP(MAP_CERULEAN_CITY)},
+    [QL_LOCATION_BIKE_SHOP]          = {MAP(MAP_CERULEAN_CITY_BIKE_SHOP),               MAP(MAP_CERULEAN_CITY)},
+    [QL_LOCATION_BILLS_HOUSE]        = {MAP(MAP_ROUTE25_SEA_COTTAGE),                   MAP(MAP_ROUTE25)},
+    [QL_LOCATION_DAY_CARE]           = {MAP(MAP_ROUTE5_POKEMON_DAY_CARE),               MAP(MAP_ROUTE5)},
+    [QL_LOCATION_UNDERGROUND_PATH_1] = {MAP(MAP_UNDERGROUND_PATH_NORTH_ENTRANCE),       MAP(MAP_ROUTE5)},
+    [QL_LOCATION_UNDERGROUND_PATH_2] = {MAP(MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE),       MAP(MAP_ROUTE6)},
+    [QL_LOCATION_PKMN_FAN_CLUB]      = {MAP(MAP_VERMILION_CITY_POKEMON_FAN_CLUB),       MAP(MAP_VERMILION_CITY)},
+    [QL_LOCATION_VERMILION_GYM]      = {MAP(MAP_VERMILION_CITY_GYM),                    MAP(MAP_VERMILION_CITY)},
+    [QL_LOCATION_SS_ANNE]            = {MAP(MAP_SSANNE_1F_CORRIDOR),                    MAP(MAP_VERMILION_CITY)},
+    [QL_LOCATION_DIGLETTS_CAVE_1]    = {MAP(MAP_DIGLETTS_CAVE_NORTH_ENTRANCE),          MAP(MAP_ROUTE2)},
+    [QL_LOCATION_DIGLETTS_CAVE_2]    = {MAP(MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE),          MAP(MAP_ROUTE11)},
+    [QL_LOCATION_ROCK_TUNNEL_1]      = {MAP(MAP_ROCK_TUNNEL_1F),                        MAP(MAP_ROUTE10)},
+    [QL_LOCATION_ROCK_TUNNEL_2]      = {MAP(MAP_ROCK_TUNNEL_1F),                        MAP(MAP_ROUTE10)},
+    [QL_LOCATION_POWER_PLANT]        = {MAP(MAP_POWER_PLANT),                           MAP(MAP_ROUTE10)},
+    [QL_LOCATION_PKMN_TOWER]         = {MAP(MAP_POKEMON_TOWER_1F),                      MAP(MAP_LAVENDER_TOWN)},
+    [QL_LOCATION_VOLUNTEER_HOUSE]    = {MAP(MAP_LAVENDER_TOWN_VOLUNTEER_POKEMON_HOUSE), MAP(MAP_LAVENDER_TOWN)},
+    [QL_LOCATION_NAME_RATERS_HOUSE]  = {MAP(MAP_LAVENDER_TOWN_HOUSE2),                  MAP(MAP_LAVENDER_TOWN)},
+    [QL_LOCATION_UNDERGROUND_PATH_3] = {MAP(MAP_UNDERGROUND_PATH_EAST_ENTRANCE),        MAP(MAP_ROUTE8)},
+    [QL_LOCATION_UNDERGROUND_PATH_4] = {MAP(MAP_UNDERGROUND_PATH_WEST_ENTRANCE),        MAP(MAP_ROUTE7)},
+    [QL_LOCATION_CELADON_DEPT_STORE] = {MAP(MAP_CELADON_CITY_DEPARTMENT_STORE_1F),      MAP(MAP_CELADON_CITY)},
+    [QL_LOCATION_CELADON_MANSION]    = {MAP(MAP_CELADON_CITY_CONDOMINIUMS_1F),          MAP(MAP_CELADON_CITY)},
+    [QL_LOCATION_GAME_CORNER]        = {MAP(MAP_CELADON_CITY_GAME_CORNER),              MAP(MAP_CELADON_CITY)},
+    [QL_LOCATION_CELADON_GYM]        = {MAP(MAP_CELADON_CITY_GYM),                      MAP(MAP_CELADON_CITY)},
+    [QL_LOCATION_CELADON_RESTAURANT] = {MAP(MAP_CELADON_CITY_RESTAURANT),               MAP(MAP_CELADON_CITY)},
+    [QL_LOCATION_ROCKET_HIDEOUT]     = {MAP(MAP_ROCKET_HIDEOUT_B1F),                    MAP(MAP_CELADON_CITY_GAME_CORNER)},
+    [QL_LOCATION_SAFARI_ZONE]        = {MAP(MAP_SAFARI_ZONE_CENTER),                    MAP(MAP_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE)},
+    [QL_LOCATION_FUCHSIA_GYM]        = {MAP(MAP_FUCHSIA_CITY_GYM),                      MAP(MAP_FUCHSIA_CITY)},
+    [QL_LOCATION_WARDENS_HOME]       = {MAP(MAP_FUCHSIA_CITY_WARDENS_HOUSE),            MAP(MAP_FUCHSIA_CITY)},
+    [QL_LOCATION_FIGHTING_DOJO]      = {MAP(MAP_SAFFRON_CITY_DOJO),                     MAP(MAP_SAFFRON_CITY)},
+    [QL_LOCATION_SAFFRON_GYM]        = {MAP(MAP_SAFFRON_CITY_GYM),                      MAP(MAP_SAFFRON_CITY)},
+    [QL_LOCATION_SILPH_CO]           = {MAP(MAP_SILPH_CO_1F),                           MAP(MAP_SAFFRON_CITY)},
+    [QL_LOCATION_SEAFOAM_ISLANDS_1]  = {MAP(MAP_SEAFOAM_ISLANDS_1F),                    MAP(MAP_ROUTE20)},
+    [QL_LOCATION_SEAFOAM_ISLANDS_2]  = {MAP(MAP_SEAFOAM_ISLANDS_1F),                    MAP(MAP_ROUTE20)},
+    [QL_LOCATION_PKMN_MANSION]       = {MAP(MAP_POKEMON_MANSION_1F),                    MAP(MAP_CINNABAR_ISLAND)},
+    [QL_LOCATION_CINNABAR_GYM]       = {MAP(MAP_CINNABAR_ISLAND_GYM),                   MAP(MAP_CINNABAR_ISLAND)},
+    [QL_LOCATION_CINNABAR_LAB]       = {MAP(MAP_CINNABAR_ISLAND_POKEMON_LAB_ENTRANCE),  MAP(MAP_CINNABAR_ISLAND)},
+    [QL_LOCATION_VICTORY_ROAD_1]     = {MAP(MAP_VICTORY_ROAD_1F),                       MAP(MAP_ROUTE23)},
+    [QL_LOCATION_VICTORY_ROAD_2]     = {MAP(MAP_VICTORY_ROAD_2F),                       MAP(MAP_ROUTE23)},
+    [QL_LOCATION_PKMN_LEAGUE]        = {MAP(MAP_INDIGO_PLATEAU_POKEMON_CENTER_1F),      MAP(MAP_INDIGO_PLATEAU_EXTERIOR)},
+    [QL_LOCATION_CERULEAN_CAVE]      = {MAP(MAP_CERULEAN_CAVE_1F),                      MAP(MAP_CERULEAN_CITY)}
+};
+
+void QuestLog_CheckDepartingIndoorsMap(void)
+{
+    u8 i;
+    for (i = 0; i < NELEMS(sInsideOutsidePairs); i++)
+    {
+        if (gSaveBlock1Ptr->location.mapGroup == sInsideOutsidePairs[i].inside_grp && gSaveBlock1Ptr->location.mapNum == sInsideOutsidePairs[i].inside_num)
+        {
+            if (VarGet(VAR_QL_ENTRANCE) != QL_LOCATION_ROCKET_HIDEOUT || i != QL_LOCATION_GAME_CORNER)
+            {
+                VarSet(VAR_QL_ENTRANCE, i);
+                FlagSet(FLAG_SYS_QL_DEPARTED);
+            }
+            break;
+        }
+    }
+}
+
+void QuestLog_TryRecordDepartedLocation(void)
+{
+    s16 x, y;
+    struct QuestLogEvent_Departed data;
+    u16 locationId = VarGet(VAR_QL_ENTRANCE);
+    data.mapSec = 0;
+    data.locationId = 0;
+    if (FlagGet(FLAG_SYS_QL_DEPARTED))
+    {
+        if (locationId == QL_LOCATION_VIRIDIAN_FOREST_1)
+        {
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE)
+              && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE)
+               || gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE)))
+            {
+                data.mapSec = MAPSEC_ROUTE_2;
+                if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE))
+                    data.locationId = locationId;
+                else
+                    data.locationId = locationId + 1;
+                SetQuestLogEvent(QL_EVENT_DEPARTED, (const u16 *)&data);
+                FlagClear(FLAG_SYS_QL_DEPARTED);
+                return;
+            }
+        }
+        else if (locationId == QL_LOCATION_LEAGUE_GATE_1)
+        {
+            if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE22) &&
+                (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE22)
+              || gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE23)))
+            {
+                data.mapSec = Overworld_GetMapHeaderByGroupAndId(sInsideOutsidePairs[locationId].inside_grp, sInsideOutsidePairs[locationId].inside_num)->regionMapSectionId;
+                if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE22))
+                    data.locationId = locationId;
+                else
+                    data.locationId = locationId + 1;
+                SetQuestLogEvent(QL_EVENT_DEPARTED, (const u16 *)&data);
+                FlagClear(FLAG_SYS_QL_DEPARTED);
+                return;
+            }
+        }
+        if (gSaveBlock1Ptr->location.mapGroup == sInsideOutsidePairs[locationId].outside_grp
+           && gSaveBlock1Ptr->location.mapNum == sInsideOutsidePairs[locationId].outside_num)
+        {
+            data.mapSec = Overworld_GetMapHeaderByGroupAndId(sInsideOutsidePairs[locationId].inside_grp, sInsideOutsidePairs[locationId].inside_num)->regionMapSectionId;
+            data.locationId = locationId;
+            if (locationId == QL_LOCATION_ROCK_TUNNEL_1)
+            {
+                PlayerGetDestCoords(&x, &y);
+                if (x != 15 || y != 26)
+                    data.locationId++;
+            }
+            else if (locationId == QL_LOCATION_SEAFOAM_ISLANDS_1)
+            {
+                PlayerGetDestCoords(&x, &y);
+                if (x != 67 || y != 15)
+                    data.locationId++;
+            }
+            SetQuestLogEvent(QL_EVENT_DEPARTED, (const u16 *)&data);
+            FlagClear(FLAG_SYS_QL_DEPARTED);
+            if (locationId == QL_LOCATION_ROCKET_HIDEOUT)
+            {
+                VarSet(VAR_QL_ENTRANCE, QL_LOCATION_GAME_CORNER);
+                FlagSet(FLAG_SYS_QL_DEPARTED);
+            }
+        }
+    }
+}
+
+u16 GetMysteryGiftCardStat(void)
+{
+    switch (gSpecialVar_Result)
+    {
+    case GET_NUM_STAMPS:
+        return MysteryGift_GetCardStat(CARD_STAT_NUM_STAMPS);
+    case GET_MAX_STAMPS:
+        return MysteryGift_GetCardStat(CARD_STAT_MAX_STAMPS);
+    case GET_CARD_BATTLES_WON:
+        return MysteryGift_GetCardStat(CARD_STAT_BATTLES_WON);
+    case GET_CARD_BATTLES_LOST:
+        return MysteryGift_GetCardStat(CARD_STAT_BATTLES_LOST);
+    case GET_CARD_NUM_TRADES:
+        return MysteryGift_GetCardStat(CARD_STAT_NUM_TRADES);
+    default:
+        AGB_ASSERT_EX(0, ABSPATH("scr_tool.c"), 3873);
+        return 0;
+    }
+}
+
+void SetPCBoxToSendMon(u8 boxId)
+{
+    sPCBoxToSendMon = boxId;
+}
+
+u16 GetPCBoxToSendMon(void)
+{
+    return sPCBoxToSendMon;
+}
+
+bool8 ShouldShowBoxWasFullMessage(void)
+{
+    if (FlagGet(FLAG_SHOWN_BOX_WAS_FULL_MESSAGE))
+        return FALSE;
+    if (StorageGetCurrentBox() == VarGet(VAR_PC_BOX_TO_SEND_MON))
+        return FALSE;
+    FlagSet(FLAG_SHOWN_BOX_WAS_FULL_MESSAGE);
+    return TRUE;
+}
+
+bool8 IsDestinationBoxFull(void)
+{
+    s32 i;
+    s32 j;
+    SetPCBoxToSendMon(VarGet(VAR_PC_BOX_TO_SEND_MON));
+    i = StorageGetCurrentBox();
+    do
+    {
+        for (j = 0; j < IN_BOX_COUNT; j++)
+        {
+            if (GetBoxMonData(GetBoxedMonPtr(i, j), MON_DATA_SPECIES, NULL) == SPECIES_NONE)
+            {
+                if (GetPCBoxToSendMon() != i)
+                    FlagClear(FLAG_SHOWN_BOX_WAS_FULL_MESSAGE);
+                VarSet(VAR_PC_BOX_TO_SEND_MON, i);
+                return ShouldShowBoxWasFullMessage();
+            }
+        }
+        i++;
+        if (i == TOTAL_BOXES_COUNT)
+            i = 0;
+    } while (i != StorageGetCurrentBox());
+    return FALSE;
+}
+
+const u16 sPokeCenter1FMaps[] = {
+    MAP_VIRIDIAN_CITY_POKEMON_CENTER_1F,
+    MAP_PEWTER_CITY_POKEMON_CENTER_1F,
+    MAP_CERULEAN_CITY_POKEMON_CENTER_1F,
+    MAP_LAVENDER_TOWN_POKEMON_CENTER_1F,
+    MAP_VERMILION_CITY_POKEMON_CENTER_1F,
+    MAP_CELADON_CITY_POKEMON_CENTER_1F,
+    MAP_FUCHSIA_CITY_POKEMON_CENTER_1F,
+    MAP_CINNABAR_ISLAND_POKEMON_CENTER_1F,
+    MAP_INDIGO_PLATEAU_POKEMON_CENTER_1F,
+    MAP_SAFFRON_CITY_POKEMON_CENTER_1F,
+    MAP_ROUTE4_POKEMON_CENTER_1F,
+    MAP_ROUTE10_POKEMON_CENTER_1F,
+    MAP_ONE_ISLAND_POKEMON_CENTER_1F,
+    MAP_TWO_ISLAND_POKEMON_CENTER_1F,
+    MAP_THREE_ISLAND_POKEMON_CENTER_1F,
+    MAP_FOUR_ISLAND_POKEMON_CENTER_1F,
+    MAP_FIVE_ISLAND_POKEMON_CENTER_1F,
+    MAP_SEVEN_ISLAND_POKEMON_CENTER_1F,
+    MAP_SIX_ISLAND_POKEMON_CENTER_1F,
+    MAP_UNION_ROOM,
+    MAP_UNDEFINED
+};
+
+bool8 UsedPokemonCenterWarp(void)
+{
+    s32 i;
+    u16 mapno = (gLastUsedWarp.mapGroup << 8) + gLastUsedWarp.mapNum;
+    for (i = 0; sPokeCenter1FMaps[i] != MAP_UNDEFINED; i++)
+    {
+        if (sPokeCenter1FMaps[i] == mapno)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 BufferTMHMMoveName(void)
+{
+    // 8004 = item ID
+    if (gSpecialVar_0x8004 >= ITEM_TM01 && gSpecialVar_0x8004 <= ITEM_HM08)
+    {
+        StringCopy(gStringVar1, gMoveNames[ItemIdToBattleMoveId(gSpecialVar_0x8004)]);
+        return TRUE;
+    }
+    else
+        return FALSE;
+}
+
+void RunMassageCooldownStepCounter(void)
+{
+    u16 count = VarGet(VAR_MASSAGE_COOLDOWN_STEP_COUNTER);
+    if (count < 500)
+        VarSet(VAR_MASSAGE_COOLDOWN_STEP_COUNTER, count + 1);
+}
+
+// Returns TRUE if the groomed mon was a FEEBAS: DAISY's grooming maxes its
+// beauty, so it evolves into MILOTIC on its next level-up as in R/S/E.
+bool8 DaisyMassageServices(void)
+{
+    struct Pokemon *mon = &gPlayerParty[gSpecialVar_0x8004];
+    u8 beauty = MAX_CONDITION;
+
+    AdjustFriendship(mon, FRIENDSHIP_EVENT_MASSAGE);
+    VarSet(VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 0);
+    if (GetMonData(mon, MON_DATA_SPECIES_OR_EGG, NULL) != SPECIES_FEEBAS)
+        return FALSE;
+    SetMonData(mon, MON_DATA_BEAUTY, &beauty);
+    return TRUE;
+}
+
+static const u16 sEliteFourLightingPalettes[][16] = {
+    INCBIN_U16("graphics/field_specials/elite_four_lighting_0.gbapal"),
+    INCBIN_U16("graphics/field_specials/elite_four_lighting_1.gbapal"),
+    INCBIN_U16("graphics/field_specials/elite_four_lighting_2.gbapal"),
+    INCBIN_U16("graphics/field_specials/elite_four_lighting_3.gbapal"),
+    INCBIN_U16("graphics/field_specials/elite_four_lighting_4.gbapal"),
+    INCBIN_U16("graphics/field_specials/elite_four_lighting_5.gbapal"),
+    INCBIN_U16("graphics/field_specials/elite_four_lighting_6.gbapal"),
+    INCBIN_U16("graphics/field_specials/elite_four_lighting_7.gbapal"),
+    INCBIN_U16("graphics/field_specials/elite_four_lighting_8.gbapal"),
+    INCBIN_U16("graphics/field_specials/elite_four_lighting_9.gbapal"),
+    INCBIN_U16("graphics/field_specials/elite_four_lighting_10.gbapal"),
+    INCBIN_U16("graphics/field_specials/elite_four_lighting_11.gbapal")
+};
+
+static const u16 sChampionRoomLightingPalettes[][16] = {
+    INCBIN_U16("graphics/field_specials/champion_room_lighting_0.gbapal"),
+    INCBIN_U16("graphics/field_specials/champion_room_lighting_1.gbapal"),
+    INCBIN_U16("graphics/field_specials/champion_room_lighting_2.gbapal"),
+    INCBIN_U16("graphics/field_specials/champion_room_lighting_3.gbapal"),
+    INCBIN_U16("graphics/field_specials/champion_room_lighting_4.gbapal"),
+    INCBIN_U16("graphics/field_specials/champion_room_lighting_5.gbapal"),
+    INCBIN_U16("graphics/field_specials/champion_room_lighting_6.gbapal"),
+    INCBIN_U16("graphics/field_specials/champion_room_lighting_7.gbapal"),
+    INCBIN_U16("graphics/field_specials/champion_room_lighting_8.gbapal")
+};
+
+static const u8 sEliteFourLightingTimers[] = {
+    40,
+    12,
+    12,
+    12,
+    12,
+    12,
+    12,
+    12,
+    12,
+    12,
+    12
+};
+
+static const u8 sChampionRoomLightingTimers[] = {
+    20,
+     8,
+     8,
+     8,
+     8,
+     8,
+     8,
+     8
+};
+
+void DoPokemonLeagueLightingEffect(void)
+{
+    u8 taskId = CreateTask(Task_RunPokemonLeagueLightingEffect, 8);
+    s16 *data = gTasks[taskId].data;
+    if (FlagGet(FLAG_TEMP_3) == TRUE)
+    {
+        gTasks[taskId].func = Task_CancelPokemonLeagueLightingEffect;
+    }
+    else
+    {
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_POKEMON_LEAGUE_CHAMPIONS_ROOM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_POKEMON_LEAGUE_CHAMPIONS_ROOM))
+        {
+            data[0] = sChampionRoomLightingTimers[0];
+            data[2] = 8;
+            LoadPalette(sChampionRoomLightingPalettes[0], BG_PLTT_ID(7), PLTT_SIZE_4BPP);
+        }
+        else
+        {
+            data[0] = sEliteFourLightingTimers[0];
+            data[2] = 11;
+            LoadPalette(sEliteFourLightingPalettes[0], BG_PLTT_ID(7), PLTT_SIZE_4BPP);
+        }
+        data[1] = 0;
+        ApplyGlobalTintToPaletteSlot(7, 1);
+    }
+}
+
+static void Task_RunPokemonLeagueLightingEffect(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+    if (!gPaletteFade.active
+     && FlagGet(FLAG_TEMP_2) != FALSE
+     && FlagGet(FLAG_TEMP_5) != TRUE
+     && gGlobalFieldTintMode != QL_TINT_BACKUP_GRAYSCALE
+     && --data[0] == 0
+    )
+    {
+        if (++data[1] == data[2])
+            data[1] = 0;
+
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_POKEMON_LEAGUE_CHAMPIONS_ROOM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_POKEMON_LEAGUE_CHAMPIONS_ROOM))
+        {
+            data[0] = sChampionRoomLightingTimers[data[1]];
+            LoadPalette(sChampionRoomLightingPalettes[data[1]], BG_PLTT_ID(7), PLTT_SIZE_4BPP);
+        }
+        else
+        {
+            data[0] = sEliteFourLightingTimers[data[1]];
+            LoadPalette(sEliteFourLightingPalettes[data[1]], BG_PLTT_ID(7), PLTT_SIZE_4BPP);
+        }
+        ApplyGlobalTintToPaletteSlot(7, 1);
+    }
+}
+
+static void Task_CancelPokemonLeagueLightingEffect(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+    if (FlagGet(FLAG_TEMP_4) != FALSE)
+    {
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_POKEMON_LEAGUE_CHAMPIONS_ROOM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_POKEMON_LEAGUE_CHAMPIONS_ROOM))
+            LoadPalette(sChampionRoomLightingPalettes[8], BG_PLTT_ID(7), PLTT_SIZE_4BPP);
+        else
+            LoadPalette(sEliteFourLightingPalettes[11], BG_PLTT_ID(7), PLTT_SIZE_4BPP);
+        ApplyGlobalTintToPaletteSlot(7, 1);
+        if (gPaletteFade.active)
+        {
+            BlendPalettes(0x00000080, 16, RGB_BLACK);
+        }
+        DestroyTask(taskId);
+    }
+}
+
+void StopPokemonLeagueLightingEffectTask(void)
+{
+    if (FuncIsActiveTask(Task_RunPokemonLeagueLightingEffect) == TRUE)
+    {
+        DestroyTask(FindTaskIdByFunc(Task_RunPokemonLeagueLightingEffect));
+    }
+}
+
+static const u8 sCapeBrinkCompatibleSpecies[] = {
+    SPECIES_VENUSAUR,
+    SPECIES_CHARIZARD,
+    SPECIES_BLASTOISE
+};
+
+bool8 CapeBrinkGetMoveToTeachLeadPokemon(void)
+{
+    // Returns:
+    //   8005 = Move tutor index
+    //   8006 = Num moves known by lead mon
+    //   8007 = Index of lead mon
+    //   to specialvar = whether a move can be taught in the first place
+    u8 tutorMonId = 0;
+    u8 numMovesKnown = 0;
+    u8 leadMonSlot = GetLeadMonIndex();
+    u8 i;
+    gSpecialVar_0x8007 = leadMonSlot;
+    for (i = 0; i < NELEMS(sCapeBrinkCompatibleSpecies); i++)
+    {
+        if (GetMonData(&gPlayerParty[leadMonSlot], MON_DATA_SPECIES_OR_EGG, NULL) == sCapeBrinkCompatibleSpecies[i])
+        {
+            tutorMonId = i;
+            break;
+        }
+    }
+    if (i == NELEMS(sCapeBrinkCompatibleSpecies) || GetMonData(&gPlayerParty[leadMonSlot], MON_DATA_FRIENDSHIP) != 255)
+        return FALSE;
+    if (tutorMonId == 0)
+    {
+        StringCopy(gStringVar2, gMoveNames[MOVE_FRENZY_PLANT]);
+        gSpecialVar_0x8005 = MOVETUTOR_FRENZY_PLANT;
+        if (FlagGet(FLAG_TUTOR_FRENZY_PLANT) == TRUE)
+            return FALSE;
+    }
+    else if (tutorMonId == 1)
+    {
+        StringCopy(gStringVar2, gMoveNames[MOVE_BLAST_BURN]);
+        gSpecialVar_0x8005 = MOVETUTOR_BLAST_BURN;
+        if (FlagGet(FLAG_TUTOR_BLAST_BURN) == TRUE)
+            return FALSE;
+    }
+    else
+    {
+        StringCopy(gStringVar2, gMoveNames[MOVE_HYDRO_CANNON]);
+        gSpecialVar_0x8005 = MOVETUTOR_HYDRO_CANNON;
+        if (FlagGet(FLAG_TUTOR_HYDRO_CANNON) == TRUE)
+            return FALSE;
+    }
+    if (GetMonData(&gPlayerParty[leadMonSlot], MON_DATA_MOVE1) != MOVE_NONE)
+        numMovesKnown++;
+    if (GetMonData(&gPlayerParty[leadMonSlot], MON_DATA_MOVE2) != MOVE_NONE)
+        numMovesKnown++;
+    if (GetMonData(&gPlayerParty[leadMonSlot], MON_DATA_MOVE3) != MOVE_NONE)
+        numMovesKnown++;
+    if (GetMonData(&gPlayerParty[leadMonSlot], MON_DATA_MOVE4) != MOVE_NONE)
+        numMovesKnown++;
+    gSpecialVar_0x8006 = numMovesKnown;
+    return TRUE;
+}
+
+bool8 HasLearnedAllMovesFromCapeBrinkTutor(void)
+{
+    // 8005 is set by CapeBrinkGetMoveToTeachLeadPokemon
+    u8 r4 = 0;
+    if (gSpecialVar_0x8005 == MOVETUTOR_FRENZY_PLANT)
+        FlagSet(FLAG_TUTOR_FRENZY_PLANT);
+    else if (gSpecialVar_0x8005 == MOVETUTOR_BLAST_BURN)
+        FlagSet(FLAG_TUTOR_BLAST_BURN);
+    else
+        FlagSet(FLAG_TUTOR_HYDRO_CANNON);
+    if (FlagGet(FLAG_TUTOR_FRENZY_PLANT) == TRUE)
+        r4++;
+    if (FlagGet(FLAG_TUTOR_BLAST_BURN) == TRUE)
+        r4++;
+    if (FlagGet(FLAG_TUTOR_HYDRO_CANNON) == TRUE)
+        r4++;
+    if (r4 == 3)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 CutMoveRuinValleyCheck(void)
+{
+    if (FlagGet(FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE) != TRUE
+     && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SIX_ISLAND_RUIN_VALLEY)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SIX_ISLAND_RUIN_VALLEY)
+     && gSaveBlock1Ptr->pos.x == 24
+     && gSaveBlock1Ptr->pos.y == 25
+     && GetPlayerFacingDirection() == DIR_NORTH
+    )
+        return TRUE;
+    else
+        return FALSE;
+}
+
+void CutMoveOpenDottedHoleDoor(void)
+{
+    MapGridSetMetatileIdAt(31, 31, METATILE_SeviiIslands67_DottedHoleDoor_Open);
+    DrawWholeMapView();
+    PlaySE(SE_BANG);
+    FlagSet(FLAG_USED_CUT_ON_RUIN_VALLEY_BRAILLE);
+    UnlockPlayerFieldControls();
+}
+
+static const u16 sDeoxysObjectPals[][16] = {
+    INCBIN_U16("graphics/field_specials/deoxys_rock_0.gbapal"),
+    INCBIN_U16("graphics/field_specials/deoxys_rock_1.gbapal"),
+    INCBIN_U16("graphics/field_specials/deoxys_rock_2.gbapal"),
+    INCBIN_U16("graphics/field_specials/deoxys_rock_3.gbapal"),
+    INCBIN_U16("graphics/field_specials/deoxys_rock_4.gbapal"),
+    INCBIN_U16("graphics/field_specials/deoxys_rock_5.gbapal"),
+    INCBIN_U16("graphics/field_specials/deoxys_rock_6.gbapal"),
+    INCBIN_U16("graphics/field_specials/deoxys_rock_7.gbapal"),
+    INCBIN_U16("graphics/field_specials/deoxys_rock_8.gbapal"),
+    INCBIN_U16("graphics/field_specials/deoxys_rock_9.gbapal"),
+    INCBIN_U16("graphics/field_specials/deoxys_rock_10.gbapal")
+};
+
+static const u8 sDeoxysCoords[][2] = {
+    {15, 12},
+    {11, 14},
+    {15,  8},
+    {19, 14},
+    {12, 11},
+    {18, 11},
+    {15, 14},
+    {11, 14},
+    {19, 14},
+    {15, 15},
+    {15, 10}
+};
+
+static const u8 sDeoxysStepCaps[] = {
+    4,
+    8,
+    8,
+    8,
+    4,
+    4,
+    4,
+    6,
+    3,
+    3
+};
+
+void DoDeoxysTriangleInteraction(void)
+{
+    CreateTask(Task_DoDeoxysTriangleInteraction, 8);
+}
+
+static void Task_DoDeoxysTriangleInteraction(u8 taskId)
+{
+    u16 r5;
+    u16 r6;
+    if (FlagGet(FLAG_SYS_DEOXYS_AWAKENED) == TRUE)
+    {
+        gSpecialVar_Result = 3;
+        ScriptContext_Enable();
+        DestroyTask(taskId);
+    }
+    else
+    {
+        r5 = VarGet(VAR_DEOXYS_INTERACTION_NUM);
+        r6 = VarGet(VAR_DEOXYS_INTERACTION_STEP_COUNTER);
+        VarSet(VAR_DEOXYS_INTERACTION_STEP_COUNTER, 0);
+        if (r5 != 0 && sDeoxysStepCaps[r5 - 1] < r6)
+        {
+            MoveDeoxysObject(0);
+            VarSet(VAR_DEOXYS_INTERACTION_NUM, 0);
+            gSpecialVar_Result = 0;
+            DestroyTask(taskId);
+        }
+        else if (r5 == 10)
+        {
+            FlagSet(FLAG_SYS_DEOXYS_AWAKENED);
+            gSpecialVar_Result = 2;
+            ScriptContext_Enable();
+            DestroyTask(taskId);
+        }
+        else
+        {
+            r5++;
+            MoveDeoxysObject(r5);
+            VarSet(VAR_DEOXYS_INTERACTION_NUM, r5);
+            gSpecialVar_Result = 1;
+            DestroyTask(taskId);
+        }
+    }
+}
+
+static void MoveDeoxysObject(u8 num)
+{
+    u8 mapObjId;
+    LoadPalette(sDeoxysObjectPals[num], OBJ_PLTT_ID(10), PLTT_SIZEOF(4));
+    ApplyGlobalFieldPaletteTint(10);
+    TryGetObjectEventIdByLocalIdAndMap(LOCALID_BIRTH_ISLAND_EXTERIOR_ROCK, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, &mapObjId);
+    if (num == 0)
+        PlaySE(SE_M_CONFUSE_RAY);
+    else
+        PlaySE(SE_DEOXYS_MOVE);
+    CreateTask(Task_WaitDeoxysFieldEffect, 8);
+    gFieldEffectArguments[0] = LOCALID_BIRTH_ISLAND_EXTERIOR_ROCK;
+    gFieldEffectArguments[1] =  MAP_NUM(MAP_BIRTH_ISLAND_EXTERIOR);
+    gFieldEffectArguments[2] = MAP_GROUP(MAP_BIRTH_ISLAND_EXTERIOR);
+    gFieldEffectArguments[3] = sDeoxysCoords[num][0];
+    gFieldEffectArguments[4] = sDeoxysCoords[num][1];
+    if (num == 0)
+        gFieldEffectArguments[5] = 60;
+    else
+        gFieldEffectArguments[5] = 5;
+    FieldEffectStart(FLDEFF_MOVE_DEOXYS_ROCK);
+    SetObjEventTemplateCoords(LOCALID_BIRTH_ISLAND_EXTERIOR_ROCK, sDeoxysCoords[num][0], sDeoxysCoords[num][1]);
+}
+
+static void Task_WaitDeoxysFieldEffect(u8 taskId)
+{
+    if (!FieldEffectActiveListContains(FLDEFF_MOVE_DEOXYS_ROCK))
+    {
+        ScriptContext_Enable();
+        DestroyTask(taskId);
+    }
+}
+
+// One POKéMON may leave Bill's garden per "day", which is 1500 steps like the
+// renewable hidden items on the Sevii Islands.
+// BILL's garden lets one POKéMON go per game clock day. VAR_BILLS_GARDEN_STEPS
+// reaching 1500 still means "one is ready", as the scripts expect.
+void IncrementBillsGardenStepCounter(void)
+{
+    if (FlagGet(FLAG_OPENED_BILLS_GARDEN)
+     && VarGet(VAR_BILLS_GARDEN_STEPS) < 1500
+     && VarGet(VAR_BILLS_GARDEN_LAST_DAY) != GetGameClockDay() + 1)
+        VarSet(VAR_BILLS_GARDEN_STEPS, 1500);
+}
+
+// The OLD-TIMER in VIRIDIAN FOREST comes out once a night. A night runs from
+// 20:00 to 03:59, so it is counted from the evening's clock day.
+static s32 GetOldTimerNight(void)
+{
+    struct Time now;
+
+    GetGameClock(&now);
+    return now.days - (now.hours < 4 ? 1 : 0);
+}
+
+// Special: shows or hides the OLD-TIMER in VIRIDIAN FOREST (FLAG_TEMP_1 is his
+// object's hide flag). He is out on any night after the BOULDERBADGE, once a
+// night, and never during a Bug-Catching Contest.
+void OldTimer_Setup(void)
+{
+    if (FlagGet(FLAG_BADGE01_GET)
+     && GetTimeOfDay() == TIME_NIGHT
+     && !IsBugContestActiveInForest()
+     && VarGet(VAR_OLD_TIMER_LAST_NIGHT) != GetOldTimerNight() + 2)
+        FlagClear(FLAG_TEMP_1);
+    else
+        FlagSet(FLAG_TEMP_1);
+}
+
+// Special: the OLD-TIMER was beaten tonight
+void OldTimer_RecordWin(void)
+{
+    VarSet(VAR_OLD_TIMER_LAST_NIGHT, GetOldTimerNight() + 2);
+}
+
+// Special: shows or hides the silent TRAINER on the snowbound summit
+// (FLAG_TEMP_1 is his object's hide flag). He stands there once a day.
+void SummitTrainer_Setup(void)
+{
+    if (VarGet(VAR_SUMMIT_TRAINER_LAST_DAY) != GetGameClockDay() + 1)
+        FlagClear(FLAG_TEMP_1);
+    else
+        FlagSet(FLAG_TEMP_1);
+}
+
+// Special: VAR_TEMP_1 is 1 while the blizzard on the snowbound mountain turns
+// the player back: before the HALL OF FAME, and until either every KANTO
+// POKéMON is caught or the INDIGO PLATEAU tournament is won.
+void SilverMountain_SetBlizzardGate(void)
+{
+    bool8 mayPass = FlagGet(FLAG_SYS_GAME_CLEAR)
+                 && (FlagGet(FLAG_WON_CHAMPION_TOURNAMENT) || HasAllKantoMons());
+
+    VarSet(VAR_TEMP_1, mayPass ? 0 : 1);
+}
+
+// The INDIGO PLATEAU champion tournament: three matches against entrants drawn
+// from the eight GYM LEADERS, the ELITE FOUR, the RIVAL, PROF. OAK, N and TEAM
+// ROCKET's JESSIE & JAMES (tools/make_tournament.py).
+#define TOURNEY_ROUNDS 3
+
+// Special: draws three different entrants and starts the tournament
+void Tournament_Draw(void)
+{
+    u8 pool[TOURNEY_ENTRANT_COUNT];
+    u8 i, j, swap;
+    u16 packed = 0;
+
+    for (i = 0; i < TOURNEY_ENTRANT_COUNT; i++)
+        pool[i] = i;
+    for (i = TOURNEY_ENTRANT_COUNT - 1; i > 0; i--)
+    {
+        j = Random() % (i + 1);
+        swap = pool[i];
+        pool[i] = pool[j];
+        pool[j] = swap;
+    }
+    for (i = 0; i < TOURNEY_ROUNDS; i++)
+        packed |= pool[i] << (5 * i);
+    VarSet(VAR_TOURNEY_DRAW, packed);
+    VarSet(VAR_TOURNEY_ROUND, 1);
+}
+
+// Special: VAR_0x8008 is this match's entrant, with the round in STR_VAR_1 and
+// the entrant's class and name in STR_VAR_2 and STR_VAR_3
+void Tournament_SetUpMatch(void)
+{
+    u8 round = VarGet(VAR_TOURNEY_ROUND);
+    u8 entrant = (VarGet(VAR_TOURNEY_DRAW) >> (5 * (round - 1))) & 31;
+    u16 trainerId = TRAINER_TOURNEY_BROCK + entrant;
+
+    VarSet(VAR_0x8008, entrant);
+    ConvertIntToDecimalStringN(gStringVar1, round, STR_CONV_MODE_LEFT_ALIGN, 1);
+    StringCopy(gStringVar2, gTrainerClassNames[gTrainers[trainerId].trainerClass]);
+    StringCopy(gStringVar3, gTrainers[trainerId].trainerName);
+}
+
+// Special: VAR_RESULT is TRUE once all three matches are won
+void Tournament_NextRound(void)
+{
+    u8 round = VarGet(VAR_TOURNEY_ROUND) + 1;
+
+    VarSet(VAR_TOURNEY_ROUND, round);
+    gSpecialVar_Result = (round > TOURNEY_ROUNDS);
+}
+
+// Special: leaves the tournament (also run on entering the hall, so a loss or a
+// reset never leaves the player mid-tournament)
+void Tournament_Reset(void)
+{
+    VarSet(VAR_TOURNEY_ROUND, 0);
+}
+
+// Special: the summit TRAINER was beaten today
+void SummitTrainer_RecordWin(void)
+{
+    VarSet(VAR_SUMMIT_TRAINER_LAST_DAY, GetGameClockDay() + 1);
+}
+
+// Special: a POKéMON left the garden today
+void SetBillsGardenTakenToday(void)
+{
+    VarSet(VAR_BILLS_GARDEN_STEPS, 0);
+    VarSet(VAR_BILLS_GARDEN_LAST_DAY, GetGameClockDay() + 1);
+}
+
+// The CLEFAIRY dance's lunar month: 30 game clock days, with the full moon on
+// day 14 of each. VAR_MOON_PHASE_STEPS now holds the last day seen, so the
+// dance can be watched again on each new full moon.
+#define MOON_CYCLE_DAYS    30
+#define MOON_FULL_MOON_DAY 14
+
+void IncrementMoonPhaseStepCounter(void)
+{
+    u16 day = GetGameClockDay();
+
+    if (VarGet(VAR_MOON_PHASE_STEPS) == day)
+        return;
+    VarSet(VAR_MOON_PHASE_STEPS, day);
+    if (day % MOON_CYCLE_DAYS == MOON_FULL_MOON_DAY)
+        FlagClear(FLAG_SAW_CLEFAIRY_DANCE);
+}
+
+bool8 IsPlayerOnSafariZoneExit(void)
+{
+    return gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SAFARI_ZONE_CENTER)
+        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SAFARI_ZONE_CENTER)
+        && gSaveBlock1Ptr->pos.y == 30
+        && gSaveBlock1Ptr->pos.x >= 25 && gSaveBlock1Ptr->pos.x <= 27;
+}
+
+#define GLITCH_CITY_STEPS 20
+
+bool8 TryStartGlitchCityStepScript(void)
+{
+    u16 steps;
+
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_GLITCH_CITY)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_GLITCH_CITY))
+        return FALSE;
+    steps = VarGet(VAR_TEMP_1) + 1;
+    VarSet(VAR_TEMP_1, steps);
+    if (steps < GLITCH_CITY_STEPS)
+        return FALSE;
+    ScriptContext_SetupScript(GlitchCity_EventScript_Return);
+    return TRUE;
+}
+
+// Day counts and day/night come from the game clock (roadmap 2, event 9).
+u16 GetVirtualDay(void)
+{
+    return GetGameClockDay();
+}
+
+bool8 IsVirtualDaytime(void)
+{
+    return GetTimeOfDay() != TIME_NIGHT;
+}
+
+// The Altering Cave's nine encounter sets, normally switched by Mystery Gift,
+// take turns one virtual day each.
+u16 GetAlteringCaveWildSet(void)
+{
+    return GetVirtualDay() % NUM_ALTERING_CAVE_TABLES;
+}
+
+bool8 IsFullMoon(void)
+{
+    return GetGameClockDay() % MOON_CYCLE_DAYS == MOON_FULL_MOON_DAY;
+}
+
+void IncrementBirthIslandRockStepCount(void)
+{
+    u16 count = VarGet(VAR_DEOXYS_INTERACTION_STEP_COUNTER);
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_BIRTH_ISLAND_EXTERIOR) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_BIRTH_ISLAND_EXTERIOR))
+    {
+        count++;
+        if (count > 99)
+            VarSet(VAR_DEOXYS_INTERACTION_STEP_COUNTER, 0);
+        else
+            VarSet(VAR_DEOXYS_INTERACTION_STEP_COUNTER, count);
+    }
+}
+
+void SetDeoxysTrianglePalette(void)
+{
+    u8 num = VarGet(VAR_DEOXYS_INTERACTION_NUM);
+    LoadPalette(sDeoxysObjectPals[num], OBJ_PLTT_ID(10), PLTT_SIZEOF(4));
+    ApplyGlobalFieldPaletteTint(10);
+}
+
+bool8 IsBadEggInParty(void)
+{
+    u8 partyCount = CalculatePlayerPartyCount();
+    u8 i;
+    for (i = 0; i < partyCount; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SANITY_IS_BAD_EGG) == TRUE)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 IsPlayerNotInTrainerTowerLobby(void)
+{
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_TRAINER_TOWER_LOBBY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_TRAINER_TOWER_LOBBY))
+        return FALSE;
+    else
+        return TRUE;
+}
+
+void BrailleCursorToggle(void)
+{
+    // 8004 = x - 27
+    // 8005 = y
+    // 8006 = action (0 = create, 1 = delete)
+    u16 x;
+    if (gQuestLogState != QL_STATE_PLAYBACK)
+    {
+        x = gSpecialVar_0x8004 + 27;
+        if (gSpecialVar_0x8006 == 0)
+            sBrailleTextCursorSpriteID = CreateTextCursorSprite(0, x, gSpecialVar_0x8005, 0, 0);
+        else
+            DestroyTextCursorSprite(sBrailleTextCursorSpriteID);
+    }
+}
+
+bool8 PlayerPartyContainsSpeciesWithPlayerID(void)
+{
+    // 8004 = species
+    u8 playerCount = CalculatePlayerPartyCount();
+    u8 i;
+    for (i = 0; i < playerCount; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == gSpecialVar_0x8004 
+            && GetPlayerTrainerId() == GetMonData(&gPlayerParty[i], MON_DATA_OT_ID, NULL))
+            return TRUE;
+    }
+    return FALSE;
+}
+
+/*
+ * Determines which of Lorelei's doll collection to show
+ * based on how many times you've entered the Hall of Fame.
+ */
+void UpdateLoreleiDollCollection(void)
+{
+    u32 numHofClears = GetGameStat(GAME_STAT_ENTERED_HOF);
+    if (numHofClears >= 25)
+    {
+        FlagClear(FLAG_HIDE_LORELEI_HOUSE_MEOWTH_DOLL);
+        if (numHofClears >= 50)
+            FlagClear(FLAG_HIDE_LORELEI_HOUSE_CHANSEY_DOLL);
+        if (numHofClears >= 75)
+            FlagClear(FLAG_HIDE_LORELEIS_HOUSE_NIDORAN_F_DOLL);
+        if (numHofClears >= 100)
+            FlagClear(FLAG_HIDE_LORELEI_HOUSE_JIGGLYPUFF_DOLL);
+        if (numHofClears >= 125)
+            FlagClear(FLAG_HIDE_LORELEIS_HOUSE_NIDORAN_M_DOLL);
+        if (numHofClears >= 150)
+            FlagClear(FLAG_HIDE_LORELEIS_HOUSE_FEAROW_DOLL);
+        if (numHofClears >= 175)
+            FlagClear(FLAG_HIDE_LORELEIS_HOUSE_PIDGEOT_DOLL);
+        if (numHofClears >= 200)
+            FlagClear(FLAG_HIDE_LORELEIS_HOUSE_LAPRAS_DOLL);
+    }
+}
+
+void LoopWingFlapSound(void)
+{
+    // 8004 = Num flaps
+    // 8005 = Frame delay between flaps
+    CreateTask(Task_WingFlapSound, 8);
+    PlaySE(SE_M_WING_ATTACK);
+}
+
+static void Task_WingFlapSound(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+    data[1]++;
+    if (data[1] == gSpecialVar_0x8005)
+    {
+        data[0]++;
+        data[1] = 0;
+        PlaySE(SE_M_WING_ATTACK);
+    }
+    if (data[0] == gSpecialVar_0x8004 - 1)
+        DestroyTask(taskId);
+}
+
+// The dragon elder's DRATINI knows EXTREMESPEED if the player answered every
+// quiz question right on the first try (Crystal's GiveDratini special).
+// Gives the special moveset to the last DRATINI in the party.
+void GiveElderDratiniMoveset(void)
+{
+    static const u16 sMoves[MAX_MON_MOVES] = {MOVE_WRAP, MOVE_THUNDER_WAVE, MOVE_TWISTER, MOVE_EXTREME_SPEED};
+    s32 i;
+    u8 slot;
+
+    for (i = gPlayerPartyCount - 1; i >= 0; i--)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) == SPECIES_DRATINI)
+        {
+            for (slot = 0; slot < MAX_MON_MOVES; slot++)
+                SetMonMoveSlot(&gPlayerParty[i], sMoves[slot], slot);
+            return;
+        }
+    }
+}
+
+static bool8 IsUnnamedPikablu(struct BoxPokemon *boxMon)
+{
+    u8 nickname[POKEMON_NAME_LENGTH + 1];
+
+    if (GetBoxMonData(boxMon, MON_DATA_SPECIES, NULL) != SPECIES_MARILL
+     || GetBoxMonData(boxMon, MON_DATA_MET_LOCATION, NULL) != MAPSEC_CERULEAN_CAVE
+     || GetBoxMonData(boxMon, MON_DATA_MET_LEVEL, NULL) != 35)
+        return FALSE;
+    GetBoxMonData(boxMon, MON_DATA_NICKNAME, nickname);
+    return StringCompare(nickname, gSpeciesNames[SPECIES_MARILL]) == 0;
+}
+
+// The MARILL caught as the rumored "blue PIKACHU" in Cerulean Cave is called
+// PIKABLU unless the player already gave it a nickname.
+void NamePikablu(void)
+{
+    static const u8 sPikablu[] = _("PIKABLU");
+    s32 i, j;
+
+    for (i = gPlayerPartyCount - 1; i >= 0; i--)
+    {
+        if (IsUnnamedPikablu(&gPlayerParty[i].box))
+        {
+            SetMonData(&gPlayerParty[i], MON_DATA_NICKNAME, sPikablu);
+            return;
+        }
+    }
+    for (i = 0; i < TOTAL_BOXES_COUNT; i++)
+    {
+        for (j = 0; j < IN_BOX_COUNT; j++)
+        {
+            if (IsUnnamedPikablu(&gPokemonStoragePtr->boxes[i][j]))
+            {
+                SetBoxMonData(&gPokemonStoragePtr->boxes[i][j], MON_DATA_NICKNAME, sPikablu);
+                return;
+            }
+        }
+    }
+}
+
+// The Mew3 rumor scene needs both MEWTWO and MEW registered as caught.
+bool8 HasCaughtMewtwoAndMew(void)
+{
+    return GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_MEWTWO), FLAG_GET_CAUGHT)
+        && GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_MEW), FLAG_GET_CAUGHT);
+}
+
+// Use after setwildbattle: remakes the wild POKéMON with a personality that is
+// shiny for the player's Trainer ID, like Crystal's BATTLETYPE_FORCESHINY.
+// The DITTO in the POKéMON MANSION's hidden lab only knows TRANSFORM
+void SetScriptedWildMonTransformOnly(void)
+{
+    u8 i;
+    u16 move = MOVE_NONE;
+    u8 pp = 0;
+
+    for (i = 1; i < MAX_MON_MOVES; i++)
+    {
+        SetMonData(&gEnemyParty[0], MON_DATA_MOVE1 + i, &move);
+        SetMonData(&gEnemyParty[0], MON_DATA_PP1 + i, &pp);
+    }
+    move = MOVE_TRANSFORM;
+    pp = gBattleMoves[MOVE_TRANSFORM].pp;
+    SetMonData(&gEnemyParty[0], MON_DATA_MOVE1, &move);
+    SetMonData(&gEnemyParty[0], MON_DATA_PP1, &pp);
+}
+
+void MakeScriptedWildMonShiny(void)
+{
+    u16 species = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL);
+    u8 level = GetMonData(&gEnemyParty[0], MON_DATA_LEVEL, NULL);
+    u16 heldItem = GetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, NULL);
+    u32 otId = T1_READ_32(gSaveBlock2Ptr->playerTrainerId);
+    u16 low = Random();
+    u16 high = (otId >> 16) ^ (otId & 0xFFFF) ^ low;
+
+    CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, TRUE, ((u32)high << 16) | low, OT_ID_PLAYER_ID, 0);
+    if (heldItem != ITEM_NONE)
+        SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &heldItem);
+}
+
+// HGSS's Kenya: a SPEAROW with MAIL from RANDY on Route 2, to be delivered to his
+// sleepy friend at the end of Route 22.
+#define KENYA_OT_ID 0x0000B5E1
+
+enum {
+    KENYA_NOT_IN_PARTY,
+    KENYA_NO_MAIL,
+    KENYA_WRONG_MAIL,
+    KENYA_LAST_MON,
+    KENYA_READY,
+};
+
+static const u8 sKenyaNickname[] = _("KENYA");
+static const u8 sKenyaOTName[] = _("RANDY");
+static const u16 sKenyaMailWords[MAIL_WORDS_COUNT] = {
+    EC_WORD_THE, EC_WORD_BEST, EC_WORD_TRAINER,
+    EC_WORD_GOES, EC_WORD_THERE, EC_WORD_UNDEFINED,
+    EC_WORD_UNDEFINED, EC_WORD_UNDEFINED, EC_WORD_UNDEFINED,
+};
+
+static s32 GetKenyaPartySlot(void)
+{
+    s32 i;
+
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) == SPECIES_SPEAROW
+         && GetMonData(&gPlayerParty[i], MON_DATA_OT_ID, NULL) == KENYA_OT_ID)
+            return i;
+    }
+    return -1;
+}
+
+// Returns FALSE if the party is full.
+bool8 GiveKenya(void)
+{
+    struct Pokemon *mon;
+    u8 slot = CalculatePlayerPartyCount();
+    u8 mailId, i;
+    u16 dexNum;
+
+    if (slot >= PARTY_SIZE)
+        return FALSE;
+    mon = &gPlayerParty[slot];
+    CreateMon(mon, SPECIES_SPEAROW, 10, USE_RANDOM_IVS, FALSE, 0, OT_ID_PRESET, KENYA_OT_ID);
+    SetMonData(mon, MON_DATA_NICKNAME, sKenyaNickname);
+    SetMonData(mon, MON_DATA_OT_NAME, sKenyaOTName);
+    mailId = GiveMailToMon(mon, ITEM_ORANGE_MAIL);
+    if (mailId < PARTY_SIZE)
+    {
+        for (i = 0; i < MAIL_WORDS_COUNT; i++)
+            gSaveBlock1Ptr->mail[mailId].words[i] = sKenyaMailWords[i];
+        StringCopy(gSaveBlock1Ptr->mail[mailId].playerName, sKenyaOTName);
+        for (i = 0; i < TRAINER_ID_LENGTH; i++)
+            gSaveBlock1Ptr->mail[mailId].trainerId[i] = (KENYA_OT_ID >> (i * 8)) & 0xFF;
+    }
+    CalculatePlayerPartyCount();
+    dexNum = SpeciesToNationalPokedexNum(SPECIES_SPEAROW);
+    GetSetPokedexFlag(dexNum, FLAG_SET_SEEN);
+    GetSetPokedexFlag(dexNum, FLAG_SET_CAUGHT);
+    return TRUE;
+}
+
+u8 CheckKenyaDelivery(void)
+{
+    s32 slot = GetKenyaPartySlot();
+    u8 mailId, i;
+
+    if (slot < 0)
+        return KENYA_NOT_IN_PARTY;
+    if (!ItemIsMail(GetMonData(&gPlayerParty[slot], MON_DATA_HELD_ITEM, NULL)))
+        return KENYA_NO_MAIL;
+    mailId = GetMonData(&gPlayerParty[slot], MON_DATA_MAIL, NULL);
+    if (mailId >= PARTY_SIZE)
+        return KENYA_NO_MAIL;
+    for (i = 0; i < MAIL_WORDS_COUNT; i++)
+    {
+        if (gSaveBlock1Ptr->mail[mailId].words[i] != sKenyaMailWords[i])
+            return KENYA_WRONG_MAIL;
+    }
+    if (CalculatePlayerPartyCount() <= 1)
+        return KENYA_LAST_MON;
+    return KENYA_READY;
+}
+
+// Use after CheckKenyaDelivery returned KENYA_READY.
+void HandOverKenya(void)
+{
+    s32 slot = GetKenyaPartySlot();
+    u8 mailId;
+
+    if (slot < 0)
+        return;
+    mailId = GetMonData(&gPlayerParty[slot], MON_DATA_MAIL, NULL);
+    if (mailId < PARTY_SIZE)
+        ClearMailStruct(&gSaveBlock1Ptr->mail[mailId]);
+    ZeroMonData(&gPlayerParty[slot]);
+    CompactPartySlots();
+    CalculatePlayerPartyCount();
+}
+
+// BW2's Hidden Grottoes. Each grotto remembers its contents and when it was last
+// checked in one var: bits 0-2 hold the contents (0 = empty, 1-2 = POKéMON, 3-5 =
+// item) and bits 3-15 the step count / 256 (plus 1, so 0 means never visited). Every 256 steps there is a 5% chance
+// that an empty grotto fills up again.
+#define GROTTO_COUNT 4
+#define GROTTO_CONTENT_MASK 7
+
+struct HiddenGrotto
+{
+    u16 species[2];
+    u8 level;
+    u16 items[3];
+};
+
+static const u16 sGrottoStateVars[GROTTO_COUNT] = {
+    VAR_HIDDEN_GROTTO_STATE_START,
+    VAR_HIDDEN_GROTTO_STATE_2,
+    VAR_HIDDEN_GROTTO_STATE_3,
+    VAR_HIDDEN_GROTTO_STATE_4,
+};
+
+// VAR_HIDDEN_GROTTO_ID 1-4
+static const struct HiddenGrotto sHiddenGrottoes[GROTTO_COUNT] = {
+    {{SPECIES_SCYTHER, SPECIES_PINSIR}, 8, {ITEM_SILVER_POWDER, ITEM_GREAT_BALL, ITEM_RARE_CANDY}},      // Viridian Forest
+    {{SPECIES_FARFETCHD, SPECIES_MR_MIME}, 16, {ITEM_BIG_MUSHROOM, ITEM_STARDUST, ITEM_NUGGET}},        // Route 11
+    {{SPECIES_CHANSEY, SPECIES_LICKITUNG}, 26, {ITEM_STAR_PIECE, ITEM_HEART_SCALE, ITEM_RARE_CANDY}},   // Route 13
+    {{SPECIES_KANGASKHAN, SPECIES_TAUROS}, 27, {ITEM_PP_UP, ITEM_BIG_PEARL, ITEM_NUGGET}},              // Route 15
+};
+
+// For the Pokédex area screen: is this species one of the grotto's POKéMON?
+// Grottoes 0-3 are the ones in Viridian Forest and on Routes 11, 13 and 15.
+bool8 IsHiddenGrottoSpecies(u8 grotto, u16 species)
+{
+    if (grotto >= GROTTO_COUNT)
+        return FALSE;
+    return sHiddenGrottoes[grotto].species[0] == species || sHiddenGrottoes[grotto].species[1] == species;
+}
+
+static s32 GetCurrentGrotto(void)
+{
+    u16 id = VarGet(VAR_HIDDEN_GROTTO_ID);
+
+    if (id == 0 || id > GROTTO_COUNT)
+        return -1;
+    return id - 1;
+}
+
+// Run on entering the grotto map: refills it if due and shows the contents.
+void PrepareHiddenGrotto(void)
+{
+    s32 grotto = GetCurrentGrotto();
+    u16 state, content, lastBucket, bucket, elapsed;
+
+    FlagSet(FLAG_HIDE_HIDDEN_GROTTO_POKEMON);
+    FlagSet(FLAG_HIDE_HIDDEN_GROTTO_ITEM);
+    if (grotto < 0)
+        return;
+
+    state = VarGet(sGrottoStateVars[grotto]);
+    content = state & GROTTO_CONTENT_MASK;
+    lastBucket = state >> 3;
+    // Stored buckets are 1-8191 so that 0 means the grotto was never visited.
+    bucket = ((GetGameStat(GAME_STAT_STEPS) >> 8) % 0x1FFF) + 1;
+    elapsed = (bucket - lastBucket + 0x1FFF) % 0x1FFF;
+    if (content == 0 && lastBucket == 0)
+    {
+        // Like BW2, a grotto that has never been visited is full
+        if (Random() % 2 == 0)
+            content = 1 + Random() % 2;
+        else
+            content = 3 + Random() % 3;
+    }
+    else if (content == 0)
+    {
+        if (elapsed > 100)
+            elapsed = 100;
+        while (elapsed-- != 0)
+        {
+            if (Random() % 100 < 5)
+            {
+                if (Random() % 2 == 0)
+                    content = 1 + Random() % 2;
+                else
+                    content = 3 + Random() % 3;
+                break;
+            }
+        }
+    }
+    VarSet(sGrottoStateVars[grotto], content | (bucket << 3));
+
+    if (content >= 1 && content <= 2)
+        FlagClear(FLAG_HIDE_HIDDEN_GROTTO_POKEMON);
+    else if (content >= 3)
+        FlagClear(FLAG_HIDE_HIDDEN_GROTTO_ITEM);
+}
+
+// Puts the grotto's item in VAR_0x8004 (ITEM_NONE if it isn't an item).
+void GetHiddenGrottoItem(void)
+{
+    s32 grotto = GetCurrentGrotto();
+    u16 content;
+
+    gSpecialVar_0x8004 = ITEM_NONE;
+    if (grotto < 0)
+        return;
+    content = VarGet(sGrottoStateVars[grotto]) & GROTTO_CONTENT_MASK;
+    if (content >= 3 && content <= 5)
+        gSpecialVar_0x8004 = sHiddenGrottoes[grotto].items[content - 3];
+}
+
+// Creates the grotto's wild POKéMON (1 in 256 shiny) and puts its species in VAR_0x8004.
+void CreateHiddenGrottoWildMon(void)
+{
+    s32 grotto = GetCurrentGrotto();
+    u16 content, species;
+    u32 otId, personality;
+
+    gSpecialVar_0x8004 = SPECIES_NONE;
+    if (grotto < 0)
+        return;
+    content = VarGet(sGrottoStateVars[grotto]) & GROTTO_CONTENT_MASK;
+    if (content < 1 || content > 2)
+        return;
+    species = sHiddenGrottoes[grotto].species[content - 1];
+    ZeroEnemyPartyMons();
+    otId = T1_READ_32(gSaveBlock2Ptr->playerTrainerId);
+    if (Random() % 256 == 0)
+    {
+        u16 low = Random();
+        personality = ((u32)((otId >> 16) ^ (otId & 0xFFFF) ^ low) << 16) | low;
+    }
+    else
+    {
+        personality = Random32();
+    }
+    CreateMon(&gEnemyParty[0], species, sHiddenGrottoes[grotto].level, USE_RANDOM_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
+    gSpecialVar_0x8004 = species;
+}
+
+void ClearHiddenGrotto(void)
+{
+    s32 grotto = GetCurrentGrotto();
+
+    if (grotto >= 0)
+        VarSet(sGrottoStateVars[grotto], VarGet(sGrottoStateVars[grotto]) & ~GROTTO_CONTENT_MASK);
+}
+
+// Leaves the grotto back to where the player came in (set with setdynamicwarp).
+void LeaveHiddenGrotto(void)
+{
+    SetWarpDestinationToDynamicWarp(WARP_ID_DYNAMIC);
+    DoWarp();
+    ResetInitialPlayerAvatarState();
+}
+
+// Lavender Town Syndrome (urban legend): while it is active, Lavender Town's music
+// slowly bends upward and wavers. The task undoes it when the player leaves
+// the town or it gets purified. Keep overworld window/blend registers untouched:
+// the former WIN0 vignette produced a hard rectangular border and overwrote
+// registers also used by field transitions and other screen effects.
+#define tPitch     data[0]
+#define tTimer     data[1]
+
+#define SYNDROME_MAX_PITCH 3 * 256 // three semitones up
+
+static void EndLavenderSyndromeEffects(u8 taskId)
+{
+    m4aMPlayPitchControl(&gMPlayInfo_BGM, TRACKS_ALL, 0);
+    DestroyTask(taskId);
+}
+
+static void Task_LavenderSyndrome(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+    s16 wobble;
+
+    if (VarGet(VAR_LAVENDER_SYNDROME) != 1
+     || gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_LAVENDER_TOWN)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_LAVENDER_TOWN))
+    {
+        EndLavenderSyndromeEffects(taskId);
+        return;
+    }
+
+    tTimer++;
+    if (tTimer % 8 == 0 && tPitch < SYNDROME_MAX_PITCH)
+        tPitch += 4;
+    wobble = gSineTable[(tTimer * 3) & 0xFF] / 8;
+    m4aMPlayPitchControl(&gMPlayInfo_BGM, TRACKS_ALL, tPitch + wobble);
+}
+
+// Run from Lavender Town's resume script whenever the syndrome is active.
+void StartLavenderSyndrome(void)
+{
+    if (!FuncIsActiveTask(Task_LavenderSyndrome))
+        CreateTask(Task_LavenderSyndrome, 80);
+}
+
+#undef tPitch
+#undef tTimer
+
+// Returns TRUE if a party mon (not an egg) is species VAR_0x8004.
+bool8 PartyHasSpecies(void)
+{
+    u8 i;
+
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == gSpecialVar_0x8004)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+// HOENN hands out BADGES of its own, but the trainer card's badge row is part
+// of the save and belongs to KANTO's eight, so HOENN's are plain flags (see
+// constants/flags_hoenn_story.h) and the harbour's keeper reads them out.
+u16 CountHoennBadges(void)
+{
+    u16 i;
+    u16 count = 0;
+
+    for (i = 0; i < 8; i++)
+    {
+        if (FlagGet(FLAG_HOENN_BADGE01_GET + i))
+            count++;
+    }
+    return count;
+}
+
+// ---------------------------------------------------------------------------
+// MAUVILLE CITY GYM's electric barriers (v0.8.0, Hoenn stage 2).
+// Ported from pokeemerald: the imported gym keeps Emerald's tilesets and map
+// blocks byte for byte, so its metatile ids (constants/metatile_labels_hoenn.h)
+// and these routines work unchanged.
+// ---------------------------------------------------------------------------
+static const struct UCoords8 sMauvilleGymSwitchCoords[] =
+{
+    { 0 + MAP_OFFSET, 15 + MAP_OFFSET},
+    { 4 + MAP_OFFSET, 12 + MAP_OFFSET},
+    { 3 + MAP_OFFSET,  9 + MAP_OFFSET},
+    { 8 + MAP_OFFSET,  9 + MAP_OFFSET}
+};
+
+void MauvilleGymPressSwitch(void)
+{
+    u8 i;
+    for (i = 0; i < ARRAY_COUNT(sMauvilleGymSwitchCoords); i++)
+    {
+        if (i == gSpecialVar_0x8004)
+            MapGridSetMetatileIdAt(sMauvilleGymSwitchCoords[i].x, sMauvilleGymSwitchCoords[i].y, METATILE_MauvilleGym_PressedSwitch);
+        else
+            MapGridSetMetatileIdAt(sMauvilleGymSwitchCoords[i].x, sMauvilleGymSwitchCoords[i].y, METATILE_MauvilleGym_RaisedSwitch);
+    }
+}
+
+void MauvilleGymSetDefaultBarriers(void)
+{
+    int x, y;
+    // All switches/barriers are within these coord ranges
+    for (y = 5 + MAP_OFFSET; y < 17 + MAP_OFFSET; y++)
+    {
+        for (x = 0 + MAP_OFFSET; x < 9 + MAP_OFFSET; x++)
+        {
+            switch (MapGridGetMetatileIdAt(x, y))
+            {
+            case METATILE_MauvilleGym_GreenBeamH1_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH1_Off);
+                break;
+            case METATILE_MauvilleGym_GreenBeamH2_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH2_Off);
+                break;
+            case METATILE_MauvilleGym_GreenBeamH3_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH3_Off);
+                break;
+            case METATILE_MauvilleGym_GreenBeamH4_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH4_Off);
+                break;
+            case METATILE_MauvilleGym_GreenBeamH1_Off:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH1_On);
+                break;
+            case METATILE_MauvilleGym_GreenBeamH2_Off:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH2_On);
+                break;
+            case METATILE_MauvilleGym_GreenBeamH3_Off:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH3_On | MAPGRID_IMPASSABLE);
+                break;
+            case METATILE_MauvilleGym_GreenBeamH4_Off:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH4_On | MAPGRID_IMPASSABLE);
+                break;
+            case METATILE_MauvilleGym_RedBeamH1_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH1_Off);
+                break;
+            case METATILE_MauvilleGym_RedBeamH2_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH2_Off);
+                break;
+            case METATILE_MauvilleGym_RedBeamH3_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH3_Off);
+                break;
+            case METATILE_MauvilleGym_RedBeamH4_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH4_Off);
+                break;
+            case METATILE_MauvilleGym_RedBeamH1_Off:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH1_On);
+                break;
+            case METATILE_MauvilleGym_RedBeamH2_Off:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH2_On);
+                break;
+            case METATILE_MauvilleGym_RedBeamH3_Off:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH3_On | MAPGRID_IMPASSABLE);
+                break;
+            case METATILE_MauvilleGym_RedBeamH4_Off:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH4_On | MAPGRID_IMPASSABLE);
+                break;
+            case METATILE_MauvilleGym_GreenBeamV1_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_On | MAPGRID_IMPASSABLE);
+                break;
+            case METATILE_MauvilleGym_GreenBeamV2_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_FloorTile);
+                break;
+            case METATILE_MauvilleGym_RedBeamV1_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_Off | MAPGRID_IMPASSABLE);
+                break;
+            case METATILE_MauvilleGym_RedBeamV2_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_FloorTile);
+                break;
+            case METATILE_MauvilleGym_PoleBottom_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamV1_On | MAPGRID_IMPASSABLE);
+                break;
+            case METATILE_MauvilleGym_FloorTile:
+                if (MapGridGetMetatileIdAt(x, y - 1) == METATILE_MauvilleGym_GreenBeamV1_On)
+                    MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamV2_On | MAPGRID_IMPASSABLE);
+                else
+                    MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamV2_On | MAPGRID_IMPASSABLE);
+                break;
+            case METATILE_MauvilleGym_PoleBottom_Off:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamV1_On | MAPGRID_IMPASSABLE);
+                break;
+            case METATILE_MauvilleGym_PoleTop_Off:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleTop_On | MAPGRID_IMPASSABLE);
+                break;
+            case METATILE_MauvilleGym_PoleTop_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleTop_Off);
+                break;
+            }
+        }
+    }
+}
+
+void MauvilleGymDeactivatePuzzle(void)
+{
+    int i, x, y;
+    const struct UCoords8 *switchCoords = sMauvilleGymSwitchCoords;
+    for (i = ARRAY_COUNT(sMauvilleGymSwitchCoords) - 1; i >= 0; i--)
+    {
+        MapGridSetMetatileIdAt(switchCoords->x, switchCoords->y, METATILE_MauvilleGym_PressedSwitch);
+        switchCoords++;
+    }
+    for (y = 5 + MAP_OFFSET; y < 17 + MAP_OFFSET; y++)
+    {
+        for (x = 0 + MAP_OFFSET; x < 9 + MAP_OFFSET; x++)
+        {
+            switch (MapGridGetMetatileIdAt(x, y))
+            {
+            case METATILE_MauvilleGym_GreenBeamH1_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH1_Off);
+                break;
+            case METATILE_MauvilleGym_GreenBeamH2_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH2_Off);
+                break;
+            case METATILE_MauvilleGym_GreenBeamH3_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH3_Off);
+                break;
+            case METATILE_MauvilleGym_GreenBeamH4_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH4_Off);
+                break;
+            case METATILE_MauvilleGym_RedBeamH1_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH1_Off);
+                break;
+            case METATILE_MauvilleGym_RedBeamH2_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH2_Off);
+                break;
+            case METATILE_MauvilleGym_RedBeamH3_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH3_Off);
+                break;
+            case METATILE_MauvilleGym_RedBeamH4_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH4_Off);
+                break;
+            case METATILE_MauvilleGym_GreenBeamV1_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_On | MAPGRID_IMPASSABLE);
+                break;
+            case METATILE_MauvilleGym_RedBeamV1_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_Off | MAPGRID_IMPASSABLE);
+                break;
+            case METATILE_MauvilleGym_GreenBeamV2_On:
+            case METATILE_MauvilleGym_RedBeamV2_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_FloorTile);
+                break;
+            case METATILE_MauvilleGym_PoleTop_On:
+                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleTop_Off);
+                break;
+            }
+        }
+    }
+}
+
+// The TRICK HOUSE hides a NUGGET in the room the TRICK MASTER is using, and it
+// comes back each time he rebuilds. The import numbered that hidden item
+// FLAG_HOENN_HIDDEN_109 (see constants/flags_hoenn.h).
+void SetTrickHouseNuggetFlag(void)
+{
+    gSpecialVar_0x8004 = FLAG_HOENN_HIDDEN_109;
+    FlagSet(FLAG_HOENN_HIDDEN_109);
+}
+
+void ResetTrickHouseNuggetFlag(void)
+{
+    gSpecialVar_0x8004 = FLAG_HOENN_HIDDEN_109;
+    FlagClear(FLAG_HOENN_HIDDEN_109);
+}
+
+// ---------------------------------------------------------------------------
+// The SEASIDE CYCLING ROAD's timed run (v0.8.0). The original road had no
+// clock; this one is timed off the play clock, which ticks in seconds and is
+// already part of the save, so nothing new is stored but the record itself.
+// ---------------------------------------------------------------------------
+static u16 CyclingRoad_PlayTimeSeconds(void)
+{
+    return gSaveBlock2Ptr->playTimeHours * 3600 + gSaveBlock2Ptr->playTimeMinutes * 60
+         + gSaveBlock2Ptr->playTimeSeconds;
+}
+
+void CyclingRoad_StartRun(void)
+{
+    VarSet(VAR_HOENN_CYCLING_START, CyclingRoad_PlayTimeSeconds());
+    VarSet(VAR_HOENN_CYCLING_STATE, 1);
+}
+
+// VAR_RESULT: the seconds this run took. The record is kept if it is the best.
+void CyclingRoad_FinishRun(void)
+{
+    u16 elapsed = CyclingRoad_PlayTimeSeconds() - VarGet(VAR_HOENN_CYCLING_START);
+    u16 best = VarGet(VAR_HOENN_CYCLING_RECORD);
+
+    if (elapsed > 9999)   // the clock wrapped, or the player wandered off for hours
+        elapsed = 9999;
+    gSpecialVar_Result = elapsed;
+    if (best == 0 || elapsed < best)
+        VarSet(VAR_HOENN_CYCLING_RECORD, elapsed);
+    VarSet(VAR_HOENN_CYCLING_STATE, 0);
+}
+
+// VAR_RESULT: the best time so far, 0 when there is none
+void CyclingRoad_GetRecord(void)
+{
+    gSpecialVar_Result = VarGet(VAR_HOENN_CYCLING_RECORD);
+}
+
+// Special: VAR_RESULT is TRUE when WATTSON will take a rematch today. He takes
+// one a game clock day, the way the summit TRAINER stands there once a day.
+void Wattson_CanRematch(void)
+{
+    gSpecialVar_Result = (VarGet(VAR_HOENN_WATTSON_REMATCH_DAY) != GetGameClockDay() + 1);
+}
+
+// Special: WATTSON has taken his rematch for today
+void Wattson_RecordRematch(void)
+{
+    VarSet(VAR_HOENN_WATTSON_REMATCH_DAY, GetGameClockDay() + 1);
+}
+
+// ---------------------------------------------------------------------------
+// Hoenn stage 3 (v0.11.0): LITTLEROOT to RUSTBORO, docs/v0.11.0-plan.md.
+// ---------------------------------------------------------------------------
+
+// Special: VAR_RESULT = how many of the HOENN POKéDEX's first 200 the player
+// has caught, for PROF. BIRCH's rating (40/80/120/160/200). JIRACHI and DEOXYS,
+// the last two, don't count, as in Emerald's rating and HasAllHoennMons.
+void GetHoennDexCaughtCount(void)
+{
+    u16 i;
+    u16 count = 0;
+
+    for (i = 0; i < HOENN_DEX_COUNT - 2; i++)
+    {
+        if (GetSetPokedexFlag(HoennToNationalOrder(i + 1), FLAG_GET_CAUGHT))
+            count++;
+    }
+    gSpecialVar_Result = count;
+}
+
+// BIRCH's child, of the other gender to the player (Emerald's rule)
+static u16 GetHoennRivalGfx(void)
+{
+    return gSaveBlock2Ptr->playerGender == MALE ? OBJ_EVENT_GFX_RIVAL_MAY_NORMAL : OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL;
+}
+
+// Special: VAR_RESULT is TRUE when the PRETTY PETAL girl has a BERRY for the
+// player today (one a game clock day, like WATTSON's rematch)
+void FlowerShop_CanGiveBerry(void)
+{
+    gSpecialVar_Result = (VarGet(VAR_HOENN_FLOWER_BERRY_DAY) != GetGameClockDay() + 1);
+}
+
+// Special: today's BERRY has been given
+void FlowerShop_RecordBerry(void)
+{
+    VarSet(VAR_HOENN_FLOWER_BERRY_DAY, GetGameClockDay() + 1);
+}
+
+// Special: VAR_RESULT = TRUE if a party POKéMON (not an EGG) is missing HP or
+// has a status problem (the LITTLEROOT landlady's hint about the bed)
+void IsPlayerPartyHurt(void)
+{
+    u8 i;
+
+    gSpecialVar_Result = FALSE;
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG, NULL))
+            continue;
+        if (GetMonData(&gPlayerParty[i], MON_DATA_HP, NULL) < GetMonData(&gPlayerParty[i], MON_DATA_MAX_HP, NULL)
+         || GetMonData(&gPlayerParty[i], MON_DATA_STATUS, NULL) != STATUS1_NONE)
+            gSpecialVar_Result = TRUE;
+    }
+}
+
+// Called from CB2_ContinueSavedGame, before the saved objects are put back:
+// a save continued standing in a HOENN map never ran its ON_TRANSITION
+// script, so a save from before v0.11.0 (or from before a story step) can
+// hold stage-3 objects shown or hidden wrongly. Set the hide flags from the
+// story, then drop the saved objects those flags now hide. Returns TRUE on a
+// HOENN map, when the caller should also spawn the map's objects in view that
+// the save didn't have (the ones the flags now show).
+bool8 HoennZ3_SetupObjectsOnContinue(void)
+{
+    u8 i;
+
+    if (gSaveBlock1Ptr->location.mapGroup < MAP_GROUP(MAP_PETALBURG_CITY))
+        return FALSE;
+    HoennZ3_SetupObjects();
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {
+        struct ObjectEvent *objectEvent = &gObjectEvents[i];
+
+        if (objectEvent->active && !objectEvent->isPlayer
+         && objectEvent->mapNum == gSaveBlock1Ptr->location.mapNum
+         && objectEvent->mapGroup == gSaveBlock1Ptr->location.mapGroup
+         && IsObjectEventFlaggedHidden(i))
+            objectEvent->active = FALSE;    // no sprite yet: they are made after this
+    }
+    return TRUE;
+}
+
+static bool8 IsPlayerOnMap(u16 map)
+{
+    return gSaveBlock1Ptr->location.mapGroup == (map >> 8)
+        && gSaveBlock1Ptr->location.mapNum == (map & 0xFF);
+}
+
+static void SetHideFlag(u16 flag, bool8 hide)
+{
+    if (hide)
+        FlagSet(flag);
+    else
+        FlagClear(flag);
+}
+
+// Special, from the ON_TRANSITION scripts of the stage-3 maps: sets every
+// stage-3 hide flag from the story state. A save from before v0.11.0 reads
+// all of them as 0 (shown), and scripts can't be trusted with specialvar and
+// goto_if on transition, so C does it (plan 4, map entry scripts). It only
+// reads the story, so running it on any map, any number of times, is safe.
+// MR. BRINEY and WANDA's boyfriend stand in two places at different points of
+// the story, so their flag depends on the map being entered.
+void HoennZ3_SetupObjects(void)
+{
+    u16 birch = VarGet(VAR_HOENN_SCENE_BIRCH);
+    u16 devon = VarGet(VAR_HOENN_SCENE_DEVON);
+    u16 wally = VarGet(VAR_HOENN_SCENE_WALLY);
+    bool8 peeko = FlagGet(FLAG_HOENN_PEEKO_RESCUED);
+
+    // BIRCH runs from the POOCHYENA on ROUTE 101 until he is rescued, then
+    // waits in his lab; his child stands on ROUTE 103 until their battle,
+    // then goes back to the LAB
+    SetHideFlag(FLAG_HIDE_HOENN_BIRCH_ROUTE101, birch != 0);
+    SetHideFlag(FLAG_HIDE_HOENN_BIRCH_LAB, birch == 0);
+    SetHideFlag(FLAG_HIDE_HOENN_RIVAL_ROUTE103, birch != 2);
+    SetHideFlag(FLAG_HIDE_HOENN_RIVAL_LAB, birch < 3);
+    if (IsPlayerOnMap(MAP_ROUTE103) || IsPlayerOnMap(MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB))
+        VarSet(VAR_OBJ_GFX_ID_0, GetHoennRivalGfx());
+
+    // PETALBURG WOODS: the AQUA GRUNT until he is beaten, the DEVON researcher
+    // until he has handed over his GREAT BALL; TEAM ROCKET from the grunt's
+    // defeat until they are beaten
+    SetHideFlag(FLAG_HIDE_HOENN_WOODS_GRUNT, devon != 0 || HasTrainerBeenFought(TRAINER_HOENN_GRUNT_PETALBURG_WOODS));
+    SetHideFlag(FLAG_HIDE_HOENN_WOODS_RESEARCHER, devon != 0);
+    SetHideFlag(FLAG_HIDE_HOENN_ROCKET_WOODS, FlagGet(FLAG_HOENN_ROCKET_WOODS)
+                                           || !HasTrainerBeenFought(TRAINER_HOENN_GRUNT_PETALBURG_WOODS));
+
+    // The DEVON GOODS: the thief in RUSTBORO once ROXANNE is beaten, then the
+    // grunt and PEEKO in RUSTURF TUNNEL until the goods are back
+    SetHideFlag(FLAG_HIDE_HOENN_RUSTBORO_THIEF, !(devon == 1 && FlagGet(FLAG_HOENN_BADGE01_GET)));
+    SetHideFlag(FLAG_HIDE_HOENN_RUSTURF_GRUNT, devon != 2);
+    SetHideFlag(FLAG_HIDE_HOENN_RUSTURF_PEEKO, devon != 2 || peeko);
+
+    // MR. BRINEY asks for help on ROUTE 116 while PEEKO is missing. Once she
+    // is back he is at his cottage, and he and the boat wait at whichever of
+    // the three docks the last trip ended (VAR_HOENN_BRINEY_STATE)
+    if (IsPlayerOnMap(MAP_ROUTE116))
+        SetHideFlag(FLAG_HIDE_HOENN_BRINEY, devon != 2 || peeko);
+    else if (IsPlayerOnMap(MAP_ROUTE104))
+        SetHideFlag(FLAG_HIDE_HOENN_BRINEY, !peeko || (VarGet(VAR_HOENN_BRINEY_STATE) & ~BRINEY_ARRIVING) != BRINEY_AT_ROUTE104);
+    else if (IsPlayerOnMap(MAP_DEWFORD_TOWN))
+        SetHideFlag(FLAG_HIDE_HOENN_BRINEY, !peeko || (VarGet(VAR_HOENN_BRINEY_STATE) & ~BRINEY_ARRIVING) != BRINEY_AT_DEWFORD);
+    else if (IsPlayerOnMap(MAP_ROUTE109))
+        SetHideFlag(FLAG_HIDE_HOENN_BRINEY, !peeko || (VarGet(VAR_HOENN_BRINEY_STATE) & ~BRINEY_ARRIVING) != BRINEY_AT_ROUTE109);
+    else
+        SetHideFlag(FLAG_HIDE_HOENN_BRINEY, !peeko);
+
+    // WALLY: in PETALBURG from meeting him to his catching demo, then with
+    // WANDA's family in VERDANTURF
+    SetHideFlag(FLAG_HIDE_HOENN_WALLY_PETALBURG, wally != 1);
+    SetHideFlag(FLAG_HIDE_HOENN_WALLY_VERDANTURF, wally < 2);
+
+    // WANDA's boyfriend digs in RUSTURF TUNNEL once the goods are back, until
+    // the tunnel is through; then he is with WANDA
+    if (IsPlayerOnMap(MAP_RUSTURF_TUNNEL))
+        SetHideFlag(FLAG_HIDE_HOENN_WANDA_BOYFRIEND, devon < 3 || FlagGet(FLAG_HOENN_RUSTURF_OPEN));
+    else
+        SetHideFlag(FLAG_HIDE_HOENN_WANDA_BOYFRIEND, !FlagGet(FLAG_HOENN_RUSTURF_OPEN));
+}

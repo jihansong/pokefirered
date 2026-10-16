@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/johto_ecruteak_native_wild.py", line 217, in <module>
+    with ReadOnlyEmu(str(rom),str(path),sym='') as e:row=attempt(e,mode,prepared,tag)
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_ecruteak_native_wild.py", line 170, in attempt
+    start_wild(e);turns=0
+    ^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_ecruteak_native_wild.py", line 163, in start_wild
+    assert not (e.u32(e.sym('gBattleTypeFlags'))&const('BATTLE_TYPE_TRAINER'))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/gamedata.py", line 205, in const
+    return consts([s])[s]
+           ^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/gamedata.py", line 180, in consts
+    raise KeyError('unknown constant %s' % n)
+KeyError: 'unknown constant BATTLE_TYPE_TRAINER'

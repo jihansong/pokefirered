@@ -1,0 +1,19 @@
+{
+  "status": "FINISHED",
+  "rom_sha256": "db2e2741d80ee82d6ae5151bf8b5bf71e924a0b4880ffc65aedac712dc8a64f5",
+  "results": [
+    {
+      "name": "110-may-win-2",
+      "exit": 1,
+      "seconds": 0.0651848316192627,
+      "log": "/workspaces/pokefirered/outputs/hoenn-rival-110-119-review-v1/run-phase1-110-may-win-2.log"
+    },
+    {
+      "name": "119-gift-full-retry",
+      "exit": 1,
+      "seconds": 0.06491589546203613,
+      "log": "/workspaces/pokefirered/outputs/hoenn-rival-110-119-review-v1/run-phase1-119-gift-full-retry.log"
+    }
+  ],
+  "all_pass": false
+}

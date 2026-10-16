@@ -1,0 +1,225 @@
+{
+  "proposed_name": "FLAG_HOENN_ROUTE114_TM05_RECEIVED",
+  "number": 4728,
+  "number_hex": "0x1278",
+  "existing_flag_names_checked": 1950,
+  "collisions": {},
+  "literal_references": [],
+  "original_saves": [
+    {
+      "path": "saves/v0.5.1.sav",
+      "sha256": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+      "active_flag": false,
+      "valid_bank_blocks": [
+        {
+          "sector_start": 24576,
+          "flag_set": false
+        },
+        {
+          "sector_start": 77824,
+          "flag_set": false
+        }
+      ]
+    },
+    {
+      "path": "saves/pokemonthyl_v3.gba.sav",
+      "sha256": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+      "active_flag": false,
+      "valid_bank_blocks": [
+        {
+          "sector_start": 16384,
+          "flag_set": false
+        },
+        {
+          "sector_start": 77824,
+          "flag_set": false
+        }
+      ]
+    },
+    {
+      "path": "saves/hoenn.sav",
+      "sha256": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+      "active_flag": false,
+      "valid_bank_blocks": [
+        {
+          "sector_start": 32768,
+          "flag_set": false
+        },
+        {
+          "sector_start": 86016,
+          "flag_set": false
+        }
+      ]
+    },
+    {
+      "path": "saves/v0.2.1.sav",
+      "sha256": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+      "active_flag": false,
+      "valid_bank_blocks": [
+        {
+          "sector_start": 32768,
+          "flag_set": false
+        },
+        {
+          "sector_start": 94208,
+          "flag_set": false
+        }
+      ]
+    },
+    {
+      "path": "saves/pokemonthyl_hoenn_QAed.sav",
+      "sha256": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+      "active_flag": false,
+      "valid_bank_blocks": [
+        {
+          "sector_start": 49152,
+          "flag_set": false
+        },
+        {
+          "sector_start": 102400,
+          "flag_set": false
+        }
+      ]
+    },
+    {
+      "path": "saves/v0.1.0.sav",
+      "sha256": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+      "active_flag": false,
+      "valid_bank_blocks": [
+        {
+          "sector_start": 32768,
+          "flag_set": false
+        },
+        {
+          "sector_start": 86016,
+          "flag_set": false
+        }
+      ]
+    },
+    {
+      "path": "saves/pokemonthyl_v1.1.sav",
+      "sha256": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+      "active_flag": false,
+      "valid_bank_blocks": [
+        {
+          "sector_start": 0,
+          "flag_set": false
+        },
+        {
+          "sector_start": 110592,
+          "flag_set": false
+        }
+      ]
+    },
+    {
+      "path": "saves/pokemonthyl_v1.2.sav",
+      "sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "active_flag": false,
+      "valid_bank_blocks": [
+        {
+          "sector_start": 16384,
+          "flag_set": false
+        },
+        {
+          "sector_start": 69632,
+          "flag_set": false
+        }
+      ]
+    },
+    {
+      "path": "saves/backup-codex-v1_1-recovery-sort-20261002T002244.307175Z/pokemonthyl_v1.1.original.sav",
+      "sha256": "417452a3f151dbe0eeaca4d41780739f8137eafd7ff14df4e7eed1685b9b699f",
+      "active_flag": false,
+      "valid_bank_blocks": [
+        {
+          "sector_start": 0,
+          "flag_set": false
+        },
+        {
+          "sector_start": 110592,
+          "flag_set": false
+        }
+      ]
+    },
+    {
+      "path": "saves/backup-v0.6.0-era/v0.5.1.sav",
+      "sha256": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+      "active_flag": false,
+      "valid_bank_blocks": [
+        {
+          "sector_start": 24576,
+          "flag_set": false
+        },
+        {
+          "sector_start": 77824,
+          "flag_set": false
+        }
+      ]
+    },
+    {
+      "path": "saves/backup-v0.6.0-era/pokemonthyl_v3.gba.sav",
+      "sha256": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+      "active_flag": false,
+      "valid_bank_blocks": [
+        {
+          "sector_start": 16384,
+          "flag_set": false
+        },
+        {
+          "sector_start": 77824,
+          "flag_set": false
+        }
+      ]
+    },
+    {
+      "path": "saves/backup-v0.6.0-era/hoenn.sav",
+      "sha256": "d1ed8d987d4e451efb00a6cda2ba770e6472f36a89595a04a3550156876806ad",
+      "active_flag": false,
+      "valid_bank_blocks": [
+        {
+          "sector_start": 24576,
+          "flag_set": false
+        },
+        {
+          "sector_start": 86016,
+          "flag_set": false
+        }
+      ]
+    },
+    {
+      "path": "saves/backup-v0.6.0-era/v0.2.1.sav",
+      "sha256": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+      "active_flag": false,
+      "valid_bank_blocks": [
+        {
+          "sector_start": 32768,
+          "flag_set": false
+        },
+        {
+          "sector_start": 94208,
+          "flag_set": false
+        }
+      ]
+    },
+    {
+      "path": "saves/backup-v0.6.0-era/v0.1.0.sav",
+      "sha256": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+      "active_flag": false,
+      "valid_bank_blocks": [
+        {
+          "sector_start": 32768,
+          "flag_set": false
+        },
+        {
+          "sector_start": 86016,
+          "flag_set": false
+        }
+      ]
+    }
+  ],
+  "save_count": 14,
+  "save_structures_unchanged": true,
+  "slot_in_existing_hoenn_flag_array": true,
+  "current_rom_sha256": "b46fb32bb67f89d5a48dfbfdf41ddd4977cc4a2d60dbbe6c72e1bc0281c5606d",
+  "created_utc": "2026-10-12T11:46:21.182911+00:00"
+}

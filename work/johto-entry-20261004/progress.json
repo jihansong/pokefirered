@@ -1,0 +1,7 @@
+[
+  {
+    "check": "build",
+    "exit": 2,
+    "log": "/workspaces/pokefirered/work/johto-entry-20261004/build.log"
+  }
+]

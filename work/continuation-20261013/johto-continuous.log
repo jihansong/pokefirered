@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/work/continuation-20261013/johto-continuous.py", line 10, in <module>
+    layouts={x['id']:x for x in json.loads((root/'data/layouts/layouts.json').read_text())['layouts']}
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/work/continuation-20261013/johto-continuous.py", line 10, in <dictcomp>
+    layouts={x['id']:x for x in json.loads((root/'data/layouts/layouts.json').read_text())['layouts']}
+             ~^^^^^^
+KeyError: 'id'

@@ -1,0 +1,44 @@
+{
+  "dry_pass": true,
+  "applied": false,
+  "changed": [
+    "src/companion_misty.c",
+    "include/companion_misty.h",
+    "data/scripts/follower_pikachu.inc",
+    "data/specials.inc",
+    "tools/companion/misty_source_payload.json",
+    "outputs/misty-companion-v1/applied-state.json"
+  ],
+  "original_pika_emotion_preserved": true,
+  "conditional_explicit_yesno": true,
+  "new_static_ram_bytes": 0,
+  "save_fields_added": 0,
+  "actual_native_verified": false,
+  "shared_preimages_rebased": false,
+  "files": {
+    "src/companion_misty.c": {
+      "before_sha256": "dfaa0fa32d1dd0128132e6d4d7ac986c874a02fded2c06b9d6a1a3f226f9b402",
+      "after_sha256": "1ab831929503dc78c88971063b88f221c69c11a6898e4a349f27d6205fe3856f"
+    },
+    "include/companion_misty.h": {
+      "before_sha256": "79e7995e6fd99763692ccc2335a7b953cd2474b00ea0748b86d270003ff90327",
+      "after_sha256": "14843338736b830b5699dd02218946c1b0b93269e7bae59d236c66bf2ba5621f"
+    },
+    "data/scripts/follower_pikachu.inc": {
+      "before_sha256": "89e6e5ab2d6aee1aa383a67b690e2aec35b85d0f1dd6b56d5858b4713769dc28",
+      "after_sha256": "e2e7da170c3e31f3acc590ab110b70525eb37e834d191b38063c0828221e50b4"
+    },
+    "data/specials.inc": {
+      "before_sha256": "1c033f38b18e8ceca5d16971685c2919ea010727160c9674b845c231d7283fce",
+      "after_sha256": "55ce0afb2bd02bd70fb44c9f64d05b80bab48745125f968d1fa2312e17e1a53e"
+    },
+    "tools/companion/misty_source_payload.json": {
+      "before_sha256": "8f04e68b18afe2930e03d8c304616d090e73bd4e94c8da78b144e88ae3fdc8c6",
+      "after_sha256": "1bcdf15965e204504e09356ab53a9f354c6fa60212c50f1a95425ae5cf24fc7b"
+    },
+    "outputs/misty-companion-v1/applied-state.json": {
+      "before_sha256": "02b218d10061102e9ff08195f13f23adcc891d206fcdd88fe93755de9935650d",
+      "after_sha256": "3c33a5176fb1a03b0b2af9018949bbb51e6471b4f2aa3e0c4a9fae054538376e"
+    }
+  }
+}

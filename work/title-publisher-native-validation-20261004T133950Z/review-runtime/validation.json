@@ -1,0 +1,35 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "key": "START",
+      "pass": true,
+      "voice_first_frame": 1,
+      "voice_finished_frame": 98,
+      "title_exit_frame": 137,
+      "capture_sha256": "6995cc7a41edc176fa97ecddd6250432b8f979aaee062a40929b161043fe315e",
+      "capture_seconds": 2.9466552734375,
+      "linked_sample_sha256": "aa35fbe68154fe5118ed6b298f18d8c1785d9a06c2109d54f1e818092719c9e6"
+    },
+    {
+      "key": "A",
+      "pass": true,
+      "voice_first_frame": 1,
+      "voice_finished_frame": 98,
+      "title_exit_frame": 137,
+      "capture_sha256": "a4690b2f56ebea00639e205a51b312680ed7797921638e82b21ec4f4840289ac",
+      "capture_seconds": 2.9466552734375,
+      "linked_sample_sha256": "aa35fbe68154fe5118ed6b298f18d8c1785d9a06c2109d54f1e818092719c9e6"
+    }
+  ],
+  "rom_sha256": "3eb1e7ce83bf4e47f06a3a10452becb4c2943df43540eec716682d46688a852b",
+  "rom_preserved": true,
+  "user_save_loaded": false,
+  "original_source_sha256": "10a2a254c12eed24a7e4d7a4db9ffff3f318ae20c17a5b15dbe53bbcf4c50734",
+  "source_url": "https://www.youtube.com/watch?v=gF1FJRM8Wck",
+  "archive_sha256": "13d6f49f3e208573d9129378bdf8836d060fcdb9c73ea810526cda8921164d93",
+  "archive_entry": "pokemon-video-game-pikachu-voice-sound-effect.wav",
+  "distribution_url": "https://soundsverse.com/wp-content/uploads/s/pokemon-video-game-pikachu-voice-sound-effect.zip",
+  "audio_auditioned": false,
+  "content_synthesized": false
+}

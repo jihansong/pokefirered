@@ -1,0 +1,30 @@
+{
+  "pass_all": true,
+  "maps": [
+    {
+      "map": "PalletTown",
+      "load_frames": 96,
+      "stable_idle_frames": 12,
+      "vblank_delta": 107,
+      "source_save_sha256": "1e0ccdc6874f0fa1cf7e284740cea89d7f5ea43dfdd3115c4062d77817212030",
+      "fixture_sha256": "1e0ccdc6874f0fa1cf7e284740cea89d7f5ea43dfdd3115c4062d77817212030"
+    }
+  ],
+  "joined_native_source_rom_sha256": "af9ba1f61fce4630d488567ed11b83847dfbc1fcff435653bedd4d86dc622818",
+  "user_original_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "join_proof_sha256": "5845302e8f53fc090f15f45645d24f13f11b41d8a267d2d72d64d8a2eb982877",
+  "active_misty_render_workload": true,
+  "companion_coordinates_never_poked": true,
+  "rom_sha256": "af9ba1f61fce4630d488567ed11b83847dfbc1fcff435653bedd4d86dc622818",
+  "elf_sha256": "12a57e74b48b669ce9021c1fec93934e63bd1fcb22abba827f270b79c8727de4",
+  "sym_sha256": "fab9a76b8ee9bef4ec56c607e6533598987e8a9badd27ed75f86b51b852d065c",
+  "source_save_sha256": "1e0ccdc6874f0fa1cf7e284740cea89d7f5ea43dfdd3115c4062d77817212030",
+  "ram_pokes_original": 0,
+  "party_pc_dex_preserved": true,
+  "regional_story_trainer_flags_preserved": true,
+  "actual_device_fps_measured": false,
+  "workload_frames_per_case": 360,
+  "workload_count": 1,
+  "full_campaign_measured": false,
+  "temporary_native_fixtures": true
+}

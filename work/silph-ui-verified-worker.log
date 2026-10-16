@@ -1,0 +1,3 @@
+BEGIN real UI Silph capture
+CAPTURE_STEPS_PASSED; starting real UI SAVE/CONTINUE
+{"pass": true, "output": "/workspaces/pokefirered/work/silph-ui-qa-20261004T155252Z", "originals_unchanged": true}

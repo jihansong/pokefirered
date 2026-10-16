@@ -1,0 +1,36 @@
+{
+  "src/heal_location.c": {
+    "exists": true,
+    "before_sha256": "e5853e7d0170a5d66798850efca11181c7b979bd8086ecba9f64e6a104579822",
+    "after_sha256": "55a8c648b0f70017329c9922a72e797f68a46facd4a380ac8cdccc22790b17a6"
+  },
+  "src/data/heal_locations.json": {
+    "exists": true,
+    "before_sha256": "6990ce9285630541da4c9f6c1a49667a9148234a945ca51bfba62b340310000d",
+    "after_sha256": "39527f0c09d5e266bf3f1722d44213712780364468527074265cbd4509bdee22"
+  },
+  "tools/hoenn_import/import_heal_locations.py": {
+    "exists": true,
+    "before_sha256": "e72988feb7396848214a424c573b3dc375a590e5ed4a8579bc155d22c11c4b78",
+    "after_sha256": "7e32a713dbfe4212f45e6fbdf4cffe1add8e31bc0f559e91ec7b4d4537649065"
+  },
+  "tools/hoenn_import/patches/EverGrandeCity_PokemonLeague_1F.scripts.inc": {
+    "exists": true,
+    "before_sha256": "13c4ed7aea4974731193e0eb2dfa89d58b307b3a43edd9245e00406fc728a405",
+    "after_sha256": "2594478e9fbf231fb5b4647fb958651dacacb0fd1c3a92887af46592e709f484"
+  },
+  "tools/hoenn_import/patches/EverGrandeCity_PokemonCenter_1F.scripts.inc": {
+    "exists": false,
+    "after_sha256": "e4e988590c750b143a185237b2f93e3a9a31b2c698783edea7e047b9c159bd91"
+  },
+  "data/maps/EverGrandeCity_PokemonLeague_1F/scripts.inc": {
+    "exists": true,
+    "before_sha256": "ca263eb75e05d8a8dcb98264b9bdf8b2c46f905d499952c1880b0e19c4d6728e",
+    "after_sha256": "ddde7b31ed196a5ee39d2dc90816c5713daa2b1b6a141753253e8f6e204e3beb"
+  },
+  "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.inc": {
+    "exists": true,
+    "before_sha256": "5bfa126cc27e0f4af7e4440cd2cf2c6e33e15f568d30ef28a1bd6f24c3e4a006",
+    "after_sha256": "ce62a837730a5c1a1dc9250dca3d07db2874fce6abfcffc9277c66ac9e3fa52b"
+  }
+}

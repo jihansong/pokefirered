@@ -1,0 +1,199 @@
+{
+  "map": "MAP_JOHTO_VICTORY_ROAD_1F",
+  "base_label": "sJohtoVictoryRoad_1F",
+  "land_mons": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 32,
+        "max_level": 32,
+        "species": "SPECIES_GRAVELER"
+      },
+      {
+        "min_level": 32,
+        "max_level": 32,
+        "species": "SPECIES_GOLBAT"
+      },
+      {
+        "min_level": 33,
+        "max_level": 33,
+        "species": "SPECIES_RHYHORN"
+      },
+      {
+        "min_level": 33,
+        "max_level": 33,
+        "species": "SPECIES_GRAVELER"
+      },
+      {
+        "min_level": 34,
+        "max_level": 34,
+        "species": "SPECIES_DONPHAN"
+      },
+      {
+        "min_level": 34,
+        "max_level": 34,
+        "species": "SPECIES_RHYHORN"
+      },
+      {
+        "min_level": 35,
+        "max_level": 35,
+        "species": "SPECIES_GOLBAT"
+      },
+      {
+        "min_level": 35,
+        "max_level": 35,
+        "species": "SPECIES_DONPHAN"
+      },
+      {
+        "min_level": 36,
+        "max_level": 36,
+        "species": "SPECIES_RHYHORN"
+      },
+      {
+        "min_level": 36,
+        "max_level": 36,
+        "species": "SPECIES_DONPHAN"
+      },
+      {
+        "min_level": 37,
+        "max_level": 37,
+        "species": "SPECIES_RHYDON"
+      },
+      {
+        "min_level": 37,
+        "max_level": 37,
+        "species": "SPECIES_URSARING"
+      }
+    ]
+  },
+  "land_mons_morning": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 32,
+        "max_level": 32,
+        "species": "SPECIES_GRAVELER"
+      },
+      {
+        "min_level": 32,
+        "max_level": 32,
+        "species": "SPECIES_GOLBAT"
+      },
+      {
+        "min_level": 33,
+        "max_level": 33,
+        "species": "SPECIES_RHYHORN"
+      },
+      {
+        "min_level": 33,
+        "max_level": 33,
+        "species": "SPECIES_GRAVELER"
+      },
+      {
+        "min_level": 34,
+        "max_level": 34,
+        "species": "SPECIES_DONPHAN"
+      },
+      {
+        "min_level": 34,
+        "max_level": 34,
+        "species": "SPECIES_RHYHORN"
+      },
+      {
+        "min_level": 35,
+        "max_level": 35,
+        "species": "SPECIES_GOLBAT"
+      },
+      {
+        "min_level": 35,
+        "max_level": 35,
+        "species": "SPECIES_DONPHAN"
+      },
+      {
+        "min_level": 36,
+        "max_level": 36,
+        "species": "SPECIES_RHYHORN"
+      },
+      {
+        "min_level": 36,
+        "max_level": 36,
+        "species": "SPECIES_DONPHAN"
+      },
+      {
+        "min_level": 37,
+        "max_level": 37,
+        "species": "SPECIES_RHYDON"
+      },
+      {
+        "min_level": 37,
+        "max_level": 37,
+        "species": "SPECIES_URSARING"
+      }
+    ]
+  },
+  "land_mons_night": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 32,
+        "max_level": 32,
+        "species": "SPECIES_GRAVELER"
+      },
+      {
+        "min_level": 32,
+        "max_level": 32,
+        "species": "SPECIES_GOLBAT"
+      },
+      {
+        "min_level": 33,
+        "max_level": 33,
+        "species": "SPECIES_RHYHORN"
+      },
+      {
+        "min_level": 33,
+        "max_level": 33,
+        "species": "SPECIES_GRAVELER"
+      },
+      {
+        "min_level": 34,
+        "max_level": 34,
+        "species": "SPECIES_DONPHAN"
+      },
+      {
+        "min_level": 34,
+        "max_level": 34,
+        "species": "SPECIES_RHYHORN"
+      },
+      {
+        "min_level": 35,
+        "max_level": 35,
+        "species": "SPECIES_GOLBAT"
+      },
+      {
+        "min_level": 35,
+        "max_level": 35,
+        "species": "SPECIES_DONPHAN"
+      },
+      {
+        "min_level": 36,
+        "max_level": 36,
+        "species": "SPECIES_RHYHORN"
+      },
+      {
+        "min_level": 36,
+        "max_level": 36,
+        "species": "SPECIES_DONPHAN"
+      },
+      {
+        "min_level": 37,
+        "max_level": 37,
+        "species": "SPECIES_RHYDON"
+      },
+      {
+        "min_level": 37,
+        "max_level": 37,
+        "species": "SPECIES_URSARING"
+      }
+    ]
+  }
+}

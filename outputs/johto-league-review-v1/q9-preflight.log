@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/johto/build_johto_league.py", line 916, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--root',default='.');p.add_argument('--apply',action='store_true');a=p.parse_args();apply(Path(a.root).resolve(),a.apply)
+                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/johto/build_johto_league.py", line 893, in apply
+    s=Source(root);out,stats=build(s);validate(s,out,stats)
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/johto/build_johto_league.py", line 855, in validate
+    assert all(re.search(r'\b'+re.escape(z)+r'\b',headers) for z in refs),('unknown native constants',[z for z in refs if not re.search(r'\b'+re.escape(z)+r'\b',headers)])
+AssertionError: ('unknown native constants', ['ITEM_CUSTOM_MOVES', 'ITEM_DEFAULT_MOVES'])

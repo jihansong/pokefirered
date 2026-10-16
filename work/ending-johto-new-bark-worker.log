@@ -1,0 +1,90 @@
+{
+  "status": "first_scene_video",
+  "region": "johto",
+  "story_beat": "new_bark",
+  "story_beats_total": 10,
+  "complete_johto_ending": false,
+  "ROM_integrated": false,
+  "audio": false,
+  "new_music": false,
+  "new_art_authored": false,
+  "source_map": "NewBarkTown",
+  "source_map_sha256": "af15a84de2d5ca1f51c9aa5f8fd493167bc9ce8dd2b2057c03ed387278beeae3",
+  "source_sha256": {
+    "src/data/tilesets/graphics.h": "f50f8437d2d194a66bff53f237978bf1750e0ecdddcb8b5804d870a737791b4a",
+    "src/data/tilesets/hoenn_graphics.h": "897f49ab2ac9861a352fb5a8931472010716762eaf5cb8d3a972d083dfd5cc4b",
+    "src/graphics.c": "65f71604b006c1f302aa8e86763dc6d064dd4f421cea3e349e6eaa244da06fa3",
+    "data/layouts/layouts.json": "ce500221f6d756d7540949403b926299b337af8fae2ef23ab9b19b91750a1a2f",
+    "data/layouts/NewBarkTown/map.bin": "af15a84de2d5ca1f51c9aa5f8fd493167bc9ce8dd2b2057c03ed387278beeae3",
+    "data/maps/NewBarkTown/map.json": "1cf9f333ef7e6a12b98c06afed801b959c1e49912d878b330ec8a62ecae4d43c",
+    "data/tilesets/primary/general/tiles.png": "9ff889d1b9da5383a0cd0c85ac7b791812867804f3a38566b46172087419e0b9",
+    "data/tilesets/primary/general/metatiles.bin": "8d950c1a1f151f5e1bded1ecee165b815c3a4d62b69a4a9cec4f676283f9041e",
+    "data/tilesets/secondary/pallet_town/tiles.png": "321a23f388126175b34b85cf46c2d8f943daab5ee4d0916129c345b99b9108d2",
+    "data/tilesets/secondary/pallet_town/metatiles.bin": "3b7ba7f75fd5d750413fc252519569a9f98fac586d87f62066bdf1e3edf35ca2",
+    "data/tilesets/primary/general/palettes/00.pal": "de073336bb3f0592b6075fb8e4497b8c2ecfdf86a9d29f8c88dbec8702ccc9fc",
+    "data/tilesets/primary/general/palettes/01.pal": "e5fa084be81a8b081a33de05c13a799778899c4ef750bbb2185f997f9d41dea4",
+    "data/tilesets/primary/general/palettes/02.pal": "5a45e240ddd7e5b5c9ef403b2f849b8fd4381d21661255ce49aae79ed991a49b",
+    "data/tilesets/primary/general/palettes/03.pal": "139eddfe3f2a2d1018a736a480efa505231260662cdbaf30e32c173b1d9a6b76",
+    "data/tilesets/primary/general/palettes/04.pal": "50925427da2fc947ae3915f2d1b1c63e115418e8ce12f374b31a3ed45e932c65",
+    "data/tilesets/primary/general/palettes/05.pal": "7ab8f3342c37f96f587bff026583e7a5431a10c9f590ac40705b9732a9348098",
+    "data/tilesets/primary/general/palettes/06.pal": "46af7d618b34a9f330fb154bb4933f171b1947a6d224f8fe9c8ea2a84f461a0d",
+    "data/tilesets/secondary/pallet_town/palettes/07.pal": "b9cf2edee66f156d17ad0252cbf82862a807b7805334df817e66ce138f9061ed",
+    "data/tilesets/secondary/pallet_town/palettes/08.pal": "3f664939118dd2b4f480e041b3db423e05795d06fef0bfdf2d28fa12acbb4598",
+    "data/tilesets/secondary/pallet_town/palettes/09.pal": "04ac2f7421d737e8006c5d374cc6198eab0005baf4fe3b11b94cea65da53d54e",
+    "data/tilesets/secondary/pallet_town/palettes/10.pal": "c91f49f35db89d9b314d63341811e95cc0959f9df5df9b2faa6091cc5f3db0dd",
+    "data/tilesets/secondary/pallet_town/palettes/11.pal": "402a1b250a1fc0abbf8c9f33a1576563e5fae27a5ceaab16a6d6bd96b727c175",
+    "data/tilesets/secondary/pallet_town/palettes/12.pal": "eb2d1792c862747f587d037336e87445e45bd8b3eaf4a60a554cff2dd88cbbf9",
+    "data/tilesets/secondary/pallet_town/palettes/13.pal": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+    "data/tilesets/secondary/pallet_town/palettes/14.pal": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+    "data/tilesets/secondary/pallet_town/palettes/15.pal": "ea391b70a00c55f0fe13590e345ee9b66fb9013864b737f40258d99f70f6eb04",
+    "graphics/object_events/pics/people/red_normal.png": "94eb37499a8bd663f47a0767c34b93569cf0c222a9906852943016e3a771054d",
+    "graphics/object_events/pics/pokemon/pikachu.png": "9f391ae36e07e1797c4ae1538cf647e7d8db2ee30519597fe94cbfb88a952042"
+  },
+  "frames": 597,
+  "fps": "262144/4389",
+  "seconds": 9.99539566040039,
+  "red_route_tiles": [
+    [
+      4,
+      12
+    ],
+    [
+      11,
+      12
+    ],
+    [
+      11,
+      10
+    ],
+    [
+      11,
+      9
+    ]
+  ],
+  "pikachu_trailing_distance_pixels": 16,
+  "native_dimensions": [
+    240,
+    160
+  ],
+  "sample_frame_sha256": {
+    "0": "3def9b9176152ab8bdd5bf5ab2fab651b2488498236b094b76508e8631517c3e",
+    "45": "3def9b9176152ab8bdd5bf5ab2fab651b2488498236b094b76508e8631517c3e",
+    "46": "3def9b9176152ab8bdd5bf5ab2fab651b2488498236b094b76508e8631517c3e",
+    "100": "22b8fddaaa574847262545d193cacbd8cc9a9a9ece54866e323efba0bbecd21a",
+    "200": "df10928ee8abde5dce59dc2e333b9565cb0e7254933f16f39f54bfd14fb11894",
+    "320": "702fc863b46c6a600d4a6d88134d71e38b06b88155f42bd7291c88db28dc4746",
+    "440": "b1427385a2a89aab000be9a3d9a98a9560cee33a677a7404c45c760ada045209",
+    "441": "9ed96f737b660d31c0685fedc25c909442ffc86a67e83b598180d4df02a24b6c",
+    "596": "9ed96f737b660d31c0685fedc25c909442ffc86a67e83b598180d4df02a24b6c"
+  },
+  "limits": [
+    "Only first of ten journey beats.",
+    "Game collision execution not claimed.",
+    "Existing field cels reused.",
+    "Staff roll, remaining scenes and completion trigger pending."
+  ],
+  "native_sha256": "b209c06a4887f15cafb1d19b7872b7faae1fd990f7b3f118dc78a431ff6db14a",
+  "preview_sha256": "6bc894fa941b2a743371cb5b94d21803ecd6d8a0cf41a6fbe1983dbbfd25e52d",
+  "decoded_frames": 597,
+  "decoded_frame_equality": "PASS"
+}

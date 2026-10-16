@@ -1109,6 +1109,8 @@ SECTIONS {
         data/*.o(.rodata);
     } > ROM =0
 
+    .opening_movie ALIGN(4) : { KEEP(*(.opening_movie)) } > ROM =0
+
     /* DWARF debug sections.
        Symbols in the DWARF debugging sections are relative to the beginning
        of the section so we begin them at 0.  */

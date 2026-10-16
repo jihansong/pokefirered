@@ -1,0 +1,199 @@
+{
+  "map": "MAP_JOHTO_ROUTE26",
+  "base_label": "sJohtoRoute26",
+  "land_mons": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 30,
+        "max_level": 30,
+        "species": "SPECIES_PONYTA"
+      },
+      {
+        "min_level": 30,
+        "max_level": 30,
+        "species": "SPECIES_DODRIO"
+      },
+      {
+        "min_level": 30,
+        "max_level": 30,
+        "species": "SPECIES_QUAGSIRE"
+      },
+      {
+        "min_level": 31,
+        "max_level": 31,
+        "species": "SPECIES_RATICATE"
+      },
+      {
+        "min_level": 31,
+        "max_level": 31,
+        "species": "SPECIES_DODRIO"
+      },
+      {
+        "min_level": 32,
+        "max_level": 32,
+        "species": "SPECIES_QUAGSIRE"
+      },
+      {
+        "min_level": 32,
+        "max_level": 32,
+        "species": "SPECIES_SANDSLASH"
+      },
+      {
+        "min_level": 32,
+        "max_level": 32,
+        "species": "SPECIES_RATICATE"
+      },
+      {
+        "min_level": 33,
+        "max_level": 33,
+        "species": "SPECIES_DODRIO"
+      },
+      {
+        "min_level": 33,
+        "max_level": 33,
+        "species": "SPECIES_QUAGSIRE"
+      },
+      {
+        "min_level": 34,
+        "max_level": 34,
+        "species": "SPECIES_SANDSLASH"
+      },
+      {
+        "min_level": 34,
+        "max_level": 34,
+        "species": "SPECIES_DODRIO"
+      }
+    ]
+  },
+  "land_mons_morning": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 30,
+        "max_level": 30,
+        "species": "SPECIES_PONYTA"
+      },
+      {
+        "min_level": 30,
+        "max_level": 30,
+        "species": "SPECIES_DODRIO"
+      },
+      {
+        "min_level": 30,
+        "max_level": 30,
+        "species": "SPECIES_QUAGSIRE"
+      },
+      {
+        "min_level": 31,
+        "max_level": 31,
+        "species": "SPECIES_RATICATE"
+      },
+      {
+        "min_level": 31,
+        "max_level": 31,
+        "species": "SPECIES_DODRIO"
+      },
+      {
+        "min_level": 32,
+        "max_level": 32,
+        "species": "SPECIES_QUAGSIRE"
+      },
+      {
+        "min_level": 32,
+        "max_level": 32,
+        "species": "SPECIES_SANDSLASH"
+      },
+      {
+        "min_level": 32,
+        "max_level": 32,
+        "species": "SPECIES_RATICATE"
+      },
+      {
+        "min_level": 33,
+        "max_level": 33,
+        "species": "SPECIES_DODRIO"
+      },
+      {
+        "min_level": 33,
+        "max_level": 33,
+        "species": "SPECIES_QUAGSIRE"
+      },
+      {
+        "min_level": 34,
+        "max_level": 34,
+        "species": "SPECIES_SANDSLASH"
+      },
+      {
+        "min_level": 34,
+        "max_level": 34,
+        "species": "SPECIES_DODRIO"
+      }
+    ]
+  },
+  "land_mons_night": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 30,
+        "max_level": 30,
+        "species": "SPECIES_PONYTA"
+      },
+      {
+        "min_level": 30,
+        "max_level": 30,
+        "species": "SPECIES_NOCTOWL"
+      },
+      {
+        "min_level": 30,
+        "max_level": 30,
+        "species": "SPECIES_QUAGSIRE"
+      },
+      {
+        "min_level": 31,
+        "max_level": 31,
+        "species": "SPECIES_RATICATE"
+      },
+      {
+        "min_level": 31,
+        "max_level": 31,
+        "species": "SPECIES_NOCTOWL"
+      },
+      {
+        "min_level": 32,
+        "max_level": 32,
+        "species": "SPECIES_QUAGSIRE"
+      },
+      {
+        "min_level": 32,
+        "max_level": 32,
+        "species": "SPECIES_SANDSLASH"
+      },
+      {
+        "min_level": 32,
+        "max_level": 32,
+        "species": "SPECIES_RATICATE"
+      },
+      {
+        "min_level": 33,
+        "max_level": 33,
+        "species": "SPECIES_NOCTOWL"
+      },
+      {
+        "min_level": 33,
+        "max_level": 33,
+        "species": "SPECIES_QUAGSIRE"
+      },
+      {
+        "min_level": 34,
+        "max_level": 34,
+        "species": "SPECIES_SANDSLASH"
+      },
+      {
+        "min_level": 34,
+        "max_level": 34,
+        "species": "SPECIES_NOCTOWL"
+      }
+    ]
+  }
+}

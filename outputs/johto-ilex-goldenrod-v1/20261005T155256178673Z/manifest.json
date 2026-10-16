@@ -1,0 +1,398 @@
+{
+  "time": "20261005T155256178673Z",
+  "validation": {
+    "chapter": "Ilex and Goldenrod entrance",
+    "save_layout_changed": false,
+    "native_build_and_emulator": "NOT_RUN_BY_GENERATOR",
+    "visual_limits": [
+      "Native Kanto tilesets are reused; the radio exterior uses the Silph facade.",
+      "Silver and Whitney use native placeholder portraits. FARFETCHD reuses its exact native menu-icon pixels."
+    ],
+    "not_implemented": [
+      "Goldenrod upper radio floors, underground and department-store floors",
+      "Gyms four through eight and Johto League"
+    ],
+    "new_maps": [
+      "IlexForest_AzaleaGate",
+      "IlexForest",
+      "IlexForest_Route34Gate",
+      "JohtoRoute34",
+      "JohtoRoute34_DayCare",
+      "GoldenrodCity",
+      "GoldenrodCity_PokemonCenter_1F",
+      "GoldenrodCity_PokemonCenter_2F",
+      "GoldenrodCity_Mart",
+      "GoldenrodCity_RadioTower_1F",
+      "GoldenrodCity_Gym"
+    ],
+    "new_flags": {
+      "FLAG_JOHTO_SILVER_AZALEA_DEFEATED": 12,
+      "FLAG_JOHTO_ILEX_FARFETCHD_RETURNED": 14,
+      "FLAG_JOHTO_ILEX_CUT_BRIEFED": 15,
+      "FLAG_JOHTO_BADGE03_GET": 18,
+      "FLAG_JOHTO_ILEX_HELP_REQUESTED": 24,
+      "FLAG_JOHTO_GOLDENROD_RESEARCH_REGISTERED": 26,
+      "FLAG_JOHTO_WHITNEY_ENCOURAGED": 27,
+      "FLAG_JOHTO_GOT_TM45_FROM_WHITNEY": 28
+    },
+    "trainer_ids": {
+      "SILVER_AZALEA": 799,
+      "TODD": 800,
+      "GINA": 801,
+      "BRANDON": 802,
+      "VICTORIA": 803,
+      "SAMANTHA": 804,
+      "WHITNEY": 805
+    },
+    "static_checks": [
+      {
+        "map": "IlexForest_AzaleaGate",
+        "walkable_reachable": 100,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "IlexForest",
+        "walkable_reachable": 787,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "IlexForest_Route34Gate",
+        "walkable_reachable": 100,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "JohtoRoute34",
+        "walkable_reachable": 793,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "JohtoRoute34_DayCare",
+        "walkable_reachable": 57,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "GoldenrodCity",
+        "walkable_reachable": 1256,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "GoldenrodCity_PokemonCenter_1F",
+        "walkable_reachable": 84,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "GoldenrodCity_PokemonCenter_2F",
+        "native_CableClub_layout": true
+      },
+      {
+        "map": "GoldenrodCity_Mart",
+        "walkable_reachable": 40,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "GoldenrodCity_RadioTower_1F",
+        "walkable_reachable": 99,
+        "NPC_and_warps": true
+      },
+      {
+        "map": "GoldenrodCity_Gym",
+        "walkable_reachable": 145,
+        "NPC_and_warps": true
+      }
+    ]
+  },
+  "files": {
+    "data/maps/map_groups.json": {
+      "before": "6ac134c3ba85111317f7e43bcab1b76d0189e11288d607953ce629e13ede865f",
+      "after": "79c2fd24e826d383620111504fa4c733dfe5cd517be88076275bff3964b37bbd"
+    },
+    "data/layouts/IlexForest/map.bin": {
+      "before": null,
+      "after": "065dee218edb0222ce950347ced6cc34396b82f4fe214edc2468b864476ee904"
+    },
+    "data/layouts/IlexForest/border.bin": {
+      "before": null,
+      "after": "b8945754ab452b1d2e3a9418f8a0de5c875e81f8704bb07effab11cb297b679e"
+    },
+    "data/layouts/JohtoRoute34/map.bin": {
+      "before": null,
+      "after": "f50782f810bb949813011ea56bba520702f6767ee3403b146b74f8a2b0f6e1b5"
+    },
+    "data/layouts/JohtoRoute34/border.bin": {
+      "before": null,
+      "after": "bd05db219b1304364f4d1c265db9cece1af50fb2332d9f39357fdc8d721dc449"
+    },
+    "data/layouts/GoldenrodCity/map.bin": {
+      "before": null,
+      "after": "f38a07267662ebba54e0d00943ad4f72fd6f8ba5e8dfc6cc54be492b7e41d2f2"
+    },
+    "data/layouts/GoldenrodCity/border.bin": {
+      "before": null,
+      "after": "bd05db219b1304364f4d1c265db9cece1af50fb2332d9f39357fdc8d721dc449"
+    },
+    "data/layouts/IlexForest_AzaleaGate/map.bin": {
+      "before": null,
+      "after": "7d70ccd81337746eaf2a9728f800998834e5227d144300b291d5154e54ce6c6d"
+    },
+    "data/layouts/IlexForest_AzaleaGate/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/GoldenrodCity_RadioTower_1F/map.bin": {
+      "before": null,
+      "after": "91502b668ca0d321e9611ac0ebf1ba50382b827dd2b6dc314fff33bd9f645186"
+    },
+    "data/layouts/GoldenrodCity_RadioTower_1F/border.bin": {
+      "before": null,
+      "after": "e0d28e51c7e052913771ad123ea4ae85d601f22af3040d698e9b1f6a6ecb5196"
+    },
+    "data/layouts/layouts.json": {
+      "before": "780a059b690abc4e54c30c4e7da83e0ece33366f56fc686ddb2820d5e70044e2",
+      "after": "9bfee3b9eef46f09584affbc68464f51538f83309c81d240bd6cfbf3c6d313e8"
+    },
+    "data/maps/IlexForest_AzaleaGate/map.json": {
+      "before": null,
+      "after": "a1d73a4c57a4dfba8c461f566000875304b256368c2153ff489787df5aa63a0d"
+    },
+    "data/maps/IlexForest_AzaleaGate/scripts.inc": {
+      "before": null,
+      "after": "7b1e1e6714c84b44abbfd3aa439a3ecd718a0cd01b00e622e6680698c1149cca"
+    },
+    "data/maps/IlexForest_AzaleaGate/text.inc": {
+      "before": null,
+      "after": "2e51c62b0c3b4bfffc02049947f0d6f3828a1e01bdeff02165ac1fdc040c3d78"
+    },
+    "data/maps/IlexForest/map.json": {
+      "before": null,
+      "after": "831f403b96bf12ba59b0bca6294c825ce5180cf25f7542c2286d6f8fc760f504"
+    },
+    "data/maps/IlexForest/scripts.inc": {
+      "before": null,
+      "after": "5ca0a29f6e44711f7aa2b7621964b729bf5b902c450ec6611aa04fffbbf242f7"
+    },
+    "data/maps/IlexForest/text.inc": {
+      "before": null,
+      "after": "79aae62c42863d17514c79fba1bed6d2ca6de152ea7ef3347ba6759b5e583e0c"
+    },
+    "data/maps/IlexForest_Route34Gate/map.json": {
+      "before": null,
+      "after": "d187f02a92683bcc4d9e8bb87b96c9901773c9620f5dc1cbf12e19f9469afc21"
+    },
+    "data/maps/IlexForest_Route34Gate/scripts.inc": {
+      "before": null,
+      "after": "bfe4df47bafa68b88cc3e4276d4393d00c9810738173cbdc351ea489aec3489b"
+    },
+    "data/maps/IlexForest_Route34Gate/text.inc": {
+      "before": null,
+      "after": "92906a7bc57660af528909d8698bf8595fcdd7df74d1b85712081282f0d9743f"
+    },
+    "data/maps/JohtoRoute34/map.json": {
+      "before": null,
+      "after": "f58d263dbdaf80c647517940e8837bee583969eca1694c5e4aa5f950cbe257aa"
+    },
+    "data/maps/JohtoRoute34/scripts.inc": {
+      "before": null,
+      "after": "73a45517b23e81f954b9793acefa6af214ef3eaf29becac81b4e59561d9a9432"
+    },
+    "data/maps/JohtoRoute34/text.inc": {
+      "before": null,
+      "after": "6a1394459a122f641d99114033bf78910842aaffbf9594a1cd275bb517eaabe7"
+    },
+    "data/maps/JohtoRoute34_DayCare/map.json": {
+      "before": null,
+      "after": "cc2fa8b64a1137d49290c0c3011b8d3acd756f5e42823f1bed53006cd0f5cf6a"
+    },
+    "data/maps/JohtoRoute34_DayCare/scripts.inc": {
+      "before": null,
+      "after": "ac2bc085e986d1c710bdae34e7e86e6ca3c3c1c6e6a01d88dfdd05970f976f0c"
+    },
+    "data/maps/JohtoRoute34_DayCare/text.inc": {
+      "before": null,
+      "after": "470e384da4da642c79546e7a43f192903aa7e4cdcd46c46407ebc1f9a18abdf7"
+    },
+    "data/maps/GoldenrodCity/map.json": {
+      "before": null,
+      "after": "7f1bfae9593b3014d93317ec36e580f7748938c749c0b4551df4139f00c7476a"
+    },
+    "data/maps/GoldenrodCity/scripts.inc": {
+      "before": null,
+      "after": "4e0fb949ed46aea897cb461b2c169de569ae26e3db5c8c3dffa6e73b0105f329"
+    },
+    "data/maps/GoldenrodCity/text.inc": {
+      "before": null,
+      "after": "520dac247d88b651d36df20fd4041f9fb460ee7390c7d0c8bf6a6dd4f7333866"
+    },
+    "data/maps/GoldenrodCity_PokemonCenter_1F/map.json": {
+      "before": null,
+      "after": "e91fcffad0deacd7d403177af9b4a1635bed9c315deb624e9aadbf870ffc678a"
+    },
+    "data/maps/GoldenrodCity_PokemonCenter_1F/scripts.inc": {
+      "before": null,
+      "after": "d37d0eeeece41513bb58513584fbeb0bd23584dcc52f678ee380051b20a81ac4"
+    },
+    "data/maps/GoldenrodCity_PokemonCenter_1F/text.inc": {
+      "before": null,
+      "after": "17bc38564f99e5973e9ea169ba1905fa02d83897977a10b59f04d8b24e7a3f25"
+    },
+    "data/maps/GoldenrodCity_PokemonCenter_2F/map.json": {
+      "before": null,
+      "after": "5f066f1c1110dec21b284a37f52a0f91b7358ebcd757e1d6c6b8f0fa2fdba24c"
+    },
+    "data/maps/GoldenrodCity_PokemonCenter_2F/scripts.inc": {
+      "before": null,
+      "after": "f540fcc100b94f44dbde6c3776429dd4245959fb685ca83854758cee72170c7a"
+    },
+    "data/maps/GoldenrodCity_PokemonCenter_2F/text.inc": {
+      "before": null,
+      "after": "a0dfac1bcbde46cdf6187847f339d03aab6f659d4eb7949c5f14b7614ce6be55"
+    },
+    "data/maps/GoldenrodCity_Mart/map.json": {
+      "before": null,
+      "after": "fa45442e194d8d27c20e9d1e4e9f2e2cc1a08e7458c1009f5ddfea30acca1692"
+    },
+    "data/maps/GoldenrodCity_Mart/scripts.inc": {
+      "before": null,
+      "after": "9a0dcbf355cfa4bbc3380c978d7c6a16cbc710c86c1f94f0cb64b7a96cf6d0de"
+    },
+    "data/maps/GoldenrodCity_Mart/text.inc": {
+      "before": null,
+      "after": "c349a1492905fd92a5516adf9c2ee12560db117faa741cd731060f4d68940771"
+    },
+    "data/maps/GoldenrodCity_RadioTower_1F/map.json": {
+      "before": null,
+      "after": "2b3de94e8c7b772f640720f19c643c8e8607a6b6e7751b6e2aab9dd4d94ef4d1"
+    },
+    "data/maps/GoldenrodCity_RadioTower_1F/scripts.inc": {
+      "before": null,
+      "after": "e8a56698f9bfd2fd687380af24adce467784e577d5fcfb06470b69b8f4e421e9"
+    },
+    "data/maps/GoldenrodCity_RadioTower_1F/text.inc": {
+      "before": null,
+      "after": "451d34833fcad086c6e247eb89b9f9bbf1bb88b996c51849ffcd341310553d68"
+    },
+    "data/maps/GoldenrodCity_Gym/map.json": {
+      "before": null,
+      "after": "e71210058bfd5ef326ee003f1650e84f15362ab4c5f8b286e1ae1f897fcce096"
+    },
+    "data/maps/GoldenrodCity_Gym/scripts.inc": {
+      "before": null,
+      "after": "c54b7885feff3fdba9023881c9f2fe66fdcd432b27bfa8ed6c65640d8e067761"
+    },
+    "data/maps/GoldenrodCity_Gym/text.inc": {
+      "before": null,
+      "after": "a20dd582daf5d6cb7946d8e094b3653b4c39c5ccb43c60ab25414099ef5ae8a4"
+    },
+    "data/maps/AzaleaTown/map.json": {
+      "before": "c013b7b114efccb2aab0923071cf525dc41710ae1ff4777f5bee915d78f2dc45",
+      "after": "bcdb1a16f0317151bd4a1847c770d59b18cff657113b7c0acd61a2b9bf76ef69"
+    },
+    "data/layouts/AzaleaTown/map.bin": {
+      "before": "f9bd0edefb22c4549087f90141dac0e016e53b46c14294bd64c914535b0952fb",
+      "after": "0971f93a2966035216db651efc0b9e3e65e5366e9282d54640d8d6e5482d1d65"
+    },
+    "src/data/heal_locations.json": {
+      "before": "b155abbdad7287655f5f7138199d308fd261010e25eb2f96b5d199a7f04d68d8",
+      "after": "0898d9bd7cf9d1ea31c18b8f3f5b574a155fcdabf5f38069467bb2c27a2abd77"
+    },
+    "include/constants/flags_johto_story.h": {
+      "before": "507fd6726476eb3f2b38e2a10ecf3624df7a82879b0d4038e44d57251a2f1667",
+      "after": "64f7d39c43284e7362fbd658def6520376c9aa3eb5f71415a6b8b1366f7ef3c3"
+    },
+    "include/constants/opponents_johto_ilex.h": {
+      "before": null,
+      "after": "8fe31e27ac4e551d6b36c7782ae18195a70cf3097d9f19845175a3f300eef27c"
+    },
+    "include/constants/opponents.h": {
+      "before": "9912bd09a40250b1c1684a7eebbd04d7b07735c93239bab9f6dbeff2049f7490",
+      "after": "8f83f72a9bb2559fb81c9408210a62f830cd84caf35d1d675fa44a6e5e33ba46"
+    },
+    "src/data/trainer_parties_johto_ilex.h": {
+      "before": null,
+      "after": "1cbc7b16abeadafd8f08b0603b510513b86fb5bf4375f626c5129bafd21ec6de"
+    },
+    "src/data/trainers_johto_ilex.h": {
+      "before": null,
+      "after": "8f5540b77308db3b502bb4a7cab3e91eabf33548b6b40a6df1a4fb5d52de01dd"
+    },
+    "src/data/trainers.h": {
+      "before": "0f223a528c561ba254272b2ccf3944450640726ca99daebd0dd640a87966056f",
+      "after": "48668307c2d83d1ebfa96ca29ebb464fc7849345343ebdf0d92b956a52d618c3"
+    },
+    "src/data/trainer_parties.h": {
+      "before": "87752bd049c2baee2826f24e797378ee2f1882136f82d754caf37ab8eb440d14",
+      "after": "d03ec0d7a771d7927f5fb82afd61f96e1bc07eb7fd94b9fd75f25a72c574af50"
+    },
+    "data/event_scripts.s": {
+      "before": "ae379570a54b76799545f2f2ba466bd8e95a310bfb0209c1377bf01d0fade9fc",
+      "after": "a013cec264446633eb50c02c10a7c805fe692a625c889a63385e4940c074d8a2"
+    },
+    "tools/johto/build_azalea.py": {
+      "before": "3ab2d3937e03440b72c2aa730c8d16ab5151a234ea91191403a0b50603fe362b",
+      "after": "0e9e0bd90218dfe3fbd633bdaac7c58c78ff77f885b1b90fe7437cf2911faadc"
+    },
+    "tools/johto/ilexforest_wild.json": {
+      "before": null,
+      "after": "d589ebbb71028ba6dd5c5288d0480aefe304bd7b6352e4cd5e106895c3cf92e6"
+    },
+    "tools/johto/johtoroute34_wild.json": {
+      "before": null,
+      "after": "dae2f91ea7ba4512aa74f8cceafd119f3d698aa0b5a609a1c21773b36a998f19"
+    },
+    "src/data/wild_encounters.json": {
+      "before": "1d4d5bfc20518212d73c00a5f8ae289af0dbe5298df63371ccf35413e484a364",
+      "after": "9898a2ccaddb1c0157ed529692b9401e9b40a0cdd7b7d89409d2bcc197535056"
+    },
+    "src/data/region_map/region_map_sections.json": {
+      "before": "25979b7e897496e45ea945933d4b4c8931a293548cfa27b19be843f95e78fc7b",
+      "after": "57f8d88eb6e75d7619994b779e36d29eb99a16fa2d7d6061707fcfdb0e3d0145"
+    },
+    "src/region_map.c": {
+      "before": "33b07044b778c0b7180ff4751feff80b6f81a39d1b5774869f271af5d036cf42",
+      "after": "4201798d00239568da439eb3d699756c18b090ba83431eb990b8e18e9412cbb5"
+    },
+    "src/pokemon_summary_screen.c": {
+      "before": "345437608b1434869c29ff70789d1d87409d2397d5b702bf399bc6b6e9b67ce5",
+      "after": "646063237ae4d17c107c45d89b4aa0477a7ad111971b6307806d2752d68f042c"
+    },
+    "graphics/region_map/johto_entry.bin": {
+      "before": "939a2bf39d544b1f0d818627631062dbd16f870dbe1438324121932a06359b22",
+      "after": "69755847ae86a2df9a8db2b1e993f6e4e51d527633631896e9a106e3fb7ae95a"
+    },
+    "src/wild_pokemon_area.c": {
+      "before": "a083d7a8493a810bf9cb853d79f14c7364a0d1726857a6a8c468e09c2fa1b345",
+      "after": "2307f753b3b19802d38c3ae64a09a0cded8611a4fa81260c3912866a64c3a18a"
+    },
+    "include/pokedex_area_markers.h": {
+      "before": "01dc8ebf6ca6b5b671e43398bf3d5c5bf2a2aad2d75af6a38aaa18767300e825",
+      "after": "e12e6f9a78567939870231f1b148cb3383a571cacee88d991c984dad3999221c"
+    },
+    "src/pokedex_area_markers.c": {
+      "before": "295272d6de35285b3cd9a8908ece2c90034fc35b5d38d81c745540ffdb597bda",
+      "after": "6c8efb3eb8aee230e4233edd18b5e7a4727a62dbbe25dfbb8c7e4bbaff73f498"
+    },
+    "src/pokedex_screen.c": {
+      "before": "bfbd755e4b2597a0a4840df3e5aefc424e94e8dab9904662d3466e64a2a78f75",
+      "after": "27990d4639c0d723d76537dabbc3e9f29148147b498023f3c67b0e1e4c0ea3a8"
+    },
+    "include/constants/event_objects.h": {
+      "before": "2af9419bcfd0f1cac19ba6bb84cb34f20c5b8533930334d8780f0442746d5479",
+      "after": "905698ff7de03e2f18feaf31dfb7de33a92d52e79b2d853856ca794aa7f5d271"
+    },
+    "src/event_object_movement.c": {
+      "before": "fbd64378758c79265fb8743c5c99c617b36d7dc20845ff9780e64ee45f30a742",
+      "after": "721d4bf83af7de86c2b6d3dc800345110841eb7c849be0439d226930301b9ccc"
+    },
+    "src/data/object_events/object_event_pic_tables.h": {
+      "before": "02d4f19fd921fbab3bc9b69e0abe7b616e3cbfe40bb4fed06ef57d1047bab2ed",
+      "after": "ef56355c6f59659f229d9ec67a84e8a67e3220916160b23db36f29b049a996bf"
+    },
+    "src/data/object_events/object_event_graphics_info.h": {
+      "before": "3d54e33f3de17f2192804a97c1e14160e23d705479bcce400e37ab5aba3e0c10",
+      "after": "ff91618e749b4a0a14b8018abf09cff331a10785367a26a3334d8c90fef4ca9b"
+    },
+    "src/data/object_events/object_event_graphics_info_pointers.h": {
+      "before": "ed72e4d1ad98306c59880b9675e2048a1dae0c931c7e1c06a10a813f8e828188",
+      "after": "5c6329c5727b5ec64ddc5519a2cedd45868a80c01116f436ac3c782593a60bd9"
+    }
+  }
+}

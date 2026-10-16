@@ -1,0 +1,116 @@
+{
+  "pass": false,
+  "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+  "elf_sha256": "4b6ab0e3cea92de40cadd88a073d0820e9435b0e122d19079f009e4ae95c11b5",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-surf-region-hoenn-on-menu",
+  "fixture": "temporary Lapras mover plus exact copy of genuine original starter Pikachu; original SAV/PC/Dex unchanged",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "candidate_ui_task_symbols": {
+    "Task_HandleChooseMonInput": [
+      135415364
+    ],
+    "Task_HandleSelectionMenuInput": [
+      135428036
+    ],
+    "Task_ReturnToChooseMonAfterText": [
+      135417556
+    ],
+    "Task_CancelAfterAorBPress": [
+      135435476
+    ],
+    "Task_YesNoMenu_HandleInput": [
+      134874012
+    ],
+    "Task_FldEffUseSurf": [
+      134782228
+    ]
+  },
+  "native_story_not_entire_regions": true,
+  "palette_active_abi_mask": {
+    "size": 16,
+    "offset": 7,
+    "mask": 128
+  },
+  "follower_checks": [
+    {
+      "label": "land-before-right",
+      "map": [
+        43,
+        5
+      ],
+      "player_xy": [
+        17,
+        32
+      ],
+      "follower_xy": [
+        16,
+        32
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    },
+    {
+      "label": "land-before-left",
+      "map": [
+        43,
+        5
+      ],
+      "player_xy": [
+        16,
+        32
+      ],
+      "follower_xy": [
+        17,
+        32
+      ],
+      "visible": true,
+      "native_sprite_active": true,
+      "avatar_flags": 1
+    }
+  ],
+  "region": "hoenn",
+  "gate": "on",
+  "method": "menu",
+  "expected_permission": true,
+  "water_target": [
+    16,
+    31
+  ],
+  "follower_original": {
+    "party_index": 1,
+    "personality": 3742077845,
+    "otid": 2839214970,
+    "box_sha256": "b03f4197ccf6841854b3b84d18fd65ee9d808ab3eda86066b168afe506e407c2",
+    "copied_without_editing": true
+  },
+  "ui_stage": "await-surf-mount",
+  "ui_debug": {
+    "stage": "await-surf-mount",
+    "tasks": [],
+    "callback2": "0x813ab4d",
+    "fade_inactive": true,
+    "start_cursor": 1,
+    "party_menu_raw": "1978050800000000000000000000000000000000",
+    "party_slot": 0,
+    "party_mode_byte": 0,
+    "menu_actions": []
+  },
+  "error": "AssertionError(('native Surf timeout', 'await-surf-mount', (43, 5, 16, 32), '0x813ab4d'))",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspaces/pokefirered/tools/qa/native_surf_region_qa.py\", line 258, in <module>\n    await_state(lambda:bool(e.u8(syms['gPlayerAvatar'])&SURF) and e.location()[2:]==(wx,wy) and e.field_idle(),3000,'A')\n  File \"/workspaces/pokefirered/tools/qa/native_surf_region_qa.py\", line 86, in await_state\n    raise AssertionError(('native Surf timeout',report.get('ui_stage'),e.location(),hex(e.callback2())))\nAssertionError: ('native Surf timeout', 'await-surf-mount', (43, 5, 16, 32), '0x813ab4d')\n",
+  "failure_location": [
+    43,
+    5,
+    16,
+    32
+  ],
+  "original_saves_unchanged": true
+}

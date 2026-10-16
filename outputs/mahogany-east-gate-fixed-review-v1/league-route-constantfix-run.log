@@ -1,0 +1,5 @@
+usage: native_victory_road_league_route_qa.py [-h] --rom ROM --elf ELF --sav
+                                              SAV --out OUT --case
+                                              {strength-vr-league-route}
+                                              [--loss]
+native_victory_road_league_route_qa.py: error: the following arguments are required: --case

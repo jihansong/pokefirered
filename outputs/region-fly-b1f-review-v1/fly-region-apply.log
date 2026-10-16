@@ -1,0 +1,28 @@
+{
+  "apply": true,
+  "validation": {
+    "save_structure_changed": false,
+    "fly_destinations_changed": false,
+    "EWRAM_globals_added": 0,
+    "region_badges": {
+      "Kanto": 3,
+      "Johto": 5,
+      "Hoenn": 6
+    },
+    "native_party_and_destination_checks": "PENDING",
+    "files": {
+      "src/field_control_avatar.c": {
+        "before": "3531bf171a0ede22b10e636542e11403aa8dfc722f97c4a29b7333fd79aeb17b",
+        "after": "2b72c984b9b8a5264fc0d39215e1712b3bd604e895a1e0a634dd959c27210368"
+      },
+      "include/field_control_avatar.h": {
+        "before": "0c6ce3510a689bf12ffb2aedfe2c1880880db472e222f9c14e9af8fd3497cfd4",
+        "after": "e6ba8802e1ed78c1f2aeecbca94dfb991ced31728e3bc58f9863d86c9cf94490"
+      },
+      "src/party_menu.c": {
+        "before": "2ad0fd80d5bf96a19ca75e611dfaf5ae07175fdaff7027e62b09f8da00085f22",
+        "after": "93ae68d66132c036978a01fcd27f9d24a83bd94b212f8a02abbe6f566c92a7dd"
+      }
+    }
+  }
+}

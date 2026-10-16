@@ -1,0 +1,69 @@
+tools/mapjson/mapjson event_constants firered <MAP_JSONS> include/constants/map_event_ids.h
+tools/scaninc/scaninc -M build/titlev8qa/data/event_scripts.d -I include -I "" data/event_scripts.s
+tools/scaninc/scaninc -M build/titlev8qa/src/vs_seeker.d -I include -I tools/agbcc/include src/vs_seeker.c
+tools/scaninc/scaninc -M build/titlev8qa/src/union_room_player_avatar.d -I include -I tools/agbcc/include src/union_room_player_avatar.c
+tools/scaninc/scaninc -M build/titlev8qa/src/trainer_tower.d -I include -I tools/agbcc/include src/trainer_tower.c
+tools/scaninc/scaninc -M build/titlev8qa/src/trainer_see.d -I include -I tools/agbcc/include src/trainer_see.c
+tools/scaninc/scaninc -M build/titlev8qa/src/teachy_tv.d -I include -I tools/agbcc/include src/teachy_tv.c
+tools/scaninc/scaninc -M build/titlev8qa/src/script_movement.d -I include -I tools/agbcc/include src/script_movement.c
+tools/scaninc/scaninc -M build/titlev8qa/src/scrcmd.d -I include -I tools/agbcc/include src/scrcmd.c
+tools/scaninc/scaninc -M build/titlev8qa/src/rotating_tile_puzzle.d -I include -I tools/agbcc/include src/rotating_tile_puzzle.c
+tools/scaninc/scaninc -M build/titlev8qa/src/quest_log_objects.d -I include -I tools/agbcc/include src/quest_log_objects.c
+tools/scaninc/scaninc -M build/titlev8qa/src/quest_log.d -I include -I tools/agbcc/include src/quest_log.c
+tools/scaninc/scaninc -M build/titlev8qa/src/overworld.d -I include -I tools/agbcc/include src/overworld.c
+tools/scaninc/scaninc -M build/titlev8qa/src/naming_screen.d -I include -I tools/agbcc/include src/naming_screen.c
+tools/scaninc/scaninc -M build/titlev8qa/src/intro_opening.d -I include -I tools/agbcc/include src/intro_opening.c
+tools/scaninc/scaninc -M build/titlev8qa/src/intro.d -I include -I tools/agbcc/include src/intro.c
+tools/scaninc/scaninc -M build/titlev8qa/src/heal_location.d -I include -I tools/agbcc/include src/heal_location.c
+tools/scaninc/scaninc -M build/titlev8qa/src/follower_pikachu.d -I include -I tools/agbcc/include src/follower_pikachu.c
+tools/scaninc/scaninc -M build/titlev8qa/src/fldeff_strength.d -I include -I tools/agbcc/include src/fldeff_strength.c
+tools/scaninc/scaninc -M build/titlev8qa/src/fldeff_rocksmash.d -I include -I tools/agbcc/include src/fldeff_rocksmash.c
+tools/scaninc/scaninc -M build/titlev8qa/src/fldeff_cut.d -I include -I tools/agbcc/include src/fldeff_cut.c
+tools/scaninc/scaninc -M build/titlev8qa/src/field_specials.d -I include -I tools/agbcc/include src/field_specials.c
+tools/scaninc/scaninc -M build/titlev8qa/src/field_player_avatar.d -I include -I tools/agbcc/include src/field_player_avatar.c
+tools/scaninc/scaninc -M build/titlev8qa/src/field_fadetransition.d -I include -I tools/agbcc/include src/field_fadetransition.c
+tools/scaninc/scaninc -M build/titlev8qa/src/field_effect_helpers.d -I include -I tools/agbcc/include src/field_effect_helpers.c
+tools/scaninc/scaninc -M build/titlev8qa/src/field_control_avatar.d -I include -I tools/agbcc/include src/field_control_avatar.c
+tools/scaninc/scaninc -M build/titlev8qa/src/fame_checker.d -I include -I tools/agbcc/include src/fame_checker.c
+tools/scaninc/scaninc -M build/titlev8qa/src/event_object_movement.d -I include -I tools/agbcc/include src/event_object_movement.c
+tools/scaninc/scaninc -M build/titlev8qa/src/event_object_lock.d -I include -I tools/agbcc/include src/event_object_lock.c
+tools/scaninc/scaninc -M build/titlev8qa/src/dynamic_placeholder_text_util.d -I include -I tools/agbcc/include src/dynamic_placeholder_text_util.c
+tools/scaninc/scaninc -M build/titlev8qa/src/decoration.d -I include -I tools/agbcc/include src/decoration.c
+tools/scaninc/scaninc -M build/titlev8qa/src/battle_tower.d -I include -I tools/agbcc/include src/battle_tower.c
+tools/scaninc/scaninc -M build/titlev8qa/src/battle_setup.d -I include -I tools/agbcc/include src/battle_setup.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/battle_setup.o src/battle_setup.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/battle_tower.o src/battle_tower.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/decoration.o src/decoration.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/dynamic_placeholder_text_util.o src/dynamic_placeholder_text_util.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/event_object_lock.o src/event_object_lock.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/event_object_movement.o src/event_object_movement.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/fame_checker.o src/fame_checker.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_control_avatar.o src/field_control_avatar.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_effect_helpers.o src/field_effect_helpers.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_fadetransition.o src/field_fadetransition.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_player_avatar.o src/field_player_avatar.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/field_specials.o src/field_specials.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/fldeff_cut.o src/fldeff_cut.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/fldeff_rocksmash.o src/fldeff_rocksmash.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/fldeff_strength.o src/fldeff_strength.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/follower_pikachu.o src/follower_pikachu.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/heal_location.o src/heal_location.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/intro.o src/intro.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/intro_opening.o src/intro_opening.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/naming_screen.o src/naming_screen.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/overworld.o src/overworld.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/quest_log.o src/quest_log.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/quest_log_objects.o src/quest_log_objects.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/rotating_tile_puzzle.o src/rotating_tile_puzzle.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/scrcmd.o src/scrcmd.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/script_movement.o src/script_movement.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/teachy_tv.o src/teachy_tv.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/trainer_see.o src/trainer_see.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/trainer_tower.o src/trainer_tower.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/union_room_player_avatar.o src/union_room_player_avatar.c
+tools/agbcc/bin/agbcc <flags> -o build/titlev8qa/src/vs_seeker.o src/vs_seeker.c
+tools/preproc/preproc data/event_scripts.s charmap.txt | cc -E -I include - | tools/preproc/preproc -ie data/event_scripts.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym LEAFGREEN=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build/titlev8qa/data/event_scripts.o
+Assembler messages:
+data/maps/RusturfTunnel/scripts.inc:151: Error: bad instruction `walk_normal_up'
+make: *** [Makefile:351: build/titlev8qa/data/event_scripts.o] Error 1
+make: *** Waiting for unfinished jobs....

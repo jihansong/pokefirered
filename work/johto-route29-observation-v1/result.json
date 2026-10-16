@@ -1,0 +1,931 @@
+{
+  "observations": [
+    {
+      "label": "boot",
+      "frame": 542,
+      "location": [
+        76,
+        1,
+        9,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        33,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "walk-0",
+      "frame": 568,
+      "location": [
+        76,
+        1,
+        8,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "walk-1",
+      "frame": 594,
+      "location": [
+        76,
+        1,
+        9,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "walk-2",
+      "frame": 620,
+      "location": [
+        76,
+        1,
+        8,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "walk-3",
+      "frame": 646,
+      "location": [
+        76,
+        1,
+        9,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "walk-4",
+      "frame": 672,
+      "location": [
+        76,
+        1,
+        8,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "walk-5",
+      "frame": 698,
+      "location": [
+        76,
+        1,
+        9,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "walk-6",
+      "frame": 724,
+      "location": [
+        76,
+        1,
+        8,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "walk-7",
+      "frame": 750,
+      "location": [
+        76,
+        1,
+        9,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "walk-8",
+      "frame": 776,
+      "location": [
+        76,
+        1,
+        8,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "walk-9",
+      "frame": 802,
+      "location": [
+        76,
+        1,
+        9,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "walk-10",
+      "frame": 828,
+      "location": [
+        76,
+        1,
+        8,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "walk-11",
+      "frame": 854,
+      "location": [
+        76,
+        1,
+        9,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "hold32-0",
+      "frame": 898,
+      "location": [
+        76,
+        1,
+        7,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "hold32-1",
+      "frame": 942,
+      "location": [
+        76,
+        1,
+        9,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "hold32-2",
+      "frame": 986,
+      "location": [
+        76,
+        1,
+        7,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "hold32-3",
+      "frame": 1030,
+      "location": [
+        76,
+        1,
+        9,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "hold32-4",
+      "frame": 1074,
+      "location": [
+        76,
+        1,
+        7,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "hold32-5",
+      "frame": 1118,
+      "location": [
+        76,
+        1,
+        9,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "hold32-6",
+      "frame": 1162,
+      "location": [
+        76,
+        1,
+        7,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "hold32-7",
+      "frame": 1206,
+      "location": [
+        76,
+        1,
+        9,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    },
+    {
+      "label": "settled",
+      "frame": 1506,
+      "location": [
+        76,
+        1,
+        9,
+        7
+      ],
+      "field_idle": true,
+      "callback2": "0x8057225",
+      "rom_tile": 12289,
+      "live_tile": 12289,
+      "live_attr": "0x0",
+      "header": 259,
+      "header_valid": 1,
+      "header_map": [
+        76,
+        1
+      ],
+      "encounters_disabled": 0,
+      "wild_data": [
+        56564,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avatar": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "quest_log": false,
+      "repel": 0
+    }
+  ],
+  "originals_unchanged": true,
+  "native_memory_writes": false,
+  "state_loads": false
+}

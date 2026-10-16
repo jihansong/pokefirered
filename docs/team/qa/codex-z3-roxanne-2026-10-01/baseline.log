@@ -1,0 +1,6 @@
+FAIL z3_roxanne_old_victory_missing_rewards_baseline
+     expect flag FLAG_HOENN_BADGE01_GET = 1: flag FLAG_HOENN_BADGE01_GET is 0, expected 1
+     expect flag FLAG_HOENN_DEFEATED_RUSTBORO_GYM = 1: flag FLAG_HOENN_DEFEATED_RUSTBORO_GYM is 0, expected 1
+     expect flag FLAG_HOENN_GOT_TM39_FROM_ROXANNE = 1: flag FLAG_HOENN_GOT_TM39_FROM_ROXANNE is 0, expected 1
+     expect item ITEM_TM39 = 1: item ITEM_TM39 is 0
+0/1 cases passed

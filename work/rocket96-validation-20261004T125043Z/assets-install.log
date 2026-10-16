@@ -1,0 +1,18 @@
+{
+  "status": "WRITE",
+  "default_feature_enabled": false,
+  "new_files": {
+    "tools/rocket96_encode.py": "cf4d61f89baa4039639eb39869f997d44385f7bb0ed8d5d6d7f3d96d8e536554",
+    "work/rocket96-review.mk": "f3e7aae677c8ff5540391e818fca0b2cca5a8acb119e3d3b37bdadc0a136ad4d",
+    "graphics/trainers/front_pics/jessie_james_hires.png": "210bd8b8c196cb83ce25fb35bc8affc0869743bd4a760b4be9fc90047a9ea438"
+  },
+  "rules_before": "731dd23b91dad2deab578cd7c5f9c4a16ce85989b897efda9854924b81682db1",
+  "rules_after": "2264bc83d9af562984eb3a94673b7b10525d3b57df4604e53f115ce788429986"
+}
+tools/scaninc/scaninc -M build/firered/src/rocket_trainer_portrait.d -I include -I tools/agbcc/include src/rocket_trainer_portrait.c
+tools/scaninc/scaninc -M build/firered/src/battle_controller_opponent.d -I include -I tools/agbcc/include src/battle_controller_opponent.c
+python3 tools/rocket96_encode.py graphics/trainers/front_pics/jessie_james_hires.png --kind tiles --output graphics/trainers/front_pics/jessie_james_hires.4bpp
+graphics/trainers/front_pics/jessie_james_hires.4bpp 4608 99f3ff74b5438521ba48e4d7fc403acca7df233f003878ddd525bdba8ab14add
+python3 tools/rocket96_encode.py graphics/trainers/front_pics/jessie_james_hires.png --kind palette --output graphics/trainers/palettes/jessie_james_hires.gbapal
+graphics/trainers/palettes/jessie_james_hires.gbapal 32 02951ab3bc6bd04dbce501258a13e92e3ba934728bb8249514b41238f835b792
+DURABLE_ASSETS_INSTALLED_DEFAULT_64

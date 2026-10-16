@@ -1,0 +1,46 @@
+{
+  "created_UTC": "2026-10-14T01:44:10.823506+00:00",
+  "status": "MISTY_IMPLEMENTED_BUILT_NATIVE_33_PASS",
+  "ROM": "/workspaces/pokefirered/outputs/misty-follow-20261014/pokemonthyl_misty_20261014.gba",
+  "ROM_sha256": "1c9a4519a7a6bb5195728977143d42e5f126f8709d992e4602e159ae328d46bf",
+  "ELF_sha256": "fc455fac6fc274185570489cf81671ebb47f60944343904c1b6b96ff7e51ccde",
+  "SAV": "/workspaces/pokefirered/outputs/misty-follow-20261014/pokemonthyl_misty_20261014.sav",
+  "SAV_sha256": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+  "SAV_is_unchanged_copy": true,
+  "native_story_checks": 25,
+  "native_walk_run_checks": 8,
+  "all_10_original_SAVs_unchanged": true,
+  "full_campaign_complete": false,
+  "actual_DELTA_tested": false,
+  "existing_BadEgg_recovered": false,
+  "visible_size_review": {
+    "new_Misty_px": 24,
+    "stock_Red_Misty_woman_px": 19,
+    "same_size_approval_claimed": false
+  },
+  "hoenn_hint_native_status": "15_ACTUAL_A_CASES_AND_2_SAVE_COLD_PASS",
+  "source_backups": [
+    "/workspaces/pokefirered/work/misty-followup-20261014/source-before-integration-v1",
+    "/workspaces/pokefirered/work/devon-story-r2-20261014T012003Z-333e12fc/original-backup"
+  ],
+  "files": {
+    "preview-provenance.json": "eb204599c179eb2e654a523b847ac79b52aa2861d05e10ac9f59100e1cd8a5d6",
+    "Misty-actual-game-walk.gif": "6e05fc19686cd4ff946c3d1cbbb457a67349d446b8adda89213fc0d3621a3b94",
+    "pokemonthyl_misty_20261014.sav": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+    "README-사용법.txt": "1d94ca0cd7c0278ff423cd8a2a2724db89c6193532b88b2c7c21f04a4b5e0f6c",
+    "Misty-heart-actual-game.png": "224951fd0b0bb70101dadf5d743d1478438d67075370cacc670cc043a462e21d",
+    "pokemonthyl_misty_20261014.gba": "1c9a4519a7a6bb5195728977143d42e5f126f8709d992e4602e159ae328d46bf",
+    "Misty-actual-game.png": "3a366ac028220e13df0950ec390c1376cfd7a98fd45f9361f14bc0aebb8246e5",
+    "qa/rom-build-validation.json": "5ab85a38af071593349897cb87da58a170fd05ad9d932d7e47d875bb9022ef49",
+    "qa/misty-walk-8.json": "46cc32618a19293442e11e84ab3657bb3237627f7eaf768e47887f1406aa5e49",
+    "qa/misty-story-25.json": "cef837c963cc699f4b9445aabcf5bb30df172eb281d54a2c83443f6574f31c1e",
+    "qa/hoenn-hints-15.json": "65cd3ccf7bb0f6ce128b7efe2011b4db30d65597dd7e49fdf96fccdbbb2d6c60"
+  },
+  "hoenn_hint_maps": [
+    "Route116",
+    "RusturfTunnel",
+    "RustboroCity_DevonCorp_1F",
+    "RustboroCity_DevonCorp_3F"
+  ],
+  "delivery_ZIP": "/workspaces/pokefirered/outputs/misty-follow-20261014/Thunder-Yellow-Misty-20261014-final.zip"
+}

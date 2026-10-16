@@ -1,0 +1,52 @@
+[
+  {
+    "check": "build",
+    "exit": 0,
+    "log": "/workspaces/pokefirered/work/flannery-20261004/build.log"
+  },
+  {
+    "check": "symbols",
+    "exit": 0,
+    "log": "/workspaces/pokefirered/work/flannery-20261004/symbols.log"
+  },
+  {
+    "check": "flannery",
+    "exit": 0,
+    "log": "/workspaces/pokefirered/work/flannery-20261004/flannery.log"
+  },
+  {
+    "check": "roxanne",
+    "exit": 0,
+    "log": "/workspaces/pokefirered/work/flannery-20261004/roxanne.log"
+  },
+  {
+    "check": "textwidth",
+    "exit": 0,
+    "log": "/workspaces/pokefirered/work/flannery-20261004/textwidth.log"
+  },
+  {
+    "check": "map_integrity",
+    "exit": 0,
+    "log": "/workspaces/pokefirered/work/flannery-20261004/map_integrity.log"
+  },
+  {
+    "check": "event_wiring",
+    "exit": 1,
+    "log": "/workspaces/pokefirered/work/flannery-20261004/event_wiring.log"
+  },
+  {
+    "check": "map_smoke",
+    "exit": 0,
+    "log": "/workspaces/pokefirered/work/flannery-20261004/map_smoke.log"
+  },
+  {
+    "check": "dex",
+    "exit": 0,
+    "log": "/workspaces/pokefirered/work/flannery-20261004/dex.log"
+  },
+  {
+    "check": "savecompat",
+    "exit": 0,
+    "log": "/workspaces/pokefirered/work/flannery-20261004/savecompat.log"
+  }
+]

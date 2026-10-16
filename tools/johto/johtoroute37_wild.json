@@ -1,0 +1,199 @@
+{
+  "map": "MAP_JOHTO_ROUTE37",
+  "base_label": "sJohtoRoute37",
+  "land_mons": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_PIDGEY"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_LEDYBA"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_SPINARAK"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_PIDGEOTTO"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_STANTLER"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_PIDGEY"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_STANTLER"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_PIDGEOTTO"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_LEDYBA"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_STANTLER"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_PIDGEOTTO"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_STANTLER"
+      }
+    ]
+  },
+  "land_mons_morning": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_PIDGEY"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_LEDYBA"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_SPINARAK"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_PIDGEOTTO"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_STANTLER"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_PIDGEY"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_STANTLER"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_PIDGEOTTO"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_LEDYBA"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_STANTLER"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_PIDGEOTTO"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_STANTLER"
+      }
+    ]
+  },
+  "land_mons_night": {
+    "encounter_rate": 10,
+    "mons": [
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_HOOTHOOT"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_SPINARAK"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_SPINARAK"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_NOCTOWL"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_STANTLER"
+      },
+      {
+        "min_level": 15,
+        "max_level": 15,
+        "species": "SPECIES_HOOTHOOT"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_STANTLER"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_NOCTOWL"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_SPINARAK"
+      },
+      {
+        "min_level": 16,
+        "max_level": 16,
+        "species": "SPECIES_STANTLER"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_NOCTOWL"
+      },
+      {
+        "min_level": 17,
+        "max_level": 17,
+        "species": "SPECIES_STANTLER"
+      }
+    ]
+  }
+}

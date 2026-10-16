@@ -1,0 +1,36 @@
+{
+  "pass": true,
+  "physical_DELTA_tested": false,
+  "runtime_memory_writes": false,
+  "synthetic_fixture": true,
+  "before_save": {
+    "pid": 3822976,
+    "ot": 1762033876,
+    "flags": 34,
+    "species": 108,
+    "exp": 59319,
+    "stored_checksum": 26742,
+    "computed_checksum": 26742,
+    "raw_sha256": "99f265b29abb2fb3655209136bfcfcc295de40f762716d1137012c26621f4873",
+    "raw_hex": "80553a00d4800669c6c3bdc5c3cecfc8c1ff0222c4bfcdcdc3bfff007668000054d53c6954d53c6954d53c6954539be354d53c6954d53c6938d53c69e3323c6954933c6943d5266864d51f6940c1287d",
+    "box": 2,
+    "slot": 8
+  },
+  "after_continue": {
+    "pid": 3822976,
+    "ot": 1762033876,
+    "flags": 34,
+    "species": 108,
+    "exp": 59319,
+    "stored_checksum": 26742,
+    "computed_checksum": 26742,
+    "raw_sha256": "99f265b29abb2fb3655209136bfcfcc295de40f762716d1137012c26621f4873",
+    "raw_hex": "80553a00d4800669c6c3bdc5c3cecfc8c1ff0222c4bfcdcdc3bfff007668000054d53c6954d53c6954d53c6954539be354d53c6954d53c6938d53c69e3323c6954933c6943d5266864d51f6940c1287d",
+    "box": 2,
+    "slot": 8
+  },
+  "before_counter": 36,
+  "after_counter": 37,
+  "saved_sha256": "5a5519a36f9d425c2746b00ccbc4c3413b4538f76488bef37f94baeda67f91e4",
+  "all_pc_bytes_preserved": true
+}

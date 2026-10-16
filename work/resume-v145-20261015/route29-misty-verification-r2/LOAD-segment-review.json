@@ -1,0 +1,114 @@
+{
+  "baseline_PT_LOAD_headers": [
+    {
+      "type": 1,
+      "file_offset": 4096,
+      "virtual_address": 33554432,
+      "physical_address": 33554432,
+      "file_size": 0,
+      "memory_size": 261864,
+      "flags": 6,
+      "alignment": 4096
+    },
+    {
+      "type": 1,
+      "file_offset": 4096,
+      "virtual_address": 50331648,
+      "physical_address": 50331648,
+      "file_size": 0,
+      "memory_size": 29900,
+      "flags": 6,
+      "alignment": 4096
+    },
+    {
+      "type": 1,
+      "file_offset": 4096,
+      "virtual_address": 134217728,
+      "physical_address": 134217728,
+      "file_size": 11210488,
+      "memory_size": 11210488,
+      "flags": 7,
+      "alignment": 4096
+    },
+    {
+      "type": 1,
+      "file_offset": 11214848,
+      "virtual_address": 147849216,
+      "physical_address": 147849216,
+      "file_size": 16200484,
+      "memory_size": 16200484,
+      "flags": 5,
+      "alignment": 4096
+    }
+  ],
+  "candidate_PT_LOAD_headers": [
+    {
+      "type": 1,
+      "file_offset": 4096,
+      "virtual_address": 33554432,
+      "physical_address": 33554432,
+      "file_size": 0,
+      "memory_size": 261864,
+      "flags": 6,
+      "alignment": 4096
+    },
+    {
+      "type": 1,
+      "file_offset": 4096,
+      "virtual_address": 50331648,
+      "physical_address": 50331648,
+      "file_size": 0,
+      "memory_size": 29900,
+      "flags": 6,
+      "alignment": 4096
+    },
+    {
+      "type": 1,
+      "file_offset": 4096,
+      "virtual_address": 134217728,
+      "physical_address": 134217728,
+      "file_size": 11210488,
+      "memory_size": 11210488,
+      "flags": 7,
+      "alignment": 4096
+    },
+    {
+      "type": 1,
+      "file_offset": 11214848,
+      "virtual_address": 147849216,
+      "physical_address": 147849216,
+      "file_size": 16200484,
+      "memory_size": 16200484,
+      "flags": 5,
+      "alignment": 4096
+    }
+  ],
+  "all_PT_LOAD_headers_identical": true,
+  "baseline_RWX_headers": [
+    {
+      "type": 1,
+      "file_offset": 4096,
+      "virtual_address": 134217728,
+      "physical_address": 134217728,
+      "file_size": 11210488,
+      "memory_size": 11210488,
+      "flags": 7,
+      "alignment": 4096
+    }
+  ],
+  "candidate_RWX_headers": [
+    {
+      "type": 1,
+      "file_offset": 4096,
+      "virtual_address": 134217728,
+      "physical_address": 134217728,
+      "file_size": 11210488,
+      "memory_size": 11210488,
+      "flags": 7,
+      "alignment": 4096
+    }
+  ],
+  "no_new_RWX_segment": true,
+  "warning_free": false,
+  "linker_or_permission_changes_performed": false
+}

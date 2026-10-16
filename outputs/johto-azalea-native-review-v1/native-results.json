@@ -1,0 +1,10 @@
+[
+  {
+    "case": "events",
+    "exit": 1
+  },
+  {
+    "case": "battles",
+    "exit": 0
+  }
+]

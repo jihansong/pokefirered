@@ -1,0 +1,160 @@
+{
+  "schema": "thunder-yellow-elm-native-only-r2-exact-initial-NPC-visibility-sync",
+  "baseline_ROM_sha256": "af2677993a75979fb36f0768c390d1bad7424e61f2d569b5054d40702250d2e8",
+  "baseline_ELF_sha256": "2549852a48935c680e06e81719b54663b9c0efa7fdaccd31d1f4683886c5d64e",
+  "source_manifest_sha256": [
+    "49e17e3fdc0637f43ddaf5ac1482fca669a84c9a011e58158a2e7153f477742a",
+    "56c460af67497213557291bb41973b7634859f90d112e436c4580feb2fa5cfa7"
+  ],
+  "product_inputs": {
+    "data/layouts/JohtoRoute29/map.bin": {
+      "before_sha256": "aedcb49f54b0d6fae8d5f2c625a73199181d9d18d9f4c5af1c08f80773418ed8",
+      "after_sha256": "5627de7b6074aded401ea881930c2e19e2c25463196011d13d673ea5ccdef762",
+      "bytes": 1920
+    },
+    "tools/johto/build_entry.py": {
+      "before_sha256": "d33a553f89549d14918d86e9888fd1a1d4dfa20032e700601ada332528c1d1a8",
+      "after_sha256": "d9b81aa44dabb389f9cf6213c6ba3a88cf785105d770ab1846cf1db248b8edd4",
+      "bytes": 28144
+    },
+    "tools/johto/route29_landscape_boundaries.py": {
+      "before_sha256": null,
+      "after_sha256": "60b0d06f60d07175262ff82baf27ed491091f616ff614f4612e2d40fa743c04c",
+      "bytes": 2263
+    },
+    "graphics/object_events/pics/people/misty_companion_season1.png": {
+      "before_sha256": "55bbb1d6f30caf9c43d7b38834639d2c635b2870e427b8918ab9d6463360ca7d",
+      "after_sha256": "29d9d7c1c8a6f9815723b3dee6ca12c8cef7a9fa1253aae917badc91c2313ff6",
+      "bytes": 927
+    },
+    "include/constants/event_objects.h": {
+      "path": "include/constants/event_objects.h",
+      "before_sha256": "5fbf0becb7920786392f799dc192b61dc41d6555364e36402acbe4c4f7b1990e",
+      "after_sha256": "c9eb8c4906ec813a1df97578864b6848034b0e9446c8be82d2c747a8a877e286",
+      "bytes": 12488
+    },
+    "src/data/object_events/object_event_graphics.h": {
+      "path": "src/data/object_events/object_event_graphics.h",
+      "before_sha256": "70455e68082d7d002b3107a4e00b83c36d1ec2ab41597ad666f3620564ac95ac",
+      "after_sha256": "15aaf779d8dd7d19dfd1fdf77fcf961109b17475aa03c60e94413b1a122c2287",
+      "bytes": 35257
+    },
+    "src/data/object_events/object_event_pic_tables.h": {
+      "path": "src/data/object_events/object_event_pic_tables.h",
+      "before_sha256": "aed387f4d301bbf7270cc72e2a188413a3503a469293b6ba6d44d30dd8ceae0a",
+      "after_sha256": "eb602db45036b0a65ab6cdefa12065797f1873bd34255c935689fb540b04a2b7",
+      "bytes": 125004
+    },
+    "src/data/object_events/object_event_graphics_info_pointers.h": {
+      "path": "src/data/object_events/object_event_graphics_info_pointers.h",
+      "before_sha256": "8471b1a9ac7b0f839b59e35861d79da90d82bec6a1356ab53647dd416abdc54c",
+      "after_sha256": "f9aed1565b23db00c033ff7031ebc886c5bb1a84046d457e417f939de64c8628",
+      "bytes": 37306
+    },
+    "src/data/object_events/object_event_graphics_info.h": {
+      "path": "src/data/object_events/object_event_graphics_info.h",
+      "before_sha256": "1d5faf4e76c51ad0fbe5ade0bc15a02ff26e7c78769168d5cba26d4f58fe59a6",
+      "after_sha256": "1b9d41c65370a99d076ecabaf6d982ba18de59b4eed193f85943aff80be8d2bf",
+      "bytes": 154900
+    },
+    "graphics_file_rules.mk": {
+      "path": "graphics_file_rules.mk",
+      "before_sha256": "b834fcde208557ec64329d8b481b032eac01894ef7aef48894f9d9453a47b74d",
+      "after_sha256": "8c055ce4fabea9b83833e89d19ba4e416272504268544342b031694aca850867",
+      "bytes": 15757
+    },
+    "data/maps/NewBarkTown_ElmsLab/map.json": {
+      "path": "data/maps/NewBarkTown_ElmsLab/map.json",
+      "before_sha256": "c0c6a9b72b295cd45a5340342682aeff1f24f6871977e688797847ad54e38e11",
+      "after_sha256": "80fe5f0452cff562a4d139a6c50943c74d279c8c56846647e2cb9c986856bd7d",
+      "bytes": 1871
+    },
+    "src/event_object_movement.c": {
+      "path": "src/event_object_movement.c",
+      "before_sha256": "241a15df4e9977c0fb3a8e84507623476470f18de0a1862a8457bb96fbf6a420",
+      "after_sha256": "5bcc1fc5203d1f3100f805998c4b89ab0f7884c5e531197d0ab7e964eab2aa26",
+      "bytes": 334994
+    },
+    "graphics/object_events/pics/people/prof_elm_hns.png": {
+      "path": "graphics/object_events/pics/people/prof_elm_hns.png",
+      "before_sha256": null,
+      "after_sha256": "2f7b4754a92e7d056beda95560194594dd800ff3cd23b14c2cd2db0710a6272c",
+      "bytes": 835,
+      "donor_path": "graphics/object_events/pics/people/special/elm_hns.png"
+    },
+    "graphics/object_events/palettes/prof_elm_hns.pal": {
+      "path": "graphics/object_events/palettes/prof_elm_hns.pal",
+      "before_sha256": null,
+      "after_sha256": "a1ba9c9bd1da4a787c4a469ecbbdaea36d79af32d402e7dd0e8127c3a06e55bc",
+      "bytes": 191,
+      "donor_path": "graphics/object_events/palettes/elm_hns.pal"
+    }
+  },
+  "guarded_sources": {
+    "data/maps/JohtoRoute29/map.json": "661b02f43cb5c31e2a249014bd72ba37996f4ba6aa46179d0bd0379273b8f4f0",
+    "data/maps/JohtoRoute29/scripts.inc": "f414805c33ba10c1a6e1c88a61ca9b3ff2e8deb656d039293e73b11634501742",
+    "data/maps/JohtoRoute29/text.inc": "c0879acf06e1df5b8d7dec2a48cbcc4e12543ba569f9ea620c1f9966d091e7c4",
+    "data/layouts/JohtoRoute29/border.bin": "4f4aa105dfd88fa5d7cfa853fd7f794bf2acea638cdba8823481fac2ea22a91f",
+    "data/layouts/layouts.json": "98bf104f2682e018439f22092d0321c3c75b7cb1a0c5d1a45e3135a9076ba75c",
+    "data/tilesets/primary/general/metatile_attributes.bin": "1f62a949da41adca90ad36ca3597754bee953a8f21781f32aedf6158922c89cb",
+    "data/tilesets/secondary/pallet_town/metatile_attributes.bin": "8af5fbc8c32e5d0de4fe66735603d46ecd3506c42fcbe8b6cac744496a25203a",
+    "graphics/object_events/palettes/player.pal": "d76189cdedca19ea3c4fb5bc500380a7f6d9dc9ee31e849ec6c67bb88da8a1b1",
+    "src/companion_misty.c": "7acf4b9a66101a46687c71b3563f942c712990844c0c2927fc2afa797a8692d9",
+    "include/constants/event_objects.h": "c9eb8c4906ec813a1df97578864b6848034b0e9446c8be82d2c747a8a877e286",
+    "src/data/object_events/object_event_graphics.h": "15aaf779d8dd7d19dfd1fdf77fcf961109b17475aa03c60e94413b1a122c2287",
+    "src/data/object_events/object_event_graphics_info.h": "1b9d41c65370a99d076ecabaf6d982ba18de59b4eed193f85943aff80be8d2bf",
+    "src/data/object_events/object_event_graphics_info_pointers.h": "f9aed1565b23db00c033ff7031ebc886c5bb1a84046d457e417f939de64c8628",
+    "src/data/object_events/object_event_pic_tables.h": "eb602db45036b0a65ab6cdefa12065797f1873bd34255c935689fb540b04a2b7",
+    "graphics_file_rules.mk": "8c055ce4fabea9b83833e89d19ba4e416272504268544342b031694aca850867",
+    "spritesheet_rules.mk": "01c3cbc5d9b47ad183e1a8bf5a58a2e5bf20bde98d8761f48fa381bae8e96e20",
+    "src/pokemon.c": "373b692e42d952b94b44f0ceda81d56dc75e1abb6af9d60ca5ec47d927b2057c",
+    "tools/johto/route29_wild.json": "61b2499532afb5c9eec0c084c5f1cce271705c759b65e55246c71a508d130323",
+    "tools/johto/apply_route29_wild.py": "603652ddf01d1c301d50c02ddfd19f68f41f7c6615fb6a72247fa1254730dba8",
+    "src/data/object_events/object_event_anims.h": "55a05af806c410b2bb357f10ffa7365074fb2b081544184696e47642cb62ad13",
+    "tools/qa/native_misty_basic_qa.py": "5b26bfee0a30d2f446a1981429aac0dc70d9ec0c8748c218ec38b3dd33be4ec6",
+    "tools/qa/johto_violet_native_bootstrap_v1.py": "83c4557b96c344b241fc6f79e9b17722acfc0b0e81e0f9e6d649ff5d8b1c84bb",
+    "tools/qa/emu.py": "c8d3ba672d7ecc84dcefab513d84223f410e9d8cb43081cee4b37555e1378e69",
+    "tools/qa/gamedata.py": "acaa4654ed889dc4f98f6c20dc26a85ea8d35963a771967c159ca4edc26a7ab3",
+    "tools/qa/savefile.py": "e6cc1acb8569dbdca6d1b7b095835a5271c9e16de9d2fa3f976d15b50b9b7daa",
+    "tools/qa/hoenn_gauntlet_save_qa.py": "b22478d2eac54849a6f5e8effdbb8ad67f5a3a34cc3da02dd63db39f0ad1941b",
+    "include/event_object_movement.h": "ecc4e09bfcb981fdab022c2da77ffb0e734e9dfcdacc8ab8f54667dd656aad44",
+    "data/maps/NewBarkTown_ElmsLab/scripts.inc": "e539a5118c57020f82580089d16e9091e73d5b885a0ec0cfe6e1211558fb1e4a",
+    "data/maps/NewBarkTown_ElmsLab/text.inc": "fdfc4156a4313d91770bd1d5dd624b50edd9cd53f966e1e8d7fa16fff4ca8c3f",
+    "data/maps/NewBarkTown/map.json": "81cdf8f69b17fa4a553299b6aa69e5f7e9902407e4f51b8a353d13ca21612b0c",
+    "data/layouts/NewBarkTown_ElmsLab/map.bin": "a1ca472215cd91f5128360af49880035be67b82fb43120758826a21e6a8d803f",
+    "data/layouts/NewBarkTown/map.bin": "ec485c3937f083435ddb1d74d028fe267c893967726196f948feef1384fbeee9",
+    "src/field_specials.c": "f8448fb911ce7fb8d16a28bd58aeda8890d11c1d7f60211793cb279661331a87",
+    "include/constants/flags_hoenn_story.h": "493679980358d6b5a5f98d1cd7283ec211f20240e435b91711baa8c1a0debb1f"
+  },
+  "protected_user_saves_expected": {
+    "saves/pokemonthyl_v1.45.sav": "0949ebf04557a76e2175602e967eefadb7ffb722f2746be8a40ddb1fd66550a9",
+    "saves/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "saves/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "saves/hoenn.sav": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+    "saves/pokemonthyl_v1.4-synced-recovered.sav": "c06ad0536f1ee13fd88a3cf36346b52d3d5ca0cae7e729723acf6047d916feb8",
+    "saves/pokemonthyl_v1.25-items99-iv2x.sav": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+    "saves/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "saves/pokemonthyl_hoenn_QAed.sav": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+    "saves/pokemonthyl_v1.25.sav": "53d923bf4668373724b19c9d3c8526b002701606ab7ac082d657ee990e23d7b3",
+    "saves/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "saves/pokemonthyl_v1.4-synced.sav": "99f4100d09961196706282a02e96ee9017a0a591777aa3ca0b40249ec8ae89e8",
+    "saves/pokemonthyl_v1.4.sav": "32f46c05aa5b606f924eb0b0ed4bdefc08b8025e4ff63e5f970cc8ec75b99ec4",
+    "saves/pokemonthyl_v1.1.sav": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+    "saves/pokemonthyl_v1.25-items99-iv2x-pp15.sav": "917c24715ca1dd78b22d6350182648fa81f307b771fa5524595d157a0b6a6604",
+    "saves/pokemonthyl_v1.2.sav": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85"
+  },
+  "compiled_misty_sha256": "e095b1cdcb883a0e9ace966ae7a158f225d93ce9a69c6811bc17e53110f66aaf",
+  "player_palette_BGR555_sha256": "3f8a1c94699742cf122ca29a9a8f0a212f518d940795450888834b84712a76da",
+  "compiled_misty_bytes": 2304,
+  "compiled_route29_bytes": 1920,
+  "immutable_side_frames": [
+    2,
+    7,
+    8
+  ],
+  "no_auto_rollback": true,
+  "product_applied": false,
+  "native_executed": false,
+  "previous_guard_manifest_sha256": "71ff27316ee2737ff1bc55a69b065b6f04dd102dbb49c8ad735c9f399dd6bfec",
+  "elm_manifest_sha256": "a5801bbaac1cb71e187e2eafc4b78730a92044de345126f8212ec4d80f743252"
+}

@@ -1,0 +1,16 @@
+patched FortreeCity_Gym
+patched FortreeCity_Gym
+{
+  "applied": [
+    "include/constants/flags_hoenn_story.h",
+    "tools/hoenn_import/patches/FortreeCity_Gym.scripts.inc",
+    "tools/hoenn_import/patches/FortreeCity_Gym.text.inc",
+    "tools/qa/cases/z5_winona.jsonl",
+    "docs/team/qa/codex-z5-winona-20261004/README.md",
+    "data/maps/FortreeCity_Gym/scripts.inc",
+    "data/maps/FortreeCity_Gym/text.inc"
+  ],
+  "backup": "/workspaces/pokefirered/.qa-winona-before-20261004T141525Z",
+  "stage": "/workspaces/pokefirered/.qa-winona-stage-yqh6v4ii",
+  "runtime_qa": "NOT_RUN"
+}

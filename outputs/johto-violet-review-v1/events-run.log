@@ -1,0 +1,30 @@
+ok   johto_violet_route30_north
+ok   johto_violet_route31_south
+ok   johto_violet_route31_west
+ok   johto_violet_violet_east
+ok   johto_violet_center_door_roundtrip
+ok   johto_violet_mart_door_roundtrip
+ok   johto_violet_academy_door_roundtrip
+ok   johto_violet_gym_door_roundtrip
+ok   johto_violet_tower_door_roundtrip
+FAIL johto_violet_tower_1_to_2
+     expect map SproutTower_2F: on map 76.20
+FAIL johto_violet_tower_2_to_1
+     expect map SproutTower_1F: on map 76.21
+FAIL johto_violet_tower_2_to_3
+     expect map SproutTower_3F: on map 76.21
+FAIL johto_violet_tower_3_to_2
+     expect map SproutTower_2F: on map 76.22
+ok   johto_violet_center_heals
+ok   johto_violet_elder_report_gate
+ok   johto_violet_falkner_tower_gate
+ok   johto_violet_elder_flash_award_repeat
+ok   johto_violet_elder_existing_flash_preserved
+ok   johto_violet_elder_claimed_flash_not_reissued
+ok   johto_violet_falkner_tm_award_repeat_kanto_preserved
+ok   johto_violet_falkner_tm_stack_full_keeps_retry
+ok   johto_violet_falkner_tm_retry_after_space
+ok   johto_violet_falkner_claimed_tm_not_reissued
+ok   johto_violet_academy_three_region_records
+ok   johto_violet_negative_report_gate
+21/25 cases passed

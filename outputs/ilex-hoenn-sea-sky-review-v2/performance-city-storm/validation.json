@@ -1,0 +1,72 @@
+{
+  "pass": true,
+  "rom_sha256": "475088869b9937e4c1ed81ca920b8c2bb862ac44f1e2f50c9997cf9dadbfb02a",
+  "elf_sha256": "0fbf12e4c77a09628cdb1fb730965993dffadebf454f0cae0cca5b28c11f209b",
+  "save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "mode": "native-storm-performance-city-storm",
+  "fixture": "temporary city fixture; genuine original party/PC/dex preserved",
+  "ram_writes": 0,
+  "forced_battle_outcomes": 0,
+  "stages": [],
+  "native_abi": {
+    "BattlePokemon": 88,
+    "BattleMove": 12
+  },
+  "pc_before_sha256": "98624eaafb9606453b8367fdbf6b08bdc380cefb76a42064665cc0b61453fc10",
+  "native_story_not_entire_regions": true,
+  "source_storage_full_sha256": "50b64dde4fe08155672879522750a2dcf60ff0e196045d72475920a6f17a09fd",
+  "source_party_full_sha256": "81a7fdfe9baaf7f4ee2d675e54ccca6c57a607dd0c08409405c71ba033fe7bfb",
+  "genuine_starter_slot": 1,
+  "actual_device_fps_measured": false,
+  "weather_runtime_before_save": {
+    "currWeather": 5,
+    "nextWeather": 5,
+    "rainSpriteCount": 24,
+    "targetRainSpriteCount": 16,
+    "weatherChangeComplete": 1
+  },
+  "storm_budget_pass": true,
+  "native_save": {
+    "counter_before": 61,
+    "counter_after": 62,
+    "valid_sectors": 14,
+    "cold_reopen": true,
+    "flags": {
+      "FLAG_HOENN_SEAFLOOR_CLEARED": true,
+      "FLAG_HOENN_RAYQUAZA_AWAKENED": false,
+      "FLAG_HOENN_BADGE07_GET": true,
+      "FLAG_HOENN_BADGE08_GET": false,
+      "FLAG_HOENN_GOT_TM03": false,
+      "FLAG_HOENN_SPACE_CENTER_SECURED": true,
+      "FLAG_HOENN_GOT_HM08_FROM_STEVEN": false
+    },
+    "trainers": {
+      "TRAINER_HOENN_ARCHIE": false,
+      "TRAINER_HOENN_JUAN_1": false
+    },
+    "hm08": 0,
+    "sha256": "62922317b016b984941f3c8011f5468e0bf12d1b74b77ab35c17a0531ec3f875"
+  },
+  "full_party_storage_dex_native_roundtrip": true,
+  "weather_runtime_after_cold_save": {
+    "currWeather": 5,
+    "nextWeather": 5,
+    "rainSpriteCount": 24,
+    "targetRainSpriteCount": 16,
+    "weatherChangeComplete": 1
+  },
+  "native_weather_and_wallace": {
+    "weather": 5,
+    "cold_save": true
+  },
+  "story_flags_after": {
+    "FLAG_HOENN_SEAFLOOR_CLEARED": true,
+    "FLAG_HOENN_RAYQUAZA_AWAKENED": false,
+    "FLAG_HOENN_BADGE07_GET": true,
+    "FLAG_HOENN_BADGE08_GET": false,
+    "FLAG_HOENN_GOT_TM03": false,
+    "FLAG_HOENN_SPACE_CENTER_SECURED": true,
+    "FLAG_HOENN_GOT_HM08_FROM_STEVEN": false
+  },
+  "original_saves_unchanged": true
+}

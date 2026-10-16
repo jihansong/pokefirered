@@ -1,0 +1,158 @@
+{
+  "rom_sha256": "799ef72e82454fdf895550551bc0ef33a5253dfa92fc4c734996b4a1682ea096",
+  "initial_save_sha256": "7eba0a5e5c82e053973210ad13e61725607a4f8aa97a4ad9acda91f65481d140",
+  "cases": [
+    {
+      "case": "cold_nurse_JohtoLeague_PokemonCenter_1F_2",
+      "map": "JohtoLeague_PokemonCenter_1F",
+      "party_count": 2,
+      "cold_name_before": "000000000000000000000000",
+      "actual_heal_pp_hp_status": true,
+      "all_party_identities_non_PP_substructures_and_original_two_preserved": true,
+      "full_pc_dex_all_normal_and_regional_flags_and_trainers_preserved": true,
+      "native_SAVE_cold": {
+        "counter": [
+          115,
+          116
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-phase5-cold-nurse-final/cold_nurse_JohtoLeague_PokemonCenter_1F_2-native-QA-only.sav"
+      },
+      "initial_fixture_extra_legal_nonstarter_slot_copies": 0,
+      "initial_derived_visibility_fixture": {
+        "applied": true,
+        "actual_source_formulas": true,
+        "actual_continue_source_sha256": "f8448fb911ce7fb8d16a28bd58aeda8890d11c1d7f60211793cb279661331a87",
+        "flags": {
+          "FLAG_HIDE_HOENN_BIRCH_LAB": true,
+          "FLAG_HIDE_HOENN_RIVAL_ROUTE103": true,
+          "FLAG_HIDE_HOENN_RUSTBORO_THIEF": true,
+          "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+          "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+          "FLAG_HIDE_HOENN_BRINEY": true,
+          "FLAG_HIDE_HOENN_WALLY_PETALBURG": true,
+          "FLAG_HIDE_HOENN_WALLY_VERDANTURF": true,
+          "FLAG_HIDE_HOENN_WANDA_BOYFRIEND": true,
+          "FLAG_HIDE_HOENN_ROCKET_WOODS": true,
+          "FLAG_HIDE_HOENN_RIVAL_LAB": true
+        },
+        "normal_story_and_all_other_regional_bits_unchanged": true,
+        "before_regional_flags_sha256": "42caafd025e0daab7d47baeed65167bcf3313d3258316146070ae396b1e618c9",
+        "after_regional_flags_sha256": "412ce6db2ba14453f4453f9cdf6600a5a8de7d77021f89506fe70c2328b29815",
+        "original_source_save_changed": false,
+        "native_save_assertions_unchanged": true
+      },
+      "forced_game_memory_writes": 0
+    },
+    {
+      "case": "cold_nurse_JohtoLeague_PokemonCenter_1F_6",
+      "map": "JohtoLeague_PokemonCenter_1F",
+      "party_count": 6,
+      "cold_name_before": "000000000000000000000000",
+      "actual_heal_pp_hp_status": true,
+      "all_party_identities_non_PP_substructures_and_original_two_preserved": true,
+      "full_pc_dex_all_normal_and_regional_flags_and_trainers_preserved": true,
+      "native_SAVE_cold": {
+        "counter": [
+          115,
+          116
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-phase5-cold-nurse-final/cold_nurse_JohtoLeague_PokemonCenter_1F_6-native-QA-only.sav"
+      },
+      "initial_fixture_extra_legal_nonstarter_slot_copies": 4,
+      "initial_derived_visibility_fixture": {
+        "applied": true,
+        "actual_source_formulas": true,
+        "actual_continue_source_sha256": "f8448fb911ce7fb8d16a28bd58aeda8890d11c1d7f60211793cb279661331a87",
+        "flags": {
+          "FLAG_HIDE_HOENN_BIRCH_LAB": true,
+          "FLAG_HIDE_HOENN_RIVAL_ROUTE103": true,
+          "FLAG_HIDE_HOENN_RUSTBORO_THIEF": true,
+          "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+          "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+          "FLAG_HIDE_HOENN_BRINEY": true,
+          "FLAG_HIDE_HOENN_WALLY_PETALBURG": true,
+          "FLAG_HIDE_HOENN_WALLY_VERDANTURF": true,
+          "FLAG_HIDE_HOENN_WANDA_BOYFRIEND": true,
+          "FLAG_HIDE_HOENN_ROCKET_WOODS": true,
+          "FLAG_HIDE_HOENN_RIVAL_LAB": true
+        },
+        "normal_story_and_all_other_regional_bits_unchanged": true,
+        "before_regional_flags_sha256": "42caafd025e0daab7d47baeed65167bcf3313d3258316146070ae396b1e618c9",
+        "after_regional_flags_sha256": "412ce6db2ba14453f4453f9cdf6600a5a8de7d77021f89506fe70c2328b29815",
+        "original_source_save_changed": false,
+        "native_save_assertions_unchanged": true
+      },
+      "forced_game_memory_writes": 0
+    },
+    {
+      "case": "cold_nurse_CeruleanCity_PokemonCenter_1F_2",
+      "map": "CeruleanCity_PokemonCenter_1F",
+      "party_count": 2,
+      "cold_name_before": "ff0000000000000000000000",
+      "actual_heal_pp_hp_status": true,
+      "all_party_identities_non_PP_substructures_and_original_two_preserved": true,
+      "full_pc_dex_all_normal_and_regional_flags_and_trainers_preserved": true,
+      "native_SAVE_cold": {
+        "counter": [
+          115,
+          116
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-phase5-cold-nurse-final/cold_nurse_CeruleanCity_PokemonCenter_1F_2-native-QA-only.sav"
+      },
+      "initial_fixture_extra_legal_nonstarter_slot_copies": 0,
+      "initial_derived_visibility_fixture": {
+        "applied": false,
+        "reason": "original Kanto room is outside Hoenn Continue setup"
+      },
+      "forced_game_memory_writes": 0
+    },
+    {
+      "case": "cold_nurse_PetalburgCity_PokemonCenter_1F_6",
+      "map": "PetalburgCity_PokemonCenter_1F",
+      "party_count": 6,
+      "cold_name_before": "000000000000000000000000",
+      "actual_heal_pp_hp_status": true,
+      "all_party_identities_non_PP_substructures_and_original_two_preserved": true,
+      "full_pc_dex_all_normal_and_regional_flags_and_trainers_preserved": true,
+      "native_SAVE_cold": {
+        "counter": [
+          115,
+          116
+        ],
+        "checksummed_sectors": 14,
+        "qa_save": "/workspaces/pokefirered/outputs/regions-q9-review-v1/native-phase5-cold-nurse-final/cold_nurse_PetalburgCity_PokemonCenter_1F_6-native-QA-only.sav"
+      },
+      "initial_fixture_extra_legal_nonstarter_slot_copies": 4,
+      "initial_derived_visibility_fixture": {
+        "applied": true,
+        "actual_source_formulas": true,
+        "actual_continue_source_sha256": "f8448fb911ce7fb8d16a28bd58aeda8890d11c1d7f60211793cb279661331a87",
+        "flags": {
+          "FLAG_HIDE_HOENN_BIRCH_LAB": true,
+          "FLAG_HIDE_HOENN_RIVAL_ROUTE103": true,
+          "FLAG_HIDE_HOENN_RUSTBORO_THIEF": true,
+          "FLAG_HIDE_HOENN_RUSTURF_GRUNT": true,
+          "FLAG_HIDE_HOENN_RUSTURF_PEEKO": true,
+          "FLAG_HIDE_HOENN_BRINEY": true,
+          "FLAG_HIDE_HOENN_WALLY_PETALBURG": true,
+          "FLAG_HIDE_HOENN_WALLY_VERDANTURF": true,
+          "FLAG_HIDE_HOENN_WANDA_BOYFRIEND": true,
+          "FLAG_HIDE_HOENN_ROCKET_WOODS": true,
+          "FLAG_HIDE_HOENN_RIVAL_LAB": true
+        },
+        "normal_story_and_all_other_regional_bits_unchanged": true,
+        "before_regional_flags_sha256": "42caafd025e0daab7d47baeed65167bcf3313d3258316146070ae396b1e618c9",
+        "after_regional_flags_sha256": "412ce6db2ba14453f4453f9cdf6600a5a8de7d77021f89506fe70c2328b29815",
+        "original_source_save_changed": false,
+        "native_save_assertions_unchanged": true
+      },
+      "forced_game_memory_writes": 0
+    }
+  ],
+  "all_pass": true,
+  "forced_game_memory_writes": 0,
+  "original_files_unchanged": true
+}

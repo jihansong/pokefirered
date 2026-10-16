@@ -1,0 +1,55 @@
+[TRAINER_MISTY_COMPANION_STAGE0] =
+{
+    .trainerClass = TRAINER_CLASS_LEADER,
+    .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+    .trainerPic = TRAINER_PIC_LEADER_MISTY,
+    .trainerName = _("MISTY"),
+    .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+    .doubleBattle = FALSE,
+    .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+    .party = NO_ITEM_CUSTOM_MOVES(sPartyMistyCompanionStage0),
+},
+[TRAINER_MISTY_COMPANION_STAGE1] =
+{
+    .trainerClass = TRAINER_CLASS_LEADER,
+    .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+    .trainerPic = TRAINER_PIC_LEADER_MISTY,
+    .trainerName = _("MISTY"),
+    .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+    .doubleBattle = FALSE,
+    .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+    .party = NO_ITEM_CUSTOM_MOVES(sPartyMistyCompanionStage1),
+},
+[TRAINER_MISTY_COMPANION_STAGE2] =
+{
+    .trainerClass = TRAINER_CLASS_LEADER,
+    .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+    .trainerPic = TRAINER_PIC_LEADER_MISTY,
+    .trainerName = _("MISTY"),
+    .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+    .doubleBattle = FALSE,
+    .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+    .party = NO_ITEM_CUSTOM_MOVES(sPartyMistyCompanionStage2),
+},
+[TRAINER_MISTY_COMPANION_STAGE3] =
+{
+    .trainerClass = TRAINER_CLASS_LEADER,
+    .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+    .trainerPic = TRAINER_PIC_LEADER_MISTY,
+    .trainerName = _("MISTY"),
+    .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+    .doubleBattle = FALSE,
+    .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+    .party = NO_ITEM_CUSTOM_MOVES(sPartyMistyCompanionStage3),
+},
+[TRAINER_MISTY_COMPANION_STAGE4] =
+{
+    .trainerClass = TRAINER_CLASS_LEADER,
+    .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+    .trainerPic = TRAINER_PIC_LEADER_MISTY,
+    .trainerName = _("MISTY"),
+    .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+    .doubleBattle = FALSE,
+    .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+    .party = NO_ITEM_CUSTOM_MOVES(sPartyMistyCompanionStage4),
+},

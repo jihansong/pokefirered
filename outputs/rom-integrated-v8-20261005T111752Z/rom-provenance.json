@@ -1,0 +1,231 @@
+{
+  "old_elf_sha256": "ea7b8de2ab7860165191e78acab275950302a78d81bf78570a94541ef89a0234",
+  "new_elf_sha256": "08a3304efb25a2ece1d0c2b73b086498cd813a6939d09835e7b74c66c5598080",
+  "new_rom_bytes": 33554432,
+  "new_rom_sha256": "72afe776f25a91f8e215282166490da0fa75aaf2b723ac61826e5f12db52e376",
+  "compiled_save_layout_equal": true,
+  "save_layout_resident_matches_elf": true,
+  "old_save_layout": {
+    "blocks": {
+      "gSaveBlock1": 15720,
+      "gSaveBlock2": 3876,
+      "gPokemonStorage": 33744
+    },
+    "sector_layout": [
+      [
+        0,
+        3876
+      ],
+      [
+        0,
+        3968
+      ],
+      [
+        3968,
+        3968
+      ],
+      [
+        7936,
+        3968
+      ],
+      [
+        11904,
+        3816
+      ],
+      [
+        0,
+        3968
+      ],
+      [
+        3968,
+        3968
+      ],
+      [
+        7936,
+        3968
+      ],
+      [
+        11904,
+        3968
+      ],
+      [
+        15872,
+        3968
+      ],
+      [
+        19840,
+        3968
+      ],
+      [
+        23808,
+        3968
+      ],
+      [
+        27776,
+        3968
+      ],
+      [
+        31744,
+        2000
+      ]
+    ],
+    "sector_layout_sha256": "ee1f9bc20ab82f62e45a2451450517ea539f6ef48bd31045dc2430b8525fcd68"
+  },
+  "new_save_layout": {
+    "blocks": {
+      "gSaveBlock1": 15720,
+      "gSaveBlock2": 3876,
+      "gPokemonStorage": 33744
+    },
+    "sector_layout": [
+      [
+        0,
+        3876
+      ],
+      [
+        0,
+        3968
+      ],
+      [
+        3968,
+        3968
+      ],
+      [
+        7936,
+        3968
+      ],
+      [
+        11904,
+        3816
+      ],
+      [
+        0,
+        3968
+      ],
+      [
+        3968,
+        3968
+      ],
+      [
+        7936,
+        3968
+      ],
+      [
+        11904,
+        3968
+      ],
+      [
+        15872,
+        3968
+      ],
+      [
+        19840,
+        3968
+      ],
+      [
+        23808,
+        3968
+      ],
+      [
+        27776,
+        3968
+      ],
+      [
+        31744,
+        2000
+      ]
+    ],
+    "sector_layout_sha256": "ee1f9bc20ab82f62e45a2451450517ea539f6ef48bd31045dc2430b8525fcd68"
+  },
+  "resident_sections_match": true,
+  "v11_resident_matches": [
+    {
+      "symbol": "gTrainerFrontPic_JessieJames",
+      "address": "0x8e6a6d4",
+      "stored_bytes": 1256,
+      "decoded_bytes": 2048,
+      "lz77": true,
+      "sha256": "5b036768fc2712765eab94952b2757a7783b953062ef440f26eb7e9e6f38d2b1",
+      "approved_files": [
+        "outputs/rocket-art-v11-nose-and-size-review/jessie-james-v11-game-size-64.4bpp"
+      ],
+      "elf_equals_rom": true
+    },
+    {
+      "symbol": "gTrainerPalette_JessieJames",
+      "address": "0x8e6abbc",
+      "stored_bytes": 40,
+      "decoded_bytes": 32,
+      "lz77": true,
+      "sha256": "02951ab3bc6bd04dbce501258a13e92e3ba934728bb8249514b41238f835b792",
+      "approved_files": [
+        "outputs/rocket-art-v11-nose-and-size-review/jessie-james-v11-96.gbapal",
+        "outputs/rocket-art-v11-nose-and-size-review/jessie-james-v11-game-size-64.gbapal"
+      ],
+      "elf_equals_rom": true
+    }
+  ],
+  "v11_table_references": {
+    "gTrainerFrontPicTable": {
+      "trainer_pic_id": 148,
+      "pointer": "0x8e6a6d4",
+      "target_symbols": [
+        "gTrainerFrontPic_JessieJames"
+      ],
+      "size_or_tag": 2048,
+      "tag_or_pad": 148,
+      "elf_equals_rom": true
+    },
+    "gTrainerFrontPicPaletteTable": {
+      "trainer_pic_id": 148,
+      "pointer": "0x8e6abbc",
+      "target_symbols": [
+        "gTrainerPalette_JessieJames"
+      ],
+      "size_or_tag": 148,
+      "tag_or_pad": 0,
+      "elf_equals_rom": true
+    },
+    "coords_hex": "0801"
+  },
+  "approved_opening_assets": {
+    "sOpeningMoviePixels": {
+      "address": "0x8ebc3d8",
+      "bytes": 14192640,
+      "sha256": "ff8c4e7f91ef541952f638043efdfe396d416777aaa984350869da3e603b66c3",
+      "source_equals_elf": true,
+      "elf_equals_rom": true
+    },
+    "sOpeningMoviePalettes": {
+      "address": "0x9c453d8",
+      "bytes": 178688,
+      "sha256": "f253176e6ead3f2f5dd55c01de2f33881ce143527c464d076d2786bc348724f7",
+      "source_equals_elf": true,
+      "elf_equals_rom": true
+    },
+    "sOpeningMovieFrames": {
+      "address": "0x9c70dd8",
+      "bytes": 6016,
+      "sha256": "22517a83536902b9c4245234a7bd84fd15b75fcbb00c70dbb274e648268d3938",
+      "source_equals_elf": true,
+      "elf_equals_rom": true
+    }
+  },
+  "save_files": {
+    "saves/backup-codex-v1_1-recovery-sort-20261002T002244.307175Z/pokemonthyl_v1.1.original.sav": "417452a3f151dbe0eeaca4d41780739f8137eafd7ff14df4e7eed1685b9b699f",
+    "saves/backup-v0.6.0-era/hoenn.sav": "d1ed8d987d4e451efb00a6cda2ba770e6472f36a89595a04a3550156876806ad",
+    "saves/backup-v0.6.0-era/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "saves/backup-v0.6.0-era/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "saves/backup-v0.6.0-era/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "saves/backup-v0.6.0-era/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "saves/hoenn.sav": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+    "saves/pokemonthyl_hoenn_QAed.sav": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+    "saves/pokemonthyl_v1.1.sav": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+    "saves/pokemonthyl_v1.2.sav": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+    "saves/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "saves/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "saves/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "saves/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc"
+  },
+  "review_rom_same_bytes": true
+}

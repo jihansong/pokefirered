@@ -1,0 +1,57 @@
+[
+  {
+    "path": "tools/hoenn/restore_victory_road_b1f_obstacles.py",
+    "bytes": 5647,
+    "sha256": "e0ec7efd4ecde2d25961df2301a4f8cedaf3fd4e572102510d8ce15b52d37932"
+  },
+  {
+    "path": "tools/hoenn/patch_strength_rock_region_gate.py",
+    "bytes": 6093,
+    "sha256": "1252337c90f73ed8957d09d64ba655ba61b253c1cb6db42a73b473835f116197"
+  },
+  {
+    "path": "tools/qa/native_strength_rock_puzzle_qa.py",
+    "bytes": 22466,
+    "sha256": "ab57a60e8f4961c318c0b975863c0ac36075f3e7556f363ae508b702928a3841"
+  },
+  {
+    "path": "tools/qa/native_victory_road_b1f_route_qa.py",
+    "bytes": 8314,
+    "sha256": "663fdd5f94a284972053608f220cec304efaa993f1fc54549f37de400b6f2ef9"
+  },
+  {
+    "path": "tools/johto/patch_fly_region_gate.py",
+    "bytes": 4009,
+    "sha256": "62523e7a9d20069710a4e3524ddcdbc93c455aab1ca63bbecf58be5dc3798c16"
+  },
+  {
+    "path": "tools/johto/patch_fly_destinations.py",
+    "bytes": 10896,
+    "sha256": "0bb583f88d4ac4505d80f1a9b828c3345638457b42ace7d78f2b6353c972243d"
+  },
+  {
+    "path": "tools/qa/native_fly_region_qa.py",
+    "bytes": 22362,
+    "sha256": "959c2b273025b22892183c7a6804b1e58380f5a88a14636e61f877c21f3cbde8"
+  },
+  {
+    "path": "tools/qa/native_vr_b1f_performance_helper.py",
+    "bytes": 5340,
+    "sha256": "d198d17e511918cf8253e6b799180bb89afd742b7ecae52f3edef26fe621cfb5"
+  },
+  {
+    "path": "tools/qa/native_vr_b1f_performance_wrapper.py",
+    "bytes": 5282,
+    "sha256": "fd89129f2e69d328c8b8addb0b2653947e2e52bd3e04ec4ad4345ef06483e7ae"
+  },
+  {
+    "path": "tools/qa/build_vr_b1f_performance_fixture.py",
+    "bytes": 5034,
+    "sha256": "0b4c4ba5b3ce6a4a120c0fd2a24b73bb05eda95934a7e2464ad9273fcd1c8b72"
+  },
+  {
+    "path": "tools/qa/native_legacy_fly_allocation_qa.py",
+    "bytes": 4096,
+    "sha256": "b220af0e753fe857ed211abf6d05d3f3e574ab87056327f6b46e6bdba2db3cdc"
+  }
+]

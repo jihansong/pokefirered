@@ -1,0 +1,342 @@
+--- src/pokemon.c
++++ src/pokemon.c
+@@ -2238,7 +2238,10 @@
+         if (!existingMove)
+         {
+             SetBoxMonData(boxMon, MON_DATA_MOVE1 + i, &move);
+-            SetBoxMonData(boxMon, MON_DATA_PP1 + i, &gBattleMoves[move].pp);
++            {
++                u8 pp = CalculateBoxMonPPWithBonus(boxMon, move, GetBoxMonData(boxMon, MON_DATA_PP_BONUSES, NULL), i);
++                SetBoxMonData(boxMon, MON_DATA_PP1 + i, &pp);
++            }
+             return move;
+         }
+         if (existingMove == move)
+@@ -2256,7 +2259,7 @@
+         if (!mon->moves[i])
+         {
+             mon->moves[i] = move;
+-            mon->pp[i] = gBattleMoves[move].pp;
++            mon->pp[i] = CalculateBattleMonMaxPP(mon - gBattleMons, i);
+             return move;
+         }
+     }
+@@ -2267,14 +2270,17 @@
+ void SetMonMoveSlot(struct Pokemon *mon, u16 move, u8 slot)
+ {
+     SetMonData(mon, MON_DATA_MOVE1 + slot, &move);
+-    SetMonData(mon, MON_DATA_PP1 + slot, &gBattleMoves[move].pp);
++    {
++        u8 pp = CalculateMonPPWithBonus(mon, move, 0, slot);
++        SetMonData(mon, MON_DATA_PP1 + slot, &pp);
++    }
+     UpdatePikachuMoodForLearnedMove(mon, move);
+ }
+ 
+ void SetBattleMonMoveSlot(struct BattlePokemon *mon, u16 move, u8 slot)
+ {
+     mon->moves[slot] = move;
+-    mon->pp[slot] = gBattleMoves[move].pp;
++    mon->pp[slot] = CalculateBattleMonMaxPP(mon - gBattleMons, slot);
+ }
+ 
+ // The level up moves a mon learns: its species' list, or Oak's PIKACHU's own list.
+@@ -2383,7 +2389,7 @@
+     ppBonuses = GetMonData(mon, MON_DATA_PP_BONUSES, NULL);
+     ppBonuses >>= 2;
+     moves[MAX_MON_MOVES - 1] = move;
+-    pp[MAX_MON_MOVES - 1] = gBattleMoves[move].pp;
++    pp[MAX_MON_MOVES - 1] = CalculateMonPPWithBonus(mon, move, 0, MAX_MON_MOVES - 1);
+ 
+     for (i = 0; i < MAX_MON_MOVES; i++)
+     {
+@@ -2410,7 +2416,7 @@
+     ppBonuses = GetBoxMonData(boxMon, MON_DATA_PP_BONUSES, NULL);
+     ppBonuses >>= 2;
+     moves[MAX_MON_MOVES - 1] = move;
+-    pp[MAX_MON_MOVES - 1] = gBattleMoves[move].pp;
++    pp[MAX_MON_MOVES - 1] = CalculateBoxMonPPWithBonus(boxMon, move, 0, MAX_MON_MOVES - 1);
+ 
+     for (i = 0; i < MAX_MON_MOVES; i++)
+     {
+@@ -3981,6 +3987,63 @@
+     return basePP + ((basePP * 20 * ((gPPUpGetMask[moveIndex] & ppBonuses) >> (2 * moveIndex))) / 100);
+ }
+ 
++
++// Keep the stock move table unchanged: only owned, permanent moves get this rule.
++u8 CalculateBoxMonPPWithBonus(struct BoxPokemon *boxMon, u16 move, u8 ppBonuses, u8 moveIndex)
++{
++    u8 pp, basePP, ups;
++    u8 otName[PLAYER_NAME_LENGTH + 1];
++    u32 address = (u32)boxMon;
++
++    if (move == MOVE_NONE || move >= MOVES_COUNT || moveIndex >= MAX_MON_MOVES)
++        return 0;
++    basePP = gBattleMoves[move].pp;
++    pp = CalculatePPWithBonus(move, ppBonuses, moveIndex);
++    // Wild and NPC parties can also have the player's original trainer ID.
++    if (address >= (u32)gEnemyParty && address < (u32)(gEnemyParty + PARTY_SIZE))
++        return pp;
++    if (GetBoxMonData(boxMon, MON_DATA_IS_BAD_EGG, NULL)
++     || GetBoxMonData(boxMon, MON_DATA_IS_EGG, NULL))
++        return pp;
++    GetBoxMonData(boxMon, MON_DATA_OT_NAME, otName);
++    if (IsOtherTrainer(GetBoxMonData(boxMon, MON_DATA_OT_ID, NULL), otName))
++        return pp;
++    ups = (ppBonuses >> (2 * moveIndex)) & 3;
++    if (GetBoxMonData(boxMon, MON_DATA_SPECIES, NULL) == SPECIES_PIKACHU)
++    {
++        // Apply the normal PP Up increments to the raised base, with no plateau.
++        if (basePP < 15)
++            basePP = 15;
++        return basePP + basePP * ups / 5;
++    }
++    if (ups == 3 && basePP >= 5 && pp < 15)
++        return 15;
++    return pp;
++}
++
++u8 CalculateMonPPWithBonus(struct Pokemon *mon, u16 move, u8 ppBonuses, u8 moveIndex)
++{
++    return CalculateBoxMonPPWithBonus(&mon->box, move, ppBonuses, moveIndex);
++}
++
++u8 CalculateBattleMonMaxPP(u8 battler, u8 moveIndex)
++{
++    struct Pokemon *mon;
++    u16 move;
++    if (battler >= MAX_BATTLERS_COUNT || moveIndex >= MAX_MON_MOVES)
++        return 0;
++    move = gBattleMons[battler].moves[moveIndex];
++    if (move == MOVE_NONE)
++        return 0;
++    if (GetBattlerSide(battler) == B_SIDE_PLAYER && MOVE_IS_PERMANENT(battler, moveIndex))
++    {
++        mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
++        if (move == GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL))
++            return CalculateMonPPWithBonus(mon, move, gBattleMons[battler].ppBonuses, moveIndex);
++    }
++    return CalculatePPWithBonus(move, gBattleMons[battler].ppBonuses, moveIndex);
++}
++
+ void RemoveMonPPBonus(struct Pokemon *mon, u8 moveIndex)
+ {
+     u8 ppBonuses = GetMonData(mon, MON_DATA_PP_BONUSES, NULL);
+@@ -4287,13 +4350,13 @@
+             {
+                 val &= ~ITEM4_PP_UP;
+                 data = (GetMonData(mon, MON_DATA_PP_BONUSES, NULL) & gPPUpGetMask[moveIndex]) >> (moveIndex * 2);
+-                i = CalculatePPWithBonus(GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL), GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex);
++                i = CalculateMonPPWithBonus(mon, GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL), GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex);
+                 if (data < 3 && i > 4)
+                 {
+                     data = GetMonData(mon, MON_DATA_PP_BONUSES, NULL) + gPPUpAddValues[moveIndex];
+                     SetMonData(mon, MON_DATA_PP_BONUSES, &data);
+ 
+-                    data = CalculatePPWithBonus(GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL), data, moveIndex) - i;
++                    data = CalculateMonPPWithBonus(mon, GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL), data, moveIndex) - i;
+                     data = GetMonData(mon, MON_DATA_PP1 + moveIndex, NULL) + data;
+                     SetMonData(mon, MON_DATA_PP1 + moveIndex, &data);
+                     retVal = FALSE;
+@@ -4435,14 +4498,14 @@
+ 
+                                 data = GetMonData(mon, MON_DATA_PP1 + r5, NULL);
+                                 move_id = GetMonData(mon, MON_DATA_MOVE1 + r5, NULL);
+-                                if (data != CalculatePPWithBonus(move_id, GetMonData(mon, MON_DATA_PP_BONUSES, NULL), r5))
++                                if (data != CalculateMonPPWithBonus(mon, move_id, GetMonData(mon, MON_DATA_PP_BONUSES, NULL), r5))
+                                 {
+                                     data += itemEffect[idx];
+                                     move_id = GetMonData(mon, MON_DATA_MOVE1 + r5, NULL);
+-                                    if (data > CalculatePPWithBonus(move_id, GetMonData(mon, MON_DATA_PP_BONUSES, NULL), r5))
++                                    if (data > CalculateMonPPWithBonus(mon, move_id, GetMonData(mon, MON_DATA_PP_BONUSES, NULL), r5))
+                                     {
+                                         move_id = GetMonData(mon, MON_DATA_MOVE1 + r5, NULL);
+-                                        data = CalculatePPWithBonus(move_id, GetMonData(mon, MON_DATA_PP_BONUSES, NULL), r5);
++                                        data = CalculateMonPPWithBonus(mon, move_id, GetMonData(mon, MON_DATA_PP_BONUSES, NULL), r5);
+                                     }
+                                     SetMonData(mon, MON_DATA_PP1 + r5, &data);
+                                     
+@@ -4461,14 +4524,14 @@
+                             u16 move_id;
+                             data = GetMonData(mon, MON_DATA_PP1 + moveIndex, NULL);
+                             move_id = GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL);
+-                            if (data != CalculatePPWithBonus(move_id, GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex))
++                            if (data != CalculateMonPPWithBonus(mon, move_id, GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex))
+                             {
+                                 data += itemEffect[idx++];
+                                 move_id = GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL);
+-                                if (data > CalculatePPWithBonus(move_id, GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex))
++                                if (data > CalculateMonPPWithBonus(mon, move_id, GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex))
+                                 {
+                                     move_id = GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL);
+-                                    data = CalculatePPWithBonus(move_id, GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex);
++                                    data = CalculateMonPPWithBonus(mon, move_id, GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex);
+                                 }
+                                 SetMonData(mon, MON_DATA_PP1 + moveIndex, &data);
+                                 
+@@ -4550,13 +4613,13 @@
+                         // Check if 3 PP Ups have been applied already
+                         if (data < 3)
+                         {
+-                            evDelta = CalculatePPWithBonus(GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL), GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex);
++                            evDelta = CalculateMonPPWithBonus(mon, GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL), GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex);
+                             data = GetMonData(mon, MON_DATA_PP_BONUSES, NULL);
+                             data &= gPPUpClearMask[moveIndex];
+                             data += gPPUpAddValues[moveIndex] * 3; // Apply 3 PP Ups (max)
+ 
+                             SetMonData(mon, MON_DATA_PP_BONUSES, &data);
+-                            data = CalculatePPWithBonus(GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL), data, moveIndex) - evDelta;
++                            data = CalculateMonPPWithBonus(mon, GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL), data, moveIndex) - evDelta;
+                             data = GetMonData(mon, MON_DATA_PP1 + moveIndex, NULL) + data;
+                             SetMonData(mon, MON_DATA_PP1 + moveIndex, &data);
+                             retVal = FALSE;
+@@ -4765,7 +4828,7 @@
+             {
+                 curEffect &= ~ITEM4_PP_UP;
+                 data = (GetMonData(mon, MON_DATA_PP_BONUSES, NULL) & gPPUpGetMask[moveIndex]) >> (moveIndex * 2);
+-                i = CalculatePPWithBonus(GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL), GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex);
++                i = CalculateMonPPWithBonus(mon, GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL), GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex);
+                 if (data < 3 && i > 4)
+                     retVal = FALSE;
+             }
+@@ -4819,7 +4882,7 @@
+                             for (tmp = 0; tmp < MAX_MON_MOVES; tmp++)
+                             {
+                                 data = GetMonData(mon, MON_DATA_PP1 + tmp, NULL);
+-                                if (data != CalculatePPWithBonus(GetMonData(mon, MON_DATA_MOVE1 + tmp, NULL), GetMonData(mon, MON_DATA_PP_BONUSES, NULL), tmp))
++                                if (data != CalculateMonPPWithBonus(mon, GetMonData(mon, MON_DATA_MOVE1 + tmp, NULL), GetMonData(mon, MON_DATA_PP_BONUSES, NULL), tmp))
+                                     retVal = FALSE;
+                             }
+                             idx++;
+@@ -4828,7 +4891,7 @@
+                         {
+                             data = GetMonData(mon, MON_DATA_PP1 + moveIndex, NULL);
+                             curMoveId = GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL);
+-                            if (data != CalculatePPWithBonus(curMoveId, GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex))
++                            if (data != CalculateMonPPWithBonus(mon, curMoveId, GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex))
+                             {
+                                 idx++;
+                                 retVal = FALSE;
+@@ -4877,7 +4940,7 @@
+                         break;
+                     case 4: // ITEM5_PP_MAX
+                         data = (GetMonData(mon, MON_DATA_PP_BONUSES, NULL) & gPPUpGetMask[moveIndex]) >> (moveIndex * 2);
+-                        tmp = CalculatePPWithBonus(GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL), GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex);
++                        tmp = CalculateMonPPWithBonus(mon, GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL), GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex);
+ 
+                         // Check if 3 PP Ups have been applied already, and that the move has a total PP of at least 5 (excludes Sketch)
+                         if (data < 3 && tmp >= 5)
+@@ -6158,7 +6221,7 @@
+         {
+             u16 move = GetBoxMonData(boxMon, MON_DATA_MOVE1 + i, 0);
+             u16 bonus = GetBoxMonData(boxMon, MON_DATA_PP_BONUSES, 0);
+-            u8 pp = CalculatePPWithBonus(move, bonus, i);
++            u8 pp = CalculateBoxMonPPWithBonus(boxMon, move, bonus, i);
+             SetBoxMonData(boxMon, MON_DATA_PP1 + i, &pp);
+         }
+     }
+--- include/pokemon.h
++++ include/pokemon.h
+@@ -365,6 +365,9 @@
+ bool8 IsPlayerPartyAndPokemonStorageFull(void);
+ void GetSpeciesName(u8 *name, u16 species);
+ u8 CalculatePPWithBonus(u16 move, u8 ppBonuses, u8 moveIndex);
++u8 CalculateBoxMonPPWithBonus(struct BoxPokemon *boxMon, u16 move, u8 ppBonuses, u8 moveIndex);
++u8 CalculateMonPPWithBonus(struct Pokemon *mon, u16 move, u8 ppBonuses, u8 moveIndex);
++u8 CalculateBattleMonMaxPP(u8 battler, u8 moveIndex);
+ void RemoveMonPPBonus(struct Pokemon *mon, u8 moveIndex);
+ void RemoveBattleMonPPBonus(struct BattlePokemon *mon, u8 moveIndex);
+ bool8 ExecuteTableBasedItemEffect(struct Pokemon *mon, u16 item, u8 partyIndex, u8 moveIndex);
+--- src/battle_main.c
++++ src/battle_main.c
+@@ -3211,9 +3211,7 @@
+                         {
+                             moveInfo.moves[i] = gBattleMons[gActiveBattler].moves[i];
+                             moveInfo.currentPp[i] = gBattleMons[gActiveBattler].pp[i];
+-                            moveInfo.maxPp[i] = CalculatePPWithBonus(gBattleMons[gActiveBattler].moves[i],
+-                                                                     gBattleMons[gActiveBattler].ppBonuses,
+-                                                                     i);
++                            moveInfo.maxPp[i] = CalculateBattleMonMaxPP(gActiveBattler, i);
+                         }
+                         BtlController_EmitChooseMove(0, (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) != 0, FALSE, &moveInfo);
+                         MarkBattlerForControllerExec(gActiveBattler);
+--- src/battle_util.c
++++ src/battle_util.c
+@@ -2592,7 +2592,7 @@
+                     }
+                     if (i != MAX_MON_MOVES)
+                     {
+-                        u8 maxPP = CalculatePPWithBonus(move, ppBonuses, i);
++                        u8 maxPP = CalculateBattleMonMaxPP(battlerId, i);
+                         if (changedPP + battlerHoldEffectParam > maxPP)
+                             changedPP = maxPP;
+                         else
+--- src/pokemon_summary_screen.c
++++ src/pokemon_summary_screen.c
+@@ -94,6 +94,7 @@
+ static void BufferMonMoveI(u8);
+ static u16 GetMonMoveBySlotId(struct Pokemon * mon, u8 moveSlot);
+ static u16 GetMonPpByMoveSlot(struct Pokemon * mon, u8 moveSlot);
++static u8 PokeSum_GetMaxPP(u8 i);
+ static void CreateShinyStarObj(u16, u16);
+ static void CreatePokerusIconObj(u16, u16);
+ static void PokeSum_CreateMonMarkingsSprite(void);
+@@ -2275,16 +2276,16 @@
+     if (i >= 4 && sMonSummaryScreen->mode == PSS_MODE_SELECT_MOVE)
+     {
+         ConvertIntToDecimalStringN(sMonSummaryScreen->summary.moveCurPpStrBufs[i],
+-                                   gBattleMoves[sMonSummaryScreen->moveIds[i]].pp, STR_CONV_MODE_LEFT_ALIGN, 3);
++                                   PokeSum_GetMaxPP(i), STR_CONV_MODE_LEFT_ALIGN, 3);
+         ConvertIntToDecimalStringN(sMonSummaryScreen->summary.moveMaxPpStrBufs[i],
+-                                   gBattleMoves[sMonSummaryScreen->moveIds[i]].pp, STR_CONV_MODE_LEFT_ALIGN, 3);
++                                   PokeSum_GetMaxPP(i), STR_CONV_MODE_LEFT_ALIGN, 3);
+     }
+     else
+     {
+         ConvertIntToDecimalStringN(sMonSummaryScreen->summary.moveCurPpStrBufs[i],
+                                    GetMonPpByMoveSlot(&sMonSummaryScreen->currentMon, i), STR_CONV_MODE_LEFT_ALIGN, 3);
+         ConvertIntToDecimalStringN(sMonSummaryScreen->summary.moveMaxPpStrBufs[i],
+-                                   CalculatePPWithBonus(sMonSummaryScreen->moveIds[i], GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_PP_BONUSES), i),
++                                   PokeSum_GetMaxPP(i),
+                                    STR_CONV_MODE_LEFT_ALIGN, 3);
+     }
+ 
+@@ -2529,13 +2530,25 @@
+     }
+ }
+ 
++static u8 PokeSum_GetMaxPP(u8 i)
++{
++    u16 move = sMonSummaryScreen->moveIds[i];
++    u8 slot = i < MAX_MON_MOVES ? i : 0;
++    u8 bonus = i < MAX_MON_MOVES ? GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_PP_BONUSES) : 0;
++    if (move == MOVE_NONE)
++        return 0;
++    if (sMonSummaryScreen->isEnemyParty)
++        return CalculatePPWithBonus(move, bonus, slot);
++    return CalculateMonPPWithBonus(&sMonSummaryScreen->currentMon, move, bonus, slot);
++}
++
+ static void PokeSum_PrintMoveName(u8 i)
+ {
+     u8 colorIdx = 0;
+     u8 curPP = GetMonPpByMoveSlot(&sMonSummaryScreen->currentMon, i);
+     u16 move = sMonSummaryScreen->moveIds[i];
+     u8 ppBonuses = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_PP_BONUSES);
+-    u8 maxPP = CalculatePPWithBonus(move, ppBonuses, i);
++    u8 maxPP = PokeSum_GetMaxPP(i);
+ 
+     if (i == 4)
+         curPP = maxPP;
+--- src/script_pokemon_util.c
++++ src/script_pokemon_util.c
+@@ -34,7 +34,7 @@
+         // restore PP.
+         for(j = 0; j < MAX_MON_MOVES; j++)
+         {
+-            arg[0] = CalculatePPWithBonus(GetMonData(&gPlayerParty[i], MON_DATA_MOVE1 + j), ppBonuses, j);
++            arg[0] = CalculateMonPPWithBonus(&gPlayerParty[i], GetMonData(&gPlayerParty[i], MON_DATA_MOVE1 + j), ppBonuses, j);
+             SetMonData(&gPlayerParty[i], MON_DATA_PP1 + j, arg);
+         }
+ 

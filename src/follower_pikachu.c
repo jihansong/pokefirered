@@ -3,6 +3,7 @@
 #include "event_object_movement.h"
 #include "field_player_avatar.h"
 #include "follower_pikachu.h"
+#include "companion_misty.h"
 #include "link.h"
 #include "quest_log.h"
 #include "starter_pikachu.h"
@@ -49,10 +50,10 @@ bool8 IsFollowerPikachuObject(struct ObjectEvent *objectEvent)
 
 bool8 ShouldIgnoreCollisionWithFollower(struct ObjectEvent *mover, struct ObjectEvent *other)
 {
-    if (other->localId != LOCALID_FOLLOWER)
+    if (other->localId != LOCALID_FOLLOWER && other->localId != LOCALID_MISTY_COMPANION)
         return FALSE;
-    // The player walks through PIKACHU (they swap places), and so do trainers' lines of sight.
-    return mover->isPlayer || gIgnoreFollowerPikachuCollision;
+    return mover->isPlayer || IsFollowerPikachuObject(mover) || IsMistyCompanionObject(mover)
+        || gIgnoreFollowerPikachuCollision;
 }
 
 static bool8 ShouldFollowerExist(void)
@@ -63,9 +64,8 @@ static bool8 ShouldFollowerExist(void)
         return FALSE;
     if (InUnionRoom() == TRUE)
         return FALSE;
-    // Like Yellow, PIKACHU goes back in its Poké Ball while the player bikes or surfs.
-    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE
-                            | PLAYER_AVATAR_FLAG_SURFING | PLAYER_AVATAR_FLAG_UNDERWATER))
+    // PIKACHU rides along on water and follows underwater; bikes still tuck it away.
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
         return FALSE;
     return IsStarterPikachuAliveInParty();
 }
@@ -95,6 +95,7 @@ static void RemoveFollower(struct ObjectEvent *follower)
 void FollowerPikachu_OnMapLoad(void)
 {
     sHiddenByScript = FALSE;
+    MistyCompanion_OnMapLoad();
     FollowerPikachu_Update();
 }
 
@@ -145,6 +146,7 @@ void FollowerPikachu_Update(void)
         else if (follower->invisible && !IsOnPlayerTile(follower) && HasPlayerSpriteLeftFollower(follower))
             follower->invisible = FALSE;
     }
+    MistyCompanion_Update();
 }
 
 void Task_FollowerPikachu(u8 taskId)
@@ -161,6 +163,7 @@ void CreateFollowerPikachuTask(void)
 void HideFollowerPikachu(void)
 {
     sHiddenByScript = TRUE;
+    HideMistyCompanion();
     FollowerPikachu_Update();
 }
 
@@ -171,6 +174,7 @@ void ShowFollowerPikachu(void)
     struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
 
     sHiddenByScript = FALSE;
+    ShowMistyCompanion();
     if (follower != NULL)
     {
         ObjectEventClearHeldMovementIfActive(follower);
@@ -277,7 +281,8 @@ void FollowerPikachu_OnObjectMovement(struct ObjectEvent *objectEvent, u8 moveme
     u8 direction;
     s16 x, y;
 
-    if (follower == NULL || objectEvent == follower || follower->invisible)
+    MistyCompanion_OnObjectMovement(objectEvent, movementActionId);
+    if (follower == NULL || IsFollowerPikachuObject(objectEvent) || IsMistyCompanionObject(objectEvent) || follower->invisible)
         return;
     direction = GetMovingActionDirection(movementActionId);
     if (direction == DIR_NONE)
@@ -317,6 +322,8 @@ void FollowerPikachu_OnPlayerMovement(u8 movementActionId)
     s16 dx, dy, distance;
     u8 direction;
 
+    if (speed != FOLLOW_SPEED_NONE)
+        MistyCompanion_OnPlayerMovement(sWalkActionsBySpeed[speed]);
     if (follower == NULL || speed == FOLLOW_SPEED_NONE)
         return;
 
@@ -350,4 +357,9 @@ void FollowerPikachu_OnPlayerMovement(u8 movementActionId)
         // The player was moved somewhere else (e.g. setobjectxy). Start over from under them.
         HideFollowerUnderPlayer(follower);
     }
+}
+
+u8 FollowerPikachu_GetMovingActionDirection(u8 action)
+{
+    return GetMovingActionDirection(action);
 }

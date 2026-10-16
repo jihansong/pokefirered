@@ -1,0 +1,61 @@
+{
+  "pass": true,
+  "apply": false,
+  "path": "data/maps/VictoryRoad_B1F/map.json",
+  "before": "d8fbf7720d0caa38f404955b28ad5e4c2e8bbb62a676bd641ba1d6935902dc43",
+  "after": "6bab57c8ff5bd8ab729dd259e8108eeffc30baf9bd3e87c1141ffd0e593b990c",
+  "original_obstacles_sha256": "708fad442c50a6661dddadab2c5797451eebf3c0b4ee0f0ecb8401f8466e40c3",
+  "added_boulders": 8,
+  "added_smash_rocks": 6,
+  "template_count": 21,
+  "template_capacity": 64,
+  "active_object_capacity": 16,
+  "conservative_static_max_templates": 10,
+  "player_and_follower_static_budget": 12,
+  "safe_dense_probe_xy": [
+    [
+      25,
+      7
+    ],
+    [
+      26,
+      7
+    ]
+  ],
+  "native_spawn_and_puzzle_qa_still_required": true,
+  "new_local_ids": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "temp_flags": [
+    "FLAG_TEMP_13",
+    "FLAG_TEMP_14",
+    "FLAG_TEMP_11",
+    "FLAG_TEMP_12",
+    "FLAG_TEMP_17",
+    "FLAG_TEMP_16",
+    "FLAG_TEMP_1E",
+    "FLAG_TEMP_19",
+    "FLAG_TEMP_1A",
+    "FLAG_TEMP_1B",
+    "FLAG_TEMP_1C",
+    "FLAG_TEMP_1D",
+    "FLAG_TEMP_1F",
+    "FLAG_TEMP_15"
+  ],
+  "existing_7_objects_warps_items_preserved": true,
+  "save_layout_changes": 0,
+  "terrain_sha256": "574316b10f2989df34eb3a53c3fc4bd946bb0e67bb679e15dfc91997cb47d684"
+}

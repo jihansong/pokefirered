@@ -1,3 +1,50 @@
+PetalburgWoods_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PetalburgWoods_OnTransition
+	.byte 0
+
+PetalburgWoods_EventScript_HItem94::
+	finditem ITEM_GREAT_BALL
+	end
+
+PetalburgWoods_EventScript_HItem95::
+	finditem ITEM_X_ATTACK
+	end
+
+PetalburgWoods_EventScript_HItem96::
+	finditem ITEM_ETHER
+	end
+
+PetalburgWoods_EventScript_H0::
+	msgbox PetalburgWoods_Text_H0, MSGBOX_NPC
+	end
+
+PetalburgWoods_EventScript_H1::
+	trainerbattle_single TRAINER_HOENN_LYLE, PetalburgWoods_Text_H1_0, PetalburgWoods_Text_H1_1
+	msgbox PetalburgWoods_Text_H1_2, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgWoods_EventScript_H2::
+	trainerbattle_single TRAINER_HOENN_JAMES_1, PetalburgWoods_Text_H2_0, PetalburgWoods_Text_H2_1
+	msgbox PetalburgWoods_Text_H2_2, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgWoods_EventScript_H3::
+	msgbox PetalburgWoods_Text_H3, MSGBOX_NPC
+	end
+
+PetalburgWoods_EventScript_HItem97::
+	finditem ITEM_PARALYZE_HEAL
+	end
+
+PetalburgWoods_EventScript_H5::
+	msgbox PetalburgWoods_Text_H5, MSGBOX_SIGN
+	end
+
+PetalburgWoods_EventScript_H6::
+	msgbox PetalburgWoods_Text_H6, MSGBOX_SIGN
+	end
+
+@ BEGIN PATCH (tools/hoenn_import/patches)
 @ v0.11.0 E6 (docs/v0.11.0-plan.md 4.6, 5.3): a DEVON researcher chased by a
 @ TEAM AQUA grunt; after the grunt, JESSIE & JAMES (TEAM ROCKET #15, a double
 @ battle with the v0.9.0 shared motto, retry, coins and reward scripts); then
@@ -169,13 +216,13 @@ PetalburgWoods_EventScript_BigTree::
 	specialvar VAR_RESULT, GetStarterPikachuPartySlotForScript
 	call_if_ne VAR_RESULT, PARTY_SIZE, PetalburgWoods_EventScript_TreeckoPikachu
 	closemessage
-	setwildbattle SPECIES_TREECKO, 5
+	special CreatePerfectScriptedTreecko
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, PetalburgWoods_EventScript_TreeckoCaught
 	msgbox PetalburgWoods_Text_TreeckoJoins
 	setvar VAR_TEMP_1, SPECIES_TREECKO
-	call EventScript_GiveGiftMonLv5
+	call EventScript_GivePerfectRegionalStarterLv5
 	goto_if_eq VAR_RESULT, FALSE, PetalburgWoods_EventScript_TreeckoNoRoom
 PetalburgWoods_EventScript_TreeckoCaught::
 	setflag FLAG_HOENN_GOT_TREECKO_IN_WOODS
@@ -282,3 +329,4 @@ PetalburgWoods_Movement_ResearcherLeaves:
 	walk_up
 	walk_up
 	step_end
+@ END PATCH

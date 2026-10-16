@@ -4,6 +4,7 @@
 #include "global.h"
 
 void CB2_DoHallOfFameScreen(void);
+bool8 IsJohtoHallOfFameContext(void);
 void CB2_DoHallOfFameScreenDontSaveData(void);
 void CB2_DoHallOfFamePC(void);
 void CB2_InitHofPC(void);

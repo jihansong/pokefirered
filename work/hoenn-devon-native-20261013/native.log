@@ -1,0 +1,4 @@
+  File "/workspaces/pokefirered/work/hoenn-devon-native-20261013/native-devon.py", line 7
+    exec(compile(q.split('
+                         ^
+SyntaxError: unterminated string literal (detected at line 7)

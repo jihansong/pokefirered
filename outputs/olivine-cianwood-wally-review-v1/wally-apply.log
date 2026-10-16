@@ -1,0 +1,45 @@
+{
+  "pass": true,
+  "apply": true,
+  "trainer": "TRAINER_HOENN_WALLY_VICTORY_ROAD_FINAL",
+  "trainer_slot": 538,
+  "party_source": "original Emerald Wally VR1, exact levels/IV/moves/items",
+  "new_save_flags": 0,
+  "save_layout_changes": 0,
+  "old_map_objects_preserved": true,
+  "warps_preserved": true,
+  "terrain_sha256": "b100693756672442b3f583a8886950d07b68bac1b6eafe07a2b5fe721d1c484e",
+  "files": [
+    {
+      "path": "include/constants/opponents_hoenn_story.h",
+      "before": "6c02c7818796ff8cb8f1e03d3497a4f387aa37cf668c791253bcf47c6f0827e6",
+      "after": "3fdbdef3b124c8f348a5ad625e73959f6a0c7404a3f6af1cb4d74924d4174ca9"
+    },
+    {
+      "path": "src/data/trainers_hoenn_story.h",
+      "before": "6ffd5e4d3e269ec23dee18d0138dad5e1141fe59120506de32871a15bc48a20f",
+      "after": "5a574d06891a43dfc2766f42373da2670510860bd3479de088cfe6c8158db255"
+    },
+    {
+      "path": "src/data/trainer_parties_hoenn_story.h",
+      "before": "8495c36b60106ca4ea6aa637ccefceb56e9d8ca4cfc8b188921258f32eeadb8f",
+      "after": "a17372ada84acab9a559b5e6a60d2a8d21799ac93f6dea3ee5ac81ebebf529ef"
+    },
+    {
+      "path": "data/maps/HoennVictoryRoad_1F/map.json",
+      "before": "21877f07eec421be551c24532b1d2090bb643300e8c92cd3e44e07a93264c104",
+      "after": "9020d1b93c963420b77aa92cfd365e4d08448c9f88a18de2a98855a8079b4191"
+    },
+    {
+      "path": "data/maps/HoennVictoryRoad_1F/scripts.inc",
+      "before": "a9ea40629ea348bce99005402569f7d3e477facddeb06791db3eba2c677304ba",
+      "after": "35c17a06bec19481698d6bb26ae571f97fd01140b9807217b5577d77c5c58bc4"
+    },
+    {
+      "path": "data/maps/HoennVictoryRoad_1F/text.inc",
+      "before": "bd24b8e7e108fa91640e842b777e79ad8d22cc23e6f1a4cd26fa7ee6023ece55",
+      "after": "34f86ef82dfc67f1f58320457bc8d2d8770b7836d4388169e6ded01c55da93ef"
+    }
+  ],
+  "backup": "/workspaces/pokefirered/work/backups/wally-final-v1-20261005T181536Z"
+}

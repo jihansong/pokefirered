@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspaces/pokefirered/tools/qa/johto_ecruteak_native_battles.py", line 184, in <module>
+    with ReadOnlyEmu(str(rom),str(target),sym='') as e:row=battle(e,name,loss,prepared,tag)
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/pokefirered/tools/qa/johto_ecruteak_native_battles.py", line 172, in battle
+    if name=='SILVER_BURNED_TOWER' and not loss:object_absent(e,1)
+                                                ^^^^^^^^^^^^^
+NameError: name 'object_absent' is not defined

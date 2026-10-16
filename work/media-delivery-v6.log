@@ -1,0 +1,9 @@
+127.0.0.1 - - [04/Oct/2026 16:31:24] "GET /title.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 16:31:41] "GET /title.html HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 16:31:42] "GET /title-native-lightning.png HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 16:31:42] "GET /title-original-pika.wav HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 16:31:42] "GET /title-start-electricity.wav HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 16:31:42] "GET /title-static-nose.svg HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 16:31:42] "GET /title-current-continuous-electricity.mp4 HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 16:31:42] "GET /title-approved.png HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 16:31:42] "GET /title-start-mouth.svg HTTP/1.1" 200 -

@@ -1,0 +1,77 @@
+{
+  "src/pokedex_screen.c": {
+    "sha256": "d7cd34bed4bdee8a2e76950636a093f726eb79268b2aed6b96bf31139c1ea4c7",
+    "size": 146283,
+    "captured_from": "current-inputs"
+  },
+  "include/constants/pokedex.h": {
+    "sha256": "aac527819623140d7f44ad99b72654bab59ca5679a80cca33361828cc7e7d0c6",
+    "size": 21092,
+    "captured_from": "current-inputs"
+  },
+  "include/pokedex_screen.h": {
+    "sha256": "62151ddb84111da7ae854403335fe7f2ddc7dce45e947a445713f6d70447d9d4",
+    "size": 976,
+    "captured_from": "native-ui-sources"
+  },
+  "include/pokedex.h": {
+    "sha256": "a7ea835c8327b5f17c5a766090829e49e694e5439b796634d1e1746867b29e8a",
+    "size": 3581,
+    "captured_from": "current-inputs"
+  },
+  "include/constants/species.h": {
+    "sha256": "c6d5e22f66c2308261d6d9a9c3b72d4638ffa622cb1395dbabe69a588aa65dc4",
+    "size": 13077,
+    "captured_from": "metadata-preflight"
+  },
+  "include/constants/vars.h": {
+    "sha256": "c3c27b43a9db279da766aa9d94af0b28aa8c42a49a87fabca1b4a1ec20ade947",
+    "size": 18806,
+    "captured_from": "current-inputs"
+  },
+  "include/global.h": {
+    "sha256": "ff834418cf7bf2727385f91fa7eaf69d618783a46426077338b57a0523af21af",
+    "size": 26051,
+    "captured_from": "metadata-preflight"
+  },
+  "src/list_menu.c": {
+    "sha256": "1c825cfd52b3f9eb6f70f40439836a348c0fdc7f1d452fa9cbac426870383af4",
+    "size": 26945,
+    "captured_from": "input-heartbeat-source"
+  },
+  "include/list_menu.h": {
+    "sha256": "ae7ccb61b49cb84974dcca77973bc332a6e98861de566dd3264ee26363e3acdf",
+    "size": 3103,
+    "captured_from": "input-heartbeat-source"
+  },
+  "src/start_menu.c": {
+    "sha256": "56de3fd5e7d7a7d65b95c3e632f898a8ec92b792d338f86a2275d5a2b4b77d08",
+    "size": 30281,
+    "captured_from": "native-ui-sources"
+  },
+  "include/task.h": {
+    "sha256": "4d04e9fd43d54ef551d456da14fdf2a56d9d91fc19a4fc9582b289a06c192612",
+    "size": 895,
+    "captured_from": "input-heartbeat-source"
+  },
+  "src/main.c": {
+    "sha256": "23ba1a0b3c57e9d0e3e651b442575998e99832c4dec97eabe1af97259bc6e4d3",
+    "size": 11746,
+    "captured_from": "input-heartbeat-source"
+  },
+  "src/bg.c": {
+    "sha256": "4813ff7fb1b9bcc952d3973d05a46d31c9fee57342c7957165a76a136ccd57da",
+    "size": 31836,
+    "captured_from": "input-heartbeat-source"
+  },
+  "include/main.h": {
+    "sha256": "35f92d00306f7359e825828bb94c1860c43699cbfe108f752f35c0449a06fdd8",
+    "size": 2363,
+    "captured_from": "input-heartbeat-source"
+  },
+  "include/palette.h": {
+    "sha256": "3f5ee66bab01538193629ffef3ff3cd6ad7555f7e294f52ae3ccfa36f94ac418",
+    "size": 3545,
+    "captured_from": "input-heartbeat-source"
+  }
+}

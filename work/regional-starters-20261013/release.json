@@ -1,0 +1,18 @@
+{
+  "created_at": "2026-10-13T04:21:09.440778+00:00",
+  "ROM_sha256": "63904802b37dc5e922ec616361c0be3388f1030e5b2c1a0b7a2949f2a33c1f7c",
+  "main_ROM": "/workspaces/pokefirered/pokemonthyl.gba",
+  "delivery": "/workspaces/pokefirered/outputs/regional-starters-20261013",
+  "files": {
+    "pokemonthyl.gba": "63904802b37dc5e922ec616361c0be3388f1030e5b2c1a0b7a2949f2a33c1f7c",
+    "pokemonthyl_v1.25-items99-iv2x.sav": "158e50e370b290fccec6e8a09dda79001cab312c5ebe4de31ee245bb846ecef5",
+    "validation.json": "29983629e8452f98cc8bc7d73448a033921e14559b885f93c23f5760d062533b",
+    "README.txt": "b6ec4b0d6fcc20a65875bef6d8d968d5116faabbdf5431941872a52f76c0990c"
+  },
+  "rollback": "/workspaces/pokefirered/work/regional-starters-20261013/before",
+  "zip": {
+    "path": "/workspaces/pokefirered/outputs/regional-starters-20261013/Thunder-Yellow-regional-starters-20261013.zip",
+    "bytes": 7666606,
+    "sha256": "a54b83aae7d6a3fa27659a55da3971ba8035d13fee883429d243fc0d286506ba"
+  }
+}

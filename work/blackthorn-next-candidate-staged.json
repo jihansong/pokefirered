@@ -1,0 +1,82 @@
+{
+  "status": "SOURCE_AND_QA_STAGED_NOT_APPLIED",
+  "files": [
+    {
+      "path": "/workspaces/pokefirered/tools/johto/build_blackthorn.py",
+      "bytes": 47199,
+      "sha256": "25feadb2d55297129b49be5c7b52f3efa90bc1537955fef0400250b364381a88"
+    },
+    {
+      "path": "/workspaces/pokefirered/work/patch_hoenn_shared_hm_gated_v1.py",
+      "bytes": 15436,
+      "sha256": "2efebaa2da62ebb0f3820170e49c159020d6487dfdc75575d8c69a9dd9849cb0"
+    },
+    {
+      "path": "/workspaces/pokefirered/tools/qa/native_hoenn_shared_hm_gated_qa.py",
+      "bytes": 13970,
+      "sha256": "3c1aef530e92a48a73a57d9863d50fbb7ab50830e12f77fd2a0f7c0b33bf1bea"
+    },
+    {
+      "path": "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_bootstrap.py",
+      "bytes": 15433,
+      "sha256": "2a96b6d26b6f0abbb7a6cc2444ef887cf5e709d8f2373bd2698b086e3d17d032"
+    },
+    {
+      "path": "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_events.py",
+      "bytes": 5551,
+      "sha256": "4783e28f773215b3e0a4419415fea0a71dc3ce6a65a33cbf02ec9b6c3746691d"
+    },
+    {
+      "path": "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_battles.py",
+      "bytes": 4303,
+      "sha256": "bef8b0f3910e74b9f0913f7d9657fb50b78298f0ee009200ba84650e4b8ebccf"
+    },
+    {
+      "path": "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_maps.py",
+      "bytes": 4686,
+      "sha256": "1e4d156ecbe511753a2b2557796ba0539e2421fcb44f64066248087f912cb340"
+    },
+    {
+      "path": "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_chain.py",
+      "bytes": 8378,
+      "sha256": "8c073ac862bb28cca4278d65f0a4ca2db81456372692bdc87c40ce07252c524c"
+    },
+    {
+      "path": "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_waterfall.py",
+      "bytes": 18955,
+      "sha256": "99e5285ecebf0111581f703716c02155574e77624ad75f12ba1bbd54433fc4eb"
+    },
+    {
+      "path": "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_wild.py",
+      "bytes": 11721,
+      "sha256": "7f650c33ca4ddf1c1d4d90147c2c57eb0b68ecc18b46821dcc8dadf193fc478a"
+    },
+    {
+      "path": "/workspaces/pokefirered/tools/qa/johto_blackthorn_native_fly.py",
+      "bytes": 24033,
+      "sha256": "bc170ad2547bc19410abd2dbe18cfe641df8aade6e760e68a137179227ab0526"
+    },
+    {
+      "path": "/workspaces/pokefirered/tools/animation/prepare_johto_native_credits.py",
+      "bytes": 8301,
+      "sha256": "1044a459fdb976aa3ca9b4518c603ee52bdeb259385337bb922d4b48a783fdc3"
+    },
+    {
+      "path": "/workspaces/pokefirered/outputs/ending-johto-native-review-v1/scenes.json",
+      "bytes": 2633,
+      "sha256": "115748039d19087bc0b801b5230e62078625f498747857bd989d56cc4ef30ed8"
+    },
+    {
+      "path": "/workspaces/pokefirered/tools/qa/capture_regional_native_credits_v3.py",
+      "bytes": 9540,
+      "sha256": "d47d820440b2da4ae047b9cb68f10b98f9993b36226d08136b79e3f8b97a0fd6"
+    },
+    {
+      "path": "/workspaces/pokefirered/tools/qa/regional_credits_pixel_audit.py",
+      "bytes": 6681,
+      "sha256": "3755f838fe5923db8e66fb79a8afa8fee61ca213592fe3c9d4ed6a3e04557dcc"
+    }
+  ],
+  "current_main_unchanged": true,
+  "native_verified": false
+}

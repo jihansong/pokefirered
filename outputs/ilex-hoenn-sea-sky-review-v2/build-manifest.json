@@ -1,0 +1,20 @@
+{
+  "candidate.gba": {
+    "bytes": 33554432,
+    "sha256": "475088869b9937e4c1ed81ca920b8c2bb862ac44f1e2f50c9997cf9dadbfb02a"
+  },
+  "candidate.elf": {
+    "bytes": 33785372,
+    "sha256": "0fbf12e4c77a09628cdb1fb730965993dffadebf454f0cae0cca5b28c11f209b"
+  },
+  "candidate.sym": {
+    "bytes": 3219539,
+    "sha256": "a111cbefc908ef2eb840355f41d6f9923e509dd7d7ce26e35b0ab6304eadf6e4"
+  },
+  "candidate.map": {
+    "bytes": 3234915,
+    "sha256": "4faf6b59de7665e4c8f6b0dbf0912028a28aa11aab5b0dbd3dd1ad0f69e0f4c2"
+  },
+  "time_utc": "2026-10-05T16:26:38.466485+00:00",
+  "whole_regions_complete": false
+}

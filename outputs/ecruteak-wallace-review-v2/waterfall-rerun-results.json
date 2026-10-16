@@ -1,0 +1,26 @@
+[
+  {
+    "case": "menu",
+    "exit": 1
+  },
+  {
+    "case": "no-rain-menu",
+    "exit": 1
+  },
+  {
+    "case": "kanto-badge",
+    "exit": 1
+  },
+  {
+    "case": "kanto-rain-only",
+    "exit": 1
+  },
+  {
+    "case": "johto-badge",
+    "exit": 1
+  },
+  {
+    "case": "johto-rain-only",
+    "exit": 1
+  }
+]

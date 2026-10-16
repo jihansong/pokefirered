@@ -1,0 +1,10 @@
+{
+  "object_overrides": [
+    {
+      "x": 6,
+      "y": 16,
+      "script": "EverGrandeCity_HallOfFame_TY_Greeting",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN"
+    }
+  ]
+}

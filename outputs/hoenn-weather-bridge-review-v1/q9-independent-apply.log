@@ -1,0 +1,71 @@
+{
+  "apply": true,
+  "scope": "original Route119 bridge guards only; rival generation required",
+  "native_cases": "NOT_RUN",
+  "save_layout_changed": false,
+  "persistent_flags_added": 0,
+  "guard_local_ids": [
+    31,
+    32
+  ],
+  "original_route_objects_kept": 30,
+  "bridge_clear_condition": "Weather rescued OR existing Hoenn badge6 OR actual Winona victory",
+  "legacy_completed_progress_rewritten": false,
+  "original_terrain_sha256": "f6c948a0fb90925afce408b4bf1742ba56e9e6c95ffb899a348d563d1ba5f47d",
+  "files": {
+    "src/field_specials.c": {
+      "before": "90636754ce030dd0ea240e340dba8694eeddd26aea0f0684dc8e48199ab5915e",
+      "after": "f8448fb911ce7fb8d16a28bd58aeda8890d11c1d7f60211793cb279661331a87"
+    },
+    "data/maps/Route119/map.json": {
+      "before": "48eb38d968e0c1dbab7bb1eff0ed89304e2d02b26e74f7106cec4f2a499939b1",
+      "after": "95ed27f5cf115450127dcc0fe219e3132fa37eec1dfcdab67bcecbefe5747eac"
+    },
+    "tools/hoenn_import/patches/Route119.json": {
+      "before": "7e4b56d994a909b7164dfb51c6e45e5443bf44b6e1a6b2c40c1c3213528161e4",
+      "after": "3b648e88d9a52d754f5a0ab7adf19ea2dc2612ccda6f30da358ccb6ebf363971"
+    },
+    "data/maps/Route119/scripts.inc": {
+      "before": "5df47a91199555d0bc6ee6c5c5ff3216162cd606c066d95e133e19cb4e7074f0",
+      "after": "50c2d42c5f8f76941e8cd4f6518ede2944980b170d887a6fb2e109c4df06ad8f"
+    },
+    "tools/hoenn_import/patches/Route119.scripts.inc": {
+      "before": "7026110c0c246b258ad7bc01547df02fc130bd5f5688d3811be9b662fc3d07a8",
+      "after": "64dc37b0b5064a0959f14005214f554082311d1480ce32adf79112df83277d58"
+    },
+    "data/maps/Route119/text.inc": {
+      "before": "6c44402db8a28976b34cf6d42b738f898eb19c7bdef7289df554ed605d84355f",
+      "after": "da29da0085a4eb429c8d1886ff8e7a923bf01613522f09cf9a9098e3f484086b"
+    },
+    "tools/hoenn_import/patches/Route119.text.inc": {
+      "before": "016ba142818990d09e8555e70a7fc69f1c901573a72bf44d3d5e6bff3e346300",
+      "after": "ea87b11f8c96ebf860a38b39545b9948f3fdfe8a352d458c25d3ba37f60e306c"
+    }
+  },
+  "changed": [
+    "src/field_specials.c",
+    "data/maps/Route119/map.json",
+    "tools/hoenn_import/patches/Route119.json",
+    "data/maps/Route119/scripts.inc",
+    "tools/hoenn_import/patches/Route119.scripts.inc",
+    "data/maps/Route119/text.inc",
+    "tools/hoenn_import/patches/Route119.text.inc"
+  ],
+  "original_save_sha256": {
+    "/workspaces/pokefirered/saves/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "/workspaces/pokefirered/saves/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "/workspaces/pokefirered/saves/hoenn.sav": "b1bb3de8c7ea28a979f124b34bc9870ae7bed70b641748cf6dda7f6d477eede4",
+    "/workspaces/pokefirered/saves/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "/workspaces/pokefirered/saves/pokemonthyl_hoenn_QAed.sav": "a1cc80a034d99194e31b751be37aba88455e1a6c616a46f70cd9e333a59e4a91",
+    "/workspaces/pokefirered/saves/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.1.sav": "f948dc30fdd18eba8795ec724e4532d2076909b2b56fab1c37c27c6d61249b37",
+    "/workspaces/pokefirered/saves/pokemonthyl_v1.2.sav": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+    "/workspaces/pokefirered/saves/backup-codex-v1_1-recovery-sort-20261002T002244.307175Z/pokemonthyl_v1.1.original.sav": "417452a3f151dbe0eeaca4d41780739f8137eafd7ff14df4e7eed1685b9b699f",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.5.1.sav": "9472dce46183469317aaac939b4261a533f9829ec1fe5040b815a4f8b15d95fc",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/pokemonthyl_v3.gba.sav": "c666589a4059a0322560d2376241ee2493e5404b37bf175045671bd25f64be84",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/hoenn.sav": "d1ed8d987d4e451efb00a6cda2ba770e6472f36a89595a04a3550156876806ad",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.2.1.sav": "19c5937c7a6130725f38a691ea11d2029f4b5d65f96210aeedc607d9f148349d",
+    "/workspaces/pokefirered/saves/backup-v0.6.0-era/v0.1.0.sav": "6652e5810e58bfea1002ddd959edef5bb1daabce6b705d96b4d6d26143a6a424"
+  },
+  "backup": "work/backups/hoenn-weather-bridge-v1-20261006T045839668571Z"
+}

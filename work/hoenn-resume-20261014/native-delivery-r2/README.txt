@@ -1,0 +1,1 @@
+Scoped actual-key Hoenn Devon parcel and boat QA. Natural pre-twins SAVE continuation; original user saves unchanged. QA-only SAV files are test checkpoints, not a replacement for the user battery save. Earlier seed had a disclosed eligibility fixture. Full campaign, negative reward cases and DELTA-device FPS are not covered.

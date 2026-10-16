@@ -1,0 +1,92 @@
+{
+  "updated_at": "2026-10-12T10:55:10.940703+00:00",
+  "scope": "native raw mGBA 0.10.1 core state; not user DELTA frontend state",
+  "state_bytes": 397312,
+  "full_storage_comparison_bytes": 33744,
+  "box_comparison_bytes": 33600,
+  "box_profile_start_offset": 0,
+  "controls": {
+    "control-q8-to-q8": {
+      "runtime_compatible": true,
+      "samples": 4,
+      "party_count": 6,
+      "occupied_box_records": 119,
+      "baseline_bad_records": [
+        {
+          "slot": 51,
+          "pid": 3822976,
+          "ot": 2839214970,
+          "stored_checksum": 30838,
+          "calculated_checksum": 48246,
+          "valid_checksum": false,
+          "bad_flag": true,
+          "species": 108,
+          "raw_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd"
+        }
+      ]
+    },
+    "control-current-to-current": {
+      "runtime_compatible": true,
+      "samples": 4,
+      "party_count": 6,
+      "occupied_box_records": 119,
+      "baseline_bad_records": [
+        {
+          "slot": 51,
+          "pid": 3822976,
+          "ot": 2839214970,
+          "stored_checksum": 30838,
+          "calculated_checksum": 48246,
+          "valid_checksum": false,
+          "bad_flag": true,
+          "species": 108,
+          "raw_sha256": "83593229cfa435fd9bcfa4a94a238b60f71a583fe803afbf0d7fe11f219391fd"
+        }
+      ]
+    }
+  },
+  "cross": {
+    "source_rom_sha256": "111d4e1ae7e6572845e5eb31ed33a1216fff8aa3d3e11466f287b74419abe682",
+    "target_rom_sha256": "2bafd6478fef5bbda56c6b4bec9c8dec1a4e0f060252fc219dbcc834411509f7",
+    "state_sha256": "44ca993ad896ae74c73932bd30348d8983d0566692ecb5f04cd48379edba0836",
+    "restore_accepted": true,
+    "runtime_compatible": false,
+    "cross_rom_state_incompatible": true,
+    "restored_zero_frame_records_unchanged": true,
+    "rendered_callbacks": [
+      "CB2_InitCopyrightScreenAfterBootup",
+      "CB2_Intro"
+    ],
+    "post_reboot_storage_pointer": 0,
+    "rendered_60_storage_RAM_changed_bytes": 9043,
+    "post_reboot_profiles_unavailable": true,
+    "newly_corrupted_pokemon_observed": false,
+    "persistent_save_damage_observed": false
+  },
+  "arbitrary_RAM_writes": 0,
+  "native_state_restoration": true,
+  "menu_SAVE_performed": false,
+  "user_DELTA_state_tested": false,
+  "user_reported_cause_confirmed": false,
+  "all_original_SAVs_unchanged": true,
+  "current_ROM_unchanged": true,
+  "visually_inspected": [
+    "cross-q8-to-current/restore-rendered-60.png",
+    "control-current-to-current/restore-rendered-240.png"
+  ],
+  "invalid_diagnostics_excluded": [
+    {
+      "path": "state-cross-rom",
+      "reason": "Original box profile used erroneous offset4 rather than box slice offset0; use corrected profiles only."
+    },
+    {
+      "path": "state-cross-rom/cross-q8-to-current-fixed-body-read",
+      "reason": "Erroneous full struct vs box-only slice baseline comparison. Corrected full baseline matches before restore and zero frame."
+    }
+  ],
+  "limitations": [
+    "Not evidence that the original BOX2 slot22 Lickitung was damaged by this experiment.",
+    "No DELTA state was supplied; reported all-map tile corruption remains unreproduced.",
+    "Raw-state pass means experiment executed, not compatibility passed."
+  ]
+}

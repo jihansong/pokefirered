@@ -1,0 +1,27 @@
+{
+  "pass_all": true,
+  "maps": [
+    {
+      "map": "JohtoRoute34",
+      "load_frames": 96,
+      "stable_idle_frames": 12,
+      "vblank_delta": 107,
+      "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "fixture_sha256": "1adda607c0f7dbcb55049498a4984fe6eab27cf8e0555e7e21e9b73c0e94a905"
+    },
+    {
+      "map": "GoldenrodCity",
+      "load_frames": 96,
+      "stable_idle_frames": 12,
+      "vblank_delta": 107,
+      "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+      "fixture_sha256": "d56bdb7a0addba918e46b608142d18d2e8f367115ccb213efa24b1160b383f0c"
+    }
+  ],
+  "rom_sha256": "9503378c0bf9aac8f15a38d1427bb27a7323e48b67970212ce2b36fc51f864ef",
+  "elf_sha256": "2b8d3d2316d36ec519c09fc0210011ca9dcf142a975ee0a1efd127dbd278c87f",
+  "sym_sha256": "8e986987be5f0dee01651358d2ce7b464113d6422882b4ada6e881a146140454",
+  "source_save_sha256": "73733902ec36e7ec13fc74d734c773b66077620d63febe1399cae9f759ef6a85",
+  "ram_pokes_original": 0,
+  "actual_device_fps_measured": false
+}

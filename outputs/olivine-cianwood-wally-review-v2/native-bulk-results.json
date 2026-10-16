@@ -1,0 +1,138 @@
+{
+  "rom_sha256": "8117266ed145c544316a2975fd51021624f7ef048ea4a9ede3566201bd97504a",
+  "cases": [
+    {
+      "case": "wally-remember",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/wally-remember-run.log"
+    },
+    {
+      "case": "wally-loss",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/wally-loss-run.log"
+    },
+    {
+      "case": "wally-decline",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/wally-decline-run.log"
+    },
+    {
+      "case": "wally-early",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/wally-early-run.log"
+    },
+    {
+      "case": "wally-done",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/wally-done-run.log"
+    },
+    {
+      "case": "wally-legacy",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/wally-legacy-run.log"
+    },
+    {
+      "case": "vr-hope",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/vr-hope-run.log"
+    },
+    {
+      "case": "vr-albert",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/vr-albert-run.log"
+    },
+    {
+      "case": "vr-katelynn",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/vr-katelynn-run.log"
+    },
+    {
+      "case": "vr-quincy",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/vr-quincy-run.log"
+    },
+    {
+      "case": "vr-edgar-loss",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/vr-edgar-loss-run.log"
+    },
+    {
+      "case": "vr-hope-loss",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/vr-hope-loss-run.log"
+    },
+    {
+      "case": "vr-albert-loss",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/vr-albert-loss-run.log"
+    },
+    {
+      "case": "vr-katelynn-loss",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/vr-katelynn-loss-run.log"
+    },
+    {
+      "case": "vr-quincy-loss",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/vr-quincy-loss-run.log"
+    },
+    {
+      "case": "vr-edgar-sight",
+      "exit": 1,
+      "pass": false,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/vr-edgar-sight-run.log"
+    },
+    {
+      "case": "vr-quincy-done",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/vr-quincy-done-run.log"
+    },
+    {
+      "case": "johto-events",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/johto-events-run.log"
+    },
+    {
+      "case": "johto-battles",
+      "exit": 1,
+      "pass": false,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/johto-battles-run.log"
+    },
+    {
+      "case": "johto-maps",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/johto-maps-run.log"
+    },
+    {
+      "case": "johto-chain",
+      "exit": 1,
+      "pass": false,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/johto-chain-run.log"
+    },
+    {
+      "case": "johto-wild",
+      "exit": 0,
+      "pass": true,
+      "log": "/workspaces/pokefirered/outputs/olivine-cianwood-wally-review-v2/johto-wild-run.log"
+    }
+  ],
+  "all_pass": false
+}

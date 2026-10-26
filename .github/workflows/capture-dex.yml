@@ -167,7 +167,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          make leafgreen -j"$(nproc)" COMPARE=0 SETUP_PREREQS=0 LD="$(command -v arm-none-eabi-ld) --warn-rwx-segments" 2>&1 | tee /tmp/capture-dex-control.log
+          test -x "${DEVKITARM:?}/bin/arm-none-eabi-ld"
+          make leafgreen -j"$(nproc)" COMPARE=0 SETUP_PREREQS=0 LD="${DEVKITARM:?}/bin/arm-none-eabi-ld --warn-rwx-segments" 2>&1 | tee /tmp/capture-dex-control.log
           make GAME_VERSION=LEAFGREEN COMPARE=0 SETUP_PREREQS=0 syms 2>&1 | tee -a /tmp/capture-dex-control.log
           python3 - <<'PY'
           from pathlib import Path
@@ -188,7 +189,8 @@ jobs:
         run: |
           set -euo pipefail
           touch ld_script.ld
-          make leafgreen -j"$(nproc)" COMPARE=0 SETUP_PREREQS=0 LD="$(command -v arm-none-eabi-ld) --no-warn-rwx-segments" 2>&1 | tee /tmp/capture-dex-build.log
+          test -x "${DEVKITARM:?}/bin/arm-none-eabi-ld"
+          make leafgreen -j"$(nproc)" COMPARE=0 SETUP_PREREQS=0 LD="${DEVKITARM:?}/bin/arm-none-eabi-ld --no-warn-rwx-segments" 2>&1 | tee /tmp/capture-dex-build.log
           make GAME_VERSION=LEAFGREEN COMPARE=0 SETUP_PREREQS=0 syms 2>&1 | tee -a /tmp/capture-dex-build.log
           python3 - <<'PY'
           from pathlib import Path

@@ -142,3 +142,5 @@ LOAD 구간의 RWX 속성을 경고한다. 먼저 `--warn-rwx-segments`로 게�
 해당 옵션이 제어하는 진단 범위는 [GNU ld 공식 문서](https://sourceware.org/binutils/docs/ld/Options.html#index-_002d_002dwarn_002drwx_002dsegments)에 따른다.
 이 정책은 이 GBA bare-metal 링크에만 적용한다. 별도로 설치하는 예전 agbcc
 자체의 호스트 빌드까지 경고가 없다는 주장은 하지 않는다.
+
+고정 컨테이너의 ARM linker는 `${DEVKITARM}/bin/arm-none-eabi-ld`로 명시하고 실행 가능 여부를 먼저 확인한다. Makefile 내부에서만 확장되는 PATH에 셸의 `command -v` 결과를 의존하지 않는다.

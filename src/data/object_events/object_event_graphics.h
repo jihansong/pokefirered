@@ -360,3 +360,6 @@ const u16 gObjectEventPal_GroudonMagmaAwake[] = INCBIN_U16("graphics/object_even
 const u32 gObjectEventPic_HoennGabby[] = INCBIN_U32("graphics/object_events/pics/hoenn/reporter_f_story.4bpp");
 
 const u32 gObjectEventPic_HoennTy[] = INCBIN_U32("graphics/object_events/pics/hoenn/cameraman_story.4bpp");
+
+const u16 gObjectEventPic_SpaceBoardingGuide[] = INCBIN_U16("graphics/object_events/pics/people/space_boarding_guide.4bpp");
+const u16 gObjectEventPal_SpaceBoardingGuide[] = INCBIN_U16("graphics/object_events/palettes/space_boarding_guide.gbapal");

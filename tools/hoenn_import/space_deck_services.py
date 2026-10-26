@@ -257,12 +257,12 @@ def decorate(role, ctx):
         _league_surface(ctx, 'EverGrande_complete_left_waiting_group', [
             [576,576,550,576,576], [606,606,573,574,564],
             [614,614,581,582,550],
-        ], ['00000','00110','11110'], 4, 9,
+        ], ['00000','11110','11110'], 4, 9,
             'EverGrandeCity_PokemonLeague_1F columns1..5 rows9..11')
         _league_surface(ctx, 'EverGrande_complete_right_waiting_group', [
             [576,576,606], [576,550,614], [573,574,576],
             [581,582,564], [550,564,576],
-        ], ['000','001','110','110','000'], 13, 7,
+        ], ['001','001','110','110','000'], 13, 7,
             'EverGrandeCity_PokemonLeague_1F columns15..17 rows6..10')
         # Reserve complete, dedicated walking lanes, not just spawn cells.
         reserved = {(6,2),(3,4),(16,4),(10,12),(10,14)}

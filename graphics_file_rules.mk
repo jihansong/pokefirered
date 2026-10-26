@@ -483,3 +483,7 @@ graphics/object_events/pics/people/jessie_frlg_style.4bpp: %.4bpp: %.png
 
 graphics/object_events/pics/people/james_frlg_style.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+# Cabin-only boarding attendant: three 16x32 standing originals.
+graphics/object_events/pics/people/space_boarding_guide.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4

@@ -2740,3 +2740,16 @@ static const struct SpriteFrameImage sPicTable_HoennTy[] = {
     overworld_frame(gObjectEventPic_HoennTy, 2, 4, 8),
     overworld_frame(gObjectEventPic_HoennTy, 2, 4, 0),
 };
+
+// Three standing originals; aliases retain Standard facing compatibility.
+static const struct SpriteFrameImage sPicTable_SpaceBoardingGuide[] = {
+    overworld_frame(gObjectEventPic_SpaceBoardingGuide, 2, 4, 0),
+    overworld_frame(gObjectEventPic_SpaceBoardingGuide, 2, 4, 1),
+    overworld_frame(gObjectEventPic_SpaceBoardingGuide, 2, 4, 2),
+    overworld_frame(gObjectEventPic_SpaceBoardingGuide, 2, 4, 0),
+    overworld_frame(gObjectEventPic_SpaceBoardingGuide, 2, 4, 0),
+    overworld_frame(gObjectEventPic_SpaceBoardingGuide, 2, 4, 1),
+    overworld_frame(gObjectEventPic_SpaceBoardingGuide, 2, 4, 1),
+    overworld_frame(gObjectEventPic_SpaceBoardingGuide, 2, 4, 2),
+    overworld_frame(gObjectEventPic_SpaceBoardingGuide, 2, 4, 2),
+};

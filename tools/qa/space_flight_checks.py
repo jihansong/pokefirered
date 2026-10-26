@@ -15,6 +15,7 @@ class FlightChecks:
         self.story = (source/'src/hoenn_space_story.c').read_text()
         self.samples = []
         self.observations = []
+        self.gpu_blend_checks = []
         self.tasks_seen = []
         for name in ('gTasks', 'Task_SpaceFlight', 'Task_YesNoMenu_HandleInput', 'gStringVar4'):
             assert name in guest.sym, ('Missing fresh flight symbol', name)
@@ -73,7 +74,8 @@ class FlightChecks:
         targets = ([0, 360, 479, 535, 536, 552, 567, 568, 569, 600, 631, 632,
                     720, 839, 900, 1020, 1320, 1560, length-1]
                    if not returning else [0, 627, 628, 629, 659, 660, 691, 692,
-                                          900, 1020, 1080, 1140, 1200, 1320, length-1])
+                                          900, 1020, 1080, 1100, 1139, 1140, 1141, 1200, 1260,
+                                          1317, 1318, 1319, 1320, 1387, length-1])
         # tFrame advances after RenderSpaceFrame; sample N after tFrame becomes N+1.
         observed = []
         for waiting in range(720):
@@ -109,6 +111,21 @@ class FlightChecks:
                         if requested in (0, length-1):
                             assert lag == 0, ('Scene endpoint must be observed exactly', requested, rendered)
                         name = ('return' if returning else 'outbound')+'-requested-%04d-observed-%04d' % (requested, rendered)
+                        if returning and requested == 660:
+                            # Hardware registers are source-defined ARM constants;
+                            # no fixed semantic RAM address or guest write is used.
+                            values = self.g.values
+                            def io_word(register):
+                                return int.from_bytes(self.g.read(values['constant.REG_BASE']+
+                                    values['constant.REG_OFFSET_'+register], 2), 'little')
+                            registers = {key: io_word(key) for key in ('BG3CNT', 'BLDCNT', 'BLDALPHA')}
+                            assert registers['BG3CNT'] & 3 == 0, ('Earth priority not committed before ShowBg', registers)
+                            assert registers['BLDCNT'] & 0x3f == 8 and registers['BLDCNT'] >> 6 & 3 == 1
+                            assert registers['BLDCNT'] >> 8 & 6 == 6, ('Runway/tower missing blend second-target', registers)
+                            coefficients = [registers['BLDALPHA'] & 31, registers['BLDALPHA'] >> 8 & 31]
+                            assert sum(coefficients) == 16 and all(0 < x < 16 for x in coefficients)
+                            self.gpu_blend_checks.append({'requested_index': requested, 'observed_index': rendered,
+                                                          'video_frame': video, 'hardware_registers': registers})
                         self.g.picture(name)
                         observed.append(requested)
                         self.samples.append({'scene': 'return' if returning else 'outbound',
@@ -131,7 +148,7 @@ class FlightChecks:
             self.g.step(0, 12)
         raise AssertionError(('Flight destination did not unlock', expected, self.g.snapshot()))
 
-    def run(self):
+    def run(self, interior_check=None):
         t, g = self.tour, self.g
         assert t.name() == 'HoennSpaceportTerminal' and g.snapshot()['xy'] == [8, 7]
         terminal_before = g.snapshot()
@@ -145,6 +162,7 @@ class FlightChecks:
         assert g.snapshot()['xy'] == [15, 12]
         self.choose_yes('Space_Text_Board')
         self.flight(False)
+        interior = interior_check(t) if interior_check is not None else None
         # Use the unchanged in-game exit tile, not a direct special invocation.
         t.walk('HoennSpacecraftCabin', (10, 13)); t.move('S')
         assert g.snapshot()['xy'] == [10, 14]
@@ -152,10 +170,11 @@ class FlightChecks:
         self.flight(True)
         assert not self.task('Task_SpaceFlight')
         return {'status': 'PASS_NORMAL_KEYS_OUTBOUND_RETURN', 'scenes': self.tasks_seen, 'frame_samples': self.samples,
-                'task_video_observations': self.observations,
+                'task_video_observations': self.observations, 'interior_check': interior,
+                'gpu_blend_checks': self.gpu_blend_checks,
                 'normal_registration': True, 'runtime_memory_writes': 0,
                 'scope': 'Synthetic terminal start, normal registration, boarding, full source-duration scenes and ordinary exit return; pixel quality reviewed separately.'}
 
 
-def run_flight_checks(guest, tour, source):
-    return FlightChecks(guest, tour, source).run()
+def run_flight_checks(guest, tour, source, interior_check=None):
+    return FlightChecks(guest, tour, source).run(interior_check)

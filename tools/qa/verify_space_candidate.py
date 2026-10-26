@@ -25,7 +25,7 @@ REQUIRED_UNITS = [
         'reshow_battle_screen', 'battle_main', 'battle_bg', 'battle_util2',
         'battle_message', 'battle_gfx_sfx_util', 'librfu_intr', 'overworld',
         'fieldmap', 'field_specials', 'field_fadetransition', 'hoenn_space_story',
-        'tilesets', 'intro_opening', 'title_screen', 'credits')
+        'tilesets', 'event_object_movement', 'intro_opening', 'title_screen', 'credits')
 ] + ['data/maps.o', 'data/map_events.o', 'data/event_scripts.o', 'sound/songs/midi/mus_credits.o']
 
 

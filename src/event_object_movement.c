@@ -454,6 +454,7 @@ static const u8 gInitialMovementTypeFacingDirections[MOVEMENT_TYPES_COUNT] = {
 #define OBJ_EVENT_PAL_TAG_PLAYER_RED_REFLECTION       0x1101
 #define OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION           0x1102
 #define OBJ_EVENT_PAL_TAG_NPC_BLUE                    0x1103
+#define OBJ_EVENT_PAL_TAG_SPACE_BOARDING_GUIDE        0x1148
 #define OBJ_EVENT_PAL_TAG_NPC_PINK                    0x1104
 #define OBJ_EVENT_PAL_TAG_NPC_GREEN                   0x1105
 #define OBJ_EVENT_PAL_TAG_NPC_WHITE                   0x1106
@@ -573,6 +574,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_HoennSubmarineShadow, OBJ_EVENT_PAL_TAG_HOENN_SUBMARINE_SHADOW},
     {gObjectEventPal_HoennMovingBox, OBJ_EVENT_PAL_TAG_HOENN_MOVING_BOX},
 // END HOENN OBJECT EVENT PALETTES
+    {gObjectEventPal_SpaceBoardingGuide, OBJ_EVENT_PAL_TAG_SPACE_BOARDING_GUIDE},
     {},
 };
 
@@ -2143,6 +2145,13 @@ const struct ObjectEventGraphicsInfo *GetObjectEventGraphicsInfo(u8 graphicsId)
     if (graphicsId >= NUM_OBJ_EVENT_GFX)
         graphicsId = OBJ_EVENT_GFX_LITTLE_BOY;
     
+    // Keep byte-sized IDs and all dynamic VAR slots intact. Only Cabin's one
+    // original Cable Club desk attendant uses this private palette and image.
+    if (graphicsId == OBJ_EVENT_GFX_CABLE_CLUB_RECEPTIONIST
+        && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_HOENN_SPACECRAFT_CABIN)
+        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_HOENN_SPACECRAFT_CABIN))
+        return &gObjectEventGraphicsInfo_SpaceBoardingGuide;
+
     if (graphicsId == OBJ_EVENT_GFX_PLAYER_ACRO_BIKE)
         return gSaveBlock2Ptr->playerGender == FEMALE
             ? &gObjectEventGraphicsInfo_GreenAcroBike

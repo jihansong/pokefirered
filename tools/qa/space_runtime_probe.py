@@ -219,6 +219,8 @@ class Tour:
             self.add_map(directory)
         self.add_map(source/'data/maps/HoennOrbitalObservatory')
         assert len(self.maps) == 17
+        self.ship_names = set(self.maps)
+        self.door_observations = []
         self.crossings = []
         self.visited = set()
         self.chapters = []
@@ -298,6 +300,20 @@ class Tour:
         room = self.maps[name]
         x, y = warp['x'], warp['y']
         direction = min(((x, 'W'), (room['w']-1-x, 'E'), (y, 'N'), (room['h']-1-y, 'S')))[1]
+        observations = []
+        if name in self.ship_names:
+            dx, dy = DELTA[direction]
+            for distance in (2, 1):
+                stand = (x-distance*dx, y-distance*dy)
+                assert stand in room['floor'], ('Door approach blocked', name, index, distance, stand)
+                assert self.walk(name, stand) == name
+                view = self.g.snapshot()
+                assert tuple(view['xy']) == stand and not view['script_locked']
+                picture = 'door-%s-%d-approach-%d' % (name, index, distance)
+                self.g.picture(picture)
+                observations.append({'phase': 'approach', 'distance': distance, 'map': name,
+                                     'xy': list(stand), 'video_frame': self.g.last_status.get('video_frames', 0),
+                                     'picture': picture+'.ppm'})
         reached = self.walk(name, (x, y), destination)
         if reached == name:
             self.move(direction)
@@ -317,6 +333,13 @@ class Tour:
                        (ly, 'N'), (target_room['h']-1-ly, 'S')))[1]
         dx, dy = DELTA[REVERSE[outward]]
         assert tuple(snap['xy']) in {(lx, ly), (lx+dx, ly+dy)}, ('Wrong destination door landing', snap, landing)
+        if observations:
+            picture = 'door-%s-%d-destination' % (name, index)
+            self.g.picture(picture)
+            observations.append({'phase': 'destination_landing', 'map': destination, 'xy': snap['xy'],
+                                 'video_frame': self.g.last_status.get('video_frames', 0), 'picture': picture+'.ppm'})
+            self.door_observations.append({'from': name, 'warp': index, 'to': destination,
+                                           'destination_warp': int(warp['dest_warp_id']), 'observations': observations})
         return destination, int(warp['dest_warp_id'])
 
     def dfs(self, name):
@@ -344,8 +367,9 @@ class Tour:
                     if any(r['definition']['id'] == warp['dest_map'] for r in self.maps.values())}
         actual = {(x['from'], x['warp']) for x in self.crossings}
         assert actual == expected and len(actual) == len(self.crossings), ('Directed door coverage mismatch', actual ^ expected)
+        assert len(self.door_observations) == 32 and all(len(x['observations']) == 3 for x in self.door_observations)
         return {'visited_rooms': sorted(self.visited), 'directional_crossings': self.crossings,
-                'video_chapters': self.chapters,
+                'video_chapters': self.chapters, 'door_step_observations': self.door_observations,
                 'scope': 'One continuous synthetic-fixture tour with normal keys; no NPC battles or facility use claimed'}
 
 
@@ -395,7 +419,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for key in ('host', 'source', 'schema', 'rom', 'symbols', 'seed', 'artifact-dir'):
         parser.add_argument('--'+key, type=Path, required=True)
-    parser.add_argument('--scenario', choices=['boot-save', 'tour-save', 'flight-save'], default='boot-save')
+    parser.add_argument('--scenario', choices=['boot-save', 'tour-save', 'flight-save', 'finish-flight-save'], default='boot-save')
     parser.add_argument('--video', action='store_true', help='Record actual rendered frames through a dedicated ffmpeg pipe')
     a = parser.parse_args()
     for key in ('host', 'source', 'schema', 'rom', 'symbols', 'seed'):
@@ -426,9 +450,26 @@ def main():
             cases = json.loads((a.source/'tools/qa/space-service-cases.json').read_text(encoding='utf8'))
             pc_case = next(x for x in cases['services'] if x['script'] == 'SpaceFacility_PC')
             result['pc'] = pc_roundtrip(guest, tour, pc_case)
-        if a.scenario == 'flight-save':
+        if a.scenario in ('flight-save', 'finish-flight-save'):
             from space_flight_checks import run_flight_checks
-            result['flight'] = run_flight_checks(guest, Tour(guest, a.source), a.source)
+            def check_interiors(tour):
+                # Keep the 17-room directed-door contract separate from the
+                # flight controller's additional terminal/launch-pad routing.
+                tour = Tour(guest, a.source)
+                result['tour'] = json.loads(json.dumps(tour.run()))
+                from space_finish_checks import run_finish_checks
+                result['finish'] = run_finish_checks(guest, tour, a.source/'tools/qa/space-finish-cases.json')
+                from space_service_checks import run_service_checks
+                result['services'] = run_service_checks(guest, tour, a.source/'tools/qa/space-service-cases.json')
+                from space_pc_roundtrip import pc_roundtrip
+                cases = json.loads((a.source/'tools/qa/space-service-cases.json').read_text(encoding='utf8'))
+                pc_case = next(x for x in cases['services'] if x['script'] == 'SpaceFacility_PC')
+                result['pc'] = pc_roundtrip(guest, tour, pc_case)
+                return {'rooms': len(result['tour']['visited_rooms']),
+                        'directed_doors': len(result['tour']['directional_crossings']),
+                        'finish_status': result['finish']['status'], 'facilities_checked': True}
+            result['flight'] = run_flight_checks(guest, Tour(guest, a.source), a.source,
+                                                check_interiors if a.scenario == 'finish-flight-save' else None)
         if a.video:
             guest.step(0, 120)
             result['video'] = guest.finish_video()

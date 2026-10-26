@@ -1,4 +1,4 @@
-"""Seventeen private GBA ship interiors from exact original source pixels.
+"""Seventeen native-palette GBA interiors with explicit hull/floor composites.
 
 Pure build(root, contract) returns asset/block/border outputs. No map event,
 script, layout/group registration, save, flight asset or primary tiles changed.
@@ -12,8 +12,13 @@ def jb(v):return (json.dumps(v,ensure_ascii=False,indent=2)+'\n').encode('utf8')
 def build(S,contract=None):
  S=Path(S);inputs={};out={};reports=[];allcopies=[]
  modules=[]
+ for name in ('space_bridge_finish_v18.py','space_furniture_finish_v18.py','space_captain_finish_v18.py','space_foreground_finish_v18_02.py'):
+  rel='tools/hoenn_import/'+name
+  if (S/rel).exists():
+   inputs[rel]=hashlib.sha256((S/rel).read_bytes()).hexdigest();modules.append(runpy.run_path(str(S/rel)))
  for kind in ('services','living'):
   rel=f'tools/hoenn_import/space_deck_{kind}.py';inputs[rel]=hashlib.sha256((S/rel).read_bytes()).hexdigest();modules.append(runpy.run_path(str(S/rel)))
+ modules.sort(key=lambda module:'decorate_override' in module)
  def read(rel):
   b=(S/rel).read_bytes();inputs[rel]=hashlib.sha256(b).hexdigest();return b
  if contract is None:contract=json.loads(read('tools/hoenn_import/space_deck_v4_contract.json'))
@@ -26,6 +31,8 @@ def build(S,contract=None):
  for module in modules:
   for alias,args in module.get('DONOR_PROFILES',{}).items():
    assert alias not in P;P[alias]=prof(alias,*args)
+ rel='tools/hoenn_import/space_hull_finish_v18.py';inputs[rel]=hashlib.sha256((S/rel).read_bytes()).hexdigest()
+ hull_module=runpy.run_path(str(S/rel))
  layouts=json.loads(read('data/layouts/layouts.json'))['layouts']
  def words(ref):
   fam,n=ref[:2];p=P[fam];q=int(n>=p['cut']);i=n-p['cut'] if q else n;return struct.unpack_from('<8H',p['mt'][q],i*16)
@@ -56,6 +63,7 @@ def build(S,contract=None):
   assert solve(0),('Palette7 exact packing impossible',[(k,len(v)) for k,v in groups.items()])
   return bins,assign,nodes[0]
  for cfg in contract['maps']:
+  P['hull'],hull_compositions=hull_module['make_profile'](P)
   role=cfg['role'];name=cfg['map'];w,h=cfg['size'];m=json.loads(read(f'data/maps/{name}/map.json'));l=next(v for v in layouts if v.get('id')==m['layout']);assert [l['width'],l['height']]==[w,h]
   # One private profile per room: coherent donors never compete with other rooms.
   folder='data/tilesets/secondary/ty_space_v4_'+role.lower();grid=[('v3',1004)]*(w*h);blocked=[True]*(w*h);occupied=set();pieces=[]
@@ -94,36 +102,30 @@ def build(S,contract=None):
     for xx,n in enumerate(row):setcell(x+xx,y+yy,(fam,n),collision)
    occupied.update(cells);pieces.append({'label':label,'source_profile':fam,'metatile_rows':rows,'xy':[x,y],'complete_shape':True,'blocked':collision})
   handled=False
-  ctx=dict(place=place,setcell=setcell,floor=floor,w=w,h=h,hard=hard,occupied=occupied,pieces=pieces,P=P)
+  ctx=dict(place=place,setcell=setcell,floor=floor,w=w,h=h,hard=hard,occupied=occupied,pieces=pieces,P=P,grid=grid,blocked=blocked,getcell=lambda x,y:grid[y*w+x],words=words,attribute=attribute,tile_raw=tile_raw)
   for module in modules:
-   if role in module['ROOM_PLANS']:
+   if 'decorate_override' in module and module['decorate_override'](role,ctx):
+    assert not handled;handled=True
+  for module in modules:
+   if not handled and role in module.get('ROOM_PLANS',{}):
     assert not handled
     handled=module['decorate'](role,ctx)
   assert handled,('Missing explicit room plan',role)
   for a in cfg['interaction_tiles']:
    x,y=a['target'];assert blocked[y*w+x],(role,'Interaction has no physical fixture',a)
-  if role=='Cabin':
-   # A continuous ship hull makes side hatches part of the room architecture.
-   # The complete original League frontage above row five stays intact.
-   for yy in range(5,15):setcell(0,yy,('v3',1004),True)
-   for yy in range(5,14):
-    setcell(1,yy,('v3',904),True);setcell(18,yy,('v3',905),True)
-   for xx in range(1,19):setcell(xx,14,('v3',906 if xx==1 else 908 if xx==18 else 907),True)
+  for portal in cfg['warps']:
+   x,y=portal['xy'];dx,dy={'N':(0,1),'S':(0,-1),'E':(-1,0),'W':(1,0)}[portal['outward']]
+   if role!='Cabin':
+    for step in range(3):setcell(x+dx*step,y+dy*step,floor,False)
+  for module in sorted(modules,key=lambda module:module.get('FINISH_ORDER',0)):
+   if 'finish' in module:module['finish'](role,ctx)
+  hull_module['finish'](role,ctx,cfg)
   # Arrow portals occupy the actual contract rows; no auto door-step trap.
   warp_refs={};warp_ids={}
   for a in cfg['warps']:
    x,y=a['xy'];direction=a['outward'];dx,dy={'N':(0,1),'S':(0,-1),'E':(-1,0),'W':(1,0)}[direction]
-   if role=='Cabin':
-    # Keep the complete League frontage and its native floor/wall end caps.
-    for t in range(1,3):assert not blocked[(y+dy*t)*w+x+dx*t],(role,'native portal approach blocked',x,y,t)
-    ref=grid[y*w+x] if direction=='N' or (direction=='E' and y==4) else ('anne',959)
-   else:
-    for t in range(3):setcell(x+dx*t,y+dy*t,floor,False)
-    for t in [1,2]:
-     xx,yy=x+dx*t,y+dy*t
-     if direction in ['N','S'] and (xx+1,yy) not in occupied:setcell(xx+1,yy,floor,False)
-     elif direction in ['E','W'] and (xx,yy+1) not in occupied:setcell(xx,yy+1,floor,False)
-    ref=('anne',959)
+   for step in range(1,3):assert not blocked[(y+dy*step)*w+x+dx*step],(role,'portal approach blocked',x,y,step)
+   ref=grid[y*w+x]
    behavior={'S':0x65,'N':0x64,'E':0x62,'W':0x63}[direction];ref=(*ref[:2],0x20000000|behavior);setcell(x,y,ref,False)
    slot=1000+{'S':0,'N':1,'E':2,'W':3}[direction]
    if slot in warp_refs and warp_refs[slot]!=ref:
@@ -132,22 +134,13 @@ def build(S,contract=None):
   # Existing story floor triggers remain usable alongside ordinary door warps.
   for event in m['coord_events']:
    x,y=event['x'],event['y'];assert (x,y) not in occupied,(role,'Story trigger covered by furniture',x,y)
-   setcell(x,y,('anne',959,0x20000000) if role=='Cabin' else floor,False)
+   setcell(x,y,grid[y*w+x] if role=='Cabin' else floor,False)
   for x,y in hard:
    if not any(a['xy']==[x,y] for a in cfg['warps']):
     assert (x,y) not in occupied,(role,'hard footprint hidden by furniture',x,y)
     assert not blocked[y*w+x],(role,'explicit plan blocks a required footprint',x,y)
-  # Deliberate source-pixel-preserving layer variants wherever an actor may stand
-  # below NORMAL/SPLIT foreground. Untouched inaccessible walls retain donors.
+  # Preserve donor foreground layers. Complete furniture footprints carry collision.
   layer_variants=[]
-  for i,isblocked in enumerate(list(blocked)):
-   if isblocked:continue
-   x,y=i%w,i//w
-   for yy in [y-1,y]:
-    if yy<0:continue
-    j=yy*w+x;ref=grid[j];v=attribute(ref);kind=v>>29&3
-    if kind in [0,2] and any(any(b for b in tile_raw(P[ref[0]],n)) for n in words(ref)[4:]):
-     replacement=(*ref[:2],(v&~0x60000000)|0x20000000);grid[j]=replacement;layer_variants.append({'xy':[x,yy],'source':ref,'variant':replacement,'reason':'walkable_actor_foot_or_head_foreground_clearance'})
   # Reserve legacy scripts and new scoped-PC animation IDs.
   reserved={1004:('v3',1004,0x20000000),**warp_refs}
   if role=='Engineering':reserved[531]=grid[4*w+12]
@@ -178,7 +171,7 @@ def build(S,contract=None):
    tid=tile_ids[dest]
    for a,b in zip(raw,dest):
     for si,ti in [(a&15,b&15),(a>>4,b>>4)]:assert (si==ti==0) or si!=0 and ti!=0 and pp['pal'][v>>12][si]==colors[ti]
-   copied.append({'source':ref[:2],'source_tile':v&1023,'source_palette':v>>12,'target_tile':tid,'target_palette':bank,'source_raw_sha256':hashlib.sha256(raw).hexdigest(),'target_raw_sha256':hashlib.sha256(dest).hexdigest(),'RGB555_alpha_exact':True})
+   copied.append({'source_kind':('new_hull_native_colors' if ref[0]=='hull' else 'floor_composite_native_foreground' if ref[0].startswith('furniture18_') else 'new_bridge_15color_adapted_window' if ref[0]=='bridge18' else 'original_donor_tile_pixels'),'exactness_scope':'input_profile_to_packed_4bpp_RGB555_and_alpha','source':ref[:2],'source_tile':v&1023,'source_palette':v>>12,'target_tile':tid,'target_palette':bank,'source_raw_sha256':hashlib.sha256(raw).hexdigest(),'target_raw_sha256':hashlib.sha256(dest).hexdigest(),'RGB555_alpha_exact':True})
    return tid|(v&0xc00)|(bank<<12)
   reserved_ids=set(reserved);ref_id={};ids={}
   for n,ref in sorted(reserved.items()):ids[n]=ref;ref_id.setdefault(ref,n)
@@ -206,13 +199,13 @@ def build(S,contract=None):
   reports.append({'role':role,'map':name,'size':[w,h],'secondary_symbol':cfg['secondary_tileset'],'folder':folder,'used_private_tiles':len(tile_ids),'palette_banks_used':len(bins),'palette_search_nodes':nodes,'metatile_count':len(ids),'pieces':pieces,'layer_clearance_variants':layer_variants,'passable_tiles':len(passable),'reachable_tiles':len(seen),'hard_footprints':len(hard),'all_hard_BFS_reachable':all(y*w+x in seen for x,y in hard),'all_customer_and_door_approaches_BFS_reachable':True,'metatile_source_map':{str(n):ref for n,ref in ids.items()},'tile_copy_proof':copied})
   allcopies.extend(copied)
  # Emit definitions fragment only. Parent integrates its include/registrations.
- header=['// Exact original pixel profiles for three ship decks;512/6 split.\n']
+ header=['// Native GBA room tiles and explicit hull/floor composites;512/6 split.\n']
  for r in reports:
   tag=r['secondary_symbol'];folder=r['folder']
   for typ,suffix,fn in [('u32','Tiles','tiles.4bpp'),('u16','Palettes','palettes.gbapal'),('u16','Metatiles','metatiles.bin'),('u32','Attributes','metatile_attributes.bin')]:header.append(f'static const {typ} s{tag}{suffix}'+('[][16]' if suffix=='Palettes' else '[]')+f' = INCBIN_{"U32" if typ=="u32" else "U16"}("{folder}/{fn}");\n')
   header.append(f'const struct Tileset {tag} = {{ .isCompressed=FALSE, .isSecondary=TRUE, .isEmerald=TRUE, .tiles=s{tag}Tiles, .palettes=s{tag}Palettes, .metatiles=s{tag}Metatiles, .metatileAttributes=s{tag}Attributes, .callback=NULL }};\n')
  out['src/data/tilesets/ty_space_deck_v4.h']=''.join(header).encode()
- return out,{'status':'EXPLICIT_ROOM_RELATIONS_SOURCE_ONLY_RUNTIME_PENDING','source_inputs_sha256':inputs,'maps':reports,'profiles':17,'maps_metadata_written':0,'flight_assets_changed':0,'primary_assets_changed':0,'RGB555_alpha_exact_tile_copies':len(allcopies),'new_art':0,'native_runs':0}
+ return out,{'status':'EXPLICIT_ROOM_RELATIONS_SOURCE_ONLY_RUNTIME_PENDING','source_inputs_sha256':inputs,'maps':reports,'profiles':17,'maps_metadata_written':0,'flight_assets_changed':0,'primary_assets_changed':0,'RGB555_alpha_exact_tile_copies':len(allcopies),'copy_proof_scope':'Input profile packing is exact; new hull/bridge/floor composite profiles are not unmodified original art','new_art':'native_palette_direct_pixel_hull_and_floor_composites','native_runs':0}
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--root',required=True,type=Path);p.add_argument('--contract',type=Path);p.add_argument('--out',required=True,type=Path);p.add_argument('--write',action='store_true');p.add_argument('--report',type=Path);a=p.parse_args();contract=json.loads(a.contract.read_text()) if a.contract else None;out,proof=build(a.root,contract)
@@ -221,5 +214,5 @@ def main():
   if a.write:f.parent.mkdir(parents=True,exist_ok=True);f.write_bytes(b)
   else:assert f.read_bytes()==b,rel
  if a.report:a.report.write_bytes(jb(proof))
- print(json.dumps({'maps':17,'outputs':len(out),'write':a.write,'new_art':0}))
+ print(json.dumps({'maps':17,'outputs':len(out),'write':a.write,'new_art':'native_palette_direct_pixel_hull_and_floor_composites'}))
 if __name__=='__main__':main()

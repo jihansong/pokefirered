@@ -7,6 +7,7 @@
 #include "expanded_save.h"
 #include "main.h"
 #include "task.h"
+#include "gba/io_reg.h"
 #include "fieldmap.h"
 #include "save_location.h"
 #include "constants/items.h"
@@ -26,6 +27,10 @@ struct TyFixtureRecord { char name[96]; unsigned value; };
                            {"size." #type "." #field, sizeof(((struct type *)0)->field)}
 #define CONSTANT(name) {"constant." #name, (unsigned)(name)}
 const struct TyFixtureRecord gTyFixtureSchema[] = {
+    CONSTANT(REG_BASE),
+    CONSTANT(REG_OFFSET_BG3CNT),
+    CONSTANT(REG_OFFSET_BLDCNT),
+    CONSTANT(REG_OFFSET_BLDALPHA),
     SIZE(Task),
     FIELD(Task, func),
     FIELD(Task, isActive),

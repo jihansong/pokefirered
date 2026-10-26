@@ -6,8 +6,8 @@
       "sha256": "f7770703b847585b1c5450a81e30ab185b5c333fbcbea0147727d1d9dae063b0"
     },
     ".github/workflows/space-linux.yml": {
-      "bytes": 11711,
-      "sha256": "8aee348b1efbdc67a60ea520d951749b486fe3975896970950f8b048f46ed1b4"
+      "bytes": 12455,
+      "sha256": "ad39b76aa755bb9c50edb5472875ca387d16088b49eb0f0b3fb855629a0672ae"
     },
     ".gitignore": {
       "bytes": 1376,
@@ -2611,7 +2611,7 @@
     },
     "data/layouts/HoennOrbitalObservatory/map.bin": {
       "bytes": 720,
-      "sha256": "c2bf793e370dad0c9d869e04c286920ec90edaa344b505a0d0ef46d21c6d1fb0"
+      "sha256": "88ae90018a41ee8a73f4580f024c6468148a8fef222af6ce8dbb309a4d89e507"
     },
     "data/layouts/HoennPacifidlogTown/border.bin": {
       "bytes": 8,
@@ -3707,7 +3707,7 @@
     },
     "data/layouts/HoennSpacecraftBattleDeck/map.bin": {
       "bytes": 864,
-      "sha256": "b84488c49c7cc8cb25fb460178b9c582591c20dbf6f557a98e011a8528670672"
+      "sha256": "a826399bc5fb9c9582290202fffbf425bde5fe0c2e6d9c8087d1c0030b56abe9"
     },
     "data/layouts/HoennSpacecraftCabin/border.bin": {
       "bytes": 8,
@@ -3715,7 +3715,7 @@
     },
     "data/layouts/HoennSpacecraftCabin/map.bin": {
       "bytes": 640,
-      "sha256": "0a51e313deb78c19fd8f7110a661dd2279445bc389fe1b7ae7adb3f7cc722741"
+      "sha256": "6f9908faff95985f083d2ed60c0bebc8bd710408cfe331528ad4d0c72ae64b40"
     },
     "data/layouts/HoennSpacecraftCabinCorridor/border.bin": {
       "bytes": 8,
@@ -3723,7 +3723,7 @@
     },
     "data/layouts/HoennSpacecraftCabinCorridor/map.bin": {
       "bytes": 672,
-      "sha256": "3b8c3bc4f7b7de1cbd634f59bf565c1f11de8fc56052c178080766a80cba7ce5"
+      "sha256": "e6548acfb7f6d83d2d2676a5f635609e3767d7573678c4e62f2273e04c358e33"
     },
     "data/layouts/HoennSpacecraftCaptainsOffice/border.bin": {
       "bytes": 8,
@@ -3731,7 +3731,7 @@
     },
     "data/layouts/HoennSpacecraftCaptainsOffice/map.bin": {
       "bytes": 448,
-      "sha256": "2e240e242c63c00ce9b6fbb016dd099d0a9605221b06656cdb271b5d5a6fbd72"
+      "sha256": "78863f8c7a00a94f5b8bb9d0393e41e46acf459669085496cf9c70d6345f863b"
     },
     "data/layouts/HoennSpacecraftCargoHold/border.bin": {
       "bytes": 8,
@@ -3739,7 +3739,7 @@
     },
     "data/layouts/HoennSpacecraftCargoHold/map.bin": {
       "bytes": 864,
-      "sha256": "b2dcbdaf001d950d619f885244676dce88d7ddb6db91b1fc3c52aa1621bb8131"
+      "sha256": "15dc3cdc99be1944a281efbaa38153c45b4c590d3989f0b46c648d7ca2c0419a"
     },
     "data/layouts/HoennSpacecraftCockpit/border.bin": {
       "bytes": 8,
@@ -3747,7 +3747,7 @@
     },
     "data/layouts/HoennSpacecraftCockpit/map.bin": {
       "bytes": 640,
-      "sha256": "00f856c14e413bf19183ff2d72cb7b39ba2425a3c7defb7b5d7dd0b22261b460"
+      "sha256": "368d8f133958f8a9b53c02bbb92f918cb5ef131a8c54ea4566664815664ff2ff"
     },
     "data/layouts/HoennSpacecraftCrewMess/border.bin": {
       "bytes": 8,
@@ -3755,7 +3755,7 @@
     },
     "data/layouts/HoennSpacecraftCrewMess/map.bin": {
       "bytes": 640,
-      "sha256": "f8264b9fb10fe67fcd58622165a2703b2378c9655baac42fc4226af884b90c1f"
+      "sha256": "725f8eb62f69066b8f0c7535c41d16ab9037162daa41b04380ac8f1f4051a61e"
     },
     "data/layouts/HoennSpacecraftCrewQuarters/border.bin": {
       "bytes": 8,
@@ -3763,7 +3763,7 @@
     },
     "data/layouts/HoennSpacecraftCrewQuarters/map.bin": {
       "bytes": 640,
-      "sha256": "f06ae19def79522624486fe5e60bd15f669953456c3e7483f9af3c51a9297362"
+      "sha256": "76c3325469cadd52ce88c8f54853c5c4f12a1c9e9ccd1644603f94a7f06e5351"
     },
     "data/layouts/HoennSpacecraftEngineering/border.bin": {
       "bytes": 8,
@@ -3771,7 +3771,7 @@
     },
     "data/layouts/HoennSpacecraftEngineering/map.bin": {
       "bytes": 640,
-      "sha256": "02f02da82a3d94e8eaa168e559cfbba858b2d26f7228d03c0eb54263f6079475"
+      "sha256": "fd7a1ab5af579d4fa082ca02153e2f6f619ba920a0a5234defe200b8719e0e5a"
     },
     "data/layouts/HoennSpacecraftFoodCourt/border.bin": {
       "bytes": 8,
@@ -3779,7 +3779,7 @@
     },
     "data/layouts/HoennSpacecraftFoodCourt/map.bin": {
       "bytes": 640,
-      "sha256": "c7239c2c52df3c4484b3ba85f637f6e90d496e7841060571617704dd208edd7f"
+      "sha256": "4055db46f53d32291f8722c15ed532fe86244c2dbec5a8c3d89ed53af055874d"
     },
     "data/layouts/HoennSpacecraftGameRoom/border.bin": {
       "bytes": 8,
@@ -3787,7 +3787,7 @@
     },
     "data/layouts/HoennSpacecraftGameRoom/map.bin": {
       "bytes": 640,
-      "sha256": "b48a83bad684689eccc4b321f9262550a653a6b8a78ff523122f845b1d6091df"
+      "sha256": "2bfac664f17f000a30387aa028d43ac76ba8b03d710d67f261036615ffeff582"
     },
     "data/layouts/HoennSpacecraftGuestRoom1/border.bin": {
       "bytes": 8,
@@ -3795,7 +3795,7 @@
     },
     "data/layouts/HoennSpacecraftGuestRoom1/map.bin": {
       "bytes": 288,
-      "sha256": "11ee29e0cae14b5e03b80f09ccaf2f63a1a10913b2a64312e86563c776999772"
+      "sha256": "1978e33769aecf465c9059403bbb85faeee491a74702e3a67ee67a19ff8798b2"
     },
     "data/layouts/HoennSpacecraftGuestRoom2/border.bin": {
       "bytes": 8,
@@ -3803,7 +3803,7 @@
     },
     "data/layouts/HoennSpacecraftGuestRoom2/map.bin": {
       "bytes": 288,
-      "sha256": "f41aaf292abc8f6a4b7dd4d9e82a8dc19c35712422cf6c87ef777e9dcfc5ad6f"
+      "sha256": "0e303be6e5f5fd86c9222752438fa73435309acca4d50498b7dfd11191a4eacf"
     },
     "data/layouts/HoennSpacecraftGuestRoom3/border.bin": {
       "bytes": 8,
@@ -3811,7 +3811,7 @@
     },
     "data/layouts/HoennSpacecraftGuestRoom3/map.bin": {
       "bytes": 288,
-      "sha256": "7d866361cee539ea74a18667c78c76be9422d433526593301b4aa61696003c7f"
+      "sha256": "05be3467d98394aa4b0d6be94a5995b6e3603e49257294bbd492be999ba7c23e"
     },
     "data/layouts/HoennSpacecraftLounge/border.bin": {
       "bytes": 8,
@@ -3819,7 +3819,7 @@
     },
     "data/layouts/HoennSpacecraftLounge/map.bin": {
       "bytes": 640,
-      "sha256": "ed86b9474fae87cd30a51546555423c939d2ce30f9c93c0a1c820af28fb9dfa3"
+      "sha256": "09750cbb5d2382d3b405e3d685b26362dd47157ca20f72291685593d25933e2f"
     },
     "data/layouts/HoennSpacecraftNavigation/border.bin": {
       "bytes": 8,
@@ -3827,7 +3827,7 @@
     },
     "data/layouts/HoennSpacecraftNavigation/map.bin": {
       "bytes": 720,
-      "sha256": "fe9ed6418587dec53ae132721d8928e6ab376ffba1ce23fcc28a0df10c2bd341"
+      "sha256": "7989b2edee1507ab81ad7b62b679b0828ad252bc1a58954a47e8a7c0ae26cd5d"
     },
     "data/layouts/HoennSpaceportLaunchPad/border.bin": {
       "bytes": 8,
@@ -32407,43 +32407,43 @@
     },
     "data/tilesets/secondary/ty_space_v4_battledeck/metatile_attributes.bin": {
       "bytes": 2048,
-      "sha256": "63ad32505ca63a4a00864aaaab3b4d9730dc55914938c2e97df98e6d184e7d85"
+      "sha256": "cf3a4bfc82bca1b99c21d0691418a10d1f5b8ca8151f8e889a70be2dfdd002eb"
     },
     "data/tilesets/secondary/ty_space_v4_battledeck/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "bb48a53a911a47ca30dda837321b4b108205b8ada946a6511bf8ebfb4b3c3d36"
+      "sha256": "b1797673958f7e57f61e2e502c15244838dfc0b59ee98c1d579d809734512ca5"
     },
     "data/tilesets/secondary/ty_space_v4_battledeck/palettes.gbapal": {
       "bytes": 416,
-      "sha256": "975fd8941fbb6750e987357f35a9f80a895417dec38c4cc5bf781611b137634f"
+      "sha256": "407d5db5736ece0311ba6e76fd3ef2e8247b26b7ab46dd33030805b14745e193"
     },
     "data/tilesets/secondary/ty_space_v4_battledeck/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "b213c4b1c017217830b616bff4df6e4d5983ec61243e3f598dc6d6c87acad19c"
+      "sha256": "09f5b3f2fe3bc73dd82e2811c28523ab6aad4684f6a33bc8020420bf2ec7ea4f"
     },
     "data/tilesets/secondary/ty_space_v4_cabin/metatile_attributes.bin": {
       "bytes": 2048,
-      "sha256": "351511ebbfbe035d748cab5b2f9f97b0662bdc9bacd3c585df8dcce8b295da67"
+      "sha256": "d90c4231015af8aed0be3245be96688dbde665523e33a58334cbae8784d0d870"
     },
     "data/tilesets/secondary/ty_space_v4_cabin/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "cdc4e7fe285438a270015f16aab2f651e374ea78943942374145e71ee0c9a1cd"
+      "sha256": "8aee979c456bc6e56f65bf0dcbc2439b0d6749a1354607da8e418a02bf144550"
     },
     "data/tilesets/secondary/ty_space_v4_cabin/palettes.gbapal": {
       "bytes": 416,
-      "sha256": "dfa136da75077a9e7748a26fd40b3686fd2bde71f9e4647675ab155ed54f52c6"
+      "sha256": "71a6c2980ebeaa85330f20837119a3f89439d4f4e53e5606f00b34ac88a7029d"
     },
     "data/tilesets/secondary/ty_space_v4_cabin/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "e63db254c14172e712efab4f5d347f709ec6a10da67e23744536f0aa0d6462f7"
+      "sha256": "f98f15aecbc890ff88ffc05c884f93580295a77777fbdcf1142dcbe85119171c"
     },
     "data/tilesets/secondary/ty_space_v4_cabincorridor/metatile_attributes.bin": {
       "bytes": 2048,
-      "sha256": "b382875fafe5aa1d9a292b18136a6ffd12b9341533693f5049278b720d3c9b8a"
+      "sha256": "e3c49c76851a23f66c3ac7f0955424015e5ce1a86d0c07563d85f193c25d5eb8"
     },
     "data/tilesets/secondary/ty_space_v4_cabincorridor/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "5f102958eff8f8630d8c0679d102a88c9196bdaf68976091b6cc558caa76aec4"
+      "sha256": "9f9a7ccf0a012622542f86190c4e808e51de12b7cc96a230ed964fe5740aeb3c"
     },
     "data/tilesets/secondary/ty_space_v4_cabincorridor/palettes.gbapal": {
       "bytes": 416,
@@ -32451,231 +32451,231 @@
     },
     "data/tilesets/secondary/ty_space_v4_cabincorridor/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "ed998da0d323a73a7790632e2d4fa701e4ee323112f25190741690f44d990acf"
+      "sha256": "a19ed1f5e73f07aa8a250ed6ee9e5f9ae7976e7737af7effa5ba408e9f19d7a0"
     },
     "data/tilesets/secondary/ty_space_v4_captainsoffice/metatile_attributes.bin": {
       "bytes": 2048,
-      "sha256": "a549eb325fe80947a31bd6f714632dca320905f9c8d30cb199e8334acbc02fcc"
+      "sha256": "58f8e66ad6d8b323ad5c7697923b2c9511de2e836acd0b1b7a3cc7587ab3b3a6"
     },
     "data/tilesets/secondary/ty_space_v4_captainsoffice/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "35d14db1b9ef7ed3f3011a18479cb1e0c88603e0133d5fb3eb41005bfbb0d039"
+      "sha256": "9677ada74e4f4b8142b46e08b5d305725121d708c9cd66a991b1c6cbb9a86929"
     },
     "data/tilesets/secondary/ty_space_v4_captainsoffice/palettes.gbapal": {
       "bytes": 416,
-      "sha256": "4ea6879c99f54f46b52232840980790059e346c464bba0e60319fa49b8bde0bd"
+      "sha256": "1c788bd9c7bee60d3aaee1835d97d69bc8496a4465f214eb95de6a934fb9fd4e"
     },
     "data/tilesets/secondary/ty_space_v4_captainsoffice/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "eb9fb17fc409b9b8ce142dde6f45baebe81ea069bdb4d73cad3f8c85a9482db6"
+      "sha256": "264d7f76a770b07ab561e15600a0d92254fd7c8f2d91d14118e6fc9d47c06b0f"
     },
     "data/tilesets/secondary/ty_space_v4_cargohold/metatile_attributes.bin": {
       "bytes": 2048,
-      "sha256": "39daec3cf4c4d5847f41437999aafce9e983ad130c54a378243f46fb25a51502"
+      "sha256": "2725f286c17c40566bd634122cc590b4e3ceb07a08f7b7c36fa66f6394a7c3d4"
     },
     "data/tilesets/secondary/ty_space_v4_cargohold/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "a9748af1aae1c8c7d540b5d5414cf03dab55d13538b177aa38c317cff0c8e681"
+      "sha256": "04d4cf2f99c3147d1f42f4d5aec77a9d173781b19f43ddf74a47107de63ea85b"
     },
     "data/tilesets/secondary/ty_space_v4_cargohold/palettes.gbapal": {
       "bytes": 416,
-      "sha256": "132bb91c533763219296a2a5623d758d183eee4c84a2f336ef2dd21b3ff22e34"
+      "sha256": "62acc10a0650dada2fb3980e7456ff541b5be66213a20699911580c4c02f7ba0"
     },
     "data/tilesets/secondary/ty_space_v4_cargohold/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "5b4f8bb2d10f429e56f8d85562beb671c2ad2706a5ff5bf36cc3e17f161dddcd"
+      "sha256": "5d48d41974a0ad233776a4a4d727d0e5d27c1f2880d86d932a79e6332feabf1c"
     },
     "data/tilesets/secondary/ty_space_v4_cockpit/metatile_attributes.bin": {
       "bytes": 2048,
-      "sha256": "0a2c4f8e7bdaebe017e177886f027c65f1a9529ad8cf17ed636c2d1e29dbcbf3"
+      "sha256": "dec8954eb4c25ad3fd32f5924daa8b7ae9473af1084fe23ec0fe3c08b0922ad3"
     },
     "data/tilesets/secondary/ty_space_v4_cockpit/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "2ebde70ff860d85a685e801bf5310ba8b9e48cde657bd96b7671d03cf2ae4bba"
+      "sha256": "3b029e22d5bd5daeb8aaf43fd2f7aa95b7a9770f7d914c3bc478554944189e9c"
     },
     "data/tilesets/secondary/ty_space_v4_cockpit/palettes.gbapal": {
       "bytes": 416,
-      "sha256": "d591942e65bd0922dab61e52f7a81b68b88af0f875f940d657e3dc793bb8ae00"
+      "sha256": "c9b0974c30567fe1d7ef212b2b9624228bc43cec098b15fdac0a062d49ee970a"
     },
     "data/tilesets/secondary/ty_space_v4_cockpit/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "426d61c00d94a8b4761a8ba532014826bc1d60edd647d95b7dbe1570b153903d"
+      "sha256": "7ed0ce4a7050c3fad880f41b4b95cb1f80320bf533fdd7e6fa34dffc73f98e88"
     },
     "data/tilesets/secondary/ty_space_v4_crewmess/metatile_attributes.bin": {
       "bytes": 2048,
-      "sha256": "fc0154483e8c153ba0211a8eabbeaf851e0af9fc5772bdf89cb230369f966913"
+      "sha256": "62948fc4bf1bdda0222ba9afdc99f5375c50983fd7368304e5ec9876aeb48aef"
     },
     "data/tilesets/secondary/ty_space_v4_crewmess/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "b14518567d4e1ee80fb944013e34932a67ca6243a36d9d168d8264a30b475163"
+      "sha256": "3a857a76cf4f8913f1f85a7c62e747740f57007ef542bcd3f0c8ee7f24a67b01"
     },
     "data/tilesets/secondary/ty_space_v4_crewmess/palettes.gbapal": {
       "bytes": 416,
-      "sha256": "9bfbf9d76e27fdf448f591ff6447d65e68893e9f7456ab1a0d516a71e6bf8428"
+      "sha256": "3563b44557668e92d15eff06f42a8c93ca47841788f74a187f4782e44f21f584"
     },
     "data/tilesets/secondary/ty_space_v4_crewmess/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "65011434d6f519dc97fb5a8d8bace17baa6fa11ce8e7060f29bc718a0cd69f47"
+      "sha256": "47fc6c6e2de0b8cee232b0328fcab85bb692b1ec585d2f774c22cf8f549dee05"
     },
     "data/tilesets/secondary/ty_space_v4_crewquarters/metatile_attributes.bin": {
       "bytes": 2048,
-      "sha256": "d4fcb24bd3a426b82c179060570e49f2b74f1bc372582b5a1788aa09a9d6f63c"
+      "sha256": "a34bfde34f05516583ae70186544a9c41e9d4d76e4a4f96dc3342574055a4458"
     },
     "data/tilesets/secondary/ty_space_v4_crewquarters/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "a6d1448e3989ed2dbfe98c9c5360f10471927a69a1fc5d86cc6f6b5639a7a35e"
+      "sha256": "288dec6dc4fe142b98203d3656f1f93a61002e8fc14fac13a6379c17d6671972"
     },
     "data/tilesets/secondary/ty_space_v4_crewquarters/palettes.gbapal": {
       "bytes": 416,
-      "sha256": "7903279ae219b19b3fb5443bc998cb16111c0ccbbd8e208539d64157dce944a5"
+      "sha256": "764cde731bbc96dd44ff3aa974e13fbf92760fca284a5d491423c7346e6f7cb3"
     },
     "data/tilesets/secondary/ty_space_v4_crewquarters/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "3b25a64478218c9afe41d4b7968ecc5ad187301c0c784572775ca88017dde8dc"
+      "sha256": "702853d403922f8a769c4bb6940d0ae129ef82d87e3c5258bfb401734b7b236c"
     },
     "data/tilesets/secondary/ty_space_v4_engineering/metatile_attributes.bin": {
       "bytes": 2048,
-      "sha256": "cc8628a8f3eaf7757a00f32512e5f812befabfa85fccc761ea974e1c9cac2b5f"
+      "sha256": "51478651d4b4b7bca4c562a8a9b3b476e0c3641b01325d5ebe42f3c8d9b804bb"
     },
     "data/tilesets/secondary/ty_space_v4_engineering/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "1c9dd950a208884b36e15c7403284b0c9c30c76014f35ddaf3cb36fd9a845772"
+      "sha256": "eedcad6010e3fb754e36d6b65a19b62a75ce51d2ad2b53663d9ecf587295fd4f"
     },
     "data/tilesets/secondary/ty_space_v4_engineering/palettes.gbapal": {
       "bytes": 416,
-      "sha256": "15ea9a825c244c60b5369f1ddd0632591f30f10ba811aaf92def4071bbceaa79"
+      "sha256": "4699a30f0d176e65bd06c4f4261e1922788677515ddab9a1eaf2ca380445792e"
     },
     "data/tilesets/secondary/ty_space_v4_engineering/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "6e0f798ee1e9c6b867e19b8f46839509d886170cef045d5c9df4b6ce2b1512a4"
+      "sha256": "28a6616eef7d86602921db93de94c330ff5d50206d174f9353dfb4f1ebd565c9"
     },
     "data/tilesets/secondary/ty_space_v4_foodcourt/metatile_attributes.bin": {
       "bytes": 2048,
-      "sha256": "fc0154483e8c153ba0211a8eabbeaf851e0af9fc5772bdf89cb230369f966913"
+      "sha256": "62948fc4bf1bdda0222ba9afdc99f5375c50983fd7368304e5ec9876aeb48aef"
     },
     "data/tilesets/secondary/ty_space_v4_foodcourt/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "b14518567d4e1ee80fb944013e34932a67ca6243a36d9d168d8264a30b475163"
+      "sha256": "3a857a76cf4f8913f1f85a7c62e747740f57007ef542bcd3f0c8ee7f24a67b01"
     },
     "data/tilesets/secondary/ty_space_v4_foodcourt/palettes.gbapal": {
       "bytes": 416,
-      "sha256": "9bfbf9d76e27fdf448f591ff6447d65e68893e9f7456ab1a0d516a71e6bf8428"
+      "sha256": "3563b44557668e92d15eff06f42a8c93ca47841788f74a187f4782e44f21f584"
     },
     "data/tilesets/secondary/ty_space_v4_foodcourt/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "65011434d6f519dc97fb5a8d8bace17baa6fa11ce8e7060f29bc718a0cd69f47"
+      "sha256": "47fc6c6e2de0b8cee232b0328fcab85bb692b1ec585d2f774c22cf8f549dee05"
     },
     "data/tilesets/secondary/ty_space_v4_gameroom/metatile_attributes.bin": {
       "bytes": 2048,
-      "sha256": "1073d5dc85a2c2815bac5b46053a45fe27ec0b9fe362c79b8b294ba94ec0afd0"
+      "sha256": "22d34852ef7925d9ecb80c9caa06bc0898f37a233d2e8c61cba83fad8c02a6d3"
     },
     "data/tilesets/secondary/ty_space_v4_gameroom/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "6afb29df9aef5d7ee5d9b7e97e6f805003eac59bbeb499873e8d23c5832861da"
+      "sha256": "c4de240e05e8651c73b76179355851ffe3e7c32fb4c34e4ae01a55c38a0c0cd9"
     },
     "data/tilesets/secondary/ty_space_v4_gameroom/palettes.gbapal": {
       "bytes": 416,
-      "sha256": "4dc1f77cbd31efda5a1f8917ac198bf7dd652ba3728b30b1a0cb76b30d5fce55"
+      "sha256": "00e45894b1da4701a2531a6f687933a3ff4d69e99071bed5d9d7acce87f01393"
     },
     "data/tilesets/secondary/ty_space_v4_gameroom/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "cfdefc83fa4d8316e4c1b3d541ccd3bb391963cf2e25414cf48da13e06d52ff1"
+      "sha256": "f119d6bd222c642963384d60ecaf379da0d13178fec7c4d3c5bea21b074c3485"
     },
     "data/tilesets/secondary/ty_space_v4_guestroom1/metatile_attributes.bin": {
       "bytes": 2048,
-      "sha256": "fc346d397c49d4ead68e588ddec2233790ddae8af3404802c6f5131d251a646f"
+      "sha256": "4dddb2f8f033827d1276a6e6295a763b40c331b656a63856f10f74ae6a71972d"
     },
     "data/tilesets/secondary/ty_space_v4_guestroom1/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "9d5b70d080324dbb7ddfe8c6c0d8a7f35b515aa4a7672b6f3618e61cfa2835a0"
+      "sha256": "bd9ea17663385a83217289733323f50437a565851f44757cadf4b0d1abb06a30"
     },
     "data/tilesets/secondary/ty_space_v4_guestroom1/palettes.gbapal": {
       "bytes": 416,
-      "sha256": "24b4a281d421c7a9396ffb9c62dc55f0d6a425ce83a5d7f43769195cff8f419a"
+      "sha256": "5e0e2f11692e875a561f70297bf24be6d33fcc42db679e243e52c9bdfbe7d1fb"
     },
     "data/tilesets/secondary/ty_space_v4_guestroom1/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "bc592f63b73a2909e19e41d05d56e188d345e7af562c5d513315cccae34fb0d8"
+      "sha256": "f462dad0c9949901693582491eeff5876929d08973b824566d4d28d6b9a2f0d0"
     },
     "data/tilesets/secondary/ty_space_v4_guestroom2/metatile_attributes.bin": {
       "bytes": 2048,
-      "sha256": "fc346d397c49d4ead68e588ddec2233790ddae8af3404802c6f5131d251a646f"
+      "sha256": "4dddb2f8f033827d1276a6e6295a763b40c331b656a63856f10f74ae6a71972d"
     },
     "data/tilesets/secondary/ty_space_v4_guestroom2/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "9d5b70d080324dbb7ddfe8c6c0d8a7f35b515aa4a7672b6f3618e61cfa2835a0"
+      "sha256": "bd9ea17663385a83217289733323f50437a565851f44757cadf4b0d1abb06a30"
     },
     "data/tilesets/secondary/ty_space_v4_guestroom2/palettes.gbapal": {
       "bytes": 416,
-      "sha256": "24b4a281d421c7a9396ffb9c62dc55f0d6a425ce83a5d7f43769195cff8f419a"
+      "sha256": "5e0e2f11692e875a561f70297bf24be6d33fcc42db679e243e52c9bdfbe7d1fb"
     },
     "data/tilesets/secondary/ty_space_v4_guestroom2/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "bc592f63b73a2909e19e41d05d56e188d345e7af562c5d513315cccae34fb0d8"
+      "sha256": "f462dad0c9949901693582491eeff5876929d08973b824566d4d28d6b9a2f0d0"
     },
     "data/tilesets/secondary/ty_space_v4_guestroom3/metatile_attributes.bin": {
       "bytes": 2048,
-      "sha256": "fc346d397c49d4ead68e588ddec2233790ddae8af3404802c6f5131d251a646f"
+      "sha256": "4dddb2f8f033827d1276a6e6295a763b40c331b656a63856f10f74ae6a71972d"
     },
     "data/tilesets/secondary/ty_space_v4_guestroom3/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "9d5b70d080324dbb7ddfe8c6c0d8a7f35b515aa4a7672b6f3618e61cfa2835a0"
+      "sha256": "bd9ea17663385a83217289733323f50437a565851f44757cadf4b0d1abb06a30"
     },
     "data/tilesets/secondary/ty_space_v4_guestroom3/palettes.gbapal": {
       "bytes": 416,
-      "sha256": "24b4a281d421c7a9396ffb9c62dc55f0d6a425ce83a5d7f43769195cff8f419a"
+      "sha256": "5e0e2f11692e875a561f70297bf24be6d33fcc42db679e243e52c9bdfbe7d1fb"
     },
     "data/tilesets/secondary/ty_space_v4_guestroom3/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "bc592f63b73a2909e19e41d05d56e188d345e7af562c5d513315cccae34fb0d8"
+      "sha256": "f462dad0c9949901693582491eeff5876929d08973b824566d4d28d6b9a2f0d0"
     },
     "data/tilesets/secondary/ty_space_v4_lounge/metatile_attributes.bin": {
       "bytes": 2048,
-      "sha256": "3592b5e4563cabb646d5c7f0411495368fee4ed422dd4bad239cd29bf9ef2efa"
+      "sha256": "8bb8c1106d23025722fe41011c4e8d5c83b0f45af22537ac24ab946f4f90294d"
     },
     "data/tilesets/secondary/ty_space_v4_lounge/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "87b60c380f38de0ae0c05f6b72d1c3b5afe73248601dc1e3c027043d41349964"
+      "sha256": "3393a95fe5edf63113c3149a55e9f9ae388d35875e16aec378a00934dc3db74e"
     },
     "data/tilesets/secondary/ty_space_v4_lounge/palettes.gbapal": {
       "bytes": 416,
-      "sha256": "0309cae2978c1c2a815a32e94fac321e04cdbd3a3be1723fcd72974d7395d19c"
+      "sha256": "3420748c459edc766fe5f316bd2888913f39c8117c2fe9e23a51a2da3e5aec69"
     },
     "data/tilesets/secondary/ty_space_v4_lounge/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "6493969ddad0d0a4c644414dd126132729be2318c5f8a8917e566b3994a07dfc"
+      "sha256": "be0f494b454e9fa9040b6935d077c1e4b016d2e9ddfe0efdac285a0d2e6123dc"
     },
     "data/tilesets/secondary/ty_space_v4_navigation/metatile_attributes.bin": {
       "bytes": 2048,
-      "sha256": "d7cd100f429ec8a8a4dd30e74d32186a4f83387c5367b3c20d04891944676429"
+      "sha256": "6d8455c03a87504ebfb12f5df0206a625980ef22d4331c6cc17a2bcc6ccb636e"
     },
     "data/tilesets/secondary/ty_space_v4_navigation/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "dad008cbb990ad5861a301edaaf50dade3e68fb5cf60e08102164150bd0d7d1a"
+      "sha256": "4fc7ba3d4175079970d75c0c8895e17943ccd6978a4f4c42dcdc40b17ed64b30"
     },
     "data/tilesets/secondary/ty_space_v4_navigation/palettes.gbapal": {
       "bytes": 416,
-      "sha256": "8fac215a43f18beb3c0e5c4636e2a9772c8903643e95921374f0256ee192db75"
+      "sha256": "c9b0974c30567fe1d7ef212b2b9624228bc43cec098b15fdac0a062d49ee970a"
     },
     "data/tilesets/secondary/ty_space_v4_navigation/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "1b4278b368f5a774a695be39d6bda99f82aef54e24e536a6dbacfb66f74399dc"
+      "sha256": "a6026ea5256f2d0ce9288919f147459fd529a2d5b3249dfb2dd72d879a973c04"
     },
     "data/tilesets/secondary/ty_space_v4_observatory/metatile_attributes.bin": {
       "bytes": 2048,
-      "sha256": "35b73408119c69b796a3aae8fd49fd827991dff73460086703037e3ad8600ec5"
+      "sha256": "7120cd2984b17733edc2eb91e62a52f44a727c9f94f9349a27e2f46af1531561"
     },
     "data/tilesets/secondary/ty_space_v4_observatory/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "9f6aa74d0f26a56e2454fed218cfc09b40752c03498a9347885fef5acebc3a72"
+      "sha256": "de73f9f87bb47a3bd671f5818a76c01c5124f782d4a06f8dc5d0ba0f048413fe"
     },
     "data/tilesets/secondary/ty_space_v4_observatory/palettes.gbapal": {
       "bytes": 416,
-      "sha256": "8709b8268ed8f5163ca6f6dd639155d134d5f40f640d257df086dd7bafe36519"
+      "sha256": "fd255abb9ecde13b2cc4c166c3626600fc2373bdd4acc14f863a610e610045bb"
     },
     "data/tilesets/secondary/ty_space_v4_observatory/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "76aadeab6c2fe9dd8fff10cd4176cb41a53f9eb4e05030f40c4d3e6f35dd0425"
+      "sha256": "59ccb9bcb5079f07da3fc2684b189aa2c0b6f9caf1248a5eb4d826c5693a25ce"
     },
     "data/tilesets/secondary/ty_spaceport/metatile_attributes.bin": {
       "bytes": 2048,
@@ -54450,8 +54450,8 @@
       "sha256": "c445d882c657374eb4696252a565f5f48d9950fa6b509914aa43a1b740add972"
     },
     "graphics_file_rules.mk": {
-      "bytes": 16436,
-      "sha256": "da918b38dce20fd5283751efdb132ed22d69bf9712642945429a5651c332145a"
+      "bytes": 16613,
+      "sha256": "a525c9c417a3154350721876289f811d2bfc381387b6ad106ead64cb417066ca"
     },
     "hoenn_tileset_rules.mk": {
       "bytes": 5305,
@@ -60510,20 +60510,20 @@
       "sha256": "55a05af806c410b2bb357f10ffa7365074fb2b081544184696e47642cb62ad13"
     },
     "src/data/object_events/object_event_graphics.h": {
-      "bytes": 36511,
-      "sha256": "0df68a9752b72197547aa1c35676f52a44708cbb14fabd50ec96108c22d13cfa"
+      "bytes": 36761,
+      "sha256": "330b93f5ddddfa650a075b0e307f66f9934cb255d81974280fb5c7f2292bcea4"
     },
     "src/data/object_events/object_event_graphics_info.h": {
-      "bytes": 158837,
-      "sha256": "2a823698ed2b026967348cde0600798a36c38087c1869d518181d441e7b8a5f6"
+      "bytes": 159580,
+      "sha256": "96b4742fc9a08f538772bc0721087d2942da8b87898de33fa5114130de562a2b"
     },
     "src/data/object_events/object_event_graphics_info_pointers.h": {
       "bytes": 37536,
       "sha256": "d1362f8671c65ea6d155c4da5887ce423451d38a6fcd253970fdaf9218fd3132"
     },
     "src/data/object_events/object_event_pic_tables.h": {
-      "bytes": 133196,
-      "sha256": "1b9d2918881f8b0f718cdcd03bede02b1464b38c0d6e236ea93f91c3fdee016d"
+      "bytes": 133941,
+      "sha256": "7868194003f25d8225759f84f53780c49580c7e8d30b721f604a6e50966a9d84"
     },
     "src/data/object_events/object_event_subsprites.h": {
       "bytes": 35944,
@@ -60778,8 +60778,8 @@
       "sha256": "55da44bf4bcb91c298e8ddd3b4525fd613c29e368606c7712b13ad2e3bb495c1"
     },
     "src/data/tilesets/ty_space_deck_v4.h": {
-      "bytes": 15650,
-      "sha256": "79b0430a8f0d6d6f84d5fb2341217b4a82a85d3680b837f81c18705e21c83347"
+      "bytes": 15656,
+      "sha256": "78ec39afbe61b3fd55832c79d7308dafa514ca0a80bf6cf3e21cb398b23f33e5"
     },
     "src/data/tilesets/ty_space_style_v2.h": {
       "bytes": 1803,
@@ -61006,8 +61006,8 @@
       "sha256": "e18c4cdf700e7d20a71b2faaedae6dd2f7f33ebbff40562a333668587d95c516"
     },
     "src/event_object_movement.c": {
-      "bytes": 339099,
-      "sha256": "08abbc09e378fe38ff0324a39908bd715e2405c856f0972fd089ac908f9f6cb3"
+      "bytes": 339690,
+      "sha256": "826500de22f9782929589dbfe8192ad0b42594c6f55ff5658f83e73c4d4462d0"
     },
     "src/evolution_graphics.c": {
       "bytes": 18732,
@@ -61174,8 +61174,8 @@
       "sha256": "fda3cdebf9e2602016fc8b61d3d7d2c809ff1a009a1cdbbc30ea2710c4b63889"
     },
     "src/hoenn_space_story.c": {
-      "bytes": 39654,
-      "sha256": "922175259741d387beb46b7fa5bdbe946296366199403701e718e175bfec18b8"
+      "bytes": 40163,
+      "sha256": "db1316e78815003311961a69a8bbdf113c1d97f41ae82d2c54268849a550f8e1"
     },
     "src/hoenn_villain_story.c": {
       "bytes": 2973,
@@ -62042,8 +62042,8 @@
       "sha256": "6ba99040bf1621f292a98c038636f6ffdec3cb472a18ea0bdd921d7e6cbd854a"
     },
     "tools/hoenn_import/build_space_decks_v4.py": {
-      "bytes": 16424,
-      "sha256": "56c8f3403330d615a08873e98909536e58657146e4ebb31c8290932d35fe24e5"
+      "bytes": 16957,
+      "sha256": "d5ce626f81c3fad8c87545448c2c384c288e7698cb9becf528e57a71d08ca116"
     },
     "tools/hoenn_import/build_space_interiors_v3.py": {
       "bytes": 14724,
@@ -62379,7 +62379,7 @@
     },
     "tools/hoenn_import/patches/HoennOrbitalObservatory.blockdata.bin": {
       "bytes": 720,
-      "sha256": "c2bf793e370dad0c9d869e04c286920ec90edaa344b505a0d0ef46d21c6d1fb0"
+      "sha256": "88ae90018a41ee8a73f4580f024c6468148a8fef222af6ce8dbb309a4d89e507"
     },
     "tools/hoenn_import/patches/HoennOrbitalObservatory.json": {
       "bytes": 1291,
@@ -62403,7 +62403,7 @@
     },
     "tools/hoenn_import/patches/HoennSpacecraftBattleDeck.blockdata.bin": {
       "bytes": 864,
-      "sha256": "b84488c49c7cc8cb25fb460178b9c582591c20dbf6f557a98e011a8528670672"
+      "sha256": "a826399bc5fb9c9582290202fffbf425bde5fe0c2e6d9c8087d1c0030b56abe9"
     },
     "tools/hoenn_import/patches/HoennSpacecraftBattleDeck.json": {
       "bytes": 1029,
@@ -62427,7 +62427,7 @@
     },
     "tools/hoenn_import/patches/HoennSpacecraftCabin.blockdata.bin": {
       "bytes": 640,
-      "sha256": "0a51e313deb78c19fd8f7110a661dd2279445bc389fe1b7ae7adb3f7cc722741"
+      "sha256": "6f9908faff95985f083d2ed60c0bebc8bd710408cfe331528ad4d0c72ae64b40"
     },
     "tools/hoenn_import/patches/HoennSpacecraftCabin.json": {
       "bytes": 4796,
@@ -62451,7 +62451,7 @@
     },
     "tools/hoenn_import/patches/HoennSpacecraftCabinCorridor.blockdata.bin": {
       "bytes": 672,
-      "sha256": "3b8c3bc4f7b7de1cbd634f59bf565c1f11de8fc56052c178080766a80cba7ce5"
+      "sha256": "e6548acfb7f6d83d2d2676a5f635609e3767d7573678c4e62f2273e04c358e33"
     },
     "tools/hoenn_import/patches/HoennSpacecraftCabinCorridor.json": {
       "bytes": 636,
@@ -62475,7 +62475,7 @@
     },
     "tools/hoenn_import/patches/HoennSpacecraftCaptainsOffice.blockdata.bin": {
       "bytes": 448,
-      "sha256": "2e240e242c63c00ce9b6fbb016dd099d0a9605221b06656cdb271b5d5a6fbd72"
+      "sha256": "78863f8c7a00a94f5b8bb9d0393e41e46acf459669085496cf9c70d6345f863b"
     },
     "tools/hoenn_import/patches/HoennSpacecraftCaptainsOffice.json": {
       "bytes": 604,
@@ -62499,7 +62499,7 @@
     },
     "tools/hoenn_import/patches/HoennSpacecraftCargoHold.blockdata.bin": {
       "bytes": 864,
-      "sha256": "b2dcbdaf001d950d619f885244676dce88d7ddb6db91b1fc3c52aa1621bb8131"
+      "sha256": "15dc3cdc99be1944a281efbaa38153c45b4c590d3989f0b46c648d7ca2c0419a"
     },
     "tools/hoenn_import/patches/HoennSpacecraftCargoHold.json": {
       "bytes": 798,
@@ -62523,7 +62523,7 @@
     },
     "tools/hoenn_import/patches/HoennSpacecraftCockpit.blockdata.bin": {
       "bytes": 640,
-      "sha256": "00f856c14e413bf19183ff2d72cb7b39ba2425a3c7defb7b5d7dd0b22261b460"
+      "sha256": "368d8f133958f8a9b53c02bbb92f918cb5ef131a8c54ea4566664815664ff2ff"
     },
     "tools/hoenn_import/patches/HoennSpacecraftCockpit.json": {
       "bytes": 995,
@@ -62547,7 +62547,7 @@
     },
     "tools/hoenn_import/patches/HoennSpacecraftCrewMess.blockdata.bin": {
       "bytes": 640,
-      "sha256": "f8264b9fb10fe67fcd58622165a2703b2378c9655baac42fc4226af884b90c1f"
+      "sha256": "725f8eb62f69066b8f0c7535c41d16ab9037162daa41b04380ac8f1f4051a61e"
     },
     "tools/hoenn_import/patches/HoennSpacecraftCrewMess.json": {
       "bytes": 778,
@@ -62571,7 +62571,7 @@
     },
     "tools/hoenn_import/patches/HoennSpacecraftCrewQuarters.blockdata.bin": {
       "bytes": 640,
-      "sha256": "f06ae19def79522624486fe5e60bd15f669953456c3e7483f9af3c51a9297362"
+      "sha256": "76c3325469cadd52ce88c8f54853c5c4f12a1c9e9ccd1644603f94a7f06e5351"
     },
     "tools/hoenn_import/patches/HoennSpacecraftCrewQuarters.json": {
       "bytes": 785,
@@ -62595,7 +62595,7 @@
     },
     "tools/hoenn_import/patches/HoennSpacecraftEngineering.blockdata.bin": {
       "bytes": 640,
-      "sha256": "02f02da82a3d94e8eaa168e559cfbba858b2d26f7228d03c0eb54263f6079475"
+      "sha256": "fd7a1ab5af579d4fa082ca02153e2f6f619ba920a0a5234defe200b8719e0e5a"
     },
     "tools/hoenn_import/patches/HoennSpacecraftEngineering.json": {
       "bytes": 1747,
@@ -62619,7 +62619,7 @@
     },
     "tools/hoenn_import/patches/HoennSpacecraftFoodCourt.blockdata.bin": {
       "bytes": 640,
-      "sha256": "c7239c2c52df3c4484b3ba85f637f6e90d496e7841060571617704dd208edd7f"
+      "sha256": "4055db46f53d32291f8722c15ed532fe86244c2dbec5a8c3d89ed53af055874d"
     },
     "tools/hoenn_import/patches/HoennSpacecraftFoodCourt.json": {
       "bytes": 984,
@@ -62643,7 +62643,7 @@
     },
     "tools/hoenn_import/patches/HoennSpacecraftGameRoom.blockdata.bin": {
       "bytes": 640,
-      "sha256": "b48a83bad684689eccc4b321f9262550a653a6b8a78ff523122f845b1d6091df"
+      "sha256": "2bfac664f17f000a30387aa028d43ac76ba8b03d710d67f261036615ffeff582"
     },
     "tools/hoenn_import/patches/HoennSpacecraftGameRoom.json": {
       "bytes": 790,
@@ -62667,7 +62667,7 @@
     },
     "tools/hoenn_import/patches/HoennSpacecraftGuestRoom1.blockdata.bin": {
       "bytes": 288,
-      "sha256": "11ee29e0cae14b5e03b80f09ccaf2f63a1a10913b2a64312e86563c776999772"
+      "sha256": "1978e33769aecf465c9059403bbb85faeee491a74702e3a67ee67a19ff8798b2"
     },
     "tools/hoenn_import/patches/HoennSpacecraftGuestRoom1.json": {
       "bytes": 782,
@@ -62691,7 +62691,7 @@
     },
     "tools/hoenn_import/patches/HoennSpacecraftGuestRoom2.blockdata.bin": {
       "bytes": 288,
-      "sha256": "f41aaf292abc8f6a4b7dd4d9e82a8dc19c35712422cf6c87ef777e9dcfc5ad6f"
+      "sha256": "0e303be6e5f5fd86c9222752438fa73435309acca4d50498b7dfd11191a4eacf"
     },
     "tools/hoenn_import/patches/HoennSpacecraftGuestRoom2.json": {
       "bytes": 785,
@@ -62715,7 +62715,7 @@
     },
     "tools/hoenn_import/patches/HoennSpacecraftGuestRoom3.blockdata.bin": {
       "bytes": 288,
-      "sha256": "7d866361cee539ea74a18667c78c76be9422d433526593301b4aa61696003c7f"
+      "sha256": "05be3467d98394aa4b0d6be94a5995b6e3603e49257294bbd492be999ba7c23e"
     },
     "tools/hoenn_import/patches/HoennSpacecraftGuestRoom3.json": {
       "bytes": 785,
@@ -62739,7 +62739,7 @@
     },
     "tools/hoenn_import/patches/HoennSpacecraftLounge.blockdata.bin": {
       "bytes": 640,
-      "sha256": "ed86b9474fae87cd30a51546555423c939d2ce30f9c93c0a1c820af28fb9dfa3"
+      "sha256": "09750cbb5d2382d3b405e3d685b26362dd47157ca20f72291685593d25933e2f"
     },
     "tools/hoenn_import/patches/HoennSpacecraftLounge.json": {
       "bytes": 986,
@@ -62763,7 +62763,7 @@
     },
     "tools/hoenn_import/patches/HoennSpacecraftNavigation.blockdata.bin": {
       "bytes": 720,
-      "sha256": "fe9ed6418587dec53ae132721d8928e6ab376ffba1ce23fcc28a0df10c2bd341"
+      "sha256": "7989b2edee1507ab81ad7b62b679b0828ad252bc1a58954a47e8a7c0ae26cd5d"
     },
     "tools/hoenn_import/patches/HoennSpacecraftNavigation.json": {
       "bytes": 1377,
@@ -64418,8 +64418,8 @@
       "sha256": "55f38ef589f06fbe638dd210625514a8380f86a3840de15f58e843c139a7a37e"
     },
     "tools/qa/derive_save_schema.c": {
-      "bytes": 7531,
-      "sha256": "8eb8010d4e8c66658755c0b39a0b0268c6465409542846abab10886f95f0633f"
+      "bytes": 7680,
+      "sha256": "3cca5b1a7d2acf266f38eaaeab2e5966095d685ae119a51a5183c847017e749c"
     },
     "tools/qa/derive_schema.py": {
       "bytes": 12882,
@@ -64458,16 +64458,16 @@
       "sha256": "37ce6110fde8548f63ccc58765616e7fff41d3cdd67fcd28ae1ec69f8added8c"
     },
     "tools/qa/space_runtime_probe.py": {
-      "bytes": 23131,
-      "sha256": "774b756f5b01e22830509285310f96f8a5c62f1c9824e9c379f58448775ae197"
+      "bytes": 26207,
+      "sha256": "a26830e11e3fd7a206adf4690ddc3a599c66586ab263f89c35a7c9a36d4517cb"
     },
     "tools/qa/space_source_checks.py": {
-      "bytes": 10846,
-      "sha256": "6c0d1d82894a7fa068191504b454fde136acaf88a4005e6b54bf28b3f07c0e1c"
+      "bytes": 14454,
+      "sha256": "155cd29c9e348608cc50b76315dbf5365d7b802d326a8ba1cc0439966117f861"
     },
     "tools/qa/verify_space_candidate.py": {
-      "bytes": 16721,
-      "sha256": "5342c29f9953668ba3d70ba3821c53456f797cee93d13b9626ab630395b32baa"
+      "bytes": 16746,
+      "sha256": "6fd76df50adc6a1b1cbc804549e2a5f952b8285cbd909f8c92018f646e74ba30"
     },
     "tools/ramscrgen/.gitignore": {
       "bytes": 10,
@@ -64647,7 +64647,7 @@
     },
     "tools/hoenn_import/space_deck_services.py": {
       "bytes": 15181,
-      "sha256": "fcd170ba87e39a73efa6950a6d8e32beed5db37fb5b66d1656d8a6fbc4e0d49d"
+      "sha256": "c3f89487f39f017561a18965357a7e0fe2d62c16f539a9d41b37e76f6c4f46de"
     },
     "tools/hoenn_import/space_deck_living.py": {
       "bytes": 15377,
@@ -64659,7 +64659,7 @@
     },
     "tools/qa/space-service-cases.json": {
       "bytes": 11504,
-      "sha256": "4eaffa9aedea51d5d7a8584d8cb979fb81b15509bbd05308f60255fc145d6bec"
+      "sha256": "ea8609e9a543c68a41ca89f6bb36e125bc165d500f68aebb4a507e7298e44d6d"
     },
     "data/tilesets/secondary/em_pokemon_center/tiles.4bpp": {
       "bytes": 15296,
@@ -64738,13 +64738,61 @@
       "sha256": "8bcce2861230dbe04e37c7903187ba7374a75e5856a08aa6afeae40ad870e12b"
     },
     "tools/qa/space_flight_checks.py": {
-      "bytes": 9108,
-      "sha256": "c2b093f58c78d8fcc0bea92b88adfa632bbf4feed093827cf1a4fce4fff67ebd"
+      "bytes": 10861,
+      "sha256": "be36acf56752ea464720ec55f369986e4373b7e9a4b7d245dc493c49f00c2ca6"
+    },
+    "tools/qa/space-finish-cases.json": {
+      "bytes": 12681,
+      "sha256": "d23e7923d681a26095233b8aba72ce83553602d255b59aa40c3a15dfae40c30e"
+    },
+    "tools/qa/space_pose_scope_v18.py": {
+      "bytes": 5297,
+      "sha256": "2e6ddc28d793cc872e83830dfa0f02f1086e435dafea2b5e88bf129e3d4ac914"
+    },
+    "graphics/object_events/palettes/space_boarding_guide.gbapal": {
+      "bytes": 32,
+      "sha256": "94b4ae4331b77eb2ee99b99125f2abe4c58c26a27700c98235583677df05e694"
+    },
+    "tools/hoenn_import/space_furniture_finish_v18.py": {
+      "bytes": 11642,
+      "sha256": "168afb5e9eefdbc3149f8042e65d4fda1764a5869bb2630f910b447d7ac0eac3"
+    },
+    "tools/hoenn_import/space_captain_finish_v18.py": {
+      "bytes": 1526,
+      "sha256": "91ab3233990138a5b4540411bfd8e675cf5978dfa39c7942632cad0af66b2f23"
+    },
+    "tools/hoenn_import/space_foreground_finish_v18_02.py": {
+      "bytes": 977,
+      "sha256": "9c264fa9a03ca236b46d9cb144c19bc9847b40faa655ebd69c5bfa23d408d466"
+    },
+    "graphics/object_events/palettes/space_boarding_guide.pal": {
+      "bytes": 205,
+      "sha256": "0a9d35b9808aa05a83314dcdf081cd6ad867a5866acb0ca47b6bc1874d8267d4"
+    },
+    "tools/hoenn_import/space_bridge_finish_v18.py": {
+      "bytes": 9969,
+      "sha256": "26e2597aa5b504dd91cf4a282ad94b05fca05b9f123175ba438f94f5eeb5f834"
+    },
+    "tools/hoenn_import/space_hull_finish_v18.py": {
+      "bytes": 6932,
+      "sha256": "03b9ea13b99901d338ba194793fd9acef237a681e91f8eae6c96d690b53c595e"
+    },
+    "graphics/object_events/pics/people/space_boarding_guide.png": {
+      "bytes": 1143,
+      "sha256": "6d4160c7906b2b42f4bda2a6e2affd5081ad0acf71e5fc531b6b1ed751af9a03"
+    },
+    "tools/qa/space_finish_checks.py": {
+      "bytes": 4853,
+      "sha256": "26b0cc737944a9ca22c12e1968e1d10c4e042483fa1d77f469d651d7d50b27b0"
+    },
+    "graphics/object_events/pics/people/space_boarding_guide.4bpp": {
+      "bytes": 768,
+      "sha256": "87a2cb95ce19ecdaf872c773ab4bcb88ecfdf2546652857c0e5dd1acb3250ebf"
     }
   },
   "public_pokemon_sha256": "373b692e42d952b94b44f0ceda81d56dc75e1abb6af9d60ca5ec47d927b2057c",
   "room_contract_geometry_sha256": "573e45049ea693032710668d5b1d77ac63d60d8c907425f0bba66d562f41b82f",
-  "offline_pose_checks": 76464,
+  "offline_pose_checks": 75888,
   "direct_blobs": [
     {
       "unit": "src/credits.o",
@@ -65206,42 +65254,42 @@
       "symbol": "sgTileset_TYSpaceDeckV4BattleDeckAttributes",
       "source": "data/tilesets/secondary/ty_space_v4_battledeck/metatile_attributes.bin",
       "bytes": 2048,
-      "sha256": "63ad32505ca63a4a00864aaaab3b4d9730dc55914938c2e97df98e6d184e7d85"
+      "sha256": "cf3a4bfc82bca1b99c21d0691418a10d1f5b8ca8151f8e889a70be2dfdd002eb"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4BattleDeckMetatiles",
       "source": "data/tilesets/secondary/ty_space_v4_battledeck/metatiles.bin",
       "bytes": 8192,
-      "sha256": "bb48a53a911a47ca30dda837321b4b108205b8ada946a6511bf8ebfb4b3c3d36"
+      "sha256": "b1797673958f7e57f61e2e502c15244838dfc0b59ee98c1d579d809734512ca5"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4BattleDeckPalettes",
       "source": "data/tilesets/secondary/ty_space_v4_battledeck/palettes.gbapal",
       "bytes": 416,
-      "sha256": "975fd8941fbb6750e987357f35a9f80a895417dec38c4cc5bf781611b137634f"
+      "sha256": "407d5db5736ece0311ba6e76fd3ef2e8247b26b7ab46dd33030805b14745e193"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4BattleDeckTiles",
       "source": "data/tilesets/secondary/ty_space_v4_battledeck/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "b213c4b1c017217830b616bff4df6e4d5983ec61243e3f598dc6d6c87acad19c"
+      "sha256": "09f5b3f2fe3bc73dd82e2811c28523ab6aad4684f6a33bc8020420bf2ec7ea4f"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CabinCorridorAttributes",
       "source": "data/tilesets/secondary/ty_space_v4_cabincorridor/metatile_attributes.bin",
       "bytes": 2048,
-      "sha256": "b382875fafe5aa1d9a292b18136a6ffd12b9341533693f5049278b720d3c9b8a"
+      "sha256": "e3c49c76851a23f66c3ac7f0955424015e5ce1a86d0c07563d85f193c25d5eb8"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CabinCorridorMetatiles",
       "source": "data/tilesets/secondary/ty_space_v4_cabincorridor/metatiles.bin",
       "bytes": 8192,
-      "sha256": "5f102958eff8f8630d8c0679d102a88c9196bdaf68976091b6cc558caa76aec4"
+      "sha256": "9f9a7ccf0a012622542f86190c4e808e51de12b7cc96a230ed964fe5740aeb3c"
     },
     {
       "unit": "src/tilesets.o",
@@ -65255,427 +65303,427 @@
       "symbol": "sgTileset_TYSpaceDeckV4CabinCorridorTiles",
       "source": "data/tilesets/secondary/ty_space_v4_cabincorridor/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "ed998da0d323a73a7790632e2d4fa701e4ee323112f25190741690f44d990acf"
+      "sha256": "a19ed1f5e73f07aa8a250ed6ee9e5f9ae7976e7737af7effa5ba408e9f19d7a0"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CaptainsOfficeAttributes",
       "source": "data/tilesets/secondary/ty_space_v4_captainsoffice/metatile_attributes.bin",
       "bytes": 2048,
-      "sha256": "a549eb325fe80947a31bd6f714632dca320905f9c8d30cb199e8334acbc02fcc"
+      "sha256": "58f8e66ad6d8b323ad5c7697923b2c9511de2e836acd0b1b7a3cc7587ab3b3a6"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CaptainsOfficeMetatiles",
       "source": "data/tilesets/secondary/ty_space_v4_captainsoffice/metatiles.bin",
       "bytes": 8192,
-      "sha256": "35d14db1b9ef7ed3f3011a18479cb1e0c88603e0133d5fb3eb41005bfbb0d039"
+      "sha256": "9677ada74e4f4b8142b46e08b5d305725121d708c9cd66a991b1c6cbb9a86929"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CaptainsOfficePalettes",
       "source": "data/tilesets/secondary/ty_space_v4_captainsoffice/palettes.gbapal",
       "bytes": 416,
-      "sha256": "4ea6879c99f54f46b52232840980790059e346c464bba0e60319fa49b8bde0bd"
+      "sha256": "1c788bd9c7bee60d3aaee1835d97d69bc8496a4465f214eb95de6a934fb9fd4e"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CaptainsOfficeTiles",
       "source": "data/tilesets/secondary/ty_space_v4_captainsoffice/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "eb9fb17fc409b9b8ce142dde6f45baebe81ea069bdb4d73cad3f8c85a9482db6"
+      "sha256": "264d7f76a770b07ab561e15600a0d92254fd7c8f2d91d14118e6fc9d47c06b0f"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CargoHoldAttributes",
       "source": "data/tilesets/secondary/ty_space_v4_cargohold/metatile_attributes.bin",
       "bytes": 2048,
-      "sha256": "39daec3cf4c4d5847f41437999aafce9e983ad130c54a378243f46fb25a51502"
+      "sha256": "2725f286c17c40566bd634122cc590b4e3ceb07a08f7b7c36fa66f6394a7c3d4"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CargoHoldMetatiles",
       "source": "data/tilesets/secondary/ty_space_v4_cargohold/metatiles.bin",
       "bytes": 8192,
-      "sha256": "a9748af1aae1c8c7d540b5d5414cf03dab55d13538b177aa38c317cff0c8e681"
+      "sha256": "04d4cf2f99c3147d1f42f4d5aec77a9d173781b19f43ddf74a47107de63ea85b"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CargoHoldPalettes",
       "source": "data/tilesets/secondary/ty_space_v4_cargohold/palettes.gbapal",
       "bytes": 416,
-      "sha256": "132bb91c533763219296a2a5623d758d183eee4c84a2f336ef2dd21b3ff22e34"
+      "sha256": "62acc10a0650dada2fb3980e7456ff541b5be66213a20699911580c4c02f7ba0"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CargoHoldTiles",
       "source": "data/tilesets/secondary/ty_space_v4_cargohold/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "5b4f8bb2d10f429e56f8d85562beb671c2ad2706a5ff5bf36cc3e17f161dddcd"
+      "sha256": "5d48d41974a0ad233776a4a4d727d0e5d27c1f2880d86d932a79e6332feabf1c"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CockpitAttributes",
       "source": "data/tilesets/secondary/ty_space_v4_cockpit/metatile_attributes.bin",
       "bytes": 2048,
-      "sha256": "0a2c4f8e7bdaebe017e177886f027c65f1a9529ad8cf17ed636c2d1e29dbcbf3"
+      "sha256": "dec8954eb4c25ad3fd32f5924daa8b7ae9473af1084fe23ec0fe3c08b0922ad3"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CockpitMetatiles",
       "source": "data/tilesets/secondary/ty_space_v4_cockpit/metatiles.bin",
       "bytes": 8192,
-      "sha256": "2ebde70ff860d85a685e801bf5310ba8b9e48cde657bd96b7671d03cf2ae4bba"
+      "sha256": "3b029e22d5bd5daeb8aaf43fd2f7aa95b7a9770f7d914c3bc478554944189e9c"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CockpitPalettes",
       "source": "data/tilesets/secondary/ty_space_v4_cockpit/palettes.gbapal",
       "bytes": 416,
-      "sha256": "d591942e65bd0922dab61e52f7a81b68b88af0f875f940d657e3dc793bb8ae00"
+      "sha256": "c9b0974c30567fe1d7ef212b2b9624228bc43cec098b15fdac0a062d49ee970a"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CockpitTiles",
       "source": "data/tilesets/secondary/ty_space_v4_cockpit/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "426d61c00d94a8b4761a8ba532014826bc1d60edd647d95b7dbe1570b153903d"
+      "sha256": "7ed0ce4a7050c3fad880f41b4b95cb1f80320bf533fdd7e6fa34dffc73f98e88"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CrewMessAttributes",
       "source": "data/tilesets/secondary/ty_space_v4_crewmess/metatile_attributes.bin",
       "bytes": 2048,
-      "sha256": "fc0154483e8c153ba0211a8eabbeaf851e0af9fc5772bdf89cb230369f966913"
+      "sha256": "62948fc4bf1bdda0222ba9afdc99f5375c50983fd7368304e5ec9876aeb48aef"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CrewMessMetatiles",
       "source": "data/tilesets/secondary/ty_space_v4_crewmess/metatiles.bin",
       "bytes": 8192,
-      "sha256": "b14518567d4e1ee80fb944013e34932a67ca6243a36d9d168d8264a30b475163"
+      "sha256": "3a857a76cf4f8913f1f85a7c62e747740f57007ef542bcd3f0c8ee7f24a67b01"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CrewMessPalettes",
       "source": "data/tilesets/secondary/ty_space_v4_crewmess/palettes.gbapal",
       "bytes": 416,
-      "sha256": "9bfbf9d76e27fdf448f591ff6447d65e68893e9f7456ab1a0d516a71e6bf8428"
+      "sha256": "3563b44557668e92d15eff06f42a8c93ca47841788f74a187f4782e44f21f584"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CrewMessTiles",
       "source": "data/tilesets/secondary/ty_space_v4_crewmess/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "65011434d6f519dc97fb5a8d8bace17baa6fa11ce8e7060f29bc718a0cd69f47"
+      "sha256": "47fc6c6e2de0b8cee232b0328fcab85bb692b1ec585d2f774c22cf8f549dee05"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CrewQuartersAttributes",
       "source": "data/tilesets/secondary/ty_space_v4_crewquarters/metatile_attributes.bin",
       "bytes": 2048,
-      "sha256": "d4fcb24bd3a426b82c179060570e49f2b74f1bc372582b5a1788aa09a9d6f63c"
+      "sha256": "a34bfde34f05516583ae70186544a9c41e9d4d76e4a4f96dc3342574055a4458"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CrewQuartersMetatiles",
       "source": "data/tilesets/secondary/ty_space_v4_crewquarters/metatiles.bin",
       "bytes": 8192,
-      "sha256": "a6d1448e3989ed2dbfe98c9c5360f10471927a69a1fc5d86cc6f6b5639a7a35e"
+      "sha256": "288dec6dc4fe142b98203d3656f1f93a61002e8fc14fac13a6379c17d6671972"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CrewQuartersPalettes",
       "source": "data/tilesets/secondary/ty_space_v4_crewquarters/palettes.gbapal",
       "bytes": 416,
-      "sha256": "7903279ae219b19b3fb5443bc998cb16111c0ccbbd8e208539d64157dce944a5"
+      "sha256": "764cde731bbc96dd44ff3aa974e13fbf92760fca284a5d491423c7346e6f7cb3"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CrewQuartersTiles",
       "source": "data/tilesets/secondary/ty_space_v4_crewquarters/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "3b25a64478218c9afe41d4b7968ecc5ad187301c0c784572775ca88017dde8dc"
+      "sha256": "702853d403922f8a769c4bb6940d0ae129ef82d87e3c5258bfb401734b7b236c"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4EngineeringAttributes",
       "source": "data/tilesets/secondary/ty_space_v4_engineering/metatile_attributes.bin",
       "bytes": 2048,
-      "sha256": "cc8628a8f3eaf7757a00f32512e5f812befabfa85fccc761ea974e1c9cac2b5f"
+      "sha256": "51478651d4b4b7bca4c562a8a9b3b476e0c3641b01325d5ebe42f3c8d9b804bb"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4EngineeringMetatiles",
       "source": "data/tilesets/secondary/ty_space_v4_engineering/metatiles.bin",
       "bytes": 8192,
-      "sha256": "1c9dd950a208884b36e15c7403284b0c9c30c76014f35ddaf3cb36fd9a845772"
+      "sha256": "eedcad6010e3fb754e36d6b65a19b62a75ce51d2ad2b53663d9ecf587295fd4f"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4EngineeringPalettes",
       "source": "data/tilesets/secondary/ty_space_v4_engineering/palettes.gbapal",
       "bytes": 416,
-      "sha256": "15ea9a825c244c60b5369f1ddd0632591f30f10ba811aaf92def4071bbceaa79"
+      "sha256": "4699a30f0d176e65bd06c4f4261e1922788677515ddab9a1eaf2ca380445792e"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4EngineeringTiles",
       "source": "data/tilesets/secondary/ty_space_v4_engineering/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "6e0f798ee1e9c6b867e19b8f46839509d886170cef045d5c9df4b6ce2b1512a4"
+      "sha256": "28a6616eef7d86602921db93de94c330ff5d50206d174f9353dfb4f1ebd565c9"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4FoodCourtAttributes",
       "source": "data/tilesets/secondary/ty_space_v4_foodcourt/metatile_attributes.bin",
       "bytes": 2048,
-      "sha256": "fc0154483e8c153ba0211a8eabbeaf851e0af9fc5772bdf89cb230369f966913"
+      "sha256": "62948fc4bf1bdda0222ba9afdc99f5375c50983fd7368304e5ec9876aeb48aef"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4FoodCourtMetatiles",
       "source": "data/tilesets/secondary/ty_space_v4_foodcourt/metatiles.bin",
       "bytes": 8192,
-      "sha256": "b14518567d4e1ee80fb944013e34932a67ca6243a36d9d168d8264a30b475163"
+      "sha256": "3a857a76cf4f8913f1f85a7c62e747740f57007ef542bcd3f0c8ee7f24a67b01"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4FoodCourtPalettes",
       "source": "data/tilesets/secondary/ty_space_v4_foodcourt/palettes.gbapal",
       "bytes": 416,
-      "sha256": "9bfbf9d76e27fdf448f591ff6447d65e68893e9f7456ab1a0d516a71e6bf8428"
+      "sha256": "3563b44557668e92d15eff06f42a8c93ca47841788f74a187f4782e44f21f584"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4FoodCourtTiles",
       "source": "data/tilesets/secondary/ty_space_v4_foodcourt/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "65011434d6f519dc97fb5a8d8bace17baa6fa11ce8e7060f29bc718a0cd69f47"
+      "sha256": "47fc6c6e2de0b8cee232b0328fcab85bb692b1ec585d2f774c22cf8f549dee05"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4GameRoomAttributes",
       "source": "data/tilesets/secondary/ty_space_v4_gameroom/metatile_attributes.bin",
       "bytes": 2048,
-      "sha256": "1073d5dc85a2c2815bac5b46053a45fe27ec0b9fe362c79b8b294ba94ec0afd0"
+      "sha256": "22d34852ef7925d9ecb80c9caa06bc0898f37a233d2e8c61cba83fad8c02a6d3"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4GameRoomMetatiles",
       "source": "data/tilesets/secondary/ty_space_v4_gameroom/metatiles.bin",
       "bytes": 8192,
-      "sha256": "6afb29df9aef5d7ee5d9b7e97e6f805003eac59bbeb499873e8d23c5832861da"
+      "sha256": "c4de240e05e8651c73b76179355851ffe3e7c32fb4c34e4ae01a55c38a0c0cd9"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4GameRoomPalettes",
       "source": "data/tilesets/secondary/ty_space_v4_gameroom/palettes.gbapal",
       "bytes": 416,
-      "sha256": "4dc1f77cbd31efda5a1f8917ac198bf7dd652ba3728b30b1a0cb76b30d5fce55"
+      "sha256": "00e45894b1da4701a2531a6f687933a3ff4d69e99071bed5d9d7acce87f01393"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4GameRoomTiles",
       "source": "data/tilesets/secondary/ty_space_v4_gameroom/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "cfdefc83fa4d8316e4c1b3d541ccd3bb391963cf2e25414cf48da13e06d52ff1"
+      "sha256": "f119d6bd222c642963384d60ecaf379da0d13178fec7c4d3c5bea21b074c3485"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4GuestRoom1Attributes",
       "source": "data/tilesets/secondary/ty_space_v4_guestroom1/metatile_attributes.bin",
       "bytes": 2048,
-      "sha256": "fc346d397c49d4ead68e588ddec2233790ddae8af3404802c6f5131d251a646f"
+      "sha256": "4dddb2f8f033827d1276a6e6295a763b40c331b656a63856f10f74ae6a71972d"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4GuestRoom1Metatiles",
       "source": "data/tilesets/secondary/ty_space_v4_guestroom1/metatiles.bin",
       "bytes": 8192,
-      "sha256": "9d5b70d080324dbb7ddfe8c6c0d8a7f35b515aa4a7672b6f3618e61cfa2835a0"
+      "sha256": "bd9ea17663385a83217289733323f50437a565851f44757cadf4b0d1abb06a30"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4GuestRoom1Palettes",
       "source": "data/tilesets/secondary/ty_space_v4_guestroom1/palettes.gbapal",
       "bytes": 416,
-      "sha256": "24b4a281d421c7a9396ffb9c62dc55f0d6a425ce83a5d7f43769195cff8f419a"
+      "sha256": "5e0e2f11692e875a561f70297bf24be6d33fcc42db679e243e52c9bdfbe7d1fb"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4GuestRoom1Tiles",
       "source": "data/tilesets/secondary/ty_space_v4_guestroom1/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "bc592f63b73a2909e19e41d05d56e188d345e7af562c5d513315cccae34fb0d8"
+      "sha256": "f462dad0c9949901693582491eeff5876929d08973b824566d4d28d6b9a2f0d0"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4GuestRoom2Attributes",
       "source": "data/tilesets/secondary/ty_space_v4_guestroom2/metatile_attributes.bin",
       "bytes": 2048,
-      "sha256": "fc346d397c49d4ead68e588ddec2233790ddae8af3404802c6f5131d251a646f"
+      "sha256": "4dddb2f8f033827d1276a6e6295a763b40c331b656a63856f10f74ae6a71972d"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4GuestRoom2Metatiles",
       "source": "data/tilesets/secondary/ty_space_v4_guestroom2/metatiles.bin",
       "bytes": 8192,
-      "sha256": "9d5b70d080324dbb7ddfe8c6c0d8a7f35b515aa4a7672b6f3618e61cfa2835a0"
+      "sha256": "bd9ea17663385a83217289733323f50437a565851f44757cadf4b0d1abb06a30"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4GuestRoom2Palettes",
       "source": "data/tilesets/secondary/ty_space_v4_guestroom2/palettes.gbapal",
       "bytes": 416,
-      "sha256": "24b4a281d421c7a9396ffb9c62dc55f0d6a425ce83a5d7f43769195cff8f419a"
+      "sha256": "5e0e2f11692e875a561f70297bf24be6d33fcc42db679e243e52c9bdfbe7d1fb"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4GuestRoom2Tiles",
       "source": "data/tilesets/secondary/ty_space_v4_guestroom2/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "bc592f63b73a2909e19e41d05d56e188d345e7af562c5d513315cccae34fb0d8"
+      "sha256": "f462dad0c9949901693582491eeff5876929d08973b824566d4d28d6b9a2f0d0"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4GuestRoom3Attributes",
       "source": "data/tilesets/secondary/ty_space_v4_guestroom3/metatile_attributes.bin",
       "bytes": 2048,
-      "sha256": "fc346d397c49d4ead68e588ddec2233790ddae8af3404802c6f5131d251a646f"
+      "sha256": "4dddb2f8f033827d1276a6e6295a763b40c331b656a63856f10f74ae6a71972d"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4GuestRoom3Metatiles",
       "source": "data/tilesets/secondary/ty_space_v4_guestroom3/metatiles.bin",
       "bytes": 8192,
-      "sha256": "9d5b70d080324dbb7ddfe8c6c0d8a7f35b515aa4a7672b6f3618e61cfa2835a0"
+      "sha256": "bd9ea17663385a83217289733323f50437a565851f44757cadf4b0d1abb06a30"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4GuestRoom3Palettes",
       "source": "data/tilesets/secondary/ty_space_v4_guestroom3/palettes.gbapal",
       "bytes": 416,
-      "sha256": "24b4a281d421c7a9396ffb9c62dc55f0d6a425ce83a5d7f43769195cff8f419a"
+      "sha256": "5e0e2f11692e875a561f70297bf24be6d33fcc42db679e243e52c9bdfbe7d1fb"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4GuestRoom3Tiles",
       "source": "data/tilesets/secondary/ty_space_v4_guestroom3/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "bc592f63b73a2909e19e41d05d56e188d345e7af562c5d513315cccae34fb0d8"
+      "sha256": "f462dad0c9949901693582491eeff5876929d08973b824566d4d28d6b9a2f0d0"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4LobbyAttributes",
       "source": "data/tilesets/secondary/ty_space_v4_cabin/metatile_attributes.bin",
       "bytes": 2048,
-      "sha256": "351511ebbfbe035d748cab5b2f9f97b0662bdc9bacd3c585df8dcce8b295da67"
+      "sha256": "d90c4231015af8aed0be3245be96688dbde665523e33a58334cbae8784d0d870"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4LobbyMetatiles",
       "source": "data/tilesets/secondary/ty_space_v4_cabin/metatiles.bin",
       "bytes": 8192,
-      "sha256": "cdc4e7fe285438a270015f16aab2f651e374ea78943942374145e71ee0c9a1cd"
+      "sha256": "8aee979c456bc6e56f65bf0dcbc2439b0d6749a1354607da8e418a02bf144550"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4LobbyPalettes",
       "source": "data/tilesets/secondary/ty_space_v4_cabin/palettes.gbapal",
       "bytes": 416,
-      "sha256": "dfa136da75077a9e7748a26fd40b3686fd2bde71f9e4647675ab155ed54f52c6"
+      "sha256": "71a6c2980ebeaa85330f20837119a3f89439d4f4e53e5606f00b34ac88a7029d"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4LobbyTiles",
       "source": "data/tilesets/secondary/ty_space_v4_cabin/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "e63db254c14172e712efab4f5d347f709ec6a10da67e23744536f0aa0d6462f7"
+      "sha256": "f98f15aecbc890ff88ffc05c884f93580295a77777fbdcf1142dcbe85119171c"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4LoungeAttributes",
       "source": "data/tilesets/secondary/ty_space_v4_lounge/metatile_attributes.bin",
       "bytes": 2048,
-      "sha256": "3592b5e4563cabb646d5c7f0411495368fee4ed422dd4bad239cd29bf9ef2efa"
+      "sha256": "8bb8c1106d23025722fe41011c4e8d5c83b0f45af22537ac24ab946f4f90294d"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4LoungeMetatiles",
       "source": "data/tilesets/secondary/ty_space_v4_lounge/metatiles.bin",
       "bytes": 8192,
-      "sha256": "87b60c380f38de0ae0c05f6b72d1c3b5afe73248601dc1e3c027043d41349964"
+      "sha256": "3393a95fe5edf63113c3149a55e9f9ae388d35875e16aec378a00934dc3db74e"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4LoungePalettes",
       "source": "data/tilesets/secondary/ty_space_v4_lounge/palettes.gbapal",
       "bytes": 416,
-      "sha256": "0309cae2978c1c2a815a32e94fac321e04cdbd3a3be1723fcd72974d7395d19c"
+      "sha256": "3420748c459edc766fe5f316bd2888913f39c8117c2fe9e23a51a2da3e5aec69"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4LoungeTiles",
       "source": "data/tilesets/secondary/ty_space_v4_lounge/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "6493969ddad0d0a4c644414dd126132729be2318c5f8a8917e566b3994a07dfc"
+      "sha256": "be0f494b454e9fa9040b6935d077c1e4b016d2e9ddfe0efdac285a0d2e6123dc"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4NavigationAttributes",
       "source": "data/tilesets/secondary/ty_space_v4_navigation/metatile_attributes.bin",
       "bytes": 2048,
-      "sha256": "d7cd100f429ec8a8a4dd30e74d32186a4f83387c5367b3c20d04891944676429"
+      "sha256": "6d8455c03a87504ebfb12f5df0206a625980ef22d4331c6cc17a2bcc6ccb636e"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4NavigationMetatiles",
       "source": "data/tilesets/secondary/ty_space_v4_navigation/metatiles.bin",
       "bytes": 8192,
-      "sha256": "dad008cbb990ad5861a301edaaf50dade3e68fb5cf60e08102164150bd0d7d1a"
+      "sha256": "4fc7ba3d4175079970d75c0c8895e17943ccd6978a4f4c42dcdc40b17ed64b30"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4NavigationPalettes",
       "source": "data/tilesets/secondary/ty_space_v4_navigation/palettes.gbapal",
       "bytes": 416,
-      "sha256": "8fac215a43f18beb3c0e5c4636e2a9772c8903643e95921374f0256ee192db75"
+      "sha256": "c9b0974c30567fe1d7ef212b2b9624228bc43cec098b15fdac0a062d49ee970a"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4NavigationTiles",
       "source": "data/tilesets/secondary/ty_space_v4_navigation/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "1b4278b368f5a774a695be39d6bda99f82aef54e24e536a6dbacfb66f74399dc"
+      "sha256": "a6026ea5256f2d0ce9288919f147459fd529a2d5b3249dfb2dd72d879a973c04"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4ObservatoryAttributes",
       "source": "data/tilesets/secondary/ty_space_v4_observatory/metatile_attributes.bin",
       "bytes": 2048,
-      "sha256": "35b73408119c69b796a3aae8fd49fd827991dff73460086703037e3ad8600ec5"
+      "sha256": "7120cd2984b17733edc2eb91e62a52f44a727c9f94f9349a27e2f46af1531561"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4ObservatoryMetatiles",
       "source": "data/tilesets/secondary/ty_space_v4_observatory/metatiles.bin",
       "bytes": 8192,
-      "sha256": "9f6aa74d0f26a56e2454fed218cfc09b40752c03498a9347885fef5acebc3a72"
+      "sha256": "de73f9f87bb47a3bd671f5818a76c01c5124f782d4a06f8dc5d0ba0f048413fe"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4ObservatoryPalettes",
       "source": "data/tilesets/secondary/ty_space_v4_observatory/palettes.gbapal",
       "bytes": 416,
-      "sha256": "8709b8268ed8f5163ca6f6dd639155d134d5f40f640d257df086dd7bafe36519"
+      "sha256": "fd255abb9ecde13b2cc4c166c3626600fc2373bdd4acc14f863a610e610045bb"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4ObservatoryTiles",
       "source": "data/tilesets/secondary/ty_space_v4_observatory/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "76aadeab6c2fe9dd8fff10cd4176cb41a53f9eb4e05030f40c4d3e6f35dd0425"
+      "sha256": "59ccb9bcb5079f07da3fc2684b189aa2c0b6f9caf1248a5eb4d826c5693a25ce"
     },
     {
       "unit": "src/title_screen.o",
@@ -65704,6 +65752,20 @@
       "source": "graphics/title_screen/thunder_yellow/approved-title-v8.8bpp",
       "bytes": 38400,
       "sha256": "266b8c5764de352fd471c742705cc8744eeff15c16e13c557854b514d6153eff"
+    },
+    {
+      "unit": "src/event_object_movement.o",
+      "symbol": "gObjectEventPic_SpaceBoardingGuide",
+      "source": "graphics/object_events/pics/people/space_boarding_guide.4bpp",
+      "bytes": 768,
+      "sha256": "87a2cb95ce19ecdaf872c773ab4bcb88ecfdf2546652857c0e5dd1acb3250ebf"
+    },
+    {
+      "unit": "src/event_object_movement.o",
+      "symbol": "gObjectEventPal_SpaceBoardingGuide",
+      "source": "graphics/object_events/palettes/space_boarding_guide.gbapal",
+      "bytes": 32,
+      "sha256": "94b4ae4331b77eb2ee99b99125f2abe4c58c26a27700c98235583677df05e694"
     }
   ],
   "approved_media": {
@@ -73844,5 +73906,134 @@
     ],
     "scope": "Only nine flight INCBIN payloads intentionally change; other linked media, RAM/save ABI and map checks retain their existing requirements."
   },
-  "expected_game_rom_sha256": "a5de4071bb78547764ca58deac09c0046deee07b4386e66fe94c3b87580b496f"
+  "offline_npc_pose_checks": 396,
+  "pose_scope": {
+    "player": "Flood union of safe anchor and every ordinary door arrival; isolated cells enumerated separately",
+    "NPC": "Every source spawn, bounded wander location and explicit non-displacing story movement",
+    "native_counter_foot": "Exact named cells/graphics/refs only, final four sprite rows; head and body failures remain fatal",
+    "excluded_player_cells": [
+      {
+        "map": "HoennSpacecraftCabin",
+        "xy": [
+          0,
+          2
+        ],
+        "source_ref": [
+          "league",
+          627
+        ],
+        "reason": "No path from safe anchor or any normal door arrival; NPC domain checked separately"
+      },
+      {
+        "map": "HoennSpacecraftCabin",
+        "xy": [
+          0,
+          4
+        ],
+        "source_ref": [
+          "league",
+          544
+        ],
+        "reason": "No path from safe anchor or any normal door arrival; NPC domain checked separately"
+      },
+      {
+        "map": "HoennSpacecraftCabin",
+        "xy": [
+          3,
+          2
+        ],
+        "source_ref": [
+          "league",
+          519
+        ],
+        "reason": "No path from safe anchor or any normal door arrival; NPC domain checked separately"
+      },
+      {
+        "map": "HoennSpacecraftCabin",
+        "xy": [
+          15,
+          2
+        ],
+        "source_ref": [
+          "league",
+          637
+        ],
+        "reason": "No path from safe anchor or any normal door arrival; NPC domain checked separately"
+      },
+      {
+        "map": "HoennSpacecraftCabin",
+        "xy": [
+          16,
+          2
+        ],
+        "source_ref": [
+          "league",
+          553
+        ],
+        "reason": "No path from safe anchor or any normal door arrival; NPC domain checked separately"
+      },
+      {
+        "map": "HoennSpacecraftCabin",
+        "xy": [
+          17,
+          2
+        ],
+        "source_ref": [
+          "league",
+          628
+        ],
+        "reason": "No path from safe anchor or any normal door arrival; NPC domain checked separately"
+      },
+      {
+        "map": "HoennSpacecraftCabin",
+        "xy": [
+          18,
+          2
+        ],
+        "source_ref": [
+          "league",
+          629
+        ],
+        "reason": "No path from safe anchor or any normal door arrival; NPC domain checked separately"
+      },
+      {
+        "map": "HoennSpacecraftCaptainsOffice",
+        "xy": [
+          4,
+          2
+        ],
+        "source_ref": [
+          "facility",
+          752
+        ],
+        "reason": "No path from safe anchor or any normal door arrival; NPC domain checked separately"
+      },
+      {
+        "map": "HoennSpacecraftCaptainsOffice",
+        "xy": [
+          5,
+          2
+        ],
+        "source_ref": [
+          "facility",
+          752
+        ],
+        "reason": "No path from safe anchor or any normal door arrival; NPC domain checked separately"
+      }
+    ]
+  },
+  "previous_game_rom_sha256": "a5de4071bb78547764ca58deac09c0046deee07b4386e66fe94c3b87580b496f",
+  "interior_finish_revision": {
+    "candidate": "SOURCE18_METAL_INTERIORS_AND_FLARE",
+    "art_manifest_sha256": "8010dd02894cdf5810126b470d44fc30aaf96e8b95ddb08abda79c9d10b83545",
+    "uniform_manifest_sha256": "6c6435a9bcea8e798768addef3aafb3fc3213e571f5ab2a2065fc94acbcc0ee4",
+    "art_classification": [
+      "retained original furniture/foreground",
+      "explicit removed red table front",
+      "room-floor composites",
+      "new connected hull, directional hatches and bridge/window pixels"
+    ],
+    "original_media_save_and_other_field_requirements_unchanged": true,
+    "flight_source_sha256": "db1316e78815003311961a69a8bbdf113c1d97f41ae82d2c54268849a550f8e1"
+  }
 }

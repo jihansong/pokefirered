@@ -1,4 +1,4 @@
-name: Space exterior candidate build and recorded normal flight
+name: Space interiors and flight gameplay validation
 
 on:
   push:
@@ -147,13 +147,13 @@ jobs:
           python3 -B tools/qa/derive_schema.py --source . --artifact-dir /tmp/space-host-tools --output ty28-schema.json --arm-cc "${DEVKITARM:?}/bin/arm-none-eabi-gcc"
           python3 -B tools/qa/make_ty28_fixture.py --source . --schema /tmp/space-host-tools/ty28-schema.json --recipe tools/qa/space-terminal-start.json --artifact-dir /tmp/space-host-tools --output public-space-flight.sav
 
-      - name: Record normal registration, complete flight round trip and SAVE with cold Continue
+      - name: Record continuous flight, 17-room tour, finish checks and SAVE with cold Continue
         id: walkthrough
         if: steps.build.outcome == 'success'
         continue-on-error: true
         shell: bash
         run: |
-          python3 -B tools/qa/space_runtime_probe.py --host /tmp/space-host-tools/delta-core-host --source . --schema /tmp/space-host-tools/ty28-schema.json --rom /tmp/space-build-bundle/pokemonthyl.gba --symbols /tmp/space-build-bundle/pokemonthyl.sym --seed /tmp/space-host-tools/public-space-flight.sav --artifact-dir /tmp/space-tour-evidence --scenario flight-save --video
+          python3 -B tools/qa/space_runtime_probe.py --host /tmp/space-host-tools/delta-core-host --source . --schema /tmp/space-host-tools/ty28-schema.json --rom /tmp/space-build-bundle/pokemonthyl.gba --symbols /tmp/space-build-bundle/pokemonthyl.sym --seed /tmp/space-host-tools/public-space-flight.sav --artifact-dir /tmp/space-tour-evidence --scenario finish-flight-save --video
 
       - name: Add only explicit public QA evidence to the build bundle
         if: always() && steps.build.outcome == 'success'
@@ -221,6 +221,15 @@ jobs:
           assert report['flight']['status'] == 'PASS_NORMAL_KEYS_OUTBOUND_RETURN'
           assert [s['duration'] for s in report['flight']['scenes']] == [1800, 1440]
           assert [s['returning'] for s in report['flight']['scenes']] == [False, True]
+          assert len(report['tour']['visited_rooms']) == 17 and len(report['tour']['directional_crossings']) == 32
+          assert len(report['tour']['door_step_observations']) == 32
+          assert report['finish']['status'] == 'PASS_NORMAL_KEYS_FINISH_OBSERVATIONS_VISUAL_REVIEW_PENDING'
+          expected = report['finish']['expected_counts']
+          assert expected == {'rooms': 17, 'cameras': 50, 'blocked_attempts': 12}
+          assert len(report['finish']['visited_rooms']) == expected['rooms']
+          assert len(report['finish']['cameras']) == expected['cameras']
+          assert len(report['finish']['blocked_attempts']) == expected['blocked_attempts']
+          assert len(report['flight']['gpu_blend_checks']) == 1
           assert report['video']['frames'] > 0
-          print('Actual rendered synthetic-fixture outbound/return flight and normal SAVE/cold Continue passed; not installed iOS Delta app verification.')
+          print('Actual rendered synthetic-fixture flight, room tour and finish checks and normal SAVE/cold Continue passed; not installed iOS Delta app verification.')
           PY

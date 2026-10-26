@@ -1,0 +1,697 @@
+{
+  "candidate": "source18-final-consolidated-8010dd02",
+  "strategy": "two_row_blocked",
+  "map": "HoennSpacecraftCabin",
+  "blocked_approaches": [
+    {
+      "id": "right-north",
+      "stand": [
+        15,
+        6
+      ],
+      "direction": "S"
+    },
+    {
+      "id": "right-west-cap",
+      "stand": [
+        14,
+        7
+      ],
+      "direction": "E"
+    },
+    {
+      "id": "right-east-cap",
+      "stand": [
+        16,
+        7
+      ],
+      "direction": "W"
+    },
+    {
+      "id": "right-south",
+      "stand": [
+        15,
+        9
+      ],
+      "direction": "N"
+    },
+    {
+      "id": "right-east-base",
+      "stand": [
+        16,
+        8
+      ],
+      "direction": "W"
+    },
+    {
+      "id": "left-west-cap",
+      "stand": [
+        3,
+        10
+      ],
+      "direction": "E"
+    },
+    {
+      "id": "left-north-cap4",
+      "stand": [
+        4,
+        9
+      ],
+      "direction": "S"
+    },
+    {
+      "id": "left-north-cap5",
+      "stand": [
+        5,
+        9
+      ],
+      "direction": "S"
+    },
+    {
+      "id": "left-south-base4",
+      "stand": [
+        4,
+        12
+      ],
+      "direction": "N"
+    },
+    {
+      "id": "left-south-base5",
+      "stand": [
+        5,
+        12
+      ],
+      "direction": "N"
+    },
+    {
+      "id": "engineering-console",
+      "map": "HoennSpacecraftEngineering",
+      "stand": [
+        12,
+        5
+      ],
+      "direction": "N"
+    },
+    {
+      "id": "navigation-panel",
+      "map": "HoennSpacecraftNavigation",
+      "stand": [
+        12,
+        5
+      ],
+      "direction": "N"
+    }
+  ],
+  "camera_positions": [
+    {
+      "id": "cabin-overview",
+      "map": "HoennSpacecraftCabin",
+      "stand": [
+        10,
+        8
+      ],
+      "acceptance_ids": []
+    },
+    {
+      "id": "engineering-overview",
+      "map": "HoennSpacecraftEngineering",
+      "stand": [
+        10,
+        8
+      ],
+      "acceptance_ids": []
+    },
+    {
+      "id": "observatory-overview",
+      "map": "HoennOrbitalObservatory",
+      "stand": [
+        10,
+        9
+      ],
+      "acceptance_ids": []
+    },
+    {
+      "id": "cockpit-overview",
+      "map": "HoennSpacecraftCockpit",
+      "stand": [
+        10,
+        6
+      ],
+      "acceptance_ids": [
+        "18",
+        "19"
+      ]
+    },
+    {
+      "id": "navigation-overview",
+      "map": "HoennSpacecraftNavigation",
+      "stand": [
+        10,
+        5
+      ],
+      "acceptance_ids": [
+        "18"
+      ]
+    },
+    {
+      "id": "captainsoffice-overview",
+      "map": "HoennSpacecraftCaptainsOffice",
+      "stand": [
+        5,
+        6
+      ],
+      "acceptance_ids": []
+    },
+    {
+      "id": "crewquarters-overview",
+      "map": "HoennSpacecraftCrewQuarters",
+      "stand": [
+        8,
+        5
+      ],
+      "acceptance_ids": []
+    },
+    {
+      "id": "crewmess-overview",
+      "map": "HoennSpacecraftCrewMess",
+      "stand": [
+        6,
+        6
+      ],
+      "acceptance_ids": [
+        "16"
+      ]
+    },
+    {
+      "id": "foodcourt-overview",
+      "map": "HoennSpacecraftFoodCourt",
+      "stand": [
+        6,
+        6
+      ],
+      "acceptance_ids": [
+        "14"
+      ]
+    },
+    {
+      "id": "lounge-overview",
+      "map": "HoennSpacecraftLounge",
+      "stand": [
+        6,
+        3
+      ],
+      "acceptance_ids": [],
+      "named_criteria": [
+        "intentional-counter-foot-only-foreground"
+      ]
+    },
+    {
+      "id": "gameroom-overview",
+      "map": "HoennSpacecraftGameRoom",
+      "stand": [
+        10,
+        5
+      ],
+      "acceptance_ids": []
+    },
+    {
+      "id": "battledeck-overview",
+      "map": "HoennSpacecraftBattleDeck",
+      "stand": [
+        17,
+        8
+      ],
+      "acceptance_ids": []
+    },
+    {
+      "id": "cabincorridor-overview",
+      "map": "HoennSpacecraftCabinCorridor",
+      "stand": [
+        12,
+        4
+      ],
+      "acceptance_ids": []
+    },
+    {
+      "id": "guestroom1-overview",
+      "map": "HoennSpacecraftGuestRoom1",
+      "stand": [
+        4,
+        4
+      ],
+      "acceptance_ids": []
+    },
+    {
+      "id": "guestroom2-overview",
+      "map": "HoennSpacecraftGuestRoom2",
+      "stand": [
+        4,
+        5
+      ],
+      "acceptance_ids": []
+    },
+    {
+      "id": "guestroom3-overview",
+      "map": "HoennSpacecraftGuestRoom3",
+      "stand": [
+        4,
+        8
+      ],
+      "acceptance_ids": []
+    },
+    {
+      "id": "cargohold-overview",
+      "map": "HoennSpacecraftCargoHold",
+      "stand": [
+        12,
+        6
+      ],
+      "acceptance_ids": []
+    },
+    {
+      "id": "cabin-W6",
+      "map": "HoennSpacecraftCabin",
+      "stand": [
+        3,
+        6
+      ],
+      "acceptance_ids": [
+        "01",
+        "10"
+      ]
+    },
+    {
+      "id": "cabin-W10",
+      "map": "HoennSpacecraftCabin",
+      "stand": [
+        3,
+        10
+      ],
+      "acceptance_ids": [
+        "01",
+        "10"
+      ]
+    },
+    {
+      "id": "cabin-E4",
+      "map": "HoennSpacecraftCabin",
+      "stand": [
+        16,
+        4
+      ],
+      "acceptance_ids": [
+        "02"
+      ]
+    },
+    {
+      "id": "cabin-E7",
+      "map": "HoennSpacecraftCabin",
+      "stand": [
+        16,
+        7
+      ],
+      "acceptance_ids": [
+        "02"
+      ]
+    },
+    {
+      "id": "cabin-E11",
+      "map": "HoennSpacecraftCabin",
+      "stand": [
+        16,
+        11
+      ],
+      "acceptance_ids": [
+        "02"
+      ]
+    },
+    {
+      "id": "cabin-S4",
+      "map": "HoennSpacecraftCabin",
+      "stand": [
+        4,
+        12
+      ],
+      "acceptance_ids": [
+        "01"
+      ]
+    },
+    {
+      "id": "cabin-return10",
+      "map": "HoennSpacecraftCabin",
+      "stand": [
+        10,
+        12
+      ],
+      "acceptance_ids": [
+        "01"
+      ]
+    },
+    {
+      "id": "navigation-control-bay",
+      "map": "HoennSpacecraftNavigation",
+      "stand": [
+        8,
+        12
+      ],
+      "acceptance_ids": [
+        "03"
+      ]
+    },
+    {
+      "id": "navigation-east-corner",
+      "map": "HoennSpacecraftNavigation",
+      "stand": [
+        16,
+        6
+      ],
+      "acceptance_ids": [
+        "04",
+        "07"
+      ]
+    },
+    {
+      "id": "navigation-spine-joint",
+      "map": "HoennSpacecraftNavigation",
+      "stand": [
+        10,
+        10
+      ],
+      "acceptance_ids": [
+        "04",
+        "07"
+      ]
+    },
+    {
+      "id": "engineering-N10",
+      "map": "HoennSpacecraftEngineering",
+      "stand": [
+        10,
+        3
+      ],
+      "acceptance_ids": [
+        "05"
+      ]
+    },
+    {
+      "id": "engineering-E18",
+      "map": "HoennSpacecraftEngineering",
+      "stand": [
+        16,
+        7
+      ],
+      "acceptance_ids": [
+        "06"
+      ]
+    },
+    {
+      "id": "office-W1",
+      "map": "HoennSpacecraftCaptainsOffice",
+      "stand": [
+        3,
+        6
+      ],
+      "acceptance_ids": [
+        "08"
+      ]
+    },
+    {
+      "id": "crew-partition-end",
+      "map": "HoennSpacecraftCrewQuarters",
+      "stand": [
+        15,
+        5
+      ],
+      "acceptance_ids": [
+        "09"
+      ]
+    },
+    {
+      "id": "crew-E18",
+      "map": "HoennSpacecraftCrewQuarters",
+      "stand": [
+        16,
+        6
+      ],
+      "acceptance_ids": [
+        "09"
+      ]
+    },
+    {
+      "id": "game-east-threshold",
+      "map": "HoennSpacecraftGameRoom",
+      "stand": [
+        16,
+        10
+      ],
+      "acceptance_ids": [
+        "11"
+      ]
+    },
+    {
+      "id": "game-inner-L",
+      "map": "HoennSpacecraftGameRoom",
+      "stand": [
+        15,
+        8
+      ],
+      "acceptance_ids": [
+        "11"
+      ]
+    },
+    {
+      "id": "lounge-left-shelf",
+      "map": "HoennSpacecraftLounge",
+      "stand": [
+        3,
+        4
+      ],
+      "acceptance_ids": [
+        "12"
+      ]
+    },
+    {
+      "id": "lounge-right-shelf",
+      "map": "HoennSpacecraftLounge",
+      "stand": [
+        15,
+        4
+      ],
+      "acceptance_ids": [
+        "12"
+      ]
+    },
+    {
+      "id": "lounge-stool-feet",
+      "map": "HoennSpacecraftLounge",
+      "stand": [
+        10,
+        8
+      ],
+      "acceptance_ids": [
+        "13"
+      ]
+    },
+    {
+      "id": "lounge-dining-floor",
+      "map": "HoennSpacecraftLounge",
+      "stand": [
+        10,
+        12
+      ],
+      "acceptance_ids": [
+        "20"
+      ]
+    },
+    {
+      "id": "food-kitchen-join",
+      "map": "HoennSpacecraftFoodCourt",
+      "stand": [
+        10,
+        6
+      ],
+      "acceptance_ids": [
+        "14"
+      ]
+    },
+    {
+      "id": "food-table-legs",
+      "map": "HoennSpacecraftFoodCourt",
+      "stand": [
+        8,
+        12
+      ],
+      "acceptance_ids": [
+        "15",
+        "20"
+      ]
+    },
+    {
+      "id": "mess-kitchen-join",
+      "map": "HoennSpacecraftCrewMess",
+      "stand": [
+        10,
+        6
+      ],
+      "acceptance_ids": [
+        "16"
+      ]
+    },
+    {
+      "id": "mess-table-legs",
+      "map": "HoennSpacecraftCrewMess",
+      "stand": [
+        10,
+        12
+      ],
+      "acceptance_ids": [
+        "20"
+      ]
+    },
+    {
+      "id": "observatory-left-frame",
+      "map": "HoennOrbitalObservatory",
+      "stand": [
+        4,
+        5
+      ],
+      "acceptance_ids": [
+        "17"
+      ]
+    },
+    {
+      "id": "observatory-right-frame",
+      "map": "HoennOrbitalObservatory",
+      "stand": [
+        15,
+        5
+      ],
+      "acceptance_ids": [
+        "17"
+      ]
+    },
+    {
+      "id": "observatory-window-whole",
+      "map": "HoennOrbitalObservatory",
+      "stand": [
+        10,
+        6
+      ],
+      "acceptance_ids": [
+        "17"
+      ]
+    },
+    {
+      "id": "food-left-sink",
+      "map": "HoennSpacecraftFoodCourt",
+      "stand": [
+        3,
+        6
+      ],
+      "acceptance_ids": [
+        "14"
+      ]
+    },
+    {
+      "id": "cockpit-pilot-left",
+      "map": "HoennSpacecraftCockpit",
+      "stand": [
+        8,
+        6
+      ],
+      "acceptance_ids": [
+        "18",
+        "19"
+      ]
+    },
+    {
+      "id": "cockpit-pilot-right",
+      "map": "HoennSpacecraftCockpit",
+      "stand": [
+        12,
+        6
+      ],
+      "acceptance_ids": [
+        "18",
+        "19"
+      ]
+    },
+    {
+      "id": "office-space-window",
+      "map": "HoennSpacecraftCaptainsOffice",
+      "stand": [
+        8,
+        6
+      ],
+      "acceptance_ids": [],
+      "named_criteria": [
+        "captains-office-space-window-metal-interior"
+      ]
+    },
+    {
+      "id": "cabin-blue-guide-front",
+      "map": "HoennSpacecraftCabin",
+      "stand": [
+        8,
+        4
+      ],
+      "acceptance_ids": [],
+      "named_criteria": [
+        "blue-capped-cabin-guide-front"
+      ]
+    }
+  ],
+  "expected_blocked_caps": [
+    [
+      15,
+      7
+    ],
+    [
+      4,
+      10
+    ],
+    [
+      5,
+      10
+    ]
+  ],
+  "expected_blocked_bases": [
+    [
+      15,
+      8
+    ],
+    [
+      4,
+      11
+    ],
+    [
+      5,
+      11
+    ]
+  ],
+  "visual_limits": "Normal-key observations and collision assertions do not themselves grant visual PASS. Each acceptance issue must link to completed rendered video frames; legitimate viewport space/dark apertures require explicit structural explanation. No user screenshots or existing saves are inputs.",
+  "expected_rooms": [
+    "HoennSpacecraftCabin",
+    "HoennSpacecraftEngineering",
+    "HoennOrbitalObservatory",
+    "HoennSpacecraftCockpit",
+    "HoennSpacecraftNavigation",
+    "HoennSpacecraftCaptainsOffice",
+    "HoennSpacecraftCrewQuarters",
+    "HoennSpacecraftCrewMess",
+    "HoennSpacecraftFoodCourt",
+    "HoennSpacecraftLounge",
+    "HoennSpacecraftGameRoom",
+    "HoennSpacecraftBattleDeck",
+    "HoennSpacecraftCabinCorridor",
+    "HoennSpacecraftGuestRoom1",
+    "HoennSpacecraftGuestRoom2",
+    "HoennSpacecraftGuestRoom3",
+    "HoennSpacecraftCargoHold"
+  ],
+  "expected_counts": {
+    "rooms": 17,
+    "cameras": 50,
+    "blocked_attempts": 12
+  }
+}

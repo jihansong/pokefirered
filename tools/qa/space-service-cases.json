@@ -2,7 +2,7 @@
   "candidate_id": "layout-improvement-01-evergrande-source-01",
   "scope": "NEW_SOURCE_STATIC_CASES_RUNTIME_PENDING",
   "owner_plan_sha256": {
-    "tools/hoenn_import/space_deck_services.py": "fcd170ba87e39a73efa6950a6d8e32beed5db37fb5b66d1656d8a6fbc4e0d49d",
+    "tools/hoenn_import/space_deck_services.py": "c3f89487f39f017561a18965357a7e0fe2d62c16f539a9d41b37e76f6c4f46de",
     "tools/hoenn_import/space_deck_living.py": "0e310423637872a011a3152d09e0baec745c264770a2dae89b0692843fd96a83"
   },
   "services": [

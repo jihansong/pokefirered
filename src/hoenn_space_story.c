@@ -239,10 +239,10 @@ static const struct SpaceMotionKey sReturn_passenger[] =
     {900, 108, 94, 262, 320, 0, TRUE},
     {1020, 112, 106, 258, 288, 0, TRUE},
     {1100, 118, 119, 252, 272, 0, TRUE},
-    {1140, 122, 128, 256, 256, 0, TRUE},
-    {1200, 127, 128, 256, 256, 0, TRUE},
-    {1320, 134, 128, 256, 256, 0, TRUE},
-    {1440, 134, 128, 256, 256, 0, TRUE},
+    {1140, 122, 128, 252, 256, 0, TRUE},
+    {1200, 128, 128, 252, 256, 0, TRUE},
+    {1320, 135, 128, 256, 256, 0, TRUE},
+    {1440, 138, 128, 256, 256, 0, TRUE},
 };
 
 static s16 SpaceMotion_Lerp(s16 a, s16 b, u16 weight)
@@ -645,13 +645,15 @@ static void ShowSpaceBackground(struct SpaceFlight *scene, bool8 returning, u16 
     else if (frame < end)
     {
         mix = (frame - start) * 16 / (end - start);
+        // SetBgAttribute changes RAM only; ShowBg commits the BG control register.
+        if (returning)
+            SetBgAttribute(3, BG_ATTR_PRIORITY, 0);
         ShowBg(3);
         if (returning)
         {
             // Earth blends over the complete destination: runway or sky.
             ShowBg(1);
             ShowBg(2);
-            SetBgAttribute(3, BG_ATTR_PRIORITY, 0);
             SetGpuReg(REG_OFFSET_BLDCNT,
                       BLDCNT_TGT1_BG3 | BLDCNT_EFFECT_BLEND
                     | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2);
@@ -708,6 +710,15 @@ static void SpaceSampleAll(bool8 returning, u16 frame, struct SpaceMotionSample 
         SpaceMotion_Sample(sReturn_srb_left, ARRAY_COUNT(sReturn_srb_left), frame, &samples[UNIT_SRB_LEFT]);
         SpaceMotion_Sample(sReturn_srb_right, ARRAY_COUNT(sReturn_srb_right), frame, &samples[UNIT_SRB_RIGHT]);
         SpaceMotion_Sample(sReturn_passenger, ARRAY_COUNT(sReturn_passenger), frame, &samples[UNIT_CRAFT]);
+        if (frame >= 1140)
+        {
+            u16 rollout = frame - 1140;
+            if (rollout > 300)
+                rollout = 300;
+            // Main gear touches first with the nose raised. A bounded 16px
+            // rollout slows to rest; the native finite runway never scrolls X.
+            samples[UNIT_CRAFT].x = 122 + ((u32)16 * rollout * (600 - rollout) + 45000) / 90000;
+        }
     }
     else
     {

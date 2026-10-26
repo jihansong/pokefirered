@@ -1,4 +1,4 @@
-// Exact original pixel profiles for three ship decks;512/6 split.
+// Native GBA room tiles and explicit hull/floor composites;512/6 split.
 static const u32 sgTileset_TYSpaceDeckV4LobbyTiles[] = INCBIN_U32("data/tilesets/secondary/ty_space_v4_cabin/tiles.4bpp");
 static const u16 sgTileset_TYSpaceDeckV4LobbyPalettes[][16] = INCBIN_U16("data/tilesets/secondary/ty_space_v4_cabin/palettes.gbapal");
 static const u16 sgTileset_TYSpaceDeckV4LobbyMetatiles[] = INCBIN_U16("data/tilesets/secondary/ty_space_v4_cabin/metatiles.bin");

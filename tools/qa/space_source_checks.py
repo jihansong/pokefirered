@@ -60,14 +60,33 @@ def pose_checks(source, contract, build_proof):
     """Check actual source sprite frames against real BG foreground masks."""
     from PIL import Image, ImageChops
     source = Path(source)
+    from space_pose_scope_v18 import domains, allowed_foot
+    pose_domains = domains(source, contract)
+    allowed_occlusions = []
+    excluded_cells = []
+    npc_total = 0
     pointer = (source/'src/data/object_events/object_event_graphics_info_pointers.h').read_text('utf-8-sig')
     infos = (source/'src/data/object_events/object_event_graphics_info.h').read_text('utf-8-sig')
     pics = (source/'src/data/object_events/object_event_pic_tables.h').read_text('utf-8-sig')
     images = (source/'src/data/object_events/object_event_graphics.h').read_text('utf-8-sig')
 
+    movement = (source/'src/event_object_movement.c').read_text('utf8')
+    match = re.search(r'const struct ObjectEventGraphicsInfo \*GetObjectEventGraphicsInfo\(u8 graphicsId\)\s*\{(.*?)\n\}', movement, re.S)
+    assert match, 'Source graphics selector missing'
+    selector = match.group(1)
+    scoped_branch = re.search(
+        r'if\s*\(\s*graphicsId\s*==\s*OBJ_EVENT_GFX_CABLE_CLUB_RECEPTIONIST\s*'
+        r'&&\s*gSaveBlock1Ptr->location.mapGroup\s*==\s*MAP_GROUP\(MAP_HOENN_SPACECRAFT_CABIN\)\s*'
+        r'&&\s*gSaveBlock1Ptr->location.mapNum\s*==\s*MAP_NUM\(MAP_HOENN_SPACECRAFT_CABIN\)\s*\)\s*'
+        r'return\s*&gObjectEventGraphicsInfo_SpaceBoardingGuide\s*;', selector)
+    assert scoped_branch and selector.count('&gObjectEventGraphicsInfo_SpaceBoardingGuide') == 1
+    assert scoped_branch.start() < selector.index('return gObjectEventGraphicsInfoPointers[graphicsId]')
+
     @lru_cache(None)
-    def sprite(gfx):
-        info = re.search(r'\['+re.escape(gfx)+r'\]\s*=\s*&(\w+)', pointer).group(1)
+    def sprite(gfx, map_name):
+        info = ('gObjectEventGraphicsInfo_SpaceBoardingGuide'
+                if map_name == 'HoennSpacecraftCabin' and gfx == 'OBJ_EVENT_GFX_CABLE_CLUB_RECEPTIONIST'
+                else re.search(r'\['+re.escape(gfx)+r'\]\s*=\s*&(\w+)', pointer).group(1))
         body = re.search(r'const struct ObjectEventGraphicsInfo '+info+r'\s*=\s*\{(.*?)\};', infos, re.S).group(1)
         width = int(re.search(r'\.width\s*=\s*(\d+)', body).group(1)); height = int(re.search(r'\.height\s*=\s*(\d+)', body).group(1))
         table = re.search(r'\.images\s*=\s*(\w+)', body).group(1)
@@ -80,8 +99,8 @@ def pose_checks(source, contract, build_proof):
         return width, height, frames
 
     @lru_cache(None)
-    def actor(gfx, frame, flip=False):
-        width, height, frames = sprite(gfx); rel, index = frames[frame if frame < len(frames) else 0]
+    def actor(gfx, frame, flip=False, map_name=None):
+        width, height, frames = sprite(gfx, map_name); rel, index = frames[frame if frame < len(frames) else 0]
         image = Image.open(source/rel).crop((width*index, 0, width*(index+1), height))
         pixels = image.get_flattened_data() if hasattr(image, 'get_flattened_data') else image.getdata()
         mask = Image.frombytes('L', image.size, bytes(255 if v else 0 for v in pixels))
@@ -116,22 +135,46 @@ def pose_checks(source, contract, build_proof):
                         tile.putpixel((corner%2*8+x, corner//2*8+y), 255 if color else 0)
             foreground.paste(tile, (index%width*16, index//width*16))
         checked = 0
+        domain = pose_domains[room['map']]
+        for xx, yy in sorted(domain['excluded']):
+            tile_id = cells[yy*width+xx] & 1023
+            excluded_cells.append(dict(map=room['map'], xy=[xx, yy],
+                source_ref=record['metatile_source_map'][str(tile_id)],
+                reason='No path from safe anchor or any normal door arrival; NPC domain checked separately'))
         for index, word in enumerate(cells):
             if word >> 10 & 3: continue
             x, y = index%width, index//width
+            if (x, y) not in domain['player']: continue
             for gfx in characters:
                 for frame, flip in poses:
-                    mask = actor(gfx, frame, flip); xx, yy = x*16, y*16+16-mask.height
+                    mask = actor(gfx, frame, flip, room['map']); xx, yy = x*16, y*16+16-mask.height
                     hit = ImageChops.multiply(mask, foreground.crop((xx, yy, xx+mask.width, yy+mask.height)))
-                    assert not hit.getbbox(), ('Open tile foreground overlap', room['map'], x, y, gfx, frame, flip)
+                    if hit.getbbox():
+                        allowance = allowed_foot(room['map'], (x,y), gfx, mask.height, hit.getbbox(),
+                            record['metatile_source_map'][str(word & 1023)])
+                        assert allowance, ('Reachable player head/body foreground overlap', room['map'], x, y, gfx, frame, flip, hit.getbbox())
+                        allowance.update(frame=frame, flip=flip, domain='normal_player')
+                        allowed_occlusions.append(allowance)
                     checked += 1
-        for obj in m['object_events']:
-            frame = 1 if obj['movement_type'].endswith('_UP') else 2 if obj['movement_type'].endswith(('_LEFT', '_RIGHT')) else 0
-            mask = actor(obj['graphics_id'], frame, obj['movement_type'].endswith('_RIGHT'))
-            x, y = obj['x']*16, obj['y']*16+16-mask.height
-            assert not ImageChops.multiply(mask, foreground.crop((x, y, x+mask.width, y+mask.height))).getbbox(), ('NPC foreground overlap', room['map'], obj.get('local_id'))
-        total += checked; results.append(dict(map=room['map'], character_pose_checks=checked, foreground_overlaps=0, NPCs=len(m['object_events'])))
-    return dict(total_character_pose_checks=total, rooms=results, scope='Offline source masks; runtime camera/OAM/follower spacing remains separate')
+        npc_checked = 0
+        for npc in domain['npcs']:
+            obj = npc['object']; local = npc['local_id']
+            for px, py in sorted(npc['points']):
+                for frame, flip in poses:
+                    mask = actor(obj['graphics_id'], frame, flip, room['map'])
+                    xx, yy = px*16, py*16+16-mask.height
+                    hit = ImageChops.multiply(mask, foreground.crop((xx,yy,xx+mask.width,yy+mask.height)))
+                    if hit.getbbox():
+                        tile_id = cells[py*width+px] & 1023
+                        allowance = allowed_foot(room['map'], (px,py), obj['graphics_id'], mask.height,
+                            hit.getbbox(), record['metatile_source_map'][str(tile_id)], local)
+                        assert allowance, ('NPC spawn/wander head/body foreground overlap', room['map'],local,px,py,frame,flip,hit.getbbox())
+                        allowance.update(frame=frame, flip=flip, domain='NPC_spawn_or_bounded_wander')
+                        allowed_occlusions.append(allowance)
+                    npc_checked += 1
+        npc_total += npc_checked
+        total += checked; results.append(dict(map=room['map'], character_pose_checks=checked, untyped_foreground_overlaps=0, NPCs=len(m['object_events']), npc_pose_checks=npc_checked, player_domain_cells=len(domain['player']), normal_arrival_seeds=sorted(domain['seeds']), npc_domains=[dict(local_id=n['local_id'],points=sorted(n['points'])) for n in domain['npcs']], literal_movements=domain['literal_movements']))
+    return dict(scoped_graphics_choice={'map':'HoennSpacecraftCabin','graphics_id':'OBJ_EVENT_GFX_CABLE_CLUB_RECEPTIONIST','info':'gObjectEventGraphicsInfo_SpaceBoardingGuide','source_function':'GetObjectEventGraphicsInfo'}, total_character_pose_checks=total, total_npc_pose_checks=npc_total, rooms=results, excluded_player_cells=excluded_cells, typed_native_counter_foot_occlusions=allowed_occlusions, untyped_head_body_overlaps=0, scope='Normal-arrival player flood and actual NPC spawn/bounded-wander masks; only named native counter final-four-row foot occlusion is allowed. Runtime camera/OAM/follower spacing remains separate')
 
 
 def check_source(source, reference, with_poses=True):
@@ -169,4 +212,5 @@ def check_source(source, reference, with_poses=True):
     if with_poses:
         result['pose_model'] = pose_checks(source, contract, proof)
         assert result['pose_model']['total_character_pose_checks'] == reference['offline_pose_checks']
+        assert result['pose_model']['total_npc_pose_checks'] == reference['offline_npc_pose_checks']
     return result

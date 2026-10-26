@@ -105,7 +105,25 @@ jobs:
         id: build
         shell: bash
         run: |
-          python3 -B tools/qa/produce_space_build.py --source . --reference-manifest tools/qa/space_reference_manifest.json --out /tmp/space-build-bundle --jobs "$(nproc)"
+          if ! python3 -B tools/qa/produce_space_build.py --source . --reference-manifest tools/qa/space_reference_manifest.json --out /tmp/space-build-bundle --jobs "$(nproc)"; then
+            python3 - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path('/tmp/space-build-bundle')
+          report = root/'build-error.json'
+          if report.is_file():
+              failure = json.loads(report.read_text())
+              print(failure.get('traceback', failure.get('error')))
+              for step in failure.get('steps', []) + failure.get('diagnostics', []):
+                  if step['returncode']:
+                      log = (root/step['log']['path']).resolve()
+                      assert log.is_relative_to(root)
+                      lines = log.read_text(errors='replace').splitlines()
+                      print('FAILED BUILD STEP:', step['name'])
+                      print('\n'.join(lines[-100:]))
+          PY
+            exit 1
+          fi
 
       - name: Verify exact linked maps, graphics, code, save ABI and preserved media
         id: linked

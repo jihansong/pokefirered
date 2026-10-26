@@ -6,8 +6,8 @@
       "sha256": "f7770703b847585b1c5450a81e30ab185b5c333fbcbea0147727d1d9dae063b0"
     },
     ".github/workflows/space-linux.yml": {
-      "bytes": 10304,
-      "sha256": "a7227bdd344a80cb32c5a2c5288ec3618e5d904bc1a8ea14e2f9366981fdf046"
+      "bytes": 11129,
+      "sha256": "f41ecd7b2845c8851a5b30f4bad1f2f01ff6f60e688123bac75cc0bd26c2259c"
     },
     ".gitignore": {
       "bytes": 1376,

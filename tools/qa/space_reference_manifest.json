@@ -54742,8 +54742,8 @@
       "sha256": "9a501725875903cd64de2bc25021b67ade8a883be50cfca962d26d4bbe40fd09"
     },
     "include/constants/heal_locations.h": {
-      "bytes": 2346,
-      "sha256": "32cff344f3c95321cfd9a9c4f3a48d2c5c83a46c75f7b3233da6ba4d7e4ad7b7"
+      "bytes": 2280,
+      "sha256": "1c25f27b096b3387ec65865d8e26939daa431b8f1a59716e4924aa666b5a23bb"
     },
     "include/constants/help_system.h": {
       "bytes": 1861,
@@ -54898,8 +54898,8 @@
       "sha256": "90cceec5883201c3d3d2bdb420d1f7b3ebef21f4716eef0760bba507559be2dc"
     },
     "include/constants/region_map_sections.h": {
-      "bytes": 7059,
-      "sha256": "c76870153dcd11b2afc9c10c904f351e30e972ce16325d51d3cda7797e24c61c"
+      "bytes": 6795,
+      "sha256": "989937a4e5ce00b43856ab3b93d5097010139d1e2fbb3415b81a09df40081b71"
     },
     "include/constants/rgb.h": {
       "bytes": 815,
@@ -73338,33 +73338,42 @@
   ],
   "required_generated_sources": {
     "src/data/region_map/region_map_entry_strings.h": {
-      "bytes": 9857,
-      "sha256": "8a7e1c8ceb0a274be73c7b2812e7e8e6a2c11c6742a95d4abb7d42c1dcac1c25"
+      "bytes": 9697,
+      "sha256": "34a3db1558bffb39a4a8a67a4e77fb0d6e145167234fadd3828c25487053baf2"
     },
     "src/data/wild_encounters.h": {
-      "bytes": 820268,
-      "sha256": "855d2b45c3bea77272c704ce9ae530f3272635bf89612edfe9e2509c2796eb91"
+      "bytes": 796161,
+      "sha256": "fc8f5809e62909dc1d18a99f6598f83fe57a34b4f9e2999c5832ac507bb14aad"
     },
     "src/data/heal_locations.h": {
-      "bytes": 20764,
-      "sha256": "94c19626bc27970b06b87e494b84b3526002dc3709b5e6fd3551c277f5c6c08f"
+      "bytes": 20335,
+      "sha256": "799253f5a30969800b81781972000150a280a1bf2aa5d25f7fa1b5fff1836f46"
     },
     "src/data/region_map/region_map_entries.h": {
-      "bytes": 30371,
-      "sha256": "e15e253e5bc97d30960ad304b87973e7aee1990c7811c30d54cfe94ec7bc330c"
+      "bytes": 29897,
+      "sha256": "da6fdac77f133d276185aba862fd4fbf722070a8accf944337a7a8ecd7a0c49d"
     },
     "src/data/items.h": {
       "bytes": 223649,
       "sha256": "46df3a8e2754ee2cc32c5c0c8290bba144a19d2aadaa98848ac797e18fc5bbae"
     },
     "sound/songs/midi/mus_credits.s": {
-      "bytes": 305245,
-      "sha256": "889b6604a26cb2b31c0a3c2e8ca5c1530ed32333b8069ed8074518a6ad17cc2a"
+      "bytes": 291358,
+      "sha256": "1df1e7258ca0c13d4ed2576fd3bc41e519de245bfa98f9c5d2a84191b8ef1897"
+    },
+    "include/constants/region_map_sections.h": {
+      "bytes": 6795,
+      "sha256": "989937a4e5ce00b43856ab3b93d5097010139d1e2fbb3415b81a09df40081b71"
+    },
+    "include/constants/heal_locations.h": {
+      "bytes": 2280,
+      "sha256": "1c25f27b096b3387ec65865d8e26939daa431b8f1a59716e4924aa666b5a23bb"
     }
   },
   "scan_scope": "Selected sparse source-input projection; no claim about unrelated repository files or history",
   "limits": [
     "Source/art/compiled gates do not prove actual gameplay.",
     "Private local personalization remains a separate retained workstream."
-  ]
+  ],
+  "generated_text_format": "Linux LF expectations; original cached CRLF counterparts are retained locally and differ only in line separators."
 }

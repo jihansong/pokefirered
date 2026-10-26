@@ -64509,6 +64509,10 @@
       "bytes": 2215,
       "sha256": "3ce416a129144ec44120e0a5cb476cf078050867af9c2c0da561cba2d9989661"
     },
+    "tools/rocket96_encode.py": {
+      "bytes": 3272,
+      "sha256": "cf4d61f89baa4039639eb39869f997d44385f7bb0ed8d5d6d7f3d96d8e536554"
+    },
     "tools/rsfont/.gitignore": {
       "bytes": 7,
       "sha256": "10bd1f908dfdd06edc7c810bf3610da73629b6b35de27912f375669be261d71d"

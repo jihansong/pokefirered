@@ -3715,7 +3715,7 @@
     },
     "data/layouts/HoennSpacecraftCabin/map.bin": {
       "bytes": 640,
-      "sha256": "9887293fbb4609f9350f91873d7295f395b3d27fd6452cd4018647faf76a17f5"
+      "sha256": "1c5f7c11b8d3ea4dfd4581bf56fa2df19fcb04f3c81d6b0fdeb9e424d610ec93"
     },
     "data/layouts/HoennSpacecraftCabinCorridor/border.bin": {
       "bytes": 8,
@@ -11082,8 +11082,8 @@
       "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
     },
     "data/maps/HoennSpacecraftBattleDeck/events.inc": {
-      "bytes": 680,
-      "sha256": "36ac0487bd0dc31c7a82aa3526b8765c01f7525f5e71e872c788223969d33daf"
+      "bytes": 679,
+      "sha256": "6f7e56865d3a25d2040e148d49a64835f6d0d4d1be0b2be34ae6e4e057bc679b"
     },
     "data/maps/HoennSpacecraftBattleDeck/header.inc": {
       "bytes": 563,
@@ -11106,8 +11106,8 @@
       "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
     },
     "data/maps/HoennSpacecraftCabin/events.inc": {
-      "bytes": 1959,
-      "sha256": "ac47756160a5d37f8a7ef03886926035bcbc3db722ba38bcbb6e4e72577ebcef"
+      "bytes": 1955,
+      "sha256": "19784b2466383c30fdbd8876bf20ea910793d4e0bb1c117cda29952d49acf356"
     },
     "data/maps/HoennSpacecraftCabin/header.inc": {
       "bytes": 532,
@@ -11154,8 +11154,8 @@
       "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
     },
     "data/maps/HoennSpacecraftCaptainsOffice/events.inc": {
-      "bytes": 541,
-      "sha256": "c2842bf9d445709a80d7856e639331a07058d95a984c0511e0ddd761d584bc62"
+      "bytes": 539,
+      "sha256": "5b412214da7cdf3caf55be159f4d834a5c9ab4b9a86ca520d4dfb453065340b1"
     },
     "data/maps/HoennSpacecraftCaptainsOffice/header.inc": {
       "bytes": 587,
@@ -11178,8 +11178,8 @@
       "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
     },
     "data/maps/HoennSpacecraftCargoHold/events.inc": {
-      "bytes": 666,
-      "sha256": "d155e3dab0d16e4cc6726ed7f76ce8dacd401b5856b242547a3611acd631fb83"
+      "bytes": 664,
+      "sha256": "0aadad496f9b4d4f98ff027a4e61bb182db874a5b13acd1a1f1cf35aa453d453"
     },
     "data/maps/HoennSpacecraftCargoHold/header.inc": {
       "bytes": 555,
@@ -11202,8 +11202,8 @@
       "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
     },
     "data/maps/HoennSpacecraftCockpit/events.inc": {
-      "bytes": 631,
-      "sha256": "32a854454c24a01f305b31fe310587aa415f7868fde4df1cab8d146f16fdf902"
+      "bytes": 627,
+      "sha256": "8cdaca91a366ba59a42c18dd0ced24a906d1aa9e76265ea64b33dabe10b38fcb"
     },
     "data/maps/HoennSpacecraftCockpit/header.inc": {
       "bytes": 544,
@@ -11227,7 +11227,7 @@
     },
     "data/maps/HoennSpacecraftCrewMess/events.inc": {
       "bytes": 636,
-      "sha256": "6d8e727266ce6471cded523ef2ef01879519cbc8ccfc82ec421c0daa6214bd2a"
+      "sha256": "fd514cb3c98775adfe7d4831ff910e176900284c1db8c140bfbddb221cb2dab5"
     },
     "data/maps/HoennSpacecraftCrewMess/header.inc": {
       "bytes": 551,
@@ -11251,7 +11251,7 @@
     },
     "data/maps/HoennSpacecraftCrewQuarters/events.inc": {
       "bytes": 675,
-      "sha256": "ae87353628b5c71e20b19828cc10c5760925e8e8f86f76924dfb90a9c4e4e7ef"
+      "sha256": "c7032058908b40e718fbb556b7e3de018faa6ccf43595d8f491e15515c0d193b"
     },
     "data/maps/HoennSpacecraftCrewQuarters/header.inc": {
       "bytes": 575,
@@ -11275,7 +11275,7 @@
     },
     "data/maps/HoennSpacecraftEngineering/events.inc": {
       "bytes": 937,
-      "sha256": "d4d4ae5e222c825e1824eae3412a4921641934198bb105d59e103ad4e7adfe9f"
+      "sha256": "01376e0bb4f92154548d02f41b3373285d63fa81ac4ac073d2d44ad1f8a717e3"
     },
     "data/maps/HoennSpacecraftEngineering/header.inc": {
       "bytes": 566,
@@ -11298,8 +11298,8 @@
       "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
     },
     "data/maps/HoennSpacecraftFoodCourt/events.inc": {
-      "bytes": 631,
-      "sha256": "831d0a329b3068b073e75bc6bbef03078355b9e354b7d0560b78d0876329a10e"
+      "bytes": 628,
+      "sha256": "9cca37fafdfe0d6b348e81aaae4f70dcd91b1edd3c27c2f612725464d76562ee"
     },
     "data/maps/HoennSpacecraftFoodCourt/header.inc": {
       "bytes": 557,
@@ -11323,7 +11323,7 @@
     },
     "data/maps/HoennSpacecraftGameRoom/events.inc": {
       "bytes": 648,
-      "sha256": "ef5a5ade9fd41ef4c923273bbb26337cdd59aa20c7260a05e93e488de8726c63"
+      "sha256": "317bd118b227ad33f7c208eebada7cca378793107acb43479a9c1844c93339c2"
     },
     "data/maps/HoennSpacecraftGameRoom/header.inc": {
       "bytes": 551,
@@ -11346,8 +11346,8 @@
       "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
     },
     "data/maps/HoennSpacecraftGuestRoom1/events.inc": {
-      "bytes": 655,
-      "sha256": "78a41081b2f38633f9a8f69b1961a0ae34e7454fe12c60fc1bb1f0b2df5a18bb"
+      "bytes": 656,
+      "sha256": "d58438a2740b602d0d7ef7d2a2f6733a8f8a07fc1d8c151dc98dd39ce1930f36"
     },
     "data/maps/HoennSpacecraftGuestRoom1/header.inc": {
       "bytes": 563,
@@ -11371,7 +11371,7 @@
     },
     "data/maps/HoennSpacecraftGuestRoom2/events.inc": {
       "bytes": 659,
-      "sha256": "c16e54b600bec21005deabce26d273fa77dfe87f2f3ea0bd94c3d654695d36a9"
+      "sha256": "f127b06ac59d5b9ad14117e55f846f083938f5f0addd7dfdce2af2194aa18cad"
     },
     "data/maps/HoennSpacecraftGuestRoom2/header.inc": {
       "bytes": 563,
@@ -11394,8 +11394,8 @@
       "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
     },
     "data/maps/HoennSpacecraftGuestRoom3/events.inc": {
-      "bytes": 661,
-      "sha256": "6d5782b67c71fe744b13203c9a4710975debd8ac17f49f8f204fe92765063dc9"
+      "bytes": 659,
+      "sha256": "d5dd309f1385a2e4dc0185a3671d2a2a0946d7076db57694abc1f3a97b87b1af"
     },
     "data/maps/HoennSpacecraftGuestRoom3/header.inc": {
       "bytes": 563,
@@ -11418,8 +11418,8 @@
       "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
     },
     "data/maps/HoennSpacecraftLounge/events.inc": {
-      "bytes": 614,
-      "sha256": "dbfff166549aa70124e1ce5b1291f29e50d2ad6102b1fd50ab11d932bce5e0b5"
+      "bytes": 612,
+      "sha256": "d64ee317e5419aada4f1eb126773cc1e7c76d44992dacb553e00d3db9dc99c85"
     },
     "data/maps/HoennSpacecraftLounge/header.inc": {
       "bytes": 538,
@@ -11442,8 +11442,8 @@
       "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
     },
     "data/maps/HoennSpacecraftNavigation/events.inc": {
-      "bytes": 902,
-      "sha256": "9f105c1ea03f4103dbb310f2e09f4f26077c6761042fbfa5f8a82f1caa0706a7"
+      "bytes": 899,
+      "sha256": "22dbd707afc14d36fda9c3858190984fd8d949080cc43a515c8a6112a5f24608"
     },
     "data/maps/HoennSpacecraftNavigation/header.inc": {
       "bytes": 562,
@@ -62042,8 +62042,8 @@
       "sha256": "6ba99040bf1621f292a98c038636f6ffdec3cb472a18ea0bdd921d7e6cbd854a"
     },
     "tools/hoenn_import/build_space_decks_v4.py": {
-      "bytes": 14799,
-      "sha256": "c24ccf721ed1d19a0b1c858d8998503b12abc987c099fd752e7caa28b68ca86d"
+      "bytes": 15046,
+      "sha256": "fea0002b7ee12b18b2cc414a57592224a75dc75ff7dad3985234688663cf1a53"
     },
     "tools/hoenn_import/build_space_interiors_v3.py": {
       "bytes": 14724,
@@ -62427,7 +62427,7 @@
     },
     "tools/hoenn_import/patches/HoennSpacecraftCabin.blockdata.bin": {
       "bytes": 640,
-      "sha256": "9887293fbb4609f9350f91873d7295f395b3d27fd6452cd4018647faf76a17f5"
+      "sha256": "1c5f7c11b8d3ea4dfd4581bf56fa2df19fcb04f3c81d6b0fdeb9e424d610ec93"
     },
     "tools/hoenn_import/patches/HoennSpacecraftCabin.json": {
       "bytes": 4768,
@@ -64218,8 +64218,8 @@
       "sha256": "3a863804fda17161c365d1039def4122592519885652e9184cff76f73d8bfcd6"
     },
     "tools/hoenn_import/space_deck_v4_contract.json": {
-      "bytes": 109149,
-      "sha256": "a6093795cc24636676c4695116f77560b42047db250522e3936df1d0966fa5fd"
+      "bytes": 109245,
+      "sha256": "a5e27e57c4a84c5efac4bd35b2509d79976a9175f83377830558362f6ccb7402"
     },
     "tools/hoenn_import/space_map_styles_v2.json": {
       "bytes": 23922,
@@ -64430,8 +64430,8 @@
       "sha256": "9263e9e5d07e08247bd160482cc824990a2c562bd4cf3814602439b530a8abc2"
     },
     "tools/qa/produce_space_build.py": {
-      "bytes": 10628,
-      "sha256": "b389fbd5048a72a5c15c5432063d4eac3ddc8cbb992d7cbd51285d3d05cabf94"
+      "bytes": 10645,
+      "sha256": "5abb5e5a661e70aa6b2b3965b4d71b9baaf41c27a689c6caf1ad49080b7ff316"
     },
     "tools/qa/seal_space_artifact.py": {
       "bytes": 3464,
@@ -64663,8 +64663,8 @@
     }
   },
   "public_pokemon_sha256": "373b692e42d952b94b44f0ceda81d56dc75e1abb6af9d60ca5ec47d927b2057c",
-  "room_contract_geometry_sha256": "713984b7d8f3fc3726b276fe7876aac5ac390793aa718e37f9683502a4625b98",
-  "offline_pose_checks": 75312,
+  "room_contract_geometry_sha256": "2a482632e4ac0e4c0fc1461855001645f97ddce9358df49c3cf5f0266ad27000",
+  "offline_pose_checks": 75348,
   "direct_blobs": [
     {
       "unit": "src/credits.o",

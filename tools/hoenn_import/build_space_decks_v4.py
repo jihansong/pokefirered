@@ -108,6 +108,10 @@ def build(S,contract=None):
     if direction in ['N','S'] and (xx+1,yy) not in occupied:setcell(xx+1,yy,floor,False)
     elif direction in ['E','W'] and (xx,yy+1) not in occupied:setcell(xx,yy+1,floor,False)
    behavior={'S':0x65,'N':0x64,'E':0x62,'W':0x63}[direction];ref=('anne',959);ref=(*ref,0x20000000|behavior);setcell(x,y,ref,False);warp_refs[1000+{'S':0,'N':1,'E':2,'W':3}[direction]]=ref
+  # Existing story floor triggers remain usable alongside ordinary door warps.
+  for event in m['coord_events']:
+   x,y=event['x'],event['y'];assert (x,y) not in occupied,(role,'Story trigger covered by furniture',x,y)
+   setcell(x,y,floor,False)
   for x,y in hard:
    if not any(a['xy']==[x,y] for a in cfg['warps']):
     assert (x,y) not in occupied,(role,'hard footprint hidden by furniture',x,y)

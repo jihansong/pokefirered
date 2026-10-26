@@ -140,7 +140,7 @@ def main():
         final['abi_probe']=pin(out/'space-abi-probe.o',out)
         after={n:sha(source/n) for n in reference['files']}
         changed_inputs=[n for n in before if after[n]!=before[n]]
-        assert set(changed_inputs)<=set(reference['required_generated_sources']),'Non-generated source/media input bytes changed'
+        assert set(changed_inputs)<=set(reference['required_generated_sources']),('Non-generated source/media input bytes changed',changed_inputs)
         receipt=dict(schema='TY_SPACE_LINUX_BUILD_V1',platform='linux',source_commit=commit,
                      reference_manifest_sha256=sha(refpath),source_tree_verified_before_build=True,source_file_hashes=before,
                      source_file_hashes_after=after,generated_source_drift=generated_drift,inspection_only_generated_drift=bool(generated_drift or changed_inputs),toolchain=dict(agbcc_commit=AGBCC,container_digest=env.get('SPACE_CONTAINER_DIGEST',CONTAINER),

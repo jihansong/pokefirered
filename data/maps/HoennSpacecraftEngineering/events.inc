@@ -6,7 +6,7 @@
 
 HoennSpacecraftEngineering_ObjectEvents:
 	object_event 1, OBJ_EVENT_GFX_SCIENTIST, 10, 7, 3, MOVEMENT_TYPE_FACE_DOWN, 0, 0, TRAINER_TYPE_NONE, 0, Space_SystemsCheck, FLAG_HOENN_SPACE_ENGINEERING_CLEARED
-	object_event 2, OBJ_EVENT_GFX_SCIENTIST, 5, 4, 3, MOVEMENT_TYPE_FACE_DOWN, 0, 0, TRAINER_TYPE_NONE, 0, Space_EngineeringCrew, 0
+	object_event 2, OBJ_EVENT_GFX_SCIENTIST, 5, 4, 3, MOVEMENT_TYPE_FACE_LEFT, 0, 0, TRAINER_TYPE_NONE, 0, Space_EngineeringCrew, 0
 
 HoennSpacecraftEngineering_MapWarps:
 	warp_def 1, 7, 0, 0, MAP_HOENN_SPACECRAFT_CABIN

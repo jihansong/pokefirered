@@ -5,7 +5,7 @@
 	.align 2
 
 HoennSpacecraftNavigation_ObjectEvents:
-	object_event 1, OBJ_EVENT_GFX_SCIENTIST, 10, 5, 3, MOVEMENT_TYPE_FACE_DOWN, 0, 0, TRAINER_TYPE_NONE, 0, SpaceFacility_NavigationOfficer, 0
+	object_event 1, OBJ_EVENT_GFX_SCIENTIST, 4, 6, 3, MOVEMENT_TYPE_FACE_UP, 0, 0, TRAINER_TYPE_NONE, 0, SpaceFacility_NavigationOfficer, 0
 
 HoennSpacecraftNavigation_MapWarps:
 	warp_def 10, 16, 0, 1, MAP_HOENN_SPACECRAFT_CABIN

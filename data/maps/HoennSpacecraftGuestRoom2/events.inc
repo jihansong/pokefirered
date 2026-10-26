@@ -5,7 +5,7 @@
 	.align 2
 
 HoennSpacecraftGuestRoom2_ObjectEvents:
-	object_event 1, OBJ_EVENT_GFX_WOMAN_1, 8, 7, 3, MOVEMENT_TYPE_FACE_DOWN, 0, 0, TRAINER_TYPE_NONE, 0, SpaceFacility_Guest2, 0
+	object_event 1, OBJ_EVENT_GFX_WOMAN_1, 5, 6, 3, MOVEMENT_TYPE_FACE_LEFT, 0, 0, TRAINER_TYPE_NONE, 0, SpaceFacility_Guest2, 0
 
 HoennSpacecraftGuestRoom2_MapWarps:
 	warp_def 6, 10, 0, 2, MAP_HOENN_SPACECRAFT_CABIN_CORRIDOR

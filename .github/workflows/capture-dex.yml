@@ -58,15 +58,42 @@ jobs:
             !/**/*.so
             !/**/*.sym
             !/**/__pycache__/
+            /data/mb_berry_fix.gba
+            /data/mb_colosseum.gba
+            /data/mb_ereader.gba
 
-      - name: Reject game or save inputs
+      - name: Check pinned embedded clients and reject game or save inputs
         shell: bash
         run: |
           python3 - <<'PY'
           from pathlib import Path
+          import hashlib
+          embedded_clients = {
+            "data/mb_berry_fix.gba": [
+              15348,
+              "f3d87e14688faf0190b33e071607887c7783462b45f92f1cb7135eec56260740"
+            ],
+            "data/mb_colosseum.gba": [
+              163840,
+              "1c0d4d793ad87df3cb8d2b3d636db63b6255955b27c9927d69728fcc1fdbbe22"
+            ],
+            "data/mb_ereader.gba": [
+              14176,
+              "eee7d18515904336a71335452d9b57c0234eb7208984a152a88345229c97b0a0"
+            ]
+          }
           blocked = {'.gba', '.sav', '.srm'}
-          assert not any(p.is_file() and '.git' not in p.parts and p.suffix.lower() in blocked
-                         for p in Path('.').rglob('*')), 'Unexpected ROM/save input in checkout'
+          found = set()
+          for p in Path('.').rglob('*'):
+              if not p.is_file() or '.git' in p.parts or p.suffix.lower() not in blocked:
+                  continue
+              name = p.as_posix()
+              assert name in embedded_clients, 'Unexpected game/save input in checkout'
+              size, digest = embedded_clients[name]
+              raw = p.read_bytes()
+              assert len(raw) == size and hashlib.sha256(raw).hexdigest() == digest, name
+              found.add(name)
+          assert found == set(embedded_clients), 'Missing pinned embedded client input'
           assert not Path('work').exists()
           assert not any(Path('.').glob('.qa-*'))
           PY

@@ -1,6 +1,9 @@
 """Explicit original-pixel service rooms; no nearest-free furniture placement.
 
-Cabin keeps the private PC at (3, 4) and the flight arrival at (10, 12).
+Cabin follows EverGrandeCity_PokemonLeague_1F's whole upper service frontage.
+Its original PC moves to (6, 1), with its complete cap at (6, 0) and front
+at (6, 2). Root must bind the scoped 1005/1006 animation to that target.
+The flight arrival at (10, 12), return at (10, 14), and seven doors stay.
 The current Cabin scripts were read: Captain/Pilot have no literal walks;
 the LaunchPad captain boarding walk belongs to another map. No scripts,
 door endpoints, map dimensions, save data, or shared tilesets are changed.
@@ -12,19 +15,30 @@ Root must rebuild the contract hard/reachable sets from these plans; an
 enclosed employee floor is not a customer BFS destination.
 """
 
+DONOR_PROFILES = {'league': ('em_building', 'em_pokemon_center', True)}
+FLOOR_OVERRIDES = {role: ('league', 576)
+                   for role in ('Cabin', 'Lounge', 'CrewMess', 'FoodCourt')}
+PC_STATES = {'off': ('league', 4), 'on': ('league', 5)}
+
 ROOM_PLANS = {
     'Cabin': {
         'actors': {
-            'Space_CabinCaptain': {'xy': [8, 4], 'facing': 'UP', 'talk_tile': [8, 5]},
-            'Space_CabinPilot': {'xy': [13, 4], 'facing': 'UP', 'talk_tile': [13, 5]},
+            'Space_CabinCaptain': {'xy': [8, 2], 'facing': 'DOWN', 'talk_tile': [8, 3]},
+            'Space_CabinPilot': {'xy': [11, 2], 'facing': 'DOWN', 'talk_tile': [11, 3]},
             'Space_FlightCheck': {'xy': [3, 8], 'facing': 'RIGHT', 'talk_tile': [4, 8]},
-            'Space_Heal': {'xy': [9, 10], 'facing': 'DOWN', 'talk_tile': [9, 12]},
-            'Space_CabinAttendant': {'xy': [15, 8], 'facing': 'LEFT', 'talk_tile': [14, 8]},
-            'Space_CabinPassengerA': {'xy': [3, 12], 'facing': 'RIGHT', 'talk_tile': [4, 12]},
-            'Space_CabinPassengerB': {'xy': [15, 12], 'facing': 'UP', 'talk_tile': [15, 11]},
-            'SpaceFacility_Shop': {'xy': [5, 3], 'facing': 'RIGHT', 'talk_tile': [7, 3]},
+            'Space_Heal': {'xy': [3, 2], 'facing': 'DOWN', 'talk_tile': [3, 4]},
+            'Space_CabinAttendant': {'xy': [12, 8], 'facing': 'LEFT', 'talk_tile': [11, 8], 'graphics_id': 'OBJ_EVENT_GFX_UNION_ROOM_RECEPTIONIST'},
+            'Space_CabinPassengerA': {
+                'xy': [7, 12], 'facing': 'LEFT', 'talk_tile': [7, 13],
+                'movement_type': 'MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT',
+                'movement_range_x': 1, 'movement_range_y': 1},
+            'Space_CabinPassengerB': {
+                'xy': [14, 12], 'facing': 'RIGHT', 'talk_tile': [14, 13],
+                'movement_type': 'MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT',
+                'movement_range_x': 1, 'movement_range_y': 1},
+            'SpaceFacility_Shop': {'xy': [16, 2], 'facing': 'DOWN', 'talk_tile': [16, 4]},
         },
-        'interactions': {'SpaceFacility_PC': {'target': [3, 4], 'stand': [3, 5]}},
+        'interactions': {'SpaceFacility_PC': {'target': [6, 1], 'stand': [6, 2]}},
     },
     'Lounge': {
         'actors': {
@@ -50,12 +64,12 @@ ROOM_PLANS = {
 
 SERVICE_APPROACHES = {
     'Cabin': [
-        {'script': 'SpaceFacility_Shop', 'local_id': 8, 'npc': [5, 3],
-         'counter': [6, 3], 'stand': [7, 3], 'player_facing': 'LEFT',
-         'source': ['mart', 677]},
-        {'script': 'Space_Heal', 'local_id': 3, 'npc': [9, 10],
-         'counter': [9, 11], 'stand': [9, 12], 'player_facing': 'UP',
-         'source': ['pc', 664]},
+        {'script': 'SpaceFacility_Shop', 'local_id': 8, 'npc': [16, 2],
+         'counter': [16, 3], 'stand': [16, 4], 'player_facing': 'UP',
+         'source': ['league', 517]},
+        {'script': 'Space_Heal', 'local_id': 3, 'npc': [3, 2],
+         'counter': [3, 3], 'stand': [3, 4], 'player_facing': 'UP',
+         'source': ['league', 517]},
     ],
     'Lounge': [
         {'script': 'SpaceFacility_DrinkShop', 'local_id': 1, 'npc': [9, 3],
@@ -96,6 +110,48 @@ _LOUNGE_ROWS = [
 ]
 _LOUNGE_BLOCKED = ['100000001', '111111111']
 _ROUND_TABLE = [[598, 599], [606, 607]]
+
+# Exact EverGrandeCity_PokemonLeague_1F rows0..4, including the common wall,
+# both service fronts, employee floors, and the original PC's complete body.
+_LEAGUE_TOP = [
+ [520,523,523,586,587,523,524,523,691,692,692,693,525,526,523,523,523,523,527],
+ [528,546,547,594,595,585,4,531,699,700,700,701,533,534,584,531,531,531,535],
+ [627,554,555,519,603,593,548,541,707,708,708,709,542,542,592,637,553,628,629],
+ [545,545,545,517,545,601,572,576,576,576,576,576,576,576,600,545,517,545,545],
+ [544,518,518,518,518,518,549,576,576,560,563,576,576,576,615,518,518,518,580],
+]
+_LEAGUE_TOP_BLOCKED = [
+ '1111111111111111111', '1111111110011111111',
+ '0110110000000010000', '1111110000000011111', '0000000000000000000',
+]
+MOVEMENT_AREAS = {
+ 'Cabin': [
+  {'script': 'Space_CabinPassengerA', 'axis': 'x', 'cells': [[x,12] for x in (6,7,8)],
+   'engine': 'MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT', 'range_x': 1, 'range_y': 1},
+  {'script': 'Space_CabinPassengerB', 'axis': 'x', 'cells': [[x,12] for x in (13,14,15)],
+   'engine': 'MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT', 'range_x': 1, 'range_y': 1},
+ ]
+}
+
+
+def _league_surface(ctx, label, rows, masks, x, y, source_region):
+    """Explicit source surface; zero-edge wall/cap cells need setcell, not place."""
+    occupied, hard = _get(ctx, 'occupied'), _get(ctx, 'hard')
+    cells = {(x+dx,y+dy) for dy,row in enumerate(rows) for dx in range(len(row))}
+    assert all(0 <= xx < _get(ctx,'w') and 0 <= yy < _get(ctx,'h') for xx,yy in cells)
+    assert not cells & occupied, (label, 'earlier furniture')
+    blocked = {(x+dx,y+dy) for dy,mask in enumerate(masks)
+               for dx,bit in enumerate(mask) if bit == '1'}
+    assert not blocked & hard, (label, 'blocking required floor', sorted(blocked & hard))
+    for dy,(row,mask) in enumerate(zip(rows,masks)):
+        assert len(row) == len(mask)
+        for dx,n in enumerate(row):
+            _get(ctx,'setcell')(x+dx,y+dy,('league',n),mask[dx] == '1')
+    occupied.update(blocked)
+    _get(ctx,'pieces').append({'label': label, 'source_profile': 'league',
+        'metatile_rows': rows, 'xy': [x,y], 'complete_shape': True,
+        'blocked': 'original mixed collision', 'collision_rows': masks,
+        'source_region': source_region, 'relocation': False})
 
 
 def _get(ctx, name):
@@ -176,27 +232,47 @@ def decorate(role, ctx):
         _counter_behavior(ctx, *service['source'])
 
     if role == 'Cabin':
-        _native(ctx, 'whole_native_Mart_clerk_booth', 'mart',
-                _MART_ROWS, _MART_BLOCKED, 4, 1, 'Mart columns1..3 rows1..6')
-        _native(ctx, 'whole_native_PokemonCenter_healing_counter', 'pc',
-                _PC_ROWS, _PC_BLOCKED, 6, 8, 'PokemonCenter_1F columns4..10 rows0..4')
-        place('boarding_information_display', 'facility', [[885, 886, 887]],
-              7, 2, required=True)
-        place('pilot_workstation', 'facility', [[867, 868], [875, 876]],
-              12, 2, required=True)
-        # Fixed scoped PC: 1005/1006 assignment remains the builder's job.
-        setcell(3, 3, ('pc', 645), True)
-        setcell(3, 4, ('pc', 98), True)
-        setcell(3, 5, ('pc', 661), False)
-        _get(ctx, 'occupied').update({(3, 3), (3, 4)})
-        _get(ctx, 'pieces').append({
-            'label': 'complete_fixed_PC_1005_1006', 'source_profile': 'pc',
-            'metatile_rows': [[645], [98], [661]], 'xy': [3, 3],
-            'complete_shape': True, 'blocked': 'cap/middle; front base open',
-        })
-        place('waiting_table', 'pc', [[668, 669], [676, 677]], 13, 10, required=True)
-        place('waiting_pair_yellow', 'pc', [[757]], 13, 9, required=True)
-        place('waiting_pair_blue', 'pc', [[765]], 14, 9, required=True)
+        # One whole room finish, including the perimeter. No blue Mart patch,
+        # gray facility desk, floating clinic back wall, or unrelated PC pod.
+        assert not _get(ctx, 'occupied'), 'Cabin surfaces precede all furniture'
+        assert not {(0,14),(18,14)} & _get(ctx, 'hard'), 'bottom corner on required floor'
+        for y in range(5, 15):
+            for x in range(19):
+                setcell(x, y, ('league', 576), False)
+            setcell(0, y, ('league', 544), False)
+            setcell(18, y, ('league', 551), False)
+        setcell(0, 14, ('league', 552), True)
+        setcell(18, 14, ('league', 567), True)
+        _league_surface(ctx, 'complete_EverGrande_parallel_service_frontage',
+                        _LEAGUE_TOP, _LEAGUE_TOP_BLOCKED, 0, 0,
+                        'EverGrandeCity_PokemonLeague_1F columns0..18 rows0..4')
+        # The original continuous cream floor's central medallion, all
+        # walkable. It belongs to this room family rather than a floor patch.
+        _league_surface(ctx, 'EverGrande_shared_lobby_medallion', [
+            [576,576,560,563,576,576], [576,630,635,635,631,576],
+            [560,635,646,647,635,563], [568,636,654,655,636,571],
+            [576,638,636,636,639,576],
+        ], ['000000'] * 5, 7, 5,
+            'EverGrandeCity_PokemonLeague_1F columns7..12 rows4..8')
+        _league_surface(ctx, 'EverGrande_complete_left_waiting_group', [
+            [576,576,550,576,576], [606,606,573,574,564],
+            [614,614,581,582,550],
+        ], ['00000','00110','11110'], 4, 9,
+            'EverGrandeCity_PokemonLeague_1F columns1..5 rows9..11')
+        _league_surface(ctx, 'EverGrande_complete_right_waiting_group', [
+            [576,576,606], [576,550,614], [573,574,576],
+            [581,582,564], [550,564,576],
+        ], ['000','001','110','110','000'], 13, 7,
+            'EverGrandeCity_PokemonLeague_1F columns15..17 rows6..10')
+        # Reserve complete, dedicated walking lanes, not just spawn cells.
+        reserved = {(6,2),(3,4),(16,4),(10,12),(10,14)}
+        for movement in MOVEMENT_AREAS['Cabin']:
+            lane = {tuple(xy) for xy in movement['cells']}
+            assert not lane & (reserved | _get(ctx,'occupied'))
+            spawn = tuple(ROOM_PLANS['Cabin']['actors'][movement['script']]['xy'])
+            assert not lane & (_get(ctx,'hard') - {spawn}), (movement['script'], 'reserved walking lane')
+            for x,y in lane:
+                setcell(x,y,('league',576),False)
 
     elif role == 'Lounge':
         # Actual native staff-floor/counter pair, rather than the old solid
@@ -226,9 +302,6 @@ def decorate(role, ctx):
     elif role == 'FoodCourt':
         # Distinct passenger cafe: continuous serving frontage, broad public
         # queue apron at y6..8, and two dining groups with exact paired chairs.
-        for y in range(2, 6):
-            for x in range(2, _get(ctx, 'w') - 2):
-                setcell(x, y, ('anne', 665), False)
         place('passenger_kitchen_sink', 'anne', [[712, 713], [722, 723], [730, 731]],
               3, 2, required=True)
         place('passenger_food_worktop', 'anne', [[712, 713], [720, 721], [728, 729]],

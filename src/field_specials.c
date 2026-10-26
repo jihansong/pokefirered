@@ -258,10 +258,11 @@ static u16 GetPcMetatileForCurrentRoom(u16 metatileId, s8 deltaX, s8 deltaY)
 {
     // This PC uses the ship's private Emerald-format tileset.
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_HOENN_SPACECRAFT_CABIN)
-     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_HOENN_SPACECRAFT_CABIN)
-     && gSaveBlock1Ptr->pos.x + deltaX == 3
-     && gSaveBlock1Ptr->pos.y + deltaY == 4)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_HOENN_SPACECRAFT_CABIN))
     {
+        u16 currentId = MapGridGetMetatileIdAt(gSaveBlock1Ptr->pos.x + deltaX + MAP_OFFSET, gSaveBlock1Ptr->pos.y + deltaY + MAP_OFFSET);
+        if (currentId != 1005 && currentId != 1006)
+            return metatileId;
         if (metatileId == METATILE_Building_PCOff)
             return 1005;
         if (metatileId == METATILE_Building_PCOn)

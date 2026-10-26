@@ -185,7 +185,8 @@ def linked(source, artifact_dir, reference_path, reference):
             raw = elf.at(warps_ptr+8*index,8); assert struct.unpack_from('<hh',raw) == (w['x'],w['y'])
             assert [raw[7],raw[6]] == list(ids[w['dest_map']]) and raw[5] == int(w['dest_warp_id'])
         if room['map'] == 'HoennSpacecraftCabin':
-            raw = elf.at(blocks,width*height*2); target = struct.unpack_from('<H',raw,2*(4*width+3))[0]; stand=struct.unpack_from('<H',raw,2*(5*width+3))[0]
+            pc=next(a for a in room['interaction_tiles'] if a['script_label']=='SpaceFacility_PC');tx,ty=pc['target'];sx,sy=pc['stand']
+            raw = elf.at(blocks,width*height*2); target = struct.unpack_from('<H',raw,2*(ty*width+tx))[0]; stand=struct.unpack_from('<H',raw,2*(sy*width+sx))[0]
             assert target&1023 == 1005 and stand>>10&3 == 0
             for n in (1005,1006): assert struct.unpack('<I',elf.at(pointers[4]+4*(n-512),4))[0]&511 == 0x83
         rooms.append(dict(map=room['map'], layout=room['proposed_layout_num'], linked_actors=len(m['object_events']), linked_warps=len(m['warp_events'])))

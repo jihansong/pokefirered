@@ -15,6 +15,7 @@ import select
 import struct
 import subprocess
 import traceback
+from space_live_npc_positions import collision_constants, player_obstacles
 
 KEYS = {'A': 1, 'B': 2, 'START': 8, 'E': 16, 'W': 32, 'N': 64, 'S': 128}
 DELTA = {'E': (1, 0), 'W': (-1, 0), 'N': (0, -1), 'S': (0, 1)}
@@ -207,6 +208,7 @@ class Tour:
     def __init__(self, guest, source):
         self.g = guest
         self.source = source
+        self.collision_constants = collision_constants(source)
         self.maps = {}
         constants = (source/'include/constants/map_groups.h').read_text()
         self.ids = {name: [int(group), int(number)] for name, number, group in
@@ -232,8 +234,9 @@ class Tour:
         floor = {(i % w, i // w) for i, cell in enumerate(grid) if cell & 0x0c00 == 0}
         # Treat all source NPC positions as obstacles, even if a story flag hides
         # one. This conservative tour does not claim to test those interactions.
+        raw_floor = set(floor)
         floor -= {(x['x'], x['y']) for x in definition['object_events']}
-        self.maps[directory.name] = dict(definition=definition, w=w, h=h, floor=floor)
+        self.maps[directory.name] = dict(definition=definition, w=w, h=h, floor=floor, raw_floor=raw_floor)
 
     def name(self, snap=None):
         snap = snap or self.g.snapshot()
@@ -242,8 +245,9 @@ class Tour:
                 return name
         raise AssertionError(('Not a ship room', snap))
 
-    def path(self, name, start, goal):
-        floor = self.maps[name]['floor'] | {start}
+    def path(self, name, start, goal, live_blocked=None):
+        floor = (self.maps[name]['floor'] if live_blocked is None else
+                 self.maps[name]['raw_floor']-live_blocked) | {start}
         assert goal in floor, (name, goal, 'target not walkable')
         q = deque([start]); previous = {start: None}
         while q:
@@ -268,7 +272,10 @@ class Tour:
             if after['map'] != before['map'] or after['xy'] != before['xy']:
                 self.g.step(0, 24)
                 return self.g.snapshot()
-        raise AssertionError(('Movement blocked', direction, before))
+        # A roaming NPC may occupy a cell after the last read. Wait normally,
+        # then let the bounded outer walk loop read fresh positions and replan.
+        self.g.step(0, 12)
+        return self.g.snapshot()
 
     def walk(self, name, goal, allowed_destination=None):
         for _ in range(400):
@@ -279,7 +286,8 @@ class Tour:
                 return here
             if tuple(before['xy']) == goal:
                 return here
-            steps = self.path(name, tuple(before['xy']), goal)
+            live = player_obstacles(self.g, self.collision_constants)
+            steps = self.path(name, tuple(before['xy']), goal, live['blocked'])
             assert steps
             self.move(steps[0])
         raise AssertionError(('Walking bound exceeded', name, goal))
@@ -414,6 +422,10 @@ def main():
             result['tour'] = json.loads(json.dumps(tour.run()))
             from space_service_checks import run_service_checks
             result['services'] = run_service_checks(guest, tour, a.source/'tools/qa/space-service-cases.json')
+            from space_pc_roundtrip import pc_roundtrip
+            cases = json.loads((a.source/'tools/qa/space-service-cases.json').read_text(encoding='utf8'))
+            pc_case = next(x for x in cases['services'] if x['script'] == 'SpaceFacility_PC')
+            result['pc'] = pc_roundtrip(guest, tour, pc_case)
         if a.video:
             guest.step(0, 120)
             result['video'] = guest.finish_video()

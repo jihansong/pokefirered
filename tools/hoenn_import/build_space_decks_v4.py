@@ -23,6 +23,9 @@ def build(S,contract=None):
    rel=f'{p if i<pc else q}/palettes/{i:02}.gbapal';raw=read(rel) if (S/rel).exists() else read(q+'/palettes.gbapal')[i*32:(i+1)*32];pals.append(struct.unpack('<16H',raw))
   return {'name':name,'cut':512 if em else 640,'tiles':[read(p+'/tiles.4bpp'),read(q+'/tiles.4bpp')],'mt':[read(p+'/metatiles.bin'),read(q+'/metatiles.bin')],'attr':[read(p+'/metatile_attributes.bin'),read(q+'/metatile_attributes.bin')],'pal':pals}
  P={};P['v3']=prof('v3','em_general','ty_space_interior_v3',True);P['anne']=prof('anne','general','ss_anne',False);P['tidal']=prof('tidal','em_general','em_inside_ship',True);P['facility']=prof('facility','em_general','em_facility',True);P['pc']=prof('pc','building','pokemon_center',False);P['game']=prof('game','building','game_corner',False);P['power']=prof('power','building','power_plant',False);P['arena']=prof('arena','em_building','em_battle_arena',True);P['mart']=prof('mart','building','mart',False)
+ for module in modules:
+  for alias,args in module.get('DONOR_PROFILES',{}).items():
+   assert alias not in P;P[alias]=prof(alias,*args)
  layouts=json.loads(read('data/layouts/layouts.json'))['layouts']
  def words(ref):
   fam,n=ref[:2];p=P[fam];q=int(n>=p['cut']);i=n-p['cut'] if q else n;return struct.unpack_from('<8H',p['mt'][q],i*16)
@@ -57,6 +60,7 @@ def build(S,contract=None):
   # One private profile per room: coherent donors never compete with other rooms.
   folder='data/tilesets/secondary/ty_space_v4_'+role.lower();grid=[('v3',1004)]*(w*h);blocked=[True]*(w*h);occupied=set();pieces=[]
   floor={'Cabin':('pc',641),'CaptainsOffice':('anne',664),'CrewQuarters':('anne',796),'CrewMess':('anne',665),'FoodCourt':('tidal',568),'Lounge':('game',657),'GameRoom':('game',657),'BattleDeck':('arena',514),'CabinCorridor':('anne',664),'GuestRoom1':('anne',796),'GuestRoom2':('anne',796),'GuestRoom3':('anne',796),'CargoHold':('tidal',525),'Engineering':('power',671)}.get(role,('facility',752))
+  for module in modules:floor=module.get('FLOOR_OVERRIDES',{}).get(role,floor)
   hard={tuple(a) for a in cfg['must_open']};targets={tuple(a['target']) for a in cfg['interaction_tiles']}
   def setcell(x,y,ref,collision=True):
    assert 0<=x<w and 0<=y<h,(role,x,y);grid[y*w+x]=tuple(ref);blocked[y*w+x]=collision
@@ -98,20 +102,37 @@ def build(S,contract=None):
   assert handled,('Missing explicit room plan',role)
   for a in cfg['interaction_tiles']:
    x,y=a['target'];assert blocked[y*w+x],(role,'Interaction has no physical fixture',a)
+  if role=='Cabin':
+   # A continuous ship hull makes side hatches part of the room architecture.
+   # The complete original League frontage above row five stays intact.
+   for yy in range(5,15):setcell(0,yy,('v3',1004),True)
+   for yy in range(5,14):
+    setcell(1,yy,('v3',904),True);setcell(18,yy,('v3',905),True)
+   for xx in range(1,19):setcell(xx,14,('v3',906 if xx==1 else 908 if xx==18 else 907),True)
   # Arrow portals occupy the actual contract rows; no auto door-step trap.
-  warp_refs={}
+  warp_refs={};warp_ids={}
   for a in cfg['warps']:
    x,y=a['xy'];direction=a['outward'];dx,dy={'N':(0,1),'S':(0,-1),'E':(-1,0),'W':(1,0)}[direction]
-   for t in range(3):setcell(x+dx*t,y+dy*t,floor,False)
-   for t in [1,2]:
-    xx,yy=x+dx*t,y+dy*t
-    if direction in ['N','S'] and (xx+1,yy) not in occupied:setcell(xx+1,yy,floor,False)
-    elif direction in ['E','W'] and (xx,yy+1) not in occupied:setcell(xx,yy+1,floor,False)
-   behavior={'S':0x65,'N':0x64,'E':0x62,'W':0x63}[direction];ref=('anne',959);ref=(*ref,0x20000000|behavior);setcell(x,y,ref,False);warp_refs[1000+{'S':0,'N':1,'E':2,'W':3}[direction]]=ref
+   if role=='Cabin':
+    # Keep the complete League frontage and its native floor/wall end caps.
+    for t in range(1,3):assert not blocked[(y+dy*t)*w+x+dx*t],(role,'native portal approach blocked',x,y,t)
+    ref=grid[y*w+x] if direction=='N' or (direction=='E' and y==4) else ('anne',959)
+   else:
+    for t in range(3):setcell(x+dx*t,y+dy*t,floor,False)
+    for t in [1,2]:
+     xx,yy=x+dx*t,y+dy*t
+     if direction in ['N','S'] and (xx+1,yy) not in occupied:setcell(xx+1,yy,floor,False)
+     elif direction in ['E','W'] and (xx,yy+1) not in occupied:setcell(xx,yy+1,floor,False)
+    ref=('anne',959)
+   behavior={'S':0x65,'N':0x64,'E':0x62,'W':0x63}[direction];ref=(*ref[:2],0x20000000|behavior);setcell(x,y,ref,False)
+   slot=1000+{'S':0,'N':1,'E':2,'W':3}[direction]
+   if slot in warp_refs and warp_refs[slot]!=ref:
+    slot=next((n for n,v in warp_refs.items() if v==ref),next(n for n in range(1007,1024) if n not in warp_refs))
+   warp_refs[slot]=ref;warp_ids[a['id']]=slot
   # Existing story floor triggers remain usable alongside ordinary door warps.
   for event in m['coord_events']:
    x,y=event['x'],event['y'];assert (x,y) not in occupied,(role,'Story trigger covered by furniture',x,y)
-   setcell(x,y,floor,False)
+   setcell(x,y,('anne',959,0x20000000) if role=='Cabin' else floor,False)
   for x,y in hard:
    if not any(a['xy']==[x,y] for a in cfg['warps']):
     assert (x,y) not in occupied,(role,'hard footprint hidden by furniture',x,y)
@@ -131,7 +152,10 @@ def build(S,contract=None):
   reserved={1004:('v3',1004,0x20000000),**warp_refs}
   if role=='Engineering':reserved[531]=grid[4*w+12]
   if role=='Observatory':reserved[531]=grid[8*w+10]
-  if role=='Cabin':reserved[1005]=grid[4*w+3];reserved[1006]=('pc',99,0x20000000|(attribute(('pc',99))&~0x60000000))
+  if role=='Cabin':
+   pc_target=next(a['target'] for a in cfg['interaction_tiles'] if a['script_label']=='SpaceFacility_PC');px,py=pc_target
+   on=next(module['PC_STATES']['on'] for module in modules if 'PC_STATES' in module)
+   reserved[1005]=grid[py*w+px];reserved[1006]=(*on,0x20000000|(attribute(on)&~0x60000000))
   refs=set(grid)|set(reserved.values());groups={}
   for ref in refs:
    pp=P[ref[0]]
@@ -165,9 +189,9 @@ def build(S,contract=None):
   rawwords=[]
   for i,ref in enumerate(grid):rawwords.append(0x3000|(0x400 if blocked[i] else 0)|ref_id[ref])
   # Exact fixed target aliases, not just a matching picture under another ID.
-  for n,xy in ([(531,[12,4])] if role=='Engineering' else [(531,[10,8])] if role=='Observatory' else [(1005,[3,4])] if role=='Cabin' else []):rawwords[xy[1]*w+xy[0]]=(rawwords[xy[1]*w+xy[0]]&~1023)|n
+  for n,xy in ([(531,[12,4])] if role=='Engineering' else [(531,[10,8])] if role=='Observatory' else [(1005,pc_target)] if role=='Cabin' else []):rawwords[xy[1]*w+xy[0]]=(rawwords[xy[1]*w+xy[0]]&~1023)|n
   for a in cfg['warps']:
-   x,y=a['xy'];n=1000+{'S':0,'N':1,'E':2,'W':3}[a['outward']];rawwords[y*w+x]=0x3000|n
+   x,y=a['xy'];n=warp_ids[a['id']];rawwords[y*w+x]=0x3000|n
   # All hard footprints and adjacent standing tiles must be in one real graph.
   passable={i for i,v in enumerate(rawwords) if not(v>>10&3)};start=cfg['safe_anchor'][1]*w+cfg['safe_anchor'][0];seen={start};q=deque([start])
   while q:

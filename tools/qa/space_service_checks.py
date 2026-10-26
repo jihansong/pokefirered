@@ -13,6 +13,74 @@ import struct
 DIR_KEYS = {'N': 64, 'S': 128, 'W': 32, 'E': 16}
 
 
+def logical_protected_state(raw, schema, *, historical_header_key=False):
+    v = schema['values']
+    result = dict(raw)
+    slot_size = v['sizes.ItemSlot']
+    assert slot_size == 4
+    filler = bytes.fromhex(raw['SaveBlock2.filler_DA0'])
+    extra_count = v['constant.BAG_EXTRA_SB2_SLOTS']
+    header_at = extra_count*slot_size
+    header = filler[header_at:]
+    assert len(header) == v['sizes.BagExtensionHeader']
+
+    def header_number(name):
+        offset = v['offset.BagExtensionHeader.'+name]
+        width = v['size.BagExtensionHeader.'+name]
+        return int.from_bytes(header[offset:offset+width], 'little')
+
+    if historical_header_key:
+        assert 'SaveBlock2.encryptionKey' not in raw
+        key = header_number('quantityKey')
+    else:
+        value = bytes.fromhex(raw['SaveBlock2.encryptionKey'])
+        assert len(value) == v['size.SaveBlock2.encryptionKey'] == 4
+        key = int.from_bytes(value, 'little')
+        assert header_number('quantityKey') == key, 'Extension/global key mismatch'
+        del result['SaveBlock2.encryptionKey']
+    for field, constant in [('magic1', 'BAG_EXTENSION_MAGIC1'), ('magic2', 'BAG_EXTENSION_MAGIC2'),
+                            ('version', 'BAG_EXTENSION_VERSION'), ('totalSlots', 'BAG_EXTRA_SLOT_COUNT')]:
+        assert header_number(field) == v['constant.'+constant], ('Bad extension header', field)
+    suffixes = ['ITEMS', 'KEYITEMS', 'POKEBALLS', 'TMHM', 'BERRIES']
+    names = ['Items', 'KeyItems', 'PokeBalls', 'TMHM', 'Berries']
+    legacy = [v['constant.BAG_'+x+'_COUNT_LEGACY'] for x in suffixes]
+    capacities = [v['constant.BAG_'+x+'_COUNT'] for x in suffixes]
+    at = v['offset.BagExtensionHeader.pocketCapacity']
+    assert header[at:at+len(capacities)*2] == b''.join(x.to_bytes(2, 'little') for x in capacities)
+    assert sum(capacities)-sum(legacy) == v['constant.BAG_EXTRA_SLOT_COUNT']
+
+    def slots(data, count):
+        assert len(data) == count*slot_size
+        decoded = []
+        for offset in range(0, len(data), slot_size):
+            item_at = offset+v['offset.ItemSlot.itemId']
+            qty_at = offset+v['offset.ItemSlot.quantity']
+            item = int.from_bytes(data[item_at:item_at+2], 'little')
+            quantity = int.from_bytes(data[qty_at:qty_at+2], 'little') ^ (key & 65535)
+            assert 0 <= item < v['constant.ITEMS_COUNT']
+            assert (item == 0 and quantity == 0) or (item != 0 and 1 <= quantity <= 999), 'Invalid item quantity; empty slots are not ignored'
+            decoded.append([item, quantity])
+        return decoded
+
+    for name, count in zip(names, legacy):
+        field = 'SaveBlock1.bagPocket_'+name
+        result[field] = slots(bytes.fromhex(raw[field]), count)
+    field = 'SaveBlock1.unused_348C'
+    result[field] = slots(bytes.fromhex(raw[field]), v['constant.BAG_EXTRA_SB1_SLOTS'])
+    # Only quantityKey is representation state. All remaining header bytes,
+    # including reserved bytes, still compare exactly between observations.
+    stable_header = bytearray(header)
+    at = v['offset.BagExtensionHeader.quantityKey']
+    stable_header[at:at+4] = bytes(4)
+    result['SaveBlock2.filler_DA0'] = {'slots': slots(filler[:header_at], extra_count),
+                                    'header_except_key': stable_header.hex()}
+    money = bytes.fromhex(raw['SaveBlock1.money'])
+    assert len(money) == v['size.SaveBlock1.money'] == 4
+    result['SaveBlock1.money'] = int.from_bytes(money, 'little') ^ key
+    # Party count and all party bytes retain the original exact assertion.
+    return result
+
+
 class ServiceChecks:
     def __init__(self, guest, tour, candidate_id):
         assert candidate_id, 'Explicit new candidate required'
@@ -69,6 +137,7 @@ class ServiceChecks:
         p1, p2 = self.g.number('gSaveBlock1Ptr'), self.g.number('gSaveBlock2Ptr')
         assert 0x02000000 <= p1 < 0x02040000 and 0x02000000 <= p2 < 0x02040000
         result = {}
+        result['SaveBlock2.encryptionKey'] = self.g.read(p2+v['offset.SaveBlock2.encryptionKey'], v['size.SaveBlock2.encryptionKey']).hex()
         for name, base, fields in (
             ('sb1', p1, ['money', 'bagPocket_Items', 'bagPocket_KeyItems', 'bagPocket_PokeBalls', 'bagPocket_TMHM', 'bagPocket_Berries', 'unused_348C']),
             ('sb2', p2, ['filler_DA0'])):
@@ -78,7 +147,7 @@ class ServiceChecks:
         count = self.g.number('gPlayerPartyCount', 1)
         assert 1 <= count <= 6
         result['party'] = self.g.read(self.g.sym['gPlayerParty'], count*v['sizes.Pokemon']).hex()
-        return result
+        return logical_protected_state(result, self.g.schema)
 
     def party_health(self):
         v, schema = self.g.values, self.g.schema

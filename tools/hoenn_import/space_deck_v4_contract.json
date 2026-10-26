@@ -1,5 +1,5 @@
 {
-  "status": "EXPLICIT_ROOM_SERVICE_AND_FURNITURE_RELATIONS_REVISION_05",
+  "status": "UNIFIED_EVERGRANDE_LOBBY_AND_BOUNDED_PASSENGER_FLOW",
   "reference": "docs/space-candidate.md",
   "reference_sha256": "a562cbc52dca201978a1eff08dc63e90d9ad89d0cf0009a91113757b8e2b7ac0",
   "coordinate_size_warp_actor_changes_from_reference": "NPC positions and directions explicitly revised; map sizes, IDs and warp endpoints unchanged",
@@ -112,14 +112,17 @@
           "script_label": "Space_CabinCaptain",
           "xy": [
             8,
-            4
+            2
           ],
           "talk_tile": [
             8,
-            5
+            3
           ],
-          "facing": "UP",
-          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
+          "facing": "DOWN",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately",
+          "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+          "movement_range_x": 0,
+          "movement_range_y": 0
         },
         {
           "local_id": 2,
@@ -133,103 +136,125 @@
             8
           ],
           "facing": "RIGHT",
-          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately",
+          "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+          "movement_range_x": 0,
+          "movement_range_y": 0
         },
         {
           "local_id": 3,
           "script_label": "Space_Heal",
           "xy": [
-            9,
-            10
+            3,
+            2
           ],
           "talk_tile": [
-            9,
-            12
+            3,
+            4
           ],
           "facing": "DOWN",
-          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately",
+          "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+          "movement_range_x": 0,
+          "movement_range_y": 0
         },
         {
           "local_id": 4,
           "script_label": "Space_CabinPilot",
           "xy": [
-            13,
-            4
+            11,
+            2
           ],
           "talk_tile": [
-            13,
-            5
+            11,
+            3
           ],
-          "facing": "UP",
-          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
+          "facing": "DOWN",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately",
+          "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+          "movement_range_x": 0,
+          "movement_range_y": 0
         },
         {
           "local_id": 5,
           "script_label": "Space_CabinAttendant",
           "xy": [
-            15,
+            12,
             8
           ],
           "talk_tile": [
-            14,
+            11,
             8
           ],
           "facing": "LEFT",
-          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately",
+          "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+          "movement_range_x": 0,
+          "movement_range_y": 0,
+          "graphics_id": "OBJ_EVENT_GFX_UNION_ROOM_RECEPTIONIST"
         },
         {
           "local_id": 6,
           "script_label": "Space_CabinPassengerA",
           "xy": [
-            3,
+            7,
             12
           ],
           "talk_tile": [
-            4,
-            12
+            7,
+            13
           ],
-          "facing": "RIGHT",
-          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
+          "facing": "LEFT",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately",
+          "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+          "movement_range_x": 1,
+          "movement_range_y": 1
         },
         {
           "local_id": 7,
           "script_label": "Space_CabinPassengerB",
           "xy": [
-            15,
+            14,
             12
           ],
           "talk_tile": [
-            15,
-            11
+            14,
+            13
           ],
-          "facing": "UP",
-          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
+          "facing": "RIGHT",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately",
+          "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
+          "movement_range_x": 1,
+          "movement_range_y": 1
         },
         {
           "local_id": 8,
           "script_label": "SpaceFacility_Shop",
           "xy": [
-            5,
-            3
+            16,
+            2
           ],
           "talk_tile": [
-            7,
-            3
+            16,
+            4
           ],
-          "facing": "RIGHT",
-          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
+          "facing": "DOWN",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately",
+          "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+          "movement_range_x": 0,
+          "movement_range_y": 0
         }
       ],
       "interaction_tiles": [
         {
           "script_label": "SpaceFacility_PC",
           "target": [
-            3,
-            4
+            6,
+            1
           ],
           "stand": [
-            3,
-            5
+            6,
+            2
           ]
         }
       ],
@@ -239,151 +264,151 @@
           1
         ],
         [
+          3,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
           10,
           2
         ],
         [
-          5,
+          11,
+          2
+        ],
+        [
+          16,
+          2
+        ],
+        [
+          8,
           3
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          16,
+          4
+        ],
+        [
+          17,
+          4
+        ],
+        [
+          18,
+          4
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          18,
+          7
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          16,
+          11
+        ],
+        [
+          17,
+          11
+        ],
+        [
+          18,
+          11
+        ],
+        [
+          4,
+          12
         ],
         [
           7,
-          3
+          12
         ],
         [
           10,
-          3
-        ],
-        [
-          8,
-          4
-        ],
-        [
-          13,
-          4
-        ],
-        [
-          16,
-          4
-        ],
-        [
-          17,
-          4
-        ],
-        [
-          18,
-          4
-        ],
-        [
-          3,
-          5
-        ],
-        [
-          8,
-          5
-        ],
-        [
-          13,
-          5
-        ],
-        [
-          1,
-          6
-        ],
-        [
-          2,
-          6
-        ],
-        [
-          3,
-          6
-        ],
-        [
-          8,
-          7
-        ],
-        [
-          16,
-          7
-        ],
-        [
-          17,
-          7
-        ],
-        [
-          18,
-          7
-        ],
-        [
-          3,
-          8
-        ],
-        [
-          4,
-          8
+          12
         ],
         [
           14,
-          8
-        ],
-        [
-          15,
-          8
-        ],
-        [
-          1,
-          10
-        ],
-        [
-          2,
-          10
-        ],
-        [
-          3,
-          10
-        ],
-        [
-          9,
-          10
-        ],
-        [
-          15,
-          11
-        ],
-        [
-          16,
-          11
-        ],
-        [
-          17,
-          11
-        ],
-        [
-          18,
-          11
-        ],
-        [
-          3,
           12
         ],
         [
           4,
-          12
+          13
         ],
         [
-          9,
-          12
+          7,
+          13
         ],
         [
-          10,
-          12
-        ],
-        [
-          15,
-          12
-        ],
-        [
-          4,
+          14,
           13
         ],
         [
@@ -786,11 +811,15 @@
           1
         ],
         [
+          6,
+          2
+        ],
+        [
           10,
           2
         ],
         [
-          7,
+          8,
           3
         ],
         [
@@ -798,6 +827,14 @@
           3
         ],
         [
+          11,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
           16,
           4
         ],
@@ -808,18 +845,6 @@
         [
           18,
           4
-        ],
-        [
-          3,
-          5
-        ],
-        [
-          8,
-          5
-        ],
-        [
-          13,
-          5
         ],
         [
           1,
@@ -854,7 +879,7 @@
           8
         ],
         [
-          14,
+          11,
           8
         ],
         [
@@ -870,10 +895,6 @@
           10
         ],
         [
-          15,
-          11
-        ],
-        [
           16,
           11
         ],
@@ -887,10 +908,6 @@
         ],
         [
           4,
-          12
-        ],
-        [
-          9,
           12
         ],
         [
@@ -902,6 +919,14 @@
           13
         ],
         [
+          7,
+          13
+        ],
+        [
+          14,
+          13
+        ],
+        [
           4,
           14
         ],
@@ -909,6 +934,50 @@
           10,
           14
         ]
+      ],
+      "movement_areas": [
+        {
+          "script": "Space_CabinPassengerA",
+          "axis": "x",
+          "cells": [
+            [
+              6,
+              12
+            ],
+            [
+              7,
+              12
+            ],
+            [
+              8,
+              12
+            ]
+          ],
+          "engine": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+          "range_x": 1,
+          "range_y": 1
+        },
+        {
+          "script": "Space_CabinPassengerB",
+          "axis": "x",
+          "cells": [
+            [
+              13,
+              12
+            ],
+            [
+              14,
+              12
+            ],
+            [
+              15,
+              12
+            ]
+          ],
+          "engine": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
+          "range_x": 1,
+          "range_y": 1
+        }
       ]
     },
     {
@@ -3358,7 +3427,10 @@
             6
           ],
           "facing": "DOWN",
-          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately",
+          "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+          "movement_range_x": 0,
+          "movement_range_y": 0
         }
       ],
       "interaction_tiles": [
@@ -3674,7 +3746,8 @@
           8,
           11
         ]
-      ]
+      ],
+      "movement_areas": []
     },
     {
       "role": "FoodCourt",
@@ -3715,7 +3788,10 @@
             6
           ],
           "facing": "DOWN",
-          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately",
+          "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+          "movement_range_x": 0,
+          "movement_range_y": 0
         },
         {
           "local_id": 2,
@@ -3729,7 +3805,10 @@
             7
           ],
           "facing": "UP",
-          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately",
+          "movement_type": "MOVEMENT_TYPE_FACE_UP",
+          "movement_range_x": 0,
+          "movement_range_y": 0
         }
       ],
       "interaction_tiles": [],
@@ -4053,7 +4132,8 @@
           14,
           7
         ]
-      ]
+      ],
+      "movement_areas": []
     },
     {
       "role": "Lounge",
@@ -4094,7 +4174,10 @@
             5
           ],
           "facing": "DOWN",
-          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately",
+          "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+          "movement_range_x": 0,
+          "movement_range_y": 0
         },
         {
           "local_id": 2,
@@ -4108,7 +4191,10 @@
             8
           ],
           "facing": "UP",
-          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately",
+          "movement_type": "MOVEMENT_TYPE_FACE_UP",
+          "movement_range_x": 0,
+          "movement_range_y": 0
         }
       ],
       "interaction_tiles": [],
@@ -4424,7 +4510,8 @@
           14,
           8
         ]
-      ]
+      ],
+      "movement_areas": []
     },
     {
       "role": "GameRoom",

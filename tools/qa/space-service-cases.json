@@ -1,8 +1,8 @@
 {
-  "candidate_id": "layout-improvement-01-source-01",
+  "candidate_id": "layout-improvement-01-evergrande-source-01",
   "scope": "NEW_SOURCE_STATIC_CASES_RUNTIME_PENDING",
   "owner_plan_sha256": {
-    "tools/hoenn_import/space_deck_services.py": "08011a4d6de7d164ced518a7cbc6706cf9337500387474fe231bb453c24fdda7",
+    "tools/hoenn_import/space_deck_services.py": "fcd170ba87e39a73efa6950a6d8e32beed5db37fb5b66d1656d8a6fbc4e0d49d",
     "tools/hoenn_import/space_deck_living.py": "0e310423637872a011a3152d09e0baec745c264770a2dae89b0692843fd96a83"
   },
   "services": [
@@ -13,10 +13,10 @@
       "local_id": 8,
       "script": "SpaceFacility_Shop",
       "stand": [
-        7,
-        3
+        16,
+        4
       ],
-      "direction": "W",
+      "direction": "N",
       "interaction": "counter",
       "entry_stands": [
         [
@@ -49,7 +49,15 @@
         ]
       ],
       "entry_text": "SpaceFacility_Text_Shop",
-      "runtime_method": "shop_cancel"
+      "runtime_method": "shop_cancel",
+      "counter": [
+        16,
+        3
+      ],
+      "npc": [
+        16,
+        2
+      ]
     },
     {
       "id": "Cabin-Space_Heal",
@@ -58,8 +66,8 @@
       "local_id": 3,
       "script": "Space_Heal",
       "stand": [
-        9,
-        12
+        3,
+        4
       ],
       "direction": "N",
       "interaction": "counter",
@@ -96,7 +104,15 @@
       "entry_text": "Space_Text_Heal",
       "runtime_method": "heal",
       "result_text_accept": "Space_Text_Healed",
-      "result_text_decline": "Space_Text_HealDecline"
+      "result_text_decline": "Space_Text_HealDecline",
+      "counter": [
+        3,
+        3
+      ],
+      "npc": [
+        3,
+        2
+      ]
     },
     {
       "id": "Lounge-SpaceFacility_DrinkShop",
@@ -117,7 +133,15 @@
         ]
       ],
       "entry_text": "SpaceFacility_Text_DrinkShop",
-      "runtime_method": "shop_cancel"
+      "runtime_method": "shop_cancel",
+      "counter": [
+        9,
+        4
+      ],
+      "npc": [
+        9,
+        3
+      ]
     },
     {
       "id": "CrewMess-SpaceFacility_Cook",
@@ -138,7 +162,15 @@
         ]
       ],
       "entry_text": "SpaceFacility_Text_CrewMess",
-      "runtime_method": "dialogue"
+      "runtime_method": "dialogue",
+      "counter": [
+        6,
+        5
+      ],
+      "npc": [
+        6,
+        4
+      ]
     },
     {
       "id": "FoodCourt-SpaceFacility_FoodShop",
@@ -159,7 +191,15 @@
         ]
       ],
       "entry_text": "SpaceFacility_Text_FoodShop",
-      "runtime_method": "shop_cancel"
+      "runtime_method": "shop_cancel",
+      "counter": [
+        6,
+        5
+      ],
+      "npc": [
+        6,
+        4
+      ]
     },
     {
       "id": "Cabin-SpaceFacility_PC",
@@ -167,8 +207,8 @@
       "target_kind": "bg",
       "script": "SpaceFacility_PC",
       "stand": [
-        3,
-        5
+        6,
+        2
       ],
       "direction": "N",
       "entry_stands": [
@@ -201,7 +241,12 @@
           13
         ]
       ],
-      "runtime_method": "pending_explicit_ui_or_story_handler"
+      "runtime_method": "pending_explicit_ui_or_story_handler",
+      "target": [
+        6,
+        1
+      ],
+      "expected_behavior": 131
     },
     {
       "id": "CrewMess-SpaceFacility_Rest",
@@ -222,7 +267,11 @@
       "runtime_method": "heal",
       "entry_text": "SpaceFacility_Text_Rest",
       "result_text_accept": "SpaceFacility_Text_Rested",
-      "result_text_decline": null
+      "result_text_decline": null,
+      "target": [
+        8,
+        10
+      ]
     },
     {
       "id": "CrewQuarters-SpaceFacility_Rest",
@@ -243,7 +292,11 @@
       "runtime_method": "heal",
       "entry_text": "SpaceFacility_Text_Rest",
       "result_text_accept": "SpaceFacility_Text_Rested",
-      "result_text_decline": null
+      "result_text_decline": null,
+      "target": [
+        4,
+        4
+      ]
     },
     {
       "id": "GuestRoom1-SpaceFacility_Rest",
@@ -264,7 +317,11 @@
       "runtime_method": "heal",
       "entry_text": "SpaceFacility_Text_Rest",
       "result_text_accept": "SpaceFacility_Text_Rested",
-      "result_text_decline": null
+      "result_text_decline": null,
+      "target": [
+        4,
+        3
+      ]
     },
     {
       "id": "GuestRoom2-SpaceFacility_Rest",
@@ -285,7 +342,11 @@
       "runtime_method": "heal",
       "entry_text": "SpaceFacility_Text_Rest",
       "result_text_accept": "SpaceFacility_Text_Rested",
-      "result_text_decline": null
+      "result_text_decline": null,
+      "target": [
+        4,
+        4
+      ]
     },
     {
       "id": "GuestRoom3-SpaceFacility_Rest",
@@ -306,7 +367,11 @@
       "runtime_method": "heal",
       "entry_text": "SpaceFacility_Text_Rest",
       "result_text_accept": "SpaceFacility_Text_Rested",
-      "result_text_decline": null
+      "result_text_decline": null,
+      "target": [
+        4,
+        7
+      ]
     },
     {
       "id": "Navigation-SpaceFacility_NavigationConsole",
@@ -340,7 +405,11 @@
           12
         ]
       ],
-      "runtime_method": "pending_explicit_ui_or_story_handler"
+      "runtime_method": "pending_explicit_ui_or_story_handler",
+      "target": [
+        12,
+        4
+      ]
     },
     {
       "id": "CargoHold-SpaceFacility_CargoClue",
@@ -358,7 +427,11 @@
           15
         ]
       ],
-      "runtime_method": "pending_explicit_ui_or_story_handler"
+      "runtime_method": "pending_explicit_ui_or_story_handler",
+      "target": [
+        6,
+        5
+      ]
     },
     {
       "id": "Engineering-Space_EngineeringConsole",
@@ -384,7 +457,11 @@
           2
         ]
       ],
-      "runtime_method": "pending_explicit_ui_or_story_handler"
+      "runtime_method": "pending_explicit_ui_or_story_handler",
+      "target": [
+        12,
+        4
+      ]
     },
     {
       "id": "Observatory-Space_RecordsConsole",
@@ -402,7 +479,11 @@
           9
         ]
       ],
-      "runtime_method": "pending_explicit_ui_or_story_handler"
+      "runtime_method": "pending_explicit_ui_or_story_handler",
+      "target": [
+        10,
+        8
+      ]
     },
     {
       "id": "GameRoom-SpaceFacility_GameMachine",
@@ -420,7 +501,69 @@
           10
         ]
       ],
-      "runtime_method": "pending_explicit_ui_or_story_handler"
+      "runtime_method": "pending_explicit_ui_or_story_handler",
+      "target": [
+        10,
+        4
+      ]
+    }
+  ],
+  "allowed_actor_metadata_changes": [
+    {
+      "map": "HoennSpacecraftCabin",
+      "local_id": 6,
+      "script": "Space_CabinPassengerA",
+      "fields": {
+        "movement_range_x": {
+          "from": 0,
+          "to": 1
+        },
+        "movement_range_y": {
+          "from": 0,
+          "to": 1
+        }
+      },
+      "approved_xy": [
+        7,
+        12
+      ],
+      "approved_movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT"
+    },
+    {
+      "map": "HoennSpacecraftCabin",
+      "local_id": 7,
+      "script": "Space_CabinPassengerB",
+      "fields": {
+        "movement_range_x": {
+          "from": 0,
+          "to": 1
+        },
+        "movement_range_y": {
+          "from": 0,
+          "to": 1
+        }
+      },
+      "approved_xy": [
+        14,
+        12
+      ],
+      "approved_movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT"
+    },
+    {
+      "map": "HoennSpacecraftCabin",
+      "local_id": 5,
+      "script": "Space_CabinAttendant",
+      "fields": {
+        "graphics_id": {
+          "from": "OBJ_EVENT_GFX_CABLE_CLUB_RECEPTIONIST",
+          "to": "OBJ_EVENT_GFX_UNION_ROOM_RECEPTIONIST"
+        }
+      },
+      "approved_xy": [
+        12,
+        8
+      ],
+      "approved_movement_type": "MOVEMENT_TYPE_FACE_LEFT"
     }
   ]
 }

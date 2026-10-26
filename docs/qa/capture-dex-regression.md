@@ -52,8 +52,10 @@ GPU, 사운드, 작업 스케줄러, 압축 해제 호출은 테스트 대역이
 LZ77 스트림을 직접 해제해 길이와 참조 범위도 검사한다.
 
 ```sh
-make leafgreen -j"$(nproc)" COMPARE=0
-make GAME_VERSION=LEAFGREEN COMPARE=0 syms
+make tools COMPARE=0
+make generated GAME_VERSION=LEAFGREEN COMPARE=0 SETUP_PREREQS=0 NODEP=1
+make leafgreen -j"$(nproc)" COMPARE=0 SETUP_PREREQS=0
+make GAME_VERSION=LEAFGREEN COMPARE=0 SETUP_PREREQS=0 syms
 python3 tools/qa/capture_dex_regression.py --built-assets
 ```
 
@@ -68,7 +70,7 @@ python3 tools/qa/capture_dex_regression.py --built-assets
 - `devkitpro/devkitarm:20260610` 이미지와 SHA256 digest를 고정한다.
 - pret/agbcc는 `da598c1d918402c42c0c0d7128ba14567f3175e9`를 사용한다.
 - checkout은 Node 24를 사용하는 actions/checkout v5의 전체 커밋을 고정한다.
-- LeafGreen revision 0, `COMPARE=0`, ROM과 symbols 생성, 빌드 경고 0을 요구한다.
+- LeafGreen revision 0, `COMPARE=0`, ROM과 symbols 생성, 아래 명시한 ELF 진단 대조와 최종 빌드 경고 0을 요구한다.
 - 필요한 소스/빌드 입력만 sparse checkout하고 기존 ROM·SAV·work·과거 QA 산출물을
   받지 않는다. GitHub 권한은 `contents: read`이며 파일 업로드와 원격 브랜치 쓰기는 없다.
 
@@ -119,3 +121,24 @@ ELF SHA256은 `fdcb9ec35de57dc4299878af4251193a67c78a6a0d27b2b9bbd03458972207d0`
 세 입력의 Git blob은 원본 `dafcb39f781d8fc29e0877f64f6cd9358e5b0c41`의 기록과
 일치한다. 파일을 새로 올리거나 확장자를 바꾸지 않고, 기존 소스 입력의
 체크아웃만 허용한다. 게임 코드, 도감 회귀 도구와 보존 미디어는 변경하지 않는다.
+
+## 빌드 경고를 구분하는 대조 검사
+
+기존 Makefile은 읽는 도중 `$(shell $(MAKE) ...)`로 도구와 생성 입력을 준비한다.
+이 호출이 병렬 make의 jobserver를 전달받지 못해 발생하는 경고는 준비 단계를
+직렬로 먼저 실행하고 실제 병렬 빌드에 `SETUP_PREREQS=0`을 전달하여 없앤다.
+도구나 생성 입력을 생략하지 않으며 Makefile과 게임 소스는 수정하지 않는다.
+
+고정 도구의 새 GNU ld는 기존 GBA 링크 스크립트가 만드는 비어 있지 않은 ELF
+LOAD 구간의 RWX 속성을 경고한다. 먼저 `--warn-rwx-segments`로 게임을 빌드하여
+`../../pokemonthyl.elf`에 대한 그 경고 정확히 한 줄만 허용한다. 준비/컴파일의
+다른 경고는 실패다. 그때 ROM·ELF·SYM·MAP 전체 해시를 기록한다.
+다음으로 링크 스크립트의 내용은 그대로 두고 시각만 갱신하여
+`--no-warn-rwx-segments`로 다시 링크한다. 원래 `LDFLAGS`와 맵 출력은 유지한다.
+최종 로그의 경고는 0이어야 하고 네 산출물의 바이트는 대조 빌드와 완전히
+같아야 한다. 이 결과를 provenance에 남긴다. 경고를 일반적으로 무시하거나
+게임의 메모리 배치·권한·픽셀을 변경하는 절차가 아니다.
+
+해당 옵션이 제어하는 진단 범위는 [GNU ld 공식 문서](https://sourceware.org/binutils/docs/ld/Options.html#index-_002d_002dwarn_002drwx_002dsegments)에 따른다.
+이 정책은 이 GBA bare-metal 링크에만 적용한다. 별도로 설치하는 예전 agbcc
+자체의 호스트 빌드까지 경고가 없다는 주장은 하지 않는다.

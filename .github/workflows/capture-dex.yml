@@ -156,19 +156,50 @@ jobs:
           test "$(git -C "$agbcc_dir" rev-parse HEAD)" = "$AGBCC_REV"
           (cd "$agbcc_dir" && ./build.sh && ./install.sh "$GITHUB_WORKSPACE")
 
-      - name: Build custom LeafGreen and symbols without stock hash comparison
+      - name: Build host tools and generated inputs without nested jobserver shells
         shell: bash
         run: |
           set -euo pipefail
-          make leafgreen -j"$(nproc)" COMPARE=0 2>&1 | tee /tmp/capture-dex-build.log
-          make GAME_VERSION=LEAFGREEN COMPARE=0 syms 2>&1 | tee -a /tmp/capture-dex-build.log
+          make tools COMPARE=0 2>&1 | tee /tmp/capture-dex-prereqs.log
+          make generated GAME_VERSION=LEAFGREEN COMPARE=0 SETUP_PREREQS=0 NODEP=1 2>&1 | tee -a /tmp/capture-dex-prereqs.log
+
+      - name: Build LeafGreen and check the explicit legacy ELF diagnostic control
+        shell: bash
+        run: |
+          set -euo pipefail
+          make leafgreen -j"$(nproc)" COMPARE=0 SETUP_PREREQS=0 LD="$(command -v arm-none-eabi-ld) --warn-rwx-segments" 2>&1 | tee /tmp/capture-dex-control.log
+          make GAME_VERSION=LEAFGREEN COMPARE=0 SETUP_PREREQS=0 syms 2>&1 | tee -a /tmp/capture-dex-control.log
           python3 - <<'PY'
           from pathlib import Path
-          import re
+          import hashlib, json, re
+          warning = re.compile(r'\bwarning\s*:', re.I)
+          prerequisite_warnings = [line for line in Path('/tmp/capture-dex-prereqs.log').read_text(errors='replace').splitlines() if warning.search(line)]
+          assert not prerequisite_warnings, '\n'.join(prerequisite_warnings)
+          warnings = [line for line in Path('/tmp/capture-dex-control.log').read_text(errors='replace').splitlines() if warning.search(line)]
+          known = re.compile(r'.*/arm-none-eabi-ld: warning: \.\./\.\./pokemonthyl\.elf has a LOAD segment with RWX permissions')
+          assert len(warnings) == 1 and known.fullmatch(warnings[0]), '\n'.join(warnings)
+          paths = ['pokemonthyl.gba', 'pokemonthyl.elf', 'pokemonthyl.sym', 'pokemonthyl.map']
+          report = {'known_control_warning': warnings[0], 'sha256': {p: hashlib.sha256(Path(p).read_bytes()).hexdigest() for p in paths}}
+          Path('/tmp/capture-dex-link-control.json').write_text(json.dumps(report, indent=2))
+          PY
+
+      - name: Relink with the target diagnostic policy and require identical outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          touch ld_script.ld
+          make leafgreen -j"$(nproc)" COMPARE=0 SETUP_PREREQS=0 LD="$(command -v arm-none-eabi-ld) --no-warn-rwx-segments" 2>&1 | tee /tmp/capture-dex-build.log
+          make GAME_VERSION=LEAFGREEN COMPARE=0 SETUP_PREREQS=0 syms 2>&1 | tee -a /tmp/capture-dex-build.log
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, json, re
           warnings = [line for line in Path('/tmp/capture-dex-build.log').read_text(errors='replace').splitlines()
                       if re.search(r'\bwarning\s*:', line, re.I)]
           assert not warnings, '\n'.join(warnings)
-          assert Path('pokemonthyl.gba').is_file() and Path('pokemonthyl.sym').is_file()
+          control = json.loads(Path('/tmp/capture-dex-link-control.json').read_text())
+          for name, digest in control['sha256'].items():
+              assert hashlib.sha256(Path(name).read_bytes()).hexdigest() == digest, name
+          print('ROM, ELF, symbols and map are byte-identical with and without the one legacy ELF diagnostic')
           PY
 
       - name: Validate compiled picture and palette data
@@ -198,6 +229,7 @@ jobs:
               'build': 'LEAFGREEN revision 0, COMPARE=0',
               'rom_sha256': hashlib.sha256(Path('pokemonthyl.gba').read_bytes()).hexdigest(),
               'symbols_sha256': hashlib.sha256(Path('pokemonthyl.sym').read_bytes()).hexdigest(),
+              'link_diagnostic_control': json.loads(Path('/tmp/capture-dex-link-control.json').read_text()),
               'regression': report,
               'built_assets': json.loads(Path('/tmp/capture-dex-built-assets.json').read_text()),
               'limits': ['Host ownership test with GPU/audio/scheduling/decompression doubles',
@@ -207,6 +239,6 @@ jobs:
           }
           print(json.dumps(provenance, indent=2))
           with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
-              summary.write('LeafGreen COMPARE=0 build/symbols and 32-bit C ownership regression passed.\n\n')
+              summary.write('LeafGreen COMPARE=0 build/symbols, explicit ELF diagnostic byte-equivalence, and 32-bit C ownership regression passed.\n\n')
               summary.write('This tests the older Codespaces-source backport. It does not rebuild the delivered R23 ROM or verify the installed iOS Delta app. No game/save artifacts are uploaded.\n')
           PY

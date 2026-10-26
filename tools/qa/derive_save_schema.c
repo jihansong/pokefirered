@@ -9,6 +9,7 @@
 #include "task.h"
 #include "gba/io_reg.h"
 #include "sprite.h"
+#include "companion_misty.h"
 #include "fieldmap.h"
 #include "save_location.h"
 #include "constants/items.h"

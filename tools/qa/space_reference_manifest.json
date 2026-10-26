@@ -64418,8 +64418,8 @@
       "sha256": "55f38ef589f06fbe638dd210625514a8380f86a3840de15f58e843c139a7a37e"
     },
     "tools/qa/derive_save_schema.c": {
-      "bytes": 8072,
-      "sha256": "e1f6e03c73ec121731971c09c32db389d4eda0f56e07d091577500cbc1fef751"
+      "bytes": 8101,
+      "sha256": "426d48ce9f0b50100e8b359a1e34d055ebe64eca04f916747bad5c41b191eba0"
     },
     "tools/qa/derive_schema.py": {
       "bytes": 13263,
@@ -64738,8 +64738,8 @@
       "sha256": "8bcce2861230dbe04e37c7903187ba7374a75e5856a08aa6afeae40ad870e12b"
     },
     "tools/qa/space_flight_checks.py": {
-      "bytes": 10861,
-      "sha256": "be36acf56752ea464720ec55f369986e4373b7e9a4b7d245dc493c49f00c2ca6"
+      "bytes": 13482,
+      "sha256": "342a2c6ad3b64da77675125da58f43ae028d6871e3af88901bb9691d53442ccf"
     },
     "tools/qa/space-finish-cases.json": {
       "bytes": 12681,
@@ -74095,5 +74095,20 @@
     "Pikachu_runtime_verified": false,
     "recording_fix": "Unique crossing-serial photo names, no overwrite guard relaxation",
     "actual_gameplay_pending": true
+  },
+  "expected_game_rom_sha256": "e3ba9036cd9cb527ce537fcf8848181eceb510af76b8c68229ec174526ad5dd6",
+  "qa_only_followup20": {
+    "game_source19_commit": "c53e805146b7876382caa50823e3e303d9cd520c",
+    "changes": [
+      "Include companion_misty.h for its existing local ID macro in the ARM export only",
+      "First bounded fade-edge terminal geometry witness with explicit raw task and video states"
+    ],
+    "last_geometry_is_not_a_raw_running_counter_or_exact_hardware_pixel_claim": true,
+    "first_fade_counters": [
+      0,
+      1
+    ],
+    "maximum_task_executions_across_edge": 2,
+    "normal_host_frames_across_edge": 1
   }
 }

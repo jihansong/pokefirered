@@ -9,6 +9,30 @@ import re
 import struct
 
 
+def terminal_geometry_witness(previous, task, length, state_index, frame_index, host_frame, video_frame):
+    """Prove the last source geometry from the first tightly bounded fade edge.
+
+    This is not a raw tFrame=length observation or a hardware-pixel assertion.
+    The unchanged task renders before incrementing, resets its counter at the
+    fade transition and never renders new geometry in the fade state.
+    """
+    assert previous is not None, 'Terminal edge requires a preceding running task'
+    before = previous['task']
+    assert before['id'] == task['id'] and before['function'] == task['function']
+    assert before['data'][state_index] == 0 and task['data'][state_index] == 1
+    earlier = before['data'][frame_index]
+    fade_counter = task['data'][frame_index]
+    assert 0 < earlier < length and fade_counter in (0, 1)
+    assert 1 <= (length-earlier)+fade_counter <= 2, 'Terminal edge skipped too many task executions'
+    assert host_frame-previous['host_frame'] == 1, 'Terminal witness requires one normal host frame'
+    assert 0 <= video_frame-previous['video_frame'] <= 1
+    return {'kind': 'source_derived_terminal_geometry', 'geometry_index': length-1,
+            'previous_running': previous,
+            'first_fade': {'task': task, 'host_frame': host_frame, 'video_frame': video_frame},
+            'raw_running_endpoint_counter_observed': False,
+            'hardware_pixel_index_equality_claimed': False}
+
+
 class FlightChecks:
     def __init__(self, guest, tour, source):
         self.g, self.tour, self.source = guest, tour, source
@@ -17,6 +41,7 @@ class FlightChecks:
         self.observations = []
         self.gpu_blend_checks = []
         self.tasks_seen = []
+        self.terminal_witnesses = []
         for name in ('gTasks', 'Task_SpaceFlight', 'Task_YesNoMenu_HandleInput', 'gStringVar4'):
             assert name in guest.sym, ('Missing fresh flight symbol', name)
         for name in ('sizes.Task', 'offset.Task.func', 'offset.Task.isActive', 'offset.Task.data', 'constant.NUM_TASKS'):
@@ -88,6 +113,8 @@ class FlightChecks:
         else:
             raise AssertionError('Normal boarding did not create flight task')
         seen_running = False
+        previous_running = None
+        terminal_seen = False
         for _ in range(length+240):
             task = self.task('Task_SpaceFlight')
             if task is None:
@@ -95,13 +122,25 @@ class FlightChecks:
             data = task['data']
             assert data[self.indices['Returning']] == int(returning)
             state, frame = data[self.indices['State']], data[self.indices['Frame']]
-            if state == 0 or state == 1 and frame == 0:
+            witness = None
+            video = self.g.last_status.get('video_frames', 0)
+            host_frame = self.g.last_status['frame']
+            if state == 1 and not terminal_seen and frame in (0, 1):
+                witness = terminal_geometry_witness(previous_running, task, length,
+                    self.indices['State'], self.indices['Frame'], host_frame, video)
+                witness['scene'] = 'return' if returning else 'outbound'
+                self.terminal_witnesses.append(witness)
+                terminal_seen = True
+            if state == 0 or witness is not None:
                 seen_running = True
-                rendered = length-1 if state == 1 else frame-1
-                video = self.g.last_status.get('video_frames', 0)
+                rendered = length-1 if witness is not None else frame-1
+                if state == 0:
+                    previous_running = {'task': task, 'host_frame': host_frame, 'video_frame': video}
                 assert not self.observations or not self.observations[-1]['scene'] == ('return' if returning else 'outbound') or rendered >= self.observations[-1]['observed_index'], 'Task index went backwards'
                 self.observations.append({'scene': 'return' if returning else 'outbound',
-                                          'observed_index': rendered, 'video_frame': video})
+                                          'observed_index': rendered, 'video_frame': video,
+                                          'observation_kind': 'source_derived_terminal_geometry' if witness is not None else 'running_task_counter',
+                                          'raw_state': state, 'raw_counter': frame})
                 if len(observed) < len(targets) and rendered >= targets[len(observed)]:
                     requested = targets[len(observed)]
                     previous = next((x for x in reversed(self.samples) if x['scene'] == ('return' if returning else 'outbound')), None)
@@ -126,13 +165,16 @@ class FlightChecks:
                             assert sum(coefficients) == 16 and all(0 < x < 16 for x in coefficients)
                             self.gpu_blend_checks.append({'requested_index': requested, 'observed_index': rendered,
                                                           'video_frame': video, 'hardware_registers': registers})
+                        if witness is not None:
+                            name += '-fade-edge-%d' % frame
                         self.g.picture(name)
                         observed.append(requested)
                         self.samples.append({'scene': 'return' if returning else 'outbound',
                                              'requested_index': requested, 'observed_index': rendered,
                                              'observation_delay': lag, 'task': task, 'video_frame': video,
                                              'previous_observation': self.observations[-2] if len(self.observations) > 1 else None,
-                                             'picture': name+'.ppm'})
+                                             'picture': name+'.ppm',
+                                             'terminal_witness': witness})
             self.g.step(0, 1)
         else:
             raise AssertionError('Flight task exceeded source duration and cleanup bound')
@@ -171,7 +213,7 @@ class FlightChecks:
         assert not self.task('Task_SpaceFlight')
         return {'status': 'PASS_NORMAL_KEYS_OUTBOUND_RETURN', 'scenes': self.tasks_seen, 'frame_samples': self.samples,
                 'task_video_observations': self.observations, 'interior_check': interior,
-                'gpu_blend_checks': self.gpu_blend_checks,
+                'gpu_blend_checks': self.gpu_blend_checks, 'terminal_witnesses': self.terminal_witnesses,
                 'normal_registration': True, 'runtime_memory_writes': 0,
                 'scope': 'Synthetic terminal start, normal registration, boarding, full source-duration scenes and ordinary exit return; pixel quality reviewed separately.'}
 

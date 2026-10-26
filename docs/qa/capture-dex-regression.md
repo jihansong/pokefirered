@@ -67,7 +67,7 @@ python3 tools/qa/capture_dex_regression.py --built-assets
 
 - `devkitpro/devkitarm:20260610` 이미지와 SHA256 digest를 고정한다.
 - pret/agbcc는 `da598c1d918402c42c0c0d7128ba14567f3175e9`를 사용한다.
-- checkout은 actions/checkout v4.2.2의 전체 커밋을 고정한다.
+- checkout은 Node 24를 사용하는 actions/checkout v5의 전체 커밋을 고정한다.
 - LeafGreen revision 0, `COMPARE=0`, ROM과 symbols 생성, 빌드 경고 0을 요구한다.
 - 필요한 소스/빌드 입력만 sparse checkout하고 기존 ROM·SAV·work·과거 QA 산출물을
   받지 않는다. GitHub 권한은 `contents: read`이며 파일 업로드와 원격 브랜치 쓰기는 없다.
@@ -77,3 +77,28 @@ python3 tools/qa/capture_dex_regression.py --built-assets
 386종의 실제 포획, 모든 별명·파티/박스 상태·Safari/Snag/통신 조합 또는
 SAVE 후 cold reload의 성공으로 확대하지 않는다. 로컬의 별도 Delta 고정 코어
 포획 검증은 해당 ROM과 검증 기록에만 연결하며 이 CI 결과로 대체하지 않는다.
+
+## 보존된 원시 미디어 입력
+
+오프닝 2개와 타이틀 3개는 C가 직접 읽는 기존 원시 입력이다. 대응 PNG/PAL을
+다시 인코딩하지 않고, 보존된 Codespaces 기준 ROM과 ELF의 심볼 payload 전체와
+일치하는 파일을 그대로 추적한다. 기준 ROM SHA256은
+`7d66f47ad68e192d9f5916d9ef9bd9c9fb42fd80bcd3e2835b32cd328a208636`,
+ELF SHA256은 `fdcb9ec35de57dc4299878af4251193a67c78a6a0d27b2b9bbd03458972207d0`다.
+
+| 원시 입력 | 바이트 | SHA256 |
+|---|---:|---|
+| `graphics/intro/opening_movie_v7/pixels.8bpp` | 14192640 | `ff8c4e7f91ef541952f638043efdfe396d416777aaa984350869da3e603b66c3` |
+| `graphics/intro/opening_movie_v7/palettes.gbapal` | 178688 | `f253176e6ead3f2f5dd55c01de2f33881ce143527c464d076d2786bc348724f7` |
+| `graphics/title_screen/thunder_yellow/approved-title-v8.8bpp` | 38400 | `266b8c5764de352fd471c742705cc8744eeff15c16e13c557854b514d6153eff` |
+| `graphics/title_screen/thunder_yellow/approved-title-v8-start-roi.8bpp` | 645120 | `65f31390c8c1065dc28a3ea36a2990a8c351cd121d4be5c3e2f2d17c266d1e33` |
+| `graphics/title_screen/thunder_yellow/approved-title-v8.gbapal` | 512 | `e4888a4dcd5539808992724f60e9891393a950904ee06c817a601977285ebdd2` |
+
+이 파일들은 새 그림이나 새 음악이 아니다. 파일 변환, 픽셀 수정, ROM/SAV 업로드는
+없다. CI는 이 다섯 입력의 크기와 해시를 확인한다. 기존 Rocket96 PNG 변환 도구가
+필요로 하는 Pillow만 `python3-pil`로 설치하며, 해당 도구의 기존 입력/출력 해시
+검사는 유지한다.
+
+32비트 C 소유권 검사는 의존성 설치 직후, agbcc 및 ROM 빌드 전에 실행한다.
+따라서 미디어 빌드 문제와 C 회귀 결과를 구분할 수 있다. 빌드 후 검사는 생성된
+그림/팔레트 데이터만 읽어 확인하며 C 실행 검사를 반복하지 않는다.

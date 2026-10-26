@@ -25,7 +25,7 @@ jobs:
       AGBCC_REV: da598c1d918402c42c0c0d7128ba14567f3175e9
     steps:
       - name: Check out build inputs only
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5, Node 24
         with:
           fetch-depth: 1
           persist-credentials: false
@@ -75,7 +75,47 @@ jobs:
         shell: bash
         run: |
           apt-get update -q
-          DEBIAN_FRONTEND=noninteractive apt-get install -y -q --no-install-recommends build-essential gcc-multilib libpng-dev git python3
+          DEBIAN_FRONTEND=noninteractive apt-get install -y -q --no-install-recommends build-essential gcc-multilib libpng-dev git python3 python3-pil
+
+      - name: Compile and run actual 32-bit C ownership and negative-control tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/qa/capture_dex_regression.py --cc gcc --report /tmp/capture-dex-regression.json
+
+      - name: Check preserved opening and title raw payloads
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib
+          media = {
+            "graphics/intro/opening_movie_v7/pixels.8bpp": [
+              14192640,
+              "ff8c4e7f91ef541952f638043efdfe396d416777aaa984350869da3e603b66c3"
+            ],
+            "graphics/intro/opening_movie_v7/palettes.gbapal": [
+              178688,
+              "f253176e6ead3f2f5dd55c01de2f33881ce143527c464d076d2786bc348724f7"
+            ],
+            "graphics/title_screen/thunder_yellow/approved-title-v8.8bpp": [
+              38400,
+              "266b8c5764de352fd471c742705cc8744eeff15c16e13c557854b514d6153eff"
+            ],
+            "graphics/title_screen/thunder_yellow/approved-title-v8-start-roi.8bpp": [
+              645120,
+              "65f31390c8c1065dc28a3ea36a2990a8c351cd121d4be5c3e2f2d17c266d1e33"
+            ],
+            "graphics/title_screen/thunder_yellow/approved-title-v8.gbapal": [
+              512,
+              "e4888a4dcd5539808992724f60e9891393a950904ee06c817a601977285ebdd2"
+            ]
+          }
+          for name, (size, digest) in media.items():
+              raw = Path(name).read_bytes()
+              assert len(raw) == size and hashlib.sha256(raw).hexdigest() == digest, name
+          print('Five existing opening/title payloads match the preserved baseline hashes')
+          PY
 
       - name: Build the documented agbcc revision
         shell: bash
@@ -104,11 +144,19 @@ jobs:
           assert Path('pokemonthyl.gba').is_file() and Path('pokemonthyl.sym').is_file()
           PY
 
-      - name: Compile and run actual 32-bit C ownership and negative-control tests
+      - name: Validate compiled picture and palette data
         shell: bash
         run: |
-          set -euo pipefail
-          python3 tools/qa/capture_dex_regression.py --cc gcc --built-assets --report /tmp/capture-dex-regression.json
+          python3 - <<'PY'
+          from pathlib import Path
+          import importlib.util, json
+          spec = importlib.util.spec_from_file_location('capture_dex_regression', 'tools/qa/capture_dex_regression.py')
+          regression = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(regression)
+          report = regression.validate_data(Path.cwd(), built=True)
+          Path('/tmp/capture-dex-built-assets.json').write_text(json.dumps(report, indent=2))
+          print(json.dumps(report, indent=2))
+          PY
 
       - name: Record source provenance and limits
         shell: bash
@@ -124,6 +172,7 @@ jobs:
               'rom_sha256': hashlib.sha256(Path('pokemonthyl.gba').read_bytes()).hexdigest(),
               'symbols_sha256': hashlib.sha256(Path('pokemonthyl.sym').read_bytes()).hexdigest(),
               'regression': report,
+              'built_assets': json.loads(Path('/tmp/capture-dex-built-assets.json').read_text()),
               'limits': ['Host ownership test with GPU/audio/scheduling/decompression doubles',
                          'Not an emulator or installed iOS Delta runtime test',
                          'Not a rebuild of the delivered R23 DexFix ROM',

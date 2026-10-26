@@ -14,6 +14,7 @@ class FlightChecks:
         self.g, self.tour, self.source = guest, tour, source
         self.story = (source/'src/hoenn_space_story.c').read_text()
         self.samples = []
+        self.observations = []
         self.tasks_seen = []
         for name in ('gTasks', 'Task_SpaceFlight', 'Task_YesNoMenu_HandleInput', 'gStringVar4'):
             assert name in guest.sym, ('Missing fresh flight symbol', name)
@@ -95,12 +96,26 @@ class FlightChecks:
             if state == 0 or state == 1 and frame == 0:
                 seen_running = True
                 rendered = length-1 if state == 1 else frame-1
-                if rendered in targets and rendered not in observed:
-                    name = ('return' if returning else 'outbound')+'-frame-%04d' % rendered
-                    self.g.picture(name)
-                    observed.append(rendered)
-                    self.samples.append({'scene': 'return' if returning else 'outbound', 'rendered_frame': rendered,
-                                         'task': task, 'video_frame': self.g.last_status.get('video_frames', 0), 'picture': name+'.ppm'})
+                video = self.g.last_status.get('video_frames', 0)
+                assert not self.observations or not self.observations[-1]['scene'] == ('return' if returning else 'outbound') or rendered >= self.observations[-1]['observed_index'], 'Task index went backwards'
+                self.observations.append({'scene': 'return' if returning else 'outbound',
+                                          'observed_index': rendered, 'video_frame': video})
+                if len(observed) < len(targets) and rendered >= targets[len(observed)]:
+                    requested = targets[len(observed)]
+                    previous = next((x for x in reversed(self.samples) if x['scene'] == ('return' if returning else 'outbound')), None)
+                    if previous is None or rendered > previous['observed_index']:
+                        lag = rendered - requested
+                        assert 0 <= lag <= 1, ('Task sample exceeded one-index observation delay', requested, rendered)
+                        if requested in (0, length-1):
+                            assert lag == 0, ('Scene endpoint must be observed exactly', requested, rendered)
+                        name = ('return' if returning else 'outbound')+'-requested-%04d-observed-%04d' % (requested, rendered)
+                        self.g.picture(name)
+                        observed.append(requested)
+                        self.samples.append({'scene': 'return' if returning else 'outbound',
+                                             'requested_index': requested, 'observed_index': rendered,
+                                             'observation_delay': lag, 'task': task, 'video_frame': video,
+                                             'previous_observation': self.observations[-2] if len(self.observations) > 1 else None,
+                                             'picture': name+'.ppm'})
             self.g.step(0, 1)
         else:
             raise AssertionError('Flight task exceeded source duration and cleanup bound')
@@ -111,7 +126,7 @@ class FlightChecks:
             if self.g.field(snap) and not snap['script_locked'] and self.tour.name(snap) == expected:
                 assert snap['xy'] == ([15, 18] if returning else [10, 12]), snap
                 self.g.picture('after-'+('landing' if returning else 'outbound'))
-                self.tasks_seen.append({'returning': returning, 'duration': length, 'sampled_frames': observed, 'destination': snap})
+                self.tasks_seen.append({'returning': returning, 'duration': length, 'nominal_task_duration': length, 'requested_samples_covered': observed, 'destination': snap})
                 return
             self.g.step(0, 12)
         raise AssertionError(('Flight destination did not unlock', expected, self.g.snapshot()))
@@ -137,6 +152,7 @@ class FlightChecks:
         self.flight(True)
         assert not self.task('Task_SpaceFlight')
         return {'status': 'PASS_NORMAL_KEYS_OUTBOUND_RETURN', 'scenes': self.tasks_seen, 'frame_samples': self.samples,
+                'task_video_observations': self.observations,
                 'normal_registration': True, 'runtime_memory_writes': 0,
                 'scope': 'Synthetic terminal start, normal registration, boarding, full source-duration scenes and ordinary exit return; pixel quality reviewed separately.'}
 

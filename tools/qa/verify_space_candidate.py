@@ -79,6 +79,8 @@ def linked(source, artifact_dir, reference_path, reference):
         assert len(raw)==row['bytes'] and sha(raw)==row['sha256'],('Generated source differs from frozen canonical output',rel)
     paths = {k:pinned(artifact_dir, p['artifacts'][k]) for k in ['rom', 'elf', 'map', 'sym', 'abi_probe']}
     rom = paths['rom'].read_bytes(); assert len(rom) == 32*1024*1024
+    if reference.get('expected_game_rom_sha256'):
+        assert sha(rom) == reference['expected_game_rom_sha256'], 'QA-only revision changed game ROM bytes'
     elf = Elf(paths['elf']); assert elf.kind == 2
     maptext = paths['map'].read_text('utf8'); symtext = paths['sym'].read_text('utf8')
     all_sections = []

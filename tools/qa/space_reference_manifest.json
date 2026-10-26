@@ -64466,8 +64466,8 @@
       "sha256": "6c0d1d82894a7fa068191504b454fde136acaf88a4005e6b54bf28b3f07c0e1c"
     },
     "tools/qa/verify_space_candidate.py": {
-      "bytes": 16563,
-      "sha256": "aeede962959601e5115294b6fa3301500391caeffc55f38c4f5a8dd15b6f9248"
+      "bytes": 16721,
+      "sha256": "5342c29f9953668ba3d70ba3821c53456f797cee93d13b9626ab630395b32baa"
     },
     "tools/ramscrgen/.gitignore": {
       "bytes": 10,
@@ -64738,8 +64738,8 @@
       "sha256": "8bcce2861230dbe04e37c7903187ba7374a75e5856a08aa6afeae40ad870e12b"
     },
     "tools/qa/space_flight_checks.py": {
-      "bytes": 7590,
-      "sha256": "05c45183da9569bd5f16f9c66bfb283392c6712a9e496555a70ee3f2aede10b8"
+      "bytes": 9108,
+      "sha256": "c2b093f58c78d8fcc0bea92b88adfa632bbf4feed093827cf1a4fce4fff67ebd"
     }
   },
   "public_pokemon_sha256": "373b692e42d952b94b44f0ceda81d56dc75e1abb6af9d60ca5ec47d927b2057c",
@@ -73843,5 +73843,6 @@
       }
     ],
     "scope": "Only nine flight INCBIN payloads intentionally change; other linked media, RAM/save ABI and map checks retain their existing requirements."
-  }
+  },
+  "expected_game_rom_sha256": "a5de4071bb78547764ca58deac09c0046deee07b4386e66fe94c3b87580b496f"
 }

@@ -113,8 +113,8 @@ def derive(source,artifact_dir,output,compiler):
     generator=Path(__file__).with_name('derive_save_schema.c')
     obj=work/'schema.o';dep=work/'schema.d'
     command=[compiler,'-std=gnu11','-c','-O0','-mcpu=arm7tdmi','-mthumb','-mabi=apcs-gnu',
-             '-DLEAFGREEN','-DREVISION=0','-DENGLISH','-DMODERN=0','-I'+str(source/'include'),
-             '-I'+str(source/'src'),'-I'+str(work),'-MMD','-MF',str(dep),str(generator),'-o',str(obj)]
+             '-DLEAFGREEN','-DREVISION=0','-DENGLISH','-DMODERN=0','-iquote',str(source/'include'),
+             '-iquote',str(source/'src'),'-I'+str(work),'-MMD','-MF',str(dep),str(generator),'-o',str(obj)]
     target=subprocess.check_output([compiler,'-dumpmachine'],text=True).strip()
     if not target.startswith('arm-none-eabi'):raise ValueError('Native GBA ARM cross-compiler required')
     result=subprocess.run(command,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)

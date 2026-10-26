@@ -64422,16 +64422,16 @@
       "sha256": "b00ab69dfa96300ccbf88f5f28cf46b53526e6c19cf70ccc7f389a56be4f48c4"
     },
     "tools/qa/derive_schema.py": {
-      "bytes": 12872,
-      "sha256": "6ad3f1fba9902d76eb37c7b40e29b2a6ea245066c3d614c9e3d8eed43908dc2b"
+      "bytes": 12882,
+      "sha256": "7cd61ef0c2b7bc0aec87b5b3f59fdf7b7dcb29a3ac6eff6e3a5ce294ae68049f"
     },
     "tools/qa/make_ty28_fixture.py": {
       "bytes": 24153,
       "sha256": "b747f6a336bc0d4fba166b286ad5df47959f7acf35ba2696e87186655b377e39"
     },
     "tools/qa/produce_space_build.py": {
-      "bytes": 10620,
-      "sha256": "b81bdd75a37a9613450d5c0a74327d037b8c0b2d3f1630ab9eaa86456b6d0a85"
+      "bytes": 10628,
+      "sha256": "b389fbd5048a72a5c15c5432063d4eac3ddc8cbb992d7cbd51285d3d05cabf94"
     },
     "tools/qa/seal_space_artifact.py": {
       "bytes": 3464,

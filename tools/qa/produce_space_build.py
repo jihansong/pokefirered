@@ -122,7 +122,7 @@ def main():
         run('final-symbols',['make','GAME_VERSION=LEAFGREEN',*common,'syms'])
         final=capture('.'); bytes_equal(baseline,final)
         assert object_hashes=={unit:sha(source/'build/leafgreen'/unit) for unit in REQUIRED_UNITS}
-        run('target-ABI-probe',[str(gcc),'-std=gnu11','-mthumb','-mcpu=arm7tdmi','-mabi=apcs-gnu','-Iinclude',
+        run('target-ABI-probe',[str(gcc),'-std=gnu11','-mthumb','-mcpu=arm7tdmi','-mabi=apcs-gnu','-iquote','include',
                                 '-DLEAFGREEN','-DENGLISH','-DREVISION=0','-DMODERN=0','-c','tools/qa/space_abi_probe.c','-o',str(out/'space-abi-probe.o')])
         objects=[]
         for unit in REQUIRED_UNITS:

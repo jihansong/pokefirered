@@ -1,0 +1,40 @@
+{
+  "schema": "TY_CARGO_GRAPHICS_ONLY_PROOF_V1",
+  "baseline_commit": "0c3a99e93d4db1523528dd404743fa3f251ebfe3",
+  "baseline_rom_sha256": "e3ba9036cd9cb527ce537fcf8848181eceb510af76b8c68229ec174526ad5dd6",
+  "expected_candidate_rom_sha256": "aa85e57f56be769be9acd31c6c220d8a93bd8488f7ebfc5b8b2b44eb09a595cc",
+  "rom_bytes": 33554432,
+  "ranges": [
+    {
+      "symbol": "sgTileset_TYSpaceDeckV4CargoHoldMetatiles",
+      "source": "data/tilesets/secondary/ty_space_v4_cargohold/metatiles.bin",
+      "address": 138878660,
+      "bytes": 8192,
+      "previous_sha256": "04d4cf2f99c3147d1f42f4d5aec77a9d173781b19f43ddf74a47107de63ea85b",
+      "previous_git_blob": "de3591afbc953607370f1fb08de1bfdbe150feb1",
+      "candidate_sha256": "8919797944344ff04d9b33f3db8b6f819fa04a605f89b274789287d52ba4d1cc"
+    },
+    {
+      "symbol": "sgTileset_TYSpaceDeckV4CargoHoldPalettes",
+      "source": "data/tilesets/secondary/ty_space_v4_cargohold/palettes.gbapal",
+      "address": 138878244,
+      "bytes": 416,
+      "previous_sha256": "62acc10a0650dada2fb3980e7456ff541b5be66213a20699911580c4c02f7ba0",
+      "previous_git_blob": "308402ee3165a3d78dc48d2496285fe7d9867316",
+      "candidate_sha256": "d7480fb19989241aa51e2ed4499a6be084251d60833b5271b1d99686d8344db7"
+    },
+    {
+      "symbol": "sgTileset_TYSpaceDeckV4CargoHoldTiles",
+      "source": "data/tilesets/secondary/ty_space_v4_cargohold/tiles.4bpp",
+      "address": 138861860,
+      "bytes": 16384,
+      "previous_sha256": "5d48d41974a0ad233776a4a4d727d0e5d27c1f2880d86d932a79e6332feabf1c",
+      "previous_git_blob": "798507975504e38cb918fc3aed4f1cadff8a804c",
+      "candidate_sha256": "ea09ea0dde711f282a1b8dd38a87158b6179300f29c6ab5ea6b0e32c0ba8d2e2"
+    }
+  ],
+  "packet_sha256": "5cae810de7ca14859a5af3e1f7275a2ebdb72461a9e6138770ca6057c555112c",
+  "limits": [
+    "This contract predicts a compilation result from three fixed-size raw graphic inputs. Fresh linked proof and actual candidate playback are still required."
+  ]
+}

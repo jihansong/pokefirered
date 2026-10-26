@@ -46,7 +46,7 @@ def pinned(root, row):
     return path
 
 
-def linked(source, artifact_dir, reference_path, reference):
+def linked(source, artifact_dir, reference_path, reference, graphics_baseline_source=None):
     artifact_dir = artifact_dir.resolve(); source = source.resolve()
     provenance_path = artifact_dir/'provenance.json'; p = load(provenance_path)
     assert p['schema'] == 'TY_SPACE_LINUX_BUILD_V1'
@@ -80,8 +80,14 @@ def linked(source, artifact_dir, reference_path, reference):
     paths = {k:pinned(artifact_dir, p['artifacts'][k]) for k in ['rom', 'elf', 'map', 'sym', 'abi_probe']}
     rom = paths['rom'].read_bytes(); assert len(rom) == 32*1024*1024
     if reference.get('expected_game_rom_sha256'):
-        assert sha(rom) == reference['expected_game_rom_sha256'], 'QA-only revision changed game ROM bytes'
+        assert sha(rom) == reference['expected_game_rom_sha256'], 'Game ROM differs from the reviewed full SHA256'
     elf = Elf(paths['elf']); assert elf.kind == 2
+    cargo_graphics = None
+    if reference.get('cargo_graphics_delta21'):
+        from space_cargo_graphics_proof import verify_cargo_graphics
+        contract_path = source/reference['cargo_graphics_delta21']['contract']
+        assert sha(contract_path.read_bytes()) == reference['cargo_graphics_delta21']['sha256']
+        cargo_graphics = verify_cargo_graphics(source, rom, elf, load(contract_path), graphics_baseline_source)
     maptext = paths['map'].read_text('utf8'); symtext = paths['sym'].read_text('utf8')
     all_sections = []
     for s in elf.sections:
@@ -210,7 +216,7 @@ def linked(source, artifact_dir, reference_path, reference):
         rooms.append(dict(map=room['map'], layout=room['proposed_layout_num'], linked_actors=len(m['object_events']), linked_warps=len(m['warp_events'])))
     return dict(status='COMPILED_SOURCE_LINK_AND_ART_PASS_GAMEPLAY_PENDING', provenance_sha256=sha(provenance_path.read_bytes()),
                 source_commit=p['source_commit'], ELF_ROM_sections=all_sections, object_proofs=object_proofs,
-                compiled_abi=abi, RAM_symbols=len(actual_ram), save_symbols=len(reference['save_symbols']),
+                cargo_graphics_only=cargo_graphics, compiled_abi=abi, RAM_symbols=len(actual_ram), save_symbols=len(reference['save_symbols']),
                 direct_blobs=bound, intentional_exterior_replacements=exterior['intentional_linked_replacements'] if exterior else [],
                 original35_source_inputs_preserved=bool(exterior),
                 approved_media=approved, original_field_assets=len(field), linked_rooms=rooms,
@@ -224,6 +230,7 @@ def main():
     parser.add_argument('--artifact-dir',type=Path)
     parser.add_argument('--out',type=Path,required=True)
     parser.add_argument('--reference-manifest',type=Path,required=True)
+    parser.add_argument('--graphics-baseline-source',type=Path,help='Read-only original public raw graphics tree; exact recorded hashes remain required')
     parser.add_argument('--source-only',action='store_true')
     parser.add_argument('--skip-poses',action='store_true',help='Explicitly omit offline model; never implies runtime coverage')
     a=parser.parse_args(); assert a.source_only or a.artifact_dir is not None
@@ -236,7 +243,7 @@ def main():
         result=dict(status='SOURCE_OFFLINE_ONLY_LINKED_NOT_RUN', source=source_result, compiled_checks_executed=0,
                     operations=dict(builds=0,compilers=0,games=0,DLLs=0,source_writes=0))
         if not a.source_only:
-            result['linked']=linked(a.source,a.artifact_dir,a.reference_manifest,reference)
+            result['linked']=linked(a.source,a.artifact_dir,a.reference_manifest,reference,a.graphics_baseline_source)
             result['status']=result['linked']['status']; result['compiled_checks_executed']=1
         (a.out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
         print(json.dumps(dict(status=result['status'],result_sha256=sha((a.out/'result.json').read_bytes()))))

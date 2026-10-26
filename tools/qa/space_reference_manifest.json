@@ -6,8 +6,8 @@
       "sha256": "f7770703b847585b1c5450a81e30ab185b5c333fbcbea0147727d1d9dae063b0"
     },
     ".github/workflows/space-linux.yml": {
-      "bytes": 13622,
-      "sha256": "323d44df3f205600927a327ed61acfa8f3fc21361825a0bd40aea975507c12cc"
+      "bytes": 13979,
+      "sha256": "628243664307ef0cea92e5470c3eab07259d6f5d33be862af743ee2dd96af4aa"
     },
     ".gitignore": {
       "bytes": 1376,
@@ -32475,15 +32475,15 @@
     },
     "data/tilesets/secondary/ty_space_v4_cargohold/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "04d4cf2f99c3147d1f42f4d5aec77a9d173781b19f43ddf74a47107de63ea85b"
+      "sha256": "8919797944344ff04d9b33f3db8b6f819fa04a605f89b274789287d52ba4d1cc"
     },
     "data/tilesets/secondary/ty_space_v4_cargohold/palettes.gbapal": {
       "bytes": 416,
-      "sha256": "62acc10a0650dada2fb3980e7456ff541b5be66213a20699911580c4c02f7ba0"
+      "sha256": "d7480fb19989241aa51e2ed4499a6be084251d60833b5271b1d99686d8344db7"
     },
     "data/tilesets/secondary/ty_space_v4_cargohold/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "5d48d41974a0ad233776a4a4d727d0e5d27c1f2880d86d932a79e6332feabf1c"
+      "sha256": "ea09ea0dde711f282a1b8dd38a87158b6179300f29c6ab5ea6b0e32c0ba8d2e2"
     },
     "data/tilesets/secondary/ty_space_v4_cockpit/metatile_attributes.bin": {
       "bytes": 2048,
@@ -62042,8 +62042,8 @@
       "sha256": "6ba99040bf1621f292a98c038636f6ffdec3cb472a18ea0bdd921d7e6cbd854a"
     },
     "tools/hoenn_import/build_space_decks_v4.py": {
-      "bytes": 17021,
-      "sha256": "e0eb91941f8502d1479a30c4d9d5242111fae34563da611ed58d24ac238fdb90"
+      "bytes": 17052,
+      "sha256": "1b1216d9b5218ce5307b1a9e4570e631986ce5a4ffe6f50e65f5cd3850cc391c"
     },
     "tools/hoenn_import/build_space_interiors_v3.py": {
       "bytes": 14724,
@@ -64466,8 +64466,8 @@
       "sha256": "155cd29c9e348608cc50b76315dbf5365d7b802d326a8ba1cc0439966117f861"
     },
     "tools/qa/verify_space_candidate.py": {
-      "bytes": 16746,
-      "sha256": "6fd76df50adc6a1b1cbc804549e2a5f952b8285cbd909f8c92018f646e74ba30"
+      "bytes": 17431,
+      "sha256": "11c1f2626737d56dd6a2f7d724f29b179260b9d1d60ad014a74771d18c122c33"
     },
     "tools/ramscrgen/.gitignore": {
       "bytes": 10,
@@ -64798,12 +64798,24 @@
       "sha256": "b5c2c3311fefacbd940e2057e27bb5fa8b8dd66a5cc4df2c123407fe701bfba7"
     },
     "tools/qa/space_position_checks.py": {
-      "bytes": 17501,
-      "sha256": "7aa9dfb264fae8bc4af4a1178c79e34c439bddcdf45255acf64d7c1beba69380"
+      "bytes": 18609,
+      "sha256": "bad77bbfaafcba629a3352b7ff854bbb97a5a1c22441ef5a54092ef27e0c5e73"
     },
     "tools/qa/space-position-cases.json": {
       "bytes": 9531,
-      "sha256": "b1e5c253a4e42f39be65a5f6d6fa0df3d505bca4886c1161aa8987347d7e3ac7"
+      "sha256": "5a1d0e7e306137e5a071147240a9b4015e019abb7c0d7115644a8a47c531a2be"
+    },
+    "tools/qa/space_cargo_graphics_proof.py": {
+      "bytes": 3254,
+      "sha256": "b8e5ec5797097835a4d2281ab0e78a02243201bf1a0480c57b9909c35fc4ecfc"
+    },
+    "tools/qa/space-cargo-graphics-diff.json": {
+      "bytes": 2032,
+      "sha256": "623c1fbd95ef36634eb45b625ef0c870cfc3b12509fd58b9b83d8018b6d279bf"
+    },
+    "tools/hoenn_import/space_cargo_floor_fix_v21.py": {
+      "bytes": 2547,
+      "sha256": "3a80a1efd9d994a68f552387605a7dadf2a4c2ce715d06ee087b7134b892d065"
     }
   },
   "public_pokemon_sha256": "373b692e42d952b94b44f0ceda81d56dc75e1abb6af9d60ca5ec47d927b2057c",
@@ -65361,21 +65373,21 @@
       "symbol": "sgTileset_TYSpaceDeckV4CargoHoldMetatiles",
       "source": "data/tilesets/secondary/ty_space_v4_cargohold/metatiles.bin",
       "bytes": 8192,
-      "sha256": "04d4cf2f99c3147d1f42f4d5aec77a9d173781b19f43ddf74a47107de63ea85b"
+      "sha256": "8919797944344ff04d9b33f3db8b6f819fa04a605f89b274789287d52ba4d1cc"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CargoHoldPalettes",
       "source": "data/tilesets/secondary/ty_space_v4_cargohold/palettes.gbapal",
       "bytes": 416,
-      "sha256": "62acc10a0650dada2fb3980e7456ff541b5be66213a20699911580c4c02f7ba0"
+      "sha256": "d7480fb19989241aa51e2ed4499a6be084251d60833b5271b1d99686d8344db7"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4CargoHoldTiles",
       "source": "data/tilesets/secondary/ty_space_v4_cargohold/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "5d48d41974a0ad233776a4a4d727d0e5d27c1f2880d86d932a79e6332feabf1c"
+      "sha256": "ea09ea0dde711f282a1b8dd38a87158b6179300f29c6ab5ea6b0e32c0ba8d2e2"
     },
     {
       "unit": "src/tilesets.o",
@@ -74096,7 +74108,7 @@
     "recording_fix": "Unique crossing-serial photo names, no overwrite guard relaxation",
     "actual_gameplay_pending": true
   },
-  "expected_game_rom_sha256": "e3ba9036cd9cb527ce537fcf8848181eceb510af76b8c68229ec174526ad5dd6",
+  "expected_game_rom_sha256": "aa85e57f56be769be9acd31c6c220d8a93bd8488f7ebfc5b8b2b44eb09a595cc",
   "qa_only_followup20": {
     "game_source19_commit": "c53e805146b7876382caa50823e3e303d9cd520c",
     "changes": [
@@ -74110,5 +74122,12 @@
     ],
     "maximum_task_executions_across_edge": 2,
     "normal_host_frames_across_edge": 1
+  },
+  "cargo_graphics_delta21": {
+    "contract": "tools/qa/space-cargo-graphics-diff.json",
+    "sha256": "623c1fbd95ef36634eb45b625ef0c870cfc3b12509fd58b9b83d8018b6d279bf",
+    "baseline_rom_sha256": "e3ba9036cd9cb527ce537fcf8848181eceb510af76b8c68229ec174526ad5dd6",
+    "normal_position_cases32_retained_from_source20": true,
+    "actual_latest_video_pending": true
   }
 }

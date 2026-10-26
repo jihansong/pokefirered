@@ -152,7 +152,7 @@ def read_misty(guest, s):
 def misty_recovery(args, document, schema, base_recipe):
     case = document['misty_case']
     assert case['xy'] == [10, 3] and case['expected_xy'] == [10, 12]
-    assert case['map'] == 'HoennSpacecraftCockpit' and case['normal_walk'] == ['E', 'E', 'E']
+    assert case['map'] == 'HoennSpacecraftCockpit' and case['normal_walk'] == ['E', 'N', 'E']
     s = Schema(schema)
     assert s.c(case['saved_local_id']) == 253
     recipe = deepcopy(base_recipe)
@@ -182,9 +182,18 @@ def misty_recovery(args, document, schema, base_recipe):
         guest.picture('recovered-misty-hidden-under-player')
         tour = Tour(guest, args.source)
         observations = []
-        for i, direction in enumerate(case['normal_walk'], 1):
+        expected = list(case['expected_xy'])
+        definition = tour.maps[case['map']]['definition']
+        events = {(e['x'], e['y']) for e in definition['warp_events']+definition['coord_events']}
+        planned = []
+        for direction in case['normal_walk']:
+            dx, dy = DELTA[direction]
+            expected = [expected[0]+dx, expected[1]+dy]
+            assert tuple(expected) in tour.maps[case['map']]['floor']-events, ('Invalid ordinary probe target', expected)
+            planned.append((direction, list(expected)))
+        for direction, expected in planned:
             moved = tour.move(direction)
-            assert moved['xy'] == [10+i, 12] and not moved['script_locked']
+            assert moved['xy'] == expected and moved['map'] == after['map'] and not moved['script_locked']
             observations.append({'player': moved, 'misty': read_misty(guest, s)})
         final = observations[-1]['misty']
         assert not final['invisible'] and not final['sprite_invisible'] and not final['off_screen']
@@ -215,8 +224,10 @@ def run(args):
               'host_sha256': digest(args.host), 'cases': [], 'runtime_memory_writes': 0,
               'private_save_inputs': 0, 'active_misty_recovery_verified': False, 'Pikachu_runtime_verified': False,
               'scope': '32 independent fresh normal Continues plus one active Misty case from source-only CI_TEST preboot records; no normal SAVE or installed iOS Delta claim'}
+    if args.misty_only:
+        result['scope'] = 'One corrected active Misty Continue/reveal probe; existing32 source20 cases are retained by strict game-code and graphics-only ROM proof.'
     try:
-        for case in document['cases']:
+        for case in ([] if args.misty_only else document['cases']):
             assert re.fullmatch(r'[a-z0-9-]{1,80}', case['id'])
             result['attempted_case'] = case['id']
             folder = args.artifact_dir/case['id']
@@ -269,11 +280,14 @@ def run(args):
             finally:
                 if guest is not None:
                     guest.close()
-        assert sum(x['kind'] == 'legacy_recovery' for x in result['cases']) == 28
-        assert sum(x['kind'] == 'normal_open_control' for x in result['cases']) == 4
+        if not args.misty_only:
+            assert sum(x['kind'] == 'legacy_recovery' for x in result['cases']) == 28
+            assert sum(x['kind'] == 'normal_open_control' for x in result['cases']) == 4
         result['misty_recovery'] = misty_recovery(args, document, schema, base_recipe)
         result['active_misty_recovery_verified'] = True
-        result['status'] = 'PASS_28_LEGACY_AND_4_UNCHANGED_NORMAL_CONTINUES'
+        result['status'] = ('PASS_ACTIVE_MISTY_RETRY_ONLY' if args.misty_only
+                            else 'PASS_28_LEGACY_AND_4_UNCHANGED_NORMAL_CONTINUES')
+        result['baseline_32_repeated'] = not args.misty_only
     except Exception:
         result['status'] = 'FAIL_NOT_VERIFIED'
         result['error'] = traceback.format_exc()
@@ -287,6 +301,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('source', 'host', 'schema', 'rom', 'symbols', 'artifact-dir'):
         parser.add_argument('--'+name, type=Path, required=True)
+    parser.add_argument('--misty-only', action='store_true', help='Repeat only the corrected follower observation; preserve existing32-case evidence')
     args = parser.parse_args()
     for name in ('source', 'host', 'schema', 'rom', 'symbols'):
         setattr(args, name, getattr(args, name).resolve(strict=True))

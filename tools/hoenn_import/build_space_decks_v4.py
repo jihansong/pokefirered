@@ -12,7 +12,7 @@ def jb(v):return (json.dumps(v,ensure_ascii=False,indent=2)+'\n').encode('utf8')
 def build(S,contract=None):
  S=Path(S);inputs={};out={};reports=[];allcopies=[]
  modules=[]
- for name in ('space_bridge_finish_v18.py','space_furniture_finish_v18.py','space_captain_finish_v18.py','space_foreground_finish_v18_02.py'):
+ for name in ('space_bridge_finish_v18.py','space_furniture_finish_v18.py','space_captain_finish_v18.py','space_foreground_finish_v18_02.py','space_counter_hatch_fix_v19.py','space_floor_motif_fix_v19.py'):
   rel='tools/hoenn_import/'+name
   if (S/rel).exists():
    inputs[rel]=hashlib.sha256((S/rel).read_bytes()).hexdigest();modules.append(runpy.run_path(str(S/rel)))

@@ -12,6 +12,8 @@
 #include "constants/event_object_movement.h"
 #include "constants/quest_log.h"
 #include "field_player_avatar.h"
+#include "follower_pikachu.h"
+#include "companion_misty.h"
 #include "metatile_behavior.h"
 #include "data/tilesets/ty_hns_frontier_tables.inc"
 
@@ -531,7 +533,9 @@ static void RecoverRebuiltSpaceRoomPosition(void)
 {
     s16 x, y;
     u8 i;
+    bool8 isolatedFloor;
     struct ObjectEvent *player = NULL;
+    struct ObjectEvent *follower;
 
     // The final quest-log scene restores the real saved player before Continue.
     // Only the earlier recorded scenes must keep their original coordinates.
@@ -546,12 +550,18 @@ static void RecoverRebuiltSpaceRoomPosition(void)
         break;
     case MAP_NUM(MAP_HOENN_SPACECRAFT_CABIN):
     case MAP_NUM(MAP_HOENN_SPACECRAFT_ENGINEERING):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_COCKPIT):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_NAVIGATION):
         x = 10;
         y = 12;
         break;
     case MAP_NUM(MAP_HOENN_ORBITAL_OBSERVATORY):
         x = 10;
         y = 9;
+        break;
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_CAPTAINS_OFFICE):
+        x = 5;
+        y = 6;
         break;
     default:
         return;
@@ -565,13 +575,25 @@ static void RecoverRebuiltSpaceRoomPosition(void)
             break;
         }
     }
-    if (player == NULL
-     || MapGridGetCollisionAt(player->currentCoords.x, player->currentCoords.y) == 0)
+    if (player == NULL)
+        return;
+
+    // These old reachable squares are still floor, but now form enclosed
+    // one- and two-cell pockets. Collision on the current square is not enough.
+    isolatedFloor = (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_HOENN_SPACECRAFT_CABIN)
+                 && player->currentCoords.x == MAP_OFFSET
+                 && player->currentCoords.y == MAP_OFFSET + 4)
+                || (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_HOENN_SPACECRAFT_CAPTAINS_OFFICE)
+                 && player->currentCoords.x >= MAP_OFFSET + 4
+                 && player->currentCoords.x <= MAP_OFFSET + 5
+                 && player->currentCoords.y == MAP_OFFSET + 2);
+    if (!isolatedFloor
+     && MapGridGetCollisionAt(player->currentCoords.x, player->currentCoords.y) == 0)
         return;
 
     // Old saves may place the player inside a newly added wall or machine.
-    // Continue has loaded the objects but has not recreated their sprites yet.
-    // Move only an obstructed player to this room's verified open aisle.
+    // Continue has loaded objects but has not recreated their sprites yet.
+    // Move only an obstructed or enclosed player to the verified open aisle.
     gSaveBlock1Ptr->pos.x = x;
     gSaveBlock1Ptr->pos.y = y;
     x += MAP_OFFSET;
@@ -579,6 +601,19 @@ static void RecoverRebuiltSpaceRoomPosition(void)
     player->initialCoords.x = player->currentCoords.x = player->previousCoords.x = x;
     player->initialCoords.y = player->currentCoords.y = player->previousCoords.y = y;
     player->currentElevation = player->previousElevation = MapGridGetElevationAt(x, y);
+
+    // Saved companions must not remain under the old furniture. Align them
+    // before sprite creation; their normal follow logic reveals them on a step.
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {
+        follower = &gObjectEvents[i];
+        if (!IsFollowerPikachuObject(follower) && !IsMistyCompanionObject(follower))
+            continue;
+        follower->initialCoords.x = follower->currentCoords.x = follower->previousCoords.x = x;
+        follower->initialCoords.y = follower->currentCoords.y = follower->previousCoords.y = y;
+        follower->currentElevation = follower->previousElevation = player->currentElevation;
+        follower->invisible = TRUE;
+    }
 }
 
 static bool8 IsRebuiltSpaceMap(void)

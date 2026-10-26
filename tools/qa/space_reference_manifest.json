@@ -6,8 +6,8 @@
       "sha256": "f7770703b847585b1c5450a81e30ab185b5c333fbcbea0147727d1d9dae063b0"
     },
     ".github/workflows/space-linux.yml": {
-      "bytes": 12455,
-      "sha256": "ad39b76aa755bb9c50edb5472875ca387d16088b49eb0f0b3fb855629a0672ae"
+      "bytes": 13622,
+      "sha256": "323d44df3f205600927a327ed61acfa8f3fc21361825a0bd40aea975507c12cc"
     },
     ".gitignore": {
       "bytes": 1376,
@@ -3715,7 +3715,7 @@
     },
     "data/layouts/HoennSpacecraftCabin/map.bin": {
       "bytes": 640,
-      "sha256": "6f9908faff95985f083d2ed60c0bebc8bd710408cfe331528ad4d0c72ae64b40"
+      "sha256": "557caa6b54c4adb2b230d31d4ee6d7ee167872c37ac64e6b66dc0a205aef301c"
     },
     "data/layouts/HoennSpacecraftCabinCorridor/border.bin": {
       "bytes": 8,
@@ -32423,19 +32423,19 @@
     },
     "data/tilesets/secondary/ty_space_v4_cabin/metatile_attributes.bin": {
       "bytes": 2048,
-      "sha256": "d90c4231015af8aed0be3245be96688dbde665523e33a58334cbae8784d0d870"
+      "sha256": "1cab2405ebadd51b91802358b576de17664116660e2a6a1380bc777f91574caa"
     },
     "data/tilesets/secondary/ty_space_v4_cabin/metatiles.bin": {
       "bytes": 8192,
-      "sha256": "8aee979c456bc6e56f65bf0dcbc2439b0d6749a1354607da8e418a02bf144550"
+      "sha256": "18bdbe381005a7434c78f76eb1c7509d6e74bc0b2008fbb94a6fc60918418013"
     },
     "data/tilesets/secondary/ty_space_v4_cabin/palettes.gbapal": {
       "bytes": 416,
-      "sha256": "71a6c2980ebeaa85330f20837119a3f89439d4f4e53e5606f00b34ac88a7029d"
+      "sha256": "0c7d239f82c23d8b672feb0b78181a00214794bd60509fc5c716b0769dd72a75"
     },
     "data/tilesets/secondary/ty_space_v4_cabin/tiles.4bpp": {
       "bytes": 16384,
-      "sha256": "f98f15aecbc890ff88ffc05c884f93580295a77777fbdcf1142dcbe85119171c"
+      "sha256": "fe97814a0d3896a5abf78a9a7bfee1e71fa7fefffd91df68ca26b0d5a0e78851"
     },
     "data/tilesets/secondary/ty_space_v4_cabincorridor/metatile_attributes.bin": {
       "bytes": 2048,
@@ -61086,8 +61086,8 @@
       "sha256": "a1fe626560a3baca43fd48ffa5ea8ec652d6f82e64b4df5467f052c00be6d08a"
     },
     "src/fieldmap.c": {
-      "bytes": 35576,
-      "sha256": "49ad1c31338cd8ef6e7a2cbfa4df7669181f04c98717e25ebc74a101293d95b8"
+      "bytes": 37274,
+      "sha256": "3cd6fdfa0c4557f3d1e3d2c346cb4a72371325b6030c909dacfef55f2823e71e"
     },
     "src/fldeff_berrytree.c": {
       "bytes": 60,
@@ -62042,8 +62042,8 @@
       "sha256": "6ba99040bf1621f292a98c038636f6ffdec3cb472a18ea0bdd921d7e6cbd854a"
     },
     "tools/hoenn_import/build_space_decks_v4.py": {
-      "bytes": 16957,
-      "sha256": "d5ce626f81c3fad8c87545448c2c384c288e7698cb9becf528e57a71d08ca116"
+      "bytes": 17021,
+      "sha256": "e0eb91941f8502d1479a30c4d9d5242111fae34563da611ed58d24ac238fdb90"
     },
     "tools/hoenn_import/build_space_interiors_v3.py": {
       "bytes": 14724,
@@ -62427,7 +62427,7 @@
     },
     "tools/hoenn_import/patches/HoennSpacecraftCabin.blockdata.bin": {
       "bytes": 640,
-      "sha256": "6f9908faff95985f083d2ed60c0bebc8bd710408cfe331528ad4d0c72ae64b40"
+      "sha256": "557caa6b54c4adb2b230d31d4ee6d7ee167872c37ac64e6b66dc0a205aef301c"
     },
     "tools/hoenn_import/patches/HoennSpacecraftCabin.json": {
       "bytes": 4796,
@@ -64418,12 +64418,12 @@
       "sha256": "55f38ef589f06fbe638dd210625514a8380f86a3840de15f58e843c139a7a37e"
     },
     "tools/qa/derive_save_schema.c": {
-      "bytes": 7680,
-      "sha256": "3cca5b1a7d2acf266f38eaaeab2e5966095d685ae119a51a5183c847017e749c"
+      "bytes": 8072,
+      "sha256": "e1f6e03c73ec121731971c09c32db389d4eda0f56e07d091577500cbc1fef751"
     },
     "tools/qa/derive_schema.py": {
-      "bytes": 12882,
-      "sha256": "7cd61ef0c2b7bc0aec87b5b3f59fdf7b7dcb29a3ac6eff6e3a5ce294ae68049f"
+      "bytes": 13263,
+      "sha256": "7b4716bdc3e5cb3ffa1ec31531c116e0d352050a0ec932a4be7255d74f955c9c"
     },
     "tools/qa/make_ty28_fixture.py": {
       "bytes": 24157,
@@ -64458,8 +64458,8 @@
       "sha256": "37ce6110fde8548f63ccc58765616e7fff41d3cdd67fcd28ae1ec69f8added8c"
     },
     "tools/qa/space_runtime_probe.py": {
-      "bytes": 26207,
-      "sha256": "a26830e11e3fd7a206adf4690ddc3a599c66586ab263f89c35a7c9a36d4517cb"
+      "bytes": 26261,
+      "sha256": "79b7d0d9edad5d35843fea260a6981bd26539e16a16320e562bb5ff3cd47bb55"
     },
     "tools/qa/space_source_checks.py": {
       "bytes": 14454,
@@ -64788,6 +64788,22 @@
     "graphics/object_events/pics/people/space_boarding_guide.4bpp": {
       "bytes": 768,
       "sha256": "87a2cb95ce19ecdaf872c773ab4bcb88ecfdf2546652857c0e5dd1acb3250ebf"
+    },
+    "tools/hoenn_import/space_floor_motif_fix_v19.py": {
+      "bytes": 1023,
+      "sha256": "fab660f8c2e775686c04d93430783ab469f7d9d29e353652563d03bbf278daac"
+    },
+    "tools/hoenn_import/space_counter_hatch_fix_v19.py": {
+      "bytes": 1976,
+      "sha256": "b5c2c3311fefacbd940e2057e27bb5fa8b8dd66a5cc4df2c123407fe701bfba7"
+    },
+    "tools/qa/space_position_checks.py": {
+      "bytes": 17501,
+      "sha256": "7aa9dfb264fae8bc4af4a1178c79e34c439bddcdf45255acf64d7c1beba69380"
+    },
+    "tools/qa/space-position-cases.json": {
+      "bytes": 9531,
+      "sha256": "b1e5c253a4e42f39be65a5f6d6fa0df3d505bca4886c1161aa8987347d7e3ac7"
     }
   },
   "public_pokemon_sha256": "373b692e42d952b94b44f0ceda81d56dc75e1abb6af9d60ca5ec47d927b2057c",
@@ -65618,28 +65634,28 @@
       "symbol": "sgTileset_TYSpaceDeckV4LobbyAttributes",
       "source": "data/tilesets/secondary/ty_space_v4_cabin/metatile_attributes.bin",
       "bytes": 2048,
-      "sha256": "d90c4231015af8aed0be3245be96688dbde665523e33a58334cbae8784d0d870"
+      "sha256": "1cab2405ebadd51b91802358b576de17664116660e2a6a1380bc777f91574caa"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4LobbyMetatiles",
       "source": "data/tilesets/secondary/ty_space_v4_cabin/metatiles.bin",
       "bytes": 8192,
-      "sha256": "8aee979c456bc6e56f65bf0dcbc2439b0d6749a1354607da8e418a02bf144550"
+      "sha256": "18bdbe381005a7434c78f76eb1c7509d6e74bc0b2008fbb94a6fc60918418013"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4LobbyPalettes",
       "source": "data/tilesets/secondary/ty_space_v4_cabin/palettes.gbapal",
       "bytes": 416,
-      "sha256": "71a6c2980ebeaa85330f20837119a3f89439d4f4e53e5606f00b34ac88a7029d"
+      "sha256": "0c7d239f82c23d8b672feb0b78181a00214794bd60509fc5c716b0769dd72a75"
     },
     {
       "unit": "src/tilesets.o",
       "symbol": "sgTileset_TYSpaceDeckV4LobbyTiles",
       "source": "data/tilesets/secondary/ty_space_v4_cabin/tiles.4bpp",
       "bytes": 16384,
-      "sha256": "f98f15aecbc890ff88ffc05c884f93580295a77777fbdcf1142dcbe85119171c"
+      "sha256": "fe97814a0d3896a5abf78a9a7bfee1e71fa7fefffd91df68ca26b0d5a0e78851"
     },
     {
       "unit": "src/tilesets.o",
@@ -73979,8 +73995,8 @@
           2
         ],
         "source_ref": [
-          "league",
-          628
+          "hull",
+          512
         ],
         "reason": "No path from safe anchor or any normal door arrival; NPC domain checked separately"
       },
@@ -74022,7 +74038,7 @@
       }
     ]
   },
-  "previous_game_rom_sha256": "a5de4071bb78547764ca58deac09c0046deee07b4386e66fe94c3b87580b496f",
+  "previous_game_rom_sha256": "24334eccaf617b2c405f1cea3ff6dac28261392032c730a77ba2f74bc2a812fa",
   "interior_finish_revision": {
     "candidate": "SOURCE18_METAL_INTERIORS_AND_FLARE",
     "art_manifest_sha256": "8010dd02894cdf5810126b470d44fc30aaf96e8b95ddb08abda79c9d10b83545",
@@ -74035,5 +74051,49 @@
     ],
     "original_media_save_and_other_field_requirements_unchanged": true,
     "flight_source_sha256": "db1316e78815003311961a69a8bbdf113c1d97f41ae82d2c54268849a550f8e1"
+  },
+  "previous_game_roms_sha256": [
+    "a5de4071bb78547764ca58deac09c0046deee07b4386e66fe94c3b87580b496f",
+    "24334eccaf617b2c405f1cea3ff6dac28261392032c730a77ba2f74bc2a812fa"
+  ],
+  "followup19": {
+    "reviewed_packets": [
+      {
+        "manifest_sha256": "10d18659c0cff65f6a8c4f9721a6c273610139ae849b986e5b87bb47bac64a31",
+        "files": [
+          "src/fieldmap.c"
+        ]
+      },
+      {
+        "manifest_sha256": "2b34ad4257e52522b23555e9a1f2ee9f140479e3c6628a95042e98f146616171",
+        "files": [
+          "data/layouts/HoennSpacecraftCabin/map.bin",
+          "tools/hoenn_import/patches/HoennSpacecraftCabin.blockdata.bin",
+          "data/tilesets/secondary/ty_space_v4_cabin/tiles.4bpp",
+          "data/tilesets/secondary/ty_space_v4_cabin/metatiles.bin",
+          "data/tilesets/secondary/ty_space_v4_cabin/metatile_attributes.bin",
+          "data/tilesets/secondary/ty_space_v4_cabin/palettes.gbapal",
+          "tools/hoenn_import/build_space_decks_v4.py",
+          "tools/hoenn_import/space_counter_hatch_fix_v19.py"
+        ]
+      },
+      {
+        "manifest_sha256": "0c69372d2d0ddf472315cdda6e5d06335966b5ca1a1386384a8d57705af48f99",
+        "files": [
+          "data/layouts/HoennSpacecraftCabin/map.bin",
+          "tools/hoenn_import/patches/HoennSpacecraftCabin.blockdata.bin",
+          "data/tilesets/secondary/ty_space_v4_cabin/metatiles.bin",
+          "data/tilesets/secondary/ty_space_v4_cabin/metatile_attributes.bin",
+          "tools/hoenn_import/build_space_decks_v4.py",
+          "tools/hoenn_import/space_floor_motif_fix_v19.py"
+        ]
+      }
+    ],
+    "normal_continue_regressions": 28,
+    "unchanged_position_controls": 4,
+    "active_misty_case": 1,
+    "Pikachu_runtime_verified": false,
+    "recording_fix": "Unique crossing-serial photo names, no overwrite guard relaxation",
+    "actual_gameplay_pending": true
   }
 }

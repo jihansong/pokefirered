@@ -147,6 +147,14 @@ jobs:
           python3 -B tools/qa/derive_schema.py --source . --artifact-dir /tmp/space-host-tools --output ty28-schema.json --arm-cc "${DEVKITARM:?}/bin/arm-none-eabi-gcc"
           python3 -B tools/qa/make_ty28_fixture.py --source . --schema /tmp/space-host-tools/ty28-schema.json --recipe tools/qa/space-terminal-start.json --artifact-dir /tmp/space-host-tools --output public-space-flight.sav
 
+      - name: Verify 28 legacy saved positions and four unchanged normal Continues
+        id: positions
+        if: steps.build.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        run: |
+          python3 -B tools/qa/space_position_checks.py --host /tmp/space-host-tools/delta-core-host --source . --schema /tmp/space-host-tools/ty28-schema.json --rom /tmp/space-build-bundle/pokemonthyl.gba --symbols /tmp/space-build-bundle/pokemonthyl.sym --artifact-dir /tmp/space-position-evidence
+
       - name: Record continuous flight, 17-room tour, finish checks and SAVE with cold Continue
         id: walkthrough
         if: steps.build.outcome == 'success'
@@ -165,7 +173,7 @@ jobs:
           bundle = Path('/tmp/space-build-bundle')
           allowed = {'.json', '.jsonl', '.log', '.ppm', '.png', '.mp4'}
           sources = {'source-check': Path('/tmp/space-source-check'), 'linked-check': Path('/tmp/space-linked-check'),
-                     'walkthrough': Path('/tmp/space-tour-evidence')}
+                     'walkthrough': Path('/tmp/space-tour-evidence'), 'legacy-positions': Path('/tmp/space-position-evidence')}
           for label, source in sources.items():
               if not source.is_dir():
                   continue
@@ -209,6 +217,7 @@ jobs:
         env:
           LINKED_OUTCOME: ${{ steps.linked.outcome }}
           WALKTHROUGH_OUTCOME: ${{ steps.walkthrough.outcome }}
+          POSITIONS_OUTCOME: ${{ steps.positions.outcome }}
         shell: bash
         run: |
           python3 - <<'PY'
@@ -216,6 +225,13 @@ jobs:
           from pathlib import Path
           assert os.environ['LINKED_OUTCOME'] == 'success'
           assert os.environ['WALKTHROUGH_OUTCOME'] == 'success'
+          assert os.environ['POSITIONS_OUTCOME'] == 'success'
+          positions = json.loads(Path('/tmp/space-position-evidence/result.json').read_text())
+          assert positions['status'] == 'PASS_28_LEGACY_AND_4_UNCHANGED_NORMAL_CONTINUES'
+          assert len(positions['cases']) == 32
+          assert positions['misty_recovery']['status'] == 'PASS_ACTIVE_MISTY_RECOVERY_AND_NORMAL_REVEAL'
+          assert positions['active_misty_recovery_verified'] is True
+          assert positions['Pikachu_runtime_verified'] is False
           report = json.loads(Path('/tmp/space-tour-evidence/result.json').read_text())
           assert report['status'] == 'PASS_SYNTHETIC_NORMAL_SAVE_COLD_CORE'
           assert report['flight']['status'] == 'PASS_NORMAL_KEYS_OUTBOUND_RETURN'

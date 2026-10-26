@@ -309,7 +309,7 @@ class Tour:
                 assert self.walk(name, stand) == name
                 view = self.g.snapshot()
                 assert tuple(view['xy']) == stand and not view['script_locked']
-                picture = 'door-%s-%d-approach-%d' % (name, index, distance)
+                picture = 'door-%04d-%s-%d-approach-%d' % (len(self.crossings), name, index, distance)
                 self.g.picture(picture)
                 observations.append({'phase': 'approach', 'distance': distance, 'map': name,
                                      'xy': list(stand), 'video_frame': self.g.last_status.get('video_frames', 0),
@@ -334,7 +334,7 @@ class Tour:
         dx, dy = DELTA[REVERSE[outward]]
         assert tuple(snap['xy']) in {(lx, ly), (lx+dx, ly+dy)}, ('Wrong destination door landing', snap, landing)
         if observations:
-            picture = 'door-%s-%d-destination' % (name, index)
+            picture = 'door-%04d-%s-%d-destination' % (len(self.crossings)-1, name, index)
             self.g.picture(picture)
             observations.append({'phase': 'destination_landing', 'map': destination, 'xy': snap['xy'],
                                  'video_frame': self.g.last_status.get('video_frames', 0), 'picture': picture+'.ppm'})

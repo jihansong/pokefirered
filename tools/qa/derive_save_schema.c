@@ -8,6 +8,7 @@
 #include "main.h"
 #include "task.h"
 #include "gba/io_reg.h"
+#include "sprite.h"
 #include "fieldmap.h"
 #include "save_location.h"
 #include "constants/items.h"
@@ -16,6 +17,9 @@
 #include "constants/layouts.h"
 #include "constants/abilities.h"
 #include "constants/pokemon.h"
+#include "constants/event_objects.h"
+#include "constants/map_event_ids.h"
+#include "constants/event_object_movement.h"
 #include "fixture_bag_schema.inc"
 
 _Static_assert(sizeof(void *) == 4, "32-bit GBA pointers required");
@@ -39,10 +43,18 @@ const struct TyFixtureRecord gTyFixtureSchema[] = {
     SIZE(PlayerAvatar),
     FIELD(PlayerAvatar, objectEventId),
     FIELD(PlayerAvatar, flags),
+    SIZE(Sprite),
+    FIELD(Sprite, x),
+    FIELD(Sprite, y),
+    FIELD(Sprite, x2),
+    FIELD(Sprite, y2),
     SIZE(ObjectEvent),
     FIELD(ObjectEvent, currentCoords),
     FIELD(ObjectEvent, previousCoords),
     FIELD(ObjectEvent, initialCoords),
+    FIELD(ObjectEvent, spriteId),
+    FIELD(ObjectEvent, graphicsId),
+    FIELD(ObjectEvent, movementType),
     FIELD(ObjectEvent, localId),
     FIELD(ObjectEvent, mapNum),
     FIELD(ObjectEvent, mapGroup),
@@ -50,6 +62,7 @@ const struct TyFixtureRecord gTyFixtureSchema[] = {
     FIELD(Main, callback2),
     SIZE(SaveBlock1),
     FIELD(SaveBlock1, pos),
+    FIELD(SaveBlock1, objectEvents),
     FIELD(SaveBlock1, location),
     FIELD(SaveBlock1, continueGameWarp),
     FIELD(SaveBlock1, dynamicWarp),

@@ -55,7 +55,8 @@ BITFIELDS={
     'BoxPokemon':['hasSpecies','isEgg','isBadEgg','isStarterPikachu','isSnagged'],
     'PokemonSubstruct3':['metLevel','metGame','pokeball','otGender','hpIV','attackIV','defenseIV','speedIV','spAttackIV','spDefenseIV','isEgg','abilityNum','modernFatefulEncounter'],
     'SaveBlock2':['optionsTextSpeed','optionsWindowFrameType','optionsSound','optionsBattleStyle','optionsBattleSceneOff','regionMapZoom'],
-    'ObjectEvent':['active','currentElevation','facingDirection'],
+    'ObjectEvent':['active','isPlayer','offScreen','invisible','trackedByCamera','currentElevation','previousElevation','facingDirection','movementDirection'],
+    'Sprite':['inUse','invisible'],
 }
 PREFIXES=('FLAG_','VAR_','ITEM_','MOVE_','SPECIES_','MAP_','HOENN_','BAG_','VARS_','FLAGS_',
           'SPECIAL_FLAGS','SPECIAL_VARS','SECTOR_','SECTORS_','EXPANDED_SAVE_','POCKET_',
@@ -63,7 +64,7 @@ PREFIXES=('FLAG_','VAR_','ITEM_','MOVE_','SPECIES_','MAP_','HOENN_','BAG_','VARS
 EXACT={'LEGACY_BOXES_COUNT','TOTAL_BOXES_COUNT','EXTRA_BOXES_COUNT','IN_BOX_COUNT','BOX_NAME_LENGTH',
        'NUM_BAG_POCKETS','PARTY_SIZE','LANGUAGE_ENGLISH','GAME_VERSION','GAME_LANGUAGE','EOS','MAIL_NONE',
        'PLAYER_NAME_LENGTH','POKEMON_NAME_LENGTH','TRAINER_ID_LENGTH','DEX_FLAGS_NO','NUM_FLAG_BYTES',
-       'NUM_SECTORS_PER_SLOT','MAX_DEFAULT_WALLPAPER','WARP_ID_NONE','NUM_SPECIES','MOVES_COUNT','ITEMS_COUNT','CONTINUE_GAME_WARP','MAP_OFFSET'}
+       'NUM_SECTORS_PER_SLOT','MAX_DEFAULT_WALLPAPER','WARP_ID_NONE','NUM_SPECIES','MOVES_COUNT','ITEMS_COUNT','CONTINUE_GAME_WARP','MAP_OFFSET','OBJECT_EVENTS_COUNT','MOVEMENT_TYPE_PLAYER','OBJ_EVENT_GFX_RED_NORMAL','OBJ_EVENT_ID_PLAYER','DIR_SOUTH','MOVEMENT_TYPE_NONE','OBJ_EVENT_GFX_MISTY_COMPANION','LOCALID_MISTY_COMPANION','MAX_SPRITES'}
 
 
 def derive(source,artifact_dir,output,compiler):
@@ -99,7 +100,7 @@ def derive(source,artifact_dir,output,compiler):
     (work/'fixture_constants.inc').write_text('\n'.join('#ifdef '+name+'\nCONSTANT('+name+'),\n#endif' for name in sorted(names))+'\n',encoding='utf-8')
     probes=[]
     for type_name,fields in BITFIELDS.items():
-        header=global_header if type_name=='SaveBlock2' else read('include/global.fieldmap.h') if type_name=='ObjectEvent' else pokemon_header
+        header=global_header if type_name=='SaveBlock2' else read('include/global.fieldmap.h') if type_name=='ObjectEvent' else read('include/sprite.h') if type_name=='Sprite' else pokemon_header
         block=re.search(r'^struct '+type_name+r'\s*\{.*?^\};',header,re.M|re.S).group()
         for field in fields:
             width=int(re.search(r'\b'+field+r'\s*:\s*(\d+)',block).group(1))

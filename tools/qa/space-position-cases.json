@@ -1,0 +1,477 @@
+{
+  "schema": "TY_PUBLIC_PREBOOT_SAVED_POSITION_CASES_V1",
+  "base_recipe": "tools/qa/space-cabin-tour.json",
+  "scope": "Source-derived old normal coordinates only; no private save input or runtime memory write",
+  "legacy_count": 28,
+  "unchanged_controls": 4,
+  "cases": [
+    {
+      "id": "legacy-cabin-0-4",
+      "map": "HoennSpacecraftCabin",
+      "map_token": "MAP_HOENN_SPACECRAFT_CABIN",
+      "xy": [
+        0,
+        4
+      ],
+      "expected_xy": [
+        10,
+        12
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-cockpit-3-4",
+      "map": "HoennSpacecraftCockpit",
+      "map_token": "MAP_HOENN_SPACECRAFT_COCKPIT",
+      "xy": [
+        3,
+        4
+      ],
+      "expected_xy": [
+        10,
+        12
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-cockpit-6-4",
+      "map": "HoennSpacecraftCockpit",
+      "map_token": "MAP_HOENN_SPACECRAFT_COCKPIT",
+      "xy": [
+        6,
+        4
+      ],
+      "expected_xy": [
+        10,
+        12
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-cockpit-7-2",
+      "map": "HoennSpacecraftCockpit",
+      "map_token": "MAP_HOENN_SPACECRAFT_COCKPIT",
+      "xy": [
+        7,
+        2
+      ],
+      "expected_xy": [
+        10,
+        12
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-cockpit-8-2",
+      "map": "HoennSpacecraftCockpit",
+      "map_token": "MAP_HOENN_SPACECRAFT_COCKPIT",
+      "xy": [
+        8,
+        2
+      ],
+      "expected_xy": [
+        10,
+        12
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-cockpit-9-2",
+      "map": "HoennSpacecraftCockpit",
+      "map_token": "MAP_HOENN_SPACECRAFT_COCKPIT",
+      "xy": [
+        9,
+        2
+      ],
+      "expected_xy": [
+        10,
+        12
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-cockpit-9-3",
+      "map": "HoennSpacecraftCockpit",
+      "map_token": "MAP_HOENN_SPACECRAFT_COCKPIT",
+      "xy": [
+        9,
+        3
+      ],
+      "expected_xy": [
+        10,
+        12
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-cockpit-10-2",
+      "map": "HoennSpacecraftCockpit",
+      "map_token": "MAP_HOENN_SPACECRAFT_COCKPIT",
+      "xy": [
+        10,
+        2
+      ],
+      "expected_xy": [
+        10,
+        12
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-cockpit-10-3",
+      "map": "HoennSpacecraftCockpit",
+      "map_token": "MAP_HOENN_SPACECRAFT_COCKPIT",
+      "xy": [
+        10,
+        3
+      ],
+      "expected_xy": [
+        10,
+        12
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-cockpit-11-2",
+      "map": "HoennSpacecraftCockpit",
+      "map_token": "MAP_HOENN_SPACECRAFT_COCKPIT",
+      "xy": [
+        11,
+        2
+      ],
+      "expected_xy": [
+        10,
+        12
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-cockpit-12-2",
+      "map": "HoennSpacecraftCockpit",
+      "map_token": "MAP_HOENN_SPACECRAFT_COCKPIT",
+      "xy": [
+        12,
+        2
+      ],
+      "expected_xy": [
+        10,
+        12
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-cockpit-13-4",
+      "map": "HoennSpacecraftCockpit",
+      "map_token": "MAP_HOENN_SPACECRAFT_COCKPIT",
+      "xy": [
+        13,
+        4
+      ],
+      "expected_xy": [
+        10,
+        12
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-cockpit-16-4",
+      "map": "HoennSpacecraftCockpit",
+      "map_token": "MAP_HOENN_SPACECRAFT_COCKPIT",
+      "xy": [
+        16,
+        4
+      ],
+      "expected_xy": [
+        10,
+        12
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-navigation-6-11",
+      "map": "HoennSpacecraftNavigation",
+      "map_token": "MAP_HOENN_SPACECRAFT_NAVIGATION",
+      "xy": [
+        6,
+        11
+      ],
+      "expected_xy": [
+        10,
+        12
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-navigation-12-2",
+      "map": "HoennSpacecraftNavigation",
+      "map_token": "MAP_HOENN_SPACECRAFT_NAVIGATION",
+      "xy": [
+        12,
+        2
+      ],
+      "expected_xy": [
+        10,
+        12
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-navigation-13-2",
+      "map": "HoennSpacecraftNavigation",
+      "map_token": "MAP_HOENN_SPACECRAFT_NAVIGATION",
+      "xy": [
+        13,
+        2
+      ],
+      "expected_xy": [
+        10,
+        12
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-navigation-14-4",
+      "map": "HoennSpacecraftNavigation",
+      "map_token": "MAP_HOENN_SPACECRAFT_NAVIGATION",
+      "xy": [
+        14,
+        4
+      ],
+      "expected_xy": [
+        10,
+        12
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-captainsoffice-3-3",
+      "map": "HoennSpacecraftCaptainsOffice",
+      "map_token": "MAP_HOENN_SPACECRAFT_CAPTAINS_OFFICE",
+      "xy": [
+        3,
+        3
+      ],
+      "expected_xy": [
+        5,
+        6
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-captainsoffice-7-3",
+      "map": "HoennSpacecraftCaptainsOffice",
+      "map_token": "MAP_HOENN_SPACECRAFT_CAPTAINS_OFFICE",
+      "xy": [
+        7,
+        3
+      ],
+      "expected_xy": [
+        5,
+        6
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-captainsoffice-7-4",
+      "map": "HoennSpacecraftCaptainsOffice",
+      "map_token": "MAP_HOENN_SPACECRAFT_CAPTAINS_OFFICE",
+      "xy": [
+        7,
+        4
+      ],
+      "expected_xy": [
+        5,
+        6
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-captainsoffice-8-3",
+      "map": "HoennSpacecraftCaptainsOffice",
+      "map_token": "MAP_HOENN_SPACECRAFT_CAPTAINS_OFFICE",
+      "xy": [
+        8,
+        3
+      ],
+      "expected_xy": [
+        5,
+        6
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-captainsoffice-8-4",
+      "map": "HoennSpacecraftCaptainsOffice",
+      "map_token": "MAP_HOENN_SPACECRAFT_CAPTAINS_OFFICE",
+      "xy": [
+        8,
+        4
+      ],
+      "expected_xy": [
+        5,
+        6
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-captainsoffice-9-4",
+      "map": "HoennSpacecraftCaptainsOffice",
+      "map_token": "MAP_HOENN_SPACECRAFT_CAPTAINS_OFFICE",
+      "xy": [
+        9,
+        4
+      ],
+      "expected_xy": [
+        5,
+        6
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-captainsoffice-10-2",
+      "map": "HoennSpacecraftCaptainsOffice",
+      "map_token": "MAP_HOENN_SPACECRAFT_CAPTAINS_OFFICE",
+      "xy": [
+        10,
+        2
+      ],
+      "expected_xy": [
+        5,
+        6
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-captainsoffice-10-3",
+      "map": "HoennSpacecraftCaptainsOffice",
+      "map_token": "MAP_HOENN_SPACECRAFT_CAPTAINS_OFFICE",
+      "xy": [
+        10,
+        3
+      ],
+      "expected_xy": [
+        5,
+        6
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-captainsoffice-10-4",
+      "map": "HoennSpacecraftCaptainsOffice",
+      "map_token": "MAP_HOENN_SPACECRAFT_CAPTAINS_OFFICE",
+      "xy": [
+        10,
+        4
+      ],
+      "expected_xy": [
+        5,
+        6
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-captainsoffice-4-2",
+      "map": "HoennSpacecraftCaptainsOffice",
+      "map_token": "MAP_HOENN_SPACECRAFT_CAPTAINS_OFFICE",
+      "xy": [
+        4,
+        2
+      ],
+      "expected_xy": [
+        5,
+        6
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "legacy-captainsoffice-5-2",
+      "map": "HoennSpacecraftCaptainsOffice",
+      "map_token": "MAP_HOENN_SPACECRAFT_CAPTAINS_OFFICE",
+      "xy": [
+        5,
+        2
+      ],
+      "expected_xy": [
+        5,
+        6
+      ],
+      "kind": "legacy_recovery"
+    },
+    {
+      "id": "safe-cabin",
+      "map": "HoennSpacecraftCabin",
+      "map_token": "MAP_HOENN_SPACECRAFT_CABIN",
+      "xy": [
+        10,
+        8
+      ],
+      "expected_xy": [
+        10,
+        8
+      ],
+      "kind": "normal_open_control"
+    },
+    {
+      "id": "safe-cockpit",
+      "map": "HoennSpacecraftCockpit",
+      "map_token": "MAP_HOENN_SPACECRAFT_COCKPIT",
+      "xy": [
+        10,
+        8
+      ],
+      "expected_xy": [
+        10,
+        8
+      ],
+      "kind": "normal_open_control"
+    },
+    {
+      "id": "safe-navigation",
+      "map": "HoennSpacecraftNavigation",
+      "map_token": "MAP_HOENN_SPACECRAFT_NAVIGATION",
+      "xy": [
+        10,
+        8
+      ],
+      "expected_xy": [
+        10,
+        8
+      ],
+      "kind": "normal_open_control"
+    },
+    {
+      "id": "safe-captainsoffice",
+      "map": "HoennSpacecraftCaptainsOffice",
+      "map_token": "MAP_HOENN_SPACECRAFT_CAPTAINS_OFFICE",
+      "xy": [
+        8,
+        7
+      ],
+      "expected_xy": [
+        8,
+        7
+      ],
+      "kind": "normal_open_control"
+    }
+  ],
+  "misty_case": {
+    "id": "misty-cockpit-10-3",
+    "map": "HoennSpacecraftCockpit",
+    "map_token": "MAP_HOENN_SPACECRAFT_COCKPIT",
+    "xy": [
+      10,
+      3
+    ],
+    "expected_xy": [
+      10,
+      12
+    ],
+    "joined_flag": "FLAG_MISTY_COMPANION_JOINED",
+    "saved_local_id": "LOCALID_MISTY_COMPANION",
+    "normal_walk": [
+      "E",
+      "E",
+      "E"
+    ]
+  }
+}

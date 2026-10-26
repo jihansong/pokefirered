@@ -64430,8 +64430,8 @@
       "sha256": "b747f6a336bc0d4fba166b286ad5df47959f7acf35ba2696e87186655b377e39"
     },
     "tools/qa/produce_space_build.py": {
-      "bytes": 10644,
-      "sha256": "6be144e24157596599d0a8b70722b5abdbe1537cf77289d6e257c86cc2e9980d"
+      "bytes": 10620,
+      "sha256": "b81bdd75a37a9613450d5c0a74327d037b8c0b2d3f1630ab9eaa86456b6d0a85"
     },
     "tools/qa/seal_space_artifact.py": {
       "bytes": 3464,

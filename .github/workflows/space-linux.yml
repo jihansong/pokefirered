@@ -38,7 +38,7 @@ jobs:
         run: |
           python3 - <<'PY'
           from pathlib import Path, PurePosixPath
-          import json, subprocess
+          import hashlib, json, subprocess
           root = Path.cwd()
           reference = json.loads(Path('tools/qa/space_reference_manifest.json').read_text())
           paths = set(reference['files']) | {'tools/qa/space_reference_manifest.json', '.github/workflows/space-linux.yml'}
@@ -50,6 +50,31 @@ jobs:
                          input='\n'.join('/' + x for x in sorted(paths)) + '\n', text=True, check=True)
           actual = subprocess.check_output(['git', '-c', 'safe.directory=' + str(root), 'rev-parse', 'HEAD'], text=True).strip()
           print('Selected source commit:', actual, 'inventory inputs:', len(paths))
+          # .gitattributes requests CRLF for PAL text. Restore the exact declared
+          # Git blob bytes in this disposable checkout before checking inputs.
+          # No PNG, pixel, palette value or original user file is transformed.
+          git = ['git', '-c', 'safe.directory=' + str(root)]
+          reader = subprocess.Popen(git + ['cat-file', '--batch'], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+          restored = []
+          try:
+              for name, row in reference['files'].items():
+                  path = root/name
+                  raw = path.read_bytes()
+                  if len(raw) == row['bytes'] and hashlib.sha256(raw).hexdigest() == row['sha256']:
+                      continue
+                  reader.stdin.write(('HEAD:' + name + '\n').encode())
+                  reader.stdin.flush()
+                  info = reader.stdout.readline().decode().split()
+                  assert len(info) == 3 and info[1] == 'blob', name
+                  raw = reader.stdout.read(int(info[2]))
+                  assert reader.stdout.read(1) == b'\n'
+                  assert len(raw) == row['bytes'] and hashlib.sha256(raw).hexdigest() == row['sha256'], name
+                  path.write_bytes(raw)
+                  restored.append(name)
+          finally:
+              reader.stdin.close()
+              assert reader.wait(timeout=30) == 0
+          print('Exact declared Git blobs restored after checkout:', len(restored), restored[:5])
           PY
           echo "${DEVKITARM:?}/bin" >> "$GITHUB_PATH"
 
@@ -90,7 +115,7 @@ jobs:
           python3 -B tools/qa/verify_space_candidate.py --source . --reference-manifest tools/qa/space_reference_manifest.json --artifact-dir /tmp/space-build-bundle --out /tmp/space-linked-check
 
       - name: Clean-build the unchanged official Delta GBA core host
-        if: steps.linked.outcome == 'success'
+        if: steps.build.outcome == 'success'
         shell: bash
         run: |
           set -euo pipefail
@@ -106,7 +131,7 @@ jobs:
 
       - name: Record actual room-to-room gameplay and normal SAVE with cold Continue
         id: walkthrough
-        if: steps.linked.outcome == 'success'
+        if: steps.build.outcome == 'success'
         continue-on-error: true
         shell: bash
         run: |

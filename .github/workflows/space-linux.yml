@@ -1,4 +1,4 @@
-name: Space interiors build and recorded synthetic walkthrough
+name: Space exterior candidate build and recorded normal flight
 
 on:
   push:
@@ -145,15 +145,15 @@ jobs:
           git -C "$core_dir" checkout -q --detach FETCH_HEAD
           python3 -B tools/qa/build_delta_host.py --source "$core_dir" --artifact-dir /tmp/space-host-tools --output delta-core-host --jobs "$(nproc)"
           python3 -B tools/qa/derive_schema.py --source . --artifact-dir /tmp/space-host-tools --output ty28-schema.json --arm-cc "${DEVKITARM:?}/bin/arm-none-eabi-gcc"
-          python3 -B tools/qa/make_ty28_fixture.py --source . --schema /tmp/space-host-tools/ty28-schema.json --recipe tools/qa/space-cabin-tour.json --artifact-dir /tmp/space-host-tools --output public-space-tour.sav
+          python3 -B tools/qa/make_ty28_fixture.py --source . --schema /tmp/space-host-tools/ty28-schema.json --recipe tools/qa/space-terminal-start.json --artifact-dir /tmp/space-host-tools --output public-space-flight.sav
 
-      - name: Record actual room-to-room gameplay and normal SAVE with cold Continue
+      - name: Record normal registration, complete flight round trip and SAVE with cold Continue
         id: walkthrough
         if: steps.build.outcome == 'success'
         continue-on-error: true
         shell: bash
         run: |
-          python3 -B tools/qa/space_runtime_probe.py --host /tmp/space-host-tools/delta-core-host --source . --schema /tmp/space-host-tools/ty28-schema.json --rom /tmp/space-build-bundle/pokemonthyl.gba --symbols /tmp/space-build-bundle/pokemonthyl.sym --seed /tmp/space-host-tools/public-space-tour.sav --artifact-dir /tmp/space-tour-evidence --scenario tour-save --video
+          python3 -B tools/qa/space_runtime_probe.py --host /tmp/space-host-tools/delta-core-host --source . --schema /tmp/space-host-tools/ty28-schema.json --rom /tmp/space-build-bundle/pokemonthyl.gba --symbols /tmp/space-build-bundle/pokemonthyl.sym --seed /tmp/space-host-tools/public-space-flight.sav --artifact-dir /tmp/space-tour-evidence --scenario flight-save --video
 
       - name: Add only explicit public QA evidence to the build bundle
         if: always() && steps.build.outcome == 'success'
@@ -176,7 +176,7 @@ jobs:
                       target.parent.mkdir(parents=True, exist_ok=True)
                       assert not target.exists()
                       shutil.copyfile(path, target)
-          for name in ('delta-core-host.build.json', 'ty28-schema.json', 'public-space-tour.sav.provenance.json'):
+          for name in ('delta-core-host.build.json', 'ty28-schema.json', 'public-space-flight.sav.provenance.json'):
               path = Path('/tmp/space-host-tools')/name
               if path.is_file():
                   target = bundle/'qa'/name
@@ -218,7 +218,9 @@ jobs:
           assert os.environ['WALKTHROUGH_OUTCOME'] == 'success'
           report = json.loads(Path('/tmp/space-tour-evidence/result.json').read_text())
           assert report['status'] == 'PASS_SYNTHETIC_NORMAL_SAVE_COLD_CORE'
-          assert len(report['tour']['visited_rooms']) == 17 and len(report['tour']['directional_crossings']) == 32
+          assert report['flight']['status'] == 'PASS_NORMAL_KEYS_OUTBOUND_RETURN'
+          assert [s['duration'] for s in report['flight']['scenes']] == [1800, 1440]
+          assert [s['returning'] for s in report['flight']['scenes']] == [False, True]
           assert report['video']['frames'] > 0
-          print('Actual rendered synthetic-fixture walkthrough and normal SAVE/cold Continue passed; not installed iOS Delta app verification.')
+          print('Actual rendered synthetic-fixture outbound/return flight and normal SAVE/cold Continue passed; not installed iOS Delta app verification.')
           PY

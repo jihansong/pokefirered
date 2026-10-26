@@ -395,7 +395,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for key in ('host', 'source', 'schema', 'rom', 'symbols', 'seed', 'artifact-dir'):
         parser.add_argument('--'+key, type=Path, required=True)
-    parser.add_argument('--scenario', choices=['boot-save', 'tour-save'], default='boot-save')
+    parser.add_argument('--scenario', choices=['boot-save', 'tour-save', 'flight-save'], default='boot-save')
     parser.add_argument('--video', action='store_true', help='Record actual rendered frames through a dedicated ffmpeg pipe')
     a = parser.parse_args()
     for key in ('host', 'source', 'schema', 'rom', 'symbols', 'seed'):
@@ -426,6 +426,9 @@ def main():
             cases = json.loads((a.source/'tools/qa/space-service-cases.json').read_text(encoding='utf8'))
             pc_case = next(x for x in cases['services'] if x['script'] == 'SpaceFacility_PC')
             result['pc'] = pc_roundtrip(guest, tour, pc_case)
+        if a.scenario == 'flight-save':
+            from space_flight_checks import run_flight_checks
+            result['flight'] = run_flight_checks(guest, Tour(guest, a.source), a.source)
         if a.video:
             guest.step(0, 120)
             result['video'] = guest.finish_video()

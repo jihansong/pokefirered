@@ -128,6 +128,17 @@ def linked(source, artifact_dir, reference_path, reference):
         assert size == len(raw) == row['bytes'] and sha(raw)==row['sha256'] and elf.at(address, size) == raw
         bound.append(dict(unit=row['unit'], symbol=row['symbol'], bytes=size, sha256=sha(raw), source_exact=True))
     assert sum(x['unit'] == 'src/hoenn_space_story.o' for x in bound) == 35
+    exterior = reference.get('exterior_revision')
+    if exterior:
+        assert len(exterior['original_story_inputs_preserved']) == 35
+        for row in exterior['original_story_inputs_preserved']:
+            raw = (source/row['source']).read_bytes()
+            assert len(raw) == row['bytes'] and sha(raw) == row['sha256']
+        replaced = exterior['intentional_linked_replacements']
+        assert len(replaced) == 9 and len({x['symbol'] for x in replaced}) == 9
+        for row in replaced:
+            actual = next(x for x in reference['direct_blobs'] if x['unit'] == 'src/hoenn_space_story.o' and x['symbol'] == row['symbol'])
+            assert [actual[k] for k in ('source', 'bytes', 'sha256')] == [row['new_source'], row['bytes'], row['sha256']]
     assert sum(x['unit'] == 'src/tilesets.o' for x in bound) == 68
     approved = []
     for name, row in reference['approved_media'].items():
@@ -155,8 +166,13 @@ def linked(source, artifact_dir, reference_path, reference):
         assert ptr == elf.one(group)['value']
         for n,name in enumerate(groups[group]):
             assert struct.unpack('<I', elf.at(ptr+4*n, 4))[0] == elf.one(name)['value']
+    null_layout_slots = 0
     for i, layout in enumerate(layouts):
-        assert struct.unpack('<I', elf.at(elf.one('gMapLayouts')['value']+4*i,4))[0] == elf.one(layout['name'])['value']
+        assert isinstance(layout, dict), ('Malformed layout slot', i)
+        actual_layout = struct.unpack('<I', elf.at(elf.one('gMapLayouts')['value']+4*i,4))[0]
+        expected_layout = 0 if layout == {} else elf.one(layout['name'])['value']
+        assert actual_layout == expected_layout, ('Linked layout slot mismatch', i, actual_layout, expected_layout)
+        null_layout_slots += int(layout == {})
     contract = load(source/'tools/hoenn_import/space_deck_v4_contract.json'); rooms = []
     tileset_text = (source/'src/data/tilesets/ty_space_deck_v4.h').read_text()
     for room in contract['maps']:
@@ -193,8 +209,10 @@ def linked(source, artifact_dir, reference_path, reference):
     return dict(status='COMPILED_SOURCE_LINK_AND_ART_PASS_GAMEPLAY_PENDING', provenance_sha256=sha(provenance_path.read_bytes()),
                 source_commit=p['source_commit'], ELF_ROM_sections=all_sections, object_proofs=object_proofs,
                 compiled_abi=abi, RAM_symbols=len(actual_ram), save_symbols=len(reference['save_symbols']),
-                direct_blobs=bound, approved_media=approved, original_field_assets=len(field), linked_rooms=rooms,
-                all_maps=1040, all_layouts=862, limits=['No emulator or installed iOS Delta execution.',
+                direct_blobs=bound, intentional_exterior_replacements=exterior['intentional_linked_replacements'] if exterior else [],
+                original35_source_inputs_preserved=bool(exterior),
+                approved_media=approved, original_field_assets=len(field), linked_rooms=rooms,
+                all_maps=1040, all_layouts=862, null_layout_slots=null_layout_slots, limits=['No emulator or installed iOS Delta execution.',
                 'Facilities, mission branches, battles, followers, normal SAVE and cold Continue require separate actual-play evidence.'])
 
 

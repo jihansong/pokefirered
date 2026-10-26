@@ -39,6 +39,8 @@
 #define SPACE_RETURN_FRAMES 1440
 #define SPACE_CLOUD_BASE_TILE 48
 #define SPACE_RUNWAY_PALETTE 3
+#define SPACE_GEAR_COUNT 2
+#define SPACE_TRANSITION_HALF 32
 
 enum {UNIT_TANK, UNIT_SRB_LEFT, UNIT_SRB_RIGHT, UNIT_CRAFT, SPACE_UNIT_COUNT};
 enum {EFFECT_MAIN, EFFECT_SRB_LEFT, EFFECT_SRB_RIGHT, EFFECT_RCS, SPACE_EFFECT_COUNT};
@@ -47,20 +49,20 @@ enum {SCENE_RUNNING, SCENE_FADE_OUT, SCENE_EXIT};
 #define tFrame data[1]
 #define tReturning data[2]
 
-static const u32 sTankTiles[] = INCBIN_U32("graphics/hoenn_space_story/tank-v2.4bpp");
-static const u16 sTankPalette[] = INCBIN_U16("graphics/hoenn_space_story/tank-v2.gbapal");
-static const u32 sBoosterTiles[] = INCBIN_U32("graphics/hoenn_space_story/booster-v2.4bpp");
-static const u16 sBoosterPalette[] = INCBIN_U16("graphics/hoenn_space_story/booster-v2.gbapal");
-static const u32 sCraftTiles[] = INCBIN_U32("graphics/hoenn_space_story/orbiter.4bpp");
-static const u16 sCraftPalette[] = INCBIN_U16("graphics/hoenn_space_story/orbiter.gbapal");
+static const u32 sTankTiles[] = INCBIN_U32("graphics/hoenn_space_story/exterior_v3/tank.4bpp");
+static const u16 sTankPalette[] = INCBIN_U16("graphics/hoenn_space_story/exterior_v3/tank.gbapal");
+static const u32 sBoosterTiles[] = INCBIN_U32("graphics/hoenn_space_story/exterior_v3/booster.4bpp");
+static const u16 sBoosterPalette[] = INCBIN_U16("graphics/hoenn_space_story/exterior_v3/booster.gbapal");
+static const u32 sCraftTiles[] = INCBIN_U32("graphics/hoenn_space_story/exterior_v3/orbiter.4bpp");
+static const u16 sCraftPalette[] = INCBIN_U16("graphics/hoenn_space_story/exterior_v3/orbiter.gbapal");
 static const u32 sExhaustTiles[] = INCBIN_U32("graphics/hoenn_space_story/exhaust.4bpp");
 static const u16 sExhaustPalette[] = INCBIN_U16("graphics/hoenn_space_story/exhaust.gbapal");
 static const u32 sEarthTiles[] = INCBIN_U32("graphics/hoenn_space_story/earth.4bpp");
 static const u16 sEarthPalette[] = INCBIN_U16("graphics/hoenn_space_story/earth.gbapal");
 static const u16 sEarthMap[] = INCBIN_U16("graphics/hoenn_space_story/earth_tilemap.bin");
-static const u32 sGroundTiles[] = INCBIN_U32("graphics/hoenn_space_story/launch_ground.4bpp");
-static const u16 sGroundPalette[] = INCBIN_U16("graphics/hoenn_space_story/launch_ground.gbapal");
-static const u16 sGroundMap[] = INCBIN_U16("graphics/hoenn_space_story/launch_ground_tilemap.bin");
+static const u32 sGroundTiles[] = INCBIN_U32("graphics/hoenn_space_story/exterior_v3/launch_ground.4bpp");
+static const u16 sGroundPalette[] = INCBIN_U16("graphics/hoenn_space_story/exterior_v3/launch_ground.gbapal");
+static const u16 sGroundMap[] = INCBIN_U16("graphics/hoenn_space_story/exterior_v3/launch_ground_tilemap.bin");
 static const u32 sRunwayTiles[] = INCBIN_U32("graphics/airplane/ground.4bpp");
 static const u16 sRunwayPalette[] = INCBIN_U16("graphics/airplane/ground.gbapal");
 static const u16 sRunwayMap[] = INCBIN_U16("graphics/airplane/ground_tilemap.bin");
@@ -116,6 +118,14 @@ static const union AnimCmd sCraftR1[] = {ANIMCMD_FRAME(192, 1), ANIMCMD_END};
 static const union AnimCmd sCraftR2[] = {ANIMCMD_FRAME(320, 1), ANIMCMD_END};
 static const union AnimCmd *const sCraftLeftAnims[] = {sCraftL0, sCraftL1, sCraftL2};
 static const union AnimCmd *const sCraftRightAnims[] = {sCraftR0, sCraftR1, sCraftR2};
+static const struct OamData sGearOam =
+{
+    .affineMode = ST_OAM_AFFINE_OFF, .shape = SPRITE_SHAPE(8x16),
+    .size = SPRITE_SIZE(8x16), .priority = 0,
+};
+// Landing gear uses the craft sheet's appended two tiles and existing palette/matrix.
+static const union AnimCmd sGearAnim[] = {ANIMCMD_FRAME(384, 1), ANIMCMD_END};
+static const union AnimCmd *const sGearAnims[] = {sGearAnim};
 static const union AnimCmd sEffectAnim[] = {ANIMCMD_FRAME(0, 1), ANIMCMD_END};
 static const union AnimCmd *const sEffectAnims[] = {sEffectAnim};
 #define SPACE_TEMPLATE(tag, oamdata, animtable) {tag, tag, oamdata, animtable, NULL, gDummySpriteAffineAnimTable, SpriteCallbackDummy}
@@ -124,6 +134,7 @@ static const struct SpriteTemplate sLeftSrbTemplate = SPACE_TEMPLATE(TAG_SPACE_S
 static const struct SpriteTemplate sRightSrbTemplate = SPACE_TEMPLATE(TAG_SPACE_SRB_RIGHT, &sPairOam, sLauncherAnims);
 static const struct SpriteTemplate sCraftLeftTemplate = SPACE_TEMPLATE(TAG_SPACE_CRAFT, &sPairOam, sCraftLeftAnims);
 static const struct SpriteTemplate sCraftRightTemplate = SPACE_TEMPLATE(TAG_SPACE_CRAFT, &sPairOam, sCraftRightAnims);
+static const struct SpriteTemplate sGearTemplate = SPACE_TEMPLATE(TAG_SPACE_CRAFT, &sGearOam, sGearAnims);
 static const struct SpriteTemplate sEffectTemplate = SPACE_TEMPLATE(TAG_SPACE_EXHAUST, &sEffectOam, sEffectAnims);
 struct SpaceMotionKey
 {
@@ -228,10 +239,10 @@ static const struct SpaceMotionKey sReturn_passenger[] =
     {900, 108, 94, 262, 320, 0, TRUE},
     {1020, 112, 106, 258, 288, 0, TRUE},
     {1100, 118, 119, 252, 272, 0, TRUE},
-    {1140, 122, 124, 252, 256, 0, TRUE},
-    {1200, 127, 124, 256, 256, 0, TRUE},
-    {1320, 134, 124, 256, 256, 0, TRUE},
-    {1440, 134, 124, 256, 256, 0, TRUE},
+    {1140, 122, 128, 256, 256, 0, TRUE},
+    {1200, 127, 128, 256, 256, 0, TRUE},
+    {1320, 134, 128, 256, 256, 0, TRUE},
+    {1440, 134, 128, 256, 256, 0, TRUE},
 };
 
 static s16 SpaceMotion_Lerp(s16 a, s16 b, u16 weight)
@@ -309,7 +320,7 @@ static void SpaceMotion_ApplyPair(const struct SpaceMotionPair *pair,
 struct SpaceOwnedResources
 {
     u32 matrixMask;
-    u8 sprites[12];
+    u8 sprites[14];
     u8 spriteCount;
     u8 loadedSheets, loadedPalettes;
 };
@@ -321,6 +332,7 @@ struct SpaceFlight
     u8 effectSprites[SPACE_EFFECT_COUNT];
     u8 effectMatrices[SPACE_EFFECT_COUNT];
     bool8 spaceBackground;
+    u8 gearSprites[SPACE_GEAR_COUNT];
 };
 typedef char SpaceFlightHeapBudget[(sizeof(struct SpaceFlight) <= 0x2200) ? 1 : -1];
 typedef char SpaceSpriteTileBudget[((sizeof(sTankTiles) + sizeof(sBoosterTiles) * 2 + sizeof(sCraftTiles) + sizeof(sExhaustTiles)) <= 0x8000) ? 1 : -1];
@@ -575,6 +587,19 @@ static bool8 SpaceLoadActors(struct SpaceFlight *scene)
     // Explicit subpriority avoids Y sorting hiding the fuselage or a wing.
     gSprites[scene->units[UNIT_CRAFT].first].subpriority = 0;
     gSprites[scene->units[UNIT_CRAFT].second].subpriority = 0;
+    for (i = 0; i < SPACE_GEAR_COUNT; i++)
+    {
+        u8 id = SpaceCreateOwnedSprite(scene, &sGearTemplate);
+        if (id == MAX_SPRITES)
+            return FALSE;
+        scene->gearSprites[i] = id;
+        SpaceAttachMatrix(id, scene->units[UNIT_CRAFT].matrix);
+        // Same-priority sprites are Y-sorted. Keep gear behind craft0 explicitly.
+        gSprites[id].subpriority = 1;
+        gSprites[id].oam.affineMode = ST_OAM_AFFINE_DOUBLE;
+        CalcCenterToCornerVec(&gSprites[id], gSprites[id].oam.shape,
+                              gSprites[id].oam.size, ST_OAM_AFFINE_DOUBLE);
+    }
     for (i = 0; i < SPACE_EFFECT_COUNT; i++)
     {
         scene->effectMatrices[i] = SpaceOwnMatrix(scene);
@@ -588,18 +613,91 @@ static bool8 SpaceLoadActors(struct SpaceFlight *scene)
     return TRUE;
 }
 
-static void ShowSpaceBackground(struct SpaceFlight *scene, bool8 returning, bool8 space)
+static void ShowSpaceBackground(struct SpaceFlight *scene, bool8 returning, u16 frame)
 {
-    if (space == scene->spaceBackground)
-        return;
-    // All three BG tile ranges and palettes were loaded during black setup.
-    // This visible-frame switch never overwrites a live tile or palette bank.
-    HideBg(space ? 1 : 3);
-    HideBg(2);
-    if (returning && !space)
+    u16 center = returning ? 660 : 600;
+    u16 start = center - SPACE_TRANSITION_HALF;
+    u16 end = center + SPACE_TRANSITION_HALF;
+    u16 mix;
+    SetBgAttribute(3, BG_ATTR_PRIORITY, 2);
+    if (!returning && frame >= start - SPACE_TRANSITION_HALF && frame < start)
+    {
+        // Dissolve the independently-scrolling clouds before hiding BG2.
+        // BG1 is solid high-altitude sky throughout this lead-in interval.
+        mix = (frame - (start - SPACE_TRANSITION_HALF)) * 16 / SPACE_TRANSITION_HALF;
+        HideBg(3);
+        ShowBg(1);
         ShowBg(2);
-    ShowBg(space ? 3 : 1);
-    scene->spaceBackground = space;
+        SetGpuReg(REG_OFFSET_BLDCNT,
+                  BLDCNT_TGT1_BG2 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG1);
+        SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(16 - mix, mix));
+    }
+    else if (frame < start)
+    {
+        SetGpuReg(REG_OFFSET_BLDCNT, 0);
+        HideBg(returning ? 1 : 3);
+        if (returning || frame < 240)
+            HideBg(2);
+        else
+            ShowBg(2);
+        ShowBg(returning ? 3 : 1);
+    }
+    else if (frame < end)
+    {
+        mix = (frame - start) * 16 / (end - start);
+        ShowBg(3);
+        if (returning)
+        {
+            // Earth blends over the complete destination: runway or sky.
+            ShowBg(1);
+            ShowBg(2);
+            SetBgAttribute(3, BG_ATTR_PRIORITY, 0);
+            SetGpuReg(REG_OFFSET_BLDCNT,
+                      BLDCNT_TGT1_BG3 | BLDCNT_EFFECT_BLEND
+                    | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2);
+        }
+        else
+        {
+            HideBg(2);
+            ShowBg(1);
+            SetGpuReg(REG_OFFSET_BLDCNT,
+                      BLDCNT_TGT1_BG1 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG3);
+        }
+        // Only BG targets blend. Craft/gear/effect OBJ palettes stay unchanged.
+        SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(16 - mix, mix));
+    }
+    else
+    {
+        SetGpuReg(REG_OFFSET_BLDCNT, 0);
+        HideBg(returning ? 3 : 1);
+        if (returning)
+            ShowBg(2);
+        else
+            HideBg(2);
+        ShowBg(returning ? 1 : 3);
+    }
+    scene->spaceBackground = returning ? frame < center : frame >= center;
+}
+
+static void SpacePlaceGear(struct SpaceFlight *scene,
+                           const struct SpaceMotionSample *craft,
+                           bool8 returning, u16 frame)
+{
+    static const s8 xOffsets[SPACE_GEAR_COUNT] = {-10, 31};
+    u16 deploy = frame < 1020 ? 0 : frame < 1080 ? frame - 1020 : 60;
+    s16 localY = (2 + deploy * 8 / 60) * 256 / craft->inverseScale;
+    u8 i, angle = craft->angle;
+    for (i = 0; i < SPACE_GEAR_COUNT; i++)
+    {
+        struct Sprite *sprite = &gSprites[scene->gearSprites[i]];
+        s16 localX = xOffsets[i] * 256 / craft->inverseScale;
+        sprite->invisible = !returning || frame < 1020 || !craft->visible;
+        if (sprite->invisible)
+            continue;
+        sprite->x = craft->x + Cos(angle, localX) - Sin(angle, localY);
+        sprite->y = craft->y + Sin(angle, localX) + Cos(angle, localY);
+        // Existing craft matrix is shared; no new affine ownership is allocated.
+    }
 }
 
 static void SpaceSampleAll(bool8 returning, u16 frame, struct SpaceMotionSample *samples)
@@ -675,7 +773,6 @@ static void RenderSpaceFrame(struct SpaceFlight *scene, bool8 returning, u16 fra
 {
     struct SpaceMotionSample units[SPACE_UNIT_COUNT];
     u8 i;
-    bool8 space = returning ? frame < 660 : frame >= 600;
     SpaceSampleAll(returning, frame, units);
     for (i = 0; i < SPACE_UNIT_COUNT; i++)
     {
@@ -689,31 +786,20 @@ static void RenderSpaceFrame(struct SpaceFlight *scene, bool8 returning, u16 fra
         SpaceSetPairBounds(&scene->units[i], mode);
         SpaceMotion_ApplyPair(&scene->units[i], &units[i]);
     }
-    ShowSpaceBackground(scene, returning, space);
-    if (space)
-    {
-        // Existing curved Earth is a finite240x160 source, not a seamless
-        //256x256 scrollingtexture. Anchor it to avoid the16px pad/Vwrap seam.
-        // Craft S-turns remain active; separate drifting stars are a laterartpass.
-        ChangeBgX(3, 0, BG_COORD_SET);
-        ChangeBgY(3, 0, BG_COORD_SET);
-    }
-    else if (!returning)
+    SpacePlaceGear(scene, &units[UNIT_CRAFT], returning, frame);
+    ShowSpaceBackground(scene, returning, frame);
+    ChangeBgX(3, 0, BG_COORD_SET);
+    ChangeBgY(3, 0, BG_COORD_SET);
+    if (!returning)
     {
         ChangeBgY(1, -(s32)(frame > 120 ? frame - 120 : 0) * 96, BG_COORD_SET);
-        if (frame >= 240)
-        {
-            ShowBg(2);
-            ChangeBgY(2, -(s32)frame * 192, BG_COORD_SET);
-            ChangeBgX(2, (s32)frame * 32, BG_COORD_SET);
-        }
+        ChangeBgY(2, -(s32)frame * 192, BG_COORD_SET);
+        ChangeBgX(2, (s32)frame * 32, BG_COORD_SET);
     }
     else
     {
-        // Original airplane runway is finite256x256, with its road at210..237.
-        // Y0..90 exposes at most source249; X0 exposes0..239: no tilemap wrap.
-        // Airport rises during approach; aircraft flare/rollout uses its keys.
-        u16 descent = frame < 1020 ? frame - 660 : 360;
+        // Clamp before660: the blended approach must not underflow a u16.
+        u16 descent = frame <= 660 ? 0 : frame < 1020 ? frame - 660 : 360;
         ChangeBgX(1, 0, BG_COORD_SET);
         ChangeBgY(1, (s32)descent * 90 * 256 / 360, BG_COORD_SET);
         ChangeBgX(2, 0, BG_COORD_SET);

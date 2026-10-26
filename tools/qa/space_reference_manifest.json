@@ -6,8 +6,8 @@
       "sha256": "f7770703b847585b1c5450a81e30ab185b5c333fbcbea0147727d1d9dae063b0"
     },
     ".github/workflows/space-linux.yml": {
-      "bytes": 11536,
-      "sha256": "0401f4df2d4fb34b2a0330bf639d447b436d9ab0cd02211a9ffc621982f618e5"
+      "bytes": 11711,
+      "sha256": "8aee348b1efbdc67a60ea520d951749b486fe3975896970950f8b048f46ed1b4"
     },
     ".gitignore": {
       "bytes": 1376,
@@ -61174,8 +61174,8 @@
       "sha256": "fda3cdebf9e2602016fc8b61d3d7d2c809ff1a009a1cdbbc30ea2710c4b63889"
     },
     "src/hoenn_space_story.c": {
-      "bytes": 36152,
-      "sha256": "cacc06c7df24538da7f325b19e5af02a05a2c3810d8a59d86cc1729675caeaf0"
+      "bytes": 39654,
+      "sha256": "922175259741d387beb46b7fa5bdbe946296366199403701e718e175bfec18b8"
     },
     "src/hoenn_villain_story.c": {
       "bytes": 2973,
@@ -64418,8 +64418,8 @@
       "sha256": "55f38ef589f06fbe638dd210625514a8380f86a3840de15f58e843c139a7a37e"
     },
     "tools/qa/derive_save_schema.c": {
-      "bytes": 7399,
-      "sha256": "b00ab69dfa96300ccbf88f5f28cf46b53526e6c19cf70ccc7f389a56be4f48c4"
+      "bytes": 7531,
+      "sha256": "8eb8010d4e8c66658755c0b39a0b0268c6465409542846abab10886f95f0633f"
     },
     "tools/qa/derive_schema.py": {
       "bytes": 12882,
@@ -64458,16 +64458,16 @@
       "sha256": "37ce6110fde8548f63ccc58765616e7fff41d3cdd67fcd28ae1ec69f8added8c"
     },
     "tools/qa/space_runtime_probe.py": {
-      "bytes": 22925,
-      "sha256": "31a6e19a31390aade74d1fddf891421c94ee21def72645a4ebda5ed503d3fe71"
+      "bytes": 23131,
+      "sha256": "774b756f5b01e22830509285310f96f8a5c62f1c9824e9c379f58448775ae197"
     },
     "tools/qa/space_source_checks.py": {
       "bytes": 10846,
       "sha256": "6c0d1d82894a7fa068191504b454fde136acaf88a4005e6b54bf28b3f07c0e1c"
     },
     "tools/qa/verify_space_candidate.py": {
-      "bytes": 15268,
-      "sha256": "3d8f02a52a82bb907ee958f7174b1b8b9b318bbf30bece8cd05c2bca33bda026"
+      "bytes": 16563,
+      "sha256": "aeede962959601e5115294b6fa3301500391caeffc55f38c4f5a8dd15b6f9248"
     },
     "tools/ramscrgen/.gitignore": {
       "bytes": 10,
@@ -64700,6 +64700,46 @@
     "tools/qa/space_pc_roundtrip.py": {
       "bytes": 4138,
       "sha256": "61c30c12a71a18c745d187b13d28bd7a4bdca0583543e4232473db8ae09870c4"
+    },
+    "graphics/hoenn_space_story/exterior_v3/booster.4bpp": {
+      "bytes": 4096,
+      "sha256": "639d33a19830dfad42468d11363a76bcb2f41a379689034c544931dadb745a08"
+    },
+    "graphics/hoenn_space_story/exterior_v3/booster.gbapal": {
+      "bytes": 32,
+      "sha256": "d27ec91211dfe253a92de95c3b69fdfc988848a8146a3193384c47ca8b214972"
+    },
+    "graphics/hoenn_space_story/exterior_v3/launch_ground.4bpp": {
+      "bytes": 7424,
+      "sha256": "f9deb46d7452d7ab3dd7cd833e42ede7bbd994758b3a517461ebf951fcf0c403"
+    },
+    "graphics/hoenn_space_story/exterior_v3/launch_ground.gbapal": {
+      "bytes": 32,
+      "sha256": "8bcce2861230dbe04e37c7903187ba7374a75e5856a08aa6afeae40ad870e12b"
+    },
+    "graphics/hoenn_space_story/exterior_v3/launch_ground_tilemap.bin": {
+      "bytes": 4096,
+      "sha256": "80c3152d95b5b0861242c1092f0b87fa902ede4eb30ec17cfd71ef73eb0e065c"
+    },
+    "graphics/hoenn_space_story/exterior_v3/orbiter.4bpp": {
+      "bytes": 12352,
+      "sha256": "82bc2178105bc72ec5d79c589e0d80fa4a7ed281c85b445f6648d809458a88a8"
+    },
+    "graphics/hoenn_space_story/exterior_v3/orbiter.gbapal": {
+      "bytes": 32,
+      "sha256": "8bcce2861230dbe04e37c7903187ba7374a75e5856a08aa6afeae40ad870e12b"
+    },
+    "graphics/hoenn_space_story/exterior_v3/tank.4bpp": {
+      "bytes": 4096,
+      "sha256": "eede507bbf4a6c5ac5154c4926a5859cfa033caf30f1316211fc6c1adb6bd8f4"
+    },
+    "graphics/hoenn_space_story/exterior_v3/tank.gbapal": {
+      "bytes": 32,
+      "sha256": "8bcce2861230dbe04e37c7903187ba7374a75e5856a08aa6afeae40ad870e12b"
+    },
+    "tools/qa/space_flight_checks.py": {
+      "bytes": 7590,
+      "sha256": "05c45183da9569bd5f16f9c66bfb283392c6712a9e496555a70ee3f2aede10b8"
     }
   },
   "public_pokemon_sha256": "373b692e42d952b94b44f0ceda81d56dc75e1abb6af9d60ca5ec47d927b2057c",
@@ -64898,14 +64938,14 @@
     {
       "unit": "src/hoenn_space_story.o",
       "symbol": "sBoosterPalette",
-      "source": "graphics/hoenn_space_story/booster-v2.gbapal",
+      "source": "graphics/hoenn_space_story/exterior_v3/booster.gbapal",
       "bytes": 32,
-      "sha256": "e049ec38311a517beb169cdb4d89322b914a2ce5b20c01459bfbdee9277f8ea1"
+      "sha256": "d27ec91211dfe253a92de95c3b69fdfc988848a8146a3193384c47ca8b214972"
     },
     {
       "unit": "src/hoenn_space_story.o",
       "symbol": "sBoosterTiles",
-      "source": "graphics/hoenn_space_story/booster-v2.4bpp",
+      "source": "graphics/hoenn_space_story/exterior_v3/booster.4bpp",
       "bytes": 4096,
       "sha256": "639d33a19830dfad42468d11363a76bcb2f41a379689034c544931dadb745a08"
     },
@@ -64933,16 +64973,16 @@
     {
       "unit": "src/hoenn_space_story.o",
       "symbol": "sCraftPalette",
-      "source": "graphics/hoenn_space_story/orbiter.gbapal",
+      "source": "graphics/hoenn_space_story/exterior_v3/orbiter.gbapal",
       "bytes": 32,
-      "sha256": "da6da47f62dabfcdba559cb7f6695f9b34ce6704f05ce786a1fbc79004a9d84f"
+      "sha256": "8bcce2861230dbe04e37c7903187ba7374a75e5856a08aa6afeae40ad870e12b"
     },
     {
       "unit": "src/hoenn_space_story.o",
       "symbol": "sCraftTiles",
-      "source": "graphics/hoenn_space_story/orbiter.4bpp",
-      "bytes": 12288,
-      "sha256": "0197b328585a2bb128bf56c1ecbd0c43029431bc13fa8d140dde80c073dd7684"
+      "source": "graphics/hoenn_space_story/exterior_v3/orbiter.4bpp",
+      "bytes": 12352,
+      "sha256": "82bc2178105bc72ec5d79c589e0d80fa4a7ed281c85b445f6648d809458a88a8"
     },
     {
       "unit": "src/hoenn_space_story.o",
@@ -64982,23 +65022,23 @@
     {
       "unit": "src/hoenn_space_story.o",
       "symbol": "sGroundMap",
-      "source": "graphics/hoenn_space_story/launch_ground_tilemap.bin",
+      "source": "graphics/hoenn_space_story/exterior_v3/launch_ground_tilemap.bin",
       "bytes": 4096,
-      "sha256": "b9000c396036a6a78316139c1245d5ae8b8284e28eb0f88845167586600f3e2b"
+      "sha256": "80c3152d95b5b0861242c1092f0b87fa902ede4eb30ec17cfd71ef73eb0e065c"
     },
     {
       "unit": "src/hoenn_space_story.o",
       "symbol": "sGroundPalette",
-      "source": "graphics/hoenn_space_story/launch_ground.gbapal",
+      "source": "graphics/hoenn_space_story/exterior_v3/launch_ground.gbapal",
       "bytes": 32,
-      "sha256": "6c64bf99eeb40d57ca05ae61d6c4b24bd60c3e0aaec8fb5e08785be0fce7c644"
+      "sha256": "8bcce2861230dbe04e37c7903187ba7374a75e5856a08aa6afeae40ad870e12b"
     },
     {
       "unit": "src/hoenn_space_story.o",
       "symbol": "sGroundTiles",
-      "source": "graphics/hoenn_space_story/launch_ground.4bpp",
-      "bytes": 17920,
-      "sha256": "27bf5494f17900ff7c372df37a05260e217b0878090d97ff1788f9d3d37f45ec"
+      "source": "graphics/hoenn_space_story/exterior_v3/launch_ground.4bpp",
+      "bytes": 7424,
+      "sha256": "f9deb46d7452d7ab3dd7cd833e42ede7bbd994758b3a517461ebf951fcf0c403"
     },
     {
       "unit": "src/hoenn_space_story.o",
@@ -65129,16 +65169,16 @@
     {
       "unit": "src/hoenn_space_story.o",
       "symbol": "sTankPalette",
-      "source": "graphics/hoenn_space_story/tank-v2.gbapal",
+      "source": "graphics/hoenn_space_story/exterior_v3/tank.gbapal",
       "bytes": 32,
-      "sha256": "6039dab6453c825e0c0331ea0955e06a68a41d1c94ca69a5841d2c157796e42c"
+      "sha256": "8bcce2861230dbe04e37c7903187ba7374a75e5856a08aa6afeae40ad870e12b"
     },
     {
       "unit": "src/hoenn_space_story.o",
       "symbol": "sTankTiles",
-      "source": "graphics/hoenn_space_story/tank-v2.4bpp",
+      "source": "graphics/hoenn_space_story/exterior_v3/tank.4bpp",
       "bytes": 4096,
-      "sha256": "4c025a1ed6d96f26e4c73ba13463a6772d3d962788529827e16078f6c7812d0a"
+      "sha256": "eede507bbf4a6c5ac5154c4926a5859cfa033caf30f1316211fc6c1adb6bd8f4"
     },
     {
       "unit": "src/intro_opening.o",
@@ -73431,5 +73471,377 @@
     "Source/art/compiled gates do not prove actual gameplay.",
     "Private local personalization remains a separate retained workstream."
   ],
-  "generated_text_format": "Linux LF expectations; original cached CRLF counterparts are retained locally and differ only in line separators."
+  "generated_text_format": "Linux LF expectations; original cached CRLF counterparts are retained locally and differ only in line separators.",
+  "exterior_revision": {
+    "candidate": "EXTERIOR_V3_INDEPENDENT_STAGE16",
+    "accepted_source15_commit": "5644b4f8bd21c227e0e490d3ac1d0a12d516b024",
+    "packet_manifest_sha256": "e48c3f05f2da7e3382210674834cb4a2950c97c7131316dfa3cd029465a354a1",
+    "original_story_inputs_preserved": [
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sBoosterPalette",
+        "source": "graphics/hoenn_space_story/booster-v2.gbapal",
+        "bytes": 32,
+        "sha256": "e049ec38311a517beb169cdb4d89322b914a2ce5b20c01459bfbdee9277f8ea1"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sBoosterTiles",
+        "source": "graphics/hoenn_space_story/booster-v2.4bpp",
+        "bytes": 4096,
+        "sha256": "639d33a19830dfad42468d11363a76bcb2f41a379689034c544931dadb745a08"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sCloudMap",
+        "source": "graphics/airplane/clouds_tilemap.bin",
+        "bytes": 2048,
+        "sha256": "b9e5ee1f0b03cc9b27a5a7a0ca43519082281222acaf9f09888c81d72423c04a"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sCloudPalette",
+        "source": "graphics/airplane/clouds.gbapal",
+        "bytes": 32,
+        "sha256": "3c7ea7d7ab5d966ad465593eb5050fd16ab411a782383fe3ea934cb027f71547"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sCloudTiles",
+        "source": "graphics/airplane/clouds.4bpp",
+        "bytes": 3072,
+        "sha256": "8aba7afa55c52c74cd631fa6ab9300816bd1043aa364877092db028757b1ad5a"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sCraftPalette",
+        "source": "graphics/hoenn_space_story/orbiter.gbapal",
+        "bytes": 32,
+        "sha256": "da6da47f62dabfcdba559cb7f6695f9b34ce6704f05ce786a1fbc79004a9d84f"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sCraftTiles",
+        "source": "graphics/hoenn_space_story/orbiter.4bpp",
+        "bytes": 12288,
+        "sha256": "0197b328585a2bb128bf56c1ecbd0c43029431bc13fa8d140dde80c073dd7684"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sEarthMap",
+        "source": "graphics/hoenn_space_story/earth_tilemap.bin",
+        "bytes": 2048,
+        "sha256": "a5b2356a430d2f10a0eb833514ed20b216c2b3ccfd5b7c26bd4ae9cfef5da0f2"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sEarthPalette",
+        "source": "graphics/hoenn_space_story/earth.gbapal",
+        "bytes": 32,
+        "sha256": "ede00379c154402924f5e0fb60914958d21d6e1127787323fe4838183dfd29ed"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sEarthTiles",
+        "source": "graphics/hoenn_space_story/earth.4bpp",
+        "bytes": 18528,
+        "sha256": "cec745ffd51e5387706a786ba50d9e8c734f5cbba6d8bf603f5b05f6f9db6b63"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sExhaustPalette",
+        "source": "graphics/hoenn_space_story/exhaust.gbapal",
+        "bytes": 32,
+        "sha256": "942840eefa37305750222863f281a61d5418358fd9e81b03e4837899d6648f3a"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sExhaustTiles",
+        "source": "graphics/hoenn_space_story/exhaust.4bpp",
+        "bytes": 256,
+        "sha256": "22b9a78453ffaa30d294f94a6abca8c701b4b5e74beaf02017887b1295e54a87"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sGroundMap",
+        "source": "graphics/hoenn_space_story/launch_ground_tilemap.bin",
+        "bytes": 4096,
+        "sha256": "b9000c396036a6a78316139c1245d5ae8b8284e28eb0f88845167586600f3e2b"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sGroundPalette",
+        "source": "graphics/hoenn_space_story/launch_ground.gbapal",
+        "bytes": 32,
+        "sha256": "6c64bf99eeb40d57ca05ae61d6c4b24bd60c3e0aaec8fb5e08785be0fce7c644"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sGroundTiles",
+        "source": "graphics/hoenn_space_story/launch_ground.4bpp",
+        "bytes": 17920,
+        "sha256": "27bf5494f17900ff7c372df37a05260e217b0878090d97ff1788f9d3d37f45ec"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sLandingSkyMap",
+        "source": "graphics/airplane/sky_tilemap.bin",
+        "bytes": 2048,
+        "sha256": "211d21e06fafc1d9fc2d010917cf02f23a8edb054bd8f7e4e1b6ed34268ec0d9"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sLandingSkyPalette",
+        "source": "graphics/airplane/sky.gbapal",
+        "bytes": 32,
+        "sha256": "6444f3b871c05c0587e76f4b0392885d11346022776a8cebb5892163952a27d1"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sLandingSkyTiles",
+        "source": "graphics/airplane/sky.4bpp",
+        "bytes": 2048,
+        "sha256": "03a963de2e4ed13f5fe74bdae7c6869563c060feeefba1ea4ee2ec10d8fccf15"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sRunwayMap",
+        "source": "graphics/airplane/ground_tilemap.bin",
+        "bytes": 2048,
+        "sha256": "e7a13dbe495b553d9e39ea7cebba9eaabdc0bf3249b269408a7f7eb6281a3fa7"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sRunwayPalette",
+        "source": "graphics/airplane/ground.gbapal",
+        "bytes": 32,
+        "sha256": "643c2d9f381f356c0af8bc6f42b0732643294555ca90c44ba0ee8dc0012e86d5"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sRunwayTiles",
+        "source": "graphics/airplane/ground.4bpp",
+        "bytes": 4096,
+        "sha256": "04b36ea368f8c68447b98a118e0148eab0fb6460f4a55edce9da13b5d65d786e"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sSpaceportAttributes",
+        "source": "data/tilesets/secondary/ty_spaceport/metatile_attributes.bin",
+        "bytes": 2048,
+        "sha256": "b55c2f4a81e62b9321c63469492326fc2e268ee5690811f5e7215e2cd04cdbfc"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sSpaceportMetatiles",
+        "source": "data/tilesets/secondary/ty_spaceport/metatiles.bin",
+        "bytes": 8192,
+        "sha256": "6421d0fc247ff4a463996e2f40760480e88d12531e9a68dda928fbe3fe0e430c"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sSpaceportPalettes",
+        "source": "data/tilesets/secondary/ty_spaceport/palettes.gbapal",
+        "bytes": 512,
+        "sha256": "505cbd0569915ccd0453a18664201a6fe102fe12e93c72bb39faef28fbdbd4e5"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sSpaceportTiles",
+        "source": "data/tilesets/secondary/ty_spaceport/tiles.4bpp",
+        "bytes": 16384,
+        "sha256": "b5d274ed5d615f02f8cf90a1b2ad06c073c741542d1b9382463572b3eed4ca59"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sTYSpaceStyleV2InteriorAttributes",
+        "source": "data/tilesets/secondary/ty_space_interior_v3/metatile_attributes.bin",
+        "bytes": 2048,
+        "sha256": "6db430601c5ce103ffc1697c606321a834e8fa99a05256589a0d24b2bf622c63"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sTYSpaceStyleV2InteriorMetatiles",
+        "source": "data/tilesets/secondary/ty_space_interior_v3/metatiles.bin",
+        "bytes": 8192,
+        "sha256": "246166637f11c210b8f66181239b8b5299d95c542c94958bb36dc9f26a695d05"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sTYSpaceStyleV2InteriorPalettes",
+        "source": "data/tilesets/secondary/ty_space_interior_v3/palettes.gbapal",
+        "bytes": 512,
+        "sha256": "b7807df5d99f372cfe86e467d17d4fe1ca93d94819814d9b5347f8c6fa47835f"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sTYSpaceStyleV2InteriorTiles",
+        "source": "data/tilesets/secondary/ty_space_interior_v3/tiles.4bpp",
+        "bytes": 16384,
+        "sha256": "665c37dee462142fedbb0640a8811c5284b54127ed3814dbcab8bf009ef470f8"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sTYSpaceStyleV2LaunchAttributes",
+        "source": "data/tilesets/secondary/ty_space_style_v2_launch/metatile_attributes.bin",
+        "bytes": 2048,
+        "sha256": "72c06215760e859b9eda769f4e5a9c6d6a54ee11816b5fd7185ea06295dcfe9f"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sTYSpaceStyleV2LaunchMetatiles",
+        "source": "data/tilesets/secondary/ty_space_style_v2_launch/metatiles.bin",
+        "bytes": 8192,
+        "sha256": "4ce4740317acc6c92917c7b17c6efd657bb23260a630dd64dd524d5d295de7f0"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sTYSpaceStyleV2LaunchPalettes",
+        "source": "data/tilesets/secondary/ty_space_style_v2_launch/palettes.gbapal",
+        "bytes": 512,
+        "sha256": "f93a616a22ef11a0ae3bb1680150f69efc1d72f4a984338c8a5ea424e0996a30"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sTYSpaceStyleV2LaunchTiles",
+        "source": "data/tilesets/secondary/ty_space_style_v2_launch/tiles.4bpp",
+        "bytes": 16384,
+        "sha256": "5ff463596371a80e591efcc27b1026d716ae6eeea67dd512b872f982d3e4d1ab"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sTankPalette",
+        "source": "graphics/hoenn_space_story/tank-v2.gbapal",
+        "bytes": 32,
+        "sha256": "6039dab6453c825e0c0331ea0955e06a68a41d1c94ca69a5841d2c157796e42c"
+      },
+      {
+        "unit": "src/hoenn_space_story.o",
+        "symbol": "sTankTiles",
+        "source": "graphics/hoenn_space_story/tank-v2.4bpp",
+        "bytes": 4096,
+        "sha256": "4c025a1ed6d96f26e4c73ba13463a6772d3d962788529827e16078f6c7812d0a"
+      }
+    ],
+    "intentional_linked_replacements": [
+      {
+        "symbol": "sBoosterPalette",
+        "previous": {
+          "unit": "src/hoenn_space_story.o",
+          "symbol": "sBoosterPalette",
+          "source": "graphics/hoenn_space_story/booster-v2.gbapal",
+          "bytes": 32,
+          "sha256": "e049ec38311a517beb169cdb4d89322b914a2ce5b20c01459bfbdee9277f8ea1"
+        },
+        "new_source": "graphics/hoenn_space_story/exterior_v3/booster.gbapal",
+        "bytes": 32,
+        "sha256": "d27ec91211dfe253a92de95c3b69fdfc988848a8146a3193384c47ca8b214972"
+      },
+      {
+        "symbol": "sBoosterTiles",
+        "previous": {
+          "unit": "src/hoenn_space_story.o",
+          "symbol": "sBoosterTiles",
+          "source": "graphics/hoenn_space_story/booster-v2.4bpp",
+          "bytes": 4096,
+          "sha256": "639d33a19830dfad42468d11363a76bcb2f41a379689034c544931dadb745a08"
+        },
+        "new_source": "graphics/hoenn_space_story/exterior_v3/booster.4bpp",
+        "bytes": 4096,
+        "sha256": "639d33a19830dfad42468d11363a76bcb2f41a379689034c544931dadb745a08"
+      },
+      {
+        "symbol": "sCraftPalette",
+        "previous": {
+          "unit": "src/hoenn_space_story.o",
+          "symbol": "sCraftPalette",
+          "source": "graphics/hoenn_space_story/orbiter.gbapal",
+          "bytes": 32,
+          "sha256": "da6da47f62dabfcdba559cb7f6695f9b34ce6704f05ce786a1fbc79004a9d84f"
+        },
+        "new_source": "graphics/hoenn_space_story/exterior_v3/orbiter.gbapal",
+        "bytes": 32,
+        "sha256": "8bcce2861230dbe04e37c7903187ba7374a75e5856a08aa6afeae40ad870e12b"
+      },
+      {
+        "symbol": "sCraftTiles",
+        "previous": {
+          "unit": "src/hoenn_space_story.o",
+          "symbol": "sCraftTiles",
+          "source": "graphics/hoenn_space_story/orbiter.4bpp",
+          "bytes": 12288,
+          "sha256": "0197b328585a2bb128bf56c1ecbd0c43029431bc13fa8d140dde80c073dd7684"
+        },
+        "new_source": "graphics/hoenn_space_story/exterior_v3/orbiter.4bpp",
+        "bytes": 12352,
+        "sha256": "82bc2178105bc72ec5d79c589e0d80fa4a7ed281c85b445f6648d809458a88a8"
+      },
+      {
+        "symbol": "sGroundMap",
+        "previous": {
+          "unit": "src/hoenn_space_story.o",
+          "symbol": "sGroundMap",
+          "source": "graphics/hoenn_space_story/launch_ground_tilemap.bin",
+          "bytes": 4096,
+          "sha256": "b9000c396036a6a78316139c1245d5ae8b8284e28eb0f88845167586600f3e2b"
+        },
+        "new_source": "graphics/hoenn_space_story/exterior_v3/launch_ground_tilemap.bin",
+        "bytes": 4096,
+        "sha256": "80c3152d95b5b0861242c1092f0b87fa902ede4eb30ec17cfd71ef73eb0e065c"
+      },
+      {
+        "symbol": "sGroundPalette",
+        "previous": {
+          "unit": "src/hoenn_space_story.o",
+          "symbol": "sGroundPalette",
+          "source": "graphics/hoenn_space_story/launch_ground.gbapal",
+          "bytes": 32,
+          "sha256": "6c64bf99eeb40d57ca05ae61d6c4b24bd60c3e0aaec8fb5e08785be0fce7c644"
+        },
+        "new_source": "graphics/hoenn_space_story/exterior_v3/launch_ground.gbapal",
+        "bytes": 32,
+        "sha256": "8bcce2861230dbe04e37c7903187ba7374a75e5856a08aa6afeae40ad870e12b"
+      },
+      {
+        "symbol": "sGroundTiles",
+        "previous": {
+          "unit": "src/hoenn_space_story.o",
+          "symbol": "sGroundTiles",
+          "source": "graphics/hoenn_space_story/launch_ground.4bpp",
+          "bytes": 17920,
+          "sha256": "27bf5494f17900ff7c372df37a05260e217b0878090d97ff1788f9d3d37f45ec"
+        },
+        "new_source": "graphics/hoenn_space_story/exterior_v3/launch_ground.4bpp",
+        "bytes": 7424,
+        "sha256": "f9deb46d7452d7ab3dd7cd833e42ede7bbd994758b3a517461ebf951fcf0c403"
+      },
+      {
+        "symbol": "sTankPalette",
+        "previous": {
+          "unit": "src/hoenn_space_story.o",
+          "symbol": "sTankPalette",
+          "source": "graphics/hoenn_space_story/tank-v2.gbapal",
+          "bytes": 32,
+          "sha256": "6039dab6453c825e0c0331ea0955e06a68a41d1c94ca69a5841d2c157796e42c"
+        },
+        "new_source": "graphics/hoenn_space_story/exterior_v3/tank.gbapal",
+        "bytes": 32,
+        "sha256": "8bcce2861230dbe04e37c7903187ba7374a75e5856a08aa6afeae40ad870e12b"
+      },
+      {
+        "symbol": "sTankTiles",
+        "previous": {
+          "unit": "src/hoenn_space_story.o",
+          "symbol": "sTankTiles",
+          "source": "graphics/hoenn_space_story/tank-v2.4bpp",
+          "bytes": 4096,
+          "sha256": "4c025a1ed6d96f26e4c73ba13463a6772d3d962788529827e16078f6c7812d0a"
+        },
+        "new_source": "graphics/hoenn_space_story/exterior_v3/tank.4bpp",
+        "bytes": 4096,
+        "sha256": "eede507bbf4a6c5ac5154c4926a5859cfa033caf30f1316211fc6c1adb6bd8f4"
+      }
+    ],
+    "scope": "Only nine flight INCBIN payloads intentionally change; other linked media, RAM/save ABI and map checks retain their existing requirements."
+  }
 }

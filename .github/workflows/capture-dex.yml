@@ -226,7 +226,7 @@ jobs:
           import hashlib, json, os, subprocess
           report = json.loads(Path('/tmp/capture-dex-regression.json').read_text())
           provenance = {
-              'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
+              'source_commit': subprocess.check_output(['git', '-c', 'safe.directory=' + str(Path.cwd()), 'rev-parse', 'HEAD'], text=True).strip(),
               'base_source': 'dafcb39f781d8fc29e0877f64f6cd9358e5b0c41 (114688-byte heap baseline)',
               'build': 'LEAFGREEN revision 0, COMPARE=0',
               'rom_sha256': hashlib.sha256(Path('pokemonthyl.gba').read_bytes()).hexdigest(),

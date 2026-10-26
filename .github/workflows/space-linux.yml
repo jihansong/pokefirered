@@ -182,6 +182,14 @@ jobs:
                   target = bundle/'qa'/name
                   target.parent.mkdir(parents=True, exist_ok=True)
                   shutil.copyfile(path, target)
+          host = Path('/tmp/space-host-tools')
+          if host.is_dir():
+              for path in host.rglob('*.log'):
+                  assert not path.is_symlink()
+                  target = bundle/'qa/host-build-logs'/path.relative_to(host)
+                  target.parent.mkdir(parents=True, exist_ok=True)
+                  assert not target.exists()
+                  shutil.copyfile(path, target)
           assert not any(p.suffix.lower() in {'.sav', '.srm', '.pem', '.key'} for p in bundle.rglob('*'))
           PY
           python3 -B tools/qa/seal_space_artifact.py --input /tmp/space-build-bundle --public-key tools/qa/space_build_recipient.pem --output /tmp/space-candidate.tyspace

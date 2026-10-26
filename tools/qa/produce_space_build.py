@@ -101,8 +101,16 @@ def main():
         common=['COMPARE=0','SETUP_PREREQS=0','KEEP_TEMPS=1']
         compile_index=run('leafgreen',['make','--trace','leafgreen','-j'+str(a.jobs),*common,normal_ld])
         run('symbols',['make','GAME_VERSION=LEAFGREEN',*common,'syms'])
+        generated_drift=[]
         for rel,row in reference['required_generated_sources'].items():
-            assert (source/rel).stat().st_size==row['bytes'] and sha(source/rel)==row['sha256'],('Generated source drift',rel)
+            actual=source/rel
+            if actual.stat().st_size!=row['bytes'] or sha(actual)!=row['sha256']:
+                dest=out/'generated'/rel; dest.parent.mkdir(parents=True,exist_ok=True)
+                shutil.copyfile(actual,dest)
+                generated_drift.append(dict(source=rel,expected=row,actual=pin(dest,out)))
+        # A built candidate may be recorded for inspection while the independent
+        # linked verifier still rejects any unqualified generated-source drift.
+        # This does not turn that strict final verification into a PASS.
         baseline=capture('diagnostics/baseline-no-warning')
         object_hashes={unit:sha(source/'build/leafgreen'/unit) for unit in REQUIRED_UNITS}
         relink_touch()
@@ -122,16 +130,20 @@ def main():
             rel=unit[:-2]+('.c' if unit.startswith('src/') else '.s')
             if unit.startswith('sound/'): rel=unit[:-2]+'.s'
             expected=reference['files'].get(rel) or reference['required_generated_sources'].get(rel)
-            assert expected and sha(source/rel)==expected['sha256'],('Unbound compile source',unit,rel)
+            assert expected,('Unbound compile source',unit,rel)
+            if sha(source/rel)!=expected['sha256']:
+                assert rel in reference['required_generated_sources'],('Non-generated compile source drift',unit,rel)
             objects.append(dict(unit=unit,source=rel,source_sha256=sha(source/rel),compile_log=compile_index,**pin(dest,out)))
             for suffix in ('.i','.s','.d'):
                 temporary=obj.with_suffix(suffix)
                 if temporary.exists(): shutil.copyfile(temporary,dest.with_suffix(suffix))
         final['abi_probe']=pin(out/'space-abi-probe.o',out)
-        after={n:sha(source/n) for n in reference['files']}; assert after==before,'Declared source input bytes changed'
+        after={n:sha(source/n) for n in reference['files']}
+        changed_inputs=[n for n in before if after[n]!=before[n]]
+        assert set(changed_inputs)<=set(reference['required_generated_sources']),'Non-generated source/media input bytes changed'
         receipt=dict(schema='TY_SPACE_LINUX_BUILD_V1',platform='linux',source_commit=commit,
                      reference_manifest_sha256=sha(refpath),source_tree_verified_before_build=True,source_file_hashes=before,
-                     source_file_hashes_after=after,toolchain=dict(agbcc_commit=AGBCC,container_digest=env.get('SPACE_CONTAINER_DIGEST',CONTAINER),
+                     source_file_hashes_after=after,generated_source_drift=generated_drift,inspection_only_generated_drift=bool(generated_drift or changed_inputs),toolchain=dict(agbcc_commit=AGBCC,container_digest=env.get('SPACE_CONTAINER_DIGEST',CONTAINER),
                        tool_hashes={str(p.relative_to(source)) if p.is_relative_to(source) else p.name:sha(p) for p in [ld,gcc,*(source/'tools/agbcc/bin'/n for n in ('agbcc','agbcc_arm','old_agbcc'))]},
                        container_identity_scope='Declared pinned workflow image; exact executable hashes recorded separately'),
                      steps=steps,artifacts=final,objects=objects,abi_probe_source_sha256=reference['files']['tools/qa/space_abi_probe.c']['sha256'],

@@ -6,8 +6,8 @@
       "sha256": "f7770703b847585b1c5450a81e30ab185b5c333fbcbea0147727d1d9dae063b0"
     },
     ".github/workflows/space-linux.yml": {
-      "bytes": 11129,
-      "sha256": "f41ecd7b2845c8851a5b30f4bad1f2f01ff6f60e688123bac75cc0bd26c2259c"
+      "bytes": 11536,
+      "sha256": "0401f4df2d4fb34b2a0330bf639d447b436d9ab0cd02211a9ffc621982f618e5"
     },
     ".gitignore": {
       "bytes": 1376,
@@ -64430,8 +64430,8 @@
       "sha256": "b747f6a336bc0d4fba166b286ad5df47959f7acf35ba2696e87186655b377e39"
     },
     "tools/qa/produce_space_build.py": {
-      "bytes": 9797,
-      "sha256": "c06c557561edaf722e783f66e6c030a412be9ce00e8a7e4c4d348d79b581a8f2"
+      "bytes": 10644,
+      "sha256": "6be144e24157596599d0a8b70722b5abdbe1537cf77289d6e257c86cc2e9980d"
     },
     "tools/qa/seal_space_artifact.py": {
       "bytes": 3464,

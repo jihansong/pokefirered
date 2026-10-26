@@ -147,7 +147,7 @@ def map_setup(s,source,recipe,sb1,sb2):
     assert len(matches)==1,'Map must be a unique source-defined MAP_* token'
     path,metadata=matches[0]
     layouts=json.loads((source/'data/layouts/layouts.json').read_text(encoding='utf-8'))['layouts']
-    layout=next(item for item in layouts if item['id']==metadata['layout'])
+    layout=next(item for item in layouts if item.get('id')==metadata['layout'])
     x,y=int(recipe['x']),int(recipe['y']);assert 0<=x<int(layout['width']) and 0<=y<int(layout['height'])
     for field in ['location','continueGameWarp','dynamicWarp','lastHealLocation','escapeWarp']:
         base=s.offset('SaveBlock1',field)

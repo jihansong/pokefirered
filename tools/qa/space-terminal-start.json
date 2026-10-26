@@ -10,6 +10,7 @@
   "y": 7,
   "continue_warp": true,
   "flags": {
+    "FLAG_GAME_CLOCK_SET": true,
     "FLAG_SYS_POKEMON_GET": true,
     "FLAG_SYS_POKEDEX_GET": true,
     "FLAG_HOENN_SPACE_CENTER_SECURED": true,

@@ -1,0 +1,426 @@
+{
+  "candidate_id": "layout-improvement-01-source-01",
+  "scope": "NEW_SOURCE_STATIC_CASES_RUNTIME_PENDING",
+  "owner_plan_sha256": {
+    "tools/hoenn_import/space_deck_services.py": "08011a4d6de7d164ced518a7cbc6706cf9337500387474fe231bb453c24fdda7",
+    "tools/hoenn_import/space_deck_living.py": "0e310423637872a011a3152d09e0baec745c264770a2dae89b0692843fd96a83"
+  },
+  "services": [
+    {
+      "id": "Cabin-SpaceFacility_Shop",
+      "map": "HoennSpacecraftCabin",
+      "target_kind": "npc",
+      "local_id": 8,
+      "script": "SpaceFacility_Shop",
+      "stand": [
+        7,
+        3
+      ],
+      "direction": "W",
+      "interaction": "counter",
+      "entry_stands": [
+        [
+          17,
+          7
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          17,
+          4
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          17,
+          11
+        ],
+        [
+          4,
+          13
+        ]
+      ],
+      "entry_text": "SpaceFacility_Text_Shop",
+      "runtime_method": "shop_cancel"
+    },
+    {
+      "id": "Cabin-Space_Heal",
+      "map": "HoennSpacecraftCabin",
+      "target_kind": "npc",
+      "local_id": 3,
+      "script": "Space_Heal",
+      "stand": [
+        9,
+        12
+      ],
+      "direction": "N",
+      "interaction": "counter",
+      "entry_stands": [
+        [
+          17,
+          7
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          17,
+          4
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          17,
+          11
+        ],
+        [
+          4,
+          13
+        ]
+      ],
+      "entry_text": "Space_Text_Heal",
+      "runtime_method": "heal",
+      "result_text_accept": "Space_Text_Healed",
+      "result_text_decline": "Space_Text_HealDecline"
+    },
+    {
+      "id": "Lounge-SpaceFacility_DrinkShop",
+      "map": "HoennSpacecraftLounge",
+      "target_kind": "npc",
+      "local_id": 1,
+      "script": "SpaceFacility_DrinkShop",
+      "stand": [
+        9,
+        5
+      ],
+      "direction": "N",
+      "interaction": "counter",
+      "entry_stands": [
+        [
+          2,
+          4
+        ]
+      ],
+      "entry_text": "SpaceFacility_Text_DrinkShop",
+      "runtime_method": "shop_cancel"
+    },
+    {
+      "id": "CrewMess-SpaceFacility_Cook",
+      "map": "HoennSpacecraftCrewMess",
+      "target_kind": "npc",
+      "local_id": 1,
+      "script": "SpaceFacility_Cook",
+      "stand": [
+        6,
+        6
+      ],
+      "direction": "N",
+      "interaction": "counter",
+      "entry_stands": [
+        [
+          17,
+          10
+        ]
+      ],
+      "entry_text": "SpaceFacility_Text_CrewMess",
+      "runtime_method": "dialogue"
+    },
+    {
+      "id": "FoodCourt-SpaceFacility_FoodShop",
+      "map": "HoennSpacecraftFoodCourt",
+      "target_kind": "npc",
+      "local_id": 1,
+      "script": "SpaceFacility_FoodShop",
+      "stand": [
+        6,
+        6
+      ],
+      "direction": "N",
+      "interaction": "counter",
+      "entry_stands": [
+        [
+          17,
+          6
+        ]
+      ],
+      "entry_text": "SpaceFacility_Text_FoodShop",
+      "runtime_method": "shop_cancel"
+    },
+    {
+      "id": "Cabin-SpaceFacility_PC",
+      "map": "HoennSpacecraftCabin",
+      "target_kind": "bg",
+      "script": "SpaceFacility_PC",
+      "stand": [
+        3,
+        5
+      ],
+      "direction": "N",
+      "entry_stands": [
+        [
+          17,
+          7
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          17,
+          4
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          17,
+          11
+        ],
+        [
+          4,
+          13
+        ]
+      ],
+      "runtime_method": "pending_explicit_ui_or_story_handler"
+    },
+    {
+      "id": "CrewMess-SpaceFacility_Rest",
+      "map": "HoennSpacecraftCrewMess",
+      "target_kind": "bg",
+      "script": "SpaceFacility_Rest",
+      "stand": [
+        8,
+        11
+      ],
+      "direction": "N",
+      "entry_stands": [
+        [
+          17,
+          10
+        ]
+      ],
+      "runtime_method": "heal",
+      "entry_text": "SpaceFacility_Text_Rest",
+      "result_text_accept": "SpaceFacility_Text_Rested",
+      "result_text_decline": null
+    },
+    {
+      "id": "CrewQuarters-SpaceFacility_Rest",
+      "map": "HoennSpacecraftCrewQuarters",
+      "target_kind": "bg",
+      "script": "SpaceFacility_Rest",
+      "stand": [
+        4,
+        5
+      ],
+      "direction": "N",
+      "entry_stands": [
+        [
+          17,
+          6
+        ]
+      ],
+      "runtime_method": "heal",
+      "entry_text": "SpaceFacility_Text_Rest",
+      "result_text_accept": "SpaceFacility_Text_Rested",
+      "result_text_decline": null
+    },
+    {
+      "id": "GuestRoom1-SpaceFacility_Rest",
+      "map": "HoennSpacecraftGuestRoom1",
+      "target_kind": "bg",
+      "script": "SpaceFacility_Rest",
+      "stand": [
+        4,
+        4
+      ],
+      "direction": "N",
+      "entry_stands": [
+        [
+          6,
+          9
+        ]
+      ],
+      "runtime_method": "heal",
+      "entry_text": "SpaceFacility_Text_Rest",
+      "result_text_accept": "SpaceFacility_Text_Rested",
+      "result_text_decline": null
+    },
+    {
+      "id": "GuestRoom2-SpaceFacility_Rest",
+      "map": "HoennSpacecraftGuestRoom2",
+      "target_kind": "bg",
+      "script": "SpaceFacility_Rest",
+      "stand": [
+        4,
+        5
+      ],
+      "direction": "N",
+      "entry_stands": [
+        [
+          6,
+          9
+        ]
+      ],
+      "runtime_method": "heal",
+      "entry_text": "SpaceFacility_Text_Rest",
+      "result_text_accept": "SpaceFacility_Text_Rested",
+      "result_text_decline": null
+    },
+    {
+      "id": "GuestRoom3-SpaceFacility_Rest",
+      "map": "HoennSpacecraftGuestRoom3",
+      "target_kind": "bg",
+      "script": "SpaceFacility_Rest",
+      "stand": [
+        4,
+        8
+      ],
+      "direction": "N",
+      "entry_stands": [
+        [
+          6,
+          9
+        ]
+      ],
+      "runtime_method": "heal",
+      "entry_text": "SpaceFacility_Text_Rest",
+      "result_text_accept": "SpaceFacility_Text_Rested",
+      "result_text_decline": null
+    },
+    {
+      "id": "Navigation-SpaceFacility_NavigationConsole",
+      "map": "HoennSpacecraftNavigation",
+      "target_kind": "bg",
+      "script": "SpaceFacility_NavigationConsole",
+      "stand": [
+        12,
+        5
+      ],
+      "direction": "N",
+      "entry_stands": [
+        [
+          10,
+          15
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          17,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          12
+        ]
+      ],
+      "runtime_method": "pending_explicit_ui_or_story_handler"
+    },
+    {
+      "id": "CargoHold-SpaceFacility_CargoClue",
+      "map": "HoennSpacecraftCargoHold",
+      "target_kind": "bg",
+      "script": "SpaceFacility_CargoClue",
+      "stand": [
+        6,
+        6
+      ],
+      "direction": "N",
+      "entry_stands": [
+        [
+          12,
+          15
+        ]
+      ],
+      "runtime_method": "pending_explicit_ui_or_story_handler"
+    },
+    {
+      "id": "Engineering-Space_EngineeringConsole",
+      "map": "HoennSpacecraftEngineering",
+      "target_kind": "bg",
+      "script": "Space_EngineeringConsole",
+      "stand": [
+        12,
+        5
+      ],
+      "direction": "N",
+      "entry_stands": [
+        [
+          2,
+          7
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          10,
+          2
+        ]
+      ],
+      "runtime_method": "pending_explicit_ui_or_story_handler"
+    },
+    {
+      "id": "Observatory-Space_RecordsConsole",
+      "map": "HoennOrbitalObservatory",
+      "target_kind": "bg",
+      "script": "Space_RecordsConsole",
+      "stand": [
+        10,
+        9
+      ],
+      "direction": "N",
+      "entry_stands": [
+        [
+          2,
+          9
+        ]
+      ],
+      "runtime_method": "pending_explicit_ui_or_story_handler"
+    },
+    {
+      "id": "GameRoom-SpaceFacility_GameMachine",
+      "map": "HoennSpacecraftGameRoom",
+      "target_kind": "bg",
+      "script": "SpaceFacility_GameMachine",
+      "stand": [
+        10,
+        5
+      ],
+      "direction": "N",
+      "entry_stands": [
+        [
+          17,
+          10
+        ]
+      ],
+      "runtime_method": "pending_explicit_ui_or_story_handler"
+    }
+  ]
+}

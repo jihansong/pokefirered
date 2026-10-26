@@ -410,7 +410,10 @@ def main():
             guest.command('video on')
             guest.step(0, 120)
         if a.scenario == 'tour-save':
-            result['tour'] = Tour(guest, a.source).run()
+            tour = Tour(guest, a.source)
+            result['tour'] = json.loads(json.dumps(tour.run()))
+            from space_service_checks import run_service_checks
+            result['services'] = run_service_checks(guest, tour, a.source/'tools/qa/space-service-cases.json')
         if a.video:
             guest.step(0, 120)
             result['video'] = guest.finish_video()

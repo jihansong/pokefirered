@@ -6,11 +6,14 @@ CLI requires --write for output. All secondary profiles use Emerald512/6 split.
 """
 from pathlib import Path
 from collections import deque
-import argparse,copy,hashlib,json,struct
+import argparse,copy,hashlib,json,struct,runpy
 
 def jb(v):return (json.dumps(v,ensure_ascii=False,indent=2)+'\n').encode('utf8')
 def build(S,contract=None):
  S=Path(S);inputs={};out={};reports=[];allcopies=[]
+ modules=[]
+ for kind in ('services','living'):
+  rel=f'tools/hoenn_import/space_deck_{kind}.py';inputs[rel]=hashlib.sha256((S/rel).read_bytes()).hexdigest();modules.append(runpy.run_path(str(S/rel)))
  def read(rel):
   b=(S/rel).read_bytes();inputs[rel]=hashlib.sha256(b).hexdigest();return b
  if contract is None:contract=json.loads(read('tools/hoenn_import/space_deck_v4_contract.json'))
@@ -79,117 +82,22 @@ def build(S,contract=None):
     for xx in [7,13]:setcell(xx,7,floor,False)
    elif role=='CabinCorridor':hull(1,1,w-2,6)
    else:hull(2,1,13,11)
-  if role=='FoodCourt':
-   # Deliberate full-width service apron, not small donor-floor rectangles.
-   for yy in range(2,6):
-    for xx in range(2,w-2):setcell(xx,yy,('anne',665),False)
-  if role=='Cabin':
-   for yy in range(2,7):
-    for xx in range(2,9):setcell(xx,yy,('mart',641),False)
-  if role=='Engineering':
-   for x0 in [2,13]:
-    for yy in range(8,14):
-     for xx in range(x0,x0+6):setcell(xx,yy,('power',708),False)
-  if role=='BattleDeck':
-   for yy in [3,4]:
-    for xx in range(2,w-2):setcell(xx,yy,('pc',641),False)
-   for yy in [12,13]:
-    for xx in list(range(2,8))+list(range(17,w-2)):setcell(xx,yy,('pc',641),False)
   def place(label,fam,rows,x,y,required=True,collision=True):
    hh=len(rows);ww=len(rows[0]);cells={(x+xx,y+yy) for yy in range(hh) for xx in range(ww)}
    valid=all(1<=xx<w-1 and 1<=yy<h-1 for xx,yy in cells) and not(cells&hard) and not(cells&occupied)
-   if not valid and not required:
-    choices=sorted([(xx,yy) for yy in range(2,h-hh-1) for xx in range(2,w-ww-1)],key=lambda a:(abs(a[0]-x)+abs(a[1]-y),a[1],a[0]))
-    found=next(((xx,yy) for xx,yy in choices if not({(xx+dx,yy+dy) for dy in range(hh) for dx in range(ww)}&(hard|occupied))),None)
-    assert found,('No complete furniture position',role,label)
-    x,y=found;cells={(x+xx,y+yy) for yy in range(hh) for xx in range(ww)};valid=True
    assert valid,('Required furniture hits actor/entry',role,label,x,y,sorted(cells&hard),sorted(cells&occupied))
    for yy,row in enumerate(rows):
     for xx,n in enumerate(row):setcell(x+xx,y+yy,(fam,n),collision)
    occupied.update(cells);pieces.append({'label':label,'source_profile':fam,'metatile_rows':rows,'xy':[x,y],'complete_shape':True,'blocked':collision})
-  bed=[[808,809,810],[816,817,818]];desk=[[773,774,775],[781,782,783]];roundtable=[[598,599],[606,607]];science=[[867,868],[875,876]];chair=[ [820] ]
-  if role.startswith('GuestRoom'):
-   place('complete3x2_bed','anne',bed,3,3);place('complete_desk','anne',[[824,825],[832,833],[840,841]],7,2,False);place('real_chair','anne',chair,6,7,False);place('plant','anne',[[811],[819]],9,2,False)
-  elif role=='CrewQuarters':
-   for x,y in [(3,3),(12,3),(3,10),(12,10)]:place('complete3x2_bed','anne',bed,x,y,False)
-   place('crew_desk','anne',[[824,825],[832,833],[840,841]],6,2,False);place('real_chair','anne',chair,7,10,False)
-   for x in list(range(2,7))+list(range(12,18)):
-    if (x,6) not in hard:setcell(x,6,('v3',901 if x in [2,12] else 903 if x in [6,17] else 902),True)
-  elif role=='CaptainsOffice':
-   place('captains_book_desk','anne',desk,4,3,False);place('bookshelf','anne',[[762],[770]],12,2,False);place('wall_map','anne',[[755,756]],10,2,False);place('office_chair','anne',[[771]],11,8,False)
-  elif role in ['Cockpit','Navigation']:
-   if role=='Cockpit':
-    place('forward_window_bank','facility',[[760]*8,[768]*8,[870]*8],5,1,False)
-    for x in [5,12]:place('complete_flight_console','facility',science,x,3,False)
-    for x in [7,13]:place('real_control_stool','facility',[[865]],x,5,False)
-   else:
-    for x in [3,14]:place('forward_window_bank','facility',[[760]*3,[768]*3,[870]*3],x,1,False)
-    place('communications_desk','facility',science,4,4,False);place('navigation_console','facility',science,12,3);place('navigation_display','facility',[[885,886,887]],13,10,False);place('communications_stool','facility',[[865]],5,7,False)
-  elif role=='Cabin':
-   # Preserve existing eight actor positions. Separate counter/medical service.
-   place('complete_merchandise_shelves','mart',[[658,659,660],[666,667,668],[674,675,676]],4,1,False)
-   place('complete_healing_station','pc',[[681,682,683],[689,690,691],[697,700,700]],13,4,False)
-   place('boarding_status_desk','facility',science,9,3,False)
-   for x,y in [(4,11),(5,11),(15,11),(16,11)]:place('waiting_chair','pc',[[757]],x,y,False)
-   # Full PC vertical appliance: cap/middle/base. Base is original walkable front.
-   setcell(3,3,('pc',645),True);setcell(3,4,('pc',98),True);setcell(3,5,('pc',661),False)
-   pieces.append({'label':'complete_PC_with_reserved_off_on_middle','source_profile':'pc','metatile_rows':[[645],[98],[661]],'xy':[3,3],'complete_shape':True,'blocked':'middle/cap only; native front base walkable'})
-  elif role=='Lounge':
-   # Complete original green service counter, not dining-room kitchen units.
-   place('complete_native_bar_counter','game',[[664]+[665]*6+[666],[672]+[673]*6+[674]],7,3)
-   for xx in [8,10,12,14]:place('native_bar_stool','facility',[[865]],xx,6)
-   for xx in [12,13,15,16]:place('native_waiting_seat','pc',[[757]],xx,12,False)
-   place('bar_back_service_shelf','anne',[[762],[770]],4,2)
-  elif role in ['CrewMess','FoodCourt']:
-   # Variable-length original kitchen units retain complete top/body/end caps.
-   place('complete_short_sink_worktop','anne',[[712,713],[722,723],[730,731]],3,2,False)
-   place('complete_short_food_worktop','anne',[[712,713],[720,721],[728,729]],13,2,False)
-   for x,y in [(3,10),(13,10)]:
-    place('complete_dining_table','tidal',roundtable,x,y,False);place('native_dining_chair','tidal',[[608]],x-1,y+1,False);place('native_dining_chair','tidal',[[609]],x+2,y+1,False)
-  elif role=='GameRoom':
-   place('complete_front_slot_machine','game',[[645,646],[653,654],[710,788]],10,2)
-   place('complete_front_slot_machine','game',[[645,646],[653,654],[710,788]],14,2,False)
-   # Original game-room chairs are walkable standing/sitting approach tiles.
-   for x in [10,14]:setcell(x,5,('game',683),False)
-  elif role=='BattleDeck':
-   # Emerald's complete8x6 arena/platform, copied including its lower edge.
-   arena=[[552+yy*8+xx for xx in range(8)] for yy in range(5)]+[[541,551,551,542,541,551,551,542]]
-   for yy,row in enumerate(arena):
-    for xx,n in enumerate(row):setcell(8+xx,5+yy,('arena',n),False)
-   pieces.append({'label':'complete_original_Emerald_battle_platform','source_profile':'arena','metatile_rows':arena,'xy':[8,5],'complete_shape':True,'blocked':False})
-   for x,y in [(4,4),(6,4),(17,4),(19,4),(4,12),(6,12)]:place('spectator_chair','pc',[[757]],x,y,False)
-  elif role=='CabinCorridor':
-   for x in [6,11,16,21]:place('porthole_trim','anne',[[826]],x,1,False)
-   for x in [6,15]:place('corridor_chair','anne',[[771]],x,5,False)
-  elif role=='CargoHold':
-   cargo=[[736,737,738,736,737,738],[747,748,749,744,745,746],[755,756,757,752,753,754],[743,743,743,743,743,758]]
-   for x,y in [(3,2),(15,2),(3,11),(15,11)]:place('complete_crate_group','tidal',cargo,x,y,False)
-  elif role=='Engineering':
-   #744..746 are source background wall, not part of the generator silhouette.
-   machine=[[752,753,754],[760,761,762],[768,769,770]]
-   for x,y in [(3,9),(14,9)]:place('complete_PowerPlant_generator','power',machine,x,y,False)
-   place('complete_service_panel','power',[[751,750],[759,758]],12,3)
-  elif role=='Observatory':
-   place('exact_existing_Earth_window','v3',[[850+yy*8+x for x in range(8)] for yy in range(4)],6,1,False)
-   # Four sides of the viewport are complete hull pieces, including bottom frame.
-   place('viewport_lower_frame','v3',[[906]+[907]*8+[908]],5,5,False)
-   for xx in range(5,15):setcell(xx,0,('v3',901 if xx==5 else 903 if xx==14 else 902),True)
-   for yy in range(1,5):setcell(5,yy,('v3',904),True);setcell(14,yy,('v3',905),True)
-   place('observation_console','facility',science,9,7)
-   for x in [4,5,6,14,15,16]:place('observation_stool','facility',[[865]],x,13,False)
-  # Interaction targets which denote physical furniture must not be open floors.
+  handled=False
+  ctx=dict(place=place,setcell=setcell,floor=floor,w=w,h=h,hard=hard,occupied=occupied,pieces=pieces,P=P)
+  for module in modules:
+   if role in module['ROOM_PLANS']:
+    assert not handled
+    handled=module['decorate'](role,ctx)
+  assert handled,('Missing explicit room plan',role)
   for a in cfg['interaction_tiles']:
-   x,y=a['target']
-   if role=='CrewMess':
-    # A complete native communal table; target10,8 is its bottom-left tile.
-    for yy,row in enumerate(roundtable):
-     for xx,n in enumerate(row):
-      assert (10+xx,7+yy) not in hard;setcell(10+xx,7+yy,('tidal',n),True)
-    pieces.append({'label':'communal_rest_table','source_profile':'tidal','metatile_rows':roundtable,'xy':[10,7],'complete_shape':True,'blocked':True})
-   elif role in ['CrewQuarters','GuestRoom1','GuestRoom2','GuestRoom3']:
-    assert blocked[y*w+x],(role,'rest target must be bed')
-   elif role=='CargoHold':assert blocked[y*w+x],(role,'cargo clue must be crate')
-   else:assert blocked[y*w+x],(role,'missing actual console',a)
+   x,y=a['target'];assert blocked[y*w+x],(role,'Interaction has no physical fixture',a)
   # Arrow portals occupy the actual contract rows; no auto door-step trap.
   warp_refs={}
   for a in cfg['warps']:
@@ -199,11 +107,11 @@ def build(S,contract=None):
     xx,yy=x+dx*t,y+dy*t
     if direction in ['N','S'] and (xx+1,yy) not in occupied:setcell(xx+1,yy,floor,False)
     elif direction in ['E','W'] and (xx,yy+1) not in occupied:setcell(xx,yy+1,floor,False)
-   behavior={'S':0x65,'N':0x64,'E':0x62,'W':0x63}[direction];ref=('anne',959) if direction in ['N','S'] else floor;ref=(*ref,0x20000000|behavior);setcell(x,y,ref,False);warp_refs[1000+{'S':0,'N':1,'E':2,'W':3}[direction]]=ref
+   behavior={'S':0x65,'N':0x64,'E':0x62,'W':0x63}[direction];ref=('anne',959);ref=(*ref,0x20000000|behavior);setcell(x,y,ref,False);warp_refs[1000+{'S':0,'N':1,'E':2,'W':3}[direction]]=ref
   for x,y in hard:
    if not any(a['xy']==[x,y] for a in cfg['warps']):
     assert (x,y) not in occupied,(role,'hard footprint hidden by furniture',x,y)
-    if blocked[y*w+x]:setcell(x,y,floor,False)
+    assert not blocked[y*w+x],(role,'explicit plan blocks a required footprint',x,y)
   # Deliberate source-pixel-preserving layer variants wherever an actor may stand
   # below NORMAL/SPLIT foreground. Untouched inaccessible walls retain donors.
   layer_variants=[]
@@ -263,11 +171,11 @@ def build(S,contract=None):
    for xx,yy in [(x-1,y),(x+1,y),(x,y-1),(x,y+1)]:
     j=yy*w+xx
     if 0<=xx<w and 0<=yy<h and j in passable and j not in seen:seen.add(j);q.append(j)
-  assert all(y*w+x in seen for x,y in hard),(role,'unreachable hard cell')
+  assert all(y*w+x in seen for x,y in cfg.get('must_reachable',hard)),(role,'unreachable customer/door approach')
   block=struct.pack('<%dH'%len(rawwords),*rawwords);border=struct.pack('<4H',*([0x3400|1004]*4))
   out[l['blockdata_filepath']]=block;out[l['border_filepath']]=border;out[f'tools/hoenn_import/patches/{name}.blockdata.bin']=block;out[f'tools/hoenn_import/patches/{name}.space-border.bin']=border
   for fn,b in [('tiles.4bpp',tiles),('metatiles.bin',mts),('metatile_attributes.bin',attrs),('palettes.gbapal',pals)]:out[folder+'/'+fn]=bytes(b)
-  reports.append({'role':role,'map':name,'size':[w,h],'secondary_symbol':cfg['secondary_tileset'],'folder':folder,'used_private_tiles':len(tile_ids),'palette_banks_used':len(bins),'palette_search_nodes':nodes,'metatile_count':len(ids),'pieces':pieces,'layer_clearance_variants':layer_variants,'passable_tiles':len(passable),'reachable_tiles':len(seen),'hard_footprints':len(hard),'all_hard_BFS_reachable':True,'metatile_source_map':{str(n):ref for n,ref in ids.items()},'tile_copy_proof':copied})
+  reports.append({'role':role,'map':name,'size':[w,h],'secondary_symbol':cfg['secondary_tileset'],'folder':folder,'used_private_tiles':len(tile_ids),'palette_banks_used':len(bins),'palette_search_nodes':nodes,'metatile_count':len(ids),'pieces':pieces,'layer_clearance_variants':layer_variants,'passable_tiles':len(passable),'reachable_tiles':len(seen),'hard_footprints':len(hard),'all_hard_BFS_reachable':all(y*w+x in seen for x,y in hard),'all_customer_and_door_approaches_BFS_reachable':True,'metatile_source_map':{str(n):ref for n,ref in ids.items()},'tile_copy_proof':copied})
   allcopies.extend(copied)
  # Emit definitions fragment only. Parent integrates its include/registrations.
  header=['// Exact original pixel profiles for three ship decks;512/6 split.\n']
@@ -276,7 +184,7 @@ def build(S,contract=None):
   for typ,suffix,fn in [('u32','Tiles','tiles.4bpp'),('u16','Palettes','palettes.gbapal'),('u16','Metatiles','metatiles.bin'),('u32','Attributes','metatile_attributes.bin')]:header.append(f'static const {typ} s{tag}{suffix}'+('[][16]' if suffix=='Palettes' else '[]')+f' = INCBIN_{"U32" if typ=="u32" else "U16"}("{folder}/{fn}");\n')
   header.append(f'const struct Tileset {tag} = {{ .isCompressed=FALSE, .isSecondary=TRUE, .isEmerald=TRUE, .tiles=s{tag}Tiles, .palettes=s{tag}Palettes, .metatiles=s{tag}Metatiles, .metatileAttributes=s{tag}Attributes, .callback=NULL }};\n')
  out['src/data/tilesets/ty_space_deck_v4.h']=''.join(header).encode()
- return out,{'status':'V4_STAGED_ORIGINAL_PIXEL_MAPS_ONLY_RUNTIME_PENDING','source_inputs_sha256':inputs,'maps':reports,'profiles':17,'maps_metadata_written':0,'flight_assets_changed':0,'primary_assets_changed':0,'RGB555_alpha_exact_tile_copies':len(allcopies),'new_art':0,'native_runs':0}
+ return out,{'status':'EXPLICIT_ROOM_RELATIONS_SOURCE_ONLY_RUNTIME_PENDING','source_inputs_sha256':inputs,'maps':reports,'profiles':17,'maps_metadata_written':0,'flight_assets_changed':0,'primary_assets_changed':0,'RGB555_alpha_exact_tile_copies':len(allcopies),'new_art':0,'native_runs':0}
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--root',required=True,type=Path);p.add_argument('--contract',type=Path);p.add_argument('--out',required=True,type=Path);p.add_argument('--write',action='store_true');p.add_argument('--report',type=Path);a=p.parse_args();contract=json.loads(a.contract.read_text()) if a.contract else None;out,proof=build(a.root,contract)

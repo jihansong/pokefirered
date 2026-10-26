@@ -1,8 +1,8 @@
 {
-  "status": "AGREED04_FOODCOURT_PC_CLEARANCE_AND_HARD_FOOTPRINTS",
+  "status": "EXPLICIT_ROOM_SERVICE_AND_FURNITURE_RELATIONS_REVISION_05",
   "reference": "docs/space-candidate.md",
   "reference_sha256": "a562cbc52dca201978a1eff08dc63e90d9ad89d0cf0009a91113757b8e2b7ac0",
-  "coordinate_size_warp_actor_changes_from_reference": 0,
+  "coordinate_size_warp_actor_changes_from_reference": "NPC positions and directions explicitly revised; map sizes, IDs and warp endpoints unchanged",
   "new_map_names_order": [
     "HoennSpacecraftCockpit",
     "HoennSpacecraftNavigation",
@@ -111,113 +111,113 @@
           "local_id": 1,
           "script_label": "Space_CabinCaptain",
           "xy": [
-            10,
-            5
+            8,
+            4
           ],
           "talk_tile": [
-            10,
-            6
+            8,
+            5
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "UP",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         },
         {
           "local_id": 2,
           "script_label": "Space_FlightCheck",
           "xy": [
-            6,
+            3,
             8
           ],
           "talk_tile": [
-            6,
-            7
+            4,
+            8
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "RIGHT",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         },
         {
           "local_id": 3,
           "script_label": "Space_Heal",
           "xy": [
-            14,
-            8
+            9,
+            10
           ],
           "talk_tile": [
-            13,
-            8
+            9,
+            12
           ],
           "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         },
         {
           "local_id": 4,
           "script_label": "Space_CabinPilot",
           "xy": [
-            12,
-            5
+            13,
+            4
           ],
           "talk_tile": [
-            12,
-            6
+            13,
+            5
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "UP",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         },
         {
           "local_id": 5,
           "script_label": "Space_CabinAttendant",
           "xy": [
-            7,
-            10
+            15,
+            8
           ],
           "talk_tile": [
-            7,
-            11
+            14,
+            8
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "LEFT",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         },
         {
           "local_id": 6,
           "script_label": "Space_CabinPassengerA",
           "xy": [
-            4,
-            9
+            3,
+            12
           ],
           "talk_tile": [
-            3,
-            9
+            4,
+            12
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "RIGHT",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         },
         {
           "local_id": 7,
           "script_label": "Space_CabinPassengerB",
           "xy": [
-            14,
+            15,
             12
           ],
           "talk_tile": [
-            13,
-            12
+            15,
+            11
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "UP",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         },
         {
           "local_id": 8,
           "script_label": "SpaceFacility_Shop",
           "xy": [
             5,
-            4
+            3
           ],
           "talk_tile": [
-            5,
-            5
+            7,
+            3
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "RIGHT",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         }
       ],
       "interaction_tiles": [
@@ -243,11 +243,23 @@
           2
         ],
         [
+          5,
+          3
+        ],
+        [
+          7,
+          3
+        ],
+        [
           10,
           3
         ],
         [
-          5,
+          8,
+          4
+        ],
+        [
+          13,
           4
         ],
         [
@@ -267,15 +279,11 @@
           5
         ],
         [
-          5,
+          8,
           5
         ],
         [
-          10,
-          5
-        ],
-        [
-          12,
+          13,
           5
         ],
         [
@@ -291,23 +299,7 @@
           6
         ],
         [
-          10,
-          6
-        ],
-        [
-          12,
-          6
-        ],
-        [
-          5,
-          7
-        ],
-        [
-          6,
-          7
-        ],
-        [
-          11,
+          8,
           7
         ],
         [
@@ -323,11 +315,11 @@
           7
         ],
         [
-          6,
+          3,
           8
         ],
         [
-          13,
+          4,
           8
         ],
         [
@@ -335,12 +327,8 @@
           8
         ],
         [
-          3,
-          9
-        ],
-        [
-          4,
-          9
+          15,
+          8
         ],
         [
           1,
@@ -355,11 +343,11 @@
           10
         ],
         [
-          7,
+          9,
           10
         ],
         [
-          7,
+          15,
           11
         ],
         [
@@ -375,7 +363,15 @@
           11
         ],
         [
+          3,
+          12
+        ],
+        [
           4,
+          12
+        ],
+        [
+          9,
           12
         ],
         [
@@ -383,11 +379,7 @@
           12
         ],
         [
-          13,
-          12
-        ],
-        [
-          14,
+          15,
           12
         ],
         [
@@ -395,15 +387,7 @@
           13
         ],
         [
-          10,
-          13
-        ],
-        [
           4,
-          14
-        ],
-        [
-          10,
           14
         ]
       ],
@@ -791,7 +775,133 @@
         ]
       ],
       "interaction_targets_may_be_blocked": true,
-      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile.",
+      "must_reachable": [
+        [
+          10,
+          1
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          16,
+          4
+        ],
+        [
+          17,
+          4
+        ],
+        [
+          18,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          13,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          18,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          15,
+          11
+        ],
+        [
+          16,
+          11
+        ],
+        [
+          17,
+          11
+        ],
+        [
+          18,
+          11
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          4,
+          14
+        ]
+      ]
     },
     {
       "role": "Engineering",
@@ -852,7 +962,7 @@
             8
           ],
           "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         },
         {
           "local_id": 2,
@@ -865,8 +975,8 @@
             5,
             5
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "LEFT",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         }
       ],
       "interaction_tiles": [
@@ -1200,7 +1310,61 @@
         ]
       ],
       "interaction_targets_may_be_blocked": true,
-      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile.",
+      "must_reachable": [
+        [
+          10,
+          1
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          18,
+          7
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          10,
+          12
+        ]
+      ]
     },
     {
       "role": "Observatory",
@@ -1240,8 +1404,8 @@
             14,
             12
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "LEFT",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         },
         {
           "local_id": 2,
@@ -1255,7 +1419,7 @@
             7
           ],
           "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         }
       ],
       "interaction_tiles": [
@@ -1573,7 +1737,33 @@
         ]
       ],
       "interaction_targets_may_be_blocked": true,
-      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile.",
+      "must_reachable": [
+        [
+          12,
+          7
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          14,
+          12
+        ]
+      ]
     },
     {
       "role": "Cockpit",
@@ -1613,8 +1803,8 @@
             8,
             6
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "UP",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         },
         {
           "local_id": 2,
@@ -1627,8 +1817,8 @@
             12,
             6
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "UP",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         }
       ],
       "interaction_tiles": [],
@@ -1914,7 +2104,29 @@
         ]
       ],
       "interaction_targets_may_be_blocked": true,
-      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile.",
+      "must_reachable": [
+        [
+          8,
+          6
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          10,
+          14
+        ]
+      ]
     },
     {
       "role": "Navigation",
@@ -1987,15 +2199,15 @@
           "local_id": 1,
           "script_label": "SpaceFacility_NavigationOfficer",
           "xy": [
-            10,
-            5
-          ],
-          "talk_tile": [
-            10,
+            4,
             6
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "talk_tile": [
+            4,
+            7
+          ],
+          "facing": "UP",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         }
       ],
       "interaction_tiles": [
@@ -2025,10 +2237,6 @@
           3
         ],
         [
-          10,
-          5
-        ],
-        [
           12,
           5
         ],
@@ -2045,7 +2253,7 @@
           6
         ],
         [
-          10,
+          4,
           6
         ],
         [
@@ -2059,6 +2267,10 @@
         [
           18,
           6
+        ],
+        [
+          4,
+          7
         ],
         [
           1,
@@ -2413,7 +2625,77 @@
         ]
       ],
       "interaction_targets_may_be_blocked": true,
-      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile.",
+      "must_reachable": [
+        [
+          10,
+          1
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          16,
+          6
+        ],
+        [
+          17,
+          6
+        ],
+        [
+          18,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          1,
+          12
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          10,
+          16
+        ]
+      ]
     },
     {
       "role": "CaptainsOffice",
@@ -2446,21 +2728,21 @@
           "local_id": 1,
           "script_label": "SpaceFacility_OfficeCaptain",
           "xy": [
-            8,
+            5,
             5
           ],
           "talk_tile": [
-            8,
+            5,
             6
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "UP",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         }
       ],
       "interaction_tiles": [],
       "must_open": [
         [
-          8,
+          5,
           5
         ],
         [
@@ -2476,7 +2758,7 @@
           6
         ],
         [
-          8,
+          5,
           6
         ]
       ],
@@ -2660,7 +2942,25 @@
         ]
       ],
       "interaction_targets_may_be_blocked": true,
-      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile.",
+      "must_reachable": [
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          5,
+          6
+        ]
+      ]
     },
     {
       "role": "CrewQuarters",
@@ -2694,14 +2994,14 @@
           "script_label": "SpaceFacility_CrewSleeper",
           "xy": [
             8,
-            6
+            4
           ],
           "talk_tile": [
             8,
-            7
+            5
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "LEFT",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         }
       ],
       "interaction_tiles": [
@@ -2719,12 +3019,16 @@
       ],
       "must_open": [
         [
+          8,
+          4
+        ],
+        [
           4,
           5
         ],
         [
           8,
-          6
+          5
         ],
         [
           16,
@@ -2737,10 +3041,6 @@
         [
           18,
           6
-        ],
-        [
-          8,
-          7
         ]
       ],
       "safe_anchor": [
@@ -2987,7 +3287,29 @@
         ]
       ],
       "interaction_targets_may_be_blocked": true,
-      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile.",
+      "must_reachable": [
+        [
+          4,
+          5
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          16,
+          6
+        ],
+        [
+          17,
+          6
+        ],
+        [
+          18,
+          6
+        ]
+      ]
     },
     {
       "role": "CrewMess",
@@ -3020,42 +3342,38 @@
           "local_id": 1,
           "script_label": "SpaceFacility_Cook",
           "xy": [
-            5,
+            6,
             4
           ],
           "talk_tile": [
-            5,
-            5
+            6,
+            6
           ],
           "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         }
       ],
       "interaction_tiles": [
         {
           "script_label": "SpaceFacility_Rest",
           "target": [
-            10,
-            8
+            8,
+            10
           ],
           "stand": [
-            10,
-            9
+            8,
+            11
           ]
         }
       ],
       "must_open": [
         [
-          5,
+          6,
           4
         ],
         [
-          5,
-          5
-        ],
-        [
-          10,
-          9
+          6,
+          6
         ],
         [
           16,
@@ -3068,6 +3386,10 @@
         [
           18,
           10
+        ],
+        [
+          8,
+          11
         ]
       ],
       "safe_anchor": [
@@ -3322,7 +3644,29 @@
         ]
       ],
       "interaction_targets_may_be_blocked": true,
-      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile.",
+      "must_reachable": [
+        [
+          6,
+          6
+        ],
+        [
+          16,
+          10
+        ],
+        [
+          17,
+          10
+        ],
+        [
+          18,
+          10
+        ],
+        [
+          8,
+          11
+        ]
+      ]
     },
     {
       "role": "FoodCourt",
@@ -3355,35 +3699,35 @@
           "local_id": 1,
           "script_label": "SpaceFacility_FoodShop",
           "xy": [
-            5,
+            6,
             4
           ],
           "talk_tile": [
-            5,
-            5
+            6,
+            6
           ],
           "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         },
         {
           "local_id": 2,
           "script_label": "SpaceFacility_FoodGuest",
           "xy": [
             14,
-            10
+            8
           ],
           "talk_tile": [
             14,
-            11
+            7
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "UP",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         }
       ],
       "interaction_tiles": [],
       "must_open": [
         [
-          5,
+          6,
           4
         ],
         [
@@ -3391,8 +3735,8 @@
           4
         ],
         [
-          5,
-          5
+          6,
+          6
         ],
         [
           16,
@@ -3408,11 +3752,11 @@
         ],
         [
           14,
-          10
+          7
         ],
         [
           14,
-          11
+          8
         ]
       ],
       "safe_anchor": [
@@ -3675,7 +4019,33 @@
         ]
       ],
       "interaction_targets_may_be_blocked": true,
-      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile.",
+      "must_reachable": [
+        [
+          17,
+          4
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          16,
+          6
+        ],
+        [
+          17,
+          6
+        ],
+        [
+          18,
+          6
+        ],
+        [
+          14,
+          7
+        ]
+      ]
     },
     {
       "role": "Lounge",
@@ -3708,15 +4078,15 @@
           "local_id": 1,
           "script_label": "SpaceFacility_DrinkShop",
           "xy": [
-            5,
-            4
+            9,
+            3
           ],
           "talk_tile": [
-            5,
+            9,
             5
           ],
           "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         },
         {
           "local_id": 2,
@@ -3727,14 +4097,18 @@
           ],
           "talk_tile": [
             14,
-            10
+            8
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "UP",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         }
       ],
       "interaction_tiles": [],
       "must_open": [
+        [
+          9,
+          3
+        ],
         [
           1,
           4
@@ -3748,20 +4122,16 @@
           4
         ],
         [
-          5,
-          4
-        ],
-        [
-          5,
+          9,
           5
         ],
         [
           14,
-          9
+          8
         ],
         [
           14,
-          10
+          9
         ]
       ],
       "safe_anchor": [
@@ -4024,7 +4394,29 @@
         ]
       ],
       "interaction_targets_may_be_blocked": true,
-      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile.",
+      "must_reachable": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          14,
+          8
+        ]
+      ]
     },
     {
       "role": "GameRoom",
@@ -4064,8 +4456,8 @@
             5,
             5
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "LEFT",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         }
       ],
       "interaction_tiles": [
@@ -4359,7 +4751,29 @@
         ]
       ],
       "interaction_targets_may_be_blocked": true,
-      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile.",
+      "must_reachable": [
+        [
+          5,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          16,
+          10
+        ],
+        [
+          17,
+          10
+        ],
+        [
+          18,
+          10
+        ]
+      ]
     },
     {
       "role": "BattleDeck",
@@ -4400,21 +4814,21 @@
             8
           ],
           "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         },
         {
           "local_id": 2,
           "script_label": "SpaceFacility_ArenaSpectator",
           "xy": [
             18,
-            12
+            8
           ],
           "talk_tile": [
             17,
-            12
+            8
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "LEFT",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         }
       ],
       "interaction_tiles": [],
@@ -4428,6 +4842,14 @@
           8
         ],
         [
+          17,
+          8
+        ],
+        [
+          18,
+          8
+        ],
+        [
           1,
           9
         ],
@@ -4438,14 +4860,6 @@
         [
           3,
           9
-        ],
-        [
-          17,
-          12
-        ],
-        [
-          18,
-          12
         ]
       ],
       "safe_anchor": [
@@ -4740,7 +5154,29 @@
         ]
       ],
       "interaction_targets_may_be_blocked": true,
-      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile.",
+      "must_reachable": [
+        [
+          12,
+          8
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          9
+        ]
+      ]
     },
     {
       "role": "CabinCorridor",
@@ -5170,7 +5606,57 @@
         ]
       ],
       "interaction_targets_may_be_blocked": true,
-      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile.",
+      "must_reachable": [
+        [
+          4,
+          1
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          14,
+          2
+        ],
+        [
+          19,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          14,
+          3
+        ],
+        [
+          19,
+          3
+        ]
+      ]
     },
     {
       "role": "GuestRoom1",
@@ -5203,15 +5689,15 @@
           "local_id": 1,
           "script_label": "SpaceFacility_Guest1",
           "xy": [
-            8,
-            7
+            5,
+            6
           ],
           "talk_tile": [
-            8,
-            8
+            5,
+            5
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "RIGHT",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         }
       ],
       "interaction_tiles": [
@@ -5219,29 +5705,29 @@
           "script_label": "SpaceFacility_Rest",
           "target": [
             4,
-            4
+            3
           ],
           "stand": [
             4,
-            5
+            4
           ]
         }
       ],
       "must_open": [
         [
           4,
+          4
+        ],
+        [
+          5,
           5
         ],
         [
-          8,
-          7
+          5,
+          6
         ],
         [
           6,
-          8
-        ],
-        [
-          8,
           8
         ],
         [
@@ -5401,7 +5887,29 @@
         ]
       ],
       "interaction_targets_may_be_blocked": true,
-      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile.",
+      "must_reachable": [
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          10
+        ]
+      ]
     },
     {
       "role": "GuestRoom2",
@@ -5434,15 +5942,15 @@
           "local_id": 1,
           "script_label": "SpaceFacility_Guest2",
           "xy": [
-            8,
-            7
+            5,
+            6
           ],
           "talk_tile": [
-            8,
-            8
+            6,
+            6
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "LEFT",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         }
       ],
       "interaction_tiles": [
@@ -5464,15 +5972,15 @@
           5
         ],
         [
-          8,
-          7
+          5,
+          6
         ],
         [
           6,
-          8
+          6
         ],
         [
-          8,
+          6,
           8
         ],
         [
@@ -5632,7 +6140,29 @@
         ]
       ],
       "interaction_targets_may_be_blocked": true,
-      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile.",
+      "must_reachable": [
+        [
+          4,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          10
+        ]
+      ]
     },
     {
       "role": "GuestRoom3",
@@ -5665,15 +6195,15 @@
           "local_id": 1,
           "script_label": "SpaceFacility_Guest3",
           "xy": [
-            8,
-            7
+            7,
+            5
           ],
           "talk_tile": [
-            8,
-            8
+            7,
+            6
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "UP",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         }
       ],
       "interaction_tiles": [
@@ -5681,29 +6211,29 @@
           "script_label": "SpaceFacility_Rest",
           "target": [
             4,
-            4
+            7
           ],
           "stand": [
             4,
-            5
+            8
           ]
         }
       ],
       "must_open": [
         [
-          4,
+          7,
           5
         ],
         [
-          8,
-          7
+          7,
+          6
         ],
         [
-          6,
+          4,
           8
         ],
         [
-          8,
+          6,
           8
         ],
         [
@@ -5863,7 +6393,29 @@
         ]
       ],
       "interaction_targets_may_be_blocked": true,
-      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile.",
+      "must_reachable": [
+        [
+          7,
+          6
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          10
+        ]
+      ]
     },
     {
       "role": "CargoHold",
@@ -5903,8 +6455,8 @@
             12,
             6
           ],
-          "facing": "DOWN",
-          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+          "facing": "UP",
+          "footprint": "Explicit staff/workstation placement; interaction approach checked separately"
         }
       ],
       "interaction_tiles": [
@@ -6234,7 +6786,29 @@
         ]
       ],
       "interaction_targets_may_be_blocked": true,
-      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile.",
+      "must_reachable": [
+        [
+          6,
+          6
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          12,
+          14
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          12,
+          16
+        ]
+      ]
     }
   ],
   "labels_reconciled": {

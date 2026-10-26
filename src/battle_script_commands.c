@@ -27,6 +27,7 @@
 #include "battle_controllers.h"
 #include "battle_interface.h"
 #include "battle_main.h"
+#include "battle_gfx_sfx_util.h"
 #include "battle_util.h"
 #include "snag.h"
 #include "constants/battle_anim.h"
@@ -9762,8 +9763,15 @@ static void Cmd_displaydexinfo(void)
         gBattleCommunication[0]++;
         break;
     case 1:
-        if (!gPaletteFade.active)
+        if (!gPaletteFade.active && WaitDma3Request(-1) != -1)
         {
+            // The dex rebuilds its pictures; battle graphics are no longer used.
+            if (!(gBattleTypeFlags & BATTLE_TYPE_LINK))
+            {
+                SetVBlankCallback(NULL);
+                ResetSpriteData();
+                FreeMonSpritesGfx();
+            }
             FreeAllWindowBuffers();
             gBattleCommunication[TASK_ID] = DexScreen_RegisterMonToPokedex(species);
             gBattleCommunication[0]++;
@@ -9976,3 +9984,4 @@ static void Cmd_finishturn(void)
     gCurrentActionFuncId = B_ACTION_FINISHED;
     gCurrentTurnActionNumber = gBattlersCount;
 }
+

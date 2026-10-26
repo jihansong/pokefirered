@@ -1,0 +1,136 @@
+name: Capture Dex ownership regression
+
+on:
+  push:
+    branches: ['codex/**']
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  leafgreen-and-ownership:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    container:
+      image: devkitpro/devkitarm:20260610@sha256:116afba8df8453961de2936ffab20dd441edf4d682856c1ec8b0e53d7ed0bbf5
+    env:
+      GAME_VERSION: LEAFGREEN
+      GAME_LANGUAGE: ENGLISH
+      GAME_REVISION: 0
+      MODERN: 0
+      COMPARE: 0
+      AGBCC_REV: da598c1d918402c42c0c0d7128ba14567f3175e9
+    steps:
+      - name: Check out build inputs only
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /Makefile
+            /config.mk
+            /*.mk
+            /charmap.txt
+            /ld_script*.ld
+            /sym_*.txt
+            /.gitattributes
+            /.gitignore
+            /.github/workflows/
+            /asm/
+            /constants/
+            /data/
+            /graphics/
+            /include/
+            /sound/
+            /src/
+            /tools/
+            !/**/*.gba
+            !/**/*.sav
+            !/**/*.srm
+            !/**/*.elf
+            !/**/*.o
+            !/**/*.exe
+            !/**/*.dll
+            !/**/*.so
+            !/**/*.sym
+            !/**/__pycache__/
+
+      - name: Reject game or save inputs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          blocked = {'.gba', '.sav', '.srm'}
+          assert not any(p.is_file() and '.git' not in p.parts and p.suffix.lower() in blocked
+                         for p in Path('.').rglob('*')), 'Unexpected ROM/save input in checkout'
+          assert not Path('work').exists()
+          assert not any(Path('.').glob('.qa-*'))
+          PY
+
+      - name: Install build and 32-bit host compiler dependencies
+        shell: bash
+        run: |
+          apt-get update -q
+          DEBIAN_FRONTEND=noninteractive apt-get install -y -q --no-install-recommends build-essential gcc-multilib libpng-dev git python3
+
+      - name: Build the documented agbcc revision
+        shell: bash
+        run: |
+          set -euo pipefail
+          agbcc_dir="$(mktemp -d)"
+          git -C "$agbcc_dir" init -q
+          git -C "$agbcc_dir" remote add origin https://github.com/pret/agbcc.git
+          git -C "$agbcc_dir" fetch -q --depth=1 origin "$AGBCC_REV"
+          git -C "$agbcc_dir" checkout -q --detach FETCH_HEAD
+          test "$(git -C "$agbcc_dir" rev-parse HEAD)" = "$AGBCC_REV"
+          (cd "$agbcc_dir" && ./build.sh && ./install.sh "$GITHUB_WORKSPACE")
+
+      - name: Build custom LeafGreen and symbols without stock hash comparison
+        shell: bash
+        run: |
+          set -euo pipefail
+          make leafgreen -j"$(nproc)" COMPARE=0 2>&1 | tee /tmp/capture-dex-build.log
+          make GAME_VERSION=LEAFGREEN COMPARE=0 syms 2>&1 | tee -a /tmp/capture-dex-build.log
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          warnings = [line for line in Path('/tmp/capture-dex-build.log').read_text(errors='replace').splitlines()
+                      if re.search(r'\bwarning\s*:', line, re.I)]
+          assert not warnings, '\n'.join(warnings)
+          assert Path('pokemonthyl.gba').is_file() and Path('pokemonthyl.sym').is_file()
+          PY
+
+      - name: Compile and run actual 32-bit C ownership and negative-control tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/qa/capture_dex_regression.py --cc gcc --built-assets --report /tmp/capture-dex-regression.json
+
+      - name: Record source provenance and limits
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, json, os, subprocess
+          report = json.loads(Path('/tmp/capture-dex-regression.json').read_text())
+          provenance = {
+              'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
+              'base_source': 'dafcb39f781d8fc29e0877f64f6cd9358e5b0c41 (114688-byte heap baseline)',
+              'build': 'LEAFGREEN revision 0, COMPARE=0',
+              'rom_sha256': hashlib.sha256(Path('pokemonthyl.gba').read_bytes()).hexdigest(),
+              'symbols_sha256': hashlib.sha256(Path('pokemonthyl.sym').read_bytes()).hexdigest(),
+              'regression': report,
+              'limits': ['Host ownership test with GPU/audio/scheduling/decompression doubles',
+                         'Not an emulator or installed iOS Delta runtime test',
+                         'Not a rebuild of the delivered R23 DexFix ROM',
+                         'No ROM, save, symbol or test artifact upload'],
+          }
+          print(json.dumps(provenance, indent=2))
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write('LeafGreen COMPARE=0 build/symbols and 32-bit C ownership regression passed.\n\n')
+              summary.write('This tests the older Codespaces-source backport. It does not rebuild the delivered R23 ROM or verify the installed iOS Delta app. No game/save artifacts are uploaded.\n')
+          PY

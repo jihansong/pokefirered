@@ -1,7 +1,22 @@
 LilycoveCity_House2_MapScripts::
 	.byte 0
 
+@ BEGIN PATCH (tools/hoenn_import/patches)
 LilycoveCity_House2_EventScript_H0::
-	msgbox LilycoveCity_House2_Text_H0, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_HOENN_GOT_TM44_FROM_LILYCOVE, LilycoveCity_House2_EventScript_H0_Received
+	msgbox LilycoveCity_House2_Text_H0, MSGBOX_DEFAULT
+	giveitem ITEM_TM44, 1
+	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_House2_EventScript_H0_NoRoom
+	setflag FLAG_HOENN_GOT_TM44_FROM_LILYCOVE
+LilycoveCity_House2_EventScript_H0_Received::
+	msgbox LilycoveCity_House2_Text_H0Rest, MSGBOX_DEFAULT
+	release
 	end
 
+LilycoveCity_House2_EventScript_H0_NoRoom::
+	msgbox LilycoveCity_House2_Text_H0NoRoom, MSGBOX_DEFAULT
+	release
+	end
+@ END PATCH

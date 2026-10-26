@@ -68,7 +68,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "MauvilleCity_BikeShop_EventScript_H2"
+      "script": "MauvilleCity_BikeShop_EventScript_MachBikeHandbook"
     },
     {
       "type": "sign",
@@ -76,7 +76,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "MauvilleCity_BikeShop_EventScript_H3"
+      "script": "MauvilleCity_BikeShop_EventScript_AcroBikeHandbook"
     }
   ]
 }

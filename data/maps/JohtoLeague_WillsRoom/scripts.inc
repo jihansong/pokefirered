@@ -16,6 +16,7 @@ JohtoLeague_WillsRoom_Victory::
 JohtoLeague_WillsRoom_NextRoom::
     lockall
     goto_if_unset FLAG_JOHTO_WILL_CLEARED, JohtoLeague_WillsRoom_GateClosed
+    special SetOrdinaryWarpTransition
     warp MAP_JOHTO_LEAGUE_KOGAS_ROOM, 0
     waitstate
     releaseall

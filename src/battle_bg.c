@@ -10,6 +10,7 @@
 #include "overworld.h"
 #include "text_window.h"
 #include "trig.h"
+#include "task.h"
 #include "constants/maps.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
@@ -670,12 +671,161 @@ void GetBattleTerrainGfxPtrs(u8 terrain, const u32 **tilesPtr, const u32 **mapPt
     *palPtr = sBattleTerrainTable[terrain].palette;
 }
 
+// Main-thread-only battle window lifecycle. Keep the original fixed window IDs.
+// Every non-NULL tileData owns one Alloc block; no aliases or persistent-heap loans.
+enum BattleWindowGroup
+{
+    BW_GROUP_MESSAGE,
+    BW_GROUP_ACTION,
+    BW_GROUP_MOVE,
+    BW_GROUP_SWITCH,
+    BW_GROUP_LEVEL,
+    BW_GROUP_YESNO,
+    BW_GROUP_VS,
+    BW_GROUP_OAK,
+    BW_GROUP_NONE
+};
+
+static u8 GetBattleWindowGroup(u8 windowId)
+{
+    if (windowId == B_WIN_MSG)
+        return BW_GROUP_MESSAGE;
+    if (windowId >= B_WIN_ACTION_PROMPT && windowId <= B_WIN_ACTION_MENU)
+        return BW_GROUP_ACTION;
+    if (windowId >= B_WIN_MOVE_NAME_1 && windowId <= B_WIN_PP_REMAINING)
+        return BW_GROUP_MOVE;
+    // SELECT reorders moves; B cancel redraws only PP/type, not move names.
+    // Keep both pages' CPU buffers together through this in-place submode.
+    if (windowId == B_WIN_SWITCH_PROMPT)
+        return BW_GROUP_MOVE;
+    if (windowId == B_WIN_LEVEL_UP_BOX || windowId == B_WIN_LEVEL_UP_BANNER)
+        return BW_GROUP_LEVEL;
+    if (windowId == B_WIN_YESNO)
+        return BW_GROUP_YESNO;
+    if (windowId >= B_WIN_VS_PLAYER && windowId <= B_WIN_VS_OUTCOME_RIGHT)
+        return BW_GROUP_VS;
+    if (windowId == B_WIN_OAK_OLD_MAN)
+        return BW_GROUP_OAK;
+    return BW_GROUP_NONE;
+}
+
+static bool8 KeepBattleWindowGroup(u8 group, u8 requested)
+{
+    // The message and tutorial printers can coexist with the current input page.
+    if (group == BW_GROUP_MESSAGE || group == BW_GROUP_OAK || group == requested)
+        return TRUE;
+    // EXP text may be printed while the level-up banner/box is on screen.
+    if (requested == BW_GROUP_MESSAGE && group == BW_GROUP_LEVEL)
+        return TRUE;
+    // A link standby message must not dismantle a live VS task's two BG maps.
+    if (requested == BW_GROUP_MESSAGE && group == BW_GROUP_VS
+     && FuncIsActiveTask(InitLinkBattleVsScreen))
+        return TRUE;
+    return FALSE;
+}
+
+static void WaitForBattleWindowCopies(void)
+{
+    // VBlankIntr runs ProcessDma3Requests even with a NULL vblankCallback.
+    // These callers are main callbacks/scripts, never interrupt callbacks.
+    while (WaitDma3Request(-1) == -1)
+        VBlankIntrWait();
+}
+
+static void ReleaseBattleWindowGroups(u8 requested)
+{
+    u8 i;
+    bool8 release = FALSE;
+
+    for (i = 0; i < NELEMS(sStandardBattleWindowTemplates) - 1; i++)
+    {
+        if (gWindows[i].tileData != NULL && !IsTextPrinterActive(i)
+         && !KeepBattleWindowGroup(GetBattleWindowGroup(i), requested))
+            release = TRUE;
+    }
+    if (release)
+        WaitForBattleWindowCopies();
+    for (i = 0; i < NELEMS(sStandardBattleWindowTemplates) - 1; i++)
+    {
+        if (gWindows[i].tileData != NULL && !IsTextPrinterActive(i)
+         && !KeepBattleWindowGroup(GetBattleWindowGroup(i), requested))
+        {
+            FREE_AND_SET_NULL(gWindows[i].tileData);
+        }
+    }
+    // BG2 is also used by Scary Face and general battle animation helpers.
+    // It remains independent and alive until normal FreeAllWindowBuffers.
+}
+
+static bool8 EnsureBattleWindowBg(u8 bg)
+{
+    void *map;
+    u16 size;
+
+    if (GetBgTilemapBuffer(bg) != NULL)
+        return TRUE;
+    size = GetBgAttribute(bg, BG_ATTR_MAPSIZE);
+    if (size == 0 || size == 0xFFFF)
+        return FALSE;
+    map = AllocZeroed(size);
+    if (map == NULL)
+        return FALSE;
+    gWindowBgTilemapBuffers[bg] = map;
+    SetBgTilemapBuffer(bg, map);
+    return TRUE;
+}
+
+bool8 BattlePrepareWindow(u8 windowId)
+{
+    u8 i;
+    u8 group;
+
+    if (windowId >= NELEMS(sStandardBattleWindowTemplates) - 1)
+        return FALSE;
+    group = GetBattleWindowGroup(windowId);
+    if (group == BW_GROUP_NONE)
+        return FALSE;
+    ReleaseBattleWindowGroups(group);
+    for (i = 0; i < NELEMS(sStandardBattleWindowTemplates) - 1; i++)
+    {
+        const struct WindowTemplate *template = &sStandardBattleWindowTemplates[i];
+        if (GetBattleWindowGroup(i) != group || gWindows[i].tileData != NULL)
+            continue;
+        if (!EnsureBattleWindowBg(template->bg))
+            return FALSE;
+        gWindows[i].tileData = AllocZeroed(TILE_SIZE_4BPP * template->width * template->height);
+        if (gWindows[i].tileData == NULL)
+            return FALSE;
+    }
+    return TRUE;
+}
+
+void BattleReleaseLevelUpWindows(void)
+{
+    ReleaseBattleWindowGroups(BW_GROUP_NONE);
+}
+
 void BattleInitBgsAndWindows(void)
 {
+    u8 i;
+    static const struct WindowTemplate noWindows[] = { DUMMY_WIN_TEMPLATE };
+
     ResetBgsAndClearDma3BusyFlags(FALSE);
     InitBgsFromTemplates(0, gBattleBgTemplates, NELEMS(gBattleBgTemplates));
-    InitWindows(sStandardBattleWindowTemplates);
+    // InitBgsFromTemplates clears AllocateBattleResources' earlier registration.
+    // Only BG1 borrows this block. BG2 is allocated separately when needed.
+    SetBgTilemapBuffer(1, gBattleAnimBgTilemapBuffer);
+    InitWindows(noWindows);
+    for (i = 0; i < NELEMS(sStandardBattleWindowTemplates) - 1; i++)
+        gWindows[i].window = sStandardBattleWindowTemplates[i];
     DeactivateAllTextPrinters();
+    // Animation APIs address BG2 even without a BG2 text window (Scary Face).
+    if (!EnsureBattleWindowBg(2))
+        return;
+    if (!BattlePrepareWindow(B_WIN_MSG))
+        return;
+    if (gBattleTypeFlags & BATTLE_TYPE_LINK)
+        BattlePrepareWindow(B_WIN_VS_PLAYER);
 }
 
 void InitBattleBgsVideo(void)

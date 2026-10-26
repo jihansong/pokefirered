@@ -6,9 +6,9 @@ MauvilleCity_Gym_Text_WattsonIntro::
     .string "WATTSON, that's me. I wired this\n"
     .string "city, and then I wired this room\l"
     .string "to keep people out of it.\p"
-    .string "KANTO's BADGES on you and not one\n"
-    .string "of ours. Well, that's a thing we\l"
-    .string "can fix.$"
+    .string "You've come a long way from KANTO.\n"
+    .string "Now let's see how you handle\l"
+    .string "MAUVILLE's current!$"
 
 MauvilleCity_Gym_Text_WattsonDefeat::
     .string "Wahahah! Beaten in my own circuit!$"

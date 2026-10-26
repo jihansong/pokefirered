@@ -18,7 +18,7 @@ MossdeepCity_SpaceCenter_1F_Text_Raid::
 
 MossdeepCity_SpaceCenter_1F_Text_AfterRaid::
 	.string "The rocket fuel is safe.\n"
-	.string "The launch can proceed.\p"
+	.string "Our staff can work again.\p"
 	.string "Our satellite readings will help\n"
 	.string "STEVEN locate the deep-sea signal.$"
 

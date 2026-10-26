@@ -3,6 +3,8 @@
 #include "surfing_pikachu.h"
 #include "gflib.h"
 #include "bike.h"
+#include "rotating_gate.h"
+#include "hoenn_puzzles.h"
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "fieldmap.h"
@@ -63,6 +65,7 @@ static bool8 ForcedMovement_SlideSouth(void);
 static bool8 ForcedMovement_SlideNorth(void);
 static bool8 ForcedMovement_SlideWest(void);
 static bool8 ForcedMovement_SlideEast(void);
+static bool8 ForcedMovement_MuddySlope(void);
 static bool8 ForcedMovement_MatJump(void);
 static bool8 ForcedMovement_MatSpin(void);
 static u8 CheckMovementInputNotOnBike(u8 direction);
@@ -145,6 +148,7 @@ void player_step(u8 direction, u16 newKeys, u16 heldKeys)
     HandleWarpArrowSpriteHideShow(playerObjEvent);
     if (!gPlayerAvatar.preventStep && !TryUpdatePlayerSpinDirection())
     {
+        Bike_TryAcroBikeHistoryUpdate(newKeys, heldKeys);
         if (!TryInterruptObjectEventSpecialAnim(playerObjEvent, direction))
         {
             npc_clear_strange_bits(playerObjEvent);
@@ -251,6 +255,7 @@ static const struct {
     {MetatileBehavior_IsWaterfall, ForcedMovement_PushedSouthByCurrent},
     {MetatileBehavior_IsSecretBaseJumpMat, ForcedMovement_MatJump},
     {MetatileBehavior_IsSecretBaseSpinMat, ForcedMovement_MatSpin},
+    {MetatileBehavior_IsMuddySlope, ForcedMovement_MuddySlope},
     {NULL, ForcedMovement_None},
 };
 
@@ -435,6 +440,22 @@ static bool8 ForcedMovement_SlideEast(void)
     return ForcedMovement_Slide(DIR_EAST, PlayerWalkFast);
 }
 
+static bool8 ForcedMovement_MuddySlope(void)
+{
+    struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+    if (playerObjEvent->movementDirection != DIR_NORTH || GetPlayerSpeed() < PLAYER_SPEED_FASTEST)
+    {
+        Bike_UpdateBikeCounterSpeed(0);
+        playerObjEvent->facingDirectionLocked = TRUE;
+        return DoForcedMovement(DIR_SOUTH, PlayerWalkFast);
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
 static bool8 ForcedMovement_MatJump(void)
 {
     DoPlayerMatJump();
@@ -587,6 +608,9 @@ u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u
 
     if (collision == COLLISION_NONE)
     {
+        if (objectEvent == &gObjectEvents[gPlayerAvatar.objectEventId]
+            && CheckForRotatingGatePuzzleCollision(direction, x, y))
+            return COLLISION_IMPASSABLE;
         CheckAcroBikeCollision(x, y, metatileBehavior, &collision);
     }
     return collision;
@@ -728,8 +752,16 @@ static void PlayerAvatarTransition_Normal(struct ObjectEvent * playerObjEvent)
 
 static void PlayerAvatarTransition_Bike(struct ObjectEvent * playerObjEvent)
 {
-    QuestLogTryRecordPlayerAvatarGfxTransition(QL_PLAYER_GFX_BIKE);
-    QuestLogCallUpdatePlayerSprite(QL_PLAYER_GFX_BIKE);
+    u8 state;
+
+    if (gPlayerAvatar.transitionFlags & PLAYER_AVATAR_FLAG_ACRO_BIKE)
+        state = QL_PLAYER_GFX_ACRO_BIKE;
+    else if (Bike_GetMode() == BIKE_MODE_MACH)
+        state = QL_PLAYER_GFX_MACH_BIKE;
+    else
+        state = QL_PLAYER_GFX_BIKE;
+    QuestLogTryRecordPlayerAvatarGfxTransition(state);
+    QuestLogCallUpdatePlayerSprite(state);
     BikeClearState(0, 0);
 }
 
@@ -859,6 +891,11 @@ void PlayerWalkFast(u8 direction)
     PlayerSetAnimId(GetWalkFastMovementAction(direction), 2);
 }
 
+void PlayerRideBikeFastest(u8 direction)
+{
+    PlayerSetAnimId(GetSlideMovementAction(direction), 2);
+}
+
 void PlayerGlide(u8 direction)
 {
     PlayerSetAnimId(GetGlideMovementAction(direction), 2);
@@ -949,57 +986,57 @@ static void PlayerApplyTileForcedMovement(u8 metatileBehavior)
     }
 }
 
-static void PlayerIdleWheelie(u8 direction)
+void PlayerIdleWheelie(u8 direction)
 {
     PlayerSetAnimId(GetAcroWheelieFaceDirectionMovementAction(direction), 1);
 }
 
-static void PlayerStartWheelie(u8 direction)
+void PlayerStartWheelie(u8 direction)
 {
     PlayerSetAnimId(GetAcroPopWheelieFaceDirectionMovementAction(direction), 1);
 }
 
-static void PlayerEndWheelie(u8 direction)
+void PlayerEndWheelie(u8 direction)
 {
     PlayerSetAnimId(GetAcroEndWheelieFaceDirectionMovementAction(direction), 1);
 }
 
-static void PlayerStandingHoppingWheelie(u8 direction)
+void PlayerStandingHoppingWheelie(u8 direction)
 {
     PlaySE(SE_BIKE_HOP);
     PlayerSetAnimId(GetAcroWheelieHopFaceDirectionMovementAction(direction), 1);
 }
 
-static void PlayerMovingHoppingWheelie(u8 direction)
+void PlayerMovingHoppingWheelie(u8 direction)
 {
     PlaySE(SE_BIKE_HOP);
     PlayerSetAnimId(GetAcroWheelieHopMovementAction(direction), 2);
 }
 
-static void PlayerLedgeHoppingWheelie(u8 direction)
+void PlayerLedgeHoppingWheelie(u8 direction)
 {
     PlaySE(SE_BIKE_HOP);
     PlayerSetAnimId(GetAcroWheelieJumpMovementAction(direction), 8);
 }
 
-static void PlayerAcroTurnJump(u8 direction)
+void PlayerAcroTurnJump(u8 direction)
 {
     PlaySE(SE_BIKE_HOP);
     PlayerSetAnimId(GetJumpInPlaceTurnAroundMovementAction(direction), 1);
 }
 
-static void PlayerAcroWheelieCollide(u8 direction)
+void PlayerAcroWheelieCollide(u8 direction)
 {
     PlaySE(SE_WALL_HIT);
     PlayerSetAnimId(GetAcroWheelieInPlaceMovementAction(direction), 2);
 }
 
-static void PlayerAcroPopWheelie(u8 direction)
+void PlayerAcroPopWheelie(u8 direction)
 {
     PlayerSetAnimId(GetAcroPopWheelieMoveMovementAction(direction), 2);
 }
 
-static void PlayerAcroWheelieMove(u8 direction)
+void PlayerAcroWheelieMove(u8 direction)
 {
     PlayerSetAnimId(GetAcroWheelieMoveMovementAction(direction), 2);
 }
@@ -1239,6 +1276,8 @@ static u8 GetPlayerMonFormGfx(void)
 
 static u8 GetOwnPlayerAvatarGraphicsId(u8 state, u8 gender)
 {
+    if (state == PLAYER_AVATAR_GFX_BIKE && (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ACRO_BIKE))
+        return OBJ_EVENT_GFX_PLAYER_ACRO_BIKE;
     // Only the plain walking look changes. Biking, surfing, fishing and field
     // moves keep the player's own sprites, whose extra animations mons lack.
     if (state == PLAYER_AVATAR_GFX_NORMAL && IsPlayerInMonForm())
@@ -1301,6 +1340,8 @@ void BufferPlayerMonFormName(void)
 
 u8 GetPlayerAvatarGenderByGraphicsId(u8 gfxId)
 {
+    if (gfxId == OBJ_EVENT_GFX_PLAYER_ACRO_BIKE)
+        return gSaveBlock2Ptr->playerGender;
     switch (gfxId)
     {
     case OBJ_EVENT_GFX_GREEN_NORMAL:
@@ -1361,11 +1402,14 @@ bool8 MetatileAtCoordsIsWaterTile(s16 x, s16 y)
 
 void ClearPlayerAvatarInfo(void)
 {
+    Bike_ResetTransientState();
     gPlayerAvatar = (struct PlayerAvatar){};
 }
 
 void SetPlayerAvatarStateMask(u8 flags)
 {
+    if ((gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ACRO_BIKE) && !(flags & PLAYER_AVATAR_FLAG_ACRO_BIKE))
+        Bike_ResetTransientState();
     gPlayerAvatar.flags &= (PLAYER_AVATAR_FLAG_DASH | PLAYER_AVATAR_FLAG_FORCED | PLAYER_AVATAR_FLAG_CONTROLLABLE);
     gPlayerAvatar.flags |= flags;
 }
@@ -1387,6 +1431,9 @@ u8 GetPlayerAvatarStateTransitionByGraphicsId(u8 graphicsId, u8 gender)
 {
     u8 i;
 
+    if (graphicsId == OBJ_EVENT_GFX_PLAYER_ACRO_BIKE)
+        return PLAYER_AVATAR_FLAG_ACRO_BIKE;
+
     for (i = 0; i < NELEMS(*sPlayerAvatarGfxToStateFlag); i++)
     {
         if (sPlayerAvatarGfxToStateFlag[gender][i][0] == graphicsId)
@@ -1400,6 +1447,8 @@ u8 GetPlayerAvatarGraphicsIdByCurrentState(void)
     u8 i;
     u8 flags = gPlayerAvatar.flags;
 
+    if (flags & PLAYER_AVATAR_FLAG_ACRO_BIKE)
+        return OBJ_EVENT_GFX_PLAYER_ACRO_BIKE;
     if (flags & PLAYER_AVATAR_FLAG_UNDERWATER)
         return GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_GFX_RIDE);
     for (i = 0; i < NELEMS(*sPlayerAvatarGfxToStateFlag); i++)
@@ -1492,7 +1541,9 @@ void StartPlayerAvatarFishAnim(u8 direction)
 // Stubbed from R/S
 void PlayerUseAcroBikeOnBumpySlope(u8 direction)
 {
-
+    ObjectEventSetGraphicsId(&gObjectEvents[gPlayerAvatar.objectEventId], OBJ_EVENT_GFX_PLAYER_ACRO_BIKE);
+    StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], GetAcroWheelieDirectionAnimNum(direction));
+    SeekSpriteAnim(&gSprites[gPlayerAvatar.spriteId], 1);
 }
 
 static void SetPlayerAvatarWatering(void)
@@ -1588,6 +1639,8 @@ static bool8 DoBoulderFinish(struct Task *task, struct ObjectEvent *playerObject
         ObjectEventClearHeldMovementIfFinished(strengthObject);
         HandleBoulderFallThroughHole(strengthObject);
         HandleBoulderActivateVictoryRoadSwitch(strengthObject->currentCoords.x, strengthObject->currentCoords.y);
+        if (HoennSeafloorHasPuzzleSave())
+            OverrideTemplateCoordsForObjectEvent(strengthObject);
         gPlayerAvatar.preventStep = FALSE;
         UnlockPlayerFieldControls();
         DestroyTask(FindTaskIdByFunc(Task_BumpBoulder));
@@ -2460,3 +2513,15 @@ static u8 TeleportAnim_RotatePlayer(struct ObjectEvent *object, s16 *a1)
 #undef tDeltaY
 #undef tRotationTimer
 #undef tState
+
+void PlayerAcroEndWheelieMove(u8 direction)
+{
+    PlayerSetAnimId(GetAcroEndWheelieMoveMovementAction(direction), 2);
+}
+
+void PlayerAcroSideJump(u8 direction)
+{
+    PlaySE(SE_BIKE_HOP);
+    gObjectEvents[gPlayerAvatar.objectEventId].facingDirectionLocked = TRUE;
+    PlayerSetAnimId(GetJumpMovementAction(direction), 2);
+}

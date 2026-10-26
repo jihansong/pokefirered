@@ -17,6 +17,8 @@
 #include "constants/event_objects.h"
 #include "constants/songs.h"
 #include "constants/metatile_labels.h"
+#include "data/tilesets/ty_hns_field_move_ids.h"
+extern const struct Tileset gTileset_TYHnsJohtoGeneral;
 
 #define CUT_GRASS_SPRITE_COUNT 8
 #define CUT_SIDE 3
@@ -238,6 +240,13 @@ static void SetCutGrassMetatileAt(s16 x, s16 y)
 {
     u16 i = 0;
     u16 metatileId = MapGridGetMetatileIdAt(x, y);
+    if (gMapHeader.mapLayout->primaryTileset == &gTileset_TYHnsJohtoGeneral)
+    {
+        // Original donor General_TallGrass -> General_Grass after ID conversion.
+        if (metatileId == TY_HNS_METATILE_GENERAL_TALL_GRASS)
+            MapGridSetMetatileIdAt(x, y, TY_HNS_METATILE_GENERAL_GRASS);
+        return;
+    }
     while (1)
     {
         if (sCutGrassMetatileMapping[i][0] == 0xFFFF)

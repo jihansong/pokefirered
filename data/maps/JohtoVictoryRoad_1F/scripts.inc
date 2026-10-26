@@ -16,6 +16,7 @@ JohtoVictoryRoad_1F_Silver_Victory::
 JohtoVictoryRoad_1F_LeagueExit::
     lockall
     goto_if_unset FLAG_JOHTO_SILVER_LEAGUE_RESOLVED, JohtoVictoryRoad_1F_SilverWait
+    special SetOrdinaryWarpTransition
     warp MAP_JOHTO_INDIGO_PLATEAU, 1
     waitstate
     releaseall

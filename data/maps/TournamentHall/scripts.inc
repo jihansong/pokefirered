@@ -48,6 +48,7 @@ TournamentHall_EventScript_WonAgain::
 TournamentHall_EventScript_Leave::
 	msgbox TournamentHall_Text_ComeBack
 	closemessage
+	special SetOrdinaryWarpTransition
 	warp MAP_INDIGO_PLATEAU_POKEMON_CENTER_1F, 21, 13
 	waitstate
 	release

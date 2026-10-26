@@ -1,0 +1,14 @@
+@ Original Emerald boulders; map-local save compatibility only.
+SeafloorCavern_Room3_TY_PuzzleEntry::
+	special HoennSeafloorMarkPuzzleSave
+	end
+
+SeafloorCavern_Room3_EventScript_Shelly::
+	trainerbattle_single TRAINER_HOENN_SHELLY_SEAFLOOR_CAVERN, SeafloorCavern_Room3_Text_ShellyIntro, SeafloorCavern_Room3_Text_ShellyDefeat
+	msgbox SeafloorCavern_Room3_Text_ShellyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SeafloorCavern_Room3_EventScript_Grunt5::
+	trainerbattle_single TRAINER_HOENN_GRUNT_SEAFLOOR_CAVERN_5, SeafloorCavern_Room3_Text_Grunt5Intro, SeafloorCavern_Room3_Text_Grunt5Defeat
+	msgbox SeafloorCavern_Room3_Text_Grunt5PostBattle, MSGBOX_AUTOCLOSE
+	end

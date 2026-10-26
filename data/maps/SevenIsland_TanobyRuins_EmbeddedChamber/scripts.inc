@@ -121,6 +121,7 @@ SevenIsland_TanobyRuins_EmbeddedChamber_EventScript_OpenWall::
 	waitse
 	msgbox SevenIsland_TanobyRuins_EmbeddedChamber_Text_WallSplitOpen
 	closemessage
+	special SetOrdinaryWarpTransition
 	warp MAP_SEVEN_ISLAND_TANOBY_RUINS_EMBEDDED_CHAMBER, 0
 	waitstate
 	releaseall

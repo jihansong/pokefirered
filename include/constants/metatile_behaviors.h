@@ -128,6 +128,30 @@
 #define MB_CYCLING_ROAD_PULL_DOWN 0xD0
 #define MB_CYCLING_ROAD_PULL_DOWN_GRASS 0xD1
 //
+// Pinned HnS behavior identities; existing behavior values/count remain unchanged.
+#define MB_TY_HNS_BRIDGE_OVER_POND_MED                   0xE0
+#define MB_TY_HNS_HEADBUTT_TREE                          0xE1
+#define MB_TY_HNS_SIDEWAYS_STAIRS_LEFT_SIDE              0xE2
+#define MB_TY_HNS_SIDEWAYS_STAIRS_LEFT_SIDE_BOTTOM       0xE3
+#define MB_TY_HNS_SIDEWAYS_STAIRS_LEFT_SIDE_TOP          0xE4
+#define MB_TY_HNS_SIDEWAYS_STAIRS_RIGHT_SIDE             0xE5
+#define MB_TY_HNS_SIDEWAYS_STAIRS_RIGHT_SIDE_BOTTOM      0xE6
+#define MB_TY_HNS_SIDEWAYS_STAIRS_RIGHT_SIDE_TOP         0xE7
+
+// Noninteractive sentinel for UNUSED donor room attributes; never a used-room NORMAL substitution.
+#define MB_TY_HNS_UNPORTED_UNUSED_ROOM 0xE8
+
+// Original HnS decorative Lab tag. Secret-base interaction is not ported.
+#define MB_TY_HNS_SECRET_BASE_SPOT_TREE_RIGHT 0xE9
+
+// Original Hoenn bike terrain; preserve FRLG Cycling Road and HnS codes.
+#define MB_MUDDY_SLOPE 0xEA
+#define MB_BUMPY_SLOPE 0xEB
+#define MB_ISOLATED_VERTICAL_RAIL 0xEC
+#define MB_ISOLATED_HORIZONTAL_RAIL 0xED
+#define MB_VERTICAL_RAIL 0xEE
+#define MB_HORIZONTAL_RAIL 0xEF
+
 #define NUM_METATILE_BEHAVIORS 0xF0
 
 #endif // GUARD_METATILE_BEHAVIORS

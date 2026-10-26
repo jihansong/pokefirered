@@ -8,3 +8,5 @@
 #include "data/tilesets/hoenn_metatiles.h"
 #include "data/tilesets/headers.h"
 #include "data/tilesets/hoenn_headers.h"
+
+#include "data/tilesets/ty_space_deck_v4.h"

@@ -10,6 +10,9 @@
 #include "pokemon_storage_system.h"
 #include "gba/flash_internal.h"
 #include "sloopsvc.h"
+#include "expanded_save.h"
+#include "persistent_heap.h"
+#include "item.h"
 
 static u8 HandleWriteSector(u16 sectorId, const struct SaveSectorLocation *locations);
 static u8 TryWriteSector(u8 sectorNum, u8 *data);
@@ -18,6 +21,13 @@ static u8 CopySaveSlotData(u16 sectorId, const struct SaveSectorLocation *locati
 static u8 GetSaveValidStatus(const struct SaveSectorLocation *locations);
 static u8 ReadFlashSector(u8 sectorId, struct SaveSector *sector);
 static u16 CalculateChecksum(void *data, u16 size);
+static bool8 ExpandedSaveEnabled(void);
+static u8 ExpandedSaveWriteFull(void);
+static u8 ExpandedSaveBegin(void);
+static u8 ExpandedSaveWriteNext(void);
+static u8 ExpandedSaveCommit(void);
+static bool8 ExpandedSaveHasFormat(void);
+static u8 ExpandedSaveLoad(void);
 
 /*
  * Sector Layout:
@@ -94,6 +104,38 @@ COMMON_DATA u16 gSaveAttemptStatus = 0;
 EWRAM_DATA struct SaveSector gSaveDataBuffer = {0};
 EWRAM_DATA u32 gSaveUnusedVar2 = 0;
 
+// Scratch lives in the reserved heap tail, not in any legacy save/RAM struct.
+struct ExpandedSaveState
+{
+    u32 magic;
+    u32 counter;
+    u32 previousCounter;
+    u32 aggregateSum;
+    u16 nextSector;
+    u8 stage;
+};
+
+#define EXPANDED_STATE_MAGIC     0x53585954
+#define EXPANDED_STATE_ACTIVE    1
+#define EXPANDED_STATE_COMMITTED 2
+#define EXPANDED_STATE_FAILED    3
+
+STATIC_ASSERT(sizeof(struct ExpandedSaveState) <= PERSISTENT_HEAP_META_SIZE, ExpandedSaveScratchFits);
+STATIC_ASSERT(EXPANDED_SAVE_SECTOR_COUNT < EXPANDED_SAVE_COMMIT_SECTOR, ExpandedSaveCommitOutsidePayload);
+STATIC_ASSERT(EXPANDED_SAVE_COMMIT_SECTOR < SECTOR_ID_HOF_1, ExpandedSavePreservesAuxSectors);
+STATIC_ASSERT(sizeof(struct PokemonStorage) == EXPANDED_SAVE_LEGACY_PC_SIZE, ExpandedSaveLegacySize);
+STATIC_ASSERT(sizeof(struct PokemonStorageExtra) == EXPANDED_SAVE_EXTRA_PC_SIZE, ExpandedSaveExtraSize);
+
+static struct ExpandedSaveState *ExpandedSaveState(void)
+{
+    return (struct ExpandedSaveState *)PERSISTENT_HEAP_META_DATA;
+}
+
+static bool8 ExpandedSaveEnabled(void)
+{
+    return TOTAL_BOXES_COUNT > LEGACY_BOXES_COUNT;
+}
+
 void ClearSaveData(void)
 {
     u16 i;
@@ -107,6 +149,8 @@ void Save_ResetSaveCounters(void)
     gSaveCounter = 0;
     gLastWrittenSector = 0;
     gDamagedSaveSectors = 0;
+    if (ExpandedSaveEnabled())
+        memset(ExpandedSaveState(), 0, sizeof(struct ExpandedSaveState));
 }
 
 static bool32 SetDamagedSectorBits(u8 op, u8 sectorNum)
@@ -134,6 +178,9 @@ static u8 WriteSaveSectorOrSlot(u16 sectorId, const struct SaveSectorLocation *l
 {
     u32 status;
     u16 i;
+
+    if (ExpandedSaveEnabled())
+        return ExpandedSaveWriteFull();
 
     gSaveDataBufferPtr = &gSaveDataBuffer;
 
@@ -229,6 +276,215 @@ static u8 TryWriteSector(u8 sectorNum, u8 *data)
         return SAVE_STATUS_OK;
     }
 #endif
+}
+
+static u8 *ExpandedSaveSectorData(u16 sectorId, u16 *size)
+{
+    u32 offset;
+
+    if (sectorId < EXPANDED_SAVE_EXTRA_START)
+    {
+        *size = gRamSaveSectorLocations[sectorId].size;
+        return gRamSaveSectorLocations[sectorId].data;
+    }
+    if (sectorId < EXPANDED_SAVE_SECTOR_COUNT)
+    {
+        offset = (sectorId - EXPANDED_SAVE_EXTRA_START) * SECTOR_DATA_SIZE;
+        *size = min(EXPANDED_SAVE_EXTRA_PC_SIZE - offset, SECTOR_DATA_SIZE);
+        return GetPokemonStorageExtraData() + offset;
+    }
+    *size = 0;
+    return NULL;
+}
+
+static u32 ExpandedSaveSum(const void *data, u16 size)
+{
+    const u32 *words = data;
+    u32 sum = 0;
+    u16 i;
+
+    for (i = 0; i < size / 4; i++)
+        sum += words[i];
+    return sum;
+}
+
+static u8 ExpandedSaveFail(void)
+{
+    struct ExpandedSaveState *state = ExpandedSaveState();
+
+    if (state->magic == EXPANDED_STATE_MAGIC)
+    {
+        state->stage = EXPANDED_STATE_FAILED;
+        gSaveCounter = state->previousCounter;
+        gLastWrittenSector = gLastKnownGoodSector;
+    }
+    SetDamagedSectorBits(ENABLE, EXPANDED_SAVE_COMMIT_SECTOR);
+    return SAVE_STATUS_ERROR;
+}
+
+static u8 ExpandedSaveWriteCommit(u32 status)
+{
+    struct ExpandedSaveState *state = ExpandedSaveState();
+    struct ExpandedSaveCommit *commit;
+
+    gSaveDataBufferPtr = &gSaveDataBuffer;
+    memset(gSaveDataBufferPtr, 0, sizeof(*gSaveDataBufferPtr));
+    commit = (struct ExpandedSaveCommit *)gSaveDataBufferPtr->data;
+    commit->magic = EXPANDED_SAVE_COMMIT_MAGIC;
+    commit->version = EXPANDED_SAVE_VERSION;
+    commit->sectorCount = EXPANDED_SAVE_SECTOR_COUNT;
+    commit->counter = state->counter;
+    commit->state = status;
+    commit->aggregateSum = state->aggregateSum;
+    commit->legacySize = EXPANDED_SAVE_LEGACY_PC_SIZE;
+    commit->extraSize = EXPANDED_SAVE_EXTRA_PC_SIZE;
+    gSaveDataBufferPtr->id = EXPANDED_SAVE_COMMIT_ID;
+    gSaveDataBufferPtr->signature = EXPANDED_SAVE_SIGNATURE;
+    gSaveDataBufferPtr->counter = state->counter;
+    gSaveDataBufferPtr->checksum = CalculateChecksum(commit, sizeof(*commit));
+    return TryWriteSector(EXPANDED_SAVE_COMMIT_SECTOR, gSaveDataBufferPtr->data);
+}
+
+static u8 ExpandedSaveBegin(void)
+{
+    struct ExpandedSaveState *state = ExpandedSaveState();
+
+    memset(state, 0, sizeof(*state));
+    state->magic = EXPANDED_STATE_MAGIC;
+    state->previousCounter = gSaveCounter;
+    state->counter = gSaveCounter + 1;
+    state->stage = EXPANDED_STATE_ACTIVE;
+    gLastSaveCounter = gSaveCounter;
+    gLastKnownGoodSector = gLastWrittenSector;
+    gSaveCounter = state->counter;
+    gIncrementalSectorId = 0;
+    if (!PrepareBagExtensionForSave() || StorageGetCurrentBox() >= TOTAL_BOXES_COUNT)
+        return ExpandedSaveFail();
+    // Preserve an auxiliary-sector failure from the current HOF write.
+    gDamagedSaveSectors &= 0xF0000000;
+    if (ExpandedSaveWriteCommit(EXPANDED_SAVE_COMMIT_BEGIN) != SAVE_STATUS_OK)
+        return ExpandedSaveFail();
+    return SAVE_STATUS_OK;
+}
+
+static u8 ExpandedSaveWriteNext(void)
+{
+    struct ExpandedSaveState *state = ExpandedSaveState();
+    u16 id, size;
+    u8 *data;
+    u32 sum;
+
+    if (state->magic != EXPANDED_STATE_MAGIC || state->stage != EXPANDED_STATE_ACTIVE
+     || state->nextSector >= EXPANDED_SAVE_SECTOR_COUNT)
+        return ExpandedSaveFail();
+    id = state->nextSector;
+    data = ExpandedSaveSectorData(id, &size);
+    gSaveDataBufferPtr = &gSaveDataBuffer;
+    memset(gSaveDataBufferPtr, 0, sizeof(*gSaveDataBufferPtr));
+    memcpy(gSaveDataBufferPtr->data, data, size);
+    gSaveDataBufferPtr->id = id;
+    gSaveDataBufferPtr->signature = EXPANDED_SAVE_SIGNATURE;
+    gSaveDataBufferPtr->counter = state->counter;
+    gSaveDataBufferPtr->checksum = CalculateChecksum(gSaveDataBufferPtr->data, size);
+    // Use the frozen sector buffer actually sent to flash, not later live RAM.
+    sum = ExpandedSaveSum(gSaveDataBufferPtr->data, size);
+    if (TryWriteSector(id, gSaveDataBufferPtr->data) != SAVE_STATUS_OK)
+        return ExpandedSaveFail();
+    state->aggregateSum += sum;
+    state->nextSector++;
+    gIncrementalSectorId = state->nextSector;
+    return SAVE_STATUS_OK;
+}
+
+static u8 ExpandedSaveCommit(void)
+{
+    struct ExpandedSaveState *state = ExpandedSaveState();
+
+    if (state->magic == EXPANDED_STATE_MAGIC && state->stage == EXPANDED_STATE_COMMITTED)
+        return SAVE_STATUS_OK;
+    if (state->magic != EXPANDED_STATE_MAGIC || state->stage != EXPANDED_STATE_ACTIVE
+     || state->nextSector != EXPANDED_SAVE_SECTOR_COUNT || gDamagedSaveSectors != 0)
+        return ExpandedSaveFail();
+    if (ExpandedSaveWriteCommit(EXPANDED_SAVE_COMMIT_COMPLETE) != SAVE_STATUS_OK)
+        return ExpandedSaveFail();
+    state->stage = EXPANDED_STATE_COMMITTED;
+    gSaveCounter = state->counter;
+    gLastWrittenSector = 0;
+    return SAVE_STATUS_OK;
+}
+
+static u8 ExpandedSaveWriteFull(void)
+{
+    u16 i;
+
+    if (ExpandedSaveBegin() != SAVE_STATUS_OK)
+        return SAVE_STATUS_ERROR;
+    for (i = 0; i < EXPANDED_SAVE_SECTOR_COUNT; i++)
+    {
+        if (ExpandedSaveWriteNext() != SAVE_STATUS_OK)
+            return SAVE_STATUS_ERROR;
+    }
+    return ExpandedSaveCommit();
+}
+
+static bool8 ExpandedSaveHasFormat(void)
+{
+    u16 sector;
+    u32 signature;
+
+    for (sector = 0; sector <= EXPANDED_SAVE_COMMIT_SECTOR; sector++)
+    {
+        ReadFlash(sector, SECTOR_SIGNATURE_OFFSET, (u8 *)&signature, sizeof(signature));
+        if (signature == EXPANDED_SAVE_SIGNATURE)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+static u8 ExpandedSaveLoad(void)
+{
+    struct ExpandedSaveCommit commit;
+    u32 aggregate = 0;
+    u16 id, size;
+    u8 *data;
+
+    gSaveDataBufferPtr = &gSaveDataBuffer;
+    ReadFlashSector(EXPANDED_SAVE_COMMIT_SECTOR, gSaveDataBufferPtr);
+    memcpy(&commit, gSaveDataBufferPtr->data, sizeof(commit));
+    if (gSaveDataBufferPtr->signature != EXPANDED_SAVE_SIGNATURE
+     || gSaveDataBufferPtr->id != EXPANDED_SAVE_COMMIT_ID
+     || gSaveDataBufferPtr->counter != commit.counter
+     || gSaveDataBufferPtr->checksum != CalculateChecksum(&commit, sizeof(commit))
+     || commit.magic != EXPANDED_SAVE_COMMIT_MAGIC || commit.version != EXPANDED_SAVE_VERSION
+     || commit.sectorCount != EXPANDED_SAVE_SECTOR_COUNT || commit.state != EXPANDED_SAVE_COMMIT_COMPLETE
+     || commit.legacySize != EXPANDED_SAVE_LEGACY_PC_SIZE || commit.extraSize != EXPANDED_SAVE_EXTRA_PC_SIZE)
+        return SAVE_STATUS_INVALID;
+
+    // Validate the complete generation before copying any save payload to RAM.
+    for (id = 0; id < EXPANDED_SAVE_SECTOR_COUNT; id++)
+    {
+        ExpandedSaveSectorData(id, &size);
+        ReadFlashSector(id, gSaveDataBufferPtr);
+        if (gSaveDataBufferPtr->signature != EXPANDED_SAVE_SIGNATURE || gSaveDataBufferPtr->id != id
+         || gSaveDataBufferPtr->counter != commit.counter
+         || gSaveDataBufferPtr->checksum != CalculateChecksum(gSaveDataBufferPtr->data, size))
+            return SAVE_STATUS_INVALID;
+        if (id == SECTOR_ID_PKMN_STORAGE_START && gSaveDataBufferPtr->data[0] >= TOTAL_BOXES_COUNT)
+            return SAVE_STATUS_INVALID;
+        aggregate += ExpandedSaveSum(gSaveDataBufferPtr->data, size);
+    }
+    if (aggregate != commit.aggregateSum)
+        return SAVE_STATUS_INVALID;
+    for (id = 0; id < EXPANDED_SAVE_SECTOR_COUNT; id++)
+    {
+        data = ExpandedSaveSectorData(id, &size);
+        ReadFlashSector(id, gSaveDataBufferPtr);
+        memcpy(data, gSaveDataBufferPtr->data, size);
+    }
+    gSaveCounter = commit.counter;
+    gLastWrittenSector = 0;
+    memset(ExpandedSaveState(), 0, sizeof(struct ExpandedSaveState));
+    return SAVE_STATUS_OK;
 }
 
 static u32 RestoreSaveBackupVarsAndIncrement(const struct SaveSectorLocation *locations)
@@ -448,6 +704,8 @@ static u8 CopySaveSlotData(u16 sectorId, const struct SaveSectorLocation *locati
     {
         ReadFlashSector(i + sector, gSaveDataBufferPtr);
         id = gSaveDataBufferPtr->id;
+        if (id >= NUM_SECTORS_PER_SLOT)
+            continue;
         if (id == 0)
             gLastWrittenSector = i;
 
@@ -484,6 +742,8 @@ static u8 GetSaveValidStatus(const struct SaveSectorLocation *locations)
         if (gSaveDataBufferPtr->signature == SECTOR_SIGNATURE)
         {
             signatureValid = TRUE;
+            if (gSaveDataBufferPtr->id >= NUM_SECTORS_PER_SLOT)
+                continue;
             checksum = CalculateChecksum(gSaveDataBufferPtr->data, locations[gSaveDataBufferPtr->id].size);
             if (gSaveDataBufferPtr->checksum == checksum)
             {
@@ -512,6 +772,8 @@ static u8 GetSaveValidStatus(const struct SaveSectorLocation *locations)
         if (gSaveDataBufferPtr->signature == SECTOR_SIGNATURE)
         {
             signatureValid = TRUE;
+            if (gSaveDataBufferPtr->id >= NUM_SECTORS_PER_SLOT)
+                continue;
             checksum = CalculateChecksum(gSaveDataBufferPtr->data, locations[gSaveDataBufferPtr->id].size);
             if (gSaveDataBufferPtr->checksum == checksum)
             {
@@ -675,6 +937,11 @@ u8 HandleSavingData(u8 saveType)
         break;
     case SAVE_LINK:
         SaveSerializedGame();
+        if (ExpandedSaveEnabled())
+        {
+            ExpandedSaveWriteFull();
+            break;
+        }
         // only SaveBlock2 and SaveBlock1 (ignores storage in PC)
         for(i = SECTOR_ID_SAVEBLOCK2; i <= SECTOR_ID_SAVEBLOCK1_END; i++)
             WriteSaveSectorOrSlot(i, gRamSaveSectorLocations);
@@ -727,13 +994,37 @@ bool8 LinkFullSave_Init(void)
 
     UpdateSaveAddresses();
     SaveSerializedGame();
+    if (ExpandedSaveEnabled())
+    {
+        if (ExpandedSaveBegin() != SAVE_STATUS_OK)
+            DoSaveFailedScreen(SAVE_NORMAL);
+        return FALSE;
+    }
     RestoreSaveBackupVarsAndIncrement(gRamSaveSectorLocations);
     return FALSE;
 }
 
 bool8 LinkFullSave_WriteSector(void) 
 {
-    u8 status = HandleWriteIncrementalSector(NUM_SECTORS_PER_SLOT, gRamSaveSectorLocations);
+    u8 status;
+
+    if (ExpandedSaveEnabled())
+    {
+        struct ExpandedSaveState *state = ExpandedSaveState();
+
+        if (state->magic == EXPANDED_STATE_MAGIC && state->stage == EXPANDED_STATE_COMMITTED)
+            return TRUE;
+        if (state->magic == EXPANDED_STATE_MAGIC && state->stage == EXPANDED_STATE_ACTIVE
+         && state->nextSector == EXPANDED_SAVE_SECTOR_COUNT - 1)
+            return TRUE;
+        if (ExpandedSaveWriteNext() != SAVE_STATUS_OK)
+        {
+            DoSaveFailedScreen(SAVE_NORMAL);
+            return TRUE;
+        }
+        return FALSE;
+    }
+    status = HandleWriteIncrementalSector(NUM_SECTORS_PER_SLOT, gRamSaveSectorLocations);
     if (gDamagedSaveSectors)
         DoSaveFailedScreen(SAVE_NORMAL);
 
@@ -745,6 +1036,20 @@ bool8 LinkFullSave_WriteSector(void)
 
 bool8 LinkFullSave_ReplaceLastSector(void)
 {
+    if (ExpandedSaveEnabled())
+    {
+        struct ExpandedSaveState *state = ExpandedSaveState();
+
+        if (state->magic == EXPANDED_STATE_MAGIC && state->stage == EXPANDED_STATE_COMMITTED)
+            return FALSE;
+        if (state->nextSector != EXPANDED_SAVE_SECTOR_COUNT - 1
+         || ExpandedSaveWriteNext() != SAVE_STATUS_OK)
+        {
+            ExpandedSaveFail();
+            DoSaveFailedScreen(SAVE_NORMAL);
+        }
+        return FALSE;
+    }
     HandleReplaceSectorAndVerify(NUM_SECTORS_PER_SLOT, gRamSaveSectorLocations);
     if (gDamagedSaveSectors)
         DoSaveFailedScreen(SAVE_NORMAL);
@@ -754,6 +1059,12 @@ bool8 LinkFullSave_ReplaceLastSector(void)
 
 bool8 LinkFullSave_SetLastSectorSignature(void)
 {
+    if (ExpandedSaveEnabled())
+    {
+        if (ExpandedSaveCommit() != SAVE_STATUS_OK)
+            DoSaveFailedScreen(SAVE_NORMAL);
+        return FALSE;
+    }
     CopySectorSignatureByte(NUM_SECTORS_PER_SLOT, gRamSaveSectorLocations);
     if (gDamagedSaveSectors)
         DoSaveFailedScreen(SAVE_NORMAL);
@@ -768,6 +1079,14 @@ bool8 WriteSaveBlock2(void)
 
     UpdateSaveAddresses();
     SaveSerializedGame();
+    if (ExpandedSaveEnabled())
+    {
+        if (ExpandedSaveBegin() == SAVE_STATUS_OK)
+            ExpandedSaveWriteNext();
+        if (gDamagedSaveSectors)
+            DoSaveFailedScreen(SAVE_LINK);
+        return FALSE;
+    }
     RestoreSaveBackupVars(gRamSaveSectorLocations);
 
     // Because RestoreSaveBackupVars is called immediately prior,
@@ -782,8 +1101,28 @@ bool8 WriteSaveBlock2(void)
 // Returns TRUE when all sectors of SaveBlock1 have been written.
 bool8 WriteSaveBlock1Sector(void)
 {
-    u8 finished = FALSE;
-    u16 sectorId = ++gIncrementalSectorId;
+    u8 finished;
+    u16 sectorId;
+
+    if (ExpandedSaveEnabled())
+    {
+        struct ExpandedSaveState *state = ExpandedSaveState();
+
+        if (state->magic == EXPANDED_STATE_MAGIC && state->stage == EXPANDED_STATE_COMMITTED)
+            return TRUE;
+        if (state->magic == EXPANDED_STATE_MAGIC && state->stage == EXPANDED_STATE_ACTIVE
+         && state->nextSector < EXPANDED_SAVE_SECTOR_COUNT)
+        {
+            if (ExpandedSaveWriteNext() == SAVE_STATUS_OK)
+                return FALSE;
+        }
+        else if (ExpandedSaveCommit() == SAVE_STATUS_OK)
+            return TRUE;
+        DoSaveFailedScreen(SAVE_LINK);
+        return TRUE;
+    }
+    finished = FALSE;
+    sectorId = ++gIncrementalSectorId;
     if (sectorId <= SECTOR_ID_SAVEBLOCK1_END)
     {
         HandleReplaceSectorAndVerify(gIncrementalSectorId + 1, gRamSaveSectorLocations);
@@ -815,8 +1154,34 @@ u8 LoadGameSave(u8 saveType)
     {
     case SAVE_NORMAL:
     default:
-        result = TryLoadSaveSlot(FULL_SAVE_SLOT, gRamSaveSectorLocations);
-        LoadSerializedGame();
+        if (ExpandedSaveEnabled() && ExpandedSaveHasFormat())
+        {
+            result = ExpandedSaveLoad();
+            if (result == SAVE_STATUS_OK)
+            {
+                if (HasBagExtension() && ValidateBagExtensionForLoad())
+                    LoadSerializedGame();
+                else
+                    result = SAVE_STATUS_INVALID;
+            }
+        }
+        else
+        {
+            result = TryLoadSaveSlot(FULL_SAVE_SLOT, gRamSaveSectorLocations);
+            if (ExpandedSaveEnabled())
+            {
+                if (!HasBagExtension() && ValidateBagExtensionForLoad() && StorageGetCurrentBox() < LEGACY_BOXES_COUNT)
+                {
+                    if (result == SAVE_STATUS_OK || result == SAVE_STATUS_ERROR)
+                        InitPokemonStorageExtra();
+                    LoadSerializedGame();
+                }
+                else
+                    result = SAVE_STATUS_INVALID;
+            }
+            else
+                LoadSerializedGame();
+        }
         gSaveFileStatus = result;
         gGameContinueCallback = NULL;
         break;

@@ -508,6 +508,8 @@ static const u8 gInitialMovementTypeFacingDirections[MOVEMENT_TYPES_COUNT] = {
 #define OBJ_EVENT_PAL_TAG_N                           0x1141
 #define OBJ_EVENT_PAL_TAG_SUMMIT_TRAINER              0x1142
 #define OBJ_EVENT_PAL_TAG_PROF_ELM_HNS                   0x1145
+#define OBJ_EVENT_PAL_TAG_GROUDON_MAGMA_ASLEEP         0x1146
+#define OBJ_EVENT_PAL_TAG_GROUDON_MAGMA_AWAKE          0x1147
 #define OBJ_EVENT_PAL_TAG_NONE                        0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -550,6 +552,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_GrottoGrass,             OBJ_EVENT_PAL_TAG_GROTTO_GRASS},
     {gObjectEventPal_Kyogre,                  OBJ_EVENT_PAL_TAG_KYOGRE},
     {gObjectEventPal_Groudon,                 OBJ_EVENT_PAL_TAG_GROUDON},
+    {gObjectEventPal_GroudonMagmaAsleep,      OBJ_EVENT_PAL_TAG_GROUDON_MAGMA_ASLEEP},
+    {gObjectEventPal_GroudonMagmaAwake,       OBJ_EVENT_PAL_TAG_GROUDON_MAGMA_AWAKE},
     {gObjectEventPal_Rayquaza,                OBJ_EVENT_PAL_TAG_RAYQUAZA},
     {gObjectEventPal_OldTimer,                OBJ_EVENT_PAL_TAG_OLD_TIMER},
     {gObjectEventPal_N,                       OBJ_EVENT_PAL_TAG_N},
@@ -1246,6 +1250,14 @@ static const u8 sAcroPopWheelieMoveMovementActions[] = {
     [DIR_NORTH] = MOVEMENT_ACTION_ACRO_POP_WHEELIE_MOVE_UP,
     [DIR_WEST]  = MOVEMENT_ACTION_ACRO_POP_WHEELIE_MOVE_LEFT,
     [DIR_EAST]  = MOVEMENT_ACTION_ACRO_POP_WHEELIE_MOVE_RIGHT,
+};
+
+static const u8 sAcroEndWheelieMoveMovementActions[] = {
+    [DIR_NONE] = MOVEMENT_ACTION_ACRO_END_WHEELIE_MOVE_DOWN,
+    [DIR_SOUTH] = MOVEMENT_ACTION_ACRO_END_WHEELIE_MOVE_DOWN,
+    [DIR_NORTH] = MOVEMENT_ACTION_ACRO_END_WHEELIE_MOVE_UP,
+    [DIR_WEST] = MOVEMENT_ACTION_ACRO_END_WHEELIE_MOVE_LEFT,
+    [DIR_EAST] = MOVEMENT_ACTION_ACRO_END_WHEELIE_MOVE_RIGHT,
 };
 
 static const u8 sAcroWheelieMoveMovementActions[] = {
@@ -2131,6 +2143,27 @@ const struct ObjectEventGraphicsInfo *GetObjectEventGraphicsInfo(u8 graphicsId)
     if (graphicsId >= NUM_OBJ_EVENT_GFX)
         graphicsId = OBJ_EVENT_GFX_LITTLE_BOY;
     
+    if (graphicsId == OBJ_EVENT_GFX_PLAYER_ACRO_BIKE)
+        return gSaveBlock2Ptr->playerGender == FEMALE
+            ? &gObjectEventGraphicsInfo_GreenAcroBike
+            : &gObjectEventGraphicsInfo_RedAcroBike;
+
+    if (graphicsId == OBJ_EVENT_GFX_GROUDON
+        && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_MAGMA_HIDEOUT_4F)
+        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MAGMA_HIDEOUT_4F))
+        return FlagGet(FLAG_HOENN_MAGMA_GROUDON_AWAKENED)
+            ? &gObjectEventGraphicsInfo_GroudonMagmaAwake
+            : &gObjectEventGraphicsInfo_GroudonMagmaAsleep;
+
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SLATEPORT_CITY)
+        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SLATEPORT_CITY))
+    {
+        if (graphicsId == OBJ_EVENT_GFX_COOLTRAINER_F)
+            return &gObjectEventGraphicsInfo_HoennGabby;
+        if (graphicsId == OBJ_EVENT_GFX_TEACHY_TV_HOST)
+            return &gObjectEventGraphicsInfo_HoennTy;
+    }
+
     return gObjectEventGraphicsInfoPointers[graphicsId];
 }
 
@@ -5351,6 +5384,7 @@ dirn_to_anim(GetAcroWheelieJumpMovementAction, sAcroWheelieJumpMovementActions);
 dirn_to_anim(GetAcroWheelieInPlaceMovementAction, sAcroWheelieInPlaceMovementActions);
 dirn_to_anim(GetAcroPopWheelieMoveMovementAction, sAcroPopWheelieMoveMovementActions);
 dirn_to_anim(GetAcroWheelieMoveMovementAction, sAcroWheelieMoveMovementActions);
+dirn_to_anim(GetAcroEndWheelieMoveMovementAction, sAcroEndWheelieMoveMovementActions);
 
 u8 GetOppositeDirection(u8 direction)
 {
@@ -9576,4 +9610,75 @@ static void DoRippleFieldEffect(struct ObjectEvent *objectEvent, struct Sprite *
     gFieldEffectArguments[2] = 151;
     gFieldEffectArguments[3] = 3;
     FieldEffectStart(FLDEFF_RIPPLE);
+}
+
+static void InitAcroEndWheelie(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 direction, u8 speed)
+{
+    InitNpcForMovement(objectEvent, sprite, direction, speed);
+    StartSpriteAnim(sprite, GetAcroEndWheelieDirectionAnimNum(objectEvent->facingDirection));
+    SeekSpriteAnim(sprite, 0);
+}
+
+static bool8 MovementAction_AcroEndWheelieMoveDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    InitAcroEndWheelie(objectEvent, sprite, DIR_SOUTH, MOVE_SPEED_FAST_1);
+    return MovementAction_AcroEndWheelieMoveDown_Step1(objectEvent, sprite);
+}
+
+static bool8 MovementAction_AcroEndWheelieMoveDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->data[2] = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+static bool8 MovementAction_AcroEndWheelieMoveUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    InitAcroEndWheelie(objectEvent, sprite, DIR_NORTH, MOVE_SPEED_FAST_1);
+    return MovementAction_AcroEndWheelieMoveUp_Step1(objectEvent, sprite);
+}
+
+static bool8 MovementAction_AcroEndWheelieMoveUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->data[2] = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+static bool8 MovementAction_AcroEndWheelieMoveLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    InitAcroEndWheelie(objectEvent, sprite, DIR_WEST, MOVE_SPEED_FAST_1);
+    return MovementAction_AcroEndWheelieMoveLeft_Step1(objectEvent, sprite);
+}
+
+static bool8 MovementAction_AcroEndWheelieMoveLeft_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->data[2] = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+static bool8 MovementAction_AcroEndWheelieMoveRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    InitAcroEndWheelie(objectEvent, sprite, DIR_EAST, MOVE_SPEED_FAST_1);
+    return MovementAction_AcroEndWheelieMoveRight_Step1(objectEvent, sprite);
+}
+
+static bool8 MovementAction_AcroEndWheelieMoveRight_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->data[2] = 2;
+        return TRUE;
+    }
+    return FALSE;
 }

@@ -1,0 +1,313 @@
+{
+  "schema": "hoenn-bike-terrain-v1",
+  "reference_revision": "5eff78649e7170a877b961ef0b3da13b81a16038",
+  "rule": "Only low-byte behavior values of31 audited words; preserve geometry and all other attribute bits.",
+  "files": [
+    {
+      "path": "data/tilesets/primary/em_general/metatile_attributes.bin",
+      "bytes": 2048,
+      "before_sha256": "4ed8b3f9927e4b836a6c4fce66ebad1ef182d42d5155f0c69c477c8279269a3e",
+      "after_sha256": "367b643e7496f2878cc959d8577f22e76e9693b41dc1ccccfb5844a4a367cda0",
+      "donor_path": "data/tilesets/primary/general/metatile_attributes.bin",
+      "words": [
+        {
+          "index": 232,
+          "before": 0,
+          "after": 234,
+          "behavior": "MB_MUDDY_SLOPE",
+          "donor_behavior": 208,
+          "donor_attribute": 208,
+          "map_metatile_id": 232
+        },
+        {
+          "index": 233,
+          "before": 0,
+          "after": 234,
+          "behavior": "MB_MUDDY_SLOPE",
+          "donor_behavior": 208,
+          "donor_attribute": 208,
+          "map_metatile_id": 233
+        },
+        {
+          "index": 234,
+          "before": 0,
+          "after": 234,
+          "behavior": "MB_MUDDY_SLOPE",
+          "donor_behavior": 208,
+          "donor_attribute": 208,
+          "map_metatile_id": 234
+        },
+        {
+          "index": 235,
+          "before": 0,
+          "after": 234,
+          "behavior": "MB_MUDDY_SLOPE",
+          "donor_behavior": 208,
+          "donor_attribute": 208,
+          "map_metatile_id": 235
+        },
+        {
+          "index": 236,
+          "before": 536870912,
+          "after": 536871150,
+          "behavior": "MB_VERTICAL_RAIL",
+          "donor_behavior": 213,
+          "donor_attribute": 4309,
+          "map_metatile_id": 236
+        },
+        {
+          "index": 237,
+          "before": 536870912,
+          "after": 536871149,
+          "behavior": "MB_ISOLATED_HORIZONTAL_RAIL",
+          "donor_behavior": 212,
+          "donor_attribute": 4308,
+          "map_metatile_id": 237
+        },
+        {
+          "index": 240,
+          "before": 536870912,
+          "after": 536871151,
+          "behavior": "MB_HORIZONTAL_RAIL",
+          "donor_behavior": 214,
+          "donor_attribute": 4310,
+          "map_metatile_id": 240
+        },
+        {
+          "index": 241,
+          "before": 536870912,
+          "after": 536871151,
+          "behavior": "MB_HORIZONTAL_RAIL",
+          "donor_behavior": 214,
+          "donor_attribute": 4310,
+          "map_metatile_id": 241
+        },
+        {
+          "index": 242,
+          "before": 536870912,
+          "after": 536871151,
+          "behavior": "MB_HORIZONTAL_RAIL",
+          "donor_behavior": 214,
+          "donor_attribute": 4310,
+          "map_metatile_id": 242
+        },
+        {
+          "index": 243,
+          "before": 536870912,
+          "after": 536871148,
+          "behavior": "MB_ISOLATED_VERTICAL_RAIL",
+          "donor_behavior": 211,
+          "donor_attribute": 4307,
+          "map_metatile_id": 243
+        },
+        {
+          "index": 244,
+          "before": 536870912,
+          "after": 536871150,
+          "behavior": "MB_VERTICAL_RAIL",
+          "donor_behavior": 213,
+          "donor_attribute": 4309,
+          "map_metatile_id": 244
+        },
+        {
+          "index": 247,
+          "before": 536870912,
+          "after": 536871150,
+          "behavior": "MB_VERTICAL_RAIL",
+          "donor_behavior": 213,
+          "donor_attribute": 4309,
+          "map_metatile_id": 247
+        },
+        {
+          "index": 251,
+          "before": 536870912,
+          "after": 536871151,
+          "behavior": "MB_HORIZONTAL_RAIL",
+          "donor_behavior": 214,
+          "donor_attribute": 4310,
+          "map_metatile_id": 251
+        },
+        {
+          "index": 252,
+          "before": 536870912,
+          "after": 536871150,
+          "behavior": "MB_VERTICAL_RAIL",
+          "donor_behavior": 213,
+          "donor_attribute": 4309,
+          "map_metatile_id": 252
+        },
+        {
+          "index": 253,
+          "before": 536870912,
+          "after": 536871151,
+          "behavior": "MB_HORIZONTAL_RAIL",
+          "donor_behavior": 214,
+          "donor_attribute": 4310,
+          "map_metatile_id": 253
+        },
+        {
+          "index": 504,
+          "before": 536870912,
+          "after": 536871147,
+          "behavior": "MB_BUMPY_SLOPE",
+          "donor_behavior": 209,
+          "donor_attribute": 4305,
+          "map_metatile_id": 504
+        },
+        {
+          "index": 505,
+          "before": 536870912,
+          "after": 536871147,
+          "behavior": "MB_BUMPY_SLOPE",
+          "donor_behavior": 209,
+          "donor_attribute": 4305,
+          "map_metatile_id": 505
+        }
+      ]
+    },
+    {
+      "path": "data/tilesets/secondary/em_lavaridge/metatile_attributes.bin",
+      "bytes": 1764,
+      "before_sha256": "6b4141c0fe46ff5dd216f17f6f45090e1a8badb3adf0c0460185af2a902be929",
+      "after_sha256": "be2e0c335cc06b260c4b3a67b52ef42931127298d641ebb0fda5fe2e5b2b183f",
+      "donor_path": "data/tilesets/secondary/lavaridge/metatile_attributes.bin",
+      "words": [
+        {
+          "index": 254,
+          "before": 536870912,
+          "after": 536871147,
+          "behavior": "MB_BUMPY_SLOPE",
+          "donor_behavior": 209,
+          "donor_attribute": 4305,
+          "map_metatile_id": 766
+        },
+        {
+          "index": 256,
+          "before": 536870912,
+          "after": 536871147,
+          "behavior": "MB_BUMPY_SLOPE",
+          "donor_behavior": 209,
+          "donor_attribute": 4305,
+          "map_metatile_id": 768
+        },
+        {
+          "index": 257,
+          "before": 536870912,
+          "after": 536871147,
+          "behavior": "MB_BUMPY_SLOPE",
+          "donor_behavior": 209,
+          "donor_attribute": 4305,
+          "map_metatile_id": 769
+        },
+        {
+          "index": 258,
+          "before": 536870912,
+          "after": 536871147,
+          "behavior": "MB_BUMPY_SLOPE",
+          "donor_behavior": 209,
+          "donor_attribute": 4305,
+          "map_metatile_id": 770
+        },
+        {
+          "index": 259,
+          "before": 536870912,
+          "after": 536871147,
+          "behavior": "MB_BUMPY_SLOPE",
+          "donor_behavior": 209,
+          "donor_attribute": 4305,
+          "map_metatile_id": 771
+        }
+      ]
+    },
+    {
+      "path": "data/tilesets/secondary/em_lilycove/metatile_attributes.bin",
+      "bytes": 1404,
+      "before_sha256": "32d5eab7bbe4ba2a071730ac6c2dbea23c0c871097757d25c61c9d83ae43ed4f",
+      "after_sha256": "3f44abdd1c7f0f8944f6f09e520c5cf98c8a1bd7a25b27e1d613923598061a39",
+      "donor_path": "data/tilesets/secondary/lilycove/metatile_attributes.bin",
+      "words": [
+        {
+          "index": 274,
+          "before": 536870912,
+          "after": 536871151,
+          "behavior": "MB_HORIZONTAL_RAIL",
+          "donor_behavior": 214,
+          "donor_attribute": 4310,
+          "map_metatile_id": 786
+        },
+        {
+          "index": 275,
+          "before": 536870912,
+          "after": 536871151,
+          "behavior": "MB_HORIZONTAL_RAIL",
+          "donor_behavior": 214,
+          "donor_attribute": 4310,
+          "map_metatile_id": 787
+        },
+        {
+          "index": 276,
+          "before": 536870912,
+          "after": 536871151,
+          "behavior": "MB_HORIZONTAL_RAIL",
+          "donor_behavior": 214,
+          "donor_attribute": 4310,
+          "map_metatile_id": 788
+        },
+        {
+          "index": 278,
+          "before": 536870912,
+          "after": 536871151,
+          "behavior": "MB_HORIZONTAL_RAIL",
+          "donor_behavior": 214,
+          "donor_attribute": 4310,
+          "map_metatile_id": 790
+        },
+        {
+          "index": 279,
+          "before": 536870912,
+          "after": 536871147,
+          "behavior": "MB_BUMPY_SLOPE",
+          "donor_behavior": 209,
+          "donor_attribute": 4305,
+          "map_metatile_id": 791
+        },
+        {
+          "index": 285,
+          "before": 536870912,
+          "after": 536871151,
+          "behavior": "MB_HORIZONTAL_RAIL",
+          "donor_behavior": 214,
+          "donor_attribute": 4310,
+          "map_metatile_id": 797
+        },
+        {
+          "index": 286,
+          "before": 536870912,
+          "after": 536871149,
+          "behavior": "MB_ISOLATED_HORIZONTAL_RAIL",
+          "donor_behavior": 212,
+          "donor_attribute": 4308,
+          "map_metatile_id": 798
+        },
+        {
+          "index": 287,
+          "before": 536870912,
+          "after": 536871147,
+          "behavior": "MB_BUMPY_SLOPE",
+          "donor_behavior": 209,
+          "donor_attribute": 4305,
+          "map_metatile_id": 799
+        },
+        {
+          "index": 291,
+          "before": 536870912,
+          "after": 536871147,
+          "behavior": "MB_BUMPY_SLOPE",
+          "donor_behavior": 209,
+          "donor_attribute": 4305,
+          "map_metatile_id": 803
+        }
+      ]
+    }
+  ]
+}

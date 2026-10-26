@@ -204,3 +204,5 @@ const u32 gMetatileAttributes_HallOfFame[] = INCBIN_U32("data/tilesets/secondary
 
 const u16 gMetatiles_KantoAirport[] = INCBIN_U16("data/tilesets/secondary/kanto_airport/metatiles.bin");
 const u32 gMetatileAttributes_KantoAirport[] = INCBIN_U32("data/tilesets/secondary/kanto_airport/metatile_attributes.bin");
+
+#include "ty_hns_metatiles.h"

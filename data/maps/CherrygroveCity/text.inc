@@ -51,3 +51,41 @@ CherrygroveCity_Text_MartSign::
 CherrygroveCity_Text_GuideSign::
     .string "THE GUIDE GENT LIVES HERE.$"
 
+
+CherrygroveCity_Hns_Text_GuideOffer::
+    .string "Welcome to CHERRYGROVE!\p"
+    .string "Even experienced TRAINERS can\n"
+    .string "use a guide in a new town.\p"
+    .string "Would you like a few local tips?$"
+
+CherrygroveCity_Hns_Text_Center::
+	.string "Our town has a POKéMON CENTER.\p"
+	.string "They heal your POKéMON in no\n"
+	.string "time at all.\p"
+	.string "You'll be relying on them a lot,\n"
+	.string "so you better learn about them.$"
+
+CherrygroveCity_Hns_Text_Mart::
+	.string "We also have a POKéMON MART.\p"
+	.string "They sell BALLS for catching wild\n"
+	.string "POKéMON and other useful items.$"
+
+CherrygroveCity_Hns_Text_Route30::
+	.string "ROUTE 30 is north of town.\p"
+	.string "Trainers will be battling\n"
+	.string "their prized POKéMON there.$"
+
+
+CherrygroveCity_Text_FirstSilverIntro::
+    .string "You came from ELM's lab?\p"
+    .string "This TOTODILE is strong.\n"
+    .string "I will show you its power!$"
+
+CherrygroveCity_Text_FirstSilverDefeat::
+    .string "...You got in my way!$"
+
+CherrygroveCity_Text_FirstSilverAfter::
+    .string "My name is SILVER.\n"
+    .string "I will be the strongest TRAINER.\p"
+    .string "Remember that.$"
+

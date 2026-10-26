@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "scope": "Only seven appended space room-edge warps. Existing SpaceCenter1F hatch unchanged.",
+  "tileset": "data/tilesets/secondary/ty_spaceport",
+  "source_door_metatile": 518,
+  "directions": {
+    "SOUTH": {
+      "id": 1000,
+      "behavior": 101,
+      "inward": [
+        0,
+        -1
+      ]
+    },
+    "NORTH": {
+      "id": 1001,
+      "behavior": 100,
+      "inward": [
+        0,
+        1
+      ]
+    },
+    "EAST": {
+      "id": 1002,
+      "behavior": 98,
+      "inward": [
+        -1,
+        0
+      ]
+    },
+    "WEST": {
+      "id": 1003,
+      "behavior": 99,
+      "inward": [
+        1,
+        0
+      ]
+    }
+  },
+  "maps": {
+    "HoennSpaceportTerminal": [
+      "SOUTH",
+      "NORTH"
+    ],
+    "HoennSpaceportLaunchPad": [
+      "SOUTH"
+    ],
+    "HoennSpacecraftCabin": [
+      "EAST"
+    ],
+    "HoennSpacecraftEngineering": [
+      "WEST",
+      "EAST"
+    ],
+    "HoennOrbitalObservatory": [
+      "WEST"
+    ]
+  }
+}

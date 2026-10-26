@@ -145,4 +145,11 @@
 
 #define VAR_HOENN_LEAGUE_PROGRESS VAR_HOENN_0x29
 
+// Active bicycle mode. Zero keeps all pre-Mach/Acro saves on the FRLG path.
+// Uses an unused existing slot; the saved variable array is unchanged.
+#define VAR_HOENN_BIKE_MODE VAR_HOENN_0x7F
+
+// Reserved existing variable slot; no saved array expansion.
+#define VAR_HOENN_SPACE_MISSION_PHASE VAR_HOENN_0x7E
+
 #endif // GUARD_CONSTANTS_VARS_HOENN_H

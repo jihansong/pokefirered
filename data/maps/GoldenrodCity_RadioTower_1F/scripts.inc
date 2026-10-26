@@ -45,6 +45,7 @@ GoldenrodCity_RadioTower_1F_UpperGate::
 lockall
     goto_if_unset FLAG_JOHTO_BADGE07_GET, GoldenrodCity_RadioTower_1F_UpperGateClosed
     releaseall
+    special SetOrdinaryWarpTransition
     warp MAP_GOLDENROD_CITY_RADIO_TOWER_2F, 1
     waitstate
     end

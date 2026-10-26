@@ -31,7 +31,7 @@ MossdeepCity_SpaceCenter_1F_EventScript_ControlPrepare::
  end
 MossdeepCity_SpaceCenter_1F_EventScript_ControlAfter::
  msgbox MossdeepCity_SpaceCenter_1F_Text_AfterRaid
- release
+ goto Space_ControlOffer
  end
 MossdeepCity_SpaceCenter_1F_EventScript_Safety::
  lock

@@ -1,0 +1,6308 @@
+{
+  "status": "AGREED04_FOODCOURT_PC_CLEARANCE_AND_HARD_FOOTPRINTS",
+  "reference": "docs/space-candidate.md",
+  "reference_sha256": "a562cbc52dca201978a1eff08dc63e90d9ad89d0cf0009a91113757b8e2b7ac0",
+  "coordinate_size_warp_actor_changes_from_reference": 0,
+  "new_map_names_order": [
+    "HoennSpacecraftCockpit",
+    "HoennSpacecraftNavigation",
+    "HoennSpacecraftCaptainsOffice",
+    "HoennSpacecraftCrewQuarters",
+    "HoennSpacecraftCrewMess",
+    "HoennSpacecraftFoodCourt",
+    "HoennSpacecraftLounge",
+    "HoennSpacecraftGameRoom",
+    "HoennSpacecraftBattleDeck",
+    "HoennSpacecraftCabinCorridor",
+    "HoennSpacecraftGuestRoom1",
+    "HoennSpacecraftGuestRoom2",
+    "HoennSpacecraftGuestRoom3",
+    "HoennSpacecraftCargoHold"
+  ],
+  "maps": [
+    {
+      "role": "Cabin",
+      "map": "HoennSpacecraftCabin",
+      "deck": "B",
+      "size": [
+        20,
+        16
+      ],
+      "existing": true,
+      "proposed_map_group": 69,
+      "proposed_map_num": 67,
+      "proposed_layout_num": 846,
+      "primary_tileset": "gTileset_EmGeneral",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4Lobby",
+      "warps": [
+        {
+          "id": 0,
+          "xy": [
+            18,
+            7
+          ],
+          "outward": "E",
+          "destination": "HoennSpacecraftEngineering",
+          "destination_warp": 0
+        },
+        {
+          "id": 1,
+          "xy": [
+            10,
+            1
+          ],
+          "outward": "N",
+          "destination": "HoennSpacecraftNavigation",
+          "destination_warp": 0
+        },
+        {
+          "id": 2,
+          "xy": [
+            1,
+            6
+          ],
+          "outward": "W",
+          "destination": "HoennSpacecraftFoodCourt",
+          "destination_warp": 0
+        },
+        {
+          "id": 3,
+          "xy": [
+            18,
+            4
+          ],
+          "outward": "E",
+          "destination": "HoennSpacecraftLounge",
+          "destination_warp": 0
+        },
+        {
+          "id": 4,
+          "xy": [
+            1,
+            10
+          ],
+          "outward": "W",
+          "destination": "HoennSpacecraftGameRoom",
+          "destination_warp": 0
+        },
+        {
+          "id": 5,
+          "xy": [
+            18,
+            11
+          ],
+          "outward": "E",
+          "destination": "HoennSpacecraftBattleDeck",
+          "destination_warp": 0
+        },
+        {
+          "id": 6,
+          "xy": [
+            4,
+            14
+          ],
+          "outward": "S",
+          "destination": "HoennSpacecraftCabinCorridor",
+          "destination_warp": 0
+        }
+      ],
+      "actors": [
+        {
+          "local_id": 1,
+          "script_label": "Space_CabinCaptain",
+          "xy": [
+            10,
+            5
+          ],
+          "talk_tile": [
+            10,
+            6
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        },
+        {
+          "local_id": 2,
+          "script_label": "Space_FlightCheck",
+          "xy": [
+            6,
+            8
+          ],
+          "talk_tile": [
+            6,
+            7
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        },
+        {
+          "local_id": 3,
+          "script_label": "Space_Heal",
+          "xy": [
+            14,
+            8
+          ],
+          "talk_tile": [
+            13,
+            8
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        },
+        {
+          "local_id": 4,
+          "script_label": "Space_CabinPilot",
+          "xy": [
+            12,
+            5
+          ],
+          "talk_tile": [
+            12,
+            6
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        },
+        {
+          "local_id": 5,
+          "script_label": "Space_CabinAttendant",
+          "xy": [
+            7,
+            10
+          ],
+          "talk_tile": [
+            7,
+            11
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        },
+        {
+          "local_id": 6,
+          "script_label": "Space_CabinPassengerA",
+          "xy": [
+            4,
+            9
+          ],
+          "talk_tile": [
+            3,
+            9
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        },
+        {
+          "local_id": 7,
+          "script_label": "Space_CabinPassengerB",
+          "xy": [
+            14,
+            12
+          ],
+          "talk_tile": [
+            13,
+            12
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        },
+        {
+          "local_id": 8,
+          "script_label": "SpaceFacility_Shop",
+          "xy": [
+            5,
+            4
+          ],
+          "talk_tile": [
+            5,
+            5
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        }
+      ],
+      "interaction_tiles": [
+        {
+          "script_label": "SpaceFacility_PC",
+          "target": [
+            3,
+            4
+          ],
+          "stand": [
+            3,
+            5
+          ]
+        }
+      ],
+      "must_open": [
+        [
+          10,
+          1
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          16,
+          4
+        ],
+        [
+          17,
+          4
+        ],
+        [
+          18,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          18,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          16,
+          11
+        ],
+        [
+          17,
+          11
+        ],
+        [
+          18,
+          11
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          14,
+          12
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          10,
+          14
+        ]
+      ],
+      "safe_anchor": [
+        10,
+        12
+      ],
+      "furniture_rules": [
+        "Complete original furniture shape; source RGB555 and transparency preserved.",
+        "No SSAnne809-only bed fragment used as chair.",
+        "Beds only CrewQuarters and GuestRoom1..3; original3x2 bed units complete.",
+        "Foreground layer preserved from donor; default decorative geometry behind actors when overlap unintended.",
+        "No fixed actor/talk/must_open/warp tile may become furniture collision."
+      ],
+      "map_constant": "MAP_HOENN_SPACECRAFT_CABIN",
+      "layout_constant": "LAYOUT_HOENN_SPACECRAFT_CABIN",
+      "preferred_aisles": [
+        [
+          10,
+          1
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          4
+        ],
+        [
+          16,
+          4
+        ],
+        [
+          17,
+          4
+        ],
+        [
+          18,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          16,
+          5
+        ],
+        [
+          17,
+          5
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          18,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          16,
+          11
+        ],
+        [
+          17,
+          11
+        ],
+        [
+          18,
+          11
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          14,
+          12
+        ],
+        [
+          16,
+          12
+        ],
+        [
+          17,
+          12
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          5,
+          13
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          10,
+          14
+        ]
+      ],
+      "interaction_targets_may_be_blocked": true,
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+    },
+    {
+      "role": "Engineering",
+      "map": "HoennSpacecraftEngineering",
+      "deck": "C",
+      "size": [
+        20,
+        16
+      ],
+      "existing": true,
+      "proposed_map_group": 69,
+      "proposed_map_num": 68,
+      "proposed_layout_num": 847,
+      "primary_tileset": "gTileset_EmGeneral",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4Engineering",
+      "warps": [
+        {
+          "id": 0,
+          "xy": [
+            1,
+            7
+          ],
+          "outward": "W",
+          "destination": "HoennSpacecraftCabin",
+          "destination_warp": 0
+        },
+        {
+          "id": 1,
+          "xy": [
+            18,
+            7
+          ],
+          "outward": "E",
+          "destination": "HoennOrbitalObservatory",
+          "destination_warp": 0
+        },
+        {
+          "id": 2,
+          "xy": [
+            10,
+            1
+          ],
+          "outward": "N",
+          "destination": "HoennSpacecraftCargoHold",
+          "destination_warp": 0
+        }
+      ],
+      "actors": [
+        {
+          "local_id": 1,
+          "script_label": "Space_SystemsCheck",
+          "xy": [
+            10,
+            7
+          ],
+          "talk_tile": [
+            10,
+            8
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        },
+        {
+          "local_id": 2,
+          "script_label": "Space_EngineeringCrew",
+          "xy": [
+            5,
+            4
+          ],
+          "talk_tile": [
+            5,
+            5
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        }
+      ],
+      "interaction_tiles": [
+        {
+          "script_label": "Space_EngineeringConsole",
+          "target": [
+            12,
+            4
+          ],
+          "stand": [
+            12,
+            5
+          ]
+        }
+      ],
+      "must_open": [
+        [
+          10,
+          1
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          18,
+          7
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          10,
+          12
+        ]
+      ],
+      "safe_anchor": [
+        10,
+        12
+      ],
+      "furniture_rules": [
+        "Complete original furniture shape; source RGB555 and transparency preserved.",
+        "No SSAnne809-only bed fragment used as chair.",
+        "Beds only CrewQuarters and GuestRoom1..3; original3x2 bed units complete.",
+        "Foreground layer preserved from donor; default decorative geometry behind actors when overlap unintended.",
+        "No fixed actor/talk/must_open/warp tile may become furniture collision."
+      ],
+      "map_constant": "MAP_HOENN_SPACECRAFT_ENGINEERING",
+      "layout_constant": "LAYOUT_HOENN_SPACECRAFT_ENGINEERING",
+      "preferred_aisles": [
+        [
+          10,
+          1
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          18,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          13
+        ]
+      ],
+      "interaction_targets_may_be_blocked": true,
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+    },
+    {
+      "role": "Observatory",
+      "map": "HoennOrbitalObservatory",
+      "deck": "C",
+      "size": [
+        20,
+        18
+      ],
+      "existing": true,
+      "proposed_map_group": 69,
+      "proposed_map_num": 69,
+      "proposed_layout_num": 848,
+      "primary_tileset": "gTileset_EmGeneral",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4Observatory",
+      "warps": [
+        {
+          "id": 0,
+          "xy": [
+            1,
+            9
+          ],
+          "outward": "W",
+          "destination": "HoennSpacecraftEngineering",
+          "destination_warp": 1
+        }
+      ],
+      "actors": [
+        {
+          "local_id": 1,
+          "script_label": "Space_ObservatoryCrew",
+          "xy": [
+            14,
+            11
+          ],
+          "talk_tile": [
+            14,
+            12
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        },
+        {
+          "local_id": 2,
+          "script_label": "Space_JirachiEncounter",
+          "xy": [
+            12,
+            6
+          ],
+          "talk_tile": [
+            12,
+            7
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        }
+      ],
+      "interaction_tiles": [
+        {
+          "script_label": "Space_RecordsConsole",
+          "target": [
+            10,
+            8
+          ],
+          "stand": [
+            10,
+            9
+          ]
+        }
+      ],
+      "must_open": [
+        [
+          12,
+          6
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          14,
+          11
+        ],
+        [
+          14,
+          12
+        ]
+      ],
+      "safe_anchor": [
+        10,
+        9
+      ],
+      "furniture_rules": [
+        "Complete original furniture shape; source RGB555 and transparency preserved.",
+        "No SSAnne809-only bed fragment used as chair.",
+        "Beds only CrewQuarters and GuestRoom1..3; original3x2 bed units complete.",
+        "Foreground layer preserved from donor; default decorative geometry behind actors when overlap unintended.",
+        "No fixed actor/talk/must_open/warp tile may become furniture collision."
+      ],
+      "map_constant": "MAP_HOENN_ORBITAL_OBSERVATORY",
+      "layout_constant": "LAYOUT_HOENN_ORBITAL_OBSERVATORY",
+      "preferred_aisles": [
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          4
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          11,
+          9
+        ],
+        [
+          12,
+          9
+        ],
+        [
+          13,
+          9
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          15,
+          9
+        ],
+        [
+          16,
+          9
+        ],
+        [
+          17,
+          9
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          14,
+          11
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          14,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          10,
+          15
+        ]
+      ],
+      "interaction_targets_may_be_blocked": true,
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+    },
+    {
+      "role": "Cockpit",
+      "map": "HoennSpacecraftCockpit",
+      "deck": "A",
+      "size": [
+        20,
+        16
+      ],
+      "existing": false,
+      "proposed_map_group": 69,
+      "proposed_map_num": 70,
+      "proposed_layout_num": 849,
+      "primary_tileset": "gTileset_EmGeneral",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4Cockpit",
+      "warps": [
+        {
+          "id": 0,
+          "xy": [
+            10,
+            14
+          ],
+          "outward": "S",
+          "destination": "HoennSpacecraftNavigation",
+          "destination_warp": 1
+        }
+      ],
+      "actors": [
+        {
+          "local_id": 1,
+          "script_label": "SpaceFacility_CockpitPilot",
+          "xy": [
+            8,
+            5
+          ],
+          "talk_tile": [
+            8,
+            6
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        },
+        {
+          "local_id": 2,
+          "script_label": "SpaceFacility_CockpitPilot",
+          "xy": [
+            12,
+            5
+          ],
+          "talk_tile": [
+            12,
+            6
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        }
+      ],
+      "interaction_tiles": [],
+      "must_open": [
+        [
+          8,
+          5
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          10,
+          14
+        ]
+      ],
+      "safe_anchor": [
+        10,
+        13
+      ],
+      "furniture_rules": [
+        "Complete original furniture shape; source RGB555 and transparency preserved.",
+        "No SSAnne809-only bed fragment used as chair.",
+        "Beds only CrewQuarters and GuestRoom1..3; original3x2 bed units complete.",
+        "Foreground layer preserved from donor; default decorative geometry behind actors when overlap unintended.",
+        "No fixed actor/talk/must_open/warp tile may become furniture collision."
+      ],
+      "map_constant": "MAP_HOENN_SPACECRAFT_COCKPIT",
+      "layout_constant": "LAYOUT_HOENN_SPACECRAFT_COCKPIT",
+      "preferred_aisles": [
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          4
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          10,
+          14
+        ]
+      ],
+      "interaction_targets_may_be_blocked": true,
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+    },
+    {
+      "role": "Navigation",
+      "map": "HoennSpacecraftNavigation",
+      "deck": "A",
+      "size": [
+        20,
+        18
+      ],
+      "existing": false,
+      "proposed_map_group": 69,
+      "proposed_map_num": 71,
+      "proposed_layout_num": 850,
+      "primary_tileset": "gTileset_EmGeneral",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4Navigation",
+      "warps": [
+        {
+          "id": 0,
+          "xy": [
+            10,
+            16
+          ],
+          "outward": "S",
+          "destination": "HoennSpacecraftCabin",
+          "destination_warp": 1
+        },
+        {
+          "id": 1,
+          "xy": [
+            10,
+            1
+          ],
+          "outward": "N",
+          "destination": "HoennSpacecraftCockpit",
+          "destination_warp": 0
+        },
+        {
+          "id": 2,
+          "xy": [
+            18,
+            6
+          ],
+          "outward": "E",
+          "destination": "HoennSpacecraftCaptainsOffice",
+          "destination_warp": 0
+        },
+        {
+          "id": 3,
+          "xy": [
+            1,
+            6
+          ],
+          "outward": "W",
+          "destination": "HoennSpacecraftCrewQuarters",
+          "destination_warp": 0
+        },
+        {
+          "id": 4,
+          "xy": [
+            1,
+            12
+          ],
+          "outward": "W",
+          "destination": "HoennSpacecraftCrewMess",
+          "destination_warp": 0
+        }
+      ],
+      "actors": [
+        {
+          "local_id": 1,
+          "script_label": "SpaceFacility_NavigationOfficer",
+          "xy": [
+            10,
+            5
+          ],
+          "talk_tile": [
+            10,
+            6
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        }
+      ],
+      "interaction_tiles": [
+        {
+          "script_label": "SpaceFacility_NavigationConsole",
+          "target": [
+            12,
+            4
+          ],
+          "stand": [
+            12,
+            5
+          ]
+        }
+      ],
+      "must_open": [
+        [
+          10,
+          1
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          16,
+          6
+        ],
+        [
+          17,
+          6
+        ],
+        [
+          18,
+          6
+        ],
+        [
+          1,
+          12
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          10,
+          16
+        ]
+      ],
+      "safe_anchor": [
+        10,
+        15
+      ],
+      "furniture_rules": [
+        "Complete original furniture shape; source RGB555 and transparency preserved.",
+        "No SSAnne809-only bed fragment used as chair.",
+        "Beds only CrewQuarters and GuestRoom1..3; original3x2 bed units complete.",
+        "Foreground layer preserved from donor; default decorative geometry behind actors when overlap unintended.",
+        "No fixed actor/talk/must_open/warp tile may become furniture collision."
+      ],
+      "map_constant": "MAP_HOENN_SPACECRAFT_NAVIGATION",
+      "layout_constant": "LAYOUT_HOENN_SPACECRAFT_NAVIGATION",
+      "preferred_aisles": [
+        [
+          10,
+          1
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          4
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          16,
+          6
+        ],
+        [
+          17,
+          6
+        ],
+        [
+          18,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          11,
+          9
+        ],
+        [
+          12,
+          9
+        ],
+        [
+          13,
+          9
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          15,
+          9
+        ],
+        [
+          16,
+          9
+        ],
+        [
+          17,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          1,
+          12
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          2,
+          13
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          10,
+          16
+        ]
+      ],
+      "interaction_targets_may_be_blocked": true,
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+    },
+    {
+      "role": "CaptainsOffice",
+      "map": "HoennSpacecraftCaptainsOffice",
+      "deck": "A",
+      "size": [
+        16,
+        14
+      ],
+      "existing": false,
+      "proposed_map_group": 69,
+      "proposed_map_num": 72,
+      "proposed_layout_num": 851,
+      "primary_tileset": "gTileset_EmGeneral",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4CaptainsOffice",
+      "warps": [
+        {
+          "id": 0,
+          "xy": [
+            1,
+            6
+          ],
+          "outward": "W",
+          "destination": "HoennSpacecraftNavigation",
+          "destination_warp": 2
+        }
+      ],
+      "actors": [
+        {
+          "local_id": 1,
+          "script_label": "SpaceFacility_OfficeCaptain",
+          "xy": [
+            8,
+            5
+          ],
+          "talk_tile": [
+            8,
+            6
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        }
+      ],
+      "interaction_tiles": [],
+      "must_open": [
+        [
+          8,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          8,
+          6
+        ]
+      ],
+      "safe_anchor": [
+        2,
+        6
+      ],
+      "furniture_rules": [
+        "Complete original furniture shape; source RGB555 and transparency preserved.",
+        "No SSAnne809-only bed fragment used as chair.",
+        "Beds only CrewQuarters and GuestRoom1..3; original3x2 bed units complete.",
+        "Foreground layer preserved from donor; default decorative geometry behind actors when overlap unintended.",
+        "No fixed actor/talk/must_open/warp tile may become furniture collision."
+      ],
+      "map_constant": "MAP_HOENN_SPACECRAFT_CAPTAINS_OFFICE",
+      "layout_constant": "LAYOUT_HOENN_SPACECRAFT_CAPTAINS_OFFICE",
+      "preferred_aisles": [
+        [
+          7,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          13,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          11
+        ]
+      ],
+      "interaction_targets_may_be_blocked": true,
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+    },
+    {
+      "role": "CrewQuarters",
+      "map": "HoennSpacecraftCrewQuarters",
+      "deck": "A",
+      "size": [
+        20,
+        16
+      ],
+      "existing": false,
+      "proposed_map_group": 69,
+      "proposed_map_num": 73,
+      "proposed_layout_num": 852,
+      "primary_tileset": "gTileset_EmGeneral",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4CrewQuarters",
+      "warps": [
+        {
+          "id": 0,
+          "xy": [
+            18,
+            6
+          ],
+          "outward": "E",
+          "destination": "HoennSpacecraftNavigation",
+          "destination_warp": 3
+        }
+      ],
+      "actors": [
+        {
+          "local_id": 1,
+          "script_label": "SpaceFacility_CrewSleeper",
+          "xy": [
+            8,
+            6
+          ],
+          "talk_tile": [
+            8,
+            7
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        }
+      ],
+      "interaction_tiles": [
+        {
+          "script_label": "SpaceFacility_Rest",
+          "target": [
+            4,
+            4
+          ],
+          "stand": [
+            4,
+            5
+          ]
+        }
+      ],
+      "must_open": [
+        [
+          4,
+          5
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          16,
+          6
+        ],
+        [
+          17,
+          6
+        ],
+        [
+          18,
+          6
+        ],
+        [
+          8,
+          7
+        ]
+      ],
+      "safe_anchor": [
+        17,
+        6
+      ],
+      "furniture_rules": [
+        "Complete original furniture shape; source RGB555 and transparency preserved.",
+        "No SSAnne809-only bed fragment used as chair.",
+        "Beds only CrewQuarters and GuestRoom1..3; original3x2 bed units complete.",
+        "Foreground layer preserved from donor; default decorative geometry behind actors when overlap unintended.",
+        "No fixed actor/talk/must_open/warp tile may become furniture collision."
+      ],
+      "map_constant": "MAP_HOENN_SPACECRAFT_CREW_QUARTERS",
+      "layout_constant": "LAYOUT_HOENN_SPACECRAFT_CREW_QUARTERS",
+      "preferred_aisles": [
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          16,
+          6
+        ],
+        [
+          17,
+          6
+        ],
+        [
+          18,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          13
+        ]
+      ],
+      "interaction_targets_may_be_blocked": true,
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+    },
+    {
+      "role": "CrewMess",
+      "map": "HoennSpacecraftCrewMess",
+      "deck": "A",
+      "size": [
+        20,
+        16
+      ],
+      "existing": false,
+      "proposed_map_group": 69,
+      "proposed_map_num": 74,
+      "proposed_layout_num": 853,
+      "primary_tileset": "gTileset_EmGeneral",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4CrewMess",
+      "warps": [
+        {
+          "id": 0,
+          "xy": [
+            18,
+            10
+          ],
+          "outward": "E",
+          "destination": "HoennSpacecraftNavigation",
+          "destination_warp": 4
+        }
+      ],
+      "actors": [
+        {
+          "local_id": 1,
+          "script_label": "SpaceFacility_Cook",
+          "xy": [
+            5,
+            4
+          ],
+          "talk_tile": [
+            5,
+            5
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        }
+      ],
+      "interaction_tiles": [
+        {
+          "script_label": "SpaceFacility_Rest",
+          "target": [
+            10,
+            8
+          ],
+          "stand": [
+            10,
+            9
+          ]
+        }
+      ],
+      "must_open": [
+        [
+          5,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          16,
+          10
+        ],
+        [
+          17,
+          10
+        ],
+        [
+          18,
+          10
+        ]
+      ],
+      "safe_anchor": [
+        17,
+        10
+      ],
+      "furniture_rules": [
+        "Complete original furniture shape; source RGB555 and transparency preserved.",
+        "No SSAnne809-only bed fragment used as chair.",
+        "Beds only CrewQuarters and GuestRoom1..3; original3x2 bed units complete.",
+        "Foreground layer preserved from donor; default decorative geometry behind actors when overlap unintended.",
+        "No fixed actor/talk/must_open/warp tile may become furniture collision."
+      ],
+      "map_constant": "MAP_HOENN_SPACECRAFT_CREW_MESS",
+      "layout_constant": "LAYOUT_HOENN_SPACECRAFT_CREW_MESS",
+      "preferred_aisles": [
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          16,
+          10
+        ],
+        [
+          17,
+          10
+        ],
+        [
+          18,
+          10
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          16,
+          11
+        ],
+        [
+          17,
+          11
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          13
+        ]
+      ],
+      "interaction_targets_may_be_blocked": true,
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+    },
+    {
+      "role": "FoodCourt",
+      "map": "HoennSpacecraftFoodCourt",
+      "deck": "B",
+      "size": [
+        20,
+        16
+      ],
+      "existing": false,
+      "proposed_map_group": 69,
+      "proposed_map_num": 75,
+      "proposed_layout_num": 854,
+      "primary_tileset": "gTileset_EmGeneral",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4FoodCourt",
+      "warps": [
+        {
+          "id": 0,
+          "xy": [
+            18,
+            6
+          ],
+          "outward": "E",
+          "destination": "HoennSpacecraftCabin",
+          "destination_warp": 2
+        }
+      ],
+      "actors": [
+        {
+          "local_id": 1,
+          "script_label": "SpaceFacility_FoodShop",
+          "xy": [
+            5,
+            4
+          ],
+          "talk_tile": [
+            5,
+            5
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        },
+        {
+          "local_id": 2,
+          "script_label": "SpaceFacility_FoodGuest",
+          "xy": [
+            14,
+            10
+          ],
+          "talk_tile": [
+            14,
+            11
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        }
+      ],
+      "interaction_tiles": [],
+      "must_open": [
+        [
+          5,
+          4
+        ],
+        [
+          17,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          16,
+          6
+        ],
+        [
+          17,
+          6
+        ],
+        [
+          18,
+          6
+        ],
+        [
+          14,
+          10
+        ],
+        [
+          14,
+          11
+        ]
+      ],
+      "safe_anchor": [
+        17,
+        4
+      ],
+      "furniture_rules": [
+        "Complete original furniture shape; source RGB555 and transparency preserved.",
+        "No SSAnne809-only bed fragment used as chair.",
+        "Beds only CrewQuarters and GuestRoom1..3; original3x2 bed units complete.",
+        "Foreground layer preserved from donor; default decorative geometry behind actors when overlap unintended.",
+        "No fixed actor/talk/must_open/warp tile may become furniture collision."
+      ],
+      "map_constant": "MAP_HOENN_SPACECRAFT_FOOD_COURT",
+      "layout_constant": "LAYOUT_HOENN_SPACECRAFT_FOOD_COURT",
+      "preferred_aisles": [
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          4
+        ],
+        [
+          16,
+          4
+        ],
+        [
+          17,
+          4
+        ],
+        [
+          18,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          16,
+          5
+        ],
+        [
+          17,
+          5
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          14,
+          10
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          14,
+          11
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          13
+        ]
+      ],
+      "interaction_targets_may_be_blocked": true,
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+    },
+    {
+      "role": "Lounge",
+      "map": "HoennSpacecraftLounge",
+      "deck": "B",
+      "size": [
+        20,
+        16
+      ],
+      "existing": false,
+      "proposed_map_group": 69,
+      "proposed_map_num": 76,
+      "proposed_layout_num": 855,
+      "primary_tileset": "gTileset_EmGeneral",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4Lounge",
+      "warps": [
+        {
+          "id": 0,
+          "xy": [
+            1,
+            4
+          ],
+          "outward": "W",
+          "destination": "HoennSpacecraftCabin",
+          "destination_warp": 3
+        }
+      ],
+      "actors": [
+        {
+          "local_id": 1,
+          "script_label": "SpaceFacility_DrinkShop",
+          "xy": [
+            5,
+            4
+          ],
+          "talk_tile": [
+            5,
+            5
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        },
+        {
+          "local_id": 2,
+          "script_label": "SpaceFacility_LoungeGuest",
+          "xy": [
+            14,
+            9
+          ],
+          "talk_tile": [
+            14,
+            10
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        }
+      ],
+      "interaction_tiles": [],
+      "must_open": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          14,
+          10
+        ]
+      ],
+      "safe_anchor": [
+        2,
+        4
+      ],
+      "furniture_rules": [
+        "Complete original furniture shape; source RGB555 and transparency preserved.",
+        "No SSAnne809-only bed fragment used as chair.",
+        "Beds only CrewQuarters and GuestRoom1..3; original3x2 bed units complete.",
+        "Foreground layer preserved from donor; default decorative geometry behind actors when overlap unintended.",
+        "No fixed actor/talk/must_open/warp tile may become furniture collision."
+      ],
+      "map_constant": "MAP_HOENN_SPACECRAFT_LOUNGE",
+      "layout_constant": "LAYOUT_HOENN_SPACECRAFT_LOUNGE",
+      "preferred_aisles": [
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          14,
+          10
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          13
+        ]
+      ],
+      "interaction_targets_may_be_blocked": true,
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+    },
+    {
+      "role": "GameRoom",
+      "map": "HoennSpacecraftGameRoom",
+      "deck": "B",
+      "size": [
+        20,
+        16
+      ],
+      "existing": false,
+      "proposed_map_group": 69,
+      "proposed_map_num": 77,
+      "proposed_layout_num": 856,
+      "primary_tileset": "gTileset_EmGeneral",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4GameRoom",
+      "warps": [
+        {
+          "id": 0,
+          "xy": [
+            18,
+            10
+          ],
+          "outward": "E",
+          "destination": "HoennSpacecraftCabin",
+          "destination_warp": 4
+        }
+      ],
+      "actors": [
+        {
+          "local_id": 1,
+          "script_label": "SpaceFacility_GameAttendant",
+          "xy": [
+            5,
+            4
+          ],
+          "talk_tile": [
+            5,
+            5
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        }
+      ],
+      "interaction_tiles": [
+        {
+          "script_label": "SpaceFacility_GameMachine",
+          "target": [
+            10,
+            4
+          ],
+          "stand": [
+            10,
+            5
+          ]
+        }
+      ],
+      "must_open": [
+        [
+          5,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          16,
+          10
+        ],
+        [
+          17,
+          10
+        ],
+        [
+          18,
+          10
+        ]
+      ],
+      "safe_anchor": [
+        17,
+        10
+      ],
+      "furniture_rules": [
+        "Complete original furniture shape; source RGB555 and transparency preserved.",
+        "No SSAnne809-only bed fragment used as chair.",
+        "Beds only CrewQuarters and GuestRoom1..3; original3x2 bed units complete.",
+        "Foreground layer preserved from donor; default decorative geometry behind actors when overlap unintended.",
+        "No fixed actor/talk/must_open/warp tile may become furniture collision."
+      ],
+      "map_constant": "MAP_HOENN_SPACECRAFT_GAME_ROOM",
+      "layout_constant": "LAYOUT_HOENN_SPACECRAFT_GAME_ROOM",
+      "preferred_aisles": [
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          16,
+          10
+        ],
+        [
+          17,
+          10
+        ],
+        [
+          18,
+          10
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          16,
+          11
+        ],
+        [
+          17,
+          11
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          10,
+          13
+        ]
+      ],
+      "interaction_targets_may_be_blocked": true,
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+    },
+    {
+      "role": "BattleDeck",
+      "map": "HoennSpacecraftBattleDeck",
+      "deck": "B",
+      "size": [
+        24,
+        18
+      ],
+      "existing": false,
+      "proposed_map_group": 69,
+      "proposed_map_num": 78,
+      "proposed_layout_num": 857,
+      "primary_tileset": "gTileset_EmGeneral",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4BattleDeck",
+      "warps": [
+        {
+          "id": 0,
+          "xy": [
+            1,
+            9
+          ],
+          "outward": "W",
+          "destination": "HoennSpacecraftCabin",
+          "destination_warp": 5
+        }
+      ],
+      "actors": [
+        {
+          "local_id": 1,
+          "script_label": "Space_BattleDeckOrbit",
+          "xy": [
+            12,
+            7
+          ],
+          "talk_tile": [
+            12,
+            8
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        },
+        {
+          "local_id": 2,
+          "script_label": "SpaceFacility_ArenaSpectator",
+          "xy": [
+            18,
+            12
+          ],
+          "talk_tile": [
+            17,
+            12
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        }
+      ],
+      "interaction_tiles": [],
+      "must_open": [
+        [
+          12,
+          7
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          17,
+          12
+        ],
+        [
+          18,
+          12
+        ]
+      ],
+      "safe_anchor": [
+        2,
+        9
+      ],
+      "furniture_rules": [
+        "Complete original furniture shape; source RGB555 and transparency preserved.",
+        "No SSAnne809-only bed fragment used as chair.",
+        "Beds only CrewQuarters and GuestRoom1..3; original3x2 bed units complete.",
+        "Foreground layer preserved from donor; default decorative geometry behind actors when overlap unintended.",
+        "No fixed actor/talk/must_open/warp tile may become furniture collision."
+      ],
+      "map_constant": "MAP_HOENN_SPACECRAFT_BATTLE_DECK",
+      "layout_constant": "LAYOUT_HOENN_SPACECRAFT_BATTLE_DECK",
+      "preferred_aisles": [
+        [
+          11,
+          2
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          12,
+          3
+        ],
+        [
+          11,
+          4
+        ],
+        [
+          12,
+          4
+        ],
+        [
+          11,
+          5
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          18,
+          8
+        ],
+        [
+          19,
+          8
+        ],
+        [
+          20,
+          8
+        ],
+        [
+          21,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          11,
+          9
+        ],
+        [
+          12,
+          9
+        ],
+        [
+          13,
+          9
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          15,
+          9
+        ],
+        [
+          16,
+          9
+        ],
+        [
+          17,
+          9
+        ],
+        [
+          18,
+          9
+        ],
+        [
+          19,
+          9
+        ],
+        [
+          20,
+          9
+        ],
+        [
+          21,
+          9
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          11,
+          10
+        ],
+        [
+          12,
+          10
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          17,
+          12
+        ],
+        [
+          18,
+          12
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          14
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          12,
+          15
+        ]
+      ],
+      "interaction_targets_may_be_blocked": true,
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+    },
+    {
+      "role": "CabinCorridor",
+      "map": "HoennSpacecraftCabinCorridor",
+      "deck": "B",
+      "size": [
+        24,
+        14
+      ],
+      "existing": false,
+      "proposed_map_group": 69,
+      "proposed_map_num": 79,
+      "proposed_layout_num": 858,
+      "primary_tileset": "gTileset_EmGeneral",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4CabinCorridor",
+      "warps": [
+        {
+          "id": 0,
+          "xy": [
+            4,
+            1
+          ],
+          "outward": "N",
+          "destination": "HoennSpacecraftCabin",
+          "destination_warp": 6
+        },
+        {
+          "id": 1,
+          "xy": [
+            9,
+            1
+          ],
+          "outward": "N",
+          "destination": "HoennSpacecraftGuestRoom1",
+          "destination_warp": 0
+        },
+        {
+          "id": 2,
+          "xy": [
+            14,
+            1
+          ],
+          "outward": "N",
+          "destination": "HoennSpacecraftGuestRoom2",
+          "destination_warp": 0
+        },
+        {
+          "id": 3,
+          "xy": [
+            19,
+            1
+          ],
+          "outward": "N",
+          "destination": "HoennSpacecraftGuestRoom3",
+          "destination_warp": 0
+        }
+      ],
+      "actors": [],
+      "interaction_tiles": [],
+      "must_open": [
+        [
+          4,
+          1
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          14,
+          2
+        ],
+        [
+          19,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          14,
+          3
+        ],
+        [
+          19,
+          3
+        ]
+      ],
+      "safe_anchor": [
+        4,
+        2
+      ],
+      "furniture_rules": [
+        "Complete original furniture shape; source RGB555 and transparency preserved.",
+        "No SSAnne809-only bed fragment used as chair.",
+        "Beds only CrewQuarters and GuestRoom1..3; original3x2 bed units complete.",
+        "Foreground layer preserved from donor; default decorative geometry behind actors when overlap unintended.",
+        "No fixed actor/talk/must_open/warp tile may become furniture collision."
+      ],
+      "map_constant": "MAP_HOENN_SPACECRAFT_CABIN_CORRIDOR",
+      "layout_constant": "LAYOUT_HOENN_SPACECRAFT_CABIN_CORRIDOR",
+      "preferred_aisles": [
+        [
+          4,
+          1
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          14,
+          2
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          19,
+          2
+        ],
+        [
+          20,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          12,
+          3
+        ],
+        [
+          14,
+          3
+        ],
+        [
+          15,
+          3
+        ],
+        [
+          19,
+          3
+        ],
+        [
+          20,
+          3
+        ],
+        [
+          11,
+          4
+        ],
+        [
+          12,
+          4
+        ],
+        [
+          11,
+          5
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          13,
+          6
+        ],
+        [
+          14,
+          6
+        ],
+        [
+          15,
+          6
+        ],
+        [
+          16,
+          6
+        ],
+        [
+          17,
+          6
+        ],
+        [
+          18,
+          6
+        ],
+        [
+          19,
+          6
+        ],
+        [
+          20,
+          6
+        ],
+        [
+          21,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          18,
+          7
+        ],
+        [
+          19,
+          7
+        ],
+        [
+          20,
+          7
+        ],
+        [
+          21,
+          7
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          11,
+          9
+        ],
+        [
+          12,
+          9
+        ],
+        [
+          11,
+          10
+        ],
+        [
+          12,
+          10
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          12,
+          11
+        ]
+      ],
+      "interaction_targets_may_be_blocked": true,
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+    },
+    {
+      "role": "GuestRoom1",
+      "map": "HoennSpacecraftGuestRoom1",
+      "deck": "B",
+      "size": [
+        12,
+        12
+      ],
+      "existing": false,
+      "proposed_map_group": 69,
+      "proposed_map_num": 80,
+      "proposed_layout_num": 859,
+      "primary_tileset": "gTileset_EmGeneral",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4GuestRoom1",
+      "warps": [
+        {
+          "id": 0,
+          "xy": [
+            6,
+            10
+          ],
+          "outward": "S",
+          "destination": "HoennSpacecraftCabinCorridor",
+          "destination_warp": 1
+        }
+      ],
+      "actors": [
+        {
+          "local_id": 1,
+          "script_label": "SpaceFacility_Guest1",
+          "xy": [
+            8,
+            7
+          ],
+          "talk_tile": [
+            8,
+            8
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        }
+      ],
+      "interaction_tiles": [
+        {
+          "script_label": "SpaceFacility_Rest",
+          "target": [
+            4,
+            4
+          ],
+          "stand": [
+            4,
+            5
+          ]
+        }
+      ],
+      "must_open": [
+        [
+          4,
+          5
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          10
+        ]
+      ],
+      "safe_anchor": [
+        6,
+        9
+      ],
+      "furniture_rules": [
+        "Complete original furniture shape; source RGB555 and transparency preserved.",
+        "No SSAnne809-only bed fragment used as chair.",
+        "Beds only CrewQuarters and GuestRoom1..3; original3x2 bed units complete.",
+        "Foreground layer preserved from donor; default decorative geometry behind actors when overlap unintended.",
+        "No fixed actor/talk/must_open/warp tile may become furniture collision."
+      ],
+      "map_constant": "MAP_HOENN_SPACECRAFT_GUEST_ROOM1",
+      "layout_constant": "LAYOUT_HOENN_SPACECRAFT_GUEST_ROOM1",
+      "preferred_aisles": [
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          6,
+          10
+        ]
+      ],
+      "interaction_targets_may_be_blocked": true,
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+    },
+    {
+      "role": "GuestRoom2",
+      "map": "HoennSpacecraftGuestRoom2",
+      "deck": "B",
+      "size": [
+        12,
+        12
+      ],
+      "existing": false,
+      "proposed_map_group": 69,
+      "proposed_map_num": 81,
+      "proposed_layout_num": 860,
+      "primary_tileset": "gTileset_EmGeneral",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4GuestRoom2",
+      "warps": [
+        {
+          "id": 0,
+          "xy": [
+            6,
+            10
+          ],
+          "outward": "S",
+          "destination": "HoennSpacecraftCabinCorridor",
+          "destination_warp": 2
+        }
+      ],
+      "actors": [
+        {
+          "local_id": 1,
+          "script_label": "SpaceFacility_Guest2",
+          "xy": [
+            8,
+            7
+          ],
+          "talk_tile": [
+            8,
+            8
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        }
+      ],
+      "interaction_tiles": [
+        {
+          "script_label": "SpaceFacility_Rest",
+          "target": [
+            4,
+            4
+          ],
+          "stand": [
+            4,
+            5
+          ]
+        }
+      ],
+      "must_open": [
+        [
+          4,
+          5
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          10
+        ]
+      ],
+      "safe_anchor": [
+        6,
+        9
+      ],
+      "furniture_rules": [
+        "Complete original furniture shape; source RGB555 and transparency preserved.",
+        "No SSAnne809-only bed fragment used as chair.",
+        "Beds only CrewQuarters and GuestRoom1..3; original3x2 bed units complete.",
+        "Foreground layer preserved from donor; default decorative geometry behind actors when overlap unintended.",
+        "No fixed actor/talk/must_open/warp tile may become furniture collision."
+      ],
+      "map_constant": "MAP_HOENN_SPACECRAFT_GUEST_ROOM2",
+      "layout_constant": "LAYOUT_HOENN_SPACECRAFT_GUEST_ROOM2",
+      "preferred_aisles": [
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          6,
+          10
+        ]
+      ],
+      "interaction_targets_may_be_blocked": true,
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+    },
+    {
+      "role": "GuestRoom3",
+      "map": "HoennSpacecraftGuestRoom3",
+      "deck": "B",
+      "size": [
+        12,
+        12
+      ],
+      "existing": false,
+      "proposed_map_group": 69,
+      "proposed_map_num": 82,
+      "proposed_layout_num": 861,
+      "primary_tileset": "gTileset_EmGeneral",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4GuestRoom3",
+      "warps": [
+        {
+          "id": 0,
+          "xy": [
+            6,
+            10
+          ],
+          "outward": "S",
+          "destination": "HoennSpacecraftCabinCorridor",
+          "destination_warp": 3
+        }
+      ],
+      "actors": [
+        {
+          "local_id": 1,
+          "script_label": "SpaceFacility_Guest3",
+          "xy": [
+            8,
+            7
+          ],
+          "talk_tile": [
+            8,
+            8
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        }
+      ],
+      "interaction_tiles": [
+        {
+          "script_label": "SpaceFacility_Rest",
+          "target": [
+            4,
+            4
+          ],
+          "stand": [
+            4,
+            5
+          ]
+        }
+      ],
+      "must_open": [
+        [
+          4,
+          5
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          10
+        ]
+      ],
+      "safe_anchor": [
+        6,
+        9
+      ],
+      "furniture_rules": [
+        "Complete original furniture shape; source RGB555 and transparency preserved.",
+        "No SSAnne809-only bed fragment used as chair.",
+        "Beds only CrewQuarters and GuestRoom1..3; original3x2 bed units complete.",
+        "Foreground layer preserved from donor; default decorative geometry behind actors when overlap unintended.",
+        "No fixed actor/talk/must_open/warp tile may become furniture collision."
+      ],
+      "map_constant": "MAP_HOENN_SPACECRAFT_GUEST_ROOM3",
+      "layout_constant": "LAYOUT_HOENN_SPACECRAFT_GUEST_ROOM3",
+      "preferred_aisles": [
+        [
+          5,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          6,
+          10
+        ]
+      ],
+      "interaction_targets_may_be_blocked": true,
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+    },
+    {
+      "role": "CargoHold",
+      "map": "HoennSpacecraftCargoHold",
+      "deck": "C",
+      "size": [
+        24,
+        18
+      ],
+      "existing": false,
+      "proposed_map_group": 69,
+      "proposed_map_num": 83,
+      "proposed_layout_num": 862,
+      "primary_tileset": "gTileset_EmGeneral",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4CargoHold",
+      "warps": [
+        {
+          "id": 0,
+          "xy": [
+            12,
+            16
+          ],
+          "outward": "S",
+          "destination": "HoennSpacecraftEngineering",
+          "destination_warp": 2
+        }
+      ],
+      "actors": [
+        {
+          "local_id": 1,
+          "script_label": "SpaceFacility_CargoResearcher",
+          "xy": [
+            12,
+            5
+          ],
+          "talk_tile": [
+            12,
+            6
+          ],
+          "facing": "DOWN",
+          "footprint": "open elevation3 floor; no furniture collision at actor/talk position"
+        }
+      ],
+      "interaction_tiles": [
+        {
+          "script_label": "SpaceFacility_CargoClue",
+          "target": [
+            6,
+            5
+          ],
+          "stand": [
+            6,
+            6
+          ]
+        }
+      ],
+      "must_open": [
+        [
+          12,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          12,
+          14
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          12,
+          16
+        ]
+      ],
+      "safe_anchor": [
+        12,
+        15
+      ],
+      "furniture_rules": [
+        "Complete original furniture shape; source RGB555 and transparency preserved.",
+        "No SSAnne809-only bed fragment used as chair.",
+        "Beds only CrewQuarters and GuestRoom1..3; original3x2 bed units complete.",
+        "Foreground layer preserved from donor; default decorative geometry behind actors when overlap unintended.",
+        "No fixed actor/talk/must_open/warp tile may become furniture collision."
+      ],
+      "map_constant": "MAP_HOENN_SPACECRAFT_CARGO_HOLD",
+      "layout_constant": "LAYOUT_HOENN_SPACECRAFT_CARGO_HOLD",
+      "preferred_aisles": [
+        [
+          11,
+          2
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          12,
+          3
+        ],
+        [
+          11,
+          4
+        ],
+        [
+          12,
+          4
+        ],
+        [
+          11,
+          5
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          17,
+          8
+        ],
+        [
+          18,
+          8
+        ],
+        [
+          19,
+          8
+        ],
+        [
+          20,
+          8
+        ],
+        [
+          21,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          11,
+          9
+        ],
+        [
+          12,
+          9
+        ],
+        [
+          13,
+          9
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          15,
+          9
+        ],
+        [
+          16,
+          9
+        ],
+        [
+          17,
+          9
+        ],
+        [
+          18,
+          9
+        ],
+        [
+          19,
+          9
+        ],
+        [
+          20,
+          9
+        ],
+        [
+          21,
+          9
+        ],
+        [
+          11,
+          10
+        ],
+        [
+          12,
+          10
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          14
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          12,
+          16
+        ]
+      ],
+      "interaction_targets_may_be_blocked": true,
+      "aisle_qa_policy": "Main corridors planned at least2tiles; furniture may reroute preferred scaffold. Hardactor/stand/arrival/legacy cells remainopen; actualBFS+clearance after staging. Existing singlewarp event remains one active tile."
+    }
+  ],
+  "labels_reconciled": {
+    "Space_LobbyShop": "SpaceFacility_Shop",
+    "Space_LobbyPC": "SpaceFacility_PC",
+    "Space_CockpitPilotA": "SpaceFacility_CockpitPilot",
+    "Space_CockpitPilotB": "SpaceFacility_CockpitPilot",
+    "Space_NavigationOfficer": "SpaceFacility_NavigationOfficer",
+    "Space_NavigationConsole": "SpaceFacility_NavigationConsole",
+    "Space_OfficeCaptain": "SpaceFacility_OfficeCaptain",
+    "Space_QuartersCrew": "SpaceFacility_CrewSleeper",
+    "Space_QuartersRest": "SpaceFacility_Rest",
+    "Space_MessChef": "SpaceFacility_Cook",
+    "Space_MessRest": "SpaceFacility_Rest",
+    "Space_FoodCourtClerk": "SpaceFacility_FoodShop",
+    "Space_FoodCourtPassenger": "SpaceFacility_FoodGuest",
+    "Space_LoungeKeeper": "SpaceFacility_DrinkShop",
+    "Space_LoungePassenger": "SpaceFacility_LoungeGuest",
+    "Space_GameRoomAttendant": "SpaceFacility_GameAttendant",
+    "Space_GameMachine": "SpaceFacility_GameMachine",
+    "Space_BattleDeckSpectator": "SpaceFacility_ArenaSpectator",
+    "Space_CargoResearcher": "SpaceFacility_CargoResearcher",
+    "Space_CargoClue": "SpaceFacility_CargoClue",
+    "Space_EngineConsole": "Space_EngineeringConsole",
+    "Space_ObservatoryConsole": "Space_RecordsConsole",
+    "Space_GuestRoom1Passenger": "SpaceFacility_Guest1",
+    "Space_GuestRoom1Rest": "SpaceFacility_Rest",
+    "Space_GuestRoom2Passenger": "SpaceFacility_Guest2",
+    "Space_GuestRoom2Rest": "SpaceFacility_Rest",
+    "Space_GuestRoom3Passenger": "SpaceFacility_Guest3",
+    "Space_GuestRoom3Rest": "SpaceFacility_Rest"
+  },
+  "new_flag_var_allocations": [],
+  "legacy_local_ids_removed": [],
+  "legacy_role_changes": {
+    "Cabin1": "BOARDING OFFICER; receptionist65, not Captain",
+    "Cabin2": "STEWARD; MAN25, not battle",
+    "Cabin4": "LOBBY GUIDE; sailor62, not active Pilot"
+  },
+  "source_written": false,
+  "runtime_status": "NOT_RUN",
+  "reference_02_sha256": "e704fab98ec76638d1ec6384c1c05d8183a029b635e6abddaaeaa717c775caee",
+  "coordinate_changes_from_02": [
+    {
+      "map": "HoennSpacecraftCabin",
+      "warp": 2,
+      "before": [
+        1,
+        4
+      ],
+      "after": [
+        1,
+        6
+      ]
+    },
+    {
+      "map": "HoennSpacecraftFoodCourt",
+      "warp": 0,
+      "before": [
+        18,
+        4
+      ],
+      "after": [
+        18,
+        6
+      ]
+    }
+  ],
+  "old_7_warp_rows_unchanged": true,
+  "other_size_actor_BG_target_stand_coordinate_changes": 0
+}

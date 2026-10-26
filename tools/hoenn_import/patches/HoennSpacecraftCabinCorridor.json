@@ -1,0 +1,34 @@
+{
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_HOENN_SPACECRAFT_CABIN",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 9,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_HOENN_SPACECRAFT_GUEST_ROOM1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_HOENN_SPACECRAFT_GUEST_ROOM2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 19,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_HOENN_SPACECRAFT_GUEST_ROOM3",
+      "dest_warp_id": "0"
+    }
+  ],
+  "bg_events": []
+}

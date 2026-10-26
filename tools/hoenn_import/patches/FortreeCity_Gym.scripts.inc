@@ -32,3 +32,11 @@ FortreeCity_Gym_EventScript_PostBattle::
 	msgbox FortreeCity_Gym_Text_H0_2
 	release
 	end
+
+FortreeCity_Gym_RotatingGate_OnTransition::
+    special RotatingGate_InitPuzzle
+    end
+
+FortreeCity_Gym_RotatingGate_OnResume::
+    special RotatingGate_InitPuzzleAndGraphics
+    end

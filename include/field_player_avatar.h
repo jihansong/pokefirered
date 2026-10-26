@@ -46,6 +46,7 @@ void PlayerWalkSlower(u8 direction);
 void PlayerWalkSlow(u8 direction);
 void PlayerWalkNormal(u8 direction);
 void PlayerWalkFast(u8 direction);
+void PlayerRideBikeFastest(u8 direction);
 void PlayerGlide(u8 direction);
 void PlayerRideWaterCurrent(u8 direction);
 void PlayerWalkFaster(u8 direction);
@@ -64,5 +65,18 @@ void UpdatePlayerAvatarTransitionState(void);
 void InitPlayerAvatar(s16 x, s16 y, u8 direction, u8 gender);
 void PlayerUseAcroBikeOnBumpySlope(u8 direction);
 u8 GetRSAvatarGraphicsIdByGender(u8 gender);
+
+void PlayerIdleWheelie(u8 direction);
+void PlayerStartWheelie(u8 direction);
+void PlayerEndWheelie(u8 direction);
+void PlayerStandingHoppingWheelie(u8 direction);
+void PlayerMovingHoppingWheelie(u8 direction);
+void PlayerLedgeHoppingWheelie(u8 direction);
+void PlayerAcroTurnJump(u8 direction);
+void PlayerAcroWheelieCollide(u8 direction);
+void PlayerAcroPopWheelie(u8 direction);
+void PlayerAcroWheelieMove(u8 direction);
+void PlayerAcroEndWheelieMove(u8 direction);
+void PlayerAcroSideJump(u8 direction);
 
 #endif //GUARD_FIELD_PLAYER_AVATAR_H

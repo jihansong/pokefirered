@@ -62,6 +62,7 @@
 #define ITEM_CARGO_TAG 58
 #define ITEM_N_LETTER 59
 #define ITEM_03C 60
+#define ITEM_SHINY_STONE ITEM_03C
 #define ITEM_03D 61
 #define ITEM_03E 62
 #define ITEM_HP_UP 63
@@ -276,6 +277,8 @@
 #define ITEM_SS_TICKET 265
 #define ITEM_CONTEST_PASS 266
 #define ITEM_10B 267
+// Previously unused slot; no existing item IDs move.
+#define ITEM_MAGMA_EMBLEM ITEM_10B
 #define ITEM_WAILMER_PAIL 268
 #define ITEM_DEVON_GOODS 269
 #define ITEM_SOOT_SACK 270

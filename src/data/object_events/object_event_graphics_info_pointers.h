@@ -1,3 +1,5 @@
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedAcroBike;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GreenAcroBike;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ProfElmHns;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MistyCompanion;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedNormal;
@@ -485,4 +487,5 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_REGISTEEL] = &gObjectEventGraphicsInfo_HoennRegisteel,
 // END HOENN OBJECT EVENTS
     [OBJ_EVENT_GFX_PROF_ELM] = &gObjectEventGraphicsInfo_ProfElmHns,
+    [OBJ_EVENT_GFX_PLAYER_ACRO_BIKE] = &gObjectEventGraphicsInfo_RedAcroBike,
 };

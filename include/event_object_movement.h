@@ -233,6 +233,8 @@ u8 GetJumpInPlaceTurnAroundMovementAction(u32 direction);
 u8 GetAcroWheelieInPlaceMovementAction(u32 direction);
 u8 GetAcroPopWheelieMoveMovementAction(u32 direction);
 u8 GetAcroWheelieMoveMovementAction(u32 direction);
+u8 GetAcroEndWheelieMoveMovementAction(u32 direction);
+u8 GetAcroWheelieDirectionAnimNum(u8 direction);
 u8 GetJumpSpecialWithEffectMovementAction(u32 direction);
 u8 GetFishingBiteDirectionAnimNum(u8 direction);
 void TrySpawnObjectEvents(s16 cameraX, s16 cameraY);

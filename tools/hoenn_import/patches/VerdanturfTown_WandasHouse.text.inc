@@ -80,3 +80,16 @@ VerdanturfTown_WandasHouse_TYSharedHM_FullText::
 	.string "Your BAG has no room.\p"
 	.string "Make some space, then return.\n"
 	.string "I will keep your reward ready.$"
+
+
+VerdanturfTown_WandasHouse_WallyChapter_TextAway::
+	.string "WANDA: WALLY and his uncle went\nto the GYM in MAUVILLE.\p"
+	.string "He wants to try a real battle\nwith the RALTS you helped catch.$"
+
+VerdanturfTown_WandasHouse_WallyChapter_TextWally::
+	.string "WALLY: I remember our battle.\nI am learning to trust RALTS.\p"
+	.string "The next time we meet on the road,\nwe will show you how far we grew!$"
+
+VerdanturfTown_WandasHouse_WallyChapter_TextUncle::
+	.string "UNCLE: Thank you for the lesson.\nWALLY is looking after RALTS well.\p"
+	.string "The air here is good for him.\nWe will practice at our own pace.$"

@@ -199,7 +199,7 @@ def main():
             body = scripts.get(label, [])
             # Pokémon Center nurse
             if any('Common_EventScript_PkmnCenterNurse' in b for b in body):
-                return 'EventScript_PkmnCenterNurse'
+                return 'EventScript_HoennPkmnCenterNurse'
             # mart
             mart = next((b.split()[1] for b in body if b.startswith('pokemart ')), None)
             new = f'{nm}_EventScript_H{len(tx_labels)}'
@@ -317,7 +317,7 @@ def main():
         open(d + '/text.inc', 'w').write(tx)
         # Hand-made additions (the story's NPCs and scripts) live in patches/ so a re-import keeps them
         if any(os.path.exists('%s/patches/%s.%s' % (os.path.dirname(os.path.abspath(__file__)), nm, k))
-               for k in ('json', 'scripts.inc', 'text.inc', 'mapscripts')):
+               for k in ('json', 'scripts.inc', 'text.inc', 'mapscripts', 'blockdata.bin')):
             apply_patch(nm)
         if out['connections']: frgroups['connections_include_order'].append(nm)
         stats['maps'] += 1

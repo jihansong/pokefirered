@@ -1,0 +1,813 @@
+// Native regional endings: existing map/picture assets and MUS_CREDITS only.
+// These are credits stages, not new playable maps or a field collision path.
+#define CREDITS_CAST_MON 0x8000
+#define CREDITS_CAST_PORTRAIT 0x4000
+#define CREDITS_CAST_SHINY 0x2000
+#define CREDITS_CAST_SPECIES_MASK 0x1FFF
+#define CREDITS_CAST_NONE 0xFFFF
+enum { CREDITS_ACT_HOP, CREDITS_ACT_WALK, CREDITS_ACT_DANCE,
+       CREDITS_ACT_FLY, CREDITS_ACT_CHASE, CREDITS_ACT_CLASH };
+struct CreditsCastMember { u16 art; u8 motion; u8 x; u8 y; };
+
+static const struct CreditsOverworldCmd sCreditsStage_kanto0[] = {
+    CREDITSOVWLDLOADMAP(MAP_PALLET_TOWN, 12, 12, 1),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(-1, 0, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_kanto1[] = {
+    CREDITSOVWLDLOADMAP(MAP_VIRIDIAN_FOREST, 18, 35, 1),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, -1, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_kanto2[] = {
+    CREDITSOVWLDLOADMAP(MAP_MT_MOON_B2F, 25, 20, 1),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(-1, 0, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_kanto3[] = {
+    CREDITSOVWLDLOADMAP(MAP_CERULEAN_CITY, 24, 17, 1),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, -1, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_kanto4[] = {
+    CREDITSOVWLDLOADMAP(MAP_SSANNE_DECK, 12, 8, 1),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(-1, 0, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_kanto5[] = {
+    CREDITSOVWLDLOADMAP(MAP_POKEMON_TOWER_6F, 10, 13, 1),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, -1, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_kanto6[] = {
+    CREDITSOVWLDLOADMAP(MAP_CELADON_CITY_GYM, 6, 7, 1),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_kanto7[] = {
+    CREDITSOVWLDLOADMAP(MAP_SAFARI_ZONE_CENTER, 14, 17, 1),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, -1, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_kanto8[] = {
+    CREDITSOVWLDLOADMAP(MAP_MT_EMBER_SUMMIT, 11, 9, 1),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, -1, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_kanto9[] = {
+    CREDITSOVWLDLOADMAP(MAP_INDIGO_PLATEAU_EXTERIOR, 11, 11, 1),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, -1, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_kanto10[] = {
+    CREDITSOVWLDLOADMAP(MAP_BATTLE_COLOSSEUM_2P, 7, 4, 1),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_kanto11[] = {
+    CREDITSOVWLDLOADMAP(MAP_POKEMON_LEAGUE_HALL_OF_FAME, 5, 6, 1),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_kanto12[] = {
+    CREDITSOVWLDLOADMAP(MAP_ROUTE21_NORTH, 8, 15, 1),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(-1, 0, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd *const sOverworldMapScenes[] = {
+    sCreditsStage_kanto0,
+    sCreditsStage_kanto1,
+    sCreditsStage_kanto2,
+    sCreditsStage_kanto3,
+    sCreditsStage_kanto4,
+    sCreditsStage_kanto5,
+    sCreditsStage_kanto6,
+    sCreditsStage_kanto7,
+    sCreditsStage_kanto8,
+    sCreditsStage_kanto9,
+    sCreditsStage_kanto10,
+    sCreditsStage_kanto11,
+    sCreditsStage_kanto12,
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_johto0[] = {
+    CREDITSOVWLDLOADMAP(MAP_NEW_BARK_TOWN, 14, 17, 1),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(-1, 0, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_johto1[] = {
+    CREDITSOVWLDLOADMAP(MAP_NEW_BARK_TOWN_ELMS_LAB, 7, 6, 1),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, -1, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_johto2[] = {
+    CREDITSOVWLDLOADMAP(MAP_JOHTO_ROUTE30, 14, 16, 1),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(-1, 0, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_johto3[] = {
+    CREDITSOVWLDLOADMAP(MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER, 7, 5, 1),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_johto4[] = {
+    CREDITSOVWLDLOADMAP(MAP_ECRUTEAK_CITY, 20, 20, 1),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(-1, 0, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_johto5[] = {
+    CREDITSOVWLDLOADMAP(MAP_NAVEL_ROCK_SUMMIT, 11, 7, 1),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, -1, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_johto6[] = {
+    CREDITSOVWLDLOADMAP(MAP_LAKE_OF_RAGE, 20, 20, 1),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(-1, 0, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_johto7[] = {
+    CREDITSOVWLDLOADMAP(MAP_GOLDENROD_CITY_RADIO_TOWER_5F, 8, 8, 1),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, -1, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_johto8[] = {
+    CREDITSOVWLDLOADMAP(MAP_SEAFOAM_ISLANDS_B4F, 12, 14, 1),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(-1, 0, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_johto9[] = {
+    CREDITSOVWLDLOADMAP(MAP_DRAGON_DEN_1F, 16, 14, 1),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, -1, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_johto10[] = {
+    CREDITSOVWLDLOADMAP(MAP_INDIGO_PLATEAU_EXTERIOR, 11, 11, 1),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(-1, 0, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_johto11[] = {
+    CREDITSOVWLDLOADMAP(MAP_JOHTO_LEAGUE_LANCES_ROOM, 6, 7, 1),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_johto12[] = {
+    CREDITSOVWLDLOADMAP(MAP_JOHTO_LEAGUE_HALL_OF_FAME, 5, 7, 1),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd *const sJohtoOverworldMapScenes[] = {
+    sCreditsStage_johto0,
+    sCreditsStage_johto1,
+    sCreditsStage_johto2,
+    sCreditsStage_johto3,
+    sCreditsStage_johto4,
+    sCreditsStage_johto5,
+    sCreditsStage_johto6,
+    sCreditsStage_johto7,
+    sCreditsStage_johto8,
+    sCreditsStage_johto9,
+    sCreditsStage_johto10,
+    sCreditsStage_johto11,
+    sCreditsStage_johto12,
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_hoenn0[] = {
+    CREDITSOVWLDLOADMAP(MAP_SLATEPORT_CITY, 20, 53, 1),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(-1, 0, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_hoenn1[] = {
+    CREDITSOVWLDLOADMAP(MAP_SLATEPORT_CITY_HARBOR, 7, 7, 1),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, -1, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_hoenn2[] = {
+    CREDITSOVWLDLOADMAP(MAP_ROUTE101, 10, 14, 1),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(-1, 0, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_hoenn3[] = {
+    CREDITSOVWLDLOADMAP(MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 6, 7, 1),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_hoenn4[] = {
+    CREDITSOVWLDLOADMAP(MAP_MAUVILLE_CITY, 20, 14, 1),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(-1, 0, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_hoenn5[] = {
+    CREDITSOVWLDLOADMAP(MAP_MT_CHIMNEY, 20, 27, 1),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, -1, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_hoenn6[] = {
+    CREDITSOVWLDLOADMAP(MAP_ROUTE119_WEATHER_INSTITUTE_2F, 7, 5, 1),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_hoenn7[] = {
+    CREDITSOVWLDLOADMAP(MAP_SEAFLOOR_CAVERN_ROOM9, 11, 9, 1),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, -1, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_hoenn8[] = {
+    CREDITSOVWLDLOADMAP(MAP_SOOTOPOLIS_CITY, 30, 42, 1),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(-1, 0, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_hoenn9[] = {
+    CREDITSOVWLDLOADMAP(MAP_SKY_PILLAR_TOP, 13, 12, 1),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, -1, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_hoenn10[] = {
+    CREDITSOVWLDLOADMAP(MAP_EVER_GRANDE_CITY, 20, 15, 1),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(-1, 0, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(1, 0, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_hoenn11[] = {
+    CREDITSOVWLDLOADMAP(MAP_EVER_GRANDE_CITY_CHAMPIONS_ROOM, 6, 7, 1),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd sCreditsStage_hoenn12[] = {
+    CREDITSOVWLDLOADMAP(MAP_EVER_GRANDE_CITY_HALL_OF_FAME, 7, 7, 1),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, -1, 24),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    CREDITSOVWLDSCROLL(0, 1, 12),
+    CREDITSOVWLDSCROLL(0, 0, 48),
+    {CREDITSOVWLDCMD_LOOP, 0, 0},
+};
+
+static const struct CreditsOverworldCmd *const sHoennOverworldMapScenes[] = {
+    sCreditsStage_hoenn0,
+    sCreditsStage_hoenn1,
+    sCreditsStage_hoenn2,
+    sCreditsStage_hoenn3,
+    sCreditsStage_hoenn4,
+    sCreditsStage_hoenn5,
+    sCreditsStage_hoenn6,
+    sCreditsStage_hoenn7,
+    sCreditsStage_hoenn8,
+    sCreditsStage_hoenn9,
+    sCreditsStage_hoenn10,
+    sCreditsStage_hoenn11,
+    sCreditsStage_hoenn12,
+};
+
+static const u8 sHoennCreditsTitle[] = _("POKéMON THUNDER YELLOW\nHOENN STAFF");
+static const u8 sJohtoCreditsTitle[] = _("POKéMON THUNDER YELLOW\nJOHTO STAFF");
+static const u8 sRegionalCreditsCaptions[3][13][30] = {
+    {
+        _("PALLET TOWN"),
+        _("VIRIDIAN FOREST"),
+        _("MOONLIT CLEFAIRY"),
+        _("CERULEAN FRIENDS"),
+        _("S.S. ANNE"),
+        _("POKEMON TOWER"),
+        _("CELADON FRAGRANCE"),
+        _("SAFARI DISCOVERIES"),
+        _("CINNABAR VOLCANO"),
+        _("THE LEAGUE FLAME"),
+        _("KANTO LEAGUE"),
+        _("HALL OF FAME"),
+        _("A NEW JOURNEY"),
+    },
+    {
+        _("NEW BARK TOWN"),
+        _("ELM AND THREE PARTNERS"),
+        _("THE JOHTO RESEARCH ROAD"),
+        _("RUINS OF ALPH"),
+        _("ECRUTEAK AND THE TOWER"),
+        _("HO-OH ABOVE BELL TOWER"),
+        _("THE RED GYARADOS"),
+        _("RADIO TOWER RESCUE"),
+        _("SHADOW OF WHIRL ISLANDS"),
+        _("DRAGONS DEN"),
+        _("JOHTO LEAGUE"),
+        _("LANCE - FINAL CHALLENGE"),
+        _("JOHTO HALL OF FAME"),
+    },
+    {
+        _("ARRIVAL IN HOENN"),
+        _("SLATEPORT - FIRST STEPS"),
+        _("BIRCH AND ZIGZAGOON"),
+        _("THREE HOENN PARTNERS"),
+        _("MAUVILLE CITY"),
+        _("MT CHIMNEY - TEAM MAGMA"),
+        _("THE WEATHER INSTITUTE"),
+        _("SEAFLOOR AWAKENING"),
+        _("SEA AND LAND COLLIDE"),
+        _("RAYQUAZA - SKY PILLAR"),
+        _("EVER GRANDE LEAGUE"),
+        _("WALLACE - FINAL CHALLENGE"),
+        _("HOENN HALL OF FAME"),
+    },
+};
+
+static const struct CreditsCastMember sRegionalCreditsCast[3][13][6] = {
+    { // kanto
+        {
+            {OBJ_EVENT_GFX_PROF_OAK, CREDITS_ACT_HOP, 74, 139},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_JESSIE, CREDITS_ACT_CHASE, 42, 139},
+            {OBJ_EVENT_GFX_JAMES, CREDITS_ACT_CHASE, 104, 139},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {SPECIES_CLEFAIRY | CREDITS_CAST_MON, CREDITS_ACT_DANCE, 42, 136},
+            {SPECIES_CLEFAIRY | CREDITS_CAST_MON, CREDITS_ACT_DANCE, 104, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {SPECIES_PSYDUCK | CREDITS_CAST_MON, CREDITS_ACT_HOP, 74, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_SAILOR, CREDITS_ACT_WALK, 74, 139},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {SPECIES_GASTLY | CREDITS_CAST_MON, CREDITS_ACT_FLY, 42, 136},
+            {SPECIES_MAROWAK | CREDITS_CAST_MON, CREDITS_ACT_HOP, 104, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_ERIKA, CREDITS_ACT_HOP, 42, 139},
+            {SPECIES_GLOOM | CREDITS_CAST_MON, CREDITS_ACT_HOP, 104, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {SPECIES_KANGASKHAN | CREDITS_CAST_MON, CREDITS_ACT_WALK, 42, 136},
+            {SPECIES_CHANSEY | CREDITS_CAST_MON, CREDITS_ACT_HOP, 104, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {SPECIES_MAGMAR | CREDITS_CAST_MON, CREDITS_ACT_HOP, 42, 136},
+            {SPECIES_MOLTRES | CREDITS_CAST_PORTRAIT, CREDITS_ACT_FLY, 104, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {SPECIES_MOLTRES | CREDITS_CAST_PORTRAIT, CREDITS_ACT_FLY, 74, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_BLUE, CREDITS_ACT_WALK, 42, 139},
+            {SPECIES_EEVEE | CREDITS_CAST_MON, CREDITS_ACT_HOP, 104, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_PROF_OAK, CREDITS_ACT_HOP, 74, 139},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+    },
+    { // johto
+        {
+            {OBJ_EVENT_GFX_PROF_ELM, CREDITS_ACT_HOP, 74, 139},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_PROF_ELM, CREDITS_ACT_HOP, 14, 139},
+            {SPECIES_CYNDAQUIL | CREDITS_CAST_MON, CREDITS_ACT_HOP, 44, 136},
+            {SPECIES_CHIKORITA | CREDITS_CAST_MON, CREDITS_ACT_HOP, 82, 136},
+            {SPECIES_TOTODILE | CREDITS_CAST_MON, CREDITS_ACT_HOP, 120, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+        },
+        {
+            {SPECIES_HOOTHOOT | CREDITS_CAST_MON, CREDITS_ACT_HOP, 74, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {SPECIES_UNOWN | CREDITS_CAST_MON, CREDITS_ACT_FLY, 74, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_WOMAN_1, CREDITS_ACT_HOP, 74, 139},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {SPECIES_HO_OH | CREDITS_CAST_PORTRAIT, CREDITS_ACT_FLY, 74, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_LANCE, CREDITS_ACT_WALK, 42, 139},
+            {SPECIES_GYARADOS | CREDITS_CAST_PORTRAIT | CREDITS_CAST_SHINY, CREDITS_ACT_HOP, 104, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_ROCKET_M, CREDITS_ACT_CHASE, 42, 139},
+            {OBJ_EVENT_GFX_ROCKET_F, CREDITS_ACT_CHASE, 104, 139},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {SPECIES_LUGIA | CREDITS_CAST_PORTRAIT, CREDITS_ACT_FLY, 74, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {SPECIES_DRATINI | CREDITS_CAST_MON, CREDITS_ACT_HOP, 42, 136},
+            {SPECIES_DRAGONAIR | CREDITS_CAST_MON, CREDITS_ACT_FLY, 104, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_LANCE, CREDITS_ACT_HOP, 74, 139},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_LANCE, CREDITS_ACT_WALK, 42, 139},
+            {SPECIES_DRAGONITE | CREDITS_CAST_MON, CREDITS_ACT_FLY, 104, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_LANCE, CREDITS_ACT_HOP, 74, 139},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+    },
+    { // hoenn
+        {
+            {OBJ_EVENT_GFX_AIRPLANE_SMALL, CREDITS_ACT_FLY, 74, 130},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_PROF_BIRCH, CREDITS_ACT_CHASE, 42, 139},
+            {SPECIES_ZIGZAGOON | CREDITS_CAST_MON, CREDITS_ACT_CHASE, 104, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_PROF_BIRCH, CREDITS_ACT_HOP, 14, 139},
+            {SPECIES_TREECKO | CREDITS_CAST_MON, CREDITS_ACT_HOP, 44, 136},
+            {SPECIES_TORCHIC | CREDITS_CAST_MON, CREDITS_ACT_HOP, 82, 136},
+            {SPECIES_MUDKIP | CREDITS_CAST_MON, CREDITS_ACT_HOP, 120, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+        },
+        {
+            {OBJ_EVENT_GFX_WATTSON, CREDITS_ACT_HOP, 42, 139},
+            {SPECIES_MAGNEMITE | CREDITS_CAST_MON, CREDITS_ACT_FLY, 104, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_MAXIE, CREDITS_ACT_WALK, 42, 139},
+            {SPECIES_NUMEL | CREDITS_CAST_MON, CREDITS_ACT_HOP, 104, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_SCIENTIST, CREDITS_ACT_WALK, 42, 139},
+            {SPECIES_CASTFORM | CREDITS_CAST_MON, CREDITS_ACT_FLY, 104, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_ARCHIE, CREDITS_ACT_WALK, 42, 139},
+            {SPECIES_KYOGRE | CREDITS_CAST_PORTRAIT, CREDITS_ACT_FLY, 104, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {SPECIES_KYOGRE | CREDITS_CAST_PORTRAIT, CREDITS_ACT_CLASH, 42, 136},
+            {SPECIES_GROUDON | CREDITS_CAST_PORTRAIT, CREDITS_ACT_CLASH, 104, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {SPECIES_RAYQUAZA | CREDITS_CAST_PORTRAIT, CREDITS_ACT_FLY, 74, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_WALLACE, CREDITS_ACT_HOP, 74, 139},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_WALLACE, CREDITS_ACT_WALK, 42, 139},
+            {SPECIES_MILOTIC | CREDITS_CAST_MON, CREDITS_ACT_HOP, 104, 136},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+        {
+            {OBJ_EVENT_GFX_WALLACE, CREDITS_ACT_HOP, 74, 139},
+            {OBJ_EVENT_GFX_PIKACHU, CREDITS_ACT_HOP, 146, 147},
+            {OBJ_EVENT_GFX_MISTY_COMPANION, CREDITS_ACT_HOP, 166, 141},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+            {CREDITS_CAST_NONE},
+        },
+    },
+};

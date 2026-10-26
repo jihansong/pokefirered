@@ -4569,4 +4569,7 @@ extern const u32 gDexScreen_TopMenuIconTiles_AtoZ[];
 extern const u32 gTrainerFrontPic_HoennLeaderJuan[];
 extern const u32 gTrainerPalette_HoennLeaderJuan[];
 // END HOENN TRAINERS
+extern const u32 gItemIcon_MagmaEmblem[];
+extern const u32 gItemIconPalette_MagmaEmblem[];
+
 #endif //GUARD_GRAPHICS_H

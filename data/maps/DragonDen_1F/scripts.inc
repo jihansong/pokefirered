@@ -11,6 +11,7 @@ lockall
     end
 DragonDen_1F_TrialGateOpen::
     releaseall
+    special SetOrdinaryWarpTransition
     warp MAP_DRAGON_DEN_SHRINE, 1
     waitstate
     end

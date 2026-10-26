@@ -1491,3 +1491,5 @@ const u16 gTilesetPalettes_SilverGeneral[][16] =
 	INCBIN_U16("data/tilesets/primary/silver_general/palettes/14.gbapal"),
 	INCBIN_U16("data/tilesets/primary/silver_general/palettes/15.gbapal"),
 };
+
+#include "ty_hns_graphics.h"

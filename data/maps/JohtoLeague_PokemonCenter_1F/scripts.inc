@@ -40,6 +40,7 @@ JohtoLeague_PokemonCenter_1F_Receptionist::
     clearflag FLAG_JOHTO_KAREN_CLEARED
     clearflag FLAG_JOHTO_LANCE_CHAMPION_CLEARED
     closemessage
+    special SetOrdinaryWarpTransition
     warp MAP_JOHTO_LEAGUE_WILLS_ROOM, 0
     waitstate
     release

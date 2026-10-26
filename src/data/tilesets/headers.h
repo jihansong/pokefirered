@@ -792,3 +792,5 @@ const struct Tileset gTileset_SilverGeneral =
     .metatileAttributes = gMetatileAttributes_General,
     .callback = InitTilesetAnim_General,
 };
+
+#include "ty_hns_headers.h"

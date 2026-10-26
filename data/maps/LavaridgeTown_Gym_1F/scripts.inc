@@ -1,4 +1,7 @@
 LavaridgeTown_Gym_1F_MapScripts::
+map_script MAP_SCRIPT_ON_TRANSITION, LavaridgeTown_Gym_1F_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, LavaridgeTown_Gym_1F_MountainResume
+	map_script MAP_SCRIPT_ON_RETURN_TO_FIELD, LavaridgeTown_Gym_1F_MountainReturn
 	.byte 0
 
 LavaridgeTown_Gym_1F_EventScript_H1::
@@ -22,8 +25,36 @@ LavaridgeTown_Gym_1F_EventScript_H5::
 	end
 
 @ BEGIN PATCH (tools/hoenn_import/patches)
+LavaridgeTown_Gym_1F_OnTransition::
+	special HoennMountain_SetupObjects
+	special HoennMountain_GetPhase
+	copyvar VAR_TEMP_0, VAR_RESULT
+	end
+
+LavaridgeTown_Gym_1F_MountainResume::
+	special HoennMountain_SetupObjects
+	special HoennMountain_GetPhase
+	copyvar VAR_TEMP_0, VAR_RESULT
+	end
+
+LavaridgeTown_Gym_1F_MountainReturn::
+	special HoennMountain_RefreshActors
+	special HoennMountain_GetPhase
+	copyvar VAR_TEMP_0, VAR_RESULT
+	end
+
 @ Z4 reward bridge: old trainer victories recover the same rewards.
 LavaridgeTown_Gym_1F_EventScript_H0::
+	goto_if_defeated TRAINER_HOENN_FLANNERY_1, LavaridgeTown_Gym_1F_EventScript_DefeatedFlannery
+	special HoennMountain_GetPhase
+	goto_if_ge VAR_RESULT, 2, LavaridgeTown_Gym_1F_Mountain_BattleReady
+	lock
+	faceplayer
+	msgbox LavaridgeTown_Gym_1F_Mountain_TextWait
+	release
+	end
+
+LavaridgeTown_Gym_1F_Mountain_BattleReady::
 	trainerbattle_single TRAINER_HOENN_FLANNERY_1, LavaridgeTown_Gym_1F_Text_H0_0, LavaridgeTown_Gym_1F_Text_H0_1, LavaridgeTown_Gym_1F_EventScript_DefeatedFlannery, NO_MUSIC
 	goto LavaridgeTown_Gym_1F_EventScript_DefeatedFlannery
 	end

@@ -27,7 +27,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SkyPillar_Top_EventScript_TY_Rayquaza",
-      "flag": "FLAG_HOENN_RAYQUAZA_AWAKENED"
+      "flag": "FLAG_HIDE_HOENN_SKY_PILLAR_RAYQUAZA"
     }
   ],
   "warp_events": [

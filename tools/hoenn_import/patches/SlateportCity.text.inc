@@ -164,3 +164,39 @@ SlateportCity_Text_H26::
     .string "STERN'S SHIPYARD\p"
     .string "“Wanted: hands who can read a\n"
     .string "current. No experience refused.”$"
+
+SlateportCity_VS_Text_Interview::
+	.string "STERN: Our expedition will\n"
+	.string "explore the ancient cavern\l"
+	.string "beneath the sea. REPORTER:\l"
+	.string "Thank you for the interview!$"
+
+SlateportCity_VS_Text_Discovery::
+	.string "STERN: Our sea research\n"
+	.string "continues. The expedition\l"
+	.string "submarine will carry our\l"
+	.string "instruments to the ancient\l"
+	.string "cavern.$"
+
+SlateportCity_VS_Text_AquaBroadcast::
+	.string "TEAM AQUA: We will assume\n"
+	.string "control of your submarine!\l"
+	.string "Its voyage belongs to us\l"
+	.string "now!$"
+
+SlateportCity_VS_Text_FollowStern::
+	.string "STERN: That voice came from\n"
+	.string "the harbor! They are taking\l"
+	.string "our submarine! Please come\l"
+	.string "with me!$"
+
+SlateportCity_VS_Text_Reporter::
+	.string "We are covering STERN's\n"
+	.string "deep-sea expedition. Please\l"
+	.string "speak to him after the\l"
+	.string "interview.$"
+
+SlateportCity_VS_Text_Cameraman::
+	.string "We are recording STERN's\n"
+	.string "discoveries.$"
+

@@ -1,7 +1,79 @@
 FallarborTown_CozmosHouse_MapScripts::
+map_script MAP_SCRIPT_ON_TRANSITION, FallarborTown_CozmosHouse_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, FallarborTown_CozmosHouse_MountainResume
+	map_script MAP_SCRIPT_ON_RETURN_TO_FIELD, FallarborTown_CozmosHouse_MountainReturn
 	.byte 0
 
-FallarborTown_CozmosHouse_EventScript_H0::
-	msgbox FallarborTown_CozmosHouse_Text_H0, MSGBOX_NPC
+@ BEGIN PATCH (tools/hoenn_import/patches)
+FallarborTown_CozmosHouse_OnTransition::
+	special HoennMountain_SetupObjects
+	special HoennMountain_GetPhase
+	copyvar VAR_TEMP_0, VAR_RESULT
 	end
 
+FallarborTown_CozmosHouse_MountainResume::
+	special HoennMountain_SetupObjects
+	special HoennMountain_GetPhase
+	copyvar VAR_TEMP_0, VAR_RESULT
+	end
+
+FallarborTown_CozmosHouse_MountainReturn::
+	special HoennMountain_RefreshActors
+	special HoennMountain_GetPhase
+	copyvar VAR_TEMP_0, VAR_RESULT
+	end
+
+
+FallarborTown_CozmosHouse_EventScript_H0::
+	lock
+	faceplayer
+	goto_if_set FLAG_HOENN_GOT_COZMO_TM27, FallarborTown_CozmosHouse_Mountain_WifeThanks
+	special HoennMountain_GetPhase
+	goto_if_ge VAR_RESULT, 2, FallarborTown_CozmosHouse_Mountain_WifeHome
+	msgbox FallarborTown_CozmosHouse_Mountain_TextWifeAway
+	release
+	end
+FallarborTown_CozmosHouse_Mountain_WifeHome::
+	msgbox FallarborTown_CozmosHouse_Mountain_TextWifeHome
+	release
+	end
+FallarborTown_CozmosHouse_Mountain_WifeThanks::
+	msgbox FallarborTown_CozmosHouse_Mountain_TextWifeThanks
+	release
+	end
+FallarborTown_CozmosHouse_Mountain_Cozmo::
+	lock
+	faceplayer
+	goto_if_set FLAG_HOENN_GOT_COZMO_TM27, FallarborTown_CozmosHouse_Mountain_Thanks
+	checkitem ITEM_METEORITE
+	goto_if_eq VAR_RESULT, FALSE, FallarborTown_CozmosHouse_Mountain_CheckPC
+	msgbox FallarborTown_CozmosHouse_Mountain_TextAsk, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FallarborTown_CozmosHouse_Mountain_Decline
+	giveitem ITEM_TM27
+	goto_if_eq VAR_RESULT, FALSE, FallarborTown_CozmosHouse_Mountain_Full
+	removeitem ITEM_METEORITE
+	setflag FLAG_HOENN_METEORITE_RETURNED
+	setflag FLAG_HOENN_GOT_COZMO_TM27
+FallarborTown_CozmosHouse_Mountain_Thanks::
+	msgbox FallarborTown_CozmosHouse_Mountain_TextThanks
+	release
+	end
+FallarborTown_CozmosHouse_Mountain_NoStone::
+	msgbox FallarborTown_CozmosHouse_Mountain_TextNoStone
+	release
+	end
+FallarborTown_CozmosHouse_Mountain_CheckPC::
+	checkpcitem ITEM_METEORITE
+	goto_if_eq VAR_RESULT, FALSE, FallarborTown_CozmosHouse_Mountain_NoStone
+	msgbox FallarborTown_CozmosHouse_Mountain_TextStored
+	release
+	end
+FallarborTown_CozmosHouse_Mountain_Decline::
+	msgbox FallarborTown_CozmosHouse_Mountain_TextDecline
+	release
+	end
+FallarborTown_CozmosHouse_Mountain_Full::
+	msgbox FallarborTown_CozmosHouse_Mountain_TextFull
+	release
+	end
+@ END PATCH

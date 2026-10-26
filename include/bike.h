@@ -1,7 +1,13 @@
 #ifndef GUARD_BIKE_H
 #define GUARD_BIKE_H
 
-// TODO: Do the constants make sense in FRLG? 
+// Existing Bicycle keeps its FRLG physics; the Hoenn bikes are separate modes.
+enum
+{
+    BIKE_MODE_LEGACY,
+    BIKE_MODE_MACH,
+    BIKE_MODE_ACRO,
+};
 
 // Player speeds
 enum
@@ -39,6 +45,37 @@ enum
     ACRO_STATE_TURN_JUMP,
 };
 
+// mach bike transitions enum
+enum
+{
+    MACH_TRANS_FACE_DIRECTION,
+    MACH_TRANS_TURN_DIRECTION,
+    MACH_TRANS_KEEP_MOVING,
+    MACH_TRANS_START_MOVING
+};
+
+// Acro bike transitions
+enum
+{
+    ACRO_TRANS_FACE_DIRECTION,
+    ACRO_TRANS_TURN_DIRECTION,
+    ACRO_TRANS_MOVING,
+    ACRO_TRANS_NORMAL_TO_WHEELIE,
+    ACRO_TRANS_WHEELIE_TO_NORMAL,
+    ACRO_TRANS_WHEELIE_IDLE,
+    ACRO_TRANS_WHEELIE_HOPPING_STANDING,
+    ACRO_TRANS_WHEELIE_HOPPING_MOVING,
+    ACRO_TRANS_SIDE_JUMP,
+    ACRO_TRANS_TURN_JUMP,
+    ACRO_TRANS_WHEELIE_MOVING,
+    ACRO_TRANS_WHEELIE_RISING_MOVING,
+    ACRO_TRANS_WHEELIE_LOWERING_MOVING,
+};
+
+u8 Bike_GetMode(void);
+void Bike_SetMode(u8 mode);
+void Bike_ResetTransientState(void);
+void Bike_TryAcroBikeHistoryUpdate(u16 newKeys, u16 heldKeys);
 void BikeClearState(u32 directionHistory, u32 abStartSelectHistory);
 bool8 IsBikingDisallowedByPlayer(void);
 void GetOnOffBike(u8 flags);

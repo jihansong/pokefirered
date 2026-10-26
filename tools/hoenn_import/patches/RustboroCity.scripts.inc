@@ -6,9 +6,24 @@
 RustboroCity_OnTransition::
 	setflag FLAG_HOENN_WORLD_MAP_RUSTBORO_CITY
 	special HoennZ3_SetupObjects
+	call RustboroCity_UpdateDevonTheftTrigger
 	end
 
+RustboroCity_OnResume::
+	call RustboroCity_UpdateDevonTheftTrigger
+	end
+
+@ Only an eligible theft can consume a step, including after CONTINUE.
+RustboroCity_UpdateDevonTheftTrigger::
+	setvar VAR_TEMP_1, 0
+	goto_if_ne VAR_HOENN_SCENE_DEVON, 1, RustboroCity_DevonTheftTriggerDone
+	goto_if_unset FLAG_HOENN_BADGE01_GET, RustboroCity_DevonTheftTriggerDone
+	setvar VAR_TEMP_1, 1
+RustboroCity_DevonTheftTriggerDone::
+	return
+
 RustboroCity_EventScript_DevonTheft::
+	setvar VAR_TEMP_1, 0
 	goto_if_ne VAR_HOENN_SCENE_DEVON, 1, RustboroCity_EventScript_DevonSceneDone
 	goto_if_unset FLAG_HOENN_BADGE01_GET, RustboroCity_EventScript_DevonSceneDone
 	lockall

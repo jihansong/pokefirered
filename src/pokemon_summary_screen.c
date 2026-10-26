@@ -3001,6 +3001,13 @@ static void CommitStaticWindowTilemaps(void)
 
 static void Task_DestroyResourcesOnExit(u8 taskId)
 {
+    // The summary IRQ callback reads summary/HP/EXP state. Stop it before
+    // tearing down those objects; keep all DMA sources alive until drained.
+    SetVBlankCallback(NULL);
+    SetHBlankCallback(NULL);
+    if (WaitDma3Request(-1) == -1)
+        return;
+
     PokeSum_DestroySprites();
     FreeAllSpritePalettes();
 

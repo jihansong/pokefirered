@@ -5,6 +5,12 @@ Route18_EastEntrance_1F_MapScripts::
 Route18_EastEntrance_1F_OnTransition::
 	clearflag FLAG_SYS_ON_CYCLING_ROAD
 	call_if_set FLAG_GOT_BICYCLE, Route18_EastEntrance_1F_EventScript_DisableNeedBikeTrigger
+	checkitem ITEM_BICYCLE
+	call_if_eq VAR_RESULT, TRUE, Route18_EastEntrance_1F_EventScript_DisableNeedBikeTrigger
+	checkitem ITEM_MACH_BIKE
+	call_if_eq VAR_RESULT, TRUE, Route18_EastEntrance_1F_EventScript_DisableNeedBikeTrigger
+	checkitem ITEM_ACRO_BIKE
+	call_if_eq VAR_RESULT, TRUE, Route18_EastEntrance_1F_EventScript_DisableNeedBikeTrigger
 	end
 
 Route18_EastEntrance_1F_EventScript_DisableNeedBikeTrigger::

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "hoenn_puzzles.h"
 #include "time_of_day.h"
 #include "follower_pikachu.h"
 #include "companion_misty.h"
@@ -59,6 +60,7 @@ static const u8 *GetInteractedObjectEventScript(struct MapPosition * position, u
 static bool8 ReactsToPlayerMonForm(u8 graphicsId);
 static const u8 *GetInteractedBackgroundEventScript(struct MapPosition * position, u8 metatileBehavior, u8 playerDirection);
 static const struct BgEvent *GetBackgroundEventAtPosition(struct MapHeader *, u16, u16, u8);
+extern const u8 TYHns_EventScript_Headbutt[];
 static const u8 *GetInteractedMetatileScript(struct MapPosition * position, u8 metatileBehavior, u8 playerDirection);
 static const u8 *GetInteractedWaterScript(struct MapPosition * position, u8 metatileBehavior, u8 playerDirection);
 static bool8 TryStartStepBasedScript(struct MapPosition * position, u16 metatileBehavior, u16 playerDirection);
@@ -568,6 +570,8 @@ static const u8 *GetInteractedBackgroundEventScript(struct MapPosition *position
 static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 metatileBehavior, u8 direction)
 {
     gSpecialVar_Facing = direction;
+    if (metatileBehavior == MB_TY_HNS_HEADBUTT_TREE)
+        return TYHns_EventScript_Headbutt;
     if (MetatileBehavior_IsPC(metatileBehavior) == TRUE)
         return EventScript_PC;
     if (MetatileBehavior_IsRegionMap(metatileBehavior) == TRUE)
@@ -763,8 +767,7 @@ static bool8 TryStartCoordEventScript(struct MapPosition *position)
 
 static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
 {
-    // Dummied
-    return FALSE;
+    return TryStartHoennSkyPillarHoleScript(metatileBehavior);
 }
 
 static bool8 TryStartStepCountScript(u16 metatileBehavior)
@@ -962,7 +965,7 @@ static bool8 TryArrowWarp(struct MapPosition *position, u16 metatileBehavior, u8
         {
             StoreInitialPlayerAvatarState();
             SetupWarp(&gMapHeader, warpEventId, position);
-            DoWarp();
+            DoOrdinaryWarp();
             return TRUE;
         }
         else if (IsDirectionalStairWarpMetatileBehavior(metatileBehavior, direction) == TRUE)
@@ -1021,7 +1024,7 @@ static bool8 TryStartWarpEventScript(struct MapPosition *position, u16 metatileB
             ScriptContext_SetupScript(EventScript_DoFallWarp);
             return TRUE;
         }
-        DoWarp();
+        DoOrdinaryWarp();
         return TRUE;
     }
     return FALSE;

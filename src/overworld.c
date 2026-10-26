@@ -1,4 +1,6 @@
 #include "global.h"
+#include "rotating_gate.h"
+#include "hoenn_puzzles.h"
 #include "bug_contest.h"
 #include "follower_pikachu.h"
 #include "gflib.h"
@@ -56,6 +58,7 @@
 #include "constants/region_map_sections.h"
 #include "constants/songs.h"
 #include "constants/sound.h"
+#include "data/tilesets/ty_hns_legacy_continue.inc"
 
 #define PLAYER_LINK_STATE_IDLE 0x80
 #define PLAYER_LINK_STATE_BUSY 0x81
@@ -437,6 +440,39 @@ static void LoadObjEventTemplatesFromHeader(void)
     }
 }
 
+static void LoadContinueObjEventTemplates(void)
+{
+    u8 i;
+    const struct ObjectEventTemplate *src = gMapHeader.events->objectEvents;
+    struct ObjectEventTemplate *saved = gSaveBlock1Ptr->objectEventTemplates;
+
+    if (!HoennSeafloorHasPuzzleSave())
+    {
+        LoadObjEventTemplatesFromHeader();
+        return;
+    }
+    // Keep moved rock coordinates only in a validated map-local puzzle save.
+    // All ROM fields, including relocated script pointers, still get refreshed.
+    for (i = 0; i < gMapHeader.events->objectEventCount; i++)
+    {
+        s16 x = saved[i].x;
+        s16 y = saved[i].y;
+        bool8 sameObject = (src[i].graphicsId == OBJ_EVENT_GFX_PUSHABLE_BOULDER
+                || src[i].graphicsId == OBJ_EVENT_GFX_ROCK_SMASH_ROCK)
+            && saved[i].localId == src[i].localId
+            && saved[i].graphicsId == src[i].graphicsId
+            && saved[i].kind == src[i].kind
+            && x >= 0 && y >= 0
+            && x < gMapHeader.mapLayout->width && y < gMapHeader.mapLayout->height;
+        saved[i] = src[i];
+        if (sameObject)
+        {
+            saved[i].x = x;
+            saved[i].y = y;
+        }
+    }
+}
+
 static void LoadSaveblockObjEventScripts(void)
 {
     int i;
@@ -447,6 +483,62 @@ static void LoadSaveblockObjEventScripts(void)
     {
         savObjTemplates[i].script = src[i].script;
     }
+}
+
+static bool8 RefreshRebuiltSpaceObjectsOnContinue(void)
+{
+    u8 i, j;
+    const struct ObjectEventTemplate *templates;
+
+    if (gQuestLogState == QL_STATE_PLAYBACK
+     || gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_HOENN_SPACEPORT_TERMINAL)
+     || gMapHeader.events == NULL)
+        return FALSE;
+    switch (gSaveBlock1Ptr->location.mapNum)
+    {
+    case MAP_NUM(MAP_HOENN_SPACEPORT_TERMINAL):
+    case MAP_NUM(MAP_HOENN_SPACEPORT_LAUNCH_PAD):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_CABIN):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_ENGINEERING):
+    case MAP_NUM(MAP_HOENN_ORBITAL_OBSERVATORY):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_COCKPIT):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_NAVIGATION):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_CAPTAINS_OFFICE):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_CREW_QUARTERS):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_CREW_MESS):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_FOOD_COURT):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_LOUNGE):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_GAME_ROOM):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_BATTLE_DECK):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_CABIN_CORRIDOR):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_GUEST_ROOM1):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_GUEST_ROOM2):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_GUEST_ROOM3):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_CARGO_HOLD):
+        break;
+    default:
+        return FALSE;
+    }
+    templates = gMapHeader.events->objectEvents;
+    // No sprites exist yet. Rebuild only map-owned actors from current templates.
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {
+        struct ObjectEvent *objectEvent = &gObjectEvents[i];
+
+        if (!objectEvent->active || objectEvent->isPlayer
+         || objectEvent->mapNum != gSaveBlock1Ptr->location.mapNum
+         || objectEvent->mapGroup != gSaveBlock1Ptr->location.mapGroup)
+            continue;
+        for (j = 0; j < gMapHeader.events->objectEventCount; j++)
+        {
+            if (objectEvent->localId == templates[j].localId)
+            {
+                objectEvent->active = FALSE;
+                break;
+            }
+        }
+    }
+    return TRUE;
 }
 
 void SetObjEventTemplateCoords(u8 localId, s16 x, s16 y)
@@ -1703,11 +1795,12 @@ void CB2_ContinueSavedGame(void)
     StopMapMusic();
     ResetSafariZoneFlag_();
     LoadSaveblockMapHeader();
+    TYHns_MigrateLegacyContinue();
     // Read the map's objects from the ROM again, the way entering a map does.
     // Without this a save made inside a map keeps the object list it was saved
     // with, so anything the map gained since (the truck on Vermilion's dock,
     // for one) would not show up until the player left and came back.
-    LoadObjEventTemplatesFromHeader();
+    LoadContinueObjEventTemplates();
     LoadSaveblockObjEventScripts();
     UnfreezeObjectEvents();
     MigrateStarterPikachuBit();
@@ -1730,6 +1823,8 @@ void CB2_ContinueSavedGame(void)
     {
         // v0.11.0: HOENN's stage-3 objects, set up as entering the map would
         sSpawnObjectsOnContinue = HoennZ3_SetupObjectsOnContinue();
+        if (RefreshRebuiltSpaceObjectsOnContinue())
+            sSpawnObjectsOnContinue = TRUE;
         gFieldCallback = FieldCB_ShowMapNameOnContinue;
         SetMainCallback1(CB1_Overworld);
         CB2_ReturnToField();
@@ -1930,7 +2025,7 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 inLink)
         (*state)++;
         break;
     case 12:
-        if (GetLastUsedWarpMapSectionId() != gMapHeader.regionMapSectionId && MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FOREST) == TRUE)
+        if (!IsOrdinaryWarpTransition() && GetLastUsedWarpMapSectionId() != gMapHeader.regionMapSectionId && MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FOREST) == TRUE)
         {
             MapPreview_LoadGfx(gMapHeader.regionMapSectionId);
             MapPreview_StartForestTransition(gMapHeader.regionMapSectionId);
@@ -2120,6 +2215,7 @@ static void InitOverworldGraphicsRegisters(void)
 
 static void ResumeMap(bool32 inLink)
 {
+    RotatingGate_Cleanup();
     ResetTasks();
     ResetSpriteData();
     ResetPaletteFade();
@@ -2352,11 +2448,12 @@ void CB2_EnterFieldFromQuestLog(void)
     gGlobalFieldTintMode = QL_TINT_BACKUP_GRAYSCALE;
     ResetSafariZoneFlag_();
     LoadSaveblockMapHeader();
+    TYHns_MigrateLegacyContinue();
     // Read the map's objects from the ROM again, the way entering a map does.
     // Without this a save made inside a map keeps the object list it was saved
     // with, so anything the map gained since (the truck on Vermilion's dock,
     // for one) would not show up until the player left and came back.
-    LoadObjEventTemplatesFromHeader();
+    LoadContinueObjEventTemplates();
     LoadSaveblockObjEventScripts();
     UnfreezeObjectEvents();
     MigrateStarterPikachuBit();
@@ -2375,6 +2472,7 @@ void CB2_EnterFieldFromQuestLog(void)
     }
     else
     {
+        sSpawnObjectsOnContinue = RefreshRebuiltSpaceObjectsOnContinue();
         SetMainCallback1(CB1_Overworld);
         CB2_ReturnToField();
     }
@@ -2527,6 +2625,10 @@ static void CameraCB_CreditsPan(struct CameraObject * camera)
         sCreditsOverworld_CmdIndex++;
         switch (sCreditsOverworld_Script[sCreditsOverworld_CmdIndex].unk_0)
         {
+        case CREDITSOVWLDCMD_LOOP:
+            // Replay only the bounded camera choreography, never map callbacks.
+            sCreditsOverworld_CmdIndex = 1;
+            return;
         case CREDITSOVWLDCMD_FC:
         case CREDITSOVWLDCMD_LOADMAP:
             return;

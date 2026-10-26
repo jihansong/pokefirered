@@ -1,6 +1,7 @@
 #include "global.h"
 #include "gflib.h"
 #include "battle.h"
+#include "battle_bg.h"
 #include "battle_anim.h"
 #include "strings.h"
 #include "battle_message.h"
@@ -2741,6 +2742,8 @@ void BattlePutTextOnWindow(const u8 *text, u8 windowId) {
 
     u8 textFlags = windowId & 0xC0;
     windowId &= 0x3F;
+    if (!BattlePrepareWindow(windowId))
+        return;
     if (!(textFlags & 0x80))
         FillWindowPixelBuffer(windowId, sTextOnWindowsInfo_Normal[windowId].fillValue);
     if (textFlags & 0x40) {

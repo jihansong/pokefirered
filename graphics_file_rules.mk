@@ -468,3 +468,18 @@ graphics/object_events/pics/people/misty_companion_season1.4bpp: %.4bpp: %.png
 # Nine 16x32 Elm frames, unchanged standard walk ordering.
 graphics/object_events/pics/people/prof_elm_hns.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+# Misty direction correction: keep the nine16x32 frame-major sheet.
+graphics/object_events/pics/people/misty_companion_season1_headfix.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+# Original Misty head geometry; retain the nine16x32 frame-major cells.
+graphics/object_events/pics/people/misty_companion_season1_originalstyle.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+# FRLG-compatible custom Team Rocket field sheets: nine 16x32 frames.
+graphics/object_events/pics/people/jessie_frlg_style.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+graphics/object_events/pics/people/james_frlg_style.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4

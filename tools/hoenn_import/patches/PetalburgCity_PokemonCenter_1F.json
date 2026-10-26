@@ -1,0 +1,8 @@
+{
+  "object_overrides": [
+    {
+      "match_script": "EventScript_PkmnCenterNurse",
+      "script": "EventScript_HoennPkmnCenterNurse"
+    }
+  ]
+}

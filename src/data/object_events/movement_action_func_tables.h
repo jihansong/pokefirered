@@ -1,3 +1,11 @@
+static bool8 MovementAction_AcroEndWheelieMoveRight_Step0(struct ObjectEvent *, struct Sprite *);
+static bool8 MovementAction_AcroEndWheelieMoveRight_Step1(struct ObjectEvent *, struct Sprite *);
+static bool8 MovementAction_AcroEndWheelieMoveLeft_Step0(struct ObjectEvent *, struct Sprite *);
+static bool8 MovementAction_AcroEndWheelieMoveLeft_Step1(struct ObjectEvent *, struct Sprite *);
+static bool8 MovementAction_AcroEndWheelieMoveUp_Step0(struct ObjectEvent *, struct Sprite *);
+static bool8 MovementAction_AcroEndWheelieMoveUp_Step1(struct ObjectEvent *, struct Sprite *);
+static bool8 MovementAction_AcroEndWheelieMoveDown_Step0(struct ObjectEvent *, struct Sprite *);
+static bool8 MovementAction_AcroEndWheelieMoveDown_Step1(struct ObjectEvent *, struct Sprite *);
 static bool8 MovementAction_FaceDown_Step0(struct ObjectEvent *, struct Sprite *);
 static bool8 MovementAction_FaceUp_Step0(struct ObjectEvent *, struct Sprite *);
 static bool8 MovementAction_FaceLeft_Step0(struct ObjectEvent *, struct Sprite *);
@@ -435,6 +443,10 @@ static bool8 (*const sMovementActionFuncs_AcroWheelieMoveDown[])(struct ObjectEv
 static bool8 (*const sMovementActionFuncs_AcroWheelieMoveUp[])(struct ObjectEvent *, struct Sprite *);
 static bool8 (*const sMovementActionFuncs_AcroWheelieMoveLeft[])(struct ObjectEvent *, struct Sprite *);
 static bool8 (*const sMovementActionFuncs_AcroWheelieMoveRight[])(struct ObjectEvent *, struct Sprite *);
+static bool8 (*const sMovementActionFuncs_AcroEndWheelieMoveRight[])(struct ObjectEvent *, struct Sprite *);
+static bool8 (*const sMovementActionFuncs_AcroEndWheelieMoveLeft[])(struct ObjectEvent *, struct Sprite *);
+static bool8 (*const sMovementActionFuncs_AcroEndWheelieMoveUp[])(struct ObjectEvent *, struct Sprite *);
+static bool8 (*const sMovementActionFuncs_AcroEndWheelieMoveDown[])(struct ObjectEvent *, struct Sprite *);
 static bool8 (*const sMovementActionFuncs_SpinDown[])(struct ObjectEvent *, struct Sprite *);
 static bool8 (*const sMovementActionFuncs_SpinUp[])(struct ObjectEvent *, struct Sprite *);
 static bool8 (*const sMovementActionFuncs_SpinLeft[])(struct ObjectEvent *, struct Sprite *);
@@ -633,6 +645,10 @@ static bool8 (*const *const sMovementActionFuncs[])(struct ObjectEvent *, struct
     [MOVEMENT_ACTION_JUMP_SPECIAL_WITH_EFFECT_UP]        = sMovementActionFuncs_JumpSpecialWithEffectUp,
     [MOVEMENT_ACTION_JUMP_SPECIAL_WITH_EFFECT_LEFT]      = sMovementActionFuncs_JumpSpecialWithEffectLeft,
     [MOVEMENT_ACTION_JUMP_SPECIAL_WITH_EFFECT_RIGHT]     = sMovementActionFuncs_JumpSpecialWithEffectRight,
+    [MOVEMENT_ACTION_ACRO_END_WHEELIE_MOVE_RIGHT] = sMovementActionFuncs_AcroEndWheelieMoveRight,
+    [MOVEMENT_ACTION_ACRO_END_WHEELIE_MOVE_LEFT] = sMovementActionFuncs_AcroEndWheelieMoveLeft,
+    [MOVEMENT_ACTION_ACRO_END_WHEELIE_MOVE_UP] = sMovementActionFuncs_AcroEndWheelieMoveUp,
+    [MOVEMENT_ACTION_ACRO_END_WHEELIE_MOVE_DOWN] = sMovementActionFuncs_AcroEndWheelieMoveDown,
 };
 
 static bool8 (*const sMovementActionFuncs_FaceDown[])(struct ObjectEvent *, struct Sprite *) = {
@@ -1663,4 +1679,28 @@ static bool8 (*const sMovementActionFuncs_FlyDown[])(struct ObjectEvent *, struc
     MovementAction_FlyDown_Step0,
     MovementAction_FlyDown_Step1,
     MovementAction_FlyUp_Step2,
+};
+
+static bool8 (*const sMovementActionFuncs_AcroEndWheelieMoveDown[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_AcroEndWheelieMoveDown_Step0,
+    MovementAction_AcroEndWheelieMoveDown_Step1,
+    MovementAction_PauseSpriteAnim,
+};
+
+static bool8 (*const sMovementActionFuncs_AcroEndWheelieMoveUp[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_AcroEndWheelieMoveUp_Step0,
+    MovementAction_AcroEndWheelieMoveUp_Step1,
+    MovementAction_PauseSpriteAnim,
+};
+
+static bool8 (*const sMovementActionFuncs_AcroEndWheelieMoveLeft[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_AcroEndWheelieMoveLeft_Step0,
+    MovementAction_AcroEndWheelieMoveLeft_Step1,
+    MovementAction_PauseSpriteAnim,
+};
+
+static bool8 (*const sMovementActionFuncs_AcroEndWheelieMoveRight[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_AcroEndWheelieMoveRight_Step0,
+    MovementAction_AcroEndWheelieMoveRight_Step1,
+    MovementAction_PauseSpriteAnim,
 };

@@ -6,6 +6,7 @@
 #include "script.h"
 #include "event_scripts.h"
 #include "field_player_avatar.h"
+#include "bike.h"
 #include "overworld.h"
 #include "field_message_box.h"
 #include "event_data.h"
@@ -52,6 +53,8 @@
 #include "constants/metatile_labels.h"
 #include "constants/easy_chat.h"
 #include "constants/opponents.h"
+#include "hoenn_mountain_story.h"
+#include "hoenn_villain_story.h"
 #include "data.h"
 
 static EWRAM_DATA u8 sElevatorCurrentFloorWindowId = 0;
@@ -108,7 +111,7 @@ void ShowDiploma(void)
 void ForcePlayerOntoBike(void)
 {
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
-        SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_MACH_BIKE);
+        SetPlayerAvatarTransitionFlags(Bike_GetMode() == BIKE_MODE_ACRO ? PLAYER_AVATAR_FLAG_ACRO_BIKE : PLAYER_AVATAR_FLAG_MACH_BIKE);
     Overworld_SetSavedMusic(MUS_CYCLING);
     Overworld_ChangeMusicTo(MUS_CYCLING);
 }
@@ -251,6 +254,22 @@ static void Task_AnimatePcTurnOn(u8 taskId)
 #undef tState
 #undef tTimer
 
+static u16 GetPcMetatileForCurrentRoom(u16 metatileId, s8 deltaX, s8 deltaY)
+{
+    // This PC uses the ship's private Emerald-format tileset.
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_HOENN_SPACECRAFT_CABIN)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_HOENN_SPACECRAFT_CABIN)
+     && gSaveBlock1Ptr->pos.x + deltaX == 3
+     && gSaveBlock1Ptr->pos.y + deltaY == 4)
+    {
+        if (metatileId == METATILE_Building_PCOff)
+            return 1005;
+        if (metatileId == METATILE_Building_PCOn)
+            return 1006;
+    }
+    return metatileId;
+}
+
 static void PcTurnOnUpdateMetatileId(bool16 flickerOff)
 {
     u16 metatileId = 0;
@@ -291,6 +310,7 @@ static void PcTurnOnUpdateMetatileId(bool16 flickerOff)
         else if (gSpecialVar_0x8004 == 2)
             metatileId = METATILE_GenericBuilding1_PlayersPCOn;
     }
+    metatileId = GetPcMetatileForCurrentRoom(metatileId, deltaX, deltaY);
     MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + deltaX + MAP_OFFSET, gSaveBlock1Ptr->pos.y + deltaY + MAP_OFFSET, metatileId | MAPGRID_COLLISION_MASK);
 }
 
@@ -322,6 +342,7 @@ void AnimatePcTurnOff()
         metatileId = METATILE_GenericBuilding1_PlayersPCOff;
     else if (gSpecialVar_0x8004 == 2)
         metatileId = METATILE_GenericBuilding1_PlayersPCOff;
+    metatileId = GetPcMetatileForCurrentRoom(metatileId, deltaX, deltaY);
     MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + deltaX + MAP_OFFSET, gSaveBlock1Ptr->pos.y + deltaY + MAP_OFFSET, metatileId | MAPGRID_COLLISION_MASK);
     DrawWholeMapView();
 }
@@ -2825,9 +2846,9 @@ void NamePikablu(void)
     {
         for (j = 0; j < IN_BOX_COUNT; j++)
         {
-            if (IsUnnamedPikablu(&gPokemonStoragePtr->boxes[i][j]))
+            if (IsUnnamedPikablu(GetBoxedMonPtr(i, j)))
             {
-                SetBoxMonData(&gPokemonStoragePtr->boxes[i][j], MON_DATA_NICKNAME, sPikablu);
+                SetBoxMonData(GetBoxedMonPtr(i, j), MON_DATA_NICKNAME, sPikablu);
                 return;
             }
         }
@@ -3127,7 +3148,7 @@ void ClearHiddenGrotto(void)
 void LeaveHiddenGrotto(void)
 {
     SetWarpDestinationToDynamicWarp(WARP_ID_DYNAMIC);
-    DoWarp();
+    DoOrdinaryWarp();
     ResetInitialPlayerAvatarState();
 }
 
@@ -3641,4 +3662,16 @@ void HoennZ3_SetupObjects(void)
         SetHideFlag(FLAG_HIDE_HOENN_WANDA_BOYFRIEND, devon < 3 || FlagGet(FLAG_HOENN_RUSTURF_OPEN));
     else
         SetHideFlag(FLAG_HIDE_HOENN_WANDA_BOYFRIEND, !FlagGet(FLAG_HOENN_RUSTURF_OPEN));
+
+    HoennMountain_SetupObjects();
+    HoennVillain_SetupObjects();
+
+    // New participants follow the recovered chapters into Mossdeep. Legacy
+    // saves retain their established sea chapter and never gain fake receipts.
+    if ((FlagGet(FLAG_HOENN_MOUNTAIN_CHAPTER_STARTED)
+         || FlagGet(FLAG_HOENN_VILLAIN_CHAPTER_STARTED))
+        && !FlagGet(FLAG_HOENN_SPACE_CENTER_SECURED)
+        && (!FlagGet(FLAG_HOENN_MAGMA_HIDEOUT_CLEARED)
+            || !FlagGet(FLAG_HOENN_AQUA_HIDEOUT_CLEARED)))
+        SetHideFlag(FLAG_HIDE_HOENN_SPACE_RAID, TRUE);
 }

@@ -68,6 +68,15 @@ MossdeepCity_SpaceCenter_2F_Text_StevenRaid::
 	.string "You can leave to heal your team.\n"
 	.string "I will keep the staff safe.$"
 
+MossdeepCity_SpaceCenter_2F_Text_RecoveredChapterLead::
+ .string "STEVEN: The trail begins with\n"
+ .string "the stolen orbs at MT. PYRE.\p"
+ .string "Check MAGMA's base below the\n"
+ .string "JAGGED PASS, then find STERN\l"
+ .string "at SLATEPORT's harbor.\p"
+ .string "AQUA's LILYCOVE hideout may\n"
+ .string "reveal where the submarine went.$"
+
 MossdeepCity_SpaceCenter_2F_Text_DiveOffer::
 	.string "STEVEN: Take HM08, DIVE.\n"
 	.string "It will help with the sea search.$"

@@ -1,0 +1,2 @@
+	map_script MAP_SCRIPT_ON_LOAD, MossdeepCity_Gym_TY_OnLoad
+	map_script MAP_SCRIPT_ON_RESUME, MossdeepCity_Gym_TY_OnResume

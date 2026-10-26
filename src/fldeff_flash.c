@@ -4,6 +4,7 @@
 #include "event_scripts.h"
 #include "fldeff.h"
 #include "field_effect.h"
+#include "field_fadetransition.h"
 #include "map_preview_screen.h"
 #include "overworld.h"
 #include "party_menu.h"
@@ -239,6 +240,8 @@ static bool8 TryDoMapTransition(void)
     u8 fromType = GetLastUsedWarpMapType();
     u8 toType = GetCurrentMapType();
     u8 i = 0;
+    if (IsOrdinaryWarpTransition())
+        return FALSE;
     if (GetLastUsedWarpMapSectionId() != gMapHeader.regionMapSectionId && MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_CAVE) == TRUE)
     {
         RunMapPreviewScreen(gMapHeader.regionMapSectionId);

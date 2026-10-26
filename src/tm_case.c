@@ -648,7 +648,7 @@ static void InitTMCaseListMenuItems(void)
 
     for (i = 0; i < sTMCaseDynamicResources->numTMs; i++)
     {
-        GetTMNumberAndMoveString(sListMenuStringsBuffer[i], pocket->itemSlots[i].itemId);
+        GetTMNumberAndMoveString(sListMenuStringsBuffer[i], (*GetBagPocketSlot(pocket, i)).itemId);
         sListMenuItemsBuffer[i].label = sListMenuStringsBuffer[i];
         sListMenuItemsBuffer[i].index = i;
     }
@@ -809,11 +809,11 @@ static void TMCaseSetup_GetTMCount(void)
     struct BagPocket * pocket = &gBagPockets[POCKET_TM_CASE - 1];
     u16 i;
 
-    BagPocketCompaction(pocket->itemSlots, pocket->capacity);
+    BagPocketCompaction(pocket);
     sTMCaseDynamicResources->numTMs = 0;
     for (i = 0; i < pocket->capacity; i++)
     {
-        if (pocket->itemSlots[i].itemId == ITEM_NONE)
+        if ((*GetBagPocketSlot(pocket, i)).itemId == ITEM_NONE)
             break;
         sTMCaseDynamicResources->numTMs++;
     }
@@ -1322,12 +1322,12 @@ static void Task_AfterSale_ReturnToList(u8 taskId)
 void Pokedude_InitTMCase(void)
 {
     sPokedudeBagBackup = AllocZeroed(sizeof(*sPokedudeBagBackup));
-    memcpy(sPokedudeBagBackup->bagPocket_TMHM, gSaveBlock1Ptr->bagPocket_TMHM, sizeof(gSaveBlock1Ptr->bagPocket_TMHM));
-    memcpy(sPokedudeBagBackup->bagPocket_KeyItems, gSaveBlock1Ptr->bagPocket_KeyItems, sizeof(gSaveBlock1Ptr->bagPocket_KeyItems));
+    CopyBagPocketToBuffer(POCKET_TM_CASE - 1, sPokedudeBagBackup->bagPocket_TMHM);
+    CopyBagPocketToBuffer(POCKET_KEY_ITEMS - 1, sPokedudeBagBackup->bagPocket_KeyItems);
     sPokedudeBagBackup->selectedRow = sTMCaseStaticResources.selectedRow;
     sPokedudeBagBackup->scrollOffset = sTMCaseStaticResources.scrollOffset;
-    ClearItemSlots(gSaveBlock1Ptr->bagPocket_TMHM, ARRAY_COUNT(gSaveBlock1Ptr->bagPocket_TMHM));
-    ClearItemSlots(gSaveBlock1Ptr->bagPocket_KeyItems, ARRAY_COUNT(gSaveBlock1Ptr->bagPocket_KeyItems));
+    ClearBagPocket(POCKET_TM_CASE - 1);
+    ClearBagPocket(POCKET_KEY_ITEMS - 1);
     ResetTMCaseCursorPos();
     AddBagItem(ITEM_TM01, 1);
     AddBagItem(ITEM_TM03, 1);
@@ -1453,8 +1453,8 @@ static void Task_Pokedude_Run(u8 taskId)
         if (!gPaletteFade.active)
         {
             // Restore the player's bag
-            memcpy(gSaveBlock1Ptr->bagPocket_TMHM, sPokedudeBagBackup->bagPocket_TMHM, sizeof(gSaveBlock1Ptr->bagPocket_TMHM));
-            memcpy(gSaveBlock1Ptr->bagPocket_KeyItems, sPokedudeBagBackup->bagPocket_KeyItems, sizeof(gSaveBlock1Ptr->bagPocket_KeyItems));
+            CopyBagPocketFromBuffer(POCKET_TM_CASE - 1, sPokedudeBagBackup->bagPocket_TMHM);
+            CopyBagPocketFromBuffer(POCKET_KEY_ITEMS - 1, sPokedudeBagBackup->bagPocket_KeyItems);
             DestroyListMenuTask(tListTaskId, NULL, NULL);
             sTMCaseStaticResources.selectedRow = sPokedudeBagBackup->selectedRow;
             sTMCaseStaticResources.scrollOffset = sPokedudeBagBackup->scrollOffset;

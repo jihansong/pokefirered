@@ -101,6 +101,7 @@ IndigoPlateau_PokemonCenter_1F_EventScript_TourneyReceptionist::
 	msgbox IndigoPlateau_PokemonCenter_1F_Text_TourneyWelcome, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, IndigoPlateau_PokemonCenter_1F_EventScript_TourneyLater
 	closemessage
+	special SetOrdinaryWarpTransition
 	warp MAP_TOURNAMENT_HALL, 8, 16
 	waitstate
 	release

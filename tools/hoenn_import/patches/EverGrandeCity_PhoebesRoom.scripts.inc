@@ -44,6 +44,7 @@ EverGrandeCity_PhoebesRoom_TY_Advance::
 EverGrandeCity_PhoebesRoom_TY_Ready::
 	msgbox EverGrandeCity_PhoebesRoom_TY_GoOn, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EverGrandeCity_PhoebesRoom_TY_Release
+	special SetOrdinaryWarpTransition
 	warp MAP_EVER_GRANDE_CITY_GLACIAS_ROOM, 6, 10
 	waitstate
 	releaseall

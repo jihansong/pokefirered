@@ -320,7 +320,7 @@
       "x": 23,
       "y": 20,
       "elevation": 0,
-      "var": "VAR_HOENN_SCENE_DEVON",
+      "var": "VAR_TEMP_1",
       "var_value": "1",
       "script": "RustboroCity_EventScript_DevonTheft"
     },
@@ -329,7 +329,7 @@
       "x": 23,
       "y": 21,
       "elevation": 0,
-      "var": "VAR_HOENN_SCENE_DEVON",
+      "var": "VAR_TEMP_1",
       "var_value": "1",
       "script": "RustboroCity_EventScript_DevonTheft"
     },
@@ -338,7 +338,7 @@
       "x": 23,
       "y": 22,
       "elevation": 0,
-      "var": "VAR_HOENN_SCENE_DEVON",
+      "var": "VAR_TEMP_1",
       "var_value": "1",
       "script": "RustboroCity_EventScript_DevonTheft"
     },
@@ -347,7 +347,7 @@
       "x": 23,
       "y": 23,
       "elevation": 0,
-      "var": "VAR_HOENN_SCENE_DEVON",
+      "var": "VAR_TEMP_1",
       "var_value": "1",
       "script": "RustboroCity_EventScript_DevonTheft"
     },
@@ -356,7 +356,7 @@
       "x": 23,
       "y": 24,
       "elevation": 0,
-      "var": "VAR_HOENN_SCENE_DEVON",
+      "var": "VAR_TEMP_1",
       "var_value": "1",
       "script": "RustboroCity_EventScript_DevonTheft"
     }

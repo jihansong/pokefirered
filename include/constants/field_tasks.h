@@ -10,4 +10,7 @@
 #define STEP_CB_SECRET_BASE         6 // Unused, dummied
 #define STEP_CB_CRACKED_FLOOR       7 // Unused
 
+#define STEP_CB_SOOTOPOLIS_ICE       8
+#define STEP_CB_SKY_PILLAR_FLOOR     9
+
 #endif // GUARD_CONSTANTS_FIELD_TASKS_H

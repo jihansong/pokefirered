@@ -11,3 +11,7 @@ SkyPillar_Top_Text_TY_After::
 	.string "RAYQUAZA flies toward the storm!\p"
 	.string "Return to WALLACE in SOOTOPOLIS\n"
 	.string "and check whether the sea is calm.$"
+
+SkyPillar_Top_Text_TY_Challenge::
+	.string "RAYQUAZA watches over HOENN.\p"
+	.string "It fixes its gaze on you!$"

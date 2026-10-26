@@ -84,3 +84,47 @@ NewBarkTown_ElmsLab_Text_AllStartersGiven::
 
 NewBarkTown_ElmsLab_Text_StarterDeclined::
     .string "That's all right. Come back when\nyou are ready to meet a partner.$"
+
+NewBarkTown_ElmsLab_Hns_Text_AideBusy::
+	.string "There are just two of us, so\n"
+	.string "we're always busy.$"
+
+
+NewBarkTown_ElmsLab_Text_TheftEmergency::
+    .string "Urgent news from ELM's lab!\p"
+    .string "A red-haired boy took a research\n"
+    .string "TOTODILE. Please return soon!\p"
+    .string "He was seen in CHERRYGROVE.\n"
+    .string "An officer is coming to the lab.$"
+
+NewBarkTown_ElmsLab_Text_TheftNeedWitness::
+    .string "ELM: A boy with a TOTODILE was\n"
+    .string "seen in CHERRYGROVE CITY.\p"
+    .string "Please speak to him, then tell\n"
+    .string "the officer what happened.$"
+
+NewBarkTown_ElmsLab_Text_OfficerWitness::
+    .string "OFFICER: You battled the boy?\n"
+    .string "He called himself SILVER?\p"
+    .string "Thank you for your account.\n"
+    .string "I will follow his trail.$"
+
+NewBarkTown_ElmsLab_Text_SeparateSpecimen::
+    .string "ELM: The missing TOTODILE came\n"
+    .string "from a separate field study.\p"
+    .string "Our partner gifts and shared\n"
+    .string "research records are safe.\p"
+    .string "Now, please tell us about\n"
+    .string "MR. POKEMON's findings.$"
+
+NewBarkTown_ElmsLab_Text_HealOffer::
+    .string "Would you like to heal\n"
+    .string "your POKEMON with this machine?$"
+
+NewBarkTown_ElmsLab_Text_HealDone::
+    .string "Your POKEMON are fully rested!$"
+
+NewBarkTown_ElmsLab_Text_HealCancel::
+    .string "You may use it whenever\n"
+    .string "your partners need a rest.$"
+

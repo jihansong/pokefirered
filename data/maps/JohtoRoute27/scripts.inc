@@ -39,3 +39,12 @@ JohtoRoute27_GateClosed::
 JohtoRoute27_PushBack::
     walk_left
     step_end
+
+JohtoRoute27_EventScript_EastCaveBlocked::
+	msgbox JohtoRoute27_Text_EastCaveBlocked, MSGBOX_SIGN
+	end
+
+JohtoRoute27_EventScript_SourceHouseLocked::
+	msgbox JohtoRoute27_Text_SourceHouseLocked, MSGBOX_SIGN
+	end
+

@@ -6,6 +6,7 @@
 #include "event_object_movement.h"
 #include "new_menu_helpers.h"
 #include "overworld.h"
+#include "rotating_gate.h"
 
 EWRAM_DATA bool8 gBikeCameraAheadPanback = FALSE;
 
@@ -364,6 +365,7 @@ void CameraUpdate(void)
     int curMovementOffsetX;
     int movementSpeedX;
     int movementSpeedY;
+    const struct Tileset *oldPrimary;
 
     if (gFieldCamera.callback != NULL)
         gFieldCamera.callback(&gFieldCamera);
@@ -411,12 +413,16 @@ void CameraUpdate(void)
 
     if (deltaX != 0 || deltaY != 0)
     {
+        oldPrimary = gMapHeader.mapLayout->primaryTileset;
         CameraMove(deltaX, deltaY);
         UpdateObjectEventsForCameraUpdate(deltaX, deltaY);
-        // RotatingGatePuzzleCameraUpdate(deltaX, deltaY);
+        RotatingGatePuzzleCameraUpdate(deltaX, deltaY);
         // ResetBerryTreeSparkleFlags();
         tilemap_move_something(&sFieldCameraOffset, deltaX * 2, deltaY * 2);
         RedrawMapSlicesForCameraUpdate(&sFieldCameraOffset, deltaX * 2, deltaY * 2);
+        // A new primary bank also invalidates tile words already on screen.
+        if (oldPrimary != gMapHeader.mapLayout->primaryTileset)
+            DrawWholeMapView();
     }
 
     coords8_add(&sFieldCameraOffset, movementSpeedX, movementSpeedY);
@@ -441,6 +447,7 @@ void CameraUpdateNoObjectRefresh(void)
     int curMovementOffsetX;
     int movementSpeedX;
     int movementSpeedY;
+    const struct Tileset *oldPrimary;
 
     if (gFieldCamera.callback != NULL)
         gFieldCamera.callback(&gFieldCamera);
@@ -488,12 +495,16 @@ void CameraUpdateNoObjectRefresh(void)
 
     if (deltaX != 0 || deltaY != 0)
     {
+        oldPrimary = gMapHeader.mapLayout->primaryTileset;
         CameraMove(deltaX, deltaY);
         // UpdateObjectEventsForCameraUpdate(deltaX, deltaY);
         // RotatingGatePuzzleCameraUpdate(deltaX, deltaY);
         // ResetBerryTreeSparkleFlags();
         tilemap_move_something(&sFieldCameraOffset, deltaX * 2, deltaY * 2);
         RedrawMapSlicesForCameraUpdate(&sFieldCameraOffset, deltaX * 2, deltaY * 2);
+        // A new primary bank also invalidates tile words already on screen.
+        if (oldPrimary != gMapHeader.mapLayout->primaryTileset)
+            DrawWholeMapView();
     }
 
     coords8_add(&sFieldCameraOffset, movementSpeedX, movementSpeedY);

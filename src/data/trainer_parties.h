@@ -11228,3 +11228,4 @@ static const struct TrainerMonNoItemDefaultMoves sParty_RocketHideoutCameraGrunt
 #include "trainer_parties_johto_radio_tower.h"
 #include "trainer_parties_johto_blackthorn.h"
 #include "trainer_parties_johto_league.h"
+#include "trainer_parties_hoenn_space.h"

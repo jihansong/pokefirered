@@ -5,7 +5,22 @@ RustboroCity_Flat2_2F_EventScript_H0::
 	msgbox RustboroCity_Flat2_2F_Text_H0, MSGBOX_NPC
 	end
 
+@ BEGIN PATCH (tools/hoenn_import/patches)
 RustboroCity_Flat2_2F_EventScript_H1::
-	msgbox RustboroCity_Flat2_2F_Text_H1, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_HOENN_GOT_RUSTBORO_PREMIER_BALL, RustboroCity_Flat2_2F_EventScript_H1_Received
+	msgbox RustboroCity_Flat2_2F_Text_H1, MSGBOX_DEFAULT
+	giveitem ITEM_PREMIER_BALL, 1
+	goto_if_eq VAR_RESULT, FALSE, RustboroCity_Flat2_2F_EventScript_H1_NoRoom
+	setflag FLAG_HOENN_GOT_RUSTBORO_PREMIER_BALL
+RustboroCity_Flat2_2F_EventScript_H1_Received::
+	msgbox RustboroCity_Flat2_2F_Text_H1PremierBall, MSGBOX_DEFAULT
+	release
 	end
 
+RustboroCity_Flat2_2F_EventScript_H1_NoRoom::
+	msgbox RustboroCity_Flat2_2F_Text_H1NoRoom, MSGBOX_DEFAULT
+	release
+	end
+@ END PATCH

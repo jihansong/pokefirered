@@ -56,6 +56,7 @@ FuchsiaCity_SafariZone_Entrance_EventScript_ReturnToSafariZone::
 	closemessage
 	applymovement LOCALID_PLAYER, FuchsiaCity_SafariZone_Entrance_Movement_ReEnter
 	waitmovement 0
+	special SetOrdinaryWarpTransition
 	warp MAP_SAFARI_ZONE_CENTER, 26, 30
 	waitstate
 	end
@@ -129,6 +130,7 @@ FuchsiaCity_SafariZone_Entrance_EventScript_TryEnterSafariZone::
 	call_if_eq VAR_TEMP_2, 2, FuchsiaCity_SafariZone_Entrance_EventScript_EnterSafariZoneLeft
 	special EnterSafariMode
 	setvar VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 2
+	special SetOrdinaryWarpTransition
 	warp MAP_SAFARI_ZONE_CENTER, 255, 26, 30
 	waitstate
 	end

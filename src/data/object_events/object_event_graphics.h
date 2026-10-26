@@ -83,8 +83,8 @@ const u16 gObjectEventPic_Psyduck[] = INCBIN_U16("graphics/object_events/pics/po
 const u16 gObjectEventPic_PokeManiac[] = INCBIN_U16("graphics/object_events/pics/people/poke_maniac.4bpp");
 const u16 gObjectEventPic_Channeler[] = INCBIN_U16("graphics/object_events/pics/people/channeler.4bpp");
 const u16 gObjectEventPic_RocketF[] = INCBIN_U16("graphics/object_events/pics/people/rocket_f.4bpp");
-const u16 gObjectEventPic_Jessie[] = INCBIN_U16("graphics/object_events/pics/people/jessie.4bpp");
-const u16 gObjectEventPic_James[] = INCBIN_U16("graphics/object_events/pics/people/james.4bpp");
+const u16 gObjectEventPic_Jessie[] = INCBIN_U16("graphics/object_events/pics/people/jessie_frlg_style.4bpp");
+const u16 gObjectEventPic_James[] = INCBIN_U16("graphics/object_events/pics/people/james_frlg_style.4bpp");
 const u16 gObjectEventPic_SwimmerMWater[] = INCBIN_U16("graphics/object_events/pics/people/swimmer_m_water.4bpp");
 const u16 gObjectEventPic_SwimmerFWater[] = INCBIN_U16("graphics/object_events/pics/people/swimmer_f_water.4bpp");
 const u16 gObjectEventPic_SwimmerMLand[] = INCBIN_U16("graphics/object_events/pics/people/swimmer_m_land.4bpp");
@@ -137,7 +137,7 @@ const u16 gObjectEventPic_DeoxysA[] = INCBIN_U16("graphics/object_events/pics/po
 const u16 gObjectEventPic_DeoxysN[] = INCBIN_U16("graphics/object_events/pics/pokemon/deoxys_n.4bpp");
 const u16 gObjectEventPic_Agatha[] = INCBIN_U16("graphics/object_events/pics/people/agatha.4bpp");
 const u16 gObjectEventPic_Misty[] = INCBIN_U16("graphics/object_events/pics/people/misty.4bpp");
-const u16 gObjectEventPic_MistyCompanion[] = INCBIN_U16("graphics/object_events/pics/people/misty_companion_season1.4bpp");
+const u16 gObjectEventPic_MistyCompanion[] = INCBIN_U16("graphics/object_events/pics/people/misty_companion_season1_originalstyle.4bpp");
 const u16 gObjectEventPic_Lance[] = INCBIN_U16("graphics/object_events/pics/people/lance.4bpp");
 const u16 gObjectEventPic_GBAKid[] = INCBIN_U16("graphics/object_events/pics/people/gba_kid.4bpp");
 const u16 gObjectEventPic_Mom[] = INCBIN_U16("graphics/object_events/pics/people/mom.4bpp");
@@ -198,14 +198,17 @@ const u16 gObjectEventPic_AirplaneSmall[] = INCBIN_U16("graphics/object_events/p
 const u16 gObjectEventPal_Pikablu[] = INCBIN_U16("graphics/object_events/palettes/pikablu.gbapal");
 const u16 gObjectEventPal_Mew3Rumor[] = INCBIN_U16("graphics/object_events/palettes/mew3_rumor.gbapal");
 const u16 gObjectEventPal_RedGyarados[] = INCBIN_U16("graphics/object_events/palettes/red_gyarados.gbapal");
+const u16 gObjectEventPic_RedGyarados[] = INCBIN_U16("graphics/object_events/pics/pokemon/red_gyarados.4bpp");
 const u16 gObjectEventPal_PersianStatue[] = INCBIN_U16("graphics/object_events/palettes/persian_statue.gbapal");
-const u16 gObjectEventPal_OldTimer[] = INCBIN_U16("graphics/object_events/palettes/old_timer.gbapal");
+const u16 gObjectEventPal_OldTimer[] = INCBIN_U16("graphics/object_events/palettes/old_timer_frlg_style.gbapal");
 const u16 gObjectEventPal_N[] = INCBIN_U16("graphics/object_events/palettes/n.gbapal");
 const u16 gObjectEventPal_SummitTrainer[] = INCBIN_U16("graphics/object_events/palettes/summit_trainer.gbapal");
 const u16 gObjectEventPal_Ditto[] = INCBIN_U16("graphics/object_events/palettes/ditto.gbapal");
+const u16 gObjectEventPic_Ditto[] = INCBIN_U16("graphics/object_events/pics/pokemon/ditto.4bpp");
 const u16 gObjectEventPal_GrottoGrass[] = INCBIN_U16("graphics/object_events/palettes/grotto_grass.gbapal");
 const u16 gObjectEventPal_Kyogre[] = INCBIN_U16("graphics/object_events/palettes/kyogre.gbapal");
 const u16 gObjectEventPal_Groudon[] = INCBIN_U16("graphics/object_events/palettes/groudon.gbapal");
+const u16 gObjectEventPic_Groudon[] = INCBIN_U16("graphics/object_events/pics/pokemon/groudon.4bpp");
 const u16 gObjectEventPal_Rayquaza[] = INCBIN_U16("graphics/object_events/palettes/rayquaza.gbapal");
 const u16 gObjectEventPic_CapsuleShards[] = INCBIN_U16("graphics/object_events/pics/misc/capsule_shards.4bpp");
 const u16 gObjectEventPic_SSAnne[] = INCBIN_U16("graphics/object_events/pics/misc/ss_anne.4bpp");
@@ -345,3 +348,15 @@ const u32 gObjectEventPic_ThunderLegendRayquaza[] = INCBIN_U32("graphics/object_
 // Actual Pokemon Heart and Soul Elm asset; pinned donor attribution is preserved in work/ reference package.
 const u32 gObjectEventPic_ProfElmHns[] = INCBIN_U32("graphics/object_events/pics/people/prof_elm_hns.4bpp");
 const u16 gObjectEventPal_ProfElmHns[] = INCBIN_U16("graphics/object_events/palettes/prof_elm_hns.gbapal");
+
+const u16 gObjectEventPic_RedAcroBike[] = INCBIN_U16("graphics/object_events/pics/people/red_acro_bike.4bpp");
+const u16 gObjectEventPic_GreenAcroBike[] = INCBIN_U16("graphics/object_events/pics/people/green_acro_bike.4bpp");
+
+// Original Emerald scene props; the existing HNS species sheet is retained.
+const u32 gObjectEventPic_GroudonMagma[] = INCBIN_U32("graphics/object_events/pics/hoenn/groudon_magma.4bpp");
+const u16 gObjectEventPal_GroudonMagmaAsleep[] = INCBIN_U16("graphics/object_events/palettes/hoenn/groudon_magma_asleep.gbapal");
+const u16 gObjectEventPal_GroudonMagmaAwake[] = INCBIN_U16("graphics/object_events/palettes/hoenn/groudon_magma_awake.gbapal");
+
+const u32 gObjectEventPic_HoennGabby[] = INCBIN_U32("graphics/object_events/pics/hoenn/reporter_f_story.4bpp");
+
+const u32 gObjectEventPic_HoennTy[] = INCBIN_U32("graphics/object_events/pics/hoenn/cameraman_story.4bpp");

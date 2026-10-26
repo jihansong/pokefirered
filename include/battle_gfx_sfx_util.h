@@ -39,6 +39,7 @@ void HideBattlerShadowSprite(u8 battlerId);
 void BattleInterfaceSetWindowPals(void);
 void ClearTemporarySpeciesSpriteData(u8 battlerId, bool8 dontClearSubstitute);
 void AllocateMonSpritesGfx(void);
+void AllocateBattleMonSpritesGfx(void);
 void FreeMonSpritesGfx(void);
 bool32 ShouldPlayNormalMonCry(struct Pokemon *mon);
 

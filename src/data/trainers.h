@@ -7587,4 +7587,5 @@ const struct Trainer gTrainers[] = {
 #include "trainers_johto_radio_tower.h"
 #include "trainers_johto_blackthorn.h"
 #include "trainers_johto_league.h"
+#include "trainers_hoenn_space.h"
 };

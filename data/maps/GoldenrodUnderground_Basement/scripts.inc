@@ -23,6 +23,7 @@ GoldenrodUnderground_Basement_WarehouseGate::
 lockall
     goto_if_not_defeated TRAINER_JOHTO_SILVER_UNDERGROUND, GoldenrodUnderground_Basement_WarehouseGateClosed
     releaseall
+    special SetOrdinaryWarpTransition
     warp MAP_GOLDENROD_WAREHOUSE, 0
     waitstate
     end

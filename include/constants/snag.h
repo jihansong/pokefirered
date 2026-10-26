@@ -42,6 +42,16 @@
 #define SNAG_SLOTS_ROCKET_FIRST         16
 #define SNAG_SLOTS_ROCKET_END           32
 
+// Silver uses reserved spare bits25..30; existing slots keep their meaning.
+#define SNAG_SLOT_SILVER_TOTODILE 25
+#define SNAG_SLOT_SILVER_ZUBAT 26
+#define SNAG_SLOT_SILVER_GASTLY 27
+#define SNAG_SLOT_SILVER_MAGNEMITE 28
+#define SNAG_SLOT_SILVER_SNEASEL 29
+#define SNAG_SLOT_SILVER_ABRA 30
+#define SNAG_SLOTS_SILVER_FIRST 25
+#define SNAG_SLOTS_SILVER_END 31
+
 #define SNAG_SLOT_NONE                  0xFF
 
 #define FLAG_SNAG_RIVAL_SPEAROW         (SNAG_FLAGS_START + SNAG_SLOT_RIVAL_SPEAROW)
@@ -71,6 +81,7 @@
 #define SNAG_GROUP_NONE                 0
 #define SNAG_GROUP_RIVAL                1
 #define SNAG_GROUP_ROCKET               2
+#define SNAG_GROUP_SILVER               3
 
 // cMULTISTRING_CHOOSER after the snagged POKéMON is given (stage 2's
 // snaggivemon): party, or the gCaughtMonStringIds cases for the PC.

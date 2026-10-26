@@ -42,6 +42,7 @@ EverGrandeCity_SidneysRoom_TY_Advance::
 EverGrandeCity_SidneysRoom_TY_Ready::
 	msgbox EverGrandeCity_SidneysRoom_TY_GoOn, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EverGrandeCity_SidneysRoom_TY_Release
+	special SetOrdinaryWarpTransition
 	warp MAP_EVER_GRANDE_CITY_PHOEBES_ROOM, 6, 10
 	waitstate
 	releaseall

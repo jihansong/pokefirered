@@ -64,7 +64,7 @@ static const u32 *const sItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_POKE_WATCH]     = {gItemIcon_PokeWatch, gItemIconPalette_PokeWatch},
     [ITEM_CARGO_TAG]      = {gItemIcon_CleanseTag, gItemIconPalette_CleanseTag},
     [ITEM_N_LETTER]       = {gItemIcon_Letter, gItemIconPalette_LavaCookieAndLetter},
-    [ITEM_03C]            = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
+    [ITEM_SHINY_STONE]    = {gItemIcon_MoonStone, gItemIconPalette_MoonStone},
     [ITEM_03D]            = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_03E]            = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     // Vitamins
@@ -287,7 +287,7 @@ static const u32 *const sItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_SUPER_ROD]      = {gItemIcon_SuperRod, gItemIconPalette_SuperRod},
     [ITEM_SS_TICKET]      = {gItemIcon_SSTicket, gItemIconPalette_SSTicket},
     [ITEM_CONTEST_PASS]   = {gItemIcon_ContestPass, gItemIconPalette_ContestPass},
-    [ITEM_10B]            = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
+    [ITEM_MAGMA_EMBLEM]   = {gItemIcon_MagmaEmblem, gItemIconPalette_MagmaEmblem},
     [ITEM_WAILMER_PAIL]   = {gItemIcon_WailmerPail, gItemIconPalette_WailmerPail},
     [ITEM_DEVON_GOODS]    = {gItemIcon_DevonGoods, gItemIconPalette_DevonGoods},
     [ITEM_SOOT_SACK]      = {gItemIcon_SootSack, gItemIconPalette_SootSack},

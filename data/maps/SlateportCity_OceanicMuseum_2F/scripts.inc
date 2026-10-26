@@ -132,7 +132,9 @@ SlateportCity_OceanicMuseum_2F_EventScript_ArchieScene::
 	setflag FLAG_HOENN_MUSEUM_DEFENDED
 	setflag FLAG_HOENN_ARCHIE_WARNED
 	setvar VAR_HOENN_SCENE_MUSEUM, 3
+	goto_if_ge VAR_HOENN_STAGE1_PROGRESS, 2, SlateportCity_OceanicMuseum_2F_EventScript_KeepStageProgress
 	setvar VAR_HOENN_STAGE1_PROGRESS, 2
+SlateportCity_OceanicMuseum_2F_EventScript_KeepStageProgress::
 	fadescreen FADE_FROM_BLACK
 	msgbox SlateportCity_OceanicMuseum_2F_Text_MuseumQuiet
 	release

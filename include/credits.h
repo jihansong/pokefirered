@@ -5,6 +5,7 @@ extern bool8 gHasHallOfFameRecords;
 void DoHoennCredits(void);
 void DoJohtoCredits(void);
 
+#define CREDITSOVWLDCMD_LOOP 0xFA
 #define CREDITSOVWLDCMD_FB 0xFB
 #define CREDITSOVWLDCMD_FC 0xFC
 #define CREDITSOVWLDCMD_END 0xFD

@@ -1,7 +1,7 @@
 {
   "id": "MAP_JOHTO_CHERRYGROVE_AIRSTRIP",
   "name": "JohtoCherrygroveAirstrip",
-  "layout": "LAYOUT_JOHTO_CHERRYGROVE_AIRSTRIP",
+  "layout": "LAYOUT_TY_HNS_JOHTO_CHERRYGROVE_AIRSTRIP",
   "music": "MUS_ROUTE1",
   "region_map_section": "MAPSEC_JOHTO_CHERRYGROVE_AIRSTRIP",
   "requires_flash": false,
@@ -16,7 +16,7 @@
   "connections": [
     {
       "map": "MAP_JOHTO_ROUTE29",
-      "offset": 0,
+      "offset": -4,
       "direction": "right"
     },
     {

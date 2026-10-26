@@ -38,7 +38,7 @@ def main():
             return None, None
         objs = json.load(open(f'{d}/map.json'))['object_events']
         for i, o in enumerate(objs):
-            if o['script'] == 'EventScript_PkmnCenterNurse':
+            if o['script'] in ('EventScript_PkmnCenterNurse', 'EventScript_HoennPkmnCenterNurse'):
                 return town_map + '_POKEMON_CENTER_1F', i + 1
         return None, None
 

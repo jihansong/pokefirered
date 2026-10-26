@@ -1,6 +1,7 @@
 #include "global.h"
 #include "gflib.h"
 #include "bike.h"
+#include "hoenn_puzzles.h"
 #include "event_data.h"
 #include "field_camera.h"
 #include "field_effect_helpers.h"
@@ -45,7 +46,9 @@ static const TaskFunc sPerStepCallbacks[] =
     [STEP_CB_ICE]               = IcefallCaveIcePerStepCallback,
     [STEP_CB_TRUCK]             = DummyPerStepCallback,
     [STEP_CB_SECRET_BASE]       = DummyPerStepCallback,
-    [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback
+    [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback,
+    [STEP_CB_SOOTOPOLIS_ICE]    = HoennSootopolisIceStep,
+    [STEP_CB_SKY_PILLAR_FLOOR]  = HoennSkyPillarFloorStep
 };
 
 // The positions of each map space with crackable ice in Icefall Cave.

@@ -1,6 +1,35 @@
 #include "global.h"
 #include "gflib.h"
 #include "pokemon_storage_system_internal.h"
+#include "persistent_heap.h"
+#include "string_util.h"
+#include "strings.h"
+
+STATIC_ASSERT(sizeof(struct PokemonStorageExtra) <= PERSISTENT_HEAP_PC_SIZE, ExtraPokemonStorageFitsPersistentHeap);
+
+static struct PokemonStorageExtra *GetExtraStorage(void)
+{
+    return (struct PokemonStorageExtra *)GetPokemonStorageExtraData();
+}
+
+u8 *GetPokemonStorageExtraData(void)
+{
+    return gHeap + PERSISTENT_HEAP_PC_OFFSET;
+}
+
+void InitPokemonStorageExtra(void)
+{
+    u16 boxId;
+    struct PokemonStorageExtra *extra = GetExtraStorage();
+
+    CpuFill32(0, extra, sizeof(*extra));
+    for (boxId = LEGACY_BOXES_COUNT; boxId < TOTAL_BOXES_COUNT; boxId++)
+    {
+        u8 *dest = StringCopy(GetBoxNamePtr(boxId), gText_Box);
+        ConvertIntToDecimalStringN(dest, boxId + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
+        SetBoxWallpaper(boxId, boxId % (MAX_DEFAULT_WALLPAPER + 1));
+    }
+}
 
 void BackupPokemonStorage(struct PokemonStorage * dest)
 {
@@ -26,16 +55,20 @@ void SetCurrentBox(u8 boxId)
 
 u32 GetBoxMonDataAt(u8 boxId, u8 boxPosition, s32 request)
 {
-    if (boxId < TOTAL_BOXES_COUNT && boxPosition < IN_BOX_COUNT)
-        return GetBoxMonData(&gPokemonStoragePtr->boxes[boxId][boxPosition], request);
+    struct BoxPokemon *boxMon = GetBoxedMonPtr(boxId, boxPosition);
+
+    if (boxMon != NULL)
+        return GetBoxMonData(boxMon, request);
     else
         return 0;
 }
 
 void SetBoxMonDataAt(u8 boxId, u8 boxPosition, s32 request, const void *value)
 {
-    if (boxId < TOTAL_BOXES_COUNT && boxPosition < IN_BOX_COUNT)
-        SetBoxMonData(&gPokemonStoragePtr->boxes[boxId][boxPosition], request, value);
+    struct BoxPokemon *boxMon = GetBoxedMonPtr(boxId, boxPosition);
+
+    if (boxMon != NULL)
+        SetBoxMonData(boxMon, request, value);
 }
 
 u32 GetCurrentBoxMonData(u8 boxPosition, s32 request)
@@ -50,43 +83,55 @@ void SetCurrentBoxMonData(u8 boxPosition, s32 request, const void *value)
 
 void GetBoxMonNickAt(u8 boxId, u8 boxPosition, u8 *dst)
 {
-    if (boxId < TOTAL_BOXES_COUNT && boxPosition < IN_BOX_COUNT)
-        GetBoxMonData(&gPokemonStoragePtr->boxes[boxId][boxPosition], MON_DATA_NICKNAME, dst);
+    struct BoxPokemon *boxMon = GetBoxedMonPtr(boxId, boxPosition);
+
+    if (boxMon != NULL)
+        GetBoxMonData(boxMon, MON_DATA_NICKNAME, dst);
     else
         *dst = EOS;
 }
 
 void SetBoxMonNickAt(u8 boxId, u8 boxPosition, const u8 *nick)
 {
-    if (boxId < TOTAL_BOXES_COUNT && boxPosition < IN_BOX_COUNT)
-        SetBoxMonData(&gPokemonStoragePtr->boxes[boxId][boxPosition], MON_DATA_NICKNAME, nick);
+    struct BoxPokemon *boxMon = GetBoxedMonPtr(boxId, boxPosition);
+
+    if (boxMon != NULL)
+        SetBoxMonData(boxMon, MON_DATA_NICKNAME, nick);
 }
 
 u32 GetAndCopyBoxMonDataAt(u8 boxId, u8 boxPosition, s32 request, void *dst)
 {
-    if (boxId < TOTAL_BOXES_COUNT && boxPosition < IN_BOX_COUNT)
-        return GetBoxMonData(&gPokemonStoragePtr->boxes[boxId][boxPosition], request, dst);
+    struct BoxPokemon *boxMon = GetBoxedMonPtr(boxId, boxPosition);
+
+    if (boxMon != NULL)
+        return GetBoxMonData(boxMon, request, dst);
     else
         return 0;
 }
 
 void SetBoxMonAt(u8 boxId, u8 boxPosition, struct BoxPokemon * src)
 {
-    if (boxId < TOTAL_BOXES_COUNT && boxPosition < IN_BOX_COUNT)
-        gPokemonStoragePtr->boxes[boxId][boxPosition] = *src;
+    struct BoxPokemon *boxMon = GetBoxedMonPtr(boxId, boxPosition);
+
+    if (boxMon != NULL)
+        *boxMon = *src;
 }
 
 void CopyBoxMonAt(u8 boxId, u8 boxPosition, struct BoxPokemon * dst)
 {
-    if (boxId < TOTAL_BOXES_COUNT && boxPosition < IN_BOX_COUNT)
-        *dst = gPokemonStoragePtr->boxes[boxId][boxPosition];
+    struct BoxPokemon *boxMon = GetBoxedMonPtr(boxId, boxPosition);
+
+    if (boxMon != NULL)
+        *dst = *boxMon;
 }
 
 void CreateBoxMonAt(u8 boxId, u8 boxPosition, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 personality, u8 otIDType, u32 otID)
 {
-    if (boxId < TOTAL_BOXES_COUNT && boxPosition < IN_BOX_COUNT)
+    struct BoxPokemon *boxMon = GetBoxedMonPtr(boxId, boxPosition);
+
+    if (boxMon != NULL)
     {
-        CreateBoxMon(&gPokemonStoragePtr->boxes[boxId][boxPosition],
+        CreateBoxMon(boxMon,
                      species,
                      level,
                      fixedIV,
@@ -97,36 +142,45 @@ void CreateBoxMonAt(u8 boxId, u8 boxPosition, u16 species, u8 level, u8 fixedIV,
 
 void ZeroBoxMonAt(u8 boxId, u8 boxPosition)
 {
-    if (boxId < TOTAL_BOXES_COUNT && boxPosition < IN_BOX_COUNT)
-        ZeroBoxMonData(&gPokemonStoragePtr->boxes[boxId][boxPosition]);
+    struct BoxPokemon *boxMon = GetBoxedMonPtr(boxId, boxPosition);
+
+    if (boxMon != NULL)
+        ZeroBoxMonData(boxMon);
 }
 
 void BoxMonAtToMon(u8 boxId, u8 boxPosition, struct Pokemon * dst)
 {
-    if (boxId < TOTAL_BOXES_COUNT && boxPosition < IN_BOX_COUNT)
-        BoxMonToMon(&gPokemonStoragePtr->boxes[boxId][boxPosition], dst);
+    struct BoxPokemon *boxMon = GetBoxedMonPtr(boxId, boxPosition);
+
+    if (boxMon != NULL)
+        BoxMonToMon(boxMon, dst);
 }
 
 struct BoxPokemon * GetBoxedMonPtr(u8 boxId, u8 boxPosition)
 {
-    if (boxId < TOTAL_BOXES_COUNT && boxPosition < IN_BOX_COUNT)
-        return &gPokemonStoragePtr->boxes[boxId][boxPosition];
-    else
+    if (boxPosition >= IN_BOX_COUNT || boxId >= TOTAL_BOXES_COUNT)
         return NULL;
+    if (boxId < LEGACY_BOXES_COUNT)
+        return &gPokemonStoragePtr->boxes[boxId][boxPosition];
+    return &GetExtraStorage()->boxes[boxId - LEGACY_BOXES_COUNT][boxPosition];
 }
 
 u8 *GetBoxNamePtr(u8 boxId)
 {
-    if (boxId < TOTAL_BOXES_COUNT)
+    if (boxId < LEGACY_BOXES_COUNT)
         return gPokemonStoragePtr->boxNames[boxId];
+    else if (boxId < TOTAL_BOXES_COUNT)
+        return GetExtraStorage()->boxNames[boxId - LEGACY_BOXES_COUNT];
     else
         return NULL;
 }
 
 u8 GetBoxWallpaper(u8 boxId)
 {
-    if (boxId < TOTAL_BOXES_COUNT)
+    if (boxId < LEGACY_BOXES_COUNT)
         return gPokemonStoragePtr->boxWallpapers[boxId];
+    else if (boxId < TOTAL_BOXES_COUNT)
+        return GetExtraStorage()->boxWallpapers[boxId - LEGACY_BOXES_COUNT];
     else
         return 0;
 }
@@ -134,7 +188,12 @@ u8 GetBoxWallpaper(u8 boxId)
 void SetBoxWallpaper(u8 boxId, u8 wallpaperId)
 {
     if (boxId < TOTAL_BOXES_COUNT && wallpaperId < WALLPAPER_COUNT)
-        gPokemonStoragePtr->boxWallpapers[boxId] = wallpaperId;
+    {
+        if (boxId < LEGACY_BOXES_COUNT)
+            gPokemonStoragePtr->boxWallpapers[boxId] = wallpaperId;
+        else
+            GetExtraStorage()->boxWallpapers[boxId - LEGACY_BOXES_COUNT] = wallpaperId;
+    }
 }
 
 s16 SeekToNextMonInBox(struct BoxPokemon * boxMons, s8 curIndex, u8 maxIndex, u8 flags)

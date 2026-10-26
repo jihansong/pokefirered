@@ -33,3 +33,8 @@ static const struct TrainerMonNoItemDefaultMoves sParty_JohtoFalkner[] = {
     {.iv = 40, .lvl = 16, .species = SPECIES_PIDGEOTTO},
 };
 
+
+// The stolen field-study specimen is separate from the three research gifts.
+static const struct TrainerMonNoItemDefaultMoves sParty_JohtoSilverCherrygrove[] = {
+    {.iv = 40, .lvl = 10, .species = SPECIES_TOTODILE},
+};

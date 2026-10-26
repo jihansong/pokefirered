@@ -100,6 +100,11 @@
 #define MULTICHOICE_BRINEY_FROM_DEWFORD                        88
 #define MULTICHOICE_BRINEY_FROM_ROUTE109                       89
 
+#define MULTI_TY_RYDEL_SERVICE                                 90
+#define MULTI_TY_RYDEL_BIKE                                    91
+#define MULTI_TY_MACH_INFO                                     92
+#define MULTI_TY_ACRO_INFO                                     93
+
 #define MULTICHOICE_NONE                                      255
 
 #define LISTMENU_BADGES                    0

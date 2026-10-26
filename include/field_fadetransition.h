@@ -5,6 +5,8 @@
 
 void FieldCB_RushInjuredPokemonToCenter(void);
 void DoWarp(void);
+void DoOrdinaryWarp(void);
+void SetOrdinaryWarpTransition(void);
 void DoDiveWarp(void);
 void DoDoorWarp(void);
 
@@ -12,6 +14,7 @@ void DoFallWarp(void);
 void DoTeleportWarp(void);
 void DoTeleport2Warp(void);
 void FieldCB_DefaultWarpExit(void);
+bool8 IsOrdinaryWarpTransition(void);
 void WarpFadeOutScreen(void);
 void FieldCB_ContinueScriptHandleMusic(void);
 void FadeInFromBlack(void);

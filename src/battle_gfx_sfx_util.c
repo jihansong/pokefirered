@@ -1002,14 +1002,14 @@ void ClearTemporarySpeciesSpriteData(u8 battlerId, bool8 dontClearSubstitute)
         ClearBehindSubstituteBit(battlerId);
 }
 
-void AllocateMonSpritesGfx(void)
+static void AllocateMonSpritesGfxForPositions(u8 positionCount)
 {
     u8 i = 0, j;
 
     gMonSpritesGfxPtr = NULL;
     gMonSpritesGfxPtr = AllocZeroed(sizeof(*gMonSpritesGfxPtr));
-    gMonSpritesGfxPtr->firstDecompressed = AllocZeroed(0x8000);
-    for (i = 0; i < MAX_BATTLERS_COUNT; ++i)
+    gMonSpritesGfxPtr->firstDecompressed = AllocZeroed(positionCount * 0x2000);
+    for (i = 0; i < positionCount; ++i)
     {
         gMonSpritesGfxPtr->sprites[i] = gMonSpritesGfxPtr->firstDecompressed + (i * 0x2000);
         *(gMonSpritesGfxPtr->templates + i) = gSpriteTemplates_Battlers[i];
@@ -1023,6 +1023,18 @@ void AllocateMonSpritesGfx(void)
         gMonSpritesGfxPtr->templates[i].images = gMonSpritesGfxPtr->images[i];
     }
     gMonSpritesGfxPtr->barFontGfx = AllocZeroed(0x1000);
+}
+
+// NPC parties may enable DOUBLE after allocation. Reserve all four positions
+// for every trainer battle; only definite wild/tutorial singles use two.
+void AllocateBattleMonSpritesGfx(void)
+{
+    AllocateMonSpritesGfxForPositions((gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_MULTI)) ? MAX_BATTLERS_COUNT : 2);
+}
+
+void AllocateMonSpritesGfx(void)
+{
+    AllocateMonSpritesGfxForPositions(MAX_BATTLERS_COUNT);
 }
 
 void FreeMonSpritesGfx(void)

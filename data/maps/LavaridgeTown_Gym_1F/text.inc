@@ -67,4 +67,9 @@ LavaridgeTown_Gym_1F_Text_ExplainTM50::
 LavaridgeTown_Gym_1F_Text_NoRoomForTM50::
 	.string "Your TM CASE can't hold another.\n"
 	.string "Make room for TM50 and come back.$"
+
+
+LavaridgeTown_Gym_1F_Mountain_TextWait::
+	.string "FLANNERY: The mountain is shaking.\nWe cannot ignore that experiment!\p"
+	.string "Please stop MAGMA at the summit.\nThen I will be ready to battle.$"
 @ END PATCH

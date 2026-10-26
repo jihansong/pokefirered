@@ -1,0 +1,4 @@
+	map_script MAP_SCRIPT_ON_LOAD, SootopolisCity_Gym_1F_TY_OpenStoryStairs
+	map_script MAP_SCRIPT_ON_TRANSITION, SootopolisCity_Gym_1F_TY_IceEnter
+	map_script MAP_SCRIPT_ON_RESUME, SootopolisCity_Gym_1F_TY_IceResume
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, SootopolisCity_Gym_1F_TY_IceFrames

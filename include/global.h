@@ -779,11 +779,11 @@ struct SaveBlock1
     /*0x0294*/ u16 coins;
     /*0x0296*/ u16 registeredItem; // registered for use with SELECT button
     /*0x0298*/ struct ItemSlot pcItems[PC_ITEMS_COUNT];
-    /*0x0310*/ struct ItemSlot bagPocket_Items[BAG_ITEMS_COUNT];
-    /*0x03b8*/ struct ItemSlot bagPocket_KeyItems[BAG_KEYITEMS_COUNT];
-    /*0x0430*/ struct ItemSlot bagPocket_PokeBalls[BAG_POKEBALLS_COUNT];
-    /*0x0464*/ struct ItemSlot bagPocket_TMHM[BAG_TMHM_COUNT];
-    /*0x054c*/ struct ItemSlot bagPocket_Berries[BAG_BERRIES_COUNT];
+    /*0x0310*/ struct ItemSlot bagPocket_Items[BAG_ITEMS_COUNT_LEGACY];
+    /*0x03b8*/ struct ItemSlot bagPocket_KeyItems[BAG_KEYITEMS_COUNT_LEGACY];
+    /*0x0430*/ struct ItemSlot bagPocket_PokeBalls[BAG_POKEBALLS_COUNT_LEGACY];
+    /*0x0464*/ struct ItemSlot bagPocket_TMHM[BAG_TMHM_COUNT_LEGACY];
+    /*0x054c*/ struct ItemSlot bagPocket_Berries[BAG_BERRIES_COUNT_LEGACY];
     /*0x05F8*/ u8 seen1[DEX_FLAGS_NO];
     /*0x062C*/ u16 berryBlenderRecords[3]; // unused
     /*0x0632*/ u8 unused_632[6];

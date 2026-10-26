@@ -90,6 +90,27 @@ static const struct SnagFamily sRocketFamilies[] =
     {SPECIES_NONE},
 };
 
+// Silver remembers his own six evolution families independently.
+static const struct SnagFamily sSilverFamilies[] =
+{
+    {SPECIES_TOTODILE, SNAG_SLOT_SILVER_TOTODILE},
+    {SPECIES_CROCONAW, SNAG_SLOT_SILVER_TOTODILE},
+    {SPECIES_FERALIGATR, SNAG_SLOT_SILVER_TOTODILE},
+    {SPECIES_ZUBAT, SNAG_SLOT_SILVER_ZUBAT},
+    {SPECIES_GOLBAT, SNAG_SLOT_SILVER_ZUBAT},
+    {SPECIES_CROBAT, SNAG_SLOT_SILVER_ZUBAT},
+    {SPECIES_GASTLY, SNAG_SLOT_SILVER_GASTLY},
+    {SPECIES_HAUNTER, SNAG_SLOT_SILVER_GASTLY},
+    {SPECIES_GENGAR, SNAG_SLOT_SILVER_GASTLY},
+    {SPECIES_MAGNEMITE, SNAG_SLOT_SILVER_MAGNEMITE},
+    {SPECIES_MAGNETON, SNAG_SLOT_SILVER_MAGNEMITE},
+    {SPECIES_SNEASEL, SNAG_SLOT_SILVER_SNEASEL},
+    {SPECIES_ABRA, SNAG_SLOT_SILVER_ABRA},
+    {SPECIES_KADABRA, SNAG_SLOT_SILVER_ABRA},
+    {SPECIES_ALAKAZAM, SNAG_SLOT_SILVER_ABRA},
+    {SPECIES_NONE},
+};
+
 static const u8 sText_Jessie[] = _("JESSIE");
 static const u8 sText_James[] = _("JAMES");
 
@@ -123,6 +144,12 @@ u8 GetSnagGroup(u16 trainerNum)
         return SNAG_GROUP_NONE;
     if (gTrainers[trainerNum].trainerPic == TRAINER_PIC_JESSIE_JAMES)
         return SNAG_GROUP_ROCKET;
+    if (trainerNum == TRAINER_JOHTO_SILVER_CHERRYGROVE
+     || trainerNum == TRAINER_JOHTO_SILVER_AZALEA
+     || trainerNum == TRAINER_JOHTO_SILVER_BURNED_TOWER
+     || trainerNum == TRAINER_JOHTO_SILVER_UNDERGROUND
+     || trainerNum == TRAINER_JOHTO_SILVER_VICTORY_ROAD)
+        return SNAG_GROUP_SILVER;
     if (trainerNum == TRAINER_TOURNEY_BLUE)
         return SNAG_GROUP_RIVAL;
     if (trainerNum < HOENN_TRAINERS_START
@@ -140,6 +167,9 @@ u8 GetSnagSlot(u16 trainerNum, u16 species)
 
     switch (GetSnagGroup(trainerNum))
     {
+    case SNAG_GROUP_SILVER:
+        family = sSilverFamilies;
+        break;
     case SNAG_GROUP_RIVAL:
         family = sRivalFamilies;
         break;
@@ -166,6 +196,10 @@ u32 SnagGetExcludedSlots(u16 trainerNum)
 
     switch (GetSnagGroup(trainerNum))
     {
+    case SNAG_GROUP_SILVER:
+        first = SNAG_SLOTS_SILVER_FIRST;
+        end = SNAG_SLOTS_SILVER_END;
+        break;
     case SNAG_GROUP_RIVAL:
         first = SNAG_SLOTS_RIVAL_FIRST;
         end = SNAG_SLOTS_RIVAL_END;

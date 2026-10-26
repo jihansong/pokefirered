@@ -1,0 +1,4 @@
+	map_script MAP_SCRIPT_ON_LOAD, SkyPillar_2F_TY_RestoreFloor
+	map_script MAP_SCRIPT_ON_TRANSITION, SkyPillar_2F_TY_Enter
+	map_script MAP_SCRIPT_ON_RESUME, SkyPillar_2F_TY_Resume
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, SkyPillar_2F_TY_Frames

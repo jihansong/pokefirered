@@ -67,6 +67,21 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CherrygroveCity_Fisher",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_CHERRYGROVE_FIRSTSILVER",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BLUE",
+      "x": 22,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CherrygroveCity_FirstSilver",
+      "flag": "FLAG_HIDE_JOHTO_FIRST_SILVER"
     }
   ],
   "warp_events": [
@@ -92,7 +107,44 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "CherrygroveCity_FirstSilverApproach"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "CherrygroveCity_FirstSilverApproach"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "CherrygroveCity_FirstSilverApproach"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "CherrygroveCity_FirstSilverApproach"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

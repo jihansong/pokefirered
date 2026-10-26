@@ -1,0 +1,173 @@
+name: Space interiors build and recorded synthetic walkthrough
+
+on:
+  push:
+    branches: ['codex/space-interiors-20261026']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  candidate-and-walkthrough:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    container:
+      image: devkitpro/devkitarm:20260610@sha256:116afba8df8453961de2936ffab20dd441edf4d682856c1ec8b0e53d7ed0bbf5
+    env:
+      GAME_VERSION: LEAFGREEN
+      GAME_LANGUAGE: ENGLISH
+      GAME_REVISION: 0
+      MODERN: 0
+      COMPARE: 0
+      AGBCC_REV: da598c1d918402c42c0c0d7128ba14567f3175e9
+      DELTA_GBA_REV: 453fa0decf179360926fb417725a794aa496d6e3
+    steps:
+      - name: Check out the selected public source inventory
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /tools/qa/space_reference_manifest.json
+            /.github/workflows/space-linux.yml
+
+      - name: Hydrate only source inputs from the reviewed inventory
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path, PurePosixPath
+          import json, subprocess
+          root = Path.cwd()
+          reference = json.loads(Path('tools/qa/space_reference_manifest.json').read_text())
+          paths = set(reference['files']) | {'tools/qa/space_reference_manifest.json', '.github/workflows/space-linux.yml'}
+          for name in paths:
+              p = PurePosixPath(name)
+              assert not p.is_absolute() and '..' not in p.parts and str(p) == name
+              assert not any(c in name for c in ('*', '?', '[', ']', '\n', '\r', '\\'))
+          subprocess.run(['git', '-c', 'safe.directory=' + str(root), 'sparse-checkout', 'set', '--no-cone', '--stdin'],
+                         input='\n'.join('/' + x for x in sorted(paths)) + '\n', text=True, check=True)
+          actual = subprocess.check_output(['git', '-c', 'safe.directory=' + str(root), 'rev-parse', 'HEAD'], text=True).strip()
+          print('Selected source commit:', actual, 'inventory inputs:', len(paths))
+          PY
+          echo "${DEVKITARM:?}/bin" >> "$GITHUB_PATH"
+
+      - name: Install official distribution build and capture tools
+        shell: bash
+        run: |
+          apt-get update -q
+          DEBIAN_FRONTEND=noninteractive apt-get install -y -q --no-install-recommends build-essential libpng-dev zlib1g-dev git python3 python3-pil python3-cryptography ffmpeg
+
+      - name: Verify source and frozen art before compilation
+        shell: bash
+        run: |
+          python3 -B tools/qa/verify_space_candidate.py --source . --reference-manifest tools/qa/space_reference_manifest.json --source-only --out /tmp/space-source-check
+
+      - name: Build the pinned original agbcc compiler
+        shell: bash
+        run: |
+          set -euo pipefail
+          agbcc_dir="$(mktemp -d)"
+          git -C "$agbcc_dir" init -q
+          git -C "$agbcc_dir" remote add origin https://github.com/pret/agbcc.git
+          git -C "$agbcc_dir" fetch -q --depth=1 origin "$AGBCC_REV"
+          git -C "$agbcc_dir" checkout -q --detach FETCH_HEAD
+          test "$(git -C "$agbcc_dir" rev-parse HEAD)" = "$AGBCC_REV"
+          (cd "$agbcc_dir" && ./build.sh && ./install.sh "$GITHUB_WORKSPACE")
+
+      - name: Build a source-bound candidate and immutable evidence bundle
+        id: build
+        shell: bash
+        run: |
+          python3 -B tools/qa/produce_space_build.py --source . --reference-manifest tools/qa/space_reference_manifest.json --out /tmp/space-build-bundle --jobs "$(nproc)"
+
+      - name: Verify exact linked maps, graphics, code, save ABI and preserved media
+        id: linked
+        continue-on-error: true
+        shell: bash
+        run: |
+          python3 -B tools/qa/verify_space_candidate.py --source . --reference-manifest tools/qa/space_reference_manifest.json --artifact-dir /tmp/space-build-bundle --out /tmp/space-linked-check
+
+      - name: Clean-build the unchanged official Delta GBA core host
+        if: steps.linked.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -m 700 /tmp/space-host-tools
+          core_dir="$(mktemp -d)"
+          git -C "$core_dir" init -q
+          git -C "$core_dir" remote add origin https://github.com/visualboyadvance-m/visualboyadvance-m.git
+          git -C "$core_dir" fetch -q --depth=1 origin "$DELTA_GBA_REV"
+          git -C "$core_dir" checkout -q --detach FETCH_HEAD
+          python3 -B tools/qa/build_delta_host.py --source "$core_dir" --artifact-dir /tmp/space-host-tools --output delta-core-host --jobs "$(nproc)"
+          python3 -B tools/qa/derive_schema.py --source . --artifact-dir /tmp/space-host-tools --output ty28-schema.json --arm-cc "${DEVKITARM:?}/bin/arm-none-eabi-gcc"
+          python3 -B tools/qa/make_ty28_fixture.py --source . --schema /tmp/space-host-tools/ty28-schema.json --recipe tools/qa/space-cabin-tour.json --artifact-dir /tmp/space-host-tools --output public-space-tour.sav
+
+      - name: Record actual room-to-room gameplay and normal SAVE with cold Continue
+        id: walkthrough
+        if: steps.linked.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        run: |
+          python3 -B tools/qa/space_runtime_probe.py --host /tmp/space-host-tools/delta-core-host --source . --schema /tmp/space-host-tools/ty28-schema.json --rom /tmp/space-build-bundle/pokemonthyl.gba --symbols /tmp/space-build-bundle/pokemonthyl.sym --seed /tmp/space-host-tools/public-space-tour.sav --artifact-dir /tmp/space-tour-evidence --scenario tour-save --video
+
+      - name: Add only explicit public QA evidence to the build bundle
+        if: always() && steps.build.outcome == 'success'
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import shutil
+          bundle = Path('/tmp/space-build-bundle')
+          allowed = {'.json', '.jsonl', '.log', '.ppm', '.png', '.mp4'}
+          sources = {'source-check': Path('/tmp/space-source-check'), 'linked-check': Path('/tmp/space-linked-check'),
+                     'walkthrough': Path('/tmp/space-tour-evidence')}
+          for label, source in sources.items():
+              if not source.is_dir():
+                  continue
+              for path in source.rglob('*'):
+                  assert not path.is_symlink()
+                  if path.is_file() and path.suffix in allowed:
+                      target = bundle/'qa'/label/path.relative_to(source)
+                      target.parent.mkdir(parents=True, exist_ok=True)
+                      assert not target.exists()
+                      shutil.copyfile(path, target)
+          for name in ('delta-core-host.build.json', 'ty28-schema.json', 'public-space-tour.sav.provenance.json'):
+              path = Path('/tmp/space-host-tools')/name
+              if path.is_file():
+                  target = bundle/'qa'/name
+                  target.parent.mkdir(parents=True, exist_ok=True)
+                  shutil.copyfile(path, target)
+          assert not any(p.suffix.lower() in {'.sav', '.srm', '.pem', '.key'} for p in bundle.rglob('*'))
+          PY
+          python3 -B tools/qa/seal_space_artifact.py --input /tmp/space-build-bundle --public-key tools/qa/space_build_recipient.pem --output /tmp/space-candidate.tyspace
+
+      - name: Retain only the encrypted reviewer bundle for one day
+        if: always() && steps.build.outcome == 'success'
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6, Node 24
+        with:
+          name: space-candidate-encrypted-${{ github.run_id }}
+          path: /tmp/space-candidate.tyspace
+          if-no-files-found: error
+          retention-days: 1
+          compression-level: 0
+
+      - name: Require linked verification and genuine walkthrough completion
+        if: always()
+        env:
+          LINKED_OUTCOME: ${{ steps.linked.outcome }}
+          WALKTHROUGH_OUTCOME: ${{ steps.walkthrough.outcome }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          assert os.environ['LINKED_OUTCOME'] == 'success'
+          assert os.environ['WALKTHROUGH_OUTCOME'] == 'success'
+          report = json.loads(Path('/tmp/space-tour-evidence/result.json').read_text())
+          assert report['status'] == 'PASS_SYNTHETIC_NORMAL_SAVE_COLD_CORE'
+          assert len(report['tour']['visited_rooms']) == 17 and len(report['tour']['directional_crossings']) == 32
+          assert report['video']['frames'] > 0
+          print('Actual rendered synthetic-fixture walkthrough and normal SAVE/cold Continue passed; not installed iOS Delta app verification.')
+          PY

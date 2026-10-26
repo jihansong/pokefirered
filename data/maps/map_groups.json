@@ -1221,7 +1221,26 @@
     "TrainerHill_3F",
     "TrainerHill_4F",
     "TrainerHill_Roof",
-    "TrainerHill_Elevator"
+    "TrainerHill_Elevator",
+    "HoennSpaceportTerminal",
+    "HoennSpaceportLaunchPad",
+    "HoennSpacecraftCabin",
+    "HoennSpacecraftEngineering",
+    "HoennOrbitalObservatory",
+    "HoennSpacecraftCockpit",
+    "HoennSpacecraftNavigation",
+    "HoennSpacecraftCaptainsOffice",
+    "HoennSpacecraftCrewQuarters",
+    "HoennSpacecraftCrewMess",
+    "HoennSpacecraftFoodCourt",
+    "HoennSpacecraftLounge",
+    "HoennSpacecraftGameRoom",
+    "HoennSpacecraftBattleDeck",
+    "HoennSpacecraftCabinCorridor",
+    "HoennSpacecraftGuestRoom1",
+    "HoennSpacecraftGuestRoom2",
+    "HoennSpacecraftGuestRoom3",
+    "HoennSpacecraftCargoHold"
   ],
   "gMapGroup_HoennIndoorRoute109": [
     "Route109_SeashoreHouse"
@@ -1379,6 +1398,7 @@
     "JohtoLeague_BrunosRoom",
     "JohtoLeague_KarensRoom",
     "JohtoLeague_LancesRoom",
-    "JohtoLeague_HallOfFame"
+    "JohtoLeague_HallOfFame",
+    "TYHnsNewBarkHouse1"
   ]
 }

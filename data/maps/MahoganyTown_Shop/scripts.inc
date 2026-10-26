@@ -9,6 +9,7 @@ lock
     msgbox MahoganyTown_Shop_Text_Entry
     setflag FLAG_JOHTO_LANCE_MOVED_TO_HQ
     release
+    special SetOrdinaryWarpTransition
     warp MAP_JOHTO_ROCKET_HQ_B1F, -1, 6, 17
     waitstate
     end
@@ -32,6 +33,7 @@ lockall
 MahoganyTown_Shop_StairOpen::
     setflag FLAG_JOHTO_LANCE_MOVED_TO_HQ
     releaseall
+    special SetOrdinaryWarpTransition
     warp MAP_JOHTO_ROCKET_HQ_B1F, 0
     waitstate
     end

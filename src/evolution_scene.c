@@ -1,6 +1,7 @@
 #include "global.h"
 #include "gflib.h"
 #include "battle.h"
+#include "battle_gfx_sfx_util.h"
 #include "battle_message.h"
 #include "data.h"
 #include "decompress.h"
@@ -353,6 +354,9 @@ static void CB2_EvolutionSceneLoadGraphics(void)
     FreeAllSpritePalettes();
     gReservedSpritePaletteCount = 4;
 
+    if (gMonSpritesGfxPtr == NULL)
+        AllocateMonSpritesGfx();
+
     DecompressPicFromTable(&gMonFrontPicTable[postEvoSpecies],
                              gMonSpritesGfxPtr->sprites[B_POSITION_OPPONENT_RIGHT],
                              postEvoSpecies);
@@ -393,6 +397,8 @@ static void CB2_TradeEvolutionSceneLoadGraphics(void)
         SetHBlankCallback(NULL);
         SetVBlankCallback(NULL);
         ResetSpriteData();
+        if (gMonSpritesGfxPtr == NULL)
+            AllocateMonSpritesGfx();
         FreeAllSpritePalettes();
         gReservedSpritePaletteCount = 4;
         gBattle_BG0_X = 0;
@@ -426,7 +432,7 @@ static void CB2_TradeEvolutionSceneLoadGraphics(void)
             u32 trainerId = GetMonData(mon, MON_DATA_OT_ID);
             u32 personality = GetMonData(mon, MON_DATA_PERSONALITY);
             DecompressPicFromTable(&gMonFrontPicTable[postEvoSpecies],
-                                     gMonSpritesGfxPtr->sprites[B_POSITION_OPPONENT_RIGHT],
+                                     gMonSpritesGfxPtr->sprites[B_POSITION_OPPONENT_LEFT],
                                      postEvoSpecies);
             pokePal = GetMonSpritePalStructFromOtIdPersonality(postEvoSpecies, trainerId, personality);
             LoadCompressedPalette(pokePal->data, OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
@@ -959,6 +965,11 @@ static void Task_EvolutionScene(u8 taskId)
         case MVSTATE_SHOW_MOVE_SELECT:
             if (!gPaletteFade.active)
             {
+                while (WaitDma3Request(-1) == -1)
+                    VBlankIntrWait();
+                SetVBlankCallback(NULL);
+                ResetSpriteData();
+                FreeMonSpritesGfx();
                 FreeAllWindowBuffers();
                 ShowSelectMovePokemonSummaryScreen(gPlayerParty, gTasks[taskId].tPartyId,
                             gPlayerPartyCount - 1, CB2_EvolutionSceneLoadGraphics,
@@ -1343,6 +1354,12 @@ static void Task_TradeEvolutionScene(u8 taskId)
             {
                 if (gWirelessCommType)
                     DestroyWirelessStatusIndicatorSprite();
+
+                while (WaitDma3Request(-1) == -1)
+                    VBlankIntrWait();
+                SetVBlankCallback(NULL);
+                ResetSpriteData();
+                FreeMonSpritesGfx();
 
                 Free(GetBgTilemapBuffer(3));
                 Free(GetBgTilemapBuffer(1));

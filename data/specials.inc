@@ -159,7 +159,7 @@ gSpecials::
 	def_special BufferBigGuyOrBigGirlString
 	def_special BufferSonOrDaughterString
 	def_special SetHiddenItemFlag
-	def_special NullFieldSpecial  @ Cable Car specials
+	def_special HoennCableCarRide  @ Cable Car ride; existing special151
 	def_special NullFieldSpecial
 	def_special Overworld_PlaySpecialMapMusic
 	def_special NullFieldSpecial  @ Wall Clock specials
@@ -547,4 +547,23 @@ gSpecials::
 	def_special MistyDeclineCompanionJoin
 	def_special ScriptGivePerfectRegionalStarter
 	def_special CreatePerfectScriptedTreecko
+	def_special HoennSootopolisResetIce
+	def_special HoennSootopolisRestoreIce
+	def_special HoennSkyPillarRestoreFloor
+	def_special RotatingGate_InitPuzzle
+	def_special RotatingGate_InitPuzzleAndGraphics
+	def_special HoennSeafloorMarkPuzzleSave
+	def_special GetRydelBikeState
+	def_special CommitRydelBike
+	def_special HoennMountain_GetPhase
+	def_special HoennMauvilleWally_GetPhase
+	def_special HoennMountain_RefreshActors
+	def_special HoennMountain_SetupObjects
+	def_special HoennVillain_SetupObjects
+	def_special SetOrdinaryWarpTransition
+
+	def_special HoennSpaceStory_GetPhase
+	def_special HoennSpaceStory_PlayFlight
+	def_special HoennSpaceStory_CheckJirachiCaught
+
 gSpecialsEnd::

@@ -1,7 +1,7 @@
 {
   "id": "MAP_JOHTO_ROUTE27",
   "name": "JohtoRoute27",
-  "layout": "LAYOUT_JOHTO_ROUTE27",
+  "layout": "LAYOUT_TY_HNS_JOHTO_ROUTE27",
   "music": "MUS_ROUTE1",
   "region_map_section": "MAPSEC_JOHTO_ROUTE27",
   "requires_flash": false,
@@ -17,16 +17,16 @@
     {
       "map": "MAP_NEW_BARK_TOWN",
       "direction": "left",
-      "offset": 0
+      "offset": 11
     }
   ],
   "object_events": [
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
-      "x": 8,
-      "y": 17,
-      "elevation": 3,
+      "x": 27,
+      "y": 24,
+      "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -38,8 +38,8 @@
   ],
   "warp_events": [
     {
-      "x": 33,
-      "y": 5,
+      "x": 31,
+      "y": 19,
       "elevation": 0,
       "dest_map": "MAP_TOHJO_FALLS",
       "dest_warp_id": "0"
@@ -49,7 +49,7 @@
     {
       "type": "trigger",
       "x": 1,
-      "y": 18,
+      "y": 22,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
@@ -58,7 +58,7 @@
     {
       "type": "trigger",
       "x": 1,
-      "y": 19,
+      "y": 23,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
@@ -67,7 +67,7 @@
     {
       "type": "trigger",
       "x": 1,
-      "y": 20,
+      "y": 24,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
@@ -76,12 +76,29 @@
     {
       "type": "trigger",
       "x": 1,
-      "y": 21,
+      "y": 25,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "JohtoRoute27_LeagueGate"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 45,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JohtoRoute27_EventScript_EastCaveBlocked"
+    },
+    {
+      "type": "sign",
+      "x": 40,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JohtoRoute27_EventScript_SourceHouseLocked"
+    }
+  ]
 }

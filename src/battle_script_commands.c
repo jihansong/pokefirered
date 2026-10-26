@@ -19,6 +19,7 @@
 #include "trainer_pokemon_sprites.h"
 #include "field_specials.h"
 #include "battle.h"
+#include "battle_bg.h"
 #include "battle_message.h"
 #include "battle_anim.h"
 #include "battle_ai_script_commands.h"
@@ -27,7 +28,6 @@
 #include "battle_controllers.h"
 #include "battle_interface.h"
 #include "battle_main.h"
-#include "battle_gfx_sfx_util.h"
 #include "battle_util.h"
 #include "snag.h"
 #include "constants/battle_anim.h"
@@ -5195,6 +5195,7 @@ static void Cmd_yesnoboxlearnmove(void)
     case 2:
         if (!gPaletteFade.active)
         {
+            ReshowBattleScreenDummy();
             FreeAllWindowBuffers();
             ShowSelectMovePokemonSummaryScreen(gPlayerParty, gBattleStruct->expGetterMonId, gPlayerPartyCount - 1, ReshowBattleScreenAfterMenu, gMoveToLearn);
             gBattleScripting.learnMoveState++;
@@ -5669,6 +5670,8 @@ static void Cmd_atknameinbuff1(void)
 
 static void Cmd_drawlvlupbox(void)
 {
+    if (!BattlePrepareWindow(B_WIN_LEVEL_UP_BOX))
+        return;
     if (gBattleScripting.drawlvlupboxState == 0)
     {
         // If the Pokémon getting exp is not in-battle then
@@ -5762,6 +5765,7 @@ static void Cmd_drawlvlupbox(void)
             SetBgAttribute(1, BG_ATTR_PRIORITY, 1);
             ShowBg(0);
             ShowBg(1);
+            BattleReleaseLevelUpWindows();
             gBattlescriptCurrInstr++;
         }
         break;
@@ -9765,13 +9769,8 @@ static void Cmd_displaydexinfo(void)
     case 1:
         if (!gPaletteFade.active && WaitDma3Request(-1) != -1)
         {
-            // The dex rebuilds its pictures; battle graphics are no longer used.
-            if (!(gBattleTypeFlags & BATTLE_TYPE_LINK))
-            {
-                SetVBlankCallback(NULL);
-                ResetSpriteData();
-                FreeMonSpritesGfx();
-            }
+            // The dex owns its pictures; release regenerable battle graphics.
+            ReshowBattleScreenDummy();
             FreeAllWindowBuffers();
             gBattleCommunication[TASK_ID] = DexScreen_RegisterMonToPokedex(species);
             gBattleCommunication[0]++;
@@ -9984,4 +9983,3 @@ static void Cmd_finishturn(void)
     gCurrentActionFuncId = B_ACTION_FINISHED;
     gCurrentTurnActionNumber = gBattlersCount;
 }
-

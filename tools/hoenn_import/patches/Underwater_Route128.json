@@ -1,0 +1,11 @@
+{
+  "map_fields": {
+    "connections": [
+      {
+        "map": "MAP_UNDERWATER_ROUTE127",
+        "offset": 0,
+        "direction": "up"
+      }
+    ]
+  }
+}

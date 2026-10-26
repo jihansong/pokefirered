@@ -639,7 +639,7 @@ static bool8 BerryPouchLoadGfx(void)
 
 static bool8 AllocateListMenuBuffers(void)
 {
-    sListMenuItems = Alloc(NUM_BERRIES * sizeof(struct ListMenuItem));
+    sListMenuItems = Alloc((BAG_BERRIES_COUNT + 1) * sizeof(struct ListMenuItem));
     if (sListMenuItems == NULL)
         return FALSE;
     sListMenuStrbuf = Alloc(sResources->listMenuNumItems * 27);
@@ -654,7 +654,7 @@ static void SetUpListMenuTemplate(void)
     struct BagPocket *pocket = &gBagPockets[POCKET_BERRY_POUCH - 1];
     for (i = 0; i < sResources->listMenuNumItems; i++)
     {
-        GetBerryNameAndIndexForMenu(&sListMenuStrbuf[i * 27], pocket->itemSlots[i].itemId);
+        GetBerryNameAndIndexForMenu(&sListMenuStrbuf[i * 27], (*GetBagPocketSlot(pocket, i)).itemId);
         sListMenuItems[i].label = &sListMenuStrbuf[i * 27];
         sListMenuItems[i].index = i;
     }
@@ -889,7 +889,7 @@ static void SortAndCountBerries(void)
     sResources->listMenuNumItems = 0;
     for (i = 0; i < pocket->capacity; i++)
     {
-        if (pocket->itemSlots[i].itemId == ITEM_NONE)
+        if ((*GetBagPocketSlot(pocket, i)).itemId == ITEM_NONE)
             break;
         sResources->listMenuNumItems++;
     }

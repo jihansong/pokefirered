@@ -17,6 +17,7 @@ JohtoLeague_KarensRoom_Victory::
 JohtoLeague_KarensRoom_NextRoom::
     lockall
     goto_if_unset FLAG_JOHTO_KAREN_CLEARED, JohtoLeague_KarensRoom_GateClosed
+    special SetOrdinaryWarpTransition
     warp MAP_JOHTO_LEAGUE_LANCES_ROOM, 0
     waitstate
     releaseall

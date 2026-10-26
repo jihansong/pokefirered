@@ -34,3 +34,46 @@ SootopolisCity_Gym_1F_TY_Full::
 	end
 
 @ Thunder Yellow Hoenn sea-sky chapter v1
+
+@ Original Emerald ice progression; counter is map-local in Thunder Yellow.
+SootopolisCity_Gym_1F_TY_OpenStoryStairs::
+	special HoennSootopolisRestoreIce
+	end
+
+SootopolisCity_Gym_1F_TY_IceEnter::
+	special HoennSootopolisResetIce
+	end
+
+SootopolisCity_Gym_1F_TY_IceResume::
+	setstepcallback STEP_CB_SOOTOPOLIS_ICE
+	end
+
+SootopolisCity_Gym_1F_TY_IceFrames::
+	map_script_2 VAR_TEMP_0, 8, SootopolisCity_Gym_1F_TY_UnlockIce
+	map_script_2 VAR_TEMP_0, 28, SootopolisCity_Gym_1F_TY_UnlockIce
+	map_script_2 VAR_TEMP_0, 67, SootopolisCity_Gym_1F_TY_UnlockIce
+	map_script_2 VAR_TEMP_0, 0, SootopolisCity_Gym_1F_TY_Fall
+	.2byte 0
+
+SootopolisCity_Gym_1F_TY_UnlockIce::
+	addvar VAR_TEMP_0, 1
+	delay 40
+	playse SE_ICE_STAIRS
+	special HoennSootopolisRestoreIce
+	special DrawWholeMapView
+	end
+
+SootopolisCity_Gym_1F_TY_Fall::
+	lockall
+	delay 20
+	applymovement LOCALID_PLAYER, SootopolisCity_Gym_1F_TY_FallMovement
+	waitmovement 0
+	playse SE_FALL
+	delay 60
+	warphole MAP_SOOTOPOLIS_CITY_GYM_B1F
+	waitstate
+	end
+
+SootopolisCity_Gym_1F_TY_FallMovement::
+	set_invisible
+	step_end

@@ -1,0 +1,2 @@
+	map_script MAP_SCRIPT_ON_TRANSITION, SeafloorCavern_Room1_TY_PuzzleEntry
+	map_script MAP_SCRIPT_ON_RESUME, SeafloorCavern_Room1_TY_PuzzleEntry

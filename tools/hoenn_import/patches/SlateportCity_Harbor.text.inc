@@ -162,3 +162,18 @@ SlateportCity_Harbor_Text_JohtoReferral::
     .string "here in HOENN.\p"
     .string "Once you have seen SLATEPORT,\n"
     .string "look for his lab in LITTLEROOT.$"
+
+SlateportCity_Harbor_VS_Text_Archie::
+	.string "ARCHIE: You again! This\n"
+	.string "submarine will take us to\l"
+	.string "the ancient sea cavern. Try\l"
+	.string "to stop us at our hideout in\l"
+	.string "LILYCOVE!$"
+
+SlateportCity_Harbor_VS_Text_SternAfter::
+	.string "STERN: Why steal our\n"
+	.string "submarine? Follow TEAM AQUA\l"
+	.string "to LILYCOVE. I will keep the\l"
+	.string "research and our flights\l"
+	.string "running here.$"
+

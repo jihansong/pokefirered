@@ -1,0 +1,4 @@
+	map_script MAP_SCRIPT_ON_TRANSITION, Space_MapTransition
+	map_script MAP_SCRIPT_ON_LOAD, Space_ObservatoryLoad
+	map_script MAP_SCRIPT_ON_RESUME, Space_ObservatoryResume
+	map_script MAP_SCRIPT_ON_RETURN_TO_FIELD, Space_ObservatoryReturn

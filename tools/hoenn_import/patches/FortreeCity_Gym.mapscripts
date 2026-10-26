@@ -1,0 +1,2 @@
+	map_script MAP_SCRIPT_ON_TRANSITION, FortreeCity_Gym_RotatingGate_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, FortreeCity_Gym_RotatingGate_OnResume

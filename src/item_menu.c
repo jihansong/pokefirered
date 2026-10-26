@@ -637,7 +637,7 @@ static void Bag_BuildListMenuTemplate(u8 pocket)
     struct BagPocket * bagPocket = &gBagPockets[pocket];
     for (i = 0; i < sBagMenuDisplay->nItems[pocket]; i++)
     {
-        BagListMenuGetItemNameColored(sListMenuItemStrings[i], bagPocket->itemSlots[i].itemId);
+        BagListMenuGetItemNameColored(sListMenuItemStrings[i], (*GetBagPocketSlot(bagPocket, i)).itemId);
         sListMenuItems[i].label = sListMenuItemStrings[i];
         sListMenuItems[i].index = i;
     }
@@ -994,11 +994,11 @@ void Pocket_CalculateNItemsAndMaxShowed(u8 pocketId)
 {
     u16 i;
     struct BagPocket * pocket = &gBagPockets[pocketId];
-    BagPocketCompaction(pocket->itemSlots, pocket->capacity);
+    BagPocketCompaction(pocket);
     sBagMenuDisplay->nItems[pocketId] = 0;
     for (i = 0; i < pocket->capacity; i++)
     {
-        if (pocket->itemSlots[i].itemId == ITEM_NONE)
+        if ((*GetBagPocketSlot(pocket, i)).itemId == ITEM_NONE)
             break;
         sBagMenuDisplay->nItems[pocketId]++;
     }
@@ -1280,7 +1280,7 @@ static void ExecuteMoveItemInPocket(u8 taskId, u32 itemIndex)
     }
     else
     {
-        MoveItemSlotInList(gBagPockets[gBagMenuState.pocket].itemSlots, data[1], itemIndex);
+        MoveBagItemSlotInList(gBagMenuState.pocket, data[1], itemIndex);
         DestroyListMenuTask(data[0], &gBagMenuState.cursorPos[gBagMenuState.pocket], &gBagMenuState.itemsAbove[gBagMenuState.pocket]);
         if (data[1] < itemIndex)
             gBagMenuState.itemsAbove[gBagMenuState.pocket]--;
@@ -2062,9 +2062,9 @@ static void BackUpPlayerBag(void)
 {
     u32 i;
     sBackupPlayerBag = AllocZeroed(sizeof(struct BagSlots));
-    memcpy(sBackupPlayerBag->bagPocket_Items, gSaveBlock1Ptr->bagPocket_Items, BAG_ITEMS_COUNT * sizeof(struct ItemSlot));
-    memcpy(sBackupPlayerBag->bagPocket_KeyItems, gSaveBlock1Ptr->bagPocket_KeyItems, BAG_KEYITEMS_COUNT * sizeof(struct ItemSlot));
-    memcpy(sBackupPlayerBag->bagPocket_PokeBalls, gSaveBlock1Ptr->bagPocket_PokeBalls, BAG_POKEBALLS_COUNT * sizeof(struct ItemSlot));
+    CopyBagPocketToBuffer(POCKET_ITEMS - 1, sBackupPlayerBag->bagPocket_Items);
+    CopyBagPocketToBuffer(POCKET_KEY_ITEMS - 1, sBackupPlayerBag->bagPocket_KeyItems);
+    CopyBagPocketToBuffer(POCKET_POKE_BALLS - 1, sBackupPlayerBag->bagPocket_PokeBalls);
     sBackupPlayerBag->registeredItem = gSaveBlock1Ptr->registeredItem;
     sBackupPlayerBag->pocket = gBagMenuState.pocket;
     for (i = 0; i < NUM_BAG_POCKETS_NO_CASES; i++)
@@ -2072,9 +2072,9 @@ static void BackUpPlayerBag(void)
         sBackupPlayerBag->itemsAbove[i] = gBagMenuState.itemsAbove[i];
         sBackupPlayerBag->cursorPos[i] = gBagMenuState.cursorPos[i];
     }
-    ClearItemSlots(gSaveBlock1Ptr->bagPocket_Items, BAG_ITEMS_COUNT);
-    ClearItemSlots(gSaveBlock1Ptr->bagPocket_KeyItems, BAG_KEYITEMS_COUNT);
-    ClearItemSlots(gSaveBlock1Ptr->bagPocket_PokeBalls, BAG_POKEBALLS_COUNT);
+    ClearBagPocket(POCKET_ITEMS - 1);
+    ClearBagPocket(POCKET_KEY_ITEMS - 1);
+    ClearBagPocket(POCKET_POKE_BALLS - 1);
     gSaveBlock1Ptr->registeredItem = ITEM_NONE;
     ResetBagCursorPositions();
 }
@@ -2082,9 +2082,9 @@ static void BackUpPlayerBag(void)
 static void RestorePlayerBag(void)
 {
     u32 i;
-    memcpy(gSaveBlock1Ptr->bagPocket_Items, sBackupPlayerBag->bagPocket_Items, BAG_ITEMS_COUNT * sizeof(struct ItemSlot));
-    memcpy(gSaveBlock1Ptr->bagPocket_KeyItems, sBackupPlayerBag->bagPocket_KeyItems, BAG_KEYITEMS_COUNT * sizeof(struct ItemSlot));
-    memcpy(gSaveBlock1Ptr->bagPocket_PokeBalls, sBackupPlayerBag->bagPocket_PokeBalls, BAG_POKEBALLS_COUNT * sizeof(struct ItemSlot));
+    CopyBagPocketFromBuffer(POCKET_ITEMS - 1, sBackupPlayerBag->bagPocket_Items);
+    CopyBagPocketFromBuffer(POCKET_KEY_ITEMS - 1, sBackupPlayerBag->bagPocket_KeyItems);
+    CopyBagPocketFromBuffer(POCKET_POKE_BALLS - 1, sBackupPlayerBag->bagPocket_PokeBalls);
     gSaveBlock1Ptr->registeredItem = sBackupPlayerBag->registeredItem;
     gBagMenuState.pocket = sBackupPlayerBag->pocket;
     for (i = 0; i < NUM_BAG_POCKETS_NO_CASES; i++)

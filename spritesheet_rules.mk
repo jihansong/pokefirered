@@ -539,3 +539,21 @@ $(OBJEVENTGFXDIR)/hoenn/legend_kyogre.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/hoenn/legend_rayquaza.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 8 -mheight 8
 # END THUNDER YELLOW ORIGINAL HOENN LEGENDS
+
+# Pinned Red/Leaf Acro frames repacked to FRLG animation indices 0..32.
+$(OBJEVENTGFXDIR)/people/red_acro_bike.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/green_acro_bike.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+
+# Original Emerald Groudon scene prop, four 32px cells.
+graphics/object_events/pics/hoenn/groudon_magma.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+graphics/object_events/pics/hoenn/reporter_f_story.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+graphics/object_events/pics/hoenn/cameraman_story.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4

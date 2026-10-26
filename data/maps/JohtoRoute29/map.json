@@ -1,7 +1,7 @@
 {
   "id": "MAP_JOHTO_ROUTE29",
   "name": "JohtoRoute29",
-  "layout": "LAYOUT_JOHTO_ROUTE29",
+  "layout": "LAYOUT_TY_HNS_JOHTO_ROUTE29",
   "music": "MUS_ROUTE1",
   "region_map_section": "MAPSEC_JOHTO_ROUTE_29",
   "requires_flash": false,
@@ -16,12 +16,12 @@
   "connections": [
     {
       "map": "MAP_JOHTO_CHERRYGROVE_AIRSTRIP",
-      "offset": 0,
+      "offset": 4,
       "direction": "left"
     },
     {
       "map": "MAP_NEW_BARK_TOWN",
-      "offset": 0,
+      "offset": 5,
       "direction": "right"
     }
   ],
@@ -30,9 +30,9 @@
       "local_id": "LOCALID_JOHTOROUTE29_HIKER",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN",
-      "x": 18,
-      "y": 10,
-      "elevation": 3,
+      "x": 61,
+      "y": 16,
+      "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
@@ -47,11 +47,27 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 36,
-      "y": 10,
+      "x": 64,
+      "y": 15,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "JohtoRoute29_Sign"
+    },
+    {
+      "type": "sign",
+      "x": 34,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JohtoRoute29_EventScript_NorthGateClosed"
+    },
+    {
+      "type": "sign",
+      "x": 35,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JohtoRoute29_EventScript_NorthGateClosed"
     }
   ]
 }

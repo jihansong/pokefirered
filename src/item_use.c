@@ -276,9 +276,16 @@ void FieldUseFunc_Bike(u8 taskId)
 
 static void ItemUseOnFieldCB_Bicycle(u8 taskId)
 {
+    u8 mode = BIKE_MODE_LEGACY;
+
+    if (gSpecialVar_ItemId == ITEM_MACH_BIKE)
+        mode = BIKE_MODE_MACH;
+    else if (gSpecialVar_ItemId == ITEM_ACRO_BIKE)
+        mode = BIKE_MODE_ACRO;
     if (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
         PlaySE(SE_BIKE_BELL);
-    GetOnOffBike(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE);
+    Bike_SetMode(mode);
+    GetOnOffBike(mode == BIKE_MODE_ACRO ? PLAYER_AVATAR_FLAG_ACRO_BIKE : PLAYER_AVATAR_FLAG_MACH_BIKE);
     ClearPlayerHeldMovementAndUnfreezeObjectEvents();
     UnlockPlayerFieldControls();
     DestroyTask(taskId);

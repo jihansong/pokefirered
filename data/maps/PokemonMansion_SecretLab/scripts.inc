@@ -12,6 +12,7 @@ PokemonMansion_SecretLab_EventScript_HiddenDoor::
 	goto_if_eq VAR_RESULT, NO, EventScript_ReleaseEnd
 	closemessage
 	playse SE_EXIT
+	special SetOrdinaryWarpTransition
 	warp MAP_POKEMON_MANSION_SECRET_LAB, 0
 	waitstate
 	releaseall

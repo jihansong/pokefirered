@@ -6,6 +6,14 @@
 #include "new_menu_helpers.h"
 #include "quest_log.h"
 #include "fieldmap.h"
+#include "field_weather.h"
+#include "tileset_anims.h"
+#include "constants/maps.h"
+#include "constants/event_object_movement.h"
+#include "constants/quest_log.h"
+#include "field_player_avatar.h"
+#include "metatile_behavior.h"
+#include "data/tilesets/ty_hns_frontier_tables.inc"
 
 struct ConnectionFlags
 {
@@ -25,6 +33,8 @@ EWRAM_DATA u8 gGlobalFieldTintMode = QL_TINT_NONE;
 static const struct ConnectionFlags sDummyConnectionFlags = {};
 
 static void InitMapLayoutData(struct MapHeader *);
+static void CopyTilesetToVramUsingHeap(struct Tileset const *, u16, u16);
+static void LoadPrimaryTilesetPalette(const struct MapLayout *);
 static void InitBackupMapLayoutData(const u16 *, u16, u16);
 static void InitBackupMapLayoutConnections(struct MapHeader *);
 static void FillSouthConnection(struct MapHeader const *, struct MapHeader const *, s32);
@@ -177,6 +187,8 @@ static void FillConnection(s32 x, s32 y, const struct MapHeader *connectedMapHea
     const u16 *src;
     u16 *dest;
     s32 mapWidth;
+    s32 j;
+    const u16 *translation = TYHns_ConnectionMetatiles(gMapHeader.mapLayout, connectedMapHeader->mapLayout);
 
     mapWidth = connectedMapHeader->mapLayout->width;
     src = &connectedMapHeader->mapLayout->map[mapWidth * y2 + x2];
@@ -184,7 +196,11 @@ static void FillConnection(s32 x, s32 y, const struct MapHeader *connectedMapHea
 
     for (i = 0; i < height; i++)
     {
-        CpuCopy16(src, dest, width * 2);
+        if (translation == NULL)
+            CpuCopy16(src, dest, width * 2);
+        else
+            for (j = 0; j < width; j++)
+                dest[j] = TYHns_TranslateMetatile(src[j], translation);
         dest += VMap.Xsize;
         src += mapWidth;
     }
@@ -496,14 +512,9 @@ static bool32 SavedMapViewIsEmpty(void)
     u16 i;
     u32 marker = 0;
 
-#ifndef UBFIX
-    // BUG: This loop extends past the bounds of the mapView array. Its size is only 0x100.
-    for (i = 0; i < 0x200; i++)
-        marker |= gSaveBlock2Ptr->mapView[i];
-#else
+    // Read exactly the existing mapView array, including empty new saves.
     for (i = 0; i < NELEMS(gSaveBlock2Ptr->mapView); i++)
         marker |= gSaveBlock2Ptr->mapView[i];
-#endif
 
     if (marker == 0)
         return TRUE;
@@ -516,12 +527,126 @@ static void ClearSavedMapView(void)
     CpuFill16(0, gSaveBlock2Ptr->mapView, sizeof(gSaveBlock2Ptr->mapView));
 }
 
+static void RecoverRebuiltSpaceRoomPosition(void)
+{
+    s16 x, y;
+    u8 i;
+    struct ObjectEvent *player = NULL;
+
+    // The final quest-log scene restores the real saved player before Continue.
+    // Only the earlier recorded scenes must keep their original coordinates.
+    if (gQuestLogState == QL_STATE_PLAYBACK)
+        return;
+
+    switch (gSaveBlock1Ptr->location.mapNum)
+    {
+    case MAP_NUM(MAP_HOENN_SPACEPORT_TERMINAL):
+        x = 8;
+        y = 7;
+        break;
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_CABIN):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_ENGINEERING):
+        x = 10;
+        y = 12;
+        break;
+    case MAP_NUM(MAP_HOENN_ORBITAL_OBSERVATORY):
+        x = 10;
+        y = 9;
+        break;
+    default:
+        return;
+    }
+
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {
+        if (gObjectEvents[i].active && gObjectEvents[i].movementType == MOVEMENT_TYPE_PLAYER)
+        {
+            player = &gObjectEvents[i];
+            break;
+        }
+    }
+    if (player == NULL
+     || MapGridGetCollisionAt(player->currentCoords.x, player->currentCoords.y) == 0)
+        return;
+
+    // Old saves may place the player inside a newly added wall or machine.
+    // Continue has loaded the objects but has not recreated their sprites yet.
+    // Move only an obstructed player to this room's verified open aisle.
+    gSaveBlock1Ptr->pos.x = x;
+    gSaveBlock1Ptr->pos.y = y;
+    x += MAP_OFFSET;
+    y += MAP_OFFSET;
+    player->initialCoords.x = player->currentCoords.x = player->previousCoords.x = x;
+    player->initialCoords.y = player->currentCoords.y = player->previousCoords.y = y;
+    player->currentElevation = player->previousElevation = MapGridGetElevationAt(x, y);
+}
+
+static bool8 IsRebuiltSpaceMap(void)
+{
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_HOENN_SPACEPORT_TERMINAL))
+        return FALSE;
+
+    switch (gSaveBlock1Ptr->location.mapNum)
+    {
+    case MAP_NUM(MAP_HOENN_SPACEPORT_TERMINAL):
+    case MAP_NUM(MAP_HOENN_SPACEPORT_LAUNCH_PAD):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_CABIN):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_ENGINEERING):
+    case MAP_NUM(MAP_HOENN_ORBITAL_OBSERVATORY):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_COCKPIT):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_NAVIGATION):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_CAPTAINS_OFFICE):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_CREW_QUARTERS):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_CREW_MESS):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_FOOD_COURT):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_LOUNGE):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_GAME_ROOM):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_BATTLE_DECK):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_CABIN_CORRIDOR):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_GUEST_ROOM1):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_GUEST_ROOM2):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_GUEST_ROOM3):
+    case MAP_NUM(MAP_HOENN_SPACECRAFT_CARGO_HOLD):
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
 static void LoadSavedMapView(void)
 {
     s32 i, j;
     s32 x, y;
     u16 *mapView;
     s32 width;
+
+    // Space-room facility state belongs to flags, coins, or party data rather
+    // than persistent tile puzzles. Load the current artwork and consoles.
+    if (IsRebuiltSpaceMap())
+    {
+        ClearSavedMapView();
+        RecoverRebuiltSpaceRoomPosition();
+        return;
+    }
+
+    // Route131 always uses the Sky Pillar island and has no persistent tile
+    // puzzles. Older saves cache the unused sea layout over the restored island.
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE131)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE131))
+    {
+        ClearSavedMapView();
+        // Continue recreates the player from its saved graphics ID. A player
+        // saved on the old sea must be on foot when that tile is now island.
+        for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+        {
+            struct ObjectEvent *object = &gObjectEvents[i];
+            if (object->active && object->movementType == MOVEMENT_TYPE_PLAYER
+             && object->graphicsId == GetPlayerAvatarGraphicsIdByStateIdAndGender(PLAYER_AVATAR_GFX_RIDE, gSaveBlock2Ptr->playerGender)
+             && !MetatileBehavior_IsSurfable(MapGridGetMetatileBehaviorAt(object->currentCoords.x, object->currentCoords.y)))
+                object->graphicsId = GetPlayerAvatarGraphicsIdByStateIdAndGender(PLAYER_AVATAR_GFX_NORMAL, gSaveBlock2Ptr->playerGender);
+        }
+        return;
+    }
     mapView = gSaveBlock2Ptr->mapView;
     if (!SavedMapViewIsEmpty())
     {
@@ -683,6 +808,9 @@ bool8 CameraMove(s32 x, s32 y)
     s32 direction;
     const struct MapConnection *connection;
     s32 old_x, old_y;
+    s32 viewIndex;
+    const struct MapLayout *oldLayout;
+    const u16 *translation;
     gCamera.active = FALSE;
     direction = GetPostCameraMoveMapBorderId(x, y);
     if (direction == CONNECTION_NONE || direction == CONNECTION_INVALID)
@@ -697,7 +825,20 @@ bool8 CameraMove(s32 x, s32 y)
         old_y = gSaveBlock1Ptr->pos.y;
         connection = GetIncomingConnection(direction, gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y);
         SetPositionFromConnection(connection, direction, x, y);
+        oldLayout = gMapHeader.mapLayout;
         LoadMapFromCameraTransition(connection->mapGroup, connection->mapNum);
+        translation = TYHns_ConnectionMetatiles(gMapHeader.mapLayout, oldLayout);
+        if (translation != NULL)
+        {
+            // Only the Airstrip/Cherrygrove pair changes primary banks.
+            CopyTilesetToVramUsingHeap(gMapHeader.mapLayout->primaryTileset, GetNumTilesInPrimary(gMapHeader.mapLayout), 0);
+            LoadPrimaryTilesetPalette(gMapHeader.mapLayout);
+            for (viewIndex = 0; viewIndex < NUM_PALS_IN_PRIMARY; viewIndex++)
+                ApplyWeatherGammaShiftToPal(viewIndex);
+            InitTilesetAnimations();
+            for (viewIndex = 0; viewIndex < MAP_OFFSET_W * MAP_OFFSET_H; viewIndex++)
+                gSaveBlock2Ptr->mapView[viewIndex] = TYHns_TranslateMetatile(gSaveBlock2Ptr->mapView[viewIndex], translation);
+        }
         gCamera.active = TRUE;
         gCamera.x = old_x - gSaveBlock1Ptr->pos.x;
         gCamera.y = old_y - gSaveBlock1Ptr->pos.y;

@@ -46,6 +46,7 @@ TrainerTower_Elevator_EventScript_SelectLobby::
 	delay 25
 	applymovement LOCALID_PLAYER, TrainerTower_Elevator_Movement_ExitElevator
 	waitmovement 0
+	special SetOrdinaryWarpTransition
 	warp MAP_TRAINER_TOWER_LOBBY, 17, 8
 	waitstate
 	releaseall

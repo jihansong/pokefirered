@@ -1,4 +1,5 @@
 #include "global.h"
+#include "persistent_heap.h"
 
 static void *sHeapStart;
 static u32 sHeapSize;
@@ -185,6 +186,8 @@ bool32 CheckMemBlockInternal(void *heapStart, void *pointer)
 
 void InitHeap(void *heapStart, u32 heapSize)
 {
+    if (heapStart == gHeap && heapSize > PERSISTENT_HEAP_USABLE_SIZE)
+        heapSize = PERSISTENT_HEAP_USABLE_SIZE;
     sHeapStart = heapStart;
     sHeapSize = heapSize;
     PutFirstMemBlockHeader(heapStart, heapSize);

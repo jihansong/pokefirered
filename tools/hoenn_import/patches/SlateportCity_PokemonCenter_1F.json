@@ -14,5 +14,11 @@
       "script": "SlateportCity_PokemonCenter_1F_EventScript_RumorCollector",
       "flag": "0"
     }
+  ],
+  "object_overrides": [
+    {
+      "match_script": "EventScript_PkmnCenterNurse",
+      "script": "EventScript_HoennPkmnCenterNurse"
+    }
   ]
 }

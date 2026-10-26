@@ -34,6 +34,7 @@ GoldenrodCity_RadioTower_3F_UpperGate::
 lockall
     goto_if_unset FLAG_JOHTO_RADIO_DIRECTOR_RESCUED, GoldenrodCity_RadioTower_3F_UpperGateClosed
     releaseall
+    special SetOrdinaryWarpTransition
     warp MAP_GOLDENROD_CITY_RADIO_TOWER_4F, 1
     waitstate
     end

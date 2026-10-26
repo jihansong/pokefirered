@@ -9,6 +9,10 @@ written, and can be run again after editing one.
 The appended parts sit between BEGIN/END PATCH markers and objects are matched
 by their script name, so re-running replaces what the last run added instead of
 piling up another copy.
+
+An optional <Map>.blockdata.bin replaces that map's existing layout blockdata.
+It must retain the layout dimensions. This supports dynamic Emerald layouts
+whose always-used variant was omitted by the static map import.
 """
 import json, os, re, sys
 
@@ -26,6 +30,23 @@ def apply(name):
     d = os.path.join(R, 'data/maps', name)
     if not os.path.isdir(d):
         sys.exit('no such map: ' + name)
+    block_patch = os.path.join(P, name + '.blockdata.bin')
+    if os.path.exists(block_patch):
+        with open(os.path.join(d, 'map.json')) as f:
+            map_layout = json.load(f)['layout']
+        with open(os.path.join(R, 'data/layouts/layouts.json')) as f:
+            layouts = json.load(f)['layouts']
+        layout = next(l for l in layouts if l and l['id'] == map_layout)
+        with open(block_patch, 'rb') as f:
+            blockdata = f.read()
+        if len(blockdata) != 2 * layout['width'] * layout['height']:
+            sys.exit('%s: blockdata patch changes layout dimensions' % name)
+        with open(os.path.join(R, layout['blockdata_filepath']), 'wb') as f:
+            f.write(blockdata)
+        if not any(os.path.exists(os.path.join(P, name + '.' + kind))
+                   for kind in ('json', 'mapscripts', 'scripts.inc', 'text.inc')):
+            print('patched blockdata ' + name)
+            return
     if os.path.exists(os.path.join(P, name + '.json')):
         m = json.load(open(os.path.join(d, 'map.json')))
         extra = json.load(open(os.path.join(P, name + '.json')))
@@ -80,7 +101,7 @@ def apply(name):
                 continue
             scripts = {i.get('script') for i in items}
             m[key] = [o for o in (m.get(key) or []) if o.get('script') not in scripts] + items
-        open(os.path.join(d, 'map.json'), 'w').write(json.dumps(m, indent=2, ensure_ascii=False) + '\n')
+        open(os.path.join(d, 'map.json'), 'w', newline='\n').write(json.dumps(m, indent=2, ensure_ascii=False) + '\n')
     ms = os.path.join(P, name + '.mapscripts')
     if os.path.exists(ms):
         lines = [l for l in open(ms).read().split('\n') if l.strip()]

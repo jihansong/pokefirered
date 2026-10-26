@@ -8,9 +8,12 @@
 #include "field_effect_helpers.h"
 #include "quest_log.h"
 #include "quest_log_player.h"
+#include "constants/event_objects.h"
 
 static void QL_GfxTransition_Normal(void);
 static void QL_GfxTransition_Bike(void);
+static void QL_GfxTransition_MachBike(void);
+static void QL_GfxTransition_AcroBike(void);
 static void QL_GfxTransition_Fish(void);
 static void Task_QLFishMovement(u8 taskId);
 static void QL_GfxTransition_StartSurf(void);
@@ -31,7 +34,9 @@ static void (*const sQLGfxTransitions[])(void) = {
     [QL_PLAYER_GFX_STOP_SURF_N] = QL_GfxTransition_StopSurfNorth,
     [QL_PLAYER_GFX_STOP_SURF_W] = QL_GfxTransition_StopSurfWest,
     [QL_PLAYER_GFX_STOP_SURF_E] = QL_GfxTransition_StopSurfEast,
-    [QL_PLAYER_GFX_VSSEEKER]    = QL_GfxTransition_VSSeeker
+    [QL_PLAYER_GFX_VSSEEKER]    = QL_GfxTransition_VSSeeker,
+    [QL_PLAYER_GFX_MACH_BIKE]   = QL_GfxTransition_MachBike,
+    [QL_PLAYER_GFX_ACRO_BIKE]   = QL_GfxTransition_AcroBike
 };
 
 void QuestLogUpdatePlayerSprite(u8 state)
@@ -66,9 +71,23 @@ static void QL_GfxTransition_Normal(void)
 static void QL_GfxTransition_Bike(void)
 {
     struct ObjectEvent *objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
-    QL_SetObjectGraphicsId(objectEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_GFX_BIKE));
+    QL_SetObjectGraphicsId(objectEvent, GetPlayerAvatarGraphicsIdByStateIdAndGender(PLAYER_AVATAR_GFX_BIKE, gPlayerAvatar.gender));
     ObjectEventTurn(objectEvent, objectEvent->movementDirection);
     SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_MACH_BIKE);
+    BikeClearState(0, 0);
+}
+
+static void QL_GfxTransition_MachBike(void)
+{
+    QL_GfxTransition_Bike();
+}
+
+static void QL_GfxTransition_AcroBike(void)
+{
+    struct ObjectEvent *objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+    QL_SetObjectGraphicsId(objectEvent, OBJ_EVENT_GFX_PLAYER_ACRO_BIKE);
+    ObjectEventTurn(objectEvent, objectEvent->movementDirection);
+    SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_ACRO_BIKE);
     BikeClearState(0, 0);
 }
 

@@ -48,6 +48,7 @@ TYHoennLeague_Enter::
 	cleartrainerflag TRAINER_HOENN_WALLACE
 	setvar VAR_HOENN_LEAGUE_PROGRESS, 1
 	setrespawn HEAL_LOCATION_HOENN_EVER_GRANDE_CITY_POKEMON_LEAGUE
+	special SetOrdinaryWarpTransition
 	warp MAP_EVER_GRANDE_CITY_SIDNEYS_ROOM, 6, 10
 	waitstate
 	releaseall

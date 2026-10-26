@@ -17,6 +17,7 @@ JohtoLeague_KogasRoom_Victory::
 JohtoLeague_KogasRoom_NextRoom::
     lockall
     goto_if_unset FLAG_JOHTO_KOGA_CLEARED, JohtoLeague_KogasRoom_GateClosed
+    special SetOrdinaryWarpTransition
     warp MAP_JOHTO_LEAGUE_BRUNOS_ROOM, 0
     waitstate
     releaseall

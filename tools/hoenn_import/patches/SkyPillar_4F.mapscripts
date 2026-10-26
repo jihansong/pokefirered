@@ -1,1 +1,4 @@
 	map_script MAP_SCRIPT_ON_LOAD, SkyPillar_4F_TY_ClearLooseStones
+	map_script MAP_SCRIPT_ON_TRANSITION, SkyPillar_4F_TY_Enter
+	map_script MAP_SCRIPT_ON_RESUME, SkyPillar_4F_TY_Resume
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, SkyPillar_4F_TY_Frames

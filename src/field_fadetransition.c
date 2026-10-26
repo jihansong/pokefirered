@@ -20,12 +20,27 @@
 #include "field_specials.h"
 #include "event_object_lock.h"
 #include "start_menu.h"
+#include "follower_pikachu.h"
+#include "companion_misty.h"
+#include "constants/maps.h"
 #include "constants/songs.h"
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
 #include "constants/field_weather.h"
+#include "constants/weather.h"
+#include "constants/map_types.h"
 
 static void ExitWarpFadeInScreen(u8 playerNotMoving);
+static void FieldCB_OrdinaryWarpExit(void);
+static void FieldCB_OrdinaryWarpExitWhite(void);
+static bool8 IsOrdinaryWarpWhite(void);
+static void SelectOrdinaryWarpTransition(void);
+static void FadeOutOrdinaryWarp(void);
+static void FadeInOrdinaryWarp(u8 transition);
+void palette_bg_faded_fill_white(void);
+
+#define ORDINARY_WARP_BLACK 1
+#define ORDINARY_WARP_WHITE 2
 static void Task_ExitDoor(u8 taskId);
 static void Task_ExitNonAnimDoor(u8 taskId);
 static void Task_ExitNonDoor(u8 taskId);
@@ -40,6 +55,59 @@ static void UpdateStairsMovement(s16 speedX, s16 speedY, s16 *offsetX, s16 *offs
 static void Task_ExitStairs(u8 taskId);
 static void ExitStairsMovement(s16 *speedX, s16 *speedY, s16 *offsetX, s16 *offsetY, s16 *timer);
 static bool8 WaitStairExitMovementFinished(s16 *speedX, s16 *speedY, s16 *offsetX, s16 *offsetY, s16 *timer);
+
+// The existing callback carries the ordinary-warp kind through map loading.
+// Special warps keep their own callbacks and original effects.
+void SetOrdinaryWarpTransition(void)
+{
+    gFieldCallback = FieldCB_OrdinaryWarpExit;
+}
+
+bool8 IsOrdinaryWarpTransition(void)
+{
+    return gFieldCallback == FieldCB_OrdinaryWarpExit
+        || gFieldCallback == FieldCB_OrdinaryWarpExitWhite;
+}
+
+static bool8 IsOrdinaryWarpWhite(void)
+{
+    return gFieldCallback == FieldCB_OrdinaryWarpExitWhite;
+}
+
+static void SelectOrdinaryWarpTransition(void)
+{
+    const struct MapHeader *header = GetDestinationWarpMapHeader();
+    bool8 darkSource = GetCurrentMapType() == MAP_TYPE_UNDERGROUND
+        || gMapHeader.cave || gMapHeader.weather == WEATHER_SHADE;
+    bool8 brightExterior = (header->mapType == MAP_TYPE_TOWN
+        || header->mapType == MAP_TYPE_CITY || header->mapType == MAP_TYPE_ROUTE
+        || header->mapType == MAP_TYPE_OCEAN_ROUTE)
+        && !header->cave && header->weather != WEATHER_SHADE;
+
+    if (darkSource && brightExterior)
+        gFieldCallback = FieldCB_OrdinaryWarpExitWhite;
+    else
+        gFieldCallback = FieldCB_OrdinaryWarpExit;
+}
+
+static void FadeOutOrdinaryWarp(void)
+{
+    FadeScreen(IsOrdinaryWarpWhite() ? FADE_TO_WHITE : FADE_TO_BLACK, 0);
+}
+
+static void FadeInOrdinaryWarp(u8 transition)
+{
+    if (transition == ORDINARY_WARP_WHITE)
+    {
+        palette_bg_faded_fill_white();
+        FadeScreen(FADE_FROM_WHITE, 0);
+        palette_bg_faded_fill_white();
+    }
+    else
+    {
+        FadeInFromBlack();
+    }
+}
 
 void palette_bg_faded_fill_white(void)
 {
@@ -239,18 +307,66 @@ void FieldCB_ReturnToFieldWirelessLink(void)
     CreateTask(Task_ReturnToFieldRecordMixing, 10);
 }
 
+static bool8 IsHnsAnimatedDoorExit(s16 x, s16 y)
+{
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_NEW_BARK_TOWN)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_NEW_BARK_TOWN)
+     || gLastUsedWarp.mapGroup != MAP_GROUP(MAP_NEW_BARK_TOWN))
+        return FALSE;
+
+    x -= MAP_OFFSET;
+    y -= MAP_OFFSET;
+    switch (gLastUsedWarp.mapNum)
+    {
+    case MAP_NUM(MAP_NEW_BARK_TOWN_ELMS_LAB):
+        return x == 10 && y == 9;
+    case MAP_NUM(MAP_NEW_BARK_TOWN_REST_HOUSE):
+        return x == 20 && y == 11;
+    case MAP_NUM(MAP_TY_HNS_NEW_BARK_HOUSE1):
+        return x == 4 && y == 21;
+    }
+    return FALSE;
+}
+
+static void TuckHnsDoorFollowers(void)
+{
+    struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
+    struct ObjectEvent *followers[2];
+    u8 i;
+
+    followers[0] = GetFollowerPikachuObject();
+    followers[1] = GetMistyCompanionObject();
+    for (i = 0; i < ARRAY_COUNT(followers); i++)
+    {
+        if (followers[i] != NULL && followers[i]->spriteId < MAX_SPRITES)
+        {
+            ObjectEventClearHeldMovementIfActive(followers[i]);
+            MoveObjectEventToMapCoords(followers[i], player->currentCoords.x, player->currentCoords.y);
+            followers[i]->invisible = TRUE;
+        }
+    }
+}
+
 static void SetUpWarpExitTask(bool8 playerNotMoving)
 {
     s16 x, y;
     u32 metatileBehavior;
     TaskFunc func;
+    u8 taskId;
+    bool8 hnsDoorExit = FALSE;
+    bool8 ordinaryWarp = IsOrdinaryWarpTransition();
 
     PlayerGetDestCoords(&x, &y);
     metatileBehavior = MapGridGetMetatileBehaviorAt(x, y);
     if (MetatileBehavior_IsWarpDoor_2(metatileBehavior) == TRUE)
     {
         func = Task_ExitDoor;
-        switch (MapTransitionIsExit(GetLastUsedWarpMapType(), GetCurrentMapType()))
+        hnsDoorExit = !playerNotMoving && IsHnsAnimatedDoorExit(x, y);
+        if (ordinaryWarp && IsOrdinaryWarpWhite())
+            palette_bg_faded_fill_white();
+        else if (ordinaryWarp)
+            palette_bg_faded_fill_black();
+        else switch (MapTransitionIsExit(GetLastUsedWarpMapType(), GetCurrentMapType()))
         {
         case FALSE:
             palette_bg_faded_fill_black();
@@ -276,13 +392,19 @@ static void SetUpWarpExitTask(bool8 playerNotMoving)
             func = Task_ExitNonDoor;
     }
     gExitStairsMovementDisabled = FALSE;
-    CreateTask(func, 10);
+    taskId = CreateTask(func, 10);
+    gTasks[taskId].data[11] = ordinaryWarp
+        ? (IsOrdinaryWarpWhite() ? ORDINARY_WARP_WHITE : ORDINARY_WARP_BLACK) : 0;
+    if (hnsDoorExit && gTasks[taskId].isActive && gTasks[taskId].func == Task_ExitDoor)
+        gTasks[taskId].data[10] = TRUE;
 }
 
 static void ExitWarpFadeInScreen(bool8 playerNotMoving)
 
 {
-    if (!playerNotMoving)
+    if (IsOrdinaryWarpTransition())
+        FadeInOrdinaryWarp(IsOrdinaryWarpWhite() ? ORDINARY_WARP_WHITE : ORDINARY_WARP_BLACK);
+    else if (!playerNotMoving)
         WarpFadeInScreen();
     else
         FadeInFromBlack();
@@ -294,6 +416,16 @@ void FieldCB_DefaultWarpExit(void)
     QuestLog_DrawPreviouslyOnQuestHeaderIfInPlaybackMode();
     SetUpWarpExitTask(FALSE);
     LockPlayerFieldControls();
+}
+
+static void FieldCB_OrdinaryWarpExit(void)
+{
+    FieldCB_DefaultWarpExit();
+}
+
+static void FieldCB_OrdinaryWarpExitWhite(void)
+{
+    FieldCB_DefaultWarpExit();
 }
 
 void FieldCB_WarpExitFadeFromBlack(void)
@@ -320,16 +452,23 @@ static void Task_ExitDoor(u8 taskId)
     s16 *x = &task->data[2];
     s16 *y = &task->data[3];
 
-    if (task->data[0] == 0)
+    // Ordinary exits use a brief palette fade and opened-door walk-out.
+    // Other original exits retain their original wipe sequence.
+    if (task->data[0] == 0 && !task->data[10] && !task->data[11])
         task->data[0] = 5;
 
     switch (task->data[0])
     {
-    case 0: // Never reached
+    case 0:
         SetPlayerVisibility(0);
         FreezeObjectEvents();
+        TuckHnsDoorFollowers();
         PlayerGetDestCoords(x, y);
         FieldSetDoorOpened(*x, *y);
+        if (task->data[11])
+            FadeInOrdinaryWarp(task->data[11]);
+        else
+            WarpFadeInScreen();
         task->data[0] = 1;
         break;
     case 5:
@@ -385,6 +524,7 @@ static void Task_ExitDoor(u8 taskId)
     case 2:
         if (walkrun_is_standing_still())
         {
+            TuckHnsDoorFollowers();
             task->data[1] = FieldAnimateDoorClose(*x, *y);
             ObjectEventClearHeldMovementIfFinished(&gObjectEvents[GetObjectEventIdByLocalIdAndMap(LOCALID_PLAYER, 0, 0)]);
             task->data[0] = 3;
@@ -543,6 +683,17 @@ void DoWarp(void)
     CreateTask(Task_Teleport2Warp, 10);
 }
 
+void DoOrdinaryWarp(void)
+{
+    LockPlayerFieldControls();
+    TryFadeOutOldMapMusic();
+    SelectOrdinaryWarpTransition();
+    FadeOutOrdinaryWarp();
+    PlayRainStoppingSoundEffect();
+    PlaySE(SE_DOOR);
+    CreateTask(Task_Teleport2Warp, 10);
+}
+
 void DoDiveWarp(void)
 {
     LockPlayerFieldControls();
@@ -556,6 +707,7 @@ void DoDiveWarp(void)
 void DoStairWarp(u16 metatileBehavior, u16 delay)
 {
     u8 taskId = CreateTask(Task_StairWarp, 10);
+    SelectOrdinaryWarpTransition();
     gTasks[taskId].data[1] = metatileBehavior;
     gTasks[taskId].data[15] = delay;
     Task_StairWarp(taskId);
@@ -564,7 +716,7 @@ void DoStairWarp(u16 metatileBehavior, u16 delay)
 void DoDoorWarp(void)
 {
     LockPlayerFieldControls();
-    gFieldCallback = FieldCB_DefaultWarpExit;
+    SelectOrdinaryWarpTransition();
     CreateTask(Task_DoorWarp, 10);
 }
 
@@ -750,7 +902,7 @@ static void Task_DoorWarp(u8 taskId)
     case 0:
         FreezeObjectEvents();
         PlayerGetDestCoords(xp, yp);
-        PlaySE(GetDoorSoundEffect(*xp, *yp - 1));
+        PlaySE(IsOrdinaryWarpTransition() ? SE_DOOR : GetDoorSoundEffect(*xp, *yp - 1));
         task->data[1] = FieldAnimateDoorOpen(*xp, *yp - 1);
         task->data[0] = 1;
         break;
@@ -777,7 +929,10 @@ static void Task_DoorWarp(u8 taskId)
         break;
     case 4:
         TryFadeOutOldMapMusic();
-        WarpFadeOutScreen();
+        if (IsOrdinaryWarpTransition())
+            FadeOutOrdinaryWarp();
+        else
+            WarpFadeOutScreen();
         PlayRainStoppingSoundEffect();
         task->data[0] = 0;
         task->func = Task_Teleport2Warp;
@@ -815,7 +970,7 @@ static void Task_StairWarp(u8 taskId)
                 PlayRainStoppingSoundEffect();
                 playerSpr->oam.priority = 1;
                 ForceStairsMovement(data[1], &data[2], &data[3]);
-                PlaySE(SE_EXIT);
+                PlaySE(SE_DOOR);
                 data[0]++;
             }
         }
@@ -825,7 +980,7 @@ static void Task_StairWarp(u8 taskId)
         data[15]++;
         if (data[15] >= 12)
         {
-            WarpFadeOutScreen();
+            FadeOutOrdinaryWarp();
             data[0]++;
         }
         break;
@@ -835,7 +990,6 @@ static void Task_StairWarp(u8 taskId)
             data[0]++;
         break;
     default:
-        gFieldCallback = FieldCB_DefaultWarpExit;
         WarpIntoMap();
         SetMainCallback2(CB2_LoadMap);
         DestroyTask(taskId);
@@ -907,7 +1061,10 @@ static void Task_ExitStairs(u8 taskId)
         break;
     case 0:
         Overworld_PlaySpecialMapMusic();
-        WarpFadeInScreen();
+        if (data[11])
+            FadeInOrdinaryWarp(data[11]);
+        else
+            WarpFadeInScreen();
         LockPlayerFieldControls();
         ExitStairsMovement(&data[1], &data[2], &data[3], &data[4], &data[5]);
         data[0]++;

@@ -1,4 +1,6 @@
 FortreeCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, FortreeCity_Gym_RotatingGate_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, FortreeCity_Gym_RotatingGate_OnResume
 	.byte 0
 
 FortreeCity_Gym_EventScript_H1::
@@ -70,4 +72,12 @@ FortreeCity_Gym_EventScript_PostBattle::
 	msgbox FortreeCity_Gym_Text_H0_2
 	release
 	end
+
+FortreeCity_Gym_RotatingGate_OnTransition::
+    special RotatingGate_InitPuzzle
+    end
+
+FortreeCity_Gym_RotatingGate_OnResume::
+    special RotatingGate_InitPuzzleAndGraphics
+    end
 @ END PATCH

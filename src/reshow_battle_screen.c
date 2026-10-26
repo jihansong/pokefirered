@@ -9,6 +9,7 @@
 #include "battle_anim.h"
 #include "battle_setup.h"
 #include "battle_controllers.h"
+#include "battle_gfx_sfx_util.h"
 
 static void CB2_ReshowBattleScreenAfterMenu(void);
 static void ReshowBattleScreen_TurnOnDisplay(void);
@@ -18,6 +19,20 @@ static void CreateHealthboxSprite(u8 battlerId);
 
 void ReshowBattleScreenDummy(void)
 {
+    // The menu rebuilds its own sprites. Keep the battle state, but release
+    // the regenerable pictures and HP font while that memory is not in use.
+    // Link controllers have separate sprite synchronization; keep their
+    // existing lifetime until that path has its own two-console verification.
+    if (!(gBattleTypeFlags & BATTLE_TYPE_LINK) && gMonSpritesGfxPtr != NULL)
+    {
+        while (WaitDma3Request(-1) == -1)
+            VBlankIntrWait();
+        SetVBlankCallback(NULL);
+        // Reset before freeing: this also cancels queued SpriteCopy sources
+        // and prevents this frame's AnimateSprites from using old images.
+        ResetSpriteData();
+        FreeMonSpritesGfx();
+    }
 }
 
 void ReshowBattleScreenAfterMenu(void)
@@ -57,6 +72,8 @@ static void CB2_ReshowBattleScreenAfterMenu(void)
     {
     case 0:
         ResetSpriteData();
+        if (gMonSpritesGfxPtr == NULL)
+            AllocateBattleMonSpritesGfx();
         break;
     case 1:
         SetVBlankCallback(NULL);

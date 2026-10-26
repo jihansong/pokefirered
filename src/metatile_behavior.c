@@ -269,6 +269,7 @@ bool8 MetatileBehavior_IsForcedMovementTile(u8 metatileBehavior)
       || (metatileBehavior >= MB_EASTWARD_CURRENT && metatileBehavior <= MB_SOUTHWARD_CURRENT)
       ||  metatileBehavior == MB_WATERFALL
       ||  metatileBehavior == MB_ICE
+      ||  metatileBehavior == MB_MUDDY_SLOPE
       || (metatileBehavior >= MB_SPIN_RIGHT && metatileBehavior <= MB_SPIN_DOWN))
             return TRUE;
     else
@@ -678,11 +679,35 @@ bool8 MetatileBehavior_IsCyclingRoadPullDownTileGrass(u8 metatileBehavior)
     return metatileBehavior == MB_CYCLING_ROAD_PULL_DOWN_GRASS;
 }
 
-bool8 MetatileBehavior_IsBumpySlope(u8 metatileBehavior) { return FALSE; }
-bool8 MetatileBehavior_IsIsolatedVerticalRail(u8 metatileBehavior) { return FALSE; }
-bool8 MetatileBehavior_IsIsolatedHorizontalRail(u8 metatileBehavior) { return FALSE; }
-bool8 MetatileBehavior_IsVerticalRail(u8 metatileBehavior) { return FALSE; }
-bool8 MetatileBehavior_IsHorizontalRail(u8 metatileBehavior) { return FALSE; }
+bool8 MetatileBehavior_IsMuddySlope(u8 metatileBehavior)
+{
+    return metatileBehavior == MB_MUDDY_SLOPE;
+}
+
+bool8 MetatileBehavior_IsBumpySlope(u8 metatileBehavior)
+{
+    return metatileBehavior == MB_BUMPY_SLOPE;
+}
+
+bool8 MetatileBehavior_IsIsolatedVerticalRail(u8 metatileBehavior)
+{
+    return metatileBehavior == MB_ISOLATED_VERTICAL_RAIL;
+}
+
+bool8 MetatileBehavior_IsIsolatedHorizontalRail(u8 metatileBehavior)
+{
+    return metatileBehavior == MB_ISOLATED_HORIZONTAL_RAIL;
+}
+
+bool8 MetatileBehavior_IsVerticalRail(u8 metatileBehavior)
+{
+    return metatileBehavior == MB_VERTICAL_RAIL;
+}
+
+bool8 MetatileBehavior_IsHorizontalRail(u8 metatileBehavior)
+{
+    return metatileBehavior == MB_HORIZONTAL_RAIL;
+}
 
 bool8 MetatileBehavior_IsSeaweed(u8 metatileBehavior)
 {

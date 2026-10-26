@@ -405,3 +405,5 @@ static void QueueAnimTiles_EmBattlePyramid_Torch(u16 timer);
 static void QueueAnimTiles_EmBattlePyramid_StatueShadow(u16 timer);
 #include "data/tilesets/hoenn_anims.h"
 // END HOENN TILESET ANIMS
+
+#include "data/tilesets/ty_hns_johto_anims.h"

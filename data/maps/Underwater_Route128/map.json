@@ -18,11 +18,6 @@
       "map": "MAP_UNDERWATER_ROUTE127",
       "offset": 0,
       "direction": "up"
-    },
-    {
-      "map": "MAP_ROUTE128",
-      "offset": 0,
-      "direction": "emerge"
     }
   ],
   "object_events": [],

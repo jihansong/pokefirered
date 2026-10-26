@@ -961,12 +961,12 @@
       "secondaryId": 0
     },
     {
-      "english": "????????",
-      "itemId": "ITEM_NONE",
-      "price": 0,
+      "english": "SHINY STONE",
+      "itemId": "ITEM_SHINY_STONE",
+      "price": 2100,
       "holdEffect": "HOLD_EFFECT_NONE",
       "holdEffectParam": 0,
-      "description_english": "?????",
+      "description_english": "A rare stone that sparkles with\\na dazzling light.",
       "importance": 0,
       "registrability": 0,
       "pocket": "POCKET_ITEMS",

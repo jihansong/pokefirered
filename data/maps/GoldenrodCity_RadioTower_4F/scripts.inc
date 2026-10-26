@@ -10,6 +10,7 @@ GoldenrodCity_RadioTower_4F_UpperGate::
 lockall
     goto_if_not_defeated TRAINER_JOHTO_ARIANA_RADIO, GoldenrodCity_RadioTower_4F_UpperGateClosed
     releaseall
+    special SetOrdinaryWarpTransition
     warp MAP_GOLDENROD_CITY_RADIO_TOWER_5F, 0
     waitstate
     end

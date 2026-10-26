@@ -619,7 +619,7 @@ void CB2_InitBattle(void)
     MoveSaveBlocks_ResetHeap();
     AllocateBattleResources();
     AllocateBattleSpritesData();
-    AllocateMonSpritesGfx();
+    AllocateBattleMonSpritesGfx();
     if (gBattleTypeFlags & BATTLE_TYPE_MULTI)
     {
         HandleLinkBattleSetup();

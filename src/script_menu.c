@@ -595,6 +595,32 @@ static const struct MenuAction sMultichoiceList_BrineyFromRoute104[] = { { Route
 static const struct MenuAction sMultichoiceList_BrineyFromDewford[] = { { Route104_Text_BrineyMenuRoute104 }, { Route104_Text_BrineyMenuRoute109 }, { Route104_Text_BrineyMenuStay } };
 static const struct MenuAction sMultichoiceList_BrineyFromRoute109[] = { { Route104_Text_BrineyMenuRoute104 }, { Route104_Text_BrineyMenuDewford }, { Route104_Text_BrineyMenuStay } };
 
+static const u8 sText_RydelExchange[] = _("EXCHANGE");
+static const u8 sText_RydelRecord[] = _("RECORD");
+static const u8 sText_RydelGuide[] = _("GUIDE");
+static const u8 sText_RydelExit[] = _("EXIT");
+static const u8 sText_RydelMach[] = _("MACH BIKE");
+static const u8 sText_RydelAcro[] = _("ACRO BIKE");
+static const u8 sText_RydelCancel[] = _("CANCEL");
+static const u8 sText_RydelRiding[] = _("HOW TO RIDE");
+static const u8 sText_RydelTurning[] = _("HOW TO TURN");
+static const u8 sText_RydelSlopes[] = _("SANDY SLOPES");
+static const u8 sText_RydelWheelies[] = _("WHEELIES");
+static const u8 sText_RydelHops[] = _("BUNNY HOPS");
+static const u8 sText_RydelJumps[] = _("JUMPS");
+static const struct MenuAction sMultichoiceList_RydelService[] = {
+    {sText_RydelExchange}, {sText_RydelRecord}, {sText_RydelGuide}, {sText_RydelExit}
+};
+static const struct MenuAction sMultichoiceList_RydelBike[] = {
+    {sText_RydelMach}, {sText_RydelAcro}, {sText_RydelCancel}
+};
+static const struct MenuAction sMultichoiceList_MachInfo[] = {
+    {sText_RydelRiding}, {sText_RydelTurning}, {sText_RydelSlopes}, {sText_RydelExit}
+};
+static const struct MenuAction sMultichoiceList_AcroInfo[] = {
+    {sText_RydelWheelies}, {sText_RydelHops}, {sText_RydelJumps}, {sText_RydelExit}
+};
+
 static const struct MultichoiceListStruct sMultichoiceLists[] = {
     [MULTICHOICE_YES_NO]                                     = MULTICHOICE(sMultichoiceList_YesNo),
     [MULTICHOICE_EEVEELUTIONS]                               = MULTICHOICE(sMultichoiceList_Eeveelutions),
@@ -686,6 +712,10 @@ static const struct MultichoiceListStruct sMultichoiceLists[] = {
     [MULTICHOICE_BRINEY_FROM_ROUTE104]                       = MULTICHOICE(sMultichoiceList_BrineyFromRoute104),
     [MULTICHOICE_BRINEY_FROM_DEWFORD]                        = MULTICHOICE(sMultichoiceList_BrineyFromDewford),
     [MULTICHOICE_BRINEY_FROM_ROUTE109]                       = MULTICHOICE(sMultichoiceList_BrineyFromRoute109),
+    [MULTI_TY_RYDEL_SERVICE] = MULTICHOICE(sMultichoiceList_RydelService),
+    [MULTI_TY_RYDEL_BIKE] = MULTICHOICE(sMultichoiceList_RydelBike),
+    [MULTI_TY_MACH_INFO] = MULTICHOICE(sMultichoiceList_MachInfo),
+    [MULTI_TY_ACRO_INFO] = MULTICHOICE(sMultichoiceList_AcroInfo),
 };
 
 // From Cool to Berries goes unused

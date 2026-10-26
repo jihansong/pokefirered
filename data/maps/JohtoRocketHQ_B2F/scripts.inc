@@ -21,6 +21,7 @@ lockall
     end
 JohtoRocketHQ_B2F_Open::
     releaseall
+    special SetOrdinaryWarpTransition
     warp MAP_JOHTO_ROCKET_HQ_B3F, 0
     waitstate
     end

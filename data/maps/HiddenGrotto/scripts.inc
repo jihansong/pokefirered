@@ -39,6 +39,7 @@ HiddenGrotto_EventScript_TryEnter::
 	goto_if_eq VAR_RESULT, NO, HiddenGrotto_EventScript_DontEnter
 	copyvar VAR_HIDDEN_GROTTO_ID, VAR_0x8008
 	closemessage
+	special SetOrdinaryWarpTransition
 	warp MAP_HIDDEN_GROTTO, 7, 9
 	waitstate
 	releaseall

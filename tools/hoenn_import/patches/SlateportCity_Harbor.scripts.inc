@@ -44,6 +44,7 @@ SlateportCity_Harbor_EventScript_BadgeKeeperNone::
 
 SlateportCity_Harbor_OnFrame::
 	map_script_2 VAR_HOENN_SCENE_HARBOR, 0, SlateportCity_Harbor_EventScript_ArrivalScene
+	map_script_2 VAR_TEMP_8, 0, SlateportCity_Harbor_VS_Escape
 	.2byte 0
 
 SlateportCity_Harbor_EventScript_ArrivalScene::
@@ -201,3 +202,58 @@ SlateportCity_Harbor_EventScript_DevonAlreadyDelivered::
 SlateportCity_Harbor_EventScript_JohtoReferral::
 	msgbox SlateportCity_Harbor_Text_JohtoReferral
 	return
+
+SlateportCity_Harbor_VS_Escape::
+	lockall
+	setvar VAR_TEMP_8, 1
+	goto_if_set FLAG_HIDE_HOENN_HARBOR_SUBMARINE_RAID, SlateportCity_Harbor_VS_End
+	playbgm MUS_ENCOUNTER_AQUA, FALSE
+	msgbox SlateportCity_Harbor_VS_Text_Archie
+	closemessage
+	playse SE_SHIP
+	applymovement 5, SlateportCity_Harbor_VS_Movement_Board
+	applymovement 6, SlateportCity_Harbor_VS_Movement_Board
+	applymovement 7, SlateportCity_Harbor_VS_Movement_SubmarineExit
+	waitmovement 0
+	playse SE_M_DIVE
+	delay 32
+	setflag FLAG_HOENN_SUBMARINE_STOLEN
+	setflag FLAG_HIDE_HOENN_HARBOR_SUBMARINE_RAID
+	removeobject 5
+	removeobject 6
+	removeobject 7
+	fadedefaultbgm
+	msgbox SlateportCity_Harbor_VS_Text_SternAfter
+SlateportCity_Harbor_VS_End::
+	releaseall
+	end
+SlateportCity_Harbor_VS_Archie::
+	end
+SlateportCity_Harbor_VS_Grunt::
+	end
+SlateportCity_Harbor_VS_Submarine::
+	end
+
+SlateportCity_Harbor_VS_Movement_Board:
+	delay_16
+	delay_16
+	jump_up
+	set_invisible
+	step_end
+
+SlateportCity_Harbor_VS_Movement_SubmarineExit:
+	disable_anim
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	walk_right
+	walk_right
+	walk_right
+	delay_16
+	delay_16
+	step_end
+
+SlateportCity_Harbor_VS_OnTransition::
+	special HoennVillain_SetupObjects
+	end

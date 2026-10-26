@@ -1,0 +1,554 @@
+{
+  "version": 2,
+  "source_tiles_only": true,
+  "maps": {
+    "HoennSpaceportTerminal": {
+      "layout": "LAYOUT_HOENN_SPACEPORT_TERMINAL",
+      "secondary_tileset": "gTileset_TYSpaceStyleV2Interior",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennSpaceportTerminal.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennSpaceportTerminal.space-border.bin"
+    },
+    "HoennSpaceportLaunchPad": {
+      "layout": "LAYOUT_HOENN_SPACEPORT_LAUNCH_PAD",
+      "secondary_tileset": "gTileset_TYSpaceStyleV2Launch",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennSpaceportLaunchPad.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennSpaceportLaunchPad.space-border.bin"
+    },
+    "HoennSpacecraftCabin": {
+      "layout": "LAYOUT_HOENN_SPACECRAFT_CABIN",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4Lobby",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennSpacecraftCabin.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennSpacecraftCabin.space-border.bin"
+    },
+    "HoennSpacecraftEngineering": {
+      "layout": "LAYOUT_HOENN_SPACECRAFT_ENGINEERING",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4Engineering",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennSpacecraftEngineering.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennSpacecraftEngineering.space-border.bin"
+    },
+    "HoennOrbitalObservatory": {
+      "layout": "LAYOUT_HOENN_ORBITAL_OBSERVATORY",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4Observatory",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennOrbitalObservatory.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennOrbitalObservatory.space-border.bin"
+    },
+    "HoennSpacecraftCockpit": {
+      "layout": "LAYOUT_HOENN_SPACECRAFT_COCKPIT",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4Cockpit",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennSpacecraftCockpit.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennSpacecraftCockpit.space-border.bin"
+    },
+    "HoennSpacecraftNavigation": {
+      "layout": "LAYOUT_HOENN_SPACECRAFT_NAVIGATION",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4Navigation",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennSpacecraftNavigation.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennSpacecraftNavigation.space-border.bin"
+    },
+    "HoennSpacecraftCaptainsOffice": {
+      "layout": "LAYOUT_HOENN_SPACECRAFT_CAPTAINS_OFFICE",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4CaptainsOffice",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennSpacecraftCaptainsOffice.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennSpacecraftCaptainsOffice.space-border.bin"
+    },
+    "HoennSpacecraftCrewQuarters": {
+      "layout": "LAYOUT_HOENN_SPACECRAFT_CREW_QUARTERS",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4CrewQuarters",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennSpacecraftCrewQuarters.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennSpacecraftCrewQuarters.space-border.bin"
+    },
+    "HoennSpacecraftCrewMess": {
+      "layout": "LAYOUT_HOENN_SPACECRAFT_CREW_MESS",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4CrewMess",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennSpacecraftCrewMess.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennSpacecraftCrewMess.space-border.bin"
+    },
+    "HoennSpacecraftFoodCourt": {
+      "layout": "LAYOUT_HOENN_SPACECRAFT_FOOD_COURT",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4FoodCourt",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennSpacecraftFoodCourt.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennSpacecraftFoodCourt.space-border.bin"
+    },
+    "HoennSpacecraftLounge": {
+      "layout": "LAYOUT_HOENN_SPACECRAFT_LOUNGE",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4Lounge",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennSpacecraftLounge.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennSpacecraftLounge.space-border.bin"
+    },
+    "HoennSpacecraftGameRoom": {
+      "layout": "LAYOUT_HOENN_SPACECRAFT_GAME_ROOM",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4GameRoom",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennSpacecraftGameRoom.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennSpacecraftGameRoom.space-border.bin"
+    },
+    "HoennSpacecraftBattleDeck": {
+      "layout": "LAYOUT_HOENN_SPACECRAFT_BATTLE_DECK",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4BattleDeck",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennSpacecraftBattleDeck.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennSpacecraftBattleDeck.space-border.bin"
+    },
+    "HoennSpacecraftCabinCorridor": {
+      "layout": "LAYOUT_HOENN_SPACECRAFT_CABIN_CORRIDOR",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4CabinCorridor",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennSpacecraftCabinCorridor.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennSpacecraftCabinCorridor.space-border.bin"
+    },
+    "HoennSpacecraftGuestRoom1": {
+      "layout": "LAYOUT_HOENN_SPACECRAFT_GUEST_ROOM1",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4GuestRoom1",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennSpacecraftGuestRoom1.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennSpacecraftGuestRoom1.space-border.bin"
+    },
+    "HoennSpacecraftGuestRoom2": {
+      "layout": "LAYOUT_HOENN_SPACECRAFT_GUEST_ROOM2",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4GuestRoom2",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennSpacecraftGuestRoom2.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennSpacecraftGuestRoom2.space-border.bin"
+    },
+    "HoennSpacecraftGuestRoom3": {
+      "layout": "LAYOUT_HOENN_SPACECRAFT_GUEST_ROOM3",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4GuestRoom3",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennSpacecraftGuestRoom3.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennSpacecraftGuestRoom3.space-border.bin"
+    },
+    "HoennSpacecraftCargoHold": {
+      "layout": "LAYOUT_HOENN_SPACECRAFT_CARGO_HOLD",
+      "secondary_tileset": "gTileset_TYSpaceDeckV4CargoHold",
+      "canonical_blockdata": "tools/hoenn_import/patches/HoennSpacecraftCargoHold.blockdata.bin",
+      "canonical_border": "tools/hoenn_import/patches/HoennSpacecraftCargoHold.space-border.bin"
+    }
+  },
+  "profiles": {
+    "Interior": {
+      "symbol": "gTileset_TYSpaceStyleV2Interior",
+      "aliases": {
+        "531": {
+          "source_metatile": 759,
+          "behavior": "0x0"
+        },
+        "1000": {
+          "source_metatile": 716,
+          "behavior": "0x65"
+        },
+        "1001": {
+          "source_metatile": 716,
+          "behavior": "0x64"
+        },
+        "1002": {
+          "source_metatile": 716,
+          "behavior": "0x62"
+        },
+        "1003": {
+          "source_metatile": 716,
+          "behavior": "0x63"
+        }
+      },
+      "donor": "em_facility",
+      "folder": "data/tilesets/secondary/ty_space_interior_v3"
+    },
+    "Launch": {
+      "symbol": "gTileset_TYSpaceStyleV2Launch",
+      "aliases": {
+        "1000": {
+          "behavior": "0x65",
+          "source": "existing native caution-floor pixels"
+        },
+        "1001": {
+          "behavior": "0x64",
+          "source": "existing native caution-floor pixels"
+        },
+        "1002": {
+          "behavior": "0x62",
+          "source": "existing native caution-floor pixels"
+        },
+        "1003": {
+          "behavior": "0x63",
+          "source": "existing native caution-floor pixels"
+        }
+      },
+      "donor": "em_mossdeep",
+      "folder": "data/tilesets/secondary/ty_space_style_v2_launch"
+    },
+    "DeckV4Cabin": {
+      "symbol": "gTileset_TYSpaceDeckV4Lobby",
+      "folder": "data/tilesets/secondary/ty_space_v4_cabin",
+      "donor": "complete original FRLG/Emerald source furniture; exact RGB555/alpha packing",
+      "generated_by": "build_space_decks_v4.py"
+    },
+    "DeckV4Engineering": {
+      "symbol": "gTileset_TYSpaceDeckV4Engineering",
+      "folder": "data/tilesets/secondary/ty_space_v4_engineering",
+      "donor": "complete original FRLG/Emerald source furniture; exact RGB555/alpha packing",
+      "generated_by": "build_space_decks_v4.py"
+    },
+    "DeckV4Observatory": {
+      "symbol": "gTileset_TYSpaceDeckV4Observatory",
+      "folder": "data/tilesets/secondary/ty_space_v4_observatory",
+      "donor": "complete original FRLG/Emerald source furniture; exact RGB555/alpha packing",
+      "generated_by": "build_space_decks_v4.py"
+    },
+    "DeckV4Cockpit": {
+      "symbol": "gTileset_TYSpaceDeckV4Cockpit",
+      "folder": "data/tilesets/secondary/ty_space_v4_cockpit",
+      "donor": "complete original FRLG/Emerald source furniture; exact RGB555/alpha packing",
+      "generated_by": "build_space_decks_v4.py"
+    },
+    "DeckV4Navigation": {
+      "symbol": "gTileset_TYSpaceDeckV4Navigation",
+      "folder": "data/tilesets/secondary/ty_space_v4_navigation",
+      "donor": "complete original FRLG/Emerald source furniture; exact RGB555/alpha packing",
+      "generated_by": "build_space_decks_v4.py"
+    },
+    "DeckV4CaptainsOffice": {
+      "symbol": "gTileset_TYSpaceDeckV4CaptainsOffice",
+      "folder": "data/tilesets/secondary/ty_space_v4_captainsoffice",
+      "donor": "complete original FRLG/Emerald source furniture; exact RGB555/alpha packing",
+      "generated_by": "build_space_decks_v4.py"
+    },
+    "DeckV4CrewQuarters": {
+      "symbol": "gTileset_TYSpaceDeckV4CrewQuarters",
+      "folder": "data/tilesets/secondary/ty_space_v4_crewquarters",
+      "donor": "complete original FRLG/Emerald source furniture; exact RGB555/alpha packing",
+      "generated_by": "build_space_decks_v4.py"
+    },
+    "DeckV4CrewMess": {
+      "symbol": "gTileset_TYSpaceDeckV4CrewMess",
+      "folder": "data/tilesets/secondary/ty_space_v4_crewmess",
+      "donor": "complete original FRLG/Emerald source furniture; exact RGB555/alpha packing",
+      "generated_by": "build_space_decks_v4.py"
+    },
+    "DeckV4FoodCourt": {
+      "symbol": "gTileset_TYSpaceDeckV4FoodCourt",
+      "folder": "data/tilesets/secondary/ty_space_v4_foodcourt",
+      "donor": "complete original FRLG/Emerald source furniture; exact RGB555/alpha packing",
+      "generated_by": "build_space_decks_v4.py"
+    },
+    "DeckV4Lounge": {
+      "symbol": "gTileset_TYSpaceDeckV4Lounge",
+      "folder": "data/tilesets/secondary/ty_space_v4_lounge",
+      "donor": "complete original FRLG/Emerald source furniture; exact RGB555/alpha packing",
+      "generated_by": "build_space_decks_v4.py"
+    },
+    "DeckV4GameRoom": {
+      "symbol": "gTileset_TYSpaceDeckV4GameRoom",
+      "folder": "data/tilesets/secondary/ty_space_v4_gameroom",
+      "donor": "complete original FRLG/Emerald source furniture; exact RGB555/alpha packing",
+      "generated_by": "build_space_decks_v4.py"
+    },
+    "DeckV4BattleDeck": {
+      "symbol": "gTileset_TYSpaceDeckV4BattleDeck",
+      "folder": "data/tilesets/secondary/ty_space_v4_battledeck",
+      "donor": "complete original FRLG/Emerald source furniture; exact RGB555/alpha packing",
+      "generated_by": "build_space_decks_v4.py"
+    },
+    "DeckV4CabinCorridor": {
+      "symbol": "gTileset_TYSpaceDeckV4CabinCorridor",
+      "folder": "data/tilesets/secondary/ty_space_v4_cabincorridor",
+      "donor": "complete original FRLG/Emerald source furniture; exact RGB555/alpha packing",
+      "generated_by": "build_space_decks_v4.py"
+    },
+    "DeckV4GuestRoom1": {
+      "symbol": "gTileset_TYSpaceDeckV4GuestRoom1",
+      "folder": "data/tilesets/secondary/ty_space_v4_guestroom1",
+      "donor": "complete original FRLG/Emerald source furniture; exact RGB555/alpha packing",
+      "generated_by": "build_space_decks_v4.py"
+    },
+    "DeckV4GuestRoom2": {
+      "symbol": "gTileset_TYSpaceDeckV4GuestRoom2",
+      "folder": "data/tilesets/secondary/ty_space_v4_guestroom2",
+      "donor": "complete original FRLG/Emerald source furniture; exact RGB555/alpha packing",
+      "generated_by": "build_space_decks_v4.py"
+    },
+    "DeckV4GuestRoom3": {
+      "symbol": "gTileset_TYSpaceDeckV4GuestRoom3",
+      "folder": "data/tilesets/secondary/ty_space_v4_guestroom3",
+      "donor": "complete original FRLG/Emerald source furniture; exact RGB555/alpha packing",
+      "generated_by": "build_space_decks_v4.py"
+    },
+    "DeckV4CargoHold": {
+      "symbol": "gTileset_TYSpaceDeckV4CargoHold",
+      "folder": "data/tilesets/secondary/ty_space_v4_cargohold",
+      "donor": "complete original FRLG/Emerald source furniture; exact RGB555/alpha packing",
+      "generated_by": "build_space_decks_v4.py"
+    }
+  },
+  "observatory_native_earth_window": {
+    "source": "Existing ty_spaceport original window metatiles565..596 and native bank11; no new Earth image.",
+    "target_xy": [
+      6,
+      2
+    ],
+    "dimensions_metatiles": [
+      8,
+      4
+    ],
+    "new_metatiles": [
+      850,
+      851,
+      852,
+      853,
+      854,
+      855,
+      856,
+      857,
+      858,
+      859,
+      860,
+      861,
+      862,
+      863,
+      864,
+      865,
+      866,
+      867,
+      868,
+      869,
+      870,
+      871,
+      872,
+      873,
+      874,
+      875,
+      876,
+      877,
+      878,
+      879,
+      880,
+      881
+    ],
+    "secondary_tile_mapping": {
+      "693": 512,
+      "694": 513,
+      "709": 514,
+      "710": 515,
+      "695": 516,
+      "696": 517,
+      "711": 518,
+      "712": 519,
+      "697": 520,
+      "698": 521,
+      "713": 522,
+      "714": 523,
+      "699": 524,
+      "700": 525,
+      "715": 526,
+      "716": 527,
+      "701": 528,
+      "702": 529,
+      "717": 530,
+      "718": 531,
+      "703": 532,
+      "704": 533,
+      "719": 534,
+      "720": 535,
+      "705": 536,
+      "706": 537,
+      "721": 538,
+      "722": 539,
+      "707": 540,
+      "708": 541,
+      "723": 542,
+      "724": 543,
+      "725": 544,
+      "726": 545,
+      "741": 546,
+      "742": 547,
+      "727": 548,
+      "728": 549,
+      "743": 550,
+      "744": 551,
+      "729": 552,
+      "730": 553,
+      "745": 554,
+      "746": 555,
+      "731": 556,
+      "732": 557,
+      "747": 558,
+      "748": 559,
+      "733": 560,
+      "734": 561,
+      "749": 562,
+      "750": 563,
+      "735": 564,
+      "736": 565,
+      "751": 566,
+      "752": 567,
+      "737": 568,
+      "738": 569,
+      "753": 570,
+      "754": 571,
+      "739": 574,
+      "740": 575,
+      "755": 576,
+      "756": 577,
+      "757": 582,
+      "758": 583,
+      "773": 584,
+      "774": 585,
+      "759": 586,
+      "760": 587,
+      "775": 590,
+      "776": 591,
+      "761": 592,
+      "762": 593,
+      "777": 594,
+      "778": 595,
+      "763": 596,
+      "764": 597,
+      "779": 598,
+      "780": 599,
+      "765": 600,
+      "766": 601,
+      "781": 602,
+      "782": 603,
+      "767": 604,
+      "768": 605,
+      "783": 606,
+      "784": 607,
+      "769": 613,
+      "770": 614,
+      "785": 615,
+      "786": 616,
+      "771": 617,
+      "772": 618,
+      "787": 619,
+      "788": 620,
+      "789": 621,
+      "790": 622,
+      "805": 623,
+      "806": 629,
+      "791": 630,
+      "792": 631,
+      "807": 632,
+      "808": 633,
+      "793": 634,
+      "794": 635,
+      "809": 636,
+      "810": 637,
+      "795": 638,
+      "796": 639,
+      "811": 640,
+      "812": 641,
+      "797": 642,
+      "798": 643,
+      "813": 648,
+      "814": 649,
+      "799": 650,
+      "800": 651,
+      "815": 652,
+      "816": 656,
+      "801": 657,
+      "802": 658,
+      "817": 659,
+      "818": 664,
+      "803": 665,
+      "804": 666,
+      "819": 667,
+      "820": 668
+    },
+    "used_existing_tiles": 71,
+    "existing_71_used_tiles_unmodified": true,
+    "palette11_unused_by_existing_props": true,
+    "input_native_files": [
+      {
+        "path": "data/tilesets/secondary/ty_spaceport/tiles.4bpp",
+        "sha256": "b5d274ed5d615f02f8cf90a1b2ad06c073c741542d1b9382463572b3eed4ca59"
+      },
+      {
+        "path": "data/tilesets/secondary/ty_spaceport/metatiles.bin",
+        "sha256": "6421d0fc247ff4a463996e2f40760480e88d12531e9a68dda928fbe3fe0e430c"
+      },
+      {
+        "path": "data/tilesets/secondary/ty_spaceport/palettes.gbapal",
+        "sha256": "505cbd0569915ccd0453a18664201a6fe102fe12e93c72bb39faef28fbdbd4e5"
+      },
+      {
+        "path": "data/tilesets/secondary/ty_spaceport/metatile_attributes.bin",
+        "sha256": "b55c2f4a81e62b9321c63469492326fc2e268ee5690811f5e7215e2cd04cdbfc"
+      }
+    ]
+  },
+  "interior_v3": {
+    "generator": "tools/hoenn_import/build_space_interiors_v3.py",
+    "source_pixels_only": true,
+    "primary_palette_0_to_5_unchanged": true,
+    "secondary_banks": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "crew_and_encounter_coordinates_preserved": true,
+    "inputs_sha256": {
+      "data/tilesets/primary/em_general/palettes/00.gbapal": "f79c00289433a5acdee92c89c8c25d1e33f5183d3599043116063a242c152aa7",
+      "data/tilesets/primary/em_general/palettes/01.gbapal": "c9bea5d72185c8691e166df464984db67da713d2de3880135dd0a3a2cbb525c5",
+      "data/tilesets/primary/em_general/palettes/02.gbapal": "2b85cb97303e882a92f1eff48a21ae32014b066ceeb659d91eea4e09628e3b4e",
+      "data/tilesets/primary/em_general/palettes/03.gbapal": "c5cd1d24a729fcb82ab76df2e71b3a484f17f64be30e53f43911ceed132895d6",
+      "data/tilesets/primary/em_general/palettes/04.gbapal": "2cd18a25465ae0d90aebb50ee913cc5f5de5ac402aa46a19da52c584bfafeef1",
+      "data/tilesets/primary/em_general/palettes/05.gbapal": "ed8715a928d14cc773830f2137f43c8676c675fbe32ffc5c7811c59f3c1459f3",
+      "data/tilesets/secondary/ty_space_style_v2_interior/palettes.gbapal": "8d33f5a76cf57bce421159ea679c2f138d3c0c735d7786e726dc7d5e2eb35052",
+      "data/tilesets/primary/em_general/tiles.4bpp": "24d47a59efccb7febfcd78bbfe472659694b2501bb9e34704138b5dd302dcc8b",
+      "data/tilesets/secondary/ty_space_style_v2_interior/tiles.4bpp": "a6af3428e196c8ba4aa87bcd1958a7250acc219dbd8cf606d6d55898e5c5581b",
+      "data/tilesets/primary/em_general/metatiles.bin": "17974b0ba1bb9d105d5ba255c69a3b80d8484a26ea0b8ff22c6c6567c6c22910",
+      "data/tilesets/secondary/ty_space_style_v2_interior/metatiles.bin": "fcff606793eecd99294ae23bc2f48e0d0a75143473613cc718c6ff5ec22c131c",
+      "data/tilesets/primary/general/palettes/00.gbapal": "3525f7343613ee25ccc6582226ab0794952cf0751db5015ec899bdabc88e992f",
+      "data/tilesets/primary/general/palettes/01.gbapal": "7280837529c51caf33c81718576d7a698822bce4b4529d5a9f57bcf3ae3397aa",
+      "data/tilesets/primary/general/palettes/02.gbapal": "7f57f902f995471c721917fb15f3aebf7d7cc8fa4e6115405e9470499a1651d7",
+      "data/tilesets/primary/general/palettes/03.gbapal": "c629b843f83bd277837be03082bd44d3fab94baa837729af22b099dbdaadd5ad",
+      "data/tilesets/primary/general/palettes/04.gbapal": "3ce354fa60ab24fae549763164d54dfdd948d121284c34829dd2521f2f32628a",
+      "data/tilesets/primary/general/palettes/05.gbapal": "a87a0348c925e9451d534ce4f34752e380283c10cf3323ae2f639aebd1b067f8",
+      "data/tilesets/primary/general/palettes/06.gbapal": "e2554fb3467c7b2ef8f257748df82bd59faa6f420b8d1b3f3f0ee476d154a991",
+      "data/tilesets/secondary/ss_anne/palettes/07.gbapal": "14f57b8292bb1e8a01599069fcff5bef0ca90b19ea4f98dcc014df9028a1cd21",
+      "data/tilesets/secondary/ss_anne/palettes/08.gbapal": "342740fc190c425d0bc89fd20cdb243049ce242d8bc134f768646a5daa76232d",
+      "data/tilesets/secondary/ss_anne/palettes/09.gbapal": "ab18b7390d68576799933a2a2a9e7dbba215d6f376eedeb6ed831ca0f25ccc56",
+      "data/tilesets/secondary/ss_anne/palettes/10.gbapal": "dce57e99c7dc9c537663bec25347a02cc0edad21ce2b4dabcb3caf790a3e4ff4",
+      "data/tilesets/secondary/ss_anne/palettes/11.gbapal": "be2a879480aa71153c10028f787e4651087b9d7a31ed90f8143f3a35bae1fd48",
+      "data/tilesets/secondary/ss_anne/palettes/12.gbapal": "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925",
+      "data/tilesets/primary/general/tiles.4bpp": "0e69da87ae43c973edd81c5e16be0185f561257d04300e7977b5ae2f0377c97f",
+      "data/tilesets/secondary/ss_anne/tiles.4bpp": "52d21c23e0eb00b2aeb78fbcf68194a7680fc5c2c0f675b5c46d03275fe29d91",
+      "data/tilesets/primary/general/metatiles.bin": "8d950c1a1f151f5e1bded1ecee165b815c3a4d62b69a4a9cec4f676283f9041e",
+      "data/tilesets/secondary/ss_anne/metatiles.bin": "b9e8c5a58e7150db9a4c24f493eb8ac1fa62bd61366af596e236b851b77555a4",
+      "data/tilesets/secondary/em_bike_shop/palettes/06.gbapal": "1bfc3601ab9a55a40741d7ba68514e6d11880d2e65307c2f7fa9539de98950f5",
+      "data/tilesets/secondary/em_bike_shop/palettes/07.gbapal": "05b1ec8a95d963b84b3cfa8c275d198faf6a5e819d15595fc133a1f32726c3fa",
+      "data/tilesets/secondary/em_bike_shop/palettes/08.gbapal": "02678693d746618c197390b7f592ac93546c16d66265bd6f4128aa35392f8e71",
+      "data/tilesets/secondary/em_bike_shop/palettes/09.gbapal": "8c4c51551b984064259147003c834078caa93f21fd7531e77afa61cbf24695f5",
+      "data/tilesets/secondary/em_bike_shop/palettes/10.gbapal": "9cd99d030159cff9ad53a1dd586a6a40034af1f7172326d15a936afb9ee47bbb",
+      "data/tilesets/secondary/em_bike_shop/palettes/11.gbapal": "b5c6460709dd08f4d9570eb34954940eb3315ee6538922235905ddeadf6bc980",
+      "data/tilesets/secondary/em_bike_shop/palettes/12.gbapal": "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925",
+      "data/tilesets/secondary/em_bike_shop/tiles.4bpp": "9b4b8f0a7accbd05837eff957cf9a975e09658d799518fd3bab62e1f128f4970",
+      "data/tilesets/secondary/em_bike_shop/metatiles.bin": "49fab80e1417749353c7661af98a76244c54249f2b7914fe1764d7b63cf6b614",
+      "data/tilesets/secondary/em_facility/palettes/06.gbapal": "1d7d74e59aa07591a93b356d0b36bf9169bf93d5757b597a3476803ba6dcd514",
+      "data/tilesets/secondary/em_facility/palettes/07.gbapal": "bd1fb391cad3e111ec7e2ca16fb40f840be591f8cb71f92c6e7b9d41a84e08c7",
+      "data/tilesets/secondary/em_facility/palettes/08.gbapal": "a419cbc911130a42d0d6d3607ff63c1d3492c904c7219c19a834cbd046ada6da",
+      "data/tilesets/secondary/em_facility/palettes/09.gbapal": "aa145bd66ba31951ef13f15da9aff2ac939ba16719c48454df95eb3c7d6e3baa",
+      "data/tilesets/secondary/em_facility/palettes/10.gbapal": "a7b9dde958c160121cdd141359f409013e6c3972ae675705f04e205e27cfade8",
+      "data/tilesets/secondary/em_facility/palettes/11.gbapal": "06a52ca5f8b7c856c6f76713e6e4653f6bc49d9dc3f8fa262848e5b1cd83252f",
+      "data/tilesets/secondary/em_facility/palettes/12.gbapal": "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925",
+      "data/tilesets/secondary/em_facility/tiles.4bpp": "5a5fc66ddf35fa0bae5b57fec9132b52e49f049104dc05f600805af74280f379",
+      "data/tilesets/secondary/em_facility/metatiles.bin": "a10a62da7662d4beca3f6fb4a196ebf6151cc54187b69582325813bb5412c9ab",
+      "data/tilesets/secondary/ty_space_style_v2_interior/metatile_attributes.bin": "821ff0d346d3b55b9f56950ad3d18686f0f8b972d59693cb5ad49850091db8b2"
+    }
+  },
+  "interior_v4": {
+    "generator": "tools/hoenn_import/build_space_decks_v4.py",
+    "contract": "tools/hoenn_import/space_deck_v4_contract.json",
+    "source_pixels_only": true,
+    "maps": 17,
+    "private_profiles": 17,
+    "primary_palette_0_to_5_unchanged": true,
+    "secondary_banks": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "tile_capacity": 512,
+    "previous_interior_v3": "retained as legacy provenance and ground Terminal donor; not applied to the seventeen V4 interiors",
+    "native_validation": "pending final integrated ROM"
+  }
+}

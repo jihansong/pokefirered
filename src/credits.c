@@ -17,6 +17,11 @@
 #include "constants/sound.h"
 #include "constants/songs.h"
 #include "sound.h"
+#include "event_object_movement.h"
+#include "pokemon_icon.h"
+#include "trig.h"
+#include "constants/event_objects.h"
+#include "constants/event_object_movement.h"
 
 #if defined(FIRERED)
 #define TITLE_TEXT gString_PokemonFireRed_Staff
@@ -166,6 +171,12 @@ struct CreditsResources
     u8 filler_10[12];
     u8 ovwldseqno;
     u8 unk_1D;
+    // Credits-only heap state; no persistent save structure is extended.
+    u8 castSpriteIds[6];
+    u8 currentMapScene;
+    u8 captionWindowId;
+    bool8 captionIsActive;
+    u16 sceneFrame;
 };
 
 struct CreditsScrcmd
@@ -475,7 +486,7 @@ static const ALIGNED(4) u8 sTextColor_Regular[3] = {0, 1, 2};
 static const struct WindowTemplate sCreditsWindowTemplate = {
     .bg = 0,
     .tilemapLeft = 0,
-    .tilemapTop = 4,
+    .tilemapTop = 0,
     .width = 30,
     .height = 12,
     .paletteNum = 15,
@@ -587,267 +598,7 @@ static const struct SpriteTemplate sGroundSpriteTemplate_Static = {
     .callback = SpriteCallbackDummy
 };
 
-static const struct CreditsOverworldCmd sOverworldCmd_Route23[] = {
-    CREDITSOVWLDLOADMAP(MAP_ROUTE23, 11, 107, 1),
-    CREDITSOVWLDSCROLL(0, 1, 0x0500), // Scroll down
-    CREDITSOVWLDEND
-};
-
-static const struct CreditsOverworldCmd sOverworldCmd_ViridianCity[] = {
-    CREDITSOVWLDLOADMAP(MAP_VIRIDIAN_CITY, 30, 34, 1),
-    CREDITSOVWLDSCROLL(0, -1, 0x0500), // Scroll up
-    CREDITSOVWLDEND
-};
-
-static const struct CreditsOverworldCmd sOverworldCmd_PewterCity[] = {
-    CREDITSOVWLDLOADMAP(MAP_PEWTER_CITY, 20, 26, 1),
-    CREDITSOVWLDSCROLL(0, -1, 0x0500), // Scroll up
-    CREDITSOVWLDEND
-};
-
-static const struct CreditsOverworldCmd sOverworldCmd_CeruleanCity[] = {
-    CREDITSOVWLDLOADMAP(MAP_CERULEAN_CITY, 8, 6, 1),
-    CREDITSOVWLDSCROLL(1, 1, 0x0500), // Scroll right and down
-    CREDITSOVWLDEND
-};
-
-static const struct CreditsOverworldCmd sOverworldCmd_Route25[] = {
-    CREDITSOVWLDLOADMAP(MAP_ROUTE25, 25, 6, 1),
-    CREDITSOVWLDSCROLL(1, 0, 0x0500), // Scroll right
-    CREDITSOVWLDEND
-};
-
-static const struct CreditsOverworldCmd sOverworldCmd_VermilionCity[] = {
-    CREDITSOVWLDLOADMAP(MAP_VERMILION_CITY, 9, 7, 1),
-    CREDITSOVWLDSCROLL(1, 1, 0x0500), // Scroll right and down
-    CREDITSOVWLDEND
-};
-
-static const struct CreditsOverworldCmd sOverworldCmd_Route10[] = {
-    CREDITSOVWLDLOADMAP(MAP_ROUTE10, 11, 68, 1),
-    CREDITSOVWLDSCROLL(0, 1, 0x0500), // Scroll down
-    CREDITSOVWLDEND
-};
-
-static const struct CreditsOverworldCmd sOverworldCmd_CeladonCity[] = {
-    CREDITSOVWLDLOADMAP(MAP_CELADON_CITY, 48, 16, 1),
-    CREDITSOVWLDSCROLL(-1, 0, 0x0500), // Scroll left
-    CREDITSOVWLDEND
-};
-
-static const struct CreditsOverworldCmd sOverworldCmd_SaffronCity[] = {
-    CREDITSOVWLDLOADMAP(MAP_SAFFRON_CITY, 39, 5, 1),
-    CREDITSOVWLDSCROLL(0, 1, 0x0500), // Scroll down
-    CREDITSOVWLDEND
-};
-
-static const struct CreditsOverworldCmd sOverworldCmd_Route17[] = {
-    CREDITSOVWLDLOADMAP(MAP_ROUTE17, 7, 43, 1),
-    CREDITSOVWLDSCROLL(0, 1, 0x0500), // Scroll down
-    CREDITSOVWLDEND
-};
-
-static const struct CreditsOverworldCmd sOverworldCmd_FuchsiaCity[] = {
-    CREDITSOVWLDLOADMAP(MAP_FUCHSIA_CITY, 28, 5, 1),
-    CREDITSOVWLDSCROLL(0, 1, 0x0500), // Scroll down
-    CREDITSOVWLDEND
-};
-
-static const struct CreditsOverworldCmd sOverworldCmd_CinnabarIsland[] = {
-    CREDITSOVWLDLOADMAP(MAP_CINNABAR_ISLAND, 13, 17, 1),
-    CREDITSOVWLDSCROLL(0, -1, 0x0500), // Scroll up
-    CREDITSOVWLDEND
-};
-
-static const struct CreditsOverworldCmd sOverworldCmd_Route21[] = {
-    CREDITSOVWLDLOADMAP(MAP_ROUTE21_NORTH, 8, 20, 1),
-    CREDITSOVWLDSCROLL(0, -1, 0x0500), // Scroll up
-    CREDITSOVWLDEND,
-};
-
-static const struct CreditsOverworldCmd *const sOverworldMapScenes[] = {
-    sOverworldCmd_Route23,
-    sOverworldCmd_ViridianCity,
-    sOverworldCmd_PewterCity,
-    sOverworldCmd_CeruleanCity,
-    sOverworldCmd_Route25,
-    sOverworldCmd_VermilionCity,
-    sOverworldCmd_Route10,
-    sOverworldCmd_CeladonCity,
-    sOverworldCmd_SaffronCity,
-    sOverworldCmd_Route17,
-    sOverworldCmd_FuchsiaCity,
-    sOverworldCmd_CinnabarIsland,
-    sOverworldCmd_Route21
-};
-
-
-/* THYL_LEAGUE_V1: existing native maps and pictures; no movie raster. */
-static const struct CreditsOverworldCmd sHoennCreditsScene0[] = {
-    CREDITSOVWLDLOADMAP(MAP_SLATEPORT_CITY, 20, 54, 1),
-    CREDITSOVWLDSCROLL(0, -1, 160),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sHoennCreditsScene1[] = {
-    CREDITSOVWLDLOADMAP(MAP_ROUTE101, 10, 14, 1),
-    CREDITSOVWLDSCROLL(0, -1, 128),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sHoennCreditsScene2[] = {
-    CREDITSOVWLDLOADMAP(MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 6, 7, 1),
-    CREDITSOVWLDSCROLL(0, -1, 16),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sHoennCreditsScene3[] = {
-    CREDITSOVWLDLOADMAP(MAP_MAUVILLE_CITY, 20, 14, 1),
-    CREDITSOVWLDSCROLL(0, -1, 128),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sHoennCreditsScene4[] = {
-    CREDITSOVWLDLOADMAP(MAP_MT_CHIMNEY, 20, 41, 1),
-    CREDITSOVWLDSCROLL(0, -1, 160),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sHoennCreditsScene5[] = {
-    CREDITSOVWLDLOADMAP(MAP_ROUTE119_WEATHER_INSTITUTE_2F, 10, 5, 1),
-    CREDITSOVWLDSCROLL(0, 0, 1),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sHoennCreditsScene6[] = {
-    CREDITSOVWLDLOADMAP(MAP_SEAFLOOR_CAVERN_ROOM9, 13, 40, 1),
-    CREDITSOVWLDSCROLL(0, -1, 160),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sHoennCreditsScene7[] = {
-    CREDITSOVWLDLOADMAP(MAP_SKY_PILLAR_TOP, 13, 18, 1),
-    CREDITSOVWLDSCROLL(0, -1, 160),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sHoennCreditsScene8[] = {
-    CREDITSOVWLDLOADMAP(MAP_SOOTOPOLIS_CITY, 30, 54, 1),
-    CREDITSOVWLDSCROLL(0, -1, 160),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sHoennCreditsScene9[] = {
-    CREDITSOVWLDLOADMAP(MAP_EVER_GRANDE_CITY, 20, 74, 1),
-    CREDITSOVWLDSCROLL(0, -1, 160),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sHoennCreditsScene10[] = {
-    CREDITSOVWLDLOADMAP(MAP_EVER_GRANDE_CITY_CHAMPIONS_ROOM, 6, 7, 1),
-    CREDITSOVWLDSCROLL(0, -1, 16),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sHoennCreditsScene11[] = {
-    CREDITSOVWLDLOADMAP(MAP_EVER_GRANDE_CITY_HALL_OF_FAME, 7, 11, 1),
-    CREDITSOVWLDSCROLL(0, -1, 80),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sHoennCreditsScene12[] = {
-    CREDITSOVWLDLOADMAP(MAP_SLATEPORT_CITY, 20, 54, 1),
-    CREDITSOVWLDSCROLL(0, -1, 160),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd *const sHoennOverworldMapScenes[] = {
-    sHoennCreditsScene0,
-    sHoennCreditsScene1,
-    sHoennCreditsScene2,
-    sHoennCreditsScene3,
-    sHoennCreditsScene4,
-    sHoennCreditsScene5,
-    sHoennCreditsScene6,
-    sHoennCreditsScene7,
-    sHoennCreditsScene8,
-    sHoennCreditsScene9,
-    sHoennCreditsScene10,
-    sHoennCreditsScene11,
-    sHoennCreditsScene12,
-};
-static const u8 sHoennCreditsTitle[] = _("POKéMON THUNDER YELLOW\nHOENN STAFF");
-
-
-/* THYL_JOHTO_CREDITS_REVIEW_V1: existing maps only; no automatic clear trigger. */
-static const struct CreditsOverworldCmd sJohtoCreditsScene0[] = {
-    CREDITSOVWLDLOADMAP(MAP_NEW_BARK_TOWN, 18, 22, 1),
-    CREDITSOVWLDSCROLL(0, -1, 160),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sJohtoCreditsScene1[] = {
-    CREDITSOVWLDLOADMAP(MAP_NEW_BARK_TOWN_ELMS_LAB, 6, 9, 1),
-    CREDITSOVWLDSCROLL(0, 0, 1),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sJohtoCreditsScene2[] = {
-    CREDITSOVWLDLOADMAP(MAP_CHERRYGROVE_CITY, 18, 22, 1),
-    CREDITSOVWLDSCROLL(0, -1, 128),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sJohtoCreditsScene3[] = {
-    CREDITSOVWLDLOADMAP(MAP_VIOLET_CITY, 20, 26, 1),
-    CREDITSOVWLDSCROLL(0, -1, 160),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sJohtoCreditsScene4[] = {
-    CREDITSOVWLDLOADMAP(MAP_AZALEA_TOWN, 20, 22, 1),
-    CREDITSOVWLDSCROLL(0, -1, 128),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sJohtoCreditsScene5[] = {
-    CREDITSOVWLDLOADMAP(MAP_ILEX_FOREST, 20, 42, 1),
-    CREDITSOVWLDSCROLL(0, -1, 160),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sJohtoCreditsScene6[] = {
-    CREDITSOVWLDLOADMAP(MAP_GOLDENROD_CITY, 24, 34, 1),
-    CREDITSOVWLDSCROLL(0, -1, 160),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sJohtoCreditsScene7[] = {
-    CREDITSOVWLDLOADMAP(MAP_ECRUTEAK_CITY, 20, 30, 1),
-    CREDITSOVWLDSCROLL(0, -1, 160),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sJohtoCreditsScene8[] = {
-    CREDITSOVWLDLOADMAP(MAP_BURNED_TOWER_1F, 14, 20, 1),
-    CREDITSOVWLDSCROLL(0, -1, 80),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sJohtoCreditsScene9[] = {
-    CREDITSOVWLDLOADMAP(MAP_OLIVINE_CITY, 22, 34, 1),
-    CREDITSOVWLDSCROLL(0, -1, 160),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sJohtoCreditsScene10[] = {
-    CREDITSOVWLDLOADMAP(MAP_OLIVINE_LIGHTHOUSE_6F, 12, 16, 1),
-    CREDITSOVWLDSCROLL(0, -1, 80),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sJohtoCreditsScene11[] = {
-    CREDITSOVWLDLOADMAP(MAP_LAKE_OF_RAGE, 20, 30, 1),
-    CREDITSOVWLDSCROLL(0, -1, 160),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd sJohtoCreditsScene12[] = {
-    CREDITSOVWLDLOADMAP(MAP_MT_MORTAR_1F, 24, 34, 1),
-    CREDITSOVWLDSCROLL(0, -1, 160),
-    CREDITSOVWLDEND,
-};
-static const struct CreditsOverworldCmd *const sJohtoOverworldMapScenes[] = {
-    sJohtoCreditsScene0,
-    sJohtoCreditsScene1,
-    sJohtoCreditsScene2,
-    sJohtoCreditsScene3,
-    sJohtoCreditsScene4,
-    sJohtoCreditsScene5,
-    sJohtoCreditsScene6,
-    sJohtoCreditsScene7,
-    sJohtoCreditsScene8,
-    sJohtoCreditsScene9,
-    sJohtoCreditsScene10,
-    sJohtoCreditsScene11,
-    sJohtoCreditsScene12,
-};
-static const u8 sJohtoCreditsTitle[] = _("POKéMON THUNDER YELLOW\nJOHTO STAFF");
+#include "data/credits_regional.h"
 
 static const struct CreditsTextHeader sCreditsTexts[] = {
     { gCreditsString_Director, gCreditsString_Junichi_Masuda, FALSE },
@@ -922,6 +673,190 @@ static const u8 *GetRegionalCreditsTitle(void)
     }
 }
 
+
+static const struct WindowTemplate sCreditsCaptionTemplate = {
+    .bg = 0, .tilemapLeft = 0, .tilemapTop = 12,
+    .width = 21, .height = 2, .paletteNum = 15, .baseBlock = 0x170
+};
+
+static void SpriteCB_CreditsCast(struct Sprite *sprite)
+{
+    u16 frame = sCreditsMgr->sceneFrame;
+    u16 phase = (frame + sprite->data[4]) & 255;
+    s16 dx = 0;
+    s16 dy = 0;
+    u8 direction = ANIM_STD_GO_EAST;
+
+    if (sprite->data[0] == 1)
+        UpdateMonIconFrame(sprite);
+    switch (sprite->data[1])
+    {
+    case CREDITS_ACT_WALK:
+        // Arrival, approach, pause to look back, then walk together.
+        if (frame < 64)
+            dx = (s16)frame / 2 - 32;
+        else
+        {
+            dx = Sin(phase, 8);
+            direction = (phase & 128) ? ANIM_STD_GO_WEST : ANIM_STD_GO_EAST;
+        }
+        break;
+    case CREDITS_ACT_DANCE:
+        dx = Sin(phase, 6);
+        dy = -abs(Sin((phase * 2) & 255, 5));
+        direction = (phase >> 5) & 3;
+        break;
+    case CREDITS_ACT_FLY:
+        dx = Sin(phase, 16);
+        dy = Cos(phase, 7);
+        break;
+    case CREDITS_ACT_CHASE:
+        if (frame < 128)
+            dx = (s16)frame / 4 - 32;
+        else if (frame < 256)
+            dx = Sin((phase * 2) & 255, 10);
+        else
+        {
+            dx = (frame - 256) * 3;
+            dy = -(s16)((frame - 256) / 8);
+            if (dy < -10)
+                dy = -10;
+        }
+        sprite->invisible = frame >= 340;
+        break;
+    case CREDITS_ACT_CLASH:
+        dx = Sin(phase, 14);
+        dy = -abs(Sin((phase * 2) & 255, 4));
+        direction = sprite->data[2] < 80 ? ANIM_STD_GO_EAST : ANIM_STD_GO_WEST;
+        break;
+    default:
+        dy = -abs(Sin((phase * 2) & 255, 4));
+        direction = (phase & 128) ? ANIM_STD_FACE_SOUTH : ANIM_STD_FACE_EAST;
+        break;
+    }
+    if (sprite->data[0] == 2)
+    {
+        dx /= 2;
+        dy = 0;
+    }
+    sprite->x = sprite->data[2] + dx;
+    sprite->y = sprite->data[3] + dy;
+    if (!sprite->data[0] && !sprite->data[6])
+        StartSpriteAnimIfDifferent(sprite, direction);
+}
+
+static void DestroyCreditsCast(void)
+{
+    u8 i;
+    for (i = 0; i < ARRAY_COUNT(sCreditsMgr->castSpriteIds); i++)
+    {
+        u8 id = sCreditsMgr->castSpriteIds[i];
+        if (id < MAX_SPRITES && gSprites[id].inUse)
+        {
+            if (gSprites[id].data[0] == 2)
+            {
+                FreeSpriteOamMatrix(&gSprites[id]);
+                FreeAndDestroyMonPicSprite(id);
+            }
+            else if (gSprites[id].data[0] == 1)
+                DestroyMonIcon(&gSprites[id]);
+            else
+                DestroySprite(&gSprites[id]);
+        }
+        sCreditsMgr->castSpriteIds[i] = MAX_SPRITES;
+    }
+}
+
+static void CreateCreditsCast(void)
+{
+    u8 i;
+    u8 region = sCreditsMgr->filler_10[0];
+    u8 scene = sCreditsMgr->currentMapScene;
+    const struct CreditsCastMember *cast = sRegionalCreditsCast[region][scene];
+    sCreditsMgr->sceneFrame = 0;
+    for (i = 0; i < 6; i++)
+    {
+        u8 id;
+        u8 kind = 0;
+        bool8 inanimate = FALSE;
+        if (cast[i].art == CREDITS_CAST_NONE)
+            continue;
+        if (cast[i].art & CREDITS_CAST_PORTRAIT)
+        {
+            u16 species = cast[i].art & CREDITS_CAST_SPECIES_MASK;
+            u32 otId = (cast[i].art & CREDITS_CAST_SHINY) ? 0 : SHINY_ODDS;
+            id = CreateMonPicSprite_HandleDeoxys(species, otId, 0, TRUE, cast[i].x, cast[i].y, i, TAG_NONE);
+            kind = 2;
+            if (id < MAX_SPRITES)
+            {
+                u8 matrix = AllocOamMatrix();
+                if (matrix < 32)
+                {
+                    gSprites[id].oam.affineMode = ST_OAM_AFFINE_NORMAL;
+                    gSprites[id].oam.matrixNum = matrix;
+                    // A 48px native affine cameo stays below the staff/caption pane.
+                    SetOamMatrix(matrix, 0x155, 0, 0, 0x155);
+                    gSprites[id].callback = SpriteCB_CreditsCast;
+                }
+                else
+                {
+                    FreeAndDestroyMonPicSprite(id);
+                    id = MAX_SPRITES;
+                }
+            }
+        }
+        else if (cast[i].art & CREDITS_CAST_MON)
+        {
+            u16 species = cast[i].art & CREDITS_CAST_SPECIES_MASK;
+            id = CreateMonIcon(species, SpriteCB_CreditsCast, cast[i].x, cast[i].y, 2, 0, FALSE);
+            LoadPalette(GetValidMonIconPalettePtr(species), OBJ_PLTT_ID(i), PLTT_SIZE_4BPP);
+            kind = 1;
+        }
+        else
+        {
+            struct SpriteTemplate template;
+            const struct SubspriteTable *subsprites;
+            const struct ObjectEventGraphicsInfo *info = GetObjectEventGraphicsInfo(cast[i].art);
+            // The airplane has its own single animation, not the NPC directions.
+            inanimate = info->inanimate || cast[i].art == OBJ_EVENT_GFX_AIRPLANE_SMALL;
+            CopyObjectGraphicsInfoToSpriteTemplate(cast[i].art, SpriteCB_CreditsCast, &template, &subsprites);
+            template.paletteTag = TAG_NONE;
+            id = CreateSprite(&template, cast[i].x, cast[i].y, 2);
+            PatchObjectPalette(info->paletteTag, i);
+            if (id < MAX_SPRITES && subsprites != NULL)
+            {
+                SetSubspriteTables(&gSprites[id], subsprites);
+                gSprites[id].subspriteMode = SUBSPRITES_IGNORE_PRIORITY;
+            }
+        }
+        sCreditsMgr->castSpriteIds[i] = id;
+        if (id < MAX_SPRITES)
+        {
+            struct Sprite *sprite = &gSprites[id];
+            sprite->oam.paletteNum = i;
+            sprite->oam.priority = 0;
+            sprite->coordOffsetEnabled = FALSE;
+            sprite->data[0] = kind;
+            sprite->data[1] = cast[i].motion;
+            sprite->data[2] = cast[i].x;
+            sprite->data[3] = cast[i].y;
+            sprite->data[4] = i * 37;
+            sprite->data[6] = inanimate;
+        }
+    }
+}
+
+static void CreateCreditsCaption(void)
+{
+    sCreditsMgr->captionWindowId = AddWindow(&sCreditsCaptionTemplate);
+    sCreditsMgr->captionIsActive = TRUE;
+    FillWindowPixelBuffer(sCreditsMgr->captionWindowId, PIXEL_FILL(0));
+    AddTextPrinterParameterized4(sCreditsMgr->captionWindowId, FONT_SMALL, 3, 0, 0, 0,
+        sTextColor_Regular, 0, sRegionalCreditsCaptions[sCreditsMgr->filler_10[0]][sCreditsMgr->currentMapScene]);
+    PutWindowTilemap(sCreditsMgr->captionWindowId);
+    CopyWindowToVram(sCreditsMgr->captionWindowId, COPYWIN_FULL);
+}
+
 static void StartRegionalCredits(u8 region)
 {
     sCreditsMgr = AllocZeroed(sizeof(*sCreditsMgr));
@@ -929,6 +864,7 @@ static void StartRegionalCredits(u8 region)
     sCreditsMgr->taskId = TASK_NONE;
     sCreditsMgr->unk_1D = 0;
     sCreditsMgr->filler_10[0] = region;
+    memset(sCreditsMgr->castSpriteIds, MAX_SPRITES, sizeof(sCreditsMgr->castSpriteIds));
     if (region != CREDITS_REGION_KANTO)
         sCreditsMgr->mainseqno = CREDITSSCENE_HOENN_INIT;
     ResetSpriteData();
@@ -952,6 +888,7 @@ void DoHoennCredits(void)
 
 static void CB2_Credits(void)
 {
+    sCreditsMgr->sceneFrame++;
     switch (RollCredits())
     {
     case 0:
@@ -977,6 +914,7 @@ static void CB2_Credits(void)
     case 2:
         FlagClear(FLAG_DONT_SHOW_MAP_NAME_POPUP);
         gDisableMapMusicChangeOnMapLoad = MUSIC_DISABLE_OFF;
+        DestroyCreditsCast();
         Free(sCreditsMgr);
         SoftReset(RESET_ALL);
         // noreturn
@@ -1011,6 +949,11 @@ static void DestroyCreditsWindow(void)
 {
     if (sCreditsMgr->windowIsActive)
     {
+        if (sCreditsMgr->captionIsActive)
+        {
+            RemoveWindow(sCreditsMgr->captionWindowId);
+            sCreditsMgr->captionIsActive = FALSE;
+        }
         RemoveWindow(sCreditsMgr->windowId);
         CleanupOverworldWindowsAndTilemaps();
         sCreditsMgr->windowIsActive = FALSE;
@@ -1022,6 +965,8 @@ static bool32 DoOverworldMapScrollScene(u8 whichMon)
     switch (sCreditsMgr->subseqno)
     {
     case 0:
+        DestroyCreditsCast();
+        sCreditsMgr->currentMapScene = whichMon;
         FlagSet(FLAG_DONT_SHOW_MAP_NAME_POPUP);
         gDisableMapMusicChangeOnMapLoad = MUSIC_DISABLE_KEEP;
         sCreditsMgr->ovwldseqno = 0;
@@ -1032,9 +977,11 @@ static bool32 DoOverworldMapScrollScene(u8 whichMon)
             return FALSE;
         CreateCreditsWindow();
         SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(0, DISPLAY_WIDTH));
-        SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(36, DISPLAY_HEIGHT - 36));
+        SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(0, DISPLAY_HEIGHT));
         SwitchWin1OffWin0On();
         InitBgDarkenEffect();
+        CreateCreditsCast();
+        CreateCreditsCaption();
         Menu_LoadStdPalAt(BG_PLTT_ID(15));
         gPlttBufferUnfaded[BG_PLTT_ID(15) + 15] = RGB_BLACK;
         gPlttBufferFaded[BG_PLTT_ID(15) + 15] = RGB_BLACK;
@@ -1086,6 +1033,7 @@ static s32 RollCredits(void)
         win0v[1] = GetGpuReg(REG_OFFSET_WIN0V) & 0xFF;
         if (win0v[0] == 0x24)
         {
+            SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(0, DISPLAY_HEIGHT));
             sCreditsMgr->timer = 0;
             sCreditsMgr->mainseqno = CREDITSSCENE_LOAD_PLAYER_SPRITE_AT_INDIGO;
         }
@@ -1232,6 +1180,7 @@ static s32 RollCredits(void)
     case CREDITSSCENE_MON_DESTROY_ASSETS:
         if (!gPaletteFade.active)
         {
+            DestroyCreditsCast();
             DestroyPlayerOrRivalSprite();
             DestroyCreditsWindow();
             sCreditsMgr->subseqno = 0;
@@ -1248,6 +1197,8 @@ static s32 RollCredits(void)
     case CREDITSSCENE_THEEND_DESTROY_ASSETS:
         if (!gPaletteFade.active)
         {
+            DestroyCreditsCast();
+            DestroyPlayerOrRivalSprite();
             DestroyCreditsWindow();
             sCreditsMgr->subseqno = 0;
             sCreditsMgr->canSpeedThrough = 0;
@@ -1278,8 +1229,9 @@ static s32 RollCredits(void)
         }
         return 0;
     case CREDITSSCENE_TERMINATE:
-        if (!gPaletteFade.active)
-            DestroyCreditsWindow();
+        if (gPaletteFade.active)
+            return 0;
+        DestroyCreditsWindow();
         break;
     }
     return 2;
@@ -1572,7 +1524,7 @@ static void Task_MovePlayerAndGroundSprites(u8 taskId)
     case 2:
         if (sCreditsMgr->unk_1D & 1)
         {
-            if (gSprites[data->characterSpriteId].y != 0x50)
+            if (gSprites[data->characterSpriteId].y != 128)
             {
                 gSprites[data->characterSpriteId].y--;
                 gSprites[data->groundSpriteId].y--;
@@ -1636,6 +1588,7 @@ static void LoadPlayerOrRivalSprite(u8 whichScene)
             y = DISPLAY_HEIGHT;
             break;
         }
+        y = 128;
         data->spriteMoveCmd = sPlayerRivalSpriteParams[whichScene][2];
         data->characterTilesTag = GFXTAG_CHARACTER;
         data->characterPalTag = TAG_NONE;
@@ -1681,7 +1634,7 @@ static void LoadPlayerOrRivalSprite(u8 whichScene)
         {
         case 0:
             sprSheet.data = sGround_Grass_Tiles;
-            sprSheet.size = 0x3000;
+            sprSheet.size = 0x2000;
             sprSheet.tag = data->groundTilesTag;
             LoadCompressedSpriteSheet(&sprSheet);
             LoadPalette(sGround_Grass_Pal, OBJ_PLTT_ID(14), sizeof(sGround_Grass_Pal));
@@ -1689,7 +1642,7 @@ static void LoadPlayerOrRivalSprite(u8 whichScene)
             break;
         case 1:
             sprSheet.data = sGround_Grass_Tiles;
-            sprSheet.size = 0x3000;
+            sprSheet.size = 0x2000;
             sprSheet.tag = data->groundTilesTag;
             LoadCompressedSpriteSheet(&sprSheet);
             LoadPalette(sGround_Grass_Pal, OBJ_PLTT_ID(14), sizeof(sGround_Grass_Pal));
@@ -1697,7 +1650,7 @@ static void LoadPlayerOrRivalSprite(u8 whichScene)
             break;
         case 2:
             sprSheet.data = sGround_Dirt_Tiles;
-            sprSheet.size = 0x3000;
+            sprSheet.size = 0x2000;
             sprSheet.tag = data->groundTilesTag;
             LoadCompressedSpriteSheet(&sprSheet);
             LoadPalette(sGround_Dirt_Pal, OBJ_PLTT_ID(14), sizeof(sGround_Dirt_Pal));
@@ -1705,7 +1658,7 @@ static void LoadPlayerOrRivalSprite(u8 whichScene)
             break;
         case 3:
             sprSheet.data = sGround_City_Tiles;
-            sprSheet.size = 0x3000;
+            sprSheet.size = 0x2000;
             sprSheet.tag = data->groundTilesTag;
             LoadCompressedSpriteSheet(&sprSheet);
             LoadPalette(sGround_City_Pal, OBJ_PLTT_ID(14), sizeof(sGround_City_Pal));
@@ -1713,7 +1666,7 @@ static void LoadPlayerOrRivalSprite(u8 whichScene)
             break;
         }
         sprTemplate.tileTag = data->groundTilesTag;
-        data->groundSpriteId = CreateSprite(&sprTemplate, x, y + 38, 0);
+        data->groundSpriteId = CreateSprite(&sprTemplate, x, y + 14, 0);
         gSprites[data->groundSpriteId].oam.paletteNum = 14;
         gSprites[data->groundSpriteId].subpriority = 1;
     }

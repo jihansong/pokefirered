@@ -60,3 +60,27 @@ MauvilleCity_Text_NorthNotice::
     .string "back up.\p"
     .string "The desert eats fence posts. Ask\n"
     .string "anyone in MAUVILLE.$"
+
+
+MauvilleCity_WallyChapter_TextUncle::
+	.string "UNCLE: RALTS has made him bold.\nCould you show him a fair battle?$"
+
+MauvilleCity_WallyChapter_TextIntro::
+	.string "WALLY: {PLAYER}! Our field trip\nmade me want to travel with RALTS!\p"
+	.string "UNCLE: One step at a time, WALLY.\nThe GYM can wait a little.$"
+
+MauvilleCity_WallyChapter_TextAsk::
+	.string "WALLY: Will you battle us?\nI want to learn from your team.$"
+
+MauvilleCity_WallyChapter_TextNo::
+	.string "WALLY: All right. We will practice\nhere until you have a moment.$"
+
+MauvilleCity_WallyChapter_TextReady::
+	.string "WALLY: RALTS and I are ready!$"
+
+MauvilleCity_WallyChapter_TextDefeat::
+	.string "There is still so much to learn...$"
+
+MauvilleCity_WallyChapter_TextAfter::
+	.string "WALLY: Winning is not everything.\nI need to listen to RALTS, too.\p"
+	.string "UNCLE: We are going to VERDANTURF.\nCome and visit us at WANDA's home.$"

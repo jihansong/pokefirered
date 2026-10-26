@@ -30,8 +30,14 @@ void AllocateBattleResources(void)
     gBattleResources->battleHistory = AllocZeroed(sizeof(*gBattleResources->battleHistory));
     gBattleResources->AI_ScriptsStack = AllocZeroed(sizeof(*gBattleResources->AI_ScriptsStack));
 
-    gLinkBattleSendBuffer = AllocZeroed(BATTLE_BUFFER_LINK_SIZE);
-    gLinkBattleRecvBuffer = AllocZeroed(BATTLE_BUFFER_LINK_SIZE);
+    // Link ring buffers are only consumed by LINK-gated controller tasks.
+    gLinkBattleSendBuffer = NULL;
+    gLinkBattleRecvBuffer = NULL;
+    if (gBattleTypeFlags & BATTLE_TYPE_LINK)
+    {
+        gLinkBattleSendBuffer = AllocZeroed(BATTLE_BUFFER_LINK_SIZE);
+        gLinkBattleRecvBuffer = AllocZeroed(BATTLE_BUFFER_LINK_SIZE);
+    }
 
     gBattleAnimBgTileBuffer = AllocZeroed(0x2000);
     gBattleAnimBgTilemapBuffer = AllocZeroed(0x1000);
@@ -67,8 +73,10 @@ void FreeBattleResources(void)
         FREE_AND_SET_NULL(gBattleResources->AI_ScriptsStack);
         FREE_AND_SET_NULL(gBattleResources);
 
-        FREE_AND_SET_NULL(gLinkBattleSendBuffer);
-        FREE_AND_SET_NULL(gLinkBattleRecvBuffer);
+        if (gLinkBattleSendBuffer != NULL)
+            FREE_AND_SET_NULL(gLinkBattleSendBuffer);
+        if (gLinkBattleRecvBuffer != NULL)
+            FREE_AND_SET_NULL(gLinkBattleRecvBuffer);
 
         FREE_AND_SET_NULL(gBattleAnimBgTileBuffer);
         FREE_AND_SET_NULL(gBattleAnimBgTilemapBuffer);

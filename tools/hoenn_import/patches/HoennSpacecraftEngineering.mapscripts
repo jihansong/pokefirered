@@ -1,0 +1,2 @@
+	map_script MAP_SCRIPT_ON_TRANSITION, Space_MapTransition
+	map_script MAP_SCRIPT_ON_LOAD, Space_EngineeringLoad

@@ -54,6 +54,7 @@ u8 CountUsedPCItemSlots(void);
 bool8 CheckPCHasItem(u16 itemId, u16 count);
 bool8 AddPCItem(u16 itemId, u16 count);
 void SwapRegisteredBike(void);
+void RegisteredItemHandleBikeSwap(void);
 const u8 *ItemId_GetName(u16 itemId);
 u16 ItemId_GetId(u16 itemId);
 u16 ItemId_GetPrice(u16 itemId);
@@ -80,7 +81,17 @@ u16 BagGetItemIdByPocketPosition(u8 pocketId, u16 itemId);
 u16 BagGetQuantityByPocketPosition(u8 pocketId, u16 itemId);
 u16 BagGetQuantityByItemId(u16 item);
 u8 ItemId_GetImportance(u16 itemId);
-void BagPocketCompaction(struct ItemSlot * slots, u8 capacity);
+void BagPocketCompaction(struct BagPocket *pocket);
+// Bag pocket indices are zero-based; the persistent arrays retain their legacy sizes.
+struct ItemSlot *GetBagItemSlot(u8 pocket, u16 index);
+struct ItemSlot *GetBagPocketSlot(struct BagPocket *pocket, u16 index);
+bool8 ValidateBagExtensionForLoad(void);
+bool8 HasBagExtension(void);
+bool8 PrepareBagExtensionForSave(void);
+void CopyBagPocketToBuffer(u8 pocket, struct ItemSlot *buffer);
+void CopyBagPocketFromBuffer(u8 pocket, const struct ItemSlot *buffer);
+void ClearBagPocket(u8 pocket);
+void MoveBagItemSlotInList(u8 pocket, u32 from, u32 to);
 u16 GetPcItemQuantity(u16 *);
 void SetBagPocketsPointers(void);
 

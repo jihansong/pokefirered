@@ -6,6 +6,10 @@
 #include "constants/songs.h"
 #include "constants/metatile_labels.h"
 
+// Pinned HnS blue door: pair guard prevents numeric metatile collisions.
+extern const struct Tileset gTileset_TYHnsJohtoGeneral;
+extern const struct Tileset gTileset_TYHnsNewBarkTown;
+
 enum {
     DOOR_SOUND_NORMAL,
     DOOR_SOUND_SLIDING,
@@ -247,6 +251,15 @@ static const u8 sDoorAnimPalettes_Teleporter[] = {8, 8, 8, 8, 8, 8, 8, 8};
 static const u8 sDoorAnimPalettes_TrainerTowerLobbyElevator[] = {8, 8, 2, 2, 2, 2, 2, 2};
 static const u8 sDoorAnimPalettes_TrainerTowerRoofElevator[] = {11, 11, 2, 2, 2, 2, 2, 2};
 
+// Original HnS cerulean_hns poses, RGB555-reindexed to the shared palette.
+// Last 128 bytes are non-displayed padding for the native eight-tile copy.
+static const u8 sDoorAnimTiles_TYHnsNewBarkBlue[] = INCBIN_U8("graphics/door_anims/ty_hns_new_bark_blue.4bpp");
+static const u8 sDoorAnimPalettes_TYHnsNewBarkBlue[] = {9, 9, 9, 9, 9, 9, 9, 9};
+static const struct DoorGraphics sDoorGraphics_TYHnsNewBarkBlue = {
+    318, DOOR_SOUND_NORMAL, DOOR_SIZE_1x1,
+    sDoorAnimTiles_TYHnsNewBarkBlue, sDoorAnimPalettes_TYHnsNewBarkBlue
+};
+
 static const struct DoorGraphics sDoorGraphics[] = {
     {METATILE_General_Door,                                DOOR_SOUND_NORMAL,  DOOR_SIZE_1x1, sDoorAnimTiles_General, sDoorAnimPalettes_General},
     {METATILE_General_SlidingSingleDoor,                   DOOR_SOUND_SLIDING, DOOR_SIZE_1x1, sDoorAnimTiles_SlidingSingle, sDoorAnimPalettes_SlidingSingle},
@@ -396,6 +409,11 @@ static bool32 AnimateDoorFrame(const struct DoorGraphics *gfx, const struct Door
 
 static const struct DoorGraphics *GetDoorGraphics(const struct DoorGraphics *gfx, u16 id)
 {
+    if (id == 318
+     && gMapHeader.mapLayout->primaryTileset == &gTileset_TYHnsJohtoGeneral
+     && gMapHeader.mapLayout->secondaryTileset == &gTileset_TYHnsNewBarkTown)
+        return &sDoorGraphics_TYHnsNewBarkBlue;
+
     while (gfx->tiles != NULL)
     {
         if (gfx->metatileId == id)

@@ -1,1 +1,3 @@
-	map_script MAP_SCRIPT_ON_TRANSITION, VerdanturfTown_WandasHouse_OnTransition
+map_script MAP_SCRIPT_ON_TRANSITION, VerdanturfTown_WandasHouse_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, VerdanturfTown_WandasHouse_MountainResume
+	map_script MAP_SCRIPT_ON_RETURN_TO_FIELD, VerdanturfTown_WandasHouse_MountainReturn

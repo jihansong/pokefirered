@@ -1,0 +1,21 @@
+#ifndef GUARD_PERSISTENT_HEAP_H
+#define GUARD_PERSISTENT_HEAP_H
+
+#include "global.h"
+#include "malloc.h"
+
+// Keep the allocated heap and legacy save/RAM layouts intact. The allocator
+// uses the prefix; save extensions survive scene and save-block heap resets.
+#define PERSISTENT_HEAP_USABLE_SIZE 0x13900
+#define PERSISTENT_HEAP_PC_OFFSET PERSISTENT_HEAP_USABLE_SIZE
+#define PERSISTENT_HEAP_PC_SIZE 33740
+#define PERSISTENT_HEAP_BAG_BACKUP_SIZE 744
+#define PC_EXTRA_STORAGE_DATA (gHeap + PERSISTENT_HEAP_PC_OFFSET)
+#define BAG_EXTRA_BACKUP_DATA (PC_EXTRA_STORAGE_DATA + PERSISTENT_HEAP_PC_SIZE)
+#define PERSISTENT_HEAP_META_DATA (BAG_EXTRA_BACKUP_DATA + PERSISTENT_HEAP_BAG_BACKUP_SIZE)
+#define PERSISTENT_HEAP_META_SIZE (HEAP_SIZE - PERSISTENT_HEAP_USABLE_SIZE - PERSISTENT_HEAP_PC_SIZE - PERSISTENT_HEAP_BAG_BACKUP_SIZE)
+
+STATIC_ASSERT(PERSISTENT_HEAP_META_SIZE >= 64, PersistentHeapMetadataFits);
+STATIC_ASSERT(PERSISTENT_HEAP_USABLE_SIZE >= sizeof(struct SaveBlock1) + sizeof(struct SaveBlock2) + 33744, SaveMoveScratchFitsBeforePersistentHeap);
+
+#endif

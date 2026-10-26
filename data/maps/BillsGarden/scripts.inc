@@ -27,6 +27,7 @@ BillsGarden_EventScript_BackDoor::
 	goto_if_eq VAR_RESULT, NO, EventScript_ReleaseEnd
 	closemessage
 	playse SE_EXIT
+	special SetOrdinaryWarpTransition
 	warp MAP_BILLS_GARDEN, 7, 11
 	waitstate
 	releaseall
@@ -40,6 +41,7 @@ BillsGarden_EventScript_BackDoorLocked::
 BillsGarden_EventScript_Exit::
 	lockall
 	playse SE_EXIT
+	special SetOrdinaryWarpTransition
 	warp MAP_ROUTE25_SEA_COTTAGE, 13, 2
 	waitstate
 	releaseall

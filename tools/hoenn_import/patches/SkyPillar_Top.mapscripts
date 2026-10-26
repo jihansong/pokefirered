@@ -1,0 +1,4 @@
+	map_script MAP_SCRIPT_ON_LOAD, SkyPillar_Top_TY_RestoreCleanFloor
+	map_script MAP_SCRIPT_ON_TRANSITION, SkyPillar_Top_TY_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, SkyPillar_Top_TY_OnResume
+	map_script MAP_SCRIPT_ON_RETURN_TO_FIELD, SkyPillar_Top_TY_OnReturnToField

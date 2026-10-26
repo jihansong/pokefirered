@@ -22,6 +22,7 @@ GoldenrodUnderground_BasementGate::
 lockall
     goto_if_unset FLAG_JOHTO_RADIO_BASEMENT_ACCESS, GoldenrodUnderground_BasementGateClosed
     releaseall
+    special SetOrdinaryWarpTransition
     warp MAP_GOLDENROD_UNDERGROUND_BASEMENT, 1
     waitstate
     end

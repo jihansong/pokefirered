@@ -512,48 +512,56 @@ Route110_TrickHouseEntrance_Movement_EnterRoom:
 	step_end
 
 Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom1::
+	special SetOrdinaryWarpTransition
 	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE1, 0, 21
 	waitstate
 	releaseall
 	end
 
 Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom2::
+	special SetOrdinaryWarpTransition
 	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE2, 0, 21
 	waitstate
 	releaseall
 	end
 
 Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom3::
+	special SetOrdinaryWarpTransition
 	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE3, 0, 21
 	waitstate
 	releaseall
 	end
 
 Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom4::
+	special SetOrdinaryWarpTransition
 	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE4, 0, 21
 	waitstate
 	releaseall
 	end
 
 Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom5::
+	special SetOrdinaryWarpTransition
 	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE5, 0, 21
 	waitstate
 	releaseall
 	end
 
 Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom6::
+	special SetOrdinaryWarpTransition
 	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE6, 0, 21
 	waitstate
 	releaseall
 	end
 
 Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom7::
+	special SetOrdinaryWarpTransition
 	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE7, 0, 21
 	waitstate
 	releaseall
 	end
 
 Route110_TrickHouseEntrance_EventScript_EnterPuzzleRoom8::
+	special SetOrdinaryWarpTransition
 	warp MAP_ROUTE110_TRICK_HOUSE_PUZZLE8, 0, 21
 	waitstate
 	releaseall

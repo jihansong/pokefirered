@@ -1,5 +1,22 @@
 
 
+@ Keep two decorative statues clear of the routes to the upper and final warps.
+@ Local IDs, objects, trainers and warp definitions retain their original order.
+MossdeepCity_Gym_TY_OnLoad::
+	call MossdeepCity_Gym_TY_SetPassageStatueTemplates
+	end
+
+MossdeepCity_Gym_TY_OnResume::
+	call MossdeepCity_Gym_TY_SetPassageStatueTemplates
+	setobjectxy 21, 12, 6
+	setobjectxy 24, 11, 33
+	end
+
+MossdeepCity_Gym_TY_SetPassageStatueTemplates::
+	setobjectxyperm 21, 12, 6
+	setobjectxyperm 24, 11, 33
+	return
+
 @ THYL_LEAGUE_V1
 MossdeepCity_Gym_EventScript_H0::
 	goto MossdeepCity_Gym_TY_Boss
